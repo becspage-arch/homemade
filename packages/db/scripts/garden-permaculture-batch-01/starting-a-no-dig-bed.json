@@ -1,0 +1,243 @@
+{
+  "slug": "starting-a-no-dig-bed",
+  "title": "Starting a no-dig bed",
+  "subtitle": "Layer organic matter, skip the spade, plant straight in.",
+  "excerpt": "A no-dig bed is built by layering compost and mulch on top of existing ground without turning the soil. Weed seeds stay buried, soil structure stays intact, and the bed improves each year with minimal effort.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "permaculture",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Method after Charles Dowding's no-dig approach (multiple books, 2007-2024); informed by RHS guidance on organic mulching (rhs.org.uk). Humus-building soil biology after soil science basics from university extension services.",
+  "garden": {
+    "plantSlug": "kale",
+    "subTopic": "growing",
+    "plantingMonths": ["october", "november", "march", "april"],
+    "containerFriendly": false,
+    "indoorFriendly": false
+  },
+  "techniqueSlugs": ["no-dig-bed-setup", "no-dig-ongoing-mulch"],
+  "criticalTechniques": ["no-dig-bed-setup"],
+  "glossaryTerms": [
+    {
+      "slug": "no-dig",
+      "term": "No-dig",
+      "definition": "A growing method in which the soil is never turned or cultivated. Organic matter is added to the surface and left for worms and soil biology to incorporate. Popularised in the UK by Charles Dowding."
+    },
+    {
+      "slug": "green-manure",
+      "term": "Green manure",
+      "definition": "A fast-growing crop sown specifically to be cut and dug in (or laid on the surface) to add organic matter and nutrients to the soil. Examples include phacelia, field beans, and clover."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "no-dig"}}],
+            "text": "no-dig"
+          },
+          {
+            "type": "text",
+            "text": " bed is a growing area made by covering the ground with a thick layer of compost, no turning or cultivating needed. The existing turf or weeds die under the mulch and break down slowly. Worms do the mixing. You plant into the compost surface from day one."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In temperate UK conditions, an autumn-built bed is ready to plant in spring. A spring-built bed can receive transplants within days if the compost layer is deep enough (10 cm minimum)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Choosing a position"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most vegetables need at least six hours of direct sun. No-dig works equally well in full sun or part shade, but the crop list changes. In a shaded position, stick to leafy crops (kale, lettuce, chard, spinach) and skip fruiting crops (tomatoes, courgettes, squash)."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Width matters more than length. Keep beds no wider than 1.2 m so you can reach the centre from either side without stepping in. Once you step on the bed, you compact the soil and undo what the no-dig method is preserving."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            {"name": "Compost (well-rotted)", "qty": "10-15 cm deep across the bed area", "substitutions": "municipal green-waste compost works well; avoid fresh manure directly"},
+            {"name": "Cardboard (plain brown)", "qty": "enough to cover the bed once", "substitutions": "omit on lawn where the grass will die quickly; useful on established weed patches"},
+            {"name": "Woodchip or straw", "qty": "5 cm layer for paths between beds", "substitutions": "bark chip for longer-lasting paths"},
+            {"name": "Edge boards or hessian", "qty": "optional, to hold bed shape"}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Setting up the bed"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mark the bed edges with string and pegs. Cut the grass or existing growth down to the ground with shears if it is tall, but do not remove it. The vegetation becomes the first layer in the composting process."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the patch has persistent perennial weeds (bindweed, couch grass, horsetail, dock), lay cardboard first. Overlap the sheets by 20 cm at the joints to prevent gaps. Wet the cardboard thoroughly so it does not blow away and bonds to the ground."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Apply compost on top. A 10 cm layer kills annual weeds and gives plants a rooting medium from the first season. On cardboard, go to 15 cm. Firm it lightly by walking the beds in flat-soled boots before planting."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Autumn build for spring planting",
+          "body": "Laying a bed in October or November gives the cardboard and turf below five months to break down before you plant. By March the surface is often partially inhabited by worms already moving into the compost layer. An autumn-built bed plants more easily than one made in March with fresh compost."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Planting into the bed"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Plant transplants by pushing them into the compost layer until the roots are in firm contact with the material below. For direct sowing, rake a thin layer of compost to create a fine tilth and sow as normal. Seed germination in a compost-rich surface is reliable once soil temperatures are above 7 to 10 degrees Celsius."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In the first season, kale, courgettes, salads, and beans all establish well. Avoid root vegetables like parsnips and carrots until the second year, when the compost layer has settled deeper and the soil below has loosened from worm activity."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Keeping the bed going"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add a fresh 5 cm layer of compost each autumn. This replenishes what the plants removed and the worms have taken deeper. No other soil feed is normally needed in an established no-dig bed. If a crop fails or looks pale, top-dress with additional compost in spring."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weed control is mostly a matter of speed. In the first season, annual weeds germinating in the compost layer are easy to hoe off before they root. In the second and third year, weed pressure drops sharply because the buried weed-seed bank is exhausted."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When the bed is not working",
+          "intro": "Most problems in the first season are setup issues.",
+          "items": [
+            {
+              "symptom": "Weeds breaking through everywhere",
+              "cause": "Compost layer too thin, or cardboard layer had gaps.",
+              "fix": "Top-dress with another 5 cm of compost and press it down. Check for cardboard gaps and patch with offcuts, weighting them with more compost."
+            },
+            {
+              "symptom": "Persistent bindweed or couch grass returning",
+              "cause": "Rhizomes were in the ground before setup and were not smothered.",
+              "fix": "These weeds need at least 15 cm of light-exclusion mulch and 12 months to die out reliably. Continue smothering; pick out any shoots that break through the surface without letting them establish."
+            },
+            {
+              "symptom": "Compost layer drying out fast",
+              "cause": "Thin layer, exposed surface, or sandy soil underneath.",
+              "fix": "Apply a straw mulch between plants after planting. This slows evaporation. Water the bed deeply once a week rather than little and often, to encourage roots downward."
+            },
+            {
+              "symptom": "Slugs worse than expected",
+              "cause": "Thick organic surface is good slug habitat, especially in wet springs.",
+              "fix": "Allow the surface to dry between rains. Use copper tape around raised edges. Copper-impregnated mats around individual transplants help. Remove hiding places (boards, pots) from the bed edges at night."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Using green manures in the rotation"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Between main crops, sow a "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "green-manure"}}],
+            "text": "green manure"
+          },
+          {
+            "type": "text",
+            "text": " to cover bare soil and add organic matter. Phacelia or buckwheat works in summer gaps. Winter field beans fix nitrogen over winter. Cut the green manure down before it flowers and leave it on the surface to break down: this is the no-dig version of digging in, letting the surface do the work."
+          }
+        ]
+      }
+    ]
+  }
+}

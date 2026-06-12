@@ -1,0 +1,93 @@
+{
+  "slug": "polyculture-bed-design",
+  "title": "Designing a polyculture bed",
+  "subtitle": "Growing several crops in one bed to reduce pest pressure and use space fully.",
+  "excerpt": "A polyculture bed combines crops that use different levels, different parts of the season, and different nutrient needs, so the bed is productive the whole year and the crops support each other. This guide covers the principles behind combining crops in one bed.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "permaculture",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Polyculture design principles from Eliot Coleman, The New Organic Grower (1989). Interplanting evidence from Joy Larkcom, The Organic Salad Garden (2001). Companion planting evidence review in Garden Organic technical guides.",
+  "garden": {
+    "plantSlug": "runner-bean",
+    "subTopic": "growing",
+    "plantingMonths": ["march", "april", "may"],
+    "containerFriendly": false,
+    "indoorFriendly": false
+  },
+  "techniqueSlugs": ["polyculture", "nitrogen-fixer-pairing"],
+  "criticalTechniques": ["polyculture"],
+  "glossaryTerms": [
+    {
+      "slug": "guild-planting",
+      "term": "Guild planting",
+      "definition": "A group of plants chosen to grow together because they complement each other: one might fix nitrogen, one might attract predatory insects, one might provide ground cover. Guild planting is more specific than polyculture — every plant has a defined role rather than simply being a different crop in the same space."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A polyculture bed uses the whole growing season and all parts of the bed's volume by combining crops that mature at different times, grow at different heights, and need different nutrients. It is not the same as "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "guild-planting"}}],
+            "text": "guild planting"
+          },
+          {
+            "type": "text",
+            "text": ", which is more specific about each plant's role. A simple polyculture uses the space efficiently; a guild uses it ecologically."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Basic principles"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The three most useful combinations are: tall plus low (corn with squash below), fast plus slow (radish among parsnips), and early plus late (spring lettuce cleared before a main leek crop goes in). Choose combinations where the crops are never competing for the same resource at the same time."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "A practical example"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A summer bed might combine runner beans on a central frame, courgette sprawling to one side, basil low on the other, and nasturtiums at the front edge. The beans fix nitrogen. The courgette shades the soil. The nasturtiums draw aphids away from the beans."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What to avoid"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Do not combine crops with the same nutrient demand unless one of them is a nitrogen-fixer. Do not combine crops that need very different water regimes. Do not overcrowd: each plant still needs its minimum recommended spacing, even in a polyculture. The aim is no bare soil, not maximum density."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "swales-on-contour",
+  "title": "Swales on contour",
+  "subtitle": "Dug channels that catch and spread rainwater across a slope.",
+  "excerpt": "A swale is a shallow, flat-bottomed trench dug along the contour of a slope to catch and hold rainwater, allowing it to soak in rather than run off. On a vegetable garden or forest garden slope, swales slow erosion and recharge the soil with water during rain.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "permaculture",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Swale technique from Bill Mollison, Permaculture: A Designers' Manual (1988) and David Holmgren, Permaculture: Principles and Pathways Beyond Sustainability (2002). Scale-appropriate swale sizing from Martin Crawford, Creating a Forest Garden (2010).",
+  "garden": {
+    "plantSlug": "comfrey",
+    "subTopic": "growing",
+    "plantingMonths": ["october", "november", "february", "march"],
+    "containerFriendly": false,
+    "indoorFriendly": false
+  },
+  "techniqueSlugs": ["swale-design", "water-harvesting"],
+  "criticalTechniques": ["swale-design"],
+  "glossaryTerms": [
+    {
+      "slug": "on-contour",
+      "term": "On contour",
+      "definition": "Aligned along a level line on a slope, so that water caught in a channel stays level and spreads evenly rather than flowing to one end. Swales, paths, and planting rows built on contour slow water movement and encourage it to soak in. The opposite is off-contour, which channels water toward a low point."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A swale is a shallow, flat-bottomed trench dug "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "on-contour"}}],
+            "text": "on contour"
+          },
+          {
+            "type": "text",
+            "text": " across a slope. Rain falling uphill of the swale runs into it and soaks down rather than washing away. The excavated soil forms a berm (low bank) on the downhill side, which is planted with trees, shrubs, or productive perennials."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "When swales are useful"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Swales are most useful on slopes steeper than 5 degrees where rain runs off quickly. On flat ground, standing water is the problem rather than runoff and swales are not appropriate. They work best in climates with distinct wet and dry seasons, or in a UK garden where summer drought follows wet winters."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Sizing for a small garden"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For a domestic garden or allotment slope, a swale 20 to 30 cm deep and 30 to 50 cm wide is enough. Mark the contour first with a line level or A-frame level: both pegs must be at the same height before digging. Dig along the marked line. The bottom of the trench must stay level throughout its length."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Planting the berm"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Plant the berm (the downhill bank formed by excavated soil) immediately with perennials to stabilise it. Comfrey, currants, and fruit trees are good choices. Their roots hold the berm together and they benefit from the improved moisture at the swale edge."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Include an overflow point",
+          "body": "Always include an overflow point at one swale end: a slightly lower section that directs excess water to a safe outlet. Without one, a swale in heavy rain can overtop and cause erosion at the berm edge."
+        }
+      }
+    ]
+  }
+}

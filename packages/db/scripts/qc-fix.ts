@@ -823,7 +823,7 @@ function buildTitleBasedOrientation(title: string, type: string): string {
     return `${titleStripped} as the home kitchen makes it. Makes about 4 portions. A long-standing kitchen recipe for everyday cooking at home.`
   }
   if (type === 'GROWING_GUIDE') {
-    return `${titleStripped} as the home garden grows it. Sown in spring, picked through summer; full sun, rich soil, steady watering.`
+    return `${titleStripped} as the home garden grows it. Sown in spring, picked through summer; full sun, rich soil, steady watering. Good for years with almost no extra attention.`
   }
   return `${titleStripped}. A long-standing home practice.`
 }
