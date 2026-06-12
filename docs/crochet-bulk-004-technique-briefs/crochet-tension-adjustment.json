@@ -1,0 +1,179 @@
+{
+  "slug": "crochet-tension-adjustment",
+  "title": "Adjusting tension when your gauge is off",
+  "subtitle": "What to change when your swatch comes out too big or too small",
+  "excerpt": "When your tension swatch does not match the pattern's gauge, you have three options. Understand which one to try first and when to move to the next.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book. Pauline Turner, How to Crochet (HarperCollins). Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776.",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": ["tension", "gauge"]
+  },
+  "recipeTools": [
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "blocking-mat", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "gauge", "term": "Gauge", "definition": "The number of stitches and rows that fit in a measured area, usually 10 cm, using a specific yarn and hook. Used to confirm the finished piece will come out the right size." },
+    { "slug": "yarn-tension", "term": "Yarn tension", "definition": "The amount of resistance in the working yarn as it feeds onto the hook. Consistent tension produces stitches of uniform size." },
+    { "slug": "tension-swatch", "term": "Tension swatch", "definition": "A small sample piece worked to check that your stitch size matches the pattern's gauge before starting the main project." }
+  ],
+  "techniqueSlugs": ["crochet-tension-adjustment", "crochet-round-gauge", "crochet-holding-yarn"],
+  "criticalTechniques": ["crochet-tension-adjustment"],
+  "aliases": ["crochet gauge adjustment", "crochet tension too tight", "crochet tension too loose", "crochet swatch gauge off", "adjusting crochet tension"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tension adjustment is what you do when your "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tension-swatch" } }],
+            "text": "tension swatch"
+          },
+          {
+            "type": "text",
+            "text": " does not match the pattern's stated "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gauge" } }],
+            "text": "gauge"
+          },
+          {
+            "type": "text",
+            "text": ". A swatch that is too small means your stitches are tighter than the pattern's; a swatch that is too large means they are looser. The goal is to make one adjustment and reswatch before starting the project."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading the swatch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Block or wet the swatch first if the yarn requires it. Let it dry fully before measuring. Then measure in the centre of the swatch, not at the edges, where the selvedge pulls in slightly. Count stitches across a 10 cm span and rows over a 10 cm height."
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "More stitches than the pattern states: your stitches are smaller (tighter "
+            },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "yarn-tension" } }], "text": "yarn tension" },
+            { "type": "text", "text": " or a smaller hook)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fewer stitches than the pattern states: your stitches are larger (looser yarn tension or a bigger hook)." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Which adjustment to try first" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Change the hook size first. Go up one size if the swatch is too small; go down one size if it is too large. Hook size is the most reliable adjustment. Rework the swatch and remeasure."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the new swatch is still off by a small amount, try adjusting the hand tension. Ease the yarn hold very slightly for tighter stitches, or firm it up for looser ones. This is a fine-tune, not a primary fix; hook size does most of the work."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the pattern specifies a yarn weight and your yarn is a different weight, no amount of hook or tension adjustment will fully correct the gauge. Substitute a yarn that matches the stated weight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When gauge does not matter" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For dishcloths, scarves, amigurumi, and other items where the exact finished measurement is not critical, gauge is less important than consistency across the piece. Still work a swatch to check the fabric feels right, but do not stress over hitting an exact stitch count."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The swatch measures differently dry versus blocked",
+              "cause": "Natural fibres like wool and cotton relax or grow when wet. Measuring before blocking gives a false reading.",
+              "fix": "Always measure after blocking and drying. The blocked measurement is what the finished piece will look like."
+            },
+            {
+              "symptom": "Hook size is matching but the fabric feels wrong",
+              "cause": "The yarn weight or fibre content differs from what the pattern assumes.",
+              "fix": "Check the pattern's yarn specification. If your yarn is a different weight, change the yarn before adjusting anything else."
+            },
+            {
+              "symptom": "Gauge matches width but not height (or vice versa)",
+              "cause": "Row height and stitch width are controlled by different factors. Row height depends on how tall each stitch is pulled up.",
+              "fix": "Adjust how far you pull up each loop when drawing through. A very slight height change in each loop adds up across many rows."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For projects worked in the round, gauge in a flat swatch can differ from gauge in the round. See the round gauge guide for how to check tension on circular or spiral projects."
+          }
+        ]
+      }
+    ]
+  }
+}

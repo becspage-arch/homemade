@@ -1,0 +1,213 @@
+{
+  "slug": "crochet-reading-written-patterns",
+  "title": "Reading a written crochet pattern",
+  "subtitle": "What the abbreviations mean and how to follow a row",
+  "excerpt": "A written crochet pattern is a compact list of abbreviations and stitch counts. Learn to decode each element and you can follow any pattern confidently.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pauline Turner, How to Crochet (HarperCollins). Edie Eckman, The Crochet Answer Book. Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776.",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": ["reading-patterns"]
+  },
+  "recipeTools": [
+    { "slug": "stitch-marker", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "turning-chain", "term": "Turning chain", "definition": "A chain or chains worked at the start of a flat row to bring the hook up to the height of the first stitch in the new row." },
+    { "slug": "stitch-count", "term": "Stitch count", "definition": "The total number of stitches in a row or round, usually stated in brackets at the row end as (N sts)." },
+    { "slug": "repeat", "term": "Repeat", "definition": "A sequence of stitches enclosed in brackets or between asterisks that is worked a stated number of times." }
+  ],
+  "techniqueSlugs": ["crochet-reading-written-patterns", "crochet-turning-chain", "crochet-counting-stitches"],
+  "criticalTechniques": ["crochet-reading-written-patterns"],
+  "aliases": ["reading crochet patterns", "crochet abbreviations", "crochet pattern abbreviations", "how to read a crochet pattern"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A written crochet pattern is a compact set of row-by-row instructions that uses abbreviations to name each stitch and numbers to say how many times to work it. You use one whenever you want to make a specific item to a specific size. The abbreviations look dense the first time, but every abbreviation names a physical move: learn the moves and the pattern becomes a clear checklist."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The anatomy of a pattern row" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Most written patterns follow the same layout. A row instruction starts with the row number, gives any "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "turning-chain" } }],
+            "text": "turning chain"
+          },
+          {
+            "type": "text",
+            "text": ", then lists the stitches in order, and ends with a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stitch-count" } }],
+            "text": "stitch count"
+          },
+          {
+            "type": "text",
+            "text": " in brackets. The stitch count is the verification step: if your count matches the pattern's, the row is right."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A typical row looks like this: \"Row 3: ch 1 (does not count as a stitch), 1 dc in each st across. (30 sts)\". That is: work one chain that does not count as a stitch, then one double crochet into every stitch to the end. The row contains thirty stitches when done."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common UK abbreviations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "UK patterns use lowercase abbreviations. The most common are:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "ch: chain" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "sl st: slip stitch" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "dc: double crochet (UK; the same move is called single crochet in US patterns)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "htr: half treble" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "tr: treble (UK; the same move is called double crochet in US patterns)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "dtr: double treble (UK; called treble in US patterns)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "sp: space (the gap between two stitches)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "t-ch: turning chain" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading a repeat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When a row contains a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "repeat" } }],
+            "text": "repeat"
+          },
+          {
+            "type": "text",
+            "text": ", it is enclosed in one of three ways: round brackets, square brackets, or an asterisk marker. All three mean the same thing: work the sequence inside, then repeat it the number of times stated."
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "(2 tr, ch 2) 4 times: work 2 trebles then chain 2, four times in a row." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "[dc, ch 1] across: work the sequence from the first bracket to the last, repeating until you reach the end of the row." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "*1 tr in next st, sk 1; rep from * to end: work from the asterisk to the semicolon, then repeat from the asterisk until the end." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to follow a pattern without losing your place" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Read the whole row through once before picking up the hook. Know where it starts and ends." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place a stitch marker at the start of the row. Move it up each time you complete a row." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Count out loud or use a row counter. Don't rely on memory alone." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After every row, count the stitches and check against the pattern's stitch count in brackets. Fix discrepancies before starting the next row." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mark each completed row on the pattern with a pencil. A printed-out pattern is easier to annotate than a phone screen." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The stitch count at the end of the row doesn't match the pattern",
+              "cause": "A stitch was missed, worked twice, or the turning chain was counted as a stitch when it shouldn't be (or vice versa).",
+              "fix": "Check the pattern's note on whether the turning chain counts. Recount from the start of the row. If the turning chain notes say 'does not count', skip it when you count."
+            },
+            {
+              "symptom": "A repeat doesn't divide evenly across the row",
+              "cause": "The starting chain may have the wrong stitch count. Many repeats need a set multiple plus a few extra, and the pattern should state what that multiple is.",
+              "fix": "Check the pattern's 'foundation' or 'starting chain' section. Many patterns state the multiple needed (e.g. 'multiple of 6 + 2')."
+            },
+            {
+              "symptom": "The piece gets wider or narrower on every row",
+              "cause": "Stitches are being added or dropped without a deliberate increase or decrease instruction.",
+              "fix": "Check that you're working into the very last stitch of each row. The last stitch before the turning chain is easy to miss."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once written instructions feel comfortable, try a crochet chart. Charts map the same information visually using symbols, which some makers find easier to follow for lace and motif work. See the chart-reading guide in this section."
+          }
+        ]
+      }
+    ]
+  }
+}

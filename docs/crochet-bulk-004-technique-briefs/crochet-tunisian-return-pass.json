@@ -1,0 +1,145 @@
+{
+  "slug": "crochet-tunisian-return-pass",
+  "title": "Tunisian return pass",
+  "subtitle": "How to work off accumulated loops at the end of each Tunisian forward pass",
+  "excerpt": "The return pass is the second half of every Tunisian row. It works the collected loops off the hook in pairs, leaving one loop to start the next forward pass.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book.",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": ["tunisian"]
+  },
+  "recipeTools": [
+    { "slug": "tunisian-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "return-pass", "term": "Return pass", "definition": "In Tunisian crochet, the right-to-left movement that works off the accumulated loops in pairs, completing the row." },
+    { "slug": "forward-pass", "term": "Forward pass", "definition": "In Tunisian crochet, the left-to-right movement along a row during which loops are picked up and accumulated on the hook without being worked off." }
+  ],
+  "techniqueSlugs": ["crochet-tunisian-return-pass", "crochet-tunisian-foundation"],
+  "criticalTechniques": ["crochet-tunisian-return-pass"],
+  "aliases": ["tunisian return pass", "tunisian crochet return", "working off loops tunisian", "tunisian crochet row completion"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After a Tunisian "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "forward-pass" } }],
+            "text": "forward pass"
+          },
+          {
+            "type": "text",
+            "text": " fills the hook with one loop per stitch, the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "return-pass" } }],
+            "text": "return pass"
+          },
+          {
+            "type": "text",
+            "text": " clears the hook by working those loops off in pairs from right to left. Every Tunisian row consists of these two passes. The return pass is worked the same way regardless of the stitch used on the forward pass."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Standard return pass" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the end of the forward pass, the hook holds one loop per stitch plus the leading loop." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over. Draw through the first (rightmost) loop only." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Yarn over. Draw through the next 2 loops on the hook. One chain made, one loop cleared." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat step 3 across all remaining loops until one loop remains on the hook." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The single remaining loop is the starting loop for the next forward pass." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Colour return pass" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "To change colour for the next forward pass, join the new yarn just before the last two loops of the return. Draw the new colour through the last two loops to complete the return pass. The new colour is now on the hook ready for the next forward pass."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The return produces an extra stitch at the right edge",
+              "cause": "The first step of the return pass drew through two loops rather than one, creating a visible chain at the edge.",
+              "fix": "The first yarn-over of the return always draws through only one loop. Check the sequence: through 1, then through 2 for each subsequent step."
+            },
+            {
+              "symptom": "The return tension is much looser than the forward pass",
+              "cause": "The yarn is being drawn through loosely on the return, making the chain loops too large.",
+              "fix": "Hold the working yarn more firmly on the return pass. The chain loops should match the height of the stitches from the forward pass."
+            },
+            {
+              "symptom": "The stitch count on the forward pass does not match the expected number",
+              "cause": "A loop was accidentally worked off in the wrong place on the previous return.",
+              "fix": "Count the loops on the hook before starting the return. It should match the stitch count of the row. If it does not, find where the extra or missing loop sits before returning."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the standard return pass is consistent, try a return pass in a contrast colour across every row to create a striped effect. The colour change happens only during the return pass, so the forward pass stitches stay in the main colour."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "slug": "crochet-pattern-sizing",
+  "title": "Adjusting a pattern to a different size",
+  "subtitle": "How to scale stitch counts up or down when the stated sizes do not fit",
+  "excerpt": "Most crochet patterns give several sizes, but not always the one you need. Scaling a pattern by adjusting stitch counts is straightforward once you understand the relationship between gauge, stitch count, and finished measurement.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book. Pauline Turner, How to Crochet (HarperCollins).",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": ["pattern-adaptation", "sizing"]
+  },
+  "recipeTools": [
+    { "slug": "measuring-tape-soft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "gauge", "term": "Gauge", "definition": "The number of stitches and rows that fit in a measured area, usually 10 cm, using a specific yarn and hook. Used to confirm the finished piece will come out the right size." },
+    { "slug": "ease", "term": "Ease", "definition": "The difference between a body measurement and the corresponding finished garment measurement. Positive ease means the garment is larger than the body; negative ease means it is smaller (fitted)." }
+  ],
+  "techniqueSlugs": ["crochet-pattern-sizing", "crochet-calculating-yardage", "crochet-tension-adjustment"],
+  "criticalTechniques": ["crochet-pattern-sizing"],
+  "aliases": ["sizing crochet pattern", "adjusting crochet size", "crochet pattern resize", "scaling crochet pattern"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Adjusting a pattern to a different size requires knowing the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gauge" } }],
+            "text": "gauge"
+          },
+          {
+            "type": "text",
+            "text": ": how many stitches and rows fit in 10 cm. Once you have that number, you can calculate any finished measurement. The general formula is: stitches needed = (desired measurement in cm ÷ 10) × stitches per 10 cm."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: establish your gauge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work a gauge swatch of at least 15 cm square in the stitch the pattern uses. Block if the yarn requires it. Measure stitches across 10 cm in the centre of the swatch (not at the edges)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: calculate the new stitch count" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Decide on the required measurement including any "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ease" } }],
+            "text": "ease"
+          },
+          {
+            "type": "text",
+            "text": ". Divide by 10, then multiply by your stitch gauge. Round to a whole number, and if the stitch pattern requires a specific multiple (such as a repeat of 6), round to the nearest multiple."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Example: required width 50 cm, gauge 14 stitches per 10 cm. Calculation: (50 ÷ 10) × 14 = 70 stitches. If the stitch repeat is 6, round to the nearest multiple of 6 (66 or 72)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: adjust row counts" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the same approach for row counts. Measure row gauge (rows per 10 cm) from the swatch. Calculate: (required height ÷ 10) × rows per 10 cm = number of rows needed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Keeping shaping proportional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When a pattern includes increases or decreases for shaping (armholes, necklines, waist shaping), adjust those proportionally. If the original pattern works a decrease every 4 rows over 20 rows (5 decreases total), and your new size needs 25 rows for the same section, work a decrease every 5 rows instead."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The adjusted piece comes out the wrong size despite the calculation being correct",
+              "cause": "The swatch gauge was measured before blocking, and the yarn relaxed significantly after blocking.",
+              "fix": "Always block the swatch and measure after blocking. The difference can be one or two stitches per 10 cm, which compounds over the full width."
+            },
+            {
+              "symptom": "The repeat adjustment shifts a decorative stitch pattern visibly off-centre",
+              "cause": "Rounding to a multiple of the repeat moved the centre point of the stitch pattern.",
+              "fix": "Add or remove half a repeat from each side to keep the pattern centred, rather than adding a full repeat to one side."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the stitch and row counts are adjusted, recalculate the yarn quantity needed. A larger size will use more yarn than the pattern states; a smaller size will use less. See the yardage guide for how to estimate."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "slug": "crochet-edging-single-row",
+  "title": "Single-row edging",
+  "subtitle": "How to add a clean, simple border along any crochet edge in one pass",
+  "excerpt": "A single-row edging in double crochet is the most useful finishing technique in crochet. It stabilises the edge, adds a professional finish, and serves as the base for any decorative border added later.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book. Pauline Turner, How to Crochet (HarperCollins).",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": ["edging", "finishing"]
+  },
+  "recipeTools": [
+    { "slug": "stitch-marker", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "selvedge", "term": "Selvedge", "definition": "The side edges of a flat crocheted piece, formed by the turning chains and the first or last stitch of each row." },
+    { "slug": "right-side", "term": "Right side", "definition": "The face of the fabric that is intended to show. In flat crochet, the right side faces you on odd-numbered rows if working with the right side facing." }
+  ],
+  "techniqueSlugs": ["crochet-edging-single-row", "crochet-edging-crab-stitch", "crochet-edging-scallop"],
+  "criticalTechniques": ["crochet-edging-single-row"],
+  "aliases": ["crochet border", "single crochet edging", "double crochet border", "crochet edge finish", "plain edging crochet"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A single-row edging adds one pass of double crochet around the entire outer edge of a piece. It covers the raw "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "selvedge" } }],
+            "text": "selvedge"
+          },
+          {
+            "type": "text",
+            "text": " edges, straightens any irregular row ends, and provides a clean loop into which a second decorative border can be worked later. It is the standard first step before adding crab stitch, scallops, or any other finishing border."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work with the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "right-side" } }],
+            "text": "right side"
+          },
+          {
+            "type": "text",
+            "text": " facing you. Join with a slip stitch at any corner or at the first stitch of a top or bottom edge. Chain 1. The chain 1 does not count as a stitch."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working along each edge type" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Top or bottom edge (the last or first row): work 1 double crochet into each stitch across. One stitch per stitch." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Side edges (selvedge): work stitches evenly into the end of each row. A rough guide is 1 double crochet per double crochet row, or 2 double crochets per treble row. Adjust to keep the edge flat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Corners: work 3 stitches into each corner stitch to allow the border to turn without pulling." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Completing the round" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Continue around all four sides, keeping the stitch count even on opposite edges." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When back at the start, join with a slip stitch to the top of the first double crochet." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the edging will stay as a single row, fasten off. If a second border follows, proceed without fastening off." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The side edges ripple or ruffle",
+              "cause": "Too many stitches were worked along the selvedge relative to the row height.",
+              "fix": "Reduce to 1 double crochet per row on the side edges, or use a slip stitch between every second row. Pull the edge flat and count; if it waves, there are too many stitches."
+            },
+            {
+              "symptom": "The side edges pull in",
+              "cause": "Too few stitches were worked into the selvedge.",
+              "fix": "Add one stitch every third or fourth row along the selvedge until the edge lies flat."
+            },
+            {
+              "symptom": "The corners do not lie flat and pull tight",
+              "cause": "Fewer than 3 stitches were worked into the corner stitch.",
+              "fix": "Work 3 double crochets into the corner stitch. On square corners with thick yarn, 5 stitches may be needed."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once a flat single-row edging is reliable, add a second round in a contrasting colour for a stripe effect, or switch to crab stitch on the second round for a corded edge. Both are worked directly on top of the single-row base."
+          }
+        ]
+      }
+    ]
+  }
+}

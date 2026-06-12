@@ -1,0 +1,174 @@
+{
+  "slug": "crochet-calculating-yardage",
+  "title": "Calculating yarn requirements",
+  "subtitle": "How to work out how much yarn a project needs before you start",
+  "excerpt": "Running out of yarn mid-project is avoidable. A quick yardage calculation before you start tells you how many balls to buy, with a safety margin for weaving in ends.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book. Pauline Turner, How to Crochet (HarperCollins).",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": ["project-planning", "yardage"]
+  },
+  "recipeTools": [
+    { "slug": "ball-winder", "isOptional": true },
+    { "slug": "measuring-tape-soft", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "meterage", "term": "Meterage", "definition": "The length of yarn in a ball or skein, stated in metres. Used with gauge to calculate how many balls a project needs." },
+    { "slug": "gauge", "term": "Gauge", "definition": "The number of stitches and rows that fit in a measured area, usually 10 cm. Used to calculate project dimensions and yarn requirements." }
+  ],
+  "techniqueSlugs": ["crochet-calculating-yardage", "crochet-pattern-sizing", "crochet-yarn-substitution"],
+  "criticalTechniques": ["crochet-calculating-yardage"],
+  "aliases": ["crochet yardage calculator", "how much yarn for crochet", "crochet yarn quantity", "estimating yarn crochet"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Calculating how much yarn a project needs starts from the pattern's stated "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "meterage" } }],
+            "text": "meterage"
+          },
+          {
+            "type": "text",
+            "text": " or yardage requirement, adjusted for your own "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gauge" } }],
+            "text": "gauge"
+          },
+          {
+            "type": "text",
+            "text": " and the size you are making. Getting this right before buying prevents the common problem of running short on the last few rows."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using the pattern's stated amount" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you are making the exact size the pattern states, using the pattern's recommended yarn, the stated yardage is usually reliable. Add 10 to 15 percent as a buffer: dye lots can be slightly different, and weaving in ends uses more yarn than expected over a large project."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adjusting for a different size" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When making a different size from the pattern, calculate by area:"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Find the finished area of the pattern's stated size (width × height for a rectangle; use approximate area for shaped pieces)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Find the finished area of your chosen size." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Divide your chosen area by the pattern's area to get a scaling factor." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Multiply the pattern's total yardage by that factor. Add 15 percent for safety." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Estimating from a swatch" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For projects with no pattern or when substituting a very different yarn, estimate from a swatch. Work a swatch of 10 × 10 cm. Unravel it and measure the yarn used in centimetres. Divide by 100 (to get metres per 10 cm square). Multiply by the total area of the project in 10 cm squares. Add 15 percent."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Buying extra" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Always buy from the same dye lot. A colour can vary visibly between lots, even with the same label and colour name. If the pattern suggests a specific total and you want a safety margin, buying one extra ball from the same dye lot is the cheapest insurance available."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The yarn runs out two rows from the end",
+              "cause": "The calculation was based on the wrong size, or the yarn used more per row than estimated.",
+              "fix": "Find the same yarn in a different dye lot and work the last few rows in it, or add a deliberate stripe at the join point to disguise the lot change."
+            },
+            {
+              "symptom": "There are three full balls left over after the project is finished",
+              "cause": "The calculation or buffer was too generous, or the yarn was substituted for one with higher meterage per ball.",
+              "fix": "Check the meterage per ball of what you bought versus what the pattern specified. Higher meterage per ball means fewer balls needed."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you are substituting a different yarn weight or fibre, read the ball band to find the meterage per ball and compare it to the pattern's specified yarn. See the yarn substitution guide for how to check whether the weights match."
+          }
+        ]
+      }
+    ]
+  }
+}

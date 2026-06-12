@@ -1,0 +1,146 @@
+{
+  "slug": "crochet-yarn-substitution",
+  "title": "Yarn substitution",
+  "subtitle": "How to replace the pattern's yarn with something else without wrecking the result",
+  "excerpt": "Substituting a different yarn works when the replacement matches weight, fibre type, and construction closely enough. Three checks before you buy prevent expensive mistakes.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book. Pauline Turner, How to Crochet (HarperCollins).",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": ["yarn-selection", "project-planning"]
+  },
+  "recipeTools": [
+    { "slug": "measuring-tape-soft", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "yarn-weight", "term": "Yarn weight", "definition": "A standardised category indicating the thickness of the yarn strand. Matching weight is the most important factor when substituting yarn." },
+    { "slug": "meterage", "term": "Meterage", "definition": "The length of yarn in a ball or skein. When substituting, compare the total meterage of the substitute to the total meterage specified in the pattern." }
+  ],
+  "techniqueSlugs": ["crochet-yarn-substitution", "crochet-calculating-yardage", "crochet-fibre-types-guide"],
+  "criticalTechniques": ["crochet-yarn-substitution"],
+  "aliases": ["substitute crochet yarn", "replacing yarn in pattern", "different yarn same pattern crochet", "crochet yarn swap"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Substituting a yarn means choosing a different yarn than the one specified in the pattern. A good substitute matches the original in "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "yarn-weight" } }],
+            "text": "weight"
+          },
+          {
+            "type": "text",
+            "text": ", fibre type, and construction closely enough that the gauge and finished look are similar. No substitute is ever a perfect copy, but a careful choice produces a result that is close to the pattern's intention."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The three checks" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Weight: the substitute must be the same weight category as the original (DK for DK, aran for aran). Going one weight category up or down changes stitch size, drape, and the amount of yarn used." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fibre type: match the fibre group (animal, plant, synthetic) as closely as possible. Substituting cotton for wool produces a heavier, less elastic fabric with different drape. Substituting acrylic for wool changes the care requirements and feel." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Construction: a smooth, tightly-plied yarn substitutes well for another of the same type. A fluffy yarn with a halo does not substitute well for a smooth yarn in a stitch-definition pattern, and vice versa." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Calculating the quantity needed" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Compare the total "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "meterage" } }],
+            "text": "meterage"
+          },
+          {
+            "type": "text",
+            "text": " of the original (number of balls × metres per ball) to the meterage per ball of the substitute, then calculate how many balls of the substitute you need. Always round up and buy one extra from the same dye lot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Swatching the substitute" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work a gauge swatch before buying all the yarn. The substitute may need a different hook size to hit the pattern's gauge. Buy a single ball first, swatch, check gauge, and adjust the hook if needed. Only buy the full quantity once the gauge is confirmed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The substitute hits the stitch gauge but the fabric drapes completely differently from the pattern photo",
+              "cause": "The fibre type is significantly different. Cotton does not drape like wool; acrylic does not drape like silk.",
+              "fix": "The gauge check confirms size, not feel. Accept that the substitute will produce a different fabric character. If drape is critical to the pattern (a flowing shawl, a drapey cardigan), prioritise fibre type over an exact stitch gauge."
+            },
+            {
+              "symptom": "The substitute runs out before the project is finished",
+              "cause": "The meterage calculation was based on the pattern's listed total, but the substitute has fewer metres per ball.",
+              "fix": "Find the same substitute in another dye lot and use it in a less visible section, or add a deliberate stripe at the join."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When the swatch gauge is correct with the substitute, compare the swatch fabric to the pattern photo. If the pattern uses the same stitch and the swatches look similar, the substitution is likely to work. If they look very different in texture or structure, reconsider the substitute before buying the full quantity."
+          }
+        ]
+      }
+    ]
+  }
+}

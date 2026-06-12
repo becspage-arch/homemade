@@ -1,0 +1,136 @@
+{
+  "slug": "crochet-short-rows",
+  "title": "Short rows in crochet",
+  "subtitle": "How to turn before the end of a row to add shaping without increasing or decreasing",
+  "excerpt": "Short rows build extra depth into part of a fabric by turning early and only crocheting a portion of the row. They appear in shoulder shaping and curved edges.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book.",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": ["shaping", "short-rows"]
+  },
+  "recipeTools": [
+    { "slug": "stitch-marker", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "short-row", "term": "Short row", "definition": "A row that is turned before reaching the end of the full stitch count, working back over only part of the previous row to add extra fabric depth in a specific section." },
+    { "slug": "wrap-and-turn", "term": "Wrap and turn", "definition": "A method of turning mid-row that creates a chain loop around the edge stitch to prevent a gap at the turning point." }
+  ],
+  "techniqueSlugs": ["crochet-short-rows", "crochet-decreasing-at-edges"],
+  "criticalTechniques": ["crochet-short-rows"],
+  "aliases": ["crochet short rows", "turning mid row crochet", "crochet partial rows", "shoulder shaping crochet"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "short-row" } }],
+            "text": "short row"
+          },
+          {
+            "type": "text",
+            "text": " turns the work before the end of a full row, then turns back and works only the stitches already worked. The unworked stitches at the end of the row remain untouched. Working multiple short rows in a section adds depth to that area without changing the overall stitch count. This technique is common in garment shaping and curved edges."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Basic short row" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work across to the turning point. Place a stitch marker in the last stitch worked to mark the short-row boundary." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the turning chain (if required for the stitch type) and turn as you would at the end of a full row." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work back across the stitches just worked, stopping at the marker." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn again and continue as the pattern directs. The unworked stitches beyond the marker wait for the next full row." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Closing the gap with wrap and turn" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wrap-and-turn" } }],
+            "text": "wrap and turn"
+          },
+          {
+            "type": "text",
+            "text": " hides the small gap that forms at the turning point. Before turning, chain 1, then slip stitch into the next unworked stitch and back out again. The chain closes the gap and the pattern continues normally."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "A visible gap appears at every short-row turning point",
+              "cause": "No wrap was worked at the turn, so the transition between the worked and unworked sections shows as a hole.",
+              "fix": "Use the wrap and turn method at each turning point. When working back past the wrapped stitch on the return, work the wrap together with the stitch below it."
+            },
+            {
+              "symptom": "The short-row section is shorter than expected",
+              "cause": "The marker was placed too early, leaving too few stitches in the short section.",
+              "fix": "Recount. Markers are easy to shift mid-row without noticing. Check the marker position against the pattern's stated turning point before turning."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Practice short rows on a swatch before using them in a garment. Work a 30-stitch rectangle and introduce short rows at stitch 20, then 15, then 10, to see how the fabric builds a curved edge. This shows exactly how shoulder shaping works before it matters."
+          }
+        ]
+      }
+    ]
+  }
+}

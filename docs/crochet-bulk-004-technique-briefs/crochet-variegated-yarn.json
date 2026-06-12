@@ -1,0 +1,155 @@
+{
+  "slug": "crochet-variegated-yarn",
+  "title": "Working with variegated yarn",
+  "subtitle": "How to manage colour pooling and stitch visibility when working with multi-colour yarn",
+  "excerpt": "Variegated yarn changes colour along the strand. How the colours land in your fabric depends on stitch choice, row width, and how you wind the skein. A few decisions made early prevent patches and pooling.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book.",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": ["colour", "yarn-selection"]
+  },
+  "recipeTools": [
+    { "slug": "ball-winder", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "variegated-yarn", "term": "Variegated yarn", "definition": "Yarn dyed in multiple colours along the strand, creating colour changes as it is worked." },
+    { "slug": "colour-pooling", "term": "Colour pooling", "definition": "The unintended alignment of the same colour across multiple rows, creating patches or stripes that were not in the original yarn colourway." }
+  ],
+  "techniqueSlugs": ["crochet-variegated-yarn", "crochet-choosing-yarn-type"],
+  "criticalTechniques": ["crochet-variegated-yarn"],
+  "aliases": ["variegated yarn crochet", "multi-colour yarn crochet", "colour pooling crochet", "crochet self-striping yarn"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Working with "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "variegated-yarn" } }],
+            "text": "variegated yarn"
+          },
+          {
+            "type": "text",
+            "text": " introduces a variable the pattern cannot fully predict: where each colour lands depends on how many stitches are in each row relative to the length of the colour repeat. When the row width and colour repeat happen to align, "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colour-pooling" } }],
+            "text": "colour pooling"
+          },
+          {
+            "type": "text",
+            "text": " occurs. Understanding this avoids unpleasant surprises mid-project."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stitch choice with variegated yarn" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Simple stitches such as double crochet and treble show colour changes clearly. Textured stitches with lots of post work, relief patterns, or very dense fabric can muddy the colours together. If the yarn is the feature, choose a stitch that gives it space."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lace stitches with open spaces between clusters also work well with variegated yarn. Each cluster sits in a small area, so the colour repeat shows clearly across the gaps."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Avoiding unwanted pooling" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If pooling appears, change the row width by adding or removing a few stitches. Even a 2-stitch difference can shift the colour alignment enough to break the pool." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work in the round rather than flat rows. Spirals break the regular colour alignment that causes banding." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Alternate between two skeins of the same colourway. Each skein has its own colour sequence starting point; alternating rows prevents one extended section of a single colour dominating." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using pooling intentionally" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Planned pooling is a technique where stitch count is deliberately set to match the colour repeat, creating planned geometric patterns from a variegated yarn. It requires precise swatch work and only suits yarns with very regular repeat lengths. Most makers treat pooling as something to prevent rather than something to design around."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "There are large patches of one colour with no transitions",
+              "cause": "The row width matches the colour repeat length, causing the same colour to always start and end in the same position.",
+              "fix": "Add or subtract two to four stitches per row to break the alignment. Reswatch before continuing the project."
+            },
+            {
+              "symptom": "Two skeins from the same dye lot look very different in the finished piece",
+              "cause": "Variegated yarn, even within the same lot, can have different starting points in the colour sequence.",
+              "fix": "Alternate skeins every row or every two rows to blend the differences."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before committing to a full project, work a 20-row swatch with the variegated yarn. The swatch usually reveals any pooling problem early, when it is easy to adjust the stitch count."
+          }
+        ]
+      }
+    ]
+  }
+}

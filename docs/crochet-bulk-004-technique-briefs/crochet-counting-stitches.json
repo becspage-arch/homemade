@@ -1,0 +1,184 @@
+{
+  "slug": "crochet-counting-stitches",
+  "title": "Counting stitches and rows",
+  "subtitle": "How to check your stitch count at the end of every row and track row progress",
+  "excerpt": "A wrong stitch count caught early costs a few seconds. The same mistake caught ten rows later costs half an hour. Learn to count quickly and accurately.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book. Pauline Turner, How to Crochet (HarperCollins).",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": ["stitch-counting"]
+  },
+  "recipeTools": [
+    { "slug": "stitch-marker", "isOptional": false },
+    { "slug": "row-counter", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "stitch-count", "term": "Stitch count", "definition": "The total number of stitches in a row or round, usually stated in brackets at the row end as (N sts)." },
+    { "slug": "turning-chain", "term": "Turning chain", "definition": "A chain or chains worked at the start of a flat row to bring the hook up to the height of the first stitch in the new row." }
+  ],
+  "techniqueSlugs": ["crochet-counting-stitches", "crochet-reading-written-patterns"],
+  "criticalTechniques": ["crochet-counting-stitches"],
+  "aliases": ["counting crochet stitches", "crochet stitch count", "how to count rows in crochet", "crochet row counting"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Counting stitches is the check you do at the end of every row or round to confirm the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stitch-count" } }],
+            "text": "stitch count"
+          },
+          {
+            "type": "text",
+            "text": " matches the number in the pattern. It takes ten seconds and it is the fastest way to find a missed or extra stitch before the piece goes past the point where a quick fix is possible."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What a stitch looks like from the top" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each stitch has two loops sitting on top of it like a V. Count the Vs to count the stitches. Work along the top of the row from one end to the other, touching each V as you count. Every V is one stitch."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "turning-chain" } }],
+            "text": "turning chain"
+          },
+          {
+            "type": "text",
+            "text": " sits at one end of the row and may or may not count as a stitch. The pattern states which. When it counts, include it in your total. When it does not count, skip past it and start counting from the first real stitch."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Counting in sections" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For rows longer than about 20 stitches, count in groups of ten and place a stitch marker after every tenth stitch. This way a recount starts from the last marker rather than from the beginning of the row. Long rows with no markers make it easy to lose count at stitch 32 and restart from zero."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tracking rows" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Count rows by looking at the side edge of the fabric. Each row produces one horizontal band. Run your finger up the edge and count the bands."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For row tracking, a row counter or a tally on paper is more reliable than memory. Click the counter or mark the paper at the end of every row, not at the start of the next one."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to count" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the end of every row, before you do the turning chain for the next row." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After every increase or decrease row, because those change the stitch count deliberately." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Before setting the work down. A clear count means you know exactly where to pick up from." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The count keeps coming out one stitch over",
+              "cause": "The turning chain is being counted as a stitch when the pattern says it does not count.",
+              "fix": "Re-read the row instruction. If it says 'ch 1 does not count as a stitch', skip the turning chain when you count. Remove the extra if the row has not gone far."
+            },
+            {
+              "symptom": "The work gets wider over several rows with no obvious cause",
+              "cause": "A stitch is being worked into the turning chain of the previous row.",
+              "fix": "At the end of the next row, stop before the turning chain and count. The last stitch should sit in the last real stitch of the row, not in the chain."
+            },
+            {
+              "symptom": "The stitch count is right but the piece looks uneven",
+              "cause": "The stitch count is correct but tension is varying between rows.",
+              "fix": "Check gauge against the pattern. Uneven tension is a separate issue from stitch count. See the tension guide."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once counting is automatic, try reading a full row of the pattern before working it, so you know where each increase and decrease falls. That makes counting mid-row faster because you expect where the stitch count changes."
+          }
+        ]
+      }
+    ]
+  }
+}

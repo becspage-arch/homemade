@@ -1,0 +1,150 @@
+{
+  "slug": "crochet-decreasing-at-edges",
+  "title": "Decreasing at the edges of flat work",
+  "subtitle": "How to shape the edges of a flat piece by working decreases at the start and end of rows",
+  "excerpt": "Edge decreases narrow a flat piece row by row. They appear in armhole shaping, neckline shaping, and shaped wedge sections. The placement and method determine whether the decrease line is visible or clean.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book. Pauline Turner, How to Crochet (HarperCollins).",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": ["shaping", "decreasing"]
+  },
+  "recipeTools": [
+    { "slug": "stitch-marker", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "dc2tog", "term": "dc2tog", "definition": "Double crochet two together. A decrease that joins two stitches into one by drawing up a loop in each, then drawing through all three loops. Reduces the stitch count by one." },
+    { "slug": "slip-stitch-decrease", "term": "Slip stitch decrease", "definition": "Working a slip stitch over the edge stitches at the start of a row to advance the hook without adding height, reducing the active stitch count without creating a visible joined decrease." }
+  ],
+  "techniqueSlugs": ["crochet-decreasing-at-edges", "crochet-short-rows"],
+  "criticalTechniques": ["crochet-decreasing-at-edges"],
+  "aliases": ["crochet edge decrease", "shaping crochet edges", "crochet decreasing rows", "armhole shaping crochet", "neckline shaping crochet"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Edge decreases narrow the width of a flat piece by removing stitches at the start or end of a row. The two main approaches are: working a decrease stitch ("
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dc2tog" } }],
+            "text": "dc2tog"
+          },
+          {
+            "type": "text",
+            "text": " or equivalent) at the edge, or using a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "slip-stitch-decrease" } }],
+            "text": "slip stitch"
+          },
+          {
+            "type": "text",
+            "text": " over one or more edge stitches to step the edge in. Which method is better depends on whether the edge will be seamed or left visible."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 1: decrease stitch at the edge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work the turning chain, then work a dc2tog (or tr2tog, or the equivalent decrease for the stitch type) over the first two stitches at the start of the row. At the end of the same row, work dc2tog over the last two stitches before the turning chain. This removes one stitch from each end per row."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This method produces a smooth diagonal edge that is suitable for visible seams and edges that will not be hidden."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method 2: slip stitch step-decrease" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the start of a new row, slip stitch across the number of stitches to be removed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work the turning chain for the main stitch, then work the rest of the row normally." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the end of the row, stop the number of stitches short of the edge as required. Turn and work the next row." }] }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The step-decrease produces a staircase edge. It is faster than working individual decrease stitches and is used for armhole shaping and deep necklines where several stitches are removed at once."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The edge looks jagged rather than a smooth diagonal",
+              "cause": "Decreases were worked at the very first and last stitch rather than one stitch in from the edge.",
+              "fix": "Work the decrease stitch one stitch inside the edge (work 1 plain stitch, then dc2tog) on both ends. This gives a smoother edge line and is better for seaming."
+            },
+            {
+              "symptom": "The slip stitch step at the row start shows as a visible ridge on the right side",
+              "cause": "The slip stitch row was worked at the same tension as the main fabric.",
+              "fix": "Work slip stitches slightly looser than the main fabric so they lie flat against the edge. They are not structural stitches; they are placeholders only."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Practice both decrease methods on the same rectangular swatch: use dc2tog on one side and slip stitch steps on the other. The two shaped edges will look different on the same piece, making the trade-off clear before it matters on a garment."
+          }
+        ]
+      }
+    ]
+  }
+}

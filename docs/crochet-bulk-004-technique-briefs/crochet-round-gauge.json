@@ -1,0 +1,137 @@
+{
+  "slug": "crochet-round-gauge",
+  "title": "Gauge in the round",
+  "subtitle": "Why your tension changes when working in circles and how to measure it accurately",
+  "excerpt": "Flat gauge and round gauge often differ. Working in the round means the hook always enters from the same side, which changes how tightly the loops pull up. Measure your round gauge separately.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book.",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": ["gauge", "in-the-round"]
+  },
+  "recipeTools": [
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "stitch-marker", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "gauge", "term": "Gauge", "definition": "The number of stitches and rows that fit in a measured area, usually 10 cm. Used to confirm the finished piece will come out the right size." },
+    { "slug": "gauge-swatch", "term": "Gauge swatch", "definition": "A small sample worked to check that your stitch size matches the pattern's gauge before starting the main project." }
+  ],
+  "techniqueSlugs": ["crochet-round-gauge", "crochet-tension-adjustment"],
+  "criticalTechniques": ["crochet-round-gauge"],
+  "aliases": ["gauge in the round crochet", "crochet in the round gauge", "round gauge swatch", "circular crochet gauge"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When working in the round, the hook always enters stitches from the right side of the fabric, which is the opposite of flat rows where the hook alternates direction each row. This consistency can make stitches slightly tighter or looser than flat rows in the same yarn and with the same hook. The difference is small for many makers, but enough to affect a fitted garment. The only reliable "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gauge" } }],
+            "text": "gauge"
+          },
+          {
+            "type": "text",
+            "text": " for a round project is a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gauge-swatch" } }],
+            "text": "gauge swatch"
+          },
+          {
+            "type": "text",
+            "text": " worked in the round."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working a round gauge swatch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a foundation ring and work 10 rounds of the main stitch in the same way as the project (joined rounds, or continuous spiral, depending on what the project uses)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fasten off and block if the yarn requires it." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay flat. Mark 10 cm with two pins across the widest part of the swatch and count the stitches between them." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Count rows or rounds over 10 cm as well. Compare both to the pattern's stated gauge." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "If flat and round gauge differ" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If your flat swatch hits the pattern gauge but your round swatch does not, adjust the hook size for the round sections only. Keep the flat hook for any flat panels in the same project. For seamless garments worked entirely in the round, the round gauge is the only gauge that matters."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "A hat starts to the correct width but grows too wide quickly",
+              "cause": "The round gauge is looser than the flat gauge that was measured.",
+              "fix": "Rework with one hook size smaller and re-measure after 5 rounds before committing to the full project."
+            },
+            {
+              "symptom": "The stitch gauge matches but the piece is noticeably shorter than expected",
+              "cause": "Row height in the round differs from flat. This is more common in joined rounds, where the slip-stitch join adds a fractional offset to each round's height.",
+              "fix": "Measure round height separately from stitch count. Adjust the number of rounds rather than the hook size if only the height is off."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For any project worked in the round where fit matters (hats, seamless jumpers, granny square joins), always swatch in the round rather than flat. The few extra minutes to work a proper round swatch prevents adjusting the whole project after several rounds."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -301,6 +301,8 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'blocking-pins', name: 'Blocking pins', pluralName: 'blocking pins', category: 'other', aliases: ['T-pins', 'lace pins'], isPurchasable: true, typicalPriceGbp: 800, notes: 'Rust-proof T-pins or lace pins for pinning damp pieces to a blocking mat. Standard sewing pins corrode and stain the yarn.' },
   { slug: 'measuring-tape-soft', name: 'Soft measuring tape', category: 'measuring', aliases: ['dressmaker\'s tape', 'tailor\'s tape'], isPurchasable: true, typicalPriceGbp: 300, notes: 'Flexible 150 cm tape for measuring gauge, finished pieces, and bodies for garments.' },
   { slug: 'row-counter', name: 'Row counter', category: 'other', aliases: ['stitch counter', 'click counter'], isPurchasable: true, typicalPriceGbp: 500, notes: 'Mechanical click counter that sits on the hook handle, or a free phone app. For keeping count on long pattern repeats.' },
+  { slug: 'steam-iron', name: 'Steam iron', category: 'other', aliases: ['clothes iron', 'steam press'], isPurchasable: true, typicalPriceGbp: 3000, notes: 'For steam-blocking finished crochet and knitting. Hold above the fabric rather than pressing down on synthetics.' },
+  { slug: 'tunisian-hook', name: 'Tunisian crochet hook', category: 'other', aliases: ['afghan hook', 'Tunisian hook'], isPurchasable: true, typicalPriceGbp: 800, notes: 'Extended-barrel hook used for Tunisian crochet. The extra length holds the live loops of an entire row without dropping them.' },
 
   // ── Needlework pipeline (phase_needlework_pipeline_scaffold).
   // Cross-stitch + needlepoint + tatting + lacemaking kit. Tapestry
