@@ -9,5 +9,14 @@
     "noEmit": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", ".next", "scripts/import-lib", "scripts/import-stitching-mama-catalogue.ts"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    "scripts/import-lib",
+    "scripts/import-stitching-mama-catalogue.ts",
+    "scripts/_s8b-pick-metadata.ts",
+    "scripts/_s8b-query-patterns.ts",
+    "scripts/_s8b-test-generate.ts",
+    "scripts/generate-sewing-product-shots.ts"
+  ]
 }
