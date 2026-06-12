@@ -1,0 +1,104 @@
+{
+  "slug": "troubleshooting-cross-stitch-tension",
+  "title": "Troubleshooting cross-stitch tension",
+  "subtitle": "Why the stitch looks wrong and how to correct it",
+  "excerpt": "Tension is what holds a cross-stitch piece together visually. Too tight and the Aida holes distort; too loose and the stitches sit floppy on the surface. The same pull on every stitch is the aim. Most tension problems have a single cause that is easy to identify and fix.",
+  "type": "TECHNIQUE",
+  "categorySlug": "cross-stitch",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Tension diagnosis and correction are documented in standard cross-stitch teaching practice. Consistent across all major cross-stitch guilds and references.",
+  "techniqueSlugs": ["full-cross", "back-stitch"],
+  "criticalTechniques": ["full-cross"],
+  "aliases": ["cross stitch tension problems", "tension too tight cross stitch", "tension too loose", "fixing tension"],
+  "glossaryTerms": [
+    {
+      "slug": "stitch-tension",
+      "term": "Stitch tension",
+      "definition": "The amount of pull applied to the thread when completing each stitch. Correct tension pulls the stitch snug enough to sit flat against the fabric without distorting the Aida holes. Too tight distorts the grid; too loose leaves floppy stitches that catch and look uneven."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cross-stitch "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stitch-tension" } }],
+            "text": "stitch tension"
+          },
+          {
+            "type": "text",
+            "text": " is the amount of pull on the thread when each "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "full-cross", "label": "cross-stitch" } }],
+            "text": "cross-stitch"
+          },
+          {
+            "type": "text",
+            "text": " is completed. Each stitch should sit flat against the Aida fabric, forming a clean X with both diagonals visible and equal. A hoop that holds the fabric taut is the single most useful tool for keeping tension even: it removes the variation that comes from holding the fabric in the hand."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common tension problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common tension problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Aida holes are pulling into diamond shapes",
+              "cause": "The thread is being pulled too tightly through the holes, distorting the woven grid.",
+              "fix": "Ease back the pull. The stitch should feel snug but not tight. Try pulling through only until the thread lies flat, then stop: any further pull starts to distort the fabric. Using a hoop helps by keeping the fabric taut so you do not need to compensate with extra pull."
+            },
+            {
+              "symptom": "The stitches sit floppy and catch on things",
+              "cause": "The thread is being pulled through without enough tension, leaving slack in the stitch.",
+              "fix": "Pull until the stitch lies flat against the fabric with no visible loop of slack. The diagonal threads should touch the Aida surface rather than sit above it."
+            },
+            {
+              "symptom": "Some stitches are tight and others are loose in the same piece",
+              "cause": "The pull force is varying with fatigue, distraction, or a changing working position.",
+              "fix": "Work with a hoop rather than in hand. The hoop removes most tension variation. If you work in hand, take a short break when you notice inconsistency: tired hands pull unevenly."
+            },
+            {
+              "symptom": "The back-stitch outline pulls the fill stitches underneath",
+              "cause": "The back-stitch thread is pulled too tightly when outlining over already-worked cross-stitch, drawing the fill stitches down into a dip.",
+              "fix": "Work back-stitch over completed cross-stitch with lighter tension than you used for the fill. The outline thread only needs to lie flat on the surface, not be pulled taut. If the fill stitches are already distorted, run the back-stitch again with one strand at a lower tension rather than unpicking the fill."
+            },
+            {
+              "symptom": "Back-stitch lines show dimples where they cross fill stitches",
+              "cause": "The back-stitch thread is passing through the cross-stitch thread rather than beside it.",
+              "fix": "When working the back-stitch, aim for the Aida holes between the cross-stitch threads, not through them. A blunt needle helps: it nudges the cross-stitch thread aside rather than piercing it."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "One thing to check first" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Before adjusting technique, check the hoop. A hoop that is too loose lets the fabric sag; a hoop that is over-tightened distorts the weave before you begin. The fabric should feel drum-tight in the hoop with the Aida grid perfectly square. Re-tighten the hoop every twenty to thirty minutes of stitching." }
+        ]
+      }
+    ]
+  }
+}

@@ -216,3 +216,143 @@ SKIPPED: 0
 - peasant-thumb-mittens: hero-missing
 - pine-pencil-tray: hero-missing
 - plain-ribbed-fingerless-mitts: hero-missing
+
+---
+
+## Run at 13:34:09
+
+Generated: 2026-06-12T13:34:09.855Z
+
+Processed: 40
+PASS: 39
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 15 |
+| grade-level-strict | 3 |
+| hero-missing | 3 |
+
+## Still BLOCKED (sample 20)
+
+- oak-cheese-board-handled: hero-missing
+
+---
+
+## Run at 14:19:41
+
+Generated: 2026-06-12T14:19:41.362Z
+
+Processed: 20
+PASS: 20
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 14:27:40
+
+Generated: 2026-06-12T14:27:40.915Z
+
+Processed: 67
+PASS: 17
+STILL_BLOCKED: 50
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 150 |
+| grade-level-strict | 14 |
+| body-missing-method | 2 |
+
+## Still BLOCKED (sample 20)
+
+- berlin-woolwork-introduction: hero-missing, grade-level-strict
+- blocking-needlepoint-canvas: hero-missing
+- choosing-aida-fabric-for-cross-stitch: hero-missing
+- choosing-needlepoint-canvas-count: hero-missing
+- how-to-end-your-thread-cross-stitch: hero-missing
+- how-to-read-a-cross-stitch-chart: hero-missing
+- how-to-start-your-thread-cross-stitch: hero-missing
+- how-to-work-a-back-stitch-in-cross-stitch: hero-missing
+- how-to-work-a-french-knot-in-cross-stitch: hero-missing
+- how-to-work-a-full-cross-stitch: hero-missing
+- how-to-work-a-half-cross-stitch: hero-missing
+- how-to-work-a-three-quarter-cross-stitch: hero-missing
+- mounting-framing-needlepoint: hero-missing
+- needlepoint-advanced-sampler-eight-stitches: hero-missing
+- needlepoint-algerian-eye-panel: hero-missing
+- needlepoint-algerian-eye-stitch: hero-missing
+- needlepoint-bargello-basic-wave: hero-missing
+- needlepoint-basketweave-tent-stitch: hero-missing, grade-level-strict
+- needlepoint-berlin-parrot-panel: hero-missing
+- needlepoint-berlin-rose-panel: hero-missing
+
+---
+
+## Run at 14:30:17
+
+Generated: 2026-06-12T14:30:17.236Z
+
+Processed: 46
+PASS: 17
+STILL_BLOCKED: 29
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 87 |
+| body-missing-method | 3 |
+| grade-level-strict | 2 |
+
+## Still BLOCKED (sample 20)
+
+- choosing-evenweave-and-linen-for-cross-stitch: hero-missing
+- choosing-your-needle-for-cross-stitch: hero-missing
+- cross-stitch-birth-announcement-sampler: hero-missing
+- cross-stitch-block-letter-monogram: hero-missing
+- cross-stitch-bluebell-border: hero-missing
+- cross-stitch-bumblebee-on-aida: hero-missing
+- cross-stitch-cat-window-silhouette: hero-missing
+- cross-stitch-farmyard-pig: hero-missing
+- cross-stitch-garden-robin-sampler: hero-missing
+- cross-stitch-hedgehog-in-leaves: hero-missing
+- cross-stitch-home-sweet-home-sampler: hero-missing
+- cross-stitch-lavender-sprig: hero-missing
+- cross-stitch-my-happy-place-quote: hero-missing
+- cross-stitch-pride-flag-bookmark: hero-missing
+- cross-stitch-rainbow-heart: hero-missing
+- cross-stitch-robin-on-linen: hero-missing
+- cross-stitch-rose-on-linen: hero-missing
+- cross-stitch-script-ampersand: hero-missing
+- cross-stitch-single-daisy-floral: hero-missing
+- cross-stitch-sunflower-motif: hero-missing
+
+---
+
+## Run at 14:31:31
+
+Generated: 2026-06-12T14:31:31.577Z
+
+Processed: 38
+PASS: 38
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

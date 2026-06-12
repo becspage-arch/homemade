@@ -1,0 +1,163 @@
+{
+  "slug": "how-to-work-a-back-stitch-in-cross-stitch",
+  "title": "How to work a back-stitch in cross-stitch",
+  "subtitle": "The outline layer that gives charts their definition",
+  "excerpt": "Back-stitch is the outline stitch in cross-stitch, worked in a single strand along the chart's outline layer. Each stitch finishes where the previous one started, building a continuous line. It is what separates the colour fills from each other and adds the detail that makes faces, petals, and lettering readable.",
+  "type": "TECHNIQUE",
+  "categorySlug": "cross-stitch",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Therese de Dillmont, Encyclopedia of Needlework (1886), Project Gutenberg #20776, back-stitch chapter. The grid-following convention described here is the standard practice documented in Weldon's Practical Needlework (1880s), Internet Archive.",
+  "techniqueSlugs": ["back-stitch", "full-cross"],
+  "criticalTechniques": ["back-stitch"],
+  "aliases": ["backstitch", "outline stitch", "back stitch cross stitch"],
+  "glossaryTerms": [
+    {
+      "slug": "back-stitch",
+      "term": "Back-stitch",
+      "definition": "An outline stitch worked in a single strand along the edges of the chart's back-stitch layer. Each stitch finishes at the hole where the previous stitch started, building a continuous unbroken line. It is always worked after the cross-stitch fill is complete."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "back-stitch" } }],
+            "text": "back-stitch"
+          },
+          {
+            "type": "text",
+            "text": " makes a clean outline. You work backwards along the line one stitch at a time, each stitch finishing where the previous one started. It is always worked in a single strand after the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "full-cross", "label": "cross-stitch fill" } }],
+            "text": "cross-stitch fill"
+          },
+          {
+            "type": "text",
+            "text": " is complete."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Back-stitch typically uses one strand of floss rather than two, which gives the outline a finer weight than the cross-stitch fill behind it. Some charts call for a darker shade of the fill colour; others use black or a neutral grey for all outlines. Read the chart's colour key before cutting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working the stitch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "marks": [{ "type": "bold" }], "text": "Bring the needle up at the start of the line. " },
+                { "type": "text", "text": "Back-stitch follows the grid of the Aida fabric. The needle comes up at the hole that will become the left end of the first stitch. Use a single strand through the needle for the outline layer." }
+              ]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "marks": [{ "type": "bold" }], "text": "Go down one step backwards. " },
+                { "type": "text", "text": "Push the needle down through the hole one step to the right (if working right-to-left, one step to the left). This is the backwards step that names the stitch." }
+              ]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "marks": [{ "type": "bold" }], "text": "Come up two steps forward. " },
+                { "type": "text", "text": "Bring the needle up two steps ahead of where it went down. This creates the gap that the next backwards step will fill. The thread now sits on the front of the fabric." }
+              ]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "marks": [{ "type": "bold" }], "text": "Go down at the previous hole. " },
+                { "type": "text", "text": "Push the needle back down through the hole where the previous stitch came up. The stitches butt against each other with no gap, forming a solid line." }
+              ]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "marks": [{ "type": "bold" }], "text": "Continue to the end of the line. " },
+                { "type": "text", "text": "Repeat the two-forward, one-back sequence along the outline. Back-stitch can travel horizontally, vertically, or diagonally across the grid." }
+              ]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            {
+              "symptom": "Gaps appear in the outline line",
+              "cause": "The needle came up too far forward, leaving a hole between stitches.",
+              "fix": "Always bring the needle up exactly two grid steps forward and go down exactly one step back. Count the holes on the Aida grid before each move."
+            },
+            {
+              "symptom": "The outline sits on top of the cross-stitches and looks raised",
+              "cause": "The needle is going through the cross-stitch thread rather than the Aida hole beneath it.",
+              "fix": "Aim for the Aida hole, not the thread. Ease the needle tip around any cross-stitch thread that sits in the way rather than through it."
+            },
+            {
+              "symptom": "The single strand twists and knots as you work",
+              "cause": "The needle is turning in the same direction with each stitch.",
+              "fix": "Let the needle hang free every six to eight stitches so the thread can untwist. A thread drop of thirty seconds keeps the line smooth."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What comes next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Back-stitch is the last layer on most cross-stitch charts. After the outline is in, the piece is ready for washing, pressing, and finishing. The French knot tutorial covers the raised dots that appear in the eyes of animal motifs and the centres of flower charts." }
+        ]
+      }
+    ]
+  }
+}
