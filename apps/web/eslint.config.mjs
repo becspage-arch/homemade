@@ -79,5 +79,13 @@ export default defineConfig([
     // apps/web cwd, so paths here are relative to that.)
     'scripts/import-lib/**',
     'scripts/import-stitching-mama-catalogue.ts',
+
+    // S-8b autonomous AI product-shot worker + helpers. Same shape: tsx-
+    // invoked, dotenv loader for local credentials, not part of the
+    // deployed bundle. Mirrors the tsconfig exclude.
+    'scripts/_s8b-pick-metadata.ts',
+    'scripts/_s8b-query-patterns.ts',
+    'scripts/_s8b-test-generate.ts',
+    'scripts/generate-sewing-product-shots.ts',
   ]),
 ])

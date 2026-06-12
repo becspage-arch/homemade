@@ -304,10 +304,6 @@ const PICK_OVERRIDES: Record<string, Partial<PickConfig>> = {
   },
 }
 
-function looseSlugify(s: string): string {
-  return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
-}
-
 interface FabricEntry {
   type?: string
   notes?: string
