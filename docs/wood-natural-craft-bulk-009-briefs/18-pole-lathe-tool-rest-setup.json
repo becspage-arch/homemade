@@ -1,0 +1,144 @@
+{
+  "slug": "pole-lathe-tool-rest-setup",
+  "title": "Setting up a pole lathe tool rest",
+  "subtitle": "How to position and adjust the tool rest for safe, repeatable green-woodwork turning",
+  "excerpt": "The tool rest is the single adjustment that most affects pole-lathe turning, its height, distance, and angle determine whether the chisel catches, chats, or cuts cleanly. This guide covers how to set up the tool rest for different cut types, how to read the setup before each cut, and the adjustments needed when moving from roughing to finishing.",
+  "type": "TECHNIQUE",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "green-woodwork",
+  "difficulty": "INTERMEDIATE",
+  "woodState": "green",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cassell's Cyclopaedia of Mechanics vol. III (1885) for the pole-lathe tool rest positioning rules; Newey & Drage Practical Carpentry for the rest-height and distance guidance.",
+  "recipeTools": [
+    { "slug": "skew-chisel-25mm", "isOptional": false },
+    { "slug": "spindle-gouge-10mm", "isOptional": false }
+  ],
+  "recipe": { "foundational": true },
+  "glossaryTerms": [
+    { "slug": "tool-rest", "term": "Tool rest", "definition": "The horizontal bar on the lathe bed that supports the turning tool and acts as a pivot for the cut." },
+    { "slug": "green-wood", "term": "Green wood", "definition": "Freshly felled wood, still high in moisture. Green timber turns with much less force than seasoned and is the standard material for pole-lathe turning." },
+    { "slug": "catch", "term": "Catch", "definition": "An uncontrolled dig-in of the turning tool into the rotating work, usually caused by the tool edge dropping below centre." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tool-rest" } }], "text": "tool rest" },
+          { "type": "text", "text": " that is set correctly means the tool pivots on the rest rather than being levered by the work. A rest set too low, too far from the work, or at the wrong angle for the cut means the tool tip drops below centre on the return stroke, this is the geometry that causes a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "catch" } }], "text": "catch" },
+          { "type": "text", "text": ". Every technique problem in pole-lathe turning traces back to the rest position." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to use this technique" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Before every pole-lathe turning session, check the rest height, distance, and angle. Re-check when moving from roughing to finishing, when changing tools, or when the work diameter drops." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A pole lathe, a skew chisel and a spindle gouge, and a piece of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "green-wood" } }], "text": "green wood" },
+          { "type": "text", "text": " to practice on. Green timber is required: seasoned wood on a pole lathe is extremely hard work, and the technique needs the easy cut that green wood gives." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Rest height" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The rest should sit so that when the tool is placed flat on it, the tool tip contacts the work at centre height. To find centre height: place a straight edge horizontally across the two lathe centres; the top of this straight edge is the correct rest height for a flat-backed tool. A skew chisel used bevel-down sits with its tip at the right height when the rest is just below centre; a spindle gouge sits with its flute up and the rest is also just below centre. The most common error is a rest set too low, which forces the tool tip to drop below centre on the cutting stroke." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Rest distance" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The rest face should be 10, 15 mm from the surface of the rotating work. Any further and the tool has too much unsupported length between the rest and the cut; any closer and the tool cannot be pivoted to make angled cuts. Adjust the distance inward as the diameter decreases during roughing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Roughing cuts" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For roughing with the spindle gouge: the rest is at centre height, 12 mm from the work surface. The gouge is held at about 45 degrees to the axis of the work, bevel-down, and traversed along the rest to make each roughing pass. The cut removes large amounts of green wood quickly. The rest needs repositioning every five or six passes as the diameter reduces." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing cuts with the skew chisel" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a peeling cut with the skew chisel: move the rest inward to 10 mm from the work surface. The skew is presented at about 30 degrees to the work axis, with the trailing edge (the long point of the skew) cutting, and the leading edge clear of the work. The tool is traversed along the rest in one smooth pass. The skew geometry is very sensitive to rest height, a skew with its tip above centre will catch; below centre it will slide off the surface. Check by touching the bevel lightly to the rotating work before committing to a cut." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The check before each cut" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rest height at centre: tool tip touches work at mid-height." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rest distance at 10, 15 mm: no wobble in the tool between rest and work." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tool bevel touching: for bevel-down tools, the bevel rubs the work before the edge engages." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Treadle slack correct: the lathe reverses cleanly on the upstroke with no coasting." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The chisel digs in and the work stops rotating on the cutting stroke",
+              "cause": "The rest is too low, so the tool tip drops below centre at the moment of contact; or the tool overhang beyond the rest is too long",
+              "fix": "Raise the rest until the tool tip sits at centre height when the tool rests flat on the rest. Reduce the overhang, no more than 3 cm of tool should project beyond the rest for roughing cuts."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The skew catches on every pass, leaving a spiral tear on the surface",
+              "cause": "The skew long-point is cutting instead of the heel, and the geometry is wrong for the angle of presentation",
+              "fix": "Present the skew at a shallower angle to the work axis, 20 degrees rather than 45. The heel of the edge should be the only part cutting. If the long-point is closer to the work surface than the heel, the skew is backwards on the rest."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

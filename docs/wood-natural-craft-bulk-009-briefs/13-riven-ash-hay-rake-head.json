@@ -1,0 +1,251 @@
+{
+  "slug": "riven-ash-hay-rake-head",
+  "title": "Riven ash hay-rake head",
+  "subtitle": "Green-woodwork: making a traditional hay-rake head from riven ash",
+  "excerpt": "A hand-riven ash rake head for a garden hay rake or leaf rake. The body is split from a straight-grained ash billet with a froe; the teeth are whittled from riven ash pegs and driven through bored holes. No glue or screws, the wood shrinks tight around the pegs as it dries.",
+  "type": "PATTERN",
+  "categorySlug": "wood-natural-craft",
+  "subCategorySlug": "green-woodwork",
+  "difficulty": "INTERMEDIATE",
+  "woodState": "green",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Cassell's Cyclopaedia of Mechanics vol. III (1885) for the riven-ash rake construction; Museum of English Rural Life (MERL) open archive for traditional rake-head dimensions.",
+  "recipeTools": [
+    { "slug": "froe", "isOptional": false },
+    { "slug": "beetle-mallet", "isOptional": false },
+    { "slug": "sloyd-knife", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "drawknife-straight", "isOptional": true },
+    { "slug": "shaving-horse", "isOptional": true },
+    { "slug": "leather-strop", "isOptional": false },
+    { "slug": "wood-finish-boiled-linseed-oil", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "green-wood", "term": "Green wood", "definition": "Freshly felled or recently riven wood, still high in moisture content. The green state is necessary here so the rake head shrinks tight around the pegs as it dries." },
+    { "slug": "riven", "term": "Riven", "definition": "Split along the grain with a froe and mallet rather than sawn. Riven pieces follow the grain exactly and are stronger than sawn equivalents." },
+    { "slug": "froe", "term": "Froe", "definition": "A wedge-shaped riving tool driven with a beetle to split a billet along the grain." },
+    { "slug": "beetle", "term": "Beetle", "definition": "A heavy wooden club used to drive a froe." },
+    { "slug": "billet", "term": "Billet", "definition": "A short length of split timber, ready to be worked." }
+  ],
+  "techniqueSlugs": ["push-cut-technique"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A traditional hay-rake head is a simple piece of green-woodwork: a flat rectangular body of " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "riven" } }], "text": "riven" },
+          { "type": "text", "text": " ash with a row of wooden pegs driven through it at a slight forward angle. The joints are dry: the green ash body and the green ash pegs both shrink as they dry, but the body shrinks around the pegs and tightens the joint. A rake head made this way, allowed to dry completely before use, will last a decade or more in normal garden use. The handle socket is bored through the head at right angles to the peg row." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This project uses " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "green-wood" } }], "text": "green wood" },
+          { "type": "text", "text": " throughout. Source a straight-grained ash log, freshly felled, about 60 cm long and 10, 15 cm across." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "warning" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "marks": [{ "type": "bold" }], "text": "Before you start cutting." }]
+          },
+          {
+            "type": "bulletList",
+            "content": [
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Grip: four-finger grip on the work; thumb-push grip on the knife. Never make a cut whose blade-path can reach a body part." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut direction: push cuts (blade away from body) and thumb-pivot cuts are the default. Pull cuts only with the work braced against the chest and the blade-arc unable to reach anything vital." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sharpening: a dull tool is more dangerous than a sharp one, the dull tool slips. Strop every fifteen minutes of carving, hone weekly, oilstone monthly." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "First aid: keep a styptic pencil, gauze, and a clean dressing within reach. Apply firm pressure, elevate, and dress. A cut that shows fat or won't close with pressure goes to A&E, not a plaster." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Workspace: stable seat, good light, no children or pets within arm-and-blade reach." }] }] }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Wood" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "One straight-grained ash " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "billet" } }], "text": "billet" },
+          { "type": "text", "text": ", freshly felled, 60 cm long, 10, 15 cm diameter. Ash is the traditional rake timber, its straight grain splits cleanly with a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "froe" } }], "text": "froe" },
+          { "type": "text", "text": " and is strong enough across the grain to hold the peg row without splitting. Hazel or willow work for the pegs. Oak would make a heavier rake head but is serviceable." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Tools" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Froe and beetle mallet for riving the head blank and peg stock." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sloyd knife for whittling the pegs." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cordless drill with 12 mm bit for the handle socket and 8 mm bit for the peg holes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drawknife and shaving horse (optional): useful for smoothing the flat face of the rake head before boring." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leather strop." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Boiled linseed oil for the finished rake head." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Workspace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Outdoors or in a large workshop. The froe work needs a splitting block; the peg-whittling can be done on a carving stool. A shaving horse speeds up the peg shaping considerably." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The work" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 1: Rive the head blank" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Quarter-split the ash log with the froe and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beetle" } }], "text": "beetle" },
+          { "type": "text", "text": ". From one quarter, rive a section 45 cm long, 5 cm wide, and 3 cm thick for the rake head body. The grain must run along the 45 cm length, riving ensures this. Check the split face: it should be smooth and slightly glossy, following the grain exactly. A sawn equivalent would cut across some fibres; a riven section follows them." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 2: Shape the head blank" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Use the drawknife on the shaving horse, or the sloyd knife with " },
+          { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "push-cut-technique", "label": "push cuts" } }], "text": "push cuts" },
+          { "type": "text", "text": ", to smooth the flat faces and bring the head to a consistent 3 cm thickness. Mark the top face: 12 peg-hole positions evenly spaced, 35 mm apart, centred on the head width, starting 50 mm from each end. Mark the handle socket: centred on the head, bored at right angles to the peg row." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 3: Bore the holes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bore the 12 peg holes with an 8 mm bit, drilled at a 75-degree angle (angled slightly forward toward the raking direction). Hold the rake head in a vice or clamp before drilling. Drill each hole through the full thickness. The handle socket is bored through the head face with a 12 mm bit, perpendicular to the peg row and parallel to the flat face, bored from one side only to a depth of 5 cm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 4: Whittle the pegs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "From the remaining ash stock or from a hazel rod, rive 12 pegs roughly 12 cm long and 10 mm square in cross-section. Whittle each peg: the lower 4 cm is tapered from 10 mm to 7 mm, just enough to drive through the 8 mm hole with hand pressure. The remaining 8 cm above the hole will be the working tine. Round the tip of each tine." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 5: Drive the pegs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drive each peg through its hole from the front face until the tapered section is through and the upper tine stands proud of the back face by about 2, 3 cm. The fit should be snug: you need light mallet taps, not force. The peg is trimmed flush to the back face once all 12 are seated." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Step 6: Dry the assembled head" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hang the completed rake head in a warm, dry place for two to three weeks. Do not use it before it is fully dry, the green wood is still actively shrinking, and the peg joints tighten as it does. After drying, check each peg is firm. If any are loose, drive them in slightly further with a mallet." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apply boiled linseed oil to the fully dried head. Work it into all surfaces and into the peg holes. Let cure for twenty-four hours before fitting the handle. Oil-soaked rags laid flat to dry, never crumple them, they can smoulder." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leaf rake: 16 pegs at 30 mm spacing, head 55 cm wide. The wider spacing suits leaf collection." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bed rake: 8 pegs, head 30 cm wide, for raised-bed work." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Store indoors or under cover between seasons. Re-oil annually. If a peg breaks, drill it out and drive a new one." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Pegs are loose after drying",
+              "cause": "The peg stock was already dry when driven; no further shrinkage occurred to tighten the joint",
+              "fix": "Always use freshly cut green peg stock. If the pegs are loose, remove them and carve slightly oversize replacements from fresh green stock."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The head splits when boring the peg holes",
+              "cause": "Boring too close to the end of the head or grain is deflecting the bit",
+              "fix": "Leave at least 50 mm from each end before the first hole. Clamp the head firmly before drilling. If the grain runs at an angle, pre-drill a pilot hole to guide the bit."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
