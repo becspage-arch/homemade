@@ -1,0 +1,137 @@
+{
+  "slug": "growing-cucumbers",
+  "title": "Growing cucumbers",
+  "subtitle": "Indoor and outdoor varieties, training, and picking at peak",
+  "excerpt": "Cucumbers are grown in two ways in the UK: indoor varieties in a greenhouse or on a warm windowsill for high yields, and ridge cucumbers outdoors in a sheltered sunny spot. Both need warmth, water, and regular picking.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "vegetables",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "RHS cucumber growing guide (rhs.org.uk). Mrs Beeton, Book of Household Management (1861), kitchen garden section. USDA agricultural extension notes on cucumber production, public domain.",
+  "garden": {
+    "plantSlug": "cucumber",
+    "subTopic": "growing",
+    "plantingMonths": ["april", "may"],
+    "harvestMonths": ["july", "august", "september"],
+    "containerFriendly": true,
+    "indoorFriendly": true
+  },
+  "techniqueSlugs": ["module-sowing", "hardening-off-seedlings", "watering-deep-infrequent", "pinching-out"],
+  "criticalTechniques": ["pinching-out", "watering-deep-infrequent"],
+  "glossaryTerms": [
+    {
+      "slug": "cucumber-lateral",
+      "term": "Lateral shoot",
+      "definition": "A side shoot growing from the main stem of a cucumber plant. On indoor varieties, laterals are pinched out two leaves beyond a female flower (the one with a tiny cucumber behind the petals) to keep the plant productive and manageable. On outdoor ridge varieties, the growing tip of the main stem is pinched out when it reaches 60 cm and laterals are left to spread."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cucumbers in the UK fall into two groups: indoor varieties trained up canes in a greenhouse or polytunnel, and outdoor ridge varieties grown on the ground or a trellis in a sheltered, sunny border. Indoor types give a longer season and heavier crops; ridge types need less attention but require a warm summer. Both are sown indoors in April and harvested from July."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Indoor varieties"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sow two seeds per 9 cm pot in mid-April, 2 cm deep. Keep at 20°C minimum. Remove the weaker seedling after germination. Transplant to a 30 cm pot or growing bag in May. Train the main stem up a vertical string or cane tied to the greenhouse structure. Pinch out "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "cucumber-lateral"}}],
+            "text": "lateral shoots"
+          },
+          {
+            "type": "text",
+            "text": " two leaves after each female flower. Pinch out the main growing tip when it reaches the top of its support. All-female varieties (Passandra, Femspot) need no pollination; standard varieties must be hand-pollinated indoors."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Outdoor ridge varieties"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sow in late April indoors; plant out from late May to early June once night temperatures stay above 10°C. Choose a warm, sheltered south-facing position. Space plants 60 to 90 cm apart. Pinch out the growing tip when it reaches 60 cm to encourage bushier growth and more fruit. Pollination is by insects. Suitable varieties include Crystal Apple, Marketmore, and Burpless Tasty Green."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Watering and feeding"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cucumbers need consistent moisture. In containers, water daily in warm weather; inconsistent watering causes bitter fruits and blossom end rot. Once the first flowers appear, feed weekly with a high-potash liquid fertiliser. In the ground, water every two to three days and mulch heavily to retain moisture."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Harvest"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pick before the fruits turn yellow. Indoor varieties are ready at 15 to 20 cm; outdoor ridge types at 10 to 15 cm. Cucumbers left on the plant to mature stop the plant producing. Check daily in peak season. Cut with a knife rather than pulling; pulling can damage the stem."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What can go wrong"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "The main cucumber problems in UK growing.",
+          "items": [
+            {
+              "symptom": "Powdery white coating on the leaves",
+              "cause": "Powdery mildew, encouraged by dry roots and poor air flow.",
+              "fix": "Water at the roots. Improve air flow in the greenhouse. Remove badly affected leaves. Mildew-resistant varieties such as Passandra or Marketmore are a good choice."
+            },
+            {
+              "symptom": "Bitter-tasting cucumbers",
+              "cause": "Irregular watering, heat stress, or pollinated all-female fruits.",
+              "fix": "Water more evenly. With all-female indoor varieties, remove any male flowers you spot; they have no small cucumber behind the petals."
+            },
+            {
+              "symptom": "Fine webbing on leaves; leaves pale and mottled in greenhouse",
+              "cause": "Red spider mite, worst in hot dry conditions.",
+              "fix": "Mist the leaves daily to raise humidity. Use a biological predator mite, available from garden suppliers, early in the season before numbers build."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

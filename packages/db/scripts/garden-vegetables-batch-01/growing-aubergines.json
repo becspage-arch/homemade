@@ -1,0 +1,132 @@
+{
+  "slug": "growing-aubergines",
+  "title": "Growing aubergines",
+  "subtitle": "A greenhouse and polytunnel crop for UK summers",
+  "excerpt": "Aubergines need a greenhouse, polytunnel, or a very warm sheltered spot outdoors in the UK. Sown in February or March on a heated propagator, they are planted under cover in May and produce fruit from August to October. Regular watering, feeding, and support are needed throughout.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "vegetables",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "RHS aubergine growing guide (rhs.org.uk). USDA cooperative extension notes on eggplant production, public domain. Mrs Beeton, Book of Household Management (1861), greenhouse crops section.",
+  "garden": {
+    "plantSlug": "aubergine",
+    "subTopic": "growing",
+    "plantingMonths": ["february", "march", "april", "may"],
+    "harvestMonths": ["august", "september", "october"],
+    "containerFriendly": true,
+    "indoorFriendly": true
+  },
+  "techniqueSlugs": ["module-sowing", "pinching-out", "watering-deep-infrequent"],
+  "criticalTechniques": ["pinching-out"],
+  "glossaryTerms": [
+    {
+      "slug": "aubergine-stops",
+      "term": "Stopping (aubergines)",
+      "definition": "Pinching out the growing tip of an aubergine plant once it has produced the required number of fruit. For indoor aubergines in UK conditions, most gardeners stop after five or six fruits have set; this concentrates the plant's energy into swelling the existing fruit before the season ends rather than setting more that won't have time to mature."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Aubergines are grown under glass in the UK. They need warmth to germinate, a long season, and steady water and feed. Sow in February or March; start too late and the fruit will not develop before the cold arrives. Under cover they are straightforward."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Sowing"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sow indoors in February or early March on a heated propagator at 18 to 24°C. One or two seeds per 9 cm pot; remove the weaker seedling. Germination takes 14 to 21 days. Keep in the warmest, brightest spot available; aubergine seedlings grow slowly in low light. Pot on into 7.5 cm pots when roots appear through the drainage holes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Planting under cover"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Plant into 30 to 40 cm pots or a growing bag in May, once the risk of cold nights in the greenhouse has passed. Space plants 60 cm apart in a growing bag or border. Support each plant with a stout 1.2 m cane; aubergine plants are heavy when in full fruit. When the plant reaches 30 cm, pinch out the central growing tip to encourage branching."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Watering, feeding, and stopping"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Water consistently to keep the compost evenly moist; aubergines drop flowers and produce bitter fruit under water stress. From first flowering, feed weekly with a high-potash liquid fertiliser. Once five or six fruits have set, "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "aubergine-stops"}}],
+            "text": "stop"
+          },
+          {
+            "type": "text",
+            "text": " the plant by pinching out any new growing tips. This concentrates energy into the developing fruit before the season ends."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Harvest"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Harvest when the skin is glossy and the fruit feels firm. The surface should spring back gently when pressed. Once the skin begins to look dull and loses its gloss, the fruit is over-ripe and the seeds inside will have developed fully. Cut with a knife, leaving a short stalk. Aubergines do not store well; eat within three to four days of picking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What can go wrong"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "The main aubergine problems in UK conditions.",
+          "items": [
+            {
+              "symptom": "Flowers drop before setting fruit",
+              "cause": "Temperatures too low (below 16°C at night) or too high (above 30°C), or lack of pollination.",
+              "fix": "Maintain minimum 18°C under cover. Gently tap the flowers or use an artist's brush to transfer pollen if pollinating insects are not present."
+            },
+            {
+              "symptom": "Red spider mite: fine webbing and pale stippled leaves",
+              "cause": "Red spider mite, worst in hot dry conditions.",
+              "fix": "Mist the undersides of leaves daily. Introduce biological control (Phytoseiulus persimilis) early in the season. Good air circulation helps prevent outbreaks."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

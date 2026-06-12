@@ -1,0 +1,123 @@
+{
+  "slug": "growing-cabbage",
+  "title": "Growing cabbage",
+  "subtitle": "Spring, summer, and winter varieties for year-round harvesting",
+  "excerpt": "Different cabbage types cover the year in the UK. Spring cabbage is sown in August and planted out in October; summer and autumn cabbage are sown in March and April; winter savoy and January King types are sown in April and May. Each needs brassica rotation and butterfly netting.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "vegetables",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "RHS cabbage growing guide (rhs.org.uk). Mrs Beeton, Book of Household Management (1861), brassica section. Mrs Loudon, The Lady's Country Companion (1845), Project Gutenberg.",
+  "garden": {
+    "plantSlug": "cabbage",
+    "subTopic": "growing",
+    "plantingMonths": ["march", "april", "may", "august"],
+    "harvestMonths": ["april", "may", "july", "august", "september", "october", "november", "december", "january", "february"],
+    "containerFriendly": false,
+    "indoorFriendly": false
+  },
+  "techniqueSlugs": ["pricking-out", "hardening-off-seedlings", "crop-rotation", "organic-pest-control-netting"],
+  "criticalTechniques": ["crop-rotation", "organic-pest-control-netting"],
+  "glossaryTerms": [
+    {
+      "slug": "savoy-cabbage",
+      "term": "Savoy",
+      "definition": "A wrinkled-leaved winter cabbage variety with a looser, more textured head than smooth-leaved types. Savoy cabbages are more frost-hardy than summer types and sweeter after a frost. They stand in the ground through winter and are harvested from November to March. Common varieties include Tundra F1 and Ormskirk Late."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cabbages in the UK are divided by harvest season. Spring cabbage is sown in August and overwintered as young plants, producing small pointed heads in April and May. Summer and autumn types (e.g. Greyhound, Derby Day) are sown in March and April, transplanted in May, and harvested July to October. Winter "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "savoy-cabbage"}}],
+            "text": "savoy"
+          },
+          {
+            "type": "text",
+            "text": " and January King types are sown April to May and stand through to February."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Sowing and transplanting"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sow in modules or a seedbed; transplant at six to eight weeks old when 10 to 15 cm tall. Spacing: summer and autumn cabbages 35 cm apart in rows 35 cm apart; winter and savoy types 45 cm apart in rows 45 cm apart; spring cabbage 10 cm apart in October, thinned to 30 cm in February. Plant deeply to the first true leaf for a stable root system. Firm in well."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Soil and position"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Full sun, firm, fertile, slightly alkaline soil (pH 6.5 to 7.5). Cabbages are heavy feeders; apply a nitrogen-rich fertiliser at planting and again four weeks later. Firm soil is essential for stability. Stake winter varieties in exposed positions before autumn. Rotate strictly: no brassicas on the same ground for three to four years."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Harvest"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut when the head is solid and firm when squeezed. Summer cabbages must be harvested promptly when mature; they split if left too long. Winter cabbages and savoys stand longer in cold weather. After cutting a spring or summer cabbage, leave the stump in the ground; it produces three or four smaller secondary heads (greens) over the following weeks."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What can go wrong"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "The main cabbage problems in UK gardens.",
+          "items": [
+            {
+              "symptom": "Caterpillar damage and holes in leaves",
+              "cause": "Cabbage white butterfly larvae, active May to September.",
+              "fix": "Fit butterfly-proof netting over the entire bed from transplanting to harvest. Hand-pick caterpillars and egg clusters from unprotected plants. Check undersides of leaves weekly."
+            },
+            {
+              "symptom": "Cabbage root fly: plants wilt suddenly in May or June, white maggots at the root",
+              "cause": "Cabbage root fly (Delia radicum).",
+              "fix": "Fit brassica collars (12 cm diameter discs of cardboard or carpet) flat on the soil around each stem at planting to prevent egg-laying. Biological nematode controls are also available."
+            },
+            {
+              "symptom": "Heads split open before harvest",
+              "cause": "Heavy rain or irrigation after a dry period, or leaving summer types too long before harvest.",
+              "fix": "Harvest promptly when heads are firm. In dry spells, water consistently rather than sporadically."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

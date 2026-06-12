@@ -1,0 +1,137 @@
+{
+  "slug": "growing-kale",
+  "title": "Growing kale",
+  "subtitle": "A hardy brassica for autumn and winter harvesting",
+  "excerpt": "Kale is sown in May or June and planted out in July for harvesting from October through to March. It is the most cold-hardy of the brassicas and tolerates hard frosts that would kill other crops.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "vegetables",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "RHS kale growing guide (rhs.org.uk). Mrs Beeton, Book of Household Management (1861), brassica section. USDA agricultural extension notes on kale production, public domain.",
+  "garden": {
+    "plantSlug": "kale",
+    "subTopic": "growing",
+    "plantingMonths": ["may", "june", "july"],
+    "harvestMonths": ["october", "november", "december", "january", "february", "march"],
+    "containerFriendly": false,
+    "indoorFriendly": false
+  },
+  "techniqueSlugs": ["pricking-out", "hardening-off-seedlings", "crop-rotation", "organic-pest-control-netting"],
+  "criticalTechniques": ["crop-rotation", "organic-pest-control-netting"],
+  "glossaryTerms": [
+    {
+      "slug": "brassica-rotation",
+      "term": "Brassica rotation",
+      "definition": "Moving brassica crops (cabbage, kale, broccoli, Brussels sprouts, swede, turnip) to a different part of the plot each year. The minimum interval is three years before returning brassicas to the same ground. This reduces the build-up of clubroot spores in the soil and breaks the brassica pest cycle."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Kale is the workhorse of the winter kitchen garden. Sow in May or June, transplant in July, and cut leaves from October through to March when almost nothing else is productive outdoors. It tolerates hard frost; a cold winter improves the flavour. Follow strict "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "brassica-rotation"}}],
+            "text": "brassica rotation"
+          },
+          {
+            "type": "text",
+            "text": " to avoid clubroot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Choosing a position"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Full sun to partial shade. Firm, fertile, well-drained soil. Kale does not need a richly manured bed but benefits from a general-purpose fertiliser worked in before planting. Firm soil gives better anchorage for tall varieties in winter winds; loose recently-dug ground produces plants that rock and develop poor roots. Firm the soil with your boot before planting."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Planting out"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sow in modules in May or June; transplant at 6 to 8 weeks old when plants are 10 to 15 cm tall. Spacing: 45 to 60 cm between plants for tall varieties; 30 to 45 cm for dwarf varieties such as Dwarf Green Curled. Plant deeply, up to the first true leaf, to give a stable root system. Water in well and cover with butterfly-proof netting immediately."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Through the season"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Water during dry spells in July and August while the plant establishes. Once established, kale is drought-tolerant. A liquid feed in September supports the plant through its heavy winter harvesting period. Stake tall varieties (Cavolo Nero can reach 90 cm) in exposed positions before autumn gales."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Harvest"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pick the lower outer leaves first, leaving the central growing tip intact. The plant responds to picking by producing more leaves. Pick no more than a third of the leaves at any one visit. In late winter and spring, the plant produces flowering shoots (spears) that can be cut and eaten like purple sprouting broccoli."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What can go wrong"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "The main kale problems in UK gardens.",
+          "items": [
+            {
+              "symptom": "Caterpillar holes through leaves, green caterpillars visible",
+              "cause": "Cabbage white butterfly larvae (large white) or small white caterpillars.",
+              "fix": "Cover with fine insect-proof netting from planting to harvest. Hand-pick caterpillars if netting is not used. Check the undersides of leaves for clusters of yellow eggs and remove them."
+            },
+            {
+              "symptom": "Plants stunted with wilting, purplish leaves, no growth",
+              "cause": "Clubroot (Plasmodiophora brassicae).",
+              "fix": "Dig up and bin affected plants; do not compost. Lime the soil to raise pH above 7.0 if the plot is acid (clubroot thrives in acid soil). Follow a minimum three-year rotation. No chemical controls are available."
+            },
+            {
+              "symptom": "Plants topple over in autumn",
+              "cause": "Shallow roots from loose soil or overwatering.",
+              "fix": "Firm the soil before planting. Earth up around the base of tall plants in September. Stake in exposed positions."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

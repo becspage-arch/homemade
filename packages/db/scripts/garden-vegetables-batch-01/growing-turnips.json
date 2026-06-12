@@ -1,0 +1,118 @@
+{
+  "slug": "growing-turnips",
+  "title": "Growing turnips",
+  "subtitle": "A quick root crop and useful brassica for summer tops and winter roots",
+  "excerpt": "Turnips are sown direct from March to July. Early sowings produce golf-ball sized summer roots; later sowings give larger roots for autumn and winter. The leafy tops of young plants (turnip tops or greens) are also edible, giving two crops from one planting.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "vegetables",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "RHS turnip growing guide (rhs.org.uk). Mrs Beeton, Book of Household Management (1861), root vegetable section. USDA cooperative extension notes on turnip production, public domain.",
+  "garden": {
+    "plantSlug": "turnip",
+    "subTopic": "growing",
+    "plantingMonths": ["march", "april", "may", "june", "july"],
+    "harvestMonths": ["may", "june", "july", "august", "september", "october", "november"],
+    "containerFriendly": false,
+    "indoorFriendly": false
+  },
+  "techniqueSlugs": ["sowing-depth", "crop-rotation", "spacing-fundamentals"],
+  "criticalTechniques": ["crop-rotation"],
+  "glossaryTerms": [
+    {
+      "slug": "turnip-tops",
+      "term": "Turnip tops",
+      "definition": "The young leafy tops of turnip plants, harvested when 10 to 15 cm tall as a cut-and-come-again leaf vegetable. Also called turnip greens. A nutritious and fast-growing alternative to spinach or chard. Sow turnips specifically for tops at high density (3 cm apart) in August or September and cut with scissors as needed; the roots are left in the ground."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Turnips mature quickly: summer varieties sown in March are ready in May, about eight weeks after sowing. Later sowings from June onwards produce larger roots for autumn and winter. "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "turnip-tops"}}],
+            "text": "Turnip tops"
+          },
+          {
+            "type": "text",
+            "text": " are a bonus crop available from any sowing. Milan Purple Top and Snowball are good early varieties; Golden Ball stores well for winter."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Sowing"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sow direct in the growing position; turnips dislike transplanting. For a succession of summer roots, sow every three weeks from March to June, 1 to 2 cm deep in rows 23 to 30 cm apart. Thin in two stages to a final spacing of 15 to 22 cm. For autumn and winter roots, sow July or August. Cover seedlings with fine mesh against flea beetle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Position and soil"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Full sun to light shade. Any reasonable garden soil; turnips are not fussy. Avoid freshly manured ground, which produces forked or overly large leafy plants. Water consistently in dry spells; irregular moisture causes woody, pithy roots. Rotate with other brassicas on a three to four year cycle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Harvest"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pull summer turnips when golf-ball to tennis-ball sized for the best flavour and texture; they become woody if left much longer. Autumn and winter roots can stand in the ground until needed, lifted from September onwards. A light frost sweetens them slightly. Lift and store in sand in a frost-free shed if hard frosts are forecast."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What can go wrong"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "The main turnip problems in UK growing.",
+          "items": [
+            {
+              "symptom": "Tiny holes all over seedling leaves, plants growing slowly",
+              "cause": "Flea beetle damage.",
+              "fix": "Cover with fine insect-proof netting from sowing. Water seedlings in dry weather to keep them growing vigorously past the vulnerable seedling stage; flea beetle damage is worst when growth is slow."
+            },
+            {
+              "symptom": "Hollow, pithy interior when cut",
+              "cause": "Left too long before harvest, or irregular watering causing rapid growth spurts.",
+              "fix": "Harvest summer turnips promptly. Water consistently."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "slug": "growing-broccoli",
+  "title": "Growing broccoli and calabrese",
+  "subtitle": "Calabrese for summer heads, purple sprouting broccoli for winter shoots",
+  "excerpt": "Calabrese and purple sprouting broccoli are distinct crops in the UK. Calabrese produces a large central head from a summer sowing, harvested in August and September. Purple sprouting broccoli is sown in spring, harvested as side shoots the following February to April.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "vegetables",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "RHS broccoli growing guide (rhs.org.uk). Mrs Beeton, Book of Household Management (1861), brassica section. USDA cooperative extension notes on broccoli production, public domain.",
+  "garden": {
+    "plantSlug": "broccoli",
+    "subTopic": "growing",
+    "plantingMonths": ["march", "april", "may", "june"],
+    "harvestMonths": ["february", "march", "april", "august", "september"],
+    "containerFriendly": false,
+    "indoorFriendly": false
+  },
+  "techniqueSlugs": ["pricking-out", "hardening-off-seedlings", "crop-rotation", "organic-pest-control-netting"],
+  "criticalTechniques": ["crop-rotation", "organic-pest-control-netting"],
+  "glossaryTerms": [
+    {
+      "slug": "calabrese",
+      "term": "Calabrese",
+      "definition": "The smooth-headed green broccoli sold in supermarkets, originating from Calabria in southern Italy. It is a summer and early autumn crop in the UK, sown in April or May and harvested in August and September. After the central head is cut, smaller side shoots develop. It does not overwinter well; for spring shoots, grow purple sprouting broccoli instead."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The two types of broccoli grown in the UK serve different seasons. "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "calabrese"}}],
+            "text": "Calabrese"
+          },
+          {
+            "type": "text",
+            "text": " is sown in April or May and harvested in August and September. Purple sprouting broccoli (PSB) is sown in spring, transplanted in summer, and harvested as cut-and-come-again shoots in February to April. Both follow strict brassica rotation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Calabrese"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sow in modules in April or May; do not sow direct as calabrese dislikes root disturbance and bolt risk increases. Transplant at four to five weeks old, 30 cm apart in rows 30 cm apart. Water regularly; inconsistent moisture causes small, uneven heads. Harvest the central head when tight; if it loosens or flowers start to open, cut immediately even if small. After the central head is cut, side shoots develop; harvest when the buds are still tight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Purple sprouting broccoli"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sow in modules in March to May. Transplant at six to eight weeks old, 60 cm apart in rows 60 cm apart; PSB is a large plant by winter. Plant deeply, to the first true leaf, for a stable root. Net against butterflies immediately. PSB overwintered in the ground produces shoots from February to April. Pick the central shoot first, then harvest side shoots as they develop. Consistent picking extends the cropping period."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Both types: position and rotation"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Full sun, firm fertile soil. Brassicas need firm soil; loose recently-dug ground produces plants that rock in winter winds and develop poor roots. Firm after digging and again when planting. Rotate broccoli with other brassicas on a three to four year cycle to reduce clubroot build-up. Never follow cabbage, kale, sprouts, or swede without a gap of at least three years in the same bed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What can go wrong"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "The main broccoli problems in UK gardens.",
+          "items": [
+            {
+              "symptom": "Caterpillar damage; green caterpillars on leaves",
+              "cause": "Cabbage white butterfly larvae.",
+              "fix": "Fit butterfly-proof netting over all brassicas from planting until harvest. Hand-pick caterpillars if unnetted. Check the undersides of leaves for egg clusters."
+            },
+            {
+              "symptom": "Calabrese produces tiny heads immediately without forming a plant",
+              "cause": "Root disturbance at transplanting, or cold stress on young plants.",
+              "fix": "Always start calabrese in modules, not direct-sown and then thinned. Transplant carefully without disturbing roots. Don't sow too early in cold conditions."
+            },
+            {
+              "symptom": "Stunted yellowing plants with swollen, distorted roots",
+              "cause": "Clubroot (Plasmodiophora brassicae).",
+              "fix": "Remove and dispose of affected plants. Lime the soil if pH is below 7. Maintain a strict three to four year rotation. No chemical treatment is available."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

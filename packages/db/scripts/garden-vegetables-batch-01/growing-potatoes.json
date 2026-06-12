@@ -1,0 +1,151 @@
+{
+  "slug": "growing-potatoes",
+  "title": "Growing potatoes",
+  "subtitle": "Planting, earthing up, and harvesting from earlies to maincrops",
+  "excerpt": "Potatoes are planted from February to May in the UK, depending on variety type, and harvested from June through October. Earlies are planted first and harvested before blight season; maincrops follow in April and May.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "vegetables",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "RHS potato growing guide (rhs.org.uk). Mrs Beeton, Book of Household Management (1861), kitchen garden section. Mrs Loudon, The Lady's Country Companion (1845), Project Gutenberg. USDA cooperative extension notes on potato production, public domain.",
+  "garden": {
+    "plantSlug": "potato",
+    "subTopic": "growing",
+    "plantingMonths": ["february", "march", "april", "may"],
+    "harvestMonths": ["june", "july", "august", "september", "october"],
+    "containerFriendly": true,
+    "indoorFriendly": false
+  },
+  "techniqueSlugs": ["chitting", "earthing-up", "crop-rotation"],
+  "criticalTechniques": ["chitting", "earthing-up"],
+  "glossaryTerms": [
+    {
+      "slug": "chitting",
+      "term": "Chitting",
+      "definition": "Placing seed potatoes in a bright, cool, frost-free place to develop short, stubby sprouts before planting. Tubers with 1 to 2 cm long sturdy sprouts establish faster than unchitted tubers. Remove all but the two or three strongest sprouts for a smaller number of larger tubers; leave all sprouts for more, smaller tubers."
+    },
+    {
+      "slug": "earthing-up",
+      "term": "Earthing up",
+      "definition": "Drawing soil up around the stems of growing potato plants to cover the developing tubers. Done two or three times as the plant grows. Earthing up excludes light from tubers (preventing them greening and producing solanine), protects against late frost, and increases yield by giving more soil volume for tuber development."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Potatoes are planted as certified seed tubers from February to May in the UK. First and second early varieties go in from late February to April and crop from June; maincrop varieties follow in April and May and crop from August to October. "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "chitting"}}],
+            "text": "Chitting"
+          },
+          {
+            "type": "text",
+            "text": " seed potatoes before planting gives a faster, more even crop."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Choosing a position"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Full sun, deep well-drained soil, not waterlogged. Potatoes do well in most UK soils. They prefer a slightly acid pH (5.5 to 6.5); common scab is worse on alkaline soil. Rotate potatoes around the plot on a three to four year cycle to reduce the build-up of blight spores and soil-borne pests. Never plant potatoes where tomatoes, aubergines, or peppers were grown the previous year."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Planting out"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Plant chitted tubers 10 to 15 cm deep, with the chits pointing upward. Spacing: first earlies 30 cm apart in rows 60 cm apart; maincrop 40 cm apart in rows 75 cm apart. Use a trowel or a dibber for individual tubers; open a flat-bottomed trench for a row. Cover and firm the soil. Put a cane or peg at each end of each row so you remember where the tubers are."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Through the season"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When shoots reach 20 to 25 cm, "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "earthing-up"}}],
+            "text": "earth up"
+          },
+          {
+            "type": "text",
+            "text": " by pulling soil up around the stems to within 5 cm of the tips. Repeat two or three times as the stems grow. If a late frost threatens once shoots are up, earth up fully or cover with fleece; frost-burned shoots slow the crop by two weeks. Water in dry spells once plants are established; consistent moisture prevents hollow heart and scab."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Harvest"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "First earlies: harvest when the flowers open, from late June. Test by scraping a tuber: if the skin rubs off easily and the flesh is waxy, they're ready. Maincrop: wait for the haulm (the top growth) to yellow and die back, usually September. Cut the haulm to the ground two weeks before lifting to toughen the skins. Lift on a dry day and leave on the surface to dry before storing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What can go wrong"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "The most common potato problems in UK gardens.",
+          "items": [
+            {
+              "symptom": "Brown-black water-soaked patches on leaves and stems, starting in warm humid weather",
+              "cause": "Potato blight (Phytophthora infestans).",
+              "fix": "Remove affected haulm immediately. Harvest the tubers two weeks later; many will be sound. Grow first early or second early varieties that finish before blight season. Resistant maincrop varieties (Sarpo Mira, Sarpo Axona) reduce losses. Never compost blighted haulm."
+            },
+            {
+              "symptom": "Rough corky patches on the skin of lifted tubers",
+              "cause": "Common scab (Streptomyces scabies).",
+              "fix": "Water consistently during the period of rapid tuber development (six to eight weeks after planting). Avoid alkaline soil; do not lime the bed before planting potatoes. Common scab is cosmetic and doesn't affect eating quality."
+            },
+            {
+              "symptom": "Tubers have hollow centres when cut",
+              "cause": "Hollow heart from rapid growth after drought stress.",
+              "fix": "Water consistently during dry spells. Avoid very wide spacing for the same variety."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

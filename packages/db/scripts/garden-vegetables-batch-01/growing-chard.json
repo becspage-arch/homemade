@@ -1,0 +1,118 @@
+{
+  "slug": "growing-chard",
+  "title": "Growing chard",
+  "subtitle": "A cut-and-come-again leaf vegetable for spring, summer, and autumn",
+  "excerpt": "Chard is one of the easiest vegetables in the kitchen garden: sown in April for summer and autumn harvests, or in August for an autumn and spring crop. It tolerates light frost and the coloured varieties (Rainbow chard, Bright Lights) give the plot colour through the less productive months.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "vegetables",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "RHS chard growing guide (rhs.org.uk). Mrs Beeton, Book of Household Management (1861), kitchen garden section. USDA cooperative extension notes on Swiss chard production, public domain.",
+  "garden": {
+    "plantSlug": "chard",
+    "subTopic": "growing",
+    "plantingMonths": ["march", "april", "may", "august"],
+    "harvestMonths": ["june", "july", "august", "september", "october", "november"],
+    "containerFriendly": true,
+    "indoorFriendly": false
+  },
+  "techniqueSlugs": ["sowing-depth", "spacing-fundamentals", "watering-deep-infrequent"],
+  "criticalTechniques": ["sowing-depth"],
+  "glossaryTerms": [
+    {
+      "slug": "chard-bolt",
+      "term": "Bolting (chard)",
+      "definition": "A chard plant that bolts puts up a central flower spike, producing seed rather than leaves. Bolting is triggered by drought, heat, or day-length changes. Once a plant bolts, the leaves become smaller and tougher. Remove bolted plants and resow; chard resows easily and a follow-up sowing fills the gap quickly. Bolting is less common in heat-tolerant varieties such as Perpetual Spinach and Rainbow chard."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chard fills the gap between salad crops and brassicas in the kitchen garden, producing cut-and-come-again leaves from spring through autumn and into winter with minimal effort. Sow in April for summer and autumn; sow in August for autumn and the following spring. Unlike spinach, chard does not run to seed quickly in summer heat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Sowing"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sow direct outdoors from March to May, or in August for an autumn and overwintering crop. Sow 2.5 cm deep; each chard 'seed' is actually a cluster of seeds and will produce multiple seedlings. Thin to one plant every 20 to 30 cm. Alternatively, sow in modules and transplant at 5 to 8 cm tall; this works well for getting an August sowing off to a clean start."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Position and soil"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Full sun to partial shade. Reasonable, moisture-retentive soil; chard tolerates poorer soil than most vegetables. Good drainage is more important than fertility. Chard grown in part shade produces larger, lusher leaves in summer and is slower to "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "chard-bolt"}}],
+            "text": "bolt"
+          },
+          {
+            "type": "text",
+            "text": " in hot weather."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Harvest"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Harvest outer leaves when large enough to use; the central growing point continues producing new leaves. Cut the stems at the base; do not pull. Leave at least three leaves on the plant at all times. In autumn, leave the plants in the ground; they tolerate light frost and may continue producing until December. Cover with fleece in hard frosts to extend the season."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What can go wrong"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "The main chard problems in UK growing.",
+          "items": [
+            {
+              "symptom": "Central flower stem appearing in summer",
+              "cause": "Bolting, triggered by drought or temperature fluctuation.",
+              "fix": "Cut out the flower stem immediately if found early; this sometimes extends the productive life. Otherwise, remove and resow; chard germinates in 7 to 10 days."
+            },
+            {
+              "symptom": "Holes in leaves; metallic blue-green beetles visible",
+              "cause": "Beet leaf miner or leaf beetles.",
+              "fix": "Hand-pick beetles. Cover with insect-proof netting if damage is severe. Chard usually outgrows minor pest damage with healthy watering."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

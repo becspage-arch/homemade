@@ -1,0 +1,132 @@
+{
+  "slug": "growing-sweetcorn",
+  "title": "Growing sweetcorn",
+  "subtitle": "Wind-pollinated blocks for fresh cobs from July to September",
+  "excerpt": "Sweetcorn is sown indoors in April and planted out in May in a block arrangement to aid wind pollination. It needs a warm, sheltered position and a long growing season. Cobs are harvested in July, August, and September when the silks have browned and the kernels exude a creamy juice when pressed.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "vegetables",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "RHS sweetcorn growing guide (rhs.org.uk). USDA cooperative extension notes on sweet corn production, public domain. Mrs Beeton, Book of Household Management (1861), kitchen garden section.",
+  "garden": {
+    "plantSlug": "sweetcorn",
+    "subTopic": "growing",
+    "plantingMonths": ["april", "may"],
+    "harvestMonths": ["july", "august", "september"],
+    "containerFriendly": false,
+    "indoorFriendly": false
+  },
+  "techniqueSlugs": ["module-sowing", "hardening-off-seedlings", "watering-deep-infrequent"],
+  "criticalTechniques": ["hardening-off-seedlings"],
+  "glossaryTerms": [
+    {
+      "slug": "sweetcorn-silks",
+      "term": "Silks",
+      "definition": "The long, fine, thread-like styles that emerge from the tip of a sweetcorn cob and act as the stigmas in pollination. Each silk strand leads to a single kernel; all silks must be pollinated to produce a full cob. Pollination is by wind from tassels on the top of other plants in the block. Silks are green when fresh, turning brown and dry when pollination is complete and the cob is ready to harvest."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sweetcorn is pollinated by wind, not insects. This is why it must be grown in a block rather than a single row; a block allows pollen from the tassels at the top of each plant to fall on the "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "sweetcorn-silks"}}],
+            "text": "silks"
+          },
+          {
+            "type": "text",
+            "text": " of neighbouring plants. A single row produces poorly-filled cobs regardless of how healthy the plants look. A minimum block of three by four plants is the working guide."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Sowing indoors"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sow one seed per 7.5 cm pot or deep module in mid-April, 2.5 cm deep. Keep at 18°C minimum. Sweetcorn dislikes root disturbance; use deep pots and handle the root ball carefully when transplanting. Do not sow more than five to six weeks before the planting-out date or the plants become pot-bound and difficult to transplant cleanly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Planting out"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Plant in late May after the last frost, in a block with plants 35 to 45 cm apart in each direction. Full sun and a warm, sheltered position; sweetcorn does poorly in exposed, windy sites. Water in well. Earth up around the stems as they grow to encourage additional roots from the lower stem nodes and improve anchorage."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Through the season"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Water consistently through dry spells; sweetcorn is drought-sensitive once the cobs are developing. Feed with a nitrogen-rich fertiliser once in late June if the leaves are pale. Side shoots (tillers) may grow from the base; in the UK, leave them; removal does not improve cob yield. "
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Harvest"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Check for readiness when the silks have turned brown and dry. Peel back a little of the husk and press a thumbnail into a kernel. A creamy white juice means the cob is ripe; clear watery juice means it needs more time; dry, starchy, or doughy means it is past its best. Twist the ripe cob downward and break off; eat as soon as possible. Sugars convert rapidly to starch after picking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What can go wrong"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "The main sweetcorn problems in UK gardens.",
+          "items": [
+            {
+              "symptom": "Poorly-filled cobs with gaps in the rows of kernels",
+              "cause": "Incomplete wind pollination, usually from growing in a single row.",
+              "fix": "Always grow in a block. Tap the plants during dry, warm days in July and August when the tassels are releasing pollen, if pollination seems poor."
+            },
+            {
+              "symptom": "Wispy growth at the plant base, no cobs forming",
+              "cause": "Plant checked by cold or waterlogging early in the season.",
+              "fix": "Ensure soil temperature is at least 10°C at planting. Plants that get a cold check rarely recover full productivity. In future, plant into pre-warmed soil using black polythene mulch."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

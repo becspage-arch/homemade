@@ -1,0 +1,132 @@
+{
+  "slug": "growing-squash",
+  "title": "Growing winter squash and pumpkins",
+  "subtitle": "Space-hungry climbers that cure into months of winter storage",
+  "excerpt": "Winter squash and pumpkins are sown indoors in April, planted out in late May, and harvested in October when the skins have hardened. They need space, warmth, and a rich soil to produce well, but cured fruits store through the winter with no refrigeration needed.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "vegetables",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "RHS squash growing guide (rhs.org.uk). Mrs Beeton, Book of Household Management (1861), kitchen garden section. USDA cooperative extension notes on winter squash production, public domain.",
+  "garden": {
+    "plantSlug": "squash",
+    "subTopic": "growing",
+    "plantingMonths": ["april", "may"],
+    "harvestMonths": ["september", "october"],
+    "containerFriendly": false,
+    "indoorFriendly": false
+  },
+  "techniqueSlugs": ["module-sowing", "hardening-off-seedlings", "watering-deep-infrequent"],
+  "criticalTechniques": ["hardening-off-seedlings"],
+  "glossaryTerms": [
+    {
+      "slug": "squash-curing",
+      "term": "Curing",
+      "definition": "Leaving harvested squash and pumpkins in a warm place (ideally 27 to 30°C) for 10 to 14 days after picking to harden the skin and heal any surface wounds before storage. Cured squash stores better and longer than uncured; the skin toughens and the flesh becomes drier and sweeter. A warm greenhouse, porch, or windowsill in an Indian summer works well."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Winter squash and pumpkins are the same genus (Cucurbita maxima, C. moschata, C. pepo) and grown the same way. The difference is in the variety and end use: pumpkins for display and soup, Crown Prince and Butternut for long-storing dense-fleshed winter squash. Both need space: trailing varieties spread to 2 to 3 metres. Bush varieties are more compact but less productive."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Sowing"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sow indoors from late April, one seed per 9 cm pot, on its side, 2.5 cm deep. Keep at 18 to 21°C. Germination takes 5 to 10 days. Squash grows fast once germinated; don't sow too early or the plant outgrows the pot before it can go out. Harden off carefully before planting out in late May."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Position and planting"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Full sun, very rich, moisture-retentive soil. Plant on a mound of well-rotted manure or compost raised 15 cm above the surrounding soil to give warm, well-drained root conditions. Space trailing varieties 1.8 m apart; bush varieties 1.2 m apart. Plant out no earlier than late May; squash is frost-tender and check weather forecasts carefully."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Through the season"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Water deeply at the base twice a week in dry weather; avoid wetting the leaves. Feed every two weeks with a high-potash fertiliser once the first fruits have set. Trailing plants can be trained or left to sprawl; placing a tile or piece of wood under developing fruits prevents rot. In a short summer, limit each plant to two or three fruits and remove excess fruits while small to allow the remainder to develop fully."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Harvest and curing"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Harvest in September or October before the first frost. The fruit is ready when the stem has corked and the skin sounds hollow when tapped. Cut with 5 cm of stalk attached; fruits without a stalk rot quickly. "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "squash-curing"}}],
+            "text": "Cure"
+          },
+          {
+            "type": "text",
+            "text": " for 10 to 14 days in a warm place before storage. Store in a cool, dry, frost-free place; properly cured winter squash keeps three to six months."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What can go wrong"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "The main squash problems in UK growing.",
+          "items": [
+            {
+              "symptom": "Powdery white coating on leaves from midsummer",
+              "cause": "Powdery mildew, common in squash from August onwards.",
+              "fix": "Mildew is largely cosmetic and rarely affects fruits that have already set. Remove the worst affected leaves; maintain consistent watering at the roots."
+            },
+            {
+              "symptom": "Fruits rot at the base while still on the plant",
+              "cause": "Direct soil contact in wet conditions.",
+              "fix": "Place a tile, stone, or piece of cardboard under each developing fruit. Ensure good air circulation around the plants."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

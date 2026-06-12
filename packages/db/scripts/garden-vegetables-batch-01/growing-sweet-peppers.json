@@ -1,0 +1,132 @@
+{
+  "slug": "growing-sweet-peppers",
+  "title": "Growing sweet peppers",
+  "subtitle": "Raising and cropping peppers under glass or in a warm sheltered spot",
+  "excerpt": "Sweet peppers need warmth and a long season to produce usable fruit in the UK. Sown on a heated propagator in February or March, they grow under cover from May and produce green fruit from July onwards, turning red, yellow, or orange if left to ripen fully.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "vegetables",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "RHS pepper growing guide (rhs.org.uk). USDA cooperative extension notes on sweet pepper production, public domain. Mrs Beeton, Book of Household Management (1861), greenhouse crops section.",
+  "garden": {
+    "plantSlug": "sweet-pepper",
+    "subTopic": "growing",
+    "plantingMonths": ["february", "march", "april", "may"],
+    "harvestMonths": ["july", "august", "september", "october"],
+    "containerFriendly": true,
+    "indoorFriendly": true
+  },
+  "techniqueSlugs": ["module-sowing", "pinching-out", "watering-deep-infrequent"],
+  "criticalTechniques": ["pinching-out"],
+  "glossaryTerms": [
+    {
+      "slug": "pepper-ripening",
+      "term": "Green vs ripe pepper",
+      "definition": "All sweet peppers are green when unripe. A pepper left on the plant will change colour to red, yellow, orange, or brown depending on the variety, becoming sweeter and higher in vitamin C as it ripens. Picking green frees the plant to set more fruit; leaving to ripen gives better flavour but reduces the overall crop count."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sweet peppers need a greenhouse, polytunnel, or a warm, sheltered south-facing wall in the UK to produce a worthwhile crop. They need a longer growing season than tomatoes; sow no later than the end of February or early March. Good varieties for UK conditions include Gypsy F1, Corno di Toro, Sweet Triton, and Redskin (dwarf, good in pots)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Sowing and potting on"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sow two seeds per 7.5 cm pot on a heated propagator at 20 to 25°C in February or early March. Remove the weaker seedling after germination. Pot on when roots fill the pot, moving through 9 cm and 12 cm pots before final potting into a 25 to 30 cm container in May. Keep in the warmest, brightest spot available throughout."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Under cover from May"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Move into the greenhouse or polytunnel in May once night temperatures under glass stay above 15°C. Support each plant with a cane. When the plant reaches 20 to 25 cm and branches begin to form naturally, pinch out the central tip if it has not already branched. Allow three to four main stems and remove any side shoots lower than the first fork."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Watering and feeding"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Water consistently; peppers drop flowers under water stress. From first flower, feed weekly with a high-potash tomato fertiliser. Shade the greenhouse if temperatures reach above 30°C; heat above this threshold causes flower drop."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Harvest"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pick some fruits "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "pepper-ripening"}}],
+            "text": "green"
+          },
+          {
+            "type": "text",
+            "text": " from July to keep the plant producing. Leave others to turn red or yellow on the plant; fully ripe peppers are sweeter and richer. In UK conditions, a plant may ripen five to ten fruits over the season. Clear the plants in October before temperatures drop below 10°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What can go wrong"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "The main sweet pepper problems in UK conditions.",
+          "items": [
+            {
+              "symptom": "Flowers fall before setting fruit",
+              "cause": "Temperature too low (below 15°C), too high (above 32°C), or low humidity causing pollen to dry out.",
+              "fix": "Maintain 18 to 28°C under glass. Mist the flowers in the morning on hot days to aid pollination. Gently tap the plants to distribute pollen."
+            },
+            {
+              "symptom": "Soft dark patch at the base of the fruit",
+              "cause": "Blossom end rot, caused by calcium deficiency and irregular watering.",
+              "fix": "Water consistently. Blossom end rot is not a disease and is not contagious; affected fruits are otherwise edible once the patch is cut away."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

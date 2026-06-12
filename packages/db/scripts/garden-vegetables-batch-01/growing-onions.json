@@ -1,0 +1,151 @@
+{
+  "slug": "growing-onions",
+  "title": "Growing onions",
+  "subtitle": "From sets or seed through to harvest and drying for winter storage",
+  "excerpt": "Onions are grown from sets (small bulbs) or from seed in the UK. Sets are planted in March or April for harvest in late July and August. Seed-sown onions produce larger, better-storing bulbs but need sowing in January or February.",
+  "type": "GROWING_GUIDE",
+  "categorySlug": "garden",
+  "subCategorySlug": "vegetables",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), kitchen garden section. RHS onion growing guide (rhs.org.uk). USDA agricultural extension notes on onion production, public domain.",
+  "garden": {
+    "plantSlug": "onion",
+    "subTopic": "growing",
+    "plantingMonths": ["january", "february", "march", "april"],
+    "harvestMonths": ["july", "august", "september"],
+    "containerFriendly": false,
+    "indoorFriendly": false
+  },
+  "techniqueSlugs": ["crop-rotation", "spacing-fundamentals"],
+  "criticalTechniques": ["crop-rotation"],
+  "glossaryTerms": [
+    {
+      "slug": "onion-sets",
+      "term": "Sets",
+      "definition": "Small partially-grown onion bulbs, about 1 to 2 cm in diameter, sold as a fast-start alternative to seed. Sets are planted directly in spring and mature two to three months later. Heat-treated sets have been temperature-treated to reduce their tendency to bolt. Untreated sets planted too early in cold soil may bolt before the bulb forms."
+    },
+    {
+      "slug": "ripening-down",
+      "term": "Ripening down",
+      "definition": "The process by which onion leaves turn yellow, bend over, and dry out as the bulb matures. Traditionally the top growth was bent over by hand to speed this; current guidance is to leave it to fall naturally, as forcing the bend can allow rot to enter. The bulbs are ready to harvest when most leaves are yellow."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Onions in the UK are grown from "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "onion-sets"}}],
+            "text": "sets"
+          },
+          {
+            "type": "text",
+            "text": " planted in March or April, or from seed sown indoors in January or February. Sets are easier and more reliable for first-time growers; seed gives a wider variety choice and less risk of bolting. Both methods give bulbs ready to lift and dry in July and August."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Choosing a position"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Full sun, well-drained, reasonably fertile soil. Onions will not tolerate waterlogged conditions. A bed that had a manured crop the previous year is ideal; freshly manured ground promotes leaf growth at the expense of bulb development. pH 6.0 to 7.0. Rotate with brassicas and roots on a three to four year cycle; do not grow alliums in the same position more than two years running."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Planting out"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sets: plant from mid-March in the south, April in the north. Push each set into the soil so only the tip is showing, 10 cm apart in rows 25 cm apart. Birds pull out newly planted sets; net the bed for the first two weeks or use heat-treated sets, which have a less visible tip to grab. Seed-grown transplants: plant out at 8 to 10 cm tall, same spacing as sets."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Through the season"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep the bed weed-free throughout the growing season; onions compete poorly with weeds. Hoe between rows when the ground is dry; hand-weed close to the plants. Water in dry spells until late June, then stop; dry conditions in July help ripen the bulbs. Do not feed with a high-nitrogen fertiliser after June."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Harvest"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lift when the top growth has yellowed and begun to fall over naturally. Allow the top growth to "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "ripening-down"}}],
+            "text": "ripen down"
+          },
+          {
+            "type": "text",
+            "text": " on its own; do not bend it by hand. Lift the bulbs carefully with a fork and leave them on the soil surface for one to two weeks in dry weather to dry. Alternatively move them to a greenhouse, shed, or cloches if rain is forecast. Store in nets or on slatted shelves in a cool, dry, well-ventilated place."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What can go wrong"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": "The main onion problems in UK gardens.",
+          "items": [
+            {
+              "symptom": "Plants produce a thick flower stem before the bulb has developed",
+              "cause": "Bolting, triggered by planting untreated sets too early or in cold wet conditions.",
+              "fix": "Use heat-treated sets for early spring planting. Do not plant before March. If a plant bolts, pull and eat it fresh rather than leaving it to affect neighbours."
+            },
+            {
+              "symptom": "Soft, rotten area at the neck of stored bulbs",
+              "cause": "Neck rot (Botrytis allii), a fungal disease.",
+              "fix": "Ensure bulbs are fully dried and cured before storage. Store in cool, well-ventilated conditions. Do not store any bulbs with soft or damaged necks."
+            },
+            {
+              "symptom": "White fluffy mould at the base, bulbs rotting from below",
+              "cause": "White rot (Sclerotium cepivorum), a soil-borne disease.",
+              "fix": "Remove and dispose of affected plants and surrounding soil. White rot persists for many years; do not grow alliums in the affected area for at least eight years."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
