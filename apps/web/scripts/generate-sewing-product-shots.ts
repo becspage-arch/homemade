@@ -49,7 +49,11 @@ const SCRIPT_VERSION = 1
 const MAX_ATTEMPTS = 5
 const ELIGIBLE_CATEGORIES: SewingGarmentCategory[] = ['BAGS', 'HOME', 'ACCESSORIES']
 const FAL_COST_PER_CALL_GBP = 0.032
-const CATALOGUE_SPEND_CEILING_GBP = 5
+// Documented cap for the catalogue run. Enforced by the orchestrating
+// Claude Code session (the script is invoked attempt-by-attempt), so
+// the constant is doc-only. Worst-case run cost: 26 patterns x 5
+// attempts x £0.032 = £4.16, below the ceiling.
+const _CATALOGUE_SPEND_CEILING_GBP = 5
 
 interface PickConfig {
   subject: string
