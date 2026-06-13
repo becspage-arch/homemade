@@ -1,0 +1,323 @@
+{
+  "slug": "feather-fan-triangle-shawl",
+  "title": "Feather and fan triangle shawl",
+  "subtitle": "A top-down fingering-weight triangle using a feather-and-fan lace repeat.",
+  "excerpt": "A top-down triangular shawl in fingering-weight wool, using a four-row feather-and-fan lace repeat across the body between the spine increases. Wingspan 180 cm, centre-back depth 85 cm when blocked. About 400 g of fingering-weight yarn. The fan scallops align with the blocked edge.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "shawl-wrap",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Feather and fan, also called old shale, is documented in Mary Thomas's Book of Knitting Patterns (1943), §Wave patterns. The same pattern appears in Weldon's Practical Knitter, 6th series (1890s), §Shawl patterns, and in earlier Shetland knitting tradition where it is one of the most widely worked lace repeats. Sharon Miller, Heirloom Knitting (2004), §Shetland stitches, covers the traditional version as it was worked on Shetland shawl borders.",
+  "knitting": {
+    "primaryYarnWeightSlug": "fingering",
+    "primaryNeedleSlug": "knitting-needle-3-75mm",
+    "castOnMethod": "PROVISIONAL",
+    "bindOffMethod": "JENYS_SURPRISINGLY_STRETCHY",
+    "inTheRoundMethod": null,
+    "gaugeText": "24 sts × 48 rows = 10 × 10 cm in stockinette on 3.75 mm needles, blocked. Pattern stitch gauge: 24 sts × 40 rows = 10 × 10 cm over feather-and-fan on 3.75 mm needles, blocked.",
+    "gaugeInPatternStitch": {
+      "stitchesPer10cm": 24,
+      "rowsPer10cm": 40,
+      "stitchName": "feather and fan",
+      "blocked": true
+    },
+    "finishedSizeText": "Wingspan 180 cm. Centre-back depth 85 cm. Blocked.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-yarn-over",
+      "knitting-k2tog",
+      "knitting-ssk",
+      "knitting-garter-stitch"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction",
+      "garter-tab",
+      "lacework",
+      "lifeline",
+      "wet-blocking"
+    ],
+    "projectShape": "SHAWL",
+    "techniqueDisciplines": ["LACE"]
+  },
+  "recipeTools": [
+    { "slug": "stitch-marker", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "blocking-mat", "isOptional": false },
+    { "slug": "blocking-pins", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "feather-and-fan",
+      "term": "Feather and fan",
+      "definition": "A four-row lace repeat in which three decreases cluster together, three yarn overs open opposite eyelets, and a plain row and two knit rows complete the cycle. The resulting fabric falls in gentle waves when blocked."
+    },
+    {
+      "slug": "garter-tab",
+      "term": "Garter tab",
+      "definition": "A small strip of garter stitch worked on a few stitches, then rotated so live stitches can be picked up from all three edges, giving a neat triangular start at the centre back neck."
+    },
+    {
+      "slug": "lifeline",
+      "term": "Lifeline",
+      "definition": "A length of smooth contrast thread threaded through every live stitch at the end of a pattern repeat. If a mistake is made in a later repeat, unpicking to the lifeline row is safe: the stitches are all accounted for and none can drop lower than the thread."
+    }
+  ],
+  "techniqueSlugs": ["feather-and-fan", "garter-tab", "lifeline", "wet-blocking"],
+  "criticalTechniques": ["feather-and-fan", "lifeline", "wet-blocking"],
+  "recipe": { "scalable": false },
+  "lifelinePoints": [60, 120, 180, 240, 300],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A top-down triangular shawl in fingering-weight wool, worked flat with a four-row " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "feather-and-fan" } }],
+            "text": "feather-and-fan"
+          },
+          { "type": "text", "text": " lace repeat throughout the body. Wingspan 180 cm, depth 85 cm." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The top-down construction lets the fan scallops grow with the shawl: each RS lace row widens the triangle by four stitches while the feather-and-fan repeat occupies the body. Because the pattern works on a multiple of 11 stitches plus 2 edge stitches, the repeats slot in cleanly once the wing is wide enough to hold the first full 11-stitch block. Until then, the wing grows in garter stitch. Budget about 400 g (about 1,600 m / 1,750 yards) of fingering wool. Thread a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lifeline" } }],
+            "text": "lifeline"
+          },
+          { "type": "text", "text": " at the end of every complete chart repeat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            { "name": "Yarn", "qty": "About 400 g (1,600 m / 1,750 yards) of fingering-weight yarn", "substitutions": "Any fingering or 4-ply wool or wool-silk blend. Superwash wool blocks easily but may grow slightly more than non-superwash." },
+            { "name": "Needles", "qty": "3.75 mm (UK 9 / US 5) circular needle, 100 cm or longer" },
+            { "name": "Stitch markers", "qty": "3 or more for the increase points, plus extra to mark repeat starts" },
+            { "name": "Smooth contrast thread", "qty": "About 2 m for lifelines" },
+            { "name": "Tapestry needle", "qty": "1" },
+            { "name": "Scissors and tape measure", "qty": "" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Gauge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "24 stitches and 48 rows to 10 cm over stockinette on 3.75 mm needles, blocked. Pattern stitch gauge: 24 stitches and 40 rows to 10 cm over feather-and-fan on 3.75 mm needles, blocked. The lace opens up on blocking, so the unblocked pattern-stitch gauge reads tighter than the blocked figure." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If your blocked pattern-stitch gauge is 26 stitches per 10 cm instead of 24, the finished wingspan will be about 166 cm rather than 180 cm at the same row count. The fan scallops will also be slightly compressed. Move up to 4 mm needles if your swatch runs tight." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stitches used" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Abbreviations (UK)",
+          "items": [
+            { "name": "k", "qty": "knit" },
+            { "name": "p", "qty": "purl" },
+            { "name": "yo", "qty": "yarn over" },
+            { "name": "k2tog", "qty": "knit 2 together (right-leaning decrease)" },
+            { "name": "ssk", "qty": "slip, slip, knit together (left-leaning decrease)" },
+            { "name": "RS", "qty": "right side" },
+            { "name": "WS", "qty": "wrong side" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Garter tab cast-on" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "garter-tab" } }],
+            "text": "garter tab"
+          },
+          { "type": "text", "text": ": using waste yarn, cast on 3 stitches, knit 6 rows, switch to main yarn, pick up and knit 9 stitches total across the three tab edges. Knit 1 WS row and place markers after stitches 1, 5, and 8." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Set-up section: garter until first full repeat fits" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work plain increase rows in garter until each wing holds at least 11 stitches for the feather-and-fan repeat plus 2 edge stitches. At 4 increases per RS row, the first full repeat fits after approximately 5 RS rows." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Feather-and-fan body" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Feather-and-fan pattern (on a multiple of 11 sts within each wing, worked flat):" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Row 1 (RS, increase and lace): k1, yo, work feather-and-fan across each wing (k2tog, k2tog, k2tog, yo, k1, yo, k1, yo, k1, yo, ssk, ssk, ssk per 11-st group), yo, k1 at each marker. (increases and lace combined)" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Row 2 (WS): k all sts." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Row 3 (RS, increase and lace): k all sts including yo-increase positions." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Row 4 (WS): p all sts (purl row creates the wave effect)." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The 4-row repeat continues throughout. As the wings grow, additional 11-stitch feather-and-fan blocks are added to each wing on the next RS row after the wing count exceeds the next multiple of 11." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Thread a lifeline at the end of every 5 complete 4-row repeats (every 20 rows). Insert a length of smooth contrast thread through each live stitch with a blunt needle before continuing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Stitch count check-ins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After 60 rows (30 RS rows): you should have 9 + (4 × 30) = 129 stitches. Thread a lifeline here. The wingspan is about 27 cm at pattern-stitch gauge." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After 200 rows (100 RS rows): you should have 9 + 400 = 409 stitches. The wingspan is about 90 cm. Thread a lifeline. The end of the body is another 100 RS rows away at gauge." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bind off" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work Jeny's surprisingly stretchy bind-off after completing a Row 2 (WS knit) of a full repeat. The bind-off edge needs as much stretch as the lace can give; a standard bind-off here will scrunch the fan scallops and prevent the edge from lying flat when pinned." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Common faults" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Stitch count climbing inexplicably: an extra yarn-over was worked in the feather-and-fan row without the matching decrease. Each 11-stitch feather-and-fan block uses 3 yarn overs and 3 decreases on each side; the count should be net-zero within the block. Recount the block stitches if the count drifts." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fan scallops not visible before blocking: feather-and-fan is almost flat when unblocked. The wave structure only emerges after wet-blocking. Do not judge the finished fabric before pinning." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Twisted yarn-overs: if the yarn-over is worked by bringing the yarn forward then straight to the back without going over the needle, the eyelet closes on the next row instead of remaining open. The yo must go all the way over the needle tip." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Blocking" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Soak for 15 minutes in cool water with a wool wash. Press out water in towels. Pin the centre back neck point first. Work out to each wingtip, pinning the bound-off edge at each fan scallop with a pin placed at the valley between scallops. The scallops are the visual feature of feather and fan; pulling the valleys firmly outward with pins is what creates the wave. Final pinned dimensions: wingspan 180 cm, centre-back depth 85 cm. Leave 24 hours." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hand wash in cool water, lay flat to dry. Re-block after washing if the scallop edge softens." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Feather and fan combines well with a plain garter spine and a picked-up lace selvedge. The natural next project is a Shetland-tradition triangle with a plain garter body and a deep feather-and-fan border picked up separately." }
+        ]
+      }
+    ]
+  }
+}

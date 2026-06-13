@@ -1,0 +1,310 @@
+{
+  "slug": "shetland-lace-triangle-shawl",
+  "title": "Shetland lace triangle shawl",
+  "subtitle": "A top-down Shetland-tradition lace triangle in laceweight wool.",
+  "excerpt": "A top-down triangular shawl in laceweight Shetland wool, using the traditional OXO lace stitch across the body and a vine-lace border along the bound-off edge. Wingspan 200 cm, centre-back depth 95 cm when blocked. About 200 g of laceweight wool. The OXO pattern is a Shetland heritage stitch worked from Weldon's and Mary Thomas's references.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "shawl-wrap",
+  "difficulty": "ADVANCED",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "OXO Shetland lace stitch: Weldon's Practical Knitter, 8th series (1886), §Shetland shawl patterns. Mary Thomas's Book of Knitting Patterns (1943), §Lace patterns: Old English lace, gives a similar OXO lattice. Sharon Miller, Heirloom Knitting (2004), is the standard modern secondary reference for the Shetland tradition and should be consulted for full stitch-library context; Miller's charts are not reproduced here.",
+  "knitting": {
+    "primaryYarnWeightSlug": "lace",
+    "primaryNeedleSlug": "knitting-needle-4-0mm",
+    "castOnMethod": "PROVISIONAL",
+    "bindOffMethod": "JENYS_SURPRISINGLY_STRETCHY",
+    "inTheRoundMethod": null,
+    "gaugeText": "26 sts × 40 rows = 10 × 10 cm in lace pattern on 4 mm needles, blocked.",
+    "gaugeInPatternStitch": {
+      "stitchesPer10cm": 26,
+      "rowsPer10cm": 40,
+      "stitchName": "OXO lace panel",
+      "blocked": true
+    },
+    "finishedSizeText": "Wingspan 200 cm. Centre-back depth 95 cm. Blocked.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-purl",
+      "knitting-yarn-over",
+      "knitting-k2tog",
+      "knitting-ssk",
+      "knitting-garter-stitch"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction",
+      "garter-tab",
+      "lacework",
+      "lifeline",
+      "wet-blocking"
+    ],
+    "projectShape": "SHAWL",
+    "techniqueDisciplines": ["LACE"]
+  },
+  "recipeTools": [
+    { "slug": "stitch-marker", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "blocking-mat", "isOptional": false },
+    { "slug": "blocking-pins", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "oxo-lace",
+      "term": "OXO lace",
+      "definition": "A Shetland-tradition lace stitch that combines yarn-over eyelets in an alternating O-and-X diagonal lattice. The Os are open eyelets; the Xs are crossed decrease pairs that give the lattice its second diagonal direction."
+    },
+    {
+      "slug": "garter-tab",
+      "term": "Garter tab",
+      "definition": "A small strip of garter stitch worked on a few stitches, then rotated so live stitches can be picked up from all three edges, giving a neat triangular start at the centre back neck."
+    },
+    {
+      "slug": "lifeline",
+      "term": "Lifeline",
+      "definition": "A length of smooth contrast thread threaded through every live stitch at the end of a pattern repeat. Unpicking to the lifeline row is safe: no stitch can drop below the thread."
+    }
+  ],
+  "techniqueSlugs": ["oxo-lace", "garter-tab", "lifeline", "wet-blocking"],
+  "criticalTechniques": ["oxo-lace", "lifeline", "wet-blocking"],
+  "recipe": { "scalable": false },
+  "lifelinePoints": [24, 48, 72, 96, 120, 160, 200, 240],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A top-down laceweight triangle in the Shetland-tradition " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "oxo-lace" } }],
+            "text": "OXO lace"
+          },
+          { "type": "text", "text": " stitch. Wingspan 200 cm, depth 95 cm when blocked." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The top-down construction suits laceweight well because the triangle grows slowly and the lace pattern has room to develop rhythm before the rows become very long. Laceweight at 26 stitches per 10 cm means approximately 520 stitches on the needle at cast-off, so the final rows are slow but the stitch count at the start is manageable. Use the same top-down spine-increase structure as a plain garter shawl; the OXO pattern fills the body between the spine and edge increases. Thread a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "lifeline" } }],
+            "text": "lifeline"
+          },
+          { "type": "text", "text": " at the end of every 12-row lace repeat. Budget about 200 g (about 1,600 m / 1,750 yards) of laceweight Shetland-type wool." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            { "name": "Yarn", "qty": "About 200 g (1,600 m / 1,750 yards) of laceweight yarn", "substitutions": "Shetland-type 2-ply jumper-weight or cobweb-weight wool. A 2-ply Shetland blocks cleanly and holds pin tension well. Superwash is not recommended: it loses elasticity after wet-blocking." },
+            { "name": "Needles", "qty": "4 mm (UK 8 / US 6) circular needle, 100 cm or longer. Laceweight on 4 mm needles creates very open eyelets; this is intentional. If your swatch reads tighter than 26 sts per 10 cm, move to 4.5 mm needles." },
+            { "name": "Stitch markers", "qty": "3 for increase points plus extras for repeat markers" },
+            { "name": "Smooth contrast thread", "qty": "About 3 m for lifelines" },
+            { "name": "Tapestry needle, blocking mat, blocking pins", "qty": "" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Gauge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "26 stitches and 40 rows to 10 cm over OXO lace pattern on 4 mm needles, blocked. Laceweight is almost impossible to swatch accurately in the unblocked state. Make a full 20 cm square swatch, wet-block it to the usual pins-and-towels method, and measure the centre 10 cm once completely dry." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If your blocked gauge reads 28 stitches per 10 cm instead of 26, the finished wingspan will be about 185 cm rather than 200 cm at the same row count. For laceweight this is a 15 cm difference across the wingspan: meaningful but not critical. If you want the full 200 cm wingspan, work extra repeats." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stitches used" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Abbreviations (UK)",
+          "items": [
+            { "name": "k", "qty": "knit" },
+            { "name": "p", "qty": "purl" },
+            { "name": "yo", "qty": "yarn over" },
+            { "name": "k2tog", "qty": "knit 2 together (right-leaning decrease)" },
+            { "name": "ssk", "qty": "slip, slip, knit (left-leaning decrease)" },
+            { "name": "RS / WS", "qty": "right side / wrong side" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Garter tab and set-up" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "garter-tab" } }],
+            "text": "garter tab"
+          },
+          { "type": "text", "text": ": cast on 3 sts with waste yarn, work 6 garter rows, switch to laceweight main yarn and pick up 9 stitches total from the three tab edges. Place 3 increase markers. Work the standard 4-stitch-per-RS-row increase in garter stitch for the first 24 rows while the wings are too narrow for the OXO pattern (minimum 12 sts per wing for a single OXO repeat). After 12 RS rows the wing holds 12 stitches for the first repeat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "OXO lace body" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "OXO 12-row repeat (worked on a multiple of 12 sts within each wing):" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rows 1, 3 (RS): k2, *yo, ssk, k1, k2tog, yo, k1; repeat from * to last 2 sts, k2." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rows 2, 4, 6, 8, 10, 12 (WS): k2, p to last 2 sts, k2." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rows 5, 7 (RS): k2, *k1, k2tog, yo, k1, yo, ssk; repeat from * to last 2 sts, k2." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rows 9, 11 (RS): as rows 1, 3." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "On all RS rows, work the standard yo-increase at each of the 4 marker positions in addition to the lace. Thread a lifeline at the end of every 12-row repeat (after every Row 12)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Stitch count check-ins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After 72 rows (36 RS rows): 9 + (4 × 36) = 153 stitches. Thread a lifeline. Wingspan approximately 30 cm." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After 200 rows (100 RS rows): 9 + 400 = 409 stitches. Wingspan approximately 79 cm. Thread a lifeline. Final bound-off row will be at approximately 260 RS rows at gauge." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bind off" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work Jeny's surprisingly stretchy bind-off after completing a Row 12 of the lace repeat. Laceweight needs a very stretchy bind-off: a standard bind-off on laceweight creates a puckered top edge that will not lie flat even after re-blocking." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Common faults" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Yarn overs twisted closed on the next row: the yarn-over loop must sit on the needle with its leading leg at the front. If it sits reversed, the eyelet closes when the stitch is worked. Drop the twisted stitch back to the needle and re-seat it correctly before working it." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "OXO diagonals drifting by one stitch: a yarn-over was worked one stitch away from its intended position. This causes the lattice to shift diagonally over subsequent repeats. Rip back to the last lifeline and restart the repeat." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cobweb-weight yarn snapping under pin tension: use T-pins rather than thin straight pins, and avoid pulling the yarn forcibly to the pinned dimension. Laceweight wool has less margin than fingering before a thread breaks at a pin." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pattern not visible before blocking: laceweight lace looks like a crumpled mesh off the needles. Blocking is not optional; the OXO lattice only becomes legible after the yarn is fully wet and the pins pull it to dimension." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Blocking" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Soak for 20 minutes in cool water with a wool wash (no-rinse formula). Lift from the water without wringing and press firmly in several dry towels. Lay on the blocking mat. Pin the centre back neck point first, then the two wingtip corners at 200 cm wingspan. Pin the side edges every 3 cm in a straight line. Pin the bound-off edge with a pin at each yo eyelet point to create the slight points that characterise Shetland lace. Leave to dry for at least 36 hours. Laceweight dries slower than fingering." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hand wash in cool water. Do not wring. Lay flat to dry. Re-block after each washing: laceweight wool relaxes fully in water and the dimensions reset with each block." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The classic Shetland shawl progression moves from a body lace worked in the round to a border lace worked separately and grafted on. Sharon Miller's Heirloom Knitting covers this construction in detail." }
+        ]
+      }
+    ]
+  }
+}

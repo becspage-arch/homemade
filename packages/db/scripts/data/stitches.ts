@@ -1148,6 +1148,41 @@ export const STITCHES: StitchSeed[] = [
       'Left-leaning single decrease, the mirror of k2tog. UK books may write "sl1, k1, psso".',
   },
 
+  {
+    slug: 'knitting-brioche-knit',
+    craft: 'knitting',
+    canonicalName: 'Brioche knit',
+    ukAbbreviation: 'brk',
+    usAbbreviation: 'brk',
+    category: 'textured',
+    difficulty: 'INTERMEDIATE',
+    notes:
+      'Knit the stitch and its paired yarn-over together. The visible stitch of two-colour brioche; produces the raised knit column.',
+  },
+  {
+    slug: 'knitting-brioche-purl',
+    craft: 'knitting',
+    canonicalName: 'Brioche purl',
+    ukAbbreviation: 'brp',
+    usAbbreviation: 'brp',
+    category: 'textured',
+    difficulty: 'INTERMEDIATE',
+    notes:
+      'Purl the stitch and its paired yarn-over together. The WS stitch of brioche; worked the same direction as brk but from the purl side.',
+  },
+  {
+    slug: 'knitting-k3tog',
+    craft: 'knitting',
+    canonicalName: 'Knit three together',
+    ukAbbreviation: 'k3tog',
+    usAbbreviation: 'k3tog',
+    category: 'decrease',
+    chartSymbol: 'k3tog',
+    difficulty: 'INTERMEDIATE',
+    notes:
+      'Right-leaning double decrease: insert needle into three stitches as if to knit, knit them together. Removes two stitches at once.',
+  },
+
   // ── Knitting cables ─────────────────────────────────────────────────
   {
     slug: 'knitting-cable-4-front',

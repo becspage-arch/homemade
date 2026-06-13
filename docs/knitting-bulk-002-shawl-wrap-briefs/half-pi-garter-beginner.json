@@ -1,0 +1,267 @@
+{
+  "slug": "half-pi-garter-beginner",
+  "title": "Half-pi garter shawl",
+  "subtitle": "Elizabeth Zimmermann's half-pi construction in aran weight — the most beginner-friendly semicircle.",
+  "excerpt": "A semicircular shawl using the half-pi construction, worked in plain garter stitch in aran-weight wool. Rows double in length on a logarithmic schedule (3, 6, 9, 18 rows between doubling rounds), creating a flat semicircle without short rows or complicated shaping. Wingspan approximately 130 cm, depth at centre back approximately 50 cm.",
+  "type": "PATTERN",
+  "categorySlug": "knitting",
+  "subCategorySlug": "shawl-wrap",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The half-pi shawl construction is Elizabeth Zimmermann's invention, published in Knitting Without Tears (1971), §Shawls. The construction is in the public domain; the specific implementation here is original. The logarithmic doubling schedule (rows between increase rounds: 3, 6, 9, 18, 27, ...) is Zimmermann's formula.",
+  "knitting": {
+    "primaryYarnWeightSlug": "aran",
+    "primaryNeedleSlug": "knitting-needle-5-0mm",
+    "castOnMethod": "LONG_TAIL",
+    "bindOffMethod": "JENYS_SURPRISINGLY_STRETCHY",
+    "inTheRoundMethod": null,
+    "gaugeText": "18 sts × 36 rows = 10 × 10 cm in garter stitch on 5 mm needles, blocked.",
+    "finishedSizeText": "Wingspan approximately 130 cm. Centre-back depth approximately 50 cm. Blocked.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": [
+      "knitting-knit",
+      "knitting-garter-stitch",
+      "knitting-yarn-over"
+    ],
+    "craftTechniqueTags": [
+      "flat-construction",
+      "half-pi-construction",
+      "wet-blocking"
+    ],
+    "projectShape": "SHAWL",
+    "techniqueDisciplines": []
+  },
+  "recipeTools": [
+    { "slug": "stitch-marker", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "blocking-mat", "isOptional": true },
+    { "slug": "blocking-pins", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "half-pi-construction",
+      "term": "Half-pi construction",
+      "definition": "Elizabeth Zimmermann's semicircular shawl formula: start with a small cast-on at the straight top edge and work increases on every other stitch on evenly spaced increase rows. Between increase rows, the number of plain rows follows a logarithmic sequence (3, 6, 9, 18, 27, ...) so the shawl grows into a flat semicircle without short rows."
+    }
+  ],
+  "techniqueSlugs": ["half-pi-construction", "wet-blocking"],
+  "criticalTechniques": ["half-pi-construction"],
+  "recipe": { "scalable": false },
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A semicircular garter shawl using Elizabeth Zimmermann's " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "half-pi-construction" } }],
+            "text": "half-pi construction"
+          },
+          { "type": "text", "text": " in aran-weight wool. Wingspan approximately 130 cm, depth approximately 50 cm. No short rows, no counting: just a doubling schedule and plain garter stitch." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The half-pi formula starts with a cast-on along the straight top (neck) edge and grows the semicircular body by doubling the stitch count at regular but increasing intervals: 3 rows, then 6, then 9, then 18, then 27. The row gaps roughly triple each time, matching the mathematical requirement for a flat semicircle. Budget about 450 g (about 900 m / 985 yards) of aran wool." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Materials",
+          "items": [
+            { "name": "Yarn", "qty": "About 450 g (900 m / 985 yards) of aran-weight yarn" },
+            { "name": "Needles", "qty": "5 mm (UK 6 / US 8) circular needle, 80 cm or longer" },
+            { "name": "Stitch markers", "qty": "2 to mark the ends of the straight top edge" },
+            { "name": "Tapestry needle, scissors, tape measure", "qty": "" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Gauge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "18 stitches and 36 rows to 10 cm over garter stitch on 5 mm needles, blocked. The half-pi construction is tolerant of gauge variation: if your gauge runs 1 to 2 stitches per 10 cm away from gauge, the semicircle will remain flat and the wingspan will adjust proportionately. At 16 stitches per 10 cm the wingspan will be approximately 146 cm; at 20 stitches per 10 cm it will be approximately 117 cm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stitches used" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Abbreviations (UK)",
+          "items": [
+            { "name": "k", "qty": "knit" },
+            { "name": "yo", "qty": "yarn over" },
+            { "name": "k2tog", "qty": "knit 2 together (used only on fold-back edge)" },
+            { "name": "RS / WS", "qty": "right side / wrong side" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cast on" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Using the long-tail cast-on, cast on 9 stitches. This is the initial straight top edge: 3 edge stitches, 3 body stitches, 3 edge stitches. Tail: allow approximately 20 cm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Half-pi doubling schedule" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Increase row: k1, *yo, k1; repeat from * to end. (Doubles all non-edge stitches.)" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Plain rows: k all sts." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Section 1: Cast on row → 3 plain rows → Increase row 1 (9 → ~17 sts)." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Section 2: 6 plain rows → Increase row 2 (~17 → ~33 sts)." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Section 3: 9 plain rows → Increase row 3 (~33 → ~65 sts)." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Section 4: 18 plain rows → Increase row 4 (~65 → ~129 sts)." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Section 5: 27 plain rows → Increase row 5 (~129 → ~257 sts)." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After increase row 5, work plain rows until the wingspan across the live stitches measures 130 cm (approximately 45 to 54 more plain rows at gauge depending on yarn). Do not work another increase row unless the shawl is too shallow." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Bind off" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Work Jeny's surprisingly stretchy bind-off. The curved lower edge of the semicircle has significantly more stitches than the straight top edge; a standard bind-off will pull it inward." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Stitch count check-ins" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After increase row 3: approximately 65 stitches. The shawl should lie flat on a table. If the bottom edge ripples, add 2 to 4 extra plain rows before the next increase row." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After increase row 5: approximately 257 stitches. Wingspan approximately 110 cm. The shawl needs only finishing rows to reach 130 cm." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Common faults" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bottom edge ruffles rather than lying flat: the increase rows are too close together relative to your gauge. Add 2 to 3 extra plain rows to each section (6 becomes 8, 9 becomes 11, etc.). Garter rows are short in height relative to stitch width in aran, so slight correction is often needed." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bottom edge cups inward: the increase rows are too far apart. Remove 2 plain rows from each remaining section." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Blocking" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Soak in cool water, press out in towels. Pin the straight top edge flat from end to end. Pin the curved bottom edge in a semicircle to the full wingspan. The half-pi shawl lies very flat before blocking; pinning opens the garter stitches and adds 10 to 15% to the wingspan." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Hand wash in cool water, lay flat to dry. The garter semicircle is forgiving: it retains its shape after washing without re-blocking in most cases." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Once the half-pi formula is comfortable, add a lace pattern in section 5 (the longest plain section) while keeping sections 1 to 4 in garter. The stitch count is large enough in section 5 to carry a full lace repeat without distorting the semicircle." }
+        ]
+      }
+    ]
+  }
+}
