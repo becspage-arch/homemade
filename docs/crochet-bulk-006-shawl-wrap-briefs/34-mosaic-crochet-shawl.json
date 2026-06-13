@@ -1,0 +1,336 @@
+{
+  "slug": "crochet-mosaic-shawl-blo",
+  "title": "Mosaic crochet rectangle shawl",
+  "subtitle": "Two-colour geometric patterning in DK using back-loop-only double crochet on a 4 mm hook",
+  "excerpt": "Mosaic crochet builds geometric colourwork by working back-loop-only stitches in a contrast yarn to lift a column of colour from the previous row. This rectangle shawl measures 175 cm wide by 55 cm deep in DK weight on a 4 mm hook. Two colours of yarn, one row at a time, produce a graphic repeat without ever carrying yarn across the row.",
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "subCategorySlug": "garments",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mosaic crochet technique synthesised from established BLO colourwork principles. The back-loop-only row method for two-colour geometric patterns is documented in Weldon's Practical Crochet (1886) derivatives and in the wider fibre arts canon. No single prior source.",
+  "heroPrompt": "A rectangular crochet shawl in charcoal and cream DK yarn folded on a pale linen surface. The geometric mosaic repeat is clearly visible in soft natural light.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "gaugeText": "18 dc x 20 rows = 10 x 10 cm in DK yarn with a 4 mm hook, measured in the mosaic pattern after blocking.",
+    "finishedSizeText": "Approximately 175 cm wide x 55 cm deep, blocked.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-chain", "crochet-double-uk", "crochet-blo-dc", "crochet-slip-stitch"],
+    "craftTechniqueTags": ["mosaic-colourwork", "blo", "two-colour", "rectangle", "blocking"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "stitch-marker", "isOptional": true },
+    { "slug": "blocking-mat", "isOptional": true },
+    { "slug": "blocking-pins", "isOptional": true },
+    { "slug": "tape-measure", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "blo",
+      "term": "BLO (back loop only)",
+      "definition": "Working a stitch through only the back of the two loops at the top of the stitch below, rather than both loops. Leaves a visible horizontal bar on the front of the fabric and is the mechanism that creates mosaic colour lifts."
+    },
+    {
+      "slug": "mosaic-row",
+      "term": "Mosaic row",
+      "definition": "In mosaic crochet, a row worked in the contrast colour where some stitches are replaced by BLO stitches that reach down into the previous contrast row, pulling that colour up through the current main-colour row."
+    }
+  ],
+  "techniqueSlugs": ["crochet-blo-technique", "crochet-mosaic-colourwork", "crochet-blocking-wet"],
+  "criticalTechniques": ["crochet-blo-technique", "crochet-mosaic-colourwork"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This rectangular shawl uses mosaic crochet to place a two-colour geometric repeat across 175 cm of DK fabric on a 4 mm hook. The method works one colour per row: on main-colour rows you work standard double crochet (UK dc, the same move US patterns call single crochet) across all stitches; on contrast rows you alternate regular dc with "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blo" } }],
+            "text": "BLO"
+          },
+          {
+            "type": "text",
+            "text": " dc at the pattern positions. The BLO stitch reaches through only the back loop, pulling a stitch of contrast colour up through the row above it. The result is a geometric colourwork surface with no floats and no colour-carrying across rows."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You carry the unused colour loosely up the side edge rather than fastening off after every row. Keep the carry tension consistent: too tight pulls the edge in; too loose leaves loops that catch. The pattern uses a 12-stitch repeat so any multiple of 12 plus 2 edge stitches produces a full repeat. The stated cast-on of 314 stitches gives the full 175 cm at gauge."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Materials",
+          "body": "Colour A (main): approximately 280 g DK-weight yarn. Colour B (contrast): approximately 150 g DK-weight yarn. A 4 mm hook (US G/6). Tapestry needle. Craft scissors. Stitch markers. Blocking mat and pins. Tape measure."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Gauge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "18 dc x 20 rows = 10 x 10 cm in DK yarn on a 4 mm hook, measured in the mosaic pattern after blocking. Work a swatch of at least 25 stitches across at least 24 rows in the mosaic pattern (not plain dc), block it, and measure the central 10 x 10 cm. Gauge in the mosaic pattern runs slightly tighter than plain dc due to the BLO rows drawing in."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stitches used" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "ch: chain -- UK and US shared." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "sl st: slip stitch -- UK and US shared." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "dc: double crochet (UK) -- the same move as US \"single crochet\" (sc). Yarn over once, insert hook, draw up loop, yarn over, draw through both loops." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blo" } }],
+                    "text": "BLO dc"
+                  },
+                  {
+                    "type": "text",
+                    "text": ": double crochet through the back loop only. Works exactly as dc but the hook enters only the back of the top two loops."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The shawl is worked flat in rows, turning at the end of each row. Colour A rows and colour B rows alternate throughout. The ch-1 turning chain does not count as a stitch in this pattern."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Foundation chain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Using colour A, ch 316. (314 working stitches plus 2 for the turning chain.)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Row 1 (right side, colour A)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ch 1 (does not count as a stitch). 1 dc in 2nd ch from hook. 1 dc in each ch across. Turn. (314 sts)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Row 2 (wrong side, colour A)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ch 1 (does not count as a stitch). 1 dc in each st across. Drop colour A to the side (do not fasten off). Turn. (314 sts)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Row 3 (right side, colour B -- mosaic row)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Join colour B. Ch 1 (does not count as a stitch). *1 dc in each of next 6 sts, 1 "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blo" } }],
+            "text": "BLO dc"
+          },
+          {
+            "type": "text",
+            "text": " in each of next 6 sts*; repeat from * to * to last 2 sts. 1 dc in each of last 2 sts. Drop colour B to side. Turn. (314 sts)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Row 4 (wrong side, colour B)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ch 1 (does not count as a stitch). 1 dc in each st across. Drop colour B to side. Turn. (314 sts)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Row 5 (right side, colour A -- mosaic row)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pick up colour A. Ch 1 (does not count as a stitch). *1 "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blo" } }],
+            "text": "BLO dc"
+          },
+          {
+            "type": "text",
+            "text": " in each of next 6 sts, 1 dc in each of next 6 sts*; repeat from * to * to last 2 sts. 1 dc in each of last 2 sts. Drop colour A. Turn. (314 sts)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Row 6 (wrong side, colour A)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ch 1 (does not count as a stitch). 1 dc in each st across. Drop colour A. Turn. (314 sts)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rows 7 to 110 -- full repeat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rows 3 to 6 form the four-row "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mosaic-row" } }],
+            "text": "mosaic repeat"
+          },
+          {
+            "type": "text",
+            "text": ". Continue repeating rows 3 to 6 until the work measures 55 cm from the foundation chain, ending with a completed colour A wrong-side row. At 20 rows per 10 cm the shawl reaches 55 cm after approximately 110 rows total. Fasten off both colours and weave in ends."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave all ends in on the wrong side, working along the backs of several stitches in different directions so they sit flat and will not work loose. Wet-block by soaking in cool water for 10 minutes, pressing excess water out in a towel without wringing, then pinning to the stated dimensions on a blocking mat. Allow to dry completely before removing pins."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handwash in cool water with a mild wool or fibre wash. Do not tumble-dry. Lay flat on a clean towel, ease to shape, and leave until dry."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once you can read the BLO column positions confidently, try designing your own mosaic repeat on graph paper: each pair of rows is one design row, and the BLO positions in row 3 map to the contrast columns in the finished fabric. A corner-to-corner construction uses the same BLO principle in a diagonal format. Working the rectangle in lace-weight yarn on a 3 mm hook produces a finer, more translucent fabric from the same repeat."
+          }
+        ]
+      }
+    ]
+  }
+}

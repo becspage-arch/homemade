@@ -1,0 +1,257 @@
+{
+  "slug": "crochet-striped-triangle-3-colour",
+  "title": "Striped triangle shawl in three colours",
+  "subtitle": "A top-down triangle in DK with colour stripes on every sixth row, using three alternating shades",
+  "excerpt": "This triangular shawl grows from the top centre to 150 cm wide and 72 cm deep in DK yarn. The body is plain treble, with the three yarn colours changing every six rows to create bold horizontal stripes across the triangle. Worked on a 4 mm hook. Requires confidence with carrying and joining yarn at the row edge.",
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "subCategorySlug": "garments",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Original pattern synthesised for Homemade. Top-down triangular shawl construction with stripe sequencing is a widely established technique with no single source.",
+  "heroPrompt": "A triangular crochet shawl in bold horizontal stripes of terracotta, cream and navy DK yarn draped over a wooden chair, photographed from the front in bright natural light, showing the full triangle and the stripe sequence.",
+  "crochet": {
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "gaugeText": "18 tr x 10 rows = 10 x 10 cm in DK yarn with a 4 mm hook, measured unstretched.",
+    "finishedSizeText": "Approximately 150 cm wide x 72 cm deep at the central point, after blocking.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-chain", "crochet-slip-stitch", "crochet-treble"],
+    "craftTechniqueTags": ["top-down-triangle", "colour-stripes", "three-colour", "yarn-join", "beginner-to-intermediate"]
+  },
+  "recipeTools": [
+    { "slug": "crochet-hook", "isOptional": false },
+    { "slug": "tapestry-needle", "isOptional": false },
+    { "slug": "craft-scissors", "isOptional": false },
+    { "slug": "stitch-marker", "isOptional": true },
+    { "slug": "blocking-mat", "isOptional": true },
+    { "slug": "blocking-pins", "isOptional": true },
+    { "slug": "tape-measure", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "stripe-carry",
+      "term": "Stripe carry",
+      "definition": "Keeping a yarn colour attached at the side edge while another colour is in use, so it is ready to pick up again without cutting and rejoining. Works neatly when the carry is only a few rows."
+    },
+    {
+      "slug": "colour-join",
+      "term": "Colour join",
+      "definition": "Attaching a new yarn colour at the side edge of a row. In this pattern the join is made at the turning-chain end, so the join tail is woven into the edge and sits invisibly on the wrong side."
+    }
+  ],
+  "techniqueSlugs": ["crochet-treble", "crochet-top-down-triangle", "crochet-colour-change", "crochet-blocking-wet"],
+  "criticalTechniques": ["crochet-colour-change"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This shawl uses the same top-down triangular construction as the Chunky Throw Shawl. It is worked in DK yarn on a 4 mm hook with three colours. The colours change every six rows. The stripes run horizontally across the triangle. Each stripe is wider near the base of the triangle where the rows are longer. Near the neck the rows are shorter, so the stripes narrow. This gives the finished shawl a gradual taper effect across each colour band."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Colours are labelled A, B, and C. The stripe sequence is: 6 rows A, 6 rows B, 6 rows C, repeat. At six rows per stripe you can carry the unused colours up the side edge without cutting: a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stripe-carry" } }],
+            "text": "stripe carry"
+          },
+          {
+            "type": "text",
+            "text": " of up to 6 rows keeps a neat side selvedge. If you prefer cleaner edges, fasten off each colour and "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "colour-join" } }],
+            "text": "join the next colour"
+          },
+          {
+            "type": "text",
+            "text": " at the turning chain."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Materials",
+          "body": "Colour A: approximately 180 g DK yarn. Colour B: approximately 160 g. Colour C: approximately 140 g. (A is the dominant colour at the widest rows near the base of the triangle; C is used for the narrower rows near the top.) A 4 mm crochet hook (US G/6). Tapestry needle. Craft scissors. Stitch marker. Blocking mat and pins. Tape measure."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Gauge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "18 tr x 10 rows = 10 x 10 cm in DK yarn with a 4 mm hook, measured unstretched. Swatch in each of your three colours and check they match in tension; different dye lots of the same yarn rarely differ, but different yarn bases can. Use the same hook size for all three colours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Stitches used" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "chain (ch): UK and US shared." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "slip stitch (sl st): UK and US shared." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "treble (tr): UK; the same move as US \"double crochet\" (dc)." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The shawl is worked flat in rows. The ch-3 turning chain counts as the first treble on every row. Place a stitch marker in the central spine stitch and move it up on each row."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Foundation chain" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Using colour C, ch 4. Place a stitch marker in the 2nd ch from the hook. This is the spine chain."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Row 1 (right side), colour C" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ch 3 (counts as first tr). 1 tr in the 4th ch from hook. 2 tr in the marked spine ch. 1 tr in the last ch. Turn. (5 sts)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Increase row (worked every row)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ch 3 (counts as first tr). 1 tr in each st to 1 st before the spine st. 2 tr in the st before the spine. 1 tr in the spine st (move marker). 2 tr in the st after the spine. 1 tr in each st to end, working the final tr into the top of the turning ch. Turn. (2 sts added)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Stripe sequence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work the increase row throughout. Change colour at the start of a row: at the end of the last row in the current colour, complete the final tr until 2 loops remain on hook, then draw through with the new colour. Leave a 15 cm tail to weave in later."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rows 1 to 6: colour C. Rows 7 to 12: colour B. Rows 13 to 18: colour A. Rows 19 to 24: colour C. Rows 25 to 30: colour B. Rows 31 to 36: colour A. Continue in the C, B, A sequence until the shawl has approximately 36 full stripe sets (approximately 72 rows per set of two repeats; adjust final row count to reach 150 cm width at the stated gauge)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Final row count" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After approximately 72 rows the widest row has approximately 149 sts and the width is 150 cm. After approximately 72 rows the depth is 72 cm. End on a complete stripe of any colour. Fasten off."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Weave in all ends, paying particular attention to the colour-join tails at the side edges. Wet-block by soaking in cool water for 10 minutes, pressing out excess water, and pinning to the stated dimensions on a blocking mat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handwash in cool water with mild wool wash. Lay flat to dry. The colour-join tails may loosen slightly over time; check them after the first few washes and re-weave if needed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Change colour every 3 rows instead of 6 for narrower, more frequent stripes. A fourth colour extends the sequence and gives more variety. Work the same construction in fingering weight on a 3.25 mm hook for a finer, drapier shawl with the same bold striped structure."
+          }
+        ]
+      }
+    ]
+  }
+}
