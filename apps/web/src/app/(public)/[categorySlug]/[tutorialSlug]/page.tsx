@@ -631,14 +631,20 @@ export default async function TutorialPage({ params }: PageProps) {
   )
 
   const isRecipe = tutorial.type === 'RECIPE'
+  // Recipe-style tutorials carry an ingredients block: cooking / baking / most
+  // natural-home are RECIPE; herbal remedies are REMEDY. Both render the
+  // structured ingredients with units + substitutions + shopping. (Other
+  // RECIPE-only chrome, like the cooking-mode toggle and the recipe schema,
+  // stays keyed off `isRecipe`.)
+  const isRecipeStyle = isRecipe || tutorial.type === 'REMEDY'
 
   // Recipe foundation: resolve the reader's unit preferences (saved enums or
   // locale defaults) and the per-ingredient density + substitution data, then
-  // thread both into the ingredients block. Only recipes carry the block, so
-  // technique pages skip the work entirely.
-  const unitPreferences = isRecipe ? await resolveUserUnitPreferences(currentUser) : null
+  // thread both into the ingredients block. Only recipe-style tutorials carry
+  // the block, so technique pages skip the work entirely.
+  const unitPreferences = isRecipeStyle ? await resolveUserUnitPreferences(currentUser) : null
   const ingredientMeta: Record<string, IngredientRenderMeta> = {}
-  if (isRecipe) {
+  if (isRecipeStyle) {
     const metaMap = await getRecipeIngredientRenderMeta(body)
     for (const [id, m] of metaMap) ingredientMeta[id] = m
   }
@@ -742,7 +748,7 @@ export default async function TutorialPage({ params }: PageProps) {
             patternInsets={refs.patternInsets}
             beginnerMode={beginnerMode}
             recipeContext={
-              isRecipe
+              isRecipeStyle
                 ? {
                     tutorialId: tutorial.id,
                     tutorialSlug,

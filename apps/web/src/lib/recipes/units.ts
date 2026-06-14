@@ -193,12 +193,36 @@ export function formatIngredientQuantity(
   }
 
   if (PASS_THROUGH_UNITS.has(u) || u === '') {
-    const suffix = u && u !== 'each' ? ` ${u}` : ''
+    const suffix = u && u !== 'each' ? ` ${pluraliseUnit(u, amount)}` : ''
     return `${trim(amount)}${suffix}`
   }
 
   // Unknown unit - render as authored.
   return `${trim(amount)} ${unit}`.trim()
+}
+
+// Countable units take a plural form when the amount is not 1. Mass / volume /
+// spoon abbreviations stay invariant (cooking convention). Mirrors the map in
+// the recipe scale-context so the list and the inline tokens read the same.
+const PLURALISE: Record<string, string> = {
+  clove: 'cloves',
+  sprig: 'sprigs',
+  leaf: 'leaves',
+  sheet: 'sheets',
+  slice: 'slices',
+  bunch: 'bunches',
+  handful: 'handfuls',
+  pinch: 'pinches',
+  stick: 'sticks',
+  strip: 'strips',
+  head: 'heads',
+  rasher: 'rashers',
+  fillet: 'fillets',
+}
+
+function pluraliseUnit(unit: string, amount: number): string {
+  if (Math.abs(amount - 1) < 0.01) return unit
+  return PLURALISE[unit] ?? unit
 }
 
 /** Convert a gram weight to millilitres given a density (g/ml). */
