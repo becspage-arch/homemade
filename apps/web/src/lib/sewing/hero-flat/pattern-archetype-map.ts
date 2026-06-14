@@ -23,7 +23,7 @@ export const PATTERN_ARCHETYPE_MAP: Record<string, ArchetypeId> = {
   'freesewing-titan-trouser-block': 'trousers',
   'freesewing-waralee-wrap-pants': 'trousers-wrap',
   'freesewing-onyx-one-piece': 'jumpsuit',
-  'freesewing-penelope-pencil-skirt': 'skirt-pencil',
+  'freesewing-slim-pencil-skirt': 'skirt-pencil',
   'freesewing-sandy-circle-skirt': 'skirt-flared',
 
   // Bags (8 patterns).

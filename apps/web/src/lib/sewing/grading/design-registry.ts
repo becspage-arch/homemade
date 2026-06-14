@@ -1201,7 +1201,7 @@ export const SEWING_DESIGN_REGISTRY: Record<string, SewingDesignConfig> = {
   },
   penelope: {
     slug: 'penelope',
-    name: 'Penelope pencil skirt',
+    name: 'Slim pencil skirt',
     description:
       'A women\'s fitted pencil skirt with curved darts, back vent, and side or back zip placement. Mid-weight woven fabrics.',
     freesewingPackage: '@freesewing/penelope',

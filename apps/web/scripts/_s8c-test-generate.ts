@@ -151,7 +151,7 @@ const PICKS: PickConfig[] = [
     fitHint: 'unisex one-piece jumpsuit',
   },
   {
-    slug: 'freesewing-penelope-pencil-skirt',
+    slug: 'freesewing-slim-pencil-skirt',
     subject: 'a fitted pencil skirt',
     silhouetteDescription:
       "a women's fitted knee-length pencil skirt, narrow at the hem with a clean straight silhouette, with shaped darts at the waist front and back, and a centre back seam with a small kick vent at the hem",

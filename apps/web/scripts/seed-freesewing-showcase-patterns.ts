@@ -325,8 +325,8 @@ const SEEDS: ShowcaseSeed[] = [
     aliases: ['onesie','jumpsuit','one-piece','all-in-one','onyx'],
   },
   {
-    slug: 'freesewing-penelope-pencil-skirt',
-    name: 'Penelope pencil skirt',
+    slug: 'freesewing-slim-pencil-skirt',
+    name: 'Slim pencil skirt',
     description:
       "A women's fitted pencil skirt with curved darts, back vent, and side or back zip placement. Mid-weight woven fabrics.",
     garmentCategory: 'WOMENS_BOTTOMS',
@@ -339,7 +339,7 @@ const SEEDS: ShowcaseSeed[] = [
     visibility: 'PUBLIC',
     techniqueSlugs: ['dart-construction','invisible-zipper-insertion','lapped-zipper-insertion','waistband-tailored','tailored-vent','interfacing-fusible','blind-hem-hand'],
     criticalTechniques: ['dart-construction','invisible-zipper-insertion','waistband-tailored'],
-    aliases: ['pencil skirt','straight skirt','fitted skirt','penelope'],
+    aliases: ['pencil skirt','straight skirt','fitted skirt','slim skirt'],
   },
   {
     slug: 'freesewing-sandy-circle-skirt',

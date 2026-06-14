@@ -4,7 +4,7 @@
 import { curveLine, dashedLine, n, seamLine, silhouette, type SilPoint } from './geometry'
 import type { RenderResult } from './types'
 
-// ── skirt-pencil (Penelope) ──────────────────────────────────────────
+// ── skirt-pencil (Slim pencil skirt) ────────────────────────────────
 // Fitted skirt with curved dart hints + back vent.
 
 export function renderSkirtPencil(): RenderResult {
