@@ -520,3 +520,53 @@ SKIPPED: 0
 |---|---:|
 | body-missing-method | 1 |
 | opening-pattern-missing-hook | 1 |
+
+
+---
+
+## Run at 22:32:56
+
+Generated: 2026-06-14T22:32:56.785Z
+
+Processed: 75
+PASS: 70
+STILL_BLOCKED: 5
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 30 |
+| body-missing-method | 2 |
+| voice-violation | 2 |
+
+## Still BLOCKED (sample 20)
+
+- crochet-joining-squares-method: voice-violation, grade-level-strict
+- crochet-picking-up-stitches: grade-level-strict
+- crochet-reading-abbreviations: grade-level-strict
+- crochet-reading-errata: grade-level-strict
+- crochet-reading-schematic: grade-level-strict
+
+---
+
+## Run at 22:36:49
+
+Generated: 2026-06-14T22:36:49.090Z
+
+Processed: 110
+PASS: 109
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 37 |
+| grade-level-strict | 15 |
+
+## Still BLOCKED (sample 20)
+
+- centre-out-heirloom-blanket: grade-level-strict
