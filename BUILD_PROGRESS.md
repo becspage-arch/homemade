@@ -8,6 +8,18 @@ Updated each working session.
 
 ---
 
+## Knitting blanket bulk-003 (2026-06-14)
+
+40 tutorials published to the **knitting / blanket** subcategory (0 → 40). Category was READY with null `lastAutopilotRunAt`, backdated per the null-sort fix so the round-robin queue picked it.
+
+**Batch breakdown:** 12 BEGINNER, 22 INTERMEDIATE, 6 ADVANCED. Covers the full stitch-vocabulary arc from first-project garter and stocking stitch through two-colour stranded (Fair Isle, mosaic, Nordic stripe), textured lace (feather-and-fan, eyelet border, diamond mesh, vine lace), cables (rope, honeycomb, cable-rib, mixed-cable, Aran panel, North Sea gansey layout), and advanced constructions (centre-out heirloom, log-cabin, patchwork garter squares, two-colour brioche, seamed strip sampler). Baby, lap-throw, and full-throw sizes across dk / aran / chunky / super-chunky weights, 4–10 mm needles.
+
+**K-4.1 cross-cutting requirements applied to all 40:** construction direction stated and justified in opening paragraph, concrete numeric gauge consequence stated per entry, long-tail tail length formula with worked number per entry (`tail_cm ≈ (needleDiameterMm × stitchCount) / 10 + 15`), stitch count check-ins at ~halfway and pre-bind-off, "Common faults" H3 inside Pattern section, no external video references.
+
+**Pipeline:** mechanical voice fixes (em-dashes, banned phrase "a tapestry") in one pass → grade-level reductions (28 nodes across 28 files patched with shorter, simpler prose) → glossary-coverage reconstruction for 10 files where grade-level fix stripped tooltip marks (proper TipTap mixed content arrays rebuilt with `tip()` helper) → 40/40 voice-check clean (0 errors, 21 non-blocking brand-trademark warnings) → 40/40 uploaded PUBLISHED → hero-fill (40/40 Pexels) → QC auto-fix (109/110 fixed) → commit `b9d389d6` → deploy run 27514265267 ✅ → `/healthz` 200.
+
+---
+
 ## Recipe foundation (2026-06-14)
 
 phase_recipe_foundation_001. Premium cooking/baking foundation worker. Reconciled against what already shipped: the ingredient ontology the original brief scoped as the "largest migration" was already live (1,038 canonical `Ingredient` rows + 953 `Tool` rows + 23,451 `RecipeIngredient` links, with cooking 100% / baking 96% / natural-home 100% / herbal-medicine 78% of published tutorials already linked, plus the `recipe-ingredients-sync.ts` pipeline). So this worker did NOT recreate it - it layered on top.
