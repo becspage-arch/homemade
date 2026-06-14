@@ -618,3 +618,11 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - wood-stove-installation-part-j voice-violation,grade-level-strict — applied: 
 - wormery-setup-and-management grade-level-strict — applied: 
 - yorkshire-curd-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+
+- crochet-joining-squares-method voice-violation,grade-level-strict — applied: 
+- crochet-picking-up-stitches grade-level-strict — applied: 
+- crochet-reading-abbreviations grade-level-strict — applied: 
+- crochet-reading-errata grade-level-strict — applied: 
+- crochet-reading-schematic grade-level-strict — applied: 
+
+- centre-out-heirloom-blanket grade-level-strict — applied: 

@@ -1,0 +1,176 @@
+{
+  "slug": "crochet-project-planning",
+  "title": "Planning a crochet project from scratch",
+  "subtitle": "Calculating yardage, choosing a hook, swatching, and making notes before you cast on",
+  "excerpt": "Planning a crochet project before starting means working out the yardage needed, confirming the hook and gauge, making a swatch, and writing down the decisions so you can reproduce them if you need to restart mid-project. Five minutes of planning prevents a project that runs out of yarn three rows from the end.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pauline Turner, How to Crochet (HarperCollins). Edie Eckman, The Crochet Answer Book (Storey Publishing).",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": ["project-planning", "yardage", "gauge"]
+  },
+  "recipeTools": [
+    { "slug": "measuring-tape-soft", "isOptional": false },
+    { "slug": "crochet-hook", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "project-notes", "term": "Project notes", "definition": "A record of the hook size, yarn brand and weight, dye lot, gauge achieved, modifications made to the pattern, and any other decisions that would need to be reproduced if the project were restarted." },
+    { "slug": "yardage-estimation", "term": "Yardage estimation", "definition": "The process of calculating how many metres or yards of yarn a project requires, based on the weight of a yarn sample per unit area of finished fabric." }
+  ],
+  "techniqueSlugs": ["crochet-gauge-swatching", "crochet-calculating-yardage"],
+  "criticalTechniques": ["crochet-gauge-swatching"],
+  "aliases": ["planning crochet project", "crochet project planning", "how to plan a crochet project", "crochet yardage calculation", "starting a crochet project"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Planning a crochet project before starting means working out roughly how much yarn is needed, choosing the right hook, making a gauge swatch, and writing down the key decisions as " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "project-notes" } }], "text": "project notes" },
+          { "type": "text", "text": ". None of this takes long. The risk of skipping it is real: running out of yarn in a discontinued colourway, discovering mid-project that a different hook was needed, or being unable to match the tension after restarting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Equipment",
+          "items": [
+            { "name": "The yarn you plan to use", "note": "Note the brand, weight, metreage per ball, and dye lot." },
+            { "name": "Crochet hook at the suggested size and one size up and down", "note": "For gauge experimentation" },
+            { "name": "Flexible measuring tape", "note": "" },
+            { "name": "Notebook or phone", "note": "For project notes" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: check the pattern requirements" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Read the pattern's stated yarn weight and metreage. Note the total metreage required for the size you plan to make." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Calculate how many balls you need: divide the total metreage by the metreage per ball, then round up. If the pattern requires 800 m and your yarn has 200 m per ball, you need at least 4 balls." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Buy one extra ball as a reserve. This is important if the colour is a limited dye lot that may sell out." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: make a gauge swatch" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work a swatch at least 15 by 15 cm in the same stitch and hook as the main pattern." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Block the swatch the same way you plan to block the finished piece: wet block for wool, steam block for acrylic." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure 10 cm across the centre of the swatch (not the edge) and count the stitches and rows. Compare with the pattern's stated gauge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If your stitch count per 10 cm is too high (stitches are too small), go up a hook size. If too low, go down." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: estimate yardage if no pattern is used" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "" },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "yardage-estimation" } }], "text": "Yardage estimation" },
+          { "type": "text", "text": " from first principles: weigh 10 cm by 10 cm of your blocked swatch (or use a known weight of yarn to crochet a measured swatch). Multiply by the area of the finished piece in the same unit. Then divide by the weight of the swatch per unit area and multiply by the weight per metre of the yarn to arrive at the total metres needed. This sounds complex; in practice it means weighing a small swatch and scaling up proportionally." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4: write project notes" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Record: yarn name, weight, colour name, dye lot, hook size used, gauge achieved after blocking, pattern name and size, any modifications." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Attach a small yarn sample to the notes: cut 30 cm of the project yarn and tape or tie it in. This makes dye-lot matching possible if more yarn is needed later." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common problems" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "Running out of yarn before the project is finished",
+              "cause": "The yardage estimate was too low, or the gauge came in larger than the pattern's stated gauge, which uses more yarn per row.",
+              "fix": "Check remaining yarn against remaining pattern. If close, try to source the same dye lot. If the dye lot is unavailable, use the remaining yarn as far as possible and introduce a contrast colour for the final rows or border."
+            },
+            {
+              "symptom": "The pattern came out much smaller than expected",
+              "cause": "The gauge was not checked, and the tension was tighter than the pattern assumed.",
+              "fix": "Always swatch first. For the current project, go up a hook size for the remaining rows to ease the tension, and block the finished piece thoroughly before judging the final size."
+            },
+            {
+              "symptom": "A different needle size was used partway through and the swatch notes were lost",
+              "cause": "No project notes were kept.",
+              "fix": "Measure the hook head diameter in millimetres by placing it against a ruler; most hooks have the size stamped on the shaft. Write it down this time."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Keep a small notebook or use a notes app on your phone to record each project from the first swatch. Looking back at six months of project notes shows your tension history, which hook sizes you prefer with which yarns, and which modifications you made to previous patterns. This information saves time on every future project." }
+        ]
+      }
+    ]
+  }
+}

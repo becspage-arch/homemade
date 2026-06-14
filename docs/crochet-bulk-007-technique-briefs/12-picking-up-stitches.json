@@ -1,0 +1,381 @@
+{
+  "slug": "crochet-picking-up-stitches",
+  "title": "Picking up stitches along an edge",
+  "subtitle": "Adding a border or band to a finished crochet piece by working into the side edge",
+  "excerpt": "Picking up stitches along a row-end edge is the technique for adding a button band, a collar, or a decorative edging to a finished crochet piece without seaming on a separate strip. The stitches are worked directly into the side edge of the existing fabric.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pauline Turner, How to Crochet (HarperCollins). Edie Eckman, The Crochet Answer Book (Storey Publishing). Therese de Dillmont, Encyclopedia of Needlework, 1886, Project Gutenberg #20776.",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": [
+      "edging",
+      "band",
+      "border-technique"
+    ]
+  },
+  "recipeTools": [
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    },
+    {
+      "slug": "tapestry-needle",
+      "isOptional": false
+    },
+    {
+      "slug": "stitch-marker",
+      "isOptional": false
+    },
+    {
+      "slug": "craft-scissors",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "row-end-edge",
+      "term": "Row-end edge",
+      "definition": "The vertical edge of a flat crochet piece formed by the sides of each row, rather than the top or bottom. Button bands and side edgings are typically picked up from this edge."
+    },
+    {
+      "slug": "rate-of-pickup",
+      "term": "Rate of pickup",
+      "definition": "The ratio of stitches picked up to rows (or stitches) along the edge. Different stitch heights require different rates to produce a flat band."
+    }
+  ],
+  "techniqueSlugs": [
+    "crochet-slip-stitch",
+    "crochet-double-crochet",
+    "crochet-edging-single-row",
+    "crochet-edging-crab-stitch"
+  ],
+  "criticalTechniques": [
+    "crochet-double-crochet",
+    "crochet-slip-stitch"
+  ],
+  "aliases": [
+    "picking up stitches crochet",
+    "crochet button band",
+    "crochet edging from row ends",
+    "crochet border pickup"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Picking up stitches along a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "row-end-edge"
+                }
+              }
+            ],
+            "text": "row-end edge"
+          },
+          {
+            "type": "text",
+            "text": " is how you add a button band, collar, or edging to a finished crochet piece without seaming on a separate strip. You work directly into the side edge of the existing fabric, catching one or two threads of each row end to anchor the new stitches."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The main challenge is the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "rate-of-pickup"
+                }
+              }
+            ],
+            "text": "rate of pickup"
+          },
+          {
+            "type": "text",
+            "text": ": how many stitches to pick up per row. Pick up too many and the band ruffles; too few and it pulls in. The correct rate depends on the height of the stitches in the original fabric."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Equipment and materials",
+          "items": [
+            {
+              "name": "Crochet hook",
+              "note": "The same hook used for the main piece, or one size smaller if the band needs to be firmer"
+            },
+            {
+              "name": "Stitch markers",
+              "note": "Place at regular intervals along the edge to keep the pickup rate consistent"
+            },
+            {
+              "name": "Tapestry needle"
+            },
+            {
+              "name": "Scissors"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Rate of pickup by stitch type"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "These are approximate starting rates for flat fabric:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Double crochet (UK): 1 stitch per row end gives a flat band in most yarns."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Half treble (UK): 1 stitch per row end, occasionally 3 stitches per 2 row ends."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Treble (UK): 2 stitches per row end gives a flat band; 3 per 2 rows can also work."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Double treble (UK): 2 to 3 stitches per row end. The taller the stitch, the more pickup stitches it needs."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Step by step"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Count the total number of rows along the edge. Divide by the pickup rate to calculate the expected number of stitches for the band."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the edge into equal sections with stitch markers (every 10 rows, for example). This keeps the pickup rate consistent across the full length."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "With the right side of the work facing you, insert the hook into the side of the first row end, under two threads. Yarn over and draw a loop through. This is one picked-up stitch."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue picking up stitches at the correct rate to the end of the edge."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Work the required number of rows for the band, then fasten off. Do not seam: the picked-up stitches are the join."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common problems"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The band is ruffling along the edge",
+              "cause": "Too many stitches were picked up per row, causing the band to have more fabric than the edge can accommodate.",
+              "fix": "Rip back the band and pick up fewer stitches. Start by reducing by 1 stitch every 5 rows and check the result on a swatch before re-working the full band."
+            },
+            {
+              "symptom": "The band is pulling in and making the edge curl",
+              "cause": "Too few stitches were picked up, so the band is under tension.",
+              "fix": "Rip back and pick up more stitches. Work a test swatch on a short section of edge before picking up along the full length."
+            },
+            {
+              "symptom": "The pickup row looks irregular with large gaps between stitches in some places",
+              "cause": "The pickup was done without using section markers, so the rate drifted across the edge.",
+              "fix": "On future pickups, divide the edge into equal sections with markers before starting. Work the same number of stitches in each section."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A single row of double crochet (UK) picked up around the full perimeter of a simple square swatch is the standard test: it shows immediately whether the rate is right at the corners and the straight edges. Once the rate is reliable, a button band for a cardigan is the most common application."
+          }
+        ]
+      }
+    ]
+  }
+}
