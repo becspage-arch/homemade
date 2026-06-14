@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
 
 import { captureClientEvent } from '@/lib/client-analytics'
+import { formatIngredientQuantity, type UnitPreferences } from '@/lib/recipes/units'
+import type { Substitution } from '@/lib/recipes/substitutions'
 import { useScale } from '../scale-context'
 
 export interface IngredientsListItem {
@@ -17,6 +19,11 @@ export interface IngredientsListItem {
   groupLabel: string | null
 }
 
+export interface IngredientRenderMeta {
+  densityGPerMl: number | null
+  substitutions: Substitution[]
+}
+
 interface IngredientsListProps {
   /** Tutorial id — used for the `ingredients_scaled` analytics event. */
   tutorialId: string
@@ -28,6 +35,14 @@ interface IngredientsListProps {
    * and a tooltip explains why (bakery percentages, sourdough timing, etc.).
    */
   scalable: boolean
+  /**
+   * Reader unit preferences. When set, amounts render in the reader's weight /
+   * volume system (with a density bridge for grams to cups). Null falls back
+   * to the authored unit unchanged.
+   */
+  preferences?: UnitPreferences | null
+  /** Per-ingredient density + substitutions, keyed by ingredientId. */
+  ingredientMeta?: Record<string, IngredientRenderMeta>
 }
 
 type Scale =
@@ -48,6 +63,8 @@ export function IngredientsList({
   items,
   defaultServings,
   scalable,
+  preferences = null,
+  ingredientMeta = {},
 }: IngredientsListProps) {
   const [scale, setScale] = useState<Scale>(SCALE_DEFAULT)
   const [customOpen, setCustomOpen] = useState(false)
@@ -192,6 +209,8 @@ export function IngredientsList({
                 key={`${item.ingredientId || item.name}-${i}`}
                 item={item}
                 multiplier={multiplier}
+                preferences={preferences}
+                meta={ingredientMeta[item.ingredientId]}
               />
             ))}
           </ul>
@@ -204,11 +223,18 @@ export function IngredientsList({
 function IngredientRow({
   item,
   multiplier,
+  preferences,
+  meta,
 }: {
   item: IngredientsListItem
   multiplier: number
+  preferences: UnitPreferences | null
+  meta?: IngredientRenderMeta
 }) {
+  const [showSubs, setShowSubs] = useState(false)
   const scaled = item.amount !== null ? item.amount * multiplier : null
+  const substitutions = meta?.substitutions ?? []
+
   const link =
     item.ingredientSlug && item.ingredientSlug.length > 0 ? (
       <Link
@@ -221,17 +247,22 @@ function IngredientRow({
       <span className="ingredients-list-name-link">{item.name}</span>
     )
 
+  // With preferences, render the amount + unit in the reader's system (with the
+  // density bridge). Without, keep the authored amount + unit untouched.
+  const amountDisplay =
+    scaled === null ? null : preferences ? (
+      formatIngredientQuantity(scaled, item.unit, preferences, meta?.densityGPerMl)
+    ) : (
+      <>
+        {formatAmount(scaled)}
+        {item.unit && <span className="ingredients-list-unit">{item.unit}</span>}
+      </>
+    )
+
   return (
     <li className="ingredients-list-row">
       <span className="ingredients-list-amount">
-        {scaled === null ? (
-          <span aria-hidden="true">·</span>
-        ) : (
-          <>
-            {formatAmount(scaled)}
-            {item.unit && <span className="ingredients-list-unit">{item.unit}</span>}
-          </>
-        )}
+        {amountDisplay === null ? <span aria-hidden="true">·</span> : amountDisplay}
       </span>
       <span className="ingredients-list-name">
         {link}
@@ -241,9 +272,42 @@ function IngredientRow({
         {item.isOptional && (
           <span className="ingredients-list-optional"> · optional</span>
         )}
+        {substitutions.length > 0 && (
+          <button
+            type="button"
+            className="ingredients-list-sub-toggle"
+            aria-expanded={showSubs}
+            onClick={() => setShowSubs((s) => !s)}
+          >
+            {showSubs ? 'Hide swaps' : 'Substitute?'}
+          </button>
+        )}
+        {showSubs && substitutions.length > 0 && (
+          <ul className="ingredients-list-subs">
+            {substitutions.map((sub) => (
+              <li key={sub.ingredientId} className="ingredients-list-sub">
+                <span className="ingredients-list-sub-name">{sub.name}</span>
+                {sub.ratio && sub.ratio !== 1 && (
+                  <span className="ingredients-list-sub-ratio">
+                    {' '}
+                    ({trimRatio(sub.ratio)}× the amount)
+                  </span>
+                )}
+                {sub.flavourDelta && (
+                  <span className="ingredients-list-sub-delta">, {sub.flavourDelta}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
       </span>
     </li>
   )
+}
+
+function trimRatio(value: number): string {
+  if (Math.abs(value - Math.round(value)) < 0.01) return String(Math.round(value))
+  return value.toFixed(2).replace(/\.?0+$/, '')
 }
 
 interface Group {

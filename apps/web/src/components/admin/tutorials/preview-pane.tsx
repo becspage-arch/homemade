@@ -152,6 +152,9 @@ export function PreviewPane({
               prepMinutes: recipeMeta.prepMinutes,
               cookMinutes: recipeMeta.cookMinutes,
               totalMinutes: recipeMeta.totalMinutes,
+              // The admin preview has no reader preference, so the temperature
+              // pill is hidden here; it renders on the public page.
+              temperatureLabel: null,
               cuisine: recipeMeta.cuisine,
               mealType: recipeMeta.mealType,
               dietaryFlags: recipeMeta.dietaryFlags,

@@ -4,6 +4,11 @@ interface TutorialInfoStripProps {
   /** Total time in minutes (recipes) or technique time. */
   timeMinutes: number | null
   difficulty: string
+  /**
+   * Oven temperature, pre-formatted for the reader's preference (e.g.
+   * "180°C fan", "Gas 4"). Null hides the pill.
+   */
+  temperatureLabel?: string | null
   /** Recipe-only — number of servings (renders the ServingsCell). */
   servingsCell?: ReactNode
   /** Recipe-only — dietary chips inline. */
@@ -60,6 +65,7 @@ function formatTime(minutes: number): string {
 export function TutorialInfoStrip({
   timeMinutes,
   difficulty,
+  temperatureLabel,
   servingsCell,
   dietaryFlags = [],
   equipmentLabel,
@@ -81,6 +87,12 @@ export function TutorialInfoStrip({
         <DifficultyIcon />
         <span>{difficultyLabel}</span>
       </span>
+      {temperatureLabel && (
+        <span className="tutorial-info-item">
+          <ThermometerIcon />
+          <span>{temperatureLabel}</span>
+        </span>
+      )}
       {servingsCell && (
         <span className="tutorial-info-item">
           <ServingsIcon />
@@ -164,6 +176,14 @@ function DifficultyIcon() {
   return (
     <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.4">
       <path d="M2 12h3V8H2zM6.5 12h3V5h-3zM11 12h3V2.5h-3z" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function ThermometerIcon() {
+  return (
+    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.4">
+      <path d="M9.5 9V3.2a1.5 1.5 0 0 0-3 0V9a2.6 2.6 0 1 0 3 0z" strokeLinejoin="round" />
     </svg>
   )
 }

@@ -98,6 +98,23 @@ export interface RecipeRenderContext {
   tutorialId: string
   tutorialSlug: string
   scalable: boolean
+  /**
+   * The reader's resolved unit preferences (saved enums, or locale defaults).
+   * Drives render-time weight / volume conversion in the ingredients list.
+   */
+  unitPreferences?: import('@/lib/recipes/units').UnitPreferences | null
+  /**
+   * Per-ingredient render data keyed by ingredientId: density (for grams to
+   * cups conversion) and the free-tier substitution list. A plain object, not
+   * a Map, so it serialises into the client ingredients block.
+   */
+  ingredientMeta?: Record<
+    string,
+    {
+      densityGPerMl: number | null
+      substitutions: import('@/lib/recipes/substitutions').Substitution[]
+    }
+  >
 }
 
 /**
@@ -606,6 +623,8 @@ function RenderNode({
           items={cleanItems}
           defaultServings={defaultServings}
           scalable={recipeContext.scalable}
+          preferences={recipeContext.unitPreferences ?? null}
+          ingredientMeta={recipeContext.ingredientMeta ?? {}}
         />
       )
     }

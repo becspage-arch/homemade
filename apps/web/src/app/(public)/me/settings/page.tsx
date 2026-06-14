@@ -6,6 +6,7 @@ import { getCurrentDbUser } from '@/lib/get-current-user'
 import { SettingsForm } from './settings-form'
 import { PushSettings } from './push-settings'
 import { MakerProfileSettings } from './maker-profile-settings'
+import { CookingUnitsSettings } from './cooking-units-settings'
 
 export const dynamic = 'force-dynamic'
 
@@ -33,6 +34,22 @@ export default async function MeSettingsPage() {
           initialBeginnerMode={user.beginnerMode}
           initialHandle={user.displayHandle}
           initialBio={user.bio}
+        />
+      </section>
+
+      <section>
+        <span className="me-section-label">Preferences</span>
+        <h2 className="me-section-title">Recipe units</h2>
+        <p className="me-section-description">
+          Choose how recipe amounts and oven temperatures show on the page.
+          Recipes are written once in grams, millilitres and conventional °C;
+          this only changes how they read for you. Leave any setting on your
+          region&apos;s default to let your location decide.
+        </p>
+        <CookingUnitsSettings
+          initialOven={user.ovenPreference}
+          initialWeight={user.weightPreference}
+          initialVolume={user.volumePreference}
         />
       </section>
 
