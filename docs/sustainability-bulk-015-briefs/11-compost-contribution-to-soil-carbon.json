@@ -1,0 +1,137 @@
+{
+  "slug": "compost-contribution-to-soil-carbon",
+  "title": "How compost builds soil carbon",
+  "subtitle": "What happens to organic matter in the soil and how to measure the change over time",
+  "excerpt": "Finished compost applied to soil adds organic matter that soil organisms convert into stable humus over months to years. This increases the soil's capacity to hold nutrients, water, and carbon. The carbon is stored in the soil only as long as the soil is not disturbed, warmed excessively, or left bare.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Rothamsted Research long-term soil carbon data (public domain). Soil Association guidance on soil organic matter and carbon sequestration. IPCC AR6 chapter on agriculture, forestry, and land use for soil carbon stock data. Charles Darwin (1881) on earthworm soil structure improvement (public domain).",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "humus",
+      "term": "Humus",
+      "definition": "The stable, dark fraction of organic matter in soil formed from the decomposition of plant and animal material. Humus holds water and nutrients and gives soil its structure."
+    },
+    {
+      "slug": "soil-organic-matter",
+      "term": "Soil organic matter (SOM)",
+      "definition": "The total organic content of soil, including living organisms, fresh plant material, and decomposed humus. Measured as a percentage of dry soil weight."
+    },
+    {
+      "slug": "embodied-carbon",
+      "term": "Embodied carbon",
+      "definition": "The carbon dioxide equivalent emitted during the production or transformation of a material. Composting recycles carbon rather than emitting it."
+    }
+  ],
+  "techniqueSlugs": ["using-finished-compost-in-the-garden", "compost-for-raised-bed-layering", "compost-lawn-topdressing"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "When you apply compost to soil, around 50 to 60% of its carbon content is lost within the first year as soil organisms consume it. The remaining 40 to 50% converts into " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "humus" } }],
+            "text": "humus"
+          },
+          { "type": "text", "text": ", a stable form of organic carbon that can persist in the soil for decades. Applied annually at 5 to 10 litres per m², a garden bed increases its " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "soil-organic-matter" } }],
+            "text": "soil organic matter"
+          },
+          { "type": "text", "text": " content by around 0.1 to 0.3 percentage points per year in the first decade." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What soil organic matter does" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Each 1% increase in SOM allows 1 m² of topsoil to hold around 170,000 litres of water. This reduces both drought stress and flood runoff." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "SOM holds plant nutrients (nitrogen, phosphorus, potassium) and releases them gradually as organisms decompose it. This reduces the need for added fertiliser." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Soil carbon storage removes carbon dioxide from the atmosphere temporarily. A garden of 50 m² improved by 1% SOM sequesters roughly 20 to 30 kg CO₂e, equivalent to driving around 150 km." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Conditions that release stored carbon" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Soil carbon is not permanent. Digging exposes organic matter to oxygen and releases carbon dioxide. Bare soil warms faster in summer, speeding decomposition. Foot traffic compaction kills the fungi and invertebrates that build soil structure. Synthetic nitrogen fertiliser can trigger a flush of SOM breakdown." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to measure the change" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A soil SOM test from a specialist lab returns a percentage figure. Take a baseline sample now and repeat after three to five years of compost application. Collect 10 sub-samples from a 1 m² area and mix them together to reduce variability. Send 100 g to the lab in a clean plastic bag." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The case for no-dig" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "No-dig beds accumulate " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "embodied-carbon" } }],
+            "text": "embodied carbon"
+          },
+          { "type": "text", "text": " more effectively than dug beds. Rothamsted's long-term field experiments show that regularly cultivated plots lose around 0.3% SOM per year compared with undisturbed plots. The fastest route to storing compost carbon is to stop digging and add compost to the surface." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Soil SOM test shows no improvement after two years of compost application",
+              "cause": "Too small an application rate, or the soil is being cultivated between applications",
+              "fix": "Increase compost application to 100 mm per bed per year and stop digging. Improvement from SOM testing typically requires 3 to 5 years to show a statistically meaningful change."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

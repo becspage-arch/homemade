@@ -1,0 +1,178 @@
+{
+  "slug": "electric-panel-heater-efficiency-guide",
+  "title": "Choosing an electric space heater for a low-energy building",
+  "subtitle": "Comparing infrared, convector, and storage heater options for rooms where gas is not viable",
+  "excerpt": "All electric space heaters convert electricity to heat at 100% efficiency. The practical differences between infrared panels, convectors, and storage heaters come down to how they deliver heat, how quickly they respond, and how well they work with off-peak tariffs and solar PV generation.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Energy Saving Trust guidance on electric heating types. BEAMA (British Electrotechnical and Allied Manufacturers Association) guidance on storage heaters and Economy 7. Infrared Heating Association technical briefs on radiant heat delivery. Which? reports on electric heating comparison.",
+  "approximateCostGbp": 250,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "energy-monitor", "isOptional": true }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "infrared-panel",
+      "term": "Infrared panel",
+      "definition": "An electric heater that emits radiant heat, warming surfaces and occupants directly rather than heating the air in the room."
+    },
+    {
+      "slug": "storage-heater",
+      "term": "Storage heater",
+      "definition": "An electric heater that stores heat in a ceramic core charged overnight on an off-peak tariff, releasing it gradually through the day."
+    },
+    {
+      "slug": "cop",
+      "term": "COP (coefficient of performance)",
+      "definition": "The ratio of heat output to electrical energy input. All direct electric heaters have a COP of 1. Heat pumps achieve a COP of 2.5 to 4.5."
+    }
+  ],
+  "techniqueSlugs": ["infrared-heating-panels", "storage-heater-economy-7-settings", "storage-heater-replacement-decision"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Every direct electric heater has a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cop" } }],
+            "text": "COP"
+          },
+          { "type": "text", "text": " of exactly 1: one unit of electricity in, one unit of heat out. A 1 kW heater run for one hour uses 1 kWh and costs 27p at 2025/26 electricity rates regardless of whether it is a glass infrared panel or a cheap fan heater. The differences between heater types are about delivery, comfort, and compatibility with time-of-use tariffs." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Infrared panels" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "infrared-panel" } }],
+            "text": "infrared panel"
+          },
+          { "type": "text", "text": " warms surfaces and occupants directly rather than the air. In a draughty or poorly insulated room, this can feel warmer at a lower air temperature than a convector, because the radiant warmth is absorbed by skin and clothing. In a well-insulated room, the difference from a convector narrows." }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Best for: rooms used intermittently where you want instant warmth on the occupants (workshops, home offices, bathrooms)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Not ideal for: spaces where the occupants are not in direct line of sight of the panel." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Output range: 250 W to 1,500 W. Wall or ceiling mounted. Surface temperature typically 80 to 100°C (warm to the touch, not a burn risk at contact distance)." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Convector and fan heaters" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Convectors heat air by passing it over a hot element. Fan heaters do the same more quickly. Response time is 5 to 15 minutes for a convector, under 2 minutes for a fan heater. Both heat the air in the room uniformly, which loses heat more quickly through ventilation than radiant heat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage heaters" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "storage-heater" } }],
+            "text": "storage heater"
+          },
+          { "type": "text", "text": " charges a ceramic core overnight on Economy 7 off-peak electricity at around 12p/kWh, then releases heat through the day. At 2025/26 rates, this is roughly 12p/kWh stored versus 27p/kWh for daytime direct electric. Over a full heating season, overnight storage costs less than half the daytime rate." }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Best for: rooms that need continuous background heat through the day with predictable occupancy patterns." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Not ideal for: rooms with unpredictable occupancy. Heat stored overnight may be wasted in an empty room." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slimline models with built-in controls heat a room more precisely than older manual heaters." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Combining electric heating with solar PV" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A solar-generation forecast diverter can run a convector or infrared panel during the middle of the day using surplus PV output rather than exported at 5 to 15p/kWh. This effectively supplies heat at the wholesale solar generation cost, not the grid rate. The heater needs to be controllable by a smart plug or diverter relay." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When is a heat pump the better answer?" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Any direct electric heater has a COP of 1. A heat pump achieves a COP of 2.5 to 4.5 by extracting heat from outdoor air. For a room needing background heat all day, the extra capital cost of a heat pump is usually recovered within 5 to 8 years versus direct electric at the full grid rate." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Infrared panel creates a hot zone but the rest of the room is cold",
+              "cause": "Panel rated too low for the room volume, or positioned too high",
+              "fix": "Mount at 2.0 to 2.4 m height and angle down 15 to 20 degrees to cover the occupied floor zone. Add a second panel on an adjacent wall for rooms over 15 m²."
+            },
+            {
+              "symptom": "Storage heater runs out of heat by 3pm",
+              "cause": "Input setting too low for the expected demand, or the heater is an older model without adequate charge control",
+              "fix": "Increase the input dial setting on the heater or fit a replacement with automatic electronic charge control."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

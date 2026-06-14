@@ -1,0 +1,183 @@
+{
+  "slug": "chimney-breast-removal-insulation-sequence",
+  "title": "Insulating after chimney breast removal",
+  "subtitle": "Filling the cavity and treating the flue gap when a chimney breast comes out",
+  "excerpt": "Removing a chimney breast leaves a void at ceiling level where the flue continues to the stack above. Cold air moves through this gap into the room below. This guide covers closing the flue void, insulating the reveal, and treating the cavity left in the external wall where the breast sat.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Building Regs Approved Document A (structure) on chimney breast removal notification. CIBSE Guide A for stack effect and ventilation. Energy Saving Trust technical guidance on chimney draught-sealing.",
+  "approximateCostGbp": 350,
+  "paybackYears": 3,
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "foam-strip-gun", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false },
+    { "slug": "spirit-level", "isOptional": false }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A path through a building element that conducts heat more readily than the surrounding material, creating localised cold spots."
+    },
+    {
+      "slug": "draught-stripping",
+      "term": "Draught stripping",
+      "definition": "Sealing strips or foams applied to close gaps where cold air enters the building fabric."
+    }
+  ],
+  "techniqueSlugs": ["chimney-balloon-fitting", "foam-sealing-service-penetrations"],
+  "criticalTechniques": ["chimney-balloon-fitting"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A chimney breast removal leaves two thermal problems: the void at ceiling level where the flue passes through to the chimney stack above, and the exposed masonry in the cavity or external wall where the breast once sat. Both allow cold air to move into the house." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The flue void is often the bigger problem. Stack effect draws cold air down from the exposed pot on the roof and pushes it through any ceiling-level gap into the room below. A 150 mm flue void at ceiling level can lose 50 to 100 W on a cold day, equivalent to leaving a window 20 mm open." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Building Regulations notice",
+          "body": "Chimney breast removal is structural work. The builder must serve a Building Regulations application before the breast comes out. This guide covers the thermal work after the structural work is complete and signed off."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need to know first" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Confirm the retained chimney stack is supported by a gallows bracket or RSJ above the removed breast. Do not attempt thermal work until this has been inspected by Building Control." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Establish whether the flue is in use above: sometimes a removal takes out the ground-floor breast but the first-floor breast and pot remain active. If so, the flue void must remain accessible and any closure must be removable." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Identify where the flue exits through the ceiling. The void is typically 200 to 250 mm diameter or a 230 mm x 230 mm brick hole." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Closing the flue void at ceiling level" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit a proprietary chimney balloon at the pot (top of stack) or at the throat (base of flue) if accessible. A balloon blocks the stack effect but allows the void to be reopened if access is needed later." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Frame the void opening from below using 47 x 47 mm timber noggings fitted between the existing joists. The frame must be square and level." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut a plasterboard panel to fit the framed opening. Fix with plasterboard screws at 200 mm centres. Tape and feather-finish the joints to match the existing ceiling." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply expanding foam around the perimeter of the panel where it meets the masonry. Trim flush when cured." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Treating the wall reveal" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Where the breast met the external wall, a strip of masonry is now exposed. This masonry is part of the external wall and has no insulation. It is a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+            "text": "thermal bridge"
+          },
+          { "type": "text", "text": " running from outside air to inside plaster. Line this reveal with 50 mm PIR board fixed with dabs of adhesive, then skim plaster or plasterboard-and-skim to finish." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Filling the cavity where the breast sat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If the wall is cavity construction, the removal leaves an opening where the breast tied into the cavity leaves. Inject expanding foam or blown fibre into the cavity above and to the sides of the removed breast location before the builder makes good the masonry. The cavity surveyor can scope the fill extent from the drill positions used for standard cavity fill." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Applying " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "draught-stripping" } }], "text": "draught-proofing" },
+          { "type": "text", "text": " at the floor-wall junction" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The floor-to-wall junction at the base of the old breast often has a gap where the hearth was cut away. Fill with a foam backer rod and a bead of flexible sealant before relaying the floor finish." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What done well looks like" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "No cold draught at ceiling level above the removed breast, no cold-wall feel on the expose reveal, and no condensation forming at the floor-wall junction. A thermal imaging check on a cold day shows the ceiling area above the old flue as the same temperature as the rest of the ceiling." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Cold draught still felt at ceiling level after patching the void",
+              "cause": "Gap between the plasterboard patch and the masonry, or foam balloon at the pot is not properly inflated",
+              "fix": "Remove the patch, re-apply foam around the full perimeter, and re-board. Check the chimney balloon is fully inflated by leaning into the void with a torch before patching."
+            },
+            {
+              "symptom": "Condensation appears on the reveal wall within weeks of removal",
+              "cause": "Cold masonry is now exposed to warm indoor air; dew point reached on the uninsulated surface",
+              "fix": "Apply PIR board lined with foil-faced insulation to the reveal. Ensure the insulation butts tightly to the ceiling and floor without gaps."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

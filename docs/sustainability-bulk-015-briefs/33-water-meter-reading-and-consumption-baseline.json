@@ -1,0 +1,156 @@
+{
+  "slug": "water-meter-reading-and-consumption-baseline",
+  "title": "Establishing a water consumption baseline",
+  "subtitle": "Reading a water meter, calculating per-person use, and identifying where the water goes",
+  "excerpt": "The average UK household uses around 142 litres per person per day. Knowing your own baseline is the starting point for finding reductions: a single leaking toilet can add 200 to 400 litres per day to consumption without being noticed. A one-off overnight meter check identifies a background leak in 10 minutes.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Water UK: household per capita consumption data (143 litres/person/day average for England and Wales, 2021/22). Ofwat guidance on water meters and switching to metered billing. Waterwise (2022): breakdown of average household water use by activity. DEFRA Water Resources Management Plan data on leakage.",
+  "approximateCostGbp": 0,
+  "paybackYears": 0,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "standing-charge",
+      "term": "Standing charge (water)",
+      "definition": "A fixed daily charge on a water bill that covers infrastructure regardless of consumption. Distinct from the volumetric rate charged per cubic metre of water used."
+    }
+  ],
+  "techniqueSlugs": ["household-leak-detection", "lead-pipe-detection-and-replacement"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A water meter records cumulative consumption in cubic metres (m³). One cubic metre is 1,000 litres. Meters are read quarterly by the supplier or submitted by the householder. Reading the meter manually at two points gives a precise consumption figure: the difference between the two readings (in m³) × 1,000 = litres consumed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finding and reading the meter" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "External meters are usually in a small square plastic box (stopcock cover) flush with the pavement or path outside the property boundary. Lift the cover with a flat screwdriver. The meter is the dial or digital readout." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The main display shows whole cubic metres. Some meters also show a 'leak indicator': a small triangle or dial that rotates when any water is flowing. If this is moving when all taps and appliances are off, there is a leak." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Photograph the meter with the date visible or note the reading with the date and time." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Overnight leak check" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Note the meter reading before bed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not use any water overnight (no toilet use, no dishwasher running, no washing machine on a delay timer)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Read the meter first thing in the morning. In an 8-hour period with no use, the reading should be identical." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Any increase shows a continuous flow. A dripping tap loses 3 to 5 litres per hour; a running toilet 15 to 20 litres per hour; a pressurised pipe leak can exceed 100 litres per hour." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Calculating per-person daily use" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Read the meter at the same time on two consecutive days of typical household use. The difference (in litres) divided by the number of occupants gives litres per person per day. The national average is 142 to 150 litres. Households below 100 litres per person per day are using water efficiently. Households above 200 litres have significant scope for reduction." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Breakdown of typical household use" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Toilet flushing: 30% of total (old 9-litre cisterns; modern 4-litre dual flush cisterns halve this fraction)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bathing and showering: 25% of total." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Washing machine: 15% of total." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Garden watering (seasonal): up to 50% of total in summer months for households with large gardens." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Switching to metered billing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Households in England and Wales can request a water meter free of charge. Switching benefits households with fewer occupants than bedrooms, as the unmetered rateable value is set for a typical family. Water bills also include a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "standing-charge" } }],
+            "text": "standing charge"
+          },
+          { "type": "text", "text": " for infrastructure, which stays the same whether metered or not. Water companies must fit a meter if asked; there is a 24-month trial period to revert if the metered bill is higher." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Overnight leak check shows water use but no visible dripping taps or running toilets",
+              "cause": "Silent toilet leak: the cistern valve is overflowing continuously into the pan without audible noise",
+              "fix": "Put a few drops of food colouring into each toilet cistern. If colour appears in the pan without flushing, the cistern is leaking continuously. Replace the flapper valve or float valve as appropriate."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "slug": "district-heating-alternatives-assessment",
+  "title": "Assessing district heating as an alternative to individual boilers",
+  "subtitle": "When district heating makes sense, how the tariff structure works, and what to check before connecting",
+  "excerpt": "District heating (heat network) supplies space heating and hot water from a centralised plant to individual properties through insulated pipes. It eliminates individual boiler servicing and can run on low-carbon heat sources. The tariff structure differs from gas: there is no switching mechanism, and Ofgem Heat Network regulation came into force in 2025.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "CIBSE CP1 Heat Networks: Code of Practice (2020). Ofgem Heat Network regulation guidance (2025 incoming framework). BEIS Heat Networks Delivery Unit (HNDU) data on UK heat networks. BEAMA guidance on heat interface units for residential connections.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "heat-network",
+      "term": "Heat network",
+      "definition": "An infrastructure system distributing heat from a central energy centre to multiple properties through insulated underground pipes. Also called district heating or communal heating."
+    },
+    {
+      "slug": "heat-interface-unit",
+      "term": "Heat interface unit (HIU)",
+      "definition": "The connection point between a heat network and an individual property, controlling the flow of heat into the domestic heating and hot water system. Equivalent to a boiler but with no combustion."
+    }
+  ],
+  "techniqueSlugs": ["heat-pump-grant-application-process", "microgeneration-certification-scheme-registration"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "District heating serves around 480,000 UK dwellings, concentrated in flats, housing estates, and new developments. For a new-build buyer or social tenant, connection to a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heat-network" } }],
+            "text": "heat network"
+          },
+          { "type": "text", "text": " may be mandatory. For existing homeowners, the question is whether voluntary connection to a nearby network is worthwhile." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How the tariff works" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "District heating is billed via a two-part tariff: a standing charge (covering the capital and maintenance cost of the infrastructure) and a unit charge (covering the cost of heat delivered). Unlike gas, there is no choice of supplier and no switching mechanism. The tariff is set by the heat network operator. From October 2025, Ofgem regulates heat networks under the Heat Network Market Framework: operators must be licensed, bills must show unit rates comparable to gas, and consumers have access to a redress scheme." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to check before connecting" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The heat source for the network. Networks powered by combined heat and power (CHP), heat pumps, or waste heat from industry carry a lower carbon factor than those using gas boilers. Ask the operator for the current heat network carbon factor (kgCO₂/kWh)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The unit tariff history for the past 3 years. Heat networks have been criticised for rising charges; the Ofgem framework gives consumers a mechanism to challenge excessive increases from 2025." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reliability record. Ask how many heat supply outages the network had in the previous 12 months and the maximum duration. A network serving 500 homes with a single boiler room has a single point of failure." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "heat-interface-unit" } }],
+                "text": "heat interface unit"
+              },
+              { "type": "text", "text": " maintenance responsibility. In most networks the HIU is maintained by the operator; confirm this in writing." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Compared to individual heat pump installation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Connecting to a low-carbon district heating network avoids the capital cost of an individual heat pump, but gives up the ability to switch supplier or lock in a tariff. A household installing its own heat pump under the BUS grant pays a higher upfront cost but is not tied to the network operator's pricing. Both routes can achieve similar carbon outcomes if the heat source is low-carbon." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Heat network bill has increased significantly without explanation",
+              "cause": "Operator has increased the unit rate or standing charge; no obligation to notify in advance under pre-2025 contracts",
+              "fix": "From October 2025, contact Ofgem's Heat Networks regulation team if the increase is above the permitted level or no notice was given. For pre-2025 contracts, escalate through the operator's complaints procedure, then the Energy Ombudsman."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

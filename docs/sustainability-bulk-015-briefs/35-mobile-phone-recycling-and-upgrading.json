@@ -1,0 +1,115 @@
+{
+  "slug": "mobile-phone-recycling-and-upgrading",
+  "title": "Extending phone life and recycling end-of-life handsets",
+  "subtitle": "Battery replacement, software longevity, trade-in routes, and certified recycling",
+  "excerpt": "Around 125 million unused mobile phones sit in UK homes. Manufacturing a smartphone accounts for 70 to 85% of its lifetime carbon footprint before it is ever switched on. Extending a phone's life by two years through battery replacement and certified repair cuts the total lifecycle emissions by 30 to 50% compared to a two-year upgrade cycle.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "waste-reduction",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Greenpeace 'Unearthed' report on smartphone carbon footprint breakdown (2021). Circular Economy Scotland: unused electronics data for UK. WEEE Regulations 2013 (SI 2013/3113) on WEEE collection and treatment. iFixit repairability scores for major phone models. Right to Repair legislation (EU 2024) context for UK comparison.",
+  "approximateCostGbp": 50,
+  "paybackYears": 0,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "weee",
+      "term": "WEEE (Waste Electrical and Electronic Equipment)",
+      "definition": "The EU and UK regulatory category covering discarded electronic devices. WEEE must not go in household waste; it must be taken to a designated collection point or returned to a retailer."
+    }
+  ],
+  "techniqueSlugs": ["repair-cafe-guide", "tool-restoration-and-maintenance"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The carbon embedded in a smartphone's production (mining rare earth metals, chip fabrication, component assembly, and global logistics) is largely fixed at the point of purchase. Every year the phone is used instead of replaced, that fixed cost is amortised over a longer period. A phone running for 4 years instead of 2 approximately halves its annualised carbon cost." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Extending phone life" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Battery replacement: lithium-ion batteries typically retain 80% capacity after 500 charge cycles, equivalent to 1.5 to 2 years of daily charging. A replacement battery extends life by another 2 to 3 years. iFixit publishes repairability scores for major models; high-scoring phones (7 to 10/10) are easy for repair shops to service." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Software updates: major manufacturers guarantee security updates for 3 to 7 years from launch. Phones outside this window are a security risk on networks and should be replaced. Check the manufacturer's support policy before deciding whether to repair an old handset." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Screen replacement: a cracked screen is the most common reason for premature upgrade. A certified repair shop can replace the screen and restore full function. Check whether the shop uses genuine parts or compatible parts; authorised repairs usually preserve any remaining warranty." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Trade-in and resale routes" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Manufacturer trade-in programmes (Apple, Samsung) offer credit toward a new device. These give lower returns than resale but are convenient." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Certified refurbishers such as Backmarket, Muzophone, and CEX buy old handsets and resell them with a warranty. For recent models, they often pay more than manufacturer trade-in programmes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Charity donation: Oxfam and other charities accept working phones. They refurbish if possible. What cannot be resold is recycled." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Recycling end-of-life phones" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A phone that cannot be resold or donated is " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "weee" } }],
+            "text": "WEEE"
+          },
+          { "type": "text", "text": " and must not go in household waste. Take it to your local HWRC (household waste recycling centre), a supermarket WEEE collection point, or a licensed recycler. Retailers selling electronics are legally required to take back like-for-like items. Before recycling, perform a factory reset and remove any SIM and memory cards." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Battery replacement has been done but the phone is still slow",
+              "cause": "Software throttling by the OS to compensate for an old battery is now removed, but the processor or RAM is genuinely inadequate for the current OS version",
+              "fix": "Check whether the manufacturer still issues updates for the model. If the latest OS runs slowly on the device, a factory reset (data backup first) and clean install may restore performance. If the hardware is genuinely too slow, the phone has reached end of software life."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

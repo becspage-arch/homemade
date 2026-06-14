@@ -1,0 +1,144 @@
+{
+  "slug": "hot-water-cylinder-heat-pump-upgrade",
+  "title": "Upgrading a hot water cylinder for heat pump compatibility",
+  "subtitle": "Why a heat pump needs a larger, better-insulated cylinder than a gas boiler, and what to specify",
+  "excerpt": "A standard 120-litre direct copper cylinder from a gas boiler installation is not compatible with a heat pump. Heat pumps heat water more slowly and at lower flow temperatures than a boiler. They require a well-insulated indirect cylinder of at least 200 litres with a large-area coil that works efficiently at 45 to 55°C.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "EST (Energy Saving Trust) heat pump guidance on cylinder sizing. CIBSE AM15 heat pump design manual. MCS 007 standard section 5 on domestic hot water cylinder requirements. NHBC/Labc guidance on unvented cylinders and G3 Building Regulations compliance.",
+  "approximateCostGbp": 1200,
+  "paybackYears": null,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "indirect-cylinder",
+      "term": "Indirect cylinder",
+      "definition": "A hot water cylinder heated by a primary circuit coil rather than by a direct immersion heater. The heat pump heats the coil circuit; the stored water is heated indirectly through the coil surface area."
+    },
+    {
+      "slug": "cop",
+      "term": "COP (Coefficient of Performance)",
+      "definition": "The ratio of heat output to electrical energy input for a heat pump. A COP of 3 means 3 kWh of heat for every 1 kWh of electricity consumed. COP falls as flow temperature rises."
+    },
+    {
+      "slug": "unvented-cylinder",
+      "term": "Unvented cylinder",
+      "definition": "A mains-pressure hot water cylinder that requires no cold feed cistern and delivers full mains pressure at all outlets. Installation must be carried out by a G3 Building Regulations-qualified plumber."
+    }
+  ],
+  "techniqueSlugs": ["heat-pump-grant-application-process", "microgeneration-certification-scheme-registration"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A heat pump has a lower flow temperature than a gas boiler (typically 45 to 55°C against 70 to 80°C) and a lower heating rate. Both factors drive the cylinder specification. You need more stored volume, better insulation, and a larger coil. A well-specified " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "indirect-cylinder" } }],
+            "text": "indirect cylinder"
+          },
+          { "type": "text", "text": " with a large heat pump coil is the standard solution." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cylinder sizing" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "One to two occupants: 150 litres minimum." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Three to four occupants: 200 to 250 litres." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Five or more occupants, or properties with large baths: 250 to 300 litres." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Coil specification" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The primary coil must be rated for the heat pump output at the design flow temperature. A heat pump delivering 8 kW at 50°C needs a coil with enough surface area to transfer 8 kW at a temperature difference of approximately 10°C (primary 50°C, stored water 40°C). A standard indirect coil from a gas boiler system is typically 2 to 3 m² of surface area; a heat-pump-compatible coil is 4 to 6 m². Cylinder manufacturers specify this as the ‘heat pump coil’ option. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cop" } }],
+            "text": "COP"
+          },
+          { "type": "text", "text": " of the heat pump drops if the flow temperature is raised to compensate for an undersized coil: for every 5°C increase in flow temperature, COP falls by approximately 10%." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Insulation specification" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat pump cylinders carry standing heat loss figures that differ from boiler cylinders. At 55°C, an ERP-A-rated cylinder of 250 litres loses around 60 to 75 kWh per year. A non-ERP-compliant cylinder of the same volume may lose 150 to 200 kWh. Most heat pump replacements use an " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "unvented-cylinder" } }],
+            "text": "unvented cylinder"
+          },
+          { "type": "text", "text": " (mains-pressure); these require G3-qualified installation." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Unvented cylinders: Building Regulations Part G3",
+          "body": "If the replacement cylinder is unvented (mains pressure), installation must be carried out by a plumber holding a current G3 qualification. The installation must include a correctly specified pressure relief valve, a tundish, and a discharge pipe routed to a safe place. This is not a DIY installation."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Legionella and pasteurisation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Heat pump systems storing water at 45 to 50°C require a weekly pasteurisation cycle: heating the cylinder to 60°C for 1 hour. This prevents legionella from colonising the stored water. The immersion heater (not the heat pump) drives the cycle. It is controlled by the heat pump controller or a programmable timer. All heat-pump-compatible cylinders must include an immersion element for this." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Hot water is running out mid-morning on a normal use day",
+              "cause": "Cylinder volume is undersized for the occupant count, or the heat pump recovery rate is too slow",
+              "fix": "Check the heat pump is running as soon as the morning draw starts (monitor via the controller). If recovery time is too long, check whether the heat pump power output is matching the heat loss rate of the cylinder. A significantly undersized coil or a heat pump running at partial load may need the installer to investigate."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

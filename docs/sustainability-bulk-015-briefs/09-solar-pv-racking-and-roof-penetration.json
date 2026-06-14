@@ -1,0 +1,162 @@
+{
+  "slug": "solar-pv-racking-and-roof-penetration",
+  "title": "How solar PV panels are mounted and fixed to a roof",
+  "subtitle": "Understanding the racking system, roof penetration, and what the installer does on your roof",
+  "excerpt": "Solar PV panels are fixed to the roof via a racking system of rails and hooks rather than directly to the tiles. The hooks anchor into the rafters and penetrate the felt underlay with a flashing seal. This guide explains what the installer does, how to check the work, and what questions to ask.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "MCS 012 installation standard for solar PV systems (2023 edition). LABC guidance on structural checking for roof PV loads. BS EN 1991-1-4 for wind load calculation relevant to roof-mounted systems. Racking manufacturer technical guides (generic hookless vs hook-mounted systems).",
+  "approximateCostGbp": null,
+  "paybackYears": null,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "solar-pv",
+      "term": "Solar PV",
+      "definition": "Photovoltaic panels that convert sunlight directly into electricity. Output is measured in watts-peak (Wp) under standard test conditions."
+    },
+    {
+      "slug": "inverter",
+      "term": "Inverter",
+      "definition": "The device that converts DC electricity from solar panels into AC electricity for use in the home and export to the grid."
+    },
+    {
+      "slug": "mcs",
+      "term": "MCS",
+      "definition": "Microgeneration Certification Scheme, the UK standard for solar PV installation quality. Required for SEG export tariff eligibility."
+    }
+  ],
+  "techniqueSlugs": ["sizing-a-solar-pv-array-for-a-uk-roof", "solar-pv-roof-structural-check", "solar-pv-annual-maintenance-checklist"],
+  "criticalTechniques": ["solar-pv-roof-structural-check"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Solar PV panels are not attached directly to tiles. They sit on a system of aluminium rails that span several rafters, held down by hooks that fasten through the tile into the rafter timber below. The rails carry the panels; the hooks carry the load. A 4 kWp array of 10 to 12 panels weighs around 150 to 250 kg, distributed over 20 to 30 m² of roof." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The racking system: how it works" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most UK residential " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solar-pv" } }],
+            "text": "solar PV"
+          },
+          { "type": "text", "text": " installations use a hook-and-rail system. The installer locates each rafter by probing through the tile (or using a rafter finder from inside the loft) and marks the spacing. Hooks are inserted under the tile above each rafter, bedded on a rubber compressible seal, and screwed into the rafter with a 6 to 8 mm stainless steel structural screw. The tile sits back down over the hook." }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Horizontal rails are clipped onto the hooks at a spacing matched to the panel frame holes, typically 800 to 1,000 mm apart." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The panels clip onto the rails with end clamps and mid-clamps. No drilling through the panel frame is required for most standard formats." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "DC cables from each panel run under the rail along the roof to a cable entry point at the roof-to-wall junction, where they enter the loft." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The roof penetration and waterproofing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Each hook requires a small slot cut in the roofing felt underlay for the hook stem to pass through. The compressible rubber pad on the hook base seals against the underlay. A lead or EPDM flashing is fitted to the upper tile where the hook seat sits, directing water around the hook and down the tile surface." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "DC cables enter the loft through a grommet in the underlay at the eaves or through a tile duct specifically designed for solar cable entry. The grommet or duct must be self-sealing and not allow rainwater ingress." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to check after installation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Inspect the loft underlay from inside within a week of installation. Look for daylight around hook stems, tears in the underlay, or pooling water below the cable grommet." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check tiles: no cracked tiles from the installation and no tiles sitting above their neighbours where hooks have been inserted." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the MCS certificate lists the racking specification (rail and hook models) and confirms a structural rafter check." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "inverter" } }], "text": "inverter" },
+          { "type": "text", "text": " connection looks like" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "DC cables from the roof run into the inverter, typically wall-mounted in the loft or utility room. The inverter connects to the AC consumer unit via a dedicated circuit. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mcs" } }],
+            "text": "MCS"
+          },
+          { "type": "text", "text": " certificate records the inverter model, the array size, and the G98 or G99 grid connection notification." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Drip appears in loft below the panel area after rain",
+              "cause": "Cable entry grommet not fully seated, or hook flashing not fully bedded on the tile above",
+              "fix": "Contact the installer immediately and request a roof inspection. This is a warranty issue; do not attempt repair yourself on an energised solar roof."
+            },
+            {
+              "symptom": "A row of tiles is visibly lifted above the surrounding surface after installation",
+              "cause": "Hook has been set too high, or tile is sitting on the hook shank rather than the hook seat",
+              "fix": "Ask the installer to re-seat the affected hooks; a lifted tile can allow wind-driven water entry over the years."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "slug": "pipe-penetration-sealing-external-walls",
+  "title": "Sealing pipe penetrations through external walls",
+  "subtitle": "Closing the gap around boiler flues, gas pipes, and soil stacks where they exit through the wall",
+  "excerpt": "A 25 mm boiler flue penetration with a 5 mm annular gap around it lets in a draught equivalent to leaving a small ventilation slot permanently open. Pipes, cables, and ducting that pass through external walls are among the easiest draught paths to seal and among the most overlooked.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BRE Digest 346 on air tightness (public domain). NHBC chapter 8.1 on services installation and penetrations. Gas Safe Register guidance on boiler flue clearances and sealing requirements. Part P (Electrical safety in dwellings) for cable penetrations.",
+  "approximateCostGbp": 15,
+  "paybackYears": 1,
+  "recipeTools": [
+    { "slug": "utility-knife", "isOptional": false }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "intumescent-sealant",
+      "term": "Intumescent sealant",
+      "definition": "A sealant that expands dramatically when exposed to heat, sealing the gap left when a plastic pipe melts in a fire. Required around plastic pipes passing through fire compartment walls."
+    }
+  ],
+  "techniqueSlugs": ["sealing-loft-hatch-draughts", "external-window-sill-draught-treatment"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Every pipe, cable, and duct that passes through an external wall creates a potential air path. The gap around the penetration is often filled with mortar during construction, but mortar is rigid and cracks as the building moves. In older properties with brick cavity walls the mortar may never have been applied at all, and the penetration is open to the cavity." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Boiler flue clearances",
+          "body": "Do not seal directly against a boiler balanced flue terminal or a gas pipe. The flue terminal must have the manufacturer-specified air gap around it. Seal the masonry-to-duct gap, not the flue terminal itself. If the flue is an open-flued type (not a balanced flue), the opening is intentional ventilation for the boiler and must not be sealed. If in doubt, consult a Gas Safe registered engineer before applying any sealant near a gas appliance."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common penetrations to check" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Boiler balanced flue: the duct through the wall around the stainless flue liner." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Gas meter entry pipe and electricity service cable entry." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Soil and vent stack where it exits above the roof line or through an external wall." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Extractor fan ducts from kitchens and bathrooms." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "TV aerial and broadband cable entry points." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Materials and method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For gaps up to 10 mm around rigid metal or copper pipes: low-modulus silicone sealant. Apply from a standard cartridge gun, smooth, and allow to cure 24 hours." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For gaps 10 to 30 mm: fill with closed-cell expanding foam first, trim flush, and apply a silicone top bead for a clean external finish. Overfilling expanding foam is difficult; use a low-expansion product for this application." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For plastic pipes (UPVC soil stacks, push-fit water pipes) passing through fire compartment walls: use " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "intumescent-sealant" } }],
+                "text": "intumescent sealant"
+              },
+              { "type": "text", "text": " or an intumescent collar, not standard silicone. Standard silicone does not seal if the plastic pipe melts in a fire." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For cable entry points: use a cable entry grommet with a rubber seal around each cable. These can be re-opened if cables need replacing." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Expanding foam applied around a pipe has shrunk away from the pipe surface after curing",
+              "cause": "High-expansion foam was used, or the product was applied in cold conditions and shrank on cure",
+              "fix": "Rake out the foam, apply a low-expansion foam product, and over-seal with silicone around the edge."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

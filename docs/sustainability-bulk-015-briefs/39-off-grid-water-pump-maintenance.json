@@ -1,0 +1,130 @@
+{
+  "slug": "off-grid-water-pump-maintenance",
+  "title": "Maintaining an off-grid water pump system",
+  "subtitle": "Pressure tank precharge, foot valve checks, and seasonal winterisation",
+  "excerpt": "An off-grid water pump that draws from a borehole, well, or rainwater tank requires an annual maintenance schedule to stay reliable. Pressure tank precharge drifts over time; foot valves fail silently; UV sterilisation lamps degrade without visible indication. A seasonal check takes 2 to 3 hours and prevents the most common failure modes.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Grundfos pump installation and operating instructions (CM and SQ pump series, public domain excerpts). WellOwner.org guidance on pressure tank maintenance and precharge. DWI guidance on private water supply monitoring and treatment. WIOA (Water Industry Operators Association) guidance on small private supply systems.",
+  "approximateCostGbp": 40,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "pressure-tank",
+      "term": "Pressure tank",
+      "definition": "A vessel containing an air or nitrogen bladder that buffers the water system pressure. The pump charges the tank to the upper cut-off pressure; the tank supplies water at pressure between pump cycles without the pump starting."
+    },
+    {
+      "slug": "foot-valve",
+      "term": "Foot valve",
+      "definition": "A non-return valve at the bottom of the pump's suction pipe in the water source. It keeps the suction pipe full of water when the pump is not running, preventing the pump from losing prime."
+    }
+  ],
+  "techniqueSlugs": ["off-grid-generator-maintenance", "potable-rainwater-filtration-for-drinking"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An off-grid water system has three core parts: a pump, a " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pressure-tank" } }],
+            "text": "pressure tank"
+          },
+          { "type": "text", "text": " to buffer the supply, and a pressure switch. Faults in any one of these three cause the same symptom: fluctuating pressure or the pump running without stopping." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Annual maintenance tasks" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pressure tank precharge check: switch off the pump and open a tap until all pressure is released (pressure gauge reads 0). With the tank empty, check the air charge in the Schrader valve on the tank with a tyre pressure gauge. The precharge should be 2 PSI (0.14 bar) below the pump cut-in pressure. Standard cut-in is 30 PSI (2.1 bar); correct precharge is 28 PSI (1.9 bar). If the precharge is low, use a bicycle pump to restore it. A tank that cannot hold precharge has a failed bladder: replace the tank." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Foot valve check: prime the pump (refill the suction pipe with water), switch on, and note the time to reach cut-off pressure. Slow build-up or failure to reach cut-off pressure suggests the " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foot-valve" } }],
+                "text": "foot valve"
+              },
+              { "type": "text", "text": " is partly blocked or has failed. Pull the suction pipe and inspect the foot valve filter screen; clean or replace." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "UV lamp: replace annually regardless of hours shown. UV output degrades by 30 to 40% over 12 months even if the lamp appears to glow. A lamp delivering insufficient UV dose permits microbial breakthrough without any visible sign of failure." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sediment and carbon filters: replace cartridges on the manufacturer's schedule (typically every 3 to 6 months depending on source water quality). A blocked sediment filter reduces flow rate and increases pump run time." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Annual bacteriological test: private water supplies should be tested at least once a year for E. coli, coliforms, and enterococci. Contact your county council's environmental health team for the sampling protocol and sample bottles." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Winterisation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insulate all exposed pipework in the pump house with foam lagging to at least 25 mm thickness." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For unheated pump houses: fit a frost thermostat. Set it to turn on a small heater when the temperature falls below 3°C." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the system will be unused for more than a week in freezing conditions, drain the pressure tank and all exposed pipes and switch off the pump at the isolator." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Pump runs for 2 to 3 seconds, stops, then runs again immediately in a continuous cycle",
+              "cause": "Pressure tank precharge has failed: the bladder is punctured and the tank contains only water, providing no buffer. The pump immediately drops back to cut-in pressure the moment it stops.",
+              "fix": "Drain the tank and check the precharge as described. If no precharge pressure holds (or the Schrader valve spurts water), the bladder has failed. Replace the pressure tank."
+            },
+            {
+              "symptom": "Water pressure drops to zero at the taps even when the pump appears to be running",
+              "cause": "Pump has lost prime: the suction pipe has lost its water column and the pump is running dry",
+              "fix": "Switch off the pump immediately. Running dry for more than 30 seconds can damage the pump seals. Prime the suction pipe by filling it with water from the top. Check the foot valve is holding."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -155,3 +155,87 @@ SKIPPED: 0
 - making-watercolour-paper-from-pulp: grade-level-strict
 - mexican-papel-picado-advanced: voice-violation, grade-level-strict
 - scaling-marbling-for-an-edition: grade-level-strict
+
+---
+
+## Run at 18:59:48
+
+Generated: 2026-06-14T18:59:48.552Z
+
+Processed: 75
+PASS: 75
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 19:31:54
+
+Generated: 2026-06-14T19:31:54.660Z
+
+Processed: 78
+PASS: 74
+STILL_BLOCKED: 4
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 26 |
+| opening-pattern-missing-hook | 24 |
+| prose-prep-steps | 6 |
+| grade-level-strict | 4 |
+| voice-violation | 2 |
+
+## Still BLOCKED (sample 20)
+
+- beeswax-lavender-solid-perfume: voice-violation
+- rapeseed-wax-lemon-thyme-candle: prose-prep-steps
+- soy-tobacco-vanilla-candle: prose-prep-steps
+- upholstery-spot-cleaner: grade-level-strict
+
+---
+
+## Run at 20:24:33
+
+Generated: 2026-06-14T20:24:33.277Z
+
+Processed: 78
+PASS: 62
+STILL_BLOCKED: 16
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 87 |
+| body-missing-method | 13 |
+| voice-violation | 10 |
+| em-dash-in-content | 1 |
+
+## Still BLOCKED (sample 20)
+
+- animal-bedding-composting-horse-straw: grade-level-strict
+- cardboard-packaging-reduction-and-reuse: grade-level-strict
+- changeover-switch-for-generator-backup: voice-violation, grade-level-strict
+- compostable-vs-recyclable-packaging-guide: voice-violation, grade-level-strict
+- condensation-vs-leaking-roof-diagnosis: voice-violation, grade-level-strict
+- district-heating-alternatives-assessment: voice-violation, grade-level-strict
+- electric-panel-heater-efficiency-guide: grade-level-strict
+- food-waste-recycling-vs-home-composting: grade-level-strict
+- heat-pump-grant-application-process: grade-level-strict
+- hot-water-cylinder-heat-pump-upgrade: voice-violation, grade-level-strict
+- insulating-a-concrete-flat-roof-garage: grade-level-strict
+- insulating-a-conservatory-polycarbonate-roof: grade-level-strict
+- microgeneration-certification-scheme-registration: grade-level-strict
+- mobile-phone-recycling-and-upgrading: grade-level-strict
+- off-grid-water-pump-maintenance: grade-level-strict
+- solar-pv-racking-and-roof-penetration: grade-level-strict
