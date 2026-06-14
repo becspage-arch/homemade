@@ -1,0 +1,125 @@
+{
+  "slug": "winter-carrageenan-adjustments",
+  "title": "Winter carrageenan adjustments",
+  "subtitle": "Adapting marbling size preparation and ink spreading for cold room temperatures",
+  "excerpt": "Cold rooms change carrageenan marbling in two ways: the size gels at a higher viscosity than in summer, slowing ink spreading and increasing surface tension, and the inks themselves spread more slowly and unevenly. Both problems are adjustable without changing the fundamental technique. The key is understanding that cold marbling requires more patience and slightly different size and ink concentrations.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "marbling",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Cold-season marbling adjustments are practical workshop knowledge from contemporary marbling practice. No single pre-1928 text addresses seasonal temperature effects on carrageenan systematically.",
+  "recipeTools": [
+    { "slug": "carrageenan", "isOptional": false },
+    { "slug": "marbling-tray", "isOptional": false },
+    { "slug": "marbling-acrylic-liquid", "isOptional": false },
+    { "slug": "alum-potash", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "carrageenan-viscosity",
+      "term": "Carrageenan viscosity",
+      "definition": "The thickness and resistance to flow of the prepared carrageenan size. Viscosity increases at low temperatures, making the size feel thicker and causing inks to spread more slowly and with more resistance."
+    },
+    {
+      "slug": "ink-surface-tension",
+      "term": "Ink surface tension",
+      "definition": "In marbling, the behaviour of ink drops as they expand across the size surface. High surface tension (common in cold or over-concentrated conditions) causes inks to contract and bead rather than spread. Low surface tension causes inks to spread too far and thin out."
+    }
+  ],
+  "techniqueSlugs": ["carrageenan-size-preparation", "marbling-stone-drop-base-pattern"],
+  "criticalTechniques": ["carrageenan-size-preparation"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Carrageenan "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "carrageenan-viscosity" } }],
+            "text": "viscosity"
+          },
+          {
+            "type": "text",
+            "text": " rises significantly below 15°C. At 10°C, a size mixed to the usual 3 g per litre concentration behaves similarly to a 4 g per litre mix at 20°C: the inks spread more slowly, the drops are harder to move with a stylus or comb, and the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ink-surface-tension" } }],
+            "text": "ink surface tension"
+          },
+          {
+            "type": "text",
+            "text": " is higher. The two main adjustments are: reduce the carrageenan concentration slightly (to 2.5 g per litre) and increase the ox gall or marbling medium in each ink colour by 10 to 20%."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adjusting the size concentration" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the room temperature is below 15°C, reduce the carrageenan powder from 3 g per litre to 2.5 g per litre. This keeps the viscosity in the workable range at low temperature. If the size still feels too thick when tested (a drop of ink placed on it beads up and barely spreads), reduce further to 2 g per litre. The minimum usable concentration for carrageenan marbling size is approximately 1.8 g per litre: below this the size does not hold ink patterns."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adjusting the inks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add ox gall (or synthetic marbling medium) to each ink colour at a rate 10 to 20% higher than the summer formula. Ox gall reduces the surface tension of the ink drop and allows it to spread on the size surface. In cold conditions, you need more of it to achieve the same spread. Test each colour on the cold size and adjust individually: some colours may need more adjustment than others depending on the ink pigment and carrier."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Warming the workspace" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep the marbling tray away from cold draughts and allow an hour for the room and the size to reach the same stable temperature before testing inks. A room that is warming up (a cold room just before a space heater has equilibrated) will have different results at the start, middle, and end of a session. Stable temperature, even at 12°C, is more useful than a variable temperature that averages 18°C."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Ink drops bead into tight circles and will not spread even with additional ox gall",
+              "cause": "The size is too viscous for the temperature and ox gall adjustment.",
+              "fix": "Reduce carrageenan concentration. Prepare a fresh batch at 2 g per litre and replace the working tray. If immediate fresh size is not available, add warm water to the tray (up to 20% of the tray volume) and stir gently to dilute the existing size slightly."
+            },
+            {
+              "symptom": "The finished patterns look much lighter in colour than summer marbling",
+              "cause": "Cold inks do not transfer to alum-treated paper as readily. The alum mordant reaction is slower at low temperature.",
+              "fix": "Allow the alum-treated paper to warm slightly (bring it into the room one hour before marbling). Cold paper straight from a cold storage box gives patchy ink uptake."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

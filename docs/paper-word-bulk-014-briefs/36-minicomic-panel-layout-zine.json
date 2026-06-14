@@ -1,0 +1,128 @@
+{
+  "slug": "minicomic-panel-layout-zine",
+  "title": "Minicomic panel layout for zines",
+  "subtitle": "Designing panel grids and gutters for a hand-drawn minicomic in zine format",
+  "excerpt": "A minicomic in zine format uses the same panel grid principles as full-size comics but must work at roughly A6 page size. The gutters between panels must be wide enough to read clearly at small scale, the panels must be sized for the number of storytelling beats per page, and the text-to-image ratio needs to account for the fact that word balloons become hard to read below a certain font size.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Minicomic panel layout principles are a contemporary zine and independent comics practice. No single pre-1928 source covers the topic; the formal study of comics page layout is associated with Scott McCloud's Understanding Comics (1993), which is the primary modern reference.",
+  "recipeTools": [
+    { "slug": "dotted-journal-a5", "isOptional": true },
+    { "slug": "fineliner-0-38", "isOptional": false },
+    { "slug": "fineliner-0-5", "isOptional": false },
+    { "slug": "metal-ruler-15cm", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "gutter",
+      "term": "Gutter",
+      "definition": "The white space between comics panels. In minicomics, gutters of at least 3 mm are needed for the page to read clearly. Gutters narrow than 2 mm at A6 scale cause panels to merge visually."
+    },
+    {
+      "slug": "splash-panel",
+      "term": "Splash panel",
+      "definition": "A full-page or very large panel that typically opens a comics sequence. Used sparingly in minicomics (usually no more than once per zine) because a large panel gives fewer story beats per page."
+    }
+  ],
+  "techniqueSlugs": ["eight-page-single-sheet-zine"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Panel layout for a minicomic zine starts with the page size and works inward. A standard eight-page portrait zine from an A4 sheet gives pages approximately 74 mm wide by 105 mm tall (A7 size). At that scale, a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gutter" } }],
+            "text": "gutter"
+          },
+          {
+            "type": "text",
+            "text": " of 3 mm between panels and a page margin of 4 mm on each side leaves a live drawing area of approximately 66 mm wide by 97 mm tall. Divide this live area into panels based on the number of story beats required per page."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Fine-liner, 0.38 mm", "notes": "For panel border lines at minicomic scale. A 0.5 mm panel line is the maximum useful thickness: thicker lines eat into the small panel areas." },
+            { "name": "Fine-liner, 0.5 mm", "notes": "For thicker panel outlines where you want a stronger grid." },
+            { "name": "15 cm ruler", "notes": "For ruling panel lines. A clear ruler is useful so you can see the artwork below." },
+            { "name": "A5 dotted journal (optional)", "notes": "For planning panel layouts in a dedicated planning notebook before applying to the final zine pages." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Standard panel grids for A7 pages" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Three standard panel configurations work well at A7 scale. A two-panel page (one panel above, one below) gives large drawing areas for complex scenes. A three-panel page (three horizontal strips or two strips with one taller panel) suits dialogue sequences. A four-panel page (a 2×2 grid) is the maximum useful density at A7 scale: five or six panels at this size make the drawing area too small for readable images. A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "splash-panel" } }],
+            "text": "splash panel"
+          },
+          {
+            "type": "text",
+            "text": " occupying a full page works for dramatic moments but uses a full page for one story beat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Word balloon sizing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Word balloons in minicomics must fit text handwritten at a minimum of 4 mm cap height. Below 3 mm, hand lettering becomes illegible in a folded, reproduced zine. Plan balloon sizes around the text first: draw the balloon to fit the words, then draw the image around the balloon placement, not the other way around. A word balloon at A7 scale that comfortably holds a 10-word speech needs approximately 30 mm wide by 12 mm tall."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "The minicomic panels look cluttered and unreadable",
+              "cause": "Too many panels per page, or gutters narrower than 3 mm.",
+              "fix": "Reduce to a maximum of 4 panels per A7 page. Widen gutters to at least 3 mm. If the story requires more beats per page, extend the zine to more pages rather than adding more panels."
+            },
+            {
+              "symptom": "The word balloons crowd out the image area",
+              "cause": "The balloon sizes were not planned before drawing the images, leaving insufficient space for the text.",
+              "fix": "Thumbnail each page in a planning notebook first: place the balloons as rough shapes, then draw the images around them. The text must fit first; the art adapts."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

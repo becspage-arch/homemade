@@ -1,0 +1,122 @@
+{
+  "slug": "origami-boat",
+  "title": "Origami boat",
+  "subtitle": "The traditional flat-bottomed sailing boat folded from a single rectangle",
+  "excerpt": "The traditional origami sailing boat is one of the earliest origami models documented in Western sources. It is folded from a single rectangle (not a square) using a sequence of vertical-fold symmetry steps and a characteristic inversion step that forms the boat hull from what was the upper portion of the model. The finished boat floats briefly on water and is a useful model for teaching the inversion manoeuvre.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "origami",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The traditional origami boat (fune) is documented in pre-1928 Japanese origami instruction manuals. The construction is in the public domain. A variant appears in the Japanese educational origami text Hon zo Orikata (1797, public domain).",
+  "recipeTools": [
+    { "slug": "cartridge-paper-80", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "valley-fold",
+      "term": "Valley fold",
+      "definition": "A fold where the paper bends toward you, forming a valley (concave) crease. The most common fold type in origami. In diagrams, shown as a dashed line with an arrow pointing in the direction of the fold."
+    },
+    {
+      "slug": "inversion-step",
+      "term": "Inversion (inside reverse fold)",
+      "definition": "A manoeuvre where a protruding point of folded paper is reversed inward, turning the inside of the fold to the outside. In the origami boat, the inversion of the top centre point forms the mast and simultaneously reveals the hull form."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The origami boat requires only "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "valley-fold" } }],
+            "text": "valley folds"
+          },
+          {
+            "type": "text",
+            "text": " and one "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "inversion-step" } }],
+            "text": "inversion"
+          },
+          {
+            "type": "text",
+            "text": ". It is one of the best entry-level models for teaching the inversion manoeuvre because the inversion is the last step: the first six steps produce an intermediate shape that does not yet look like a boat, and then the inversion reveals the hull and mast in one movement. Use a rectangle approximately 20 cm by 15 cm for a good-sized first model."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Paper rectangle, 20 cm x 15 cm, 80 gsm", "notes": "Thin paper folds more cleanly and produces a crisper final boat shape. Standard printer paper (80 gsm) cut to rectangle is ideal. Heavier paper makes the inversion step difficult." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The fold sequence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hold the rectangle landscape (wider than tall). Fold in half top to bottom, crease firmly. Fold in half left to right, crease firmly. Unfold the left-to-right fold only. You now have a rectangle folded to half its height, with a vertical centre crease. Fold the top-left and top-right corners down to meet the centre bottom edge, forming a triangular shape with a rectangular strip below. Fold the front rectangular strip up to meet the base of the triangles. Flip the model over and fold the back rectangular strip up in the same way. You now have a diamond shape. Hold the bottom-left and bottom-right points of the diamond and pull them gently outward and apart: the diamond will open from the centre into a flat square shape. This square is the intermediate pre-inversion form."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The inversion step" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hold the flat square with the open end (the pocket) at the top. Grip the top-left and top-right corners of the square and pull them apart, opening the pocket and simultaneously pushing the bottom point of the square upward through the pocket. Keep pulling the top corners apart until the model flattens into the boat shape: the former bottom point has become the mast, the former top pocket has become the hull, and the two sail panels stand upright above the hull."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "The inversion step produces a crumpled shape rather than a clean boat",
+              "cause": "The intermediate square was not folded with sufficiently sharp creases, so the paper resists the inversion manoeuvre.",
+              "fix": "Unfold to the intermediate flat square and re-crease every fold line firmly. The inversion step requires all four creases of the square to be very sharp to flip cleanly."
+            },
+            {
+              "symptom": "The triangular flaps from the corner folds are visible inside the hull",
+              "cause": "The corner fold-down step created raw edges inside the pocket that show after inversion.",
+              "fix": "This is normal for this model. If a neater interior is needed, tuck the raw edges back under the hull walls after completing the inversion."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

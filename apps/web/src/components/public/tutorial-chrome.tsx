@@ -52,6 +52,12 @@ export interface TutorialRecipeMeta {
   prepMinutes: number | null
   cookMinutes: number | null
   totalMinutes: number | null
+  /**
+   * Oven temperature already formatted for the reader's preference (e.g.
+   * "180°C fan", "Gas 4"), or null when the recipe has no oven step. The page
+   * resolves it so the strip stays free of preference logic.
+   */
+  temperatureLabel: string | null
   cuisine: string | null
   mealType: string | null
   dietaryFlags: string[]
@@ -206,6 +212,7 @@ export function TutorialChrome(props: TutorialChromeProps) {
         <TutorialInfoStrip
           timeMinutes={totalForBar}
           difficulty={difficulty}
+          temperatureLabel={isRecipe ? (recipeMeta?.temperatureLabel ?? null) : null}
           equipmentLabel={equipmentLabel}
           containerLabel={props.containerLabel ?? null}
           indoorLabel={props.indoorLabel ?? null}

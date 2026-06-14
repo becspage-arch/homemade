@@ -1,0 +1,128 @@
+{
+  "slug": "antique-spot-marbling",
+  "title": "Antique spot marbling",
+  "subtitle": "Producing the dense, all-over mottled pattern used on nineteenth-century account books",
+  "excerpt": "Antique spot marbling uses ink drops laid so densely and so closely together that the drops push each other into a compressed, cell-like pattern with almost no white size showing. The finished paper looks like the marbled endpapers of Victorian ledgers and account books. It requires more ink than open stone-drop patterns and much more controlled dropping technique.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "marbling",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Richard J. Wolfe, Marbled Paper: Its History, Techniques, and Patterns (1990), chapter on nineteenth-century commercial marbling patterns: describes the dense spot patterns used by British and German bookbinders for ledger endpapers. The antique or 'old spot' family is documented from the 1820s onward.",
+  "recipeTools": [
+    { "slug": "marbling-tray", "isOptional": false },
+    { "slug": "carrageenan", "isOptional": false },
+    { "slug": "marbling-acrylic-liquid", "isOptional": false },
+    { "slug": "alum-potash", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "stone-drop",
+      "term": "Stone drop",
+      "definition": "The foundational marbling pattern produced by dropping ink onto the carrageenan size surface in concentric circles. Each new colour pushes previous colours outward. Named from the stone-like rounded forms."
+    },
+    {
+      "slug": "antique-spot",
+      "term": "Antique spot",
+      "definition": "A dense marbling pattern in which ink drops are laid so close together that they fill almost the entire size surface, producing a compressed, mottled texture with very small open gaps between the colour masses. Used on Victorian commercial bookbinding."
+    }
+  ],
+  "techniqueSlugs": ["marbling-stone-drop-base-pattern", "carrageenan-size-preparation"],
+  "criticalTechniques": ["carrageenan-size-preparation"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "antique-spot" } }],
+            "text": "antique spot"
+          },
+          {
+            "type": "text",
+            "text": " pattern differs from the standard "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stone-drop" } }],
+            "text": "stone drop"
+          },
+          {
+            "type": "text",
+            "text": " in density rather than technique. In a stone drop pattern, the drops are placed with space between them and the colour masses are large and open. In antique spot marbling, the drops are placed so densely that each new drop pushes the previous colours into narrow channels between the expanding circles. The result is a tight, compressed cell structure."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Carrageenan size, rested and skimmed", "notes": "Same preparation as for all marbling. Skim just before laying ink." },
+            { "name": "Marbling inks, 3 to 5 colours", "notes": "Darker, richer colours work best for antique spot: dark blue, maroon, dark green, ochre, and black. Pale colours are lost in the dense pattern." },
+            { "name": "Drop applicators with narrow tips", "notes": "Eyedroppers or cocktail sticks allow precise single-drop placement. A dropper bottle works but gives less control over drop size." },
+            { "name": "Alum-treated paper", "notes": "Pre-treated with 15% alum solution and fully dry." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Laying the antique spot pattern" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Begin with your first colour and drop it in a grid pattern across the entire tray surface, placing drops approximately 30 mm apart. Allow each drop to spread before adding the next colour in the same grid but offset by 15 mm (so each second-colour drop lands in the centre of the space between the first-colour drops). Add a third colour in the remaining spaces. By now the size surface should be almost entirely covered with expanding colour circles that are just beginning to touch. Add a fourth and fifth colour in any remaining gaps. The final surface should have almost no open size showing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Laying the paper" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lower alum-treated paper directly onto the dense pattern without any comb pass. The compressed pattern does not benefit from combing. Contact for 30 seconds, then peel and rinse. The finished sheet will show a dense, all-over colour pattern with only the thinnest lines of contrasting colour between the cell masses."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Colours merge into a single muddy tone rather than remaining separate",
+              "cause": "The inks were laid before the previous colour drops had stopped spreading, causing them to run into each other rather than pushing each other outward.",
+              "fix": "Wait 10 to 15 seconds after each colour drop before adding the next. In cold conditions, wait longer."
+            },
+            {
+              "symptom": "Large areas of open size are visible in the finished sheet",
+              "cause": "Insufficient ink drops were laid to fill the tray surface.",
+              "fix": "Add a final round of drops in any visible gaps before laying the paper. A 5 to 6 colour sequence covers a 300 x 400 mm tray surface more reliably than 3 colours."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

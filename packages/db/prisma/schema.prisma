@@ -303,6 +303,16 @@ model User {
   // displayed unit at render time. Null = default to cm.
   measurementPreference String?
 
+  // Recipe foundation (phase_recipe_foundation_001). Cross-craft cooking-unit
+  // display preferences. Canonical storage stays conventional °C + grams + ml
+  // per the locked temperature/units rule; these only switch the *displayed*
+  // unit at render time and never re-author content. Null = the renderer
+  // derives a default from the request locale (en-GB → fan °C + grams + UK
+  // cups; en-US → °F + US cups; everywhere else → metric).
+  ovenPreference   OvenPreference?
+  weightPreference WeightPreference?
+  volumePreference VolumePreference?
+
   // Sewing pre-S-2 reverse relations.
   sewingMeasurements UserSewingMeasurements?
   sewingPlans        UserSewingPlan[]
@@ -313,6 +323,9 @@ model User {
 
   // Sewing S-6 reverse relations.
   sewingPatternHacks SewingPatternHack[]
+
+  // Recipe foundation. User-uploaded recipes the Maker owns.
+  userRecipes UserRecipe[] @relation("UserRecipeOwner")
 
   @@index([role])
   @@index([isSuspended])
@@ -335,6 +348,31 @@ enum UserRole {
   TESTER
   EDITOR
   ADMIN
+}
+
+// Recipe foundation (phase_recipe_foundation_001). Cross-craft cooking unit /
+// temperature display preferences. Canonical storage is always conventional °C
+// + grams + ml; these only pick the render-time display per the locked
+// temperature/units rule. The enum shape mirrors that locked memo
+// (OvenPreference / WeightPreference / VolumePreference) rather than collapsing
+// oven + scale + jug into one toggle, because UK readers routinely mix fan °C
+// with grams while US readers mix °F with cups.
+enum OvenPreference {
+  FAN_C
+  CONVENTIONAL_C
+  FAHRENHEIT
+  GAS_MARK
+}
+
+enum WeightPreference {
+  METRIC
+  IMPERIAL
+}
+
+enum VolumePreference {
+  METRIC
+  IMPERIAL_UK
+  IMPERIAL_US
 }
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -2429,7 +2467,27 @@ model Ingredient {
   /// without re-migrating; stays null until populated.
   nutritionalInfoPer100g Json?
 
+  /// Recipe foundation (phase_recipe_foundation_001). Density in g/ml, used by
+  /// the render-time unit helper to convert between mass and volume (flour
+  /// ≈ 0.53, caster sugar ≈ 0.85, water = 1.0, oil ≈ 0.92). Null = the renderer
+  /// can't reconcile this ingredient between grams and cups, so it shows the
+  /// authored unit unchanged rather than guessing.
+  densityGPerMl Decimal?
+
+  /// Recipe foundation. Supermarket-aisle grouping that the future shopping-list
+  /// aggregator sorts by. Null renders as OTHER. Seeded from `category` at
+  /// backfill; authors can override per ingredient.
+  aisle IngredientAisle?
+
   recipeIngredients RecipeIngredient[]
+
+  /// Recipe foundation. Richer substitution graph (ratio + context +
+  /// flavour delta) layered over the legacy `commonSubstitutes` slug array.
+  /// The array stays as the quick render-time hint; these rows carry the
+  /// detail the substitution surface and shopping-list swaps need.
+  substitutions         IngredientSubstitution[] @relation("MainIngredientSubstitutions")
+  substitutedBy         IngredientSubstitution[] @relation("AltIngredientSubstitutions")
+  userRecipeIngredients UserRecipeIngredient[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -2437,6 +2495,7 @@ model Ingredient {
   @@index([category])
   @@index([isStaple])
   @@index([isAllergen])
+  @@index([aisle])
 }
 
 model Tool {
@@ -2535,6 +2594,192 @@ model RecipeTool {
 
   @@index([tutorialId, position])
   @@index([toolId])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Recipe foundation (phase_recipe_foundation_001)
+//
+// Layers the user-uploaded recipe surface + a richer substitution graph on top
+// of the existing Ingredient / RecipeIngredient ontology (1,000+ canonical
+// ingredients, already backfilled against published cooking / baking /
+// herbal-medicine / natural-home tutorials). UserRecipe is deliberately
+// distinct from Tutorial: ownership, lifecycle and AI-moderation state differ,
+// and Tutorial stays the Homemade-authored library. UserRecipeIngredient and
+// IngredientSubstitution both FK to the same canonical Ingredient table so the
+// shopping-list + meal-plan workers aggregate user recipes and library recipes
+// through one ingredient identity.
+// ────────────────────────────────────────────────────────────────────────────
+
+enum IngredientAisle {
+  PRODUCE
+  DAIRY
+  MEAT_FISH
+  PANTRY_DRY
+  PANTRY_OIL
+  PANTRY_CONDIMENT
+  PANTRY_BAKING
+  FROZEN
+  BAKERY
+  DELI
+  DRINK
+  HERBS_SPICES
+  HOUSEHOLD
+  OTHER
+}
+
+/// One row per (main ingredient → alternative). Richer than the legacy
+/// `Ingredient.commonSubstitutes` slug array: carries a conversion ratio, the
+/// context the swap is appropriate for, and a one-line flavour-change note.
+/// Seeded at backfill from the existing arrays (ratio null, appropriateFor
+/// 'any') and enriched by a later worker. Both sides cascade-delete with their
+/// Ingredient.
+model IngredientSubstitution {
+  id               String @id @default(cuid())
+  mainIngredientId String
+  altIngredientId  String
+
+  /// Multiply the main quantity by this to get the substitute quantity
+  /// (1 cup butter ≈ 0.75 cup oil → ratio 0.75). Null = swap 1:1.
+  ratio Decimal?
+
+  /// "baking" | "frying" | "any". Kept a string for forwards-compat with the
+  /// ingredient-category field, which is also a free string.
+  appropriateFor String?
+
+  /// One short line on how the result changes ("slightly denser crumb").
+  flavourDelta String?
+
+  notes String?
+
+  mainIngredient Ingredient @relation("MainIngredientSubstitutions", fields: [mainIngredientId], references: [id], onDelete: Cascade)
+  altIngredient  Ingredient @relation("AltIngredientSubstitutions", fields: [altIngredientId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([mainIngredientId, altIngredientId])
+  @@index([mainIngredientId])
+  @@index([altIngredientId])
+}
+
+/// A recipe a Maker uploads. Premium-gated to create (RECIPE_UPLOAD) and to
+/// browse other Makers' recipes (COMMUNITY_RECIPES); both gates default off.
+/// All moderation is AI-only per the locked rule. See
+/// `apps/web/scripts/moderate-user-recipes.ts`. Photos are the Maker's own
+/// content and are never modified.
+model UserRecipe {
+  id   String @id @default(cuid())
+  slug String @unique
+
+  ownerUserId String
+  owner       User   @relation("UserRecipeOwner", fields: [ownerUserId], references: [id], onDelete: Cascade)
+
+  title   String
+  summary String?
+
+  /// TipTap JSON, same body shape as Tutorial for renderer compatibility.
+  body Json
+
+  cuisineTags String[] @default([])
+  dietaryTags String[] @default([])
+  mealType    MealType?
+
+  servings         Int
+  prepTimeMinutes  Int?
+  cookTimeMinutes  Int?
+  totalTimeMinutes Int?
+
+  /// Conventional °C canonical (mirrors Tutorial); render helper derives the
+  /// rest from the reader's OvenPreference.
+  temperatureCelsius Int?
+
+  /// Maker's own photos. Plain Media ids (no FK relation) to match the
+  /// crochet stash / gallery-id pattern and keep Media's reverse-relation list
+  /// from ballooning. Never modified per the image policy.
+  heroPhotoMediaId String?
+  galleryMediaIds  String[] @default([])
+
+  /// Which library category this recipe belongs alongside.
+  categorySlug String
+
+  status              UserRecipeStatus @default(PENDING_AI_MODERATION)
+  /// "approved" | "flagged-spam" | "flagged-duplicate" | "flagged-copyright"
+  /// | "flagged-voice". Set by the AI moderation pass.
+  aiModerationVerdict String?
+  /// Structured findings from the moderation worker.
+  aiModerationNotes   Json?
+  moderatedAt         DateTime?
+  publishedAt         DateTime?
+
+  visibility UserRecipeVisibility @default(PRIVATE)
+
+  saveCount Int @default(0)
+  viewCount Int @default(0)
+
+  /// "own" | "adapted-from" | "family-recipe" | "inspired-by".
+  originalityType String?
+  /// Free-text attribution when adapted / inspired by another source.
+  attribution     String?
+
+  ingredients UserRecipeIngredient[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([ownerUserId, status])
+  @@index([categorySlug, visibility, publishedAt])
+  @@index([visibility, publishedAt])
+}
+
+/// One row per (user recipe, ingredient). FK to the canonical Ingredient table
+/// so user recipes aggregate into the same shopping list / meal plan as
+/// library recipes. Mirrors RecipeIngredient's shape.
+model UserRecipeIngredient {
+  id           String @id @default(cuid())
+  recipeId     String
+  ingredientId String
+
+  /// Null means "to taste" / "as needed".
+  quantity Decimal?
+  unit     String?
+  notes    String?
+
+  isOptional Boolean @default(false)
+  order      Int
+
+  recipe     UserRecipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  ingredient Ingredient @relation(fields: [ingredientId], references: [id], onDelete: Restrict)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([recipeId, order])
+  @@index([ingredientId])
+}
+
+enum UserRecipeStatus {
+  DRAFT
+  PENDING_AI_MODERATION
+  APPROVED
+  REJECTED
+  ARCHIVED
+}
+
+enum UserRecipeVisibility {
+  PRIVATE
+  UNLISTED
+  PUBLIC
+}
+
+enum MealType {
+  BREAKFAST
+  LUNCH
+  DINNER
+  SNACK
+  DESSERT
+  DRINK
+  SIDE
+  OTHER
 }
 
 // ────────────────────────────────────────────────────────────────────────────

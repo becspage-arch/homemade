@@ -1,0 +1,143 @@
+{
+  "slug": "calligraphy-on-handmade-paper",
+  "title": "Calligraphy on handmade paper",
+  "subtitle": "Adapting broad-edge calligraphy technique for the uneven surface of handmade sheets",
+  "excerpt": "Handmade paper behaves differently from commercial cartridge under a calligraphy nib. Unsized sheets feather badly; over-sized sheets resist the ink entirely. Understanding how the sizing level, surface texture, and deckle edges interact with the nib makes the difference between a smudged attempt and a sheet where the letterforms read cleanly.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Edward Johnston, Writing and Illuminating and Lettering (1906), chapter on materials: Johnston's description of writing on vellum and sized papers applies directly to modern handmade-paper calligraphy. Dard Hunter, Old Papermaking (1923, public domain), chapter on sizing: technical description of gelatin and alum sizing for writing papers.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-3", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "iron-gall-ink", "isOptional": false },
+    { "slug": "paper-mould-deckle-a5", "isOptional": true },
+    { "slug": "gum-arabic", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "surface-sizing",
+      "term": "Surface sizing",
+      "definition": "A coating of diluted gelatin or methylcellulose applied to the surface of a dried handmade sheet to reduce absorbency and give the paper enough resistance for ink work without feathering."
+    },
+    {
+      "slug": "feathering",
+      "term": "Feathering",
+      "definition": "The spread of ink along paper fibres beyond the intended stroke edge, producing a fuzzy or hairy line. Caused by insufficient sizing or a highly absorbent paper surface."
+    }
+  ],
+  "techniqueSlugs": ["surface-sizing-for-watercolour"],
+  "criticalTechniques": ["surface-sizing-for-watercolour"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Writing on handmade paper with a broad-edge nib requires knowing whether the sheet is sized and how well. Unsized waterleaf paper (a sheet pulled from the vat and dried with no surface treatment) will "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "feathering" } }],
+            "text": "feather"
+          },
+          {
+            "type": "text",
+            "text": " immediately: the ink spreads along the fibres before it dries. A sheet with good "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "surface-sizing" } }],
+            "text": "surface sizing"
+          },
+          {
+            "type": "text",
+            "text": " will take ink cleanly enough for legible calligraphy, though never as crisply as hot-pressed watercolour paper."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Handmade paper sheet, surface-sized", "notes": "Size with diluted gelatin (1 g per 100 ml water) applied with a flat brush in one direction, dried flat, then a second coat at 90 degrees. Allow 24 hours before writing." },
+            { "name": "Mitchell Roundhand nib, 3", "notes": "A medium nib gives a clearer test of the paper surface than a very broad or very fine nib." },
+            { "name": "Iron-gall ink, slightly thickened", "notes": "Add 1 drop of gum arabic per 5 ml of iron-gall to give the ink slightly more body. This reduces feathering on less-well-sized sheets." },
+            { "name": "Straight pen holder", "notes": "For broad-edge work." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Test the sizing first" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before writing on a valued handmade sheet, test a corner or a separate test piece pulled from the same batch. Write a single downstroke with the nib loaded at normal capacity. Wait 30 seconds and examine the stroke edge under good light. A clean, slightly crisp edge means the sizing is adequate. A fuzzy edge that spreads 0.5 to 1 mm means the sheet needs a further sizing coat. A stroke that spreads more than 1 mm means the sheet is undersize and will need two additional sizing applications before calligraphy work."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working with surface texture" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handmade paper has a surface texture that commercial paper does not: the felt or couch texture shows as a slight undulation under raking light. On a broad-edge stroke, the nib will feel the texture and the ink will pool slightly in the low spots. This gives handmade-paper calligraphy a quality that cannot be replicated on machine-made paper, but it also means that hairlines on very textured sheets will be slightly broken rather than perfectly smooth. Flat-laid handmade paper (formed on a wove mould rather than a laid mould) has a less pronounced texture and is better suited to fine calligraphy."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Working with deckle edges" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The deckle edges of a handmade sheet (the feathered irregular edges formed where the pulp slurry touched the deckle frame) are thinner and more fibrous than the body of the sheet. They feather more readily than the body, even on well-sized paper. Keep calligraphy at least 30 mm from the deckle edges. The deckle edge is a decorative feature of the sheet when the sheet itself is framed: the calligraphy should occupy the well-sized body, not approach the fragile edge."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "The nib catches and tears the surface of the handmade sheet",
+              "cause": "The surface fibres are not fully bonded by the sizing, and the nib tip lifts them.",
+              "fix": "Apply a third sizing coat and allow to dry fully. The surface should feel smooth but not glossy under the finger before using a nib."
+            },
+            {
+              "symptom": "The ink dries with a matte, chalky appearance instead of a slight sheen",
+              "cause": "The sizing has soaked into the sheet rather than forming a surface film, pulling the ink binder into the paper.",
+              "fix": "Apply sizing in thin, fast brush strokes rather than slow saturating strokes. Speed is what keeps the sizing on the surface."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

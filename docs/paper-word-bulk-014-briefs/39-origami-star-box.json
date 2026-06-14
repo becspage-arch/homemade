@@ -1,0 +1,125 @@
+{
+  "slug": "origami-star-box",
+  "title": "Origami star box",
+  "subtitle": "A modular origami box with a pointed four-cornered star lid, folded from two squares",
+  "excerpt": "The star box is a two-piece modular origami model: a flat-based box and a star-pointed lid, each folded from a single square of paper. The lid is 5 mm larger in each dimension than the base so it fits on without forcing. Both pieces use the preliminary (square) base as their starting point. The finished box is sturdy enough to hold small objects and makes a good gift container.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "origami",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "The origami star box (known in Japan as hoshi bako) is a traditional modular origami form documented in pre-1928 origami instruction books. The construction is in the public domain. Method described here follows the traditional two-piece construction.",
+  "recipeTools": [
+    { "slug": "kami-15cm", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "preliminary-base",
+      "term": "Preliminary base (square base)",
+      "definition": "A fundamental origami base form produced by folding a square in half diagonally both ways and in half horizontally and vertically, then collapsing the folds into a four-pointed standing square form. Many origami models begin from this base."
+    },
+    {
+      "slug": "petal-fold",
+      "term": "Petal fold",
+      "definition": "An origami manoeuvre that opens and flattens one layer of a folded form to produce a diamond or petal shape. Used in both the preliminary base progression and in many box and flower models."
+    }
+  ],
+  "techniqueSlugs": ["origami-preliminary-base", "origami-petal-fold"],
+  "criticalTechniques": ["origami-preliminary-base"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The star box is a modular form: base and lid are folded separately from squares of different sizes, then assembled. Start with two squares of origami paper: 15 cm for the base, 16 to 17 cm for the lid. Both pieces begin from the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "preliminary-base" } }],
+            "text": "preliminary base"
+          },
+          {
+            "type": "text",
+            "text": ", so practise that base form in scrap paper before folding the finished model. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "petal-fold" } }],
+            "text": "petal fold"
+          },
+          {
+            "type": "text",
+            "text": " used in the lid forms the star points."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Origami paper, 15 cm square (for the base)", "notes": "Single-sided coloured paper with a white back. The outside of the base will be the coloured side." },
+            { "name": "Origami paper, 16 to 17 cm square (for the lid)", "notes": "Slightly larger than the base so the lid fits over it without forcing. 1 to 2 cm larger is the correct increment." },
+            { "name": "Bone folder (optional)", "notes": "For very sharp crease lines. Not required, but helpful for the petal fold step." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Folding the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "From the preliminary base (white side up), fold the right and left edges of each front layer to the centre crease. Fold down the top triangle. Unfold both of these folds and open the front layer gently, pressing the sides inward to form a pointed diamond shape on the front (this is a simpler variant of the petal fold). Repeat on the back. From the resulting pointed form, fold the bottom edges of each front layer to the centre crease, producing the box side walls. Fold in the bottom triangles on each side. Open the model gently from the top to form the box shape, pressing the base flat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Folding the star lid" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Repeat the preliminary base from the slightly larger sheet. Perform the full petal fold sequence on each of the four sections: fold the right and left edges to the centre, fold down the top triangle, unfold, open the bottom corner and flatten the petal diamond. After all four sections have been petal-folded, the model will have four pointed projections. Fold the edge layers inward as for the base to form the lid walls. Open carefully to form the star lid, pressing the star points outward and the base flat."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "The lid will not sit flat on the base — it rocks or sits at an angle",
+              "cause": "The lid base is not fully flattened, or the box base is not square.",
+              "fix": "Press both pieces flat on a firm surface after completing the final opening step. Insert your fingertips into the box through the open top and press outward on all four walls to square the base."
+            },
+            {
+              "symptom": "The petal fold tears the paper",
+              "cause": "The preliminary base folds were not crisp enough, so the paper resists the petal-fold opening step.",
+              "fix": "Re-crease all preliminary base folds firmly with the bone folder before attempting the petal fold. The petal fold needs sharp, well-defined crease lines to open without tearing."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

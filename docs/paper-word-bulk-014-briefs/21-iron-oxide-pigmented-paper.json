@@ -1,0 +1,127 @@
+{
+  "slug": "iron-oxide-pigmented-paper",
+  "title": "Iron oxide pigmented paper",
+  "subtitle": "Adding mineral pigment to handmade paper pulp for a coloured sheet",
+  "excerpt": "Mineral pigments mixed into papermaking pulp produce sheets coloured all the way through, not surface-dyed. Iron oxides (red, yellow, black) are the most stable pigments for this use: they are pH-neutral, lightfast, and do not react with the cellulose fibres. The colour is subtler than you might expect from the pigment jar, and varies between wet and dry sheet.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mineral pigment addition to papermaking pulp is a practice described in contemporary papermaking guides; no single pre-1928 text covers it specifically. This entry draws on current handmade paper practice and the physical chemistry of iron oxide pigments.",
+  "recipeTools": [
+    { "slug": "paper-mould-deckle-a5", "isOptional": false },
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "couching-cloth", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "iron-oxide-pigment",
+      "term": "Iron oxide pigment",
+      "definition": "Mineral pigments based on iron compounds. Red iron oxide (Fe₂O₃) gives terracotta to brick reds; yellow iron oxide (FeO(OH)) gives ochre to gold; black iron oxide (Fe₃O₄) gives warm charcoal greys. All are lightfast, pH-neutral, and safe to handle in normal quantities."
+    },
+    {
+      "slug": "retention-aid",
+      "term": "Retention aid",
+      "definition": "A substance (typically a small amount of cationic starch) added to the papermaking vat to help mineral pigments and fillers bond to the cellulose fibres rather than draining away with the water."
+    }
+  ],
+  "techniqueSlugs": ["basic-sheet-pulling"],
+  "criticalTechniques": ["basic-sheet-pulling"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Adding "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "iron-oxide-pigment" } }],
+            "text": "iron oxide pigment"
+          },
+          {
+            "type": "text",
+            "text": " to the papermaking vat gives a sheet coloured uniformly through its thickness. The colour is always paler in the finished dry sheet than in the wet pulp in the vat: a terracotta-coloured vat will produce a pale salmon-pink sheet. Expect about a 60% colour loss from wet to dry. The more pigment you add, the more drains out with the water unless you use a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "retention-aid" } }],
+            "text": "retention aid"
+          },
+          {
+            "type": "text",
+            "text": ": between 0.5 and 2% of dry pulp weight of cationic starch, dissolved in hot water and stirred into the vat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Prepared cotton linter pulp, vat loaded", "notes": "Prepare pulp and vat normally before adding pigment." },
+            { "name": "Iron oxide pigment, dry powder or paste", "notes": "Artist-quality iron oxide pigments (Mars Red, Yellow Ochre, Mars Black) from a pottery or art supply. Start with 5 g per litre of vat water as a test quantity; adjust up for stronger colour." },
+            { "name": "Cationic starch (optional retention aid)", "notes": "0.5 g per litre of vat water. Dissolve in 100 ml of hot water, cool, then add to vat and stir well before adding pigment." },
+            { "name": "Mould and deckle, couch cloths, press felts", "notes": "Normal sheet-making setup." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Mixing the pigment into the vat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If using dry pigment powder, pre-disperse it in 200 ml of water before adding to the vat. Iron oxide powders do not wet easily and will clump if added dry to the vat water. Stir the pigment into the water vigorously until no dry lumps remain, then pour the slurry into the loaded vat. If using paste pigment, scoop a small amount into a cup with 100 ml of vat water, stir smooth, and pour in. Stir the whole vat for 2 minutes after adding pigment. Pull a test sheet immediately: the colour will be visible even in the wet sheet."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adjusting the colour" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "To increase the colour intensity, add more pigment to the vat in 2 g increments and pull a test sheet after each addition. Allow the test sheet to dry before evaluating the colour: a wet sheet looks much darker than the dry result. To decrease colour, add plain water to the vat. After diluting, pull a small test sheet and time the drainage through the mould screen to confirm the pulp-to-water ratio is still workable."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "The pigment forms streaks in the finished sheet",
+              "cause": "Pigment clumps were not fully dispersed before being added to the vat.",
+              "fix": "Pre-disperse dry pigment in water using a small blender or by stirring vigorously for 5 minutes before adding to the vat. No lumps should be visible in the slurry before it goes into the vat."
+            },
+            {
+              "symptom": "Most of the colour appears in the vat water, not in the finished sheet",
+              "cause": "Pigment particles are too fine to be caught by the fibres and drain through the mould screen.",
+              "fix": "Add cationic starch retention aid (0.5 g per litre) to the vat. This causes the pigment particles to flocculate slightly and adhere to the cellulose fibres."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

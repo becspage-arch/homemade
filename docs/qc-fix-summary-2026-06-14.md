@@ -81,3 +81,77 @@ SKIPPED: 0
 ## Still BLOCKED (sample 20)
 
 - air-dry-clay-mosaic-picture-frame: grade-level-strict
+
+---
+
+## Run at 17:19:57
+
+Generated: 2026-06-14T17:19:57.240Z
+
+Processed: 40
+PASS: 39
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 17 |
+| content-type-opening-mismatch | 10 |
+| opening-pattern-missing-hook | 8 |
+| grade-level-strict | 5 |
+| medical-disclaimer-nonstandard | 4 |
+| voice-violation | 2 |
+| prose-prep-steps | 1 |
+
+## Still BLOCKED (sample 20)
+
+- wafer-paper-flowers: voice-violation, grade-level-strict
+
+---
+
+## Run at 17:56:48
+
+Generated: 2026-06-14T17:56:48.443Z
+
+Processed: 67
+PASS: 67
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 11 |
+| grade-level-strict | 9 |
+| historical-century-in-body | 1 |
+
+
+---
+
+## Run at 18:40:44
+
+Generated: 2026-06-14T18:40:44.606Z
+
+Processed: 91
+PASS: 87
+STILL_BLOCKED: 4
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 31 |
+| grade-level-strict | 27 |
+| voice-violation | 4 |
+| historical-century-in-body | 4 |
+
+## Still BLOCKED (sample 20)
+
+- adding-inclusions-feathers-thread: voice-violation, grade-level-strict
+- making-watercolour-paper-from-pulp: grade-level-strict
+- mexican-papel-picado-advanced: voice-violation, grade-level-strict
+- scaling-marbling-for-an-edition: grade-level-strict

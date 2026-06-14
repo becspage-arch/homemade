@@ -15,6 +15,12 @@ import { loadContentRefs } from '@/lib/tutorial-refs'
 import { prepareTutorialBody } from '@/lib/tutorial-body-prep'
 import { tutorialHeroUrl } from '@/lib/tutorial-hero'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { resolveUserUnitPreferences } from '@/lib/recipes/user-unit-preferences'
+import { formatTemperature } from '@/lib/recipes/units'
+import {
+  getRecipeIngredientRenderMeta,
+  type IngredientRenderMeta,
+} from '@/lib/recipes/recipe-render-data'
 import { harvestSupplies } from '@/lib/supplies'
 import { loadTutorialUgc } from '@/lib/ugc-loader'
 import { captureServerEvent } from '@/lib/posthog'
@@ -625,6 +631,26 @@ export default async function TutorialPage({ params }: PageProps) {
   )
 
   const isRecipe = tutorial.type === 'RECIPE'
+
+  // Recipe foundation: resolve the reader's unit preferences (saved enums or
+  // locale defaults) and the per-ingredient density + substitution data, then
+  // thread both into the ingredients block. Only recipes carry the block, so
+  // technique pages skip the work entirely.
+  const unitPreferences = isRecipe ? await resolveUserUnitPreferences(currentUser) : null
+  const ingredientMeta: Record<string, IngredientRenderMeta> = {}
+  if (isRecipe) {
+    const metaMap = await getRecipeIngredientRenderMeta(body)
+    for (const [id, m] of metaMap) ingredientMeta[id] = m
+  }
+
+  // Oven temperature pill: bake temperature (baking) wins over the cooking
+  // temperature, formatted into the reader's oven preference. Null hides it.
+  const ovenCelsius = tutorial.bakeTemperatureCelsius ?? tutorial.temperatureCelsius
+  const temperatureLabel =
+    isRecipe && ovenCelsius != null && unitPreferences
+      ? formatTemperature(ovenCelsius, unitPreferences.oven)
+      : null
+
   const chrome = (
     <TutorialChrome
       title={tutorial.title}
@@ -668,6 +694,7 @@ export default async function TutorialPage({ params }: PageProps) {
         prepMinutes: tutorial.prepMinutes,
         cookMinutes: tutorial.cookMinutes,
         totalMinutes: tutorial.totalMinutes,
+        temperatureLabel,
         cuisine: tutorial.cuisine,
         mealType: tutorial.mealType,
         dietaryFlags: tutorial.dietaryFlags,
@@ -720,6 +747,8 @@ export default async function TutorialPage({ params }: PageProps) {
                     tutorialId: tutorial.id,
                     tutorialSlug,
                     scalable: tutorial.scalable,
+                    unitPreferences,
+                    ingredientMeta,
                   }
                 : null
             }

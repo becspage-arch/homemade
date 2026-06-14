@@ -1133,6 +1133,86 @@
   font-size: 0.85em;
 }
 
+.tutorial-content .ingredients-list-sub-toggle {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-sage);
+  font-size: 0.78em;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border-bottom: 1px dotted var(--color-sage);
+  line-height: 1.2;
+}
+
+.tutorial-content .ingredients-list-sub-toggle:hover {
+  opacity: 0.75;
+}
+
+.tutorial-content .ingredients-list-subs {
+  list-style: none;
+  margin: 6px 0 2px;
+  padding: 8px 12px;
+  border-left: 2px solid var(--color-sage);
+  background: color-mix(in srgb, var(--color-sage) 6%, transparent);
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.tutorial-content .ingredients-list-sub {
+  color: var(--color-ink);
+  padding: 2px 0;
+}
+
+.tutorial-content .ingredients-list-sub-name {
+  font-weight: 600;
+}
+
+.tutorial-content .ingredients-list-sub-ratio {
+  color: var(--color-warm-taupe);
+}
+
+.tutorial-content .ingredients-list-sub-delta {
+  color: var(--color-warm-taupe);
+  font-style: italic;
+}
+
+.tutorial-content .add-to-shopping {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 4px 0 16px;
+}
+
+.tutorial-content .add-to-shopping-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--color-sage);
+  border-radius: 999px;
+  background: none;
+  color: var(--color-sage);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tutorial-content .add-to-shopping-btn:hover {
+  background: color-mix(in srgb, var(--color-sage) 10%, transparent);
+}
+
+.tutorial-content .add-to-shopping-btn.is-added {
+  background: var(--color-sage);
+  color: #fff;
+}
+
+.tutorial-content .add-to-shopping-view {
+  font-size: 0.85rem;
+  color: var(--color-sage);
+  border-bottom: 1px dotted var(--color-sage);
+}
+
 @media (max-width: 720px) {
   .tutorial-content .ingredients-list {
     padding: 20px 18px;

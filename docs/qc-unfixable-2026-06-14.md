@@ -114,3 +114,10 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - texture-stamping-systematic-approach grade-level-strict — applied: 
 
 - air-dry-clay-mosaic-picture-frame grade-level-strict — applied: 
+
+- wafer-paper-flowers voice-violation,grade-level-strict — applied: 
+
+- adding-inclusions-feathers-thread voice-violation,grade-level-strict — applied: 
+- making-watercolour-paper-from-pulp grade-level-strict — applied: 
+- mexican-papel-picado-advanced voice-violation,grade-level-strict — applied: 
+- scaling-marbling-for-an-edition grade-level-strict — applied: 

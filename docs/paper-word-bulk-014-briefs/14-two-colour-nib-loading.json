@@ -1,0 +1,131 @@
+{
+  "slug": "two-colour-nib-loading",
+  "title": "Two-colour nib loading",
+  "subtitle": "Loading a broad-edge nib with two gouache colours to produce a graduated letter",
+  "excerpt": "Loading a broad-edge nib with two gouache colours at once produces letters that shift from one colour to the other across each stroke. The colours blend where they meet on the nib, giving a graduated effect without post-lettering painting. The technique works on horizontal colour shifts and diagonal ones depending on how the nib is loaded.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "calligraphy",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Two-colour and multicolour nib-loading is a practice documented in contemporary calligraphy workshops; no single pre-1928 text describes the technique specifically. This entry synthesises the method from current broad-edge calligraphy practice.",
+  "recipeTools": [
+    { "slug": "nib-mitchell-roundhand-0", "isOptional": false },
+    { "slug": "straight-pen-holder", "isOptional": false },
+    { "slug": "calligraphy-gouache", "isOptional": false },
+    { "slug": "gum-arabic", "isOptional": true },
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "watercolour-paper-hotpress", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "nib-loading",
+      "term": "Nib loading",
+      "definition": "The process of applying ink or diluted gouache to a broad-edge nib before writing, either by dipping or by applying colour with a brush to the nib face or reservoir."
+    }
+  ],
+  "techniqueSlugs": ["foundational-hand-basic-strokes"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Two-colour "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "nib-loading" } }],
+            "text": "nib loading"
+          },
+          {
+            "type": "text",
+            "text": " places two diluted gouache colours on the nib face simultaneously. When the nib writes, one colour comes from the left side of the edge and the other from the right, producing a letter that shifts from colour to colour across its width. A broad nib (Mitchell 0 or 1) at large scale gives the clearest result. The colours need to be at the same consistency: if one is thicker, it will push the other off the nib before the stroke is half finished."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Mitchell Roundhand nib, 0 (broadest)", "notes": "The wider the nib, the clearer the colour split. A nib 0 at large x-height gives the best visual result for learning the technique." },
+            { "name": "Straight pen holder", "notes": "Any pen holder for broad-edge nibs." },
+            { "name": "Calligraphy gouache, two colours", "notes": "Dilute each separately with water to the consistency of thin cream. Test the flow on scrap paper before using two colours together. Too thick: the colours blob. Too thin: they mix to a muddy blend immediately." },
+            { "name": "Gum arabic, a drop", "notes": "Optional. Added to the gouache at the ratio of one small drop per 3 ml of colour. Slightly increases adhesion and helps the colour sit on the nib longer." },
+            { "name": "Cartridge paper, 130 gsm", "notes": "For practice. A smooth surface helps the colours stay separated as they leave the nib." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Load the nib" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use a small brush (not the nib dip) to load the first colour onto the left side of the nib face and into the left half of the reservoir. Load the second colour onto the right side and right half of the reservoir. The two colours should meet in the middle without mixing. Work quickly: gouache begins to dry on the nib within a minute or two."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Write immediately" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Write one or two letters with the loaded nib before the colours shift. The letter should show a clear split: one colour on the left side of each stroke and the other on the right. On a broad downstroke in Foundational hand, the split is most visible. On a hairline or a thin diagonal, the two colours will be too close to separate visually. Reload for every two to four letters."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Vary the colour split angle" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Loading colour on the upper and lower face of the nib rather than left and right produces a vertical colour shift: the letters shade from one colour at the top of the x-height to another at the baseline. This requires loading with two brushes in rapid sequence, one on the top face of the nib and one on the underside. The effect is subtler and requires a large nib and a slow, controlled stroke to show clearly."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "The two colours mix to a muddy third colour on the nib",
+              "cause": "The gouache is too thin and the colours run together immediately.",
+              "fix": "Thicken each colour slightly (less water, one drop of gum arabic). The colours need just enough body to stay on their side of the nib."
+            },
+            {
+              "symptom": "Only one colour appears on the page",
+              "cause": "One colour is heavier than the other and is pushing it off the nib surface.",
+              "fix": "Dilute both colours to exactly the same consistency. Test both on the same test strip before loading together."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
