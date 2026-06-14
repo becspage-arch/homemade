@@ -31,6 +31,17 @@ Next worker: meal planning + calendar (then shopping-list aggregation, then the 
 
 ---
 
+## Recipe render layer (2026-06-14)
+
+Made the recipe foundation visible on the live page. The ingredients block now renders amounts in the reader's weight / volume system (with a density bridge so a grams-authored recipe reads in cups for a cups reader), shows a "Substitute?" affordance per ingredient reading the substitution graph, and the info strip gained an oven-temperature pill formatted to the reader's oven preference. Anonymous readers get locale defaults (en-GB fan °C + grams, en-US °F + cups); signed-in readers set oven / weight / volume on `/me/settings` (new `api/me/preferences/cooking-units` + a "Recipe units" section). Verified live: en-US renders 355°F + oz, en-GB renders 160°C fan. Render-time only; canonical storage stays conventional °C + grams + ml. Free-tier per the translation-is-free lock.
+
+- `lib/recipes/user-unit-preferences.ts` (saved enums or locale default), `lib/recipes/recipe-render-data.ts` (per-ingredient density + substitutions)
+- wiring through `page.tsx` to `RecipeRenderContext` to `IngredientsList`, plus the temperature pill through `TutorialChrome` to `TutorialInfoStrip`
+
+Applies to `type = RECIPE` tutorials (all of cooking + baking). Herbal-medicine / natural-home use other tutorial types for some entries, so coverage there is partial; broadening it is a separate change.
+
+---
+
 ## Current state (2026-05-30)
 
 Live at https://homemade.education behind splash gate (cookie `homemade-access=1`). The splash flips off at launch — pre-launch checklist of Rebecca-action items lives in `memory/project_pre_launch_checklist.md`.
