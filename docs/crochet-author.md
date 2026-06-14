@@ -131,9 +131,18 @@ one pattern OR one foundations reading. Expect:
 - `gaugeText` — required for PATTERN. Plain text including stitches,
   rows, area, hook size, and whether blocked or unblocked.
 - `finishedSizeText` — required for PATTERN.
-- `chartDefinition` — optional. Inline JSON for in-the-round motifs
-  + multi-row stitch samples where a chart reads better than the
-  written instructions.
+- `chartDefinition` — **required for every PATTERN.** Inline JSON
+  (`ChartDefinition` shape in `apps/web/src/lib/craft-charts/types.ts`)
+  describing the finished piece: the motif for in-the-round work
+  (granny square, hexagon, doily), or the stitch-pattern repeat for
+  flat work (the 5-tr shell repeat of a shell-lace shawl, the cluster
+  repeat of a granny blanket). A PATTERN is a thing to MAKE, and every
+  pattern needs its chart — it powers the in-product chart the maker
+  follows AND anchors the rendered finished-piece hero. Optional only
+  for STITCH / READING (teaching) rows, which have no finished piece to
+  chart. **Do not ship a PATTERN with `chartDefinition: null`.** If you
+  cannot derive a chart from the written rows, the pattern is not ready
+  to publish.
 - `difficulty` — BEGINNER | INTERMEDIATE | ADVANCED.
 - `targetWordCount` — see § "Length guidance".
 - `sources` — public-domain or open-access references the brief

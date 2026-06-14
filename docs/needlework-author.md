@@ -31,6 +31,22 @@ specialist-curation worker is needed before autopilot fires against
 them. Their `SubCategory.autopilotEnabled` rows are set to false; the
 autopilot routine skips them when picking a sub-cat target.
 
+## Charts are required for counted-work PATTERNs
+
+A PATTERN is a thing to MAKE, and a counted-work pattern needs its chart —
+it powers the in-product chart the maker follows AND anchors the rendered
+finished-piece hero.
+
+- **Counted disciplines** (`blackwork`, `needlepoint`, `hardanger`,
+  `sashiko`) — every PATTERN row **must** carry chart data: either a
+  `chartDefinition` (the `ChartDefinition` grid shape) or a linked
+  `NeedleworkPattern` row with `gridData` / `chartData` set. Do not ship a
+  counted-work PATTERN with no chart.
+- **Surface disciplines** (`surface-embroidery`, `candlewicking`,
+  `goldwork`, `ribbon-embroidery`, `stumpwork`) — these are freeform
+  designs, not counted stitch charts, so the chart rule does not apply.
+  Their finished-piece visual comes from the design outline, not a grid.
+
 ## How the autopilot routine uses this
 
 When the round-robin queue picks needlework as the target category, the

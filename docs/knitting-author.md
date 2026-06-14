@@ -142,10 +142,14 @@ A brief is a JSON or markdown chunk describing one entry. Expect:
   `kitchener`, `short-rows`. PATTERN rows typically carry 1–3 tags.
 - `terminologyConvention` — defaults `uk`; set `us` only when the
   source pattern is American.
-- `chartDefinition` — JSON matching `ChartDefinition` in
-  `apps/web/src/lib/craft-charts/types.ts`. Knitting uses
-  `craft: 'knitting'`, `layout: 'flat'`. Optional — patterns without
-  a chart leave it null.
+- `chartDefinition` — **required for every PATTERN.** JSON matching
+  `ChartDefinition` in `apps/web/src/lib/craft-charts/types.ts`
+  (`craft: 'knitting'`, `layout: 'flat'`): the stitch-pattern repeat /
+  chart of the finished piece. A PATTERN is a thing to MAKE and needs
+  its chart — it powers the in-product chart the maker follows AND
+  anchors the rendered finished-piece hero. Leave null only for STITCH
+  rows (teaching), which have no finished piece to chart. **Do not ship
+  a PATTERN with `chartDefinition: null`.**
 - `difficulty` — BEGINNER | INTERMEDIATE | ADVANCED.
 - `targetWordCount` — see § "Length guidance".
 - `sources` — public-domain references.
