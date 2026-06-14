@@ -1,0 +1,383 @@
+{
+  "slug": "throwing-matched-mugs-consistent-weight",
+  "title": "Throwing matched mugs to consistent weight",
+  "subtitle": "The techniques for producing a set of mugs that match in height, diameter, and wall weight",
+  "excerpt": "Throwing a matched set of mugs requires controlling three variables simultaneously: the weight of clay per mug, the opening dimensions, and the pulling height. This tutorial covers the production-throwing approach to matching: weighing clay, using guide marks on a measurement stick, and checking each mug against a reference mug before cutting from the bat.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "throwing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Production-throwing technique for matched sets synthesised from studio ceramics functional ware instruction. Weight-and-measure methodology documented in production ceramics practice.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": true,
+  "requiredClayBodies": [
+    "stoneware-smooth"
+  ],
+  "requiredCraftMaterials": [],
+  "recipeTools": [
+    {
+      "slug": "potters-wheel-electric",
+      "isOptional": false
+    },
+    {
+      "slug": "wheel-bat",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-rib",
+      "isOptional": false
+    },
+    {
+      "slug": "needle-tool",
+      "isOptional": false
+    },
+    {
+      "slug": "pottery-calipers",
+      "isOptional": false
+    },
+    {
+      "slug": "loop-tool",
+      "isOptional": false
+    },
+    {
+      "slug": "wire-cutter",
+      "isOptional": false
+    },
+    {
+      "slug": "pottery-sponge",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "centering",
+      "term": "Centering",
+      "definition": "Working clay true on the wheel: the faster this is done consistently, the more productive a production-throwing session is."
+    },
+    {
+      "slug": "pulling",
+      "term": "Pulling",
+      "definition": "Raising walls from the clay base upward in coordinated squeezing passes."
+    },
+    {
+      "slug": "throwing-gauge",
+      "term": "Throwing gauge",
+      "definition": "A measurement stick or calipers set at a target height or diameter and held next to the clay as the wheel turns to check the form against the target."
+    },
+    {
+      "slug": "leather-hard",
+      "term": "Leather-hard",
+      "definition": "The correct stage for trimming foot rings and attaching handles."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "variant": "warning"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "This technique requires a pottery wheel and kiln firing. The matching approach described assumes a set of six or more mugs thrown in a single session. Throwing matched mugs across multiple sessions introduces clay moisture and body variation that makes matching harder."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The most common mistake in production throwing is relying on feel alone. Feel drifts over the course of a session as your hands tire and your attention shifts. The production-throwing discipline uses two tools to offset this: a kitchen scale to weigh each clay ball before throwing, and a simple "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "throwing-gauge"
+                }
+              }
+            ],
+            "text": "throwing gauge"
+          },
+          {
+            "type": "text",
+            "text": " to check height and rim diameter after each mug. The combination catches drift before it compounds across the set."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Setting up for matched production"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make a throwing gauge from a strip of card or a thin dowel. Mark on it: the target finished height of the mug (say, 9.5 cm), and the target interior rim diameter (8 cm for a standard mug). Keep this gauge at the side of the wheel and use it after every mug."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Throw one reference mug at the start of the session and set it aside on a shelf to the left of the wheel. Every subsequent mug is compared against this reference. Check height with the gauge; check rim diameter with calipers."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Weigh each clay ball on a kitchen scale before throwing. For a 9.5 cm mug with 5 mm walls, the target wet weight per mug is 430 to 450 g. Set the scale beside the wheel and weigh every ball: even after 20 mugs, even when you are confident."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Throwing each mug"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Centre the weighed ball. A consistent centring technique reduces the time per mug significantly: develop a repeatable centring sequence and use the same number of passes for each piece. "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "centering"
+                        }
+                      }
+                    ],
+                    "text": "Centring"
+                  },
+                  {
+                    "type": "text",
+                    "text": " should take no more than 60 to 90 seconds per mug in a production session."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Open to 7 cm interior diameter: slightly narrower than the target rim diameter of 8 cm, which will be achieved at the top of the final pull."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pull in three passes. After the final "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "pulling"
+                        }
+                      }
+                    ],
+                    "text": "pull"
+                  },
+                  {
+                    "type": "text",
+                    "text": ", hold the throwing gauge next to the mug while the wheel turns: check height against the height mark and check that the rim diameter matches the reference mug by eye or calipers."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Correct height: if the mug is too short (clay squashed, not enough pulls), return to pulling. If too tall (common in early-session mugs when hands are fresher), compress the rim very gently downward by 5 mm while the wheel turns slowly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Compress and finish the rim. Cut from the bat."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Handles at leather-hard"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "At "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "leather-hard"
+                }
+              }
+            ],
+            "text": "leather-hard"
+          },
+          {
+            "type": "text",
+            "text": ", pull handles from clay of the same weight for each mug (typically 60 to 80 g per handle). Set the handle length against the reference mug before attaching: use calipers to measure the distance between upper and lower attachment points and set the same distance on every mug in the set."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What counts as matched"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Handmade mugs in a set will not be identical. Matched means variation within acceptable bounds: height within ±3 mm; rim diameter within ±4 mm; finished weight after firing within ±30 g. These tolerances are tight enough that the set reads as a set on a shelf without any mug clearly standing out as the wrong height or too heavy."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "problem": "Mugs drift taller through the session",
+              "cause": "Hands tired; less resistance in pulling; or clay slightly wetter as session progresses and the bucket water warms",
+              "fix": "Check height against the gauge after every mug. Use fresh cold water for lubrication throughout."
+            },
+            {
+              "problem": "Wall thickness uneven: one side thinner than the other",
+              "cause": "Off-centre clay; pulling pressure inconsistent between hands",
+              "fix": "Spend more time on centring before pulling. Equal pressure from inside and outside hands on each pull pass."
+            },
+            {
+              "problem": "Matching breaks down at mugs 15 to 20 in a longer session",
+              "cause": "Fatigue drift; clay drying conditions changing",
+              "fix": "Take a 5-minute break. Re-check the reference mug. Throw another reference mug to represent the new starting point of the second half of the session."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

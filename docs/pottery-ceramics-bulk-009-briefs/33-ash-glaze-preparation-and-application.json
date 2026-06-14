@@ -1,0 +1,400 @@
+{
+  "slug": "ash-glaze-preparation-and-application",
+  "title": "Ash glaze preparation and application",
+  "subtitle": "Washing, testing, and applying a wood-ash glaze for a matte or glossy stoneware surface",
+  "excerpt": "Wood ash contains silica, alumina, calcium, and potassium: the same fluxes and glass-formers used in commercial glazes. Potters have used raw ash as a glaze component since the earliest stoneware traditions in China, Japan, and Korea. This tutorial covers washing ash to remove lye, testing the base recipe, calculating the limit formula, and applying the glaze to bisqueware at cone 9 to 10.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "glazing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ash glaze preparation methodology synthesised from studio ceramics glaze chemistry reference, including Digitalfire/Tony Hansen and traditional Japanese woodfire glaze practice. Base recipe proportions represent the classical 50:50 ash-feldspar combination.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": [
+    "stoneware-grogged",
+    "stoneware-smooth"
+  ],
+  "requiredCraftMaterials": [
+    "kaolin",
+    "feldspar-potash",
+    "silica",
+    "kiln-wash"
+  ],
+  "recipeTools": [
+    {
+      "slug": "glaze-bucket",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bucket-dedicated",
+      "isOptional": false
+    },
+    {
+      "slug": "n95-mask",
+      "isOptional": false
+    },
+    {
+      "slug": "p100-respirator",
+      "isOptional": false
+    },
+    {
+      "slug": "pottery-brush-hake",
+      "isOptional": false
+    },
+    {
+      "slug": "studio-apron",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bisque",
+      "term": "Bisque",
+      "definition": "First-fired clay before glazing. Bisque absorbs glaze readily."
+    },
+    {
+      "slug": "flux",
+      "term": "Flux",
+      "definition": "A glaze ingredient that lowers the melting temperature of silica, allowing a glaze to become liquid at kiln temperatures."
+    },
+    {
+      "slug": "cone",
+      "term": "Cone",
+      "definition": "A standardised ceramic measurement of heat-work in a kiln firing: how much heat the kiln has delivered to the clay and glaze over time."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "variant": "danger"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "bold"
+                  }
+                ],
+                "text": "Glaze chemistry safety"
+              }
+            ]
+          },
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Raw wood ash is highly alkaline (lye) before washing. Wear chemical-resistant gloves and safety glasses when handling unwashed ash. Lye causes skin burns."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Silica and feldspar powders are respirable hazards. Always wear a P100 respirator: not a dust mask: when handling dry glaze materials. N95 is the minimum; P100 is preferred."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Mix glaze in a dedicated bucket: never a food container. Label all glaze buckets. Never pour glaze liquid down a drain; dry it and dispose of as solid waste."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Ash glazes used on food-contact surfaces must have their limit formula confirmed within accepted food-safe bounds. The classical 50:50 ash-feldspar recipe does not contain colorants and is considered food-safe when fired to the specified cone. Adding iron oxide or other colourants to ash glazes changes the food safety profile: test before use on functional ware."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The classical ash glaze base recipe is 50 percent washed wood ash and 50 percent potash feldspar. This produces a semi-matte to glossy surface at "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cone"
+                }
+              }
+            ],
+            "text": "cone"
+          },
+          {
+            "type": "text",
+            "text": " 9 to 10 depending on ash source, application thickness, and kiln atmosphere. Adding 5 to 10 percent kaolin increases the matting effect; adding 5 to 10 percent silica increases gloss and reduces crawling. Ash glazes are variable by nature: the ash from different wood species produces different results, and the character of the firing (reduction or oxidation) changes the colour significantly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Washing the ash"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wearing chemical-resistant gloves and safety glasses, combine raw wood ash with four to five times its volume of water in the dedicated mixing bucket. Stir thoroughly. Leave for 24 hours: the lye (potassium hydroxide) dissolves into the water."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour off the lye water (the clear water floating above the settled ash) carefully. This water is caustic: dispose of with plenty of diluting water, not in small amounts. Refill the bucket with fresh water. Repeat this washing process three to four times over three days."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "After three to four washings, test the washed ash with pH paper: the water above the settled ash should read between pH 7 and 9: mildly alkaline but no longer caustic. At pH 12 or above, wash again."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pass the washed ash through an 80-mesh sieve to remove charcoal, grit, and unburned material. Dry the sieved ash on a plaster bat or flat tray. Store dry in a labelled container."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mixing the glaze"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wearing the P100 respirator throughout: weigh out the dry materials. For a 1,000 g test batch: washed wood ash 500 g, potash feldspar 500 g. Optional additions to adjust: kaolin 50 to 100 g for a more matte surface; silica 50 g for gloss."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the dry materials in the glaze bucket. Add water gradually while stirring until the glaze reaches dipping consistency: similar to single cream. A 1,000 g batch typically requires 600 to 700 ml of water. Sieve through an 80-mesh screen into the glaze bucket."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Confirm specific gravity: 1.40 to 1.45 for a dipping glaze. Measure with a hydrometer. Adjust with water (lower) or dry material additions (higher)."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Application and firing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Apply to "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bisque"
+                }
+              }
+            ],
+            "text": "bisque"
+          },
+          {
+            "type": "text",
+            "text": " by dipping or layered brushwork with a hake brush. Target dry thickness 0.8 to 1.0 mm: ash glazes flow considerably in the kiln and thick application causes dripping. Wipe the foot ring clean before loading."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fire to cone 9 to 10 (approximately 1280 to 1300 °C). Apply kiln wash to the shelf below pieces with ash glaze: the high "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "flux"
+                }
+              }
+            ],
+            "text": "flux"
+          },
+          {
+            "type": "text",
+            "text": " content makes ash glazes prone to running. Keep a 15 mm clear band at the foot ring minimum."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "problem": "Glaze crawled or pulled away from the surface",
+              "cause": "Glaze applied too thick; or ash was not fully washed and lye content caused poor adhesion",
+              "fix": "Thin the glaze to single-cream consistency. Confirm pH of the washed ash before use. Re-grind any glaze flakes from crawled areas before re-firing."
+            },
+            {
+              "problem": "Glaze ran off the piece and adhered to the kiln shelf",
+              "cause": "Glaze applied too thick; or cone temperature higher than intended",
+              "fix": "Use a witness cone. Apply thinner. Ensure a minimum 20 mm bare foot ring cleared of glaze."
+            },
+            {
+              "problem": "Surface pinholes across the glaze",
+              "cause": "Ash glaze off-gassing at peak temperature; not enough soaking time at top temperature",
+              "fix": "Extend the soak period at peak temperature from 10 minutes to 20 to 30 minutes to allow off-gassing to complete before the kiln cools."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

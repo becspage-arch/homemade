@@ -1,0 +1,383 @@
+{
+  "slug": "chun-glaze-preparation-and-application",
+  "title": "Chün glaze preparation and application",
+  "subtitle": "Mixing and applying a classic opalescent blue-grey Chün glaze for cone 9 to 10 reduction firing",
+  "excerpt": "Chün glaze (also spelled Jun) is a Chinese Song dynasty glaze characterised by an opalescent, milky blue-grey surface: sometimes with red or purple splashes from copper in reduction. The opalescence comes from light scattering in a phosphorus-rich or magnesia-rich glaze matrix. This tutorial covers a studio-scale Chün base recipe, its limit formula, the copper splash technique, and the application and reduction firing sequence.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "glazing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Chün glaze base recipe and properties synthesised from studio ceramics glaze chemistry reference including Tony Hansen's Digitalfire and Daniel Rhodes' Clay and Glazes for the Potter. Copper reduction splash is a traditional Chinese Song dynasty technique.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": [
+    "porcelain",
+    "stoneware-smooth"
+  ],
+  "requiredCraftMaterials": [
+    "feldspar-potash",
+    "silica",
+    "kaolin",
+    "gerstley-borate",
+    "copper-carbonate",
+    "kiln-wash"
+  ],
+  "recipeTools": [
+    {
+      "slug": "glaze-bucket",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bucket-dedicated",
+      "isOptional": false
+    },
+    {
+      "slug": "p100-respirator",
+      "isOptional": false
+    },
+    {
+      "slug": "n95-mask",
+      "isOptional": false
+    },
+    {
+      "slug": "pottery-brush-hake",
+      "isOptional": false
+    },
+    {
+      "slug": "studio-apron",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "reduction",
+      "term": "Reduction",
+      "definition": "A kiln atmosphere with insufficient oxygen, which causes metal oxides in the glaze to give up oxygen and change colour. Copper in reduction turns red or purple rather than green."
+    },
+    {
+      "slug": "opalescence",
+      "term": "Opalescence",
+      "definition": "A milky, light-scattering quality in a glaze caused by sub-micron particles within the glass matrix. In Chün glazes, this comes from phosphorus or magnesia-rich compounds."
+    },
+    {
+      "slug": "limit-formula",
+      "term": "Limit formula",
+      "definition": "The unity molecular formula of a glaze expressed in terms of fluxes, alumina, and silica. Used to predict glaze stability and food safety."
+    },
+    {
+      "slug": "bisque",
+      "term": "Bisque",
+      "definition": "First-fired clay before glazing."
+    },
+    {
+      "slug": "cone",
+      "term": "Cone",
+      "definition": "A standardised measure of heat-work in a kiln. Chün glazes mature at cone 9 to 10."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "variant": "danger"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "bold"
+                  }
+                ],
+                "text": "Glaze chemistry safety"
+              }
+            ]
+          },
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Copper carbonate is toxic by inhalation. Wear a P100 respirator (not N95) when handling the dry powder. Wash hands thoroughly after any contact."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Feldspar, silica, and kaolin are respirable crystalline silica hazards. Wear the P100 respirator throughout all dry material handling. Work in a ventilated space."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "The Chün base recipe described here, when fired correctly to cone 9 to 10, falls within accepted food-safe limit formula bounds. Copper carbonate splashes on functional ware interiors are not recommended: copper in reduction is considered food-safe at low concentrations, but conservative practice limits copper to exterior surfaces on food-contact ware."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Use dedicated glaze equipment. Label all containers. Do not dispose of glaze materials down drains."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chün glaze derives its "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "opalescence"
+                }
+              }
+            ],
+            "text": "opalescence"
+          },
+          {
+            "type": "text",
+            "text": " from a combination of high silica content and phase separation during cooling: the glaze forms two distinct glass phases at different refractive indices, scattering blue light in the same way the sky does. The blue colour intensifies in "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "reduction"
+                }
+              }
+            ],
+            "text": "reduction"
+          },
+          {
+            "type": "text",
+            "text": " firing and is subtler in oxidation. The copper splash adds purple-red streaks from reduced copper oxide."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Base recipe (1,000 g dry batch)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a functional Chün base for "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cone"
+                }
+              }
+            ],
+            "text": "cone"
+          },
+          {
+            "type": "text",
+            "text": " 9 to 10 reduction: Potash feldspar 480 g. Silica 200 g. Kaolin 100 g. Gerstley borate 120 g. Whiting (calcium carbonate) 100 g. Total 1,000 g. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "limit-formula"
+                }
+              }
+            ],
+            "text": "limit formula"
+          },
+          {
+            "type": "text",
+            "text": " for this recipe places it within the stable high-fire stoneware/porcelain glaze range. This recipe is base Chün without copper: opalescent blue-grey on porcelain; slightly warmer on stoneware."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Copper carbonate splash"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix a separate small batch of 10 g copper carbonate in 100 ml water. Apply as a wash over the dry Chün base coat in irregular splashes using a soft brush before firing. The copper wash must go over the Chün base, not under it. In reduction firing, the copper reduces from copper oxide (green in oxidation) to cuprous oxide (red-purple in reduction), producing the characteristic Chün splashes. Restrict copper carbonate splash to exterior surfaces on functional ware."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mixing and applying the glaze"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wearing the P100 respirator: weigh each dry ingredient separately. Combine in the glaze bucket. Add 600 to 700 ml of water and stir. Sieve through 80-mesh screen. Check specific gravity: target 1.42 to 1.48 for dipping. The Chün glaze should be applied slightly thicker than a standard glaze: 1.0 to 1.2 mm dry thickness: to develop the opalescent effect."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dip "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "bisque"
+                        }
+                      }
+                    ],
+                    "text": "bisque"
+                  },
+                  {
+                    "type": "text",
+                    "text": " ware in the glaze for 3 to 4 seconds: one second longer than a standard dip. Allow to dry completely. Apply a second coat by brush on the upper third of the piece where the opalescent effect is most important. The double application in the upper section produces the deepest blue."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Apply kiln wash liberally to kiln shelves. Load with a minimum 20 mm clear foot ring: this glaze is fluid at cone 10 and will run if the foot ring is not well cleared. Fire to cone 9 to 10 in a reduction atmosphere."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "problem": "No opalescent blue: fired grey or cream",
+              "cause": "Insufficient thickness; or fired in oxidation rather than reduction",
+              "fix": "Apply thicker (aim for 1.0 to 1.2 mm dry). Confirm kiln atmosphere is in reduction from cone 012 through peak temperature."
+            },
+            {
+              "problem": "Copper splash is green, not red-purple",
+              "cause": "Not enough reduction during copper splash sections; or copper washed off before firing",
+              "fix": "Increase reduction atmosphere. Apply copper wash over dry base, not over a wet or just-applied base."
+            },
+            {
+              "problem": "Glaze crawled into islands",
+              "cause": "Second coat applied too quickly over a base not fully dry; or glaze pulled off the bisque at a defective spot",
+              "fix": "Wait for the first coat to be fully dry and cool before the second coat. Check bisque for dusty areas that resist glaze: wipe with a damp sponge before dipping."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

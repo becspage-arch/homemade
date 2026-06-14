@@ -1,0 +1,473 @@
+{
+  "slug": "anagama-kiln-introduction",
+  "title": "Anagama kiln introduction",
+  "subtitle": "Understanding the anagama wood-fire kiln: structure, loading, stoking, and the surface effects it produces",
+  "excerpt": "An anagama is a single-chamber, tunnel-shaped wood-fire kiln derived from Japanese kiln design of the fifth century and earlier. A firing takes two to seven days of continuous stoking. The kiln produces distinctive ash-glaze deposits, flame marks, and reduction effects that cannot be achieved in an electric or gas kiln. This tutorial introduces the structure of the kiln, the loading principles, the stoking rhythm, and the surface effects the anagama produces.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "firing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Anagama kiln structure and firing methodology synthesised from studio ceramics wood-fire reference including Jack Troy's Wood-Fired Stoneware and Porcelain, and historical documentation of Japanese tunnel kiln practice.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": [
+    "stoneware-grogged",
+    "porcelain-grogged"
+  ],
+  "requiredCraftMaterials": [
+    "kiln-wash"
+  ],
+  "recipeTools": [
+    {
+      "slug": "n95-mask",
+      "isOptional": false
+    },
+    {
+      "slug": "studio-apron",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "anagama",
+      "term": "Anagama",
+      "definition": "A single-chamber wood-fire kiln of Japanese derivation, tunnel-shaped, fired continuously with wood over one to seven days to produce ash glaze deposits and flame markings on unglazed or lightly glazed stoneware and porcelain."
+    },
+    {
+      "slug": "natural-ash-glaze",
+      "term": "Natural ash glaze",
+      "definition": "Glaze formed during anagama firing from wood ash flying through the kiln and depositing on ceramic surfaces, melting into a glaze where it accumulates."
+    },
+    {
+      "slug": "reduction",
+      "term": "Reduction",
+      "definition": "Oxygen-poor kiln atmosphere produced by heavy stoking in a wood-fire kiln, causing metal oxides in the clay and any applied glaze to change colour."
+    },
+    {
+      "slug": "stoking",
+      "term": "Stoking",
+      "definition": "The act of adding wood to the firebox to maintain temperature during an anagama firing. Stoking rhythm: how frequently and how much wood is added: determines the kiln atmosphere and heat distribution."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "variant": "danger"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "bold"
+                  }
+                ],
+                "text": "Anagama firing safety"
+              }
+            ]
+          },
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Anagama firing requires a purpose-built kiln on land where open wood fires are permitted. Check local authority regulations before building or using an anagama. Most communities require planning permission for a permanent outdoor kiln structure."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "The firebox reaches 1300 °C at peak. Do not approach the firebox opening without a face shield and thick heat-resistant gloves. Radiant heat from the firebox during heavy stoking can cause burns at distances of 1 to 2 metres."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Multi-day firings require continuous supervision. Never leave an anagama firing unattended. Fatigue is the primary safety risk in long firings: organise stoking shifts of three to four hours maximum and rest between shifts."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Do not open the kiln for at least 48 hours after the end of firing. The kiln is hot enough to cause severe burns throughout the early cooling period even if the outside feels cool."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "anagama"
+                }
+              }
+            ],
+            "text": "anagama"
+          },
+          {
+            "type": "text",
+            "text": " is a single-chamber kiln: the firebox at the front, the chamber where the work sits, and the flue at the back are all continuous space. Flames travel from the firebox, across and over the stacked work, and exit through the flue. This direct flame contact, combined with the flying ash from the wood fire, deposits silica-calcium ash on ceramic surfaces throughout the firing. Where the ash accumulates and melts, it forms a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "natural-ash-glaze"
+                }
+              }
+            ],
+            "text": "natural ash glaze"
+          },
+          {
+            "type": "text",
+            "text": ": no applied glaze necessary."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Kiln structure"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A small studio anagama is typically 1 to 2 metres long internally and 60 to 90 cm wide at the widest point. The tunnel shape is lower at the front (firebox) and rises toward the back, promoting flame travel. The kiln is built from IFB (insulating firebrick) or hard refractory brick over a steel frame. The firebox is at the front with a stoking arch and a cleanout below. The flue is at the rear, typically connected to a chimney 3 to 4 metres tall to create draft."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Preparing pieces for anagama firing"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Use grogged stoneware or grogged porcelain: the thermal cycling of a multi-day firing is severe and non-grogged clay bodies crack more easily. Wall thickness should be 6 to 8 mm even throughout. Build at least 4 to 6 weeks before the firing to ensure complete bone-dry."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pieces fired unglazed in the anagama develop natural ash glaze deposits where ash accumulates. Pieces further from the firebox receive less ash. Pieces placed on the floor receive more ash deposits on their upper faces from falling ash. The position of each piece in the kiln is the primary determinant of its surface: plan the load with this in mind."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pieces can also be coated with an ash glaze before loading. The kiln's own ash deposits settle over the applied coat and add depth to the surface."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Loading the kiln"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Apply kiln wash liberally to all shelves. Pieces closest to the firebox get the most flame contact and ash deposition: place robust, heavily grogged pieces here. Delicate pieces go toward the rear where temperatures are slightly lower and flame contact is indirect."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The anagama is a single-chamber kiln. The firebox, the chamber where work sits, and the flue are all one continuous space. Flames travel from the firebox, over the stacked work, and out through the flue. The direct flame contact and the ash from the wood fire deposit silica-calcium ash onto the ceramic surfaces. Where ash builds up and melts, it forms a natural glaze. No applied glaze is needed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Leave flame paths open: do not stack pieces so densely that flame cannot travel across the load. 10 to 15 cm minimum clearance between rows for flame travel."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Stoking rhythm"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "stoking"
+                }
+              }
+            ],
+            "text": "stoking"
+          },
+          {
+            "type": "text",
+            "text": " rhythm changes through the firing. In the early warming phase (room temperature to 600 °C), fire slowly and lightly: small amounts of wood at long intervals to drive out all moisture. After 600 °C, increase the pace. In the middle phase (600 to 1100 °C), stoke every 10 to 15 minutes with larger loads. In the high-fire phase (1100 °C to peak at 1280 to 1300 °C), stoke heavily every 5 to 7 minutes in "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "reduction"
+                }
+              }
+            ],
+            "text": "reduction"
+          },
+          {
+            "type": "text",
+            "text": ": adding wood faster than it fully combusts: to produce the reduction atmosphere. Monitor temperature with a pyrometer and witness cones."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Surface effects of the anagama"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Natural ash glaze: melted glassy deposits where wood ash accumulated on horizontal surfaces. Ranges from thin straw-yellow to thick dark brown or black-green depending on ash depth."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Flashing: orange, cream, and grey colour variation from direct flame contact, most dramatic near the firebox."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Carbon inclusion: dark grey-black patches from carbon deposited during heavy reduction phases."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The anagama is a single-chamber kiln. The firebox, the chamber where work sits, and the flue are all one continuous space. Flames travel from the firebox, over the stacked work, and out through the flue. The direct flame contact and the ash from the wood fire deposit silica-calcium ash onto the ceramic surfaces. Where ash builds up and melts, it forms a natural glaze. No applied glaze is needed."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "problem": "Very little ash deposit on pieces even near the firebox",
+              "cause": "Wood species low in silica and calcium; or firing too fast through the ash-deposition temperature range",
+              "fix": "Use hardwoods (oak, ash, cherry): they produce more silica-rich ash. Slow down the firing from 1050 to 1150 °C where ash deposition is most active."
+            },
+            {
+              "problem": "Pieces near the firebox cracked in the firing",
+              "cause": "Loaded too close to the firebox; too much direct flame impact; thermal gradient too steep",
+              "fix": "Leave at least 30 cm between the firebox opening and the first pieces. Use only heavily grogged clay near the firebox."
+            },
+            {
+              "problem": "Uneven temperature across the kiln: pieces at the back fired significantly cooler",
+              "cause": "Flue drawing too fast; load blocking flame travel; chimney too tall",
+              "fix": "Partially close the damper at the flue to slow the draw. Open flame paths between pieces. Check draft: a very tall chimney draws too fast for even heat distribution."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

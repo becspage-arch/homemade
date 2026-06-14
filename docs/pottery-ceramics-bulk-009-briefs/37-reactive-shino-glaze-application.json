@@ -1,0 +1,412 @@
+{
+  "slug": "reactive-shino-glaze-application",
+  "title": "Reactive Shino glaze application",
+  "subtitle": "Applying a high-feldspar Shino glaze and reading the reduction marks, crawl, and carbon trapping",
+  "excerpt": "Shino is a Japanese high-feldspar glaze known for its white-to-orange pitted surface, carbon trapping (dark marks where the thick glaze traps carbon from the kiln atmosphere), and crawling. The glaze is intentionally unpredictable: the pitting, crawl, and carbon variation are considered desirable. This tutorial covers a studio Shino recipe, correct application thickness, and how the kiln atmosphere produces the characteristic surface.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "glazing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Shino glaze base recipe and properties synthesised from studio ceramics glaze chemistry reference including Digitalfire, and historical Japanese Mino-ware Shino documentation. Carbon trapping mechanism is documented in wood-fire and reduction ceramics technical reference.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": [
+    "stoneware-grogged",
+    "stoneware-smooth"
+  ],
+  "requiredCraftMaterials": [
+    "feldspar-potash",
+    "kaolin",
+    "silica",
+    "kiln-wash"
+  ],
+  "recipeTools": [
+    {
+      "slug": "glaze-bucket",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bucket-dedicated",
+      "isOptional": false
+    },
+    {
+      "slug": "p100-respirator",
+      "isOptional": false
+    },
+    {
+      "slug": "pottery-brush-hake",
+      "isOptional": false
+    },
+    {
+      "slug": "pottery-brush-mop",
+      "isOptional": true
+    },
+    {
+      "slug": "studio-apron",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "carbon-trapping",
+      "term": "Carbon trapping",
+      "definition": "The mechanism by which carbon from kiln smoke is absorbed into a very thick feldspar glaze before the glaze seals over. Creates dark marks and flashing on the Shino surface."
+    },
+    {
+      "slug": "crawling",
+      "term": "Crawling",
+      "definition": "Movement of molten glaze away from an area during firing, leaving a bare clay surface. In Shino, controlled crawl is a surface character, not a defect."
+    },
+    {
+      "slug": "reduction",
+      "term": "Reduction",
+      "definition": "Oxygen-poor kiln atmosphere that causes metal oxides to change colour. Essential for Shino carbon trapping and orange-flash effects."
+    },
+    {
+      "slug": "bisque",
+      "term": "Bisque",
+      "definition": "First-fired clay before glazing."
+    },
+    {
+      "slug": "cone",
+      "term": "Cone",
+      "definition": "A standardised measure of kiln heat-work. Shino matures at cone 9 to 10."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "variant": "danger"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "bold"
+                  }
+                ],
+                "text": "Glaze chemistry safety"
+              }
+            ]
+          },
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Feldspar, silica, and kaolin are respirable crystalline silica hazards. Wear a P100 respirator (not N95) when weighing and mixing dry ingredients. Work in a ventilated space or outdoors."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "The classic Shino recipe described here contains no metal colourants beyond the iron naturally present in the soda feldspar. When fired to cone 9 to 10, the base recipe falls within food-safe limit formula bounds. Do not add iron oxide, manganese, or other colourants without re-checking the limit formula."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Shino glaze is applied at 3 to 4 mm dry thickness: much thicker than standard glazes. This thickness produces significant running during firing. Apply kiln wash to all shelves below Shino pieces. Maintain a minimum 25 mm clear foot ring."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shino is different from most glazes. Its best effects come from the glaze behaving badly. Dark "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "carbon-trapping"
+                }
+              }
+            ],
+            "text": "carbon trapping"
+          },
+          {
+            "type": "text",
+            "text": ", "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "crawling"
+                }
+              }
+            ],
+            "text": "crawl"
+          },
+          {
+            "type": "text",
+            "text": " texture, and orange flash are all wanted results. The thick glaze coat seals the clay surface early in the firing. Carbon from early "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "reduction"
+                }
+              }
+            ],
+            "text": "reduction"
+          },
+          {
+            "type": "text",
+            "text": " gets trapped under the sealed surface. Later in the firing the kiln switches to oxidation. The glaze turns white on top. The trapped carbon marks stay locked below."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Base recipe (1,000 g dry batch)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Classic American Shino base for cone 9 to 10 reduction firing. Mix: Nepheline syenite 500 g (or potash feldspar as a substitute). Soda feldspar 200 g. Kaolin 200 g. Silica 100 g. The fired surface is white to warm cream, matte, and slightly pitted."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mixing the glaze"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wearing the P100 respirator: weigh and combine all dry ingredients. Add 500 to 600 ml water: Shino is applied much thicker than normal glazes, so the slurry should be considerably thicker than single cream: closer to double cream or even yoghurt consistency. Sieve through 60-mesh screen (not 80-mesh: Shino benefits from coarser particle size for the pitting effect)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Target specific gravity: 1.55 to 1.65: significantly higher than a standard glaze. Test on a scrap of bisque: the dry coat should be 3 to 4 mm thick and completely opaque."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Application"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Apply to "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "bisque"
+                        }
+                      }
+                    ],
+                    "text": "bisque"
+                  },
+                  {
+                    "type": "text",
+                    "text": " by dipping. Hold the piece in the glaze for 5 to 6 seconds: much longer than a standard dip. The bisque must be thoroughly saturated with the thick glaze. Alternatively, brush three to four thick coats with a hake brush, each in a different direction, allowing each coat to dry before the next."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Shino must cover the entire piece uniformly: thin patches produce uneven carbon trapping and blotchy results. The glaze coat, when dry, should look like a thick white skin covering the form completely."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Clear a minimum 25 mm bare foot ring. This is essential: Shino runs substantially in the kiln. Load on kiln-washed shelves. Leave 25 mm space between adjacent pieces in the kiln."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Firing sequence for carbon trapping"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Carbon trapping requires a specific reduction sequence. Begin reduction at "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cone"
+                }
+              }
+            ],
+            "text": "cone"
+          },
+          {
+            "type": "text",
+            "text": " 012 (approximately 875 °C) and maintain until cone 08 (approximately 955 °C). This is the window in which the feldspar glaze begins to seal: the early reduction carbon is trapped beneath the sealing glaze surface. After cone 08, switch to neutral or light oxidation through peak temperature. The late-oxidation period converts the glaze surface to white while the trapped carbon remains locked below. More early reduction produces darker marks; less produces a cleaner white."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "problem": "Shino fired to a uniform dull cream: no carbon trapping or pitting",
+              "cause": "Application too thin; or reduction started too late in the firing",
+              "fix": "Apply thicker (test for 3 to 4 mm dry coat). Begin reduction earlier: at cone 012 rather than cone 06."
+            },
+            {
+              "problem": "Glaze ran off the foot ring and adhered to the kiln shelf",
+              "cause": "Foot ring not fully cleared; glaze applied too thick",
+              "fix": "Extend bare foot ring to 25 mm minimum. Test on a scrap tile at the same thickness before loading finished pieces."
+            },
+            {
+              "problem": "Surface is smooth and featureless: no crawl or pitting",
+              "cause": "Glaze over-fired; or specific gravity too low",
+              "fix": "Reduce peak temperature by one cone. Mix a denser glaze (higher specific gravity)."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
