@@ -40,7 +40,7 @@ async function main(): Promise<void> {
       heroMediaId: true,
       heroRendererVersion: true,
       heroNeedsFlatHand: true,
-      hero: { select: { r2Key: true } },
+      hero: { select: { r2Key: true, source: true } },
     },
   })
   console.log(`Loaded ${patterns.length} SewingPattern rows.`)
@@ -54,6 +54,14 @@ async function main(): Promise<void> {
 
   for (const pattern of patterns) {
     try {
+      // Skip patterns whose hero is already a Flux-generated technical
+      // flat from S-8c. Those are higher quality than the procedural
+      // SVG and should never be overwritten by this batch.
+      if (pattern.hero?.source === 'sewing-hero-flat-flux') {
+        summary.skippedAlreadyCurrent.push(pattern.slug)
+        continue
+      }
+
       const rendered = renderFlatForSlug(pattern.slug)
       if (!rendered) {
         // No archetype mapped — flag for a hand-drawn illustrator. Idempotent.

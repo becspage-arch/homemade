@@ -87,5 +87,10 @@ export default defineConfig([
     'scripts/_s8b-query-patterns.ts',
     'scripts/_s8b-test-generate.ts',
     'scripts/generate-sewing-product-shots.ts',
+
+    // S-8c technical fashion flat worker — same shape as S-8b, dotenv
+    // loader for local credentials, never part of the deployed bundle.
+    'scripts/_s8c-test-generate.ts',
+    'scripts/_s8c-upload-passes.ts',
   ]),
 ])
