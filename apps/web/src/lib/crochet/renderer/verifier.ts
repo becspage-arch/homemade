@@ -4,7 +4,7 @@
  * for manual review.
  */
 
-import { expandedStitchCount } from './layout/round-layout'
+import { expandedStitchCount, expandStitches } from './layout/round-layout'
 import { sanityCheckRoundProgression } from './layout/increase-distribution'
 import type { ChartDefinition } from '../../craft-charts/types'
 import type { StitchPlacement, VerifyResult } from './types'
@@ -33,16 +33,14 @@ export function verify(args: VerifyArgs): VerifyResult {
   }
   if (args.placements.length === 0) {
     bbox = { minX: 0, minY: 0, maxX: 0, maxY: 0 }
+    issues.push('No stitches placed — chartData is empty or in an unrenderable shape.')
   }
 
   // Stitch count match: placements should equal expandedStitchCount minus
   // any centre markers excluded by the motif layout.
   const expected = (args.chart.layout === 'round')
     ? expandedStitchCount(args.chart.rounds ?? [])
-    : (args.chart.rows ?? []).reduce(
-        (s, r) => s + r.stitches.reduce((t, st) => t + Math.max(1, Math.floor(st.count ?? 1)), 0),
-        0,
-      )
+    : (args.chart.rows ?? []).reduce((s, r) => s + expandStitches(r.stitches).length, 0)
 
   // Motif layout may legitimately drop the magic-ring centre marker.
   // Allow up to (#rounds) of slack.
@@ -84,19 +82,27 @@ export function verify(args: VerifyArgs): VerifyResult {
     )
   }
 
-  // Round-progression sanity for round work.
+  // Round-progression notes for round work. These are SOFT — a decreasing
+  // round (closing motif, petal taper) or a fast-growing round still draws
+  // fine; the layout places whatever count each round carries. They're
+  // surfaced for visibility but must NOT fail the render (the renderer's
+  // own comment calls them "soft signals").
+  const softIssues: string[] = []
   if (args.chart.layout === 'round' && args.chart.rounds) {
     const counts = args.chart.rounds.map((r) =>
       r.stitches.reduce((s, st) => s + Math.max(1, Math.floor(st.count ?? 1)), 0),
     )
     for (const w of sanityCheckRoundProgression(counts)) {
-      issues.push(w)
+      softIssues.push(w)
     }
   }
 
+  // `ok` is gated on HARD issues only — unknown symbols, gross count
+  // mismatch, off-canvas centroids, degenerate geometry. Soft progression
+  // notes are appended for the log but don't block the hero.
   return {
     ok: issues.length === 0,
-    issues,
+    issues: [...issues, ...softIssues],
     stitchCount: args.placements.length,
     expectedStitchCount: expected,
     bbox,

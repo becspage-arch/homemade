@@ -31,10 +31,45 @@ export interface RenderResult {
 
 const DEFAULT_UNIT_PX = 30
 
+/**
+ * Guard a raw `chartDefinition` so the layout + verifier never THROW on
+ * malformed or foreign-shaped data (e.g. knitting's legacy grid shape, where
+ * `rows`/`stitches` aren't the arrays this renderer expects). Well-formed
+ * charts pass through UNCHANGED. Malformed ones are reduced to an empty chart
+ * of the right layout — the render then fails the verifier cleanly (empty
+ * placements) instead of crashing a bulk batch.
+ */
+/**
+ * Infer the real layout from which array carries data. Many charts were
+ * authored with round data but `layout` left undefined or mislabelled
+ * 'flat' (and vice-versa); trusting the bare `layout` field rendered them
+ * empty. When exactly one of rounds / rows is populated, that wins;
+ * otherwise the declared layout is used.
+ */
+function effectiveLayout(chart: ChartDefinition): 'round' | 'flat' {
+  const hasRounds = Array.isArray(chart?.rounds) && chart.rounds.length > 0
+  const hasRows = Array.isArray(chart?.rows) && chart.rows.length > 0
+  if (hasRounds && !hasRows) return 'round'
+  if (hasRows && !hasRounds) return 'flat'
+  return chart?.layout === 'round' ? 'round' : 'flat'
+}
+
+function normaliseChart(raw: ChartDefinition): ChartDefinition {
+  const chart = (raw && typeof raw === 'object' ? raw : {}) as ChartDefinition
+  const layout = effectiveLayout(chart)
+  if (layout === 'round') {
+    const ok = Array.isArray(chart.rounds) && chart.rounds.every((r) => Array.isArray(r?.stitches))
+    return ok ? { ...chart, layout } : { ...chart, layout, rounds: [] }
+  }
+  const ok = Array.isArray(chart.rows) && chart.rows.every((r) => Array.isArray(r?.stitches))
+  return ok ? { ...chart, layout } : { ...chart, layout, rows: [] }
+}
+
 export function renderPattern(
-  chart: ChartDefinition,
+  rawChart: ChartDefinition,
   opts: RenderOptions = {},
 ): RenderResult {
+  const chart = normaliseChart(rawChart)
   const unitPx = opts.unitPx ?? DEFAULT_UNIT_PX
   const palette = opts.palette ?? defaultPalette()
   const unknownSymbols: { key: string; round: number }[] = []

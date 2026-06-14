@@ -37,7 +37,18 @@ interface RoundLayoutResult {
  */
 export function expandStitches(stitches: ReadonlyArray<ChartStitch>): ChartStitch[] {
   const out: ChartStitch[] = []
-  for (const st of stitches) {
+  for (const raw of stitches) {
+    // Repeat group: `{ times: N, repeat: [stitch, ...] }` (or `count` as the
+    // multiplier). Expand the inner sequence N times. Granny-square and motif
+    // charts use this to express "*(3 tr, ch 1) x 3*" compactly.
+    const grp = raw as ChartStitch & { repeat?: ChartStitch[]; times?: number }
+    if (grp && Array.isArray(grp.repeat)) {
+      const times = Math.max(1, Math.floor(grp.times ?? grp.count ?? 1))
+      const inner = expandStitches(grp.repeat)
+      for (let i = 0; i < times; i++) out.push(...inner)
+      continue
+    }
+    const st = raw
     const count = Math.max(1, Math.floor(st.count ?? 1))
     for (let i = 0; i < count; i++) {
       out.push({ symbol: st.symbol, label: st.label, colourKey: st.colourKey })
@@ -154,9 +165,7 @@ export function buildRoundLayout(
 export function expandedStitchCount(rounds: ReadonlyArray<ChartRound>): number {
   let n = 0
   for (const r of rounds) {
-    for (const st of r.stitches) {
-      n += Math.max(1, Math.floor(st.count ?? 1))
-    }
+    n += expandStitches(r.stitches).length
   }
   return n
 }

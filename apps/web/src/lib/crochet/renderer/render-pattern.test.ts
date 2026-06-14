@@ -304,6 +304,68 @@ record('Registry: joining keys are present (for swatches)', () => {
   }
 })
 
+// ─── Coverage hardening (chart-backfill readiness) ──────────────────────
+
+record('Alias: double-crochet resolves to double-crochet-uk', () => {
+  assert.ok(hasStitchShape('double-crochet'), 'double-crochet alias should resolve')
+  assert.ok(hasStitchShape('front-post-treble'), 'front-post-treble alias should resolve')
+  assert.ok(hasStitchShape('tunisian-simple-stitch'), 'tunisian-simple-stitch alias should resolve')
+})
+
+record('Registry: knitting faces present', () => {
+  for (const k of ['knit', 'purl', 'yarn-over', 'k2tog', 'ssk']) {
+    assert.ok(hasStitchShape(k), `${k} should be in the registry`)
+  }
+})
+
+record('Repeat group: { times, repeat } expands', () => {
+  const chart: ChartDefinition = {
+    craft: 'crochet', layout: 'round',
+    rounds: [{
+      roundNumber: 1,
+      stitches: [
+        { symbol: 'magic-ring' },
+        // 4 corners of (3 tr, ch 2) expressed as a repeat group
+        ({ times: 4, repeat: [{ symbol: 'treble', count: 3 }, { symbol: 'chain', count: 2 }] } as never),
+      ],
+    }],
+  }
+  const r = renderPattern(chart)
+  // 4 * (3 + 2) = 20 stitches placed (magic-ring is a centre marker)
+  assert.ok(r.verify.stitchCount >= 20, `expected >=20 placements, got ${r.verify.stitchCount}`)
+})
+
+record('Layout inference: round data with no/flat layout still renders', () => {
+  const chart = {
+    craft: 'crochet',
+    // layout omitted on purpose — data lives in rounds
+    rounds: [{ round: 1, stitches: [{ symbol: 'treble', count: 8 }] }],
+  } as unknown as ChartDefinition
+  const r = renderPattern(chart)
+  assert.equal(r.verify.ok, true, `should render via inferred round layout: ${r.verify.issues.join('; ')}`)
+  assert.ok(r.verify.stitchCount >= 8)
+})
+
+record('Soft verifier: a decreasing round does not fail the render', () => {
+  const chart: ChartDefinition = {
+    craft: 'crochet', layout: 'round',
+    rounds: [
+      { roundNumber: 1, stitches: [{ symbol: 'double-crochet-uk', count: 6 }] },
+      { roundNumber: 2, stitches: [{ symbol: 'double-crochet-uk', count: 12 }] },
+      { roundNumber: 3, stitches: [{ symbol: 'double-crochet-uk', count: 6 }] }, // decrease (amigurumi close)
+    ],
+  }
+  const r = renderPattern(chart)
+  assert.equal(r.verify.ok, true, `decrease should be a soft note, not a failure: ${r.verify.issues.join('; ')}`)
+})
+
+record('Graceful: malformed chartData fails cleanly without throwing', () => {
+  const bad = { craft: 'knitting', layout: 'flat', rows: { not: 'an array' } } as unknown as ChartDefinition
+  let r: ReturnType<typeof renderPattern> | null = null
+  assert.doesNotThrow(() => { r = renderPattern(bad) })
+  assert.equal(r!.verify.ok, false, 'malformed chart should fail the verifier')
+})
+
 // ─── Summary ────────────────────────────────────────────────────────────
 
 let pass = 0

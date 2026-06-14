@@ -66,6 +66,7 @@ import {
   SPIDER,
 } from './specialty'
 import { JOIN_AS_YOU_GO, SLIP_STITCH_SEAM, WHIPSTITCH_JOIN } from './joins'
+import { KNIT, PURL, YARN_OVER, K2TOG, SSK, SPIKE, BULLION } from './knit-and-misc'
 
 const SHAPES: StitchShape[] = [
   // Foundation + basics
@@ -129,9 +130,35 @@ const SHAPES: StitchShape[] = [
   JOIN_AS_YOU_GO,
   SLIP_STITCH_SEAM,
   WHIPSTITCH_JOIN,
+  // Knitting faces + extra crochet stitches
+  KNIT,
+  PURL,
+  YARN_OVER,
+  K2TOG,
+  SSK,
+  SPIKE,
+  BULLION,
 ]
 
 const REGISTRY = new Map<string, StitchShape>(SHAPES.map((s) => [s.key, s]))
+
+/**
+ * Alias map — alternate chartSymbol spellings that resolve to an existing
+ * shape. Charts authored across the catalogue use both UK-canonical keys
+ * and common variants (e.g. `double-crochet` for `double-crochet-uk`,
+ * `front-post-treble` for `front-post`). Mapping them here avoids the
+ * "unknown stitch" fallback without duplicating shapes. UK terminology is
+ * canonical — these are spelling variants, not US/UK conversions.
+ */
+const ALIASES: Record<string, string> = {
+  'double-crochet': 'double-crochet-uk',
+  'front-post-treble': 'front-post',
+  'back-post-treble': 'back-post',
+  'tunisian-simple-stitch': 'tunisian-simple',
+  'tunisian-knit-stitch': 'tunisian-knit',
+  'tunisian-purl-stitch': 'tunisian-purl',
+  'yo': 'yarn-over',
+}
 
 /** Stitch used when a chart references an unknown key. The renderer logs a
  *  warning via the verifier; the unknown stitch shows as a small neutral
@@ -146,7 +173,10 @@ export const UNKNOWN_STITCH: StitchShape = {
 }
 
 export function getStitchShape(key: string): StitchShape | null {
-  return REGISTRY.get(key) ?? null
+  const direct = REGISTRY.get(key)
+  if (direct) return direct
+  const alias = ALIASES[key]
+  return alias ? (REGISTRY.get(alias) ?? null) : null
 }
 
 export function listStitchShapes(): StitchShape[] {
@@ -154,5 +184,5 @@ export function listStitchShapes(): StitchShape[] {
 }
 
 export function hasStitchShape(key: string): boolean {
-  return REGISTRY.has(key)
+  return REGISTRY.has(key) || (key in ALIASES && REGISTRY.has(ALIASES[key]!))
 }
