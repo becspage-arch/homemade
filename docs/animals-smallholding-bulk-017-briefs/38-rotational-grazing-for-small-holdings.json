@@ -1,0 +1,80 @@
+{
+  "slug": "rotational-grazing-for-small-holdings",
+  "title": "Rotational grazing for small holdings",
+  "subtitle": "Dividing land into paddocks and moving stock to maintain pasture health.",
+  "excerpt": "Rotational grazing is the practice of dividing available grazing into paddocks and moving stock between them on a regular schedule. Paddocks are grazed, then rested while the plants recover. The result is higher stocking density, better grass yield, and lower parasite pressure than continuous set-stocking. Here is how to set up a simple rotational system for a small holding.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB, Grass and Forage Management guide (2023). SAC Consulting, grassland management for small farms. Ian Mitchell-Innes and Dale Strickler, rotational grazing principles (various publications).",
+  "glossaryTerms": [
+    {
+      "slug": "rest-period-grazing",
+      "term": "Rest period",
+      "definition": "The time a paddock is left ungrazed after a grazing event, allowing grass plants to rebuild root reserves and leaf area before the next grazing. In UK conditions, rest periods range from 21–28 days in spring to 60–90 days in summer drought."
+    },
+    {
+      "slug": "stocking-density",
+      "term": "Stocking density",
+      "definition": "The number of livestock units per hectare of available grazing. Higher stocking density on a smaller paddock area for a shorter time (mob grazing) produces better plant recovery than low-density continuous grazing."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["paddock grazing system", "rotational grazing sheep", "grass management small farm", "mob grazing smallholding"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Set-stocking (leaving animals on the same field all season) degrades pasture over time because the same plants are repeatedly grazed before they can recover. A rotational system uses a sufficient " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rest-period-grazing" } }], "text": "rest period" },
+          { "type": "text", "text": " to allow plants to recover to a height of 15 to 20 cm before animals return. Grass grazed at this height has the highest protein content and digestibility of the growing cycle." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How many paddocks do you need?" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The minimum number of paddocks for a simple rotation is (rest period / grazing period) + 1. If each paddock is grazed for 5 days and rested for 25 days, you need (25/5) + 1 = 6 paddocks. Smaller paddocks with higher " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "stocking-density" } }], "text": "stocking density" },
+          { "type": "text", "text": " for shorter periods produces better grass response than large paddocks grazed loosely for longer." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up a basic rotation" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Divide your grazing into four to six paddocks of roughly equal area, using electric fencing or permanent fence lines." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move animals when the paddock grass is grazed down to 5 cm. Moving earlier leaves ungrazed area; moving later starts damaging root reserves." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Let the vacated paddock rest until the grass reaches 15 to 20 cm before allowing animals back." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In early spring when grass growth is fast, the rotation will run faster than planned. Take a paddock out of the rotation as hay or silage when it gets ahead of the rotation." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Parasite management benefits" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Worm larvae from infected animal faeces survive on pasture for weeks to months, depending on species and weather. A rest period of 6 to 8 weeks in summer significantly reduces the larval burden on the paddock before animals return. This is one of the most effective non-chemical parasite control tools available to the small holder. It is especially useful for sheep and goats, where resistance to wormers is a growing problem." }]
+      }
+    ]
+  }
+}

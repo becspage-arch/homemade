@@ -1,0 +1,86 @@
+{
+  "slug": "making-dry-cured-bacon-at-home",
+  "title": "Making dry-cured bacon at home",
+  "subtitle": "A seven-day salt cure for pork belly or back from your own pig.",
+  "excerpt": "Dry curing is the oldest method of preserving pork. Salt draws moisture from the muscle, inhibiting bacterial growth and concentrating flavour. A basic dry cure needs only salt, sugar, and a small amount of curing salt (sodium nitrite). After seven days in the fridge, the cured pork is sliced and used immediately or smoked. Here is the method for a single belly joint.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Hugh Fearnley-Whittingstall, River Cottage Meat Book (2004), curing chapter. Jane Grigson, Charcuterie and French Pork Cookery (1967). Food Standards Agency, guidance on home curing of meat (2023).",
+  "glossaryTerms": [
+    {
+      "slug": "curing-salt-bacon",
+      "term": "Curing salt (Prague Powder 1)",
+      "definition": "A mixture of 6.25% sodium nitrite in table salt, used at a precisely measured rate in cured meats. Sodium nitrite inhibits Clostridium botulinum and gives cured meat its pink colour and characteristic flavour. Not interchangeable with plain salt."
+    },
+    {
+      "slug": "equilibrium-curing",
+      "term": "Equilibrium curing",
+      "definition": "A curing method in which the salt and cure are calculated as a precise percentage of the meat weight, ensuring the cure is fully absorbed without over-salting. Typical salt rate: 2.5% of meat weight. Typical curing salt rate: 0.25% (2.5 g per kg)."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["home cured bacon recipe", "dry cure pork belly", "making bacon from pigs", "smallholding bacon cure"],
+  "recipeTools": [
+    { "slug": "curing-salt", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A good dry-cured bacon uses " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "equilibrium-curing" } }], "text": "equilibrium curing" },
+          { "type": "text", "text": ": the cure ingredients are weighed as a percentage of the meat, rubbed in thoroughly, and the meat is sealed in a bag to cure in its own liquid. This method is accurate, reliable, and much less wasteful of salt than a box cure." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cure calculation for 1 kg of pork belly" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sea salt: 25 g (2.5%)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "curing-salt-bacon" } }], "text": "Curing salt" },
+            { "type": "text", "text": " (Prague Powder 1): 2.5 g (0.25%)" }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Soft brown sugar: 10 g (1%)" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Optional additions: cracked black pepper (5 g), dried thyme, juniper berries (lightly crushed)" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Curing method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Weigh the pork joint accurately and calculate the cure quantities from the meat weight." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the cure dry in a bowl, making sure the curing salt and table salt are combined evenly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rub the cure all over the surface of the pork, including the sides and ends." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the pork in a zip-lock bag with all the remaining cure that has not adhered to the surface. Seal tightly, pressing out air." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Refrigerate at 3 to 5°C for 7 days for belly; 10 to 14 days for a thicker loin joint. Turn the bag over each day to redistribute the brine that will form." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After curing, rinse the pork briefly under cold water. Pat dry. Slice and cook, or hang in a cool, airy place for 24 hours to form a pellicle before hot smoking." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "warning", "title": "Curing salt is not optional" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Sodium nitrite in curing salt inhibits Clostridium botulinum in anaerobic conditions inside the meat. This bacterium produces botulinum toxin, which is odourless and tasteless and causes botulism. Do not substitute curing salt with plain salt. Do not exceed the calculated dose: excess nitrite is toxic. Store curing salt away from children and other foodstuffs." }] }
+        ]
+      }
+    ]
+  }
+}

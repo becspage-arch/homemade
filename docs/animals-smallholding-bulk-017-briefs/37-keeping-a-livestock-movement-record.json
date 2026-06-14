@@ -1,0 +1,97 @@
+{
+  "slug": "keeping-a-livestock-movement-record",
+  "title": "Keeping a livestock movement record",
+  "subtitle": "The legal record required for all keepers of cattle, sheep, goats, and pigs in the UK.",
+  "excerpt": "Anyone who keeps cattle, sheep, goats, or pigs in the UK must maintain a holding register. The register records every animal on the holding: identity numbers, births, deaths, and movements in and out. Records must be kept for at least three years and made available to an APHA inspector on request. Here is what the register must contain for each species.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA, Livestock recording and reporting requirements (2023). APHA, keeper identification and animal registration. BCMS (British Cattle Movement Service) guidance.",
+  "glossaryTerms": [
+    {
+      "slug": "holding-register",
+      "term": "Holding register",
+      "definition": "The legal record of all livestock kept on a registered holding. Required for cattle, sheep, goats, deer, and pigs. Must be available for inspection and retained for three years after the last entry."
+    },
+    {
+      "slug": "cph-number",
+      "term": "CPH number",
+      "definition": "County Parish Holding number. A nine-digit identifier assigned to a piece of land used for livestock keeping. Required before any livestock can be registered on or moved to that land. Issued by the Rural Payments Agency."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["farm livestock record UK", "holding register UK", "sheep cattle movement record", "CPH number livestock"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Every keeper of farm livestock in the UK must have a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cph-number" } }], "text": "CPH number" },
+          { "type": "text", "text": " and a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "holding-register" } }], "text": "holding register" },
+          { "type": "text", "text": " before acquiring any animals. Registration is free and done through the rural payments body for your region." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What the register must contain" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cattle" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Individual record for each animal: ear tag number, date of birth, breed, sex, dam and sire ID if known." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Movements in and out: date, number of animals, where they came from or went to, and passport number." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Deaths: date, tag number, cause if known." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sheep and goats" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Movements can be recorded by batch with a flock number. Individual tag records are needed for animals born after 2010." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Annual inventory: number of sheep/goats on the holding on 31 December each year." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pigs" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Record every movement on and off the holding: date, number of pigs, and the origin or destination." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Births and deaths recorded monthly as a minimum." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Practical record keeping" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A paper register in a waterproof sleeve kept in the feed store covers most small holdings. The essential discipline is recording movements within 36 hours of the movement happening. Late records are common and are the cause of most holding register non-compliance at APHA inspections. A digital spreadsheet backed up to a cloud service provides the same information in a more searchable format." }]
+      }
+    ]
+  }
+}

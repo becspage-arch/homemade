@@ -1,0 +1,131 @@
+{
+  "slug": "testing-honey-moisture-before-bottling",
+  "title": "Testing honey moisture before bottling",
+  "subtitle": "The one check that decides whether your honey stores or ferments.",
+  "excerpt": "Honey with more than 20% water will ferment in the jar, souring a whole harvest in weeks. A refractometer check takes one small sample from each bucket and gives a reading in under a minute. Here is how to calibrate, sample, and read the result.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "timeMinutes": 10,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), section on honey quality and harvest. British Honey Importers and Packers Association, Honey Quality Standards. Frank Pearson, Bee-keeping for All (1923), Internet Archive, notes on syrup density and harvest timing.",
+  "glossaryTerms": [
+    {
+      "slug": "brix",
+      "term": "Brix",
+      "definition": "A scale for measuring dissolved sugar concentration in a liquid. For honey, 79–80 Brix corresponds to roughly 17–18% water content."
+    },
+    {
+      "slug": "fermentation-honey",
+      "term": "Fermentation",
+      "definition": "The breakdown of sugars by wild yeasts into alcohol and carbon dioxide. In honey, fermentation is triggered when water content exceeds 20% and wild yeast populations are present."
+    }
+  ],
+  "techniqueSlugs": ["harvesting-honey-uncapping-and-extracting"],
+  "criticalTechniques": [],
+  "aliases": ["honey moisture test", "checking honey water content", "honey refractometer reading", "honey ripeness test"],
+  "recipeTools": [
+    { "slug": "honey-refractometer", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Honey that has not been capped by the bees, or has been extracted too early, may carry more than 20% water. That is the threshold above which wild yeasts activate and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "fermentation-honey" } }], "text": "fermentation" },
+          { "type": "text", "text": " begins. Test every extraction bucket before you bottle, not after." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Calibrating the refractometer" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Calibrate before the first reading of each session. Place one drop of distilled water on the prism, close the daylight plate, and hold the refractometer toward a light source. The reading should fall at 0% water content on the honey scale, which corresponds to 100 on the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brix" } }], "text": "Brix" },
+          { "type": "text", "text": " scale. If it does not, turn the calibration screw until the line sits on 0. Wipe the prism dry with a soft cloth before taking a honey reading." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Taking the sample" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir the honey bucket gently before sampling. Moisture can stratify, with wetter honey rising to the surface if the extraction included uncapped or lightly capped frames." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dip a clean knife or spatula and take a small smear, about the size of a pea. Place it on the prism." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Close the daylight plate carefully to spread the honey into a thin, even film. Avoid trapping air bubbles." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Look through the eyepiece. A clear horizontal line divides a blue upper field from a bright lower field. Read the water-content number where the line crosses the percentage scale." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wipe the prism clean with a damp soft cloth between buckets." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading the result" }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "What the numbers mean" },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Below 17%: excellent. Long shelf life. Most heather and clover honey from well-capped frames reads here." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "17–20%: safe to bottle. Will keep well for at least two years." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "20–23%: borderline. Some batches at 20–21% stabilise; others ferment within months. See the handling section below." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Above 23%: do not bottle as table honey. The batch needs immediate attention." }] }] }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Handling honey that reads above 20%" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Honey above 20% water should not be blended with dry honey and bottled. Options are: blend it into mead, where fermentation is intended; use it as winter feed syrup for the bees; or pass it through a warming cabinet at 35°C for 24 hours to evaporate some moisture. The warming cabinet method works only if the reading is borderline (21 to 22%) and the honey is stirred periodically to allow surface evaporation." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Blurry or double line on the prism — cannot read the scale",
+              "cause": "Air bubble trapped under the daylight plate, or the honey film is uneven",
+              "fix": "Lift the plate, wipe clean, and re-apply the sample. Make sure the honey covers the whole prism surface before closing the plate."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "The scale appears at the wrong angle or the line is curved",
+              "cause": "The daylight plate is dirty or fogged from a previous sample",
+              "fix": "Clean the plate with a damp cloth. Very cold honey can also cause this; let the honey reach room temperature before testing."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Reading is consistent at 0% for every sample",
+              "cause": "The calibration step was not carried out, or distilled water is still on the prism",
+              "fix": "Wipe the prism thoroughly after calibration, then re-test the honey."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

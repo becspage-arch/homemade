@@ -1,0 +1,99 @@
+{
+  "slug": "installing-an-open-mesh-floor",
+  "title": "Installing an open mesh floor",
+  "subtitle": "Better ventilation and a passive mite monitor in one fitting.",
+  "excerpt": "An open mesh floor replaces the solid wooden floor on a national hive with a wire mesh panel. Mites that fall off bees pass through the mesh and cannot return to the colony. A slide-in mite board turns the floor into a passive varroa monitor. Here is how to fit one and how to read the count it gives you.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), section on varroa monitoring and open mesh floors. BBKA factsheet on varroa management. Understanding Varroa Lifecycle, Homemade education entry.",
+  "glossaryTerms": [
+    {
+      "slug": "open-mesh-floor",
+      "term": "Open mesh floor",
+      "definition": "A beehive floor with a wire mesh panel instead of a solid board. Mites and debris fall through the mesh to the ground. Commonly abbreviated OMF in UK beekeeping."
+    },
+    {
+      "slug": "varroa-drop",
+      "term": "Natural mite drop",
+      "definition": "The count of varroa mites that fall off adult bees each day. Collected on a sticky board placed under the open mesh floor, then divided by the number of days the board was in place."
+    }
+  ],
+  "techniqueSlugs": ["varroa-mite-count"],
+  "criticalTechniques": [],
+  "aliases": ["OMF beehive", "mesh floor installation", "varroa floor hive", "open floor beehive"],
+  "recipeTools": [
+    { "slug": "open-mesh-floor", "isOptional": false },
+    { "slug": "varroa-mite-board", "isOptional": false },
+    { "slug": "hive-tool-j", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "open-mesh-floor" } }], "text": "open mesh floor" },
+          { "type": "text", "text": " improves hive ventilation and reduces condensation in winter. Its second job is passive monitoring. With a slide-in mite board in place, the floor counts how many varroa fall naturally each day, giving you an early warning of rising mite pressure without opening the hive." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fitting the floor" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Choose a calm, mild day. Suit up and smoke the entrance lightly before opening." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Gently ease the brood box off the old solid floor with the hive tool, and slide the new mesh floor into place on the hive stand." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lower the brood box onto the mesh floor. Check that the entrance block is seated correctly and the entrance is not obstructed." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slide the varroa mite board into the slot below the mesh from the back of the hive. The board collects debris and fallen mites." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Close the hive and leave for seven days before reading the mite board." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Reading the mite board" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After seven days, slide the board out and count the mites on it. Mites are rounded, brown-red dots, smaller than a sesame seed. Debris from wax and propolis will be present; look for the characteristic shape. Divide the total by seven to get the " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "varroa-drop" } }], "text": "natural mite drop" },
+          { "type": "text", "text": " per day." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Interpreting the daily drop" },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "0–2 mites per day in spring: low mite load. Monitor monthly." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "3–6 per day in early summer: moderate. Plan a Apiguard or oxalic acid treatment after harvest." }] }] },
+              { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "7–10+ per day: high. Treat now. Mid-summer varroa counts at this level indicate a colony under serious pressure." }] }] }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Winter use" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Remove the mite board in winter, or replace it with a solid insert board to reduce cold draughts through the mesh during hard frost. UK winters below -5°C for more than a few days can chill a small colony on an uninsulated mesh floor. A crown board with a layer of insulation above it compensates for most of the heat loss through the open floor." }]
+      }
+    ]
+  }
+}

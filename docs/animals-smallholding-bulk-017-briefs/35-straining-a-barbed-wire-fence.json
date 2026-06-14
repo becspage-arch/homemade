@@ -1,0 +1,87 @@
+{
+  "slug": "straining-a-barbed-wire-fence",
+  "title": "Straining a barbed wire fence",
+  "subtitle": "Tensioning and stapling wire between strainer posts for a lasting boundary fence.",
+  "excerpt": "A sagging fence lets livestock through. Straining barbed wire is the process of pulling each strand to the correct tension and fixing it to posts with staples driven at an angle. The tension is set with a wire strainer tool, and the result is a fence that holds livestock without the posts pulling inward over time. Here is the method for straining between two anchor posts.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 120,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NFU, farm fencing guidance (2023). DEFRA, Code of Good Agricultural Practice for Water (soil protection from livestock, fencing). John Seymour, Self-Sufficient Life (2009), fencing chapter.",
+  "glossaryTerms": [
+    {
+      "slug": "strainer-post",
+      "term": "Strainer post",
+      "definition": "A large, deeply set timber post at each corner and end of a fence run, designed to withstand the tension of the wire. Strainer posts are larger in diameter than intermediate posts and are often braced with a diagonal strut."
+    },
+    {
+      "slug": "wire-strainer-tool",
+      "term": "Wire strainer (tensioner)",
+      "definition": "A mechanical device, typically a ratchet or Tirfor mechanism, used to tension fencing wire between two anchor points before stapling. Pulls the wire drum-tight without the need for a second person to hold tension while stapling."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["barbed wire fence straining", "fencing wire tensioning", "farm fence post UK", "straining fence wire"],
+  "recipeTools": [
+    { "slug": "barbed-wire", "isOptional": false },
+    { "slug": "fencing-staples", "isOptional": false },
+    { "slug": "wire-strainer", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A correctly strained fence needs two " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "strainer-post" } }], "text": "strainer posts" },
+          { "type": "text", "text": " at each end of the run, set at least 90 cm deep in firm ground. All tension pulls against these posts. The intermediate posts between them carry the wire height but not the horizontal tension. A fence with undersized strainer posts will fail regardless of how well the wire is tensioned." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the run" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set the two strainer posts at each end. Brace each with a diagonal strut from mid-post to a sole plate on the ground, positioned so it pushes against the tension direction." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set intermediate posts at 3 to 4 m intervals between the strainers. Intermediate posts can be round timber or steel droppers driven by mallet." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Unroll the " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wire-strainer-tool" } }], "text": "barbed wire" },
+            { "type": "text", "text": " from the drum along the fence line. Use leather gloves; barbed wire causes serious cuts." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Straining the wire" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Attach one end of the wire to the first strainer post with a wire loop or straining pin at the correct height." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hook the wire strainer tool onto the wire about 1 m from the second strainer post. Attach the other end of the strainer to the second post using a chain or wire tie." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ratchet or crank the wire strainer until the wire is taut. The correct tension for barbed wire is when it resists deflection by hand to approximately 5 cm at the mid-span. Overtightening will bow the intermediate posts inward." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Staple the wire to each intermediate post with " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wire-strainer-tool" } }], "text": "fencing staples" },
+            { "type": "text", "text": ". Drive staples at an angle across the grain, not straight in. Leave the staple slightly proud so the wire can move slightly with temperature changes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fix the wire to the second strainer post and release the wire strainer tool." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Number of strands for different livestock" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Cattle: three strands at 30, 60, and 90 cm from the ground. Sheep: four strands at 15, 30, 55, and 80 cm. Pigs: two strands at 20 and 50 cm, backed by an electric fence inside. A single strand does not contain sheep or young calves reliably." }] }
+        ]
+      }
+    ]
+  }
+}

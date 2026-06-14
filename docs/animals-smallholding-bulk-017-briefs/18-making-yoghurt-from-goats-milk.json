@@ -1,0 +1,77 @@
+{
+  "slug": "making-yoghurt-from-goats-milk",
+  "title": "Making yoghurt from goats' milk",
+  "subtitle": "A thinner, naturally white set yoghurt with a clean, mild flavour.",
+  "excerpt": "Goats' milk yoghurt is thinner than cows' milk yoghurt because goats' milk contains less casein and no A1 beta-casein. It does not set as firm without additives, but the flavour is clean and mild with a slight tang. Here is the method for a reliable set using either a yoghurt maker or a thermos flask.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Moorlands Cheesemakers, yoghurt guide. Ricki Carroll, Home Cheese Making (2002), yoghurt chapter. National Dairy Council UK, dairy fermentation guidance.",
+  "glossaryTerms": [
+    {
+      "slug": "thermophilic-culture",
+      "term": "Thermophilic culture",
+      "definition": "A heat-loving starter culture that works between 40–45°C. Used for yoghurt, mozzarella, and Swiss-type cheeses. The main bacteria are Streptococcus thermophilus and Lactobacillus delbrueckii subsp. bulgaricus."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["goats milk yoghurt recipe", "homemade yoghurt goat", "yoghurt maker goats milk", "goat yoghurt UK"],
+  "recipeTools": [
+    { "slug": "yoghurt-maker", "isOptional": true },
+    { "slug": "cheese-thermometer", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Yoghurt is milk thickened by lactic acid bacteria working at incubation temperature. The bacteria used in yoghurt are " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermophilic-culture" } }], "text": "thermophilic cultures" },
+          { "type": "text", "text": ", meaning they need to be kept at 40 to 45°C for 6 to 10 hours to produce enough acid to thicken the milk. Below this temperature the bacteria work too slowly; above 50°C they die." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Ingredients" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "1 litre fresh goats' milk" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "2 tablespoons of plain live yoghurt as a starter (commercial goats' yoghurt works; cows' milk yoghurt also works if no goats' yoghurt is available)" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the milk to 85°C in a clean pan, stirring to prevent scorching. Hold at 85°C for 5 minutes. This pasteurises the milk and denatures whey proteins, improving the final set." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cool the milk to 43°C. Stir frequently to cool evenly. Check the temperature with the cheese thermometer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir the starter yoghurt into 100 ml of the warm milk in a separate cup until smooth, then stir this mix back into the main batch. This prevents lumps of cold yoghurt chilling the milk." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour into sterilised jars and place in a yoghurt maker set to 43°C. Incubate for 8 to 10 hours without disturbing the jars." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Without a yoghurt maker: pour the inoculated milk into a warmed thermos flask. Seal and leave for 8 to 10 hours. The thermos retains enough heat for most of the incubation period." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Refrigerate immediately once set. Goats' milk yoghurt will be thinner than shop yoghurt. If you want a thicker result, drain it for 2 to 4 hours through muslin to concentrate it." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Why goats' milk yoghurt is white" },
+        "content": [
+          { "type": "paragraph", "content": [{ "type": "text", "text": "Goats efficiently convert dietary beta-carotene to vitamin A, so their milk contains very little residual beta-carotene. Cows store some beta-carotene in milk fat, which gives cows' milk dairy products a cream or yellow tint. Goats' milk yoghurt is always bright white for this reason, regardless of the quality of the milk or the culture used." }] }
+        ]
+      }
+    ]
+  }
+}

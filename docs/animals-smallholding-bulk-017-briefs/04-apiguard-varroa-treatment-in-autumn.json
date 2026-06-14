@@ -1,0 +1,112 @@
+{
+  "slug": "apiguard-varroa-treatment-in-autumn",
+  "title": "Apiguard varroa treatment in autumn",
+  "subtitle": "Thymol gel treatment after the supers come off.",
+  "excerpt": "Apiguard is a thymol-based gel used to treat varroa after the honey harvest. It works by slow evaporation, and the active thymol vapour kills mites on adult bees. Treatment runs for eight weeks with two tray changes. Here is the timing, the placement, and what to watch for.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), section on varroa treatments. Vita Europe, Apiguard product information and dosing guidance. BBKA Varroa Management (BBKA factsheet). Understanding Varroa Lifecycle, Homemade education entry.",
+  "glossaryTerms": [
+    {
+      "slug": "thymol",
+      "term": "Thymol",
+      "definition": "A natural compound found in thyme oil, used as the active ingredient in Apiguard and other soft chemical varroa treatments. It evaporates slowly from the gel tray and kills mites on adult bees."
+    },
+    {
+      "slug": "varroa",
+      "term": "Varroa",
+      "definition": "A parasitic mite (Varroa destructor) that feeds on developing bee pupae. Left untreated, mite populations grow to a level that collapses the colony. Treatment is required in every managed UK colony."
+    }
+  ],
+  "techniqueSlugs": ["varroa-mite-count", "varroa-alcohol-wash-monitoring"],
+  "criticalTechniques": ["varroa-mite-count"],
+  "aliases": ["Apiguard treatment", "thymol varroa treatment", "autumn varroa gel", "varroa autumn treatment"],
+  "recipeTools": [
+    { "slug": "hive-tool-j", "isOptional": false },
+    { "slug": "varroa-mite-board", "isOptional": false },
+    { "slug": "bee-suit", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Apiguard goes in after the last super comes off, usually late August or early September in the UK. It requires a colony temperature above 15°C to evaporate effectively, so autumn is the ideal window. " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thymol" } }], "text": "Thymol" },
+          { "type": "text", "text": " vapour does not penetrate sealed brood cells, so the full eight-week treatment course is needed to catch mites as capped brood hatches and re-exposes them." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to start" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "All honey supers must be off. Thymol taints honey in any supers left on during treatment." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Air temperature should be above 15°C during the day. Below this temperature the gel evaporates too slowly to build effective vapour concentrations." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The colony should have a queen and a brood nest present. Apiguard works on the bees, not on the mites directly, and needs a full bee population." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Applying the treatment" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Peel back the foil on one 50 g tray to expose the gel. The foil stays on the tray as the backing; you peel just the top layer back." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the tray flat on top of the frames, in the centre of the " },
+            { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "varroa" } }], "text": "varroa" },
+            { "type": "text", "text": " treatment area of the brood nest. The gel-side faces up." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Replace the crown board and roof. Make sure there is a small gap at the front of the hive (matchstick under the crown board or a super-entrance open at the front) to allow the thymol vapour to circulate and not build up to repellent concentrations. Too much vapour drives bees out." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slide the " },
+            { "type": "text", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "varroa-mite-count", "label": "varroa mite board" } }], "text": "varroa mite board" },
+            { "type": "text", "text": " in under the mesh floor to catch fallen mites and confirm the treatment is working." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After two weeks, remove the first tray (now mostly empty) and place a fresh 50 g tray in the same position. Leave for a further four weeks." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the second tray at week six. A third tray can be added if the colony still shows a high mite count, but two trays covers most UK colonies adequately." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "After the course" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Plan the winter oxalic acid treatment for December, when the colony is broodless. The two treatments together, Apiguard in autumn and oxalic acid in winter, give the most effective annual mite control." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {},
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Bees clustering outside the hive after the tray goes in",
+              "cause": "Too much ventilation gap, concentrating the vapour and driving bees out, or the tray is too fresh and off-gassing strongly in warm weather",
+              "fix": "Reduce the ventilation gap to a matchstick's width. On very warm days (above 25°C) the tray evaporates more quickly than usual."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Gel has hardly changed after two weeks",
+              "cause": "Temperatures below 15°C for most of the fortnight, meaning the thymol is not evaporating",
+              "fix": "Leave the tray for a third week if a warm spell is forecast. If temperatures have already dropped for the season, switch to an oxalic acid trickle treatment instead."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "setting-up-a-night-vision-camera-for-lambing",
+  "title": "Setting up a night vision camera for lambing",
+  "subtitle": "Monitor ewes overnight without disturbing the shed.",
+  "excerpt": "A night vision camera in the lambing shed lets you check on ewes from the house without repeatedly walking out and disturbing the flock. A ewe close to lambing will show restlessness, pawing, and isolation from the group. Catching a difficult presentation early makes a significant difference to outcomes. Here is how to mount, connect, and use a night vision camera effectively.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "sheep-and-goats",
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "timeMinutes": 60,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NSA (National Sheep Association), lambing management guidance. SAC Consulting, remote monitoring in sheep housing. NADIS, recognising signs of imminent lambing.",
+  "glossaryTerms": [
+    {
+      "slug": "infrared-illuminator",
+      "term": "Infrared illuminator",
+      "definition": "A bank of infrared LEDs mounted on or near a night vision camera that flood an area with infrared light invisible to the naked eye. The camera sensor detects the reflected IR light, producing a clear monochrome image in total darkness."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["lambing camera setup", "night vision sheep monitor", "barn camera lambing", "remote lambing check"],
+  "recipeTools": [
+    { "slug": "lathe-camera", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A night vision camera works by illuminating the shed with " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "infrared-illuminator" } }], "text": "infrared light" },
+          { "type": "text", "text": " that sheep cannot detect. From the ewes' perspective the shed is completely dark. From the camera's perspective it is lit. The result is a clear, monochrome image of the entire pen on your phone without any disturbance to the flock." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Siting the camera" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mount the camera at a height of 2 to 2.5 m, angled downward to cover the floor of the lambing pen. You need to see individual ewes lying down, not just moving around." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Position the camera so the feed rail, water trough, and any deep-bedded corners are all in frame. Ewes about to lamb often seek out a corner or the edge of the pen." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For a shed wider than 5 m, two cameras are more reliable than one. A single wide-angle camera may not give enough detail to read individual sheep at the far end." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Connecting and accessing" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Run a power cable to the camera (most farm night vision cameras run on 12V DC from a mains adapter). PoE (Power over Ethernet) cameras simplify installation: a single cable carries both power and data." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For wifi access from the house, a shed access point or a long-range wifi bridge is usually needed. Standard home wifi rarely reaches outbuildings reliably at 60 to 100 m." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set the camera to record a clip when motion is detected, or to record continuously onto a local SD card or NVR. Motion-triggered clips on a phone let you see activity without watching a static feed all night." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to watch for at lambing" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A ewe pawing repeatedly at the bedding and getting up and down frequently: active first stage of labour." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A visible water bag or membrane at the vulva with no lamb presented after 30 minutes: attend immediately." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A ewe standing apart from the group with her head lowered: she may have just lambed or be in early labour. Check whether a lamb is present in the pen before going back to the house." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A lamb on its feet but not suckling after 20 minutes: mismothering risk, or the lamb cannot find the teat. Go out and assist." }] }] }
+        ]
+      }
+    ]
+  }
+}
