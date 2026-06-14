@@ -143,3 +143,478 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - mobile-phone-recycling-and-upgrading grade-level-strict — applied: 
 - off-grid-water-pump-maintenance grade-level-strict — applied: 
 - solar-pv-racking-and-roof-penetration grade-level-strict — applied: 
+
+- growing-cabbage-microgreens grade-level-strict — applied: 
+- kale-microgreen-variety-selection grade-level-strict — applied: 
+- pea-shoot-variety-selection grade-level-strict — applied: 
+- sowing-broccoli-microgreens grade-level-strict — applied: 
+- sunflower-shoot-variety-selection voice-violation,grade-level-strict — applied: 
+- ashwagandha-profile grade-level-strict — applied: 
+- crochet-colour-block-cardigan grade-level-strict — applied: 
+- crochet-side-slit-pullover grade-level-strict — applied: 
+- crocodile-stitch-cushion-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- dandelion-profile grade-level-strict — applied: 
+- echinacea-profile grade-level-strict — applied: 
+- fair-isle-triangle-shawl grade-level-strict — applied: 
+- feather-fan-triangle-shawl grade-level-strict — applied: 
+- gradient-garter-wrap grade-level-strict — applied: 
+- granny-square-top-crochet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lace-faroese-shawl grade-level-strict — applied: 
+- lemon-balm-profile grade-level-strict — applied: 
+- needlepoint-berlin-rose-panel hero-missing — applied: hero-fill-deferred-to-standalone-script
+- needlepoint-pincushion-scotch-stitch hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rosemary-profile grade-level-strict — applied: 
+- seed-stitch-lumbar-cushion hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shell-stitch-cushion-cover hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shetland-lace-bottom-up grade-level-strict — applied: 
+- short-row-boomerang-shawl grade-level-strict — applied: 
+- slab-built-desk-organiser-with-sections prose-prep-steps — applied: 
+- stranded-faroese-shawl grade-level-strict — applied: 
+- turmeric-decoction-for-chronic-inflammation grade-level-strict — applied: 
+- valerian-profile grade-level-strict — applied: 
+- wet-felted-christmas-bauble-set hero-missing — applied: hero-fill-deferred-to-standalone-script
+- 1970s-wrap-cardigan-crochet grade-level-strict — applied: 
+- advent-wreath-cover grade-level-strict — applied: 
+- after-storm-checks-on-a-smallholding grade-level-strict — applied: 
+- alpacas-on-a-smallholding grade-level-strict — applied: 
+- american-apple-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- amigurumi-crocodile grade-level-strict — applied: 
+- amigurumi-donkey grade-level-strict — applied: 
+- amigurumi-elephant grade-level-strict — applied: 
+- amigurumi-firefly grade-level-strict — applied: 
+- amigurumi-ghost grade-level-strict — applied: 
+- amigurumi-gingerbread-man grade-level-strict — applied: 
+- amigurumi-highland-cow grade-level-strict — applied: 
+- amigurumi-horse grade-level-strict — applied: 
+- amigurumi-iguana grade-level-strict — applied: 
+- amigurumi-komodo-dragon grade-level-strict — applied: 
+- amigurumi-peacock grade-level-strict — applied: 
+- amigurumi-rabbit-farm grade-level-strict — applied: 
+- amigurumi-snail-bug grade-level-strict — applied: 
+- amigurumi-toucan grade-level-strict — applied: 
+- amigurumi-triceratops grade-level-strict — applied: 
+- amigurumi-valentine-bear grade-level-strict — applied: 
+- amigurumi-yak grade-level-strict — applied: 
+- annual-vegetables-in-forest-garden voice-violation,grade-level-strict — applied: 
+- apple-crumble-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- apple-frangipane-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- applying-an-interior-lime-render-finish-coat grade-level-strict — applied: 
+- applying-exterior-limewash-to-a-rendered-wall grade-level-strict — applied: 
+- applying-for-a-cph-number voice-violation,grade-level-strict — applied: 
+- applying-polyurethane-varnish-to-bare-wood-furniture grade-level-strict — applied: 
+- applying-shellac-sanding-sealer-before-varnishing-or-painting voice-violation,grade-level-strict — applied: 
+- aran-cable-hat grade-level-strict — applied: 
+- arancini-al-burro prose-prep-steps — applied: 
+- ashwagandha-tincture-for-burnout grade-level-strict — applied: 
+- ashwagandha-warm-milk grade-level-strict — applied: 
+- baby-safe-bottom-balm voice-violation — applied: 
+- basic-tractor-maintenance-for-smallholders grade-level-strict — applied: 
+- batch-vs-continuous-composting-choice grade-level-strict — applied: 
+- battery-storage-optimal-state-of-charge grade-level-strict — applied: 
+- beard-balm-cedarwood voice-violation — applied: 
+- beard-oil-sandalwood voice-violation — applied: 
+- beef-and-guinness-stew prose-prep-steps — applied: 
+- beef-stroganoff grade-level-strict — applied: 
+- berlin-woolwork-introduction grade-level-strict — applied: 
+- block-of-flats-leaseholder-insulation grade-level-strict — applied: 
+- blower-door-airtightness-test-consumer-guide grade-level-strict — applied: 
+- british-species-for-green-woodwork hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- brown-stew prose-prep-steps — applied: 
+- brown-sugar-vanilla-lip-scrub voice-violation — applied: 
+- butternut-squash-soup prose-prep-steps — applied: 
+- c2c-cardigan grade-level-strict — applied: 
+- cabbage-white-butterfly voice-violation,grade-level-strict — applied: 
+- calculating-winter-feed-requirements-for-livestock voice-violation,grade-level-strict — applied: 
+- calendula-chamomile-face-balm voice-violation — applied: 
+- calendula-lip-balm voice-violation — applied: 
+- calendula-profile grade-level-strict — applied: 
+- carrot-and-orange-soup prose-prep-steps — applied: 
+- carrot-fly-prevention grade-level-strict — applied: 
+- carved-birch-butter-pat grade-level-strict — applied: 
+- cedarwood-vetiver-cologne-balm voice-violation — applied: 
+- challah-round-rosh-hashanah opening-pattern-missing-hook — applied: recipe-yield-appended
+- chamomile-tincture-for-nervous-digestion grade-level-strict — applied: 
+- chevron-blanket grade-level-strict — applied: 
+- chevron-stripe-jumper-crochet grade-level-strict — applied: 
+- chicken-and-ham-pie prose-prep-steps — applied: 
+- chicken-and-leek-pie prose-prep-steps — applied: 
+- chocolate-crackle-rice-krispie opening-pattern-missing-hook — applied: recipe-yield-appended
+- chocolate-layer-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- choosing-a-pig-breed-for-the-smallholding grade-level-strict — applied: 
+- choosing-linen grade-level-strict — applied: 
+- cleaning-and-conditioning-a-leather-jacket grade-level-strict — applied: 
+- cleaning-and-restoring-a-tarnished-silver-plated-picture-frame grade-level-strict — applied: 
+- cleavers-lymphatic-infusion voice-violation,grade-level-strict — applied: 
+- cock-a-leekie prose-prep-steps — applied: 
+- coffee-and-walnut-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- coffee-walnut-layer-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- cold-bridge-structural-post-column grade-level-strict — applied: 
+- colour-field-cardigan-crochet grade-level-strict — applied: 
+- colourwork-yoke-pullover-crochet grade-level-strict — applied: 
+- compost-for-rooftop-garden voice-violation,grade-level-strict — applied: 
+- composting-meat-and-dairy grade-level-strict — applied: 
+- coniglio-alla-cacciatora grade-level-strict — applied: 
+- corner-to-corner-cushion-cover grade-level-strict — applied: 
+- countryside-stewardship-basics-for-smallholders grade-level-strict — applied: 
+- cream-of-mushroom-soup prose-prep-steps — applied: 
+- crochet-adjusting-tension-for-gauge voice-violation — applied: em-dash-body
+- crochet-african-flower-hexagon voice-violation,grade-level-strict — applied: 
+- crochet-animal-bird voice-violation — applied: 
+- crochet-animal-cat voice-violation — applied: 
+- crochet-animal-fox voice-violation — applied: 
+- crochet-bavarian-square voice-violation,grade-level-strict — applied: 
+- crochet-blocking-acrylic-and-synthetics voice-violation — applied: em-dash-body
+- crochet-bobble-stitch voice-violation — applied: em-dash-body
+- crochet-broomstick-cluster-stitch voice-violation — applied: em-dash-body
+- crochet-broomstick-loop-stitch voice-violation — applied: em-dash-body
+- crochet-building-consistent-practice voice-violation — applied: em-dash-body
+- crochet-carrying-yarn voice-violation — applied: em-dash-body
+- crochet-chain-in-depth voice-violation — applied: em-dash-body
+- crochet-chain-stitch voice-violation — applied: 
+- crochet-chainless-foundation-row voice-violation — applied: em-dash-body
+- crochet-changing-colour voice-violation — applied: em-dash-body
+- crochet-choosing-first-project voice-violation — applied: em-dash-body
+- crochet-choosing-yarn-fibre voice-violation — applied: em-dash-body
+- crochet-construction-top-down-bottom-up voice-violation — applied: em-dash-body
+- crochet-continuous-spirals voice-violation — applied: 
+- crochet-counting-stitches grade-level-strict — applied: 
+- crochet-crocodile-stitch grade-level-strict — applied: 
+- crochet-crossed-double-treble voice-violation — applied: em-dash-body
+- crochet-crossed-treble voice-violation — applied: em-dash-body
+- crochet-decoding-pattern-repeats voice-violation — applied: em-dash-body
+- crochet-decrease-basics voice-violation — applied: em-dash-body
+- crochet-diamond-cable-vest grade-level-strict — applied: 
+- crochet-double-crochet-in-depth voice-violation — applied: em-dash-body
+- crochet-double-crochet-uk-stitch voice-violation — applied: em-dash-body
+- crochet-double-granny-square voice-violation,grade-level-strict — applied: 
+- crochet-double-treble-in-depth voice-violation — applied: em-dash-body
+- crochet-double-treble-stitch voice-violation — applied: em-dash-body
+- crochet-dropped-stitch-fix voice-violation — applied: 
+- crochet-fan-stitch voice-violation — applied: em-dash-body
+- crochet-five-petal-flower-round voice-violation,grade-level-strict — applied: 
+- crochet-flo-blo-technique voice-violation — applied: em-dash-body
+- crochet-frogging grade-level-strict — applied: 
+- crochet-gauge-for-round-work voice-violation — applied: em-dash-body
+- crochet-granny-cluster voice-violation — applied: em-dash-body
+- crochet-granny-square-basics voice-violation — applied: em-dash-body
+- crochet-granny-square-eight-round voice-violation — applied: em-dash-body
+- crochet-granny-square-five-round voice-violation — applied: em-dash-body
+- crochet-granny-square-six-round voice-violation — applied: em-dash-body
+- crochet-granny-square-three-colour voice-violation — applied: em-dash-body
+- crochet-granny-square-three-round voice-violation — applied: em-dash-body
+- crochet-granny-square-two-colour voice-violation — applied: em-dash-body
+- crochet-granny-stripe-panel voice-violation,grade-level-strict — applied: 
+- crochet-hairpin-braid-join voice-violation — applied: em-dash-body
+- crochet-hairpin-lace-basic voice-violation — applied: em-dash-body
+- crochet-half-treble-in-depth voice-violation — applied: em-dash-body
+- crochet-half-treble-stitch voice-violation — applied: 
+- crochet-hexagon-basic voice-violation — applied: em-dash-body
+- crochet-hexagon-granny-style voice-violation — applied: em-dash-body
+- crochet-hexagon-lacy voice-violation — applied: em-dash-body
+- crochet-hexagon-popcorn voice-violation — applied: em-dash-body
+- crochet-hexagon-treble-cluster voice-violation — applied: em-dash-body
+- crochet-hook-materials voice-violation — applied: em-dash-body
+- crochet-hook-size-choice grade-level-strict — applied: 
+- crochet-increase-basics voice-violation — applied: em-dash-body
+- crochet-invisible-fasten-off voice-violation — applied: em-dash-body
+- crochet-irish-motif-basics voice-violation — applied: em-dash-body
+- crochet-join-as-you-go voice-violation — applied: em-dash-body
+- crochet-join-as-you-go-square voice-violation — applied: 
+- crochet-joined-rounds-technique voice-violation — applied: em-dash-body
+- crochet-joining-a-new-ball voice-violation — applied: 
+- crochet-joining-round-technique voice-violation — applied: 
+- crochet-kaleidoscope-round grade-level-strict — applied: 
+- crochet-lace-stole-solomon-knot grade-level-strict — applied: 
+- crochet-learning-to-read-your-crochet voice-violation — applied: em-dash-body
+- crochet-magic-ring-vs-chain-ring voice-violation — applied: em-dash-body
+- crochet-mandala-advanced-ten-round voice-violation — applied: 
+- crochet-mandala-eight-round voice-violation — applied: em-dash-body
+- crochet-mandala-five-round voice-violation — applied: em-dash-body
+- crochet-mandala-lacy-eight-round voice-violation — applied: em-dash-body
+- crochet-mandala-three-round voice-violation — applied: em-dash-body
+- crochet-mattress-stitch-seam voice-violation — applied: em-dash-body
+- crochet-miscounted-stitches voice-violation — applied: em-dash-body
+- crochet-mosaic-square grade-level-strict — applied: 
+- crochet-motif-flat-circle voice-violation — applied: 
+- crochet-motif-star-six-point voice-violation,grade-level-strict — applied: 
+- crochet-notions-and-accessories voice-violation — applied: em-dash-body
+- crochet-photo-frame-surround grade-level-strict — applied: 
+- crochet-picot-chain-edge voice-violation — applied: em-dash-body
+- crochet-picot-edge voice-violation — applied: em-dash-body
+- crochet-popcorn-stitch voice-violation — applied: em-dash-body
+- crochet-puff-stitch voice-violation — applied: em-dash-body
+- crochet-reading-schematics voice-violation,grade-level-strict — applied: em-dash-body
+- crochet-recovering-dropped-stitch voice-violation — applied: em-dash-body
+- crochet-ripple-round-motif voice-violation,grade-level-strict — applied: 
+- crochet-rose-layered voice-violation — applied: 
+- crochet-rose-rolled voice-violation — applied: 
+- crochet-rows-and-rounds voice-violation,grade-level-strict — applied: em-dash-body
+- crochet-sewing-in-tails voice-violation — applied: 
+- crochet-shell-stitch voice-violation — applied: em-dash-body
+- crochet-slip-dress grade-level-strict — applied: 
+- crochet-slip-knot voice-violation — applied: em-dash-body
+- crochet-slip-stitch-seam-tutorial voice-violation — applied: 
+- crochet-slip-stitch-uses voice-violation — applied: em-dash-body
+- crochet-snowflake-advanced grade-level-strict — applied: 
+- crochet-solomons-knot-stitch voice-violation — applied: em-dash-body
+- crochet-spider-stitch voice-violation — applied: em-dash-body
+- crochet-spray-blocking voice-violation — applied: em-dash-body
+- crochet-square-basic-four-round voice-violation — applied: 
+- crochet-square-six-round-granny voice-violation — applied: 
+- crochet-star-stitch voice-violation — applied: em-dash-body
+- crochet-sunburst-motif-basic voice-violation — applied: 
+- crochet-surface-slip-stitch-technique voice-violation — applied: 
+- crochet-tension-troubleshooting voice-violation,grade-level-strict — applied: 
+- crochet-themed-heart-basic voice-violation,grade-level-strict — applied: 
+- crochet-themed-pumpkin voice-violation — applied: 
+- crochet-tinking voice-violation — applied: em-dash-body
+- crochet-treble-cluster-stitch voice-violation — applied: em-dash-body
+- crochet-treble-in-depth voice-violation — applied: em-dash-body
+- crochet-triple-treble-stitch voice-violation — applied: em-dash-body
+- crochet-tunisian-extended-stitch voice-violation,grade-level-strict — applied: 
+- crochet-twisted-foundation-chain voice-violation — applied: em-dash-body
+- crochet-uk-us-terminology-guide voice-violation,grade-level-strict — applied: em-dash-body
+- crochet-using-stitch-markers voice-violation — applied: em-dash-body
+- crochet-v-stitch voice-violation — applied: em-dash-body
+- crochet-weaving-in-ends voice-violation — applied: 
+- crochet-whipstitch-join-tutorial voice-violation — applied: em-dash-body
+- crochet-willow-tree-motif voice-violation — applied: 
+- crochet-working-a-flat-circle voice-violation — applied: em-dash-body
+- crochet-wrap-top hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crochet-yarn-over-technique voice-violation — applied: em-dash-body
+- cropped-crochet-jacket grade-level-strict — applied: 
+- crostata-di-nutella opening-pattern-missing-hook — applied: recipe-yield-appended
+- crostata-di-ricotta opening-pattern-missing-hook — applied: recipe-yield-appended
+- custard-tart-portuguese opening-pattern-missing-hook — applied: recipe-yield-appended
+- damper opening-pattern-missing-hook — applied: recipe-yield-appended
+- deodorant-paste voice-violation — applied: 
+- devils-food-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- dorset-apple-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- double-cable-hat grade-level-strict — applied: 
+- einkorn-sourdough opening-pattern-missing-hook — applied: recipe-yield-appended
+- english-muffins opening-pattern-missing-hook — applied: recipe-yield-appended
+- english-muffins-griddle opening-pattern-missing-hook — applied: recipe-yield-appended
+- ev-home-charge-load-management grade-level-strict — applied: 
+- fabric-counts-explained grade-level-strict — applied: 
+- fair-isle-style-yoke-crochet grade-level-strict — applied: 
+- fitting-a-concealed-cistern-back-to-wall-toilet voice-violation,grade-level-strict — applied: 
+- fitting-a-domestic-water-softener-bypass-valve grade-level-strict — applied: 
+- fitting-a-double-pole-isolator-switch-for-an-electric-shower voice-violation,grade-level-strict — applied: 
+- fitting-a-low-voltage-garden-lighting-transformer voice-violation,grade-level-strict — applied: 
+- fitting-a-magnetic-central-heating-filter grade-level-strict — applied: 
+- fitting-a-plasterboard-window-reveal-lining grade-level-strict — applied: 
+- fitting-a-plywood-back-panel-to-open-back-kitchen-cabinets grade-level-strict — applied: 
+- fitting-a-pressure-reducing-valve-to-a-mains-supply grade-level-strict — applied: 
+- fitting-a-programmable-room-thermostat grade-level-strict — applied: 
+- fitting-a-two-port-zone-valve-to-a-heating-circuit hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-ventilation-grille-in-an-external-cavity-wall voice-violation,grade-level-strict — applied: 
+- fitting-a-window-opening-restrictor grade-level-strict — applied: 
+- fitting-an-outdoor-security-light-on-an-existing-circuit grade-level-strict — applied: 
+- fitting-an-underfloor-heating-manifold-to-a-push-fit-circuit grade-level-strict — applied: 
+- fitting-deep-buttoning-to-an-upholstered-back grade-level-strict — applied: 
+- fitting-exterior-featheredge-timber-cladding voice-violation,grade-level-strict — applied: 
+- fitting-insulating-plasterboard-to-a-cold-external-wall voice-violation,grade-level-strict — applied: 
+- fitting-polystyrene-coving-with-adhesive voice-violation,grade-level-strict — applied: 
+- fitting-pvc-fascia-board-over-rotted-timber-fascia grade-level-strict — applied: 
+- foraging-blackberry-uk grade-level-strict — applied: 
+- foraging-uk-law-safety-primer grade-level-strict — applied: 
+- four-shaft-bronson-lace grade-level-strict — applied: 
+- frankincense-rosehip-face-serum voice-violation — applied: 
+- freezer-paper-template grade-level-strict — applied: 
+- french-apple-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- french-dip prose-prep-steps — applied: 
+- garden-pond-liner-repair grade-level-strict — applied: 
+- garlic-and-thyme-oxymel grade-level-strict — applied: 
+- genoa-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- gilt-selection-for-breeding grade-level-strict — applied: 
+- ginseng-profile grade-level-strict — applied: 
+- gluten-free-chocolate-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- goat-kid-weaning-and-growth-checks grade-level-strict — applied: 
+- going-paperless-home-systems voice-violation,grade-level-strict — applied: 
+- gooseberry-and-elderflower-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- granny-square-dress-crochet grade-level-strict — applied: 
+- gravity-fed-water-supply-from-spring grade-level-strict — applied: 
+- green-bean-casserole prose-prep-steps — applied: 
+- growing-calendula grade-level-strict — applied: 
+- growing-rosemary-from-cuttings voice-violation — applied: 
+- growing-tomatoes-from-seed voice-violation — applied: 
+- gumbo prose-prep-steps — applied: 
+- hanging-lining-paper-before-decorating voice-violation,grade-level-strict — applied: 
+- harcha opening-pattern-missing-hook — applied: recipe-yield-appended
+- hawthorn-berry-decoction grade-level-strict — applied: 
+- hawthorn-profile voice-violation — applied: 
+- hemp-seed-face-oil voice-violation — applied: 
+- herbal-medicine-and-drug-interactions grade-level-strict — applied: 
+- herd-health-programme-pig-vaccination-calendar grade-level-strict — applied: 
+- honey-almond-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- honey-harvest-uncapping-and-extraction voice-violation,grade-level-strict — applied: 
+- honey-roast-carrots-and-parsnips prose-prep-steps — applied: 
+- honey-walnut-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- house-door-stop-cover grade-level-strict — applied: 
+- incubator-cleaning-and-calibration grade-level-strict — applied: 
+- insulated-plasterboard-dot-and-dab grade-level-strict — applied: 
+- insulating-a-cold-water-storage-tank grade-level-strict — applied: 
+- intarsia-heart-hat grade-level-strict — applied: 
+- intarsia-heart-pullover-crochet grade-level-strict — applied: 
+- internal-wall-insulation-one-room-pattern grade-level-strict — applied: 
+- irish-stew prose-prep-steps — applied: 
+- jacket-potato-with-tuna-mayo-and-sweetcorn prose-prep-steps — applied: 
+- jambalaya grade-level-strict — applied: 
+- key-lime-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- khobz opening-pattern-missing-hook — applied: recipe-yield-appended
+- lace-beret grade-level-strict — applied: 
+- latvian-hat grade-level-strict — applied: 
+- lavender-tincture-for-anxiety grade-level-strict — applied: 
+- legal-predator-control-on-a-smallholding grade-level-strict — applied: 
+- lemon-balm-tincture grade-level-strict — applied: 
+- lemon-curd-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- lemon-shortbread opening-pattern-missing-hook — applied: recipe-yield-appended
+- lemon-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- linked-treble-cushion-cover grade-level-strict — applied: 
+- livestock-insurance-basics-for-smallholders grade-level-strict — applied: 
+- loft-insulation-joists-vs-rafter-level grade-level-strict — applied: 
+- lovage-growing botanical-lecture-opening — applied: 
+- making-a-zippered-scatter-cushion-in-upholstery-fabric voice-violation,grade-level-strict — applied: 
+- managing-finisher-pigs-growth-and-condition grade-level-strict — applied: 
+- managing-rabbit-aggression-in-a-colony voice-violation,grade-level-strict — applied: 
+- manchester-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- marble-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- maternity-pullover-crochet grade-level-strict — applied: 
+- mating-rabbits-and-managing-gestation grade-level-strict — applied: 
+- medication-and-blister-pack-disposal voice-violation,grade-level-strict — applied: 
+- milk-thistle-seed-decoction grade-level-strict — applied: 
+- milking-equipment-cleaning-and-sterilising grade-level-strict — applied: 
+- mint-sauce prose-prep-steps — applied: 
+- motherwort-tincture grade-level-strict — applied: 
+- moussaka prose-prep-steps — applied: 
+- mulligatawny prose-prep-steps — applied: 
+- needlepoint-basketweave-tent-stitch grade-level-strict — applied: 
+- needlepoint-trivet-brick-stitch grade-level-strict — applied: 
+- neem-hair-oil voice-violation — applied: 
+- nettle-seed-tincture-for-adrenal-fatigue grade-level-strict — applied: 
+- notifiable-livestock-disease-reporting grade-level-strict — applied: 
+- oak-cheese-board-handled hero-missing — applied: hero-fill-deferred-to-standalone-script
+- octopus-red-wine prose-prep-steps — applied: 
+- off-peak-tariff-switching-guide voice-violation,grade-level-strict — applied: 
+- olive-oil-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- olive-oil-cake-italian opening-pattern-missing-hook — applied: recipe-yield-appended
+- olive-oil-orange-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- ombre-fade-pullover-crochet grade-level-strict — applied: 
+- on-farm-injection-technique-for-livestock grade-level-strict — applied: 
+- open-back-top-crochet grade-level-strict — applied: 
+- orange-and-almond-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- outdoor-pig-water-supply-in-winter grade-level-strict — applied: 
+- painting-behind-a-radiator-with-a-radiator-roller grade-level-strict — applied: 
+- parkin-yorkshire opening-pattern-missing-hook — applied: recipe-yield-appended
+- pasteis-de-nata opening-pattern-missing-hook — applied: recipe-yield-appended
+- pastel-de-nata opening-pattern-missing-hook — applied: recipe-yield-appended
+- pecan-bourbon-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- pecan-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- peppermint-profile grade-level-strict — applied: 
+- perennial-vegetables-variety-selection voice-violation,grade-level-strict — applied: 
+- phacelia-green-manure grade-level-strict — applied: 
+- pine-juniper-solid-perfume voice-violation — applied: 
+- plum-frangipane-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- polpette-al-sugo prose-prep-steps — applied: 
+- polymer-clay-kaleidoscope-cane-earrings grade-level-strict — applied: 
+- portuguese-custard-tarts opening-pattern-missing-hook — applied: recipe-yield-appended
+- pre-shave-oil voice-violation — applied: 
+- prick-and-pounce-transfer grade-level-strict — applied: 
+- pumpkin-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- rabbit-buck-management-and-conditioning grade-level-strict — applied: 
+- rabbit-coccidiosis-in-kits voice-violation,grade-level-strict — applied: 
+- rabbit-deep-litter-colony-bedding voice-violation,grade-level-strict — applied: 
+- rabbit-ear-infection-recognition-and-treatment grade-level-strict — applied: 
+- rabbit-pasteurellosis-management voice-violation,grade-level-strict — applied: 
+- rabbit-respiratory-infections-early-signs voice-violation,grade-level-strict — applied: 
+- rabbit-vaccination-schedule-uk voice-violation,grade-level-strict — applied: 
+- rabbit-winter-management-outdoor-colony voice-violation,grade-level-strict — applied: 
+- rag-rug-coiled-on-frame-loom grade-level-strict — applied: 
+- re-grouting-and-resealing-a-tiled-shower-enclosure grade-level-strict — applied: 
+- re-webbing-and-re-foaming-a-mid-century-armchair-seat voice-violation,grade-level-strict — applied: 
+- reading-and-completing-livestock-movement-forms voice-violation,grade-level-strict — applied: 
+- red-velvet-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- releasing-hoop-tension grade-level-strict — applied: 
+- repair-cafe-guide grade-level-strict — applied: 
+- repairing-a-continuously-running-wc-cistern voice-violation,grade-level-strict — applied: 
+- repairing-a-hollow-sounding-floor-tile grade-level-strict — applied: 
+- repairing-a-rotten-window-frame-corner-with-epoxy-filler grade-level-strict — applied: 
+- repairing-a-sagging-plasterboard-ceiling grade-level-strict — applied: 
+- restoring-chrome-and-metal-fittings-on-vintage-furniture grade-level-strict — applied: 
+- rhubarb-and-almond-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- rigatoni-con-polpettine grade-level-strict — applied: 
+- roast-carrots prose-prep-steps — applied: 
+- rosehip-chamomile-balm voice-violation — applied: 
+- rosemary-digestif-tea voice-violation,grade-level-strict — applied: 
+- rosemary-hair-oil voice-violation — applied: 
+- rosemary-infusion-for-circulation grade-level-strict — applied: 
+- sage-tea-for-hot-flushes grade-level-strict — applied: 
+- salmon-and-dill-pie prose-prep-steps — applied: 
+- seed-bar prose-prep-steps — applied: 
+- shaved-hazel-walking-stick grade-level-strict — applied: 
+- shea-hair-mask voice-violation — applied: 
+- sheep-footbath-design-and-use grade-level-strict — applied: 
+- shortbread-all-butter-rounds opening-pattern-missing-hook — applied: recipe-yield-appended
+- simnel-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- simnel-cake-easter opening-pattern-missing-hook — applied: recipe-yield-appended
+- smallholding-fencing-seasonal-maintenance voice-violation,grade-level-strict — applied: 
+- smoked-haddock-and-leek-pie prose-prep-steps — applied: 
+- soda-bread-brown-wholemeal opening-pattern-missing-hook — applied: recipe-yield-appended
+- soda-bread-irish opening-pattern-missing-hook — applied: recipe-yield-appended
+- soft-cheese-from-goats-milk grade-level-strict — applied: 
+- solar-cooking-parabolic-cooker voice-violation,grade-level-strict — applied: 
+- solar-panel-degradation-and-replacement grade-level-strict — applied: 
+- solar-pv-export-limit-g98-g99 grade-level-strict — applied: 
+- solar-pv-export-metering-and-registration voice-violation,grade-level-strict — applied: 
+- solar-pv-planning-conservation-area grade-level-strict — applied: 
+- solar-thermal-collector-installation grade-level-strict — applied: 
+- solid-lotion-bar voice-violation — applied: 
+- sourcing-dried-herbs-quality-guide grade-level-strict — applied: 
+- soy-candle-rose-geranium grade-level-strict — applied: 
+- st-johns-wort-infused-oil-for-nerve-pain content-type-opening-mismatch — applied: orientation-from-excerpt
+- star-stitch-cushion-cover grade-level-strict — applied: 
+- steak-and-kidney-pie prose-prep-steps — applied: 
+- stovetop-mac-and-cheese grade-level-strict — applied: 
+- streak-free-glass-cleaner grade-level-strict — applied: 
+- stuffed-cabbage-rolls grade-level-strict — applied: 
+- stuffed-peppers grade-level-strict,prose-prep-steps — applied: 
+- summer-overheating-risk-assessment grade-level-strict — applied: 
+- surface-embroidery-basket-weave-fill hero-missing — applied: hero-fill-deferred-to-standalone-script
+- surface-embroidery-holbein-stitch grade-level-strict — applied: 
+- surface-embroidery-long-and-short-stitch grade-level-strict — applied: 
+- swedish-meatballs grade-level-strict — applied: 
+- sweet-cicely-growing botanical-lecture-opening — applied: 
+- sweet-potato-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- tarte-flambee opening-pattern-missing-hook — applied: recipe-yield-appended
+- thermal-imaging-survey-guide grade-level-strict — applied: 
+- thermal-mass-passive-solar-design grade-level-strict — applied: 
+- tissue-box-cover grade-level-strict — applied: 
+- tool-library-and-community-lending grade-level-strict — applied: 
+- traveling-cable-hat grade-level-strict — applied: 
+- traveling-vine-scarf grade-level-strict — applied: 
+- treacle-ginger-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- treacle-soda-bread opening-pattern-missing-hook — applied: recipe-yield-appended
+- treacle-tart-classic opening-pattern-missing-hook — applied: recipe-yield-appended
+- treating-aspergillosis-in-chicks voice-violation,grade-level-strict — applied: 
+- treating-mycoplasma-in-a-laying-flock grade-level-strict — applied: 
+- triple-chocolate-layer-cake prose-prep-steps — applied: 
+- triple-glazing-decision-guide grade-level-strict — applied: 
+- two-tone-intarsia-cushion grade-level-strict — applied: 
+- underfloor-heating-heat-pump-compatibility grade-level-strict — applied: 
+- underground-rainwater-tank-sizing voice-violation,grade-level-strict — applied: 
+- understanding-varroa-lifecycle grade-level-strict — applied: 
+- varroa-alcohol-wash-monitoring grade-level-strict — applied: 
+- vermicompost-tea-making voice-violation,grade-level-strict — applied: 
+- vetiver-sea-salt-body-scrub voice-violation — applied: 
+- victoria-sponge-with-buttercream opening-pattern-missing-hook — applied: recipe-yield-appended
+- voltage-optimiser-evidence-review grade-level-strict — applied: 
+- walnut-coffee-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- warm-ear-flap-hat grade-level-strict — applied: 
+- wedding-fruit-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- wild-mushroom-and-chestnut-soup prose-prep-steps — applied: 
+- willow-grades-and-varieties grade-level-strict — applied: 
+- wiring-a-three-way-intermediate-lighting-switch grade-level-strict — applied: 
+- wood-ash-in-compost grade-level-strict — applied: 
+- wood-stove-installation-part-j voice-violation,grade-level-strict — applied: 
+- wormery-setup-and-management grade-level-strict — applied: 
+- yorkshire-curd-tart opening-pattern-missing-hook — applied: recipe-yield-appended

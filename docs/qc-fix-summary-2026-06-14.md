@@ -239,3 +239,284 @@ SKIPPED: 0
 - mobile-phone-recycling-and-upgrading: grade-level-strict
 - off-grid-water-pump-maintenance: grade-level-strict
 - solar-pv-racking-and-roof-penetration: grade-level-strict
+
+---
+
+## Run at 21:11:29
+
+Generated: 2026-06-14T21:11:29.534Z
+
+Processed: 621
+PASS: 147
+STILL_BLOCKED: 474
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 968 |
+| voice-violation | 628 |
+| opening-pattern-missing-hook | 263 |
+| prose-prep-steps | 87 |
+| body-missing-method | 71 |
+| ingredient-amount-missing | 57 |
+| medical-disclaimer-nonstandard | 38 |
+| hero-missing | 36 |
+| content-type-opening-mismatch | 17 |
+| em-dash-in-content | 12 |
+| historical-century-in-body | 9 |
+| botanical-lecture-opening | 8 |
+| soft-medical-claim | 1 |
+
+## Still BLOCKED (sample 20)
+
+- growing-cabbage-microgreens: grade-level-strict
+- kale-microgreen-variety-selection: grade-level-strict
+- pea-shoot-variety-selection: grade-level-strict
+- sowing-broccoli-microgreens: grade-level-strict
+- sunflower-shoot-variety-selection: voice-violation, grade-level-strict
+- ashwagandha-profile: grade-level-strict
+- crochet-colour-block-cardigan: grade-level-strict
+- crochet-side-slit-pullover: grade-level-strict
+- crocodile-stitch-cushion-cover: hero-missing
+- dandelion-profile: grade-level-strict
+- echinacea-profile: grade-level-strict
+- fair-isle-triangle-shawl: grade-level-strict
+- feather-fan-triangle-shawl: grade-level-strict
+- gradient-garter-wrap: grade-level-strict
+- granny-square-top-crochet: hero-missing
+- lace-faroese-shawl: grade-level-strict
+- lemon-balm-profile: grade-level-strict
+- needlepoint-berlin-rose-panel: hero-missing
+- needlepoint-pincushion-scotch-stitch: hero-missing
+- rosemary-profile: grade-level-strict
+
+---
+
+## Run at 21:18:19
+
+Generated: 2026-06-14T21:18:19.019Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 21:19:48
+
+Generated: 2026-06-14T21:19:48.562Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 21:20:26
+
+Generated: 2026-06-14T21:20:26.924Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 21:20:56
+
+Generated: 2026-06-14T21:20:56.253Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 21:20:59
+
+Generated: 2026-06-14T21:20:59.138Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 21:21:02
+
+Generated: 2026-06-14T21:21:02.005Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 21:21:04
+
+Generated: 2026-06-14T21:21:04.939Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 21:21:07
+
+Generated: 2026-06-14T21:21:07.806Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 21:21:52
+
+Generated: 2026-06-14T21:21:52.331Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 1 |
+| opening-pattern-missing-hook | 1 |
+
+
+---
+
+## Run at 21:21:55
+
+Generated: 2026-06-14T21:21:55.919Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 1 |
+| opening-pattern-missing-hook | 1 |
+
+
+---
+
+## Run at 21:21:59
+
+Generated: 2026-06-14T21:21:59.371Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 1 |
+| opening-pattern-missing-hook | 1 |
+
+
+---
+
+## Run at 21:22:02
+
+Generated: 2026-06-14T21:22:02.770Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| opening-pattern-missing-hook | 1 |
+
+
+---
+
+## Run at 21:22:06
+
+Generated: 2026-06-14T21:22:06.260Z
+
+Processed: 1
+PASS: 1
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 1 |
+| opening-pattern-missing-hook | 1 |
