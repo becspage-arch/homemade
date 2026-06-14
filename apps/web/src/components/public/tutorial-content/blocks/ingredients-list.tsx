@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { captureClientEvent } from '@/lib/client-analytics'
 import { formatIngredientQuantity, type UnitPreferences } from '@/lib/recipes/units'
 import type { Substitution } from '@/lib/recipes/substitutions'
+import { AddToShoppingList } from '@/components/public/recipes/add-to-shopping-list'
 import { useScale } from '../scale-context'
 
 export interface IngredientsListItem {
@@ -197,6 +198,8 @@ export function IngredientsList({
             : `For ${defaultServings} servings`}
         </p>
       )}
+
+      <AddToShoppingList tutorialSlug={tutorialSlug} tutorialId={tutorialId} />
 
       {grouped.map((group) => (
         <div key={group.label ?? '__main__'} className="ingredients-list-group">

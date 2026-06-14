@@ -42,6 +42,14 @@ Applies to `type = RECIPE` tutorials (all of cooking + baking). Herbal-medicine 
 
 ---
 
+## Shopping list (2026-06-14)
+
+Aisle-sorted shopping list that combines quantities per canonical ingredient across recipes. `lib/recipes/shopping-list.ts` sums compatible units (all masses to grams, all volumes to ml; spoons and counts by exact unit), keeps incompatible forms of one ingredient as separate segments, and groups by `Ingredient.aisle` in a sensible shop-walk order, formatting every amount in the reader's unit preference. The `/shopping-list` stub became a real server page reading `?recipes=slug1,slug2`; a client view adds tick-off checkboxes (localStorage, per ingredientId), print, and clear. Recipes carry an "Add to shopping list" button in the ingredients block that stores slugs on the device (anonymous-friendly; server sync is a later sign-in carrot) and links through with every saved recipe. The SHOPPING_LIST gate stays off, so it is open to everyone today; the page already routes through `checkRecipeGate`, so flipping the gate later needs no page change.
+
+Next: meal-plan schema + calendar (feeds the shopping list from a planned week), then the recipe upload form UI.
+
+---
+
 ## Current state (2026-05-30)
 
 Live at https://homemade.education behind splash gate (cookie `homemade-access=1`). The splash flips off at launch — pre-launch checklist of Rebecca-action items lives in `memory/project_pre_launch_checklist.md`.

@@ -1179,6 +1179,40 @@
   font-style: italic;
 }
 
+.tutorial-content .add-to-shopping {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 4px 0 16px;
+}
+
+.tutorial-content .add-to-shopping-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--color-sage);
+  border-radius: 999px;
+  background: none;
+  color: var(--color-sage);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tutorial-content .add-to-shopping-btn:hover {
+  background: color-mix(in srgb, var(--color-sage) 10%, transparent);
+}
+
+.tutorial-content .add-to-shopping-btn.is-added {
+  background: var(--color-sage);
+  color: #fff;
+}
+
+.tutorial-content .add-to-shopping-view {
+  font-size: 0.85rem;
+  color: var(--color-sage);
+  border-bottom: 1px dotted var(--color-sage);
+}
+
 @media (max-width: 720px) {
   .tutorial-content .ingredients-list {
     padding: 20px 18px;
