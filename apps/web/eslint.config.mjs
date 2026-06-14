@@ -92,5 +92,6 @@ export default defineConfig([
     // loader for local credentials, never part of the deployed bundle.
     'scripts/_s8c-test-generate.ts',
     'scripts/_s8c-upload-passes.ts',
+    'scripts/_s8c-rename-penelope-once.ts',
   ]),
 ])
