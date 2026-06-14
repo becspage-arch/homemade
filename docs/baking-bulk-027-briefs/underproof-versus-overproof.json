@@ -193,7 +193,23 @@
         "content": [
           {
             "type": "text",
-            "text": "Always underproofed: move to a warmer spot, or proof for longer. Always overproofed: proof for less time, or use the cold retard method to slow it down."
+            "text": "Always underproofed: move to a warmer spot, or proof for longer. Always "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "overproofed"
+                }
+              }
+            ],
+            "text": "overproofed"
+          },
+          {
+            "type": "text",
+            "text": ": proof for less time, or use the cold retard method to slow it down."
           }
         ]
       }

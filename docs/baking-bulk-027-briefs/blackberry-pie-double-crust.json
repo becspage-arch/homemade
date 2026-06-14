@@ -23,10 +23,14 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "The pastry can be made 2 days ahead. The filling holds overnight in the fridge.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "dessert",
-    "mood": ["freezerFriendly"],
+    "mood": [
+      "freezerFriendly"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": null,
     "foundational": false,
@@ -50,10 +54,22 @@
     }
   },
   "recipeTools": [
-    { "slug": "pie-dish", "isOptional": false },
-    { "slug": "rolling-pin", "isOptional": false },
-    { "slug": "digital-scales", "isOptional": false },
-    { "slug": "pastry-brush", "isOptional": true }
+    {
+      "slug": "pie-dish",
+      "isOptional": false
+    },
+    {
+      "slug": "rolling-pin",
+      "isOptional": false
+    },
+    {
+      "slug": "digital-scales",
+      "isOptional": false
+    },
+    {
+      "slug": "pastry-brush",
+      "isOptional": true
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -64,93 +80,174 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Blackberry pie is dark, jammy, and slightly seedy, sweet with a good edge of sharpness. Wild berries are more acidic than cultivated ones. If using wild hedgerow berries, add an extra 30 g of sugar to the filling." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Ingredients" }]
-      },
-      {
-        "type": "ingredientsList",
-        "attrs": { "servings": 8 },
-        "content": [
           {
-            "type": "ingredient",
-            "attrs": { "slug": "plain-flour", "amount": 400, "unit": "g", "display": "plain flour" }
-          },
-          {
-            "type": "ingredient",
-            "attrs": { "slug": "unsalted-butter", "amount": 200, "unit": "g", "display": "cold unsalted butter" }
-          },
-          {
-            "type": "ingredient",
-            "attrs": { "slug": "caster-sugar", "amount": 30, "unit": "g", "display": "caster sugar", "prepNote": "for the pastry" }
-          },
-          {
-            "type": "ingredient",
-            "attrs": { "slug": "eggs", "amount": 1, "unit": "whole", "display": "egg", "prepNote": "for egg wash" }
-          },
-          {
-            "type": "ingredient",
-            "attrs": { "slug": "blackberries", "amount": 900, "unit": "g", "display": "blackberries", "prepNote": "fresh or frozen (defrost and drain if frozen)" }
-          },
-          {
-            "type": "ingredient",
-            "attrs": { "slug": "caster-sugar", "amount": 180, "unit": "g", "display": "caster sugar", "prepNote": "for the filling" }
-          },
-          {
-            "type": "ingredient",
-            "attrs": { "slug": "cornflour", "amount": 35, "unit": "g", "display": "cornflour" }
-          },
-          {
-            "type": "ingredient",
-            "attrs": { "slug": "lemon", "amount": 1, "unit": "whole", "display": "lemon", "prepNote": "juice only" }
-          },
-          {
-            "type": "ingredient",
-            "attrs": { "slug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "display": "ground cinnamon" }
+            "type": "text",
+            "text": "Blackberry pie is dark, jammy, and slightly seedy, sweet with a good edge of sharpness. Wild berries are more acidic than cultivated ones. If using wild hedgerow berries, add an extra 30 g of sugar to the filling."
           }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Make the pastry" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "for the pastry",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "for egg wash",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "blackberries",
+              "amount": 900,
+              "unit": "g",
+              "prepNote": "fresh or frozen (defrost and drain if frozen)",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 180,
+              "unit": "g",
+              "prepNote": "for the filling",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cornflour",
+              "amount": 35,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "juice only",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the pastry"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Rub the cold butter into the flour, 30 g caster sugar, and a pinch of salt until the mixture resembles coarse crumbs. Add 5 to 6 tablespoons cold water and bring to a dough. Divide two thirds / one third for the base and lid. Wrap and chill for 30 minutes." }
+          {
+            "type": "text",
+            "text": "Rub the cold butter into the flour, 30 g caster sugar, and a pinch of salt until the mixture resembles coarse crumbs. Add 5 to 6 tablespoons cold water and bring to a dough. Divide two thirds / one third for the base and lid. Wrap and chill for 30 minutes."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Make the filling" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the filling"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Toss the blackberries gently with 180 g caster sugar, 35 g cornflour, the lemon juice, and the cinnamon. The cornflour will absorb the berry juices during baking and prevent the filling from flooding out when the pie is cut." }
+          {
+            "type": "text",
+            "text": "Toss the blackberries gently with 180 g caster sugar, 35 g cornflour, the lemon juice, and the cinnamon. The cornflour will absorb the berry juices during baking and prevent the filling from flooding out when the pie is cut."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Assemble and bake" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Roll the larger piece of pastry to 4 mm and line a 23 cm pie dish with a 2 cm overhang. Pile in the blackberry filling, it will look too full but sinks during baking. Roll the remaining pastry to a lid and press over the filling. Crimp the edges. Cut five or six small vents in the lid. Brush with beaten egg and scatter over a little extra caster sugar." }
+          {
+            "type": "text",
+            "text": "Assemble and bake"
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Bake at 200°C (conventional) for 20 minutes, then drop to 180°C for a further 25 to 30 minutes, until the crust is deep golden and the blackberry filling is bubbling through the vents. Rest for 30 minutes before serving. Serve warm with clotted cream or ice cream." }
+          {
+            "type": "text",
+            "text": "Roll the larger piece of pastry to 4 mm and line a 23 cm pie dish with a 2 cm overhang. Pile in the blackberry filling, it will look too full but sinks during baking. Roll the remaining pastry to a lid and press over the filling. Crimp the edges. Cut five or six small vents in the lid. Brush with beaten egg and scatter over a little extra caster sugar."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bake at 200°C (conventional) for 20 minutes, then drop to 180°C for a further 25 to 30 minutes, until the crust is deep golden and the blackberry filling is bubbling through the vents. Rest for 30 minutes before serving. Serve warm with clotted cream or ice cream."
+          }
         ]
       }
     ]

@@ -23,10 +23,15 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Make up to 5 days ahead. Refrigerate in a single layer in an airtight container.",
-    "dietaryFlags": ["vegetarian", "glutenFree"],
+    "dietaryFlags": [
+      "vegetarian",
+      "glutenFree"
+    ],
     "cuisine": "french",
     "mealType": "dessert",
-    "mood": ["makeAhead"],
+    "mood": [
+      "makeAhead"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false,
@@ -50,13 +55,29 @@
     }
   },
   "recipeTools": [
-    { "slug": "sugar-thermometer", "isOptional": false },
-    { "slug": "small-saucepan", "isOptional": false },
-    { "slug": "mixing-bowl-small", "isOptional": false },
-    { "slug": "instant-read-thermometer", "isOptional": true }
+    {
+      "slug": "sugar-thermometer",
+      "isOptional": false
+    },
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-small",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": true
+    }
   ],
   "glossaryTerms": [
-    { "slug": "caramel-ganache", "term": "Caramel ganache", "definition": "A ganache where caramelised sugar is made first and cream added to the hot caramel before chocolate is stirred in. The result is richer and more complex than a plain cream-and-chocolate ganache." }
+    {
+      "slug": "caramel-ganache",
+      "term": "Caramel ganache",
+      "definition": "A ganache where caramelised sugar is made first and cream added to the hot caramel before chocolate is stirred in. The result is richer and more complex than a plain cream-and-chocolate ganache."
+    }
   ],
   "techniqueSlugs": [],
   "criticalTechniques": [],
@@ -66,70 +87,136 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Salted caramel truffles have a " },
           {
             "type": "text",
-            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "caramel-ganache" } }],
+            "text": "Salted caramel truffles have a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "caramel-ganache"
+                }
+              }
+            ],
             "text": "caramel ganache"
           },
-          { "type": "text", "text": " centre enclosed in a thin coating of dark chocolate. The sea salt is added in two places: a pinch in the ganache for flavour and a small flake on the outside for contrast. If hot syrup touches skin, run cold water over it for at least ten minutes and seek medical care if needed." }
-        ]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Ingredients" }]
-      },
-      {
-        "type": "ingredientsList",
-        "attrs": { "servings": 20 },
-        "content": [
           {
-            "type": "ingredient",
-            "attrs": { "slug": "caster-sugar", "amount": 150, "unit": "g", "display": "caster sugar", "prepNote": "for the caramel" }
-          },
-          {
-            "type": "ingredient",
-            "attrs": { "slug": "double-cream", "amount": 120, "unit": "ml", "display": "double cream", "prepNote": "warmed" }
-          },
-          {
-            "type": "ingredient",
-            "attrs": { "slug": "unsalted-butter", "amount": 30, "unit": "g", "display": "unsalted butter" }
-          },
-          {
-            "type": "ingredient",
-            "attrs": { "slug": "dark-chocolate", "amount": 100, "unit": "g", "display": "dark chocolate (70%)", "prepNote": "finely chopped" }
-          },
-          {
-            "type": "ingredient",
-            "attrs": { "slug": "sea-salt-flakes", "amount": 1, "unit": "pinch", "display": "sea salt flakes", "prepNote": "plus extra for finishing" }
-          },
-          {
-            "type": "ingredient",
-            "attrs": { "slug": "dark-chocolate", "amount": 200, "unit": "g", "display": "dark chocolate (70%)", "prepNote": "for coating" }
+            "type": "text",
+            "text": " centre enclosed in a thin coating of dark chocolate. The sea salt is added in two places: a pinch in the ganache for flavour and a small flake on the outside for contrast. If hot syrup touches skin, run cold water over it for at least ten minutes and seek medical care if needed."
           }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Make the caramel ganache" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 20,
+          "items": [
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "for the caramel",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 120,
+              "unit": "ml",
+              "prepNote": "warmed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dark-chocolate",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": "plus extra for finishing",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dark-chocolate",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "for coating",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the caramel ganache"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Cook 150 g caster sugar in a dry pan to a deep amber caramel, 175°C. Remove from the heat and immediately pour in the warmed cream, it will bubble violently. Stir until smooth. Add the butter and stir until glossy. Pour the hot caramel over 100 g chopped dark chocolate. Stir until smooth. Add a pinch of sea salt flakes. Pour into a shallow dish and refrigerate for 1 hour until firm enough to roll." }
+          {
+            "type": "text",
+            "text": "Cook 150 g caster sugar in a dry pan to a deep amber caramel, 175°C. Remove from the heat and immediately pour in the warmed cream, it will bubble violently. Stir until smooth. Add the butter and stir until glossy. Pour the hot caramel over 100 g chopped dark chocolate. Stir until smooth. Add a pinch of sea salt flakes. Pour into a shallow dish and refrigerate for 1 hour until firm enough to roll."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Roll and dip" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Roll and dip"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Scoop the firm ganache into small rounds and roll into balls between cold palms. Place on a lined tray and refrigerate until firm. Melt 200 g dark chocolate over a barely simmering pan of water, then cool to 31°C (tempered, glossy and slightly thick). Using a fork, dip each ganache ball into the chocolate, allow the excess to drain, and place on a lined tray. Immediately drop a single flake of sea salt on top before the coating sets." }
+          {
+            "type": "text",
+            "text": "Scoop the firm ganache into small rounds and roll into balls between cold palms. Place on a lined tray and refrigerate until firm. Melt 200 g dark chocolate over a barely simmering pan of water, then cool to 31°C (tempered, glossy and slightly thick). Using a fork, dip each ganache ball into the chocolate, allow the excess to drain, and place on a lined tray. Immediately drop a single flake of sea salt on top before the coating sets."
+          }
         ]
       }
     ]
