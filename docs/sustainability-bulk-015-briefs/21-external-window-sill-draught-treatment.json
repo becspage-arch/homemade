@@ -1,0 +1,134 @@
+{
+  "slug": "external-window-sill-draught-treatment",
+  "title": "Sealing draughts at external window sills",
+  "subtitle": "Pointing the sill-to-wall junction and sealing the frame base to stop cold air entry without blocking drainage",
+  "excerpt": "A cracked mortar joint at the external sill-to-wall junction allows cold air to track into the window reveal, wetting the wall above the internal sill and driving draughts. The fix is a flexible pointing compound, not a rigid mortar, to accommodate the differential movement between masonry and frame.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BRE Digest 346 on airtightness in dwellings (public domain). LABC guidance on window installation and sealing. NHBC chapter 6.2 on external masonry, joinery sealing, and weather exclusion details.",
+  "approximateCostGbp": 25,
+  "paybackYears": 1,
+  "recipeTools": [
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": true },
+    { "slug": "utility-knife", "isOptional": false }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "silicone-sealant",
+      "term": "Silicone sealant",
+      "definition": "A flexible polymer compound used to seal joints between dissimilar materials. Unlike mortar, it accommodates movement without cracking and is waterproof once cured."
+    },
+    {
+      "slug": "draught-stripping",
+      "term": "Draught stripping",
+      "definition": "Materials applied to window and door frames, sills, and openings to block uncontrolled air infiltration. Different from ventilation, which is controlled air exchange."
+    }
+  ],
+  "techniqueSlugs": ["filling-gaps-around-skirting-boards", "sealing-loft-hatch-draughts"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Window frames and masonry move at different rates with temperature and moisture change. The mortar pointing originally installed between the frame and the sill cracks within a few years and allows air and water to track into the wall. This is one of the most common and least addressed draughts in older properties. The repair uses a flexible " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "silicone-sealant" } }],
+            "text": "silicone sealant"
+          },
+          { "type": "text", "text": " rather than a rigid mortar." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where to look" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The external joint between the underside of the window frame and the top surface of the stone, concrete, or rendered sill." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The junction between the frame side jambs and the outer masonry reveal." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The junction between the internal sill board and the plaster. Cold air that enters from outside exits here as a draught on the inner surface." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Repair procedure" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut out any loose or cracked mortar with a utility knife or narrow chasing tool. Remove all loose material and brush clean." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Insert a closed-cell foam backer rod into any gap wider than 6 mm. This gives the sealant something to press against and controls the depth of the bead." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply a continuous bead of low-modulus silicone (the type specified for façade movement joints). Tool smooth with a wetted finger or a sealant smoother." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not seal the drainage weep holes at the underside of the sill, if present. These slots are intentional and drain any water that enters the window cavity." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Internal " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "draught-stripping" } }],
+            "text": "draught stripping"
+          },
+          { "type": "text", "text": " at the sill" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If cold air is entering past the internal sill board, fill the gap between the board and the masonry below with expanding foam. Trim flush when cured and finish with paintable decorator's caulk. This is common where PVC windows have replaced wooden frames. The original reveal opening is often larger than the new frame, leaving a gap filled with a loose PVC sub-sill." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "New silicone bead lifts away from the frame within weeks",
+              "cause": "The frame surface was not clean and dry at the time of application, or a paintable acrylic sealant was used on a non-porous PVC or aluminium frame",
+              "fix": "Remove the old bead fully, clean the frame with isopropyl alcohol, and re-apply a silicone-based sealant (not acrylic) rated for plastics and metals."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "slug": "trickle-vent-replacement-energy-saving",
+  "title": "Replacing open trickle vents with controlled ventilators",
+  "subtitle": "Balancing background ventilation against heat loss after draught-proofing",
+  "excerpt": "Trickle vents in window frames provide background ventilation as required by Building Regulations Part F. A standard open slot vent loses more heat than a controlled vent with a humidity-sensitive or manually closeable flap. This guide covers how to replace an open slot with a controllable vent without affecting ventilation compliance.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Building Regs Approved Document F (2022 edition) on background ventilation requirements for habitable rooms. CIBSE Guide B2 on natural ventilation. Energy Saving Trust guidance on draught-proofing and ventilation balance.",
+  "approximateCostGbp": 60,
+  "paybackYears": 2,
+  "recipeTools": [
+    { "slug": "screwdriver-set-phillips-slot", "isOptional": false },
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": true }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "trickle-vent",
+      "term": "Trickle vent",
+      "definition": "A small slot ventilator built into a window frame that provides continuous background air infiltration to habitable rooms."
+    },
+    {
+      "slug": "part-f",
+      "term": "Part F",
+      "definition": "Building Regulations Approved Document F, covering ventilation requirements for dwellings. Sets minimum background ventilation levels for each room type."
+    },
+    {
+      "slug": "draught-stripping",
+      "term": "Draught stripping",
+      "definition": "Sealing strips applied around doors, windows, and openings to block unwanted cold air infiltration."
+    }
+  ],
+  "techniqueSlugs": ["ventilation-after-draughtproofing", "insulation-and-ventilation-together"],
+  "criticalTechniques": ["ventilation-after-draughtproofing"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Trickle vents are the thin slot openings built into the head or side of a window frame. They are usually 5,000 mm² equivalent area or larger, as required by " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "part-f" } }],
+            "text": "Part F"
+          },
+          { "type": "text", "text": " for habitable rooms. An open slot vent that cannot be closed passes cold air into the room even on a still night in January. A humidity-sensitive " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "trickle-vent" } }],
+            "text": "trickle vent"
+          },
+          { "type": "text", "text": " opens further when humidity rises and closes almost fully in dry, cold weather. A manual type lets the occupant open or close as needed." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After draught-proofing a room, a trickle vent may be the only controlled route for fresh air. Replacing a fixed open slot with a controlled vent keeps the room compliant and cuts heat loss." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need to know first" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Measure the existing vent slot width and height before ordering a replacement. Most replacement trickle vents are 500 mm wide but some frames have 400 mm or 600 mm slots. Height is typically 12 or 18 mm." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Note the frame material. uPVC, timber, and aluminium frames all have different slot profiles. Some manufacturers supply clips that fit both uPVC and timber; others are frame-specific." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Replacement vents must provide at least the same equivalent area as the originals. Part F specifies 5,000 mm² for living rooms, 2,500 mm² for bedrooms, 2,500 mm² for kitchens. Do not install a smaller vent than the one removed." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Replacing the vent" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the window fully to access the slot from outside if the vent is in the top of the frame. On sash windows, raise the lower sash and lower the upper sash for access." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Most open-slot covers are held by two or four clips. Use a flat-bladed screwdriver to lever them from the inside. On older timber frames, the slot cover may be screwed in place." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Clip the outer weather cover into the slot from outside. It should snap into the existing clips or rebate without modification." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Clip the inner vent body into place from inside. On humidity-sensitive vents, the flap faces inward. Test that the flap opens and closes freely." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "On a manual vent, open the vent fully and note the maximum equivalent area. This should match or exceed the original slot area." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Kitchens and bathrooms: high-humidity rooms benefit most. A humidity-sensitive vent opens as steam builds and closes as the air dries." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the existing frame slot is narrower than the replacement vent body, the slot can be widened by 2 to 3 mm with a sharp chisel (timber) or a narrow file (uPVC). More than 3 mm widening is not recommended for uPVC." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Draught-proofed rooms where the trickle vent was the only background ventilation: check whether one vent is enough. Part F sets minimum air change rates; a second vent in an adjacent window may be needed." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "draught-stripping" } }], "text": "draught-proofing" },
+          { "type": "text", "text": " and controlled vents do together" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A draught-proofed room with a controlled trickle vent hits the Part F balance. Fresh air is available when needed but the vent can close on cold nights." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Replacement vent whistles in wind",
+              "cause": "The outer weather cover is not fully engaged with the frame, leaving a small gap around the vent body",
+              "fix": "Remove and re-seat the outer cover; press firmly until it snaps flat against the frame."
+            },
+            {
+              "symptom": "Room feels stuffy after fitting a humidity-sensitive vent in closed position",
+              "cause": "The vent is staying closed because the room's relative humidity is below the opening threshold",
+              "fix": "Set the vent to manual open for the first week to establish air quality, then return to auto. If stuffiness persists, consider a second vent in the room."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

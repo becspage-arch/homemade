@@ -1,0 +1,147 @@
+{
+  "slug": "condensation-vs-leaking-roof-diagnosis",
+  "title": "Diagnosing condensation versus a leaking roof",
+  "subtitle": "How to tell whether ceiling damp is from above or from inside, before calling a roofer",
+  "excerpt": "A damp patch on a ceiling has two possible sources: rainwater from a defect in the roof above, or water vapour condensing on a cold surface from inside the building. The repair routes are completely different. Calling a roofer for a condensation problem, or a ventilation specialist for a genuine leak, wastes both money and time.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BRE Digest 369 on condensation in buildings (public domain). RICS guidance on diagnosing damp in buildings. BRE report 'Understanding Dampness' for the full taxonomy of damp causes in UK housing.",
+  "approximateCostGbp": 0,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "thermal-imaging-camera", "isOptional": true }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "interstitial-condensation",
+      "term": "Interstitial condensation",
+      "definition": "Condensation that forms within the building fabric rather than on a visible surface, when warm moist air moves into a cold zone and reaches the dew point."
+    },
+    {
+      "slug": "dew-point",
+      "term": "Dew point",
+      "definition": "The temperature at which air becomes saturated and water vapour condenses into liquid. Depends on both temperature and humidity."
+    }
+  ],
+  "techniqueSlugs": ["roof-space-ventilation-and-insulation", "insulation-and-ventilation-together"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A damp patch on a bedroom ceiling in January is more likely to be condensation than a roof leak. The two are confused often because both appear as discolouration or wetness in the same locations: near the eaves, around roof windows, and at ceiling-wall junctions. The pattern, timing, and behaviour of the damp distinguishes them." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Signs pointing to condensation" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Damp patch appears in cold weather and dry weather alike, or is present through winter and absent in summer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The patch is widespread and diffuse rather than a defined drip point." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dew-point" } }],
+                "text": "dew point"
+              },
+              { "type": "text", "text": " is visible on cold surfaces before the ceiling: single-glazed windows stream with condensation, and tiles and mirrors fog up." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Loft inspection after rain shows the underside of the felt is dry." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The room is poorly ventilated (no extractor in bathroom, cooking without an extractor, drying laundry indoors)." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Signs pointing to a roof leak" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Damp patch appears only after or during rain, not in dry cold spells." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The patch has a distinct wet edge and a central drip point." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Loft inspection during or immediately after rain shows wet roofing felt or wet timbers above the stain." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The damp is directly below a flashing, a roof window, or a chimney stack junction." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The loft inspection" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Go into the loft during rain, or within 30 minutes of rain stopping. Look for wet spots on the felt underlay or wet timber from above. Trace any wet felt diagonally: water travels along timbers before dripping, so the drip point on the ceiling may be 1 to 2 m from the actual entry point in the roof." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Diagnosing " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "interstitial-condensation" } }], "text": "interstitial condensation" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Interstitial condensation forms within the roof structure when warm humid air from the room below migrates into the cold roof space through gaps in the ceiling. The felt underside may be damp throughout the loft without any specific entry point. This is controlled by improving ceiling airtightness and loft ventilation, not by a roofer." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Damp patch appears after a roofer has repaired the suspected entry point",
+              "cause": "The leak source has not been correctly identified, or condensation is the cause rather than a leak",
+              "fix": "Conduct the loft inspection timing test again. If the patch persists in dry cold weather, treat as condensation and address ventilation and humidity first."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

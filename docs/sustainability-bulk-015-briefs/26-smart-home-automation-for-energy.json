@@ -1,0 +1,126 @@
+{
+  "slug": "smart-home-automation-for-energy",
+  "title": "Smart home controls for energy reduction",
+  "subtitle": "Time-of-use tariffs, smart thermostats, and plug-in monitoring — what actually reduces bills",
+  "excerpt": "Smart home technology for energy falls into two categories: controls that reduce consumption (smart thermostats, occupancy sensors, hot water scheduling) and monitoring that makes consumption visible (smart meters, plug-in monitors, whole-house dashboards). Monitoring alone does not reduce bills; the controls and the habit changes they enable do.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "solar-and-energy",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Carbon Trust guidance on smart metering and energy management in homes. BEIS/Ofgem Smart Meter rollout guidance for consumers. EST (Energy Saving Trust) evidence review on smart thermostats: average 8-15% space heating reduction (2022 report). Octopus Energy Agile tariff structure documentation for time-of-use examples.",
+  "approximateCostGbp": 200,
+  "paybackYears": 3,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "time-of-use-tariff",
+      "term": "Time-of-use tariff",
+      "definition": "An electricity tariff where the unit price varies by time of day. Off-peak periods (typically overnight and weekend mornings) carry a lower price; peak periods (typically 4 pm to 7 pm weekday) carry a higher price. A smart meter is required."
+    },
+    {
+      "slug": "smart-thermostat",
+      "term": "Smart thermostat",
+      "definition": "A programmable thermostat with remote control via a smartphone app and, in some models, occupancy sensing and heating optimisation. Replaces a basic programmable thermostat."
+    }
+  ],
+  "techniqueSlugs": ["heat-pump-grant-application-process", "electric-panel-heater-efficiency-guide"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Evidence reviews find that smart thermostats with occupancy sensing reduce space heating by 8 to 15% compared to basic programmable thermostats. The saving comes from finer temperature control and better scheduling. The reduction is largest in homes where the existing heating was poorly controlled." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Smart thermostats" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Multi-zone systems (Tado, Hive, Nest) add individual thermostatic radiator valve heads to each room. Zones that are unoccupied are held at a setback temperature (14 to 16°C) rather than the comfort temperature." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "smart-thermostat" } }],
+                "text": "smart thermostat"
+              },
+              { "type": "text", "text": " replaces the room thermostat only; it does not replace the boiler programmer. In most systems the two are wired separately." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat pump systems have their own controller for low-temperature heating. Do not override it with a standard smart thermostat; check compatibility before purchase." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Time-of-use tariffs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "time-of-use-tariff" } }],
+            "text": "time-of-use tariff"
+          },
+          { "type": "text", "text": " enables dishwashers, washing machines, and EV chargers to run overnight at lower rates. At 2025/26 cap rates, peak electricity costs 27p/kWh and an overnight off-peak rate is typically 7 to 10p/kWh. Running a 2 kWh dishwasher cycle at off-peak instead of peak saves around 34 to 40p per cycle." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Smart meters and in-home displays" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A smart meter does not reduce energy use directly. It makes energy use visible in near-real-time via the in-home display. Studies show a 3 to 5% reduction in consumption from awareness effects alone in the first year after installation, with effects tapering off after 12 months as behaviour adjusts. Smart meters are free to install (offered by suppliers as part of the national rollout); SMETS2 meters work across supplier switches." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Plug-in energy monitors" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A plug-in energy monitor (Brennenstuhl PM 231 or similar) measures the power draw of individual appliances. Common findings: an old electric oven draws 3 to 4 kW versus a modern A-rated model at 2.2 kW; a chest freezer from 2005 draws 200 to 400 kWh per year versus a modern A-rated model at 100 to 150 kWh. These measurements identify high-priority appliance replacements." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Smart thermostat has been installed but the bill reduction is not measurable",
+              "cause": "The base case (before smart thermostat) was already well-controlled, or the occupancy sensing is not detecting absence correctly",
+              "fix": "Check the thermostat's heating history log in the app. If the system was calling for heat during periods when the house was empty, the occupancy detection is not triggering properly. Recalibrate the motion detection window or set a manual schedule."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

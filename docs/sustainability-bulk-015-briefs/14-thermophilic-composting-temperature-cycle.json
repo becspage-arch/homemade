@@ -1,0 +1,138 @@
+{
+  "slug": "thermophilic-composting-temperature-cycle",
+  "title": "Managing the temperature cycle in a hot compost heap",
+  "subtitle": "When to turn, when to add water, and how to confirm pathogen and weed seed kill",
+  "excerpt": "A hot compost heap progresses through a predictable temperature cycle: a fast rise to 55 to 70°C within the first week, a plateau that lasts days to a week, then a gradual decline as the most available carbon is consumed. Understanding where in this cycle a heap sits tells you whether to turn, water, or wait.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "USDA Compost Facility Operating Guide for temperature management and pathogen reduction. Cornell Composting Guide (public domain). WRAP PAS 100 compost quality standard for pathogen reduction thresholds. Howard (1947) 'The Soil and Health' (public domain) on hot composting principles.",
+  "approximateCostGbp": 0,
+  "paybackYears": 0,
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": false },
+    { "slug": "muck-fork", "isOptional": false }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "hot-compost",
+      "term": "Hot composting",
+      "definition": "A composting method using a large pile with a balanced C:N ratio, achieving temperatures above 55°C that kill weed seeds and pathogens."
+    },
+    {
+      "slug": "thermophilic-bacteria",
+      "term": "Thermophilic bacteria",
+      "definition": "Heat-tolerant microorganisms that drive the high-temperature phase of composting, active between 40 and 70°C."
+    }
+  ],
+  "techniqueSlugs": ["compost-thermometer-use-and-hot-heap-management", "hot-composting-activation-sequence", "turning-a-hot-compost-heap"],
+  "criticalTechniques": ["compost-thermometer-use-and-hot-heap-management"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A correctly built " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "hot-compost" } }],
+            "text": "hot compost"
+          },
+          { "type": "text", "text": " heap passes through three distinct phases. Phase 1 is a rapid rise to 55 to 70°C as " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermophilic-bacteria" } }],
+            "text": "thermophilic bacteria"
+          },
+          { "type": "text", "text": " consume the most available carbon compounds. Phase 2 is a maintained plateau above 55°C that provides pathogen and weed seed kill. Phase 3 is a decline as carbon is depleted and the heap cools to ambient temperature for curing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The temperature timeline" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Day 1 to 3: temperature rises from ambient to above 40°C as mesophilic bacteria get started." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Day 3 to 7: temperature reaches 55 to 70°C. This is the thermophilic phase. Steam is visible from the heap in cold weather." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Day 7 to 14: temperature drops to 45 to 55°C as the fastest-available carbon is consumed. This is the signal to turn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After turning: temperature rises again to 55 to 65°C within 24 to 48 hours, then follows the same decline pattern." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to turn" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Turn when temperature falls below 45°C on a measurement taken at 200 mm depth. If temperature stays above 55°C for more than five days without turning, the pile may be approaching dryness or the core may be running out of available carbon. Check moisture first: probe a handful from the centre. It should feel like a wrung-out sponge. If dry, add water and re-check temperature after 24 hours before turning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Confirming pathogen kill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "PAS 100 (the UK quality standard for composted materials used in horticulture) requires the entire heap to have spent at least 3 consecutive days above 55°C. For a home heap, achieve this by turning the outer layers into the hot core at least three times during the thermophilic phase." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Weed seed kill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most annual and biennial weed seeds are killed at 55°C for 1 hour. Persistent perennial seeds (dock, bindweed) require 60°C for 3 hours. After three turning events during which the outer material has each spent time in the hot core, weed seed kill is effective for both groups. Do not add fresh weed material after the last turning cycle." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Temperature does not exceed 40°C after the first week",
+              "cause": "Pile too small (under 1 m³), too dry, or C:N ratio too high (too much carbon)",
+              "fix": "Add nitrogen material (fresh grass, chicken manure), water if dry, and compress the pile slightly to reduce heat loss. Rebuild to at least 1 m x 1 m x 1 m if too small."
+            },
+            {
+              "symptom": "Temperature drops sharply to ambient after a turning event",
+              "cause": "The heap is entering the cooling phase and the available carbon is largely consumed",
+              "fix": "Curing has begun. Leave the heap undisturbed for 4 to 8 weeks. Do not add fresh material to a curing heap."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "slug": "tool-restoration-and-maintenance",
+  "title": "Restoring and maintaining hand tools",
+  "subtitle": "Cleaning rust, sharpening edges, and preserving handles so tools last decades",
+  "excerpt": "A rusted hand saw, a blunted chisel, or a cracked handle does not mean the tool is finished. Most hand tools can be fully restored with basic abrasives, a sharpening stone, and linseed oil. A well-maintained hand tool has an indefinite service life: Victorian-era tools are still in regular use in craft workshops.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "waste-reduction",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Lie-Nielsen Toolworks restoration guides (public domain). WD-40 and 3-in-1 Oil manufacturer specifications for rust removal on steel. Association of Traditional Building Artists and Craftworkers: hand tool sharpening guidance. Sandpaper grit standards: FEPA P-grade system.",
+  "approximateCostGbp": 30,
+  "paybackYears": 0,
+  "recipeTools": [
+    { "slug": "utility-knife", "isOptional": true }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "wire-wheel",
+      "term": "Wire wheel",
+      "definition": "A steel-bristle brush attachment for a drill or angle grinder, used to remove loose rust and debris from metal surfaces without removing significant base metal."
+    }
+  ],
+  "techniqueSlugs": ["repair-cafe-guide", "mobile-phone-recycling-and-upgrading"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The manufacturing of new hand tools carries significant embodied energy: steel production, casting or forging, heat treatment, and handle material. A restored tool reuses all of this embedded value. For common tools such as chisels, planes, and saws, restoration is often faster than driving to a hardware shop for a replacement." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Rust removal" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Surface rust on tools that have not pitted: apply penetrating oil (3-in-1 or similar) and leave for 30 minutes. Scrub with wire wool (grade 000) or a " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "wire-wheel" } }],
+                "text": "wire wheel"
+              },
+              { "type": "text", "text": " on a drill at low speed. Wipe clean and apply a protective oil film." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Moderate rust with pitting: soak in a bath of white vinegar for 4 to 12 hours. The acetic acid dissolves iron oxide without significant base metal removal. Scrub with wire wool, rinse in clean water, and dry immediately. Apply oil." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heavy rust or scale: electrolytic rust removal is most effective. A small tank of washing soda solution (1 tablespoon per litre), a sacrificial steel anode (a piece of rebar), and a 12V power supply. Negative (black) terminal to the tool, positive (red) to the anode. Do not run indoors; hydrogen gas is produced. Run for 2 to 12 hours. Scrub and dry after." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sharpening cutting tools" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Chisels and plane blades: flatten the back of the blade on a 120-grit waterstone or diamond plate first. A mirror-flat back is the foundation for a keen edge. Then work the bevel at the correct angle (25° for bench chisels, 30° for paring) through 240, 600, and 1,200 grit. A leather strop with compound finishes the edge." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hand saw: a saw file (taper file, sized to the tooth pitch) re-profiles dulled teeth. Alternate filing: each tooth is filed on alternating sides, maintaining the set (the offset of adjacent teeth). Setting a saw (re-bending the teeth to the correct offset) requires a saw set tool." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Axe and hatchet: use a bastard file (the coarsest grade) to shape the primary bevel. Then refine with a medium sharpening stone, moving in a circular motion around the blade curve." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Handle restoration" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dried or cracked wooden handles: sand back to bare wood (80 then 180 grit), apply raw linseed oil, leave to penetrate for 24 hours, and repeat two to three times. Raw linseed oil takes 3 to 5 days to cure fully; boiled linseed oil dries in 24 hours but contains metallic driers." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Split handles: a split along the grain can be repaired with PVA glue, clamped and left 24 hours. If the handle is cracked at the tool head end (ferrule area), this is a safety issue: replace the handle." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Storage to prevent future rust" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Rust forms when moisture and oxygen contact bare steel. Store tools in a dry environment with a light film of oil on all exposed steel surfaces. Camellia oil (used for Japanese woodworking tools) is odourless and fine-grade; 3-in-1 oil works equally well. A piece of camphor wood in a tool chest absorbs moisture and inhibits rust formation." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Chisel edge dulls again after a few minutes of use despite careful sharpening",
+              "cause": "The steel is soft or the edge angle is too acute (too sharp an angle is weak and folds under moderate cutting force)",
+              "fix": "Increase the secondary bevel angle by 2 to 3 degrees. This creates a slightly less acute but more durable edge. Old tool steel is often soft if the tool has been ground in an overheated bench grinder, which draws the temper from the steel."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

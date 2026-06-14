@@ -1,0 +1,190 @@
+{
+  "slug": "end-terrace-wall-heat-loss-assessment",
+  "title": "Assessing heat loss from an end-terrace flank wall",
+  "subtitle": "Measuring the extra exposure and deciding whether solid wall insulation is worthwhile",
+  "excerpt": "The exposed flank wall of an end-terrace house loses roughly 25 to 40% more heat than the same wall in a mid-terrace. This guide shows how to estimate that extra loss, how to identify if the wall is cavity or solid, and how to compare the options for reducing it.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BRE Report BR 443 (Conventions for U-value calculations, 2019) for standard wall U-values by age band and construction. Energy Saving Trust guidance on end-of-terrace heat loss. gov.uk Building Regulations Approved Document L1B for retrofit U-value targets.",
+  "approximateCostGbp": 3500,
+  "paybackYears": 12,
+  "recipeTools": [
+    { "slug": "tape-measure-8m", "isOptional": false },
+    { "slug": "thermal-imaging-camera", "isOptional": true }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "u-value",
+      "term": "U-value",
+      "definition": "A measure of how quickly heat passes through a building element. Lower is better. Units are W/m²K."
+    },
+    {
+      "slug": "solid-wall-insulation",
+      "term": "Solid wall insulation",
+      "definition": "Insulation added to a wall that has no cavity: either external (applied to the outside face) or internal (attached to the inside face)."
+    },
+    {
+      "slug": "thermal-bridge",
+      "term": "Thermal bridge",
+      "definition": "A path through a building element that conducts heat more readily than the surrounding material, creating a cold spot."
+    }
+  ],
+  "techniqueSlugs": ["cavity-wall-insulation-decision-guide", "external-wall-insulation-decision-guide", "internal-wall-insulation-how-to-choose"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An end-terrace house has one extra external wall that a mid-terrace does not. The exposed flank wall is typically 6 to 9 m wide and 4 to 6 m tall: 24 to 54 m² of wall with no neighbour on the other side. That wall can lose 40 to 140 W for every degree of indoor-outdoor temperature difference, depending on how it was built." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Whether insulating that wall pays back depends on the construction type, the current " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "u-value" } }],
+            "text": "U-value"
+          },
+          { "type": "text", "text": ", and the heating pattern. This guide walks through the assessment. It does not replace a professional survey, but it identifies whether a survey is worth commissioning." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 1: identify the wall construction" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The simplest test is the brick pattern. Cavity walls built after around 1920 typically show a stretcher bond: all bricks are laid lengthways. Solid walls, common before 1920, often show a mixed bond with headers (bricks laid end-on). Cavity width can also be confirmed by drilling a small exploratory hole and inserting a bent coat-hanger." }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A pre-1920 solid brick wall has a U-value of around 2.1 W/m²K if 220 mm thick, or 1.7 W/m²K if 340 mm thick." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A 1920s to 1980s cavity wall without insulation has a U-value of around 1.5 to 1.6 W/m²K." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A post-1990 cavity wall with partial-fill insulation has a U-value of around 0.45 to 0.6 W/m²K." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 2: measure the wall area" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Measure the gross external area of the flank wall: width from corner to corner, height from ground level to the eaves. Subtract window and door openings. A typical 1930s end-terrace flank wall is around 6 m wide and 5 m tall (30 m² gross) with a 1.2 m² side door and two 1.5 m² windows, leaving around 27 m² of wall area." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 3: calculate the annual heat loss" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Annual heat loss formula: kWh = U-value × area (m²) × degree-days × 24 / 1,000. Central England averages around 2,000 degree-days a year. A 27 m² solid brick wall at 2.1 W/m²K loses: 2.1 × 27 × 2,000 × 24 / 1,000 = 2,722 kWh a year through the flank wall alone." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Step 4: calculate the saving from insulation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Part L1B target for " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "solid-wall-insulation" } }],
+            "text": "solid wall insulation"
+          },
+          { "type": "text", "text": " retrofit is 0.30 W/m²K. A typical 90 mm external system achieves 0.28 W/m²K. Using the same formula: 0.28 × 27 × 2,000 × 24 / 1,000 = 362 kWh a year. The saving is 2,722 − 362 = 2,360 kWh a year." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common variations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "North or east-facing flank wall: rain exposure is higher on these faces. External insulation must use a render or cladding rated for the exposure zone (BS 8414)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Flank wall next to an alleyway: no neighbour on the other side, but the passage limits access for external insulation work." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Unfilled cavity on the flank wall: cavity-fill is often the most cost-effective upgrade. It costs roughly a third of external insulation for a similar U-value gain." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "External wall insulation needs a surveyor. Fixings, render, window detailing, and " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-bridge" } }],
+            "text": "thermal bridge"
+          },
+          { "type": "text", "text": " treatment all need professional specification. Internal wall insulation is more DIY-friendly but still needs a dew-point check and a vapour control layer." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "The wall feels damp inside on the ground floor corner",
+              "cause": "Thermal bridge at the floor-wall junction, or rising damp combining with interstitial condensation",
+              "fix": "Have the junction surveyed before adding internal insulation. Adding insulation on the inner face raises condensation risk at the perimeter if the floor-wall junction is not treated at the same time."
+            },
+            {
+              "symptom": "Calculation gives a very short payback but installer quotes suggest much longer",
+              "cause": "The simplified degree-days calculation assumes the wall is always heated; actual payback depends on how many hours per day the heating runs",
+              "fix": "Divide the annual heat loss figure by the daily heating fraction (e.g. if the house is heated 8 h/day, multiply by 8/24 = 0.33) before comparing against installation cost."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

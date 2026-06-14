@@ -1,0 +1,119 @@
+{
+  "slug": "potable-rainwater-filtration-for-drinking",
+  "title": "Filtering rainwater to potable standard",
+  "subtitle": "The treatment stages required to make harvested rainwater safe to drink, and when it is not worth the cost",
+  "excerpt": "Rainwater collected from a roof passes through bird droppings, algae, moss, and atmospheric pollution before it reaches a storage tank. Making it safe to drink requires a first-flush diverter, particle filtration, activated carbon, UV sterilisation, and regular maintenance. For garden irrigation the standard is far lower; this guide covers the potable treatment path.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WHO Guidelines for Drinking-water Quality (4th ed.) on rainwater harvesting systems. CIRIA C765 on rainwater harvesting in buildings (2019). Environment Agency guidance on private water supplies in England (2016). DWI (Drinking Water Inspectorate) guidance on point-of-use treatment devices for private supplies.",
+  "approximateCostGbp": 800,
+  "paybackYears": null,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "first-flush-diverter",
+      "term": "First-flush diverter",
+      "definition": "A device fitted to a rainwater downpipe that diverts the first 20 to 50 litres of rain (which carries the most contamination from the roof surface) away from the storage tank, allowing only cleaner later rainfall to enter."
+    },
+    {
+      "slug": "uv-sterilisation",
+      "term": "UV sterilisation",
+      "definition": "A water treatment method using ultraviolet light to destroy the DNA of bacteria, viruses, and protozoa, rendering them unable to reproduce. Effective only on water that is already clear (turbidity <1 NTU)."
+    }
+  ],
+  "techniqueSlugs": ["gutter-maintenance-annual-schedule", "fitting-a-water-butt-to-a-downpipe"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Harvested rainwater is not the same as clean collected rainfall. By the time it reaches a storage tank it has picked up roof debris, bird faeces, atmospheric particulates, and biological activity from the roof surface. This is acceptable for toilet flushing and garden irrigation, where there is no direct human contact. For drinking, WHO guidelines identify E. coli, Cryptosporidium, and chemical contamination from roofing materials as the main hazards." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Building Regulations: Part G",
+          "body": "If rainwater is used for WC flushing or any non-potable use inside a building, the rainwater system must not be cross-connected to the mains. The systems must be completely separate. Any rainwater supply point inside the building must be marked 'Not drinking water' in line with BS 8515."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Treatment stages for potable standard" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "First-flush diverter on every downpipe feeding the tank. The " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "first-flush-diverter" } }],
+                "text": "first-flush diverter"
+              },
+              { "type": "text", "text": " removes the highest-contamination fraction of each rain event. Must be emptied and cleaned every 4 to 8 weeks." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pre-filtration: 1 mm mesh calmed-inlet filter in the tank to remove leaves and large particles." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "5 micron sediment filter at the point of use to remove fine particulates. Replace the cartridge every 3 to 6 months." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Activated carbon block filter to remove organic chemicals, taste, and odour compounds. Replace every 6 months." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "UV sterilisation lamp rated to WHO Guideline dose (40 mJ/cm²). " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "uv-sterilisation" } }],
+                "text": "UV sterilisation"
+              },
+              { "type": "text", "text": " only works if the water passing through is clear. Replace the UV lamp annually regardless of use hours." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When it is not worth the cost" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A complete potable rainwater system (tank, pump, filtration train, UV unit) has a high installed cost. At typical mains water rates, a family using 150 litres per day for drinking and cooking spends around 110 per year on mains supply. Payback from water savings alone exceeds 70 years, before accounting for maintenance. The system suits off-grid properties where mains water is unavailable. For connected properties it is not cost-effective as a replacement for mains drinking water." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "UV lamp indicator shows the unit is running but water still smells musty after treatment",
+              "cause": "The tank has algae or biofilm growth; the UV is treating bacteria but cannot address dissolved organic compounds that cause taste and odour",
+              "fix": "Empty and scrub the tank with a dilute hypochlorite solution, then rinse thoroughly before refilling. Check the tank lid is secure and light-tight; any light ingress promotes algae growth."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

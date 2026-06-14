@@ -1,0 +1,146 @@
+{
+  "slug": "lead-pipe-detection-and-replacement",
+  "title": "Identifying and replacing lead water supply pipes",
+  "subtitle": "How to tell if your supply pipe is lead, what the health position is, and how replacement works",
+  "excerpt": "Lead pipes were the standard material for domestic water supply connections until the mid-1970s. They remain in millions of UK homes, particularly in properties built before 1950. Lead dissolves into drinking water in concentrations that exceed the current WHO guideline of 10 micrograms per litre. This guide covers identification, water testing, and the replacement process.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "water",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "UK Water Industry Research (UKWIR) report on lead in drinking water (2019). WHO Guidelines for Drinking-water Quality (4th edition) for the 10 µg/l guideline value. Water Supply (Water Quality) Regulations 2016 (SI 2016/614) on lead limits for drinking water. Water UK guidance for householders on lead pipe replacement.",
+  "approximateCostGbp": 600,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "stanley-knife", "isOptional": true }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "communication-pipe",
+      "term": "Communication pipe",
+      "definition": "The section of water supply pipe from the mains connection in the street to the boundary of the property, owned and maintained by the water company."
+    },
+    {
+      "slug": "service-pipe",
+      "term": "Service pipe",
+      "definition": "The section of water supply pipe within the property boundary, from the external stopcock to the internal plumbing. The homeowner is responsible for this section."
+    }
+  ],
+  "techniqueSlugs": ["household-leak-detection", "reading-your-water-meter", "slow-water-leak-detection"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A lead supply pipe brings water from the street main into the house. Even a 40-year-old pipe can dissolve enough lead to exceed the 10 micrograms per litre guideline. The risk is highest in soft-water areas: Wales, Scotland, the Lake District, and south-west England. In hard-water areas, scale inside the pipe reduces contact, but pressure changes can disrupt the scale." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to identify a lead pipe" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Find the internal stopcock (usually under the kitchen sink) and look at the pipe entering it. Lead pipe is dull grey and slightly soft: press a fingernail into the surface and it leaves a shallow mark. Copper pipe is copper-coloured; plastic pipe is blue (MDPE) or black (mains)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lead pipe is typically 12 to 25 mm outside diameter and has a swaged (bulged) joint shape where connections were made. It may be coated in grey paint or bitumen in older properties." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scratch the pipe surface lightly with a stanley knife or coin. Lead appears bright silver under the scratch. Galvanised steel appears grey-silver with a rougher texture; zinc coating comes off in flakes." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Water testing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Your water company will test a first-draw sample (water that has stood in the supply pipe overnight) free of charge in most regions. Contact them directly. The result is compared against the drinking water standard of 10 µg/l. Any result above 5 µg/l warrants consideration of replacement." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Grants and water company schemes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "All UK water companies are required to replace the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "communication-pipe" } }],
+            "text": "communication pipe"
+          },
+          { "type": "text", "text": " (street to boundary) free of charge on request. Some also offer subsidised or free replacement of the " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "service-pipe" } }],
+            "text": "service pipe"
+          },
+          { "type": "text", "text": " inside the property if both sections are replaced together. South West Water, Thames Water, and Yorkshire Water run such schemes. Check your water company's scheme before commissioning private work." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The replacement process" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Service pipe replacement is plumber's work. The plumber isolates the supply, removes the lead run from the stopcock to the first distribution point inside the house, and fits blue MDPE or copper in its place. The work takes 2 to 4 hours in most properties. Water companies must be notified before the communication pipe is cut; they normally attend to complete the street connection on the same day." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Interim measures while waiting for replacement" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Run the kitchen cold tap for 30 seconds after any period of non-use before using water for drinking or cooking. This flushes out standing water that has been in contact with lead." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Boiling water does not remove lead. It increases lead concentration by evaporating water volume." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Water company says only the communication pipe is free; service pipe replacement cost seems high",
+              "cause": "The property has a long internal service pipe run, increasing the plumbing labour time",
+              "fix": "Ask the water company whether their subsidised or combined scheme applies. If not, get two quotes from WaterSafe-registered plumbers."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

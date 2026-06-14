@@ -121,3 +121,25 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - making-watercolour-paper-from-pulp grade-level-strict — applied: 
 - mexican-papel-picado-advanced voice-violation,grade-level-strict — applied: 
 - scaling-marbling-for-an-edition grade-level-strict — applied: 
+
+- beeswax-lavender-solid-perfume voice-violation — applied: 
+- rapeseed-wax-lemon-thyme-candle prose-prep-steps — applied: 
+- soy-tobacco-vanilla-candle prose-prep-steps — applied: 
+- upholstery-spot-cleaner grade-level-strict — applied: 
+
+- animal-bedding-composting-horse-straw grade-level-strict — applied: 
+- cardboard-packaging-reduction-and-reuse grade-level-strict — applied: 
+- changeover-switch-for-generator-backup voice-violation,grade-level-strict — applied: 
+- compostable-vs-recyclable-packaging-guide voice-violation,grade-level-strict — applied: 
+- condensation-vs-leaking-roof-diagnosis voice-violation,grade-level-strict — applied: 
+- district-heating-alternatives-assessment voice-violation,grade-level-strict — applied: 
+- electric-panel-heater-efficiency-guide grade-level-strict — applied: 
+- food-waste-recycling-vs-home-composting grade-level-strict — applied: 
+- heat-pump-grant-application-process grade-level-strict — applied: 
+- hot-water-cylinder-heat-pump-upgrade voice-violation,grade-level-strict — applied: 
+- insulating-a-concrete-flat-roof-garage grade-level-strict — applied: 
+- insulating-a-conservatory-polycarbonate-roof grade-level-strict — applied: 
+- microgeneration-certification-scheme-registration grade-level-strict — applied: 
+- mobile-phone-recycling-and-upgrading grade-level-strict — applied: 
+- off-grid-water-pump-maintenance grade-level-strict — applied: 
+- solar-pv-racking-and-roof-penetration grade-level-strict — applied: 

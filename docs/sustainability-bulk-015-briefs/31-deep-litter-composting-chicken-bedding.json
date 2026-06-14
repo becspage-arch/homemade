@@ -1,0 +1,130 @@
+{
+  "slug": "deep-litter-composting-chicken-bedding",
+  "title": "Deep litter composting in a chicken run",
+  "subtitle": "Managing deep-litter bedding so it composts in place and enriches the soil beneath",
+  "excerpt": "Deep litter is a system where carbon-rich bedding material (wood chips, straw, or hemp) is added in layers over chicken droppings rather than cleaned out weekly. The bedding-manure mix composts in place over 6 to 12 months, generating heat that keeps birds warm in winter and producing a finished compost that can be removed and used directly on growing beds.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "FAO guidelines on poultry litter management in small-scale systems. RHS guidance on composting chicken manure. Practical Poultry magazine (UK) on deep litter management in backyard flocks. BACS (British Association for Chemical Specialities) guidance on using poultry manure safely.",
+  "approximateCostGbp": 50,
+  "paybackYears": 0,
+  "recipeTools": [
+    { "slug": "compost-thermometer", "isOptional": true },
+    { "slug": "muck-fork", "isOptional": false }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "carbon-nitrogen-ratio",
+      "term": "Carbon-to-nitrogen ratio (C:N)",
+      "definition": "The balance of carbon-rich bedding to nitrogen-rich manure in a compost mix. Chicken manure has a C:N of around 7:1; adding wood chips or straw extends the C:N toward the target of 25–30:1 for active composting."
+    }
+  ],
+  "techniqueSlugs": ["animal-bedding-composting-horse-straw", "thermophilic-composting-temperature-cycle"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A standard chicken coop is cleaned every 1 to 2 weeks, producing soiled bedding that needs separate composting before use. Deep litter avoids this: bedding and droppings compost in place. As the bottom layers break down, they generate heat and keep the surface relatively dry and low-odour. The " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "carbon-nitrogen-ratio" } }],
+            "text": "C:N ratio"
+          },
+          { "type": "text", "text": " must be maintained by adding carbon-rich material regularly." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Setting up the deep litter" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Start with a base layer of 100 to 150 mm of wood chips, straw, or hemp bedding on bare earth or a permeable surface. Avoid concrete as the base: earth allows beneficial soil organisms to migrate up into the litter." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After the first week, add a top-dressing of 20 to 30 mm of fresh dry bedding. Continue adding a top-dressing every 1 to 2 weeks throughout the system cycle." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The target litter depth at full operation is 200 to 300 mm. Deeper litter holds more heat and composts more actively." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Maintaining the litter through the year" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the litter with a fork every 2 to 4 weeks to mix nitrogen-rich droppings into the carbon-rich bedding and aerate the lower layers." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the litter becomes compacted and malodorous, add more dry bedding and turn immediately. A mat-forming layer traps ammonia rather than allowing it to escape and be captured in the compost." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Avoid getting water into the litter system from leaking drinkers. Wet litter does not compost aerobically; it produces methane and ammonia." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Harvesting the compost" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "After 6 to 12 months, clear out the lower finished layers of the litter and replace with fresh bedding. The finished material is high in nitrogen and phosphorus and can be applied to growing beds at 50 to 75 mm depth. Unlike horse manure, chicken manure compost can burn plant roots if applied fresh; it must be mature (dark, crumbly, and odourless) before use." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Biosecurity: managing disease risk",
+          "body": "Deep litter that stays damp or is not turned regularly can harbour Coccidiosis oocysts. Birds kept on deep litter should be monitored for signs of coccidiosis (bloody droppings, lethargy). Hot-composting the finished material before spreading eliminates most poultry pathogens. If an outbreak of any notifiable disease is suspected, consult a vet before disturbing the litter."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Deep litter is producing strong ammonia smell after 4 weeks",
+              "cause": "Insufficient carbon material relative to nitrogen (manure loading), or the litter is too wet",
+              "fix": "Add a 50 mm layer of dry wood chips or straw and turn the full depth of the litter. Check for leaking drinkers. Reduce the ratio of birds per square metre if the run is overcrowded."
+            },
+            {
+              "symptom": "Litter surface is crusting and the birds are not scratching into it",
+              "cause": "The top layer has matted into a hard crust of compacted wet droppings",
+              "fix": "Break up the crust with a fork and add fresh dry bedding over the broken surface. If crusting is persistent, reduce the size of the bedding material or switch to coarser wood chips that stay loose."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

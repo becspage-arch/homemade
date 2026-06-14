@@ -1,0 +1,132 @@
+{
+  "slug": "vermicompost-application-rates",
+  "title": "How and when to apply worm castings",
+  "subtitle": "Application rates, dilution for liquid feed, and which crops benefit most",
+  "excerpt": "Worm castings are a concentrated soil amendment: small quantities have outsized effects compared with ordinary compost. The typical application rate is 10 to 20% by volume mixed into growing medium, or 1 to 2 litres per m² as a surface dressing. Diluted casting liquid is an effective liquid feed at 1:10 with water.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Clive Edwards and Norman Arancon (Ohio State University) research on vermicompost application rates, published in peer-reviewed form 2004 to 2011. RHS guidance on worm compost application. WRAP guidance on organic matter application rates in gardens.",
+  "approximateCostGbp": 0,
+  "paybackYears": 0,
+  "recipeTools": [
+    { "slug": "bucket-10l", "isOptional": false }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "vermicompost",
+      "term": "Vermicompost (worm castings)",
+      "definition": "The end product of composting with earthworms. Worm castings are rich in available nutrients, plant growth hormones, and beneficial microbes."
+    }
+  ],
+  "techniqueSlugs": ["wormery-setup-and-management", "worm-casting-harvesting-and-use", "vermicomposting-in-a-flat"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Worm castings (also called " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vermicompost" } }],
+            "text": "vermicompost"
+          },
+          { "type": "text", "text": " when mixed with other partially broken-down material) are more concentrated than ordinary compost. Seedling trials show improved germination and early root mass at low rates. At high rates, growth can slow in some species." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Application rates by use" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Seed-starting mix: 10 to 20% castings by volume mixed into a neutral seed compost. Higher proportions can inhibit germination in slow-germinating seeds." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Potting mix for established plants: 20 to 30% castings by volume mixed into multi-purpose compost." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Surface dressing on beds: 1 to 2 litres per m². Work lightly into the surface or leave as a mulch for worms to incorporate." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Planting hole for transplants: one handful (approximately 200 ml) in the base of each planting hole, mixed with the backfill soil." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making worm casting tea" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Casting liquid (the diluted leachate from a wormery collecting tray) should be used at 1 part liquid to 10 parts water. It is ready to use when poured fresh; do not store liquid leachate for more than 24 hours as it becomes anaerobic and can harm seedlings." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Aerated worm tea (made by bubbling air through a casting suspension for 24 hours) maintains a higher beneficial microbial count. Use a small aquarium pump and 1 litre of castings in 10 litres of dechlorinated water. Apply within 4 hours of the aeration finishing." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Which crops benefit most" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tomatoes, peppers, and aubergines: add castings to the potting mix for best results." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Seedlings of all types: a low-rate casting mix speeds root development. It avoids the damping-off risk from high-nitrogen feeds." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Houseplants: a handful of castings worked into the top 50 mm of potting compost twice a year provides slow-release nutrition." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Seedlings growing in a high-casting mix are yellow and stunted",
+              "cause": "Casting concentration above 25% by volume can inhibit germination or cause salt stress in fine-rooted seedlings",
+              "fix": "Reduce casting proportion to 10% and dilute the mix with a neutral compost. Water the tray thoroughly to flush excess salts."
+            },
+            {
+              "symptom": "Worm leachate smells foul rather than earthy",
+              "cause": "Leachate has become anaerobic in the collection tray",
+              "fix": "Empty and clean the tray. Use leachate within 24 hours of collection. If the wormery itself smells bad, the bin is overloaded or too wet."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

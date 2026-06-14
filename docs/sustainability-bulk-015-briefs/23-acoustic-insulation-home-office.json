@@ -1,0 +1,141 @@
+{
+  "slug": "acoustic-insulation-home-office",
+  "title": "Acoustic insulation for a home office",
+  "subtitle": "Reducing airborne and impact sound transmission without major construction work",
+  "excerpt": "A home office in a detached room or converted space can be quietened for calls and focus by addressing flanking paths, adding mass to the partition, and decoupling the floor. These measures also improve thermal performance, since the weaknesses in building fabric that allow sound in also allow heat out.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BRE Report BR 209 on sound insulation of dwellings (public domain). BS 8233:2014 for guidance on sound insulation in buildings. NHBC chapter 6.2 on separating walls and floors. Acoustic manufacturer datasheets (Rockwool RWA45 and Regupol acoustic mat, adapted to generic specification).",
+  "approximateCostGbp": 600,
+  "paybackYears": null,
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "utility-knife", "isOptional": false },
+    { "slug": "cordless-drill-18v", "isOptional": false }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "airborne-sound",
+      "term": "Airborne sound",
+      "definition": "Sound energy transmitted through the air, such as speech, music, and road noise. Reduced by adding mass to the building element (heavier = harder to vibrate)."
+    },
+    {
+      "slug": "flanking-transmission",
+      "term": "Flanking transmission",
+      "definition": "Sound that bypasses a treated element by travelling via an alternative structural path, for example through a continuous concrete slab or through a wall cavity."
+    }
+  ],
+  "techniqueSlugs": ["sealing-gaps-around-skirting-boards", "pipe-penetration-sealing-external-walls"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Acoustic treatment in a home office addresses two problems: " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "airborne-sound" } }],
+            "text": "airborne sound"
+          },
+          { "type": "text", "text": " coming in from outside or from adjacent rooms, and impact sound from floors above. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flanking-transmission" } }],
+            "text": "Flanking transmission"
+          },
+          { "type": "text", "text": " is the reason a treated wall still transmits noise: the sound goes around the treated element through the structure. A pragmatic approach targets the highest-priority path first rather than treating every surface." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Prioritise gaps before adding mass" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 1 mm gap under a door eliminates two thirds of the sound reduction of the door itself. Before adding insulation or cladding to any wall, seal all gaps around skirting boards, at light switches and sockets, and under and around doors. Acoustic foam and rockwool are absorption materials (they reduce echo inside the room) not transmission barriers. They do not meaningfully reduce sound coming in through the structure." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Adding mass to a stud partition" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add a second layer of 12.5 mm plasterboard to the stud side facing the noise source. Use acoustic plasterboard (higher mass per unit area) if available. Fix with screws at 300 mm centres to studs and noggings." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill the stud cavity with 50 mm acoustic mineral wool batts (Rockwool RWA45 or equivalent). This absorbs sound within the cavity and reduces resonance of the cavity air." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For better performance, use resilient bars to fix the new plasterboard. These spring-mounted channels decouple the board from the studs and reduce vibration." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Floor impact sound" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "For a home office below a living space or bedroom, footfall noise is the dominant problem. Lay a resilient acoustic mat (5 to 8 mm dense rubber or foam composite) under a floating timber or laminate floor above. This is most effective when the mat covers the whole floor area and the floating floor is not rigidly connected to the walls. A perimeter gap of 10 to 15 mm, covered by skirting board, prevents flanking through the wall connections." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Door sealing" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit a door sweep or automatic drop seal to the door bottom to close the undercut gap when the door is shut." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fit foam or neoprene compression seals to the door frame rebates on all three sides (top and both sides)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A hollow-core door offers almost no sound reduction. Replacing it with a solid-core door (35 to 44 mm thick) roughly doubles the door's Rw rating." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Additional plasterboard makes little audible difference to noise coming through the wall",
+              "cause": "Flanking transmission through the floor, ceiling, or side walls is bypassing the treated wall",
+              "fix": "Check whether the sound stops if the treated wall is pressed with a hand (vibration felt = direct transmission) or whether it reaches the room from a different direction. Address the flanking path: gaps in floor/wall junction, or a cavity connecting both rooms."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

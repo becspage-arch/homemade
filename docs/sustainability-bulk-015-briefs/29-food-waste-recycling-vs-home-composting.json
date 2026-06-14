@@ -1,0 +1,137 @@
+{
+  "slug": "food-waste-recycling-vs-home-composting",
+  "title": "Food waste recycling versus home composting",
+  "subtitle": "What each route achieves, what it cannot process, and how to use both",
+  "excerpt": "Kerbside food waste collections and home composting both divert food from landfill but they work differently. A council food waste bin accepts cooked meat and dairy that a home compost heap cannot process safely. Home composting produces a soil amendment that the council collection does not return to the householder. Using both in parallel is more effective than either alone.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "composting",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "WRAP (Waste and Resources Action Programme) household food waste analysis 2021: types and volumes of food wasted in UK households. DEFRA statutory guidance on food waste collection requirements for England (from March 2026 all local authorities must provide weekly food waste collection). Recycle Now guidance on accepted materials in food waste collections.",
+  "approximateCostGbp": 0,
+  "paybackYears": 0,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "anaerobic-digestion",
+      "term": "Anaerobic digestion (AD)",
+      "definition": "The breakdown of organic material by bacteria in the absence of oxygen. Most council food waste is processed at AD plants, producing biogas (for energy) and digestate (used as agricultural fertiliser)."
+    },
+    {
+      "slug": "carbon-nitrogen-ratio",
+      "term": "Carbon-to-nitrogen ratio (C:N)",
+      "definition": "The ratio of carbon to nitrogen in a compost feedstock. An ideal home compost heap runs at C:N 25–30:1. Nitrogen-rich materials (kitchen scraps, grass clippings) need balancing with carbon-rich 'browns' (cardboard, straw)."
+    }
+  ],
+  "techniqueSlugs": ["thermophilic-composting-temperature-cycle", "vermicompost-application-rates"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "WRAP estimates that UK households waste around 6.4 million tonnes of food annually, of which 4.5 million tonnes are avoidable. Home compost heaps typically accept fruit and vegetable peelings, coffee grounds, eggshells, and garden cuttings. They cannot reliably process cooked food, meat, or dairy because cold heaps do not reach the temperatures needed to kill pathogens and because these materials attract pests." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What each route accepts" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Home compost heap: raw fruit and vegetable peelings, coffee grounds, tea bags (if plastic-free), eggshells, garden waste (not diseased), shredded paper (uncoated), torn-up cardboard. The " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "carbon-nitrogen-ratio" } }],
+                "text": "C:N ratio"
+              },
+              { "type": "text", "text": " must be maintained by mixing greens and browns." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Council food waste bin: all food types including cooked meals, meat, fish, bones, bread, and dairy. Some councils also accept small amounts of cooking oil and food-contaminated packaging." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Home compost heap cannot accept: cooked food, meat, fish, dairy, diseased plant material, perennial weeds with seeds (bindweed, Japanese knotweed), pet faeces." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What happens at the council plant" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Most local authority food waste goes to " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "anaerobic-digestion" } }],
+            "text": "anaerobic digestion"
+          },
+          { "type": "text", "text": " (AD) plants. The biogas produced is used to generate electricity; the digestate is spread on agricultural land as a fertiliser. The householder does not receive any material back. Carbon from the food waste is mainly released as CO₂ during electricity generation rather than being sequestered in soil." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using both in parallel" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Vegetable and fruit waste → home compost heap → usable compost returned to the garden." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cooked food, meat, dairy, bread → council food waste bin → AD plant." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Coffee grounds and tea leaves: split between home compost and worm bin; both process these well." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Mandatory food waste collection (England, from March 2026)" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "From March 2026 all local authorities in England are legally required to provide weekly food waste collections. Scotland has had mandatory collections since 2021; Wales since 2024. If your council does not yet collect food waste, check their website for the introduction date for your area." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Compost bin attracts rats after cooked food scraps were added",
+              "cause": "Cooked food and meat are high-calorie attractants for rodents and must not go in a standard home compost bin",
+              "fix": "Remove the contaminated material and place it in the council food waste bin. Check the bin for gaps or entry points at the base. Switch to a rodent-proof compost bin (solid base, fitted lid) if the problem persists."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

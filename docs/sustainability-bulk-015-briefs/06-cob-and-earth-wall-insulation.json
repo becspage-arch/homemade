@@ -1,0 +1,169 @@
+{
+  "slug": "cob-and-earth-wall-insulation",
+  "title": "Insulating cob and earth walls",
+  "subtitle": "Breathable insulation approaches for mass-masonry pre-1900 walls that cannot tolerate trapped moisture",
+  "excerpt": "Cob, pisé, and unfired earth walls must stay dry to retain their structural strength. Standard PIR insulation boards sealed with polythene trap moisture in the wall and cause rapid deterioration. This guide covers the vapour-open insulation options that keep the wall dry while improving its thermal performance.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "insulation-and-draughtproofing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "SPAB (Society for the Protection of Ancient Buildings) technical guidance on insulating historic earth walls. Historic England guidance on energy efficiency for traditional buildings. CAT (Centre for Alternative Technology) technical briefs on hemp and lime insulation. Bath University IBSTOCK research into cob thermal performance.",
+  "approximateCostGbp": 1800,
+  "paybackYears": 20,
+  "recipeTools": [
+    { "slug": "tape-measure-5m", "isOptional": false },
+    { "slug": "thermal-imaging-camera", "isOptional": true }
+  ],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "thermal-mass",
+      "term": "Thermal mass",
+      "definition": "The ability of a material to absorb and store heat energy, moderating temperature swings. Cob and earth walls have high thermal mass."
+    },
+    {
+      "slug": "breathable-insulation",
+      "term": "Breathable insulation",
+      "definition": "Insulation materials that allow water vapour to pass through them without trapping moisture, including hemp batts, wood fibre board, and lime render."
+    },
+    {
+      "slug": "vapour-control-layer",
+      "term": "Vapour control layer",
+      "definition": "A membrane that limits water vapour movement. For earth walls, an impermeable vapour barrier is unsuitable; open vapour resistance is needed instead."
+    }
+  ],
+  "techniqueSlugs": ["listed-building-insulation-options", "internal-wall-insulation-dew-point", "breathable-insulation-pre-1919-buildings"],
+  "criticalTechniques": ["breathable-insulation-pre-1919-buildings"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cob walls are a mixture of subsoil, straw, and water rammed into a monolithic mass. They achieve structural strength by staying dry. A 600 mm cob wall has a U-value of around 0.6 to 0.8 W/m²K, comparable to an uninsulated cavity wall. Unlike a cavity wall, a cob wall cannot be improved by injection or standard insulation boards without risking its fabric." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The two permitted approaches are " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "breathable-insulation" } }],
+            "text": "breathable insulation"
+          },
+          { "type": "text", "text": " on the interior face, or a lime-render external layer that adds both weather protection and marginal thermal improvement. Both maintain the ability of the wall to dry out. Neither is a substitute for repairing any rain exposure or rising damp first." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Listed building and planning notice",
+          "body": "Cob and earth buildings are commonly listed or in conservation areas. Both internal and external insulation work on a listed building requires Listed Building Consent before starting. Contact the Local Planning Authority."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need to know first" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Confirm the wall is dry before any insulation work. An earth wall exposed to persistent rain, or suffering from rising damp, will deteriorate under insulation. Address the moisture source first." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cob walls use their high " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "thermal-mass" } }],
+                "text": "thermal mass"
+              },
+              { "type": "text", "text": " to moderate temperature swings. An internal lining of breathable insulation reduces the effective mass available to the room; the room will respond faster to heating. In a passively heated building, this may increase heating demand slightly in spring and autumn." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Never install an impermeable polythene " },
+              {
+                "type": "text",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "vapour-control-layer" } }],
+                "text": "vapour control layer"
+              },
+              { "type": "text", "text": " against a cob wall. Standard airtightness guidance for modern buildings does not apply to earth structures." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Option 1: hemp and lime batt insulation on an internal frame" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "50 to 100 mm of hemp fibre batts in a timber stud frame against the cob wall achieves a thermal improvement of around 0.25 to 0.35 W/m²K reduction in overall U-value. Hemp batts are hygroscopic: they absorb and release moisture without damage. The stud frame keeps the batts off the cob face by 10 mm to allow the cob surface to dry. A lime or clay plaster inner finish allows further moisture buffering." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Option 2: wood fibre board on the internal face" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "50 mm wood fibre board is more rigid than hemp batts and can be bonded directly to a lime-rendered cob face using lime-based adhesive. Avoid cement-based adhesives, which cause differential moisture movement. Wood fibre lambda values are around 0.038 to 0.040 W/mK. At 50 mm thickness, this reduces effective U-value by around 0.25 W/m²K." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Option 3: lime render thickening on the external face" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "An external coat of hydraulic lime render improves weather resistance and adds around 0.03 W/m²K of thermal improvement per 10 mm of render thickness. At 40 mm thick (two coats), the improvement is around 0.12 W/m²K. This is modest but worthwhile if the wall needs re-rendering anyway. Lime render also protects the toe of the cob from rain splash." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to call a professional" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "All earth-wall insulation needs a professional moisture strategy. The dew-point must be checked to confirm the insulation thickness does not push condensation into the cob. A SPAB-trained surveyor or conservation engineer should specify the system." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Damp patch appears on the hemp batt surface after winter",
+              "cause": "The air gap between the hemp frame and the cob face is too narrow, allowing moisture from the cob to wick into the batt directly",
+              "fix": "Increase the standoff to at least 25 mm by packing out the timber frame. Allow the damp area to dry fully before re-fitting batts."
+            },
+            {
+              "symptom": "Lime render application has cracked in the first winter",
+              "cause": "Cement in the render mix or rendered in temperatures below 5°C causing differential shrinkage",
+              "fix": "Use a pure hydraulic lime mix (no cement) and apply only when air temperature is above 5°C and rising. Protect newly rendered walls from frost for at least two weeks."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

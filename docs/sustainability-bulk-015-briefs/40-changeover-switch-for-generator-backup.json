@@ -1,0 +1,154 @@
+{
+  "slug": "changeover-switch-for-generator-backup",
+  "title": "Installing a manual changeover switch for a backup generator",
+  "subtitle": "How a changeover switch prevents back-feeding the grid and allows safe generator use for critical circuits",
+  "excerpt": "A manual changeover switch (also called a transfer switch) is the only safe way to connect a generator to the household wiring. It physically isolates the grid supply before connecting the generator, preventing back-feed that can electrocute linesmen. Installation requires a Part P-qualified electrician; the correct switch type and circuit selection are the design decisions the householder makes first.",
+  "type": "TECHNIQUE",
+  "categorySlug": "sustainability",
+  "subCategorySlug": "off-grid",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "IET Wiring Regulations (BS 7671:2018+A2:2022) on generator connections and transfer switching: Section 551. Part P Building Regulations (England and Wales) on notifiable electrical work. BEAMA guidance on manual transfer switch design for domestic generators. Engineering Data Sheet EDS 08-0022 from UK Power Networks on embedded generator connections.",
+  "approximateCostGbp": 400,
+  "paybackYears": null,
+  "recipeTools": [],
+  "recipe": { "foundational": false },
+  "glossaryTerms": [
+    {
+      "slug": "back-feed",
+      "term": "Back-feed",
+      "definition": "The unintended flow of electricity from a generator through the household wiring into the grid supply network. Extremely dangerous to linesmen who believe the line is dead. Illegal under the Electricity Safety, Quality and Continuity Regulations 2002."
+    },
+    {
+      "slug": "critical-circuit",
+      "term": "Critical circuit",
+      "definition": "A circuit selected for backup generator supply during a mains outage, typically chosen to cover the minimum essential loads: refrigeration, lighting, boiler controls, and socket outlets for communication devices."
+    }
+  ],
+  "techniqueSlugs": ["off-grid-generator-maintenance", "off-grid-water-pump-maintenance"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Using a plug-to-plug adaptor ('suicide plug') to run a generator into the mains is illegal. It has killed Power Networks linesmen working on lines they believed were dead. A changeover switch physically separates the grid and generator so they can never be live at the same time. This meets the BS 7671:2018 Section 551 requirement for domestic generator wiring." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Part P: notifiable electrical work",
+          "body": "Installing a changeover switch that connects to the consumer unit is notifiable electrical work under Building Regulations Part P in England and Wales. It must be carried out by a Part P-registered electrician or notified to the local authority before starting. This is not a DIY task. The guidance here covers the design decisions and questions to bring to an electrician."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How a changeover switch works" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A manual changeover switch has three positions: MAINS, OFF, and GENERATOR. The mechanical interlock means only one position can be selected at a time: it is physically impossible to connect mains and generator simultaneously. When the mains supply fails, the user turns the switch from MAINS to OFF, then from OFF to GENERATOR. The generator supply is now connected to the selected circuits. When the mains returns, the sequence reverses: GENERATOR to OFF, OFF to MAINS." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing the critical circuits" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A 3 to 5 kW domestic generator cannot supply the whole house (an electric shower alone draws 9 kW). The changeover switch feeds a sub-panel of " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "critical-circuit" } }],
+            "text": "critical circuits"
+          },
+          { "type": "text", "text": ". The electrician moves the chosen circuits from the main consumer unit to this sub-panel at installation." }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Essential: fridge and freezer circuit, boiler controls (gas boilers need 60 to 150 W for controls and pump), lighting, one general socket circuit." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Optional: water pump (off-grid), freezer in outbuilding, medical equipment." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Do not include on the backup panel: electric shower, cooker, immersion heater, heat pump, or EV charger. Each draws more power than a portable generator can supply." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Generator sizing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Add the rated wattage of all critical circuits to find the total continuous load. A fridge (150 W) + freezer (100 W) + boiler (100 W) + lighting (200 W) + socket circuit allowance (500 W) = 1,050 W continuous. A 2 kW generator comfortably supplies this; a 3 kW generator provides headroom for additional loads. " },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "back-feed" } }],
+            "text": "Back-feed"
+          },
+          { "type": "text", "text": " protection through the changeover switch is effective regardless of generator size." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to specify when contacting an electrician" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A 4-pole manual changeover switch (switching Line, Neutral, and Earth for both supplies, with a mechanical interlock)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The list of circuits to move to the backup sub-panel." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A weatherproof exterior inlet socket for the generator cable. Use CEE 16A or 32A to match the generator's rated output." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A copy of BS 7671 Section 551 compliance documentation to be included in the minor works certificate." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Generator trips its own circuit breaker when switched to supply the house circuits",
+              "cause": "The total load on the critical circuits exceeds the generator's rated output, or a motor-start surge (fridge compressor) is exceeding the generator's peak rating",
+              "fix": "Switch off the fridge and freezer before switching over to generator supply; then turn them on one at a time once the generator is running steadily. Compressor motor starts can draw 3 to 5 times the running current for 1 to 2 seconds."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
