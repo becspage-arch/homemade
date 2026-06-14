@@ -1,0 +1,139 @@
+{
+  "slug": "scaling-marbling-for-an-edition",
+  "title": "Scaling marbling for an edition",
+  "subtitle": "Producing 20 to 50 matching sheets from a single carrageenan size preparation",
+  "excerpt": "When marbling for bookbinding, stationery, or a consistent batch of prints, you need more than a few test sheets: you need matching colours and a consistent pattern across 20 to 50 sheets. This requires batch-mixing your inks to a fixed formula, maintaining the size between sessions, and developing a repeatable dropping and combing sequence. Small variations across sheets are normal; large colour shifts are not.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "marbling",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edition marbling technique is practical workshop knowledge from contemporary bookbinding and paper marbling practice. No single pre-1928 source covers edition-scale marbling systematically for the home workshop.",
+  "recipeTools": [
+    { "slug": "marbling-tray", "isOptional": false },
+    { "slug": "carrageenan", "isOptional": false },
+    { "slug": "marbling-acrylic-liquid", "isOptional": false },
+    { "slug": "alum-potash", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "edition-marbling",
+      "term": "Edition marbling",
+      "definition": "Producing a large number of sheets (20 to 100+) with closely matching patterns and colours from a prepared size bath. Requires batch-mixed inks, a consistent dropping sequence, and size maintenance between pulls."
+    },
+    {
+      "slug": "size-refreshing",
+      "term": "Size refreshing",
+      "definition": "Removing used or contaminated sections of carrageenan size from the marbling tray and adding fresh size to replace them, maintaining the working depth and surface quality during an edition marbling session."
+    }
+  ],
+  "techniqueSlugs": ["marbling-stone-drop-base-pattern", "carrageenan-size-preparation", "wide-comb-marbling-pattern"],
+  "criticalTechniques": ["carrageenan-size-preparation"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Producing an "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "edition-marbling" } }],
+            "text": "edition"
+          },
+          {
+            "type": "text",
+            "text": " of marbled sheets requires treating the session like production rather than experimentation. Every variable that changes between pulls becomes a source of inconsistency in the edition. The critical variables to lock are ink concentration, drop size, ink-laying sequence, and any comb pass sequence."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Batch-mix your inks" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix each ink colour in a quantity sufficient for the entire edition before starting. For 50 A4 sheets in a 5-colour pattern, mix at least 50 ml of each colour. Measure the ink-to-water ratios precisely. Test the spread on the working size before starting the edition and adjust concentration as needed, then do not change the formula again during the session. Decant each colour into a dropper bottle with a narrow tip for consistent drop size."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The dropping sequence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Write down your dropping sequence before the first pull and follow it identically for every sheet: which colour goes first, which goes second, how many drops of each, where you drop them, and in what order. Every variation in sequence changes the colour relationships in the finished sheet. An assistant to call the sequence or a timed audio recording helps during long sessions."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Maintaining the size" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "After each pull, remove any ink residue remaining on the size surface by skimming with a strip of newspaper or a flat-bladed tool before laying the next pattern. The size itself depletes slowly over an edition as small amounts stick to each sheet. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "size-refreshing" } }],
+            "text": "Refresh the size"
+          },
+          {
+            "type": "text",
+            "text": " by adding fresh carrageenan solution every 10 to 15 pulls to maintain working depth. Keep a jug of prepared size at the same temperature as the tray ready for this purpose."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Alum treatment batching" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Treat all your paper with alum solution at least 24 hours before the marbling session. Lay all sheets flat to dry completely and store in a dry location. Alum-treated paper that has partially re-absorbed moisture gives patchy ink adhesion. Treat 10% more sheets than you expect to use, to allow for rejects."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "The inks spread progressively larger across the edition",
+              "cause": "The size is depleting and its viscosity is dropping, allowing inks to spread further as the session proceeds.",
+              "fix": "Refresh the size more frequently (every 8 to 10 pulls rather than 15). Mix the refreshing size to a slightly higher carrageenan concentration than the working bath to compensate for depletion."
+            },
+            {
+              "symptom": "The first 5 sheets of the edition look different from the next 10",
+              "cause": "The size had not fully stabilised to room temperature, or the inks were not at consistent temperature at the start.",
+              "fix": "Pull 3 to 5 warm-up sheets before counting edition sheets. Warm-up pulls are discarded or used for testing. Only count sheets toward the edition once the pattern is consistent."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

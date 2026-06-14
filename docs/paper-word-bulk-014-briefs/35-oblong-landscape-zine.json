@@ -1,0 +1,124 @@
+{
+  "slug": "oblong-landscape-zine",
+  "title": "Oblong landscape zine",
+  "subtitle": "Making a horizontally formatted zine from a single A4 sheet with one cut",
+  "excerpt": "The standard eight-page single-sheet zine is portrait-format. An oblong landscape zine uses the same single A4 sheet and one cut but folds differently to produce a booklet that opens sideways, wider than it is tall. This format suits panoramic drawings, wide photography spreads, travel content, and any content where horizontal space matters more than vertical.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "zines",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Landscape zine format is a variant of the classic single-sheet zine construction. No single canonical source. Method described here is an original Homemade pattern based on established zine-making geometry.",
+  "recipeTools": [
+    { "slug": "cartridge-paper-130", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "cutting-mat-a4", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "oblong-format",
+      "term": "Oblong format",
+      "definition": "A book or zine format that is wider than it is tall (landscape orientation), as distinct from portrait format (taller than wide). Oblong formats are used for panoramic or sequential content that reads across a wide page."
+    },
+    {
+      "slug": "single-sheet-zine",
+      "term": "Single-sheet zine",
+      "definition": "A zine format made from a single sheet of paper with one cut and a series of folds to produce an eight-page (or six-page) booklet. No binding or staples are required."
+    }
+  ],
+  "techniqueSlugs": ["eight-page-single-sheet-zine"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "oblong-format" } }],
+            "text": "oblong format"
+          },
+          {
+            "type": "text",
+            "text": " "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "single-sheet-zine" } }],
+            "text": "single-sheet zine"
+          },
+          {
+            "type": "text",
+            "text": " produces a six-page booklet (a cover, a back cover, and four interior spreads) from one A4 sheet. It is slightly less space-efficient than the portrait eight-page version because the landscape format requires a different fold sequence that produces six pages rather than eight. The trade-off is a wider, lower page that reads horizontally."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "A4 cartridge paper, 130 gsm, one sheet per zine", "notes": "For the structure test, use plain paper. For the finished zine, use your chosen cartridge weight. Lighter paper (80 to 90 gsm) makes a more floppy cover; 130 gsm gives the zine a better hand." },
+            { "name": "Bone folder", "notes": "For sharp, clean folds. In a landscape format zine, the folds must be very precise or the pages will not align." },
+            { "name": "Craft knife and ruler", "notes": "For the single cut." },
+            { "name": "Cutting mat, A4", "notes": "The cut is a short straight cut, so any clean mat surface works." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The fold and cut sequence" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hold the A4 sheet landscape (wider than tall). Fold in thirds horizontally: fold the left third onto the centre third, then fold the right third over, like a letter fold. Crease all folds firmly with the bone folder. Unfold completely. Now fold in half vertically (top to bottom), crease firmly. Unfold. With the sheet landscape and the horizontal third-folds visible, cut along the centre horizontal fold line from the left edge to the vertical centre fold line only: this cut is half the width of the sheet. Refold the sheet in half vertically, then open along the cut slit, push the centre toward you and fold flat to produce the booklet. Pages will be in landscape orientation, approximately 99 mm wide by 70 mm tall (one-sixth of A4)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Planning the content" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Before adding content, trace a dummy (a test fold in plain paper) and number the pages in pencil to understand the print-and-fold orientation. The landscape format is less intuitive than the portrait format because the fold sequence is different. Number the dummy's pages 1 through 6 while folded, then unfold and note which page number is in which position on the flat sheet before drawing or printing content."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "The booklet pages are in the wrong order when assembled",
+              "cause": "The cut was made in the wrong position, or the sheet was folded in the wrong direction at the final stage.",
+              "fix": "Always make a dummy in scrap paper first and number the pages while folded. The landscape format has a less intuitive final fold than the portrait version."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

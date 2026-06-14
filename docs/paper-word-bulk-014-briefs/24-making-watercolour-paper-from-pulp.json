@@ -1,0 +1,128 @@
+{
+  "slug": "making-watercolour-paper-from-pulp",
+  "title": "Making watercolour paper from cotton pulp",
+  "subtitle": "How to produce a heavy, well-sized handmade sheet suitable for watercolour painting",
+  "excerpt": "Commercial watercolour paper is made from cotton or linen rag pulp, heavily sized with gelatin, and either cold-pressed or hot-pressed to the required surface. Making an equivalent at home requires heavier pulp concentration, extended pressing, and surface sizing after drying. The resulting sheet will not replicate a machine-made 300 gsm block sheet, but will take washes and wet lifting with genuine control.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Dard Hunter, Papermaking: The History and Technique of an Ancient Craft (1943), chapter on sizing papers for writing and watercolour use. Hunter gives the gelatin sizing method (boiled gelatin and alum) used by historical watercolour paper makers at mills including Whatman and Fabriano.",
+  "recipeTools": [
+    { "slug": "paper-mould-deckle-a5", "isOptional": false },
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "couching-cloth", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tub-sizing",
+      "term": "Tub sizing",
+      "definition": "The process of dipping a dry handmade sheet into a bath of warm diluted gelatin to give it surface resistance. Used for writing and watercolour papers. Distinguished from internal sizing (adding size to the pulp vat)."
+    },
+    {
+      "slug": "cold-press-surface",
+      "term": "Cold-press surface",
+      "definition": "A slightly textured paper surface produced by pressing the wet sheet between textured felts rather than smooth boards. Cold-press watercolour paper has a tooth that holds pigment granules and allows lifting."
+    }
+  ],
+  "techniqueSlugs": ["basic-sheet-pulling", "pressing-and-drying-handmade-paper", "surface-sizing-for-watercolour"],
+  "criticalTechniques": ["pressing-and-drying-handmade-paper", "surface-sizing-for-watercolour"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Three things separate handmade watercolour paper from an ordinary writing sheet: heavier pulp concentration, extended pressing, and "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tub-sizing" } }],
+            "text": "tub sizing"
+          },
+          {
+            "type": "text",
+            "text": " in diluted gelatin after drying. The tub sizing is the most important step: without it, the sheet absorbs watercolour too fast for controlled washes. Surface texture also matters. A "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-press-surface" } }],
+            "text": "cold-press surface"
+          },
+          {
+            "type": "text",
+            "text": " pressed between textured felts takes washes differently from a hot-press surface pressed between smooth boards."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Cotton linter pulp", "notes": "Long-fibre cotton linter gives the strength and whiteness closest to commercial watercolour paper. Use twice the pulp-to-water ratio you would for an ordinary writing sheet." },
+            { "name": "Paper mould and deckle", "notes": "Standard equipment. A wove-surface mould (not a laid mould) gives a more uniform surface texture." },
+            { "name": "Couch cloths and pressing felts, multiple pairs", "notes": "For extended pressing. Traditional watercolour paper is pressed 3 to 5 times with fresh dry felts between each press." },
+            { "name": "Gelatin, leaf or powder", "notes": "For tub sizing. 2 g per litre of warm water. Bloom the gelatin in cold water first, then heat gently to dissolve without boiling." },
+            { "name": "Alum (potassium alum), 0.5 g per litre", "notes": "Added to the gelatin sizing bath. Hardens the gelatin layer and increases water resistance." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pulling and pressing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pull sheets at double the usual pulp concentration for a heavy sheet. After couching, build a post (a stack of wet sheets interleaved with felts) of at least 8 sheets and press hard in a bookbinding press or under a very heavy weight board. Leave under pressure for 30 minutes, then separate the sheets into individual felts for a first dry press. When the felts have absorbed much of the remaining moisture (30 to 60 minutes), exchange the wet felts for dry felts and press again. Repeat a third time. Each press exchange removes moisture without further weight-loss pressing that would crush the surface texture."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tub sizing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Allow the sheets to dry completely (at least 24 hours restrained on boards). When fully dry, prepare the gelatin sizing bath: 2 g per litre, with 0.5 g alum per litre, warmed to 50°C. Dip each sheet into the bath for 5 seconds, lift carefully (wet sheets are fragile), and lay flat on a dry felt to drain. When all sheets are dipped, restrain each one flat on a board or screen and allow to dry again (4 to 8 hours). The tub-sized sheet will feel noticeably stiffer and more robust than the unsized sheet."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Watercolour washes still bleed too fast even after tub sizing",
+              "cause": "The sizing bath was too dilute, or the sheet was not submerged long enough.",
+              "fix": "Increase the gelatin concentration to 3 g per litre and dip for 10 seconds. If the sheet still does not hold washes, apply a second tub-size pass after the first coat has fully dried."
+            },
+            {
+              "symptom": "The sized sheet wrinkles and buckles after drying",
+              "cause": "The sheet was not restrained while drying after tub sizing.",
+              "fix": "After dipping, smooth the sheet onto a clean glass or acrylic board and allow it to dry attached to the board. It will peel away flat when fully dry."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

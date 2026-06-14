@@ -1,0 +1,124 @@
+{
+  "slug": "sheet-forming-in-cold-conditions",
+  "title": "Sheet forming in cold conditions",
+  "subtitle": "Adjusting vat temperature, pulp consistency, and drying method when the room is below 15°C",
+  "excerpt": "Papermaking in a cold workroom or in winter presents three problems: the pulp fibres are less dispersed in cold water, the sheet drains more slowly, and drying takes two to three times longer than in a warm room. Each problem has a practical adjustment. The resulting sheets are not inferior to summer-made sheets, but they require different handling at every stage.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Cold-condition adjustments for handmade papermaking are practical workshop knowledge; no single pre-1928 text addresses them systematically. This entry draws on physical paper chemistry and cold-weather studio practice.",
+  "recipeTools": [
+    { "slug": "paper-mould-deckle-a5", "isOptional": false },
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "couching-cloth", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cold-vat-drainage",
+      "term": "Slow drainage",
+      "definition": "Water drains through the papermaking mould screen more slowly at low temperatures because water viscosity increases as temperature drops. The same sheet that drains in 8 seconds at 20°C may take 20 seconds at 10°C."
+    },
+    {
+      "slug": "restrained-drying",
+      "term": "Restrained drying",
+      "definition": "Drying a paper sheet while it is attached to a board, glass, or screen so that as the fibres shrink they cannot curl the sheet. Important in any conditions; essential in slow-drying cold conditions where prolonged wet-time can cause the sheet to curl severely."
+    }
+  ],
+  "techniqueSlugs": ["basic-sheet-pulling", "pressing-and-drying-handmade-paper"],
+  "criticalTechniques": ["pressing-and-drying-handmade-paper"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Below 15°C, papermaking requires adjustment at three stages: vat preparation, drainage, and drying. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cold-vat-drainage" } }],
+            "text": "Slow drainage"
+          },
+          {
+            "type": "text",
+            "text": " is the most immediately noticeable change: the same mould and the same pulp at 10°C will hold water for two to three times as long as at 20°C. If you try to couch too early on a cold day, the sheet will slip off the mould surface and tear. Waiting longer at each stage is the main adaptation."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Warming the vat water" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Start with warmer vat water than you would in summer. Water at 30°C in a cold room will cool to 18 to 20°C within 15 to 20 minutes of use. This gives you a working window at a functional drainage rate before the water cools to the ambient room temperature. A brief pre-warm also improves pulp dispersion: cold fibres clump slightly and produce sheets with uneven formation. Stir the vat for 2 minutes after adding pulp to warm water before pulling any sheets."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Thinning the pulp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "In cold conditions, use a slightly thinner pulp consistency (more water per unit of pulp) than in warm conditions. A thinner vat drains more readily at low temperature and produces a more evenly formed sheet. The sheet will be slightly lighter in weight, but cold-made sheets pressed firmly will still have good density."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drying cold-made sheets" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "restrained-drying" } }],
+            "text": "restrained drying"
+          },
+          {
+            "type": "text",
+            "text": " for every cold-made sheet. Paste the pressed-but-still-wet sheet directly to a smooth acrylic or glass board using the damp-self-adhesion method (the sheet sticks to the board by capillary action as you smooth it down). In cold conditions, a sheet left to dry flat without restraint will take 12 to 24 hours and is likely to curl substantially. Restrained drying also takes longer in the cold, but the sheet releases from the board flat when fully dry regardless of the time taken."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "Pulled sheet slides off the mould when turning to couch",
+              "cause": "The sheet has not drained enough: cold water is slow and the sheet is still too heavy with water to hold its shape.",
+              "fix": "Wait 5 to 10 seconds longer after lifting the mould from the vat before turning to couch. If the sheet still slides, tip the mould to a steeper angle to encourage drainage."
+            },
+            {
+              "symptom": "Finished sheets show wild fibre clumps (poor formation)",
+              "cause": "The pulp fibres clumped together in cold water before sheet pulling.",
+              "fix": "Use warmer vat water and stir thoroughly. For cotton linter pulp, a short blitz in a kitchen blender (the papermaking type, not food use) after adding to cold water also helps disperse clumps."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "dream-journal-page-layout",
+  "title": "Dream journal page layout",
+  "subtitle": "A simple ruled-and-boxed layout for capturing dreams before they fade",
+  "excerpt": "A dream journal needs to be ready for fast, half-awake writing in the first minutes after waking. The layout has to work without thinking about it: a wide ruled section for the narrative, a smaller grid for symbols and images, and a box for the single most striking detail before the full narrative begins. Setting this up in advance for each week's pages means it is ready when you need it.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "journalling-craft",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Dream journal layout design is a contemporary journalling craft practice with no single canonical source. This entry is an original Homemade layout design.",
+  "recipeTools": [
+    { "slug": "dotted-journal-a5", "isOptional": false },
+    { "slug": "fineliner-0-38", "isOptional": false },
+    { "slug": "metal-ruler-15cm", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "capture-box",
+      "term": "Capture box",
+      "definition": "A designated small area at the top of a journal page for a single key image or feeling from a dream, written before the full narrative. This short capture reduces memory loss during the time needed to write the complete entry."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A dream journal page layout for one night occupies one spread of an A5 dotted journal. The left page holds the narrative; the right page holds a small symbol sketch area and a symbols key list. Before either of those, a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "capture-box" } }],
+            "text": "capture box"
+          },
+          {
+            "type": "text",
+            "text": " at the top of the left page takes the one detail that matters most in the first 30 seconds of wakefulness. The layout should take no more than 5 minutes to prepare in advance for each week."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "A5 dotted journal", "notes": "A5 gives a single night per spread without wasted space. Blank or ruled journals also work, but dotted is the easiest for drawing both ruled lines and small sketch grids." },
+            { "name": "Fine-liner, 0.38 mm", "notes": "For the structural lines. A lighter pen than your writing pen prevents the layout from being visually louder than the content." },
+            { "name": "15 cm ruler", "notes": "Optional. Most A5 dotted journals have dots at 5 mm spacing, which makes free-hand ruled lines on the dot grid straightforward without a ruler." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Left page layout" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rule a capture box across the full width of the left page, 20 to 25 mm high, at the very top. Label it lightly 'first image' or leave it unlabelled. Below the capture box, draw a horizontal rule to separate it from the narrative area. The remainder of the left page (roughly 130 to 140 mm of vertical space) is left blank for writing. No additional structure is needed: ruling the entire narrative area into lines makes the entry feel like an exam, not a memory."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Right page layout" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Divide the right page into two sections. The upper two-thirds is a lightly dotted sketch area for symbols, locations, or characters encountered in the dream, drawn as thumbnail sketches. The lower third is a short ruled list area for a symbols key: brief labels linking what was sketched to what it meant or felt like. Rule 5 to 7 narrow lines for the key. The date goes at the very top of the right page, not the left, because the right page is what you see first when you open the journal."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "The layout is too structured to use in a half-awake state",
+              "cause": "Too many separate labelled sections create decision points when the brain is not fully awake.",
+              "fix": "Simplify to just the capture box and the narrative area on the left page. Add the symbol sketch area to the right page only after you have written the narrative."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

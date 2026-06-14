@@ -1,0 +1,152 @@
+{
+  "slug": "parchment-guard-sheets",
+  "title": "Parchment guard sheets",
+  "subtitle": "Reinforcing single-sheet inserts so they take the strain of opening",
+  "excerpt": "A parchment guard is a narrow strip of tough paper or vellum paper folded around a single printed or drawn sheet and sewn into a binding in place of a folded signature. Without a guard, a single sheet tears away from the sewing at the spine. With one, it is as strong as any folded folio.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on guarding plates and maps into book structures: the standard conservation approach for single sheets and folded maps bound into a sewn text block.",
+  "recipeTools": [
+    { "slug": "vellum-paper", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "paste-brush-bookbinding", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "cutting-mat-a4", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "guard",
+      "term": "Guard",
+      "definition": "A narrow strip of paper or vellum paper wrapped around a single sheet and then sewn through as though it were a folded folio, so the single sheet is anchored at the spine without being sewn through directly."
+    },
+    {
+      "slug": "tipped-in",
+      "term": "Tipped in",
+      "definition": "A single sheet attached to the inside of a fold or a guard by a narrow line of adhesive at the spine edge only, leaving the bulk of the sheet free to turn."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "When a binding needs to include single sheets (prints, photographs, maps, or calligraphy panels), each sheet needs a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "guard" } }],
+            "text": "guard"
+          },
+          {
+            "type": "text",
+            "text": " so the sewing does not pass directly through the sheet itself. The guard is a strip of vellum paper or stout cartridge paper 10 to 15 mm wide, folded in half. The sheet is "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tipped-in" } }],
+            "text": "tipped in"
+          },
+          {
+            "type": "text",
+            "text": " to the guard: a narrow line of PVA on the spine edge of the sheet, pressed to one face of the guard. The guard then takes the sewing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Vellum paper (translucent)", "notes": "Cut into strips 20 mm wide and the full height of the page. Vellum paper is strong and thin enough that folded in half it adds minimal bulk to the spine." },
+            { "name": "PVA, acid-free, thinned slightly", "notes": "For the 3 mm adhesive line along the sheet's spine edge." },
+            { "name": "Bone folder", "notes": "For pressing the tipped-in sheet flat against the guard and for folding the guard cleanly." },
+            { "name": "Craft knife + metal ruler", "notes": "For cutting guard strips cleanly to height." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cut the guard strips" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut a strip of vellum paper 20 mm wide and exactly the height of the page. Fold it cleanly in half with the bone folder, producing a 10 mm folded strip. The fold is the spine; each half wraps one face of the sheet it will carry."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Tip the sheet into the guard" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Apply a 3 mm line of thinned PVA along the spine edge of the single sheet. Press the sheet carefully onto one face of the open guard so the PVA line aligns with the guard fold. Close the other face of the guard over the front of the sheet and press firmly with the bone folder through a strip of waxed paper. Allow 15 minutes to set. The sheet is now held at its spine edge by the guard; the rest of the sheet hangs free inside the guard fold."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sew the guard into the binding" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Treat the guard as a one-folio signature: pierce it at the sewing stations exactly as you would pierce any other signature. Sew through the guard fold in sequence with the surrounding signatures. The single sheet opens and turns exactly as a folded folio would, but because the sewing goes only through the narrow guard strip, neither the sheet's face nor its text is damaged by the needle."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "The sheet falls out of the guard when the book is opened",
+              "cause": "The PVA line was too narrow (less than 2 mm) or not pressed firmly enough while setting.",
+              "fix": "Re-tip with a slightly wider PVA line (4 mm) and use a heavier weight while it dries."
+            },
+            {
+              "symptom": "The guard tears at the sewing stations",
+              "cause": "Vellum paper was not used; regular cartridge paper is not strong enough at 10 mm width.",
+              "fix": "Use a stronger material: vellum paper, Japanese kozo tissue, or a strip of thin cloth. Regular cartridge will work at 15 mm width, but the added bulk shows at the spine."
+            },
+            {
+              "symptom": "The sheet is not centred in the guard and hangs to one side",
+              "cause": "The sheet was not positioned centrally before the PVA set.",
+              "fix": "Dampen the PVA joint gently with a damp swab to soften it, then reposition and re-press."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

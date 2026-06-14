@@ -1,0 +1,128 @@
+{
+  "slug": "recycled-office-paper-pulp",
+  "title": "Recycled office paper pulp",
+  "subtitle": "Turning waste paper from a printer or shredder into papermaking pulp",
+  "excerpt": "Printer paper, photocopier paper, and shredded office paper all make usable papermaking pulp with no specialist equipment beyond a kitchen blender (used only for papermaking) and a washing-up bowl. The finished sheets are grey-white with visible toner flecks and a slightly harder feel than cotton linter sheets. They are ideal for practice and for learning sheet-pulling technique before committing to more costly fibre.",
+  "type": "TECHNIQUE",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "papermaking",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The use of recycled office paper as a papermaking feedstock is a standard introductory technique in contemporary papermaking workshops and books including Timothy Barrett's work on pulp preparation.",
+  "recipeTools": [
+    { "slug": "paper-mould-deckle-a5", "isOptional": false },
+    { "slug": "papermaking-vat", "isOptional": false },
+    { "slug": "couching-cloth", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "secondary-fibre",
+      "term": "Secondary fibre",
+      "definition": "Cellulose fibre that has already been used at least once in a paper product (writing paper, newspaper, cardboard) and is being recycled into new paper. Secondary fibre is shorter and slightly weaker than virgin fibre and produces paper with less wet strength."
+    },
+    {
+      "slug": "toner-fleck",
+      "term": "Toner fleck",
+      "definition": "A particle of laser-printer toner plastic that is not broken down by the blending process and appears as a dark speck in recycled paper pulp. Unavoidable when recycling toner-printed paper; absent when using inkjet-only waste paper."
+    }
+  ],
+  "techniqueSlugs": ["basic-sheet-pulling"],
+  "criticalTechniques": ["basic-sheet-pulling"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recycled office paper is the easiest and cheapest papermaking feedstock. The cellulose fibres in printer paper are already well-processed "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "secondary-fibre" } }],
+            "text": "secondary fibres"
+          },
+          {
+            "type": "text",
+            "text": " that require no cooking or chemical preparation: soaking in water and a short blitz in a blender is enough to return them to pulp. The sheets will have a warm grey-white tone and, if the paper was laser-printed, some visible "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "toner-fleck" } }],
+            "text": "toner flecks"
+          },
+          {
+            "type": "text",
+            "text": ". Neither is a problem for practice sheets or for decorative purposes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Waste printer or photocopier paper", "notes": "A4 or letter size. Remove any staples, paper clips, or plastic tape before use. Glossy coated paper (brochures, magazine pages) does not break down in a blender and must be excluded. Plain uncoated paper only." },
+            { "name": "Kitchen blender, reserved for papermaking", "notes": "Never use the same blender for food after using it for papermaking: pulp fibres are impossible to clean from blender mechanisms. Buy a second-hand blender or designate one as the papermaking blender." },
+            { "name": "Large washing-up bowl or plastic storage box, as the vat", "notes": "At least 5 litres capacity; 10 to 15 litres is better." },
+            { "name": "Paper mould and deckle", "notes": "Standard sheet-pulling equipment." },
+            { "name": "Couch cloths and felts", "notes": "Standard pressing equipment." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the pulp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tear the paper into pieces roughly 3 cm square. Soak in cold water for at least 2 hours, or overnight for the easiest breakdown. When the pieces are thoroughly soggy, fill the blender to the halfway point with water, add a small handful of wet paper pieces, and blend for 30 seconds. The result should be a smooth, slightly cloudy slurry with no visible paper pieces. Pour the slurry into the vat. Repeat until the vat is loaded to working depth (enough water to submerge the mould fully, typically 8 to 10 litres for an A5 mould)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pulling sheets" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Recycled office paper pulp pulls into sheets in the same way as cotton linter pulp. The main difference is that secondary fibres are shorter and the sheet has slightly less wet strength after couching. Handle each wet sheet gently and use a couch cloth method (lay the mould face-down onto the cloth) rather than rolling the mould sideways, which puts more lateral stress on the fragile wet sheet."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "items": [
+            {
+              "symptom": "The wet sheet tears when being couched or moved",
+              "cause": "Secondary fibres have poor wet strength. The sheet needs longer on the mould to drain more before couching.",
+              "fix": "Wait until the sheet surface looks matte rather than shiny before attempting to couch. Lay the couch cloth onto the mould surface and press gently rather than flipping the mould aggressively."
+            },
+            {
+              "symptom": "The blended slurry still has visible paper chunks",
+              "cause": "Paper was not soaked long enough before blending, or the blender is underpowered.",
+              "fix": "Return the slurry to the blender with additional water and blend for another 30 to 60 seconds. If chunks remain, soak the paper overnight before the next attempt."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

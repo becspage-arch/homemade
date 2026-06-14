@@ -1,0 +1,235 @@
+{
+  "slug": "ledger-binding",
+  "title": "Ledger binding",
+  "subtitle": "A heavy sewn-on-tapes account book built to survive daily use",
+  "excerpt": "Ledger binding is the traditional construction for account books and cashbooks: heavy boards, a tight back, and signatures sewn on strong linen tapes. The result is a book that lies flat under hand pressure and holds up to decades of daily opening.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on account-book binding and sewing on tapes. Cyril Davenport, The Book: Its History and Development (1907), on the commercial binding traditions of the nineteenth century.",
+  "recipeTools": [
+    { "slug": "bookbinding-board-3mm", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "pva-acid-free", "isOptional": false },
+    { "slug": "paste-brush-bookbinding", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "craft-knife-blades-11", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "blotting-paper", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tape-sewing",
+      "term": "Sewn on tapes",
+      "definition": "A sewing method where signatures are stitched around horizontal linen or cotton tape supports across the spine, giving the binding exceptional strength."
+    },
+    {
+      "slug": "rounding",
+      "term": "Rounding",
+      "definition": "The process of hammering or pressing a freshly glued text block spine into a gentle convex curve before attaching boards, which helps the book open smoothly and distributes the stress of opening across the whole spine."
+    },
+    {
+      "slug": "backing",
+      "term": "Backing",
+      "definition": "The process of pressing the rounded spine into a backing press or between boards to form a shoulder on each side, against which the cover boards will later sit."
+    }
+  ],
+  "techniqueSlugs": ["kettle-stitch", "sewing-on-tapes"],
+  "criticalTechniques": ["sewing-on-tapes"],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Sew, glue, and round",
+      "body": "Fold and sew all signatures on tapes, apply PVA to the spine, and round under a book press.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Back the spine and attach boards",
+      "body": "Once the PVA is dry, back the spine to form shoulders, cut and attach the boards, and finish the case.",
+      "surfaceAs": "RAIL_CARD",
+      "requiresUserAction": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ledger binding is a commercial account-book construction from the nineteenth century. Signatures are "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tape-sewing" } }],
+            "text": "sewn on tapes"
+          },
+          {
+            "type": "text",
+            "text": " across the spine, the text block is glued, rounded, and "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "backing" } }],
+            "text": "backed"
+          },
+          {
+            "type": "text",
+            "text": " to form a shoulder, and heavy boards are laced on via the tape ends. The resulting book survives heavy daily use. This project uses eight signatures of eight sheets each, producing a 128-page A5 book. Allow two sessions: the first for sewing and gluing, the second after the spine has dried overnight."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Adhesive safety",
+          "body": "PVA and wheat paste are safe for indoor use without special ventilation. Clean hands and tools with warm water immediately after use. PVA on skin peels off cleanly once dry."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Cartridge or writing paper, 90 gsm, A4", "notes": "Eight sheets per signature, folded to A5. Use paper with the grain running head-to-tail (parallel to the spine once folded)." },
+            { "name": "Linen sewing tape, 15 mm wide", "notes": "Cut four pieces 50 mm longer than the spine height. The tape runs horizontally across the spine at each sewing station." },
+            { "name": "Waxed linen thread, 4-cord", "notes": "Wax a second time before sewing for extra strength." },
+            { "name": "Bookbinding board, 3 mm", "notes": "Heavy board for front and back covers, cut 3 mm larger than the text block on three sides (head, tail, foredge). The spine edge is flush with the text block shoulder." },
+            { "name": "PVA, acid-free", "notes": "For gluing the spine after sewing. Apply in two thin coats, working the adhesive between the signatures with a stiff brush." },
+            { "name": "Blotting paper", "notes": "To place between the text block and pressing boards while the spine glue dries." },
+            { "name": "Bone folder", "notes": "For folding signatures and burnishing." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Set up the sewing frame" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A sewing frame holds the tapes vertical while you sew. A simple frame can be made from two strips of wood clamped to the sides of a tray or box. Knot each tape to the top bar with a half-hitch and tape its lower end to the bench. The four tapes should hang parallel and vertical, spaced evenly across the spine width. Mark the tape positions on a scrap of paper and use this as a template to mark sewing stations on each signature."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sew the signatures on the tapes" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the first signature in the frame, spine to the tapes. Sew in through the tail kettle-stitch hole, run along the inside of the spine to the first tape station, exit through the spine, loop around the tape, re-enter through the same hole, and continue to each tape station in turn. At the head, work a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "kettle-stitch", "label": "kettle stitch" } }],
+            "text": "kettle stitch"
+          },
+          {
+            "type": "text",
+            "text": " to lock the thread, add the second signature on top, and sew back in the opposite direction, looping around the tapes as before. Continue for all eight signatures, linking each kettle stitch into the one below."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Glue and round the spine" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the text block from the frame and tap it square on a flat surface. Apply a generous coat of PVA to the spine with the paste brush, working it into the gaps between signatures. Allow 15 minutes to become partially firm, then apply a second coat. While the PVA is still flexible but not wet, "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rounding" } }],
+            "text": "round"
+          },
+          {
+            "type": "text",
+            "text": " the spine by pressing the signatures into a gentle curve with the hands. Place the rounded text block between pressing boards with blotting paper at the spine and leave under heavy weights overnight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Back the spine and attach boards" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once dry, place the text block between two pressing boards with 2 mm of the shoulder area exposed on each side. Press firmly so the shoulder folds down against the board edges. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "backing" } }],
+            "text": "backing"
+          },
+          {
+            "type": "text",
+            "text": " creates a channel on each side into which the cover boards will sit. Thread the tape ends through holes punched in the boards and lace them down flat on the inside face, gluing them under strips of endpaper. The boards sit in the shoulder groove and move with the text block rather than pulling against it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cover and press" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ledger bindings are traditionally covered in cloth or leather. A half-cloth cover with paper sides is the simplest choice: apply book cloth to the spine and 30 mm onto each board, then cover the exposed board areas with decorated paper. Paste down the endpapers and press under weight for four hours. The finished book should open flat under gentle hand pressure, with the spine holding its rounded shape when closed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A well-made ledger binding can last a working lifetime with minimal care. Store upright. If a tape breaks, it can be resewn from outside by threading a matching length through the existing stations and knotting it to the broken tape ends on the inside of the boards."
+          }
+        ]
+      }
+    ]
+  }
+}

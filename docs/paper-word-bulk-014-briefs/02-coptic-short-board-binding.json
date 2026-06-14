@@ -1,0 +1,242 @@
+{
+  "slug": "coptic-short-board-binding",
+  "title": "Coptic binding with short boards",
+  "subtitle": "Flush-cut boards and exposed chain-link sewing on a flat-opening book",
+  "excerpt": "A short-board Coptic binding uses boards trimmed flush with the text block on all four edges. The result is a clean-edged book where the exposed spine chain-stitch is the only decoration.",
+  "type": "PATTERN",
+  "categorySlug": "paper-word",
+  "subCategorySlug": "bookbinding",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Douglas Cockerell, Bookbinding and the Care of Books (1901), chapter on sewing structures: the Coptic link stitch and its variants. The short-board (flush-board) variant is documented in conservation literature as characteristic of early Coptic manuscripts from Egypt, third to eleventh centuries.",
+  "recipeTools": [
+    { "slug": "bookbinding-board-2mm", "isOptional": false },
+    { "slug": "bookbinding-thread-linen", "isOptional": false },
+    { "slug": "bookbinding-needle", "isOptional": false },
+    { "slug": "bookbinding-awl", "isOptional": false },
+    { "slug": "beeswax-block", "isOptional": false },
+    { "slug": "bone-folder", "isOptional": false },
+    { "slug": "craft-knife", "isOptional": false },
+    { "slug": "craft-knife-blades-11", "isOptional": false },
+    { "slug": "cutting-mat-a3", "isOptional": false },
+    { "slug": "metal-ruler-30cm", "isOptional": false },
+    { "slug": "cartridge-paper-130", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "short-board",
+      "term": "Short board",
+      "definition": "A cover board trimmed exactly flush with the text block on all four edges, with no square (no overhang). The traditional Coptic style."
+    },
+    {
+      "slug": "chain-stitch-coptic",
+      "term": "Coptic chain stitch",
+      "definition": "The linking stitch passed through the preceding signature and the kettle stitch of the same signature to chain successive signatures together into a self-supporting text block without adhesive."
+    },
+    {
+      "slug": "sewing-station",
+      "term": "Sewing station",
+      "definition": "One of the pierced holes through which the bookbinding thread passes when sewing signatures together. Station positions are marked with ruler and pencil before piercing."
+    }
+  ],
+  "techniqueSlugs": ["kettle-stitch", "coptic-chain-variation"],
+  "criticalTechniques": ["kettle-stitch"],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A Coptic binding with "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "short-board" } }],
+            "text": "short boards"
+          },
+          {
+            "type": "text",
+            "text": " is the original Coptic form: boards cut flush with the text block on all four edges, no overhang, spine left bare to show the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chain-stitch-coptic" } }],
+            "text": "chain stitch"
+          },
+          {
+            "type": "text",
+            "text": ". The book opens completely flat. The binding uses no adhesive in the text block: the sewing alone holds everything together. This version uses six signatures of five folded sheets each, producing a finished book of 60 pages at A5 format."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Cutting tools safety",
+          "body": "Sharp blades are safer than blunt blades. Change the blade at the first sign of dulling. Cut on a self-healing cutting mat. Keep the non-cutting hand at least two finger-widths from the blade path."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Tools and materials",
+          "items": [
+            { "name": "Cartridge paper, 130 gsm, A4", "notes": "For signatures. Fold each A4 sheet in half to make an A5 folio. Five folios per signature, 6 signatures." },
+            { "name": "Bookbinding board, 2 mm", "notes": "Cut two pieces to exactly A5 format: 148 mm wide, 210 mm tall. No overhang." },
+            { "name": "Waxed linen thread, 4-cord", "notes": "Wax before use even if pre-waxed. The extra wax reduces fraying and helps the chain stitch sit neatly." },
+            { "name": "Bookbinding needles, 2", "notes": "You work with two needles on one thread when sewing the link stitch." },
+            { "name": "Bookbinding awl", "notes": "For piercing sewing stations through folded signatures and boards." },
+            { "name": "Beeswax block", "notes": "Run the thread through twice before sewing." },
+            { "name": "Bone folder", "notes": "For scoring and folding signatures cleanly." },
+            { "name": "Craft knife + No. 11 blades", "notes": "For trimming boards to size." },
+            { "name": "Metal ruler, 30 cm", "notes": "For guided cuts and marking sewing stations." },
+            { "name": "Self-healing cutting mat, A3", "notes": "Work surface." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Fold and nest the signatures" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fold each A4 sheet in half with the bone folder, pressing firmly from the spine outward. Nest five folded sheets together to form one signature. Repeat for all six signatures. Jog them square against a flat surface and then compress the stack under heavy books for 10 minutes to flatten the spring from the folds."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cut and prepare the boards" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut two boards to exactly 148 x 210 mm. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "short-board" } }],
+            "text": "short board"
+          },
+          {
+            "type": "text",
+            "text": " format requires precision here: measure and cut with a metal ruler and craft knife rather than scissors, as even a 1 mm discrepancy shows on the finished book. Check the boards against a folded signature: they should align exactly on all four sides."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Mark and pierce the sewing stations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mark "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "sewing-station" } }],
+            "text": "sewing stations"
+          },
+          {
+            "type": "text",
+            "text": " on a folded signature: 10 mm from the head, 10 mm from the tail, and four equally spaced stations between (approximately 38 mm apart for a 210 mm fold). Use this first signature as a template to mark all remaining signatures and both boards, keeping the pattern consistent. Pierce each station with the bookbinding awl while the signature is open in a piercing cradle (a V-shaped jig, or two heavy books with a gap between them). Pierce the boards with the awl against a cutting mat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Sew the binding" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thread two needles on a single length of waxed thread approximately three times the height of the book. Begin by sewing the first signature to the front board: enter from inside the signature at the head station and pass through the board, then run back inside to each successive station and exit through the board each time. At the tail, work a "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "kettle-stitch", "label": "kettle stitch" } }],
+            "text": "kettle stitch"
+          },
+          {
+            "type": "text",
+            "text": " and proceed to the second signature. For each subsequent signature, the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "chain-stitch-coptic" } }],
+            "text": "chain stitch"
+          },
+          {
+            "type": "text",
+            "text": " links through the loop of the stitch below before re-entering the current signature. The back board is sewn on last, in the same manner as the front. Keep the thread taut but not so tight that it cuts the paper at the stations."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finish the sewing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tie off the thread at the final station with two half-hitch knots inside the last signature. Trim the tail to 5 mm and tuck it under the nearest stitch. The spine chains should sit evenly spaced and at a consistent tension: run a finger along the spine and check that no chain jumps outward. If a link is loose, re-tension it gently by pulling the thread at the nearest station."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Care" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A Coptic binding with short boards is less protected than a cased book: the text block edges are exposed and can bruise if the book is stored horizontally under weight. Store upright on a shelf with neighbours of similar height to support the boards. The linen thread ages well. If a chain breaks after heavy use, resew the broken section with a matching thread and work a kettle stitch at each end to lock the repair in place."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The same structure with the boards wrapped in cloth or decorated paper before sewing produces a more finished look without changing the binding method. Adding a coloured waxed thread in a contrasting colour to the chain produces a decorative two-colour spine. For a smaller book, fold A5 sheets to A6 and scale the board size and station spacing proportionally."
+          }
+        ]
+      }
+    ]
+  }
+}
