@@ -8,6 +8,29 @@ Updated each working session.
 
 ---
 
+## Recipe foundation (2026-06-14)
+
+phase_recipe_foundation_001. Premium cooking/baking foundation worker. Reconciled against what already shipped: the ingredient ontology the original brief scoped as the "largest migration" was already live (1,038 canonical `Ingredient` rows + 953 `Tool` rows + 23,451 `RecipeIngredient` links, with cooking 100% / baking 96% / natural-home 100% / herbal-medicine 78% of published tutorials already linked, plus the `recipe-ingredients-sync.ts` pipeline). So this worker did NOT recreate it - it layered on top.
+
+**Schema (additive migration):**
+- Extended existing `Ingredient` with `densityGPerMl Decimal?` (grams↔cups conversion) + `aisle IngredientAisle?` (shopping-list grouping) + the `IngredientSubstitution` reverse relations.
+- New `IngredientSubstitution` model - richer than the legacy `commonSubstitutes` slug array (ratio + appropriateFor context + flavourDelta). FK both sides to the canonical `Ingredient`.
+- New `UserRecipe` + `UserRecipeIngredient` (distinct from Tutorial: own ownership/lifecycle/moderation state; ingredient rows FK to the canonical `Ingredient`). Enums `UserRecipeStatus` / `UserRecipeVisibility` / `MealType`.
+- `User.ovenPreference` / `weightPreference` / `volumePreference` - cross-craft cooking-unit display prefs, shaped to the locked `feedback_temperature_and_units` memo (OvenPreference / WeightPreference / VolumePreference) rather than the brief's looser 2-enum sketch. Canonical storage stays conventional °C + grams + ml.
+
+**Backfill:** aisle seeded on all 1,038 ingredients (from `category`), density on 101 curated high-frequency ingredients (slug map + narrow flour/oil category fallback), 599 `IngredientSubstitution` rows projected from the legacy arrays (0 unresolved slugs).
+
+**App layer:**
+- `lib/recipes/units.ts` - `formatTemperature` (fan/conventional °C/°F/gas mark per the locked conversion table), `formatWeight`, `formatVolume`, `formatIngredientQuantity` (density-bridged grams→cups), `formatTime`, `resolveUnitPreferences` (locale defaults).
+- `lib/recipes/substitutions.ts` - free-tier `getSubstitutions` + batch variant reading the new graph, context-filtered.
+- `lib/recipes/premium-gates.ts` - RECIPE_UPLOAD / COMMUNITY_RECIPES / MEAL_PLANNING / SHOPPING_LIST, default OFF (mirrors the studio gate shape).
+- Stub routes `/recipes/upload`, `/recipes/community`, `/meal-plan`, `/shopping-list` - calm "Coming soon" surfaces reading the gate rationale, 200.
+- `apps/web/scripts/moderate-user-recipes.ts` - AI-moderation pipeline scaffold (deterministic duplicate + originality checks inline; voice/copyright/spam/off-topic judgement deferred to a Claude Code worker session). AI-only, never manual editorial, per the locked rule. Scaffold only - not run at scale.
+
+Next worker: meal planning + calendar (then shopping-list aggregation, then the upload form UI).
+
+---
+
 ## Current state (2026-05-30)
 
 Live at https://homemade.education behind splash gate (cookie `homemade-access=1`). The splash flips off at launch — pre-launch checklist of Rebecca-action items lives in `memory/project_pre_launch_checklist.md`.
