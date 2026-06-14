@@ -327,6 +327,9 @@ model User {
   // Recipe foundation. User-uploaded recipes the Maker owns.
   userRecipes UserRecipe[] @relation("UserRecipeOwner")
 
+  // Meal plan. The Maker's weekly recipe calendars.
+  mealPlans MealPlan[] @relation("MealPlanOwner")
+
   @@index([role])
   @@index([isSuspended])
   @@index([isCreator])
@@ -2780,6 +2783,67 @@ enum MealType {
   DRINK
   SIDE
   OTHER
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Meal plan (phase_meal_plan_001)
+//
+// A Maker's weekly recipe calendar. One MealPlan per (user, week); entries slot
+// a recipe into a day + meal. Entries store the recipe by plain id + a
+// denormalised slug/title rather than an FK relation to Tutorial / UserRecipe,
+// matching the pragmatic id-only pattern used elsewhere (UserRecipe photos,
+// crochet stash) so the plan survives a recipe being unpublished and the
+// shopping-list generator can read slugs without a join. Saved per-user state,
+// so it is a free signed-in feature now; the MEAL_PLANNING gate flips it to
+// premium later.
+// ────────────────────────────────────────────────────────────────────────────
+
+model MealPlan {
+  id          String @id @default(cuid())
+  ownerUserId String
+  owner       User   @relation("MealPlanOwner", fields: [ownerUserId], references: [id], onDelete: Cascade)
+
+  /// Optional label; defaults to the week date at render time when null.
+  title String?
+
+  /// Monday of the plan's week (date only). One plan per user per week.
+  weekStartDate DateTime @db.Date
+
+  entries MealPlanEntry[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([ownerUserId, weekStartDate])
+  @@index([ownerUserId, weekStartDate])
+}
+
+model MealPlanEntry {
+  id     String   @id @default(cuid())
+  planId String
+  plan   MealPlan @relation(fields: [planId], references: [id], onDelete: Cascade)
+
+  /// 0 = Monday ... 6 = Sunday.
+  dayOfWeek Int
+  mealType  MealType
+
+  /// What's slotted: a library recipe (Tutorial) by id + denormalised slug /
+  /// title, a user recipe by id, or a free-text note. All optional so a slot
+  /// can hold any one of them.
+  tutorialId    String?
+  tutorialSlug  String?
+  tutorialTitle String?
+  userRecipeId  String?
+  note          String?
+
+  /// Optional per-slot servings override (defaults to the recipe's own).
+  servings Int?
+  position Int @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([planId, dayOfWeek])
 }
 
 // ────────────────────────────────────────────────────────────────────────────

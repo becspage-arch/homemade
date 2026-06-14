@@ -50,6 +50,14 @@ Next: meal-plan schema + calendar (feeds the shopping list from a planned week),
 
 ---
 
+## Meal plan + recipe-render polish (2026-06-14)
+
+**Meal plan (phase_meal_plan_001).** A signed-in Maker's weekly recipe calendar. `MealPlan` + `MealPlanEntry` (one plan per user per week; entries slot a recipe into a day + meal, recipe stored by id + denormalised slug/title so the plan survives an unpublish). The `/meal-plan` stub became a real page: a 7-day x meal grid (breakfast / lunch / dinner) with week navigation, an inline "+ Add" per slot that searches published recipes (`/api/recipes/search`) and slots them via a server action, remove buttons, and a "Make shopping list" button that hands the week's distinct recipe slugs to `/shopping-list`. Signed-out users get a calm sign-in prompt (meal plan is saved per-user state, a free signed-in feature). The MEAL_PLANNING gate stays off; the page routes through `checkRecipeGate` so flipping it later needs no change.
+
+**Render polish.** Count units now pluralise ("2 cloves" not "2 clove") in both the ingredients list and the shopping list. And the unit / substitution / shopping rendering now covers herbal-medicine REMEDY tutorials, not just RECIPE: those 111 remedy pages have ingredient blocks that previously rendered nothing (their `recipeContext` was null). All remedies have null servings, so no odd "servings" wording appears; they gain the structured ingredients, units, substitutions and shopping button. Coverage is now cooking + baking + natural-home (all RECIPE) + herbal remedies; the only recipe-style entries still outside it are a handful of baking TECHNIQUE rows that carry ingredients.
+
+---
+
 ## Current state (2026-05-30)
 
 Live at https://homemade.education behind splash gate (cookie `homemade-access=1`). The splash flips off at launch — pre-launch checklist of Rebecca-action items lives in `memory/project_pre_launch_checklist.md`.
