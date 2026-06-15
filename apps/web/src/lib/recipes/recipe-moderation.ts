@@ -538,6 +538,23 @@ export async function runModerationBatch(opts: {
         title: r.title,
         ingredientIds: new Set(r.ingredients.map((i) => i.ingredientId)),
       })
+      // Tell the Maker it passed. A public / unlisted recipe links to the live
+      // page; a private one links back to their recipes.
+      const live = r.visibility === 'PUBLIC' || r.visibility === 'UNLISTED'
+      await prisma.notification
+        .create({
+          data: {
+            userId: r.ownerUserId,
+            type: 'USER_RECIPE_APPROVED',
+            body: live
+              ? `"${r.title}" passed review and is live.`
+              : `"${r.title}" passed review. It stays private until you change its visibility.`,
+            href: live ? `/recipes/${r.slug}` : '/me/recipes',
+          },
+        })
+        .catch(() => {
+          /* never let a notify failure strand a written verdict */
+        })
     } else {
       await prisma.userRecipe.update({
         where: { id: r.id },
@@ -556,8 +573,9 @@ export async function runModerationBatch(opts: {
         .create({
           data: {
             userId: r.ownerUserId,
-            type: 'SYSTEM',
+            type: 'USER_RECIPE_REJECTED',
             body: `"${r.title}" needs a change before it can go live. ${reasons}`,
+            href: '/me/recipes',
           },
         })
         .catch(() => {

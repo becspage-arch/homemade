@@ -2034,6 +2034,9 @@ enum NotificationType {
   // publicNote, or a What-I-used entry). Body explains which field was
   // removed; href points the Maker to /me/settings or the project edit.
   MAKER_PROFILE_CONTENT_REMOVED
+  // Recipe creator economy — fired by the AI moderation pass.
+  USER_RECIPE_APPROVED
+  USER_RECIPE_REJECTED
   SYSTEM
 }
 
