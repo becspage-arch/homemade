@@ -653,6 +653,19 @@ model Tutorial {
   publishedAt  DateTime?
   scheduledFor DateTime?
 
+  // Content-completeness gate (2026-06-15). When the publish path blocks a
+  // row because it failed its per-category completeness check (leaked NaN /
+  // undefined, unfilled placeholder, a PATTERN with no row/round
+  // instructions, a recipe with no ingredients, ...), the row stays / is
+  // returned to DRAFT and the structured failure is recorded here:
+  //   { blocked, reasons[], rules[], blockedFromStatus, checkedAt, source }
+  // publishedAt is deliberately preserved on un-publish so the audit trail
+  // shows when the row was live. The qc-fix pass clears this back to null
+  // once the row passes the completeness check again. AI-only — never a
+  // human triage queue (no warning tier). See
+  // packages/db/scripts/qc-completeness-rules/.
+  qcBlockReason Json?
+
   // Authorship
   authorId String
   author   User   @relation("TutorialAuthor", fields: [authorId], references: [id])

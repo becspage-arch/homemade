@@ -16,27 +16,24 @@ for (let depth = 0; depth < 12; depth++) {
 }
 async function main() {
   const { prisma } = await import('../src/index.js')
+  const { gatedPublishDrafts } = await import('./qc-gated-publish.js')
   const slugs = ['natural-home', 'sustainability', 'home-repair', 'animals-smallholding', 'fibre-arts']
 
-  // Publish any remaining DRAFT tutorials in those 5 categories
-  const drafts = await prisma.tutorial.findMany({
-    where: {
-      category: { slug: { in: slugs } },
-      status: 'DRAFT',
-    },
-    select: { id: true, slug: true, title: true, category: { select: { slug: true } } },
-  })
-  console.log(`Found ${drafts.length} DRAFTs across the 5 categories:`)
-  drafts.forEach((d) => console.log(`  [${d.category.slug}] ${d.title} (${d.slug})`))
-
-  const publishResult = await prisma.tutorial.updateMany({
-    where: {
-      category: { slug: { in: slugs } },
-      status: 'DRAFT',
-    },
-    data: { status: 'PUBLISHED', publishedAt: new Date() },
-  })
-  console.log(`\nPublished ${publishResult.count} tutorials.`)
+  // Publish remaining DRAFTs in those categories, but ONLY rows that pass the
+  // per-category completeness gate. Broken rows stay DRAFT with qcBlockReason
+  // set (this used to be a blind updateMany — the path skeletons shipped on).
+  const publishResult = await gatedPublishDrafts(
+    prisma,
+    { category: { slug: { in: slugs } } },
+    { source: 'publish-and-flip-a-batch' },
+  )
+  console.log(
+    `\nCandidates ${publishResult.candidates}; published ${publishResult.published}; ` +
+    `blocked (held DRAFT) ${publishResult.blocked}.`,
+  )
+  for (const b of publishResult.blockedSlugs) {
+    console.log(`  ✗ ${b.slug}: ${b.reasons.join('; ')}`)
+  }
 
   // Flip all 5 categories to READY
   for (const slug of slugs) {

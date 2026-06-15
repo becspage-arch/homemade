@@ -625,6 +625,49 @@ function countIngredientsListItemsInBody(body: unknown): number {
   return count
 }
 
+/**
+ * Flatten a TipTap body to plain text (text leaves + infoPanel bodies).
+ */
+function bodyToPlainText(body: unknown): string {
+  const out: string[] = []
+  function walk(node: unknown): void {
+    if (!node || typeof node !== 'object') return
+    const n = node as { text?: string; attrs?: { body?: unknown }; content?: unknown[] }
+    if (typeof n.text === 'string') out.push(n.text)
+    if (n.attrs && typeof n.attrs.body === 'string') out.push(n.attrs.body)
+    if (Array.isArray(n.content)) for (const c of n.content) walk(c)
+  }
+  walk(body)
+  return out.join(' ')
+}
+
+/**
+ * Generic completeness guard for the admin publish path — defense-in-depth.
+ * Mirrors the generic checks in packages/db/scripts/qc-completeness-rules so a
+ * skeleton (leaked NaN / undefined, the "instructions go here" scaffold, an
+ * empty body) can't be published from the admin UI either. Returns the failure
+ * reason, or null when the body is clean. Per-category structural rules live in
+ * the script gate; the admin path enforces only the high-precision generic set.
+ */
+function genericCompletenessFailure(body: unknown): string | null {
+  const text = bodyToPlainText(body).trim()
+  if (text.length === 0) return 'the body is empty'
+  if (text.length < 100) return `the body has only ${text.length} characters of text`
+  if (/\bNaN\b/.test(text)) return 'the body contains "NaN" (a number failed to compute)'
+  if (/(?<![A-Za-z])undefined(?![A-Za-z])/.test(text)) return 'the body contains "undefined"'
+  const placeholder = new RegExp(
+    [
+      'instructions?\\s+(?:for\\s+[^.]{0,90}?\\s+)?(?:go|goes|will\\s+go)\\s+here',
+      'instructions?\\s+will\\s+be\\s+(?:added|written|provided)',
+      '\\b(?:content|details|description|text|full\\s+method|step[- ]by[- ]step\\s+instructions?)\\s+(?:goes?|will\\s+go)\\s+here',
+      'lorem ipsum', '\\bTODO\\b', '\\bTBD\\b', '\\bFIXME\\b',
+    ].join('|'),
+    'i',
+  )
+  if (placeholder.test(text)) return 'the body contains an unfilled placeholder phrase'
+  return null
+}
+
 export async function transitionTutorialStatus(
   id: string,
   formData: FormData,
@@ -684,6 +727,15 @@ export async function transitionTutorialStatus(
             'or change the tutorial type to TECHNIQUE if it isn\'t a recipe.',
         )
       }
+    }
+    // Content-completeness guard (2026-06-15) — refuse to publish a skeleton
+    // from the admin UI (leaked NaN / undefined, the "instructions go here"
+    // scaffold, an empty body). Mirrors the script-side completeness gate.
+    const completenessFailure = genericCompletenessFailure(existing.body)
+    if (completenessFailure) {
+      throw new Error(
+        `Cannot publish — ${completenessFailure}. Finish the content in the editor before publishing.`,
+      )
     }
     data.publishedAt = existing.publishedAt ?? new Date()
     data.scheduledFor = null

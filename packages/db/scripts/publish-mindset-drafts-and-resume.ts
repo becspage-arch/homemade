@@ -16,32 +16,20 @@ for (let depth = 0; depth < 12; depth++) {
 }
 async function main() {
   const { prisma } = await import('../src/index.js')
+  const { gatedPublishDrafts } = await import('./qc-gated-publish.js')
 
-  // Find all DRAFT mindset tutorials
-  const drafts = await prisma.tutorial.findMany({
-    where: {
-      category: { slug: 'mindset' },
-      status: 'DRAFT',
-    },
-    select: { id: true, slug: true, title: true },
-    orderBy: { slug: 'asc' },
-  })
-
-  console.log(`Found ${drafts.length} mindset DRAFTs to publish:`)
-  drafts.forEach((d) => console.log(`  - ${d.slug}`))
-
-  // Publish them
-  const result = await prisma.tutorial.updateMany({
-    where: {
-      category: { slug: 'mindset' },
-      status: 'DRAFT',
-    },
-    data: {
-      status: 'PUBLISHED',
-      publishedAt: new Date(),
-    },
-  })
-  console.log(`\nPublished ${result.count} mindset tutorials.`)
+  // Publish mindset DRAFTs that pass the completeness gate; broken ones stay
+  // DRAFT with qcBlockReason set (was a blind updateMany before).
+  const result = await gatedPublishDrafts(
+    prisma,
+    { category: { slug: 'mindset' } },
+    { source: 'publish-mindset-drafts-and-resume' },
+  )
+  console.log(
+    `\nCandidates ${result.candidates}; published ${result.published}; ` +
+    `blocked (held DRAFT) ${result.blocked}.`,
+  )
+  for (const b of result.blockedSlugs) console.log(`  ✗ ${b.slug}: ${b.reasons.join('; ')}`)
 
   // Resume mindset autopilot
   const cat = await prisma.category.update({

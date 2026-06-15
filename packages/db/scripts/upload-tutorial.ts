@@ -104,6 +104,7 @@ import type {
 } from './upload-tutorial-types.js'
 import { validateInput } from './upload-tutorial-types.js'
 import { exitCodeFor, formatReport, runVoiceCheck } from './voice-check-lib.js'
+import { buildQcBlockReason, checkCompleteness } from './qc-completeness-rules/index.js'
 
 type PrismaModule = typeof import('../src/index.js')
 let prismaMod: PrismaModule | null = null
@@ -157,6 +158,9 @@ export async function uploadTutorial(
     Difficulty,
     maybeFlipCategoryVisibility,
     maybeFlipCategoryPipelineComplete,
+    // Runtime Prisma namespace (aliased; the top-of-file `Prisma` is a
+    // type-only import) — needed for Prisma.JsonNull when clearing qcBlockReason.
+    Prisma: PrismaRuntime,
   } = await getPrisma()
 
   // 1. Author.
@@ -779,15 +783,60 @@ export async function uploadTutorial(
       input.paybackYears == null ? null : Math.trunc(input.paybackYears),
   }
 
+  // Content-completeness gate (2026-06-15). A PUBLISHED upload must pass its
+  // per-category completeness check (real row/round instructions, ingredients,
+  // a method, no leaked NaN / undefined / placeholder). If it fails, the row
+  // is HELD at DRAFT and the structured failure is recorded in qcBlockReason
+  // for the qc-fix pass to pick up — broken content cannot ship. This is the
+  // fix for the autopilot regression that shipped ~1,884 skeleton / scaffolded
+  // rows. A successful publish (or any DRAFT upload) clears qcBlockReason back
+  // to null. Binary block / skip — no warning tier (no one to triage).
+  let effectiveStatus: DesiredStatus = desiredStatus
+  let qcBlockReason: Prisma.InputJsonValue | typeof PrismaRuntime.JsonNull = PrismaRuntime.JsonNull
+  if (desiredStatus === 'PUBLISHED') {
+    const completeness = checkCompleteness({
+      slug: input.slug,
+      categorySlug: category.slug,
+      subCategorySlug: input.subCategorySlug ?? null,
+      type: tutorialType,
+      body,
+      servings: recipe.servings ?? null,
+      yieldDescription: recipe.yieldDescription ?? null,
+      totalMinutes,
+      timeMinutes,
+      prepMinutes: recipe.prepMinutes ?? null,
+      cookMinutes: recipe.cookMinutes ?? null,
+      hasChart: (crochet?.chartDefinition ?? knitting?.chartDefinition) != null,
+    })
+    if (!completeness.ok) {
+      effectiveStatus = 'DRAFT'
+      qcBlockReason = buildQcBlockReason(completeness, {
+        blockedFromStatus: 'PUBLISHED',
+        checkedAt: new Date().toISOString(),
+        source: 'uploadTutorial',
+      }) as Prisma.InputJsonValue
+      console.warn(
+        `  [completeness] BLOCKED ${input.slug} — held at DRAFT: ${completeness.reasons.join('; ')}`,
+      )
+    }
+  }
+
   // Publish intent. --status PUBLISHED stamps publishedAt now and flips the
   // row to PUBLISHED on both create and update (bulk auto-publish path from
   // Phase 8 Step 12). --status DRAFT keeps the existing behaviour: new rows
   // land as DRAFT with publishedAt=null; existing rows keep their current
-  // status / publishedAt untouched.
+  // status / publishedAt untouched. effectiveStatus is desiredStatus unless
+  // the completeness gate downgraded it above.
   const publishUpdate =
-    desiredStatus === 'PUBLISHED'
+    effectiveStatus === 'PUBLISHED'
       ? { status: TutorialStatus.PUBLISHED, publishedAt: new Date() }
       : null
+
+  // A PUBLISHED-intent upload that the gate downgraded must actively pull an
+  // already-live row back to DRAFT (publishedAt left untouched for the audit
+  // trail). A plain DRAFT upload leaves the existing status alone, as before.
+  const wasGateBlocked = desiredStatus === 'PUBLISHED' && effectiveStatus === 'DRAFT'
+  const statusWrite = publishUpdate ?? (wasGateBlocked ? { status: TutorialStatus.DRAFT } : {})
 
   let tutorialId: string
   let mode: 'created' | 'updated'
@@ -813,7 +862,8 @@ export async function uploadTutorial(
       where: { id: existingTutorial.id },
       data: {
         ...sharedData,
-        ...(publishUpdate ?? {}),
+        ...statusWrite,
+        qcBlockReason,
       },
     })
     tutorialId = updated.id
@@ -826,6 +876,7 @@ export async function uploadTutorial(
         ...sharedData,
         status: publishUpdate?.status ?? TutorialStatus.DRAFT,
         publishedAt: publishUpdate?.publishedAt ?? null,
+        qcBlockReason,
         authorId: author.id,
       },
     })

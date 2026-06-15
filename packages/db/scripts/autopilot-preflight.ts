@@ -2,6 +2,7 @@ import { config as loadEnv } from 'dotenv';
 import { existsSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { Prisma } from '@prisma/client';
 import { prisma } from '../src/index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -16,6 +17,39 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const COUNTED_NEEDLEWORK = new Set(['blackwork', 'needlepoint', 'hardanger', 'sashiko']);
 const QUEUE_PATH = resolve(__dirname, '..', 'docs', 'pattern-chart-backfill-queue.json');
+const BLOCKED_QUEUE_PATH = resolve(__dirname, '..', 'docs', 'completeness-blocked-queue.json');
+
+/**
+ * Completeness-gate backlog scan. The publish path (`uploadTutorial`) blocks
+ * any row that fails its per-category completeness check and holds it at DRAFT
+ * with a structured `qcBlockReason`. This scan refreshes the worklist of those
+ * blocked rows each preflight cycle so the qc-fix pass + the rebuild workers
+ * have a current per-category list to drain. Cheap: it reads only the
+ * qcBlockReason column (no body walking). Non-blocking — never publishes or
+ * unpublishes. See packages/db/scripts/qc-completeness-rules/.
+ */
+async function blockedContentScan(): Promise<void> {
+  const rows = await (prisma as any).tutorial.findMany({
+    where: { status: 'DRAFT', qcBlockReason: { not: Prisma.DbNull } },
+    select: {
+      slug: true, type: true, qcBlockReason: true,
+      category: { select: { slug: true } },
+    },
+  });
+  const perCat: Record<string, number> = {};
+  const items = rows.map((r: any) => {
+    const cat = r.category?.slug ?? 'unknown';
+    perCat[cat] = (perCat[cat] ?? 0) + 1;
+    const reason = r.qcBlockReason as { reasons?: string[] } | null;
+    return { slug: r.slug, category: cat, type: r.type, reasons: reason?.reasons ?? [] };
+  });
+  writeFileSync(BLOCKED_QUEUE_PATH, JSON.stringify({
+    generatedAt: new Date().toISOString(),
+    total: items.length, perCategory: perCat,
+    items: items.sort((a: any, b: any) => a.category.localeCompare(b.category) || a.slug.localeCompare(b.slug)),
+  }, null, 2));
+  console.log('COMPLETENESS_BLOCKED:', JSON.stringify({ total: items.length, perCategory: perCat }));
+}
 
 /**
  * Chart-gap QC (folded into the autopilot preflight so it self-heals every
@@ -106,6 +140,14 @@ async function main() {
       await chartGapScan();
     } catch (e: any) {
       console.error('CHART_GAP_ERROR:', e?.message);
+    }
+
+    // Completeness-gate backlog — non-blocking; refreshes the worklist of
+    // DRAFT rows held back by the completeness gate for the rebuild pass.
+    try {
+      await blockedContentScan();
+    } catch (e: any) {
+      console.error('COMPLETENESS_BLOCKED_ERROR:', e?.message);
     }
   } catch (e: any) {
     console.error('ERROR:', e.message);
