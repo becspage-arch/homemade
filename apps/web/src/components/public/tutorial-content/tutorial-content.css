@@ -1213,6 +1213,58 @@
   border-bottom: 1px dotted var(--color-sage);
 }
 
+.tutorial-content .recipe-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 4px 0 16px;
+}
+.tutorial-content .recipe-actions-row .add-to-shopping {
+  margin: 0;
+}
+
+.tutorial-content .add-to-plan {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.tutorial-content .add-to-plan-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 8px;
+  background: var(--color-soft-parchment);
+}
+.tutorial-content .add-to-plan-picker label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+}
+.tutorial-content .add-to-plan-picker select {
+  font-size: 0.85rem;
+  padding: 5px 8px;
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 4px;
+  background: var(--color-cream);
+  color: var(--color-espresso);
+}
+.tutorial-content .add-to-plan-feedback {
+  font-size: 0.85rem;
+  color: var(--color-sage);
+}
+.tutorial-content .add-to-plan-feedback.is-error {
+  color: var(--color-burnt-sienna);
+}
+
 @media (max-width: 720px) {
   .tutorial-content .ingredients-list {
     padding: 20px 18px;
