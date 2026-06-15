@@ -103,6 +103,15 @@ export type PosthogEvent =
   // Recipe authoring + scaling
   | 'ingredients_scaled'
   | 'ingredient_created_inline'
+  // Recipe creator economy (UserRecipe)
+  | 'user_recipe_draft_saved'
+  | 'user_recipe_submitted'
+  | 'user_recipe_approved'
+  | 'user_recipe_rejected'
+  | 'user_recipe_deleted'
+  | 'user_recipe_visibility_changed'
+  | 'recipe_added_to_meal_plan'
+  | 'recipe_added_to_shopping_list'
   // Acquisition
   | 'acquisition_captured'
   // Sewing personalisation funnel (S-5e)
@@ -150,6 +159,14 @@ const EVENT_CATEGORIES: Record<string, string> = {
   tutorial_shared: 'engagement',
   ingredients_scaled: 'engagement',
   ingredient_created_inline: 'engagement',
+  user_recipe_draft_saved: 'content',
+  user_recipe_submitted: 'content',
+  user_recipe_approved: 'content',
+  user_recipe_rejected: 'content',
+  user_recipe_deleted: 'content',
+  user_recipe_visibility_changed: 'content',
+  recipe_added_to_meal_plan: 'engagement',
+  recipe_added_to_shopping_list: 'engagement',
   search_query: 'search',
   search_result_clicked: 'search',
   tutorial_published_scheduled: 'content',
