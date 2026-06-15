@@ -20,6 +20,9 @@ export interface MealPlanEntryView {
   /** Category slug for the recipe link, resolved at load time. Null when the
    *  recipe is no longer published or this is a free-text entry. */
   categorySlug: string | null
+  /** Full href to the recipe: a library recipe links to its category page, a
+   *  Maker's recipe to /recipes/[slug]. Null when not linkable. */
+  recipeHref: string | null
   note: string | null
 }
 
@@ -70,14 +73,20 @@ export async function getWeekPlan(
   })
   const entries = plan?.entries ?? []
 
-  // Resolve the category slug for each recipe link in one query.
-  const slugs = Array.from(
-    new Set(entries.map((e) => e.tutorialSlug).filter((s): s is string => Boolean(s))),
+  // Resolve the category slug for each library-recipe link in one query. Entries
+  // backed by a Maker's UserRecipe (userRecipeId set) link to /recipes/[slug]
+  // and don't need a category lookup.
+  const tutorialSlugs = Array.from(
+    new Set(
+      entries
+        .filter((e) => !e.userRecipeId && e.tutorialSlug)
+        .map((e) => e.tutorialSlug as string),
+    ),
   )
   const categoryBySlug = new Map<string, string>()
-  if (slugs.length > 0) {
+  if (tutorialSlugs.length > 0) {
     const rows = await prisma.tutorial.findMany({
-      where: { slug: { in: slugs }, status: 'PUBLISHED' },
+      where: { slug: { in: tutorialSlugs }, status: 'PUBLISHED' },
       select: { slug: true, category: { select: { slug: true } } },
     })
     for (const r of rows) categoryBySlug.set(r.slug, r.category.slug)
@@ -86,14 +95,26 @@ export async function getWeekPlan(
   return {
     planId: plan?.id ?? null,
     weekStartIso: isoDate(weekStart),
-    entries: entries.map((e) => ({
-      id: e.id,
-      dayOfWeek: e.dayOfWeek,
-      mealType: e.mealType as MealTypeValue,
-      tutorialSlug: e.tutorialSlug,
-      tutorialTitle: e.tutorialTitle,
-      categorySlug: e.tutorialSlug ? categoryBySlug.get(e.tutorialSlug) ?? null : null,
-      note: e.note,
-    })),
+    entries: entries.map((e) => {
+      const categorySlug =
+        !e.userRecipeId && e.tutorialSlug ? categoryBySlug.get(e.tutorialSlug) ?? null : null
+      const recipeHref = e.userRecipeId
+        ? e.tutorialSlug
+          ? `/recipes/${e.tutorialSlug}`
+          : null
+        : categorySlug && e.tutorialSlug
+          ? `/${categorySlug}/${e.tutorialSlug}`
+          : null
+      return {
+        id: e.id,
+        dayOfWeek: e.dayOfWeek,
+        mealType: e.mealType as MealTypeValue,
+        tutorialSlug: e.tutorialSlug,
+        tutorialTitle: e.tutorialTitle,
+        categorySlug,
+        recipeHref,
+        note: e.note,
+      }
+    }),
   }
 }
