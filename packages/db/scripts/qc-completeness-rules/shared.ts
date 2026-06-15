@@ -164,6 +164,20 @@ export function hasRowRound(text: string): boolean {
   return /\b(Row|Round|Rnd|Rows|Rounds)\s*\d+/i.test(text)
 }
 
+/**
+ * Correctness check (2026-06-15) for the systematic truncation the de-scaffold
+ * pilot surfaced: the autopilot generator dropped the corner / cluster spec in
+ * REPEATED stitch groups, leaving "into next corner sp work." / "sp work*" with
+ * no stitch count after "work". Structurally the row looks complete (it has
+ * rounds), but it is unmakeable. This catches that exact signature: a "<…> sp
+ * work" instruction terminated (., *, ;, ), ]) with no stitch group after it.
+ * Does NOT match "sp work 3 tr" / "sp, work 2 tr, ch 2, 3 tr" (a real
+ * instruction), so it is safe to run on correct patterns.
+ */
+export function hasTruncatedStitchInstruction(text: string): boolean {
+  return /\bsp,?\s+work\s*(?:[.*;)\]]|$)/im.test(text)
+}
+
 /** Counted-needlework disciplines express stitches on a chart grid, not as
  *  written rows — exempt from the row/round check. */
 export const COUNTED_NEEDLEWORK = new Set([
@@ -266,6 +280,9 @@ export function textilePatternRule(): CategoryRule['check'] {
       }
       if (/\bch(?:ain)?\s*(?:NaN|undefined|0)\b/i.test(text)) {
         reasons.push('foundation chain count is broken (NaN / undefined / 0)')
+      }
+      if (hasTruncatedStitchInstruction(text)) {
+        reasons.push('truncated instruction — a stitch group says "work" with no stitch count (corner/cluster spec dropped)')
       }
     }
     // STITCH / TECHNIQUE: generic checks (empty / placeholder / short) carry it.

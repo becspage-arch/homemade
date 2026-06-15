@@ -22,6 +22,8 @@ Updated each working session.
 
 **Autopilot stays OFF** until the rebuild + a clean re-audit (Rebecca's call). Rebuild scope (per-category counts + session estimates + order) at `packages/db/docs/content-rebuild-scope-2026-06-15.md`; per-slug report at `content-completeness-report-2026-06-15.json`. **Image work untouched** (no `heroMediaId` changes; the 109 garbage heroes + hero strategy are a separate fresh-eyes session).
 
+**Follow-ups same day:** (1) removed the root cause — `qc-fix.ts`'s `ensureMinimalMethod()` (it appended the `…go here` scaffold). (2) A de-scaffold pilot on 5 crochet rows showed ~55% of crochet broken rows are "placeholder-only" (real pattern + redundant scaffold) but revealed a *systematic truncation* the structural gate can't see — the corner/cluster spec dropped in repeated stitch groups ("into next corner sp, work."). Added a **truncation correctness check** (`hasTruncatedStitchInstruction`) to the textile PATTERN gate; it caught 1 still-live row (`crochet-hexagon-popcorn`, un-published). (3) Built the rebuild toolchain — `rebuild-dump.ts` (writes the body to `docs/rebuild-work/<slug>.json` for editing) + `rebuild-publish.ts` (gated re-publish), proven on `crochet-granny-square-three-round` (repaired + re-published). Author guidance (crochet author doc + autopilot SKILL) updated so new content spells out every repeat in full. Rebuild itself runs as dedicated Claude sessions (not autopilot).
+
 ---
 
 ## Knitting blanket bulk-003 (2026-06-14)

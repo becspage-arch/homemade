@@ -771,3 +771,26 @@ running `voice-check`.
    you'd make it) before any crochet notation or abbreviation appears.
 8. **Canonical TipTap blocks.** `troubleshooter` for troubleshooters, `infoPanel` for
    callouts, `suppliesCard` for yarn and hook lists.
+
+## Completeness gate + correctness (locked 2026-06-15)
+
+Every PUBLISHED tutorial passes the per-category content-completeness gate
+(`packages/db/scripts/qc-completeness-rules/`) in the publish path. A row that
+fails is held at DRAFT with `qcBlockReason`; it cannot ship. Write to clear it
+first time:
+
+1. **`## Pattern` is the instructions section.** Put the real row/round
+   instructions under a `Pattern` heading. Do NOT leave a row whose only
+   "method" is a placeholder — the old `Step-by-step instructions for X go here`
+   scaffold is gone and is now a hard block.
+2. **Spell out every repeated instruction in full.** In a `*...*` repeat or a
+   `[...] N times` group, write the complete stitch group every time. Never
+   write "into next corner sp, work." with the cluster left implied — the gate
+   flags any `sp work` with no stitch count as a truncated instruction (the
+   single biggest defect in the 2026-06-15 rebuild backlog).
+3. **No leaked values.** No literal `NaN` or `undefined`; the foundation chain
+   must be a real number, never `ch 0` / `ch NaN`.
+4. **PATTERN needs real `Row`/`Round` steps** (counted-needlework charts
+   excepted); a body under 100 characters of text is a block.
+
+Mirror this section in the knitting / needlework / sewing author prompts.
