@@ -14,6 +14,30 @@ export interface IngredientRenderMeta {
 }
 
 /**
+ * Does this body carry a structured `ingredientsList` block at all?
+ *
+ * Used by the tutorial page to decide whether to render the recipe ingredients
+ * chrome (units, substitutions, shopping) for a tutorial whose `type` is not
+ * RECIPE / REMEDY. Most baking techniques are TECHNIQUE-typed but a handful
+ * carry an ingredients block (a starter feed, a sugar syrup, an egg wash); this
+ * lets those render their ingredients like a recipe instead of dropping them.
+ */
+export function bodyHasIngredientsList(body: unknown): boolean {
+  let found = false
+  function walk(node: unknown): void {
+    if (found || !node || typeof node !== 'object') return
+    const obj = node as Record<string, unknown>
+    if (obj.type === 'ingredientsList') {
+      found = true
+      return
+    }
+    if (Array.isArray(obj.content)) for (const child of obj.content) walk(child)
+  }
+  walk(body)
+  return found
+}
+
+/**
  * Build the per-ingredient render data a recipe page needs: density (for
  * grams to cups conversion) and the free-tier substitution list, keyed by
  * ingredientId. Reads the ingredient ids straight off the body's

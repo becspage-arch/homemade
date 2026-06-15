@@ -330,6 +330,9 @@ model User {
   // Meal plan. The Maker's weekly recipe calendars.
   mealPlans MealPlan[] @relation("MealPlanOwner")
 
+  // Shopping list. The Maker's synced working shopping list (free sign-in carrot).
+  shoppingListState ShoppingListState?
+
   @@index([role])
   @@index([isSuspended])
   @@index([isCreator])
@@ -2044,6 +2047,9 @@ enum NotificationType {
   // publicNote, or a What-I-used entry). Body explains which field was
   // removed; href points the Maker to /me/settings or the project edit.
   MAKER_PROFILE_CONTENT_REMOVED
+  // Recipe creator economy — fired by the AI moderation pass.
+  USER_RECIPE_APPROVED
+  USER_RECIPE_REJECTED
   SYSTEM
 }
 
@@ -2857,6 +2863,24 @@ model MealPlanEntry {
   updatedAt DateTime @updatedAt
 
   @@index([planId, dayOfWeek])
+}
+
+/// The Maker's working shopping list, synced server-side so it follows them
+/// across devices. One row per user. Server-side sync is a free sign-in carrot,
+/// not a premium feature: anonymous Makers keep the same list in localStorage,
+/// and a signed-in Maker's list is the same data persisted. `recipeSlugs` is
+/// the set of recipes the list is built from; `tickedIngredientIds` is the
+/// tick-off state so a half-shopped list survives a device switch.
+model ShoppingListState {
+  id     String @id @default(cuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  recipeSlugs         String[] @default([])
+  tickedIngredientIds String[] @default([])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 // ────────────────────────────────────────────────────────────────────────────

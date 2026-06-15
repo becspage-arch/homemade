@@ -3972,3 +3972,20 @@ cross-stitch — 40 tutorials, all PUBLISHED. Category count: 0 → 40.
 **Backfill** of the 1,077 runs as a worker session (authors chartData → renders chart → anchored hero → vision verify → commit). Setup/calibration Fal spend: £0.93.
 
 **Known gaps (running list in `project_master_todo.md` §9):** amigurumi 3D (~200, deferred — engine is 2D); needlework counted not wired to the hero runner (62 — needs the cross-stitch chart engine); already-charted patterns with stale stock heroes (~150, separate job); legacy knitting grid-shape charts (~33, adapter); knitting render quality; square-detection for `{times,repeat}` grannies; stock matcher not formally disabled for craft; teaching content PD pass; non-craft categories with the same matcher misfire.
+
+---
+
+## 2026-06-15 — Recipe creator economy (upload form, AI moderation, profile, sync, discovery)
+
+Made the premium cooking/baking creator economy live on top of the recipe foundation + meal-plan + shopping-list that already shipped. Ten parts, all gates stay OFF (Worker F flips them). No Fal/Claude API spend (moderation + enrichment are Claude Code worker session pattern, deterministic at runtime).
+
+- **Recipe upload form** (`/me/recipes/new` + `[id]/edit`): TipTap method body (lightweight StarterKit editor, renders through the existing public walker), a structured ingredient picker (typeahead + inline create against the master `Ingredient` table, qty/unit/notes/optional, drag-reorder), hero + up to six gallery photos (new creator-facing `/api/me/recipe-media/upload`, photos stored unmodified per the image policy), servings/prep/cook/total, cuisine + dietary chips, meal type, category, originality declaration, visibility. Save as draft or submit for review. Server actions mirror the picker into `UserRecipeIngredient`.
+- **AI moderation pipeline** on a 5-minute Inngest cron + a CLI runner, sharing one deterministic pass (`lib/recipes/recipe-moderation.ts`). AI-only, no API spend, no manual queue, binary gates: fields, voice (em/en dash + banned phrases = hard reject), originality, spam, duplicate (title Jaccard + ingredient-set cosine). Enriches: allergens from linked ingredients, dietary/cuisine/meal-type auto-detected when blank (Part 7). Approved → publish at chosen visibility; rejected → notification with reasons. Verified against 3 samples (clean→approved + auto-tags, em-dash→rejected-voice, duplicate-title→rejected-duplicate).
+- **`/me/recipes` profile**: three tabs (My recipes with status pills + edit/visibility/resubmit/delete, Saved reusing Bookmark filtered to recipe categories, Stats).
+- **Public recipe detail** (`/recipes/[slug]`): owner preview + public/unlisted viewing, ingredients in the reader's units, method via the shared renderer, gallery. Closes the write→approve→view loop.
+- **Discovery rail** "From the community" on the shared RecipeLayout (cooking/baking/herbal/natural-home), blur-ready for the COMMUNITY_RECIPES gate.
+- **Add to meal plan** button beside Add to shopping list on recipe pages.
+- **Server-side sync**: shopping list now persists per-user (`ShoppingListState`, `phase_shopping_list_sync_001`) behind GET/PUT `/api/me/shopping-list`; meal plan was already server-side. Anonymous stays localStorage. Free sign-in carrot.
+- **Baking TECHNIQUE render gap**: any body with an `ingredientsList` block now renders recipe-style (covers the ~21 baking techniques with ingredients).
+- **Ingredient enrichment**: curated density + substitution pass. Density coverage 101 → 283; substitutions 599 → 608.
+- **`/meal-plan` logged-out**: already shows an in-page sign-in CTA (not Clerk-gated in proxy.ts), so no change needed.

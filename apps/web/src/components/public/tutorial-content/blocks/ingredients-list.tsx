@@ -7,6 +7,7 @@ import { captureClientEvent } from '@/lib/client-analytics'
 import { formatIngredientQuantity, type UnitPreferences } from '@/lib/recipes/units'
 import type { Substitution } from '@/lib/recipes/substitutions'
 import { AddToShoppingList } from '@/components/public/recipes/add-to-shopping-list'
+import { AddToMealPlan } from '@/components/public/recipes/add-to-meal-plan'
 import { useScale } from '../scale-context'
 
 export interface IngredientsListItem {
@@ -199,7 +200,10 @@ export function IngredientsList({
         </p>
       )}
 
-      <AddToShoppingList tutorialSlug={tutorialSlug} tutorialId={tutorialId} />
+      <div className="recipe-actions-row">
+        <AddToShoppingList tutorialSlug={tutorialSlug} tutorialId={tutorialId} />
+        <AddToMealPlan tutorialSlug={tutorialSlug} tutorialId={tutorialId} />
+      </div>
 
       {grouped.map((group) => (
         <div key={group.label ?? '__main__'} className="ingredients-list-group">

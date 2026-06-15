@@ -19,6 +19,7 @@ import { resolveUserUnitPreferences } from '@/lib/recipes/user-unit-preferences'
 import { formatTemperature } from '@/lib/recipes/units'
 import {
   getRecipeIngredientRenderMeta,
+  bodyHasIngredientsList,
   type IngredientRenderMeta,
 } from '@/lib/recipes/recipe-render-data'
 import { harvestSupplies } from '@/lib/supplies'
@@ -636,7 +637,13 @@ export default async function TutorialPage({ params }: PageProps) {
   // structured ingredients with units + substitutions + shopping. (Other
   // RECIPE-only chrome, like the cooking-mode toggle and the recipe schema,
   // stays keyed off `isRecipe`.)
-  const isRecipeStyle = isRecipe || tutorial.type === 'REMEDY'
+  // Cooking / baking / most natural-home are RECIPE; herbal remedies are
+  // REMEDY. A small set of baking TECHNIQUE rows also carry an ingredients
+  // block (a starter feed, a sugar syrup, an egg wash); treat any body with a
+  // structured ingredients block as recipe-style so those render rather than
+  // dropping their ingredients silently.
+  const isRecipeStyle =
+    isRecipe || tutorial.type === 'REMEDY' || bodyHasIngredientsList(body)
 
   // Recipe foundation: resolve the reader's unit preferences (saved enums or
   // locale defaults) and the per-ingredient density + substitution data, then
