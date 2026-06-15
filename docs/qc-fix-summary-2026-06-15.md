@@ -46,3 +46,19 @@ SKIPPED: 0
 - polymer-clay-gradient-ocean-wave-clip: hero-missing
 - slab-built-divided-trinket-dish-air-dry: hero-missing
 - throwing-a-stoneware-dinner-plate: hero-missing
+
+---
+
+## Run at 06:43:28
+
+Generated: 2026-06-15T06:43:28.194Z
+
+Processed: 31
+PASS: 31
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

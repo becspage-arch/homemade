@@ -1,0 +1,165 @@
+{
+  "slug": "raku-post-firing-reduction-chamber",
+  "title": "Raku post-firing reduction chamber",
+  "subtitle": "Building and using a reduction chamber to create carbon effects on raku-fired ware",
+  "excerpt": "Raku post-firing reduction involves removing red-hot ware from the kiln and placing it in a sealed container with combustible material (newspaper, straw, or wood shavings). The fire consumes available oxygen and forces carbon into unglazed clay areas, creating black metallic surfaces and unpredictable glaze crackle patterns. This technique requires outdoor space and fire safety equipment.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "firing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Raku post-firing reduction technique widely documented in ceramic practice references.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": ["earthenware-white", "earthenware-red"],
+  "requiredCraftMaterials": [],
+  "recipeTools": [
+    { "slug": "fire-extinguisher-a", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "reduction",
+      "term": "Reduction",
+      "definition": "A kiln or post-firing atmosphere in which oxygen is limited, forcing carbon monoxide into the clay and glaze surfaces to produce metallic and dark effects"
+    },
+    {
+      "slug": "raku",
+      "term": "Raku",
+      "definition": "A firing method in which ware is removed from the kiln while still red-hot and immediately subjected to post-firing treatment such as reduction or water quench"
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "type": "warning",
+          "title": "Safety"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Raku firing involves handling red-hot ware (800 to 1000°C) and open fire. Wear heat-resistant gloves rated for kiln work, a face shield, and natural-fibre (non-synthetic) clothing. Have a Class A fire extinguisher and a bucket of sand at hand before beginning. Work outdoors or in a space with adequate ventilation: combustion produces carbon monoxide. Keep children and pets away from the work area. Never fire raku in an enclosed space." }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "raku", "label": "raku" } }],
+            "text": "raku"
+          },
+          {
+            "type": "text",
+            "text": " process requires a purpose-built "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "reduction", "label": "reduction" } }],
+            "text": "reduction"
+          },
+          {
+            "type": "text",
+            "text": " chamber: a metal dustbin or galvanised steel container with a tight-fitting lid. The chamber is preloaded with dry combustible material and ignited by the heat of the ware placed inside. The lid seals the fire to starve it of oxygen, forcing carbon into the clay."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "materials": [
+            { "name": "Raku-glazed bisqueware piece (low-fire clay body)", "quantity": "1 or more", "slug": "earthenware-white", "isOptional": false },
+            { "name": "Metal dustbin with lid (the reduction chamber)", "quantity": "1", "slug": null, "isOptional": false },
+            { "name": "Dry newspaper or straw", "quantity": "3 to 4 sheets or large handful", "slug": null, "isOptional": false },
+            { "name": "Heat-resistant raku tongs (kiln tongs)", "quantity": "1 pair", "slug": null, "isOptional": false }
+          ],
+          "tools": [
+            { "name": "Class A fire extinguisher", "slug": "fire-extinguisher-a", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the reduction chamber" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the empty metal dustbin on bare earth or a non-flammable surface outdoors. Crumple dry newspaper into the bottom, filling it to about one-third depth. Do not overload: you need space for the ware and for the fire to build." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Have the lid ready nearby. Position the chamber within two steps of the kiln so the ware can be transferred quickly." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Transferring ware from the kiln" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the kiln when the ware glows red-orange (approximately 900 to 1000°C). Grip each piece with raku tongs and lift it out. Work confidently and quickly: the ware cools rapidly in air." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place each piece gently on the newspaper in the chamber. The heat of the ware will ignite the newspaper. Once the newspaper catches and flames appear, clamp the lid on firmly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave the lid on for 10 to 20 minutes. Do not lift the lid to check: each opening lets oxygen in and reduces the carbon effect." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Removing and cleaning" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "After 15 to 20 minutes, remove the lid outdoors (the chamber will release smoke). Lift out the ware with tongs; it will still be hot enough to burn. Place on a heat-safe surface to cool for 30 minutes. Once cool enough to handle, scrub the black carbon surface with a damp scouring pad to remove loose carbon and reveal the metallic carbon pattern beneath." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Piece has little or no carbon effect: the surface looks like ordinary fired ware",
+              "cause": "The ware was not hot enough when placed in the chamber; or the lid was not sealed tightly enough",
+              "fix": "Check the kiln temperature at transfer: the ware must glow orange-red. Ensure the lid fits tightly. Add more combustible material to the chamber to sustain the fire longer"
+            },
+            {
+              "problem": "Ware cracked during the rapid temperature change",
+              "cause": "The clay body was not designed for thermal shock, or the piece had thin and thick sections that cooled at different rates",
+              "fix": "Use a clay body specifically formulated for raku (grog-rich, open, able to withstand thermal shock). Keep piece wall thickness even to reduce differential cooling stress"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

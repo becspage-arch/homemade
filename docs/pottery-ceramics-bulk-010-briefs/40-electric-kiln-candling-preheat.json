@@ -1,0 +1,174 @@
+{
+  "slug": "electric-kiln-candling-preheat",
+  "title": "Electric kiln candling preheat",
+  "subtitle": "Setting up a slow preheat at the start of a firing to remove residual moisture from greenware",
+  "excerpt": "Candling is a low-temperature preheat at the start of a kiln firing that allows residual moisture to escape from the clay slowly before the temperature rises to the point where steam would cause the ware to crack or explode. It is essential for thick greenware, recycled clay, or recently dried pieces. This tutorial covers setting up a correct candling period in an electric kiln.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "firing",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Candling technique derived from standard electric kiln firing practice.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": ["air-dry-clay", "earthenware-red", "earthenware-white", "stoneware-smooth"],
+  "requiredCraftMaterials": [],
+  "recipeTools": [
+    { "slug": "electric-kiln-small", "isOptional": false },
+    { "slug": "pyrometer", "isOptional": false },
+    { "slug": "pyrometric-cone", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "candling",
+      "term": "Candling",
+      "definition": "A slow preheat period at 80 to 120°C at the start of a firing to drive off residual water from clay before the temperature rises further"
+    },
+    {
+      "slug": "kiln-venting",
+      "term": "Kiln venting",
+      "definition": "Leaving the kiln lid or peepholes slightly open during low-temperature firing stages to allow moisture and gases to escape safely"
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "type": "warning",
+          "title": "Safety"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Electric kilns produce heat, steam, and fumes from organic binders during preheat and early firing stages. Fire in a ventilated space and keep the room ventilated throughout the firing. The kiln exterior surface reaches temperatures that will cause burns: do not touch the kiln body during or immediately after firing. Keep children away from the kiln area during any firing." }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "All clay contains some residual moisture even after appearing bone-dry. If the kiln temperature rises faster than 100°C per hour through the 0 to 220°C range, this water converts to steam faster than it can escape, creating internal pressure that shatters the ware. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "candling", "label": "Candling" } }],
+            "text": "Candling"
+          },
+          {
+            "type": "text",
+            "text": " solves this by holding the kiln at a temperature just above 100°C for several hours, allowing all moisture to escape as steam gradually."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "materials": [
+            { "name": "Bone-dry greenware or bisqueware", "quantity": "kiln-load", "slug": null, "isOptional": false }
+          ],
+          "tools": [
+            { "name": "Electric kiln (small or medium)", "slug": "electric-kiln-small", "isOptional": false },
+            { "name": "Pyrometer", "slug": "pyrometer", "isOptional": false },
+            { "name": "Pyrometric cones (witness)", "slug": "pyrometric-cone", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to candle" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pieces thicker than 12 mm at any point (the moisture path to the surface is long)" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Any piece that was dried in under 48 hours" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Recycled clay or clay that has been re-wetted and re-dried at any point" }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A mixed load where some pieces are older than others and moisture content is uncertain" }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Candling setup" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Load the kiln as normal. Prop the lid open by 5 cm using a prop provided with the kiln, or leave one peephole open in a top-loader, to allow steam to escape. This is "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "kiln-venting", "label": "kiln venting" } }],
+            "text": "kiln venting"
+          },
+          {
+            "type": "text",
+            "text": "." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set the kiln controller to hold at 120°C for 2 to 3 hours for average-thickness work (up to 8 mm walls). For thick work (12 to 20 mm walls), hold at 120°C for 4 to 6 hours." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If no programmable controller is fitted: set the kiln to its lowest setting for 2 to 3 hours, then proceed to the standard firing ramp." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Continuing the firing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "After the candling hold, close the lid and peepholes and proceed with the full firing ramp. A rise of 80 to 100°C per hour from 120°C to 600°C is safe for most work. After 573°C (quartz inversion), slow to 60°C per hour to allow the clay crystal structure to shift without mechanical stress." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "A piece exploded in the kiln, damaging other ware on the same shelf",
+              "cause": "The candling period was too short or the temperature rose too fast through the steam escape range",
+              "fix": "Extend candling to 4 hours for any load with uncertainty about dryness. Check all pieces are fully bone-dry before loading: a piece feels cool against the cheek if it still holds moisture"
+            },
+            {
+              "problem": "Water condensation appears on the inside of the kiln lid during candling",
+              "cause": "The kiln was not vented during candling, so steam condensed instead of escaping",
+              "fix": "Always vent the kiln during candling. Wipe away condensate with a dry cloth after the kiln cools. Condensate dripping onto ware can cause crazing or surface defects"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

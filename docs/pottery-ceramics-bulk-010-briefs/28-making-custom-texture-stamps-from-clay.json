@@ -1,0 +1,137 @@
+{
+  "slug": "making-custom-texture-stamps-from-clay",
+  "title": "Making custom texture stamps from clay",
+  "subtitle": "Pressing found objects into raw air-dry clay to create reusable stamps",
+  "excerpt": "A custom texture stamp is made by pressing a found object into a slab of air-dry clay to create a negative impression. Once dried, the clay stamp can be pressed into wet clay to transfer the texture repeatedly. Stamps can be made from any firm object with surface detail.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "clay-fundamentals",
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Technique derived from first principles.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": false,
+  "requiresWheel": false,
+  "requiredClayBodies": ["air-dry-clay"],
+  "requiredCraftMaterials": [],
+  "recipeTools": [
+    { "slug": "pottery-rolling-pin", "isOptional": false },
+    { "slug": "pottery-stamp", "isOptional": false },
+    { "slug": "fettling-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "impressed-texture",
+      "term": "Impressed texture",
+      "definition": "A surface pattern created by pressing an object into wet clay to leave a negative impression of its surface"
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Making your own texture stamps means you can build a library of marks suited to your work without buying commercially made tools. "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "impressed-texture", "label": "Impressed texture" } }],
+            "text": "Impressed texture"
+          },
+          {
+            "type": "text",
+            "text": " stamps made from air-dry clay are strong enough for repeated use on air-dry clay surfaces. Good source objects include lace fabric, leaves with clear vein structure, basket weave, coins, or carved wooden blocks."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "materials": [
+            { "name": "Air-dry clay", "quantity": "100 g per stamp", "slug": "air-dry-clay", "isOptional": false },
+            { "name": "Found texture sources: lace, leaves, coins, seed heads, etc.", "quantity": "several", "slug": null, "isOptional": false },
+            { "name": "Petroleum jelly or talcum powder (release agent)", "quantity": "small amount", "slug": null, "isOptional": false },
+            { "name": "PVA diluted 50/50 (for sealing the finished stamp)", "quantity": "30 ml", "slug": null, "isOptional": false }
+          ],
+          "tools": [
+            { "name": "Pottery rolling pin", "slug": "pottery-rolling-pin", "isOptional": false },
+            { "name": "Pottery stamp (for reference)", "slug": "pottery-stamp", "isOptional": false },
+            { "name": "Fettling knife", "slug": "fettling-knife", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Making the stamp" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roll a piece of air-dry clay to 12 mm thick. Cut a manageable stamp size: a circle or square about 5 cm across is easy to handle. Leave the back flat and smooth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rub a thin coat of petroleum jelly or a dusting of talcum powder onto the source object to prevent it sticking to the clay." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press the source object firmly and evenly into the clay slab. For lace or flat fabric, roll over it with the rolling pin to press every thread into the clay. For a leaf, press a flat piece of card or board on top and press firmly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Peel the source object away carefully. Check the impression is clean and deep. The stamp face should show a clear negative of the source." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Drying and sealing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dry the stamp slowly over two to three days. Seal the stamp face with two coats of PVA after drying. This prevents the air-dry clay stamp from absorbing moisture from the wet clay it is used to texture, which would otherwise cause the stamp to soften and lose its definition." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using the stamp" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dust the sealed stamp face with talcum powder before each use to prevent sticking. Press firmly and evenly onto wet clay, rock slightly from edge to edge, then lift directly up. Dust again between impressions." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Impression is shallow or vague",
+              "cause": "The source object did not have enough surface relief to create a clear impression, or pressing pressure was insufficient",
+              "fix": "Use source objects with higher surface relief: coarse lace, thick seed heads, or textured bark give stronger impressions than smooth fabric"
+            },
+            {
+              "problem": "Stamp face softens and smears after a few uses",
+              "cause": "The PVA sealer was not applied, so moisture from the wet clay is being absorbed into the stamp",
+              "fix": "Allow the stamp to dry out fully again and apply two fresh coats of PVA. Allow each coat to dry before applying the next"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

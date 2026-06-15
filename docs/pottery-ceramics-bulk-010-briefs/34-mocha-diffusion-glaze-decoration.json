@@ -1,0 +1,188 @@
+{
+  "slug": "mocha-diffusion-glaze-decoration",
+  "title": "Mocha diffusion glaze decoration",
+  "subtitle": "Applying an acidic mixture to wet slip to create spontaneous fern-like patterns",
+  "excerpt": "Mocha diffusion is a 18th-century English ceramic technique in which an acidic liquid (traditionally tobacco juice or a tannic acid solution) is dropped into wet coloured slip, where it diffuses outward in branching, fern-like patterns. The result varies with each piece. This technique is applied to bisque-ware coated in fresh slip before glaze application.",
+  "type": "TECHNIQUE",
+  "categorySlug": "pottery-ceramics",
+  "subCategorySlug": "glazing",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mocha diffusion technique documented in historical ceramic literature and in Ceramic Review issue references.",
+  "craftType": "pottery-ceramics",
+  "requiresKiln": true,
+  "requiresWheel": false,
+  "requiredClayBodies": ["earthenware-white"],
+  "requiredCraftMaterials": [],
+  "recipeTools": [
+    { "slug": "pottery-brush-liner", "isOptional": false },
+    { "slug": "pottery-brush-mop", "isOptional": false },
+    { "slug": "banding-wheel", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "slip",
+      "term": "Slip",
+      "definition": "Clay thinned with water, often coloured with oxides or stains, used as a decorative coating over bisqueware before glazing"
+    },
+    {
+      "slug": "bisqueware",
+      "term": "Bisqueware",
+      "definition": "Clay that has been fired once to harden it but has not yet been glazed"
+    },
+    {
+      "slug": "mocha-tea",
+      "term": "Mocha tea (diffusion liquid)",
+      "definition": "A strong tannic-acid solution — traditionally tea or tobacco juice — that when dropped into wet slip diffuses outward in branching tree-like patterns"
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "type": "warning",
+          "title": "Safety"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Dry glaze and slip materials may contain silica. Wear a dust mask rated FFP2 or N95 when weighing dry glaze or slip materials. Metallic oxide colourants (iron, cobalt, manganese) are low hazard when wet but should not be ingested or inhaled as dry powder. Apply glazes and slips only in a ventilated room. Fire in a kiln with adequate ventilation; do not remain in the kiln room during firing." }]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mocha diffusion produces patterns that cannot be drawn by hand. The "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mocha-tea", "label": "mocha tea" } }],
+            "text": "mocha tea"
+          },
+          {
+            "type": "text",
+            "text": " reacts with the alkalinity of the wet "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "slip", "label": "slip" } }],
+            "text": "slip"
+          },
+          {
+            "type": "text",
+            "text": ", spreading outward in branching lines as it displaces the wet clay surface. The piece must be "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bisqueware", "label": "bisqueware" } }],
+            "text": "bisqueware"
+          },
+          {
+            "type": "text",
+            "text": " pre-warmed to hold the fresh slip coat in a specific wet state before the diffusion liquid is applied."
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "materials": [
+            { "name": "Bisqueware earthenware piece (mug or beaker)", "quantity": "1", "slug": "earthenware-white", "isOptional": false },
+            { "name": "White slip (earthenware slip base)", "quantity": "200 ml", "slug": null, "isOptional": false },
+            { "name": "Iron oxide or cobalt oxide, for colouring the slip", "quantity": "5 g", "slug": null, "isOptional": false },
+            { "name": "Strong cold tea or tannic acid solution, the diffusion liquid", "quantity": "30 ml", "slug": null, "isOptional": false },
+            { "name": "Transparent earthenware glaze", "quantity": "200 ml", "slug": null, "isOptional": false }
+          ],
+          "tools": [
+            { "name": "Liner brush", "slug": "pottery-brush-liner", "isOptional": false },
+            { "name": "Mop brush", "slug": "pottery-brush-mop", "isOptional": false },
+            { "name": "Banding wheel", "slug": "banding-wheel", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Preparing the slip band" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Warm the bisqueware piece in the kiln at 80°C for 20 minutes, or in a domestic oven at 80°C for 30 minutes. This opens the bisque to hold slip without immediate soaking." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the slip to a double-cream consistency. Stir in iron oxide (for a warm brown-black diffusion) or cobalt oxide (for blue-grey) at 5 to 8% of the dry slip weight." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Apply a band of coloured slip around the warm piece with the mop brush while the piece turns slowly on the banding wheel. Apply in a single pass while the clay is still slightly warm; the slip should sit wet on the surface rather than soaking in immediately." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Applying the diffusion liquid" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Immediately while the slip band is still wet, load the liner brush with the tea diffusion liquid and let a drop land on the slip band. Do not touch the brush to the slip." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The tannic acid will immediately begin to diffuse outward in branching fern-like patterns. Add further drops along the band. Each drop will spread differently depending on the wetness of the slip at that point." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Once applied, do not try to modify the pattern by touching the surface. Allow the slip to firm and dry completely." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Glazing and firing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Once the slip is bone-dry, apply a transparent earthenware glaze over the entire surface. Fire to the glaze maturation temperature of the glaze and clay body (typically cone 04 to cone 02 for earthenware). The mocha diffusion pattern will be preserved under the clear glaze." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "Diffusion liquid spreads as a flat stain rather than a branching pattern",
+              "cause": "The slip was too dry when the diffusion liquid was applied; or the piece was not warmed enough",
+              "fix": "Pre-warm the bisqueware more thoroughly. Apply the diffusion liquid within 15 seconds of applying the slip band, while it is still wet. Thicken the slip slightly so it stays wetter for longer"
+            },
+            {
+              "problem": "No visible pattern at all after firing",
+              "cause": "The diffusion liquid was too dilute or the slip coat was too thin",
+              "fix": "Use a concentrated cold tea (brewed very strong or reduce by simmering). Apply a thicker slip band. The contrast between the plain background and the mocha pattern will be stronger with a higher-oxide slip"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
