@@ -1,0 +1,116 @@
+{
+  "slug": "installing-solar-powered-electric-fencing",
+  "title": "Installing solar-powered electric fencing",
+  "subtitle": "Setting up a standalone solar energiser and wire run for livestock and poultry.",
+  "excerpt": "A solar-powered electric fence energiser removes the need for a mains connection or regular battery swaps and is the practical choice for remote paddocks, mobile grazing systems, and temporary pig or poultry enclosures. Getting it working reliably depends on three things: correctly sizing the panel and battery for the run length and weed load, earthing the system properly, and checking the output voltage regularly. Poorly earthed or under-powered electric fencing fails silently.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 120,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Gallagher NZ, Electric Fencing Guide for Livestock (2023). Ako Electric Fencing, Installation and Earthing Guide (2022). Rutland (Gallagher UK), Solar Energiser Product Manual (2023). AHDB Beef and Lamb, Electric fencing for grassland management (2022). Graham Close, Practical Smallholding: Electric Fencing (2020).",
+  "glossaryTerms": [
+    { "slug": "energiser-joule", "term": "Energiser output (joules)", "definition": "The amount of energy an electric fence energiser delivers per pulse, measured in joules. Stored joules (the maximum charge in the circuit) and output joules (what reaches the fence) both matter. More output joules are needed for longer runs, heavily weeded fence lines, and livestock that have thicker coats." },
+    { "slug": "earth-stake", "term": "Earth stake", "definition": "A galvanised or copper rod driven into the ground and connected to the earth terminal of the energiser. A poor earth is the most common cause of electric fence failure; the circuit is incomplete without a low-resistance return path through the soil." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["solar electric fence", "solar energiser fence", "off-grid electric fencing", "solar fence pig poultry"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A solar electric fence consists of a solar panel and battery unit (or a combined solar energiser), an earth stake, and the fence wire or netting. The output is measured in kilovolts. A working livestock fence should read 3 to 5 kV at any point on the line. Below 2 kV, the fence will not reliably deter animals." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Choosing the right energiser size" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Energiser output is rated in joules and sometimes in kilometres of fence. The rough guide: 0.3 " },
+          { "type": "text", "text": "joule output", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "energiser-joule" } }] },
+          { "type": "text", "text": " is adequate for 2 to 3 km of clean single-wire fencing. For a small pig run of 100 m with a few weeds touching the fence, 0.5 to 1 J output is safer. For a poultry net run in long grass, double what the run length alone would suggest, as netting has much more surface area for leakage than a single wire." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Siting the solar panel" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "South-facing at a tilt of 30 to 45 degrees is the UK optimum. Even a slightly sub-optimal angle loses only 5 to 10% of output; being shaded by a tree branch loses 80%." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Most solar energiser units have a built-in 12V battery that holds enough charge for three to five days without sun. In a UK winter, several overcast days in a row will deplete the battery. Fit the panel where it gets the most available light rather than where it is convenient." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Earthing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Proper earthing is the most overlooked part of electric fence installation. Drive at least one " },
+          { "type": "text", "text": "earth stake", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "earth-stake" } }] },
+          { "type": "text", "text": " of at least 1 m length into the ground within 3 m of the energiser. For longer fence runs (over 500 m) or dry summer conditions, use two or three stakes connected in series spaced 3 m apart. Connect the earth stake to the earth terminal of the energiser with insulated earth cable." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Test the fence daily in the first week with a fence tester (a basic digital tester costs very little) before relying on it to contain animals. Animals that get through a fence once learn they can repeat it; a reliable initial shock teaches them the boundary quickly." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Common wiring layout" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set up the energiser unit on a wooden or plastic post (not touching earth or metal). Connect the earth terminal to the earth stake with earth cable." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Run the live wire from the energiser fence terminal around the perimeter, supported on plastic insulated posts or insulators. For pigs use two or three wires at 20 cm and 40 cm height; for poultry use electrified netting." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Keep vegetation under the fence line short. Long grass touching the live wire drains current to earth, reducing fence voltage." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Fence reads below 2 kV even with the energiser showing a charge",
+              "cause": "Poor earth, vegetation shorting to ground, or a break in the wire",
+              "fix": "Walk the fence line looking for vegetation contact. Disconnect the fence wire from the energiser and retest the energiser alone: if it now reads full voltage, the problem is on the fence. Reconnect and walk the line with the tester to find the leak point."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Battery runs flat within two to three days in winter",
+              "cause": "Solar panel not receiving enough light to recharge the battery",
+              "fix": "In a UK December or January the panel may not fully recharge a depleted battery during daylight hours. Move the panel to a higher position and cleaner angle, or connect a mains trickle charger as a winter backup."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

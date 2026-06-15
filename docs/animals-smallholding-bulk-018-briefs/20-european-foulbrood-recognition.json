@@ -1,0 +1,305 @@
+{
+  "slug": "european-foulbrood-recognition",
+  "title": "Recognising European foulbrood in the hive",
+  "subtitle": "European foulbrood kills young larvae and weakens colonies in spring. Early recognition limits the spread.",
+  "excerpt": "European foulbrood is a bacterial infection of young bee larvae that peaks in spring when colonies are growing fast. Infected larvae turn yellow or brown, twist in the cell, and die before capping. The disease is notifiable in the UK, any confirmed case must be reported to your local bee inspector.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU BeeBase guidance on European Foulbrood (EFB). BBKA Bee Craft technical notes on EFB recognition and management. NBU advisory bulletin on notifiable diseases of honeybees. APHA bee health diagnostic guidance.",
+  "glossaryTerms": [
+    {
+      "slug": "efb",
+      "term": "EFB",
+      "definition": "European Foulbrood, a bacterial disease of honey bee larvae caused by Melissococcus plutonius. Notifiable in the UK. Kills larvae before capping, weakening the colony and reducing brood output."
+    },
+    {
+      "slug": "notifiable-disease-bees",
+      "term": "Notifiable disease",
+      "definition": "A disease that must legally be reported to the animal health authority when found. For bees in the UK, the notifiable diseases are American Foulbrood and European Foulbrood. Failing to report is an offence."
+    },
+    {
+      "slug": "sacbrood-bee",
+      "term": "Sacbrood",
+      "definition": "A viral disease of bee larvae, not notifiable, that causes larvae to die inside a watery sac just before capping. Distinguishable from EFB by the distinct sac of fluid around the dead larva."
+    }
+  ],
+  "techniqueSlugs": [
+    "inspecting-a-beehive-in-spring",
+    "lighting-a-bee-smoker"
+  ],
+  "criticalTechniques": [
+    "lighting-a-bee-smoker"
+  ],
+  "aliases": [
+    "EFB bees UK",
+    "European foulbrood honeybee",
+    "bee larvae disease recognition",
+    "foulbrood signs in hive"
+  ],
+  "recipeTools": [
+    {
+      "slug": "hive-tool-j",
+      "isOptional": false
+    },
+    {
+      "slug": "bee-smoker",
+      "isOptional": false
+    },
+    {
+      "slug": "bee-suit",
+      "isOptional": false
+    },
+    {
+      "slug": "smoker-fuel",
+      "isOptional": false
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "European foulbrood kills larvae before they are capped. Picking it up on a routine spring inspection, before it has spread across multiple frames, gives your bee inspector the best chance to contain it. The signs are distinctive once you know what to look for, but some normal brood problems can look similar. Knowing the differences matters."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to look for"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "EFB vs other larval problems"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "bold"
+                          }
+                        ],
+                        "text": "EFB:"
+                      },
+                      {
+                        "type": "text",
+                        "text": " Larvae twisted or melted in the cell. Yellow-brown colour, sour or vinegary smell. Die before capping (uncapped cells with dead larvae inside)."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "bold"
+                          }
+                        ],
+                        "text": "AFB (American Foulbrood):"
+                      },
+                      {
+                        "type": "text",
+                        "text": " Capped cells sunken and perforated. Larvae die after capping. Dark brown, ropey when tested with a matchstick. Very distinct smell, rotting fish. Also notifiable."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "glossaryTooltip",
+                            "attrs": {
+                              "termSlug": "sacbrood-bee"
+                            }
+                          }
+                        ],
+                        "text": "Sacbrood:"
+                      },
+                      {
+                        "type": "text",
+                        "text": " Larva visible inside a dried sac or watery envelope. Not ropey. Not notifiable. Usually clears with a strong nectar flow."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Inspecting for EFB"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Check the brood pattern. "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "efb"
+                        }
+                      }
+                    ],
+                    "text": "EFB"
+                  },
+                  {
+                    "type": "text",
+                    "text": " creates an irregular, scattered brood pattern, missed cells and dead larvae dotted throughout an otherwise normal-looking frame."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Look for yellowed, misshapen larvae in uncapped cells. A healthy larva is white and glistening, curled in a C shape in the cell. An EFB larva is off-white to yellow, often twisted with its head raised away from the cell wall."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Smell the frame. EFB has a slightly sour or sweet vinegar smell. AFB smells strongly of rotting fish. No smell at all suggests sacbrood."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to do if you suspect EFB"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Contact your local NBU Bee Inspector immediately. EFB is a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "notifiable-disease-bees"
+                }
+              }
+            ],
+            "text": "notifiable disease"
+          },
+          {
+            "type": "text",
+            "text": ". The inspector will confirm the diagnosis, often using a lateral flow test, and advise on treatment options. Do not move frames, equipment, or bees from the affected hive until the inspector has assessed it."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The inspector may recommend a shook swarm: move the adult bees onto clean foundation, leaving infected frames behind. In severe cases, antibiotics may be used. The inspector decides which approach fits."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Contact the National Bee Unit via BeeBase. Register and submit a disease report online. You can also find your local inspector's number in BeeBase."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "slug": "reading-a-basic-soil-test-report",
+  "title": "Reading a basic soil test report",
+  "subtitle": "A soil test tells you what your pasture or growing area lacks. Acting on it without understanding what you're reading wastes money and can make things worse.",
+  "excerpt": "A standard UK soil test from a lab or a Soil Association kit returns pH, phosphorus (P), potassium (K), and magnesium (Mg) at minimum, each given as an index number. Here is what those indices mean, how they relate to each other, and what action each combination suggests.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "timeMinutes": 15,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB, RB209 Fertiliser Recommendations for Agricultural and Horticultural Crops (current edition). Soil Association, Understanding your Soil test results. DEFRA, Code of Good Agricultural Practice for Soil (2018). ADAS soil index system explanation for arable and grassland.",
+  "glossaryTerms": [
+    {
+      "slug": "soil-ph",
+      "term": "Soil pH",
+      "definition": "A measure of soil acidity or alkalinity on a scale of 1–14. pH 7 is neutral; values below 7 are acid, above 7 are alkaline. Most agricultural soils in the UK are between pH 5.0 and 7.5. At low pH, phosphorus becomes locked to soil particles and unavailable to plants even if P levels are high."
+    },
+    {
+      "slug": "nutrient-index",
+      "term": "Nutrient index",
+      "definition": "A 0–6 scale used in the UK to indicate available soil nutrient levels for phosphorus, potassium, and magnesium. Index 0 is deficient; index 2 is optimal for most crops and grass; index 3+ indicates excess that does not require further application. Used in AHDB RB209 to give crop-specific fertiliser recommendations."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "soil test report UK explained",
+    "reading soil pH phosphorus report",
+    "AHDB nutrient index soil test",
+    "what does soil test mean smallholding"
+  ],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soil test values only make sense in combination. A high phosphorus reading on acid soil means the phosphorus is there but your grass cannot use it. Low potassium alongside high magnesium suppresses Mg uptake even if you add more K. The UK "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "nutrient-index"
+                }
+              }
+            ],
+            "text": "nutrient index"
+          },
+          {
+            "type": "text",
+            "text": " system guides this. Index 2 is the target for most pasture; apply nutrients only if the index is below 2."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Reading pH first"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "soil-ph"
+                }
+              }
+            ],
+            "text": "pH"
+          },
+          {
+            "type": "text",
+            "text": " result governs everything else. Target pH for grass-based livestock pasture is 6.0-6.5. At pH below 5.5, lime the field before worrying about P, K, or Mg, the other nutrients are largely unavailable until the pH rises. At pH above 7.0 (often from previous heavy lime applications), phosphorus again becomes less available, but remediation is slow."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Interpreting the index numbers"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "What each index level means for permanent pasture"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Index 0: deficient, application recommended; grass growth will be limited."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Index 1: low, maintenance applications recommended; building reserves."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Index 2: optimal, replace what the crop removes; no build-up applications needed."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Index 3: sufficient, no application needed; maintain by organic matter input."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Index 4+: excess, do not apply; excess P in particular has environmental implications (watercourse run-off)."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common results and what they usually mean"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "pH 5.8, P index 0, K index 1: acid, depleted. Lime first, then apply a compound fertiliser or organic matter (well-rotted manure). Retesting in 12 months will show the full effect of liming on nutrient availability."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "pH 6.4, P index 2, K index 0: pH is right; potassium is the constraint. Spreading old straw bedding (high in K) or potassium sulphate is the targeted response."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "pH 6.5, P index 3, K index 2: optimal on all measured parameters. Routine organic matter maintenance (annual muck spreading or compost) maintains this; no purchased fertiliser needed."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "When to test"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Test permanent pasture every 4-5 years, or when grass performance declines unexpectedly. Test arable ground before each main crop rotation. Sample in autumn after grazing pressure has stopped, soil nutrients fluctuate during the growing season and an autumn test gives the most stable baseline."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "slug": "introducing-a-mated-queen-in-a-cage",
+  "title": "Introducing a mated queen in a cage",
+  "subtitle": "A colony that has been without a laying queen for more than a week may kill an introduced queen on sight. The cage gives both sides time to adjust.",
+  "excerpt": "A purchased mated queen arrives in a small cage with a candy plug in one end. The bees eat through the candy over 3-5 days, releasing the queen gradually into the colony. By the time she is free, the colony has begun to accept her scent. A direct release without the cage works only in very specific circumstances.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), queen introduction section. BBKA Bee Craft technical notes on requeening. Frank Pearson, Bee-keeping for All (1923), Internet Archive, chapter on introducing queens. British Beekeepers Association practical guides on queen management.",
+  "glossaryTerms": [
+    {
+      "slug": "candy-plug",
+      "term": "Candy plug",
+      "definition": "A plug of queen candy (fondant with icing sugar) sealing one end of a queen introduction cage. Bees eat through it over 3–5 days, releasing the queen. The delay allows colony acceptance."
+    },
+    {
+      "slug": "balling-queen",
+      "term": "Balling",
+      "definition": "A behaviour in which worker bees cluster around an introduced or failing queen and grip her tightly, sometimes killing her through overheating. The risk is highest in the first 48 hours of introduction."
+    },
+    {
+      "slug": "worker-acceptance",
+      "term": "Worker acceptance",
+      "definition": "The point at which the worker bees stop treating an introduced queen as a threat and begin grooming, feeding, and attending her normally. Indicated by workers pressing against the cage rather than biting or ignoring it."
+    }
+  ],
+  "techniqueSlugs": [
+    "marking-a-queen",
+    "lighting-a-bee-smoker"
+  ],
+  "criticalTechniques": [
+    "lighting-a-bee-smoker"
+  ],
+  "aliases": [
+    "requeening a hive",
+    "introducing a new queen bees",
+    "queen cage introduction bees",
+    "replacing a failing queen"
+  ],
+  "recipeTools": [
+    {
+      "slug": "hive-tool-j",
+      "isOptional": false
+    },
+    {
+      "slug": "bee-smoker",
+      "isOptional": false
+    },
+    {
+      "slug": "bee-suit",
+      "isOptional": false
+    },
+    {
+      "slug": "smoker-fuel",
+      "isOptional": false
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A mated queen introduced too quickly is "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "balling-queen"}}],
+            "text": "balled"
+          },
+          {
+            "type": "text",
+            "text": " and killed. The colony does not recognise her scent and regards her as an intruder. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "candy-plug"
+                }
+              }
+            ],
+            "text": "candy plug"
+          },
+          {
+            "type": "text",
+            "text": " in the cage introduces a delay that costs the colony a few days but saves the queen. During those days the bees feed and groom her through the mesh, and the pheromone mixes into the colony air."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Before the cage goes in: making the colony queenless"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the existing queen 24-48 hours before introducing the caged queen. This is essential: a colony with a laying queen will attack the introduced queen as a rival. Find the existing queen, remove her, and confirm she is gone. Wait 24 hours before opening again."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If there are capped queen cells in the colony, they must also be removed. The workers may choose the hatching cell queen over the introduced one if any cells remain. Check every frame carefully."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Placing the cage"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Inspect the hive 24 hours after removing the old queen. The colony should be clearly aware of being queenless, bees running in a roaring, disorganised pattern is the normal sign."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Check the "
+                  },
+                  {
+                    "type": "text",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "candy-plug"
+                        }
+                      }
+                    ],
+                    "text": "candy plug"
+                  },
+                  {
+                    "type": "text",
+                    "text": " is secure in the cage. If it has softened in transit, replace it with fresh fondant pressed firmly into the cage end."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the cork or plastic cover from the cage end opposite the candy. The mesh end goes toward the bees."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slide the cage between two central brood frames, mesh face outward, candy end toward the top of the hive. The cage should be held between the frames without falling, press it gently and it should grip."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Close the hive without disturbing the bees further. Do not inspect for at least 3 days."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Reading acceptance at the 3-day check"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Open the hive and find the cage. The signs of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "worker-acceptance"
+                }
+              }
+            ],
+            "text": "worker acceptance"
+          },
+          {
+            "type": "text",
+            "text": " are: bees pressing against the mesh with antennae toward the queen, attempting to feed her through the holes. Rejection looks different: bees biting at the mesh, gripping the cage and vibrating, the queen huddled motionless at the far end of the cage."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If the candy plug has not been eaten and acceptance signs are present, enlarge the hole with a pin to speed release. If the candy is eaten but bees are still attacking the cage, replace the candy plug and wait another 3 days before checking again."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "title": "What can go wrong"
+        },
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Queen found dead in cage after 3 days",
+              "cause": "The candy plug had a hole, or the bees entered the cage directly, or there was another queen still present in the colony",
+              "fix": "Check for any remaining queen cells or the original queen. Remove all cells and queens found, requeen again after a further 48 hours with a fresh introduction."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Colony still attacking the cage after 5 days",
+              "cause": "Laying workers in the colony, or a very recently queenless state where acceptance takes longer",
+              "fix": "Add another layer of candy by pressing fondant against the candy-plug hole to extend the delay. If the colony shows drone brood in worker cells, it has laying workers and standard requeening will not work."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

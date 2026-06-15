@@ -1,0 +1,316 @@
+{
+  "slug": "calculating-stocking-rates-for-grazing",
+  "title": "Calculating stocking rates for grazing land",
+  "subtitle": "Too many animals on too little grass means worm burden, mud, and animals that do not thrive. The calculation is straightforward once you know what a livestock unit is.",
+  "excerpt": "Stocking rate is the number of animals a given area of grazing can sustain without degrading the sward. The standard measure is livestock units, which converts different species and liveweights to a common unit based on metabolic demand. A rough guide: 1 livestock unit per hectare for improved pasture; 0.4 for rough upland grazing. Here is how to calculate your carrying capacity and adjust for your actual grass quality.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Beef and Lamb, Better Returns Programme, Grazing Management guide. SAC Consulting, stocking density and grass management notes. Countryside Stewardship guidance on livestock management on grassland habitats. Carla Emery, Encyclopedia of Country Living (1994), land management chapter.",
+  "glossaryTerms": [
+    {
+      "slug": "livestock-unit",
+      "term": "Livestock unit (LU)",
+      "definition": "A standard measure to compare the grazing demand of different livestock. One LU is defined as a 600 kg dairy cow. All other species convert to fractions: a 70 kg ewe = approximately 0.15 LU."
+    },
+    {
+      "slug": "stocking-rate",
+      "term": "Stocking rate",
+      "definition": "The number of livestock units per hectare of grazing. A standard calculation tool for managing pasture pressure. Exceeding the sustainable stocking rate leads to overgrazing: bare patches, increased worm burden, and soil compaction."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [
+    "stocking density sheep per hectare",
+    "how many animals per acre smallholding",
+    "livestock units calculation",
+    "carrying capacity grazing land"
+  ],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stocking rate links the number of animals on a holding to the capacity of the land to feed them. Too low and the land is underused; grass goes rank and needs cutting. Too high and the grass cannot recover between grazing cycles, the worm burden builds, and the animals stop thriving. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "livestock-unit"
+                }
+              }
+            ],
+            "text": "livestock unit"
+          },
+          {
+            "type": "text",
+            "text": " system makes it possible to compare a mixed holding, say, four ewes with lambs and eight laying hens, on the same scale."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Converting your animals to livestock units"
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "LU conversion table (approximate)"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Dairy cow (600 kg): 1.0 LU"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Beef cow and calf (500 kg pair): 0.8 LU"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Ewe with lambs (70 kg ewe): 0.15 LU"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Goat with kids: 0.15 LU"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Pig (70 kg): 0.20 LU"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Poultry do not contribute meaningfully to stocking rate calculations, their grazing impact is negligible compared to ruminants."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Calculating your holding's carrying capacity"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "As a starting point: improved lowland pasture in the UK carries 1.5-2.0 "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "stocking-rate"
+                }
+              }
+            ],
+            "text": "LU/ha"
+          },
+          {
+            "type": "text",
+            "text": " year-round. Semi-improved pasture (permanent old grassland with some clover) carries 1.0-1.5 LU/ha. Rough grazing carries 0.2-0.5 LU/ha."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A worked example: half a hectare (1.2 acres) of good permanent pasture. At 1.5 LU/ha the carrying capacity is 0.75 LU. That supports five ewes without lambs (5 × 0.15 = 0.75 LU), or four ewes with lambs until the lambs reach six weeks (4 × 0.15 = 0.6 LU base, plus growing lambs adding to demand through the season)."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Adjusting for rotational grazing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dividing pasture into paddocks and rotating the animals increases the effective carrying capacity significantly. A paddock rested for 3-4 weeks recovers grass growth before the animals return. In practice: three paddocks on a 3-week rotation allows the same acreage to carry 30-40% more animals than continuous grazing on the same area."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Signs of overgrazing"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Grass grazed below 5 cm on a regular basis, this damages the root system."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bare patches forming at gateways and around water troughs and spreading into the field."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Animals losing condition despite apparently adequate grass cover."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Worm egg counts rising rapidly in the flock."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

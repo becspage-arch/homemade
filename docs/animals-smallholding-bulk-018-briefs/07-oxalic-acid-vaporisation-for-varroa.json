@@ -1,0 +1,159 @@
+{
+  "slug": "oxalic-acid-vaporisation-for-varroa",
+  "title": "Oxalic acid vaporisation for varroa",
+  "subtitle": "Using a heated vaporiser to treat varroa mites in a winter colony.",
+  "excerpt": "Oxalic acid vaporisation is a winter varroa treatment applied when the colony is broodless. A small measured amount of oxalic acid crystals is heated inside the hive using a battery-powered vaporiser unit; the resulting vapour coats the bees and kills the mites on them. It is distinct from the trickle method and gives better coverage of the whole cluster without wetting the bees.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "bees",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "NBU Beekeeper's Toolkit (2024), section on varroa treatments. BBKA advisory leaflet on oxalic acid treatment methods. Veterinary Medicines Directorate (VMD), product licence for Api-Bioxal (2023). Peter Borst, Oxalic acid treatment of honeybees for varroa (2020, Bee Boles Archive).",
+  "glossaryTerms": [
+    { "slug": "varroa", "term": "Varroa", "definition": "Varroa destructor, a parasitic mite that feeds on developing bee pupae and adult bees, spreading viruses and weakening colonies. The most significant bee pest in the UK." },
+    { "slug": "broodless-period", "term": "Broodless period", "definition": "The winter weeks, typically December through January in the UK, when a colony has no developing brood for the varroa mite to hide in, making it vulnerable to treatment." },
+    { "slug": "oxalic-acid", "term": "Oxalic acid", "definition": "A naturally occurring acid found in rhubarb leaves and many plants, approved as an authorised varroa treatment for honeybees in the UK under the trade name Api-Bioxal." }
+  ],
+  "techniqueSlugs": ["varroa-mite-count"],
+  "criticalTechniques": ["varroa-mite-count"],
+  "aliases": ["OA vaporisation varroa", "oxalic acid vaporiser", "varroa vaporisation", "Api-Bioxal vaporise"],
+  "recipeTools": [
+    { "slug": "bee-suit", "isOptional": false },
+    { "slug": "bee-gloves", "isOptional": false },
+    { "slug": "varroa-mite-board", "isOptional": true }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Oxalic acid vaporisation applies " },
+          { "type": "text", "text": "oxalic acid", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "oxalic-acid" } }] },
+          { "type": "text", "text": " to a colony as a vapour rather than a liquid. The crystals are loaded into the heated pan of a battery-powered vaporiser inserted through the hive entrance. The vapour circulates through the cluster, coating bees and surfaces and killing " },
+          { "type": "text", "text": "varroa", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "varroa" } }] },
+          { "type": "text", "text": " mites on contact. It works best during the " },
+          { "type": "text", "text": "broodless period", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "broodless-period" } }] },
+          { "type": "text", "text": " because mites have nowhere to hide in sealed brood." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Oxalic acid vaporisation is an authorised veterinary treatment in the UK. The product must be the licensed preparation (Api-Bioxal or equivalent registered product). Improvised preparations from hardware-store oxalic acid are not legal for use on bees and the residue profile is unknown. The vaporiser unit itself must be a purpose-built bee vaporiser, not a DIY improvisation." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Safety first" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Oxalic acid vapour is harmful if inhaled or if it contacts eyes and mucous membranes. Before vaporising:" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wear an FFP3 respiratory mask (not a paper dust mask). An FFP2 is the minimum; FFP3 is safer for regular use." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wear chemical-splash goggles." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wear gloves and a long-sleeved bee suit. Do not vaporise in an enclosed space: work outdoors or with good through-ventilation." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Keep bystanders and animals away from the hive during treatment and for at least five minutes after." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "When to treat" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Treat in December or early January when the colony is broodless. Check for the absence of brood by hefting the hive: there should be no warmth above the brood box and no hum of active larvae. A quick candling of two or three frames through the roof space will confirm. Do not open the colony fully in cold weather: the cluster should not be disturbed below around 10 degrees." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The procedure" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce the hive entrance to a single-bee opening using the entrance block or mouse guard. This keeps vapour inside the hive longer during treatment." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Weigh out the licensed dose per the product label (typically 2.3 g per brood chamber for Api-Bioxal crystals). Exact dosing matters: too little is ineffective; too much stresses bees." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the crystals in the vaporiser pan. Insert the vaporiser through the hive entrance (most units are designed to slide in from the front without full entrance removal)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Connect the battery and heat the pan until the crystals have fully sublimed (typically three to five minutes depending on the unit and ambient temperature). Seal the entrance briefly with a foam plug or damp cloth during heating to keep vapour in." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave the hive sealed for ten minutes after the heating is complete. This maximises vapour contact time with bees in the cluster." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the entrance fully after ten minutes. Remove the vaporiser. Record the treatment date in your hive records." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Number of treatments" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A single mid-winter treatment is enough if the colony has had other in-season treatments. Without in-season treatment, apply up to three vaporisations, five days apart, during the broodless window." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Checking the result" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fit a " },
+          { "type": "text", "text": "varroa mite count", "marks": [{ "type": "techniqueLink", "attrs": { "techniqueSlug": "varroa-mite-count", "label": "varroa mite count" } }] },
+          { "type": "text", "text": " board below the floor for three to four days after treatment. A successful treatment produces a significant drop of dead mites. A poor drop (few mites despite a known high mite burden) may indicate that brood was present after all, harbouring mites out of reach of the vapour." }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Crystals are not subliming fully in the pan",
+              "cause": "Battery is cold or insufficiently charged; ambient temperature too low for the unit to reach sublimation temperature",
+              "fix": "Warm the battery indoors before use. Treat during the warmest part of the day. Most units specify a minimum ambient temperature (typically 0 degrees or above)."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Many bees dying at the entrance after treatment",
+              "cause": "Colony was stressed or the dose was too high",
+              "fix": "Check the dose against the product label again. A small number of dead bees at the entrance in the days after treatment is normal; a heavy dieoff is not. Record this in the hive register and do not re-treat until the colony stabilises."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

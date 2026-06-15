@@ -1,0 +1,98 @@
+{
+  "slug": "building-a-mobile-strip-grazing-fence",
+  "title": "Setting up a mobile strip grazing fence",
+  "subtitle": "Using a temporary electric fence to allocate daily grass strips to cattle, sheep, or pigs.",
+  "excerpt": "Strip grazing divides a field into narrow strips, allocated one at a time using a temporary electric fence, so that animals receive a fresh allocation of grass each day and cannot return to previously grazed ground. It is the most precise way to manage pasture in a small operation: it reduces waste from trampling and fouling, gives every part of the field an equal rest period, and prevents selective overgrazing of the best patches. A back fence stops animals returning to grazed-out ground.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 30,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB, Grassland management: strip grazing for cattle and sheep (2023). Teagasc, Strip grazing for milk production (2022). SAC Consulting, Grazing management guide for smallholders (2021). Graham Harvey, The Carbon Fields (2008), chapters on rotational grazing. Courtney White, Grass, Soil, Hope (2014), chapter on planned grazing.",
+  "glossaryTerms": [
+    { "slug": "strip-grazing", "term": "Strip grazing", "definition": "A form of rotational grazing where a paddock is subdivided into narrow strips by temporary electric fence, with animals moved to a new strip daily or every two to three days. The previous strip is excluded by a back fence until it has had sufficient rest to regrow." },
+    { "slug": "back-fence", "term": "Back fence", "definition": "A second temporary electric fence placed behind the animals at the previous day's position. The back fence prevents animals from returning to grazed ground, which allows regrowth to begin immediately and improves recovery time." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["strip grazing sheep", "strip grazing cattle", "daily strip allocation", "temporary fence grazing"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "In " },
+          { "type": "text", "text": "strip grazing", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "strip-grazing" } }] },
+          { "type": "text", "text": ", the field is split lengthwise with two temporary electric fences. The forward fence moves each day into fresh grass. The " },
+          { "type": "text", "text": "back fence", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "back-fence" } }] },
+          { "type": "text", "text": " follows behind to keep animals off grazed ground. The animals work a narrow corridor that advances across the field as the rotation progresses." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Equipment needed" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Electric energiser with sufficient output for two separate fence runs." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A reel of polywire or polytape. Yellow or white tape carries a charge and is visible to livestock." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Step-in plastic insulated posts: 20 to 30 per fence line. Step-in posts take 30 seconds each to install and remove." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A poly gate handle and insulated clips for opening and closing the ends of each strip." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Calculating strip width" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The strip width is determined by how many animals you have, their daily dry matter requirement, and the herbage mass in the field. The rough calculation: daily dry matter required (kg) divided by herbage mass per m² (kg DM per m²) equals the area needed per day. Example: 3 dairy cows at 15 kg DM per day each need 45 kg DM per day. A field with 2 kg DM per m² needs a strip of 22.5 m² per day, roughly a 10 m wide strip across a 22 m field." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Daily routine" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Each morning, set the forward fence one strip width ahead of the current position. Check voltage and connections." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Open the gate in the current fence to let animals into the new strip. Close the gate behind them." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Move the back fence forward to the position where yesterday's strip ended. Reconnect to the energiser." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "At the end of each day, check that animals are working the strip (not bunching at the forward fence), which indicates strip allocation is about right." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Strip grazing requires livestock that respect an electric fence. Introduce naive animals (pigs in particular, or young stock new to electric fencing) to a permanently established fence line first, so they learn the shock before relying solely on a lightweight polywire strip fence." }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Animals push through the polywire fence",
+              "cause": "Fence voltage below 2 kV, or animals not conditioned to respect electric fencing",
+              "fix": "Check the fence voltage immediately. Re-train animals against a permanent fence before using strip polywire. Cattle and pigs new to electric fencing should always be introduced in a confined space where they encounter the fence, receive a shock, and learn the association before being managed with portable wire."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
