@@ -25,7 +25,8 @@
  *                                              swap multi-syllable words)
  *        body-missing-orientation           → derive from excerpt or title
  *        body-empty-or-too-short            → write a minimal scaffold
- *        body-missing-method                → write a minimal method
+ *        body-missing-method                → left for authoring (NOT scaffolded;
+ *                                              the completeness gate holds it DRAFT)
  *        voice-violation (kind-specific)    → kind-specific transform
  *   3. After every fix, re-audit the tutorial. If it still BLOCKs, retry up
  *      to 3 times. On the 3rd failure, log to docs/qc-unfixable-<date>.md
@@ -1069,55 +1070,12 @@ function ensureOrientationParagraph(
   return { body: { ...root, content }, changed: true }
 }
 
-function ensureMinimalMethod(
-  body: unknown,
-  title: string,
-): { body: unknown; changed: boolean } {
-  const root = body as TipTapNode | null
-  if (!root) return { body, changed: false }
-  const content = Array.isArray(root.content) ? [...root.content] : []
-  const hasMethod = content.some(
-    (n) =>
-      n.type === 'heading' &&
-      /method|how to|steps|instructions|preparing|making|sewing|assembly|preparation/i.test(extractText(n)),
-  )
-  const hasOrderedList = content.some((n) => deepHasOrderedList(n))
-  if (hasMethod || hasOrderedList) return { body, changed: false }
-  // Append a minimal Method section so the tutorial has at least a heading
-  // + numbered list. Author session will replace this with the real method;
-  // until then it's better than an empty body.
-  const method: TipTapNode[] = [
-    {
-      type: 'heading',
-      attrs: { level: 2 },
-      content: [{ type: 'text', text: 'Method', marks: [] }],
-    },
-    {
-      type: 'orderedList',
-      content: [
-        {
-          type: 'listItem',
-          content: [
-            {
-              type: 'paragraph',
-              content: [
-                { type: 'text', text: `Step-by-step instructions for ${title} go here.`, marks: [] },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  ]
-  return { body: { ...root, content: [...content, ...method] }, changed: true }
-}
-
-function deepHasOrderedList(node: TipTapNode | null | undefined): boolean {
-  if (!node) return false
-  if (node.type === 'orderedList') return true
-  if (Array.isArray(node.content)) return node.content.some(deepHasOrderedList)
-  return false
-}
+// `ensureMinimalMethod` + `deepHasOrderedList` were removed 2026-06-15. They
+// appended a placeholder "Method" section ("Step-by-step instructions for
+// <title> go here.") to any body that lacked one, which then shipped live and
+// became the single biggest source of skeleton content. qc-fix no longer
+// fabricates methods; the completeness gate holds an incomplete body at DRAFT
+// for the authoring/rebuild pass instead.
 
 // ─── Per-tutorial fixer ─────────────────────────────────────────────────────
 
@@ -1410,14 +1368,14 @@ async function fixOnce(
       appliedFixes.push('orientation-scaffold')
     }
   }
-  if (findingKinds.has('body-missing-method') || findingKinds.has('body-empty-or-too-short')) {
-    const r = ensureMinimalMethod(currentBody, currentTitle)
-    if (r.changed) {
-      currentBody = r.body
-      bodyTouched = true
-      appliedFixes.push('method-scaffold')
-    }
-  }
+  // ROOT-CAUSE FIX (2026-06-15): the `body-missing-method` auto-fix used to
+  // call ensureMinimalMethod(), which appended a "Method" section whose only
+  // content was the literal "Step-by-step instructions for <title> go here."
+  // placeholder. That scaffold shipped live and was the single biggest source
+  // (~1,765 rows) of the skeleton content the completeness gate now blocks.
+  // qc-fix must never fabricate a fake method — a missing method is a genuine
+  // gap for the authoring/rebuild pass, and the completeness gate holds such a
+  // row at DRAFT. So there is no method-scaffold step any more.
 
   // ─── Body paragraph rewrites for voice / century / academic / clinical /
   //     soft-medical / botanical / grade ─────────────────────────────────────
