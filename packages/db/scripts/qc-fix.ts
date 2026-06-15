@@ -65,9 +65,11 @@ const __dirname = dirname(__filename)
   }
 }
 
+import { Prisma } from '@prisma/client'
 import { prisma } from '../src'
 import { auditTutorial, type QCFinding } from './qc-audit.js'
 import { runVoiceCheck } from './voice-check-lib.js'
+import { buildQcBlockReason, checkCompleteness } from './qc-completeness-rules/index.js'
 
 // ─── CLI ────────────────────────────────────────────────────────────────────
 
@@ -82,6 +84,11 @@ interface CliFlags {
   revertOnUnfixable: boolean
   voiceRetrofittedNull: boolean
   excludeFromUnfixable: boolean
+  // Pick up DRAFT rows held back by the completeness gate (qcBlockReason set),
+  // run the existing fix logic, and re-publish only those that now pass the
+  // completeness check. Rows that still fail stay DRAFT with the reason
+  // refreshed. This is the qc-fix-batch "drain the blocked backlog" mode.
+  reprocessBlocked: boolean
 }
 
 function parseArgs(argv: string[]): CliFlags {
@@ -96,6 +103,7 @@ function parseArgs(argv: string[]): CliFlags {
     revertOnUnfixable: false,
     voiceRetrofittedNull: false,
     excludeFromUnfixable: true,
+    reprocessBlocked: false,
   }
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i]!
@@ -109,6 +117,7 @@ function parseArgs(argv: string[]): CliFlags {
     else if (a === '--revert-on-unfixable') flags.revertOnUnfixable = true
     else if (a === '--voice-retrofitted-null') flags.voiceRetrofittedNull = true
     else if (a === '--include-unfixable') flags.excludeFromUnfixable = false
+    else if (a === '--reprocess-blocked') flags.reprocessBlocked = true
   }
   return flags
 }
@@ -1650,6 +1659,58 @@ function auditTutorialAgainst(
   return v
 }
 
+// ─── Completeness re-evaluation (reprocess-blocked mode) ─────────────────────
+
+/**
+ * Re-run the completeness gate on a blocked DRAFT row after the fixer has had
+ * its pass. If it now passes, publish it and clear qcBlockReason; otherwise
+ * refresh qcBlockReason and leave it DRAFT. publishedAt is preserved (or
+ * stamped now if the row was never published).
+ */
+async function reevaluateBlocked(slug: string): Promise<'PUBLISHED' | 'STILL_DRAFT' | 'MISSING'> {
+  const t = await prisma.tutorial.findUnique({
+    where: { slug },
+    select: {
+      id: true, type: true, body: true, publishedAt: true,
+      servings: true, yieldDescription: true, totalMinutes: true, timeMinutes: true,
+      prepMinutes: true, cookMinutes: true, chartDefinition: true,
+      category: { select: { slug: true } }, subCategory: { select: { slug: true } },
+    },
+  })
+  if (!t) return 'MISSING'
+  const completeness = checkCompleteness({
+    slug,
+    categorySlug: t.category.slug,
+    subCategorySlug: t.subCategory?.slug ?? null,
+    type: t.type,
+    body: t.body,
+    servings: t.servings,
+    yieldDescription: t.yieldDescription,
+    totalMinutes: t.totalMinutes,
+    timeMinutes: t.timeMinutes,
+    prepMinutes: t.prepMinutes,
+    cookMinutes: t.cookMinutes,
+    hasChart: t.chartDefinition != null,
+  })
+  if (completeness.ok) {
+    await prisma.tutorial.update({
+      where: { id: t.id },
+      data: { status: 'PUBLISHED', publishedAt: t.publishedAt ?? new Date(), qcBlockReason: Prisma.DbNull },
+    })
+    return 'PUBLISHED'
+  }
+  await prisma.tutorial.update({
+    where: { id: t.id },
+    data: {
+      qcBlockReason: buildQcBlockReason(completeness, {
+        blockedFromStatus: 'PUBLISHED', checkedAt: new Date().toISOString(),
+        source: 'qc-fix --reprocess-blocked',
+      }) as Prisma.InputJsonValue,
+    },
+  })
+  return 'STILL_DRAFT'
+}
+
 // ─── Main ──────────────────────────────────────────────────────────────────
 
 async function main(): Promise<void> {
@@ -1660,7 +1721,9 @@ async function main(): Promise<void> {
   }
   const since = parseSince(flags.since)
 
-  const where: Record<string, unknown> = { status: 'PUBLISHED' }
+  const where: Record<string, unknown> = flags.reprocessBlocked
+    ? { status: 'DRAFT', qcBlockReason: { not: Prisma.DbNull } }
+    : { status: 'PUBLISHED' }
   if (flags.slug) (where as { slug: string }).slug = flags.slug
   if (flags.category) (where as { category: object }).category = { slug: flags.category }
   if (flags.voiceRetrofittedNull) (where as { voiceRetrofittedAt: null }).voiceRetrofittedAt = null
@@ -1690,6 +1753,7 @@ async function main(): Promise<void> {
   // filter is active (those can't be applied to the audit JSON).
   const auditJsonPath = repoPath(`docs/qc-audit-${ds}.json`)
   const canUseAuditJson =
+    !flags.reprocessBlocked &&
     !flags.slug && !flags.category && !flags.since && !flags.recentlyPublished &&
     existsSync(auditJsonPath)
 
@@ -1761,6 +1825,8 @@ async function main(): Promise<void> {
   const perRuleCounts = new Map<string, number>()
   const results: FixResult[] = []
   let processed = 0
+  let republished = 0
+  let stillBlockedAfterReprocess = 0
 
   for (const slug of targetSlugs) {
     processed++
@@ -1787,6 +1853,19 @@ async function main(): Promise<void> {
       }
     }
     if (lastResult) results.push(lastResult)
+
+    // In reprocess-blocked mode, the deciding check is the completeness gate
+    // (not the voice audit). After the fixer pass, re-evaluate and publish if
+    // the row is now complete; otherwise refresh the block reason.
+    if (flags.reprocessBlocked && flags.autoFix && !flags.dryRun) {
+      const outcome = await reevaluateBlocked(slug)
+      if (outcome === 'PUBLISHED') { republished++; console.log(`  ✓ republished ${slug}`) }
+      else if (outcome === 'STILL_DRAFT') stillBlockedAfterReprocess++
+    }
+  }
+
+  if (flags.reprocessBlocked) {
+    console.log(`qc-fix reprocess-blocked: republished=${republished} still_blocked=${stillBlockedAfterReprocess}`)
   }
 
   const passed = results.filter((r) => r.outcome === 'PASS').length

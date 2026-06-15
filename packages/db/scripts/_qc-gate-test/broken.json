@@ -1,0 +1,47 @@
+{
+  "slug": "qc-gate-test-broken-pattern",
+  "title": "QC gate test broken pattern",
+  "subtitle": "Deliberately broken fixture for the completeness gate test.",
+  "excerpt": "A throwaway fixture used to prove the completeness publish gate blocks a skeleton. It carries the qc-fix scaffold placeholder, a leaked NaN and undefined, and no row instructions.",
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "primaryYarnWeightSlug": "dk",
+    "primaryHookSlug": "crochet-hook-4-0mm",
+    "gaugeText": "16 dc x 20 rows = 10 x 10 cm in DK with a 4 mm hook.",
+    "finishedSizeText": "Test fixture; no finished size.",
+    "craftStitchSlugs": ["crochet-chain", "crochet-double-uk"]
+  },
+  "recipe": { "scalable": false },
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This is a throwaway test fixture created to validate the content-completeness publish gate. The intro is deliberately long enough to clear the hundred-character minimum so the structural and placeholder checks are what fire, rather than the short-body rule." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Step-by-step instructions for QC gate test broken pattern go here." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Foundation: chain NaN. The final stitch count came out undefined." }
+        ]
+      }
+    ]
+  }
+}

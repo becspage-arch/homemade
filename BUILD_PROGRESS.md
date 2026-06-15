@@ -8,6 +8,22 @@ Updated each working session.
 
 ---
 
+## Content-completeness gate + un-publish broken content (2026-06-15)
+
+`phase_qc_block_reason_001`. Foundation fix after the hero session found the autopilot had been shipping skeletons. Site-wide audit of all 9,410 PUBLISHED tutorials across 18 categories found **1,884 broken (20%)** — far past the original crochet+knitting diagnosis. Root cause: 1,765 carry the literal `Step-by-step instructions for <Title> go here.` scaffold that `qc-fix.ts`'s `ensureMinimalMethod()` injects when a body has no Method section, which then shipped live; the rest are pattern skeletons with no row/round instructions (380), leaked `NaN` (74), broken foundation chains (71), leaked `undefined` (35). cooking / mindset / natural-home / herbal-medicine were clean (0 broken).
+
+**The gate.** Per-category completeness rules, one file per category, at `packages/db/scripts/qc-completeness-rules/` (`shared.ts` generic checks + rule builders, `index.ts` = `checkCompleteness()` + `buildQcBlockReason`). Generic checks (empty / <100 chars / `NaN` / `undefined` / high-precision scaffold-placeholder) fire on every category; per-category rules add structure (recipe → ingredients + method [+ yield/timing for cooking/baking]; textile PATTERN → row/round unless counted/charted; craft PATTERN/TECHNIQUE → steps; prose → generic). Binary block / skip, no warning tier, AI-only.
+
+**Wired into every publish path** so broken content can't ship again: `uploadTutorial()` (the `--status PUBLISHED` path the autopilot + `_batch-upload.ts` use — downgrades a failing row to DRAFT + records `qcBlockReason`), the batch DRAFT→PUBLISHED flippers (`publish-and-flip-a-batch`, `publish-mindset-drafts-and-resume`) via new `qc-gated-publish.ts`, `editorial-pass-mindset-drafts`, and the admin publish transition (`actions.ts`, generic check). `qc-fix.ts --reprocess-blocked --auto-fix` drains the blocked DRAFT backlog (re-checks completeness, re-publishes only rows that now pass). `autopilot-preflight.ts` refreshes `completeness-blocked-queue.json` each cycle. New schema field `Tutorial.qcBlockReason Json?` (migration `20260915000000_phase_qc_block_reason_001`, applied via `migrate deploy`).
+
+**Un-published** all 1,884 confirmed-broken rows: status → DRAFT, `qcBlockReason` set, **`publishedAt` + slug preserved** (audit trail + stable URL for the rebuild), nothing deleted.
+
+**End-to-end gate test (passed).** A deliberately broken crochet PATTERN (NaN + `undefined` + scaffold placeholder + no rows) pushed through `uploadTutorial --status PUBLISHED` was BLOCKED and held at DRAFT with all five reasons recorded; a clean control pattern published normally; `qc-fix --reprocess-blocked` picked the blocked row up, ran the fixer, re-checked, and correctly kept it DRAFT (`republished=0 still_blocked=1`) since a scaffold can't be auto-authored. Test fixtures in `packages/db/scripts/_qc-gate-test/`; the two test rows were deleted from the DB after.
+
+**Autopilot stays OFF** until the rebuild + a clean re-audit (Rebecca's call). Rebuild scope (per-category counts + session estimates + order) at `packages/db/docs/content-rebuild-scope-2026-06-15.md`; per-slug report at `content-completeness-report-2026-06-15.json`. **Image work untouched** (no `heroMediaId` changes; the 109 garbage heroes + hero strategy are a separate fresh-eyes session).
+
+---
+
 ## Knitting blanket bulk-003 (2026-06-14)
 
 40 tutorials published to the **knitting / blanket** subcategory (0 → 40). Category was READY with null `lastAutopilotRunAt`, backdated per the null-sort fix so the round-robin queue picked it.

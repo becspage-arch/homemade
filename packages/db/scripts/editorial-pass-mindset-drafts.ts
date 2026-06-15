@@ -35,6 +35,7 @@ const __dirname = dirname(__filename)
 
 import { prisma, r2Upload } from '../src'
 import type { Prisma } from '@prisma/client'
+import { buildQcBlockReason, checkCompleteness } from './qc-completeness-rules/index.js'
 import { sourceHeroImage } from '../../../apps/web/src/lib/image-sourcing/orchestrator'
 
 interface CliFlags { dryRun: boolean; skipImages: boolean }
@@ -731,6 +732,31 @@ async function main(): Promise<void> {
         bodyChanged, titleChanged, subtitleChanged, excerptChanged, typeChanged,
         heroOutcome, heroSource, heroTried, errorMessage: heroErr,
       })
+      continue
+    }
+
+    // Completeness gate — never publish a rewritten body that fails its
+    // per-category check. A failing row is held at DRAFT with qcBlockReason set.
+    const completeness = checkCompleteness({
+      slug: r.slug, categorySlug: 'mindset', subCategorySlug: null,
+      type: r.expectedType, body: r.body,
+    })
+    if (!completeness.ok) {
+      await prisma.tutorial.update({
+        where: { id: existing.id },
+        data: {
+          qcBlockReason: buildQcBlockReason(completeness, {
+            blockedFromStatus: 'PUBLISHED', checkedAt: new Date().toISOString(),
+            source: 'editorial-pass-mindset-drafts',
+          }) as Prisma.InputJsonValue,
+        },
+      })
+      report.push({
+        slug: r.slug, beforeStatus: existing.status, afterStatus: 'DRAFT (blocked)',
+        bodyChanged, titleChanged, subtitleChanged, excerptChanged, typeChanged,
+        heroOutcome, heroSource, heroTried, errorMessage: completeness.reasons.join('; '),
+      })
+      console.log(`${tag} BLOCKED (held DRAFT): ${completeness.reasons.join('; ')}`)
       continue
     }
 
