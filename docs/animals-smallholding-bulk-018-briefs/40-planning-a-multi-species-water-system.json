@@ -1,0 +1,115 @@
+{
+  "slug": "planning-a-multi-species-water-system",
+  "title": "Planning a water supply for mixed livestock",
+  "subtitle": "Designing a simple piped water system that serves different animal species on a smallholding.",
+  "excerpt": "Getting water to multiple species of livestock across different parts of a smallholding is one of the earliest infrastructure decisions and one that pays off over many years if planned well. A simple low-pressure gravity-fed system or a mains-connected run with float-controlled troughs can serve cattle, pigs, sheep, and poultry from a single header tank or direct supply. Understanding the flow and volume requirements of different species before laying pipe saves expensive rework later.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 240,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "DEFRA, Livestock water supply requirements (2023). AHDB Beef and Lamb, Water requirements for cattle (2022). NFU Mutual, Farm water systems guide (2021). Natural England, Livestock water access and riparian management (2022). SAC Consulting, Smallholding infrastructure planning (2021).",
+  "glossaryTerms": [
+    { "slug": "header-tank", "term": "Header tank", "definition": "A storage tank placed at a height above the delivery point, which supplies water to troughs by gravity pressure. Common in farm water systems where the mains pressure is sufficient to fill the tank but the trough delivery relies on gravity, giving stable low-pressure flow." },
+    { "slug": "float-valve", "term": "Float valve", "definition": "An automatic valve that closes when the water level in a trough reaches a set point and opens as the water level drops. It maintains a constant water level in a trough without manual intervention." },
+    { "slug": "demand-litre-per-animal", "term": "Daily water requirement", "definition": "The volume of water each animal type needs per day. A dairy cow at peak milk requires 80 to 120 litres per day; a beef steer requires 30 to 50 litres; a ewe in late pregnancy requires 5 to 8 litres; a pig sow requires 10 to 15 litres; a laying hen requires 200 to 300 ml." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["livestock water supply", "farm water trough plumbing", "water system smallholding", "mixed species water planning"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The first step in planning a multi-species water system is calculating the peak daily demand. Add up the " },
+          { "type": "text", "text": "daily water requirement", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "demand-litre-per-animal" } }] },
+          { "type": "text", "text": " for every animal on the holding and multiply by 1.5. This safety factor covers peak drinking, filling losses, and future expansion. The total gives the minimum daily flow rate your supply and pipe run must deliver." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Supply source options" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mains water: reliable, metered, and the simplest option where available. A sub-meter on the farm supply lets you track usage and costs. Mains supply to troughs uses " },
+            { "type": "text", "text": "float valves", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "float-valve" } }] },
+            { "type": "text", "text": " at each trough." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "A " },
+            { "type": "text", "text": "header tank", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "header-tank" } }] },
+            { "type": "text", "text": " filled by mains or borehole, supplying troughs by gravity. Useful where mains pressure is inadequate for the run length, or to buffer supply for peak demand periods." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spring or stream: legal abstractions from a watercourse require an abstraction licence above 20 m³ per day. Below that level, riparian rights apply, but the source must be on your land." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pipe sizing and runs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For most smallholding systems, 25 mm MDPE (medium density polyethylene) pipe in blue is the appropriate supply main. For short branch runs to individual troughs, 20 mm MDPE is sufficient. Bury mains supply pipe at least 600 mm deep to avoid frost damage and physical damage from machinery. Mark the run with marker tape and record the layout before backfilling." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Trough sizing by species" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cattle: a 150 to 200 litre rectangular trough fitted with a float valve. One trough per 20 to 30 animals." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sheep: a low-sided trough (maximum 400 mm high) with a float valve. Sheep drink from low vessels; deep cattle troughs cause significant underdrinking in sheep and lambs." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pigs: a nipple drinker nipple-bar system or a low trough. Pigs will foul an open trough; nipple systems are preferred in enclosed pig housing." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Poultry: a nipple drinker or bell drinker (hanging gravity drinker) at the species-appropriate height. Hens: 300 mm height. Ducks and geese: 150 mm height." }] }] }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Float valves should be checked weekly. A float valve that sticks open will run a trough continuously and the overflows can cause poaching and waterlogging around the trough. A float valve that sticks closed leaves animals without water. Budget for a spare float valve for each trough and swap at the first sign of malfunction." }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Winter frost protection" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lag above-ground pipe runs with insulated foam pipe lagging where they emerge from the ground and run along walls or gates." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "A thermostatically controlled trough heater element (submersible, rated for the trough volume) prevents the trough surface from freezing in cold spells. Essential for sites that regularly drop below minus five degrees Celsius." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Install a drainable gate valve on each trough branch line so the run can be drained before a prolonged hard frost if no heater is fitted." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Troughs at the far end of the run fill slowly or not at all",
+              "cause": "Insufficient flow rate through the pipe run, or pipe diameter too small for the run length",
+              "fix": "Measure the actual flow rate at the problem trough with a bucket and a timer. If flow is below 10 litres per minute for cattle or 2 litres per minute for sheep, the pipe run needs upsizing. A loop supply (piping back from the far end to the start) can resolve flow problems in long runs without relaying all the pipe."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

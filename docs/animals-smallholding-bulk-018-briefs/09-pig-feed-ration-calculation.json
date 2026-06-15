@@ -1,0 +1,252 @@
+{
+  "slug": "pig-feed-ration-calculation",
+  "title": "Calculating a daily feed ration for pigs",
+  "subtitle": "Pigs fed by eye gain fat and lose condition simultaneously. Feed by percentage of bodyweight instead.",
+  "excerpt": "A growing pig needs 2.5-3% of its bodyweight in feed daily, split across two meals. Feed above that and you grow lard; feed below it and the pig fails to thrive. The calculation is straightforward once you know the animal's approximate weight, which you can estimate with a weigh tape before the first bag is opened.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 20,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Pork, Feeding Pigs on Small Holdings factsheet. DEFRA Codes of Recommendations for the Welfare of Pigs. John Seymour, The New Complete Book of Self-Sufficiency (2003), pig management chapter. Carla Emery, Encyclopedia of Country Living (1994), pigs section.",
+  "glossaryTerms": [
+    {
+      "slug": "finishing-ration",
+      "term": "Finishing ration",
+      "definition": "A pig feed designed for the last 8–10 weeks before slaughter, typically lower in protein and higher in energy than a grower ration. It promotes fat deposition and carcass development."
+    },
+    {
+      "slug": "grower-ration",
+      "term": "Grower ration",
+      "definition": "A pig feed for animals from weaning to around 50 kg liveweight, typically 16–18% crude protein. Supports lean muscle growth rather than fat deposition."
+    }
+  ],
+  "techniqueSlugs": [
+    "pig-weigh-tape-estimating-liveweight"
+  ],
+  "criticalTechniques": [
+    "pig-weigh-tape-estimating-liveweight"
+  ],
+  "aliases": [
+    "how much to feed a pig",
+    "pig daily feed amount",
+    "pig ration calculation smallholding"
+  ],
+  "recipeTools": [
+    {
+      "slug": "pig-weigh-tape",
+      "isOptional": false
+    },
+    {
+      "slug": "feed-scoop-3kg",
+      "isOptional": false
+    }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The standard feeding rule for growing pigs is 2.5-3% of liveweight per day. A 40 kg pig gets 1-1.2 kg of feed daily. A 70 kg pig gets 1.75-2.1 kg. The exact percentage moves within that range based on body condition: a pig running lean gets 3%, a pig running fat gets 2.5%. Split the daily total across morning and evening meals."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Estimating liveweight with a weigh tape"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need two measurements: heart girth (the circumference of the pig's chest directly behind the front legs) and body length (from the base of the ears to the base of the tail). The formula is:"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Liveweight (kg) = (heart girth in cm × heart girth in cm × body length in cm) ÷ 14,400"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This gives an estimate accurate to within 10-15%. It is good enough for ration calculation. A purpose-made pig weigh tape pre-converts the measurement, making the arithmetic unnecessary."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Choosing the right ration type"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For most smallholder pigs raised from weaning to slaughter, two ration stages cover the whole arc. Weaners to around 50 kg go on a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "grower-ration"
+                }
+              }
+            ],
+            "text": "grower ration"
+          },
+          {
+            "type": "text",
+            "text": ". From 50 kg to slaughter weight they move to a "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "finishing-ration"
+                }
+              }
+            ],
+            "text": "finishing ration"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "Feed type guide by stage"
+        },
+        "content": [
+          {
+            "type": "bulletList",
+            "content": [
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Weaner (8-20 kg): creep or weaner pellets, 16-18% protein, approximately 0.4-0.6 kg/day."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Grower (20-50 kg): grower pellets, 15-17% protein, 0.5-1.5 kg/day, scaling up with weight."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "listItem",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Finisher (50 kg to slaughter): finishing pellets, 13-15% protein, 1.5-2.5 kg/day."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Reading body condition"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Check body condition every two weeks by pressing fingers along the spine. On a correctly fed pig you should feel the spine, but not each vertebra separately. Spine bones poking sharply: underfed, increase ration. No spine detectable at all: overfed, reduce ration."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Adjusting for forage"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pigs on a good grass pasture or with access to roots, waste vegetables, and fallen fruit can have their compound ration reduced by 20-30%. Track body condition weekly when reducing, not monthly, pigs put weight on and lose it faster than other livestock."
+          }
+        ]
+      }
+    ]
+  }
+}

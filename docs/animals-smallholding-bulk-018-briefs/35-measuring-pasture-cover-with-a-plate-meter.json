@@ -1,0 +1,89 @@
+{
+  "slug": "measuring-pasture-cover-with-a-plate-meter",
+  "title": "Measuring pasture cover with a plate meter",
+  "subtitle": "Using a rising plate meter to assess grass availability and plan rotational grazing.",
+  "excerpt": "A rising plate meter measures compressed sward height and converts it to an estimate of the kilograms of dry matter of grass available per hectare. Taking regular plate meter readings across your paddocks gives you an objective measurement of where the grass is, how quickly it is growing, and when each paddock has recovered enough to bring back into the rotation. Without measurements, decisions are based on what grass looks like, which tends to lead to overgrazing the best paddocks.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "smallholding-skills",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 45,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB, Grassland management with the rising plate meter (2023). Teagasc (Irish Agricultural Authority), Grass10 programme plate meter guide (2022). SAC Consulting, Pasture management for smallholders (2021). Nigel Griffiths, Dairy Cow Management (2022), chapter on grass measurement.",
+  "glossaryTerms": [
+    { "slug": "plate-meter", "term": "Rising plate meter", "definition": "A calibrated measuring tool with a weighted plate that sits on top of the grass sward. The height the plate sits above the ground is read from a graduated stick and converted to an estimate of herbage mass in kilograms of dry matter per hectare." },
+    { "slug": "herbage-mass", "term": "Herbage mass", "definition": "The total amount of standing grass in a field, expressed as kilograms of dry matter per hectare. Entry point for grazing (the minimum herbage mass before grazing is allowed back in) and exit point (the minimum residual after grazing) are the two key management thresholds." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["plate meter grassland", "pasture measurement", "grass cover measurement", "rotational grazing measurement"],
+  "recipeTools": [
+    { "slug": "plate-meter", "isOptional": false }
+  ],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A " },
+          { "type": "text", "text": "rising plate meter", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "plate-meter" } }] },
+          { "type": "text", "text": " is a calibrated tool that converts compressed sward height to an estimate of " },
+          { "type": "text", "text": "herbage mass", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "herbage-mass" } }] },
+          { "type": "text", "text": " in kilograms of dry matter per hectare. This number tells you more than a visual inspection: it is objective, repeatable, and comparable week to week." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "How to take readings" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Walk the paddock in a W pattern (or zigzag), placing the plate meter at even intervals across the paddock. Standard guidance is 30 to 50 readings per hectare for a reliable average." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Each reading: drop the plate vertically onto the grass surface and read the compressed sward height from the graduated stick. Record each reading." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Avoid gateways, water troughs, and poached areas, which will read unusually low. Avoid obviously rank patches, which read unusually high. Take enough readings that these outliers are averaged out." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Calculate the average compressed height across all readings. Apply the conversion factor for your meter and the grass type. UK grassland: 1 cm of compressed sward height typically equals approximately 130 to 180 kg dry matter per hectare, depending on the calibration of the specific meter and the grass density." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Key target values" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Entry point for rotational grazing (dairy or beef): 1,400 to 1,600 kg DM per hectare in spring; 2,000 to 2,200 kg DM per hectare in summer and autumn when growth is slower. Grazing too early wastes grass by reducing leaf area index." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Exit point (post-grazing residual): 1,500 to 1,600 kg DM per hectare is the target. Grazing below this removes the leaf area needed for rapid regrowth and slows recovery time." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For sheep: entry point around 1,200 kg DM per hectare; exit residual above 1,000 kg DM per hectare." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using readings to manage the rotation" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Measure all paddocks in the rotation weekly. Plot the values. Any paddock at or above the entry point target is ready to come back into the rotation. Any paddock consistently not recovering above entry point within the expected interval (typically 21 to 25 days in summer) is either being grazed below exit residual, has a fertility problem, or is being shaded or waterlogged." }]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Plate meter readings vary enormously across the same paddock",
+              "cause": "Uneven sward: some areas recovering well, some poached or bare",
+              "fix": "This is meaningful information, not an error. The average is still the number to use for stocking calculations, but the variation tells you the paddock has management issues. Identify the poorly recovering areas and investigate: poor drainage, fertility deficiency, compaction, or selective overgrazing."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

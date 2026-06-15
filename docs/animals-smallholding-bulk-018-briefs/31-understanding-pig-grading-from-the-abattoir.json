@@ -1,0 +1,92 @@
+{
+  "slug": "understanding-pig-grading-from-the-abattoir",
+  "title": "Understanding pig grading from the abattoir",
+  "subtitle": "Reading your kill sheet and what the grading numbers mean for your finished pigs.",
+  "excerpt": "When pigs are slaughtered, the abattoir issues a kill sheet giving the deadweight and the grade of each carcass. Understanding these numbers, where on the fat and muscle index your pigs are landing, tells you whether your finishing system is working, and whether you are sending pigs to slaughter too early, too late, or with too much or too little cover. The grading system in the UK is the EUROP grid, applied with optical scanning.",
+  "type": "READING",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "AHDB Pork, Understanding pig carcase classification (2023). NPA, EUROP grid guide for pig producers (2022). DEFRA, Livestock carcase classification in the UK (2022). John Gadd, Pig Production Problems (2011), 5m Books, chapter on carcase grading. BPEX, Pigmeat supply chain guide (2015, historical reference).",
+  "glossaryTerms": [
+    { "slug": "europ-grid-pig", "term": "EUROP grid", "definition": "A five-grade classification scale (E, U, R, O, P) used across the EU and retained in UK law post-Brexit for grading beef and pig carcasses by lean meat percentage. E (Excellent) is the highest lean percentage; P (Poor) the lowest. Most UK commercial pig carcasses grade between R and E." },
+    { "slug": "p2-fat-depth", "term": "P2 fat depth", "definition": "The fat depth measured by the abattoir optical probe at a point 65 mm from the midline of the pig carcass, at the level of the last rib. P2 is the standard reference point for UK pig carcase fat measurement." },
+    { "slug": "deadweight-pig", "term": "Deadweight", "definition": "The weight of the slaughtered pig carcass after bleeding, scalding, dehairing, and removal of head, feet, and offal but before any further dressing. Distinct from liveweight, which is what the pig weighed before slaughter." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["pig kill sheet", "pig carcase grading UK", "EUROP grid pigs", "P2 fat depth pigs", "pig abattoir grading"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A pig kill sheet typically shows: tag number, " },
+          { "type": "text", "text": "deadweight", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deadweight-pig" } }] },
+          { "type": "text", "text": ", " },
+          { "type": "text", "text": "P2 fat depth", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "p2-fat-depth" } }] },
+          { "type": "text", "text": ", lean meat percentage, and the " },
+          { "type": "text", "text": "EUROP grid", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "europ-grid-pig" } }] },
+          { "type": "text", "text": " grade. Understanding how these numbers connect to the pig you finished, and to the money you receive, is the feedback loop that drives improvement." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Deadweight and dressing percentage" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A pig's deadweight is typically 72 to 76% of its live weight at delivery. If a 100 kg pig arrives at the abattoir, expect a deadweight of 72 to 76 kg. The difference covers blood, gut contents, skin (if not retained), head, and trotters. This ratio is called the dressing percentage or killing-out percentage. Heritage and outdoor breeds (Tamworth, Large Black) often have lower dressing percentages than leaner commercial hybrids." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "P2 fat depth" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "P2 is measured by an optical probe or AutoFOM scanner. It tells you how fat the carcass is at the critical measurement point (last rib, 65 mm from midline). Target P2 ranges for different markets:" }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "UK standard pork contract: P2 12 to 18 mm. Most commercial hybrids on commercial rations hit this range at 70 to 80 kg deadweight." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Outdoor-bred premium label: P2 typically 12 to 16 mm." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Charcuterie and dry-cure including Iberian-style products: higher fat is an asset. Aim for P2 of 25 to 35 mm to develop good intramuscular fat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heritage breed (Gloucester Old Spot, Tamworth, Large Black) on ad-lib: these breeds naturally lay down more fat than commercial hybrids. P2 of 22 to 30 mm at the same live weight is common." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "EUROP grade" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The EUROP grade is derived from the lean meat percentage estimated from P2 and the muscle depth. E grade is 60% or more lean meat. For commercial pigs this is the premium grade. R is 50 to 55% lean (acceptable for most contracts). O and P grades indicate an over-fat carcass or a carcass from a pig that was too old or not the right genotype for the finishing system." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Using the kill sheet to improve" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "P2 consistently too high: pigs are being finished for too long or overfed at the end of the finishing period. Reduce slaughter liveweight or reduce finish ration in the last 2 weeks." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "P2 consistently too low: pigs are being sent too light, or on a feed regime that restricts growth. A very lean carcass from a heritage breed is normal; from a commercial hybrid it suggests underfeeding." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "High variation in P2 within a batch: pigs of the same age finishing very differently. Check for bullying at the feeder, disease in slower-growing individuals, or wide variation in birth weight." }] }] }
+        ]
+      }
+    ]
+  }
+}

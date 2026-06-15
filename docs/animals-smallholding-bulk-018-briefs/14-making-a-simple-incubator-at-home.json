@@ -1,0 +1,385 @@
+{
+  "slug": "making-a-simple-incubator-at-home",
+  "title": "Making a simple egg incubator at home",
+  "subtitle": "Building a basic still-air incubator from a cool box and a thermostat controller.",
+  "excerpt": "A functional still-air egg incubator can be built from a polystyrene cool box, a small aquarium heater or thermostat-controlled heat mat, a waterproof thermometer, and a shallow water tray for humidity. The resulting unit holds temperature reliably for a small batch of eggs and costs a fraction of a commercial incubator. It requires attentive management but teaches the principles of incubation before committing to a larger machine.",
+  "type": "PATTERN",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "poultry",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 180,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Gail Damerow, Storey's Guide to Raising Chickens (2017), chapter on incubation. RSPCA, Hatching eggs (2023). Lewis Wright, The Practical Poultry Keeper (1867), Internet Archive, chapter on artificial incubation. University of Minnesota Extension, Incubating and Hatching Eggs (2020).",
+  "glossaryTerms": [
+    {
+      "slug": "still-air-incubator",
+      "term": "Still-air incubator",
+      "definition": "An incubation chamber with no internal fan; heat and humidity distribute by natural convection. Temperature must be measured at egg level and tends to be slightly less even than a fan-forced unit."
+    },
+    {
+      "slug": "lockdown",
+      "term": "Lockdown",
+      "definition": "The last three days of incubation (day 18 to 21 for chickens) when eggs stop being turned, humidity is increased, and the incubator is not opened until chicks have hatched."
+    },
+    {
+      "slug": "candling",
+      "term": "Candling",
+      "definition": "Shining a bright light through the shell of an incubating egg to check the development of the embryo inside. Clear or rotten eggs can be removed at day 7 and day 14 candles."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": [],
+  "recipeTools": [
+    {
+      "slug": "egg-incubator",
+      "isOptional": true
+    }
+  ],
+  "projectSchedule": [
+    {
+      "stepNumber": 1,
+      "offsetDays": 0,
+      "title": "Build and test incubator",
+      "body": "Assemble the cool box incubator. Run empty for 24 hours to verify temperature holds at 37.5 degrees at egg level. Adjust thermostat as needed.",
+      "surfaceAs": "HERO"
+    },
+    {
+      "stepNumber": 2,
+      "offsetDays": 1,
+      "title": "Set eggs",
+      "body": "Load eggs point-down into the incubator. Begin manual turning schedule three times daily.",
+      "surfaceAs": "RAIL_CARD"
+    },
+    {
+      "stepNumber": 3,
+      "offsetDays": 7,
+      "title": "First candle",
+      "body": "Candle eggs in a dark room. Remove any clear (infertile) or blood-ring eggs.",
+      "surfaceAs": "RAIL_CARD"
+    },
+    {
+      "stepNumber": 4,
+      "offsetDays": 14,
+      "title": "Second candle",
+      "body": "Candle again. Remove any dead embryos. Increase turning frequency if possible.",
+      "surfaceAs": "RAIL_CARD"
+    },
+    {
+      "stepNumber": 5,
+      "offsetDays": 18,
+      "title": "Lockdown begins",
+      "body": "Stop turning. Increase humidity to 65 to 70%. Do not open the incubator until hatching is complete.",
+      "surfaceAs": "RAIL_CARD"
+    },
+    {
+      "stepNumber": 6,
+      "offsetDays": 21,
+      "title": "Hatch day",
+      "body": "Most chicks should hatch on day 21 (range 19 to 23). Leave chicks to dry in the incubator before moving to the prepared brooder.",
+      "surfaceAs": "HERO"
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A homemade "
+          },
+          {
+            "type": "text",
+            "text": "still-air incubator",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "still-air-incubator"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " works well for hatching a few eggs or learning the process. It also serves as a spare if a commercial machine fails mid-hatch. The basic design uses a polystyrene cool box and a thermostat. Hatch rates in a well-run homemade unit match entry-level commercial incubators."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A large polystyrene cool box, minimum 30 litres capacity. Polystyrene insulates excellently and is cheap or free from fishmongers and catering suppliers."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A thermostat controller and heat mat, or a simple aquarium water heater used in a sealed water bottle inside the box as the heat source. Both approaches work; the thermostat-and-mat route is more reliable."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A digital thermometer with a probe that can be set at egg level inside the closed box."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A small shallow tray of water for humidity."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A small torch or LED for "
+                  },
+                  {
+                    "type": "text",
+                    "text": "candling",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "candling"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "A pencil for marking eggs to track turns."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Building the unit"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut a ventilation hole in the lid: a single 20 mm diameter hole or two smaller ones. Still-air incubators need a small amount of fresh air exchange for the developing embryo; too much ventilation loses heat too quickly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Position the heat mat inside the box, against one wall. Run the power cable through a slot in the top edge of the box sealed with foam or putty. Connect to the thermostat controller."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set the thermostat probe at egg level in the centre of the box floor. The target temperature at egg level for chicken eggs is 37.5 degrees Celsius in a still-air unit."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the shallow water tray on the floor of the box to provide humidity. Target 45 to 55% relative humidity from day 1 to day 17. A hygrometer inside the box takes the guesswork out."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Run the empty unit for 24 hours. Check the temperature log: it should stay within plus or minus 0.5 degrees of 37.5. Adjust the thermostat set point if it runs high or low."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Setting and turning the eggs"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set eggs point-down (blunt end slightly raised). Mark one side with a pencil X and the other side with an O so you can track turns. Turn eggs manually by rolling them onto the opposite side at least three times daily (morning, noon, evening), odd number of turns preferred so the egg is not on the same side two nights in a row. Stop turning at day 18 to start "
+          },
+          {
+            "type": "text",
+            "text": "lockdown",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "lockdown"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Temperature is the most critical variable. A two-degree overshoot for four hours can kill an embryo or produce deformities. A still-air unit in a room with variable temperature (by a sunny window or near a radiator that cycles) will swing with the room. Site the incubator in the most temperature-stable room in the house, away from draughts and direct sunlight."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Temperature runs too high in the afternoon",
+              "cause": "Room temperature rising with the day, pushing the incubator above the thermostat's regulation range",
+              "fix": "Move the incubator to a cooler room or add shade. A still-air unit has limited thermal mass: room temperature has a significant effect."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "cue": "Most eggs clear on candling at day 7",
+              "cause": "Eggs were infertile, stored too long before setting, or chilled or overheated at some point",
+              "fix": "Check eggs are sourced from a mated flock (not commercial supermarket eggs). Confirm temperature log for any spikes. Set only eggs less than seven days old stored point-down at 12 to 15 degrees."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

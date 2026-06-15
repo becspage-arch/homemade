@@ -1,0 +1,100 @@
+{
+  "slug": "eaml2-movement-paperwork",
+  "title": "Completing eAML2 pig movement documents",
+  "subtitle": "Every pig leaving your holding needs a movement licence submitted online before it goes. Here is the step-by-step.",
+  "excerpt": "The eAML2 (electronic Animal Movement Licence) is the mandatory online form for all pig movements in England, Scotland, and Wales. It must be submitted before the pigs move, not after. The form captures your CPH number, the destination CPH, the number and ear tags, and any relevant standstill information.",
+  "type": "TECHNIQUE",
+  "categorySlug": "animals-smallholding",
+  "subCategorySlug": "pigs",
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "timeMinutes": 15,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "APHA (Animal and Plant Health Agency) eAML2 guidance documentation. DEFRA pig movement rules, current version. Rural Payments Agency CPH number guidance. Pig Health Scheme movement licence notes.",
+  "glossaryTerms": [
+    {
+      "slug": "eaml2",
+      "term": "eAML2",
+      "definition": "Electronic Animal Movement Licence 2: the online system for recording and authorising pig movements in Great Britain. Managed by APHA and accessed via the APHA website."
+    },
+    {
+      "slug": "cph-number",
+      "term": "CPH number",
+      "definition": "County Parish Holding number. A unique identifier for every registered livestock-keeping premises in the UK. Required before keeping pigs, sheep, goats, or cattle."
+    },
+    {
+      "slug": "standstill-pig",
+      "term": "Standstill",
+      "definition": "A 20-day period after pigs arrive on a holding during which no other pigs, cattle, sheep, goats, or deer may leave. This limits the spread of disease through livestock movement."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "aliases": ["pig movement licence", "eAML2 guide", "moving pigs legally UK", "pig movement paperwork UK"],
+  "recipeTools": [],
+  "projectSchedule": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "eaml2" } }], "text": "eAML2" },
+          { "type": "text", "text": " form is submitted online and takes about ten minutes when you have the information to hand. You will need your holding's " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cph-number" } }], "text": "CPH number" },
+          { "type": "text", "text": ", the destination CPH number, and the ear tag numbers of every pig moving. Movements to an abattoir, to another holding, or to a show all require a separate licence." }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Your CPH number (9-digit format: 00/000/0000)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Your herd mark (the letter prefix used on all your ear tags)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The destination CPH number. For an abattoir, ask for it when booking your slot." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ear tag numbers of every pig in the movement." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The planned departure date and time." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Completing the form" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Log into eAML2 at the APHA website. Register if this is your first movement." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Select 'Create new movement'. Enter your CPH as the departure holding." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Enter the destination CPH. The system validates it and displays the destination holding name for confirmation." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Enter the species (pigs), the number of animals, and the ear tag numbers. For a small batch, enter each tag individually. For larger batches, the form accepts a tag range if they are consecutively numbered." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Confirm the departure date. Submit. The system issues a movement reference number." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Print or save the movement document. A copy must accompany the pigs." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The 20-day standstill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Whenever pigs arrive on your holding, a 20-day " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "standstill-pig" } }], "text": "standstill" },
+          { "type": "text", "text": " begins. During those 20 days, no pigs, cattle, sheep, goats, or deer may leave your holding. This affects your abattoir planning: if you bring weaners in on 1 June, your other pigs cannot go to slaughter until 21 June at the earliest. Track standstill dates in your holding register." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "tone": "info", "title": "Exemptions from standstill" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [{ "type": "text", "text": "Pigs moving directly from your holding to slaughter do not reset the standstill clock at the abattoir, because the abattoir does not use the animals for breeding or growing on. The standstill only applies at holdings that keep animals alive after receipt." }]
+          }
+        ]
+      }
+    ]
+  }
+}
