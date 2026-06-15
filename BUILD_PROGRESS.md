@@ -3921,3 +3921,21 @@ cross-stitch — 40 tutorials, all PUBLISHED. Category count: 0 → 40.
 - Malformed troubleshooter item in tutorial 19 (incomplete cause, missing fix) → corrected
 
 **QC tail:** hero-fill filled 40 cross-stitch heroes (unsplash 34, pexels 6). qc-fix processed 38 candidates, 38 pass, 0 still_blocked.
+
+## Craft hero quality — charts-required + anchored-hero pipeline + renderer hardening (2026-06-15)
+
+**Problem.** Keyword stock-photo sourcing produced wrong craft heroes at scale (a "Shell lace prayer shawl" showed a woman praying in church; "Acorn amigurumi" showed real acorns). Audit reframed the task: the catalogue in crochet/knitting/needlework is **tutorials**, not pattern rows (1 published CrochetPattern, 0 knit/needle; 36 designer cross-stitch). 1,375 tutorial heroes were keyword-stock-matched. Deeper finding: **1,077 published PATTERN tutorials have NO chart** (crochet 874, knit 141, needlework 62) and the autopilot never required one.
+
+**Decision (Rebecca).** A pattern is a thing to MAKE, so every pattern needs a chart. Two images per pattern, both software-anchored, no guesses:
+1. CHART — stitch-exact `chartData` rendered by the in-house chart engine (in-product chart + the img2img anchor).
+2. HERO — that render laid into a shape-aware object base, repainted photoreal by Flux dev img2img at **strength 0.72** (calibrated pick), vision-gated, **render fallback** on drift. No procedural cards, no unanchored AI.
+
+**Shipped.**
+- `apps/web/src/lib/image-sourcing/flux-img2img.ts`, `apps/web/src/lib/crochet/hero/object-base.ts` (folded-textile / garment-flatlay / motif bases), `packages/db/scripts/render-pattern-hero.ts` (generate/commit/commit-fallback, idempotent, S-8b style).
+- Author docs (`docs/{crochet,knitting,needlework}-author.md`): `chartDefinition` now REQUIRED for every PATTERN (needlework: counted disciplines only).
+- Chart-gap QC folded into `autopilot-preflight.ts` (queues chartless published PATTERNs to `packages/db/docs/pattern-chart-backfill-queue.json`; non-blocking, self-healing — realises part of master-todo §6.5).
+- Renderer hardening (`apps/web/src/lib/crochet/renderer`): audited 153 existing charts, **75 ok → 120**. Stitch aliases (`double-crochet`→`double-crochet-uk` [61 uses] etc.), knitting faces (knit/purl/yarn-over/k2tog/ssk) + spike/bullion, `{times,repeat}` group expansion, layout inference from the populated array, decreases downgraded to soft (non-failing), graceful failure on malformed/legacy data. +6 tests (21/21 pass).
+
+**Backfill** of the 1,077 runs as a worker session (authors chartData → renders chart → anchored hero → vision verify → commit). Setup/calibration Fal spend: £0.93.
+
+**Known gaps (running list in `project_master_todo.md` §9):** amigurumi 3D (~200, deferred — engine is 2D); needlework counted not wired to the hero runner (62 — needs the cross-stitch chart engine); already-charted patterns with stale stock heroes (~150, separate job); legacy knitting grid-shape charts (~33, adapter); knitting render quality; square-detection for `{times,repeat}` grannies; stock matcher not formally disabled for craft; teaching content PD pass; non-craft categories with the same matcher misfire.
