@@ -155,11 +155,8 @@ function FragmentRow({
           <div key={cellKey} className="meal-plan-cell">
             {items.map((e) => (
               <div key={e.id} className="meal-plan-entry">
-                {e.tutorialSlug && e.categorySlug ? (
-                  <Link
-                    href={`/${e.categorySlug}/${e.tutorialSlug}`}
-                    className="meal-plan-entry-name"
-                  >
+                {e.recipeHref ? (
+                  <Link href={e.recipeHref} className="meal-plan-entry-name">
                     {e.tutorialTitle ?? e.tutorialSlug}
                   </Link>
                 ) : e.tutorialTitle ? (

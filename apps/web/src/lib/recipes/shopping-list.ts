@@ -106,27 +106,70 @@ export async function aggregateShoppingList(
     return { groups: [], recipes: [], unknownSlugs: [], itemCount: 0 }
   }
 
+  const ingredientSelect = {
+    select: { id: true, name: true, slug: true, aisle: true, densityGPerMl: true },
+  } as const
+
+  // A recipe can be a library Tutorial or a Maker's UserRecipe. Resolve the
+  // Tutorials first; any slug left over is tried as an approved UserRecipe, so
+  // both kinds aggregate into the same list. (A slug that matches a published
+  // Tutorial wins, so the rare Tutorial/UserRecipe slug collision is harmless.)
   const tutorials = await prisma.tutorial.findMany({
     where: { slug: { in: wanted }, status: 'PUBLISHED' },
     select: {
       slug: true,
       title: true,
       recipeIngredients: {
-        select: {
-          amount: true,
-          unit: true,
-          ingredient: {
-            select: { id: true, name: true, slug: true, aisle: true, densityGPerMl: true },
-          },
-        },
+        select: { amount: true, unit: true, ingredient: ingredientSelect },
       },
     },
   })
+  const tutorialSlugs = new Set(tutorials.map((t) => t.slug))
+  const leftover = wanted.filter((s) => !tutorialSlugs.has(s))
 
-  const bySlug = new Map(tutorials.map((t) => [t.slug, t]))
+  const userRecipes = leftover.length
+    ? await prisma.userRecipe.findMany({
+        where: { slug: { in: leftover }, status: 'APPROVED' },
+        select: {
+          slug: true,
+          title: true,
+          ingredients: {
+            select: { quantity: true, unit: true, ingredient: ingredientSelect },
+          },
+        },
+      })
+    : []
+
+  // Normalise both kinds into one { slug, title, rows: [{ amount, unit, ingredient }] } shape.
+  interface NormRow {
+    amount: number | null
+    unit: string | null
+    ingredient: { id: string; name: string; slug: string; aisle: string | null; densityGPerMl: unknown }
+  }
+  const bySlug = new Map<string, { slug: string; title: string; rows: NormRow[] }>()
+  for (const t of tutorials) {
+    bySlug.set(t.slug, {
+      slug: t.slug,
+      title: t.title,
+      rows: t.recipeIngredients.map((r) => ({ amount: r.amount, unit: r.unit, ingredient: r.ingredient })),
+    })
+  }
+  for (const u of userRecipes) {
+    if (bySlug.has(u.slug)) continue
+    bySlug.set(u.slug, {
+      slug: u.slug,
+      title: u.title,
+      rows: u.ingredients.map((r) => ({
+        amount: r.quantity !== null ? Number(r.quantity) : null,
+        unit: r.unit,
+        ingredient: r.ingredient,
+      })),
+    })
+  }
+
   const recipes = wanted.filter((s) => bySlug.has(s)).map((s) => {
-    const t = bySlug.get(s)!
-    return { slug: t.slug, title: t.title }
+    const r = bySlug.get(s)!
+    return { slug: r.slug, title: r.title }
   })
   const unknownSlugs = wanted.filter((s) => !bySlug.has(s))
 
@@ -135,7 +178,7 @@ export async function aggregateShoppingList(
   for (const slug of wanted) {
     const t = bySlug.get(slug)
     if (!t) continue
-    for (const row of t.recipeIngredients) {
+    for (const row of t.rows) {
       const ing = row.ingredient
       let a = acc.get(ing.id)
       if (!a) {

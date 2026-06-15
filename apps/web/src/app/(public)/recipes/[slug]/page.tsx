@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { prisma } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
@@ -6,6 +7,8 @@ import { resolveUserUnitPreferences } from '@/lib/recipes/user-unit-preferences'
 import { formatIngredientQuantity, formatTemperature } from '@/lib/recipes/units'
 import { mediaUrl } from '@/lib/media'
 import { TutorialContent } from '@/components/public/tutorial-content/tutorial-content'
+import { AddToShoppingList } from '@/components/public/recipes/add-to-shopping-list'
+import { AddToMealPlan } from '@/components/public/recipes/add-to-meal-plan'
 import { DIETARY_LABEL, cuisineLabel } from '@/lib/recipes/recipe-vocab'
 import type { TipTapNode } from '@/components/public/tutorial-content/types'
 
@@ -17,6 +20,7 @@ async function loadRecipe(slug: string) {
   return prisma.userRecipe.findUnique({
     where: { slug },
     include: {
+      owner: { select: { name: true, displayHandle: true } },
       ingredients: {
         orderBy: { order: 'asc' },
         include: {
@@ -116,7 +120,18 @@ export default async function UserRecipePage({
       )}
 
       <header className="user-recipe-head">
-        <p className="user-recipe-eyebrow">Shared by the Homemade community</p>
+        <p className="user-recipe-eyebrow">
+          {recipe.owner.displayHandle ? (
+            <>
+              Shared by{' '}
+              <Link href={`/m/${recipe.owner.displayHandle}`} className="user-recipe-byline">
+                {recipe.owner.name?.trim() || `@${recipe.owner.displayHandle}`}
+              </Link>
+            </>
+          ) : (
+            'Shared by a Homemade Maker'
+          )}
+        </p>
         <h1 className="user-recipe-title">{recipe.title}</h1>
         {recipe.summary && <p className="user-recipe-summary">{recipe.summary}</p>}
         {metaBits.length > 0 && (
@@ -139,6 +154,15 @@ export default async function UserRecipePage({
       {heroSrc && (
         // eslint-disable-next-line @next/next/no-img-element
         <img className="user-recipe-hero" src={heroSrc} alt={hero?.alt ?? recipe.title} />
+      )}
+
+      {isLive && (
+        <div className="tutorial-content user-recipe-actions">
+          <div className="recipe-actions-row">
+            <AddToShoppingList tutorialSlug={recipe.slug} tutorialId={recipe.id} />
+            <AddToMealPlan tutorialSlug={recipe.slug} tutorialId={recipe.id} />
+          </div>
+        </div>
       )}
 
       <div className="user-recipe-body">

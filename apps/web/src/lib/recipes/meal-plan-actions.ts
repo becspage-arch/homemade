@@ -31,11 +31,43 @@ export async function addMealPlanEntry(
   if (!MEAL_TYPES.has(input.mealType)) return { ok: false, error: 'Bad meal.' }
   if (!/^\d{4}-\d{2}-\d{2}$/.test(input.weekStartIso)) return { ok: false, error: 'Bad week.' }
 
-  const recipe = await prisma.tutorial.findFirst({
+  // A slot can hold a library recipe (Tutorial) or a Maker's own recipe
+  // (UserRecipe). Resolve the Tutorial first; fall back to an approved
+  // UserRecipe (or the Maker's own, so they can plan a private recipe).
+  const tutorial = await prisma.tutorial.findFirst({
     where: { slug: input.tutorialSlug, status: 'PUBLISHED' },
     select: { id: true, slug: true, title: true },
   })
-  if (!recipe) return { ok: false, error: 'Recipe not found.' }
+
+  let entryData: {
+    tutorialId: string | null
+    userRecipeId: string | null
+    tutorialSlug: string
+    tutorialTitle: string
+  }
+  if (tutorial) {
+    entryData = {
+      tutorialId: tutorial.id,
+      userRecipeId: null,
+      tutorialSlug: tutorial.slug,
+      tutorialTitle: tutorial.title,
+    }
+  } else {
+    const userRecipe = await prisma.userRecipe.findFirst({
+      where: {
+        slug: input.tutorialSlug,
+        OR: [{ status: 'APPROVED' }, { ownerUserId: user.id }],
+      },
+      select: { id: true, slug: true, title: true },
+    })
+    if (!userRecipe) return { ok: false, error: 'Recipe not found.' }
+    entryData = {
+      tutorialId: null,
+      userRecipeId: userRecipe.id,
+      tutorialSlug: userRecipe.slug,
+      tutorialTitle: userRecipe.title,
+    }
+  }
 
   const weekStart = mondayOf(new Date(`${input.weekStartIso}T00:00:00Z`))
   const plan = await prisma.mealPlan.upsert({
@@ -49,9 +81,7 @@ export async function addMealPlanEntry(
       planId: plan.id,
       dayOfWeek: input.dayOfWeek,
       mealType: input.mealType as MealType,
-      tutorialId: recipe.id,
-      tutorialSlug: recipe.slug,
-      tutorialTitle: recipe.title,
+      ...entryData,
     },
   })
 
