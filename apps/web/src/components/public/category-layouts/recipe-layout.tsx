@@ -10,6 +10,7 @@ import { CategoryScopedSearch } from '@/components/public/category/category-scop
 import { RecipeDietaryChips } from '@/components/public/category/recipe-dietary-chips'
 import { EditorialMagazineBlock } from '@/components/public/category/editorial-magazine-block'
 import { CommunityRecipesRail } from '@/components/public/recipes/community-recipes-rail'
+import { FreshRecipesRail } from '@/components/public/recipes/fresh-recipes-rail'
 import { loadRecentlyMade } from '@/lib/recently-made'
 import { loadInSeasonForCategory } from '@/lib/in-season-for-category'
 import { isoWeekStartUtc } from '@/lib/editorial-picks'
@@ -351,6 +352,14 @@ export async function RecipeLayout({
 
       {!isFiltered && (
         <CommunityRecipesRail categorySlug={category.slug} signedIn={Boolean(currentUserId)} />
+      )}
+
+      {!isFiltered && (
+        <FreshRecipesRail
+          categoryId={category.id}
+          categorySlug={category.slug}
+          categoryName={category.name}
+        />
       )}
 
       {isFiltered && (
