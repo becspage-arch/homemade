@@ -1,0 +1,435 @@
+{
+  "slug": "crochet-reading-schematic",
+  "title": "Reading a crochet schematic",
+  "subtitle": "Understanding the flat dimensional diagrams that show a pattern's finished shape and measurements",
+  "excerpt": "A crochet schematic is a flat diagram of a finished piece showing its shape and dimensions. It is not a stitch chart. The schematic tells you what the piece should look like when complete and at what measurements, so you can check your work against it as you go.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "BEGINNER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book (Storey Publishing). Pauline Turner, How to Crochet (HarperCollins). Weldon's Practical Crochet, 1880s to 1900s, Internet Archive.",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": [
+      "pattern-reading",
+      "schematic",
+      "sizing"
+    ]
+  },
+  "recipeTools": [
+    {
+      "slug": "measuring-tape-soft",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "schematic",
+      "term": "Schematic",
+      "definition": "A flat dimensional diagram of a finished crochet piece showing its shape and measurements at specific points. Different from a stitch chart, which shows which stitches to work and where."
+    },
+    {
+      "slug": "ease",
+      "term": "Ease",
+      "definition": "The difference between the body measurement and the finished garment measurement. Positive ease means the garment is larger than the body; negative ease means it is smaller and stretches to fit."
+    },
+    {
+      "slug": "blocked-dimensions",
+      "term": "Blocked dimensions",
+      "definition": "The measurements of a piece after blocking. Because blocking can change dimensions significantly, pattern schematics show blocked dimensions unless stated otherwise."
+    }
+  ],
+  "techniqueSlugs": [
+    "crochet-blocking-wet",
+    "crochet-gauge-swatching",
+    "crochet-round-gauge"
+  ],
+  "criticalTechniques": [
+    "crochet-gauge-swatching",
+    "crochet-blocking-wet"
+  ],
+  "aliases": [
+    "crochet schematic",
+    "reading a pattern diagram",
+    "crochet diagram dimensions",
+    "crochet pattern measurements"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "schematic"
+                }
+              }
+            ],
+            "text": "schematic"
+          },
+          {
+            "type": "text",
+            "text": " is a flat diagram that shows what a finished crochet piece looks like and what it measures at specific points. It is not a stitch chart. Where a stitch chart tells you which stitches to work and where, the schematic tells you what shape and size the result should be when you are finished. Most garment patterns include both."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The schematic is the check between your gauge and the pattern's intended result. If your tension produces a piece that matches the schematic dimensions after blocking, the finished size will be correct. If it does not, the finished piece will be a different size than stated."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Equipment",
+          "items": [
+            {
+              "name": "Flexible measuring tape",
+              "note": "Essential for measuring a curved or irregular piece against the schematic dimensions"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What a schematic shows"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A typical garment schematic shows a flat, unfolded view of each piece in the pattern (front, back, sleeves). Measurements are marked at specific points with arrows and numbers:"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Width at the underarm (the widest horizontal measurement of the body)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Length from the hem to the armhole"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Armhole depth"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Shoulder width"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Neck width and depth"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sleeve length from cuff to underarm"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sleeve width at the underarm and at the cuff"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Blocked vs unblocked dimensions"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pattern schematics show "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "blocked-dimensions"
+                }
+              }
+            ],
+            "text": "blocked dimensions"
+          },
+          {
+            "type": "text",
+            "text": " unless the pattern states otherwise. Crochet fabric can grow significantly when wet-blocked, especially in lace or open work. If you measure your piece before blocking and find it matches the schematic, it will be too large after blocking. Measure after blocking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ease and choosing a size"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The finished garment width on the schematic is not the same as your body measurement. The difference is "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "ease"
+                }
+              }
+            ],
+            "text": "ease"
+          },
+          {
+            "type": "text",
+            "text": ". Most crochet garments have positive ease of 5 to 10 cm across the chest, meaning the garment is wider than the body. Some fitted styles use negative ease and rely on the fabric stretching to fit. The pattern should state the intended ease; if it does not, compare the schematic chest width with your own measurement to determine the fit."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "How to use the schematic while making"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Before you start: check which measurement on the schematic corresponds to your size. If the pattern offers multiple sizes, the measurements are usually listed in parentheses in smallest-to-largest order."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "At the armhole: stop and measure the body length against the schematic. If your length does not match, adjust the remaining rows before starting the armhole shaping."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "After blocking: lay the piece flat and measure at every point marked on the schematic. Any measurement that is off by more than 1 cm should be investigated before proceeding to the next piece."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common problems"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The body piece is shorter than the schematic after blocking",
+              "cause": "Tension is tighter than the pattern assumes, or fewer rows were worked before the armhole.",
+              "fix": "Add extra rows at the body before the armhole. Measure against the schematic at the armhole point before starting any shaping."
+            },
+            {
+              "symptom": "The piece is the right length but too wide",
+              "cause": "Row gauge is correct but stitch gauge is off, or the blocking stretched the piece in width.",
+              "fix": "Rip back and rework at a smaller hook size. A swatch that matches the schematic width per 10 cm is necessary before starting the main piece."
+            },
+            {
+              "symptom": "The schematic shows multiple numbers separated by slashes and it is not clear which one to use",
+              "cause": "Multiple sizes are shown in the same schematic (smallest / medium / largest). The pattern's size chart at the front should map size names to the relevant numbers.",
+              "fix": "Identify your size from the size table, note the order (e.g., XS/S/M/L/XL), and count to the correct position across each measurement."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The gauge swatch read in conjunction with the schematic is the most reliable size check before starting a garment. Work a swatch, block it, measure it, and calculate whether your stitch and row counts per 10 cm match the pattern. If they do, the schematic dimensions will be correct. If they do not, no amount of careful stitch counting will make the finished size come out right."
+          }
+        ]
+      }
+    ]
+  }
+}

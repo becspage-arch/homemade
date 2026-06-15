@@ -1,0 +1,288 @@
+{
+  "slug": "crochet-c2c-foundation",
+  "title": "Corner-to-corner crochet: the foundation",
+  "subtitle": "How to start and build the diagonal mesh structure used in C2C crochet",
+  "excerpt": "Corner-to-corner crochet (C2C) builds a diagonal mesh of small squares across the work, starting from a single square at one corner and increasing one square per row on both edges until the piece reaches the target width. Once the full width is reached, the work decreases one square per row until the opposite corner is complete. This is the foundation for C2C blankets, graphgans, and sampler squares.",
+  "type": "TECHNIQUE",
+  "categorySlug": "crochet",
+  "subCategorySlug": "foundations",
+  "difficulty": "INTERMEDIATE",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Edie Eckman, The Crochet Answer Book (Storey Publishing). Pauline Turner, How to Crochet (HarperCollins).",
+  "crochet": {
+    "terminologyConvention": "uk",
+    "craftTechniqueTags": [
+      "c2c",
+      "corner-to-corner",
+      "graphgan",
+      "diagonal-construction"
+    ]
+  },
+  "recipeTools": [
+    {
+      "slug": "crochet-hook",
+      "isOptional": false
+    },
+    {
+      "slug": "stitch-marker",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "c2c-block",
+      "term": "C2C block",
+      "definition": "The basic repeating unit of corner-to-corner crochet: a cluster of 3 treble crochet stitches worked into a chain-3 space, preceded by a chain-3 turning unit. One block represents one pixel in a graphgan."
+    },
+    {
+      "slug": "graphgan",
+      "term": "Graphgan",
+      "definition": "A crochet blanket or square worked in corner-to-corner construction where each C2C block represents one pixel of a pixelated image or graph. Colour changes at the block level produce the image."
+    }
+  ],
+  "techniqueSlugs": [
+    "crochet-chain",
+    "crochet-colour-changing-mid-row",
+    "crochet-treble"
+  ],
+  "criticalTechniques": [
+    "crochet-chain",
+    "crochet-treble"
+  ],
+  "aliases": [
+    "corner to corner crochet",
+    "c2c crochet foundation",
+    "c2c how to start",
+    "graphgan crochet",
+    "diagonal crochet blocks"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": " builds fabric from one corner, working diagonally. It starts with a single block and adds one block per row at each edge until the piece reaches the right width. Then it removes one block per row at each edge until only one block is left at the far corner."
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "c2c-block"
+                }
+              }
+            ],
+            "text": "C2C block"
+          },
+          {
+            "type": "text",
+            "text": " at a time, starting from a single block at the bottom-left corner. Each row adds one block at the left edge and one block at the right edge, growing the diagonal mesh until the piece reaches the correct width, then decreasing one block per row on each side until only one block remains at the opposite corner. C2C is the standard construction for "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "graphgan"
+                }
+              }
+            ],
+            "text": "graphgans"
+          },
+          {
+            "type": "text",
+            "text": " because the regular block grid maps directly onto pixel art."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "suppliesCard",
+        "attrs": {
+          "heading": "Equipment and materials",
+          "items": [
+            {
+              "name": "Yarn in the project colours",
+              "note": "Graphgans use multiple colours; plain C2C uses one colour or stripes."
+            },
+            {
+              "name": "Crochet hook",
+              "note": "Suggested: 4.0 to 5.0 mm for DK or aran weight. C2C uses treble crochet, so the fabric is slightly more open than plain double crochet fabric."
+            },
+            {
+              "name": "Stitch markers",
+              "note": "Optional: mark the first and last block of each row during the increase phase to track the growing edge."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Starting the first block"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make a slip knot. Chain 6."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Work 3 treble crochet into the 4th chain from the hook (the first 3 chains count as a turning chain; they form one side of the first block). This is 1 block: 4 chains (1 corner chain-space plus the 3 trebles). (1 block)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Turn. Chain 6. Slip stitch into the top of the last treble of the previous block (this creates the joining unit between blocks). Chain 3. Work 3 treble into the chain-3 space of the first block. (2 blocks on row 2)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Continue in this pattern: each row adds one block at each edge by working a chain-6 turn at the left and a joining unit at each block junction down the right side. Count the blocks per row to confirm: row 1 = 1 block, row 2 = 2 blocks, row 3 = 3 blocks, and so on."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Decrease phase"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the piece reaches the target width, the decrease phase begins. Instead of the chain-6 turn that adds a block at the left edge, the row begins with a slip stitch into the first chain-3 space of the previous row. Then work blocks across to the last block but do not chain-6 at the end. Each row decreases the block count by one on each side."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Common problems"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "When something goes wrong",
+          "intro": "",
+          "items": [
+            {
+              "symptom": "The block count is not matching the row number during the increase phase",
+              "cause": "A chain-6 turn was missed at the start of a row, or a junction between two blocks was worked incorrectly.",
+              "fix": "Count the blocks at the end of each row during the increase phase as a check. If the count is one short, a block was dropped at either the starting turn or the last junction."
+            },
+            {
+              "symptom": "The edges of the piece are ruffling",
+              "cause": "The chain-6 turning unit is too long for the yarn and hook size, adding too much extra material at each edge.",
+              "fix": "Try chain-5 instead of chain-6 at the start of each increase row. The turning chain length can vary slightly between hook sizes and yarn weights."
+            },
+            {
+              "symptom": "The diagonal line in the middle of the piece is visible and distorted",
+              "cause": "The colour change point in a graphgan was not carried cleanly, or the tension changed at the junction of two colours.",
+              "fix": "For graphgans, always change colour at the last yarn-over of the last treble before the colour change, not at the start of the next block. This keeps the colour join clean."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What to try next"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Work a 10-block sample: increase to 5 blocks per row, then decrease back to 1, changing colour at the midpoint. This produces a small diagonal square that demonstrates both the increase and decrease phases and how colour blocking works in the C2C grid."
+          }
+        ]
+      }
+    ]
+  }
+}
