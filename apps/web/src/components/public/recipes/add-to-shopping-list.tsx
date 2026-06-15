@@ -40,13 +40,34 @@ export function AddToShoppingList({
   const [hydrated, setHydrated] = useState(false)
 
   // First render is SSR with no localStorage; sync after mount. Same accepted
-  // pattern as cookie-banner.tsx.
+  // pattern as cookie-banner.tsx. For signed-in Makers, merge the server-synced
+  // list in (union) so the list follows them across devices; anonymous Makers
+  // stay purely local. Free sign-in carrot, not a premium gate.
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
-    setSlugs(readSlugs())
+    const local = readSlugs()
+    setSlugs(local)
     setHydrated(true)
+    void fetch('/api/me/shopping-list')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data: { recipeSlugs?: string[] } | null) => {
+        if (!data?.recipeSlugs) return
+        const merged = Array.from(new Set([...local, ...data.recipeSlugs]))
+        setSlugs(merged)
+        writeSlugs(merged)
+        if (merged.length !== local.length) syncServer(merged)
+      })
+      .catch(() => {})
   }, [])
   /* eslint-enable react-hooks/set-state-in-effect */
+
+  function syncServer(next: string[]) {
+    void fetch('/api/me/shopping-list', {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ recipeSlugs: next }),
+    }).catch(() => {})
+  }
 
   const added = slugs.includes(tutorialSlug)
 
@@ -56,6 +77,7 @@ export function AddToShoppingList({
       : [...slugs, tutorialSlug]
     setSlugs(next)
     writeSlugs(next)
+    syncServer(next)
     if (!added) {
       captureClientEvent('shopping_list_recipe_added', { tutorialId, tutorialSlug })
     }

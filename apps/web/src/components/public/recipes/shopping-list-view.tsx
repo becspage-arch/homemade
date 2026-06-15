@@ -25,40 +25,68 @@ export function ShoppingListView({
   const [hydrated, setHydrated] = useState(false)
 
   // First render is SSR with no localStorage, so the ticked state is synced in
-  // an effect after mount. Same accepted pattern as cookie-banner.tsx.
+  // an effect after mount. Same accepted pattern as cookie-banner.tsx. For
+  // signed-in Makers, the ticks also sync server-side (free sign-in carrot) so
+  // a half-shopped list survives a device switch; anonymous Makers stay local.
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
+    let local = new Set<string>()
     try {
       const raw = localStorage.getItem(TICK_KEY)
-      if (raw) setTicked(new Set(JSON.parse(raw) as string[]))
+      if (raw) local = new Set(JSON.parse(raw) as string[])
     } catch {
       // ignore corrupt storage
     }
+    setTicked(local)
     setHydrated(true)
+    void fetch('/api/me/shopping-list')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data: { tickedIngredientIds?: string[] } | null) => {
+        if (!data?.tickedIngredientIds) return
+        const merged = new Set([...local, ...data.tickedIngredientIds])
+        setTicked(merged)
+        writeLocal(merged)
+      })
+      .catch(() => {})
   }, [])
   /* eslint-enable react-hooks/set-state-in-effect */
+
+  function writeLocal(set: Set<string>) {
+    try {
+      localStorage.setItem(TICK_KEY, JSON.stringify(Array.from(set)))
+    } catch {
+      // ignore
+    }
+  }
+
+  function syncServer(set: Set<string>) {
+    void fetch('/api/me/shopping-list', {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ tickedIngredientIds: Array.from(set) }),
+    }).catch(() => {})
+  }
 
   function toggle(id: string) {
     setTicked((prev) => {
       const next = new Set(prev)
       if (next.has(id)) next.delete(id)
       else next.add(id)
-      try {
-        localStorage.setItem(TICK_KEY, JSON.stringify(Array.from(next)))
-      } catch {
-        // ignore
-      }
+      writeLocal(next)
+      syncServer(next)
       return next
     })
   }
 
   function clearTicks() {
-    setTicked(new Set())
+    const empty = new Set<string>()
+    setTicked(empty)
     try {
       localStorage.removeItem(TICK_KEY)
     } catch {
       // ignore
     }
+    syncServer(empty)
   }
 
   if (itemCount === 0) {
