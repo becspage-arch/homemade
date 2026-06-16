@@ -28,6 +28,18 @@ Second, stricter pass on top of the 2026-06-15 completeness gate. That gate aske
 
 ---
 
+## Voice pass on 105 PUBLISHED rows (em/en dash + banned phrases) (2026-06-16)
+
+Mechanical in-place fix on the 105 PUBLISHED rows the makeability audit flagged as `voiceOnly=true` with an em/en dash or banned-phrase violation. These rows were makeable and correctly published; they just carried voice nits.
+
+**What changed.** Script `packages/db/scripts/_voice-pass-mechanical-fix.ts` walked every TipTap text node in each body and applied five substitution rules: em dash (and en dash) -> comma or full stop by context (uppercase-next = sentence break = ". ", otherwise = ", "); "perfect for" -> "good for"; "ideal for" -> "well-suited to"; "fine for almost everyone" -> deleted; "honest"/"honestly"/"frankly"/"genuinely" -> deleted. No restructuring, no new content, no semantic changes. Each row was re-scanned after the pass; any remaining violation would have blocked the write (none fired).
+
+**Numbers.** 105 rows processed, 105 written. 0 could not be auto-fixed. 0 skipped. Worklist saved to `packages/db/docs/voice-pass-worklist-2026-06-16.json`.
+
+**Fields touched.** `body`, `voiceRetrofittedAt`. `revisedFrom` snapshotted from prior body where it was null (same convention as voice-retrofit batches). `publishedAt`, `slug`, `status`, `heroMediaId` all untouched.
+
+---
+
 ## Content-completeness gate + un-publish broken content (2026-06-15)
 
 `phase_qc_block_reason_001`. Foundation fix after the hero session found the autopilot had been shipping skeletons. Site-wide audit of all 9,410 PUBLISHED tutorials across 18 categories found **1,884 broken (20%)** — far past the original crochet+knitting diagnosis. Root cause: 1,765 carry the literal `Step-by-step instructions for <Title> go here.` scaffold that `qc-fix.ts`'s `ensureMinimalMethod()` injects when a body has no Method section, which then shipped live; the rest are pattern skeletons with no row/round instructions (380), leaked `NaN` (74), broken foundation chains (71), leaked `undefined` (35). cooking / mindset / natural-home / herbal-medicine were clean (0 broken).
