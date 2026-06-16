@@ -296,16 +296,16 @@ const BOTANICAL_STRIP_PATTERNS: RegExp[] = [
 // Long-word → short-word swaps to push grade-level down without losing
 // meaning. Conservative: only swap unambiguous synonyms.
 const SIMPLIFY_REPLACEMENTS: Array<[RegExp, string]> = [
-  [/\butilis(e|ed|es|ing)\b/gi, (_m, s) => `us${s}`] as unknown as [RegExp, string],
-  [/\butiliz(e|ed|es|ing)\b/gi, (_m, s) => `us${s}`] as unknown as [RegExp, string],
-  [/\bcommence(d|s|ment)?\b/gi, (_m, s) => `start${s ?? ''}`] as unknown as [RegExp, string],
+  [/\butilis(e|ed|es|ing)\b/gi, (_m: string, s: string) => `us${s}`] as unknown as [RegExp, string],
+  [/\butiliz(e|ed|es|ing)\b/gi, (_m: string, s: string) => `us${s}`] as unknown as [RegExp, string],
+  [/\bcommence(d|s|ment)?\b/gi, (_m: string, s: string) => `start${s ?? ''}`] as unknown as [RegExp, string],
   [/\bsubsequent(?:ly)?\b/gi, 'next'],
   [/\bapproximately\b/gi, 'about'],
   [/\badditional(?:ly)?\b/gi, 'extra'],
   [/\bsufficient(?:ly)?\b/gi, 'enough'],
   [/\bnumerous\b/gi, 'many'],
-  [/\bdemonstrat(e|es|ed|ing|ion)\b/gi, (_m, s) => `show${s.startsWith('e') ? '' : s}`] as unknown as [RegExp, string],
-  [/\bfacilitate(s|d)?\b/gi, (_m, s) => `help${s ?? ''}`] as unknown as [RegExp, string],
+  [/\bdemonstrat(e|es|ed|ing|ion)\b/gi, (_m: string, s: string) => `show${s.startsWith('e') ? '' : s}`] as unknown as [RegExp, string],
+  [/\bfacilitate(s|d)?\b/gi, (_m: string, s: string) => `help${s ?? ''}`] as unknown as [RegExp, string],
   [/\bsignificant(?:ly)?\b/gi, 'much'],
   [/\bconsiderable(?:y)?\b/gi, 'big'],
   [/\bfundamental(?:ly)?\b/gi, 'basic'],
@@ -894,7 +894,7 @@ function extractYieldClause(desc: string): string | null {
   const DIGIT_UNIT_RE =
     /\b(\d+)\s*(bars?|tins?|jars?|bottles?|cups?|loaves?|loaf|servings?|pieces?|portions?|biscuits?|cookies?|scones?|rolls?|slices?|batches?|cakes?|puddings?|pies?|tarts?|muffins?|rounds?)\b/i
   const m = DIGIT_UNIT_RE.exec(desc)
-  if (m) return `Makes ${m[1]} ${m[2].toLowerCase()}.`
+  if (m) return `Makes ${m[1]} ${m[2]!.toLowerCase()}.`
   return null
 }
 

@@ -78,11 +78,11 @@ export async function checkRowPublishable(
   const flags: string[] = []
 
   for (let i = 0; i < completeness.reasons.length; i++) {
-    reasons.push(completeness.reasons[i]); rules.push(completeness.rules[i])
+    reasons.push(completeness.reasons[i]!); rules.push(completeness.rules[i]!)
   }
   for (let i = 0; i < make.reasons.length; i++) {
-    if (nonBlocking(make.rules[i])) flags.push(make.reasons[i])
-    else { reasons.push(make.reasons[i]); rules.push(make.rules[i]) }
+    if (nonBlocking(make.rules[i]!)) flags.push(make.reasons[i]!)
+    else { reasons.push(make.reasons[i]!); rules.push(make.rules[i]!) }
   }
 
   const publishable = reasons.length === 0

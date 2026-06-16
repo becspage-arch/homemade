@@ -197,7 +197,12 @@ async function main(): Promise<void> {
 
   console.log(`fix-voice-cleanup: scanning ${tutorials.length} PUBLISHED${flags.dryRun ? ' (dry-run)' : ''}`)
 
-  const counts: Record<string, number> = { rule3: 0, rule4: 0, rule6: 0, total: 0 }
+  const counts: { rule3: number; rule4: number; rule6: number; total: number } = {
+    rule3: 0,
+    rule4: 0,
+    rule6: 0,
+    total: 0,
+  }
   const perCategory = new Map<string, number>()
   const examples: Array<{ slug: string; from: string; to: string }> = []
   let scanned = 0
@@ -239,7 +244,7 @@ async function main(): Promise<void> {
       const rawHoursRe = /(\d+)\s*(hours?|hrs?)/gi
       let m: RegExpExecArray | null
       while ((m = rawHoursRe.exec(allText)) !== null) {
-        const n = parseInt(m[1], 10)
+        const n = parseInt(m[1] ?? '', 10)
         if (n > 48) {
           counts.rule6++
           break

@@ -18,6 +18,7 @@
  * Wired into deploy.yml after seed-crochet-starter-content.ts.
  */
 
+import type { Prisma } from '../src/index.js'
 import { config as loadEnv } from 'dotenv'
 import { existsSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
@@ -302,11 +303,22 @@ async function main(): Promise<void> {
       return row
     })
 
+    // Preserve hero thumbnail across re-runs unless spec explicitly sets one.
+    // Typed so the property is `string` when present and simply absent
+    // otherwise — avoids an inferred `string | undefined` that Prisma's
+    // exactOptionalPropertyTypes input rejects.
+    const thumbnailSpread: { thumbnailMediaId?: string } =
+      existing?.thumbnailMediaId && !spec.thumbnailMediaId
+        ? { thumbnailMediaId: existing.thumbnailMediaId }
+        : spec.thumbnailMediaId
+        ? { thumbnailMediaId: spec.thumbnailMediaId }
+        : {}
+
     const baseData = {
       name: spec.name,
       description: spec.description,
-      rowsStructured: mergedRows as unknown,
-      chartData: spec.chartData as unknown,
+      rowsStructured: mergedRows as unknown as Prisma.InputJsonValue,
+      chartData: spec.chartData as Prisma.InputJsonValue,
       format: spec.format,
       construction: spec.construction,
       shapeCategory: spec.shapeCategory,
@@ -318,20 +330,15 @@ async function main(): Promise<void> {
       abbreviationsUsed: spec.abbreviationsUsed,
       craftStitchSlugs: spec.craftStitchSlugs,
       craftTechniqueTags: spec.craftTechniqueTags,
-      yardageBySize: spec.yardageBySize as unknown,
-      clusterCountByRound: spec.clusterCountByRound as unknown,
+      yardageBySize: spec.yardageBySize as Prisma.InputJsonValue,
+      clusterCountByRound: spec.clusterCountByRound as Prisma.InputJsonValue,
       primaryYarnWeightId: yarn.id,
       primaryHookId: hook.id,
       sourceTutorialId: tutorial.id,
       subCategoryId: tutorial.subCategoryId,
       visibility: Visibility.PUBLIC,
       publishedAt: new Date(),
-      // Preserve hero thumbnail across re-runs unless spec explicitly sets one.
-      ...(existing?.thumbnailMediaId && !spec.thumbnailMediaId
-        ? { thumbnailMediaId: existing.thumbnailMediaId }
-        : spec.thumbnailMediaId
-        ? { thumbnailMediaId: spec.thumbnailMediaId }
-        : {}),
+      ...thumbnailSpread,
     }
 
     if (existing) {

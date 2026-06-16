@@ -301,6 +301,11 @@ export type FabricSuitability =
   | 'cross-stitch'
   | 'needlepoint-canvas'
   | 'lace-ground'
+  | 'hardanger'
+  | 'embroidery'
+  | 'quilting'
+  | 'sashiko'
+  | 'surface-embroidery'
 
 export interface FabricSeed {
   /** lower-kebab slug, unique across the fabric master list. */

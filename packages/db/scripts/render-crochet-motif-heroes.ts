@@ -122,7 +122,7 @@ async function main(): Promise<void> {
 
     if (DRY_RUN) {
       console.log(
-        `[motif-heroes] would render ${p.slug.padEnd(40)} ` +
+        `[motif-heroes] would render ${p.slug!.padEnd(40)} ` +
           `(${result.motifShape.kind}, ${result.verify.stitchCount} stitches)`,
       )
       continue
@@ -173,7 +173,7 @@ async function main(): Promise<void> {
       })
 
       console.log(
-        `[motif-heroes] OK ${p.slug.padEnd(40)} hero=${media.id} svgKey=${svgKey}`,
+        `[motif-heroes] OK ${p.slug!.padEnd(40)} hero=${media.id} svgKey=${svgKey}`,
       )
       renderedOk++
     } catch (err) {

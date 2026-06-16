@@ -2,13 +2,19 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "noEmit": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "paths": {
+      "@homemade/db": ["./src/index.ts"],
+      "@homemade/db/pattern": ["./src/pattern.ts"]
+    }
   },
   "include": ["src/**/*.ts", "scripts/**/*.ts"],
   "exclude": [
     "node_modules",
     "dist",
     "prisma/generated",
-    "scripts/fixup-hero-fill.ts"
+    "scripts/fixup-hero-fill.ts",
+    "scripts/_*.ts",
+    "scripts/**/_*.ts"
   ]
 }

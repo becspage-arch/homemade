@@ -50,7 +50,7 @@ async function main(): Promise<void> {
   if (migration.length === 0) {
     console.log('  NOT APPLIED')
   } else {
-    console.log(`  ${migration[0].migration_name}  finished_at=${migration[0].finished_at?.toISOString()}`)
+    console.log(`  ${migration[0]!.migration_name}  finished_at=${migration[0]!.finished_at?.toISOString()}`)
   }
 
   console.log('\n=== 2. SubCategory.autopilotEnabled (needlework) ===')
@@ -128,7 +128,7 @@ async function main(): Promise<void> {
   console.log(`\n=== 5. Round-robin position ===`)
   console.log(`  needlework is at position ${needleworkPos} of ${rows.length} READY categories`)
   if (rows.length > 0) {
-    console.log(`  next autopilot fire would pick: ${rows[0].slug}`)
+    console.log(`  next autopilot fire would pick: ${rows[0]!.slug}`)
   }
 
   await prisma.$disconnect()

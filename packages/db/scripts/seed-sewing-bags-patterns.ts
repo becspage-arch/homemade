@@ -76,7 +76,7 @@ function circle12(name: string, cut: number, diamMm: number, label: string): obj
     const angle = (i / 12) * 2 * Math.PI
     return { x: Math.round(r + r * Math.cos(angle)), y: Math.round(r + r * Math.sin(angle)) }
   })
-  pts.push(pts[0]) // close polygon
+  pts.push(pts[0]!) // close polygon
   return {
     name,
     cut,

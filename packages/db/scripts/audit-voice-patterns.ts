@@ -129,7 +129,7 @@ const LEGACY_KINDS = new Set<FindingKind>([
 
 function classifyFinding(kind: FindingKind): number | 'legacy' | null {
   for (const ruleNum of [1, 2, 3, 5, 6] as const) {
-    if (RULE_KIND_MAP[ruleNum].has(kind)) return ruleNum
+    if (RULE_KIND_MAP[ruleNum]!.has(kind)) return ruleNum
   }
   if (LEGACY_KINDS.has(kind)) return 'legacy'
   return null
@@ -421,12 +421,12 @@ async function main(): Promise<void> {
     const d = distribution[a.category]!
     d.total++
     if (a.verdict === 'VIOLATES') d.violators++
-    for (const r of a.violations) d.perRule[r]++
+    for (const r of a.violations) d.perRule[r]!++
     d.legacy += a.legacyCount
   }
 
   const overallPerRule: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0 }
-  for (const a of violators) for (const r of a.violations) overallPerRule[r]++
+  for (const a of violators) for (const r of a.violations) overallPerRule[r]!++
 
   // ─── Console summary ──────────────────────────────────────────────────────
   console.log('')

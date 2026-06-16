@@ -90,7 +90,7 @@ async function main(): Promise<void> {
       console.log(`    (no pg_stat_activity row; backend already gone)`)
       continue
     }
-    const a = activity.rows[0]
+    const a = activity.rows[0]!
     console.log(`    usename            = ${a.usename}`)
     console.log(`    application_name   = ${a.application_name}`)
     console.log(`    client_addr        = ${a.client_addr}`)

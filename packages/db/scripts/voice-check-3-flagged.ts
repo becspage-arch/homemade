@@ -45,6 +45,7 @@ async function main(): Promise<void> {
       select: {
         id: true,
         slug: true,
+        categoryId: true,
         title: true,
         subtitle: true,
         excerpt: true,
@@ -60,11 +61,11 @@ async function main(): Promise<void> {
       continue
     }
 
-    // glossaryTerms live in a separate GlossaryTerm table joined through
-    // TutorialGlossaryTerm — fetch them to pass to the coverage check.
+    // glossaryTerms live in a separate GlossaryTerm table keyed per-category —
+    // fetch the tutorial's category terms to pass to the coverage check.
     const glossaryTerms = await prisma.glossaryTerm
       .findMany({
-        where: { tutorials: { some: { id: t.id } } },
+        where: { categoryId: t.categoryId },
         select: { slug: true, term: true, definition: true },
       })
       .catch(() => []) // table may not exist in this env; fall back gracefully

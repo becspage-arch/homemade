@@ -1416,7 +1416,7 @@ function scanChunk(chunk: Chunk, report: VoiceCheckReport): void {
     const rawHoursRe = /\b(\d+)\s*(?:hours?|hrs?)\b/gi
     let match: RegExpExecArray | null
     while ((match = rawHoursRe.exec(text)) !== null) {
-      const hours = parseInt(match[1], 10)
+      const hours = parseInt(match[1] ?? '', 10)
       if (hours > 48) {
         const approxWeeks = Math.floor(hours / 168)
         const approxDays = Math.floor((hours % 168) / 24)

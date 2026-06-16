@@ -48,7 +48,7 @@ async function main() {
   console.log(`Day        | Total | Per category`)
   console.log(`-----------+-------+-------------------------------------------------------`)
   for (const day of days) {
-    const cats = byDay[day]
+    const cats = byDay[day]!
     const total = Object.values(cats).reduce((a, b) => a + b, 0)
     const breakdown = Object.entries(cats)
       .sort((a, b) => b[1] - a[1])
@@ -89,7 +89,7 @@ async function main() {
   const last7days = days.slice(-7)
   let last7sum = 0
   for (const d of last7days) {
-    last7sum += Object.values(byDay[d]).reduce((a, b) => a + b, 0)
+    last7sum += Object.values(byDay[d]!).reduce((a, b) => a + b, 0)
   }
   const avg7 = last7days.length > 0 ? last7sum / last7days.length : 0
   console.log(`\nROLLING 7-DAY AVERAGE: ${avg7.toFixed(1)} tutorials / day`)

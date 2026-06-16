@@ -24,13 +24,13 @@ async function main() {
         { title: { contains: 'alphabet', mode: 'insensitive' } },
       ],
     },
-    select: { slug: true, title: true, body: true, subtitle: true, excerpt: true },
+    select: { slug: true, title: true, body: true, subtitle: true, excerpt: true, status: true },
   })
   if (!t) { console.log('not found'); return }
   console.log(`SLUG: ${t.slug}`)
   console.log(`TITLE: ${t.title}`)
   console.log(`STATUS: ${t.status}`)
-  console.log(`SUMMARY: ${t.summary}`)
+  console.log(`SUMMARY: ${t.excerpt}`)
   console.log(`\nBODY:`)
   console.log(JSON.stringify(t.body, null, 2))
 }

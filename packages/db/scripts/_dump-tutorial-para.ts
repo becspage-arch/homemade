@@ -14,7 +14,7 @@ for (let depth = 0; depth < 12; depth++) {
 }
 
 const { prisma } = await import('../src/index.js')
-const slug = process.argv.find(a => !a.startsWith('-') && !a.includes('/') && !a.includes('\') && a !== 'tsx') || ''
+const slug = process.argv.find(a => !a.startsWith('-') && !a.includes('/') && !a.includes('\\') && a !== 'tsx') || ''
 const t = await prisma.tutorial.findUnique({ where: { slug }, select: { slug: true, title: true, body: true } })
 if (!t) { console.log('NOT FOUND'); process.exit(1) }
 console.log('TITLE:', t.title)

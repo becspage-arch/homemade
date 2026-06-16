@@ -281,7 +281,7 @@ interface HeroSubset {
   source: string | null
   sourceUrl: string | null
   licenceCode: string | null
-  verificationStatus: 'UNVERIFIED' | 'VERIFIED' | 'REJECTED' | 'REJECTED_USED_PROCEDURAL'
+  verificationStatus: 'UNVERIFIED' | 'VERIFIED' | 'REJECTED' | 'REJECTED_USED_PROCEDURAL' | 'SYNTHETIC_FALLBACK'
 }
 
 function imageUrlFor(hero: HeroSubset): string | null {

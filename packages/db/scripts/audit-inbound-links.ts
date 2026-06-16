@@ -66,12 +66,12 @@ async function main() {
   const orphans: { slug: string; category: string; count: number }[] = []
   for (const t of published) {
     const c = inboundByTutorial.get(t.id) ?? 0
-    if (c === 0) buckets['0'] += 1
-    else if (c === 1) buckets['1'] += 1
-    else if (c === 2) buckets['2'] += 1
-    else if (c <= 5) buckets['3-5'] += 1
-    else if (c <= 10) buckets['6-10'] += 1
-    else buckets['11+'] += 1
+    if (c === 0) buckets['0']! += 1
+    else if (c === 1) buckets['1']! += 1
+    else if (c === 2) buckets['2']! += 1
+    else if (c <= 5) buckets['3-5']! += 1
+    else if (c <= 10) buckets['6-10']! += 1
+    else buckets['11+']! += 1
     if (c < 3) {
       orphans.push({ slug: t.slug, category: t.category.slug, count: c })
     }

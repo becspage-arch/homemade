@@ -97,9 +97,9 @@ async function main() {
     bump(byCatType, `${r.category}\t${r.type}`, ok)
     if (r.unmakeable) {
       for (let i = 0; i < r.reasons.length; i++) {
-        if (isNonBlocking(r.rules[i])) continue // count only the un-publishing reasons
-        reasonFreq.set(r.reasons[i], (reasonFreq.get(r.reasons[i]) ?? 0) + 1)
-        ruleFreq.set(r.rules[i], (ruleFreq.get(r.rules[i]) ?? 0) + 1)
+        if (isNonBlocking(r.rules[i]!)) continue // count only the un-publishing reasons
+        reasonFreq.set(r.reasons[i]!, (reasonFreq.get(r.reasons[i]!) ?? 0) + 1)
+        ruleFreq.set(r.rules[i]!, (ruleFreq.get(r.rules[i]!) ?? 0) + 1)
       }
     }
   }
@@ -160,7 +160,7 @@ async function main() {
     if (fails.length === 0) continue
     lines.push(`### ${type}`)
     for (const f of fails) {
-      const reasons = f.reasons.filter((_, i) => !isNonBlocking(f.rules[i]))
+      const reasons = f.reasons.filter((_, i) => !isNonBlocking(f.rules[i]!))
       lines.push(`- \`${f.slug}\` (${f.category}) — ${reasons.join('; ')}`)
     }
     lines.push('')

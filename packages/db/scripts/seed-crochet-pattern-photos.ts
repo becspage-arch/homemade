@@ -149,7 +149,7 @@ async function main(): Promise<void> {
       continue
     }
 
-    const rows = (pattern.rowsStructured ?? []) as PatternRow[]
+    const rows = (pattern.rowsStructured ?? []) as unknown as PatternRow[]
     const work: Array<{ kind: 'hero' | 'row'; rowKey?: string; subject: string }> = []
 
     // Hero photo.
