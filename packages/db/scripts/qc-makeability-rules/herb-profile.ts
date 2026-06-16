@@ -1,19 +1,22 @@
 import {
-  bodyText, compose, headings,
+  bodyText, compose,
   type MakeabilityContext, type MakeabilityResult,
 } from './shared.js'
 
 /**
  * HERB_PROFILE (herbal-medicine) — the "HERB_PROFILE" checklist section, every
  * item a hard block. Common name + Latin binomial, identification, habitat +
- * range, parts used, a traditional-uses section, cautions / contraindications,
- * and the medical disclaimer are MANDATORY. Modern evidence + wildcrafting notes
- * are mandatory only when applicable, so they are not blanket-blocked.
+ * range, parts used, a traditional-uses section, and cautions / contraindications
+ * are MANDATORY. Modern evidence + wildcrafting notes are mandatory only when
+ * applicable, so they are not blanket-blocked.
+ *
+ * No in-body medical disclaimer is required. The site-wide disclaimer is the
+ * single source ([[feedback_content_completeness_checklist]], locked 2026-06-16).
+ * The cautions / contraindications section below is a different, retained rule.
  */
 export function auditTutorial(ctx: MakeabilityContext): MakeabilityResult {
   const reasons: string[] = []
   const text = bodyText(ctx.body)
-  const headingText = headings(ctx.body).join(' | ')
 
   if (!/\b[A-Z][a-z]+\s+[a-z]{3,}\b/.test(text)) reasons.push('no Latin binomial (Genus species)')
 
@@ -31,12 +34,6 @@ export function auditTutorial(ctx: MakeabilityContext): MakeabilityResult {
 
   const cautions = /\b(caution|safety|do not|avoid|contraindicat|side effect|pregnan|allergic|interact|consult|not (?:for|suitable))\b/i.test(text)
   if (!cautions) reasons.push('no cautions / contraindications')
-
-  const hasDisclaimer =
-    !ctx.requiresMedicalDisclaimer ||
-    /\b(not (?:medical|a substitute|intended)|educational|consult (?:a|your).{0,30}(?:doctor|practitioner|herbalist|professional)|seek (?:medical|professional)|disclaimer)\b/i.test(text) ||
-    /disclaimer|safety/i.test(headingText)
-  if (!hasDisclaimer) reasons.push('no medical disclaimer')
 
   return compose(ctx, 'herbal-medicine:herb-profile', reasons)
 }

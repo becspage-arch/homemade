@@ -6,8 +6,12 @@ import {
 /**
  * REMEDY (herbal-medicine) — the "REMEDY" checklist section, every item a hard
  * block. Quantified ingredients, prep steps, application/dosage, frequency,
- * contraindications + safety, the medical disclaimer, and the prepared remedy's
- * duration / storage are all MANDATORY.
+ * contraindications + safety, and the prepared remedy's duration / storage are
+ * all MANDATORY.
+ *
+ * No in-body medical disclaimer is required. The site-wide disclaimer is the
+ * single source ([[feedback_content_completeness_checklist]], locked 2026-06-16).
+ * The contraindications + safety section below is a different, retained rule.
  */
 const DOSAGE_RE =
   /\b(dose|dosing|dosage|apply|application|take|how (?:much|often)|teaspoon|tablespoon|tsp|tbsp|\bml\b|drops?|massage|sip|gargle|inhale|compress)\b/i
@@ -30,11 +34,6 @@ export function auditTutorial(ctx: MakeabilityContext): MakeabilityResult {
   if (!SAFETY_RE.test(text) && !/safety|caution|contraindicat|when not to use/i.test(headingText)) {
     reasons.push('no contraindications / safety section')
   }
-  const hasDisclaimer =
-    !ctx.requiresMedicalDisclaimer ||
-    /\b(not (?:medical|a substitute|intended to)|educational|consult (?:a|your).{0,30}(?:doctor|practitioner|herbalist|professional)|seek (?:medical|professional)|disclaimer)\b/i.test(text) ||
-    /disclaimer|safety|when not to use/i.test(headingText)
-  if (!hasDisclaimer) reasons.push('no medical disclaimer')
   if (!STORAGE_RE.test(text)) reasons.push('no duration / storage of the prepared remedy')
 
   return compose(ctx, 'herbal-medicine:remedy', reasons)

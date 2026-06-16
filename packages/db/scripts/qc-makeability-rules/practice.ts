@@ -8,17 +8,16 @@ import {
  * duration / repetition count, no vague feel-good claims, no medical advice, and
  * no "fine for everyone" language are the enforced bars.
  *
- * Two checklist lines are NOT hard-blocked here, and deliberately so:
- *   - "Medical disclaimer" — the locked mindset voice ([[feedback_mindset_voice]])
- *     bans defensive disclaimers IN THE BODY, and no render-layer disclaimer
- *     component exists yet. Requiring in-body disclaimer text would both
- *     contradict the locked voice and un-publish ~every practice for a missing
- *     render feature. Flagged in the hand-off as a site-wide render-layer gap
- *     keyed off Tutorial.requiresMedicalDisclaimer.
- *   - "What to expect / sensory cues" — the locked mindset voice bans the vague
- *     "what you might notice" lists that would satisfy this; the factual tapping
- *     / affirmation scripts deliberately omit them. Enforcing it would reinstate
- *     banned phrasing.
+ * No in-body medical disclaimer is required. The site-wide disclaimer is the
+ * single source and the locked mindset voice ([[feedback_mindset_voice]]) bans
+ * defensive in-body disclaimers ([[feedback_content_completeness_checklist]],
+ * locked 2026-06-16). The "no medical advice" rule below is a different,
+ * retained rule; it blocks claims, it does not demand disclaimer text.
+ *
+ * "What to expect / sensory cues" is also NOT hard-blocked: the locked mindset
+ * voice bans the vague "what you might notice" lists that would satisfy it; the
+ * factual tapping / affirmation scripts deliberately omit them. Enforcing it
+ * would reinstate banned phrasing.
  */
 const DURATION_RE =
   /\b\d+[\s-]*(?:min(?:ute)?s?|seconds?|breaths?)\b|\b(?:one|two|three|four|five|six|seven|eight|nine|ten|fifteen|twenty|thirty)[\s-]+(?:slow\s+|deep\s+)?(?:minute|second|breath)|\b(?:a|one)\s+(?:minute|moment)\b|take as long as|a few (?:minutes|moments)|spend (?:a )?(?:few|some)/i
