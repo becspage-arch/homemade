@@ -11,13 +11,13 @@
  * single row on the publish path.
  */
 import type { PrismaClient } from '@prisma/client'
-import type { ChartFacts, MakeabilityContext } from './shared.js'
+import { EMPTY_CHART_FACTS, type ChartFacts, type MakeabilityContext } from './shared.js'
 
 export const MAKEABILITY_SELECT = {
   id: true, slug: true, title: true, type: true, body: true,
   servings: true, yieldDescription: true, totalMinutes: true,
   timeMinutes: true, prepMinutes: true, cookMinutes: true,
-  gaugeText: true, finishedSizeText: true, chartDefinition: true,
+  gaugeText: true, finishedSizeText: true, chartDefinition: true, difficulty: true,
   practiceType: true, requiresMedicalDisclaimer: true, sourceNotes: true,
   category: { select: { slug: true } },
   subCategory: { select: { slug: true } },
@@ -37,7 +37,7 @@ type Row = {
   totalMinutes: number | null; timeMinutes: number | null
   prepMinutes: number | null; cookMinutes: number | null
   gaugeText: string | null; finishedSizeText: string | null
-  chartDefinition: unknown; practiceType: string | null
+  chartDefinition: unknown; difficulty: string | null; practiceType: string | null
   requiresMedicalDisclaimer: boolean; sourceNotes: string | null
   category: { slug: string }; subCategory: { slug: string } | null
   pattern: { id: string; data: unknown; totalStitches: number; designerId: string | null } | null
@@ -75,6 +75,53 @@ function scanChartNodes(body: unknown): { hasChartNode: boolean; patternIds: str
   return { hasChartNode, patternIds }
 }
 
+/** Cross-stitch / counted-pattern data facts read off a Pattern.data blob.
+ *  Shape (verified against live rows): { grid: { cells[], backstitch[],
+ *  frenchKnots[], width, height }, fabric: { type, count }, palette: [{ symbol,
+ *  brand, code, name, rgb }], metadata: { designer } }. */
+export function crossStitchDataFacts(
+  data: unknown,
+  flags?: { hasBackstitch?: boolean; hasFrenchKnots?: boolean },
+): Pick<ChartFacts,
+  'crossStitchChart' | 'stitchKeyValid' | 'fabricSpecified' | 'gridDimensions' |
+  'backstitchUsed' | 'backstitchData' | 'frenchKnotsUsed' | 'frenchKnotsData'> {
+  const d = (data && typeof data === 'object' ? data : {}) as Record<string, unknown>
+  const grid = (d.grid && typeof d.grid === 'object' ? d.grid : {}) as Record<string, unknown>
+  const fabric = (d.fabric && typeof d.fabric === 'object' ? d.fabric : {}) as Record<string, unknown>
+  const palette = Array.isArray(d.palette) ? (d.palette as Record<string, unknown>[]) : []
+
+  const cells = Array.isArray(grid.cells) ? grid.cells : []
+  const backstitch = Array.isArray(grid.backstitch) ? grid.backstitch : []
+  const frenchKnots = Array.isArray(grid.frenchKnots) ? grid.frenchKnots : []
+  const w = typeof grid.width === 'number' ? grid.width : 0
+  const h = typeof grid.height === 'number' ? grid.height : 0
+
+  const stitchKeyValid =
+    palette.length > 0 &&
+    palette.every((p) =>
+      p && typeof p === 'object' &&
+      typeof p.symbol === 'string' && (p.symbol as string).trim().length > 0 &&
+      typeof p.brand === 'string' && (p.brand as string).trim().length > 0 &&
+      typeof p.code === 'string' && (p.code as string).trim().length > 0 &&
+      (typeof p.name === 'string' && (p.name as string).trim().length > 0 ||
+        typeof p.rgb === 'string' && (p.rgb as string).trim().length > 0))
+
+  const fabricSpecified =
+    typeof fabric.type === 'string' && (fabric.type as string).trim().length > 0 &&
+    typeof fabric.count === 'number' && (fabric.count as number) > 0
+
+  return {
+    crossStitchChart: cells.length > 0,
+    stitchKeyValid,
+    fabricSpecified,
+    gridDimensions: w > 0 && h > 0,
+    backstitchUsed: !!flags?.hasBackstitch || backstitch.length > 0,
+    backstitchData: backstitch.length > 0,
+    frenchKnotsUsed: !!flags?.hasFrenchKnots || frenchKnots.length > 0,
+    frenchKnotsData: frenchKnots.length > 0,
+  }
+}
+
 function chartFacts(row: Row, insetSymbolById: Map<string, boolean>): ChartFacts {
   const crossLinked = row.pattern ?? row.patternsSourced[0] ?? null
   const crochetLinked = row.crochetPattern ?? row.crochetPatternsSourced[0] ?? null
@@ -83,8 +130,10 @@ function chartFacts(row: Row, insetSymbolById: Map<string, boolean>): ChartFacts
 
   const { hasChartNode, patternIds } = scanChartNodes(row.body)
   const insetChartWithSymbols = patternIds.some((id) => insetSymbolById.get(id) === true)
+  const xs = crossLinked ? crossStitchDataFacts(crossLinked.data) : null
 
   return {
+    ...EMPTY_CHART_FACTS,
     tutorialChartDefinition: row.chartDefinition != null,
     crochetChartData: !!(crochetLinked && crochetLinked.chartData != null),
     knittingChartData: !!(knitLinked && knitLinked.chartData != null),
@@ -92,6 +141,7 @@ function chartFacts(row: Row, insetSymbolById: Map<string, boolean>): ChartFacts
     crossStitchChart: !!(crossLinked && crossLinked.data != null && crossLinked.totalStitches > 0),
     insetChartWithSymbols,
     hasChartNode,
+    ...(xs ?? {}),
   }
 }
 
@@ -115,6 +165,7 @@ function toContext(row: Row, facts: ChartFacts): MakeabilityContext {
     cookMinutes: row.cookMinutes,
     gaugeText: row.gaugeText,
     finishedSizeText: row.finishedSizeText,
+    difficulty: row.difficulty,
     practiceType: row.practiceType,
     requiresMedicalDisclaimer: row.requiresMedicalDisclaimer,
     sourceNotes: row.sourceNotes,

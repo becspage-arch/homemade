@@ -4264,6 +4264,10 @@ model Pattern {
   premium               Boolean      @default(false)
   visibility            Visibility   @default(PRIVATE)
   publishedAt           DateTime?
+  // Makeability / completeness gate block reason — set when the QC pass
+  // un-publishes a row (visibility -> PRIVATE) for failing the locked checklist.
+  // Nullable + additive; mirrors Tutorial.qcBlockReason.
+  qcBlockReason         Json?
   subCategoryId         String?
   subCategory           SubCategory? @relation(fields: [subCategoryId], references: [id], onDelete: SetNull)
   hasBackstitch         Boolean      @default(false)
@@ -5723,6 +5727,10 @@ model SewingPattern {
   premium                Boolean               @default(false)
   visibility             Visibility            @default(PRIVATE)
   publishedAt            DateTime?
+  // Makeability / completeness gate block reason — set when the QC pass
+  // un-publishes a row (visibility -> PRIVATE) for failing the locked checklist.
+  // Nullable + additive; mirrors Tutorial.qcBlockReason.
+  qcBlockReason          Json?
 
   // Secondary product-shot hero for the bag / home / accessory sub-cats
   // where industry convention is product photography rather than a flat

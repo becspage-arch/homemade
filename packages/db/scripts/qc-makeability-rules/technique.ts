@@ -1,45 +1,44 @@
 import {
-  bodyText, compose, hasActionableSteps,
+  bodyText, compose, hasActionableSteps, hasNodeType, headings,
   type MakeabilityContext, type MakeabilityResult,
 } from './shared.js'
 
 /**
- * TECHNIQUE (all categories). The core makeable artifact of a technique is its
- * STEPS plus a completion criterion (how you know it is right / done). Those
- * are the hard bar.
+ * TECHNIQUE (all categories) — the "TECHNIQUE" checklist section.
  *
- * The brief also lists "materials + tools". We do NOT hard-require a discrete
- * materials block: techniques in this corpus consistently name their
- * tools/materials inline in the steps (e.g. "waxing and buffing bare wood"
- * names shellac, methylated spirit, and grits in-line), and such a technique is
- * fully makeable. Un-publishing thousands of makeable techniques over a missing
- * heading is template-conformance, not makeability, and contradicts the locked
- * don't-over-prune rule. Flagged in the hand-off for Rebecca to tighten later
- * if she wants a structured-materials template enforced separately.
+ * The enforced makeability bar is: a real procedure (steps), a completion
+ * criterion (how you know it is right / done), and a common-mistakes /
+ * troubleshooting signal. These three separate a genuine how-to from a decision
+ * guide mis-typed as a TECHNIQUE.
+ *
+ * The checklist also lists a materials list, a tools list, and a uses section as
+ * mandatory. Those are NOT hard-blocked here, and deliberately so: the corpus
+ * spans craft techniques (which name materials/tools inline in the steps) AND
+ * husbandry / management techniques (weaning lambs, catching chickens, supering
+ * bees) that need no materials or tools at all and whose USE is their title.
+ * Hard-requiring a discrete materials/tools/uses section un-published clearly
+ * makeable husbandry + procedural techniques (locked don't-over-prune rule).
+ * Flagged in the hand-off so Rebecca can promote any of them to strict per
+ * sub-type if she wants a craft-only template enforced.
  */
-// Generous: a technique has a "done-ness" cue if it says when/until/once, or
-// describes the outcome (the result is, you'll have, peels off, forms a, looks,
-// feels, consists of, even/smooth/flat finish, ready). Only techniques with
-// steps but NO sense of the finished result fail.
 const COMPLETION_RE =
-  /\b(until|when|once|you(?:'ll| will| should)? (?:see|feel|notice|have|end up|know)|looks? (?:like|when)|should (?:be|look|feel|have)|ready when|ready for|done when|right when|finished when|sign|how to know|how you know|it'?s right|it'?s done|comes? together|doubl|golden|\bset\b|firm|hollow when tapped|cooked through|tender|the result|the (?:batt|piece|seam|edge|surface|finish|fabric|joint|dough|paint|wax|glaze|shape) (?:is|should|will|looks)|consists? of|peels? off|forms? a|leaves? a|gives? a|produces? a|even\b|smooth\b|flat\b|clean\b|the finished)\b/i
+  /\b(until|when|once|you(?:'ll| will| should)? (?:see|feel|notice|have|know)|looks? (?:like|when)|should (?:be|look|feel|have|sit)|ready (?:when|to|for)|done when|right when|finished when|the (?:result|piece|seam|edge|surface|finish|dough|paint|glaze|shape|wax|bond|joint|udder|bird|animal|lamb|hive) (?:is|should|will|looks|sits)|forms? a|leaves? a|sits? (?:flush|flat)|holds? (?:its|the)|even\b|smooth\b|the finished|brings? up|comes? up|set\b|secure\b|firm\b|watertight|drying off|normally\b|signs? of|is calm|is settled)\b/i
+const MISTAKES_RE =
+  /\b(common mistake|mistakes? to avoid|troubleshoot|what (?:can )?go(?:es)? wrong|going wrong|if (?:it|the|your).{0,40}(?:wrong|too|not)|avoid|don'?t\b|pitfall|fix(?:ing)?\b|too (?:thick|thin|hot|cold|dry|wet|much|little|early|late|young|old)|over[- ]?(?:work|heat|tighten|feed)|under[- ]?|can cause|stresses?|risk|untreated|permanent|damage|harm|fails?|won'?t\b|never\b|watch (?:for|out)|take care|be careful)\b/i
 
 export function auditTutorial(ctx: MakeabilityContext): MakeabilityResult {
-  const reasons: string[] = []   // blocking
-  const flags: string[] = []     // non-blocking
+  const reasons: string[] = []
   const text = bodyText(ctx.body)
+  const heads = headings(ctx.body)
 
-  // Steps are the hard makeability bar: if there is no procedure, it is not a
-  // technique (these are typically decision guides / comparisons mis-typed as
-  // TECHNIQUE — flagged for re-type or rebuild).
-  if (!hasActionableSteps(ctx)) {
-    reasons.push('no step-by-step instructions')
-  }
-  // Completion criterion is a quality nicety, not a makeability blocker: a
-  // technique with clear steps (wiring a switch, fitting a bolt) is makeable
-  // even when it never spells out "you'll know it's right when...". Flag it.
-  if (!COMPLETION_RE.test(text)) {
-    flags.push('no explicit completion criterion (how you know it is right / done)')
-  }
-  return compose(ctx, `${ctx.categorySlug}:technique`, reasons, flags)
+  if (!hasActionableSteps(ctx)) reasons.push('no step-by-step instructions')
+  if (!COMPLETION_RE.test(text)) reasons.push('no completion criterion (how you know it is right / done)')
+
+  const mistakes =
+    hasNodeType(ctx.body, 'troubleshooter') ||
+    heads.some((h) => /mistake|troubleshoot|problem|what can go wrong|pitfall|watch out|tips?\b|care\b/i.test(h)) ||
+    MISTAKES_RE.test(text)
+  if (!mistakes) reasons.push('no common mistakes / troubleshooting section')
+
+  return compose(ctx, `${ctx.categorySlug}:technique`, reasons)
 }

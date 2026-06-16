@@ -4023,3 +4023,18 @@ Made the premium cooking/baking creator economy live on top of the recipe founda
 - **Baking TECHNIQUE render gap**: any body with an `ingredientsList` block now renders recipe-style (covers the ~21 baking techniques with ingredients).
 - **Ingredient enrichment**: curated density + substitution pass. Density coverage 101 → 283; substitutions 599 → 608.
 - **`/meal-plan` logged-out**: already shows an in-page sign-in CTA (not Clerk-gated in proxy.ts), so no change needed.
+
+---
+
+## 2026-06-16 — Hard enforcement of the locked completeness checklist + sewing dispatcher + re-audit + un-publish
+
+Enforced `feedback_content_completeness_checklist` line for line. Every cross-cutting rule (em/en dash, banned phrases, NaN/undefined/placeholder, body length) and every MANDATORY per-type item is a hard binary block. No OR clauses, no flag/voice tier.
+
+- **Rules hardened** (`packages/db/scripts/qc-makeability-rules/`): all 15 per-type checkers rewritten. Killed the "chart OR written instructions" clause for crochet + knitting (chart now MANDATORY). Counted disciplines (cross-stitch, counted needlework) need a chart, full stop. `shared.ts` cross-cutting checks now BLOCK on em/en dash + banned phrasing (previously kept-and-flagged).
+- **Sewing dispatcher** (`apps/web/src/lib/sewing/getResolvedPattern.ts`): one resolver for both storage paths (house DB columns vs freesewing live draft at CYC defaults). `pattern-sewing.ts` (pure, packages/db) runs the sewing checklist against the resolved output. UNRESOLVED = fail. Verified for both paths.
+- **Schema**: `qcBlockReason Json?` added to `Pattern` + `SewingPattern` (migration `20260916000000_phase_qc_block_reason_patterns_001`, additive, applied).
+- **Audit + un-publish** (`apps/web/scripts/qc-hard-audit.ts`, `--apply`): audited 8,920 PUBLISHED public rows (8,795 Tutorials + 80 standalone cross-stitch Pattern + 45 SewingPattern). PASS 6,986 (78.3%) / FAIL 1,934 (21.7%). Un-published every failure: 1,850 Tutorials -> DRAFT, 39 cross-stitch + 45 sewing -> PRIVATE, all with structured `qcBlockReason`; publishedAt + slug + every image field preserved; no deletes. Artifacts: `packages/db/docs/hard-audit-2026-06-16.{json,md}`.
+- **Gate verified** (`apps/web/scripts/qc-gate-verify.ts`): chart-less crochet BLOCKED, complete crochet PUBLISHES, broken freesewing reference BLOCKED via dispatcher, null-amount recipe BLOCKED.
+- **Autopilot stays OFF. No image field touched.** Calibration interpretations (which checklist items are makeability-blocking vs detected-leniently, with the lock conflicts behind each) are in the session hand-off.
+
+Remaining PUBLISHED: 6,945 Tutorials, 41 cross-stitch, 0 sewing.

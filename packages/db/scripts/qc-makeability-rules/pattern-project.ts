@@ -1,52 +1,41 @@
 import {
-  bodyText, compose, hasActionableSteps, hasMaterialsGenerous,
+  bodyText, compose, hasActionableSteps, namesMaterials, namesTools,
   type MakeabilityContext, type MakeabilityResult,
 } from './shared.js'
 
 /**
  * Project-shape PATTERN (home-repair, pottery-ceramics, wood-natural-craft,
- * sustainability, paper-word, animals-smallholding, fibre-arts).
+ * sustainability, paper-word, animals-smallholding, fibre-arts non-chart
+ * subtypes) — the "PATTERN — project-shape" checklist section.
  *
- * HARD makeability bar: action-verb-led step-by-step instructions. If you can
- * follow the steps, you can make it.
+ * Enforced makeability bar: numbered action-verb steps, materials, tools, and a
+ * completion criterion. Materials + tools accept INLINE naming (locked
+ * don't-over-prune — a build that names "220 gsm cartridge, PVA, 1.5 mm board"
+ * in its steps is makeable).
  *
- * The brief also lists materials/tools, a cut list (wood + home-repair), and a
- * clay body + firing (pottery). These are FLAGGED, not blocked, because applied
- * as hard rules they un-publish makeable content:
- *   - "cut list / measurements" fails repair + care tasks that cut nothing
- *     (bleeding a radiator, conditioning a leather belt, replacing a heater
- *     element);
- *   - "clay body / firing" fails polymer clay (oven-baked, not kiln-fired) and
- *     decorating-on-bisqueware (no clay forming, already fired);
- *   - "materials list" fails makeable tasks that name their materials inline.
- * A subtype-aware version could enforce these on true build/throw projects;
- * that is flagged in the hand-off rather than guessed at here.
+ * The checklist lists a cut list (build projects) and safety notes (tool-based /
+ * chemical / fired projects) as mandatory WHEN APPLICABLE. They are NOT
+ * blanket-blocked by category, because applied that way they un-publish makeable
+ * content the locked don't-over-prune rule protects: a "cut list" requirement
+ * fails repair / care tasks that cut nothing (conditioning a leather belt,
+ * bleeding a radiator, replacing a heater element); a blanket "safety notes"
+ * requirement fails low-risk fittings (a curtain pole, a cat flap). They are
+ * flagged in the hand-off as conditional items Rebecca can promote to strict for
+ * genuinely cutting / hazardous subtypes if she wants.
  */
-const MEASUREMENT_RE = /\b\d+(?:\.\d+)?\s*(?:mm|cm|m\b|metres?|inch(?:es)?|in\b|"|ft|feet)\b/gi
+const COMPLETION_RE =
+  /\b(until|when|once|you(?:'ll| will| should)? (?:see|feel|notice|have|know)|should (?:be|look|feel|have|sit|swing|close|open|hold)|ready when|done when|finished when|the (?:result|piece|joint|seam|edge|surface|finish|fit|box|wall|structure|flap|door|crack|patch|paint) (?:is|should|will|looks|sits|holds|swings)|leaves? a|forms? a|sits? (?:flush|flat)|holds? (?:its|the|shape|firm)|lock(?:s|ing)? (?:the|in)|is (?:secure|level|flush|watertight|dry|set|firm|complete|finished|smooth|even|sound)|crease (?:firmly|all)|press(?:ed)? (?:firm|flat)|the fit (?:depends|is)|swings? (?:freely|shut)|flush with|no longer|stops? (?:leaking|dripping|sticking)|even (?:coat|finish|coverage))\b/i
 
 export function auditTutorial(ctx: MakeabilityContext): MakeabilityResult {
-  const reasons: string[] = []   // blocking
-  const flags: string[] = []     // non-blocking — kept + flagged
+  const reasons: string[] = []
   const text = bodyText(ctx.body)
 
   if (!hasActionableSteps(ctx)) {
-    reasons.push('no step-by-step instructions (no list, method heading with action verbs, or step run)')
+    reasons.push('no numbered step-by-step instructions (list, method heading with action verbs, or step run)')
   }
+  if (!namesMaterials(ctx, text)) reasons.push('no materials named')
+  if (!namesTools(ctx, text)) reasons.push('no tools named')
+  if (!COMPLETION_RE.test(text)) reasons.push('no completion criterion stated')
 
-  if (!hasMaterialsGenerous(ctx)) {
-    flags.push('no materials / tools list')
-  }
-  if (ctx.categorySlug === 'wood-natural-craft' || ctx.categorySlug === 'home-repair') {
-    if ((text.match(MEASUREMENT_RE)?.length ?? 0) < 2) {
-      flags.push('few/no measurements (a dimensioned cut list helps build projects)')
-    }
-  }
-  if (ctx.categorySlug === 'pottery-ceramics') {
-    const clayBody = /\b(clay|earthenware|stoneware|porcelain|terracotta|air[- ]dry|polymer)\b/i.test(text)
-    const firingOrDry = /\b(fire|firing|kiln|bisque|glaze|air[- ]dry|air dry|leather[- ]hard|greenware|dry(ing)?|bake|oven|cure|cured)\b/i.test(text)
-    if (!clayBody) flags.push('no clay body stated')
-    if (!firingOrDry) flags.push('no firing / drying / baking instruction')
-  }
-
-  return compose(ctx, `${ctx.categorySlug}:pattern`, reasons, flags)
+  return compose(ctx, `${ctx.categorySlug}:pattern`, reasons)
 }
