@@ -1,0 +1,194 @@
+{
+  "slug": "crochet-simple-chain-loop-edging",
+  "title": "Simple chain-loop edging",
+  "subtitle": "A row of looped scallops to trim any straight edge",
+  "excerpt": "A plain, quick edging: one firm row of double crochet, then a row of chain loops that arch into soft scallops. Worked here as a standalone strip in 4-ply cotton, it is the gentlest introduction to crochet trims and lengthens to fit any edge.",
+  "type": "PATTERN",
+  "categorySlug": "crochet",
+  "subCategorySlug": "lacework",
+  "difficulty": "BEGINNER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Reconstructed in our own words from Thérèse de Dillmont, Encyclopaedia of Needlework (1886), Chapter 9 (Crochet Work), the simplest of the looped crochet edgings worked along a base row. Public domain via Project Gutenberg. The yarn weight, hook size, and gauge are modernised; the loop structure is Victorian.",
+  "crochet": {
+    "primaryYarnWeightSlug": "fingering",
+    "primaryHookSlug": "crochet-hook-3-0mm",
+    "gaugeText": "16 double crochet to 10 cm in 4-ply cotton on a 3 mm hook. Gauge is not critical for an edging, but a looser or tighter tension changes the finished length.",
+    "finishedSizeText": "About 12 cm long and 3 cm deep as written. Lengthen by adding chains to the foundation in multiples of 3.",
+    "terminologyConvention": "uk",
+    "craftStitchSlugs": ["crochet-chain", "crochet-double-uk"],
+    "craftTechniqueTags": ["edging", "working-in-rows"],
+    "chartDefinition": {
+      "title": "Chain-loop edging, two rows",
+      "layout": "flat",
+      "craft": "crochet",
+      "terminologyConvention": "uk",
+      "caption": "Row 1 is a firm base of double crochet read right to left. Row 2 arches chain loops between anchor stitches.",
+      "rows": [
+        { "rowNumber": 1, "stitches": [{ "symbol": "double-crochet-uk", "count": 19 }] },
+        { "rowNumber": 2, "rightSide": false, "stitches": [
+          { "symbol": "double-crochet-uk" },
+          { "symbol": "chain", "count": 5, "label": "loop" },
+          { "symbol": "double-crochet-uk" },
+          { "symbol": "chain", "count": 5, "label": "loop" },
+          { "symbol": "double-crochet-uk" },
+          { "symbol": "chain", "count": 5, "label": "loop" },
+          { "symbol": "double-crochet-uk" },
+          { "symbol": "chain", "count": 5, "label": "loop" },
+          { "symbol": "double-crochet-uk" },
+          { "symbol": "chain", "count": 5, "label": "loop" },
+          { "symbol": "double-crochet-uk" },
+          { "symbol": "chain", "count": 5, "label": "loop" },
+          { "symbol": "double-crochet-uk" }
+        ] }
+      ]
+    }
+  },
+  "glossaryTerms": [
+    {
+      "slug": "foundation-chain",
+      "term": "Foundation chain",
+      "definition": "The starting row of chain stitches that the first row of stitches is worked into. Its length sets the length of the edging."
+    },
+    {
+      "slug": "double-crochet-uk",
+      "term": "Double crochet (UK, dc)",
+      "definition": "A short, firm crochet stitch with no yarn-over before the hook goes in. Called single crochet in the United States."
+    },
+    {
+      "slug": "blocking",
+      "term": "Blocking",
+      "definition": "Wetting or steaming a finished piece and pinning it to shape while it dries, so the stitches settle even and the loops sit open."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This is the plainest crochet trim: a firm base row, then a row of chain loops that arch into soft scallops. It is worked here as a short standalone strip so you can practise the rhythm, then lengthen it to edge a face cloth, a shelf, or the hem of a simple bag. The pattern is written in UK terms, where double crochet is the short, firm stitch (called single crochet in the United States)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "marks": [{ "type": "bold" }], "text": "4-ply cotton, one colour. " },
+            { "type": "text", "text": "About 15 m makes the strip as written, with plenty to spare. A smooth mercerised cotton such as Scheepjes Catona shows the loops cleanly. Any 4-ply cotton works." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "marks": [{ "type": "bold" }], "text": "A 3 mm hook. " },
+            { "type": "text", "text": "The usual pairing for 4-ply cotton. If your tension runs loose, drop to 2.75 mm." }
+          ] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "marks": [{ "type": "bold" }], "text": "Tapestry needle and scissors. " },
+            { "type": "text", "text": "For weaving in the two tails at the end." }
+          ] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Gauge" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "16 double crochet to 10 cm in 4-ply cotton on a 3 mm hook. Gauge is not critical for an edging, but a looser or tighter tension changes the finished length, so check it if the strip must reach a set measurement." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Abbreviations" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "ch = chain" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "dc = double crochet (UK), called single crochet in the US" }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "st, sts = stitch, stitches" }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Pattern" }]
+      },
+      {
+        "type": "crochetPatternInset",
+        "attrs": { "crochetPatternSlug": "crochet-simple-chain-loop-edging" }
+      },
+      {
+        "type": "craftChart",
+        "attrs": { "useTutorialChart": true }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Read the chart alongside the written rows below. The chart shows the shape of the loops; the written rows give the stitch counts." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Foundation. " },
+          { "type": "text", "text": "Make a " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "foundation-chain" } }], "text": "foundation chain" },
+          { "type": "text", "text": " of 20 chains." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Row 1. " },
+          { "type": "text", "text": "Work 1 " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "double-crochet-uk" } }], "text": "double crochet" },
+          { "type": "text", "text": " in the 2nd chain from the hook, then 1 dc in each of the next 18 chains. (19 sts)" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "marks": [{ "type": "bold" }], "text": "Row 2. " },
+          { "type": "text", "text": "Ch 1 and turn. Work 1 dc in the first dc. [Ch 5, skip 2 dc, 1 dc in the next dc] 6 times. This makes 6 chain loops sitting between 7 anchor stitches. (7 sts)" }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fasten off, leaving a 10 cm tail. The strip is complete." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Finishing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Weave both tails into the back of the base row with the tapestry needle, doubling back once to lock them, then trim. Pin the strip straight and " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blocking" } }], "text": "block" },
+          { "type": "text", "text": " it, easing the loops into even arches, and leave it to dry. Blocking is what makes the scallops sit open and regular." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What to try next" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "To edge a real piece, work the first row of double crochet straight into the edge of the finished item instead of a foundation chain, keeping the stitch count a multiple of 3 plus 1 so the loops come out even. Longer chain loops give deeper scallops; a picot in the centre of each loop turns the plain trim into a pointed lace edge." }
+        ]
+      }
+    ]
+  }
+}

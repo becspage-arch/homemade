@@ -4038,3 +4038,41 @@ Enforced `feedback_content_completeness_checklist` line for line. Every cross-cu
 - **Autopilot stays OFF. No image field touched.** Calibration interpretations (which checklist items are makeability-blocking vs detected-leniently, with the lock conflicts behind each) are in the session hand-off.
 
 Remaining PUBLISHED: 6,945 Tutorials, 41 cross-stitch, 0 sewing.
+
+---
+
+## Crochet anchor batch (Dillmont 1886) — 2026-06-16
+
+Source-anchored anchor batch that locks the crochet **PATTERN** template the
+follow-up Sonnet bulk worker pattern-matches against (the completeness gate had
+culled ~636 crochet PATTERN rows to DRAFT; only one crochet chart row existed).
+
+- **Shipped: 5 PATTERN anchors, PUBLISHED**, each reconstructed in our own
+  words from Thérèse de Dillmont, Encyclopaedia of Needlework (1886), Chapter 9:
+  simple chain-loop edging, picot edging, solid treble square motif, solid
+  hexagon motif, shell lace edging. Each carries an inline `chartDefinition`
+  (rendered via the `craftChart` node), a linked PUBLIC `CrochetPattern` row
+  with `chartData` + `rowsStructured` (seed `seed-crochet-anchor-pattern-rows.ts`,
+  linked by `sourceTutorialId`), materials (yarn weight + brand + colour count +
+  yardage), hook mm, gauge, finished dimensions, fully-enumerated rounds/rows
+  with a `(N sts)` count on every row, abbreviations key, finishing, and a
+  Dillmont citation in `sourceNotes`. All pass voice + completeness +
+  makeability (`qcBlockReason` clear).
+- **Held: 17 STITCH / TECHNIQUE / READING anchor entries (NOT shipped).** The
+  crochet Foundations/Stitches library is already comprehensively PUBLISHED (184
+  teaching tutorials live), so all 17 duplicated existing published topics (8 by
+  exact slug). Held under
+  `packages/db/scripts/anchor-crochet/_held-duplicates-existing-published/` with
+  a README; they pass all gates and are ready if Rebecca wants any to replace an
+  existing version (e.g. `crochet-foundation-chain-technique` is mis-typed STITCH
+  with no sourceNotes on the live row). Not shipped per the locked
+  "real library, no duplicates" rule.
+- **New tooling:** `packages/db/scripts/qc-preflight.ts` runs the three publish
+  gates (voice + completeness + makeability) against an authored JSON file
+  offline, simulating chart facts from `crochet.chartDefinition` — reusable by
+  the bulk worker.
+- **chartData shape (for the bulk worker):** the shared `ChartDefinition`
+  (`apps/web/src/lib/craft-charts/types.ts`): `{ title, layout: 'round'|'flat',
+  craft: 'crochet', terminologyConvention, caption, rounds[]|rows[] }` with each
+  stitch `{ symbol, count?, label? }` keyed to `chart-symbols.ts`. Same object on
+  `Tutorial.chartDefinition` and `CrochetPattern.chartData`.
