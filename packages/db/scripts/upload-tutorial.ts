@@ -105,6 +105,7 @@ import type {
 import { validateInput } from './upload-tutorial-types.js'
 import { exitCodeFor, formatReport, runVoiceCheck } from './voice-check-lib.js'
 import { buildQcBlockReason, checkCompleteness } from './qc-completeness-rules/index.js'
+import { checkRowPublishable } from './qc-publish-gate.js'
 
 type PrismaModule = typeof import('../src/index.js')
 let prismaMod: PrismaModule | null = null
@@ -925,6 +926,28 @@ export async function uploadTutorial(
     input.projectSchedule ?? [],
     prisma,
   )
+
+  // 14b. Makeability gate (2026-06-16). The pre-write completeness check above
+  // catches skeletons but not per-type makeability gaps that need the persisted
+  // links — chiefly a cross-stitch / counted-needlework PATTERN with no chart.
+  // Now that the row and its craft-pattern links exist, run the unified publish
+  // gate; if a PUBLISHED-intent row is not makeable, pull it back to DRAFT with
+  // the structured reason. Autopilot cannot bypass this. Binary block.
+  if (finalStatus === TutorialStatus.PUBLISHED) {
+    const gate = await checkRowPublishable(prisma, tutorialId, 'uploadTutorial')
+    if (!gate.publishable) {
+      const held = await prisma.tutorial.update({
+        where: { id: tutorialId },
+        // status -> DRAFT; publishedAt left for the audit trail, slug untouched.
+        data: { status: TutorialStatus.DRAFT, qcBlockReason: gate.blockReason as Prisma.InputJsonValue },
+      })
+      finalStatus = held.status as UploadResult['status']
+      finalPublishedAt = held.publishedAt
+      console.warn(
+        `  [makeability] BLOCKED ${input.slug} — held at DRAFT: ${gate.reasons.join('; ')}`,
+      )
+    }
+  }
 
   // 15. Category publish-path hooks. Both are idempotent — only fire on
   // PUBLISHED rows, no-op once their condition is settled.
