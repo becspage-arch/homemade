@@ -1,8 +1,12 @@
 # Held crochet anchor entries (teaching duplicates)
 
-These 17 STITCH / TECHNIQUE / READING entries were authored for the crochet
+These 16 STITCH / TECHNIQUE / READING entries were authored for the crochet
 anchor batch (2026-06-16) and all pass the voice + completeness + makeability
 gates (validated with `scripts/qc-preflight.ts`). They are held here, NOT
+uploaded, because every one duplicates an existing PUBLISHED tutorial. (A 17th,
+the "What crochet is, and where it came from" reading, was the one genuinely
+unique entry with no existing equivalent — it was SHIPPED PUBLISHED on
+2026-06-17 and lives in the parent directory.) They are held here, NOT
 uploaded, because the crochet Foundations / Stitches library is already
 comprehensively built and PUBLISHED (184 teaching tutorials live at the time of
 this batch). Shipping these would either:
