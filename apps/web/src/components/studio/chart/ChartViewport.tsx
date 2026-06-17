@@ -43,6 +43,11 @@ import {
   symbolOnFill,
 } from './render-helpers'
 
+/** Pointer travel (px) past which a view-mode press becomes a pan rather
+ *  than a mark-stitched tap. Small enough that a deliberate tap still
+ *  marks, large enough that a drag scrolls the pattern. */
+const PAN_THRESHOLD_PX = 4
+
 interface ChartViewportProps {
   pattern: PatternData
   mode: ChartMode
@@ -203,9 +208,11 @@ export function ChartViewport({
   const dragRef = useRef<
     | null
     | {
-        mode: 'pan' | 'paint' | 'erase' | 'mark' | 'select'
+        mode: 'pan' | 'paint' | 'erase' | 'mark' | 'select' | 'maybe-mark'
         lastX: number
         lastY: number
+        downX: number
+        downY: number
         touched: Set<string>
         markValue?: boolean
         startCellX?: number
@@ -220,47 +227,46 @@ export function ChartViewport({
       const rect = svgRef.current!.getBoundingClientRect()
       const lx = e.clientX - rect.left
       const ly = e.clientY - rect.top
+      const base = { lastX: lx, lastY: ly, downX: lx, downY: ly }
       if (spacePanning || e.button === 1 || !interactive) {
-        dragRef.current = { mode: 'pan', lastX: lx, lastY: ly, touched: new Set() }
+        dragRef.current = { mode: 'pan', ...base, touched: new Set() }
         return
       }
       const s = useChartStore.getState()
       const cell = screenToCell(lx, ly, s.viewport)
       if (cell.x < 0 || cell.y < 0 || cell.x >= pattern.grid.width || cell.y >= pattern.grid.height) {
-        dragRef.current = { mode: 'pan', lastX: lx, lastY: ly, touched: new Set() }
+        dragRef.current = { mode: 'pan', ...base, touched: new Set() }
         return
       }
-      if (mode === 'view' || s.tool === 'mark-stitched') {
+      // Explicit mark-stitched tool: toggle on press, mark across a drag.
+      if (s.tool === 'mark-stitched') {
         const k = cellKey(cell.x, cell.y)
         const currently = s.stitchedCells.has(k)
         toggleStitched(cell.x, cell.y)
+        dragRef.current = { mode: 'mark', ...base, touched: new Set([k]), markValue: !currently }
+        return
+      }
+      // Default view interaction: a tap toggles the cell stitched, a drag
+      // pans the canvas so the user can scroll around large patterns. The
+      // tap-vs-drag decision is deferred to pointer-move / -up.
+      if (mode === 'view') {
         dragRef.current = {
-          mode: 'mark',
-          lastX: lx,
-          lastY: ly,
-          touched: new Set([k]),
-          markValue: !currently,
+          mode: 'maybe-mark',
+          ...base,
+          touched: new Set(),
+          startCellX: cell.x,
+          startCellY: cell.y,
         }
         return
       }
       if (s.tool === 'brush' && s.currentSymbol) {
         paintCell(cell.x, cell.y, s.currentSymbol)
-        dragRef.current = {
-          mode: 'paint',
-          lastX: lx,
-          lastY: ly,
-          touched: new Set([cellKey(cell.x, cell.y)]),
-        }
+        dragRef.current = { mode: 'paint', ...base, touched: new Set([cellKey(cell.x, cell.y)]) }
         return
       }
       if (s.tool === 'erase') {
         eraseCell(cell.x, cell.y)
-        dragRef.current = {
-          mode: 'erase',
-          lastX: lx,
-          lastY: ly,
-          touched: new Set([cellKey(cell.x, cell.y)]),
-        }
+        dragRef.current = { mode: 'erase', ...base, touched: new Set([cellKey(cell.x, cell.y)]) }
         return
       }
       if (s.tool === 'colour-picker') {
@@ -272,18 +278,11 @@ export function ChartViewport({
         return
       }
       if (s.tool === 'select') {
-        dragRef.current = {
-          mode: 'select',
-          lastX: lx,
-          lastY: ly,
-          touched: new Set(),
-          startCellX: cell.x,
-          startCellY: cell.y,
-        }
+        dragRef.current = { mode: 'select', ...base, touched: new Set(), startCellX: cell.x, startCellY: cell.y }
         setSelection({ x1: cell.x, y1: cell.y, x2: cell.x, y2: cell.y })
         return
       }
-      dragRef.current = { mode: 'pan', lastX: lx, lastY: ly, touched: new Set() }
+      dragRef.current = { mode: 'pan', ...base, touched: new Set() }
     },
     [spacePanning, interactive, mode, pattern, paintCell, eraseCell, toggleStitched, setSelection, setCurrentSymbol, onPickColour],
   )
@@ -301,6 +300,15 @@ export function ChartViewport({
       drag.lastY = ly
       if (drag.mode === 'pan') {
         applyPan(dx, dy)
+        return
+      }
+      // A view-mode press becomes a pan once it travels past the
+      // threshold; below it, it stays a candidate tap (handled on up).
+      if (drag.mode === 'maybe-mark') {
+        if (Math.abs(lx - drag.downX) + Math.abs(ly - drag.downY) > PAN_THRESHOLD_PX) {
+          drag.mode = 'pan'
+          applyPan(dx, dy)
+        }
         return
       }
       const s = useChartStore.getState()
@@ -334,10 +342,24 @@ export function ChartViewport({
     [pattern, paintCell, eraseCell, markStitchedBatch, applyPan, setSelection],
   )
 
-  const onPointerUp = useCallback((e: ReactPointerEvent<SVGSVGElement>) => {
-    svgRef.current?.releasePointerCapture(e.pointerId)
-    dragRef.current = null
-  }, [])
+  const onPointerUp = useCallback(
+    (e: ReactPointerEvent<SVGSVGElement>) => {
+      svgRef.current?.releasePointerCapture(e.pointerId)
+      const drag = dragRef.current
+      // A view-mode press that never crossed the pan threshold is a tap:
+      // toggle the cell stitched.
+      if (
+        drag &&
+        drag.mode === 'maybe-mark' &&
+        drag.startCellX !== undefined &&
+        drag.startCellY !== undefined
+      ) {
+        toggleStitched(drag.startCellX, drag.startCellY)
+      }
+      dragRef.current = null
+    },
+    [toggleStitched],
+  )
 
   const onWheel = useCallback(
     (e: ReactWheelEvent<SVGSVGElement>) => {

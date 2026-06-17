@@ -104,6 +104,11 @@ export interface ChartStoreState {
   layers: LayerToggles
   selection: SelectionRect | null
   viewport: Viewport
+  /** True once the user has manually panned / zoomed. Until then the
+   *  viewport auto-fits whenever the container is (re)measured, so a
+   *  stale or zero-size first measurement can't leave the pattern
+   *  cropped on a corner (it refits when the real size arrives). */
+  viewportUserAdjusted: boolean
   containerWidth: number
   containerHeight: number
   stitchedCells: Set<string>
@@ -179,6 +184,7 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
   layers: DEFAULT_LAYERS,
   selection: null,
   viewport: DEFAULT_VIEWPORT,
+  viewportUserAdjusted: false,
   containerWidth: 0,
   containerHeight: 0,
   stitchedCells: new Set<string>(),
@@ -200,6 +206,9 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
         future: [],
         dirty: false,
         currentSymbol: pattern.palette[0]?.symbol ?? null,
+        // A fresh pattern hasn't been panned / zoomed yet, so it should
+        // keep auto-fitting until the user takes the wheel.
+        viewportUserAdjusted: false,
       }
       if (state.containerWidth > 0 && state.containerHeight > 0) {
         next.viewport = fitToScreen(pattern, state.containerWidth, state.containerHeight)
@@ -221,12 +230,16 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
   setContainerSize: (containerWidth, containerHeight) =>
     set((state) => {
       const next: Partial<ChartStoreState> = { containerWidth, containerHeight }
-      if (state.viewport === DEFAULT_VIEWPORT && state.pattern && containerWidth > 0) {
+      // Refit on (re)measure until the user has manually moved the
+      // viewport. This corrects a bad first measurement (0 / stale
+      // container size) that would otherwise leave the pattern stuck
+      // cropped on one corner.
+      if (state.pattern && containerWidth > 0 && containerHeight > 0 && !state.viewportUserAdjusted) {
         next.viewport = fitToScreen(state.pattern, containerWidth, containerHeight)
       }
       return next as ChartStoreState
     }),
-  setViewport: (viewport) => set({ viewport }),
+  setViewport: (viewport) => set({ viewport, viewportUserAdjusted: true }),
   applyPan: (dx, dy) =>
     set((state) => ({
       viewport: {
@@ -234,10 +247,12 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
         panX: state.viewport.panX + dx,
         panY: state.viewport.panY + dy,
       },
+      viewportUserAdjusted: true,
     })),
   applyZoom: (delta, anchorX, anchorY) =>
     set((state) => ({
       viewport: zoomAtPoint(state.viewport, delta, anchorX, anchorY),
+      viewportUserAdjusted: true,
     })),
   fitViewportToScreen: () => {
     const { pattern, containerWidth, containerHeight } = get()

@@ -464,7 +464,16 @@ export default async function TutorialPage({ params }: PageProps) {
 
   // Project action bar (signed-in only) — Start / Continue project pill
   // below the jump chips. Anonymous readers don't see this row.
-  const projectActionsSlot = currentUser ? (
+  //
+  // Cross-stitch techniques and stitches teach a move; the reader is
+  // learning, not making a thing, so the "Start making" / "Made it"
+  // tracker doesn't belong on them. (Scoped to cross-stitch for now.)
+  const isLearningContent =
+    tutorial.type === 'TECHNIQUE' ||
+    tutorial.type === 'STITCH' ||
+    tutorial.type === 'READING'
+  const hideProjectActions = categorySlug === 'cross-stitch' && isLearningContent
+  const projectActionsSlot = currentUser && !hideProjectActions ? (
     <ProjectButton
       tutorialId={tutorial.id}
       projectId={project?.id ?? null}
