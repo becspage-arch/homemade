@@ -360,6 +360,16 @@ export function ChartViewport({
 
   const showStitchedOverlay = displayMode !== 'all' || stitchedSet.size > 0
 
+  // Symbols only render once a cell is big enough on screen to read the
+  // glyph (and the layer is on). Below that, symbol-only mode would draw
+  // blank white cells with no symbols — an empty grid. So when symbols
+  // can't show at the current zoom, fall back to colour so the design
+  // stays visible: colour when zoomed out, symbols when zoomed in (the
+  // standard cross-stitch-software behaviour).
+  const symbolsVisible = layers.symbols && scaledCellPx >= 14
+  const effectiveStyle =
+    renderStyle === 'symbol-only' && !symbolsVisible ? 'colour-block' : renderStyle
+
   const renderedBuckets = useMemo(() => {
     const buckets: Array<{ symbol: string; rgb: string; cross: string; highlight: string; cellList: { x: number; y: number }[] }> = []
     for (const [symbol, cells] of cellBuckets) {
@@ -469,10 +479,10 @@ export function ChartViewport({
                     y={y * cellPx}
                     width={cellPx}
                     height={cellPx}
-                    fill={renderStyle === 'symbol-only' ? '#ffffff' : rgb}
+                    fill={effectiveStyle === 'symbol-only' ? '#ffffff' : rgb}
                   />
                 ))
-              ) : renderStyle === 'colour-block' ? (
+              ) : effectiveStyle === 'colour-block' ? (
                 cellList.map(({ x, y }) => (
                   <rect
                     key={`r-${x}-${y}`}
@@ -485,7 +495,7 @@ export function ChartViewport({
                     strokeWidth={0.5}
                   />
                 ))
-              ) : renderStyle === 'symbol-only' ? (
+              ) : effectiveStyle === 'symbol-only' ? (
                 cellList.map(({ x, y }) => (
                   <rect
                     key={`r-${x}-${y}`}
@@ -657,7 +667,7 @@ export function ChartViewport({
               symbol always renders dark; in colour-block / x-stitch
               modes we pick black-or-white per cell based on the colour
               brightness for legibility. */}
-          {layers.symbols && scaledCellPx >= 14 &&
+          {symbolsVisible &&
             renderedBuckets.map(({ symbol, rgb, cellList }) => (
               <g
                 key={`sym-${symbol}`}

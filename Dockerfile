@@ -61,6 +61,12 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
+# Fonts for server-side SVG rasterisation (sharp/librsvg). The PDF export
+# renders chart-page symbols as SVG <text>; without system fonts librsvg
+# emits blank glyphs. DejaVu covers Latin-Extended + the geometric / dingbat
+# chart symbols. fontconfig is required for librsvg to discover them.
+RUN apk add --no-cache fontconfig font-dejavu
+
 RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
 
 # Next.js standalone output for a monorepo lays the tree as:

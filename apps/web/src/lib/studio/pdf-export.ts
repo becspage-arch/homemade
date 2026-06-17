@@ -11,13 +11,35 @@
  */
 
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib'
+import fontkit from '@pdf-lib/fontkit'
 import sharp from 'sharp'
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import {
   estimateSkeinCount,
   type PatternData,
   type Fabric,
 } from '@homemade/db'
 import { renderPatternSvgString } from '@/components/studio/chart/render-svg-string'
+
+// Chart symbols use glyphs outside WinAnsi (Latin-Extended letters from
+// imported charts, geometric shapes ●▲◆, dingbats ✚✦). pdf-lib's standard
+// fonts can only encode WinAnsi, so drawing any such symbol throws and the
+// whole export 500s. We embed DejaVu Sans — a libre font with broad
+// Unicode coverage — via fontkit so every symbol renders. The font files
+// are bundled in public/fonts (copied into the container image).
+const FONT_DIR_CANDIDATES = ['apps/web/public/fonts', 'public/fonts']
+
+function loadBundledFont(file: string): Buffer | null {
+  for (const dir of FONT_DIR_CANDIDATES) {
+    try {
+      return readFileSync(join(process.cwd(), dir, file))
+    } catch {
+      // try next candidate
+    }
+  }
+  return null
+}
 
 export type PaperKey = 'a4' | 'letter' | 'a3' | 'legal'
 
@@ -49,13 +71,29 @@ export async function buildPatternPdf(
 ): Promise<Uint8Array> {
   const paper = PAPER_DIMENSIONS_PT[opts.paper]
   const doc = await PDFDocument.create()
-  const display = await doc.embedFont(StandardFonts.HelveticaBold)
-  const body = await doc.embedFont(StandardFonts.Helvetica)
-  const mono = await doc.embedFont(StandardFonts.Courier)
 
-  await drawCover(doc, paper, pattern, patternName, opts, { display, body, mono })
-  await drawFlossKey(doc, paper, pattern, opts, { display, body, mono })
-  await drawChartPages(doc, paper, pattern, opts, { display, body, mono })
+  // Prefer the embedded Unicode font so chart symbols render. If the font
+  // files can't be loaded for any reason, fall back to the standard fonts
+  // and sanitise text to WinAnsi so the export degrades (symbols → "?")
+  // rather than 500ing.
+  let fonts: Fonts
+  const sansBytes = loadBundledFont('DejaVuSans.ttf')
+  const boldBytes = loadBundledFont('DejaVuSans-Bold.ttf')
+  if (sansBytes && boldBytes) {
+    doc.registerFontkit(fontkit)
+    const body = await doc.embedFont(sansBytes, { subset: true })
+    const display = await doc.embedFont(boldBytes, { subset: true })
+    fonts = { display, body, mono: body, clean: (s) => s }
+  } else {
+    const display = await doc.embedFont(StandardFonts.HelveticaBold)
+    const body = await doc.embedFont(StandardFonts.Helvetica)
+    const mono = await doc.embedFont(StandardFonts.Courier)
+    fonts = { display, body, mono, clean: (s) => s.replace(/[^ -ÿ]/g, '?') }
+  }
+
+  await drawCover(doc, paper, pattern, patternName, opts, fonts)
+  await drawFlossKey(doc, paper, pattern, opts, fonts)
+  await drawChartPages(doc, paper, pattern, opts, fonts)
 
   return await doc.save()
 }
@@ -64,6 +102,9 @@ type Fonts = {
   display: Awaited<ReturnType<typeof PDFDocument.prototype.embedFont>>
   body: Awaited<ReturnType<typeof PDFDocument.prototype.embedFont>>
   mono: Awaited<ReturnType<typeof PDFDocument.prototype.embedFont>>
+  /** Pass-through when the Unicode font is embedded; strips non-WinAnsi
+   *  characters in the standard-font fallback so drawText never throws. */
+  clean: (s: string) => string
 }
 
 async function drawCover(
@@ -90,7 +131,7 @@ async function drawCover(
   })
 
   // Title
-  page.drawText(patternName, {
+  page.drawText(fonts.clean(patternName), {
     x: m,
     y: paper.height - m - 64,
     size: 32,
@@ -99,7 +140,7 @@ async function drawCover(
   })
 
   if (opts.designerName) {
-    page.drawText(`by ${opts.designerName}`, {
+    page.drawText(fonts.clean(`by ${opts.designerName}`), {
       x: m,
       y: paper.height - m - 88,
       size: 12,
@@ -235,23 +276,23 @@ async function drawFlossKey(
     })
 
     // Symbol
-    page.drawText(row.entry.symbol, {
+    page.drawText(fonts.clean(row.entry.symbol), {
       x: x + 22,
       y: y - 9,
       size: 10,
-      font: fonts.mono,
+      font: fonts.body,
       color: ink,
     })
 
     // Code + name
-    page.drawText(`${row.entry.brand} ${row.entry.code}`, {
+    page.drawText(fonts.clean(`${row.entry.brand} ${row.entry.code}`), {
       x: x + 44,
       y: y - 9,
       size: 9,
       font: fonts.mono,
       color: mute,
     })
-    page.drawText(row.entry.name, {
+    page.drawText(fonts.clean(row.entry.name), {
       x: x + 110,
       y: y - 9,
       size: 10,

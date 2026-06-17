@@ -86,3 +86,19 @@ The wrapper isolates all `@freesewing/*` imports to
 `apps/web/src/lib/sewing/grading/`. Studio, API routes, and content
 authoring scripts call into the wrapper instead so the boundary stays
 clean and a future engine swap (if needed) is a one-file change.
+
+---
+
+## DejaVu Fonts (DejaVuSans.ttf, DejaVuSans-Bold.ttf)
+
+Bundled at `apps/web/public/fonts/` and embedded into Studio pattern PDF
+exports so chart symbols (Latin-Extended letters, geometric shapes,
+dingbats) render outside the WinAnsi range. The same family is installed
+in the container (`font-dejavu`) for server-side SVG rasterisation.
+
+DejaVu fonts are based on Bitstream Vera Fonts (Copyright © 2003 Bitstream,
+Inc.) and Arev Fonts (Copyright © 2006 Tavmjong Bah). The DejaVu changes
+are in the public domain. The Bitstream Vera license permits use,
+redistribution, and embedding provided the copyright and license notices
+are retained; the fonts may not be sold on their own. Full license:
+https://dejavu-fonts.github.io/License.html

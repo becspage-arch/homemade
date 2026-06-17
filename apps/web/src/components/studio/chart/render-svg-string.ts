@@ -360,7 +360,7 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
   // Bumped from 0.5 to 0.66 of cell size — at 0.5 the letter competed
   // visually with the X stroke pattern; 0.66 puts it firmly above.
   if (showSymbols && cellPx >= 14) {
-    parts.push(`<g transform="translate(${offX} ${offY})" font-family="ui-monospace,monospace" font-weight="600" text-anchor="middle" dominant-baseline="central">`)
+    parts.push(`<g transform="translate(${offX} ${offY})" font-family="'DejaVu Sans',ui-monospace,monospace" font-weight="600" text-anchor="middle" dominant-baseline="central">`)
     for (const [symbol, cells] of buckets) {
       const entry = paletteIndex.bySymbol.get(symbol)
       if (!entry) continue
