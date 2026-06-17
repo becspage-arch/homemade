@@ -465,14 +465,14 @@ export default async function TutorialPage({ params }: PageProps) {
   // Project action bar (signed-in only) — Start / Continue project pill
   // below the jump chips. Anonymous readers don't see this row.
   //
-  // Cross-stitch techniques and stitches teach a move; the reader is
-  // learning, not making a thing, so the "Start making" / "Made it"
-  // tracker doesn't belong on them. (Scoped to cross-stitch for now.)
-  const isLearningContent =
-    tutorial.type === 'TECHNIQUE' ||
-    tutorial.type === 'STITCH' ||
-    tutorial.type === 'READING'
-  const hideProjectActions = categorySlug === 'cross-stitch' && isLearningContent
+  // The "Start making" / "Made it" tracker is for content you make and
+  // finish. Reference / learning types — techniques, stitches, readings,
+  // herb profiles — teach or inform rather than produce a thing, so the
+  // tracker doesn't belong on them in any category. RECIPE / PATTERN /
+  // REMEDY keep it. GROWING_GUIDE and PRACTICE keep it for now (their
+  // wording is a separate call).
+  const NON_TRACKABLE_TYPES = new Set(['TECHNIQUE', 'STITCH', 'READING', 'HERB_PROFILE'])
+  const hideProjectActions = NON_TRACKABLE_TYPES.has(tutorial.type)
   const projectActionsSlot = currentUser && !hideProjectActions ? (
     <ProjectButton
       tutorialId={tutorial.id}
