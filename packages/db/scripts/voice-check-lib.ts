@@ -276,7 +276,6 @@ const BANNED_PHRASES: { phrase: string; whole?: boolean }[] = [
   { phrase: "in today's fast-paced world", whole: false },
   { phrase: 'in our modern world', whole: false },
   { phrase: 'tapestry of', whole: false },
-  { phrase: 'a tapestry', whole: false },
   { phrase: 'a testament to', whole: false },
   { phrase: 'a beacon of', whole: false },
   { phrase: 'in the ever-evolving landscape', whole: false },

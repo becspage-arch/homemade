@@ -447,8 +447,13 @@ function RenderNode({
       if (!def || typeof def !== 'object') {
         return <div className="craft-chart-missing">Chart not yet attached.</div>
       }
-      if (!isSignedIn) return <ChartSignInGate subtitle="Crochet / knitting chart" />
-      if (!tutorialId || chartIndex === null) {
+      // The chart is core pattern content, so it must be visible to every
+      // reader, including anonymous visitors and any request whose session
+      // hasn't resolved server-side. Those get the static reference chart
+      // (zoom / pan, no saved progress). The interactive, progress-saving
+      // viewer stays a signed-in upgrade — matching the free-tier rule that
+      // anonymous gets the full local Studio and sign-in adds sync.
+      if (!isSignedIn || !tutorialId || chartIndex === null) {
         return (
           <ReferenceChartView ariaLabel="Craft chart">
             <CraftChart definition={def} />
