@@ -19,10 +19,18 @@ function getPublicOrigin(req: NextRequest): string {
 }
 
 export async function POST(req: NextRequest) {
-  const formData = await req.formData()
+  const origin = getPublicOrigin(req)
+
+  // A non-form Content-Type (or an empty / malformed body) makes formData()
+  // throw. A bad request should land back on the unlock page, not a 500.
+  let formData: FormData
+  try {
+    formData = await req.formData()
+  } catch {
+    return NextResponse.redirect(`${origin}/unlock?error=1`, 303)
+  }
   const password = formData.get('password')
   const expected = process.env.SPLASH_PASSWORD
-  const origin = getPublicOrigin(req)
 
   if (expected && typeof password === 'string' && password === expected) {
     // 303 makes browsers do a GET on the redirect (correct for POST → page).

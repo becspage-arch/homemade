@@ -406,6 +406,23 @@
   white-space: pre-wrap;
 }
 
+/* ── Medical disclaimer (REMEDY / HERB_PROFILE / PRACTICE) ─────────────── */
+
+.tutorial-medical-disclaimer {
+  margin: 40px 0 0;
+  padding: 14px 16px;
+  border-left: 2px solid var(--color-sage);
+  background: var(--color-linen, #f5f1ea);
+}
+
+.tutorial-medical-disclaimer-text {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-warm-taupe);
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* ── About-this-recipe cluster (Beginner help + Errata) ────────────────── */
 
 .tutorial-about-cluster {
