@@ -1,0 +1,177 @@
+{
+  "slug": "beigli-hungarian-walnut",
+  "title": "Walnut beigli",
+  "subtitle": "Hungarian festive pastry rolls filled with a sweet walnut and spice paste",
+  "excerpt": "Beigli are Hungarian celebration rolls baked at Christmas and Easter, filled with a thick paste of ground walnuts, sugar, and spices. The filling is cooked briefly with milk until it holds together, cooled completely, then spread on a thin dough that is rolled and sealed. The logs bake to a mahogany glaze.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Beigli (also written bejgli) is a traditional Hungarian and Central European pastry strongly associated with Christmas and Easter. Both walnut and poppy seed fillings are canonical; the walnut version is the more widespread in Hungary. The recipe is documented across Hungarian culinary literature and cookery heritage sources.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "2 large rolls (about 24 slices)",
+    "prepMinutes": 45,
+    "cookMinutes": 35,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze cooled, whole rolls wrapped tightly. Thaw overnight in the fridge. Slice the next day.",
+    "batchable": true,
+    "batchNotes": "Doubles cleanly. Make more rolls in the same oven time.",
+    "makeAheadNotes": "Beigli keep for 5 to 7 days in an airtight container at room temperature. The filling softens the pastry slightly as it sits, which many consider an improvement.",
+    "dietaryFlags": [],
+    "cuisine": "hungarian",
+    "mealType": "dessert",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 400,
+      "hydrationPercent": 40,
+      "saltPercent": 1.25,
+      "yeastPercent": 1.75,
+      "levainPercent": null,
+      "bulkFermentMinutes": 30,
+      "proofMinutes": 30,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 190,
+      "bakeTemperatureNote": "Conventional oven, 190 degrees Celsius. Fan oven: 175 degrees Celsius. Brush with egg wash halfway through baking for the characteristic cracked, dark glaze.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "beigli-filling",
+      "term": "Beigli filling",
+      "definition": "The cooked walnut paste that fills beigli: ground walnuts mixed with sugar, milk, and spices and cooked briefly until the mixture is thick enough to hold its shape when spread. It must cool completely before the dough is rolled around it; warm filling makes the dough wet and hard to seal."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The key to a beigli that rolls without cracking is cold "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "beigli-filling" } }],
+            "text": "beigli filling"
+          },
+          {
+            "type": "text",
+            "text": " and thin dough. Make the filling first; it needs to be fully cool and firm before you spread it. The dough is enriched and slightly sweet; it should be rolled to about 3 mm."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The walnut filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            { "ingredientSlug": "walnuts", "amount": 250, "unit": "g", "prepNote": "ground finely in a food processor", "isOptional": false },
+            { "ingredientSlug": "whole-milk", "amount": 80, "unit": "ml", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "soft-brown-sugar", "amount": 120, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "lemon", "amount": 0.5, "unit": "item", "prepNote": "zest only", "isOptional": false },
+            { "ingredientSlug": "raisins", "amount": 50, "unit": "g", "prepNote": null, "isOptional": true }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine all the filling ingredients in a saucepan. Cook over medium heat, stirring, for 3 to 4 minutes until the mixture thickens to a paste that pulls away from the sides of the pan. Spread onto a plate, cover, and refrigerate until completely cold."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The dough" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "caster-sugar", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "sea-salt-fine", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "whole-milk", "amount": 100, "unit": "ml", "prepNote": "warm", "isOptional": false },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "item", "prepNote": "plus 1 for egg wash", "isOptional": false },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "softened", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Mix the flour, yeast, sugar, and salt. Add the warm milk and 2 eggs and bring together into a soft dough. Add the softened butter and knead for 8 to 10 minutes until smooth. Cover and leave for 30 minutes." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Divide the dough into two equal pieces. Roll each piece on a lightly floured surface into a rectangle roughly 30 x 20 cm and about 3 mm thick." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Spread half the cold walnut filling across each rectangle, leaving a 1 cm border on all sides. Roll each rectangle up tightly from the long edge, keeping the filling even. Pinch the ends and the seam firmly to seal." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Place the rolls seam-side down on a lined baking tray. Brush with beaten egg and leave to proof for 30 minutes. Brush again with egg before baking. Bake at 190 degrees Celsius for 30 to 35 minutes until deep golden. The surface will crack; this is characteristic of beigli." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

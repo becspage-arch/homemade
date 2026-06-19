@@ -1,0 +1,196 @@
+{
+  "slug": "fraisier-patisserie",
+  "title": "Fraisier",
+  "subtitle": "The classic French patisserie with genoise sponge, mousseline cream, and whole strawberries",
+  "excerpt": "A fraisier is a French patisserie cake built in a ring: genoise sponge on the base, whole strawberries pressed against the inside of the ring so the cut sides face outward, mousseline cream filling the gaps, and a second sponge lid on top. The pattern of strawberry halves visible at the side is the defining feature.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pastries",
+  "difficulty": "ADVANCED",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Fraisier is a classic of French patisserie, documented in professional confectionery manuals and widely taught in French pastry schools. The name comes from fraise (strawberry). The essential components are genoise sponge, mousseline cream, and strawberries; the layer of marzipan or mirror glaze on top varies by patisserie.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 60,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 180,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble the day before and chill overnight. Add the finishing decoration (marzipan disc or icing sugar) on the day of serving.",
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 150,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 200,
+      "bakeTemperatureNote": "Genoise sponge only. Conventional oven, 200 degrees Celsius. Fan oven: 185 degrees Celsius. Bake for 18 to 22 minutes.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "round-cake-tin-20", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mousseline-cream",
+      "term": "Mousseline cream",
+      "definition": "Creme patissiere beaten with softened butter to make a lighter, richer filling. The butter must be the same temperature as the pastry cream (both at around 20 degrees Celsius) when they are combined; a large temperature difference causes the cream to split."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A fraisier is assembled inside a ring mould and relies on the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mousseline-cream" } }],
+            "text": "mousseline cream"
+          },
+          {
+            "type": "text",
+            "text": " being pipe-able and firm enough to hold the strawberries in place while the cake chills. Make the genoise and the creme patissiere on the same day, chill the pastry cream, then beat in the butter just before assembling."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The genoise sponge" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "item", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "caster-sugar", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "plain-flour", "amount": 150, "unit": "g", "prepNote": "sifted", "isOptional": false },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": "melted and cooled", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Whisk the eggs and sugar over a bain-marie until the mixture is warm (about 40 degrees Celsius) and the sugar has dissolved. Remove from heat and whisk on high speed until the mixture is pale, tripled in volume, and falls in thick ribbons from the whisk. Fold in the flour in three additions, then fold in the melted butter. Bake in a greased 20 cm tin at 200 degrees Celsius for 18 to 22 minutes. Cool completely, then slice into two even layers."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The mousseline cream" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            { "ingredientSlug": "whole-milk", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "egg-yolks", "amount": 4, "unit": "item", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "caster-sugar", "amount": 120, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "cornflour", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "vanilla-extract", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "unsalted-butter", "amount": 200, "unit": "g", "prepNote": "softened, at room temperature", "isOptional": false },
+            { "ingredientSlug": "strawberries", "amount": 500, "unit": "g", "prepNote": "hulled; halve half of them for the ring, leave the rest whole", "isOptional": false },
+            { "ingredientSlug": "kirsch", "amount": 2, "unit": "tbsp", "prepNote": "for soaking the sponge; optional", "isOptional": true }
+          ]
+        }
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Make creme patissiere: whisk the yolks, sugar, and cornflour in a bowl. Heat the milk and vanilla to steaming. Pour onto the yolk mixture, return to the saucepan, and cook over medium heat, stirring constantly, until very thick and bubbling. Press cling film directly onto the surface and refrigerate until completely cold." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Beat the cold creme patissiere until smooth. Beat in the softened butter a little at a time until the mixture is pale and creamy. The cream will look curdled at first; keep beating." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Assembly" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Place a 20 cm ring mould or springform tin (sides only) on a plate or board. Lay the first sponge layer inside. Brush with kirsch syrup if using." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Press the halved strawberries, cut side outward, all the way around the inside of the ring, fitting them tightly together. Pipe or spoon mousseline cream to fill the spaces between the strawberries and across the centre of the sponge. Place whole strawberries in the cream interior, then pipe more cream over to cover." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Place the second sponge layer on top and press gently. Chill for at least 3 hours. To unmould, run a thin knife around the inside of the ring and lift it straight up. Decorate the top with icing sugar, a thin marzipan disc, or reserved strawberries." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

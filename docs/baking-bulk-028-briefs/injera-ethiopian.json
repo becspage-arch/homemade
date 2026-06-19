@@ -1,0 +1,196 @@
+{
+  "slug": "injera-ethiopian",
+  "title": "Injera",
+  "subtitle": "The sour, spongy Ethiopian flatbread fermented for two to three days",
+  "excerpt": "Injera ferments for two to three days before a drop hits the pan. The wild bacteria in the starter produce the characteristic sourness and thousands of small holes that make injera soft and absorbent. Teff flour is traditional; buckwheat flour gives a very close result where teff is hard to find.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Injera is the staple flatbread of Ethiopia and Eritrea. Traditional fermentation uses a teff-flour sourdough starter called ersho. The technique described here follows methods documented in Ethiopian cookery publications and draws on the wider published record of injera preparation outside Ethiopia, including the use of accessible grain substitutes for UK bakers.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "4 to 6 large injera",
+    "prepMinutes": 30,
+    "cookMinutes": 60,
+    "restingMinutes": null,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Stack cooled injera with baking paper between each. Freeze in a bag for up to 2 months. Thaw at room temperature for 30 minutes.",
+    "batchable": true,
+    "batchNotes": "Scale flour and water proportionally. The starter culture does not need to increase with the batch.",
+    "makeAheadNotes": "The batter must ferment 2 to 3 days before cooking. Cook injera on the day; it dries out within 24 hours.",
+    "dietaryFlags": ["vegan", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "ethiopian",
+    "mealType": "side",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 300,
+      "hydrationPercent": 200,
+      "saltPercent": 1.7,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": 2880,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": null,
+      "bakeTemperatureNote": "Cooked in a dry, covered non-stick or cast-iron pan over medium heat. No oil is used.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    { "slug": "cast-iron-skillet", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ersho-injera",
+      "term": "Ersho",
+      "definition": "The wild sourdough starter used in traditional Ethiopian injera-making. It ferments teff flour and water over several days, developing wild yeast and bacteria. A small portion of the previous batch's fermented batter, reserved before cooking, serves the same role in subsequent batches."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Injera ferments for two to three days before it touches the pan. The wild bacteria in the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ersho-injera" } }],
+            "text": "ersho"
+          },
+          {
+            "type": "text",
+            "text": " starter produce the sourness and the thousands of small holes that form across the surface during cooking. Teff flour is the traditional grain and gives a darker colour and earthier flavour; buckwheat flour is the closest widely available substitute in the UK."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            { "ingredientSlug": "buckwheat-flour", "amount": 300, "unit": "g", "prepNote": "or teff flour for the traditional flavour", "isOptional": false },
+            { "ingredientSlug": "water", "amount": 600, "unit": "ml", "prepNote": "at room temperature, divided (400 ml for the ferment, 200 ml to thin before cooking)", "isOptional": false },
+            { "ingredientSlug": "sea-salt-fine", "amount": 5, "unit": "g", "prepNote": "added on the day of cooking", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Starting the ferment" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Combine 300 g of flour with 400 ml of water in a large bowl. Stir until smooth. Cover loosely with a cloth; do not seal airtight. Leave at room temperature (18 to 24 degrees Celsius) for 24 hours." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "After 24 hours, stir the batter. It should smell faintly sour. Continue for a further 24 to 48 hours. The batter is ready when the surface holds small bubbles and the smell is clearly sour but not harsh." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Reserve 4 tablespoons of fermented batter before adding the salt; this becomes your starter for the next batch. Add the remaining 200 ml of water and the salt to the bowl, stir well, and rest for 30 minutes." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Cooking the injera" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Heat a large cast-iron skillet or non-stick pan over medium heat. Add no oil. The pan is ready when a drop of batter sizzles and sets immediately on contact rather than sliding around." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Pour about 150 ml of batter into the centre and swirl the pan to spread it in a thin, even circle, working outward from the centre. The batter should reach 28 to 30 cm in diameter." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Cover the pan with a lid. Cook for 2 to 3 minutes without flipping. The injera is ready when the entire surface is set and covered in holes, and the edges have begun to lift from the pan." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Slide the injera onto a clean cloth or plate, sponge side up. Repeat with the remaining batter. Injera cooks only on one side; the sponge surface faces up when served." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "type": "tip", "title": "Using your reserved starter" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Store the reserved fermented batter in a jar in the fridge for up to 1 week. For the next batch, mix it with fresh flour and water (same proportions), and fermentation will be complete in about 24 hours rather than two to three days."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

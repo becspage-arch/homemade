@@ -1,0 +1,167 @@
+{
+  "slug": "flan-parisien",
+  "title": "Flan Parisien",
+  "subtitle": "The thick, wobbly Parisian custard tart with a dark-blistered top",
+  "excerpt": "Flan Parisien is a thick custard tart with deliberate dark spots on the surface from baking at high heat. It is deeper and less sweet than a classic Portuguese custard tart and has no spice. The custard is made from a cooked pastry cream (creme patissiere) rather than a raw custard, which gives it a more set, sliceable texture.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Flan Parisien (also called flan patissier or Paris flan) is a staple of French boulangeries and patisseries. It differs from a standard egg custard tart in using a cooked, thickened custard base (creme patissiere) rather than a raw egg and cream mixture, producing a firmer, sliceable interior. The dark blister spots on the top are characteristic and intentional.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "restingMinutes": 20,
+    "chillingMinutes": 180,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the day before; the flan slices more cleanly when fully cold. Keep refrigerated for up to 3 days.",
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 180,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "Conventional oven, 180 degrees Celsius. Fan oven: 165 degrees Celsius. Higher temperature for the last 10 minutes brings the dark surface blisters.",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "springform-tin", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "flan-parisien-char",
+      "term": "Flan surface char",
+      "definition": "The dark, blistered spots across the top of a flan Parisien are a deliberate and characteristic feature, not a sign of burning. They come from baking the thickened custard at high heat. A pale, uniformly cream-coloured surface suggests the flan was under-baked or the heat was too low."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flan Parisien uses a pre-cooked custard base poured into a pastry case and baked until the surface takes on characteristic "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "flan-parisien-char" } }],
+            "text": "flan surface char"
+          },
+          {
+            "type": "text",
+            "text": ". The filling is denser and more sliceable than a quiche-style custard; it holds its shape at room temperature and cuts cleanly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The pastry case" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 180, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "unsalted-butter", "amount": 90, "unit": "g", "prepNote": "cold, cubed", "isOptional": false },
+            { "ingredientSlug": "icing-sugar", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "egg-yolks", "amount": 1, "unit": "item", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "water", "amount": 2, "unit": "tbsp", "prepNote": "ice-cold", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rub the butter into the flour and icing sugar until the mixture resembles fine crumbs. Mix in the yolk and cold water to bring the dough together. Chill for 30 minutes. Line a 20 cm springform tin with the pastry, bringing it 4 to 5 cm up the sides. Blind bake at 180 degrees Celsius for 20 minutes with baking beans, then remove the beans and bake for a further 5 minutes. The pastry does not need to be fully crisp at this stage."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "The filling" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            { "ingredientSlug": "whole-milk", "amount": 700, "unit": "ml", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "double-cream", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "egg-yolks", "amount": 4, "unit": "item", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "item", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "caster-sugar", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "cornflour", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "vanilla-pod", "amount": 1, "unit": "item", "prepNote": "split and scraped", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Heat the milk, cream, and vanilla pod with seeds until steaming. Whisk the yolks, whole eggs, sugar, and cornflour together in a bowl until smooth. Pour the hot milk mixture slowly onto the egg mixture, whisking constantly." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Return the mixture to the saucepan and cook over medium heat, stirring constantly, until the cream thickens significantly and starts to bubble. This will take 5 to 8 minutes. Remove from heat, remove the vanilla pod, and pour immediately into the pastry case." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Bake at 180 degrees Celsius for 30 to 35 minutes until the top is set and has dark blistered patches across the surface. Cool completely in the tin, then chill for at least 3 hours before unmoulding and slicing." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
