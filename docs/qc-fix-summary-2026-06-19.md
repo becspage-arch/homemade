@@ -78,3 +78,94 @@ SKIPPED: 0
 |---|---:|
 | content-type-opening-mismatch | 5 |
 | opening-pattern-missing-hook | 4 |
+
+
+---
+
+## Run at 17:26:46
+
+Generated: 2026-06-19T17:26:46.290Z
+
+Processed: 78
+PASS: 40
+STILL_BLOCKED: 38
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 114 |
+| opening-pattern-missing-hook | 37 |
+| content-type-opening-mismatch | 35 |
+| grade-level-strict | 11 |
+| ingredient-amount-missing | 6 |
+| medical-disclaimer-nonstandard | 3 |
+
+## Still BLOCKED (sample 20)
+
+- almond-and-cherry-cake: hero-missing
+- cake-stencilling-technique: hero-missing
+- coffee-walnut-traybake: hero-missing
+- dundee-cake: hero-missing
+- earl-grey-tea-cake: hero-missing
+- fault-line-cake-technique: hero-missing
+- fregolata: hero-missing
+- geode-cake-technique: hero-missing
+- hazelnut-meringue-layer-cake: hero-missing
+- hokkaido-milk-bread: hero-missing
+- honeycomb-cinder-toffee: hero-missing
+- kouign-amann: hero-missing
+- lebkuchen: hero-missing
+- leek-and-bacon-tart: hero-missing
+- malted-brown-loaf: hero-missing
+- marmalade-loaf-cake: hero-missing
+- pain-au-chocolat: hero-missing
+- pain-de-campagne: hero-missing, opening-pattern-missing-hook
+- paris-brest: hero-missing
+- pear-and-almond-cake: hero-missing
+
+---
+
+## Run at 17:28:50
+
+Generated: 2026-06-19T17:28:50.830Z
+
+Processed: 40
+PASS: 40
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 18:20:46
+
+Generated: 2026-06-19T18:20:46.395Z
+
+Processed: 42
+PASS: 38
+STILL_BLOCKED: 4
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 37 |
+| opening-pattern-missing-hook | 34 |
+| grade-level-strict | 9 |
+| prose-prep-steps | 9 |
+| historical-century-in-body | 1 |
+
+## Still BLOCKED (sample 20)
+
+- calzone-ricotta-e-salame: grade-level-strict
+- caponata: prose-prep-steps
+- pasta-e-ceci: prose-prep-steps
+- ribollita: prose-prep-steps
