@@ -482,10 +482,13 @@ export default async function TutorialPage({ params }: PageProps) {
     />
   ) : null
 
-  const showRails = Boolean(currentUser)
-  const leftRail = showRails ? <StickyToc /> : null
+  // The table of contents is navigation — show it to everyone, signed in or
+  // not (StickyToc self-hides when the body has no headings). Only the
+  // project companion (right rail) stays signed-in + in-progress; an empty
+  // placeholder reserves the column otherwise so the body stays centred.
+  const leftRail = <StickyToc />
   const rightRail =
-    showRails && inProgressId && project ? (
+    inProgressId && project ? (
       <ProjectCompanion
         projectId={inProgressId}
         supplies={supplies}
@@ -493,9 +496,9 @@ export default async function TutorialPage({ params }: PageProps) {
         initialNotes={project.notes}
         beginnerMode={beginnerMode}
       />
-    ) : showRails ? (
+    ) : (
       <div /> // placeholder so the right column reserves space
-    ) : null
+    )
 
   const canReview =
     Boolean(currentUser) &&
@@ -627,7 +630,7 @@ export default async function TutorialPage({ params }: PageProps) {
 
       <details className="tutorial-about-cluster">
         <summary className="tutorial-about-cluster-summary">
-          About this recipe
+          {aboutClusterLabel(tutorial.type)}
         </summary>
         <div className="tutorial-about-cluster-body">
           {beginnerMode && (
@@ -843,6 +846,33 @@ export default async function TutorialPage({ params }: PageProps) {
       })()}
     </CookingModeShell>
   )
+}
+
+/**
+ * Type-aware label for the collapsible "About this …" footer cluster.
+ * The cluster used to be hardcoded "About this recipe", which read wrong on
+ * a knitting technique or a growing guide.
+ */
+function aboutClusterLabel(type: TutorialType): string {
+  switch (type) {
+    case TutorialType.RECIPE:
+    case TutorialType.REMEDY:
+      return 'About this recipe'
+    case TutorialType.TECHNIQUE:
+    case TutorialType.STITCH:
+      return 'About this technique'
+    case TutorialType.GROWING_GUIDE:
+      return 'About this guide'
+    case TutorialType.PRACTICE:
+    case TutorialType.READING:
+      return 'About this practice'
+    case TutorialType.PATTERN:
+      return 'About this pattern'
+    case TutorialType.HERB_PROFILE:
+      return 'About this herb'
+    default:
+      return 'About this tutorial'
+  }
 }
 
 function countWords(body: TipTapNode | null): number {

@@ -1,12 +1,18 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
 import { prisma, Visibility, parsePatternData, estimateSkeinCount } from '@homemade/db'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
+import { buildBreadcrumbSchema } from '@/lib/seo/schema-builders'
+import { JsonLd } from '@/components/seo/json-ld'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import './pattern-detail.css'
 
 export const dynamic = 'force-dynamic'
+
+// Countries that default to US Letter rather than A4 for printed charts.
+const LETTER_PAPER_COUNTRIES = new Set(['US', 'CA', 'MX', 'PH'])
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -71,8 +77,32 @@ export default async function PatternDetailPage({ params }: PageProps) {
     },
   })
 
+  const h = await headers()
+  const cc = (h.get('cf-ipcountry') ?? h.get('x-vercel-ip-country') ?? '').toUpperCase()
+  const paper = LETTER_PAPER_COUNTRIES.has(cc) ? 'letter' : 'a4'
+
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Cross-stitch', href: '/cross-stitch' },
+    { name: 'Patterns', href: '/cross-stitch/patterns' },
+    { name: row.name, href: `/cross-stitch/patterns/${slug}` },
+  ])
+  const patternSchema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: row.name,
+    genre: 'Cross-stitch pattern',
+    url: `/cross-stitch/patterns/${slug}`,
+    image: patternHeroUrl({ id: row.id, hero: row.hero }, 'hero'),
+    ...(row.description ? { description: row.description } : {}),
+    ...(row.designer
+      ? { author: { '@type': 'Person', name: row.designer.displayName } }
+      : {}),
+  }
+
   return (
     <article className="pattern-detail">
+      <JsonLd data={[patternSchema, breadcrumbSchema]} />
       <nav className="pattern-detail-breadcrumb">
         <Link href="/cross-stitch">Cross-stitch</Link>
         <span>·</span>
@@ -106,8 +136,8 @@ export default async function PatternDetailPage({ params }: PageProps) {
             <Link href={`/studio/cross-stitch?patternId=${row.id}`} className="pattern-detail-action primary">
               Stitch this pattern
             </Link>
-            <a href={`/api/studio/patterns/${row.id}/pdf?paper=a4`} className="pattern-detail-action ghost">
-              Download PDF
+            <a href={`/api/studio/patterns/${row.id}/pdf?paper=${paper}`} className="pattern-detail-action ghost">
+              Download PDF ({paper === 'letter' ? 'US Letter' : 'A4'})
             </a>
           </div>
 
