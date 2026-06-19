@@ -1,5 +1,5 @@
 /**
- * phase_needlework_pipeline_setup_001 — flip needlework READY.
+ * phase_needlework_pipeline_setup_001 — needlework pipeline-setup standards.
  *
  * Sets:
  *   Category.needlework.targetTutorialCount    = 4000
@@ -7,8 +7,14 @@
  *                                                10 master author prompts
  *   Category.needlework.criticalTechniques[]   = must-know prerequisites
  *   Category.needlework.aliases[]              = search synonyms
- *   Category.needlework.pipelineStatus         = READY
  *   Category.needlework.isPublicVisible        = true
+ *
+ * Does NOT touch pipelineStatus. This script runs on every deploy, so
+ * forcing READY here re-armed the autopilot gate each rollout and undid
+ * any pause. The gate is now owned by the per-category sign-off flow and
+ * the admin Ready/Paused toggle (/admin/system/autopilot). Until needlework
+ * clears its sign-off it stays PAUSED; this step only re-asserts the
+ * authoring standards (techniques, aliases, targets, sub-cat flags).
  *
  *   SubCategory.autopilotEnabled per discipline:
  *     foundations         = true
@@ -334,7 +340,7 @@ async function main(): Promise<void> {
 
   if (DRY_RUN) {
     console.log('[flip] would set Category.needlework:')
-    console.log('  pipelineStatus           = READY')
+    console.log('  pipelineStatus           = (left untouched — owned by sign-off + admin toggle)')
     console.log('  targetTutorialCount      = ' + TARGET_TUTORIAL_COUNT)
     console.log('  techniqueSlugs count     = ' + TECHNIQUE_SLUGS.length)
     console.log('  criticalTechniques count = ' + CRITICAL_TECHNIQUES.length)
@@ -352,7 +358,9 @@ async function main(): Promise<void> {
   const after = await prisma.category.update({
     where: { slug: 'needlework' },
     data: {
-      pipelineStatus: 'READY',
+      // pipelineStatus intentionally NOT set — see header. The gate is
+      // managed by sign-off + the admin Ready/Paused toggle, not forced
+      // on every deploy.
       targetTutorialCount: TARGET_TUTORIAL_COUNT,
       techniqueSlugs: TECHNIQUE_SLUGS,
       criticalTechniques: CRITICAL_TECHNIQUES,

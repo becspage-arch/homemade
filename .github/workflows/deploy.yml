@@ -176,14 +176,16 @@ jobs:
 
       # Needlework pipeline-setup (phase_needlework_pipeline_setup_001).
       # Sets Category.needlework targetTutorialCount, techniqueSlugs,
-      # criticalTechniques, aliases, isPublicVisible, pipelineStatus
-      # READY; flips SubCategory.autopilotEnabled per discipline (7 true,
-      # 3 false for specialist curation). Idempotent: re-runs every
-      # deploy so the canonical values in the script remain the source
-      # of truth. Depends on the migration step above having added
-      # SubCategory.autopilotEnabled and Category.techniqueSlugs /
-      # criticalTechniques / aliases columns.
-      - name: Flip needlework READY + pipeline-setup standards (idempotent)
+      # criticalTechniques, aliases, isPublicVisible; flips
+      # SubCategory.autopilotEnabled per discipline (7 true, 3 false for
+      # specialist curation). Does NOT set pipelineStatus — the autopilot
+      # gate is owned by the per-category sign-off flow + the admin
+      # Ready/Paused toggle, so this step no longer re-arms READY on every
+      # deploy. Idempotent: re-runs every deploy so the canonical author
+      # standards in the script remain the source of truth. Depends on the
+      # migration step above having added SubCategory.autopilotEnabled and
+      # Category.techniqueSlugs / criticalTechniques / aliases columns.
+      - name: Assert needlework pipeline-setup standards (idempotent)
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
