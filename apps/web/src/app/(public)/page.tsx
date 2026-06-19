@@ -3,6 +3,7 @@ import { HomeCard } from '@/components/public/home-card'
 import { HomeRail } from '@/components/public/home-rail'
 import { OnboardingCard } from '@/components/public/onboarding-card'
 import { DiscoveryFeed, type DiscoveryItem } from '@/components/public/discovery-feed'
+import { PatternResumeCard } from '@/components/public/pattern-resume-card'
 import { CategoryImageTiles } from '@/components/public/category-image-tiles'
 import { HeroOverlay } from '@/components/public/home-cards/hero-overlay'
 import { ScheduledActionCard } from '@/components/public/home-cards/scheduled-action-card'
@@ -162,7 +163,8 @@ export default async function HomePage() {
         </HomeRail>
       )}
 
-      {data.continueMaking.length > 0 && (
+      {(data.continueMaking.length > 0 ||
+        data.continueMakingPatterns.length > 0) && (
         <HomeRail
           heading="Continue where you left off"
           seeAllHref="/me/projects"
@@ -174,6 +176,9 @@ export default async function HomePage() {
               tutorial={t}
               state={readerStateFor(data.readerState, t.id)}
             />
+          ))}
+          {data.continueMakingPatterns.map((p) => (
+            <PatternResumeCard key={`pat-${p.id}`} pattern={p} />
           ))}
         </HomeRail>
       )}

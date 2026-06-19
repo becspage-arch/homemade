@@ -32,6 +32,7 @@ interface PatternLayoutProps {
     hasFrenchKnots?: '1'
     yarnWeight?: string
   }
+  currentUserId: string | null
 }
 
 const SIZE_RANGES: Record<string, { maxCells: number }> = {
@@ -99,7 +100,7 @@ const STUDIO_CTAS: Record<string, { primary?: { label: string; href: string }; s
   sewing: {},
 }
 
-export async function PatternLayout({ category, searchParams }: PatternLayoutProps) {
+export async function PatternLayout({ category, searchParams, currentUserId }: PatternLayoutProps) {
   const sp = searchParams
   const patternType = PATTERN_TYPE_BY_SLUG[category.slug]
 
@@ -272,6 +273,21 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
     if (sp.maxColour && p.colourCount > Number(sp.maxColour)) return false
     return true
   })
+
+  // Make-it-list saved state for the visible patterns (signed-in readers).
+  const savedPatternIds = currentUserId
+    ? new Set(
+        (
+          await prisma.savedPattern.findMany({
+            where: {
+              userId: currentUserId,
+              patternId: { in: filtered.map((p) => p.id) },
+            },
+            select: { patternId: true },
+          })
+        ).map((s) => s.patternId),
+      )
+    : new Set<string>()
 
   const suggestions = SEARCH_SUGGESTIONS[category.slug]
   const studioCtas = STUDIO_CTAS[category.slug] ?? {}
@@ -513,6 +529,7 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
                 subCategorySlug: p.subCategory?.slug ?? null,
                 subCategoryName: p.subCategory?.name ?? null,
                 thumbnailUrl: patternHeroUrl({ id: p.id, hero: p.hero, thumbnail: p.thumbnail }, 'card'),
+                saved: savedPatternIds.has(p.id),
               }))}
               subCategories={category.subCategories.map((s) => ({
                 slug: s.slug,

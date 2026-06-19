@@ -72,6 +72,17 @@ export interface HomepageScheduledAction {
   nextScheduledAt: Date
 }
 
+// In-progress pattern (from UserPatternProgress) shaped for the resume rail.
+// Patterns live in a separate progress system from tutorials, so they carry
+// their own minimal card shape and route to the right Studio by type.
+export interface ContinueMakingPattern {
+  id: string
+  slug: string | null
+  name: string
+  type: string
+  hero: { cloudflareId: string | null; r2Key: string | null } | null
+}
+
 export interface HomepageData {
   currentUser: User | null
   isOnboardingPending: boolean
@@ -80,6 +91,7 @@ export interface HomepageData {
   // Rails (each may be empty — caller skips empty rails).
   todaysScheduledActions: HomepageScheduledAction[]
   continueMaking: TutorialCardSelect[]
+  continueMakingPatterns: ContinueMakingPattern[]
   inSeasonNow: TutorialCardSelect[]
   thisWeeksEditorialPicks: TutorialCardSelect[]
   savedNotStarted: TutorialCardSelect[]
@@ -390,6 +402,35 @@ export async function loadHomepageData(
       .catch(() => undefined)
   }
 
+  // In-progress patterns (separate progress system) join the resume rail.
+  const patternProgressRows = currentUser
+    ? await prisma.userPatternProgress.findMany({
+        where: { userId: currentUser.id, completedAt: null },
+        orderBy: { lastStitchedAt: 'desc' },
+        take: 6,
+        select: {
+          pattern: {
+            select: {
+              id: true,
+              slug: true,
+              name: true,
+              type: true,
+              hero: { select: { cloudflareId: true, r2Key: true } },
+            },
+          },
+        },
+      })
+    : []
+  const continueMakingPatterns: ContinueMakingPattern[] = patternProgressRows.map(
+    (r) => ({
+      id: r.pattern.id,
+      slug: r.pattern.slug,
+      name: r.pattern.name,
+      type: r.pattern.type,
+      hero: r.pattern.hero,
+    }),
+  )
+
   return {
     currentUser,
     isOnboardingPending,
@@ -397,6 +438,7 @@ export async function loadHomepageData(
     themes,
     todaysScheduledActions,
     continueMaking: continueRows.map((p) => p.tutorial as TutorialCardSelect),
+    continueMakingPatterns,
     inSeasonNow,
     thisWeeksEditorialPicks,
     savedNotStarted,

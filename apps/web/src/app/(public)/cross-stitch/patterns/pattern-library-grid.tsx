@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Filter } from 'lucide-react'
+import { PatternSaveHeart } from '@/components/public/pattern-save-heart'
 
 interface PatternCard {
   id: string
@@ -23,6 +24,8 @@ interface PatternCard {
   subCategorySlug: string | null
   subCategoryName: string | null
   thumbnailUrl: string
+  /** Whether the signed-in reader has this pattern on their Make it list. */
+  saved: boolean
 }
 
 interface PatternLibraryGridProps {
@@ -180,12 +183,13 @@ function PatternCardItem({ pattern }: { pattern: PatternCard }) {
   const finishedH = (pattern.heightCells / pattern.fabricCountSuggested) * 2.54
   const detailHref = pattern.slug ? `/cross-stitch/patterns/${pattern.slug}` : `/studio/cross-stitch?patternId=${pattern.id}`
   return (
-    <li className="cross-stitch-library-card">
+    <li className="cross-stitch-library-card" style={{ position: 'relative' }}>
       <Link href={detailHref} className="cross-stitch-library-card-thumb">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={pattern.thumbnailUrl} alt="" loading="lazy" />
         {pattern.premium && <span className="cross-stitch-library-card-badge">Premium</span>}
       </Link>
+      <PatternSaveHeart patternId={pattern.id} initialSaved={pattern.saved} />
       <div className="cross-stitch-library-card-body">
         <h4 className="cross-stitch-library-card-name">
           <Link href={detailHref}>{pattern.name}</Link>

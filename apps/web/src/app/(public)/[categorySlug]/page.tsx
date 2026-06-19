@@ -115,6 +115,7 @@ function renderLayout({
         <PatternLayout
           category={category}
           searchParams={searchParams as never}
+          currentUserId={currentUserId}
         />
       )
     case 'SKILL':
