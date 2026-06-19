@@ -59,3 +59,22 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 16:54:00
+
+Generated: 2026-06-19T16:54:00.748Z
+
+Processed: 43
+PASS: 43
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 5 |
+| opening-pattern-missing-hook | 4 |

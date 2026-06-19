@@ -1,0 +1,700 @@
+{
+  "slug": "pain-de-campagne",
+  "title": "Pain de campagne",
+  "subtitle": "French country sourdough with an open crumb and crisp crust",
+  "excerpt": "Pain de campagne is a French country loaf leavened with a liquid levain and a blend of white and wholemeal flour. It has a moderately open crumb, a caramelised crust, and a mild tang. The dough needs four to five hours of bulk fermentation at room temperature, so plan accordingly.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Lionel Poilane's country bread tradition (documented in various French baking manuals, public domain). Elizabeth David (English Bread and Yeast Cookery, 1977). Calvel, Raymond (The Taste of Bread, 1990, widely cited in public-domain baking literature).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 round loaf (about 800 g)",
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze flat for up to 3 months. Refresh in a 180 degrees C oven for 8 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Build the levain 8 to 12 hours before you plan to mix the dough. Cold-proof the shaped loaf overnight in the refrigerator for a more developed flavour.",
+    "dietaryFlags": [
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "cuisine": "french",
+    "mealType": "side",
+    "mood": [
+      "weekendBake"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 72,
+      "saltPercent": 2,
+      "yeastPercent": null,
+      "levainPercent": 20,
+      "bulkFermentMinutes": 270,
+      "proofMinutes": 90,
+      "retardingMinutes": 480,
+      "levainBuildMinutes": 480,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 240,
+      "bakeTemperatureNote": "conventional oven; drop to 220 degrees C after 20 minutes when lid is removed",
+      "steamMethod": "Dutch oven with lid for first 20 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    {
+      "slug": "digital-scales",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "banneton",
+      "isOptional": false
+    },
+    {
+      "slug": "bench-scraper",
+      "isOptional": false
+    },
+    {
+      "slug": "cooling-rack",
+      "isOptional": false
+    },
+    {
+      "slug": "silicone-spatula",
+      "isOptional": true
+    },
+    {
+      "slug": "pastry-board",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "levain",
+      "term": "levain",
+      "definition": "A sourdough starter made from flour, water, and naturally occurring wild yeast. It is used in place of commercial yeast and gives bread a mild, complex flavour with a slightly open crumb."
+    },
+    {
+      "slug": "bulk-fermentation",
+      "term": "bulk fermentation",
+      "definition": "The first long rest after mixing, during which yeast ferments the dough and gluten develops. The dough increases in volume and builds flavour. Duration depends on temperature and the strength of the starter."
+    },
+    {
+      "slug": "stretch-and-fold",
+      "term": "stretch and fold",
+      "definition": "A technique used during bulk fermentation to develop gluten without intensive kneading. The dough is stretched upward and folded over itself, rotated 90 degrees, and repeated four times per set."
+    },
+    {
+      "slug": "scoring",
+      "term": "scoring",
+      "definition": "Cutting the surface of a shaped loaf with a blade or lame immediately before baking. The cuts control where the loaf expands in the oven and create the distinctive patterns on artisan bread."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pain de campagne is a French country loaf leavened with a liquid "
+          },
+          {
+            "type": "text",
+            "text": "levain",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "levain"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and built on a blend of white and wholemeal flour."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You get a moderately open crumb, a deeply caramelised crust, and a mild, pleasantly sour tang."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Watch the dough temperature: bulk fermentation runs 4 to 5 hours at around 24 degrees C, and a cold or warm kitchen will shift that window considerably."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredient",
+            "attrs": {
+              "ingredientSlug": "strong-bread-flour",
+              "amount": 425,
+              "unit": "g",
+              "prepNote": null
+            }
+          },
+          {
+            "type": "ingredient",
+            "attrs": {
+              "ingredientSlug": "wholemeal-bread-flour",
+              "amount": 75,
+              "unit": "g",
+              "prepNote": null
+            }
+          },
+          {
+            "type": "ingredient",
+            "attrs": {
+              "ingredientSlug": "water",
+              "amount": 360,
+              "unit": "ml",
+              "prepNote": "lukewarm, around 30 degrees C"
+            }
+          },
+          {
+            "type": "ingredient",
+            "attrs": {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": null
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Building the levain"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Eight to twelve hours before you plan to mix the main dough, build your "
+                  },
+                  {
+                    "type": "text",
+                    "text": "levain",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "levain"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": ". In a clean jar or small bowl, combine 20 g of your active sourdough starter with 40 g of strong white flour and 40 g of lukewarm water. Stir thoroughly until no dry flour remains, then cover loosely and leave at room temperature (ideally 22 to 24 degrees C)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The levain is ready when it has roughly doubled in volume, is domed on top, and smells pleasantly tangy rather than aggressively acidic. It should pass the float test: drop a small spoonful into a glass of water and it should float. If it sinks, give it another 30 to 60 minutes. If you cannot use it immediately once it has peaked, refrigerate it for up to 4 hours."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mixing the dough (autolyse and salt)"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the strong white flour and wholemeal flour in a large mixing bowl. Pour in 340 ml of the lukewarm water (reserve 20 ml for later). Mix with your hand or a silicone spatula until no dry flour remains. Cover the bowl and rest for 30 minutes. This autolyse period allows the flour to hydrate fully and starts gluten development without any kneading."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "After the autolyse, add the 100 g of active levain to the dough. Squeeze and fold it in using your fingers until fully incorporated. The dough may feel slippery at first; keep working it and it will come together in 2 to 3 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dissolve the salt in the reserved 20 ml of water, then add this to the dough. Squeeze and fold again until the salt is fully distributed and no salt crystals remain. The dough will feel somewhat sticky. Cover the bowl and let it rest for 30 minutes before starting the first fold."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bulk fermentation with stretch and fold"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "During "
+                  },
+                  {
+                    "type": "text",
+                    "text": "bulk fermentation",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "bulk-fermentation"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": ", perform four sets of "
+                  },
+                  {
+                    "type": "text",
+                    "text": "stretch and fold",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "stretch-and-fold"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " at 30-minute intervals during the first two hours. For each set: with wet hands, grab one side of the dough, stretch it upward until you feel resistance, then fold it over the centre of the dough. Rotate the bowl 90 degrees and repeat. Do this four times around the bowl. You have completed one set."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "After the four sets, leave the dough undisturbed for the remainder of the bulk fermentation (a further 1.5 to 2.5 hours, depending on your kitchen temperature). Bulk fermentation is complete when the dough has increased in volume by 50 to 75 percent, has a domed surface, and feels airy and slightly jiggly when you gently shake the bowl. Small bubbles should be visible at the sides and surface. At 24 degrees C this typically takes 4 to 4.5 hours total; at 20 degrees C, expect closer to 5 to 5.5 hours."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Do not rush bulk fermentation. An under-fermented dough will not hold its shape during scoring and will produce a dense, gummy crumb. An over-fermented dough will be slack and sticky and will collapse when scored."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Shaping"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lightly flour your work surface and the top of the dough. Use a bench scraper to turn the dough out onto the surface in one confident movement. Let it rest for 5 minutes so the gluten relaxes slightly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "To pre-shape: use the bench scraper and your other hand to drag the dough towards you across the surface, creating surface tension. Rotate the dough 90 degrees and drag again. Repeat until the dough has formed a rough round with a smooth, taut surface. Rest uncovered for 20 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "To final-shape for a round banneton: flour the top of the dough lightly. Flip it over so the floured side is down. Fold the top third down to the centre, then the bottom third up over that. Fold in the left and right sides. Now roll the dough towards you to form a tight ball, using the bench scraper to grip the work surface if needed. Place the dough seam-side up in a well-floured banneton."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cold proof"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover the banneton loosely with a plastic bag or shower cap and refrigerate for 8 to 14 hours (overnight is ideal). The cold slows fermentation and develops a more complex, layered flavour. It also firms the dough, making scoring easier and cleaner."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "You can bake the loaf straight from the refrigerator. There is no need to bring it to room temperature first; a cold dough scores more cleanly and holds its shape better in the early stages of baking."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Baking"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "At least 45 minutes before baking, place your Dutch oven (with its lid) in the oven and preheat to 240 degrees C. The vessel must be fully saturated with heat before the dough goes in."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut a square of baking parchment slightly larger than the base of your Dutch oven. Remove the loaf from the refrigerator and invert it onto the parchment so the seam is now on the bottom. You now have about 10 minutes before the dough starts to relax; score promptly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Using a lame or a very sharp, thin-bladed knife, score the surface of the dough. A single arc cut at 30 to 45 degrees to the surface is the traditional country loaf score. The angle allows the loaf to open and spring upward rather than tearing to the side. Aim for a depth of about 1 cm. Shallow scoring produces minimal oven spring; too deep and the loaf may collapse to one side."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Carefully remove the hot Dutch oven lid. Lower the parchment and dough into the pot using the paper as a sling. Replace the lid and return to the oven. Bake covered at 240 degrees C for 20 minutes. This trapped steam allows the crust to remain pliable while the loaf springs fully."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "After 20 minutes, remove the lid and reduce the oven temperature to 220 degrees C. Continue baking for a further 20 to 25 minutes. The loaf is done when the crust is a deep mahogany brown and the internal temperature reads 96 to 98 degrees C on an instant-read thermometer. Tap the base: it should sound hollow."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Transfer to a cooling rack and leave for a minimum of 1 hour before cutting. The crumb is still setting as the steam migrates outward; cutting too early produces a gummy interior."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The dough is very slack and spreading flat after shaping",
+              "avoid": "Avoid over-hydrating: if your flour absorbs water slowly, hold back 20 g of water from the mix and add it gradually only if the dough looks tight.",
+              "fix": "Check that bulk fermentation did not go too long. An over-proofed dough loses structure and cannot hold a shape. Next time, reduce bulk fermentation by 30 minutes and refrigerate the shaped loaf earlier."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The loaf did not spring in the oven and has a dense, pale crumb",
+              "avoid": "Avoid baking in a cold vessel. The Dutch oven must preheat for at least 45 minutes at full temperature or the crust sets before the dough has risen.",
+              "fix": "The dough was likely under-fermented. The levain may have been past its peak or the kitchen too cold. Ensure the levain has doubled and passes the float test before mixing."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Scoring tears rather than cuts cleanly",
+              "avoid": "Avoid scoring with a dull blade or pressing downward. A sharp lame or razor blade, held at an angle and drawn in a single confident stroke, produces a clean cut.",
+              "fix": "If the dough is sticking to the blade, very lightly dust the surface of the dough with flour before scoring, or wet the blade with water. A well-chilled dough (baked straight from the refrigerator) scores more cleanly than a room-temperature dough."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The crust is very thick and hard rather than crisp",
+              "avoid": "Avoid removing the loaf from the oven before the internal temperature reaches 96 degrees C, and avoid leaving it in a sealed container while warm.",
+              "fix": "A thick, hard crust is usually caused by insufficient steam during the first phase of baking. Ensure the Dutch oven lid fits snugly. After baking, cool the loaf on a rack in the open air; sealing it while warm traps moisture and softens the crust further."
+            }
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Scoring"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "The purpose of "
+              },
+              {
+                "type": "text",
+                "text": "scoring",
+                "marks": [
+                  {
+                    "type": "glossaryTooltip",
+                    "attrs": {
+                      "termSlug": "scoring"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "text": " is to control where the loaf opens as it bakes. Without a score, the dough bursts randomly, usually at a weak point on the side. The blade angle matters: hold it at 30 to 45 degrees to the surface (nearly flat) so the cut undercuts the dough and creates an ear as the loaf expands. A vertical cut produces a blowout rather than an ear."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

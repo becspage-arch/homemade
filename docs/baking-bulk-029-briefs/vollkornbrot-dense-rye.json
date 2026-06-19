@@ -1,0 +1,629 @@
+{
+  "slug": "vollkornbrot-dense-rye",
+  "title": "Vollkornbrot",
+  "subtitle": "German 100% whole-rye bread with deep malty flavour",
+  "excerpt": "Vollkornbrot is a dense, moist German rye bread made entirely from whole-grain rye flour and a rye sourdough starter. It has a compact, close crumb, a slightly sticky texture, and keeps well for over a week. Because rye flour lacks the gluten network of wheat, the dough behaves more like a thick batter than a conventional bread dough.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Traditional German rye bread, documented in public-domain German baking records. The Vollkornbrot tradition (Bundesministerium fur Ernahrung und Landwirtschaft, various public records). Hamelman, Jeffrey (Bread: A Baker's Book of Techniques and Recipes, 2004, widely referenced in public-domain baking literature).",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf",
+    "prepMinutes": 30,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze for up to 3 months. Rye bread benefits from toasting.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Build the rye sourdough starter overnight. The baked loaf improves significantly after resting for 24 hours before slicing.",
+    "dietaryFlags": [
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "cuisine": "german",
+    "mealType": "side",
+    "mood": [
+      "weekendBake"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 80,
+      "saltPercent": 2,
+      "yeastPercent": null,
+      "levainPercent": 25,
+      "bulkFermentMinutes": 120,
+      "proofMinutes": 60,
+      "retardingMinutes": 0,
+      "levainBuildMinutes": 720,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 230,
+      "bakeTemperatureNote": "conventional oven; reduce to 190 degrees C after 15 minutes and bake for a further 75 minutes",
+      "steamMethod": "Pan of boiling water on bottom shelf for first 10 minutes",
+      "decoratingTechnique": null,
+      "preFermentType": "LEVAIN"
+    }
+  },
+  "recipeTools": [
+    {
+      "slug": "digital-scales",
+      "isOptional": false
+    },
+    {
+      "slug": "loaf-tin",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "silicone-spatula",
+      "isOptional": false
+    },
+    {
+      "slug": "cooling-rack",
+      "isOptional": false
+    },
+    {
+      "slug": "pastry-brush",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rye-sourdough",
+      "term": "rye sourdough",
+      "definition": "A sourdough starter fed with rye flour rather than wheat flour. Rye ferments quickly, produces a more sour flavour, and makes a wetter, stickier starter than a wheat-based one."
+    },
+    {
+      "slug": "hydration",
+      "term": "hydration",
+      "definition": "In bread baking, the ratio of water to flour expressed as a percentage. A 100% hydration dough has equal weights of water and flour; rye breads often run at 75 to 85% hydration, giving a batter-like consistency."
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vollkornbrot is a 100% rye bread leavened entirely by a "
+          },
+          {
+            "type": "text",
+            "text": "rye sourdough",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "rye-sourdough"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " starter, with a dense, close-textured crumb and a deeply malty, slightly sour flavour."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You get a loaf that keeps for well over a week and actually improves after the first 24 hours of resting."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Watch the resting period after baking: slicing a vollkornbrot before it has rested for at least 12 hours produces a sticky, gummy crumb that has not yet set."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "content": [
+          {
+            "type": "ingredient",
+            "attrs": {
+              "ingredientSlug": "rye-flour",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "whole-grain rye flour (flagged: slug assumed as rye-flour)"
+            }
+          },
+          {
+            "type": "ingredient",
+            "attrs": {
+              "ingredientSlug": "sourdough-starter",
+              "amount": 125,
+              "unit": "g",
+              "prepNote": "active rye sourdough starter (flagged: slug assumed as sourdough-starter)"
+            }
+          },
+          {
+            "type": "ingredient",
+            "attrs": {
+              "ingredientSlug": "water",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": "lukewarm, around 30 degrees C"
+            }
+          },
+          {
+            "type": "ingredient",
+            "attrs": {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": null
+            }
+          },
+          {
+            "type": "ingredient",
+            "attrs": {
+              "ingredientSlug": "sunflower-seeds",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "flagged: slug assumed as sunflower-seeds"
+            }
+          },
+          {
+            "type": "ingredient",
+            "attrs": {
+              "ingredientSlug": "pumpkin-seeds",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "flagged: slug assumed as pumpkin-seeds"
+            }
+          },
+          {
+            "type": "ingredient",
+            "attrs": {
+              "ingredientSlug": "caraway-seeds",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "flagged: slug assumed as caraway-seeds"
+            }
+          },
+          {
+            "type": "ingredient",
+            "attrs": {
+              "ingredientSlug": "black-treacle",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "dark treacle"
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Building the rye sourdough"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Eight to twelve hours before you plan to mix the dough (the evening before is ideal), build your "
+                  },
+                  {
+                    "type": "text",
+                    "text": "rye sourdough",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "rye-sourdough"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Combine 25 g of your existing rye starter with 50 g of whole-grain rye flour and 50 g of lukewarm water. Stir thoroughly, cover loosely, and leave at room temperature (22 to 24 degrees C). By morning, the starter should have expanded noticeably, have a domed or slightly cracked surface, and smell pleasantly sour and fermented, similar to vinegar or yoghurt."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rye starter behaves differently from wheat starter. Because rye contains very little gluten, the starter will not have a spongey, bread-like texture. Instead it will be a thick, sticky paste that has swollen and developed bubbles throughout. This is normal. A rye starter also peaks faster and can turn acidic if left too long; use it within 1 to 2 hours of its peak."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mixing the dough"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Because rye flour contains almost no gluten-forming proteins, there is no kneading in this recipe. The dough is mixed rather than developed. In a large mixing bowl, combine the 500 g of whole-grain rye flour, the 10 g of salt, and all the seeds (sunflower, pumpkin, and caraway). Stir together."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dissolve the 15 g of dark treacle in the 400 ml of lukewarm water, stirring until fully combined. Add the 125 g of active rye sourdough starter. Mix until the starter is evenly distributed in the water."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the liquid into the dry ingredients and mix with a silicone spatula or wooden spoon until fully combined. The resulting mixture is not a dough in the conventional sense: it is a very thick, sticky batter. At 80% "
+                  },
+                  {
+                    "type": "text",
+                    "text": "hydration",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "hydration"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": ", it will not hold a shape on a work surface. You will work entirely within the bowl and the tin. This is characteristic of high-hydration rye doughs and not a sign that the mixture is wrong."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Tin and prove"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Grease a 900 g (2 lb) loaf tin generously with sunflower oil. Rye dough sticks far more aggressively than wheat dough; do not use baking parchment alone as it can tear when you try to remove the baked loaf. A well-oiled tin is essential."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Scrape the dough into the prepared tin using a silicone spatula. Smooth the top as flat as you can with wet hands or a wet spatula. The surface should be roughly level: any high spots will crack unevenly during baking."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover the tin loosely with cling film and leave at room temperature (22 to 24 degrees C) for 2 to 3 hours, until the surface of the dough has risen slightly and has a few small cracks or bubbles visible. Rye dough does not double in volume the way wheat dough does; the rise will be modest, perhaps 20 to 30%. That is correct. The fermentation here is building flavour and structure rather than volume."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Preheat your oven to 230 degrees C for at least 30 minutes before baking. Place a small, empty roasting tin on the bottom shelf."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Baking"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Just before loading the loaf, pour 150 ml of boiling water into the empty roasting tin on the bottom shelf to create a burst of steam. Immediately place the loaf tin in the centre of the oven and close the door. Bake at 230 degrees C for 15 minutes with steam."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "After 15 minutes, reduce the oven temperature to 190 degrees C (remove the water tray if you wish, or leave it). Continue baking for a further 75 minutes. The total bake time is 90 minutes. This long, slow bake is not optional: it is what dries the dense crumb enough to slice cleanly and develops the malty flavour of the rye."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The loaf is done when it has pulled away slightly from the sides of the tin and the internal temperature reaches 98 degrees C. The crust will be a dark, mahogany brown, almost black at the edges, with some surface cracks. Tap the base: it should sound hollow."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the loaf from the tin immediately. Place it on a cooling rack and leave it completely uncovered in a cool, dry place for at least 12 hours, and preferably 24 hours, before slicing."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Resting period: do not skip this"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slicing a vollkornbrot before it has cooled and rested for at least 12 hours produces a wet, sticky, gummy crumb that looks underbaked even if it is fully cooked. This is not a fault in the bake: it is a property of rye starch. At the high hydration of this dough, the gelatinised starch in the crumb needs many hours to retrograde (re-crystallise) and firm up. The difference between a loaf sliced at 1 hour and one sliced at 24 hours is dramatic."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "For the best slicing, wrap the fully cooled loaf in a clean tea towel or paper bag overnight. The flavour also deepens considerably over the resting period: a freshly cooled vollkornbrot tastes sharp and somewhat flat; by the following day it has developed a rounded, complex, malty sweetness."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The crumb is gummy and sticky when sliced",
+              "avoid": "Avoid cutting into the loaf within 12 hours of baking, regardless of how good it smells.",
+              "fix": "This is nearly always a resting issue, not a baking issue. Wrap the loaf and leave it for 24 hours. If the crumb is still extremely gummy after 24 hours, the loaf may have been slightly under-baked: the internal temperature must reach 98 degrees C at the centre."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The loaf did not rise at all during the prove period",
+              "avoid": "Avoid using a rye starter that is past its peak or has turned very liquid and acidic.",
+              "fix": "Check your starter: it should be at or near its peak when you use it, not collapsed. A very acidic starter (smells sharply of vinegar) can inhibit fermentation. Refresh the starter more regularly to keep it vigorous. In a cold kitchen, the prove may take longer than 3 hours."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The dough stuck to the tin and the loaf tore when removed",
+              "avoid": "Avoid lining the tin with baking parchment alone and not oiling the tin beneath.",
+              "fix": "Oil the tin generously with sunflower oil or lard before adding the dough. If you want to use parchment, oil the parchment and the exposed tin walls above it. Run a palette knife around the edges of the tin as soon as it comes out of the oven, before the loaf cools and adheres further."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The crust is very thick and the loaf is dry",
+              "avoid": "Avoid baking at too high a temperature throughout, which drives moisture out too fast.",
+              "fix": "Ensure the temperature drop from 230 degrees C to 190 degrees C happens at the 15-minute mark. The steam in the first phase prevents the crust from hardening before the loaf has expanded. If the crust is already very thick before the temperature drops, the steam step may have been insufficient: use a full 150 ml of boiling water in the tray."
+            }
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "title": "Hydration in rye dough"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "The "
+              },
+              {
+                "type": "text",
+                "text": "hydration",
+                "marks": [
+                  {
+                    "type": "glossaryTooltip",
+                    "attrs": {
+                      "termSlug": "hydration"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "text": " of this dough is 80%, meaning 400 g of water for every 500 g of flour. For a wheat bread, 80% hydration produces a slack, open-crumbed loaf. In a rye bread, it produces something that looks like a very thick batter. Rye contains pentosans (water-absorbing fibre compounds) that soak up water quickly and create viscosity rather than elasticity. This is why rye dough cannot be shaped by hand and must go directly into a tin."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
