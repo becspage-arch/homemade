@@ -203,7 +203,11 @@
 .home-rail-track {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(220px, 1fr);
+  /* Fixed-width columns (Netflix/Prime resume pattern). The previous
+     `minmax(220px, 1fr)` let a 2–3 card rail stretch each card across the
+     full row; bounding the max keeps cards a consistent thumbnail size and
+     the rail simply scrolls when there are more. */
+  grid-auto-columns: minmax(220px, 240px);
   gap: 12px;
   scroll-snap-type: x mandatory;
   padding-bottom: 4px;
@@ -701,6 +705,196 @@
   display: none;
 }
 
+/* ── DiscoveryFeed (Pinterest-style masonry wall) ──────────────────────── */
+
+.home-discovery {
+  padding: 24px 0;
+  border-top: 0.5px solid var(--color-linen-grey);
+}
+
+.home-discovery-masonry {
+  column-count: 4;
+  column-gap: 16px;
+  margin-top: 4px;
+}
+
+@media (max-width: 1200px) {
+  .home-discovery-masonry {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-discovery-masonry {
+    column-count: 2;
+    column-gap: 10px;
+  }
+  .home-discovery-item {
+    margin-bottom: 10px;
+  }
+}
+
+.home-discovery-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+}
+
+.home-discovery-more {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.home-discovery-more-link {
+  display: inline-block;
+  font-family: var(--font-lora);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--color-sage);
+  text-decoration: none;
+  border: 0.5px solid var(--color-sage);
+  border-radius: 999px;
+  padding: 10px 22px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.home-discovery-more-link:hover {
+  background: var(--color-sage);
+  color: var(--color-cream);
+}
+
+/* ── DiscoveryCard (a single tile in the wall) ─────────────────────────── */
+
+.discovery-card {
+  position: relative;
+}
+
+.discovery-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.discovery-card-image-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.discovery-card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.92);
+  background-color: var(--color-soft-parchment);
+  transition: transform 0.4s ease;
+}
+
+.discovery-card-link:hover .discovery-card-image {
+  transform: scale(1.02);
+}
+
+.discovery-card-image.procedural {
+  filter: none;
+  background-color: transparent;
+}
+
+/* Varied aspect ratios break the masonry rhythm so the wall reads as
+   curated rather than gridded. Applies to both tutorial tiles and the
+   community Pinterest tiles interleaved among them. */
+.home-discovery-item:nth-child(5n + 2) .discovery-card-image,
+.home-discovery-item:nth-child(5n + 2) .home-pinterest-card-image {
+  aspect-ratio: 1 / 1;
+}
+
+.home-discovery-item:nth-child(5n + 4) .discovery-card-image,
+.home-discovery-item:nth-child(5n + 4) .home-pinterest-card-image {
+  aspect-ratio: 3 / 4;
+}
+
+.home-discovery-item:nth-child(7n + 3) .discovery-card-image,
+.home-discovery-item:nth-child(7n + 3) .home-pinterest-card-image {
+  aspect-ratio: 5 / 6;
+}
+
+.home-discovery-item .home-pinterest-card-image {
+  aspect-ratio: 4 / 5;
+}
+
+.discovery-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 2px 0;
+}
+
+.discovery-card-overline {
+  font-family: var(--font-lora);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+.discovery-card-title {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.18;
+  color: var(--color-espresso);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── SaveHeart (save-on-hover overlay) ─────────────────────────────────── */
+
+.save-heart {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-burnt-sienna);
+  background: rgba(245, 240, 232, 0.92);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transition: opacity 0.15s ease, background-color 0.15s ease, transform 0.1s ease;
+}
+
+.discovery-card:hover .save-heart,
+.save-heart:focus-visible,
+.save-heart.active {
+  opacity: 1;
+}
+
+.save-heart:active {
+  transform: scale(0.92);
+}
+
+.save-heart:disabled {
+  cursor: default;
+}
+
+/* Touch devices have no hover — show the heart so saving is discoverable. */
+@media (hover: none) {
+  .save-heart {
+    opacity: 1;
+  }
+}
+
 /* ── CategoryImageTiles ────────────────────────────────────────────────── */
 
 .home-all-categories {
@@ -786,7 +980,7 @@
   }
 
   .home-rail-track {
-    grid-auto-columns: minmax(220px, 1fr);
+    grid-auto-columns: minmax(220px, 240px);
   }
 }
 

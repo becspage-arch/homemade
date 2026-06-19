@@ -375,17 +375,18 @@ export async function loadHomepageData(
           ? { kind: 'EDITORIAL_PICK', tutorial: thisWeeksEditorialPicks[0] }
           : { kind: 'WORDMARK_FALLBACK' }
     } else {
-      // Hero rotation (Rebecca override of Decision 1, 2026-05-25): rotate
-      // through this week's editorial picks every ~3 days. The pool is
-      // filtered to EDITORIAL-graded photos first if any qualify;
-      // otherwise we fall back to the full pick list so the page never
-      // lands on the wordmark just because grading is incomplete.
+      // Hero rotation: rotate through this week's editorial picks on a
+      // weekly bucket so the seasonal hero refreshes once a week with no
+      // manual curation (Rebecca, 2026-06-19). The pool is filtered to
+      // EDITORIAL-graded photos first if any qualify; otherwise we fall
+      // back to the full pick list so the page never lands on the wordmark
+      // just because grading is incomplete.
       const editorialPool = thisWeeksEditorialPicks.filter(
         (t) => t.heroQuality === 'EDITORIAL',
       )
       const rotationPool =
         editorialPool.length > 0 ? editorialPool : thisWeeksEditorialPicks
-      const editorialPick = pickByDayBucket(rotationPool, now, 3)
+      const editorialPick = pickByDayBucket(rotationPool, now, 7)
       if (editorialPick) {
         hero = { kind: 'EDITORIAL_PICK', tutorial: editorialPick }
       } else {

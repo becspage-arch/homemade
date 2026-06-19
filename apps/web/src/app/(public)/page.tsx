@@ -2,8 +2,7 @@ import type { Metadata } from 'next'
 import { HomeCard } from '@/components/public/home-card'
 import { HomeRail } from '@/components/public/home-rail'
 import { OnboardingCard } from '@/components/public/onboarding-card'
-import { RecentlyMadeRail } from '@/components/public/recently-made-rail'
-import { InSeasonMosaic } from '@/components/public/in-season-mosaic'
+import { DiscoveryFeed, type DiscoveryItem } from '@/components/public/discovery-feed'
 import { CategoryImageTiles } from '@/components/public/category-image-tiles'
 import { HeroOverlay } from '@/components/public/home-cards/hero-overlay'
 import { ScheduledActionCard } from '@/components/public/home-cards/scheduled-action-card'
@@ -64,6 +63,29 @@ export default async function HomePage() {
     })
   }
 
+  // Discover wall: fold the discovery rails (in-season, this week's editorial
+  // picks, new, most-loved) into one deduped, source-interleaved list so the
+  // wall mixes categories rather than clustering them, then weave community
+  // makes in among the tutorials.
+  const discoveryTutorials = interleaveDedupe([
+    data.inSeasonNow,
+    data.thisWeeksEditorialPicks,
+    data.newSinceLastVisit,
+    ...data.mostLovedBySpine.map((g) => g.tutorials),
+  ]).slice(0, 28)
+
+  const discoveryItems: DiscoveryItem[] = []
+  let communityIdx = 0
+  discoveryTutorials.forEach((tutorial, i) => {
+    discoveryItems.push({ kind: 'tutorial', tutorial })
+    if ((i + 1) % 6 === 0 && communityIdx < recentlyMade.length) {
+      discoveryItems.push({ kind: 'community', tile: recentlyMade[communityIdx++]! })
+    }
+  })
+  while (communityIdx < recentlyMade.length && discoveryItems.length < 36) {
+    discoveryItems.push({ kind: 'community', tile: recentlyMade[communityIdx++]! })
+  }
+
   return (
     <div className="home-page">
       {/* Inline onboarding card — new users only, above the hero. */}
@@ -119,35 +141,8 @@ export default async function HomePage() {
           )}
         </section>
 
-      {/* Rail stack. */}
-
-      {data.thisWeeksEditorialPicks.length > 0 && (
-        <HomeRail heading="This week's editorial picks">
-          {data.thisWeeksEditorialPicks.map((t) => (
-            <HomeCard
-              key={t.id}
-              tutorial={t}
-              state={readerStateFor(data.readerState, t.id)}
-            />
-          ))}
-        </HomeRail>
-      )}
-
-      {data.continueMaking.length > 0 && (
-        <HomeRail
-          heading="Continue making"
-          seeAllHref="/me/projects"
-          seeAllLabel="All your projects →"
-        >
-          {data.continueMaking.map((t) => (
-            <HomeCard
-              key={t.id}
-              tutorial={t}
-              state={readerStateFor(data.readerState, t.id)}
-            />
-          ))}
-        </HomeRail>
-      )}
+      {/* ── Resume: personal rails (signed-in users only). Fixed-width
+            cards — the "pick it back up" pattern. ── */}
 
       {data.todaysScheduledActions.length > 0 && (
         <HomeRail
@@ -162,6 +157,22 @@ export default async function HomePage() {
               title={action.step.title}
               body={action.step.body}
               tutorial={action.tutorial}
+            />
+          ))}
+        </HomeRail>
+      )}
+
+      {data.continueMaking.length > 0 && (
+        <HomeRail
+          heading="Continue where you left off"
+          seeAllHref="/me/projects"
+          seeAllLabel="All your projects →"
+        >
+          {data.continueMaking.map((t) => (
+            <HomeCard
+              key={t.id}
+              tutorial={t}
+              state={readerStateFor(data.readerState, t.id)}
             />
           ))}
         </HomeRail>
@@ -199,55 +210,46 @@ export default async function HomePage() {
         </HomeRail>
       )}
 
-      {data.inSeasonNow.length > 0 && (
-        <InSeasonMosaic
-          heading="In season right now"
-          tutorials={data.inSeasonNow}
-          readerState={data.readerState}
-        />
-      )}
-
-      {data.newSinceLastVisit.length > 0 && (
-        <HomeRail heading="New since you last visited">
-          {data.newSinceLastVisit.map((t) => (
-            <HomeCard
-              key={t.id}
-              tutorial={t}
-              state={readerStateFor(data.readerState, t.id)}
-            />
-          ))}
-        </HomeRail>
-      )}
-
-      {data.mostLovedBySpine.map((group) => (
-        <HomeRail
-          key={group.categorySlug}
-          heading={`Most-loved in ${group.categoryName.toLowerCase()}`}
-          seeAllHref={`/${group.categorySlug}`}
-        >
-          {group.tutorials.map((t) => (
-            <HomeCard
-              key={t.id}
-              tutorial={t}
-              state={readerStateFor(data.readerState, t.id)}
-            />
-          ))}
-        </HomeRail>
-      ))}
+      {/* ── Discover: the masonry wall. In-season, editorial picks, new,
+            most-loved and community makes all fold into one mixed,
+            save-able feed. ── */}
+      <DiscoveryFeed
+        heading="Make something this week"
+        subheading="In season now, picked for you."
+        items={discoveryItems}
+        readerState={data.readerState}
+        moreHref="/search"
+      />
 
       {motm && <MakerOfTheMonthTile motm={motm} />}
 
-      {recentlyMade.length > 0 && (
-        <RecentlyMadeRail
-          heading="Recently made by the community"
-          subheading="Real makes from real Makers on Homemade."
-          tiles={recentlyMade}
-        />
-      )}
-
+      {/* ── Navigate: browse every category. ── */}
       <CategoryImageTiles categories={data.allCategories} />
     </div>
   )
+}
+
+/**
+ * Round-robin merge of several tutorial lists into one, dropping duplicates by
+ * id (first occurrence wins). Taking position 0 from every source, then
+ * position 1, and so on mixes the sources together — so the discovery wall
+ * alternates seasonal / editorial / new / most-loved rather than showing one
+ * source in a block.
+ */
+function interleaveDedupe<T extends { id: string }>(groups: T[][]): T[] {
+  const seen = new Set<string>()
+  const out: T[] = []
+  const max = groups.reduce((m, g) => Math.max(m, g.length), 0)
+  for (let i = 0; i < max; i++) {
+    for (const g of groups) {
+      const item = g[i]
+      if (item && !seen.has(item.id)) {
+        seen.add(item.id)
+        out.push(item)
+      }
+    }
+  }
+  return out
 }
 
 /**
