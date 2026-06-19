@@ -3,8 +3,12 @@
  * Strategy:
  *   - Cache the lightweight UI shell (favicon, fonts already on the page,
  *     a small offline fallback page) with cache-first.
- *   - Tutorial pages: stale-while-revalidate. Render the cached HTML
- *     immediately; refresh in background if online.
+ *   - Navigations (home / tutorial / category HTML): network-first, with the
+ *     cache as an offline-only fallback. Serving cached HTML stale-first broke
+ *     across deploys — the old HTML referenced build-hashed JS chunks that
+ *     404 after a new build, so React couldn't hydrate and the page flickered
+ *     between the stale and fresh design in a reload loop. Network-first keeps
+ *     online users on fresh HTML and still serves bookmarked pages offline.
  *   - Master ingredient / tool refs: cache-first, refresh on foreground
  *     (the page already requests them at top of route — SW intercepts).
  *   - Hero images (R2 + transformations): cache-first, no expiry. Cleared
@@ -16,7 +20,7 @@
  * that in so adding a bookmark proactively warms the cache.
  */
 
-const VERSION = 'homemade-sw-v1'
+const VERSION = 'homemade-sw-v2'
 const SHELL_CACHE = `${VERSION}-shell`
 const TUTORIAL_CACHE = `${VERSION}-tutorial`
 const IMAGE_CACHE = `${VERSION}-image`
@@ -120,9 +124,12 @@ self.addEventListener('fetch', (event) => {
     return
   }
 
-  // Tutorial pages and category pages: stale-while-revalidate.
+  // Home, tutorial and category pages: network-first. Never serve stale HTML
+  // first — it references build-specific JS chunks that 404 after a deploy.
+  // The cache is only used when the network is unavailable (offline reading
+  // of bookmarked pages, warmed via the precache message channel).
   if (url.pathname === '/' || isTutorialOrCategoryPath(url.pathname)) {
-    event.respondWith(staleWhileRevalidate(req, TUTORIAL_CACHE))
+    event.respondWith(networkFirst(req, TUTORIAL_CACHE))
     return
   }
 
@@ -146,27 +153,23 @@ async function cacheFirst(req, cacheName) {
   }
 }
 
-async function staleWhileRevalidate(req, cacheName) {
+async function networkFirst(req, cacheName) {
   const cache = await caches.open(cacheName)
-  const cached = await cache.match(req)
-  const network = fetch(req)
-    .then((res) => {
-      if (res.ok) cache.put(req, res.clone())
-      return res
-    })
-    .catch(() => null)
-  if (cached) {
-    // Refresh in the background without blocking the response.
-    network.catch(() => undefined)
-    return cached
+  try {
+    const res = await fetch(req)
+    // Only cache full 200s — never an opaque/redirect/error response, and
+    // never a partial. The cached copy is the offline fallback only.
+    if (res.ok && res.status === 200) cache.put(req, res.clone())
+    return res
+  } catch {
+    const cached = await cache.match(req)
+    if (cached) return cached
+    const fallback = await caches.match('/offline')
+    return (
+      fallback ||
+      new Response('Offline', { status: 503, statusText: 'Offline' })
+    )
   }
-  const fresh = await network
-  if (fresh) return fresh
-  const fallback = await caches.match('/offline')
-  return (
-    fallback ||
-    new Response('Offline', { status: 503, statusText: 'Offline' })
-  )
 }
 
 function isImageUrl(url) {
