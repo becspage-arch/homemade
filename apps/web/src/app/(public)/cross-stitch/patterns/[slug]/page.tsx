@@ -94,9 +94,11 @@ export default async function PatternDetailPage({ params }: PageProps) {
           <p className="pattern-detail-overline">Cross-stitch pattern</p>
           <h1 className="pattern-detail-title">{row.name}</h1>
           {row.designer && (
-            <p className="pattern-detail-designer">
-              by <Link href={`/cross-stitch/designers/${row.designer.slug}`}>{row.designer.displayName}</Link>
-            </p>
+            // Designer name is plain text — per-designer profile pages
+            // aren't built yet (they belong with designer onboarding). The
+            // "About {designer}" card below carries the bio. Matches the
+            // library card, which also shows the name as plain text.
+            <p className="pattern-detail-designer">by {row.designer.displayName}</p>
           )}
           {row.description && <p className="pattern-detail-description">{row.description}</p>}
 
