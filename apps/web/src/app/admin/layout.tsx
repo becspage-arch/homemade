@@ -35,6 +35,7 @@ const SIDEBAR_GROUPS: SidebarGroup[] = [
       { href: '/admin/categories', label: 'Categories', minRole: UserRole.ADMIN },
       { href: '/admin/glossary', label: 'Glossary', minRole: UserRole.EDITOR },
       { href: '/admin/media', label: 'Media', minRole: UserRole.CREATOR },
+      { href: '/admin/cross-stitch/review', label: 'Cross-stitch review', minRole: UserRole.EDITOR },
     ],
   },
   {
