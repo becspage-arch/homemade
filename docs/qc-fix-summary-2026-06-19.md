@@ -213,3 +213,88 @@ SKIPPED: 0
 - flour-types-for-baking: hero-missing, body-missing-method
 - gold-leaf-cake-decoration: hero-missing
 - hazelnut-and-chocolate-chip-scones: hero-missing
+
+---
+
+## Run at 19:56:17
+
+Generated: 2026-06-19T19:56:17.621Z
+
+Processed: 70
+PASS: 64
+STILL_BLOCKED: 6
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 31 |
+| placeholder-string | 29 |
+| opening-pattern-missing-hook | 29 |
+| prose-prep-steps | 18 |
+| grade-level-strict | 10 |
+| historical-century-in-body | 10 |
+
+## Still BLOCKED (sample 20)
+
+- cheese-and-onion-pasty: prose-prep-steps
+- chicken-and-mushroom-pie: prose-prep-steps
+- fish-pie: prose-prep-steps
+- pork-chops-mustard-cream: prose-prep-steps
+- sausage-roll: prose-prep-steps
+- scotch-broth: prose-prep-steps
+
+---
+
+## Run at 20:21:44
+
+Generated: 2026-06-19T20:21:44.478Z
+
+Processed: 45
+PASS: 45
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 12 |
+| opening-pattern-missing-hook | 11 |
+
+
+---
+
+## Run at 20:37:54
+
+Generated: 2026-06-19T20:37:54.462Z
+
+Processed: 68
+PASS: 68
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 22 |
+| opening-pattern-missing-hook | 20 |
+
+
+---
+
+## Run at 20:37:56
+
+Generated: 2026-06-19T20:37:56.888Z
+
+Processed: 104
+PASS: 104
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

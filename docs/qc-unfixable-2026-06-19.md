@@ -90,3 +90,10 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - stem-ginger-and-oat-biscuits hero-missing — applied: hero-fill-deferred-to-standalone-script
 - tahini-cookies hero-missing — applied: hero-fill-deferred-to-standalone-script
 - treacle-toffee-dark hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- cheese-and-onion-pasty prose-prep-steps — applied: 
+- chicken-and-mushroom-pie prose-prep-steps — applied: 
+- fish-pie prose-prep-steps — applied: 
+- pork-chops-mustard-cream prose-prep-steps — applied: 
+- sausage-roll prose-prep-steps — applied: 
+- scotch-broth prose-prep-steps — applied: 

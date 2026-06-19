@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-06-19T20:37:43.220Z",
+  "totalCandidates": 3,
+  "enqueued": 3,
+  "filter": {
+    "category": "baking",
+    "sources": [
+      "unsplash",
+      "pexels",
+      "wikimedia",
+      "pixabay",
+      "flux-schnell"
+    ],
+    "stratify": false
+  },
+  "entries": [
+    {
+      "mediaId": "cmqle4do600007sv4j9t4crx3",
+      "tutorialId": "cmqle19gw00000cv4uiu8yy62",
+      "tutorialSlug": "barbari-iranian-flatbread",
+      "tutorialTitle": "Barbari flatbread",
+      "tutorialSubtitle": "Persian yeasted flatbread with a glazed, ridged crust and a chewy interior",
+      "tutorialExcerpt": "Barbari is a long, oval Iranian flatbread with a distinctive ridged surface and a shiny, crisp crust that comes from brushing the shaped bread with a cooked glaze called roomal before baking. The interior is open and chewy. Barbari is baked very hot on a preheated surface for a thin, blistered underside. It is at its best eaten fresh, within an hour of baking.",
+      "category": "baking",
+      "subCategory": "bread",
+      "keyIngredients": [
+        "strong bread flour",
+        "water",
+        "fast-action dried yeast"
+      ],
+      "imageUrl": "https://images.pexels.com/photos/20607928/pexels-photo-20607928.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imageSource": "pexels",
+      "licenceCode": "PEXELS",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmqle4do600007sv4j9t4crx3-402de3093013f526.jpg",
+      "promptHints": "TUTORIAL\n  Title: Barbari flatbread\n  Subtitle: Persian yeasted flatbread with a glazed, ridged crust and a chewy interior\n  Excerpt: Barbari is a long, oval Iranian flatbread with a distinctive ridged surface and a shiny, crisp crust that comes from brushing the shaped bread with a cooked glaze called roomal before baking. The interior is open and chewy. Barbari is baked\n  Category: baking / bread\n  Key ingredients: strong bread flour, water, fast-action dried yeast\n  Candidate source: pexels\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqle4e8000027sv41wsldpnd",
+      "tutorialId": "cmqle1cpe0000ngv4kai1gqdq",
+      "tutorialSlug": "courgette-and-goat-cheese-tart",
+      "tutorialTitle": "Courgette and goat's cheese tart",
+      "tutorialSubtitle": "thinly sliced courgette over a goat's cheese and egg custard in a shortcrust case",
+      "tutorialExcerpt": "Courgette and goat's cheese tart is a blind-baked shortcrust case filled with a soft goat's cheese and egg custard, topped with overlapping slices of courgette. The goat's cheese melts into the custard as it bakes, giving a tangy, creamy filling. The courgette on top softens in the oven and takes on a light colour at the edges. This is a savoury tart that serves as a main course with a green salad.",
+      "category": "baking",
+      "subCategory": "pies",
+      "keyIngredients": [
+        "plain flour",
+        "unsalted butter",
+        "eggs"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1615932736372-f3ce2c21db45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxDb3VyZ2V0dGUlMjBhbmQlMjBnb2F0JTI3cyUyMGNoZWVzZSUyMHRhcnQlMjBwbGFpbiUyMGZsb3VyfGVufDF8MHx8fDE3ODE5MDE0NTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmqle4e8000027sv41wsldpnd-ac67262a320d5242.jpg",
+      "promptHints": "TUTORIAL\n  Title: Courgette and goat's cheese tart\n  Subtitle: thinly sliced courgette over a goat's cheese and egg custard in a shortcrust case\n  Excerpt: Courgette and goat's cheese tart is a blind-baked shortcrust case filled with a soft goat's cheese and egg custard, topped with overlapping slices of courgette. The goat's cheese melts into the custard as it bakes, giving a tangy, creamy fi\n  Category: baking / pies\n  Key ingredients: plain flour, unsalted butter, eggs\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqle4ggt00047sv4sru3pxxt",
+      "tutorialId": "cmqle2jk90000xwv4cpzu39eu",
+      "tutorialSlug": "gooseberry-and-elderflower-tart",
+      "tutorialTitle": "Gooseberry and elderflower tart",
+      "tutorialSubtitle": "blind-baked shortcrust filled with a sharp gooseberry compote finished with elderflower",
+      "tutorialExcerpt": "Gooseberry and elderflower tart uses a crisp blind-baked shortcrust shell filled with a thick, sharp gooseberry compote finished with elderflower cordial. The elderflower lifts the gooseberry without sweetening it beyond recognition. The tart is served at room temperature, so the filling sets enough to slice cleanly. Make the compote ahead and chill it; a warm filling will soften the pastry case.",
+      "category": "baking",
+      "subCategory": "pies",
+      "keyIngredients": [
+        "plain flour",
+        "icing sugar",
+        "unsalted butter"
+      ],
+      "imageUrl": "https://v3b.fal.media/files/b/0a9ef742/L3xlLj6bj1c4l5FjmvFFI.jpg",
+      "imageSource": "flux-schnell",
+      "licenceCode": "PROPRIETARY",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\homemade\\.claude\\tmp\\relevance-cache\\cmqle4ggt00047sv4sru3pxxt-b6e9ff1ad5822e36.jpg",
+      "promptHints": "TUTORIAL\n  Title: Gooseberry and elderflower tart\n  Subtitle: blind-baked shortcrust filled with a sharp gooseberry compote finished with elderflower\n  Excerpt: Gooseberry and elderflower tart uses a crisp blind-baked shortcrust shell filled with a thick, sharp gooseberry compote finished with elderflower cordial. The elderflower lifts the gooseberry without sweetening it beyond recognition. The ta\n  Category: baking / pies\n  Key ingredients: plain flour, icing sugar, unsalted butter\n  Candidate source: flux-schnell\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "slug": "barbari-iranian-flatbread",
+  "title": "Barbari flatbread",
+  "subtitle": "Persian yeasted flatbread with a glazed, ridged crust and a chewy interior",
+  "excerpt": "Barbari is a long, oval Iranian flatbread with a distinctive ridged surface and a shiny, crisp crust that comes from brushing the shaped bread with a cooked glaze called roomal before baking. The interior is open and chewy. Barbari is baked very hot on a preheated surface for a thin, blistered underside. It is at its best eaten fresh, within an hour of baking.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "bread",
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Barbari is a traditional Iranian bread documented across Persia from at least the nineteenth century. The name is thought to derive from the Barbari people of eastern Iran. It is one of the five major traditional breads of Iran and is consumed daily across the country.",
+  "glossaryTerms": [
+    {
+      "slug": "roomal",
+      "term": "Roomal",
+      "definition": "A cooked paste glaze brushed over shaped flatbread dough before baking. Made from flour, water, oil, and baking soda, it bakes to a shiny, crisp surface on breads such as barbari."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "2 large flatbreads",
+    "prepMinutes": 25,
+    "cookMinutes": 18,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze baked barbari the same day. Wrap tightly in foil. Reheat from frozen in a hot oven for 5 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best eaten fresh. Leftovers can be reheated in a hot oven for 3 to 4 minutes to refresh the crust.",
+    "dietaryFlags": [
+      "VEGETARIAN",
+      "VEGAN",
+      "DAIRY_FREE"
+    ],
+    "cuisine": "iranian",
+    "mealType": "side",
+    "mood": [
+      "weekendBake"
+    ],
+    "temperatureCelsius": 250,
+    "temperatureNote": "or as hot as your oven goes. Fan 230 degrees C / gas 9",
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 500,
+      "hydrationPercent": 70,
+      "saltPercent": 2,
+      "yeastPercent": 1,
+      "levainPercent": null,
+      "bulkFermentMinutes": 60,
+      "proofMinutes": 20,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 250,
+      "bakeTemperatureNote": "fan 230 degrees C / gas 9, or as high as the oven goes",
+      "steamMethod": null,
+      "decoratingTechnique": "roomal glaze with finger-groove ridges",
+      "preFermentType": "NONE"
+    }
+  },
+  "recipeTools": [
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "digital-scales",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "stand-mixer",
+      "isOptional": true
+    }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Barbari flatbread gets its shiny, crisp crust from "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "roomal"
+                }
+              }
+            ],
+            "text": "roomal"
+          },
+          {
+            "type": "text",
+            "text": ", a cooked paste of flour, water, baking soda, and oil, which is brushed over the shaped bread before baking. The roomal acts as a glaze, giving the surface a lacquered sheen and a crisp texture. The ridges are pressed in with the fingers after glazing and bake into the characteristic grooves."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "For the dough"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            {
+              "ingredientSlug": "strong-bread-flour",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 350,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false
+            },
+            {
+              "ingredientSlug": "yeast-fast-action",
+              "amount": 7,
+              "unit": "g",
+              "prepNote": "1 sachet",
+              "isOptional": false
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "For the roomal glaze"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 120,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
+              "ingredientSlug": "bicarbonate-of-soda",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
+              "ingredientSlug": "sesame-seeds",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "optional, for topping",
+              "isOptional": true
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix together the flour, instant yeast, salt, sugar, olive oil, and warm water. Knead for 8 to 10 minutes until smooth and slightly tacky but not sticky. Cover and leave to rise in a warm place for 60 minutes until doubled."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Meanwhile, make the roomal: whisk the flour into the water in a small saucepan until lump-free. Cook over a medium heat, stirring constantly, until the mixture thickens to a loose paste, about 3 minutes. Stir in the olive oil and bicarbonate of soda. Remove from the heat and cool."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place two heavy baking trays in the oven and heat to 250 degrees C (fan 230 degrees C / gas 9), or as hot as your oven goes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the dough in half. Gently stretch each piece to an oval about 30 cm long and 15 cm wide, keeping it no more than 1 cm thick. Place on sheets of baking paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Brush the dough generously with the roomal glaze. Press four or five grooves lengthways down each oval using three fingers together, pressing almost through to the base. Scatter with sesame seeds if using. Leave to rest for 20 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slide the barbari on their baking paper onto the preheated trays. Bake for 15 to 18 minutes until deep golden brown and the grooves are a little darker. Cool briefly on a rack; best eaten within an hour."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Grooves spring back and disappear during proofing and baking",
+              "avoid": "Avoid pressing grooves gently; they need to go deep enough to survive the oven spring.",
+              "fix": "Press the grooves firmly with three fingers together, pressing nearly through to the bottom of the dough. A light touch produces grooves that close up in the oven."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Underside pale and soft rather than crisp",
+              "avoid": "Avoid placing the bread on a cold tray; the underside needs direct high heat from the start.",
+              "fix": "Preheat the baking tray in the oven for at least 20 minutes before baking. The bread should sizzle when it hits the tray."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
