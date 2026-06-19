@@ -1,13 +1,12 @@
-import { NextResponse } from 'next/server'
-import sharp from 'sharp'
+import { NextResponse, after } from 'next/server'
 import {
   prisma,
   parsePatternData,
   Visibility,
 } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
-import { renderPatternSvgString } from '@/components/studio/chart/render-svg-string'
-import { stitchedBoundingBox } from '@/components/studio/chart/render-helpers'
+import { mediaUrl } from '@/lib/media'
+import { renderPatternThumbnailPng, persistPatternThumbnail } from '@/lib/studio/pattern-thumbnail'
 
 export const dynamic = 'force-dynamic'
 
@@ -16,18 +15,33 @@ interface Ctx {
 }
 
 /**
- * GET /api/studio/patterns/[id]/thumbnail — server-rendered SVG → PNG.
+ * GET /api/studio/patterns/[id]/thumbnail — the chart preview image.
  *
- * 4:3 thumbnail at 480×360. Library + My Patterns cards both pull this
- * URL; results are cached for 1 hour at the CDN edge and 5 minutes in
- * the browser. A pattern edit invalidates the cache via the Cache-Tag
- * header (Pattern.id) and a router invalidate from the autosave path.
+ * Render is expensive (SVG → PNG) and Cloudflare treats this route as
+ * DYNAMIC, so we don't want to re-render on every request as the library
+ * grows. Strategy:
+ *
+ *   - If the pattern already has a persisted thumbnail (Pattern.thumbnailMediaId),
+ *     redirect to the static CDN asset — no render at all.
+ *   - Otherwise render once, return the PNG, and persist it to R2 in the
+ *     background (`after`). Subsequent hits take the redirect path above.
+ *
+ * Library cards resolve the image through `patternHeroUrl`, which prefers the
+ * saved thumbnail directly; this route remains the fallback + the thing that
+ * fills the cache for any pattern that hasn't been backfilled yet.
  */
 export async function GET(_req: Request, ctx: Ctx) {
   const { id } = await ctx.params
   const row = await prisma.pattern.findUnique({
     where: { id },
-    select: { id: true, data: true, ownerUserId: true, visibility: true, updatedAt: true },
+    select: {
+      id: true,
+      data: true,
+      ownerUserId: true,
+      visibility: true,
+      thumbnailMediaId: true,
+      thumbnail: { select: { r2Key: true, cloudflareId: true } },
+    },
   })
   if (!row) return new NextResponse('Not found', { status: 404 })
 
@@ -39,6 +53,12 @@ export async function GET(_req: Request, ctx: Ctx) {
     }
   }
 
+  // Already persisted — hand off to the cached CDN asset.
+  if (row.thumbnail && (row.thumbnail.r2Key || row.thumbnail.cloudflareId)) {
+    const url = mediaUrl(row.thumbnail, 'card')
+    if (url) return NextResponse.redirect(url, 307)
+  }
+
   let data
   try {
     data = parsePatternData(row.data)
@@ -46,50 +66,21 @@ export async function GET(_req: Request, ctx: Ctx) {
     return new NextResponse('Malformed pattern data', { status: 500 })
   }
 
-  // Beauty mode — strand-shaded X stitches on subtle / visible weave
-  // depending on palette complexity. The thumbnail crops tight to the
-  // stitched bounding box (with a small margin) so the subject fills
-  // the frame instead of floating in a sea of cream — biggest impact
-  // for simple craft-style patterns where the stitched area only
-  // occupies the centre of the grid.
-  const bbox = stitchedBoundingBox(data)
-  const margin = 2
-  const region = bbox
-    ? {
-        x: Math.max(0, bbox.minX - margin),
-        y: Math.max(0, bbox.minY - margin),
-        width:
-          Math.min(data.grid.width, bbox.maxX + 1 + margin) -
-          Math.max(0, bbox.minX - margin),
-        height:
-          Math.min(data.grid.height, bbox.maxY + 1 + margin) -
-          Math.max(0, bbox.minY - margin),
-      }
-    : undefined
-  const regionW = region?.width ?? data.grid.width
-  // cellPx scales with the rendered region size, not the full grid —
-  // a tight-cropped small subject gets the denser per-cell render.
-  const cellPx = regionW <= 60 ? 30 : regionW <= 120 ? 18 : 12
-  const svg = renderPatternSvgString(data, {
-    mode: 'beauty',
-    cellPx,
-    showSymbols: false,
-    showGrid: false,
-    showCentreCrosshairs: false,
-    padding: Math.round(cellPx * 0.8),
-    region,
-  })
+  const png = await renderPatternThumbnailPng(data)
 
-  // 2× density (960×720) — fits 480-css-px cards crisply on Retina without
-  // needing srcSet plumbing on every consumer. PNG output stays small
-  // because most patterns have a tiny palette and sharp's quality:88
-  // keeps the file under ~60KB.
-  const targetW = 960
-  const targetH = 720
-  const png = await sharp(Buffer.from(svg))
-    .resize(targetW, targetH, { fit: 'contain', background: { r: 245, g: 240, b: 232 } })
-    .png({ quality: 88 })
-    .toBuffer()
+  // Persist after responding so the first viewer doesn't wait on the upload.
+  // Only shared library patterns get a persisted asset; user drafts keep
+  // rendering on demand. Best-effort: a failed upload just means the next
+  // request renders again.
+  if (isLibrary) {
+    after(async () => {
+      try {
+        await persistPatternThumbnail(row.id, { png })
+      } catch {
+        // ignore — the image was already served; we'll retry on the next hit
+      }
+    })
+  }
 
   return new NextResponse(png as unknown as BodyInit, {
     headers: {

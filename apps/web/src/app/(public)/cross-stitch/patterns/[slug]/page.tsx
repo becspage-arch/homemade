@@ -44,6 +44,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
       designer: { select: { displayName: true, slug: true, bio: true } },
       subCategory: { select: { slug: true, name: true } },
       hero: { select: { cloudflareId: true, r2Key: true } },
+      thumbnail: { select: { cloudflareId: true, r2Key: true } },
       license: true,
     },
   })
@@ -76,6 +77,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
       colourCount: true,
       designer: { select: { displayName: true } },
       hero: { select: { cloudflareId: true, r2Key: true } },
+      thumbnail: { select: { cloudflareId: true, r2Key: true } },
     },
   })
 
@@ -139,7 +141,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
       <header className="pattern-detail-hero">
         <div className="pattern-detail-hero-image">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={patternHeroUrl({ id: row.id, hero: row.hero }, 'hero')} alt={row.name} loading="eager" />
+          <img src={patternHeroUrl({ id: row.id, hero: row.hero, thumbnail: row.thumbnail }, 'hero')} alt={row.name} loading="eager" />
         </div>
         <div className="pattern-detail-hero-body">
           <p className="pattern-detail-overline">Cross-stitch pattern</p>
@@ -222,7 +224,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
               <li key={r.id}>
                 <Link href={r.slug ? `/cross-stitch/patterns/${r.slug}` : `/studio/cross-stitch?patternId=${r.id}`}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={patternHeroUrl({ id: r.id, hero: r.hero }, 'card')} alt="" loading="lazy" />
+                  <img src={patternHeroUrl({ id: r.id, hero: r.hero, thumbnail: r.thumbnail }, 'card')} alt="" loading="lazy" />
                   <div>
                     <span className="pattern-detail-related-name">{r.name}</span>
                     {r.designer?.displayName && <span className="pattern-detail-related-by">by {r.designer.displayName}</span>}

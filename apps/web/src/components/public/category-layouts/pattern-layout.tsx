@@ -168,6 +168,7 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
             designer: { select: { displayName: true, slug: true } },
             subCategory: { select: { slug: true, name: true } },
             hero: { select: { cloudflareId: true, r2Key: true } },
+            thumbnail: { select: { cloudflareId: true, r2Key: true } },
           },
         })
       : Promise.resolve([]),
@@ -511,7 +512,7 @@ export async function PatternLayout({ category, searchParams }: PatternLayoutPro
                 designerSlug: p.designer?.slug ?? null,
                 subCategorySlug: p.subCategory?.slug ?? null,
                 subCategoryName: p.subCategory?.name ?? null,
-                thumbnailUrl: patternHeroUrl({ id: p.id, hero: p.hero }, 'card'),
+                thumbnailUrl: patternHeroUrl({ id: p.id, hero: p.hero, thumbnail: p.thumbnail }, 'card'),
               }))}
               subCategories={category.subCategories.map((s) => ({
                 slug: s.slug,
@@ -553,7 +554,7 @@ function patternHeaderTitle(slug: string): string {
 function patternHeaderLede(slug: string): string {
   switch (slug) {
     case 'cross-stitch':
-      return 'Designed patterns from independent makers. Open one in the Studio, mark stitched as you go, print a clean PDF when you are ready.'
+      return 'Open any chart in the Studio, mark off stitches as you go, and print a clean PDF whenever you want one.'
     case 'knitting':
       return 'Designed knitting patterns from independent designers. Open one in the Studio when it ships; read the foundation tutorials below today.'
     case 'crochet':
