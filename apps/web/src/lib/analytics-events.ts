@@ -13,6 +13,8 @@ export type PosthogEvent =
   | 'tutorial_completed'
   | 'tutorial_bookmarked'
   | 'tutorial_unbookmarked'
+  | 'pattern_saved'
+  | 'pattern_unsaved'
   | 'tutorial_published_scheduled'
   | 'tutorial_shared'
   | 'tutorial_scroll_depth'
@@ -155,6 +157,8 @@ const EVENT_CATEGORIES: Record<string, string> = {
   tutorial_completed: 'engagement',
   tutorial_bookmarked: 'engagement',
   tutorial_unbookmarked: 'engagement',
+  pattern_saved: 'engagement',
+  pattern_unsaved: 'engagement',
   tutorial_scroll_depth: 'engagement',
   tutorial_shared: 'engagement',
   ingredients_scaled: 'engagement',

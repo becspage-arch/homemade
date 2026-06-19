@@ -125,6 +125,7 @@ model User {
   versions          TutorialVersion[] @relation("VersionAuthor")
   auditLogs         AuditLog[]
   bookmarks         Bookmark[]
+  savedPatterns     SavedPattern[]
   projects          UserProject[]
 
   reviews            Review[]
@@ -1536,6 +1537,28 @@ model Bookmark {
   createdAt DateTime @default(now())
 
   @@unique([userId, tutorialId])
+  @@index([userId])
+}
+
+// One SavedPattern per (user, pattern) — the pattern equivalent of Bookmark,
+// so a single "Make it list" can hold both tutorials and patterns. Additive:
+// the existing tutorial Bookmark table is untouched; the Make it list merges
+// both at the read layer.
+model SavedPattern {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  patternId String
+  pattern   Pattern @relation(fields: [patternId], references: [id], onDelete: Cascade)
+
+  // Mirrors Bookmark.isPublic — per-save toggle for the public Maker profile.
+  isPublic Boolean @default(false)
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, patternId])
   @@index([userId])
 }
 
@@ -4300,6 +4323,7 @@ model Pattern {
 
   license        PatternLicense?
   userProgress   UserPatternProgress[]
+  savedBy        SavedPattern[]
   tutorialsInset Tutorial[]            @relation("TutorialPattern")
 
   createdAt DateTime @default(now())

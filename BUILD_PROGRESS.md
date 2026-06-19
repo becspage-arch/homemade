@@ -8,6 +8,23 @@ Updated each working session.
 
 ---
 
+## Pending decision — pattern "finished by" privacy (2026-06-19)
+
+The category pattern landing ("recently finished by the community") names
+individual makers (handle / name) pulled from **private**
+`UserPatternProgress` completions. There is no publish opt-in on pattern
+progress (unlike `UserProject.isPublic` for tutorial makes), so this
+publishes a user's private making activity without their consent — a likely
+GDPR / consent problem. The pattern **detail** page now uses a privacy-safe
+anonymous count ("Finished by N makers") instead.
+
+**Decision needed (Rebecca):** either (a) anonymise the category "recently
+finished" section too — count or avatars only, no names — or (b) add an
+explicit opt-in flag to pattern progress and only name makers who opted in.
+No action taken yet; flagged during the 2026-06-19 make-page review.
+
+---
+
 ## Per-type makeability audit + un-publish + gate (2026-06-16)
 
 Second, stricter pass on top of the 2026-06-15 completeness gate. That gate asked "is this body broken/skeleton?"; this one asks the harder question: **could a competent person actually MAKE this from the page?** A real, non-broken body can still be unmakeable — the trigger case Rebecca flagged: a **chart-less cross-stitch pattern is not a pattern**, "usable but not ideal" is wrong, it fails.

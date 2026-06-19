@@ -77,6 +77,46 @@ export async function toggleBookmark(tutorialId: string): Promise<
   return { ok: true, bookmarked }
 }
 
+/**
+ * Save / unsave a pattern to the Make it list. The pattern equivalent of
+ * toggleBookmark — backed by the additive SavedPattern table so a single Make
+ * it list spans tutorials and patterns. Anonymous callers are redirected to
+ * sign-in by requireUser (saving is a free signed-in feature).
+ */
+export async function toggleSavedPattern(patternId: string): Promise<
+  ActionResult & { saved?: boolean }
+> {
+  const user = await requireUser()
+  const pattern = await prisma.pattern.findUnique({
+    where: { id: patternId },
+    select: { id: true, slug: true },
+  })
+  if (!pattern) return { ok: false, error: 'Pattern not found' }
+
+  const existing = await prisma.savedPattern.findUnique({
+    where: { userId_patternId: { userId: user.id, patternId } },
+    select: { id: true },
+  })
+
+  let saved: boolean
+  if (existing) {
+    await prisma.savedPattern.delete({ where: { id: existing.id } })
+    saved = false
+  } else {
+    await prisma.savedPattern.create({ data: { userId: user.id, patternId } })
+    saved = true
+  }
+
+  if (pattern.slug) revalidatePath(`/cross-stitch/patterns/${pattern.slug}`)
+  revalidatePath('/me/bookmarks')
+  await captureServerEvent({
+    event: saved ? 'pattern_saved' : 'pattern_unsaved',
+    distinctId: user.clerkId,
+    properties: { patternId },
+  })
+  return { ok: true, saved }
+}
+
 // ────────────────────────────────────────────────────────────────────────────
 // Projects — lifecycle
 // ────────────────────────────────────────────────────────────────────────────

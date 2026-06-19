@@ -6,6 +6,8 @@ import { prisma, Visibility, parsePatternData, estimateSkeinCount } from '@homem
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { buildBreadcrumbSchema } from '@/lib/seo/schema-builders'
 import { JsonLd } from '@/components/seo/json-ld'
+import { getCurrentDbUser } from '@/lib/get-current-user'
+import { PatternSaveButton } from '@/components/public/pattern-save-button'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import './pattern-detail.css'
 
@@ -107,6 +109,18 @@ export default async function PatternDetailPage({ params }: PageProps) {
     where: { patternId: row.id, completedAt: { not: null } },
   })
 
+  // Make-it-list save state for the signed-in reader. Anonymous readers still
+  // see the Save button; tapping it routes them through sign-in.
+  const user = await getCurrentDbUser()
+  const saved = user
+    ? Boolean(
+        await prisma.savedPattern.findUnique({
+          where: { userId_patternId: { userId: user.id, patternId: row.id } },
+          select: { id: true },
+        }),
+      )
+    : false
+
   return (
     <article className="pattern-detail">
       <JsonLd data={[patternSchema, breadcrumbSchema]} />
@@ -146,6 +160,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
             <a href={`/api/studio/patterns/${row.id}/pdf?paper=${paper}`} className="pattern-detail-action ghost">
               Download PDF ({paper === 'letter' ? 'US Letter' : 'A4'})
             </a>
+            <PatternSaveButton patternId={row.id} initialSaved={saved} />
           </div>
 
           {finishedCount > 0 && (
