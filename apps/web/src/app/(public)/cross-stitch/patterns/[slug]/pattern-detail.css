@@ -82,6 +82,14 @@
 }
 .pattern-detail-action.ghost:hover { background: #f0e9da; }
 
+.pattern-detail-finished {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--color-sage);
+  margin: 0 0 24px;
+}
+
 .pattern-detail-spec {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));

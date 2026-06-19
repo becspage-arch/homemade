@@ -100,6 +100,13 @@ export default async function PatternDetailPage({ params }: PageProps) {
       : {}),
   }
 
+  // Privacy-safe social proof: an anonymous count of makers who've finished
+  // this pattern. UserPatternProgress is private tracking with no publish
+  // opt-in, so we never name individuals here — only the aggregate.
+  const finishedCount = await prisma.userPatternProgress.count({
+    where: { patternId: row.id, completedAt: { not: null } },
+  })
+
   return (
     <article className="pattern-detail">
       <JsonLd data={[patternSchema, breadcrumbSchema]} />
@@ -140,6 +147,13 @@ export default async function PatternDetailPage({ params }: PageProps) {
               Download PDF ({paper === 'letter' ? 'US Letter' : 'A4'})
             </a>
           </div>
+
+          {finishedCount > 0 && (
+            <p className="pattern-detail-finished">
+              Finished by {finishedCount.toLocaleString()}{' '}
+              {finishedCount === 1 ? 'maker' : 'makers'} in the community
+            </p>
+          )}
 
           <dl className="pattern-detail-spec">
             <div><dt>Size</dt><dd>{row.widthCells} × {row.heightCells} cells</dd></div>
