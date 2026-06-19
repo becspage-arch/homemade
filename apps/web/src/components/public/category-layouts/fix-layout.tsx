@@ -1,5 +1,6 @@
 import { prisma, TutorialStatus } from '@homemade/db'
 import { HomeCard } from '@/components/public/home-card'
+import { CategoryHero } from '@/components/public/category-hero'
 import { HomeRail } from '@/components/public/home-rail'
 import { CategorySubRail } from '@/components/public/category-sub-rail'
 import { SubCategoryChips } from '@/components/public/sub-category-chips'
@@ -104,8 +105,8 @@ export async function FixLayout({
 
   return (
     <div className="fix-landing">
+      <CategoryHero category={category} />
       <header className="fix-landing-header">
-        <p className="fix-landing-eyebrow">{category.name}</p>
         <h1 className="fix-landing-title">What needs fixing?</h1>
         <CategoryScopedSearch
           categorySlug={category.slug}

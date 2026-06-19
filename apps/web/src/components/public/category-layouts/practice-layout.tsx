@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { prisma, TutorialStatus, type Difficulty } from '@homemade/db'
 import { HomeCard } from '@/components/public/home-card'
+import { CategoryHero } from '@/components/public/category-hero'
 import { CategorySubRail } from '@/components/public/category-sub-rail'
 import { RecentlyMadeRail } from '@/components/public/recently-made-rail'
 import { loadRecentlyMade } from '@/lib/recently-made'
@@ -262,8 +263,8 @@ export async function PracticeLayout({
 
   return (
     <div className="practice-landing">
+      <CategoryHero category={category} />
       <header className="practice-landing-header">
-        <p className="practice-landing-eyebrow">{category.name}</p>
         <h1 className="practice-landing-title">{practiceTitleFor(category.slug)}</h1>
         <p className="practice-landing-lede">{practiceLedeFor(category.slug)}</p>
       </header>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { tutorialHeroSrc } from '@/lib/tutorial-hero'
+import { SaveHeart } from './home-cards/save-heart'
 import type { ReaderTutorialState } from '@/lib/user-state'
 
 import './home-cards/home-cards.css'
@@ -51,75 +52,62 @@ export function HomeCard({ tutorial, state, overline, size = 'card' }: HomeCardP
     .slice(0, 3)
 
   return (
-    <Link href={href} className={`home-card home-card-${size}`}>
-      <span className="home-card-image-wrap">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className={`home-card-image${hero.isProcedural ? ' procedural' : ''}`}
-          src={hero.src}
-          srcSet={hero.srcSet}
-          sizes={
-            size === 'wide'
-              ? '(min-width: 900px) 60vw, 100vw'
-              : '(min-width: 900px) 28vw, (min-width: 600px) 44vw, 80vw'
-          }
-          alt={tutorial.hero?.alt ?? ''}
-          loading="lazy"
-          decoding="async"
-        />
-        {state?.bookmarked && (
-          <span className="home-card-saved" aria-label="Saved" title="Saved">
-            <BookmarkGlyph />
-          </span>
-        )}
-        {state?.projectStatus === 'IN_PROGRESS' &&
-          typeof state.projectProgressPercent === 'number' && (
-            <span
-              className="home-card-progress"
-              aria-label={`${state.projectProgressPercent}% complete`}
-            >
+    // Wrapper, not a link — the SaveHeart <button> is a sibling of the
+    // <Link> (a button inside an anchor is invalid HTML) and sits over the
+    // image via absolute positioning.
+    <div className={`home-card home-card-${size}`}>
+      <Link href={href} className="home-card-link">
+        <span className="home-card-image-wrap">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className={`home-card-image${hero.isProcedural ? ' procedural' : ''}`}
+            src={hero.src}
+            srcSet={hero.srcSet}
+            sizes={
+              size === 'wide'
+                ? '(min-width: 900px) 60vw, 100vw'
+                : '(min-width: 900px) 28vw, (min-width: 600px) 44vw, 80vw'
+            }
+            alt={tutorial.hero?.alt ?? ''}
+            loading="lazy"
+            decoding="async"
+          />
+          {state?.projectStatus === 'IN_PROGRESS' &&
+            typeof state.projectProgressPercent === 'number' && (
               <span
-                className="home-card-progress-fill"
-                style={{
-                  width: `${Math.max(0, Math.min(100, state.projectProgressPercent))}%`,
-                }}
-              />
+                className="home-card-progress"
+                aria-label={`${state.projectProgressPercent}% complete`}
+              >
+                <span
+                  className="home-card-progress-fill"
+                  style={{
+                    width: `${Math.max(0, Math.min(100, state.projectProgressPercent))}%`,
+                  }}
+                />
+              </span>
+            )}
+          {dietary.length > 0 && (
+            <span className="home-card-dietary" aria-hidden="false">
+              {dietary.map((flag) => (
+                <span
+                  key={flag}
+                  className="home-card-dietary-badge"
+                  title={DIETARY_BADGES[flag]!.label}
+                  aria-label={DIETARY_BADGES[flag]!.label}
+                >
+                  {DIETARY_BADGES[flag]!.glyph}
+                </span>
+              ))}
             </span>
           )}
-        {dietary.length > 0 && (
-          <span className="home-card-dietary" aria-hidden="false">
-            {dietary.map((flag) => (
-              <span
-                key={flag}
-                className="home-card-dietary-badge"
-                title={DIETARY_BADGES[flag]!.label}
-                aria-label={DIETARY_BADGES[flag]!.label}
-              >
-                {DIETARY_BADGES[flag]!.glyph}
-              </span>
-            ))}
-          </span>
-        )}
-      </span>
-      <span className="home-card-body">
-        {overline && <span className="home-card-overline">{overline}</span>}
-        <span className="home-card-category">{tutorial.category.name}</span>
-        <span className="home-card-title">{tutorial.title}</span>
-      </span>
-    </Link>
-  )
-}
-
-function BookmarkGlyph() {
-  return (
-    <svg viewBox="0 0 16 20" width="14" height="18" aria-hidden="true">
-      <path
-        d="M2 1.5h12v17l-6-4-6 4z"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeWidth="1.2"
-        strokeLinejoin="round"
-      />
-    </svg>
+        </span>
+        <span className="home-card-body">
+          {overline && <span className="home-card-overline">{overline}</span>}
+          <span className="home-card-category">{tutorial.category.name}</span>
+          <span className="home-card-title">{tutorial.title}</span>
+        </span>
+      </Link>
+      <SaveHeart tutorialId={tutorial.id} initialSaved={state?.bookmarked ?? false} />
+    </div>
   )
 }

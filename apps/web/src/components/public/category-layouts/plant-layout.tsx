@@ -2,6 +2,7 @@ import { headers } from 'next/headers'
 import Link from 'next/link'
 import { prisma, TutorialStatus } from '@homemade/db'
 import { HomeCard } from '@/components/public/home-card'
+import { CategoryHero } from '@/components/public/category-hero'
 import { CategoryScopedSearch } from '@/components/public/category/category-scoped-search'
 import { loadInSeasonForCategory } from '@/lib/in-season-for-category'
 import { HomeRail } from '@/components/public/home-rail'
@@ -180,8 +181,8 @@ export async function PlantLayout({
 
   return (
     <div className="plant-landing">
+      <CategoryHero category={category} />
       <header className="plant-landing-header">
-        <p className="plant-landing-eyebrow">{category.name}</p>
         <h1 className="plant-landing-title">
           What can I{' '}
           <Link

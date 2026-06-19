@@ -291,12 +291,16 @@
 /* ── HomeCard ──────────────────────────────────────────────────────────── */
 
 .home-card {
+  position: relative;
+  min-width: 0;
+}
+
+.home-card-link {
   display: flex;
   flex-direction: column;
   gap: 8px;
   text-decoration: none;
   color: inherit;
-  min-width: 0;
 }
 
 .home-card-image-wrap {
@@ -884,6 +888,7 @@
 }
 
 .discovery-card:hover .save-heart,
+.home-card:hover .save-heart,
 .save-heart:focus-visible,
 .save-heart.active {
   opacity: 1;
