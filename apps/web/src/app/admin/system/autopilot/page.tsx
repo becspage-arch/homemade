@@ -4,6 +4,7 @@ import { prisma, TutorialStatus, PipelineStatus } from '@homemade/db'
 import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { AcknowledgeButton } from './acknowledge-button'
 import { PauseToggle } from './pause-toggle'
+import { CategoryStatusToggle } from './category-status-toggle'
 
 export const dynamic = 'force-dynamic'
 
@@ -65,20 +66,6 @@ function formatTimestamp(d: Date): string {
     minute: '2-digit',
     timeZoneName: 'short',
   })
-}
-
-const PIPELINE_STATUS_COLOUR: Record<PipelineStatus, string> = {
-  NOT_READY: 'var(--color-warm-taupe)',
-  READY: 'var(--color-sage)',
-  PAUSED: 'var(--color-burnt-sienna)',
-  COMPLETE: 'var(--color-espresso)',
-}
-
-const PIPELINE_STATUS_LABEL: Record<PipelineStatus, string> = {
-  NOT_READY: 'Not ready',
-  READY: 'Ready',
-  PAUSED: 'Paused',
-  COMPLETE: 'Complete',
 }
 
 export default async function AdminAutopilotPage({ searchParams }: PageProps) {
@@ -439,7 +426,6 @@ export default async function AdminAutopilotPage({ searchParams }: PageProps) {
                 const pct =
                   target && target > 0 ? Math.min(100, Math.round((published / target) * 100)) : 0
                 const isNextUp = i === nextUpIdx
-                const statusColour = PIPELINE_STATUS_COLOUR[cat.pipelineStatus]
 
                 return (
                   <tr key={cat.id}>
@@ -475,17 +461,10 @@ export default async function AdminAutopilotPage({ searchParams }: PageProps) {
                       </div>
                     </td>
                     <td>
-                      <span
-                        style={{
-                          fontFamily: 'var(--font-lora)',
-                          fontSize: 11,
-                          letterSpacing: '0.15em',
-                          textTransform: 'uppercase',
-                          color: statusColour,
-                        }}
-                      >
-                        {PIPELINE_STATUS_LABEL[cat.pipelineStatus]}
-                      </span>
+                      <CategoryStatusToggle
+                        categoryId={cat.id}
+                        status={cat.pipelineStatus}
+                      />
                     </td>
                     <td>
                       <div
