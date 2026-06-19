@@ -169,3 +169,47 @@ SKIPPED: 0
 - caponata: prose-prep-steps
 - pasta-e-ceci: prose-prep-steps
 - ribollita: prose-prep-steps
+
+---
+
+## Run at 18:59:58
+
+Generated: 2026-06-19T18:59:58.476Z
+
+Processed: 74
+PASS: 36
+STILL_BLOCKED: 38
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 114 |
+| content-type-opening-mismatch | 28 |
+| opening-pattern-missing-hook | 27 |
+| grade-level-strict | 10 |
+| body-missing-method | 3 |
+
+## Still BLOCKED (sample 20)
+
+- banana-walnut-layer-cake: hero-missing
+- blackcurrant-frangipane-tart: hero-missing
+- blood-orange-curd-tart: hero-missing
+- brown-butter-shortbread: hero-missing
+- candied-walnuts: hero-missing
+- cardamom-honey-cake: hero-missing
+- chocolate-and-salted-caramel-tart: hero-missing
+- chocolate-bark-salted-honeycomb: hero-missing
+- chocolate-collar-technique: hero-missing
+- chocolate-orange-shortbread: hero-missing
+- chocolate-peppermint-truffles: hero-missing
+- coconut-cream-truffles: hero-missing
+- courgette-and-lime-cake: hero-missing
+- crumb-coat-technique: hero-missing
+- drip-cake-technique: hero-missing
+- elderflower-drizzle-cake: hero-missing
+- fig-and-frangipane-tart: hero-missing
+- flour-types-for-baking: hero-missing, body-missing-method
+- gold-leaf-cake-decoration: hero-missing
+- hazelnut-and-chocolate-chip-scones: hero-missing

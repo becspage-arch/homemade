@@ -1,0 +1,230 @@
+{
+  "slug": "praline-layer-cake",
+  "title": "Praline layer cake",
+  "subtitle": "four layers of almond sponge with praline buttercream and a caramel top",
+  "excerpt": "Praline layer cake is a show-stopping celebration cake built from thin almond sponge layers sandwiched with praline-flavoured Swiss meringue buttercream. The crushed praline gives the buttercream a caramel crunch that contrasts with the smooth sponge. A poured caramel glaze on top adds drama. The cake takes several stages but each component can be made over two days.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Praline layer cake informed by French gateau tradition; Swiss meringue buttercream method from modern British patisserie.",
+  "glossaryTerms": [
+    {
+      "slug": "praline",
+      "term": "Praline",
+      "definition": "Nuts coated in or embedded in caramelised sugar. When the sugar cools and sets, the result is either left as a brittle slab or ground to a paste used to flavour creams and buttercreams."
+    },
+    {
+      "slug": "swiss-meringue-buttercream",
+      "term": "Swiss meringue buttercream",
+      "definition": "A smooth, stable buttercream made by cooking egg whites and sugar together to 74°C, then whipping to a meringue before beating in butter. Less sweet and more silky than American buttercream."
+    }
+  ],
+  "techniqueSlugs": ["crumb-coat-technique"],
+  "criticalTechniques": ["crumb-coat-technique"],
+  "recipe": {
+    "servings": 14,
+    "yieldDescription": null,
+    "prepMinutes": 90,
+    "cookMinutes": 60,
+    "restingMinutes": 120,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Sponge layers can be made 2 days ahead and wrapped. Praline can be made up to 5 days ahead in a sealed jar. Assemble on the day of serving or the day before.",
+    "dietaryFlags": ["VEGETARIAN"],
+    "cuisine": "french",
+    "mealType": "cake",
+    "mood": ["entertaining", "weekendBake", "gifting"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "180°C fan / 200°C conventional / gas 6",
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 100,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "180°C fan / 200°C conventional / gas 6",
+      "steamMethod": null,
+      "decoratingTechnique": "praline buttercream with poured caramel top",
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "round-cake-tin-20", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": false },
+    { "slug": "sugar-thermometer", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "palette-knife", "isOptional": false },
+    { "slug": "cake-turntable", "isOptional": true }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This cake has three components: the almond sponge, the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "praline" } }],
+            "text": "praline"
+          },
+          {
+            "type": "text",
+            "text": ", and the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "swiss-meringue-buttercream" } }],
+            "text": "Swiss meringue buttercream"
+          },
+          {
+            "type": "text",
+            "text": ". Each can be made separately. The praline is stirred into the finished buttercream to give it its flavour and texture. The easiest order is: praline first (it keeps for days), then the sponge, then the buttercream on the day of assembly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Components" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Almond sponge (fills two 20 cm tins, each split to give 4 layers)" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 250, "unit": "g", "prepNote": "room temperature", "isOptional": false },
+            { "ingredientSlug": "caster-sugar", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "large", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "self-raising-flour", "amount": 200, "unit": "g", "prepNote": "sifted", "isOptional": false },
+            { "ingredientSlug": "ground-almonds", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "whole-milk", "amount": 60, "unit": "ml", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "almond-extract", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false },
+            { "ingredientSlug": "almonds-flaked", "amount": 100, "unit": "g", "prepNote": "for praline", "isOptional": false },
+            { "ingredientSlug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": "for praline", "isOptional": false },
+            { "ingredientSlug": "egg-whites", "amount": 5, "unit": "large", "prepNote": "for buttercream", "isOptional": false },
+            { "ingredientSlug": "caster-sugar", "amount": 300, "unit": "g", "prepNote": "for buttercream", "isOptional": false },
+            { "ingredientSlug": "unsalted-butter", "amount": 400, "unit": "g", "prepNote": "for buttercream, room temperature, diced", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Praline" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat 100 g caster sugar in a small dry saucepan over medium heat without stirring until it turns a deep amber caramel. Add 100 g flaked almonds, stir once to coat, then pour onto a lined baking tray. Leave to set hard (about 20 minutes), then break into pieces and crush in a food processor to coarse crumbs. Set aside." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Almond sponge" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 180°C fan. Grease and line two 20 cm round cake tins." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Beat butter and 250 g caster sugar until pale and fluffy. Add eggs one at a time, beating well. Fold in flour, ground almonds, milk, and almond extract. Divide between the two tins and bake for 25 to 30 minutes until a skewer comes out clean and the sponge springs back when pressed. Cool completely." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Split each sponge horizontally into two thin layers using a long serrated knife. You now have 4 layers." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Swiss meringue buttercream" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine 5 egg whites and 300 g caster sugar in the bowl of a stand mixer set over a saucepan of barely simmering water. Whisk constantly by hand until the sugar has dissolved and the mixture reaches 74°C. Remove from the heat and whisk on high speed for 8 to 10 minutes until the meringue is at stiff peaks and the bowl is cool." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Switch to the paddle attachment and beat in the 400 g room-temperature butter a piece at a time on medium speed. The buttercream may look curdled before it comes together; keep beating. Once smooth, beat in the crushed praline." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assembly" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stack the four layers with praline buttercream between each one. Apply a crumb coat of buttercream all over and refrigerate for 30 minutes. Apply the final coat of buttercream and smooth. Decorate the top with additional praline shards or a poured thin caramel before serving." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Swiss meringue buttercream looks curdled",
+              "avoid": "Avoid adding butter before the meringue bowl is fully cool to the touch.",
+              "fix": "Keep beating on medium speed for a further 3 to 5 minutes; split buttercream almost always comes back together."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Sponge layers splitting or tearing when cut",
+              "avoid": "Avoid cutting sponges when still warm; they must be fully cold.",
+              "fix": "Use a long serrated knife in a sawing motion with minimal downward pressure."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

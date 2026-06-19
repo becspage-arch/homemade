@@ -51,3 +51,42 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - caponata prose-prep-steps — applied: 
 - pasta-e-ceci prose-prep-steps — applied: 
 - ribollita prose-prep-steps — applied: 
+
+- banana-walnut-layer-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- blackcurrant-frangipane-tart hero-missing — applied: hero-fill-deferred-to-standalone-script
+- blood-orange-curd-tart hero-missing — applied: hero-fill-deferred-to-standalone-script
+- brown-butter-shortbread hero-missing — applied: hero-fill-deferred-to-standalone-script
+- candied-walnuts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cardamom-honey-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chocolate-and-salted-caramel-tart hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chocolate-bark-salted-honeycomb hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chocolate-collar-technique hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chocolate-orange-shortbread hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chocolate-peppermint-truffles hero-missing — applied: hero-fill-deferred-to-standalone-script
+- coconut-cream-truffles hero-missing — applied: hero-fill-deferred-to-standalone-script
+- courgette-and-lime-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crumb-coat-technique hero-missing — applied: hero-fill-deferred-to-standalone-script
+- drip-cake-technique hero-missing — applied: hero-fill-deferred-to-standalone-script
+- elderflower-drizzle-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fig-and-frangipane-tart hero-missing — applied: hero-fill-deferred-to-standalone-script
+- flour-types-for-baking hero-missing,body-missing-method — applied: hero-fill-deferred-to-standalone-script
+- gold-leaf-cake-decoration hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hazelnut-and-chocolate-chip-scones hero-missing — applied: hero-fill-deferred-to-standalone-script
+- isomalt-gems-decoration hero-missing — applied: hero-fill-deferred-to-standalone-script
+- kneading-by-hand hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lemon-and-ginger-fudge hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lemon-bars hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lemon-ricotta-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- maple-and-pecan-scones hero-missing — applied: hero-fill-deferred-to-standalone-script
+- marzipan-cake-covering hero-missing — applied: hero-fill-deferred-to-standalone-script
+- no-bake-chocolate-cheesecake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- olive-oil-biscotti hero-missing — applied: hero-fill-deferred-to-standalone-script
+- orange-chocolate-truffles hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pear-and-chocolate-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- peppercorn-shortbread hero-missing — applied: hero-fill-deferred-to-standalone-script
+- praline-layer-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pressed-flower-cake-decoration hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ruffled-buttercream-technique hero-missing — applied: hero-fill-deferred-to-standalone-script
+- stem-ginger-and-oat-biscuits hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tahini-cookies hero-missing — applied: hero-fill-deferred-to-standalone-script
+- treacle-toffee-dark hero-missing — applied: hero-fill-deferred-to-standalone-script

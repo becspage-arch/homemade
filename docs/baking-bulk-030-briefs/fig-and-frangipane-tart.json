@@ -1,0 +1,189 @@
+{
+  "slug": "fig-and-frangipane-tart",
+  "title": "Fig and frangipane tart",
+  "subtitle": "a sweet shortcrust case filled with almond cream and fresh figs",
+  "excerpt": "Frangipane is ground almond cream that bakes to a soft, slightly cakey texture inside a pastry shell. Fresh figs sink into the filling during baking and emerge jammy and caramelised. The tart is best served at room temperature with a spoonful of crème fraîche. It keeps refrigerated for two days but is at its best on the day of baking.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "pies",
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Frangipane tart is a French-origin recipe; almond cream tarts documented in French and British cookbooks from the nineteenth century onward. Fig variant from contemporary British patisserie.",
+  "glossaryTerms": [
+    {
+      "slug": "frangipane",
+      "term": "Frangipane",
+      "definition": "A filling made from ground almonds, butter, sugar, and eggs, baked inside a pastry tart case. It swells and sets during baking to a soft, moist almond cream."
+    },
+    {
+      "slug": "baking-blind",
+      "term": "Baking blind",
+      "definition": "Baking a pastry case without its filling to prevent it becoming soggy once the wet filling is added. The case is lined with parchment and weighted with baking beans."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "recipe": {
+    "servings": 10,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 55,
+    "restingMinutes": 30,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pastry case can be blind-baked up to 2 days ahead. Fill and bake on the day of serving.",
+    "dietaryFlags": ["VEGETARIAN"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "entertaining"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "180°C fan / 200°C conventional / gas 6",
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 200,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "180°C fan / 200°C conventional / gas 6",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "tart-tin", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "baking-beans", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The tart shell is "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "baking-blind" } }],
+            "text": "blind-baked"
+          },
+          {
+            "type": "text",
+            "text": " before the "
+          },
+          {
+            "type": "text",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "frangipane" } }],
+            "text": "frangipane"
+          },
+          {
+            "type": "text",
+            "text": " is added. This gives the pastry a head start and prevents a soggy base. The figs go in raw: they soften and caramelise in the heat of the oven. Use figs that are ripe but not over-soft; very overripe figs will collapse entirely."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": "for the pastry", "isOptional": false },
+            { "ingredientSlug": "icing-sugar", "amount": 40, "unit": "g", "prepNote": "for the pastry", "isOptional": false },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold, diced, for the pastry", "isOptional": false },
+            { "ingredientSlug": "egg-yolks", "amount": 1, "unit": null, "prepNote": "for the pastry", "isOptional": false },
+            { "ingredientSlug": "water", "amount": 2, "unit": "tbsp", "prepNote": "for the pastry", "isOptional": false },
+            { "ingredientSlug": "unsalted-butter", "amount": 125, "unit": "g", "prepNote": "room temperature, for frangipane", "isOptional": false },
+            { "ingredientSlug": "caster-sugar", "amount": 125, "unit": "g", "prepNote": "for frangipane", "isOptional": false },
+            { "ingredientSlug": "ground-almonds", "amount": 125, "unit": "g", "prepNote": "for frangipane", "isOptional": false },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "large", "prepNote": "for frangipane", "isOptional": false },
+            { "ingredientSlug": "almond-extract", "amount": 0.5, "unit": "tsp", "prepNote": "for frangipane", "isOptional": false },
+            { "ingredientSlug": "figs", "amount": 6, "unit": "medium", "prepNote": "halved", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Pastry case" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rub the cold butter into the flour and icing sugar until the mixture resembles fine crumbs. Stir in the egg yolk and enough cold water to bring the dough together (it should not be sticky). Flatten to a disc, wrap, and refrigerate for 30 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 180°C fan. Roll the pastry to 3 mm thick and use it to line a 23 cm loose-bottomed tart tin. Trim the edges. Line with baking parchment, fill with baking beans, and blind-bake for 15 minutes. Remove the beans and parchment and bake for a further 5 minutes until the base is pale golden. Set aside." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Frangipane and baking" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Beat the butter and caster sugar together until pale and fluffy. Beat in the eggs one at a time. Fold in the ground almonds and almond extract." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spread the frangipane evenly in the blind-baked tart case. Press the fig halves cut-side-up into the filling at regular intervals, so the tops sit just above the surface." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake for 30 to 35 minutes until the frangipane is set and golden and a skewer inserted between two figs comes out clean. The tart should be slightly puffed and pull away from the sides of the tin. Cool in the tin for 20 minutes before removing." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Frangipane is liquid in the centre after the stated bake time",
+              "avoid": "Avoid under-baking; the frangipane needs to reach the centre of the tart before it is done.",
+              "fix": "Return to the oven for a further 5 to 10 minutes and check between the figs with a skewer."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Pastry case shrinking badly during blind-baking",
+              "avoid": "Avoid skipping the refrigerating step after lining the tin.",
+              "fix": "Chill the lined tart tin for 30 minutes before blind-baking; cold pastry shrinks less."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
