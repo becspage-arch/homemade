@@ -1,0 +1,380 @@
+{
+  "slug": "liege-waffles",
+  "title": "Liège Waffles",
+  "subtitle": "Yeasted dough waffles with pearl sugar, chewy, rich, and caramelised",
+  "excerpt": "Liège waffles are a Belgian street food made from a rich yeasted dough studded with pearl sugar that melts against the waffle iron and caramelises into crunchy amber patches. Chewier and richer than batter waffles, they're sold warm from carts across Belgian cities.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Liège waffles originate from the Prince-Bishopric of Liège. A legend attributes them to an 18th-century cook of the Prince-Bishop of Liège who created a sweet brioche dough cooked in a waffle iron. The pearl sugar caramelisation that defines the waffle is an essential feature of the authentic version.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 24,
+    "restingMinutes": 60,
+    "chillingMinutes": null,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cool completely, wrap individually, and freeze for up to one month. Reheat in the waffle iron for 1 to 2 minutes or in the oven at 180°C.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can prove overnight in the fridge. Bring to room temperature for 30 minutes before shaping and cooking.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "belgian",
+    "mealType": "breakfast",
+    "mood": [
+      "comfortFood",
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": "Set waffle iron to medium-high. Liège waffles need a slightly lower heat than batter waffles to allow the dough to cook through before the outside over-browns.",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "waffle-iron",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "silicone-spatula",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "prove",
+      "term": "prove",
+      "definition": "To allow a yeasted dough to rise before cooking, giving the yeast time to produce carbon dioxide and create a lighter, more open texture."
+    }
+  ],
+  "techniqueSlugs": [
+    "bread-dough-basics"
+  ],
+  "criticalTechniques": [
+    "bread-dough-basics"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Liège waffles are not the same as the crisp batter waffles you make for Sunday brunch. They start as a rich, buttery yeasted dough, closer to brioche than anything you'd pour from a jug. They're studded with Belgian pearl sugar that melts against the hot iron and caramelises into crunchy, amber patches. Sold from street carts across Liège, they're eaten warm, in the hand, with nothing else needed. The intermediate difficulty rating reflects the dough-making: the actual cooking is straightforward once the dough has "
+          },
+          {
+            "type": "text",
+            "text": "proved",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "prove"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". You will need 7 g fast-action yeast and 100 g Belgian pearl sugar, coarse, dense sugar that holds its shape in the heat. Pearl sugar is available online and in Scandinavian or Belgian food shops; do not substitute with caster or granulated sugar, which will dissolve and make the dough sticky rather than producing the characteristic crunchy patches."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            {
+              "ingredientSlug": "strong-bread-flour",
+              "amount": 350,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 120,
+              "unit": "ml",
+              "prepNote": "warm (not hot, around 37°C)",
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "at room temperature",
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 180,
+              "unit": "g",
+              "prepNote": "softened, cut into small pieces",
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": 5,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "vanilla-extract",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dough"
+            }
+          ]
+        }
+      },
+      {
+        "type": "toolsList",
+        "attrs": {
+          "items": [
+            {
+              "slug": "waffle-iron",
+              "isOptional": false
+            },
+            {
+              "slug": "mixing-bowl-large",
+              "isOptional": false
+            },
+            {
+              "slug": "silicone-spatula",
+              "isOptional": false
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Making the dough"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Warm the {{whole-milk}} milk to around 37°C, it should feel comfortably warm on your wrist, not hot. Stir in the 7 g fast-action yeast and 1 teaspoon of the {{light-brown-sugar}} sugar. Leave for five minutes until frothy; this confirms the yeast is active."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put the {{strong-bread-flour}} flour in a large bowl with the remaining {{light-brown-sugar}} sugar and the {{sea-salt-flakes}} salt. Make a well, add the yeast mixture, {{eggs}} eggs, and {{vanilla-extract}} vanilla extract. Mix until a rough dough forms. Begin kneading by hand, the dough will be sticky at first. After five minutes it will become smoother. Begin adding the {{unsalted-butter}} butter a few pieces at a time, incorporating each addition before adding the next. This takes patience: Liège dough is an enriched dough, and the butter needs to work into the gluten network gradually. After all the butter is in, knead for a further 8 to 10 minutes until the dough is smooth, elastic, and slightly tacky but not sticky."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Proving and adding pearl sugar"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shape the dough into a ball, return to the bowl, and cover with a damp cloth. Leave to "
+          },
+          {
+            "type": "text",
+            "text": "prove",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "prove"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " at room temperature for 60 to 90 minutes until roughly doubled in size. Tip onto a lightly floured surface and press out gently. Scatter the 100 g pearl sugar over the dough and fold it in by kneading briefly, just enough to distribute the sugar without breaking it up. Divide into 8 equal portions and shape each into an oval ball."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cooking the waffles"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the waffle iron to medium-high. Lightly grease with a small amount of butter or neutral oil. Place one portion of dough in the centre of the iron, close, and cook for 2.5 to 3 minutes. Open carefully, the caramelised sugar will be very hot. The waffle should be deep golden with amber caramelised patches where the pearl sugar has melted. Transfer to a wire rack. Repeat with the remaining portions, cleaning the iron plates with a dry cloth between waffles if sugar has pooled."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Serving"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Eat warm, ideally within 20 minutes of cooking. The caramelised sugar sets as the waffle cools and loses its soft, chewy character. In Belgium, Liège waffles are eaten plain, or occasionally dusted with icing sugar. Cream, fruit, or chocolate sauce are Brussels-style waffle territory, Liège waffles need nothing but themselves."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Liège waffles have been sold from carts and stalls in the Belgian city of Liège for well over two centuries. They are the older of Belgium's two famous waffle styles, the Brussels waffle (lighter, crispier, always rectangular) came later. Outside Belgium, the two are frequently confused, but they are made from entirely different bases: Brussels waffles use a batter, while Liège waffles use a yeasted dough. The pearl sugar is non-negotiable for the authentic version."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dough is extremely sticky and won't knead: "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Liège dough is wetter than bread dough. Resist adding more flour. Use a lightly oiled surface instead of a floured one, and keep kneading, the butter will eventually emulsify into the gluten and the dough will become workable."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Waffles are browning too fast on the outside but doughy inside: "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Reduce the waffle iron heat and cook for longer. Liège waffles need more time than batter waffles because the dough is dense."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pearl sugar is melting into the dough rather than staying as chunks: "
+                  },
+                  {
+                    "type": "text",
+                    "text": "The dough is too warm. If your kitchen is hot, chill the proved dough for 15 minutes before adding the pearl sugar, cold dough holds the sugar intact during the fold."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

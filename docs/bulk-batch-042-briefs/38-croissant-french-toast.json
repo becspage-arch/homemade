@@ -1,0 +1,320 @@
+{
+  "slug": "croissant-french-toast",
+  "title": "Croissant French Toast",
+  "subtitle": "Day-old croissants dipped in vanilla custard and fried until golden",
+  "excerpt": "Day-old croissants halved and soaked in vanilla egg custard, then fried in butter until the outside is crisp and amber. Richer than bread-based French toast by some margin, and a very good use of croissants that have gone slightly stale.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Croissant French toast is a modern brunch recipe that applies the pain perdu technique to croissants. Day-old croissants are the preferred ingredient because they hold their shape better than fresh ones during soaking.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 8,
+    "restingMinutes": null,
+    "chillingMinutes": null,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The custard can be mixed the night before and kept in the fridge.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "french",
+    "mealType": "breakfast",
+    "mood": [
+      "comfortFood",
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-medium",
+      "isOptional": false
+    },
+    {
+      "slug": "spatula",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "soak",
+      "term": "soak",
+      "definition": "To submerge the croissant halves in egg custard until they absorb the liquid, giving a soft, custardy interior after frying."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Croissant French toast takes the pain perdu method, a custard "
+          },
+          {
+            "type": "text",
+            "text": "soak",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "soak"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " followed by a brief fry in butter, and applies it to croissants. Croissants are already rich with butter and have a layered, laminated structure. This makes the result considerably richer than bread-based versions. The flaky outer layers absorb custard unevenly, with the laminated layers holding their shape while the crumb softens. What comes out of the pan has a crisp base, custardy layers within, and a golden surface that smells of vanilla and browned butter. Day-old croissants work better here than fresh ones. Slightly stale croissants hold their shape during soaking. Fresh ones can become waterlogged and fragile."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "croissant",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "preferably 1-day-old, halved lengthways",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "custard"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "custard"
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 50,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "custard"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 25,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "custard"
+            },
+            {
+              "ingredientSlug": "vanilla-extract",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "custard"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 25,
+              "unit": "g",
+              "prepNote": "for frying",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "maple-syrup",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "to serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "toolsList",
+        "attrs": {
+          "items": [
+            {
+              "slug": "frying-pan-26",
+              "isOptional": false
+            },
+            {
+              "slug": "mixing-bowl-medium",
+              "isOptional": false
+            },
+            {
+              "slug": "spatula",
+              "isOptional": false
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Making the custard"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Whisk together the {{eggs}} eggs, {{whole-milk}} milk, {{double-cream}} double cream, {{caster-sugar}} caster sugar, and {{vanilla-extract}} vanilla extract in a shallow bowl or lipped plate. The bowl needs to be wide enough to lay a croissant half flat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Soaking the croissants"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Halve the {{croissant}} croissants lengthways through the centre. Place one half cut-side down in the custard. Press lightly and leave for 20 seconds. Turn and soak the other side for 20 seconds. You want the croissant to absorb the custard without becoming sodden, it should feel heavier and slightly yielding but still hold its shape when lifted. Transfer to a clean plate while you soak the remaining halves."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Frying"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the {{unsalted-butter}} butter in a large frying pan over medium heat. When the foam subsides, add the croissant halves cut-side down. Cook for 2 minutes until deeply golden. Flip and cook the rounded side for 1 to 2 minutes. The croissant will puff slightly in the pan from the custard steam inside. Remove and serve immediately."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Serving"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve hot with a drizzle of {{maple-syrup}} maple syrup. A scattering of fresh berries works well alongside for contrast. Some versions add a dusting of icing sugar and a pinch of cinnamon. The richness of the croissant means no additional cream is really needed, though softly whipped cream alongside is not a bad idea if you're making this for a weekend brunch rather than a weekday breakfast."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Croissant is falling apart in the custard: "
+                  },
+                  {
+                    "type": "text",
+                    "text": "The croissant is too fresh. Leave croissants out uncovered overnight to dry slightly before using, or toast them lightly in the oven at 150°C for five minutes to firm them up before soaking."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Inside is still wet and eggy after frying: "
+                  },
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat and cook more slowly. A croissant half is thicker than a slice of bread and needs longer at a gentler heat to cook through."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

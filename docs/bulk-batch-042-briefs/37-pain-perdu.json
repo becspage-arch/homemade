@@ -1,0 +1,369 @@
+{
+  "slug": "pain-perdu",
+  "title": "Pain Perdu",
+  "subtitle": "Thick-cut bread soaked in custard and pan-fried until golden, the French answer to French toast",
+  "excerpt": "Stale bread given new life: soaked in a vanilla-scented egg and cream custard, then pan-fried in butter until the outside is crisp and the inside is custardy and soft. Ready in twenty minutes and remarkable for how little it costs to make.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pain perdu (lost bread) uses stale bread transformed by a custard soak, recorded in French cookbooks from the 17th century. The name refers to bread otherwise destined to be wasted. The same dish appears across European cuisines under different names: eggy bread in Britain, French toast in America, torrijas in Spain.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "restingMinutes": null,
+    "chillingMinutes": null,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The custard mixture can be made the night before. Store covered in the fridge.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "french",
+    "mealType": "breakfast",
+    "mood": [
+      "comfortFood",
+      "weekend",
+      "kidFriendly"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-medium",
+      "isOptional": false
+    },
+    {
+      "slug": "spatula",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "soak",
+      "term": "soak",
+      "definition": "To submerge bread fully in the egg-and-milk custard so it absorbs the liquid evenly before frying, resulting in a soft, custardy interior after cooking."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pain perdu, literally \"lost bread\", is the French tradition of rescuing day-old bread from the bin by giving it a new purpose entirely. A quick "
+          },
+          {
+            "type": "text",
+            "text": "soak",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "soak"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " in vanilla-scented egg custard transforms even mediocre bread into something with a deeply golden crust and a soft, yielding interior. The key is using bread that's at least a day old: fresh bread doesn't absorb the custard cleanly and tends to break apart in the pan. Brioche is the classic choice; a thick-cut white bloomer or even slightly stale sourdough all work."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "bread",
+              "amount": 4,
+              "unit": "slice",
+              "prepNote": "thick-cut, 1 day old (brioche or white bloomer work best)",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "custard"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "custard"
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 50,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "custard"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 25,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "custard"
+            },
+            {
+              "ingredientSlug": "vanilla-extract",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "custard"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "for frying",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "maple-syrup",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "to serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "toolsList",
+        "attrs": {
+          "items": [
+            {
+              "slug": "frying-pan-26",
+              "isOptional": false
+            },
+            {
+              "slug": "mixing-bowl-medium",
+              "isOptional": false
+            },
+            {
+              "slug": "spatula",
+              "isOptional": false
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Making the custard"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Whisk the {{eggs}} eggs, {{whole-milk}} milk, {{double-cream}} double cream, {{caster-sugar}} caster sugar, and {{vanilla-extract}} vanilla extract together in a shallow bowl or deep-sided plate. You need something wide enough to lay a slice of bread flat. A standard cereal bowl isn't wide enough. A large pasta bowl or a lipped baking dish works well."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Soaking the bread"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place one slice of {{bread}} bread in the custard and press it gently into the liquid. Leave for 30 seconds, then turn and leave for another 30 seconds on the other side. Lift and hold over the bowl briefly to let excess custard drip off, bread that's waterlogged rather than soaked takes too long in the pan and the custard can scramble before the outside colours. Repeat with each slice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Frying"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the {{unsalted-butter}} butter in a frying pan over medium heat. When it foams and the foam begins to subside, add the soaked bread slices, don't overcrowd, two slices at a time if the pan allows. Cook for 2 to 3 minutes without touching them until the underside is deep golden. Flip carefully and cook the second side for 2 minutes. The bread should feel firm at the edges but yielding in the middle when pressed gently with the spatula."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Transfer to a warm plate. Add a small extra knob of butter to the pan between batches to maintain the colour on each piece."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Serving"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve immediately with a drizzle of {{maple-syrup}} maple syrup. Also good with a dusting of icing sugar and a squeeze of lemon in the more austere British style, or alongside softly whipped cream and fresh berries for a more generous brunch plate. Pain perdu does not keep well once made, eat it hot from the pan."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pain perdu appears in French cookbooks as early as the 17th century. For most of its history it was a thrift recipe: a way to make something worthwhile from bread too stale to eat otherwise. The same dish exists across Europe under different names: eggy bread in British school canteens, torrijas in Spain at Easter, and arme Ritter in Germany. The American French toast took the name from France but developed its own thicker, more indulgent character, often made with brioche and served with fruit compotes and cream. The French original is plainer, less sweet, and tastes of what it is: butter, eggs, and good bread."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooter"
+          }
+        ]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bread is falling apart in the custard: "
+                  },
+                  {
+                    "type": "text",
+                    "text": "The bread is too fresh or too thin. Use bread that is at least a day old and cut at least 2 cm thick. Handle gently when moving from bowl to pan."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Outside is golden but inside is wet and eggy: "
+                  },
+                  {
+                    "type": "text",
+                    "text": "The bread was too thickly soaked. Reduce the soak time, or reduce the heat so the bread cooks through before the outside over-colours."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Custard is burning in the pan: "
+                  },
+                  {
+                    "type": "text",
+                    "text": "The heat is too high or there's too much custard dripping from the bread. Moderate the heat to medium and drain each slice more thoroughly before it goes into the pan."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

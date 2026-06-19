@@ -1,0 +1,252 @@
+{
+  "slug": "full-welsh-breakfast",
+  "title": "Full Welsh Breakfast",
+  "subtitle": "Bacon, sausage, laverbread, cockles, and egg",
+  "excerpt": "Wales's cooked breakfast plate, made distinctive by laverbread and cockles, two coastal ingredients that give it a flavour unlike any other national fry.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional Welsh cooked breakfast. Laverbread (bara lawr) is made from pureed cooked laver seaweed and is a distinctly Welsh ingredient, often rolled in oatmeal and fried. Cockles from the Gower peninsula are the traditional accompaniment.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": null,
+    "chillingMinutes": null,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "welsh",
+    "mealType": "breakfast",
+    "mood": ["comfortFood", "weekend"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "Oven temperature for keeping cooked items warm while building the plate",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "small-frying-pan", "isOptional": false },
+    { "slug": "fish-slice", "isOptional": false },
+    { "slug": "spatula", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "render",
+      "term": "Render",
+      "definition": "To slowly melt fat from meat over moderate heat, crisping it and releasing flavour into the pan."
+    },
+    {
+      "slug": "laverbread",
+      "term": "Laverbread",
+      "definition": "A Welsh speciality made from laver seaweed that has been boiled until soft and then pureed. It has a deep, briny, almost mineral flavour and is often rolled in oatmeal before frying."
+    }
+  ],
+  "techniqueSlugs": ["frying", "oven-keeping-warm"],
+  "criticalTechniques": ["frying"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The full Welsh breakfast is set apart from every other British fry by two coastal ingredients: "
+          },
+          {
+            "type": "text",
+            "text": "laverbread",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "laverbread" } }]
+          },
+          {
+            "type": "text",
+            "text": " and cockles. Together they give the plate a deep, saline character that nothing else replicates. Laverbread, bara lawr in Welsh, is not bread at all but pureed cooked laver seaweed, usually rolled in fine oatmeal and fried in rounds. Cockles come warmed in the pan alongside. The rest of the plate follows the same logic as any British fry: bacon, sausage, egg, tomato, and mushroom, with everything timed to arrive together."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "back-bacon", "amount": 200, "unit": "g", "prepNote": "4 rashers", "isOptional": false, "groupLabel": "The plate" },
+            { "ingredientSlug": "sausages-pork", "amount": 4, "unit": "each", "prepNote": "Welsh pork sausages if available", "isOptional": false, "groupLabel": "The plate" },
+            { "ingredientSlug": "black-pudding", "amount": 80, "unit": "g", "prepNote": "sliced 1 cm thick", "isOptional": true, "groupLabel": "The plate" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "The plate" },
+            { "ingredientSlug": "tomato", "amount": 2, "unit": "each", "prepNote": "halved", "isOptional": false, "groupLabel": "The plate" },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For cooking" },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 2, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Seasoning" },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": "freshly ground", "isOptional": false, "groupLabel": "Seasoning" }
+          ]
+        }
+      },
+      {
+        "type": "toolsList",
+        "attrs": {
+          "items": [
+            { "slug": "frying-pan-26", "isOptional": false },
+            { "slug": "small-frying-pan", "isOptional": false },
+            { "slug": "fish-slice", "isOptional": false },
+            { "slug": "spatula", "isOptional": false },
+            { "slug": "baking-tray", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry the sausages and bacon" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 180 °C with the baking tray inside. Place the large frying pan over medium heat and add 10 g of butter. Cook the "
+          },
+          { "type": "text", "text": "sausages-pork" },
+          {
+            "type": "text",
+            "text": " for 10 to 12 minutes, turning regularly until cooked through and golden. Transfer to the oven."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the "
+          },
+          { "type": "text", "text": "back-bacon" },
+          {
+            "type": "text",
+            "text": " to the same pan and let it "
+          },
+          {
+            "type": "text",
+            "text": "render",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "render" } }]
+          },
+          {
+            "type": "text",
+            "text": " over medium-high heat, 2 to 3 minutes per side, until the fat is golden and the edges are beginning to crisp. Add to the oven. Cook any black pudding slices for 2 minutes per side and add those too."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry the laverbread and cockles" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you have laverbread, shape it into small patties with your hands and roll them in fine oatmeal. Add a little butter to the pan over medium heat and fry the patties for 2 minutes per side until a light crust forms. They are delicate, so turn them carefully with a fish slice. If you have cockles, warm them in the same pan for 1 to 2 minutes, shaking the pan gently. Both go straight to the plates, they don't hold well in the oven."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the "
+          },
+          { "type": "text", "text": "tomato" },
+          {
+            "type": "text",
+            "text": " halves cut-side down in the same pan for 3 minutes. Season and add to the oven."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the eggs and build the plate" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set the small frying pan over medium-low heat with the remaining butter. Crack in the "
+          },
+          { "type": "text", "text": "eggs" },
+          {
+            "type": "text",
+            "text": " and fry gently for 2 to 3 minutes until the whites are set. Arrange everything on warm plates: sausages, bacon, tomato, any black pudding, and laverbread patties if using. Add the cockles in a small cluster. Lay the egg on top or to the side. Serve with thickly sliced white bread or a Welsh oatcake."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooter" }]
+      },
+      {
+        "type": "bulletList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Laverbread patties sticking and breaking: the pan isn't hot enough before you add them, or they haven't had long enough on the first side to form a crust. Wait for a golden edge before turning, they hold together much better once they have a proper crust."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Can't find laverbread or cockles: this is regional produce that's hard to source outside Wales. Online Welsh food suppliers stock laverbread in tins; cockles in brine from a supermarket are a reasonable stand-in. The plate without them is a perfectly good Welsh-style fry, but it loses its defining character."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The full Welsh breakfast is rooted in the country's coastal geography. Laver seaweed has been gathered from the beaches of South Wales, particularly around the Gower peninsula and Pembrokeshire, for centuries. Richard Burton reportedly declared laverbread one of the few things he missed from home. Cockles from Penclawdd on the Gower have been harvested and sold from market stalls just as long. Together they give this breakfast a briny, mineral quality that sets it apart from the meat-forward fries of England and Scotland."
+          }
+        ]
+      }
+    ]
+  }
+}
