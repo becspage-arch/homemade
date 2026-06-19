@@ -51,6 +51,28 @@ export default async function MeBookmarksPage() {
     })
   ).filter((s) => s.pattern.slug)
 
+  // Saved community recipes (UserRecipe) — the third strand of the Make it
+  // list. Resolve hero media in one batched lookup.
+  const savedRecipes = await prisma.savedRecipe.findMany({
+    where: { userId: user.id },
+    orderBy: { createdAt: 'desc' },
+    include: {
+      userRecipe: {
+        select: { id: true, slug: true, title: true, heroPhotoMediaId: true },
+      },
+    },
+  })
+  const recipeMediaIds = savedRecipes
+    .map((s) => s.userRecipe.heroPhotoMediaId)
+    .filter((id): id is string => Boolean(id))
+  const recipeMedia = recipeMediaIds.length
+    ? await prisma.media.findMany({
+        where: { id: { in: recipeMediaIds } },
+        select: { id: true, r2Key: true, cloudflareId: true },
+      })
+    : []
+  const recipeMediaById = new Map(recipeMedia.map((m) => [m.id, m]))
+
   const publicCount = bookmarks.filter((b) => b.isPublic).length
   const privateCount = bookmarks.length - publicCount
 
@@ -142,6 +164,73 @@ export default async function MeBookmarksPage() {
                 </span>
               </Link>
             ))}
+          </div>
+        </section>
+      )}
+
+      {savedRecipes.length > 0 && (
+        <section style={{ marginTop: 40 }}>
+          <span className="me-section-label">Make it list</span>
+          <h2 className="me-section-title">Community recipes you&apos;ve saved</h2>
+          <div className="me-grid">
+            {savedRecipes.map((s) => {
+              const media = s.userRecipe.heroPhotoMediaId
+                ? recipeMediaById.get(s.userRecipe.heroPhotoMediaId)
+                : null
+              const card = media
+                ? mediaSrcSet(
+                    { cloudflareId: media.cloudflareId, r2Key: media.r2Key },
+                    'card',
+                    ['public'],
+                  )
+                : null
+              return (
+                <Link
+                  key={s.id}
+                  href={`/recipes/${s.userRecipe.slug}`}
+                  style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}
+                >
+                  {card ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={card.src}
+                      srcSet={card.srcSet}
+                      sizes="(min-width: 900px) 22vw, 50vw"
+                      alt={s.userRecipe.title}
+                      style={{
+                        width: '100%',
+                        aspectRatio: '4 / 3',
+                        objectFit: 'cover',
+                        borderRadius: 10,
+                        background: 'var(--color-oat)',
+                      }}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <div
+                      style={{
+                        width: '100%',
+                        aspectRatio: '4 / 3',
+                        borderRadius: 10,
+                        background: 'var(--color-oat)',
+                      }}
+                    />
+                  )}
+                  <span
+                    style={{
+                      display: 'block',
+                      marginTop: 8,
+                      fontFamily: 'var(--font-display)',
+                      fontSize: 15,
+                      color: 'var(--color-espresso)',
+                    }}
+                  >
+                    {s.userRecipe.title}
+                  </span>
+                </Link>
+              )
+            })}
           </div>
         </section>
       )}

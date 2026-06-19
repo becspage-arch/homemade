@@ -9,6 +9,7 @@ import { mediaUrl } from '@/lib/media'
 import { TutorialContent } from '@/components/public/tutorial-content/tutorial-content'
 import { AddToShoppingList } from '@/components/public/recipes/add-to-shopping-list'
 import { AddToMealPlan } from '@/components/public/recipes/add-to-meal-plan'
+import { SaveRecipeButton } from '@/components/public/recipes/save-recipe-button'
 import { DIETARY_LABEL, cuisineLabel } from '@/lib/recipes/recipe-vocab'
 import type { TipTapNode } from '@/components/public/tutorial-content/types'
 
@@ -82,6 +83,17 @@ export default async function UserRecipePage({
   }
 
   const prefs = await resolveUserUnitPreferences(user)
+
+  // Make-it-list save state. Anonymous readers see the Save button too;
+  // tapping it routes them through sign-in.
+  const savedRecipe = user
+    ? Boolean(
+        await prisma.savedRecipe.findUnique({
+          where: { userId_userRecipeId: { userId: user.id, userRecipeId: recipe.id } },
+          select: { id: true },
+        }),
+      )
+    : false
 
   // Resolve hero + gallery media keys.
   const mediaIds = [
@@ -161,6 +173,7 @@ export default async function UserRecipePage({
           <div className="recipe-actions-row">
             <AddToShoppingList tutorialSlug={recipe.slug} tutorialId={recipe.id} />
             <AddToMealPlan tutorialSlug={recipe.slug} tutorialId={recipe.id} />
+            <SaveRecipeButton userRecipeId={recipe.id} initialSaved={savedRecipe} />
           </div>
         </div>
       )}

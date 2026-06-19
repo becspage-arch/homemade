@@ -117,6 +117,44 @@ export async function toggleSavedPattern(patternId: string): Promise<
   return { ok: true, saved }
 }
 
+/**
+ * Save / unsave a community (UserRecipe) recipe to the Make it list. Completes
+ * the unified list across tutorials, patterns and community recipes.
+ */
+export async function toggleSavedRecipe(userRecipeId: string): Promise<
+  ActionResult & { saved?: boolean }
+> {
+  const user = await requireUser()
+  const recipe = await prisma.userRecipe.findUnique({
+    where: { id: userRecipeId },
+    select: { id: true, slug: true },
+  })
+  if (!recipe) return { ok: false, error: 'Recipe not found' }
+
+  const existing = await prisma.savedRecipe.findUnique({
+    where: { userId_userRecipeId: { userId: user.id, userRecipeId } },
+    select: { id: true },
+  })
+
+  let saved: boolean
+  if (existing) {
+    await prisma.savedRecipe.delete({ where: { id: existing.id } })
+    saved = false
+  } else {
+    await prisma.savedRecipe.create({ data: { userId: user.id, userRecipeId } })
+    saved = true
+  }
+
+  revalidatePath(`/recipes/${recipe.slug}`)
+  revalidatePath('/me/bookmarks')
+  await captureServerEvent({
+    event: saved ? 'recipe_saved' : 'recipe_unsaved',
+    distinctId: user.clerkId,
+    properties: { userRecipeId },
+  })
+  return { ok: true, saved }
+}
+
 // ────────────────────────────────────────────────────────────────────────────
 // Projects — lifecycle
 // ────────────────────────────────────────────────────────────────────────────

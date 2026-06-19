@@ -126,6 +126,7 @@ model User {
   auditLogs         AuditLog[]
   bookmarks         Bookmark[]
   savedPatterns     SavedPattern[]
+  savedRecipes      SavedRecipe[]
   projects          UserProject[]
 
   reviews            Review[]
@@ -1562,6 +1563,26 @@ model SavedPattern {
   @@index([userId])
 }
 
+// One SavedRecipe per (user, community recipe) — completes the unified Make
+// it list across tutorials, patterns and community (UserRecipe) recipes.
+// Additive, same shape as Bookmark / SavedPattern.
+model SavedRecipe {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  userRecipeId String
+  userRecipe   UserRecipe @relation(fields: [userRecipeId], references: [id], onDelete: Cascade)
+
+  isPublic Boolean @default(false)
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, userRecipeId])
+  @@index([userId])
+}
+
 // One UserProject per (user, tutorial). Tracks "I'm making this" lifecycle plus
 // the reader's private notes, supplies tick-list, and reading progress.
 model UserProject {
@@ -2718,6 +2739,8 @@ model UserRecipe {
 
   ownerUserId String
   owner       User   @relation("UserRecipeOwner", fields: [ownerUserId], references: [id], onDelete: Cascade)
+
+  savedBy SavedRecipe[]
 
   title   String
   summary String?
