@@ -1,6 +1,20 @@
-import { config as loadEnv } from 'dotenv'
-loadEnv({ path: 'C:/Users/Rebecca/Projects/code/homemade/.env.credentials' })
-loadEnv()
+import { readFileSync } from 'node:fs'
+
+// Dependency-free env loader (apps/web does not depend on dotenv, and
+// importing it breaks the production type-check). Reads KEY=VALUE lines from
+// .env.credentials without shell interpretation so URLs with & / ? survive.
+function loadEnvFile(path: string): void {
+  try {
+    for (const line of readFileSync(path, 'utf8').split(/\r?\n/)) {
+      const m = /^([A-Z_][A-Z0-9_]*)=(.*)$/.exec(line)
+      if (m && m[1] && !process.env[m[1]]) process.env[m[1]] = m[2]!.replace(/^["']|["']$/g, '')
+    }
+  } catch {
+    // env already provided by the shell
+  }
+}
+loadEnvFile(process.env.HOMEMADE_ENV_FILE ?? 'C:/Users/Rebecca/Projects/code/homemade/.env.credentials')
+
 import { prisma, parsePatternData } from '@homemade/db'
 import { runBatch, type PatternSpec } from '@/lib/studio/generation/autopilot'
 import { metImage, commonsImage, fluxIllustration } from '@/lib/studio/generation/sources'
