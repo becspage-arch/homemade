@@ -803,26 +803,35 @@
   background-color: transparent;
 }
 
-/* Varied aspect ratios break the masonry rhythm so the wall reads as
-   curated rather than gridded. Applies to both tutorial tiles and the
-   community Pinterest tiles interleaved among them. */
+/* A 5-step ratio cycle so adjacent tiles differ in height — the Pinterest
+   stagger. Covers every position (5n+1 … 5n+5), spanning landscape (4/3) to
+   tall portrait (5/7). `object-fit: cover` crops each hero to its assigned
+   ratio, so the wall varies even though most source photos share one aspect.
+   Applies to both tutorial tiles and the community tiles interleaved among
+   them. */
+.home-discovery-item:nth-child(5n + 1) .discovery-card-image,
+.home-discovery-item:nth-child(5n + 1) .home-pinterest-card-image {
+  aspect-ratio: 3 / 4;
+}
+
 .home-discovery-item:nth-child(5n + 2) .discovery-card-image,
 .home-discovery-item:nth-child(5n + 2) .home-pinterest-card-image {
   aspect-ratio: 1 / 1;
 }
 
+.home-discovery-item:nth-child(5n + 3) .discovery-card-image,
+.home-discovery-item:nth-child(5n + 3) .home-pinterest-card-image {
+  aspect-ratio: 4 / 5;
+}
+
 .home-discovery-item:nth-child(5n + 4) .discovery-card-image,
 .home-discovery-item:nth-child(5n + 4) .home-pinterest-card-image {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 5 / 7;
 }
 
-.home-discovery-item:nth-child(7n + 3) .discovery-card-image,
-.home-discovery-item:nth-child(7n + 3) .home-pinterest-card-image {
-  aspect-ratio: 5 / 6;
-}
-
-.home-discovery-item .home-pinterest-card-image {
-  aspect-ratio: 4 / 5;
+.home-discovery-item:nth-child(5n + 5) .discovery-card-image,
+.home-discovery-item:nth-child(5n + 5) .home-pinterest-card-image {
+  aspect-ratio: 4 / 3;
 }
 
 .discovery-card-body {

@@ -178,22 +178,6 @@ export default async function HomePage() {
         </HomeRail>
       )}
 
-      {data.whereYouLeftOff.length > 0 && (
-        <HomeRail
-          heading="Where you left off"
-          subheading="Projects you started a while back."
-          seeAllHref="/me/projects?status=in-progress"
-        >
-          {data.whereYouLeftOff.map((t) => (
-            <HomeCard
-              key={t.id}
-              tutorial={t}
-              state={readerStateFor(data.readerState, t.id)}
-            />
-          ))}
-        </HomeRail>
-      )}
-
       {data.savedNotStarted.length > 0 && (
         <HomeRail
           heading="On your Make it list"

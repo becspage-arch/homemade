@@ -129,8 +129,6 @@ export async function loadHomepageData(
   // Parallelise every independent query.
   const sevenDaysAgo = new Date(now)
   sevenDaysAgo.setUTCDate(sevenDaysAgo.getUTCDate() - 7)
-  const thirtyDaysAgo = new Date(now)
-  thirtyDaysAgo.setUTCDate(thirtyDaysAgo.getUTCDate() - 30)
   const fourteenDaysAgo = new Date(now)
   fourteenDaysAgo.setUTCDate(fourteenDaysAgo.getUTCDate() - 14)
 
@@ -355,44 +353,30 @@ export async function loadHomepageData(
     ? await loadReaderState(currentUser.id, Array.from(allTutorialIds))
     : emptyReaderState()
 
-  // State-aware hero selection.
+  // Hero selection. The big hero is always the seasonal editorial pick —
+  // never a previously-viewed project. "Continue where you left off" has its
+  // own rail below; the hero's job is to inspire, not to resume (Rebecca,
+  // 2026-06-19). Rotates on a weekly bucket so it refreshes once a week with
+  // no manual curation. Pool preference: EDITORIAL-graded picks → the full
+  // weekly pick list → in-season content, landing on the wordmark only when
+  // there is genuinely nothing to show.
   let hero: HomepageHero
   if (isOnboardingPending) {
     hero = { kind: 'ONBOARDING' }
   } else {
-    const heroAction =
-      todaysScheduledActions.find((a) => a.step.surfaceAs === 'HERO') ?? null
-    if (heroAction) {
-      hero = { kind: 'SCHEDULED_STEP', action: heroAction }
-    } else if (continueRows.length > 0 && currentUser) {
-      const recent = continueRows[0]
-      const lastViewed = recent ? recent.lastViewedAt : null
-      const recentEnough =
-        lastViewed && lastViewed.getTime() > thirtyDaysAgo.getTime()
-      hero = recentEnough && recent
-        ? { kind: 'CONTINUE_MAKING', project: recent.tutorial as TutorialCardSelect }
-        : thisWeeksEditorialPicks[0]
-          ? { kind: 'EDITORIAL_PICK', tutorial: thisWeeksEditorialPicks[0] }
-          : { kind: 'WORDMARK_FALLBACK' }
-    } else {
-      // Hero rotation: rotate through this week's editorial picks on a
-      // weekly bucket so the seasonal hero refreshes once a week with no
-      // manual curation (Rebecca, 2026-06-19). The pool is filtered to
-      // EDITORIAL-graded photos first if any qualify; otherwise we fall
-      // back to the full pick list so the page never lands on the wordmark
-      // just because grading is incomplete.
-      const editorialPool = thisWeeksEditorialPicks.filter(
-        (t) => t.heroQuality === 'EDITORIAL',
-      )
-      const rotationPool =
-        editorialPool.length > 0 ? editorialPool : thisWeeksEditorialPicks
-      const editorialPick = pickByDayBucket(rotationPool, now, 7)
-      if (editorialPick) {
-        hero = { kind: 'EDITORIAL_PICK', tutorial: editorialPick }
-      } else {
-        hero = { kind: 'WORDMARK_FALLBACK' }
-      }
-    }
+    const editorialPool = thisWeeksEditorialPicks.filter(
+      (t) => t.heroQuality === 'EDITORIAL',
+    )
+    const rotationPool =
+      editorialPool.length > 0
+        ? editorialPool
+        : thisWeeksEditorialPicks.length > 0
+          ? thisWeeksEditorialPicks
+          : inSeasonNow
+    const editorialPick = pickByDayBucket(rotationPool, now, 7)
+    hero = editorialPick
+      ? { kind: 'EDITORIAL_PICK', tutorial: editorialPick }
+      : { kind: 'WORDMARK_FALLBACK' }
   }
 
   // Update lastSeenAt so the "new since last visit" rail uses last-real-visit
