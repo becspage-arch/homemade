@@ -109,80 +109,66 @@
       },
       {
         "type": "ingredientsList",
-        "content": [
-          {
-            "type": "ingredient",
-            "attrs": {
+        "attrs": {
+          "items": [
+            {
               "ingredientSlug": "self-raising-flour",
               "amount": 225,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "baking-powder",
               "amount": 1,
               "unit": "tsp",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "salt-table",
               "amount": 0.5,
               "unit": "tsp",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "unsalted-butter",
               "amount": 50,
               "unit": "g",
-              "prepNote": "cold, cubed"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "cold, cubed",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "sourdough-starter",
               "amount": 100,
               "unit": "g",
-              "prepNote": "unfed discard, at room temperature (slug guessed)"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "unfed discard, at room temperature (slug guessed)",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "buttermilk",
               "amount": 80,
               "unit": "ml",
-              "prepNote": "at room temperature (slug guessed)"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "at room temperature (slug guessed)",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "honey",
               "amount": 1,
               "unit": "tsp",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "whole-milk",
               "amount": null,
               "unit": null,
-              "prepNote": "to glaze"
+              "prepNote": "to glaze",
+              "isOptional": false
             }
-          }
-        ]
+          ]
+        }
       },
       {
         "type": "heading",
@@ -310,7 +296,7 @@
                   },
                   {
                     "type": "text",
-                    "text": ": lift small amounts of the mixture and rub between your thumbs and fingers, letting it fall back into the bowl. Continue until the mixture resembles coarse breadcrumbs with no visible lumps of butter."
+                    "text": ": lift small amounts of the mixture and rub between your thumbs and fingers, letting it drop back into the bowl. Continue until the mixture resembles coarse breadcrumbs with no visible lumps of butter."
                   }
                 ]
               }

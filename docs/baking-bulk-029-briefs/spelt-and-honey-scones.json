@@ -125,71 +125,59 @@
       },
       {
         "type": "ingredientsList",
-        "content": [
-          {
-            "type": "ingredient",
-            "attrs": {
+        "attrs": {
+          "items": [
+            {
               "ingredientSlug": "spelt-flour",
               "amount": 225,
               "unit": "g",
-              "prepNote": "wholegrain (slug guessed)"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "wholegrain (slug guessed)",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "baking-powder",
               "amount": 2,
               "unit": "tsp",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "salt-table",
               "amount": 0.5,
               "unit": "tsp",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "unsalted-butter",
               "amount": 50,
               "unit": "g",
-              "prepNote": "cold, cubed"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "cold, cubed",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "honey",
               "amount": 2,
               "unit": "tbsp",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "whole-milk",
               "amount": 100,
               "unit": "ml",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "eggs",
               "amount": 1,
               "unit": null,
-              "prepNote": "beaten"
+              "prepNote": "beaten",
+              "isOptional": false
             }
-          }
-        ]
+          ]
+        }
       },
       {
         "type": "heading",
@@ -303,7 +291,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " method: lift small amounts of the mixture and rub between your thumbs and fingers, letting it fall back into the bowl. Continue until the mixture resembles coarse breadcrumbs. Work quickly to keep the butter cold."
+                    "text": " method: lift small amounts of the mixture and rub between your thumbs and fingers, letting it drop back into the bowl. Continue until the mixture resembles coarse breadcrumbs. Work quickly to keep the butter cold."
                   }
                 ]
               }

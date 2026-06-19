@@ -319,3 +319,41 @@ generic claims rather than concrete facts, etc.)
   as template) before uploading. Remap each `{name}-essential-oil` slug to
   `essential-oil-{name}` in the body ingredientsList nodes. Applies to all
   essential oils used in natural-home recipes.
+
+
+## ingredientsList block format: content[] instead of attrs.items[] (11 recurrences — baking-029)
+
+  **Symptom:** Upload fails with "cannot be PUBLISHED with an empty ingredients
+  list. Body must contain at least one ingredientsList block with items[]".
+  **Root cause:** Authoring agents sometimes write the body `ingredientsList`
+  block as `{ type: "ingredientsList", content: [{ type: "ingredient", attrs: {...} }] }`
+  instead of the correct `{ type: "ingredientsList", attrs: { items: [...] } }`.
+  The upload script reads from `attrs.items[]` only; the `content[]` format is
+  silently treated as empty.
+  **How to fix:** Convert every `ingredientsList` block with a `content[]` array
+  into the `attrs.items[]` shape. Each child `ingredient` node's `attrs` become
+  a flat item object in `attrs.items[]`. Node script template from baking-bulk-029.
+
+
+## Standard baking ingredient slug corrections (3+ recurrences — baking)
+
+  Common invalid slug → correct slug mappings in baking briefs:
+  - `egg` → `eggs`
+  - `salt` → `salt-table`
+  - `fine-sea-salt` → `sea-salt-fine`
+  - `dried-yeast` → `yeast-dried`
+  - `strong-white-bread-flour` → `strong-bread-flour`
+  - `flaked-almonds` → `almonds-flaked`
+  - `orange-zest` → `orange` (buy the whole fruit)
+  - `lemon-zest` → `lemon` (buy the whole fruit)
+  - `carrots` → `carrot`
+  - `onions` → `onion`
+  - `pears` → `pear`
+  - `instant-coffee` → `coffee-instant`
+  - `beef-stock` → `stock-beef`
+  - `cinnamon` → `cinnamon-ground`
+  - `candied-peel` → `mixed-peel`
+  - `gelatine` → `gelatine-leaves`
+  **How to fix:** Apply these corrections to all body `ingredientsList` blocks
+  before uploading. When a recipe has multiple ingredient sections (saint-honoré,
+  sfogliatelle) fix ALL blocks, not just the first.

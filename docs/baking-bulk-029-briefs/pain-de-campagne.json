@@ -158,44 +158,38 @@
       },
       {
         "type": "ingredientsList",
-        "content": [
-          {
-            "type": "ingredient",
-            "attrs": {
+        "attrs": {
+          "items": [
+            {
               "ingredientSlug": "strong-bread-flour",
               "amount": 425,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "wholemeal-bread-flour",
               "amount": 75,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "water",
               "amount": 360,
               "unit": "ml",
-              "prepNote": "lukewarm, around 30 degrees C"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "lukewarm, around 30 degrees C",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "sea-salt-fine",
               "amount": 10,
               "unit": "g",
-              "prepNote": null
+              "prepNote": null,
+              "isOptional": false
             }
-          }
-        ]
+          ]
+        }
       },
       {
         "type": "heading",

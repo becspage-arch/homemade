@@ -124,83 +124,66 @@
       },
       {
         "type": "ingredientsList",
-        "content": [
-          {
-            "type": "ingredient",
-            "attrs": {
+        "attrs": {
+          "items": [
+            {
               "ingredientSlug": "wholemeal-bread-flour",
-              "slugGuessed": true,
               "amount": 400,
               "unit": "g",
-              "prepNote": "brown bread or granary flour"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "brown bread or granary flour",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "strong-bread-flour",
               "amount": 100,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "water",
               "amount": 330,
               "unit": "ml",
-              "prepNote": "warm (about 35°C)"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "warm (about 35°C)",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "yeast-dried",
               "amount": 6,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "salt-table",
               "amount": 10,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "malt-extract",
-              "slugGuessed": true,
               "amount": 20,
               "unit": "g",
-              "prepNote": "liquid or paste; warm briefly in the microwave if very thick"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "liquid or paste; warm briefly in the microwave if very thick",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "sunflower-oil",
               "amount": 15,
               "unit": "ml",
-              "prepNote": "or other neutral oil"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "or other neutral oil",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "malted-grain-flour",
-              "slugGuessed": true,
               "amount": 50,
               "unit": "g",
-              "prepNote": "optional; stir in with the flour for texture"
+              "prepNote": "optional; stir in with the flour for texture",
+              "isOptional": false
             }
-          }
-        ]
+          ]
+        }
       },
       {
         "type": "heading",

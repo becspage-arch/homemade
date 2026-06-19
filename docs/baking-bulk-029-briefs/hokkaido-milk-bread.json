@@ -130,7 +130,7 @@
           },
           {
             "type": "text",
-            "text": " loaf built with a cooked flour-and-milk paste called "
+            "text": " loaf. It uses a cooked flour-and-milk paste called "
           },
           {
             "type": "text",
@@ -146,7 +146,7 @@
           },
           {
             "type": "text",
-            "text": " that produces an exceptionally soft, pull-apart crumb."
+            "text": ". This produces a very soft, pull-apart crumb."
           }
         ]
       },
@@ -170,98 +170,80 @@
       },
       {
         "type": "ingredientsList",
-        "content": [
-          {
-            "type": "ingredient",
-            "attrs": {
+        "attrs": {
+          "items": [
+            {
               "ingredientSlug": "strong-bread-flour",
               "amount": 50,
               "unit": "g",
-              "prepNote": "for the tangzhong"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "for the tangzhong",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "whole-milk",
               "amount": 250,
               "unit": "ml",
-              "prepNote": "for the tangzhong"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "for the tangzhong",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "strong-bread-flour",
               "amount": 350,
               "unit": "g",
-              "prepNote": "for the main dough"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "for the main dough",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "caster-sugar",
               "amount": 60,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "yeast-dried",
               "amount": 6,
               "unit": "g",
-              "prepNote": "about 1.5 tsp"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "about 1.5 tsp",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "sea-salt-fine",
               "amount": 7,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "eggs",
               "amount": 2,
               "unit": "large",
-              "prepNote": "beaten, room temperature"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "beaten, room temperature",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "whole-milk",
               "amount": 120,
               "unit": "ml",
-              "prepNote": "warm, for the main dough"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "warm, for the main dough",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "unsalted-butter",
               "amount": 60,
               "unit": "g",
-              "prepNote": "softened to room temperature, cut into small pieces"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "softened to room temperature, cut into small pieces",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "eggs",
               "amount": 1,
               "unit": "large",
-              "prepNote": "beaten with 2 tbsp milk, for the egg wash"
+              "prepNote": "beaten with 2 tbsp milk, for the egg wash",
+              "isOptional": false
             }
-          }
-        ]
+          ]
+        }
       },
       {
         "type": "heading",

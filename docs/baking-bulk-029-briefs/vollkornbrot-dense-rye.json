@@ -116,7 +116,7 @@
           },
           {
             "type": "text",
-            "text": " starter, with a dense, close-textured crumb and a deeply malty, slightly sour flavour."
+            "text": " starter. It has a dense, close-textured crumb. The flavour is deeply malty with a slight sour edge."
           }
         ]
       },
@@ -140,80 +140,66 @@
       },
       {
         "type": "ingredientsList",
-        "content": [
-          {
-            "type": "ingredient",
-            "attrs": {
+        "attrs": {
+          "items": [
+            {
               "ingredientSlug": "rye-flour",
               "amount": 500,
               "unit": "g",
-              "prepNote": "whole-grain rye flour (flagged: slug assumed as rye-flour)"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "whole-grain rye flour (flagged: slug assumed as rye-flour)",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "sourdough-starter",
               "amount": 125,
               "unit": "g",
-              "prepNote": "active rye sourdough starter (flagged: slug assumed as sourdough-starter)"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "active rye sourdough starter (flagged: slug assumed as sourdough-starter)",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "water",
               "amount": 400,
               "unit": "ml",
-              "prepNote": "lukewarm, around 30 degrees C"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "lukewarm, around 30 degrees C",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "sea-salt-fine",
               "amount": 10,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "sunflower-seeds",
               "amount": 20,
               "unit": "g",
-              "prepNote": "flagged: slug assumed as sunflower-seeds"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "flagged: slug assumed as sunflower-seeds",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "pumpkin-seeds",
               "amount": 20,
               "unit": "g",
-              "prepNote": "flagged: slug assumed as pumpkin-seeds"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "flagged: slug assumed as pumpkin-seeds",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "caraway-seeds",
               "amount": 1,
               "unit": "tbsp",
-              "prepNote": "flagged: slug assumed as caraway-seeds"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "flagged: slug assumed as caraway-seeds",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "black-treacle",
               "amount": 15,
               "unit": "g",
-              "prepNote": "dark treacle"
+              "prepNote": "dark treacle",
+              "isOptional": false
             }
-          }
-        ]
+          ]
+        }
       },
       {
         "type": "heading",
@@ -546,7 +532,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "For the best slicing, wrap the fully cooled loaf in a clean tea towel or paper bag overnight. The flavour also deepens considerably over the resting period: a freshly cooled vollkornbrot tastes sharp and somewhat flat; by the following day it has developed a rounded, complex, malty sweetness."
+                    "text": "For the best slicing, wrap the fully cooled loaf in a clean tea towel or paper bag overnight. The flavour also deepens over the resting period. A freshly cooled vollkornbrot tastes sharp and flat. By the following day it has a rounded, malty sweetness."
                   }
                 ]
               }

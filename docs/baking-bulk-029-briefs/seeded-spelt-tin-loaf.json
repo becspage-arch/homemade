@@ -131,81 +131,66 @@
       },
       {
         "type": "ingredientsList",
-        "content": [
-          {
-            "type": "ingredient",
-            "attrs": {
+        "attrs": {
+          "items": [
+            {
               "ingredientSlug": "spelt-flour",
-              "slugGuessed": true,
               "amount": 500,
               "unit": "g",
-              "prepNote": "wholegrain"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "wholegrain",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "water",
               "amount": 340,
               "unit": "ml",
-              "prepNote": "warm (about 35°C)"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "warm (about 35°C)",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "yeast-dried",
               "amount": 5,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "salt-table",
               "amount": 10,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "olive-oil",
               "amount": 15,
               "unit": "ml",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "sunflower-seeds",
               "amount": 40,
               "unit": "g",
-              "prepNote": "plus a small handful for the top"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "plus a small handful for the top",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "pumpkin-seeds",
               "amount": 40,
               "unit": "g",
-              "prepNote": "plus a small handful for the top"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "plus a small handful for the top",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "honey",
               "amount": 1,
               "unit": "tbsp",
-              "prepNote": "for brushing the top"
+              "prepNote": "for brushing the top",
+              "isOptional": false
             }
-          }
-        ]
+          ]
+        }
       },
       {
         "type": "heading",

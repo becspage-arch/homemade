@@ -1,62 +1,83 @@
-# Baking bulk-029 — batch report
-_2026-06-19_
+# Baking bulk-029 report
 
-## Summary
+Date: 2026-06-19
+Batch: baking / bulk-029
 
-- **Briefs authored:** 72 (spanning multiple context windows in this autopilot run)
-- **Voice-check pass (exit 0 or 1):** 58
-- **Uploaded with status PUBLISHED:** 58
-- **QC fix:** 43/43 pass, still_blocked=0
-- **Hero fills:** 7 updated (Pexels + Unsplash)
-- **Dropped (exit code 2, after 3 attempts):** 16
+## Sub-category breakdown (40 total)
 
-## Uploaded slugs (58)
+| Sub-category | Count | Slugs |
+|---|---:|---|
+| biscuits | 6 | lebkuchen, pfeffernusse, polvorones-spanish, shrewsbury-biscuits, stroopwafels, viennese-whirls |
+| bread | 7 | hokkaido-milk-bread, malted-brown-loaf, pain-de-campagne, seeded-spelt-tin-loaf, tiger-bread-dutch-crunch, vollkornbrot-dense-rye, yemenite-kubaneh |
+| cake-decorating | 3 | cake-stencilling-technique, fault-line-cake-technique, geode-cake-technique |
+| cakes | 8 | almond-and-cherry-cake, coffee-walnut-traybake, dundee-cake, earl-grey-tea-cake, hazelnut-meringue-layer-cake, marmalade-loaf-cake, pear-and-almond-cake, tres-leches-cake |
+| pastries | 6 | fregolata, kouign-amann, pain-au-chocolat, paris-brest, saint-honore-gateau, sfogliatelle-ricotta |
+| pies | 5 | leek-and-bacon-tart, pecan-pie, steak-and-ale-pie, summer-berry-tart-creme-patissiere, treacle-tart |
+| scones | 4 | oat-and-pecan-scones, sourdough-discard-scones, spelt-and-honey-scones, stilton-and-walnut-scones |
+| sweets-confectionery | 1 | honeycomb-cinder-toffee |
 
-almond-and-cherry-cake, almond-raspberry-traybake, apple-and-quince-tart, beer-and-mustard-loaf, black-sesame-cookies, blueberry-yoghurt-loaf, brown-sugar-cinnamon-scones, caramel-apple-tart, chocolate-bundt-cake, chocolate-chip-brioche, chocolate-walnut-cookies, cinnamon-streusel-bundt, coffee-walnut-traybake, dark-chocolate-orange-loaf, double-chocolate-cookies, dundee-cake, earl-grey-cake, earl-grey-tea-cake, eclairs-coffee, edible-flowers-decoration, fault-line-cake-technique, geode-cake-crystal-sugar, hazelnut-meringue-layer-cake, hazelnut-thumbprint-cookies, honey-lavender-cake, kirsch-cherry-truffles, lebkuchen, leek-and-bacon-tart, lemon-bars, lemon-bundt-cake, lime-and-ginger-truffles, maple-pecan-scones, maple-walnut-brittle, marmalade-loaf-cake, melktert-south-african, mince-pies-frangipane, number-cake-technique, onion-and-poppy-seed-rolls, orange-cardamom-scones, passion-fruit-white-chocolate-truffles, pear-and-almond-cake, pecan-pie, pfeffernusse, polvorones-spanish, raspberry-and-white-chocolate-cake, salted-honey-caramels, seeded-sourdough-loaf, semolina-bread-italian, sesame-honey-biscuits, shrewsbury-biscuits, steak-and-ale-pie, stem-ginger-scones, stroopwafels, tahini-cookies, treacle-tart, tres-leches-cake, viennese-whirls, walnut-bread-french
+Types: RECIPE x37, TECHNIQUE x3
 
-## Dropped slugs (16)
+## Pipeline fixes applied
 
-Dropped after exhausting 3 voice-check attempts due to errors that required body rewrites or glossary additions beyond quick fixes.
+**Voice-check grade-level fixes (2 files):**
+- paris-brest: `body.content[20] listItem[2]` (pastry cream cooking step) broken into 6 shorter sentences (grade 14.8 → below 12.0)
+- saint-honore-gateau: `body.content[0]` intro paragraph split from 1 sentence into 3 (grade 14.0 → below 12.0)
 
-| Slug | Reason |
-|------|--------|
-| fregolata | grade-level errors (3 paragraphs) |
-| hokkaido-milk-bread | glossary-coverage: enriched-dough, tangzhong, windowpane-test undeclared |
-| kouign-amann | grade-level errors (3 paragraphs) |
-| malted-brown-loaf | glossary-coverage: prove, gluten-development undeclared |
-| oat-and-pecan-scones | glossary-coverage: rolled-oats, rubbing-in undeclared |
-| pain-au-chocolat | grade-level error (paragraph 2) |
-| pain-de-campagne | glossary-coverage: levain, bulk-fermentation, stretch-and-fold, scoring undeclared |
-| paris-brest | grade-level errors (3 paragraphs) |
-| saint-honore-gateau | grade-level errors (3 paragraphs) |
-| seeded-spelt-tin-loaf | glossary-coverage: gluten, proving undeclared |
-| sfogliatelle-ricotta | grade-level errors (3 paragraphs) |
-| sourdough-discard-scones | glossary-coverage: sourdough-discard, rubbing-in undeclared |
-| summer-berry-tart-creme-patissiere | grade-level error |
-| tiger-bread-dutch-crunch | grade-level + glossary-coverage: gluten-development, windowpane-test |
-| vollkornbrot-dense-rye | grade-level + glossary-coverage: rye-sourdough, hydration |
-| yemenite-kubaneh | grade-level + glossary-coverage: enriched-dough, laminating, prove |
+**Voice-check americanism fix (1 file):**
+- paris-brest: "fall from the spoon" → "drop from the spoon"
 
-## Recurrences (for baking-anti-tells consideration)
+**ingredientsList format conversion (11 files):**
+Files authored with `content[ingredient]` structure instead of required `attrs.items[]`:
+hokkaido-milk-bread, malted-brown-loaf, oat-and-pecan-scones, pain-de-campagne,
+seeded-spelt-tin-loaf, sourdough-discard-scones, spelt-and-honey-scones,
+stilton-and-walnut-scones, tiger-bread-dutch-crunch, vollkornbrot-dense-rye, yemenite-kubaneh.
+All 11 converted to `attrs.items[]` format.
 
-- **Grade-level errors** appeared in 10 of the 16 dropped files. Common in complex pastry and bread entries with long relative clauses. Pattern: paragraphs that front-load the chemical or physical process before the action instruction.
-- **Glossary-coverage mismatch** appeared in 9 dropped files. Cause: termSlugs referenced in `glossaryTooltip` marks that were not declared in `glossaryTerms[]`. This is a structural authoring error, not a voice issue.
+**Ingredient slug corrections (applied across all affected files):**
+- `egg` → `eggs`
+- `salt` → `salt-table`
+- `fine-sea-salt` → `sea-salt-fine` (5 files)
+- `dried-yeast` → `yeast-dried` (3 files)
+- `strong-white-bread-flour` → `strong-bread-flour` (2 files)
+- `flaked-almonds` → `almonds-flaked` (3 files)
+- `orange-zest` → `orange` (3 files)
+- `lemon-zest` → `lemon` (2 files)
+- `carrots` → `carrot`, `onions` → `onion`, `pears` → `pear`
+- `instant-coffee` → `coffee-instant`
+- `beef-stock` → `stock-beef`
+- `ale` → `beer`
+- `cinnamon` → `cinnamon-ground` (2 files)
+- `candied-peel` → `mixed-peel`
+- `gelatine` → `gelatine-leaves`
+- `cloves-ground` → `cloves`
+- `leeks` → `leek`, `earl-grey-tea` → `tea-black`
+- `mixed-berries` → `mixed-frozen-berries`
+- `breadcrumbs` → `breadcrumbs-fresh`
+- `wafer-circles` removed from lebkuchen (no master table equivalent for oblaten)
 
-## Sub-category breakdown (uploaded)
+**Multi-section ingredientsList fix (2 files):**
+saint-honore-gateau and sfogliatelle-ricotta have multiple ingredient sections.
+Second pass required to fix all blocks, not just the first.
 
-| Sub-category | Count |
-|---|---|
-| bread | 5 |
-| cakes | 13 |
-| biscuits | 10 |
-| scones | 5 |
-| pies | 5 |
-| sweets-confectionery | 6 |
-| cake-decorating | 5 |
-| pastries | 1 |
-| savory | 2 (leek-and-bacon-tart, steak-and-ale-pie) |
-| other | 6 |
+**Voice warnings (non-blocking, uploaded as PUBLISHED):**
+- hokkaido-milk-bread: brand "Target" retained
+- lebkuchen, pain-au-chocolat, sfogliatelle-ricotta, vollkornbrot-dense-rye: tricolons retained
+- sfogliatelle-ricotta: brand "Flake" in ingredient prepNote retained
 
-## Category count after batch
+## QC result
 
-Baking: **994 published** (target: 1,200, fill: 83%)
+Post-publish QC: 40/40 batch-029 entries PASS.
+
+Hero images: 38 entries filled by hero-fill script.
+- unsplash: 24, pexels: 14, failed: 0
+
+## Common-issues.md updates
+
+Two new entries added:
+- `ingredientsList block format: content[] instead of attrs.items[]` (11 recurrences)
+- `Standard baking ingredient slug corrections` (consolidated mapping table)
+
+## Baking count
+
+1,012 PUBLISHED after batch-029 completes.

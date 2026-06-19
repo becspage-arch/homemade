@@ -161,80 +161,66 @@
       },
       {
         "type": "ingredientsList",
-        "content": [
-          {
-            "type": "ingredient",
-            "attrs": {
+        "attrs": {
+          "items": [
+            {
               "ingredientSlug": "strong-bread-flour",
               "amount": 600,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "water",
               "amount": 350,
               "unit": "ml",
-              "prepNote": "warm (about 35°C)"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "warm (about 35°C)",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "yeast-dried",
               "amount": 6,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "salt-table",
               "amount": 11,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "caster-sugar",
               "amount": 30,
               "unit": "g",
-              "prepNote": null
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": null,
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "eggs",
               "amount": 2,
               "unit": null,
-              "prepNote": "medium, lightly beaten"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "medium, lightly beaten",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "unsalted-butter",
               "amount": 50,
               "unit": "g",
-              "prepNote": "softened to room temperature, for laminating"
-            }
-          },
-          {
-            "type": "ingredient",
-            "attrs": {
+              "prepNote": "softened to room temperature, for laminating",
+              "isOptional": false
+            },
+            {
               "ingredientSlug": "unsalted-butter",
               "amount": 20,
               "unit": "g",
-              "prepNote": "extra, for greasing the pot and tops of rolls"
+              "prepNote": "extra, for greasing the pot and tops of rolls",
+              "isOptional": false
             }
-          }
-        ]
+          ]
+        }
       },
       {
         "type": "heading",
@@ -525,7 +511,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Dot the tops of the rolls with tiny knobs of the extra butter: this helps the tops colour evenly and adds richness to the outer surface during the long, slow bake."
+                    "text": "Dot the tops of the rolls with tiny knobs of the extra butter. This helps the tops colour evenly and adds richness during the long, slow bake."
                   }
                 ]
               }
@@ -555,7 +541,7 @@
                   },
                   {
                     "type": "text",
-                    "text": " for 60 minutes at room temperature. They are ready when they have puffed noticeably and are touching each other snugly. Do not allow them to overproof to the point of touching the lid."
+                    "text": " for 60 minutes at room temperature. They are ready when they have puffed noticeably and are touching each other snugly. Do not let them overproof to the point of touching the lid."
                   }
                 ]
               }
