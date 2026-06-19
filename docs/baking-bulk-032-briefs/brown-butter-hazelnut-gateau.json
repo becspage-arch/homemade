@@ -1,0 +1,156 @@
+{
+  "slug": "brown-butter-hazelnut-gateau",
+  "title": "Brown butter and hazelnut gateau",
+  "subtitle": "a rich, nutty gateau with a brown butter financier-style sponge and praline buttercream",
+  "excerpt": "Brown butter and hazelnut gateau is a layered cake with a hazelnut financier-style sponge, made with browned butter and ground hazelnuts in place of most of the flour. The sponge has a deep, nutty flavour and a dense, moist crumb. It is filled and coated with a hazelnut praline buttercream and finished with caramelised hazelnut shards.",
+  "type": "RECIPE",
+  "categorySlug": "baking",
+  "subCategorySlug": "cakes",
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Financier-style sponge cakes, made with browned butter (beurre noisette) and nut flours, are a classic of French patisserie. The term financier refers specifically to the small rectangular cakes named for the Paris financial district. Adapting this sponge into a layered gateau is a contemporary home-baking approach influenced by French patisserie techniques.",
+  "glossaryTerms": [
+    {
+      "slug": "brown-butter",
+      "term": "Brown butter",
+      "definition": "Unsalted butter cooked in a pan until the milk solids toast to a golden-brown and the butter takes on a nutty, caramel-like smell. Also called beurre noisette."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "recipe": {
+    "servings": 12,
+    "yieldDescription": null,
+    "prepMinutes": 50,
+    "cookMinutes": 30,
+    "restingMinutes": 30,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The sponges can be made the day before and stored wrapped at room temperature. The hazelnut praline keeps in an airtight container for up to a week. Assemble on the day.",
+    "dietaryFlags": ["VEGETARIAN"],
+    "cuisine": "french",
+    "mealType": "dessert",
+    "mood": ["weekendBake", "party"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "fan 160 degrees C / gas 4",
+    "foundational": false,
+    "baking": {
+      "flourWeightGrams": 80,
+      "hydrationPercent": null,
+      "saltPercent": null,
+      "yeastPercent": null,
+      "levainPercent": null,
+      "bulkFermentMinutes": null,
+      "proofMinutes": null,
+      "retardingMinutes": null,
+      "levainBuildMinutes": null,
+      "laminationFolds": null,
+      "laminationRests": null,
+      "bakeTemperatureCelsius": 180,
+      "bakeTemperatureNote": "fan 160 degrees C / gas 4",
+      "steamMethod": null,
+      "decoratingTechnique": null,
+      "preFermentType": null
+    }
+  },
+  "recipeTools": [
+    { "slug": "round-cake-tin-20", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false },
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false },
+    { "slug": "stand-mixer", "isOptional": true },
+    { "slug": "hand-mixer", "isOptional": true }
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Brown butter and hazelnut gateau is a layered cake built on a sponge that uses " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "brown-butter" } }], "text": "brown butter" },
+          { "type": "text", "text": " and ground hazelnuts in place of most of the flour. The result is a dense, moist crumb with a deeply nutty flavour. The brown butter is made first and left to cool, so it goes into the batter as a liquid. The hazelnut praline for the buttercream is made with caramelised sugar and hazelnuts, then ground to a coarse paste." }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 200, "unit": "g", "prepNote": "for browning (for sponge)", "isOptional": false },
+            { "ingredientSlug": "ground-hazelnuts", "amount": 200, "unit": "g", "prepNote": "toasted, for sponge", "isOptional": false },
+            { "ingredientSlug": "plain-flour", "amount": 80, "unit": "g", "prepNote": "for sponge", "isOptional": false },
+            { "ingredientSlug": "baking-powder", "amount": 1.5, "unit": "tsp", "prepNote": "for sponge", "isOptional": false },
+            { "ingredientSlug": "caster-sugar", "amount": 250, "unit": "g", "prepNote": "for sponge", "isOptional": false },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "large", "prepNote": "for sponge", "isOptional": false },
+            { "ingredientSlug": "vanilla-extract", "amount": 1, "unit": "tsp", "prepNote": "for sponge", "isOptional": false },
+            { "ingredientSlug": "hazelnuts", "amount": 150, "unit": "g", "prepNote": "for praline", "isOptional": false },
+            { "ingredientSlug": "caster-sugar", "amount": 150, "unit": "g", "prepNote": "for praline", "isOptional": false },
+            { "ingredientSlug": "unsalted-butter", "amount": 250, "unit": "g", "prepNote": "softened, for buttercream", "isOptional": false },
+            { "ingredientSlug": "icing-sugar", "amount": 300, "unit": "g", "prepNote": "sifted, for buttercream", "isOptional": false },
+            { "ingredientSlug": "double-cream", "amount": 2, "unit": "tbsp", "prepNote": "for buttercream", "isOptional": false }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the brown butter: melt the butter in a light-coloured saucepan over medium heat. Continue cooking, swirling occasionally, until the butter smells nutty and the milk solids at the bottom have turned deep golden-brown. Pour immediately into a bowl and leave to cool to room temperature." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the praline: heat the caster sugar in a dry pan until amber. Add the hazelnuts, swirl to coat, and pour onto baking paper. Once cold and hard, blitz to a coarse crumb in a food processor. Reserve some whole pieces for decoration." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 180 degrees C (fan 160 degrees C / gas 4). Grease and line two 20 cm round cake tins." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Whisk the eggs and caster sugar together until pale and thick, about 4 minutes with an electric mixer. Mix in the vanilla. Fold in the ground hazelnuts, flour, and baking powder. Drizzle in the cooled brown butter and fold to combine." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Divide between the prepared tins. Bake for 25 to 30 minutes until golden and a skewer comes out clean. Cool in the tins for 15 minutes, then turn out and cool completely." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the praline buttercream: beat the softened butter until pale. Add the icing sugar in two additions and beat until smooth. Mix in the crushed hazelnut praline and cream. Beat for 2 minutes. Layer and coat the cakes with the buttercream. Scatter praline pieces on top." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Brown butter going too dark and tasting burnt rather than nutty",
+              "avoid": "Avoid high heat or leaving the pan unattended; the colour change from golden to burnt happens very fast.",
+              "fix": "Use a light-coloured pan so you can see the colour change clearly. Once the solids are deep golden-brown, pour immediately into a cool bowl to stop the cooking."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Sponge very dense and flat rather than light",
+              "avoid": "Avoid deflating the egg and sugar foam when adding the flour and butter.",
+              "fix": "Fold the flour in gently with a large metal spoon, working from the bottom of the bowl upward. Add the brown butter in a thin drizzle around the edge of the bowl rather than pouring it directly onto the batter."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
