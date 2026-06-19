@@ -1,0 +1,178 @@
+{
+  "slug": "cottage-pie",
+  "title": "Cottage Pie",
+  "subtitle": "Minced beef in rich gravy under a mashed potato crust",
+  "excerpt": "Cottage pie is minced beef and vegetables in a deep gravy, topped with buttery mashed potato and baked until the top is golden. It is a weeknight staple and one of the most satisfying dishes in British home cooking. The key is a deeply flavoured beef base and a mash that is firm enough to hold its shape.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Cottage pie appears in British domestic cookbooks from the early nineteenth century as a dish for using leftover roast beef. The modern version with fresh minced beef and baked mash became standard in the twentieth century.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze assembled, unbaked, or fully cooked. Defrost overnight and reheat at 180°C fan for 30 to 35 minutes until piping hot throughout.",
+    "batchable": true,
+    "batchNotes": "Double the recipe and bake in two dishes. One for tonight, one for the freezer.",
+    "makeAheadNotes": "The beef filling can be made 2 days ahead. Top with mash and refrigerate. Bake straight from the fridge, adding 10 minutes.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "kidFriendly"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "masher", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Cottage pie is minced beef cooked with vegetables and gravy, topped with mash, and baked until the top is golden and the filling is bubbling at the edges. It is one of the most straightforward dishes in British cooking and one of the most reliably good. The mash goes on firm; it softens into the filling as it bakes."
+        }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 500, "unit": "g", "prepNote": "not too lean (15–20% fat gives better flavour)", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "potato", "amount": 800, "unit": "g", "prepNote": "peeled and cut into even chunks", "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "whole-milk", "amount": 100, "unit": "ml", "prepNote": "warmed", "isOptional": false, "groupLabel": "For the mash" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Use a floury potato variety such as Maris Piper or King Edward for the mash. A waxy potato turns the top gluey."
+        }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the filling" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat a splash of oil in a large frying pan or casserole over a high heat. Brown the {{beef-mince}} of beef mince in batches, breaking it up with a spoon. Do not stir too much; let it colour before turning. Transfer to a plate when browned." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce the heat to medium. Cook {{onion}} chopped onion, {{carrot}} chopped carrots, and {{celery}} celery sticks until soft, about 10 minutes. Stir in {{tomato-puree}} of tomato puree and cook for 2 minutes. Return the beef to the pan." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add {{worcestershire-sauce}} of Worcestershire sauce and {{stock-beef}} of beef stock. Tuck in the thyme sprigs and {{bay-leaves}} of bay. Simmer uncovered for 25 minutes, until the gravy is thick and the liquid has reduced. Taste and season. Remove the herbs." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the mash" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook {{potato}} of potato chunks in well-salted boiling water until completely tender, about 18 minutes. Drain and steam dry for a minute in the hot pot. Mash with {{unsalted-butter}} of butter and {{whole-milk}} of warm milk. Season well. The mash should be smooth and hold its shape." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 200°C fan. Spoon the filling into a deep baking dish. Spread the mash evenly over the top, then rough it up with a fork to create ridges that will catch and colour. Bake for 25 to 30 minutes, until the top is golden and the filling is bubbling at the edges." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The mash sinks into the filling", "cause": "The filling was too runny when the mash was added, or the mash too soft.", "fix": "Reduce the filling until almost no liquid pools when you draw a spoon through it. Make the mash firm; it will soften further in the oven." },
+            { "symptom": "The top is pale and not golden", "cause": "The oven was not hot enough, or the mash was too wet.", "fix": "Make sure the oven is properly hot. A few minutes under the grill at the end will give a golden finish if needed." },
+            { "symptom": "The filling is bland", "cause": "The beef was not well browned, or the gravy was not reduced enough.", "fix": "Brown the beef properly before adding the vegetables. The Worcestershire sauce and a good simmer are what builds the depth." },
+            { "symptom": "The mash is gluey", "cause": "A waxy potato was used, or the potato was overworked.", "fix": "Use Maris Piper or King Edward. Mash while still hot and stop as soon as the lumps are gone." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Shepherd's pie uses lamb mince instead of beef, with rosemary in place of thyme. Add a tin of green lentils to the beef filling to stretch it further. A spoonful of Marmite with the stock adds an extra layer of depth."
+        }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Cottage pie appears in British domestic cookbooks from the early nineteenth century as a way to use leftover roast beef. The name refers to the humble cottager's kitchen rather than any architectural detail. The version most people know today, made from fresh mince, became standard in the twentieth century and is now a fixture of school dinners, family tables, and pub lunches alike."
+        }]
+      }
+    ]
+  }
+}

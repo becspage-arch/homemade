@@ -1,0 +1,178 @@
+{
+  "slug": "fish-pie",
+  "title": "Fish Pie",
+  "subtitle": "Smoked haddock, salmon, and prawns under a buttery mash crust",
+  "excerpt": "Fish pie is a baked British classic: smoked haddock, salmon, and prawns in a creamy white sauce, topped with mashed potato and baked until golden. The smoked fish gives the sauce its depth, the prawns add sweetness, and the mash crust soaks up the cream as it bakes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Fish pie in the style of smoked fish under mashed potato is documented in British cookbooks from the late Victorian period. The combination of smoked haddock, fresh fish, and shellfish under mash became the standard pub and home version in the second half of the twentieth century.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze assembled and unbaked. Defrost overnight in the fridge, then bake at 180°C fan for 40 minutes until the centre is piping hot.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble up to a day ahead, cover, and refrigerate. Bake straight from the fridge, adding 10 minutes.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "masher", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "poach", "term": "Poach", "definition": "To cook food gently in barely simmering liquid. For fish, this keeps the flesh tender and prevents it drying out." }
+  ],
+  "techniqueSlugs": ["making-white-sauce"],
+  "criticalTechniques": ["making-white-sauce"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Fish pie is a deep, creamy bake of smoked haddock, salmon, and prawns in a white sauce, topped with mashed potato. The smoked haddock is the backbone of the flavour: its saltiness and smokiness set the character of the whole dish. "
+        }, {
+          "type": "text",
+          "text": "Poaching",
+          "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "poach" } }]
+        }, {
+          "type": "text",
+          "text": " the fish in milk before making the sauce uses one pan for both tasks and builds the depth of the cream base."
+        }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "smoked-haddock", "amount": 250, "unit": "g", "prepNote": "undyed if possible", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "salmon-fillet", "amount": 2, "unit": "each", "prepNote": "skinless, about 130 g each", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "prawns-cooked", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "whole-milk", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "plain-flour", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "potato", "amount": 900, "unit": "g", "prepNote": "peeled and cut into chunks", "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the mash" },
+            { "ingredientSlug": "double-cream", "amount": 50, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the mash" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Undyed smoked haddock has a more delicate flavour than the bright yellow dyed version. Either works. The salmon fillets break into chunks during poaching; buy them skinless to save a step."
+        }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Poach the fish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the smoked haddock and {{salmon-fillet}} salmon fillets in a large pan. Pour over {{whole-milk}} of milk. Bring to a gentle simmer over medium heat, then cook for 5 minutes until the fish is just opaque. Lift out the fish and set aside. Reserve the poaching milk." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When cool enough to handle, break the fish into large flakes, removing any bones. Put the flakes and {{prawns-cooked}} of cooked prawns into the pie dish." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the white sauce" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt {{unsalted-butter}} of butter in a saucepan over medium heat. Stir in {{plain-flour}} of plain flour and cook for 1 minute, stirring, until the mixture smells biscuity. Gradually whisk in the warm reserved poaching milk, a little at a time, until you have a smooth, thickened sauce. Stir in {{double-cream}} of double cream. Season carefully, the smoked fish adds salt. Add the lemon juice and the chopped parsley." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the sauce over the fish and prawns in the dish. Stir gently to combine, keeping the fish in large pieces." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mash and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Boil {{potato}} of potato chunks in salted water until tender, about 18 minutes. Drain, steam dry, and mash with the remaining butter and double cream. Season well." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 200°C fan. Spread the mash over the filling and rough it up with a fork. Bake for 25 to 30 minutes until golden on top and bubbling at the edges." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The filling is too watery", "cause": "The fish released liquid into the sauce during baking.", "fix": "Poach the fish, remove it, and reduce the poaching milk slightly before making the sauce. The fish goes in cold; any remaining liquid dilutes the sauce." },
+            { "symptom": "The sauce is lumpy", "cause": "The milk was added too quickly to the roux.", "fix": "Add the milk slowly, whisking after each addition, until the sauce is smooth before adding the next pour." },
+            { "symptom": "The pie is salty", "cause": "The smoked haddock and poaching milk both contribute salt.", "fix": "Taste the sauce before seasoning and add salt only after tasting. Use unsalted butter in both the sauce and the mash." },
+            { "symptom": "The mash does not brown", "cause": "The oven was not hot enough, or the mash surface was too smooth.", "fix": "Fork the mash into ridges before baking; this creates edges that colour faster. A couple of minutes under the grill at the end will brown a pale top." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Fish pie is a British comfort dish. Smoked fish in a cream sauce under mash appears in domestic cookbooks from the late nineteenth century. The combination of smoked haddock, white fish, and prawns became the standard for home cooks and pub kitchens alike. It remains one of the most popular dishes on British pub menus and one of the best reasons to have mashed potato ready."
+        }]
+      }
+    ]
+  }
+}

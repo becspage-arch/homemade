@@ -1,0 +1,256 @@
+{
+  "slug": "steak-and-ale-pie",
+  "title": "Steak and Ale Pie",
+  "subtitle": "Slow-braised chuck steak and stout under a crisp shortcrust lid",
+  "excerpt": "Steak and ale pie is a deep-filled British pie of slow-braised chuck steak in a dark, malty gravy, topped with a short pastry lid. The meat turns falling-tender in the oven while the pastry bakes golden. Leave a gap to let the steam out and the crust will stay crisp.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Classic British pub-kitchen tradition. Mrs Beeton, Book of Household Management (1861) , Project Gutenberg #10136 , records beef and suet pies as a staple of English home cooking. The ale-enriched version became the pub-food standard in the twentieth century.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 150,
+    "restingMinutes": 10,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the filling without the pastry lid for up to 3 months. Defrost overnight, reheat until bubbling, then top and bake.",
+    "batchable": true,
+    "batchNotes": "Double the filling and freeze one batch. The pastry is best made fresh.",
+    "makeAheadNotes": "The filling can be made 2 days ahead and kept in the fridge. The pastry can be made and chilled a day ahead.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "batchCook"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "deglaze", "term": "Deglaze", "definition": "To add liquid to a hot pan to lift the caramelised cooking juices stuck to the base, incorporating them into a sauce or gravy." },
+    { "slug": "blind-bake", "term": "Blind bake", "definition": "To bake a pastry case without filling, using baking paper and weights to prevent the base puffing up." }
+  ],
+  "techniqueSlugs": ["braising", "blind-baking"],
+  "criticalTechniques": ["braising"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak and ale pie is a deep, richly filled British pie: chuck steak braised slowly in dark ale until the meat falls apart, then topped with short pastry and baked until golden. The filling is thick, dark, and savoury, somewhere between a stew and a gravy. The key step is giving the meat enough time in the oven the first stage so it is completely tender before the pastry goes on."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-chuck", "amount": 1000, "unit": "g", "prepNote": "cut into 4 cm chunks", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 3, "unit": "tbsp", "prepNote": "seasoned with salt and pepper", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "lardons", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "peeled and cut into chunks", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "chestnut-mushrooms", "amount": 250, "unit": "g", "prepNote": "halved", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "beer", "amount": 400, "unit": "ml", "prepNote": "dark ale or stout", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "marmite", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "shortcrust-pastry", "amount": 500, "unit": "g", "prepNote": "chilled (shop-bought or homemade)", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for the egg wash", "isOptional": false, "groupLabel": "For the pastry" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a casserole dish large enough to hold the filling for the initial braise, and a 26 to 28 cm deep pie dish for the final bake. A dark ale works better than a light one; the bitterness cooks out and leaves a deep, malty richness."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the beef" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{
+                "type": "text",
+                "text": "Toss {{beef-chuck}} of beef chunks in the seasoned {{plain-flour}} of plain flour until coated. Heat a splash of oil in a large heavy casserole over a high heat. Brown the beef in two or three batches, taking care not to crowd the pan. You want a dark crust on each piece, not a grey steam. Transfer each batch to a plate as it colours."
+              }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{
+                "type": "text",
+                "text": "Reduce the heat to medium. Fry {{lardons}} of lardons until the fat renders and the edges begin to catch. Add {{onion}} chopped onions and cook until soft, about 8 minutes. Add {{carrot}} carrot chunks and {{chestnut-mushrooms}} of mushrooms and cook for 3 minutes more."
+              }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the braise" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{
+                "type": "text",
+                "text": "Return the beef to the pot. Pour in {{beer}} of dark ale to "
+              }, {
+                "type": "text",
+                "text": "deglaze",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "deglaze" } }]
+              }, {
+                "type": "text",
+                "text": " the pan, lifting any browned bits from the base. Add {{stock-beef}} of beef stock. Add {{worcestershire-sauce}} of Worcestershire sauce and the marmite if using. Tuck in {{bay-leaves}} of bay. Bring to a gentle simmer, then cover and cook on the lowest possible heat for 2 hours, or until the beef is completely tender and the gravy has thickened."
+              }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{
+                "type": "text",
+                "text": "Taste and season. The gravy should be thick enough to coat a spoon; if it is thin, lift the lid and simmer uncovered for 10 minutes. Remove the bay leaves. Transfer the filling to the pie dish and leave to cool completely before adding the pastry."
+              }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{
+                "type": "text",
+                "text": "Heat the oven to 200°C fan. Roll the chilled pastry out to about 3 mm thick, a little larger than the pie dish. Brush the rim of the dish with beaten egg. Lay the pastry over the filling and press it onto the rim. Trim the excess and crimp with a fork. Cut a small slit in the centre to let the steam escape. (If you prefer a full double-crust pie with a pastry base, "
+              }, {
+                "type": "text",
+                "text": "blind-bake",
+                "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "blind-bake" } }]
+              }, {
+                "type": "text",
+                "text": " the base for 10 minutes before adding the filling.)"
+              }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{
+                "type": "text",
+                "text": "Brush the pastry all over with beaten egg. Bake for 30 minutes, until the pastry is deep golden. Leave to rest for 10 minutes before cutting. Serve with roast potatoes or mashed potato and buttered greens."
+              }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The pastry is soggy underneath",
+              "cause": "The filling was too hot when the pastry was applied, or there was too much liquid in the filling.",
+              "fix": "Cool the filling completely before topping. If the gravy is very loose, simmer it uncovered until it thickens before adding the pastry lid."
+            },
+            {
+              "symptom": "The beef is tough after 2 hours",
+              "cause": "Chuck steak needs long, gentle heat; too high a temperature makes it seize and tighten.",
+              "fix": "Keep the heat very low. If the meat is still tough, cover and continue cooking for another 30 to 60 minutes. It will eventually surrender."
+            },
+            {
+              "symptom": "The pastry is browning before the pie is heated through",
+              "cause": "The oven is too hot, or the pie dish is too thin.",
+              "fix": "Cover the pastry loosely with foil and continue baking until the filling is piping hot at the centre."
+            },
+            {
+              "symptom": "The gravy is thin and watery",
+              "cause": "There was too much stock, or the flour coating was insufficient.",
+              "fix": "Remove the lid and simmer uncovered until the filling is thick enough to coat a spoon. Then top with the pastry lid."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Make ahead and freezing" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "The filling is better the next day: make it up to 2 days ahead and keep it covered in the fridge. The pastry can be made and chilled a day ahead. Freeze the unbaked filling in the pie dish, well-wrapped, for up to 3 months. Defrost overnight in the fridge, bring to room temperature before topping, and bake as above."
+        }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Steak and ale pie sits at the centre of British pub food. The combination of beef and dark ale appears in English cookbooks as far back as the eighteenth century, though the pub-lunch version that most people know became standard in the post-war period when cask ales and kitchen ovens became common in public houses. It is a dish of the lunch hour, the cold afternoon, and the table that needs filling with something serious."
+        }]
+      }
+    ]
+  }
+}

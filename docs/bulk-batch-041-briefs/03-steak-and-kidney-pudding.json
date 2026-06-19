@@ -1,0 +1,183 @@
+{
+  "slug": "steak-and-kidney-pudding",
+  "title": "Steak and Kidney Pudding",
+  "subtitle": "Suet-style pastry steamed four hours over the hob",
+  "excerpt": "Steak and kidney pudding is a steamed savoury pudding: a basin lined and lidded with suet-style pastry, filled with raw beef and kidney in a little gravy, then steamed for four hours on the hob. The result is soft, yielding, and deeply savoury, quite different from the baked pie version.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861) , Project Gutenberg #10136. Her boiled beef pudding uses a suet crust lining; the steak and kidney version is the most enduring descendant of this tradition.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 240,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The raw filling can be prepared a day ahead and kept in the fridge. Do not assemble the pudding more than 2 hours before steaming.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "pudding-basin", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "suet", "term": "Suet crust", "definition": "A short, tender pastry made with self-raising flour and shredded beef or vegetable fat. It steams soft rather than baking crisp, and is used for both sweet and savoury steamed puddings." }
+  ],
+  "techniqueSlugs": ["steaming-pudding"],
+  "criticalTechniques": ["steaming-pudding"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Steak and kidney pudding is a steamed savoury pudding in which raw beef and kidney are sealed inside a soft, "
+        }, {
+          "type": "text",
+          "text": "suet",
+          "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "suet" } }]
+        }, {
+          "type": "text",
+          "text": "-style crust and steamed for four hours until everything is tender and the pastry absorbs the meat juices. It is not a baked pie and it does not look like one. Turned out of the basin onto a plate, it slumps slightly and cuts open to release a deep, savoury gravy."
+        }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "info",
+          "title": "About the pastry",
+          "body": "Traditional suet crust uses shredded beef suet mixed with self-raising flour. A vegetable shortening version works well and is easier to find. The pastry should be soft but not sticky when it goes into the basin."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "self-raising-flour", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "lard", "amount": 150, "unit": "g", "prepNote": "coarsely grated or chopped small (use as suet substitute)", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "beef-chuck", "amount": 500, "unit": "g", "prepNote": "cut into 2 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "ox-kidney", "amount": 200, "unit": "g", "prepNote": "trimmed and cut into 2 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 2, "unit": "tbsp", "prepNote": "seasoned", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 2, "unit": "sprig", "prepNote": "leaves stripped", "isOptional": false, "groupLabel": "For the filling" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "You need a 1.2 litre (2 pint) pudding basin with a lid, or a large square of foil to seal the top. A saucepan large enough to hold the basin with room for a steady, gentle steam is essential. The water level should reach halfway up the basin and be kept topped up."
+        }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pastry" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix {{self-raising-flour}} of self-raising flour with the {{lard}} of lard and a pinch of salt. Rub or chop the fat through the flour until the mixture resembles rough crumbs. Stir in enough cold water, a tablespoon at a time, to bring it together into a soft but not sticky dough. On the whole, somewhere between 100 and 150 ml." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Grease the pudding basin. Cut off a quarter of the dough for the lid. Roll the rest into a disc large enough to line the basin with an overhang. Press it in carefully so it covers the base and sides. The pastry tears easily; patch any gaps with the trimmings." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill and seal" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Toss {{beef-chuck}} of beef and {{ox-kidney}} of kidney in the seasoned {{plain-flour}} of plain flour. Add the {{onion}} chopped onion, {{worcestershire-sauce}} of Worcestershire sauce, and stripped thyme leaves. Pack the filling into the lined basin. Pour in {{stock-beef}} of beef stock." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roll the reserved pastry into a circle to fit the top. Lay it over the filling and press the edges of the lining and the lid together to seal. Trim any excess. Cover tightly with a double layer of greased foil, pleated in the centre to allow for expansion. Tie the foil around the rim with string." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Steam" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the basin on a small heatproof plate or trivet in a large saucepan. Pour in enough boiling water to reach halfway up the basin. Cover the saucepan with a tight-fitting lid. Steam over a steady medium-low heat for 4 hours. Check the water level every 45 minutes and top up with boiling water as needed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the basin from the water carefully. Let it rest for 5 minutes, then run a knife around the inside edge and turn the pudding out onto a deep plate with a lip, as the gravy will flow when cut. Serve immediately with mashed potato." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The pastry is very thick and doughy", "cause": "Too much water in the dough, or the pastry was rolled too thick.", "fix": "The dough should be just soft enough to roll without cracking. Keep it around 5 mm thick when lining the basin." },
+            { "symptom": "The filling is tough after 4 hours", "cause": "The steam was not steady, or the beef was cut too large.", "fix": "Keep a gentle but continuous steam throughout. Smaller 2 cm pieces of beef cook more evenly in the moist heat." },
+            { "symptom": "The pudding collapses when turned out", "cause": "The pastry lining tore during filling, or the seal between base and lid was insufficient.", "fix": "Patch tears before filling. Press the lid edge firmly onto the lining and use plenty of flour to stick them together." },
+            { "symptom": "The water boiled dry", "cause": "The heat was too high or the pan lid let too much steam escape.", "fix": "Keep the heat at medium-low and check every 45 minutes. Top up with boiling water, not cold, to keep the temperature steady." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "The steamed suet pudding is a British cooking tradition with deep roots in the absence of reliable ovens. The Victorian cookery writer Mrs Beeton's version of the dish remains recognisable today. It fell out of fashion in the late twentieth century as baked pies became the default, but it deserves a place at any serious winter table. The soft, yielding texture and the way the pastry absorbs the meat juices makes it unlike anything else in British cooking."
+        }]
+      }
+    ]
+  }
+}

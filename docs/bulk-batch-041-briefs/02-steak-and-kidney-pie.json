@@ -1,0 +1,159 @@
+{
+  "slug": "steak-and-kidney-pie",
+  "title": "Steak and Kidney Pie",
+  "subtitle": "A proper deep-filled pie with ox kidney and shortcrust pastry",
+  "excerpt": "Steak and kidney pie is the classic British meat pie: braised chuck steak and slices of ox kidney in a deep, savoury gravy, topped with shortcrust pastry. The kidney brings an earthy richness that sets it apart from a plain steak pie. This is a dish that improves overnight.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861) , Project Gutenberg #10136 , includes a steak and kidney pudding recipe. The pie form became a widespread standard in the late nineteenth and early twentieth centuries across British domestic cookbooks.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 150,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the cooked filling for up to 3 months. Defrost overnight, reheat until piping hot, then top and bake.",
+    "batchable": true,
+    "batchNotes": "Make a double quantity of filling and freeze half. The pastry is best made fresh or on the day.",
+    "makeAheadNotes": "The filling is better made a day ahead. Cool completely, then keep in the fridge. Top and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "braise", "term": "Braise", "definition": "To cook meat slowly in a small amount of liquid in a covered pot, combining initial browning with long, gentle heat to build flavour and tenderise tough cuts." }
+  ],
+  "techniqueSlugs": ["braising"],
+  "criticalTechniques": ["braising"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Steak and kidney pie is chuck steak and ox kidney slow-"
+        }, {
+          "type": "text",
+          "text": "braised",
+          "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "braise" } }]
+        }, {
+          "type": "text",
+          "text": " in a rich gravy, then baked under a shortcrust lid. The kidney adds a mineral depth that a plain steak pie cannot match. It is not to every taste, but to those who like it, it is the only version worth making."
+        }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-chuck", "amount": 600, "unit": "g", "prepNote": "cut into 3 cm chunks", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "ox-kidney", "amount": 250, "unit": "g", "prepNote": "trimmed and cut into 2 cm pieces", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "plain-flour", "amount": 3, "unit": "tbsp", "prepNote": "seasoned", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "chestnut-mushrooms", "amount": 200, "unit": "g", "prepNote": "halved", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "shortcrust-pastry", "amount": 400, "unit": "g", "prepNote": "chilled", "isOptional": false, "groupLabel": "For the pastry" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": "For the pastry" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Soak the kidney pieces in cold water for 30 minutes if you prefer a milder flavour, then drain and pat dry. A heavy casserole dish and a deep 24 cm pie dish are all you need."
+        }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown and braise" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Toss {{beef-chuck}} of chuck steak and {{ox-kidney}} of kidney separately in the seasoned {{plain-flour}} of flour. Brown the steak in batches in a little oil in a heavy casserole over a high heat. Set aside. Quickly sear the kidney pieces, 1 minute each side, and set aside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fry {{onion}} chopped onions in the same pot until soft, about 8 minutes. Add {{chestnut-mushrooms}} of mushrooms and cook for 3 minutes. Return the beef and kidney. Pour in {{stock-beef}} of beef stock and {{worcestershire-sauce}} of Worcestershire sauce. Tuck in {{thyme}} of thyme sprigs and {{bay-leaves}} of bay. Bring to a simmer, then cover and cook on the lowest heat for 2 hours, until the beef is completely tender." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the herbs. Taste and season the filling well. Transfer to the pie dish and leave to cool completely." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 200°C fan. Roll out the chilled pastry to 3 mm thick. Brush the rim of the dish with beaten egg. Lay the pastry over the filling, press down on the rim, and trim. Cut a slit in the centre. Brush with beaten egg and bake for 30 minutes until deep golden." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The kidney has a very strong smell", "cause": "Fresh kidney has a noticeable scent that reduces with soaking.", "fix": "Soak kidney pieces in cold water for 30 minutes before cooking, then pat dry. The smell cooks out almost entirely during the braise." },
+            { "symptom": "The pastry is soft and pale underneath", "cause": "The filling was still warm when the pastry went on, creating steam rather than a dry heat.", "fix": "Cool the filling to room temperature or refrigerate it before adding the pastry lid. The pastry needs dry heat from below to crisp." },
+            { "symptom": "The filling is too thin", "cause": "The flour coating was not enough to thicken the gravy, or there was too much stock.", "fix": "Simmer the filling uncovered for 15 minutes before adding the pastry to reduce and thicken it." },
+            { "symptom": "The beef is still chewy after 2 hours", "cause": "The heat was too high during the braise; high heat tightens muscle fibres.", "fix": "Reduce to the lowest possible simmer, cover, and give the beef another 30 to 45 minutes. It will become tender." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Steak and kidney pie is as British as any dish in the canon. It shares the same filling as the steamed pudding version, but the pie form, baked in the oven rather than steamed on the hob, produces a drier, crisper finish. Served with mashed potato and cabbage, it is a serious lunch or a cold-weather dinner that leaves nothing to be desired."
+        }]
+      }
+    ]
+  }
+}

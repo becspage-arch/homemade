@@ -1,0 +1,117 @@
+{
+  "slug": "irish-stew",
+  "title": "Irish Stew",
+  "subtitle": "Lamb neck, potatoes, and onions braised in a clear broth",
+  "excerpt": "Irish stew is one of the simplest and most distinctive stews in the British and Irish tradition: lamb neck, potato, and onion braised slowly in just enough water or stock to cover, until the potato has half-dissolved and thickened the broth. No root vegetables, no herbs beyond a bay leaf. The simplicity is the point.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Irish stew is a dish with a hotly contested traditional form. Purists insist on neck of mutton or lamb, potato, and onion only , no carrots, no thyme. The potato was historically both part of the filling and the natural thickener as the starch dissolved into the broth.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 120,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze after braising. The potato may break down further on reheating, thickening the stew. Defrost overnight and reheat gently.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the day before. Refrigerate and skim any fat before reheating.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": ["braising"],
+  "criticalTechniques": ["braising"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Irish stew asks for restraint: add only what the recipe calls for and resist the urge to improve it. The three main ingredients (lamb, potato, and onion) work together in a way that a busier stew does not replicate. The potato breaks down at the edges and thickens the broth without any flour. The lamb neck becomes tender and flavourful in the long, slow braise. Season generously at the end."
+        }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-neck", "amount": 900, "unit": "g", "prepNote": "bone-in neck chops or neck fillet", "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "potato", "amount": 800, "unit": "g", "prepNote": "peeled and cut into large chunks, floury variety", "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "quartered", "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "stock-beef", "amount": 700, "unit": "ml", "prepNote": "lamb or chicken stock also work", "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "thyme", "amount": 2, "unit": "sprig", "prepNote": "optional", "isOptional": true, "groupLabel": "For the stew" },
+            { "ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "prepNote": "chopped, to serve", "isOptional": false, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 160°C fan. Season the lamb pieces generously. Layer them in a Dutch oven with the potato chunks and quartered onions. Add the bay leaves and thyme if using. Pour over {{stock-beef}} of stock: it should come just below the top of the ingredients, not cover them." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring to a simmer on the hob, then cover and transfer to the oven. Braise for 2 hours until the lamb is very tender and the potato has partially dissolved into the broth. Remove the bay leaves." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Season well with salt and black pepper. Scatter parsley over and serve directly from the pot." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The broth is thin and watery", "cause": "The potato was not floury enough to dissolve and thicken the broth.", "fix": "Use a floury potato variety (Maris Piper or King Edward). Waxy potatoes stay intact and do not thicken the broth." },
+            { "symptom": "The lamb is still tough after 2 hours", "cause": "Neck of lamb is a variable cut. A larger piece takes longer.", "fix": "Return to the oven for a further 30 minutes. The lamb is ready when it separates easily from the bone." },
+            { "symptom": "The potato has completely dissolved into the broth", "cause": "The stew was cooked too long or the potato was cut too small.", "fix": "Cut the potato into generous chunks , at least 4 cm. Some dissolution is desirable to thicken the broth; total dissolution is too far." },
+            { "symptom": "The stew tastes flat", "cause": "Insufficient seasoning , lamb and potato are both mild and need confident salt and pepper.", "fix": "Season aggressively at the end. Irish stew needs more salt than most dishes to bring out the lamb flavour." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Irish stew is the national dish of Ireland and one of the most debated recipes in the British Isles. Whether to add carrots, pearl barley, or other vegetables is an ongoing argument. The plain version (lamb, potato, onion) is the oldest documented form. It makes the strongest case: nothing hides the quality of the ingredients, and nothing competes with the lamb."
+        }]
+      }
+    ]
+  }
+}

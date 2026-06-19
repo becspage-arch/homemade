@@ -1,0 +1,151 @@
+{
+  "slug": "beer-battered-haddock",
+  "title": "Beer-Battered Haddock",
+  "subtitle": "Fresh haddock in a crisp, golden beer batter",
+  "excerpt": "Beer-battered haddock is the pub version of fish and chips: haddock fillets dipped in a light batter made with cold beer and fried until the coating is shattering and the fish inside is just cooked. The beer creates carbonation that lightens the batter. The temperature of the fat is the only variable that matters.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Beer batter for fish is a British pub and chip shop standard. Haddock is the preferred white fish in the north of England; cod is more common in the south. The beer gives the batter a lightness and a subtle malt flavour.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weeknight", "entertaining"],
+    "temperatureCelsius": null,
+    "temperatureNote": "oil at 180°C",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "deep-fryer", "isOptional": true },
+    { "slug": "large-saucepan", "isOptional": true },
+    { "slug": "thermometer-probe", "isOptional": false },
+    { "slug": "whisk-balloon", "isOptional": false },
+    { "slug": "slotted-spoon", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "batter", "term": "Batter", "definition": "A thin, pourable mixture of flour, liquid, and sometimes egg, used to coat food before frying. Beer batter uses cold beer for lightness." }
+  ],
+  "techniqueSlugs": ["deep-frying"],
+  "criticalTechniques": ["deep-frying"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Beer-battered haddock is one of the most satisfying things to make at home. The "
+        }, {
+          "type": "text",
+          "text": "batter",
+          "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "batter" } }]
+        }, {
+          "type": "text",
+          "text": " mixes in minutes. The fish cooks in 5. The result, when the oil is at the right temperature, is a crisp, airy shell around sweet, white haddock. The challenge is keeping the oil at 180°C: too cold and the batter absorbs fat; too hot and the outside burns before the fish cooks."
+        }]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Oil temperature is everything",
+          "body": "Use a probe thermometer to monitor the oil. It drops when the fish goes in , let it recover before adding the next fillet. Frying two fillets at a time in a large pan is better than crowding four in."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "haddock-fillet", "amount": 4, "unit": "each", "prepNote": "skin on or off, about 180 g each", "isOptional": false, "groupLabel": "For the fish" },
+            { "ingredientSlug": "plain-flour", "amount": 200, "unit": "g", "prepNote": "plus extra for dusting", "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "baking-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "beer", "amount": 330, "unit": "ml", "prepNote": "cold lager or pale ale", "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "sunflower-oil", "amount": 1, "unit": "l", "prepNote": "or vegetable oil, for frying", "isOptional": false, "groupLabel": "For frying" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the batter" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Whisk together {{plain-flour}} of plain flour, {{baking-powder}} of baking powder, and a teaspoon of salt. Pour in {{beer}} of cold beer and whisk until you have a smooth, coating batter with no lumps. Rest in the fridge for 30 minutes." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry the fish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat {{sunflower-oil}} of oil in a large, deep pan to 180°C. Pat the haddock fillets dry. Dust each fillet lightly in plain flour, shaking off the excess. This helps the batter adhere." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dip 1 fillet into the batter, let the excess drip off, and lower gently into the hot oil. Fry for 5 to 6 minutes, turning once, until the batter is deep golden and the fish is cooked through. Lift out with a slotted spoon and drain on kitchen paper. Season immediately with salt. Fry the remaining fillets, allowing the oil to return to 180°C between batches." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The batter falls off the fish", "cause": "The fish was not dried before battering, or it was not dusted in flour first.", "fix": "Pat the fish very dry with kitchen paper and dust in plain flour before dipping in batter. The flour gives the batter something to grip." },
+            { "symptom": "The batter is greasy and heavy", "cause": "The oil was too cold, so the batter absorbed fat rather than setting quickly.", "fix": "Check the oil temperature before each fillet. It needs to be at 180°C. A cold oil fry makes heavy batter; a hot oil fry makes crisp batter." },
+            { "symptom": "The batter is too thick and doughy", "cause": "The batter was too stiff, or the beer was not cold enough to create carbonation.", "fix": "The batter should be the consistency of thin yoghurt. Add a little more cold beer if it seems too thick. Use the batter cold, straight from the fridge." },
+            { "symptom": "The fish is not cooked inside by the time the batter is done", "cause": "The fillets were very thick, or the oil was too hot.", "fix": "For thick fillets, reduce the oil to 170°C and fry for 7 minutes. The slower fry gives the heat more time to penetrate." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Beer batter belongs to the British pub kitchen and the chip shop in equal measure. The beer version produces a lighter, more interesting crust than a plain flour-and-water batter, and the small amount of malt in the beer adds a background flavour that makes the fish taste more like itself. Serve with chips, mushy peas, and malt vinegar."
+        }]
+      }
+    ]
+  }
+}

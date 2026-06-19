@@ -1,0 +1,156 @@
+{
+  "slug": "beef-stew-with-dumplings",
+  "title": "Beef Stew with Dumplings",
+  "subtitle": "Braised chuck steak in a dark stout and root vegetable stew with suet-style dumplings",
+  "excerpt": "Beef stew with dumplings is a British winter staple: chunks of braising beef slow-cooked with root vegetables in a dark, stout-enriched gravy, then dumplings added on top for the final 20 minutes. The dumplings absorb the gravy as they cook and become soft pillows that are the best part of the dish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Suet dumplings cooked in a beef stew are a classic of British home cooking, particularly in northern England and Wales where slow-cooked stews were the dominant cold-weather cooking method. Traditional dumplings use beef suet; this version uses lard as a practical substitute.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 150,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the stew without the dumplings. Defrost overnight, reheat to simmering, then make and cook fresh dumplings.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the stew 1 to 2 days ahead. Make the dumplings fresh on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "batchCook"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan oven for the stew; hob for the dumplings",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": ["braising"],
+  "criticalTechniques": ["braising"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Beef stew with dumplings is a long-cook dish that does most of its work in the oven unsupervised. The dumplings are the last step and take only 20 minutes on the hob with a lid on: they steam and puff and absorb the gravy from below. Do not lift the lid during dumpling cooking or they will not rise."
+        }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-chuck", "amount": 800, "unit": "g", "prepNote": "cut into 5 cm chunks", "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "cut into chunks", "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "swede", "amount": 200, "unit": "g", "prepNote": "peeled and cubed", "isOptional": true, "groupLabel": "For the stew" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "beer", "amount": 300, "unit": "ml", "prepNote": "stout or dark ale", "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "self-raising-flour", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dumplings" },
+            { "ingredientSlug": "lard", "amount": 75, "unit": "g", "prepNote": "cold, grated (suet substitute)", "isOptional": false, "groupLabel": "For the dumplings" }
+          ]
+        }
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "tone": "tip",
+          "title": "Suet for dumplings",
+          "body": "Beef suet is the traditional fat for British dumplings. If you can find it in packets at the butcher, use it at the same ratio. Otherwise, cold grated lard gives nearly identical results , the texture and richness are very close."
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the stew" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 160°C fan. Season the beef chunks and brown in batches in a Dutch oven over high heat until dark on all sides. Set aside. Add {{onion}} chopped onion, {{carrot}} carrot chunks, and {{celery}} celery slices to the pot and cook for 5 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add {{garlic}} crushed garlic and {{tomato-puree}} of tomato puree; cook for 2 minutes. Return the beef. Add {{beer}} of stout, {{stock-beef}} of beef stock, {{worcestershire-sauce}} of Worcestershire sauce, the thyme, and bay leaves. Bring to a simmer. Add the swede if using." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover and braise in the oven for 2 to 2.5 hours until the beef is tender. Remove the thyme and bay leaves. Season well." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dumplings" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix {{self-raising-flour}} of self-raising flour and {{lard}} of cold grated lard with a generous pinch of salt. Add 5 to 6 tablespoons of cold water, mixing until a soft, slightly sticky dough forms. Do not over-mix. Divide into 8 balls." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the stew to a gentle simmer on the hob. Lay the dumpling balls on top of the stew so they sit just above the surface. Cover tightly and cook over low heat for 20 minutes without lifting the lid. The dumplings will puff and the undersides will absorb the gravy. Serve straight from the pot." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The dumplings are dense and flat", "cause": "The lid was lifted during cooking, or the dough was over-mixed.", "fix": "Do not lift the lid in the first 20 minutes of dumpling cooking. Mix the dough minimally , just until combined." },
+            { "symptom": "The stew is too thin after braising", "cause": "The liquid was too much for the amount of beef, or the beef was not browned before braising.", "fix": "Brown the beef well before braising. If still thin after 2 hours, remove the lid and simmer on the hob for 10 minutes to reduce." },
+            { "symptom": "The beef is still chewy after 2.5 hours", "cause": "Chuck steak is very collagen-rich and can take longer at low temperatures.", "fix": "Return to the oven for a further 30 minutes. It should pull apart with a spoon when done." },
+            { "symptom": "The dumplings are cooked on top but raw in the middle", "cause": "The stew was not simmering when the dumplings were added.", "fix": "The stew must be actively simmering before the dumplings go on. Check by looking for steady bubbling before covering the lid." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Beef stew with suet dumplings is the quintessential British cold-weather dish, and the dumplings are the part that cannot be replicated. They absorb the dark, stout-enriched gravy and become something between bread and pasta: stodgy in the best sense, deeply savoury, and unlike anything else in the European cooking tradition. This is the dish that British school dinners tried to recreate and rarely managed."
+        }]
+      }
+    ]
+  }
+}

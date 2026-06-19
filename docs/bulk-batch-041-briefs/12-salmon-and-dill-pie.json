@@ -1,0 +1,150 @@
+{
+  "slug": "salmon-and-dill-pie",
+  "title": "Salmon and Dill Pie",
+  "subtitle": "Fresh salmon in a cream and dill sauce under golden puff pastry",
+  "excerpt": "Salmon and dill pie uses fresh salmon in a light cream sauce fragrant with dill under a puff pastry lid. The salmon stays tender and pink, the dill keeps the sauce fresh rather than heavy. It is a less robust but more elegant fish pie than the smoked-fish versions, suited to spring and summer.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Salmon and dill is a classic pairing in British and Scandinavian cooking. The combination appears in both hot dishes and cold preparations, where the dill cuts through the richness of the fish.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the filling a day ahead, refrigerate. Top and bake on the day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["entertaining", "weeknight"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "pie-dish", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "dill", "term": "Dill", "definition": "A feathery herb with a fresh, anise-adjacent flavour. Widely used with fish and in cream sauces. Add it at the end of cooking to preserve its character." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Salmon and dill pie is lighter in character than most British meat pies. The salmon poaches gently in stock, stays in large flakes, and sits in a cream sauce that is kept fresh with lemon and "
+        }, {
+          "type": "text",
+          "text": "dill",
+          "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "dill" } }]
+        }, {
+          "type": "text",
+          "text": ". The whole thing bakes under puff pastry for 25 minutes. Do not overcook the salmon during poaching: it finishes in the oven inside the pie."
+        }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "salmon-fillet", "amount": 600, "unit": "g", "prepNote": "skinless", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "leek", "amount": 2, "unit": "each", "prepNote": "washed and sliced", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "stock-chicken", "amount": 300, "unit": "ml", "prepNote": "or vegetable stock", "isOptional": false, "groupLabel": "For the filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "plain-flour", "amount": 35, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "double-cream", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "dill", "amount": 20, "unit": "g", "prepNote": "fronds, roughly chopped", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "zest and juice", "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "puff-pastry", "amount": 320, "unit": "g", "prepNote": "chilled ready-rolled", "isOptional": false, "groupLabel": "For the lid" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": "For the glaze" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Poach and prepare" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put {{salmon-fillet}} of salmon in a pan with {{stock-chicken}} of stock. Bring to a bare simmer, cover, and poach for 5 minutes until barely opaque at the centre. The salmon will finish cooking in the oven. Lift out and break into large flakes. Reserve the poaching stock." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt {{unsalted-butter}} of butter in a pan over medium heat. Add {{leek}} sliced leeks and cook for 8 minutes until soft. Stir in {{plain-flour}} of flour and cook for 1 minute. Whisk in the warm reserved stock, then {{double-cream}} of double cream. Simmer until thick, about 5 minutes. Remove from the heat. Stir in the dill fronds, lemon zest, and lemon juice. Season well." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Gently fold the salmon flakes into the sauce. Transfer to the pie dish and cool for 15 minutes." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Top and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 200°C fan. Brush the rim of the dish with beaten egg. Lay the puff pastry over the filling, seal the edges, and trim. Cut a steam vent. Brush with beaten egg. Bake for 25 to 30 minutes until the pastry is puffed and golden." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The salmon is dry and overcooked", "cause": "It was poached through before baking, then cooked again in the oven.", "fix": "Poach for 5 minutes only, leaving the centre translucent. The salmon finishes in the oven and will be tender when the pie is done." },
+            { "symptom": "The dill flavour has disappeared", "cause": "Dill was added too early and cooked out.", "fix": "Add the dill after the sauce is off the heat. It needs only the residual warmth to bloom, not direct heat." },
+            { "symptom": "The sauce is too sharp", "cause": "Too much lemon juice was added.", "fix": "Use the zest of the whole lemon but add the juice in stages. A small amount of lemon lifts the sauce; too much makes it acidic." },
+            { "symptom": "The filling separates when served", "cause": "The sauce was too thin and did not hold the fish together.", "fix": "The sauce should be thick enough to coat the back of a spoon before the fish is folded in. Simmer longer if needed before removing from the heat." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{
+          "type": "text",
+          "text": "Salmon and dill is a pairing with roots in Scandinavian cooking that was absorbed fully into British cuisine, particularly in Scotland, where wild Atlantic salmon has always been part of the landscape. As a pie, it is elegant enough for a dinner party and straightforward enough for a weeknight supper. Serve with new potatoes and peas in spring, or with a green salad when the weather is warmer."
+        }]
+      }
+    ]
+  }
+}
