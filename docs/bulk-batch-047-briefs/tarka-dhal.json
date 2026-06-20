@@ -1,0 +1,359 @@
+{
+  "slug": "tarka-dhal",
+  "title": "Tarka Dhal",
+  "subtitle": "Red lentils with a tempered spice and onion topping",
+  "excerpt": "Red lentils simmered until creamy, then finished with a tarka of whole spices, garlic, dried chilli, and onion fried in ghee and poured sizzling over the top. Simple, fast, and deeply satisfying.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Dhal is a staple dish across the Indian subcontinent and represents one of the oldest cooking traditions in the region. Red lentil dhal with a tarka (also spelled tadka, a tempering technique where spices are briefly fried in hot fat) is documented across South Asian cuisine from early texts. Madhur Jaffrey, Madhur Jaffrey's Indian Cookery (BBC Books, 1982): primary reference for the British domestic red lentil dhal.",
+  "recipe": {
+    "servings": 4,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the dhal without the tarka. Defrost overnight, reheat, and make a fresh tarka to pour over when serving.",
+    "batchable": true,
+    "batchNotes": "Doubles well and keeps in the fridge for four days.",
+    "makeAheadNotes": null,
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan",
+      "glutenFree"
+    ],
+    "cuisine": "angloIndian",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tarka",
+      "term": "Tarka (or Tadka)",
+      "definition": "A finishing technique where whole spices, aromatics, or dried chillies are fried briefly in hot ghee or oil and then poured sizzling over a completed dish. The hot fat blooms the spice flavour and the sizzle infuses the dish with fragrance."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tarka dhal is red lentils simmered to a smooth, creamy consistency, then finished with a "
+          },
+          {
+            "type": "text",
+            "text": "tarka",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tarka"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of whole spices and onion fried in ghee and poured over the top. The sizzling tarka finishes the dish rather than going in at the start, which keeps the spice flavour bright. The lentils take 25 minutes; the tarka takes 5. Red lentils dissolve as they cook, which is why they do not need soaking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "red-lentils",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "rinsed",
+              "isOptional": false,
+              "groupLabel": "For the dhal"
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the dhal"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": "For the dhal"
+            },
+            {
+              "ingredientSlug": "ghee",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "or unsalted butter",
+              "isOptional": false,
+              "groupLabel": "For the tarka"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": "For the tarka"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": "For the tarka"
+            },
+            {
+              "ingredientSlug": "cumin-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the tarka"
+            },
+            {
+              "ingredientSlug": "mustard-seeds",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the tarka"
+            },
+            {
+              "ingredientSlug": "dried-chilli",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "whole dried red chillies",
+              "isOptional": false,
+              "groupLabel": "For the tarka"
+            },
+            {
+              "ingredientSlug": "garam-masala",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "for the tarka",
+              "isOptional": false,
+              "groupLabel": "For the tarka"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the lentils"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put the {{red-lentils}} of rinsed red lentils in a medium saucepan with 900 ml of water and the turmeric. Bring to a boil, skimming off any foam, then lower to a gentle simmer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook uncovered for 20 to 25 minutes, stirring occasionally, until the lentils have fully dissolved and the dhal has a smooth, thick, pourable consistency. Add a splash more water if it becomes too thick before the lentils are fully dissolved. Season generously with salt."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the tarka"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{ghee}} of ghee in a small saucepan over medium-high heat. Add the cumin and mustard seeds and the dried chillies. Fry for 30 seconds until the mustard seeds pop and the cumin darkens."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the sliced onion and garlic. Cook for 6 to 8 minutes until the onion is golden brown and the garlic is starting to crisp at the edges. Add the garam masala for the last 30 seconds."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the dhal into a serving bowl or keep it in the pot. Pour the sizzling tarka straight over the top. It will hiss and steam. Scatter with fresh coriander and serve at once."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Dhal is very thick and stiff",
+              "cause": "Lentils absorbed too much water, or reduced too far",
+              "fix": "Stir in a little hot water to loosen. Red lentil dhal should pour easily from a spoon, not hold a solid shape."
+            },
+            {
+              "symptom": "Tarka burns in the pan",
+              "cause": "Heat too high, or left unattended once the onion is in",
+              "fix": "Stay at the pan once the onion goes in. It goes from golden to burnt quickly. If the spices darken too fast, lift the pan off the heat."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dhal in some form is a daily staple across Pakistan, India, and Bangladesh, and by extension across British Asian households and curry houses. Tarka dhal with red lentils is one of the simplest and fastest versions; it appears in most British curry restaurants as a side dish or starter and in most South Asian home kitchens as an everyday meal. It is economical, nutritious, and better than it looks."
+          }
+        ]
+      }
+    ]
+  }
+}

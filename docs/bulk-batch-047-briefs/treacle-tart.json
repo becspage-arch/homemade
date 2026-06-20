@@ -1,0 +1,351 @@
+{
+  "slug": "treacle-tart",
+  "title": "Treacle Tart",
+  "subtitle": "Shortcrust pastry case filled with golden syrup and breadcrumbs",
+  "excerpt": "A crisp shortcrust pastry shell filled with golden syrup, fresh breadcrumbs, lemon juice, and a little cream, baked until just set with a slight chew. One of the most distinctly British puddings in existence.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Eliza Acton, Modern Cookery for Private Families (1845), treacle tart as a British pastry with golden syrup filling. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136. Lyle's Golden Syrup was introduced in 1881 and the standardised treacle tart recipe dates from this period. The tart appears in most British baking books from the late Victorian era onwards.",
+  "recipe": {
+    "servings": 8,
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "restingMinutes": 20,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the baked, cooled tart for up to 1 month. Defrost at room temperature and warm in a low oven for 10 minutes before serving.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make up to 2 days ahead and keep wrapped at room temperature. Warm slightly before serving.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "entertaining"
+    ],
+    "temperatureCelsius": 190,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "tart-tin",
+      "isOptional": false
+    },
+    {
+      "slug": "rolling-pin",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-beans",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "blind-bake",
+      "term": "Blind bake",
+      "definition": "Baking a pastry case without the filling, using baking beans or rice to weigh the pastry down and prevent it from puffing up. The result is a fully cooked shell that will not go soggy when the filling is added."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Treacle tart is a shortcrust pastry case filled with a mixture of golden syrup, fresh breadcrumbs, and lemon juice and baked until set. The breadcrumbs absorb the syrup and give the filling its characteristic slightly chewy texture. The lemon cuts the sweetness. The pastry case must be "
+          },
+          {
+            "type": "text",
+            "text": "blind baked",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "blind-bake"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " before the filling goes in to prevent the base from becoming soggy."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the pastry"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "cold, cubed",
+              "isOptional": false,
+              "groupLabel": "For the pastry"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the pastry"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "yolk only, for the pastry",
+              "isOptional": false,
+              "groupLabel": "For the pastry"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": "cold, if needed to bring the dough together",
+              "isOptional": true,
+              "groupLabel": "For the pastry"
+            },
+            {
+              "ingredientSlug": "golden-syrup",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-dried",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "fresh white, from about 3 slices of crustless bread",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "juice and zest",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 60,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "For the filling"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the pastry and blind bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rub {{unsalted-butter}} of cold cubed butter into {{plain-flour}} of flour and {{sea-salt-fine}} of salt until the mixture resembles fine breadcrumbs. Add {{eggs}} yolk and mix. Add a little {{whole-milk}} of cold milk if needed to bring the dough together. Flatten into a disc, wrap, and chill for 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 190 degrees C. Roll the chilled pastry out thinly and use to line a 23 cm loose-bottomed tart tin. Prick the base with a fork. Line with baking paper and baking beans and blind bake for 15 minutes. Remove the beans and paper and bake for 5 minutes more until the base is dry and just turning golden."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the filling and bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Warm {{golden-syrup}} of golden syrup in a pan until just runny. Remove from the heat and stir in {{breadcrumbs-dried}} of fresh breadcrumbs, the juice and zest of {{lemon}}, and {{double-cream}} of cream if using."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the filling into the blind-baked case. Bake for 20 to 25 minutes until the filling is just set with a slight wobble in the centre. Do not overbake: the filling firms as it cools."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Leave to cool in the tin for at least 20 minutes before slicing. Serve warm or at room temperature with clotted cream or custard."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Pastry base is soggy",
+              "cause": "Not blind baked long enough, or oven not hot enough",
+              "fix": "The base must be dry and light golden before the filling goes in. If in doubt, give it another 5 minutes without the beans."
+            },
+            {
+              "symptom": "Filling sets hard and cracks",
+              "cause": "Overbaked or too little cream in the filling",
+              "fix": "Pull the tart out when the centre still has a slight tremor. Adding cream to the filling helps it stay soft after cooling."
+            },
+            {
+              "symptom": "Filling is too sweet with no balance",
+              "cause": "Not enough lemon juice",
+              "fix": "Use a whole lemon including the zest. The acid is essential to make treacle tart palatable rather than cloying."
+            },
+            {
+              "symptom": "Filling bubbles over the pastry edge",
+              "cause": "Too much filling or pastry case not tall enough",
+              "fix": "Leave at least 5 mm of space at the top of the case. The filling bubbles up slightly during baking."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Treacle tart has been made in Britain since Lyle's Golden Syrup became widely available in the 1880s. It is one of the few British puddings with no clear equivalent elsewhere in European cooking. The name is slightly misleading: the filling uses golden syrup, not black treacle. Treacle tart is Harry Potter's favourite dessert in the novels, which gave it international recognition. It has been on British school-dinner menus and home tables for well over a century."
+          }
+        ]
+      }
+    ]
+  }
+}

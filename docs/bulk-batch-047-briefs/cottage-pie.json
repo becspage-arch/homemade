@@ -1,0 +1,527 @@
+{
+  "slug": "cottage-pie",
+  "title": "Cottage Pie",
+  "subtitle": "Minced beef in gravy under a mashed potato crust",
+  "excerpt": "Seasoned minced beef in a rich gravy, topped with a thick crust of buttery mash and baked until golden. This is the version worth making from scratch, and it freezes beautifully.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136. Minced collops and potato-topped pies as a thrifty way to use cooked meat. The modern cottage pie made with raw mince became standard in the twentieth century.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 55,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before the final bake, well covered. Defrost overnight in the fridge, then bake from cold at 180°C for 40 to 45 minutes until piping hot through.",
+    "batchable": true,
+    "batchNotes": "This doubles well. Use two dishes and freeze one.",
+    "makeAheadNotes": "Assemble the day before and keep in the fridge, covered. Bake when needed.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "kidFriendly",
+      "mealPrep"
+    ],
+    "temperatureCelsius": 190,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-30",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "pie-dish",
+      "isOptional": false
+    },
+    {
+      "slug": "masher",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "browning",
+      "term": "Browning",
+      "definition": "Cooking meat over high heat until the outside develops a brown crust. This adds depth and colour to the finished dish; meat that is only grey and steamed tastes flat."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cottage pie is seasoned minced beef in a gravy, topped with mashed potato and baked in a dish until the top is golden. It serves four from a single pie dish and freezes very well. The key is "
+          },
+          {
+            "type": "text",
+            "text": "browning",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "browning"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " the mince properly before anything else goes in, which gives the filling its colour and depth."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shepherd's pie uses lamb; cottage pie uses beef. The name comes from the farmers who kept cattle rather than sheep. Beyond that, the method is the same."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-mince",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "20% fat if possible",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "peeled and finely diced",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "worcestershire-sauce",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 2,
+              "unit": "sprig",
+              "prepNote": "leaves only",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 1,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "rapeseed-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 900,
+              "unit": "g",
+              "prepNote": "floury variety, peeled and quartered",
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 75,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "cheddar",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "grated, for the top",
+              "isOptional": true,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "grind",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a wide frying pan or deep sauté pan for the filling and a 1.5-litre pie dish for the bake. A potato masher makes the topping easier than a fork."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the mince"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a wide frying pan over high heat until the pan is very hot. Add the {{beef-mince}} of beef mince in a single layer if the pan is large enough. Leave it untouched for 2 to 3 minutes so a brown crust forms underneath."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Break the mince up and stir. Cook for a further 3 to 4 minutes until well browned all over. Season with salt and pepper. Tip the mince into a bowl and set aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the filling"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to medium. Add the {{onion}} finely chopped onions, {{carrot}} diced carrots, and {{celery}} diced celery to the same pan. Cook for 8 minutes, stirring now and then, until softened."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{garlic}} of crushed garlic and cook for one more minute. Stir in {{tomato-puree}} of tomato purée and cook for 2 minutes to lose the raw edge."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return the mince to the pan. Pour in {{stock-beef}} of beef stock and add {{worcestershire-sauce}} of Worcestershire sauce, the thyme leaves, and the bay leaf. Bring to a gentle simmer and cook uncovered for 20 minutes until the gravy thickens and the mince is tender. Discard the bay leaf. Taste and season."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the mash topping"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Boil the {{potato}} of potato in salted water for 15 to 18 minutes until tender. Drain and steam-dry in the pan for one minute. Mash with {{unsalted-butter}} of butter and {{whole-milk}} of warm milk until smooth. Season well."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Assemble and bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 190°C. Spoon the filling into the pie dish. Spread the mash over the top with a fork, covering the filling to the edges. Use a fork to rough up the surface so it crisps in the oven."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Scatter the grated cheddar over the top if using. Bake for 25 to 30 minutes until golden on top and bubbling at the edges."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Leave to rest for 5 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Filling is too watery under the mash",
+              "cause": "Not cooked down for long enough, or the mince released too much fat",
+              "fix": "Simmer for longer before assembly. Drain off any excess fat from the mince after browning."
+            },
+            {
+              "symptom": "Mash top sinks into the filling during baking",
+              "cause": "Filling was too hot or too runny when the mash went on",
+              "fix": "Let the filling cool slightly before topping. Make the mash a little stiffer by using less milk."
+            },
+            {
+              "symptom": "Top is pale after 30 minutes in the oven",
+              "cause": "Oven not hot enough, or too much moisture in the mash",
+              "fix": "Crank the oven to 210°C for the last 5 minutes, or finish under a hot grill for 3 minutes."
+            },
+            {
+              "symptom": "Mince is grey rather than brown",
+              "cause": "Pan not hot enough, or too much mince in the pan at once",
+              "fix": "Brown in two batches if the pan is crowded. The mince must sit in a single layer to colour properly."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cottage pie and its lamb counterpart, shepherd's pie, have been British kitchen regulars since the late eighteenth century. Both began as a way to use leftover roast meat, combined with the potato, which had by then become a staple of British cooking. The modern version uses raw mince and is the more reliable choice. It sits on the school-dinner table alongside stew and spotted dick, and on the Sunday-night supper table in most British households."
+          }
+        ]
+      }
+    ]
+  }
+}

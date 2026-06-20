@@ -662,3 +662,105 @@ SKIPPED: 0
 ## Still BLOCKED (sample 20)
 
 - wet-felted-christmas-bauble-set: hero-missing
+
+---
+
+## Run at 21:10:35
+
+Generated: 2026-06-12T21:10:35.080Z
+
+Processed: 74
+PASS: 38
+STILL_BLOCKED: 36
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 108 |
+| content-type-opening-mismatch | 19 |
+| opening-pattern-missing-hook | 13 |
+| grade-level-strict | 8 |
+| voice-violation | 3 |
+
+## Still BLOCKED (sample 20)
+
+- bay-rum-aftershave-splash: hero-missing
+- beeswax-birthday-candles: hero-missing
+- calendula-infused-oil: hero-missing
+- cedar-rose-wardrobe-sachets: hero-missing
+- citrus-herb-linen-spray: hero-missing
+- cocoa-butter-vanilla-cold-process-soap: hero-missing
+- coconut-wax-jar-candle-coconut-lime: hero-missing
+- coffee-scrub-cold-process-soap: hero-missing
+- copper-cleaning-paste: hero-missing
+- dishwasher-tablet-homemade: hero-missing
+- dry-shampoo-powder: hero-missing
+- exfoliating-foot-cream: hero-missing
+- floral-spring-simmer-pot: hero-missing
+- frankincense-myrrh-reed-diffuser: hero-missing
+- glycerin-rosewater-face-mist: hero-missing
+- goats-milk-honey-cold-process-soap: hero-missing
+- herbal-facial-steam-blend: hero-missing
+- hot-oil-hair-treatment: hero-missing
+- jojoba-cleansing-balm: hero-missing
+- laundry-detergent-powder: hero-missing
+
+---
+
+## Run at 22:20:36
+
+Generated: 2026-06-12T22:20:36.133Z
+
+Processed: 78
+PASS: 67
+STILL_BLOCKED: 11
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| grade-level-strict | 75 |
+| body-missing-method | 9 |
+| voice-violation | 4 |
+
+## Still BLOCKED (sample 20)
+
+- batch-vs-continuous-composting-choice: grade-level-strict
+- battery-storage-optimal-state-of-charge: grade-level-strict
+- block-of-flats-leaseholder-insulation: grade-level-strict
+- cold-bridge-structural-post-column: grade-level-strict
+- compost-for-rooftop-garden: voice-violation, grade-level-strict
+- ev-home-charge-load-management: grade-level-strict
+- foraging-blackberry-uk: grade-level-strict
+- foraging-uk-law-safety-primer: grade-level-strict
+- solar-panel-degradation-and-replacement: grade-level-strict
+- solar-pv-export-metering-and-registration: voice-violation, grade-level-strict
+- solar-pv-planning-conservation-area: grade-level-strict
+
+---
+
+## Run at 23:06:04
+
+Generated: 2026-06-12T23:06:04.393Z
+
+Processed: 69
+PASS: 67
+STILL_BLOCKED: 2
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 38 |
+| opening-pattern-missing-hook | 38 |
+| grade-level-strict | 6 |
+| voice-violation | 2 |
+
+## Still BLOCKED (sample 20)
+
+- cabbage-white-butterfly: voice-violation, grade-level-strict
+- carrot-fly-prevention: grade-level-strict

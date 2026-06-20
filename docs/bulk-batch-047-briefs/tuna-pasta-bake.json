@@ -1,0 +1,402 @@
+{
+  "slug": "tuna-pasta-bake",
+  "title": "Tuna Pasta Bake",
+  "subtitle": "Pasta in a cheesy bechamel with tinned tuna and sweetcorn",
+  "excerpt": "Macaroni or penne in a cheesy white sauce with tinned tuna, sweetcorn, and a golden crust. A mid-week oven bake built from store-cupboard ingredients.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Delia Smith, How to Cook (1998), store-cupboard supper chapter. Good Housekeeping Complete Book of Cookery (1997). Tuna and pasta bakes featured heavily in British family cookbooks from the 1980s onwards as budget weeknight meals.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble up to the point of baking. Cover and refrigerate for up to 24 hours, then bake from cold, adding 10 minutes to the baking time.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comfortFood",
+      "kidFriendly"
+    ],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "rectangular-baking-tin",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bechamel",
+      "term": "Bechamel",
+      "definition": "A white sauce made by cooking butter and flour together into a roux, then whisking in warm milk until thick and smooth. It is the base for many baked dishes and gratins."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tuna pasta bake is a store-cupboard supper built on tinned tuna, tinned sweetcorn, and a quick cheese sauce. The pasta goes into the oven coated in a thick "
+          },
+          {
+            "type": "text",
+            "text": "bechamel",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bechamel"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " loaded with cheddar, then bakes until the top is golden and set. The sauce must be thicker than you think before it goes in: it will loosen as the pasta releases starch during baking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 350,
+              "unit": "g",
+              "prepNote": "penne or macaroni",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tuna-tinned",
+              "amount": 320,
+              "unit": "g",
+              "prepNote": "2 x 160 g tins, drained",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sweetcorn-tinned",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "drained",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cheddar",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "grated, plus extra for the top",
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 600,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "dijon-mustard",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-dried",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "for the topping",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "grind",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the pasta"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200 degrees C. Cook {{pasta-dried}} of pasta in a large pan of salted boiling water for 2 minutes less than the packet time. It will finish cooking in the oven. Drain and set aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the cheese sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt {{unsalted-butter}} of butter in a medium saucepan over medium heat. Add {{plain-flour}} of plain flour all at once and stir for 1 to 2 minutes until the mixture smells biscuity."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{whole-milk}} of warm milk a little at a time, whisking after each addition to keep the sauce smooth. Once all the milk is in, cook for 4 to 5 minutes, stirring, until thick enough to coat the back of a spoon well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the heat. Stir in {{cheddar}} of grated cheddar and {{dijon-mustard}} of mustard if using. Season well."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Assemble and bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tip the drained pasta into the baking dish. Add {{tuna-tinned}} of drained tuna, broken into chunks, and {{sweetcorn-tinned}} of drained sweetcorn. Pour over the cheese sauce and stir gently to combine."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Scatter extra grated cheddar and {{breadcrumbs-dried}} of breadcrumbs over the top if using. Bake for 20 to 25 minutes until the top is golden and the sauce is bubbling at the edges."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Sauce is lumpy",
+              "cause": "Milk added too fast or sauce not whisked constantly",
+              "fix": "Push through a sieve and return to the pan. Next time, add the milk in small additions and whisk between each one."
+            },
+            {
+              "symptom": "Bake is dry after cooking",
+              "cause": "Sauce was too thin before baking or pasta was overcooked first",
+              "fix": "The sauce should be quite thick before it goes in the oven. Par-cook the pasta so it finishes in the oven, not before."
+            },
+            {
+              "symptom": "Top is pale and not golden",
+              "cause": "Oven not hot enough or baked too briefly",
+              "fix": "Switch to the grill for the last 3 to 4 minutes and watch carefully. The breadcrumbs and cheddar brown quickly."
+            },
+            {
+              "symptom": "Tuna is dry and stringy",
+              "cause": "Tuna in brine used rather than in oil, or baked too long",
+              "fix": "Tuna in oil stays moister through baking. Break it into large chunks so pieces stay tender."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tuna pasta bake became a British staple in the 1980s and 1990s as tinned tuna grew popular and pasta moved into mainstream home cooking. It sits alongside chicken casserole and shepherd's pie as a dish British families make on rotation. Each household has its own slight version. Pasta, white sauce, tinned fish, and melted cheese: it belongs to the same family as macaroni cheese and fish pie. Filling, reliable, and made from what is in the cupboard."
+          }
+        ]
+      }
+    ]
+  }
+}

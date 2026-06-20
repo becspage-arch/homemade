@@ -298,3 +298,96 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 22:00:51
+
+Generated: 2026-06-19T22:00:51.620Z
+
+Processed: 109
+PASS: 65
+STILL_BLOCKED: 44
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 102 |
+| content-type-opening-mismatch | 60 |
+| opening-pattern-missing-hook | 50 |
+| placeholder-string | 28 |
+| grade-level-strict | 25 |
+| body-missing-method | 24 |
+| historical-century-in-body | 4 |
+
+## Still BLOCKED (sample 20)
+
+- almond-and-cherry-cookies: hero-missing
+- baked-oats: grade-level-strict
+- blackberry-and-apple-cake: hero-missing
+- blackcurrant-and-cream-tart: hero-missing
+- brown-butter-hazelnut-gateau: hero-missing
+- brushed-embroidery-royal-icing: hero-missing
+- butterscotch-fudge: hero-missing
+- candied-violets: hero-missing
+- caramel-custard-tart: hero-missing
+- champagne-truffles: hero-missing
+- cherry-almond-tart: hero-missing
+- chocolate-espresso-tart: hero-missing
+- chocolate-hazelnut-cookies: hero-missing
+- chocolate-sail-shards: hero-missing
+- chocolate-walnut-baklava: hero-missing
+- coconut-custard-tart: hero-missing
+- crystallised-flower-petals: hero-missing
+- eclairs-coffee: hero-missing
+- fondant-bow-ribbon: hero-missing
+- full-irish-breakfast: body-missing-method
+
+---
+
+## Run at 22:01:33
+
+Generated: 2026-06-19T22:01:33.257Z
+
+Processed: 97
+PASS: 93
+STILL_BLOCKED: 4
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 12 |
+| content-type-opening-mismatch | 9 |
+| opening-pattern-missing-hook | 6 |
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- strudel-pear-chocolate: 
+- sugared-almonds: 
+- tarte-fine-aux-pommes: 
+- white-chocolate-raspberry-cake: 
+
+---
+
+## Run at 22:04:15
+
+Generated: 2026-06-19T22:04:15.991Z
+
+Processed: 27
+PASS: 27
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| opening-pattern-missing-hook | 2 |
+| content-type-opening-mismatch | 2 |
+| grade-level-strict | 1 |

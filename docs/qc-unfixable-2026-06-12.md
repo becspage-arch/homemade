@@ -1640,3 +1640,55 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - yarrow-profile  — applied: medical-disclaimer,body-rewrite:9,century-to-sourceNotes:2,dry-run
 
 - wet-felted-christmas-bauble-set hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- bay-rum-aftershave-splash hero-missing — applied: hero-fill-deferred-to-standalone-script
+- beeswax-birthday-candles hero-missing — applied: hero-fill-deferred-to-standalone-script
+- calendula-infused-oil hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cedar-rose-wardrobe-sachets hero-missing — applied: hero-fill-deferred-to-standalone-script
+- citrus-herb-linen-spray hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cocoa-butter-vanilla-cold-process-soap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- coconut-wax-jar-candle-coconut-lime hero-missing — applied: hero-fill-deferred-to-standalone-script
+- coffee-scrub-cold-process-soap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- copper-cleaning-paste hero-missing — applied: hero-fill-deferred-to-standalone-script
+- dishwasher-tablet-homemade hero-missing — applied: hero-fill-deferred-to-standalone-script
+- dry-shampoo-powder hero-missing — applied: hero-fill-deferred-to-standalone-script
+- exfoliating-foot-cream hero-missing — applied: hero-fill-deferred-to-standalone-script
+- floral-spring-simmer-pot hero-missing — applied: hero-fill-deferred-to-standalone-script
+- frankincense-myrrh-reed-diffuser hero-missing — applied: hero-fill-deferred-to-standalone-script
+- glycerin-rosewater-face-mist hero-missing — applied: hero-fill-deferred-to-standalone-script
+- goats-milk-honey-cold-process-soap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- herbal-facial-steam-blend hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hot-oil-hair-treatment hero-missing — applied: hero-fill-deferred-to-standalone-script
+- jojoba-cleansing-balm hero-missing — applied: hero-fill-deferred-to-standalone-script
+- laundry-detergent-powder hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lavender-sleep-balm hero-missing — applied: hero-fill-deferred-to-standalone-script
+- layered-soy-candle-lavender-vanilla hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lemon-verbena-sachets hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mould-mildew-spray hero-missing — applied: hero-fill-deferred-to-standalone-script
+- muscle-soak-bath-salts hero-missing — applied: hero-fill-deferred-to-standalone-script
+- neem-scalp-serum hero-missing — applied: hero-fill-deferred-to-standalone-script
+- oven-cleaning-paste hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rose-geranium-room-spray hero-missing — applied: hero-fill-deferred-to-standalone-script
+- salt-bar-soap hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sea-salt-hair-spray hero-missing — applied: hero-fill-deferred-to-standalone-script
+- soy-candle-amber-oud hero-missing — applied: hero-fill-deferred-to-standalone-script
+- soy-candle-eucalyptus-spearmint hero-missing — applied: hero-fill-deferred-to-standalone-script
+- soy-candle-fig-cassis hero-missing — applied: hero-fill-deferred-to-standalone-script
+- soy-candle-geranium-ylang hero-missing — applied: hero-fill-deferred-to-standalone-script
+- streak-free-glass-cleaner hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- travel-tin-soy-candle hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- batch-vs-continuous-composting-choice grade-level-strict — applied: 
+- battery-storage-optimal-state-of-charge grade-level-strict — applied: 
+- block-of-flats-leaseholder-insulation grade-level-strict — applied: 
+- cold-bridge-structural-post-column grade-level-strict — applied: 
+- compost-for-rooftop-garden voice-violation,grade-level-strict — applied: 
+- ev-home-charge-load-management grade-level-strict — applied: 
+- foraging-blackberry-uk grade-level-strict — applied: 
+- foraging-uk-law-safety-primer grade-level-strict — applied: 
+- solar-panel-degradation-and-replacement grade-level-strict — applied: 
+- solar-pv-export-metering-and-registration voice-violation,grade-level-strict — applied: 
+- solar-pv-planning-conservation-area grade-level-strict — applied: 
+
+- cabbage-white-butterfly voice-violation,grade-level-strict — applied: 
+- carrot-fly-prevention grade-level-strict — applied: 

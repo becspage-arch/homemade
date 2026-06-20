@@ -1,0 +1,455 @@
+{
+  "slug": "macaroni-cheese",
+  "title": "Macaroni Cheese",
+  "subtitle": "Pasta in a béchamel and cheddar sauce, baked until golden",
+  "excerpt": "Elbow macaroni in a thick cheddar béchamel, baked in a dish with a breadcrumb and cheese crust. This is the version made from scratch rather than from a packet, and the result tastes significantly better.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg. Macaroni baked with Parmesan and butter sauce, an early British version. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136. Baked macaroni with a cheese sauce. The shift to cheddar rather than Parmesan was a British adaptation that became standard by the mid-twentieth century.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze assembled but unbaked. Defrost overnight in the fridge, then bake at 180°C for 35 minutes until piping hot through.",
+    "batchable": true,
+    "batchNotes": "This doubles well into a deep roasting tin.",
+    "makeAheadNotes": null,
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "kidFriendly",
+      "weeknight"
+    ],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "pie-dish",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk-flat",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bechamel",
+      "term": "Béchamel",
+      "definition": "A white sauce made from butter, flour, and milk. It is one of the French mother sauces and the base of macaroni cheese, cauliflower cheese, and many other baked pasta dishes."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Macaroni cheese is cooked pasta stirred into a "
+          },
+          {
+            "type": "text",
+            "text": "béchamel",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bechamel"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " sauce loaded with cheddar, then baked in a dish with a crunchy breadcrumb topping. It comes out of the oven golden on top and bubbling underneath. The whole thing takes under an hour. The ratio of sauce to pasta matters: too little sauce and the baked version turns dry; this recipe has enough to keep it creamy even after baking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "macaroni or similar short pasta",
+              "isOptional": false,
+              "groupLabel": "For the pasta"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 800,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "cheddar",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "mature, grated",
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "mustard-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "nutmeg",
+              "amount": null,
+              "unit": "grind",
+              "prepNote": "a grating",
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-dried",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "cheddar",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "grind",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the pasta"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the {{pasta-dried}} of pasta in well-salted boiling water for two minutes less than the packet says. It will finish cooking in the oven. Drain and set aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the cheese sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt {{unsalted-butter}} of butter in a medium saucepan over medium heat. Add {{plain-flour}} of flour and stir for 2 minutes to cook the roux."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in {{whole-milk}} of milk a little at a time, whisking after each addition. Continue until all the milk is incorporated and the sauce is smooth."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook over medium heat, stirring constantly, until the sauce thickens and coats the back of a spoon, about 5 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Take the pan off the heat. Stir in {{cheddar}} of grated cheddar, {{mustard-powder}} of mustard powder, and a grating of nutmeg. Season generously with salt and pepper. The sauce should taste distinctly cheesy."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Assemble and bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200°C."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir the drained pasta into the cheese sauce."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour into the pie dish or baking dish."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the breadcrumbs with the extra grated cheddar for the topping. Scatter evenly over the pasta."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 20 minutes until the top is golden and crisp. Leave to rest for 5 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Sauce is lumpy",
+              "cause": "Milk added too fast without whisking",
+              "fix": "Add the milk in small additions and whisk thoroughly after each one. If lumps form, push the sauce through a sieve and return to the pan."
+            },
+            {
+              "symptom": "Pasta is dry and stiff after baking",
+              "cause": "Pasta cooked fully before going in, or too little sauce",
+              "fix": "Undercook the pasta by 2 minutes and use the full amount of sauce in the recipe. The pasta absorbs sauce as it finishes in the oven."
+            },
+            {
+              "symptom": "Topping is pale after 20 minutes",
+              "cause": "Oven not hot enough, or breadcrumbs were too fine",
+              "fix": "Increase the oven to 210°C for the last 5 minutes, or finish under a hot grill for 2 to 3 minutes."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Baked pasta with cheese sauce has appeared in British cookbooks since the nineteenth century. The British version settled on mature cheddar rather than the Parmesan of Italian pasta al forno, which gives it a sharper, more savoury edge. Macaroni cheese became a standard school-dinner and canteen dish in the twentieth century, with the result that most people's first version came from a packet mix. Made from scratch it is a better dish: the sauce stays glossy, the cheese flavour is clean, and the breadcrumb top crackles."
+          }
+        ]
+      }
+    ]
+  }
+}

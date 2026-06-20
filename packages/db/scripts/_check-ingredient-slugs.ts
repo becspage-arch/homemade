@@ -16,29 +16,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 }
 
 const slugsToCheck = [
-  'castile-liquid-soap',
-  'liquid-castile-soap',
-  'white-vinegar',
-  'honey',
-  'sugar',
-  'rolled-oats',
-  'essential-oil-frankincense',
-  'essential-oil-bergamot',
-  'essential-oil-ylang-ylang',
-  'essential-oil-grapefruit',
-  'fractionated-coconut-oil',
-  'mango-butter',
-  'calendula-infused-oil',
-  'candle-fragrance-oil',
-  'reed-diffuser-base',
-  'distilled-white-vinegar',
-  'coconut-milk',
-  'vodka',
-  'ground-coffee',
-  'coffee-grounds',
-  'beeswax-pellets',
-  'dried-chamomile-flowers',
-  'epsom-salts',
+  'stem-ginger', 'stem-ginger-syrup', 'preserved-ginger', 'crystallised-ginger',
+  'mixed-peel', 'peel-mixed', 'candied-orange-peel', 'dark-muscovado',
+  'muscovado-dark', 'hazelnut-praline', 'praline', 'candied-peel-mixed',
+  'maple-extract', 'rose-water', 'orange-blossom-water', 'flaked-almonds',
+  'almonds-flaked', 'almond-flakes', 'pistachio-nuts', 'pistachios',
+  'strong-bread-flour', 'dark-chocolate-chips', 'chocolate-chips-dark',
+  'milk-powder', 'dried-milk-powder', 'whipping-cream',
 ]
 
 async function main() {

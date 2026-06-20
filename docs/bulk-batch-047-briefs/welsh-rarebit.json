@@ -1,0 +1,383 @@
+{
+  "slug": "welsh-rarebit",
+  "title": "Welsh Rarebit",
+  "subtitle": "Grilled cheese sauce on toast with mustard and beer",
+  "excerpt": "A thick, savoury cheese sauce made with cheddar, mustard, beer, and egg yolk, grilled on thick toast until bubbling and brown-spotted. Faster than it sounds and far better than cheese on toast.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg. Welsh rabbit entry: cheese melted with beer and mustard poured over toast. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136. Toasted cheese and rabbit variants. The distinction between 'Welsh rabbit' and 'Welsh rarebit' is largely a matter of tradition; the two names describe the same dish.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The cheese sauce can be made and kept in the fridge for up to two days. Spread it on toast and grill just before serving.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": [
+      "comfortFood",
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "grill",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "roux",
+      "term": "Roux",
+      "definition": "A cooked mixture of equal parts butter and flour, used as a thickener for sauces. For Welsh rarebit the roux cooks for only a minute before the liquid goes in, which keeps the sauce light."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Welsh rarebit is a thick, sharp cheese sauce spooned over toast and grilled until brown and bubbling. The sauce is made with a brief "
+          },
+          {
+            "type": "text",
+            "text": "roux",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "roux"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", melted cheese, a splash of beer, mustard, and Worcestershire sauce. It takes about ten minutes start to finish. This is not the same as cheese on toast: the sauce is thick enough to spread and holds its shape under the grill."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "cheddar",
+              "amount": 120,
+              "unit": "g",
+              "prepNote": "mature, grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "beer",
+              "amount": 60,
+              "unit": "ml",
+              "prepNote": "ale or stout",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "english-mustard",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "worcestershire-sauce",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "egg-yolks",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "grind",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bread",
+              "amount": 4,
+              "unit": "slice",
+              "prepNote": "thick-cut white or wholemeal",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the cheese sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt {{unsalted-butter}} of butter in a small saucepan over medium heat. Add {{plain-flour}} of flour and stir for one minute to cook the roux."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in {{beer}} of beer a little at a time, stirring after each addition. The sauce will be very thick at first; keep stirring until it is smooth and glossy."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Take the pan off the heat. Add {{cheddar}} of grated mature cheddar and stir until fully melted. Stir in {{english-mustard}} of mustard, {{worcestershire-sauce}} of Worcestershire sauce, and the egg yolk. Season with black pepper. Taste and adjust the mustard if you like a sharper edge."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Toast and grill"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the grill to high. Toast the bread on both sides until golden. Lay the slices on a grill tray."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon the cheese sauce thickly onto the toast, spreading it right to the edges so it does not burn. Grill for 2 to 3 minutes until the top is brown in patches and starting to bubble."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Eat straight away. Let the rarebit cool even for two minutes and the sauce sets firm."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Sauce is grainy and splits",
+              "cause": "Cheese added while the pan was still over the heat, causing the fat to separate",
+              "fix": "Take the pan off the heat before adding the cheese. Stir steadily rather than quickly."
+            },
+            {
+              "symptom": "Sauce is too thick to spread",
+              "cause": "Too little beer, or the roux cooked for too long",
+              "fix": "Add another splash of beer and stir over low heat to loosen. The sauce should be thick but spreadable."
+            },
+            {
+              "symptom": "Rarebit is pale after grilling",
+              "cause": "Grill not hot enough, or sauce spread too thinly",
+              "fix": "Preheat the grill for at least 3 minutes before putting the rarebit under it. The sauce needs to be at least 5 mm thick to brown properly."
+            },
+            {
+              "symptom": "Toast is soggy underneath",
+              "cause": "Toast was too thin or not dry enough before the sauce went on",
+              "fix": "Use thick-cut bread and toast it fully on both sides before spreading the sauce."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Buck rarebit: add a poached egg on top of the grilled cheese. Yorkshire rarebit: use stout instead of ale and skip the egg yolk. Lancashire rarebit: stir a pinch of cayenne into the sauce for a sharper heat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Welsh rarebit appears under the name 'Welsh rabbit' in British cookbooks from the early eighteenth century onwards. The joke name was common: the dish was an affordable substitute for meat at a time when rabbit was itself a poor-man's protein. It has since moved from the supper table to the pub-lunch menu and back again. It is one of the few British dishes that requires no apology."
+          }
+        ]
+      }
+    ]
+  }
+}

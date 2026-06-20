@@ -1,0 +1,334 @@
+{
+  "slug": "lancashire-hotpot",
+  "title": "Lancashire Hotpot",
+  "subtitle": "Slow-braised lamb chops under a golden potato lid",
+  "excerpt": "Lamb neck chops and onions slow-cooked under overlapping potato slices that turn golden and crisp on top while absorbing the braising juices below. A northern English classic that needs only time and a tight-lidded pot.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Lancashire hotpot is documented in the county from the nineteenth century, associated with the textile mill towns where workers needed a dish that could be left in the oven all day. Elizabeth Gaskell's novel Mary Barton (1848) references the dish by name. The traditional version uses lamb neck or mutton chops, onion, potato, and nothing else beyond seasoning and sometimes a few drops of Worcestershire sauce.",
+  "recipe": {
+    "servings": 4,
+    "prepMinutes": 20,
+    "cookMinutes": 150,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "slowSunday",
+      "weeknight"
+    ],
+    "temperatureCelsius": 160,
+    "temperatureNote": "Starts covered at 160°C for 2 hours, then uncovered at 220°C to crisp the lid",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "neck-chop",
+      "term": "Neck chop",
+      "definition": "A cross-cut slice through the neck of a lamb or sheep. Neck chops are a cheap, fatty cut with plenty of connective tissue, which melts into the braising liquid during a long, slow cook and gives a rich, gelatinous sauce."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lancashire hotpot is a slow oven braise: "
+          },
+          {
+            "type": "text",
+            "text": "neck chops",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "neck-chop"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and onions layered in a deep pot, topped with sliced potato, then cooked covered for two hours until the meat is falling off the bone and the potato has absorbed the juices. Remove the lid for the last 30 minutes to crisp the top. The dish is almost entirely hands-off once it goes into the oven."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "lamb-neck",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "bone-in neck chops",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "peeled and sliced thin",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 1000,
+              "unit": "g",
+              "prepNote": "waxy variety, peeled and sliced 5 mm",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-lamb",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": "or light beef stock",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "worcestershire-sauce",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "for the potato lid",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "grind",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 160°C. Season the {{lamb-neck}} of neck chops generously with salt and pepper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Layer the bottom of a deep casserole dish with half the onion and carrot slices. Lay the chops on top and add the thyme sprigs. Cover with the remaining onion and carrot."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the Worcestershire sauce into the stock and pour over the meat and vegetables. The liquid should come about halfway up the meat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Arrange the {{potato}} of potato slices in overlapping circles across the top, covering the filling completely. Dot with the butter and season the potato with salt."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover tightly with a lid or foil. Bake at 160°C for 2 hours."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Uncover, raise the oven to 220°C, and bake for a further 25 to 30 minutes until the potato lid is golden and crisp. Rest for 10 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Potato lid is pale after uncovered cooking",
+              "cause": "Oven not hot enough, or potatoes not buttered",
+              "fix": "Make sure the butter dots are spread over the whole surface. Increase the oven to 230°C for the last 10 minutes if needed."
+            },
+            {
+              "symptom": "Too much liquid in the pot after cooking",
+              "cause": "Chops released a lot of fat and moisture",
+              "fix": "Tilt the pot and spoon off the excess liquid, then return to the oven uncovered for a further 10 minutes."
+            },
+            {
+              "symptom": "Meat is still tough after 2 hours",
+              "cause": "Oven ran cool, or the chops were very thick",
+              "fix": "Return to 160°C covered for another 30 minutes. Neck chops vary in thickness."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lancashire hotpot developed in the cotton and wool mill towns of northern England, where a cheap cut of mutton or lamb could be left in a low oven all day while the household was at work. The sealed potato lid trapped the steam and slow-cooked the meat without a cook needing to tend it. The dish is most closely associated with the county of Lancashire but appears across the north of England in variations, sometimes with kidneys added to the meat layer."
+          }
+        ]
+      }
+    ]
+  }
+}

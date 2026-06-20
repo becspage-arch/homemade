@@ -1,0 +1,354 @@
+{
+  "slug": "smoked-haddock-chowder",
+  "title": "Smoked Haddock Chowder",
+  "subtitle": "A thick, creamy Scottish-style fish soup with potato and leek",
+  "excerpt": "Smoked haddock poached in milk with potato, leek, and a touch of cream. A substantial, deeply flavoured soup from the same family as cullen skink, made in one pot in under 35 minutes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "F. Marian McNeill, The Scots Kitchen (1929), smoked fish soups as a category of Scottish cooking. The chowder variant, using cream and potato, draws from both Scottish cullen skink and the broader Atlantic chowder tradition. Recipe developed from first principles.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "The soup does not freeze well as the cream can split and the potato becomes waterlogged. Make fresh.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The soup can be made up to 1 day ahead and reheated gently. Do not boil after adding the cream.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": [
+      "comfortFood",
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "poach",
+      "term": "Poach",
+      "definition": "Cooking food gently in liquid kept just below the boil. The liquid should tremble rather than bubble actively. It is the right technique for fish, which toughens at a full boil."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Smoked haddock chowder is a thick, savoury soup: fish "
+          },
+          {
+            "type": "text",
+            "text": "poached",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "poach"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " in milk until it just flakes, then the cooking milk becomes the base of the soup with potato, leek, and cream. The smoky, salty flavour of the haddock carries through every spoonful. This is serious winter food that takes 35 minutes from start to finish."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "smoked-haddock",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "undyed, skin-on fillets",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 600,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "floury variety, peeled and cut into 2 cm cubes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "leek",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "washed and sliced into rounds",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "grind",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chives",
+              "amount": null,
+              "unit": "handful",
+              "prepNote": "snipped, to serve",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Poach the haddock"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put {{smoked-haddock}} of smoked haddock fillets in a large pan. Pour over {{whole-milk}} of milk and add {{bay-leaves}} bay leaves. Bring slowly to a gentle simmer over medium-low heat. Poach for 8 to 10 minutes until the fish just flakes when pressed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lift the fish out with a slotted spoon. Reserve the milk. Once the fish is cool enough to handle, remove and discard the skin and any bones. Break the flesh into large flakes and set aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the soup"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt {{unsalted-butter}} of butter in the same pan over medium heat. Add {{onion}} finely diced onion and {{leek}} sliced leeks. Cook for 5 to 6 minutes, stirring, until softened."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{potato}} of potato cubes and pour in the reserved poaching milk, discarding the bay leaves. Bring to a gentle simmer and cook for 12 to 15 minutes until the potato is tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in {{double-cream}} of double cream. Add the flaked haddock back to the soup and warm through gently. Do not boil. Season with pepper; the fish provides enough salt."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Milk curdles during poaching",
+              "cause": "Brought to the boil rather than kept at a gentle simmer",
+              "fix": "Keep the heat at medium-low. The milk should tremble but not bubble actively."
+            },
+            {
+              "symptom": "Soup is very salty",
+              "cause": "Smoked haddock is heavily brined",
+              "fix": "Taste before adding any salt. The fish typically provides all the seasoning needed. Add no salt until after the fish is incorporated."
+            },
+            {
+              "symptom": "Fish breaks into tiny pieces rather than flakes",
+              "cause": "Overcooked or handled too roughly when flaking",
+              "fix": "Poach only until the fish just parts when pressed. Fold the flakes into the soup gently at the end."
+            },
+            {
+              "symptom": "Soup is too thin",
+              "cause": "Cream not reduced, or milk too dilute from large fillets",
+              "fix": "Simmer uncovered for 5 more minutes after adding the cream to concentrate the flavour. Alternatively, lightly mash some of the potato cubes against the side of the pan."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This soup is closely related to cullen skink, the classic Scottish smoked haddock and potato soup from the fishing town of Cullen in Moray. The chowder version is thicker and richer. It uses leek as well as onion and finishes with double cream. Both soups belong to a long tradition of Scottish east-coast cooking. Fishing communities there built soups from smoked fish and root vegetables, using smoked haddock as a preserved staple through the winter."
+          }
+        ]
+      }
+    ]
+  }
+}

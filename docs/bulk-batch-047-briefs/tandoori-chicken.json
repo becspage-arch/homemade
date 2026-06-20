@@ -1,0 +1,337 @@
+{
+  "slug": "tandoori-chicken",
+  "title": "Tandoori Chicken",
+  "subtitle": "Marinated chicken legs grilled until charred and caramelised",
+  "excerpt": "Chicken legs in a yogurt and spice marinade, grilled at high temperature until charred at the edges and caramelised across the surface. A dry dish, served with lemon and salad, not in a sauce.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Tandoori cooking (marinating meat in spiced yogurt and cooking in a clay oven called a tandoor) is an ancient technique of the Punjab region, popularised in Delhi restaurants from the 1940s. Moti Mahal restaurant in Old Delhi is widely credited with making tandoori chicken famous. The dish arrived in Britain with South Asian migrants and became a fixture in Indian restaurants by the 1960s. Madhur Jaffrey, Madhur Jaffrey's Indian Cookery (BBC Books, 1982): domestically adapted grill method.",
+  "recipe": {
+    "servings": 4,
+    "prepMinutes": 15,
+    "cookMinutes": 40,
+    "restingMinutes": 5,
+    "chillingMinutes": 240,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate the chicken overnight for the best flavour. The longer it marinates (up to 24 hours), the more tender and flavoured it becomes.",
+    "dietaryFlags": [
+      "glutenFree"
+    ],
+    "cuisine": "angloIndian",
+    "mealType": "dinner",
+    "mood": [
+      "specialOccasion",
+      "slowSunday",
+      "dateNight"
+    ],
+    "temperatureCelsius": 220,
+    "temperatureNote": "High oven initially, finish under hot grill for char",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "roasting-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "grill",
+      "isOptional": false
+    },
+    {
+      "slug": "thermometer-probe",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tandoor",
+      "term": "Tandoor",
+      "definition": "A cylindrical clay oven heated by charcoal or wood, used in South Asian cooking to bake bread and grill meat at very high temperatures. At home, a very hot oven or grill approximates the effect."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tandoori chicken is a dry dish: marinated chicken legs cooked at high heat in a "
+          },
+          {
+            "type": "text",
+            "text": "tandoor",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tandoor"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " or, at home, under a hot grill after a high-oven start. The yogurt marinade tenderises the meat and caramelises on the surface as it cooks. Deep marinating time is the most important factor. A minimum of four hours is the entry point; overnight is better. Serve with lemon, raw onion, and salad, not in a sauce."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-legs",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "skin on, slashed to the bone 3 times on each side",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-yoghurt",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "full fat",
+              "isOptional": false,
+              "groupLabel": "For the marinade"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 6,
+              "unit": "clove",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "For the marinade"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "For the marinade"
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the marinade"
+            },
+            {
+              "ingredientSlug": "garam-masala",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the marinade"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the marinade"
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the marinade"
+            },
+            {
+              "ingredientSlug": "lemon-juice",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the marinade"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the marinade"
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "cut into wedges, to serve",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely sliced, to serve",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix all the marinade ingredients together in a large bowl. Score the {{chicken-legs}} of chicken legs deeply with a knife, cutting down to the bone. This helps the marinade penetrate and the meat cook evenly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Coat the chicken thoroughly in the marinade, pushing it into the cuts. Cover and refrigerate for at least 4 hours, preferably overnight."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Take the chicken out of the fridge 30 minutes before cooking. Heat the oven to 220°C. Place the chicken on a rack in a roasting pan. Roast for 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Switch to the grill setting on high. Grill for a further 5 to 8 minutes until the edges are charred and the marinade is dark in patches. Check the thickest part reads at least 75°C on a probe thermometer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rest for 5 minutes before serving with lemon wedges and raw onion."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Marinade caramelises too fast and burns before the inside is cooked",
+              "cause": "Yogurt has more sugar than usual, or oven was too hot",
+              "fix": "Lower the oven to 200°C and cover loosely with foil for the first 20 minutes. Remove the foil and grill at the end for char."
+            },
+            {
+              "symptom": "Chicken is pale and lacks char",
+              "cause": "Grill not hot enough, or chicken too far from the element",
+              "fix": "Move the rack to the top third of the oven for the grill stage. Pre-heat the grill for at least 5 minutes before putting the chicken under it."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tandoori chicken is the foundational dish of Indian restaurant cooking. Kundan Lal Gujral refined the recipe at Moti Mahal in Delhi in the 1940s. The dish came to Britain with South Asian immigration after the war. It was one of the first Indian dishes to become widely known here. The colour is vivid red from Kashmiri chilli. The home version is naturally a darker orange-red."
+          }
+        ]
+      }
+    ]
+  }
+}

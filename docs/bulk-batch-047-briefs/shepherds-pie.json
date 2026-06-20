@@ -1,0 +1,454 @@
+{
+  "slug": "shepherds-pie",
+  "title": "Shepherd's Pie",
+  "subtitle": "Minced lamb with rosemary under a mashed potato crust",
+  "excerpt": "Spiced minced lamb in a rich gravy, topped with creamy mash and baked until golden. The rosemary and lamb make this the more aromatic of the two classic British mince pies.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136. The term 'shepherd's pie' (lamb) first appeared in print in the 1870s to distinguish it from cottage pie (beef). Standard twentieth-century British cookbooks treat both dishes the same way: brown the mince, make a gravy, top with mash.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 55,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze assembled but unbaked, well covered. Defrost overnight in the fridge. Bake from cold at 180°C for 40 to 45 minutes until hot through.",
+    "batchable": true,
+    "batchNotes": "This doubles well. Freeze the second pie before baking.",
+    "makeAheadNotes": "Assemble the day before and refrigerate, covered. Bake when needed.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "kidFriendly",
+      "mealPrep"
+    ],
+    "temperatureCelsius": 190,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-30",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "pie-dish",
+      "isOptional": false
+    },
+    {
+      "slug": "masher",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "simmering",
+      "term": "Simmering",
+      "definition": "Cooking a liquid at just below boiling point, with small bubbles rising gently. Faster than a simmer blurs into a boil, which can make meat tough and reduce the sauce too fast."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shepherd's pie uses minced lamb rather than beef, which gives it a stronger flavour and a slightly looser texture under the mash. Rosemary is the herb that goes with lamb, and it makes all the difference here. The filling "
+          },
+          {
+            "type": "text",
+            "text": "simmers",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "simmering"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " until the gravy is thick and clings to the meat, then the mash goes on top and the whole thing bakes until golden."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "lamb-mince",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "peeled and finely diced",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "rosemary",
+              "amount": 2,
+              "unit": "sprig",
+              "prepNote": "leaves finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "worcestershire-sauce",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "rapeseed-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 900,
+              "unit": "g",
+              "prepNote": "floury variety, peeled and quartered",
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 75,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "For the topping"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "grind",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the lamb"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a large frying pan over high heat. Add the {{lamb-mince}} of lamb mince and press it flat. Leave for 2 to 3 minutes without touching it, until a brown crust forms."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Break the mince up and cook for another 3 to 4 minutes, stirring, until browned all over. Tip the browned mince into a bowl. Pour off most of the fat from the pan, leaving about a tablespoon."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the filling"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to medium. Add the {{onion}} finely chopped onions and {{carrot}} diced carrots to the pan. Cook for 8 minutes until softened. Add {{garlic}} of crushed garlic and the chopped rosemary leaves. Cook for one minute more."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in {{tomato-puree}} of tomato purée and cook for 2 minutes. Return the lamb to the pan. Pour in {{stock-beef}} of stock and add {{worcestershire-sauce}} of Worcestershire sauce."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Simmer uncovered for 20 minutes, stirring now and then, until the gravy is thick and the lamb is tender. Season well."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the mash and bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Boil the {{potato}} of potato in salted water until tender, about 16 minutes. Drain, steam-dry for a minute, then mash with {{unsalted-butter}} of butter and {{whole-milk}} of warm milk. Season well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 190°C. Spoon the filling into the pie dish. Spread the mash over the top, roughing up the surface with a fork."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 25 to 30 minutes until the top is golden and the edges bubble. Rest for 5 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Filling is too fatty",
+              "cause": "Lamb mince can be high in fat; it released into the filling",
+              "fix": "After browning, tip the mince into a bowl and pour off the excess fat. Only return the mince to the pan, not the fat."
+            },
+            {
+              "symptom": "The lamb flavour is too strong",
+              "cause": "A higher-fat lamb mince or older mutton mince was used",
+              "fix": "This is a feature of the dish, but a 20% fat lamb mince is milder. Rinsing with cold water before browning reduces gaminess but also flavour."
+            },
+            {
+              "symptom": "Topping slides off when serving",
+              "cause": "The filling was too loose when the mash went on",
+              "fix": "Simmer the filling for longer so it is quite thick before topping. The mash should sit on a firm base."
+            },
+            {
+              "symptom": "Rosemary flavour is too dominant",
+              "cause": "Leaves not chopped finely enough, or too many added",
+              "fix": "Chop rosemary leaves very finely so they melt into the sauce. Two small sprigs is the right amount for four servings."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The name 'shepherd's pie' appeared in British recipe books in the 1870s, always with lamb or mutton, always with a potato lid. The lamb-versus-beef distinction is one of those British food rules that people defend with surprising firmness. As a Monday-night supper after a Sunday roast, it served as a way to use leftover roast lamb with a mashed-potato topping that stretched the meal to a second evening. Today it is made more often with raw mince, which gives a better, more consistent result than leftovers."
+          }
+        ]
+      }
+    ]
+  }
+}

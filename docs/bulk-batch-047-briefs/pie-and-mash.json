@@ -1,0 +1,426 @@
+{
+  "slug": "pie-and-mash",
+  "title": "Pie and Mash",
+  "subtitle": "Minced beef pie with buttery mash and green parsley liquor",
+  "excerpt": "A shortcrust-topped minced beef pie served with smooth mash and a sharp parsley liquor sauce. The definitive London pie-and-mash-shop plate, made at home.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Henry Mayhew, London Labour and the London Poor (1851), pie and mash documented as a London street food sold by working-class vendors from the 1840s. The parsley liquor is the traditional sauce, made from the water used to cook eels (now usually replaced with a vegetable or fish stock base). Kelly's Pie and Mash Shops (est. 1915) document the standard recipe.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 60,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the assembled, unbaked pies for up to 3 months. Bake from frozen, adding 15 minutes to the baking time.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The filling can be made 2 days ahead and kept in the fridge. Assemble and bake the pies fresh.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "weeknight"
+    ],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "pie-dish",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "masher",
+      "isOptional": false
+    },
+    {
+      "slug": "rolling-pin",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pie and mash is London working-class food: a minced beef pie in shortcrust pastry, served with smooth mash and a vivid green parsley liquor sauce. The original liquor was made from the water used to cook jellied eels; the modern version is a sharp parsley sauce made with stock. The combination of buttery mash, rich pie, and the sharpness of the liquor is the point."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the pastry"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 125,
+              "unit": "g",
+              "prepNote": "cold, cubed",
+              "isOptional": false,
+              "groupLabel": "For the pastry"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the pastry"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "beaten, for the pastry and to glaze",
+              "isOptional": false,
+              "groupLabel": "For the pastry"
+            },
+            {
+              "ingredientSlug": "beef-mince",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "for the filling",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "worcestershire-sauce",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 1000,
+              "unit": "g",
+              "prepNote": "floury, peeled and quartered",
+              "isOptional": false,
+              "groupLabel": "For the mash"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the mash"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 80,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "For the mash"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "leaves only",
+              "isOptional": false,
+              "groupLabel": "For the liquor"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the liquor"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the liquor"
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the liquor"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the filling"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook {{onion}} finely diced onion in a little oil over medium heat for 5 minutes. Add {{beef-mince}} of mince and brown well. Add {{plain-flour}} of flour, stir for 1 minute, then add {{stock-beef}} of beef stock and {{worcestershire-sauce}} of Worcestershire sauce. Simmer for 20 minutes until thick. Season well and cool."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the pastry"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rub {{unsalted-butter}} of cold butter into {{plain-flour}} of flour and {{sea-salt-fine}} of salt until like coarse crumbs. Mix in enough of the beaten {{eggs}} to bring the dough together. Divide two-thirds for the base, one-third for the lid. Chill 20 minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Assemble and bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oven to 200 degrees C. Line a buttered pie dish with the larger pastry piece. Fill with the cooled mince. Top with the lid, seal the edges, trim, and brush with egg. Cut a steam hole in the centre. Bake for 30 to 35 minutes until deep golden."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the mash and liquor"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Boil {{potato}} of potato until tender. Drain and mash with {{unsalted-butter}} of butter and {{whole-milk}} of warm milk until smooth. Season well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt {{unsalted-butter}} of butter, add {{plain-flour}} of flour, stir for 1 minute, then whisk in {{stock-chicken}} of chicken stock gradually. Simmer 5 minutes. Remove from the heat and blend in {{parsley-flat}} of parsley leaves with a hand blender until the sauce is vivid green. Season and pour hot over the mash and pie."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Pastry base is soggy",
+              "cause": "Filling not cooled before adding to the pastry, or pie not baked hot enough",
+              "fix": "Always use a completely cooled filling. The steam from hot filling softens the raw pastry before it has a chance to set."
+            },
+            {
+              "symptom": "Liquor is pale rather than vivid green",
+              "cause": "Parsley not added at the end, or overcooked after blending",
+              "fix": "Add the parsley off the heat and blend immediately. Do not boil after blending or the green will turn drab."
+            },
+            {
+              "symptom": "Mince is dry and grainy",
+              "cause": "Overcooked or not enough stock used",
+              "fix": "The filling should be saucy and thick but not dry. Add a splash more stock if it looks too stiff."
+            },
+            {
+              "symptom": "Pie lid cracks or falls in",
+              "cause": "Pastry too thick or not rested enough before baking",
+              "fix": "Roll the lid to about 3 mm thickness. Seal the edges firmly and cut a steam hole so the pastry does not push up then collapse."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pie and mash is the defining dish of London's East End food culture. Pie-and-mash shops opened in London from the 1840s onwards, serving cheap, filling food to working-class communities. The shops still exist: Manze's, Kelly's, and a handful of others. The original shops served jellied eels alongside the pie; the liquor was made from the eel-cooking water. Modern pie-and-mash shops use a stock-based parsley sauce. The combination has not changed in 150 years."
+          }
+        ]
+      }
+    ]
+  }
+}

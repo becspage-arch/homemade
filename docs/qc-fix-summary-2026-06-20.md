@@ -207,3 +207,188 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 14:10:47
+
+Generated: 2026-06-20T14:10:47.191Z
+
+Processed: 49
+PASS: 49
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| placeholder-string | 15 |
+| content-type-opening-mismatch | 15 |
+| opening-pattern-missing-hook | 12 |
+| historical-century-in-body | 4 |
+| grade-level-strict | 3 |
+
+
+---
+
+## Run at 14:14:06
+
+Generated: 2026-06-20T14:14:06.558Z
+
+Processed: 52
+PASS: 52
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| placeholder-string | 18 |
+| content-type-opening-mismatch | 17 |
+| opening-pattern-missing-hook | 15 |
+| historical-century-in-body | 5 |
+| grade-level-strict | 3 |
+
+
+---
+
+## Run at 14:26:38
+
+Generated: 2026-06-20T14:26:38.976Z
+
+Processed: 143
+PASS: 139
+STILL_BLOCKED: 4
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| ingredient-amount-missing | 95 |
+| placeholder-string | 77 |
+| content-type-opening-mismatch | 75 |
+| opening-pattern-missing-hook | 64 |
+| historical-century-in-body | 25 |
+| grade-level-strict | 21 |
+| prose-prep-steps | 12 |
+
+## Still BLOCKED (sample 20)
+
+- aloo-gobi: prose-prep-steps
+- boxty: prose-prep-steps
+- chicken-dopiaza: prose-prep-steps
+- macaroni-cheese: prose-prep-steps
+
+---
+
+## Run at 14:29:34
+
+Generated: 2026-06-20T14:29:34.767Z
+
+Processed: 139
+PASS: 66
+STILL_BLOCKED: 73
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 219 |
+| ingredient-amount-missing | 89 |
+| placeholder-string | 73 |
+| content-type-opening-mismatch | 71 |
+| opening-pattern-missing-hook | 60 |
+| historical-century-in-body | 23 |
+| grade-level-strict | 21 |
+
+## Still BLOCKED (sample 20)
+
+- atholl-brose: hero-missing
+- bacon-sandwich: hero-missing
+- bangers-and-mash: hero-missing
+- beans-on-toast: hero-missing
+- beef-and-guinness-stew: hero-missing
+- beef-stew-with-dumplings: hero-missing
+- black-pudding-breakfast: hero-missing
+- boiled-bacon-and-cabbage: hero-missing
+- bombay-potato: hero-missing
+- bread-and-butter-pudding: hero-missing
+- bubble-and-squeak: hero-missing
+- chana-masala: hero-missing
+- chicken-casserole-cider-tarragon: hero-missing
+- chicken-goujons: hero-missing
+- chicken-jalfrezi: hero-missing
+- chicken-korma: hero-missing
+- chicken-tikka: hero-missing
+- chicken-tikka-masala: hero-missing
+- chip-butty: hero-missing
+- chip-shop-curry-sauce: hero-missing
+
+---
+
+## Run at 14:32:23
+
+Generated: 2026-06-20T14:32:23.085Z
+
+Processed: 66
+PASS: 66
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 14:38:20
+
+Generated: 2026-06-20T14:38:20.221Z
+
+Processed: 7340
+PASS: 6834
+STILL_BLOCKED: 506
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 831 |
+| grade-level-strict | 565 |
+| opening-pattern-missing-hook | 182 |
+| voice-violation | 81 |
+| prose-prep-steps | 78 |
+| content-type-opening-mismatch | 14 |
+| historical-century-in-body | 3 |
+| placeholder-string | 3 |
+
+## Still BLOCKED (sample 20)
+
+- adjusting-pig-feed-from-weaner-to-finisher: body-missing-method
+- after-storm-checks-on-a-smallholding: grade-level-strict
+- air-dry-clay-mosaic-picture-frame: grade-level-strict
+- alpacas-on-a-smallholding: grade-level-strict
+- american-apple-pie: opening-pattern-missing-hook
+- anagama-kiln-introduction: grade-level-strict
+- angora-moult-management: body-missing-method
+- animal-bedding-composting-horse-straw: grade-level-strict
+- apple-crumble-pie: opening-pattern-missing-hook
+- apple-frangipane-tart: opening-pattern-missing-hook
+- applying-a-venetian-plaster-finish-to-a-wall: body-missing-method
+- applying-an-interior-lime-render-finish-coat: body-missing-method, grade-level-strict
+- applying-exterior-limewash-to-a-rendered-wall: grade-level-strict
+- arancini-al-burro: prose-prep-steps
+- ash-coat-rack-five-pegs: body-missing-method
+- ashwagandha-profile: grade-level-strict
+- ashwagandha-tincture-for-burnout: grade-level-strict
+- ashwagandha-warm-milk: grade-level-strict
+- axe-to-knife-progression: body-missing-method
+- baby-safe-bottom-balm: voice-violation

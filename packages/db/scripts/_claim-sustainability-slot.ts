@@ -1,15 +1,15 @@
-import { config as loadEnv } from 'dotenv'
-loadEnv({ path: '../../.env.credentials' })
-loadEnv()
-
-import { prisma } from '../src'
+import { config as loadEnv } from 'dotenv';
+loadEnv({ path: '../../.env.credentials' });
+loadEnv();
+import { prisma } from '../src';
 
 async function main() {
-  await prisma.category.update({
-    where: { slug: 'sustainability' },
+  const updated = await prisma.category.update({
+    where: { id: 'cmp8mecw7000dd4v4vkqwh5hh' },
     data: { lastAutopilotRunAt: new Date() },
-  })
-  console.log('CLAIMED: sustainability slot claimed at ' + new Date().toISOString())
+    select: { id: true, slug: true, lastAutopilotRunAt: true },
+  });
+  console.log('Claimed slot:', JSON.stringify(updated, null, 2));
+  await prisma.$disconnect();
 }
-
-main().catch(err => { console.error(err); process.exit(1) }).finally(() => prisma.$disconnect())
+main().catch(e => { console.error(e); process.exit(1); });

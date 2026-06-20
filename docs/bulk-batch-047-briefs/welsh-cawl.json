@@ -1,0 +1,395 @@
+{
+  "slug": "welsh-cawl",
+  "title": "Welsh Cawl",
+  "subtitle": "Welsh lamb and leek broth with root vegetables",
+  "excerpt": "A thick, clear Welsh broth of lamb neck, leek, potato, swede, and parsnip. Traditionally made over two days: the meat simmers on the first day, and the vegetables cook in the stock on the second. The result is deeply savoury.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Cawl is described in Welsh texts from the fourteenth century and is the national dish of Wales. The word simply means broth or soup in Welsh. S. Minwel Tibbott, Welsh Fare: A Selection of Traditional Recipes (1976), National Museum of Wales: documents the two-day cawl tradition. The specific combination of lamb, leek, swede, and parsnip is the settled Welsh version, with leeks as the defining vegetable.",
+  "recipe": {
+    "servings": 6,
+    "prepMinutes": 20,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in portions once cooled. Defrost overnight in the fridge and reheat over medium heat until piping hot.",
+    "batchable": true,
+    "batchNotes": null,
+    "makeAheadNotes": "Traditional cawl is made in two stages, a day apart: cook the meat first, cool overnight, skim the fat from the surface, then cook the vegetables in the stock the next day. This gives the cleanest broth.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "slowSunday"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "swede",
+      "term": "Swede",
+      "definition": "A large root vegetable with a yellow flesh and purple-green skin, also called rutabaga. It is sweeter and denser than turnip and is used in Scottish and Welsh stews, soups, and as a side dish mashed with butter."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Welsh cawl is a lamb broth with leeks, potato, parsnip, and "
+          },
+          {
+            "type": "text",
+            "text": "swede",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "swede"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". The traditional method takes two days: the lamb simmers on the first day to make the stock, which sits overnight so the fat solidifies on top and can be lifted off. The vegetables then cook in the clear, skimmed stock the next day. You can do it in one day but the broth will be fattier. The two-day version is worth the patience."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "lamb-neck",
+              "amount": 1000,
+              "unit": "g",
+              "prepNote": "bone-in",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "leek",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "sliced into rounds",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "floury variety, peeled and cut into chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "swede",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "peeled and cut into chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsnip",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "peeled and cut into chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "peeled and cut into chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-lamb",
+              "amount": 1500,
+              "unit": "ml",
+              "prepNote": "or water",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "roughly chopped, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "grind",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Day one: cook the lamb"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put the {{lamb-neck}} of lamb neck chops in a large saucepan with the halved onion, thyme, and bay leaves. Cover with {{stock-lamb}} of stock or water. Bring slowly to a simmer, skimming off grey foam thoroughly in the first 15 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Simmer gently for 1.5 to 2 hours until the lamb is very tender. Lift the chops out and set aside to cool. Discard the onion halves, thyme, and bay leaves. Pour the broth into a bowl and refrigerate overnight."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Day two: cook the vegetables"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lift the hardened fat from the surface of the cold broth and discard it. Pull the lamb meat from the bones and shred it. Discard the bones."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the skimmed broth back into the saucepan and bring to a simmer. Add the carrot, parsnip, and swede. Cook for 20 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the potato and cook for a further 15 minutes until it is just tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the leek and shredded lamb. Simmer for 5 minutes until the leek is just tender and the lamb is heated through. Season generously."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve in deep bowls with parsley scattered over and crusty bread."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Broth is greasy",
+              "cause": "Fat not skimmed thoroughly overnight",
+              "fix": "If making in one day, skim frequently during the lamb-simmering stage and use kitchen paper to blot the surface of the broth before serving."
+            },
+            {
+              "symptom": "Vegetables are mushy",
+              "cause": "Added all at once and cooked for too long",
+              "fix": "Add vegetables in order of how long they need: root vegetables first (20 minutes), potato next (15 minutes), leeks last (5 minutes)."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cawl is the national dish of Wales. It is linked to St David's Day on 1 March, but eaten throughout winter. Welsh cookbooks from the nineteenth century include it, but the tradition is much older. The two-day method removes the fat cleanly. It also reflects the old way of cooking: slow, practical, using what was available."
+          }
+        ]
+      }
+    ]
+  }
+}

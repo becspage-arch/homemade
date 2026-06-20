@@ -1,32 +1,47 @@
 import { config as loadEnv } from 'dotenv'
 loadEnv({ path: '../../.env.credentials' })
 loadEnv()
-
 import { prisma } from '../src'
 
-async function main(): Promise<void> {
-  const cats = await prisma.category.findMany({ where: { slug: 'cooking' }, select: { id: true } })
-  const catId = cats[0].id
-  const slugs = [
-    'sticky-toffee-pudding', 'treacle-sponge-pudding', 'spotted-dick', 'jam-roly-poly',
-    'bread-and-butter-pudding', 'queen-of-puddings', 'rhubarb-crumble', 'apple-crumble',
-    'tiramisu', 'chocolate-mousse', 'eton-mess', 'floating-islands',
-    'creme-brulee', 'panna-cotta-vanilla', 'lemon-posset', 'vanilla-ice-cream',
-    'lemon-sorbet', 'zabaglione', 'clafoutis', 'creme-anglaise', 'creme-patissiere',
-    'rice-pudding-baked', 'affogato', 'syllabub-lemon', 'strawberry-fool',
-    'gooseberry-fool', 'chocolate-ice-cream', 'raspberry-sorbet', 'granita-coffee',
-    'baked-alaska', 'creme-caramel', 'pots-de-creme-chocolate', 'no-churn-ice-cream',
-    'pears-in-red-wine', 'baked-apples', 'steamed-lemon-pudding', 'spotted-dog',
-    'bananas-foster', 'lemon-mousse', 'trifle-sherry',
-  ]
-  const existing = await prisma.tutorial.findMany({
-    where: { categoryId: catId, slug: { in: slugs } },
-    select: { slug: true, status: true },
-  })
-  console.log('Existing slugs:', existing.map(t => `${t.slug} (${t.status})`).join('\n') || 'none')
-  console.log('Count:', existing.length)
+const slugsToCheck = [
+  'double-cream', 'caster-sugar', 'golden-syrup', 'black-treacle',
+  'vanilla-extract', 'vanilla-pod', 'dark-chocolate', 'milk-chocolate',
+  'white-chocolate', 'cocoa-powder', 'sherry', 'cream-sherry',
+  'sponge-fingers', 'ladyfingers', 'gelatine', 'gelatine-sheets',
+  'agar-agar', 'raspberry-jam', 'raspberry-conserve',
+  'rum', 'dark-rum', 'raisins', 'pistachio-nuts', 'pistachios',
+  'whole-milk', 'full-fat-milk', 'semi-skimmed-milk',
+  'eggs', 'egg-yolks', 'egg-yolk', 'egg-whites', 'egg-white',
+  'suet', 'beef-suet', 'vegetable-suet',
+  'currants', 'sultanas', 'mixed-peel',
+  'breadcrumbs', 'white-breadcrumbs',
+  'marmalade', 'orange-marmalade',
+  'self-raising-flour', 'plain-flour', 'butter',
+  'baking-powder', 'bicarbonate-of-soda',
+  'icing-sugar', 'muscovado-sugar',
+  'mascarpone', 'cream-cheese', 'ricotta',
+  'espresso', 'instant-coffee', 'coffee-liqueur',
+  'milk', 'oat-milk', 'coconut-milk', 'coconut-cream',
+  'mango', 'raspberries', 'strawberries', 'blackberries',
+  'pears', 'peaches',
+  'elderflower-cordial',
+  'red-wine', 'white-wine',
+  'stem-ginger', 'ground-ginger',
+  'mint-extract', 'peppermint-extract',
+  'dark-chocolate-chips', 'chocolate-chips',
+  'orange-juice', 'lemon-juice',
+  'cornflour', 'arrowroot',
+  'white-bread', 'brioche',
+  'tapioca', 'semolina',
+  'hazelnuts', 'almonds',
+]
+
+async function main() {
+  for (const slug of slugsToCheck) {
+    const found = await prisma.ingredient.findFirst({ where: { slug } })
+    console.log(found ? `✓ ${slug}` : `✗ ${slug}`)
+  }
+  await prisma.$disconnect()
 }
 
-main()
-  .catch(console.error)
-  .finally(() => prisma.$disconnect())
+main().catch(e => { console.error(e); process.exit(1) })

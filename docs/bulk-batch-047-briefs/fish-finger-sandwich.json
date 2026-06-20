@@ -1,0 +1,392 @@
+{
+  "slug": "fish-finger-sandwich",
+  "title": "Fish Finger Sandwich",
+  "subtitle": "Crispy breaded fish fingers with tartare sauce in white bread",
+  "excerpt": "Homemade fish fingers made with thick-cut white fish, breaded and fried until crisp, then piled into soft white bread with tartare sauce and shredded lettuce. Better than the packet and not much harder.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The fish finger sandwich became an iconic British comfort food in the late twentieth century. Birds Eye fish fingers were introduced in Britain in 1955. The homemade version uses the same panko crumb technique but with fresh fish. The sandwich format became a shorthand for unpretentious cooking.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": [
+      "comfortFood",
+      "kidFriendly",
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-medium",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "panko",
+      "term": "Panko",
+      "definition": "Japanese breadcrumbs made from crustless bread, dried into large, irregular flakes. They absorb less oil than fine breadcrumbs and give a lighter, crispier coating."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The fish finger sandwich is thick-cut white fish coated in "
+          },
+          {
+            "type": "text",
+            "text": "panko",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "panko"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " breadcrumbs, fried until golden, and packed into white bread with tartare sauce. The panko crust stays crisp under the sauce longer than fine breadcrumbs. It takes 25 minutes from start to finish and is one of the better quick lunches in British cooking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "cod-fillet",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "skinless, cut into finger-sized strips",
+              "isOptional": false,
+              "groupLabel": "For the fish fingers"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-panko",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the fish fingers"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the fish fingers"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": "For the fish fingers"
+            },
+            {
+              "ingredientSlug": "sunflower-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "for shallow-frying",
+              "isOptional": false,
+              "groupLabel": "For the fish fingers"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "to season",
+              "isOptional": false,
+              "groupLabel": "For the fish fingers"
+            },
+            {
+              "ingredientSlug": "mayonnaise",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the tartare sauce"
+            },
+            {
+              "ingredientSlug": "capers",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "drained and roughly chopped",
+              "isOptional": false,
+              "groupLabel": "For the tartare sauce"
+            },
+            {
+              "ingredientSlug": "gherkins",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the tartare sauce"
+            },
+            {
+              "ingredientSlug": "lemon-juice",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the tartare sauce"
+            },
+            {
+              "ingredientSlug": "bread",
+              "amount": 4,
+              "unit": "slice",
+              "prepNote": "thick white, untoasted",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "lettuce",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "a few leaves, shredded",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the tartare sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix {{mayonnaise}} of mayonnaise with {{capers}} of capers roughly chopped, {{gherkins}} gherkins finely chopped, and {{lemon-juice}} of lemon juice in a small bowl. Season and set aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bread and fry the fish fingers"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set up three shallow bowls: one with flour seasoned with salt, one with the beaten egg, one with panko breadcrumbs. Season the {{cod-fillet}} of fish strips, then pass each one through flour, egg, and breadcrumbs in that order, pressing the crumbs on firmly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a frying pan over medium-high heat. When the oil shimmers, add the fish fingers in a single layer. Fry for 3 to 4 minutes per side until deep golden and cooked through. Do not crowd the pan: fry in batches if needed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Drain on kitchen paper for a minute, then season with salt."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the sandwich"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spread tartare sauce generously on two slices of bread. Lay the fish fingers on top, then add shredded lettuce. Close with the second slice and press gently."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Breadcrumbs fall off during frying",
+              "cause": "Fish was wet when breaded, or the flour coat was skipped",
+              "fix": "Pat the fish completely dry before starting. Do not skip the flour stage; it is the glue that holds the egg, which holds the breadcrumbs."
+            },
+            {
+              "symptom": "Inside still raw when breadcrumbs are dark",
+              "cause": "Pan too hot, or fish cut too thick",
+              "fix": "Use medium rather than high heat, and cut the fish no thicker than 2 cm. The crust should take 3 to 4 minutes per side to colour."
+            },
+            {
+              "symptom": "Crust is greasy and heavy",
+              "cause": "Oil not hot enough when the fish fingers went in",
+              "fix": "The oil must be shimmering hot before the fish fingers go in. Cold oil soaks into the crust rather than frying it."
+            },
+            {
+              "symptom": "Sandwich becomes soggy before it is finished",
+              "cause": "Too much sauce or fish fingers not drained after frying",
+              "fix": "Drain the fish fingers on kitchen paper for a minute. Add tartare sauce to the bread, not directly onto the hot fish."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The fish finger sandwich became a cultural fixture in Britain partly because everyone grew up with the packet version. The homemade version makes the same argument the fish finger always made: white fish in crisp breadcrumbs is a good combination, and it does not need to be complicated. It is now on the menu at good pubs and delis as an unironic sandwich, served with chunky tartare sauce."
+          }
+        ]
+      }
+    ]
+  }
+}

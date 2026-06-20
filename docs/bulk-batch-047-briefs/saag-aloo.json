@@ -1,0 +1,326 @@
+{
+  "slug": "saag-aloo",
+  "title": "Saag Aloo",
+  "subtitle": "Spiced potato and spinach",
+  "excerpt": "Cubed potatoes cooked with wilted spinach, cumin, garlic, and ginger. A dry curry that works as a side dish alongside a sauced main, or as a light meal with bread and raita.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Saag aloo (potato and greens, variously with spinach, mustard greens, or fenugreek leaves) is a widespread dish across north India and Pakistan. The British curry-house version most commonly uses spinach. Madhur Jaffrey, Madhur Jaffrey's Indian Cookery (BBC Books, 1982): foundational reference for spice technique.",
+  "recipe": {
+    "servings": 4,
+    "prepMinutes": 10,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": "Spinach turns grey and watery on freezing.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan",
+      "glutenFree"
+    ],
+    "cuisine": "angloIndian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comfortFood"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-30",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "saag",
+      "term": "Saag",
+      "definition": "A general term in Hindi and Punjabi for leafy greens, most commonly spinach (palak) or mustard greens (sarson). In British curry houses, saag almost always means spinach."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Saag aloo is spiced potato with wilted "
+          },
+          {
+            "type": "text",
+            "text": "saag",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "saag"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". It is a dry curry, meaning there is no sauce: the spinach clings to the potato pieces rather than pooling around them. It is best served alongside a sauced main curry. The spinach goes in last and wilts in the heat from the potato."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "potato",
+              "amount": 700,
+              "unit": "g",
+              "prepNote": "waxy variety, peeled and cut into 2 cm cubes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spinach",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "fresh, roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "or to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "rapeseed-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Parboil the {{potato}} of potato cubes in salted water for 5 minutes until just beginning to give when pressed. Drain and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a wide frying pan over medium-high heat. Add the cumin seeds and fry for 30 seconds. Add the onion and cook for 8 minutes until golden."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the garlic, ginger, turmeric, ground coriander, and chilli powder. Stir for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the par-cooked potato. Toss to coat in the spiced onion. Cook over medium heat for 6 to 8 minutes, turning occasionally, until the potato is cooked through and taking a little colour at the edges."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{spinach}} of spinach in handfuls. Stir each handful in until it wilts before adding the next. Once all the spinach is wilted and any excess liquid has evaporated, taste and season with salt."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Potato falls apart in the pan",
+              "cause": "Parboiled for too long, or a floury variety used",
+              "fix": "Parboil for 5 minutes only, until just starting to give when pressed with a knife tip. Use a waxy variety that holds its shape."
+            },
+            {
+              "symptom": "Spinach releases a lot of water and the dish becomes watery",
+              "cause": "Pan not hot enough when the spinach went in",
+              "fix": "Increase the heat to medium-high before adding the spinach. The water will evaporate quickly if the pan is hot enough."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Saag aloo is one of the most common side dishes in British curry houses. Spiced potato with greens is cooked in many forms across north India and Pakistan. The British restaurant version uses spinach instead of the traditional mustard greens. Spinach is more widely available and has a milder taste."
+          }
+        ]
+      }
+    ]
+  }
+}

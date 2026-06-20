@@ -97,3 +97,53 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - pork-chops-mustard-cream prose-prep-steps — applied: 
 - sausage-roll prose-prep-steps — applied: 
 - scotch-broth prose-prep-steps — applied: 
+
+- almond-and-cherry-cookies hero-missing — applied: hero-fill-deferred-to-standalone-script
+- baked-oats grade-level-strict — applied: 
+- blackberry-and-apple-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- blackcurrant-and-cream-tart hero-missing — applied: hero-fill-deferred-to-standalone-script
+- brown-butter-hazelnut-gateau hero-missing — applied: hero-fill-deferred-to-standalone-script
+- brushed-embroidery-royal-icing hero-missing — applied: hero-fill-deferred-to-standalone-script
+- butterscotch-fudge hero-missing — applied: hero-fill-deferred-to-standalone-script
+- candied-violets hero-missing — applied: hero-fill-deferred-to-standalone-script
+- caramel-custard-tart hero-missing — applied: hero-fill-deferred-to-standalone-script
+- champagne-truffles hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cherry-almond-tart hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chocolate-espresso-tart hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chocolate-hazelnut-cookies hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chocolate-sail-shards hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chocolate-walnut-baklava hero-missing — applied: hero-fill-deferred-to-standalone-script
+- coconut-custard-tart hero-missing — applied: hero-fill-deferred-to-standalone-script
+- crystallised-flower-petals hero-missing — applied: hero-fill-deferred-to-standalone-script
+- eclairs-coffee hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fondant-bow-ribbon hero-missing — applied: hero-fill-deferred-to-standalone-script
+- full-irish-breakfast body-missing-method — applied: 
+- full-scottish-breakfast body-missing-method — applied: 
+- full-welsh-breakfast body-missing-method — applied: 
+- grape-clafoutis hero-missing — applied: hero-fill-deferred-to-standalone-script
+- gum-paste-hydrangea hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hand-painted-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hard-boiled-eggs body-missing-method — applied: 
+- jammy-boiled-eggs body-missing-method — applied: 
+- lavender-and-honey-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- nectarine-frangipane-tart hero-missing — applied: hero-fill-deferred-to-standalone-script
+- omelette-plain body-missing-method — applied: 
+- palmiers-parmesan-sage hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pate-de-fruit-strawberry hero-missing — applied: hero-fill-deferred-to-standalone-script
+- peach-and-almond-loaf-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- peppermint-patties hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pineapple-and-coconut-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- plum-galette-almond hero-missing — applied: hero-fill-deferred-to-standalone-script
+- praline-chocolate-squares hero-missing — applied: hero-fill-deferred-to-standalone-script
+- profiteroles-salted-caramel hero-missing — applied: hero-fill-deferred-to-standalone-script
+- rhubarb-and-custard-cake hero-missing — applied: hero-fill-deferred-to-standalone-script
+- russian-piping-buttercream hero-missing — applied: hero-fill-deferred-to-standalone-script
+- smoked-haddock-poached-egg body-missing-method — applied: 
+- vegan-full-english body-missing-method — applied: 
+- white-chocolate-truffles hero-missing — applied: hero-fill-deferred-to-standalone-script
+- yoghurt-parfait grade-level-strict — applied: 
+
+- strudel-pear-chocolate  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- sugared-almonds  — applied: hero-fill-deferred-to-standalone-script,body-rewrite:3,recipe-yield-appended,dry-run
+- tarte-fine-aux-pommes  — applied: hero-fill-deferred-to-standalone-script,dry-run
+- white-chocolate-raspberry-cake  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run

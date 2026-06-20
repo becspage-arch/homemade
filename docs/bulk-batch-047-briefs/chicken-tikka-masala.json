@@ -1,0 +1,451 @@
+{
+  "slug": "chicken-tikka-masala",
+  "title": "Chicken Tikka Masala",
+  "subtitle": "Grilled marinated chicken in a creamy tomato and spice sauce",
+  "excerpt": "Chicken pieces marinated in yogurt and spices, grilled or griddled until charred, then simmered in a smooth, spiced tomato and cream sauce. The two-stage cooking is what gives the dish its characteristic depth.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Chicken tikka masala is a dish that developed in British curry houses in the second half of the twentieth century. The origins are disputed between Glasgow and various restaurant kitchens in the 1970s. It became officially named Britain's favourite dish in a 2001 speech by Foreign Secretary Robin Cook. It combines the dry-heat cooking of Mughal tikka with a British preference for sauce, and is sometimes cited as an example of Anglo-Indian cooking.",
+  "recipe": {
+    "servings": 4,
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 120,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze once cooled completely, without rice. Defrost overnight in the fridge and reheat over medium heat, adding a splash of water to loosen if needed.",
+    "batchable": true,
+    "batchNotes": "Doubles well; the sauce freezes without losing quality.",
+    "makeAheadNotes": "Marinate the chicken up to 24 hours ahead. The sauce can be made a day ahead and refrigerated; add the grilled chicken and warm through before serving.",
+    "dietaryFlags": [],
+    "cuisine": "angloIndian",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "weeknight",
+      "dateNight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": "Grill or griddle pan for the chicken; stovetop sauce",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "griddle-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tikka",
+      "term": "Tikka",
+      "definition": "A cooking method where small pieces of meat or fish are marinated in yogurt and spices, then cooked in a tandoor or under high dry heat. The yogurt tenderises the meat and the high heat chars the surface."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken tikka masala is a two-stage dish: first the chicken is marinated in yogurt and spices then cooked under high heat ("
+          },
+          {
+            "type": "text",
+            "text": "tikka",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tikka"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " style), then it goes into a sauce of tomato, cream, and aromatics. The grill char on the chicken is what makes the sauce taste different from a plain tomato curry; without it the dish lacks depth. The marinating time is the main patience requirement."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 700,
+              "unit": "g",
+              "prepNote": "boneless, skinless, cut into 4 cm pieces",
+              "isOptional": false,
+              "groupLabel": "For the tikka"
+            },
+            {
+              "ingredientSlug": "plain-yoghurt",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the tikka marinade"
+            },
+            {
+              "ingredientSlug": "lemon-juice",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the tikka marinade"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "For the tikka marinade"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "For the tikka marinade"
+            },
+            {
+              "ingredientSlug": "garam-masala",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the tikka marinade"
+            },
+            {
+              "ingredientSlug": "paprika-sweet",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the tikka marinade"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the tikka marinade"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "one 400 g tin, chopped",
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "garam-masala",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "paprika-sweet",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "rapeseed-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Marinate and grill the chicken"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the yogurt, lemon juice, grated garlic, grated ginger, garam masala, paprika, and cumin together in a large bowl. Add the {{chicken-thigh}} of chicken pieces and toss to coat. Cover and refrigerate for at least 2 hours, or overnight."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "When ready to cook, heat a griddle pan or grill to high. Thread the chicken pieces onto skewers or lay directly on the griddle. Cook for 4 to 5 minutes per side until charred in places and cooked through. Set aside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a large saucepan over medium heat. Add the onion and cook for 10 minutes until golden. Add the garlic, ginger, garam masala, ground coriander, cumin, and paprika. Cook for 2 minutes, stirring constantly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{tinned-tomatoes}} of tinned tomatoes. Simmer for 10 minutes until the sauce has reduced and thickened. Use a blender or stick blender to puree the sauce until smooth."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return the smooth sauce to the pan. Stir in {{double-cream}} of double cream and the grilled chicken pieces. Simmer for 5 minutes until the chicken is heated through and the sauce coats it. Season with salt."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve with rice and scatter fresh coriander over the top."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "Sauce is too thin",
+              "cause": "Tomatoes not reduced enough before blending",
+              "fix": "After blending, return the sauce to medium heat and simmer uncovered, stirring often, until it thickens. It should coat the back of a spoon."
+            },
+            {
+              "symptom": "Chicken is dry and tough",
+              "cause": "Breast meat used instead of thigh, or overcooked on the griddle",
+              "fix": "Thighs stay moist much better than breast. Do not cook the chicken for longer than 5 minutes per side; it will cook further in the sauce."
+            },
+            {
+              "symptom": "Sauce lacks depth and tastes flat",
+              "cause": "Spices not fried long enough, or onion undercooked",
+              "fix": "Cook the onion until it is genuinely golden (8 to 10 minutes minimum) and the spices until they smell fragrant (2 full minutes). Shortcutting either step makes a flat sauce."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken tikka masala is a British curry-house invention. The tikka comes from the tandoor tradition: marinated chicken cooked at very high heat. The masala sauce was made in British restaurant kitchens to suit a British taste for sauced dishes. It became the best-selling curry in Britain from the 1980s and has since spread worldwide."
+          }
+        ]
+      }
+    ]
+  }
+}
