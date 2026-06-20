@@ -10,12 +10,22 @@ import { checkRateLimit } from '@/lib/ratelimit'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { SearchForm } from './search-form'
 import { SearchResults } from './search-results'
+import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 
 import './search-page.css'
 
 export const dynamic = 'force-dynamic'
+
+// Pattern-led categories: the search index only holds tutorials, so for these
+// we query the Pattern library directly by name/description.
+const PATTERN_TYPES: Record<string, 'CROSS_STITCH' | 'KNITTING_CHART' | 'CROCHET_CHART'> = {
+  'cross-stitch': 'CROSS_STITCH',
+  knitting: 'KNITTING_CHART',
+  crochet: 'CROCHET_CHART',
+}
+const DIFFICULTIES = new Set(['BEGINNER', 'INTERMEDIATE', 'ADVANCED'])
 
 // Search-results pages are intentionally noindex — Google's "soft 404"
 // guideline. The canonical / hreflang still point at /search so any
@@ -89,6 +99,35 @@ export default async function SearchPage({ searchParams }: PageProps) {
       })
     : null
 
+  // Pattern-led categories: search the Pattern library directly (the tutorial
+  // index doesn't cover patterns). Runs even when the tutorial search service
+  // isn't configured, since it's a direct DB query.
+  const patternType = categorySlug ? PATTERN_TYPES[categorySlug] : null
+  const patternHits = patternType && q !== '' && !rateLimited
+    ? await prisma.pattern.findMany({
+        where: {
+          type: patternType,
+          ownerUserId: null,
+          visibility: 'PUBLIC',
+          publishedAt: { not: null },
+          OR: [
+            { name: { contains: q, mode: 'insensitive' } },
+            { description: { contains: q, mode: 'insensitive' } },
+          ],
+          ...(difficulty && DIFFICULTIES.has(difficulty) ? { difficulty: difficulty as 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' } : {}),
+        },
+        orderBy: { publishedAt: 'desc' },
+        take: RESULTS_PER_PAGE,
+        select: {
+          id: true,
+          slug: true,
+          name: true,
+          hero: { select: { cloudflareId: true, r2Key: true } },
+          thumbnail: { select: { cloudflareId: true, r2Key: true } },
+        },
+      })
+    : []
+
   if (results) {
     const dbUser = await getCurrentDbUser()
     const ip = await getClientIp()
@@ -121,7 +160,30 @@ export default async function SearchPage({ searchParams }: PageProps) {
         />
       </header>
 
-      {!configured && (
+      {patternType && q !== '' && !rateLimited && (
+        <section aria-live="polite">
+          <p className="search-summary">
+            {patternHits.length === 0
+              ? `No patterns matched "${q}" yet.`
+              : `${patternHits.length} pattern${patternHits.length === 1 ? '' : 's'} for "${q}"`}
+          </p>
+          {patternHits.length > 0 && (
+            <ul className="search-pattern-grid">
+              {patternHits.map((p) => (
+                <li key={p.id} className="search-pattern-card">
+                  <Link href={`/${categorySlug}/patterns/${p.slug}`}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={patternHeroUrl({ id: p.id, hero: p.hero, thumbnail: p.thumbnail }, 'card')} alt={p.name} loading="lazy" />
+                    <span>{p.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
+
+      {!configured && !patternType && (
         <p className="search-empty">
           Search is not yet wired up in this environment. Try the category
           pages from the menu while we finish setting it up.
