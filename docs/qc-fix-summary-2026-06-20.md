@@ -544,3 +544,47 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 17:13:33
+
+Generated: 2026-06-20T17:13:33.283Z
+
+Processed: 73
+PASS: 73
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| placeholder-string | 40 |
+| content-type-opening-mismatch | 36 |
+| opening-pattern-missing-hook | 31 |
+| prose-prep-steps | 1 |
+
+
+---
+
+## Run at 18:23:08
+
+Generated: 2026-06-20T18:23:08.423Z
+
+Processed: 80
+PASS: 80
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| placeholder-string | 26 |
+| opening-pattern-missing-hook | 26 |
+| content-type-opening-mismatch | 25 |
+| grade-level-strict | 15 |
+| prose-prep-steps | 5 |
+| historical-century-in-body | 1 |

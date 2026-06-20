@@ -640,3 +640,47 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - wormery-setup-and-management grade-level-strict — applied: 
 - yoghurt-parfait grade-level-strict — applied: 
 - yorkshire-curd-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+
+- slow-cooker-baked-beans hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-beef-and-barley-stew hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-beef-and-onion-casserole hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-beef-cheeks-red-wine hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-beef-goulash hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-boston-baked-beans hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-char-siu-pork hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-chicken-cassoulet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-chicken-fajitas hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-chicken-italian-peppers hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-chicken-jalfrezi hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-chicken-korma hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-chicken-noodle-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-chicken-stew-dumplings hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-chicken-tacos hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-chicken-thighs-tomato hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-creamy-garlic-chicken hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-french-onion-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-ham-in-cider hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-harissa-chickpeas hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-lamb-hotpot hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-lamb-kleftiko hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-lemon-chicken hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-lentil-bacon-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-mashed-potatoes hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-meatballs-tomato hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-mushroom-bourguignon hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-overnight-porridge hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-pork-and-bean-stew hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-pork-loin-apple-cider hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-pork-ribs-bbq hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-ragu-bianco hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-shredded-beef-tacos hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-smoky-sausage-stew hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-split-pea-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-swedish-meatballs hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-three-bean-chilli hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-turkey-chilli hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-turkey-meatballs hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-white-chicken-chilli hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- chilli-cheese-fries prose-prep-steps — applied: 
+- vegetarian-nachos prose-prep-steps — applied: 
