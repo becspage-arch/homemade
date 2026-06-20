@@ -89,3 +89,49 @@ SKIPPED: 0
 - crochet-magic-ring: hero-missing
 - how-to-hold-a-crochet-hook: hero-missing
 - how-to-work-a-treble: hero-missing
+
+---
+
+## Run at 11:16:47
+
+Generated: 2026-06-20T11:16:47.847Z
+
+Processed: 79
+PASS: 79
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 36 |
+| opening-pattern-missing-hook | 33 |
+| grade-level-strict | 4 |
+
+
+---
+
+## Run at 11:46:25
+
+Generated: 2026-06-20T11:46:25.284Z
+
+Processed: 113
+PASS: 111
+STILL_BLOCKED: 2
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| placeholder-string | 29 |
+| content-type-opening-mismatch | 28 |
+| opening-pattern-missing-hook | 25 |
+| grade-level-strict | 3 |
+| body-missing-method | 3 |
+
+## Still BLOCKED (sample 20)
+
+- luster-dust-application-technique: body-missing-method
+- maids-of-honour-richmond: opening-pattern-missing-hook
