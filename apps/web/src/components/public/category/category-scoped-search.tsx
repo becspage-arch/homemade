@@ -9,7 +9,9 @@ interface CategoryScopedSearchProps {
   /** Optional body line under the heading. */
   lede?: string | null
   /** Suggested-search chips rendered below the input. */
-  suggestions?: { label: string; q: string }[]
+  /** A chip either runs a scoped search (`q`) or links straight to a filtered
+   *  grid view (`href`). `href` wins when present. */
+  suggestions?: { label: string; q?: string; href?: string }[]
   /** Optional initial query (when arriving from /search). */
   defaultQuery?: string
 }
@@ -54,9 +56,9 @@ export function CategoryScopedSearch({
       {suggestions && suggestions.length > 0 && (
         <ul className="category-scoped-search-suggestions" aria-label="Suggested searches">
           {suggestions.map((s) => (
-            <li key={s.q}>
+            <li key={s.label}>
               <Link
-                href={`/search?category=${categorySlug}&q=${encodeURIComponent(s.q)}`}
+                href={s.href ?? `/search?category=${categorySlug}&q=${encodeURIComponent(s.q ?? '')}`}
                 className="category-scoped-search-suggestion"
               >
                 {s.label}

@@ -28,7 +28,8 @@ interface PatternLayoutProps {
     size?: 's' | 'm' | 'l'
     minColour?: string
     maxColour?: string
-    hasBackstitch?: '1'
+    maxHours?: string
+    hasBackstitch?: '1' | '0'
     hasFrenchKnots?: '1'
     yarnWeight?: string
   }
@@ -47,13 +48,16 @@ const PATTERN_TYPE_BY_SLUG: Record<string, 'CROSS_STITCH' | 'KNITTING_CHART' | '
   crochet: 'CROCHET_CHART',
 }
 
-const SEARCH_SUGGESTIONS: Record<string, { label: string; q: string }[]> = {
+const SEARCH_SUGGESTIONS: Record<string, { label: string; q?: string; href?: string }[]> = {
+  // Cross-stitch chips jump straight to a filtered grid view (the scoped
+  // /search index covers tutorials, not patterns, so a text search returns
+  // nothing for a pattern library).
   'cross-stitch': [
-    { label: 'Animals', q: 'animal' },
-    { label: 'Florals', q: 'flower' },
-    { label: 'Beginner-friendly', q: 'beginner' },
-    { label: 'Under 5 hours', q: 'quick' },
-    { label: 'No back-stitch', q: 'no backstitch' },
+    { label: 'Animals', href: '/cross-stitch?sub=animals#patterns' },
+    { label: 'Florals', href: '/cross-stitch?sub=florals#patterns' },
+    { label: 'Beginner-friendly', href: '/cross-stitch?difficulty=BEGINNER#patterns' },
+    { label: 'Under 5 hours', href: '/cross-stitch?maxHours=5#patterns' },
+    { label: 'No back-stitch', href: '/cross-stitch?hasBackstitch=0#patterns' },
   ],
   knitting: [
     { label: 'Beginner scarf', q: 'beginner scarf' },
@@ -114,7 +118,9 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
   if (patternType) where.type = patternType
   if (sp.difficulty) where.difficulty = sp.difficulty
   if (sp.hasBackstitch === '1') where.hasBackstitch = true
+  if (sp.hasBackstitch === '0') where.hasBackstitch = false
   if (sp.hasFrenchKnots === '1') where.hasFrenchKnots = true
+  if (sp.maxHours) where.estimatedHours = { lte: Number(sp.maxHours) }
   if (sp.sub) where.subCategory = { slug: sp.sub, categoryId: category.id }
 
   const sort = sp.sort ?? 'featured'
