@@ -1,0 +1,124 @@
+{
+  "slug": "air-fryer-roast-beef",
+  "title": "Air-fryer roast beef",
+  "subtitle": "A small joint of beef roasted in the air fryer with a proper crust.",
+  "excerpt": "A beef sirloin joint cooked in the air fryer at high heat for a browned crust, then finished at a lower setting to the internal temperature you want. Serves four with resting time included.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Roast beef is a centrepiece dish of British Sunday cooking. Sirloin is well-suited to air fryer roasting as the fat cap bastes the joint as it cooks. This method produces the crust of a traditional oven roast in significantly less time.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 35,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Take the joint out of the fridge an hour before cooking so it cooks evenly from the centre.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "air fryer",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "air-fryer", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Roast beef in the air fryer works by searing at 220°C for the first 10 minutes to set the crust, then dropping to 160°C to finish the centre without overcooking the outside. An instant-read thermometer is the only reliable way to hit the doneness you want: 52°C for rare, 57°C for medium-rare, 65°C for medium. The joint must rest for 15 minutes after cooking or the centre will be a different doneness to what the thermometer showed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-sirloin", "amount": 800, "unit": "g", "prepNote": "tied joint, brought to room temperature", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 15, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 8, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper-ground", "amount": 2, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Season and sear" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Pat the {{beef-sirloin}} joint completely dry with paper towel. Rub with {{olive-oil}} of oil, {{sea-salt-flakes}} of flaked salt, and {{black-pepper-ground}} of cracked pepper. Preheat the air fryer to 220°C. Place the joint fat-side up in the basket. Cook at 220°C for 10 minutes until the surface is browned and the fat cap has started to render." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish and rest" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Drop the temperature to 160°C and cook for a further 15-25 minutes, checking the internal temperature every 5 minutes. Pull at 52°C for rare, 57°C for medium-rare, 65°C for medium. Transfer to a board, tent loosely with foil, and rest for 15 minutes before carving. The internal temperature will rise by 3-5°C during resting." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "heading": "Common problems",
+          "intro": null,
+          "items": [
+            { "symptom": "Overcooked throughout, grey centre", "cause": "Left at 220°C too long or didn't drop the temperature.", "fix": "Only 10 minutes at the high sear temperature. The centre cooks on carry-over heat while you reduce the setting." },
+            { "symptom": "Smoke filling the kitchen", "cause": "Fat dripping onto the heating element.", "fix": "Add a splash of water to the drip tray before cooking. Empty and wipe between batches." },
+            { "symptom": "Joint too large to fit", "cause": "Most domestic air fryers fit up to around 1 kg at most.", "fix": "Use an 800 g joint rather than a full 1.5 kg roast. For larger joints, the conventional oven is the better tool." }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Air-fryer roast beef is a proper Sunday roast without the two-hour wait. Serve with Yorkshire puddings, roast potatoes, and horseradish cream. The dripping from the tray is worth collecting: it adds flavour to roast potatoes or fried bread." }
+        ]
+      }
+    ]
+  }
+}
