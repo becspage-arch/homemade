@@ -392,3 +392,48 @@ SKIPPED: 0
 - ashwagandha-warm-milk: grade-level-strict
 - axe-to-knife-progression: body-missing-method
 - baby-safe-bottom-balm: voice-violation
+
+---
+
+## Run at 14:43:45
+
+Generated: 2026-06-20T14:43:45.665Z
+
+Processed: 7340
+PASS: 6834
+STILL_BLOCKED: 506
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| body-missing-method | 831 |
+| grade-level-strict | 522 |
+| opening-pattern-missing-hook | 174 |
+| voice-violation | 81 |
+| prose-prep-steps | 78 |
+| content-type-opening-mismatch | 3 |
+
+## Still BLOCKED (sample 20)
+
+- adjusting-pig-feed-from-weaner-to-finisher: body-missing-method
+- after-storm-checks-on-a-smallholding: grade-level-strict
+- air-dry-clay-mosaic-picture-frame: grade-level-strict
+- alpacas-on-a-smallholding: grade-level-strict
+- american-apple-pie: opening-pattern-missing-hook
+- anagama-kiln-introduction: grade-level-strict
+- angora-moult-management: body-missing-method
+- animal-bedding-composting-horse-straw: grade-level-strict
+- apple-crumble-pie: opening-pattern-missing-hook
+- apple-frangipane-tart: opening-pattern-missing-hook
+- applying-a-venetian-plaster-finish-to-a-wall: body-missing-method
+- applying-an-interior-lime-render-finish-coat: body-missing-method, grade-level-strict
+- applying-exterior-limewash-to-a-rendered-wall: grade-level-strict
+- arancini-al-burro: prose-prep-steps
+- ash-coat-rack-five-pegs: body-missing-method
+- ashwagandha-profile: grade-level-strict
+- ashwagandha-tincture-for-burnout: grade-level-strict
+- ashwagandha-warm-milk: grade-level-strict
+- axe-to-knife-progression: body-missing-method
+- baby-safe-bottom-balm: voice-violation
