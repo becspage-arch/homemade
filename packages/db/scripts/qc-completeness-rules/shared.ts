@@ -274,7 +274,9 @@ export function textilePatternRule(): CategoryRule['check'] {
   return (ctx, text) => {
     const reasons: string[] = []
     if (ctx.type === 'PATTERN') {
-      const counted = COUNTED_NEEDLEWORK.has(ctx.subCategorySlug ?? '')
+      const counted =
+        COUNTED_NEEDLEWORK.has(ctx.subCategorySlug ?? '') ||
+        COUNTED_NEEDLEWORK.has(ctx.categorySlug ?? '')
       if (!counted && !ctx.hasChart && !hasRowRound(text)) {
         reasons.push('pattern has no row/round instructions')
       }

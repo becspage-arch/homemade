@@ -588,3 +588,84 @@ SKIPPED: 0
 | grade-level-strict | 15 |
 | prose-prep-steps | 5 |
 | historical-century-in-body | 1 |
+
+
+---
+
+## Run at 19:15:57
+
+Generated: 2026-06-20T19:15:57.504Z
+
+Processed: 90
+PASS: 81
+STILL_BLOCKED: 9
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 15 |
+| grade-level-strict | 12 |
+| body-missing-method | 6 |
+| voice-violation | 3 |
+
+## Still BLOCKED (sample 20)
+
+- choosing-evenweave-and-linen-for-cross-stitch: body-missing-method
+- cross-stitch-be-kind-small-hoop: hero-missing
+- cross-stitch-bi-pride-banner: hero-missing
+- cross-stitch-botanical-fern-frond: grade-level-strict
+- cross-stitch-coming-out-hoop: hero-missing
+- cross-stitch-family-name-banner: hero-missing
+- cross-stitch-house-name-sampler: hero-missing
+- how-to-cross-stitch: voice-violation, grade-level-strict
+- how-to-read-a-cross-stitch-chart: body-missing-method
+
+---
+
+## Run at 19:15:57
+
+Generated: 2026-06-20T19:15:57.693Z
+
+Processed: 90
+PASS: 81
+STILL_BLOCKED: 9
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 15 |
+| body-missing-method | 6 |
+| grade-level-strict | 6 |
+| voice-violation | 3 |
+
+## Still BLOCKED (sample 20)
+
+- choosing-evenweave-and-linen-for-cross-stitch: body-missing-method
+- cross-stitch-be-kind-small-hoop: hero-missing
+- cross-stitch-bi-pride-banner: hero-missing
+- cross-stitch-botanical-fern-frond: grade-level-strict
+- cross-stitch-coming-out-hoop: hero-missing
+- cross-stitch-family-name-banner: hero-missing
+- cross-stitch-house-name-sampler: hero-missing
+- how-to-cross-stitch: voice-violation, grade-level-strict
+- how-to-read-a-cross-stitch-chart: body-missing-method
+
+---
+
+## Run at 19:16:17
+
+Generated: 2026-06-20T19:16:17.971Z
+
+Processed: 62
+PASS: 62
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

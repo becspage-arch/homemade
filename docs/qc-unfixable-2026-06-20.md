@@ -684,3 +684,13 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 
 - chilli-cheese-fries prose-prep-steps — applied: 
 - vegetarian-nachos prose-prep-steps — applied: 
+
+- choosing-evenweave-and-linen-for-cross-stitch body-missing-method — applied: 
+- cross-stitch-be-kind-small-hoop hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cross-stitch-bi-pride-banner hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cross-stitch-botanical-fern-frond grade-level-strict — applied: 
+- cross-stitch-coming-out-hoop hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cross-stitch-family-name-banner hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cross-stitch-house-name-sampler hero-missing — applied: hero-fill-deferred-to-standalone-script
+- how-to-cross-stitch voice-violation,grade-level-strict — applied: 
+- how-to-read-a-cross-stitch-chart body-missing-method — applied: 
