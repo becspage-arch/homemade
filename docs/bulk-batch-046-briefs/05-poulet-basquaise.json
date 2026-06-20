@@ -1,0 +1,358 @@
+{
+  "slug": "poulet-basquaise",
+  "title": "Poulet Basquaise",
+  "subtitle": "Basque chicken with peppers, tomatoes, and Bayonne ham",
+  "excerpt": "A one-pot Basque dish of chicken pieces browned and then cooked with red and green peppers, tomatoes, garlic, and a little cured ham. Bright, direct flavours and a quick weeknight timeline.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Poulet basquaise is the signature dish of the Basque Country straddling the French-Spanish border. Documented in Curnonsky, Cuisine et Vins de France (1953) and by Elizabeth David in French Provincial Cooking (1960). The Bayonne ham version is traditional; cured chorizo or prosciutto is a common substitute.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze for up to 3 months. Thaw overnight in the fridge. The pepper and tomato sauce holds well; the chicken can be a little softer on reheating.",
+    "batchable": false,
+    "makeAheadNotes": "Makes well a day ahead. Reheat gently on the hob, covered.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comfortFood"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "piperade",
+      "term": "Piperade",
+      "definition": "The Basque pepper and tomato base. Cooked slowly until the peppers are completely soft and the tomatoes have broken down into a thick, sweet sauce. The foundation of poulet basquaise."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Poulet basquaise is a Basque chicken dish built on a slow-cooked base of peppers and tomatoes called "
+          },
+          {
+            "type": "text",
+            "text": "piperade",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "piperade"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". The peppers cook until completely soft and sweet, the tomatoes collapse into the sauce, and the chicken pieces braise on top of them for the last 25 minutes. It is a direct, colourful one-pot dish that needs nothing more than bread or rice to complete it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "bone-in, skin-on",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pepper-red",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "deseeded, cut into strips",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pepper-green",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "deseeded, cut into strips",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "roughly chopped, or 400 g tinned",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "prosciutto",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "torn into pieces",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 2,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 1,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the chicken"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season the chicken thighs with salt and pepper. Heat 2 tbsp of the oil in the Dutch oven over medium-high heat. Brown the chicken, skin-side down, for 5 minutes until deep golden. Turn and brown the other side for 3 minutes. Remove and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the piperade"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to medium. Add the remaining oil and fry the onion for 5 minutes until softened. Add the garlic and fry for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the peppers and cook for 10 minutes, stirring occasionally, until soft and lightly caramelised at the edges."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the tomatoes, wine (if using), thyme, and bay. Season. Cook uncovered for 10 minutes until the tomatoes have broken down into a thick sauce."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finish the chicken"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Nestle the chicken pieces into the sauce, skin-side up. Scatter the prosciutto over the top if using. Cover and cook over low heat for 20 to 25 minutes until the chicken is cooked through. Remove the lid for the final 5 minutes to crisp the skin a little. Remove the thyme and bay. Serve with rice or crusty bread."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The pepper sauce is watery",
+              "cause": "The tomatoes or peppers released a lot of liquid and it did not reduce enough.",
+              "fix": "Remove the chicken and simmer the sauce uncovered for 5 to 10 minutes until thicker. The sauce should coat a spoon before the chicken goes back in."
+            },
+            {
+              "symptom": "The chicken skin is soft",
+              "cause": "Steam from the covered pot softened the skin.",
+              "fix": "Remove the lid for the last 10 minutes of cooking. The skin will crisp a little. For very crisp skin, brown the chicken for longer at the start before adding the vegetables."
+            },
+            {
+              "symptom": "The dish tastes flat",
+              "cause": "Underseasoning, or the peppers were not cooked long enough to become sweet.",
+              "fix": "Cook the pepper base for longer, until the peppers are completely limp and starting to caramelise. Taste and adjust salt and pepper at the end. A small splash of sherry vinegar brightens the sauce."
+            },
+            {
+              "symptom": "The chicken is dry",
+              "cause": "The thighs cooked at too high a heat or for too long.",
+              "fix": "Keep the braise at a very gentle simmer. Bone-in thighs are forgiving, but they do dry out if the heat is too high. Use an instant-read thermometer: 75°C is the target at the thickest part."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Poulet basquaise comes from the Basque Country, the area spanning both sides of the Pyrenees. The Spanish-French border runs through it, and the food of the region borrows from both sides: the Basque love of peppers (brought from the Americas in the 16th century) and the French traditions of braising and enriching sauces. The dish is now a staple of French bistro cooking, recognisable by its vivid red and green colour and direct, straightforward flavour."
+          }
+        ]
+      }
+    ]
+  }
+}

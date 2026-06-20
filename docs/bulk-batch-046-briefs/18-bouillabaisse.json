@@ -1,0 +1,425 @@
+{
+  "slug": "bouillabaisse",
+  "title": "Bouillabaisse",
+  "subtitle": "Provençal fish stew with rouille and croutons",
+  "excerpt": "A simplified home-cook version of the great Marseille fish stew: firm-fleshed white fish, prawns, and mussels cooked in a saffron-scented tomato broth and served with rouille-spread croutons on the side.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Bouillabaisse in its full Marseille form is a restaurant dish using a specific canon of fish local to the Mediterranean coast, impossible to replicate exactly outside the region. This recipe follows the approach of Elizabeth David, A Book of Mediterranean Food (1950), and Richard Olney, Simple French Food (1974), both of whom adapted the method for home cooks using available fish. The defining elements are the saffron broth, the violent boiling (bouille-abaisse: boil-lower), and the rouille-spread croutons served alongside.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "makeAheadNotes": "The broth base can be made a day ahead up to the point before the fish is added. Reheat to a simmer and add the fish to order.",
+    "dietaryFlags": [
+      "pescatarian"
+    ],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "dinnerParty",
+      "slowSunday"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "fine-mesh-sieve",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rouille",
+      "term": "Rouille",
+      "definition": "The rust-coloured garlic and saffron mayonnaise served with bouillabaisse. The word means 'rust' in French. Rouille is stirred into the broth to thicken it and spread on croutons that float on top or are eaten separately."
+    },
+    {
+      "slug": "saffron",
+      "term": "Saffron",
+      "definition": "A spice made from the dried stigmas of the crocus flower, giving a deep golden colour and a subtle earthy flavour. Saffron must be steeped in a small amount of hot liquid before use to release its colour and flavour."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bouillabaisse is defined by its broth: a "
+          },
+          {
+            "type": "text",
+            "text": "saffron",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "saffron"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "-scented tomato and fish stock brought to a violent boil. The name means 'boil-lower'. The rapid boiling emulsifies the olive oil into the liquid, giving the finished soup its thick, rust-coloured character. The fish is cooked in the broth in the final few minutes and served in two stages: broth first, fish second, with croutons spread with "
+          },
+          {
+            "type": "text",
+            "text": "rouille",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "rouille"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a home-cook adaptation. The authentic Marseille version requires a specific roster of Mediterranean fish (rascasse, grondin, saint-pierre) that are not available outside the region. Firm white fish such as monkfish, gurnard, and cod work well here."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "monkfish",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "cut into chunks",
+              "isOptional": false,
+              "groupLabel": "Fish"
+            },
+            {
+              "ingredientSlug": "cod-fillet",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "cut into chunks",
+              "isOptional": false,
+              "groupLabel": "Fish"
+            },
+            {
+              "ingredientSlug": "prawns-raw",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "shell-on",
+              "isOptional": false,
+              "groupLabel": "Fish"
+            },
+            {
+              "ingredientSlug": "mussels",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "scrubbed and debearded",
+              "isOptional": true,
+              "groupLabel": "Fish"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "stock-fish",
+              "amount": 1000,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": "steeped in 2 tbsp hot water for 10 minutes",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "fennel",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "thinly sliced, fronds reserved",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "crushed, plus 2 cloves for the rouille",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "dried-orange-peel",
+              "amount": 1,
+              "unit": "strip",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 5,
+              "unit": "tbsp",
+              "prepNote": "divided",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "mayonnaise",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": "for the rouille base",
+              "isOptional": false,
+              "groupLabel": "Rouille"
+            },
+            {
+              "ingredientSlug": "baguette",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "sliced and toasted, for the croutons",
+              "isOptional": false,
+              "groupLabel": "Serving"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the rouille"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pound 2 garlic cloves with a pinch of salt to a paste. Beat into the mayonnaise with the steeped saffron (a few strands reserved for the broth) and 1 tbsp of olive oil. Season and set aside in the fridge."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the broth"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat 4 tbsp olive oil in the stockpot over medium heat. Add the onion, fennel, and garlic and cook for 8 minutes until soft. Stir in the tomato purée and cook for 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the wine and cook for 2 minutes. Add the tinned tomatoes, fish stock, saffron water (including the reserved strands), and orange peel. Season. Bring to the boil, then simmer for 20 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "For a cleaner broth, strain through a fine sieve, pressing to extract all liquid. Return to the pot (optional, many cooks prefer the full vegetable broth)."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the fish"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bring the broth to a rolling boil. Add the monkfish and cook for 3 minutes. Add the cod and prawns and cook for 3 minutes more. If using mussels, add them in the final 3 minutes and cover until they open. Season the broth once more. Serve the broth first in bowls with croutons spread with rouille, then the fish."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The broth lacks depth",
+              "cause": "The fish stock was weak, or the tomato purée was not cooked enough.",
+              "fix": "A good bouillabaisse needs a well-flavoured fish stock as its base. Reduce the broth uncovered for 10 minutes before adding the fish. The rouille stirred into the individual bowl also adds considerable flavour."
+            },
+            {
+              "symptom": "The fish is overcooked and dry",
+              "cause": "Different fish have different cooking times; firmer pieces like monkfish need more time, delicate flaked cod less.",
+              "fix": "Add the firmest fish first and the most delicate last. Monkfish needs 6 minutes; cod needs 3; prawns need 2 to 3; mussels open in 3. Check the fish constantly from the moment it goes in."
+            },
+            {
+              "symptom": "The saffron colour is pale",
+              "cause": "The saffron was added directly without steeping.",
+              "fix": "Always steep saffron in a small amount of hot water for at least 10 minutes before adding. The stigmas must soften and release their pigment into the liquid first."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The original bouillabaisse was fishermen's food: a way to use the bony, unsellable fish left at the end of each day. The Marseille version evolved over centuries into a highly codified dish, and in 1980 a group of Marseille restaurateurs drew up the Charte de la Bouillabaisse defining its exact composition. Outside Marseille, the dish is freely interpreted. The saffron-fish-stock-rouille combination is the constant; the specific fish change with region and season."
+          }
+        ]
+      }
+    ]
+  }
+}

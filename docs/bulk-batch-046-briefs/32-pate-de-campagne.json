@@ -1,0 +1,380 @@
+{
+  "slug": "pate-de-campagne",
+  "title": "Pâté de Campagne",
+  "subtitle": "Country-style pork and chicken liver terrine",
+  "excerpt": "A rough-textured country pâté of minced pork shoulder and chicken livers seasoned with garlic, thyme, and brandy, baked in a terrine dish until just firm. Pressed overnight and served in thick slices with cornichons and bread.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pâté de campagne (country pâté) is the most widely made French terrine, found in charcuterie shops and markets across France. Elizabeth David, French Provincial Cooking (1960), gives a home version in the charcuterie chapter. Jane Grigson, Charcuterie and French Pork Cookery (1967), gives the most comprehensive English-language treatment. The distinguishing feature of the campagne style is the rough texture, the mixture is coarsely minced rather than finely ground, and visible pieces of liver and pork are part of the character.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 loaf tin / terrine",
+    "prepMinutes": 30,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and wrap tightly. Freeze for up to 2 months. Thaw overnight in the fridge.",
+    "batchable": false,
+    "makeAheadNotes": "Must be made at least 12 hours ahead (overnight). The pressing and chilling develop the texture and flavour. Keeps in the fridge for up to 1 week.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": [
+      "dinnerParty",
+      "weeknight"
+    ],
+    "temperatureCelsius": 165,
+    "temperatureNote": "bain-marie in oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "loaf-tin",
+      "isOptional": false
+    },
+    {
+      "slug": "food-processor",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "terrine",
+      "term": "Terrine",
+      "definition": "Both a rectangular earthenware or metal cooking dish with a lid and the food cooked in it. A terrine is pressed after baking — a weight is placed on top while it cools — which compacts the mixture and allows it to be sliced cleanly. Pâté and terrine are often used interchangeably, though strictly a pâté was originally baked in pastry (pâte)."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pâté de campagne is a "
+          },
+          {
+            "type": "text",
+            "text": "terrine",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "terrine"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " made from minced pork shoulder and chicken livers, seasoned simply with garlic, thyme, and brandy. The texture is intentionally rough, pieces of liver and pork are visible in the slice. It is one of the most satisfying things to make and one of the most useful: made on Sunday, it provides a week's worth of first courses or lunches, served in thick slices with cornichons, mustard, and baguette."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 10,
+          "items": [
+            {
+              "ingredientSlug": "pork-shoulder",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "Mixture"
+            },
+            {
+              "ingredientSlug": "chicken-livers",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "trimmed of connective tissue and sinew",
+              "isOptional": false,
+              "groupLabel": "Mixture"
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Mixture"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "Seasoning"
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": "leaves stripped",
+              "isOptional": false,
+              "groupLabel": "Seasoning"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": "to line the top of the terrine",
+              "isOptional": false,
+              "groupLabel": "Seasoning"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": "Binding"
+            },
+            {
+              "ingredientSlug": "brandy",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Seasoning"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "coarsely ground",
+              "isOptional": false,
+              "groupLabel": "Seasoning"
+            },
+            {
+              "ingredientSlug": "streaky-bacon",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "rashers for lining the tin",
+              "isOptional": false,
+              "groupLabel": "Lining"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Prepare the mixture"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pulse the pork shoulder in the food processor in bursts until it is coarsely minced, the texture should be uneven, not smooth. Transfer to a large bowl."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pulse half the chicken livers in the processor until they form a rough paste. Chop the other half roughly by hand so they remain in pieces. Add all the chicken liver to the pork."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the lardons, garlic, thyme leaves, beaten eggs, brandy, 2 tsp salt, and black pepper. Mix thoroughly with your hands until all the ingredients are evenly combined."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fry a small spoonful of the mixture in a dry pan and taste. Adjust the salt and pepper, the mixture should be well-seasoned. Chilling and cooking will dull the seasoning slightly."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Assemble and bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 165°C fan. Line the loaf tin with the bacon rashers, letting them overhang the sides. Pack the pâté mixture firmly into the tin. Fold the bacon over the top. Lay the bay leaves on top. Cover with foil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the tin in the roasting tin and pour in boiling water to come halfway up the sides. Bake in the bain-marie for 1 hour 20 minutes to 1 hour 30 minutes, until the internal temperature reads 70°C on the instant-read thermometer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the water bath. Place a weight (a food tin of similar size, filled with something heavy) on top of the foil and allow to cool at room temperature. Refrigerate overnight, still weighted. Slice and serve cold with cornichons and mustard."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The pâté has crumbled when sliced",
+              "cause": "It was not pressed enough during cooling, or was not chilled long enough before slicing.",
+              "fix": "A minimum of 12 hours chilled and weighted is necessary for the pâté to hold together when sliced. Anything less and the texture will be too loose. Weigh it again and return to the fridge for a further 6 hours."
+            },
+            {
+              "symptom": "The pâté is grey inside",
+              "cause": "This is normal, the interior of any cooked pâté or terrine is grey rather than pink. This is not a food safety issue.",
+              "fix": "The pinkish colour only persists with the addition of curing salts (sodium nitrite), which give commercial pâtés their pink interior. A home pâté without curing salts will always be grey inside."
+            },
+            {
+              "symptom": "The pâté is very salty",
+              "cause": "The bacon lining and the lardons both contributed salt, and the seasoning was not adjusted before baking.",
+              "fix": "Always fry a small test spoonful before filling the tin. The test cook allows you to taste the actual seasoning level. The bacon lining is very salty; reduce the added salt accordingly."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The charcuterie tradition is one of the foundations of French regional cooking. Every market town in France has a charcuterie producing its own pâtés, rillettes, terrines, and sausages. The campagne style is the most universal: rough, direct, and without ornament, the opposite of the fancier pâté de foie gras tradition. Jane Grigson, the first serious English-language writer on French charcuterie, described it as well-seasoned food that asks nothing of the cook except patience."
+          }
+        ]
+      }
+    ]
+  }
+}

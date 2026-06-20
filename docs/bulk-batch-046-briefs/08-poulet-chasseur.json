@@ -1,0 +1,351 @@
+{
+  "slug": "poulet-chasseur",
+  "title": "Poulet Chasseur",
+  "subtitle": "Hunter's chicken with tomatoes, mushrooms, and tarragon",
+  "excerpt": "Chicken pieces browned and braised in a sauce of tomatoes, mushrooms, white wine, and tarragon. Hunter's chicken is a classic French bistro dish, quick to make and full-flavoured.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Poulet chasseur appears in Auguste Escoffier, Le Guide Culinaire (1903), classified as a hunter's style preparation. The mushroom-tomato-tarragon combination is the defining signature. Elizabeth David's French Provincial Cooking (1960) gives a home-cook version of the dish. The name refers to game-hunting tradition: chasseur is the French word for hunter.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze for up to 3 months. The sauce holds well. Thaw overnight and reheat gently on the hob.",
+    "batchable": false,
+    "makeAheadNotes": "Cook a day ahead. The flavour improves overnight. Reheat on the hob, covered.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comfortFood"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "chasseur",
+      "term": "Chasseur",
+      "definition": "Hunter-style. In French cooking, a chasseur sauce is built on tomatoes, mushrooms, white wine, and tarragon. Originally associated with game birds and venison; now applied to chicken and other poultry."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Poulet "
+          },
+          {
+            "type": "text",
+            "text": "chasseur",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "chasseur"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is chicken braised in a sauce of tomatoes, mushrooms, white wine, and tarragon. It is one of the busiest of French bistro dishes, direct and satisfying in flavour, and fast enough for a weeknight. The mushrooms give the sauce an earthy depth, the tomatoes provide body, and the tarragon brightens the finish."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "bone-in, skin-on",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chestnut-mushrooms",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tarragon",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "leaves, roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the chicken"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season the chicken thighs generously. Heat the oil and butter in the Dutch oven over medium-high heat. Brown the chicken, skin-side down, for 5 minutes until deep golden. Turn and brown for 3 minutes more. Remove and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the vegetables and build the sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce heat to medium. Add the shallots and cook for 3 minutes until soft. Add the garlic and mushrooms and cook for 5 minutes until the mushrooms have given up their moisture and are starting to colour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the tomato purée and cook for 1 minute. Pour in the wine and simmer for 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the tinned tomatoes and stock. Season. Bring to a simmer, then return the chicken, skin-side up. Cover and cook over low heat for 25 minutes until the chicken is cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the lid for the final 5 minutes to reduce the sauce a little and firm the skin. Scatter over the tarragon leaves, taste for seasoning, and serve."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The sauce is watery",
+              "cause": "The tomatoes released a lot of liquid and the sauce did not reduce.",
+              "fix": "Simmer uncovered for a further 5 to 10 minutes with the chicken removed. The sauce should be thick enough to coat the back of a spoon."
+            },
+            {
+              "symptom": "The mushrooms are rubbery",
+              "cause": "The mushrooms were not cooked long enough before the tomatoes went in.",
+              "fix": "Cook the mushrooms until most of their liquid has evaporated and they start to take on a little colour before adding the wine. Wet mushrooms in a tomato sauce never firm up."
+            },
+            {
+              "symptom": "The chicken skin is pale and soft",
+              "cause": "Not enough browning at the start, or the skin was covered by the sauce during braising.",
+              "fix": "Brown the chicken well at the start; it should be deep golden, not pale gold. Keep the skin above the sauce level in the pot if possible, or finish under the grill for 3 to 4 minutes."
+            },
+            {
+              "symptom": "The tarragon flavour is lost",
+              "cause": "The tarragon cooked too long in the hot sauce.",
+              "fix": "Add fresh tarragon only at the very end, off the heat. If you want to use tarragon earlier, use a whole sprig for the braise and discard it before adding fresh leaves to finish."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The chasseur (hunter's) preparation is one of the oldest sauce families in French cooking, originally applied to game birds taken on hunting trips. By the time Escoffier codified it in 1903, it had migrated to chicken and become a standard of restaurant and bistro menus. The three-ingredient sauce base of tomatoes, mushrooms, and tarragon defines the style across all its variations. Chicken chasseur remains one of the most widely made French chicken dishes in home kitchens outside France."
+          }
+        ]
+      }
+    ]
+  }
+}

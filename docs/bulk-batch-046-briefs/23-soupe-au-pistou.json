@@ -1,0 +1,407 @@
+{
+  "slug": "soupe-au-pistou",
+  "title": "Soupe au Pistou",
+  "subtitle": "Provençal vegetable and bean soup with basil pistou",
+  "excerpt": "A thick Provençal summer soup of white beans, green beans, courgette, tomatoes, and pasta, served with a generous spoonful of pistou, the Provençal equivalent of pesto, stirred in at the table.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Soupe au pistou is the signature summer soup of Provence. Elizabeth David, French Provincial Cooking (1960), gives the recipe and establishes its kinship with the Genovese minestrone al pesto. The French word pistou comes from the Provençal pistar, 'to pound', and refers to the basil and garlic paste stirred in at the end. Richard Olney, Simple French Food (1974), gives a thorough treatment of both the soup and the pistou.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "makeAheadNotes": "The soup can be made up to 2 days ahead without the pistou or pasta. Add the pasta when reheating and stir in fresh pistou to serve.",
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comfortFood"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "food-processor",
+      "isOptional": true
+    },
+    {
+      "slug": "pestle-and-mortar",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pistou",
+      "term": "Pistou",
+      "definition": "The Provençal equivalent of Genovese pesto. Made by pounding fresh basil, garlic, and olive oil together (traditionally without pine nuts or cheese, though cheese is often added today). Stirred into the soup at the table rather than cooked into it."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soupe au pistou is a summer soup of whatever vegetables are best right now, a Provençal minestrone, thick with beans and small pasta, served with a spoonful of "
+          },
+          {
+            "type": "text",
+            "text": "pistou",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pistou"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " stirred in at the table. The pistou is what makes the dish: fragrant, intensely green, and raw, it hits the hot soup and perfumes the whole bowl. Make it immediately before serving so the basil keeps its brightness."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "haricot-beans",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "soaked overnight, or 400 g tin of white beans",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "green-beans",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "cut into 2 cm lengths",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "courgette",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "diced",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "peeled and chopped, or 400 g tinned",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "diced",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "vermicelli or small macaroni",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "basil",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "leaves only",
+              "isOptional": false,
+              "groupLabel": "Pistou"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "for the pistou",
+              "isOptional": false,
+              "groupLabel": "Pistou"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 6,
+              "unit": "tbsp",
+              "prepNote": "for the pistou",
+              "isOptional": false,
+              "groupLabel": "Pistou"
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "grated, for the pistou (optional)",
+              "isOptional": true,
+              "groupLabel": "Pistou"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the soup"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "If using dried beans, cook them in unsalted water for 45 minutes to 1 hour until tender. Drain and set aside. If using tinned beans, drain and rinse."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the olive oil in the stockpot over medium heat. Add the onion and carrot and cook for 8 minutes until soft. Add the garlic and cook for 1 minute. Add the tomatoes and cook for 5 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add 1.5 litres of water (or vegetable stock)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season generously."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the courgette, green beans, and white beans."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a simmer and cook for 15 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the pasta and cook for a further 8 to 10 minutes until tender. Taste and season. The soup should be very thick, not quite a stew, but close."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the pistou"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pound the 4 pistou garlic cloves with a large pinch of salt to a paste in the mortar. Add the basil leaves and pound to a rough paste. Work in the olive oil until the pistou is combined. If using cheese, stir it in. Alternatively, process all the pistou ingredients in a food processor. Serve the pistou in a bowl alongside the soup for each person to stir in themselves, a generous tablespoonful per bowl."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The soup is too thin",
+              "cause": "Too much liquid was added, or the pasta was not added.",
+              "fix": "Simmer uncovered for 10 minutes to reduce. The starch from the beans and pasta will thicken the soup. For a thicker base, scoop out a ladleful of the mixture and mash roughly before returning to the pot."
+            },
+            {
+              "symptom": "The pistou has darkened and lost its bright green",
+              "cause": "The basil oxidised after being pounded or processed.",
+              "fix": "Make the pistou at the very last moment, within 10 minutes of serving. Do not make it ahead. The colour fades quickly once the leaves are broken down and exposed to air."
+            },
+            {
+              "symptom": "The green beans are khaki and overcooked",
+              "cause": "They were added too early and cooked for too long.",
+              "fix": "Add the green beans in the last 10 to 12 minutes of cooking only. They should retain a little bite and their green colour."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soupe au pistou is the summer soup of the Mediterranean coast of France, from Nice westward to Marseille. Elizabeth David noted that it is nearly identical to the Genovese minestrone al pesto across the Italian border. Both dishes share the same principle: a thick vegetable and bean soup finished with a raw basil paste. The difference is that pistou contains no pine nuts. The soup is documented in Provençal cooking from at least the 19th century, when the name appears in regional recipe collections from the Var and the Alpes-Maritimes. It is still most commonly made in summer, when fresh borlotti beans are in season."
+          }
+        ]
+      }
+    ]
+  }
+}

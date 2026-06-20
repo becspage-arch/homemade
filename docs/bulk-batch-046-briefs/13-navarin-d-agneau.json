@@ -1,0 +1,377 @@
+{
+  "slug": "navarin-d-agneau",
+  "title": "Navarin d'Agneau",
+  "subtitle": "Spring lamb stew with new season vegetables",
+  "excerpt": "Lamb shoulder pieces browned and then slowly braised with new potatoes, baby carrots, peas, and green beans until tender. The navarin printanier is a celebration of spring vegetables and the first lamb of the season.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "SPRING",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "The navarin printanier is a classical French spring dish, its name possibly derived from the turnip (navet) which appears in many versions. Auguste Escoffier, Le Guide Culinaire (1903), gives the full classical method. The dish is tied to the arrival of the spring lamb crop and the new season vegetables. Elizabeth David, French Provincial Cooking (1960), gives an accessible home-cook version.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "makeAheadNotes": "Braise the lamb through step 3, stopping before adding the vegetables. Complete the vegetable cooking 30 minutes before serving.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "dinnerParty",
+      "slowSunday"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "navarin",
+      "term": "Navarin",
+      "definition": "A French lamb stew. The navarin printanier (spring navarin) is the most celebrated version, made with the first lamb of the year and spring vegetables including new potatoes, baby carrots, and peas. The name possibly derives from navet (turnip), which appears in the winter version."
+    }
+  ],
+  "techniqueSlugs": [
+    "braising"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Navarin",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "navarin"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " d'agneau printanier is a spring dish: the first lamb of the year, braised gently with the season's earliest vegetables. The lamb is always shoulder, which has the flavour and fat content for braising. The vegetables go in at different stages so each one finishes correctly: the harder roots first, the peas and beans only in the final few minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "lamb-shoulder",
+              "amount": 900,
+              "unit": "g",
+              "prepNote": "cut into 4 cm chunks",
+              "isOptional": false,
+              "groupLabel": "Lamb"
+            },
+            {
+              "ingredientSlug": "new-potatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "halved if large",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "baby or small, halved lengthways",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "peas-frozen",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "green-beans",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "trimmed, halved",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "chopped, to finish",
+              "isOptional": false,
+              "groupLabel": "Finish"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the lamb"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season the lamb well. Heat the oil in the Dutch oven over high heat. Brown the lamb in batches for 3 to 4 minutes per side until coloured on all sides. Work in batches to avoid steaming. Remove and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the braise"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to medium. Add the onion and cook for 5 minutes. Add the garlic and tomato purée and cook for 2 minutes. Stir in the flour and cook for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the wine and stock. Add the thyme and bay. Bring to a simmer, return the lamb, and cover. Cook over low heat for 45 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the potatoes and carrots. Cover and cook for a further 25 minutes until the vegetables are tender and the lamb is very soft."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the peas and green beans. Cook uncovered for 5 minutes. Remove the thyme and bay. Taste and season. Scatter with parsley and serve."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The potatoes have broken up into the sauce",
+              "cause": "The potatoes were added too early and cooked for too long.",
+              "fix": "Add the potatoes in the final 25 minutes only. If they have already broken up, the sauce will be thicker but still edible. Reduce the liquid if it seems starchy."
+            },
+            {
+              "symptom": "The sauce is thin",
+              "cause": "Not enough flour was used in the base, or the braise was not covered properly.",
+              "fix": "Remove the meat and vegetables. Reduce the sauce uncovered over medium heat until it coats a spoon."
+            },
+            {
+              "symptom": "The lamb is tough",
+              "cause": "Shoulder needs at least 45 minutes of braising and is often better with 60 to 75 minutes.",
+              "fix": "Continue braising, covered, checking every 15 minutes. The lamb is done when it tears easily with two forks."
+            },
+            {
+              "symptom": "The peas and beans are grey and overcooked",
+              "cause": "They were added too early.",
+              "fix": "Add the peas and green beans in the final 5 minutes only, or even the final 3 minutes. They only need to heat through and should retain their colour."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Navarin d'agneau has no specific regional home. It is a classical dish of French cooking, appearing on menus from Paris to Lyon and in kitchens across the country. The spring version (the printanier) is tied to the season: it uses new-season lamb and the first vegetables of the year. The word navarin is thought to come either from navet (turnip) or from the Battle of Navarino in 1827. The spring version became established in French cooking in the 19th century and has remained on bistro menus ever since."
+          }
+        ]
+      }
+    ]
+  }
+}

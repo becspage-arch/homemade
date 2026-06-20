@@ -1,0 +1,354 @@
+{
+  "slug": "veau-marengo",
+  "title": "Veau Marengo",
+  "subtitle": "Veal braised with tomatoes, white wine, and mushrooms",
+  "excerpt": "A classic veal braise made with tomatoes, white wine, mushrooms, and pearl onions, finished with a scatter of chopped parsley. Legend attaches the dish to Napoleon's victory at the Battle of Marengo in 1800.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Veau Marengo is one of the most famous origin-story dishes in French cooking. According to culinary legend, Napoleon's cook Dunand improvised the dish from whatever could be found after the Battle of Marengo (1800), veal, tomatoes, mushrooms, eggs, and crayfish. The eggs and crayfish fell away; the tomato-wine-mushroom combination stayed and was codified into the classical repertoire. Auguste Escoffier, Le Guide Culinaire (1903), gives the standard version. Elizabeth David, French Provincial Cooking (1960), documents it as a staple of bourgeois cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 75,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze for up to 3 months. Thaw overnight and reheat gently on the hob.",
+    "batchable": false,
+    "makeAheadNotes": "Makes well a day ahead. The flavour improves overnight in the fridge. Reheat gently.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "dinnerParty",
+      "comfortFood"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bouquet-garni",
+      "term": "Bouquet garni",
+      "definition": "A bundle of herbs — typically thyme, bay, and parsley stalks — tied together or wrapped in muslin and added to a braise or stock for flavour, then removed before serving. The bundle keeps the herbs from dispersing through the dish."
+    }
+  ],
+  "techniqueSlugs": [
+    "braising"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Veau Marengo is a classic veal braise, browned pieces of veal shoulder cooked in a sauce of white wine, tomatoes, mushrooms, and pearl onions. The method is straightforward: brown the veal well, build the sauce, and braise until the meat is tender. A "
+          },
+          {
+            "type": "text",
+            "text": "bouquet garni",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bouquet-garni"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " provides the aromatic backbone, removed before serving. Finish with chopped parsley."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "veal-shoulder",
+              "amount": 900,
+              "unit": "g",
+              "prepNote": "cut into 4 cm chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chestnut-mushrooms",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "quartered",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pearl-onions",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "peeled",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": "tied into a bouquet garni with bay and parsley stalks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": "included in the bouquet garni",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "stalks for the bouquet garni, leaves chopped for finishing",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the veal"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season the veal and dust lightly with flour. Heat the oil and butter in a large frying pan over high heat. Brown the veal in batches for 3 to 4 minutes per side until golden. Transfer to the Dutch oven."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the sauce and braise"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same frying pan, cook the pearl onions over medium heat for 5 minutes until lightly coloured. Add the garlic and mushrooms and cook for 4 minutes. Stir in the tomato purée and cook for 1 minute. Transfer to the Dutch oven."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the wine into the frying pan, scraping up the browned bits. Pour into the Dutch oven with the tinned tomatoes and stock. Add the bouquet garni. Season."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a gentle simmer, cover, and cook over low heat for 60 minutes until the veal is very tender. Remove the bouquet garni. Taste and adjust seasoning. Scatter with chopped parsley and serve."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The sauce is too thin",
+              "cause": "The tomatoes released extra liquid and it did not reduce.",
+              "fix": "Remove the meat and vegetables. Simmer the sauce uncovered for 5 to 10 minutes until reduced and thick enough to coat a spoon."
+            },
+            {
+              "symptom": "The mushrooms have gone soft and watery",
+              "cause": "The mushrooms were added without being cooked down first, or there were too many for the pan size.",
+              "fix": "Always cook mushrooms in a hot pan until their liquid evaporates before adding to the braise. Wet mushrooms in a tomato sauce give a diluted flavour and a soft, unappealing texture."
+            },
+            {
+              "symptom": "The veal is still firm after 60 minutes",
+              "cause": "Shoulder is a correct cut for this dish but varies in toughness depending on the animal.",
+              "fix": "Continue braising in 15-minute increments. Veal shoulder can take up to 90 minutes. The meat is done when it gives way easily when pressed with a spoon."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Marengo is a village in the Piedmont region of northern Italy, where Napoleon defeated the Austrian army on 14 June 1800. The story goes that his cook Dunand made the dish from whatever could be found near the battlefield: a scrawny chicken (or veal, depending on the account), tomatoes, mushrooms, crayfish, and fried eggs. Napoleon reportedly demanded the dish again after later victories. The tomatoes and mushrooms stayed; the crayfish and eggs quietly disappeared as the dish entered the classical repertoire."
+          }
+        ]
+      }
+    ]
+  }
+}

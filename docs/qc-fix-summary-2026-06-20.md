@@ -135,3 +135,75 @@ SKIPPED: 0
 
 - luster-dust-application-technique: body-missing-method
 - maids-of-honour-richmond: opening-pattern-missing-hook
+
+---
+
+## Run at 12:35:02
+
+Generated: 2026-06-20T12:35:02.158Z
+
+Processed: 111
+PASS: 105
+STILL_BLOCKED: 6
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 38 |
+| opening-pattern-missing-hook | 30 |
+| grade-level-strict | 22 |
+| prose-prep-steps | 18 |
+| historical-century-in-body | 16 |
+
+## Still BLOCKED (sample 20)
+
+- coquilles-saint-jacques: prose-prep-steps
+- creme-caramel: prose-prep-steps
+- quiche-lorraine: prose-prep-steps
+- soupe-a-l-oignon: prose-prep-steps
+- soupe-au-pistou: prose-prep-steps
+- vichyssoise: prose-prep-steps
+
+---
+
+## Run at 12:35:02
+
+Generated: 2026-06-20T12:35:02.318Z
+
+Processed: 111
+PASS: 105
+STILL_BLOCKED: 6
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| prose-prep-steps | 18 |
+
+## Still BLOCKED (sample 20)
+
+- coquilles-saint-jacques: prose-prep-steps
+- creme-caramel: prose-prep-steps
+- quiche-lorraine: prose-prep-steps
+- soupe-a-l-oignon: prose-prep-steps
+- soupe-au-pistou: prose-prep-steps
+- vichyssoise: prose-prep-steps
+
+---
+
+## Run at 12:41:15
+
+Generated: 2026-06-20T12:41:15.482Z
+
+Processed: 105
+PASS: 105
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

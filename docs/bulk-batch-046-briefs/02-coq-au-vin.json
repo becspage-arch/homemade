@@ -1,0 +1,384 @@
+{
+  "slug": "coq-au-vin",
+  "title": "Coq au Vin",
+  "subtitle": "Chicken braised in red wine with lardons and mushrooms",
+  "excerpt": "Chicken pieces browned and then braised in a full bottle of red wine with lardons, mushrooms, and shallots. A bistro staple that is straightforward to make and improves if left overnight.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), poulet section. Elizabeth David, French Provincial Cooking (1960). Julia Child, Mastering the Art of French Cooking (1961), coq au vin chapter, which establishes the browning-first technique and the garnish of lardons and mushrooms that most modern versions follow.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze for up to 3 months. Thaw overnight in the fridge and reheat gently, covered, on the hob.",
+    "batchable": false,
+    "makeAheadNotes": "Cook a day ahead; the flavour improves overnight. Reheat on a low hob, covered.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "dinnerParty"
+    ],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "braising"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Coq au vin is chicken braised in red wine until the meat pulls free from the bone and the sauce is thick enough to coat a spoon. The name means cock in wine, a reference to the old farm birds that needed long, slow cooking to become tender. Modern chicken is far younger and cooks in about 90 minutes, giving you a rich braise without a full day at the hob."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use a wine you would actually drink. It does not have to be expensive, but it should taste good on its own. Thin or very acidic wine produces a thin, acidic sauce."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "bone-in, skin-on",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mushrooms-button",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 6,
+              "unit": "each",
+              "prepNote": "halved lengthways if large",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 750,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "for dusting",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the chicken"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pat the chicken thighs dry and season with salt and pepper. Dust lightly with flour. Heat the oil in the Dutch oven over medium-high heat. Brown the chicken, skin-side down, for 5 minutes until the skin is deep golden. Turn and cook 3 minutes more. Remove and set aside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the lardons and shallots"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pot, fry the lardons over medium heat for 4 minutes until golden. Remove with a slotted spoon."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the shallots and cook for 5 minutes until softened and lightly coloured. Add the garlic and cook for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the tomato purée. Pour in the wine and stock and bring to a boil, scraping up any bits from the base."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Braise the chicken"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Return the chicken and lardons to the pot, tuck in the thyme and bay, and cover. Cook in a 160°C oven for 1 hour until the chicken is cooked through and tender."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the mushrooms and finish"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry the mushrooms in the butter in a separate pan over high heat for 4 minutes until golden. Add to the casserole for the last 15 minutes of cooking. Remove the thyme and bay. Taste and adjust seasoning. Serve with mashed potato, egg noodles, or crusty bread."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The sauce is very thin and watery",
+              "cause": "The wine did not reduce enough during braising, or too much stock was added.",
+              "fix": "Remove the chicken and reduce the sauce on the hob, uncovered, until it coats a spoon. Return the chicken to warm through."
+            },
+            {
+              "symptom": "The chicken skin is soggy",
+              "cause": "The chicken sat in liquid with the skin submerged during braising.",
+              "fix": "Keep the skin above the liquid level in the pot, or remove the skin before braising if texture does not matter. Some cooks prefer to serve the chicken skinless in this dish."
+            },
+            {
+              "symptom": "The sauce tastes harsh",
+              "cause": "The wine did not cook out fully; some wines are more tannic and need longer simmering.",
+              "fix": "Simmer uncovered on the hob for a further 10 minutes. A small knob of butter stirred in at the end softens the finish."
+            },
+            {
+              "symptom": "The flour is lumpy in the sauce",
+              "cause": "The dusting flour clumped during browning.",
+              "fix": "Whisk the sauce vigorously and push through a sieve if needed. Make sure the chicken is completely dry before flouring next time."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Coq au vin belongs to the broad family of French wine braises found in every wine-producing region. The Burgundy version, using Pinot Noir, is the most famous, but Alsace versions with Riesling and Jura versions with vin jaune also exist. The dish is now a staple of French bistro cooking and home cooking alike. It became widely known outside France in the mid-twentieth century, partly through Escoffier's codification and partly through Julia Child's enthusiastic promotion of it to American home cooks."
+          }
+        ]
+      }
+    ]
+  }
+}

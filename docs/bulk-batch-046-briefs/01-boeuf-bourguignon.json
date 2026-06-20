@@ -1,0 +1,494 @@
+{
+  "slug": "boeuf-bourguignon",
+  "title": "Boeuf Bourguignon",
+  "subtitle": "Beef braised slowly in Burgundy wine with bacon, mushrooms, and pearl onions",
+  "excerpt": "A classic French braise of beef chuck in red wine with lardons, mushrooms, and shallots. Long, slow cooking turns the beef tender and the wine sauce rich and deeply flavoured.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Auguste Escoffier, Le Guide Culinaire (1903), beef braise chapter. Elizabeth David, French Provincial Cooking (1960), chapter on daube and braise. Julia Child, Mastering the Art of French Cooking (1961), the boeuf bourguignon recipe is the definitive English-language treatment and the source for the double-cook technique here.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 180,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the finished braise for up to 3 months. Thaw overnight in the fridge. Reheat gently on the hob, covered, adding a splash of stock or water if the sauce has thickened too much.",
+    "batchable": true,
+    "batchNotes": "Makes well in double quantities in a large pot. The braise holds well in the fridge for up to 3 days and improves overnight.",
+    "makeAheadNotes": "Cook the day before and refrigerate. The fat settles and lifts off easily, and the flavour deepens noticeably on the second day. Reheat gently on the hob.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "dinnerParty"
+    ],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan oven or low hob",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lardons",
+      "term": "Lardons",
+      "definition": "Small cubes of cured pork belly or back bacon, used to add fat and a smoky depth to braises and soups. In French cooking they are fried until golden before the main ingredients go in."
+    },
+    {
+      "slug": "braise",
+      "term": "Braise",
+      "definition": "A cooking method where food is browned first, then cooked slowly in a small amount of liquid in a covered pot. The liquid becomes the sauce."
+    }
+  ],
+  "techniqueSlugs": [
+    "braising"
+  ],
+  "criticalTechniques": [
+    "braising"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Boeuf bourguignon is a beef braise from Burgundy in eastern France. The beef cooks slowly in red wine until it is tender enough to cut with a spoon, and the wine reduces to a dark, sticky sauce that coats every piece. It is one of the most rewarding braises in French cooking, and one of the few dishes that tastes better made the day before."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The key step is browning the beef and the "
+          },
+          {
+            "type": "text",
+            "text": "lardons",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "lardons"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " properly before the wine goes in. A deep, even sear on each piece of beef is what gives the sauce its colour and its depth. If you crowd the pan, the meat steams rather than browns, and the braise tastes flat. Brown in batches, always."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "beef-chuck",
+              "amount": 1200,
+              "unit": "g",
+              "prepNote": "cut into 5 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mushrooms-button",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "peeled",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 750,
+              "unit": "ml",
+              "prepNote": "a Burgundy or any full-bodied red",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "for dusting",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a casserole dish large enough to hold the beef in a single layer when it goes back in for braising. A 28 to 30 cm Dutch oven works well. A heavy frying pan speeds up the browning."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Prepare the beef"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pat the beef dry with kitchen paper. Season generously with salt and pepper, then dust lightly with flour. Drying and flouring the beef helps it form a crust without steaming."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the lardons and beef"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the olive oil in the Dutch oven over medium-high heat. Add the "
+          },
+          {
+            "type": "text",
+            "text": "lardons",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "lardons"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and fry for 5 minutes until golden. Remove with a slotted spoon. In the same pot, working in batches of 4 to 5 pieces, brown the beef on all sides over high heat, about 3 minutes per batch. Remove each batch to a plate. Do not rush or crowd the pot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the braise"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce heat to medium. Add the shallots to the pot and cook for 5 minutes until softened and lightly coloured. Add the garlic and cook for 1 minute more."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the tomato purée. Pour in the wine and bring to a boil, scraping up any browned bits from the base of the pot."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return the beef and lardons to the pot. Add the stock, thyme, and bay. The liquid should come roughly halfway up the meat. If it does not, add a little more stock or water."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover and "
+                  },
+                  {
+                    "type": "text",
+                    "text": "braise",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "braise"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " in a 160°C oven (or the lowest hob setting with a diffuser) for 2 to 2.5 hours until the beef is completely tender when pierced with a fork."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the mushrooms"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "While the braise cooks, melt the butter in the frying pan over high heat. Add the mushrooms in a single layer and fry for 4 to 5 minutes until golden and most of the moisture has cooked off. Season with salt. Add the mushrooms to the braise in the last 20 minutes of cooking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Rest and serve"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the thyme sprigs and bay leaves. Taste the sauce and adjust the seasoning. Rest for 10 minutes off the heat before serving. Good with boiled or mashed potato, or with egg noodles."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The beef is still tough after 2.5 hours",
+              "cause": "The oven temperature was too low, or the pieces were very large.",
+              "fix": "Return to the oven and cook in 30-minute intervals until the beef gives easily to a fork. A braise cannot be rushed; tough-to-tender takes the time it takes."
+            },
+            {
+              "symptom": "The sauce is thin",
+              "cause": "There was too much liquid, or the braise did not cook long enough for the wine to reduce.",
+              "fix": "Remove the beef and simmer the sauce on the hob, uncovered, until it coats a spoon. Return the beef to warm through."
+            },
+            {
+              "symptom": "The beef is dry and stringy",
+              "cause": "The temperature was too high during braising, causing the meat fibres to contract and squeeze out moisture.",
+              "fix": "Keep the braise at a very gentle simmer, not a rolling boil. The liquid surface should barely tremble. Use an oven thermometer to check the temperature."
+            },
+            {
+              "symptom": "The sauce tastes sharp or acidic",
+              "cause": "The wine did not reduce enough before the stock was added, or the wine quality was poor.",
+              "fix": "Simmer the sauce uncovered for a further 10 to 15 minutes. A pinch of sugar can help balance the acidity at the end."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Boeuf bourguignon is the great braise of the Burgundy region, which runs south from Dijon along the Côte d'Or. The same region gives the dish its two key ingredients: the Charolais beef and the wine. Escoffier codified the recipe in Le Guide Culinaire in 1903, but the dish is older than any written version. Julia Child's treatment in Mastering the Art of French Cooking brought it to kitchens outside France. It remains one of the most copied and referenced braises in European cooking."
+          }
+        ]
+      }
+    ]
+  }
+}

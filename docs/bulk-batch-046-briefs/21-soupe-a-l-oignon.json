@@ -1,0 +1,418 @@
+{
+  "slug": "soupe-a-l-oignon",
+  "title": "Soupe à l'Oignon",
+  "subtitle": "French onion soup with Gruyère croutons",
+  "excerpt": "Onions cooked slowly until they caramelise into a deep amber, then simmered in beef stock, ladled into bowls over croutons, blanketed in Gruyère, and grilled until bubbling. The great Parisian midnight supper dish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Soupe à l'oignon is one of the most popular French dishes outside France and one of the oldest: onion soups appear in French culinary records from the 16th century. The Parisian version, served at Les Halles market through the night to workers and revellers, became the canonical form in the 19th century. Julia Child, Mastering the Art of French Cooking (1961), gives the definitive home-cook method. Elizabeth David, French Provincial Cooking (1960), documents regional variations. The critical step, thoroughly caramelised onions, takes 40 minutes; there are no shortcuts.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 70,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "makeAheadNotes": "The onion soup base (without the croutons and cheese) keeps well in the fridge for 3 days or freezes for 3 months. Reheat and add the gratin finish to order.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": "finish under the grill",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "ramekins",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "caramelising-onions",
+      "term": "Caramelising onions",
+      "definition": "The slow cooking of sliced onions over low-medium heat until the natural sugars in the onion convert to caramel, turning the onions a deep amber-brown. The process takes 35 to 45 minutes and cannot be meaningfully accelerated — high heat burns the exterior while leaving the interior raw and sharp. The resulting onions are sweet, soft, and deeply coloured."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "French onion soup has one secret and no shortcuts: the onions must be cooked until fully "
+          },
+          {
+            "type": "text",
+            "text": "caramelised",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "caramelising-onions"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", which takes between 35 and 45 minutes over low-medium heat. Pale, barely-cooked onions produce a blond soup with a sharp, raw-onion taste. Deep amber onions produce the dark, sweet, full-bodied soup that this dish is supposed to be. Everything else, the stock, the croutons, the Gruyère, is secondary."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "onion",
+              "amount": 1200,
+              "unit": "g",
+              "prepNote": "about 6 large onions, halved and thinly sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 1200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": "or dry sherry",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "gruyere",
+              "amount": 120,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baguette",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "cut into 1.5 cm slices",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 2,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Caramelise the onions"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the butter and oil in the Dutch oven over medium-low heat. Add all the onions and a large pinch of salt. Cook, stirring every 5 minutes, for 35 to 45 minutes. The onions will first soften and steam, then gradually lose their volume and begin to colour. By the end they should be deep amber-brown throughout and fragrant. Do not rush this stage. If the onions begin to stick and scorch at any point, add a splash of water and scrape up the residue, this adds colour and flavour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the soup"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the flour and cook for 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the wine and stir to combine."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the stock, thyme, and bay."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a simmer and cook for 15 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the thyme and bay."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Taste and adjust seasoning."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Prepare the gratin croutons"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Toast the baguette slices until they are very dry and hard. They need to float on the soup without immediately sinking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Assemble and grill"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the grill to its highest setting. Ladle the soup into oven-safe bowls. Float 2 or 3 croutons on each. Heap the grated Gruyère generously over the croutons and allow it to fall onto the soup surface. Place under the grill for 4 to 5 minutes until the cheese is molten, golden, and starting to brown at the edges."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The soup tastes sharp with a raw onion note",
+              "cause": "The onions were not caramelised long enough, they were cooked until soft and lightly golden, not until fully amber.",
+              "fix": "Return the onions to the heat and continue cooking for a further 10 to 15 minutes. Fully caramelised onions should be deep brown throughout and smell sweet, not pungent."
+            },
+            {
+              "symptom": "The cheese has not melted before the bread is soggy",
+              "cause": "The croutons were not toasted hard enough, or too many were added.",
+              "fix": "Toast the bread slices until completely dry and hard, almost like a rusk. The aim is to resist absorbing the soup long enough for the cheese to grill."
+            },
+            {
+              "symptom": "The soup is too thin",
+              "cause": "Not enough flour was added, or the soup was not reduced long enough.",
+              "fix": "Simmer uncovered for a further 10 minutes. The caramelised onions themselves also thicken the soup as they break down."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Les Halles, the great central market of Paris demolished in 1971, operated through the night, and the surrounding onion soup shops fed market workers, night-shift porters, and revellers until morning. The dish became synonymous with Parisian working-class night life and later with the Parisian brasserie. The poet Honoré de Balzac and the novelist Émile Zola both wrote about the soup shops of Les Halles. The Gruyère-crouton gratin finish is the Parisian form; other regions make plainer versions without it."
+          }
+        ]
+      }
+    ]
+  }
+}

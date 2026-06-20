@@ -1,0 +1,388 @@
+{
+  "slug": "blanquette-de-veau",
+  "title": "Blanquette de Veau",
+  "subtitle": "Veal in a white cream and lemon sauce with mushrooms",
+  "excerpt": "A classic of the French bourgeois kitchen: veal gently poached until tender, then finished in a velvety white sauce enriched with egg yolks and cream and sharpened with lemon. One of the great pale braises.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Blanquette de veau is one of the pillars of French bourgeois cuisine. Auguste Escoffier, Le Guide Culinaire (1903), gives the sauce as a velouté enriched with liaison (egg yolk and cream). Elizabeth David, French Provincial Cooking (1960), gives the home-cook version. The French gastronome Maurice-Edmond Sailland (Curnonsky) called it one of the ten best French dishes. The word blanquette means 'white', the defining characteristic is that the meat is never browned.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "makeAheadNotes": "The poached veal and vegetables can be made a day ahead. Reheat gently, then make the sauce fresh and add the liaison at the last moment.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "dinnerParty",
+      "comfortFood"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "fine-mesh-sieve",
+      "isOptional": false
+    },
+    {
+      "slug": "saucepan-medium",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "liaison",
+      "term": "Liaison",
+      "definition": "A mixture of egg yolks and cream used to thicken and enrich a sauce at the end of cooking. The egg yolks must not boil once added or they will scramble. A liaison gives French cream sauces their particular velvety texture."
+    },
+    {
+      "slug": "blanquette",
+      "term": "Blanquette",
+      "definition": "A French white braise in which the meat is poached rather than browned, then finished in a cream-enriched white sauce. The defining characteristic is that the dish is entirely pale — no caramelisation, no colour anywhere."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "text": "blanquette",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "blanquette"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is the opposite of a braise: the meat is poached gently in stock without any browning, and the cooking liquor becomes the sauce. The sauce is then enriched at the last moment with a "
+          },
+          {
+            "type": "text",
+            "text": "liaison",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "liaison"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of egg yolks and cream, which thickens it without breaking its pale colour. The result is one of the most refined and delicate dishes in French cooking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "veal-shoulder",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "cut into 4 cm cubes",
+              "isOptional": false,
+              "groupLabel": "Veal"
+            },
+            {
+              "ingredientSlug": "chestnut-mushrooms",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "pearl-onions",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "peeled",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "cut into rounds",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 2,
+              "unit": "stick",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "egg-yolks",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "juice only",
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 2,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Aromatics"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Aromatics"
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 750,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Aromatics"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Poach the veal"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the veal in the stockpot and cover with cold water. Bring to the boil, then drain immediately and rinse the veal under cold water. This blanches the meat and removes impurities. Return to the pot with the stock, carrot, celery, thyme, and bay. Bring to a gentle simmer and poach uncovered for 45 minutes, skimming occasionally. Add the pearl onions and mushrooms and cook for a further 20 minutes until the veal is completely tender."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Using a slotted spoon, transfer the veal, onions, and mushrooms to a dish and keep warm. Strain the cooking liquor through a fine-mesh sieve. You need about 600 ml; reduce or add water to reach this amount."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In a medium saucepan, melt the butter over medium heat. Stir in the flour and cook for 2 minutes to make a pale roux. Gradually whisk in the strained stock, a ladleful at a time. Bring to a gentle simmer and cook for 10 minutes, stirring often, until the sauce is smooth and the raw flour taste has gone."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In a small bowl, whisk together the egg yolks and double cream. Remove the sauce from the heat. Stir a large spoonful of the hot sauce into the liaison to temper it, then pour the liaison into the sauce, whisking constantly. Return to the very lowest heat and stir for 2 minutes until slightly thickened. Do not boil, the egg yolks will scramble. Add the lemon juice and season."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return the veal and vegetables to the sauce and warm through gently. Serve with rice or egg noodles."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The sauce has scrambled egg in it",
+              "cause": "The liaison was added to sauce that was too hot, or it boiled after the liaison was added.",
+              "fix": "Remove from the heat immediately and strain the sauce through a fine sieve. The veal and vegetables can be rescued; the sauce needs to be made again. Always add the liaison off the heat and never allow the sauce to boil once it is in."
+            },
+            {
+              "symptom": "The sauce is too thick",
+              "cause": "Too much flour was used, or the sauce reduced too much.",
+              "fix": "Thin with a little warm stock or water, whisking until smooth."
+            },
+            {
+              "symptom": "The veal is tough",
+              "cause": "The shoulder cut is correct but it needs the full poaching time.",
+              "fix": "Return to the poaching liquid and cook for a further 20 to 30 minutes. The connective tissue in the shoulder needs time to melt and soften."
+            },
+            {
+              "symptom": "The sauce has a grey tinge",
+              "cause": "The veal was not blanched before poaching, and the grey impurities went into the stock.",
+              "fix": "Blanching the veal in fresh water before the main cook is an essential step. It removes the grey foam that would cloud both the stock and the final sauce."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Blanquette de veau belongs to a group of French dishes where the meat is never browned. A braise develops colour and intensity; the blanquette aims for the opposite. The sauce is creamy and pale, the meat tender but not falling apart, and the flavour comes entirely from the slow poaching and the enriched stock. It is demanding cooking: nothing is hidden by caramelisation or strong seasoning. The dish first appeared in French cookery writing in the 18th century and has been a fixture of domestic cooking ever since."
+          }
+        ]
+      }
+    ]
+  }
+}

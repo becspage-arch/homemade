@@ -1,0 +1,411 @@
+{
+  "slug": "pot-au-feu",
+  "title": "Pot-au-Feu",
+  "subtitle": "French beef and root vegetable broth, served in two courses",
+  "excerpt": "Beef brisket and marrow bones simmered with root vegetables in a clear broth. The French classic is served in two stages: the broth first as soup, then the meat and vegetables as a main with condiments.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pot-au-feu is documented in early French household manuals and codified by Escoffier in Le Guide Culinaire (1903). Alexandre Dumas wrote about it in his Grand Dictionnaire de Cuisine (1873). The two-course serving tradition is consistent across all French domestic sources from the 19th century onward.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "makeAheadNotes": "The broth can be made a day ahead and refrigerated. The fat rises and solidifies so it lifts off cleanly. Reheat gently and add the vegetables fresh for serving.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "slowSunday"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    },
+    {
+      "slug": "fine-mesh-sieve",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "skimming",
+      "term": "Skimming",
+      "definition": "Removing the grey foam and fat that rises to the surface of a simmering broth, using a ladle or large spoon. Done in the first 20 to 30 minutes of cooking."
+    }
+  ],
+  "techniqueSlugs": [
+    "stock-making"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pot-au-feu is beef and root vegetables simmered together in water until both are tender and the liquid has become a clear, deeply flavoured broth. The dish serves as its own starter and main: the broth is ladled out first as a light soup, then the meat and vegetables come to the table with mustard, cornichons, and coarse salt. It is the French national dish in the most domestic sense, found in every region and every home kitchen."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The work is almost entirely in the waiting. Skimming the broth in the first 20 minutes removes the grey foam that rises as the meat heats, and this is what keeps the liquid clear. After that, the pot looks after itself. The total time is 3 hours, most of which requires no attention."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "beef-brisket",
+              "amount": 1200,
+              "unit": "g",
+              "prepNote": "in one piece, tied with string if needed",
+              "isOptional": false,
+              "groupLabel": "Meat"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "peeled, halved",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "turnip",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "peeled, quartered",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "leek",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "split lengthways, washed",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "stalks, cut into thirds",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "halved, skin-on (for colour)",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "unpeeled, lightly crushed",
+              "isOptional": false,
+              "groupLabel": "Aromatics"
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Aromatics"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Aromatics"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "whole peppercorns",
+              "isOptional": false,
+              "groupLabel": "Aromatics"
+            },
+            {
+              "ingredientSlug": "dijon-mustard",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "cornichons",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a large stockpot, at least 8 litres. The meat should sit well below the rim so the water can cover it fully. Coarse sea salt, Dijon mustard, and cornichons on the table are traditional accompaniments."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Start the broth"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the beef in the stockpot and cover with cold water by about 5 cm. Bring slowly to a boil over medium heat. As the water heats, grey foam will rise to the surface. "
+          },
+          {
+            "type": "text",
+            "text": "Skim",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "skimming"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " regularly with a ladle for the first 20 to 30 minutes until the foam stops rising and the broth runs clear. This step matters for a clean, clear result."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the aromatics"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the broth is clear, add the onion halves, garlic, thyme, bay, and peppercorns. Reduce to a low simmer, cover partially, and cook for 1.5 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the vegetables"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the carrots, turnips, leeks, and celery to the pot. Continue to simmer for a further 45 to 60 minutes until the beef is tender and the vegetables are cooked through but not collapsing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve in two courses"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lift the beef and vegetables from the broth. Keep warm, covered, in a low oven."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Strain the broth through a sieve into a clean pot. Taste and season with salt. Ladle the broth into bowls as a first course, with a small piece of carrot if you like."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slice the beef and arrange with the vegetables on a warmed platter. Serve with Dijon mustard, cornichons, and coarse salt."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The broth is cloudy",
+              "cause": "Not enough skimming in the early stage, or the broth boiled hard rather than simmered gently.",
+              "fix": "A cloudy broth still tastes good. To clear it, strain through a fine-mesh sieve lined with muslin. Next time, keep the heat at a bare simmer and skim diligently for the first 30 minutes."
+            },
+            {
+              "symptom": "The beef is tough",
+              "cause": "The cooking time was too short, or the liquid was boiling rather than simmering.",
+              "fix": "Continue cooking at a gentle simmer in 30-minute increments. Brisket can take up to 3.5 hours; the meat should shred easily when pressed."
+            },
+            {
+              "symptom": "The vegetables are mushy",
+              "cause": "The vegetables went in too early and cooked for too long.",
+              "fix": "Cut the vegetables larger next time. If they are already overcooked, serve them as a side mash rather than whole pieces, and enjoy the flavour."
+            },
+            {
+              "symptom": "The broth is bland",
+              "cause": "Insufficient salt, or the meat-to-water ratio was too high.",
+              "fix": "Season the broth generously with salt before serving. A small knob of butter stirred in at the end adds richness. The condiments (mustard, cornichons) are part of the flavour picture, not optional extras."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pot-au-feu, which means pot on the fire, is the foundational dish of French home cooking. It is older than any codified recipe, rooted in the habit of keeping a pot simmering on the hearth from which both broth and meat could be drawn throughout the week. Escoffier, Dumas, and Brillat-Savarin all wrote about it. The tradition of serving the broth first and the meat second, with condiments rather than sauce, reflects the dish's origins as a meal of economy and nourishment rather than luxury."
+          }
+        ]
+      }
+    ]
+  }
+}

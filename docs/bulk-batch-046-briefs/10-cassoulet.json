@@ -1,0 +1,398 @@
+{
+  "slug": "cassoulet",
+  "title": "Cassoulet",
+  "subtitle": "Slow-baked white bean and meat casserole from Languedoc",
+  "excerpt": "A deep dish of white beans slow-cooked with duck confit, smoked pork sausage, and bacon until the crust on top turns golden and the beans underneath are creamy. The classic dish of Languedoc.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Cassoulet is the defining dish of Languedoc, south-western France. The classic version from Castelnaudary is documented in Prosper Montagné, Larousse Gastronomique (1938), who was himself from the region. Elizabeth David, French Provincial Cooking (1960), and Paula Wolfert, The Cooking of South-West France (1983), both give exhaustive home-cook versions. The dish takes its name from the cassole, the earthenware dish it is traditionally cooked in.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the cooked cassoulet (before the final crust forms) for up to 3 months. Thaw overnight, reheat in the oven, and allow the crust to reform during the final 30 minutes.",
+    "batchable": false,
+    "makeAheadNotes": "Cassoulet improves overnight. Reheat in the oven at 160°C for 30 to 40 minutes, breaking the crust into the beans once and allowing a new one to form.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "slowSunday",
+      "comfortFood",
+      "dinnerParty"
+    ],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cassoulet",
+      "term": "Cassoulet",
+      "definition": "A slow-baked casserole of white beans, meat, and bread-crumb crust from Languedoc in south-western France. The word comes from the cassole, the conical earthenware pot in which it is traditionally cooked. The recipe has numerous regional variations: Castelnaudary uses only pork, Carcassonne adds mutton, Toulouse includes its own sausage."
+    }
+  ],
+  "techniqueSlugs": [
+    "braising"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cassoulet",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cassoulet"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is one of the great dishes of French regional cooking. The recipe is slow and unhurried: dried white beans soaked overnight, then cooked with meats until the dish forms a golden crust on top that is broken and stirred into the beans, reformed, broken again, reformed. A proper cassoulet is a project, but it is nearly all passive time."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This version uses duck confit legs, smoked pork sausages, and bacon. All three are easy to find, and the dish is rich and deeply flavoured without needing to track down specialist Languedoc meats."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "haricot-beans",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "soaked overnight in cold water",
+              "isOptional": false,
+              "groupLabel": "Beans"
+            },
+            {
+              "ingredientSlug": "duck-legs",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "confit (see confit de canard), or bought confit legs",
+              "isOptional": false,
+              "groupLabel": "Meats"
+            },
+            {
+              "ingredientSlug": "smoked-pork-sausage",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "cut into thick slices",
+              "isOptional": false,
+              "groupLabel": "Meats"
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Meats"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 6,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 4,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 3,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-fresh",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "dry, for the crust",
+              "isOptional": false,
+              "groupLabel": "Crust"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the beans"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Drain the soaked beans. Place in a large pot and cover with cold water by 5 cm. Bring to the boil and skim. Simmer for 45 minutes to 1 hour until just tender but still holding their shape. Drain, reserving 300 ml of the cooking water."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the meats"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oven to 160°C fan. If using home-made confit, lift the duck legs from their fat and drain. Heat a large frying pan over medium-high heat. Brown the duck legs, skin-side down, for 5 minutes until golden. Remove. Brown the sausages and lardons in the same pan for 3 to 4 minutes. Remove."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build and bake the cassoulet"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the Dutch oven, cook the onion in the olive oil over medium heat for 8 minutes until soft. Add the garlic, thyme, and bay and cook for 2 minutes. Add the tinned tomatoes and cook for 5 minutes until thickened."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the drained beans, stock, and 200 ml of bean cooking water. Season generously. Stir in the sausages and lardons. Nestle the duck legs on top, skin-side up."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Scatter the breadcrumbs evenly over the top. Drizzle with a little olive oil. Bake uncovered at 160°C for 1 hour and 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "After 45 minutes, the crust should be golden and beginning to crack. Break the crust into the beans with a spoon, stir gently, and smooth the surface again. Add a ladleful of bean liquid or stock if the beans look dry. Continue baking for the remaining 45 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The finished cassoulet should have a thick golden crust on top, and the beans underneath should be creamy and very tender. Serve directly from the dish."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The beans are still firm after 1 hour",
+              "cause": "Old dried beans take longer to cook, or the beans were not soaked long enough.",
+              "fix": "Continue cooking and check every 15 minutes. Old beans can take up to 2 hours to soften. Add more liquid if needed to keep the beans just covered."
+            },
+            {
+              "symptom": "The cassoulet is dry in the oven",
+              "cause": "Too much liquid evaporated during baking.",
+              "fix": "Add hot stock or reserved bean water in ladlefuls. The beans should always be sitting in a little liquid, not soupy, but not dry."
+            },
+            {
+              "symptom": "The crust is burning before the beans are cooked",
+              "cause": "The oven is too hot, or the breadcrumbs were applied too thickly.",
+              "fix": "Reduce to 150°C and cover loosely with foil. Remove the foil for the final 20 minutes to re-form the crust."
+            },
+            {
+              "symptom": "The duck skin is not crisp",
+              "cause": "The duck legs were covered by beans during baking.",
+              "fix": "The legs should sit proud of the beans, skin upward. Push the beans around them rather than burying the skin. If still soft, remove the legs and finish under the grill for 5 minutes."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Three towns in Languedoc, Castelnaudary, Carcassonne, and Toulouse, each claim to make the definitive cassoulet, and the debate has lasted for centuries. Castelnaudary's version uses only pork; Carcassonne adds partridge or mutton; Toulouse uses its own sausage. All three agree on the slow baking, the white beans, and the broken-and-reformed crust. Outside France, cassoulet is the dish that has made the cooking of south-west France famous beyond the region's borders."
+          }
+        ]
+      }
+    ]
+  }
+}
