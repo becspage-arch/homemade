@@ -164,6 +164,8 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'kugelhopf-tin', name: 'Kugelhopf tin', category: 'tin', aliases: [], isPurchasable: true, typicalPriceGbp: 2500, notes: 'Tall fluted ring for Alsatian and Austrian yeast cakes.' },
   { slug: 'savarin-tin', name: 'Savarin tin', category: 'tin', aliases: ['ring mould'], isPurchasable: true, typicalPriceGbp: 1800 },
   { slug: 'terrine-tin', name: 'Terrine mould', category: 'tin', aliases: [], isPurchasable: true, typicalPriceGbp: 4000, notes: 'For pâté and terrine. Cast-iron with a lid is best.' },
+  { slug: 'deep-tartlet-tins-10cm', name: 'Deep tartlet tins, 10 cm', pluralName: 'deep tartlet tins', category: 'tin', aliases: ['individual tart tins', 'small tart tins'], isPurchasable: true, typicalPriceGbp: 1800, notes: 'Deep loose-bottomed individual tart tins, 10 cm. For individual pies and deep-filled tarts.' },
+  { slug: 'silicone-hemisphere-mould', name: 'Silicone hemisphere mould', category: 'tin', aliases: ['dome mould', 'sphere mould'], isPurchasable: true, typicalPriceGbp: 800, notes: 'Half-sphere cavities for hot cocoa bombs, cake pops, and dome-shaped confectionery.' },
 
   // ────────────────────────────────────────────────────────────────────────
   // BOARD (~4)
@@ -172,6 +174,8 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'chopping-board-large', name: 'Large chopping board', category: 'board', aliases: ['butcher block'], isPurchasable: true, typicalPriceGbp: 5000, notes: 'End-grain wood blocks save knife edges and clean up well.' },
   { slug: 'pastry-board', name: 'Pastry board', category: 'board', aliases: ['marble pastry slab'], isPurchasable: true, typicalPriceGbp: 4000, notes: 'Marble stays cool — keeps butter from melting into the flour.' },
   { slug: 'bench-scraper', name: 'Bench scraper', category: 'board', aliases: ['dough scraper'], isPurchasable: true, typicalPriceGbp: 800, notes: 'Plastic for dough, metal for the work surface.' },
+  { slug: 'board-non-stick', name: 'Non-stick work board', category: 'board', aliases: ['non-stick mat', 'fondant board', 'sugar paste board'], isPurchasable: true, typicalPriceGbp: 1000, notes: 'Smooth non-stick surface for rolling out fondant, marzipan, and sugar paste. Keeps the paste from sticking without adding excess icing sugar.' },
+  { slug: 'foam-pad', name: 'Foam pad', category: 'board', aliases: ['petal pad', 'flower foam pad'], isPurchasable: true, typicalPriceGbp: 600, notes: 'A thick foam mat for thinning the edges of sugar paste petals and leaves using ball tools and veining tools.' },
 
   // ────────────────────────────────────────────────────────────────────────
   // UTENSIL (~25)
@@ -221,6 +225,17 @@ export const TOOLS: ToolSeed[] = [
   { slug: 'pasta-machine', name: 'Pasta machine', category: 'utensil', aliases: ['pasta roller'], isPurchasable: true, typicalPriceGbp: 5500, notes: 'Atlas 150 is the standard. Hand-cranked.' },
   { slug: 'ravioli-stamp', name: 'Ravioli stamp', category: 'utensil', aliases: ['pastry cutter'], isPurchasable: true, typicalPriceGbp: 800 },
   { slug: 'biscuit-cutters', name: 'Biscuit cutters', pluralName: 'biscuit cutters', category: 'utensil', aliases: ['cookie cutters'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'A graduated set covers most jobs.' },
+  { slug: 'zester', name: 'Zester / microplane', category: 'utensil', aliases: ['microplane zester', 'fine grater', 'citrus zester'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'For citrus zest and finely grating hard cheeses, chocolate, and nutmeg.' },
+  { slug: 'heatproof-jug', name: 'Heatproof jug', category: 'utensil', aliases: ['pouring jug', 'glass measuring jug'], isPurchasable: true, typicalPriceGbp: 1200, notes: 'Glass or Pyrex jug for pouring hot sauces, custards, and melted chocolate into moulds.' },
+  { slug: 'cocktail-sticks', name: 'Cocktail sticks', pluralName: 'cocktail sticks', category: 'utensil', aliases: ['toothpicks', 'wooden picks'], isPurchasable: true, typicalPriceGbp: 200, notes: 'For stirring small amounts of food colouring into icing, testing fudge set, and securing canapés.' },
+  { slug: 'serrated-cake-comb', name: 'Serrated cake comb', category: 'utensil', aliases: ['icing comb', 'cake scraper comb', 'decorating comb'], isPurchasable: true, typicalPriceGbp: 600, notes: 'A rigid scraper with a toothed or textured edge for creating grooved patterns in buttercream on the sides of layer cakes.' },
+  { slug: 'ball-modelling-tool', name: 'Ball modelling tool', category: 'utensil', aliases: ['ball tool', 'sugar craft ball tool'], isPurchasable: true, typicalPriceGbp: 500, notes: 'A metal or plastic stick with smooth ball ends for thinning and cupping sugar paste petals when making sugar flowers.' },
+  { slug: 'veining-tool', name: 'Veining tool', category: 'utensil', aliases: ['petal veiner', 'leaf veiner', 'sugar craft veining tool'], isPurchasable: true, typicalPriceGbp: 500, notes: 'For pressing vein and leaf detail into sugar paste flowers and foliage.' },
+  { slug: 'floral-tape', name: 'Floral tape', category: 'utensil', aliases: ['florist tape', 'stem tape'], isPurchasable: true, typicalPriceGbp: 300, notes: 'Self-sealing crepe tape for wrapping sugar flower wire stems and binding multiple wires together.' },
+  { slug: 'floral-wire-26g', name: 'Floral wire, 26-gauge', pluralName: 'floral wires', category: 'utensil', aliases: ['florist wire 26g', 'sugar flower wire'], isPurchasable: true, typicalPriceGbp: 400, notes: '26-gauge white floral wire for constructing individual sugar flower petals and assembling sprays.' },
+  { slug: 'sweet-pea-cutters', name: 'Sweet pea cutters', pluralName: 'sweet pea cutters', category: 'utensil', aliases: ['sweet pea petal cutter'], isPurchasable: true, typicalPriceGbp: 800, notes: 'A set of petal-shaped cutters sized for sweet pea sugar flowers. Includes the wing petal and keel petal shapes.' },
+  { slug: 'silicone-lace-mould', name: 'Silicone lace mould', category: 'utensil', aliases: ['edible lace mould', 'cake lace mat'], isPurchasable: true, typicalPriceGbp: 1500, notes: 'A food-grade silicone mat with a lace pattern cut-out. Edible lace paste is spread over the mat, allowed to set, then peeled off and applied to cakes.' },
+  { slug: 'piping-nozzle-round', name: 'Round piping nozzle', category: 'utensil', aliases: ['writing nozzle', 'round tip', 'plain tube'], isPurchasable: true, typicalPriceGbp: 400, notes: 'Circular opening for lines, writing, dots, and filling choux.' },
 
   // ────────────────────────────────────────────────────────────────────────
   // APPLIANCE (~10)
