@@ -1,0 +1,211 @@
+{
+  "slug": "slow-cooker-chicken-jalfrezi",
+  "title": "Slow-cooker chicken jalfrezi",
+  "subtitle": "A bold, pepper-rich curry with heat and colour",
+  "excerpt": "Boneless chicken thighs with red and green peppers in a spiced tomato sauce. A jalfrezi is stir-fried in a restaurant kitchen; the slow cooker version trades the char for a deeper, slower flavour.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Jalfrezi originated as a British-Indian dish, possibly derived from Bengali cooking, documented widely in British curry house culture from the 1970s onward. References include Pat Chapman, The Curry Club Favourite Restaurant Curries (1984).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 360,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in portions for up to 3 months. Defrost overnight in the fridge and reheat gently on the hob.",
+    "batchable": true,
+    "batchNotes": "Doubles well for a crowd or for meal prep across the week.",
+    "makeAheadNotes": "Tastes even better the next day as the flavours settle. Store in the fridge for up to 3 days.",
+    "dietaryFlags": [],
+    "cuisine": "angloIndian",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "slow-cooker", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "jalfrezi",
+      "term": "Jalfrezi",
+      "definition": "A British-Indian curry style where meat and peppers are cooked in a dry-fry method with spiced tomato sauce, resulting in a dish with a slight char and distinct pepper flavour."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "text": "jalfrezi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": { "termSlug": "jalfrezi" }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " at a curry house is cooked at high heat: peppers and chicken tossed in a wok over a fierce flame. The slow cooker version cannot replicate that char, but it gives you the same bold flavours in a sauce that has had hours to deepen. The peppers soften and colour; the tomato sauce becomes thicker and more complex."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is a medium-hot curry. The heat comes from green chillies and chilli powder; reduce either or both if you want something milder. If you want more heat, add a whole dried chilli to the pot."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve with basmati rice or naan. A bowl of plain yoghurt on the side is useful for balancing the heat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 700, "unit": "g", "prepNote": "skin removed, cut into chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-root", "amount": 20, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-red", "amount": 1, "unit": "each", "prepNote": "deseeded and sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-green", "amount": 1, "unit": "each", "prepNote": "deseeded and sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-green", "amount": 2, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garam-masala", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "turmeric", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander", "amount": 15, "unit": "g", "prepNote": "to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Combine everything in the pot" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{onion}} diced onion, {{garlic}} of grated garlic, and {{ginger-root}} of grated ginger to the slow cooker. Stir in all the ground spices: {{cumin-ground}} of cumin, {{coriander-ground}} of coriander, {{turmeric}} of turmeric, and {{chilli-powder}} of chilli powder. Add {{tinned-tomatoes}} of tinned tomatoes and {{tomato-puree}} of tomato puree."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the chicken and peppers" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{chicken-thighs-boneless}} of chicken chunks, {{pepper-red}} sliced red pepper, {{pepper-green}} sliced green pepper, and {{chilli-green}} sliced green chillies. Season with {{sea-salt-fine}} of salt. Stir everything together so the chicken is coated in the sauce. Set the slow cooker to LOW and cook for 5 to 6 hours."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stir in {{garam-masala}} of garam masala. Taste and adjust seasoning. Scatter fresh coriander leaves over the top before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "The peppers are completely soft and have lost their bite",
+              "cause": "Six hours on low breaks down peppers fully. The texture becomes more saucy than distinct.",
+              "fix": "Add the peppers halfway through cooking (at 3 hours) to keep more texture. The flavour will be the same."
+            },
+            {
+              "symptom": "The sauce is too thin",
+              "cause": "The chicken and tomatoes released more liquid than the sauce could absorb.",
+              "fix": "Remove the lid and set the slow cooker to HIGH for 30 minutes to reduce the sauce. Or pour the sauce into a saucepan and reduce separately."
+            },
+            {
+              "symptom": "The curry is too hot to eat",
+              "cause": "Green chillies vary widely in heat level.",
+              "fix": "Stir in a spoonful of plain yoghurt or a little coconut milk to cool the heat. Serve with plenty of rice and plain yoghurt on the side."
+            },
+            {
+              "symptom": "The sauce tastes bitter",
+              "cause": "The spices may have been added in a large quantity without enough liquid, causing them to turn harsh during long cooking.",
+              "fix": "Add a pinch of sugar and stir well. Next time, fry the spices in a tablespoon of oil for 30 seconds in a pan before adding to the slow cooker."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Jalfrezi is one of the most ordered curries in British curry houses, sitting just above medium on most restaurant heat scales. It crossed from restaurant to home kitchen as spice boxes and curry paste became widely available in British supermarkets during the 1990s. The slow cooker version makes it a viable weeknight option without compromising on flavour."
+          }
+        ]
+      }
+    ]
+  }
+}

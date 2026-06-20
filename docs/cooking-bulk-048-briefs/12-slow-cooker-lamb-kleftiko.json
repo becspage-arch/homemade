@@ -1,0 +1,202 @@
+{
+  "slug": "slow-cooker-lamb-kleftiko",
+  "title": "Slow-cooker lamb kleftiko",
+  "subtitle": "Greek slow-braised lamb with lemon, garlic, and herbs",
+  "excerpt": "Lamb shoulder cooked low and slow with white wine, lemon, garlic, and dried oregano until tender enough to pull apart with a fork. A Greek classic made easy by the slow cooker.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Kleftiko is a traditional Greek dish of lamb sealed and slow-cooked, documented in Greek culinary literature and popularised in the UK by writers including Elizabeth David, Mediterranean Food (1950), and Tessa Kiros, Falling Cloudberries (2004).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 480,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze cooled shredded meat in portions for up to 3 months. Defrost overnight in the fridge and reheat gently.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The lamb holds beautifully for up to 2 days in the fridge. Reheat covered in a 160°C oven for 20 minutes.",
+    "dietaryFlags": [],
+    "cuisine": "greek",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "slowSunday", "hearty"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "slow-cooker", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "kleftiko",
+      "term": "Kleftiko",
+      "definition": "A Greek dish of lamb cooked sealed in paper or foil with oil, lemon, garlic, and herbs for many hours. The name comes from the Greek word for thief; the dish was traditionally cooked in a sealed pit to avoid detection."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Kleftiko",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": { "termSlug": "kleftiko" }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " means sealed and slow-cooked, which is exactly what the slow cooker does very well. Lamb shoulder with white wine, lemon, garlic, and plenty of oregano goes in raw and emerges, eight hours later, as meat that falls apart at a touch. The cooking liquid becomes a light, fragrant broth."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The original dish was wrapped tightly in paper to seal in steam and flavour. The slow cooker lid does the same job. The result is bright with lemon and herb, which balances the richness of the lamb shoulder."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve with rice, flatbreads, or roasted potatoes. A spoonful of Greek yoghurt and some fresh parsley are good alongside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 1200, "unit": "g", "prepNote": "bone-in or boneless", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "clove", "prepNote": "halved lengthways", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 2, "unit": "each", "prepNote": "juice and zest", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "oregano-dried", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 2, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-dry", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 600, "unit": "g", "prepNote": "cut into large wedges", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Score and stud the lamb" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use a small knife to make cuts about 2 cm deep all over {{lamb-shoulder}} of lamb shoulder. Push a halved clove of garlic into each cut. Rub all over with {{olive-oil}} of olive oil, {{sea-salt-fine}} of salt, {{black-pepper-ground}} of black pepper, {{oregano-dried}} of dried oregano, and the zest of {{lemon}} lemons."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add to the slow cooker" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If using potatoes, place {{potato}} of potato wedges in the base of the slow cooker. Set the lamb on top. Pour over {{white-wine-dry}} of dry white wine and {{stock-beef}} of stock. Squeeze over the juice of both lemons. Tuck in {{rosemary}} of rosemary."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set the slow cooker to LOW and cook for 7 to 8 hours. The lamb is ready when the meat pulls away from the bone easily. Serve straight from the pot, spooning the cooking juices over the meat."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "The lamb tastes very sharp from the lemon",
+              "cause": "Two lemons in a sealed slow cooker can create a strong citrus note, particularly if the white pith was added.",
+              "fix": "Next time use just one lemon and add a small pinch of sugar to the cooking liquid. Stir a tablespoon of honey into the juices at the end to balance the acidity."
+            },
+            {
+              "symptom": "The lamb is not falling apart after 8 hours",
+              "cause": "Bone-in lamb shoulder can take longer than boneless. Older animals or smaller slow cookers with less consistent heat may also need more time.",
+              "fix": "Cook on HIGH for a further hour. The bone-in version always takes longer than boneless."
+            },
+            {
+              "symptom": "The potatoes are waterlogged and falling apart",
+              "cause": "Potato in the base of the slow cooker absorbs the cooking liquid and breaks down over a long cook.",
+              "fix": "For a firmer result, add the potato only in the last 2 hours. Or cook potatoes separately and serve alongside."
+            },
+            {
+              "symptom": "The broth tastes thin and watery",
+              "cause": "The lamb and vegetables released more liquid than expected.",
+              "fix": "Pour the cooking juices into a small saucepan and reduce over high heat for 5 to 8 minutes until they intensify. Spoon over the lamb at the table."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Kleftiko is made across Greece and Cyprus and has become one of the most widely known Greek dishes outside Greece. The name translates as belonging to the klephts, mountain brigands who cooked sealed in pits to avoid detection. The slow cooker domesticates that technique into something anyone can manage on a Sunday morning."
+          }
+        ]
+      }
+    ]
+  }
+}

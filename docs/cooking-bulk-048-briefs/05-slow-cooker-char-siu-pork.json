@@ -1,0 +1,205 @@
+{
+  "slug": "slow-cooker-char-siu-pork",
+  "title": "Slow-cooker char siu pork",
+  "subtitle": "Chinese barbecue pork shoulder, sticky and deeply savoured",
+  "excerpt": "Pork shoulder marinated in a classic char siu blend of honey, hoisin, and five spice, then cooked until it shreds easily. Serve over rice or stuff into bao buns.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Char siu (Chinese BBQ pork) is a Cantonese classic, documented in Chinese cooking references including Yan-kit So, Classic Chinese Cookbook (1984). The slow-cooker adaptation is widely used in home cooking.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 480,
+    "restingMinutes": 0,
+    "chillingMinutes": 120,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Shred the cooled pork and freeze in portions with some cooking liquid for up to 3 months.",
+    "batchable": true,
+    "batchNotes": "Cook a larger piece of pork shoulder for a crowd. The shredded meat is versatile across several meals.",
+    "makeAheadNotes": "Marinate the pork overnight in the fridge for a deeper flavour. The cooked pork keeps refrigerated for up to 4 days.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "hearty", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "slow-cooker", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "char-siu",
+      "term": "Char siu",
+      "definition": "Cantonese BBQ pork, classically roasted on skewers in a honey, hoisin, and five spice marinade until lacquered and caramelised on the outside and tender within."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Classic "
+          },
+          {
+            "type": "text",
+            "text": "char siu",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": { "termSlug": "char-siu" }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is hung in a hot oven until the surface lacquers. The slow cooker version does not replicate that exactly, but it produces pork shoulder so tender and so flavoured that it earns its place at the table without apology. A brief spell under a hot grill at the end restores some of the caramelised surface."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The marinade is built from hoisin sauce, honey, dark soy, and five spice. It needs only 2 hours of marinating at minimum, though overnight is better. The slow cooker does the rest over 7 to 8 hours, and the pork will shred at a touch."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve sliced over steamed rice with the reduced cooking liquid as a glaze. The shredded meat also works in bao buns or stuffed into steamed rolls."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "pork-shoulder", "amount": 1200, "unit": "g", "prepNote": "boneless, cut into 3 large chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "hoisin-sauce", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-dark", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "shaoxing-wine", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "chinese-five-spice", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-root", "amount": 20, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Marinate the pork" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix together the {{hoisin-sauce}} of hoisin sauce, {{honey}} of honey, {{soy-sauce-dark}} of dark soy sauce, {{soy-sauce-light}} of light soy sauce, {{shaoxing-wine}} of Shaoxing wine if using, {{chinese-five-spice}} of five spice, grated {{garlic}} of garlic, and {{ginger-root}} of grated ginger in a bowl. Add {{pork-shoulder}} of pork shoulder and turn to coat thoroughly. Cover and refrigerate for at least 2 hours, or overnight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Slow cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Transfer the pork and all the marinade to the slow cooker. Set to LOW and cook for 7 to 8 hours, or HIGH for 4 to 5 hours, until the pork shreds easily with two forks."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Glaze and finish" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lift the pork out of the slow cooker and place on a foil-lined baking tray. Pour the cooking liquid into a small pan and boil over high heat for 5 minutes until reduced and syrupy. Brush the reduced glaze over the pork and grill under a high heat for 3 to 5 minutes until caramelised. Slice or shred to serve."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "The pork is not pulling apart after 8 hours",
+              "cause": "The pork shoulder may have been cut too thickly, or the slow cooker runs cooler than expected.",
+              "fix": "Switch to HIGH and cook for a further hour. The connective tissue in pork shoulder will eventually break down; it cannot overcook."
+            },
+            {
+              "symptom": "The glaze is too thin after reducing",
+              "cause": "There was too much liquid in the slow cooker from the pork releasing moisture.",
+              "fix": "Continue reducing the glaze until it thickens to a honey-like consistency. This can take up to 10 minutes."
+            },
+            {
+              "symptom": "The flavour is too salty",
+              "cause": "The combination of hoisin, dark soy, and light soy adds a significant amount of salt.",
+              "fix": "Serve with plain steamed rice, which balances the saltiness. Next time, reduce the dark soy sauce by 1 tbsp."
+            },
+            {
+              "symptom": "The pork surface did not caramelise under the grill",
+              "cause": "The grill may not have been hot enough, or the surface was too wet from the cooking liquid.",
+              "fix": "Pat the pork dry before brushing with the glaze, and ensure the grill is fully preheated."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Char siu pork is a cornerstone of Cantonese cooking and a standard feature of roast meat shops across China and southeast Asia. The British version, adapted for home ovens and now for the slow cooker, keeps the essential flavour while making the technique more practical. Steamed rice and a cup of tea make a complete meal of it."
+          }
+        ]
+      }
+    ]
+  }
+}

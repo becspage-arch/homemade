@@ -1,0 +1,222 @@
+{
+  "slug": "slow-cooker-lamb-hotpot",
+  "title": "Slow-cooker lamb hotpot",
+  "subtitle": "Lancashire lamb under a layer of sliced potato",
+  "excerpt": "Tender lamb shoulder with carrots and onions, topped with overlapping potato slices that soak up the broth. A slow-cooker version of the classic Lancashire dish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Lancashire hotpot is a classic British dish, documented in Mrs Beeton's Book of Household Management (1861) and widely referenced in 20th century British cookbooks. The slow-cooker adaptation is a standard home-cooking approach.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 480,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cool completely and freeze without the potato topping for best results, up to 3 months. Add fresh potato slices and crisp under the grill when reheating.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Cook a day ahead and refrigerate. Reheat covered on the hob or in a 160°C oven for 20 minutes.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "hearty", "slowSunday"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "slow-cooker", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "hotpot",
+      "term": "Hotpot",
+      "definition": "A Northern English stew of meat and root vegetables sealed under a crust of overlapping potato slices, traditionally cooked in a tall earthenware pot in a low oven."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "text": "hotpot",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": { "termSlug": "hotpot" }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " in a slow cooker is a practical thing. The lamb shoulder becomes very tender over eight hours, the vegetables meld into the broth, and the potato slices on top soak up the cooking liquid from beneath. It will not have the crisped top of an oven version, but a brief spell under the grill at the end gives the surface what it needs."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Browning the lamb first is optional but worth doing. The colour it picks up in the pan adds a depth the broth keeps for the whole cook. If you are in a hurry, skip it; the result is still very good."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve straight from the pot with pickled red cabbage on the side."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 700, "unit": "g", "prepNote": "boneless, cut into 4 cm pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rapeseed-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "cut into coins", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 600, "unit": "g", "prepNote": "waxy variety, thinly sliced to about 3 mm", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "melted", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the lamb" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season {{lamb-shoulder}} of lamb shoulder with salt. Heat {{rapeseed-oil}} of oil in a frying pan over high heat. Brown the lamb in batches for 2 to 3 minutes per side. Transfer to the slow cooker."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{onion}} sliced onions, {{carrot}} carrot coins, and {{garlic}} of crushed garlic to the slow cooker. Add {{worcestershire-sauce}} of Worcestershire sauce and {{stock-beef}} of beef stock. Tuck in {{thyme}} of thyme and {{bay-leaves}} of bay. Season lightly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Lay the potato topping" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Arrange {{potato}} of thinly sliced potato in overlapping layers across the top of the stew, covering it completely. Brush the top with {{unsalted-butter}} of melted butter and season with a little salt."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set the slow cooker to LOW and cook for 7 to 8 hours. The lamb will be very tender and the potato slices will have cooked through and absorbed the broth. If you want a browned top, brush with more butter and place the insert (or transfer to a baking dish) under a hot grill for 5 minutes until golden."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "The potato topping is waterlogged rather than cooked through",
+              "cause": "Too much liquid in the slow cooker has seeped up through the potato layer.",
+              "fix": "This is normal with a slow cooker version. The grill step at the end dries the surface. Reduce the stock by 50 ml next time."
+            },
+            {
+              "symptom": "The lamb is still firm after 8 hours",
+              "cause": "Lamb shoulder needs extended heat to break down its connective tissue. Older or less powerful slow cookers may cook at a lower temperature.",
+              "fix": "Switch to HIGH for 1 hour more. The lamb will eventually become tender."
+            },
+            {
+              "symptom": "The broth tastes thin",
+              "cause": "The lamb may not have been browned first, or the stock was very mild.",
+              "fix": "Stir a teaspoon of Worcestershire sauce or a small knob of butter into the broth before serving. Season well with salt."
+            },
+            {
+              "symptom": "The potato slices fell apart into the stew",
+              "cause": "The potato variety was too floury and broke down during the long cook.",
+              "fix": "Use a waxy potato such as Charlotte or Desiree next time; they hold their shape better. Avoid King Edward or Maris Piper for the topping."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lancashire hotpot is one of the most distinctively British dishes: inexpensive meat and potatoes, long slow heat, no fuss. It was the working meal of Northern English households for generations, cooked in a tall earthenware pot in a cooling bread oven. The slow cooker version is a practical heir to that tradition."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "slug": "slow-cooker-chicken-korma",
+  "title": "Slow-cooker chicken korma",
+  "subtitle": "Mild, creamy, gently spiced coconut curry",
+  "excerpt": "Boneless chicken thighs cooked in a fragrant korma sauce of coconut milk, ground almonds, and warm spices. Mild enough for most palates, rich enough to satisfy.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Korma (qorma) is a Mughal court dish of braised meat in a rich sauce, documented in Madhur Jaffrey, An Invitation to Indian Cooking (1973). The British-style korma, with coconut milk and cream, is a widely adapted home-cooking version.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 360,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in portions for up to 3 months. Defrost overnight in the fridge and reheat gently. The cream may separate on reheating; stir well and add a splash of water if needed.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Keep the spice quantities the same and increase by the ratio of chicken added.",
+    "makeAheadNotes": "Tastes better the next day. Store in the fridge for up to 3 days.",
+    "dietaryFlags": [],
+    "cuisine": "angloIndian",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight", "kidFriendly"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "slow-cooker", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "korma",
+      "term": "Korma",
+      "definition": "A style of south Asian cooking where meat is gently braised in a mild, rich sauce based on yoghurt, cream, or ground nuts, with warming spices such as cardamom, cinnamon, and cloves."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "text": "korma",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": { "termSlug": "korma" }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is a gentle curry: warming spices, creamy sauce, chicken that has spent enough time in the pot to become very soft. The slow cooker suits it well. The coconut milk stays rich without reducing too far, the ground almonds thicken the sauce naturally, and the chicken thighs stay moist throughout."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "No browning is needed here. The sauce is mild enough that a seared surface would add little, and the simplicity of dumping everything into the pot is part of the appeal. Stir in the cream at the end to keep it fresh and bright."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve with basmati rice and warm naan. A few fresh coriander leaves on top are a good finish."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 700, "unit": "g", "prepNote": "skin removed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-root", "amount": 20, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coconut-milk", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "almond-flour", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "curry-powder", "amount": 2, "unit": "tbsp", "prepNote": "mild", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cardamom-green", "amount": 4, "unit": "each", "prepNote": "lightly crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cinnamon-stick", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": "stirred in at the end", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander", "amount": 10, "unit": "g", "prepNote": "to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the sauce base" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the grated {{onion}} onion, {{garlic}} of garlic, and {{ginger-root}} of ginger to the slow cooker. Stir in {{curry-powder}} of curry powder, {{tomato-puree}} of tomato puree, and {{almond-flour}} of ground almonds. Pour in {{coconut-milk}} of coconut milk. Add {{cardamom-green}} lightly crushed cardamom pods and {{cinnamon-stick}} cinnamon stick."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the chicken and cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Nestle {{chicken-thighs-boneless}} of boneless chicken thighs into the sauce, turning to coat. Season with {{sea-salt-fine}} of salt. Set the slow cooker to LOW and cook for 5 to 6 hours, until the chicken is very soft and cooked through."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Finish and serve" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Discard the cardamom pods and cinnamon stick. Stir in {{double-cream}} of double cream. Taste and adjust seasoning. Scatter with fresh coriander leaves before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "The sauce looks curdled or grainy",
+              "cause": "The coconut milk may have split during cooking, or the cream was added to a very hot pot.",
+              "fix": "Stir vigorously; it usually comes back together. Add the cream off the heat next time. A split sauce still tastes fine."
+            },
+            {
+              "symptom": "The curry tastes too mild",
+              "cause": "The curry powder was old, or the spice amount was on the low side for the quantity of chicken.",
+              "fix": "Add an extra teaspoon of curry powder and a pinch of cayenne when adjusting at the end. Taste as you go."
+            },
+            {
+              "symptom": "The sauce is very thin",
+              "cause": "The chicken released a lot of liquid during cooking, diluting the coconut milk.",
+              "fix": "Pour the sauce into a saucepan and reduce over medium heat for 5 to 8 minutes until thickened, then return the chicken."
+            },
+            {
+              "symptom": "The chicken pieces have broken apart",
+              "cause": "Boneless thighs become very soft after 6 hours on low. Longer cooking or the high setting accelerates this.",
+              "fix": "This is fine for serving over rice but less ideal if you wanted distinct pieces. Aim for 5 hours next time, or use skin-on bone-in thighs which hold their shape better."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The British korma diverged from its Mughal origins as it passed through curry houses and then into home kitchens. The coconut milk version is a British adaptation that has become its own distinct thing: milder and sweeter than the yoghurt-based original, and very popular with people who are new to curry. It belongs on the table with a generous pot of rice and no apology."
+          }
+        ]
+      }
+    ]
+  }
+}

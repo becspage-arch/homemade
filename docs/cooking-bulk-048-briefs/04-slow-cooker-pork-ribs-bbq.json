@@ -1,0 +1,221 @@
+{
+  "slug": "slow-cooker-pork-ribs-bbq",
+  "title": "Slow-cooker BBQ pork ribs",
+  "subtitle": "Sticky, falling-off-the-bone ribs with a smoky sauce",
+  "excerpt": "Pork ribs cooked low and slow in a smoky BBQ sauce until the meat pulls cleanly from the bone. A sticky, satisfying result with very little hands-on work.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Slow-cooked pork ribs with BBQ sauce are a staple of American home cooking, adapted widely in British home cookbooks since the 1990s. The method draws on general American barbecue traditions.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 360,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze cooled ribs in their sauce for up to 2 months. Defrost overnight in the fridge and reheat in a hot oven or under the grill.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Cook the ribs a day ahead and refrigerate in the sauce. Reheat in a hot oven at 200°C for 15 minutes until sticky and caramelised.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "hearty", "bbq"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "slow-cooker", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "low-and-slow",
+      "term": "Low and slow",
+      "definition": "A cooking approach where meat is cooked at a low temperature for a long period, typically to break down tough connective tissue and fat into tender, flavourful results."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pork ribs cooked "
+          },
+          {
+            "type": "text",
+            "text": "low and slow",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": { "termSlug": "low-and-slow" }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " become something different from ribs cooked any other way. Six hours in the slow cooker renders the fat, loosens the connective tissue, and leaves the meat clinging to the bone by the thinnest thread. A brief stint under a hot grill at the end sets the sauce and gives the surface some colour."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The sauce is built around smoked paprika, ketchup, and dark brown sugar: simple pantry ingredients that work well together over a long cook. No marinating or overnight preparation needed. Season, coat, cook."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve with coleslaw and corn on the cob, or with a simple green salad and rice to catch the sauce."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pork-ribs", "amount": 1200, "unit": "g", "prepNote": "rack of ribs, or individual ribs", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "smoked-paprika", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the dry rub" },
+            { "ingredientSlug": "ketchup", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "dark-brown-sugar", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "cider-vinegar", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
+            { "ingredientSlug": "soy-sauce-dark", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Season the ribs" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix {{smoked-paprika}} of smoked paprika, {{garlic-powder}} of garlic powder, {{onion-powder}} of onion powder, {{sea-salt-fine}} of salt, and {{black-pepper-ground}} of black pepper in a small bowl. Rub the spice mix all over {{pork-ribs}} of pork ribs, pressing it into the surface."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the sauce" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stir all the sauce ingredients together in a bowl until the sugar has dissolved."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If cooking a rack, cut it into sections of 3 to 4 ribs each so they fit in the slow cooker. Pour half the sauce into the base of the slow cooker. Arrange the ribs on top and pour over the remaining sauce. Set to LOW and cook for 5 to 6 hours until the meat is very tender and pulling away from the bone."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Glaze under the grill" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Transfer the ribs to a baking tray lined with foil. Spoon over some of the cooking sauce. Place under a hot grill for 5 to 8 minutes until sticky and caramelised, watching closely so they do not burn. Serve immediately with the remaining sauce spooned over."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "The ribs are still firm after 6 hours",
+              "cause": "The ribs may have been very meaty and thick, or the slow cooker temperature on LOW was not high enough.",
+              "fix": "Switch to HIGH and cook for a further hour. The meat should begin to pull away from the bone visibly."
+            },
+            {
+              "symptom": "The sauce is very thin and watery",
+              "cause": "Pork releases a lot of liquid during slow cooking, which dilutes the sauce.",
+              "fix": "Pour the sauce into a saucepan and boil briskly for 5 minutes until reduced and sticky. Use this reduced sauce for glazing."
+            },
+            {
+              "symptom": "The ribs burnt under the grill",
+              "cause": "The grill was too hot or the ribs were left unattended.",
+              "fix": "Grill on a lower shelf or move to the oven at 200°C for 10 minutes instead, which gives more control."
+            },
+            {
+              "symptom": "The dry rub tastes too smoky",
+              "cause": "Smoked paprika varies in intensity between brands.",
+              "fix": "Reduce the smoked paprika to 1 tsp and add an extra tsp of sweet paprika next time."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Slow-cooked ribs are part of the American barbecue tradition that reached British kitchens in the 1980s and 1990s as restaurant barbecue became popular. The slow cooker makes the technique available to anyone without a smoker or an outdoor grill. The grill finish is not strictly necessary, but it transforms the surface from braised to sticky-lacquered, which is worth the extra 10 minutes."
+          }
+        ]
+      }
+    ]
+  }
+}

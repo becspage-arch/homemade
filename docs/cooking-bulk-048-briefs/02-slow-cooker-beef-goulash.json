@@ -1,0 +1,210 @@
+{
+  "slug": "slow-cooker-beef-goulash",
+  "title": "Slow-cooker beef goulash",
+  "subtitle": "Hungarian-style paprika stew, deep red and gently spiced",
+  "excerpt": "Braising steak in a rich paprika and tomato sauce, cooked slowly until the beef is very tender. A hearty, warming stew that needs only rice or bread alongside.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Goulash (gulyas) is a Hungarian peasant dish with roots in the 9th century, documented in Karoly Gundel, Hungarian Cookery Book (1934). The slow-cooker adaptation follows the standard braised method common in British cookbooks.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 480,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in portions for up to 3 months. Defrost overnight in the fridge and reheat gently on the hob, adding a splash of water if needed.",
+    "batchable": true,
+    "batchNotes": "Double the recipe easily. Use a large slow cooker and divide between containers once cooled.",
+    "makeAheadNotes": "Goulash tastes better the next day. Refrigerate for up to 3 days and reheat gently.",
+    "dietaryFlags": [],
+    "cuisine": "easternEuropean",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "hearty", "cosy"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "slow-cooker", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "goulash",
+      "term": "Goulash",
+      "definition": "A Hungarian meat stew seasoned generously with paprika, traditionally made with beef or pork and cooked long and slow until the sauce is thick and the meat is tender."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A "
+          },
+          {
+            "type": "text",
+            "text": "goulash",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": { "termSlug": "goulash" }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is one of the most satisfying stews you can make in a slow cooker. Generous paprika, braising steak, and a tin of tomatoes go in together and emerge, eight hours later, as a thick, brick-red sauce with meat that breaks apart at the touch of a spoon."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The paprika does the heavy lifting here. Use a mix of sweet and smoked if you have both; if you only have sweet, it will still be very good. Brown the beef first for colour and depth, then everything else goes into the slow cooker raw."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve with egg noodles, rice, or thick bread to catch the sauce. Soured cream on top at the table is traditional and very good."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "braising-steak", "amount": 700, "unit": "g", "prepNote": "cut into 4 cm pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-red", "amount": 2, "unit": "each", "prepNote": "deseeded and sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-sweet", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caraway-seeds", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soured-cream", "amount": 100, "unit": "g", "prepNote": "to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the beef" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Season {{braising-steak}} of braising steak with salt. Heat {{vegetable-oil}} of oil in a frying pan over high heat. Brown the beef in batches for 2 to 3 minutes per side until coloured all over. Transfer to the slow cooker."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add the vegetables and spices" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add {{onion}} sliced onions, {{pepper-red}} sliced red peppers, and {{garlic}} of crushed garlic to the slow cooker. Stir in {{paprika-sweet}} of sweet paprika, {{paprika-smoked}} of smoked paprika, {{tomato-puree}} of tomato puree, and {{caraway-seeds}} of caraway seeds if using. Pour over {{tinned-tomatoes}} of tinned tomatoes and {{stock-beef}} of beef stock. Tuck in {{bay-leaves}} of bay."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook low and slow" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set the slow cooker to LOW and cook for 7 to 8 hours, or HIGH for 4 to 5 hours. The beef should break apart easily when pressed with a spoon. Discard the bay leaves, taste, and adjust seasoning before serving."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "rows": [
+            {
+              "symptom": "The sauce tastes flat despite lots of paprika",
+              "cause": "Paprika loses its potency if the jar has been open for a long time, or if it was not bloomed in oil.",
+              "fix": "Fry the paprika in a little oil for 30 seconds before adding the liquid next time. Use fresh paprika from a recently opened tin."
+            },
+            {
+              "symptom": "The beef is still chewy after 8 hours",
+              "cause": "The slow cooker temperature may be lower than expected, or the pieces were cut too large.",
+              "fix": "Cook on HIGH for a further hour. The collagen in braising steak needs time and heat to convert to gelatin."
+            },
+            {
+              "symptom": "The sauce is very watery",
+              "cause": "The vegetables released liquid during cooking, adding volume beyond what was expected.",
+              "fix": "Pour the sauce into a saucepan and reduce over medium-high heat until thickened, about 10 minutes. The beef can stay in the slow cooker on WARM."
+            },
+            {
+              "symptom": "The goulash tastes too spicy",
+              "cause": "The smoked paprika used may have been a hot variety rather than sweet-smoked.",
+              "fix": "Stir in a dollop of soured cream or a spoonful of plain yoghurt to cool the heat."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Goulash began as a Hungarian herders' dish, seasoned with dried paprika that could survive long journeys. It spread across Central Europe and arrived in British home cooking by the mid-20th century. The slow cooker version strips the technique down to its minimum: season, brown, assemble, wait. Serve with a cold glass of something and a piece of bread to clear the bowl."
+          }
+        ]
+      }
+    ]
+  }
+}
