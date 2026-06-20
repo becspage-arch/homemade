@@ -1,0 +1,315 @@
+{
+  "slug": "kimchi",
+  "title": "Kimchi",
+  "subtitle": "Fermented Korean spiced cabbage, fiery, funky, and deeply flavoured",
+  "excerpt": "Kimchi is Chinese cabbage fermented with Korean chilli, garlic, ginger, and spring onion. Salted overnight to soften, mixed with the spice paste, then fermented 2 to 5 days at room temperature. Makes one large jar.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": "preserves",
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional Korean banchan ferment. Gochugaru is the authentic Korean chilli for this dish. Standard chilli flakes work as a substitute but give a slightly different colour and flavour.",
+  "recipe": {
+    "yieldDescription": "Makes about 1 × 1.5-litre jar",
+    "prepMinutes": 30,
+    "cookMinutes": 0,
+    "restingMinutes": 2880,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Ferment 2–5 days at room temperature; refrigerate to stop and continue slow fermentation.",
+    "dietaryFlags": [
+      "glutenFree"
+    ],
+    "cuisine": "british",
+    "mealType": "side",
+    "mood": [
+      "casual"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "projectSchedule": {
+    "days": [
+      {
+        "day": 0,
+        "label": "Salt the cabbage",
+        "tasks": [
+          "Quarter and salt the cabbage; leave overnight"
+        ]
+      },
+      {
+        "day": 1,
+        "label": "Make paste and mix",
+        "tasks": [
+          "Rinse the cabbage",
+          "Make the spice paste",
+          "Mix together",
+          "Pack into jar",
+          "Ferment 2–5 days at room temperature"
+        ]
+      }
+    ]
+  },
+  "recipeTools": [
+    {
+      "slug": "glass-jar-1l",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lacto-fermentation",
+      "term": "Lacto-fermentation",
+      "definition": "Fermentation by naturally occurring lactobacillus bacteria on the vegetable surface, producing lactic acid to preserve and sour the food."
+    }
+  ],
+  "techniqueSlugs": [
+    "lacto-fermentation"
+  ],
+  "criticalTechniques": [
+    "lacto-fermentation"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Kimchi is a Korean "
+          },
+          {
+            "type": "text",
+            "text": "ferment",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "lacto-fermentation"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "ed cabbage with a pungent, deeply flavoured spice paste worked into salted Chinese cabbage (napa cabbage). The salting happens overnight to soften the cabbage and remove excess moisture. The paste goes in the next day. Fermentation at room temperature takes 2 to 5 days, after which the kimchi goes into the fridge where it continues to develop slowly. Makes about one 1.5-litre jar."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {
+              "ingredientSlug": "napa-cabbage",
+              "amount": 1200,
+              "unit": "g",
+              "prepNote": "quartered lengthways through the root, then cut into 5 cm pieces",
+              "isOptional": false,
+              "groupLabel": "Cabbage"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "non-iodised, for salting",
+              "isOptional": false,
+              "groupLabel": "Cabbage"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 6,
+              "unit": "cloves",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "Spice paste"
+            },
+            {
+              "ingredientSlug": "ginger-root",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "peeled, finely grated",
+              "isOptional": false,
+              "groupLabel": "Spice paste"
+            },
+            {
+              "ingredientSlug": "chilli-flakes",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "Korean gochugaru if available; standard chilli flakes are sharper and redder, use 2 tbsp if substituting",
+              "isOptional": false,
+              "groupLabel": "Spice paste"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "or soy sauce for a vegan version",
+              "isOptional": false,
+              "groupLabel": "Spice paste"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "cut into 3 cm pieces",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "mooli",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "peeled, cut into thin matchsticks",
+              "isOptional": true,
+              "groupLabel": "Vegetables"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Day 0: Salt the cabbage"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Toss the cabbage pieces with the salt in a large bowl. Massage briefly and leave to sit for at least 2 hours, or overnight. The cabbage should wilt significantly and release liquid. Rinse very thoroughly under cold water, squeezing out as much liquid as possible. Taste,  it should be pleasantly salty, not overwhelming."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Day 1: Make the paste and mix"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix the garlic, ginger, chilli flakes, and fish sauce together to form a thick paste. Combine the rinsed cabbage, spring onions, and mooli in a large bowl. Add the paste and work it through the vegetables with gloved hands,  the chilli stains everything. The paste should evenly coat all the vegetables."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pack and ferment"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pack tightly into a clean jar, pressing down firmly so the vegetables are compressed and any liquid rises above them. Leave 3 to 4 cm of headspace,  kimchi expands as it ferments. Seal the jar loosely (not airtight) or cover with a cloth. Leave at room temperature for 2 to 5 days, pressing down daily to keep the vegetables submerged. Taste from day 2. When it is sour enough to your taste, refrigerate to slow the fermentation."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Too salty after rinsing",
+              "cause": "Not rinsed enough.",
+              "fix": "Rinse under cold running water for several minutes, squeezing between rinses. The cabbage should taste lightly salted, not aggressively salty."
+            },
+            {
+              "symptom": "No sourness developing after 4 days",
+              "cause": "Temperature too cold, or iodised salt used for the brine.",
+              "fix": "Move to a warmer spot (above 18 °C). Using iodised salt is a common cause of failed fermentation."
+            },
+            {
+              "symptom": "Too sour before expected",
+              "cause": "The kitchen is too warm. Fermentation runs faster above 22 °C.",
+              "fix": "Taste from day 2 and refrigerate as soon as you like the sourness. In warm weather, 2 days may be sufficient."
+            },
+            {
+              "symptom": "Jar overflows",
+              "cause": "CO₂ from fermentation, jar over-packed, or lid sealed too tightly.",
+              "fix": "Leave headspace, keep the lid loose or use a cloth cover, and put the jar on a plate to catch overflow."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Refrigerate once fermented to taste. Keeps for 3 to 6 months in the fridge, becoming increasingly sour over time."
+          }
+        ]
+      }
+    ]
+  }
+}

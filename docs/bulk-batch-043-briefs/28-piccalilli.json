@@ -1,0 +1,374 @@
+{
+  "slug": "piccalilli",
+  "title": "Piccalilli",
+  "subtitle": "Sharp, mustardy, turmeric-yellow pickle, a British classic",
+  "excerpt": "Piccalilli is a brined and pickled vegetable preserve with a vivid yellow mustard sauce. Cauliflower, courgette, and cucumber are traditional. Needs 4 weeks to mellow. Makes about four 350 g jars.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": "preserves",
+  "difficulty": "INTERMEDIATE",
+  "season": "SUMMER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mrs Beeton (PG #10136); Pam Corbin, Preserves. British piccalilli traces to 18th-century Anglo-Indian influences. The mustard-turmeric sauce is the defining characteristic.",
+  "recipe": {
+    "yieldDescription": "Makes about 4 × 350 g jars",
+    "prepMinutes": 30,
+    "cookMinutes": 20,
+    "restingMinutes": 10,
+    "chillingMinutes": 720,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Rest for a minimum of 4 weeks before opening — the harsh raw mustard note mellows significantly.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "side",
+    "mood": [
+      "casual"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "projectSchedule": {
+    "days": [
+      {
+        "day": 0,
+        "label": "Salt and brine",
+        "tasks": [
+          "Prepare and salt the vegetables; leave overnight to draw out moisture"
+        ]
+      },
+      {
+        "day": 1,
+        "label": "Make sauce and jar",
+        "tasks": [
+          "Rinse vegetables",
+          "Make mustard sauce",
+          "Combine and jar",
+          "Leave 4 weeks before opening"
+        ]
+      }
+    ]
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "jam-jars",
+      "isOptional": false
+    },
+    {
+      "slug": "ladle",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dry-brine",
+      "term": "Dry brine",
+      "definition": "Salting vegetables and leaving them to sit overnight. The salt draws out excess moisture so the finished pickle stays crisp rather than watery."
+    }
+  ],
+  "techniqueSlugs": [
+    "sterilising-jars",
+    "dry-brine"
+  ],
+  "criticalTechniques": [
+    "dry-brine"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Piccalilli is a British pickled vegetable preserve with a sharp, mustardy sauce coloured vivid yellow by turmeric. The vegetables are "
+          },
+          {
+            "type": "text",
+            "text": "dry-brine",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "dry-brine"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "d overnight first to keep them crisp, then covered in a cooked mustard-vinegar sauce. The resulting preserve is pungent when first made and mellows to something altogether more complex after 4 weeks in the jar. Makes about four 350 g jars."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "cauliflower",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "broken into small florets",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "courgette",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "diced 1 cm",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "cucumber",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "deseeded, diced 1 cm",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "quartered",
+              "isOptional": false,
+              "groupLabel": "Vegetables"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "for dry-brining",
+              "isOptional": false,
+              "groupLabel": "Brine"
+            },
+            {
+              "ingredientSlug": "white-wine-vinegar",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "granulated-sugar",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "english-mustard-powder",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "turmeric-ground",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "mustard-seeds",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "cornflour",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "mixed with 4 tbsp of the vinegar",
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "ginger-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Day 0: Salt the vegetables"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Toss all the prepared vegetables in the salt in a large bowl. Cover and leave overnight in the fridge. The salt draws out water, which keeps the vegetables crisp in the jar rather than soft and waterlogged."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Day 1: Rinse the vegetables"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tip the salted vegetables into a colander and rinse thoroughly under cold running water. Shake dry and spread on a clean tea towel to remove as much moisture as possible. The vegetables should still be firm."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the mustard sauce"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Put the vinegar, sugar, mustard powder, turmeric, mustard seeds, and ground ginger into a saucepan. Stir over medium heat until the sugar dissolves. Mix the cornflour with 4 tbsp of the vinegar to make a smooth paste, then whisk into the hot sauce. Stir over medium heat for 3 to 4 minutes until the sauce thickens enough to coat the back of a spoon."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fold in the vegetables and jar"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Take the sauce off the heat and fold in the drained vegetables,  the residual heat is enough to very slightly soften them without cooking them through. Pack into hot sterilised jars and seal. The piccalilli must be left for at least 4 weeks before opening."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Vegetables are soft and waterlogged",
+              "cause": "Not brined overnight, or not rinsed and dried well enough.",
+              "fix": "The overnight brine and thorough drying are the key to crisp piccalilli. Can't be rescued once jarred, the texture won't recover."
+            },
+            {
+              "symptom": "Sauce is too thick and gluey",
+              "cause": "Too much cornflour or cooked too long.",
+              "fix": "Reduce cornflour to 1.5 tbsp. The sauce thickens further as it cools."
+            },
+            {
+              "symptom": "Mustard is overwhelming when first opened",
+              "cause": "Just made, piccalilli is always harsh until it has rested.",
+              "fix": "Rest for the full 4 weeks minimum. 8 weeks is better. The mustard mellows considerably."
+            },
+            {
+              "symptom": "Pale yellow — not vivid",
+              "cause": "Not enough turmeric, or old turmeric that has lost its colour.",
+              "fix": "Use 2.5 tsp fresh turmeric. Old turmeric produces weaker colour and less flavour."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sealed: 12 months in a cool dark place. Open after at least 4 weeks. Refrigerate once opened and use within 6 weeks."
+          }
+        ]
+      }
+    ]
+  }
+}
