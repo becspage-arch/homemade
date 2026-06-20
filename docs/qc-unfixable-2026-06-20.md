@@ -694,3 +694,30 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - cross-stitch-house-name-sampler hero-missing — applied: hero-fill-deferred-to-standalone-script
 - how-to-cross-stitch voice-violation,grade-level-strict — applied: 
 - how-to-read-a-cross-stitch-chart body-missing-method — applied: 
+
+- albaloo-polo hero-missing,body-missing-method — applied: hero-fill-deferred-to-standalone-script
+- cross-stitch-trans-flag-heart grade-level-strict — applied: 
+- dolma-yaprak body-missing-method — applied: 
+- kashk-e-bademjan hero-missing,body-missing-method — applied: hero-fill-deferred-to-standalone-script
+- khoresh-gheymeh body-missing-method — applied: 
+- manti body-missing-method — applied: 
+- menemen body-missing-method — applied: 
+- sabzi-polo body-missing-method — applied: 
+- sigara-boregi hero-missing,body-missing-method — applied: hero-fill-deferred-to-standalone-script
+
+- aash-e-anar  — applied: body-rewrite:6,prose-prep-to-orderedlist,recipe-yield-appended,dry-run
+- ash-e-jow  — applied: recipe-yield-appended,dry-run
+- falafel-wrap  — applied: prose-prep-to-orderedlist,recipe-yield-appended,dry-run
+- fatteh  — applied: body-rewrite:3,recipe-yield-appended,dry-run
+- halim  — applied: recipe-yield-appended,dry-run
+- kibbeh-bil-sanieh  — applied: recipe-yield-appended,dry-run
+- koosa-mahshi  — applied: body-rewrite:8,recipe-yield-appended,dry-run
+- kuku-sibzamini  — applied: recipe-yield-appended,dry-run
+- kushari  — applied: body-rewrite:4,century-to-sourceNotes:1,recipe-yield-appended,dry-run
+- labneh-balls  — applied: recipe-yield-appended,dry-run
+- manakish-cheese  — applied: recipe-yield-appended,dry-run
+- mansaf  — applied: recipe-yield-appended,dry-run
+- molokhia  — applied: recipe-yield-appended,dry-run
+- mujaddara-with-bulgur  — applied: recipe-yield-appended,dry-run
+- naan-e-barbari  — applied: recipe-yield-appended,dry-run
+- shish-tawook  — applied: recipe-yield-appended,dry-run

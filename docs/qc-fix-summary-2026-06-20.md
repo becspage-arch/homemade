@@ -706,3 +706,60 @@ SKIPPED: 0
 - menemen: body-missing-method
 - sabzi-polo: body-missing-method
 - sigara-boregi: hero-missing, body-missing-method
+
+---
+
+## Run at 20:55:27
+
+Generated: 2026-06-20T20:55:27.987Z
+
+Processed: 84
+PASS: 68
+STILL_BLOCKED: 16
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 45 |
+| opening-pattern-missing-hook | 33 |
+| body-missing-method | 21 |
+| grade-level-strict | 12 |
+| prose-prep-steps | 6 |
+| historical-century-in-body | 3 |
+
+## Still BLOCKED (sample 20)
+
+- aash-e-anar: 
+- ash-e-jow: 
+- falafel-wrap: 
+- fatteh: 
+- halim: 
+- kibbeh-bil-sanieh: 
+- koosa-mahshi: 
+- kuku-sibzamini: 
+- kushari: 
+- labneh-balls: 
+- manakish-cheese: 
+- mansaf: 
+- molokhia: 
+- mujaddara-with-bulgur: 
+- naan-e-barbari: 
+- shish-tawook: 
+
+---
+
+## Run at 20:55:39
+
+Generated: 2026-06-20T20:55:39.261Z
+
+Processed: 68
+PASS: 68
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
