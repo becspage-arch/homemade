@@ -1,0 +1,314 @@
+{
+  "slug": "lemon-trifle",
+  "title": "Lemon Trifle",
+  "subtitle": "Sponge with lemon curd, a sharp lemon custard, and cream",
+  "excerpt": "A bright, sharp trifle with lemon-soaked sponge, a lemon-zested custard, and whipped cream, no fruit layer, no sherry, just clean citrus flavour in every spoonful.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "SPRING",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "A British spring-table variant of the classic trifle, substituting lemon curd and lemon custard for the traditional fruit and sherry layers. Lemon trifles appear in British home-cooking collections from the late 20th century as a fresher alternative to the richer Christmas version.",
+  "recipe": {
+    "yieldDescription": "Serves 6 to 8",
+    "prepMinutes": 25,
+    "cookMinutes": 15,
+    "restingMinutes": null,
+    "chillingMinutes": 240,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble the sponge and custard layers the day before and keep in the fridge overnight. Add the cream layer up to 3 hours before serving.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": [
+      "light",
+      "spring",
+      "refreshing"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "large-bowl",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "making-egg-custard",
+    "whipping-cream",
+    "zesting-citrus"
+  ],
+  "criticalTechniques": [
+    "making-egg-custard"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lemon trifle is a brighter, sharper take on the classic layered dessert, sponge fingers soaked in lemon juice, topped with a zesty lemon custard and softly whipped cream. There is no fruit layer and no alcohol; the whole flavour is built from lemon at every stage. The custard must be made with good fresh lemons: the zest steeped in the warm milk before the eggs are added gives it a clean, aromatic quality that juice alone cannot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            {
+              "ingredientSlug": "sponge-fingers",
+              "amount": 12,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "lemon-juice",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": "from about 2 lemons, use this to soak the sponge",
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "to sweeten the soaking liquid",
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Lemon custard"
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "finely zested",
+              "isOptional": false,
+              "groupLabel": "Lemon custard"
+            },
+            {
+              "ingredientSlug": "egg-yolks",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Lemon custard"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Lemon custard"
+            },
+            {
+              "ingredientSlug": "cornflour",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Lemon custard"
+            },
+            {
+              "ingredientSlug": "vanilla-extract",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Lemon custard"
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 350,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Cream layer"
+            },
+            {
+              "ingredientSlug": "icing-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "sifted",
+              "isOptional": false,
+              "groupLabel": "Cream layer"
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "thinly sliced, for decoration",
+              "isOptional": true,
+              "groupLabel": "Cream layer"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Prepare the base"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix the lemon juice with the tablespoon of caster sugar and 2 tablespoons of cold water until the sugar dissolves. Arrange the sponge fingers in a single layer across the base of a glass trifle dish and pour the lemon soaking liquid evenly over them. Leave for 5 minutes to absorb."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the lemon custard"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the lemon zest to the milk in a medium saucepan and heat gently to just below boiling. Remove from the heat and leave to infuse for 15 minutes, then strain the milk through a sieve to remove the zest. Return the infused milk to the saucepan. Whisk the egg yolks, caster sugar, cornflour, and vanilla extract together in a large bowl until smooth. Reheat the lemon milk to steaming, then pour slowly into the egg mixture, whisking constantly. Return to the saucepan and stir continuously over a low-medium heat for 8 to 10 minutes until the custard thickens and coats the back of a spoon. Pour through a sieve over the soaked sponge layer, press cling film to the surface, and leave to cool."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Chill and top"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Once the custard is at room temperature, chill in the fridge for at least 4 hours. Whip the double cream with the icing sugar to soft peaks and spread over the custard. Arrange thin lemon slices on top, or scatter a little extra lemon zest to finish."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Custard tastes flat or not very lemony",
+              "cause": "The zest was not left long enough to infuse, or the lemons were not freshly zested.",
+              "fix": "Increase the infusion time to 20 minutes before straining. For a more pronounced flavour, add 1 tablespoon of fresh lemon juice to the finished custard off the heat."
+            },
+            {
+              "symptom": "Custard is lumpy after straining",
+              "cause": "The eggs cooked unevenly, or the milk was too hot when added.",
+              "fix": "Strain through a fine-mesh sieve while still warm. Any small lumps will be caught by the sieve and the custard underneath will be smooth."
+            },
+            {
+              "symptom": "Sponge base is dry",
+              "cause": "The soaking liquid was too little or the sponge did not absorb evenly.",
+              "fix": "Use a tablespoon to spoon any liquid that pools back over drier sections. If needed, add 1 to 2 tablespoons more lemon juice mixed with water."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keeps well in the fridge for up to 2 days, covered. The lemon flavour deepens slightly on day two. Do not freeze."
+          }
+        ]
+      }
+    ]
+  }
+}

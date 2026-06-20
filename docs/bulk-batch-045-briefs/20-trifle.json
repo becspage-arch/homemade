@@ -1,0 +1,367 @@
+{
+  "slug": "trifle",
+  "title": "Trifle",
+  "subtitle": "Layers of sponge, sherry, fruit, custard, and cream in a glass bowl",
+  "excerpt": "The classic British trifle: sponge fingers soaked in sweet sherry, a layer of jam and fresh raspberries or strawberries, proper egg custard poured over, and a deep crown of whipped cream on top.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Trifle appears in British cookbooks from the 18th century. Mrs Beeton gives a version with macaroons and ratafia biscuits, sherry, and proper boiled custard. The version made with sponge fingers and a thickened egg custard became the standard domestic recipe through the 20th century. The jelly layer is optional and not included here, it is a later canteen simplification.",
+  "recipe": {
+    "yieldDescription": "Serves 8",
+    "prepMinutes": 30,
+    "cookMinutes": 15,
+    "restingMinutes": null,
+    "chillingMinutes": 120,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble through the custard layer up to 1 day ahead and refrigerate. Add the cream layer and any decoration no more than 2 hours before serving.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": [
+      "specialOccasion",
+      "comfortFood"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "heatproof-bowl",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk",
+      "isOptional": false
+    },
+    {
+      "slug": "hand-mixer",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "making-custard",
+    "whipping-cream"
+  ],
+  "criticalTechniques": [
+    "making-custard"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Trifle is a layered dessert of sherry-soaked sponge, fruit, and proper egg custard, topped with a deep crown of lightly whipped cream. The custard layer is the part that matters most: a good trifle has a real egg custard poured hot over the base and left to set cold, not a packet powder custard. It takes about 15 minutes to make and transforms the whole thing."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use a large glass trifle bowl so the layers are visible from the side, this is not a dish to hide in an opaque container. Each layer should be distinct when served."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            {
+              "ingredientSlug": "sponge-fingers",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "about 20 fingers",
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "sherry-sweet",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "raspberry-jam",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "raspberries",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "fresh or thawed frozen",
+              "isOptional": false,
+              "groupLabel": "Fruit layer"
+            },
+            {
+              "ingredientSlug": "strawberries",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "hulled and halved",
+              "isOptional": false,
+              "groupLabel": "Fruit layer"
+            },
+            {
+              "ingredientSlug": "egg-yolks",
+              "amount": 6,
+              "unit": null,
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Custard"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Custard"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Custard"
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Custard"
+            },
+            {
+              "ingredientSlug": "vanilla-bean-paste",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Custard"
+            },
+            {
+              "ingredientSlug": "cornflour",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "helps stabilise the custard",
+              "isOptional": false,
+              "groupLabel": "Custard"
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": "for the top layer",
+              "isOptional": false,
+              "groupLabel": "Cream topping"
+            },
+            {
+              "ingredientSlug": "icing-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "to sweeten the cream",
+              "isOptional": false,
+              "groupLabel": "Cream topping"
+            },
+            {
+              "ingredientSlug": "almonds-flaked",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "toasted, to finish",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Layer the base"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spread the sponge fingers in a single layer in the base of a large glass trifle bowl, breaking them to fit as needed. Pour the sherry over them evenly and leave for 5 minutes to soak in. Spoon the raspberry jam over the soaked sponge and spread to cover. Scatter the raspberries and strawberries over the jam in an even layer."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the custard"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Whisk the egg yolks, sugar, cornflour, and vanilla bean paste together in a heatproof bowl until smooth and pale. Heat the milk and the 300ml of cream in a saucepan over a medium heat until steaming and beginning to bubble at the edges, do not let it boil. Pour the hot cream mixture over the egg yolk mixture in a thin, steady stream, whisking constantly. Return the whole mixture to the pan and cook over a medium-low heat, stirring constantly with a silicone spatula, until the custard thickens enough to coat the back of a spoon, about 8 to 10 minutes. Do not let it boil or the eggs will scramble."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour and chill"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the custard from the heat. Pour it carefully over the fruit layer in the trifle bowl. Press a sheet of cling film directly onto the surface of the custard to prevent a skin forming. Refrigerate for at least 2 hours, or overnight, until the custard is completely set and cold."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the cream topping"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remove the cling film. Whip the 400ml of double cream with the icing sugar to soft, billowing peaks, it should hold its shape loosely but not be stiff or grainy. Spoon over the set custard in generous waves. Scatter toasted flaked almonds over the top if using. Refrigerate until ready to serve."
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The custard is lumpy or scrambled",
+              "cause": "The heat was too high, or the mixture was not stirred constantly.",
+              "fix": "If it has just started to catch, remove from the heat immediately and pour through a fine sieve into a cold bowl, whisking. If it is fully scrambled, make a fresh batch. The cornflour helps prevent scrambling, always include it."
+            },
+            {
+              "symptom": "The custard has not set firm enough after 2 hours",
+              "cause": "The custard was not cooked to the right consistency, or there was too little egg yolk.",
+              "fix": "Return to the fridge for longer. Properly cooked custard will set to a spoonable consistency when cold. A pour-able custard that does not thicken on the hob needs to be cooked further, stir for longer over the low heat."
+            },
+            {
+              "symptom": "The base layer is too wet",
+              "cause": "Too much sherry, or the fruit released a lot of liquid.",
+              "fix": "Use slightly less sherry next time, or press the sponge fingers a little more firmly into the bowl. A wet base is not a disaster, it will still taste good, but the layers will not be as distinct when served."
+            },
+            {
+              "symptom": "The cream has split and is grainy",
+              "cause": "Over-whipped.",
+              "fix": "Stir a small splash of unwhipped cream into the over-whipped cream to bring it back. Stop whipping sooner next time, soft peaks are correct for trifle."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Storage"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keeps in the fridge for up to 2 days once assembled with the cream layer. The sponge base softens further in storage and the layers merge a little, but the flavour remains good. Serve cold."
+          }
+        ]
+      }
+    ]
+  }
+}
