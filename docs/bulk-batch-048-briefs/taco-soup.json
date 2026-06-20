@@ -1,0 +1,164 @@
+{
+  "slug": "taco-soup",
+  "title": "Taco Soup",
+  "subtitle": "Beef, beans, and taco spices in a quick one-pot soup",
+  "excerpt": "A hearty one-pot soup with beef mince, kidney beans, black beans, tinned tomatoes, and taco spices, ready in 30 minutes and topped with soured cream, cheese, and tortilla chips. All the flavour of tacos in a bowl.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Taco soup: a Tex-Mex one-pot dish popular in American home cooking from the 1980s and 1990s, originally made with packet taco seasoning mixes. The from-scratch version here uses individual spices for the same result without the pre-mixed packets. Synthesised from standard American home-cooking recipes.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well in portions for up to 3 months. Defrost overnight and reheat to a simmer. Add toppings fresh.",
+    "batchable": true,
+    "batchNotes": "A natural batch-cooking soup: double the recipe for a large pot that feeds 12 or provides six meals for two.",
+    "makeAheadNotes": "Improves overnight as the spices develop. Reheat gently on the hob.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Taco soup is a weeknight one-pot dish: beef mince browned with onion and garlic, then simmered with tinned tomatoes, two kinds of beans, and taco spices. It's thicker than a conventional soup and closer to a chunky chilli in texture. The whole thing is ready in half an hour and only improves if made a day ahead. Top at the table with the same toppings you'd use for tacos."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "chilli-powder", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "cumin-ground", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "smoked-paprika", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 800, "unit": "g", "prepNote": "two tins", "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "black-beans", "amount": 400, "unit": "g", "prepNote": "drained and rinsed", "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "kidney-beans", "amount": 400, "unit": "g", "prepNote": "drained and rinsed", "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "stock-beef", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "vegetable-oil", "amount": 15, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Soup" },
+            { "ingredientSlug": "soured-cream", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "cheddar", "amount": 100, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "corn-tortilla", "amount": 4, "unit": "each", "prepNote": "corn tortillas baked at 180°C until crisp, broken into pieces, or bought tortilla chips", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "coriander", "amount": 15, "unit": "g", "prepNote": "chopped", "isOptional": true, "groupLabel": "To serve" },
+            { "ingredientSlug": "jalapeno", "amount": 2, "unit": "each", "prepNote": "sliced", "isOptional": true, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Heat {{vegetable-oil}} of oil in a large pot over medium-high heat. Cook {{onion}} of finely chopped onion for 5 minutes. Add {{beef-mince}} of beef mince and break up as it browns, about 5-6 minutes." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Add {{garlic}} of crushed garlic, the chilli powder, cumin, and smoked paprika. Stir and cook for 2 minutes." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Add the tinned tomatoes, drained black beans, drained kidney beans, and beef stock. Stir to combine. Bring to a simmer and cook uncovered for 20 minutes, stirring occasionally. The soup will thicken as it cooks." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Taste and season with salt. Serve in bowls with soured cream, grated cheese, tortilla chips, coriander, and jalapeño." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup is too thick, almost like a stew",
+              "cause": "Cooked down too far",
+              "fix": "Add more beef stock or water, a ladleful at a time, until the consistency suits. Taco soup is meant to be thick but still pourable."
+            },
+            {
+              "symptom": "Soup is thin and watery",
+              "cause": "Tinned tomatoes very watery, or insufficient cook-down time",
+              "fix": "Simmer uncovered for a further 10-15 minutes. Without a lid, the soup reduces and thickens. The beans also thicken it as they break down slightly."
+            },
+            {
+              "symptom": "Beef is in clumps rather than broken up",
+              "cause": "Not stirred and broken up as it cooked",
+              "fix": "Break the mince into small pieces with a wooden spoon from the start of cooking. Clumped mince gives an uneven texture."
+            },
+            {
+              "symptom": "Flavour is flat even though all spices added",
+              "cause": "Spices not cooked in the fat before the liquid went in",
+              "fix": "Add the spices to the dry meat and cook for 2 minutes before adding any liquid. Dry-cooking spices in fat develops the flavour; raw spices added to liquid stay gritty and flat."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Taco soup appeared in American home cooking in the 1980s as a quicker alternative to chilli. It uses the same Tex-Mex spice profile but is looser in texture and faster to make. It spread through American church cookbooks and home-cooking communities in the 1990s, usually made with packet seasoning mixes. The from-scratch version here is just as fast and gives you control over the heat level."
+          }
+        ]
+      }
+    ]
+  }
+}

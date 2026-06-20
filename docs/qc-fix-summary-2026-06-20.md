@@ -437,3 +437,110 @@ SKIPPED: 0
 - ashwagandha-warm-milk: grade-level-strict
 - axe-to-knife-progression: body-missing-method
 - baby-safe-bottom-balm: voice-violation
+
+---
+
+## Run at 16:01:28
+
+Generated: 2026-06-20T16:01:28.538Z
+
+Processed: 40
+PASS: 0
+STILL_BLOCKED: 40
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 120 |
+| placeholder-string | 40 |
+| content-type-opening-mismatch | 38 |
+| opening-pattern-missing-hook | 32 |
+| grade-level-strict | 15 |
+| prose-prep-steps | 5 |
+| historical-century-in-body | 2 |
+| em-dash-in-content | 2 |
+
+## Still BLOCKED (sample 20)
+
+- slow-cooker-baked-beans: hero-missing
+- slow-cooker-beef-and-barley-stew: hero-missing
+- slow-cooker-beef-and-onion-casserole: hero-missing
+- slow-cooker-beef-cheeks-red-wine: hero-missing
+- slow-cooker-beef-goulash: hero-missing
+- slow-cooker-boston-baked-beans: hero-missing
+- slow-cooker-char-siu-pork: hero-missing
+- slow-cooker-chicken-cassoulet: hero-missing
+- slow-cooker-chicken-fajitas: hero-missing
+- slow-cooker-chicken-italian-peppers: hero-missing
+- slow-cooker-chicken-jalfrezi: hero-missing
+- slow-cooker-chicken-korma: hero-missing
+- slow-cooker-chicken-noodle-soup: hero-missing
+- slow-cooker-chicken-stew-dumplings: hero-missing
+- slow-cooker-chicken-tacos: hero-missing
+- slow-cooker-chicken-thighs-tomato: hero-missing
+- slow-cooker-creamy-garlic-chicken: hero-missing
+- slow-cooker-french-onion-soup: hero-missing
+- slow-cooker-ham-in-cider: hero-missing
+- slow-cooker-harissa-chickpeas: hero-missing
+
+---
+
+## Run at 16:08:33
+
+Generated: 2026-06-20T16:08:33.938Z
+
+Processed: 35
+PASS: 33
+STILL_BLOCKED: 2
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 34 |
+| placeholder-string | 31 |
+| opening-pattern-missing-hook | 30 |
+| grade-level-strict | 10 |
+| prose-prep-steps | 6 |
+| historical-century-in-body | 5 |
+
+## Still BLOCKED (sample 20)
+
+- chilli-cheese-fries: prose-prep-steps
+- vegetarian-nachos: prose-prep-steps
+
+---
+
+## Run at 16:08:58
+
+Generated: 2026-06-20T16:08:58.602Z
+
+Processed: 0
+PASS: 0
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+
+
+---
+
+## Run at 16:12:45
+
+Generated: 2026-06-20T16:12:45.614Z
+
+Processed: 33
+PASS: 33
+STILL_BLOCKED: 0
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|

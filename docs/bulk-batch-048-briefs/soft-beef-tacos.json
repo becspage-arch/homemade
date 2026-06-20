@@ -1,0 +1,195 @@
+{
+  "slug": "soft-beef-tacos",
+  "title": "Soft Beef Tacos",
+  "subtitle": "Spiced beef mince in warm flour tortillas with all the toppings",
+  "excerpt": "Spiced beef mince with tomatoes and cumin, served in warm flour tortillas with soured cream, guacamole, and fresh coriander. A faster, fork-free version of the classic, ready in under 25 minutes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Tex-Mex soft-shell beef tacos: a US home-cooking staple using flour tortillas rather than hard corn shells. Based on classic Tex-Mex home-cooking traditions of the American Southwest.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "The beef filling freezes well for up to 3 months. Defrost overnight and reheat in a pan with a splash of water.",
+    "batchable": true,
+    "batchNotes": "Make double the beef filling and freeze half.",
+    "makeAheadNotes": "The beef filling keeps in the fridge for 3 days.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["weeknight", "kidFriendly", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soft beef tacos are flour tortillas filled with well-seasoned ground beef and loaded with cold toppings at the table. They're faster to eat than hard-shell tacos, easier for younger family members, and the soft wrap holds a generous filling without cracking. The beef takes about 15 minutes from start to plate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the beef" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the beef" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the beef" },
+            { "ingredientSlug": "chilli-powder", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the beef" },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the beef" },
+            { "ingredientSlug": "smoked-paprika", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the beef" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": "half a 400 g tin", "isOptional": false, "groupLabel": "For the beef" },
+            { "ingredientSlug": "vegetable-oil", "amount": 15, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the beef" },
+            { "ingredientSlug": "tortilla-wrap", "amount": 8, "unit": "each", "prepNote": "medium flour tortillas", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "cheddar", "amount": 80, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "soured-cream", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "avocado", "amount": 2, "unit": "each", "prepNote": "mashed or sliced", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "tomato", "amount": 2, "unit": "each", "prepNote": "diced", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "coriander", "amount": 15, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "lime", "amount": 1, "unit": "each", "prepNote": "cut into wedges", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "jalapeno", "amount": 2, "unit": "each", "prepNote": "sliced", "isOptional": true, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Flour tortillas go flexible when warmed in a dry pan; a minute on each side is enough. The same pan works for warming as for the beef."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the beef" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Heat {{vegetable-oil}} of oil in a frying pan over medium-high heat. Add {{onion}} finely chopped onion and cook for 5 minutes until soft and lightly golden." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Add {{garlic}} of crushed garlic and cook for 1 minute. Add {{beef-mince}} of beef mince and break it up with a spoon. Cook for 5-6 minutes until browned." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Stir in {{chilli-powder}} of chilli powder, {{cumin-ground}} of cumin, and {{smoked-paprika}} of smoked paprika. Cook the spices for 1 minute, then add {{tinned-tomatoes}} of tinned tomatoes. Stir, season with salt, and cook for 5 minutes until the sauce thickens slightly." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Warm the tortillas and serve" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Warm each tortilla in a dry pan for 30-45 seconds on each side until pliable. Keep them stacked under a tea towel." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Set the beef and all the toppings on the table. Each person fills their own tortillas." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Filling is too wet and leaks",
+              "cause": "Too much liquid left in the pan",
+              "fix": "Cook the filling a minute or two longer after adding the tomatoes to let the liquid reduce. A good filling sits in the tortilla rather than running out."
+            },
+            {
+              "symptom": "Beef is dry and crumbly",
+              "cause": "Mince cooked at too high a heat, or fat drained before the spices went in",
+              "fix": "Keep a little fat in the pan; it carries flavour and keeps the mince moist. Add a splash of water with the spices if it looks dry."
+            },
+            {
+              "symptom": "Tortillas split when folded",
+              "cause": "Flour tortillas not warmed",
+              "fix": "A cold flour tortilla cracks on the fold. Warm each one in a dry pan until it bends without tearing."
+            },
+            {
+              "symptom": "Spice level too low",
+              "cause": "Spices added to a cool pan, or not enough chilli",
+              "fix": "Cook the spices for a full minute in a hot pan before adding the tomatoes; heat is what releases flavour from dried spices. Adjust chilli powder to taste."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soft beef tacos sit alongside their hard-shell counterpart as the most cooked Tex-Mex dish in American and British home kitchens. The flour tortilla version is more common across the Southwest US and into northern Mexico. The topping setup, laid out in bowls at the centre of the table, turns a weeknight dinner into something people reach for and build themselves."
+          }
+        ]
+      }
+    ]
+  }
+}

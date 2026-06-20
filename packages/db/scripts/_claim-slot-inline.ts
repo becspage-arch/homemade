@@ -18,10 +18,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 async function main() {
   const { prisma } = await import('../src/index.js')
   await prisma.category.update({
-    where: { slug: 'animals-smallholding' },
+    where: { slug: 'cooking' },
     data: { lastAutopilotRunAt: new Date() },
   })
-  console.log('CLAIMED: animals-smallholding lastAutopilotRunAt updated to', new Date().toISOString())
+  console.log('CLAIMED: cooking lastAutopilotRunAt updated to', new Date().toISOString())
   await prisma.$disconnect()
 }
 main().catch(err => { console.error(err); process.exit(1) })

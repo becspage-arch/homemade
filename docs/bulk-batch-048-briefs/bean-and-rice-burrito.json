@@ -1,0 +1,199 @@
+{
+  "slug": "bean-and-rice-burrito",
+  "title": "Bean and Rice Burrito",
+  "subtitle": "Seasoned black beans and cumin rice in a large flour tortilla",
+  "excerpt": "A hearty vegetarian burrito filled with cumin-spiced black beans, rice cooked in tomato and stock, guacamole, and soured cream. No meat needed; the beans carry the dish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Bean and rice burritos: a Tex-Mex vegetarian staple, widely made across the American Southwest and popular in Mexican-American home cooking. Beans and rice are the foundational fillings from which meat is optional. Based on classic Tex-Mex home-cooking sources.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Wrap assembled burritos in foil and freeze for up to 3 months. Reheat from frozen at 180°C for 20-25 minutes.",
+    "batchable": true,
+    "batchNotes": "Make a double batch of beans and rice; the fillings keep for 3 days in the fridge.",
+    "makeAheadNotes": "Both fillings keep refrigerated for 3 days.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bean and rice burritos are a large flour tortilla wrapped around seasoned black beans, tomato-cooked rice, and the usual cold toppings. The beans are the main filling; a tin of black beans seasoned with cumin and garlic does the job in 10 minutes. The rice cooks in stock and tinned tomatoes for a deeper flavour than plain boiled rice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "long-grain-rice", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the tomato rice" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": "half a 400 g tin, blended smooth", "isOptional": false, "groupLabel": "For the tomato rice" },
+            { "ingredientSlug": "stock-vegetable", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the tomato rice" },
+            { "ingredientSlug": "cumin-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the tomato rice" },
+            { "ingredientSlug": "black-beans", "amount": 400, "unit": "g", "prepNote": "drained and rinsed, 1 tin", "isOptional": false, "groupLabel": "For the beans" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the beans" },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the beans" },
+            { "ingredientSlug": "chilli-flakes", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": "For the beans" },
+            { "ingredientSlug": "olive-oil", "amount": 15, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the beans" },
+            { "ingredientSlug": "tortilla-wrap", "amount": 4, "unit": "each", "prepNote": "large flour tortillas", "isOptional": false, "groupLabel": "To assemble" },
+            { "ingredientSlug": "cheddar", "amount": 100, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "To assemble" },
+            { "ingredientSlug": "avocado", "amount": 2, "unit": "each", "prepNote": "mashed with lime juice and salt", "isOptional": false, "groupLabel": "To assemble" },
+            { "ingredientSlug": "soured-cream", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "To assemble" },
+            { "ingredientSlug": "lime", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": "To assemble" },
+            { "ingredientSlug": "coriander", "amount": 15, "unit": "g", "prepNote": "chopped", "isOptional": false, "groupLabel": "To assemble" },
+            { "ingredientSlug": "jalapeno", "amount": 1, "unit": "each", "prepNote": "sliced", "isOptional": true, "groupLabel": "To assemble" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Two saucepans running at once is the most efficient approach: rice on the hob on the lowest heat while the beans warm in a second pan. Everything is ready at the same time."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the tomato rice" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Blend the tinned tomatoes until smooth. Put {{long-grain-rice}} of rice into a saucepan. Add the blended tomatoes, {{stock-vegetable}} of vegetable stock, and the cumin. Bring to a boil, stir once, then reduce to the lowest heat, cover, and cook for 12 minutes. Off heat, leave covered for 5 minutes." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Season the beans" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Heat {{olive-oil}} of oil in a small pan over medium heat. Add {{garlic}} of crushed garlic and cook for 1 minute. Add the drained black beans, cumin, and chilli flakes if using. Season with salt. Cook for 5-6 minutes until the beans are warm throughout and starting to soften at the edges." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and wrap" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Mash the avocado with the lime juice and a pinch of salt to make a quick guacamole." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Warm each flour tortilla in a dry pan for 30 seconds per side. Layer rice, beans, cheese, guacamole, soured cream, coriander, and jalapeño on the lower third. Fold the bottom up, fold the sides in, roll tightly from the bottom." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Rice turns orange and clumps",
+              "cause": "Too much tomato, or not enough liquid",
+              "fix": "The ratio is 200 ml blended tomato plus 300 ml stock for 200 g of rice. More tomato and the rice goes sticky and dense."
+            },
+            {
+              "symptom": "Beans taste flat",
+              "cause": "Not enough salt, or cumin not bloomed in the oil",
+              "fix": "Cook the garlic and cumin in the oil before adding the beans; the heat releases the flavour from the spices. Season with salt and add a squeeze of lime at the end."
+            },
+            {
+              "symptom": "Avocado turns brown quickly",
+              "cause": "Mixed in advance, or lime juice not added",
+              "fix": "Mash the avocado just before assembling and add plenty of lime juice; it slows browning. Keep any leftover guacamole with a piece of cling film pressed directly onto the surface."
+            },
+            {
+              "symptom": "Burrito is too dense",
+              "cause": "Overfilled with both rice and beans",
+              "fix": "Use slightly less rice and beans per burrito, or make 5 smaller portions from the same quantity."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Beans and rice are the foundations of Tex-Mex cooking; this burrito simply makes them the main filling rather than a side dish. Across northern Mexico and the US Southwest, beans are a daily staple cooked in every form, and black beans spiked with cumin and garlic are one of the simplest and most satisfying. The tomato rice here is a nod to the arroz rojo served as a side dish across Mexico."
+          }
+        ]
+      }
+    ]
+  }
+}

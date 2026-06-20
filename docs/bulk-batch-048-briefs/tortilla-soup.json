@@ -1,0 +1,198 @@
+{
+  "slug": "tortilla-soup",
+  "title": "Tortilla Soup",
+  "subtitle": "Spiced tomato and chicken broth with crispy tortilla strips",
+  "excerpt": "A rich, spiced chicken and tomato broth with shredded chicken, topped with crispy tortilla strips, soured cream, and cheese. A Tex-Mex soup that comes together in 40 minutes and is deeply satisfying.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "AUTUMN",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Tortilla soup: a Mexican and Tex-Mex soup documented in American cookbooks from the 1970s, though the dish has roots in Mexican antique cooking from the state of Sinaloa. The Tex-Mex version typically uses chicken stock and adds cheese and soured cream. Based on classic published American Tex-Mex sources.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the broth (without tortilla strips or cold toppings) in portions for up to 3 months. Defrost in the fridge overnight and reheat to a simmer. Make the tortilla strips fresh.",
+    "batchable": true,
+    "batchNotes": "Double the batch and freeze half the broth for a fast weeknight meal.",
+    "makeAheadNotes": "The broth improves overnight. Keep the tortilla strips separate and add just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven, for the tortilla strips",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tortilla soup is a spiced tomato and chicken broth with shredded chicken, topped with crispy tortilla strips that soften at the edges as they sit in the soup. The ancho chilli gives the broth depth and a mild smokiness; it's soaked and blended with the tomatoes to form the base. If you don't have time to blend the base, the soup still works, just with less body."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 400, "unit": "g", "prepNote": "skinless boneless thighs", "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "ancho-chilli", "amount": 2, "unit": "each", "prepNote": "soaked in 200ml boiling water for 20 minutes, then drained (reserve the liquid)", "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "chilli-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "stock-chicken", "amount": 1000, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "vegetable-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the broth" },
+            { "ingredientSlug": "corn-tortilla", "amount": 4, "unit": "each", "prepNote": "corn tortillas, cut into 1 cm strips", "isOptional": false, "groupLabel": "Tortilla strips" },
+            { "ingredientSlug": "vegetable-oil", "amount": 15, "unit": "ml", "prepNote": "for the tortilla strips", "isOptional": false, "groupLabel": "Tortilla strips" },
+            { "ingredientSlug": "cheddar", "amount": 100, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "soured-cream", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "avocado", "amount": 1, "unit": "each", "prepNote": "diced", "isOptional": true, "groupLabel": "To serve" },
+            { "ingredientSlug": "coriander", "amount": 15, "unit": "g", "prepNote": "chopped", "isOptional": true, "groupLabel": "To serve" },
+            { "ingredientSlug": "lime", "amount": 1, "unit": "each", "prepNote": "cut into wedges", "isOptional": false, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the tortilla strips" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Heat the oven to 200°C. Toss the corn tortilla strips with the oil and a pinch of salt. Spread on a baking tray in a single layer. Bake for 12-15 minutes until crisp and golden, turning once halfway through. Set aside." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the broth" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Soak the ancho chillies in boiling water for 20 minutes. Drain, reserving the soaking water. Blend the soaked chillies, tinned tomatoes, and 100 ml of the soaking water until smooth." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Heat {{vegetable-oil}} of oil in a large pot over medium heat. Cook {{onion}} of chopped onion for 5 minutes. Add {{garlic}} of crushed garlic, the cumin, and chilli powder for 2 minutes. Pour in the blended chilli-tomato mixture. Cook for 5 minutes, stirring, until darkened slightly." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Add the chicken thighs and the chicken stock. Bring to a simmer and cook for 20 minutes until the chicken is cooked through. Remove the chicken and shred with two forks. Return to the pot. Taste and season with salt." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Serve" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Ladle the broth into bowls. Top each bowl with a handful of tortilla strips, a spoonful of soured cream, grated cheese, diced avocado if using, and coriander. Serve with lime wedges." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Broth is thin and watery",
+              "cause": "Chilli-tomato base not cooked down enough, or too much stock",
+              "fix": "Cook the blended tomato base for a full 5 minutes in the pot before adding the stock. It should darken and reduce. If the broth is too thin, simmer uncovered for 10 minutes before serving."
+            },
+            {
+              "symptom": "Tortilla strips go completely soft immediately",
+              "cause": "Added to the soup too early",
+              "fix": "Add the tortilla strips at the table, not in the kitchen. Each person adds their own so they soften gradually while eating rather than before the bowl reaches the table."
+            },
+            {
+              "symptom": "Chicken is stringy and dry",
+              "cause": "Simmered too long or at too high a heat",
+              "fix": "Keep the soup at a gentle simmer, not a boil. 20 minutes at a low simmer is enough for boneless thighs to cook through and shred easily."
+            },
+            {
+              "symptom": "Soup tastes flat despite the spices",
+              "cause": "Ancho chilli not properly soaked, or soaking liquid not used",
+              "fix": "Make sure the chillies are fully hydrated before blending. The soaking liquid is flavoured; add 100 ml to the blend. A final squeeze of lime in the bowl makes a significant difference to the overall flavour."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tortilla soup has roots in central Mexico, where soups with dried chillies and fried tortilla pieces are a long tradition. The Tex-Mex version with chicken, stock, and a full topping bar of cheese, soured cream, and avocado became widely known through American cookbooks from the 1970s. The broth freezes well, the toppings go on at the table, and it scales easily."
+          }
+        ]
+      }
+    ]
+  }
+}

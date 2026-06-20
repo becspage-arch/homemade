@@ -1,0 +1,213 @@
+{
+  "slug": "chicken-enchiladas-verde",
+  "title": "Chicken Enchiladas Verde",
+  "subtitle": "Shredded chicken in corn tortillas with a bright green tomatillo-style sauce",
+  "excerpt": "Shredded chicken wrapped in corn tortillas and baked under a tangy green chilli sauce made with green peppers, jalapeños, and lime, then topped with melted cheese and soured cream. Lighter and sharper than the red version.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Chicken enchiladas verde: based on Mexican enchiladas verdes, traditionally made with tomatillo sauce (salsa verde). Tomatillos are not widely available in the UK so this version builds the green sauce from jalapeños, green peppers, coriander, and lime. Synthesised from standard US Tex-Mex home-cooking sources.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 40,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Assemble unbaked, cover tightly, and freeze for up to 3 months. Bake from frozen with 15 minutes added to the baking time.",
+    "batchable": true,
+    "batchNotes": "Make a double batch and freeze one dish unbaked.",
+    "makeAheadNotes": "Assemble up to a day ahead, cover, and refrigerate. Bring to room temperature before baking.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weekendProject"],
+    "temperatureCelsius": 190,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "medium-saucepan", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken enchiladas verde swap the red chilli sauce for a bright, tangy green one made from roasted green peppers, jalapeños, coriander, and lime. The green sauce is lighter and sharper than the red version and pairs well with the chicken. The tortillas are dipped, rolled, and baked in the same way as the red enchiladas; the difference is all in the sauce."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 600, "unit": "g", "prepNote": "skinless boneless thighs", "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "vegetable-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the chicken" },
+            { "ingredientSlug": "pepper-green", "amount": 3, "unit": "each", "prepNote": "halved and deseeded", "isOptional": false, "groupLabel": "For the verde sauce" },
+            { "ingredientSlug": "jalapeno", "amount": 3, "unit": "each", "prepNote": "halved and deseeded for mild heat, or left whole for more", "isOptional": false, "groupLabel": "For the verde sauce" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the verde sauce" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": null, "isOptional": false, "groupLabel": "For the verde sauce" },
+            { "ingredientSlug": "coriander", "amount": 30, "unit": "g", "prepNote": "stalks and leaves", "isOptional": false, "groupLabel": "For the verde sauce" },
+            { "ingredientSlug": "lime", "amount": 2, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": "For the verde sauce" },
+            { "ingredientSlug": "stock-chicken", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the verde sauce" },
+            { "ingredientSlug": "corn-tortilla", "amount": 8, "unit": "each", "prepNote": "medium corn tortillas", "isOptional": false, "groupLabel": "For assembly" },
+            { "ingredientSlug": "cheddar", "amount": 150, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "For assembly" },
+            { "ingredientSlug": "mozzarella", "amount": 125, "unit": "g", "prepNote": "torn", "isOptional": false, "groupLabel": "For assembly" },
+            { "ingredientSlug": "soured-cream", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "avocado", "amount": 1, "unit": "each", "prepNote": "sliced", "isOptional": true, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The green sauce is made by roasting the peppers and jalapeños until charred, then blending them with the remaining ingredients. Roasting deepens the flavour and sweetens the heat slightly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook and shred the chicken" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Season the chicken thighs with the cumin and salt. Heat {{vegetable-oil}} of oil in a frying pan over medium heat. Cook the thighs for 6-7 minutes on each side until cooked through. Rest 5 minutes, then shred with two forks." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the verde sauce" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Place the green peppers and jalapeños cut-side down under a hot grill. Grill for 10-12 minutes until charred and softened. Set aside; the skin will loosen in about 5 minutes." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Blend the roasted peppers (skins removed) with the onion, garlic, coriander, lime juice, and stock until smooth. Pour into a saucepan and simmer for 8-10 minutes until slightly thickened. Season with salt." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Heat the oven to 190°C. Spoon a ladle of verde sauce across the base of a roasting dish." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Dip each corn tortilla into the warm verde sauce for 10 seconds. Fill with shredded chicken and a scatter of cheese. Roll tightly and place seam-side down in the dish." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Pour the remaining verde sauce over the top. Scatter with the mixed cheddar and torn mozzarella. Bake at 190°C for 20-25 minutes until bubbling. Rest 5 minutes. Serve topped with soured cream and avocado if using." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is too sharp or acidic",
+              "cause": "Too much lime juice, or jalapeños left with all their seeds",
+              "fix": "Start with the juice of 1 lime and add more after blending to taste. Remove the seeds from the jalapeños for a milder, less sharp result."
+            },
+            {
+              "symptom": "Sauce is dull green rather than bright",
+              "cause": "Overcooked sauce, or coriander added too early",
+              "fix": "Add the coriander just before blending rather than cooking it. Simmer the sauce briefly and take it off the heat while still bright."
+            },
+            {
+              "symptom": "Tortillas crack when rolling",
+              "cause": "Verde sauce not warm when dipping",
+              "fix": "Keep the sauce at a gentle simmer as you work. Cold sauce won't soften the tortillas."
+            },
+            {
+              "symptom": "Cheese doesn't melt properly",
+              "cause": "Too thick a layer or oven not hot enough",
+              "fix": "Grate the cheese finely for the top layer. 190°C for 20 minutes is enough for a thin cheese layer to melt and bubble."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Enchiladas verdes use a green sauce based on tomatillos in Mexico, where the tomatillo (a small green relative of the tomato) is a common fresh ingredient. In the UK, tomatillos are not widely stocked, so this version builds the green sauce from roasted green peppers and jalapeños. The result has the same brightness and tang, using ingredients available in most supermarkets."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "slug": "fish-tacos",
+  "title": "Fish Tacos",
+  "subtitle": "Beer-battered cod, crunchy slaw, chipotle mayo",
+  "excerpt": "Light, crispy beer-battered cod tucked into warm corn tortillas with crunchy cabbage slaw and a smoky chipotle mayonnaise. A coastal Tex-Mex classic that comes together in under 30 minutes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Beer-battered fish tacos: a Baja California-influenced Tex-Mex dish that became a US restaurant and home staple. Classic form documented in Tex-Mex home-cooking sources and coastal American cooking traditions.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The slaw and chipotle mayo can both be made up to a day ahead and refrigerated.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["weeknight", "dinnerParty"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "oil for frying",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false },
+    { "slug": "thermometer-probe", "isOptional": true },
+    { "slug": "mixing-bowl-medium", "isOptional": false },
+    { "slug": "tortilla-pan", "isOptional": true },
+    { "slug": "chopping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "batter",
+      "term": "Batter",
+      "definition": "A thin mixture of flour, liquid, and sometimes egg used to coat food before frying, producing a crisp golden crust."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fish tacos are warm corn tortillas filled with crispy beer-"
+          },
+          {
+            "type": "text",
+            "text": "battered",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "batter" } }]
+          },
+          {
+            "type": "text",
+            "text": " cod, a sharp cabbage slaw, and a smoky chipotle mayo. The batter is light and barely seasoned so the fish comes through. Oil temperature is the key: 180°C gives a pale, greasy crust; 190-200°C gives a crisp one that holds."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "cod-fillet", "amount": 600, "unit": "g", "prepNote": "skinless, cut into 3 cm strips", "isOptional": false, "groupLabel": "For the fish" },
+            { "ingredientSlug": "plain-flour", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "beer", "amount": 200, "unit": "ml", "prepNote": "cold lager", "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "cayenne", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the batter" },
+            { "ingredientSlug": "vegetable-oil", "amount": 500, "unit": "ml", "prepNote": "for frying", "isOptional": false, "groupLabel": "For the fish" },
+            { "ingredientSlug": "cabbage-white", "amount": 200, "unit": "g", "prepNote": "finely shredded", "isOptional": false, "groupLabel": "For the slaw" },
+            { "ingredientSlug": "coriander", "amount": 20, "unit": "g", "prepNote": "chopped", "isOptional": false, "groupLabel": "For the slaw" },
+            { "ingredientSlug": "lime", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": "For the slaw" },
+            { "ingredientSlug": "mayonnaise", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the chipotle mayo" },
+            { "ingredientSlug": "chipotle", "amount": 1, "unit": "each", "prepNote": "dried chipotle, finely chopped, or 1 tsp chipotle paste", "isOptional": false, "groupLabel": "For the chipotle mayo" },
+            { "ingredientSlug": "lime", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": "For the chipotle mayo" },
+            { "ingredientSlug": "corn-tortilla", "amount": 8, "unit": "each", "prepNote": "small corn tortillas", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "jalapeno", "amount": 2, "unit": "each", "prepNote": "sliced", "isOptional": true, "groupLabel": "To serve" },
+            { "ingredientSlug": "lime", "amount": 1, "unit": "each", "prepNote": "cut into wedges", "isOptional": false, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use a deep, wide frying pan rather than a shallow one for frying; the fish needs to float freely. A probe thermometer takes the guesswork out of the oil temperature."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the slaw and chipotle mayo" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Toss the shredded cabbage with the coriander and the juice of 1 lime. Season with salt. Set aside." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Stir the finely chopped chipotle and lime juice into the mayonnaise. Taste and add more chipotle if you want more heat. Refrigerate until needed." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the batter and fry the fish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Whisk {{plain-flour}} of flour with {{cayenne}} of cayenne and a pinch of salt. Pour in {{beer}} of cold beer and whisk to a smooth batter roughly the consistency of single cream. Don't overwork it; a few lumps are fine." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Heat {{vegetable-oil}} of oil in a deep frying pan to 190-200°C. Pat the cod strips dry with kitchen paper; wet fish steams rather than fries. Dip each strip in the batter, let the excess drip off, and lower carefully into the oil." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Fry in batches for 3-4 minutes, turning once, until golden and crisp. Drain on kitchen paper. Season with salt immediately." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Warm the tortillas and serve" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Warm each tortilla in a dry pan for 30 seconds a side. Stack and cover. Set out the slaw, chipotle mayo, jalapeño, and lime wedges. Fill the tortillas: slaw first, fish on top, mayo drizzled over." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Batter slides off the fish",
+              "cause": "Fish not dried properly, or oil too cool",
+              "fix": "Pat fish very dry before battering. Wet fish creates steam that lifts the batter off. Check oil temperature before each batch."
+            },
+            {
+              "symptom": "Batter is greasy and pale",
+              "cause": "Oil temperature too low",
+              "fix": "The oil must reach 190-200°C. Adding too much fish at once drops the temperature sharply; fry in small batches."
+            },
+            {
+              "symptom": "Batter is thick and doughy",
+              "cause": "Too much flour or batter mixed in advance",
+              "fix": "Make the batter just before frying. Add more cold beer to thin it to a single-cream consistency."
+            },
+            {
+              "symptom": "Tortillas split when folded",
+              "cause": "Corn tortillas not warmed",
+              "fix": "Warm each one in a dry pan until flexible. Wrap in a tea towel to keep them pliable."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fish tacos have roots in the coastal cooking of Baja California, where fried or grilled fish in tortillas has been a street-food staple for generations. The beer-battered version crossed the border into the US Southwest and became a Tex-Mex restaurant fixture by the late twentieth century. The combination of hot crunchy fish, cold crisp slaw, and smoky mayo in a warm tortilla is a study in contrast that's hard to beat."
+          }
+        ]
+      }
+    ]
+  }
+}
