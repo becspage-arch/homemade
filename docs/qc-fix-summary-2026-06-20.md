@@ -669,3 +669,40 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 20:35:04
+
+Generated: 2026-06-20T20:35:04.340Z
+
+Processed: 85
+PASS: 76
+STILL_BLOCKED: 9
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 37 |
+| opening-pattern-missing-hook | 32 |
+| placeholder-string | 29 |
+| body-missing-method | 24 |
+| grade-level-strict | 17 |
+| hero-missing | 9 |
+| ingredient-amount-missing | 9 |
+| historical-century-in-body | 2 |
+
+## Still BLOCKED (sample 20)
+
+- albaloo-polo: hero-missing, body-missing-method
+- cross-stitch-trans-flag-heart: grade-level-strict
+- dolma-yaprak: body-missing-method
+- kashk-e-bademjan: hero-missing, body-missing-method
+- khoresh-gheymeh: body-missing-method
+- manti: body-missing-method
+- menemen: body-missing-method
+- sabzi-polo: body-missing-method
+- sigara-boregi: hero-missing, body-missing-method

@@ -1,0 +1,188 @@
+{
+  "slug": "falafel-wrap",
+  "title": "Falafel wrap",
+  "subtitle": "Crisp chickpea fritters in pitta with tahini sauce",
+  "excerpt": "Falafel wraps are fried chickpea patties tucked into pitta with shredded salad, tahini sauce, and chilli. The falafel are made from soaked dried chickpeas, which give a craggy exterior and dense, herb-green interior that tinned chickpeas cannot replicate.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Claudia Roden, A Book of Middle Eastern Food (1968). Falafel documented as a street food staple across Egypt and the Levant. Anissa Helou, Lebanese Cuisine (1994). Notes on the dried vs tinned chickpea debate and the critical soaking step.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "16 to 18 falafel",
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze uncooked shaped falafel on a tray, then transfer to a bag. Cook from frozen, adding two minutes to the frying time.",
+    "batchable": true,
+    "batchNotes": "Double the mix to make a large batch. Fry and freeze for quick weeknight meals.",
+    "makeAheadNotes": "The chickpeas must soak overnight. The falafel mix can rest in the fridge for up to 24 hours before shaping.",
+    "dietaryFlags": [],
+    "cuisine": "middle-eastern",
+    "mealType": "lunch",
+    "mood": ["weeknight", "party"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "food-processor", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Falafel are fried chickpea patties spiced with cumin and fresh herbs, served in pitta with tahini and salad. They depend on dried chickpeas soaked overnight, not tinned ones: the raw starch in dried chickpeas holds the mixture together during frying and gives the finished falafel its dense, slightly chewy interior. Use tinned chickpeas and the mixture will collapse in the oil." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chickpeas-dried", "amount": 250, "unit": "g", "prepNote": "soaked overnight in cold water", "isOptional": false, "groupLabel": "Falafel" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": null, "isOptional": false, "groupLabel": "Falafel" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "Falafel" },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Falafel" },
+            { "ingredientSlug": "coriander", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Falafel" },
+            { "ingredientSlug": "cumin-ground", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Falafel" },
+            { "ingredientSlug": "coriander-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Falafel" },
+            { "ingredientSlug": "baking-powder", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Falafel" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Falafel" },
+            { "ingredientSlug": "sesame-seeds", "amount": 2, "unit": "tbsp", "prepNote": "optional, for rolling", "isOptional": true, "groupLabel": "Falafel" },
+            { "ingredientSlug": "sunflower-oil", "amount": 1000, "unit": "ml", "prepNote": "for frying", "isOptional": false, "groupLabel": "To fry" },
+            { "ingredientSlug": "tahini", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tahini sauce" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only", "isOptional": false, "groupLabel": "Tahini sauce" },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "Tahini sauce" },
+            { "ingredientSlug": "pitta-bread", "amount": 4, "unit": "each", "prepNote": "warmed", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "tomato", "amount": 2, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "cucumber", "amount": 0.5, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "chilli-flakes", "amount": null, "unit": "pinch", "prepNote": "optional", "isOptional": true, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the falafel mix" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drain {{chickpeas-dried}} thoroughly. Do not cook them. Tip into a food processor with {{onion}}, {{garlic}}, {{parsley-flat}}, {{coriander}}, {{cumin-ground}}, {{coriander-ground}}, {{baking-powder}}, and {{sea-salt-fine}}." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pulse 15 to 20 times until the mixture resembles coarse breadcrumbs. It should hold its shape when pressed but not be smooth. Do not over-process into a paste." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Taste and adjust salt. Transfer to a bowl, cover, and refrigerate for at least 30 minutes (or up to 24 hours)." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Shape and fry" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour {{sunflower-oil}} into a deep saucepan to a depth of 8 cm and heat to 175 degrees. A piece of bread should sizzle immediately when dropped in." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Wet your hands and press the mix firmly into golf-ball-sized rounds, slightly flattened. If using {{sesame-seeds}}, press both sides into the seeds before frying." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lower four or five falafel carefully into the oil. Fry for three to four minutes, turning once, until deep brown and crisp. Remove with a slotted spoon onto kitchen paper. Repeat with the remaining mix." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the tahini sauce and assemble" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Whisk {{tahini}}, lemon juice from {{lemon}}, crushed garlic, and four tablespoons of cold water together until smooth and pourable. Season with salt." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slit each {{pitta-bread}} and open into a pocket. Tuck in three or four falafel, tomato, and cucumber slices. Drizzle generously with tahini sauce and scatter chilli flakes if using." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The falafel fall apart in the oil",
+              "cause": "Tinned chickpeas used instead of dried, or mix over-processed",
+              "fix": "Only dried, soaked chickpeas work here. If the mixture is too wet, refrigerate for an hour. If it still collapses, add a tablespoon of plain flour and test fry one first."
+            },
+            {
+              "symptom": "The inside is still raw after four minutes",
+              "cause": "Oil too hot, browning the outside before the inside cooks",
+              "fix": "Reduce the oil temperature to 170 degrees and fry for an extra two minutes. The interior should be fully cooked through."
+            },
+            {
+              "symptom": "The falafel are dense and heavy",
+              "cause": "Chickpeas soaked too long (over 24 hours) or not enough baking powder",
+              "fix": "Soak for 8 to 12 hours only. The baking powder provides lightness: measure it carefully."
+            },
+            {
+              "symptom": "The tahini sauce is too thick to drizzle",
+              "cause": "Not enough water whisked in",
+              "fix": "Whisk in cold water a tablespoon at a time until it reaches a pourable consistency."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Falafel originated in Egypt, where they are made from dried fava beans and known as ta'amiya. The chickpea version spread through the Levant and became the standard form in Lebanon, Israel, Jordan, and Palestine. As street food, falafel are sold by weight from carts and small shops, wrapped in flatbread with whatever pickles and sauces the vendor keeps. At home, they are made for a relaxed lunch or as part of a mezze spread. The herb-green interior is the mark of a good falafel: a grey or pale interior means the herbs were insufficient or the chickpeas were cooked before processing." }
+        ]
+      }
+    ]
+  }
+}
