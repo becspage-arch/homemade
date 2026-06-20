@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { prisma, TutorialStatus, PipelineStatus } from '@homemade/db'
+import { prisma, TutorialStatus, PipelineStatus, PatternType, Visibility } from '@homemade/db'
 import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { AcknowledgeButton } from './acknowledge-button'
 import { PauseToggle } from './pause-toggle'
@@ -28,6 +28,18 @@ const STREAMS: ReadonlyArray<{ name: StreamName; label: string; description: str
 ]
 
 const PAGE_SIZE = 50
+
+/**
+ * Pattern-led categories grow via the pattern-generation pipeline (charts in
+ * the Pattern model), not the tutorial-authoring autopilot — so their
+ * progress is measured in published patterns toward a pattern target, not
+ * tutorials. Target lives here for now; it moves to a Category field when the
+ * pattern cron is wired (see project_cross_stitch_pipeline memory). The
+ * teaching-tutorial count still uses targetTutorialCount elsewhere.
+ */
+const PATTERN_LED_CATEGORIES: Record<string, { patternType: PatternType; target: number }> = {
+  'cross-stitch': { patternType: PatternType.CROSS_STITCH, target: 1500 },
+}
 
 // Queue cron fires at minute 0 of every hour UTC: 0 * * * *
 function nextQueueFireUtc(): Date {
@@ -128,6 +140,16 @@ export default async function AdminAutopilotPage({ searchParams }: PageProps) {
   })
   const publishedByCategoryId = new Map(
     publishedCountRows.map((r) => [r.categoryId, r._count._all]),
+  )
+
+  // Public library-pattern counts per pattern type (for pattern-led categories).
+  const patternCountRows = await prisma.pattern.groupBy({
+    by: ['type'],
+    where: { visibility: Visibility.PUBLIC, ownerUserId: null },
+    _count: { _all: true },
+  })
+  const publishedPatternsByType = new Map(
+    patternCountRows.map((r) => [r.type, r._count._all]),
   )
 
   // Image verification coverage
@@ -421,8 +443,12 @@ export default async function AdminAutopilotPage({ searchParams }: PageProps) {
             </thead>
             <tbody>
               {categoriesRaw.map((cat, i) => {
-                const published = publishedByCategoryId.get(cat.id) ?? 0
-                const target = cat.targetTutorialCount
+                const led = PATTERN_LED_CATEGORIES[cat.slug]
+                const published = led
+                  ? publishedPatternsByType.get(led.patternType) ?? 0
+                  : publishedByCategoryId.get(cat.id) ?? 0
+                const target = led ? led.target : cat.targetTutorialCount
+                const unit = led ? 'patterns' : null
                 const pct =
                   target && target > 0 ? Math.min(100, Math.round((published / target) * 100)) : 0
                 const isNextUp = i === nextUpIdx
@@ -479,6 +505,12 @@ export default async function AdminAutopilotPage({ searchParams }: PageProps) {
                         {target != null && (
                           <span style={{ color: 'var(--color-warm-taupe)' }}>
                             {' '}/ {target.toLocaleString()}
+                          </span>
+                        )}
+                        {unit && (
+                          <span style={{ color: 'var(--color-warm-taupe)', fontSize: 11 }}>
+                            {' '}
+                            {unit}
                           </span>
                         )}
                       </div>
