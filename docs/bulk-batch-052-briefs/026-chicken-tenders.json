@@ -1,0 +1,320 @@
+{
+  "slug": "chicken-tenders",
+  "title": "Chicken Tenders",
+  "subtitle": "Buttermilk-marinated fried chicken strips",
+  "excerpt": "Chicken tenders are strips of chicken breast soaked in buttermilk, coated in seasoned flour, and fried until golden and juicy. The buttermilk tenderises the meat and helps the coating stick. Serve with dipping sauce: honey mustard, BBQ sauce, or hot sauce.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Chicken tenders are an American restaurant and home cooking staple, a simplified version of Southern fried chicken using breast meat. The buttermilk marinade is the standard technique.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze cooked tenders. Reheat on a rack at 200°C for 12 minutes until crisp again.",
+    "batchable": true,
+    "batchNotes": "Make a large batch: they reheat well.",
+    "makeAheadNotes": "Marinate overnight in the fridge for a deeper flavour and more tender result.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "crowdPleaser"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken tenders are strips of chicken breast that have been marinated in buttermilk, coated in seasoned flour, and fried until golden. The buttermilk tenderises the meat and gives the flour coating something to grip. The result is juicy inside and crisp outside. They take an hour of hands-off marinating plus twenty minutes of active cooking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-breast",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "cut into strips about 2 cm wide and 8 cm long",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-yoghurt",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "or 200 ml buttermilk",
+              "isOptional": false,
+              "groupLabel": "marinade"
+            },
+            {
+              "ingredientSlug": "louisiana-hot-sauce",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "marinade"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "marinade"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "coating"
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "coating"
+            },
+            {
+              "ingredientSlug": "garlic-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "coating"
+            },
+            {
+              "ingredientSlug": "onion-powder",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "coating"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "coating"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "coating"
+            },
+            {
+              "ingredientSlug": "cayenne-pepper",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "coating"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 750,
+              "unit": "ml",
+              "prepNote": "for frying",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Marinate"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the {{plain-yoghurt}}, {{louisiana-hot-sauce}} if using, and {{sea-salt-fine}} in a bowl. Add the {{chicken-breast}} strips and turn to coat. Cover and refrigerate for at least one hour, or overnight."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Coat and fry"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix {{plain-flour}}, {{paprika-smoked}}, {{garlic-powder}}, {{onion-powder}}, {{black-pepper}}, {{sea-salt-fine}}, and {{cayenne-pepper}} in a shallow bowl. Lift each chicken strip from the marinade. Let the excess drip off. Press each strip into the flour, coating all sides."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{vegetable-oil}} in a large heavy pot to 180°C. Fry the tenders in batches of four to five for four to five minutes, turning once, until golden and cooked through. Drain on kitchen paper. Serve with your choice of dipping sauce."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The coating falls off in the oil",
+              "cause": "Not enough marinade clinging to the chicken, or the oil wasn't hot enough.",
+              "fix": "Press the flour firmly onto each strip and don't shake off too much excess before frying. The oil should be at 180°C before the first batch goes in."
+            },
+            {
+              "symptom": "The chicken is undercooked in the middle",
+              "cause": "Strips too thick, or frying temperature too high (outside browns before inside cooks).",
+              "fix": "Cut the strips to a consistent 2 cm thickness. If in doubt, remove one and check: the inside should be white with no translucency. At 180°C, four to five minutes is usually enough for a 2 cm strip."
+            },
+            {
+              "symptom": "The coating is pale and soft, not golden",
+              "cause": "Oil not hot enough.",
+              "fix": "Use a thermometer. At the correct temperature (180°C), the tenders should start sizzling vigorously immediately on contact with the oil."
+            },
+            {
+              "symptom": "The yoghurt marinade makes the coating gummy",
+              "cause": "Too much marinade left on the chicken.",
+              "fix": "Let the excess drip off for a few seconds before dredging. The coating should adhere to a thin layer of yoghurt, not a thick coating."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken tenders became a fixture of American casual dining in the 1980s and 1990s. They were easier to eat than bone-in fried chicken and the breast was the preferred cut. The tenderloin, the small muscle under the breast, is the original cut. Breast strips work just as well. Serve with honey mustard, BBQ sauce, or louisiana-style hot sauce for dipping."
+          }
+        ]
+      }
+    ]
+  }
+}

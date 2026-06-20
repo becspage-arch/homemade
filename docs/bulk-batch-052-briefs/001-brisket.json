@@ -1,0 +1,210 @@
+{
+  "slug": "brisket",
+  "title": "Texas-Style Beef Brisket",
+  "subtitle": "Low and slow oven brisket with a black-pepper bark",
+  "excerpt": "Beef brisket cooked low and slow in the oven: a large, tough cut that transforms over five hours into something deeply flavoured and tender, with a dark peppery crust on the surface. Texas pitmasters smoke theirs for twelve hours or more. This oven version gets you most of the way there.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Texas-style barbecue brisket tradition rooted in Central Texas pit-smoking technique. The salt-and-pepper rub and low-temperature logic are widely documented in American barbecue writing. This is an oven adaptation.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 300,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze in portions with a little cooking juices spooned over. Reheat covered in foil at 150°C for 20 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Brisket improves overnight. Cool completely, slice cold (it slices cleaner cold), then reheat slices covered in cooking juices at 160°C for 20 minutes.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weekend", "crowdPleaser"],
+    "temperatureCelsius": 135,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false },
+    { "slug": "tongs", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bark",
+      "term": "bark",
+      "definition": "The dark, firm crust that forms on the surface of long-cooked barbecue meat from the dry rub, rendered fat, and heat. A good bark is dark brown, slightly chewy, and packed with flavour."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Beef brisket is a large, tough cut from the breast of the animal that transforms completely under long, low heat: it comes out sliceable and deeply flavoured, with a dark peppery crust on the surface called the " },
+          { "type": "text", "text": "bark", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bark" } }] },
+          { "type": "text", "text": ". Rubbed generously with salt and coarsely ground black pepper, then cooked at 135°C for five hours, it needs nothing else. The one rule is patience: lift the foil too soon and the bark never sets." }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": { "heading": "Flat cut vs point cut", "variant": "info" },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              { "type": "text", "text": "Brisket is sold as either the flat (leaner, even thickness, slices cleanly) or the point (fattier, looser grain, better for pulling). For this recipe you want the flat cut, trimmed to a fat cap of about 1 cm. Ask a butcher if you can't find it ready-trimmed at the supermarket." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "beef-brisket", "amount": 1800, "unit": "g", "prepNote": "flat cut, fat cap trimmed to 1 cm", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "dry rub" },
+            { "ingredientSlug": "black-pepper", "amount": 2, "unit": "tbsp", "prepNote": "coarsely ground", "isOptional": false, "groupLabel": "dry rub" },
+            { "ingredientSlug": "garlic-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "dry rub" },
+            { "ingredientSlug": "onion-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "dry rub" },
+            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "dry rub" },
+            { "ingredientSlug": "stock-beef", "amount": 250, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the rub and coat the brisket" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 135°C (fan 115°C / gas mark 1). Mix {{sea-salt-flakes}}, {{black-pepper}}, {{garlic-powder}}, {{onion-powder}}, and {{paprika-smoked}} together in a small bowl." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pat {{beef-brisket}} completely dry with kitchen paper. Lay it fat side up in a large roasting tin. Press the rub all over the meat, including the sides. Don't hold back: you need a generous, even coat." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise, covered" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour {{stock-beef}} and {{worcestershire-sauce}} into the base of the tin around (not over) the brisket. Cover the tin tightly with two layers of foil, crimping the edges so no steam escapes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook at 135°C for three and a half hours. Resist lifting the foil. The meat should be beginning to feel tender when pressed through the foil at this point." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Uncover and set the bark" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Carefully remove the foil and increase the oven to 160°C (fan 140°C / gas mark 3). Continue cooking uncovered for a further one to one and a half hours until the surface is deeply coloured and the internal temperature reads 90 to 93°C on a probe thermometer. At this temperature the collagen in the meat has dissolved and the brisket will be properly tender." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the bark looks like it might scorch before the temperature is reached, lay a piece of foil loosely over the top without crimping." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Rest and slice" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the brisket from the oven. Tent loosely with foil and rest for at least 30 minutes, or up to one hour. The juices in the tin are the sauce: skim off some fat, then pour the juices over the slices at serving." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slice across the grain in 1 cm slices. The grain runs lengthways along the flat, so slice perpendicular to that. If the slices shred rather than cut cleanly, the meat needs more time, or you're slicing with the grain instead of across it." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The meat is still tough after five hours",
+              "cause": "Collagen breakdown requires time at temperature. If the internal temperature hasn't reached 90°C, the connective tissue hasn't dissolved.",
+              "fix": "Cover loosely and return to the oven for another 30 to 45 minutes. Check the probe temperature rather than relying on time alone."
+            },
+            {
+              "symptom": "The bark is pale and soft, not dark and set",
+              "cause": "Too much liquid in the tin or foil left on too long during the uncovered phase.",
+              "fix": "The uncovered phase needs at least one hour at 160°C. If there's excess liquid steaming up around the meat, pour some off before uncovering."
+            },
+            {
+              "symptom": "The slices fall apart when cut",
+              "cause": "Overcooked, or sliced while too hot.",
+              "fix": "Rest the brisket fully before slicing. If it is overcooked beyond saving, shred it with two forks rather than slicing: pulled brisket is just as good."
+            },
+            {
+              "symptom": "The juices in the tin are bitter",
+              "cause": "The rub on the tin base burned during the uncovered phase.",
+              "fix": "Next time, add a little more stock and keep the meat fat side up so the drippings protect the base. Taste the juices: if bitter, skip them and serve with a separate sauce instead."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Brisket is the centrepiece of Central Texas barbecue, a tradition built around German and Czech immigrant butchers who began smoking the cuts they couldn't sell in the 19th century. The style is defined by its restraint: salt, pepper, time, and smoke, nothing else. This oven version omits the smoke but keeps everything else. Serve with white bread, pickles, sliced onion, and a pot of pinto beans on the side." }
+        ]
+      }
+    ]
+  }
+}

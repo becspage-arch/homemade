@@ -1,0 +1,334 @@
+{
+  "slug": "french-dip-sandwich",
+  "title": "French Dip Sandwich",
+  "subtitle": "Roast beef sandwich with beef jus for dipping",
+  "excerpt": "A French dip sandwich is thinly sliced roast beef in a soft roll, served with a cup of warm beef jus for dipping. Despite the name, it's entirely American, invented in Los Angeles in the early 1900s. The jus is the point: each bite is dipped before eating.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "The French dip sandwich was invented in Los Angeles, either at Philippe the Original (est. 1908) or Cole's Pacific Electric Buffet (est. 1908), both of which claim the dish. The jus dip is the defining element.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "4 sandwiches",
+    "prepMinutes": 15,
+    "cookMinutes": 90,
+    "restingMinutes": 20,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Roast the beef a day ahead. Slice cold and reheat the jus and beef separately when serving.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "weekend"
+    ],
+    "temperatureCelsius": 220,
+    "temperatureNote": "Initial sear at 220°C, then 160°C for the slow roast",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "roasting-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-rack",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A French dip sandwich is thinly sliced roast beef in a soft roll with a cup of beef jus on the side for dipping. The beef is roasted simply, seasoned only with garlic and salt, and the jus is made from the pan drippings extended with beef stock. Both elements are good on their own but together they're much better than the sum of their parts."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-topside",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "or beef sirloin joint",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "crushed to a paste with salt",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "coarsely ground",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "rapeseed-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "jus"
+            },
+            {
+              "ingredientSlug": "worcestershire-sauce",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "jus"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "jus"
+            },
+            {
+              "ingredientSlug": "dried-thyme",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "jus"
+            },
+            {
+              "ingredientSlug": "white-onion",
+              "amount": 1,
+              "unit": "medium",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": "jus"
+            },
+            {
+              "ingredientSlug": "soft-white-roll",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "split and toasted",
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "dijon-mustard",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "optional, to spread on the roll",
+              "isOptional": true,
+              "groupLabel": "to serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Roast the beef"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Take {{beef-topside}} out of the fridge one hour before cooking. Rub all over with {{rapeseed-oil}}, {{garlic}}, {{sea-salt-fine}}, and {{black-pepper}}. Heat the oven to 220°C (fan 200°C / gas mark 7). Place the beef on a rack in a roasting tin and roast for 20 minutes until well coloured on the outside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the oven to 160°C (fan 140°C / gas mark 3). Roast for a further 50 to 60 minutes until an instant-read thermometer reads 57°C at the thickest point (medium-rare) or 65°C (medium). Rest the beef on a board, loosely tented with foil, for 20 minutes before slicing."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the jus and assemble"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "While the beef rests, place the roasting tin over medium heat on the hob. Add {{white-onion}} to the drippings and cook for five minutes until softened. Pour in {{stock-beef}}, {{worcestershire-sauce}}, {{soy-sauce-light}}, and {{dried-thyme}}. Bring to a simmer and cook for ten minutes. Strain into a jug."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slice the rested beef as thinly as possible, almost transparently thin. Pile onto the toasted {{soft-white-roll}}. Serve immediately with a small cup of hot jus on the side. Each bite of the sandwich is dipped into the jus before eating."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The beef is tough and hard to slice thinly",
+              "cause": "Overcooked, or not rested long enough.",
+              "fix": "Rest for a full 20 minutes under foil. For French dip, the beef must be cooked to at most medium (65°C) and ideally medium-rare (57°C). Beyond that it loses the tenderness needed for thin slicing."
+            },
+            {
+              "symptom": "The jus is thin and flavourless",
+              "cause": "Not enough drippings from the beef, or stock too weak.",
+              "fix": "Use a good quality beef stock. If there are few drippings, add a splash of Worcestershire sauce and a teaspoon of dark soy sauce to deepen the colour and umami."
+            },
+            {
+              "symptom": "The bread goes soggy immediately",
+              "cause": "Bread not toasted, or dipping too early.",
+              "fix": "Toast the cut side of the rolls under the grill until golden. The toasted surface resists moisture far better than soft bread. Dip just before eating, not before."
+            },
+            {
+              "symptom": "The beef is grey and overdone at the edges",
+              "cause": "Oven temperature not reduced quickly enough after the initial sear.",
+              "fix": "Reduce to 160°C immediately after the initial 20-minute sear. The second stage is a slow cook, not a continuation of the hot roast."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The French dip was invented in Los Angeles. Two restaurants claim the original: Philippe the Original and Cole's Pacific Electric Buffet, both serving it since the early 1900s. Despite the name, the dish has nothing to do with French cuisine. The name refers to the French bread roll originally used. Today it's a staple of American diner menus across the country, served in a soft roll with a side of au jus."
+          }
+        ]
+      }
+    ]
+  }
+}

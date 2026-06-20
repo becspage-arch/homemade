@@ -1,0 +1,356 @@
+{
+  "slug": "new-england-clam-chowder",
+  "title": "New England Clam Chowder",
+  "subtitle": "Creamy potato soup with clams and bacon",
+  "excerpt": "New England clam chowder is a thick, cream-based soup with clams, potato, and bacon. It's white and rich, the opposite of Manhattan clam chowder, which is tomato-based. The clams go in at the end to prevent them from toughening. Serve in bowls with oyster crackers or crusty bread.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "New England clam chowder is one of the defining dishes of American coastal New England cuisine, with historical roots going back to the 18th century. The cream-based formula (as opposed to the tomato-based Manhattan version) is the New England standard.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the chowder base (without clams) up to a day ahead. Add the clams when reheating gently.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "New England clam chowder is a cream soup thickened with potato and flavoured with bacon and clam juice. The clams themselves go in only at the end because they toughen quickly when overcooked. The soup should be thick but not gluey, and the clams should be tender. Tinned clams work well here and are what most restaurant versions use outside New England."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "clams",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "tinned, in brine, drained, brine reserved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "smoked-bacon-lardons",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "white-onion",
+              "amount": 1,
+              "unit": "large",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 2,
+              "unit": "stalk",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "waxy-potato",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "peeled, cut into 1.5 cm dice",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-fish",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaf",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dried-thyme",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "or to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the base"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook {{smoked-bacon-lardons}} in a large heavy pan over medium heat until the fat renders and the bacon is lightly golden. Remove the bacon with a slotted spoon and set aside, leaving the fat in the pan."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{unsalted-butter}} to the bacon fat. Add {{white-onion}}, {{celery}}, and {{garlic}} and cook gently for eight minutes until soft. Stir in {{plain-flour}} and cook for two minutes, stirring constantly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the reserved clam brine (about 200 ml) and {{stock-fish}}, whisking to prevent lumps. Add {{waxy-potato}}, {{bay-leaf}}, and {{dried-thyme}}. Bring to a simmer and cook for 15 to 20 minutes until the potato is completely tender."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add cream and clams"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the bay leaves. Pour in {{double-cream}} and return the bacon to the pot. Season with {{sea-salt-fine}} and {{black-pepper}}. Bring to a very gentle simmer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the drained {{clams}} and heat through for two to three minutes only, just until the clams are warmed through. Don't boil. Taste and adjust seasoning. Serve with oyster crackers or crusty bread."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The clams are rubbery",
+              "cause": "Overcooked.",
+              "fix": "Tinned clams are already cooked. Add them right at the end and heat through at the lowest possible simmer. Boiling makes them rubbery immediately."
+            },
+            {
+              "symptom": "The chowder is too thin",
+              "cause": "Not enough flour, or potato not broken down enough.",
+              "fix": "The potato should be cooked until completely soft, some of it will break down and thicken the soup naturally. If still thin, mash or blend a ladleful of the soup and stir it back in."
+            },
+            {
+              "symptom": "The chowder is too salty",
+              "cause": "Clam brine is very salty and so is bacon.",
+              "fix": "Use the clam brine measured, don't add all of it, start with 150 ml and taste before adding more. Hold back additional salt until you've tasted the finished soup."
+            },
+            {
+              "symptom": "The soup has a floury taste",
+              "cause": "Flour not cooked out enough.",
+              "fix": "Cook the flour in the fat for a full two minutes, stirring constantly, before adding any liquid. The flour should smell slightly nutty and look dry before the liquid goes in."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "New England clam chowder has been made on the Massachusetts and Rhode Island coasts since the early 1700s. It is one of America's oldest regional dishes. The cream-based version was established in Boston over the 19th century. A 1939 Maine law proposed a ban on adding tomatoes to chowder. The Manhattan version was considered heresy. Today it's served in sourdough bread bowls in San Francisco, as well as in every seafood shack along the New England coast."
+          }
+        ]
+      }
+    ]
+  }
+}

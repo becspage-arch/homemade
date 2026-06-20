@@ -721,3 +721,5 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - mujaddara-with-bulgur  — applied: recipe-yield-appended,dry-run
 - naan-e-barbari  — applied: recipe-yield-appended,dry-run
 - shish-tawook  — applied: recipe-yield-appended,dry-run
+
+- sunday-gravy prose-prep-steps — applied: 

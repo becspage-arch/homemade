@@ -1,0 +1,408 @@
+{
+  "slug": "new-york-pizza",
+  "title": "New York-Style Pizza",
+  "subtitle": "Thin, wide pizza with a foldable crust and tomato-mozzarella topping",
+  "excerpt": "New York pizza is a large, thin-crust pizza baked at high heat with a simple tomato sauce and low-moisture mozzarella. The slices are wide and slightly floppy at the tip, which is why New Yorkers fold them lengthways to eat. The crust is chewy at the edge and thin and crisp below.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "New York-style pizza developed from Neapolitan pizza brought by Italian immigrants in the early 20th century. The key differences from Neapolitan are the larger size, lower-moisture mozzarella, and the fold-and-eat serving style.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "two 30 cm pizzas, serving 4",
+    "prepMinutes": 20,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze shaped dough balls after rising. Defrost overnight in the fridge.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can be made and refrigerated for up to 3 days. A cold prove develops better flavour. Remove from the fridge one hour before shaping.",
+    "dietaryFlags": [],
+    "cuisine": "italian-american",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "weekend",
+      "crowdPleaser"
+    ],
+    "temperatureCelsius": 260,
+    "temperatureNote": "As high as your oven will go. Most domestic ovens max at 240 to 260°C.",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "pizza-stone",
+      "isOptional": true
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "rolling-pin",
+      "isOptional": false
+    },
+    {
+      "slug": "pizza-peel",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "New York pizza is defined by its crust: wide, thin, chewy at the rim, slightly crisp below, and floppy enough at the tip that eating it requires a fold. The dough uses more oil than Neapolitan pizza and the sauce is uncooked and applied thin. The mozzarella is the low-moisture kind, which melts evenly and doesn't make the base soggy."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "The cold prove",
+          "variant": "info"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "New York pizza dough benefits from a long, cold ferment in the fridge of 8 to 3 days. This develops flavour and makes the dough easier to stretch without springing back. Make it the morning before you want pizza, or the evening before. The recipe also works with a two-hour room-temperature prove if you're short of time."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "strong-bread-flour",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "yeast-fast-action",
+              "amount": 7,
+              "unit": "g",
+              "prepNote": "1 sachet",
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 325,
+              "unit": "ml",
+              "prepNote": "lukewarm",
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "San Marzano type if possible; drain excess liquid",
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 1,
+              "unit": "clove",
+              "prepNote": "crushed to a paste with salt",
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "oregano-dried",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "mozzarella",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "low-moisture block type, grated",
+              "isOptional": false,
+              "groupLabel": "topping"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "for the crust edge",
+              "isOptional": false,
+              "groupLabel": "topping"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the dough"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine {{strong-bread-flour}}, {{yeast-fast-action}}, and {{sea-salt-fine}} in a large bowl. Add {{olive-oil}} and {{water}} and mix to a rough dough. Knead for eight to ten minutes until smooth and elastic. Divide into two equal balls."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Coat each ball lightly in olive oil and place in a covered container in the fridge for at least eight hours, or up to 3 days. Remove one hour before shaping."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Drain the {{tinned-tomatoes}} in a sieve, pressing lightly to remove excess liquid. Crush them by hand into a bowl. Stir in the garlic paste, {{sea-salt-fine}}, and {{oregano-dried}}. Do not cook: this is a raw sauce."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Shape and bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven as high as it will go (ideally 260°C / fan 240°C), with a pizza stone or heavy baking tray on the top shelf, for at least 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "On a lightly floured surface, flatten and stretch one dough ball into a 30 cm circle: press from the centre outward, leaving a thicker border of about 2 cm for the crust. The base should be thin enough to see light through it."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slide onto a piece of baking paper. Spread a thin, even layer of tomato sauce, leaving the border clear. Scatter {{mozzarella}} over. Brush the crust border with {{olive-oil}}."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slide the pizza onto the hot stone or tray using the baking paper. Bake for eight to ten minutes until the crust is puffed and blistered and the cheese is melted and golden in patches. Repeat with the second pizza."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The dough springs back and won't stay stretched",
+              "cause": "Gluten too tight, usually because the dough was worked recently.",
+              "fix": "Let the dough ball sit at room temperature for 30 minutes before shaping. If it still springs back, cover it and let it rest for another 15 minutes."
+            },
+            {
+              "symptom": "The base is soggy in the middle",
+              "cause": "Sauce too liquid, cheese too wet, or oven not hot enough.",
+              "fix": "Drain the tomatoes well before making the sauce. Use block mozzarella (grated) rather than fresh. Make sure the stone or tray is preheated for a full 30 minutes."
+            },
+            {
+              "symptom": "The crust is pale and doughy",
+              "cause": "Oven not hot enough, or pizza placed too low.",
+              "fix": "New York pizza needs a very hot oven. Place the stone or tray on the top shelf. If your oven only goes to 220°C, add an extra two minutes."
+            },
+            {
+              "symptom": "The cheese browns before the base is cooked",
+              "cause": "Pizza placed on a shelf that's too high relative to the grill element.",
+              "fix": "Move to a lower shelf. Alternatively, cover with foil for the first five minutes, then remove it to brown the cheese."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "New York pizza traces its origins to Lombardi's, the first American pizzeria, which opened in Manhattan in 1905. The style descends from Neapolitan pizza brought by Italian immigrants. The American version grew larger, started selling by the slice, and gave the world the fold-and-eat method. New Yorkers debate which pizzeria is best. The water is always cited as the reason the crust has the texture it does."
+          }
+        ]
+      }
+    ]
+  }
+}

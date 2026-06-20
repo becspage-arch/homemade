@@ -1,0 +1,398 @@
+{
+  "slug": "sunday-gravy",
+  "title": "Sunday Gravy",
+  "subtitle": "Slow-cooked Italian-American meat ragu",
+  "excerpt": "Sunday gravy is the long-simmered tomato and meat sauce that is the centrepiece of the Italian-American Sunday table. Pork ribs, sausages, and beef mince go in together and cook for two to three hours until the sauce is deep red and the meat has collapsed into it.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Sunday gravy (also called Sunday sauce or ragù della domenica) is a tradition of southern Italian and Italian-American cooking, made weekly in many households. The use of multiple cuts of meat is characteristic.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "enough sauce for 8 portions of pasta, plus meat as a second course",
+    "prepMinutes": 20,
+    "cookMinutes": 150,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in portions. Reheat gently in a covered pan with a splash of water.",
+    "batchable": true,
+    "batchNotes": "The recipe already makes a large batch. Leftovers keep in the fridge for five days.",
+    "makeAheadNotes": "Made the day before and reheated, the sauce is noticeably better. Store the meat and sauce together.",
+    "dietaryFlags": [],
+    "cuisine": "italian-american",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "weekend",
+      "crowdPleaser"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sunday gravy is a tomato sauce simmered for hours with several cuts of meat: pork ribs, Italian sausages, and beef mince. The meat flavours the sauce and the sauce flavours the meat, and after two to three hours the whole pot becomes something more than the sum of its parts. The sauce goes with pasta; the meat comes out separately as a second course."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "The meat options",
+          "variant": "info"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Traditional Sunday gravy might include pork shoulder braciole (rolled and tied), meatballs, pork neck, or lamb. Use whatever combination you like: the minimum is one sausage and one braising cut. Pork ribs are ideal because they give the sauce a deep, slightly sweet flavour from the bone."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            {
+              "ingredientSlug": "pork-ribs",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "cut into individual ribs",
+              "isOptional": false,
+              "groupLabel": "meat"
+            },
+            {
+              "ingredientSlug": "sausages-pork",
+              "amount": 6,
+              "unit": "each",
+              "prepNote": "Italian-style if available, or good-quality pork sausages",
+              "isOptional": false,
+              "groupLabel": "meat"
+            },
+            {
+              "ingredientSlug": "beef-mince",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "meat"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 5,
+              "unit": "clove",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 1600,
+              "unit": "g",
+              "prepNote": "2 x 800g tins, crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "basil",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "grated, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the meats in stages"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{olive-oil}} in a large, heavy pot over medium-high heat. Sear the {{pork-ribs}} until browned on all sides, about five minutes. Remove. In the same pot, brown the {{sausages-pork}} on all sides, about four minutes. Remove."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the {{beef-mince}} to the pot and cook, breaking it up, until browned all over, about five minutes. Season. Remove and set aside with the other meats."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to medium. Add {{onion}} and cook for five minutes until soft. Add {{garlic}} and {{tomato-puree}} and cook for two minutes, stirring. Pour in {{red-wine}} and bubble for two minutes, scraping up the browned bits."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{tinned-tomatoes}}, {{bay-leaves}}, and half the {{basil}}. Season generously. Return all the browned meat to the pot. The sauce should barely cover the meat."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Simmer low and slow"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a gentle simmer, then reduce the heat to as low as it will go. Cook with the lid slightly ajar for two to two and a half hours, stirring every 20 to 30 minutes, until the sauce is deeply coloured, thick, and fragrant."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the meats to a serving plate. Discard the bay leaves. Stir the remaining {{basil}} into the sauce. Taste and adjust seasoning. Serve the sauce with pasta tossed through it and {{parmesan}} grated over. Bring the meat to the table as a second course."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The sauce is thin and watery after two hours",
+              "cause": "Heat too low, or the lid was on too tight.",
+              "fix": "Leave the lid ajar to allow steam to escape. Increase the heat slightly so the sauce maintains a very gentle bubble, not just steaming."
+            },
+            {
+              "symptom": "The sauce has caught and browned on the base",
+              "cause": "Heat too high or not stirred frequently enough.",
+              "fix": "Stir every 20 minutes minimum. If it has caught, do not scrape the bottom: it will taste bitter. Pour the sauce into a clean pot, leaving the scorched residue behind."
+            },
+            {
+              "symptom": "The sausages have split and fallen apart",
+              "cause": "Cooked too long at too high a temperature.",
+              "fix": "Sausages can be added for only the last 45 minutes of the simmer if you want them to hold their shape. Add the pork ribs from the start as they benefit most from the full simmer."
+            },
+            {
+              "symptom": "The sauce is very acidic",
+              "cause": "Tinned tomatoes can vary in acidity.",
+              "fix": "Add half a teaspoon of bicarbonate of soda and stir: it neutralises the acid. Alternatively, a pinch of sugar or a longer simmer will round the flavour."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sunday gravy is as much a ritual as a recipe: the pot on the hob from early morning, the smell filling the house, the family gathering. In Italian-American communities this was the Sunday pattern for generations, the sauce made by grandmothers who measured by the handful and tasted all morning. The term gravy comes from the Italian word salsa for any rich sauce, carried into American English."
+          }
+        ]
+      }
+    ]
+  }
+}

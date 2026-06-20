@@ -1,0 +1,372 @@
+{
+  "slug": "stuffed-shells",
+  "title": "Stuffed Pasta Shells",
+  "subtitle": "Large pasta shells filled with ricotta and baked in tomato sauce",
+  "excerpt": "Stuffed shells are large pasta shells filled with a herbed ricotta mixture, arranged in a baking dish, covered in tomato sauce and mozzarella, and baked until bubbling. They're a mainstay of Italian-American cooking: straightforward to assemble, good for feeding a group, and better the next day.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Stuffed pasta shells (conchiglie ripiene) is an Italian-American dish using large jumbo conchiglie pasta. Ricotta and spinach filling is the classic Italian-American version.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 40,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze assembled and uncooked. Cook from frozen at 180°C covered for 40 minutes, then uncover for 15 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble the dish up to a day ahead, cover, and refrigerate. Add ten minutes to the covered cooking time if going in cold.",
+    "dietaryFlags": [],
+    "cuisine": "italian-american",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "crowdPleaser",
+      "weekend"
+    ],
+    "temperatureCelsius": 180,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "colander",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stuffed shells are large pasta shapes filled with a ricotta and spinach mixture, laid in a baking dish over tomato sauce, covered in mozzarella, and baked until the cheese is golden and the sauce is bubbling around the edges. The recipe uses dried pasta shapes sold as jumbo conchiglie or manicotti-style shells. Parboil them just enough to bend without breaking, then fill while warm."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "large shell shapes (conchiglie giganti or jumbo shells)",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ricotta",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "spinach-frozen",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "defrosted and thoroughly squeezed dry",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "nutmeg",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": "freshly grated",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "basil",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "mozzarella",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "torn",
+              "isOptional": false,
+              "groupLabel": "topping"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the sauce and filling"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Warm {{olive-oil}} in a saucepan. Add {{garlic}} and cook gently for one minute. Add {{tinned-tomatoes}}, season with salt, and simmer for 15 minutes. Tear in {{basil}} and taste."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine {{ricotta}}, {{spinach-frozen}}, {{parmesan}}, {{eggs}}, and {{nutmeg}} in a bowl. Season with salt and pepper and mix well. The filling should be firm enough to hold its shape when spooned."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Parboil the shells"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook {{pasta-dried}} in well-salted boiling water for two to three minutes less than the packet time: they should be pliable but still have some firmness and resist tearing. Drain and spread on a lightly oiled baking tray to cool and prevent sticking."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fill, assemble, and bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180°C (fan 160°C / gas mark 4). Spread half the tomato sauce over the base of a large baking dish. Spoon the ricotta filling into each shell using a teaspoon, filling them generously. Arrange the filled shells open side up in the dish."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon the remaining sauce over the shells. Scatter {{mozzarella}} over the top. Cover the dish with foil and bake for 25 minutes. Remove the foil and bake for a further ten to fifteen minutes until the cheese is golden and bubbling."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rest for ten minutes before serving: the shells hold their shape better once slightly cooled."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The shells split or tear when being filled",
+              "cause": "Overcooked in the parboiling stage.",
+              "fix": "Cook the shells two to three minutes less than packet time and work quickly while still warm. If shells split, lay them flat in the dish and cover with extra sauce to hold them together."
+            },
+            {
+              "symptom": "The filling is watery and leaks out",
+              "cause": "Spinach not squeezed dry enough.",
+              "fix": "Squeeze the defrosted spinach as hard as you can in a clean cloth or between two plates. It should release a surprising amount of water. The filling should be stiff, not pourable."
+            },
+            {
+              "symptom": "The shells are stuck to each other after draining",
+              "cause": "Not oiled or laid out separately to cool.",
+              "fix": "Toss the drained shells in a little olive oil and spread out in a single layer. They'll separate easily once cooled."
+            },
+            {
+              "symptom": "The top layer of shells is dry and tough",
+              "cause": "Not enough sauce covering the shells, or the foil wasn't tight.",
+              "fix": "Make sure every shell is covered by sauce or cheese. The foil should seal the dish tightly for the first phase of baking."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Stuffed pasta shells are a product of Italian-American home cooking: a way to make a small amount of filling stretch across a large baking dish and feed a family generously. The dish became a Sunday dinner staple in Italian-American households, made in large batches and often better the second day. The ricotta and spinach filling is the standard, though some families add sausage meat or beef mince. Serve with a green salad and plenty of bread."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,422 @@
+{
+  "slug": "chicago-deep-dish-pizza",
+  "title": "Chicago Deep Dish Pizza",
+  "subtitle": "Thick cornmeal-edged pizza baked in a deep tin with a chunky tomato topping",
+  "excerpt": "Chicago deep dish pizza is baked in a tall-sided tin like a savoury pie: a thick, buttery crust lined with cheese, filled with sausage and peppers, then topped with a chunky tomato sauce. The cheese goes in first, the sauce on top, which is the reverse of most pizza traditions.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Chicago deep dish pizza was developed at Pizzeria Uno in Chicago in 1943 by Ike Sewell. The defining characteristics are the deep, buttery cornmeal-enriched crust, the cheese-first layering, and the thick tomato sauce on top.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "one 28,30 cm deep dish, serving 6",
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "restingMinutes": 10,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can be made a day ahead and refrigerated. The tomato sauce also keeps for three days.",
+    "dietaryFlags": [],
+    "cuisine": "italian-american",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "weekend",
+      "indulgent"
+    ],
+    "temperatureCelsius": 220,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "round-cake-tin-23",
+      "isOptional": false
+    },
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "rolling-pin",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicago deep dish is built like a pie: a thick, slightly crumbly crust enriched with butter and polenta, pressed into a deep tin and filled with cheese, then topped with a chunky cooked tomato sauce and more cheese. It bakes for 35 to 40 minutes and needs a rest before cutting. It's a meal in itself."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "The upside-down layering",
+          "variant": "info"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Chicago deep dish layers in the reverse order to most pizza: mozzarella goes directly on the raw dough first, then the filling, then the sauce on top. This prevents the cheese from burning during the long bake and keeps the crust from getting soggy under the wet tomato."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "crust"
+            },
+            {
+              "ingredientSlug": "polenta",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "fine or coarse",
+              "isOptional": false,
+              "groupLabel": "crust"
+            },
+            {
+              "ingredientSlug": "yeast-fast-action",
+              "amount": 7,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "crust"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "crust"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "melted and slightly cooled",
+              "isOptional": false,
+              "groupLabel": "crust"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 175,
+              "unit": "ml",
+              "prepNote": "lukewarm",
+              "isOptional": false,
+              "groupLabel": "crust"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "for greasing tin",
+              "isOptional": false,
+              "groupLabel": "crust"
+            },
+            {
+              "ingredientSlug": "mozzarella",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "low-moisture block, sliced or grated",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "sausages-pork",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "skins removed, crumbled",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "pepper-green",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "sliced",
+              "isOptional": true,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "oregano-dried",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "grated, for the top",
+              "isOptional": false,
+              "groupLabel": "topping"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the dough and prove"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine {{plain-flour}}, {{polenta}}, {{yeast-fast-action}}, and {{sea-salt-fine}} in a bowl. Add the melted {{unsalted-butter}} and {{water}} and mix to a dough. Knead for five minutes: it will be softer and richer than a bread dough. Cover and prove for one hour at room temperature until doubled, or refrigerate overnight."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the tomato sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Warm {{olive-oil}} in a saucepan. Add {{garlic}} and cook for one minute. Add {{tinned-tomatoes}} and {{oregano-dried}}, season generously, and simmer for 20 minutes until thick. The sauce should be much reduced and almost jammy."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Line, fill, and bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 220°C (fan 200°C / gas mark 7). Generously grease a deep 28 to 30 cm round cake tin or springform tin with {{olive-oil}}. Press the dough into the tin, pushing it up the sides to form a 4 cm wall. Let it rest for 15 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the crumbled {{sausages-pork}} in a dry frying pan over medium heat until browned, breaking them up. Drain on kitchen paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Layer the filling into the crust in this order: {{mozzarella}} slices covering the base, then the sausage (and {{pepper-green}} if using). Spoon the tomato sauce over the top in a thick, even layer. Scatter with {{parmesan}}."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 35 to 40 minutes until the sauce is bubbling and the crust edge is deep golden. Rest for ten minutes before sliding out of the tin and cutting."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The bottom crust is raw and doughy",
+              "cause": "Oven not hot enough, or tin placed too high in the oven.",
+              "fix": "Place the tin on the bottom shelf of a very hot oven. If the top browns before the base is done, cover loosely with foil."
+            },
+            {
+              "symptom": "The crust slips down the sides during baking",
+              "cause": "Dough not chilled enough, or tin walls not steep enough.",
+              "fix": "Refrigerate the lined tin for 20 minutes before adding the filling. This firms the dough so it holds its shape."
+            },
+            {
+              "symptom": "The sauce is too liquid and makes the cheese watery",
+              "cause": "Sauce not reduced enough, or fresh mozzarella used instead of low-moisture.",
+              "fix": "The sauce must be thick before going in: it should hold its shape when spooned. Use block or grated low-moisture mozzarella."
+            },
+            {
+              "symptom": "The crust tastes greasy",
+              "cause": "Too much butter, or the tin was over-greased.",
+              "fix": "Use the exact quantities for the dough. The crust should be rich but not greasy. Wipe the tin with oiled kitchen paper rather than pouring oil in."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicago deep dish was created in 1943 at Pizzeria Uno by Ike Sewell, who reportedly wanted a pizza substantial enough to serve as a full meal. Whether it qualifies as pizza or something closer to a savoury pie has been debated by New Yorkers and Chicagoans ever since. The cheese-first, sauce-on-top construction is unusual and specific to this style. It's a weekend project that takes patience but feeds six people from a single pan."
+          }
+        ]
+      }
+    ]
+  }
+}

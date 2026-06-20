@@ -1,0 +1,398 @@
+{
+  "slug": "carolina-pulled-pork",
+  "title": "Carolina Pulled Pork",
+  "subtitle": "Slow-cooked pork shoulder pulled and dressed with vinegar sauce",
+  "excerpt": "Pulled pork from the Carolinas is pork shoulder cooked until it can be pulled into shreds, then dressed with a sharp vinegar-based sauce rather than the sweet tomato BBQ sauce of other regions. It goes in rolls with coleslaw, or piled on a plate with baked beans.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Eastern Carolina-style pulled pork, characterised by its vinegar-and-pepper sauce and the absence of sweet tomato-based dressing. The slow-cooking technique is standard American barbecue method adapted for the home oven.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 300,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze pulled pork in portions with a little sauce mixed through. Reheat from frozen in a covered pan with a splash of water.",
+    "batchable": true,
+    "batchNotes": "Double the quantity of pork shoulder and cook in the same way. It keeps well in the fridge for four days.",
+    "makeAheadNotes": "Pull and dress the pork a day ahead and refrigerate. The flavour improves. Reheat gently in a covered pan.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "weekend",
+      "crowdPleaser"
+    ],
+    "temperatureCelsius": 140,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pulled pork is pork shoulder cooked long and low until the connective tissue dissolves and the meat shreds apart with two forks. The Carolina version is dressed with a thin, sharp sauce of vinegar, chilli flakes, and black pepper rather than the sweet-and-thick tomato sauces associated with Kansas City. The result is lighter and more acidic, and the pork's own juices carry the flavour."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Bone-in vs boneless shoulder",
+          "variant": "info"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Bone-in pork shoulder gives slightly better flavour because the bone conducts heat and adds richness to the cooking juices. Boneless is easier to work with and slightly faster to cook. Either works: just check the internal temperature rather than relying on time alone. The target is 93°C."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            {
+              "ingredientSlug": "pork-shoulder",
+              "amount": 2000,
+              "unit": "g",
+              "prepNote": "bone-in or boneless, skin scored if present",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "rub"
+            },
+            {
+              "ingredientSlug": "dark-brown-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "rub"
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "rub"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "rub"
+            },
+            {
+              "ingredientSlug": "garlic-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "rub"
+            },
+            {
+              "ingredientSlug": "mustard-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "rub"
+            },
+            {
+              "ingredientSlug": "cider-vinegar",
+              "amount": 120,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Carolina sauce"
+            },
+            {
+              "ingredientSlug": "chilli-flakes",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Carolina sauce"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Carolina sauce"
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Carolina sauce"
+            },
+            {
+              "ingredientSlug": "dark-brown-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Carolina sauce"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Rub and cook"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 140°C (fan 120°C / gas mark 1). Mix together {{paprika-smoked}}, {{dark-brown-sugar}}, {{sea-salt-flakes}}, {{black-pepper}}, {{garlic-powder}}, and {{mustard-powder}}. Pat the {{pork-shoulder}} dry and coat it all over with the rub."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the pork fat side up in a lidded casserole dish. Add 150 ml of water to the base of the dish (not over the pork). Cover with the lid and cook at 140°C for four to five hours."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The pork is ready when a probe thermometer reads 93°C at the thickest point, and the meat yields completely when pressed with a finger. Remove the lid for the final 30 minutes to brown the surface."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the Carolina sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine {{cider-vinegar}}, {{chilli-flakes}}, {{black-pepper}}, {{sea-salt-flakes}}, and {{dark-brown-sugar}} in a jar. Stir until the sugar dissolves. Taste: it should be sharp, lightly spiced, and just barely sweet."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Pull and dress"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the pork from the oven and transfer to a large board. Rest for at least 30 minutes. Discard any large bones. Use two forks to shred the meat, pulling along the grain into long, loose strands. Discard any large lumps of fat as you go."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Transfer to a bowl. Pour over the Carolina sauce and the defatted cooking juices from the casserole. Toss to combine. Taste and add more sauce if needed. Serve in soft rolls with coleslaw, or on a plate with baked beans."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The pork is still tough and won't pull apart",
+              "cause": "Internal temperature hasn't reached 93°C, or came up short at 85 to 88°C.",
+              "fix": "Return to the oven covered and cook for another 30 to 45 minutes. Check the probe temperature again. Pork shoulder is very forgiving at this stage: more time only improves it."
+            },
+            {
+              "symptom": "The sauce tastes flat and watery",
+              "cause": "The vinegar needs the other elements to balance it.",
+              "fix": "Add another half-teaspoon of salt and a pinch more sugar. The sauce should taste distinctly acidic but not harsh. A little kick from the chilli flakes is important."
+            },
+            {
+              "symptom": "The pulled pork is dry",
+              "cause": "Cooked without enough liquid in the base of the dish.",
+              "fix": "Add the pan juices back in when dressing. If the pork is already dry, add a splash of the Carolina sauce and 2 tablespoons of water, cover, and rest for ten minutes."
+            },
+            {
+              "symptom": "The fat cap is greasy and unappetising",
+              "cause": "Normal: the fat cap protects the meat but doesn't always render beautifully.",
+              "fix": "Discard most of the fat cap when pulling. Keep any parts that have caramelised well. The fat underneath the cap is where most of the flavour lives."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Carolina barbecue splits along state lines. Eastern North Carolina uses a whole-hog, vinegar-only sauce. Western North Carolina and South Carolina allow tomato or mustard. This recipe follows the Eastern style, the oldest. Pulled pork in soft rolls with vinegar sauce and coleslaw is the classic service."
+          }
+        ]
+      }
+    ]
+  }
+}

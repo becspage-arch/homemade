@@ -763,3 +763,30 @@ SKIPPED: 0
 
 | Rule kind | Count |
 |---|---:|
+
+
+---
+
+## Run at 21:57:40
+
+Generated: 2026-06-20T21:57:40.891Z
+
+Processed: 47
+PASS: 46
+STILL_BLOCKED: 1
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| placeholder-string | 26 |
+| content-type-opening-mismatch | 26 |
+| opening-pattern-missing-hook | 22 |
+| grade-level-strict | 11 |
+| historical-century-in-body | 4 |
+| prose-prep-steps | 4 |
+
+## Still BLOCKED (sample 20)
+
+- sunday-gravy: prose-prep-steps

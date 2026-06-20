@@ -1,0 +1,342 @@
+{
+  "slug": "buffalo-wings",
+  "title": "Buffalo Wings",
+  "subtitle": "Fried chicken wings tossed in hot sauce and butter",
+  "excerpt": "Buffalo wings are whole chicken wings deep-fried until crisp, then tossed in a sauce of hot sauce and melted butter. They originated at the Anchor Bar in Buffalo, New York in 1964 and the formula hasn't changed much since: the sauce is sharp, the wings are crisp, and you need plenty of napkins.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Buffalo wings were created at the Anchor Bar in Buffalo, New York in 1964 by Teressa Bellissimo. The original sauce was Frank's RedHot and butter. This recipe follows the same formula.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The wings can be fried ahead and kept warm in a low oven. Toss in the sauce just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "starter",
+    "mood": [
+      "party",
+      "crowdPleaser"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "deep-fryer",
+      "isOptional": true
+    },
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Buffalo wings are fried chicken wings tossed in a sauce of hot sauce and butter: sharp, buttery, and finger-staining orange. The wings are fried in two stages for maximum crispness, and the sauce is made in 30 seconds. The ratio of sauce to wings is the only variable: more sauce makes them wetter and more intensely flavoured, less keeps them crisper."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Oil temperature matters",
+          "variant": "info"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Fry at 180°C for the first cook and 190°C for the second. Too cool and the wings absorb oil; too hot and the outside browns before the meat is done. Use a probe thermometer or an instant-read thermometer clipped to the pot. No thermometer: a cube of bread should turn golden in 30 seconds at 180°C."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-wings",
+              "amount": 1000,
+              "unit": "g",
+              "prepNote": "tips removed, split at the joint into drummettes and flats",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 1000,
+              "unit": "ml",
+              "prepNote": "for deep-frying",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "louisiana-hot-sauce",
+              "amount": 80,
+              "unit": "ml",
+              "prepNote": "or more to taste",
+              "isOptional": false,
+              "groupLabel": "buffalo sauce"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "buffalo sauce"
+            },
+            {
+              "ingredientSlug": "garlic-powder",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "buffalo sauce"
+            },
+            {
+              "ingredientSlug": "cider-vinegar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "buffalo sauce"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Prepare and fry the wings"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pat {{chicken-wings}} completely dry with kitchen paper. Season with {{sea-salt-fine}} and {{black-pepper}}. Dryness is key for crispness: any moisture turns to steam and prevents the crust from forming."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour {{vegetable-oil}} into a large, deep, heavy pot to a depth of at least 8 cm. Heat to 180°C. Fry the wings in batches of eight to ten for eight to ten minutes until cooked through and lightly golden. Remove to a wire rack or kitchen paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Increase the oil to 190°C. Return the wings to the oil in batches and fry for a further three to four minutes until deeply golden and crisp. Remove to a wire rack."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the sauce and toss"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt {{unsalted-butter}} in a small saucepan over medium heat. Add {{louisiana-hot-sauce}}, {{garlic-powder}}, and {{cider-vinegar}} if using. Stir until combined and smooth. Taste: it should be sharp, buttery, and hot."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Transfer the hot wings to a large bowl. Pour the sauce over and toss thoroughly until every wing is coated. Serve immediately with celery sticks and blue cheese dip or soured cream on the side."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The wings are soft and not crispy",
+              "cause": "Wings not dry enough before frying, oil not hot enough, or wings crowded in the pan.",
+              "fix": "Pat the wings as dry as possible. Fry in smaller batches: adding too many wings at once drops the oil temperature sharply. The double-fry is essential for crispness."
+            },
+            {
+              "symptom": "The sauce slides off and pools in the bowl",
+              "cause": "Wings not hot enough when tossed.",
+              "fix": "Toss the wings in the sauce immediately out of the oil. The hot surface lets the sauce adhere."
+            },
+            {
+              "symptom": "The sauce is too spicy",
+              "cause": "Hot sauce sharpness varies significantly between brands.",
+              "fix": "Use less hot sauce and more butter to start. The butter is the moderator: a 1:1 ratio of hot sauce to butter gives a milder result; more sauce gives more heat."
+            },
+            {
+              "symptom": "The inside of the wing is still pink",
+              "cause": "Frying time too short for the first cook.",
+              "fix": "The first fry at 180°C should fully cook the wings. If in doubt, check with a probe: the thickest part of the drummette should read 74°C. The second fry is for colour and texture only."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Buffalo wings were created in 1964 at the Anchor Bar in Buffalo, New York, reportedly because an oversupply of chicken wings arrived and Teressa Bellissimo fried them and tossed them in her standard bar sauce: hot sauce and butter. From that accident came one of America's most recognisable dishes. The proper accompaniment is always celery and blue cheese dip. The wings are eaten by hand and are specifically not meant to be tidy."
+          }
+        ]
+      }
+    ]
+  }
+}

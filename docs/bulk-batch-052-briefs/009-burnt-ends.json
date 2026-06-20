@@ -1,0 +1,415 @@
+{
+  "slug": "burnt-ends",
+  "title": "Burnt Ends",
+  "subtitle": "Twice-cooked brisket point cubes in BBQ sauce",
+  "excerpt": "Burnt ends are cubes of brisket point cooked twice: once low and slow until tender, then tossed in BBQ sauce and returned to a high oven until sticky and caramelised at the edges. They're intensely flavoured, slightly crisp on the outside, and meltingly soft inside.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Burnt ends originated in Kansas City as the trimmed and re-cooked tips of smoked brisket, sold cheaply from the cutting board. They evolved into a dedicated BBQ item from the 1970s onwards.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "serves 6 as a main or 8 as a starter",
+    "prepMinutes": 20,
+    "cookMinutes": 330,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in sauce. Reheat in a covered dish at 160°C for 25 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Cook the first low-and-slow phase a day ahead and refrigerate. Cube and do the second cook when ready to serve.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "weekend",
+      "crowdPleaser",
+      "indulgent"
+    ],
+    "temperatureCelsius": 135,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Burnt ends are the fatty, flavoursome point of the brisket cooked twice: once low and slow until the collagen has dissolved, then cubed, tossed in sauce, and returned to a high oven until sticky and slightly charred at the edges. The outside catches and caramelises while the inside stays soft. They're a meal in themselves, served in a bowl with bread on the side."
+          }
+        ]
+      },
+      {
+        "type": "infoPanel",
+        "attrs": {
+          "heading": "Flat vs point cut",
+          "variant": "info"
+        },
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Burnt ends traditionally use the point cut of brisket, which is fattier and has a looser grain than the flat. Some supermarkets only sell the flat, which works but gives a slightly drier result. If you can only find flat-cut brisket, reduce the second cook time by 10 minutes to prevent drying out."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "beef-brisket",
+              "amount": 1500,
+              "unit": "g",
+              "prepNote": "point cut if available, or flat cut",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "rub"
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "rub"
+            },
+            {
+              "ingredientSlug": "dark-brown-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "rub"
+            },
+            {
+              "ingredientSlug": "garlic-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "rub"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "coarsely ground",
+              "isOptional": false,
+              "groupLabel": "rub"
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ketchup",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "molasses",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "dark-brown-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "cider-vinegar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "worcestershire-sauce",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "First cook: low and slow"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 135°C (fan 115°C / gas mark 1). Mix together the rub ingredients: {{paprika-smoked}}, {{sea-salt-flakes}}, {{dark-brown-sugar}}, {{garlic-powder}}, and {{black-pepper}}. Pat the {{beef-brisket}} dry and coat all over with the rub."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place in a lidded casserole dish. Pour {{stock-beef}} around the base. Cover and cook for four to five hours until the internal temperature reads 90 to 93°C and the meat is completely tender when pressed with a finger. Remove and rest for 15 minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the sauce and cube the meat"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Increase the oven to 220°C (fan 200°C / gas mark 7). Cut the rested brisket into 3 to 4 cm cubes, discarding any very large pieces of solid fat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine {{ketchup}}, {{molasses}}, {{dark-brown-sugar}}, {{cider-vinegar}}, {{worcestershire-sauce}}, and {{unsalted-butter}} in a saucepan over medium heat. Stir until the butter melts. Cook until the sauce is smooth and slightly thick, about five minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Second cook: caramelise"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Toss the brisket cubes in the sauce in a large roasting tray, coating every piece. Spread them out in a single layer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook at 220°C for 20 to 25 minutes, turning once halfway through, until the sauce has caramelised and the edges of each cube are dark and sticky. Watch the last five minutes: the sauce can burn quickly at this temperature."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The cubes dry out during the second cook",
+              "cause": "Overcooked during the first phase, or cubes cut too small.",
+              "fix": "Cut the brisket into larger cubes (at least 3 cm) and reduce the second cook time to 15 minutes. The first cook temperature needs to be really low: check with an oven thermometer."
+            },
+            {
+              "symptom": "The sauce burns and sticks to the tray",
+              "cause": "Too high a temperature, or the cubes were too close together.",
+              "fix": "Spread the cubes with space between them and line the tray with baking paper. Keep the oven at 220°C, not higher."
+            },
+            {
+              "symptom": "The inside is tough and chewy even though it looks done",
+              "cause": "The first cook didn't reach 90°C internally.",
+              "fix": "The first cook is where the work happens. Check with a probe: the brisket must reach at least 90°C throughout. Return to the oven if needed."
+            },
+            {
+              "symptom": "The sauce isn't caramelising and glazing the cubes",
+              "cause": "Too much liquid in the tray, or sauce too thin.",
+              "fix": "Simmer the sauce a little longer before tossing. If there's excess liquid pooling in the tray, spoon it off after the first 10 minutes of the second cook."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Burnt ends started as the byproduct of slicing brisket: the charred tips and end pieces that didn't slice cleanly were thrown in a bin at the carving station, and Kansas City barbecue customers began asking for them. By the 1980s they had become a deliberate menu item, and by the 2000s the point cut was being cooked specifically to make them rather than trimmed off a flat. Serve in a bowl with bread, pickles, and a cold beer."
+          }
+        ]
+      }
+    ]
+  }
+}
