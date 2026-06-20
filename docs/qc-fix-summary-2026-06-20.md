@@ -60,3 +60,32 @@ SKIPPED: 0
 - lemon-elderflower-layer-cake: hero-missing
 - mango-and-coconut-cake: hero-missing
 - mango-lime-tart: hero-missing
+
+---
+
+## Run at 10:24:35
+
+Generated: 2026-06-20T10:24:35.765Z
+
+Processed: 85
+PASS: 82
+STILL_BLOCKED: 3
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| placeholder-string | 40 |
+| content-type-opening-mismatch | 40 |
+| opening-pattern-missing-hook | 35 |
+| grade-level-strict | 13 |
+| hero-missing | 9 |
+| historical-century-in-body | 3 |
+| voice-violation | 1 |
+
+## Still BLOCKED (sample 20)
+
+- crochet-magic-ring: hero-missing
+- how-to-hold-a-crochet-hook: hero-missing
+- how-to-work-a-treble: hero-missing
