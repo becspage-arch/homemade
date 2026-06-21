@@ -1,0 +1,79 @@
+{
+  "slug": "arancini",
+  "title": "Arancini",
+  "subtitle": "Sicilian fried rice balls with mozzarella filling",
+  "excerpt": "Golden fried rice balls with a molten cheese centre. Arancini are a Sicilian street food, made from leftover risotto that is shaped, filled and fried until crisp. They are best eaten hot, when the cheese inside is still stretched and gooey.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Arancini (meaning little oranges) are from Palermo and Catania in Sicily. They are sold from street stalls as a quick snack. Each city has its own shape and filling traditions.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze shaped and breaded arancini before frying. Fry from frozen, adding 2 to 3 minutes to the cooking time.",
+    "batchable": true,
+    "batchNotes": "Arancini are a great way to use leftover risotto. Scale the recipe to however much rice you have.",
+    "makeAheadNotes": "Shape and bread the arancini up to a day ahead. Refrigerate until ready to fry.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "italian",
+    "mealType": "starter",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": "Oil for deep frying should reach 180C",
+    "foundational": false
+  },
+  "recipeTools": [
+    {"slug": "large-saucepan", "isOptional": false},
+    {"slug": "mixing-bowl", "isOptional": false},
+    {"slug": "ladle", "isOptional": false},
+    {"slug": "wooden-spoon", "isOptional": false},
+    {"slug": "baking-sheet", "isOptional": false}
+  ],
+  "glossaryTerms": ["arancini", "mantecatura", "breadcrumb"],
+  "techniqueSlugs": ["making-risotto", "deep-frying"],
+  "criticalTechniques": ["deep-frying"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {"type": "paragraph", "content": [{"type": "text", "text": "The rice must be fully cooled before shaping -- warm rice falls apart. Chill it for at least 1 hour. Make sure the mozzarella filling is fully enclosed or it will leak during frying."}]},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "What you need"}]},
+      {"type": "ingredientsList", "attrs": {"defaultServings": 4, "items": [
+        {"ingredientSlug": "arborio-rice", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the risotto base"},
+        {"ingredientSlug": "stock-chicken", "amount": 900, "unit": "ml", "prepNote": "kept hot", "isOptional": false, "groupLabel": "For the risotto base"},
+        {"ingredientSlug": "onion", "amount": 0.5, "unit": "small", "prepNote": "finely diced", "isOptional": false, "groupLabel": "For the risotto base"},
+        {"ingredientSlug": "parmesan", "amount": 50, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "For the risotto base"},
+        {"ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the risotto base"},
+        {"ingredientSlug": "feta", "amount": 100, "unit": "g", "prepNote": "use 100g fresh mozzarella, cut into small cubes -- for the filling", "isOptional": false, "groupLabel": "For the filling"},
+        {"ingredientSlug": "eggs", "amount": 2, "unit": null, "prepNote": "beaten", "isOptional": false, "groupLabel": "For coating"},
+        {"ingredientSlug": "plain-flour", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For coating"},
+        {"ingredientSlug": "breadcrumbs-dried", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For coating"},
+        {"ingredientSlug": "vegetable-oil", "amount": null, "unit": null, "prepNote": "enough to deep fry -- about 1 litre in a deep pan", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "salt-table", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": null}
+      ]}},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Method"}]},
+      {"type": "orderedList", "content": [
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Make a basic risotto with the rice, stock, onion, butter and Parmesan. Season well. Spread onto a tray and leave to cool completely -- at least 1 hour in the fridge."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Set up a breading station with three bowls: flour in one, beaten egg in the second, breadcrumbs in the third."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Take a large tablespoon of cold risotto. Flatten it in your palm. Place a cube of mozzarella in the centre. Wrap the rice around the filling and shape into a ball or cone. Press firmly so there are no gaps."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Roll each arancino in flour, then dip in beaten egg, then coat in breadcrumbs. Make sure each one is fully covered. Place on a tray."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oil in a deep pan to 180C. Fry the arancini in batches of 3 to 4 for 3 to 4 minutes until deep golden brown all over. Remove with a slotted spoon. Drain on kitchen paper."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Serve immediately while the cheese inside is still molten. Eat within 10 minutes of frying."}]}]}
+      ]},
+      {"type": "troubleshooter", "attrs": {"items": [
+        {"symptom": "Arancini fell apart during frying", "cause": "Rice was not cold enough, or filling leaked", "fix": "Chill the shaped arancini for 30 minutes before frying. Make sure the filling is completely sealed inside."},
+        {"symptom": "Cheese is not melted inside", "cause": "Not cooked long enough, or oil not hot enough", "fix": "Use a thermometer to check the oil is at 180C. Fry for the full 4 minutes. The outside should be deep golden, not pale."}
+      ]}},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Where this dish lives"}]},
+      {"type": "paragraph", "content": [{"type": "text", "text": "Arancini come from Sicily, where they are a morning street food snack. In Palermo they are round. In Catania they are cone-shaped. The word means little oranges -- a description of their colour and shape."}]}
+    ]
+  }
+}
