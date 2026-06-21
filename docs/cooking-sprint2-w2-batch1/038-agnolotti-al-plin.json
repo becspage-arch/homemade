@@ -1,0 +1,161 @@
+{
+  "slug": "agnolotti-al-plin",
+  "title": "Agnolotti al Plin",
+  "subtitle": "Pinched Piedmontese pasta filled with braised meat, in roasting juices",
+  "excerpt": "Agnolotti al plin are tiny Piedmontese stuffed pasta parcels, the size of a grape, filled with braised meat and Parmesan and served simply with the reduced juices from the braising pan. Plin means pinch in Piedmontese -- the pasta is formed by pinching small pockets along a folded strip of dough. They are a dish of economy and skill, made traditionally from Sunday's leftover braised meats.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Agnolotti del plin is a traditional pasta of the Langhe and Monferrato hills of Piedmont. The filling uses leftover braised meats -- typically veal, pork, and rabbit mixed with vegetables and Parmesan. The dish is documented in multiple Piedmontese cookery texts from the nineteenth century and was the subject of a PDO filing by the regional authorities.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 90,
+    "cookMinutes": 120,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze uncooked agnolotti on a tray, then bag. Cook from frozen in gently simmering broth or salted water for 3 to 4 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Braise the meat 1 to 2 days ahead. The filling improves with time. Form and refrigerate the agnolotti on the day of serving.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "main",
+    "mood": ["weekend"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "For braising the filling meats",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "pasta-machine", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Agnolotti al plin is a two-stage recipe: braise the filling meats, then make the pasta. The traditional filling uses a mix of veal, pork, and rabbit, but pork and veal alone produce excellent results. The braising juices, reduced to a glossy sauce, are the only dressing. Butter and Parmesan are traditional alternatives if the juices are too meagre." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "00-flour", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "pasta" },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "pasta" },
+            { "ingredientSlug": "pork-shoulder", "amount": 300, "unit": "g", "prepNote": "cut into large pieces", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "veal-shoulder", "amount": 200, "unit": "g", "prepNote": "cut into large pieces", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "diced", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "each", "prepNote": "diced", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "celery", "amount": 1, "unit": "stick", "prepNote": "diced", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "red-wine", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "stock-beef", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "nutmeg", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": "to finish", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise and make the filling" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat the oven to 160C. Brown {{pork-shoulder}} of pork shoulder and {{veal-shoulder}} of veal in {{olive-oil}} of olive oil in a casserole dish. Remove the meat and soften {{onion}} of onion, {{carrot}} carrot, and {{celery}} celery in the same pan for 5 minutes. Return the meat, add {{red-wine}} of red wine and let it bubble for 2 minutes, then add {{stock-beef}} of beef stock. Cover and braise in the oven for 1.5 to 2 hours until the meat is very tender and falling apart." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the meat and reserve the braising juices. Finely mince or chop the cooked meat with the braised vegetables. Mix in {{parmesan}} of Parmesan, {{eggs}} egg, {{nutmeg}} nutmeg, and {{salt-table}} salt. The filling should be firm and cohesive. Refrigerate until cold." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Strain the braising juices into a small saucepan and reduce over a medium heat until glossy and lightly syrupy. Season and keep warm." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pasta and form the agnolotti" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make a pasta dough with {{00-flour}} flour and {{eggs}} eggs. Knead for 10 minutes and rest for 30 minutes. Roll to setting 7 (very thin) on a pasta machine. The plin technique: lay a strip of pasta on a floured board. Pipe or spoon small mounds of filling (about 0.5 tsp each) at 2 cm intervals along the bottom third of the strip. Fold the top of the pasta strip down over the filling. Press firmly around each mound of filling. Using your thumb and forefinger, pinch firmly between each mound to separate them. Cut along the bottom edge and between each parcel to separate. They should be about 2 cm long." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook and serve" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook the agnolotti in gently simmering salted water for 2 to 3 minutes. They are very small and cook quickly. Transfer to warm plates and spoon over the reduced braising juices and a knob of {{unsalted-butter}}. Serve with extra Parmesan." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The agnolotti are too large to form the plin pinch cleanly",
+              "cause": "Too much filling was placed in each mound.",
+              "fix": "These should be tiny -- just 0.5 tsp of filling each. The pleasure of agnolotti al plin is their smallness. Use a piping bag for more control over quantity."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Agnolotti del plin is the most refined expression of the Piedmontese tradition of pasta made from the remnants of a braised meat Sunday lunch. The braising juices are the sauce because nothing was wasted. In the Langhe hills, agnolotti al plin is served three ways: in brodo (in broth), al sugo (with the braising juice), or al burro e salvia (with butter and sage). The plin technique -- the pinch between each parcel -- gives the pasta its characteristic frilled edge and is specific to Piedmontese pasta making. The word plin is Piedmontese dialect for pinch, and the pasta was first documented in the Langhe in the nineteenth century." }
+        ]
+      }
+    ]
+  }
+}

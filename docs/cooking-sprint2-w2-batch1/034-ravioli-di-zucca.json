@@ -1,0 +1,168 @@
+{
+  "slug": "ravioli-di-zucca",
+  "title": "Ravioli di Zucca",
+  "subtitle": "Butternut squash ravioli with sage butter from Mantua",
+  "excerpt": "Ravioli di zucca is the celebrated stuffed pasta of Mantua: pasta filled with roasted butternut squash, Parmesan, mostarda, and amaretti biscuits, then dressed simply with browned butter and crisp sage leaves. The filling is sweet, savoury, and slightly sharp from the mostarda. It is a first course for celebrations and one of the most distinctive pasta dishes in northern Italian cooking.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": "AUTUMN",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Tortelli di zucca (also called ravioli di zucca) is the signature pasta of Mantua in Lombardy and has been documented since the Renaissance. The filling traditionally includes pumpkin or squash, mostarda di Cremona, amaretti, and Parmesan. It appears in Bartolomeo Scappi, Opera dell'arte del cucinare (1570), public domain.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 90,
+    "cookMinutes": 60,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze uncooked ravioli on a tray, then bag. Cook from frozen in boiling salted water for 4 to 5 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the filling 1 day ahead and refrigerate. The roasted squash filling benefits from resting overnight.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "italian",
+    "mealType": "main",
+    "mood": ["weekend"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "For roasting the squash",
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "pasta-machine", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": false },
+    { "slug": "roasting-tin", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mostarda",
+      "term": "mostarda",
+      "definition": "An Italian condiment of candied fruit preserved in a pungent syrup of sugar and mustard essential oil. Mostarda di Cremona is made with whole mixed fruits; mostarda di Mantova typically uses a single fruit such as apple or quince. It is used in small amounts to add a sharp, sweet-hot note to pasta fillings."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Ravioli di zucca has an unusual filling: sweet roasted squash with crushed amaretti biscuits, a little finely chopped " },
+          { "type": "text", "text": "mostarda", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mostarda" } }] },
+          { "type": "text", "text": " (a Mantuan mustard fruit preserve), Parmesan, and nutmeg. The sweet, sharp, and savoury balance is the defining quality of this filling. The butter and sage dressing keeps out of the way. If mostarda is unavailable, use 1 tablespoon of Dijon mustard plus 1 tablespoon of finely chopped dried cranberries as a substitute." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "00-flour", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "pasta" },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "pasta" },
+            { "ingredientSlug": "butternut-squash", "amount": 900, "unit": "g", "prepNote": "peeled and cut into 3 cm chunks", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "finely grated, plus more to serve", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "ground-almonds", "amount": 40, "unit": "g", "prepNote": "or 40g crushed amaretti biscuits", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "nutmeg", "amount": 0.5, "unit": "tsp", "prepNote": "freshly grated", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "dressing" },
+            { "ingredientSlug": "sage", "amount": 12, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "dressing" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast the squash and make the filling" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat the oven to 200C. Toss {{butternut-squash}} of squash chunks with {{olive-oil}} of olive oil and {{salt-table}} of salt. Spread on a roasting tin and roast for 35 to 40 minutes until completely soft and starting to caramelise at the edges. Allow to cool." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mash or blend the squash until smooth. Mix in {{parmesan}} of Parmesan, {{ground-almonds}} crushed amaretti biscuits, and {{nutmeg}} of nutmeg. Taste and adjust the seasoning. The filling should taste sweet, nutty, and slightly fragrant from the amaretti. Refrigerate." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the pasta and form the ravioli" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the pasta: mound {{00-flour}} flour, make a well, add {{eggs}} eggs, and knead until smooth. Wrap and rest for 30 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roll the pasta to setting 6 or 7 on a pasta machine. Lay a sheet on a lightly floured surface. Place teaspoons of filling at 5 cm intervals along one half of the sheet. Fold the other half of the pasta sheet over the filling. Press firmly around each mound of filling to eliminate air pockets, then cut into individual ravioli squares or use a pastry wheel to cut with a crimped edge. Place on a floured tray." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook and dress" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook the ravioli in a large pan of well-salted boiling water for 3 minutes until just tender. Meanwhile, melt {{unsalted-butter}} of butter in a wide frying pan over a medium heat. Add {{sage}} sage leaves and cook until the butter turns nut-brown and the sage is crisp." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lift the ravioli directly from the water into the brown butter pan using a slotted spoon, adding a splash of pasta water. Toss gently and serve with more Parmesan." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The filling is too wet and the ravioli burst",
+              "cause": "The roasted squash had too much moisture in it.",
+              "fix": "After roasting, spread the mashed squash on a tray and let it dry in the oven with the heat off for 10 minutes. The filling must hold its shape in a spoon; if it runs, it will not stay inside the pasta."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Tortelli di zucca is the defining pasta of Mantua, where sweet-savoury cooking has a long history. The dish comes from Renaissance court cooking, when sweet spices and fruit were regularly combined with pasta. A version appears in Bartolomeo Scappi's 1570 cookery treatise. The mostarda is the ingredient that sets the Mantuan version apart from the other pumpkin pasta dishes found across northern Italy." }
+        ]
+      }
+    ]
+  }
+}

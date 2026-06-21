@@ -1,0 +1,166 @@
+{
+  "slug": "cannelloni-di-ricotta-e-spinaci",
+  "title": "Cannelloni di Ricotta e Spinaci",
+  "subtitle": "Pasta tubes filled with ricotta and spinach, baked in tomato and béchamel",
+  "excerpt": "Cannelloni di ricotta e spinaci is one of the classic Italian baked pasta dishes: large pasta tubes filled with a mixture of ricotta and wilted spinach, placed in a baking dish over tomato sauce, covered in béchamel and Parmesan, and baked until the top is golden. The filling is light and creamy; the sauces rich.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Cannelloni ripieni di ricotta e spinaci is a traditional Italian baked pasta dish found throughout the peninsula, though particularly associated with central and northern Italian cooking. The combination of ricotta, spinach, and nutmeg is a classic Italian filling documented in Artusi, La scienza in cucina e l'arte di mangiar bene (1891), public domain.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 50,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Assemble and freeze before baking. Cook from frozen at 180°C covered for 60 minutes, uncovered for 15 more.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble up to 24 hours ahead and refrigerate unbaked.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weekend"],
+    "temperatureCelsius": 190,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "mixing-bowl-medium", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cannelloni",
+      "term": "cannelloni",
+      "definition": "Large dried pasta tubes designed to be filled and baked. The tubes are typically filled raw or semi-cooked using a piping bag or spoon, then surrounded by sauce which provides the moisture to cook the pasta during baking."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cannelloni di ricotta e spinaci has three components: a simple tomato sauce for the base, a creamy ricotta and spinach filling piped or spooned into the " },
+          { "type": "text", "text": "cannelloni", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "cannelloni" } }] },
+          { "type": "text", "text": " tubes, and a smooth béchamel that covers everything. The béchamel keeps the pasta moist as it bakes. Drain the filling well and season it properly with nutmeg. Under-seasoned ricotta is the most common failure in this dish." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 16, "unit": "each", "prepNote": "dried cannelloni tubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ricotta", "amount": 500, "unit": "g", "prepNote": "drained in a sieve for 30 minutes", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "spinach-frozen", "amount": 300, "unit": "g", "prepNote": "thawed and squeezed bone-dry, then chopped", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "nutmeg", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": "divided", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "tomato base" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "tomato base" },
+            { "ingredientSlug": "olive-oil", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "tomato base" },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "béchamel" },
+            { "ingredientSlug": "plain-flour", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "béchamel" },
+            { "ingredientSlug": "whole-milk", "amount": 500, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "béchamel" },
+            { "ingredientSlug": "parmesan", "amount": 40, "unit": "g", "prepNote": "finely grated, for topping", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the tomato base, filling, and béchamel" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 190°C (fan 170°C / gas mark 5). Heat {{olive-oil}} of olive oil in a small pan. Add {{garlic}} of garlic and cook for 30 seconds. Add {{tinned-tomatoes}} of tinned tomatoes and simmer for 10 minutes until slightly thickened. Season with a pinch of salt. Spread on the base of a large baking tin." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "In a bowl, combine the drained {{ricotta}} of ricotta, the squeezed and chopped {{spinach-frozen}} of spinach, {{parmesan}} of Parmesan, the {{eggs}} egg, {{nutmeg}} of nutmeg, and most of the {{salt-table}} of salt. Mix well. Taste and adjust the seasoning; the filling should be well-seasoned." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the béchamel: melt {{unsalted-butter}} of butter, add {{plain-flour}} of flour, stir 2 minutes. Whisk in {{whole-milk}} of warm milk gradually and stir over medium heat until thick, about 5 minutes." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fill the cannelloni and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill the {{pasta-dried}} of dried cannelloni tubes with the ricotta mixture using a piping bag or a teaspoon, pushing the filling in from both ends. Arrange in a single layer over the tomato sauce in the baking tin." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the béchamel over the top to cover all the tubes. Scatter the remaining Parmesan over. Cover with foil and bake for 30 minutes. Remove the foil and bake for a further 15 to 20 minutes until the top is golden. Rest for 10 minutes before serving." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The cannelloni tubes are still hard after baking",
+              "cause": "Not enough liquid surrounded the tubes during baking, or the oven was too cool.",
+              "fix": "The tubes must be completely covered in béchamel and the base should have a layer of tomato sauce. If the dish looks dry before covering with foil, add 100 ml of water to the tin. Ensure the foil is sealed tightly."
+            },
+            {
+              "symptom": "The filling is wet and slides out",
+              "cause": "The ricotta was not drained, or the spinach still contained moisture.",
+              "fix": "Drain the ricotta in a sieve for at least 30 minutes before mixing. Squeeze the thawed spinach in a tea towel until no liquid at all comes out."
+            },
+            {
+              "symptom": "The filling tastes bland",
+              "cause": "Insufficient seasoning or nutmeg.",
+              "fix": "The filling needs to be seasoned generously, including a noticeable amount of nutmeg. Taste before filling the tubes and adjust."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cannelloni di ricotta e spinaci has appeared in Italian cookery books for over a century. The dish is popular throughout Italy. It is particularly associated with central Italian cooking, where ricotta and spinach appear together in many stuffed pastas. It is one of the best dishes to make ahead: assemble it the day before, refrigerate, and bake from cold with an extra 15 minutes of covered cooking time." }
+        ]
+      }
+    ]
+  }
+}

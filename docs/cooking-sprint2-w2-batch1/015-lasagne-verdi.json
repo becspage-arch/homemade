@@ -1,0 +1,188 @@
+{
+  "slug": "lasagne-verdi",
+  "title": "Lasagne Verdi",
+  "subtitle": "Green spinach pasta lasagne with ragù and béchamel",
+  "excerpt": "Lasagne verdi uses pasta sheets coloured and flavoured with spinach, layered with the same classic beef and pork ragù and béchamel as lasagne alla bolognese. The spinach pasta is more traditional in Bologna than plain pasta and has a mild grassy note that contrasts with the richness of the meat sauce.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Lasagne verdi is the traditional Bolognese version of lasagne, using pasta verde (green pasta) coloured with spinach. The 1982 recipe registered with the Bologna Chamber of Commerce specifies green pasta. Artusi, La scienza in cucina e l'arte di mangiar bene (1891), public domain, documents spinach pasta preparations from the same tradition.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 150,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool completely and freeze in portions for up to 3 months. Reheat from frozen covered with foil at 180°C for 45 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The ragù can be made 3 days ahead. The assembled lasagne keeps in the fridge for 2 days unbaked.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weekend"],
+    "temperatureCelsius": 190,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "pasta-machine", "isOptional": true },
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "rolling-pin", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pasta-verde",
+      "term": "pasta verde",
+      "definition": "Italian green pasta made by incorporating cooked, squeezed spinach into the egg dough. The spinach adds colour and a mild flavour but does not make the pasta taste strongly of spinach."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lasagne verdi uses " },
+          { "type": "text", "text": "pasta verde", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "pasta-verde" } }] },
+          { "type": "text", "text": " (fresh egg pasta coloured with cooked spinach) in place of the plain pasta used in most versions. The spinach is squeezed completely dry so it tints the dough green without making it wet. The result is a slightly nutty, grassy pasta that holds its colour through baking. The layering and sauce are identical to classic bolognese lasagne. Making fresh pasta adds about 30 minutes to the process." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "spinach-frozen", "amount": 150, "unit": "g", "prepNote": "thawed and squeezed bone-dry", "isOptional": false, "groupLabel": "green pasta" },
+            { "ingredientSlug": "00-flour", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "green pasta" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "green pasta" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "yolk only", "isOptional": false, "groupLabel": "green pasta" },
+            { "ingredientSlug": "beef-mince", "amount": 400, "unit": "g", "prepNote": "15% fat", "isOptional": false, "groupLabel": "ragù" },
+            { "ingredientSlug": "pork-mince", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "ragù" },
+            { "ingredientSlug": "pancetta", "amount": 100, "unit": "g", "prepNote": "finely diced", "isOptional": false, "groupLabel": "ragù" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "ragù" },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "ragù" },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "ragù" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "ragù" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "ragù" },
+            { "ingredientSlug": "red-wine", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "ragù" },
+            { "ingredientSlug": "stock-beef", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "ragù" },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "ragù" },
+            { "ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "ragù" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "béchamel" },
+            { "ingredientSlug": "plain-flour", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "béchamel" },
+            { "ingredientSlug": "whole-milk", "amount": 800, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "béchamel" },
+            { "ingredientSlug": "nutmeg", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "béchamel" },
+            { "ingredientSlug": "parmesan", "amount": 80, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the green pasta" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Squeeze {{spinach-frozen}} of thawed frozen spinach in a clean tea towel until completely dry; no liquid should come out when you squeeze. Blitz to a smooth paste in a food processor." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tip {{00-flour}} of 00 flour onto a work surface and make a well. Add the {{eggs}} of eggs and egg yolk, and the spinach paste. Beat the eggs and spinach with a fork, gradually incorporating the flour from the inside of the well. When a rough dough forms, knead for 8 to 10 minutes until smooth, silky, and elastic. Wrap in cling film and rest for 30 minutes at room temperature." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Divide the dough into 4 pieces. Roll each piece through a pasta machine from the thickest setting down to setting 5 or 6 (about 2 mm). Cut into sheets that fit your baking dish. Lay on floured tea towels to dry slightly for 10 minutes." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the ragù and béchamel" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook the ragù: heat {{olive-oil}} of oil in a large heavy pan. Cook the {{pancetta}} of pancetta until the fat renders, then add the {{onion}} of onion, {{carrot}} of carrot, and {{celery}} of celery. Cook for 8 minutes. Add the {{beef-mince}} of beef mince and {{pork-mince}} of pork mince in batches, browning well. Add {{tomato-puree}} of tomato puree, {{red-wine}} of red wine, {{tinned-tomatoes}} of tinned tomatoes, and {{stock-beef}} of stock. Simmer over the lowest heat, partially covered, for 90 minutes. Season with {{salt-table}} of salt." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the béchamel: melt {{unsalted-butter}} of butter, add {{plain-flour}} of flour, stir for 2 minutes. Whisk in {{whole-milk}} of warm milk gradually and stir over medium heat until thick, about 6 minutes. Season with {{nutmeg}} of nutmeg and a pinch of salt." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Assemble and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 190°C (fan 170°C / gas mark 5). Blanch the fresh pasta sheets in salted boiling water for 30 seconds each. Drain and lay on damp tea towels." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spread a thin layer of béchamel on the base of the baking dish. Layer the green pasta sheets, ragù, and béchamel, scattering {{parmesan}} of Parmesan between layers. Finish with béchamel and Parmesan on top. Cover with foil and bake for 30 minutes. Uncover and bake 20 minutes until golden. Rest 15 minutes before serving." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The pasta is grey rather than green",
+              "cause": "The spinach was not squeezed dry enough, adding water that diluted the colour, or the pasta was overbaked.",
+              "fix": "Squeeze the spinach until no liquid at all can be wrung out. Fresh pasta retains more colour than dried; the green fades slightly with baking, which is normal."
+            },
+            {
+              "symptom": "The pasta dough is too wet and sticky",
+              "cause": "The spinach retained moisture.",
+              "fix": "Knead in a little extra flour a tablespoon at a time until the dough is smooth and does not stick to the work surface. Rest before rolling."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Lasagne verdi is the definitive version of lasagne in Bologna and Emilia-Romagna. The spinach dough is not a flavour addition so much as a visual one: the alternating green pasta and white béchamel layers, when cut, show a striped cross-section that is part of the dish's identity. Outside Italy, plain lasagne sheets have become the norm; within the region, green pasta is the default. The dish is the same construction as lasagne alla bolognese and the two recipes are interchangeable in method." }
+        ]
+      }
+    ]
+  }
+}

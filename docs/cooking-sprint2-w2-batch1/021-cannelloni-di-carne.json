@@ -1,0 +1,156 @@
+{
+  "slug": "cannelloni-di-carne",
+  "title": "Cannelloni di Carne",
+  "subtitle": "Pasta tubes filled with slow-cooked beef and pork, baked in béchamel",
+  "excerpt": "Cannelloni di carne fills pasta tubes with a rich, slow-braised meat filling rather than the vegetarian ricotta version. The filling is beef and pork cooked with wine and aromatics until tender and concentrated, then combined with Parmesan and egg to hold it together. Covered in béchamel and baked until golden.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Cannelloni ripieni di carne is a classic Italian baked pasta preparation, particularly associated with Emilia-Romagna and central Italian cooking. Artusi, La scienza in cucina e l'arte di mangiar bene (1891), public domain, documents stuffed pasta preparations with braised meat fillings.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 120,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Assemble and freeze before baking. Cook from frozen at 180°C covered for 60 minutes, uncovered for 15.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The filling can be made 2 days ahead. Assemble up to 24 hours ahead and refrigerate unbaked.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weekend"],
+    "temperatureCelsius": 190,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "rectangular-baking-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cannelloni di carne uses a concentrated meat filling made from beef and pork mince cooked slowly with wine until the moisture has evaporated and the mixture is thick and intensely flavoured. An egg and Parmesan bind it so it holds inside the pasta tube. The béchamel covering does two jobs: it provides the moisture that cooks the pasta during baking, and it creates the creamy contrast to the rich meat inside." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 16, "unit": "each", "prepNote": "dried cannelloni tubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "beef-mince", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "meat filling" },
+            { "ingredientSlug": "pork-mince", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "meat filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "meat filling" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "meat filling" },
+            { "ingredientSlug": "red-wine", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "meat filling" },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "meat filling" },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "meat filling" },
+            { "ingredientSlug": "parmesan", "amount": 50, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "meat filling" },
+            { "ingredientSlug": "nutmeg", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "meat filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "meat filling" },
+            { "ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": "divided", "isOptional": false, "groupLabel": "meat filling" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "tomato base" },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "béchamel" },
+            { "ingredientSlug": "plain-flour", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "béchamel" },
+            { "ingredientSlug": "whole-milk", "amount": 500, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "béchamel" },
+            { "ingredientSlug": "parmesan", "amount": 40, "unit": "g", "prepNote": "finely grated, for topping", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the meat filling" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat {{olive-oil}} of oil in a frying pan over a medium heat. Cook {{onion}} of onion for 5 minutes until soft. Increase the heat to high and add {{beef-mince}} of beef mince and {{pork-mince}} of pork mince. Break up and cook for 8 minutes until brown and all liquid has evaporated. Add {{garlic}} of garlic and {{tomato-puree}} of tomato puree and cook for 1 minute. Add {{red-wine}} of red wine and simmer until evaporated, about 3 minutes. Season with half the {{salt-table}} of salt and the {{nutmeg}} of nutmeg. Cool." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir {{parmesan}} of Parmesan and {{eggs}} egg into the cooled meat mixture. The filling should be firm enough to hold its shape in the tube." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Prepare the sauces, fill the cannelloni, and bake" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 190°C (fan 170°C / gas mark 5). Simmer {{tinned-tomatoes}} of tinned tomatoes with a pinch of salt for 10 minutes. Spread on the base of a large baking tin." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the béchamel: melt {{unsalted-butter}} of butter, add {{plain-flour}} of flour, stir 2 minutes. Gradually whisk in {{whole-milk}} of warm milk. Stir over medium heat until thick, about 5 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fill the {{pasta-dried}} of cannelloni tubes with the meat mixture using a piping bag or teaspoon. Lay them in a single layer over the tomato sauce. Pour the béchamel over the top, covering all the tubes. Scatter the remaining Parmesan over. Cover with foil and bake for 30 minutes. Uncover and bake 15 to 20 more minutes until golden. Rest 10 minutes." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The meat filling falls out during filling",
+              "cause": "The filling was too loose, or still warm when filled.",
+              "fix": "Cool the filling completely before adding the egg and Parmesan. The mixture should be quite dry and hold its shape when pressed."
+            },
+            {
+              "symptom": "The pasta tubes are underdone",
+              "cause": "Insufficient liquid surrounding the tubes, or the foil was not sealed.",
+              "fix": "Make sure the béchamel completely covers all the tubes. Seal the foil tightly to trap steam."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cannelloni di carne is the meat counterpart to the ricotta and spinach version, and in some Italian households is considered the more serious of the two. The meat filling takes more work but produces a richer, more robust dish. It is classic Sunday lunch food in northern and central Italy: a dish that takes time but can be prepared the day before and which feeds a crowd without requiring much attention once it goes in the oven." }
+        ]
+      }
+    ]
+  }
+}

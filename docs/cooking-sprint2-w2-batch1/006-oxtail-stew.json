@@ -1,0 +1,192 @@
+{
+  "slug": "oxtail-stew",
+  "title": "Oxtail Stew",
+  "subtitle": "Slow-braised oxtail in red wine with root vegetables",
+  "excerpt": "Oxtail stew is made from the jointed tail of beef, braised slowly in red wine and stock until the meat falls from the bone and the liquid reduces to a dark, gelatinous gravy. It is one of the richest dishes in the British braising repertoire: the high collagen content of the tail gives the sauce a silky body that no other cut can match.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Oxtail stew is documented in British cookery writing from at least the eighteenth century. Eliza Acton, Modern Cookery for Private Families (1845), Project Gutenberg, includes a detailed oxtail soup recipe. Mrs Beeton, Book of Household Management (1861), Project Gutenberg #10136, includes oxtail as a standard braising cut. The dish remained a popular British working-class supper through the twentieth century before falling from fashion, then reviving as chefs rediscovered offal cuts.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 210,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cool completely, remove the meat from the bones if preferred, and freeze in the sauce for up to 3 months. Reheat gently in a covered pan, adding a splash of stock if needed.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Oxtail stew improves by a day in the fridge. The fat solidifies on top and can be lifted off before reheating, which also makes the flavour cleaner.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weekend"],
+    "temperatureCelsius": 160,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "tongs", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "collagen",
+      "term": "collagen",
+      "definition": "A tough protein found in connective tissue, cartilage, and skin that breaks down into gelatin under long, moist heat. The gelatin thickens and enriches braising liquids, giving them a silky, coating quality."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Oxtail is the jointed tail of beef, sold in thick rounds from the wider base to the slender tip. It is one of the richest braising cuts: the high " },
+          { "type": "text", "text": "collagen", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "collagen" } }] },
+          { "type": "text", "text": " content breaks down over three to four hours of slow cooking into gelatin that makes the sauce thick and silky without any thickening agent. The meat itself, once properly cooked, pulls from the bone easily and has a deep, beefy flavour that fillet or sirloin cannot match." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "This is a weekend or make-ahead dish. The active work is about 20 minutes; the oven does the rest. A day in the fridge improves it: the fat sets on top and can be lifted off cleanly, leaving a leaner, more concentrated sauce." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "oxtail", "amount": 1500, "unit": "g", "prepNote": "jointed into thick rounds", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "cut into large chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the oxtail" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 160°C (fan 140°C / gas mark 3). Pat the oxtail pieces completely dry with kitchen paper and season all over with salt and pepper. Heat {{olive-oil}} of oil in a large casserole dish over a high heat. Brown the oxtail pieces in batches, turning to colour on all sides, about 4 minutes per batch. Do not crowd the pot or the meat will steam rather than brown. Remove and set aside." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base and add the liquids" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce the heat to medium. Add {{onion}} chopped onions, {{carrot}} carrot chunks, and {{celery}} celery to the same pot and cook, stirring, for 6 to 8 minutes until the vegetables have softened and picked up some colour. Add {{garlic}} of crushed garlic and cook for 1 minute." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir in {{tomato-puree}} of tomato puree and cook for 1 minute. Scatter over {{plain-flour}} of flour and stir to coat the vegetables. Pour in {{red-wine}} of red wine and let it bubble for 2 minutes, scraping any browned bits from the base of the pot." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add {{stock-beef}} of beef stock, {{tinned-tomatoes}} of tinned tomatoes, {{bay-leaves}} of bay leaves, and the thyme sprigs. Return the oxtail pieces to the pot. The liquid should come about two-thirds of the way up the meat. Bring to a simmer, then cover with a tight-fitting lid and transfer to the oven." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise and finish" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook in the oven for 3 to 3.5 hours until the meat pulls easily from the bone. Check after 2 hours: if the liquid looks like it is reducing too fast, add a splash of water or stock and re-cover." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the bay leaves and thyme sprigs. Taste the sauce and adjust the seasoning. If the sauce seems thin, lift the oxtail pieces out and simmer the liquid on the hob for 5 to 10 minutes to concentrate it, then return the meat. Serve with mashed potato or crusty bread." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The meat is still tough after 3 hours",
+              "cause": "The collagen in oxtail needs sustained heat to break down. Three hours at 160°C may not be enough if the oven runs cool or the lid does not seal well.",
+              "fix": "Return to the oven for another 30 to 60 minutes. The meat is done when it yields easily to a fork and pulls from the bone without resistance."
+            },
+            {
+              "symptom": "The sauce is thin and watery",
+              "cause": "The lid did not fit tightly, so liquid evaporated during cooking. Or the vegetables were not browned before the liquid went in.",
+              "fix": "Remove the oxtail and boil the sauce briskly on the hob for 10 to 15 minutes until it thickens and coats the back of a spoon. Return the meat to reheat."
+            },
+            {
+              "symptom": "The sauce is very fatty",
+              "cause": "Oxtail renders a large amount of fat during cooking.",
+              "fix": "If serving straight away, skim the visible fat from the surface with a spoon. The best method is to cool overnight in the fridge: the fat solidifies and can be lifted off as a disc before reheating."
+            },
+            {
+              "symptom": "The meat falls off during cooking before it is properly tender",
+              "cause": "The oxtail pieces were too small, or the heat was too high.",
+              "fix": "Ask for the thicker centre pieces of oxtail rather than the very tip, which are thin and fall apart quickly. Keep the oven temperature at 160°C and do not let the liquid boil hard inside the pot."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Oxtail stew is a British winter dish that fell sharply out of fashion in the late twentieth century as the cuts of beef people were comfortable cooking narrowed to steaks and mince. It revived from the 2000s onward as chefs and home cooks rediscovered the pleasures of braised cuts. The gelatinous sauce and deeply flavoured meat have no equivalent in more fashionable cuts. In the Caribbean kitchen it took a different path, with spiced oxtail stew with butter beans becoming a central dish of the Jamaican canon. The British version is simpler: red wine, root vegetables, herbs, and time." }
+        ]
+      }
+    ]
+  }
+}
