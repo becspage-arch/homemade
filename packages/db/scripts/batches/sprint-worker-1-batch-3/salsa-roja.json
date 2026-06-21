@@ -1,0 +1,108 @@
+{
+  "slug": "salsa-roja",
+  "title": "Salsa Roja",
+  "subtitle": "Cooked Mexican red tomato salsa with chipotle",
+  "excerpt": "Salsa roja is a cooked Mexican tomato salsa made from blended and fried tomatoes, chipotle chilli, garlic, and onion. Unlike pico de gallo, which is raw, salsa roja is cooked to develop a deeper, smokier flavour. The chipotle adds heat and a characteristic smoky note. This is the salsa served with tacos, eggs, and as a general-purpose table condiment.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Salsa roja (red sauce) is a foundational condiment across Mexico. The cooked version (salsa roja cocida) is more stable and more deeply flavoured than raw salsa. The addition of chipotle (smoked jalapeño) to the base became widespread in the late 20th century as tinned chipotles in adobo became common. The frying step after blending is characteristic of many Mexican sauces.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "about 500 ml",
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well. Store in small portions.",
+    "batchable": true,
+    "batchNotes": "Scales directly. A large batch keeps for a week in the fridge.",
+    "makeAheadNotes": "Keeps in the fridge for 7 days.",
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "mexican",
+    "mealType": "condiment",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "blender-jug", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The chipotle ingredient comes as a tinned sauce (chipotles in adobo) or dried. For this salsa, use a tablespoon of chipotle in adobo sauce (including the sauce) or one soaked dried chipotle. The frying step after blending (pouring the raw blended salsa into hot oil) is the defining step: it cooks out the raw tomato taste and intensifies the colour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "tinned-tomatoes", "amount": 800, "unit": "g", "prepNote": "2 tins, or 800 g very ripe fresh tomatoes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chipotle", "amount": 1, "unit": "each", "prepNote": "dried and soaked, or 1 tbsp chipotle in adobo", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 0.5, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lime", "amount": 1, "unit": "each", "prepNote": "juice only; optional; adds brightness", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "sunflower-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blend the tinned tomatoes, chipotle, garlic, and onion until smooth. Season with 1 teaspoon of salt." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the sunflower oil in a frying pan over high heat until very hot. Pour in the blended salsa in one go. Stand back, as it will spit. Fry, stirring, for 5 to 7 minutes until the salsa darkens, thickens, and the raw smell has been replaced by a toasty, roasted aroma." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Taste and adjust with salt and lime juice. Serve warm or at room temperature." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Salsa tastes flat and lacks depth",
+              "cause": "The frying step was too short, or not enough salt",
+              "fix": "Continue frying on high heat until the salsa clearly darkens and changes aroma. Salt assertively. Salsa needs more salt than you expect."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "slug": "yakitori",
+  "title": "Yakitori",
+  "subtitle": "Japanese grilled chicken skewers with tare glaze",
+  "excerpt": "Yakitori are Japanese grilled chicken skewers coated with a sweet soy tare glaze. Traditionally cooked over binchotan charcoal, they work well under a very hot grill or over a gas barbecue. The skewers are basted repeatedly with tare as they cook, building up a thick, glossy coating.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Yakitori (grilled bird) became a staple of Japanese street food and izakaya culture in the Meiji period (late 19th century). Yakitori-ya restaurants serve grilled skewers of every chicken part: thigh, breast, liver, heart, and skin. The sweet soy tare is the unifying element.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The tare keeps in the fridge for up to 2 weeks.",
+    "dietaryFlags": ["dairyFree", "nutFree"],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": ["entertaining", "weeknight", "summerFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": "grill at maximum heat",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "bamboo-skewer", "isOptional": false },
+    { "slug": "grill", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Soak bamboo skewers in cold water for 30 minutes before grilling or the tips will catch fire. Cut the chicken into bite-sized cubes. The tare glaze is made on the hob: soy sauce, mirin, sake, and sugar simmered until thick, then applied to the skewers in layers under the grill." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 600, "unit": "g", "prepNote": "cut into 3 cm pieces", "isOptional": false, "groupLabel": "Skewers" },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "each", "prepNote": "cut into 3 cm lengths", "isOptional": false, "groupLabel": "Skewers" },
+            { "ingredientSlug": "soy-sauce-light", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tare glaze" },
+            { "ingredientSlug": "mirin", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tare glaze" },
+            { "ingredientSlug": "sake", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tare glaze" },
+            { "ingredientSlug": "caster-sugar", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tare glaze" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the tare: put the soy sauce, mirin, sake, and sugar into a small saucepan over medium heat. Stir until the sugar dissolves, then simmer for 4 to 5 minutes until the mixture has reduced by a third and is slightly syrupy. Remove from the heat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thread the chicken and spring onion alternately onto soaked bamboo skewers, about 4 pieces of chicken per skewer. Preheat the grill to its maximum setting." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Grill the skewers for 5 minutes. Turn and grill for 3 more minutes. Brush generously with tare, turn, brush again. Return to the grill for 2 minutes per side until the glaze is sticky and slightly charred at the edges and the chicken is cooked through. Serve immediately." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Glaze burns black before the chicken is cooked",
+              "cause": "Tare was applied too early",
+              "fix": "Cook the chicken plain for the first 8 minutes, then apply tare only in the final 4 minutes of cooking. The sugar content burns at high heat if applied at the start."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "At an izakaya, yakitori is served in two styles: tare (with glaze, as above) or shio (with just salt). Shio yakitori highlights the chicken's flavour more directly. Season with flaked sea salt and a squeeze of lemon. Chicken livers work particularly well shio-style." }]
+      }
+    ]
+  }
+}

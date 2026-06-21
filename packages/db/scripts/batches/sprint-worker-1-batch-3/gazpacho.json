@@ -1,0 +1,109 @@
+{
+  "slug": "gazpacho",
+  "title": "Gazpacho",
+  "subtitle": "Cold Andalusian tomato and vegetable soup",
+  "excerpt": "Gazpacho is a cold raw tomato soup from Andalusia, southern Spain. It is made by blending very ripe tomatoes with cucumber, red pepper, garlic, sherry vinegar, and olive oil. Served ice-cold in summer with garnishes of chopped vegetables and croutons. The flavour depends entirely on the quality of the tomatoes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "SUMMER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Gazpacho originates from Andalusia and has been documented since at least the 18th century. The word is of uncertain etymology; the dish may be related to pre-Roman peasant bread soups. The tomato was added after the Columbian exchange in the 16th century and became the defining ingredient.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 0,
+    "restingMinutes": 0,
+    "chillingMinutes": 120,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Keeps in the fridge for up to 3 days. The flavour improves overnight.",
+    "makeAheadNotes": "Best made the day before serving.",
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "spanish",
+    "mealType": "lunch",
+    "mood": ["entertaining", "summerFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "blender-jug", "isOptional": false },
+    { "slug": "sieve", "isOptional": true }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Gazpacho is only as good as its tomatoes. In summer, use the ripest, reddest tomatoes you can find. Out of season, the soup lacks sweetness and depth. Add a tablespoon of tomato puree to compensate. Strain through a fine sieve after blending for a smooth, restaurant-style gazpacho; or leave it chunky for the rustic version." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "tomato", "amount": 1200, "unit": "g", "prepNote": "very ripe, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cucumber", "amount": 1, "unit": "each", "prepNote": "peeled, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-red", "amount": 1, "unit": "each", "prepNote": "deseeded, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 6, "unit": "tbsp", "prepNote": "extra virgin", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sherry-vinegar", "amount": 2, "unit": "tbsp", "prepNote": "or red wine vinegar", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "breadcrumbs-fresh", "amount": 50, "unit": "g", "prepNote": "day-old white bread, optional — thickens and enriches", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put all the vegetables and garlic into a blender. Add the breadcrumbs if using. Blend until smooth. This takes 2 to 3 minutes in a jug blender. With the motor running, pour in the olive oil in a thin stream to emulsify it." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the sherry vinegar and season with salt and white pepper. Blend again. Taste: the soup should be tangy, sweet from the tomato, and well-salted. Adjust with more vinegar or salt." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pass through a fine sieve if you want a smooth soup. Refrigerate for at least 2 hours before serving. Serve ice-cold in chilled bowls with a trickle of olive oil. Offer garnishes alongside: diced cucumber, diced pepper, diced tomato, and croutons." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup tastes watery and lacks depth",
+              "cause": "Tomatoes were not ripe enough, or the ratio of tomato to other vegetables was off",
+              "fix": "Add a tablespoon of tomato puree and a pinch of caster sugar. Season more assertively with salt. Cold food needs more seasoning than hot food."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

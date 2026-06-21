@@ -1,0 +1,113 @@
+{
+  "slug": "egg-fried-rice",
+  "title": "Egg Fried Rice",
+  "subtitle": "Classic Chinese fried rice with egg, spring onion, and soy sauce",
+  "excerpt": "Egg fried rice is a staple of Chinese cooking, made by stir-frying day-old rice with eggs, spring onion, and soy sauce in a very hot wok. Day-old rice is essential: freshly cooked rice is too wet and steams rather than fries, resulting in a clumped, starchy mass. Cold rice from the fridge separates cleanly and fries properly.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Fried rice appears across Chinese regional cooking. The Cantonese version (chao fan) is the most internationally recognised: light, separate grains, egg ribbons, and a clean soy flavour. Yangzhou fried rice, considered the mother recipe, adds prawns and char siu. The principle is day-old cold rice in a screaming-hot wok.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Cook the rice the day before and spread it on a tray to cool, then refrigerate. Cold, dry rice is the key ingredient.",
+    "dietaryFlags": ["dairyFree", "nutFree"],
+    "cuisine": "chinese",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "wok", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Day-old rice is non-negotiable. The refrigerator dries out the cooked grains so each one fries separately rather than clumping. If you must use fresh rice, spread it on a tray and refrigerate uncovered for at least 2 hours before using. The wok must be screaming hot: if the rice steams when it hits the pan, the pan is not hot enough." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "jasmine-rice", "amount": 300, "unit": "g", "prepNote": "cooked the day before and refrigerated overnight (about 700 g cooked)", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "each", "prepNote": "white and green parts separated, both finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-dark", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tsp", "prepNote": "to finish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "peas-frozen", "amount": 100, "unit": "g", "prepNote": "defrosted", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Break up the cold rice with your hands or a fork until the grains are separate. Heat the wok until smoking. Add 2 tablespoons of the sunflower oil. Add the white parts of the spring onion and stir-fry for 30 seconds." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the rice in one go. Press it against the hot wok surface and leave without stirring for 30 seconds, then toss. Repeat: press, leave, toss. Continue for 2 to 3 minutes until the rice is hot and beginning to develop some colour." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Push the rice to the sides of the wok, leaving a well in the centre. Add the remaining tablespoon of oil to the well. Pour in the beaten eggs. Scramble briefly, then fold the rice over the egg before it fully sets and toss everything together." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the peas if using. Pour in the dark and light soy sauces. Toss to combine. Drizzle with sesame oil. Taste and adjust seasoning. Serve topped with the green spring onion." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Rice is clumped and wet",
+              "cause": "Rice was too fresh, or the wok was not hot enough",
+              "fix": "Day-old, cold, dry rice is non-negotiable. If the rice clumps, spread it out in the wok and let the steam escape before tossing again."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

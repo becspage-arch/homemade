@@ -1,0 +1,117 @@
+{
+  "slug": "tamagoyaki",
+  "title": "Tamagoyaki",
+  "subtitle": "Japanese sweet rolled omelette",
+  "excerpt": "Tamagoyaki is a Japanese rolled omelette made from layers of lightly sweetened egg, cooked and rolled in a special rectangular pan. It appears in bento boxes, as a sushi topping, and as part of a Japanese breakfast. The result is a soft, silky omelette with a slightly sweet, savoury flavour.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Tamagoyaki (literally 'grilled egg') is a Japanese culinary technique dating to the Edo period. The rolled form allows thin layers of egg to be cooked and stacked, producing a distinctive spiral cross-section when sliced. It is one of the fundamental preparations of Japanese home cooking.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Can be made up to 4 hours ahead and kept wrapped in a bamboo mat to hold its shape. Serve at room temperature.",
+    "dietaryFlags": ["dairyFree", "nutFree"],
+    "cuisine": "japanese",
+    "mealType": "brunch",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "omelette-pan", "isOptional": false },
+    { "slug": "spatula", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Tamagoyaki requires a tamagoyaki pan (makiyakinabe): a small rectangular non-stick pan. If you don't have one, use the smallest round frying pan you own and accept that the resulting roll will be round rather than the classic square-edged block. The technique is the same: pour, let set, roll, pour again over the rolled egg, roll again." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mirin", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sake", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "caster-sugar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-oil", "amount": 1, "unit": "tsp", "prepNote": "for the pan", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Beat the eggs together with the mirin, soy sauce, sake, and sugar. Beat gently. You want the egg thoroughly mixed but with minimal air bubbles, which make the omelette porous. Strain through a fine sieve if there are any visible white strands." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the pan over medium heat. Lightly oil with a folded piece of kitchen paper dipped in oil. Pour in one-third of the egg mixture. Swirl to coat the pan. When the egg is just set but still slightly wet on top, roll it from one side to the other with a spatula or chopsticks." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Push the rolled egg to one end of the pan. Oil the empty area again. Pour in another third of the egg mixture, lifting the rolled egg to let the liquid flow underneath. When just set, roll the existing roll back over the new layer. Repeat with the final third." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Transfer to a bamboo rolling mat or a clean piece of cling film. Roll tightly and leave to rest for 5 minutes to set the shape. Slice into rounds about 2 cm thick to serve." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Omelette tears when rolling",
+              "cause": "Egg was too set (cooked too long) before rolling",
+              "fix": "Roll when the top surface is still slightly liquid-looking. The residual heat will finish cooking it inside the roll."
+            },
+            {
+              "symptom": "Layers are not sticking together",
+              "cause": "New egg poured on top of a fully set layer",
+              "fix": "The new egg must be poured around and under the existing roll, not on top, so it can bond with the slightly tacky underside of the existing egg."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

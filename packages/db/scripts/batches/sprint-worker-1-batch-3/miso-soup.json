@@ -1,0 +1,131 @@
+{
+  "slug": "miso-soup",
+  "title": "Miso Soup",
+  "subtitle": "Classic Japanese clear soup with dashi, tofu, and wakame",
+  "excerpt": "Miso soup is the everyday soup of Japan, served at virtually every traditional Japanese meal including breakfast. A dashi broth is made from kombu and bonito flakes, then miso is stirred in off the heat to preserve its flavour. The soup takes 15 minutes to make from scratch.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Miso soup (misoshiru) has been central to Japanese cuisine since the Muromachi period (14th to 16th century). The pairing of dashi and miso creates the fundamental umami profile of Japanese cooking. White (shiro) miso produces a lighter, sweeter soup than red (aka) miso.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["dairyFree", "nutFree"],
+    "cuisine": "japanese",
+    "mealType": "brunch",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The key to miso soup is not boiling the miso. Once the dashi is made and the solid ingredients are heated through, the miso is stirred in off the heat, or at the lowest possible simmer. Boiling miso destroys its delicate flavour and kills the beneficial bacteria. White miso gives a lighter, sweeter result; red miso is more robust and salty." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "kombu", "amount": 10, "unit": "g", "prepNote": "one 10 cm piece", "isOptional": false, "groupLabel": "Dashi" },
+            { "ingredientSlug": "bonito-flakes", "amount": 15, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dashi" },
+            { "ingredientSlug": "miso-white", "amount": 4, "unit": "tbsp", "prepNote": "or use red miso for a stronger soup", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tofu-firm", "amount": 150, "unit": "g", "prepNote": "cut into 1 cm cubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "wakame", "amount": 5, "unit": "g", "prepNote": "dried, rehydrated in cold water", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 2, "unit": "each", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the dashi" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the kombu into a saucepan with 1 litre of cold water. Bring slowly to just below the boil over medium heat. This takes about 10 minutes. Remove and discard the kombu before the water boils (boiling kombu makes the dashi bitter and slippery)." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the water to a gentle boil. Add the bonito flakes and remove the pan from the heat immediately. Let the bonito steep for 3 minutes then strain through a sieve. Discard the bonito. You now have dashi." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the soup" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the dashi to a low heat. Add the tofu and the drained wakame. Warm through for 2 minutes. Do not boil." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dissolve the miso in a ladleful of warm dashi in a small bowl, then stir back into the pan. This prevents lumps. Heat very gently if needed. The soup should be hot but not simmering once the miso is added. Serve immediately in warmed bowls, topped with spring onion." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup tastes flat or one-dimensional",
+              "cause": "Dashi was not made properly, or too little miso was used",
+              "fix": "The dashi is the flavour base. Kombu steeping time and bonito infusion time both matter. Taste and add more miso if needed. Always dissolve it separately first."
+            },
+            {
+              "symptom": "Soup looks and smells cooked-out or harsh",
+              "cause": "Miso was boiled",
+              "fix": "Always add miso off the heat or at the lowest simmer. Once boiled, miso soup cannot be recovered. Make a fresh batch with the saved dashi."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
