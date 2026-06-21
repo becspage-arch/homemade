@@ -1,0 +1,129 @@
+{
+  "slug": "polenta-fritta",
+  "title": "Polenta Fritta",
+  "subtitle": "Crisp fried polenta chips",
+  "excerpt": "Polenta fritta is cold set polenta cut into batons or slices and fried until golden and crisp outside, soft and creamy inside. It is one of the best ways to use leftover polenta. In Venice it is a street snack and bar food, often served alongside baccala mantecato or simply with a sprinkle of salt.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Fried polenta is found across northern Italy as a way of using up leftover polenta. It is particularly popular in Venice, where it appears in bacari (wine bars) as a cicchetto (small snack) alongside seafood toppings.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 60,
+    "restingMinutes": 120,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the polenta the day before and refrigerate in the tin overnight.",
+    "dietaryFlags": ["vegetarian", "glutenFree", "dairyFree"],
+    "cuisine": "italian",
+    "mealType": "starter",
+    "mood": ["weekend"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "Oil temperature for frying",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "To fry polenta successfully it must be properly set and cold. Make it at least 2 hours ahead -- overnight is better. The set polenta should be firm enough to cut cleanly into batons. If it crumbles, it may not have cooked long enough or there was too much water." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "polenta", "amount": 250, "unit": "g", "prepNote": "coarse traditional polenta", "isOptional": false, "groupLabel": "polenta" },
+            { "ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "polenta" },
+            { "ingredientSlug": "vegetable-oil", "amount": 800, "unit": "ml", "prepNote": "for deep-frying", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "salt-flakes", "amount": 0.5, "unit": "tsp", "prepNote": "to finish", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make and set the polenta" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring 1 litre of water to a boil with {{salt-table}} salt. Pour in {{polenta}} polenta in a thin stream, stirring constantly. Reduce to very low heat and cook, stirring every few minutes, for 40 to 45 minutes until very thick. Pour into a lightly oiled baking tin to a depth of 2cm. Smooth the surface and leave to cool, then refrigerate for at least 2 hours until completely set and firm." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Fry" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the set polenta out onto a board and cut into batons about 8cm long and 2cm wide." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat {{vegetable-oil}} oil in a deep saucepan to 180C. Fry the polenta batons in batches for 3 to 4 minutes until deep golden and crisp all over. Drain on kitchen paper. Sprinkle with {{salt-flakes}} flaked salt and serve immediately." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The polenta batons fall apart when fried",
+              "cause": "The polenta was not set firmly enough, or was cut while still warm.",
+              "fix": "The polenta must be refrigerator-cold and completely solid before cutting. Warm polenta cannot be cut into clean shapes and will break up in the oil."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Polenta fritta is a Venetian and northern Italian street food and bar snack. In Venice it appears in bacari alongside baccala mantecato (whipped salt cod) and other cicchetti. It is also a restaurant starter across the Veneto and Lombardy. It is the ideal way to use cold leftover polenta, which sets firm enough to fry where freshly made polenta is too soft." }
+        ]
+      }
+    ]
+  }
+}
