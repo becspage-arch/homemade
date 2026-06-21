@@ -1,0 +1,98 @@
+{
+  "slug": "gazpacho",
+  "title": "Gazpacho",
+  "subtitle": "Chilled Spanish tomato soup",
+  "excerpt": "A cold, raw tomato soup blended smooth and served well chilled. It is best made a day ahead so the flavours have time to develop.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Traditional Andalusian recipe. Best made with very ripe summer tomatoes for maximum flavour.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 0,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "spanish",
+    "mealType": "lunch",
+    "mood": ["summer", "make-ahead"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{"slug": "blender-jug", "isOptional": false}],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "Gazpacho is a no-cook soup that relies on ripe, flavourful tomatoes. Blend everything smooth, then chill until very cold before serving."}]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {"ingredientSlug": "tomato", "amount": 1000, "unit": "g", "prepNote": "ripe, roughly chopped", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "cucumber", "amount": 1, "unit": "whole", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "pepper-red", "amount": 1, "unit": "whole", "prepNote": "deseeded and roughly chopped", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "garlic", "amount": 2, "unit": "cloves", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "red-wine-vinegar", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "olive-oil", "amount": 5, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "lemon", "amount": 1, "unit": "whole", "prepNote": "juice only", "isOptional": false, "groupLabel": null}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Method"}]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Place the tomatoes, cucumber, and pepper in a blender."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the garlic, vinegar, olive oil, and lemon juice."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Blend on high for 2 minutes until very smooth."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Taste and season well with salt and black pepper."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Transfer to a jug or container and refrigerate for at least 1 hour until thoroughly chilled."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Stir before serving. Pour into bowls and drizzle with a little extra olive oil."}]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Troubleshooting"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {"symptom": "Soup tastes flat.", "cause": "Needs more seasoning or acid.", "fix": "Add more vinegar and salt, then stir well."},
+            {"symptom": "Texture is grainy.", "cause": "Not blended long enough.", "fix": "Blend for a further 2 minutes on high speed."},
+            {"symptom": "Soup is not cold enough.", "cause": "Insufficient chilling time.", "fix": "Refrigerate for a further 30 minutes before serving."}
+          ]
+        }
+      }
+    ]
+  }
+}

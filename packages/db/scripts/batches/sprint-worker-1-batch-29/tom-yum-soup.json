@@ -1,0 +1,102 @@
+{
+  "slug": "tom-yum-soup",
+  "title": "Tom Yum Soup",
+  "subtitle": "Hot and sour Thai prawn soup",
+  "excerpt": "Tom yum is sharp, hot, and fragrant all at once. It comes together in under 20 minutes and needs very little effort.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on Thai tom yum goong. Kaffir lime leaves replace lemongrass here for a citrus depth.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "thai",
+    "mealType": "dinner",
+    "mood": ["weeknight", "quick"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{"slug": "stockpot", "isOptional": false}],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "Tom yum is a quick soup with bold flavours. The prawns cook in just minutes, so have everything ready before you start."}]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {"ingredientSlug": "king-prawns", "amount": 300, "unit": "g", "prepNote": "raw, peeled", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "mushrooms-chestnut", "amount": 200, "unit": "g", "prepNote": "sliced", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "kaffir-lime-leaves", "amount": 6, "unit": "leaves", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "ginger-fresh", "amount": 30, "unit": "g", "prepNote": "sliced", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "chilli-red", "amount": 3, "unit": "whole", "prepNote": "sliced", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "fish-sauce", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "lime", "amount": 3, "unit": "whole", "prepNote": "juice only", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "palm-sugar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "stock-chicken", "amount": 1000, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "coriander-fresh", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "spring-onion", "amount": 3, "unit": "whole", "prepNote": "sliced", "isOptional": false, "groupLabel": null}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Method"}]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Bring the stock to a simmer in a large pot."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the kaffir lime leaves, ginger, and chilli. Simmer for 5 minutes."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the mushrooms and cook for 3 minutes."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Drop in the prawns and cook for 2 to 3 minutes until pink and cooked through."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Stir in the fish sauce, palm sugar, and lime juice."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Taste and adjust the balance of sour, salty, and sweet. Serve topped with coriander and spring onion."}]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Troubleshooting"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {"symptom": "Soup is too salty.", "cause": "Too much fish sauce.", "fix": "Add more lime juice and a little water."},
+            {"symptom": "Prawns are rubbery.", "cause": "Overcooked.", "fix": "Cook prawns for 2 minutes only, just until pink."},
+            {"symptom": "Soup lacks depth.", "cause": "Aromatics not infused long enough.", "fix": "Simmer aromatics in the stock for 5 more minutes."}
+          ]
+        }
+      }
+    ]
+  }
+}

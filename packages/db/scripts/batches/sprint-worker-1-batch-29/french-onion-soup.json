@@ -1,0 +1,101 @@
+{
+  "slug": "french-onion-soup",
+  "title": "French Onion Soup",
+  "subtitle": "Deeply savoury slow-cooked onion soup",
+  "excerpt": "Slow-cooked onions collapse into a rich, amber broth with a sharp wine vinegar base. Topped with grated cheese, this is the definitive cold-weather soup.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Classic French bistro recipe. Caramelisation time is the key to depth of flavour.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "comforting"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{"slug": "stockpot", "isOptional": false}],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "French onion soup is all about patience with the onions. Cook them low and slow until they turn deep golden and sweet."}]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {"ingredientSlug": "onion", "amount": 1500, "unit": "g", "prepNote": "peeled and sliced thin", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "thyme-fresh", "amount": 4, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaves", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "white-wine-vinegar", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "stock-beef", "amount": 1200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "parmesan", "amount": 80, "unit": "g", "prepNote": "finely grated, to serve", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "cheddar", "amount": 60, "unit": "g", "prepNote": "grated, to serve", "isOptional": false, "groupLabel": null}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Method"}]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Melt the butter with the olive oil in a large stockpot over a low heat."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the onions, thyme, and bay leaves. Season well with salt."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Cook over a low heat for 40 to 50 minutes, stirring every 5 minutes, until the onions are deep golden brown."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour in the white wine vinegar. Stir and cook for 2 minutes."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the stock and bring to a simmer. Cook for 10 minutes."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Remove the thyme sprigs and bay leaves. Taste and adjust seasoning."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Ladle into bowls and scatter parmesan and cheddar generously over the top. Serve at once."}]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Troubleshooting"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {"symptom": "Onions are burning.", "cause": "Heat is too high.", "fix": "Lower the heat and add a splash of water."},
+            {"symptom": "Soup tastes too sharp.", "cause": "Too much vinegar, not enough cooking time.", "fix": "Add more stock and simmer for 5 more minutes."},
+            {"symptom": "Onions are pale after 40 minutes.", "cause": "Pan is too crowded or heat too low.", "fix": "Raise heat slightly and cook for 10 more minutes."}
+          ]
+        }
+      }
+    ]
+  }
+}

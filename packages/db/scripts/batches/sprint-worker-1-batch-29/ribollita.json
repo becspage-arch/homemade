@@ -1,0 +1,103 @@
+{
+  "slug": "ribollita",
+  "title": "Ribollita",
+  "subtitle": "Hearty Tuscan bean and kale soup",
+  "excerpt": "Ribollita is a thick, filling Tuscan soup built on beans and greens. It tastes even better the next day, reheated and stirred until rich.  ",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ribollita means re-boiled. A Florentine peasant dish that improves overnight.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months.",
+    "batchable": true,
+    "batchNotes": "Easy to double.",
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegan", "vegetarian", "dairyFree", "nutFree"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weekend", "comforting"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{"slug": "stockpot", "isOptional": false}],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "Ribollita is a thick, coarse soup that needs time and nothing else. Use the best olive oil you have for serving."}]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {"ingredientSlug": "cannellini-beans", "amount": 800, "unit": "g", "prepNote": "tinned, drained and rinsed (2 x 400g tins)", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "kale", "amount": 200, "unit": "g", "prepNote": "roughly chopped, tough stalks removed", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "diced", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "carrot", "amount": 2, "unit": "whole", "prepNote": "peeled and diced", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "celery", "amount": 3, "unit": "stalks", "prepNote": "diced", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "garlic", "amount": 5, "unit": "cloves", "prepNote": "sliced", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "rosemary", "amount": 2, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "thyme-fresh", "amount": 3, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "olive-oil", "amount": 5, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "stock-vegetable", "amount": 800, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Method"}]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the olive oil in a large pot over a medium heat."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the onion, carrot, and celery. Cook for 10 minutes until soft."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the garlic, rosemary, and thyme. Cook for 1 minute."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the tomatoes and cook for 5 minutes, breaking them up with a spoon."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the beans and stock. Bring to a simmer."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Mash a third of the beans roughly against the side of the pot to thicken the soup."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the kale and simmer for 15 minutes until tender. Season well and serve with a drizzle of olive oil."}]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Troubleshooting"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {"symptom": "Soup is too thin.", "cause": "Not enough beans mashed.", "fix": "Mash more beans against the pot and stir."},
+            {"symptom": "Kale is still tough.", "cause": "Not cooked long enough.", "fix": "Simmer for a further 10 minutes until tender."},
+            {"symptom": "Soup is too thick after resting.", "cause": "Beans have absorbed more liquid.", "fix": "Add a splash of hot water and stir over medium heat."}
+          ]
+        }
+      }
+    ]
+  }
+}

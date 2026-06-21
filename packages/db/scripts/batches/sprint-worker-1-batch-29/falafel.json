@@ -1,0 +1,105 @@
+{
+  "slug": "falafel",
+  "title": "Baked Falafel",
+  "subtitle": "Crisp Middle Eastern chickpea patties",
+  "excerpt": "Baked rather than fried, these falafel are crisp on the outside and soft in the middle. The mixture must be pulsed, not blended, to hold its shape.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Baked rather than fried for ease. The mixture must be pulsed not blended so it holds its shape.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "20 falafel",
+    "prepMinutes": 20,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze cooked falafel for up to 3 months. Reheat in a hot oven.",
+    "batchable": true,
+    "batchNotes": "Double easily.",
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegan", "vegetarian", "dairyFree", "nutFree"],
+    "cuisine": "middle-eastern",
+    "mealType": "lunch",
+    "mood": ["weekend", "make-ahead"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {"slug": "baking-tray", "isOptional": false},
+    {"slug": "food-processor", "isOptional": false}
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "Falafel made from tinned chickpeas bakes well if you keep the mixture coarse and dry. Over-blending turns it into hummus."}]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 1,
+          "items": [
+            {"ingredientSlug": "chickpeas-tinned", "amount": 800, "unit": "g", "prepNote": "2 x 400g tins, drained and rinsed", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "coriander-fresh", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "parsley-flat", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "cumin-ground", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "coriander-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "chilli-flakes", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "plain-flour", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": "for brushing", "isOptional": false, "groupLabel": null}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Method"}]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 200C. Line a large baking tray with baking paper."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Dry the drained chickpeas well with kitchen paper."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Put the chickpeas, onion, and garlic in a food processor. Pulse 10 times to a rough crumble."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the fresh coriander, parsley, cumin, ground coriander, and chilli flakes. Pulse again until just combined."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Tip into a bowl. Add the flour and season well. Mix until the mixture holds when pressed."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Shape into 20 small patties. Place on the baking tray and brush all over with olive oil."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Bake for 22 to 25 minutes, turning once halfway, until golden and crisp."}]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Troubleshooting"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {"symptom": "Falafel are falling apart.", "cause": "Mixture too wet or over-processed.", "fix": "Add more flour 1 tbsp at a time until the mix holds together."},
+            {"symptom": "Falafel are pale after baking.", "cause": "Not enough oil or oven too cool.", "fix": "Brush with more oil and grill for 3 minutes to crisp."},
+            {"symptom": "Inside is dense and doughy.", "cause": "Too much flour added.", "fix": "Use just enough flour to bind; keep the mix as coarse as possible."}
+          ]
+        }
+      }
+    ]
+  }
+}

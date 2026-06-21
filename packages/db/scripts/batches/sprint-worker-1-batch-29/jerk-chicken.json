@@ -1,0 +1,105 @@
+{
+  "slug": "jerk-chicken",
+  "title": "Jerk Chicken",
+  "subtitle": "Smoky Jamaican spiced chicken",
+  "excerpt": "Jerk marinade is fragrant and fiery with allspice as its main spice. The longer you leave the chicken to marinate, the deeper the flavour.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Inspired by Jamaican jerk traditions. Allspice is the defining flavour. The longer the marinade, the better the result.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze cooked chicken for up to 2 months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "jamaican",
+    "mealType": "dinner",
+    "mood": ["weekend", "summer"],
+    "temperatureCelsius": 220,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {"slug": "roasting-tin", "isOptional": false},
+    {"slug": "food-processor", "isOptional": false}
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "Jerk is about the marinade more than the cooking method. Give it at least an hour, but overnight is better."}]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {"ingredientSlug": "chicken-thighs-boneless", "amount": 800, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "allspice", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "chilli-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "ginger-fresh", "amount": 30, "unit": "g", "prepNote": "peeled", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "garlic", "amount": 5, "unit": "cloves", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "spring-onion", "amount": 4, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "lime", "amount": 2, "unit": "whole", "prepNote": "juice only", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "honey", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Method"}]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Put the ginger, garlic, and spring onion in a food processor. Blitz to a rough paste."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the allspice, cinnamon, chilli flakes, soy sauce, lime juice, and honey. Blitz again until combined."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Score the chicken thighs a few times with a knife."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Coat the chicken thoroughly in the marinade. Cover and refrigerate for at least 1 hour."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 220C. Arrange the chicken in a roasting tin."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Roast for 25 to 30 minutes until charred at the edges and cooked through."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Rest for 5 minutes before serving with rice and lime wedges."}]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Troubleshooting"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {"symptom": "Chicken lacks deep flavour.", "cause": "Not enough marinating time.", "fix": "Marinate overnight in the fridge for best results."},
+            {"symptom": "Chicken is burning before it is cooked.", "cause": "Honey caramelising too fast.", "fix": "Cover loosely with foil for the first 20 minutes."},
+            {"symptom": "Marinade is not clinging to the chicken.", "cause": "Chicken not scored deeply enough.", "fix": "Score more deeply before marinating next time."}
+          ]
+        }
+      }
+    ]
+  }
+}

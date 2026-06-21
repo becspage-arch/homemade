@@ -1,0 +1,108 @@
+{
+  "slug": "moussaka",
+  "title": "Moussaka",
+  "subtitle": "Greek layered lamb and aubergine bake",
+  "excerpt": "Moussaka takes time but most of it is oven time. Let it rest before cutting so the layers hold when you serve it.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Classic Greek moussaka. The bechamel topping is the defining element. Let the dish rest 15 minutes before cutting.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "greek",
+    "mealType": "dinner",
+    "mood": ["weekend", "comforting"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {"slug": "roasting-tin", "isOptional": false},
+    {"slug": "large-saucepan", "isOptional": false}
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "Moussaka is built in three layers: aubergine, spiced lamb, and bechamel. Each layer needs to be made properly before assembly."}]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {"ingredientSlug": "lamb-mince", "amount": 700, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "aubergine", "amount": 2, "unit": "whole", "prepNote": "sliced into 1cm rounds", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "diced", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "garlic", "amount": 5, "unit": "cloves", "prepNote": "crushed", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "cinnamon-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "allspice", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "whole-milk", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "plain-flour", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "parmesan", "amount": 80, "unit": "g", "prepNote": "grated, for the top", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "eggs", "amount": 2, "unit": "whole", "prepNote": "beaten, stirred into the bechamel", "isOptional": false, "groupLabel": null}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Method"}]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 200C. Brush the aubergine slices with oil and roast on a tray for 20 minutes until tender. Set aside."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Fry the lamb mince in a dry pan over a high heat until browned. Remove and set aside."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "In the same pan, cook the onion for 5 minutes. Add the garlic, cinnamon, and allspice."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Return the lamb. Add the tomato puree and tomatoes. Simmer for 15 minutes until thick."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Make the bechamel: melt the butter, add the flour, then gradually whisk in the milk over a medium heat until thick. Stir in the eggs and half the parmesan."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Layer the aubergine, then the lamb sauce, then pour the bechamel over the top."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Scatter the remaining parmesan on top and bake for 30 minutes until golden. Rest for 15 minutes before cutting."}]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Troubleshooting"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {"symptom": "Bechamel has lumps.", "cause": "Milk added too fast.", "fix": "Whisk vigorously off the heat, then return and stir until smooth."},
+            {"symptom": "Moussaka is falling apart when cut.", "cause": "Not rested long enough.", "fix": "Leave to rest for at least 15 minutes before serving."},
+            {"symptom": "Topping is browning too quickly.", "cause": "Oven shelf too high.", "fix": "Move to the middle shelf and cover loosely with foil."}
+          ]
+        }
+      }
+    ]
+  }
+}
