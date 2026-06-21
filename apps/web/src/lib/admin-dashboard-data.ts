@@ -12,7 +12,12 @@ import {
   TutorialStatus,
   UserProjectStatus,
   HeroStrategy,
+  Visibility,
 } from '@homemade/db'
+// Single source of truth for which categories are pattern-led, the Pattern
+// type their charts are, and the published-pattern target — shared with the
+// admin Content-library page so the two surfaces count identically.
+import { PATTERN_CATEGORIES } from '@/lib/studio/generation/categories'
 
 export interface AttentionInboxItem {
   key: string
@@ -138,6 +143,8 @@ async function loadDashboard(): Promise<DashboardData> {
     categoryRows,
     publishedByCategory,
     draftByCategory,
+    publishedPatternsByType,
+    draftPatternsByType,
   ] = await Promise.all([
     prisma.review.count({ where: { status: ReviewStatus.PENDING_MODERATION } }),
     prisma.uGCPhoto.count({ where: { status: UGCPhotoStatus.PENDING_MODERATION } }),
@@ -221,7 +228,38 @@ async function loadDashboard(): Promise<DashboardData> {
       where: { status: TutorialStatus.DRAFT },
       _count: { _all: true },
     }),
+    // Public library-pattern counts per pattern type (for pattern-led
+    // categories). Mirrors the autopilot/library page: PUBLIC + house-owned
+    // (ownerUserId null) is what "published" means for a pattern.
+    prisma.pattern.groupBy({
+      by: ['type'],
+      where: { visibility: Visibility.PUBLIC, ownerUserId: null },
+      _count: { _all: true },
+      _max: { publishedAt: true },
+    }),
+    prisma.pattern.groupBy({
+      by: ['type'],
+      where: { visibility: { not: Visibility.PUBLIC }, ownerUserId: null },
+      _count: { _all: true },
+    }),
   ])
+
+  // Per-pattern-type maps for pattern-led categories.
+  const publishedPatternCountByType = new Map(
+    publishedPatternsByType.map((r) => [r.type, r._count._all]),
+  )
+  const lastPublishedPatternByType = new Map(
+    publishedPatternsByType.map((r) => [r.type, r._max.publishedAt ?? null]),
+  )
+  const draftPatternCountByType = new Map(
+    draftPatternsByType.map((r) => [r.type, r._count._all]),
+  )
+  // Real library total = published tutorials + all public house patterns.
+  const totalPublicPatterns = publishedPatternsByType.reduce(
+    (sum, r) => sum + r._count._all,
+    0,
+  )
+  const totalPublishedLibrary = publishedCount + totalPublicPatterns
 
   const realHeroStrategies: HeroStrategy[] = [
     HeroStrategy.REAL_PHOTO,
@@ -254,7 +292,7 @@ async function loadDashboard(): Promise<DashboardData> {
     {
       key: 'published',
       label: 'Total published',
-      value: publishedCount,
+      value: totalPublishedLibrary,
       delta7d: publishedDelta,
       sparkline: publishedSpark,
       href: '/admin/tutorials?status=PUBLISHED',
@@ -323,12 +361,22 @@ async function loadDashboard(): Promise<DashboardData> {
     publishedByCategory.map((p) => [p.categoryId, p._max.publishedAt ?? null]),
   )
   const pipeline: CategoryPipelineRow[] = categoryRows.map((c) => {
-    const pub = publishedMap.get(c.id) ?? 0
-    const drf = draftMap.get(c.id) ?? 0
-    const target = c.targetTutorialCount
+    // Pattern-led categories (e.g. cross-stitch) count published patterns in
+    // the Pattern model toward a pattern target — matching the admin
+    // Content-library page. Tutorial-led categories keep tutorial counts.
+    const cfg = PATTERN_CATEGORIES[c.slug]
+    const pub = cfg
+      ? publishedPatternCountByType.get(cfg.patternType) ?? 0
+      : publishedMap.get(c.id) ?? 0
+    const drf = cfg
+      ? draftPatternCountByType.get(cfg.patternType) ?? 0
+      : draftMap.get(c.id) ?? 0
+    const target = cfg ? cfg.patternTarget : c.targetTutorialCount
     const fillPercent =
       target != null && target > 0 ? Math.min(100, Math.round((pub / target) * 100)) : null
-    const lastPublishedAt = lastPublishedMap.get(c.id) ?? null
+    const lastPublishedAt = cfg
+      ? lastPublishedPatternByType.get(cfg.patternType) ?? null
+      : lastPublishedMap.get(c.id) ?? null
     return {
       slug: c.slug,
       name: c.name,
