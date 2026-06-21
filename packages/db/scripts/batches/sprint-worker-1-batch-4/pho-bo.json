@@ -1,0 +1,410 @@
+{
+  "slug": "pho-bo",
+  "title": "Pho Bo",
+  "subtitle": "Vietnamese beef noodle soup with fragrant charred broth",
+  "excerpt": "A deeply aromatic beef noodle soup built on a spiced, slow-simmered broth. Charring the onion and ginger first is what gives pho its distinctive smoky sweetness.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from classic Vietnamese pho techniques documented across multiple culinary sources.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the broth only; cook fresh noodles and slice fresh beef to serve.",
+    "batchable": true,
+    "batchNotes": "Double the broth batch and freeze in portions. The spice bundle scales well.",
+    "makeAheadNotes": "The broth improves overnight. Make up to 3 days ahead and refrigerate; skim any solidified fat before reheating.",
+    "dietaryFlags": [
+      "DAIRY_FREE",
+      "GLUTEN_FREE_ADAPTABLE"
+    ],
+    "cuisine": "Vietnamese",
+    "mealType": "dinner",
+    "mood": [
+      "comforting",
+      "restorative",
+      "special"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "sieve",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pho bo is Vietnamese beef noodle soup, and the broth is everything. Charring the onion and ginger directly over a flame creates a smoky, caramel depth that no amount of extra spice can replicate. Plan for a long, gentle simmer: three hours is the minimum for the broth to develop real body. The toppings are assembled fresh at the table, so each bowl can be seasoned exactly to taste."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 2000,
+              "unit": "ml",
+              "prepNote": "good-quality beef stock",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "halved, skin on",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "unpeeled, halved lengthways",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "star-anise",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "cloves",
+              "amount": 4,
+              "unit": "whole cloves",
+              "prepNote": "use whole cloves if available, or 0.5 tsp ground",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "amount": 1,
+              "unit": "stick",
+              "prepNote": "or 0.5 tsp ground",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "cardamom-ground",
+              "amount": 3,
+              "unit": "pods",
+              "prepNote": "lightly crushed, or 0.25 tsp ground",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "fennel-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "palm-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "or light brown sugar",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "noodles-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "flat rice noodles, soaked per packet instructions",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "beef-chuck",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "very thinly sliced sirloin or fillet, for raw topping",
+              "isOptional": true,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 4,
+              "unit": "stalks",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "leaves picked",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "thinly sliced",
+              "isOptional": true,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "cut into wedges",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "for the table",
+              "isOptional": true,
+              "groupLabel": "To serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Char the onion and ginger. Hold the onion halves and ginger pieces directly over a gas flame using tongs, or place them cut-side down under a very hot grill. Cook until the cut surfaces are blackened and fragrant, about 5 minutes per side. This charring is not optional: it creates the characteristic smokiness of the broth."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Toast the spices. Place the star anise, cloves, cinnamon, cardamom and fennel seeds in a dry frying pan over medium heat. Toast, stirring constantly, for 2 minutes until fragrant. Tip into a small piece of muslin or a tea strainer to make a spice bundle."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Build the broth. Place the beef chunks in the stockpot. Cover with 2.5 litres of cold water. Bring to the boil, then skim off any grey foam that rises. Add the charred onion, charred ginger and spice bundle. Reduce the heat to the lowest setting where the broth just trembles."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Simmer for at least 3 hours. The broth should never boil hard; a vigorous boil will cloud it. After 1.5 hours, the beef chunks will be tender enough to eat: remove them, shred the meat and set aside to use in the bowls if you like. Continue simmering the broth for the remaining time."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season the broth. Remove and discard the spice bundle, onion and ginger. Add the fish sauce and palm sugar. Taste: it should be savoury, faintly sweet and deeply beefy. Adjust fish sauce for saltiness and palm sugar for balance."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Strain the broth through a fine sieve into a clean saucepan. You should have about 1.5 litres of clear amber broth. If you want a clearer result, line the sieve with a piece of damp muslin."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Prepare the raw beef topping (if using). Place the thinly sliced sirloin in the freezer for 20 minutes beforehand to firm it up: this makes slicing much easier. Slice as thinly as possible across the grain."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the noodles. Drain the soaked rice noodles. Bring a large saucepan of unsalted water to the boil. Cook the noodles for 1 to 2 minutes until just tender but still with a little bite. Drain and divide between four deep bowls."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring the strained broth to a rolling boil. Arrange the raw beef slices (and any shredded braising beef) over the noodles in each bowl. Ladle the boiling broth directly over the raw beef: the heat of the broth cooks the slices as you pour. Top with spring onion, coriander and chilli. Serve immediately with lime wedges and soy sauce on the side."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Broth is cloudy rather than clear",
+              "cause": "The broth boiled too hard during simmering, which agitates proteins and fat into the liquid.",
+              "fix": "Keep the heat at its lowest setting so only occasional bubbles break the surface. If already cloudy, strain through muslin and rest: some cloudiness will settle."
+            },
+            {
+              "symptom": "Broth tastes flat or lacks depth",
+              "cause": "The onion and ginger were not charred enough, or the simmer time was too short.",
+              "fix": "If time allows, simmer for another hour. Add a splash more fish sauce and a pinch of palm sugar to compensate. Next time, char until the surfaces are properly blackened."
+            },
+            {
+              "symptom": "Raw beef topping is still raw and chewy after adding the broth",
+              "cause": "The broth was not at a rolling boil when ladled, or the beef slices were too thick.",
+              "fix": "The broth must be boiling hard when it hits the bowl. Slice the beef no thicker than 2 mm. If slices are still underdone, rest the bowl for 30 seconds before eating."
+            },
+            {
+              "symptom": "Noodles have clumped together",
+              "cause": "The rice noodles were drained and left to sit before serving.",
+              "fix": "Cook and drain the noodles only when the broth is ready. If they clump, dip them briefly back into hot water to loosen."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

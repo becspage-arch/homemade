@@ -1,0 +1,421 @@
+{
+  "slug": "chicken-tikka-masala",
+  "title": "Chicken Tikka Masala",
+  "subtitle": "British Indian restaurant-style chicken in spiced tomato and cream sauce",
+  "excerpt": "Britain's most ordered dish: marinated charred chicken tikka in a rich, aromatic tomato and cream sauce. The two-step process, marinating then cooking the chicken separately before adding to the sauce, is what sets this apart from a basic curry.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from British Indian restaurant (BIR) chicken tikka masala technique documentation.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 240,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the sauce with the chicken already in it. Thaw overnight and reheat gently to avoid splitting the cream.",
+    "batchable": true,
+    "batchNotes": "Double the batch easily. The sauce in particular improves when made in a larger quantity.",
+    "makeAheadNotes": "Marinate the chicken overnight for deeper flavour. The sauce can be made 2 days ahead and refrigerated; reheat and add the cooked chicken just before serving.",
+    "dietaryFlags": [
+      "GLUTEN_FREE"
+    ],
+    "cuisine": "British Indian",
+    "mealType": "dinner",
+    "mood": [
+      "comforting",
+      "crowd-pleasing",
+      "satisfying"
+    ],
+    "temperatureCelsius": 240,
+    "temperatureNote": "Grill or oven temperature for charring the chicken tikka. Fan 220 C if using the oven.",
+    "foundational": true
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "blender-jug",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chicken tikka masala is a two-stage recipe. First, the chicken is marinated in spiced yoghurt and cooked at high heat to get some char: this is the tikka. Then a separate tomato and cream masala sauce is built and the cooked chicken is folded in. Skipping the marinade and char step and just poaching chicken in the sauce produces an entirely different, considerably less interesting dish. Plan to marinate for at least 4 hours, overnight if possible."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thighs-boneless",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "cut into 4 cm pieces",
+              "isOptional": false,
+              "groupLabel": "Chicken tikka"
+            },
+            {
+              "ingredientSlug": "greek-yoghurt",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Chicken tikka"
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "juice only",
+              "isOptional": false,
+              "groupLabel": "Chicken tikka"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 6,
+              "unit": "clove",
+              "prepNote": "finely grated; divided between marinade and sauce",
+              "isOptional": false,
+              "groupLabel": "Chicken tikka"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "finely grated; divided between marinade and sauce",
+              "isOptional": false,
+              "groupLabel": "Chicken tikka"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": "divided between marinade and sauce",
+              "isOptional": false,
+              "groupLabel": "Chicken tikka"
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": "divided between marinade and sauce",
+              "isOptional": false,
+              "groupLabel": "Chicken tikka"
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "divided between marinade and sauce",
+              "isOptional": false,
+              "groupLabel": "Chicken tikka"
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "for colour",
+              "isOptional": false,
+              "groupLabel": "Chicken tikka"
+            },
+            {
+              "ingredientSlug": "chilli-flakes",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Chicken tikka"
+            },
+            {
+              "ingredientSlug": "sunflower-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "divided between marinade and pan-frying",
+              "isOptional": false,
+              "groupLabel": "Chicken tikka"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "large",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "Masala sauce"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "one tin",
+              "isOptional": false,
+              "groupLabel": "Masala sauce"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Masala sauce"
+            },
+            {
+              "ingredientSlug": "paprika-sweet",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Masala sauce"
+            },
+            {
+              "ingredientSlug": "cardamom-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Masala sauce"
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Masala sauce"
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Masala sauce"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Masala sauce"
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Masala sauce"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "leaves picked, to serve",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "basmati-rice",
+              "amount": 320,
+              "unit": "g",
+              "prepNote": "cooked to packet instructions, to serve",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Marinate the chicken. Combine the Greek yoghurt, lemon juice, garlic, ginger, cumin, coriander-ground, turmeric, smoked paprika, chilli flakes, sunflower oil and 1 teaspoon of salt in a bowl. Add the chicken pieces and mix well to coat. Cover and refrigerate for at least 4 hours, or overnight."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the tikka. Preheat the grill to its highest setting, or the oven to 240 C (fan 220 C). Spread the marinated chicken pieces on a foil-lined baking tray in a single layer. Grill for 10 to 12 minutes (or oven-bake for 15 to 18 minutes) until the chicken is cooked through and has charred spots. The char is what gives this dish its characteristic smoky-sweet flavour. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Build the sauce base. Heat the oil and butter in a large saucepan over medium heat. Add the onion and cook, stirring regularly, for 12 to 15 minutes until deep golden. Do not rush this: the caramelised onion is the backbone of the sauce. Add the garlic and ginger and cook for 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the spices and tomatoes. Add the cumin, coriander-ground, turmeric, sweet paprika, cardamom and cinnamon. Stir for 2 minutes over medium heat. Add the tomato puree and cook for 2 minutes. Add the tinned tomatoes and chicken stock. Bring to the boil, then simmer for 15 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blend the sauce. If you prefer a smooth restaurant-style sauce, blend using a stick blender or transfer to a blender jug and blend until smooth. Return to the pan. If you prefer a chunkier texture, leave as is."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the cream and chicken. Pour in the double cream and stir. Simmer for 5 minutes. Add the charred chicken tikka pieces and stir to coat. Simmer for another 5 minutes to warm the chicken through and let the flavours merge. Taste and season."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve over basmati rice, scattered with fresh coriander. Naan bread alongside is traditional and optional."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce splits and the cream has curdled",
+              "cause": "The cream was added when the sauce was boiling hard, or the heat was too high after adding it.",
+              "fix": "Reduce the heat to its lowest setting and add a splash of cold cream or water, then stir gently in one direction. Next time, ensure the sauce is at a gentle simmer before adding the cream and do not boil it afterwards."
+            },
+            {
+              "symptom": "Chicken is rubbery",
+              "cause": "The chicken was over-cooked during the tikka stage or the final simmer was too long.",
+              "fix": "Thigh meat is more forgiving than breast: it can handle more heat without becoming tough. If using breast, reduce the grill time by 2 to 3 minutes. In the final stage, warm the chicken through gently: it only needs 5 minutes."
+            },
+            {
+              "symptom": "Sauce tastes sharp and acidic",
+              "cause": "The tinned tomatoes were not cooked down enough, or the tomatoes were particularly sharp.",
+              "fix": "Simmer the sauce for longer to mellow the acidity. A small pinch of sugar stirred in also balances sharpness. The cream should provide a counterpoint: add a little more if needed."
+            },
+            {
+              "symptom": "Dish lacks the characteristic smokiness",
+              "cause": "The chicken was not charred enough during the tikka stage.",
+              "fix": "The charring is not optional: it is the defining flavour of the dish. Next time, cook under the very hottest grill and allow proper black patches to develop on the chicken surface."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
