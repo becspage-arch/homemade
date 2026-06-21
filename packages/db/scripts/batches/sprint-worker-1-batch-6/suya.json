@@ -1,0 +1,107 @@
+{
+  "slug": "suya",
+  "title": "Suya",
+  "subtitle": "West African spiced beef skewers with peanut crust",
+  "excerpt": "Suya is a West African street food of thin-sliced beef coated in a spiced peanut paste and grilled or roasted at high heat. The combination of peanut butter, smoked paprika, and ginger produces a crust that is simultaneously nutty, smoky, and fiery. It is best served immediately, sliced, with raw onion and tomato.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "EASY",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Suya originated with the Hausa people of Northern Nigeria and spread across West Africa and beyond through internal migration and trade. It is one of the most widely recognised Nigerian street foods, typically cooked over open charcoal by roadside vendors known as mai suya.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "dairyFree"],
+    "cuisine": "nigerian",
+    "mealType": "dinner",
+    "mood": ["weekend", "special"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "Fan 220°C / conventional 240°C / gas mark 9",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Freeze the beef for 20 minutes before slicing. Partially frozen beef is much easier to cut consistently thin with a sharp knife." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-sirloin", "amount": 600, "unit": "g", "prepNote": "sliced 5 mm thin against the grain", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "peanut-butter", "amount": 3, "unit": "tbsp", "prepNote": "smooth", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "cloves", "prepNote": "crushed to a paste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "small", "prepNote": "very finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 220°C fan. Mix the peanut butter, smoked paprika, ginger, garlic paste, grated onion, chilli flakes, sunflower oil, and a generous pinch of salt in a bowl until it forms a paste." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the sliced beef to the paste and turn to coat each piece thoroughly on all sides." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the beef slices in a single layer on the baking tray. Do not overlap them." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roast at the top of the oven for 8 to 10 minutes, until the coating is dark and beginning to char at the edges and the beef is cooked through." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove from the oven and leave to rest for 2 minutes. Serve immediately with sliced raw onion, diced tomato, and lime wedges." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The coating has burned rather than charred",
+              "cause": "The oven was too hot, or the beef was too thinly sliced",
+              "fix": "Reduce to 200°C fan for the last few minutes. A dark crust is the goal; black and acrid is too far."
+            },
+            {
+              "symptom": "The beef is tough",
+              "cause": "Sliced with the grain rather than against it",
+              "fix": "Always slice perpendicular to the direction of the muscle fibres. This shortens the fibres and makes each bite tender."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

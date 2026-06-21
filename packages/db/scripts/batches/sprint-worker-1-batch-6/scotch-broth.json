@@ -1,0 +1,110 @@
+{
+  "slug": "scotch-broth",
+  "title": "Scotch Broth",
+  "subtitle": "Slow-cooked lamb soup with root vegetables and bulgur wheat",
+  "excerpt": "Scotch broth is a thick, warming soup built on a long-simmered lamb stock with root vegetables and whole grain. Pearl barley is the traditional grain; bulgur wheat gives a similar hearty texture and cooks in a fraction of the time. This is a soup that improves the next day once it has had a chance to sit and deepen.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "EASY",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Scotch broth has been eaten in Scotland for centuries as a way to extract flavour from tougher cuts of mutton or lamb. Early versions were simply meat simmered in water with whatever root vegetables were available; the addition of grain came later as a way to add body and extend the dish.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in portions for up to 3 months. The bulgur wheat absorbs liquid as it sits; add a splash of hot water when reheating.",
+    "batchable": true,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["dairyFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weeknight", "weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Brown the lamb properly before adding the liquid. The colour and flavour from browning is what gives the broth its depth. Do not rush this step." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 600, "unit": "g", "prepNote": "diced into 2 cm pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bulgur-wheat", "amount": 100, "unit": "g", "prepNote": "used in place of traditional pearl barley", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "whole", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "leek", "amount": 2, "unit": "whole", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 3, "unit": "sticks", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsnip", "amount": 2, "unit": "whole", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "roughly chopped, to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 1500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the diced lamb in the stockpot over high heat with a drizzle of oil. Brown in batches for 3 to 4 minutes per batch until coloured on all sides. Remove and set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the onion, carrot, celery, leek, and parsnip to the same pot. Cook over medium heat for 5 minutes, scraping up any browned bits from the base." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the lamb to the pot and pour over the chicken stock. Add the bay leaves and thyme. Bring to the boil, then reduce to a gentle simmer. Skim off any foam that rises to the surface." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover and simmer for 1 hour until the lamb is tender. Add the bulgur wheat, stir well, and continue simmering uncovered for a further 15 minutes until the bulgur is cooked and the broth has thickened." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the bay leaves. Taste and adjust seasoning generously with salt and black pepper. Ladle into deep bowls and scatter the chopped parsley over the top." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The lamb is still chewy after an hour",
+              "cause": "Lamb shoulder has a lot of connective tissue that needs sustained heat to break down",
+              "fix": "Continue simmering, covered, in 15-minute increments until the meat is tender. A slow cooker on low for 6 hours also works well."
+            },
+            {
+              "symptom": "The broth is too thin",
+              "cause": "The lid was on throughout, preventing reduction, or the bulgur was not added",
+              "fix": "Remove the lid and simmer for 15 to 20 minutes. The bulgur will continue to absorb liquid and thicken the soup as it sits."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

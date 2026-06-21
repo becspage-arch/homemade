@@ -1,0 +1,109 @@
+{
+  "slug": "larb",
+  "title": "Larb",
+  "subtitle": "Minced pork salad with toasted rice, lime, and herbs",
+  "excerpt": "Larb is a Lao and Northern Thai salad of minced meat dressed with lime juice, fish sauce, toasted rice powder, chilli, and herbs. It is light, fast, and intensely flavoured. The toasted rice powder gives a nutty texture that makes the dish distinctive.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "EASY",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Larb is the national dish of Laos and is deeply embedded in the food culture of Northern Thailand and the Isan region. The toasted rice powder, known as khao khua, is the defining technique that separates authentic larb from simple minced meat salads.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "thai",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-28", "isOptional": false },
+    { "slug": "pestle-and-mortar", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Do not skip the toasted rice powder. It only takes 5 minutes and adds a nutty, slightly crunchy element that defines the dish." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "pork-mince", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-red", "amount": 2, "unit": "whole", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "small", "prepNote": "very finely sliced (red onion or shallots work well here)", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mint", "amount": 15, "unit": "g", "prepNote": "leaves picked", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander-fresh", "amount": 15, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "fish-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lime", "amount": 2, "unit": "whole", "prepNote": "juice only", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "palm-sugar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "long-grain-rice", "amount": 2, "unit": "tbsp", "prepNote": "dry-toasted in a dry pan until golden, then ground to a coarse powder in a pestle and mortar", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Toast the dry rice in the dry frying pan over medium heat, stirring constantly, for 4 to 5 minutes until the grains turn golden and smell nutty. Tip into the pestle and mortar and grind to a coarse powder. Set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the pan to medium-high heat. Add the pork mince with no oil and break it apart with a spatula. Cook for 5 minutes, stirring frequently, until cooked through with no pink remaining." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the pan from the heat and let the pork cool for 2 minutes. Pour off any excess fat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the fish sauce, lime juice, and palm sugar to the warm pork. Stir to dissolve the palm sugar." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the sliced onion, chilli, most of the mint, and most of the coriander. Scatter over the toasted rice powder and toss everything together. Taste and adjust with more lime or fish sauce. Serve immediately, scattered with the remaining herbs." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The larb tastes one-dimensional",
+              "cause": "The balance between sour, salty, and sweet needs adjusting",
+              "fix": "Add lime juice incrementally for sourness, fish sauce for salt, and a pinch more palm sugar if needed."
+            },
+            {
+              "symptom": "The toasted rice powder is powdery rather than textured",
+              "cause": "Ground too finely",
+              "fix": "Use a few short pulses in the pestle and mortar. You want a sandy texture, not fine flour."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

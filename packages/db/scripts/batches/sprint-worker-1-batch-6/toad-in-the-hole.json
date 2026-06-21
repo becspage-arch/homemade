@@ -1,0 +1,105 @@
+{
+  "slug": "toad-in-the-hole",
+  "title": "Toad in the Hole",
+  "subtitle": "Pork mince sausages baked in Yorkshire pudding batter",
+  "excerpt": "Toad in the hole is a British baked dish of sausages cooked inside Yorkshire pudding batter, which puffs up dramatically around the meat as it bakes. Traditional recipes use pork sausages; pork mince shaped into small sausage shapes works just as well and is used here. The batter needs a hot tin and a hot oven: those two things are non-negotiable.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "EASY",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Toad in the hole has been recorded in British cookery books since the 18th century, originally made with cheaper cuts of meat or offal cooked in batter as an economical way to feed a household. The dish is strongly associated with everyday British home cooking and school dinners.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "Fan 220°C / conventional 240°C / gas mark 9",
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Do not open the oven during the first 25 minutes of baking. The sudden drop in temperature will cause the batter to collapse." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pork-mince", "amount": 500, "unit": "g", "prepNote": "shaped into 8 small sausage shapes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 220°C fan. Make the batter: whisk the flour and eggs together in a bowl until smooth. Gradually whisk in the milk until you have a thin, lump-free batter. Season well with salt and black pepper. Leave to rest while the oven comes up to temperature." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the sunflower oil into the roasting tin and place in the oven for 10 minutes until the oil is smoking hot." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Carefully remove the tin from the oven. Working quickly, add the pork mince sausage shapes to the hot oil, turning them briefly. The oil should spit and sizzle." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the tin to the oven and cook the sausages for 5 minutes to begin browning." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pull the tin out again and quickly pour the batter around the sausages. Return immediately to the oven. Do not open the door for at least 25 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After 25 minutes the batter should be well risen and deep golden. Serve immediately from the tin; toad in the hole deflates quickly once out of the oven." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The batter did not rise",
+              "cause": "The oil or the oven was not hot enough when the batter went in",
+              "fix": "The tin must be smoking hot before the batter is added. This is the single most important step."
+            },
+            {
+              "symptom": "The batter is raw in the centre",
+              "cause": "The oven temperature was too low, or the tin was too deep and narrow",
+              "fix": "A wide, shallow tin gives the best result. If the centre is still raw, return to the oven for 5-minute increments until set."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
