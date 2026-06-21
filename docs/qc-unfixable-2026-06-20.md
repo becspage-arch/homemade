@@ -723,3 +723,33 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - shish-tawook  — applied: recipe-yield-appended,dry-run
 
 - sunday-gravy prose-prep-steps — applied: 
+
+- beef-and-ale-casserole hero-missing — applied: hero-fill-deferred-to-standalone-script
+- boeuf-bourguignon hero-missing — applied: hero-fill-deferred-to-standalone-script
+- buttermilk-fried-chicken hero-missing — applied: hero-fill-deferred-to-standalone-script
+- carrot-and-coriander-soup hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- coq-au-vin hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cornbread hero-missing — applied: hero-fill-deferred-to-standalone-script
+- falafel hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fresh-egg-pasta hero-missing — applied: hero-fill-deferred-to-standalone-script
+- full-english-breakfast hero-missing — applied: hero-fill-deferred-to-standalone-script
+- gumbo-chicken-andouille hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hummus hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mujadara hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mulligatawny-soup hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- oeufs-en-cocotte hero-missing — applied: hero-fill-deferred-to-standalone-script
+- omelette-aux-fines-herbes hero-missing — applied: hero-fill-deferred-to-standalone-script
+- osso-buco-alla-milanese hero-missing — applied: hero-fill-deferred-to-standalone-script
+- panna-cotta hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pollo-alla-cacciatora hero-missing — applied: hero-fill-deferred-to-standalone-script
+- porchetta hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pork-and-apple-casserole hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- poulet-roti hero-missing — applied: hero-fill-deferred-to-standalone-script
+- salade-lyonnaise hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- salade-nicoise hero-missing — applied: hero-fill-deferred-to-standalone-script
+- saltimbocca-alla-romana hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shakshuka hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shrimp-and-grits hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- steak-frites hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tabbouleh hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tomato-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
