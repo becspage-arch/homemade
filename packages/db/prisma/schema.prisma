@@ -509,6 +509,107 @@ model Tag {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
+// Cross-craft collection vocabulary (phase_collection_taxonomy_001)
+//
+// One controlled, site-wide vocabulary so the SAME "christmas" / "whimsical"
+// tags every piece of content in any category — recipes, tutorials, and every
+// craft's patterns. This is the spine of cross-craft theme search and the
+// /themes/* SEO landing pages. Replaces the loose, tutorial-only `Tag` above
+// (whose rows migrate into this system, after which `Tag` retires).
+//
+// Axes are N (not hardcoded into queries): Occasion, Season, Style are
+// populated at launch; Subject is registered and grown over time. Adding an
+// axis is one enum value; adding a TERM is pure data (admin-editable).
+//
+// Terms are attached to content through the polymorphic CollectionTagAssignment
+// join, so we tag tutorials + all five pattern models without altering any of
+// them, and "everything tagged christmas, across every craft" is one query.
+// ────────────────────────────────────────────────────────────────────────────
+
+enum CollectionAxis {
+  OCCASION // holidays + life events: christmas, halloween, weddings, new-baby…
+  SEASON // spring, summer, autumn, winter, year-round
+  STYLE // aesthetic register: whimsical, pastel, vintage, gothic…
+  SUBJECT // what it depicts: florals, animals, fantasy-creatures, celestial…
+}
+
+enum TaggableType {
+  TUTORIAL
+  CROSS_STITCH_PATTERN
+  CROCHET_PATTERN
+  NEEDLEWORK_PATTERN
+  KNITTING_PATTERN
+  SEWING_PATTERN
+}
+
+// Provenance of an assignment, for QC + the "shelf auto-derives its tag" rule.
+enum CollectionTagSource {
+  AUTHORED // born-tagged at generation (most reliable — we chose the style)
+  DERIVED // auto-derived from a theme sub-category ("home shelf" → tag)
+  VISION // assigned by a vision pass over a finished image
+  BACKFILL // bulk retro-tag of existing back-catalogue content
+  MANUAL // set by hand in admin
+}
+
+model CollectionTag {
+  id   String         @id @default(cuid())
+  axis CollectionAxis
+  slug String         @unique // globally unique: "christmas", "whimsical"
+  name String // display: "Christmas"
+
+  // `description` is PUBLIC and voice-clean (a list of what's inside) — it is
+  // the /themes/<slug> page intro. `taggerGuidance` is INTERNAL: the precise
+  // definition the AI tagger must follow so the controlled vocab stays
+  // consistent. Keep them separate; they serve different readers.
+  description    String?
+  taggerGuidance String?
+
+  // Search synonyms ("xmas", "father christmas", "fall"→autumn). Folded into
+  // the search index so obvious queries hit even when they aren't the slug.
+  aliases String[] @default([])
+
+  // Optional hierarchy: "nativity".parent = "christmas". Lets a theme page
+  // roll up its children and lets the tagger pick a specific child.
+  parentId String?
+  parent   CollectionTag?  @relation("CollectionTagHierarchy", fields: [parentId], references: [id])
+  children CollectionTag[] @relation("CollectionTagHierarchy")
+
+  order Int @default(0)
+
+  // SEO/merchandising. `isThemePage` = this term gets a standalone, indexable
+  // /themes/<slug> page (thin terms stay off-index to avoid thin-content).
+  isThemePage Boolean @default(false)
+  heroMediaId String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  assignments CollectionTagAssignment[]
+
+  @@index([axis, order])
+}
+
+model CollectionTagAssignment {
+  id    String        @id @default(cuid())
+  tagId String
+  tag   CollectionTag @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  // Polymorphic target. contentId references the row of the model named by
+  // contentType (no DB-level FK across the union; integrity is enforced in the
+  // tagging layer + an orphan-sweep on content delete).
+  contentType TaggableType
+  contentId   String
+
+  source CollectionTagSource @default(AUTHORED)
+
+  createdAt DateTime @default(now())
+
+  @@unique([tagId, contentType, contentId])
+  @@index([contentType, contentId])
+  @@index([tagId])
+}
+
+// ────────────────────────────────────────────────────────────────────────────
 // Glossary — per-category technical terms
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -2748,8 +2849,8 @@ model UserRecipe {
   /// TipTap JSON, same body shape as Tutorial for renderer compatibility.
   body Json
 
-  cuisineTags String[] @default([])
-  dietaryTags String[] @default([])
+  cuisineTags String[]  @default([])
+  dietaryTags String[]  @default([])
   mealType    MealType?
 
   servings         Int
@@ -2903,7 +3004,7 @@ model MealPlanEntry {
 
   /// Optional per-slot servings override (defaults to the recipe's own).
   servings Int?
-  position Int @default(0)
+  position Int  @default(0)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -5769,15 +5870,15 @@ model SewingPattern {
   // the row has no heroMediaId at all). heroNeedsFlatHand flags rows
   // whose archetype is not mapped — a human / illustrator picks up the
   // hero instead of the parametric renderer.
-  heroRendererVersion    Int                   @default(0)
-  heroNeedsFlatHand      Boolean               @default(false)
-  premium                Boolean               @default(false)
-  visibility             Visibility            @default(PRIVATE)
-  publishedAt            DateTime?
+  heroRendererVersion Int        @default(0)
+  heroNeedsFlatHand   Boolean    @default(false)
+  premium             Boolean    @default(false)
+  visibility          Visibility @default(PRIVATE)
+  publishedAt         DateTime?
   // Makeability / completeness gate block reason — set when the QC pass
   // un-publishes a row (visibility -> PRIVATE) for failing the locked checklist.
   // Nullable + additive; mirrors Tutorial.qcBlockReason.
-  qcBlockReason          Json?
+  qcBlockReason       Json?
 
   // Secondary product-shot hero for the bag / home / accessory sub-cats
   // where industry convention is product photography rather than a flat
@@ -5789,11 +5890,11 @@ model SewingPattern {
   // by bumping the version on the pattern. The 5-attempt retry budget is
   // tracked in `heroProductShotAttempts`.
   heroProductShotMediaId       String?
-  heroProductShot              Media?   @relation("SewingPatternHeroProductShot", fields: [heroProductShotMediaId], references: [id], onDelete: SetNull)
+  heroProductShot              Media?  @relation("SewingPatternHeroProductShot", fields: [heroProductShotMediaId], references: [id], onDelete: SetNull)
   heroProductShotPrompt        String?
-  heroProductShotAttempts      Int      @default(0)
-  heroProductShotFallback      Boolean  @default(false)
-  heroProductShotScriptVersion Int      @default(1)
+  heroProductShotAttempts      Int     @default(0)
+  heroProductShotFallback      Boolean @default(false)
+  heroProductShotScriptVersion Int     @default(1)
 
   // Errata and credits. `errataLog` is an append-only log of corrections
   // since the version was cut; the Studio shows it in the pattern footer.
