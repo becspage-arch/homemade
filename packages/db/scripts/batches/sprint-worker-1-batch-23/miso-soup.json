@@ -1,0 +1,100 @@
+{
+  "slug": "miso-soup",
+  "title": "Miso Soup with Halloumi and Pak Choi",
+  "subtitle": "A hearty miso broth with grilled halloumi and greens",
+  "excerpt": "A warming miso broth built on chicken stock with pak choi and spring onion, finished with golden cubes of pan-fried halloumi. Simple enough for a weeknight and more substantial than a traditional dashi-based miso soup.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Miso soup is a Japanese staple eaten at almost every meal. This version adapts the basic structure of a dashi-free miso broth, using chicken stock and halloumi in place of the traditional tofu and kombu, making it more accessible with standard supermarket ingredients.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "nutFree"],
+    "cuisine": "japanese",
+    "mealType": "starter",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Do not add the miso directly to boiling liquid. Take the pan off the heat, dissolve the miso in a ladle of broth, then stir it back in. This preserves the flavour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "miso-white", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 1000, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "halloumi", "amount": 150, "unit": "g", "prepNote": "cut into small cubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pak-choi", "amount": 2, "unit": null, "prepNote": "shredded", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": null, "prepNote": "finely sliced on the diagonal", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sesame-oil", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat a dry frying pan over a high heat. Add the halloumi cubes. Cook for 2 minutes per side until golden. Set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the chicken stock to a gentle simmer in a large saucepan." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the pak choi. Simmer for 2 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Take the pan off the heat. Spoon the miso paste into a small ladle." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add a ladleful of hot broth to the miso and whisk until dissolved." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir the dissolved miso back into the pot." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ladle into bowls. Add the halloumi cubes and spring onion." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Finish with a small drizzle of sesame oil." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Broth tastes weak and flat.", "cause": "The miso amount was too low or it was boiled away.", "fix": "Add another tablespoon of miso dissolved in a ladle of broth." },
+            { "symptom": "Halloumi is rubbery rather than golden.", "cause": "The pan was not hot enough when the halloumi went in.", "fix": "Use a very hot dry pan and do not move the cubes for 2 full minutes." }
+          ]
+        }
+      }
+    ]
+  }
+}
