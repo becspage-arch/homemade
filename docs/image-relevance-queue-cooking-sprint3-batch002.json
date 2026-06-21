@@ -1,0 +1,291 @@
+{
+  "generatedAt": "2026-06-21T07:12:05.302Z",
+  "totalCandidates": 13,
+  "enqueued": 13,
+  "filter": {
+    "category": "cooking",
+    "sources": [
+      "unsplash",
+      "pexels",
+      "wikimedia",
+      "pixabay",
+      "flux-schnell"
+    ],
+    "stratify": false
+  },
+  "entries": [
+    {
+      "mediaId": "cmqng7qzh0000vov40zeuzi2q",
+      "tutorialId": "cmqmz7sji00005gv4w8et4xvh",
+      "tutorialSlug": "bacon-and-egg-sandwich",
+      "tutorialTitle": "Bacon and Egg Sandwich",
+      "tutorialSubtitle": "Back bacon and fried egg in a soft roll with ketchup or brown sauce",
+      "tutorialExcerpt": "The bacon and egg sandwich is back bacon and a fried egg in a soft white roll, finished with ketchup or brown sauce. The egg yolk should still be slightly runny so it breaks and runs into the bread when you bite. It is the standard British weekend breakfast sandwich.",
+      "category": "cooking",
+      "subCategory": null,
+      "keyIngredients": [
+        "back bacon",
+        "eggs",
+        "white bread"
+      ],
+      "imageUrl": "https://images.pexels.com/photos/6529599/pexels-photo-6529599.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imageSource": "pexels",
+      "licenceCode": "PEXELS",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\cooking-sprint-3\\.claude\\tmp\\relevance-cache\\cmqng7qzh0000vov40zeuzi2q-f73b2d5bf0e6fa42.jpg",
+      "promptHints": "TUTORIAL\n  Title: Bacon and Egg Sandwich\n  Subtitle: Back bacon and fried egg in a soft roll with ketchup or brown sauce\n  Excerpt: The bacon and egg sandwich is back bacon and a fried egg in a soft white roll, finished with ketchup or brown sauce. The egg yolk should still be slightly runny so it breaks and runs into the bread when you bite. It is the standard British\n  Category: cooking\n  Key ingredients: back bacon, eggs, white bread\n  Candidate source: pexels\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqng7sa30002vov417329n6a",
+      "tutorialId": "cmqmz7g2o000038v4ofj6jh8b",
+      "tutorialSlug": "bacon-chop-with-parsley-sauce",
+      "tutorialTitle": "Bacon Chop with Parsley Sauce",
+      "tutorialSubtitle": "Thick-cut cured pork with a classic parsley butter sauce",
+      "tutorialExcerpt": "A bacon chop is a thick steak cut from the back of the pig, cured like back bacon but substantial enough to pan-fry as a main course. Parsley sauce, a simple white sauce finished with plenty of chopped flat-leaf parsley, is the traditional British accompaniment that makes the combination complete.",
+      "category": "cooking",
+      "subCategory": null,
+      "keyIngredients": [
+        "back bacon",
+        "olive oil",
+        "unsalted butter"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1556051546-7b9f419f73d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwyfHxCYWNvbiUyMENob3AlMjB3aXRoJTIwUGFyc2xleSUyMFNhdWNlJTIwYmFjayUyMGJhY29ufGVufDF8MHx8fDE3ODIwMjU5MDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\cooking-sprint-3\\.claude\\tmp\\relevance-cache\\cmqng7sa30002vov417329n6a-4b1e9e2a55cacf80.jpg",
+      "promptHints": "TUTORIAL\n  Title: Bacon Chop with Parsley Sauce\n  Subtitle: Thick-cut cured pork with a classic parsley butter sauce\n  Excerpt: A bacon chop is a thick steak cut from the back of the pig, cured like back bacon but substantial enough to pan-fry as a main course. Parsley sauce, a simple white sauce finished with plenty of chopped flat-leaf parsley, is the traditional\n  Category: cooking\n  Key ingredients: back bacon, olive oil, unsalted butter\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqng7t150004vov4bwx64385",
+      "tutorialId": "cmpqzhd2q0000rwv4sjno3o4v",
+      "tutorialSlug": "battered-sausage",
+      "tutorialTitle": "Battered Sausage",
+      "tutorialSubtitle": "Pork sausage in crisp beer batter from the chip shop",
+      "tutorialExcerpt": "A battered sausage is a pork sausage dipped in beer batter and deep-fried until the batter is golden and crisp. It is one of the classic items on a British chip-shop menu, eaten with chips, salt, and malt vinegar. The batter should be light and bubbly, not thick and doughy.",
+      "category": "cooking",
+      "subCategory": null,
+      "keyIngredients": [
+        "pork sausages",
+        "vegetable oil",
+        "plain flour"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1778449521139-8c4a3f6273c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxCYXR0ZXJlZCUyMFNhdXNhZ2UlMjBwb3JrJTIwc2F1c2FnZXN8ZW58MXwwfHx8MTc4MjAyNTkxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\cooking-sprint-3\\.claude\\tmp\\relevance-cache\\cmqng7t150004vov4bwx64385-5f2ebe2b8ee17ad4.jpg",
+      "promptHints": "TUTORIAL\n  Title: Battered Sausage\n  Subtitle: Pork sausage in crisp beer batter from the chip shop\n  Excerpt: A battered sausage is a pork sausage dipped in beer batter and deep-fried until the batter is golden and crisp. It is one of the classic items on a British chip-shop menu, eaten with chips, salt, and malt vinegar. The batter should be light\n  Category: cooking\n  Key ingredients: pork sausages, vegetable oil, plain flour\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqng7tsr0006vov40olppy0g",
+      "tutorialId": "cmpqywl0n000038v4v6vtsvgb",
+      "tutorialSlug": "beans-on-toast-with-cheese",
+      "tutorialTitle": "Beans on Toast with Cheese",
+      "tutorialSubtitle": "baked beans on thick toast with melted cheddar",
+      "tutorialExcerpt": "Beans on toast with cheese is thick slices of toast loaded with hot baked beans and a generous layer of grated cheddar. The cheese goes on top of the hot beans rather than under the grill, so it melts from the heat of the beans rather than browning. Ready in five minutes from cold.",
+      "category": "cooking",
+      "subCategory": null,
+      "keyIngredients": [
+        "baked beans",
+        "white bread",
+        "cheddar"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1669655139688-72e3cd7a8d9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwyfHxCZWFucyUyMG9uJTIwVG9hc3QlMjB3aXRoJTIwQ2hlZXNlJTIwYmFrZWQlMjBiZWFuc3xlbnwxfDB8fHwxNzgyMDI1OTEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\cooking-sprint-3\\.claude\\tmp\\relevance-cache\\cmqng7tsr0006vov40olppy0g-7246b022fd79b479.jpg",
+      "promptHints": "TUTORIAL\n  Title: Beans on Toast with Cheese\n  Subtitle: baked beans on thick toast with melted cheddar\n  Excerpt: Beans on toast with cheese is thick slices of toast loaded with hot baked beans and a generous layer of grated cheddar. The cheese goes on top of the hot beans rather than under the grill, so it melts from the heat of the beans rather than\n  Category: cooking\n  Key ingredients: baked beans, white bread, cheddar\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqng7v2t0008vov494xqkw21",
+      "tutorialId": "cmpb7i7yw000084v46jomqyaf",
+      "tutorialSlug": "beef-vindaloo",
+      "tutorialTitle": "Beef Vindaloo",
+      "tutorialSubtitle": "Hot and sour curry from the Goan tradition",
+      "tutorialExcerpt": "Beef marinated in vinegar and chillies, cooked to a hot, deeply spiced gravy. Vindaloo is a Goan-Portuguese fusion dish: the vinegar is the telling ingredient, and the heat level is real.",
+      "category": "cooking",
+      "subCategory": null,
+      "keyIngredients": [
+        "beef shin",
+        "red wine vinegar",
+        "chilli powder"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1710091691802-7dedb8af9a77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwyfHxCZWVmJTIwVmluZGFsb28lMjBiZWVmJTIwc2hpbnxlbnwxfDB8fHwxNzgyMDI1OTEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\cooking-sprint-3\\.claude\\tmp\\relevance-cache\\cmqng7v2t0008vov494xqkw21-d682d6d6907a42c6.jpg",
+      "promptHints": "TUTORIAL\n  Title: Beef Vindaloo\n  Subtitle: Hot and sour curry from the Goan tradition\n  Excerpt: Beef marinated in vinegar and chillies, cooked to a hot, deeply spiced gravy. Vindaloo is a Goan-Portuguese fusion dish: the vinegar is the telling ingredient, and the heat level is real.\n  Category: cooking\n  Key ingredients: beef shin, red wine vinegar, chilli powder\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqng7wld000avov4y4snmnn5",
+      "tutorialId": "cmqmz713i0000mwv4xrj3axrl",
+      "tutorialSlug": "cheese-and-pickle-sandwich",
+      "tutorialTitle": "Cheese and Pickle Sandwich",
+      "tutorialSubtitle": "Mature cheddar with sweet pickle on granary bread",
+      "tutorialExcerpt": "The cheese and pickle sandwich is mature cheddar and sweet chunky pickle on granary bread with a thin scrape of butter. It is the most reliably satisfying sandwich in the British lunch repertoire: two ingredients that are never out of season and take thirty seconds to assemble.",
+      "category": "cooking",
+      "subCategory": null,
+      "keyIngredients": [
+        "bread",
+        "cheddar",
+        "branston pickle"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1626201853398-7cba6a8ebd7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxDaGVlc2UlMjBhbmQlMjBQaWNrbGUlMjBTYW5kd2ljaCUyMGJyZWFkfGVufDF8MHx8fDE3ODIwMjU5MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\cooking-sprint-3\\.claude\\tmp\\relevance-cache\\cmqng7wld000avov4y4snmnn5-c53673d3f6f6f92a.jpg",
+      "promptHints": "TUTORIAL\n  Title: Cheese and Pickle Sandwich\n  Subtitle: Mature cheddar with sweet pickle on granary bread\n  Excerpt: The cheese and pickle sandwich is mature cheddar and sweet chunky pickle on granary bread with a thin scrape of butter. It is the most reliably satisfying sandwich in the British lunch repertoire: two ingredients that are never out of seaso\n  Category: cooking\n  Key ingredients: bread, cheddar, branston pickle\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqng7yds000cvov4j8mr2aw5",
+      "tutorialId": "cmp8a7wy30000bwv43kef8ju6",
+      "tutorialSlug": "cheese-on-toast",
+      "tutorialTitle": "Cheese on Toast",
+      "tutorialSubtitle": "Grilled cheddar on thick white bread with worcestershire and mustard",
+      "tutorialExcerpt": "Cheese on toast is two thick slices of bread grilled until the cheddar bubbles and colours slightly at the edges. Worcestershire sauce and a scrape of mustard underneath the cheese give it the savoury bite that separates it from plain melted cheese. Ready in eight minutes from cold.",
+      "category": "cooking",
+      "subCategory": null,
+      "keyIngredients": [
+        "white bread",
+        "cheddar",
+        "english mustard"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1581574303858-f00f95088f7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwzfHxDaGVlc2UlMjBvbiUyMFRvYXN0JTIwd2hpdGUlMjBicmVhZHxlbnwxfDB8fHwxNzgyMDI1OTE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\cooking-sprint-3\\.claude\\tmp\\relevance-cache\\cmqng7yds000cvov4j8mr2aw5-bc20b5ec37a1115b.jpg",
+      "promptHints": "TUTORIAL\n  Title: Cheese on Toast\n  Subtitle: Grilled cheddar on thick white bread with worcestershire and mustard\n  Excerpt: Cheese on toast is two thick slices of bread grilled until the cheddar bubbles and colours slightly at the edges. Worcestershire sauce and a scrape of mustard underneath the cheese give it the savoury bite that separates it from plain melte\n  Category: cooking\n  Key ingredients: white bread, cheddar, english mustard\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqng7zcx000evov40rga5cj8",
+      "tutorialId": "cmqmwawx00000r8v4lu8lxwro",
+      "tutorialSlug": "chicken-cacciatore",
+      "tutorialTitle": "Chicken Cacciatore",
+      "tutorialSubtitle": "Braised chicken with tomatoes, olives, and capers",
+      "tutorialExcerpt": "Chicken pieces braised in a rich tomato sauce with black olives, capers, white wine, and rosemary. A hunter's stew, cacciatore means hunter in Italian, that varies by region but always involves a slow braise.",
+      "category": "cooking",
+      "subCategory": null,
+      "keyIngredients": [
+        "chicken thigh",
+        "olive oil",
+        "onion"
+      ],
+      "imageUrl": "https://images.pexels.com/photos/24902945/pexels-photo-24902945.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "imageSource": "pexels",
+      "licenceCode": "PEXELS",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\cooking-sprint-3\\.claude\\tmp\\relevance-cache\\cmqng7zcx000evov40rga5cj8-f6fd83f2525fef2b.jpg",
+      "promptHints": "TUTORIAL\n  Title: Chicken Cacciatore\n  Subtitle: Braised chicken with tomatoes, olives, and capers\n  Excerpt: Chicken pieces braised in a rich tomato sauce with black olives, capers, white wine, and rosemary. A hunter's stew, cacciatore means hunter in Italian, that varies by region but always involves a slow braise.\n  Category: cooking\n  Key ingredients: chicken thigh, olive oil, onion\n  Candidate source: pexels\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqng804k000gvov4n9abd82j",
+      "tutorialId": "cmqmz74nz0000osv4xpylttvm",
+      "tutorialSlug": "egg-and-cress-sandwich",
+      "tutorialTitle": "Egg and Cress Sandwich",
+      "tutorialSubtitle": "Creamy egg mayonnaise with snipped cress on soft white bread",
+      "tutorialExcerpt": "The egg and cress sandwich is boiled egg mashed with mayonnaise and a little mustard, layered with snipped cress on soft white bread. The cress adds a peppery freshness that lifts the richness of the egg. It is a staple of British afternoon teas, high-street sandwich counters, and home lunch boxes.",
+      "category": "cooking",
+      "subCategory": null,
+      "keyIngredients": [
+        "eggs",
+        "mayonnaise",
+        "english mustard"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1616174900332-1264408cf779?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxFZ2clMjBhbmQlMjBDcmVzcyUyMFNhbmR3aWNoJTIwZWdnc3xlbnwxfDB8fHwxNzgyMDI1OTIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\cooking-sprint-3\\.claude\\tmp\\relevance-cache\\cmqng804k000gvov4n9abd82j-1d7efa34884fcdf2.jpg",
+      "promptHints": "TUTORIAL\n  Title: Egg and Cress Sandwich\n  Subtitle: Creamy egg mayonnaise with snipped cress on soft white bread\n  Excerpt: The egg and cress sandwich is boiled egg mashed with mayonnaise and a little mustard, layered with snipped cress on soft white bread. The cress adds a peppery freshness that lifts the richness of the egg. It is a staple of British afternoon\n  Category: cooking\n  Key ingredients: eggs, mayonnaise, english mustard\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqng81jq000ivov4gwnayugk",
+      "tutorialId": "cmpagrzsq0000rsv48itv53rh",
+      "tutorialSlug": "goujons",
+      "tutorialTitle": "Fish Goujons",
+      "tutorialSubtitle": "Panko-crumbed fish strips for the whole table",
+      "tutorialExcerpt": "Fish goujons are white fish fillets cut into thin strips, coated in seasoned breadcrumbs, and fried until crisp and golden. Faster than a whole battered fish and easier to eat by younger children. Serve with tartare sauce, ketchup, or a squeeze of lemon.",
+      "category": "cooking",
+      "subCategory": null,
+      "keyIngredients": [
+        "cod fillet",
+        "plain flour",
+        "eggs"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1579208030886-b937da0925dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxGaXNoJTIwR291am9ucyUyMGNvZCUyMGZpbGxldHxlbnwxfDB8fHwxNzgyMDI1OTIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\cooking-sprint-3\\.claude\\tmp\\relevance-cache\\cmqng81jq000ivov4gwnayugk-fce7ef32c992724e.jpg",
+      "promptHints": "TUTORIAL\n  Title: Fish Goujons\n  Subtitle: Panko-crumbed fish strips for the whole table\n  Excerpt: Fish goujons are white fish fillets cut into thin strips, coated in seasoned breadcrumbs, and fried until crisp and golden. Faster than a whole battered fish and easier to eat by younger children. Serve with tartare sauce, ketchup, or a squ\n  Category: cooking\n  Key ingredients: cod fillet, plain flour, eggs\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqng82gm000kvov41epnykwm",
+      "tutorialId": "cmpagpxqj0000q8v4xks2bhgu",
+      "tutorialSlug": "oxtail-stew",
+      "tutorialTitle": "Oxtail Stew",
+      "tutorialSubtitle": "Slow-braised oxtail in red wine with root vegetables",
+      "tutorialExcerpt": "Oxtail stew is made from the jointed tail of beef, braised slowly in red wine and stock until the meat falls from the bone and the liquid reduces to a dark, gelatinous gravy. It is one of the richest dishes in the British braising repertoire: the high collagen content of the tail gives the sauce a silky body that no other cut can match.",
+      "category": "cooking",
+      "subCategory": null,
+      "keyIngredients": [
+        "oxtail",
+        "olive oil",
+        "onion"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1709201776398-99a81cfa8634?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxPeHRhaWwlMjBTdGV3JTIwb3h0YWlsfGVufDF8MHx8fDE3ODIwMjU5MjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\cooking-sprint-3\\.claude\\tmp\\relevance-cache\\cmqng82gm000kvov41epnykwm-88117895313cfc74.jpg",
+      "promptHints": "TUTORIAL\n  Title: Oxtail Stew\n  Subtitle: Slow-braised oxtail in red wine with root vegetables\n  Excerpt: Oxtail stew is made from the jointed tail of beef, braised slowly in red wine and stock until the meat falls from the bone and the liquid reduces to a dark, gelatinous gravy. It is one of the richest dishes in the British braising repertoir\n  Category: cooking\n  Key ingredients: oxtail, olive oil, onion\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqng83ad000mvov4sh81mp1p",
+      "tutorialId": "cmpqyvyit0000ggv4qhc1bkv7",
+      "tutorialSlug": "potted-crab",
+      "tutorialTitle": "Potted Crab",
+      "tutorialSubtitle": "White and brown crab meat sealed in spiced clarified butter",
+      "tutorialExcerpt": "Potted crab is a British preserve in the old sense: white and brown crab meat seasoned with mace, cayenne, and lemon, packed into ramekins and sealed under a layer of clarified butter. It keeps in the fridge for several days and is served cold with hot toast and a wedge of lemon.",
+      "category": "cooking",
+      "subCategory": null,
+      "keyIngredients": [
+        "crab meat",
+        "crab meat",
+        "unsalted butter"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1629966207968-16b1027bed09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwxfHxQb3R0ZWQlMjBDcmFiJTIwY3JhYiUyMG1lYXR8ZW58MXwwfHx8MTc4MjAyNTkyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\cooking-sprint-3\\.claude\\tmp\\relevance-cache\\cmqng83ad000mvov4sh81mp1p-9f5077dded41fa6f.jpg",
+      "promptHints": "TUTORIAL\n  Title: Potted Crab\n  Subtitle: White and brown crab meat sealed in spiced clarified butter\n  Excerpt: Potted crab is a British preserve in the old sense: white and brown crab meat seasoned with mace, cayenne, and lemon, packed into ramekins and sealed under a layer of clarified butter. It keeps in the fridge for several days and is served c\n  Category: cooking\n  Key ingredients: crab meat, crab meat, unsalted butter\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    },
+    {
+      "mediaId": "cmqng840e000ovov4ilnses31",
+      "tutorialId": "cmppqfcm20000fgv4b1r6ds7i",
+      "tutorialSlug": "sausage-and-mash-with-caramelised-onions",
+      "tutorialTitle": "Sausage and Mash with Caramelised Onions",
+      "tutorialSubtitle": "Pork sausages and buttery mash with slow-cooked onion gravy",
+      "tutorialExcerpt": "Sausage and mash with caramelised onions is a pub-menu standard that is equally good at home: browned sausages, creamy mashed potato, and a glossy onion gravy that takes about 30 minutes to develop its sweetness. The onion gravy is what lifts it from weeknight convenience to something you actually look forward to.",
+      "category": "cooking",
+      "subCategory": null,
+      "keyIngredients": [
+        "pork sausages",
+        "potato",
+        "unsalted butter"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1780081891218-4118de81bacc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTI3Njh8MHwxfHNlYXJjaHwzfHxTYXVzYWdlJTIwYW5kJTIwTWFzaCUyMHdpdGglMjBDYXJhbWVsaXNlZCUyME9uaW9ucyUyMHBvcmslMjBzYXVzYWdlc3xlbnwxfDB8fHwxNzgyMDI1OTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageSource": "unsplash",
+      "licenceCode": "UNSPLASH",
+      "imagePath": "C:\\Users\\Rebecca\\Projects\\code\\cooking-sprint-3\\.claude\\tmp\\relevance-cache\\cmqng840e000ovov4ilnses31-d020a899501ffed0.jpg",
+      "promptHints": "TUTORIAL\n  Title: Sausage and Mash with Caramelised Onions\n  Subtitle: Pork sausages and buttery mash with slow-cooked onion gravy\n  Excerpt: Sausage and mash with caramelised onions is a pub-menu standard that is equally good at home: browned sausages, creamy mashed potato, and a glossy onion gravy that takes about 30 minutes to develop its sweetness. The onion gravy is what lif\n  Category: cooking\n  Key ingredients: pork sausages, potato, unsalted butter\n  Candidate source: unsplash\n\nTASK\n  You will see one candidate hero image. Score the SUBJECT of\n  the photograph against the SUBJECT named in the tutorial\n  title. Be strict — keyword overlap is not relevance. A bee\n  is not a thyme cough syrup; a pasta dish is not a Yorkshire\n  pudding; a roast cut is not a Beef Wellington.\n\nTIERS\n  EXACT   — Image unambiguously shows the named subject.\n            For a recipe: the finished dish (or its key visible\n            stage — bread dough being kneaded for a bread\n            tutorial, lambs nursing for a lambing tutorial).\n            For a technique: the technique being performed or\n            its characteristic output (a treble crochet stitch\n            in close-up, a finished joint, a soldered seam).\n            For a remedy / preparation: the prepared product\n            (a bottle of syrup, a balm tin, a poultice on the\n            skin) OR the named botanical with the named\n            preparation form visible.\n  PARTIAL — Image shows the right CLASS of thing but not the\n            specific named subject. A generic stew for \"Beef\n            bourguignon\". A loaf of bread for a sourdough.\n            A hen for a \"Marans hen molting\" tutorial. The\n            named ingredient alone (a thyme sprig) for a\n            cough-syrup tutorial. Adjacent, not exact.\n  WRONG   — Image shows a genuinely different subject.\n            Yorkshire pudding → pasta. Bubble and squeak (food)\n            → Christmas-tree bauble. Thyme cough syrup → honey\n            bee with no thyme or syrup. Beef Wellington → roast\n            beef without pastry casing. Angel food cake → cake\n            with a cherub figurine on top.\n\nAMBIGUITY\n  - Decorative styling (props, garnishes, backgrounds) is fine\n    if the named subject is clearly the photograph's subject.\n  - If the image could pass for the named subject but you're\n    uncertain, that's PARTIAL, not EXACT.\n  - If you cannot identify the photograph's subject confidently\n    at all, score WRONG with confidence ≤ 0.5 and say so.\n\nRESPONSE — emit exactly three lines, no preamble:\n  VERDICT: <EXACT|PARTIAL|WRONG>\n  REASON: <one sentence on what the photo actually shows and\n           why that does or doesn't match the named subject>\n  CONFIDENCE: <0.0..1.0>",
+      "existingVerificationStatus": "UNVERIFIED"
+    }
+  ]
+}
