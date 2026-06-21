@@ -1,0 +1,126 @@
+{
+  "slug": "laksa",
+  "title": "Laksa",
+  "subtitle": "Malaysian coconut noodle soup with prawns",
+  "excerpt": "Laksa is a spiced coconut broth from Malaysia and Singapore, loaded with noodles and prawns. The broth balances sweet coconut milk against a sharp, fragrant paste of spices and aromatics. This version uses red curry paste as a quick base that hits most of the right notes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Laksa is a Peranakan dish that emerged from the fusion of Chinese and Malay culinary traditions in the Straits Settlements. Dozens of regional variants exist across Malaysia, Singapore and Indonesia.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The broth can be made 2 days ahead. Add the noodles and prawns fresh to order.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "malaysian",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot" }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Do not let the broth boil hard once the coconut milk is in or it will split and turn grainy. Keep it at a gentle, steady simmer. Taste before adding the fish sauce as some curry pastes are quite salty on their own." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "king-prawns", "amount": 400, "unit": "g", "prepNote": "raw, peeled", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coconut-milk", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-curry-paste", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "noodles-rice", "amount": 300, "unit": "g", "prepNote": "thick, cooked according to packet", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pak-choi", "amount": 200, "unit": "g", "prepNote": "halved lengthways", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 3, "unit": "cm", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": null, "prepNote": "thinly sliced, to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "fish-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lime", "amount": 2, "unit": null, "prepNote": "1 juiced, 1 cut into wedges", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thai-basil", "amount": 20, "unit": "g", "prepNote": "leaves picked", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat a splash of oil in a large pot over a medium heat. Fry the red curry paste with the garlic and ginger for 2 minutes, stirring constantly, until fragrant." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the chicken stock and bring to the boil. Add the coconut milk, reduce to a gentle simmer and cook for 10 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the fish sauce and lime juice. Taste and adjust." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the pak choi and prawns to the simmering broth. Cook for 3 to 4 minutes until the prawns are pink and curled and the pak choi is just tender." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Divide the cooked rice noodles between deep bowls. Ladle over the broth, prawns and pak choi. Top with spring onions, thai basil and a wedge of lime." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Broth looks curdled and greasy",
+              "cause": "Coconut milk boiled too hard.",
+              "fix": "Lower the heat and whisk to bring it back together."
+            },
+            {
+              "symptom": "Prawns are rubbery",
+              "cause": "Overcooked. Prawns need only 3 to 4 minutes.",
+              "fix": "Add prawns last and remove from heat as soon as they curl."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
