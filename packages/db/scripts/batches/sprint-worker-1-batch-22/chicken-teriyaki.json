@@ -1,0 +1,102 @@
+{
+  "slug": "chicken-teriyaki",
+  "title": "Chicken Teriyaki",
+  "subtitle": "Sticky glazed chicken thighs in a Japanese-style sauce",
+  "excerpt": "Teriyaki sauce thickens and caramelises in the pan as it cooks, coating the chicken in a glossy, sticky glaze. A short marinade adds depth. Serve over steamed rice with the pan juices spooned over.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Teriyaki is a Japanese cooking technique where food is grilled or pan-fried in a soy, mirin, and sake glaze. The word combines teri, meaning gloss, and yaki, meaning grilled. The technique is recorded in Japanese cookbooks from the seventeenth century.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate overnight for a deeper flavour.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-28", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use a non-stick pan or the glaze will catch and burn before the chicken is cooked through. Keep the heat at medium once the sauce goes in." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 600, "unit": "g", "prepNote": "skin on or off", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 60, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Marinade/glaze" },
+            { "ingredientSlug": "mirin", "amount": 45, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Marinade/glaze" },
+            { "ingredientSlug": "sake", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Marinade/glaze" },
+            { "ingredientSlug": "honey", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Marinade/glaze" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "cloves", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Marinade/glaze" },
+            { "ingredientSlug": "ginger-fresh", "amount": 10, "unit": "g", "prepNote": "peeled and finely grated", "isOptional": false, "groupLabel": "Marinade/glaze" },
+            { "ingredientSlug": "sesame-oil", "amount": 5, "unit": "ml", "prepNote": "to finish", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix together the marinade ingredients in a bowl." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the chicken thighs and turn to coat. Cover and refrigerate for 30 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lift the chicken from the marinade. Reserve the marinade." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat a large non-stick frying pan over a medium-high heat with a little oil." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the chicken and cook for 5 to 6 minutes on each side until cooked through." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the reserved marinade into the pan. Let it bubble and reduce for 2 to 3 minutes until it coats the chicken in a thick glaze." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drizzle with sesame oil. Serve with steamed rice." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Glaze burns before chicken is done.", "cause": "Heat too high when sauce was added.", "fix": "Turn down to medium when you add the marinade." },
+            { "symptom": "Glaze does not thicken.", "cause": "Too much marinade or heat too low.", "fix": "Increase heat slightly and simmer uncovered until glossy." },
+            { "symptom": "Chicken is not cooked through.", "cause": "Thighs were thick or not at room temperature.", "fix": "Use a probe thermometer. Internal temperature must reach 74C." }
+          ]
+        }
+      }
+    ]
+  }
+}
