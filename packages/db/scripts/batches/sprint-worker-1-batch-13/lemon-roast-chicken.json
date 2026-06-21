@@ -1,0 +1,100 @@
+{
+  "slug": "lemon-roast-chicken",
+  "title": "Lemon Roast Chicken",
+  "subtitle": "Whole roast chicken with lemon, garlic, and herbs",
+  "excerpt": "A whole chicken roasted with lemon, garlic, rosemary, and thyme under buttered skin, then rested before carving. The method is simple and the results are reliable every time. Serve with roast potatoes and whatever vegetables you like.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "A British Sunday roast staple, following the classic approach of buttering under the skin and stuffing the cavity with aromatics.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 80,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weekend", "comforting"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Fan 180C / Gas 6",
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Take the chicken out of the fridge 30 minutes before roasting so it cooks more evenly. Resting after cooking is not optional; cutting into it straight from the oven will lose the juices." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-whole", "amount": 1, "unit": "whole", "prepNote": "about 1.5kg, at room temperature", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 2, "unit": "whole", "prepNote": "1 halved for the cavity, 1 sliced for the tin", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "whole head", "prepNote": "halved across the equator", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 3, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 4, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat the oven to 200C. Pat the chicken dry with kitchen paper inside and out." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the softened butter with a pinch of salt and black pepper. Use your fingers to ease the skin away from the breast and push most of the butter directly onto the flesh. Rub the rest over the outside of the bird." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stuff the cavity with the halved lemon, garlic halves, and half the herb sprigs. Tie the legs together with kitchen string if you have it." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the lemon slices and remaining herbs in the base of the roasting tin. Sit the chicken on top and drizzle with olive oil. Season generously." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roast for 80 minutes for a 1.5kg bird. To check, pierce the thickest part of the thigh with a skewer; the juices should run clear. An internal temperature of 75C confirms it is done." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Transfer to a board, tent loosely with foil, and rest for at least 15 minutes before carving." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Juices are pink when pierced", "cause": "Not fully cooked", "fix": "Return to the oven for 10 minutes and check again." },
+            { "symptom": "Skin is pale and not crisp", "cause": "Oven not hot enough or bird was wet", "fix": "Pat chicken dry before cooking; turn heat up for the last 10 minutes." },
+            { "symptom": "Breast meat is dry", "cause": "Overcooked or not rested", "fix": "Pull from the oven at 75C and rest for a full 15 minutes." }
+          ]
+        }
+      }
+    ]
+  }
+}

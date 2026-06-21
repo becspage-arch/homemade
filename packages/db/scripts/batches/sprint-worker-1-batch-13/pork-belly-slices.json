@@ -1,0 +1,100 @@
+{
+  "slug": "pork-belly-slices",
+  "title": "Sticky Pork Belly Slices",
+  "subtitle": "Chinese-style slow-roasted pork belly in a dark soy glaze",
+  "excerpt": "Thick slices of pork belly roasted slowly until the fat renders and the meat becomes tender, then glazed with a sticky dark soy and honey sauce and returned to the oven until caramelised. Serve over steamed rice with something simple and green alongside.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Inspired by the Chinese hong shao rou (red-braised pork belly) tradition, simplified here using dry roasting and a glaze method.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pork can be slow-roasted a day ahead without the glaze. Refrigerate and glaze then finish in a hot oven when ready to serve.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "chinese",
+    "mealType": "dinner",
+    "mood": ["weekend", "comforting"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "Fan 160C / Gas 4",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Ask the butcher to slice the pork belly into pieces about 2cm thick, or do it yourself with a sharp knife. The slower the initial roast, the more fat renders out. The glaze step at the end is quick but needs watching, as the honey can burn fast." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pork-belly", "amount": 800, "unit": "g", "prepNote": "sliced into 2cm pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-dark", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Glaze" },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Glaze" },
+            { "ingredientSlug": "honey", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Glaze" },
+            { "ingredientSlug": "five-spice", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Glaze" },
+            { "ingredientSlug": "ginger-fresh", "amount": 3, "unit": "cm", "prepNote": "peeled and finely grated", "isOptional": false, "groupLabel": "Glaze" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "crushed", "isOptional": false, "groupLabel": "Glaze" },
+            { "ingredientSlug": "rice-vinegar", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Glaze" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat the oven to 180C. Arrange the pork belly slices in a single layer in a roasting tin. Season with salt." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roast for 40 minutes, turning once halfway, until the fat has started to render and the meat is cooked through." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Meanwhile, mix together all the glaze ingredients in a bowl." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour away most of the fat from the tin. Brush the glaze generously over each pork slice." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return to the oven at 220C for 15 to 20 minutes, turning and basting every 5 minutes, until the glaze is dark, sticky, and caramelised. Watch carefully in the last few minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve immediately over steamed rice." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Glaze has burned black", "cause": "Oven too hot or left unattended", "fix": "Watch from the 10-minute mark and baste every 5 minutes." },
+            { "symptom": "Pork is chewy and tough", "cause": "Not roasted long enough initially", "fix": "Return to 180C covered with foil for 20 minutes more." }
+          ]
+        }
+      }
+    ]
+  }
+}

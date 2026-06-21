@@ -1,0 +1,101 @@
+{
+  "slug": "butternut-squash-soup",
+  "title": "Butternut Squash Soup",
+  "subtitle": "Smooth, gently spiced squash and coconut soup",
+  "excerpt": "A velvety soup made from roasted butternut squash and coconut milk, with fresh ginger for warmth and a little chilli for depth. It blends smooth in minutes and keeps in the fridge for several days. Serve with crusty bread.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "A widely made British home-cooking staple, here enriched with coconut milk and fresh ginger.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months. Thaw overnight and reheat gently.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Use a larger pot.",
+    "makeAheadNotes": "Keeps in the fridge for up to 4 days.",
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["weeknight", "comforting"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Let the soup cool for a few minutes before blending, and do not fill the blender more than two-thirds full. Hold the lid down with a cloth to prevent hot soup from forcing it off." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "whole", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 3, "unit": "cm", "prepNote": "peeled and grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "butternut-squash", "amount": 1000, "unit": "g", "prepNote": "peeled and cut into 3cm cubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 800, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coconut-milk", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the olive oil in a stockpot over a medium heat. Add the onion, carrot, and a pinch of salt. Cook for 8 minutes until softened." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic, ginger, and chilli flakes and cook for 2 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the butternut squash and pour over the stock. Bring to a boil, then reduce to a simmer and cook for 20 to 25 minutes until the squash is completely tender." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir in the coconut milk and remove from the heat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blend until completely smooth, in batches if necessary. Taste, season with salt, and serve." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Soup is too thin", "cause": "Too much stock added", "fix": "Simmer uncovered for 5 minutes more after blending." },
+            { "symptom": "Soup erupted from the blender", "cause": "Blender too full or lid not held down", "fix": "Fill blender no more than halfway and hold lid firmly." }
+          ]
+        }
+      }
+    ]
+  }
+}

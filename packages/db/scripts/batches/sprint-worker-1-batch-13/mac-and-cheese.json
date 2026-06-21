@@ -1,0 +1,102 @@
+{
+  "slug": "mac-and-cheese",
+  "title": "Mac and Cheese",
+  "subtitle": "Baked macaroni in a sharp cheddar sauce",
+  "excerpt": "A proper baked mac and cheese with a thick, creamy cheese sauce made from scratch and a crisp breadcrumb crust on top. Use macaroni shapes so the sauce gets trapped inside each tube. It feeds four comfortably and reheats well the next day.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the American baked mac and cheese tradition, made with a classic bechamel-style roux as the sauce base.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before baking. Defrost overnight in the fridge, then bake as directed.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Use a larger baking dish.",
+    "makeAheadNotes": "Assemble up to the point of baking, cover and refrigerate for up to 1 day. Add 10 minutes to the bake time from cold.",
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "american",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comforting"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Fan 180C / Gas 6",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use macaroni or another short pasta shape with holes or ridges so the sauce clings and fills each piece. Cook the pasta until just underdone before baking; it will finish cooking in the oven and absorb some of the sauce." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 350, "unit": "g", "prepNote": "macaroni or rigatoni", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cheddar", "amount": 250, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "breadcrumbs-panko", "amount": 50, "unit": "g", "prepNote": "for the topping", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat the oven to 200C. Cook the pasta in well-salted boiling water for 2 minutes less than the packet says. Drain and set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt the butter in a large saucepan over a medium heat. Add the flour and stir for 2 minutes until it forms a paste and smells slightly nutty." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the milk a little at a time, whisking continuously to avoid lumps, until all the milk is incorporated and the sauce is smooth." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Simmer the sauce for 5 minutes, stirring often, until it thickens enough to coat the back of a spoon." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove from the heat and stir in 200g of the grated cheddar and the mustard. Season with salt and black pepper." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the drained pasta and stir to coat. Transfer to a baking dish." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scatter the remaining cheddar and the panko breadcrumbs over the top. Bake for 20 minutes until golden and bubbling." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Sauce has lumps", "cause": "Milk added too fast", "fix": "Whisk hard and keep adding milk slowly; heat will smooth it out." },
+            { "symptom": "Topping is pale after baking", "cause": "Oven not hot enough or dish placed too low", "fix": "Move dish to the top shelf for the last 5 minutes." },
+            { "symptom": "Pasta has dried out", "cause": "Baked too long without a lid", "fix": "Cover loosely with foil and bake for the first 15 minutes." }
+          ]
+        }
+      }
+    ]
+  }
+}

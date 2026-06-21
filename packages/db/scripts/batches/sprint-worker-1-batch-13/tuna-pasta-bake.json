@@ -1,0 +1,101 @@
+{
+  "slug": "tuna-pasta-bake",
+  "title": "Tuna Pasta Bake",
+  "subtitle": "Creamy tuna and pasta bake with a cheesy crust",
+  "excerpt": "A crowd-pleasing weeknight bake that comes together from storecupboard ingredients. Tinned tuna and frozen peas are stirred into a simple cheese sauce, mixed with pasta, and baked until the top is golden. It takes about 45 minutes start to finish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "A British family staple built around tinned tuna and pantry ingredients.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble up to 1 day ahead, cover, and refrigerate. Add 10 minutes to the bake time from cold.",
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comforting"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Fan 180C / Gas 6",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use any short pasta shape: penne, rigatoni, or fusilli all work. Cook the pasta slightly underdone so it does not turn soft in the oven." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 300, "unit": "g", "prepNote": "penne or rigatoni", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 35, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cheddar", "amount": 200, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tuna-tinned", "amount": 290, "unit": "g", "prepNote": "2 tins, drained", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "peas-frozen", "amount": 150, "unit": "g", "prepNote": "no need to defrost", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat the oven to 200C. Cook the pasta in salted boiling water for 2 minutes less than the packet time. Drain and set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt the butter in a large saucepan over a medium heat. Add the flour and stir for 2 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the milk gradually, whisking to avoid lumps. Cook for 5 minutes, stirring, until thick enough to coat the back of a spoon." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove from the heat. Stir in 150g of the cheddar and the tomato puree. Season with salt and black pepper." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the drained tuna, frozen peas, and cooked pasta. Stir to combine and pour into a baking dish." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scatter the remaining 50g of cheddar over the top. Bake for 20 minutes until golden and bubbling." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Sauce is grainy or curdled", "cause": "Cheese added to very hot sauce", "fix": "Take pan off heat before stirring in the cheese." },
+            { "symptom": "Bake is dry", "cause": "Pasta absorbed too much sauce before baking", "fix": "Loosen the sauce with a splash of milk before assembling." }
+          ]
+        }
+      }
+    ]
+  }
+}

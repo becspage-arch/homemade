@@ -1,0 +1,104 @@
+{
+  "slug": "prawn-stir-fry",
+  "title": "Prawn and Vegetable Stir-Fry",
+  "subtitle": "Quick Chinese-style prawns with pak choi and pepper",
+  "excerpt": "A fast, high-heat stir-fry with king prawns, pak choi, and red pepper in a savory oyster and soy sauce. Everything comes together in under 10 minutes once the prep is done, so have all ingredients ready before the wok goes on the heat.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on classic Chinese stir-fry technique, using oyster sauce and soy as the sauce base.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "chinese",
+    "mealType": "dinner",
+    "mood": ["weeknight", "quick"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "wok", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Get the wok very hot before adding oil. A proper stir-fry needs high heat throughout; if your hob cannot get the wok smoking, cook in two batches rather than crowding the pan." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "sunflower-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 2, "unit": "cm", "prepNote": "peeled and julienned", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "king-prawns", "amount": 400, "unit": "g", "prepNote": "peeled and deveined", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-red", "amount": 1, "unit": "whole", "prepNote": "deseeded and sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pak-choi", "amount": 200, "unit": "g", "prepNote": "leaves separated, larger ones halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "whole", "prepNote": "cut into 3cm lengths", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "oyster-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "cornflour", "amount": 1, "unit": "tsp", "prepNote": "mixed with 2 tbsp cold water", "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tsp", "prepNote": "to finish", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the soy sauce, oyster sauce, and cornflour slurry in a small bowl. Set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the wok over a high heat until smoking. Add the sunflower oil, then the garlic and ginger. Stir-fry for 30 seconds." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the red pepper and stir-fry for 2 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Push everything to one side and add the prawns. Cook for 2 minutes, stirring, until they just turn pink." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the pak choi and spring onion and toss everything together for 1 minute." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the sauce and toss for 1 minute more until everything is glossy and coated." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drizzle over the sesame oil and serve immediately with rice." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Prawns are rubbery", "cause": "Overcooked", "fix": "Add prawns last and remove from heat as soon as they turn pink." },
+            { "symptom": "Vegetables are steaming not frying", "cause": "Wok was not hot enough or pan overcrowded", "fix": "Cook in smaller batches over higher heat." }
+          ]
+        }
+      }
+    ]
+  }
+}

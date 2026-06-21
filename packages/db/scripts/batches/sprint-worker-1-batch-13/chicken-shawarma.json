@@ -1,0 +1,102 @@
+{
+  "slug": "chicken-shawarma",
+  "title": "Chicken Shawarma",
+  "subtitle": "Middle Eastern spiced roast chicken thighs",
+  "excerpt": "Boneless chicken thighs marinated in a mix of warm spices then roasted at high heat until charred at the edges and juicy inside. Serve sliced in flatbreads with garlic yoghurt, or over rice with a simple salad.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Inspired by the Levantine street-food tradition of shawarma, adapted for home oven roasting without a rotisserie.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate for up to 24 hours in the fridge for deeper flavour.",
+    "dietaryFlags": ["glutenFree", "nutFree"],
+    "cuisine": "middle eastern",
+    "mealType": "dinner",
+    "mood": ["weeknight", "quick"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "Fan 200C / Gas 7",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The higher the oven heat, the better the caramelisation on the outside of the chicken. A grill finish for the last 3 minutes gets them even closer to the charred edges you get from a proper spit." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 700, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "crushed", "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "whole", "prepNote": "juice only", "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "cumin-ground", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "coriander-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "turmeric", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "allspice", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "greek-yoghurt", "amount": 100, "unit": "ml", "prepNote": "to serve", "isOptional": false, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine the olive oil, crushed garlic, lemon juice, and all the spices in a large bowl. Season with salt." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the chicken thighs and turn to coat thoroughly. Marinate for at least 30 minutes at room temperature, or up to 24 hours in the fridge." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat the oven to 220C. Spread the chicken in a single layer in a roasting tin, slightly overlapping is fine." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roast for 22 to 25 minutes until cooked through and dark at the edges. For extra char, place under a hot grill for 3 minutes at the end." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rest for 5 minutes, then slice thinly. Serve with greek yoghurt, flatbreads, and a simple salad." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Chicken is pale with no colour", "cause": "Oven not hot enough or tin too crowded", "fix": "Finish under the grill for 3 to 4 minutes." },
+            { "symptom": "Chicken is dry inside", "cause": "Overcooked", "fix": "Check after 20 minutes; thighs are done at 75C internal." }
+          ]
+        }
+      }
+    ]
+  }
+}
