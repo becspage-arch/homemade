@@ -1,0 +1,101 @@
+{
+  "slug": "potato-leek-soup",
+  "title": "Potato and Leek Soup",
+  "subtitle": "Silky French classic",
+  "excerpt": "A smooth, creamy soup of potato and leek with a clean, mild flavour that is as satisfying chilled in summer as it is hot in winter. Blending gives it a restaurant-quality texture with very little effort.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Potato and leek soup is found across France and the British Isles, with the chilled French version known as vichyssoise credited to chef Louis Diat at the Ritz-Carlton in New York in the early twentieth century. The hot version has been a staple of Welsh and French home cooking for far longer.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before adding the cream. Stir in cream after reheating.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Make ahead for lunches.",
+    "makeAheadNotes": "Can be made a day ahead and kept in the fridge. The flavour improves overnight.",
+    "dietaryFlags": ["vegetarian", "glutenFree", "nutFree"],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comforting"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Washing leeks thoroughly is essential as grit hides between the layers. Slice them, then swish in a bowl of cold water and lift out, leaving any sand behind. Cook the leeks gently in butter until very soft before adding any liquid for the best flavour." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "potato", "amount": 800, "unit": "g", "prepNote": "peeled and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "leek", "amount": 4, "unit": "whole", "prepNote": "trimmed, washed, and sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 1200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chives", "amount": 20, "unit": "g", "prepNote": "finely snipped, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt the butter in the saucepan over a low-medium heat. Add the leek, onion, and garlic with a pinch of salt. Cook gently for 12 to 15 minutes, stirring regularly, until completely soft. Do not let them colour." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the diced potato and pour in the stock. Bring to a simmer and cook for 18 to 20 minutes until the potato is completely tender when pierced with a knife." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove from the heat and ladle the soup into the blender in batches. Blend until completely smooth, being careful with the hot liquid." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the blended soup to the pan over a low heat. Stir in the double cream and season generously with salt and white pepper." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ladle into warmed bowls and scatter over the chives. Add a small swirl of cream if you like." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Soup is gluey or starchy in texture.", "cause": "Over-blending releases too much starch from the potato.", "fix": "Blend in short pulses; stop as soon as smooth." },
+            { "symptom": "Soup is gritty.", "cause": "The leeks were not washed thoroughly before cooking.", "fix": "Always swish sliced leeks in cold water and lift them out." },
+            { "symptom": "Soup is too thick after blending.", "cause": "Potatoes absorbed a lot of the stock during cooking.", "fix": "Stir in extra warm stock a little at a time until desired consistency." }
+          ]
+        }
+      }
+    ]
+  }
+}

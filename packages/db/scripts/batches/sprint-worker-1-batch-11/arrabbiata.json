@@ -1,0 +1,97 @@
+{
+  "slug": "arrabbiata",
+  "title": "Pasta all'Arrabbiata",
+  "subtitle": "Fiery Roman tomato pasta",
+  "excerpt": "A boldly spiced tomato sauce of garlic and dried chilli flakes tossed through rigatoni. All'arrabbiata means 'in an angry style' in Italian, a nod to the heat that defines this Roman classic.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Arrabbiata is a dish from the Lazio region, particularly Rome, where it developed as a frugal, store-cupboard sauce. The combination of tinned tomatoes, garlic, and chilli requires almost no technique and produces results well beyond the effort involved.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The sauce can be made up to 3 days ahead and kept in the fridge. Reheat and toss with freshly cooked pasta.",
+    "dietaryFlags": ["vegan", "vegetarian", "dairyFree", "nutFree"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{ "slug": "large-saucepan", "isOptional": false }],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The secret to this sauce is patience with the garlic: it must turn golden and just start to colour in the olive oil before the chilli and tomatoes are added. Burnt garlic will ruin the whole dish. Use rigatoni or penne for their ridges and tubes that catch the sauce." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "rigatoni", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 1.5, "unit": "tsp", "prepNote": "adjust to taste", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 5, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring a large pot of water to the boil. Salt it generously; it should taste like mild seawater." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "While the water heats, warm the olive oil in a wide saucepan over a medium-low heat. Add the garlic and cook slowly for 3 to 4 minutes until golden and fragrant. Watch it closely." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the chilli flakes and stir for 30 seconds. Pour in the tinned tomatoes and add a pinch of salt. Crush the tomatoes roughly with a wooden spoon." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Simmer the sauce over a medium heat for 15 minutes until thickened and deep red. Meanwhile, cook the rigatoni in the boiling water for 1 minute less than the pack suggests." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reserve a mug of pasta cooking water before draining. Add the drained pasta to the sauce with a splash of pasta water. Toss vigorously over a medium heat for 1 to 2 minutes until the sauce coats every piece of pasta." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve immediately, scattered with the chopped parsley. Parmesan is not traditional with this sauce, though you are welcome to add it." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Sauce tastes bitter.", "cause": "The garlic was allowed to burn in the oil.", "fix": "Start again with fresh oil and garlic; burnt garlic cannot be fixed." },
+            { "symptom": "Sauce is too thin.", "cause": "It was not simmered long enough to reduce.", "fix": "Simmer uncovered for 5 more minutes, stirring regularly." },
+            { "symptom": "Pasta is not coated in sauce.", "cause": "No pasta water was added; the sauce is too thick.", "fix": "Add a splash of starchy pasta water and toss over heat." }
+          ]
+        }
+      }
+    ]
+  }
+}

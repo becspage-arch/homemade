@@ -1,0 +1,98 @@
+{
+  "slug": "congee",
+  "title": "Congee",
+  "subtitle": "Chinese rice porridge with soft-boiled egg",
+  "excerpt": "A slow-cooked rice porridge of remarkable simplicity: rice simmered in seasoned chicken stock until it dissolves into a smooth, deeply comforting bowl. Finished with soy, sesame oil, and a soft-boiled egg, it is Chinese comfort food at its most restorative.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Congee, known as zhou in Mandarin, jook in Cantonese, and by many other regional names across Asia, is one of the most ancient cooked grain preparations in China. It has served as breakfast, comfort food, and sick-day sustenance for thousands of years across China and Southeast Asia.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Makes excellent leftovers. The congee thickens as it cools; add stock or water when reheating.",
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "chinese",
+    "mealType": "breakfast",
+    "mood": ["weeknight", "comforting"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{ "slug": "large-saucepan", "isOptional": false }],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The ratio here is approximately 1 part rice to 8 parts liquid, which produces a thick, porridge-like consistency. If you prefer a thinner, more soup-like result, use up to 10 parts liquid. Low, steady heat and occasional stirring is all that is required. The congee is ready when the individual grains have dissolved and the porridge is silky and smooth." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "long-grain-rice", "amount": 200, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 1500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 50, "unit": "g", "prepNote": "peeled and sliced into coins", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "lightly crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "whole", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "whole", "prepNote": "soft-boiled for 6.5 minutes, peeled and halved", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the rinsed rice, stock, ginger coins, and garlic into the large saucepan. Bring to the boil over a medium-high heat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce to a low simmer. Cook for 45 to 55 minutes, stirring every 10 to 15 minutes, until the rice has completely broken down and the porridge is thick and smooth." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "While the congee cooks, soft-boil the eggs: lower them gently into boiling water and cook for 6.5 minutes. Transfer to iced water, then peel and halve." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the ginger slices and garlic from the congee. Season with salt and stir in the soy sauce." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ladle into deep bowls. Place the egg halves on top, drizzle over the sesame oil, and scatter with sliced spring onion." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Rice grains are still whole after an hour.", "cause": "The heat was too low, or the rice was not rinsed enough.", "fix": "Increase heat slightly and stir more frequently to help rice break down." },
+            { "symptom": "Congee has caught on the bottom of the pan.", "cause": "Heat was too high or it was not stirred regularly enough.", "fix": "Keep heat low and stir every 10 minutes; use a heavy-bottomed pan." },
+            { "symptom": "Congee is too thick.", "cause": "Too much liquid has evaporated during cooking.", "fix": "Stir in extra hot stock until the desired consistency is reached." }
+          ]
+        }
+      }
+    ]
+  }
+}
