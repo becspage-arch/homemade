@@ -1,0 +1,196 @@
+{
+  "slug": "celeriac-and-apple-soup",
+  "title": "Celeriac and apple soup",
+  "subtitle": "Earthy, subtly sweet, and very smooth",
+  "excerpt": "Celeriac roasted until golden, blended with a cooking apple and thyme-scented stock. The apple cuts through the earthiness of the celeriac and gives the soup a light, fresh note without making it sweet.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Celeriac and apple is a classic French flavour combination, used in salads (celeriac remoulade with apple) and soups. No single canonical source; method synthesised from standard French-British autumn soup approaches.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before adding cream if using. Keeps for up to three months. Thin with stock when reheating.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Use two roasting tins.",
+    "makeAheadNotes": "Make up to two days ahead and reheat gently. Flavour improves with resting.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "conventional",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "celeriac-prep", "term": "Celeriac", "definition": "The knobbled root of a variety of celery, grown for its root rather than its stalks. It has a mild celery flavour with an earthy, slightly nutty quality. Peel thickly to remove the rough outer skin before use." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Celeriac makes one of the best autumn soups: earthy, smooth, and slightly nutty. The apple ,  sharp enough to cut the celeriac's richness ,  is the pairing that makes it work rather than staying merely pleasant. Roasting the " },
+          { "type": "text", "text": "celeriac", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "celeriac-prep" } }] },
+          { "type": "text", "text": " before blending is optional but recommended: 20 minutes in a hot oven concentrates the flavour and adds a light caramelisation that a boiled base cannot match." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "celeriac", "amount": 800, "unit": "g", "prepNote": "peeled thickly and cut into chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "apple", "amount": 1, "unit": "each", "prepNote": "cooking apple, peeled, cored and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 900, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 60, "unit": "ml", "prepNote": "to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Roast the celeriac" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Heat the oven to 200°C conventional. Spread the {{celeriac}} of celeriac chunks on a roasting tin, drizzle with oil, season with salt, and roast for 20 to 25 minutes until golden at the edges." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the base and simmer" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a large saucepan over a medium-low heat. Add the {{onion}} onion and cook for 6 minutes until soft. Add the {{garlic}} of garlic and {{thyme}} of thyme sprigs and cook for 1 minute." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the roasted celeriac, the {{apple}} of diced apple, and pour in {{stock-vegetable}} of hot stock. Simmer for 15 minutes until both the celeriac and apple are very tender." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Remove the thyme stalks. Blend until smooth. Taste and season with salt and a little black pepper." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle into bowls. Add a swirl of cream if using." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup tastes too sweet",
+              "cause": "Eating apples are much sweeter than cooking apples; or the apple was large.",
+              "fix": "Use a sharp cooking apple such as Bramley. If the soup is already too sweet, a squeeze of lemon juice and a pinch more salt brings it back into balance."
+            },
+            {
+              "symptom": "Flavour is flat",
+              "cause": "Celeriac is subtle and needs seasoning at every stage.",
+              "fix": "Season the celeriac well before roasting, season the onion as it softens, and taste again after blending. A squeeze of lemon brightens the whole soup."
+            },
+            {
+              "symptom": "Texture is stringy",
+              "cause": "Celeriac can have fibrous strands if the inner core is included.",
+              "fix": "Cut away any very fibrous inner parts before roasting. Blend for longer, and pass through a sieve if you want a completely smooth result."
+            },
+            {
+              "symptom": "Colour is too dark",
+              "cause": "The celeriac was roasted for too long and took on heavy browning.",
+              "fix": "Remove from the oven once golden at the edges. The soup will still be a warm ivory colour; deep browning turns it muddy."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Celeriac with apple is a classic French pairing, best known in celeriac remoulade where the two are served raw and dressed in mustard mayonnaise. Translated into a soup it becomes one of the more interesting autumn first courses ,  unpredictable enough to prompt questions but familiar enough to comfort. In France, celeriac soup (velouté de céleri-rave) has been a standard of bourgeois home cooking for generations. In Britain it arrived later, via restaurant menus in the 1990s." }
+        ]
+      }
+    ]
+  }
+}

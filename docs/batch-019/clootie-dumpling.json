@@ -1,0 +1,213 @@
+{
+  "slug": "clootie-dumpling",
+  "title": "Clootie dumpling",
+  "subtitle": "Traditional Scottish boiled pudding with dried fruit, spice, and suet",
+  "excerpt": "Clootie dumpling is a Scottish boiled pudding made with flour, oatmeal, suet, dried fruit, and spices, wrapped in a cloth and boiled for three hours. The result is dense, dark, and rich, with a characteristic dry skin on the outside. It is served at Burns Night and Christmas.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Traditional Scottish pudding with documented history from at least the 19th century, though likely older. The word 'clootie' (or 'cloot') is Scots for cloth. The dumpling is cooked wrapped in a cloth, which gives the outside its characteristic dry skin. Associated with Burns Night, Christmas, and Hogmanay in Scotland.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 195,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze fully cooled slices for up to 3 months. Defrost at room temperature. Reheat in a dry frying pan or briefly in the oven.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make up to 3 days ahead and keep chilled, wrapped. The flavour deepens over time. Reheat gently in a low oven or fry slices in butter.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["comfortFood"],
+    "temperatureCelsius": 160,
+    "temperatureNote": "fan",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "mixing-bowl-large", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cloot",
+      "term": "Cloot",
+      "definition": "A Scots word for cloth. In clootie dumpling, the raw pudding mixture is wrapped in a large piece of floured muslin or cotton cloth and boiled in a large pot of water. The cloth moulds the dumpling into its round shape and the flour on the cloth forms the characteristic dry skin."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Clootie dumpling is one of the oldest forms of British pudding. The ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "cloot",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "cloot"}}]
+          },
+          {
+            "type": "text",
+            "text": " is a square of clean cotton or muslin dusted with flour. The dumpling mixture is placed in the centre, the cloth is gathered and tied, and the whole thing is lowered into boiling water and left for three hours. The flour on the cloth creates the skin. Do not skip the drying step after boiling: the skin is part of what makes a clootie dumpling distinctive."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 175, "unit": "g", "prepNote": "plus more for the cloth", "isOptional": false, "groupLabel": "For the pudding" },
+            { "ingredientSlug": "oatmeal", "amount": 75, "unit": "g", "prepNote": "medium pinhead oatmeal", "isOptional": false, "groupLabel": "For the pudding" },
+            { "ingredientSlug": "suet", "amount": 100, "unit": "g", "prepNote": "shredded beef suet", "isOptional": false, "groupLabel": "For the pudding" },
+            { "ingredientSlug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the pudding" },
+            { "ingredientSlug": "mixed-dried-fruit", "amount": 200, "unit": "g", "prepNote": "raisins, currants, and sultanas", "isOptional": false, "groupLabel": "For the pudding" },
+            { "ingredientSlug": "black-treacle", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the pudding" },
+            { "ingredientSlug": "mixed-spice", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the pudding" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the pudding" },
+            { "ingredientSlug": "baking-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the pudding" },
+            { "ingredientSlug": "bicarbonate-of-soda", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the pudding" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": "For the pudding" },
+            { "ingredientSlug": "buttermilk", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the pudding" },
+            { "ingredientSlug": "unsalted-butter", "amount": null, "unit": "g", "prepNote": "or cream, to serve", "isOptional": false, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Mix and wrap" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Mix together the flour, oatmeal, suet, sugar, dried fruit, treacle, mixed spice, cinnamon, baking powder, and bicarbonate of soda in a large bowl. Beat in the egg and buttermilk to form a stiff dough. It should hold its shape but not be dry." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Wet a large piece of clean cotton cloth or muslin (about 60 cm square) in boiling water. Wring out and lay flat. Dust the centre generously with plain flour. Place the dumpling mixture in the centre and draw the cloth up around it, gathering it above the dumpling. Tie tightly with string, leaving a little room inside for the pudding to expand." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Boil and dry" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Bring a large pot of water to the boil. Lower the dumpling in using a plate placed at the bottom of the pot to prevent the cloth sticking. Keep the water at a steady simmer with the lid on for 3 hours. Top up with boiling water as needed to keep the dumpling submerged." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Carefully lift the dumpling out. Peel back the cloth slowly: the skin underneath should be dry and dark. Place the dumpling on a baking sheet and put it into a 160°C fan oven for 15 minutes to firm the skin further." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Rest for 15 minutes, then slice and serve with cream or custard. Leftovers can be fried in butter the next day." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The skin does not form and the outside is wet",
+              "cause": "Not enough flour on the cloth, or the cloth was not tight enough.",
+              "fix": "Dust the cloth very generously with flour before placing the mixture on it. The flour layer is what creates the skin."
+            },
+            {
+              "symptom": "The dumpling is raw in the middle after 3 hours",
+              "cause": "Water was not kept at a steady simmer, or the dumpling was very large.",
+              "fix": "Keep the water at a steady simmer, not a boil. Check at the 3-hour mark by pressing: the dumpling should feel firm all the way through."
+            },
+            {
+              "symptom": "The cloth sticks to the skin when you peel it back",
+              "cause": "Cloth was not floured enough, or pulled off too quickly.",
+              "fix": "Peel slowly and carefully. If it sticks, wet a corner of the cloth with cold water and ease it away."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Clootie dumpling is one of Scotland's great national dishes, associated with Burns Night and Hogmanay but eaten throughout the year. The boiling-in-cloth method predates ovens in domestic kitchens: a fire with a pot was what most Scottish households had, and the dumpling adapted to that reality. It is closely related to the English suet puddings of the same era. Fried leftover clootie dumpling for breakfast the next morning is considered by many to be the better use of the dish."
+          }
+        ]
+      }
+    ]
+  }
+}

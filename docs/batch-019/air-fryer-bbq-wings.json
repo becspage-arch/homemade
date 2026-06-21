@@ -1,0 +1,98 @@
+{
+  "slug": "air-fryer-bbq-wings",
+  "title": "Air-fryer BBQ wings",
+  "subtitle": "Crisp wings glazed with BBQ sauce in the last 3 minutes",
+  "excerpt": "Chicken wings cooked in the air fryer until crisp, then glazed with BBQ sauce in the final 3 minutes of cooking. The glaze caramelises under the heat without burning. The timing is precise because BBQ sauce contains sugar and will scorch if it goes in earlier.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "BBQ-glazed wings apply a classic American barbecue technique to the air fryer: cook the protein dry first, then glaze with sauce at the end so the sugars caramelise rather than burn. This method produces a sticky, deeply coloured glaze rather than the burnt coating that results from adding sauce at the start.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 22,
+    "restingMinutes": 0,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Dry-brine wings overnight.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "snack",
+    "mood": ["comfortFood", "kidFriendly"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Air fryer at 200°C.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "air-fryer", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the BBQ sauce only in the last 3 minutes of cooking. Earlier than that and the sugar in the sauce will burn under the air fryer's 200°C heat, turning bitter and black. Three minutes is enough time for the sauce to caramelise and stick without scorching." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-wings", "amount": 1000, "unit": "g", "prepNote": "split at the joint", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "baking-powder", "amount": 1, "unit": "tsp", "prepNote": "aluminium-free", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "smoked-paprika", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bbq-sauce", "amount": 80, "unit": "ml", "prepNote": "to glaze", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Dry-brine, cook, glaze" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pat the {{chicken-wings}} dry, toss with {{sea-salt-fine}}, {{baking-powder}}, and {{smoked-paprika}}, and refrigerate uncovered on a wire rack for at least 8 hours. Preheat the air fryer to 200°C for 3 minutes. Cook the wings at 200°C for 19 minutes, flipping halfway. Open the basket and brush or spoon the {{bbq-sauce}} over every wing. Return to the air fryer and cook for a final 3 minutes until the sauce is dark, sticky, and set. Watch closely in the final minute: the glaze can go from caramelised to burnt quickly. Serve immediately." }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Glaze burnt and bitter", "cause": "Sauce added too early or air fryer running hot", "fix": "BBQ sauce should only go on in the last 3 minutes. Reduce to 2 minutes if your air fryer runs hot. A thick sauce is more likely to burn than a thinner one; thin it with a splash of water if it's very viscous" },
+            { "symptom": "Glaze very pale and not caramelised", "cause": "Too little sauce or applied with too light a hand", "fix": "Brush generously: the wings should be coated all over. Turn them over before the final 3 minutes so both sides glaze evenly" },
+            { "symptom": "Wings not crisp under the glaze", "cause": "Wings were wet before the dry brine, or basket overcrowded", "fix": "The crispness comes from the dry-brine stage. Wet wings produce soft results regardless of the cooking method. Space the wings out in the basket" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "BBQ wings are the most kid-friendly of the wing variations. The air fryer is a natural fit for this glaze technique: the contained environment concentrates the heat onto the sauce without the mess of oven-glazing. Serve alongside air-fryer chips for a complete American-style dinner." }]
+      }
+    ]
+  }
+}

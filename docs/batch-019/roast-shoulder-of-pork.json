@@ -1,0 +1,132 @@
+{
+  "slug": "roast-shoulder-of-pork",
+  "title": "Roast shoulder of pork",
+  "subtitle": "Pull-apart with crackling, slow-cooked to tenderness",
+  "excerpt": "Bone-in pork shoulder roasted at 160 degrees C for five hours until the meat pulls apart in chunks. Crackling on top, yielding meat underneath.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "AUTUMN",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Classic British slow-roast pork shoulder method. Bone-in for maximum flavour.",
+  "recipe": {
+    "servings": 8,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 330,
+    "restingMinutes": 30,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze pulled meat without crackling in portions for up to three months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Score and salt the skin the night before and leave uncovered in the fridge for maximum crackling.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["sundayLunch", "comfortFood"],
+    "temperatureCelsius": 230,
+    "temperatureNote": "fan oven for the initial blast; 160 degrees C fan for the long slow roast",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-pan", "isOptional": false },
+    { "slug": "instant-read-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "crackling", "term": "Crackling", "definition": "The crisp, blistered skin on a roast pork joint, formed when the scored, dried skin is exposed to high heat and steam escapes through the cuts." },
+    { "slug": "rendering", "term": "Rendering", "definition": "The process by which fat melts out of meat during cooking, leaving behind both the liquid fat and, in the case of pork skin, crispy tissue." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Shoulder of pork is the most forgiving large roasting joint. Five hours at low heat converts the collagen and fat into gelatin and a deeply savoury, pull-apart texture. The crackling requires a short high-heat blast at the start, then the oven drops to do the slow work." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "pork-shoulder", "amount": 2500, "unit": "g", "prepNote": "bone-in, skin scored at 1 cm intervals", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-flakes", "amount": 3, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "quartered", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cider-dry", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Score, salt, and rest overnight" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Score the skin at 1 cm intervals, cutting just through the skin into the fat. Pat the whole joint completely dry. Rub salt into the scored skin, pressing it into every cut. Leave uncovered in the fridge overnight." }] }] }
+        ]
+      },
+      {
+        "type": "heading", "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Blast then slow-roast" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the pork from the fridge 1 hour before cooking. Heat the oven to 230 degrees C fan. Scatter the onion, garlic, and thyme in the base of a deep roasting tin and pour in the cider. Sit the pork on top, skin side up." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Roast at 230 degrees C for 20 minutes. The skin will begin to blister and the fat underneath starts " },
+            { "type": "text", "text": "rendering", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "rendering" } }] },
+            { "type": "text", "text": ". Reduce the oven to 160 degrees C fan and roast for a further 4 hours 30 minutes." }
+          ]}]},
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [
+            { "type": "text", "text": "Check that the " },
+            { "type": "text", "text": "crackling", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "crackling" } }] },
+            { "type": "text", "text": " is fully blistered. If not, raise to 230 degrees C for a further 15 minutes. Rest the joint for 30 minutes before pulling the meat apart with two forks." }
+          ]}]}
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Crackling is soft after the initial blast", "cause": "The skin was still damp, or the blast temperature was not reached.", "fix": "Ensure the skin is completely dry before it goes into the oven. Pat dry again if needed. The oven must be at a true 230 degrees C." },
+            { "symptom": "The meat is still tough and not pulling after 5 hours", "cause": "The oven temperature dropped or the joint was very cold when it went in.", "fix": "The internal temperature needs to reach above 90 degrees C for the collagen to convert. Continue cooking, checking every 30 minutes." },
+            { "symptom": "The cooking liquid has burnt to the base of the tin", "cause": "The cider was not replenished during the long cook.", "fix": "Add a splash of hot water or stock if the base starts to dry out. Check at the 2-hour mark." },
+            { "symptom": "The crackling is dark brown in places and pale in others", "cause": "The skin was not scored evenly, leaving thick and thin sections.", "fix": "Even, parallel scores at 1 cm intervals give even crackling. After the blast, you can use a sharp knife to add more cuts to any thick sections still pale." }
+          ]
+        }
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Variations" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Push garlic slivers into the score cuts before cooking for a stronger flavour. For a more intense cider flavour, increase the cider to 500 ml and add a few sliced eating apples to the base. The cooking juices make a natural apple and cider gravy." }]
+      },
+      {
+        "type": "heading", "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Roast pork shoulder is the alternative to the Sunday leg for households that prefer their meat falling apart rather than carved in neat slices. It is cheaper, more flavourful, and substantially more tolerant of extended cooking time than any lean roasting joint. It became associated with cider cooking through the apple-growing regions of the West Country." }]
+      }
+    ]
+  }
+}

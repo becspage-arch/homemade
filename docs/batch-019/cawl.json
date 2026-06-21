@@ -1,0 +1,197 @@
+{
+  "slug": "cawl",
+  "title": "Cawl",
+  "subtitle": "The Welsh lamb and leek broth",
+  "excerpt": "Neck of lamb simmered slowly with leeks, potatoes, swede, and carrots into a rich, hearty broth. Wales's national dish, served with a hunk of crusty bread and a wedge of Caerphilly cheese alongside. Better on the second day.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Cawl is Wales's national dish, documented in Welsh cookery writing from at least the 14th century. Traditionally made with salt beef or mutton; lamb neck became standard in the 20th century. Recipe synthesised from published Welsh recipes and culinary tradition.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 120,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freezes very well. The broth and lamb freeze better than the potatoes, which become grainy. Freeze without the potato if making ahead for freezing.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make a day ahead ,  the flavour improves significantly overnight. Skim the fat from the surface before reheating.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "fine-mesh-sieve", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "neck-lamb", "term": "Neck of lamb", "definition": "Cuts from the neck of the animal ,  either chops or a whole neck fillet. One of the best slow-cook cuts: highly flavoured from the connective tissue and fat running through it, which breaks down during long simmering to give a rich, gelatinous broth." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cawl is the dish that defines Welsh cooking: a long-simmered broth of lamb and winter vegetables that improves overnight and is traditionally served with the broth in bowls, the meat and vegetables on a separate plate, with Caerphilly alongside. The cut to use is " },
+          { "type": "text", "text": "neck of lamb", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "neck-lamb" } }] },
+          { "type": "text", "text": " ,  cheaper and more flavourful than leg or shoulder, and the right texture for a two-hour simmer. The leeks go in near the end so they keep their shape." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "lamb-neck", "amount": 1000, "unit": "g", "prepNote": "neck chops or fillet, cut into large pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "quartered", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "peeled and cut into chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "swede", "amount": 300, "unit": "g", "prepNote": "peeled and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 500, "unit": "g", "prepNote": "peeled and quartered", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "leek", "amount": 3, "unit": "each", "prepNote": "washed and cut into thick slices", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "prepNote": "chopped, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the broth" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Place the {{lamb-neck-fillet}} of lamb pieces in a large pot. Cover with cold water (about 2 litres). Bring to a boil and skim off the grey foam from the surface. Drain and rinse the lamb under cold water. Return to the clean pot." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{onion}} of quartered onion, {{carrot}} of carrot chunks, {{swede}} of diced swede, {{thyme}} of thyme, and {{bay-leaves}} of bay leaves. Cover with 1.8 litres of cold water. Season well with salt. Bring to a simmer and cook gently for 1 hour 15 minutes." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Add potatoes and leeks" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{potato}} of quartered potatoes and simmer for a further 20 minutes until tender." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{leek}} of sliced leeks and cook for a final 10 minutes until just tender. Remove the thyme stalks and bay leaves." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Taste the broth and adjust seasoning. Ladle into deep bowls. Scatter {{parsley-flat}} of parsley over each bowl. Serve with bread and Caerphilly or other sharp cheese on the side." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Broth is cloudy",
+              "cause": "The initial scum was not skimmed properly, or the broth was allowed to boil rather than simmer.",
+              "fix": "The blanching step ,  bringing the lamb to a boil, draining, and rinsing ,  removes most of the grey foam before the long cook. Maintain a gentle simmer throughout."
+            },
+            {
+              "symptom": "Lamb is tough",
+              "cause": "Neck of lamb needs a long, gentle simmer to become tender. 1 hour 15 minutes is a minimum.",
+              "fix": "If the lamb is still chewy at the scheduled time, continue simmering until the meat gives easily when pressed. A boiling simmer toughens meat; a very gentle simmer tenderises it."
+            },
+            {
+              "symptom": "Broth is greasy",
+              "cause": "Lamb is a fatty cut and releases a lot of fat during cooking.",
+              "fix": "Make the cawl a day ahead: the fat solidifies on top when chilled and can be lifted off cleanly. Alternatively, use a ladle to skim fat from the surface before serving."
+            },
+            {
+              "symptom": "Potatoes have dissolved into the broth",
+              "cause": "Potatoes were added too early or at too vigorous a simmer.",
+              "fix": "Add potatoes only in the last 20 minutes. Floury potatoes dissolve quickly; waxy potatoes hold together better if this is a recurring problem."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Cawl is Wales's national dish, with documentation going back to medieval Welsh manuscripts. It originally used salt beef or mutton ,  the animals Welsh farmers could afford to slaughter ,  and was made in an iron pot over an open fire. Lamb neck replaced mutton as the standard in the 20th century as mutton became harder to find. The word 'cawl' means both broth and the finished dish; in some parts of Wales it is still served in the old way, with the broth drunk first from wooden bowls (cawl bowls) before the meat and vegetables are eaten separately." }
+        ]
+      }
+    ]
+  }
+}

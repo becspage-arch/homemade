@@ -1,0 +1,213 @@
+{
+  "slug": "mulligatawny",
+  "title": "Mulligatawny",
+  "subtitle": "The Anglo-Indian spiced soup that travelled home from Madras",
+  "excerpt": "A rich, mildly spiced soup of chicken, lentils, and aromatic vegetables, thickened with coconut milk. The British-Indian version of a Tamil pepper water, sweetened and enriched over two centuries of adaptation.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Mrs Beeton, Book of Household Management (1861) ,  Project Gutenberg #10136. Mulligatawny soup, both thin and thick versions. This recipe follows the enriched thick version with coconut milk.\n\nEliza Acton, Modern Cookery for Private Families (1845) ,  Project Gutenberg. Mulligatawny entry.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before adding the coconut milk. Cool completely and freeze for up to three months. Add coconut milk when reheating.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Use a large pot and blend in batches if needed.",
+    "makeAheadNotes": "Makes up to three days ahead. The flavour deepens overnight. Add coconut milk when reheating.",
+    "dietaryFlags": [],
+    "cuisine": "angloIndian",
+    "mealType": "lunch",
+    "mood": ["comfortFood", "cosy", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "stick-blender", "isOptional": false },
+    { "slug": "ladle", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "mulligatawny-name", "term": "Mulligatawny", "definition": "From the Tamil words milagu (pepper) and tannir (water): a pepper-water broth from south India that was adopted, thickened, and enriched by British cooks in the colonial period." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mulligatawny", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "mulligatawny-name" } }] },
+          { "type": "text", "text": " started as a thin, spiced pepper broth from south India. British cooks took it home and made it richer: thickened with lentils, finished with coconut milk, and gentled in its spice balance. The name comes from the Tamil for pepper water. What settled into British home cooking is the enriched version, and that is what this recipe follows." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-root", "amount": 20, "unit": "g", "prepNote": "peeled and grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander-seeds", "amount": 1, "unit": "tsp", "prepNote": "ground", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "turmeric", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lentils-red", "amount": 100, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chicken-breast", "amount": 2, "unit": "each", "prepNote": "skinless", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 900, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coconut-milk", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon-juice", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "basmati-rice", "amount": 150, "unit": "g", "prepNote": "cooked, to serve alongside", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the spiced base" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Melt {{unsalted-butter}} of butter in a large saucepan over a medium-low heat. Add the {{onion}} onion, {{carrot}} carrot, and {{celery}} celery. Cook for 10 minutes until softened." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{garlic}} of garlic and {{ginger-root}} of ginger. Cook for 1 minute. Add the {{cumin-ground}} of ground cumin, {{coriander-seeds}} of ground coriander, and {{turmeric}} of turmeric. Stir and cook for 30 seconds." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Simmer and blend" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the {{lentils-red}} of red lentils and {{chicken-breast}} chicken breasts. Pour over {{stock-chicken}} of hot chicken stock. Bring to a simmer and cook for 20 minutes until the lentils have dissolved and the chicken is cooked through." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Lift the chicken breasts out of the pot. Blend the soup until smooth with a stick blender." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Shred the chicken into pieces and stir back into the soup. Pour in {{coconut-milk}} of coconut milk. Add the {{lemon-juice}} of lemon juice. Taste and adjust salt." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Ladle into bowls. Serve with steamed basmati rice, which can be stirred directly into the soup or eaten alongside." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soup is too thick",
+              "cause": "The lentils absorbed more liquid than expected.",
+              "fix": "Thin with hot water or extra stock, 100 ml at a time, until it pours easily. Taste and re-season after each addition."
+            },
+            {
+              "symptom": "Spice flavour is muted",
+              "cause": "Old ground spices, or they were not cooked in the fat long enough to develop.",
+              "fix": "Always bloom the spices in the fat for at least 30 seconds before adding liquid. Use ground spices within six months of opening."
+            },
+            {
+              "symptom": "Coconut milk has curdled slightly",
+              "cause": "The soup was too hot when the coconut milk was added.",
+              "fix": "This doesn't affect the taste, only the appearance. To prevent it, lower the heat before adding the coconut milk and stir steadily."
+            },
+            {
+              "symptom": "Soup is too mild",
+              "cause": "Not enough pepper or the spice quantities were conservative.",
+              "fix": "Add a good twist of black pepper and a small pinch of cayenne or chilli flakes. The original Tamil version was specifically a pepper broth; a little heat is authentic."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Mulligatawny has an unusual history. It was brought back by soldiers and civil servants who had worked in south India and wanted something like the peppery broths they had eaten there. British cooks adapted it with what they had: thickened with lentils or flour, enriched with cream or coconut milk, sweetened in its spice profile. What emerged was something neither quite Indian nor quite British. Victorian household cookbooks listed it as a standard soup, and it has stayed in British kitchens ever since." }
+        ]
+      }
+    ]
+  }
+}
