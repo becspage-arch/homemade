@@ -1,0 +1,107 @@
+{
+  "slug": "cornbread",
+  "title": "Cornbread",
+  "subtitle": "golden skillet cornbread",
+  "excerpt": "A simple batter of cornmeal, eggs, and milk baked until golden. This is the quick, no-yeast version that goes from mixing bowl to oven in minutes. It is slightly sweet and crumbly, and goes with almost everything.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Cornbread is a staple of Southern American baking, descended from Native American corn preparations. The recipe varies by region -- Southern cornbread is often less sweet than Northern versions.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "Makes 1 tin (serves 8)",
+    "prepMinutes": 10,
+    "cookMinutes": 25,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice and freeze. Reheat in a low oven for 10 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "american",
+    "mealType": "side",
+    "mood": ["comfortFood", "weeknight"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan 180C / gas 6",
+    "foundational": false
+  },
+  "recipeTools": [
+    {"slug": "cast-iron-skillet", "isOptional": false},
+    {"slug": "mixing-bowl", "isOptional": false},
+    {"slug": "whisk", "isOptional": false}
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "Heat the skillet in the oven before adding the batter. A hot pan gives the cornbread its signature crisp base. Do not overmix the batter -- a few lumps are fine."}]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            {"ingredientSlug": "plain-flour", "amount": 250, "unit": "g", "prepNote": "use 150g fine cornmeal or polenta and 100g plain flour", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "baking-powder", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "caster-sugar", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "eggs", "amount": 2, "unit": "whole", "prepNote": "beaten", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "whole-milk", "amount": 250, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "melted, plus extra for the pan", "isOptional": false, "groupLabel": null}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Method"}]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Preheat the oven to 200C (fan 180C / gas 6). Put the cast-iron skillet in the oven to heat up."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Mix the cornmeal, flour, baking powder, sugar, and salt in a large bowl."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Whisk the eggs, milk, and melted butter together in a separate bowl."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour the wet ingredients into the dry. Stir until just combined -- do not overmix."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Remove the hot skillet from the oven carefully. Add a small knob of butter and swirl to coat."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour the batter into the hot pan. Bake for 20 to 25 minutes until golden and a skewer comes out clean."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Cool in the pan for 5 minutes before cutting into wedges."}]}]}
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {"symptom": "Cornbread is dry and crumbly", "cause": "Overmixed batter or cooked too long", "fix": "Mix until just combined and check at 20 minutes. A skewer should come out with a few moist crumbs."},
+            {"symptom": "No crispy base", "cause": "Skillet not preheated or not enough butter in the pan", "fix": "Preheat the skillet for at least 10 minutes and ensure the butter is sizzling before you pour in the batter."},
+            {"symptom": "Dense, flat result", "cause": "Baking powder past its use-by date", "fix": "Test your baking powder: add a teaspoon to hot water -- it should bubble vigorously if still active."}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Where this dish lives"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "Cornbread has been central to Southern American cooking for centuries. Native Americans made flat corn cakes long before European settlers arrived. The settlers adapted these techniques using their own baking methods. Today the debate between sweet Northern cornbread and the less-sweet Southern version is one of American food culture's more enjoyable arguments."}]
+      }
+    ]
+  }
+}
