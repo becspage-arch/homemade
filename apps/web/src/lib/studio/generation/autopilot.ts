@@ -3,6 +3,8 @@ import { imageToChart, crispChart, type ImageToChartOptions } from './convert'
 import type { SourcedImage } from './sources'
 import type { ProceduralDesign } from './procedural'
 import { structuralQc, licenceQc, type LicenceInput } from './qc'
+import { buildFromSpec, specLicence, type Spec } from './spec'
+import { getPatternCategory } from './categories'
 
 /**
  * Cross-stitch autopilot runner. Generates a batch of patterns across the
@@ -85,6 +87,69 @@ export async function runBatch(designerId: string, specs: PatternSpec[]): Promis
       })
     } catch (e) {
       results.push({ slug: spec.slug, name: spec.name, theme: spec.theme, ok: false, held: true, reasons: [], error: (e as Error).message })
+    }
+  }
+  return results
+}
+
+/**
+ * The productionised spec-based batch runner — the real autopilot entry point.
+ * Generates each Spec via the rich engines (`buildFromSpec`), derives difficulty
+ * + time so the library filters work, runs the deterministic gates, and saves
+ * to the REVIEW state (UNLISTED) for the Claude vision pass. Designer + pattern
+ * type come from the category registry, so any pattern-led category can call it.
+ */
+export async function runSpecBatch(categorySlug: string, specs: Spec[]): Promise<BatchResult[]> {
+  const cfg = getPatternCategory(categorySlug)
+  if (!cfg) throw new Error(`runSpecBatch: no pattern-category config for "${categorySlug}"`)
+  const results: BatchResult[] = []
+  for (const spec of specs) {
+    try {
+      const data = await buildFromSpec(spec)
+      const { licence, credit } = specLicence(spec)
+      const m = computePatternMetrics(data)
+      const sq = structuralQc(data)
+      const lq = licenceQc({ licence, credit, designerId: cfg.designerId })
+      const held = !(sq.pass && lq.pass)
+      const reasons = [...sq.reasons, ...lq.reasons]
+      const difficulty: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' =
+        m.colourCount <= 10 || m.totalStitches < 6000 ? 'BEGINNER'
+        : m.colourCount >= 26 || m.totalStitches > 22000 ? 'ADVANCED'
+        : 'INTERMEDIATE'
+      const estimatedHours = Math.max(1, Math.round(m.totalStitches / 700))
+      const verdict = held ? `HOLD: ${reasons.join('; ')}` : 'clean'
+      const common = {
+        name: spec.name,
+        data: data as unknown as object,
+        ownerUserId: null,
+        designerId: cfg.designerId,
+        visibility: Visibility.UNLISTED,
+        publishedAt: null,
+        widthCells: m.widthCells,
+        heightCells: m.heightCells,
+        colourCount: m.colourCount,
+        totalStitches: m.totalStitches,
+        hasBackstitch: m.hasBackstitch,
+        hasFrenchKnots: m.hasFrenchKnots,
+        hasBeads: m.hasBeads,
+        hasQuarterStitches: m.hasQuarterStitches,
+        fabricCountSuggested: data.fabric.count,
+        difficulty,
+        estimatedHours,
+        description: `${spec.tier} · ${credit} · QC ${verdict}`,
+      }
+      const row = await prisma.pattern.upsert({
+        where: { slug: spec.slug },
+        update: common,
+        create: { type: cfg.patternType, slug: spec.slug, ...common },
+        select: { id: true },
+      })
+      results.push({
+        slug: spec.slug, name: spec.name, theme: spec.tier, ok: true, held, reasons,
+        confettiRatio: sq.confettiRatio, colours: m.colourCount, size: `${m.widthCells}x${m.heightCells}`, id: row.id,
+      })
+    } catch (e) {
+      results.push({ slug: spec.slug, name: spec.name, theme: spec.tier, ok: false, held: true, reasons: [], error: (e as Error).message })
     }
   }
   return results
