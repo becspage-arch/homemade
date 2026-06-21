@@ -45,9 +45,20 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Guard against any full-bleed element (calc(50% - 50vw) heroes) nudging
+       the page sideways on mobile. `clip` doesn't create a scroll container,
+       so position: sticky keeps working. */
+    overflow-x: clip;
   }
   body {
     min-height: 100vh;
+  }
+  /* No grey tap-flash on touch — we provide our own :active feedback below. */
+  a,
+  button,
+  summary,
+  [role='button'] {
+    -webkit-tap-highlight-color: transparent;
   }
   ::selection {
     background-color: var(--color-sage);

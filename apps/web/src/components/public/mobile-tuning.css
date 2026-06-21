@@ -23,12 +23,6 @@
     gap: 12px;
   }
 
-  /* Safe-area inset on the public main element so the iOS notch doesn't
-     clip the wordmark on first load inside the Capacitor wrapper. */
-  .public-main {
-    padding-top: env(safe-area-inset-top, 0px);
-  }
-
   /* Reading body — bump body line-height for thumb-reading comfort. */
   .tutorial-content {
     line-height: 1.65;
@@ -58,4 +52,41 @@
 .cookie-banner,
 .cookie-banner-bar {
   padding-bottom: max(16px, env(safe-area-inset-bottom, 0px));
+}
+
+/* Press feedback on touch — an instant scale so taps feel responsive
+   (Monzo / Spotify style) rather than inert. Hover devices keep their hover
+   styles untouched. */
+@media (hover: none) {
+  .home-card-link:active,
+  .discovery-card-link:active,
+  .home-pinterest-card:active,
+  .home-magazine-card:active,
+  .category-chip:active,
+  .category-filter-chip:active,
+  .practice-picker-chip:active,
+  .plant-month-chip:active,
+  .home-discovery-more-link:active,
+  .pattern-detail-action:active,
+  .header-nav-sheet-group-link:active,
+  .header-nav-sheet-group-cta:active,
+  .foundations-path-card:active,
+  .category-scoped-search-suggestion:active {
+    transform: scale(0.97);
+    transition: transform 0.06s ease;
+  }
+}
+
+/* Respect reduced-motion: drop the card lift / image zoom / sheet slide. */
+@media (prefers-reduced-motion: reduce) {
+  .home-card-image,
+  .discovery-card-image,
+  .home-pinterest-card-image,
+  .home-magazine-card-image,
+  .foundations-path-card,
+  .header-nav-sheet,
+  .mobile-tab-bar-item {
+    transition: none !important;
+    animation: none !important;
+  }
 }

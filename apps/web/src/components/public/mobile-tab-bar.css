@@ -8,7 +8,7 @@
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .mobile-tab-bar {
     position: fixed;
     bottom: 0;
@@ -55,6 +55,12 @@
 .mobile-tab-bar-item.active {
   color: var(--color-sage);
   opacity: 1;
+}
+
+.mobile-tab-bar-item:active {
+  opacity: 1;
+  transform: scale(0.93);
+  transition: transform 0.06s ease;
 }
 
 .mobile-tab-bar-item.active .mobile-tab-bar-label {

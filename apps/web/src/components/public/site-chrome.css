@@ -8,6 +8,10 @@
   z-index: 100;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  /* The sticky header sits at the very top, so it — not the content below —
+     is what the notch overlaps. Reserve the inset here (0 on non-notched
+     devices). */
+  padding-top: env(safe-area-inset-top, 0px);
 }
 
 .site-header-inner {
@@ -318,15 +322,31 @@
 .header-nav-sheet {
   background: var(--color-cream);
   width: 100%;
-  max-height: 80vh;
+  max-height: 82vh;
   overflow-y: auto;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  padding: 24px 24px 32px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 10px 24px calc(32px + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: column;
   gap: 16px;
-  animation: header-nav-sheet-in 0.2s ease-out;
+  animation: header-nav-sheet-in 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+  /* Drag offset driven by the dismiss handler in CategoryMenu. */
+  transform: translateY(var(--sheet-drag, 0px));
+}
+
+/* The grab handle is the drag surface — touch-action: none here lets the
+   drag-to-dismiss take over without the scroll container fighting it. The
+   sheet body keeps normal touch scrolling. */
+.header-nav-sheet-grip {
+  flex: none;
+  width: 40px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--color-linen-grey);
+  margin: 2px auto 6px;
+  touch-action: none;
+  cursor: grab;
 }
 
 @keyframes header-nav-sheet-in {
@@ -537,6 +557,9 @@
   .site-header-search-input,
   .site-header-search-input:focus {
     width: 100%;
+    /* ≥16px stops iOS Safari auto-zooming the page when the field is
+       focused. */
+    font-size: 16px;
   }
 }
 

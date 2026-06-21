@@ -25,6 +25,22 @@ No action taken yet; flagged during the 2026-06-19 make-page review.
 
 ---
 
+## Homepage + category + make-page design uplift, unified Make it list (2026-06-19)
+
+Multi-deploy design/UX uplift with Rebecca (Claude Design exploration → ported live). Every change shipped to main, each deploy green + `/healthz` 200.
+
+**Homepage** rebuilt into four modes — *inspire* (seasonal editorial hero, now always the seasonal pick on a weekly rotation), *resume* (fixed-width "continue" rails — fixed the `grid-auto-columns: minmax(220px, 1fr)` stretch bug that ballooned 2–3 card rails), *discover* (Pinterest masonry wall: save-on-hover, mixed categories, community makes woven in, 5-step aspect-ratio cycle), *navigate* (kept the all-categories tiles). PWA service worker switched from stale-while-revalidate to **network-first** for navigations — the old strategy served stale HTML referencing dead JS chunks after a deploy, causing a flicker/stuck reload loop (sw VERSION → v2).
+
+**Category pages** (six archetypes): save-on-hover hearts on every card (`HomeCard` restructured to a wrapper with the link + heart as siblings); practice / plant / fix now open with the same `CategoryHero` photographic band as recipe / skill; results and pattern-library grids deliberately kept uniform for scanning.
+
+**Make pages**: sticky TOC shown to all readers (was signed-in only); type-aware "About this …" footer; pattern detail gained JSON-LD + breadcrumb schema, locale-aware PDF paper size (US/CA/MX/PH → Letter), and a privacy-safe "Finished by N makers" count.
+
+**Unified Make it list** (point 2 of the make-page review): three additive saved-item tables since `Bookmark` was tutorial-only — `SavedPattern` (`20260917000000_phase_saved_patterns_001`) and `SavedRecipe` (`20260918000000_phase_saved_recipes_001`), hand-authored and applied on live (no dev DB). Save hearts/buttons on the pattern detail page, the pattern library grid, and the community recipe page; `/me/bookmarks` now lists tutorials + patterns + community recipes; in-progress patterns join the homepage resume rail. `pattern_saved` / `pattern_unsaved` / `recipe_saved` / `recipe_unsaved` analytics events wired.
+
+**Still open:** reviews on patterns (bigger — wires through the moderation queue + helpful-votes + reporting; recommended additive `PatternReview`, pending Rebecca's go/pause); crochet pattern saving (separate `CrochetPattern` model); photos / Q&A on patterns; the pattern "finished by" privacy decision (top of this file). **Mobile "Monzo-level" pass (2026-06-19):** Root-caused the menu-won't-drop-down bug — the mobile nav sheet rendered inside `.site-header`, which has `backdrop-filter`, making the sheet's `position: fixed` resolve against the header box (a sliver) not the viewport. Fixed by portalling the sheet to `document.body`. Plus: iOS input-zoom fix (header search → 16px on mobile); aligned the two nav breakpoints (bottom tab bar 768→900 to match the hamburger header, removing the 769–900 dead zone); notch safe-area moved onto the sticky header (was misapplied to `.public-main`); `-webkit-tap-highlight-color: transparent` + `:active` press-scale feedback on touch; grab handle + drag-to-dismiss on the sheet + body-scroll lock; `overflow-x: clip` guard; `prefers-reduced-motion` respect. Already-good foundations left intact (safe-area insets on tab bar, 44/48px touch targets, sticky-TOC-hidden-on-mobile).
+
+---
+
 ## Per-type makeability audit + un-publish + gate (2026-06-16)
 
 Second, stricter pass on top of the 2026-06-15 completeness gate. That gate asked "is this body broken/skeleton?"; this one asks the harder question: **could a competent person actually MAKE this from the page?** A real, non-broken body can still be unmakeable — the trigger case Rebecca flagged: a **chart-less cross-stitch pattern is not a pattern**, "usable but not ideal" is wrong, it fails.

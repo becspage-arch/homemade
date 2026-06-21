@@ -2,6 +2,8 @@
 
 import Link from 'next/link'
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
+import type { CSSProperties, TouchEvent as ReactTouchEvent } from 'react'
 
 interface MenuSubCategory {
   slug: string
@@ -147,7 +149,59 @@ function resolveGroups(all: MenuCategory[]): ResolvedGroup[] {
 export function CategoryMenu({ all }: CategoryMenuProps) {
   const [openGroup, setOpenGroup] = useState<GroupKey | null>(null)
   const [sheetOpen, setSheetOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const navRef = useRef<HTMLDivElement>(null)
+
+  // Drag-to-dismiss state for the mobile sheet.
+  const [dragY, setDragY] = useState(0)
+  const [dragging, setDragging] = useState(false)
+  const dragStartY = useRef<number | null>(null)
+  const dragYRef = useRef(0)
+
+  // createPortal needs a DOM target, so only render the sheet portal after
+  // the client has mounted. One-shot mount flag — the cascading render is
+  // intentional (same pattern as StickyToc).
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => setMounted(true), [])
+
+  // Lock body scroll while the sheet is open.
+  useEffect(() => {
+    if (!sheetOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [sheetOpen])
+
+  function closeSheet() {
+    setSheetOpen(false)
+    setDragY(0)
+    dragYRef.current = 0
+    setDragging(false)
+  }
+
+  function onGripTouchStart(e: ReactTouchEvent) {
+    dragStartY.current = e.touches[0]?.clientY ?? null
+    setDragging(true)
+  }
+  function onGripTouchMove(e: ReactTouchEvent) {
+    if (dragStartY.current === null) return
+    const dy = (e.touches[0]?.clientY ?? 0) - dragStartY.current
+    const next = Math.max(0, dy)
+    dragYRef.current = next
+    setDragY(next)
+  }
+  function onGripTouchEnd() {
+    dragStartY.current = null
+    setDragging(false)
+    if (dragYRef.current > 90) {
+      closeSheet()
+    } else {
+      dragYRef.current = 0
+      setDragY(0)
+    }
+  }
 
   useEffect(() => {
     function onClick(e: MouseEvent) {
@@ -239,73 +293,90 @@ export function CategoryMenu({ all }: CategoryMenuProps) {
         </svg>
       </button>
 
-      {sheetOpen && (
-        <div
-          className="header-nav-sheet-backdrop"
-          onClick={() => setSheetOpen(false)}
-          role="presentation"
-        >
+      {sheetOpen &&
+        mounted &&
+        createPortal(
           <div
-            className="header-nav-sheet"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Browse"
-            onClick={(e) => e.stopPropagation()}
+            className="header-nav-sheet-backdrop"
+            onClick={closeSheet}
+            role="presentation"
           >
-            <div className="header-nav-sheet-header">
-              <span className="header-nav-sheet-eyebrow">Browse</span>
-              <button
-                type="button"
-                className="header-nav-sheet-close"
-                onClick={() => setSheetOpen(false)}
-                aria-label="Close menu"
-              >
-                ×
-              </button>
+            <div
+              className="header-nav-sheet"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Browse"
+              onClick={(e) => e.stopPropagation()}
+              style={
+                {
+                  '--sheet-drag': `${dragY}px`,
+                  transition: dragging
+                    ? 'none'
+                    : 'transform 0.25s cubic-bezier(0.22, 1, 0.36, 1)',
+                } as CSSProperties
+              }
+            >
+              <div
+                className="header-nav-sheet-grip"
+                onTouchStart={onGripTouchStart}
+                onTouchMove={onGripTouchMove}
+                onTouchEnd={onGripTouchEnd}
+              />
+              <div className="header-nav-sheet-header">
+                <span className="header-nav-sheet-eyebrow">Browse</span>
+                <button
+                  type="button"
+                  className="header-nav-sheet-close"
+                  onClick={closeSheet}
+                  aria-label="Close menu"
+                >
+                  ×
+                </button>
+              </div>
+              <div className="header-nav-sheet-groups">
+                {groups.map((group) => (
+                  <details key={group.key} className="header-nav-sheet-group">
+                    <summary className="header-nav-sheet-group-summary">
+                      <span className="header-nav-sheet-group-title">{group.label}</span>
+                      <span className="header-nav-sheet-group-count">
+                        {group.items.length}
+                      </span>
+                    </summary>
+                    <div className="header-nav-sheet-group-body">
+                      <nav className="header-nav-sheet-group-list" aria-label={group.label}>
+                        {group.items.map((item) => (
+                          <Link
+                            key={item.key}
+                            href={item.href}
+                            className="header-nav-sheet-group-link"
+                            onClick={closeSheet}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </nav>
+                      <Link
+                        href={group.cta.href}
+                        className="header-nav-sheet-group-cta"
+                        onClick={closeSheet}
+                      >
+                        {group.cta.label}
+                      </Link>
+                    </div>
+                  </details>
+                ))}
+                <Link
+                  href="/search"
+                  className="header-nav-sheet-search-link"
+                  onClick={closeSheet}
+                >
+                  Search everything →
+                </Link>
+              </div>
             </div>
-            <div className="header-nav-sheet-groups">
-              {groups.map((group) => (
-                <details key={group.key} className="header-nav-sheet-group">
-                  <summary className="header-nav-sheet-group-summary">
-                    <span className="header-nav-sheet-group-title">{group.label}</span>
-                    <span className="header-nav-sheet-group-count">
-                      {group.items.length}
-                    </span>
-                  </summary>
-                  <div className="header-nav-sheet-group-body">
-                    <nav className="header-nav-sheet-group-list" aria-label={group.label}>
-                      {group.items.map((item) => (
-                        <Link
-                          key={item.key}
-                          href={item.href}
-                          className="header-nav-sheet-group-link"
-                          onClick={() => setSheetOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </nav>
-                    <Link
-                      href={group.cta.href}
-                      className="header-nav-sheet-group-cta"
-                      onClick={() => setSheetOpen(false)}
-                    >
-                      {group.cta.label}
-                    </Link>
-                  </div>
-                </details>
-              ))}
-              <Link
-                href="/search"
-                className="header-nav-sheet-search-link"
-                onClick={() => setSheetOpen(false)}
-              >
-                Search everything →
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body,
+        )}
     </>
   )
 }
