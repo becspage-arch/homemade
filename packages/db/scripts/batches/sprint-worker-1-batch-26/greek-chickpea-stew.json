@@ -1,0 +1,102 @@
+{
+  "slug": "greek-chickpea-stew",
+  "title": "Revithia",
+  "subtitle": "Greek baked chickpeas with olive oil and rosemary",
+  "excerpt": "Revithia is one of the oldest dishes in Greek cooking. Chickpeas are slow-baked in olive oil with rosemary and lemon until completely tender and fragrant. Only a handful of ingredients.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Revithia has been eaten on the Greek island of Sifnos for centuries, traditionally baked overnight in clay pots. This version uses tinned chickpeas to make it accessible without sacrificing the slow-cooked character.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Leftovers taste even better the next day. Store in the fridge and reheat with a splash of water.",
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "greek",
+    "mealType": "dinner",
+    "mood": ["weekend", "comforting"],
+    "temperatureCelsius": 190,
+    "temperatureNote": "Fan 170°C / Gas 5",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use a deep roasting tin so the chickpeas sit in plenty of olive oil and stock as they bake." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chickpeas-tinned", "amount": 800, "unit": "g", "prepNote": "2 x 400g tins, drained and rinsed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "medium", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 5, "unit": "cloves", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 3, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 6, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 2, "unit": "whole", "prepNote": "juice of both, zest of one", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 190°C." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the chickpeas, onion, and garlic into the roasting tin." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the rosemary sprigs and pour over the olive oil. Season generously with salt and pepper." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the stock and lemon juice. Scatter over the lemon zest." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir everything together and cover the tin tightly with foil." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake for 40 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the foil and bake for a further 20 minutes until the liquid has reduced and the chickpeas are golden at the edges." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Taste and adjust the seasoning. Serve with crusty bread." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Chickpeas are dry and tough after baking.", "cause": "Too much liquid evaporated during the uncovered stage.", "fix": "Add a splash of stock and return to the oven for 10 minutes." },
+            { "symptom": "Dish tastes oily.", "cause": "The oil needs the lemon acidity to balance it.", "fix": "Squeeze extra lemon over just before serving." },
+            { "symptom": "Onions are still sharp-tasting.", "cause": "Not enough time in the oven.", "fix": "Cover again and bake for another 15 minutes." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "pollo-alla-diavola",
+  "title": "Pollo alla Diavola",
+  "subtitle": "Spatchcocked devilled chicken with chilli, garlic, and lemon",
+  "excerpt": "A whole chicken flattened and marinated in chilli, garlic, and lemon, then roasted at high heat until the skin is crisp and the meat is still juicy. Serve with the pan juices.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pollo alla diavola is a Roman and Tuscan classic. The name refers to the devilled heat of the chilli. Spatchcocking reduces the cooking time and ensures even browning across the whole bird.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 10,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate overnight in the fridge for more flavour.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "Fan 200°C / Gas 7",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false },
+    { "slug": "probe-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Spatchcocking is the key step: use strong kitchen scissors to cut out the backbone, then press the bird flat." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-whole", "amount": 1, "unit": "whole", "prepNote": "about 1.5kg, spatchcocked", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "cloves", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 3, "unit": "sprigs", "prepNote": "leaves finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 2, "unit": "whole", "prepNote": "zest of both, juice of both", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 5, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "To spatchcock the chicken, place it breast-side down. Cut along both sides of the backbone using strong scissors or a sharp knife. Remove the backbone." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Flip the chicken over. Press firmly on the breastbone with the heel of your hand until you feel it crack flat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the garlic, rosemary, chilli flakes, paprika, lemon zest, and olive oil together into a paste." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rub the marinade all over the chicken, including under the skin over the breast. Season generously." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place skin-side up in the roasting tin. Chill for at least 1 hour or overnight." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 220°C. Roast the chicken for 40 to 45 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the internal temperature at the thickest part of the thigh: it must read 75°C or above." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Squeeze over the lemon juice. Leave to rest for 10 minutes before carving." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Skin is not crisp after 45 minutes.", "cause": "Chicken was too wet or oven not hot enough.", "fix": "Pat skin dry, raise heat to 230°C for a final 5 minutes." },
+            { "symptom": "Breast meat is dry but thighs are not done.", "cause": "Bird not pressed flat enough; breast cooks faster.", "fix": "Cover breast loosely with foil and continue roasting thighs." },
+            { "symptom": "Marinade burns on the tin before chicken cooks through.", "cause": "Sugars in the garlic catch at high heat.", "fix": "Add a splash of water to the tin and loosely tent with foil." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "rice-pudding",
+  "title": "Rice Pudding",
+  "subtitle": "Slow-baked British rice pudding with nutmeg and cream",
+  "excerpt": "Short-grain rice slow-baked in sweetened milk and cream until thick, silky, and deeply comforting. A golden skin forms on top; the rice underneath is tender and yielding.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Rice pudding has been made in Britain since the Tudor period. The baked version with a nutmeg skin became the standard British nursery pudding and remains one of the most enduring comfort foods in the British kitchen.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 120,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Leftovers keep in the fridge for two days. Reheat gently with a splash of milk.",
+    "dietaryFlags": ["vegetarian", "glutenFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["weekend", "comforting"],
+    "temperatureCelsius": 150,
+    "temperatureNote": "Fan 130°C / Gas 2",
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A low oven and a long bake are non-negotiable; higher heat produces a skin too quickly and leaves the rice undercooked beneath." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "sushi-rice", "amount": 200, "unit": "g", "prepNote": "or any short-grain pudding rice; rinsed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 800, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "nutmeg-ground", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "cut into small pieces", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 150°C." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tip the rice into a shallow baking dish, about 1.5 litres capacity." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine the milk, cream, and honey in a jug. Stir until the honey dissolves." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the liquid over the rice. Stir once to combine." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dot the butter over the surface. Scatter over the nutmeg." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake for 30 minutes. Stir once to prevent the rice from settling in one layer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake for a further 1 hour 30 minutes without stirring until a golden skin has formed and the pudding is thick and creamy beneath." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve warm from the dish." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Rice is still chalky after 2 hours.", "cause": "Oven ran too cool or dish was very deep.", "fix": "Stir, cover with foil, and bake for 30 more minutes." },
+            { "symptom": "Pudding is too liquid.", "cause": "Milk ratio was high for the dish size.", "fix": "Return uncovered to the oven for 20 to 30 minutes to reduce." },
+            { "symptom": "Skin burned before rice cooked.", "cause": "Oven temperature too high.", "fix": "Cover loosely with foil for the rest of the cooking time." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "apple-crumble",
+  "title": "Apple Crumble",
+  "subtitle": "Classic British baked apple dessert with a buttery oat topping",
+  "excerpt": "Sweet, cinnamon-spiced apples under a rough, buttery crumble made with oats and honey. One of Britain's most loved puddings and one of the simplest to make.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Apple crumble became popular in Britain during World War Two as a way of stretching pastry rations. The crumble topping uses less fat and flour than a pie crust and has remained the nation's preferred pudding format ever since.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble up to 4 hours ahead. Bake just before serving.",
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["weekend", "comforting"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "Fan 160°C / Gas 4",
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use cold butter and work it in quickly so the topping stays rubble-like, not a paste." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "apple", "amount": 6, "unit": "medium", "prepNote": "peeled, cored, and sliced into 1cm pieces", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 1, "unit": "tsp", "prepNote": "divided", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "honey", "amount": 60, "unit": "g", "prepNote": "divided", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "plain-flour", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Topping" },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold, cut into small cubes", "isOptional": false, "groupLabel": "Topping" },
+            { "ingredientSlug": "oats-rolled", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Topping" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 180°C." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Toss the apples with half the honey and half the cinnamon. Tip into a baking dish about 20x25cm." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For the topping, put the flour into a bowl with the remaining cinnamon." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the cold butter. Rub it in with your fingertips until the mixture resembles rough breadcrumbs. Some larger lumps are good." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir in the oats and the remaining honey. Toss until the mixture is lightly clumped." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spread the topping evenly over the apples. Do not press it down." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake for 30 to 35 minutes until the topping is golden and the apple juices are bubbling at the edges." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave to cool for 5 minutes before serving with custard or cream." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Topping is pale after 35 minutes.", "cause": "Oven runs cool or topping was packed too tightly.", "fix": "Raise heat to 190°C and bake for 5 to 10 more minutes." },
+            { "symptom": "Apples are still firm.", "cause": "Slices were too thick or apples were very dense.", "fix": "Par-cook the apple filling on the hob for 5 minutes before topping." },
+            { "symptom": "Topping has sunk into the fruit.", "cause": "Too much juice from the apples.", "fix": "Pat apples dry before using; toss with a teaspoon of cornflour." }
+          ]
+        }
+      }
+    ]
+  }
+}
