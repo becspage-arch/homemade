@@ -1,0 +1,106 @@
+{
+  "slug": "pizza-margherita",
+  "title": "Pizza Margherita",
+  "subtitle": "Classic Neapolitan pizza with tomato, mozzarella, and basil",
+  "excerpt": "A thin-crust pizza with a simple tomato sauce, fresh mozzarella, and basil. The Neapolitan original: nothing extra, nothing hidden, everything dependent on the quality of three ingredients.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "recipe": {
+    "servings": 2,
+    "prepMinutes": 20,
+    "cookMinutes": 10,
+    "difficulty": "INTERMEDIATE",
+    "season": "YEAR_ROUND",
+    "dietary": ["vegetarian"],
+    "sourceType": "CLASSIC",
+    "sourceNotes": "Pizza margherita was created in Naples in 1889, reputedly by pizzaiolo Raffaele Esposito to honour Queen Margherita of Savoy. The three toppings, tomato, mozzarella, and basil, represent the colours of the Italian flag. Neapolitan pizza is protected by the Associazione Verace Pizza Napoletana and has EU TSG status. The key to the authentic version is a very hot oven and a wet, blistered crust with a substantial rim. Home ovens can reach around 250 C; a pizza stone or steel makes the result significantly closer to the original."
+  },
+  "recipeTools": [
+    { "slug": "pizza-stone", "notes": "Place in the oven to heat for at least 45 minutes. A flat baking tray works as a fallback.", "isOptional": true },
+    { "slug": "rolling-pin", "notes": "For the dough." }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The oven temperature is the most important variable here. Set it to its maximum and let it heat for at least 45 minutes with the stone or tray inside. A pizza that goes onto a cold surface will not achieve the right crust. The sauce is uncooked: crushed tinned tomatoes, olive oil, and salt only. Do not use fresh tomatoes. Pull the mozzarella by hand rather than slicing it so it stays moist."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "servings": 2,
+          "items": [
+            { "ingredientSlug": "strong-bread-flour", "amount": 300, "unit": "g", "preparation": "plus more for dusting" },
+            { "ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp" },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "preparation": "plus more for the dough" },
+            { "ingredientSlug": "water", "amount": 180, "unit": "ml", "preparation": "lukewarm" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "preparation": "whole, crushed by hand" },
+            { "ingredientSlug": "mozzarella", "amount": 125, "unit": "g", "preparation": "torn into pieces" },
+            { "ingredientSlug": "basil", "amount": 10, "unit": "leaf", "preparation": "fresh" },
+            { "ingredientSlug": "olive-oil", "amount": 1, "unit": "tbsp", "preparation": "for the sauce" }
+          ]
+        }
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Mix the flour, yeast, and salt together. Add the water and olive oil. Mix to a shaggy dough, then knead on a floured surface for 8 to 10 minutes until smooth and elastic. Or use a stand mixer with a dough hook for 6 minutes. Place in an oiled bowl, cover, and leave to rise for 1 hour until doubled in size." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Heat the oven to its maximum temperature (250 C or higher if possible) with a pizza stone or flat baking tray inside." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Make the sauce: crush the tinned tomatoes by hand into a bowl. Add the olive oil and a pinch of salt. Do not cook it." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Divide the dough in two. On a well-floured surface, stretch or roll each piece into a thin round of about 25 to 30 cm. The edges should be slightly thicker than the centre." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Spread a thin layer of sauce over each base, leaving a 2 cm border. Scatter the torn mozzarella over the sauce. Slide carefully onto the hot stone or tray. Bake for 8 to 10 minutes until the crust is blistered and golden and the cheese is just melted. Remove from the oven and lay basil leaves over the top. Drizzle with olive oil and serve immediately." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

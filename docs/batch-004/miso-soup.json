@@ -1,0 +1,85 @@
+{
+  "slug": "miso-soup",
+  "title": "Miso Soup",
+  "subtitle": "Japanese dashi broth with tofu, wakame, and miso paste",
+  "excerpt": "A simple soup of dashi broth dissolved with white miso paste, served with silken tofu and wakame seaweed. The foundational soup of Japanese home cooking, eaten daily at almost every meal.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "recipe": {
+    "servings": 4,
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "difficulty": "BEGINNER",
+    "season": "YEAR_ROUND",
+    "dietary": ["vegan", "vegetarian", "gluten-free"],
+    "sourceType": "CLASSIC",
+    "sourceNotes": "Miso soup (misoshiru) is fundamental to Japanese cuisine and has been eaten in Japan for over a thousand years, with the earliest records of miso appearing in the Nara period (710 to 794 CE). The soup is built from dashi, a simple stock made from kombu seaweed and katsuobushi (dried tuna flakes), and miso paste, fermented soybean paste. The combination of dashi and miso gives the soup its distinctive umami depth. In vegetarian and vegan versions, the katsuobushi is omitted and the dashi is made from kombu alone. Miso soup is drunk from the bowl rather than eaten with a spoon in traditional Japanese practice."
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "notes": "For the dashi and soup." }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Do not boil the soup once the miso is added. Boiling destroys the delicate flavour of the miso and kills the beneficial bacteria in the paste. Add the miso at the end, dissolving it in a ladleful of hot broth before adding it to the pot, and serve immediately. The dashi should be steeped rather than boiled: bring it barely to a simmer when heating with the kombu, and add the katsuobushi off the heat."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "servings": 4,
+          "items": [
+            { "ingredientSlug": "kombu", "amount": 15, "unit": "g", "preparation": "dried, wiped with a damp cloth" },
+            { "ingredientSlug": "bonito-flakes", "amount": 15, "unit": "g", "preparation": "dried tuna flakes" },
+            { "ingredientSlug": "water", "amount": 1000, "unit": "ml" },
+            { "ingredientSlug": "miso-white", "amount": 4, "unit": "tbsp" },
+            { "ingredientSlug": "tofu-silken", "amount": 200, "unit": "g", "preparation": "cut into 1 cm cubes" },
+            { "ingredientSlug": "wakame", "amount": 10, "unit": "g", "preparation": "dried, soaked in cold water for 5 minutes, drained" },
+            { "ingredientSlug": "spring-onion", "amount": 2, "unit": "each", "preparation": "finely sliced, to serve" }
+          ]
+        }
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Make the dashi: soak the kombu in the water for 30 minutes. Place over medium heat and bring slowly to just below a simmer. Remove the kombu just before the water boils. Remove from the heat, add the katsuobushi, and steep for 5 minutes. Strain through a fine sieve. Discard the kombu and katsuobushi." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Reheat the dashi to just below a simmer. Add the tofu cubes and soaked wakame and warm through for 1 minute. Do not boil." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Scoop a ladleful of hot dashi into a small bowl. Add the miso paste and whisk until completely dissolved. Pour back into the pot and stir gently. Do not let the soup boil after this point. Serve immediately in small bowls, topped with sliced spring onion." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
