@@ -1,0 +1,129 @@
+{
+  "slug": "french-toast",
+  "title": "French Toast",
+  "subtitle": "Pain perdu with cinnamon and honey",
+  "excerpt": "French toast is made by soaking thick slices of bread in a spiced egg and milk mixture, then frying in butter until golden. It works with any white bread that is one or two days old. Serve with a drizzle of honey.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pain perdu, meaning lost bread, has roots in medieval France as a way to use stale bread. The British and American version is nearly identical.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The egg mixture can be made the night before and kept covered in the fridge.",
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "french",
+    "mealType": "breakfast",
+    "mood": ["weekend", "brunch", "comfort"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-28", "isOptional": false },
+    { "slug": "whisk", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use bread that is at least one day old. Fresh bread soaks up too much egg mixture and turns soft in the middle. You want 4 to 6 thick slices of white bread, about 2 cm thick." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "large", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": "divided across batches", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 3, "unit": "tbsp", "prepNote": "to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Whisk together the eggs, milk, and cinnamon in a wide shallow bowl. Add a small pinch of salt." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dip 2 slices of bread into the mixture. Let them soak for 20 seconds per side." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt a knob of butter in the pan over a medium heat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the soaked bread. Cook for 2 to 3 minutes on each side until deep golden." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove and keep warm. Repeat with the remaining slices." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve with a drizzle of honey." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The toast is golden outside but soggy in the middle.",
+              "cause": "The bread soaked too long or was too fresh.",
+              "fix": "Use day-old bread and soak for 20 seconds only per side."
+            },
+            {
+              "symptom": "The butter is burning before the toast is cooked.",
+              "cause": "The pan heat is too high.",
+              "fix": "Lower the heat to medium-low and add a little more butter."
+            },
+            {
+              "symptom": "The egg mixture runs off the bread without soaking in.",
+              "cause": "The bread is too dry or was not submerged.",
+              "fix": "Press bread gently into the bowl to help absorption."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

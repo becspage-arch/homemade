@@ -1,0 +1,131 @@
+{
+  "slug": "porridge",
+  "title": "Porridge",
+  "subtitle": "Creamy oat porridge with honey and toasted almonds",
+  "excerpt": "Porridge made with rolled oats and whole milk is one of the most sustaining breakfasts there is. Cook it slowly and stir often for a creamy, thick result. Honey and toasted almonds finish it off well.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Porridge has been a staple breakfast in Scotland and northern England for centuries. Oats cooked in milk became widespread in Britain through the 19th and 20th centuries.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 2,
+    "cookMinutes": 8,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "british",
+    "mealType": "breakfast",
+    "mood": ["weeknight", "comfort"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use rolled oats rather than instant oats. They take a few minutes longer but give a creamier texture with more body. Stir almost constantly once the milk heats up to prevent sticking." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "oats-rolled", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 800, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 3, "unit": "tbsp", "prepNote": "to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "almonds-flaked", "amount": 40, "unit": "g", "prepNote": "toasted in a dry pan", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If using flaked almonds: toast them in a dry pan over a medium heat for 2 minutes until golden. Set aside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the oats and milk in the saucepan over a medium heat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir continuously as the milk heats up. This stops a skin from forming." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Once the mixture begins to bubble, reduce the heat to low." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook for 5 minutes, stirring often, until thick and creamy." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add a small pinch of salt and stir through." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spoon into bowls. Top with honey and toasted almonds if using." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The porridge has caught on the bottom of the pan.",
+              "cause": "Heat was too high or stirring was not frequent enough.",
+              "fix": "Stir from the bottom and add a splash more milk to loosen."
+            },
+            {
+              "symptom": "The porridge is too thick.",
+              "cause": "It cooked too long or the ratio was slightly off.",
+              "fix": "Stir in a splash of hot milk until the right consistency."
+            },
+            {
+              "symptom": "The porridge is too thin and watery.",
+              "cause": "Too much milk or insufficient cooking time.",
+              "fix": "Keep cooking on low heat and stir until thickened."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
