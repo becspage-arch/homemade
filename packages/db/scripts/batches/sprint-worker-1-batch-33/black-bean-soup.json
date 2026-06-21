@@ -1,0 +1,76 @@
+{
+  "slug": "black-bean-soup",
+  "title": "Black Bean Soup",
+  "subtitle": "Cuban-spiced black bean soup",
+  "excerpt": "A thick, smoky black bean soup with green pepper and cumin. It blends in part to get a creamy texture while keeping some beans whole.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on Cuban black bean soup traditions, using tinned beans for ease.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before adding the soured cream garnish. Keeps for 3 months.",
+    "batchable": true,
+    "batchNotes": "Double the recipe easily in a large stockpot.",
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "glutenFree", "nutFree"],
+    "cuisine": "cuban",
+    "mealType": "lunch",
+    "mood": ["weeknight", "comforting"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {"slug": "stockpot", "isOptional": false},
+    {"slug": "blender-jug", "isOptional": false}
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {"type": "paragraph", "content": [{"type": "text", "text": "This soup gets its body from blending half of it, which gives a creamy result without any cream. It keeps well and tastes even better the next day."}]},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "What you need"}]},
+      {"type": "ingredientsList", "attrs": {"defaultServings": 4, "items": [
+        {"ingredientSlug": "black-beans", "amount": 800, "unit": "g", "prepNote": "2 x 400g tins, drained", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "onion", "amount": 2, "unit": "whole", "prepNote": "diced", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "garlic", "amount": 6, "unit": "cloves", "prepNote": "crushed", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "pepper-green", "amount": 1, "unit": "whole", "prepNote": "diced", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "cumin-ground", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "oregano-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "chilli-flakes", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "stock-vegetable", "amount": 800, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "lime", "amount": 2, "unit": "whole", "prepNote": "juiced", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "coriander-fresh", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "soured-cream", "amount": 100, "unit": "g", "prepNote": "to serve", "isOptional": false, "groupLabel": null}
+      ]}},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Method"}]},
+      {"type": "orderedList", "content": [
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the olive oil in the stockpot over a medium heat. Add the onion and green pepper. Cook for 8 minutes until soft."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the garlic, cumin, oregano, and chilli flakes. Cook for 1 minute."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the black beans and vegetable stock. Bring to the boil, then simmer for 20 minutes."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Scoop half the soup into a blender. Blend until smooth, then stir it back in."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the lime juice. Taste and season with salt."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Ladle into bowls. Top with soured cream and fresh coriander."}]}]}
+      ]},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Troubleshooting"}]},
+      {"type": "troubleshooter", "attrs": {"items": [
+        {"symptom": "Soup is too thick.", "cause": "Beans absorbed a lot of liquid.", "fix": "Add a splash of water or stock and stir."},
+        {"symptom": "Flavour is flat.", "cause": "Needs more acid or salt.", "fix": "Squeeze in extra lime and add a pinch of salt."}
+      ]}}
+    ]
+  }
+}

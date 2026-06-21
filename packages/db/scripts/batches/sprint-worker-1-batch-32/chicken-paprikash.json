@@ -1,0 +1,103 @@
+{
+  "slug": "chicken-paprikash",
+  "title": "Chicken Paprikash",
+  "subtitle": "Hungarian chicken braised in sweet paprika sauce",
+  "excerpt": "Chicken thighs braised with red pepper and a large amount of sweet paprika, then finished with soured cream. Rich and warming, typically served with pasta or dumplings.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the classic Hungarian csirke paprikas, adapted from multiple central European sources.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Cook without the soured cream and refrigerate. Reheat gently and stir in the cream before serving.",
+    "dietaryFlags": ["glutenFree", "nutFree"],
+    "cuisine": "hungarian",
+    "mealType": "dinner",
+    "mood": ["weekend", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{ "slug": "large-saucepan", "isOptional": false }],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use sweet Hungarian paprika if you can find it. The volume of paprika might look like a lot but it is correct." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 800, "unit": "g", "prepNote": "cut into large pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "medium", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-red", "amount": 2, "unit": "whole", "prepNote": "deseeded and sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-sweet", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soured-cream", "amount": 200, "unit": "ml", "prepNote": "at room temperature", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "chopped, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt the butter in a wide pan over medium heat. Season the chicken with salt." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Brown the chicken pieces for 3 minutes per side. Remove to a plate." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the onion to the pan. Cook for 6 minutes until soft." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic and red pepper. Cook for 3 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the pan from the heat. Stir in both paprikas. Return to a low heat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the stock. Return the chicken to the pan. Bring to a gentle simmer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover and cook for 25 minutes until the chicken is cooked through." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce heat to very low. Stir in the soured cream slowly. Do not allow to boil." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Taste and season. Serve scattered with parsley." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Sauce is grainy after adding soured cream.", "cause": "Heat was too high when cream was stirred in.", "fix": "Remove from heat, stir vigorously, then reheat very gently." },
+            { "symptom": "Paprika tastes bitter.", "cause": "Paprika was added to oil that was too hot.", "fix": "Always pull pan off the heat before stirring in paprika." }
+          ]
+        }
+      }
+    ]
+  }
+}

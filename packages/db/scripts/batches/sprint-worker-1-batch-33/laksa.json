@@ -1,0 +1,74 @@
+{
+  "slug": "laksa",
+  "title": "Prawn Laksa",
+  "subtitle": "Malaysian coconut noodle soup",
+  "excerpt": "A fragrant coconut broth with rice noodles and king prawns. Warming and filling, it comes together in under 30 minutes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on Malaysian laksa techniques, using ready-made curry paste.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "malaysian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comforting"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{"slug": "stockpot", "isOptional": false}],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {"type": "paragraph", "content": [{"type": "text", "text": "Frying the curry paste in oil before adding liquid draws out more flavour from the spices. Do not skip this step."}]},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "What you need"}]},
+      {"type": "ingredientsList", "attrs": {"defaultServings": 4, "items": [
+        {"ingredientSlug": "king-prawns", "amount": 300, "unit": "g", "prepNote": "raw and peeled", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "noodles-rice", "amount": 300, "unit": "g", "prepNote": "soaked or cooked per packet", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "coconut-milk", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "red-curry-paste", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "stock-chicken", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "kaffir-lime-leaves", "amount": 4, "unit": "leaves", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "fish-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "lime", "amount": 2, "unit": "whole", "prepNote": "juiced", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "pak-choi", "amount": 3, "unit": "whole", "prepNote": "halved lengthways", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "spring-onion", "amount": 4, "unit": "whole", "prepNote": "sliced", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "coriander-fresh", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "sunflower-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null}
+      ]}},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Method"}]},
+      {"type": "orderedList", "content": [
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oil in the stockpot over a medium heat. Add the curry paste. Fry for 2 minutes, stirring."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour in the coconut milk and chicken stock. Add the kaffir lime leaves."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Bring to a simmer. Add the fish sauce and half the lime juice. Taste."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the pak choi. Cook for 3 minutes until just wilted."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the prawns. Cook for 3 to 4 minutes until pink all the way through."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Divide the noodles between bowls. Ladle the soup over the top."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Top with spring onion and coriander. Squeeze over the remaining lime."}]}]}
+      ]},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Troubleshooting"}]},
+      {"type": "troubleshooter", "attrs": {"items": [
+        {"symptom": "Broth is too thin.", "cause": "Coconut milk was low-fat or too dilute.", "fix": "Simmer uncovered for 5 more minutes to reduce."},
+        {"symptom": "Prawns are rubbery.", "cause": "Overcooked.", "fix": "Add prawns last and remove from heat as soon as pink."}
+      ]}}
+    ]
+  }
+}

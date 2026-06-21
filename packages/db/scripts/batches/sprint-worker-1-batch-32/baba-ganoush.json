@@ -1,0 +1,102 @@
+{
+  "slug": "baba-ganoush",
+  "title": "Baba Ganoush",
+  "subtitle": "Smoky roasted aubergine dip",
+  "excerpt": "Whole aubergines are charred in a very hot oven until completely soft, then blended with tahini, garlic, and lemon. The result is a smoky, creamy dip.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the classic Levantine method of charring aubergines whole for maximum smoke flavour.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dip keeps in the fridge for up to 3 days. Stir before serving.",
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "middle eastern",
+    "mealType": "starter",
+    "mood": ["weekend"],
+    "temperatureCelsius": 220,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "High heat is what makes this dip smoky. Don't rush the roasting time." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "aubergine", "amount": 3, "unit": "large", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tahini", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 2, "unit": "whole", "prepNote": "juice only", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": "plus extra to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "chopped, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 220C." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pierce each aubergine several times with a knife. Place them on a roasting tin." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roast for 40 minutes, turning once halfway. The skins should be very dark and the flesh completely soft." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave to cool for 10 minutes. Split each aubergine and scoop out the flesh into a sieve." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press out excess liquid with a spoon, then transfer the flesh to the blender." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the tahini, crushed garlic, lemon juice, olive oil, and cumin. Blend until smooth." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Season with salt. Taste and add more lemon if needed." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spread onto a plate. Drizzle with olive oil and scatter over the parsley." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Dip tastes watery.", "cause": "Not enough liquid was drained from the aubergine flesh.", "fix": "Press the flesh in the sieve for a full 2 minutes." },
+            { "symptom": "Dip lacks smokiness.", "cause": "The aubergines were not charred enough.", "fix": "Roast until the skins are nearly black all over." }
+          ]
+        }
+      }
+    ]
+  }
+}

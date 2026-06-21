@@ -1,0 +1,106 @@
+{
+  "slug": "sweet-potato-soup",
+  "title": "Sweet Potato and Coconut Soup",
+  "subtitle": "Creamy blended soup with ginger and lime",
+  "excerpt": "A thick, velvety soup that comes together quickly from pantry staples. Coconut milk and fresh ginger give it warmth without any heaviness.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Draws on Caribbean and West Indian coconut soup traditions.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before adding the lime juice. Add lime when reheating.",
+    "batchable": true,
+    "batchNotes": "Double the batch easily in a large stockpot.",
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "caribbean",
+    "mealType": "lunch",
+    "mood": ["weeknight", "meal-prep"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Peel and cube the sweet potato before anything else so it softens evenly in the pot." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "sweet-potato", "amount": 1000, "unit": "g", "prepNote": "peeled and cubed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "medium", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 3, "unit": "cm", "prepNote": "grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coconut-milk", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lime", "amount": 1, "unit": "whole", "prepNote": "juice only, added at the end", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander-fresh", "amount": 20, "unit": "g", "prepNote": "to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the olive oil in the stockpot over medium heat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the onion and cook for 5 minutes until soft and translucent." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic, ginger, cumin, and chilli flakes. Cook for 1 minute." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the sweet potato and stir to coat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the stock and coconut milk. Bring to the boil." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce the heat and simmer for 20 minutes until the sweet potato is completely soft." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove from the heat and blend until smooth." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir in the lime juice. Season with salt and serve topped with fresh coriander." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Soup is too thick after blending.", "cause": "Sweet potato absorbed more liquid than expected.", "fix": "Stir in 100ml hot water or stock to reach the right consistency." },
+            { "symptom": "Soup lacks brightness.", "cause": "Not enough lime or seasoning.", "fix": "Add more lime juice and salt, then taste again." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "pernil",
+  "title": "Pernil",
+  "subtitle": "Slow-roasted spiced pork shoulder",
+  "excerpt": "Puerto Rican slow-roasted pork shoulder, rubbed with garlic, cumin, and oregano then marinated overnight. The result is tender meat with crisp skin.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the Puerto Rican pernil tradition of overnight-marinated slow-roasted pork.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 240,
+    "restingMinutes": 20,
+    "chillingMinutes": 480,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze shredded cooked meat in portions for up to 3 months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate overnight or for up to 24 hours in the fridge for best flavour.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "puerto rican",
+    "mealType": "dinner",
+    "mood": ["weekend", "entertaining"],
+    "temperatureCelsius": 150,
+    "temperatureNote": "Fan 130C / Gas 2",
+    "foundational": false
+  },
+  "recipeTools": [
+    {"slug": "roasting-tin", "isOptional": false},
+    {"slug": "probe-thermometer", "isOptional": false}
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {"type": "paragraph", "content": [{"type": "text", "text": "Pernil is cooked very low and slow so the meat falls apart. A probe thermometer will tell you when it is ready without guessing."}]},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "What you need"}]},
+      {"type": "ingredientsList", "attrs": {"defaultServings": 6, "items": [
+        {"ingredientSlug": "pork-shoulder", "amount": 2000, "unit": "g", "prepNote": "bone-in if possible", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "garlic", "amount": 10, "unit": "cloves", "prepNote": "minced", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "oregano-dried", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "cumin-ground", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "coriander-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "chilli-flakes", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "red-wine-vinegar", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "orange", "amount": 1, "unit": "whole", "prepNote": "juiced", "isOptional": false, "groupLabel": null}
+      ]}},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Method"}]},
+      {"type": "orderedList", "content": [
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Mix the garlic, oregano, cumin, coriander, and chilli flakes together in a bowl."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the olive oil, vinegar, and orange juice. Stir to a paste."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Score the skin of the pork deeply with a knife. Rub the paste all over, pushing it into the cuts."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Place in the roasting tin. Cover with foil. Chill for at least 8 hours or overnight."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 150C. Roast covered for 3 hours."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Remove the foil. Roast for another hour until the skin is crisp."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Check the internal temperature reads 90C or above. Rest for 20 minutes before serving."}]}]}
+      ]},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Troubleshooting"}]},
+      {"type": "troubleshooter", "attrs": {"items": [
+        {"symptom": "Skin is not crispy.", "cause": "Too much moisture or oven not hot enough.", "fix": "Remove foil, raise oven to 220C for 15 minutes."},
+        {"symptom": "Meat is not tender.", "cause": "Internal temperature not reached.", "fix": "Cover and return to oven for 30 more minutes."}
+      ]}}
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "plov",
+  "title": "Uzbek Plov",
+  "subtitle": "Central Asian lamb and rice pilaf with whole garlic",
+  "excerpt": "Lamb, carrot, and rice cooked together in one pot with cumin and a whole head of garlic pressed into the centre. The rice absorbs all the fat and stock as it cooks.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the traditional Uzbek plov method, adapted for a Western stockpot.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "central asian",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{ "slug": "stockpot", "isOptional": false }],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Rinse the rice several times in cold water until the water runs clear before you add it to the pot." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 600, "unit": "g", "prepNote": "cubed into 4cm pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "basmati-rice", "amount": 300, "unit": "g", "prepNote": "rinsed until water runs clear", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "medium", "prepNote": "peeled and cut into thin matchsticks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "medium", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "head", "prepNote": "kept whole with skin on, excess outer skin removed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-seeds", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "turmeric", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-oil", "amount": 5, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 700, "unit": "ml", "prepNote": "hot", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oil in the stockpot over high heat. Season the lamb with salt." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Brown the lamb in batches for 4 to 5 minutes. Remove and set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce heat to medium. Add the onion and cook for 8 minutes until dark golden." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the carrot, cumin seeds, coriander, and turmeric. Cook for 3 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the lamb to the pot. Pour over the hot stock. Bring to the boil." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Simmer for 20 minutes. Spread the rinsed rice in an even layer over the top. Do not stir." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press the whole garlic head into the centre of the rice." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover tightly. Cook over low heat for 25 to 30 minutes until the rice has absorbed all the stock." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the garlic head. Stir gently to mix the layers and serve." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Rice is crunchy after 30 minutes.", "cause": "Not enough liquid or heat too low.", "fix": "Add 100ml hot water, cover, and cook 10 more minutes on low." },
+            { "symptom": "Rice sticks and burns on the bottom.", "cause": "Heat too high during the covered stage.", "fix": "Place a folded tea towel under the lid to absorb steam and reduce heat." }
+          ]
+        }
+      }
+    ]
+  }
+}

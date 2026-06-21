@@ -1,0 +1,77 @@
+{
+  "slug": "banh-mi-bowl",
+  "title": "Banh Mi Bowl",
+  "subtitle": "Vietnamese pork mince bowl with pickled carrot",
+  "excerpt": "All the flavours of a banh mi served over rice. Pork mince is seasoned with soy and fish sauce, topped with quick-pickled carrot and fresh herbs.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Inspired by Vietnamese banh mi flavour profiles, adapted as a rice bowl.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Pickle the carrot up to a day ahead. Store in the fridge.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "vietnamese",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {"slug": "frying-pan-28", "isOptional": false},
+    {"slug": "rice-cooker", "isOptional": true}
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {"type": "paragraph", "content": [{"type": "text", "text": "The pickled carrot takes 10 minutes to soften in vinegar while the pork and rice cook. Everything is ready at the same time."}]},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "What you need"}]},
+      {"type": "ingredientsList", "attrs": {"defaultServings": 4, "items": [
+        {"ingredientSlug": "pork-mince", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "long-grain-rice", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "carrot", "amount": 2, "unit": "whole", "prepNote": "julienned; toss with rice vinegar and a pinch of salt to pickle", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "cucumber", "amount": 1, "unit": "whole", "prepNote": "sliced", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "coriander-fresh", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "spring-onion", "amount": 4, "unit": "whole", "prepNote": "sliced", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "minced", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "ginger-fresh", "amount": 20, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "fish-sauce", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "honey", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "lime", "amount": 1, "unit": "whole", "prepNote": "juiced", "isOptional": false, "groupLabel": null},
+        {"ingredientSlug": "rice-vinegar", "amount": 3, "unit": "tbsp", "prepNote": "for pickling", "isOptional": false, "groupLabel": null}
+      ]}},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Method"}]},
+      {"type": "orderedList", "content": [
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Toss the julienned carrot with rice vinegar and a pinch of salt. Set aside to pickle while you cook."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Cook the rice per the packet instructions. Keep warm."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat a little oil in the frying pan over a high heat. Add the garlic and ginger. Cook for 30 seconds."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the pork mince. Break it up and fry until golden, about 8 minutes."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the soy sauce, fish sauce, honey, and lime juice. Stir and cook for 2 more minutes."}]}]},
+        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Spoon rice into bowls. Top with pork, pickled carrot, cucumber, spring onion, and coriander."}]}]}
+      ]},
+      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Troubleshooting"}]},
+      {"type": "troubleshooter", "attrs": {"items": [
+        {"symptom": "Pork is steaming rather than frying.", "cause": "Pan not hot enough or too much pork at once.", "fix": "Fry in two batches over a higher heat."},
+        {"symptom": "Carrot is still crunchy.", "cause": "Not given enough time in the vinegar.", "fix": "Slice thinner and pickle for 15 minutes."}
+      ]}}
+    ]
+  }
+}
