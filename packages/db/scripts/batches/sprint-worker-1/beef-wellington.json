@@ -1,0 +1,474 @@
+{
+  "slug": "beef-wellington",
+  "title": "Beef Wellington",
+  "subtitle": "Beef fillet coated in mushroom duxelles and Parma ham, wrapped in puff pastry",
+  "excerpt": "Beef Wellington is a beef fillet wrapped in a layer of mushroom duxelles and Parma ham, then enclosed in puff pastry and roasted until the pastry is deep golden and the beef is pink inside. It takes time and care but the result is one of the most celebrated centrepieces in British cooking.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Beef Wellington is a 20th-century British dish, the name referencing the Duke of Wellington. The duxelles-and-pastry method became a British cooking classic through the 1960s and 1970s, appearing in post-war British cookery books as a special-occasion centrepiece.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 35,
+    "restingMinutes": 15,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The duxelles can be made 2 days ahead. The assembled, wrapped wellington can be refrigerated for up to 24 hours before baking. Do not freeze: the fillet overcooks on reheating.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": [
+      "entertaining",
+      "special"
+    ],
+    "temperatureCelsius": 220,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-30",
+      "isOptional": false
+    },
+    {
+      "slug": "food-processor",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "pastry-brush",
+      "isOptional": false
+    },
+    {
+      "slug": "meat-thermometer",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "duxelles",
+      "term": "Duxelles",
+      "definition": "Finely chopped mushrooms cooked down with shallots and butter until almost all the moisture has evaporated, leaving a concentrated, nearly dry mushroom paste."
+    },
+    {
+      "slug": "searing",
+      "term": "Searing",
+      "definition": "Browning the surface of meat quickly in a very hot pan to develop flavour before the main cooking phase."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Beef Wellington is a beef fillet sealed with a layer of "
+          },
+          {
+            "type": "text",
+            "text": "sear",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "searing"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "ed crust, coated in a concentrated mushroom paste called "
+          },
+          {
+            "type": "text",
+            "text": "duxelles",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "duxelles"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", wrapped in Parma ham, and then enclosed in puff pastry. The whole thing is chilled to firm up before a high-temperature roast. Getting the beef to the right internal temperature while the pastry is golden is the central challenge."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use a meat thermometer. There is no other reliable way to hit the right doneness: 52°C in the centre for medium-rare, which the fillet will carry to 55°C during resting. The duxelles must be completely dry before wrapping: wet mushrooms steam the pastry from within."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "beef-fillet",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "centre-cut, tied if uneven",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chestnut-mushrooms",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Duxelles"
+            },
+            {
+              "ingredientSlug": "shallot",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "Duxelles"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "Duxelles"
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": "leaves picked",
+              "isOptional": false,
+              "groupLabel": "Duxelles"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Duxelles"
+            },
+            {
+              "ingredientSlug": "prosciutto",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "thin slices",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dijon-mustard",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "puff-pastry",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "all-butter, ready-rolled or block",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sunflower-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Sear the fillet"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pat the beef dry. Season generously all over. Heat the oil in a large frying pan over very high heat. Sear the fillet on all sides including the ends, about 1 to 2 minutes per side, until a deep brown crust forms. Remove and brush all over with the mustard while still hot. Leave to cool completely."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the duxelles"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blitz the mushrooms in a food processor to a coarse paste. Melt the butter in the same frying pan over medium-high heat. Cook the shallots for 3 minutes, add the garlic and thyme leaves, then add the mushroom paste. Cook, stirring frequently, for 12 to 15 minutes until the moisture has completely evaporated and the mixture is almost dry and dark. Season well and cool completely. The duxelles must be completely dry: wet duxelles will make the pastry soggy."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Wrap the fillet"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lay a large piece of cling film on a board. Lay the Parma ham slices on it in overlapping rows to form a rectangle slightly wider than the length of the fillet. Spread the duxelles evenly over the ham."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the cooled fillet at the near edge. Use the cling film to roll the ham and duxelles tightly around the fillet, twisting the ends to form a tight log. Refrigerate for at least 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Roll the pastry to a rectangle about 35 x 30 cm. Unwrap the fillet log and place at the bottom of the pastry. Brush the pastry edges with beaten egg. Roll the fillet tightly in the pastry, sealing the seam at the bottom. Tuck and press the ends to seal. Place seam-side down on a lined baking tray. Brush all over with egg wash. Refrigerate for 30 minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bake and rest"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 220°C fan. Score the pastry top lightly with a knife in a crosshatch or diagonal pattern: this helps the pastry crisp rather than burst. Brush again with egg wash."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 25 to 30 minutes until the pastry is deep golden. Check the internal temperature with a meat thermometer: 52°C for medium-rare. Remove from the oven and rest for 15 minutes before slicing: the temperature will rise to 55°C during resting."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Pastry is soggy at the bottom",
+              "cause": "Duxelles were still wet when wrapped, or the wellington was not chilled before baking",
+              "fix": "Cook the duxelles until properly dry: you should be able to drag a spatula through the pan and see the base of the pan clearly. Chill the assembled wellington for at least 30 minutes before baking."
+            },
+            {
+              "symptom": "Beef is overcooked by the time the pastry is golden",
+              "cause": "The oven temperature was too low, extending the baking time",
+              "fix": "Use 220°C fan and check the temperature early. If the pastry is golden at 25 minutes, trust the thermometer: 52°C is medium-rare and will carry to 55°C at rest."
+            },
+            {
+              "symptom": "Wellington falls apart when sliced",
+              "cause": "The layers were not wrapped tightly or the fillet was not chilled long enough before final wrapping",
+              "fix": "Each cling-film wrap stage should be pulled tight to compress the layers together. The fillet must be cold and firm before the pastry goes on."
+            },
+            {
+              "symptom": "Ham falls away from the duxelles layer",
+              "cause": "Too much moisture between the layers",
+              "fix": "Ensure both the fillet and duxelles are completely cool and dry before wrapping. Moisture prevents the layers from bonding."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Beef Wellington is named after the Duke of Wellington, though the exact link has never been proved. It became a British dinner-party centrepiece from the 1960s onward. The dish needs a good piece of beef and some care with technique. Done well, it is one of the most striking things to put on a table."
+          }
+        ]
+      }
+    ]
+  }
+}

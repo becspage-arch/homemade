@@ -1,0 +1,454 @@
+{
+  "slug": "steak-and-kidney-pudding",
+  "title": "Steak and Kidney Pudding",
+  "subtitle": "Suet pastry steamed for four hours around a savoury filling",
+  "excerpt": "Steak and kidney pudding is beef and kidney sealed inside a suet crust and steamed in a pudding basin for four hours. The crust steams to a soft, slightly spongy texture quite unlike baked pastry, and the enclosed filling becomes intensely concentrated. It is one of the more old-fashioned British recipes but still one of the most satisfying in winter.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "WINTER",
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Isabella Beeton (1836 to 1865), the Victorian household writer,, Book of Household Management (1861): Project Gutenberg #10136. Beefsteak and kidney pudding recipe with suet crust, steamed 4 hours.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 240,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The pudding can be assembled the day before, covered, and refrigerated. Increase steaming time by 30 minutes if cooking straight from the fridge.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "pudding-basin",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "suet-pastry",
+      "term": "Suet pastry",
+      "definition": "A pastry made with shredded beef or vegetable suet instead of butter, giving a sturdy, slightly open texture that steams well without becoming waterlogged."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak and kidney pudding is raw meat encased in "
+          },
+          {
+            "type": "text",
+            "text": "suet",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "suet-pastry"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " pastry, sealed in a greased pudding basin, and steamed for four hours. The crust turns soft and slightly spongy rather than flaky; the filling cooks entirely in its own steam and juices, producing a very concentrated, tender result."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is one of the older British pudding recipes and it suits a day when you can leave the kitchen without watching the hob. Four hours of steaming is the minimum: the filling needs the full time to become properly tender. Keep the water in the saucepan topped up."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-chuck",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "cut into 2 cm cubes",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "ox-kidney",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "sinew removed, cut into 1.5 cm pieces",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "seasoned with salt and black pepper",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "worcestershire-sauce",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Suet pastry"
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Suet pastry"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Suet pastry"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "cold, grated (or use shredded beef suet)",
+              "isOptional": false,
+              "groupLabel": "Suet pastry"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": "cold",
+              "isOptional": false,
+              "groupLabel": "Suet pastry"
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a 1.2-litre pudding basin with a lid, or a deep heatproof bowl sealed with a double layer of greased baking paper and foil. The saucepan must be large enough to hold the basin with 5 cm of space around it and a lid on top."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the suet pastry"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the flour, baking powder, and salt in a large bowl. Add the cold grated butter and rub in lightly until the mixture resembles coarse breadcrumbs: a few larger pieces are fine. Add the cold water and bring together with a fork, then knead briefly to a smooth, slightly sticky dough. Do not overwork it."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut off a quarter of the dough for the lid. Roll the larger piece to a circle about 5 mm thick, large enough to line a greased 1.2-litre pudding basin with a 2 cm overhang. Press it into the basin, ensuring no gaps or thin spots."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fill and seal the pudding"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Toss the beef and kidney pieces in the seasoned flour until coated. Add the onion and mix through. Spoon into the lined basin, pressing the filling down. Add the worcestershire sauce and pour in the beef stock. The basin should be about three-quarters full: the filling expands slightly as it cooks."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Roll the remaining pastry to a circle the diameter of the basin top. Brush the pastry overhang with water, lay the lid over, and press the edges together firmly to seal. Trim any excess."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover the top of the basin with a double layer of greased baking paper and then foil, both pleated in the centre to allow for expansion. Tie securely under the rim with kitchen twine, making a handle across the top for lifting."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Steam for four hours"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place a folded cloth or small heatproof trivet in the base of a large saucepan. Lower the pudding basin onto it. Pour in enough boiling water to come halfway up the sides of the basin. Cover the saucepan tightly and bring to a steady simmer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Steam for 4 hours, checking the water level every 45 minutes and topping up with more boiling water when needed. The water should stay at a steady simmer, not a rolling boil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "To serve, remove the paper and foil. Run a palette knife around the inside of the basin and invert onto a deep plate: the pudding should come out cleanly. The crust will be pale and soft. Serve immediately with mashed potato and buttered greens."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Crust sticks to the basin",
+              "cause": "The basin was not greased well enough before lining",
+              "fix": "Grease the basin generously with softened butter, getting into the corners. Next time, also use a circle of baking paper on the base."
+            },
+            {
+              "symptom": "Filling is still tough after 4 hours",
+              "cause": "The heat was too low and the water barely simmered rather than steaming steadily",
+              "fix": "Return to the pan and steam for another 30 to 45 minutes, ensuring the water is at a proper simmer. The meat needs sustained heat to break down the collagen in the chuck."
+            },
+            {
+              "symptom": "Pastry is waterlogged and soggy",
+              "cause": "The cover was not sealed properly and steam condensed onto the top of the pastry",
+              "fix": "Ensure the paper and foil form a good seal tied firmly under the rim. A pleat in the centre allows the crust to expand without breaking the seal."
+            },
+            {
+              "symptom": "Filling is dry",
+              "cause": "The stock proportion was too low relative to the amount of flour used for dredging",
+              "fix": "Add an extra 50 ml of stock next time. The raw flour coating the meat will absorb liquid during the long steam, so the filling needs more liquid than you might expect."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steamed suet puddings were common in British kitchens from the eighteenth century. They needed no oven: just a pot of water on the hob. The steak and kidney version is one of the best known. Isabella Beeton (1836 to 1865), the Victorian household writer, described it in her famous cookbook. It was widely eaten in the Victorian period and remains a traditional British dish."
+          }
+        ]
+      }
+    ]
+  }
+}

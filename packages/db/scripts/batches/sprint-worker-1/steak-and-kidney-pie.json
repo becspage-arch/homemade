@@ -1,0 +1,505 @@
+{
+  "slug": "steak-and-kidney-pie",
+  "title": "Steak and Kidney Pie",
+  "subtitle": "A proper double-crust pie with slow-braised filling",
+  "excerpt": "Steak and kidney pie is the classic British pastry pie: braised beef and ox kidney in a dark, savoury gravy, encased in shortcrust pastry top and bottom. The filling takes a couple of hours on the hob, but the assembly is straightforward and the result is one of the most satisfying plates in the British repertoire.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "PUBLIC_DOMAIN",
+  "sourceNotes": "Isabella Beeton (1836 to 1865), the Victorian household writer,, Book of Household Management (1861): Project Gutenberg #10136. Steak and kidney pudding recipe adapted for pastry-based version.\nEliza Acton, Modern Cookery for Private Families (1845): ox-kidney preparation notes.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 150,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the unbaked assembled pie for up to 3 months. Bake from frozen at 180°C for 55 to 65 minutes. The baked pie reheats well the next day.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The filling improves overnight in the fridge. Make it a day ahead, cool fully, then assemble and bake the next day.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "weeknight",
+      "batch-cook"
+    ],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "pie-dish",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "rolling-pin",
+      "isOptional": false
+    },
+    {
+      "slug": "pastry-brush",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "deglaze",
+      "term": "Deglaze",
+      "definition": "To pour liquid into a hot pan and scrape up the browned bits stuck to the base, dissolving them into the sauce for extra flavour."
+    }
+  ],
+  "techniqueSlugs": [
+    "blind-baking"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak and kidney pie is beef and kidney braised slowly in a dark gravy, then sealed inside a shortcrust pastry case. The kidney gives the gravy its particular depth; the shortcrust bottom soaks it up without going soggy. Allow a couple of hours for the filling, and another 45 minutes once the pie is assembled."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ox kidney has a stronger flavour than lamb kidney. If you find it too pronounced, soak the pieces in cold water for 30 minutes before browning: it draws out some of the blood and softens the edge. Steak-and-kidney filling also improves overnight, so this is a good recipe to start the day before."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-chuck",
+              "amount": 700,
+              "unit": "g",
+              "prepNote": "cut into 3 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ox-kidney",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "sinew removed, cut into 2 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "seasoned",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chestnut-mushrooms",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "worcestershire-sauce",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sunflower-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shortcrust-pastry",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "ready-made or homemade",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "beaten, for glaze",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a heavy casserole dish or Dutch oven for the filling and a 23 to 24 cm deep pie dish for the assembly. A fluted pie funnel in the centre supports the pastry lid and vents steam: optional, but helpful."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the meat"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Toss the beef pieces in the seasoned flour until coated. Heat the oil in a large Dutch oven over a high heat. Brown the beef in batches: do not crowd the pan: until deep brown on all sides. Transfer to a plate."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the kidney pieces to the same pan and brown quickly, about 2 minutes per side. The kidney releases some liquid: let it evaporate before the pieces colour. Transfer to the plate with the beef."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the onions to the pan and cook over a medium heat for 8 to 10 minutes until softened and lightly golden. Add the mushrooms and cook for another 3 to 4 minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build and braise the filling"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return all the meat to the pan. Pour in the beef stock and use a wooden spoon to "
+                  },
+                  {
+                    "type": "text",
+                    "text": "deglaz",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "deglaze"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": "e: scrape up any browned bits from the base. Add the worcestershire sauce, thyme sprigs, and bay leaves."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a gentle simmer, then reduce the heat to the lowest setting. Cover and cook for 1 hour 30 minutes, stirring every 30 minutes, until the beef is tender and the gravy has thickened. Remove the thyme stalks and bay leaves. Taste and season."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tip the filling into the pie dish. Leave to cool completely before assembling: a hot filling softens the pastry base. Refrigerate if making ahead."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Line and fill the pie"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200°C fan. Divide the pastry roughly two-thirds to one-third. Roll the larger piece on a lightly floured surface to about 3 mm thickness, large enough to line the pie dish with a 2 cm overhang. Drape it in, pressing into the corners, and trim the edge."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon the cooled filling into the lined dish. Roll the remaining pastry into a lid. Brush the pastry rim with beaten egg, lay the lid over, and press the edges to seal. Trim and crimp the border."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cut a small steam vent in the centre of the lid. Brush the top with the remaining beaten egg. Bake for 40 to 45 minutes until the pastry is deep golden and the filling is bubbling at the vent."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Soggy pastry base",
+              "cause": "Filling was too hot or too liquid when the pie was assembled",
+              "fix": "Cool the filling fully before assembly. If the gravy is thin, simmer it uncovered for 10 to 15 minutes to reduce before adding to the dish."
+            },
+            {
+              "symptom": "Pastry lid shrinks and cracks",
+              "cause": "Pastry was stretched during rolling rather than lifted into place",
+              "fix": "Roll the lid slightly larger than needed and let it relax before placing over the filling. Chilling the assembled pie for 20 minutes before baking also helps."
+            },
+            {
+              "symptom": "Filling is still tough after 90 minutes",
+              "cause": "The heat was too high and the liquid evaporated before the meat softened",
+              "fix": "Add 100 to 150 ml more stock, cover, and continue cooking until the beef gives easily when pressed. Chuck benefits from a low, gentle heat over a high one."
+            },
+            {
+              "symptom": "Kidney flavour too strong",
+              "cause": "Kidney was not soaked or the sinew was not fully removed",
+              "fix": "Soak the trimmed kidney in cold water for 30 to 60 minutes next time. Ensuring the white sinew and any discoloured parts are removed also reduces harshness."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead and freezing"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The filling keeps for 3 days in the fridge and actually improves with a night's rest as the flavours settle. Freeze the assembled unbaked pie for up to 3 months. Bake from frozen at 180°C for 55 to 65 minutes, covering the pastry loosely with foil if it colours too quickly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak and kidney pie has been at the centre of British pub and home cooking since the mid-nineteenth century. Isabella Beeton (1836 to 1865), the Victorian household writer, described a similar filling baked in a suet crust. The pastry-lid version became the standard pub pie by the early twentieth century. It remains one of the most ordered dishes in British pubs today."
+          }
+        ]
+      }
+    ]
+  }
+}

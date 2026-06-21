@@ -1,0 +1,400 @@
+{
+  "slug": "pizza-romana",
+  "title": "Pizza Romana",
+  "subtitle": "Thin, crispy Roman-style pizza with a light tomato base",
+  "excerpt": "Pizza romana is the Roman style of pizza: a thin, very crispy base with almost no crust, baked at maximum oven temperature on a steel or stone until the base is cracker-thin underneath and the top is spotted and blistered. It is directly different from Neapolitan pizza, which is thicker, softer, and served with a puffy rim.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pizza romana (also called pizza scrocchiarella) is the Roman style of pizza, characterised by its thin, crispy base and absence of the puffy cornicione of Neapolitan pizza. The style is documented throughout Roman food culture from the early 20th century.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the dough up to 3 days ahead and refrigerate. Bring to room temperature for 1 hour before shaping.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "entertaining"
+    ],
+    "temperatureCelsius": 250,
+    "temperatureNote": "maximum oven temperature, pizza stone or steel",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "pizza-stone",
+      "isOptional": false
+    },
+    {
+      "slug": "rolling-pin",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pizza-stone",
+      "term": "Pizza stone or steel",
+      "definition": "A thick piece of stone or steel placed in the oven before preheating, which stores heat and gives a pizza base direct intense heat from below: necessary for a crispy base at home oven temperatures."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pizza romana is defined by its base: extremely thin, crisp enough to shatter when bent, and almost no rim. The dough is rolled rather than stretched, and it is baked at the highest possible oven temperature. A "
+          },
+          {
+            "type": "text",
+            "text": "pizza stone",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pizza-stone"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " or steel is not optional here: the direct radiant heat from below is what crisps the base. The cold 24 to 3-day prove develops the flavour and makes the dough easier to handle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "00-flour",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": "cold",
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "yeast-fast-action",
+              "amount": 2,
+              "unit": "g",
+              "prepNote": "less than half a teaspoon",
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "San Marzano, blended smooth",
+              "isOptional": false,
+              "groupLabel": "Tomato base"
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "for the tomato sauce",
+              "isOptional": false,
+              "groupLabel": "Tomato base"
+            },
+            {
+              "ingredientSlug": "mozzarella",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "fior di latte, thinly sliced and dried on paper for 30 minutes",
+              "isOptional": false,
+              "groupLabel": "Topping"
+            },
+            {
+              "ingredientSlug": "basil",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "leaves",
+              "isOptional": false,
+              "groupLabel": "Topping"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the dough (Day 1)"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the flour, salt, and yeast in a large bowl. Add the cold water and olive oil and mix to a rough dough. Knead on a lightly floured surface for 8 to 10 minutes until smooth and just slightly tacky: it should not stick to the surface but should feel alive and elastic."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide into 4 equal balls (about 200 g each). Oil each lightly, place in a covered container, and refrigerate for 24 to 3 days. The longer the prove within this range, the better the flavour."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat and prepare (Day 2)"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the dough from the fridge 1 hour before baking. Place the pizza stone or steel in the oven and heat to 250°C fan: the highest your oven will go. Preheat for at least 45 minutes; the stone must be very hot."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season the blended tomatoes with salt and 1 tablespoon of olive oil. Taste: it should be seasoned but not cooked."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Shape and bake"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Roll a dough ball on a well-floured surface with a rolling pin to an extremely thin round: aim for 30 to 32 cm, about 2 mm thick. The base should be almost translucent in places. Transfer to a sheet of baking paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spread a thin layer of tomato sauce, leaving 1 cm at the edge. Add sliced mozzarella (dried on paper: wet mozzarella will steam the base)."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slide the pizza (on its baking paper) onto the hot stone. Bake for 7 to 10 minutes until the base is crisp and golden underneath and the mozzarella is spotted and blistered. Add fresh basil after removing from the oven."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Base is soft rather than crisp",
+              "cause": "Stone was not preheated long enough, or oven temperature is too low",
+              "fix": "Preheat the stone for a minimum of 45 minutes at maximum temperature. Check the stone has fully saturated with heat before launching the first pizza."
+            },
+            {
+              "symptom": "Base has a large bubble in the middle",
+              "cause": "The dough was not pierced before baking, or had an uneven fermentation",
+              "fix": "Prick any large bubbles with a fork immediately when they appear in the oven. Docking the dough lightly with a fork before topping also prevents large bubbles."
+            },
+            {
+              "symptom": "Mozzarella is wet and watery on the pizza",
+              "cause": "Fresh mozzarella not dried before use",
+              "fix": "Slice and lay the mozzarella on kitchen paper for 30 minutes before use. Wet cheese makes the base soggy."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Roman pizza is called pizza scrocchiarella: crunchy pizza. It is the opposite of Neapolitan pizza. Where Naples prizes the soft, charred, high-crust margherita, Rome makes a style that is thin, flat, and very crisp. Roman pizza is sold by the slice in bakeries as street food. The round version is served in restaurants."
+          }
+        ]
+      }
+    ]
+  }
+}

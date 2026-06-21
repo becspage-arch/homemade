@@ -1,0 +1,419 @@
+{
+  "slug": "fish-pie",
+  "title": "Fish Pie",
+  "subtitle": "Smoked haddock, salmon, and prawns under a mashed potato crust",
+  "excerpt": "Fish pie is a proper British supper dish: poached smoked haddock, salmon, and prawns in a parsley cream sauce under a thick mashed potato crust. The combination of smoked fish and fresh fish, set together under the mash and baked until golden and bubbling, is deeply satisfying.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Classic British fish pie tradition. Smoked-and-fresh fish combination with mash crust is documented in 20th-century British home-cooking guides and school cookery books. The parsley sauce base is long-established in British fish cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 60,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the assembled unbaked pie for up to 2 months. Defrost fully in the fridge before baking at 200°C for 35 to 40 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The filling and mash can both be made a day ahead and refrigerated separately. Assemble cold and bake, adding 5 to 10 minutes to the oven time.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": [
+      "comfortFood",
+      "weeknight"
+    ],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "pie-dish",
+      "isOptional": false
+    },
+    {
+      "slug": "masher",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "poaching",
+      "term": "Poaching",
+      "definition": "Cooking food gently in liquid kept just below boiling point, so the protein doesn't tighten or become rubbery."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fish pie is a cream-and-parsley sauce filling of mixed fish under a mashed potato crust, baked until the top is golden and the filling is bubbling. The smoked haddock does most of the flavour work; the salmon adds richness; the prawns give texture. It is one of the few dishes where frozen prawns are properly fine: they release less water than you would expect once baked."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "smoked-haddock",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "skin on",
+              "isOptional": false,
+              "groupLabel": "Fish"
+            },
+            {
+              "ingredientSlug": "salmon-fillet",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "about 150 g each, skin removed",
+              "isOptional": false,
+              "groupLabel": "Fish"
+            },
+            {
+              "ingredientSlug": "prawns-raw",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "peeled",
+              "isOptional": false,
+              "groupLabel": "Fish"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": "for poaching",
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "hard-boiled, quartered",
+              "isOptional": true,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 900,
+              "unit": "g",
+              "prepNote": "floury variety, peeled and cut into chunks",
+              "isOptional": false,
+              "groupLabel": "Mash"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Mash"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "Mash"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Poach",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "poaching"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " the fish"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put the smoked haddock and salmon fillets in a large saucepan. Pour over the whole milk used for poaching: enough to just cover. Bring to a bare simmer over medium heat. Cook for 4 to 5 minutes until the fish is just opaque. Lift the fish out carefully and set aside. Reserve the poaching milk."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Once cool enough to handle, remove any skin and bones from the fish. Break into large, rough flakes and place in a deep pie dish or baking dish (about 2 litres capacity). Scatter the raw prawns over the fish, and the quartered boiled eggs if using."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the parsley sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt the butter in a saucepan over medium heat. Add the flour and stir for 1 minute to cook out the raw flavour. Gradually pour in the warm poaching milk, whisking constantly to prevent lumps. Bring to a simmer and cook for 4 to 5 minutes, stirring, until thick and smooth."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the heat. Stir in the parsley. Taste and season: the smoked haddock will have added salt to the milk, so add carefully. Pour the sauce over the fish in the pie dish, gently moving the fish so the sauce coats everything. Leave to cool."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mash and assemble"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the potatoes in well-salted boiling water until completely tender, about 20 minutes. Drain thoroughly and return to the pan. Mash with the butter and warm milk until smooth and fluffy. Season well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200°C fan. Spoon the mash over the cooled filling, spreading from the edges inward. Use a fork to rough up the surface: the peaks brown first and give the pie its characteristic golden crust."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 30 to 35 minutes until the mash is golden at the peaks and the filling is bubbling at the edges."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Filling is watery after baking",
+              "cause": "Fish released extra moisture during baking, or the sauce was too thin before assembly",
+              "fix": "Ensure the sauce is thick enough to heavily coat a spoon before pouring over the fish. Some moisture release is normal: scoop through to the base when serving."
+            },
+            {
+              "symptom": "Mash sinks into the filling",
+              "cause": "The filling was too warm when the mash was applied",
+              "fix": "Cool the filling until just warm before spreading the mash. Warm mash on warm filling tends to merge; cool filling holds the mash in a layer."
+            },
+            {
+              "symptom": "Prawns are rubbery",
+              "cause": "Prawns were pre-cooked before going into the pie and then cooked again in the oven",
+              "fix": "Always use raw prawns in the pie: they cook through in the oven and stay tender. Cooked prawns overcook in the heat of the filling."
+            },
+            {
+              "symptom": "Mash top is pale rather than golden",
+              "cause": "Oven temperature was too low, or the mash was spread too thickly",
+              "fix": "Roughen the mash surface with a fork before baking so the peaks catch the heat. If still pale after 35 minutes, switch on the grill for 3 to 4 minutes at the end."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fish pie is a British comfort dish, practical in origin: a way to use cheaper cuts of fish alongside smoked fish and offcuts of salmon, stretch them in a sauce, and feed a family from a single baking dish. The potato crust keeps it sealed and warming for longer than a pastry crust would. It sits alongside shepherd's pie and cottage pie in the British canon of mash-topped weeknight suppers."
+          }
+        ]
+      }
+    ]
+  }
+}
