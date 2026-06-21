@@ -1,0 +1,112 @@
+{
+  "slug": "vichyssoise",
+  "title": "Vichyssoise",
+  "subtitle": "Silky cold leek and potato soup finished with cream and chives",
+  "excerpt": "Vichyssoise is a cold leek and potato soup blended until very smooth and chilled before serving. The chill time is important: the flavour develops as it cools and the texture becomes silky. Snipped chives on top keep it clean and fresh.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the classic vichyssoise attributed to Louis Diat at the Ritz Carlton in New York, drawing on his French childhood leek and potato soup. Served cold in the traditional manner.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 120,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "glutenFree", "nutFree"],
+    "cuisine": "french",
+    "mealType": "starter",
+    "mood": ["elegant"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false },
+    { "slug": "sieve", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Taste the soup again once it is fully chilled before serving. Cold temperatures dull salt and seasoning, so vichyssoise almost always needs more salt added at the end than it seemed to need when hot." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "leek", "amount": 4, "unit": "whole", "prepNote": "white and pale green parts, sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 500, "unit": "g", "prepNote": "peeled and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 1000, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chives", "amount": 20, "unit": "g", "prepNote": "snipped, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt the butter in a large saucepan over medium-low heat. Add the leeks and onion. Cook gently for 10 minutes until very soft but not coloured. Stir regularly and keep the heat low." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the diced potato and vegetable stock. Season with salt and white pepper. Bring to a simmer and cook for 20 minutes until the potato is very soft." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blend the soup until very smooth using a jug blender. Pass through a fine sieve for the smoothest result. Stir in the double cream. Taste and adjust seasoning." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave to cool, then cover and chill in the fridge for at least 2 hours. Taste again when cold and add more salt as needed. Serve in chilled bowls with snipped chives on top." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Soup is grainy rather than silky.", "cause": "Not blended or sieved enough.", "fix": "Blend for longer and pass through a sieve." },
+            { "symptom": "Soup tastes bland when cold.", "cause": "Cold dulls seasoning.", "fix": "Add more salt before serving when chilled." },
+            { "symptom": "Soup is too thick after chilling.", "cause": "Potato thickens as it cools.", "fix": "Stir in a splash of cold stock or cream to loosen." }
+          ]
+        }
+      }
+    ]
+  }
+}

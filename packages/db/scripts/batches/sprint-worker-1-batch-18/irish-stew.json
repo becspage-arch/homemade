@@ -1,0 +1,111 @@
+{
+  "slug": "irish-stew",
+  "title": "Irish Stew",
+  "subtitle": "Classic lamb and potato stew with leek and fresh thyme",
+  "excerpt": "A traditional Irish stew is a one-pot of lamb, potato, and root vegetables cooked slowly in a light broth. There are no fancy techniques here. The potato breaks down slightly to thicken the stock, and the lamb becomes very tender. Parsley stirred in at the end keeps it fresh.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the traditional Irish stew using lamb shoulder. The minimal ingredient list and clear broth follow the classic County Dublin style.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "irish",
+    "mealType": "main",
+    "mood": ["comforting"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Brown the lamb before adding the liquid. This is optional in a traditional Irish stew, but even a quick sear adds colour and flavour to the finished broth." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 700, "unit": "g", "prepNote": "chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 600, "unit": "g", "prepNote": "peeled and halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "whole", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "whole", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "leek", "amount": 2, "unit": "whole", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 4, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 800, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "chopped, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Season the lamb chunks with salt and pepper. Place them in a large stockpot over medium-high heat with no extra oil. Brown on all sides, working in batches if needed. Set aside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the onion to the pot and cook for 5 minutes until softened. Return the lamb. Add the carrots, leeks, potatoes, bay leaves, and thyme." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the chicken stock. The liquid should just cover the ingredients. Bring to a gentle simmer, then cover and cook over low heat for 1.5 hours until the lamb is very tender." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the bay leaves and thyme stalks. Taste the broth and adjust seasoning. Stir in the chopped parsley just before serving. Ladle into deep bowls with crusty bread." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Lamb is still chewy at 1.5 hours.", "cause": "Needs more time.", "fix": "Cover and simmer for another 20 to 30 minutes." },
+            { "symptom": "Broth is too watery.", "cause": "Not enough reduction.", "fix": "Remove the lid and simmer 15 minutes to concentrate it." }
+          ]
+        }
+      }
+    ]
+  }
+}

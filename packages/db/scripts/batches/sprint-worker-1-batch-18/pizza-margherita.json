@@ -1,0 +1,114 @@
+{
+  "slug": "pizza-margherita",
+  "title": "Pizza Margherita",
+  "subtitle": "Classic Neapolitan pizza with tomato, mozzarella, and basil",
+  "excerpt": "A proper margherita depends on three things: a well-risen dough, a very hot oven, and good mozzarella. This version uses bread flour for a chewy, open crumb and bakes at the highest oven temperature to get close to the heat of a wood-fired oven. The result is blistered, fragrant, and simple.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on Neapolitan pizza-making principles. The dough hydration and high-temperature baking method follow traditional Italian technique.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "makes 2 large pizzas",
+    "prepMinutes": 30,
+    "cookMinutes": 12,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "italian",
+    "mealType": "main",
+    "mood": ["casual"],
+    "temperatureCelsius": 240,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Put the baking trays in the oven while it heats up so they are scorching hot before the pizza goes on. A cold tray is the main reason home pizza comes out with a soggy base." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": null,
+          "items": [
+            { "ingredientSlug": "bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mozzarella", "amount": 250, "unit": "g", "prepNote": "torn", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "basil", "amount": 20, "unit": "g", "prepNote": "leaves only", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "cloves", "prepNote": "minced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the bread flour with 7g fast-action yeast, 1 tsp salt, the olive oil, and 320ml warm water. Knead for 8 to 10 minutes until smooth and elastic. Place in an oiled bowl, cover, and leave to rise for 1 hour until doubled." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "While the dough rises, make the sauce. Crush the tinned tomatoes by hand. Stir in the garlic, tomato puree, a pinch of salt, and a drizzle of olive oil. No cooking needed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 240C. Place two baking trays inside to heat up. Divide the dough in half. Stretch each piece by hand on a floured surface into a thin round, roughly 30cm across." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay a pizza base on a sheet of baking paper. Spoon sauce over the base, leaving a 2cm border. Scatter over half the mozzarella. Slide onto a hot baking tray. Bake for 10 to 12 minutes until the crust is golden and the cheese is bubbling." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat with the second pizza. Scatter fresh basil leaves over both just before serving." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Dough springs back and will not stretch.", "cause": "Gluten is too tight.", "fix": "Rest it for 5 minutes, then stretch again slowly." },
+            { "symptom": "Base is soggy in the middle.", "cause": "Too much sauce or a cold tray.", "fix": "Use less sauce and make sure the tray is very hot." },
+            { "symptom": "Crust is pale and soft.", "cause": "Tray not high enough in the oven.", "fix": "Move to a higher shelf for the last 3 minutes." }
+          ]
+        }
+      }
+    ]
+  }
+}
