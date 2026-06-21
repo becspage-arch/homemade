@@ -1,0 +1,103 @@
+{
+  "slug": "paella",
+  "title": "Paella",
+  "subtitle": "Spanish rice dish with chicken, chorizo, and seafood",
+  "excerpt": "The iconic Spanish rice dish, cooked in a wide, shallow pan with chicken, chorizo, prawns, and mussels in a saffron-scented stock until the rice at the base forms the coveted crust called socarrat.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "recipe": {
+    "servings": 6,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "difficulty": "INTERMEDIATE",
+    "season": "YEAR_ROUND",
+    "dietary": ["gluten-free", "dairy-free"],
+    "sourceType": "CLASSIC",
+    "sourceNotes": "Paella originated in Valencia, on the eastern coast of Spain, where it was traditionally cooked outdoors over a wood fire in the distinctive wide, shallow two-handled pan that gives the dish its name. The original Valencian paella contained chicken, rabbit, snails, green beans, butter beans, and rice: seafood paella is a coastal adaptation, and the mixed meat-and-seafood version (paella mixta) is the most common variety outside Spain. The defining characteristic of a good paella is the socarrat: the crust of caramelised, slightly toasted rice that forms on the bottom of the pan as the stock is absorbed. This is achieved by not stirring the rice once the stock is added and increasing the heat briefly at the end. The rice used is a short, absorbent Spanish variety (Bomba or Calasparra) that can absorb three times its volume in liquid without becoming mushy. Saffron is the defining spice, giving both colour and flavour."
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "notes": "A 30 to 36 cm paella pan, or the widest shallow frying pan you have." }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Do not stir the rice once the stock is added: stirring releases starch and prevents socarrat from forming. The stock should be added hot; cold stock will cool the pan and disrupt the cooking. The pan needs to be large enough that the rice forms a layer no more than 2 cm deep: paella rice must cook in a shallow layer or it steams unevenly. Listen for the faint sizzling sound at the base in the final 2 minutes: that is the socarrat forming. Test with a spoon tip at the edge to check for the crust."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "servings": 6,
+          "items": [
+            { "ingredientSlug": "paella-rice", "amount": 400, "unit": "g" },
+            { "ingredientSlug": "chicken-thigh", "amount": 600, "unit": "g", "preparation": "bone-in, cut into pieces" },
+            { "ingredientSlug": "chorizo", "amount": 200, "unit": "g", "preparation": "cooking chorizo, sliced" },
+            { "ingredientSlug": "prawns-raw", "amount": 300, "unit": "g", "preparation": "shell-on king prawns" },
+            { "ingredientSlug": "mussels", "amount": 500, "unit": "g", "preparation": "scrubbed and debearded" },
+            { "ingredientSlug": "stock-chicken", "amount": 1200, "unit": "ml", "preparation": "kept warm" },
+            { "ingredientSlug": "saffron", "amount": 1, "unit": "pinch", "preparation": "steeped in 3 tbsp warm water for 10 minutes" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "preparation": "chopped" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "preparation": "finely chopped" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "preparation": "sliced" },
+            { "ingredientSlug": "pepper-red", "amount": 1, "unit": "each", "preparation": "sliced" },
+            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp" },
+            { "ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1.5, "unit": "tsp" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "preparation": "cut in wedges, to serve" },
+            { "ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "preparation": "roughly chopped, to serve" }
+          ]
+        }
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Heat the oil in a wide paella pan over high heat. Brown the chicken pieces on all sides for 8 minutes. Add the chorizo and cook for 2 minutes. Add the onion and pepper and cook for 4 minutes. Add the garlic and smoked paprika and cook for 1 minute." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Add the tomatoes and cook for 3 minutes. Add the rice and stir to coat in the oil for 1 minute. Pour in the hot stock and the saffron with its soaking water. Season. Bring to a boil, then reduce to a steady simmer. Do not stir from this point." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Cook for 12 minutes. Arrange the prawns and mussels on top, pressing them lightly into the rice. Cook for a further 8 minutes until the mussels have opened and the prawns are pink." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Increase the heat to high for the final 2 minutes to form the socarrat crust. Remove from the heat, cover with foil, and rest for 5 minutes. Scatter with parsley and serve with lemon wedges." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
