@@ -7,6 +7,24 @@ export * from '@prisma/client'
 // R2 uploader for scripts that work this package directly.
 export { r2Upload } from './r2'
 
+// Cross-craft collection tagging service (phase_collection_taxonomy_001).
+// The one place content is tagged against the controlled vocabulary; used by
+// every publish path + the search-doc builders + the back-catalogue backfill.
+export {
+  resolveTags,
+  setContentTags,
+  addContentTags,
+  removeAllContentTags,
+  getContentTags,
+  buildContentTagFacets,
+  getTagFacetsForContents,
+  deriveShelfTagSlug,
+  type ContentRef,
+  type ContentTagFacets,
+  type ResolvedTags,
+  type TagWriteResult,
+} from './collection-tags'
+
 // Category visibility helper — used by every publish path so a category
 // flips to publicly visible the moment it crosses the threshold.
 export {

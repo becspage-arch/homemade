@@ -31,7 +31,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 async function main(): Promise<void> {
   const { prisma } = await import('../src/index.js')
-  const { COLLECTION_VOCABULARY, validateVocabulary } = await import('../prisma/collection-vocabulary.ts')
+  const { COLLECTION_VOCABULARY, validateVocabulary } = await import('../prisma/collection-vocabulary.js')
 
   const errors = validateVocabulary()
   if (errors.length) {
