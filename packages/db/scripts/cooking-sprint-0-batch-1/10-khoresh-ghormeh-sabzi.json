@@ -1,0 +1,237 @@
+{
+  "slug": "khoresh-ghormeh-sabzi",
+  "title": "Khoresh ghormeh sabzi",
+  "subtitle": "Persian herb and kidney bean stew",
+  "excerpt": "A rich, dark Persian stew of lamb, kidney beans, dried fenugreek, and a mountain of fresh herbs slowly cooked until the herbs darken and the lamb is very tender. One of Iran's most beloved dishes, deep and complex.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Ghormeh sabzi is one of the oldest Persian dishes; references appear in medieval Iranian poetry and cookery manuscripts. Cross-referenced with Najmieh Batmanglij, Food of Life (2011) for herb proportions and cooking technique.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 150,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes for up to 3 months. Thaw overnight in the fridge and reheat slowly.",
+    "batchable": true,
+    "batchNotes": "Doubles well. The long cook time is the same for a larger batch.",
+    "makeAheadNotes": "Improves significantly made a day ahead. Reheat slowly over low heat with a splash of water.",
+    "dietaryFlags": [],
+    "cuisine": "middle-eastern",
+    "mealType": "dinner",
+    "mood": ["weekend", "comfort-food", "dinner-party"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "khoresh",
+      "term": "Khoresh",
+      "definition": "The Persian word for stew; a slow-cooked dish of meat, vegetables, or pulses served over or alongside chelow (steamed rice)."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ghormeh sabzi is a Persian herb "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "khoresh"}}],
+            "text": "khoresh"
+          },
+          {
+            "type": "text",
+            "text": " (stew) of lamb, kidney beans, dried limes, and a very large quantity of fresh herbs (parsley, coriander, spring onion, and dried fenugreek) that are sautéed separately until dark before being added to the braise. The herbs lose their brightness and become earthy and concentrated as the stew cooks for two and a half hours. The result is deep, almost dark green, and intensely savoury."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The dried limes give a sour, slightly musty note that is unlike anything else in cooking. They are available in Middle Eastern grocery shops. Substitute 2 tablespoons of lemon juice added at the end if unavailable, though the flavour is different."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 600, "unit": "g", "prepNote": "cut into 3 cm pieces", "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "kidney-beans", "amount": 400, "unit": "g", "prepNote": "one tin, drained and rinsed", "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "turmeric", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "black-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice, for souring if dried limes unavailable", "isOptional": true, "groupLabel": "For the stew" },
+            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the stew" },
+            { "ingredientSlug": "parsley-flat", "amount": 100, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Herb mixture" },
+            { "ingredientSlug": "coriander", "amount": 80, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Herb mixture" },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Herb mixture" },
+            { "ingredientSlug": "fenugreek-leaves", "amount": 3, "unit": "tbsp", "prepNote": "dried fenugreek leaves (kasoori methi)", "isOptional": false, "groupLabel": "Herb mixture" },
+            { "ingredientSlug": "vegetable-oil", "amount": 60, "unit": "ml", "prepNote": "divided", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sea-salt-fine", "amount": null, "unit": "pinch", "prepNote": "to season", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Sauté the herbs" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Heat 3 tablespoons of oil in a wide frying pan over medium-high heat. Add the chopped parsley, coriander, spring onion, and dried fenugreek. Fry, stirring frequently, for 10 to 15 minutes until the herbs have darkened significantly and are almost dry. They should smell earthy and concentrated. Set aside." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the lamb" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "In a casserole, heat the remaining oil over medium-high heat. Brown the lamb pieces in two batches, turning until coloured on all sides. Remove and set aside." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "In the same casserole, cook the onion over medium heat for 8 minutes until golden. Add the turmeric and pepper and cook for 1 minute." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Braise slowly" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Return the lamb to the pot. Add the sautéed herbs, the drained kidney beans, and the stock. Bring to a simmer, then reduce heat to low. Cover and cook for 2 to 2.5 hours, stirring occasionally, until the lamb is very tender and the stew has deepened in colour." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Taste and season. The stew should be slightly sour. Add lemon juice or adjust salt as needed. Serve over saffron rice with extra herbs if you like." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The stew lacks depth and tastes green and grassy",
+              "cause": "The herbs were not sautéed long enough",
+              "fix": "The herb fry is non-negotiable. They must darken significantly and smell earthy before going into the stew."
+            },
+            {
+              "symptom": "The lamb is tough after 2 hours",
+              "cause": "The heat was too high, toughening the meat",
+              "fix": "Cook on the lowest possible heat with a heavy lid. Alternatively, add 30 minutes more cooking time."
+            },
+            {
+              "symptom": "The stew is too watery",
+              "cause": "Too much stock",
+              "fix": "Remove the lid for the final 30 minutes to reduce. It should be thick enough to mound slightly."
+            },
+            {
+              "symptom": "The flavour tastes flat",
+              "cause": "Insufficient salt or acidity",
+              "fix": "Add more salt and a squeeze of lemon juice. Ghormeh sabzi should be assertively seasoned."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ghormeh sabzi is often called the national dish of Iran. It appears at celebrations, on New Year tables (Nowruz), and in the repertoire of every Iranian home cook. The dish varies by region and by family: some use lamb, some use beef; the herb mix shifts slightly; some include dried limes (limu omani), which add a particular sour mustiness. The constant is the long cooking and the dark, intensely savoury herb base."
+          }
+        ]
+      }
+    ]
+  }
+}

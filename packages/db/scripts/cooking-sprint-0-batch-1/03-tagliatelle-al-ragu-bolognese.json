@@ -1,0 +1,296 @@
+{
+  "slug": "tagliatelle-al-ragu-bolognese",
+  "title": "Tagliatelle al ragù bolognese",
+  "subtitle": "The proper Emilian meat sauce on egg pasta",
+  "excerpt": "A slow-cooked ragù of beef, pork, and soffritto, built on white wine and whole milk rather than tomato. Served on wide egg tagliatelle, not spaghetti. This is the Bologna original, registered with the Chamber of Commerce in 1982.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Delia della Cucina Italiana, the Italian Culinary Academy registered recipe (1982) deposited with the Bologna Chamber of Commerce. Cross-referenced with Marcella Hazan, The Classic Italian Cook Book (1973) for the soffritto method and milk technique.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 150,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "The ragù freezes for up to 3 months. Cook the pasta fresh each time.",
+    "batchable": true,
+    "batchNotes": "Double or triple the ragù and freeze in portions. The slow cook time is the same regardless of quantity.",
+    "makeAheadNotes": "The ragù improves made a day ahead. Refrigerate overnight and reheat slowly with a splash of water.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["comfort-food", "weekend", "dinner-party"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "chefs-knife", "isOptional": false },
+    { "slug": "chopping-board", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "soffritto",
+      "term": "Soffritto",
+      "definition": "The aromatic base of Italian cooking: onion, celery, and carrot cooked slowly in fat until soft and sweet, forming the foundation flavour for sauces, braises, and soups."
+    },
+    {
+      "slug": "ragu",
+      "term": "Ragù",
+      "definition": "A slow-cooked Italian meat sauce where the meat is braised in a small amount of liquid until tender and the sauce is rich and concentrated."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is the Bolognese the city of Bologna registered as its own in 1982. It is a "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "ragu"}}],
+            "text": "ragù"
+          },
+          {
+            "type": "text",
+            "text": " of beef and pork, built on a slow "
+          },
+          {
+            "type": "text",
+            "marks": [{"type": "glossaryTooltip", "attrs": {"termSlug": "soffritto"}}],
+            "text": "soffritto"
+          },
+          {
+            "type": "text",
+            "text": ", deglazed with wine and milk, with just a little tomato. Cook it for at least two hours until the meat is tender and the sauce is rich and creamy."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve it on fresh egg tagliatelle, never spaghetti. The flat surface of the pasta catches the sauce rather than letting it slide off. Parmesan goes over the top, nothing else."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-mince", "amount": 200, "unit": "g", "prepNote": "coarsely minced, not too lean", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "pork-mince", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "pancetta", "amount": 80, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "celery", "amount": 1, "unit": "each", "prepNote": "finely chopped, one stick", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "dry-white-wine", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "whole-milk", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "stock-beef", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the ragù" },
+            { "ingredientSlug": "pasta-fresh", "amount": 400, "unit": "g", "prepNote": "fresh egg tagliatelle", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "freshly grated", "isOptional": false, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Build the soffritto" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Melt the butter with the olive oil in a heavy casserole over low heat. Add the pancetta and cook for 5 minutes until beginning to colour. Add the onion, celery, and carrot. Cook slowly for 15 minutes, stirring occasionally, until soft and very lightly golden." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Brown the meat" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Turn the heat to medium-high. Add the beef and pork in one layer. Do not stir for 2 minutes; let the meat brown underneath. Break it up with a spoon and continue cooking until no pink remains and any moisture has evaporated, about 8 minutes." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Pour in the white wine. Stir well and cook until it has almost completely evaporated, about 5 minutes." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the milk. Cook, stirring occasionally, until it has also evaporated and the meat looks creamy, about 10 minutes." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "The long cook" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the crushed tomatoes and stock. Stir well, season with salt and pepper, and reduce to the lowest possible heat. Set the lid slightly ajar and cook for at least 2 hours, ideally 3. Stir every 30 minutes. Add a splash more stock if the ragù looks dry; it should be just loose enough to coat a spoon." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Taste and adjust the seasoning when the meat is completely tender and the sauce rich. The ragù should be deeply flavoured, not sharp. A pinch of sugar corrects a tart tomato." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the pasta and serve" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Cook the tagliatelle in a large pot of well-salted boiling water. Fresh pasta takes 2 to 3 minutes. Drain, reserving a cup of pasta water." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Add the pasta to the ragù off the heat with a splash of pasta water. Toss well until every strand is coated. Serve immediately with Parmesan over the top." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The ragù is greasy and separates",
+              "cause": "The mince was too fatty, or it was not browned properly before the liquid was added",
+              "fix": "Skim the surface fat during the long cook. Use mince with about 15% fat for the best result."
+            },
+            {
+              "symptom": "The sauce tastes thin and sour after 2 hours",
+              "cause": "The tomato was not balanced or the cook was too short",
+              "fix": "Continue cooking with the lid off for 20 more minutes and add a pinch of sugar. The long cook mellows the acidity."
+            },
+            {
+              "symptom": "The meat has formed hard clumps",
+              "cause": "The heat was too high during browning or the mince was packed too tightly",
+              "fix": "Break up the clumps with a fork and continue. Next time, spread the mince loosely before browning."
+            },
+            {
+              "symptom": "The pasta is clumping together",
+              "cause": "It was left to sit after draining",
+              "fix": "Toss the pasta into the ragù immediately after draining, while still hot. Add pasta water to loosen."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bologna is a city that takes its food seriously. The local chamber of commerce registered the recipe for ragù bolognese in 1982, partly to protect it from the tomato-heavy, cream-added versions that spread through Europe in the mid-twentieth century. The original is lighter and more delicate than most people expect. The milk is the surprise: it tenderises the meat and rounds the acidity of the wine."
+          }
+        ]
+      }
+    ]
+  }
+}
