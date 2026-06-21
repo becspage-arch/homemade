@@ -1,0 +1,105 @@
+{
+  "slug": "mushroom-risotto",
+  "title": "Mushroom Risotto",
+  "subtitle": "Creamy Italian risotto with chestnut mushrooms",
+  "excerpt": "Slow-stirred arborio rice with chestnut mushrooms and parmesan makes a deeply savoury main course. Use a good hot stock and take your time with each ladleful.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Draws on classic northern Italian risotto technique. Stock quantity and finish method follow standard restaurant practice.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comforting"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Good risotto needs patience and hot stock. Keep the stock simmering in a separate pan and add it one ladle at a time." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "arborio-rice", "amount": 320, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 400, "unit": "g", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "minced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 3, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-vinegar", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 1200, "unit": "ml", "prepNote": "kept hot in a separate pan", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parmesan", "amount": 80, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "cold, cubed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the olive oil in a large saucepan over medium-high heat. Add the mushrooms and cook for 5 minutes until golden. Remove and set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce heat to medium. Add the onion and cook for 4 minutes until soft. Add the garlic and thyme. Cook for 1 minute." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the rice and stir for 2 minutes until the grains look translucent at the edges." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the white wine vinegar. Stir until absorbed." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the stock one ladle at a time. Stir after each addition and wait until absorbed before adding the next. This takes about 18 to 20 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir in the mushrooms, butter, and parmesan. Remove from heat. The risotto should be loose and creamy." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the thyme sprigs. Scatter over the parsley and serve immediately." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Risotto is stodgy and thick.", "cause": "Stock added too quickly or not enough liquid used.", "fix": "Add a splash of hot stock and stir vigorously to loosen." },
+            { "symptom": "Rice is still hard after 20 minutes.", "cause": "Stock was not hot enough or heat was too low.", "fix": "Raise heat and keep adding hot stock until rice is tender." },
+            { "symptom": "Risotto spread flat on the plate.", "cause": "Too much liquid left in the pan.", "fix": "Cook one more minute, stirring, before serving." }
+          ]
+        }
+      }
+    ]
+  }
+}

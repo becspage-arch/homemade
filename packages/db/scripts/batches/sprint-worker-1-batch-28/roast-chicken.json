@@ -1,0 +1,102 @@
+{
+  "slug": "roast-chicken",
+  "title": "Classic Roast Chicken",
+  "subtitle": "Simple butter-basted whole chicken with lemon and herbs",
+  "excerpt": "A good roast chicken needs three things: butter under the skin, a hot oven, and a proper rest. This version uses lemon, garlic, and thyme for a clean, classic result.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "British roast chicken method. Internal temperature check is the most reliable way to confirm doneness.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 80,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weekend", "comforting"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Fan 180 or gas 6",
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false },
+    { "slug": "probe-thermometer", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Take the chicken out of the fridge an hour before roasting. A cold bird going into a hot oven can cook unevenly." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-whole", "amount": 1, "unit": "whole", "prepNote": "about 1.5kg", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "whole", "prepNote": "halved; one half for the cavity, one for the tin", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "head", "prepNote": "halved horizontally", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 5, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 2, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 200 degrees C. Rest the chicken at room temperature for 1 hour before cooking." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the softened butter with the leaves from 2 thyme sprigs. Season well." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Loosen the skin over the breast by sliding your fingers underneath. Push the herb butter beneath the skin and spread it evenly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stuff the cavity with one lemon half, the garlic, and the remaining thyme and rosemary." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the chicken in the roasting tin. Season the skin generously." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roast for 20 minutes per 500g plus 20 minutes. For a 1.5kg chicken this is about 80 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the thickest part of the thigh with a probe thermometer. It should read 75 degrees C." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rest uncovered for 15 minutes before carving." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Breast meat is dry but legs are still pink.", "cause": "Chicken started cold or oven ran too hot.", "fix": "Always rest at room temperature first; use a probe to check legs." },
+            { "symptom": "Skin is pale and not crispy.", "cause": "Moisture on the surface or oven not hot enough.", "fix": "Pat skin very dry before buttering; increase heat for the last 10 minutes." },
+            { "symptom": "Juices run pink after resting.", "cause": "Not fully cooked; thermometer is the only reliable check.", "fix": "Return to the oven for 10 more minutes and re-check temperature." }
+          ]
+        }
+      }
+    ]
+  }
+}

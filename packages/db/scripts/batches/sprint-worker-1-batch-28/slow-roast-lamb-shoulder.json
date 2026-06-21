@@ -1,0 +1,100 @@
+{
+  "slug": "slow-roast-lamb-shoulder",
+  "title": "Slow-Roasted Lamb Shoulder",
+  "subtitle": "Fall-apart lamb with garlic and rosemary",
+  "excerpt": "Four hours in a low oven turns a bone-in lamb shoulder into tender, pull-apart meat. Stud it with garlic and rosemary and leave the oven to do the rest.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Classic British slow-roast technique. Low temperature and long cook time break down the collagen in the shoulder into gelatin, keeping the meat moist.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 240,
+    "restingMinutes": 20,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze pulled meat in portions with a little of the cooking juices for up to 3 months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weekend", "comforting"],
+    "temperatureCelsius": 150,
+    "temperatureNote": "Fan 130 or gas 2. Low and slow.",
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false },
+    { "slug": "probe-thermometer", "isOptional": true }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The lamb needs very little attention once it is in the oven. Give it a full 4 hours and it will fall from the bone." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 1500, "unit": "g", "prepNote": "bone-in, about 1.5kg", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 8, "unit": "cloves", "prepNote": "halved lengthways", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 5, "unit": "sprigs", "prepNote": "broken into smaller pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "whole", "prepNote": "juice only", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 150 degrees C. Take the lamb out of the fridge 30 minutes before cooking." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Use a small sharp knife to make 16 deep cuts all over the lamb. Push a piece of garlic and a small sprig of rosemary into each cut." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the olive oil, lemon juice, and cumin. Rub all over the lamb. Season generously." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place in a roasting tin. Cover tightly with foil. Roast for 3 hours 30 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the foil. Increase heat to 200 degrees C. Roast for a further 30 minutes to colour the skin." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove from the oven. Tent loosely with foil and rest for 20 minutes before pulling apart with two forks." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Meat is still tough after 4 hours.", "cause": "Oven ran cool or the shoulder was very large.", "fix": "Cover again and roast for another 30 to 45 minutes." },
+            { "symptom": "Outside is dark but meat inside is dry.", "cause": "Foil removed too early and heat was too high.", "fix": "Keep foil on for the full slow period; only uncover at the end." },
+            { "symptom": "Very little liquid in the tin for gravy.", "cause": "Lean shoulder or cooking without any added liquid.", "fix": "Add 150ml water to the tin before covering with foil." }
+          ]
+        }
+      }
+    ]
+  }
+}

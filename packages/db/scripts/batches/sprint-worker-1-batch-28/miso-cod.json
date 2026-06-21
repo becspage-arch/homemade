@@ -1,0 +1,99 @@
+{
+  "slug": "miso-cod",
+  "title": "Miso-Glazed Cod",
+  "subtitle": "Oven-baked cod with a white miso and mirin glaze",
+  "excerpt": "White miso, mirin, and a little honey make a sweet-salty glaze that caramelises beautifully on cod. A short marinating time makes a real difference to the depth of flavour.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the nobu-style miso black cod preparation, simplified for cod fillet and home ovens.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 12,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate up to 24 hours in the fridge for a deeper flavour.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": ["weeknight", "impressive"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Fan 180 or gas 6. Grill at the end for colour.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Mix the glaze and marinate the fish for at least 30 minutes before cooking. Even a brief rest helps the miso penetrate the flesh." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "cod-fillet", "amount": 600, "unit": "g", "prepNote": "4 pieces of about 150g each, skinless", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "miso-white", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mirin", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sesame-oil", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 3, "unit": "whole", "prepNote": "finely sliced, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the miso, mirin, soy sauce, honey, and sesame oil together in a bowl until smooth." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pat the cod dry. Coat each piece in the glaze. Place in the roasting tin, cover, and chill for 30 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 200 degrees C. Remove the fish from the fridge 10 minutes before cooking." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake for 10 minutes. Switch to the grill on high for 2 minutes to caramelise the top. Watch closely; miso burns quickly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scatter over the spring onion and serve with steamed rice." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Glaze burnt black under the grill.", "cause": "Left under grill too long; miso sugars char fast.", "fix": "Check every 30 seconds once under the grill." },
+            { "symptom": "Fish stuck to the tin.", "cause": "No lining or oil in the tin.", "fix": "Line the tin with foil and brush lightly with oil." },
+            { "symptom": "Flesh is still translucent in the centre.", "cause": "Pieces were very thick and needed longer baking.", "fix": "Return to oven for 3 to 4 more minutes before grilling." }
+          ]
+        }
+      }
+    ]
+  }
+}

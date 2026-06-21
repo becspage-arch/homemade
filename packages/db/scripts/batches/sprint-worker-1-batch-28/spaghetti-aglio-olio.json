@@ -1,0 +1,100 @@
+{
+  "slug": "spaghetti-aglio-olio",
+  "title": "Spaghetti Aglio e Olio",
+  "subtitle": "Classic garlic and olive oil pasta",
+  "excerpt": "Five ingredients, fifteen minutes, and a proper Italian weeknight staple. The trick is gently frying the garlic in plenty of olive oil without letting it colour too dark.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Traditional Neapolitan recipe. Chilli flakes and parsley are the only additions to the canonical garlic-oil base.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "dairyFree", "nutFree"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "quick"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-28", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Keep the pasta water starchy and use it to bring the sauce together. The garlic goes in cold oil so it cooks slowly without burning." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "spaghetti", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 8, "unit": "cloves", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 40, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "finely grated, to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring a large pan of well-salted water to the boil. Cook the spaghetti according to packet instructions until just al dente." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "While the pasta cooks, put the garlic and olive oil in a cold frying pan. Place over low-medium heat. Cook gently for 6 to 8 minutes until the garlic is pale gold and fragrant." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the chilli flakes. Stir for 30 seconds." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scoop out a mugful of pasta water before draining." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drain the pasta and add it to the frying pan. Add a large splash of pasta water. Toss over medium heat for 1 minute until the sauce clings to the pasta." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove from the heat. Add the parsley and toss again. Serve with parmesan if using." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Garlic turned dark brown and bitter.", "cause": "Heat was too high or it was left unattended.", "fix": "Start again with fresh garlic in cold oil over low heat." },
+            { "symptom": "Pasta looks dry and clumped.", "cause": "Not enough pasta water added to emulsify the oil.", "fix": "Add more pasta water a splash at a time while tossing." },
+            { "symptom": "Dish tastes flat despite the garlic.", "cause": "Pasta was not salted enough during cooking.", "fix": "Add flaky salt at the table and use more next time." }
+          ]
+        }
+      }
+    ]
+  }
+}

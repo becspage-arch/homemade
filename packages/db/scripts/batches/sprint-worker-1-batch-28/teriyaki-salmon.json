@@ -1,0 +1,101 @@
+{
+  "slug": "teriyaki-salmon",
+  "title": "Teriyaki Salmon",
+  "subtitle": "Pan-fried salmon glazed with soy, mirin, and honey",
+  "excerpt": "Salmon fillets marinated in a classic teriyaki glaze and cooked in a hot pan until the sauce becomes thick and lacquered. Ready in under 20 minutes once the marinade time is done.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Standard Japanese teriyaki preparation applied to salmon. Sake, mirin, soy sauce, and honey are the canonical four teriyaki components.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 12,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate for up to 24 hours in the fridge.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": ["weeknight", "quick"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-28", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Do not move the salmon while it is searing. Let the skin crisp up fully on one side before turning." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "salmon-fillet", "amount": 600, "unit": "g", "prepNote": "4 pieces of about 150g each, skin on", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mirin", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sake", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "clove", "prepNote": "minced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 10, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sesame-oil", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the soy sauce, mirin, sake, honey, garlic, ginger, and sesame oil in a shallow dish." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the salmon fillets skin-side up. Cover and chill for 30 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the salmon from the marinade and set the marinade aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat a frying pan over medium-high heat. Add a small drizzle of oil. Place the salmon skin-side down. Cook for 4 minutes without moving it." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Flip the salmon. Pour the reserved marinade into the pan around the fish. Cook for 3 more minutes until the sauce reduces and becomes sticky." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spoon the sauce over the salmon and serve immediately with steamed rice." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Glaze burnt in the pan before salmon cooked through.", "cause": "Heat was too high when the marinade was added.", "fix": "Reduce heat to medium when adding marinade; swirl to prevent burning." },
+            { "symptom": "Skin stuck to the pan when flipping.", "cause": "Skin not fully released; it needed more time on the first side.", "fix": "If the salmon resists the spatula, give it another minute." },
+            { "symptom": "Sauce did not thicken and glaze.", "cause": "Too much liquid in the pan or heat too low.", "fix": "Raise heat and simmer the sauce briefly before spooning over." }
+          ]
+        }
+      }
+    ]
+  }
+}
