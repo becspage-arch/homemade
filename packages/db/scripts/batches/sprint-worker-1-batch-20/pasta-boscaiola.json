@@ -1,0 +1,101 @@
+{
+  "slug": "pasta-boscaiola",
+  "title": "Pasta Boscaiola",
+  "subtitle": "Creamy mushroom and pancetta pasta",
+  "excerpt": "Boscaiola means woodsman-style in Italian, and the sauce reflects its forest roots: earthy chestnut mushrooms with cured pork and fresh thyme in a cream sauce. It takes about 30 minutes from start to bowl.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pasta boscaiola is a northern Italian dish traditionally made with porcini or wild mushrooms. The name refers to the woodsmen who harvested the forest ingredients.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-28", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Let the mushrooms cook without stirring at first. A still pan lets them brown on one side before you move them, which develops far more flavour than constant tossing." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pancetta", "amount": 150, "unit": "g", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 300, "unit": "g", "prepNote": "quartered", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 3, "unit": "sprigs", "prepNote": "leaves stripped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook the pasta in well-salted boiling water until al dente. Drain and keep 200ml of pasta water." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "While pasta cooks, heat the oil in the frying pan over medium-high heat. Add pancetta and cook for 5 minutes until golden." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the mushrooms. Cook without stirring for 3 minutes, then stir and cook for 2 more minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic and thyme. Cook for 1 minute." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the cream and 100ml of pasta water. Simmer for 3 minutes until slightly thickened." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the cooked pasta and toss. Add more pasta water as needed to loosen the sauce. Serve with parmesan." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Mushrooms are steaming and soft instead of brown.", "cause": "Pan was crowded and moisture could not escape.", "fix": "Cook mushrooms in two batches next time." },
+            { "symptom": "Sauce has split and looks greasy.", "cause": "Cream boiled too hard.", "fix": "Turn heat to low and add a splash of pasta water, stir gently." }
+          ]
+        }
+      }
+    ]
+  }
+}

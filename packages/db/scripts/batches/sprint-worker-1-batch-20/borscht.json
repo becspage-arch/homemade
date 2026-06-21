@@ -1,0 +1,104 @@
+{
+  "slug": "borscht",
+  "title": "Borscht",
+  "subtitle": "Ukrainian-style vegetable soup with sweet potato and cabbage",
+  "excerpt": "Borscht is a hearty Eastern European soup traditionally made with beetroot. This version builds the same deep, earthy flavour using roasted sweet potato and shredded white cabbage in a beef stock base with a hit of red wine vinegar for sharpness. Served with soured cream and dill.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Borscht is one of Ukraine's national dishes and is eaten across Eastern Europe and Russia in many variations. The soup can be clear or creamy, hot or cold, with meat or vegetarian. The defining flavour is earthy root vegetables with a sour note from vinegar or fermented beet.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Make a big pot; it keeps well in the fridge for 4 days.",
+    "makeAheadNotes": "Excellent the next day when the flavours have had time to develop.",
+    "dietaryFlags": ["glutenFree", "nutFree"],
+    "cuisine": "ukrainian",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Add the red wine vinegar at the end of cooking, not at the start. Acid added too early can stop the sweet potato softening properly." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "sweet-potato", "amount": 500, "unit": "g", "prepNote": "peeled and diced 2cm", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "medium", "prepNote": "peeled and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "large", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cabbage-white", "amount": 200, "unit": "g", "prepNote": "core removed, finely shredded", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 1000, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine-vinegar", "amount": 2, "unit": "tbsp", "prepNote": "added at the end", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soured-cream", "amount": 100, "unit": "ml", "prepNote": "to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dill", "amount": 20, "unit": "g", "prepNote": "fronds only, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat a little oil in the stockpot over medium heat. Cook the onion and carrot for 8 minutes until softened." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic and cook for 1 minute." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the sweet potato, tinned tomatoes, stock, and bay leaves. Bring to a boil." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce heat and simmer for 20 minutes until the sweet potato is tender." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the shredded cabbage. Simmer for 15 more minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the bay leaves. Add the red wine vinegar. Taste and adjust salt and vinegar to taste." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ladle into bowls. Top with soured cream and fresh dill. Serve with rye bread." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Soup tastes flat and one-dimensional.", "cause": "Vinegar was not added or seasoning is off.", "fix": "Add a good splash more red wine vinegar; taste again." },
+            { "symptom": "Cabbage is still tough after cooking.", "cause": "Not simmered long enough after adding.", "fix": "Cook for 10 more minutes until fully tender." }
+          ]
+        }
+      }
+    ]
+  }
+}

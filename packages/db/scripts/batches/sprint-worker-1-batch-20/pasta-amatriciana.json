@@ -1,0 +1,100 @@
+{
+  "slug": "pasta-amatriciana",
+  "title": "Pasta Amatriciana",
+  "subtitle": "Tomato and pancetta pasta from central Italy",
+  "excerpt": "Amatriciana is a pasta sauce from the mountain town of Amatrice in Lazio. Cured pork is fried until crisp, then simmered with tomatoes and a splash of wine. Rigatoni is the traditional shape, its ridges holding the thick sauce well.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Amatriciana is one of the four canonical Roman pasta sauces. The original version from Amatrice used guanciale (cured pork cheek); pancetta is a widely available substitute.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Sauce keeps in the fridge for 3 days. Cook fresh pasta to serve.",
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-28", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Render the pancetta slowly so the fat melts out before the meat crisps. This gives you flavoured fat to fry the garlic in, with no extra oil needed." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "rigatoni", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pancetta", "amount": 150, "unit": "g", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "cloves", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-vinegar", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "finely grated, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the pancetta in the cold frying pan. Set over medium heat. Cook for 6 to 8 minutes until the fat has rendered and the pancetta is lightly crisp." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic and chilli flakes. Cook for 1 minute." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the white wine vinegar. Let it bubble for 1 minute to evaporate the sharpness." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the tinned tomatoes. Simmer for 15 minutes until the sauce has thickened." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook the rigatoni in well-salted boiling water until al dente. Drain, keeping a cup of pasta water." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the pasta to the sauce. Toss to coat, adding pasta water to loosen if needed. Serve with parmesan." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Pancetta is chewy rather than crisp.", "cause": "Pan was too hot and meat seized before fat rendered.", "fix": "Start in a cold pan and heat slowly." },
+            { "symptom": "Sauce tastes sharp.", "cause": "Vinegar did not evaporate fully.", "fix": "Simmer for another 2 minutes, uncovered." }
+          ]
+        }
+      }
+    ]
+  }
+}

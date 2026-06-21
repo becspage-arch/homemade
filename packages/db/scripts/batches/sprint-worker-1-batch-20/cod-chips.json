@@ -1,0 +1,99 @@
+{
+  "slug": "cod-chips",
+  "title": "Battered Cod and Oven Chips",
+  "subtitle": "Crispy battered cod with chunky baked chips",
+  "excerpt": "A lighter take on fish and chips that bakes the potatoes and shallow-fries the battered cod in a good layer of hot oil. Self-raising flour gives the batter its lift. The result is crisp, golden fish with fluffy oven chips and none of the deep-fat fryer required.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Fish and chips became a staple British takeaway from the 1860s. The combination of battered fish and fried potatoes is widely considered Britain's national dish.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["dairyFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "Fan 200C / Gas 7. The high heat is needed to get the chips crispy.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The chips go in the oven first. While they bake, you make the batter and fry the fish. Timing them to finish together is the only tricky part." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "cod-fillet", "amount": 4, "unit": "pieces", "prepNote": "about 150g each, skin off, pin-boned", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "self-raising-flour", "amount": 150, "unit": "g", "prepNote": "plus extra for dusting the fish", "isOptional": false, "groupLabel": "Batter" },
+            { "ingredientSlug": "whole-milk", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Batter" },
+            { "ingredientSlug": "potato", "amount": 1000, "unit": "g", "prepNote": "cut into thick chips, about 1.5cm", "isOptional": false, "groupLabel": "Chips" },
+            { "ingredientSlug": "sunflower-oil", "amount": 4, "unit": "tbsp", "prepNote": "2 for chips, 2 for frying fish", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 220C. Toss the chips with 2 tablespoons of oil and a good pinch of salt on a large baking tray. Spread in a single layer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake the chips for 30 to 35 minutes, turning halfway, until golden and crisp." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "When the chips have about 10 minutes left, make the batter: whisk the flour, milk, and a pinch of salt until smooth. It should be the consistency of thick double cream." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pat the cod fillets dry. Dust lightly with extra flour, shaking off any excess." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat 2 tablespoons of oil in the frying pan over medium-high heat. Dip each fillet in the batter, let the excess drip off, and lay in the pan." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fry for 4 minutes each side until golden and crisp. The fish is done when it flakes easily." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drain briefly on kitchen paper. Serve with the chips, mushy peas, and vinegar." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Batter falls off during frying.", "cause": "Fish was wet or not dusted with flour first.", "fix": "Pat fish very dry; dust with flour before dipping in batter." },
+            { "symptom": "Chips are soft and pale.", "cause": "Oven not hot enough or chips were overcrowded.", "fix": "Use two trays if needed; keep chips in a single layer." }
+          ]
+        }
+      }
+    ]
+  }
+}

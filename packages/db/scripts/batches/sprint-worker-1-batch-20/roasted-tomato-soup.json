@@ -1,0 +1,102 @@
+{
+  "slug": "roasted-tomato-soup",
+  "title": "Roasted Tomato Soup",
+  "subtitle": "Deep, sweet tomato soup from the oven",
+  "excerpt": "Roasting the tomatoes and onions in the oven before blending concentrates the sugars and gives this soup a depth that raw or tinned tomatoes alone cannot match. It takes longer than a quick hob soup but the flavour is worth it.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Roasting tomatoes before blending is a technique used across Italian and British cooking. The slow caramelisation of the sugars in the oven gives the soup a natural sweetness and richness that differs from a straight blended tinned tomato soup.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cool and freeze for up to 3 months. Reheat from frozen over low heat, stirring often.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Use two large roasting tins side by side.",
+    "makeAheadNotes": "Make up to 3 days ahead and refrigerate.",
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["weeknight"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Fan 180C / Gas 6.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use the ripest tomatoes you can find. Out-of-season tomatoes still work but will give a thinner flavour. The cherry tomatoes add sweetness and the balsamic vinegar deepens the overall taste." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "tomato", "amount": 1200, "unit": "g", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cherry-tomatoes", "amount": 300, "unit": "g", "prepNote": "left whole", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "head", "prepNote": "halved horizontally", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "large", "prepNote": "quartered", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 5, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "basil", "amount": 30, "unit": "g", "prepNote": "leaves only", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "balsamic-vinegar", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 200C." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put all the tomatoes, the garlic halves, and the onion in the roasting tin. Drizzle with olive oil and season generously." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roast for 35 to 40 minutes until the tomatoes are collapsed and slightly charred at the edges." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Squeeze the roasted garlic out of its skin into the blender. Add all the roasted tomatoes and onions, including all the juices." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the basil, stock, and balsamic vinegar. Blend until smooth." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pass through a sieve if you want a very smooth soup, or serve as it is. Taste and adjust seasoning." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reheat gently if needed. Serve with crusty bread." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Soup tastes too acidic.", "cause": "Tomatoes were under-ripe or did not caramelise fully.", "fix": "Add a pinch of sugar and a little more balsamic vinegar." },
+            { "symptom": "Soup is too thick.", "cause": "Tomatoes were particularly dry after roasting.", "fix": "Add more stock a ladleful at a time until the right consistency." }
+          ]
+        }
+      }
+    ]
+  }
+}

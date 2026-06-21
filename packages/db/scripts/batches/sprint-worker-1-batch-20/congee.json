@@ -1,0 +1,99 @@
+{
+  "slug": "congee",
+  "title": "Congee",
+  "subtitle": "Chinese rice porridge with ginger and sesame",
+  "excerpt": "Congee is a slow-cooked rice porridge eaten across East and Southeast Asia. The rice breaks down over an hour into a silky, comforting base that can be topped with almost anything. This version uses chicken stock with ginger and soy for a clean, savoury flavour.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Congee (jook in Cantonese, zhou in Mandarin) is one of the most widely eaten breakfast and comfort foods across China, Japan, Thailand, Vietnam, and beyond. It has been eaten in China for over two thousand years.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Congee thickens as it sits. Thin with extra stock or water when reheating.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "chinese",
+    "mealType": "breakfast",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The ratio of rice to stock is the key. Use 1 part rice to 8 parts stock for a smooth, flowing congee. More rice gives a thicker texture, less gives a thinner broth-style result." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "long-grain-rice", "amount": 200, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 1500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 4, "unit": "cm", "prepNote": "sliced into thin coins", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "cloves", "prepNote": "lightly crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tsp", "prepNote": "to finish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": null, "prepNote": "finely sliced", "isOptional": false, "groupLabel": "Toppings" },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 150, "unit": "g", "prepNote": "sliced and stir-fried in sesame oil", "isOptional": true, "groupLabel": "Toppings" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the rice, stock, ginger, and garlic in the stockpot. Bring to a boil over medium-high heat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce to the lowest simmer. Cook uncovered for 45 to 60 minutes, stirring every 15 minutes, until the rice has broken down into a smooth, thick porridge." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If the congee gets too thick, add more stock or water a ladleful at a time." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the ginger slices and garlic. Stir in the soy sauce. Taste and adjust seasoning." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ladle into bowls. Drizzle with sesame oil. Top with spring onion and stir-fried mushrooms if using." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Rice has not broken down after 60 minutes.", "cause": "Heat was too low or rice was not rinsed.", "fix": "Turn heat up a little and stir vigorously to break the grains." },
+            { "symptom": "Congee is very thick and glue-like.", "cause": "Too much evaporation during cooking.", "fix": "Add more hot stock and stir until looser." }
+          ]
+        }
+      }
+    ]
+  }
+}

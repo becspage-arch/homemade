@@ -1,0 +1,102 @@
+{
+  "slug": "caldo-verde",
+  "title": "Caldo Verde",
+  "subtitle": "Portuguese kale and chorizo soup",
+  "excerpt": "Caldo verde is Portugal's most beloved soup: a simple base of potato and onion blended smooth, then topped with finely shredded kale and slices of cured chorizo. The kale stays bright and just barely cooked. It takes 45 minutes and feeds four generously.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Caldo verde (green broth) is a national dish of Portugal, originating in the Minho region in the north. It is eaten at festivals, weddings, and everyday meals. The defining ingredients are couve galega (a local kale), potato, and chourico (Portuguese chorizo).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Makes excellent leftovers. The kale softens further overnight; add fresh kale when reheating for the best texture.",
+    "makeAheadNotes": "Make the potato base up to 3 days ahead. Add the kale and chorizo fresh when reheating to serve.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "portuguese",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Shred the kale as finely as possible. Thick ribbons take too long to soften in the hot soup and can taste tough. Remove the stems entirely and roll the leaves tightly before slicing." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "kale", "amount": 300, "unit": "g", "prepNote": "stems removed, leaves very finely shredded", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chorizo", "amount": 150, "unit": "g", "prepNote": "sliced into thin rounds", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 600, "unit": "g", "prepNote": "peeled and diced 3cm", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "large", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 1200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the olive oil in the stockpot over medium heat. Cook the onion for 5 minutes until soft." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic and cook for 1 minute." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the potato and stock. Bring to a boil, then simmer for 15 minutes until the potato is very tender." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Use a stick blender or transfer to the blender jug to blend the soup until completely smooth." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return to the pot. Bring back to a simmer and season with salt and black pepper." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the shredded kale to the simmering soup. Cook for 3 to 4 minutes until just tender but still bright green." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "While the kale cooks, fry the chorizo slices in a dry frying pan for 2 minutes until crisp and the fat has rendered." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ladle the soup into bowls. Top with chorizo slices and a drizzle of the rendered chorizo oil." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Kale is dark, yellow, and mushy.", "cause": "Cooked too long in the soup.", "fix": "Add kale in the last 3 to 4 minutes only; watch closely." },
+            { "symptom": "Soup base is too thin.", "cause": "Potato was not starchy enough or too little potato.", "fix": "Blend in a small amount of extra cooked potato to thicken." }
+          ]
+        }
+      }
+    ]
+  }
+}

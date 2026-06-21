@@ -1,0 +1,104 @@
+{
+  "slug": "jerk-chicken",
+  "title": "Jerk Chicken",
+  "subtitle": "Marinated chicken with Jamaican spices",
+  "excerpt": "Jerk chicken is a Jamaican dish defined by its marinade of allspice, scotch bonnet pepper, thyme, and citrus. This version uses gochugaru for heat and a marinade that doubles as a baste during roasting. The chicken needs at least 2 hours in the marinade, ideally overnight.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Jerk is a Jamaican cooking style originating with the Maroon people of Jamaica. The word jerk refers to the spice mix and the cooking method, traditionally done over pimento wood. Allspice (pimento) and scotch bonnet pepper are the defining spices.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 5,
+    "chillingMinutes": 120,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the marinated raw chicken for up to 3 months. Defrost fully before roasting.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate overnight in the fridge for deeper flavour.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "jamaican",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "Fan 200C / Gas 7. High heat is needed for charred skin.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Score the chicken thighs deeply before marinating. The cuts let the marinade penetrate all the way through the meat, not just the surface." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 800, "unit": "g", "prepNote": "scored 3 times on each side", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "allspice", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "thyme-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "gochugaru", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "ginger-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "crushed", "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "spring-onion", "amount": 6, "unit": null, "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "lime", "amount": 2, "unit": null, "prepNote": "juice only", "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "honey", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blend all the marinade ingredients together until smooth." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Score the chicken thighs deeply. Pour the marinade over and turn to coat. Cover and chill for at least 2 hours or overnight." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 220C. Lift the chicken from the marinade and place in the roasting tin. Keep the marinade." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roast for 25 to 30 minutes, basting with the reserved marinade halfway through, until the chicken is charred at the edges and cooked through." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Check the thickest piece: the juices should run clear and a probe thermometer should read 75C." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rest for 5 minutes. Serve with rice and peas and lime wedges." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Chicken is pale with no char.", "cause": "Oven not hot enough or marinade too wet.", "fix": "Pat chicken dry before roasting; use top shelf of oven." },
+            { "symptom": "Chicken is burning on the outside but raw inside.", "cause": "Too much sugar in the marinade caramelised fast.", "fix": "Cover loosely with foil and continue until cooked through." }
+          ]
+        }
+      }
+    ]
+  }
+}
