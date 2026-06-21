@@ -1,0 +1,102 @@
+{
+  "slug": "pierogi-filling",
+  "title": "Potato and Cheese Pierogi",
+  "subtitle": "Polish boiled dumplings filled with mashed potato and cheddar",
+  "excerpt": "Soft dough pockets filled with mashed potato and melted cheddar, boiled until tender then pan-fried in butter until golden. The caramelised onion inside makes all the difference. Worth the effort.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pierogi are Poland's national dumpling and appear across Central and Eastern European cuisines under different names. The potato and cheese filling is one of the most traditional styles.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "makes about 24 pierogi",
+    "prepMinutes": 45,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze uncooked on a lined tray, then transfer to a bag. Boil from frozen for 5 to 6 minutes.",
+    "batchable": true,
+    "batchNotes": "Easy to double. Make in bulk and freeze in batches.",
+    "makeAheadNotes": "The filling can be made a day ahead and kept in the fridge.",
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "polish",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-28", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Keep the dough covered while you work to stop it drying out. Roll it thin but not so thin it tears when you seal it." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 300, "unit": "g", "prepNote": "plus extra for dusting", "isOptional": false, "groupLabel": "dough" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": "dough" },
+            { "ingredientSlug": "soured-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "dough" },
+            { "ingredientSlug": "potato", "amount": 500, "unit": "g", "prepNote": "peeled, boiled and mashed", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "cheddar", "amount": 100, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "finely diced and caramelised", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "to finish" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the filling first. Cook the diced onion in a little butter over low heat for 20 minutes until golden and sweet." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the mashed potato with the cheddar and caramelised onion. Season well. Set aside to cool." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the dough. Mix flour, eggs and soured cream in a bowl. Knead for 3 minutes until smooth. Wrap and rest for 15 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roll the dough on a floured surface to 3mm thick. Cut out circles about 9cm across." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place a heaped teaspoon of filling in the centre of each circle. Fold over and press the edges firmly to seal." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring a large pot of salted water to a boil. Cook the pierogi in batches for 3 to 4 minutes until they float and the dough is cooked through." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drain well. Melt the butter in a frying pan over medium heat. Fry the boiled pierogi for 2 minutes per side until golden." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Pierogi burst open during boiling.", "cause": "Edges were not pressed firmly enough or dough too thin.", "fix": "Press firmly and use a fork to crimp the seal." },
+            { "symptom": "Dough is too stiff to roll.", "cause": "Not enough moisture or needs more resting time.", "fix": "Add a teaspoon of water and knead again." },
+            { "symptom": "Filling oozes out when folding.", "cause": "Too much filling in each piece.", "fix": "Use a heaped teaspoon only, not more." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "dashimaki-tamago-soup",
+  "title": "Japanese Egg and Broth Noodle Soup",
+  "subtitle": "Soft egg ribbons in a light soy and mirin chicken broth with noodles",
+  "excerpt": "A delicate Japanese-style noodle soup with a gently seasoned chicken broth and egg ribbons stirred in at the end. Ready in under 30 minutes and exactly the kind of thing you want when you need something warm and simple.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Inspired by Japanese egg-drop broth styles. The mirin and soy combination is the backbone of many Japanese soups and sauces.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the broth base a day ahead. Add the noodles and eggs only when ready to serve.",
+    "dietaryFlags": ["dairyFree", "nutFree"],
+    "cuisine": "japanese",
+    "mealType": "lunch",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "omelette-pan", "isOptional": true }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pour the beaten eggs in slowly in a thin stream while stirring the broth gently in one direction. This gives you soft, silky ribbons rather than scrambled lumps." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "stock-chicken", "amount": 800, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "soy-sauce-light", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "mirin", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "ginger-fresh", "amount": 2, "unit": "cm", "prepNote": "grated", "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "noodles-egg", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "noodles" },
+            { "ingredientSlug": "eggs", "amount": 8, "unit": "whole", "prepNote": "beaten well", "isOptional": false, "groupLabel": "eggs" },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "whole", "prepNote": "finely sliced", "isOptional": false, "groupLabel": "to finish" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the stock into a large saucepan. Add the soy sauce, mirin and ginger. Bring to a gentle simmer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Taste and adjust with more soy or mirin. The broth should taste well-seasoned but not salty." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the egg noodles. Cook for 3 minutes or according to packet instructions until just tender." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce to a very gentle simmer. Stir the broth slowly in one direction." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the beaten eggs in a thin, slow stream, stirring gently as you go. The eggs will set into soft ribbons in about 30 seconds." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove from the heat. Drizzle with sesame oil. Ladle into bowls and top with spring onion." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Eggs form hard lumps rather than soft ribbons.", "cause": "Broth was at a rolling boil when eggs were added.", "fix": "Reduce to a gentle simmer before adding eggs." },
+            { "symptom": "Broth is too salty.", "cause": "Stock was already salted before adding soy sauce.", "fix": "Add 100ml of water and taste again before serving." },
+            { "symptom": "Noodles are overcooked and mushy.", "cause": "Left in the hot broth too long.", "fix": "Cook noodles separately and divide into bowls; ladle broth over." }
+          ]
+        }
+      }
+    ]
+  }
+}
