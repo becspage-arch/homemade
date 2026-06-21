@@ -1,0 +1,82 @@
+{
+  "slug": "cheese-toastie",
+  "title": "Cheese Toastie",
+  "subtitle": "Buttered bread with melted Cheddar, grilled until golden",
+  "excerpt": "Two slices of white bread buttered on the outside, filled with grated Cheddar and a little Dijon mustard, then cooked in a pan until deeply golden on both sides and the cheese inside is fully melted.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "recipe": {
+    "servings": 1,
+    "prepMinutes": 3,
+    "cookMinutes": 6,
+    "difficulty": "BEGINNER",
+    "season": "YEAR_ROUND",
+    "dietary": ["vegetarian"],
+    "sourceType": "CLASSIC",
+    "sourceNotes": "The grilled cheese sandwich is a British and American staple. The British cheese toastie is most commonly made in a sandwich toaster or under a grill, but the pan-fried method produces a more deeply flavoured crust and more even melt. The key technique is buttering the outside of the bread, not the pan, and keeping the heat at medium so the bread colours slowly while the cheese has time to melt completely. Mustard is the classic British addition."
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "notes": "Or a sandwich toaster." }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Butter the outside of the bread, not the inside. Medium heat is important: too high and the outside burns before the cheese melts; too low and the bread goes soft rather than crisp. Press the sandwich down with a spatula during cooking to ensure good contact with the pan."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "servings": 1,
+          "items": [
+            { "ingredientSlug": "white-bread", "amount": 2, "unit": "slice", "preparation": "thick-cut" },
+            { "ingredientSlug": "cheddar", "amount": 60, "unit": "g", "preparation": "grated" },
+            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "preparation": "softened" },
+            { "ingredientSlug": "dijon-mustard", "amount": 0.5, "unit": "tsp" }
+          ]
+        }
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Butter one side of each slice of bread. Spread the Dijon mustard on the unbuttered side of one slice. Pile the grated Cheddar on top. Press the second slice on top, buttered side facing out." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Place a frying pan over medium heat. No extra butter is needed in the pan. Place the sandwich in the pan and press down gently with a spatula." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Cook for 3 minutes until the underside is deep golden. Flip and cook for a further 2 to 3 minutes until the second side is golden and the cheese inside is completely melted. Slice in half and serve immediately." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
