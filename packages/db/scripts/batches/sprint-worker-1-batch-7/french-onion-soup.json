@@ -1,0 +1,114 @@
+{
+  "slug": "french-onion-soup",
+  "title": "French Onion Soup",
+  "subtitle": "Deeply caramelised onion broth",
+  "excerpt": "The onions need a long, patient cook -- anything under 45 minutes and you will have a pale, sharp soup rather than a deep, sweet broth. The caramelisation is the recipe, everything else is supporting detail.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "French onion soup has been a staple of Parisian bistros since at least the eighteenth century, though its status as an elegant dish rather than peasant food came later. The long caramelisation is the non-negotiable step that turns raw onions into a sweet, complex base.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 75,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["weekend", "comfort"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use the widest pan you have so the onions have room to cook down quickly without steaming. They should be a deep mahogany colour before any liquid goes in. Do not rush this step." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "onion", "amount": 1200, "unit": "g", "prepNote": "about 6 large, very thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "minced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 4, "unit": "sprigs", "prepNote": "leaves picked", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-beef", "amount": 1500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "balsamic-vinegar", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt the butter with the olive oil in the large saucepan over medium heat. Add all the sliced onions, season well, and stir to coat. Cook for 10 minutes until the onions have softened and started to collapse." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce the heat to medium-low and continue cooking, stirring every 5-10 minutes, for 45-55 minutes until the onions are a deep golden-brown and very sweet. If they stick, add a small splash of water and scrape up the colour." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic, thyme, and bay leaves and cook for 2 minutes. Stir in the balsamic vinegar and cook for 1 minute." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the beef stock and bring to a simmer. Cook for 15 minutes. Taste and adjust seasoning. Remove the bay leaves." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "To serve in the traditional style, ladle the soup into ovenproof bowls, top each with a thick slice of toasted bread, and cover with grated Gruyere cheese. Grill under a hot grill for 3-4 minutes until the cheese is bubbling and browned." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Onions still pale and sharp after 30 minutes.", "cause": "Heat too low or pan too crowded.", "fix": "Increase heat to medium and stir more frequently. The onions should be sizzling gently, not just warming." },
+            { "symptom": "Soup thin and not sweet.", "cause": "Onions not fully caramelised before the stock was added.", "fix": "Drain or ladle out some stock, return the base to the heat, and simmer uncovered to reduce and concentrate." }
+          ]
+        }
+      }
+    ]
+  }
+}

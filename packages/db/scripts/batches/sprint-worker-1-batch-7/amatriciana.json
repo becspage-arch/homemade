@@ -1,0 +1,113 @@
+{
+  "slug": "amatriciana",
+  "title": "Pasta all'Amatriciana",
+  "subtitle": "Tomato and guanciale pasta from Amatrice",
+  "excerpt": "This sauce is built on rendered pork fat, canned tomatoes, and a pinch of chilli. Pancetta stands in for the harder-to-find guanciale, and a small splash of white wine vinegar brightens the sauce without needing wine.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Amatriciana originates in the town of Amatrice in Lazio, and traditionally uses guanciale rather than pancetta. The dish is considered one of the four classic Roman pasta sauces, though its roots predate the city's adoption of it.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-28", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Let the pancetta render slowly so it crisps properly -- this fat becomes the base for the sauce. Do not rush the tomatoes either; they need at least 15 minutes to thicken." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "spaghetti", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pancetta", "amount": 150, "unit": "g", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-vinegar", "amount": 1, "unit": "tbsp", "prepNote": "optional, adds acidity", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parmesan", "amount": 50, "unit": "g", "prepNote": "finely grated, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the olive oil in the frying pan over medium-low heat. Add the pancetta and fry for 6-8 minutes until the fat has rendered and the edges are crisp." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the chilli flakes and cook for 30 seconds. Add the white wine vinegar if using and let it bubble for 10 seconds." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the tinned tomatoes, crushing them with a spoon. Season and simmer over medium-low heat for 15 minutes until the sauce has thickened." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Meanwhile, cook the spaghetti in well-salted boiling water until al dente. Reserve 80 ml of pasta water and drain." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the drained pasta to the sauce with a splash of pasta water and toss well over low heat for 1-2 minutes. Serve with grated parmesan." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Sauce watery and not coating the pasta.", "cause": "Tomatoes were not reduced long enough.", "fix": "Simmer uncovered for an extra 5-10 minutes until the sauce holds a line when you drag a spoon through it." }
+          ]
+        }
+      }
+    ]
+  }
+}

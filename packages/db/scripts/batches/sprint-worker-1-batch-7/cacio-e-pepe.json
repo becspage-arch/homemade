@@ -1,0 +1,109 @@
+{
+  "slug": "cacio-e-pepe",
+  "title": "Cacio e Pepe",
+  "subtitle": "Roman cheese and pepper pasta",
+  "excerpt": "Three ingredients, one technique. The cheese must be grated to a near-powder to melt into the pasta water without clumping, and the pepper must be toasted first to bloom its oils. Nothing else is needed.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Cacio e pepe is a Roman trattoria staple with roots in the cucina povera tradition, using only three ingredients. The name means cheese and pepper, and the dish relies entirely on technique to create a sauce from pasta water and cheese alone.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-28", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use the finest grater setting you have for the parmesan -- coarse shreds will clump rather than emulsify. Toast the pepper in a dry pan before anything else so it is ready to go." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "spaghetti", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parmesan", "amount": 80, "unit": "g", "prepNote": "very finely grated, plus extra to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Toast 2 teaspoons of coarsely ground black pepper in the dry frying pan over medium heat for 1-2 minutes until fragrant. Set aside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook the spaghetti in well-salted boiling water. Reserve 200 ml of pasta water before draining." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt the butter in the frying pan over low heat. Add most of the toasted pepper and 80 ml of the reserved pasta water, stirring to combine." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the drained spaghetti to the pan and toss to coat. Remove from the heat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the grated parmesan in two additions, tossing vigorously between each and adding pasta water a splash at a time until the cheese has melted into a creamy coating sauce. Serve with the remaining toasted pepper." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Cheese clumped into strings instead of a sauce.", "cause": "The pasta was too hot or the cheese was not fine enough.", "fix": "Let the pasta cool for 30 seconds off the heat before adding cheese, and always grate parmesan as finely as possible." }
+          ]
+        }
+      }
+    ]
+  }
+}

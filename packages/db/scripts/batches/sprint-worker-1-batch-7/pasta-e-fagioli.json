@@ -1,0 +1,116 @@
+{
+  "slug": "pasta-e-fagioli",
+  "title": "Pasta e Fagioli",
+  "subtitle": "Italian bean and pasta soup",
+  "excerpt": "This is a thick, hearty soup that sits somewhere between broth and stew. Blending half the beans gives the base body without needing cream or a roux, and the pancetta gives the whole pot a backbone of savour.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pasta e fagioli is a central Italian peasant dish that varies considerably by region -- northern versions tend to be thicker and creamier, while southern versions run brothier. The constant is the pairing of white beans and small pasta shapes.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["dairyFree", "nutFree"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comfort"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Blending half the beans is the key step for texture -- it makes the soup naturally creamy without any added fat. Do this before the pasta goes in so the timing stays clean." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "cannellini-beans", "amount": 800, "unit": "g", "prepNote": "2x400g tins, drained and rinsed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pasta-dried", "amount": 200, "unit": "g", "prepNote": "small shapes such as ditalini or broken spaghetti", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pancetta", "amount": 100, "unit": "g", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": null, "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 1, "unit": null, "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "sticks", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "minced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 2, "unit": "sprigs", "prepNote": "leaves stripped and finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 1000, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the olive oil in the saucepan over medium-low heat. Add the pancetta and cook for 5 minutes until the fat has rendered. Add the onion, carrot, and celery and cook for 8 minutes until softened." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic and rosemary and cook for 1 minute. Stir in the tinned tomatoes and cook for 3 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the drained cannellini beans and the chicken stock. Bring to a simmer and cook for 10 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scoop out roughly half the beans and blend them with a ladle of broth until smooth (use a jug blender or hand blender). Stir the puree back into the pot." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the pasta and cook until just tender, following the packet time. Taste for seasoning and loosen with a little water if the soup is very thick. Serve with a drizzle of olive oil." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Pasta has absorbed all the broth and turned to mush.", "cause": "Pasta was cooked too long or the soup was left to stand.", "fix": "Add hot water or stock to loosen and reheat gently. For make-ahead, cook the pasta separately and stir in per bowl." }
+          ]
+        }
+      }
+    ]
+  }
+}

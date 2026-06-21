@@ -1,0 +1,105 @@
+{
+  "slug": "miso-soup",
+  "title": "Miso Soup",
+  "subtitle": "Japanese broth with white miso and mushrooms",
+  "excerpt": "This is a light, clear broth that takes ten minutes from start to table. The miso must not boil after it is added -- boiling kills the beneficial bacteria and dulls the flavour. Traditional dashi is the base, but a mild vegetable stock works well as an accessible substitute.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Miso soup is a foundational component of Japanese cuisine, served at almost every traditional meal from breakfast through to dinner. The base is typically dashi -- a stock made from kombu seaweed and dried bonito flakes -- but vegetable stock makes a workable substitute.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "japanese",
+    "mealType": "lunch",
+    "mood": ["weeknight", "light"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Never boil the soup after the miso is dissolved in. Keep the heat at a bare simmer and taste before adding salt -- white miso is already salty. This recipe uses vegetable stock in place of traditional dashi; the result is slightly less complex but the technique is identical." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "miso-white", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 1000, "unit": "ml", "prepNote": "used in place of dashi", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 100, "unit": "g", "prepNote": "very thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": null, "prepNote": "thinly sliced on the diagonal", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring the vegetable stock to a simmer in the saucepan over medium heat. Add the sliced mushrooms and cook for 3-4 minutes until just tender." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce the heat to very low. Ladle a small amount of the hot broth into a small bowl and dissolve the miso paste in it, stirring until smooth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the dissolved miso back into the saucepan. Stir gently and taste. Do not let the soup boil from this point on." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Ladle into bowls and top with the sliced spring onion. Serve immediately." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Soup tastes flat or thin.", "cause": "Miso dissolved in too much liquid at once, losing intensity.", "fix": "Use less broth to dissolve the miso and add the concentrate to the pot. Also check the miso to stock ratio -- white miso is mild and may need an extra tablespoon." }
+          ]
+        }
+      }
+    ]
+  }
+}

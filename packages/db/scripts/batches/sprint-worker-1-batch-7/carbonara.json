@@ -1,0 +1,112 @@
+{
+  "slug": "carbonara",
+  "title": "Spaghetti Carbonara",
+  "subtitle": "Silky egg and cheese pasta",
+  "excerpt": "Carbonara has three real ingredients: cured pork, eggs, and aged cheese. The technique is entirely about heat control -- too much and the eggs scramble, too little and the sauce stays raw. Get it right and the result is a glossy, coating sauce that clings to every strand.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Carbonara emerged in Rome in the mid-twentieth century, likely influenced by American bacon and egg rations after World War Two. The defining rule is no cream -- the sauce forms from eggs, cheese, and starchy pasta water alone.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-28", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The pasta water is not optional. You need at least 60 ml of hot, starchy water ready when the eggs go in, and you should take the pan completely off the heat before adding the egg mixture to avoid curdling." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "spaghetti", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pancetta", "amount": 200, "unit": "g", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "egg-yolks", "amount": 2, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parmesan", "amount": 80, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring a large pan of well-salted water to the boil. Whisk together the eggs, egg yolks, and grated parmesan with a generous amount of black pepper in a bowl until smooth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fry the pancetta in the frying pan over medium heat for 6-8 minutes until crisp at the edges. Remove from the heat and set aside, leaving the fat in the pan." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook the spaghetti until just al dente. Reserve 150 ml of pasta water, then drain." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the frying pan with the pancetta to very low heat. Add the drained spaghetti and toss to coat in the pork fat. Add a splash of pasta water and stir." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Take the pan off the heat entirely. Pour the egg and parmesan mixture over the pasta, tossing constantly and adding pasta water a little at a time until you have a glossy sauce that coats the strands without pooling. Serve immediately." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Scrambled egg texture in the sauce.", "cause": "Pan was too hot when the eggs were added.", "fix": "Always remove the pan from the heat before adding the egg mixture, and keep tossing quickly." },
+            { "symptom": "Sauce too thick and gluey.", "cause": "Not enough pasta water added.", "fix": "Add reserved pasta water one tablespoon at a time. Toss between each addition until the sauce loosens and coats the pasta." }
+          ]
+        }
+      }
+    ]
+  }
+}
