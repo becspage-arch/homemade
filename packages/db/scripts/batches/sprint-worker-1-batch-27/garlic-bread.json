@@ -1,0 +1,101 @@
+{
+  "slug": "garlic-bread",
+  "title": "Garlic Bread",
+  "subtitle": "A simple side loaf with garlic butter and parsley",
+  "excerpt": "A soft bread dough spread with garlic butter and baked until crisp. This is the side dish that disappears first.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Garlic bread as a baked side dish became popular in Italian-American cooking in the mid-20th century. The version made from a whole baked loaf split and filled with garlic butter is now ubiquitous in British homes.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "serves 4 as a side",
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the shaped and buttered loaf before baking. Bake from frozen at 200C for 25 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the dough and garlic butter a day ahead. Bring to room temperature before baking.",
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "italian",
+    "mealType": "side",
+    "mood": ["comfort", "weeknight"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "You will need 7g fast-action yeast and 1 teaspoon of salt for the dough, plus a pinch of sugar to activate the yeast." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "bread-flour", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough" },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "Garlic butter" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Garlic butter" },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Garlic butter" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the flour, 7g yeast, 1 teaspoon salt and a pinch of sugar in a large bowl." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add 250ml of warm water. Mix to a soft dough." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Knead on a floured surface for 8 minutes until smooth." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put in a lightly oiled bowl. Cover and prove for 1 hour until doubled in size." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Beat the butter with the garlic and parsley. Season with a pinch of salt." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat your oven to 200C." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Knock back the dough and shape into a baton. Place on a lined baking tray." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut deep slashes across the top every 2cm. Spread the garlic butter generously into each slash and over the top." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake for 18 to 20 minutes until golden and crisp at the edges." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve hot straight from the oven." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Bread did not rise.", "cause": "Yeast was dead or water was too hot.", "fix": "Use hand-warm water (not hot) and check yeast is in date." },
+            { "symptom": "Garlic butter burned on top.", "cause": "Butter was spread too thinly on exposed areas.", "fix": "Press butter deep into the slashes rather than over the surface." },
+            { "symptom": "Bread is doughy in the centre.", "cause": "Loaf was too thick or oven too hot.", "fix": "Flatten slightly before baking to help the centre cook through." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "parsnip-and-apple-soup",
+  "title": "Parsnip and Apple Soup",
+  "subtitle": "A smooth, gently spiced British autumn soup",
+  "excerpt": "Sweet parsnip and apple blend into a silky, warming soup. A pinch of cumin and coriander adds depth without heat.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Parsnip soup is a British autumn staple. Adding apple is a popular variation that balances the natural sweetness of the parsnip.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze before adding the cream. Cool completely, then freeze in portions for up to 3 months.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Use a large stockpot.",
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "glutenFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfort", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "This soup is very easy to make. Soften everything, add the stock, then blend until smooth." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "parsnip", "amount": 600, "unit": "g", "prepNote": "peeled and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "apple", "amount": 2, "unit": "whole", "prepNote": "peeled, cored and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 1000, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": "to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the olive oil in the stockpot over medium heat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the onion and garlic. Cook for 5 minutes until soft." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the cumin and coriander. Stir for 30 seconds." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the parsnip and apple. Stir to coat in the spices." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the stock. Season with salt and pepper." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring to the boil, then reduce the heat. Simmer for 25 minutes until the parsnip is very soft." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove from the heat. Blend until completely smooth." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Taste and adjust the seasoning. Ladle into bowls and swirl in the cream if using." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Soup is too thick.", "cause": "Parsnips vary in water content.", "fix": "Stir in a splash of hot water or stock." },
+            { "symptom": "Soup tastes bland.", "cause": "Not enough salt or the stock was weak.", "fix": "Season again and add a squeeze of lemon juice." },
+            { "symptom": "Soup is not smooth.", "cause": "Blend time was too short.", "fix": "Blend for a full 60 seconds on high speed." }
+          ]
+        }
+      }
+    ]
+  }
+}

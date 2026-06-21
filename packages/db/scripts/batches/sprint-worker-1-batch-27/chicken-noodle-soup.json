@@ -1,0 +1,105 @@
+{
+  "slug": "chicken-noodle-soup",
+  "title": "Chicken Noodle Soup",
+  "subtitle": "A clear, restorative broth with shredded chicken and egg noodles",
+  "excerpt": "Shredded chicken and soft egg noodles sit in a clean, fragrant broth. This soup is simple and deeply satisfying.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Chicken noodle soup is found across many cultures. This version draws on British and American home cooking traditions, using a clear stock-based broth with egg noodles.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the soup without the noodles. Add freshly cooked noodles when reheating.",
+    "batchable": true,
+    "batchNotes": "Doubles very well. Use a large stockpot.",
+    "makeAheadNotes": null,
+    "dietaryFlags": ["dairyFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["comfort", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Poach the chicken directly in the stock for a clear, flavourful broth. Shred it once cooked." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-breast", "amount": 400, "unit": "g", "prepNote": "whole", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "noodles-egg", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "whole", "prepNote": "peeled and sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 3, "unit": "sticks", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "lightly crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 1500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 2, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 1, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the stock, onion, garlic, thyme and bay leaf in the stockpot. Bring to a simmer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the chicken breasts. Poach gently for 15 to 18 minutes until cooked through." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the chicken and set aside to cool slightly. Remove the onion, bay leaf and thyme stalks." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the carrot and celery to the broth. Simmer for 8 minutes until just tender." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Shred the chicken into bite-sized pieces using two forks." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the noodles to the broth. Cook for 3 to 4 minutes until just tender." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the shredded chicken to the pot. Taste and season with salt and pepper." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve in deep bowls, scattered with the parsley." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Broth is cloudy.", "cause": "The stock boiled too vigorously.", "fix": "Keep it at a gentle simmer, not a rolling boil." },
+            { "symptom": "Noodles are mushy.", "cause": "Cooked too long or added too early.", "fix": "Add noodles last and serve immediately." },
+            { "symptom": "Soup tastes flat.", "cause": "Not enough salt or the stock was mild.", "fix": "Season well and add a splash of fish sauce or soy sauce." }
+          ]
+        }
+      }
+    ]
+  }
+}

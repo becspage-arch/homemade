@@ -1,0 +1,97 @@
+{
+  "slug": "soda-bread",
+  "title": "Soda Bread",
+  "subtitle": "A quick, no-yeast Irish loaf ready in under an hour",
+  "excerpt": "Soda bread uses bicarbonate of soda instead of yeast, so there is no proving time. Mix, shape, bake and it is ready.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Soda bread became a staple of Irish cooking in the 1840s when bicarbonate of soda became widely available. It replaced yeast-leavened breads in many households as it required no proving time and no specialist equipment.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "makes 1 loaf (8 slices)",
+    "prepMinutes": 5,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Slice before freezing. Toast from frozen.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "irish",
+    "mealType": "snack",
+    "mood": ["comfort", "weekend"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Do not overwork the dough. Mix just until it comes together, then shape it quickly and get it straight into the oven." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "self-raising-flour", "amount": 450, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 350, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat your oven to 200C. Lightly flour a baking tray." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the flour in a large bowl. Add 1 teaspoon of salt and 1 teaspoon of bicarbonate of soda." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make a well in the centre. Pour in the milk." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix quickly with a fork or your hand until the dough just comes together. It will be shaggy." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tip out onto the floured tray. Shape into a round about 4cm thick." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut a deep cross across the top with a sharp knife." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake for 30 to 35 minutes until golden and hollow-sounding when tapped on the bottom." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cool on a wire rack for at least 10 minutes before slicing." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Bread is dense and heavy.", "cause": "Dough was overworked or bicarbonate of soda is stale.", "fix": "Mix minimally and check the bicarbonate of soda is fresh." },
+            { "symptom": "Crust is hard but centre is doughy.", "cause": "Oven was too hot or loaf was too thick.", "fix": "Reduce the oven by 10C and flatten the loaf slightly next time." },
+            { "symptom": "Bread has very little rise.", "cause": "Not enough raising agent.", "fix": "Check the self-raising flour has not expired." }
+          ]
+        }
+      }
+    ]
+  }
+}

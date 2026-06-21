@@ -1,0 +1,100 @@
+{
+  "slug": "guacamole",
+  "title": "Guacamole",
+  "subtitle": "Classic Mexican avocado dip with lime, coriander and chilli",
+  "excerpt": "Ripe avocado, lime and coriander. Keep it chunky and make it just before serving.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Guacamole traces back to Aztec cuisine. The name comes from the Nahuatl words for avocado and sauce. Avocados have been cultivated in Mexico for thousands of years.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "serves 4 as a dip",
+    "prepMinutes": 10,
+    "cookMinutes": 0,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best made fresh. If making ahead, press cling film directly onto the surface to limit browning.",
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "mexican",
+    "mealType": "snack",
+    "mood": ["light"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "pestle-and-mortar", "isOptional": true }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use very ripe avocados. Under-ripe ones will not mash properly and taste bland." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "avocado", "amount": 4, "unit": "whole", "prepNote": "ripe, halved and stoned", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lime", "amount": 2, "unit": "whole", "prepNote": "juiced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander-fresh", "amount": 20, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "clove", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-green", "amount": 1, "unit": "whole", "prepNote": "finely chopped, seeds removed if preferred", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 2, "unit": "whole", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato", "amount": 1, "unit": "whole", "prepNote": "seeds removed, finely diced", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scoop the avocado flesh into a bowl." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the lime juice and a good pinch of salt. Mash to a rough texture with a fork." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir in the garlic, chilli and spring onion." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold in the tomato and coriander." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Taste and add more lime juice or salt." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve straight away." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Guacamole turned brown.", "cause": "Exposed to air.", "fix": "Press cling film directly onto the surface and add more lime juice." },
+            { "symptom": "Guacamole is watery.", "cause": "Tomato was not deseeded or avocado was overripe.", "fix": "Remove tomato seeds before adding and drain off any liquid." },
+            { "symptom": "Tastes bland.", "cause": "Avocados were not ripe enough.", "fix": "Season more aggressively with salt and lime to compensate." }
+          ]
+        }
+      }
+    ]
+  }
+}
