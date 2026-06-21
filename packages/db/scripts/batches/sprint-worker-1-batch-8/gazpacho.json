@@ -1,0 +1,110 @@
+{
+  "slug": "gazpacho",
+  "title": "Gazpacho",
+  "subtitle": "Chilled Spanish tomato and pepper soup",
+  "excerpt": "A blended, uncooked soup of very ripe tomatoes, red pepper, cucumber and garlic, sharpened with red wine vinegar and chilled for two hours before serving. The quality of the tomatoes is everything here; use the ripest you can find, ideally in late summer. This needs no cooking and is better made the day before.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "summer",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Gazpacho originated in the southern Spanish region of Andalucia as a peasant dish of stale bread, oil and vinegar; the tomato-based version we know today developed after tomatoes arrived in Europe from the Americas in the 16th century.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 0,
+    "restingMinutes": 0,
+    "chillingMinutes": 120,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Best made the day before and kept in the fridge overnight. The flavours deepen significantly with time.",
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "spanish",
+    "mealType": "starter",
+    "mood": ["light", "summer"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "blender-jug", "isOptional": false },
+    { "slug": "sieve", "isOptional": true }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use the ripest, most flavourful tomatoes you can find. Out-of-season supermarket tomatoes make a watery, flat-tasting gazpacho. Blend the soup until very smooth, then pass it through a sieve if you want a silky texture; leave it unsieved for more body and texture. Season thoroughly after chilling, since cold mutes salt." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "tomato", "amount": 800, "unit": "g", "prepNote": "very ripe, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cucumber", "amount": 1, "unit": null, "prepNote": "half peeled, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-red", "amount": 1, "unit": null, "prepNote": "deseeded, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "cloves", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": "plus extra to drizzle on serving", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine-vinegar", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine the tomatoes, cucumber, red pepper and garlic in a blender. Add the olive oil, red wine vinegar, cumin and a generous pinch of salt. Blend on high for 1 to 2 minutes until completely smooth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Taste and adjust seasoning, vinegar and oil. The soup should be sharp, well-seasoned and taste strongly of tomato. Add up to 100ml of cold water if the consistency is too thick." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For a smooth, restaurant-style finish, push the soup through a fine sieve into a large bowl, pressing with a spoon. Discard the pulp. For a more rustic version, skip this step." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover and refrigerate for at least 2 hours, or overnight. Taste again before serving, adjusting salt and vinegar since cold dulls the seasoning. Ladle into chilled bowls and drizzle with olive oil." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Gazpacho tastes watery and flat", "cause": "Under-ripe or out-of-season tomatoes with low flavour", "fix": "Add a tablespoon of tomato puree and an extra pinch of salt and vinegar. Next time use the ripest in-season tomatoes available." },
+            { "symptom": "Soup is too thick after chilling", "cause": "High solids from the tomatoes and pepper with not enough liquid", "fix": "Add cold water one tablespoon at a time, stirring between each addition, until the soup pours easily." }
+          ]
+        }
+      }
+    ]
+  }
+}
