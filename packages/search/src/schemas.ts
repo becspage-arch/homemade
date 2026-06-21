@@ -58,6 +58,13 @@ export interface TutorialDoc {
   indoorFriendly: boolean | null
   regionsApplicable: string[]
   foundational: boolean
+  // Cross-craft collection tags (phase_collection_taxonomy_001) — the shared
+  // theme/style facets that span every category.
+  occasionSlugs: string[]
+  seasonSlugs: string[]
+  styleSlugs: string[]
+  subjectSlugs: string[]
+  collectionText: string
 }
 
 export interface PatternDoc {
@@ -88,6 +95,12 @@ export interface PatternDoc {
   thumbnailCloudflareId: string | null
   thumbnailR2Key: string | null
   publishedAt: number | null
+  // Cross-craft collection tags (phase_collection_taxonomy_001).
+  occasionSlugs: string[]
+  seasonSlugs: string[]
+  styleSlugs: string[]
+  subjectSlugs: string[]
+  collectionText: string
 }
 
 export interface CrochetPatternDoc {
@@ -113,6 +126,12 @@ export interface CrochetPatternDoc {
   heroCloudflareId: string | null
   heroR2Key: string | null
   publishedAt: number | null
+  // Cross-craft collection tags (phase_collection_taxonomy_001).
+  occasionSlugs: string[]
+  seasonSlugs: string[]
+  styleSlugs: string[]
+  subjectSlugs: string[]
+  collectionText: string
 }
 
 export interface CategoryDoc {
@@ -130,6 +149,21 @@ export interface GlossaryDoc {
   definition: string
   categoryId: string | null
 }
+
+/**
+ * Cross-craft collection-tag facet fields (phase_collection_taxonomy_001),
+ * shared by every content collection so a theme/style query works the same way
+ * across tutorials and all pattern families. `collectionText` is searchable
+ * (so alias queries like "xmas" hit) but not a facet. Exported so the
+ * field-add migration can apply the same fields to existing collections.
+ */
+export const COLLECTION_TAG_FIELDS: CollectionCreateSchema['fields'] = [
+  { name: 'occasionSlugs', type: 'string[]', facet: true, optional: true },
+  { name: 'seasonSlugs', type: 'string[]', facet: true, optional: true },
+  { name: 'styleSlugs', type: 'string[]', facet: true, optional: true },
+  { name: 'subjectSlugs', type: 'string[]', facet: true, optional: true },
+  { name: 'collectionText', type: 'string', optional: true },
+]
 
 export const tutorialSchema: CollectionCreateSchema = {
   name: TUTORIALS_COLLECTION,
@@ -170,6 +204,7 @@ export const tutorialSchema: CollectionCreateSchema = {
     { name: 'indoorFriendly', type: 'bool', optional: true, facet: true },
     { name: 'regionsApplicable', type: 'string[]', facet: true, optional: true },
     { name: 'foundational', type: 'bool', facet: true, optional: true },
+    ...COLLECTION_TAG_FIELDS,
   ],
 }
 
@@ -204,6 +239,7 @@ export const patternSchema: CollectionCreateSchema = {
     { name: 'thumbnailCloudflareId', type: 'string', optional: true, index: false },
     { name: 'thumbnailR2Key', type: 'string', optional: true, index: false },
     { name: 'publishedAt', type: 'int64', optional: true },
+    ...COLLECTION_TAG_FIELDS,
   ],
 }
 
@@ -233,6 +269,7 @@ export const crochetPatternSchema: CollectionCreateSchema = {
     { name: 'heroCloudflareId', type: 'string', optional: true, index: false },
     { name: 'heroR2Key', type: 'string', optional: true, index: false },
     { name: 'publishedAt', type: 'int64', optional: true },
+    ...COLLECTION_TAG_FIELDS,
   ],
 }
 

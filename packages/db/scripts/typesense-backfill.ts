@@ -19,11 +19,29 @@ import type {
   PatternDoc,
   TutorialDoc,
 } from '@homemade/search'
+import type { ContentTagFacets } from '../src/collection-tags.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 loadEnv({ path: resolve(__dirname, '../../..', '.env.credentials') })
 
-const { prisma, TutorialStatus, Visibility } = await import('../src/index.js')
+const { prisma, TutorialStatus, Visibility, getTagFacetsForContents } = await import('../src/index.js')
+
+/** Pull just the five search-doc tag fields from a facets entry (defaults empty). */
+function tagDocFields(f: ContentTagFacets | undefined): {
+  occasionSlugs: string[]
+  seasonSlugs: string[]
+  styleSlugs: string[]
+  subjectSlugs: string[]
+  collectionText: string
+} {
+  return {
+    occasionSlugs: f?.occasionSlugs ?? [],
+    seasonSlugs: f?.seasonSlugs ?? [],
+    styleSlugs: f?.styleSlugs ?? [],
+    subjectSlugs: f?.subjectSlugs ?? [],
+    collectionText: f?.collectionText ?? '',
+  }
+}
 const {
   ALL_SCHEMAS,
   CATEGORIES_COLLECTION,
@@ -71,6 +89,7 @@ async function main(): Promise<void> {
       hero: { select: { cloudflareId: true, r2Key: true } },
     },
   })
+  const tutorialFacets = await getTagFacetsForContents('TUTORIAL', tutorials.map((t) => t.id))
   const tutorialDocs: TutorialDoc[] = tutorials.map((t) => ({
     id: t.id,
     slug: t.slug,
@@ -107,6 +126,7 @@ async function main(): Promise<void> {
     indoorFriendly: t.indoorFriendly,
     regionsApplicable: t.regionsApplicable,
     foundational: t.foundational,
+    ...tagDocFields(tutorialFacets.get(t.id)),
   }))
   await bulkImport(TUTORIALS_COLLECTION, tutorialDocs)
   console.log(`[backfill] tutorials: ${tutorialDocs.length}`)
@@ -132,6 +152,7 @@ async function main(): Promise<void> {
       thumbnail: { select: { cloudflareId: true, r2Key: true } },
     },
   })
+  const patternFacets = await getTagFacetsForContents('CROSS_STITCH_PATTERN', patterns.map((p) => p.id))
   const patternDocs: PatternDoc[] = patterns
     .filter((p) => p.subCategory !== null)
     .map((p) => ({
@@ -162,6 +183,7 @@ async function main(): Promise<void> {
       thumbnailCloudflareId: p.thumbnail?.cloudflareId ?? null,
       thumbnailR2Key: p.thumbnail?.r2Key ?? null,
       publishedAt: p.publishedAt ? p.publishedAt.getTime() : null,
+      ...tagDocFields(patternFacets.get(p.id)),
     }))
   await bulkImport(PATTERNS_COLLECTION, patternDocs)
   console.log(`[backfill] patterns: ${patternDocs.length}`)
@@ -187,6 +209,7 @@ async function main(): Promise<void> {
       primaryHook: { select: { mmSize: true } },
     },
   })
+  const crochetFacets = await getTagFacetsForContents('CROCHET_PATTERN', crochetPatterns.map((p) => p.id))
   const crochetPatternDocs: CrochetPatternDoc[] = crochetPatterns
     .filter((p) => p.subCategory !== null)
     .map((p) => ({
@@ -212,6 +235,7 @@ async function main(): Promise<void> {
       heroCloudflareId: null,
       heroR2Key: null,
       publishedAt: p.publishedAt ? p.publishedAt.getTime() : null,
+      ...tagDocFields(crochetFacets.get(p.id)),
     }))
   await bulkImport(CROCHET_PATTERNS_COLLECTION, crochetPatternDocs)
   console.log(`[backfill] crochet patterns: ${crochetPatternDocs.length}`)

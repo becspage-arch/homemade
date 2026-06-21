@@ -1,6 +1,6 @@
 import 'server-only'
 
-import { prisma, TutorialStatus, Visibility } from '@homemade/db'
+import { buildContentTagFacets, prisma, TutorialStatus, Visibility } from '@homemade/db'
 import {
   extractBodyText,
   removeCategoryFromSearch,
@@ -34,6 +34,8 @@ async function buildTutorialDoc(id: string): Promise<TutorialDoc | null> {
     },
   })
   if (!tutorial) return null
+
+  const tags = await buildContentTagFacets({ type: 'TUTORIAL', id })
 
   return {
     id: tutorial.id,
@@ -71,6 +73,11 @@ async function buildTutorialDoc(id: string): Promise<TutorialDoc | null> {
     indoorFriendly: tutorial.indoorFriendly,
     regionsApplicable: tutorial.regionsApplicable,
     foundational: tutorial.foundational,
+    occasionSlugs: tags.occasionSlugs,
+    seasonSlugs: tags.seasonSlugs,
+    styleSlugs: tags.styleSlugs,
+    subjectSlugs: tags.subjectSlugs,
+    collectionText: tags.collectionText,
   }
 }
 
@@ -127,6 +134,8 @@ async function buildPatternDoc(id: string): Promise<PatternDoc | null> {
   if (!pattern) return null
   if (!pattern.subCategory) return null
 
+  const tags = await buildContentTagFacets({ type: 'CROSS_STITCH_PATTERN', id })
+
   return {
     id: pattern.id,
     slug: pattern.slug,
@@ -155,6 +164,11 @@ async function buildPatternDoc(id: string): Promise<PatternDoc | null> {
     thumbnailCloudflareId: pattern.thumbnail?.cloudflareId ?? null,
     thumbnailR2Key: pattern.thumbnail?.r2Key ?? null,
     publishedAt: pattern.publishedAt ? pattern.publishedAt.getTime() : null,
+    occasionSlugs: tags.occasionSlugs,
+    seasonSlugs: tags.seasonSlugs,
+    styleSlugs: tags.styleSlugs,
+    subjectSlugs: tags.subjectSlugs,
+    collectionText: tags.collectionText,
   }
 }
 
@@ -221,6 +235,8 @@ async function buildCrochetPatternDoc(id: string): Promise<CrochetPatternDoc | n
   if (!pattern) return null
   if (!pattern.subCategory) return null
 
+  const tags = await buildContentTagFacets({ type: 'CROCHET_PATTERN', id })
+
   return {
     id: pattern.id,
     slug: pattern.slug,
@@ -244,6 +260,11 @@ async function buildCrochetPatternDoc(id: string): Promise<CrochetPatternDoc | n
     heroCloudflareId: null,
     heroR2Key: null,
     publishedAt: pattern.publishedAt ? pattern.publishedAt.getTime() : null,
+    occasionSlugs: tags.occasionSlugs,
+    seasonSlugs: tags.seasonSlugs,
+    styleSlugs: tags.styleSlugs,
+    subjectSlugs: tags.subjectSlugs,
+    collectionText: tags.collectionText,
   }
 }
 
