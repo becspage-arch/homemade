@@ -1,0 +1,83 @@
+{
+  "slug": "creme-brulee",
+  "title": "Crème Brûlée",
+  "subtitle": "French baked vanilla custard with caramelised sugar crust",
+  "excerpt": "The great French custard dessert: a rich, barely set vanilla custard baked in a water bath until silky and trembling, then chilled and finished with a thin layer of caster sugar caramelised to a brittle, crackling toffee crust under the grill.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "recipe": {
+    "servings": 6,
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "difficulty": "INTERMEDIATE",
+    "season": "YEAR_ROUND",
+    "dietary": ["vegetarian", "gluten-free"],
+    "sourceType": "CLASSIC",
+    "sourceNotes": "Crème brûlée (burnt cream) is a French dessert with a disputed history: similar dishes appear in English cookbooks from the seventeenth century, and Trinity College Cambridge has a longstanding claim to the dish under the name 'Trinity burnt cream'. The modern crème brûlée as widely known traces to French haute cuisine of the nineteenth and twentieth centuries and was popularised internationally through French restaurant culture. The essential elements are: a custard made from egg yolks, cream, and sugar (no flour), baked very gently in a water bath until just set, and served cold with a layer of sugar caramelised under a very hot grill or with a blowtorch. The contrast between the cold, silky custard and the hot, brittle sugar crust is the point; they must be served within minutes of caramelising."
+  },
+  "recipeTools": [
+    { "slug": "blowtorch-mapp", "notes": "For caramelising the sugar crust. A very hot grill can substitute but results are less even.", "isOptional": true }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The custard should wobble like set jelly when the ramekin is nudged; it will continue to set as it cools. Over-baking produces a grainy, scrambled-egg texture. The water bath (bain-marie) ensures even, gentle heat. For the sugar crust, use a fine layer of caster sugar and caramelise it in one steady pass; lingering melts the custard underneath."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "servings": 6,
+          "items": [
+            { "ingredientSlug": "double-cream", "amount": 600, "unit": "ml" },
+            { "ingredientSlug": "eggs", "amount": 6, "unit": "each", "preparation": "yolks only" },
+            { "ingredientSlug": "caster-sugar", "amount": 60, "unit": "g", "preparation": "for the custard" },
+            { "ingredientSlug": "vanilla-extract", "amount": 1, "unit": "tsp" },
+            { "ingredientSlug": "caster-sugar", "amount": 60, "unit": "g", "preparation": "fine caster sugar; for the brûlée crust (10 g per ramekin)" }
+          ]
+        }
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Heat the oven to 150°C / fan 130°C / gas 2. Warm the cream until steaming but not boiling. Whisk the egg yolks and 60 g sugar until pale. Pour the hot cream slowly onto the yolks, whisking constantly. Add the vanilla. Skim off any foam from the surface. Strain through a fine sieve." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Pour into 6 ramekins. Place in a deep roasting tin and fill with enough hot water to come halfway up the ramekins. Bake for 35 to 40 minutes until the edges are set but the centre still wobbles. Remove from the water bath. Leave to cool, then refrigerate for at least 3 hours." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "To serve, sprinkle a thin, even layer of caster sugar (about 10 g) over each custard. Use a blowtorch to caramelise: move the flame in slow circles until the sugar melts and turns amber. Alternatively, place under the highest grill for 2 to 3 minutes. Serve within 10 minutes while the crust is still brittle." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
