@@ -1,0 +1,103 @@
+{
+  "slug": "nicoise-salad",
+  "title": "Nicoise Salad",
+  "subtitle": "The French tuna and egg salad with a sharp dressing",
+  "excerpt": "Tinned tuna, hard-boiled eggs, waxy potatoes, green beans, olives, anchovies, and capers arranged on a platter and dressed with a sharp mustard vinaigrette. No lettuce required.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Classic French Nicoise salad.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Boil eggs and potatoes up to a day ahead. Dress just before serving.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "french",
+    "mealType": "lunch",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "A Nicoise is assembled, not tossed. Each component sits on the platter separately so you can see what you are eating." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "tuna-tinned", "amount": 290, "unit": "g", "prepNote": "2 tins, drained", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": null, "prepNote": "hard boiled and halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 400, "unit": "g", "prepNote": "boiled and halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "green-beans", "amount": 200, "unit": "g", "prepNote": "blanched", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cherry-tomatoes", "amount": 200, "unit": "g", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olives-black", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "anchovies", "amount": 8, "unit": "fillets", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "capers", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine-vinegar", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 5, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Boil potatoes in salted water until tender, about 12 minutes. Drain and cool slightly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blanch green beans in boiling water for 3 minutes. Drain and cool under cold water." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Hard-boil eggs: 10 minutes in boiling water. Cool in cold water. Peel and halve." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For the dressing, whisk vinegar, mustard, and oil together. Season well." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Arrange potatoes, beans, cherry tomatoes, olives, and anchovies on a large platter." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add tuna and eggs. Scatter capers over. Drizzle dressing over everything." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Potatoes are falling apart", "cause": "Overcooked", "fix": "Check at 10 minutes and drain while still holding their shape." },
+            { "symptom": "Dressing tastes flat", "cause": "Needs more salt or acid", "fix": "Add more vinegar a little at a time and taste." }
+          ]
+        }
+      }
+    ]
+  }
+}

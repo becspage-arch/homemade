@@ -1,0 +1,98 @@
+{
+  "slug": "roast-lamb-leg",
+  "title": "Roast Leg of Lamb",
+  "subtitle": "Garlic and rosemary studded, mustard crusted",
+  "excerpt": "A leg of lamb studded with garlic slivers and rosemary, rubbed with mustard and olive oil, then roasted until blushing pink. Rest for 20 minutes before carving.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Classic British roast lamb.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 90,
+    "restingMinutes": 20,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Stud and marinate the lamb up to 24 hours ahead. Keep in the fridge. Bring to room temperature before roasting.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The resting time is not optional. Cutting into the lamb immediately loses the juices you spent 90 minutes building." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-leg", "amount": 1, "unit": null, "prepNote": "about 1.5kg", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "cloves", "prepNote": "cut into thin slivers", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "rosemary", "amount": 4, "unit": "sprigs", "prepNote": "broken into small pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dijon-mustard", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Take the lamb out of the fridge 1 hour before cooking." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat oven to 200C." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Use a small sharp knife to make 20 deep cuts all over the lamb. Push a sliver of garlic and a piece of rosemary into each cut." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix mustard, olive oil, and the juice of the lemon. Rub all over the lamb. Season generously." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place in a roasting tin. Roast for 1 hour 30 minutes for pink meat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Transfer to a board. Tent loosely with foil. Rest for 20 minutes before carving." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Lamb is still very rare after 90 minutes", "cause": "Leg was colder than expected", "fix": "Return to oven in 10-minute bursts until it reads 60C." },
+            { "symptom": "Outside is very dark before lamb is cooked", "cause": "Oven runs hot", "fix": "Cover loosely with foil and continue at 180C." }
+          ]
+        }
+      }
+    ]
+  }
+}

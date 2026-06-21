@@ -1,0 +1,100 @@
+{
+  "slug": "roasted-garlic-hummus",
+  "title": "Roasted Garlic Hummus",
+  "subtitle": "Deep, sweet, and creamy from a whole head of roasted garlic",
+  "excerpt": "A whole head of garlic roasted until sweet and soft, then blended with chickpeas, tahini, and lemon into a smooth hummus. The roasting makes the garlic mellow and rich.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Middle Eastern hummus, roasted garlic variation.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "serves 6-8 as a dip",
+    "prepMinutes": 5,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes well for up to 3 months.",
+    "batchable": true,
+    "batchNotes": "Easy to double. Blender handles it well.",
+    "makeAheadNotes": "Make up to 5 days ahead. Keep in the fridge.",
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "middle-eastern",
+    "mealType": "lunch",
+    "mood": ["weekend"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The longer you blend, the creamier the result. Two full minutes in a powerful blender gives you the smooth, pale hummus you get in a good Middle Eastern restaurant." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 7,
+          "items": [
+            { "ingredientSlug": "chickpeas-tinned", "amount": 800, "unit": "g", "prepNote": "2 tins, drained, liquid reserved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tahini", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 1, "unit": "whole head", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 3, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-sweet", "amount": 0.5, "unit": "tsp", "prepNote": "to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat oven to 200C. Cut the top off the garlic head to expose the cloves. Drizzle with oil. Wrap in foil. Roast 30 minutes until completely soft and golden." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Squeeze roasted garlic out of the skins." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add chickpeas, tahini, juice of all 3 lemons, roasted garlic, and 2 tbsp olive oil to a blender." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blend for 2 minutes, adding 4 to 6 tbsp of the reserved chickpea liquid until smooth. The longer you blend, the creamier it gets." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Season well. Transfer to a serving bowl." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drizzle remaining olive oil over. Scatter paprika and a pinch of cumin on top." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Hummus is grainy", "cause": "Not blended long enough", "fix": "Blend for 2 full minutes, adding more liquid." },
+            { "symptom": "Hummus is too thick", "cause": "Not enough chickpea liquid", "fix": "Add more liquid a tablespoon at a time while blending." }
+          ]
+        }
+      }
+    ]
+  }
+}

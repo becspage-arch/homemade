@@ -1,0 +1,101 @@
+{
+  "slug": "aubergine-parmigiana",
+  "title": "Aubergine Parmigiana",
+  "subtitle": "Layered Italian bake with mozzarella and basil",
+  "excerpt": "Aubergine slices salted, fried until golden, then layered with a rich tomato sauce, torn mozzarella, parmesan, and basil. Baked until bubbling and golden on top.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Southern Italian classic.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze after baking, fully cooled. Reheat from frozen at 180C for 35 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble up to a day ahead. Bake when needed.",
+    "dietaryFlags": ["vegetarian", "glutenFree", "nutFree"],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": 190,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Salting and frying the aubergine is not optional. Without it the layers turn watery and the whole dish sinks." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "aubergine", "amount": 3, "unit": "large", "prepNote": "sliced 1cm thick", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 800, "unit": "g", "prepNote": "2 tins", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mozzarella", "amount": 250, "unit": "g", "prepNote": "torn", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parmesan", "amount": 100, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "basil", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 6, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Salt aubergine slices. Leave in a colander 15 minutes. Pat dry." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat oven to 190C." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Brush aubergine with oil. Cook in batches in a hot griddle pan or frying pan until golden, 2 minutes each side. Set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "For the sauce, cook garlic in 2 tbsp oil for 1 minute. Add tomato puree. Cook 1 minute. Add tinned tomatoes. Simmer 15 minutes until thick. Season." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spread a thin layer of tomato sauce in a baking dish. Add a layer of aubergine. Add more sauce, then mozzarella, parmesan, and basil. Repeat layers. Finish with sauce, parmesan, and a drizzle of oil." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake 35 to 40 minutes until bubbling and golden." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Dish is watery", "cause": "Aubergine not salted or sauce not reduced enough", "fix": "Salt and drain the aubergine, and reduce sauce until thick." },
+            { "symptom": "Top is browning too fast", "cause": "Dish near top of oven", "fix": "Move to the middle shelf and cover with foil." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "slug": "leek-and-potato-soup",
+  "title": "Leek and Potato Soup",
+  "subtitle": "Smooth, silky, and deeply savoury",
+  "excerpt": "Leeks and potato cooked slowly in butter then simmered in vegetable stock until completely tender. Blended until velvety and finished with a swirl of cream and fresh chives.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Classic British leek and potato soup.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze without the cream. Add cream after reheating.",
+    "batchable": true,
+    "batchNotes": "Doubles easily. Use a large stockpot.",
+    "makeAheadNotes": "Make up to 3 days ahead. Keep in the fridge and reheat gently.",
+    "dietaryFlags": ["vegetarian", "glutenFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["weeknight", "weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Low heat and patience in the first 10 minutes gives the leeks their sweetness. Rushing this stage makes the soup taste raw." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "leek", "amount": 4, "unit": null, "prepNote": "trimmed, cleaned, and sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 500, "unit": "g", "prepNote": "peeled and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": null, "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "cloves", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 1, "unit": "litre", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": "optional", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "chives", "amount": 20, "unit": "g", "prepNote": "snipped, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt butter in a large pot over low heat. Add leek, onion, and garlic. Cook gently for 10 minutes until soft. Do not let them colour." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add potato and stock. Bring to the boil. Reduce heat and simmer 20 minutes until potato is completely tender." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blend until smooth. Return to the pot." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Season well. Stir in cream if using. Heat through gently." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve with chives scattered over and crusty bread on the side." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Soup is gluey", "cause": "Too much potato or over-blended", "fix": "Add more stock and blend for a shorter time next time." },
+            { "symptom": "Soup is bland", "cause": "Under-seasoned or bland stock", "fix": "Season generously and add a squeeze of lemon." }
+          ]
+        }
+      }
+    ]
+  }
+}

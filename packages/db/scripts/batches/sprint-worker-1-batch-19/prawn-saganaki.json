@@ -1,0 +1,102 @@
+{
+  "slug": "prawn-saganaki",
+  "title": "Prawn Saganaki",
+  "subtitle": "Baked prawns in tomato with feta",
+  "excerpt": "Large prawns baked in a punchy tomato sauce with chilli and white wine vinegar, then topped with crumbled feta and finished in the oven until bubbling. A Greek taverna staple.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Greek taverna classic. White wine vinegar used in place of ouzo.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the tomato sauce up to a day ahead. Add prawns and feta just before baking.",
+    "dietaryFlags": ["glutenFree", "nutFree"],
+    "cuisine": "greek",
+    "mealType": "dinner",
+    "mood": ["weekend", "weeknight"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Saganaki means cooked in a small frying pan, but this version uses an ovenproof dish and bakes everything together. Serve straight from the dish with crusty bread." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "king-prawns", "amount": 500, "unit": "g", "prepNote": "peeled and deveined", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "feta", "amount": 200, "unit": "g", "prepNote": "crumbled", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-red", "amount": 1, "unit": null, "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-vinegar", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "oregano-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "chopped, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat oven to 200C." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat oil in an ovenproof dish over medium heat. Add garlic and chilli. Cook 2 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add tinned tomatoes, vinegar, and oregano. Simmer 8 minutes until slightly reduced." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add prawns. Nestle them into the sauce." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scatter feta over the top." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake 10 minutes until prawns are pink and feta is starting to brown." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scatter parsley over and serve straight from the dish with crusty bread." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Prawns are rubbery", "cause": "Overcooked in the oven", "fix": "Check at 8 minutes and remove as soon as they turn pink." },
+            { "symptom": "Sauce is watery", "cause": "Tomatoes released too much liquid", "fix": "Simmer on the hob 5 more minutes before baking." }
+          ]
+        }
+      }
+    ]
+  }
+}

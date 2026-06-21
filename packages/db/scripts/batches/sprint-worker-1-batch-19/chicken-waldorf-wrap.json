@@ -1,0 +1,101 @@
+{
+  "slug": "chicken-waldorf-wrap",
+  "title": "Chicken Waldorf Wrap",
+  "subtitle": "Poached chicken, apple, and almonds in a flatbread",
+  "excerpt": "Poached chicken breast sliced with crisp apple, celery, and toasted almonds, bound in a light mustard yoghurt dressing, then rolled into flatbreads.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "British lunch wrap based on Waldorf salad.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "makes 4 wraps",
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Poach chicken the day before. Keep in the fridge. Assemble wraps fresh.",
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Poaching the chicken gently keeps it tender. A rolling boil will make it tough. The residual heat in the water finishes the cooking." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-breast", "amount": 400, "unit": "g", "prepNote": "2 breasts", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "apple", "amount": 2, "unit": null, "prepNote": "cored and thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 3, "unit": "stalks", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "almonds-flaked", "amount": 40, "unit": "g", "prepNote": "toasted", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "greek-yoghurt", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chives", "amount": 15, "unit": "g", "prepNote": "snipped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bread-flour", "amount": 200, "unit": "g", "prepNote": "for flatbreads, or use shop-bought", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Poach chicken: put breasts in a saucepan. Cover with cold water. Bring to a gentle simmer. Cook 12 minutes. Turn off the heat. Leave in the water 5 minutes. Slice when cool enough to handle." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Toast almonds in a dry pan until golden. Set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix yoghurt, mustard, and juice of half the lemon. Season well." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Toss chicken, apple, and celery in the dressing." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If making flatbreads: combine bread flour with water and a pinch of salt to a soft dough. Divide into 4. Roll thin. Cook in a dry hot pan 2 minutes each side." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pile filling into flatbreads. Scatter almonds and chives over. Roll and serve." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Chicken is dry", "cause": "Boiled too hard or too long", "fix": "Keep it at a gentle simmer, never a rolling boil." },
+            { "symptom": "Apple is browning in the filling", "cause": "Dressed too early", "fix": "Toss apple in lemon juice immediately after slicing." }
+          ]
+        }
+      }
+    ]
+  }
+}
