@@ -27,6 +27,8 @@ import { PhotoToChartPanel } from './PhotoToChartPanel'
 import { MyPatternsGrid } from './MyPatternsGrid'
 import { useStudioAutosave } from './use-studio-autosave'
 import { BrandSwapDialog } from './BrandSwapDialog'
+import { UpgradeBlock } from '@/components/premium/UpgradeBlock'
+import { getStudioGateCopy } from '@/lib/studio/premium-gates'
 import {
   StudioRecentlyAddedRail,
   type RailCard,
@@ -53,6 +55,7 @@ export interface RecentlyAddedListItem {
 interface StudioShellProps {
   startMode: StudioStartMode
   signedIn: boolean
+  isPremium: boolean
   userEmail: string | null
   userName: string | null
   pattern: { id: string; name: string; data: PatternData; ownerUserId: string | null } | null
@@ -64,6 +67,7 @@ interface StudioShellProps {
 export function StudioShell({
   startMode,
   signedIn,
+  isPremium,
   userEmail,
   userName,
   pattern,
@@ -118,6 +122,18 @@ export function StudioShell({
       )
     }
     if (startMode === 'new-photo') {
+      // Photo-to-chart is create-your-own — premium. Non-premium signed-in
+      // Makers see the calm upgrade block in place of the panel.
+      if (!isPremium) {
+        const copy = getStudioGateCopy('PHOTO_TO_CHART')
+        return (
+          <div className="studio-empty-surface">
+            <div style={{ maxWidth: 560, margin: '48px auto', padding: '0 24px' }}>
+              <UpgradeBlock message={copy.message} rationale={copy.rationale} />
+            </div>
+          </div>
+        )
+      }
       return (
         <PhotoToChartPanel
           signedIn={signedIn}
@@ -164,6 +180,7 @@ export function StudioShell({
         patternId={pattern.id}
         patternName={pattern.name}
         signedIn={signedIn}
+        isPremium={isPremium}
         userEmail={userEmail}
         userName={userName}
         canEdit={pattern.ownerUserId !== null}

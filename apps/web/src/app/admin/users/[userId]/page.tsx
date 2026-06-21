@@ -103,6 +103,7 @@ export default async function AdminUserDetail({ params }: PageProps) {
         userId={target.id}
         currentRole={target.role}
         isSuspended={target.isSuspended}
+        premiumActive={target.premiumActive}
         actorIsAdmin={actorIsAdmin}
         isSelf={actor?.id === target.id}
         targetIsAdmin={target.role === UserRole.ADMIN}

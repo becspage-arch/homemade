@@ -1,12 +1,18 @@
 'use client'
 
 import { useState, useTransition } from 'react'
-import { changeUserRole, suspendUser, liftSuspension } from '@/lib/moderation-actions'
+import {
+  changeUserRole,
+  suspendUser,
+  liftSuspension,
+  setPremiumActive,
+} from '@/lib/moderation-actions'
 
 interface Props {
   userId: string
   currentRole: 'ADMIN' | 'EDITOR' | 'MEMBER' | 'CREATOR' | 'TESTER' | 'ANONYMOUS'
   isSuspended: boolean
+  premiumActive: boolean
   actorIsAdmin: boolean
   isSelf: boolean
   targetIsAdmin: boolean
@@ -16,6 +22,7 @@ export function UserDetailControls({
   userId,
   currentRole,
   isSuspended,
+  premiumActive,
   actorIsAdmin,
   isSelf,
   targetIsAdmin,
@@ -50,6 +57,13 @@ export function UserDetailControls({
     setError(null)
     start(async () => {
       const res = await liftSuspension({ userId })
+      if (!res.ok) setError(res.error)
+    })
+  }
+  const onTogglePremium = () => {
+    setError(null)
+    start(async () => {
+      const res = await setPremiumActive({ userId, premiumActive: !premiumActive })
       if (!res.ok) setError(res.error)
     })
   }
@@ -100,6 +114,38 @@ export function UserDetailControls({
           Editors can apply bounded suspensions but can’t change roles or permanently ban.
           Ask an admin for those.
         </p>
+      )}
+
+      {actorIsAdmin && (
+        <div
+          style={{
+            marginTop: 18,
+            paddingTop: 12,
+            borderTop: '0.5px solid var(--color-linen-grey)',
+          }}
+        >
+          <div className="admin-card-eyebrow" style={{ marginBottom: 6 }}>
+            Premium
+          </div>
+          <div className="admin-card-actions" style={{ alignItems: 'center', gap: 10 }}>
+            <span
+              className="admin-pill"
+              style={{
+                background: premiumActive ? 'var(--color-sage)' : undefined,
+                color: premiumActive ? 'var(--color-cream)' : undefined,
+              }}
+            >
+              {premiumActive ? 'Premium active' : 'Not premium'}
+            </span>
+            <button className="admin-btn" disabled={pending} onClick={onTogglePremium}>
+              {premiumActive ? 'Remove premium' : 'Grant premium'}
+            </button>
+          </div>
+          <p style={{ fontSize: 12, color: 'var(--color-warm-taupe)', fontStyle: 'italic', marginTop: 6 }}>
+            Manual toggle for testing gated flows. Stripe will manage this once
+            checkout is live.
+          </p>
+        </div>
       )}
 
       {!isSelf && !targetIsAdmin && !isSuspended && (

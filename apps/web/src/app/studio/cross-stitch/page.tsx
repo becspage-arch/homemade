@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { prisma, parsePatternData, type PatternData, PatternType, Visibility } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { hasPremium } from '@/lib/entitlements'
 import { StudioShell } from '@/components/studio/shell/StudioShell'
+import { StudioAuthGate } from '@/components/premium/StudioAuthGate'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 
 export const dynamic = 'force-dynamic'
@@ -37,6 +39,21 @@ interface PageProps {
 export default async function CrossStitchStudioPage({ searchParams }: PageProps) {
   const sp = await searchParams
   const user = await getCurrentDbUser()
+  const premium = hasPremium(user)
+
+  // The Studio is a free signed-in surface (an auth gate, NOT a paywall).
+  // Anonymous visitors can browse the library and see the Studio's front door,
+  // but opening a working surface — a pattern, a blank canvas, photo-to-chart —
+  // needs a free account. Content viewing on /cross-stitch/patterns stays open.
+  const wantsWorkingSurface =
+    Boolean(sp.patternId) || sp.new === 'blank' || sp.new === 'photo'
+  if (!user && wantsWorkingSurface) {
+    const q = new URLSearchParams()
+    if (sp.patternId) q.set('patternId', sp.patternId)
+    if (sp.new) q.set('new', sp.new)
+    const returnTo = `/studio/cross-stitch${q.toString() ? `?${q.toString()}` : ''}`
+    return <StudioAuthGate craftLabel="the cross-stitch Studio" returnTo={returnTo} />
+  }
 
   let pattern: { id: string; name: string; data: PatternData; ownerUserId: string | null } | null = null
   let stitchedKeys: string[] = []
@@ -137,6 +154,7 @@ export default async function CrossStitchStudioPage({ searchParams }: PageProps)
     <StudioShell
       startMode={startMode}
       signedIn={Boolean(user)}
+      isPremium={premium}
       userEmail={user?.email ?? null}
       userName={user?.name ?? null}
       pattern={pattern}

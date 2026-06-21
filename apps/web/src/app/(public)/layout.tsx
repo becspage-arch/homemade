@@ -8,6 +8,8 @@ import { OfflineBanner } from '@/components/public/offline-banner'
 import { ServiceWorkerRegister } from '@/components/public/service-worker-register'
 import { PushOptIn } from '@/components/public/push-opt-in'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { hasPremium } from '@/lib/entitlements'
+import { PremiumProvider } from '@/components/premium/premium-context'
 import '@/components/public/site-chrome.css'
 import '@/components/public/mobile-tab-bar.css'
 import '@/components/public/offline-banner.css'
@@ -31,7 +33,7 @@ export default async function PublicLayout({ children }: { children: ReactNode }
   }
 
   return (
-    <>
+    <PremiumProvider isPremium={hasPremium(user)}>
       <SiteHeader />
       <OfflineBanner />
       <main className="public-main">{children}</main>
@@ -45,6 +47,6 @@ export default async function PublicLayout({ children }: { children: ReactNode }
           hasActiveProject={hasActiveProject}
         />
       )}
-    </>
+    </PremiumProvider>
   )
 }

@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { hasPremium } from '@/lib/entitlements'
 import { resolveUserUnitPreferences } from '@/lib/recipes/user-unit-preferences'
 import { aggregateShoppingList } from '@/lib/recipes/shopping-list'
 import { checkRecipeGate, getRecipeGateCopy } from '@/lib/recipes/premium-gates'
 import { ShoppingListView } from '@/components/public/recipes/shopping-list-view'
-import { RecipeComingSoon } from '@/components/public/recipes/recipe-coming-soon'
+import { UpgradeBlock } from '@/components/premium/UpgradeBlock'
 
 import './shopping-list.css'
 
@@ -25,16 +26,24 @@ interface PageProps {
 export default async function ShoppingListPage({ searchParams }: PageProps) {
   const user = await getCurrentDbUser()
 
-  // The SHOPPING_LIST gate is off today, so this resolves allowed for everyone.
-  // When a later worker flips RECIPE_PREMIUM_GATING_ENABLED, free users see the
-  // calm upgrade block instead; the page below never has to change.
+  // The shopping-list generator is premium. Free / anonymous users get the calm
+  // upgrade block; premium users get the list. (Printing the list is also
+  // premium, but only premium users reach the list at all, so it's covered.)
   const gate = checkRecipeGate('SHOPPING_LIST', {
     signedIn: Boolean(user),
-    isPremium: false,
+    isPremium: hasPremium(user),
   })
   if (!gate.allowed) {
     const copy = getRecipeGateCopy('SHOPPING_LIST')
-    return <RecipeComingSoon feature="SHOPPING_LIST" heading={copy.message} />
+    return (
+      <main className="shopping-list-page">
+        <header className="shopping-list-head">
+          <p className="shopping-list-eyebrow">Shopping list</p>
+          <h1 className="shopping-list-title">Your list</h1>
+        </header>
+        <UpgradeBlock message={copy.message} rationale={copy.rationale} />
+      </main>
+    )
   }
 
   const params = await searchParams

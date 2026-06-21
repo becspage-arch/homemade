@@ -6,6 +6,7 @@ import {
   Visibility,
 } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { hasPremium } from '@/lib/entitlements'
 
 export const dynamic = 'force-dynamic'
 
@@ -28,6 +29,13 @@ interface Ctx {
  */
 export async function GET(_req: Request, ctx: Ctx) {
   const { id } = await ctx.params
+
+  // Downloading the floss list is a premium action (universal print/download gate).
+  const user = await getCurrentDbUser()
+  if (!hasPremium(user)) {
+    return new NextResponse('Homemade Premium is required to download the floss list.', { status: 402 })
+  }
+
   const row = await prisma.pattern.findUnique({
     where: { id },
     select: {
@@ -41,11 +49,8 @@ export async function GET(_req: Request, ctx: Ctx) {
   if (!row) return new NextResponse('Not found', { status: 404 })
 
   const isLibrary = row.ownerUserId === null && row.visibility !== Visibility.PRIVATE
-  if (!isLibrary) {
-    const user = await getCurrentDbUser()
-    if (!user || row.ownerUserId !== user.id) {
-      return new NextResponse('Not authorised', { status: 403 })
-    }
+  if (!isLibrary && row.ownerUserId !== user!.id) {
+    return new NextResponse('Not authorised', { status: 403 })
   }
 
   let data

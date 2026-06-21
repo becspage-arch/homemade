@@ -2,12 +2,16 @@
 
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
+import { Sparkles } from 'lucide-react'
 
 import { captureClientEvent } from '@/lib/client-analytics'
 import { formatIngredientQuantity, type UnitPreferences } from '@/lib/recipes/units'
 import type { Substitution } from '@/lib/recipes/substitutions'
+import { getRecipeGateCopy } from '@/lib/recipes/premium-gates'
 import { AddToShoppingList } from '@/components/public/recipes/add-to-shopping-list'
 import { AddToMealPlan } from '@/components/public/recipes/add-to-meal-plan'
+import { useHasPremium } from '@/components/premium/premium-context'
+import { UpgradeBlock } from '@/components/premium/UpgradeBlock'
 import { useScale } from '../scale-context'
 
 export interface IngredientsListItem {
@@ -74,6 +78,12 @@ export function IngredientsList({
     defaultServings ? String(defaultServings) : '',
   )
 
+  // Scaling is a premium tool. Non-premium readers see the recipe at its
+  // written amounts (free) and a calm upgrade prompt where the scaler sits.
+  const premium = useHasPremium()
+  const [showScaleGate, setShowScaleGate] = useState(false)
+  const scaleGateCopy = getRecipeGateCopy('RECIPE_SCALING')
+
   const multiplier = useMemo(() => {
     if (scale.kind === 'preset') return scale.multiplier
     if (!defaultServings || defaultServings <= 0) return 1
@@ -122,6 +132,7 @@ export function IngredientsList({
         </h2>
 
         {scalable ? (
+          premium ? (
           <div
             className="ingredients-list-scaler"
             role="radiogroup"
@@ -182,6 +193,17 @@ export function IngredientsList({
               </div>
             )}
           </div>
+          ) : (
+            <button
+              type="button"
+              className="ingredients-list-scale-chip is-premium"
+              onClick={() => setShowScaleGate((v) => !v)}
+              aria-expanded={showScaleGate}
+              title="Scaling is a Homemade Premium feature"
+            >
+              <Sparkles size={13} strokeWidth={1.8} aria-hidden="true" /> Scale
+            </button>
+          )
         ) : (
           <span
             className="ingredients-list-no-scale"
@@ -191,6 +213,14 @@ export function IngredientsList({
           </span>
         )}
       </div>
+
+      {scalable && !premium && showScaleGate && (
+        <UpgradeBlock
+          message={scaleGateCopy.message}
+          rationale={scaleGateCopy.rationale}
+          compact
+        />
+      )}
 
       {defaultServings && scalable && (
         <p className="ingredients-list-yield">

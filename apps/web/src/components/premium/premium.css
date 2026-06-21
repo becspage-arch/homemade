@@ -1,0 +1,177 @@
+/* Premium gating framework — calm, warm surfaces shared across every category.
+   No urgency, no scarcity: one explanatory line + a single upgrade CTA. */
+
+.premium-upgrade-block {
+  display: block;
+  border: 0.5px solid var(--color-linen-grey, #e6e1d8);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--color-sage, #8a9a7b) 7%, transparent);
+  padding: 20px 22px;
+  margin: 16px 0;
+  text-align: left;
+}
+
+.premium-upgrade-block.is-compact {
+  padding: 14px 16px;
+  margin: 10px 0;
+}
+
+.premium-upgrade-overline {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-sage, #6f7d62);
+  margin: 0 0 6px;
+}
+
+.premium-upgrade-message {
+  font-family: var(--font-lora);
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color-ink, #2b2823);
+  margin: 0 0 4px;
+}
+
+.premium-upgrade-rationale {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-warm-taupe, #8c857a);
+  margin: 0 0 14px;
+}
+
+.premium-upgrade-cta {
+  display: inline-block;
+  font-family: var(--font-lora);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--color-cream, #faf7f1);
+  background: var(--color-sage, #6f7d62);
+  padding: 9px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+.premium-upgrade-cta:hover {
+  opacity: 0.88;
+}
+
+/* Premium badge — shown on premium items in search results + listing grids. */
+.premium-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-sage, #6f7d62);
+  background: color-mix(in srgb, var(--color-sage, #8a9a7b) 12%, transparent);
+  border-radius: 999px;
+  padding: 3px 9px 3px 7px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.premium-badge svg {
+  width: 12px;
+  height: 12px;
+}
+.premium-badge.is-icon-only {
+  padding: 4px;
+  border-radius: 999px;
+}
+
+/* Premium-gated recipe scaler chip — the sparkle sits inline with the label. */
+.ingredients-list-scale-chip.is-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Premium-gated Studio menu items — sparkle inline with the label. */
+.studio-popover-item.is-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-sage, #6f7d62);
+}
+
+/* Preview gate — the gated tail of a premium content page fades under the
+   upgrade block so the preview reads as "there's more", not "it's broken". */
+.premium-preview {
+  position: relative;
+}
+.premium-preview-fade {
+  position: relative;
+}
+.premium-preview-fade::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--color-cream, #faf7f1) 92%
+  );
+  pointer-events: none;
+}
+
+/* Studio auth gate — a free sign-in prompt (NOT a paywall) shown when an
+   anonymous visitor opens the Studio. */
+.studio-auth-gate {
+  max-width: 560px;
+  margin: 64px auto;
+  padding: 40px 32px;
+  text-align: center;
+}
+.studio-auth-gate-overline {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe, #8c857a);
+  margin: 0 0 12px;
+}
+.studio-auth-gate-title {
+  font-family: var(--font-fraunces, var(--font-display));
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--color-ink, #2b2823);
+  margin: 0 0 14px;
+}
+.studio-auth-gate-lede {
+  font-family: var(--font-lora);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--color-warm-taupe, #8c857a);
+  margin: 0 auto 26px;
+  max-width: 420px;
+}
+.studio-auth-gate-cta {
+  display: inline-block;
+  font-family: var(--font-lora);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--color-cream, #faf7f1);
+  background: var(--color-sage, #6f7d62);
+  padding: 11px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+.studio-auth-gate-cta:hover {
+  opacity: 0.88;
+}
+.studio-auth-gate-secondary {
+  display: block;
+  margin-top: 16px;
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-sage, #6f7d62);
+  text-decoration: none;
+}
+.studio-auth-gate-secondary:hover {
+  opacity: 0.8;
+}

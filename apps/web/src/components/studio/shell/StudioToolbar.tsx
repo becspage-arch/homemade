@@ -14,13 +14,14 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { Undo2, Redo2, MoreHorizontal, Check, Loader2, Grid2X2, X as XIcon, Type } from 'lucide-react'
+import { Undo2, Redo2, MoreHorizontal, Check, Loader2, Grid2X2, X as XIcon, Type, Sparkles } from 'lucide-react'
 import { useChartStore, type RenderStyle } from '../chart/chart-store'
 
 interface StudioToolbarProps {
   patternId: string
   patternName: string
   signedIn: boolean
+  isPremium: boolean
   userEmail: string | null
   userName: string | null
   canEdit: boolean
@@ -31,6 +32,7 @@ export function StudioToolbar({
   patternId,
   patternName,
   signedIn,
+  isPremium,
   userEmail,
   userName,
   canEdit,
@@ -157,6 +159,7 @@ export function StudioToolbar({
             <OverflowMenu
               patternId={patternId}
               canEdit={canEdit}
+              isPremium={isPremium}
               onClose={() => setOverflowOpen(false)}
               onOpenBrandSwap={() => {
                 setOverflowOpen(false)
@@ -250,22 +253,39 @@ function RenderStyleToggle() {
 function OverflowMenu({
   patternId,
   canEdit,
+  isPremium,
   onClose,
   onOpenBrandSwap,
 }: {
   patternId: string
   canEdit: boolean
+  isPremium: boolean
   onClose: () => void
   onOpenBrandSwap: () => void
 }) {
   return (
     <div className="studio-popover" onMouseLeave={onClose}>
-      <a className="studio-popover-item" href={`/api/studio/patterns/${patternId}/pdf?paper=a4`} target="_blank">
-        Export as PDF
-      </a>
-      <a className="studio-popover-item" href={`/api/studio/patterns/${patternId}/floss-list`} target="_blank">
-        Download floss list
-      </a>
+      {/* Printing / downloading is premium across every category. Non-premium
+          Makers get a calm link to upgrade in place of the export action; the
+          PDF + floss-list routes enforce the same server-side. */}
+      {isPremium ? (
+        <a className="studio-popover-item" href={`/api/studio/patterns/${patternId}/pdf?paper=a4`} target="_blank">
+          Export as PDF
+        </a>
+      ) : (
+        <Link className="studio-popover-item is-premium" href="/premium">
+          <Sparkles size={13} strokeWidth={1.8} aria-hidden="true" /> Export as PDF · Premium
+        </Link>
+      )}
+      {isPremium ? (
+        <a className="studio-popover-item" href={`/api/studio/patterns/${patternId}/floss-list`} target="_blank">
+          Download floss list
+        </a>
+      ) : (
+        <Link className="studio-popover-item is-premium" href="/premium">
+          <Sparkles size={13} strokeWidth={1.8} aria-hidden="true" /> Download floss list · Premium
+        </Link>
+      )}
       <button type="button" className="studio-popover-item" onClick={onOpenBrandSwap}>
         Switch floss brand
       </button>

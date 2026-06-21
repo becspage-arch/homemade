@@ -1,28 +1,29 @@
 /**
  * Premium gating for the recipe surfaces.
  *
- * Mirrors the Pattern Studio gate shape (`lib/studio/premium-gates.ts`): every
- * gate ships allowed-by-default until the config flag flips, so the upload /
- * community / meal-plan / shopping-list workers find the gates already wired
- * and only have to flip one boolean plus a per-user `isPremium` check.
+ * Gating is LIVE (the premium framework shipped). `checkRecipeGate` enforces
+ * against a per-user `isPremium` resolved from `hasPremium(user)`; callers pass
+ * the real value, not a hardcoded false. The cooking + baking planning suite —
+ * recipe scaling, the meal-plan calendar, and the shopping-list generator — is
+ * premium. Viewing recipes, tin conversion, ingredient substitution, and
+ * region/unit derivation stay free for everyone.
  *
- * Default OFF per the build-to-free-quality lock. This worker lays the gates;
- * a later worker (the premium-setup phase) flips them. The stub routes for each
- * surface read the gate COPY directly so the reader sees the rationale even
- * while gating is off.
+ * Printing / downloading any recipe, list, or plan is handled by the universal
+ * print/download gate in `@/components/premium`, not a feature flag here.
  *
  * The renderer surfaces a gated feature as a calm inline block, never a popup:
  * one explanatory sentence + a single "Upgrade to Homemade Premium" CTA. No
  * urgency, no scarcity.
  */
 
-export const RECIPE_PREMIUM_GATING_ENABLED = false
+export const RECIPE_PREMIUM_GATING_ENABLED = true
 
 export type RecipeGateFeature =
   | 'RECIPE_UPLOAD'
   | 'COMMUNITY_RECIPES'
   | 'MEAL_PLANNING'
   | 'SHOPPING_LIST'
+  | 'RECIPE_SCALING'
 
 interface UserContext {
   signedIn: boolean
@@ -56,6 +57,11 @@ const COPY: Record<RecipeGateFeature, { message: string; rationale: string }> = 
     message: 'The shopping-list generator is part of Homemade Premium.',
     rationale:
       'Premium turns any recipe or meal plan into an aisle-sorted shopping list with quantities combined.',
+  },
+  RECIPE_SCALING: {
+    message: 'Scaling a recipe up or down is part of Homemade Premium.',
+    rationale:
+      'Premium rescales every ingredient to the batch you want; the recipe stays free to read at its written amounts.',
   },
 }
 

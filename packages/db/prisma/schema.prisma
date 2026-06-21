@@ -61,6 +61,17 @@ model User {
   creatorVerifiedAt DateTime?
   isPatternTester   Boolean   @default(false)
 
+  // Premium entitlement (gating framework — Session E). `premiumActive` is the
+  // single source of truth read by `hasPremium()`; everything gated (Studio on
+  // premium content, all printing/downloading, recipe scaling + planning suite,
+  // create-your-own, designer content) checks it. `premiumSince` / `premiumUntil`
+  // are nullable and unused until Stripe billing (Session F) populates all three
+  // from webhooks; until then `premiumActive` is toggled from the admin user page
+  // to test gated flows. Indexed so admin can filter members by entitlement.
+  premiumActive Boolean   @default(false)
+  premiumSince  DateTime?
+  premiumUntil  DateTime?
+
   // Analytics — acquisition + cohort plumbing. All nullable: existing users
   // pre-date the capture and that's fine. Captured client-side on first visit
   // (localStorage) and persisted here on first signup (Clerk webhook).
@@ -341,6 +352,7 @@ model User {
   @@index([onboardedAt])
   @@index([lastSeenAt])
   @@index([isPublicMakerProfile])
+  @@index([premiumActive])
 }
 
 enum ExperienceLevel {

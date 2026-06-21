@@ -7,6 +7,7 @@ import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { buildBreadcrumbSchema } from '@/lib/seo/schema-builders'
 import { JsonLd } from '@/components/seo/json-ld'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { hasPremium } from '@/lib/entitlements'
 import { PatternSaveButton } from '@/components/public/pattern-save-button'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import './pattern-detail.css'
@@ -114,6 +115,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
   // Make-it-list save state for the signed-in reader. Anonymous readers still
   // see the Save button; tapping it routes them through sign-in.
   const user = await getCurrentDbUser()
+  const premium = hasPremium(user)
   const saved = user
     ? Boolean(
         await prisma.savedPattern.findUnique({
@@ -159,9 +161,18 @@ export default async function PatternDetailPage({ params }: PageProps) {
             <Link href={`/studio/cross-stitch?patternId=${row.id}`} className="pattern-detail-action primary">
               Stitch this pattern
             </Link>
-            <a href={`/api/studio/patterns/${row.id}/pdf?paper=${paper}`} className="pattern-detail-action ghost">
-              Download PDF ({paper === 'letter' ? 'US Letter' : 'A4'})
-            </a>
+            {/* Downloading the PDF is premium (universal print/download gate).
+                Non-premium readers get a link to upgrade; the route enforces it
+                server-side too. */}
+            {premium ? (
+              <a href={`/api/studio/patterns/${row.id}/pdf?paper=${paper}`} className="pattern-detail-action ghost">
+                Download PDF ({paper === 'letter' ? 'US Letter' : 'A4'})
+              </a>
+            ) : (
+              <Link href="/premium" className="pattern-detail-action ghost">
+                Download PDF · Premium
+              </Link>
+            )}
             <PatternSaveButton patternId={row.id} initialSaved={saved} />
           </div>
 

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { hasPremium } from '@/lib/entitlements'
 import { checkRecipeGate, getRecipeGateCopy } from '@/lib/recipes/premium-gates'
 import {
   getWeekPlan,
@@ -10,7 +11,7 @@ import {
   isoDate,
 } from '@/lib/recipes/meal-plan'
 import { MealPlanCalendar } from '@/components/public/recipes/meal-plan-calendar'
-import { RecipeComingSoon } from '@/components/public/recipes/recipe-coming-soon'
+import { UpgradeBlock } from '@/components/premium/UpgradeBlock'
 
 import './meal-plan.css'
 
@@ -52,10 +53,20 @@ export default async function MealPlanPage({ searchParams }: PageProps) {
     )
   }
 
-  const gate = checkRecipeGate('MEAL_PLANNING', { signedIn: true, isPremium: false })
+  const gate = checkRecipeGate('MEAL_PLANNING', {
+    signedIn: true,
+    isPremium: hasPremium(user),
+  })
   if (!gate.allowed) {
     const copy = getRecipeGateCopy('MEAL_PLANNING')
-    return <RecipeComingSoon feature="MEAL_PLANNING" heading={copy.message} />
+    return (
+      <main className="meal-plan-page">
+        <div className="meal-plan-signin">
+          <h1 className="meal-plan-title">Plan your week</h1>
+          <UpgradeBlock message={copy.message} rationale={copy.rationale} />
+        </div>
+      </main>
+    )
   }
 
   const params = await searchParams

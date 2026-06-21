@@ -688,6 +688,46 @@ export async function changeUserRole(input: {
   return { ok: true }
 }
 
+/**
+ * Toggle a user's premium entitlement by hand. This is the testing lever until
+ * Stripe (Session F) populates `premiumActive` / `premiumSince` / `premiumUntil`
+ * from webhooks — it lets us exercise every gated flow against a real account.
+ * `premiumSince` is stamped on the first activation and left in place; clearing
+ * premium flips `premiumActive` off but keeps the history.
+ */
+export async function setPremiumActive(input: {
+  userId: string
+  premiumActive: boolean
+}): Promise<ActionResult> {
+  const actor = await requireAdminRole({ minimum: 'ADMIN' })
+
+  const target = await prisma.user.findUnique({
+    where: { id: input.userId },
+    select: { id: true, email: true, premiumActive: true, premiumSince: true },
+  })
+  if (!target) return { ok: false, error: 'User not found.' }
+
+  await prisma.user.update({
+    where: { id: target.id },
+    data: {
+      premiumActive: input.premiumActive,
+      // Stamp the first time premium is granted; never overwrite it on re-grant.
+      ...(input.premiumActive && !target.premiumSince ? { premiumSince: new Date() } : {}),
+    },
+  })
+
+  await audit({
+    actorId: actor.id,
+    action: 'user.premium_toggled',
+    resource: `User:${target.id}`,
+    metadata: { email: target.email, before: target.premiumActive, after: input.premiumActive },
+  })
+
+  revalidatePath('/admin/users')
+  revalidatePath(`/admin/users/${target.id}`)
+  return { ok: true }
+}
+
 export async function suspendUser(input: {
   userId: string
   reason: string

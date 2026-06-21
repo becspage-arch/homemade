@@ -1,6 +1,8 @@
 import { createHash } from 'crypto'
 import { NextResponse } from 'next/server'
 import { computePatternMetrics } from '@homemade/db'
+import { getCurrentDbUser } from '@/lib/get-current-user'
+import { hasPremium } from '@/lib/entitlements'
 import { photoToPatternData } from '@/lib/studio/photo-to-pattern'
 import {
   downscaleCacheKey,
@@ -22,6 +24,15 @@ export const runtime = 'nodejs'
  * downscale step.
  */
 export async function POST(req: Request) {
+  // Photo-to-chart is create-your-own — premium.
+  const user = await getCurrentDbUser()
+  if (!hasPremium(user)) {
+    return NextResponse.json(
+      { error: 'Homemade Premium is required for photo-to-chart.' },
+      { status: 402 },
+    )
+  }
+
   const form = await req.formData()
   const file = form.get('image')
   if (!(file instanceof Blob)) {
