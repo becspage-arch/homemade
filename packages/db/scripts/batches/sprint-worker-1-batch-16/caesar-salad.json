@@ -1,0 +1,105 @@
+{
+  "slug": "caesar-salad",
+  "title": "Caesar Salad",
+  "subtitle": "Grilled chicken salad with homemade anchovy dressing and croutons",
+  "excerpt": "A proper Caesar salad with grilled chicken, homemade croutons, and a sharp anchovy and parmesan dressing. The dressing is made from scratch with egg yolk, anchovies, and lemon. It takes 20 minutes and is far better than anything from a bottle.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the classic Caesar salad. The dressing technique follows the emulsification method used in the original 1920s Tijuana recipe.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the dressing up to 3 days ahead and refrigerate. Make croutons up to 2 days ahead and store in an airtight tin.",
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "american",
+    "mealType": "lunch",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "frying-pan-28", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The dressing is the recipe. Make it bold. Anchovies dissolve into it and you will not taste individual fish flavour, just saltiness and depth." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-breast", "amount": 400, "unit": "g", "prepNote": "grilled and sliced", "isOptional": false, "groupLabel": "Salad" },
+            { "ingredientSlug": "parmesan", "amount": 80, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Salad" },
+            { "ingredientSlug": "bread-flour", "amount": 200, "unit": "g", "prepNote": "torn into rough chunks for croutons", "isOptional": false, "groupLabel": "Croutons" },
+            { "ingredientSlug": "olive-oil", "amount": 6, "unit": "tbsp", "prepNote": "3 tbsp for croutons, 3 tbsp for dressing", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "anchovies", "amount": 6, "unit": "fillets", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Dressing" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "cloves", "prepNote": "minced", "isOptional": false, "groupLabel": "Dressing" },
+            { "ingredientSlug": "lemon", "amount": 2, "unit": "whole", "prepNote": "juice only", "isOptional": false, "groupLabel": "Dressing" },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dressing" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dressing" },
+            { "ingredientSlug": "egg-yolks", "amount": 1, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": "Dressing" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 200C. Toss the bread chunks in 3 tbsp olive oil and a pinch of salt. Spread on a baking tray. Bake for 10 to 12 minutes until golden and crispy. Set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Season the chicken breasts with salt. Cook in a hot dry pan for 5 to 6 minutes each side. Rest for 5 minutes, then slice." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the dressing. Put the egg yolk, anchovies, garlic, lemon juice, mustard, and worcestershire sauce in a bowl. Whisk together." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slowly drizzle in 3 tbsp olive oil while whisking constantly. The dressing should thicken slightly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir in half the parmesan. Taste and adjust salt and lemon." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the croutons and sliced chicken in a large bowl. Pour over the dressing. Toss to coat." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Plate up and scatter over the remaining parmesan. Serve at once." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Dressing is too thin", "cause": "Oil added too fast, emulsion did not form", "fix": "Whisk in a drop of cold water to help it thicken." },
+            { "symptom": "Dressing is very salty", "cause": "Too many anchovies or anchovies not rinsed", "fix": "Balance with more lemon juice and olive oil." },
+            { "symptom": "Croutons are soggy", "cause": "Added too early or dressing pooled at the bottom", "fix": "Add croutons just before serving." }
+          ]
+        }
+      }
+    ]
+  }
+}

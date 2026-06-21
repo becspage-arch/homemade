@@ -1,0 +1,110 @@
+{
+  "slug": "coq-au-vin",
+  "title": "Coq au Vin",
+  "subtitle": "Chicken legs braised with pancetta, mushrooms, and herbs",
+  "excerpt": "Chicken legs are browned, then slow-braised with pancetta, chestnut mushrooms, carrots, and herbs in a stock-based sauce. Red wine vinegar stands in here for the traditional wine. The result is a deeply savoury braise that improves if made a day ahead.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the French farmhouse braise. Red wine vinegar replaces the wine and gives a similar depth and acidity without the alcohol.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 75,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze without the mushrooms. Add freshly cooked mushrooms when reheating.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make a day ahead and refrigerate. Skim any fat from the top and reheat gently.",
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{ "slug": "stockpot", "isOptional": false }],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Brown the chicken well before braising. The deep colour you get in the pan translates directly to flavour in the final sauce. Do not rush this step." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-legs", "amount": 4, "unit": "whole", "prepNote": "bone-in, about 1.2kg total", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pancetta", "amount": 150, "unit": "g", "prepNote": "lardons", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 300, "unit": "g", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "large", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "medium", "prepNote": "cut into thick rounds", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "sticks", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 4, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "red-wine-vinegar", "amount": 200, "unit": "ml", "prepNote": "used in place of red wine", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 2, "unit": "tbsp", "prepNote": "to dust the chicken", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pat the chicken legs dry. Season with salt. Dust lightly with plain flour on all sides." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt half the butter in a large stockpot over medium-high heat. Brown the chicken in two batches for 4 minutes each side. Remove and set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the pancetta to the same pot. Fry for 4 minutes until golden. Remove and set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the remaining butter. Cook the onion, carrot, and celery over medium heat for 8 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic. Cook for 2 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir in the tomato puree. Cook for 1 minute." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the red wine vinegar. Let it bubble for 2 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the chicken stock, thyme, and bay leaves. Return the chicken and pancetta to the pot." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bring to a boil. Reduce to a low simmer. Cover and cook for 45 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the mushrooms. Cook uncovered for 15 more minutes until the sauce has reduced and the chicken is very tender." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Taste and adjust salt. Remove the thyme stems and bay leaves. Serve with mashed potato or crusty bread." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Sauce is very thin", "cause": "Too much liquid, not reduced enough", "fix": "Remove chicken and boil sauce hard for 10 minutes." },
+            { "symptom": "Sauce tastes sharp", "cause": "Vinegar was not cooked off properly", "fix": "Add a pinch of sugar and simmer 5 more minutes." },
+            { "symptom": "Chicken skin is soggy", "cause": "Skin was not browned well enough at the start", "fix": "Brown more aggressively next time before braising." }
+          ]
+        }
+      }
+    ]
+  }
+}

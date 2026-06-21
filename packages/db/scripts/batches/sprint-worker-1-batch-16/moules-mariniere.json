@@ -1,0 +1,101 @@
+{
+  "slug": "moules-mariniere",
+  "title": "Prawns Mariniere",
+  "subtitle": "King prawns in a white wine vinegar and herb broth",
+  "excerpt": "King prawns are cooked quickly in a light, aromatic broth of shallots, garlic, thyme, and white wine vinegar. This is a simplified version of the French classic moules mariniere, using prawns in place of mussels. Serve with crusty bread to mop up the broth.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Adapted from the French moules mariniere. King prawns replace mussels here as they are more reliably available and easier to prepare.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The broth base can be made ahead. Add the prawns only when ready to serve.",
+    "dietaryFlags": ["glutenFree", "nutFree"],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{ "slug": "stockpot", "isOptional": false }],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Prawns cook very quickly. Two to three minutes in the hot broth is all they need. Overcooking makes them tough and rubbery." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "king-prawns", "amount": 600, "unit": "g", "prepNote": "raw, peeled and deveined", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "small", "prepNote": "shallots or small onion, finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 3, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "white-wine-vinegar", "amount": 200, "unit": "ml", "prepNote": "used in place of white wine", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 30, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt the butter in a large stockpot over medium heat. Add the onion. Cook for 4 minutes until soft." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic, thyme, and bay leaves. Cook for 1 minute." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the white wine vinegar. Let it bubble for 2 minutes to cook off the sharp edge." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the prawns. Stir to coat. Cover and cook for 2 to 3 minutes until the prawns are pink and curled." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "If using, stir in the cream and cook for 1 minute." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Taste and season with salt. Scatter over the parsley. Remove bay leaves and thyme stems." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve at once in deep bowls with bread." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Prawns are tough and chewy", "cause": "Overcooked", "fix": "Cook 2 minutes only; pull out when just pink." },
+            { "symptom": "Broth tastes very sharp", "cause": "Vinegar not reduced enough", "fix": "Simmer broth 3 more minutes before adding prawns." },
+            { "symptom": "Broth is too watery", "cause": "Prawns released water during cooking", "fix": "Remove prawns, reduce broth, then return them." }
+          ]
+        }
+      }
+    ]
+  }
+}

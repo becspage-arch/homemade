@@ -1,0 +1,103 @@
+{
+  "slug": "vitello-tonnato",
+  "title": "Vitello Tonnato",
+  "subtitle": "Sliced chicken with tuna and caper sauce",
+  "excerpt": "Thinly sliced poached chicken is served cold under a creamy tuna, caper, and anchovy sauce. This Italian classic is traditionally made with veal, but chicken works beautifully and is far easier to find. It is a make-ahead dish that gets better as it chills.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Adapted from the Piedmontese classic vitello tonnato. Chicken breast replaces veal as it is more accessible and has a similar mild flavour.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make up to a day ahead. Store the chicken and sauce separately in the fridge. Assemble before serving.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "italian",
+    "mealType": "lunch",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The key to thin slices is to chill the chicken thoroughly before cutting. A warm breast will tear rather than slice cleanly." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-breast", "amount": 600, "unit": "g", "prepNote": "poached and sliced thin when cold", "isOptional": false, "groupLabel": "Chicken" },
+            { "ingredientSlug": "tuna-tinned", "amount": 145, "unit": "g", "prepNote": "1 tin, drained", "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "capers", "amount": 2, "unit": "tbsp", "prepNote": "drained, plus extra to serve", "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "anchovies", "amount": 4, "unit": "fillets", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "lemon", "amount": 2, "unit": "whole", "prepNote": "juice only", "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "olive-oil", "amount": 6, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "egg-yolks", "amount": 2, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the chicken breasts in a saucepan. Cover with cold water. Add a pinch of salt. Bring to a gentle simmer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook for 12 to 15 minutes until the chicken is just cooked through. Remove from the water. Leave to cool, then refrigerate for at least 1 hour." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the sauce. Put the tuna, capers, anchovies, lemon juice, mustard, and egg yolks into a blender." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blend on low. Slowly drizzle in the olive oil while the blender runs until you have a smooth, creamy sauce." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Taste and season with salt. The sauce should be tangy, savoury, and pourable." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Slice the cold chicken as thinly as you can. Arrange on a serving plate." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spoon the sauce generously over the chicken. Scatter with extra capers. Serve at room temperature." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Sauce has split or looks grainy", "cause": "Oil added too fast", "fix": "Add a teaspoon of warm water and blend again." },
+            { "symptom": "Chicken slices are tearing", "cause": "Chicken was not cold enough", "fix": "Chill at least 1 hour more before slicing." },
+            { "symptom": "Sauce tastes too fishy", "cause": "Too many anchovies", "fix": "Balance with extra lemon juice and olive oil." }
+          ]
+        }
+      }
+    ]
+  }
+}
