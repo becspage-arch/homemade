@@ -1,0 +1,106 @@
+{
+  "slug": "full-english-breakfast",
+  "title": "Full English Breakfast",
+  "subtitle": "sausages, bacon, eggs, mushrooms, tomatoes",
+  "excerpt": "The full English is less a recipe and more a method of timing. Everything needs to arrive on the plate hot at the same moment. This guide shows how to stagger each component so nothing sits waiting while the rest catches up.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "The cooked English breakfast became popular in the 19th century as fuel for the working day. By the 20th century it was firmly established as a British institution, served in cafes, hotels, and homes across the country.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "main",
+    "mood": ["weekend", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    {"slug": "frying-pan-26", "isOptional": false},
+    {"slug": "roasting-tin", "isOptional": true},
+    {"slug": "wooden-spoon", "isOptional": false}
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": ["frying-eggs"],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "Keep a low oven at 100C to hold components warm as you cook. Sausages take the longest -- start them first. Bacon goes in next, followed by mushrooms and tomatoes. Eggs always last."}]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {"ingredientSlug": "sausages-pork", "amount": 4, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "streaky-bacon", "amount": 4, "unit": "rashers", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "eggs", "amount": 2, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "mushrooms-chestnut", "amount": 150, "unit": "g", "prepNote": "halved", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "tomato", "amount": 2, "unit": null, "prepNote": "halved", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": "use half a tin of baked beans if preferred", "isOptional": true, "groupLabel": null},
+            {"ingredientSlug": "vegetable-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "for the mushrooms", "isOptional": false, "groupLabel": null}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Method"}]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat a large frying pan over medium heat. Add a little oil and cook the sausages for 15 to 20 minutes, turning every few minutes until cooked through and golden. Transfer to a warm oven."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the bacon to the pan. Cook for 3 to 4 minutes each side until crisp. Transfer to the oven."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the butter. Fry the mushrooms for 4 minutes until golden. Season. Add the halved tomatoes cut side down for 2 minutes. Transfer both to the oven."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Wipe the pan and add a little oil. Fry the eggs over low heat until the whites are set and the yolks still runny. Season."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Arrange everything on warmed plates and serve straight away with toast."}]}]}
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {"symptom": "Sausages are burst or burnt outside but raw inside", "cause": "Heat too high", "fix": "Cook sausages over medium-low heat and do not prick them."},
+            {"symptom": "Eggs have crispy brown edges", "cause": "Oil too hot", "fix": "Lower the heat and add butter for a gentler cook."},
+            {"symptom": "Everything goes cold at different times", "cause": "No warm oven or poor timing", "fix": "Use a 100C oven to hold components warm while you finish the eggs."}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Where this dish lives"}]
+      },
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "The full English breakfast is one of Britain's most recognised meals. It evolved from the country-house breakfast tradition of the Victorian era, where a spread of cooked meats and eggs was laid out for guests. The cafe version -- served on a single plate for workers in the morning -- became its own institution. Every cook has an opinion on the correct components."}]
+      }
+    ]
+  }
+}
