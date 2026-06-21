@@ -790,3 +790,47 @@ SKIPPED: 0
 ## Still BLOCKED (sample 20)
 
 - sunday-gravy: prose-prep-steps
+
+---
+
+## Run at 22:49:15
+
+Generated: 2026-06-20T22:49:15.050Z
+
+Processed: 56
+PASS: 27
+STILL_BLOCKED: 29
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 87 |
+| content-type-opening-mismatch | 25 |
+| opening-pattern-missing-hook | 17 |
+| prose-prep-steps | 15 |
+| grade-level-strict | 1 |
+
+## Still BLOCKED (sample 20)
+
+- beef-and-ale-casserole: hero-missing
+- boeuf-bourguignon: hero-missing
+- buttermilk-fried-chicken: hero-missing
+- carrot-and-coriander-soup: hero-missing, prose-prep-steps
+- coq-au-vin: hero-missing
+- cornbread: hero-missing
+- falafel: hero-missing
+- fresh-egg-pasta: hero-missing
+- full-english-breakfast: hero-missing
+- gumbo-chicken-andouille: hero-missing
+- hummus: hero-missing
+- mujadara: hero-missing
+- mulligatawny-soup: hero-missing, prose-prep-steps
+- oeufs-en-cocotte: hero-missing
+- omelette-aux-fines-herbes: hero-missing
+- osso-buco-alla-milanese: hero-missing
+- panna-cotta: hero-missing
+- pollo-alla-cacciatora: hero-missing
+- porchetta: hero-missing
+- pork-and-apple-casserole: hero-missing, prose-prep-steps

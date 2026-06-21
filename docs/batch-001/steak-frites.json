@@ -1,0 +1,137 @@
+{
+  "slug": "steak-frites",
+  "title": "Steak Frites",
+  "subtitle": "French bistro steak and chips",
+  "excerpt": "A well-seared bavette or sirloin steak with a quick shallot and red wine butter sauce and proper twice-cooked chips. The French bistro pairing.",
+  "steak": "A well-seared bavette or sirloin steak with proper twice-cooked chips. This is the French bistro dish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "recipe": {
+    "servings": 2,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "difficulty": "INTERMEDIATE",
+    "season": "YEAR_ROUND",
+    "sourceType": "CLASSIC",
+    "sourceNotes": "Steak frites is the definitive dish of the Parisian brasserie and bistro, closely associated with the working-class restaurants of the late nineteenth and early twentieth centuries. The dish appears in countless French cookbooks and is one of the most ordered dishes in Paris."
+  },
+  "recipeTools": [
+    { "slug": "cast-iron-skillet", "notes": "For the steak. Gets very hot and holds it." },
+    { "slug": "deep-fryer", "notes": "Or a large deep saucepan for the chips." },
+    { "slug": "instant-read-thermometer", "notes": "For checking the steak." }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": ["deep-frying", "pan-frying-steak"],
+  "criticalTechniques": ["pan-frying-steak"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Steak frites is a well-seared steak and twice-cooked chips. The chips are blanched in oil at a low temperature, drained, then fried again at high heat just before serving, which gives a crisp exterior and a fluffy interior. The steak sauce is made from the pan juices with shallot, red wine, and butter."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "For the chips" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "servings": 2,
+          "items": [
+            { "ingredientSlug": "potatoes-floury", "amount": 600, "unit": "g", "preparation": "peeled and cut into 1 cm thick chips" },
+            { "ingredientSlug": "vegetable-oil", "amount": 1.5, "unit": "litres", "preparation": "for frying" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "For the steak" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "servings": 2,
+          "items": [
+            { "ingredientSlug": "sirloin-steak", "amount": 400, "unit": "g", "preparation": "or sirloin" },
+            { "ingredientSlug": "vegetable-oil", "amount": 1, "unit": "tbsp" },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.75, "unit": "tsp" },
+            { "ingredientSlug": "black-pepper-ground", "amount": 0.5, "unit": "tsp" },
+            { "ingredientSlug": "shallot", "amount": 2, "unit": "each", "preparation": "finely chopped" },
+            { "ingredientSlug": "red-wine", "amount": 100, "unit": "ml" },
+            { "ingredientSlug": "thyme-fresh", "amount": 2, "unit": "sprigs" }
+          ]
+        }
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "For the chips: heat the oil to 130 C. Fry the chips in batches for 5 to 6 minutes until cooked through but not coloured. Drain on a wire rack and leave to cool. They can sit for up to 2 hours at this stage." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "When ready to serve, heat the oil to 190 C. Fry the chips again for 3 to 4 minutes until very crisp and golden. Drain and season with salt immediately." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "For the steak: season generously on both sides with salt and pepper at least 30 minutes before cooking. Heat a cast-iron skillet over a very high heat until smoking. Add the oil." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "Cook the steak for 2 to 3 minutes per side for medium-rare, pressing it down so it makes full contact with the pan. In the last minute, add the butter and thyme and baste the steak. Rest on a warm plate for at least 5 minutes." }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  { "type": "text", "text": "In the same pan, cook the shallot over a medium heat for 2 minutes. Add the red wine and let it bubble for 1 to 2 minutes, scraping up the browned bits. Swirl in the remaining butter. Season and pour over the rested steak." }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

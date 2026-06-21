@@ -351,3 +351,641 @@ SKIPPED: 0
 - risotto-milanese: prose-prep-steps
 - sticky-toffee-pudding: prose-prep-steps
 - tagine-lamb: prose-prep-steps
+
+---
+
+## Run at 10:59:36
+
+Generated: 2026-06-21T10:59:36.615Z
+
+Processed: 7469
+PASS: 7440
+STILL_BLOCKED: 29
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| prose-prep-steps | 72 |
+| hero-missing | 12 |
+| content-type-opening-mismatch | 4 |
+| opening-pattern-missing-hook | 3 |
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- biryani-chicken: hero-missing
+- bread-and-butter-pudding: prose-prep-steps
+- butter-chicken: hero-missing
+- chicken-biryani-hyderabadi: grade-level-strict
+- chicken-korma: prose-prep-steps
+- chocolate-brownies: prose-prep-steps
+- cullen-skink: prose-prep-steps
+- egusi-soup: hero-missing
+- eton-mess: prose-prep-steps
+- french-onion-soup: prose-prep-steps
+- green-curry: prose-prep-steps
+- kedgeree: prose-prep-steps
+- khao-man-gai: prose-prep-steps
+- khao-moo-dang: prose-prep-steps
+- lancashire-hotpot: hero-missing
+- leek-and-potato-soup: prose-prep-steps
+- mac-and-cheese: prose-prep-steps
+- mango-sticky-rice: prose-prep-steps
+- moussaka: prose-prep-steps
+- pasta-arrabiata: prose-prep-steps
+
+---
+
+## Run at 11:35:20
+
+Generated: 2026-06-21T11:35:20.464Z
+
+Processed: 7444
+PASS: 7431
+STILL_BLOCKED: 13
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 59 |
+| opening-pattern-missing-hook | 50 |
+| prose-prep-steps | 36 |
+| grade-level-strict | 5 |
+| voice-violation | 1 |
+
+## Still BLOCKED (sample 20)
+
+- beef-bourguignon: prose-prep-steps
+- beef-rendang: prose-prep-steps
+- bolognese: prose-prep-steps
+- chelsea-buns: prose-prep-steps
+- chicken-chettinad: grade-level-strict
+- chicken-tagine-apricots: prose-prep-steps
+- cock-a-leekie: prose-prep-steps
+- dal-tadka: prose-prep-steps
+- hot-cross-buns: prose-prep-steps
+- kedgeree-smoked-salmon: prose-prep-steps
+- matar-paneer: prose-prep-steps
+- palak-paneer: prose-prep-steps
+- prawn-masala: prose-prep-steps
+
+---
+
+## Run at 11:37:28
+
+Generated: 2026-06-21T11:37:28.563Z
+
+Processed: 7444
+PASS: 7428
+STILL_BLOCKED: 16
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| prose-prep-steps | 36 |
+| hero-missing | 9 |
+| grade-level-strict | 5 |
+| voice-violation | 1 |
+
+## Still BLOCKED (sample 20)
+
+- beef-bourguignon: prose-prep-steps
+- beef-rendang: prose-prep-steps
+- bolognese: prose-prep-steps
+- chelsea-buns: prose-prep-steps
+- chicken-chettinad: grade-level-strict
+- chicken-tagine-apricots: prose-prep-steps
+- cock-a-leekie: prose-prep-steps
+- crochet-magic-ring: hero-missing
+- dal-tadka: prose-prep-steps
+- hot-cross-buns: prose-prep-steps
+- how-to-hold-a-crochet-hook: hero-missing
+- how-to-work-a-treble: hero-missing
+- kedgeree-smoked-salmon: prose-prep-steps
+- matar-paneer: prose-prep-steps
+- palak-paneer: prose-prep-steps
+- prawn-masala: prose-prep-steps
+
+---
+
+## Run at 11:39:25
+
+Generated: 2026-06-21T11:39:25.466Z
+
+Processed: 7430
+PASS: 7427
+STILL_BLOCKED: 3
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 9 |
+
+## Still BLOCKED (sample 20)
+
+- crochet-magic-ring: hero-missing
+- how-to-hold-a-crochet-hook: hero-missing
+- how-to-work-a-treble: hero-missing
+
+---
+
+## Run at 12:15:46
+
+Generated: 2026-06-21T12:15:46.036Z
+
+Processed: 7478
+PASS: 7464
+STILL_BLOCKED: 14
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| prose-prep-steps | 42 |
+| content-type-opening-mismatch | 12 |
+| opening-pattern-missing-hook | 11 |
+
+## Still BLOCKED (sample 20)
+
+- attieke-poisson: prose-prep-steps
+- beef-stroganoff: prose-prep-steps
+- borscht: prose-prep-steps
+- cassoulet: prose-prep-steps
+- cauliflower-cheese: prose-prep-steps
+- fried-plantain: prose-prep-steps
+- koki-cameroon: prose-prep-steps
+- light-soup-ghana: prose-prep-steps
+- mafe: prose-prep-steps
+- minestrone: prose-prep-steps
+- pea-and-mint-risotto: prose-prep-steps
+- rock-cakes: prose-prep-steps
+- senegalese-thieboudienne: prose-prep-steps
+- waakye: prose-prep-steps
+
+---
+
+## Run at 12:17:55
+
+Generated: 2026-06-21T12:17:55.198Z
+
+Processed: 7478
+PASS: 7464
+STILL_BLOCKED: 14
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| prose-prep-steps | 42 |
+
+## Still BLOCKED (sample 20)
+
+- attieke-poisson: prose-prep-steps
+- beef-stroganoff: prose-prep-steps
+- borscht: prose-prep-steps
+- cassoulet: prose-prep-steps
+- cauliflower-cheese: prose-prep-steps
+- fried-plantain: prose-prep-steps
+- koki-cameroon: prose-prep-steps
+- light-soup-ghana: prose-prep-steps
+- mafe: prose-prep-steps
+- minestrone: prose-prep-steps
+- pea-and-mint-risotto: prose-prep-steps
+- rock-cakes: prose-prep-steps
+- senegalese-thieboudienne: prose-prep-steps
+- waakye: prose-prep-steps
+
+---
+
+## Run at 12:56:00
+
+Generated: 2026-06-21T12:56:00.770Z
+
+Processed: 7509
+PASS: 7501
+STILL_BLOCKED: 8
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 55 |
+| opening-pattern-missing-hook | 48 |
+| prose-prep-steps | 24 |
+| grade-level-strict | 4 |
+
+## Still BLOCKED (sample 20)
+
+- chicken-soup: prose-prep-steps
+- fish-pie: prose-prep-steps
+- green-thai-curry: prose-prep-steps
+- liver-and-bacon: prose-prep-steps
+- onion-soup-gratinee: prose-prep-steps
+- prawn-chowder: prose-prep-steps
+- pulled-pork: prose-prep-steps
+- rabbit-stew: prose-prep-steps
+
+---
+
+## Run at 13:33:02
+
+Generated: 2026-06-21T13:33:02.913Z
+
+Processed: 7541
+PASS: 7532
+STILL_BLOCKED: 9
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 51 |
+| opening-pattern-missing-hook | 44 |
+| hero-missing | 18 |
+| prose-prep-steps | 12 |
+
+## Still BLOCKED (sample 20)
+
+- leek-potato-soup: prose-prep-steps
+- mushroom-soup: prose-prep-steps
+- naan-bread: prose-prep-steps
+- tarte-tatin: hero-missing
+- tiramisu: hero-missing, prose-prep-steps
+- toad-in-the-hole: hero-missing
+- treacle-tart: hero-missing
+- waldorf-salad: hero-missing
+- yorkshire-pudding: hero-missing
+
+---
+
+## Run at 14:21:29
+
+Generated: 2026-06-21T14:21:29.903Z
+
+Processed: 7597
+PASS: 7586
+STILL_BLOCKED: 11
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 73 |
+| opening-pattern-missing-hook | 63 |
+| prose-prep-steps | 30 |
+| grade-level-strict | 3 |
+| historical-century-in-body | 1 |
+
+## Still BLOCKED (sample 20)
+
+- banh-canh: prose-prep-steps
+- banh-cuon: prose-prep-steps
+- canh-chua: prose-prep-steps
+- causa-limena: prose-prep-steps
+- enchiladas: prose-prep-steps
+- hoppin-john: prose-prep-steps
+- lau: grade-level-strict
+- mapo-pork: prose-prep-steps
+- mien-ga: prose-prep-steps
+- pho-ga: prose-prep-steps
+- sweetcorn-fritters: prose-prep-steps
+
+---
+
+## Run at 14:59:47
+
+Generated: 2026-06-21T14:59:47.301Z
+
+Processed: 7623
+PASS: 7604
+STILL_BLOCKED: 19
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 65 |
+| opening-pattern-missing-hook | 59 |
+| prose-prep-steps | 48 |
+| grade-level-strict | 12 |
+| voice-violation | 3 |
+| historical-century-in-body | 2 |
+
+## Still BLOCKED (sample 20)
+
+- agedashi-tofu: prose-prep-steps
+- beef-tacos: prose-prep-steps
+- chana-masala: prose-prep-steps
+- chicken-and-dumplings: prose-prep-steps
+- chickpea-tikka-masala: prose-prep-steps
+- dhansak: prose-prep-steps
+- empanadas-beef: prose-prep-steps
+- hoisin-pork-lettuce-wraps: prose-prep-steps
+- korma: prose-prep-steps
+- minestrone-genovese: prose-prep-steps
+- paneer-butter-masala: prose-prep-steps
+- pasta-e-fagioli: grade-level-strict
+- pastitsio: prose-prep-steps
+- rajma: prose-prep-steps
+- ratatouille-tian: grade-level-strict
+- shakshuka-with-chorizo: prose-prep-steps
+- strozzapreti-al-ragu: prose-prep-steps
+- sweet-potato-curry: prose-prep-steps
+- trofie-al-pesto: voice-violation, grade-level-strict
+
+---
+
+## Run at 15:01:58
+
+Generated: 2026-06-21T15:01:58.567Z
+
+Processed: 7623
+PASS: 7602
+STILL_BLOCKED: 21
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| prose-prep-steps | 48 |
+| grade-level-strict | 9 |
+| hero-missing | 6 |
+| voice-violation | 3 |
+
+## Still BLOCKED (sample 20)
+
+- agedashi-tofu: prose-prep-steps
+- beef-tacos: prose-prep-steps
+- chana-masala: prose-prep-steps
+- chicken-and-dumplings: prose-prep-steps
+- chickpea-tikka-masala: prose-prep-steps
+- dhansak: prose-prep-steps
+- empanadas-beef: prose-prep-steps
+- hoisin-pork-lettuce-wraps: prose-prep-steps
+- korma: prose-prep-steps
+- minestrone-genovese: prose-prep-steps
+- paneer-butter-masala: prose-prep-steps
+- pasta-e-fagioli: grade-level-strict
+- pastitsio: prose-prep-steps
+- rajma: prose-prep-steps
+- ratatouille-tian: grade-level-strict
+- shakshuka-with-chorizo: prose-prep-steps
+- strozzapreti-al-ragu: prose-prep-steps
+- sweet-potato-curry: prose-prep-steps
+- tonkatsu: hero-missing
+- trofie-al-pesto: voice-violation, grade-level-strict
+
+---
+
+## Run at 15:39:25
+
+Generated: 2026-06-21T15:39:25.860Z
+
+Processed: 7671
+PASS: 7655
+STILL_BLOCKED: 16
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 65 |
+| opening-pattern-missing-hook | 64 |
+| prose-prep-steps | 45 |
+| grade-level-strict | 5 |
+| historical-century-in-body | 2 |
+| voice-violation | 1 |
+
+## Still BLOCKED (sample 20)
+
+- blanquette-de-veau: prose-prep-steps
+- bouillabaisse: prose-prep-steps
+- cabbage-rolls: prose-prep-steps
+- chicken-paprikash: grade-level-strict
+- chilli-con-carne: prose-prep-steps
+- cornmeal-porridge: prose-prep-steps
+- curried-goat: prose-prep-steps
+- dashimaki-tamago: prose-prep-steps
+- erbsensuppe: prose-prep-steps
+- harira: prose-prep-steps
+- irish-stew: prose-prep-steps
+- laksa: prose-prep-steps
+- nikujaga: prose-prep-steps
+- oxtail-stew: prose-prep-steps
+- pepperpot: prose-prep-steps
+- sauerbraten: prose-prep-steps
+
+---
+
+## Run at 16:10:25
+
+Generated: 2026-06-21T16:10:25.339Z
+
+Processed: 7720
+PASS: 7694
+STILL_BLOCKED: 26
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 68 |
+| opening-pattern-missing-hook | 57 |
+| hero-missing | 48 |
+| prose-prep-steps | 42 |
+| grade-level-strict | 2 |
+| historical-century-in-body | 1 |
+
+## Still BLOCKED (sample 20)
+
+- adobo-chicken: hero-missing
+- aubergine-parmigiana: prose-prep-steps
+- caprese-salad: prose-prep-steps
+- char-kway-teow: hero-missing
+- empanadas: prose-prep-steps
+- gado-gado: hero-missing
+- halo-halo: hero-missing
+- jeyuk-bokkeum: prose-prep-steps
+- kare-kare: hero-missing, prose-prep-steps
+- larb-gai: hero-missing
+- lechon-kawali: hero-missing, prose-prep-steps
+- mast-musir: prose-prep-steps
+- mie-goreng: hero-missing
+- nasi-goreng: hero-missing
+- pad-see-ew: hero-missing
+- prawn-bisque: prose-prep-steps
+- red-curry: hero-missing
+- rendang: hero-missing
+- satay-ayam: hero-missing
+- sinigang: hero-missing
+
+---
+
+## Run at 16:10:35
+
+Generated: 2026-06-21T16:10:35.907Z
+
+Processed: 7720
+PASS: 7694
+STILL_BLOCKED: 26
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| hero-missing | 48 |
+| prose-prep-steps | 42 |
+
+## Still BLOCKED (sample 20)
+
+- adobo-chicken: hero-missing
+- aubergine-parmigiana: prose-prep-steps
+- caprese-salad: prose-prep-steps
+- char-kway-teow: hero-missing
+- empanadas: prose-prep-steps
+- gado-gado: hero-missing
+- halo-halo: hero-missing
+- jeyuk-bokkeum: prose-prep-steps
+- kare-kare: hero-missing, prose-prep-steps
+- larb-gai: hero-missing
+- lechon-kawali: hero-missing, prose-prep-steps
+- mast-musir: prose-prep-steps
+- mie-goreng: hero-missing
+- nasi-goreng: hero-missing
+- pad-see-ew: hero-missing
+- prawn-bisque: prose-prep-steps
+- red-curry: hero-missing
+- rendang: hero-missing
+- satay-ayam: hero-missing
+- sinigang: hero-missing
+
+---
+
+## Run at 16:44:28
+
+Generated: 2026-06-21T16:44:28.461Z
+
+Processed: 7732
+PASS: 7713
+STILL_BLOCKED: 19
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 65 |
+| prose-prep-steps | 54 |
+| opening-pattern-missing-hook | 54 |
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- arroz-con-pollo: prose-prep-steps
+- beef-goulash: prose-prep-steps
+- beef-shin-stew-dumplings: prose-prep-steps
+- chicken-hunter-stew: prose-prep-steps
+- chicken-provencal: prose-prep-steps
+- congee: prose-prep-steps
+- coronation-chicken: prose-prep-steps
+- dashimaki-tamago-soup: prose-prep-steps
+- feijoada: prose-prep-steps
+- keema-naan: prose-prep-steps
+- mapo-tofu: prose-prep-steps
+- paneer-saag: prose-prep-steps
+- pernil: grade-level-strict
+- pho: prose-prep-steps
+- pork-ramen: prose-prep-steps
+- ramen: prose-prep-steps
+- sandesh: prose-prep-steps
+- spinach-and-chickpea-stew: prose-prep-steps
+- tom-yum-soup: prose-prep-steps
+
+---
+
+## Run at 17:30:01
+
+Generated: 2026-06-21T17:30:01.910Z
+
+Processed: 7747
+PASS: 7740
+STILL_BLOCKED: 7
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 50 |
+| opening-pattern-missing-hook | 42 |
+| prose-prep-steps | 21 |
+| grade-level-strict | 2 |
+
+## Still BLOCKED (sample 20)
+
+- beef-wellington: prose-prep-steps
+- butter-bean-stew: prose-prep-steps
+- chicken-cordon-bleu: prose-prep-steps
+- devilled-kidneys: prose-prep-steps
+- kibbeh-baked: prose-prep-steps
+- lamb-meatballs-in-tomato-sauce: prose-prep-steps
+- pot-au-feu: prose-prep-steps
+
+---
+
+## Run at 17:57:13
+
+Generated: 2026-06-21T17:57:13.370Z
+
+Processed: 7754
+PASS: 7740
+STILL_BLOCKED: 14
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| opening-pattern-missing-hook | 51 |
+| content-type-opening-mismatch | 49 |
+| hero-missing | 39 |
+| placeholder-string | 26 |
+| prose-prep-steps | 7 |
+| grade-level-strict | 4 |
+| historical-century-in-body | 4 |
+| ingredient-amount-missing | 2 |
+
+## Still BLOCKED (sample 20)
+
+- chimichurri-sauce: prose-prep-steps
+- maids-of-honour: hero-missing, opening-pattern-missing-hook
+- mulligatawny: hero-missing, prose-prep-steps
+- roast-shoulder-of-pork: hero-missing
+- slow-cooker-bolognese-sauce: hero-missing
+- slow-cooker-chicken-cacciatore: hero-missing
+- slow-cooker-chilli-con-carne: hero-missing
+- slow-cooker-gammon-glazed: hero-missing
+- slow-cooker-lamb-rogan-josh: hero-missing
+- slow-cooker-lentil-chilli: hero-missing
+- slow-cooker-mushroom-stroganoff: hero-missing
+- slow-cooker-rice-pudding: hero-missing
+- slow-cooker-whole-roast-chicken: hero-missing
+- smoked-salmon-sandwich: hero-missing
