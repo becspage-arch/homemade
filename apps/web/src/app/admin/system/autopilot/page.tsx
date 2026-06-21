@@ -1,559 +1,243 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { prisma, TutorialStatus, PipelineStatus, PatternType, Visibility } from '@homemade/db'
+import { prisma, TutorialStatus, PipelineStatus, Visibility } from '@homemade/db'
 import { getCurrentDbUser, isAdmin } from '@/lib/auth'
-import { AcknowledgeButton } from './acknowledge-button'
-import { PauseToggle } from './pause-toggle'
-import { CategoryStatusToggle } from './category-status-toggle'
+import { PATTERN_CATEGORIES } from '@/lib/studio/generation/categories'
 
 export const dynamic = 'force-dynamic'
 
-interface PageProps {
-  searchParams: Promise<{ stream?: string; offset?: string; showAck?: string }>
-}
-
-type StreamName = 'queue' | 'global'
-
-const STREAMS: ReadonlyArray<{ name: StreamName; label: string; description: string }> = [
-  {
-    name: 'queue',
-    label: 'Queue',
-    description: 'Pauses the queue cron preflight. No new batch will start.',
-  },
-  {
-    name: 'global',
-    label: 'Global',
-    description: 'Kills everything that checks the global stream — including the queue.',
-  },
-]
-
-const PAGE_SIZE = 50
-
 /**
- * Pattern-led categories grow via the pattern-generation pipeline (charts in
- * the Pattern model), not the tutorial-authoring autopilot — so their
- * progress is measured in published patterns toward a pattern target, not
- * tutorials. Target lives here for now; it moves to a Category field when the
- * pattern cron is wired (see project_cross_stitch_pipeline memory). The
- * teaching-tutorial count still uses targetTutorialCount elsewhere.
+ * Content library — a READ-ONLY progress + fill cockpit.
+ *
+ * The old hourly tutorial autopilot is retired: it is globally paused and no
+ * category is left READY, so nothing fires on a schedule. Content now grows
+ * ON DEMAND only — you start a Claude Code session and ask it to fill a
+ * category; it reads the category's locked look + sub-categories, generates a
+ * batch, runs the vision gate + QC, and publishes the good ones. Nothing on
+ * this page can trigger generation, so it can never produce junk.
+ *
+ * Pattern-led categories (cross-stitch, future knitting/crochet) are measured
+ * in published library patterns toward a pattern target; everything else in
+ * published teaching tutorials toward targetTutorialCount. The pattern targets
+ * + sub-category structure come from the generation registry.
  */
-const PATTERN_LED_CATEGORIES: Record<string, { patternType: PatternType; target: number }> = {
-  'cross-stitch': { patternType: PatternType.CROSS_STITCH, target: 1500 },
-}
-
-// Queue cron fires at minute 0 of every hour UTC: 0 * * * *
-function nextQueueFireUtc(): Date {
-  const now = new Date()
-  const next = new Date(now)
-  next.setUTCMinutes(0, 0, 0)
-  next.setUTCHours(next.getUTCHours() + 1)
-  return next
-}
-
 function relativeTime(when: Date): string {
   const diff = Date.now() - when.getTime()
-  if (diff < 0) {
-    const future = -diff
-    const h = Math.round(future / 3_600_000)
-    if (h < 1) return 'in <1h'
-    if (h < 24) return `in ${h}h`
-    return `in ${Math.round(h / 24)}d`
-  }
-  const s = Math.floor(diff / 1000)
+  const s = Math.floor(Math.max(0, diff) / 1000)
   if (s < 60) return `${s}s ago`
   const m = Math.floor(s / 60)
   if (m < 60) return `${m}m ago`
   const h = Math.floor(m / 60)
   if (h < 24) return `${h}h ago`
-  const d = Math.floor(h / 24)
-  return `${d}d ago`
+  return `${Math.floor(h / 24)}d ago`
 }
 
-function formatTimestamp(d: Date): string {
-  return d.toLocaleString('en-GB', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    timeZoneName: 'short',
-  })
+function stateBadge(status: PipelineStatus): { text: string; color: string } {
+  if (status === PipelineStatus.COMPLETE) return { text: 'At target', color: 'var(--color-espresso)' }
+  if (status === PipelineStatus.NOT_READY) return { text: 'Not signed off', color: 'var(--color-warm-taupe)' }
+  return { text: 'On demand', color: 'var(--color-sage)' }
 }
 
-export default async function AdminAutopilotPage({ searchParams }: PageProps) {
+const LABEL_STYLE: React.CSSProperties = {
+  fontFamily: 'var(--font-lora)',
+  fontSize: 11,
+  letterSpacing: '0.25em',
+  textTransform: 'uppercase',
+  color: 'var(--color-warm-taupe)',
+  marginBottom: 4,
+}
+
+export default async function AdminContentLibraryPage() {
   const actor = await getCurrentDbUser()
   if (!actor || !isAdmin(actor)) redirect('/admin')
 
-  const params = await searchParams
-  const streamFilter =
-    params.stream && STREAMS.some((s) => s.name === params.stream)
-      ? (params.stream as StreamName)
-      : null
-  const offset = Math.max(0, parseInt(params.offset ?? '0', 10) || 0)
-  const showAck = params.showAck === '1'
+  const patternLedSlugs = Object.keys(PATTERN_CATEGORIES)
+  const patternLedTypes = Object.values(PATTERN_CATEGORIES).map((c) => c.patternType)
 
-  const where: Record<string, unknown> = {}
-  if (streamFilter) where.stream = streamFilter
-  if (!showAck) where.acknowledgedAt = null
+  const [categoriesRaw, publishedTutorialRows, patternCountRows, patternSubcatRows, subCats] =
+    await Promise.all([
+      prisma.category.findMany({
+        orderBy: [{ launchOrder: 'asc' }, { name: 'asc' }],
+        select: {
+          id: true,
+          slug: true,
+          name: true,
+          pipelineStatus: true,
+          targetTutorialCount: true,
+          lastAutopilotRunAt: true,
+        },
+      }),
+      prisma.tutorial.groupBy({
+        by: ['categoryId'],
+        where: { status: TutorialStatus.PUBLISHED },
+        _count: { _all: true },
+      }),
+      prisma.pattern.groupBy({
+        by: ['type'],
+        where: { visibility: Visibility.PUBLIC, ownerUserId: null },
+        _count: { _all: true },
+      }),
+      prisma.pattern.groupBy({
+        by: ['subCategoryId'],
+        where: { visibility: Visibility.PUBLIC, ownerUserId: null, type: { in: patternLedTypes } },
+        _count: { _all: true },
+      }),
+      prisma.subCategory.findMany({
+        where: { category: { slug: { in: patternLedSlugs } } },
+        select: { id: true, name: true, categoryId: true },
+      }),
+    ])
 
-  const [
-    categoriesRaw,
-    pauseStates,
-    lastHaltByStream,
-    signals,
-    total,
-  ] = await Promise.all([
-    prisma.category.findMany({
-      orderBy: [
-        { lastAutopilotRunAt: 'asc' },
-        { launchOrder: 'asc' },
-      ],
-      select: {
-        id: true,
-        slug: true,
-        name: true,
-        pipelineStatus: true,
-        targetTutorialCount: true,
-        lastAutopilotRunAt: true,
-        launchOrder: true,
-      },
-    }),
-    prisma.autopilotPauseState.findMany(),
-    prisma.autopilotHaltSignal.groupBy({
-      by: ['stream'],
-      _max: { createdAt: true },
-    }),
-    prisma.autopilotHaltSignal.findMany({
-      where,
-      orderBy: [{ createdAt: 'desc' }],
-      skip: offset,
-      take: PAGE_SIZE,
-    }),
-    prisma.autopilotHaltSignal.count({ where }),
-  ])
+  const publishedTutorialsByCategoryId = new Map(publishedTutorialRows.map((r) => [r.categoryId, r._count._all]))
+  const publishedPatternsByType = new Map(patternCountRows.map((r) => [r.type, r._count._all]))
+  const patternCountBySubcatId = new Map(patternSubcatRows.map((r) => [r.subCategoryId, r._count._all]))
+  const subcatsByCategoryId = new Map<string, { name: string; count: number }[]>()
+  for (const sc of subCats) {
+    const list = subcatsByCategoryId.get(sc.categoryId) ?? []
+    list.push({ name: sc.name, count: patternCountBySubcatId.get(sc.id) ?? 0 })
+    subcatsByCategoryId.set(sc.categoryId, list)
+  }
+  for (const list of subcatsByCategoryId.values()) list.sort((a, b) => b.count - a.count)
 
-  // Published counts per category (one query for all slugs)
-  const publishedCountRows = await prisma.tutorial.groupBy({
-    by: ['categoryId'],
-    where: { status: TutorialStatus.PUBLISHED },
-    _count: { _all: true },
-  })
-  const publishedByCategoryId = new Map(
-    publishedCountRows.map((r) => [r.categoryId, r._count._all]),
-  )
-
-  // Public library-pattern counts per pattern type (for pattern-led categories).
-  const patternCountRows = await prisma.pattern.groupBy({
-    by: ['type'],
-    where: { visibility: Visibility.PUBLIC, ownerUserId: null },
-    _count: { _all: true },
-  })
-  const publishedPatternsByType = new Map(
-    patternCountRows.map((r) => [r.type, r._count._all]),
-  )
-
-  // Image verification coverage
+  // Image verification coverage (a content-health read-out, kept informational)
   const verificationGroups = await prisma.media.groupBy({
     by: ['verificationStatus'],
     where: { tutorialsHero: { some: { status: TutorialStatus.PUBLISHED } } },
     _count: { _all: true },
   })
-  const verificationCounts: {
-    VERIFIED: number
-    UNVERIFIED: number
-    REJECTED: number
-    REJECTED_USED_PROCEDURAL: number
-    SYNTHETIC_FALLBACK: number
-  } = {
-    VERIFIED: 0,
-    UNVERIFIED: 0,
-    REJECTED: 0,
-    REJECTED_USED_PROCEDURAL: 0,
-    SYNTHETIC_FALLBACK: 0,
-  }
-  for (const g of verificationGroups) {
-    verificationCounts[g.verificationStatus] = g._count._all
-  }
-  const verificationTotal =
-    verificationCounts.VERIFIED +
-    verificationCounts.UNVERIFIED +
-    verificationCounts.REJECTED +
-    verificationCounts.REJECTED_USED_PROCEDURAL +
-    verificationCounts.SYNTHETIC_FALLBACK
-  const verificationCoverage =
-    verificationTotal > 0
-      ? Math.round((verificationCounts.VERIFIED / verificationTotal) * 100)
-      : 0
-
-  const pauseByStream = new Map(pauseStates.map((p) => [p.streamName, p]))
-  const lastHaltDateByStream = new Map<string, Date | null>()
-  for (const g of lastHaltByStream) {
-    lastHaltDateByStream.set(g.stream, g._max.createdAt ?? null)
-  }
-
-  const acknowledgerIds = Array.from(
-    new Set(
-      signals
-        .map((s) => s.acknowledgedById)
-        .filter((id): id is string => Boolean(id)),
-    ),
-  )
-  const acknowledgers =
-    acknowledgerIds.length > 0
-      ? await prisma.user.findMany({
-          where: { id: { in: acknowledgerIds } },
-          select: { id: true, email: true },
-        })
-      : []
-  const acknowledgerById = new Map(acknowledgers.map((u) => [u.id, u]))
-
-  // Derive "last queue fire" from the max lastAutopilotRunAt across all categories
-  const lastQueueFire = categoriesRaw.reduce<Date | null>((acc, c) => {
-    if (!c.lastAutopilotRunAt) return acc
-    if (!acc) return c.lastAutopilotRunAt
-    return c.lastAutopilotRunAt > acc ? c.lastAutopilotRunAt : acc
-  }, null)
-
-  const nextQueueFire = nextQueueFireUtc()
-
-  // Find first READY-not-COMPLETE category (same ordering as the cron uses)
-  const nextUpIdx = categoriesRaw.findIndex(
-    (c) =>
-      c.pipelineStatus === PipelineStatus.READY,
-  )
+  const verificationCounts = { VERIFIED: 0, UNVERIFIED: 0, REJECTED: 0, REJECTED_USED_PROCEDURAL: 0, SYNTHETIC_FALLBACK: 0 }
+  for (const g of verificationGroups) verificationCounts[g.verificationStatus] = g._count._all
+  const verificationTotal = Object.values(verificationCounts).reduce((a, b) => a + b, 0)
+  const verificationCoverage = verificationTotal > 0 ? Math.round((verificationCounts.VERIFIED / verificationTotal) * 100) : 0
 
   return (
     <div>
       <div className="admin-page-header">
         <div>
-          <h1>Autopilot</h1>
+          <h1>Content library</h1>
           <p>
-            Single-queue content autopilot — fires every hour, picks the least-recently-fired
-            READY category, and runs a bulk batch. Use the pause toggles to stop the queue
-            without disabling the scheduled task.
+            Progress across every category, and how to add more. Content grows on demand only —
+            nothing here runs on a schedule, so this page can show and instruct but never
+            generate. The old hourly autopilot is retired (globally paused, no category READY).
           </p>
         </div>
       </div>
 
-      {/* ── Queue cron metadata ───────────────────────────────────────── */}
+      {/* ── How to fill more ─────────────────────────────────────────── */}
       <section style={{ marginBottom: 32 }}>
-        <h2
-          style={{
-            fontFamily: 'var(--font-fraunces)',
-            fontSize: 22,
-            margin: '0 0 12px',
-            color: 'var(--color-espresso)',
-          }}
-        >
-          Queue cron
+        <h2 style={{ fontFamily: 'var(--font-fraunces)', fontSize: 22, margin: '0 0 12px', color: 'var(--color-espresso)' }}>
+          How to fill more
         </h2>
-
-        <article
-          className="admin-kpi-card"
-          style={{
-            padding: 18,
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-            gap: 18,
-            fontFamily: 'var(--font-lora)',
-            fontSize: 13,
-            color: 'var(--color-espresso)',
-          }}
-        >
-          {[
-            { label: 'Schedule', value: 'Every hour', sub: '0 * * * * UTC' },
-            {
-              label: 'Last fire',
-              value: lastQueueFire ? relativeTime(lastQueueFire) : '—',
-              sub: lastQueueFire ? formatTimestamp(lastQueueFire) : null,
-            },
-            {
-              label: 'Next fire',
-              value: relativeTime(nextQueueFire),
-              sub: formatTimestamp(nextQueueFire),
-            },
-          ].map((cell) => (
-            <div key={cell.label}>
-              <div
-                style={{
-                  fontFamily: 'var(--font-lora)',
-                  fontSize: 11,
-                  letterSpacing: '0.25em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-warm-taupe)',
-                  marginBottom: 4,
-                }}
-              >
-                {cell.label}
-              </div>
-              <div
-                style={{
-                  fontFamily: 'var(--font-fraunces)',
-                  fontSize: 22,
-                  fontWeight: 400,
-                  lineHeight: 1.2,
-                }}
-              >
-                {cell.value}
-              </div>
-              {cell.sub && (
-                <div style={{ fontSize: 11, color: 'var(--color-warm-taupe)', marginTop: 2 }}>
-                  {cell.sub}
-                </div>
-              )}
-            </div>
-          ))}
+        <article className="admin-kpi-card" style={{ padding: 18, fontFamily: 'var(--font-lora)', fontSize: 13, color: 'var(--color-espresso)', lineHeight: 1.6 }}>
+          <p style={{ margin: '0 0 10px' }}>
+            To add content to a category, start a Claude Code session and ask it to fill that
+            category with a theme + a count (for example: <em>&ldquo;fill cross-stitch with 30
+            Halloween patterns&rdquo;</em>). The session reads the category&rsquo;s locked look and
+            sub-categories, generates a batch, runs the vision gate + QC, and publishes the good
+            ones into the right sub-category. Borderline output waits in a review queue for a look.
+          </p>
+          <ul style={{ margin: '0 0 4px', paddingLeft: 18 }}>
+            <li>
+              <strong>Pattern categories</strong> (cross-stitch, and future knitting / crochet)
+              generate through the chart pipeline — <code>scripts/xs-gen-from-json.ts</code> into
+              the <Link href="/admin/cross-stitch/review" style={{ color: 'var(--color-sage)' }}>review queue</Link>.
+            </li>
+            <li>
+              <strong>Tutorial categories</strong> (cooking, baking, and the rest) author through
+              the recipe / technique worker, held to the completeness gate.
+            </li>
+          </ul>
+          <p style={{ margin: '8px 0 0', fontSize: 12, color: 'var(--color-warm-taupe)' }}>
+            The thin spots below show where each category is light. The sub-category breakdown is the
+            &ldquo;where&rdquo;; the steps above are the &ldquo;how&rdquo;.
+          </p>
         </article>
       </section>
 
-      {/* ── Pause toggles ────────────────────────────────────────────── */}
+      {/* ── Per-category progress ────────────────────────────────────── */}
       <section style={{ marginBottom: 32 }}>
-        <h2
-          style={{
-            fontFamily: 'var(--font-fraunces)',
-            fontSize: 22,
-            margin: '0 0 12px',
-            color: 'var(--color-espresso)',
-          }}
-        >
-          Pause controls
+        <h2 style={{ fontFamily: 'var(--font-fraunces)', fontSize: 22, margin: '0 0 12px', color: 'var(--color-espresso)' }}>
+          Library progress
         </h2>
-
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-            gap: 14,
-          }}
-        >
-          {STREAMS.map((stream) => {
-            const pauseState = pauseByStream.get(stream.name) ?? null
-            const isPaused = Boolean(pauseState?.pausedAt)
-
-            return (
-              <article key={stream.name} className="admin-kpi-card" style={{ padding: 18 }}>
-                <header
-                  style={{
-                    display: 'flex',
-                    alignItems: 'baseline',
-                    justifyContent: 'space-between',
-                    gap: 8,
-                    marginBottom: 8,
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontFamily: 'var(--font-fraunces)',
-                      fontWeight: 400,
-                      fontSize: 22,
-                      margin: 0,
-                      color: 'var(--color-espresso)',
-                    }}
-                  >
-                    {stream.label}
-                  </h3>
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-lora)',
-                      fontSize: 10,
-                      letterSpacing: '0.25em',
-                      textTransform: 'uppercase',
-                      color: isPaused
-                        ? 'var(--color-burnt-sienna)'
-                        : 'var(--color-warm-taupe)',
-                    }}
-                  >
-                    {isPaused ? 'Paused' : 'Active'}
-                  </span>
-                </header>
-
-                <p
-                  style={{
-                    fontFamily: 'var(--font-lora)',
-                    fontSize: 12,
-                    color: 'var(--color-warm-taupe)',
-                    margin: '0 0 12px',
-                  }}
-                >
-                  {stream.description}
-                </p>
-
-                {isPaused && pauseState?.reason && (
-                  <p
-                    style={{
-                      fontFamily: 'var(--font-lora)',
-                      fontSize: 12,
-                      fontStyle: 'italic',
-                      color: 'var(--color-espresso)',
-                      margin: '0 0 10px',
-                    }}
-                  >
-                    Reason: {pauseState.reason}
-                  </p>
-                )}
-
-                <div
-                  style={{
-                    borderTop: '0.5px solid var(--color-linen-grey)',
-                    paddingTop: 12,
-                  }}
-                >
-                  <PauseToggle streamName={stream.name} paused={isPaused} />
-                </div>
-              </article>
-            )
-          })}
-        </div>
-      </section>
-
-      {/* ── Per-category round-robin panel ───────────────────────────── */}
-      <section style={{ marginBottom: 32 }}>
-        <h2
-          style={{
-            fontFamily: 'var(--font-fraunces)',
-            fontSize: 22,
-            margin: '0 0 12px',
-            color: 'var(--color-espresso)',
-          }}
-        >
-          Category round-robin
-        </h2>
-        <p
-          style={{
-            fontFamily: 'var(--font-lora)',
-            fontSize: 12,
-            color: 'var(--color-warm-taupe)',
-            margin: '0 0 12px',
-          }}
-        >
-          Ordered by last fired (oldest first) — the same ordering the queue cron uses.
-          The first READY row is next up.
-        </p>
 
         <div style={{ overflowX: 'auto' }}>
           <table className="admin-table">
             <thead>
               <tr>
-                <th style={{ width: 24 }} />
                 <th>Category</th>
-                <th style={{ width: 110 }}>Status</th>
-                <th style={{ width: 180 }}>Published / target</th>
-                <th style={{ width: 140 }}>Last fired</th>
+                <th style={{ width: 120 }}>State</th>
+                <th style={{ width: 200 }}>Published / target</th>
+                <th style={{ width: 130 }}>Last filled</th>
               </tr>
             </thead>
             <tbody>
-              {categoriesRaw.map((cat, i) => {
-                const led = PATTERN_LED_CATEGORIES[cat.slug]
-                const published = led
-                  ? publishedPatternsByType.get(led.patternType) ?? 0
-                  : publishedByCategoryId.get(cat.id) ?? 0
-                const target = led ? led.target : cat.targetTutorialCount
-                const unit = led ? 'patterns' : null
-                const pct =
-                  target && target > 0 ? Math.min(100, Math.round((published / target) * 100)) : 0
-                const isNextUp = i === nextUpIdx
+              {categoriesRaw.map((cat) => {
+                const cfg = PATTERN_CATEGORIES[cat.slug]
+                const isPatternLed = Boolean(cfg)
+                const published = cfg
+                  ? publishedPatternsByType.get(cfg.patternType) ?? 0
+                  : publishedTutorialsByCategoryId.get(cat.id) ?? 0
+                const target = cfg ? cfg.patternTarget : cat.targetTutorialCount
+                const unit = cfg ? 'patterns' : 'guides'
+                const pct = target && target > 0 ? Math.min(100, Math.round((published / target) * 100)) : 0
+                const badge = stateBadge(cat.pipelineStatus)
+                const breakdown = isPatternLed ? subcatsByCategoryId.get(cat.id) ?? [] : []
 
                 return (
                   <tr key={cat.id}>
-                    <td style={{ textAlign: 'center', fontSize: 14 }}>
-                      {isNextUp && (
-                        <span
-                          title="Next up in rotation"
-                          style={{ color: 'var(--color-sage)' }}
-                        >
-                          ↑
-                        </span>
+                    <td>
+                      <div style={{ fontFamily: 'var(--font-fraunces)', fontSize: 15, color: 'var(--color-espresso)' }}>
+                        {cat.name}
+                      </div>
+                      <div style={{ fontFamily: 'var(--font-lora)', fontSize: 11, color: 'var(--color-warm-taupe)' }}>
+                        {cat.slug} · {unit}
+                      </div>
+                      {breakdown.length > 0 && (
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 8 }}>
+                          {breakdown.map((b) => (
+                            <span
+                              key={b.name}
+                              title={`${b.count} ${unit}`}
+                              style={{
+                                fontFamily: 'var(--font-lora)',
+                                fontSize: 11,
+                                padding: '2px 8px',
+                                borderRadius: 10,
+                                background: 'var(--color-linen-grey)',
+                                color: b.count === 0 ? 'var(--color-burnt-sienna)' : 'var(--color-espresso)',
+                              }}
+                            >
+                              {b.name} {b.count}
+                            </span>
+                          ))}
+                        </div>
                       )}
                     </td>
                     <td>
-                      <div
-                        style={{
-                          fontFamily: 'var(--font-fraunces)',
-                          fontSize: 15,
-                          fontWeight: 400,
-                          color: 'var(--color-espresso)',
-                        }}
-                      >
-                        {cat.name}
-                      </div>
-                      <div
-                        style={{
-                          fontFamily: 'var(--font-lora)',
-                          fontSize: 11,
-                          color: 'var(--color-warm-taupe)',
-                        }}
-                      >
-                        {cat.slug}
-                      </div>
+                      <span style={{ fontFamily: 'var(--font-lora)', fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: badge.color }}>
+                        {badge.text}
+                      </span>
                     </td>
                     <td>
-                      <CategoryStatusToggle
-                        categoryId={cat.id}
-                        status={cat.pipelineStatus}
-                      />
-                    </td>
-                    <td>
-                      <div
-                        style={{
-                          fontFamily: 'var(--font-lora)',
-                          fontSize: 13,
-                          color: 'var(--color-espresso)',
-                          marginBottom: 4,
-                        }}
-                      >
+                      <div style={{ fontFamily: 'var(--font-lora)', fontSize: 13, color: 'var(--color-espresso)', marginBottom: 4 }}>
                         {published.toLocaleString()}
-                        {target != null && (
-                          <span style={{ color: 'var(--color-warm-taupe)' }}>
-                            {' '}/ {target.toLocaleString()}
-                          </span>
-                        )}
-                        {unit && (
-                          <span style={{ color: 'var(--color-warm-taupe)', fontSize: 11 }}>
-                            {' '}
-                            {unit}
-                          </span>
-                        )}
+                        {target != null && <span style={{ color: 'var(--color-warm-taupe)' }}> / {target.toLocaleString()}</span>}
                       </div>
                       {target != null && target > 0 && (
-                        <div
-                          style={{
-                            height: 4,
-                            background: 'var(--color-linen-grey)',
-                            borderRadius: 2,
-                            overflow: 'hidden',
-                          }}
-                        >
+                        <div style={{ height: 4, background: 'var(--color-linen-grey)', borderRadius: 2, overflow: 'hidden' }}>
                           <div
                             style={{
                               height: '100%',
                               width: `${pct}%`,
-                              background:
-                                cat.pipelineStatus === PipelineStatus.COMPLETE
-                                  ? 'var(--color-espresso)'
-                                  : 'var(--color-sage)',
+                              background: cat.pipelineStatus === PipelineStatus.COMPLETE ? 'var(--color-espresso)' : 'var(--color-sage)',
                               borderRadius: 2,
                             }}
                           />
                         </div>
                       )}
                     </td>
-                    <td
-                      style={{
-                        fontFamily: 'var(--font-lora)',
-                        fontSize: 12,
-                        color: 'var(--color-warm-taupe)',
-                      }}
-                    >
-                      {cat.lastAutopilotRunAt ? (
-                        <>
-                          <div>{relativeTime(cat.lastAutopilotRunAt)}</div>
-                          <div style={{ fontSize: 11 }}>
-                            {formatTimestamp(cat.lastAutopilotRunAt)}
-                          </div>
-                        </>
-                      ) : (
-                        'never'
-                      )}
+                    <td style={{ fontFamily: 'var(--font-lora)', fontSize: 12, color: 'var(--color-warm-taupe)' }}>
+                      {cat.lastAutopilotRunAt ? relativeTime(cat.lastAutopilotRunAt) : '—'}
                     </td>
                   </tr>
                 )
@@ -565,36 +249,18 @@ export default async function AdminAutopilotPage({ searchParams }: PageProps) {
 
       {/* ── Image verification ───────────────────────────────────────── */}
       <section style={{ marginBottom: 32 }}>
-        <header
-          style={{
-            display: 'flex',
-            alignItems: 'baseline',
-            justifyContent: 'space-between',
-            gap: 12,
-            marginBottom: 12,
-          }}
-        >
+        <header style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 12, marginBottom: 12 }}>
           <h2 style={{ fontFamily: 'var(--font-fraunces)', fontSize: 22, margin: 0, color: 'var(--color-espresso)' }}>
             Image verification
           </h2>
           <span style={{ fontFamily: 'var(--font-lora)', fontSize: 12, color: 'var(--color-warm-taupe)' }}>
             Hero coverage on PUBLISHED tutorials —{' '}
-            <strong style={{ color: 'var(--color-espresso)' }}>{verificationCoverage}%</strong>{' '}
-            verified
+            <strong style={{ color: 'var(--color-espresso)' }}>{verificationCoverage}%</strong> verified
           </span>
         </header>
-
         <article
           className="admin-kpi-card"
-          style={{
-            padding: 18,
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
-            gap: 18,
-            fontFamily: 'var(--font-lora)',
-            fontSize: 13,
-            color: 'var(--color-espresso)',
-          }}
+          style={{ padding: 18, display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 18, fontFamily: 'var(--font-lora)', fontSize: 13, color: 'var(--color-espresso)' }}
         >
           {[
             { label: 'Verified', value: verificationCounts.VERIFIED },
@@ -603,202 +269,12 @@ export default async function AdminAutopilotPage({ searchParams }: PageProps) {
             { label: 'Used procedural', value: verificationCounts.REJECTED_USED_PROCEDURAL },
           ].map((cell) => (
             <div key={cell.label}>
-              <div
-                style={{
-                  fontFamily: 'var(--font-lora)',
-                  fontSize: 11,
-                  letterSpacing: '0.25em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-warm-taupe)',
-                  marginBottom: 4,
-                }}
-              >
-                {cell.label}
-              </div>
-              <div style={{ fontFamily: 'var(--font-fraunces)', fontSize: 28, fontWeight: 400 }}>
-                {cell.value}
-              </div>
+              <div style={LABEL_STYLE}>{cell.label}</div>
+              <div style={{ fontFamily: 'var(--font-fraunces)', fontSize: 28, fontWeight: 400 }}>{cell.value}</div>
             </div>
           ))}
         </article>
-        <p
-          style={{
-            fontFamily: 'var(--font-lora)',
-            fontSize: 12,
-            color: 'var(--color-warm-taupe)',
-            marginTop: 8,
-          }}
-        >
-          Rejected rows need manual review or a fresh sweep pass.{' '}
-          Run <code>verify-media-batch.ts</code> + <code>apply-media-verdicts.ts</code> to
-          clear the unverified backlog.
-        </p>
-      </section>
-
-      {/* ── Halt signals ─────────────────────────────────────────────── */}
-      <section style={{ marginBottom: 32 }}>
-        <header
-          style={{
-            display: 'flex',
-            alignItems: 'baseline',
-            justifyContent: 'space-between',
-            gap: 12,
-            marginBottom: 12,
-          }}
-        >
-          <h2 style={{ fontFamily: 'var(--font-fraunces)', fontSize: 22, margin: 0, color: 'var(--color-espresso)' }}>
-            Halt signals
-          </h2>
-          <span style={{ fontFamily: 'var(--font-lora)', fontSize: 12, color: 'var(--color-warm-taupe)' }}>
-            {total} {showAck ? 'total' : 'unacknowledged'}
-          </span>
-        </header>
-
-        <div className="admin-filter-row" style={{ marginBottom: 12 }}>
-          <Link
-            href={buildHref({ stream: null, showAck })}
-            className={`admin-filter-chip ${streamFilter == null ? 'active' : ''}`}
-          >
-            All streams
-          </Link>
-          {STREAMS.map((s) => (
-            <Link
-              key={s.name}
-              href={buildHref({ stream: s.name, showAck })}
-              className={`admin-filter-chip ${streamFilter === s.name ? 'active' : ''}`}
-            >
-              {s.label}
-            </Link>
-          ))}
-          <span style={{ marginLeft: 'auto' }}>
-            <Link
-              href={buildHref({ stream: streamFilter, showAck: !showAck })}
-              className="admin-filter-chip"
-            >
-              {showAck ? 'Hide acknowledged' : 'Show acknowledged'}
-            </Link>
-          </span>
-        </div>
-
-        {signals.length === 0 ? (
-          <p
-            className="admin-card"
-            style={{ padding: 18, fontStyle: 'italic', color: 'var(--color-warm-taupe)' }}
-          >
-            No halt signals match.
-          </p>
-        ) : (
-          <table className="admin-table">
-            <thead>
-              <tr>
-                <th style={{ width: 170 }}>Created</th>
-                <th style={{ width: 90 }}>Stream</th>
-                <th style={{ width: 220 }}>Reason</th>
-                <th>Detail</th>
-                <th style={{ width: 110 }}>Notified</th>
-                <th style={{ width: 160 }}>Acknowledged</th>
-              </tr>
-            </thead>
-            <tbody>
-              {signals.map((s) => {
-                const acknowledger = s.acknowledgedById ? acknowledgerById.get(s.acknowledgedById) : null
-                return (
-                  <tr key={s.id}>
-                    <td style={{ whiteSpace: 'nowrap', fontSize: 12 }}>
-                      {formatTimestamp(s.createdAt)}
-                    </td>
-                    <td>
-                      <code style={{ fontSize: 12, color: 'var(--color-sage)' }}>
-                        {s.stream}
-                      </code>
-                    </td>
-                    <td>
-                      <code style={{ fontSize: 12, color: 'var(--color-espresso)' }}>
-                        {s.reason}
-                      </code>
-                    </td>
-                    <td>
-                      {s.detail ? (
-                        <details>
-                          <summary
-                            style={{
-                              fontSize: 12,
-                              color: 'var(--color-warm-taupe)',
-                              cursor: 'pointer',
-                            }}
-                          >
-                            {s.detail.length > 120
-                              ? `${s.detail.slice(0, 120)}…`
-                              : s.detail}
-                          </summary>
-                          <pre
-                            style={{
-                              whiteSpace: 'pre-wrap',
-                              fontSize: 11,
-                              marginTop: 6,
-                              color: 'var(--color-warm-taupe)',
-                            }}
-                          >
-                            {s.detail}
-                          </pre>
-                        </details>
-                      ) : (
-                        <span style={{ opacity: 0.4 }}>—</span>
-                      )}
-                    </td>
-                    <td style={{ fontSize: 12, color: 'var(--color-warm-taupe)' }}>
-                      {s.notifiedAt ? formatTimestamp(s.notifiedAt) : '—'}
-                    </td>
-                    <td style={{ fontSize: 12 }}>
-                      {s.acknowledgedAt ? (
-                        <span style={{ color: 'var(--color-warm-taupe)' }}>
-                          {relativeTime(s.acknowledgedAt)}
-                          {acknowledger && ` (${acknowledger.email})`}
-                        </span>
-                      ) : (
-                        <AcknowledgeButton signalId={s.id} />
-                      )}
-                    </td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-        )}
-
-        {total > offset + signals.length && (
-          <div style={{ marginTop: 12 }}>
-            <Link
-              href={buildHref({
-                stream: streamFilter,
-                showAck,
-                offset: offset + PAGE_SIZE,
-              })}
-              className="admin-btn"
-              style={{ display: 'inline-block' }}
-            >
-              Show next {PAGE_SIZE}
-            </Link>
-          </div>
-        )}
       </section>
     </div>
   )
-}
-
-function buildHref({
-  stream,
-  showAck,
-  offset,
-}: {
-  stream: StreamName | null
-  showAck: boolean
-  offset?: number
-}): string {
-  const sp = new URLSearchParams()
-  if (stream) sp.set('stream', stream)
-  if (showAck) sp.set('showAck', '1')
-  if (offset && offset > 0) sp.set('offset', String(offset))
-  const qs = sp.toString()
-  return qs ? `/admin/system/autopilot?${qs}` : '/admin/system/autopilot'
 }
