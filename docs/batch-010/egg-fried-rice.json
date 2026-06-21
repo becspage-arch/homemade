@@ -1,0 +1,88 @@
+{
+  "slug": "egg-fried-rice",
+  "title": "Egg Fried Rice",
+  "subtitle": "Chinese-style fried rice with scrambled egg and spring onion",
+  "excerpt": "Day-old cooked rice stir-fried at high heat with egg, spring onions, soy sauce, and sesame oil. The simplest and most versatile of all fried rice dishes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "recipe": {
+    "servings": 4,
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "difficulty": "BEGINNER",
+    "season": "YEAR_ROUND",
+    "dietary": ["vegetarian", "dairy-free"],
+    "sourceType": "CLASSIC",
+    "sourceNotes": "Fried rice (chao fan) is one of the most universal Chinese dishes, found in every regional cuisine and across South and Southeast Asia. The technique of stir-frying cooked rice with egg, aromatics, and seasonings dates back centuries as a practical way to use leftover rice. In Chinese cooking, the cardinal rule of fried rice is that the rice must be cold and dry before it goes into the wok: freshly cooked rice is too moist and sticky and will steam rather than fry, producing a clumped, gluey result. Day-old rice from the fridge has dried out sufficiently to fry properly. The heat must be as high as possible to achieve the wok hei (breath of the wok) flavour that characterises authentic fried rice."
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "notes": "A large wok or the widest frying pan you have." }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cold, day-old rice is essential. Fresh rice is too wet and will not fry. Spread leftover rice on a tray and refrigerate uncovered overnight if possible. The wok or pan must be smoking hot before the rice goes in: this is the most common mistake. If the pan is not hot enough, the rice steams rather than fries. Use a high-smoke-point oil such as vegetable or sunflower oil, not olive oil."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "servings": 4,
+          "items": [
+            { "ingredientSlug": "basmati-rice", "amount": 300, "unit": "g", "preparation": "cooked and cold, ideally day-old" },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "each", "preparation": "beaten" },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "each", "preparation": "sliced" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "preparation": "finely chopped" },
+            { "ingredientSlug": "ginger-root", "amount": 10, "unit": "g", "preparation": "finely grated" },
+            { "ingredientSlug": "soy-sauce-light", "amount": 3, "unit": "tbsp" },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tbsp" },
+            { "ingredientSlug": "vegetable-oil", "amount": 3, "unit": "tbsp" },
+            { "ingredientSlug": "peas-frozen", "amount": 100, "unit": "g", "preparation": "thawed" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 0.5, "unit": "tsp" }
+          ]
+        }
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Heat the wok or pan over the highest heat until smoking. Add the vegetable oil. Add the garlic and ginger and stir for 30 seconds." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Add the cold rice and press it flat. Cook without stirring for 1 minute to let it sear, then toss and stir-fry for 2 minutes until heated through and starting to crisp." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Push the rice to one side. Add the beaten eggs to the clear side and scramble loosely. When just set, fold through the rice. Add the peas, soy sauce, spring onions, and salt. Toss everything together for 1 minute. Remove from the heat. Drizzle with sesame oil. Serve immediately." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

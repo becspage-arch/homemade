@@ -1,0 +1,86 @@
+{
+  "slug": "roast-chicken",
+  "title": "Roast Chicken",
+  "subtitle": "Classic roast chicken with lemon, garlic, and thyme",
+  "excerpt": "A whole chicken rubbed with butter, stuffed with lemon and garlic, and roasted until the skin is crisp and the juices run clear. The simplest and most satisfying of Sunday roasts.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "recipe": {
+    "servings": 4,
+    "prepMinutes": 15,
+    "cookMinutes": 90,
+    "difficulty": "BEGINNER",
+    "season": "YEAR_ROUND",
+    "dietary": ["gluten-free"],
+    "sourceType": "CLASSIC",
+    "sourceNotes": "Roast chicken is one of the most universal dishes in British and French cooking. Its simplicity belies the technical care required to do it well: a properly roasted chicken has a shatteringly crisp, golden skin and meat that is fully cooked without being dry. The keys are dry skin (moisture is the enemy of browning), room-temperature meat (takes the edge off the internal cold before roasting, reducing cook time disparity between breast and leg), and resting after cooking to allow the juices to redistribute. French chef Fernand Point famously said that a cook must learn to make roast chicken properly before claiming any proficiency at all. The lemon and garlic in the cavity perfume the meat from the inside without overpowering it."
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "notes": "A roasting tin that fits the bird snugly." }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rest the chicken at room temperature for 30 minutes before roasting. Pat the skin completely dry with kitchen paper before buttering: moisture on the skin will steam rather than roast. The chicken is cooked when the juices run clear when you pierce the thigh at its thickest point. Rest the chicken for at least 15 minutes under loosely tented foil before carving: this allows the juices to redistribute through the meat."
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "servings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-whole", "amount": 1600, "unit": "g", "preparation": "free-range if possible" },
+            { "ingredientSlug": "unsalted-butter", "amount": 50, "unit": "g", "preparation": "soft" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "preparation": "halved" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "preparation": "whole unpeeled for the cavity; 2 more halved for the tin" },
+            { "ingredientSlug": "thyme", "amount": 6, "unit": "sprig" },
+            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp" },
+            { "ingredientSlug": "black-pepper-ground", "amount": 0.5, "unit": "tsp" },
+            { "ingredientSlug": "olive-oil", "amount": 1, "unit": "tbsp" }
+          ]
+        }
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Remove the chicken from the fridge 30 minutes before roasting. Heat the oven to 200 C / fan 180 C / gas 6. Pat the skin completely dry with kitchen paper." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Rub the soft butter all over the skin and under the breast skin if possible. Season all over with salt and pepper. Push the lemon halves, unpeeled garlic cloves, and thyme sprigs into the cavity. Place in a roasting tin. Drizzle with olive oil." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Roast for 20 minutes per 500 g plus 20 minutes (so about 85 minutes for a 1.6 kg bird), basting once halfway through. Pierce the thigh at its thickest point: the juices should run completely clear. Rest for at least 15 minutes loosely covered with foil before carving. Use the resting juices to make a simple gravy." }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
