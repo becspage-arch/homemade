@@ -1,0 +1,103 @@
+{
+  "slug": "philly-cheesesteak-classic",
+  "title": "Philly Cheesesteak",
+  "subtitle": "Thinly sliced beef with peppers, onion, and melted cheese in a hoagie roll",
+  "excerpt": "Shaved beef cooked fast with onions and green pepper, then piled into a soft roll and covered with melted cheese. Messy and very filling.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "A street food staple from the US city, first sold in the 1930s.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Slice the beef and refrigerate for up to one day. Cook everything to order.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "lunch",
+    "mood": ["comforting", "weekend", "weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {"slug": "cast-iron-skillet", "isOptional": false},
+    {"slug": "chefs-knife", "isOptional": false},
+    {"slug": "spatula", "isOptional": false}
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "Thin beef is the key. Freeze the steak for 30 minutes so it firms up enough to slice paper-thin. Cook on the highest heat you have so the meat gets colour fast rather than steaming."}]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {"ingredientSlug": "beef-ribeye", "amount": 350, "unit": "g", "prepNote": "frozen for 30 minutes then shaved as thin as possible", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "halved and thinly sliced", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "pepper-green", "amount": 1, "unit": "each", "prepNote": "deseeded and thinly sliced", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "emmental", "amount": 100, "unit": "g", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "ciabatta", "amount": 2, "unit": "each", "prepNote": "small rolls or individual loaves", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "vegetable-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "black-pepper", "amount": 0.25, "unit": "tsp", "prepNote": "freshly ground", "isOptional": false, "groupLabel": null}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Method"}]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Place the ribeye in the freezer for 30 minutes. Slice as thinly as possible across the grain. Season with salt and pepper."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat half the oil in the skillet over a high heat until smoking. Add the onion and pepper. Cook for 5 to 6 minutes, stirring often, until softened and lightly charred. Push to one side."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the remaining oil to the empty side of the pan. Lay the beef in one layer. Do not stir. Let it sear for 1 minute."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Chop through the beef with the edge of the spatula into rough pieces. Stir and toss with the vegetables."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Divide the mixture into two mounds in the pan. Lay cheese slices over each mound and lower the heat. Let the cheese melt for 1 minute."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Split the rolls and warm them in a dry pan cut-side down for 1 minute. Slide a mound into each roll and serve immediately."}]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Troubleshooting"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {"symptom": "The beef steams rather than sears.", "cause": "The pan was not hot enough, or too much meat was added at once.", "fix": "Get the pan smoking before adding the beef and cook in two batches if needed."},
+            {"symptom": "The beef is tough and chewy.", "cause": "It was sliced too thick or cut with the grain.", "fix": "Freeze the steak longer and always slice across the grain for shorter muscle fibres."},
+            {"symptom": "The cheese does not melt evenly.", "cause": "The heat was left on high when the cheese was added.", "fix": "Lower to medium and cover the pan with a lid or piece of foil for 60 seconds."}
+          ]
+        }
+      }
+    ]
+  }
+}

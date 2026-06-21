@@ -718,3 +718,19 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - chicken-dhansak prose-prep-steps — applied: 
 - chicken-pasanda prose-prep-steps — applied: 
 - gatte-ki-sabzi grade-level-strict — applied: 
+
+- baked-stuffed-shells grade-level-strict — applied: 
+- brandade prose-prep-steps — applied: 
+- country-fried-chicken prose-prep-steps — applied: 
+- fagioli-all-uccelletto prose-prep-steps — applied: 
+- fasolakia prose-prep-steps — applied: 
+- htipiti prose-prep-steps — applied: 
+- hungarian-mushroom-soup prose-prep-steps — applied: 
+- melanzane-funghetto prose-prep-steps — applied: 
+- mercimek-koftesi prose-prep-steps — applied: 
+- patty-melt-diner prose-prep-steps — applied: 
+- pide prose-prep-steps — applied: 
+- prasorizo prose-prep-steps — applied: 
+- spanakorizo prose-prep-steps — applied: 
+- strozzapreti-with-tomato prose-prep-steps — applied: 
+- szekely-goulash prose-prep-steps — applied: 

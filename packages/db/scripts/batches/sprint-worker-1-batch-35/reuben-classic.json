@@ -1,0 +1,103 @@
+{
+  "slug": "reuben-classic",
+  "title": "Reuben Classic",
+  "subtitle": "Corned beef, sauerkraut, and Swiss cheese grilled between rye bread",
+  "excerpt": "Corned beef, sharp sauerkraut, and melted Swiss cheese with a tangy dressing, grilled between rye bread until the outside is crisp and the filling is hot through.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "American deli sandwich staple, associated with New York and Nebraska origins.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 8,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Drain the sauerkraut well before assembling. Assemble and grill just before eating.",
+    "dietaryFlags": [],
+    "cuisine": "american",
+    "mealType": "lunch",
+    "mood": ["comforting", "weeknight", "weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {"slug": "frying-pan-28", "isOptional": false},
+    {"slug": "spatula", "isOptional": false}
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "A Reuben is a grilled sandwich built on the contrast between salty beef, sour sauerkraut, and rich melted cheese. Drain the sauerkraut very well or the bread will go soggy. Medium heat keeps the rye from burning before the filling warms through."}]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {"ingredientSlug": "rye-bread", "amount": 4, "unit": "slices", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "corned-beef", "amount": 200, "unit": "g", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "sauerkraut", "amount": 100, "unit": "g", "prepNote": "well drained", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "emmental", "amount": 80, "unit": "g", "prepNote": "sliced", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "mayonnaise", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Russian dressing"},
+            {"ingredientSlug": "ketchup", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Russian dressing"},
+            {"ingredientSlug": "horseradish-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": "Russian dressing"},
+            {"ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": null}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Method"}]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Mix the mayonnaise, ketchup, and horseradish together in a small bowl to make the dressing."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Spread butter on one side of each bread slice. Lay them butter-side down on a board."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Spread dressing on the unbuttered side of all four slices. Press any excess moisture from the sauerkraut with your hands."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "On two slices, layer corned beef, sauerkraut, and cheese. Close with the remaining slices, butter-side out."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the frying pan over a medium heat. Place the sandwiches in the pan without adding fat."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Cook for 3 to 4 minutes until the base is deep gold. Press lightly with the spatula. Flip and cook for 3 minutes more."}]}]},
+          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "The cheese should be melted and the beef hot through. Slice in half and serve straight away."}]}]}
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Troubleshooting"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {"symptom": "The bread is soggy in the middle.", "cause": "The sauerkraut was not drained thoroughly.", "fix": "Squeeze it in a clean cloth or press it hard between two plates before using."},
+            {"symptom": "The rye burns before the filling heats through.", "cause": "The pan is too hot.", "fix": "Lower to medium-low and press the sandwich down gently so the filling makes contact with the hot bread."},
+            {"symptom": "The cheese does not melt fully.", "cause": "The corned beef is cold from the fridge.", "fix": "Let the corned beef sit at room temperature for 10 minutes before assembling, or cover the pan for the last minute of cooking."}
+          ]
+        }
+      }
+    ]
+  }
+}

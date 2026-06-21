@@ -283,3 +283,41 @@ SKIPPED: 0
 - chicken-dhansak: prose-prep-steps
 - chicken-pasanda: prose-prep-steps
 - gatte-ki-sabzi: grade-level-strict
+
+---
+
+## Run at 21:58:40
+
+Generated: 2026-06-21T21:58:40.195Z
+
+Processed: 45
+PASS: 30
+STILL_BLOCKED: 15
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 45 |
+| opening-pattern-missing-hook | 43 |
+| prose-prep-steps | 42 |
+| grade-level-strict | 3 |
+
+## Still BLOCKED (sample 20)
+
+- baked-stuffed-shells: grade-level-strict
+- brandade: prose-prep-steps
+- country-fried-chicken: prose-prep-steps
+- fagioli-all-uccelletto: prose-prep-steps
+- fasolakia: prose-prep-steps
+- htipiti: prose-prep-steps
+- hungarian-mushroom-soup: prose-prep-steps
+- melanzane-funghetto: prose-prep-steps
+- mercimek-koftesi: prose-prep-steps
+- patty-melt-diner: prose-prep-steps
+- pide: prose-prep-steps
+- prasorizo: prose-prep-steps
+- spanakorizo: prose-prep-steps
+- strozzapreti-with-tomato: prose-prep-steps
+- szekely-goulash: prose-prep-steps
