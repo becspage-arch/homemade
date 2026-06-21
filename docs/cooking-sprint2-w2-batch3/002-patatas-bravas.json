@@ -1,0 +1,135 @@
+{
+  "slug": "patatas-bravas",
+  "title": "Patatas Bravas",
+  "subtitle": "Spanish fried potatoes with spicy tomato sauce and alioli",
+  "excerpt": "Patatas bravas are the most ordered tapas dish in Spain: chunks of potato fried until crisp in olive oil, then sauced with a spiced tomato brava sauce and usually a drizzle of alioli. Every bar in Spain has its version. The brava sauce should be spicy -- that is what the name means.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Patatas bravas are Madrid's most famous tapas dish, though they are now made across Spain. The dish is associated with the bars and bodegas of the older working neighbourhoods of Madrid. The word bravas means fierce or brave, referring to the heat of the sauce.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The brava sauce can be made up to 3 days ahead.",
+    "dietaryFlags": ["vegan", "glutenFree", "dairyFree"],
+    "cuisine": "spanish",
+    "mealType": "snack",
+    "mood": ["weeknight", "weekend"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "Oil temperature for frying",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "frying-pan-26", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The potatoes can be boiled first and then fried (the Madrid method, which gives a dense interior) or raw-fried (which takes longer but gives a crispier outside). The recipe here uses the parboil method. The brava sauce is thickened with the tomatoes themselves -- no flour or starch needed." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "potatoes-floury", "amount": 800, "unit": "g", "prepNote": "peeled and cut into 3 cm chunks", "isOptional": false, "groupLabel": "potatoes" },
+            { "ingredientSlug": "vegetable-oil", "amount": 800, "unit": "ml", "prepNote": "for frying", "isOptional": false, "groupLabel": "potatoes" },
+            { "ingredientSlug": "salt-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "potatoes" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "brava sauce" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "brava sauce" },
+            { "ingredientSlug": "smoked-paprika", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "brava sauce" },
+            { "ingredientSlug": "chilli-flakes", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "brava sauce" },
+            { "ingredientSlug": "extra-virgin-olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "brava sauce" },
+            { "ingredientSlug": "sherry-vinegar", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "brava sauce" },
+            { "ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "brava sauce" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Make the brava sauce" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat {{extra-virgin-olive-oil}} olive oil in a saucepan over medium heat. Add {{garlic}} garlic and cook for 1 minute. Add {{smoked-paprika}} smoked paprika and {{chilli-flakes}} chilli flakes and stir for 30 seconds. Add {{tinned-tomatoes}} tomatoes and {{salt-table}} salt. Simmer for 15 minutes until thick. Add {{sherry-vinegar}} sherry vinegar. Blend smooth. Keep warm." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 3 },
+        "content": [{ "type": "text", "text": "Cook the potatoes" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Boil {{potatoes-floury}} potato chunks in salted water for 10 minutes until just tender but not falling apart. Drain well and leave to steam-dry for 5 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat {{vegetable-oil}} oil to 180C in a deep pan. Fry the potatoes in batches for 5 minutes until golden and crisp. Drain on kitchen paper. Season with {{salt-flakes}} salt flakes. Pile onto a plate, spoon the brava sauce over, and serve immediately." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The potatoes are soggy rather than crisp",
+              "cause": "The oil was not hot enough, or the potatoes were still wet.",
+              "fix": "Make sure the oil is at 180C before frying. Steam-dry the parboiled potatoes completely before they go in the oil. Fry in small batches -- overcrowding drops the oil temperature and steams the potatoes."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Patatas bravas are the signature dish of Madrid's tapas culture. The dish is said to have appeared in Madrid bars in the 1960s, though its exact origin is debated. Every bar has its own version: some add alioli alongside the tomato sauce, some use only alioli, and some make the sauce hotter or milder. The question of the correct sauce for patatas bravas is hotly contested in Madrid. There is no agreed answer." }
+        ]
+      }
+    ]
+  }
+}

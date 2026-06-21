@@ -1,0 +1,128 @@
+{
+  "slug": "shepherds-pie",
+  "title": "Shepherd's Pie",
+  "subtitle": "British braised lamb mince under a golden mashed potato crust",
+  "excerpt": "Shepherd's pie is one of the most beloved dishes in British cooking: braised lamb mince with carrots, onions, and a rich gravy, topped with a thick crust of creamy mashed potato and baked until golden. The name refers to the shepherd who tends the sheep -- when beef is used instead of lamb, it is correctly called cottage pie.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Shepherd's pie has been made in Britain since the late 18th century. It was created as a way of using leftover roast meat with a potato topping -- potatoes being cheap and filling. The distinction between shepherd's pie (lamb) and cottage pie (beef) was established in the 19th century. The dish is eaten across Britain as a staple family meal.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 65,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze before the final bake. Defrost completely before baking.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble up to 2 days ahead. Refrigerate and bake when needed.",
+    "dietaryFlags": ["glutenFree"],
+    "cuisine": "british",
+    "mealType": "main",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The mince filling should be saucy -- not swimming in liquid, but with enough gravy to keep it moist under the potato. A dry filling becomes chalky. The mashed potato topping needs to be thick and stiff enough to support itself when spread over the filling. A very wet mash will sink into the meat rather than form a crust." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-mince", "amount": 600, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "peeled and finely diced", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "stock-lamb", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "rosemary", "amount": 1, "unit": "tsp", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "thyme-fresh", "amount": 3, "unit": "sprig", "prepNote": "leaves only", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "peas-frozen", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "potatoes-floury", "amount": 900, "unit": "g", "prepNote": "peeled and cut into chunks", "isOptional": false, "groupLabel": "mash" },
+            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "mash" },
+            { "ingredientSlug": "whole-milk", "amount": 100, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "mash" },
+            { "ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "mash" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat a large frying pan over high heat. Brown {{lamb-mince}} lamb mince in two batches until well coloured. Remove and set aside. Reduce heat to medium. Add {{onion}} onion and {{carrots}} carrots to the pan and cook for 8 minutes. Add {{garlic}} garlic, {{rosemary}} rosemary, and {{thyme-fresh}} thyme." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the mince. Add {{tomato-puree}} tomato puree, {{worcestershire-sauce}} Worcestershire sauce, and {{lamb-stock}} stock. Simmer for 20 minutes until the sauce is thick. Add {{peas-frozen}} peas in the last 3 minutes. Season well." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Meanwhile, boil {{potatoes-floury}} potatoes until tender. Drain and mash with {{unsalted-butter}} butter, warm {{whole-milk}} milk, and {{salt-table}} salt until smooth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat the oven to 200C. Transfer the mince filling to a large ovenproof dish. Spoon the mash over the top and spread evenly. Run a fork across the surface to create ridges. Bake for 25 to 30 minutes until the top is golden. Rest for 5 minutes before serving." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The mash has sunk into the meat rather than forming a crust",
+              "cause": "The mash was too wet or too warm when it was spread.",
+              "fix": "Make a stiffer mash next time -- use less milk. Let the filling cool slightly before adding the mash. A hot filling melts a warm mash and they blend together rather than staying separate."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Shepherd's pie is one of the most widely eaten dishes in Britain. It is a standard school dinner, a pub staple, a family supper, and a comfort food. The dish is made across the whole country in countless variations -- some add Worcestershire sauce, some add red wine, some finish the mash with cheese. The core of the dish -- braised mince under mashed potato -- is fixed." }
+        ]
+      }
+    ]
+  }
+}

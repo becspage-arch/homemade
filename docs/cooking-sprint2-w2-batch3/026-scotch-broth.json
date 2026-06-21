@@ -1,0 +1,122 @@
+{
+  "slug": "scotch-broth",
+  "title": "Scotch Broth",
+  "subtitle": "Scottish lamb and barley soup with root vegetables",
+  "excerpt": "Scotch broth is the great soup of Scotland: a thick, sustaining pot of lamb or mutton, pearl barley, and root vegetables that has been the mainstay of Scottish cooking for centuries. It is deeply savoury, filling, and simple. The barley thickens the broth naturally as it cooks, giving a dense, porridge-like consistency that is quite unlike any other soup.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Scotch broth is one of the oldest and most Scottish of dishes. It has been made in Scotland since at least the 17th century. Traditionally made with mutton (older sheep), the strong flavour of which pairs well with the barley. Lamb works very well in the modern version. The soup improves significantly over 2 to 3 days.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 120,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freezes very well.",
+    "batchable": true,
+    "batchNotes": "Make a large pot. Better over several days.",
+    "makeAheadNotes": "Better the next day.",
+    "dietaryFlags": ["dairyFree"],
+    "cuisine": "british",
+    "mealType": "main",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The barley must go in early -- it needs at least 1.5 hours to soften and thicken the broth properly. Rinse it well first or the broth will be cloudy and starchy. The lamb goes in at the start too. Remove the lamb pieces when tender and shred the meat from the bones, then return the meat to the pot." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 700, "unit": "g", "prepNote": "bone-in, cut into large pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pearl-barley", "amount": 100, "unit": "g", "prepNote": "rinsed well", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "peeled and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "turnip", "amount": 1, "unit": "each", "prepNote": "peeled and diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "leek", "amount": 2, "unit": "each", "prepNote": "white and light green parts, sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "stalk", "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chicken-stock", "amount": 1500, "unit": "ml", "prepNote": "or lamb stock", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "prepNote": "chopped, to finish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "salt-table", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put {{lamb-shoulder}} lamb in a large pot with {{chicken-stock}} stock and 1 litre of water. Bring to a boil, skimming off any foam. Add {{pearl-barley}} barley, {{bay-leaves}} bay leaves, {{thyme-fresh}} thyme, and {{salt-table}} salt. Simmer for 1 hour." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add {{onion}} onion, {{carrots}} carrots, {{turnip}} turnip, {{celery}} celery, and {{leek}} leek. Continue simmering for 45 minutes until the barley is completely soft and the broth is thick." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the {{lamb-shoulder}} lamb. Shred the meat from the bones and return it to the pot. Discard the bones. Taste for {{salt-table}} salt and {{black-pepper}} pepper. Scatter {{parsley-flat}} parsley over and serve in deep bowls with crusty bread." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The broth is very thick and stodgy",
+              "cause": "The barley absorbed more liquid than expected.",
+              "fix": "Add more stock or water and stir. The broth should be dense but not solid. Scotch broth thickens considerably on standing -- loosen with a splash of water when reheating."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Scotch broth is one of Scotland's most emblematic dishes. It was standard winter food for centuries in Scottish homes, farmhouses, and institutions. The dish is mentioned by Dr Johnson in his 1773 description of Scotland and has appeared in novels, cookbooks, and recipes ever since. It is still widely eaten in Scotland as a pub meal and a home staple." }
+        ]
+      }
+    ]
+  }
+}

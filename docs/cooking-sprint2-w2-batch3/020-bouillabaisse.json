@@ -1,0 +1,127 @@
+{
+  "slug": "bouillabaisse",
+  "title": "Bouillabaisse",
+  "subtitle": "Provençal fish stew with saffron, fennel and rouille",
+  "excerpt": "Bouillabaisse is the great fish stew of Marseille: a saffron-scented broth of mixed fish, fennel, tomatoes, and herbs, served with toasted bread spread with rouille (a garlic and saffron mayonnaise). It is one of the most famous dishes in the world and one of the most complex to make well -- but a simplified home version using good fish gives outstanding results.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Bouillabaisse originates in Marseille and the fishing ports of the Provence coast. The name comes from the instruction bouiller (to boil) and abaisser (to reduce) -- the fire is turned up high for 10 to 15 minutes to emulsify the olive oil into the broth. A proper Marseille bouillabaisse requires specific fish from the Mediterranean. This home version uses widely available white fish and shellfish.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The broth base (without fish) can be made a day ahead.",
+    "dietaryFlags": ["dairyFree", "glutenFree"],
+    "cuisine": "french",
+    "mealType": "main",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The key step is the high boil: once the fish go in, the heat is turned up high and the stew boils hard for 10 minutes. This emulsifies the olive oil into the broth, turning it orange and slightly thick. Do not skip this step -- a bouillabaisse that has not been boiled hard is just fish soup. The rouille is a strong garlicky sauce: do not reduce the garlic." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "cod-fillet", "amount": 600, "unit": "g", "prepNote": "e.g. monkfish, gurnard, sea bass, cut into 5 cm chunks", "isOptional": false, "groupLabel": "seafood" },
+            { "ingredientSlug": "prawns-raw", "amount": 300, "unit": "g", "prepNote": "shell-on", "isOptional": false, "groupLabel": "seafood" },
+            { "ingredientSlug": "mussels", "amount": 400, "unit": "g", "prepNote": "cleaned and debearded", "isOptional": false, "groupLabel": "seafood" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "stock-fish", "amount": 1000, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "fennel", "amount": 1, "unit": "each", "prepNote": "thinly sliced, fronds reserved", "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "saffron", "amount": 0.5, "unit": "tsp", "prepNote": "crumbled", "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "orange", "amount": 1, "unit": "each", "prepNote": "3 strips of zest", "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "thyme-fresh", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "extra-virgin-olive-oil", "amount": 6, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "broth" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "grated to a paste", "isOptional": false, "groupLabel": "rouille" },
+            { "ingredientSlug": "saffron", "amount": 0.25, "unit": "tsp", "prepNote": "dissolved in 1 tbsp hot water", "isOptional": false, "groupLabel": "rouille" },
+            { "ingredientSlug": "mayonnaise", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "rouille" },
+            { "ingredientSlug": "bread-white", "amount": 8, "unit": "slice", "prepNote": "toasted, to serve", "isOptional": false, "groupLabel": "to serve" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the rouille: mix grated {{garlic}} garlic with {{saffron}} saffron water and {{mayonnaise}} mayonnaise. Season and refrigerate." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat {{extra-virgin-olive-oil}} oil in a large pot. Add {{fennel-bulb}} fennel and {{onion}} onion. Cook for 10 minutes until soft. Add {{garlic}} garlic and cook for 1 minute. Add {{tinned-tomatoes}} tomatoes and simmer for 5 minutes. Add {{fish-stock}} fish stock, {{saffron}} saffron, {{orange}} orange zest, {{thyme-fresh}} thyme, and {{bay-leaves}} bay leaves. Simmer for 20 minutes. Season with {{salt-table}} salt." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the firmer {{white-fish-fillet}} fish first. Bring to a hard boil and cook for 5 minutes. Add {{mussels}} mussels and {{prawns-raw}} prawns. Continue boiling hard for 5 minutes until the mussels open and the prawns are pink. Discard any mussels that remain closed. Ladle into deep bowls. Top with {{bread-white}} toasted bread spread with rouille." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The broth is thin and oily rather than emulsified",
+              "cause": "The boil was not hard enough, or long enough.",
+              "fix": "The boil must be vigorous -- not a gentle simmer but a rolling boil -- for 10 minutes. This agitation is what forces the oil into the broth. If the broth is thin, boil harder for a further 5 minutes with the lid off."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bouillabaisse is from Marseille. The city's restaurants guard their versions fiercely -- in 1980 a group of Marseille chefs published a charter defining what a real bouillabaisse must contain: rascasse (scorpionfish), saint-pierre (John Dory), grondin (gurnard), and vive (weever fish), plus at least a litre of olive oil. The home version here uses whatever good white fish and shellfish are available, which is how most French home cooks have always made it." }
+        ]
+      }
+    ]
+  }
+}

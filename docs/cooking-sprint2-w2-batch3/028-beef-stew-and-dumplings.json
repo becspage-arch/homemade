@@ -1,0 +1,132 @@
+{
+  "slug": "beef-stew-and-dumplings",
+  "title": "Beef Stew and Dumplings",
+  "subtitle": "British braised beef stew with suet dumplings",
+  "excerpt": "Beef stew with suet dumplings is the great winter comfort food of Britain: a rich, dark beef braise with root vegetables, topped with fluffy dumplings that steam in the gravy and absorb all the meat flavours from below. The dumplings puff up light and airy on top, dense and savoury underneath where they meet the stew.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Beef stew with dumplings has been made in Britain for centuries. Suet dumplings -- made with beef or vegetable suet -- are one of the defining techniques of British cooking. They are simple to make and produce a result that cannot be replicated with any other fat: light on top, dense and rich at the base where they have simmered in the broth.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 150,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the stew up to 2 days ahead. Add fresh dumplings when reheating.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "main",
+    "mood": ["weeknight", "comfortFood"],
+    "temperatureCelsius": 160,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The dumplings go in for the last 25 minutes of cooking. They must cook with the lid on so they steam -- if you remove the lid, they will not rise. The stew should be simmering gently when the dumplings go in: not boiling hard (which toughens them) and not too cold (which makes them dense)." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-chuck", "amount": 800, "unit": "g", "prepNote": "cut into 4 cm cubes", "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "stock-beef", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "red-wine", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "peeled and cut into chunks", "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "roughly diced", "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "celery", "amount": 3, "unit": "stalk", "prepNote": "cut into chunks", "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "plain-flour", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "thyme-fresh", "amount": 4, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "vegetable-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "salt-table", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "stew" },
+            { "ingredientSlug": "plain-flour", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "dumplings" },
+            { "ingredientSlug": "suet-shredded", "amount": 75, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "dumplings" },
+            { "ingredientSlug": "baking-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "dumplings" },
+            { "ingredientSlug": "thyme-fresh", "amount": 1, "unit": "tsp", "prepNote": "leaves, chopped", "isOptional": false, "groupLabel": "dumplings" },
+            { "ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "dumplings" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat the oven to 160C. Season {{beef-chuck}} beef and brown in batches in {{vegetable-oil}} oil in a large ovenproof pot. Remove. Add {{onion}} onion, {{carrots}} carrots, and {{celery}} celery and cook for 5 minutes. Add {{garlic}} garlic, {{tomato-puree}} tomato puree, and {{plain-flour}} flour. Stir for 1 minute." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add {{red-wine}} wine, {{beef-stock}} stock, {{worcestershire-sauce}} Worcestershire sauce, {{thyme-fresh}} thyme, and {{bay-leaves}} bay leaves. Return the beef. Season with {{salt-table}} salt. Cover and cook in the oven for 2 hours until the beef is tender." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the dumplings: mix {{plain-flour}} flour, {{suet-shredded}} suet, {{baking-powder}} baking powder, {{thyme-fresh}} thyme, and {{salt-table}} salt. Add cold water a tablespoon at a time (about 5 to 6 tablespoons) to form a soft, sticky dough. Divide into 8 balls." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the stew from the oven. Check it is simmering gently on the hob. Drop the dumplings on top of the stew, spacing them apart. Cover and cook on the hob for 25 minutes without lifting the lid. Serve immediately." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The dumplings are dense and heavy",
+              "cause": "The dough was overworked, or the stew was not hot enough when they were added.",
+              "fix": "Mix the dumpling dough just until it comes together -- do not knead it. Make sure the stew is at a steady simmer before the dumplings go in. Do not lift the lid during the 25 minutes -- the steam is what makes them rise."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Beef stew and dumplings is the great British winter dish. It appears in cookbooks from the 17th century onwards and has been eaten in homes across England, Scotland, and Wales for generations. It is a pub staple in winter and a school dinner classic. The suet dumpling is entirely British in character -- the equivalent in other cuisines is the German Knödel, the Polish kopytka, or the American biscuit-topped stew, but none are quite the same." }
+        ]
+      }
+    ]
+  }
+}

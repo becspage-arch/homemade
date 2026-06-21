@@ -1,0 +1,122 @@
+{
+  "slug": "fish-and-chips",
+  "title": "Fish and Chips",
+  "subtitle": "British beer-battered white fish with thick-cut chips",
+  "excerpt": "Fish and chips is Britain's most famous dish: a thick fillet of white fish in a crisp, golden beer batter alongside hand-cut chips fried twice for a fluffy interior and a crisp exterior. Done properly at home, with fresh fish and oil at the right temperature, it is far better than most chip shops. The batter should shatter when tapped; the chip should steam when broken open.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "YEAR_ROUND",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Fish and chips became a defining British food in the late 19th century, when cheap fried fish sold by Jewish immigrants in the East End of London met the chip shops of the north of England. By 1910, there were over 25,000 fish and chip shops in Britain. The dish is traditionally served with malt vinegar and salt. The fish should be cod or haddock; in the north of England, haddock is preferred.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The batter can be made up to 1 hour ahead and kept cold.",
+    "dietaryFlags": ["dairyFree"],
+    "cuisine": "british",
+    "mealType": "main",
+    "mood": ["weeknight", "weekend"],
+    "temperatureCelsius": 190,
+    "temperatureNote": "Oil temperature for frying",
+    "foundational": true
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The chips are cooked twice: first at 150C to cook them through, then at 190C to crisp them. The batter works best when very cold -- keep it in the fridge until you need it. The beer makes the batter crisp and light. The oil temperature drops when the fish goes in; keep it as close to 190C as possible by frying in batches." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "cod-fillet", "amount": 4, "unit": "each", "prepNote": "thick fillets, about 175 g each, skinless", "isOptional": false, "groupLabel": "fish" },
+            { "ingredientSlug": "vegetable-oil", "amount": 2000, "unit": "ml", "prepNote": "for deep frying", "isOptional": false, "groupLabel": "fish" },
+            { "ingredientSlug": "plain-flour", "amount": 175, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "batter" },
+            { "ingredientSlug": "baking-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "batter" },
+            { "ingredientSlug": "beer", "amount": 250, "unit": "ml", "prepNote": "cold lager or pale ale", "isOptional": false, "groupLabel": "batter" },
+            { "ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "batter" },
+            { "ingredientSlug": "potatoes-floury", "amount": 1200, "unit": "g", "prepNote": "peeled and cut into thick chips (1.5 cm)", "isOptional": false, "groupLabel": "chips" },
+            { "ingredientSlug": "salt-flakes", "amount": 1, "unit": "tsp", "prepNote": "to serve", "isOptional": false, "groupLabel": "chips" },
+            { "ingredientSlug": "malt-vinegar", "amount": 2, "unit": "tbsp", "prepNote": "to serve", "isOptional": false, "groupLabel": "to serve" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rinse {{potatoes-floury}} chips in cold water and pat completely dry. Heat {{vegetable-oil}} oil to 150C. Fry the chips in batches for 8 minutes until cooked through but not yet coloured. Drain and cool on kitchen paper. Set aside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the batter: whisk {{plain-flour}} flour, {{baking-powder}} baking powder, and {{salt-table}} salt together. Gradually whisk in cold {{beer-lager}} beer until just combined -- a few lumps are fine. Keep refrigerated." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Increase the oil to 190C. Dip {{cod-fillet}} cod fillets in the batter, letting the excess drip off. Lower into the oil and fry for 5 to 6 minutes until golden and crisp. Keep warm in the oven at 120C while you fry in batches." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the chips to the 190C oil and fry for 3 to 4 minutes until crisp and golden. Drain and season with {{salt-flakes}} salt flakes. Serve immediately with the fish and {{malt-vinegar}} malt vinegar." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The batter is pale and soggy, not crisp",
+              "cause": "The oil was not hot enough when the fish went in, or the batter was not cold.",
+              "fix": "Check the oil temperature with a thermometer -- it must be at 190C before the fish goes in. Cold batter hitting very hot oil is what produces the shattering crisp texture. A warm batter gives a soft, doughy result."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Fish and chips is Britain's most internationally recognised food. The chip shop (chippy) is a British institution: over 10,000 fish and chip shops still operate in the United Kingdom. The dish is eaten wrapped in paper with malt vinegar and salt, or with mushy peas in the north of England. The combination of cod or haddock with chips is one of the most popular meals in Britain, especially on a Friday." }
+        ]
+      }
+    ]
+  }
+}
