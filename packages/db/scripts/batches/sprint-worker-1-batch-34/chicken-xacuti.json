@@ -1,0 +1,149 @@
+{
+  "slug": "chicken-xacuti",
+  "title": "Chicken Xacuti",
+  "subtitle": "A Goan coconut curry with toasted whole spices and poppy seeds",
+  "excerpt": "Chicken thighs in a dark, aromatic sauce built on toasted spices, dried chilli, and coconut. Xacuti has more depth than most British curry-house dishes because the spices are dry-roasted before they are ground.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Goan Catholic cooking tradition, drawing on coconut and whole-spice techniques from the Konkan coast.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze for up to 3 months. Reheat gently with a splash of water.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The xacuti masala paste can be made up to 3 days ahead and kept in the fridge.",
+    "dietaryFlags": ["dairyFree", "glutenFree"],
+    "cuisine": "indian",
+    "mealType": "dinner",
+    "mood": ["weekend", "comforting"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {"slug": "large-saucepan", "isOptional": false},
+    {"slug": "spice-grinder", "isOptional": false},
+    {"slug": "frying-pan-28", "isOptional": false},
+    {"slug": "chopping-board", "isOptional": false}
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "Xacuti gets its distinctive dark, complex flavour from dry-roasting and grinding whole spices fresh for the dish. The process takes a little longer than opening a jar, but the difference in the final sauce is marked. Do not rush the roasting step; the spices need to smell toasted and just starting to smoke before they come off the heat."}]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {"ingredientSlug": "chicken-thighs-boneless", "amount": 800, "unit": "g", "prepNote": "cut into large pieces", "isOptional": false, "groupLabel": "Chicken"},
+            {"ingredientSlug": "vegetable-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Chicken"},
+            {"ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Chicken"},
+            {"ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "minced", "isOptional": false, "groupLabel": "Chicken"},
+            {"ingredientSlug": "ginger-fresh", "amount": 20, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Chicken"},
+            {"ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Chicken"},
+            {"ingredientSlug": "coconut-milk", "amount": 400, "unit": "ml", "prepNote": "full-fat", "isOptional": false, "groupLabel": "Chicken"},
+            {"ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Chicken"},
+            {"ingredientSlug": "coriander-seeds", "amount": 2, "unit": "tbsp", "prepNote": "to toast and grind", "isOptional": false, "groupLabel": "Xacuti masala (toast and grind)"},
+            {"ingredientSlug": "cumin-seeds", "amount": 1, "unit": "tsp", "prepNote": "to toast and grind", "isOptional": false, "groupLabel": "Xacuti masala (toast and grind)"},
+            {"ingredientSlug": "cloves", "amount": 6, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Xacuti masala (toast and grind)"},
+            {"ingredientSlug": "cardamom-pods", "amount": 4, "unit": "each", "prepNote": "seeds only", "isOptional": false, "groupLabel": "Xacuti masala (toast and grind)"},
+            {"ingredientSlug": "star-anise", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Xacuti masala (toast and grind)"},
+            {"ingredientSlug": "cinnamon-stick", "amount": 1, "unit": "each", "prepNote": "broken into pieces", "isOptional": false, "groupLabel": "Xacuti masala (toast and grind)"},
+            {"ingredientSlug": "poppy-seeds", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Xacuti masala (toast and grind)"},
+            {"ingredientSlug": "dried-chilli", "amount": 3, "unit": "each", "prepNote": "broken", "isOptional": false, "groupLabel": "Xacuti masala (toast and grind)"},
+            {"ingredientSlug": "turmeric", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Xacuti masala (toast and grind)"},
+            {"ingredientSlug": "coconut-desiccated", "amount": 30, "unit": "g", "prepNote": "dry-toasted separately until golden", "isOptional": false, "groupLabel": "Xacuti masala (toast and grind)"},
+            {"ingredientSlug": "coriander-fresh", "amount": 15, "unit": "g", "prepNote": "to serve", "isOptional": false, "groupLabel": null}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Method"}]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Dry-toast the coriander seeds, cumin, cloves, cardamom seeds, star anise, cinnamon, poppy seeds, and dried chillies in the dry frying pan over a medium heat for 3 to 4 minutes, stirring constantly, until fragrant and just smoking. Tip onto a plate to cool."}]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Toast the desiccated coconut separately in the dry pan for 2 minutes until golden. Add to the spices. Once cool, grind the whole lot with the turmeric to a fine powder in the spice grinder."}]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oil in the large saucepan over a medium heat. Add the onions and cook for 10 minutes until golden."}]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the garlic and ginger and stir for 1 minute. Add the ground xacuti masala and stir for 2 minutes until fragrant."}]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the tinned tomatoes and cook for 8 minutes, stirring often, until the sauce thickens."}]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the chicken pieces and stir well. Pour in the coconut milk and add the salt. Bring to a simmer."}]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Cook uncovered for 25 minutes until the chicken is tender and the sauce is thick. Taste and adjust salt. Serve with rice and fresh coriander."}]}]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Troubleshooting"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The spices burned during toasting.",
+              "cause": "The heat was too high or they were left unattended.",
+              "fix": "Start over with fresh spices if they are black or smell acrid. The whole dish depends on the masala being toasted, not burned."
+            },
+            {
+              "symptom": "The sauce is grainy or sandy in texture.",
+              "cause": "The spice grinder did not grind finely enough.",
+              "fix": "Pass the ground masala through a fine sieve and grind the coarse pieces again before adding them."
+            },
+            {
+              "symptom": "The coconut milk sauce is too thin.",
+              "cause": "The lid was on and the sauce did not reduce.",
+              "fix": "Remove the lid and simmer over a medium heat for a further 10 minutes, stirring occasionally."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -257,3 +257,29 @@ SKIPPED: 0
 - koki-cameroon: prose-prep-steps
 - lamb-saag: prose-prep-steps
 - lau: grade-level-strict
+
+---
+
+## Run at 20:49:03
+
+Generated: 2026-06-21T20:49:03.283Z
+
+Processed: 271
+PASS: 268
+STILL_BLOCKED: 3
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 33 |
+| opening-pattern-missing-hook | 30 |
+| prose-prep-steps | 6 |
+| grade-level-strict | 5 |
+
+## Still BLOCKED (sample 20)
+
+- chicken-dhansak: prose-prep-steps
+- chicken-pasanda: prose-prep-steps
+- gatte-ki-sabzi: grade-level-strict

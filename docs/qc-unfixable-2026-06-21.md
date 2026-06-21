@@ -714,3 +714,7 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - simplified-fish-stew prose-prep-steps — applied: 
 - toad-in-the-hole prose-prep-steps — applied: 
 - waakye prose-prep-steps — applied: 
+
+- chicken-dhansak prose-prep-steps — applied: 
+- chicken-pasanda prose-prep-steps — applied: 
+- gatte-ki-sabzi grade-level-strict — applied: 
