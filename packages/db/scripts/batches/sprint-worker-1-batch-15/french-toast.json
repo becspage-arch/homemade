@@ -1,0 +1,124 @@
+{
+  "slug": "french-toast",
+  "title": "French Toast",
+  "subtitle": "Golden egg-soaked bread",
+  "excerpt": "French toast is made by soaking thick slices of bread in a spiced egg and cream mixture, then frying in butter until golden. Stale bread works best because it soaks up the custard without falling apart. Serve with honey and a dusting of icing sugar.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "French toast is a classic dish found across French and American breakfast traditions. This version uses simple pantry ingredients.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "french",
+    "mealType": "breakfast",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{ "slug": "frying-pan-28", "isOptional": false }],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use bread that is a day old. Stale bread soaks up the egg mixture better and holds its shape in the pan." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 50, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 2, "unit": "tbsp", "prepNote": "to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "nutmeg-ground", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bread-flour", "amount": 400, "unit": "g", "prepNote": "use a thick-sliced white loaf if possible", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Crack the eggs into a wide bowl. Add the milk, double cream, cinnamon, and nutmeg. Whisk until smooth and well combined." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cut the bread into thick slices, about 2-3cm each. You should get 4 to 6 slices from 400g of loaf." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place one slice in the egg mixture. Leave it for 20 seconds per side. It should be well soaked but not soggy." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt half the butter in a frying pan over a medium heat. When it foams, add the soaked slices. Do not overcrowd the pan." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook for 2 to 3 minutes per side until deeply golden. The bread should feel set and firm when pressed lightly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Repeat with the remaining slices and butter. Serve immediately with honey drizzled over the top." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Bread is soggy after cooking",
+              "cause": "Soaked in the egg mixture for too long",
+              "fix": "Reduce soak time to 20 seconds per side."
+            },
+            {
+              "symptom": "Bread is burning outside but raw inside",
+              "cause": "Pan heat too high",
+              "fix": "Lower the heat and cook more slowly."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "porridge",
+  "title": "Creamy Porridge",
+  "subtitle": "Simple oat porridge with honey",
+  "excerpt": "Porridge made with milk instead of water is richer and more filling. It takes less than 10 minutes and needs very little attention. Drizzle with honey and serve straight from the pan.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Porridge is a staple breakfast across Britain and Scotland. This version uses rolled oats with milk for a creamier result than the traditional water-based method.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 2,
+    "cookMinutes": 8,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "nutFree"],
+    "cuisine": "british",
+    "mealType": "breakfast",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{ "slug": "large-saucepan", "isOptional": false }],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Using milk instead of water gives a richer, creamier result. Stir regularly to stop the oats sticking to the base of the pan." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            { "ingredientSlug": "oats-rolled", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 2, "unit": "tbsp", "prepNote": "to serve", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the oats and milk into a saucepan. Add a pinch of salt. Stir to combine." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set the pan over a medium heat. Stir frequently as the milk heats. Do not let it boil hard or the milk will catch on the base." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "After 6 to 8 minutes the porridge will thicken and bubble gently. It is ready when it coats the back of a spoon. Spoon into bowls and drizzle with honey." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Porridge is too thick",
+              "cause": "Cooked for too long",
+              "fix": "Stir in a splash of hot milk to loosen."
+            },
+            {
+              "symptom": "Porridge is lumpy",
+              "cause": "Not stirred enough during cooking",
+              "fix": "Stir constantly as it heats up."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
