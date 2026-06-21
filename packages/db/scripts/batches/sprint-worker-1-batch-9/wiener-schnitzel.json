@@ -1,0 +1,110 @@
+{
+  "slug": "wiener-schnitzel",
+  "title": "Wiener Schnitzel",
+  "subtitle": "Thin breaded pork escalopes fried in butter",
+  "excerpt": "Thin pork escalopes coated in crisp breadcrumbs and shallow-fried in a mixture of butter and oil until golden. Served simply with lemon wedges, this is a quick and satisfying Austrian classic.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Wiener Schnitzel originated in Vienna and is first documented in Austrian cookbooks of the 19th century, though breaded and fried meat cutlets appear across many European cuisines. The original Viennese version uses veal; pork escalopes are the common everyday alternative found across Germany and Austria.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "german",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Bashing the pork thin is key. The escalopes should be no thicker than 5 mm so they cook through before the breadcrumb crust over-colours." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pork-loin", "amount": 600, "unit": "g", "prepNote": "cut into 4 escalopes and bashed thin", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "plain-flour", "amount": 60, "unit": "g", "prepNote": "seasoned with salt and pepper", "isOptional": false, "groupLabel": "coating" },
+            { "ingredientSlug": "eggs", "amount": 2, "unit": null, "prepNote": "beaten", "isOptional": false, "groupLabel": "coating" },
+            { "ingredientSlug": "breadcrumbs-panko", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "coating" },
+            { "ingredientSlug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "for frying" },
+            { "ingredientSlug": "sunflower-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "for frying" },
+            { "ingredientSlug": "lemon", "amount": 2, "unit": null, "prepNote": "cut into wedges", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place each pork escalope between two sheets of baking paper or cling film. Bash with a rolling pin or the flat side of a heavy pan until about 4 to 5 mm thick. Season both sides with salt and pepper." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Set up three shallow bowls: one with seasoned flour, one with beaten eggs, and one with breadcrumbs. Dip each escalope first in the flour, shaking off any excess, then the egg, then the breadcrumbs, pressing gently to coat evenly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the butter and oil together in the frying pan over medium-high heat until the butter is foaming. Add two escalopes at a time and fry for 3 to 4 minutes per side until deep golden. Do not crowd the pan." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drain on kitchen paper and keep warm while you fry the remaining escalopes. Add more butter and oil if needed between batches. Serve immediately with lemon wedges." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Breadcrumbs fall off during frying", "cause": "Coating was not pressed on firmly or meat was wet", "fix": "Pat the pork dry before coating and press crumbs on firmly." },
+            { "symptom": "Coating is dark but pork is still pink inside", "cause": "Escalopes were too thick", "fix": "Bash pork to 4 to 5 mm before coating." },
+            { "symptom": "Coating is greasy", "cause": "Oil was not hot enough before adding the meat", "fix": "Wait until the butter foams before adding the schnitzel." }
+          ]
+        }
+      }
+    ]
+  }
+}

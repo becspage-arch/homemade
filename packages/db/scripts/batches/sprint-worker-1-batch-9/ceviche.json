@@ -1,0 +1,109 @@
+{
+  "slug": "ceviche",
+  "title": "Peruvian Ceviche",
+  "subtitle": "Fresh cod cured in lime juice with chilli and coriander",
+  "excerpt": "Very fresh cod cured in lime juice with thinly sliced red onion, chilli, cucumber, and coriander. The acid from the lime firms the fish and turns it opaque without any heat. Use the freshest cod you can find.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ceviche has been prepared along the Pacific coast of South America for thousands of years, with pre-Inca civilisations using local fermented fruit juices to cure fish. The introduction of citrus by Spanish colonisers in the 16th century led to the lime-based version that is now Peru's national dish.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 0,
+    "restingMinutes": 0,
+    "chillingMinutes": 15,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "peruvian",
+    "mealType": "starter",
+    "mood": ["light", "weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "sieve", "isOptional": true }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Fish freshness is everything here. Buy from a fishmonger on the day you plan to eat it and keep it refrigerated until the last moment. Do not leave the ceviche in the lime juice longer than 20 minutes or the texture becomes rubbery." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "cod-fillet", "amount": 500, "unit": "g", "prepNote": "very fresh, skinless, cut into 2 cm pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lime", "amount": 6, "unit": null, "prepNote": "juice only", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-red", "amount": 1, "unit": null, "prepNote": "deseeded and finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": null, "prepNote": "very thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coriander-fresh", "amount": 30, "unit": "g", "prepNote": "leaves picked", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cucumber", "amount": 1, "unit": null, "prepNote": "halved, deseeded, and thinly sliced", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the cod pieces in a non-reactive bowl. Season with a good pinch of salt and pour over the lime juice. Toss gently so all the pieces are coated." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Chill in the refrigerator for 15 minutes. The fish should look opaque and white on the outside when ready." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the sliced onion, chilli, and cucumber to the bowl. Toss together, then taste and adjust salt and lime juice as needed." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scatter the coriander leaves over and serve immediately in chilled bowls." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Fish is rubbery and tough", "cause": "Left in lime juice too long", "fix": "Cure for 15 minutes only and serve right away." },
+            { "symptom": "Onion flavour is overpowering", "cause": "Raw onion not soaked first", "fix": "Soak sliced onion in cold water for 5 minutes, then drain." },
+            { "symptom": "Ceviche tastes flat", "cause": "Not enough salt or acid", "fix": "Add a pinch more salt and a squeeze of fresh lime." }
+          ]
+        }
+      }
+    ]
+  }
+}

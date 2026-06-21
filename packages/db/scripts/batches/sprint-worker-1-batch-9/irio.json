@@ -1,0 +1,109 @@
+{
+  "slug": "irio",
+  "title": "Irio",
+  "subtitle": "Kenyan mashed potato with peas and spinach",
+  "excerpt": "A simple Kenyan dish of mashed potato combined with peas and wilted spinach. Irio is a traditional staple of the Kikuyu people of Kenya and makes a nutritious, filling side dish or light main.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Irio is a traditional dish of the Kikuyu people of central Kenya, eaten as a staple accompaniment to stews and grilled meats. The name comes from the Kikuyu word for food. It is particularly associated with the Mount Kenya region and is considered a national comfort food in Kenya.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegetarian", "glutenFree", "nutFree"],
+    "cuisine": "kenyan",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The peas and spinach are folded into the mash rather than pureed smooth. The result is a textured, speckled mash with whole peas and ribbons of green throughout." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "potato", "amount": 800, "unit": "g", "prepNote": "peeled and cut into chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "peas-frozen", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spinach", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": null, "prepNote": "finely diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 45, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Boil the potatoes in salted water for 18 to 20 minutes until tender. Add the frozen peas for the last 3 minutes of cooking. Drain, reserving a little of the cooking water." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Meanwhile, cook the onion in the butter over medium heat for 5 to 6 minutes until soft. Add the spinach and stir for 1 to 2 minutes until wilted. Remove from the heat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the drained potatoes and peas to the pan. Mash roughly, adding the milk to loosen. The texture should be thick and slightly chunky, not completely smooth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the wilted spinach and softened onion into the mash. Season generously with salt and pepper and serve." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Mash is too stiff", "cause": "Not enough milk or butter", "fix": "Add a splash more milk and a little extra butter." },
+            { "symptom": "Spinach has made the mash watery", "cause": "Spinach not drained before adding", "fix": "Squeeze spinach in a cloth or press with a spoon to remove extra water." },
+            { "symptom": "Peas are mushy and grey", "cause": "Added too early and overcooked", "fix": "Add peas only in the last 3 minutes of the potato cook." }
+          ]
+        }
+      }
+    ]
+  }
+}

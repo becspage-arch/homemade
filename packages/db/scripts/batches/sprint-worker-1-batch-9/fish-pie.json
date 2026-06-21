@@ -1,0 +1,118 @@
+{
+  "slug": "fish-pie",
+  "title": "Fish Pie",
+  "subtitle": "Creamy fish and prawn pie with mash topping",
+  "excerpt": "A proper British fish pie with chunks of salmon and cod in a parsley sauce, topped with fluffy mashed potato and baked until golden. Simple to prepare ahead and always satisfying.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Fish pie is a traditional British dish with roots in the 19th century, when seafood was plentiful and inexpensive. The mashed potato topping became standard in domestic cookbooks of the early 20th century as a filling, economical way to stretch the filling.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Assemble the pie up to one day ahead, cover, and refrigerate. Add 10 minutes to the bake time if going straight from the fridge.",
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": 200,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false },
+    { "slug": "large-saucepan", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Poach the fish in the milk before making the sauce. This both cooks the fish gently and infuses the milk with flavour for the sauce." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            { "ingredientSlug": "salmon-fillet", "amount": 400, "unit": "g", "prepNote": "cut into large chunks", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "cod-fillet", "amount": 400, "unit": "g", "prepNote": "cut into large chunks", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "prawns-raw", "amount": 200, "unit": "g", "prepNote": "peeled", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "whole-milk", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "sauce" },
+            { "ingredientSlug": "plain-flour", "amount": 45, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "sauce" },
+            { "ingredientSlug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "sauce" },
+            { "ingredientSlug": "leek", "amount": 2, "unit": null, "prepNote": "sliced", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "peas-frozen", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "parsley-flat", "amount": 30, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "potato", "amount": 1200, "unit": "g", "prepNote": "peeled and cut into chunks, for the topping", "isOptional": false, "groupLabel": "topping" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat the oven to 200 C. Boil the potatoes until tender, about 20 minutes. Drain, return to the pan, and mash with 40 g of the butter, a splash of milk, and plenty of salt. Set aside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the milk into a wide pan and bring to a gentle simmer. Add the salmon and cod chunks, cover, and poach for 4 minutes. Lift the fish out with a slotted spoon, reserving the milk. When cool enough to handle, flake any larger pieces slightly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Melt the remaining 40 g butter in a saucepan over medium heat. Soften the leeks for 5 minutes. Stir in the flour and cook for 1 minute. Gradually whisk in the reserved poaching milk until smooth. Simmer for 3 to 4 minutes until thickened. Stir in the parsley and season well." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold the poached fish, raw prawns, and frozen peas into the sauce. Transfer to the roasting tin and spread the mash evenly over the top. Rough up the surface with a fork." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake for 25 to 30 minutes until the top is golden and the filling is bubbling around the edges. Rest for 5 minutes before serving." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Sauce is lumpy", "cause": "Milk was added too quickly", "fix": "Add milk a little at a time and whisk well between each addition." },
+            { "symptom": "Mash sinks into the filling", "cause": "Filling was too hot when mash was added", "fix": "Let the filling cool for 5 minutes before spreading the mash on top." },
+            { "symptom": "Top is pale after baking", "cause": "Oven not hot enough or mash too thick", "fix": "Raise to 220 C for the last 5 minutes to brown the top." }
+          ]
+        }
+      }
+    ]
+  }
+}
