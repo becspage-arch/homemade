@@ -1,0 +1,110 @@
+{
+  "slug": "tuna-pasta-salad",
+  "title": "Tuna Pasta Salad",
+  "subtitle": "British-style pasta salad with tuna, olives, and capers",
+  "excerpt": "A simple pasta salad with tinned tuna, cherry tomatoes, olives, and a lemony dressing. It packs well for lunch and keeps in the fridge for two days.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from classic British pasta salad tradition. Undercooking the pasta slightly and dressing while warm helps it absorb the flavours.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Double the recipe and store in the fridge for up to 2 days. Stir before serving and add a splash of olive oil to loosen.",
+    "makeAheadNotes": null,
+    "dietaryFlags": ["dairyFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["weeknight", "quick"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{ "slug": "large-saucepan", "isOptional": false }],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dress the pasta while it is still warm. It absorbs the dressing much better than cold pasta does." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pasta-dried", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tuna-tinned", "amount": 320, "unit": "g", "prepNote": "2 x 160g tins, drained and flaked", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cherry-tomatoes", "amount": 200, "unit": "g", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cucumber", "amount": 1, "unit": null, "prepNote": "diced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olives-black", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "capers", "amount": 2, "unit": "tbsp", "prepNote": "drained", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": null, "prepNote": "juice only", "isOptional": false, "groupLabel": "Dressing" },
+            { "ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Dressing" },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dressing" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook the pasta in a large saucepan of salted boiling water for 1 minute less than the packet time. It should still have a slight bite." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "While the pasta cooks, whisk together the lemon juice, olive oil, and mustard. Season well." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Drain the pasta and tip straight into a large bowl. Pour the dressing over immediately and toss to coat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave to cool for 5 minutes. Add the tuna, cherry tomatoes, cucumber, olives, and capers. Toss gently and taste for seasoning." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Pasta salad is dry and clumping.", "cause": "Pasta was rinsed in cold water, which washed off the starch.", "fix": "Never rinse pasta; dress it hot and toss well." },
+            { "symptom": "Tuna is breaking up too finely.", "cause": "Stirred too vigorously.", "fix": "Fold the tuna in gently at the end to keep some texture." },
+            { "symptom": "Salad tastes flat when served cold.", "cause": "Cold dulls seasoning.", "fix": "Taste again and add more lemon juice and salt before serving." }
+          ]
+        }
+      }
+    ]
+  }
+}

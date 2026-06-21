@@ -1,0 +1,118 @@
+{
+  "slug": "lamb-hotpot",
+  "title": "Lancashire Hotpot",
+  "subtitle": "Slow-braised lamb under a crispy potato crust",
+  "excerpt": "A northern British classic of slow-braised lamb shoulder under a tight-fitted layer of sliced potatoes that go crispy on top. It needs time in the oven but very little work.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from Lancashire hotpot tradition. The defining feature is the layered potato lid that acts as both lid and serving element.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 120,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Can be assembled a day ahead and kept in the fridge unbaked. Add 10 minutes to the initial covered cooking time.",
+    "dietaryFlags": ["glutenFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "dinner",
+    "mood": ["weekend", "comforting"],
+    "temperatureCelsius": 170,
+    "temperatureNote": "Fan 150C / Gas 3 for the braise, then 220C / Fan 200C / Gas 7 for the potato crust finish",
+    "foundational": false
+  },
+  "recipeTools": [{ "slug": "stockpot", "isOptional": false }],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Slice the potatoes thinly and evenly so they cook through at the same rate. A mandoline helps but a sharp knife works fine." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-shoulder", "amount": 800, "unit": "g", "prepNote": "cut into 4cm cubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 800, "unit": "g", "prepNote": "peeled and sliced 4mm thick", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 3, "unit": null, "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 3, "unit": null, "prepNote": "sliced into rounds", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 3, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": "melted, to brush potatoes", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 170C. Season the lamb generously. Heat a splash of oil in an oven-safe stockpot over high heat. Brown the lamb in batches until dark on all sides. Remove and set aside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Reduce heat to medium. Add the onion and carrot to the pot. Cook for 5 minutes until the onion softens." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the lamb. Add the stock, Worcestershire sauce, thyme, and bay leaves. Stir and bring to a simmer." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the potato slices over the top in neat overlapping rows. Brush generously with melted butter. Season with salt." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover the pot tightly with a lid or foil. Bake at 170C for 1 hour 30 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the lid. Turn the oven up to 220C. Bake uncovered for a further 20 to 25 minutes until the potato top is golden and crispy." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Potato top is pale and not crispy.", "cause": "Oven not hot enough for the uncovered stage.", "fix": "Increase to 220C and cook uncovered for 20 to 25 minutes." },
+            { "symptom": "Lamb is still tough after 90 minutes.", "cause": "Temperature was too low or pieces were too large.", "fix": "Cover and return to the oven for a further 20 minutes." },
+            { "symptom": "Sauce has evaporated and is dry.", "cause": "Pot seal was not tight enough.", "fix": "Add a splash of hot stock and cover tightly with foil." }
+          ]
+        }
+      }
+    ]
+  }
+}

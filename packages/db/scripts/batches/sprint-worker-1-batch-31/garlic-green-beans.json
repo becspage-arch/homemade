@@ -1,0 +1,111 @@
+{
+  "slug": "garlic-green-beans",
+  "title": "Garlic Green Beans",
+  "subtitle": "Chinese-style stir-fried green beans with soy and garlic",
+  "excerpt": "Green beans blistered in a hot wok with garlic, soy sauce, and a drizzle of sesame oil. A fast side dish that works with any Asian meal and takes 8 minutes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Synthesised from Chinese stir-fried green bean techniques. Cooking over very high heat without stirring for the first 2 minutes gives the characteristic blistered skin.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 8,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "chinese",
+    "mealType": "side",
+    "mood": ["weeknight", "quick"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{ "slug": "wok", "isOptional": false }],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Dry the beans well after washing. Water in the hot wok will cause the oil to spit." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "green-beans", "amount": 500, "unit": "g", "prepNote": "trimmed and dried", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tsp", "prepNote": "to finish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "sunflower-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the wok over the highest heat until smoking. Add the sunflower oil." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the green beans in a single layer. Leave undisturbed for 2 minutes so the skin blisters. Then toss and cook for another 2 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic and chilli flakes. Toss and stir-fry for 1 minute until fragrant." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the soy sauce. Toss to coat. Cook for 30 seconds." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove from heat. Drizzle the sesame oil over the top. Serve immediately." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Beans have no blistered skin and look steamed.", "cause": "Heat was too low or beans were wet.", "fix": "Use maximum heat and make sure beans are completely dry." },
+            { "symptom": "Garlic is burning before the beans are cooked.", "cause": "Garlic added too early when the beans still needed time.", "fix": "Add garlic only in the last 2 minutes of cooking." },
+            { "symptom": "Beans are too soft.", "cause": "Cooked too long in total.", "fix": "8 minutes total gives a tender-crisp result; reduce if needed." }
+          ]
+        }
+      }
+    ]
+  }
+}
