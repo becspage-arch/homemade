@@ -1,0 +1,105 @@
+{
+  "slug": "ratatouille",
+  "title": "Ratatouille",
+  "subtitle": "Slow-cooked Provencal vegetable stew",
+  "excerpt": "Aubergine, courgette, and peppers slow-cooked with tomatoes, garlic, and herbs until everything is soft and melded together. It is better the next day and keeps well in the fridge.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the traditional Provencal ratatouille technique of cooking each vegetable separately before combining.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in portions for up to 3 months. Thaw and reheat gently.",
+    "batchable": true,
+    "batchNotes": "Double the quantities easily. Ratatouille improves with time so making a large batch is worthwhile.",
+    "makeAheadNotes": "Tastes significantly better the next day once the flavours have melded.",
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": ["weekend", "batch"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Salt the aubergine and leave it for 10 minutes before cooking. This draws out bitter liquid and helps it soften quickly in the pan." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "aubergine", "amount": 2, "unit": "whole", "prepNote": "cut into 2cm cubes", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "courgette", "amount": 3, "unit": "whole", "prepNote": "cut into 2cm rounds", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "pepper-red", "amount": 2, "unit": "whole", "prepNote": "deseeded and cut into 3cm pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tomato", "amount": 6, "unit": "whole", "prepNote": "large, roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "whole", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "cloves", "prepNote": "minced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 4, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "basil", "amount": 30, "unit": "g", "prepNote": "torn", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 6, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Salt the aubergine cubes and leave in a colander for 10 minutes. Pat dry." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat 3 tbsp olive oil in a stockpot over medium-high heat. Fry the aubergine for 8 minutes until golden. Remove and set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add another tbsp oil. Fry the courgette for 5 minutes. Remove and set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the remaining oil. Cook the onion and pepper for 8 minutes until soft." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic. Cook for 2 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the tomatoes, thyme, and bay leaves. Season well. Simmer for 10 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the aubergine and courgette to the pot. Stir gently and simmer for 15 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the thyme and bay leaves. Stir in the torn basil and serve." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Vegetables are a mushy mass.", "cause": "All cooked together from the start with the lid on.", "fix": "Cook each vegetable separately next time for better texture." },
+            { "symptom": "Stew is very watery.", "cause": "Fresh tomatoes release a lot of liquid.", "fix": "Simmer uncovered on medium heat for 15 more minutes." },
+            { "symptom": "Aubergine is bitter and chewy.", "cause": "Not salted before cooking.", "fix": "Salt and rest for 10 minutes before the next use." }
+          ]
+        }
+      }
+    ]
+  }
+}

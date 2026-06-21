@@ -1,0 +1,102 @@
+{
+  "slug": "greek-lemon-chicken",
+  "title": "Greek Lemon Chicken",
+  "subtitle": "Roast chicken thighs with lemon, garlic, and oregano",
+  "excerpt": "Chicken thighs marinated in lemon juice, garlic, and oregano, then roasted on a bed of potato wedges until golden and tender. The pan juices make their own sauce.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the Greek kleftiko-inspired style of roasting chicken with lemon and dried herbs.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate the chicken up to 24 hours ahead in the fridge.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "greek",
+    "mealType": "dinner",
+    "mood": ["weekend", "entertaining"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "180C fan",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Even a short marinade makes a big difference to the flavour of the chicken. If you have time, leave it overnight." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 800, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemon", "amount": 3, "unit": "whole", "prepNote": "juice of all 3, zest of 1", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "cloves", "prepNote": "minced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 5, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "oregano-dried", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 600, "unit": "g", "prepNote": "cut into wedges", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the lemon juice, zest, garlic, olive oil, oregano, thyme, and mustard in a bowl. Season with salt and pepper." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the chicken thighs. Toss to coat. Chill for at least 30 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 200C (180C fan)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spread the potato wedges in a large roasting tin. Season with salt and drizzle with a little olive oil." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the chicken thighs on top of the potatoes. Pour any remaining marinade over." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roast for 50 minutes until the chicken is golden and the potatoes are tender and catching at the edges." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spoon the pan juices over everything and serve straight from the tin." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Chicken is cooked but potatoes are still firm.", "cause": "Wedges were cut too thick.", "fix": "Cover with foil and return to the oven for 15 more minutes." },
+            { "symptom": "Pan juices are burnt.", "cause": "Oven too hot or tin too dry.", "fix": "Add 100ml of water to the tin halfway through roasting." },
+            { "symptom": "Chicken skin is pale and soft.", "cause": "Too much marinade moisture or oven not hot enough.", "fix": "Blast under the grill for 3 minutes to crisp the skin." }
+          ]
+        }
+      }
+    ]
+  }
+}

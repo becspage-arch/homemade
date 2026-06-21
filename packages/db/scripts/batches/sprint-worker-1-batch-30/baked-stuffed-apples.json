@@ -1,0 +1,101 @@
+{
+  "slug": "baked-stuffed-apples",
+  "title": "Baked Stuffed Apples",
+  "subtitle": "Oat and honey filled baked apples",
+  "excerpt": "Large apples cored and filled with a mixture of oats, honey, butter, and cinnamon, then baked until soft and golden. Simple enough for a weeknight but good enough to serve to guests.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the traditional British baked apple, a reliable autumn and winter pudding that needs very little preparation.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Prepare and fill the apples up to 4 hours ahead, then bake when needed.",
+    "dietaryFlags": ["vegetarian", "glutenFree"],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["weeknight", "comfort"],
+    "temperatureCelsius": 180,
+    "temperatureNote": "160C fan.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Score the skin around the middle of each apple before baking. This stops them from bursting as they soften in the oven." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "apple", "amount": 4, "unit": "whole", "prepNote": "large, cored", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "oats-rolled", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "honey", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": "cut into small pieces", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "almonds-flaked", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "nutmeg-ground", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Filling" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 180C (160C fan)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Core the apples using an apple corer or a small sharp knife. Widen the cavity a little to hold plenty of filling." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Score the skin around the middle of each apple with a knife." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the oats, honey, butter pieces, cinnamon, almonds, and nutmeg in a small bowl." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the apples in a roasting tin. Pack the oat mixture firmly into each cavity." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add 4 tbsp of water to the bottom of the tin. Bake for 30 minutes until the apples are soft throughout." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve warm with any syrupy juices from the tin spooned over." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Apples burst and collapsed in the oven.", "cause": "Skin was not scored before baking.", "fix": "Score the equator of each apple next time before filling." },
+            { "symptom": "Filling has dried out and gone hard.", "cause": "No liquid in the tin and oven too hot.", "fix": "Add water to the tin and cover loosely with foil halfway through." },
+            { "symptom": "Apple is still firm after 30 minutes.", "cause": "Very large or hard variety of apple.", "fix": "Return to the oven for 10 more minutes and check with a knife." }
+          ]
+        }
+      }
+    ]
+  }
+}

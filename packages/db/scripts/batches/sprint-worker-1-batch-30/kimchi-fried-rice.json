@@ -1,0 +1,104 @@
+{
+  "slug": "kimchi-fried-rice",
+  "title": "Kimchi-Style Fried Rice",
+  "subtitle": "Spicy cabbage fried rice with gochujang",
+  "excerpt": "Leftover cooked rice stir-fried with shredded cabbage, gochujang, and garlic. It is hot, savoury, and comes together in 15 minutes.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Inspired by Korean kimchi bokkeumbap using gochujang and fermented flavours to replicate the tang of fermented cabbage.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Day-old rice works far better than freshly cooked rice as it is drier and fries rather than steams.",
+    "dietaryFlags": ["vegetarian", "dairyFree", "nutFree"],
+    "cuisine": "korean",
+    "mealType": "dinner",
+    "mood": ["weeknight", "budget"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "wok", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cold day-old rice is the best choice here because it fries without clumping. Freshly cooked rice will turn sticky in the wok." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "long-grain-rice", "amount": 300, "unit": "g", "prepNote": "cooked and cooled, preferably day-old", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cabbage-white", "amount": 300, "unit": "g", "prepNote": "finely shredded", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "gochujang", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sesame-oil", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "minced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 2, "unit": "cm", "prepNote": "peeled and grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "whole", "prepNote": "sliced, white and green parts separated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "whole", "prepNote": "fried to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the gochujang, soy sauce, and sesame oil in a small bowl. Set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat 2 tbsp sunflower oil in a wok over high heat until smoking." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the white spring onion parts, garlic, and ginger. Stir-fry for 1 minute." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the shredded cabbage. Toss over high heat for 3 minutes until it softens." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the cold rice. Press it into the wok and cook without stirring for 2 minutes to get crispy bits." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the sauce. Toss everything together over high heat for 2 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fry the eggs separately in the remaining oil. Serve the rice topped with a fried egg and green spring onion." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Rice is sticky and clumping.", "cause": "Freshly cooked rice retains too much moisture.", "fix": "Spread rice on a tray and chill for 30 minutes before frying." },
+            { "symptom": "Dish is too spicy.", "cause": "Gochujang heat varies by brand.", "fix": "Stir in a little sesame oil and a fried egg to cool the heat." },
+            { "symptom": "Cabbage is too crunchy.", "cause": "Not cooked long enough over high heat.", "fix": "Add a splash of water and toss for an extra 2 minutes." }
+          ]
+        }
+      }
+    ]
+  }
+}

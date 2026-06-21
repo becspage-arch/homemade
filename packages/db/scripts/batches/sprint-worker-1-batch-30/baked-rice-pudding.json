@@ -1,0 +1,99 @@
+{
+  "slug": "baked-rice-pudding",
+  "title": "Baked Rice Pudding",
+  "subtitle": "Slow-baked creamy rice pudding",
+  "excerpt": "Arborio rice baked slowly in a mixture of milk and cream with honey and nutmeg until thick and creamy. It needs very little attention and fills the kitchen with a gentle warmth as it cooks.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the traditional British baked rice pudding method using a slow oven and a mix of full-fat milk and cream.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 120,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Keeps in the fridge for 2 days. Reheat with a splash of milk stirred in over low heat.",
+    "dietaryFlags": ["vegetarian", "glutenFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "dessert",
+    "mood": ["weekend", "comfort"],
+    "temperatureCelsius": 150,
+    "temperatureNote": "130C fan. A low oven is essential for creamy results.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Do not stir the pudding during cooking once the skin starts to form. The skin is the best part and breaking it early prevents it from setting properly." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "arborio-rice", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 800, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "double-cream", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "nutmeg-ground", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 150C (130C fan)." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the rice in a deep roasting tin or ovenproof dish." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Warm the milk and cream together in a saucepan until just steaming. Stir in the honey." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the warm milk mixture over the rice. Stir once to distribute." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Grate the nutmeg over the top." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake for 2 hours, stirring once after the first 30 minutes. The pudding should be thick and golden on top." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Leave to stand for 5 minutes before serving. It will thicken further as it cools." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Pudding is still very liquid after 2 hours.", "cause": "Oven temperature too low or dish too wide.", "fix": "Increase to 160C and bake for a further 30 minutes." },
+            { "symptom": "Rice is undercooked and chalky.", "cause": "Not enough liquid or oven too low.", "fix": "Add 100ml more milk and continue baking." },
+            { "symptom": "Skin is pale and rubbery.", "cause": "Oven not hot enough to form a proper skin.", "fix": "Grill for 2 minutes at the end to colour the top." }
+          ]
+        }
+      }
+    ]
+  }
+}

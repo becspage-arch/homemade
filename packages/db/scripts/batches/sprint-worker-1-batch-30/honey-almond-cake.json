@@ -1,0 +1,101 @@
+{
+  "slug": "honey-almond-cake",
+  "title": "Honey and Almond Cake",
+  "subtitle": "Light almond sponge sweetened with honey",
+  "excerpt": "A moist, golden cake made with ground almonds and honey instead of refined sugar. It keeps well for several days and gets better as the honey flavour deepens.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on classic European nut cakes using ground almonds for a naturally moist crumb sweetened with honey.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "1 cake (8 slices)",
+    "prepMinutes": 15,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze the un-iced cake, well wrapped, for up to 2 months. Thaw at room temperature.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Bake a day ahead. The cake improves overnight as the honey settles into the crumb.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": ["weekend", "entertaining"],
+    "temperatureCelsius": 170,
+    "temperatureNote": "150C fan.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Use a deep-sided 20cm round tin lined with baking paper. The cake is dense so test it with a skewer at 40 minutes." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 8,
+          "items": [
+            { "ingredientSlug": "self-raising-flour", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "almonds", "amount": 100, "unit": "g", "prepNote": "ground to a fine meal in a food processor", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "honey", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "whole-milk", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "almonds-flaked", "amount": 30, "unit": "g", "prepNote": "to scatter on top", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 170C (150C fan). Grease and line a 20cm round cake tin." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Beat the softened butter and honey together in a bowl until pale and creamy." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the eggs one at a time, beating well after each one." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fold in the flour and ground almonds. Add the milk and stir until just combined." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the batter into the prepared tin. Level the top. Scatter the flaked almonds over." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake for 40 minutes until a skewer inserted in the centre comes out clean." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cool in the tin for 10 minutes, then turn out onto a wire rack." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Cake is sinking in the middle.", "cause": "Underbaked or oven door opened too early.", "fix": "Add 5 more minutes and test again with a skewer." },
+            { "symptom": "Flaked almonds are burning on top.", "cause": "Oven too hot or cake on a high shelf.", "fix": "Lay foil loosely over the tin after 25 minutes." },
+            { "symptom": "Cake is very dense and heavy.", "cause": "Butter was not beaten enough with the honey.", "fix": "Beat for a full 3 minutes until the mixture is pale and doubled." }
+          ]
+        }
+      }
+    ]
+  }
+}
