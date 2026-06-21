@@ -1,0 +1,716 @@
+# qc-unfixable 2026-06-21
+
+Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will retry these on its next fire (after the 24-hour exclusion window).
+
+- ackee-and-saltfish prose-prep-steps — applied: 
+- adjusting-pig-feed-from-weaner-to-finisher body-missing-method — applied: 
+- after-storm-checks-on-a-smallholding grade-level-strict — applied: 
+- air-dry-clay-mosaic-picture-frame grade-level-strict — applied: 
+- albaloo-polo body-missing-method — applied: 
+- alpacas-on-a-smallholding grade-level-strict — applied: 
+- american-apple-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- anagama-kiln-introduction grade-level-strict — applied: 
+- angora-moult-management body-missing-method — applied: 
+- animal-bedding-composting-horse-straw grade-level-strict — applied: 
+- apple-crumble-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- apple-frangipane-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- applying-a-venetian-plaster-finish-to-a-wall body-missing-method — applied: 
+- applying-an-interior-lime-render-finish-coat body-missing-method,grade-level-strict — applied: 
+- applying-exterior-limewash-to-a-rendered-wall grade-level-strict — applied: 
+- arancini-al-burro prose-prep-steps — applied: 
+- ash-coat-rack-five-pegs body-missing-method — applied: 
+- ash-e-jow body-missing-method — applied: 
+- ashwagandha-profile grade-level-strict — applied: 
+- ashwagandha-tincture-for-burnout grade-level-strict — applied: 
+- ashwagandha-warm-milk grade-level-strict — applied: 
+- axe-to-knife-progression body-missing-method — applied: 
+- baby-safe-bottom-balm voice-violation — applied: 
+- baked-oats grade-level-strict — applied: 
+- balcony-indoor-composting-options body-missing-method — applied: 
+- basic-tractor-maintenance-for-smallholders grade-level-strict — applied: 
+- basketweave-scarf body-missing-method — applied: 
+- basketweave-throw body-missing-method — applied: 
+- batch-farrowing-for-smallholders grade-level-strict — applied: 
+- beard-balm-cedarwood voice-violation — applied: 
+- beard-oil-sandalwood voice-violation — applied: 
+- beef-stew prose-prep-steps — applied: 
+- beeswax-lavender-solid-perfume voice-violation — applied: 
+- berlin-woolwork-introduction grade-level-strict — applied: 
+- bibimbap prose-prep-steps — applied: 
+- blackberry-pie-double-crust body-missing-method — applied: 
+- blanquette-de-veau hero-missing — applied: hero-fill-deferred-to-standalone-script
+- block-of-flats-leaseholder-insulation body-missing-method,grade-level-strict — applied: 
+- boeuf-bourguignon hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- botanical-impression-slab-tile body-missing-method — applied: 
+- bouillabaisse hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bouquet-marbling-pattern body-missing-method — applied: 
+- bridle-joint-technique body-missing-method — applied: 
+- british-species-for-green-woodwork grade-level-strict — applied: 
+- brown-sugar-vanilla-lip-scrub voice-violation — applied: 
+- buckwheat-summer-cover body-missing-method — applied: 
+- building-a-garden-trellis-panel body-missing-method — applied: 
+- building-a-manure-heap-for-smallholding body-missing-method — applied: 
+- building-a-temporary-hurdle-pen body-missing-method — applied: 
+- building-a-window-seat-storage-box body-missing-method — applied: 
+- cable-rib-scarf body-missing-method — applied: 
+- calculating-stocking-rates-for-grazing grade-level-strict — applied: 
+- calendula-chamomile-face-balm voice-violation — applied: 
+- calendula-lip-balm voice-violation — applied: 
+- calzone-ricotta-e-salame grade-level-strict — applied: 
+- caponata prose-prep-steps — applied: 
+- card-scraper-technique body-missing-method — applied: 
+- carrot-and-coriander-soup prose-prep-steps — applied: 
+- carrot-and-orange-soup prose-prep-steps — applied: 
+- carved-apple-dessert-fork body-missing-method — applied: 
+- carved-birch-butter-pat body-missing-method,grade-level-strict — applied: 
+- carved-birch-porridge-spurtle body-missing-method — applied: 
+- carved-birch-spice-spoon body-missing-method — applied: 
+- carved-cherry-tasting-spoon body-missing-method — applied: 
+- carved-hazel-jam-spoon body-missing-method — applied: 
+- carved-hazel-wooden-scoop body-missing-method — applied: 
+- carved-lime-broth-ladle body-missing-method — applied: 
+- carved-lime-olive-spoon body-missing-method — applied: 
+- carved-sycamore-spatula-spoon body-missing-method — applied: 
+- carving-a-deep-bowl-spoon body-missing-method — applied: 
+- carving-a-kuksa-interior body-missing-method — applied: 
+- carving-faces-in-wood body-missing-method — applied: 
+- cassoulet hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cedarwood-vetiver-cologne-balm voice-violation — applied: 
+- challah-round-rosh-hashanah opening-pattern-missing-hook — applied: recipe-yield-appended
+- chamomile-tincture-for-nervous-digestion grade-level-strict — applied: 
+- cheeseburger prose-prep-steps — applied: 
+- chevron-blanket body-missing-method,grade-level-strict — applied: 
+- chicken-and-leek-pie prose-prep-steps — applied: 
+- chicken-cacciatore prose-prep-steps — applied: 
+- chicken-tikka-masala prose-prep-steps — applied: 
+- chili-con-carne prose-prep-steps — applied: 
+- chocolate-crackle-rice-krispie opening-pattern-missing-hook — applied: recipe-yield-appended
+- chocolate-layer-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- choosing-a-pig-breed-for-the-smallholding grade-level-strict — applied: 
+- choosing-clay-body-for-project-type grade-level-strict — applied: 
+- choosing-evenweave-and-linen-for-cross-stitch body-missing-method — applied: 
+- choosing-linen grade-level-strict — applied: 
+- choosing-your-needle-for-cross-stitch body-missing-method — applied: 
+- cleavers-lymphatic-infusion voice-violation,grade-level-strict — applied: 
+- cleft-ash-spade-handle body-missing-method — applied: 
+- cocido-madrileno hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- coffee-and-walnut-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- coffee-walnut-layer-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- coil-built-large-statement-vase body-missing-method — applied: 
+- coil-built-wide-flared-fruit-bowl grade-level-strict — applied: 
+- cold-bridge-structural-post-column grade-level-strict — applied: 
+- cold-smoking-cured-pork grade-level-strict — applied: 
+- comb-and-scroll-marbling body-missing-method — applied: 
+- compost-for-rooftop-garden voice-violation,grade-level-strict — applied: 
+- compost-thermometer-use-and-hot-heap-management body-missing-method — applied: 
+- confit-de-canard hero-missing — applied: hero-fill-deferred-to-standalone-script
+- coq-au-vin hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cornish-pasty hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cottage-pie prose-prep-steps — applied: 
+- country-fried-steak prose-prep-steps — applied: 
+- countryside-stewardship-basics-for-smallholders grade-level-strict — applied: 
+- cream-of-mushroom-soup prose-prep-steps — applied: 
+- creamed-honey-making body-missing-method — applied: 
+- crochet-animal-cat body-missing-method — applied: 
+- crochet-animal-rabbit body-missing-method — applied: 
+- crochet-counting-stitches grade-level-strict — applied: 
+- crochet-crocodile-stitch grade-level-strict — applied: 
+- crochet-fibre-care-cotton body-missing-method — applied: 
+- crochet-flat-vs-round-construction body-missing-method — applied: 
+- crochet-frogging grade-level-strict — applied: 
+- crochet-granny-square-joined-flat-chain body-missing-method — applied: 
+- crochet-granny-square-puff-centre body-missing-method — applied: 
+- crochet-granny-square-shell-border body-missing-method — applied: 
+- crochet-granny-square-solid body-missing-method — applied: 
+- crochet-hexagon-half body-missing-method — applied: 
+- crochet-hexagon-two-colour body-missing-method — applied: 
+- crochet-hook-size-choice grade-level-strict — applied: 
+- crochet-motif-half-granny body-missing-method — applied: 
+- crochet-pattern-sizing body-missing-method — applied: 
+- crochet-picking-up-stitches grade-level-strict — applied: 
+- crochet-picot-edging body-missing-method — applied: 
+- crochet-reading-abbreviations grade-level-strict — applied: 
+- crochet-reading-errata grade-level-strict — applied: 
+- crochet-reading-schematic grade-level-strict — applied: 
+- crochet-shell-lace-edging body-missing-method — applied: 
+- crochet-simple-chain-loop-edging body-missing-method — applied: 
+- crochet-solid-hexagon-motif body-missing-method — applied: 
+- crochet-solid-treble-square-motif body-missing-method — applied: 
+- crochet-square-bobble-block body-missing-method — applied: 
+- crochet-square-eight-round-textured body-missing-method — applied: 
+- crochet-square-popcorn-block body-missing-method — applied: 
+- crochet-tension-adjustment body-missing-method — applied: 
+- crochet-uk-us-terminology-guide grade-level-strict — applied: 
+- crochet-using-stitch-markers body-missing-method — applied: 
+- crochet-washing-garments body-missing-method — applied: 
+- cross-stitch-botanical-fern-frond grade-level-strict — applied: 
+- cross-stitch-trans-flag-heart grade-level-strict — applied: 
+- crostata-di-nutella opening-pattern-missing-hook — applied: recipe-yield-appended
+- crostata-di-ricotta opening-pattern-missing-hook — applied: recipe-yield-appended
+- cullen-skink hero-missing — applied: hero-fill-deferred-to-standalone-script
+- custard-tart-portuguese opening-pattern-missing-hook — applied: recipe-yield-appended
+- cutting-a-dovetail-joint-by-hand body-missing-method — applied: 
+- cutting-a-scarf-joint body-missing-method — applied: 
+- dairy-goat-daily-health-checks body-missing-method — applied: 
+- dal-makhani prose-prep-steps — applied: 
+- damper opening-pattern-missing-hook — applied: recipe-yield-appended
+- daube-de-boeuf-provencale hero-missing — applied: hero-fill-deferred-to-standalone-script
+- deckle-edge-and-waterleaf voice-violation,grade-level-strict — applied: 
+- deodorant-paste voice-violation — applied: 
+- devils-food-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- diagnosing-respiratory-illness-chickens grade-level-strict — applied: 
+- dolma-yaprak body-missing-method — applied: 
+- dorset-apple-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- double-page-spread-planning body-missing-method — applied: 
+- double-treble-baby-blanket body-missing-method — applied: 
+- drawknife-on-chair-backs body-missing-method — applied: 
+- eccles-cakes opening-pattern-missing-hook — applied: recipe-yield-appended
+- eggs-benedict prose-prep-steps — applied: 
+- einkorn-sourdough opening-pattern-missing-hook — applied: recipe-yield-appended
+- end-terrace-wall-heat-loss-assessment body-missing-method — applied: 
+- english-muffins opening-pattern-missing-hook — applied: recipe-yield-appended
+- english-muffins-griddle opening-pattern-missing-hook — applied: recipe-yield-appended
+- espinacas-con-garbanzos prose-prep-steps — applied: 
+- exterior-glaze-pouring-technique grade-level-strict — applied: 
+- fabada-asturiana hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fabric-counts-explained grade-level-strict — applied: 
+- fattoush prose-prep-steps — applied: 
+- fauxdori-wraparound-cover body-missing-method — applied: 
+- field-drainage-assessment-and-maintenance body-missing-method — applied: 
+- filling-a-large-plasterboard-hole-with-a-patch-plate body-missing-method — applied: 
+- fingering-weight-crib-blanket body-missing-method — applied: 
+- finishing-pigs-to-carcass-weight body-missing-method — applied: 
+- fish-and-chips hero-missing — applied: hero-fill-deferred-to-standalone-script
+- fitting-a-bath-panel-with-hinged-access body-missing-method — applied: 
+- fitting-a-cold-water-tank-ball-valve body-missing-method — applied: 
+- fitting-a-gusset-panel-to-a-box-cushion-cover body-missing-method — applied: 
+- fitting-a-shower-bath-screen-with-a-pivot-panel body-missing-method — applied: 
+- fitting-a-toilet-pan-connector body-missing-method — applied: 
+- fitting-bias-binding-to-a-box-cushion-edge body-missing-method — applied: 
+- fitting-brick-slip-cladding-to-an-interior-wall body-missing-method — applied: 
+- fitting-deep-buttoning-to-an-upholstered-back grade-level-strict — applied: 
+- fitting-gimp-braid-to-a-chair body-missing-method — applied: 
+- fitting-kitchen-drawer-runners body-missing-method — applied: 
+- fitting-polystyrene-coving-with-adhesive body-missing-method — applied: 
+- fitting-pvc-fascia-board-over-rotted-timber-fascia grade-level-strict — applied: 
+- flour-types-for-baking body-missing-method — applied: 
+- foraging-blackberry-uk grade-level-strict — applied: 
+- four-shaft-bronson-lace grade-level-strict — applied: 
+- four-stitch-cable-scarf body-missing-method — applied: 
+- frankincense-rosehip-face-serum voice-violation — applied: 
+- french-apple-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- french-dip prose-prep-steps — applied: 
+- french-link-sewing body-missing-method — applied: 
+- full-irish-breakfast body-missing-method — applied: 
+- full-scottish-breakfast body-missing-method — applied: 
+- full-welsh-breakfast body-missing-method — applied: 
+- garden-pond-liner-repair grade-level-strict — applied: 
+- garlic-and-thyme-oxymel grade-level-strict — applied: 
+- genoa-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- getting-a-cph-number-and-registering-a-holding grade-level-strict — applied: 
+- gilt-selection-for-breeding grade-level-strict — applied: 
+- gluten-free-chocolate-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- gnocchi-alla-sorrentina prose-prep-steps — applied: 
+- goat-housing-and-bedding-management body-missing-method — applied: 
+- gooseberry-and-elderflower-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- goulash prose-prep-steps — applied: 
+- granite-marbling-pattern body-missing-method — applied: 
+- granny-hexagon-blanket body-missing-method — applied: 
+- green-ash-chair-spindle body-missing-method — applied: 
+- green-birch-coat-pegs body-missing-method — applied: 
+- green-hazel-bean-pole-arch body-missing-method — applied: 
+- green-oak-corner-shelf-bracket body-missing-method — applied: 
+- growing-aubergines body-missing-method — applied: 
+- growing-basil-microgreens body-missing-method — applied: 
+- growing-beetroot-microgreens body-missing-method — applied: 
+- growing-buckwheat-shoots body-missing-method — applied: 
+- growing-cabbage-microgreens body-missing-method — applied: 
+- growing-calendula grade-level-strict — applied: 
+- growing-chard body-missing-method — applied: 
+- growing-chard-microgreens body-missing-method — applied: 
+- growing-chive-microgreens body-missing-method — applied: 
+- growing-coriander-microgreens body-missing-method — applied: 
+- growing-courgettes body-missing-method — applied: 
+- growing-cucumbers body-missing-method — applied: 
+- growing-dill-microgreens body-missing-method — applied: 
+- growing-fennel-microgreens body-missing-method — applied: 
+- growing-french-beans body-missing-method — applied: 
+- growing-garlic body-missing-method — applied: 
+- growing-kale body-missing-method — applied: 
+- growing-kohl-rabi-microgreens body-missing-method — applied: 
+- growing-mustard-microgreens body-missing-method — applied: 
+- growing-onion-microgreens body-missing-method — applied: 
+- growing-potatoes body-missing-method — applied: 
+- growing-radish-microgreens body-missing-method — applied: 
+- growing-rocket-microgreens body-missing-method — applied: 
+- growing-rosemary-from-cuttings voice-violation — applied: 
+- growing-runner-beans body-missing-method — applied: 
+- growing-squash body-missing-method — applied: 
+- growing-sunflower-shoots body-missing-method — applied: 
+- growing-swede body-missing-method — applied: 
+- growing-sweet-peppers body-missing-method — applied: 
+- growing-sweetcorn body-missing-method — applied: 
+- growing-tomatoes-from-seed voice-violation — applied: 
+- growing-turnips body-missing-method — applied: 
+- gumbo prose-prep-steps — applied: 
+- hand-planing-technique body-missing-method — applied: 
+- hanging-a-pocket-door-kit body-missing-method — applied: 
+- harcha opening-pattern-missing-hook — applied: recipe-yield-appended
+- hard-boiled-eggs body-missing-method — applied: 
+- hawthorn-berry-decoction grade-level-strict — applied: 
+- heat-pump-leaving-temperature-optimisation body-missing-method — applied: 
+- hemp-seed-face-oil voice-violation — applied: 
+- herbal-medicine-and-drug-interactions grade-level-strict — applied: 
+- herd-health-programme-pig-vaccination-calendar grade-level-strict — applied: 
+- hollow-back-construction body-missing-method — applied: 
+- honey-almond-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- honey-roast-carrots-and-parsnips prose-prep-steps — applied: 
+- honey-walnut-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- how-to-cross-stitch voice-violation,grade-level-strict — applied: 
+- how-to-read-a-cross-stitch-chart body-missing-method — applied: 
+- how-to-work-on-linen-for-cross-stitch grade-level-strict — applied: 
+- incubator-cleaning-and-calibration grade-level-strict — applied: 
+- insulated-plasterboard-dot-and-dab grade-level-strict — applied: 
+- insulating-a-conservatory-polycarbonate-roof grade-level-strict — applied: 
+- insulating-attic-room-sloped-ceiling body-missing-method — applied: 
+- internal-wall-insulation-one-room-pattern grade-level-strict — applied: 
+- introducing-a-mated-queen-to-a-colony body-missing-method — applied: 
+- jacket-potato-chilli-con-carne prose-prep-steps — applied: 
+- jammy-boiled-eggs body-missing-method — applied: 
+- jerusalem-artichoke-growing body-missing-method — applied: 
+- jollof-rice prose-prep-steps — applied: 
+- kashk-e-bademjan body-missing-method — applied: 
+- katsu-curry prose-prep-steps — applied: 
+- keeping-a-livestock-movement-record grade-level-strict — applied: 
+- keeping-an-apiary-log grade-level-strict — applied: 
+- key-lime-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- khobz opening-pattern-missing-hook — applied: recipe-yield-appended
+- khoresh-gheymeh body-missing-method — applied: 
+- kibbeh-bil-sanieh body-missing-method — applied: 
+- kolrosing-on-a-kuksa body-missing-method — applied: 
+- kushari body-missing-method — applied: 
+- lace-stole body-missing-method — applied: 
+- lacing-leather-through-punched-holes-with-a-running-stitch body-missing-method — applied: 
+- lamb-madras prose-prep-steps — applied: 
+- lamb-tagine prose-prep-steps — applied: 
+- lancashire-hotpot hero-missing — applied: hero-fill-deferred-to-standalone-script
+- lavender-tincture-for-anxiety grade-level-strict — applied: 
+- laying-quarry-tiles-in-a-sand-and-cement-bed body-missing-method — applied: 
+- leaf-lace-scarf body-missing-method — applied: 
+- lemon-balm-profile grade-level-strict — applied: 
+- lemon-balm-tincture grade-level-strict — applied: 
+- lemon-curd-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- lemon-shortbread opening-pattern-missing-hook — applied: recipe-yield-appended
+- lemon-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- livestock-insurance-basics-for-smallholders grade-level-strict — applied: 
+- lombardic-versals-in-colour body-missing-method — applied: 
+- luster-dust-application-technique body-missing-method — applied: 
+- macaroni-cheese prose-prep-steps — applied: 
+- maids-of-honour-richmond opening-pattern-missing-hook — applied: recipe-yield-appended
+- making-a-basic-piped-cushion-cover body-missing-method — applied: 
+- making-a-leather-axe-mask-and-knife-sheath body-missing-method — applied: 
+- making-a-leather-bifold-card-case body-missing-method — applied: 
+- making-a-leather-cord-organiser body-missing-method — applied: 
+- making-a-leather-document-holder body-missing-method — applied: 
+- making-a-leather-drawstring-pouch body-missing-method — applied: 
+- making-a-leather-passport-holder body-missing-method — applied: 
+- making-a-leather-phone-sleeve body-missing-method — applied: 
+- making-a-simple-leather-shoulder-strap body-missing-method — applied: 
+- making-a-small-leather-change-purse body-missing-method — applied: 
+- making-a-zippered-scatter-cushion-in-upholstery-fabric body-missing-method — applied: 
+- malloreddus-alla-campidanese prose-prep-steps — applied: 
+- managing-coccidiosis-in-lambs body-missing-method — applied: 
+- managing-laying-hens-through-severe-winter body-missing-method,grade-level-strict — applied: 
+- managing-rabbit-aggression-in-a-colony body-missing-method — applied: 
+- managing-shared-grazing-agreements grade-level-strict — applied: 
+- managing-sheep-in-winter-housing body-missing-method — applied: 
+- manchester-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- mansaf prose-prep-steps — applied: 
+- manti body-missing-method — applied: 
+- marble-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- mashua-growing body-missing-method — applied: 
+- measuring-pasture-cover-with-a-plate-meter grade-level-strict — applied: 
+- menemen body-missing-method — applied: 
+- mesh-lace-scarf body-missing-method — applied: 
+- microgeneration-certification-scheme-registration grade-level-strict — applied: 
+- milk-thistle-seed-decoction grade-level-strict — applied: 
+- milking-equipment-cleaning-and-sterilising grade-level-strict — applied: 
+- mint-sauce prose-prep-steps — applied: 
+- mole-negro prose-prep-steps — applied: 
+- molokhia body-missing-method — applied: 
+- mortise-tenon-joint-technique body-missing-method — applied: 
+- motherwort-tincture grade-level-strict — applied: 
+- moules-marinieres prose-prep-steps — applied: 
+- moussaka hero-missing — applied: hero-fill-deferred-to-standalone-script
+- moving-bees-for-orchard-pollination grade-level-strict — applied: 
+- mujaddara-with-bulgur body-missing-method — applied: 
+- mulligatawny-soup prose-prep-steps — applied: 
+- mushroom-risotto prose-prep-steps — applied: 
+- nasi-goreng hero-missing — applied: hero-fill-deferred-to-standalone-script
+- needlepoint-basketweave-tent-stitch grade-level-strict — applied: 
+- neem-hair-oil voice-violation — applied: 
+- neonatal-care-for-multiple-lambs body-missing-method — applied: 
+- nettle-seed-tincture-for-adrenal-fatigue grade-level-strict — applied: 
+- no-dig-ongoing-mulch-management body-missing-method — applied: 
+- nosema-recognition-and-treatment body-missing-method — applied: 
+- notifiable-livestock-disease-reporting grade-level-strict — applied: 
+- oak-cheese-board-handled body-missing-method — applied: 
+- octopus-red-wine prose-prep-steps — applied: 
+- off-grid-water-pump-maintenance grade-level-strict — applied: 
+- olive-oil-cake-italian opening-pattern-missing-hook — applied: recipe-yield-appended
+- olive-oil-orange-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- omelette-plain body-missing-method — applied: 
+- on-farm-injection-technique-for-livestock grade-level-strict — applied: 
+- ossobuco-alla-milanese grade-level-strict — applied: 
+- outdoor-pig-water-supply-in-winter grade-level-strict — applied: 
+- oxalic-acid-vaporisation-for-varroa grade-level-strict — applied: 
+- paella-valenciana prose-prep-steps — applied: 
+- pain-de-campagne opening-pattern-missing-hook — applied: recipe-yield-appended
+- painting-a-concrete-garage-floor body-missing-method — applied: 
+- paper-clay-abstract-wall-relief body-missing-method — applied: 
+- paper-clay-christmas-ornament-set body-missing-method — applied: 
+- paper-clay-garden-herb-labels body-missing-method — applied: 
+- paper-clay-pressed-flower-frame body-missing-method — applied: 
+- parkin-yorkshire opening-pattern-missing-hook — applied: recipe-yield-appended
+- parmigiana-di-melanzane prose-prep-steps — applied: 
+- party-wall-heat-loss-assessment body-missing-method — applied: 
+- pasta-e-ceci prose-prep-steps — applied: 
+- pasteis-de-nata opening-pattern-missing-hook — applied: recipe-yield-appended
+- pastel-de-nata opening-pattern-missing-hook — applied: recipe-yield-appended
+- patatas-bravas prose-prep-steps — applied: 
+- patate-al-rosmarino prose-prep-steps — applied: 
+- pecan-bourbon-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- peppermint-profile grade-level-strict — applied: 
+- peshwari-naan prose-prep-steps — applied: 
+- phaal prose-prep-steps — applied: 
+- pig-farrowing-litter-records body-missing-method — applied: 
+- pig-hoof-trimming body-missing-method — applied: 
+- pig-worming-and-parasite-control body-missing-method — applied: 
+- pinch-pot-with-sgraffito-bird-decoration body-missing-method — applied: 
+- pine-and-cobalt-deficiency-in-sheep grade-level-strict — applied: 
+- pine-juniper-solid-perfume voice-violation — applied: 
+- pine-pencil-tray body-missing-method — applied: 
+- plum-frangipane-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- pole-lathe-tool-rest-setup body-missing-method — applied: 
+- pole-lathe-turned-bobbin body-missing-method — applied: 
+- polishing-and-protecting-smooth-leather-shoes body-missing-method — applied: 
+- polpette-al-sugo prose-prep-steps — applied: 
+- polymer-clay-ammonite-pendant body-missing-method — applied: 
+- polymer-clay-faux-agate-pendant body-missing-method — applied: 
+- polymer-clay-faux-coral-drop-earrings body-missing-method — applied: 
+- polymer-clay-kaleidoscope-cane-earrings grade-level-strict — applied: 
+- polymer-clay-lentil-bead-set body-missing-method — applied: 
+- polymer-clay-miniature-cacti-trio body-missing-method — applied: 
+- polymer-clay-sculpted-butterfly body-missing-method — applied: 
+- pork-and-apple-casserole prose-prep-steps — applied: 
+- pork-chops-mustard-cream prose-prep-steps — applied: 
+- portuguese-custard-tarts opening-pattern-missing-hook — applied: recipe-yield-appended
+- poultry-housing-ventilation body-missing-method — applied: 
+- pre-shave-oil voice-violation — applied: 
+- preserving-eggs-in-water-glass grade-level-strict — applied: 
+- pressing-and-drying-handmade-paper body-missing-method — applied: 
+- preventing-egg-eating-by-hens body-missing-method — applied: 
+- prick-and-pounce-transfer grade-level-strict — applied: 
+- pumpkin-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- pyrography-animal-scene-spoon body-missing-method — applied: 
+- pyrography-feather-technique body-missing-method — applied: 
+- pyrography-landscape-shading-technique body-missing-method — applied: 
+- rabbit-bonding-two-rabbits body-missing-method — applied: 
+- rabbit-coccidiosis-in-kits body-missing-method,grade-level-strict — applied: 
+- rabbit-colony-welfare-assessment grade-level-strict — applied: 
+- rabbit-dental-problems grade-level-strict — applied: 
+- rabbit-emergency-care-basic-first-aid body-missing-method — applied: 
+- rabbit-handling-and-restraint body-missing-method — applied: 
+- rabbit-housing-and-run-design body-missing-method — applied: 
+- rabbit-litter-tray-and-enclosure-hygiene body-missing-method — applied: 
+- rabbit-respiratory-infections-early-signs body-missing-method,grade-level-strict — applied: 
+- rabbit-winter-management-outdoor-colony body-missing-method — applied: 
+- rag-rug-coiled-on-frame-loom grade-level-strict — applied: 
+- rapeseed-wax-lemon-thyme-candle prose-prep-steps — applied: 
+- re-edging-a-chipboard-kitchen-unit-door body-missing-method — applied: 
+- reading-a-basic-soil-test-report grade-level-strict — applied: 
+- recording-lamb-weights-and-growth body-missing-method — applied: 
+- red-velvet-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- releasing-hoop-tension grade-level-strict — applied: 
+- repairing-a-leather-tear-with-saddle-stitch body-missing-method — applied: 
+- rhubarb-and-almond-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- rhubarb-pie-double-crust body-missing-method — applied: 
+- rigatoni-con-polpettine grade-level-strict — applied: 
+- risi-e-bisi prose-prep-steps — applied: 
+- riven-ash-garden-fork-handle body-missing-method — applied: 
+- riven-ash-hay-rake-head body-missing-method — applied: 
+- riven-hazel-hurdle-stake body-missing-method — applied: 
+- roast-carrots prose-prep-steps — applied: 
+- rosehip-chamomile-balm voice-violation — applied: 
+- rosemary-digestif-tea voice-violation,grade-level-strict — applied: 
+- rosemary-hair-oil voice-violation — applied: 
+- rosemary-profile grade-level-strict — applied: 
+- round-willow-basket-small body-missing-method — applied: 
+- routing-a-rebate-with-a-router body-missing-method — applied: 
+- running-a-new-copper-pipe-through-a-wall body-missing-method — applied: 
+- rush-coiled-mat-oval body-missing-method — applied: 
+- rush-lampshade-liner body-missing-method — applied: 
+- saag-aloo prose-prep-steps — applied: 
+- sabzi-polo body-missing-method — applied: 
+- sage-tea-for-hot-flushes grade-level-strict — applied: 
+- saint-honore-gateau opening-pattern-missing-hook — applied: recipe-yield-appended
+- salade-lyonnaise prose-prep-steps — applied: 
+- salted-caramel-truffles body-missing-method — applied: 
+- sarde-in-saor prose-prep-steps — applied: 
+- sausage-roll prose-prep-steps — applied: 
+- scaling-marbling-for-an-edition grade-level-strict — applied: 
+- scanning-ewes-for-pregnancy grade-level-strict — applied: 
+- seagrass-coiled-table-basket body-missing-method — applied: 
+- seed-bar prose-prep-steps — applied: 
+- setting-up-a-livestock-first-aid-kit body-missing-method — applied: 
+- setting-up-a-night-vision-camera-for-lambing grade-level-strict — applied: 
+- setting-up-a-stock-trailer-for-safe-transport grade-level-strict — applied: 
+- setting-up-electric-fencing-for-pigs body-missing-method — applied: 
+- sharpening-a-bench-chisel-on-a-whetstone body-missing-method — applied: 
+- shaved-hazel-walking-stick grade-level-strict — applied: 
+- shaving-horse-setup-technique body-missing-method — applied: 
+- shea-hair-mask voice-violation — applied: 
+- sheep-footbath-design-and-use grade-level-strict — applied: 
+- shell-marbling-pattern body-missing-method — applied: 
+- shepherd-pie prose-prep-steps — applied: 
+- shortbread-all-butter-rounds opening-pattern-missing-hook — applied: recipe-yield-appended
+- shortcrust-pastry-by-hand body-missing-method — applied: 
+- shrimp-and-grits prose-prep-steps — applied: 
+- sigara-boregi body-missing-method — applied: 
+- simnel-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- simnel-cake-easter opening-pattern-missing-hook — applied: recipe-yield-appended
+- six-stitch-cable-scarf body-missing-method — applied: 
+- slab-and-coil-combined-serving-bowl body-missing-method — applied: 
+- slab-built-desk-organiser-with-sections prose-prep-steps — applied: 
+- slab-built-incense-holder-air-dry body-missing-method — applied: 
+- slab-coaster-set-pressed-texture body-missing-method — applied: 
+- slow-cooker-ragu-bianco grade-level-strict — applied: 
+- smallholding-bookkeeping-basics grade-level-strict — applied: 
+- smallholding-fencing-seasonal-maintenance body-missing-method — applied: 
+- smallholding-first-aid-kit-essentials voice-violation,grade-level-strict — applied: 
+- smoked-haddock-poached-egg body-missing-method — applied: 
+- soda-bread-brown-wholemeal opening-pattern-missing-hook — applied: recipe-yield-appended
+- soda-bread-irish opening-pattern-missing-hook — applied: recipe-yield-appended
+- soft-cheese-from-goats-milk grade-level-strict — applied: 
+- solar-cooking-parabolic-cooker body-missing-method — applied: 
+- solar-pv-export-metering-and-registration grade-level-strict — applied: 
+- solar-pv-racking-and-roof-penetration grade-level-strict — applied: 
+- solid-lotion-bar voice-violation — applied: 
+- sourcing-affordable-bedding-materials grade-level-strict — applied: 
+- sourcing-dried-herbs-quality-guide grade-level-strict — applied: 
+- sourdough-starter-troubleshooting body-missing-method — applied: 
+- sowing-broad-beans body-missing-method — applied: 
+- sowing-carrots body-missing-method — applied: 
+- sowing-lettuce body-missing-method — applied: 
+- sowing-parsnips body-missing-method — applied: 
+- sowing-rocket body-missing-method — applied: 
+- sowing-spinach body-missing-method — applied: 
+- soy-candle-rose-geranium grade-level-strict — applied: 
+- soy-tobacco-vanilla-candle prose-prep-steps — applied: 
+- spaghetti-aglio-olio prose-prep-steps — applied: 
+- spaghetti-al-limone prose-prep-steps — applied: 
+- spaghetti-bolognese prose-prep-steps — applied: 
+- spezzatino-di-vitello prose-prep-steps — applied: 
+- spinning-mixed-raw-fleece body-missing-method — applied: 
+- spinning-nettle-fibre body-missing-method — applied: 
+- spring-stimulative-feeding-for-bees body-missing-method — applied: 
+- st-johns-wort-infused-oil-for-nerve-pain content-type-opening-mismatch — applied: orientation-from-excerpt
+- staking-up-technique body-missing-method — applied: 
+- starting-sourdough-starter body-missing-method — applied: 
+- steak-and-mushroom-pie prose-prep-steps — applied: 
+- steak-au-poivre prose-prep-steps — applied: 
+- storage-heater-economy-7-settings body-missing-method — applied: 
+- streak-free-glass-cleaner grade-level-strict — applied: 
+- sugar-syrup-stages-guide body-missing-method — applied: 
+- sumi-ink-preparation body-missing-method — applied: 
+- summer-hive-inspection-walkthrough body-missing-method — applied: 
+- summer-lace-scarf body-missing-method — applied: 
+- summer-overheating-risk-assessment grade-level-strict — applied: 
+- sunday-gravy prose-prep-steps — applied: 
+- surface-embroidery-holbein-stitch grade-level-strict — applied: 
+- sweet-potato-pie opening-pattern-missing-hook — applied: recipe-yield-appended
+- tapestry-slit-weave-technique body-missing-method — applied: 
+- tapestry-wedge-weave-technique body-missing-method — applied: 
+- texture-stamping-systematic-approach grade-level-strict — applied: 
+- throwing-a-matched-pair-of-candleholders grade-level-strict — applied: 
+- throwing-a-milk-jug-pitcher body-missing-method — applied: 
+- throwing-a-sake-cup-set body-missing-method — applied: 
+- thumb-push-cut-technique body-missing-method — applied: 
+- tiger-bread-dutch-crunch grade-level-strict — applied: 
+- tiger-marbling-pattern body-missing-method — applied: 
+- traveling-vine-scarf body-missing-method,grade-level-strict — applied: 
+- treacle-ginger-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+- treacle-soda-bread opening-pattern-missing-hook — applied: recipe-yield-appended
+- treacle-tart-classic opening-pattern-missing-hook — applied: recipe-yield-appended
+- treating-aspergillosis-in-chicks body-missing-method — applied: 
+- treating-mycoplasma-in-a-laying-flock grade-level-strict — applied: 
+- treating-snuffles-in-rabbits grade-level-strict — applied: 
+- triple-chocolate-layer-cake prose-prep-steps — applied: 
+- tuna-pasta-bake prose-prep-steps — applied: 
+- underground-rainwater-tank-sizing body-missing-method,grade-level-strict — applied: 
+- understanding-bee-nutrition-through-the-year grade-level-strict — applied: 
+- understanding-fleece-grades grade-level-strict — applied: 
+- understanding-grog-and-its-uses grade-level-strict — applied: 
+- understanding-varroa-lifecycle grade-level-strict — applied: 
+- upholstery-spot-cleaner grade-level-strict — applied: 
+- using-a-chicken-tractor-on-pasture body-missing-method — applied: 
+- using-hollow-wall-anchors-on-plasterboard body-missing-method — applied: 
+- varroa-alcohol-wash-monitoring grade-level-strict — applied: 
+- vegan-full-english body-missing-method — applied: 
+- venison-stew prose-prep-steps — applied: 
+- vetiver-sea-salt-body-scrub voice-violation — applied: 
+- victoria-sponge-with-buttercream opening-pattern-missing-hook — applied: recipe-yield-appended
+- wafer-paper-flowers body-missing-method — applied: 
+- walkaway-split-for-swarm-prevention body-missing-method — applied: 
+- walnut-coffee-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- walnut-key-rack-with-hooks body-missing-method — applied: 
+- warp-painting-before-weaving body-missing-method — applied: 
+- wax-polishing-a-period-piece-of-furniture body-missing-method — applied: 
+- wedding-fruit-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- whittled-ash-dibber-short body-missing-method — applied: 
+- whittled-birch-darning-mushroom body-missing-method — applied: 
+- whittled-birch-whistle body-missing-method — applied: 
+- whittled-hazel-cheese-spreader body-missing-method — applied: 
+- whittled-hazel-clothes-peg body-missing-method — applied: 
+- whittled-hazel-peg-dolls body-missing-method — applied: 
+- whittled-lime-leaf-pendant body-missing-method — applied: 
+- whittled-oak-garden-dibber body-missing-method — applied: 
+- whittled-sycamore-butter-curler body-missing-method — applied: 
+- whittled-sycamore-salt-scoop body-missing-method — applied: 
+- wild-mushroom-and-chestnut-soup prose-prep-steps — applied: 
+- willow-bicycle-basket-liner body-missing-method — applied: 
+- willow-dog-basket-small body-missing-method — applied: 
+- willow-grades-and-varieties grade-level-strict — applied: 
+- willow-market-basket-lidded body-missing-method — applied: 
+- willow-oval-bread-basket body-missing-method — applied: 
+- wood-ash-in-compost body-missing-method,grade-level-strict — applied: 
+- wood-stove-back-boiler-hot-water body-missing-method — applied: 
+- wood-stove-installation-part-j voice-violation,grade-level-strict — applied: 
+- wormery-setup-and-management grade-level-strict — applied: 
+- yoghurt-parfait grade-level-strict — applied: 
+- yorkshire-curd-tart opening-pattern-missing-hook — applied: recipe-yield-appended
+
+- air-fryer-pork-chops hero-missing — applied: hero-fill-deferred-to-standalone-script
+- beetroot-feta-walnut-salad hero-missing — applied: hero-fill-deferred-to-standalone-script
+- beetroot-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bircher-muesli hero-missing — applied: hero-fill-deferred-to-standalone-script
+- broccoli-and-stilton-soup hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- caesar-salad hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cauliflower-and-cheese-soup hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- couscous-salad hero-missing — applied: hero-fill-deferred-to-standalone-script
+- doenjang-jjigae prose-prep-steps — applied: 
+- french-toast hero-missing — applied: hero-fill-deferred-to-standalone-script
+- granola hero-missing — applied: hero-fill-deferred-to-standalone-script
+- guacamole prose-prep-steps — applied: 
+- overnight-oats hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pea-and-mint-soup hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- poached-eggs hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- porridge hero-missing — applied: hero-fill-deferred-to-standalone-script
+- potato-salad hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pozole-rojo prose-prep-steps — applied: 
+- risotto-mushroom prose-prep-steps — applied: 
+- roasted-red-pepper-soup hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- scrambled-eggs hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-butter-chicken hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-chicken-curry hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-chickpea-curry hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-chilli-con-carne hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-pulled-pork hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-sausage-casserole hero-missing — applied: hero-fill-deferred-to-standalone-script
+- slow-cooker-whole-chicken hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sweet-potato-soup hero-missing — applied: hero-fill-deferred-to-standalone-script
+- thai-green-curry prose-prep-steps — applied: 
+- tuna-pasta-salad hero-missing — applied: hero-fill-deferred-to-standalone-script
+- waldorf-salad hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- ajiaco-bogotano prose-prep-steps — applied: 
+- causa-rellena prose-prep-steps — applied: 
+- kottbullar-sauce prose-prep-steps — applied: 
+- slow-cooker-lamb-shanks prose-prep-steps — applied: 
+- slow-cooker-vegetable-soup prose-prep-steps — applied: 
+- tabbouleh prose-prep-steps — applied: 
+
+- asparagus-soup prose-prep-steps — applied: 
+- bread-and-butter-pudding prose-prep-steps — applied: 
+- chicken-and-mushroom-pie prose-prep-steps — applied: 
+- chicken-biryani-hyderabadi grade-level-strict — applied: 
+- chicken-korma prose-prep-steps — applied: 
+- chickpea-curry prose-prep-steps — applied: 
+- chocolate-brownies prose-prep-steps — applied: 
+- crying-tiger-beef prose-prep-steps — applied: 
+- egg-mayo-sandwich prose-prep-steps — applied: 
+- eton-mess prose-prep-steps — applied: 
+- french-onion-soup prose-prep-steps — applied: 
+- green-curry prose-prep-steps — applied: 
+- jackfruit-curry prose-prep-steps — applied: 
+- kedgeree prose-prep-steps — applied: 
+- khao-man-gai prose-prep-steps — applied: 
+- khao-moo-dang prose-prep-steps — applied: 
+- leek-and-potato-soup prose-prep-steps — applied: 
+- mac-and-cheese prose-prep-steps — applied: 
+- mango-sticky-rice prose-prep-steps — applied: 
+- mushroom-stroganoff prose-prep-steps — applied: 
+- palak-paneer hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- pasta-arrabiata prose-prep-steps — applied: 
+- pavlova prose-prep-steps — applied: 
+- pork-belly-roast prose-prep-steps — applied: 
+- prawn-linguine prose-prep-steps — applied: 
+- prawn-masala hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- risotto-milanese prose-prep-steps — applied: 
+- spinach-soup prose-prep-steps — applied: 
+- sticky-toffee-pudding prose-prep-steps — applied: 
+- stuffed-peppers prose-prep-steps — applied: 
+- tagine-lamb prose-prep-steps — applied: 
+- tagliatelle-bolognese prose-prep-steps — applied: 
+- thai-coconut-soup-vegan prose-prep-steps — applied: 
+- thai-egg-salad prose-prep-steps — applied: 
+- tortilla-espanola hero-missing — applied: hero-fill-deferred-to-standalone-script
+- vegetable-biryani prose-prep-steps — applied: 
+- victoria-sponge prose-prep-steps — applied: 
+- watercress-soup prose-prep-steps — applied: 
+- yellow-curry prose-prep-steps — applied: 
+
+- chicken-chettinad hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- dal-tadka hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- matar-paneer hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- tiropita hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tzatziki hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- albondigas-tomato prose-prep-steps — applied: 
+- attieke-poisson prose-prep-steps — applied: 
+- aubergine-curry prose-prep-steps — applied: 
+- banh-canh prose-prep-steps — applied: 
+- banh-cuon prose-prep-steps — applied: 
+- bibim-guksu hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bossam hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bulgogi hero-missing — applied: hero-fill-deferred-to-standalone-script
+- canh-chua prose-prep-steps — applied: 
+- caribbean-rice-and-peas prose-prep-steps — applied: 
+- crochet-magic-ring hero-missing — applied: hero-fill-deferred-to-standalone-script
+- devilled-mushrooms prose-prep-steps — applied: 
+- egg-and-vegetable-stir-fry prose-prep-steps — applied: 
+- fried-plantain prose-prep-steps — applied: 
+- how-to-hold-a-crochet-hook hero-missing — applied: hero-fill-deferred-to-standalone-script
+- how-to-work-a-treble hero-missing — applied: hero-fill-deferred-to-standalone-script
+- japanese-style-pasta prose-prep-steps — applied: 
+- koki-cameroon prose-prep-steps — applied: 
+- lamb-saag prose-prep-steps — applied: 
+- lau grade-level-strict — applied: 
+- light-soup-ghana prose-prep-steps — applied: 
+- mafe prose-prep-steps — applied: 
+- mam-tom hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- meatballs-in-tomato-sauce prose-prep-steps — applied: 
+- mien-ga prose-prep-steps — applied: 
+- minestrone-genovese prose-prep-steps — applied: 
+- miso-glazed-cod grade-level-strict — applied: 
+- miso-ramen prose-prep-steps — applied: 
+- pasta-e-fagioli grade-level-strict — applied: 
+- peruvian-ceviche prose-prep-steps — applied: 
+- pho-ga prose-prep-steps — applied: 
+- poached-cod-with-herbs prose-prep-steps — applied: 
+- pork-katsu prose-prep-steps — applied: 
+- senegalese-thieboudienne prose-prep-steps — applied: 
+- sichuan-doubanjiang-beef prose-prep-steps — applied: 
+- simplified-fish-stew prose-prep-steps — applied: 
+- toad-in-the-hole prose-prep-steps — applied: 
+- waakye prose-prep-steps — applied: 
