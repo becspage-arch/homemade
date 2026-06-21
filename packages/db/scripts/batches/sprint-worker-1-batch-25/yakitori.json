@@ -1,0 +1,117 @@
+{
+  "slug": "yakitori",
+  "title": "Yakitori",
+  "subtitle": "Japanese grilled chicken skewers with a sweet soy glaze",
+  "excerpt": "Yakitori are small grilled chicken skewers coated in a sticky tare glaze. The glaze is a simple mix of soy, mirin, sake, and honey that reduces and caramelises in the oven or under the grill.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Yakitori, meaning 'grilled bird', became a staple of Japanese izakaya bars in the Edo period. Charcoal grilling is traditional but a hot oven or grill works well at home.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Marinate larger quantities in the fridge for up to 24 hours. Skewer and cook in batches.",
+    "makeAheadNotes": "The tare glaze keeps in the fridge for 2 weeks. Make a double batch and use it for other grilled meats.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": ["weeknight", "entertaining"],
+    "temperatureCelsius": 220,
+    "temperatureNote": "Fan 200C / Gas 7. Or use the grill on high.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "If using wooden skewers, soak them in cold water for 30 minutes before threading the chicken. This stops them scorching in the oven." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 700, "unit": "g", "prepNote": "cut into 3cm chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": null, "prepNote": "cut into 3cm lengths", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tare glaze" },
+            { "ingredientSlug": "mirin", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tare glaze" },
+            { "ingredientSlug": "sake", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tare glaze" },
+            { "ingredientSlug": "honey", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tare glaze" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "cloves", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Tare glaze" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine all the tare glaze ingredients in a small saucepan. Bring to a simmer and cook for 3 to 4 minutes until slightly thickened. Remove from the heat and cool." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the chicken chunks in a bowl. Pour over half the glaze and mix well to coat. Cover and leave in the fridge for 30 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat the oven. Thread the chicken onto skewers, alternating with pieces of spring onion." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the skewers in the roasting tin. Roast for 10 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Brush with the remaining glaze. Return to the oven for another 8 to 10 minutes until the chicken is cooked through and the glaze is sticky and caramelised." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Rest for 2 minutes before serving." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The glaze is burning before the chicken is cooked through.", "cause": "The oven temperature was too high or the glaze was applied too early.", "fix": "Apply final glaze only in the last 8 minutes of cooking." },
+            { "symptom": "The chicken is dry.", "cause": "Thighs were overcooked; the cut is forgiving but not indefinitely.", "fix": "Check after 18 minutes total; pull as soon as juices run clear." }
+          ]
+        }
+      }
+    ]
+  }
+}

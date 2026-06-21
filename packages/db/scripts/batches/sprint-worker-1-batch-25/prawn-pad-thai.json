@@ -1,0 +1,128 @@
+{
+  "slug": "prawn-pad-thai",
+  "title": "Prawn Pad Thai",
+  "subtitle": "Thai stir-fried rice noodles with prawns, egg, and tamarind sauce",
+  "excerpt": "Pad Thai is Thailand's most famous noodle dish: a fast wok stir-fry of rice noodles with a sour-sweet tamarind sauce, crunchy peanuts, and fresh lime. Green beans stand in for bean sprouts here.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Pad Thai was promoted as a national dish by the Thai government in the 1940s. The tamarind-fish sauce combination is the defining flavour of the dish.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the sauce up to a week ahead and store in the fridge. Soak the noodles up to 1 hour before cooking.",
+    "dietaryFlags": ["glutenFree", "dairyFree"],
+    "cuisine": "thai",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "wok", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Cook this in batches rather than all at once. One large portion of pad Thai at home needs a restaurant-size burner. Split it into two or three smaller stir-fries and combine in the serving bowl." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "noodles-rice", "amount": 300, "unit": "g", "prepNote": "flat rice noodles, soaked in cold water 30 minutes and drained", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "prawns-raw", "amount": 400, "unit": "g", "prepNote": "peeled and deveined", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 3, "unit": null, "prepNote": "lightly beaten", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "green-beans", "amount": 150, "unit": "g", "prepNote": "blanched and halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": null, "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "fish-sauce", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "tamarind-paste", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "palm-sugar", "amount": 2, "unit": "tbsp", "prepNote": "or light brown sugar", "isOptional": false, "groupLabel": "Sauce" },
+            { "ingredientSlug": "peanuts", "amount": 60, "unit": "g", "prepNote": "roughly crushed", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "lime", "amount": 2, "unit": null, "prepNote": "cut into wedges", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "coriander-fresh", "amount": 20, "unit": "g", "prepNote": "to serve", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "sunflower-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the fish sauce, tamarind paste, and palm sugar in a bowl. Stir until the sugar dissolves. Taste: it should be sour, salty, and slightly sweet in equal measure." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blanch the green beans in boiling water for 2 minutes. Drain and set aside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the wok over the highest heat until smoking. Add 2 tablespoons of oil. Stir-fry the prawns for 2 minutes until just pink. Remove and set aside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the remaining oil and garlic. Fry for 20 seconds. Add the noodles and pour in the sauce. Toss for 1 minute." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Push the noodles to the side of the wok. Pour the beaten eggs into the empty space. Scramble for 1 minute, then fold through the noodles." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the prawns, green beans, and half the spring onion. Toss everything together for 1 minute more." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve immediately, topped with peanuts, the remaining spring onion, coriander, and lime wedges on the side." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The noodles are clumping and sticking to the wok.", "cause": "The wok was not hot enough or the noodles were over-soaked.", "fix": "Add a tablespoon of water and toss quickly with tongs." },
+            { "symptom": "The sauce is too sour.", "cause": "The tamarind was strong or too much was used.", "fix": "Balance with more palm sugar or a splash of fish sauce." },
+            { "symptom": "The prawns are rubbery.", "cause": "They were cooked too long in the initial stir-fry and again at the end.", "fix": "Cook prawns 90 seconds first; they only need 30 seconds at the end." }
+          ]
+        }
+      }
+    ]
+  }
+}

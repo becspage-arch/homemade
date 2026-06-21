@@ -1,0 +1,116 @@
+{
+  "slug": "roasted-red-pepper-soup",
+  "title": "Roasted Red Pepper Soup",
+  "subtitle": "Silky, smoky soup made from oven-roasted peppers and tomatoes",
+  "excerpt": "Roasting concentrates the sweetness of red peppers and gives this soup a deep, smoky flavour. It takes very little effort: everything goes in the roasting tin together, then blends smooth.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Roasted pepper soups are popular across the Mediterranean. This version draws on Spanish and Italian traditions of charring peppers as a base for sauces and soups.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze for up to 3 months. Defrost overnight and reheat gently, adding a splash of stock if needed.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Use a large roasting tin so the vegetables are not crowded.",
+    "makeAheadNotes": "Make up to 3 days ahead. The flavour deepens overnight.",
+    "dietaryFlags": ["vegan", "vegetarian", "glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "mediterranean",
+    "mealType": "lunch",
+    "mood": ["weeknight", "comfort"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Fan 180C / Gas 6.",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "roasting-tin", "isOptional": false },
+    { "slug": "blender-jug", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Let the vegetables char at the edges in the oven. Those dark patches are where the flavour lives, not a sign that anything has gone wrong." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pepper-red", "amount": 6, "unit": null, "prepNote": "halved and deseeded", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 2, "unit": null, "prepNote": "quartered", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "cloves", "prepNote": "unpeeled", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cherry-tomatoes", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 5, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 3, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-vegetable", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Preheat the oven. Put the peppers, onion, garlic, and cherry tomatoes in the roasting tin. Drizzle with olive oil and season well. Scatter the thyme sprigs over." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Roast for 40 to 45 minutes until the peppers are soft and beginning to char at the edges. The tomatoes will burst and the garlic will be completely soft." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the thyme sprigs. Squeeze the roasted garlic from its skins into the tin." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Transfer everything to the blender jug. Add the smoked paprika and 300ml of the stock. Blend until very smooth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the blended soup into a saucepan. Add the remaining stock to reach your desired consistency. Heat through, season, and serve." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "The soup has a bitter aftertaste.", "cause": "The peppers or garlic scorched too far beyond light charring.", "fix": "Remove any very dark pieces before blending." },
+            { "symptom": "The soup is grainy rather than silky.", "cause": "The blender did not run long enough.", "fix": "Blend for a full 2 minutes; pass through a sieve for extra smoothness." },
+            { "symptom": "The soup is too thick.", "cause": "Not enough stock was added before serving.", "fix": "Stir in extra hot stock until you reach the right consistency." }
+          ]
+        }
+      }
+    ]
+  }
+}
