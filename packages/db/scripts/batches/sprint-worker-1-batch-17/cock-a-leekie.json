@@ -1,0 +1,100 @@
+{
+  "slug": "cock-a-leekie",
+  "title": "Cock-a-Leekie Soup",
+  "subtitle": "Scottish chicken and leek broth",
+  "excerpt": "Cock-a-leekie is one of Scotland's oldest and most comforting soups. Chicken thighs simmer with leeks, carrot, and celery in a well-seasoned broth until tender. Prunes are traditional but have been left out here for simplicity.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "winter",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on Scottish cock-a-leekie tradition. The soup dates back several centuries and is a staple of Scottish home cooking. Prunes are often added in the traditional recipe for sweetness.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in portions for up to 3 months. Defrost overnight and reheat gently.",
+    "batchable": true,
+    "batchNotes": "Easily doubled. Makes excellent leftovers.",
+    "makeAheadNotes": "Make a day ahead. The broth deepens in flavour overnight.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["weeknight", "comforting"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Traditional recipes often include prunes, which add sweetness and body to the broth. They have been left out here, but feel free to add 8 stoned prunes with the leeks in step 3 if you like. The leeks should be washed well between their layers before slicing, as they hold grit." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "leek", "amount": 4, "unit": null, "prepNote": "washed well and sliced into 2cm rounds", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": null, "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "celery", "amount": 2, "unit": "sticks", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "thyme-fresh", "amount": 3, "unit": "sprigs", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 1200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "roughly chopped, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the chicken thighs, stock, carrot, celery, bay leaves, and thyme into the stockpot. Bring to a boil." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Skim any foam from the surface. Reduce to a gentle simmer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Simmer for 20 minutes. Add the leeks. Continue simmering for 20 more minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lift the chicken out. Pull the meat into shreds using two forks. Return the shredded chicken to the pot." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the bay leaves and thyme sprigs. Season the broth generously. Serve in deep bowls with chopped parsley." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Broth is thin and pale", "cause": "Not simmered long enough", "fix": "Simmer uncovered for 10 more minutes to reduce and concentrate." },
+            { "symptom": "Leeks are mushy", "cause": "Added too early", "fix": "Add leeks only in the last 20 minutes of cooking." },
+            { "symptom": "Soup is bland", "cause": "Stock was weak or unseasoned", "fix": "Season well at the end and use a good-quality stock." }
+          ]
+        }
+      }
+    ]
+  }
+}

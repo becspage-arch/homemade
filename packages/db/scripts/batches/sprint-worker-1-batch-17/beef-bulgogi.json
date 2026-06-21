@@ -1,0 +1,103 @@
+{
+  "slug": "beef-bulgogi",
+  "title": "Beef Bulgogi",
+  "subtitle": "Korean marinated grilled beef",
+  "excerpt": "Bulgogi is thinly sliced beef marinated in a sweet, savoury sauce and cooked fast over high heat. Grated pear in the marinade tenderises the meat and adds a subtle sweetness. Serve over steamed rice with sliced spring onion.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on classic Korean bulgogi. The dish is one of the most recognised in Korean cuisine and appears across home and restaurant cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 8,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate overnight for the best flavour.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "korean",
+    "mealType": "dinner",
+    "mood": ["weeknight", "quick"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Partially freeze the sirloin for 30 minutes before slicing. It firms the meat and makes it much easier to cut wafer-thin slices. The marinade does the rest of the work." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-sirloin", "amount": 500, "unit": "g", "prepNote": "partially frozen for 30 minutes, then sliced as thinly as possible", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "mirin", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "rice-vinegar", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "honey", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "sesame-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "ginger-fresh", "amount": 2, "unit": "cm", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "pear", "amount": 1, "unit": null, "prepNote": "coarsely grated", "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": null, "prepNote": "sliced, to serve", "isOptional": false, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix all marinade ingredients together in a large bowl." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the sliced beef. Toss well so every piece is coated. Cover and refrigerate for at least 1 hour." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the frying pan over high heat until very hot." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook the beef in a single layer in batches. Do not crowd the pan. Each batch takes about 2 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "The marinade will caramelise and char slightly at the edges. This is what you want." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve over steamed rice. Top with sliced spring onion." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Beef is tough and chewy", "cause": "Sliced too thick or marinated too briefly", "fix": "Slice very thin and marinate for at least 1 hour." },
+            { "symptom": "Marinade burns before beef is cooked", "cause": "Pan too hot for the sugar content", "fix": "Cook in small batches and move fast to avoid burning." },
+            { "symptom": "Beef steams instead of caramelises", "cause": "Too much meat in the pan at once", "fix": "Cook in 3 or 4 small batches over very high heat." }
+          ]
+        }
+      }
+    ]
+  }
+}

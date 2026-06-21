@@ -1,0 +1,103 @@
+{
+  "slug": "claypot-rice",
+  "title": "Claypot Chicken Rice",
+  "subtitle": "Smoky Chinese one-pot chicken and rice",
+  "excerpt": "Claypot rice is a Chinese comfort classic where chicken and rice cook together, picking up a lightly charred crust at the bottom. This version uses a stockpot and delivers the same rich, soy-glazed result without specialist equipment.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on Cantonese claypot rice technique adapted for a standard stockpot.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate the chicken up to 4 hours ahead.",
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "chinese",
+    "mealType": "dinner",
+    "mood": ["weeknight", "comforting"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The slightly scorched bottom layer of rice is considered the best part of this dish. Do not stir once the lid goes on, and let the pot sit on low heat for the final few minutes to develop that crust." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "long-grain-rice", "amount": 300, "unit": "g", "prepNote": "rinsed until water runs clear", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 500, "unit": "g", "prepNote": "cut into 3cm chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 150, "unit": "g", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-dark", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "oyster-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 3, "unit": "cm", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": null, "prepNote": "sliced, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix both soy sauces, oyster sauce, sesame oil, ginger, and garlic in a bowl. Add the chicken and mushrooms. Toss to coat. Leave for 10 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the rinsed rice in the stockpot. Add 480ml of water. Bring to a boil." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Once boiling, lay the marinated chicken and mushrooms over the surface of the rice. Pour any remaining marinade on top." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover tightly and reduce to the lowest heat. Cook for 18 minutes without lifting the lid." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the heat up to medium for 2 minutes to develop a crust. Then take the pot off the heat. Rest for 5 minutes before serving." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scatter spring onion over the top. Serve straight from the pot." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Rice is undercooked in the middle", "cause": "Lid lifted, releasing steam", "fix": "Do not lift the lid during cooking." },
+            { "symptom": "Bottom layer is burnt, not crispy", "cause": "Heat was too high for the crust phase", "fix": "Use medium heat for only 2 minutes." },
+            { "symptom": "Chicken is not cooked through", "cause": "Pieces were too large", "fix": "Cut chicken into pieces no larger than 3cm." }
+          ]
+        }
+      }
+    ]
+  }
+}

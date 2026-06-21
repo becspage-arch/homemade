@@ -1,0 +1,103 @@
+{
+  "slug": "souvlaki",
+  "title": "Pork Souvlaki",
+  "subtitle": "Greek pork skewers with tzatziki",
+  "excerpt": "Souvlaki is one of Greece's great street foods. Cubes of pork loin are marinated in lemon, garlic, and oregano, then griddled until charred. A simple tzatziki of yoghurt, cucumber, and mint makes the perfect partner.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "summer",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on Greek souvlaki tradition. The marinade is the classic combination found across Greek home and street cooking.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "makes 8 skewers",
+    "prepMinutes": 15,
+    "cookMinutes": 12,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate the pork the night before for deeper flavour.",
+    "dietaryFlags": ["glutenFree", "nutFree"],
+    "cuisine": "greek",
+    "mealType": "dinner",
+    "mood": ["summer", "sharing"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Wooden skewers need at least 30 minutes soaking in cold water before use or they will scorch. Metal skewers need no preparation. Make the tzatziki first and refrigerate it while the pork marinates." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pork-loin", "amount": 700, "unit": "g", "prepNote": "cut into 3cm cubes", "isOptional": false, "groupLabel": "Souvlaki" },
+            { "ingredientSlug": "garlic", "amount": 4, "unit": "cloves", "prepNote": "finely grated, 2 for marinade and 2 for tzatziki", "isOptional": false, "groupLabel": "Souvlaki" },
+            { "ingredientSlug": "olive-oil", "amount": 5, "unit": "tbsp", "prepNote": "4 for marinade, 1 for the pan", "isOptional": false, "groupLabel": "Souvlaki" },
+            { "ingredientSlug": "lemon", "amount": 2, "unit": null, "prepNote": "juiced and zested", "isOptional": false, "groupLabel": "Souvlaki" },
+            { "ingredientSlug": "oregano-dried", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Souvlaki" },
+            { "ingredientSlug": "cumin-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Souvlaki" },
+            { "ingredientSlug": "paprika-sweet", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Souvlaki" },
+            { "ingredientSlug": "greek-yoghurt", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Tzatziki" },
+            { "ingredientSlug": "cucumber", "amount": 0.5, "unit": null, "prepNote": "coarsely grated and squeezed very dry in a clean cloth", "isOptional": false, "groupLabel": "Tzatziki" },
+            { "ingredientSlug": "mint", "amount": 10, "unit": "g", "prepNote": "leaves finely chopped", "isOptional": false, "groupLabel": "Tzatziki" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the tzatziki first. Combine the yoghurt, grated cucumber, 2 grated garlic cloves, and mint in a bowl. Season with salt. Refrigerate." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix 4 tbsp olive oil, the lemon juice and zest, remaining 2 garlic cloves, oregano, cumin, and paprika in a bowl." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the pork cubes. Toss to coat. Cover and refrigerate for at least 1 hour." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thread the pork onto 8 skewers." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat 1 tbsp olive oil in the frying pan over high heat. Cook the skewers for 10 to 12 minutes. Turn every 3 minutes until charred on each side and cooked through." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve the skewers with the cold tzatziki alongside." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Pork is dry and tough", "cause": "Pork loin overcooked or marinated too briefly", "fix": "Cook to just done and marinate for a full hour." },
+            { "symptom": "Tzatziki is watery", "cause": "Cucumber not squeezed dry enough", "fix": "Squeeze the grated cucumber hard in a cloth before mixing." },
+            { "symptom": "Pork does not char", "cause": "Pan not hot enough before adding skewers", "fix": "Get the pan very hot before adding the pork." }
+          ]
+        }
+      }
+    ]
+  }
+}

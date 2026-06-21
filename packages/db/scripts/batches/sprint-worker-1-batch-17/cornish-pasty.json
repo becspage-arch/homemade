@@ -1,0 +1,104 @@
+{
+  "slug": "cornish-pasty",
+  "title": "Cornish Pasty",
+  "subtitle": "Traditional British shortcrust pastry with beef and root vegetables",
+  "excerpt": "A proper Cornish pasty has raw beef shin, potato, and root vegetable layered inside shortcrust pastry and baked until golden. The filling cooks inside the sealed pastry, keeping the juices in. It is robust, filling, and deeply satisfying.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": "autumn",
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Based on the traditional Cornish pasty recipe. Parsnip is used here in place of swede, which is more widely available.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "makes 4 large pasties",
+    "prepMinutes": 40,
+    "cookMinutes": 55,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze uncooked pasties. Bake from frozen at 200C for 60 minutes.",
+    "batchable": true,
+    "batchNotes": "Double the batch easily for a larger group.",
+    "makeAheadNotes": "Assemble and refrigerate unbaked for up to 12 hours.",
+    "dietaryFlags": ["nutFree"],
+    "cuisine": "british",
+    "mealType": "lunch",
+    "mood": ["weekend", "comforting"],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Fan 180C / Gas 6",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "baking-tray", "isOptional": false },
+    { "slug": "food-processor", "isOptional": true }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The filling goes in raw. Do not pre-cook the beef or vegetables. The steam trapped inside the sealed pastry does all the cooking. Cut everything finely and evenly so it all cooks in the same time." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "plain-flour", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "unsalted-butter", "amount": 100, "unit": "g", "prepNote": "cold, cut into small cubes", "isOptional": false, "groupLabel": "Pastry" },
+            { "ingredientSlug": "beef-shin", "amount": 400, "unit": "g", "prepNote": "cut into 1cm pieces", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "potato", "amount": 200, "unit": "g", "prepNote": "peeled and finely diced", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "parsnip", "amount": 150, "unit": "g", "prepNote": "peeled and finely diced", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": null, "prepNote": "finely diced", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "thyme-dried", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": null, "prepNote": "beaten, for egg wash", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the pastry. Pulse flour and butter in a food processor until it looks like breadcrumbs. Add 6 tbsp cold water a little at a time. Pulse until the dough just comes together. Wrap and chill for 30 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the beef, potato, parsnip, onion, and thyme in a bowl. Season generously with salt and pepper." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oven to 200C. Line the baking tray with baking paper." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Divide the dough into 4 equal pieces. Roll each into a circle about 22cm across." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place a quarter of the filling on one half of each circle. Leave a 2cm border clear." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Brush the border with beaten egg. Fold the pastry over. Press the edges firmly. Crimp by folding and twisting the edge to seal." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place on the lined tray. Cut a small slit in each top. Brush all over with egg." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Bake for 50 to 55 minutes until deeply golden. Leave to cool for 10 minutes before eating." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Pastry cracks when folding", "cause": "Dough too cold or too dry", "fix": "Let it rest at room temperature for 5 minutes before rolling." },
+            { "symptom": "Filling leaks out during baking", "cause": "Edges not sealed properly", "fix": "Press edges hard and crimp firmly before baking." },
+            { "symptom": "Beef is still tough after baking", "cause": "Pieces cut too large", "fix": "Cut beef to no more than 1cm so it cooks fully inside." }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "agedashi-tofu",
+  "title": "Agedashi-Style Fried Halloumi",
+  "subtitle": "Japanese-inspired crispy fried cheese in dashi broth",
+  "excerpt": "Agedashi tofu is a Japanese dish of lightly battered fried tofu served in a savoury dashi broth. This version uses halloumi, which holds its shape under heat and crisps beautifully in a cornflour coating. The broth is made with soy, mirin, and sake.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Inspired by Japanese agedashi tofu. Halloumi is used here as a widely available substitute with a similar frying profile.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["dairyFree", "nutFree"],
+    "cuisine": "japanese",
+    "mealType": "starter",
+    "mood": ["weeknight", "light"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-30", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Pat the halloumi slices dry with kitchen paper before coating them. Moisture is the enemy of a crisp crust. The broth should be warm but not boiling when you serve." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "halloumi", "amount": 300, "unit": "g", "prepNote": "sliced 1cm thick, patted very dry", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cornflour", "amount": 60, "unit": "g", "prepNote": "for coating", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sunflower-oil", "amount": 400, "unit": "ml", "prepNote": "for shallow frying", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 300, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "mirin", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "sake", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "ginger-fresh", "amount": 2, "unit": "cm", "prepNote": "finely grated, to serve", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": null, "prepNote": "finely sliced, to serve", "isOptional": false, "groupLabel": "To serve" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine the stock, soy sauce, mirin, and sake in a small saucepan. Bring to a gentle simmer. Keep warm." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Press the halloumi slices between sheets of kitchen paper. Leave for 5 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Dust each slice in cornflour. Shake off the excess." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oil in the frying pan over medium-high heat. You need about 1.5cm depth of oil." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Fry the halloumi slices in batches for 2 minutes per side until golden and crisp. Drain on kitchen paper." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place 3 or 4 pieces in each bowl. Pour the warm broth around them. Top with grated ginger and spring onion. Serve at once." }] }] }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            { "symptom": "Coating falls off during frying", "cause": "Halloumi was too wet", "fix": "Pat it bone-dry before dusting with cornflour." },
+            { "symptom": "Halloumi sticks to the pan", "cause": "Oil not hot enough before adding the pieces", "fix": "Wait until the oil shimmers before adding halloumi." },
+            { "symptom": "Broth is too sharp", "cause": "Too much soy sauce", "fix": "Add an extra splash of mirin and taste again." }
+          ]
+        }
+      }
+    ]
+  }
+}
