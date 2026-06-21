@@ -1,0 +1,121 @@
+{
+  "slug": "chicken-tinga",
+  "title": "Chicken Tinga",
+  "subtitle": "Shredded chicken in a smoky tomato sauce",
+  "excerpt": "Chicken tinga is a classic Mexican preparation of shredded chicken simmered in a smoky tomato and chilli sauce. It piles brilliantly into tacos, burritos or tostadas and comes together from pantry ingredients in well under an hour.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Chicken tinga originates in Puebla, Mexico, where it is traditionally made with chipotle peppers in adobo sauce. The smoky heat of chipotle is central to the dish; smoked paprika and chilli flakes make a workable substitute when chipotle is unavailable.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["glutenFree", "dairyFree", "nutFree"],
+    "cuisine": "mexican",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{ "slug": "large-saucepan", "isOptional": false }],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Traditional tinga uses chipotle in adobo. This version uses smoked paprika and chilli flakes for a similar smoky heat from pantry staples. If you have chipotle paste, swap both for 1 to 2 tablespoons of it." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-breast", "amount": 600, "unit": "g", "prepNote": "poached in salted water until cooked, then shredded", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "paprika-smoked", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "oregano-dried", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Simmer the chicken breasts in a pot of salted water for 15 minutes until cooked through. Remove and shred into coarse strips with two forks. Set aside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the olive oil in a large pan over a medium heat. Cook the onion for 8 minutes until soft and starting to colour." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the garlic, smoked paprika, chilli flakes, cumin and oregano. Cook for 1 minute." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the tinned tomatoes and cook for 10 minutes until the sauce thickens." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the shredded chicken and stir to coat in the sauce. Cook for 5 minutes until the chicken is heated through and has soaked up the sauce. Season with salt." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Chicken is dry and stringy.",
+              "cause": "Breasts were overcooked during poaching.",
+              "fix": "Poach on a low simmer and remove as soon as cooked through."
+            },
+            {
+              "symptom": "Sauce tastes flat and lacks smokiness.",
+              "cause": "Smoked paprika was too old and has lost its potency.",
+              "fix": "Use fresh smoked paprika or add a pinch more to taste."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "slug": "oyakodon",
+  "title": "Oyakodon",
+  "subtitle": "Japanese chicken and egg rice bowl",
+  "excerpt": "Oyakodon translates as parent and child bowl, a reference to its two main ingredients. Chicken simmers in a light soy and mirin broth until tender, then eggs are stirred in at the last moment to set in soft, silky folds over rice.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Oyakodon became popular in Japan in the late nineteenth century as donburi rice bowls grew fashionable. The dish balances sweet mirin, umami-rich soy and delicate egg in a format designed to be eaten in one bowl over rice.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["dairyFree", "nutFree", "glutenFree"],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [{ "slug": "frying-pan-28", "isOptional": false }],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "The eggs should still look underdone when you take the pan off the heat. Residual heat from the broth finishes them to a soft, custardy set." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thighs-boneless", "amount": 500, "unit": "g", "prepNote": "sliced into 2cm strips", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 6, "unit": "whole", "prepNote": "beaten", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mirin", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sake", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "stock-chicken", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "basmati-rice", "amount": 300, "unit": "g", "prepNote": "cooked, to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 3, "unit": "whole", "prepNote": "thinly sliced, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook the rice according to the packet instructions and keep warm." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine the stock, soy sauce, mirin and sake in a wide frying pan. Bring to a simmer over a medium heat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the onion and cook for 3 minutes until slightly softened." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the chicken strips in a single layer and simmer for 6 to 8 minutes until cooked through, turning once." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour the beaten eggs in a slow, circular stream over the chicken. Cover and cook for 2 minutes until just set but still slightly wobbly." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Spoon immediately over bowls of warm rice. Top with spring onion." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Eggs are rubbery and overcooked.",
+              "cause": "The pan was left on the heat after the eggs went in.",
+              "fix": "Take the pan off the heat while eggs still look underdone."
+            },
+            {
+              "symptom": "Broth is too salty.",
+              "cause": "Soy sauce amount was not matched to stock volume.",
+              "fix": "Start with 3 tablespoons of soy and taste before adding more."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "slug": "soboro-donburi",
+  "title": "Soboro Donburi",
+  "subtitle": "Japanese minced chicken and scrambled egg rice bowl",
+  "excerpt": "Soboro donburi is a colourful two-tone rice bowl of finely crumbled sweet-soy chicken and soft scrambled egg served side by side. Each element is cooked separately to keep the flavours clean and the presentation striking.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Soboro donburi is a popular Japanese bento and home-cooked rice bowl. Soboro refers to the loose, crumbled texture of the meat, achieved by constant stirring over moderate heat. It is eaten across Japan as a quick school-day lunch.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": ["dairyFree", "nutFree", "glutenFree"],
+    "cuisine": "japanese",
+    "mealType": "lunch",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "frying-pan-28", "isOptional": false }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "For the chicken soboro, use a fork or several chopsticks to stir constantly. The goal is a fine, dry crumble with no large pieces. For the egg, gentle heat and slow stirring give the softest result." }]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-breast", "amount": 500, "unit": "g", "prepNote": "very finely minced or blended in a food processor", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mirin", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sake", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 2, "unit": "cm", "prepNote": "grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "basmati-rice", "amount": 300, "unit": "g", "prepNote": "cooked", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "eggs", "amount": 4, "unit": "whole", "prepNote": "beaten with a pinch of salt and 1 tsp mirin", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "whole", "prepNote": "thinly sliced, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cook the rice and keep warm." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the chicken, soy sauce, mirin, sake and ginger in a cold frying pan. Set over a medium heat and stir constantly with several chopsticks or a fork until the chicken is cooked through and resembles fine crumbles, about 8 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Meanwhile heat a small pan over a low heat. Add the beaten eggs and stir slowly with a spatula until they form soft, small curds but are still just moist. Remove from the heat while they still look slightly underdone." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Divide the rice between bowls. Spoon the chicken soboro over one half of each bowl and the scrambled egg over the other half." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scatter spring onion down the centre and serve immediately." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Troubleshooting" }]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Chicken is in large chunks rather than fine crumbles.",
+              "cause": "It was not stirred constantly or heat was too high.",
+              "fix": "Stir constantly on medium heat from the very start."
+            },
+            {
+              "symptom": "Scrambled eggs are dry and rubbery.",
+              "cause": "They were left on the heat too long.",
+              "fix": "Take the pan off heat while eggs still look slightly wet."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
