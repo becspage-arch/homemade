@@ -33,12 +33,18 @@
 }
 .pattern-detail-hero-image img { width: 100%; height: auto; display: block; }
 .pattern-detail-overline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #a86547;
   margin: 0 0 12px;
+}
+.pattern-detail-premium-badge {
+  letter-spacing: normal;
 }
 .pattern-detail-title {
   font-family: var(--font-display);

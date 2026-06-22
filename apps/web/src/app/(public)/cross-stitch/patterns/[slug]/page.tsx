@@ -7,7 +7,8 @@ import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { buildBreadcrumbSchema } from '@/lib/seo/schema-builders'
 import { JsonLd } from '@/components/seo/json-ld'
 import { getCurrentDbUser } from '@/lib/get-current-user'
-import { hasPremium } from '@/lib/entitlements'
+import { hasPremium, isPremiumContent, canAccessPremiumContent } from '@/lib/entitlements'
+import { PremiumBadge } from '@/components/premium'
 import { PatternSaveButton } from '@/components/public/pattern-save-button'
 import { PatternPlanButton } from '@/components/public/pattern-plan-button'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
@@ -43,7 +44,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
   const row = await prisma.pattern.findUnique({
     where: { slug },
     include: {
-      designer: { select: { displayName: true, slug: true, bio: true } },
+      designer: { select: { displayName: true, slug: true, bio: true, isHouseDesigner: true } },
       subCategory: { select: { slug: true, name: true } },
       hero: { select: { cloudflareId: true, r2Key: true } },
       thumbnail: { select: { cloudflareId: true, r2Key: true } },
@@ -117,6 +118,13 @@ export default async function PatternDetailPage({ params }: PageProps) {
   // see the Save button; tapping it routes them through sign-in.
   const user = await getCurrentDbUser()
   const premium = hasPremium(user)
+  // Cross-craft content gate: premium-flagged OR independent-designer content
+  // reads as premium. The page stays a full preview (hero, spec, floss) and is
+  // badged; opening it in the Studio is the access gate. Printing/downloading
+  // is the separate universal premium action below (gated on `premium`).
+  const content = { premium: row.premium, designer: row.designer }
+  const premiumContent = isPremiumContent(content)
+  const canAccess = canAccessPremiumContent(user, content)
   const [saved, inPlan] = user
     ? await Promise.all([
         prisma.savedPattern
@@ -161,7 +169,10 @@ export default async function PatternDetailPage({ params }: PageProps) {
           <img src={patternHeroUrl({ id: row.id, hero: row.hero, thumbnail: row.thumbnail }, 'hero')} alt={row.name} loading="eager" />
         </div>
         <div className="pattern-detail-hero-body">
-          <p className="pattern-detail-overline">Cross-stitch pattern</p>
+          <p className="pattern-detail-overline">
+            Cross-stitch pattern
+            {premiumContent && <PremiumBadge iconOnly className="pattern-detail-premium-badge" />}
+          </p>
           <h1 className="pattern-detail-title">{row.name}</h1>
           {row.designer && (
             // Designer name is plain text — per-designer profile pages
@@ -173,9 +184,19 @@ export default async function PatternDetailPage({ params }: PageProps) {
           {row.description && <p className="pattern-detail-description">{row.description}</p>}
 
           <div className="pattern-detail-actions">
-            <Link href={`/studio/cross-stitch?patternId=${row.id}`} className="pattern-detail-action primary">
-              Stitch this pattern
-            </Link>
+            {/* Opening a premium (independent-designer) pattern in the Studio
+                is the access gate. Free + house patterns open straight in; a
+                non-premium reader on premium content is routed to upgrade (the
+                Studio enforces it server-side too). */}
+            {canAccess ? (
+              <Link href={`/studio/cross-stitch?patternId=${row.id}`} className="pattern-detail-action primary">
+                Stitch this pattern
+              </Link>
+            ) : (
+              <Link href="/premium" className="pattern-detail-action primary">
+                Stitch this pattern · Premium
+              </Link>
+            )}
             {/* Downloading the PDF is premium (universal print/download gate).
                 Non-premium readers get a link to upgrade; the route enforces it
                 server-side too. */}

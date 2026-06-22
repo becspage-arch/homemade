@@ -15,6 +15,8 @@ import { loadContentRefs } from '@/lib/tutorial-refs'
 import { prepareTutorialBody } from '@/lib/tutorial-body-prep'
 import { tutorialHeroUrl } from '@/lib/tutorial-hero'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { isPremiumContent, canAccessPremiumContent } from '@/lib/entitlements'
+import { PremiumBadge, UpgradeBlock } from '@/components/premium'
 import { resolveUserUnitPreferences } from '@/lib/recipes/user-unit-preferences'
 import { formatTemperature } from '@/lib/recipes/units'
 import {
@@ -202,6 +204,20 @@ export default async function TutorialPage({ params }: PageProps) {
     getCurrentDbUser(),
   ])
   if (!tutorial) notFound()
+
+  // Cross-craft content gate, scoped to cooking + baking for this pass.
+  // A recipe authored by an independent creator (creatorId set) is premium —
+  // the same rule the pattern crafts use, run through the shared helper with
+  // just `{ premium }` (recipes have no designer relation; the flag is derived
+  // from creator vs house content). House recipes (no creator) stay free.
+  // Reading another creator's recipe needs premium: the chrome (hero, title,
+  // meta) still previews it; the ingredients + method body is held. Printing /
+  // downloading stays the separate universal premium action.
+  const isCookingOrBaking = categorySlug === 'cooking' || categorySlug === 'baking'
+  const recipeContent = { premium: Boolean(tutorial.creatorId) }
+  const premiumRecipe = isCookingOrBaking && isPremiumContent(recipeContent)
+  const gatePremiumRecipe =
+    premiumRecipe && !canAccessPremiumContent(currentUser, recipeContent)
 
   const rawBody = tutorial.body as TipTapNode | null
   const body = prepareTutorialBody(rawBody, {
@@ -757,39 +773,47 @@ export default async function TutorialPage({ params }: PageProps) {
       }
       body={
         <>
+          {premiumRecipe && <PremiumBadge className="tutorial-premium-badge" />}
           {didYouMakeThis?.show && (
             <DidYouMakeThisPrompt
               tutorialId={tutorial.id}
               visitCount={didYouMakeThis.visitCount}
             />
           )}
-          <TutorialContent
-            content={body}
-            glossary={refs.glossary}
-            subTutorials={refs.subTutorials}
-            techniques={refs.techniques}
-            patternInsets={refs.patternInsets}
-            beginnerMode={beginnerMode}
-            recipeContext={
-              isRecipeStyle
-                ? {
-                    tutorialId: tutorial.id,
-                    tutorialSlug,
-                    scalable: tutorial.scalable,
-                    unitPreferences,
-                    ingredientMeta,
-                  }
-                : null
-            }
-            tutorialId={tutorial.id}
-            isSignedIn={Boolean(currentUser)}
-            userHemisphere={
-              currentUser?.hemisphere === 'N' || currentUser?.hemisphere === 'S'
-                ? currentUser.hemisphere
-                : null
-            }
-          />
-          {tutorial.diagramGenerationStatus === 'NO_SOURCE' && (
+          {gatePremiumRecipe ? (
+            <UpgradeBlock
+              message="This recipe is part of Homemade Premium."
+              rationale="Premium opens the recipes shared by independent Homemade creators; the full Homemade library stays free for everyone."
+            />
+          ) : (
+            <TutorialContent
+              content={body}
+              glossary={refs.glossary}
+              subTutorials={refs.subTutorials}
+              techniques={refs.techniques}
+              patternInsets={refs.patternInsets}
+              beginnerMode={beginnerMode}
+              recipeContext={
+                isRecipeStyle
+                  ? {
+                      tutorialId: tutorial.id,
+                      tutorialSlug,
+                      scalable: tutorial.scalable,
+                      unitPreferences,
+                      ingredientMeta,
+                    }
+                  : null
+              }
+              tutorialId={tutorial.id}
+              isSignedIn={Boolean(currentUser)}
+              userHemisphere={
+                currentUser?.hemisphere === 'N' || currentUser?.hemisphere === 'S'
+                  ? currentUser.hemisphere
+                  : null
+              }
+            />
+          )}
+          {!gatePremiumRecipe && tutorial.diagramGenerationStatus === 'NO_SOURCE' && (
             <DiagramPendingMarker />
           )}
           {tutorialNeedsMedicalDisclaimer(tutorial.type) && <MedicalDisclaimer />}

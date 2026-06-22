@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { prisma } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { isPremiumContent, canAccessPremiumContent } from '@/lib/entitlements'
+import { PremiumBadge, UpgradeBlock } from '@/components/premium'
 import { resolveUserUnitPreferences } from '@/lib/recipes/user-unit-preferences'
 import { formatIngredientQuantity, formatTemperature } from '@/lib/recipes/units'
 import { mediaUrl } from '@/lib/media'
@@ -75,6 +77,15 @@ export default async function UserRecipePage({
     isOwner || (isLive && (recipe.visibility === 'PUBLIC' || recipe.visibility === 'UNLISTED'))
   if (!isViewable) notFound()
 
+  // Cross-craft content gate: a community recipe is independent-creator content
+  // — premium by the same rule the pattern crafts use. The owner always reads
+  // their own; everyone else gets the head + hero preview, badged, with the
+  // ingredients + method held behind premium. (Printing / downloading stays the
+  // separate universal premium action.)
+  const recipeContent = { premium: true }
+  const premiumContent = isPremiumContent(recipeContent)
+  const canAccess = isOwner || canAccessPremiumContent(user, recipeContent)
+
   // Count a view for non-owners on a live recipe (best effort, never blocks).
   if (!isOwner && isLive) {
     void prisma.userRecipe
@@ -145,6 +156,7 @@ export default async function UserRecipePage({
           )}
         </p>
         <h1 className="user-recipe-title">{recipe.title}</h1>
+        {premiumContent && <PremiumBadge className="user-recipe-premium-badge" />}
         {recipe.summary && <p className="user-recipe-summary">{recipe.summary}</p>}
         {metaBits.length > 0 && (
           <p className="user-recipe-meta">{metaBits.join('  ·  ')}</p>
@@ -168,7 +180,7 @@ export default async function UserRecipePage({
         <img className="user-recipe-hero" src={heroSrc} alt={hero?.alt ?? recipe.title} />
       )}
 
-      {isLive && (
+      {isLive && canAccess && (
         <div className="tutorial-content user-recipe-actions">
           <div className="recipe-actions-row">
             <AddToShoppingList tutorialSlug={recipe.slug} tutorialId={recipe.id} />
@@ -178,6 +190,14 @@ export default async function UserRecipePage({
         </div>
       )}
 
+      {!canAccess ? (
+        <div className="user-recipe-body">
+          <UpgradeBlock
+            message="This recipe is part of Homemade Premium."
+            rationale="Premium opens the recipes shared by independent Homemade creators; the full Homemade library stays free for everyone."
+          />
+        </div>
+      ) : (
       <div className="user-recipe-body">
         <section className="user-recipe-ingredients">
           <h2>Ingredients</h2>
@@ -211,6 +231,7 @@ export default async function UserRecipePage({
           />
         </section>
       </div>
+      )}
 
       {recipe.originalityType &&
         recipe.originalityType !== 'own' &&

@@ -4,6 +4,7 @@ import { CategoryScopedSearch } from '@/components/public/category/category-scop
 import { FoundationsPath } from '@/components/public/category/foundations-path'
 import { PatternLibraryGrid } from '@/app/(public)/cross-stitch/patterns/pattern-library-grid'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
+import { isPremiumContent } from '@/lib/entitlements'
 import { CrochetPatternGrid } from './crochet-pattern-grid'
 import { CategoryStudioCTA } from '@/components/category/CategoryStudioCTA'
 import { isStudioCategorySlug } from '@/lib/studio/category-config'
@@ -172,7 +173,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
             hasFrenchKnots: true,
             premium: true,
             fabricCountSuggested: true,
-            designer: { select: { displayName: true, slug: true } },
+            designer: { select: { displayName: true, slug: true, isHouseDesigner: true } },
             subCategory: { select: { slug: true, name: true } },
             hero: { select: { cloudflareId: true, r2Key: true } },
             thumbnail: { select: { cloudflareId: true, r2Key: true } },
@@ -528,7 +529,9 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
                 estimatedHours: p.estimatedHours,
                 hasBackstitch: p.hasBackstitch,
                 hasFrenchKnots: p.hasFrenchKnots,
-                premium: p.premium,
+                // The card badge reads the single cross-craft rule: premium-
+                // flagged OR independent-designer content shows as premium.
+                premium: isPremiumContent({ premium: p.premium, designer: p.designer }),
                 fabricCountSuggested: p.fabricCountSuggested,
                 designerName: p.designer?.displayName ?? null,
                 designerSlug: p.designer?.slug ?? null,

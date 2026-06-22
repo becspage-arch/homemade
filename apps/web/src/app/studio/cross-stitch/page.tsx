@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import { prisma, parsePatternData, type PatternData, PatternType, Visibility } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
-import { hasPremium } from '@/lib/entitlements'
+import { hasPremium, isPremiumContent } from '@/lib/entitlements'
 import { StudioShell } from '@/components/studio/shell/StudioShell'
 import { StudioAuthGate } from '@/components/premium/StudioAuthGate'
+import { StudioPremiumGate } from '@/components/premium/StudioPremiumGate'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 
 export const dynamic = 'force-dynamic'
@@ -61,13 +62,38 @@ export default async function CrossStitchStudioPage({ searchParams }: PageProps)
   if (sp.patternId) {
     const row = await prisma.pattern.findUnique({
       where: { id: sp.patternId },
-      select: { id: true, name: true, data: true, ownerUserId: true, visibility: true },
+      select: {
+        id: true,
+        name: true,
+        data: true,
+        ownerUserId: true,
+        visibility: true,
+        premium: true,
+        designer: { select: { isHouseDesigner: true } },
+      },
     })
     if (row) {
       const isOwned = user && row.ownerUserId === user.id
       const isLibrary =
         row.ownerUserId === null &&
         (row.visibility === Visibility.PUBLIC || row.visibility === Visibility.UNLISTED)
+      // Premium-content access gate: opening a library premium (independent-
+      // designer) pattern in the Studio needs premium. Owners always reach
+      // their own patterns; free + house library patterns open straight in.
+      if (
+        isLibrary &&
+        !isOwned &&
+        isPremiumContent({ premium: row.premium, designer: row.designer }) &&
+        !premium
+      ) {
+        return (
+          <StudioPremiumGate
+            craftLabel={row.name}
+            browseHref="/cross-stitch"
+            browseLabel="Or keep browsing the library"
+          />
+        )
+      }
       if (isOwned || isLibrary) {
         try {
           const parsed = parsePatternData(row.data)
