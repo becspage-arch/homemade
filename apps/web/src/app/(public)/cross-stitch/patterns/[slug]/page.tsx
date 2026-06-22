@@ -9,6 +9,7 @@ import { JsonLd } from '@/components/seo/json-ld'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { hasPremium } from '@/lib/entitlements'
 import { PatternSaveButton } from '@/components/public/pattern-save-button'
+import { PatternPlanButton } from '@/components/public/pattern-plan-button'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import './pattern-detail.css'
 
@@ -116,14 +117,28 @@ export default async function PatternDetailPage({ params }: PageProps) {
   // see the Save button; tapping it routes them through sign-in.
   const user = await getCurrentDbUser()
   const premium = hasPremium(user)
-  const saved = user
-    ? Boolean(
-        await prisma.savedPattern.findUnique({
-          where: { userId_patternId: { userId: user.id, patternId: row.id } },
-          select: { id: true },
-        }),
-      )
-    : false
+  const [saved, inPlan] = user
+    ? await Promise.all([
+        prisma.savedPattern
+          .findUnique({
+            where: { userId_patternId: { userId: user.id, patternId: row.id } },
+            select: { id: true },
+          })
+          .then(Boolean),
+        prisma.plannerProject
+          .findUnique({
+            where: {
+              userId_craft_patternId: {
+                userId: user.id,
+                craft: 'CROSS_STITCH',
+                patternId: row.id,
+              },
+            },
+            select: { id: true },
+          })
+          .then(Boolean),
+      ])
+    : [false, false]
 
   return (
     <article className="pattern-detail">
@@ -174,6 +189,11 @@ export default async function PatternDetailPage({ params }: PageProps) {
               </Link>
             )}
             <PatternSaveButton patternId={row.id} initialSaved={saved} />
+            <PatternPlanButton
+              patternId={row.id}
+              initialInPlan={inPlan}
+              signedIn={Boolean(user)}
+            />
           </div>
 
           {finishedCount > 0 && (

@@ -279,6 +279,12 @@ model User {
   patternProgress UserPatternProgress[]
   designerProfile Designer[]            @relation("DesignerUser")
 
+  // Cross-craft project + materials planner (phase_pattern_planner_001).
+  // Generic, category-agnostic: a project references a pattern by
+  // (craft, patternId) so every craft's pattern model can attach.
+  plannerProjects PlannerProject[]
+  plannerStash    PlannerStashItem[]
+
   // Crochet Studio reverse relations.
   crochetPatterns              CrochetPattern[]              @relation("CrochetPatternOwner")
   crochetProjectProgress       CrochetProjectProgress[]
@@ -4544,6 +4550,91 @@ enum FlossBrand {
   DMC
   ANCHOR
   MADEIRA
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Cross-craft project + materials planner (phase_pattern_planner_001)
+//
+// A shared, category-agnostic planner. The tables below carry NO craft
+// specifics: a project references a pattern by (craft, patternId) so any
+// craft's pattern model can attach, and per-craft detail (e.g. cross-stitch
+// fabric count / strands, the materials maths itself) lives in the
+// application-layer materials provider, not here. Cross-stitch is the first
+// adapter; crochet / knitting / needlework / sewing reuse the same tables.
+// ────────────────────────────────────────────────────────────────────────────
+
+/// Which craft a planner project or stash item belongs to. Discriminates the
+/// generic `patternId` reference so the right materials provider resolves it.
+/// Broader than PatternType because the planner spans crafts that do not use
+/// the chart Pattern model (sewing, needlework).
+enum PlannerCraft {
+  CROSS_STITCH
+  CROCHET
+  KNITTING
+  NEEDLEWORK
+  SEWING
+}
+
+enum PlannerProjectStatus {
+  QUEUED
+  IN_PROGRESS
+  FINISHED
+}
+
+/// A maker's planned project — one pattern they intend to (or are) making.
+/// Ordered within the queue via `position`. Craft-specific planner choices
+/// (cross-stitch fabric count + strands, a future craft's gauge, etc.) live
+/// in `settings` JSON so the shared table never grows craft columns.
+model PlannerProject {
+  id         String               @id @default(cuid())
+  userId     String
+  user       User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  craft      PlannerCraft
+  // Generic reference to the source pattern. Not a Prisma FK because the
+  // target table varies by craft (Pattern, CrochetPattern, …); the materials
+  // provider resolves it. For cross-stitch this is Pattern.id.
+  patternId  String
+  status     PlannerProjectStatus @default(QUEUED)
+  position   Int                  @default(0)
+  notes      String?
+  targetDate DateTime?
+  // Per-craft planner settings, e.g. { fabricCount: 16, strands: 2 } for
+  // cross-stitch. Shape is owned by the craft's materials provider.
+  settings   Json                 @default("{}")
+  startedAt  DateTime?
+  finishedAt DateTime?
+  createdAt  DateTime             @default(now())
+  updatedAt  DateTime             @updatedAt
+
+  @@unique([userId, craft, patternId])
+  @@index([userId, status])
+  @@index([userId, craft])
+}
+
+/// A material the maker already owns, counted against project needs so the
+/// shopping list shows what is still to buy. Generic identity columns
+/// (brand / code / name / colour) cover floss, yarn, thread, fabric; the
+/// provider interprets `quantityOwned` + `unit` per craft (skeins, balls,
+/// metres). `attributes` holds any craft-specific extras.
+model PlannerStashItem {
+  id            String       @id @default(cuid())
+  userId        String
+  user          User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  craft         PlannerCraft
+  brand         String?
+  code          String?
+  name          String?
+  colourRgb     String?
+  quantityOwned Float        @default(1)
+  unit          String       @default("skein")
+  attributes    Json         @default("{}")
+  notes         String?
+  archivedAt    DateTime?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  @@unique([userId, craft, brand, code])
+  @@index([userId, craft])
 }
 
 // ────────────────────────────────────────────────────────────────────────────
