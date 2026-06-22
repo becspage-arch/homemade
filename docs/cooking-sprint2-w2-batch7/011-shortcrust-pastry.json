@@ -23,16 +23,23 @@
     "batchable": true,
     "batchNotes": "Double the batch and freeze half for future use.",
     "makeAheadNotes": "Make up to 3 days ahead. Wrap and refrigerate.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": "Bake blind at 200C for 15 minutes before filling",
     "foundational": true
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -42,54 +49,165 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Keep everything cold. Cold butter, cold water, cold hands if possible. Warmth develops the gluten and makes the pastry tough. Work quickly and stop as soon as the dough comes together."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep everything cold. Cold butter, cold water, cold hands if possible. Warmth develops the gluten and makes the pastry tough. Work quickly and stop as soon as the dough comes together."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 300, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "unsalted-butter", "quantity": 150, "unit": "g", "prepNote": "cold, cut into 1cm cubes"},
-            {"ingredientSlug": "salt-table", "quantity": 0.5, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "caster-sugar", "quantity": 1, "unit": "tbsp", "prepNote": "omit for savoury pastry"},
-            {"ingredientSlug": "eggs", "quantity": 1, "unit": "large", "prepNote": "yolk only"},
-            {"ingredientSlug": "whole-milk", "quantity": 3, "unit": "tbsp", "prepNote": "use 2-3 tbsp ice-cold water -- just enough to bring the dough together"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 300,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "cold, cut into 1cm cubes",
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 0.5,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "tbsp",
+              "prepNote": "omit for savoury pastry",
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": "yolk only",
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "tbsp",
+              "prepNote": "use 2-3 tbsp ice-cold water -- just enough to bring the dough together",
+              "amount": 3,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Put the flour, salt, and sugar into a large bowl. Add the cold butter cubes. Rub the butter into the flour with your fingertips until the mixture resembles breadcrumbs with some pea-sized lumps remaining."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put the flour, salt, and sugar into a large bowl. Add the cold butter cubes. Rub the butter into the flour with your fingertips until the mixture resembles breadcrumbs with some pea-sized lumps remaining."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Mix the egg yolk with 2 tablespoons of cold water. Add to the flour mixture. Use a knife to cut it in, then bring the dough together with your hands. Add the third tablespoon of water only if needed."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the egg yolk with 2 tablespoons of cold water. Add to the flour mixture. Use a knife to cut it in, then bring the dough together with your hands. Add the third tablespoon of water only if needed."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Press the dough into a flat disc. Wrap in cling film. Refrigerate for at least 30 minutes before rolling."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Press the dough into a flat disc. Wrap in cling film. Refrigerate for at least 30 minutes before rolling."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "On a lightly floured surface, roll the pastry to about 3mm thickness. Work from the centre outwards and turn the pastry a quarter turn after each roll."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "On a lightly floured surface, roll the pastry to about 3mm thickness. Work from the centre outwards and turn the pastry a quarter turn after each roll."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Line the tin by draping the pastry over your rolling pin and lowering it in. Press into the edges without stretching. Chill again for 20 minutes before blind baking or filling."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Line the tin by draping the pastry over your rolling pin and lowering it in. Press into the edges without stretching. Chill again for 20 minutes before blind baking or filling."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -112,12 +230,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Shortcrust pastry underpins a vast portion of the British baking repertoire -- from savoury quiches and pork pies to treacle tarts, mince pies, and fruit pies. Master this and dozens of other recipes open up. It is one of the most useful things to be able to make by hand."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Shortcrust pastry underpins a vast portion of the British baking repertoire -- from savoury quiches and pork pies to treacle tarts, mince pies, and fruit pies. Master this and dozens of other recipes open up. It is one of the most useful things to be able to make by hand."
+          }
+        ]
       }
     ]
   }

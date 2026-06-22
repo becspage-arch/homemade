@@ -23,18 +23,32 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Bake layers a day ahead. Make ganache on the day and assemble.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "dessert",
-    "mood": ["weekend", "comfortFood"],
+    "mood": [
+      "weekend",
+      "comfortFood"
+    ],
     "temperatureCelsius": 180,
     "temperatureNote": "Conventional oven",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "whisk", "isOptional": false},
-    {"slug": "large-saucepan", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -44,59 +58,205 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The batter for this cake is very liquid -- more liquid than most cake batters. This is correct. The hot water (or coffee) in the batter blooms the cocoa and makes the chocolate flavour deeper. Do not worry about the consistency when it goes in the tin."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The batter for this cake is very liquid -- more liquid than most cake batters. This is correct. The hot water (or coffee) in the batter blooms the cocoa and makes the chocolate flavour deeper. Do not worry about the consistency when it goes in the tin."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 200, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "baking-powder", "quantity": 1.5, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "bicarbonate-of-soda", "quantity": 0.5, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "caster-sugar", "quantity": 300, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "black-treacle", "quantity": 50, "unit": "g", "prepNote": "use 50g cocoa powder"},
-            {"ingredientSlug": "eggs", "quantity": 2, "unit": "large", "prepNote": null},
-            {"ingredientSlug": "honey", "quantity": 150, "unit": "ml", "prepNote": "use 150ml vegetable or sunflower oil"},
-            {"ingredientSlug": "whole-milk", "quantity": 150, "unit": "ml", "prepNote": "at room temperature"},
-            {"ingredientSlug": "vanilla-extract", "quantity": 1, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "black-treacle", "quantity": 200, "unit": "g", "prepNote": "use 200g dark chocolate (70%) for the ganache -- broken into pieces"},
-            {"ingredientSlug": "double-cream", "quantity": 200, "unit": "ml", "prepNote": "for ganache -- heat and pour over the chocolate, stir until smooth"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1.5,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bicarbonate-of-soda",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 0.5,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 300,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-treacle",
+              "unit": "g",
+              "prepNote": "use 50g cocoa powder",
+              "amount": 50,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": null,
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "honey",
+              "unit": "ml",
+              "prepNote": "use 150ml vegetable or sunflower oil",
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "ml",
+              "prepNote": "at room temperature",
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vanilla-extract",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-treacle",
+              "unit": "g",
+              "prepNote": "use 200g dark chocolate (70%) for the ganache -- broken into pieces",
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "unit": "ml",
+              "prepNote": "for ganache -- heat and pour over the chocolate, stir until smooth",
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 180C. Grease and line two 20cm round tins."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180C. Grease and line two 20cm round tins."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Sift together the flour, cocoa, baking powder, bicarb, sugar, and a pinch of salt. In a jug, whisk together the eggs, oil, milk, and vanilla. Add the wet ingredients to the dry and mix until smooth."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sift together the flour, cocoa, baking powder, bicarb, sugar, and a pinch of salt. In a jug, whisk together the eggs, oil, milk, and vanilla. Add the wet ingredients to the dry and mix until smooth."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour in 150ml of just-boiled water or hot coffee and stir to combine. The batter will be very thin. Divide evenly between the tins."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in 150ml of just-boiled water or hot coffee and stir to combine. The batter will be very thin. Divide evenly between the tins."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Bake for 30 to 35 minutes until a skewer comes out clean. Cool in the tins for 10 minutes before turning out. Leave to cool fully."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 30 to 35 minutes until a skewer comes out clean. Cool in the tins for 10 minutes before turning out. Leave to cool fully."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Make the ganache: heat the cream until just below boiling. Pour over the broken chocolate. Leave for 2 minutes, then stir until smooth. Cool until spreadable (about 30 minutes). Sandwich and coat the cake."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the ganache: heat the cream until just below boiling. Pour over the broken chocolate. Leave for 2 minutes, then stir until smooth. Cool until spreadable (about 30 minutes). Sandwich and coat the cake."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -119,12 +279,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Chocolate fudge cake is the chocolate cake of British cafes, birthdays, and bake sales. It is richer and more intensely flavoured than a chocolate sponge. The ganache finish is borrowed from French patisserie but has been fully absorbed into British baking culture. It is the kind of cake people request for their birthday."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Chocolate fudge cake is the chocolate cake of British cafes, birthdays, and bake sales. It is richer and more intensely flavoured than a chocolate sponge. The ganache finish is borrowed from French patisserie but has been fully absorbed into British baking culture. It is the kind of cake people request for their birthday."
+          }
+        ]
       }
     ]
   }

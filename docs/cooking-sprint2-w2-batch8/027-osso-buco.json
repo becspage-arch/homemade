@@ -23,61 +23,350 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Make a day ahead and reheat gently. The flavour improves after resting overnight.",
-    "dietaryFlags": ["glutenFree"],
+    "dietaryFlags": [
+      "glutenFree"
+    ],
     "cuisine": "italian",
     "mealType": "main",
-    "mood": ["comfortFood", "weekend"],
+    "mood": [
+      "comfortFood",
+      "weekend"
+    ],
     "temperatureCelsius": 160,
     "temperatureNote": "Fan 140C / Gas 3 -- low and slow oven braise",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "cast-iron-skillet", "isOptional": false},
-    {"slug": "roasting-tin", "isOptional": false},
-    {"slug": "sharp-knife", "isOptional": false},
-    {"slug": "chopping-board", "isOptional": false}
+    {
+      "slug": "cast-iron-skillet",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
   ],
-  "glossaryTerms": ["gremolata", "braise", "soffritto", "marrow"],
-  "techniqueSlugs": ["braising-meat", "making-gremolata"],
-  "criticalTechniques": ["braising-meat"],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "braising-meat",
+    "making-gremolata"
+  ],
+  "criticalTechniques": [
+    "braising-meat"
+  ],
   "body": {
     "type": "doc",
     "content": [
-      {"type": "paragraph", "content": [{"type": "text", "text": "Tie the shin pieces with kitchen string before searing. This stops the meat from falling off the bone during braising. The gremolata is made fresh and goes on at the very last moment."}]},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "What you need"}]},
-      {"type": "ingredientsList", "attrs": {"defaultServings": 4, "items": [
-        {"ingredientSlug": "beef-chuck", "amount": 4, "unit": "thick slices", "prepNote": "use 4 veal osso buco (cross-cut veal shanks) if available -- otherwise use beef shin on the bone, about 4cm thick", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "plain-flour", "amount": 60, "unit": "g", "prepNote": "for dusting the meat", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "extra-virgin-olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "onion", "amount": 1, "unit": "large", "prepNote": "finely diced", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "carrot", "amount": 1, "unit": "medium", "prepNote": "finely diced", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "celery", "amount": 2, "unit": "sticks", "prepNote": "finely diced", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "white-wine-dry", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": "half a tin, crushed", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "stock-chicken", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "bay-leaves", "amount": 2, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "lemon", "amount": 1, "unit": null, "prepNote": "zest only -- for the gremolata", "isOptional": false, "groupLabel": "For the gremolata"},
-        {"ingredientSlug": "garlic", "amount": 2, "unit": "cloves", "prepNote": "very finely chopped -- for the gremolata", "isOptional": false, "groupLabel": "For the gremolata"},
-        {"ingredientSlug": "parsley-flat", "amount": null, "unit": "small bunch", "prepNote": "finely chopped -- for the gremolata", "isOptional": false, "groupLabel": "For the gremolata"},
-        {"ingredientSlug": "salt-table", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": null}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Method"}]},
-      {"type": "orderedList", "content": [
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 160C. Tie each piece of shin with kitchen string to help it hold its shape. Season well. Dust lightly in flour on both sides."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oil in a heavy ovenproof pan over high heat. Sear the shin pieces for 4 to 5 minutes per side until deeply browned. Remove and set aside."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Reduce the heat. Add the onion, carrot and celery. Cook in the residual fat for 8 minutes until soft. Add the wine and cook for 3 minutes."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the tomatoes, stock and bay leaves. Return the meat to the pan. The liquid should come halfway up the meat. Bring to a simmer."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Cover and braise in the oven for 1.5 to 2 hours until the meat is very tender and starting to fall from the bone."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Mix the lemon zest, garlic and parsley together to make the gremolata. Set aside."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Remove the string. Taste the sauce and adjust the seasoning. Serve each piece of shin with sauce spooned over. Scatter gremolata on top. Serve with risotto Milanese or polenta."}]}]}
-      ]},
-      {"type": "troubleshooter", "attrs": {"items": [
-        {"symptom": "Meat is not tender after 2 hours", "cause": "Shin was very thick or oven not even enough", "fix": "Return to the oven for another 30 to 45 minutes. Beef shin in particular can take up to 3 hours. It is done when a fork slides in with no resistance."},
-        {"symptom": "Sauce is thin", "cause": "Too much liquid added or lid not tight", "fix": "Remove the meat and reduce the sauce on the hob over high heat until it is thick and glossy, then return the meat."}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Where this dish lives"}]},
-      {"type": "paragraph", "content": [{"type": "text", "text": "Osso buco is Milan's most famous dish. It is always paired with saffron risotto. The gremolata is added at the table, not during cooking. Eat the marrow from the bone with a small spoon."}]}
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tie the shin pieces with kitchen string before searing. This stops the meat from falling off the bone during braising. The gremolata is made fresh and goes on at the very last moment."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-chuck",
+              "amount": 4,
+              "unit": "thick slices",
+              "prepNote": "use 4 veal osso buco (cross-cut veal shanks) if available -- otherwise use beef shin on the bone, about 4cm thick",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "for dusting the meat",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "large",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 1,
+              "unit": "medium",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 2,
+              "unit": "sticks",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "white-wine-dry",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "half a tin, crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": null,
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "zest only -- for the gremolata",
+              "isOptional": false,
+              "groupLabel": "For the gremolata"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "cloves",
+              "prepNote": "very finely chopped -- for the gremolata",
+              "isOptional": false,
+              "groupLabel": "For the gremolata"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "finely chopped -- for the gremolata",
+              "isOptional": false,
+              "groupLabel": "For the gremolata"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 160C. Tie each piece of shin with kitchen string to help it hold its shape. Season well. Dust lightly in flour on both sides."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a heavy ovenproof pan over high heat. Sear the shin pieces for 4 to 5 minutes per side until deeply browned. Remove and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat. Add the onion, carrot and celery. Cook in the residual fat for 8 minutes until soft. Add the wine and cook for 3 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the tomatoes, stock and bay leaves. Return the meat to the pan. The liquid should come halfway up the meat. Bring to a simmer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover and braise in the oven for 1.5 to 2 hours until the meat is very tender and starting to fall from the bone."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the lemon zest, garlic and parsley together to make the gremolata. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the string. Taste the sauce and adjust the seasoning. Serve each piece of shin with sauce spooned over. Scatter gremolata on top. Serve with risotto Milanese or polenta."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Meat is not tender after 2 hours",
+              "cause": "Shin was very thick or oven not even enough",
+              "fix": "Return to the oven for another 30 to 45 minutes. Beef shin in particular can take up to 3 hours. It is done when a fork slides in with no resistance."
+            },
+            {
+              "symptom": "Sauce is thin",
+              "cause": "Too much liquid added or lid not tight",
+              "fix": "Remove the meat and reduce the sauce on the hob over high heat until it is thick and glossy, then return the meat."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Osso buco is Milan's most famous dish. It is always paired with saffron risotto. The gremolata is added at the table, not during cooking. Eat the marrow from the bone with a small spoon."
+          }
+        ]
+      }
     ]
   }
 }

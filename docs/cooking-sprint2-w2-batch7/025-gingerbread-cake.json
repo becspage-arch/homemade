@@ -23,18 +23,32 @@
     "batchable": true,
     "batchNotes": "Easy to double. Use a larger tin and add 10 minutes to the baking time.",
     "makeAheadNotes": "Makes at least 2 days ahead. The flavour develops and the texture becomes stickier with time.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weekend", "comfortFood"],
+    "mood": [
+      "weekend",
+      "comfortFood"
+    ],
     "temperatureCelsius": 160,
     "temperatureNote": "Conventional oven -- do not use fan, the top can crack",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "large-saucepan", "isOptional": false},
-    {"slug": "roasting-tin", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -44,59 +58,205 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Melt the butter, syrup, treacle, and sugar together in a saucepan before adding to the dry ingredients. This is a melt-and-mix cake -- there is no creaming. The batter will be quite thin. This is correct."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the butter, syrup, treacle, and sugar together in a saucepan before adding to the dry ingredients. This is a melt-and-mix cake -- there is no creaming. The batter will be quite thin. This is correct."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 225, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "bicarbonate-of-soda", "quantity": 1, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "ginger-ground", "quantity": 2, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "cinnamon-ground", "quantity": 1, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "allspice-ground", "quantity": 0.5, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "golden-syrup", "quantity": 150, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "black-treacle", "quantity": 100, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "unsalted-butter", "quantity": 100, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "brown-sugar", "quantity": 100, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "eggs", "quantity": 2, "unit": "large", "prepNote": "beaten"},
-            {"ingredientSlug": "whole-milk", "quantity": 150, "unit": "ml", "prepNote": null}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 225,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bicarbonate-of-soda",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-ground",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "allspice",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 0.5,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "golden-syrup",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-treacle",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 100,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 100,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 100,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": "beaten",
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "ml",
+              "prepNote": null,
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 160C. Grease and line a 20 x 30cm baking tin (or a 23cm square tin for a deeper cake)."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 160C. Grease and line a 20 x 30cm baking tin (or a 23cm square tin for a deeper cake)."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Sift the flour, bicarb, and spices into a large bowl."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sift the flour, bicarb, and spices into a large bowl."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Melt the butter, golden syrup, treacle, and brown sugar together in a saucepan over low heat. Stir until the sugar dissolves. Remove from heat and cool for 5 minutes."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt the butter, golden syrup, treacle, and brown sugar together in a saucepan over low heat. Stir until the sugar dissolves. Remove from heat and cool for 5 minutes."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Beat the eggs into the milk. Pour the treacle mixture and the milk mixture into the flour. Beat to a smooth, thin batter."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Beat the eggs into the milk. Pour the treacle mixture and the milk mixture into the flour. Beat to a smooth, thin batter."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour into the tin. Bake for 40 to 45 minutes until just set -- a skewer should come out with just a few moist crumbs. Cool completely in the tin before cutting."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour into the tin. Bake for 40 to 45 minutes until just set -- a skewer should come out with just a few moist crumbs. Cool completely in the tin before cutting."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -119,12 +279,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Gingerbread has been made in Britain since at least the 15th century, when it was formed into shapes and sold at fairs. The sticky, treacly traybake version is associated with the north of England and Scotland. Parkin -- a northern variation made with oatmeal -- is eaten on Bonfire Night. This version is a simpler everyday gingerbread with a longer shelf life than most cakes."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Gingerbread has been made in Britain since at least the 15th century, when it was formed into shapes and sold at fairs. The sticky, treacly traybake version is associated with the north of England and Scotland. Parkin -- a northern variation made with oatmeal -- is eaten on Bonfire Night. This version is a simpler everyday gingerbread with a longer shelf life than most cakes."
+          }
+        ]
       }
     ]
   }

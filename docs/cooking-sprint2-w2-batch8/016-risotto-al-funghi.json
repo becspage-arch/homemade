@@ -23,58 +23,321 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": null,
-    "dietaryFlags": ["vegetarian", "glutenFree"],
+    "dietaryFlags": [
+      "vegetarian",
+      "glutenFree"
+    ],
     "cuisine": "italian",
     "mealType": "main",
-    "mood": ["comfortFood", "weekend"],
+    "mood": [
+      "comfortFood",
+      "weekend"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "large-saucepan", "isOptional": false},
-    {"slug": "frying-pan-26", "isOptional": false},
-    {"slug": "ladle", "isOptional": false},
-    {"slug": "wooden-spoon", "isOptional": false}
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "ladle",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    }
   ],
-  "glossaryTerms": ["porcini", "mantecatura", "soffritto"],
-  "techniqueSlugs": ["making-risotto", "mantecatura"],
-  "criticalTechniques": ["making-risotto"],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "making-risotto",
+    "mantecatura"
+  ],
+  "criticalTechniques": [
+    "making-risotto"
+  ],
   "body": {
     "type": "doc",
     "content": [
-      {"type": "paragraph", "content": [{"type": "text", "text": "Soak the dried porcini in hot water for 20 minutes before you start. The soaking liquid is full of flavour -- strain it through a sieve to remove any grit and add it to your stock."}]},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "What you need"}]},
-      {"type": "ingredientsList", "attrs": {"defaultServings": 4, "items": [
-        {"ingredientSlug": "arborio-rice", "amount": 320, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "mushrooms-chestnut", "amount": 300, "unit": "g", "prepNote": "sliced", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "mushrooms-dried", "amount": 25, "unit": "g", "prepNote": "porcini -- soaked in 300ml hot water for 20 minutes, then drained (soaking water reserved)", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "stock-vegetable", "amount": 900, "unit": "ml", "prepNote": "kept hot, combined with the strained porcini soaking water", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "onion", "amount": 1, "unit": "medium", "prepNote": "finely diced", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "garlic", "amount": 2, "unit": "cloves", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "white-wine-dry", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "thyme-fresh", "amount": 3, "unit": "sprigs", "prepNote": "leaves stripped", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "cubed and cold", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "extra-virgin-olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "salt-table", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": null}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Method"}]},
-      {"type": "orderedList", "content": [
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Soak the dried porcini in 300ml of hot water for 20 minutes. Drain, reserving the liquid. Chop the porcini roughly. Strain the soaking liquid through a fine sieve or kitchen paper and add it to the hot stock."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat 1 tablespoon of olive oil in a frying pan over high heat. Fry the chestnut mushrooms for 5 minutes until browned. Add the chopped porcini and thyme. Cook for 1 more minute. Season and set aside."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "In a wide, heavy pan, heat the remaining oil and half the butter over medium-low heat. Add the onion and cook for 8 minutes until very soft. Add the garlic and cook for 1 minute."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the rice. Stir and toast for 2 minutes. Pour in the wine. Stir until fully absorbed."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the hot stock a ladle at a time, stirring after each addition. Continue for about 18 to 20 minutes until the rice is just cooked with a slight bite."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Stir in the mushrooms. Remove from the heat. Add the cold butter and Parmesan. Beat vigorously for 2 minutes. Rest for 2 minutes before serving."}]}]}
-      ]},
-      {"type": "troubleshooter", "attrs": {"items": [
-        {"symptom": "Mushrooms are watery and pale", "cause": "Pan too cool or too crowded", "fix": "Fry mushrooms in a very hot pan in a single layer. Crowd them and they steam instead of brown."},
-        {"symptom": "Risotto tastes flat", "cause": "Porcini soaking water not used", "fix": "The soaking water is where most of the porcini flavour lives. Always strain and use it."}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Where this dish lives"}]},
-      {"type": "paragraph", "content": [{"type": "text", "text": "Mushroom risotto belongs to the forests of northern Italy. In Piedmont and Lombardy, porcini are gathered fresh in autumn. The dried version works brilliantly year round. Thyme is optional but very good here."}]}
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soak the dried porcini in hot water for 20 minutes before you start. The soaking liquid is full of flavour -- strain it through a sieve to remove any grit and add it to your stock."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "arborio-rice",
+              "amount": 320,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mushrooms-chestnut",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dried-porcini",
+              "amount": 25,
+              "unit": "g",
+              "prepNote": "porcini -- soaked in 300ml hot water for 20 minutes, then drained (soaking water reserved)",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-vegetable",
+              "amount": 900,
+              "unit": "ml",
+              "prepNote": "kept hot, combined with the strained porcini soaking water",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "medium",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "cloves",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "white-wine-dry",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme-fresh",
+              "amount": 3,
+              "unit": "sprigs",
+              "prepNote": "leaves stripped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "cubed and cold",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Soak the dried porcini in 300ml of hot water for 20 minutes. Drain, reserving the liquid. Chop the porcini roughly. Strain the soaking liquid through a fine sieve or kitchen paper and add it to the hot stock."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat 1 tablespoon of olive oil in a frying pan over high heat. Fry the chestnut mushrooms for 5 minutes until browned. Add the chopped porcini and thyme. Cook for 1 more minute. Season and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In a wide, heavy pan, heat the remaining oil and half the butter over medium-low heat. Add the onion and cook for 8 minutes until very soft. Add the garlic and cook for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the rice. Stir and toast for 2 minutes. Pour in the wine. Stir until fully absorbed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the hot stock a ladle at a time, stirring after each addition. Continue for about 18 to 20 minutes until the rice is just cooked with a slight bite."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the mushrooms. Remove from the heat. Add the cold butter and Parmesan. Beat vigorously for 2 minutes. Rest for 2 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Mushrooms are watery and pale",
+              "cause": "Pan too cool or too crowded",
+              "fix": "Fry mushrooms in a very hot pan in a single layer. Crowd them and they steam instead of brown."
+            },
+            {
+              "symptom": "Risotto tastes flat",
+              "cause": "Porcini soaking water not used",
+              "fix": "The soaking water is where most of the porcini flavour lives. Always strain and use it."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mushroom risotto belongs to the forests of northern Italy. In Piedmont and Lombardy, porcini are gathered fresh in autumn. The dried version works brilliantly year round. Thyme is optional but very good here."
+          }
+        ]
+      }
     ]
   }
 }

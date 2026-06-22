@@ -23,87 +23,295 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "The tomato sauce can be made a day ahead. Fry the aubergine fresh on the day.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "italian",
     "mealType": "main",
-    "mood": ["weeknight", "weekend"],
+    "mood": [
+      "weeknight",
+      "weekend"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "large-saucepan", "isOptional": false},
-    {"slug": "frying-pan-26", "isOptional": false},
-    {"slug": "colander", "isOptional": false},
-    {"slug": "wooden-spoon", "isOptional": false},
-    {"slug": "sharp-knife", "isOptional": false},
-    {"slug": "chopping-board", "isOptional": false}
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "colander",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
   ],
-  "glossaryTerms": ["ricotta salata", "al dente"],
-  "techniqueSlugs": ["frying-aubergine", "cooking-pasta"],
-  "criticalTechniques": ["cooking-pasta"],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "frying-aubergine",
+    "cooking-pasta"
+  ],
+  "criticalTechniques": [
+    "cooking-pasta"
+  ],
   "body": {
     "type": "doc",
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Salt the aubergine slices before frying. This removes water so they fry rather than steam. Pat them completely dry before they go into the oil."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Salt the aubergine slices before frying. This removes water so they fry rather than steam. Pat them completely dry before they go into the oil."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            {"ingredientSlug": "pasta-dried", "amount": 400, "unit": "g", "prepNote": "rigatoni or penne", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "aubergine", "amount": 2, "unit": "medium", "prepNote": "cut into 2cm cubes", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "extra-virgin-olive-oil", "amount": 5, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "garlic", "amount": 2, "unit": "cloves", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": "1 tin", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "basil", "amount": null, "unit": "small bunch", "prepNote": "leaves torn", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "feta", "amount": 80, "unit": "g", "prepNote": "use salted ricotta (ricotta salata) -- or crumble feta over the top", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "salt-table", "amount": null, "unit": null, "prepNote": "for the aubergine and pasta water", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": null}
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "rigatoni or penne",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "aubergine",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": "cut into 2cm cubes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 5,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "cloves",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "1 tin",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "basil",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "leaves torn",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "feta",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "use salted ricotta (ricotta salata) -- or crumble feta over the top",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "for the aubergine and pasta water",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Sprinkle the aubergine cubes with salt. Leave in a colander for 20 minutes. Rinse and pat very dry with kitchen paper."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat 3 tablespoons of oil in a wide frying pan over medium-high heat. Fry the aubergine in batches for 6 to 8 minutes until golden on all sides. Do not crowd the pan. Drain on kitchen paper."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "In the same pan, add the remaining oil over medium heat. Fry the garlic for 1 minute until golden. Add the tomatoes and crush them with a spoon. Season. Cook for 12 to 15 minutes until the sauce has thickened."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Cook the pasta in well-salted boiling water until al dente. Reserve a mug of pasta water. Drain."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the fried aubergine to the tomato sauce. Stir in most of the basil. Toss the pasta through the sauce. Add a splash of pasta water to loosen."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Serve topped with crumbled feta or ricotta salata and the remaining basil leaves."}]}]}
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sprinkle the aubergine cubes with salt. Leave in a colander for 20 minutes. Rinse and pat very dry with kitchen paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat 3 tablespoons of oil in a wide frying pan over medium-high heat. Fry the aubergine in batches for 6 to 8 minutes until golden on all sides. Do not crowd the pan. Drain on kitchen paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pan, add the remaining oil over medium heat. Fry the garlic for 1 minute until golden. Add the tomatoes and crush them with a spoon. Season. Cook for 12 to 15 minutes until the sauce has thickened."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the pasta in well-salted boiling water until al dente. Reserve a mug of pasta water. Drain."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the fried aubergine to the tomato sauce. Stir in most of the basil. Toss the pasta through the sauce. Add a splash of pasta water to loosen."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve topped with crumbled feta or ricotta salata and the remaining basil leaves."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "items": [
-            {"symptom": "Aubergine is oily and soft", "cause": "Too much oil, pan not hot enough, or aubergine not dried properly", "fix": "Dry the aubergine thoroughly before frying. Use a hot pan and do not add extra oil. Fry in smaller batches."},
-            {"symptom": "Sauce is watery", "cause": "Tinned tomatoes not reduced enough", "fix": "Simmer on higher heat, uncovered, until the sauce thickens and darkens slightly."}
+            {
+              "symptom": "Aubergine is oily and soft",
+              "cause": "Too much oil, pan not hot enough, or aubergine not dried properly",
+              "fix": "Dry the aubergine thoroughly before frying. Use a hot pan and do not add extra oil. Fry in smaller batches."
+            },
+            {
+              "symptom": "Sauce is watery",
+              "cause": "Tinned tomatoes not reduced enough",
+              "fix": "Simmer on higher heat, uncovered, until the sauce thickens and darkens slightly."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Pasta alla Norma is the signature dish of Catania in eastern Sicily. It was supposedly named after the Bellini opera to express how wonderful it was. Ricotta salata is the traditional cheese -- hard, salty and crumbly."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Pasta alla Norma is the signature dish of Catania in eastern Sicily. It was supposedly named after the Bellini opera to express how wonderful it was. Ricotta salata is the traditional cheese -- hard, salty and crumbly."
+          }
+        ]
       }
     ]
   }

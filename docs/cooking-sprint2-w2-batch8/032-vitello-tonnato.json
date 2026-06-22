@@ -23,58 +23,320 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Make up to 2 days ahead. The flavour improves after a day in the fridge. Add extra capers before serving.",
-    "dietaryFlags": ["dairyFree", "glutenFree"],
+    "dietaryFlags": [
+      "dairyFree",
+      "glutenFree"
+    ],
     "cuisine": "italian",
     "mealType": "starter",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "large-saucepan", "isOptional": false},
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "sharp-knife", "isOptional": false},
-    {"slug": "chopping-board", "isOptional": false}
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
   ],
-  "glossaryTerms": ["tonnato", "emulsify", "poaching"],
-  "techniqueSlugs": ["poaching-meat", "making-emulsion"],
-  "criticalTechniques": ["poaching-meat"],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "poaching-meat",
+    "making-emulsion"
+  ],
+  "criticalTechniques": [
+    "poaching-meat"
+  ],
   "body": {
     "type": "doc",
     "content": [
-      {"type": "paragraph", "content": [{"type": "text", "text": "Poach the meat gently -- boiling makes it tough and dry. The water should barely tremble. Cool the meat completely in the poaching liquid before slicing. This keeps it moist."}]},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "What you need"}]},
-      {"type": "ingredientsList", "attrs": {"defaultServings": 4, "items": [
-        {"ingredientSlug": "beef-chuck", "amount": 600, "unit": "g", "prepNote": "use 600g veal topside if available -- otherwise use beef silverside or topside", "isOptional": false, "groupLabel": "For the meat"},
-        {"ingredientSlug": "carrot", "amount": 1, "unit": null, "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the meat"},
-        {"ingredientSlug": "celery", "amount": 1, "unit": "stick", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "For the meat"},
-        {"ingredientSlug": "onion", "amount": 0.5, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": "For the meat"},
-        {"ingredientSlug": "bay-leaves", "amount": 2, "unit": null, "prepNote": null, "isOptional": false, "groupLabel": "For the meat"},
-        {"ingredientSlug": "black-pepper", "amount": 6, "unit": "peppercorns", "prepNote": null, "isOptional": false, "groupLabel": "For the meat"},
-        {"ingredientSlug": "anchovy-fillets", "amount": 6, "unit": "fillets", "prepNote": "drained", "isOptional": false, "groupLabel": "For the sauce"},
-        {"ingredientSlug": "capers", "amount": 3, "unit": "tbsp", "prepNote": "rinsed -- half for the sauce, half to garnish", "isOptional": false, "groupLabel": "For the sauce"},
-        {"ingredientSlug": "lemon", "amount": 1, "unit": null, "prepNote": "juice only", "isOptional": false, "groupLabel": "For the sauce"},
-        {"ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce"},
-        {"ingredientSlug": "eggs", "amount": 2, "unit": "yolks only", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce"},
-        {"ingredientSlug": "extra-virgin-olive-oil", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce"},
-        {"ingredientSlug": "anchovy-fillets", "amount": 185, "unit": "g", "prepNote": "tinned tuna in oil, drained", "isOptional": false, "groupLabel": "For the sauce"}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Method"}]},
-      {"type": "orderedList", "content": [
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Put the meat in a snug saucepan with the carrot, celery, onion, bay leaves and peppercorns. Cover with cold water. Bring very slowly to a bare simmer. Cook gently for 50 to 60 minutes. The meat should be just cooked through but still slightly pink. Let it cool completely in the liquid."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "While the meat cools, make the sauce. Put the tuna, anchovies, half the capers, lemon juice, mustard and egg yolks in a blender. Blend until smooth."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "With the blender running, slowly pour in the olive oil in a thin stream. The sauce will emulsify and thicken to a pourable cream. If too thick, add a tablespoon of cold water. Taste and season."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Slice the cooled meat very thin -- about 3mm. Arrange on a wide serving platter in overlapping layers."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Spoon the tuna sauce over the meat, covering it completely. Scatter the remaining capers over the top. Cover and refrigerate for at least 3 hours before serving."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Serve at room temperature, not cold from the fridge. Add a final drizzle of olive oil and a squeeze of lemon."}]}]}
-      ]},
-      {"type": "troubleshooter", "attrs": {"items": [
-        {"symptom": "Meat is tough and dry", "cause": "Boiled too hard or cooled out of the liquid", "fix": "The water must barely simmer. Cool the meat in the poaching liquid -- this keeps it moist. Thin slicing also helps."},
-        {"symptom": "Sauce is split and oily", "cause": "Oil added too fast during blending", "fix": "Add the oil in a very thin, slow stream with the blender running. If it splits, start fresh yolks in a clean bowl and slowly drizzle in the split sauce while whisking."}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Where this dish lives"}]},
-      {"type": "paragraph", "content": [{"type": "text", "text": "Vitello tonnato is from Piedmont in northern Italy. It is served cold at summer antipasto spreads. The tuna-meat combination is very old. It is better made 24 hours ahead."}]}
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Poach the meat gently -- boiling makes it tough and dry. The water should barely tremble. Cool the meat completely in the poaching liquid before slicing. This keeps it moist."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-chuck",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "use 600g veal topside if available -- otherwise use beef silverside or topside",
+              "isOptional": false,
+              "groupLabel": "For the meat"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "For the meat"
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 1,
+              "unit": "stick",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "For the meat"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 0.5,
+              "unit": null,
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": null,
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 6,
+              "unit": "peppercorns",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meat"
+            },
+            {
+              "ingredientSlug": "anchovy-fillets",
+              "amount": 6,
+              "unit": "fillets",
+              "prepNote": "drained",
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "capers",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "rinsed -- half for the sauce, half to garnish",
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "juice only",
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "dijon-mustard",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "yolks only",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "anchovy-fillets",
+              "amount": 185,
+              "unit": "g",
+              "prepNote": "tinned tuna in oil, drained",
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put the meat in a snug saucepan with the carrot, celery, onion, bay leaves and peppercorns. Cover with cold water. Bring very slowly to a bare simmer. Cook gently for 50 to 60 minutes. The meat should be just cooked through but still slightly pink. Let it cool completely in the liquid."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "While the meat cools, make the sauce. Put the tuna, anchovies, half the capers, lemon juice, mustard and egg yolks in a blender. Blend until smooth."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "With the blender running, slowly pour in the olive oil in a thin stream. The sauce will emulsify and thicken to a pourable cream. If too thick, add a tablespoon of cold water. Taste and season."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slice the cooled meat very thin -- about 3mm. Arrange on a wide serving platter in overlapping layers."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon the tuna sauce over the meat, covering it completely. Scatter the remaining capers over the top. Cover and refrigerate for at least 3 hours before serving."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve at room temperature, not cold from the fridge. Add a final drizzle of olive oil and a squeeze of lemon."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Meat is tough and dry",
+              "cause": "Boiled too hard or cooled out of the liquid",
+              "fix": "The water must barely simmer. Cool the meat in the poaching liquid -- this keeps it moist. Thin slicing also helps."
+            },
+            {
+              "symptom": "Sauce is split and oily",
+              "cause": "Oil added too fast during blending",
+              "fix": "Add the oil in a very thin, slow stream with the blender running. If it splits, start fresh yolks in a clean bowl and slowly drizzle in the split sauce while whisking."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vitello tonnato is from Piedmont in northern Italy. It is served cold at summer antipasto spreads. The tuna-meat combination is very old. It is better made 24 hours ahead."
+          }
+        ]
+      }
     ]
   }
 }

@@ -23,17 +23,27 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Bake the layers a day ahead. Store in an airtight tin and fill before serving.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 180,
     "temperatureNote": "Conventional oven",
     "foundational": true
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "whisk", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,57 +53,189 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The all-in-one method works well here -- everything goes in the bowl together and is beaten until smooth. The butter must be very soft, not melted. If your eggs are cold from the fridge, bring them to room temperature first or the batter may curdle."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The all-in-one method works well here -- everything goes in the bowl together and is beaten until smooth. The butter must be very soft, not melted. If your eggs are cold from the fridge, bring them to room temperature first or the batter may curdle."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 200, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "baking-powder", "quantity": 2, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "caster-sugar", "quantity": 200, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "unsalted-butter", "quantity": 200, "unit": "g", "prepNote": "softened"},
-            {"ingredientSlug": "eggs", "quantity": 4, "unit": "large", "prepNote": "at room temperature"},
-            {"ingredientSlug": "whole-milk", "quantity": 2, "unit": "tbsp", "prepNote": null},
-            {"ingredientSlug": "vanilla-extract", "quantity": 1, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "honey", "quantity": 3, "unit": "tbsp", "prepNote": "use 3 tbsp raspberry jam"},
-            {"ingredientSlug": "double-cream", "quantity": 150, "unit": "ml", "prepNote": "whipped to soft peaks"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "softened",
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": "at room temperature",
+              "amount": 4,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "tbsp",
+              "prepNote": null,
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vanilla-extract",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "honey",
+              "unit": "tbsp",
+              "prepNote": "use 3 tbsp raspberry jam",
+              "amount": 3,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "unit": "ml",
+              "prepNote": "whipped to soft peaks",
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 180C. Grease two 20cm sandwich tins and line the bases with baking paper."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180C. Grease two 20cm sandwich tins and line the bases with baking paper."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Put the flour, baking powder, caster sugar, softened butter, eggs, milk, and vanilla into a large bowl. Beat with an electric whisk for 2 minutes until light and smooth."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put the flour, baking powder, caster sugar, softened butter, eggs, milk, and vanilla into a large bowl. Beat with an electric whisk for 2 minutes until light and smooth."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Divide evenly between the two tins. Smooth the tops. Bake for 22 to 25 minutes until risen, golden, and springing back when pressed."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide evenly between the two tins. Smooth the tops. Bake for 22 to 25 minutes until risen, golden, and springing back when pressed."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Cool in the tins for 5 minutes, then turn out onto a wire rack. Leave to cool completely before filling."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cool in the tins for 5 minutes, then turn out onto a wire rack. Leave to cool completely before filling."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Spread the jam over the flat side of one layer. Spoon the whipped cream on top. Sandwich with the second layer. Dust the top with a little caster sugar."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spread the jam over the flat side of one layer. Spoon the whipped cream on top. Sandwich with the second layer. Dust the top with a little caster sugar."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -116,12 +258,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The Victoria sponge is the cake at the centre of British baking culture. It appears at every village fete, bake sale, and birthday. It is the first cake most British home bakers learn to make and the one that everything else is measured against. Simple and as good as it ever was."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The Victoria sponge is the cake at the centre of British baking culture. It appears at every village fete, bake sale, and birthday. It is the first cake most British home bakers learn to make and the one that everything else is measured against. Simple and as good as it ever was."
+          }
+        ]
       }
     ]
   }

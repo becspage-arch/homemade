@@ -23,50 +23,254 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Marinate the lamb up to 24 hours ahead in the fridge.",
-    "dietaryFlags": ["glutenFree", "dairyFree"],
+    "dietaryFlags": [
+      "glutenFree",
+      "dairyFree"
+    ],
     "cuisine": "italian",
     "mealType": "main",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "cast-iron-skillet", "isOptional": false},
-    {"slug": "sharp-knife", "isOptional": false},
-    {"slug": "chopping-board", "isOptional": false}
+    {
+      "slug": "cast-iron-skillet",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
   ],
-  "glossaryTerms": ["scottadito", "cutlet", "marinate"],
-  "techniqueSlugs": ["grilling-meat", "marinating"],
-  "criticalTechniques": ["grilling-meat"],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "grilling-meat",
+    "marinating"
+  ],
+  "criticalTechniques": [
+    "grilling-meat"
+  ],
   "body": {
     "type": "doc",
     "content": [
-      {"type": "paragraph", "content": [{"type": "text", "text": "Get the pan or grill very hot before the lamb goes in. These cook in 3 to 4 minutes per side. A quick sear is what you want -- not a slow braise. Rest for 5 minutes so the juices redistribute."}]},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "What you need"}]},
-      {"type": "ingredientsList", "attrs": {"defaultServings": 4, "items": [
-        {"ingredientSlug": "lamb-shoulder", "amount": 12, "unit": "cutlets", "prepNote": "use 8 to 12 lamb cutlets or French-trimmed chops", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "crushed or finely grated", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "rosemary", "amount": 2, "unit": "sprigs", "prepNote": "leaves stripped and finely chopped", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "lemon", "amount": 1, "unit": null, "prepNote": "zest and juice", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "extra-virgin-olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "salt-flakes", "amount": null, "unit": null, "prepNote": "a generous pinch over each cutlet before grilling", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": null}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Method"}]},
-      {"type": "orderedList", "content": [
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Mix the garlic, rosemary, lemon zest, lemon juice and olive oil in a large bowl. Add the lamb cutlets. Toss well to coat. Cover and refrigerate for at least 1 hour."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Remove the lamb from the fridge 30 minutes before cooking. Shake off excess marinade. Pat dry with kitchen paper."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat a cast-iron griddle pan or heavy frying pan over the highest heat for 5 minutes until very hot. Add no oil -- the marinade provides enough."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the lamb cutlets. Season with salt. Do not move them for 3 minutes. Flip and cook for 3 more minutes for pink and juicy. Add 1 minute per side for more well-done."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Rest on a warm plate for 5 minutes. Serve immediately with lemon wedges and a green salad."}]}]}
-      ]},
-      {"type": "troubleshooter", "attrs": {"items": [
-        {"symptom": "Lamb is grey and steamed rather than charred", "cause": "Pan not hot enough, or too many cutlets in the pan at once", "fix": "Cook in batches of 4 or fewer. The pan must be smoking hot before the lamb goes in."},
-        {"symptom": "Cutlets are tough and well-done", "cause": "Left on too long", "fix": "Lamb cutlets are thin and cook very fast. 3 minutes per side for pink is usually exactly right."}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Where this dish lives"}]},
-      {"type": "paragraph", "content": [{"type": "text", "text": "Scottadito is the Easter lamb dish of Rome. Spring lamb is sweeter and more delicate than older meat. Eat them with your fingers while they are still sizzling. That is the point."}]}
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Get the pan or grill very hot before the lamb goes in. These cook in 3 to 4 minutes per side. A quick sear is what you want -- not a slow braise. Rest for 5 minutes so the juices redistribute."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "lamb-shoulder",
+              "amount": 12,
+              "unit": "cutlets",
+              "prepNote": "use 8 to 12 lamb cutlets or French-trimmed chops",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "crushed or finely grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "rosemary",
+              "amount": 2,
+              "unit": "sprigs",
+              "prepNote": "leaves stripped and finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "zest and juice",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-flakes",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "a generous pinch over each cutlet before grilling",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the garlic, rosemary, lemon zest, lemon juice and olive oil in a large bowl. Add the lamb cutlets. Toss well to coat. Cover and refrigerate for at least 1 hour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the lamb from the fridge 30 minutes before cooking. Shake off excess marinade. Pat dry with kitchen paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat a cast-iron griddle pan or heavy frying pan over the highest heat for 5 minutes until very hot. Add no oil -- the marinade provides enough."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the lamb cutlets. Season with salt. Do not move them for 3 minutes. Flip and cook for 3 more minutes for pink and juicy. Add 1 minute per side for more well-done."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rest on a warm plate for 5 minutes. Serve immediately with lemon wedges and a green salad."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Lamb is grey and steamed rather than charred",
+              "cause": "Pan not hot enough, or too many cutlets in the pan at once",
+              "fix": "Cook in batches of 4 or fewer. The pan must be smoking hot before the lamb goes in."
+            },
+            {
+              "symptom": "Cutlets are tough and well-done",
+              "cause": "Left on too long",
+              "fix": "Lamb cutlets are thin and cook very fast. 3 minutes per side for pink is usually exactly right."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Scottadito is the Easter lamb dish of Rome. Spring lamb is sweeter and more delicate than older meat. Eat them with your fingers while they are still sizzling. That is the point."
+          }
+        ]
+      }
     ]
   }
 }

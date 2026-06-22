@@ -23,17 +23,27 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Keep in an airtight tin for up to a week. Good as a gift.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "french",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 180,
     "temperatureNote": "Conventional oven",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "baking-sheet", "isOptional": false},
-    {"slug": "large-saucepan", "isOptional": false}
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,54 +53,165 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The mixture will spread during baking. If any rounds merge into each other, reshape them with a round cutter immediately after they come out of the oven -- they are soft and pliable for a minute or two. Work fast. Use a palette knife to lift them cleanly from the tray before they stick."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The mixture will spread during baking. If any rounds merge into each other, reshape them with a round cutter immediately after they come out of the oven -- they are soft and pliable for a minute or two. Work fast. Use a palette knife to lift them cleanly from the tray before they stick."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "unsalted-butter", "quantity": 50, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "double-cream", "quantity": 50, "unit": "ml", "prepNote": null},
-            {"ingredientSlug": "caster-sugar", "quantity": 75, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "plain-flour", "quantity": 30, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "currants", "quantity": 150, "unit": "g", "prepNote": "use a mix of glacé cherries (halved), flaked almonds, and mixed candied peel -- about 50g of each"},
-            {"ingredientSlug": "black-treacle", "quantity": 100, "unit": "g", "prepNote": "use 100g dark chocolate (70%), broken into pieces, for coating"}
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 50,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "unit": "ml",
+              "prepNote": null,
+              "amount": 50,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 75,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 30,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "currants",
+              "unit": "g",
+              "prepNote": "use a mix of glacé cherries (halved), flaked almonds, and mixed candied peel -- about 50g of each",
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-treacle",
+              "unit": "g",
+              "prepNote": "use 100g dark chocolate (70%), broken into pieces, for coating",
+              "amount": 100,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 180C. Line two baking sheets with baking paper or silicone mats."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180C. Line two baking sheets with baking paper or silicone mats."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Melt the butter and cream with the sugar in a saucepan over medium heat, stirring. Bring to the boil and boil for 1 minute. Remove from heat."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt the butter and cream with the sugar in a saucepan over medium heat, stirring. Bring to the boil and boil for 1 minute. Remove from heat."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Stir in the flour, then the fruit and nut mixture. Mix well."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the flour, then the fruit and nut mixture. Mix well."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Place teaspoonfuls on the baking sheets, leaving plenty of space. They will spread to about 8cm rounds. Bake for 10 to 12 minutes until golden at the edges."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place teaspoonfuls on the baking sheets, leaving plenty of space. They will spread to about 8cm rounds. Bake for 10 to 12 minutes until golden at the edges."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Reshape with a cutter if needed. Leave to cool completely. Melt the dark chocolate over a bain-marie or in short bursts in a microwave. Spread over the flat side of each florentine. Leave chocolate-side up to set."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reshape with a cutter if needed. Leave to cool completely. Melt the dark chocolate over a bain-marie or in short bursts in a microwave. Spread over the flat side of each florentine. Leave chocolate-side up to set."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -113,12 +234,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Florentines are a staple of European patisserie and appear in good chocolate shops across Britain at Christmas. They are a gift biscuit -- beautiful, fragile, and clearly made with care. Despite the name, they are French in origin, possibly developed in Paris in the 19th century. They represent the point where confectionery and biscuit-making overlap."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Florentines are a staple of European patisserie and appear in good chocolate shops across Britain at Christmas. They are a gift biscuit -- beautiful, fragile, and clearly made with care. Despite the name, they are French in origin, possibly developed in Paris in the 19th century. They represent the point where confectionery and biscuit-making overlap."
+          }
+        ]
       }
     ]
   }

@@ -23,17 +23,27 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Shape and refrigerate overnight. Prove at room temperature before baking.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "Conventional oven",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "baking-sheet", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,61 +53,221 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The spice balance matters here -- too much and the buns taste muddy, too little and they are just sweet rolls. The honey glaze goes on the moment they come out of the oven, while they are still piping hot. It gives them the characteristic sticky, glossy finish."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The spice balance matters here -- too much and the buns taste muddy, too little and they are just sweet rolls. The honey glaze goes on the moment they come out of the oven, while they are still piping hot. It gives them the characteristic sticky, glossy finish."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 500, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "baking-powder", "quantity": 7, "unit": "g", "prepNote": "use 7g fast-action dried yeast"},
-            {"ingredientSlug": "whole-milk", "quantity": 300, "unit": "ml", "prepNote": "warm"},
-            {"ingredientSlug": "unsalted-butter", "quantity": 60, "unit": "g", "prepNote": "softened"},
-            {"ingredientSlug": "caster-sugar", "quantity": 50, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "eggs", "quantity": 1, "unit": "large", "prepNote": "beaten"},
-            {"ingredientSlug": "cinnamon-ground", "quantity": 1.5, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "nutmeg", "quantity": 0.5, "unit": "tsp", "prepNote": "freshly grated"},
-            {"ingredientSlug": "allspice-ground", "quantity": 0.5, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "currants", "quantity": 100, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "orange", "quantity": 1, "unit": null, "prepNote": "zest only"},
-            {"ingredientSlug": "honey", "quantity": 2, "unit": "tbsp", "prepNote": "warmed, for glazing"},
-            {"ingredientSlug": "plain-flour", "quantity": 75, "unit": "g", "prepNote": "mixed with 5 tbsp water to make the cross paste"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 500,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "unit": "g",
+              "prepNote": "use 7g fast-action dried yeast",
+              "amount": 7,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "ml",
+              "prepNote": "warm",
+              "amount": 300,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "softened",
+              "amount": 60,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 50,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": "beaten",
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1.5,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "nutmeg",
+              "unit": "tsp",
+              "prepNote": "freshly grated",
+              "amount": 0.5,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "allspice",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 0.5,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "currants",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 100,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "orange",
+              "unit": null,
+              "prepNote": "zest only",
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "honey",
+              "unit": "tbsp",
+              "prepNote": "warmed, for glazing",
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": "mixed with 5 tbsp water to make the cross paste",
+              "amount": 75,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Mix the yeast into the warm milk with a pinch of sugar. Leave 5 minutes. Combine flour, sugar, salt (1 tsp), spices, and orange zest. Rub in the butter."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the yeast into the warm milk with a pinch of sugar. Leave 5 minutes. Combine flour, sugar, salt (1 tsp), spices, and orange zest. Rub in the butter."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the yeast mixture and egg to the flour. Mix to a soft dough. Knead for 8 minutes. Add the currants and knead to distribute. Cover and prove 1 hour."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the yeast mixture and egg to the flour. Mix to a soft dough. Knead for 8 minutes. Add the currants and knead to distribute. Cover and prove 1 hour."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Divide into 12 equal pieces. Shape each into a smooth ball. Place on lined baking sheets with a little space between each. Cover and prove 30 to 45 minutes."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide into 12 equal pieces. Shape each into a smooth ball. Place on lined baking sheets with a little space between each. Cover and prove 30 to 45 minutes."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 200C. Mix the cross paste flour with water to a thick, pipeable consistency. Pipe a cross over each bun."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200C. Mix the cross paste flour with water to a thick, pipeable consistency. Pipe a cross over each bun."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Bake for 18 to 20 minutes until golden. Brush immediately with the warm honey glaze. Eat warm or toasted with butter."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 18 to 20 minutes until golden. Brush immediately with the warm honey glaze. Eat warm or toasted with butter."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -120,12 +290,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Hot cross buns are eaten on Good Friday across Britain and Ireland. The spiced, fruited bun goes back centuries, and the cross has both Christian symbolism and older marking traditions. Supermarket versions are now available year-round, but homemade ones are in a different class -- softer, more fragrant, and far less sweet."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Hot cross buns are eaten on Good Friday across Britain and Ireland. The spiced, fruited bun goes back centuries, and the cross has both Christian symbolism and older marking traditions. Supermarket versions are now available year-round, but homemade ones are in a different class -- softer, more fragrant, and far less sweet."
+          }
+        ]
       }
     ]
   }

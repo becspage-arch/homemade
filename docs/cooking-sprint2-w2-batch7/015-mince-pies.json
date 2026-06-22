@@ -23,17 +23,27 @@
     "batchable": true,
     "batchNotes": "Double the batch and freeze half for gifts or later use.",
     "makeAheadNotes": "Make the pastry up to 3 days ahead and refrigerate.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 190,
     "temperatureNote": "Conventional oven",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "baking-sheet", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,54 +53,165 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Rich shortcrust is better than standard shortcrust here -- the extra fat makes it more tender and easier to eat in one bite. Do not overfill the cases; a teaspoon and a half of mincemeat is correct. Too much and the lids will not seal."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Rich shortcrust is better than standard shortcrust here -- the extra fat makes it more tender and easier to eat in one bite. Do not overfill the cases; a teaspoon and a half of mincemeat is correct. Too much and the lids will not seal."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 350, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "unsalted-butter", "quantity": 175, "unit": "g", "prepNote": "cold, cubed"},
-            {"ingredientSlug": "caster-sugar", "quantity": 50, "unit": "g", "prepNote": "plus extra for pastry"},
-            {"ingredientSlug": "eggs", "quantity": 1, "unit": "large", "prepNote": "yolk for pastry, beaten white for sealing"},
-            {"ingredientSlug": "currants", "quantity": 400, "unit": "g", "prepNote": "use 400g shop-bought mincemeat"},
-            {"ingredientSlug": "caster-sugar", "quantity": 2, "unit": "tbsp", "prepNote": "use icing sugar for dusting"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 350,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "cold, cubed",
+              "amount": 175,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": "plus extra for pastry",
+              "amount": 50,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": "yolk for pastry, beaten white for sealing",
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "currants",
+              "unit": "g",
+              "prepNote": "use 400g shop-bought mincemeat",
+              "amount": 400,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "tbsp",
+              "prepNote": "use icing sugar for dusting",
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Rub the butter into the flour until it resembles fine breadcrumbs. Add the sugar, egg yolk, and 2 tablespoons cold water. Bring together into a disc. Chill for 30 minutes."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rub the butter into the flour until it resembles fine breadcrumbs. Add the sugar, egg yolk, and 2 tablespoons cold water. Bring together into a disc. Chill for 30 minutes."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 190C. Roll the pastry to about 3mm thick. Cut out 24 rounds with a 7cm cutter for the bases and 24 slightly smaller rounds or stars for the lids."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 190C. Roll the pastry to about 3mm thick. Cut out 24 rounds with a 7cm cutter for the bases and 24 slightly smaller rounds or stars for the lids."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Press the larger rounds into a greased patty tin. Place 1.5 teaspoons of mincemeat in each case. Do not overfill."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Press the larger rounds into a greased patty tin. Place 1.5 teaspoons of mincemeat in each case. Do not overfill."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Brush the edges of the pastry cases with a little beaten egg white. Press the lids on top and press the edges to seal. Make a small cut or pinhole in the top of each."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Brush the edges of the pastry cases with a little beaten egg white. Press the lids on top and press the edges to seal. Make a small cut or pinhole in the top of each."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Bake for 18 to 20 minutes until pale golden. Cool for 5 minutes in the tin, then turn out carefully. Dust with icing sugar while still warm."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 18 to 20 minutes until pale golden. Cool for 5 minutes in the tin, then turn out carefully. Dust with icing sugar while still warm."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -113,12 +234,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Mince pies are eaten from Advent through to Twelfth Night across Britain. The tradition is old enough that the original mincemeat contained actual minced meat alongside fruit and spice. The fruit-only version became standard in the 19th century. They are offered to guests, left out for Father Christmas, and eaten in vast quantities throughout December."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Mince pies are eaten from Advent through to Twelfth Night across Britain. The tradition is old enough that the original mincemeat contained actual minced meat alongside fruit and spice. The fruit-only version became standard in the 19th century. They are offered to guests, left out for Father Christmas, and eaten in vast quantities throughout December."
+          }
+        ]
       }
     ]
   }

@@ -23,53 +23,286 @@
     "batchable": true,
     "batchNotes": "Double the dough and make 4 calzone. Freeze the extras.",
     "makeAheadNotes": "Make the dough the day before. Prove overnight in the fridge for a better texture.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "italian",
     "mealType": "main",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 220,
     "temperatureNote": "Fan 200C / Gas 7. Hot oven is key.",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "baking-sheet", "isOptional": false},
-    {"slug": "mixing-bowl", "isOptional": false}
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    }
   ],
-  "glossaryTerms": ["prove", "calzone"],
-  "techniqueSlugs": ["making-pizza-dough"],
-  "criticalTechniques": ["making-pizza-dough"],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "making-pizza-dough"
+  ],
+  "criticalTechniques": [
+    "making-pizza-dough"
+  ],
   "body": {
     "type": "doc",
     "content": [
-      {"type": "paragraph", "content": [{"type": "text", "text": "Do not overfill the calzone. Too much filling and it bursts. Seal the edge firmly by crimping or folding it over. Brush the top with olive oil and cut a small steam vent so it does not burst in the oven."}]},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "What you need"}]},
-      {"type": "ingredientsList", "attrs": {"defaultServings": 2, "items": [
-        {"ingredientSlug": "plain-flour", "amount": 500, "unit": "g", "prepNote": "strong bread flour if possible", "isOptional": false, "groupLabel": "For the dough"},
-        {"ingredientSlug": "baking-powder", "amount": 7, "unit": "g", "prepNote": "use 7g fast-action dried yeast", "isOptional": false, "groupLabel": "For the dough"},
-        {"ingredientSlug": "salt-table", "amount": 10, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dough"},
-        {"ingredientSlug": "extra-virgin-olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the dough"},
-        {"ingredientSlug": "feta", "amount": 200, "unit": "g", "prepNote": "use 200g fresh mozzarella, torn", "isOptional": false, "groupLabel": "For the filling"},
-        {"ingredientSlug": "ricotta", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the filling"},
-        {"ingredientSlug": "streaky-bacon", "amount": 100, "unit": "g", "prepNote": "use prosciutto or salami, torn", "isOptional": false, "groupLabel": "For the filling"},
-        {"ingredientSlug": "spinach-fresh", "amount": 100, "unit": "g", "prepNote": "wilted and squeezed very dry", "isOptional": false, "groupLabel": "For the filling"},
-        {"ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": "For the filling"},
-        {"ingredientSlug": "extra-virgin-olive-oil", "amount": 1, "unit": "tbsp", "prepNote": "to brush over the top", "isOptional": false, "groupLabel": null}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Method"}]},
-      {"type": "orderedList", "content": [
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Make the dough: dissolve the yeast in 325ml warm water. Mix with flour, salt and oil. Knead for 8 to 10 minutes. Divide into 2 balls. Cover and prove for 1 hour."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 220C. Put a baking sheet on the top shelf to heat."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Wilt the spinach in a dry pan. Squeeze all the moisture out in a clean cloth. Chop roughly."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Mix the ricotta, mozzarella, spinach and meat in a bowl. Season with black pepper. The filling should be well-seasoned but not wet."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Stretch each dough ball into a circle about 30cm wide. Place the filling on one half, leaving a 2cm border. Fold the dough over and crimp the edge firmly to seal. Cut a small slit in the top."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Brush the top with olive oil. Slide onto the hot baking sheet. Bake for 16 to 18 minutes until deep golden brown. Rest for 3 minutes before cutting."}]}]}
-      ]},
-      {"type": "troubleshooter", "attrs": {"items": [
-        {"symptom": "Calzone burst open during baking", "cause": "Edge not sealed firmly, or overfilled", "fix": "Press and crimp the edge very firmly. Use less filling next time. The steam vent also helps prevent splitting."},
-        {"symptom": "Inside is watery and wet", "cause": "Filling ingredients were too wet", "fix": "Squeeze the spinach completely dry before using. Drain the mozzarella on kitchen paper for 30 minutes."}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Where this dish lives"}]},
-      {"type": "paragraph", "content": [{"type": "text", "text": "Calzone is from Naples. It was designed to be eaten by hand. The filling varies -- prosciutto and mozzarella is classic. Ricotta and spinach is the vegetarian standard. Both are excellent."}]}
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Do not overfill the calzone. Too much filling and it bursts. Seal the edge firmly by crimping or folding it over. Brush the top with olive oil and cut a small steam vent so it does not burst in the oven."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "strong bread flour if possible",
+              "isOptional": false,
+              "groupLabel": "For the dough"
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "amount": 7,
+              "unit": "g",
+              "prepNote": "use 7g fast-action dried yeast",
+              "isOptional": false,
+              "groupLabel": "For the dough"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the dough"
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the dough"
+            },
+            {
+              "ingredientSlug": "feta",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "use 200g fresh mozzarella, torn",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "ricotta",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "streaky-bacon",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "use prosciutto or salami, torn",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "spinach",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "wilted and squeezed very dry",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": "For the filling"
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "to brush over the top",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the dough: dissolve the yeast in 325ml warm water. Mix with flour, salt and oil. Knead for 8 to 10 minutes. Divide into 2 balls. Cover and prove for 1 hour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 220C. Put a baking sheet on the top shelf to heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wilt the spinach in a dry pan. Squeeze all the moisture out in a clean cloth. Chop roughly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the ricotta, mozzarella, spinach and meat in a bowl. Season with black pepper. The filling should be well-seasoned but not wet."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stretch each dough ball into a circle about 30cm wide. Place the filling on one half, leaving a 2cm border. Fold the dough over and crimp the edge firmly to seal. Cut a small slit in the top."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Brush the top with olive oil. Slide onto the hot baking sheet. Bake for 16 to 18 minutes until deep golden brown. Rest for 3 minutes before cutting."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Calzone burst open during baking",
+              "cause": "Edge not sealed firmly, or overfilled",
+              "fix": "Press and crimp the edge very firmly. Use less filling next time. The steam vent also helps prevent splitting."
+            },
+            {
+              "symptom": "Inside is watery and wet",
+              "cause": "Filling ingredients were too wet",
+              "fix": "Squeeze the spinach completely dry before using. Drain the mozzarella on kitchen paper for 30 minutes."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Calzone is from Naples. It was designed to be eaten by hand. The filling varies -- prosciutto and mozzarella is classic. Ricotta and spinach is the vegetarian standard. Both are excellent."
+          }
+        ]
+      }
     ]
   }
 }

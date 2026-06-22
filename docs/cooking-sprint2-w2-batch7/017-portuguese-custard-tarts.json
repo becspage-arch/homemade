@@ -23,17 +23,27 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Bake on the day. They are best eaten warm within a few hours of baking.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "french",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 250,
     "temperatureNote": "Conventional oven, as hot as it will go. 250C or maximum setting.",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "whisk", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,56 +53,181 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The custard must be cooked on the hob before going into the oven -- this gives it the correct thick, almost pudding-like consistency when baked. Fill the pastry cases to just three-quarters full; the custard will bubble up and set. Watch them closely in the oven -- you want dark, blistered spots, not uniform cream."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The custard must be cooked on the hob before going into the oven -- this gives it the correct thick, almost pudding-like consistency when baked. Fill the pastry cases to just three-quarters full; the custard will bubble up and set. Watch them closely in the oven -- you want dark, blistered spots, not uniform cream."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 320, "unit": "g", "prepNote": "use 320g shop-bought puff pastry, chilled"},
-            {"ingredientSlug": "eggs", "quantity": 4, "unit": "large", "prepNote": "yolks only"},
-            {"ingredientSlug": "double-cream", "quantity": 150, "unit": "ml", "prepNote": null},
-            {"ingredientSlug": "whole-milk", "quantity": 200, "unit": "ml", "prepNote": null},
-            {"ingredientSlug": "caster-sugar", "quantity": 150, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "plain-flour", "quantity": 30, "unit": "g", "prepNote": "to thicken the custard"},
-            {"ingredientSlug": "cinnamon-ground", "quantity": 1, "unit": "tsp", "prepNote": "for dusting to serve"},
-            {"ingredientSlug": "vanilla-extract", "quantity": 1, "unit": "tsp", "prepNote": null}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": "use 320g shop-bought puff pastry, chilled",
+              "amount": 320,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": "yolks only",
+              "amount": 4,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "unit": "ml",
+              "prepNote": null,
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "ml",
+              "prepNote": null,
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": "to thicken the custard",
+              "amount": 30,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "unit": "tsp",
+              "prepNote": "for dusting to serve",
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vanilla-extract",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 250C and place a 12-hole muffin tin in the oven to heat up. Roll the cold puff pastry into a tight log. Slice into 12 rounds about 1.5cm thick."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 250C and place a 12-hole muffin tin in the oven to heat up. Roll the cold puff pastry into a tight log. Slice into 12 rounds about 1.5cm thick."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Press each round into a well of the muffin tin using your thumbs, pushing up the sides to form a cup. Chill while you make the custard."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Press each round into a well of the muffin tin using your thumbs, pushing up the sides to form a cup. Chill while you make the custard."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Whisk the egg yolks, flour, and 50ml of the milk in a bowl until smooth. Heat the remaining milk, cream, sugar, and vanilla in a saucepan until steaming. Pour over the egg mixture, whisking constantly."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Whisk the egg yolks, flour, and 50ml of the milk in a bowl until smooth. Heat the remaining milk, cream, sugar, and vanilla in a saucepan until steaming. Pour over the egg mixture, whisking constantly."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Return to the saucepan over medium heat, stirring constantly, until the custard thickens to the consistency of thick pouring cream. Remove from heat."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return to the saucepan over medium heat, stirring constantly, until the custard thickens to the consistency of thick pouring cream. Remove from heat."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour the custard into the pastry cases, filling to three-quarters. Bake for 15 to 18 minutes until the pastry is golden and the custard is blistered and dark in places. Cool slightly before dusting with cinnamon."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the custard into the pastry cases, filling to three-quarters. Bake for 15 to 18 minutes until the pastry is golden and the custard is blistered and dark in places. Cool slightly before dusting with cinnamon."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -115,12 +250,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Pastel de nata were created by monks in Belem, Lisbon, who used surplus egg yolks -- left over after using egg whites to starch clothing -- to make custard tarts. The recipe was sold to a nearby bakery in 1837 and became one of the most iconic pastries in the world. Portuguese custard tarts are now sold in cafes across Britain and are one of the most beloved imported baked goods in the country."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Pastel de nata were created by monks in Belem, Lisbon, who used surplus egg yolks -- left over after using egg whites to starch clothing -- to make custard tarts. The recipe was sold to a nearby bakery in 1837 and became one of the most iconic pastries in the world. Portuguese custard tarts are now sold in cafes across Britain and are one of the most beloved imported baked goods in the country."
+          }
+        ]
       }
     ]
   }

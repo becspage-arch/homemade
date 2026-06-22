@@ -23,53 +23,284 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": null,
-    "dietaryFlags": ["glutenFree"],
+    "dietaryFlags": [
+      "glutenFree"
+    ],
     "cuisine": "italian",
     "mealType": "main",
-    "mood": ["weeknight", "weekend"],
+    "mood": [
+      "weeknight",
+      "weekend"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "frying-pan-26", "isOptional": false},
-    {"slug": "sharp-knife", "isOptional": false},
-    {"slug": "chopping-board", "isOptional": false}
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
   ],
-  "glossaryTerms": ["escalope", "deglaze"],
-  "techniqueSlugs": ["pan-frying-chicken", "making-pan-sauce"],
-  "criticalTechniques": ["pan-frying-chicken"],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "pan-frying-chicken",
+    "making-pan-sauce"
+  ],
+  "criticalTechniques": [
+    "pan-frying-chicken"
+  ],
   "body": {
     "type": "doc",
     "content": [
-      {"type": "paragraph", "content": [{"type": "text", "text": "Bash the chicken flat before cooking -- an even thickness means it cooks through without drying out. The prosciutto should be pressed firmly against the chicken. Use a cocktail stick if needed."}]},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "What you need"}]},
-      {"type": "ingredientsList", "attrs": {"defaultServings": 4, "items": [
-        {"ingredientSlug": "chicken-breast", "amount": 4, "unit": "medium", "prepNote": "sliced in half horizontally to make 8 thin escalopes", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "streaky-bacon", "amount": 8, "unit": "thin slices", "prepNote": "use prosciutto -- thin slices", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "thyme-fresh", "amount": 8, "unit": "leaves", "prepNote": "use 8 fresh sage leaves", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "white-wine-dry", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "lemon", "amount": 1, "unit": null, "prepNote": "juice only", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "extra-virgin-olive-oil", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "salt-table", "amount": null, "unit": null, "prepNote": "season lightly -- prosciutto is salty", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": null}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Method"}]},
-      {"type": "orderedList", "content": [
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Place each chicken escalope between two sheets of cling film. Bash with a rolling pin to about 5mm thick. Season lightly."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Lay a sage leaf on each escalope. Press a slice of prosciutto over the top. Press firmly so the prosciutto adheres."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the butter and oil in a wide frying pan over medium-high heat. Place the escalopes prosciutto-side down. Cook for 3 minutes until the prosciutto is golden and crisp."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Flip the escalopes. Cook for 2 to 3 minutes until the chicken is cooked through. Remove and keep warm."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour the wine into the hot pan. Scrape up any browned bits. Let it bubble for 2 minutes until reduced by half. Add a squeeze of lemon and swirl in the remaining butter."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour the pan sauce over the chicken. Serve immediately with green vegetables or roasted potatoes."}]}]}
-      ]},
-      {"type": "troubleshooter", "attrs": {"items": [
-        {"symptom": "Prosciutto came off during cooking", "cause": "Not pressed on firmly enough", "fix": "Press the prosciutto firmly onto the chicken. If it keeps sliding, secure with a cocktail stick through the side."},
-        {"symptom": "Chicken is dry", "cause": "Overcooked -- thin escalopes cook very fast", "fix": "Cook for 2 to 3 minutes per side maximum. The prosciutto side should be golden; the plain side just turns white through."}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Where this dish lives"}]},
-      {"type": "paragraph", "content": [{"type": "text", "text": "Saltimbocca is Roman. The veal original is rarely seen outside Italy. Chicken works just as well and is far more accessible. It is a restaurant dish that is very easy to replicate at home."}]}
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bash the chicken flat before cooking -- an even thickness means it cooks through without drying out. The prosciutto should be pressed firmly against the chicken. Use a cocktail stick if needed."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-breast",
+              "amount": 4,
+              "unit": "medium",
+              "prepNote": "sliced in half horizontally to make 8 thin escalopes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "streaky-bacon",
+              "amount": 8,
+              "unit": "thin slices",
+              "prepNote": "use prosciutto -- thin slices",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme-fresh",
+              "amount": 8,
+              "unit": "leaves",
+              "prepNote": "use 8 fresh sage leaves",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "white-wine-dry",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "juice only",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "season lightly -- prosciutto is salty",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place each chicken escalope between two sheets of cling film. Bash with a rolling pin to about 5mm thick. Season lightly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lay a sage leaf on each escalope. Press a slice of prosciutto over the top. Press firmly so the prosciutto adheres."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the butter and oil in a wide frying pan over medium-high heat. Place the escalopes prosciutto-side down. Cook for 3 minutes until the prosciutto is golden and crisp."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Flip the escalopes. Cook for 2 to 3 minutes until the chicken is cooked through. Remove and keep warm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the wine into the hot pan. Scrape up any browned bits. Let it bubble for 2 minutes until reduced by half. Add a squeeze of lemon and swirl in the remaining butter."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the pan sauce over the chicken. Serve immediately with green vegetables or roasted potatoes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Prosciutto came off during cooking",
+              "cause": "Not pressed on firmly enough",
+              "fix": "Press the prosciutto firmly onto the chicken. If it keeps sliding, secure with a cocktail stick through the side."
+            },
+            {
+              "symptom": "Chicken is dry",
+              "cause": "Overcooked -- thin escalopes cook very fast",
+              "fix": "Cook for 2 to 3 minutes per side maximum. The prosciutto side should be golden; the plain side just turns white through."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Saltimbocca is Roman. The veal original is rarely seen outside Italy. Chicken works just as well and is far more accessible. It is a restaurant dish that is very easy to replicate at home."
+          }
+        ]
+      }
     ]
   }
 }

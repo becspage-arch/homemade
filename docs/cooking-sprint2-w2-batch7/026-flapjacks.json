@@ -23,17 +23,27 @@
     "batchable": true,
     "batchNotes": "Double the recipe and use a larger tin.",
     "makeAheadNotes": "Keeps in an airtight tin for up to a week.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weeknight"],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": 180,
     "temperatureNote": "Conventional oven",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "large-saucepan", "isOptional": false},
-    {"slug": "roasting-tin", "isOptional": false}
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,53 +53,157 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The single most important step is cutting the flapjacks while they are still slightly warm. If you wait until they are cold they will shatter rather than cut. Mark out the bars after 5 minutes out of the oven, then leave them to cool fully in the tin before lifting out."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The single most important step is cutting the flapjacks while they are still slightly warm. If you wait until they are cold they will shatter rather than cut. Mark out the bars after 5 minutes out of the oven, then leave them to cool fully in the tin before lifting out."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 300, "unit": "g", "prepNote": "use 300g rolled oats (porridge oats)"},
-            {"ingredientSlug": "unsalted-butter", "quantity": 200, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "golden-syrup", "quantity": 100, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "brown-sugar", "quantity": 100, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "salt-table", "quantity": 0.5, "unit": "tsp", "prepNote": null}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": "use 300g rolled oats (porridge oats)",
+              "amount": 300,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "golden-syrup",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 100,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 100,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 0.5,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 180C. Grease and line a 20cm square tin."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180C. Grease and line a 20cm square tin."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Melt the butter, golden syrup, and brown sugar together in a saucepan over low heat. Stir until the sugar dissolves."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt the butter, golden syrup, and brown sugar together in a saucepan over low heat. Stir until the sugar dissolves."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Remove from heat. Add the oats and salt. Stir until all the oats are coated in the butter mixture."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from heat. Add the oats and salt. Stir until all the oats are coated in the butter mixture."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Tip into the prepared tin. Press down firmly and evenly with the back of a spoon or your hand. The mixture must be compact."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tip into the prepared tin. Press down firmly and evenly with the back of a spoon or your hand. The mixture must be compact."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Bake for 20 to 25 minutes until golden at the edges but still a little pale in the centre. It will firm up as it cools. After 5 minutes out of the oven, mark into 16 bars with a sharp knife. Leave to cool completely before removing."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 20 to 25 minutes until golden at the edges but still a little pale in the centre. It will firm up as it cools. After 5 minutes out of the oven, mark into 16 bars with a sharp knife. Leave to cool completely before removing."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -112,12 +226,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Flapjacks are a British institution. They appear in every school bake sale, lunch box, and tea room in the country. The name is confusing internationally -- in Britain a flapjack is always an oat bar, never a pancake. They are cheap to make, keep well, and suit almost any addition: dried fruit, seeds, nuts, or chocolate chips."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Flapjacks are a British institution. They appear in every school bake sale, lunch box, and tea room in the country. The name is confusing internationally -- in Britain a flapjack is always an oat bar, never a pancake. They are cheap to make, keep well, and suit almost any addition: dried fruit, seeds, nuts, or chocolate chips."
+          }
+        ]
       }
     ]
   }

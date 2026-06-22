@@ -23,18 +23,32 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Bake the sponge a day ahead. Reheat portions in the sauce in a pan.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "dessert",
-    "mood": ["weekend", "comfortFood"],
+    "mood": [
+      "weekend",
+      "comfortFood"
+    ],
     "temperatureCelsius": 180,
     "temperatureNote": "Conventional oven",
     "foundational": true
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "large-saucepan", "isOptional": false},
-    {"slug": "roasting-tin", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -44,59 +58,205 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Soaking the dates in boiling water and bicarbonate of soda is not optional -- it softens them completely and breaks down the fibres so they blend into the batter invisibly. The finished sponge should have no detectable date pieces, just a deep, caramel-like richness."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Soaking the dates in boiling water and bicarbonate of soda is not optional -- it softens them completely and breaks down the fibres so they blend into the batter invisibly. The finished sponge should have no detectable date pieces, just a deep, caramel-like richness."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 175, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "baking-powder", "quantity": 1, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "bicarbonate-of-soda", "quantity": 1, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "black-treacle", "quantity": 200, "unit": "g", "prepNote": "use 200g dried dates, finely chopped and soaked in 200ml boiling water with the bicarbonate of soda"},
-            {"ingredientSlug": "caster-sugar", "quantity": 150, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "eggs", "quantity": 2, "unit": "large", "prepNote": null},
-            {"ingredientSlug": "unsalted-butter", "quantity": 75, "unit": "g", "prepNote": "softened"},
-            {"ingredientSlug": "black-treacle", "quantity": 2, "unit": "tbsp", "prepNote": "use 2 tbsp black treacle or dark muscovado sugar for the sponge -- optional, deepens colour"},
-            {"ingredientSlug": "double-cream", "quantity": 150, "unit": "ml", "prepNote": "for the toffee sauce"},
-            {"ingredientSlug": "brown-sugar", "quantity": 150, "unit": "g", "prepNote": "for the toffee sauce"},
-            {"ingredientSlug": "unsalted-butter", "quantity": 100, "unit": "g", "prepNote": "for the toffee sauce"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 175,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bicarbonate-of-soda",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-treacle",
+              "unit": "g",
+              "prepNote": "use 200g dried dates, finely chopped and soaked in 200ml boiling water with the bicarbonate of soda",
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": null,
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "softened",
+              "amount": 75,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-treacle",
+              "unit": "tbsp",
+              "prepNote": "use 2 tbsp black treacle or dark muscovado sugar for the sponge -- optional, deepens colour",
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "unit": "ml",
+              "prepNote": "for the toffee sauce",
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "unit": "g",
+              "prepNote": "for the toffee sauce",
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "for the toffee sauce",
+              "amount": 100,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour 200ml boiling water over the chopped dates and bicarb. Stir and leave for 10 minutes to soften. Mash or blend to a rough paste."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour 200ml boiling water over the chopped dates and bicarb. Stir and leave for 10 minutes to soften. Mash or blend to a rough paste."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 180C. Grease a 23cm square or round baking tin. Beat the butter and caster sugar together until pale. Beat in the eggs, one at a time."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180C. Grease a 23cm square or round baking tin. Beat the butter and caster sugar together until pale. Beat in the eggs, one at a time."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Fold in the flour and baking powder, then stir in the date paste. Pour into the prepared tin. Bake for 35 to 40 minutes until risen and a skewer comes out clean."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fold in the flour and baking powder, then stir in the date paste. Pour into the prepared tin. Bake for 35 to 40 minutes until risen and a skewer comes out clean."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "While the sponge bakes, make the sauce: melt the butter and brown sugar together in a saucepan. Add the cream and stir over medium heat for 3 to 4 minutes until thickened and glossy."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "While the sponge bakes, make the sauce: melt the butter and brown sugar together in a saucepan. Add the cream and stir over medium heat for 3 to 4 minutes until thickened and glossy."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour half the sauce over the hot sponge as soon as it comes out of the oven. Return to the oven for 5 minutes. Serve in portions with the remaining warm sauce poured over."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour half the sauce over the hot sponge as soon as it comes out of the oven. Return to the oven for 5 minutes. Serve in portions with the remaining warm sauce poured over."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -119,12 +279,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Sticky toffee pudding is one of Britain's great puddings. It became famous through the restaurant menus of the 1980s and 90s and has never left. It is the pudding most frequently cited as a national favourite. It is winter food -- warming, rich, and unashamedly indulgent."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Sticky toffee pudding is one of Britain's great puddings. It became famous through the restaurant menus of the 1980s and 90s and has never left. It is the pudding most frequently cited as a national favourite. It is winter food -- warming, rich, and unashamedly indulgent."
+          }
+        ]
       }
     ]
   }

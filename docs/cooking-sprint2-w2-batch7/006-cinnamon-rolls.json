@@ -23,18 +23,32 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "After shaping, cover and refrigerate overnight. Prove at room temperature for 1 hour before baking.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "american",
     "mealType": "snack",
-    "mood": ["weekend", "comfortFood"],
+    "mood": [
+      "weekend",
+      "comfortFood"
+    ],
     "temperatureCelsius": 190,
     "temperatureNote": "Conventional oven",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "roasting-tin", "isOptional": false},
-    {"slug": "sharp-knife", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -44,60 +58,213 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Roll the dough out thin and spread the filling right to the edges -- this is how you get a proper swirl in every bite. Use a sharp knife or unflavoured dental floss to cut the rolls cleanly without squashing them."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Roll the dough out thin and spread the filling right to the edges -- this is how you get a proper swirl in every bite. Use a sharp knife or unflavoured dental floss to cut the rolls cleanly without squashing them."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 500, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "baking-powder", "quantity": 7, "unit": "g", "prepNote": "use 7g fast-action dried yeast"},
-            {"ingredientSlug": "whole-milk", "quantity": 240, "unit": "ml", "prepNote": "warm"},
-            {"ingredientSlug": "unsalted-butter", "quantity": 80, "unit": "g", "prepNote": "melted, for the dough"},
-            {"ingredientSlug": "caster-sugar", "quantity": 50, "unit": "g", "prepNote": "for the dough"},
-            {"ingredientSlug": "eggs", "quantity": 2, "unit": "large", "prepNote": null},
-            {"ingredientSlug": "salt-table", "quantity": 1, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "unsalted-butter", "quantity": 60, "unit": "g", "prepNote": "softened, for the filling"},
-            {"ingredientSlug": "brown-sugar", "quantity": 120, "unit": "g", "prepNote": "for the filling"},
-            {"ingredientSlug": "cinnamon-ground", "quantity": 2, "unit": "tsp", "prepNote": "for the filling"},
-            {"ingredientSlug": "soured-cream", "quantity": 200, "unit": "g", "prepNote": "use 200g full-fat cream cheese for the glaze"},
-            {"ingredientSlug": "caster-sugar", "quantity": 100, "unit": "g", "prepNote": "use 100g icing sugar for the glaze"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 500,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "unit": "g",
+              "prepNote": "use 7g fast-action dried yeast",
+              "amount": 7,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "ml",
+              "prepNote": "warm",
+              "amount": 240,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "melted, for the dough",
+              "amount": 80,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": "for the dough",
+              "amount": 50,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": null,
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "softened, for the filling",
+              "amount": 60,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "unit": "g",
+              "prepNote": "for the filling",
+              "amount": 120,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "unit": "tsp",
+              "prepNote": "for the filling",
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soured-cream",
+              "unit": "g",
+              "prepNote": "use 200g full-fat cream cheese for the glaze",
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": "use 100g icing sugar for the glaze",
+              "amount": 100,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Dissolve the yeast in the warm milk with a pinch of sugar. Leave 5 minutes. Add the melted butter, eggs, and remaining sugar. Mix in the flour and salt to form a soft dough."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dissolve the yeast in the warm milk with a pinch of sugar. Leave 5 minutes. Add the melted butter, eggs, and remaining sugar. Mix in the flour and salt to form a soft dough."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Knead for 8 minutes until smooth. Place in a greased bowl, cover, and prove for 1 hour until doubled."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Knead for 8 minutes until smooth. Place in a greased bowl, cover, and prove for 1 hour until doubled."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Roll the dough into a rectangle roughly 40 x 30cm. Spread the softened butter over the surface. Mix the brown sugar and cinnamon and scatter evenly over the butter."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Roll the dough into a rectangle roughly 40 x 30cm. Spread the softened butter over the surface. Mix the brown sugar and cinnamon and scatter evenly over the butter."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Roll up tightly from the long edge. Cut into 12 equal rounds. Arrange cut-side up in a greased deep baking tin. Cover and prove for 30 to 45 minutes until puffed."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Roll up tightly from the long edge. Cut into 12 equal rounds. Arrange cut-side up in a greased deep baking tin. Cover and prove for 30 to 45 minutes until puffed."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Bake at 190C for 22 to 25 minutes until golden. Beat the cream cheese with the icing sugar until smooth. Spread over the hot rolls."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake at 190C for 22 to 25 minutes until golden. Beat the cream cheese with the icing sugar until smooth. Spread over the hot rolls."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -120,12 +287,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The cinnamon roll has Swedish roots. The kanelbulle is eaten across Scandinavia and has its own dedicated day each October. American settlers brought their version, making it larger and richer. Today it is a Saturday morning staple across North America and a fixture in British cafes."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The cinnamon roll has Swedish roots. The kanelbulle is eaten across Scandinavia and has its own dedicated day each October. American settlers brought their version, making it larger and richer. Today it is a Saturday morning staple across North America and a fixture in British cafes."
+          }
+        ]
       }
     ]
   }

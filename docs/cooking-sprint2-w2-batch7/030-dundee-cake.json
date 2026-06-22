@@ -23,18 +23,31 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Keeps for 2 to 3 weeks in an airtight tin. The flavour improves after a few days.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 150,
     "temperatureNote": "Conventional oven -- low temperature for slow, even baking",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "whisk", "isOptional": false },
-    {"slug": "roasting-tin", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -44,62 +57,229 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Press the blanched almond halves into the surface in neat concentric rings before the cake goes in the oven. They will toast gently to a golden colour as the cake bakes. Line the tin with a double layer of baking paper, and tie a double layer of newspaper around the outside -- this prevents the edges from over-baking during the long cook."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Press the blanched almond halves into the surface in neat concentric rings before the cake goes in the oven. They will toast gently to a golden colour as the cake bakes. Line the tin with a double layer of baking paper, and tie a double layer of newspaper around the outside -- this prevents the edges from over-baking during the long cook."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 225, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "baking-powder", "quantity": 0.5, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "unsalted-butter", "quantity": 175, "unit": "g", "prepNote": "softened"},
-            {"ingredientSlug": "brown-sugar", "quantity": 175, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "eggs", "quantity": 4, "unit": "large", "prepNote": null},
-            {"ingredientSlug": "currants", "quantity": 200, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "currants", "quantity": 150, "unit": "g", "prepNote": "use 150g sultanas"},
-            {"ingredientSlug": "orange", "quantity": 1, "unit": null, "prepNote": "zest only"},
-            {"ingredientSlug": "lemon", "quantity": 1, "unit": null, "prepNote": "zest only"},
-            {"ingredientSlug": "cinnamon-ground", "quantity": 1, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "nutmeg", "quantity": 0.5, "unit": "tsp", "prepNote": "freshly grated"},
-            {"ingredientSlug": "mace-ground", "quantity": 0.25, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "whole-milk", "quantity": 2, "unit": "tbsp", "prepNote": null},
-            {"ingredientSlug": "currants", "quantity": 50, "unit": "g", "prepNote": "use 50g blanched almonds, halved, to decorate the top"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 225,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 0.5,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "softened",
+              "amount": 175,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 175,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": null,
+              "amount": 4,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "currants",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "currants",
+              "unit": "g",
+              "prepNote": "use 150g sultanas",
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "orange",
+              "unit": null,
+              "prepNote": "zest only",
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "unit": null,
+              "prepNote": "zest only",
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "nutmeg",
+              "unit": "tsp",
+              "prepNote": "freshly grated",
+              "amount": 0.5,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mace-ground",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 0.25,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "tbsp",
+              "prepNote": null,
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "currants",
+              "unit": "g",
+              "prepNote": "use 50g blanched almonds, halved, to decorate the top",
+              "amount": 50,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 150C. Grease and double-line a deep 20cm round tin with baking paper."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 150C. Grease and double-line a deep 20cm round tin with baking paper."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Beat the butter and brown sugar together for 4 minutes until pale. Beat in the eggs, one at a time."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Beat the butter and brown sugar together for 4 minutes until pale. Beat in the eggs, one at a time."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Fold in the flour, baking powder, spices, orange and lemon zest, and milk. Stir in the currants and sultanas."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fold in the flour, baking powder, spices, orange and lemon zest, and milk. Stir in the currants and sultanas."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Spoon into the tin and level the top. Arrange the blanched almond halves over the surface in concentric circles."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon into the tin and level the top. Arrange the blanched almond halves over the surface in concentric circles."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Bake for 1 hour 45 minutes to 2 hours until a skewer inserted in the centre comes out clean. If the top is browning too quickly, cover with foil. Cool in the tin completely before removing."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 1 hour 45 minutes to 2 hours until a skewer inserted in the centre comes out clean. If the top is browning too quickly, cover with foil. Cool in the tin completely before removing."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -122,12 +302,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Dundee cake is one of Scotland's most distinctive contributions to British baking. It sits between an everyday fruit cake and a ceremonial Christmas cake in richness. It is cut in thick slices and eaten with butter or strong tea. The almond-decorated top is its most recognisable feature -- it appears on no other British cake in quite the same way."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Dundee cake is one of Scotland's most distinctive contributions to British baking. It sits between an everyday fruit cake and a ceremonial Christmas cake in richness. It is cut in thick slices and eaten with butter or strong tea. The almond-decorated top is its most recognisable feature -- it appears on no other British cake in quite the same way."
+          }
+        ]
       }
     ]
   }

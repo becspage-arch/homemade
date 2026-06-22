@@ -23,17 +23,27 @@
     "batchable": true,
     "batchNotes": "Double easily. The dough keeps in the fridge for 3 days.",
     "makeAheadNotes": "Make the dough, wrap, and refrigerate. Slice and bake within 3 days.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 160,
     "temperatureNote": "Conventional oven -- low heat for pale, sandy shortbread",
     "foundational": true
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "baking-sheet", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,52 +53,149 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The dough should come together without needing much kneading. If it is too crumbly to hold, press it together in your hands. Do not add liquid. The more you work shortbread dough, the less short it becomes. Stop as soon as it coheres."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The dough should come together without needing much kneading. If it is too crumbly to hold, press it together in your hands. Do not add liquid. The more you work shortbread dough, the less short it becomes. Stop as soon as it coheres."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 250, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "unsalted-butter", "quantity": 175, "unit": "g", "prepNote": "softened"},
-            {"ingredientSlug": "caster-sugar", "quantity": 75, "unit": "g", "prepNote": "plus extra to dust"},
-            {"ingredientSlug": "salt-table", "quantity": 1, "unit": "pinch", "prepNote": null}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 250,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "softened",
+              "amount": 175,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": "plus extra to dust",
+              "amount": 75,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "unit": "pinch",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Beat the softened butter and caster sugar together until just combined -- not fluffy, just mixed. Add the flour and salt. Bring together into a dough with your hands. Do not over-mix."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Beat the softened butter and caster sugar together until just combined -- not fluffy, just mixed. Add the flour and salt. Bring together into a dough with your hands. Do not over-mix."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Press the dough into a log about 5cm in diameter. Wrap in cling film and refrigerate for 30 minutes. Alternatively, press into a lined tin for slab shortbread."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Press the dough into a log about 5cm in diameter. Wrap in cling film and refrigerate for 30 minutes. Alternatively, press into a lined tin for slab shortbread."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 160C. Slice the log into rounds about 8mm thick. Place on lined baking sheets with a little space between each."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 160C. Slice the log into rounds about 8mm thick. Place on lined baking sheets with a little space between each."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Bake for 18 to 20 minutes until pale golden at the edges. They should not colour much -- pale is the goal for the authentic sandy texture. Dust with caster sugar while still warm."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 18 to 20 minutes until pale golden at the edges. They should not colour much -- pale is the goal for the authentic sandy texture. Dust with caster sugar while still warm."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Leave on the tray to cool completely -- they are very fragile when warm and will firm up as they cool."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Leave on the tray to cool completely -- they are very fragile when warm and will firm up as they cool."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -111,12 +218,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Shortbread is Scottish and has been made there since at least the 12th century. It was originally a refined form of medieval biscuit bread. In Scotland it is associated with Christmas and Hogmanay, given as gifts in decorative tins and eaten throughout the winter. It is now made and sold across Britain and recognised worldwide as one of Scotland's great food exports."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Shortbread is Scottish and has been made there since at least the 12th century. It was originally a refined form of medieval biscuit bread. In Scotland it is associated with Christmas and Hogmanay, given as gifts in decorative tins and eaten throughout the winter. It is now made and sold across Britain and recognised worldwide as one of Scotland's great food exports."
+          }
+        ]
       }
     ]
   }

@@ -23,17 +23,27 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Bake, cool, and refrigerate. Serve at room temperature or warmed at 150C for 15 minutes.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "french",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 180,
     "temperatureNote": "Conventional oven",
     "foundational": true
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "whisk", "isOptional": false }
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,54 +53,165 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The custard should be poured in with the tart case already in the oven on the pulled-out shelf -- this avoids carrying a full tin across the kitchen. Pour slowly and fill to just below the pastry rim. The filling needs a low oven and patience; a wobbly centre when you take it out is correct."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The custard should be poured in with the tart case already in the oven on the pulled-out shelf -- this avoids carrying a full tin across the kitchen. Pour slowly and fill to just below the pastry rim. The filling needs a low oven and patience; a wobbly centre when you take it out is correct."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 200, "unit": "g", "prepNote": "for the pastry"},
-            {"ingredientSlug": "unsalted-butter", "quantity": 100, "unit": "g", "prepNote": "cold, cubed"},
-            {"ingredientSlug": "eggs", "quantity": 4, "unit": "large", "prepNote": "1 yolk for pastry, 3 whole for filling"},
-            {"ingredientSlug": "double-cream", "quantity": 300, "unit": "ml", "prepNote": null},
-            {"ingredientSlug": "whole-milk", "quantity": 100, "unit": "ml", "prepNote": null},
-            {"ingredientSlug": "nutmeg", "quantity": 1, "unit": "pinch", "prepNote": "freshly grated"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": "for the pastry",
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "cold, cubed",
+              "amount": 100,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": "1 yolk for pastry, 3 whole for filling",
+              "amount": 4,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "unit": "ml",
+              "prepNote": null,
+              "amount": 300,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "ml",
+              "prepNote": null,
+              "amount": 100,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "nutmeg",
+              "unit": "pinch",
+              "prepNote": "freshly grated",
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Make the pastry: rub butter into flour to fine crumbs. Add the egg yolk and 2 tbsp cold water. Bring together and chill 30 minutes."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the pastry: rub butter into flour to fine crumbs. Add the egg yolk and 2 tbsp cold water. Bring together and chill 30 minutes."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Roll and line a 23cm tart tin. Blind bake at 200C for 15 minutes with beans, then 5 minutes without. Reduce oven to 180C."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Roll and line a 23cm tart tin. Blind bake at 200C for 15 minutes with beans, then 5 minutes without. Reduce oven to 180C."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Fry about 200g streaky bacon lardons in a dry pan until golden. Drain and scatter over the pastry base. Add grated gruyere if using."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fry about 200g streaky bacon lardons in a dry pan until golden. Drain and scatter over the pastry base. Add grated gruyere if using."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Whisk the 3 eggs with the cream, milk, a good pinch of salt, and the nutmeg."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Whisk the 3 eggs with the cream, milk, a good pinch of salt, and the nutmeg."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Place the tart tin on the oven shelf and pour in the custard. Bake for 30 to 35 minutes until just set with a very slight wobble in the centre. Cool for 20 minutes before slicing."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the tart tin on the oven shelf and pour in the custard. Bake for 30 to 35 minutes until just set with a very slight wobble in the centre. Cool for 20 minutes before slicing."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -113,12 +234,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Quiche Lorraine comes from the region of Lorraine in north-eastern France, which was under German influence for long periods and whose food reflects both cultures. The dish was introduced to British cooking in the 1970s and became a staple of dinner party menus. It is now eaten across Britain as everyday food -- served warm, at room temperature, or cold from the fridge."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Quiche Lorraine comes from the region of Lorraine in north-eastern France, which was under German influence for long periods and whose food reflects both cultures. The dish was introduced to British cooking in the 1970s and became a staple of dinner party menus. It is now eaten across Britain as everyday food -- served warm, at room temperature, or cold from the fridge."
+          }
+        ]
       }
     ]
   }

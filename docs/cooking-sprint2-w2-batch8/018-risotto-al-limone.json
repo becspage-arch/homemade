@@ -23,54 +23,286 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": null,
-    "dietaryFlags": ["vegetarian", "glutenFree"],
+    "dietaryFlags": [
+      "vegetarian",
+      "glutenFree"
+    ],
     "cuisine": "italian",
     "mealType": "main",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "large-saucepan", "isOptional": false},
-    {"slug": "ladle", "isOptional": false},
-    {"slug": "wooden-spoon", "isOptional": false}
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "ladle",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    }
   ],
-  "glossaryTerms": ["mantecatura", "zest"],
-  "techniqueSlugs": ["making-risotto", "mantecatura"],
-  "criticalTechniques": ["making-risotto"],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "making-risotto",
+    "mantecatura"
+  ],
+  "criticalTechniques": [
+    "making-risotto"
+  ],
   "body": {
     "type": "doc",
     "content": [
-      {"type": "paragraph", "content": [{"type": "text", "text": "Use unwaxed lemons here. Zest goes in early for background flavour. Juice goes in at the very end, off the heat, to keep the brightness. Too much heat and lemon juice turns bitter."}]},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "What you need"}]},
-      {"type": "ingredientsList", "attrs": {"defaultServings": 4, "items": [
-        {"ingredientSlug": "arborio-rice", "amount": 320, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "stock-vegetable", "amount": 1.2, "unit": "litres", "prepNote": "kept hot", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "lemon", "amount": 2, "unit": "unwaxed", "prepNote": "zest of both, juice of 1", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "onion", "amount": 1, "unit": "medium", "prepNote": "finely diced", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "white-wine-dry", "amount": 100, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "cubed and cold", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "parmesan", "amount": 60, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "basil", "amount": null, "unit": "small bunch", "prepNote": "leaves torn, added off the heat", "isOptional": true, "groupLabel": null},
-        {"ingredientSlug": "extra-virgin-olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "salt-table", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": null}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Method"}]},
-      {"type": "orderedList", "content": [
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the olive oil and half the butter in a wide heavy pan over medium-low heat. Add the onion and lemon zest. Cook gently for 8 minutes until the onion is very soft."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the rice. Stir and toast for 2 minutes. Pour in the wine and stir until absorbed."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the hot stock a ladle at a time, stirring after each addition. Continue for 18 to 20 minutes until the rice is just cooked with a slight bite."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Remove from the heat. Add the remaining cold butter and the Parmesan. Beat vigorously for 2 minutes. Add the lemon juice and stir."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the torn basil and a crack of black pepper. Rest for 2 minutes. The risotto should be loose and flowing. Serve in warm bowls."}]}]}
-      ]},
-      {"type": "troubleshooter", "attrs": {"items": [
-        {"symptom": "Lemon flavour is bitter", "cause": "Lemon juice added over heat", "fix": "Add lemon juice only after taking the pan off the heat. Cooking acidifies the juice and can make it taste harsh."},
-        {"symptom": "Risotto is too thick", "cause": "Rested too long before serving", "fix": "Add a small splash of hot stock or water and stir. Risotto continues to thicken as it sits."}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Where this dish lives"}]},
-      {"type": "paragraph", "content": [{"type": "text", "text": "Lemon risotto is from Liguria and the Amalfi coast. The lemons from Amalfi are famous for their size and fragrance. This is a spring and summer dish. It pairs well with grilled fish or eaten alone."}]}
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use unwaxed lemons here. Zest goes in early for background flavour. Juice goes in at the very end, off the heat, to keep the brightness. Too much heat and lemon juice turns bitter."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "arborio-rice",
+              "amount": 320,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-vegetable",
+              "amount": 1.2,
+              "unit": "litres",
+              "prepNote": "kept hot",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 2,
+              "unit": "unwaxed",
+              "prepNote": "zest of both, juice of 1",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "medium",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "white-wine-dry",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "cubed and cold",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "basil",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "leaves torn, added off the heat",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the olive oil and half the butter in a wide heavy pan over medium-low heat. Add the onion and lemon zest. Cook gently for 8 minutes until the onion is very soft."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the rice. Stir and toast for 2 minutes. Pour in the wine and stir until absorbed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the hot stock a ladle at a time, stirring after each addition. Continue for 18 to 20 minutes until the rice is just cooked with a slight bite."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the heat. Add the remaining cold butter and the Parmesan. Beat vigorously for 2 minutes. Add the lemon juice and stir."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the torn basil and a crack of black pepper. Rest for 2 minutes. The risotto should be loose and flowing. Serve in warm bowls."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Lemon flavour is bitter",
+              "cause": "Lemon juice added over heat",
+              "fix": "Add lemon juice only after taking the pan off the heat. Cooking acidifies the juice and can make it taste harsh."
+            },
+            {
+              "symptom": "Risotto is too thick",
+              "cause": "Rested too long before serving",
+              "fix": "Add a small splash of hot stock or water and stir. Risotto continues to thicken as it sits."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lemon risotto is from Liguria and the Amalfi coast. The lemons from Amalfi are famous for their size and fragrance. This is a spring and summer dish. It pairs well with grilled fish or eaten alone."
+          }
+        ]
+      }
     ]
   }
 }

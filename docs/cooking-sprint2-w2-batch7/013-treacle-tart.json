@@ -23,17 +23,28 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Make the pastry case a day ahead. Fill and bake on the day.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "dessert",
-    "mood": ["weekend", "comfortFood"],
+    "mood": [
+      "weekend",
+      "comfortFood"
+    ],
     "temperatureCelsius": 180,
     "temperatureNote": "Conventional oven",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "roasting-tin", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,53 +54,157 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Warm the golden syrup briefly before mixing in the breadcrumbs -- it becomes much easier to pour and stir. The lemon juice is not optional; without it the sweetness becomes one-dimensional. Use fresh white breadcrumbs, not dried, for the best texture."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Warm the golden syrup briefly before mixing in the breadcrumbs -- it becomes much easier to pour and stir. The lemon juice is not optional; without it the sweetness becomes one-dimensional. Use fresh white breadcrumbs, not dried, for the best texture."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 200, "unit": "g", "prepNote": "for the pastry"},
-            {"ingredientSlug": "unsalted-butter", "quantity": 100, "unit": "g", "prepNote": "cold, cubed"},
-            {"ingredientSlug": "golden-syrup", "quantity": 400, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "breadcrumbs-dried", "quantity": 150, "unit": "g", "prepNote": "fresh white breadcrumbs are better if available"},
-            {"ingredientSlug": "lemon", "quantity": 1, "unit": null, "prepNote": "juice and finely grated zest"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": "for the pastry",
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "cold, cubed",
+              "amount": 100,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "golden-syrup",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 400,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "breadcrumbs-dried",
+              "unit": "g",
+              "prepNote": "fresh white breadcrumbs are better if available",
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "unit": null,
+              "prepNote": "juice and finely grated zest",
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Rub the butter into the flour until it resembles fine breadcrumbs. Add 2 to 3 tablespoons of cold water and bring together into a disc. Chill for 30 minutes."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rub the butter into the flour until it resembles fine breadcrumbs. Add 2 to 3 tablespoons of cold water and bring together into a disc. Chill for 30 minutes."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 200C. Roll the pastry to 3mm and line a 23cm loose-bottomed tart tin. Trim the edges, prick the base, and blind bake for 12 minutes. Remove the baking beans and bake for 5 more minutes. Reduce the oven to 180C."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200C. Roll the pastry to 3mm and line a 23cm loose-bottomed tart tin. Trim the edges, prick the base, and blind bake for 12 minutes. Remove the baking beans and bake for 5 more minutes. Reduce the oven to 180C."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Warm the golden syrup in a saucepan over low heat until runny. Remove from heat. Stir in the breadcrumbs, lemon zest, and lemon juice. Mix well."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Warm the golden syrup in a saucepan over low heat until runny. Remove from heat. Stir in the breadcrumbs, lemon zest, and lemon juice. Mix well."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour the filling into the pastry case. Bake at 180C for 25 to 30 minutes until the filling is just set and lightly coloured. It will firm up as it cools."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the filling into the pastry case. Bake at 180C for 25 to 30 minutes until the filling is just set and lightly coloured. It will firm up as it cools."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Leave to cool in the tin for at least 20 minutes before removing. Serve warm or at room temperature."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Leave to cool in the tin for at least 20 minutes before removing. Serve warm or at room temperature."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -112,12 +227,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Treacle tart is a school dinner and Sunday lunch pudding with deep roots in British food culture. Golden syrup was introduced to British kitchens in the 1880s and quickly became a staple in baking. The tart appears at every level of British cooking -- from school canteens to restaurant dessert menus. It is unpretentious and very, very good."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Treacle tart is a school dinner and Sunday lunch pudding with deep roots in British food culture. Golden syrup was introduced to British kitchens in the 1880s and quickly became a staple in baking. The tart appears at every level of British cooking -- from school canteens to restaurant dessert menus. It is unpretentious and very, very good."
+          }
+        ]
       }
     ]
   }

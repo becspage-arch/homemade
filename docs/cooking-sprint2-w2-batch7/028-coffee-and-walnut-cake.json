@@ -23,17 +23,27 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Bake layers the day before. Make buttercream and assemble on the day.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 180,
     "temperatureNote": "Conventional oven",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "whisk", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,58 +53,197 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Dissolve the instant coffee in the minimum amount of hot water -- this concentrates the flavour. A tablespoon of water is enough. Add it to both the cake batter and the buttercream. The walnut pieces can go into the batter as well as on top if you want a stronger nutty flavour throughout."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Dissolve the instant coffee in the minimum amount of hot water -- this concentrates the flavour. A tablespoon of water is enough. Add it to both the cake batter and the buttercream. The walnut pieces can go into the batter as well as on top if you want a stronger nutty flavour throughout."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 200, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "baking-powder", "quantity": 2, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "caster-sugar", "quantity": 200, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "unsalted-butter", "quantity": 200, "unit": "g", "prepNote": "softened"},
-            {"ingredientSlug": "eggs", "quantity": 4, "unit": "large", "prepNote": null},
-            {"ingredientSlug": "whole-milk", "quantity": 2, "unit": "tbsp", "prepNote": null},
-            {"ingredientSlug": "currants", "quantity": 75, "unit": "g", "prepNote": "use 75g walnuts, roughly chopped -- plus extra halves for decoration"},
-            {"ingredientSlug": "vanilla-extract", "quantity": 2, "unit": "tsp", "prepNote": "use 2 tsp instant coffee dissolved in 1 tbsp hot water -- for both batter and buttercream"},
-            {"ingredientSlug": "soured-cream", "quantity": 200, "unit": "g", "prepNote": "use 200g unsalted butter, softened -- for the coffee buttercream"},
-            {"ingredientSlug": "caster-sugar", "quantity": 200, "unit": "g", "prepNote": "use 200g icing sugar for the buttercream"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "softened",
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": null,
+              "amount": 4,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "tbsp",
+              "prepNote": null,
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "currants",
+              "unit": "g",
+              "prepNote": "use 75g walnuts, roughly chopped -- plus extra halves for decoration",
+              "amount": 75,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vanilla-extract",
+              "unit": "tsp",
+              "prepNote": "use 2 tsp instant coffee dissolved in 1 tbsp hot water -- for both batter and buttercream",
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soured-cream",
+              "unit": "g",
+              "prepNote": "use 200g unsalted butter, softened -- for the coffee buttercream",
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": "use 200g icing sugar for the buttercream",
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Dissolve 2 tsp instant coffee in 1 tbsp hot water. Set aside to cool."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dissolve 2 tsp instant coffee in 1 tbsp hot water. Set aside to cool."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 180C. Grease and line two 20cm round tins. Beat the butter, caster sugar, eggs, flour, baking powder, milk, and half the coffee mixture together until smooth. Fold in the chopped walnuts."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180C. Grease and line two 20cm round tins. Beat the butter, caster sugar, eggs, flour, baking powder, milk, and half the coffee mixture together until smooth. Fold in the chopped walnuts."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Divide between the tins. Bake for 22 to 25 minutes until risen and springing back. Cool in tins for 5 minutes, then turn out."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide between the tins. Bake for 22 to 25 minutes until risen and springing back. Cool in tins for 5 minutes, then turn out."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Make the buttercream: beat the softened butter until pale. Sift in the icing sugar. Add the remaining coffee mixture and beat until smooth."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the buttercream: beat the softened butter until pale. Sift in the icing sugar. Add the remaining coffee mixture and beat until smooth."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Sandwich the cooled layers with half the buttercream. Spread the rest over the top. Decorate with walnut halves."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sandwich the cooled layers with half the buttercream. Spread the rest over the top. Decorate with walnut halves."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -117,12 +266,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Coffee and walnut cake is the quintessential British tea room cake. It appears under glass domes on cafe counters from Edinburgh to Cornwall. The combination of mild coffee, buttery sponge, and earthy walnut is one of the great flavour pairings in British baking. It is reliable, crowd-pleasing, and never goes out of fashion."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Coffee and walnut cake is the quintessential British tea room cake. It appears under glass domes on cafe counters from Edinburgh to Cornwall. The combination of mild coffee, buttery sponge, and earthy walnut is one of the great flavour pairings in British baking. It is reliable, crowd-pleasing, and never goes out of fashion."
+          }
+        ]
       }
     ]
   }

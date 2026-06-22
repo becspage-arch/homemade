@@ -23,17 +23,27 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Cold-prove overnight in the fridge for up to 16 hours. Bake straight from cold.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 240,
     "temperatureNote": "Conventional oven, very hot. Use a heavy lidded pot such as a cast iron casserole.",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "large-saucepan", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,55 +53,155 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "This recipe requires an active sourdough starter -- feed it 8 to 12 hours before baking so it is at peak activity. You will know it is ready when it is doubled in size and full of bubbles. The long cold prove develops flavour and makes the loaf easier to score."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "This recipe requires an active sourdough starter -- feed it 8 to 12 hours before baking so it is at peak activity. You will know it is ready when it is doubled in size and full of bubbles. The long cold prove develops flavour and makes the loaf easier to score."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 400, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "whole-milk", "quantity": 300, "unit": "ml", "prepNote": "use 300ml warm water -- plus 50ml extra if dough feels stiff"},
-            {"ingredientSlug": "salt-table", "quantity": 10, "unit": "g", "prepNote": null}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 400,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "ml",
+              "prepNote": "use 300ml warm water -- plus 50ml extra if dough feels stiff",
+              "amount": 300,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 10,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "In a large bowl combine 100g of your active starter with 300ml warm water. Stir to dissolve. Add the flour and mix until no dry flour remains. Cover and leave for 30 minutes (autolyse)."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In a large bowl combine 100g of your active starter with 300ml warm water. Stir to dissolve. Add the flour and mix until no dry flour remains. Cover and leave for 30 minutes (autolyse)."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Sprinkle over the salt. Squeeze it through the dough with wet hands until fully incorporated. Perform 4 sets of stretch and folds over the next 2 hours, spaced 30 minutes apart."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sprinkle over the salt. Squeeze it through the dough with wet hands until fully incorporated. Perform 4 sets of stretch and folds over the next 2 hours, spaced 30 minutes apart."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Leave the dough to bulk ferment at room temperature for 4 to 6 more hours until it has grown by 50 to 75 percent and feels airy."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Leave the dough to bulk ferment at room temperature for 4 to 6 more hours until it has grown by 50 to 75 percent and feels airy."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Turn out, pre-shape into a round, rest 20 minutes, then do a final shape. Place seam-side up in a floured proving basket (banneton) or a bowl lined with a floured cloth."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Turn out, pre-shape into a round, rest 20 minutes, then do a final shape. Place seam-side up in a floured proving basket (banneton) or a bowl lined with a floured cloth."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Cover and refrigerate overnight or for up to 16 hours. Heat the oven to 240C with a heavy lidded pot inside."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover and refrigerate overnight or for up to 16 hours. Heat the oven to 240C with a heavy lidded pot inside."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Turn the cold dough onto baking paper. Score the top with a sharp blade. Lower into the hot pot, put the lid on, and bake for 20 minutes. Remove the lid and bake for a further 25 minutes until deep brown. Cool fully before cutting."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Turn the cold dough onto baking paper. Score the top with a sharp blade. Lower into the hot pot, put the lid on, and bake for 20 minutes. Remove the lid and bake for a further 25 minutes until deep brown. Cool fully before cutting."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -114,12 +224,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Sourdough is older than commercial yeast by thousands of years. Every culture with a grain tradition has some version of it. The modern British sourdough revival drew on San Francisco baking culture, French pain de campagne, and German sauerteig. The result is a loaf that has become a weekend ritual for home bakers across the country."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Sourdough is older than commercial yeast by thousands of years. Every culture with a grain tradition has some version of it. The modern British sourdough revival drew on San Francisco baking culture, French pain de campagne, and German sauerteig. The result is a loaf that has become a weekend ritual for home bakers across the country."
+          }
+        ]
       }
     ]
   }

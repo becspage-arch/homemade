@@ -23,52 +23,276 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Marinate the chicken overnight in the fridge for best results.",
-    "dietaryFlags": ["glutenFree", "dairyFree"],
+    "dietaryFlags": [
+      "glutenFree",
+      "dairyFree"
+    ],
     "cuisine": "italian",
     "mealType": "main",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "Grill on high, or oven at 200C Fan 180C / Gas 6 if finishing indoors",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "roasting-tin", "isOptional": false},
-    {"slug": "sharp-knife", "isOptional": false},
-    {"slug": "chopping-board", "isOptional": false}
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
   ],
-  "glossaryTerms": ["spatchcock", "marinate"],
-  "techniqueSlugs": ["spatchcocking", "grilling-chicken"],
-  "criticalTechniques": ["spatchcocking"],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "spatchcocking",
+    "grilling-chicken"
+  ],
+  "criticalTechniques": [
+    "spatchcocking"
+  ],
   "body": {
     "type": "doc",
     "content": [
-      {"type": "paragraph", "content": [{"type": "text", "text": "Spatchcocking the chicken (removing the backbone and pressing it flat) is the key step. It halves the cooking time and means the skin all crisps at once. A butcher will do this for you if you ask."}]},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "What you need"}]},
-      {"type": "ingredientsList", "attrs": {"defaultServings": 4, "items": [
-        {"ingredientSlug": "chicken-thigh", "amount": 1, "unit": "whole chicken, about 1.5kg", "prepNote": "use a whole chicken -- spatchcocked (backbone removed, bird pressed flat) -- or use 8 bone-in thighs", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "chilli-flakes", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "crushed to a paste", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "lemon", "amount": 1, "unit": null, "prepNote": "zest and juice", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "extra-virgin-olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "rosemary", "amount": 2, "unit": "sprigs", "prepNote": "leaves stripped and finely chopped", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "salt-flakes", "amount": null, "unit": null, "prepNote": "a generous amount", "isOptional": false, "groupLabel": null},
-        {"ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": null}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Method"}]},
-      {"type": "orderedList", "content": [
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Mix the chilli, garlic, lemon zest and juice, rosemary and olive oil. Season well with salt and pepper."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Rub the marinade all over the chicken, getting under the skin where you can. Put in a dish, cover and refrigerate for at least 4 hours, ideally overnight."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Remove from the fridge 1 hour before cooking. Bring to room temperature."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat a grill to high. Cook the chicken skin-side up for 20 minutes. Flip and cook skin-side down for another 15 minutes. If using an oven, roast at 200C for 40 minutes skin-side up, then grill on high for 5 minutes to char."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "The chicken is done when the juices run clear from the thigh. Rest for 10 minutes before carving."}]}]},
-        {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Serve with a simple green salad and grilled bread to mop up the juices."}]}]}
-      ]},
-      {"type": "troubleshooter", "attrs": {"items": [
-        {"symptom": "Skin is pale and not charred", "cause": "Heat not high enough, or chicken too far from the grill element", "fix": "Move the chicken closer to the grill. For the last 3 to 5 minutes, the skin should be blistering and dark."},
-        {"symptom": "Breast meat is dry", "cause": "Overcooked on the breast side", "fix": "Cook the chicken skin-side up for most of the time. The breast should register 72C on a thermometer. Rest for 10 minutes -- this redistributes the juices."}
-      ]}},
-      {"type": "heading", "attrs": {"level": 2}, "content": [{"type": "text", "text": "Where this dish lives"}]},
-      {"type": "paragraph", "content": [{"type": "text", "text": "Pollo alla diavola is a summer dish from central Italy. It is at its best on a charcoal grill. The chilli and lemon marinade cuts through the richness of the skin. Serve it very simply."}]}
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spatchcocking the chicken (removing the backbone and pressing it flat) is the key step. It halves the cooking time and means the skin all crisps at once. A butcher will do this for you if you ask."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 1,
+              "unit": "whole chicken, about 1.5kg",
+              "prepNote": "use a whole chicken -- spatchcocked (backbone removed, bird pressed flat) -- or use 8 bone-in thighs",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-flakes",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "crushed to a paste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "zest and juice",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "rosemary",
+              "amount": 2,
+              "unit": "sprigs",
+              "prepNote": "leaves stripped and finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-flakes",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "a generous amount",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the chilli, garlic, lemon zest and juice, rosemary and olive oil. Season well with salt and pepper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rub the marinade all over the chicken, getting under the skin where you can. Put in a dish, cover and refrigerate for at least 4 hours, ideally overnight."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the fridge 1 hour before cooking. Bring to room temperature."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat a grill to high. Cook the chicken skin-side up for 20 minutes. Flip and cook skin-side down for another 15 minutes. If using an oven, roast at 200C for 40 minutes skin-side up, then grill on high for 5 minutes to char."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The chicken is done when the juices run clear from the thigh. Rest for 10 minutes before carving."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve with a simple green salad and grilled bread to mop up the juices."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Skin is pale and not charred",
+              "cause": "Heat not high enough, or chicken too far from the grill element",
+              "fix": "Move the chicken closer to the grill. For the last 3 to 5 minutes, the skin should be blistering and dark."
+            },
+            {
+              "symptom": "Breast meat is dry",
+              "cause": "Overcooked on the breast side",
+              "fix": "Cook the chicken skin-side up for most of the time. The breast should register 72C on a thermometer. Rest for 10 minutes -- this redistributes the juices."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pollo alla diavola is a summer dish from central Italy. It is at its best on a charcoal grill. The chilli and lemon marinade cuts through the richness of the skin. Serve it very simply."
+          }
+        ]
+      }
     ]
   }
 }

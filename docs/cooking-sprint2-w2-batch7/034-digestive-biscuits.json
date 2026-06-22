@@ -23,17 +23,27 @@
     "batchable": true,
     "batchNotes": "Double easily. Keeps for 2 weeks in an airtight tin.",
     "makeAheadNotes": "The dough keeps in the fridge for 3 days before baking.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weeknight"],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": 180,
     "temperatureNote": "Conventional oven",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "baking-sheet", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,54 +53,165 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The dough will feel dry and crumbly -- this is correct for a digestive. Press it together firmly rather than adding more liquid. Roll it between two sheets of baking paper rather than on a floured surface; it is much easier to handle this way."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The dough will feel dry and crumbly -- this is correct for a digestive. Press it together firmly rather than adding more liquid. Roll it between two sheets of baking paper rather than on a floured surface; it is much easier to handle this way."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 150, "unit": "g", "prepNote": "use 100g wholemeal flour and 50g plain flour"},
-            {"ingredientSlug": "unsalted-butter", "quantity": 85, "unit": "g", "prepNote": "cold, cubed"},
-            {"ingredientSlug": "brown-sugar", "quantity": 50, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "baking-powder", "quantity": 0.5, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "salt-table", "quantity": 0.25, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "whole-milk", "quantity": 2, "unit": "tbsp", "prepNote": "cold"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": "use 100g wholemeal flour and 50g plain flour",
+              "amount": 150,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "cold, cubed",
+              "amount": 85,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 50,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 0.5,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 0.25,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "tbsp",
+              "prepNote": "cold",
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Combine both flours, brown sugar, baking powder, and salt. Rub in the cold butter until the mixture resembles fine breadcrumbs."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine both flours, brown sugar, baking powder, and salt. Rub in the cold butter until the mixture resembles fine breadcrumbs."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the cold milk and bring together into a stiff dough. It will be dry. Press it together firmly -- do not add more liquid. Flatten into a disc, wrap, and chill for 30 minutes."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the cold milk and bring together into a stiff dough. It will be dry. Press it together firmly -- do not add more liquid. Flatten into a disc, wrap, and chill for 30 minutes."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 180C. Roll the dough between two sheets of baking paper to about 3mm thick. Cut into 7cm rounds."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180C. Roll the dough between two sheets of baking paper to about 3mm thick. Cut into 7cm rounds."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Place on lined baking sheets. Prick each biscuit all over with a fork. Bake for 12 to 15 minutes until golden at the edges."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place on lined baking sheets. Prick each biscuit all over with a fork. Bake for 12 to 15 minutes until golden at the edges."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Leave to cool on the tray for 5 minutes before moving to a rack. They will firm and crisp as they cool."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Leave to cool on the tray for 5 minutes before moving to a rack. They will firm and crisp as they cool."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -113,12 +234,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The digestive biscuit is the most eaten biscuit in Britain. It is the foundation of cheesecake bases, a vehicle for tea-dunking, and a stand-alone snack eaten by virtually everyone. The commercial version has been largely unchanged since the 1890s. The homemade version has a better butter flavour and a more satisfying crumble."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The digestive biscuit is the most eaten biscuit in Britain. It is the foundation of cheesecake bases, a vehicle for tea-dunking, and a stand-alone snack eaten by virtually everyone. The commercial version has been largely unchanged since the 1890s. The homemade version has a better butter flavour and a more satisfying crumble."
+          }
+        ]
       }
     ]
   }

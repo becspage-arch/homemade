@@ -23,18 +23,31 @@
     "batchable": true,
     "batchNotes": "Double easily. The dough keeps well for 3 days in the fridge.",
     "makeAheadNotes": "Keeps in an airtight tin for up to 2 weeks.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weeknight"],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": 180,
     "temperatureNote": "Conventional oven",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "baking-sheet", "isOptional": false},
-    {"slug": "large-saucepan", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -44,55 +57,173 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Ginger nut dough is stiffer than most biscuit doughs. Roll the balls small -- the size of a large marble -- and flatten slightly. They spread during baking. They will still feel slightly soft when they come out of the oven; they harden as they cool. Do not over-bake."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Ginger nut dough is stiffer than most biscuit doughs. Roll the balls small -- the size of a large marble -- and flatten slightly. They spread during baking. They will still feel slightly soft when they come out of the oven; they harden as they cool. Do not over-bake."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 225, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "bicarbonate-of-soda", "quantity": 1, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "ginger-ground", "quantity": 3, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "cinnamon-ground", "quantity": 0.5, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "unsalted-butter", "quantity": 75, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "brown-sugar", "quantity": 100, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "golden-syrup", "quantity": 75, "unit": "g", "prepNote": null}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 225,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bicarbonate-of-soda",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-ground",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 3,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 0.5,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 75,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 100,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "golden-syrup",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 75,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 180C. Line two large baking sheets."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180C. Line two large baking sheets."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Melt the butter, brown sugar, and golden syrup together in a saucepan over low heat. Stir until the sugar dissolves. Leave to cool for 5 minutes."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt the butter, brown sugar, and golden syrup together in a saucepan over low heat. Stir until the sugar dissolves. Leave to cool for 5 minutes."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Sift the flour, bicarb, ginger, and cinnamon into a bowl. Pour in the melted mixture and stir to a stiff dough."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sift the flour, bicarb, ginger, and cinnamon into a bowl. Pour in the melted mixture and stir to a stiff dough."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Roll into balls the size of a large marble (about 12g each). Place on the lined sheets with plenty of space between each. Flatten slightly with your fingers."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Roll into balls the size of a large marble (about 12g each). Place on the lined sheets with plenty of space between each. Flatten slightly with your fingers."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Bake for 12 to 14 minutes until spread and just firm at the edges. They will look underdone -- this is correct. Leave on the tray for 5 minutes to harden before moving to a rack."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 12 to 14 minutes until spread and just firm at the edges. They will look underdone -- this is correct. Leave on the tray for 5 minutes to harden before moving to a rack."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -115,12 +246,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Ginger nuts are one of the most familiar biscuits in Britain. They appear in every biscuit tin, every office kitchen, and at every builders' tea break. The snap and the heat of real ginger are what distinguish a proper ginger nut from an inferior imitation. They are made for dunking and are engineered to resist briefly before giving way."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Ginger nuts are one of the most familiar biscuits in Britain. They appear in every biscuit tin, every office kitchen, and at every builders' tea break. The snap and the heat of real ginger are what distinguish a proper ginger nut from an inferior imitation. They are made for dunking and are engineered to resist briefly before giving way."
+          }
+        ]
       }
     ]
   }

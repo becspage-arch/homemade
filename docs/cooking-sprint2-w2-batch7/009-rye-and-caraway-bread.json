@@ -23,17 +23,27 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": null,
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "german",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "Conventional oven",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "roasting-tin", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,54 +53,165 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Rye dough is stickier than wheat dough and will not develop the same elasticity when kneaded. Do not try to make it smooth -- a rough, tacky dough is correct. Shape it with wet hands and do not overwork it."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Rye dough is stickier than wheat dough and will not develop the same elasticity when kneaded. Do not try to make it smooth -- a rough, tacky dough is correct. Shape it with wet hands and do not overwork it."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 400, "unit": "g", "prepNote": "use 250g dark rye flour and 150g plain flour"},
-            {"ingredientSlug": "baking-powder", "quantity": 7, "unit": "g", "prepNote": "use 7g fast-action dried yeast"},
-            {"ingredientSlug": "whole-milk", "quantity": 300, "unit": "ml", "prepNote": "use 300ml warm water"},
-            {"ingredientSlug": "salt-table", "quantity": 10, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "honey", "quantity": 1, "unit": "tbsp", "prepNote": null},
-            {"ingredientSlug": "ginger-ground", "quantity": 1.5, "unit": "tbsp", "prepNote": "use 1.5 tbsp caraway seeds"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": "use 250g dark rye flour and 150g plain flour",
+              "amount": 400,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "unit": "g",
+              "prepNote": "use 7g fast-action dried yeast",
+              "amount": 7,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "ml",
+              "prepNote": "use 300ml warm water",
+              "amount": 300,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 10,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "honey",
+              "unit": "tbsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-ground",
+              "unit": "tbsp",
+              "prepNote": "use 1.5 tbsp caraway seeds",
+              "amount": 1.5,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Mix the yeast with the warm water and honey. Leave 5 minutes. Combine the rye flour, plain flour, salt, and caraway seeds in a large bowl."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the yeast with the warm water and honey. Leave 5 minutes. Combine the rye flour, plain flour, salt, and caraway seeds in a large bowl."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the yeast liquid. Mix to form a sticky, cohesive dough. It will not be smooth -- this is normal for high-rye doughs."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the yeast liquid. Mix to form a sticky, cohesive dough. It will not be smooth -- this is normal for high-rye doughs."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Cover and leave in a warm place for 1 hour. The dough will not double dramatically, but it should visibly expand and feel lighter."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover and leave in a warm place for 1 hour. The dough will not double dramatically, but it should visibly expand and feel lighter."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "With wet hands, shape into a log and place in a greased 900g loaf tin. Smooth the top with wet fingers. Cover and leave for 30 minutes."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "With wet hands, shape into a log and place in a greased 900g loaf tin. Smooth the top with wet fingers. Cover and leave for 30 minutes."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 200C. Slash the top of the loaf with a sharp knife. Bake for 35 to 40 minutes until the loaf sounds hollow when tapped. Cool fully before slicing -- rye bread slices better once completely cold."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200C. Slash the top of the loaf with a sharp knife. Bake for 35 to 40 minutes until the loaf sounds hollow when tapped. Cool fully before slicing -- rye bread slices better once completely cold."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -113,12 +234,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Rye bread is staple throughout Northern and Eastern Europe. Germany alone has hundreds of regional rye loaves. The caraway seed combination is particularly common in Scandinavian and German baking. In Britain rye bread occupies a quieter place -- more delicatessen than everyday bakery -- but its flavour complexity rewards the effort."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Rye bread is staple throughout Northern and Eastern Europe. Germany alone has hundreds of regional rye loaves. The caraway seed combination is particularly common in Scandinavian and German baking. In Britain rye bread occupies a quieter place -- more delicatessen than everyday bakery -- but its flavour complexity rewards the effort."
+          }
+        ]
       }
     ]
   }

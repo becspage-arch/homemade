@@ -26,89 +26,339 @@
     "dietaryFlags": [],
     "cuisine": "italian",
     "mealType": "main",
-    "mood": ["comfortFood", "weeknight"],
+    "mood": [
+      "comfortFood",
+      "weeknight"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "large-saucepan", "isOptional": false},
-    {"slug": "wooden-spoon", "isOptional": false},
-    {"slug": "sharp-knife", "isOptional": false},
-    {"slug": "chopping-board", "isOptional": false},
-    {"slug": "ladle", "isOptional": false}
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    },
+    {
+      "slug": "ladle",
+      "isOptional": false
+    }
   ],
-  "glossaryTerms": ["soffritto", "cannellini"],
-  "techniqueSlugs": ["making-soffritto"],
-  "criticalTechniques": ["making-soffritto"],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "making-soffritto"
+  ],
+  "criticalTechniques": [
+    "making-soffritto"
+  ],
   "body": {
     "type": "doc",
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Mash or blend some of the beans. This thickens the broth naturally without adding flour or cream. The pasta should finish cooking directly in the soup."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Mash or blend some of the beans. This thickens the broth naturally without adding flour or cream. The pasta should finish cooking directly in the soup."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            {"ingredientSlug": "extra-virgin-olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "streaky-bacon", "amount": 80, "unit": "g", "prepNote": "finely chopped -- omit for vegetarian", "isOptional": true, "groupLabel": null},
-            {"ingredientSlug": "onion", "amount": 1, "unit": "medium", "prepNote": "finely diced", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "carrot", "amount": 1, "unit": "medium", "prepNote": "finely diced", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "celery", "amount": 2, "unit": "sticks", "prepNote": "finely diced", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "rosemary", "amount": 1, "unit": "sprig", "prepNote": "leaves picked and finely chopped", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "cannellini-beans", "amount": 800, "unit": "g", "prepNote": "2 tins, drained and rinsed", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": "half a tin, crushed", "isOptional": true, "groupLabel": null},
-            {"ingredientSlug": "stock-chicken", "amount": 1, "unit": "litre", "prepNote": "use vegetable stock for vegetarian", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "pasta-dried", "amount": 150, "unit": "g", "prepNote": "small pasta -- ditalini, tubetti or broken spaghetti", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "parmesan", "amount": 40, "unit": "g", "prepNote": "rind for cooking, grated to serve", "isOptional": true, "groupLabel": null},
-            {"ingredientSlug": "salt-table", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "black-pepper", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": null}
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "streaky-bacon",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "finely chopped -- omit for vegetarian",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "medium",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 1,
+              "unit": "medium",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 2,
+              "unit": "sticks",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "rosemary",
+              "amount": 1,
+              "unit": "sprig",
+              "prepNote": "leaves picked and finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cannellini-beans",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "2 tins, drained and rinsed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "half a tin, crushed",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 1,
+              "unit": "litre",
+              "prepNote": "use vegetable stock for vegetarian",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "small pasta -- ditalini, tubetti or broken spaghetti",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "rind for cooking, grated to serve",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oil in a large pan over medium heat. Add the bacon if using and cook for 3 minutes. Add the onion, carrot and celery. Cook for 8 minutes until soft."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the garlic and rosemary. Cook for 1 minute. Add the tomatoes if using and cook for 3 minutes."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the drained beans and the stock. Add the Parmesan rind if you have one. Bring to a simmer and cook for 15 minutes."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Remove about a third of the beans with a ladle. Mash them with a fork or blend them until smooth. Stir back into the pot. This makes the soup thick and creamy."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Bring back to a steady simmer. Add the pasta and cook until tender, about 8 minutes. Stir often so the pasta does not stick to the bottom."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Remove the Parmesan rind. Season well. The soup should be very thick -- almost stew-like. Loosen with a little hot water if needed."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Serve in deep bowls with grated Parmesan and a drizzle of good olive oil."}]}]}
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a large pan over medium heat. Add the bacon if using and cook for 3 minutes. Add the onion, carrot and celery. Cook for 8 minutes until soft."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the garlic and rosemary. Cook for 1 minute. Add the tomatoes if using and cook for 3 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the drained beans and the stock. Add the Parmesan rind if you have one. Bring to a simmer and cook for 15 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove about a third of the beans with a ladle. Mash them with a fork or blend them until smooth. Stir back into the pot. This makes the soup thick and creamy."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring back to a steady simmer. Add the pasta and cook until tender, about 8 minutes. Stir often so the pasta does not stick to the bottom."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the Parmesan rind. Season well. The soup should be very thick -- almost stew-like. Loosen with a little hot water if needed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve in deep bowls with grated Parmesan and a drizzle of good olive oil."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "items": [
-            {"symptom": "Pasta has absorbed all the liquid", "cause": "Pasta was left too long in the soup", "fix": "Add hot water or stock and stir well. The pasta keeps absorbing as it sits -- serve promptly."},
-            {"symptom": "Soup is thin", "cause": "Not enough beans were mashed", "fix": "Mash or blend more beans and stir back in. Simmer uncovered for a few more minutes."}
+            {
+              "symptom": "Pasta has absorbed all the liquid",
+              "cause": "Pasta was left too long in the soup",
+              "fix": "Add hot water or stock and stir well. The pasta keeps absorbing as it sits -- serve promptly."
+            },
+            {
+              "symptom": "Soup is thin",
+              "cause": "Not enough beans were mashed",
+              "fix": "Mash or blend more beans and stir back in. Simmer uncovered for a few more minutes."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Pasta e fagioli is found all over Italy. It has always been peasant food -- cheap, filling and nourishing. Neapolitan versions use tomato; northern versions keep it pale and creamy. Both are good."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Pasta e fagioli is found all over Italy. It has always been peasant food -- cheap, filling and nourishing. Neapolitan versions use tomato; northern versions keep it pale and creamy. Both are good."
+          }
+        ]
       }
     ]
   }

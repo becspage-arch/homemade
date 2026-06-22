@@ -23,17 +23,28 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Prove in the tin overnight in the fridge. Add oil and dimple just before baking.",
-    "dietaryFlags": ["vegetarian", "vegan"],
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
     "cuisine": "italian",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 220,
     "temperatureNote": "Conventional oven",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "roasting-tin", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,54 +54,165 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The trick to great focaccia is not skimping on the olive oil. It pools in the dimples and fries the base as the bread bakes. Use a good extra-virgin oil -- you will taste it. Rosemary is classic, but the topping can go in many directions."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The trick to great focaccia is not skimping on the olive oil. It pools in the dimples and fries the base as the bread bakes. Use a good extra-virgin oil -- you will taste it. Rosemary is classic, but the topping can go in many directions."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 500, "unit": "g", "prepNote": "strong white bread flour if available"},
-            {"ingredientSlug": "baking-powder", "quantity": 7, "unit": "g", "prepNote": "use 7g fast-action dried yeast"},
-            {"ingredientSlug": "whole-milk", "quantity": 375, "unit": "ml", "prepNote": "use 375ml warm water"},
-            {"ingredientSlug": "salt-table", "quantity": 10, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "salt-flakes", "quantity": 1, "unit": "tsp", "prepNote": "for the top"},
-            {"ingredientSlug": "honey", "quantity": 1, "unit": "tsp", "prepNote": "to activate yeast"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": "strong white bread flour if available",
+              "amount": 500,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "unit": "g",
+              "prepNote": "use 7g fast-action dried yeast",
+              "amount": 7,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "ml",
+              "prepNote": "use 375ml warm water",
+              "amount": 375,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 10,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-flakes",
+              "unit": "tsp",
+              "prepNote": "for the top",
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "honey",
+              "unit": "tsp",
+              "prepNote": "to activate yeast",
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Mix the yeast and honey into the warm water. Leave for 5 minutes until foamy. Combine with the flour and salt to form a shaggy dough."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the yeast and honey into the warm water. Leave for 5 minutes until foamy. Combine with the flour and salt to form a shaggy dough."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour 2 tablespoons of olive oil into a large bowl. Add the dough. Cover and leave for 1 hour until doubled."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour 2 tablespoons of olive oil into a large bowl. Add the dough. Cover and leave for 1 hour until doubled."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour 3 tablespoons of olive oil into a deep roasting tin (roughly 30 x 20cm). Stretch the dough to fill the tin. It will spring back -- let it rest 10 minutes, then stretch again. Cover and prove for 45 minutes."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour 3 tablespoons of olive oil into a deep roasting tin (roughly 30 x 20cm). Stretch the dough to fill the tin. It will spring back -- let it rest 10 minutes, then stretch again. Cover and prove for 45 minutes."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 220C. Drizzle 2 more tablespoons of olive oil over the dough. Press your fingertips firmly into the surface to create deep dimples all over."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 220C. Drizzle 2 more tablespoons of olive oil over the dough. Press your fingertips firmly into the surface to create deep dimples all over."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Scatter with fresh rosemary sprigs and flaky salt. Bake for 22 to 25 minutes until golden brown on top and the underside is crisp. Cool in the tin for 10 minutes before cutting."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Scatter with fresh rosemary sprigs and flaky salt. Bake for 22 to 25 minutes until golden brown on top and the underside is crisp. Cool in the tin for 10 minutes before cutting."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -113,12 +235,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Focaccia comes from Liguria on the Italian Riviera, where it is eaten at all hours -- for breakfast, as a snack, alongside soup, or as a base for sandwiches. Bakeries in Genoa sell it warm by the slice from early morning. The version with rosemary and salt is the one most people know, but the format is endlessly adaptable."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Focaccia comes from Liguria on the Italian Riviera, where it is eaten at all hours -- for breakfast, as a snack, alongside soup, or as a base for sandwiches. Bakeries in Genoa sell it warm by the slice from early morning. The version with rosemary and salt is the one most people know, but the format is endlessly adaptable."
+          }
+        ]
       }
     ]
   }

@@ -23,18 +23,31 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Bake the sponges a day ahead. Assemble and wrap on the day of serving.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 180,
     "temperatureNote": "Conventional oven",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "sharp-knife", "isOptional": false},
-    {"slug": "roasting-tin", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -44,57 +57,189 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "You need a tin that can be divided into two equal sections for baking the two colours separately. Fold a strip of thick foil down the centre of a square tin to create a divider. Alternatively, use two small loaf tins of identical size. The sponge must be trimmed into precise rectangles -- a ruler and a sharp knife are not excessive here."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "You need a tin that can be divided into two equal sections for baking the two colours separately. Fold a strip of thick foil down the centre of a square tin to create a divider. Alternatively, use two small loaf tins of identical size. The sponge must be trimmed into precise rectangles -- a ruler and a sharp knife are not excessive here."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 200, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "baking-powder", "quantity": 2, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "caster-sugar", "quantity": 200, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "unsalted-butter", "quantity": 200, "unit": "g", "prepNote": "softened"},
-            {"ingredientSlug": "eggs", "quantity": 4, "unit": "large", "prepNote": "at room temperature"},
-            {"ingredientSlug": "whole-milk", "quantity": 2, "unit": "tbsp", "prepNote": null},
-            {"ingredientSlug": "vanilla-extract", "quantity": 1, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "honey", "quantity": 3, "unit": "tbsp", "prepNote": "use 3 tbsp apricot jam, warmed and sieved"},
-            {"ingredientSlug": "plain-flour", "quantity": 200, "unit": "g", "prepNote": "use 200g marzipan -- or mix 150g ground almonds with 75g icing sugar and 1 egg white"}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "softened",
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": "at room temperature",
+              "amount": 4,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "tbsp",
+              "prepNote": null,
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vanilla-extract",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "honey",
+              "unit": "tbsp",
+              "prepNote": "use 3 tbsp apricot jam, warmed and sieved",
+              "amount": 3,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": "use 200g marzipan -- or mix 150g ground almonds with 75g icing sugar and 1 egg white",
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 180C. Divide a 20cm square tin in half with a foil divider, or prepare two small loaf tins. Grease and line both sections."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180C. Divide a 20cm square tin in half with a foil divider, or prepare two small loaf tins. Grease and line both sections."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Beat all the sponge ingredients together until smooth. Divide the batter in half. Leave one half plain and colour the other with a few drops of pink food colouring."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Beat all the sponge ingredients together until smooth. Divide the batter in half. Leave one half plain and colour the other with a few drops of pink food colouring."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour each batter into its section. Bake for 25 to 30 minutes until a skewer comes out clean. Cool completely."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour each batter into its section. Bake for 25 to 30 minutes until a skewer comes out clean. Cool completely."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Trim each sponge to an identical square cross-section. Cut each lengthways into two long rectangles. You now have four equal bars -- two pink, two plain. Sandwich them in a checkerboard pattern using the warm apricot jam."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Trim each sponge to an identical square cross-section. Cut each lengthways into two long rectangles. You now have four equal bars -- two pink, two plain. Sandwich them in a checkerboard pattern using the warm apricot jam."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Roll the marzipan into a rectangle large enough to wrap the cake. Brush the outside of the assembled cake with jam. Wrap in the marzipan, seam underneath. Trim the ends neatly to reveal the pattern."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Roll the marzipan into a rectangle large enough to wrap the cake. Brush the outside of the assembled cake with jam. Wrap in the marzipan, seam underneath. Trim the ends neatly to reveal the pattern."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -117,12 +262,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Battenberg cake is a British original. It became famous as an afternoon tea cake and remains a standard in British supermarkets and bakeries. The checkerboard is its signature -- slicing through and revealing the perfect pink-and-yellow grid is one of the more satisfying moments in baking."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Battenberg cake is a British original. It became famous as an afternoon tea cake and remains a standard in British supermarkets and bakeries. The checkerboard is its signature -- slicing through and revealing the perfect pink-and-yellow grid is one of the more satisfying moments in baking."
+          }
+        ]
       }
     ]
   }

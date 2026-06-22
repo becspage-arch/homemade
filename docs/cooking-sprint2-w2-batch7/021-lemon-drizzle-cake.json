@@ -23,17 +23,28 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Keeps well for 3 days in an airtight tin. The drizzle preserves the moisture.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weekend", "weeknight"],
+    "mood": [
+      "weekend",
+      "weeknight"
+    ],
     "temperatureCelsius": 160,
     "temperatureNote": "Fan oven -- or 180C conventional",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "roasting-tin", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,55 +54,173 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Pour the drizzle over the cake while it is still hot and in the tin. Use a skewer to poke holes all over so it soaks in deeply rather than pooling on the surface. Leave it completely cool before removing from the tin -- the syrup needs time to set."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour the drizzle over the cake while it is still hot and in the tin. Use a skewer to poke holes all over so it soaks in deeply rather than pooling on the surface. Leave it completely cool before removing from the tin -- the syrup needs time to set."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 200, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "baking-powder", "quantity": 1.5, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "caster-sugar", "quantity": 175, "unit": "g", "prepNote": "plus 75g for the drizzle"},
-            {"ingredientSlug": "unsalted-butter", "quantity": 175, "unit": "g", "prepNote": "softened"},
-            {"ingredientSlug": "eggs", "quantity": 3, "unit": "large", "prepNote": null},
-            {"ingredientSlug": "lemon", "quantity": 2, "unit": null, "prepNote": "zest of both for the batter, juice of both for the drizzle"},
-            {"ingredientSlug": "whole-milk", "quantity": 2, "unit": "tbsp", "prepNote": null}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1.5,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": "plus 75g for the drizzle",
+              "amount": 175,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "softened",
+              "amount": 175,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": null,
+              "amount": 3,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "unit": null,
+              "prepNote": "zest of both for the batter, juice of both for the drizzle",
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "tbsp",
+              "prepNote": null,
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 160C fan (180C conventional). Grease and line a 900g loaf tin."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 160C fan (180C conventional). Grease and line a 900g loaf tin."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Beat the softened butter with the 175g caster sugar and lemon zest until light and fluffy. Beat in the eggs one at a time."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Beat the softened butter with the 175g caster sugar and lemon zest until light and fluffy. Beat in the eggs one at a time."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Fold in the flour and baking powder, then the milk. Pour into the prepared tin. Bake for 45 to 50 minutes until a skewer comes out clean."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fold in the flour and baking powder, then the milk. Pour into the prepared tin. Bake for 45 to 50 minutes until a skewer comes out clean."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "While the cake bakes, mix the lemon juice with the 75g caster sugar to make the drizzle. Do not dissolve it -- the undissolved sugar creates the crackly crust."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "While the cake bakes, mix the lemon juice with the 75g caster sugar to make the drizzle. Do not dissolve it -- the undissolved sugar creates the crackly crust."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "As soon as the cake comes out of the oven, poke holes all over with a skewer. Pour the drizzle over slowly, letting it soak in. Leave in the tin to cool completely before slicing."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "As soon as the cake comes out of the oven, poke holes all over with a skewer. Pour the drizzle over slowly, letting it soak in. Leave in the tin to cool completely before slicing."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -114,12 +243,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The lemon drizzle cake is one of Britain's most popular homemade cakes. It requires no decoration, no frosting, and no complex technique. It is a cake for weekdays as much as weekends. The combination of sharp lemon and sweet crackle has made it a permanent fixture on cafe counters and kitchen tables across the country."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The lemon drizzle cake is one of Britain's most popular homemade cakes. It requires no decoration, no frosting, and no complex technique. It is a cake for weekdays as much as weekends. The combination of sharp lemon and sweet crackle has made it a permanent fixture on cafe counters and kitchen tables across the country."
+          }
+        ]
       }
     ]
   }

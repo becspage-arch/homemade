@@ -23,17 +23,27 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Shape and refrigerate overnight. Bring to room temperature before baking.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 220,
     "temperatureNote": "Conventional oven",
     "foundational": true
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "roasting-tin", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "roasting-tin",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,58 +53,179 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The key to a good sandwich loaf is a thorough first rise and confident kneading. Rush either and the crumb will be dense. Give the dough time and it will reward you with an even, springy texture that holds together when sliced."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The key to a good sandwich loaf is a thorough first rise and confident kneading. Rush either and the crumb will be dense. Give the dough time and it will reward you with an even, springy texture that holds together when sliced."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "plain-flour", "quantity": 500, "unit": "g", "prepNote": null},
-            {"ingredientSlug": "baking-powder", "quantity": 7, "unit": "g", "prepNote": "use 7g fast-action dried yeast"},
-            {"ingredientSlug": "whole-milk", "quantity": 300, "unit": "ml", "prepNote": "use 300ml warm water"},
-            {"ingredientSlug": "salt-table", "quantity": 1.5, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "unsalted-butter", "quantity": 30, "unit": "g", "prepNote": "softened"},
-            {"ingredientSlug": "honey", "quantity": 1, "unit": "tsp", "prepNote": null}
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "g",
+              "prepNote": null,
+              "amount": 500,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "baking-powder",
+              "unit": "g",
+              "prepNote": "use 7g fast-action dried yeast",
+              "amount": 7,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "unit": "ml",
+              "prepNote": "use 300ml warm water",
+              "amount": 300,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1.5,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "unit": "g",
+              "prepNote": "softened",
+              "amount": 30,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "honey",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Mix the yeast with the warm water and honey. Leave for 5 minutes until slightly foamy."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the yeast with the warm water and honey. Leave for 5 minutes until slightly foamy."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Combine the flour and salt in a large bowl. Add the yeast liquid and butter. Mix to a rough dough."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the flour and salt in a large bowl. Add the yeast liquid and butter. Mix to a rough dough."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Turn out onto a lightly floured surface. Knead for 10 minutes until smooth and elastic. The dough should spring back when poked."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Turn out onto a lightly floured surface. Knead for 10 minutes until smooth and elastic. The dough should spring back when poked."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Return to a lightly oiled bowl, cover with a damp cloth, and leave in a warm place for 1 hour until doubled in size."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return to a lightly oiled bowl, cover with a damp cloth, and leave in a warm place for 1 hour until doubled in size."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Knock back the dough and shape into a log. Place in a greased 900g loaf tin. Cover and prove for 30 minutes. Heat the oven to 220C."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Knock back the dough and shape into a log. Place in a greased 900g loaf tin. Cover and prove for 30 minutes. Heat the oven to 220C."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Bake for 30 minutes until golden and hollow-sounding when tapped on the base. Cool on a wire rack before slicing."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 30 minutes until golden and hollow-sounding when tapped on the base. Cool on a wire rack before slicing."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -117,12 +248,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The white tin loaf is the backbone of British sandwich culture. It appears in packed lunches, on breakfast tables, and beside soup at lunch. Every baker worth their salt can make one. Learn this and you will never need to buy a sliced loaf again."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The white tin loaf is the backbone of British sandwich culture. It appears in packed lunches, on breakfast tables, and beside soup at lunch. Every baker worth their salt can make one. Learn this and you will never need to buy a sliced loaf again."
+          }
+        ]
       }
     ]
   }

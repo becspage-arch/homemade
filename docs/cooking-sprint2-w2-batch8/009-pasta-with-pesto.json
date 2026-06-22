@@ -23,81 +23,249 @@
     "batchable": true,
     "batchNotes": "Make double the pesto and freeze the extra for another meal.",
     "makeAheadNotes": "Pesto keeps in the fridge with a layer of oil on top for up to 5 days.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "italian",
     "mealType": "main",
-    "mood": ["weeknight", "weekend"],
+    "mood": [
+      "weeknight",
+      "weekend"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "large-saucepan", "isOptional": false},
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "colander", "isOptional": false},
-    {"slug": "sharp-knife", "isOptional": false}
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "colander",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    }
   ],
-  "glossaryTerms": ["pesto", "al dente", "blanch"],
-  "techniqueSlugs": ["cooking-pasta", "making-pesto"],
-  "criticalTechniques": ["cooking-pasta"],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "cooking-pasta",
+    "making-pesto"
+  ],
+  "criticalTechniques": [
+    "cooking-pasta"
+  ],
   "body": {
     "type": "doc",
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Never heat pesto in the pan. The basil turns black and bitter. Add it to the warm pasta off the heat. A spoon of pasta water is the key to a silky, saucy finish."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Never heat pesto in the pan. The basil turns black and bitter. Add it to the warm pasta off the heat. A spoon of pasta water is the key to a silky, saucy finish."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            {"ingredientSlug": "pasta-dried", "amount": 400, "unit": "g", "prepNote": "trofie, linguine or spaghetti", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "basil", "amount": 60, "unit": "g", "prepNote": "leaves only -- about 2 large bunches", "isOptional": false, "groupLabel": "For the pesto"},
-            {"ingredientSlug": "garlic", "amount": 1, "unit": "clove", "prepNote": null, "isOptional": false, "groupLabel": "For the pesto"},
-            {"ingredientSlug": "parmesan", "amount": 50, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "For the pesto"},
-            {"ingredientSlug": "extra-virgin-olive-oil", "amount": 80, "unit": "ml", "prepNote": "good quality", "isOptional": false, "groupLabel": "For the pesto"},
-            {"ingredientSlug": "salt-table", "amount": null, "unit": null, "prepNote": "to taste", "isOptional": false, "groupLabel": "For the pesto"}
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "trofie, linguine or spaghetti",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "basil",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "leaves only -- about 2 large bunches",
+              "isOptional": false,
+              "groupLabel": "For the pesto"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 1,
+              "unit": "clove",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the pesto"
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "For the pesto"
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 80,
+              "unit": "ml",
+              "prepNote": "good quality",
+              "isOptional": false,
+              "groupLabel": "For the pesto"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": null,
+              "unit": "to taste",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": "For the pesto"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "To make the pesto: put the basil, garlic and a pinch of salt into a blender or food processor. Add the olive oil. Blend until roughly combined but not completely smooth. You want some texture."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Transfer to a bowl. Stir in the grated Parmesan. Taste and adjust the salt. If you have pine nuts, toast 30g in a dry pan and add them to the blender at step 1 -- they are traditional but expensive. Omit them freely."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Cook the pasta in well-salted boiling water until al dente. Reserve a large mug of pasta water. Drain the pasta."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Put the pasta into a large bowl. Add 3 tablespoons of warm pasta water to the pesto and stir. Pour over the pasta and toss well. Add more pasta water as needed to make a loose, coating sauce."}]}]},
-          {"type": "listItem", "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Serve immediately with extra Parmesan grated over the top."}]}]}
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "To make the pesto: put the basil, garlic and a pinch of salt into a blender or food processor. Add the olive oil. Blend until roughly combined but not completely smooth. You want some texture."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Transfer to a bowl. Stir in the grated Parmesan. Taste and adjust the salt. If you have pine nuts, toast 30g in a dry pan and add them to the blender at step 1 -- they are traditional but expensive. Omit them freely."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the pasta in well-salted boiling water until al dente. Reserve a large mug of pasta water. Drain the pasta."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put the pasta into a large bowl. Add 3 tablespoons of warm pasta water to the pesto and stir. Pour over the pasta and toss well. Add more pasta water as needed to make a loose, coating sauce."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve immediately with extra Parmesan grated over the top."
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "items": [
-            {"symptom": "Pesto has turned dark and brown", "cause": "Basil was heated or bruised too roughly", "fix": "Keep pesto cool. Blanch the basil in boiling water for 5 seconds and refresh in iced water before blending -- this locks in the green colour."},
-            {"symptom": "Pesto is too thick and clumpy", "cause": "Not enough oil or pasta water", "fix": "Add more warm pasta water a tablespoon at a time and toss until smooth."}
+            {
+              "symptom": "Pesto has turned dark and brown",
+              "cause": "Basil was heated or bruised too roughly",
+              "fix": "Keep pesto cool. Blanch the basil in boiling water for 5 seconds and refresh in iced water before blending -- this locks in the green colour."
+            },
+            {
+              "symptom": "Pesto is too thick and clumpy",
+              "cause": "Not enough oil or pasta water",
+              "fix": "Add more warm pasta water a tablespoon at a time and toss until smooth."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Pesto is from Genoa on the Ligurian coast. The classic version uses small-leaf Genoese basil and pine nuts. The rest of Italy uses bigger basil and still gets good results. It is a summer sauce -- made when basil is abundant."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Pesto is from Genoa on the Ligurian coast. The classic version uses small-leaf Genoese basil and pine nuts. The rest of Italy uses bigger basil and still gets good results. It is a summer sauce -- made when basil is abundant."
+          }
+        ]
       }
     ]
   }

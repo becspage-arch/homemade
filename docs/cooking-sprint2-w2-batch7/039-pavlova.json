@@ -23,18 +23,32 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Bake the meringue a day ahead and leave in the turned-off oven overnight. Fill just before serving.",
-    "dietaryFlags": ["vegetarian", "glutenFree"],
+    "dietaryFlags": [
+      "vegetarian",
+      "glutenFree"
+    ],
     "cuisine": "british",
     "mealType": "dessert",
-    "mood": ["weekend"],
+    "mood": [
+      "weekend"
+    ],
     "temperatureCelsius": 150,
     "temperatureNote": "Conventional oven. Reduce to 120C after the first 5 minutes for the rest of the bake.",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "mixing-bowl", "isOptional": false},
-    {"slug": "whisk", "isOptional": false},
-    {"slug": "baking-sheet", "isOptional": false}
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -44,55 +58,173 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The bowl and whisk must be completely free of grease -- even a trace of fat will prevent the egg whites from whipping. Wipe the bowl with a cut lemon or a little vinegar on kitchen paper. Make sure no yolk got into the whites when separating. Cold eggs separate more cleanly, but whites whip better at room temperature."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The bowl and whisk must be completely free of grease -- even a trace of fat will prevent the egg whites from whipping. Wipe the bowl with a cut lemon or a little vinegar on kitchen paper. Make sure no yolk got into the whites when separating. Cold eggs separate more cleanly, but whites whip better at room temperature."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "What you need"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            {"ingredientSlug": "eggs", "quantity": 4, "unit": "large", "prepNote": "whites only -- at room temperature"},
-            {"ingredientSlug": "caster-sugar", "quantity": 200, "unit": "g", "prepNote": "caster sugar, not granulated"},
-            {"ingredientSlug": "apple-cider-vinegar", "quantity": 1, "unit": "tsp", "prepNote": "use 1 tsp white wine vinegar"},
-            {"ingredientSlug": "plain-flour", "quantity": 2, "unit": "tsp", "prepNote": "use 2 tsp cornflour"},
-            {"ingredientSlug": "vanilla-extract", "quantity": 1, "unit": "tsp", "prepNote": null},
-            {"ingredientSlug": "double-cream", "quantity": 300, "unit": "ml", "prepNote": "whipped to soft peaks"},
-            {"ingredientSlug": "lemon", "quantity": null, "unit": null, "prepNote": "serve with 300g mixed berries or sliced strawberries"}
+            {
+              "ingredientSlug": "eggs",
+              "unit": "each",
+              "prepNote": "whites only -- at room temperature",
+              "amount": 4,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "unit": "g",
+              "prepNote": "caster sugar, not granulated",
+              "amount": 200,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "apple-cider-vinegar-raw",
+              "unit": "tsp",
+              "prepNote": "use 1 tsp white wine vinegar",
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "unit": "tsp",
+              "prepNote": "use 2 tsp cornflour",
+              "amount": 2,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vanilla-extract",
+              "unit": "tsp",
+              "prepNote": null,
+              "amount": 1,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "unit": "ml",
+              "prepNote": "whipped to soft peaks",
+              "amount": 300,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "unit": "to taste",
+              "prepNote": "serve with 300g mixed berries or sliced strawberries",
+              "amount": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "orderedList",
         "content": [
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oven to 150C. Draw a 22cm circle on baking paper. Place pencil-side down on a baking sheet."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 150C. Draw a 22cm circle on baking paper. Place pencil-side down on a baking sheet."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Whisk the egg whites in a clean bowl until they form stiff peaks. Add the caster sugar a tablespoon at a time, whisking well between each addition. Continue until the meringue is very stiff and glossy -- this takes about 10 minutes."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Whisk the egg whites in a clean bowl until they form stiff peaks. Add the caster sugar a tablespoon at a time, whisking well between each addition. Continue until the meringue is very stiff and glossy -- this takes about 10 minutes."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Fold in the vinegar, cornflour, and vanilla with a metal spoon."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fold in the vinegar, cornflour, and vanilla with a metal spoon."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Spoon the meringue onto the circle. Spread into a round with a slight dip in the centre. The edges should be taller than the middle. Place in the oven and immediately reduce to 120C. Bake for 1 hour 15 minutes."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon the meringue onto the circle. Spread into a round with a slight dip in the centre. The edges should be taller than the middle. Place in the oven and immediately reduce to 120C. Bake for 1 hour 15 minutes."
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "listItem",
-            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Turn off the oven. Leave the pavlova inside, door closed, for at least 2 hours or overnight. When ready to serve, pile the whipped cream into the centre and top with the berries."}]}]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Turn off the oven. Leave the pavlova inside, door closed, for at least 2 hours or overnight. When ready to serve, pile the whipped cream into the centre and top with the berries."
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -115,12 +247,24 @@
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Pavlova is claimed by both Australia and New Zealand and is a central part of the summer food culture of both countries. In Britain it has become a Christmas and summer dessert staple -- the showpiece at the end of a celebratory meal. It is made most often with strawberries in summer and passion fruit and mango in winter. The name honours Anna Pavlova, the ballerina whose lightness was meant to be echoed in the meringue."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Pavlova is claimed by both Australia and New Zealand and is a central part of the summer food culture of both countries. In Britain it has become a Christmas and summer dessert staple -- the showpiece at the end of a celebratory meal. It is made most often with strawberries in summer and passion fruit and mango in winter. The name honours Anna Pavlova, the ballerina whose lightness was meant to be echoed in the meringue."
+          }
+        ]
       }
     ]
   }
