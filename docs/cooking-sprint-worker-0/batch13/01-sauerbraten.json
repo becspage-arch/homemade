@@ -1,0 +1,411 @@
+{
+  "slug": "sauerbraten",
+  "title": "Sauerbraten",
+  "subtitle": "german vinegar-marinated pot roast",
+  "excerpt": "Sauerbraten is a German pot roast where beef is marinated in vinegar and spices for two to three days before slow braising. The marinade tenderises the meat and gives the sauce its signature sweet-sour flavour. Serves 6.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A classic of German home cooking with roots in the Rhine region. Traditionally made with horse meat, today beef is universal.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 180,
+    "restingMinutes": 15,
+    "chillingMinutes": 4320,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the braised meat with sauce for up to 3 months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate 2-3 days ahead. The dish improves if made the day before serving.",
+    "dietaryFlags": [],
+    "cuisine": "german",
+    "mealType": "dinner",
+    "mood": [
+      "weekend"
+    ],
+    "temperatureCelsius": 160,
+    "temperatureNote": "Low oven for slow braising",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "braise",
+      "term": "Braise",
+      "definition": "A cooking method where food is first browned then cooked slowly in a small amount of liquid in a covered pot."
+    },
+    {
+      "slug": "marinade",
+      "term": "Marinade",
+      "definition": "A seasoned liquid, often acidic, in which food is soaked before cooking to add flavour and tenderise."
+    }
+  ],
+  "techniqueSlugs": [
+    "braising"
+  ],
+  "criticalTechniques": [
+    "braising"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sauerbraten is built around a long "
+          },
+          {
+            "type": "text",
+            "text": "marinade",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "marinade"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of red wine vinegar, wine, and aromatics that works on the beef for two to three days. You then "
+          },
+          {
+            "type": "text",
+            "text": "braise",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "braise"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " the meat low and slow until it falls apart at the touch of a fork. Serves 6."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The strained braising liquid is reduced and thickened with crushed ginger biscuits, which is the classic German method for the sauce."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "beef-shin",
+              "amount": 1200,
+              "unit": "g",
+              "prepNote": "tied with string if needed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine-vinegar",
+              "amount": 250,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "marinade"
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 250,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "marinade"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 250,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "marinade"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "marinade"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "marinade"
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 2,
+              "unit": "stalks",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "marinade"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "marinade"
+            },
+            {
+              "ingredientSlug": "peppercorns-black",
+              "amount": 10,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "marinade"
+            },
+            {
+              "ingredientSlug": "allspice",
+              "amount": 5,
+              "unit": "berries",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "marinade"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dark-brown-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "dijon-mustard",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the vinegar, wine, water, onion, carrot, celery, bay leaves, peppercorns, and allspice in a large bowl or container. Submerge the beef completely. Cover and refrigerate for 2 to 3 days, turning the meat once a day."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lift the beef from the marinade. Pat it dry with kitchen paper. Strain the marinade and keep the liquid. Discard the solids."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a dutch oven over high heat. Brown the beef on all sides until deeply coloured, about 10 minutes total. Remove and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the reserved marinade liquid and the beef stock. Return the beef to the pot. Bring to a simmer, cover tightly, and transfer to the oven at 160C. Braise for 2.5 to 3 hours until the meat is very tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lift out the beef and rest it for 15 minutes. Strain the braising liquid into a saucepan. Add the dark brown sugar and mustard. Simmer over medium heat for 10 to 15 minutes until the sauce coats the back of a spoon. Slice the beef and serve with the sauce."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Sauce is too sour"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add more dark brown sugar a teaspoon at a time, tasting as you go."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Beef is tough after braising"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return it to the pot and braise for another 30 minutes. Shin needs full collagen breakdown to become tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Sauce is too thin"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Simmer uncovered at medium-high for a few more minutes until it thickens to your liking."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sauerbraten is eaten across Germany and is especially tied to the Rhine and Rhineland regions. It turns up on Sunday tables and at family celebrations. The word means 'sour roast', which tells you everything about the technique. It is comfort food that rewards patience."
+          }
+        ]
+      }
+    ]
+  }
+}

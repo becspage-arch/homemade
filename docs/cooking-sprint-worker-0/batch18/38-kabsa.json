@@ -1,0 +1,433 @@
+{
+  "slug": "kabsa",
+  "title": "Kabsa",
+  "subtitle": "saudi arabian spiced rice with chicken",
+  "excerpt": "Long-grain rice cooked with chicken, tomatoes, and a fragrant spice blend of cardamom, cloves, and rosewater, topped with fried onions and nuts. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Kabsa is the national dish of Saudi Arabia and is eaten across the Arabian Peninsula. It is a rice dish with deep roots in Bedouin cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Cook the chicken in its spiced broth a day ahead. Cook the rice fresh with the strained broth.",
+    "dietaryFlags": [],
+    "cuisine": "saudi",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "dinner-party"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "baharat-blend",
+      "term": "Baharat Blend",
+      "definition": "A warm spice mix used across the Gulf and Levant, combining allspice, cinnamon, cardamom, cloves, coriander, and black pepper."
+    },
+    {
+      "slug": "absorption-cooking",
+      "term": "Absorption Cooking",
+      "definition": "A method of cooking rice in a measured amount of liquid so that by the time the rice is cooked, all the liquid has been absorbed and none drained away."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Kabsa is built on a fragrant "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "baharat-blend"
+                }
+              }
+            ],
+            "text": "baharat blend"
+          },
+          {
+            "type": "text",
+            "text": " that flavours both the chicken braising liquid and the rice. The rice is finished using the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "absorption-cooking"
+                }
+              }
+            ],
+            "text": "absorption method"
+          },
+          {
+            "type": "text",
+            "text": " in the strained chicken broth, so every grain carries the spice. The fried onion and nut garnish is part of the dish, not optional."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tip: measure the strained broth carefully before adding the rice. The ratio matters for fluffy, separate grains."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 8,
+              "unit": "pieces",
+              "prepNote": "bone-in, skin-on",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "basmati-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "rinsed and soaked 20 minutes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 3,
+              "unit": "medium",
+              "prepNote": "2 finely sliced for garnish, 1 quartered for broth",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 1,
+              "unit": "x 400g tin",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cardamom-green",
+              "amount": 6,
+              "unit": "pods",
+              "prepNote": "bruised",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cloves",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "stick",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "allspice",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": "steeped in 2 tbsp warm water",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cashews",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "to garnish",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "almonds-flaked",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "to garnish",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat 2 tbsp oil in a dutch oven over medium-high heat. Brown the chicken pieces in batches for 4 minutes per side. Remove."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pot, fry quartered onion and garlic for 3 minutes. Add canned tomatoes, all whole spices, ground spices, and 1 tsp salt."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return chicken to the pot. Add 800ml water. Bring to the boil, reduce heat, cover, and simmer for 35 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove chicken. Strain the broth and measure 700ml. Discard the solids."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Drain the soaked rice. Add to the pot with the 700ml strained broth, saffron water, and remaining salt. Bring to the boil. Reduce to lowest heat, cover, and cook for 18 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Meanwhile, fry the sliced onion rings in 2 tbsp oil over medium heat for 15 minutes until deep golden. Add cashews and flaked almonds for the last 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rest the rice for 10 minutes off the heat. Spread on a large platter. Arrange chicken pieces over. Top with fried onion and nuts."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Rice is mushy",
+              "cause": "Too much broth used or the heat was not reduced low enough.",
+              "fix": "Measure the broth precisely. Use exactly 1.75 times the volume of rice in liquid. The heat must be at its absolute lowest once covered."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Rice has no aroma",
+              "cause": "The spices did not bloom in the broth.",
+              "fix": "Toast the whole spices in a dry pan for 1 minute before adding them to the broth next time. It makes a significant difference."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Chicken is dry",
+              "cause": "Simmered too long after the initial braise.",
+              "fix": "Remove the chicken as soon as it is cooked through at around 35 minutes. Reheat it over the rice for the last 5 minutes if needed."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Kabsa is the national dish of Saudi Arabia and is eaten widely across the Gulf states, Yemen, and the broader Arabian Peninsula. The dish is Bedouin in origin, designed to be made in a single large pot over a fire. It is the default celebratory meal across the region, eaten at weddings, Eid, and large gatherings. There are dozens of regional variations. Lamb, camel, fish, and chicken are all used. The spice combination and the fried onion garnish remain consistent across all versions."
+          }
+        ]
+      }
+    ]
+  }
+}

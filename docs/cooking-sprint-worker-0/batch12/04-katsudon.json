@@ -1,0 +1,390 @@
+{
+  "slug": "katsudon",
+  "title": "Katsudon",
+  "subtitle": "pork cutlet rice bowl",
+  "excerpt": "Katsudon tops a bowl of steamed rice with a crispy breaded pork cutlet and egg simmered in a sweet dashi broth. It uses leftover tonkatsu or a freshly fried cutlet. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Katsudon became popular in Japan in the early 20th century as a way to use leftover tonkatsu. It is associated with luck before exams and competitions.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "weeknight"
+    ],
+    "temperatureCelsius": 180,
+    "temperatureNote": "Oil temperature for frying the cutlet",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "panko",
+      "term": "Panko",
+      "definition": "Japanese-style breadcrumbs that are larger and flakier than Western breadcrumbs. They produce an exceptionally light and crispy coating."
+    },
+    {
+      "slug": "dashi",
+      "term": "Dashi",
+      "definition": "Japanese stock made from kombu and bonito flakes. It gives the katsudon broth its savoury depth."
+    },
+    {
+      "slug": "donburi",
+      "term": "Donburi",
+      "definition": "A Japanese rice bowl dish where a cooked topping is spooned over steamed rice."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Katsudon is a "
+          },
+          {
+            "type": "text",
+            "text": "donburi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "donburi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " that layers a "
+          },
+          {
+            "type": "text",
+            "text": "panko ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "panko"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "-crusted pork cutlet over rice with egg and onion cooked in a "
+          },
+          {
+            "type": "text",
+            "text": "dashi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "dashi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " broth. The cutlet stays crispy on top while the broth soaks into the rice below. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry the cutlets just before serving so the coating stays crunchy. The egg should be barely set when you plate the bowl."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "short-grain-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "cooked",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "pork-loin",
+              "amount": 4,
+              "unit": null,
+              "prepNote": "boneless chops, about 150g each, pounded thin",
+              "isOptional": false,
+              "groupLabel": "Cutlets"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Cutlets"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": null,
+              "prepNote": "beaten, for coating",
+              "isOptional": false,
+              "groupLabel": "Cutlets"
+            },
+            {
+              "ingredientSlug": "panko",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Cutlets"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": "for shallow frying",
+              "isOptional": false,
+              "groupLabel": "Cutlets"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 4,
+              "unit": null,
+              "prepNote": "lightly beaten, for the bowl",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Coat each pork chop in flour, then dip in beaten egg, then press into panko breadcrumbs on both sides. Set aside on a plate."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a deep frying pan to 180C. Fry the cutlets for 3 to 4 minutes per side until deep golden and cooked through. Drain on a rack and slice into strips."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In a separate frying pan, combine the dashi, soy sauce, mirin and sugar. Bring to a simmer. Add the onion and cook for 4 minutes until soft."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lay the sliced cutlet in the broth. Pour the lightly beaten egg evenly over the top. Cover and cook for 1 minute until the egg is just set."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon rice into bowls. Slide the cutlet and egg mixture over the rice, spooning extra broth around the sides. Serve immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Coating falls off in the oil",
+              "cause": "Flour was not pressed firmly or the egg coating was too thick",
+              "fix": "Press the flour firmly into the pork before dipping. Shake off excess egg before pressing into panko."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Panko coating is greasy",
+              "cause": "Oil was not hot enough when the cutlet went in",
+              "fix": "Check the oil is at 180C before frying. Use a thermometer or test with a pinch of panko."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Egg in the bowl is rubbery",
+              "cause": "Egg was overcooked in the broth",
+              "fix": "Pour the egg over and cover for no more than 1 minute. The egg should still look slightly wet."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Katsudon is a comfort food icon in Japan. Students eat it before exams for luck, as the word 'katsu' sounds like the Japanese word for 'to win'. It is served in tonkatsu restaurants and home kitchens alike. The dish turns a simple fried cutlet into a full one-bowl meal. It is the kind of food that feels like a reward."
+          }
+        ]
+      }
+    ]
+  }
+}

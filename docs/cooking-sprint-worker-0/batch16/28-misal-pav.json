@@ -1,0 +1,418 @@
+{
+  "slug": "misal-pav",
+  "title": "Misal Pav",
+  "subtitle": "Maharashtrian sprouted bean curry with bread",
+  "excerpt": "Misal pav is a fiery Maharashtrian curry of black-eyed beans in a spiced coconut gravy, topped with crunchy farsan and served with bread rolls. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Misal is a Maharashtrian staple with regional variations across Pune, Kolhapur, Nashik, and Mumbai, each with a different heat level and garnish style.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "The curry base freezes well for up to 2 months. Add garnishes fresh.",
+    "batchable": true,
+    "batchNotes": "Make a large batch of the curry. Portion and freeze without the garnishes.",
+    "makeAheadNotes": "The curry improves overnight. Reheat and add garnishes just before serving.",
+    "dietaryFlags": [
+      "vegetarian",
+      "gluten-free"
+    ],
+    "cuisine": "indian",
+    "mealType": "breakfast",
+    "mood": [
+      "weekend",
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "name": "Heavy-based pot"
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "misal",
+      "term": "Misal",
+      "definition": "A Maharashtrian dish of sprouted or soaked beans cooked in a spiced gravy, served with bread rolls and crunchy toppings."
+    },
+    {
+      "slug": "farsan",
+      "term": "Farsan",
+      "definition": "Crunchy savoury snacks used as a garnish in Maharashtrian cooking. Includes sev (thin chickpea noodles) and chivda."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Misal",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "misal"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is served in layers: spiced beans at the bottom, then the broth, then a scatter of "
+          },
+          {
+            "type": "text",
+            "text": "farsan ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "farsan"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", chopped onion, and coriander. Eat it quickly before the crunch softens."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The Kolhapuri version is very hot. Reduce the chilli powder by half for a milder dish."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "black-eyed-beans",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "large",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 5,
+              "unit": "cloves",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coconut-milk",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mustard-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "curry-leaves",
+              "amount": 12,
+              "unit": "leaves",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garam-masala",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tamarind-paste",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "small handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "peanuts",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oil in a pot over medium heat. Add mustard seeds and cumin seeds. When the mustard seeds pop, add curry leaves."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add 1 finely sliced onion. Cook 10 minutes until golden. Add garlic and ginger. Cook 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add tomato, turmeric, coriander, and chilli powder. Cook 8 minutes, stirring, until the tomato is pulped and the oil separates."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the drained black-eyed beans, coconut milk, tamarind paste, and 300 ml water. Bring to a simmer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook 20 minutes until the beans are well coated and the gravy is thick. Add garam masala and salt. Adjust water for a slightly soupy consistency."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve in bowls. Top with chopped onion, coriander, and peanuts. Serve with bread rolls on the side."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Curry is too thick and dry",
+              "cause": "Too much water evaporated during the cook",
+              "fix": "Add 100 ml boiling water and stir well. Misal should be slightly brothy."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Lacks heat",
+              "cause": "Chilli powder was reduced too much",
+              "fix": "Stir in a teaspoon of chilli powder, cook 2 minutes, and taste again."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Misal pav is eaten across Maharashtra for breakfast and as a mid-morning snack. Each city has its own style. Pune misal is milder and uses a dry garnish. Kolhapur misal is scorchingly hot. Nashik misal uses a more coconut-forward gravy. In Mumbai, the dish is eaten at small restaurants called khanavals from early morning. The pav used is the same Portuguese-origin soft roll found across Mumbai street food."
+          }
+        ]
+      }
+    ]
+  }
+}

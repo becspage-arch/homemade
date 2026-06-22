@@ -1,0 +1,382 @@
+{
+  "slug": "mafe",
+  "title": "Mafe",
+  "subtitle": "West African peanut and tomato stew",
+  "excerpt": "Mafe is a slow-cooked West African stew built on peanut butter and tomato, with chunks of lamb or chicken that soften in the sauce over an hour. It is thick, warming and straightforward. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mafe (also maffe or tigadegena) originated with the Mandinka and Soninke peoples of West Africa and is particularly central to Senegalese, Malian and Guinean cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 70,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes very well for up to 3 months. The peanut base holds up without separation.",
+    "batchable": true,
+    "batchNotes": "Makes excellent batch-cook portions. Doubles without adjustment.",
+    "makeAheadNotes": "Better the next day. Make 24 hours ahead and reheat gently.",
+    "dietaryFlags": [
+      "gluten-free"
+    ],
+    "cuisine": "senegalese",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "weekend",
+      "batch-cooking"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mafe-base",
+      "term": "Mafe base",
+      "definition": "The combination of deeply cooked tomato paste and peanut butter that forms the sauce. Both must be cooked separately before combining to avoid a raw, separated texture."
+    },
+    {
+      "slug": "natural-peanut-butter",
+      "term": "Natural peanut butter",
+      "definition": "Peanut butter made only from peanuts, without added sugar or palm oil. Essential for savoury cooking as sweetened peanut butter makes the stew cloying."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The quality of the "
+          },
+          {
+            "type": "text",
+            "text": "mafe base",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mafe-base"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " determines the dish. Use only "
+          },
+          {
+            "type": "text",
+            "text": "natural peanut butter ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "natural-peanut-butter"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". Cook the tomato base until it is dark and the oil separates before adding the peanut butter."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lamb shoulder is the traditional meat for Senegalese mafe. Chicken thighs are a faster alternative that still produce excellent results."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "lamb-shoulder",
+              "amount": 700,
+              "unit": "g",
+              "prepNote": "cut into 5cm chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "peanuts",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "use smooth natural peanut butter",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "left whole for mild heat",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "cut into large chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "quartered",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season lamb with salt. Heat oil in a large pot over high heat. Brown lamb on all sides for 5 minutes. Remove and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pot, fry onion over medium heat for 8 minutes until golden. Add garlic and ginger, cook 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add tomato puree and stir for 3 minutes. Pour in canned tomatoes. Cook uncovered over medium heat for 20 minutes until dark and the oil separates."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in peanut butter and 500ml water. Mix until smooth. Return lamb to the pot with chillies and bay leaves."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add carrots and potatoes. Bring to a boil, reduce to a low simmer and cook covered for 45 minutes until lamb is tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Taste and adjust salt. Serve with rice or fufu."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Stew is grainy or split",
+              "cause": "Peanut butter added to cold liquid or not stirred in",
+              "fix": "Thin the peanut butter with a ladle of hot broth first, then stir the mixture into the pot."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Lamb still tough at 45 minutes",
+              "cause": "Shoulder cuts vary in toughness",
+              "fix": "Continue cooking on low heat. Lamb shoulder needs up to 90 minutes in some cases. Add a little water if it thickens too much."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mafe is the everyday stew of Senegal and Mali, cooked in home kitchens rather than restaurants. It is considered a dish of generosity since peanuts and meat together signal abundance. The Malian version (tigadegena, meaning groundnut sauce) is often vegetarian with sweet potato and aubergine. French colonists adopted a version they called poulet au mafé, which spread across francophone West Africa."
+          }
+        ]
+      }
+    ]
+  }
+}

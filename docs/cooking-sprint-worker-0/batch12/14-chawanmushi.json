@@ -1,0 +1,362 @@
+{
+  "slug": "chawanmushi",
+  "title": "Chawanmushi",
+  "subtitle": "steamed savoury egg custard",
+  "excerpt": "Chawanmushi is a delicate Japanese steamed egg custard seasoned with dashi, soy sauce and mirin. It is served warm in small cups with hidden fillings inside. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Chawanmushi has appeared in Japanese cuisine since the Edo period. The name means 'steamed in a tea bowl'. It is served at formal kaiseki meals as a savoury course and eaten at home as a starter or side dish.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "starter",
+    "mood": [
+      "dinner-party",
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "steamer-pot",
+      "isOptional": false
+    },
+    {
+      "slug": "sieve",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "chawanmushi",
+      "term": "Chawanmushi",
+      "definition": "A Japanese steamed savoury egg custard cooked in small cups. The ratio of egg to dashi determines the texture: too much egg makes it rubbery, too little and it will not set."
+    },
+    {
+      "slug": "dashi",
+      "term": "Dashi",
+      "definition": "Japanese stock made from kombu and bonito flakes. It provides the savoury depth in the custard. The ratio for chawanmushi is roughly 3 parts dashi to 1 part egg by volume."
+    },
+    {
+      "slug": "kaiseki",
+      "term": "Kaiseki",
+      "definition": "A traditional Japanese multi-course meal of highly refined seasonal dishes. Chawanmushi often appears as one of the savoury courses."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The ratio of egg to "
+          },
+          {
+            "type": "text",
+            "text": "dashi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "dashi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is what makes or breaks "
+          },
+          {
+            "type": "text",
+            "text": "chawanmushi ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "chawanmushi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". You want roughly 3 parts dashi to 1 part beaten egg by volume. The custard should wobble gently when you tap the cup. This dish was originally part of "
+          },
+          {
+            "type": "text",
+            "text": "kaiseki",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "kaiseki"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " menus but is now everyday home cooking. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Strain the egg and dashi mixture through a fine sieve before pouring into cups. This removes chalazae strands and air bubbles that would cause an uneven texture."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "eggs",
+              "amount": 3,
+              "unit": null,
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": "Custard"
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 360,
+              "unit": "ml",
+              "prepNote": "cooled to room temperature",
+              "isOptional": false,
+              "groupLabel": "Custard"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Custard"
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Custard"
+            },
+            {
+              "ingredientSlug": "sake",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Custard"
+            },
+            {
+              "ingredientSlug": "chicken-breast",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "cut into tiny pieces",
+              "isOptional": false,
+              "groupLabel": "Fillings"
+            },
+            {
+              "ingredientSlug": "mushrooms-shiitake",
+              "amount": 4,
+              "unit": null,
+              "prepNote": "stalks removed, caps quartered",
+              "isOptional": false,
+              "groupLabel": "Fillings"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "very finely sliced, to garnish",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Whisk together the beaten eggs, dashi, soy sauce, mirin and sake in a jug. Whisk gently, trying not to create foam. Strain through a fine sieve."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the chicken pieces and mushroom quarters between four small heatproof cups or ramekins."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the egg mixture over the fillings slowly. Fill to just below the rim of each cup. Skim off any bubbles on the surface with a spoon."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set a steamer over medium heat. Place the cups inside, cover the lid with a clean cloth to catch condensation drips, then put the lid on. Steam over medium-low heat for 15 to 18 minutes until just set with a gentle wobble in the centre."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the steamer and rest for 5 minutes. Top with spring onion and serve warm. The custard can be eaten with a small spoon."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Custard has a pitted, spongy texture",
+              "cause": "Steam temperature was too high, causing the egg to bubble and overcook",
+              "fix": "Steam over medium-low heat only. High heat creates bubbles in the custard. Drape a cloth under the lid to prevent water dripping."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Custard does not set after 18 minutes",
+              "cause": "Too much dashi relative to egg",
+              "fix": "Use the 3:1 dashi to egg ratio by volume. Measure the beaten egg volume first then multiply by 3 for the dashi."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Custard has lumps and an uneven texture",
+              "cause": "Egg mixture was not strained before pouring",
+              "fix": "Always strain through a fine sieve. The straining step is the most important part of making smooth chawanmushi."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chawanmushi appears at formal Japanese meals and on everyday dinner tables. It is one of the dishes most associated with refined Japanese cooking. The silky texture has no equivalent in Western cuisine. Once you master the ratio and steaming method, it is quick to prepare. It is a very impressive thing to serve at a dinner party."
+          }
+        ]
+      }
+    ]
+  }
+}

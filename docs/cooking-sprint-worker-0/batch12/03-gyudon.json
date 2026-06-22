@@ -1,0 +1,370 @@
+{
+  "slug": "gyudon",
+  "title": "Gyudon",
+  "subtitle": "beef and onion rice bowl",
+  "excerpt": "Gyudon is thinly sliced beef and sweet onion simmered in a dashi and soy broth, then spooned over steamed rice. It is one of Japan's most popular fast-food dishes and easy to make at home. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Gyudon was popularised by chain restaurants in Japan from the 1950s onwards. It is based on the gyunabe beef hot pots that became fashionable in the Meiji era.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "quick"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dashi",
+      "term": "Dashi",
+      "definition": "Japanese stock made from kombu seaweed and bonito flakes. It forms the savoury base of the gyudon broth."
+    },
+    {
+      "slug": "mirin",
+      "term": "Mirin",
+      "definition": "Sweet Japanese rice wine used in cooking. It gives gyudon its characteristic gloss and mild sweetness."
+    },
+    {
+      "slug": "donburi",
+      "term": "Donburi",
+      "definition": "A Japanese dish where a topping is served over a bowl of steamed rice."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gyudon is a "
+          },
+          {
+            "type": "text",
+            "text": "donburi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "donburi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " that uses thin-sliced beef and onion simmered in a "
+          },
+          {
+            "type": "text",
+            "text": "dashi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "dashi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " broth sweetened with "
+          },
+          {
+            "type": "text",
+            "text": "mirin ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mirin"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". The beef cooks in minutes once the broth is going. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ask the butcher to slice the beef very thin, or freeze the beef for 30 minutes and slice it yourself with a sharp knife."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "short-grain-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "cooked",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "beef-sirloin",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "very thinly sliced",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": null,
+              "prepNote": "halved and thinly sliced",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "sake",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 2,
+              "unit": null,
+              "prepNote": "sliced, to garnish",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sesame-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the dashi, soy sauce, mirin, sake and sugar in a wide frying pan. Bring to a simmer over medium heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the sliced onion and cook for 5 to 7 minutes until very soft and translucent."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the beef slices to the pan, separating them as you go. Simmer for 2 to 3 minutes until the beef is just cooked through. Skim any foam from the surface."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon the hot rice into bowls. Ladle the beef, onion and broth over the top."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Top with spring onion and sesame seeds if using. Serve straight away."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Beef is chewy and tough",
+              "cause": "Beef was sliced too thick or cooked too long",
+              "fix": "Slice as thin as possible and cook only 2 to 3 minutes. Thin slices cook almost instantly."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth is too thin and watery",
+              "cause": "Onion released too much water before the broth reduced",
+              "fix": "Simmer the broth for 2 extra minutes after the beef is cooked to concentrate it."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Dish tastes flat without enough depth",
+              "cause": "Dashi was skipped or a poor quality one was used",
+              "fix": "Use a good dashi. Even dashi powder in water is far better than plain water."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gyudon is Japan's go-to fast meal. Chains like Yoshinoya and Matsuya serve it around the clock. Home cooks love it because the whole dish is ready in 20 minutes. The sweet-savoury broth soaks into the rice underneath. It is a very easy entry point into Japanese rice bowl cooking."
+          }
+        ]
+      }
+    ]
+  }
+}

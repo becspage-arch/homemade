@@ -1,0 +1,394 @@
+{
+  "slug": "banh-mi-filling",
+  "title": "Banh Mi Filling",
+  "subtitle": "vietnamese pork belly and pickled carrot sandwich filling",
+  "excerpt": "Char-grilled pork belly slices with pickled carrot and daikon, fresh coriander, and a smear of pate in a crusty baguette. The essential banh mi filling. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Banh mi evolved in Vietnam during the French colonial period by combining the French baguette with Vietnamese ingredients. The result is one of the most copied street food formats in the world.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "The pickled vegetables and marinated pork can both be made 2 days ahead. Assemble to order.",
+    "makeAheadNotes": "Make the pickled carrot the night before: it needs at least 1 hour and improves overnight.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "lunch",
+    "mood": [
+      "weeknight",
+      "weekend"
+    ],
+    "temperatureCelsius": 220,
+    "temperatureNote": "Grill or griddle temperature for the pork",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "griddle-pan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "do-chua",
+      "term": "Do Chua",
+      "definition": "Vietnamese pickled carrot and daikon, the signature pickle in banh mi. Made quickly with rice vinegar and sugar, it provides sharp crunch that cuts through the rich pork and pate."
+    },
+    {
+      "slug": "banh-mi-pate",
+      "term": "Pate",
+      "definition": "The pate spread in a banh mi provides rich, fatty savouriness to balance the pickles and herbs. Chicken liver pate is traditional. Any smooth pate works."
+    },
+    {
+      "slug": "char-grilling",
+      "term": "Char-Grilling",
+      "definition": "Cooking meat on a very hot ridged griddle pan to create charred stripes and a slightly crisp exterior. For banh mi pork, the char adds smoky flavour that complements the pickles."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A banh mi is built on contrasts: hot pork against cold pickles, rich pate against sharp vinegar, soft crumb against crispy crust. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "do-chua"
+                }
+              }
+            ],
+            "text": "do chua"
+          },
+          {
+            "type": "text",
+            "text": " pickled carrot is the pivot of the whole thing. Make it first and let it sit for at least an hour."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "banh-mi-pate"
+                }
+              }
+            ],
+            "text": "pate"
+          },
+          {
+            "type": "text",
+            "text": " is essential. Without it, the sandwich misses a layer of richness. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "char-grilling"
+                }
+              }
+            ],
+            "text": "Char-grill"
+          },
+          {
+            "type": "text",
+            "text": " the pork slices on a very hot griddle until each piece has dark stripes and is cooked through but still juicy."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "skin removed, sliced 5mm thick",
+              "isOptional": false,
+              "groupLabel": "Pork"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Pork Marinade"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Pork Marinade"
+            },
+            {
+              "ingredientSlug": "honey",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Pork Marinade"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": "Pork Marinade"
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "juice only",
+              "isOptional": false,
+              "groupLabel": "Pork Marinade"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "Pork Marinade"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "julienned",
+              "isOptional": false,
+              "groupLabel": "Pickled Vegetables"
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Pickled Vegetables"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Pickled Vegetables"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Pickled Vegetables"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "bunch",
+              "prepNote": "to fill the sandwiches",
+              "isOptional": false,
+              "groupLabel": "Assembly"
+            },
+            {
+              "ingredientSlug": "chilli-green",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "sliced, to taste",
+              "isOptional": false,
+              "groupLabel": "Assembly"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 3,
+              "unit": "stalks",
+              "prepNote": "sliced lengthways",
+              "isOptional": false,
+              "groupLabel": "Assembly"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the pickles. Combine the rice vinegar, sugar, and salt in a bowl. Stir until dissolved. Toss in the julienned carrot and leave for at least 1 hour. The carrot will soften slightly and turn bright orange."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the pork marinade ingredients. Pour over the pork belly slices. Toss to coat. Leave for 30 minutes at room temperature or up to 2 hours in the fridge."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat a griddle pan over high heat until smoking. Add the pork slices in batches, pressing flat. Cook for 3 to 4 minutes per side until charred and cooked through. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Split each baguette lengthways without cutting through fully. Spread a generous layer of pate on each cut side."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Layer the warm pork slices into the baguette. Add a handful of drained pickled carrot, fresh coriander, sliced spring onion, and green chilli to taste. Press together and eat immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Pork sticks to the griddle and tears",
+              "cause": "The griddle was not hot enough or the pork was moved too early.",
+              "fix": "Do not touch the pork for the first 2 minutes. It will release naturally once a crust has formed."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Pickled carrot is too sharp",
+              "cause": "Too much vinegar or the carrot was left too long.",
+              "fix": "Rinse briefly under cold water and toss with a pinch of sugar before using."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Banh mi emerged in Vietnam during French colonial rule. Baguettes became widely available in Saigon and other cities, and Vietnamese cooks adapted them. The filling is not French. It combines pickled vegetables, fresh herbs, and bold sauces in a way that is entirely Vietnamese."
+          }
+        ]
+      }
+    ]
+  }
+}

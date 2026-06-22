@@ -1,0 +1,157 @@
+{
+  "slug": "yakitori",
+  "title": "Yakitori",
+  "subtitle": "grilled chicken skewers with tare sauce",
+  "excerpt": "Yakitori is skewered chicken grilled over high heat and glazed repeatedly with a sweet soy tare sauce. This home method uses a griddle pan or hot grill. Makes about 16 skewers, serving 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Yakitori has been grilled on Japanese charcoal in izakaya and street stalls for over a century. Every neighbourhood has its yakitori shop. The tare sauce is the heart of the dish and each cook guards their own recipe.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The tare sauce keeps in the fridge for up to 2 weeks. Thread skewers up to 4 hours ahead and refrigerate.",
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": ["weekend", "crowd-pleaser"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "griddle-pan", "isOptional": false },
+    { "slug": "skewers", "isOptional": false },
+    { "slug": "small-saucepan", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "tare", "term": "Tare", "definition": "A concentrated seasoning sauce used in Japanese cooking, especially ramen and yakitori. Yakitori tare is made from soy, mirin and sake reduced together." },
+    { "slug": "izakaya", "term": "Izakaya", "definition": "A Japanese pub-style restaurant where food and drinks are served together. Yakitori is one of the most common izakaya dishes." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The key to yakitori is the " },
+          { "type": "text", "text": "tare", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tare" } }] },
+          { "type": "text", "text": " sauce, which you brush on in layers as the chicken cooks. Each coat caramelises before the next goes on, building deep flavour. At home, a hot griddle pan works very well. Serves 4." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "If using wooden skewers, soak them in water for 30 minutes first so they do not scorch on the heat." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "chicken-thigh", "amount": 600, "unit": "g", "prepNote": "boneless, skin on, cut into 3cm pieces", "isOptional": false, "groupLabel": "Skewers" },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": null, "prepNote": "cut into 4cm lengths", "isOptional": false, "groupLabel": "Skewers" },
+            { "ingredientSlug": "soy-sauce-light", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tare sauce" },
+            { "ingredientSlug": "mirin", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tare sauce" },
+            { "ingredientSlug": "sake", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tare sauce" },
+            { "ingredientSlug": "caster-sugar", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tare sauce" },
+            { "ingredientSlug": "sesame-seeds", "amount": 1, "unit": "tsp", "prepNote": "to finish", "isOptional": true, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the tare: combine soy sauce, mirin, sake and sugar in a small saucepan. Bring to a simmer and cook for 5 minutes until slightly thickened. Pour into a small bowl and set aside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Thread the chicken and spring onion pieces alternately onto skewers, pressing them close together." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat a griddle pan over high heat until very hot. Lay the skewers in the pan and cook for 2 minutes without moving." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Turn the skewers. Brush with tare sauce. Cook for 2 more minutes, then brush again with tare. Repeat this turning and brushing process twice more until the chicken is cooked through and well glazed, about 8 minutes total." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Sprinkle with sesame seeds if using. Serve immediately with cold beer or rice." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Tare sauce burns on the pan",
+              "cause": "The sauce was applied too early or the heat was too high",
+              "fix": "Only apply tare after the first turn. High sugar content burns quickly, so watch closely and reduce heat slightly."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Chicken sticks to the griddle",
+              "cause": "The griddle was not hot enough before the skewers went on",
+              "fix": "Heat the griddle until smoking before adding skewers. Do not move them for the first 2 minutes."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Skewers taste bland without much glaze",
+              "cause": "Tare was only applied once",
+              "fix": "Build up layers. Turn and brush at least 3 times. Each coat needs 2 minutes to caramelise before the next."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Yakitori is the food of " },
+          { "type": "text", "text": "izakaya", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "izakaya" } }] },
+          { "type": "text", "text": " culture, eaten with cold beer after work. Street stalls called yakitori-ya grill skewers over binchotan charcoal. No part of the chicken goes to waste in a proper yakitori shop: liver, heart, skin and cartilage all appear on the menu. Home cooks do not need charcoal to get good results. A very hot griddle and good tare get you most of the way there." }
+        ]
+      }
+    ]
+  }
+}

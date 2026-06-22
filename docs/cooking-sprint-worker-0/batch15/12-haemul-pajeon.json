@@ -1,0 +1,384 @@
+{
+  "slug": "haemul-pajeon",
+  "title": "Haemul Pajeon",
+  "subtitle": "korean seafood pancake",
+  "excerpt": "Haemul pajeon is a large, crispy Korean pancake loaded with mixed seafood and spring onions, pan-fried in plenty of oil until the edges are golden and crunchy. It is served with a soy and rice vinegar dipping sauce. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Haemul pajeon is popular throughout Korea but especially associated with the Dongrae area of Busan, where elaborate versions are a regional speciality.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "2 large pancakes",
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "korean",
+    "mealType": "snack",
+    "mood": [
+      "weekend",
+      "entertaining"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-30",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "haemul",
+      "term": "Haemul",
+      "definition": "The Korean word for seafood. In cooking, it refers to a mix of shellfish and molluscs used as filling or topping in pancakes, soups, and stews."
+    },
+    {
+      "slug": "jeon",
+      "term": "Jeon",
+      "definition": "A category of Korean pan-fried dishes made from a range of ingredients in a batter. The name covers both sweet and savoury versions."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Haemul pajeon is a "
+          },
+          {
+            "type": "text",
+            "text": "jeon",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "jeon"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " pancake where "
+          },
+          {
+            "type": "text",
+            "text": "haemul",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "haemul"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " seafood is pressed into the batter and cooked until the bottom is golden and lacy. Serves 4 as a starter or sharing dish."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Plenty of oil and a very hot pan are the keys to a properly crispy pajeon. Do not be tempted to reduce the oil."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 10,
+              "unit": "whole",
+              "prepNote": "trimmed to fit the pan",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "prawns-raw",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "peeled and roughly chopped",
+              "isOptional": false,
+              "groupLabel": "Seafood"
+            },
+            {
+              "ingredientSlug": "squid",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "cleaned and cut into rings",
+              "isOptional": false,
+              "groupLabel": "Seafood"
+            },
+            {
+              "ingredientSlug": "clams",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "cooked meat only, or use extra prawns",
+              "isOptional": true,
+              "groupLabel": "Seafood"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Batter"
+            },
+            {
+              "ingredientSlug": "cornflour",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Batter"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Batter"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 160,
+              "unit": "ml",
+              "prepNote": "ice cold",
+              "isOptional": false,
+              "groupLabel": "Batter"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dipping sauce"
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dipping sauce"
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dipping sauce"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 0.5,
+              "unit": "whole",
+              "prepNote": "finely sliced",
+              "isOptional": true,
+              "groupLabel": "Dipping sauce"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 5,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the dipping sauce ingredients together. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Whisk the flour, cornflour, eggs, and cold water to a smooth batter. Stir the seafood into the batter."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat 2.5 tablespoons of vegetable oil in a 30 cm frying pan over high heat until shimmering. Pour in half the batter and spread quickly to the edges."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Arrange half the spring onions across the surface, pressing them in lightly. Cook for 4 to 5 minutes until the base is deep golden and crisp."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Flip the pancake carefully using a wide spatula. Add the remaining oil around the edge of the pan. Cook for a further 4 minutes, pressing down, until the second side is equally crisp and the seafood is cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slide onto a board and cut into pieces. Repeat with the remaining batter. Serve hot with the dipping sauce."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Seafood is releasing water into the batter",
+              "fix": "Pat the seafood dry before mixing into the batter. Excess moisture makes the pancake steam rather than fry."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Pancake is too thick in the centre",
+              "fix": "Spread the batter thinner across the pan. Haemul pajeon should be no more than 1 cm thick to cook through evenly."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Squid is rubbery",
+              "fix": "Cook on a high heat for the full time on each side. Squid is either cooked quickly at high heat or low and slow. Medium heat makes it tough."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Haemul pajeon is a popular dish in Korean seafood restaurants and at home. The Dongrae neighbourhood of Busan has a long history of elaborate seafood pajeon. It is eaten as a snack, a starter, or a drinking food alongside beer or makgeolli rice wine. The pancake is often brought to the table whole and torn apart by hand."
+          }
+        ]
+      }
+    ]
+  }
+}

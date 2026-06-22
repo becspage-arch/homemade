@@ -1,0 +1,276 @@
+{
+  "slug": "fettuccine-alfredo",
+  "title": "Fettuccine Alfredo",
+  "subtitle": "Roman butter and Parmesan pasta, the original method",
+  "excerpt": "Fettuccine Alfredo in its original Roman form uses only three ingredients: egg fettuccine, aged Parmesan, and large amounts of quality butter. The technique is vigorous tableside tossing to emulsify the butter into a creamy sauce. No cream is used. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Fettuccine Alfredo was created by Alfredo di Lelio at his restaurant in Rome around 1907. He made it for his wife when she was recovering from childbirth, using only egg noodles, a large amount of butter, and very aged Parmesan. The dish became internationally famous after Mary Pickford and Douglas Fairbanks ate it at his restaurant in 1927 and presented him with golden cutlery as a thank you. The cream-based version common outside Italy bears little resemblance to the original. The Roman recipe relies on the emulsification of butter and pasta water to create a silky coating, the same technique used in cacio e pepe and carbonara. The recipe is documented in Alfredo di Lelio's own memoir (held in the Alfredo all'Augusteo archive, Rome) and in Ada Boni, Il Talismano della Felicita (1929, first edition, Signorile Editore Rome).",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "dinner-party",
+      "comfort-food"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "saute-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "microplane",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mantecatura-alfredo",
+      "term": "Mantecatura",
+      "definition": "The technique of tossing hot pasta vigorously with fat and pasta water to form an emulsion. In Alfredo, the butter and pasta water combine into a sauce that coats every strand. The motion is vigorous and continuous; stopping too soon leaves a greasy rather than creamy result."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The original fettuccine "
+          },
+          {
+            "type": "text",
+            "text": "Alfredo",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mantecatura-alfredo"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " contains no cream. It is butter, Parmesan, and pasta, tossed vigorously until the butter emulsifies with the starchy pasta water into something that reads as creamy because of its texture, not because of any dairy addition. The technique is the same as cacio e pepe: fat plus starch plus heat equals a coating sauce."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the best butter and the best aged Parmesan you can find. This dish has nowhere to hide poor ingredients. Fresh egg fettuccine produces the best result; dried egg fettuccine works too. Plain dried pasta works but gives a different texture. The butter must be very cold before it goes into the hot pan; this is what drives the emulsification."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pasta-fresh",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "egg fettuccine, fresh or dried",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 120,
+              "unit": "g",
+              "prepNote": "very cold, cubed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "aged, very finely grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "for pasta water",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "freshly ground, to serve",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring a large pot of well-salted water to the boil. Cook {{pasta-fresh}} of fettuccine according to the packet. Fresh pasta takes 2 to 3 minutes; dried egg pasta takes 7 to 9 minutes. Reserve 250 ml of pasta cooking water before draining."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "While the pasta cooks, place a large saute pan over a medium heat. Add 100 ml of pasta cooking water and {{unsalted-butter}} of cold cubed butter. Swirl and stir until the butter melts into the water and the sauce looks emulsified and creamy, not separated and greasy. This takes about 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the drained pasta to the pan. Toss vigorously over a medium heat for 1 minute. Remove from the heat. Add half the {{parmesan}} of parmesan and toss. Add the rest and toss again, with additional splashes of pasta water if the sauce tightens. The finished pasta should be glossy and coat the strands evenly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve immediately in warm bowls with extra Parmesan and black pepper at the table."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is greasy and the butter has separated",
+              "cause": "Pan too hot when butter added, or butter added too quickly",
+              "fix": "The pan should be on medium heat, not high. Add butter to the pasta water, not the other way round, and swirl until emulsified before adding pasta."
+            },
+            {
+              "symptom": "Parmesan clumps",
+              "cause": "Pan too hot when Parmesan added",
+              "fix": "Remove from heat completely before adding Parmesan. The residual heat is enough to melt it. Very fine grating also helps."
+            },
+            {
+              "symptom": "Sauce is too thick and pasty",
+              "cause": "Not enough pasta water",
+              "fix": "Add pasta water a tablespoon at a time and toss until the sauce loosens to a flowing consistency."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fettuccine Alfredo is the most famous Roman pasta outside Italy, and also the most misunderstood. The cream version served in most English-speaking restaurants has nothing to do with the Roman original. In Rome the dish is a point of pride: simple, and technically demanding. The restaurant Alfredo all'Augusteo in Rome still makes it tableside with a golden fork and spoon. The American chain version is a different dish. Not wrong exactly, but not this."
+          }
+        ]
+      }
+    ]
+  }
+}

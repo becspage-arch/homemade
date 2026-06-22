@@ -1,0 +1,360 @@
+{
+  "slug": "yakisoba",
+  "title": "Yakisoba",
+  "subtitle": "stir-fried wheat noodles with pork and vegetables",
+  "excerpt": "Yakisoba is a Japanese street-food classic of wheat noodles tossed in a sweet-savoury sauce with pork and shredded cabbage. Everything cooks fast in a very hot wok. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Yakisoba became a staple of Japanese matsuri festival stalls in the twentieth century, adapted from Chinese chow mein techniques.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "wok",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "yakisoba-sauce",
+      "term": "Yakisoba sauce",
+      "definition": "A sweet-savoury bottled sauce similar to Worcestershire sauce, used to season stir-fried noodles."
+    },
+    {
+      "slug": "wok-hei",
+      "term": "Wok hei",
+      "definition": "The smoky, slightly charred flavour that comes from cooking in a very hot wok over high heat."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Yakisoba uses pre-cooked wheat noodles tossed with pork belly, cabbage, and carrot over fierce heat to build "
+          },
+          {
+            "type": "text",
+            "text": "wok hei ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "wok-hei"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". The dish is finished with "
+          },
+          {
+            "type": "text",
+            "text": "yakisoba sauce ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "yakisoba-sauce"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", then topped with bonito flakes and pickled ginger. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep the heat as high as possible throughout and work quickly so the noodles char slightly rather than steam."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cabbage-white",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "shredded",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 1,
+              "unit": "medium",
+              "prepNote": "julienned",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 4,
+              "unit": "stalks",
+              "prepNote": "cut into 3 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bean-sprouts",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "bonito-flakes",
+              "amount": 5,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "nori",
+              "amount": 2,
+              "unit": "sheets",
+              "prepNote": "cut into thin strips",
+              "isOptional": true,
+              "groupLabel": "to serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the soy sauce, mirin, and sesame oil in a small bowl and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the wok over the highest heat until smoking. Add the vegetable oil, then add the pork belly slices. Stir-fry for 2 minutes until browned."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the carrot and cabbage. Toss constantly for 2 minutes until just softened at the edges but still with some crunch."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the pre-cooked yakisoba noodles directly to the wok. Use tongs to loosen and toss them through the pork and vegetables for 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the sauce over the noodles. Toss for 1 minute until everything is coated and smells slightly smoky. Add the spring onion and bean sprouts, toss once more, and serve immediately topped with bonito flakes and nori."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Noodles are clumping together",
+              "cause": "The noodles went in cold and the wok lost heat.",
+              "fix": "Rinse pre-cooked noodles in hot water just before adding them so they separate easily."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Dish is watery",
+              "cause": "Too many vegetables released liquid at once.",
+              "fix": "Cook the cabbage and carrot in a single layer first so moisture evaporates before you add the noodles."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "No charred flavour",
+              "cause": "The wok was not hot enough before adding ingredients.",
+              "fix": "Preheat the wok until a drop of water evaporates in under a second, then add the oil."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Yakisoba is the smell of Japanese summer festivals. Iron griddles line the stalls and cooks work fast with two spatulas. The noodles are wheat-based, not buckwheat, despite the name. Every region has its own sauce tweaks. It is sold at convenience stores cold, but it is best eaten hot off the wok."
+          }
+        ]
+      }
+    ]
+  }
+}

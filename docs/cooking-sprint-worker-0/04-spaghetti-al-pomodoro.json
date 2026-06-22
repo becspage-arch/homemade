@@ -1,0 +1,328 @@
+{
+  "slug": "spaghetti-al-pomodoro",
+  "title": "Spaghetti al Pomodoro",
+  "subtitle": "three-ingredient tomato sauce, the Hazan method",
+  "excerpt": "Spaghetti al pomodoro is the most direct tomato pasta there is: tinned tomatoes, an onion halved and cooked whole in butter, then removed. The sauce needs no browning, no garlic, no herbs. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Marcella Hazan published this three-ingredient tomato sauce in Essentials of Classic Italian Cooking (1992). She attributed it to a simple Roman domestic tradition: tinned plum tomatoes simmered with a halved onion and a generous amount of butter until the oil in the tomatoes separates and the sauce thickens. The onion is discarded before serving. It is one of the few Italian sauces that uses no garlic and no olive oil. Hazan's books are widely cited as the most reliable English-language guides to Italian home cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "The sauce freezes well without the pasta. Freeze in portions and thaw in a saucepan over a low heat.",
+    "batchable": true,
+    "batchNotes": "Make a double or triple batch of the sauce and freeze in portions. It keeps for up to three months.",
+    "makeAheadNotes": "The sauce keeps in the fridge for three days and improves with reheating.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comfort-food",
+      "kid-friendly"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "passata",
+      "term": "Tinned plum tomatoes",
+      "definition": "Whole or chopped tomatoes canned in their own juice. Italian varieties (San Marzano or similar) are the standard for this sauce. Drain off excess juice or use it all; either works."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spaghetti al pomodoro in this version uses three ingredients: "
+          },
+          {
+            "type": "text",
+            "text": "tinned",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "passata"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " tomatoes, onion, and butter. The onion goes in halved and whole, cooks with the tomatoes for 45 minutes, and comes out at the end. What it leaves behind is a mild sweetness that balances the acidity of the tomatoes. The butter makes the sauce glossy and rich without tasting of butter."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The sauce is deceptively simple to get right. The only variable is time: it needs a full 45 minutes of steady simmering for the tomatoes to break down and the sauce to concentrate. Rushed, it tastes sharp and unfinished. Given time, it is one of the best pasta sauces there is."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "two 400 g tins",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "peeled, halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 75,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "plus more for pasta water",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "spaghetti",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "grated, to serve",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the sauce"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put {{tinned-tomatoes}} of tinned tomatoes, {{onion}} onion (halved, not chopped), and {{unsalted-butter}} of butter into a medium saucepan. Add {{salt-table}} of salt. Crush the tomatoes roughly with a spoon as they heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a gentle simmer and cook, uncovered, for 45 minutes. Stir occasionally and crush any large tomato pieces against the side of the pan. The sauce is ready when it has thickened and the orange-red oil from the tomatoes sits on the surface."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fish out the two onion halves and discard them. Taste and adjust the salt."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the pasta and serve"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring a large pan of well-salted water to the boil. Cook {{pasta-dried}} of spaghetti according to the packet, until al dente. Reserve a ladleful of pasta water before draining."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Drain the pasta and toss immediately with the sauce, adding a splash of pasta water if needed to coat evenly. Serve with grated Parmesan if wanted, though the dish is complete without it."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce tastes sharp and acidic",
+              "cause": "Not cooked long enough",
+              "fix": "Simmer for the full 45 minutes. The acidity mellows considerably as the sauce reduces and concentrates."
+            },
+            {
+              "symptom": "Sauce is watery",
+              "cause": "Tinned tomatoes were high in juice and the sauce was not reduced enough",
+              "fix": "Continue simmering uncovered until the sauce thickens. The orange oil separation on the surface is the signal it is ready."
+            },
+            {
+              "symptom": "Sauce tastes flat",
+              "cause": "Not enough salt, or butter too little",
+              "fix": "Season more generously. The tomatoes should taste bright and full, not bland. Check the butter quantity; it makes a real difference to the roundness of the flavour."
+            },
+            {
+              "symptom": "Sauce scorches on the base of the pan",
+              "cause": "Heat too high",
+              "fix": "Use a gentle simmer throughout, not a rolling boil. Stir more often toward the end of cooking when the sauce has thickened."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This is Italian home cooking at its plainest. No garlic, no olive oil, no herbs: just the three things needed to make tinned tomatoes taste like themselves at their best. The absence of garlic surprises people who expect it; the onion method was a deliberate choice to give sweetness without sharpness. The sauce pairs with any pasta shape, but spaghetti or rigatoni work particularly well. It is the sauce Italian families make on a weeknight, and the one many use as the base for everything else."
+          }
+        ]
+      }
+    ]
+  }
+}

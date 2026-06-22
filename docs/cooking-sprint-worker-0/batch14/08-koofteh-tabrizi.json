@@ -1,0 +1,198 @@
+{
+  "slug": "koofteh-tabrizi",
+  "title": "Koofteh Tabrizi",
+  "subtitle": "large stuffed meatballs",
+  "excerpt": "Koofteh Tabrizi are enormous lamb and rice meatballs from the city of Tabriz, each one stuffed with dried apricots and walnuts and simmered in a spiced tomato broth. One meatball is a full serving. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Koofteh Tabrizi is the signature dish of Tabriz, the ancient capital of the Azerbaijani-Iranian northwest. The stuffed giant meatball tradition is specific to this region and unlike anything else in Persian cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Cooked meatballs and broth freeze well separately for up to 2 months. Reheat gently in the broth.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "persian",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "digital-scales", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "koofteh",
+      "term": "Koofteh",
+      "definition": "Persian-style meatballs, typically made from lamb and rice and often very large, sometimes stuffed with fruits and nuts."
+    },
+    {
+      "slug": "tabrizi",
+      "term": "Tabrizi",
+      "definition": "Relating to Tabriz, a city in northwestern Iran with a distinct culinary tradition influenced by its Azerbaijani heritage."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "These are proper " },
+          {
+            "type": "text",
+            "text": "koofteh",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "koofteh" } }]
+          },
+          { "type": "text", "text": " in the " },
+          {
+            "type": "text",
+            "text": "Tabrizi",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tabrizi" } }]
+          },
+          { "type": "text", "text": " style: each meatball is the size of a grapefruit, stuffed with apricots, walnuts and hard-boiled egg, and cooked slowly in a spiced tomato broth. The key is mixing the meat until it becomes very cohesive, so the meatball holds together during cooking. Serves 4." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Handle the meatballs gently when lowering them into the broth. They are fragile until the outside sets in the simmering liquid." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "lamb-mince", "amount": 700, "unit": "g", "prepNote": "20% fat", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "long-grain-rice", "amount": 80, "unit": "g", "prepNote": "rinsed and soaked 30 minutes, drained", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "parsley-flat", "amount": 30, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "coriander-fresh", "amount": 20, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "eggs", "amount": 1, "unit": "whole", "prepNote": "for the meatball mix", "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "turmeric", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "allspice", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Meatballs" },
+            { "ingredientSlug": "dried-apricots", "amount": 40, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "Stuffing" },
+            { "ingredientSlug": "walnuts", "amount": 40, "unit": "g", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "Stuffing" },
+            { "ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "chicken-stock", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Broth" },
+            { "ingredientSlug": "vegetable-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Broth" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Make the broth first. Heat the oil in the large saucepan over medium heat. Add the tinned tomatoes, stock, and a pinch of turmeric. Bring to a gentle simmer and cook for 10 minutes while you prepare the meatballs." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Combine the lamb mince, drained rice, grated onion, parsley, coriander, egg, turmeric, cinnamon and allspice in a large bowl. Mix with your hands for 5 full minutes until the mixture becomes very smooth and cohesive. It should feel like a dense paste, not crumbly mince." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Divide the meat mixture into 4 equal portions using the scales. Take one portion and flatten it in your palm. Place a quarter of the apricot and walnut mixture in the centre. Fold the meat up around the filling and roll firmly into a large ball, sealing the filling completely inside. Repeat for the remaining 3 portions." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Carefully lower the meatballs into the simmering broth using a large spoon. Do not drop them in or they will crack. The broth should come halfway up the meatballs." }]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [{ "type": "text", "text": "Cover and cook over very low heat for 80 minutes, turning each meatball once at the 40-minute mark. Do not disturb them more than this. They are done when firm to the touch and the rice inside is cooked through. Serve in deep bowls with broth spooned over and rice alongside." }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Meatball cracked open during cooking",
+              "solution": "The meat mixture was not mixed for long enough. Five full minutes of kneading is needed to develop cohesion. The meatball was also likely placed in liquid that was too aggressively boiling. Keep the broth at a gentle simmer."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Rice inside the meatball is still crunchy",
+              "solution": "The soaking step is important. Ensure the rice is soaked for the full 30 minutes before mixing in. If still crunchy, add 20 more minutes of covered cooking."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Broth tastes flat",
+              "solution": "Season the broth generously at the start and again before serving. The long cooking time mellows the flavour, so it needs more seasoning than you expect."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Tabriz sits near the border of Turkey and Armenia and its cooking reflects that crossroads history. The giant stuffed meatball tradition is shared with parts of Armenia and Turkey but the Persian spicing here is distinct. Koofteh Tabrizi is served at important family occasions. The large size means one meatball is placed in each bowl before the broth is ladled over." }]
+      }
+    ]
+  }
+}

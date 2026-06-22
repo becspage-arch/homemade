@@ -1,0 +1,134 @@
+{
+  "slug": "massaman-curry",
+  "title": "Massaman Curry",
+  "subtitle": "thai muslim-style beef curry with potatoes",
+  "excerpt": "A slow-simmered beef curry with sweet spices, potatoes, and peanuts in a mild, rich coconut sauce. More Persian in character than typically Thai. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Massaman curry reflects the influence of Persian and Indian Muslim traders on the cuisines of southern Thailand and the Malay Peninsula. The spice profile includes cardamom, cloves, and cinnamon alongside Thai aromatics.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze without the potatoes. Add freshly cooked potatoes when reheating.",
+    "batchable": true,
+    "batchNotes": "Massaman improves significantly the next day. A good batch cook.",
+    "makeAheadNotes": "Cook a day ahead and refrigerate. Reheat gently, adding a splash of water if needed.",
+    "dietaryFlags": [],
+    "cuisine": "thai",
+    "mealType": "dinner",
+    "mood": ["weekend", "dinner-party"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "dutch-oven", "isOptional": false },
+    { "slug": "pestle-and-mortar", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "massaman-paste", "term": "Massaman Paste", "definition": "The aromatic base of massaman curry, combining dried chillies, lemongrass, galangal, garlic, shallots, coriander root, and warm spices including cinnamon, cardamom, and cloves. It is less pungent and sweeter than other Thai curry pastes." },
+    { "slug": "palm-sugar-thai", "term": "Palm Sugar", "definition": "An unrefined sugar made from the sap of palm trees. Darker and more complex than refined sugar, with a slight caramel quality. Light brown sugar is the best substitute in Thai cooking." },
+    { "slug": "tempering-paste", "term": "Tempering the Paste", "definition": "Frying a curry paste in oil or thick coconut cream before adding liquid. This stage is essential: it cooks out the rawness of the aromatics and develops a deeper, rounded flavour." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The defining quality of massaman is its sweetness and warmth. Unlike other Thai curries, it is not chilli-forward. The " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "massaman-paste" } }], "text": "massaman paste" },
+          { "type": "text", "text": " combines aromatics from three different food traditions: Thai, Indian, and Persian. The result is one of the mildest and most broadly appealing curries in Southeast Asian cooking." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Never skip " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "tempering-paste" } }], "text": "tempering the paste" },
+          { "type": "text", "text": " in coconut cream before adding the rest of the liquid. This step drives off the moisture from the aromatics and concentrates the flavour. Use " },
+          { "type": "text", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "palm-sugar-thai" } }], "text": "palm sugar" },
+          { "type": "text", "text": " if you can find it: it adds a depth that refined sugar cannot match." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "beef-shin", "amount": 700, "unit": "g", "prepNote": "cut into 4cm pieces", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coconut-milk", "amount": 400, "unit": "ml", "prepNote": "full fat", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "potato", "amount": 500, "unit": "g", "prepNote": "cut into 3cm chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "peanuts", "amount": 80, "unit": "g", "prepNote": "roasted", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "fish-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "light-brown-sugar", "amount": 1.5, "unit": "tbsp", "prepNote": "palm sugar preferred", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "tamarind-paste", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lime", "amount": 1, "unit": "whole", "prepNote": "juice only", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "dried-chilli", "amount": 6, "unit": "whole", "prepNote": "soaked in hot water 15 minutes", "isOptional": false, "groupLabel": "Paste" },
+            { "ingredientSlug": "onion", "amount": 2, "unit": "whole", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "Paste" },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "cloves", "prepNote": null, "isOptional": false, "groupLabel": "Paste" },
+            { "ingredientSlug": "ginger-fresh", "amount": 30, "unit": "g", "prepNote": "substitute for galangal", "isOptional": false, "groupLabel": "Paste" },
+            { "ingredientSlug": "lemon", "amount": 1, "unit": "whole", "prepNote": "zest only, or 1 lemongrass stalk", "isOptional": false, "groupLabel": "Paste" },
+            { "ingredientSlug": "coriander-ground", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Paste" },
+            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Paste" },
+            { "ingredientSlug": "cardamom-green", "amount": 4, "unit": "pods", "prepNote": "seeds only", "isOptional": false, "groupLabel": "Paste" },
+            { "ingredientSlug": "cinnamon-stick", "amount": 1, "unit": "whole", "prepNote": "add to the curry whole, not the paste", "isOptional": false, "groupLabel": "Paste" },
+            { "ingredientSlug": "cloves", "amount": 4, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": "Paste" },
+            { "ingredientSlug": "peppercorns-black", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Paste" },
+            { "ingredientSlug": "vegetable-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blend or pound all the paste ingredients (excluding the cinnamon stick) to a smooth paste. Set aside." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oil in a dutch oven over medium heat. Add the paste. Fry, stirring constantly, for 8 minutes until it darkens and the oil separates around the edges." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the beef pieces. Stir to coat in the paste. Brown on all sides, about 5 minutes." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the coconut milk and 300ml of water. Add the cinnamon stick, tamarind, fish sauce, and sugar. Stir well. Bring to a simmer." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Cover and simmer on low heat for 1 hour until the beef is beginning to tender." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the potato chunks and peanuts. Continue simmering uncovered for 25 to 30 minutes until the potatoes are cooked and the sauce has thickened slightly." }] }] },
+          { "type": "listItem", "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Taste and balance. Add more fish sauce for salt, more sugar for sweetness, lime juice for acidity. Remove the cinnamon stick. Serve with steamed rice and fresh coriander." }] }] }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          { "type": "troubleshooterItem", "attrs": { "symptom": "Curry sauce is too thin after an hour", "cause": "The coconut milk has not reduced enough or too much water was added.", "fix": "Remove the lid and increase heat to medium. Simmer uncovered for 10 to 15 minutes to concentrate the sauce." } },
+          { "type": "troubleshooterItem", "attrs": { "symptom": "Potatoes are overcooked and falling apart", "cause": "Added too early alongside the beef.", "fix": "Always add potatoes in the last 30 minutes of cooking. If they have already broken down, serve as is: the potato starch will have thickened the sauce nicely." } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Massaman curry arrived in Thailand through trade routes from Persia and India, brought by Muslim merchants who settled in the port cities of the Gulf of Thailand from at least the 15th century. The name derives from the Thai word for Muslim. Unlike most Thai curries, massaman uses warm baking spices more common in Middle Eastern and Indian cooking than in Southeast Asian cooking. A famous 19th-century Thai poem by King Rama II described massaman as worthy of the most distinguished guests. It remains one of the most popular curry styles in southern Thailand and the wider Thai diaspora." }]
+      }
+    ]
+  }
+}

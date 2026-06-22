@@ -1,0 +1,140 @@
+{
+  "slug": "gamjatang",
+  "title": "Gamjatang",
+  "subtitle": "korean pork and vegetable spicy soup",
+  "excerpt": "Gamjatang is a thick, deeply spiced Korean soup made from pork, perilla, mushrooms, and spring onion in a rich, red chilli broth. It is a hearty, warming dish well suited to cold weather. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Gamjatang is a traditional Korean pork soup. The name is often translated as pork spine soup. This home version uses pork belly for accessibility while keeping the flavour profile of the original.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the cooked soup without the spring onion for up to 2 months.",
+    "batchable": true,
+    "batchNotes": "Double the quantity easily. The flavour improves the next day.",
+    "makeAheadNotes": "Best made a day ahead and reheated.",
+    "dietaryFlags": [],
+    "cuisine": "korean",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "stockpot", "isOptional": false },
+    { "slug": "dutch-oven", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "gochugaru", "term": "Gochugaru", "definition": "Korean red chilli flakes. They are coarser than European chilli flakes and have a fruity, mildly smoky heat. They give Korean stews and soups their characteristic red colour." },
+    { "slug": "doenjang", "term": "Doenjang", "definition": "A Korean fermented soybean paste. It is saltier and stronger in flavour than Japanese miso and is used to add depth to soups and stews." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Gamjatang is built on a long-simmered pork broth coloured deep red with " },
+          { "type": "text", "text": "gochugaru", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gochugaru" } }] },
+          { "type": "text", "text": " chilli flakes. The pork becomes very tender with extended cooking. Serves 4 with steamed rice." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "A spoonful of " },
+          { "type": "text", "text": "doenjang", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "doenjang" } }] },
+          { "type": "text", "text": " paste added towards the end gives the broth a deeper, more complex flavour. Use miso paste if doenjang is not available." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pork-belly", "amount": 700, "unit": "g", "prepNote": "cut into large chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "carrot", "amount": 2, "unit": "whole", "prepNote": "cut into large chunks", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "mushrooms-chestnut", "amount": 150, "unit": "g", "prepNote": "halved", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 5, "unit": "whole", "prepNote": "cut into 5 cm lengths", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "quartered", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "garlic", "amount": 8, "unit": "cloves", "prepNote": "smashed", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 20, "unit": "g", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-flakes", "amount": 3, "unit": "tbsp", "prepNote": "Korean gochugaru preferred", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "gochujang", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "miso-white", "amount": 1, "unit": "tbsp", "prepNote": "or Korean doenjang", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tsp", "prepNote": "to finish", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "water", "amount": 1500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blanch the pork in boiling water for 5 minutes to remove impurities. Drain and rinse under cold water. This step gives a cleaner, clearer broth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Put the pork in a stockpot with the water, onion, half the garlic, and the ginger. Bring to a boil, skim any foam, then reduce to a steady simmer. Cook for 45 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the chilli flakes, gochujang, miso paste, soy sauce, and remaining garlic to a paste. Stir into the broth." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the carrot and mushrooms. Simmer for a further 30 minutes until the pork is very tender and the broth is deeply flavoured. Taste and adjust seasoning." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the spring onion. Drizzle sesame oil over the top. Serve in deep bowls with steamed rice." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          { "type": "troubleshooterItem", "attrs": { "issue": "Broth is cloudy and murky", "fix": "Do not skip the blanching step. Rinse the pork thoroughly under cold water before adding it to the pot." } },
+          { "type": "troubleshooterItem", "attrs": { "issue": "Pork is still tough after 1 hour", "fix": "Continue simmering for a further 30 minutes. Pork belly can vary. The meat should pull apart easily when done." } },
+          { "type": "troubleshooterItem", "attrs": { "issue": "Soup is not spicy enough", "fix": "Add another tablespoon of gochujang and simmer for 5 more minutes. Chilli flakes add heat but gochujang adds both heat and depth." } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Gamjatang is popular at late-night restaurants in Korea, especially near university areas. It is eaten after drinking or as a warming meal in cold weather. The soup is served bubbling at the table. Diners eat it with rice and side dishes. It is a dish associated with long, slow cooking and generous portions." }
+        ]
+      }
+    ]
+  }
+}

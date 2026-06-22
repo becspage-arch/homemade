@@ -1,0 +1,396 @@
+{
+  "slug": "hainanese-chicken-rice",
+  "title": "Hainanese Chicken Rice",
+  "subtitle": "poached chicken with rice cooked in chicken stock",
+  "excerpt": "Silky poached chicken served over fragrant rice cooked in the same stock, with three dipping sauces on the side. A Southeast Asian institution. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Developed by Hainanese immigrants in Singapore and Malaysia in the early 20th century, this dish became the national dish of Singapore and is now one of the most cooked Chinese-derived dishes in Southeast Asia.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The stock and chicken can be cooked ahead and refrigerated. Reheat the stock and slice the chicken cold for the best texture.",
+    "dietaryFlags": [],
+    "cuisine": "chinese",
+    "mealType": "lunch",
+    "mood": [
+      "weekend",
+      "dinner-party"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "gentle-poaching",
+      "term": "Gentle Poaching",
+      "definition": "Cooking chicken in water held just below a simmer, around 80C. The chicken goes in, the water is brought barely to temperature, then the heat is turned off. The residual heat finishes the cooking, producing extremely tender, silky flesh."
+    },
+    {
+      "slug": "ice-bath",
+      "term": "Ice Bath",
+      "definition": "Plunging cooked food into a large bowl of ice and cold water immediately after cooking. For poached chicken, this stops the cooking instantly and contracts the skin, giving it a silky, slightly gelatinous texture."
+    },
+    {
+      "slug": "chicken-rice-fat",
+      "term": "Chicken Fat",
+      "definition": "The fat skimmed from the top of the poaching stock. Used to fry the rice before adding stock. It gives the rice its distinctive flavour and a slightly shiny surface."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hainanese chicken rice is three things at once: a poaching technique, a rice method, and a set of dipping sauces. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "gentle-poaching"
+                }
+              }
+            ],
+            "text": "gentle poaching"
+          },
+          {
+            "type": "text",
+            "text": " keeps the chicken moist. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "ice-bath"
+                }
+              }
+            ],
+            "text": "ice bath"
+          },
+          {
+            "type": "text",
+            "text": " sets the skin. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "chicken-rice-fat"
+                }
+              }
+            ],
+            "text": "chicken fat"
+          },
+          {
+            "type": "text",
+            "text": " flavours the rice. All three matter."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The dipping sauces are as important as the chicken itself. At minimum, serve ginger paste and a chilli sauce alongside. Oyster sauce thinned with a little hot stock makes a simple third option."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 8,
+              "unit": "pieces",
+              "prepNote": "bone-in, skin-on",
+              "isOptional": false,
+              "groupLabel": "Chicken"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "sliced for poaching, plus 30g grated for ginger sauce",
+              "isOptional": false,
+              "groupLabel": "Chicken"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 6,
+              "unit": "stalks",
+              "prepNote": "4 for poaching, 2 sliced to serve",
+              "isOptional": false,
+              "groupLabel": "Chicken"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Chicken"
+            },
+            {
+              "ingredientSlug": "basmati-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "or jasmine rice",
+              "isOptional": false,
+              "groupLabel": "Rice"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": "Rice"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "grated, for the rice",
+              "isOptional": false,
+              "groupLabel": "Rice"
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "for finishing the rice",
+              "isOptional": false,
+              "groupLabel": "Rice"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": "Dipping Sauce"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "blended with a little lime juice for chilli sauce",
+              "isOptional": false,
+              "groupLabel": "Dipping Sauce"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "juice only",
+              "isOptional": false,
+              "groupLabel": "Dipping Sauce"
+            },
+            {
+              "ingredientSlug": "oyster-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": "Dipping Sauce"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place chicken thighs in a pot large enough to hold them in a single layer. Cover with 1.5 litres of cold water. Add the sliced ginger, 4 spring onions, and salt. Bring to the boil over medium heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Once at the boil, reduce to the lowest possible heat. Cover and cook for 25 minutes. Turn off the heat completely. Leave the chicken in the hot stock for a further 10 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Prepare a bowl of ice water. Remove the chicken and lower it into the ice water for 5 minutes. This firms the skin. Remove and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Skim the chicken fat from the top of the stock. Heat 2 tablespoons of this fat in a saucepan. Add the minced garlic and grated ginger. Cook for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the rice and stir to coat in the fat. Cook for 2 minutes. Add 600ml of the chicken stock. Bring to the boil, cover, and reduce to the lowest heat. Cook for 12 minutes. Turn off heat and leave covered for 10 minutes. Stir in the sesame oil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slice the chicken thighs. Arrange over the rice. Spoon over a ladleful of hot stock. Serve the sauces alongside: light soy, chilli-lime sauce, and oyster sauce. Scatter sliced spring onion over the top."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Chicken flesh is pink near the bone",
+              "cause": "The poaching time was too short or the heat was reduced before the chicken came to temperature.",
+              "fix": "Return the chicken to the hot stock and leave for an additional 10 minutes with the lid on and heat off."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Rice is not fragrant and tastes plain",
+              "cause": "The rice was not fried first in chicken fat, or too little stock was used.",
+              "fix": "A splash of sesame oil stirred through at the end helps. Next time, ensure the garlic-ginger mixture is sizzling before the rice goes in."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hainanese immigrants brought the dish to Singapore in the early 20th century. It evolved there into the version now called Singapore's national dish. The original Hainanese dish, Wenchang chicken, is made from a different breed and served differently. The Singapore version became its own thing. It is now equally embedded in Malaysian food culture."
+          }
+        ]
+      }
+    ]
+  }
+}

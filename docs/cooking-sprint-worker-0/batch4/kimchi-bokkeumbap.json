@@ -1,0 +1,348 @@
+{
+  "slug": "kimchi-bokkeumbap",
+  "title": "Kimchi Bokkeumbap",
+  "subtitle": "Kimchi fried rice with pork and egg",
+  "excerpt": "A fast Korean fried rice made with day-old rice, ripe kimchi, and pork, cooked in a hot pan until the rice is slightly crispy at the edges. It serves 2 and takes 15 minutes. A fried egg on top is standard and adds richness to the dish.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Kimchi bokkeumbap is one of the most widely eaten home-cooking dishes in Korea. It is a practical use for older, more fermented kimchi, which has a sharper and deeper flavour than fresh kimchi and is considered suited to cooking. The dish became a symbol of Korean home cooking internationally in the early 21st century as Korean food gained wider recognition.",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [
+      "DAIRY_FREE"
+    ],
+    "cuisine": "korean",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "wok",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bokkeumbap",
+      "term": "Bokkeumbap",
+      "definition": "Bokkeumbap is the Korean word for fried rice, from bokkeum (stir-fried) and bap (cooked rice). It is a broad category that includes many variations, with kimchi bokkeumbap being the most popular. Day-old cold rice is always preferred as the grains are drier and fry rather than steam in the pan, giving the rice a better texture."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This recipe serves 2 and takes 15 minutes. Kimchi "
+          },
+          {
+            "type": "text",
+            "text": "bokkeumbap",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bokkeumbap"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is the Korean fried rice dish built on older, well-fermented kimchi and cooked cold day-old rice. The kimchi provides acidity, heat, and colour, while the pork adds richness. A fried egg on top is the standard finish."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Day-old cold rice is the key to good fried rice. Freshly cooked rice has too much moisture and will steam rather than fry, producing a clumped, soggy result. Break the cold rice up with your hands before it goes into the pan. Use kimchi that has been fermenting for at least a week: the sourness and depth it has developed at that stage makes a far more interesting dish than fresh kimchi, which is milder and less complex."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "short-grain-rice",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "cooked, cold, day-old",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "kimchi",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "roughly chopped, plus 2 tbsp kimchi juice from the jar",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "diced into 1cm pieces, or pork mince",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "to finish",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "cloves",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 2,
+              "unit": "pinch",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "pinch",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sesame-seeds",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "to finish",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "gochugaru",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "optional",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "for frying",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat 1 tablespoon of oil in a wok or large frying pan over high heat. Add the pork and cook for 3 to 4 minutes until browned and cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the garlic and stir for 30 seconds. Add the kimchi and the 2 tablespoons of kimchi juice. Stir-fry for 2 minutes until the kimchi softens slightly and the juice has mostly evaporated."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the remaining oil and the cold rice. Break up any clumps with a spatula. Toss and stir-fry over the highest heat for 3 minutes until the rice is heated through and starting to crisp at the edges."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the soy sauce and gochugaru if using. Toss for another minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In a separate pan, fry the eggs to your liking, with a runny yolk being most traditional."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the rice between two plates. Top each with a fried egg. Drizzle with sesame oil and scatter over the spring onions and sesame seeds."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The rice is clumping and sticking together",
+              "cause": "The rice was too moist or freshly cooked",
+              "fix": "Use rice that has been refrigerated overnight. Break it up completely with your hands before it goes into the pan and make sure the pan is very hot before adding the rice"
+            },
+            {
+              "symptom": "The dish tastes sour but flat, with no depth",
+              "cause": "The kimchi may be too mild or the pork was not browned before adding the other ingredients",
+              "fix": "Brown the pork properly before adding the kimchi and cook the kimchi in the pan until it starts to caramelise slightly at the edges. Add another tablespoon of soy sauce to taste"
+            },
+            {
+              "symptom": "The rice is not getting crispy",
+              "cause": "The heat is not high enough or there is too much liquid in the pan",
+              "fix": "Push the rice to the outer edge of the pan where it is hottest and let it sit undisturbed for 30 to 60 seconds before stirring. The bottom layer should crust slightly before mixing"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Kimchi bokkeumbap is a fridge-clearing dish. It exists because Korean households always have kimchi and leftover rice, and the combination of the two in a hot pan is one of the most satisfying quick meals in Korean cooking. It is eaten at any time of day: as a quick lunch, a late-night meal, or a simple dinner when nothing elaborate is planned. The dish became one of the gateway Korean recipes for international audiences, partly because it requires only pantry staples once you have kimchi and is fast enough to cook on a weeknight without any planning."
+          }
+        ]
+      }
+    ]
+  }
+}

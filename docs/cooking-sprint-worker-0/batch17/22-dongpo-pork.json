@@ -1,0 +1,402 @@
+{
+  "slug": "dongpo-pork",
+  "title": "Dongpo Pork",
+  "subtitle": "hangzhou slow-braised pork belly squares",
+  "excerpt": "Thick squares of pork belly tied with twine and braised in Shaoxing wine and soy until the fat is silky and the skin collapses under a spoon. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Named after the Song dynasty poet Su Dongpo, this Hangzhou dish dates back to the 11th century and remains one of the most celebrated pork preparations in Chinese cuisine.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 150,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze cooled pork squares in their braising liquid. Thaw overnight and reheat gently.",
+    "batchable": true,
+    "batchNotes": "Works well in larger batches. The dish actually improves when made a day ahead.",
+    "makeAheadNotes": "Cook the day before, refrigerate overnight. Skim fat, then reheat in the liquid.",
+    "dietaryFlags": [],
+    "cuisine": "chinese",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "dinner-party"
+    ],
+    "temperatureCelsius": 160,
+    "temperatureNote": "Oven temperature for the final braising stage",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "blanching-pork",
+      "term": "Blanching",
+      "definition": "Briefly boiling meat in unseasoned water to remove blood, impurities, and excess fat before the main cooking stage. Produces a cleaner-tasting braise."
+    },
+    {
+      "slug": "braising-liquid",
+      "term": "Braising Liquid",
+      "definition": "The liquid in which meat is cooked slowly. As the meat cooks, it releases collagen that thickens the liquid into a sauce."
+    },
+    {
+      "slug": "clay-pot",
+      "term": "Clay Pot",
+      "definition": "Traditional Chinese earthenware vessel used for slow braising. It distributes heat evenly and retains moisture. A dutch oven performs the same function."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dongpo pork demands a piece of pork belly with equal layers of fat and lean meat. The slow braise in wine renders the fat completely, while the collagen from the skin creates a thick, syrupy "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "braising-liquid"
+                }
+              }
+            ],
+            "text": "braising liquid "
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "blanching-pork"
+                }
+              }
+            ],
+            "text": "blanching"
+          },
+          {
+            "type": "text",
+            "text": " step at the start is not optional. It removes a strong porky smell that would otherwise dominate the finished dish. A traditional "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "clay-pot"
+                }
+              }
+            ],
+            "text": "clay pot"
+          },
+          {
+            "type": "text",
+            "text": " gives the best result, but a dutch oven works well."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "skin on, cut into 6cm squares and tied with kitchen twine",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 250,
+              "unit": "ml",
+              "prepNote": "Shaoxing wine strongly preferred",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-dark",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 6,
+              "unit": "stalks",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "star-anise",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "peppercorns-black",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "to finish",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the tied pork squares in a large pan, skin-side down. Cover with cold water. Bring to the boil and cook for 5 minutes. Drain, rinse, and pat dry."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lay a bed of half the spring onions and half the ginger on the bottom of your dutch oven. Place the pork squares on top, skin-side down."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the Shaoxing wine, both soy sauces, sugar, remaining ginger, spring onions, star anise, cinnamon, and peppercorns. Pour in just enough water to reach halfway up the pork."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to the boil over high heat. Skim any foam. Cover tightly. Reduce heat to the lowest setting and cook for 1 hour 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Carefully turn each pork square skin-side up. Cover and continue braising for another 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the pork to a warm plate. Increase heat and reduce the braising liquid to a syrupy glaze, about 10 to 15 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Strain the sauce. Add a few drops of sesame oil if using. Remove the twine from the pork. Serve each square skin-side up in a small bowl with sauce spooned over. Eat with steamed buns or rice."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Pork falls apart when turning",
+              "cause": "The braise is progressing well. The meat is very tender.",
+              "fix": "Use two large spoons or a wide spatula to support the piece when turning. This is a sign of success, not a problem."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Sauce tastes too salty",
+              "cause": "The braising liquid over-reduced with both soy sauces present.",
+              "fix": "Add a splash of water and a pinch more sugar to balance. Simmer briefly to integrate."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dongpo pork comes from Hangzhou, the capital of Zhejiang province, a city known for its refined cuisine built around the area's freshwater fish, pork, and tea culture. The dish carries the name of Su Shi, the Song dynasty statesman and poet who wrote about his method for slow-braising pork. The version served in Hangzhou restaurants today is often presented in small clay pots, skin-side up, on a bed of vegetables. It is considered one of the eight great regional Chinese cuisines of the Jiangnan school."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,417 @@
+{
+  "slug": "pozole-rojo",
+  "title": "Pozole Rojo",
+  "subtitle": "mexican red chilli and pork soup",
+  "excerpt": "A deep red chilli broth loaded with tender pork and plump chickpeas, served with shredded cabbage and a squeeze of lime. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pozole dates to pre-Columbian Mexico, originally made with hominy corn. It is a celebratory dish served at festivals and family gatherings.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the broth and pork without the garnishes for up to 3 months.",
+    "batchable": true,
+    "batchNotes": "This scales well. Double everything and freeze half the broth.",
+    "makeAheadNotes": "The broth improves overnight. Make a day ahead and reheat gently.",
+    "dietaryFlags": [],
+    "cuisine": "mexican",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "batch-cooking"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "simmering",
+      "term": "Simmering",
+      "definition": "Cooking a liquid just below boiling point, with small bubbles rising steadily from the base."
+    },
+    {
+      "slug": "chilli-paste",
+      "term": "Chilli Paste",
+      "definition": "Dried chillies soaked, blended, and fried to form a thick base that colours and flavours a broth or sauce."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pozole rojo gets its colour and heat from a fried "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "chilli-paste"
+                }
+              }
+            ],
+            "text": "chilli paste"
+          },
+          {
+            "type": "text",
+            "text": " stirred into a long-cooked pork broth. Chickpeas stand in for the traditional hominy corn and absorb the broth beautifully. The soup calls for slow "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "simmering"
+                }
+              }
+            ],
+            "text": "simmering"
+          },
+          {
+            "type": "text",
+            "text": " to pull the pork apart and meld the flavours into the broth."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tip: set out the garnishes before serving. Cabbage, lime, and dried oregano at the table make this dish."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pork-shoulder",
+              "amount": 700,
+              "unit": "g",
+              "prepNote": "cut into large chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chickpeas-tinned",
+              "amount": 2,
+              "unit": "x 400g tins",
+              "prepNote": "drained, or hominy corn if available",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dried-chilli",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": "stems and seeds removed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": "one halved, one finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 5,
+              "unit": "cloves",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "oregano-dried",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "dried",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaves",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 1,
+              "unit": "litre",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cabbage-white",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "finely shredded, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "cut into wedges, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Soak dried chillies in 300ml boiling water for 20 minutes. Blend with 2 garlic cloves and the halved tomato until smooth. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oil in a stockpot over high heat. Brown the pork in batches, about 4 minutes per side. Remove and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fry the chopped onion and remaining garlic in the same pot for 5 minutes. Add the chilli paste and smoked paprika. Fry, stirring, for 5 minutes until it darkens."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return the pork to the pot. Add stock, cumin, bay leaves, and salt. Bring to the boil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce to a low simmer, cover, and cook for 60 minutes until the pork is tender. Remove the pork and shred with two forks."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add chickpeas and shredded pork back to the pot. Simmer for 10 minutes. Taste for salt."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ladle into bowls and top with shredded cabbage, a wedge of lime, and dried oregano."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth lacks depth",
+              "cause": "The chilli paste was not fried long enough.",
+              "fix": "Fry the paste a few more minutes before adding stock. It should turn from bright red to a deeper brick colour."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Pork is tough",
+              "cause": "Not cooked long enough at low enough heat.",
+              "fix": "Return the lid and simmer for another 20 to 30 minutes. Pork shoulder needs patience to break down."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Soup is too thin",
+              "cause": "Too much liquid for the amount of solids.",
+              "fix": "Remove the lid and boil on medium heat for 10 minutes to reduce. The chickpeas also thicken it as they cook."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pozole is one of Mexico's oldest dishes, with roots in Aztec ritual cooking. The original used hominy corn, which grows throughout Mexico and is processed with lime to make it digestible. Pozole rojo is the dominant style in the central states of Jalisco and Guerrero. It is a dish of occasion, served at quinceanaeras, New Year's Eve, and Mexican Independence Day. Each family guards their version closely."
+          }
+        ]
+      }
+    ]
+  }
+}

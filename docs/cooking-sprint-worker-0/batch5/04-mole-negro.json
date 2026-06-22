@@ -1,0 +1,409 @@
+{
+  "slug": "mole-negro",
+  "title": "Mole Negro",
+  "subtitle": "Oaxacan chocolate and chilli sauce, simplified for the home kitchen",
+  "excerpt": "Mole negro is a deep, dark sauce built from toasted dried chillies, charred onion and garlic, warm spices and dark chocolate. This home version captures the complexity of the Oaxacan original without requiring a specialist kitchen. Serve it over bone-in chicken thighs with rice.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mole negro is considered one of the national dishes of Mexico and is strongly associated with Oaxaca, a state known for its seven mole sauces. The word mole comes from the Nahuatl word 'molli', meaning sauce.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Mole paste and finished sauce both freeze well for up to 4 months.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The sauce improves over 2 days in the fridge as the flavours deepen.",
+    "dietaryFlags": [],
+    "cuisine": "mexican",
+    "mealType": "dinner",
+    "mood": [
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-30",
+      "isOptional": false
+    },
+    {
+      "slug": "blender",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "fine-sieve",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mole",
+      "term": "mole",
+      "definition": "A complex Mexican sauce made from dried chillies, spices, nuts, seeds and often chocolate. There are many regional varieties; mole negro from Oaxaca is one of the richest and darkest."
+    },
+    {
+      "slug": "piloncillo",
+      "term": "piloncillo",
+      "definition": "Unrefined Mexican cane sugar sold in cone shapes. It has a deep molasses flavour similar to dark muscovado sugar, which can be used as a substitute."
+    }
+  ],
+  "techniqueSlugs": [
+    "toasting-dried-chillies",
+    "blending-sauces"
+  ],
+  "criticalTechniques": [
+    "toasting-dried-chillies"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This recipe serves 6 and takes about 2 hours 15 minutes from start to finish. The sauce is built in layers and each stage needs its own time. The reward is a sauce of extraordinary depth and complexity."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Charring the onion and garlic directly over the flame or under the grill is not optional. That bitter char is a signature of mole negro and it balances the sweetness of the chocolate and the "
+          },
+          {
+            "type": "text",
+            "text": "piloncillo",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "piloncillo"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". Skip it and the sauce will taste one-dimensional."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "ancho-chilli",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "stems and seeds removed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dried-chilli",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "stems and seeds removed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dried-chilli",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "stems and seeds removed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "bone-in",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "tin, crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "large",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 6,
+              "unit": "cloves",
+              "prepNote": "unpeeled",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dark-brown-sugar",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "or dark brown sugar",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Toast the dried chillies in a dry frying pan over medium heat, pressing each one flat with a spatula. Toast for 30 seconds per side until they puff and smell fragrant. Do not let them burn black or the sauce will be acrid. Transfer to a large bowl, cover with boiling water and soak for 20 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Char the onion and garlic. Hold the onion halves and the unpeeled garlic cloves over a gas flame or under a hot grill until blackened on the outside. The onion should have deep char marks on the cut face. Peel the garlic once cool enough to handle."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Drain the soaked chillies, reserving 250 ml of the soaking water. Put the chillies, charred onion, peeled garlic, crushed tomatoes, cinnamon stick, piloncillo and reserved soaking water into a blender. Blend on high for 2 minutes until very smooth. Strain through a fine sieve, pressing firmly. The strained liquid is your mole base."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat 2 tablespoons of oil in a large, deep frying pan over high heat. Add the mole base. It will splutter vigorously. Fry, stirring constantly, for 5 minutes until the sauce darkens and thickens. Reduce the heat to medium."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add 500 ml of chicken stock or water to the pan. Stir well. Add 60 g of dark chocolate (minimum 70% cocoa), broken into pieces. Stir until the chocolate melts completely into the sauce. Taste and season with salt."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In a separate pan, brown the chicken thighs in the remaining tablespoon of oil, skin-side down, for 4 to 5 minutes until the skin is golden. Turn and brown the other side for 2 minutes. Transfer the chicken to the mole sauce. Simmer gently for 35 to 40 minutes until the chicken is cooked through and the sauce has thickened around it."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve over white rice, with warm tortillas alongside. The "
+                  },
+                  {
+                    "type": "text",
+                    "text": "mole",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "mole"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " should coat the back of a spoon thickly. If it is too thin, continue simmering uncovered for another 10 minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "symptom": "The sauce tastes harsh and very bitter.",
+              "cause": "The chillies were toasted too long, or too many seeds remained in the soaking water.",
+              "fix": "Add another 30 g of dark chocolate and a little more piloncillo or brown sugar to balance. Taste as you go."
+            }
+          },
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "symptom": "The sauce is grainy and not smooth.",
+              "cause": "The blending time was not long enough, or the sieve was not used.",
+              "fix": "Return the sauce to the blender in batches and blend for a full 2 minutes each time, then strain again."
+            }
+          },
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "symptom": "The sauce is too thin even after 40 minutes of simmering.",
+              "cause": "Too much liquid was added, or the frying stage at the start was too brief.",
+              "fix": "Increase the heat to medium and cook uncovered, stirring often, until the sauce reduces to a coating consistency."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mole negro belongs to Oaxaca in southern Mexico. It is served at weddings, festivals and family celebrations. The sauce takes most of the day to make the traditional way. This version is shorter but keeps the key flavours. "
+          },
+          {
+            "type": "text",
+            "text": "Mole",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mole"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is one of the most important sauces in Mexican cooking."
+          }
+        ]
+      }
+    ]
+  }
+}

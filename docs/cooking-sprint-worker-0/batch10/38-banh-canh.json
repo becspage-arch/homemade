@@ -1,0 +1,421 @@
+{
+  "slug": "banh-canh",
+  "title": "Bánh Canh",
+  "subtitle": "thick noodle soup with pork",
+  "excerpt": "Bánh canh is a Vietnamese noodle soup made with thick, chewy rice or tapioca noodles in a clear, rich pork broth. The noodles are cut short and give the soup a distinctive hearty texture. This recipe serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Bánh canh is popular throughout Vietnam, with regional variations in the south using crab or shrimp instead of pork. The name means 'noodle soup' and the dish is recognised by its unusually thick, chewy noodles.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the broth alone for up to 3 months. The noodles do not freeze well.",
+    "batchable": true,
+    "batchNotes": "Make a large batch of broth and use across two meals.",
+    "makeAheadNotes": "The broth can be made up to 3 days ahead. Cook the noodles fresh just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comforting"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "sieve",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "banh-canh-noodle",
+      "term": "Bánh canh noodle",
+      "definition": "Thick, round noodles made from rice flour or tapioca starch. They are much wider and chewier than regular rice noodles and are the defining feature of the dish."
+    },
+    {
+      "slug": "pork-broth-light",
+      "term": "Nước lèo",
+      "definition": "A clear Vietnamese pork broth made by simmering bones or pork shoulder with aromatics. It should be naturally sweet and clear rather than rich and heavy."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bánh canh is a satisfying noodle soup built around thick, chewy "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "banh-canh-noodle"
+                }
+              }
+            ],
+            "text": "bánh canh noodles "
+          },
+          {
+            "type": "text",
+            "text": "in a clear "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pork-broth-light"
+                }
+              }
+            ],
+            "text": "nước lèo "
+          },
+          {
+            "type": "text",
+            "text": "broth. "
+          },
+          {
+            "type": "text",
+            "text": "Udon noodles make an excellent substitute for the authentic thick rice noodles. "
+          },
+          {
+            "type": "text",
+            "text": "This recipe serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Skim the broth carefully in the first 20 minutes. A clear broth is the hallmark of a well-made bánh canh."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pork-shoulder",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "in one piece",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "noodles-udon",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "or thick rice noodles, cooked",
+              "isOptional": false,
+              "groupLabel": "noodles"
+            },
+            {
+              "ingredientSlug": "prawns-raw",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "peeled",
+              "isOptional": true,
+              "groupLabel": "topping"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "topping"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "topping"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "sliced",
+              "isOptional": true,
+              "groupLabel": "topping"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "cut into wedges",
+              "isOptional": false,
+              "groupLabel": "to serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the pork shoulder in a stockpot with 2 litres of cold water. Bring to the boil and skim off all foam thoroughly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the onion, ginger, and garlic. Reduce to a gentle simmer. Cook for 60 to 75 minutes until the pork is cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the pork and set aside to cool. Strain the broth through a sieve and return to the pot."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season the broth with fish sauce and sugar. It should taste clean, slightly sweet, and savoury."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slice the cooked pork thinly. If using prawns, add them to the simmering broth for 2 to 3 minutes until just cooked."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the cooked noodles between 4 bowls. Top with sliced pork and prawns. Ladle the very hot broth over the top."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Finish with spring onion and coriander. Serve with lime wedges and sliced chilli on the side."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The broth is cloudy and grey.",
+              "cause": "The foam was not skimmed properly at the start.",
+              "fix": "Bring the pork to the boil in cold water and skim off all the grey foam before adding aromatics. Do not let the broth boil vigorously."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The udon noodles are too starchy and thicken the broth.",
+              "cause": "Udon releases more starch than rice noodles when added to hot soup.",
+              "fix": "Cook and rinse the udon noodles in a separate pot before adding to the bowl. Add the broth on top rather than cooking the noodles in the broth."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The pork is dry and stringy.",
+              "cause": "It was simmered at too high a temperature.",
+              "fix": "Keep the broth at the barest possible simmer. The surface should barely move. A gentle poach gives much more tender pork."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bánh canh is eaten throughout Vietnam and is especially popular in the south and centre. "
+          },
+          {
+            "type": "text",
+            "text": "The coastal version from Trảng Bàng uses freshly made rice sheets cut into thick strips. "
+          },
+          {
+            "type": "text",
+            "text": "In the Mekong Delta, crab or prawn versions are more common than pork. "
+          },
+          {
+            "type": "text",
+            "text": "The dish is sold at markets, street stalls, and small restaurants for breakfast or lunch. "
+          },
+          {
+            "type": "text",
+            "text": "Its thick, chewy noodles make it one of the most comforting and filling Vietnamese noodle soups."
+          }
+        ]
+      }
+    ]
+  }
+}

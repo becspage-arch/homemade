@@ -1,0 +1,378 @@
+{
+  "slug": "ribollita",
+  "title": "Ribollita",
+  "subtitle": "thick tuscan bread and vegetable soup",
+  "excerpt": "Ribollita is a hearty Tuscan soup made from bread, cannellini beans, and cavolo nero. It is slow-cooked until thick and filling. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Ribollita comes from Tuscany and dates back to medieval peasant cooking. The name means 'reboiled' because cooks would reheat leftover minestrone with stale bread the next day. It is now a celebrated dish across central Italy.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze without the bread. Add fresh bread when reheating.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Keeps in the fridge for 3 days and improves overnight.",
+    "makeAheadNotes": "Make a day ahead and reheat gently. The flavour deepens overnight.",
+    "dietaryFlags": [
+      "vegan",
+      "dairy-free"
+    ],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comfort"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "colander",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "soffritto",
+      "term": "Soffritto",
+      "definition": "A base of finely chopped onion, carrot, and celery cooked slowly in oil until soft. It forms the flavour foundation of many Italian dishes."
+    },
+    {
+      "slug": "cavolo-nero",
+      "term": "Cavolo nero",
+      "definition": "A dark-leafed Italian kale also called Tuscan kale or black cabbage. It has a slightly bitter flavour and holds up well to long cooking."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ribollita starts with a "
+          },
+          {
+            "type": "text",
+            "text": "soffritto",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "soffritto"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of onion, carrot, and celery, then builds slowly with beans and greens. It serves 4 and gets better the next day when the bread has fully absorbed the broth."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dark leafy "
+          },
+          {
+            "type": "text",
+            "text": "cavolo nero",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cavolo-nero"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " gives the soup its distinctive bitterness and body. Stale bread stirred in at the end thickens everything to a porridge-like consistency."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "large",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": "diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 2,
+              "unit": "sticks",
+              "prepNote": "diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cavolo-nero",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "stems removed, roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cannellini-beans",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "drained and rinsed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 1,
+              "unit": "litre",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "rosemary",
+              "amount": 2,
+              "unit": "sprigs",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprigs",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a large saucepan over medium heat. Add the onion, carrot, and celery. Cook for 10 minutes until soft."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the garlic, rosemary, and thyme. Cook for 1 minute until fragrant."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the tinned tomatoes. Break them up with a spoon. Cook for 5 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the stock and cavolo nero. Bring to a boil, then reduce to a simmer for 20 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mash half the beans roughly with a fork. Stir all beans into the pot and simmer for 10 more minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season to taste. Remove herb sprigs. Ladle into bowls and drizzle with extra virgin olive oil."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "symptom": "Soup is too thin",
+              "cause": "Not enough starch has been released from the beans",
+              "fix": "Mash another cup of beans and stir them back in, then simmer for five more minutes"
+            }
+          },
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "symptom": "Cavolo nero is tough and chewy",
+              "cause": "It needs longer cooking time than most greens",
+              "fix": "Simmer for an extra 10 minutes until the leaves are completely tender"
+            }
+          },
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "symptom": "Soup tastes flat and bland",
+              "cause": "The soffritto was not cooked long enough to develop sweetness",
+              "fix": "Cook the vegetables for a full 10 minutes before adding anything else"
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This soup is from Tuscany in central Italy. It was made by poor families to use up stale bread and leftover soup. The name means reboiled, because it was heated again the next day. You find it in homes and simple restaurants all over the region. It is a winter dish, best eaten when the weather is cold."
+          }
+        ]
+      }
+    ]
+  }
+}

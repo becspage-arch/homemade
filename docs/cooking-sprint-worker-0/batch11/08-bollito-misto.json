@@ -1,0 +1,408 @@
+{
+  "slug": "bollito-misto",
+  "title": "Bollito Misto",
+  "subtitle": "northern italian mixed boiled meats with salsa verde",
+  "excerpt": "Bollito misto is a northern Italian feast of several meats simmered long and low in an aromatic broth until completely tender. The broth becomes a course in itself, and the meats are carved at the table and served with cold salsa verde. This recipe serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Bollito misto is a winter dish from the Po Valley, particularly associated with Piedmont, Lombardy and Emilia-Romagna. It was historically a way to cook tougher cuts low and slow, with the cooking broth served as a first course. The salsa verde is an essential accompaniment.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": [
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bollito",
+      "term": "Bollito",
+      "definition": "The Italian technique of long-simmering meats in a flavoured broth until completely tender. The broth itself becomes a byproduct worth eating."
+    },
+    {
+      "slug": "salsa-verde",
+      "term": "Salsa Verde",
+      "definition": "A sharp, herby Italian sauce made from parsley, capers, anchovies and olive oil. Served cold alongside boiled or grilled meats."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bollito misto is the great winter dish of northern Italy, built around the technique of "
+          },
+          {
+            "type": "text",
+            "text": "bollito ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bollito"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ": long, patient simmering in a pot with aromatic vegetables until each cut becomes completely tender. The broth is strained and served first; the meats follow. This recipe serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The accompanying "
+          },
+          {
+            "type": "text",
+            "text": "salsa verde",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "salsa-verde"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is made while the meats cook and served cold alongside the hot meat, giving each bite a sharp herbal contrast."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-brisket",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Meats"
+            },
+            {
+              "ingredientSlug": "chicken-whole",
+              "amount": 1,
+              "unit": "small",
+              "prepNote": "about 1.2 kg",
+              "isOptional": false,
+              "groupLabel": "Meats"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "large",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": null,
+              "prepNote": "halved lengthways",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 2,
+              "unit": "stalks",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": null,
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "peppercorns-black",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "peeled and cut into large chunks",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 1,
+              "unit": "large bunch",
+              "prepNote": "leaves only",
+              "isOptional": false,
+              "groupLabel": "Salsa verde"
+            },
+            {
+              "ingredientSlug": "capers",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "rinsed",
+              "isOptional": false,
+              "groupLabel": "Salsa verde"
+            },
+            {
+              "ingredientSlug": "anchovies",
+              "amount": 4,
+              "unit": "fillets",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Salsa verde"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 1,
+              "unit": "clove",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Salsa verde"
+            },
+            {
+              "ingredientSlug": "white-wine-vinegar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Salsa verde"
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 80,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Salsa verde"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the beef brisket in a large stockpot. Cover with cold water by at least 5 cm. Bring slowly to the boil, skimming off any grey foam that rises. This takes about 15 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Once the foam has cleared, add the onion, carrot, celery, bay leaves and peppercorns. Season to taste. Reduce to a very gentle simmer and cook uncovered for 90 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lower the chicken into the broth. Continue simmering gently for a further 60 minutes, or until both meats are completely tender when pierced with a skewer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "While the meats cook, make the salsa verde. Finely chop the parsley, capers, anchovies and garlic together on a board until you have a rough paste. Transfer to a bowl, stir in the vinegar and olive oil, and season to taste. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Twenty minutes before serving, ladle enough hot broth into a separate pan to cook the potatoes. Simmer the potatoes until tender, about 15 to 18 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Strain a good ladleful of clear broth into cups or small bowls and serve as a first course."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lift the meats from the broth, slice and arrange on a warm platter with the potatoes. Serve with the salsa verde on the side."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "symptom": "Broth is cloudy",
+              "cause": "The water came to a hard boil before the foam was fully skimmed, or the heat was too high during cooking",
+              "fix": "Keep the simmer as gentle as possible throughout and skim any fresh foam in the first 20 minutes"
+            }
+          },
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "symptom": "Brisket is tough after 90 minutes",
+              "cause": "The simmer was too vigorous or the cut was very thick",
+              "fix": "Continue simmering and check every 20 minutes until a skewer slides through the thickest part with no resistance"
+            }
+          },
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "symptom": "Salsa verde is too sharp",
+              "cause": "The capers or anchovies were very salty and were not rinsed well",
+              "fix": "Stir in a little more olive oil to balance the sharpness and taste again before serving"
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bollito misto is a cold-weather dish from the Po Valley, eaten most in Piedmont, Lombardy and Emilia-Romagna. In its most elaborate form it includes seven cuts of beef, a whole chicken, and a cotechino sausage. The home version here uses just two meats. Restaurants in Turin and Bologna serve it from trolleys wheeled to the table. It is the kind of dish that takes a long afternoon and feeds a crowd."
+          }
+        ]
+      }
+    ]
+  }
+}

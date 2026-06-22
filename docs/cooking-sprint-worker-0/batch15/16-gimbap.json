@@ -1,0 +1,368 @@
+{
+  "slug": "gimbap",
+  "title": "Gimbap",
+  "subtitle": "korean rice and vegetable rolls",
+  "excerpt": "Gimbap is a Korean rolled dish made from seasoned rice and various fillings wrapped in sheets of dried seaweed, then sliced into rounds. It is portable, filling, and eaten as a meal or snack. Makes 4 rolls, serving 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Gimbap is a staple of Korean home cooking and picnic culture. It is distinct from Japanese maki sushi in that the rice is seasoned with sesame oil rather than vinegar.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "4 rolls",
+    "prepMinutes": 40,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Make up to 8 rolls at once. They keep at room temperature for up to 4 hours, well wrapped.",
+    "makeAheadNotes": "Prepare all the fillings the night before and refrigerate. Assemble the rolls on the day.",
+    "dietaryFlags": [],
+    "cuisine": "korean",
+    "mealType": "lunch",
+    "mood": [
+      "weekend",
+      "batch-cook"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "digital-scales",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "nori",
+      "term": "Nori",
+      "definition": "Dried and pressed sheets of seaweed used in East Asian cooking. The sheets are toasted to bring out a nutty, umami flavour before rolling."
+    },
+    {
+      "slug": "gim",
+      "term": "Gim",
+      "definition": "The Korean word for dried seaweed sheets, equivalent to nori. In gimbap, the gim is the outer wrapper that holds the rice and fillings."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gimbap is wrapped in sheets of "
+          },
+          {
+            "type": "text",
+            "text": "nori ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "nori"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", called "
+          },
+          {
+            "type": "text",
+            "text": "gim",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "gim"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " in Korean. The rice is seasoned with sesame oil rather than vinegar, which gives it a nutty, savoury flavour. Makes 4 rolls."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The fillings can be varied. This version uses egg, carrot, spinach, and cucumber. Beef strips or fish cake are common additions. Keep all fillings cool before rolling."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "short-grain-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "rinsed and cooked, still warm",
+              "isOptional": false,
+              "groupLabel": "Rice"
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "for the rice",
+              "isOptional": false,
+              "groupLabel": "Rice"
+            },
+            {
+              "ingredientSlug": "sesame-seeds",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "for the rice",
+              "isOptional": false,
+              "groupLabel": "Rice"
+            },
+            {
+              "ingredientSlug": "nori",
+              "amount": 4,
+              "unit": "sheets",
+              "prepNote": "full-size sheets",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": "beaten and made into thin omelettes, cut into strips",
+              "isOptional": false,
+              "groupLabel": "Fillings"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "cut into thin strips and sauteed with a little oil for 2 minutes",
+              "isOptional": false,
+              "groupLabel": "Fillings"
+            },
+            {
+              "ingredientSlug": "spinach",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "blanched, squeezed dry, and seasoned with sesame oil",
+              "isOptional": false,
+              "groupLabel": "Fillings"
+            },
+            {
+              "ingredientSlug": "beef-mince",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "cooked with soy sauce and garlic until dry",
+              "isOptional": true,
+              "groupLabel": "Fillings"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "for the beef",
+              "isOptional": true,
+              "groupLabel": "Fillings"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 1,
+              "unit": "clove",
+              "prepNote": "finely grated, for the beef",
+              "isOptional": true,
+              "groupLabel": "Fillings"
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "for brushing the finished rolls",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "While the rice is still warm, stir through the sesame oil and sesame seeds. Spread on a tray to cool to room temperature. Do not refrigerate."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Prepare all the fillings. Beat the eggs with a pinch of fine seasoning and cook in a lightly oiled pan over medium heat as thin omelettes. Cut into strips. Set out all fillings on the work surface."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lay a sheet of nori on a clean surface, shiny side down. Spread about 150 g of the seasoned rice in an even layer, leaving a 3 cm border at the far edge."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Arrange the fillings in a horizontal line across the centre of the rice. Do not overfill. Tightly roll from the near edge, pressing firmly as you go. Press the far edge against the roll to seal."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Brush the outside of each roll with a thin coat of sesame oil. This gives a glossy surface and prevents it sticking. Repeat with the remaining rolls."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Use a sharp knife to slice each roll into 8 rounds. Wipe the blade between cuts for clean edges. Serve immediately or wrap tightly for a picnic."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Roll is falling apart when sliced",
+              "fix": "The roll was not pressed tightly enough. Use firm, even pressure throughout the rolling. A bamboo mat helps apply even pressure."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Nori is tearing",
+              "fix": "Make sure the nori is dry. A damp filling will soften the nori before the roll is complete. Squeeze all wet fillings such as spinach very well."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Rice is too sticky to spread",
+              "fix": "Wet your hands or a spatula with cold water before spreading. Rice at room temperature spreads more easily than warm rice."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gimbap is packed into Korean lunchboxes for school and work. It appears at every picnic, sports day, and hiking trip. Gimbap shops are common on Korean high streets and serve dozens of different fillings. The rolls are eaten at room temperature, never cold from the fridge."
+          }
+        ]
+      }
+    ]
+  }
+}

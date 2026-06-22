@@ -1,0 +1,370 @@
+{
+  "slug": "shabu-shabu",
+  "title": "Shabu-Shabu",
+  "subtitle": "thinly sliced beef hot pot with dipping sauces",
+  "excerpt": "Shabu-shabu is a Japanese hot pot where paper-thin slices of beef are swished briefly through a simmering kombu broth at the table and dipped in sesame or ponzu sauce. It is elegant, light, and fast. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Shabu-shabu was popularised in Japan in the mid-twentieth century, adapted from Chinese hot pot techniques. The name is an onomatopoeia for the swishing sound the meat makes in the broth.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Slice all vegetables and arrange plates up to 2 hours ahead. Prepare dipping sauces in advance and refrigerate.",
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": [
+      "special",
+      "sharing",
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "kombu-dashi",
+      "term": "Kombu dashi",
+      "definition": "A light, clean Japanese stock made by cold-steeping dried kombu seaweed in water. It is the traditional broth for shabu-shabu as it adds umami without overpowering the delicate beef."
+    },
+    {
+      "slug": "sesame-dipping-sauce",
+      "term": "Sesame dipping sauce",
+      "definition": "A creamy sauce made from sesame paste, soy sauce, mirin, and rice vinegar, served alongside shabu-shabu for dipping the cooked beef and vegetables."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shabu-shabu uses a very lightly seasoned "
+          },
+          {
+            "type": "text",
+            "text": "kombu dashi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "kombu-dashi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " so the flavour of the beef comes through clearly. Each slice is cooked for just 5 to 10 seconds in the gently simmering broth before being dipped in "
+          },
+          {
+            "type": "text",
+            "text": "sesame dipping sauce",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sesame-dipping-sauce"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " or ponzu. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ask your butcher to slice the beef paper-thin for shabu-shabu. Japanese supermarkets sell it pre-sliced. If slicing at home, freeze the beef for 45 minutes first to make it firm enough to cut thinly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-sirloin",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "sliced paper-thin, about 2 mm",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "kombu",
+              "amount": 2,
+              "unit": "pieces",
+              "prepNote": "10 cm each",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 1500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "sake",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "cabbage-white",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tofu-firm",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "cut into cubes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mushrooms-shiitake",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "stems removed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 4,
+              "unit": "stalks",
+              "prepNote": "cut into 4 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sesame-seeds",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "toasted and ground",
+              "isOptional": false,
+              "groupLabel": "sesame sauce"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sesame sauce"
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sesame sauce"
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sesame sauce"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the sesame dipping sauce: combine ground sesame seeds, soy sauce, mirin, and rice vinegar in a small bowl. Stir well and set aside in small individual bowls."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the broth: place kombu in cold water and bring very slowly to just below a simmer. Remove the kombu just before boiling. Add sake."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Arrange the beef slices, cabbage, tofu, mushrooms, and spring onion on a large platter and bring to the table."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the pot in the centre of the table over a portable burner. Keep the broth at a gentle simmer. Add the harder vegetables first and let them cook for 3 to 4 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Each person takes a slice of beef with chopsticks and swishes it through the simmering broth for 5 to 10 seconds until just cooked. Dip in sesame sauce and eat immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Beef is turning grey and chewy",
+              "cause": "It was cooked too long in the broth.",
+              "fix": "Thin beef needs only 5 to 8 seconds. It should turn from red to just pink before you lift it out."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth becomes foamy and dirty-looking",
+              "cause": "Proteins from the beef are coagulating on the surface.",
+              "fix": "Skim the surface with a ladle every few minutes to keep the broth clear."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Sesame sauce is too thick",
+              "cause": "Ground sesame absorbs the liquid quickly.",
+              "fix": "Thin with a teaspoon of warm water or extra mirin until it has a smooth, pourable consistency."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Shabu-shabu is a Japanese hot pot built on restraint. The broth is almost plain. The beef does all the work. The technique came from Chinese hot pot but Japan made it much simpler and cleaner. High-end shabu-shabu restaurants in Tokyo use wagyu beef so finely marbled it cooks in seconds. At home, any well-marbled sirloin works beautifully."
+          }
+        ]
+      }
+    ]
+  }
+}

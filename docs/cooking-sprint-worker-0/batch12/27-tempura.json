@@ -1,0 +1,369 @@
+{
+  "slug": "tempura",
+  "title": "Tempura",
+  "subtitle": "light battered and fried vegetables and prawns",
+  "excerpt": "Tempura is a Japanese frying technique that produces an exceptionally light, crisp batter around prawns and vegetables. The secret is ice-cold batter, hot oil, and minimal mixing. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Tempura was introduced to Japan by Portuguese missionaries in the sixteenth century and was refined by Japanese cooks into the light, delicate technique it is today.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dipping sauce can be made a day ahead. Make the batter immediately before frying.",
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "special"
+    ],
+    "temperatureCelsius": 180,
+    "temperatureNote": "Oil temperature for frying. Use an instant-read thermometer to maintain 180°C throughout.",
+    "foundational": true
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tempura-batter",
+      "term": "Tempura batter",
+      "definition": "A thin, ice-cold batter made from cold water, egg yolk, and plain flour with minimal mixing. Lumps are intentional and create the characteristic lacey texture when fried."
+    },
+    {
+      "slug": "tentsuyu",
+      "term": "Tentsuyu",
+      "definition": "The dipping sauce served with tempura, made from dashi, soy sauce, and mirin, often with grated daikon on the side."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tempura relies on a "
+          },
+          {
+            "type": "text",
+            "text": "tempura batter",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tempura-batter"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " kept as cold as possible so it does not develop gluten. When it hits hot oil, the water in the batter turns to steam instantly, creating a feather-light, blistered crust. Serve with "
+          },
+          {
+            "type": "text",
+            "text": "tentsuyu",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tentsuyu"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " dipping sauce. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry in small batches only. Crowding the oil drops its temperature and turns the batter greasy rather than crisp."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "prawns-raw",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "peeled, deveined, tails on",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": "cut into batons",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mushrooms-shiitake",
+              "amount": 8,
+              "unit": "whole",
+              "prepNote": "stems removed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "egg-yolks",
+              "amount": 1,
+              "unit": "large",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "batter"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "sifted, kept cold",
+              "isOptional": false,
+              "groupLabel": "batter"
+            },
+            {
+              "ingredientSlug": "cornflour",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "batter"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 250,
+              "unit": "ml",
+              "prepNote": "ice-cold",
+              "isOptional": false,
+              "groupLabel": "batter"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 1,
+              "unit": "litre",
+              "prepNote": "for deep frying",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "tentsuyu"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 50,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "tentsuyu"
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 50,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "tentsuyu"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the tentsuyu: simmer dashi, soy sauce, and mirin together for 3 minutes. Keep warm on a low heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a Dutch oven to 180°C. Pat the prawns and vegetables completely dry with kitchen paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the batter: whisk the egg yolk into the ice-cold water. Add the flour and cornflour all at once and stir briefly with chopsticks or a fork. Leave lumps. Do not overmix."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dip the prawns in batter one at a time, letting excess drip off, and lower into the oil. Fry 2 to 3 at a time for 2 to 3 minutes until pale golden and crisp. Drain on a wire rack."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Repeat with the vegetables, frying in small batches. Serve immediately on paper with the tentsuyu sauce in small bowls on the side."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Batter is thick and doughy",
+              "cause": "The batter was overmixed or the water was not cold enough.",
+              "fix": "Mix batter with just 4 to 5 strokes and add a few ice cubes to the water before mixing."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Tempura is greasy",
+              "cause": "The oil temperature dropped when too many pieces were added at once.",
+              "fix": "Fry in smaller batches and allow the oil to return to 180°C between each batch."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Batter falls off the vegetables",
+              "cause": "The vegetables were wet when dipped in batter.",
+              "fix": "Pat everything completely dry before battering, and dust lightly with plain flour first."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tempura entered Japan through Portuguese contact in the sixteenth century. Japanese cooks stripped the technique back and made it lighter. Dedicated tempura restaurants in Tokyo serve it as a formal course with seasonal ingredients. At home, it is a weekend treat that takes a little setup but rewards the effort."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "slug": "jeyuk-bokkeum",
+  "title": "Jeyuk Bokkeum",
+  "subtitle": "korean spicy pork stir-fry",
+  "excerpt": "Jeyuk bokkeum is a Korean pork stir-fry coated in a bold gochujang and soy sauce marinade and cooked quickly over high heat until sticky and slightly charred. It is served over rice. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Jeyuk bokkeum is one of the most common pork dishes in Korean home cooking. The name means stir-fried pork in Korean. It uses a similar spiced marinade to bulgogi but with pork and more heat.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the raw marinated pork flat in a bag for up to 2 months. Thaw overnight in the fridge.",
+    "batchable": true,
+    "batchNotes": "Double the batch and freeze half before cooking.",
+    "makeAheadNotes": "Marinate overnight for deeper flavour.",
+    "dietaryFlags": [],
+    "cuisine": "korean",
+    "mealType": "dinner",
+    "mood": ["weeknight"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "wok", "isOptional": false },
+    { "slug": "frying-pan-30", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "gochujang", "term": "Gochujang", "definition": "A Korean fermented red chilli paste made from chilli powder, glutinous rice, and fermented soybeans. It is thick, spicy, and slightly sweet." },
+    { "slug": "bokkeum", "term": "Bokkeum", "definition": "A Korean cooking term for stir-frying. Bokkeum dishes are cooked quickly over high heat in a wok or large pan with a well-seasoned sauce." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Jeyuk " },
+          { "type": "text", "text": "bokkeum", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bokkeum" } }] },
+          { "type": "text", "text": " uses " },
+          { "type": "text", "text": "gochujang", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gochujang" } }] },
+          { "type": "text", "text": " as the main flavour base. The pork is marinated then stir-fried at high heat so the edges caramelise and char. Serves 4 over rice." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Thinly sliced pork works best. Pork loin or pork belly both work well. Ask the butcher to slice it to about 5 mm thickness, or slice it yourself from a partially frozen piece." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pork-loin", "amount": 600, "unit": "g", "prepNote": "thinly sliced, about 5 mm", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "onion", "amount": 1, "unit": "whole", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "whole", "prepNote": "cut into 4 cm lengths", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "gochujang", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "mirin", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "garlic", "amount": 5, "unit": "cloves", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "ginger-fresh", "amount": 15, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "caster-sugar", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "peppercorns-black", "amount": 0.5, "unit": "tsp", "prepNote": "ground", "isOptional": false, "groupLabel": "Marinade" },
+            { "ingredientSlug": "chilli-flakes", "amount": 1, "unit": "tsp", "prepNote": "for extra heat, optional", "isOptional": true, "groupLabel": "Marinade" },
+            { "ingredientSlug": "sesame-seeds", "amount": 1, "unit": "tbsp", "prepNote": "to serve", "isOptional": true, "groupLabel": null },
+            { "ingredientSlug": "vegetable-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix all the marinade ingredients in a large bowl. Add the pork slices and onion. Mix well until everything is coated. Cover and refrigerate for at least 1 hour." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the vegetable oil in a wok over very high heat until smoking. Add the pork and onion mixture in a single layer. Do not stir for the first 2 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Stir-fry for a further 5 to 7 minutes, keeping the heat high, until the pork is cooked through and the edges have char marks. The sauce will reduce and cling to the meat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the spring onion and toss for 1 minute. Remove from the heat." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Scatter sesame seeds over the top. Serve immediately over steamed short-grain rice with kimchi on the side." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          { "type": "troubleshooterItem", "attrs": { "issue": "Pork is steaming rather than charring", "fix": "The pan is not hot enough or there is too much pork in the pan. Cook in two batches and wait until the wok is smoking before adding the meat." } },
+          { "type": "troubleshooterItem", "attrs": { "issue": "Sauce is burning on the wok", "fix": "Lower the heat slightly and add 2 tablespoons of water. The gochujang sugar content makes the sauce prone to catching on very high heat." } },
+          { "type": "troubleshooterItem", "attrs": { "issue": "Meat is tough", "fix": "The pork was sliced too thick. Aim for 5 mm or thinner. Pork loin dries out quickly if overcooked, so pull it from the heat as soon as it is cooked through." } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Jeyuk bokkeum is a daily meal in Korean homes and a common item in Korean lunchbox restaurants. It is one of the most popular toppings for a dolsot bibimbap. The dish is quick to make, which makes it a weeknight staple for families. It is bold enough to eat with plain rice but works equally well in wraps with lettuce and ssamjang." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,442 @@
+{
+  "slug": "laksa-lemak",
+  "title": "Laksa Lemak",
+  "subtitle": "malaysian coconut curry noodle soup with prawns",
+  "excerpt": "A thick, fragrant noodle soup built on a spiced coconut broth with prawns, bean sprouts, and a squeeze of lime. One of the great noodle soups of Southeast Asia. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Laksa lemak is the coconut-milk based laksa from the Peranakan tradition of the Malay Peninsula. It differs from the asam (tamarind) based versions of Penang. Lemak means rich or fatty in Malay, referring to the coconut milk.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The laksa paste and broth base can be made a day ahead. Add the prawns and coconut milk just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "malaysian",
+    "mealType": "lunch",
+    "mood": [
+      "weekend",
+      "dinner-party"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "pestle-and-mortar",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "laksa-paste",
+      "term": "Laksa Paste",
+      "definition": "The aromatic base for laksa, typically containing dried chilli, lemongrass, shallots, galangal, and shrimp paste. Most of the flavour in a laksa comes from the quality and freshness of the paste."
+    },
+    {
+      "slug": "coconut-milk-cooking",
+      "term": "Coconut Milk",
+      "definition": "The creamy liquid pressed from grated coconut flesh. Full-fat coconut milk is essential for laksa. It must not be boiled hard or it will split and become grainy."
+    },
+    {
+      "slug": "sambal-paste",
+      "term": "Sambal",
+      "definition": "A chilli-based condiment used across Malaysian and Indonesian cooking. A spoonful stirred into laksa at the table adds extra heat."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The depth of a laksa depends almost entirely on the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "laksa-paste"
+                }
+              }
+            ],
+            "text": "laksa paste "
+          },
+          {
+            "type": "text",
+            "text": ". This recipe builds it from scratch. Bottled laksa paste works as a shortcut but produces a noticeably flatter result. Once the paste is cooked out in oil, the rest of the dish comes together quickly."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Never boil the soup hard once the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "coconut-milk-cooking"
+                }
+              }
+            ],
+            "text": "coconut milk"
+          },
+          {
+            "type": "text",
+            "text": " goes in. Keep it at a gentle simmer. Serve with "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sambal-paste"
+                }
+              }
+            ],
+            "text": "sambal"
+          },
+          {
+            "type": "text",
+            "text": " on the side for those who want more heat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "prawns-raw",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "peeled and deveined, shells reserved",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "noodles-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "soaked in hot water for 10 minutes if dried",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "coconut-milk",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": "full fat",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "bean-sprouts",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "juice only",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "dried-chilli",
+              "amount": 6,
+              "unit": "whole",
+              "prepNote": "soaked in hot water for 10 minutes",
+              "isOptional": false,
+              "groupLabel": "Paste"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "Paste"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 5,
+              "unit": "cloves",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Paste"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "substitute for galangal",
+              "isOptional": false,
+              "groupLabel": "Paste"
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "zest only, or 1 lemongrass stalk",
+              "isOptional": false,
+              "groupLabel": "Paste"
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Paste"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Paste"
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Paste"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "small bunch",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make a quick prawn stock. Fry the reserved prawn shells in a little oil for 2 minutes. Add 800ml of water. Simmer for 15 minutes. Strain and discard the shells."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blend or pound all the paste ingredients together until as smooth as possible."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a large saucepan over medium heat. Add the paste. Fry, stirring constantly, for 8 to 10 minutes until the paste darkens, smells fragrant, and the oil starts to separate out around the edges."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the prawn stock and bring to a simmer. Cook for 10 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce to a gentle simmer and stir in the coconut milk. Add the fish sauce. Do not boil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the prawns and cook for 3 to 4 minutes until pink and cooked through. Taste for seasoning. Add lime juice to taste."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the soaked rice noodles between 4 deep bowls. Top with bean sprouts. Ladle the soup and prawns over. Scatter with coriander. Serve immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Coconut milk has curdled into grainy flecks",
+              "cause": "The soup was boiled hard after the coconut milk was added.",
+              "fix": "Keep the heat very low once coconut milk goes in. If the soup curdles, a blitz with an immersion blender can partially rescue the texture."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Paste is oily and bitter after frying",
+              "cause": "The paste was fried too quickly on too-high heat.",
+              "fix": "Fry paste on medium, not high, heat. The oil separating out is a good sign. Bitterness means the dried chilli was burnt."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Laksa is the defining dish of Peranakan cuisine. This is the cooking of the Straits Chinese who settled in the Malay Peninsula from the 15th century onwards. Their food blends Chinese and Malay traditions in ways that cannot now be separated."
+          }
+        ]
+      }
+    ]
+  }
+}

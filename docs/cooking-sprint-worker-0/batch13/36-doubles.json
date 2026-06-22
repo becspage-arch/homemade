@@ -1,0 +1,368 @@
+{
+  "slug": "doubles",
+  "title": "Doubles",
+  "subtitle": "trinidadian fried flatbread with curried chickpeas",
+  "excerpt": "Doubles are a Trinidadian street-food staple of two small fried flatbreads filled with spiced curried chickpeas. They are eaten for breakfast across Trinidad at roadside vendors. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Doubles were invented in Trinidad in the 1930s by Emamool Deen, who sold them as a cheap street breakfast. The name comes from the two bara flatbreads that sandwich the chickpea filling.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "makes approximately 16 doubles",
+    "prepMinutes": 40,
+    "cookMinutes": 30,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The channa filling can be made a day ahead. The bara dough is best made and fried fresh.",
+    "dietaryFlags": [
+      "DAIRY_FREE",
+      "VEGAN"
+    ],
+    "cuisine": "caribbean",
+    "mealType": "breakfast",
+    "mood": [
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": "Oil temperature for frying: 180°C",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-30",
+      "isOptional": false
+    },
+    {
+      "slug": "food-processor",
+      "isOptional": true
+    },
+    {
+      "slug": "digital-scales",
+      "isOptional": false
+    },
+    {
+      "slug": "rolling-pin",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "bara",
+      "term": "Bara",
+      "definition": "The soft fried flatbread in doubles, made from seasoned flour dough."
+    },
+    {
+      "slug": "channa",
+      "term": "Channa",
+      "definition": "Spiced curried chickpeas, the filling for Trinidadian doubles."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Doubles are two pieces of "
+          },
+          {
+            "type": "text",
+            "text": "bara",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bara"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " wrapped around a generous spoonful of "
+          },
+          {
+            "type": "text",
+            "text": "channa ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "channa"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". The bara puffs when it hits hot oil and turns light and pillowy. The channa is a thick, spiced chickpea stew that should be almost dry, not saucy, so it holds in the bread without soaking through."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Traditional doubles are topped with cucumber chutney, tamarind sauce and pepper sauce. For this recipe the scotch bonnet gives heat directly in the channa. Eat them immediately after assembling while the bara is still warm."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "bara"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 180,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "bara"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": "for frying",
+              "isOptional": false,
+              "groupLabel": "bara"
+            },
+            {
+              "ingredientSlug": "chickpeas-tinned",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "drained and rinsed",
+              "isOptional": false,
+              "groupLabel": "channa"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "medium",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "channa"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "channa"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "channa"
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "channa"
+            },
+            {
+              "ingredientSlug": "paprika-sweet",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "channa"
+            },
+            {
+              "ingredientSlug": "scotch-bonnet",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "deseeded, finely chopped",
+              "isOptional": false,
+              "groupLabel": "channa"
+            },
+            {
+              "ingredientSlug": "malt-vinegar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "channa"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the bara dough: mix the flour with a pinch of baking powder and enough warm water to bring it together into a soft dough. Knead for 5 minutes. Cover and rest for 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the channa: fry the onion in a little oil for 5 minutes, add the garlic, scotch bonnet and spices and cook for 1 minute. Add the chickpeas and 100ml water. Simmer for 15 minutes, mashing some chickpeas as they cook to thicken the mixture. Add the vinegar, season and keep warm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the bara dough into 16 equal pieces. Use oiled hands to press each piece into a thin disc about 10cm across."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the vegetable oil in the large frying pan to 180°C. Fry the bara discs one at a time for 30 to 45 seconds per side until puffed and lightly golden. Drain on paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Assemble immediately: place a spoonful of channa on one bara and top with a second. Serve with hot sauce if you like more heat."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The bara is not puffing when fried.",
+              "solution": "The oil is not hot enough or the dough is too thick. Press the discs thinner and check the oil temperature with a thermometer."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The bara is very oily.",
+              "solution": "The oil temperature was too low. Cold oil soaks into the dough before the surface seals. Make sure the oil is at 180°C before frying."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The channa is too wet and soaks into the bara.",
+              "solution": "Continue simmering the channa without a lid until most of the liquid has evaporated. The filling should be thick and spoonable, not saucy."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Doubles are Trinidad's most popular street food. Vendors sell them from carts from early morning and they sell out fast. Eating doubles is a daily ritual for many Trinidadians. In the UK they appear at Caribbean food events and a small number of specialist restaurants."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "slug": "jollof-rice",
+  "title": "Jollof Rice",
+  "subtitle": "West African one-pot tomato rice",
+  "excerpt": "Jollof rice is a West African staple cooked in a spiced tomato base until every grain is stained red and smoky at the edges. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A contested classic across West Africa, with Nigerian and Ghanaian versions the most debated. The party version is cooked over high heat to develop the prized smoky bottom crust.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Cool completely, freeze in portions for up to 3 months. Reheat with a splash of water.",
+    "batchable": true,
+    "batchNotes": "Scales well. Use a wider pot to maintain the ratio of rice to tomato base.",
+    "makeAheadNotes": "The tomato base can be made a day ahead and refrigerated.",
+    "dietaryFlags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "cuisine": "west-african",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "weekend",
+      "batch-cooking"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tomato-base",
+      "term": "Tomato base",
+      "definition": "A blended and cooked mixture of tomatoes, peppers and onion that forms the flavour foundation of jollof rice."
+    },
+    {
+      "slug": "party-jollof",
+      "term": "Party jollof",
+      "definition": "The version cooked in large pots over open fire or very high heat, developing a smoky scorched bottom layer called 'bottom pot'."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Jollof rice starts with a deep "
+          },
+          {
+            "type": "text",
+            "text": "tomato base",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tomato-base"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " that the rice absorbs as it cooks. The result is red-stained grains with concentrated flavour. Aim for the coveted "
+          },
+          {
+            "type": "text",
+            "text": "party jollof",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "party-jollof"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " effect by finishing uncovered over high heat for the final few minutes."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Wash the rice thoroughly until the water runs clear. This removes surface starch and stops the grains clumping."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "basmati-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "rinsed until water runs clear",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pepper-red",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "1 roughly chopped for blending, 1 sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "deseeded if preferred",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 80,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "dried",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "or to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blend the canned tomatoes, red pepper, chilli and the roughly chopped onion until smooth."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a large heavy-bottomed saucepan over medium-high heat. Fry the sliced onion for 5 minutes until softened."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the garlic and fry for 1 minute. Add the tomato puree and cook, stirring, for 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the blended tomato mixture. Add bay leaves, thyme, smoked paprika and salt. Cook uncovered over medium heat for 20 minutes, stirring occasionally, until the sauce darkens and the oil floats to the surface."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the rinsed rice and stir to coat in the sauce. Add 400ml water. Stir once, bring to a boil, then reduce to the lowest heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover tightly with foil and then a lid. Cook for 25 minutes without lifting the lid."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the lid and foil. Increase heat to high for 3 to 5 minutes to develop the smoky base. Remove from heat, replace the lid and rest for 5 minutes before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Rice is mushy",
+              "cause": "Too much water or lid lifted during cooking",
+              "fix": "Use a 1:1 ratio of rice to blended tomato plus water. Do not lift the lid until the timer is up."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Rice is still hard inside",
+              "cause": "Heat too low or insufficient water",
+              "fix": "Add 3 tablespoons of water, replace foil and lid, and cook on low for another 10 minutes."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Jollof rice appears across West Africa under different names and with fierce regional loyalty. Nigeria's version tends to be heavily spiced and cooked on very high heat. Ghana's version is typically lighter and often served with fried plantain. It is the centrepiece of celebrations from Lagos to Accra and has become one of the most recognised dishes of the African continent."
+          }
+        ]
+      }
+    ]
+  }
+}

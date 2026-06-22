@@ -1,0 +1,452 @@
+{
+  "slug": "mien-ga",
+  "title": "Miến Gà",
+  "subtitle": "glass noodle soup with chicken",
+  "excerpt": "Miến gà is a light Vietnamese soup of glass noodles in a clear, fragrant chicken broth with shredded chicken, wood ear mushrooms, and fried shallots. It is clean, warming, and gentle on the stomach. This recipe serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Miến gà is a popular Vietnamese soup eaten year-round and especially associated with convalescence and care. The clear glass noodles and light broth make it a gentle, restorative dish.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the broth alone for up to 3 months. Glass noodles do not freeze well.",
+    "batchable": true,
+    "batchNotes": "Make a large batch of broth. It keeps for up to 4 days in the fridge.",
+    "makeAheadNotes": "The broth and cooked chicken can be made a day ahead. Soak and add the noodles just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comforting",
+      "light"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "sieve",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mien-glass-noodle",
+      "term": "Miến",
+      "definition": "Glass noodles made from mung bean starch. They are thin, clear, and have a silky, slightly slippery texture. They soak up the flavour of whatever broth they are cooked in."
+    },
+    {
+      "slug": "moc-nhi",
+      "term": "Mộc nhĩ",
+      "definition": "Wood ear mushrooms, also called cloud ear or black fungus. They have almost no flavour but add a distinctive crunchy, slippery texture to Vietnamese soups and stir-fries."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Miến gà is a clear chicken broth soup with silky "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mien-glass-noodle"
+                }
+              }
+            ],
+            "text": "miến "
+          },
+          {
+            "type": "text",
+            "text": "glass noodles and crunchy "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "moc-nhi"
+                }
+              }
+            ],
+            "text": "mộc nhĩ "
+          },
+          {
+            "type": "text",
+            "text": "wood ear mushrooms. "
+          },
+          {
+            "type": "text",
+            "text": "The broth is clean and light, making this one of the gentlest Vietnamese noodle soups. "
+          },
+          {
+            "type": "text",
+            "text": "This recipe serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soak the glass noodles in cold water for 20 minutes before adding to the hot broth. They cook in the bowl from the heat of the soup."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-whole",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "about 1.4 kg",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "halved and charred",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "sliced and charred",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "star-anise",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "glass-noodles",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "soaked in cold water for 20 minutes and drained",
+              "isOptional": false,
+              "groupLabel": "noodles"
+            },
+            {
+              "ingredientSlug": "mushrooms-chestnut",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "use dried wood ear mushrooms, soaked in warm water for 20 minutes and sliced",
+              "isOptional": false,
+              "groupLabel": "topping"
+            },
+            {
+              "ingredientSlug": "shallots",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": "thinly sliced and fried until golden",
+              "isOptional": false,
+              "groupLabel": "topping"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "topping"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "topping"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "cut into wedges",
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "sliced",
+              "isOptional": true,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "for frying shallots",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Char the onion halves and ginger directly over a gas flame or under a very hot grill until blackened in places. About 5 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the whole chicken in a stockpot. Cover with 2.5 litres of cold water. Bring to the boil and skim thoroughly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the charred onion, ginger, and star anise. Reduce to a very gentle simmer. Poach for 45 to 55 minutes until the chicken is cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the chicken and cool slightly. Strain the broth and return to the pot. Season with fish sauce and sugar."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pull or slice the chicken meat off the bones. Discard the skin and bones."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fry the sliced shallots in oil over medium heat until deep golden and crispy. Drain on kitchen paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the soaked glass noodles between 4 bowls. Add the wood ear mushrooms. Ladle the very hot broth over the noodles . the heat of the broth will cook the noodles in the bowl."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Top each bowl with shredded chicken, spring onion, coriander, and crispy fried shallots. Serve with lime and chilli on the side."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The glass noodles clump into a solid mass in the bowl.",
+              "cause": "They were not soaked long enough or were added too dry.",
+              "fix": "Soak in cold water for 20 minutes until fully softened. Separate the strands and loosen with your fingers before placing in the bowl."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The wood ear mushrooms are still hard and rubbery.",
+              "cause": "They were not soaked for long enough.",
+              "fix": "Dried wood ear mushrooms need at least 20 minutes in warm water to fully rehydrate. Squeeze and rinse before slicing."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The broth tastes flat and lacks depth.",
+              "cause": "The onion and ginger were not charred enough.",
+              "fix": "The charring step is essential. Char until the outside is quite blackened - this gives the broth its sweetness and colour."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Miến gà is eaten throughout Vietnam and is especially loved as a restorative meal. "
+          },
+          {
+            "type": "text",
+            "text": "Vietnamese families make it when someone is unwell or recovering from illness. "
+          },
+          {
+            "type": "text",
+            "text": "The clear broth and gentle noodles are considered easy to digest and comforting. "
+          },
+          {
+            "type": "text",
+            "text": "It is also a common dish served at funeral meals and post-ceremony gatherings in northern Vietnam. "
+          },
+          {
+            "type": "text",
+            "text": "Despite its humble reputation, a well-made miến gà with crispy shallots is very good."
+          }
+        ]
+      }
+    ]
+  }
+}

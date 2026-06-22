@@ -1,0 +1,415 @@
+{
+  "slug": "dal-tadka",
+  "title": "Dal Tadka",
+  "subtitle": "yellow lentils tempered with spiced ghee",
+  "excerpt": "Soft lentils simmered until creamy, then finished with a sizzling spoon of cumin and garlic ghee poured over the top.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A staple across North Indian homes, served with rice or roti.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze without the tadka for up to 3 months. Add a fresh tempering when reheating.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "indian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comforting"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ghee",
+      "definition": "Clarified butter with the milk solids removed, common in Indian cooking for its high smoke point and nutty flavour.",
+      "term": "ghee"
+    },
+    {
+      "slug": "tadka",
+      "definition": "A finishing technique where whole spices are bloomed in hot fat then poured over a dish.",
+      "term": "tadka"
+    },
+    {
+      "slug": "asafoetida",
+      "definition": "A strong dried resin used in tiny amounts to add a savoury, onion-like note.",
+      "term": "asafoetida"
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This dal tadka serves 4 and takes about 45 minutes from start to finish. Rinse the "
+          },
+          {
+            "type": "text",
+            "text": "red lentils well first so the dish stays clean and bright. Watch the lentils as they simmer and skim any foam that rises.",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "ghee"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "For the deepest flavour, make the "
+          },
+          {
+            "type": "text",
+            "text": "tadka",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tadka"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " last and pour it over while it still sizzles."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "red-lentils",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "rinsed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "piece",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 2,
+              "unit": "piece",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ghee",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-green",
+              "amount": 1,
+              "unit": "piece",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "asafoetida",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garam-masala",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put the rinsed lentils in a "
+                  },
+                  {
+                    "type": "text",
+                    "text": "large saucepan with the turmeric and 800ml of water. Bring to the boil, then lower the heat and simmer for 25 minutes until soft."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season to taste with salt and mash a little of the dal against the side of the pan for a creamy texture."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the "
+                  },
+                  {
+                    "type": "text",
+                    "text": "ghee",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "ghee"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " in a small saucepan. Add the cumin seeds and let them crackle."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the onion and fry until golden. Stir in the garlic, ginger and green chilli for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the chopped tomato and a "
+                  },
+                  {
+                    "type": "text",
+                    "text": "pinch of asafoetida",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "asafoetida"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Cook for 5 minutes until the tomato breaks down."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour this tadka over the lentils. Stir in the garam masala, scatter with coriander and serve hot."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The dal is too thick",
+              "cause": "The lentils absorbed all the water",
+              "fix": "Stir in a splash of hot water until it loosens to a pourable soup."
+            },
+            {
+              "symptom": "The tadka tastes raw",
+              "cause": "The spices were not bloomed long enough",
+              "fix": "Fry the cumin and garlic until fragrant and lightly golden before adding tomato."
+            },
+            {
+              "symptom": "The lentils stayed firm",
+              "cause": "Old lentils or hard water",
+              "fix": "Simmer longer with a little extra water until they turn soft and creamy."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dal tadka is everyday food in northern India. It sits beside rice, roti or both. Many cooks make a pot early and reheat it through the week. The tempering is the heart of the dish. A squeeze of lemon at the table lifts every spoonful."
+          }
+        ]
+      }
+    ]
+  }
+}

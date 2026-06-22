@@ -1,0 +1,401 @@
+{
+  "slug": "bigos",
+  "title": "Bigos",
+  "subtitle": "polish hunter's stew with sauerkraut and mixed meats",
+  "excerpt": "Bigos is a rich Polish stew of sauerkraut and fresh cabbage slowly cooked with multiple meats, dried mushrooms, and a splash of red wine. It deepens in flavour over several days of reheating and is one of the great dishes of Polish cooking. Serves 6.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "The national dish of Poland, historically made with whatever game or cured meats a hunter had to hand. No two Polish families make it exactly the same way.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze for up to 3 months. Bigos improves every time it is reheated.",
+    "batchable": true,
+    "batchNotes": "Make a large batch and reheat over several days. Traditionally this is the point.",
+    "makeAheadNotes": "Best made 1 to 3 days ahead. Reheat gently, adding a splash of water each time.",
+    "dietaryFlags": [],
+    "cuisine": "polish",
+    "mealType": "dinner",
+    "mood": [
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sauerkraut-bigos",
+      "term": "Sauerkraut",
+      "definition": "Finely shredded cabbage fermented in its own juices. It provides the sour backbone of bigos and holds its texture through long cooking."
+    },
+    {
+      "slug": "porcini",
+      "term": "Dried mushrooms",
+      "definition": "Dehydrated mushrooms, often porcini or forest blends, that add deep, earthy umami to soups and stews when rehydrated."
+    }
+  ],
+  "techniqueSlugs": [
+    "braising"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bigos is built in layers: "
+          },
+          {
+            "type": "text",
+            "text": "sauerkraut",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sauerkraut-bigos"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and fresh cabbage form the body, "
+          },
+          {
+            "type": "text",
+            "text": "dried mushrooms",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "porcini"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " add depth, and the mixed meats give richness. It simmers low and slow for hours. Serves 6."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The longer and more often you reheat it, the better it gets. Many Polish cooks consider it inedible on day one."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "sauerkraut",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "drained, roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cabbage-white",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "finely shredded",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "cut into 3cm pieces",
+              "isOptional": false,
+              "groupLabel": "meats"
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "diced",
+              "isOptional": false,
+              "groupLabel": "meats"
+            },
+            {
+              "ingredientSlug": "sausages-pork",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "sliced into rounds",
+              "isOptional": false,
+              "groupLabel": "meats"
+            },
+            {
+              "ingredientSlug": "mushrooms-porcini-dried",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "soaked in 200ml boiling water for 30 mins",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "allspice",
+              "amount": 5,
+              "unit": "berries",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "peppercorns-black",
+              "amount": 8,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Drain the soaked dried mushrooms, squeezing well. Reserve the soaking liquid. Roughly chop the mushrooms."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a large heavy-based saucepan over medium-high heat. Brown the pork belly pieces on all sides, then remove. Add the bacon and cook for 3 minutes until coloured. Remove. Brown the sausage slices for 2 minutes. Remove."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In the same pan, cook the onion over medium heat for 8 minutes until golden. Add the tomato puree and cook for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the sauerkraut, fresh cabbage, mushrooms, all the browned meats, red wine, reserved mushroom soaking liquid (strain through a fine sieve), bay leaves, allspice, and peppercorns. Stir everything together."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a boil, then reduce to the lowest possible simmer. Cover and cook for 2 to 2.5 hours, stirring occasionally. The stew should be thick and the cabbage completely tender. Taste and adjust. Remove bay leaves and allspice berries before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Stew is too sour"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rinse the sauerkraut thoroughly before adding. A small pinch of sugar also helps balance the acidity."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Stew is watery"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook uncovered for the last 20 to 30 minutes to evaporate excess liquid. Bigos should be thick and stew-like, not soupy."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Flavour is thin"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reheat it the next day. The flavour of bigos builds significantly over 24 to 48 hours."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bigos is called the hunter's stew because it was traditionally cooked over a fire in the forest from whatever game was available. It is Poland's most famous dish and appears at every important celebration. The dish is never exactly the same twice. Every family guards their version closely."
+          }
+        ]
+      }
+    ]
+  }
+}

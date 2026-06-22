@@ -1,0 +1,408 @@
+{
+  "slug": "beggar-chicken",
+  "title": "Beggar's Chicken",
+  "subtitle": "oven-braised chicken thighs in soy and spices",
+  "excerpt": "Chicken thighs braised in a fragrant soy and spice sauce, adapted from the Hangzhou classic that traditionally wraps a whole bird in clay. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Adapted from the Hangzhou classic Jiao Hua Ji. The original method wraps a whole stuffed chicken in lotus leaves and clay and bakes it for hours. This version uses thighs and a dutch oven to achieve a similar result.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate the chicken overnight for deeper flavour.",
+    "dietaryFlags": [],
+    "cuisine": "chinese",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "dinner-party"
+    ],
+    "temperatureCelsius": 170,
+    "temperatureNote": "Oven temperature for the braising stage",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "jiao-hua-ji",
+      "term": "Jiao Hua Ji",
+      "definition": "The Chinese name for beggar's chicken, literally meaning beggar's chicken. A Hangzhou dish traditionally cooked by encasing a whole stuffed bird in lotus leaves and clay before burying it in hot coals."
+    },
+    {
+      "slug": "five-spice-blend",
+      "term": "Five-Spice",
+      "definition": "A Chinese spice blend combining star anise, cloves, cinnamon, Sichuan pepper, and fennel seeds. It gives a warm, complex flavour to braised meats."
+    },
+    {
+      "slug": "marinade-penetration",
+      "term": "Marinade Penetration",
+      "definition": "The process by which acidic or salty marinade ingredients break down the outer layer of meat and carry flavour inward. Longer marinating times and scoring the meat help penetration."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The legend of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "jiao-hua-ji"
+                }
+              }
+            ],
+            "text": "Jiao Hua Ji"
+          },
+          {
+            "type": "text",
+            "text": " involves a beggar who stole a chicken and, lacking a pot, buried it wrapped in mud and lotus leaves in coals. The result was a bird that steamed in its own juices. This adaptation uses chicken thighs and a dutch oven to recreate that sealed, aromatic environment."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "five-spice-blend"
+                }
+              }
+            ],
+            "text": "five-spice"
+          },
+          {
+            "type": "text",
+            "text": " in the marinade is built from whole spices here. Score the chicken thighs deeply to maximise "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "marinade-penetration"
+                }
+              }
+            ],
+            "text": "marinade penetration "
+          },
+          {
+            "type": "text",
+            "text": ". An overnight soak in the marinade produces noticeably better results."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 8,
+              "unit": "pieces",
+              "prepNote": "bone-in, skin-on, scored deeply",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-dark",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "Shaoxing wine preferred",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "star-anise",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cloves",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "fennel-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "peppercorns-black",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "use Sichuan pepper if available",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 4,
+              "unit": "stalks",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine all ingredients except the chicken in a bowl. Mix well. Add the chicken thighs and coat thoroughly. Cover and refrigerate for at least 1 hour, or overnight."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the chicken from the fridge 30 minutes before cooking. Preheat the oven to 170C."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the spring onions in a layer on the bottom of the dutch oven. Arrange the chicken thighs on top, skin-side up. Pour over all the marinade."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add 100ml of water. Seal the dutch oven with its lid. Place in the oven."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Braise for 1 hour. Remove the lid and increase the oven to 200C. Cook for a further 20 minutes to caramelise the skin and reduce the sauce."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the whole spices. Serve the chicken with rice, spooning the glossy sauce generously over the top."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Sauce burns on the bottom of the pot",
+              "cause": "The oven temperature was too high or there was too little liquid.",
+              "fix": "Add 50ml of water and reduce the oven temperature to 160C. Check again after 20 minutes."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Skin does not colour during the final stage",
+              "cause": "Too much liquid remained after removing the lid.",
+              "fix": "Transfer the chicken to a baking tray and place under the grill for 5 minutes to finish the skin."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Beggar's chicken is one of the most theatrical dishes in Chinese restaurant culture. In Hangzhou restaurants, it still arrives at the table encased in a clay shell. A waiter breaks it open with a mallet, releasing a cloud of fragrant steam. The story of its origin, set during the Qing dynasty, has many versions, but all involve a clever improvisation with fire and mud. It is now listed as one of the traditional dishes of Zhejiang province."
+          }
+        ]
+      }
+    ]
+  }
+}

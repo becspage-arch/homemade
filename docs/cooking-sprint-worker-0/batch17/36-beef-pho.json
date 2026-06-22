@@ -1,0 +1,458 @@
+{
+  "slug": "beef-pho",
+  "title": "Beef Pho",
+  "subtitle": "vietnamese slow-simmered beef noodle soup",
+  "excerpt": "A deeply aromatic beef broth, charred with ginger and onion and perfumed with star anise and cinnamon, served over rice noodles with thin-sliced raw beef. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pho Bo originated in northern Vietnam in the early 20th century, possibly influenced by French pot-au-feu. It became the national soup of Vietnam and is now one of the most recognised dishes in Southeast Asian cuisine.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the strained broth for up to 3 months. Do not freeze with the noodles.",
+    "batchable": true,
+    "batchNotes": "Make a large batch of broth and freeze in portions. Assemble bowls individually.",
+    "makeAheadNotes": "The broth is best made a day ahead, refrigerated, and skimmed of solidified fat before reheating.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "lunch",
+    "mood": [
+      "weekend",
+      "batch-cooking"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pho-broth",
+      "term": "Pho Broth",
+      "definition": "The base of pho, made by charring ginger and onion directly over flame before simmering them with bone-in beef and a spice packet of star anise, cinnamon, cloves, and cardamom. The charring removes harshness and adds a subtle smokiness."
+    },
+    {
+      "slug": "charring-aromatics",
+      "term": "Charring",
+      "definition": "Blackening the surface of onion and ginger directly over a gas flame or under a grill before adding to a broth. This technique is specific to pho and bun bo hue and produces a cleaner, more complex broth flavour."
+    },
+    {
+      "slug": "raw-beef-pho",
+      "term": "Bo Tai",
+      "definition": "Thin-sliced raw beef placed in the pho bowl before the broth is ladled over. The hot broth cooks the beef to rare or medium-rare. The beef must be very fresh and sliced as thinly as possible."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The foundation of pho is the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pho-broth"
+                }
+              }
+            ],
+            "text": "pho broth "
+          },
+          {
+            "type": "text",
+            "text": ". Do not skip the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "charring-aromatics"
+                }
+              }
+            ],
+            "text": "charring"
+          },
+          {
+            "type": "text",
+            "text": " step: it is what separates pho from a plain beef soup. Blacken the onion halves and ginger directly over a gas flame or under the grill until the cut faces are deeply charred, not just browned."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "raw-beef-pho"
+                }
+              }
+            ],
+            "text": "bo tai"
+          },
+          {
+            "type": "text",
+            "text": " (raw beef) must be paper-thin. Partially freeze the beef for 20 minutes before slicing to make this possible."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-shin",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "bone-in preferred, for the broth",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "halved, charred cut-side over a gas flame",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "halved lengthways, charred in a dry pan",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "star-anise",
+              "amount": 5,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "cloves",
+              "amount": 5,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "cardamom-green",
+              "amount": 3,
+              "unit": "pods",
+              "prepNote": "lightly crushed",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "peppercorns-black",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "or rock sugar",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "beef-shin",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "extra lean, partially frozen, sliced paper thin for bo tai",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "noodles-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "flat rice noodles, soaked",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "bean-sprouts",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 4,
+              "unit": "stalks",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "cut into wedges",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "small bunch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blanch the beef shin in boiling water for 5 minutes. Drain, rinse under cold water. This removes impurities that cloud the broth."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Char the onion halves cut-side directly over a gas flame until deeply blackened. Char the ginger halves in a dry frying pan for 3 to 4 minutes per side. Rinse both briefly under cold water."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Toast the star anise, cinnamon, cloves, cardamom, and peppercorns in a dry pan for 2 minutes until fragrant. Place in a small muslin bag or tea strainer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the blanched beef, charred onion, charred ginger, and spice bag in a large stockpot. Cover with 3 litres of cold water. Bring to the boil over high heat. Skim off any foam carefully."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce to a very gentle simmer. Cook for 2 hours 30 minutes to 3 hours until the broth is rich and the beef is very tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the beef shin. Shred it and set aside. Strain the broth through a fine sieve. Season with fish sauce, sugar, and salt. The broth should taste seasoned but clean."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring the strained broth to a vigorous boil. Divide the soaked rice noodles and shredded cooked beef between 4 deep bowls. Arrange the raw thin-sliced beef on top. Ladle the boiling broth over. The raw beef will cook in the hot broth. Serve immediately with bean sprouts, spring onion, chilli, lime, and coriander."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth is cloudy instead of clear",
+              "cause": "The beef was not blanched first, or the broth boiled hard instead of simmering gently.",
+              "fix": "Always blanch and rinse the beef before the main simmer. Keep the heat very low: barely a ripple at the surface produces clear broth."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth lacks depth and tastes flat",
+              "cause": "The aromatics were not charred enough, or the spices were not toasted before adding.",
+              "fix": "Toast the spices until visibly darkened. Char the onion and ginger until the surface is genuinely black, not just brown. This single step accounts for most of the broth's flavour."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pho Bo originated in Nam Dinh and Hanoi in northern Vietnam in the late 19th or early 20th century. Food historians debate whether it was influenced by the French pot-au-feu or developed independently from existing Vietnamese beef dishes. After the partition of Vietnam in 1954, millions of northerners moved south and took pho with them. The southern Saigon version, sweeter and served with a larger garnish plate, became the version most commonly eaten in the Vietnamese diaspora. It is now one of the most internationally recognised Asian dishes."
+          }
+        ]
+      }
+    ]
+  }
+}

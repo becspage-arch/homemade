@@ -1,0 +1,414 @@
+{
+  "slug": "bibimbap",
+  "title": "Bibimbap",
+  "subtitle": "korean mixed rice bowl",
+  "excerpt": "Bibimbap is a Korean rice bowl topped with seasoned vegetables, a fried egg, and spicy sauce. Everything is mixed together at the table before eating. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Bibimbap originates from Korea and is one of the country's most well-known dishes. The Jeonju version, with its raw beef and stone bowl, is considered the classic form.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The vegetable toppings can be prepared up to 1 day ahead and kept refrigerated.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "korean",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "wok",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "gochujang",
+      "term": "Gochujang",
+      "definition": "A Korean fermented red chilli paste made from chilli powder, glutinous rice, and fermented soybeans. It is thick, spicy, and slightly sweet."
+    },
+    {
+      "slug": "namul",
+      "term": "Namul",
+      "definition": "Korean seasoned vegetable side dishes. They are blanched or sauteed then tossed with sesame oil, garlic, and soy sauce."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bibimbap means 'mixed rice' in Korean. The bowl arrives with rice at the bottom and neat mounds of seasoned vegetables on top. You add a spoonful of "
+          },
+          {
+            "type": "text",
+            "text": "gochujang",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "gochujang"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " sauce and mix everything together before eating. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each vegetable topping is a "
+          },
+          {
+            "type": "text",
+            "text": "namul ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "namul"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". Preparing several different ones gives the dish its variety of colour, texture, and flavour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "short-grain-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "rinsed and cooked",
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Base"
+            },
+            {
+              "ingredientSlug": "spinach",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "washed",
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "bean-sprouts",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "cut into thin matchsticks",
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "courgette",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "cut into thin matchsticks",
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "mushrooms-chestnut",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "gochujang",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "sesame-seeds",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "to serve",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the gochujang sauce ingredients together in a small bowl. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blanch the spinach in boiling water for 30 seconds. Drain, squeeze dry, and toss with half the garlic, 1 tsp sesame oil, and 1 tsp soy sauce. Blanch the bean sprouts for 2 minutes, drain, and toss with the same seasonings."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat a little vegetable oil in a frying pan over medium heat. Cook the carrot matchsticks for 2 minutes, season lightly, and remove. Repeat with the courgette, then the mushrooms, adding a little garlic to each batch."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fry the eggs in vegetable oil over medium heat until the whites are set but the yolks are still runny. Season lightly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the hot cooked rice between four bowls. Arrange each vegetable in a separate section on top of the rice. Place a fried egg in the centre."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Drizzle with the gochujang sauce and sesame oil. Scatter sesame seeds over the top. Serve immediately and mix the contents of the bowl together at the table before eating."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Vegetables are releasing too much water",
+              "fix": "Cook each vegetable separately over high heat and avoid overcrowding the pan. Press moisture out of the spinach and bean sprouts before seasoning."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Sauce is too spicy",
+              "fix": "Add more sesame oil and a little extra sugar to balance the heat. Start with 1 tablespoon of gochujang and increase to taste."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Rice is sticking together in clumps",
+              "fix": "Use freshly cooked short-grain rice and fluff it gently with a fork before adding to the bowls. Day-old rice tends to clump more."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bibimbap is a everyday Korean dish found in homes, school canteens, and restaurants. Jeonju city is famous for its version, which includes raw beef and a traditional stone bowl. The stone bowl is heated until sizzling hot so the rice at the bottom crisps up. Home cooks use regular bowls with equally good results."
+          }
+        ]
+      }
+    ]
+  }
+}

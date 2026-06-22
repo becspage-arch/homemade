@@ -1,0 +1,377 @@
+{
+  "slug": "egusi-soup",
+  "title": "Egusi Soup",
+  "subtitle": "Nigerian melon seed soup",
+  "excerpt": "Egusi soup is a thick Nigerian stew built on ground melon seeds, leafy greens and smoked fish. Served with fufu or pounded yam, it is one of the most widely eaten soups in Nigeria. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A staple across southern and central Nigeria, with variations across Yoruba, Igbo and Edo cooking traditions. The melon seeds (egusi) are the dried seeds of a gourd related to watermelon.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze without the leafy greens. Add fresh spinach when reheating.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Make a large pot and portion for the week.",
+    "makeAheadNotes": "Tastes better the next day once the egusi has fully absorbed the broth.",
+    "dietaryFlags": [
+      "gluten-free"
+    ],
+    "cuisine": "nigerian",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "dinner-party"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "pestle-and-mortar",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "egusi",
+      "term": "Egusi",
+      "definition": "Dried and ground seeds of a West African gourd, related to watermelon. They have a nutty, slightly bitter flavour and thicken soups as they cook."
+    },
+    {
+      "slug": "stockfish",
+      "term": "Stockfish",
+      "definition": "Air-dried cod used widely in Nigerian cooking for a deep umami flavour. Smoked mackerel is a practical substitute."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The ground seeds called "
+          },
+          {
+            "type": "text",
+            "text": "egusi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "egusi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " give this soup its body and its name. Traditional recipes call for "
+          },
+          {
+            "type": "text",
+            "text": "stockfish",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "stockfish"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " alongside fresh meat, but smoked mackerel or prawns are good alternatives. Serve with fufu or rice."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ground egusi is sold in African grocery stores. If you buy whole seeds, grind them in a blender until they resemble coarse flour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "sesame-seeds",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "use ground egusi if available, or blend sesame seeds as substitute",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "bone-in, skinless",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "prawns-raw",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "peeled",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spinach",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "washed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pepper-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "blended with tomatoes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "half blended, half sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "or to taste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sunflower-oil",
+              "amount": 80,
+              "unit": "ml",
+              "prepNote": "or palm oil if available",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "or to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season chicken with salt. Blend canned tomatoes, red pepper, chilli and half the onion until smooth."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oil in a large pot over medium-high heat. Fry the sliced onion for 5 minutes until lightly brown."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add garlic and ginger. Cook 1 minute. Pour in the blended tomato mixture. Cook for 20 minutes, stirring regularly, until the oil separates on top."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the ground egusi with 4 tablespoons of water to form a loose paste. Add to the pot in small spoonfuls. Stir gently, then cover and cook for 10 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the chicken pieces. Pour in 250ml water. Stir, cover and cook on medium-low for 20 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add prawns if using and spinach. Cook uncovered for 5 minutes. Taste and adjust salt."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Egusi formed hard lumps",
+              "cause": "Added without water or too much at once",
+              "fix": "Always mix egusi with water first. Add in small spoonfuls rather than pouring it all in at once."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Soup too thin",
+              "cause": "Not enough egusi or too much water",
+              "fix": "Mix 2 tablespoons of extra ground egusi with water and stir in. Simmer uncovered for 5 minutes."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Egusi soup is eaten across Nigeria and into Cameroon, Togo and Ghana. Each ethnic group has its preferred method: some fry the egusi paste first, some add it directly to the broth. The choice of leaf varies by region from bitterleaf to ugu (pumpkin leaf) to spinach. It is considered comfort food and celebration food in equal measure."
+          }
+        ]
+      }
+    ]
+  }
+}

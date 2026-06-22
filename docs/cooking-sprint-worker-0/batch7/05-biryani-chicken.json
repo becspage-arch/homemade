@@ -1,0 +1,458 @@
+{
+  "slug": "biryani-chicken",
+  "title": "Chicken Biryani",
+  "subtitle": "layered spiced rice and chicken cooked together",
+  "excerpt": "Fragrant basmati rice layered with marinated chicken and steamed gently so the flavours meet.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A festive one-pot dish loved across India.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "indian",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "celebration"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "basmati-rice",
+      "definition": "A long-grain aromatic rice that cooks to separate, fluffy grains.",
+      "term": "basmati rice"
+    },
+    {
+      "slug": "dum",
+      "definition": "Slow steaming in a sealed pot so flavours mingle and the dish finishes gently.",
+      "term": "dum"
+    },
+    {
+      "slug": "garam-masala",
+      "definition": "A warm blend of ground spices such as cardamom, cinnamon and cloves, usually added near the end of cooking.",
+      "term": "garam masala"
+    },
+    {
+      "slug": "saffron",
+      "definition": "Dried crocus stigmas that give colour and a floral aroma when soaked.",
+      "term": "saffron"
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This chicken biryani serves 4 and takes about 80 minutes plus marinating. Soak the "
+          },
+          {
+            "type": "text",
+            "text": "basmati rice",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "basmati-rice"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and marinate the chicken first. Watch the heat at the end so the bottom does not catch."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soak the "
+          },
+          {
+            "type": "text",
+            "text": "saffron",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "saffron"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " in warm milk so its colour spreads through the rice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 700,
+              "unit": "g",
+              "prepNote": "cut into pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "basmati-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-yoghurt",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "piece",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 5,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garam-masala",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 50,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ghee",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mint",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cardamom-pods",
+              "amount": 4,
+              "unit": "piece",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "piece",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "piece",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the chicken with the yoghurt, ginger, garlic, garam masala, turmeric and chilli powder. Chill for 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fry the sliced onions in the ghee until deep golden and crisp. Set half aside for the top."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Soak the rice for 20 minutes, then boil it with the cardamom, bay leaves and cinnamon until 70 percent cooked. Drain."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the marinated chicken in the remaining onions and ghee for 15 minutes, adding the "
+                  },
+                  {
+                    "type": "text",
+                    "text": "garam masala",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "garam-masala"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " towards the end."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Layer the rice over the chicken. Scatter the saffron milk, mint, coriander and reserved onions on top."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cover tightly and cook on the lowest heat for 20 minutes to "
+                  },
+                  {
+                    "type": "text",
+                    "text": "steam through",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "dum"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": ". Rest for 5 minutes, then fold gently and serve."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The rice is mushy",
+              "cause": "It was fully boiled before steaming",
+              "fix": "Parboil only to 70 percent so it finishes in the steam."
+            },
+            {
+              "symptom": "The bottom burned",
+              "cause": "The heat was too high during steaming",
+              "fix": "Use the lowest heat and a heavy pan, or sit it on a heat diffuser."
+            },
+            {
+              "symptom": "The chicken is underdone",
+              "cause": "It was not cooked enough before layering",
+              "fix": "Cook the chicken until almost done before adding the rice."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Biryani is the dish people make to celebrate. Every region has its own version. This home style keeps the steps simple. Serve it with a cooling raita. Leftovers are just as good the next day."
+          }
+        ]
+      }
+    ]
+  }
+}

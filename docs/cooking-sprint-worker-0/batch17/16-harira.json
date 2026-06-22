@@ -1,0 +1,406 @@
+{
+  "slug": "harira",
+  "title": "Harira",
+  "subtitle": "Moroccan tomato, lentil and chickpea soup",
+  "excerpt": "Harira is the soup that breaks the Ramadan fast in Morocco every evening at sunset. It is thick with tomatoes, lentils and chickpeas, fragrant with coriander and lemon. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Morocco's most iconic soup, eaten throughout the year but especially during Ramadan. The name comes from the Arabic for silk, reflecting the smooth texture of the finished soup.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze for up to 3 months. Reheat gently and add fresh lemon before serving.",
+    "batchable": true,
+    "batchNotes": "Doubles very well. Makes an excellent weekday lunch batch.",
+    "makeAheadNotes": "Can be made a day ahead. The soup thickens on standing; add water when reheating.",
+    "dietaryFlags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "cuisine": "moroccan",
+    "mealType": "lunch",
+    "mood": [
+      "weeknight",
+      "batch-cooking"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tedouira",
+      "term": "Tedouira",
+      "definition": "A paste of flour and water stirred into harira near the end of cooking to thicken the soup. Some cooks use cornflour; both work."
+    },
+    {
+      "slug": "charmoula-herb-base",
+      "term": "Herb base",
+      "definition": "The mixture of fresh coriander, celery and parsley that is cooked into harira from the start, giving the soup its distinctive green-fragrant character."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Harira is thickened at the end with a flour-water paste called "
+          },
+          {
+            "type": "text",
+            "text": "tedouira ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tedouira"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". The distinctive flavour also comes from the cooked-in "
+          },
+          {
+            "type": "text",
+            "text": "herb base",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "charmoula-herb-base"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of coriander and celery that goes in at the start. A generous squeeze of lemon at the table is the finishing touch."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If using dried chickpeas, soak overnight and cook separately before adding. Tinned chickpeas save 2 hours and work just as well here."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chickpeas-tinned",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "drained and rinsed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-lentils",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "rinsed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "stems and leaves chopped separately",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "mixed with 4 tbsp cold water for thickening",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "juiced, to finish",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oil in a large pot over medium heat. Fry onion for 5 minutes. Add garlic, ginger, turmeric, cumin and cinnamon. Cook 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add tomato puree and canned tomatoes. Stir and cook for 10 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add red lentils, chickpeas, coriander stems, parsley and 1.2 litres water. Bring to a boil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce heat and simmer for 30 minutes until lentils are completely soft."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Whisk flour and water to a smooth paste. Stir into the soup over medium heat. Cook for 5 minutes, stirring constantly, until the soup thickens."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add lemon juice and coriander leaves. Taste and adjust salt. Serve with flatbread."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Soup too thick",
+              "cause": "Flour paste over-thickened or too much lentil",
+              "fix": "Stir in 200ml hot water and bring back to a simmer. Harira should pour easily but coat a spoon."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Flour paste lumpy",
+              "cause": "Added to too-hot liquid or not mixed smoothly first",
+              "fix": "Always mix the flour and cold water separately until completely smooth before adding to the pot. Stir constantly as it cooks."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Harira is served every evening during Ramadan across Morocco, eaten with dates, chebakia (honey pastries) and hard-boiled eggs to break the fast. It is sold at street stalls around mosques at the call to Maghrib prayer. Outside Ramadan it appears as a starter in Moroccan restaurants and as a weekday lunch staple. There are dozens of regional versions: some include lamb, some vermicelli, others are entirely plant-based."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,380 @@
+{
+  "slug": "pici-con-le-briciole",
+  "title": "Pici con le Briciole",
+  "subtitle": "Tuscan hand-rolled pasta with toasted breadcrumbs, garlic, and oil",
+  "excerpt": "Pici con le briciole is a cucina povera dish from Siena: thick hand-rolled noodles dressed with fried garlic, olive oil, and crunchy toasted breadcrumbs. The breadcrumbs replace cheese, giving a savoury, textural coating. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pici are a traditional Tuscan hand-rolled pasta, fat and irregular, made from just flour and water without egg. They are the pasta of the hill towns of southern Tuscany, particularly the province of Siena. Pici con le briciole (pici with breadcrumbs) is one of the oldest sauces for pici: a cucina povera preparation in which stale bread fried in good olive oil with garlic replaces the more expensive grated cheese. Paolo Petroni, La vera cucina toscana (1984, Bonechi), and Ada Boni, Il Talismano della Felicita (1929, Signorile Editore Rome), both document the practice of using toasted breadcrumbs in place of cheese for dressing pasta. The combination is also called pasta con la mollica throughout southern Italy, where it appears with spaghetti rather than pici.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 25,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The breadcrumbs can be toasted up to a day ahead and kept at room temperature. The pici dough can rest for up to 2 hours before rolling.",
+    "dietaryFlags": [
+      "vegan"
+    ],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "comfort-food"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-30",
+      "isOptional": false
+    },
+    {
+      "slug": "digital-scales",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pici",
+      "term": "Pici",
+      "definition": "A fat, hand-rolled Tuscan pasta made from just flour and water, roughly the thickness of a pencil. Each strand is rolled individually between the palms or on a board, which gives them their irregular, chunky character. No egg is used."
+    },
+    {
+      "slug": "mollica",
+      "term": "Mollica / pangrattato",
+      "definition": "Breadcrumbs toasted in olive oil until golden and crunchy. In cucina povera cooking, mollica serves the same structural role as grated cheese: it adds a savoury, textural coating to pasta without the cost or availability constraints of aged cheese."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pici",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pici"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " con le briciole is a dish that makes much from very little. The pasta is hand-rolled from flour and water; the sauce is fried "
+          },
+          {
+            "type": "text",
+            "text": "mollica",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mollica"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " (breadcrumbs) with with garlic, chilli, and perhaps a few anchovies. Together they are more than the sum of their parts: the fat noodles catch the crunchy crumbs, the garlic and chilli oil coats everything, and the breadcrumbs provide both flavour and textural contrast where cheese would in a richer dish."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Rolling pici is meditative rather than difficult. Each strand is rolled between the palms or against the board into a fat cylinder, irregular in thickness, which is entirely correct. They cook quickly once the water boils (3 to 4 minutes) and must be eaten immediately: fresh pasta does not wait."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "type 00 or plain flour",
+              "isOptional": false,
+              "groupLabel": "Pici dough"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 180,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "Pici dough"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Pici dough"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Pici dough"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-coarse",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "coarse, from stale bread",
+              "isOptional": false,
+              "groupLabel": "Briciole"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 5,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Briciole"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": "Briciole"
+            },
+            {
+              "ingredientSlug": "anchovy-fillets",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "in oil, optional",
+              "isOptional": true,
+              "groupLabel": "Briciole"
+            },
+            {
+              "ingredientSlug": "chilli-flakes",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Briciole"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "Briciole"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "for pasta water",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the pici dough"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix {{plain-flour}} of flour and {{salt-table}} of salt together. Add {{olive-oil}} of olive oil and {{water}} of warm water gradually, mixing until a shaggy dough forms. Knead for 8 to 10 minutes until smooth and elastic. Cover and rest for 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the dough into quarters. Roll each piece into a thin sheet and cut into strips about 1 cm wide. Roll each strip between your palms into a fat round noodle the thickness of a pencil. Place on a floured tray."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Toast the breadcrumbs and cook the pici"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{olive-oil}} of olive oil in a large frying pan over a medium heat. Add {{garlic}} of garlic slices and anchovies if using. Cook for 1 minute until the anchovies melt. Add {{chilli-flakes}} of chilli flakes and {{breadcrumbs-coarse}} of breadcrumbs. Stir-fry for 3 to 5 minutes until the crumbs are golden and crunchy. Remove from the heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring a large pot of well-salted water to the boil. Cook the pici for 3 to 4 minutes until just done (they will float). Reserve 150 ml of cooking water. Drain."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return the frying pan to a medium heat. Add the pici and a splash of pasta water. Toss for 1 minute. Add most of the breadcrumbs and {{parsley-flat}} of parsley and toss again. Serve immediately with the remaining breadcrumbs scattered on top."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Pici break when rolled",
+              "cause": "Dough too dry or not rested long enough",
+              "fix": "The dough should be smooth and elastic. Add water a teaspoon at a time if cracking. Resting for 30 minutes is important."
+            },
+            {
+              "symptom": "Breadcrumbs are soggy rather than crunchy",
+              "cause": "Too much pasta water added when tossing",
+              "fix": "Add pasta water in small amounts, just enough to loosen. Add breadcrumbs at the very last moment before serving."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pici are the pasta of Siena province. Pici con le briciole is their oldest sauce and the most economical. The hill towns of southern Tuscany all make pici as their daily pasta. The breadcrumb version began as a poor substitute for cheese-dressed pasta, but it was good enough to stay on menus. You find it in Siena trattorias as a first course alongside game ragu and the more expensive versions, and it holds its own."
+          }
+        ]
+      }
+    ]
+  }
+}

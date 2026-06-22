@@ -1,0 +1,341 @@
+{
+  "slug": "oyakodon",
+  "title": "Oyakodon",
+  "subtitle": "chicken and egg rice bowl",
+  "excerpt": "Oyakodon is a quick Japanese rice bowl with chicken and egg simmered in a sweet soy and dashi broth. The name means parent and child, because chicken and egg cook together. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Oyakodon originated in Tokyo in the late 1800s and spread across Japan as a cheap, fast, comforting meal. It remains one of the most popular donburi rice bowls at home and in restaurants.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "quick"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dashi",
+      "term": "Dashi",
+      "definition": "Japanese stock made from kombu seaweed and bonito flakes. It forms the base of the braising liquid for donburi rice bowls."
+    },
+    {
+      "slug": "donburi",
+      "term": "Donburi",
+      "definition": "A Japanese rice bowl dish where toppings are served over a bowl of steamed rice."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oyakodon is the classic Japanese "
+          },
+          {
+            "type": "text",
+            "text": "donburi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "donburi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " that comes together in one pan. Chicken thigh and onion simmer briefly in a "
+          },
+          {
+            "type": "text",
+            "text": "dashi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "dashi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and soy broth before beaten eggs are poured in and cooked until just set. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The eggs should be slightly underdone when you take the pan off the heat. They will carry over cook as you spoon the mixture over hot rice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "short-grain-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "cooked",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "boneless, skinless, cut into bite-size pieces",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "halved and thinly sliced",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 4,
+              "unit": null,
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 2,
+              "unit": null,
+              "prepNote": "sliced, to garnish",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the dashi, soy sauce, mirin and sugar in a frying pan over medium heat. Stir and bring to a simmer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the sliced onion and cook for 3 minutes until softened."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the chicken pieces in a single layer. Cook for 4 to 5 minutes, turning once, until the chicken is just cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the beaten eggs evenly over the chicken and onion. Cover the pan and cook for 1 to 2 minutes until the eggs are just set but still slightly soft in the centre."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon the hot rice into bowls. Slide the chicken and egg mixture on top. Scatter with spring onion and serve immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Eggs are rubbery",
+              "cause": "Eggs were overcooked",
+              "fix": "Remove the pan from the heat when the eggs look underdone. Carry-over heat will finish them."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth tastes too sweet",
+              "cause": "Mirin brands vary in sweetness",
+              "fix": "Start with 2 tbsp mirin and taste the broth before adding chicken."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Chicken is tough",
+              "cause": "Chicken was overcooked in the broth",
+              "fix": "Chicken thigh only needs 4 to 5 minutes. Cut pieces evenly so they cook at the same rate."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oyakodon is one of Japan's most beloved weeknight meals. It is sold in dedicated donburi restaurants called donburiyas. Home cooks make it when they want something fast and filling. The broth ratio is easy to memorise and the method takes minutes. Once you know it, you will make it weekly."
+          }
+        ]
+      }
+    ]
+  }
+}

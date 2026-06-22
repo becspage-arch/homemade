@@ -1,0 +1,429 @@
+{
+  "slug": "nem-ran",
+  "title": "Nem Rán",
+  "subtitle": "vietnamese fried spring rolls",
+  "excerpt": "Nem rán are crispy Vietnamese fried spring rolls filled with pork, glass noodles, mushrooms, and vegetables. They are wrapped in rice paper and deep-fried until golden and shatteringly crisp. This recipe makes about 16 rolls, enough for 4 people.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Nem rán is the northern Vietnamese name for fried spring rolls. In the south, they are called chả giò. The northern version typically uses rice paper wrappers and is known for its shatteringly thin, crispy shell.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze uncooked rolls on a tray, then transfer to a bag. Fry from frozen, adding 2 to 3 extra minutes.",
+    "batchable": true,
+    "batchNotes": "Make a large batch and freeze uncooked for quick meals later.",
+    "makeAheadNotes": "Rolls can be assembled up to 4 hours ahead and kept refrigerated until ready to fry.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "starter",
+    "mood": [
+      "weekend",
+      "casual"
+    ],
+    "temperatureCelsius": 175,
+    "temperatureNote": "Oil temperature for frying",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "nem-ran-wrapper",
+      "term": "Bánh tráng",
+      "definition": "Dried rice paper sheets used to wrap spring rolls. They are briefly moistened before wrapping. When fried, they become extremely thin and crispy."
+    },
+    {
+      "slug": "glass-noodle-term",
+      "term": "Glass noodles",
+      "definition": "Thin, transparent noodles made from mung bean starch. They become clear when soaked in water and are used in spring roll fillings to add texture without bulk."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Nem rán are crispy fried rolls made with "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "nem-ran-wrapper"
+                }
+              }
+            ],
+            "text": "bánh tráng "
+          },
+          {
+            "type": "text",
+            "text": "rice paper wrappers that turn shatteringly thin when fried. "
+          },
+          {
+            "type": "text",
+            "text": "The filling is a mix of pork, "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "glass-noodle-term"
+                }
+              }
+            ],
+            "text": "glass noodles "
+          },
+          {
+            "type": "text",
+            "text": ", and mushrooms. "
+          },
+          {
+            "type": "text",
+            "text": "This recipe makes about 16 rolls, enough for 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Make sure the filling is not too wet before rolling. Squeeze out any excess moisture from the vegetables to prevent soggy rolls."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pork-mince",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "glass-noodles",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "soaked in cold water for 20 minutes, drained and snipped short",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "mushrooms-chestnut",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "shallots",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 1,
+              "unit": "litre",
+              "prepNote": "for deep frying",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dipping sauce"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dipping sauce"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dipping sauce"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "dipping sauce"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the pork mince, glass noodles, mushrooms, carrot, shallots, egg, fish sauce, and sugar in a bowl until combined. Squeeze out any excess liquid from the carrot and mushrooms first."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dip a sheet of rice paper in warm water for about 5 seconds until barely pliable. Lay flat on a damp surface."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place 2 tablespoons of filling in a log shape across the lower third of the wrapper. Fold the bottom edge over the filling, then fold in the sides, and roll up tightly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Repeat with the remaining wrappers and filling. Keep completed rolls on a lightly oiled plate to prevent sticking."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a large saucepan to 175°C. Test with a small piece of wrapper . it should sizzle and float immediately."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fry the rolls in batches of 4 to 5. Cook for 5 to 6 minutes, turning occasionally, until deep golden and crispy. Drain on a wire rack."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the dipping sauce ingredients together with 3 tbsp of water. Serve the rolls immediately with the dipping sauce and fresh herbs."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The rolls burst open during frying.",
+              "cause": "The filling was too wet or the roll was not sealed tightly enough.",
+              "fix": "Squeeze all excess moisture from the filling ingredients. Roll tightly and press the seam firmly to seal."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The wrapper is thick and chewy instead of crispy.",
+              "cause": "The oil was not hot enough.",
+              "fix": "Maintain the oil at 175°C throughout frying. If the oil is too cool, the wrapper absorbs oil and turns chewy."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The rice paper tears when wrapping.",
+              "cause": "The wrapper was over-soaked.",
+              "fix": "Dip the rice paper for only 5 seconds. It should feel stiff and barely pliable. It will soften more as you roll."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Nem rán is the name used in northern Vietnam for fried spring rolls. "
+          },
+          {
+            "type": "text",
+            "text": "In the south, the same dish is called chả giò. "
+          },
+          {
+            "type": "text",
+            "text": "Fried spring rolls are eaten at family celebrations, festivals, and as everyday street food. "
+          },
+          {
+            "type": "text",
+            "text": "They are one of the most widely recognised Vietnamese foods outside the country. "
+          },
+          {
+            "type": "text",
+            "text": "Each family has its own filling recipe passed down through generations."
+          }
+        ]
+      }
+    ]
+  }
+}

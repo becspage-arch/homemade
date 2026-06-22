@@ -1,0 +1,374 @@
+{
+  "slug": "bratwurst-sauerkraut",
+  "title": "Bratwurst with Sauerkraut",
+  "subtitle": "grilled pork sausages with braised sauerkraut",
+  "excerpt": "Fresh bratwurst grilled until charred and juicy, served alongside sauerkraut slowly braised with onion, caraway, and a splash of white wine. This is the definitive German beer-garden plate. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A staple of German street food and beer-garden culture, particularly in Bavaria. Nuremberg bratwurst are the most famous regional variety.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The braised sauerkraut can be made a day ahead and reheated.",
+    "dietaryFlags": [],
+    "cuisine": "german",
+    "mealType": "dinner",
+    "mood": [
+      "midweek",
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-30",
+      "isOptional": false
+    },
+    {
+      "slug": "griddle-pan",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sauerkraut-term",
+      "term": "Sauerkraut",
+      "definition": "Finely shredded cabbage fermented in its own juices with lactic acid bacteria, giving it a sour, tangy flavour."
+    },
+    {
+      "slug": "caraway",
+      "term": "Caraway",
+      "definition": "A spice with a warm, slightly anise-like flavour used widely in German and Central European cooking."
+    }
+  ],
+  "techniqueSlugs": [
+    "pan-frying"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The two elements here need different treatment: the "
+          },
+          {
+            "type": "text",
+            "text": "sauerkraut",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sauerkraut-term"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " braises gently in the pan with onion and white wine while the sausages grill separately until well-coloured and cooked through. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use jarred or bagged sauerkraut, well drained. The "
+          },
+          {
+            "type": "text",
+            "text": "caraway",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "caraway"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " seeds are traditional and add the characteristic German warmth."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "sausages-pork",
+              "amount": 8,
+              "unit": "whole",
+              "prepNote": "fresh bratwurst",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sauerkraut",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "drained",
+              "isOptional": false,
+              "groupLabel": "sauerkraut"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": "sauerkraut"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauerkraut"
+            },
+            {
+              "ingredientSlug": "white-wine-dry",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauerkraut"
+            },
+            {
+              "ingredientSlug": "caraway-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauerkraut"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauerkraut"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "wholegrain-mustard",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt the butter in a wide frying pan over medium heat. Add the onion and cook, stirring, for 8 to 10 minutes until softened and lightly golden."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the drained sauerkraut, caraway seeds, and bay leaves. Pour in the white wine. Stir to combine, reduce the heat to low, cover, and braise for 20 minutes, stirring occasionally."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "While the sauerkraut braises, heat a griddle pan or second frying pan over medium-high heat with the oil. Add the bratwurst and cook for 12 to 15 minutes, turning every few minutes, until well browned on all sides and cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Taste the sauerkraut and adjust with a pinch of sugar if it is very sharp. Remove the bay leaves."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve the bratwurst on a bed of sauerkraut with wholegrain mustard alongside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Sauerkraut is too sour"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rinse it under cold water before cooking and drain thoroughly. A small pinch of sugar in the braising step also helps balance the acidity."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Bratwurst splits during cooking"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The heat is too high. Cook over a steady medium to medium-high flame. Do not score the skins."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Sauerkraut is dry"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add a splash of water or extra wine and put the lid back on for 5 more minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bratwurst and sauerkraut is the plate you find at every German outdoor festival, market stall, and beer garden. It is food built around contrast: the rich, salty sausage against the sharp, fermented cabbage. Bavaria claims it most loudly, but the whole country eats it. Pretzels and a cold lager are the natural companions."
+          }
+        ]
+      }
+    ]
+  }
+}

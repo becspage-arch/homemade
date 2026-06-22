@@ -1,0 +1,162 @@
+{
+  "slug": "laksa",
+  "title": "Laksa",
+  "subtitle": "malaysian coconut curry noodle soup",
+  "excerpt": "Laksa is a Malaysian noodle soup with a rich coconut and chilli broth, served with rice noodles, chicken, prawns, and bean sprouts. The broth is complex and aromatic, built on a spiced paste. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Laksa is one of the most iconic dishes in Malaysian and Singaporean cooking, with many regional varieties. Curry laksa uses a coconut milk broth; asam laksa uses a sour tamarind broth.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The broth base can be made ahead and refrigerated for up to 2 days. Add noodles and toppings just before serving.",
+    "dietaryFlags": ["gluten-free"],
+    "cuisine": "malaysian",
+    "mealType": "dinner",
+    "mood": ["weekend"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "blender", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "laksa", "term": "Laksa", "definition": "A spicy coconut noodle soup from Malaysia and Singapore. Curry laksa has a coconut milk broth; asam laksa uses tamarind for sourness." },
+    { "slug": "laksa-paste", "term": "Laksa paste", "definition": "A blend of dried chillies, lemongrass, shrimp paste, galangal, and turmeric. It forms the flavour base of the soup." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Laksa", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "laksa" } }] },
+          { "type": "text", "text": " gets its depth from frying the " },
+          { "type": "text", "text": "laksa paste", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "laksa-paste" } }] },
+          { "type": "text", "text": " until the oil separates before the coconut milk goes in. This step is what gives the broth its complexity. Serves 4." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The paste can be made from scratch or bought ready-made. A good jarred laksa paste works well here and saves significant time." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "vegetable-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lemongrass", "amount": 3, "unit": "stalks", "prepNote": "white part finely chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "ginger-fresh", "amount": 30, "unit": "g", "prepNote": "finely grated", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chilli-red", "amount": 4, "unit": null, "prepNote": "roughly chopped", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "turmeric", "amount": 1, "unit": "tsp", "prepNote": "ground", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "coconut-milk", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chicken-stock", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "chicken-thigh", "amount": 400, "unit": "g", "prepNote": "boneless, cooked and shredded", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "prawns-raw", "amount": 300, "unit": "g", "prepNote": "peeled and deveined", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "noodles-rice", "amount": 300, "unit": "g", "prepNote": "cooked according to packet, drained", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "bean-sprouts", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "fish-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "lime", "amount": 2, "unit": null, "prepNote": "cut into wedges to serve", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": null, "prepNote": "sliced, to serve", "isOptional": false, "groupLabel": null }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Blend the lemongrass, ginger, chilli, and turmeric with a splash of water into a paste." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat the oil in a large saucepan over medium heat. Add the paste and fry for 5 minutes, stirring, until fragrant and the oil begins to separate from the paste." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Pour in the coconut milk and stock. Bring to a simmer. Cook for 15 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Add the prawns. Cook for 3 minutes until pink and cooked through. Stir in the shredded chicken." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Season with fish sauce. Taste and adjust." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Divide the noodles between bowls. Ladle the broth over the noodles. Top with bean sprouts and spring onion. Serve with lime wedges." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The broth is thin and lacks depth.",
+              "solution": "Fry the paste for longer before adding the liquids. The paste needs to darken and the oil needs to visibly separate for the flavour to fully develop."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The prawns are overcooked.",
+              "solution": "Add them in the last 3 minutes only. They cook fast. Pull them out if they are done before the rest of the dish is ready."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "The soup is too spicy.",
+              "solution": "Use fewer chillies or add more coconut milk. A squeeze of lime at the end also helps balance the heat."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Laksa is found across Malaysia and Singapore and is one of the defining dishes of both countries. The Penang version uses tamarind for sourness instead of coconut milk. The Singaporean version is rich and coconut-heavy. Each hawker stall has its own version of the paste. It is one of the region's most celebrated street foods." }
+        ]
+      }
+    ]
+  }
+}

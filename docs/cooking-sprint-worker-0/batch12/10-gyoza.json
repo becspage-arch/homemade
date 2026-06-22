@@ -1,0 +1,161 @@
+{
+  "slug": "gyoza",
+  "title": "Gyoza",
+  "subtitle": "pan-fried pork and cabbage dumplings",
+  "excerpt": "Gyoza are Japanese pan-fried dumplings filled with pork, cabbage and ginger. They are cooked using the steam-fry method: browned on the bottom, then steamed under a lid, then finished to crisp the base again. Makes about 30 dumplings, serving 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Gyoza are the Japanese version of Chinese jiaozi dumplings, introduced to Japan after World War II. They became wildly popular and now differ from their Chinese cousins in being thinner-skinned, more garlicky and always pan-fried.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze uncooked gyoza on a tray until solid, then transfer to a bag. Cook from frozen, adding 2 extra minutes to the steaming stage.",
+    "batchable": true,
+    "batchNotes": "Double or triple the filling and fold a large batch. Freeze in portions for quick weeknight meals.",
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": ["weekend", "crowd-pleaser"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "frying-pan-26", "isOptional": false },
+    { "slug": "food-processor", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "gyoza", "term": "Gyoza", "definition": "Japanese pan-fried dumplings with a thin wheat wrapper. They are cooked using the steam-fry method which gives them a crispy bottom and tender top." },
+    { "slug": "steam-fry", "term": "Steam-fry", "definition": "A cooking technique where food is first fried to brown one side, then water is added and a lid goes on to steam the food through, and finally the lid is removed to re-crisp the base." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "text": "steam-fry", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "steam-fry" } }] },
+          { "type": "text", "text": " method is what makes " },
+          { "type": "text", "text": "gyoza", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "gyoza" } }] },
+          { "type": "text", "text": " different from regular fried dumplings. The dumpling gets a crispy bottom, then is steamed to cook the filling through, then dried out again for a final crisping. The wrapper needs to be bought ready-made or made from flour and boiling water. Serves 4." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Squeeze as much water as possible from the cabbage before mixing the filling. Wet filling will make the wrappers soggy and the gyoza will burst during cooking." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pork-mince", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "cabbage-white", "amount": 200, "unit": "g", "prepNote": "very finely shredded then squeezed dry", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "spring-onion", "amount": 3, "unit": null, "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "grated", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "ginger-fresh", "amount": 15, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "soy-sauce-light", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Filling" },
+            { "ingredientSlug": "plain-flour", "amount": 250, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Wrappers" },
+            { "ingredientSlug": "water", "amount": 120, "unit": "ml", "prepNote": "just boiled", "isOptional": false, "groupLabel": "Wrappers" },
+            { "ingredientSlug": "vegetable-oil", "amount": 2, "unit": "tbsp", "prepNote": "for frying", "isOptional": false, "groupLabel": null },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Dipping sauce" },
+            { "ingredientSlug": "rice-vinegar", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Dipping sauce" },
+            { "ingredientSlug": "sesame-oil", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dipping sauce" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Make the wrappers: pour the boiling water into the flour and mix with chopsticks or a fork until it comes together. Knead for 5 minutes into a smooth dough. Cover and rest for 20 minutes. Roll into a thin sheet and cut into 9cm circles, or divide the dough into 30 pieces and roll each individually." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Combine all filling ingredients in a bowl. Mix vigorously with chopsticks or a spoon until the mixture becomes slightly sticky." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place 1 teaspoon of filling in the centre of each wrapper. Dampen the edges with water. Fold and pleat to seal. Press the base flat so the gyoza can stand upright." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat 1 tbsp oil in a frying pan over medium-high heat. Arrange gyoza flat-side down in the pan. Fry for 2 minutes until the bottoms are golden. Add 60ml water to the pan and cover immediately with a lid. Steam for 4 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Remove the lid and let all the water evaporate. Drizzle another 1 tsp oil around the edge of the pan. Fry for 1 more minute until the bottoms are very crispy. Slide onto a plate and serve with dipping sauce." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Gyoza burst open during cooking",
+              "cause": "Filling was too wet or the wrapper seal was poor",
+              "fix": "Squeeze the cabbage very hard in a clean cloth before mixing. Press the pleated edge firmly to seal."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Wrappers are tough and chewy",
+              "cause": "Not enough resting time or the dough was over-kneaded",
+              "fix": "Rest the dough for at least 20 minutes. Hot water doughs need rest to soften and become pliable."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Gyoza stick to the pan and tear",
+              "cause": "Not enough oil or the pan was not hot enough before the gyoza went in",
+              "fix": "Heat the oil until shimmering before adding gyoza. Do not move them until it is time to steam."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Gyoza are eaten across Japan at home, in ramen shops and izakaya. Hamamatsu in Shizuoka is Japan's self-declared gyoza capital. The city eats more gyoza per person than anywhere else in Japan. The home-made version takes effort the first time but becomes faster with practice. Many Japanese families make a large batch together and freeze half for the week ahead." }
+        ]
+      }
+    ]
+  }
+}

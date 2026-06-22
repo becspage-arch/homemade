@@ -1,0 +1,441 @@
+{
+  "slug": "lau",
+  "title": "Lẩu",
+  "subtitle": "vietnamese hot pot",
+  "excerpt": "Lẩu is a Vietnamese hot pot where a large, flavoured broth is kept simmering at the table and raw ingredients are dipped in to cook. It is a social, celebratory meal eaten with family and friends. This recipe serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Hot pot cooking is shared across Vietnam and much of East and Southeast Asia. The Vietnamese lẩu is known for its clear, light broths flavoured with lemongrass, tomatoes, or fermented tofu, and is popular year-round.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the broth up to 2 days ahead and keep refrigerated. Heat at the table when ready.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "special"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lau-broth",
+      "term": "Lẩu broth",
+      "definition": "The flavoured broth that forms the base of Vietnamese hot pot. Common styles include a clear pork and lemongrass broth, a spicy tomato broth, or a sour tamarind broth."
+    },
+    {
+      "slug": "nhung-lau",
+      "term": "Nhúng lẩu",
+      "definition": "The Vietnamese technique of dipping raw ingredients into the simmering hot pot broth to cook them. Each person cooks their own food at the table."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lẩu is a communal Vietnamese hot pot where a simmering "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "lau-broth"
+                }
+              }
+            ],
+            "text": "lẩu broth "
+          },
+          {
+            "type": "text",
+            "text": "is placed at the centre of the table and everyone "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "nhung-lau"
+                }
+              }
+            ],
+            "text": "nhúng lẩu "
+          },
+          {
+            "type": "text",
+            "text": ". dips ingredients in to cook at their own pace. "
+          },
+          {
+            "type": "text",
+            "text": "This recipe serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The broth should be highly seasoned before guests sit down as it will dilute slightly as ingredients are cooked in it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pork-shoulder",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "thinly sliced for the broth base, reserve some for dipping",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "lemongrass",
+              "amount": 3,
+              "unit": "stalks",
+              "prepNote": "bruised",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": "cut into wedges",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "pineapple",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "cut into chunks",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "prawns-raw",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "for dipping",
+              "isOptional": false,
+              "groupLabel": "dippers"
+            },
+            {
+              "ingredientSlug": "beef-sirloin",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "very thinly sliced for dipping",
+              "isOptional": false,
+              "groupLabel": "dippers"
+            },
+            {
+              "ingredientSlug": "tofu-firm",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "cubed",
+              "isOptional": false,
+              "groupLabel": "dippers"
+            },
+            {
+              "ingredientSlug": "mushrooms-chestnut",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": "dippers"
+            },
+            {
+              "ingredientSlug": "bean-sprouts",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dippers"
+            },
+            {
+              "ingredientSlug": "noodles-rice",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "cooked, for serving",
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "mint",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "cut into wedges",
+              "isOptional": false,
+              "groupLabel": "to serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the broth: simmer the pork shoulder scraps with lemongrass in 1.5 litres of water for 20 minutes. Remove the pork and lemongrass."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the tomato wedges and pineapple to the broth. Simmer for 10 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season with fish sauce and sugar. Taste and adjust . the broth should be well-seasoned, slightly sweet, and fragrant."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Arrange all the dipping ingredients on plates in the centre of the table."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring the broth to a rolling boil and transfer to a portable burner or bring to the table in a pot kept hot on a camping stove or electric hot plate."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Guests cook their own ingredients by dipping them into the broth with chopsticks or a small wire ladle. Thin beef takes 30 seconds, prawns take 2 minutes, tofu takes 3 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the cooked noodles to the hot broth towards the end of the meal. Serve with herbs and lime."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The broth becomes very watery and bland after cooking many ingredients.",
+              "cause": "Ingredients release liquid as they cook, diluting the broth.",
+              "fix": "Start with a very strongly seasoned broth. Keep fish sauce and lime on the table so guests can add to their individual bowls as needed."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The broth cools down too quickly at the table.",
+              "cause": "No heat source is keeping it simmering.",
+              "fix": "Use a portable induction hob, camping stove, or electric hot plate. The broth must be kept simmering throughout the meal."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The thin beef turns grey and tough in the broth.",
+              "cause": "The beef was cooked for too long.",
+              "fix": "Swirl thin beef slices through the broth for 20 to 30 seconds only. Remove while still very slightly pink."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lẩu is a popular meal for large family gatherings and celebrations throughout Vietnam. "
+          },
+          {
+            "type": "text",
+            "text": "It is especially popular in the cooler northern winter and at Chinese New Year. "
+          },
+          {
+            "type": "text",
+            "text": "Each region has a signature hot pot style . lẩu cá from the Mekong Delta, lẩu Thái with a spicy broth, and lẩu mắm with fermented fish paste. "
+          },
+          {
+            "type": "text",
+            "text": "The communal, relaxed format makes lẩu a meal that can last several hours. "
+          },
+          {
+            "type": "text",
+            "text": "It is one of the most social dishes in Vietnamese food culture."
+          }
+        ]
+      }
+    ]
+  }
+}

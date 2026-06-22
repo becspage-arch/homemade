@@ -1,0 +1,349 @@
+{
+  "slug": "oden",
+  "title": "Oden",
+  "subtitle": "winter fishcake hot pot in dashi broth",
+  "excerpt": "Oden is a Japanese winter hot pot of fishcakes, tofu, boiled eggs, and root vegetables simmered low and slow in a clear dashi broth seasoned with soy sauce and mirin. Everything absorbs the broth beautifully. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Oden is a classic Japanese winter comfort dish sold from street carts called yatai and at convenience stores throughout Japan from autumn to spring.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Oden improves the next day once the ingredients have absorbed more broth. Make a large pot and refrigerate overnight.",
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": [
+      "comfort",
+      "winter"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "konnyaku",
+      "term": "Konnyaku",
+      "definition": "A firm, grey jelly block made from konjac yam, used in Japanese simmered dishes for its chewy texture and ability to absorb broth."
+    },
+    {
+      "slug": "daikon",
+      "term": "Daikon",
+      "definition": "A large white Japanese radish with a mild flavour that becomes tender and translucent when simmered in broth. A central ingredient in oden."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oden builds flavour through slow simmering. "
+          },
+          {
+            "type": "text",
+            "text": "Daikon",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "daikon"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " radish and potato take on the gentle flavour of the dashi broth over the course of an hour. "
+          },
+          {
+            "type": "text",
+            "text": "Konnyaku",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "konnyaku"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " adds a satisfying chew that contrasts with the soft tofu and eggs. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Blanch the daikon in plain water first. This removes bitterness and gives it a cleaner flavour after long simmering."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 1500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "sake",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "tofu-firm",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "cut into large cubes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": "peeled and halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": "cut into thick rounds",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 4,
+              "unit": "large",
+              "prepNote": "hard-boiled and peeled",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "kombu",
+              "amount": 1,
+              "unit": "piece",
+              "prepNote": "10 cm piece",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "miso-white",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "to serve on the side",
+              "isOptional": true,
+              "groupLabel": "to serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring a small pot of water to the boil. Simmer the carrot and potato pieces for 5 minutes, then drain. This removes any bitterness and helps them hold their shape in the long braise."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the dashi, soy sauce, mirin, and sake in a large Dutch oven. Add the kombu if using. Bring to a gentle simmer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the carrot, potato, and tofu to the broth. Simmer uncovered over low heat for 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the hard-boiled eggs to the pot. Continue simmering for another 20 to 30 minutes until the vegetables are very tender and have taken on colour from the broth."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Taste the broth and adjust seasoning. Serve in deep bowls with a ladle of broth. Offer miso paste on the side for dipping the ingredients."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Tofu is breaking apart in the pot",
+              "cause": "The broth was boiling too vigorously.",
+              "fix": "Keep oden at a bare simmer. The liquid should only occasionally bubble at the surface."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth tastes bland after an hour",
+              "cause": "The simmering time diluted the seasoning.",
+              "fix": "Add a tablespoon of soy sauce and taste again. The broth concentrates but also needs freshening."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Eggs are not absorbing the broth colour",
+              "cause": "The eggs were added too late or the shell was left on too long after peeling.",
+              "fix": "Score the peeled eggs lightly with a knife so the broth can penetrate, and simmer for at least 30 minutes."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Oden is Japan's winter street food and convenience store comfort dish. Every 7-Eleven in Japan sells it from October through March in a heated glass tank by the checkout. Each region uses different ingredients. Kanto-style uses a darker soy broth while Kansai keeps it light and pale. The dish is slow, patient cooking in a country that also invented instant noodles."
+          }
+        ]
+      }
+    ]
+  }
+}

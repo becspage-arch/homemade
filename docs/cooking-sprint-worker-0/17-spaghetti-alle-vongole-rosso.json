@@ -1,0 +1,388 @@
+{
+  "slug": "spaghetti-alle-vongole-rosso",
+  "title": "Spaghetti alle Vongole in Rosso",
+  "subtitle": "clams and spaghetti in tomato and white wine",
+  "excerpt": "Spaghetti alle vongole in rosso is the tomato-based version of the clam pasta, with a light cherry tomato sauce alongside the wine-steamed clams. It is less austere than the white version and suits fresh or tinned cherry tomatoes equally. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Vongole pasta exists in two principal versions: in bianco (white, with wine, garlic, and olive oil only) and in rosso (red, with the addition of tomatoes). Both versions are from Campania and Naples. The in bianco version is the older and more widely documented, appearing in 19th-century Neapolitan cookbooks. The in rosso version, which adds San Marzano or cherry tomatoes to the same base, became popular in the 20th century when tinned tomatoes made year-round tomato cookery practical. Pellegrino Artusi, La scienza in cucina (1891, public domain in Italy), gives a version of pasta with clams but the tomato version is primarily a 20th-century Neapolitan development. Both are equally authentic to Campanian cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": [
+      "dinner-party",
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "saute-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "colander",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "vongole",
+      "term": "Vongole",
+      "definition": "The Italian word for clams. The variety used in this pasta is the small Venus clam (Ruditapes decussatus or Ruditapes philippinarum), sold live in shell. They are cooked briefly in a covered pan until they open, releasing their briny liquor which becomes part of the sauce."
+    },
+    {
+      "slug": "purging-clams",
+      "term": "Purging clams",
+      "definition": "Soaking live clams in cold salted water for 30 to 60 minutes before cooking allows them to expel sand from their shells. Essential for avoiding grit in the finished dish."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spaghetti alle "
+          },
+          {
+            "type": "text",
+            "text": "vongole",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "vongole"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " in rosso begins with the same base as the white version: garlic and chilli softened in olive oil, white wine, then live clams cooked until they open. The difference is the addition of cherry tomatoes or San Marzano, which soften into a light sauce around the clam liquor. The result is slightly sweeter and more rounded than in bianco, with the same brininess from the clams."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Start by "
+          },
+          {
+            "type": "text",
+            "text": "purging",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "purging-clams"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " the clams in cold salted water for at least 30 minutes to remove any sand. Discard any that are open before cooking and do not close when tapped, and any that remain closed after cooking. Do not add Parmesan: cheese on shellfish pasta is not done in Italian cooking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "clams",
+              "amount": 1000,
+              "unit": "g",
+              "prepNote": "live, in shell, purged",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "spaghetti",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 5,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "red, finely sliced, or 0.5 tsp chilli flakes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dry-white-wine",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "cherry or chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Purge the clams and start the pasta"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put the clams in a large bowl of cold salted water (1 tbsp salt per litre) for 30 to 60 minutes. Drain and discard any open clams that do not close when tapped."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring a large pan of well-salted water to the boil. Cook {{pasta-dried}} of spaghetti for 2 minutes less than the packet says."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the sauce and open the clams"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat {{olive-oil}} of olive oil in a large saute pan over a medium heat. Add {{garlic}} of sliced garlic and {{chilli-fresh}} of chilli and cook for 1 to 2 minutes until fragrant. Add the tinned tomatoes, crush them roughly, and cook for 5 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Turn the heat to high. Add the clams and {{dry-white-wine}} of white wine. Cover the pan and cook for 3 to 4 minutes, shaking occasionally, until the clams have opened. Discard any that remain closed. Remove half the clams from their shells if preferred, leaving the rest for presentation."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finish the pasta and serve"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Drain the pasta, reserving 150 ml of cooking water. Add the pasta to the clam pan and toss over a high heat for 1 to 2 minutes, adding pasta water as needed to keep it fluid. Add {{parsley-flat}} of parsley. Season and serve immediately in warm bowls."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Grit in the finished dish",
+              "cause": "Clams not purged, or purging time too short",
+              "fix": "Purge for at least 30 minutes in salted water. Change the water once if the clams are particularly sandy."
+            },
+            {
+              "symptom": "Clams remain closed after cooking",
+              "cause": "Dead clams or underbaked",
+              "fix": "Cook covered on high heat. Open clams are done. Any that remain closed after 5 minutes should be discarded."
+            },
+            {
+              "symptom": "Sauce is too thin",
+              "cause": "Tomatoes not reduced enough",
+              "fix": "Reduce the tomato base for 8 to 10 minutes before adding the clams so the sauce is already concentrated."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vongole pasta is coastal Campanian food: Naples, the Amalfi coast, and the fishing villages of the Bay of Naples. Both in bianco and in rosso are made along the same stretch of coastline, and arguments about which is authentic are best left to Neapolitans. The in rosso version is slightly easier to get right at home because the tomato sauce gives the dish more margin for error: without the pure shellfish liquor of the white version, small mistakes in timing have less impact. Both are best eaten the day they are made, quickly, before the pasta overcooks in the residual heat."
+          }
+        ]
+      }
+    ]
+  }
+}

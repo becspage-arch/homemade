@@ -1,0 +1,410 @@
+{
+  "slug": "boeuf-bourguignon",
+  "title": "Boeuf Bourguignon",
+  "subtitle": "Slow-braised beef in red wine with mushrooms and lardons",
+  "excerpt": "The French farmhouse braise that turns tough braising beef into something silky and rich. Low and slow is the only way.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Classic Burgundian bistro dish, codified in French bourgeois cooking tradition.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 150,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze without garnish for up to 3 months.",
+    "batchable": true,
+    "batchNotes": "Doubles well in a large dutch oven.",
+    "makeAheadNotes": "Better made a day ahead and reheated.",
+    "dietaryFlags": [],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "comfort"
+    ],
+    "temperatureCelsius": 160,
+    "temperatureNote": "Low oven braise",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "browning-meat",
+    "braising"
+  ],
+  "criticalTechniques": [
+    "browning-meat"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This recipe serves 4 and takes about 2 hours 30 minutes start to finish, mostly hands-off oven time. The thing to watch is the initial browning: each piece of beef needs real colour before it goes into the pot or the final sauce will taste flat."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dry the beef well with kitchen paper before browning. Wet beef steams rather than browns and you lose that deep crust that gives the sauce its body."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-shin",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "cut into 4cm chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lardons",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": "cut into chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mushrooms-chestnut",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallots",
+              "amount": 8,
+              "unit": "small",
+              "prepNote": "peeled whole",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme-fresh",
+              "amount": 4,
+              "unit": "sprigs",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": null,
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 1,
+              "unit": "small bunch",
+              "prepNote": "to serve",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "freshly ground",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat your oven to 160C. Pat the beef dry, season with salt and pepper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the olive oil in the dutch oven over high heat. Brown the beef in batches, 2-3 minutes per side. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fry the lardons in the same pot until golden. Add onion and carrot, cook 5 minutes until softened."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the garlic and tomato puree. Cook 1 minute. Scatter over the flour and stir to coat everything."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the wine and stock. Stir well to lift any browned bits from the bottom. Return the beef and add thyme and bay leaves."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a simmer, cover, and transfer to the oven. Cook for 2 hours until the beef is very tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "30 minutes before the end, fry the shallots and mushrooms in butter until golden. Stir into the pot for the last 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove bay leaves and thyme. Taste for seasoning. Rest 10 minutes before serving with crusty bread or mashed potato."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Sauce is thin and watery",
+              "cause": "Not enough flour or lid left ajar letting steam escape",
+              "fix": "Remove lid for last 30 minutes to reduce, or stir in a teaspoon of cornflour mixed with cold water"
+            },
+            {
+              "symptom": "Beef is still tough after 2 hours",
+              "cause": "Braising temperature too low or beef cut was too lean",
+              "fix": "Return to oven for another 30-45 minutes checking every 15 minutes"
+            },
+            {
+              "symptom": "Sauce tastes harsh and acidic",
+              "cause": "Wine was not cooked long enough or is too tannic",
+              "fix": "Add a pinch of sugar and continue cooking another 20 minutes uncovered"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Boeuf bourguignon comes from the Burgundy region of eastern France, where both the beef and the wine are prized. It started as a way to make tough, working cuts tender through long slow cooking. Today it is one of the most celebrated dishes in French home cooking. It tastes even better reheated the next day when the flavours have had time to settle."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,435 @@
+{
+  "slug": "mole-negro",
+  "title": "Mole Negro",
+  "subtitle": "oaxacan dark chilli and chicken stew",
+  "excerpt": "A rich, smoky sauce built from dried chillies, spices, and a hint of dark chocolate, spooned over slow-cooked chicken. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Mole negro is the most complex of Oaxaca's seven moles, built over hours from toasted chillies, burnt tortilla, and spices.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the sauce alone for up to 3 months.",
+    "batchable": true,
+    "batchNotes": "Double the sauce and freeze half.",
+    "makeAheadNotes": "The sauce keeps in the fridge for 5 days and improves overnight.",
+    "dietaryFlags": [],
+    "cuisine": "mexican",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "dinner-party"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "pestle-and-mortar",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "toasting",
+      "term": "Toasting",
+      "definition": "Heating dry spices or chillies in a pan without oil to release aroma and deepen flavour."
+    },
+    {
+      "slug": "deglazing",
+      "term": "Deglazing",
+      "definition": "Adding liquid to a hot pan to lift the caramelised bits stuck to the base."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mole negro starts with "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "toasting"
+                }
+              }
+            ],
+            "text": "toasting"
+          },
+          {
+            "type": "text",
+            "text": " dried chillies until they blister, then grinding them into a paste that forms the sauce base. A small amount of dark chocolate added at the end rounds the heat and gives the sauce its characteristic depth. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "deglazing"
+                }
+              }
+            ],
+            "text": "Deglazing"
+          },
+          {
+            "type": "text",
+            "text": " the pan after frying the paste lifts the colour and body into the finished sauce."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tip: do not skip charring the onion and garlic directly in a dry pan. That burnt edge is part of the flavour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 8,
+              "unit": "pieces",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dried-chilli",
+              "amount": 6,
+              "unit": "whole",
+              "prepNote": "stems removed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 6,
+              "unit": "cloves",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 3,
+              "unit": "medium",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "stick",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cloves",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "peppercorns-black",
+              "amount": 6,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "or use 20g dark chocolate, finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Toast the dried chillies in a dry pan over medium heat for 1 minute each side. They should blister and darken slightly. Remove and soak in 300ml boiling water for 20 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Char the onion halves and garlic cloves cut-side down in the same dry pan until blackened in patches, about 8 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Drain the chillies, keeping the soaking liquid. Blend chillies with the charred onion, garlic, tomatoes, and 200ml soaking liquid until smooth."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Toast cinnamon, cloves, peppercorns, and cumin seeds in the dry pan for 1 minute. Grind to a fine powder."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oil in a dutch oven over high heat. Pour in the chilli paste and fry, stirring constantly, for 8 minutes. It will splatter."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the ground spices, stock, and salt. Stir well. Add chicken thighs, pushing them into the sauce."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Simmer uncovered on low heat for 45 minutes. Stir every 10 minutes. The sauce should thicken enough to coat a spoon."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in sugar or dark chocolate, taste for salt, and serve with rice or warm tortillas."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Sauce tastes bitter",
+              "cause": "Chillies were toasted too long and burned.",
+              "fix": "Add a teaspoon of sugar or a square of dark chocolate. Next time pull the chillies off heat as soon as they blister."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Sauce is too thin",
+              "cause": "Not enough evaporation during frying.",
+              "fix": "Fry the paste for 5 more minutes on medium-high heat, stirring constantly, until it reduces and darkens."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Chicken is dry",
+              "cause": "Cooked at too high a temperature.",
+              "fix": "Keep the simmer very gentle, just a few bubbles. Thighs stay moist at low heat."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mole negro is the signature dish of Oaxaca in southern Mexico. The region is known as the land of seven moles, each named by colour and complexity. Negro is the darkest and most layered. It is made for weddings, funerals, and festivals. Home cooks in Oaxaca often use a paste bought from the market and finish it at home, but the full from-scratch version is a point of pride for those who make it."
+          }
+        ]
+      }
+    ]
+  }
+}

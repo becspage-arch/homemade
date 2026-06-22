@@ -104,3 +104,75 @@ SKIPPED: 0
 - crispy-roasted-chickpeas: prose-prep-steps
 - lamb-rogan-josh: prose-prep-steps
 - pork-and-apple-casserole: prose-prep-steps
+
+---
+
+## Run at 19:05:41
+
+Generated: 2026-06-21T19:05:41.505Z
+
+Processed: 2370
+PASS: 2361
+STILL_BLOCKED: 9
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| opening-pattern-missing-hook | 45 |
+| content-type-opening-mismatch | 45 |
+| prose-prep-steps | 21 |
+| placeholder-string | 16 |
+| grade-level-strict | 14 |
+
+## Still BLOCKED (sample 20)
+
+- apple-and-cinnamon-cake: opening-pattern-missing-hook
+- butternut-squash-and-sage-pasta: prose-prep-steps
+- chicken-and-chorizo-traybake: grade-level-strict
+- halloumi-thai-stir-fry: prose-prep-steps
+- shakshuka: prose-prep-steps
+- slow-roast-lamb-shoulder: prose-prep-steps
+- spaghetti-aglio-olio: prose-prep-steps
+- stir-fried-water-spinach: prose-prep-steps
+- teriyaki-salmon: prose-prep-steps
+
+---
+
+## Run at 19:35:03
+
+Generated: 2026-06-21T19:35:03.244Z
+
+Processed: 2404
+PASS: 2389
+STILL_BLOCKED: 15
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| opening-pattern-missing-hook | 50 |
+| content-type-opening-mismatch | 49 |
+| prose-prep-steps | 36 |
+| historical-century-in-body | 13 |
+| grade-level-strict | 9 |
+
+## Still BLOCKED (sample 20)
+
+- aloo-gobi: grade-level-strict
+- aubergine-curry: prose-prep-steps
+- devilled-mushrooms: prose-prep-steps
+- egg-and-vegetable-stir-fry: prose-prep-steps
+- honey-almond-cake: opening-pattern-missing-hook
+- japanese-style-pasta: prose-prep-steps
+- lamb-saag: prose-prep-steps
+- meatballs-in-tomato-sauce: prose-prep-steps
+- miso-glazed-cod: grade-level-strict
+- miso-ramen: prose-prep-steps
+- pork-katsu: prose-prep-steps
+- ratatouille: prose-prep-steps
+- sichuan-doubanjiang-beef: prose-prep-steps
+- simplified-fish-stew: prose-prep-steps
+- toad-in-the-hole: prose-prep-steps

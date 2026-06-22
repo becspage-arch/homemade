@@ -1,0 +1,448 @@
+{
+  "slug": "ker-sangri",
+  "title": "Ker Sangri",
+  "subtitle": "rajasthani desert berry and dried bean sabzi",
+  "excerpt": "A tangy, spiced dry curry made from sun-dried ker berries and sangri beans. It keeps well and travels without refrigeration. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A preservation dish born of Rajasthan's desert climate, where fresh produce was scarce and dried ingredients were staples.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Makes well in large quantities. Stores in the fridge for four days.",
+    "makeAheadNotes": "The flavour improves after a day. Make it the evening before serving.",
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ],
+    "cuisine": "indian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "batch-cooking"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ker",
+      "term": "Ker",
+      "definition": "Small dried berries from the Capparis decidua shrub, native to Rajasthan. They have a tart, slightly bitter flavour."
+    },
+    {
+      "slug": "sangri",
+      "term": "Sangri",
+      "definition": "Long dried beans from the Prosopis cineraria tree, common in the Thar Desert. They have a mild, slightly earthy taste."
+    },
+    {
+      "slug": "sabzi",
+      "term": "Sabzi",
+      "definition": "A general Hindi term for a cooked vegetable dish, dry or with gravy."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This dish uses two ingredients unique to the Rajasthani desert: "
+          },
+          {
+            "type": "text",
+            "text": "ker ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "ker"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", small tart dried berries, and "
+          },
+          {
+            "type": "text",
+            "text": "sangri ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sangri"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", long dried beans from local trees. Together they form a dry "
+          },
+          {
+            "type": "text",
+            "text": "sabzi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sabzi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " with a distinctive tangy flavour. Both ingredients require overnight soaking."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ker and sangri are available at Indian grocery shops. If ker is unavailable, substitute capers preserved in brine, rinsed well. The texture differs but the tartness is similar."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            {
+              "ingredientSlug": "red-lentils",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "rinsed (to pad out if ker unavailable)",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mustard-seeds",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "asafoetida",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dried-chilli",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "medium",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tamarind-paste",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "small bunch",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ],
+          "defaultServings": 4
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Soak ker and sangri (or substitute) in water overnight. Drain and rinse twice to remove bitterness."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Boil the soaked ker and sangri in fresh water for 15 minutes until just tender. Drain and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oil in a wide pan over medium heat. Add cumin seeds, mustard seeds, asafoetida, and dried chillies. Let them splutter for 30 seconds."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add onion and cook until golden, about 8 minutes. Add garlic and cook 2 minutes more."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add turmeric, coriander, chilli powder, and ground cumin. Stir and cook 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the drained ker and sangri. Stir to coat in the spices."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add tamarind paste and salt. Cook on low heat for 10 minutes, stirring occasionally, until the mixture is dry and fragrant."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Finish with fresh coriander. Serve with flatbread or rice."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Dish tastes very bitter",
+              "cause": "Ker was not soaked or rinsed enough",
+              "fix": "Always soak overnight and rinse at least twice before cooking."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Mixture is watery rather than dry",
+              "cause": "Too much liquid retained after cooking the ker and sangri",
+              "fix": "Drain thoroughly and cook on high heat at the end to drive off moisture."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Ker sangri developed in the Thar Desert of Rajasthan, where water is scarce and fresh vegetables rarely available for months at a time. Both ker and sangri grow wild in the desert and were harvested, dried, and stored. The dish was originally a food of necessity but is now considered a regional speciality. It is served at weddings and carried by travellers as a preserved food that keeps without refrigeration."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,455 @@
+{
+  "slug": "machboos",
+  "title": "Machboos",
+  "subtitle": "gulf spiced rice and fish",
+  "excerpt": "Whole fish fillets cooked in a spiced tomato broth, then removed while the rice absorbs all the flavour, served together with dried limes and fresh herbs. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Machboos is the national dish of Bahrain and Kuwait. The fish version, machboos samak, is the coastal variation eaten in the fishing communities of the Gulf.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 55,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the spiced tomato broth a day ahead. Cook the rice and fish fresh.",
+    "dietaryFlags": [],
+    "cuisine": "gulf",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "dinner-party"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "loomi",
+      "term": "Loomi",
+      "definition": "Dried black lime, a Gulf spice made by boiling fresh limes in salt water then sun-drying them. It adds a sour, smoky depth to rice and stews. Lemon zest and a pinch of citric acid can substitute."
+    },
+    {
+      "slug": "rosewater",
+      "term": "Rosewater",
+      "definition": "A delicate floral water distilled from rose petals, used in small quantities at the end of cooking to perfume rice dishes across the Gulf."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The two distinctive flavours in machboos are "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "loomi"
+                }
+              }
+            ],
+            "text": "loomi"
+          },
+          {
+            "type": "text",
+            "text": " dried lime, approximated here with lemon zest and extra lime juice, and a few drops of "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "rosewater"
+                }
+              }
+            ],
+            "text": "rosewater"
+          },
+          {
+            "type": "text",
+            "text": " stirred through the rice at the end. Both are subtle but the dish lacks its character without them."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tip: cook the fish only briefly in the broth. Remove it before it overcooks, then return it to warm through on top of the rice for the final minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "sea-bass",
+              "amount": 4,
+              "unit": "fillets",
+              "prepNote": "or cod, skin on",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "basmati-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "rinsed and soaked 20 minutes, drained",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "large",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 2,
+              "unit": "cm piece",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 3,
+              "unit": "medium",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cardamom-green",
+              "amount": 4,
+              "unit": "pods",
+              "prepNote": "bruised",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "stick",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cloves",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": "steeped in 2 tbsp warm water",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "zest of 1 and juice of both, to replace loomi",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "small bunch",
+              "prepNote": "chopped, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oil in a dutch oven over medium heat. Fry onion for 10 minutes until golden. Add garlic and ginger, fry for 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add all ground spices and whole spices. Stir for 1 minute until fragrant."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add chopped tomatoes and tomato puree. Cook for 8 minutes until the tomatoes have broken down into a thick paste."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add 900ml water, lime zest, half the lime juice, and salt. Bring to the boil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lower the fish fillets into the broth. Poach for 6 to 7 minutes until just cooked through. Remove carefully and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Measure 750ml of the broth. Add drained rice to the pot. Pour measured broth over. Bring to the boil, reduce to lowest heat, cover, and cook for 18 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sprinkle saffron water and remaining lime juice over the rice. Lay fish fillets on top of the rice. Cover and rest off the heat for 10 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Scatter with fresh coriander and serve from the pot."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Fish falls apart when removed from broth",
+              "cause": "Poached too long.",
+              "fix": "Check the fish at 5 minutes. It is done when the flesh just turns opaque all the way through. Use a wide spatula to lift it in one piece."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Rice has no flavour",
+              "cause": "Not enough broth volume used for the rice, or the base was undercooked.",
+              "fix": "The rice must cook in the spiced fish broth, not plain water. If the broth was thin, reduce it first before measuring."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Saffron colour is patchy",
+              "cause": "Saffron not steeped long enough or added to a cold surface.",
+              "fix": "Steep the saffron for at least 10 minutes in warm water. Pour it evenly over the rice surface just before the final rest."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Machboos is the national dish of Bahrain and is eaten widely across the Gulf states. The name is thought to derive from the Arabic root for pressed or compacted, describing how the rice absorbs the broth and becomes almost fused with the spice base. The fish version, machboos samak, reflects the Gulf's long history as a fishing and pearling culture. Traditional fishing communities along the Bahraini and Kuwaiti coastline made this dish with whatever fish was landed that day. The dried loomi lime is the single most distinctive flavouring in Gulf cooking and is central to the dish's identity."
+          }
+        ]
+      }
+    ]
+  }
+}

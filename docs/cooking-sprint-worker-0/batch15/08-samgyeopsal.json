@@ -1,0 +1,143 @@
+{
+  "slug": "samgyeopsal",
+  "title": "Samgyeopsal",
+  "subtitle": "korean grilled pork belly",
+  "excerpt": "Samgyeopsal is thick slices of pork belly grilled at the table and eaten wrapped in lettuce leaves with garlic, spring onion salad, and dipping sauce. It is one of Korea's most popular social eating experiences. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Samgyeopsal translates as 'three-layer meat' referring to the layers of fat and meat in pork belly. It is a classic Korean barbecue dish popular since the mid-20th century.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Prepare the dipping sauce and salad up to 2 hours ahead. Grill the pork just before serving.",
+    "dietaryFlags": ["gluten-free"],
+    "cuisine": "korean",
+    "mealType": "dinner",
+    "mood": ["weekend", "entertaining"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "griddle-pan", "isOptional": false },
+    { "slug": "cast-iron-skillet", "isOptional": true }
+  ],
+  "glossaryTerms": [
+    { "slug": "ssamjang", "term": "Ssamjang", "definition": "A thick Korean dipping sauce made from doenjang (soybean paste), gochujang (chilli paste), garlic, and sesame oil. It is used as a condiment for Korean barbecue wraps." },
+    { "slug": "banchan", "term": "Banchan", "definition": "Small Korean side dishes served alongside a main meal. They sit at the centre of the table and are shared between all diners." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Samgyeopsal is grilled, wrapped, and eaten in a single bite. The pork belly goes on a hot griddle and the meat is cut into smaller pieces with scissors as it cooks. Each person assembles their own wraps at the table. Serves 4." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The " },
+          { "type": "text", "text": "ssamjang", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ssamjang" } }] },
+          { "type": "text", "text": " dipping sauce is easy to make and far better than bought versions. Serve with plenty of " },
+          { "type": "text", "text": "banchan", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "banchan" } }] },
+          { "type": "text", "text": " on the side." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pork-belly", "amount": 800, "unit": "g", "prepNote": "sliced 1 cm thick", "isOptional": false, "groupLabel": "Pork" },
+            { "ingredientSlug": "garlic", "amount": 8, "unit": "cloves", "prepNote": "thinly sliced, for grilling alongside", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "spring-onion", "amount": 6, "unit": "whole", "prepNote": "cut into thin rings, for salad", "isOptional": false, "groupLabel": "Spring onion salad" },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Spring onion salad" },
+            { "ingredientSlug": "rice-vinegar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spring onion salad" },
+            { "ingredientSlug": "chilli-flakes", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spring onion salad" },
+            { "ingredientSlug": "miso-white", "amount": 2, "unit": "tbsp", "prepNote": "or Korean doenjang", "isOptional": false, "groupLabel": "Ssamjang" },
+            { "ingredientSlug": "gochujang", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Ssamjang" },
+            { "ingredientSlug": "garlic", "amount": 2, "unit": "cloves", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Ssamjang" },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Ssamjang" },
+            { "ingredientSlug": "caster-sugar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Ssamjang" },
+            { "ingredientSlug": "sesame-seeds", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": true, "groupLabel": "Ssamjang" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the ssamjang ingredients together in a small bowl until smooth. Taste and adjust the balance of salty and spicy. Set aside." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Toss the spring onion with sesame oil, rice vinegar, and chilli flakes. Set aside as the table salad." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Heat a griddle pan or cast iron skillet over very high heat. You want it smoking hot before the pork goes on." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lay the pork belly slices on the hot pan. Cook for 3 to 4 minutes per side until the fat is rendered and the edges are charred. Add the sliced garlic cloves alongside for the last 2 minutes." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Use kitchen scissors to cut the cooked pork into bite-sized pieces directly on the griddle or on a board." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Serve the pork, garlic, spring onion salad, and ssamjang together with lettuce leaves, which each diner uses to make their own wraps." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          { "type": "troubleshooterItem", "attrs": { "issue": "Pork is not crisping up", "fix": "The pan is not hot enough or the slices are too thin. Use thick-cut belly and make sure the pan is smoking before adding the meat." } },
+          { "type": "troubleshooterItem", "attrs": { "issue": "Too much fat in the pan", "fix": "Drain excess rendered fat between batches. A thick cast iron pan handles this better than a non-stick one." } },
+          { "type": "troubleshooterItem", "attrs": { "issue": "Ssamjang is too thick to spread", "fix": "Stir in 1 teaspoon of water at a time until it reaches a spreadable consistency." } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Samgyeopsal is one of the most popular meals for an evening out in Korea. Groups gather around a built-in table grill and cook meat themselves. It is a very social way of eating. Soju, a Korean spirit, is traditionally drunk alongside. The dish is available year-round and is especially popular at weekends." }
+        ]
+      }
+    ]
+  }
+}

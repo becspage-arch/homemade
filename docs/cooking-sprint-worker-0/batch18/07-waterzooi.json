@@ -1,0 +1,423 @@
+{
+  "slug": "waterzooi",
+  "title": "Waterzooi",
+  "subtitle": "Belgian chicken and vegetable stew",
+  "excerpt": "A gentle Belgian stew of chicken, root vegetables, and cream in a light broth. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Originated in Ghent, Belgium. Historically made with fish from the rivers Leie and Schelde.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "belgian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "liaison",
+      "term": "Liaison",
+      "definition": "A mixture of cream and egg yolk used to enrich and thicken a broth without boiling."
+    },
+    {
+      "slug": "julienne",
+      "term": "Julienne",
+      "definition": "To cut vegetables into long, thin matchstick strips for even cooking."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Waterzooi is Ghent's famous stew. Chicken thighs cook gently in stock with root vegetables cut into "
+          },
+          {
+            "type": "text",
+            "text": "julienne",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "julienne"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " strips, and the broth is finished with a "
+          },
+          {
+            "type": "text",
+            "text": "liaison",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "liaison"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of cream and egg yolk that makes it rich without being heavy."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Take the pan off the heat completely before stirring in the cream and egg mixture. If the liquid is boiling it will curdle."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": "bone-in",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "leek",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "cut into matchstick strips",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 3,
+              "unit": "sticks",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "peeled and diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 1,
+              "unit": "litre",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "yolks only",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprigs",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 1,
+              "unit": "small bunch",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 0,
+              "unit": "to taste",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt butter in a large saucepan. Soften onion, leek, and celery for 5 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add carrot and potato."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place chicken thighs on top of the vegetables. Pour in stock. Add bay leaves and thyme."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a gentle simmer. Cover and cook for 35 to 40 minutes until the chicken is cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove chicken. Shred the meat off the bone and return it to the pan. Remove bay and thyme."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix egg yolks with cream in a small bowl."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove pan from the heat entirely. Stir in the cream mixture. Do not boil again."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season well. Stir in parsley. Serve with crusty bread."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth has curdled",
+              "cause": "Liaison added to boiling liquid",
+              "fix": "Take the pan off the heat fully before adding the cream and egg mixture."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Chicken is dry",
+              "cause": "Overcooked",
+              "fix": "Check at 35 minutes. Shred while still moist."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Vegetables mushy",
+              "cause": "Cut too small or cooked too long",
+              "fix": "Cut vegetables into larger pieces and add potato slightly later."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Waterzooi is Ghent's most famous dish. The name comes from the Flemish for water and to boil. It was originally made with freshwater fish but switched to chicken when the rivers became too polluted in the 18th century. Every Ghent restaurant serves its own version. The fish version is still found in coastal Belgian towns like Bruges."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,412 @@
+{
+  "slug": "dan-dan-noodles",
+  "title": "Dan Dan Noodles",
+  "subtitle": "sichuanese noodles with chilli sesame sauce and minced pork",
+  "excerpt": "Egg noodles dressed in a numbing, sesame-rich sauce with crispy minced pork and preserved vegetables. A Sichuan street food staple. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Dan dan noodles take their name from the shoulder pole (dan dan) that street vendors carried to sell them. Originating in Chengdu, they are one of the most copied Sichuanese dishes outside China.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "The pork topping and sauce can be made ahead and kept separately. Cook noodles to order.",
+    "makeAheadNotes": "Make the sauce up to 2 days ahead and refrigerate. Cook the pork and noodles fresh.",
+    "dietaryFlags": [],
+    "cuisine": "chinese",
+    "mealType": "lunch",
+    "mood": [
+      "weeknight",
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "wok",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ma-la",
+      "term": "Ma La",
+      "definition": "The defining Sichuanese flavour profile combining ma (the numbing sensation from Sichuan pepper) and la (the heat from chilli). Together they produce a complex, tingling spiciness."
+    },
+    {
+      "slug": "ya-cai",
+      "term": "Ya Cai",
+      "definition": "Yibin preserved mustard greens, a key ingredient in dan dan noodles. They add a salty, slightly fermented crunch. Available in Chinese supermarkets. A small amount of kimchi can substitute."
+    },
+    {
+      "slug": "sesame-paste-chinese",
+      "term": "Sesame Paste",
+      "definition": "Chinese sesame paste made from roasted sesame seeds. Thicker and more intense than tahini. If using tahini, add a few drops of sesame oil to approximate the flavour."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dan dan noodles are built on the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "ma-la"
+                }
+              }
+            ],
+            "text": "ma la"
+          },
+          {
+            "type": "text",
+            "text": " balance. The sauce should be simultaneously sesame-rich, chilli-hot, and garlicky. The pork topping adds texture and savouriness. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "ya-cai"
+                }
+              }
+            ],
+            "text": "Ya cai"
+          },
+          {
+            "type": "text",
+            "text": " is worth seeking out from a Chinese supermarket. Without it the pork topping lacks its characteristic texture."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sesame-paste-chinese"
+                }
+              }
+            ],
+            "text": "sesame paste"
+          },
+          {
+            "type": "text",
+            "text": " goes into the sauce cold. Thin it with the hot noodle cooking water just before serving. This emulsifies the sauce and brings everything together."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "noodles-egg",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "fresh or dried thin egg noodles",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": "Pork Topping"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Pork Topping"
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "Shaoxing wine preferred",
+              "isOptional": false,
+              "groupLabel": "Pork Topping"
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "or Chinese sesame paste thinned with oil",
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": "or chilli crisp oil",
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "peppercorns-black",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "ground, or Sichuan pepper if available",
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "minced to a paste",
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "peanuts",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "roasted and roughly crushed",
+              "isOptional": false,
+              "groupLabel": "To Serve"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 3,
+              "unit": "stalks",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": "To Serve"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the sauce. Combine the sesame oil or paste, light soy, rice vinegar, chilli powder, ground pepper, garlic paste, and sugar in a bowl. Mix well. It will be thick."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the noodles according to packet instructions. Reserve a mug of cooking water before draining. Divide the noodles into 4 bowls."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "While the noodles cook, heat the oil in a wok over high heat. Add the minced pork and cook without stirring for 2 minutes until it starts to brown on the bottom."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Break up the pork and add the soy sauce and Shaoxing wine. Stir-fry for 3 to 4 minutes until the pork is cooked through and starting to crisp. Remove from heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Thin the sauce with 4 to 6 tablespoons of the hot noodle water. Stir until smooth and pourable."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon 2 to 3 tablespoons of sauce into each bowl of noodles. Toss to coat. Top with the pork, crushed peanuts, and spring onion. Serve immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Sauce is too thick to coat the noodles",
+              "cause": "Not enough hot cooking water was added to the sauce.",
+              "fix": "Add more hot water a tablespoon at a time and stir until the sauce flows freely."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Pork topping is grey and soft, not crispy",
+              "cause": "The pan was not hot enough or the pork was moved too early.",
+              "fix": "Use maximum heat and leave the pork undisturbed for 2 minutes before breaking it up. A well-seasoned wok or cast iron pan helps."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dan dan noodles started as a Chengdu street food. Vendors carried them on shoulder poles through the city. The dish has since spread to Sichuanese restaurants worldwide, but versions outside China often reduce the heat and add peanut butter. Neither is traditional."
+          }
+        ]
+      }
+    ]
+  }
+}

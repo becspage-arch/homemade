@@ -1,0 +1,413 @@
+{
+  "slug": "goi-du-du",
+  "title": "Gỏi Đu Đủ",
+  "subtitle": "green papaya salad",
+  "excerpt": "Gỏi đu đủ is a Vietnamese green papaya salad with shredded raw papaya, herbs, prawns or dried shrimp, roasted peanuts, and a sweet and tangy dressing. It is light, crunchy, and refreshing. This recipe serves 4 as a starter or side.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Green papaya salad is popular across Southeast Asia. The Vietnamese version is lighter and less fiery than the Thai version, with a dressing based on fish sauce, lime, and sugar rather than fermented shrimp paste.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 5,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Shred the papaya and make the dressing up to 2 hours ahead. Dress and toss just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "starter",
+    "mood": [
+      "light",
+      "casual"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "colander",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "green-papaya-term",
+      "term": "Green papaya",
+      "definition": "Unripe papaya with firm, pale green flesh. It has almost no flavour on its own but absorbs dressings well and adds a crunchy texture to salads."
+    },
+    {
+      "slug": "nuoc-cham-salad",
+      "term": "Nước chấm",
+      "definition": "The all-purpose Vietnamese dipping and dressing sauce made from fish sauce, lime juice, sugar, garlic, and chilli. It dresses gỏi đu đủ and many other salads."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gỏi đu đủ is a crunchy salad made from shredded "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "green-papaya-term"
+                }
+              }
+            ],
+            "text": "green papaya "
+          },
+          {
+            "type": "text",
+            "text": "tossed in a tangy "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "nuoc-cham-salad"
+                }
+              }
+            ],
+            "text": "nước chấm "
+          },
+          {
+            "type": "text",
+            "text": "dressing with prawns, herbs, and peanuts. "
+          },
+          {
+            "type": "text",
+            "text": "This recipe serves 4 as a side."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If you cannot find green papaya, green mango or shredded kohlrabi make good substitutes with a similar crunch."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "green-papaya",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "peeled, deseeded, and finely shredded",
+              "isOptional": false,
+              "groupLabel": "salad"
+            },
+            {
+              "ingredientSlug": "prawns-raw",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "peeled, cooked, and cooled",
+              "isOptional": false,
+              "groupLabel": "salad"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "finely shredded",
+              "isOptional": false,
+              "groupLabel": "salad"
+            },
+            {
+              "ingredientSlug": "shallots",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": "salad"
+            },
+            {
+              "ingredientSlug": "mint",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": "leaves picked",
+              "isOptional": false,
+              "groupLabel": "salad"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "salad"
+            },
+            {
+              "ingredientSlug": "peanuts",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "roasted and roughly crushed",
+              "isOptional": false,
+              "groupLabel": "salad"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dressing"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dressing"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dressing"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "cloves",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": "dressing"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "dressing"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Shred the green papaya on the coarse side of a box grater or use a julienne peeler. Rinse under cold water and drain well in a colander."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the prawns in simmering water for 2 to 3 minutes until pink. Drain and cool."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the dressing by mixing the fish sauce, lime juice, sugar, garlic, and chilli with 2 tbsp of water. Stir until the sugar dissolves."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the shredded papaya, carrot, sliced shallots, and prawns in a large bowl."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the dressing over the salad and toss well to coat everything evenly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the mint and coriander. Toss gently."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Transfer to a serving plate. Scatter over the crushed peanuts and serve immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The salad is watery and the dressing is diluted.",
+              "cause": "The papaya was not drained properly after shredding.",
+              "fix": "After shredding, squeeze the papaya firmly in a clean cloth or colander to remove as much liquid as possible before dressing."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The dressing is too salty.",
+              "cause": "Too much fish sauce was used for the amount of papaya.",
+              "fix": "Add more lime juice and a pinch of extra sugar to balance. The dressing should taste bright and balanced, not fishy."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The papaya turns soft and loses its crunch quickly.",
+              "cause": "The salad was dressed too far in advance.",
+              "fix": "Only dress the salad just before serving. The acid in the dressing breaks down the papaya fibres quickly."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Green papaya salad is eaten across Southeast Asia in different forms. "
+          },
+          {
+            "type": "text",
+            "text": "The Vietnamese version is milder and sweeter than the famous Lao and Thai versions. "
+          },
+          {
+            "type": "text",
+            "text": "It is popular in the south of Vietnam as a starter or side dish at family meals. "
+          },
+          {
+            "type": "text",
+            "text": "Dried shrimp is often added for extra umami in the traditional recipe. "
+          },
+          {
+            "type": "text",
+            "text": "The salad is most commonly served alongside grilled meats."
+          }
+        ]
+      }
+    ]
+  }
+}

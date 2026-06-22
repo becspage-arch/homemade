@@ -1,0 +1,386 @@
+{
+  "slug": "satay-chicken",
+  "title": "Satay Chicken",
+  "subtitle": "marinated chicken skewers with peanut dipping sauce",
+  "excerpt": "Tender grilled chicken skewers marinated in turmeric and lemongrass, served with a rich peanut sauce. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Satay is one of the most popular Thai street foods, sold from charcoal grills throughout the country.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Marinate a large batch and grill in portions over a few days.",
+    "makeAheadNotes": "Marinate overnight for deeper flavour.",
+    "dietaryFlags": [],
+    "cuisine": "thai",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "skewers",
+      "isOptional": false
+    },
+    {
+      "slug": "griddle-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "lemongrass",
+      "term": "Lemongrass",
+      "definition": "A tropical grass with a bright citrus scent. Used in the marinade to flavour the chicken before grilling."
+    },
+    {
+      "slug": "coconut-milk",
+      "term": "Coconut milk",
+      "definition": "Used in both the marinade and the peanut sauce. It softens the heat and adds richness."
+    },
+    {
+      "slug": "peanuts-roasted",
+      "term": "Roasted peanuts",
+      "definition": "Crushed or blended into the dipping sauce. They give the sauce its body and nutty flavour."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Satay chicken serves 4 and takes about 35 minutes plus at least 1 hour marinating. The chicken marinates in "
+          },
+          {
+            "type": "text",
+            "text": "lemongrass",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "lemongrass"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "text": "coconut milk",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "coconut-milk"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " before grilling. The "
+          },
+          {
+            "type": "text",
+            "text": "peanut",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "peanuts-roasted"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " dipping sauce comes together in 5 minutes. Turmeric in the marinade (no slug, described below) gives the skewers their golden colour."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "If using wooden skewers, soak them in cold water for at least 30 minutes before threading so they do not burn under the grill."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "boneless, sliced into thin strips",
+              "isOptional": false,
+              "groupLabel": "Chicken"
+            },
+            {
+              "ingredientSlug": "coconut-milk",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Chicken"
+            },
+            {
+              "ingredientSlug": "lemongrass",
+              "amount": 1,
+              "unit": "stalk",
+              "prepNote": "white part only, very finely chopped",
+              "isOptional": false,
+              "groupLabel": "Chicken"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": "Chicken"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Chicken"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Chicken"
+            },
+            {
+              "ingredientSlug": "peanuts",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "blended or very finely crushed",
+              "isOptional": false,
+              "groupLabel": "Peanut sauce"
+            },
+            {
+              "ingredientSlug": "coconut-milk",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Peanut sauce"
+            },
+            {
+              "ingredientSlug": "tamarind-paste",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Peanut sauce"
+            },
+            {
+              "ingredientSlug": "palm-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": "Peanut sauce"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Peanut sauce"
+            },
+            {
+              "ingredientSlug": "dried-chilli",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "flakes",
+              "isOptional": false,
+              "groupLabel": "Peanut sauce"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the coconut milk, lemongrass, garlic, caster sugar, soy sauce, and 1 teaspoon of ground turmeric together in a bowl. Add the chicken strips. Cover and refrigerate for at least 1 hour or overnight."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "For the peanut sauce: warm the coconut milk in a saucepan over medium heat. Add the crushed peanuts, {{tamarind-paste}}, {{palm-sugar}}, {{fish-sauce}}, and chilli flakes. Stir over medium heat for 5 minutes until the sauce thickens. Taste and adjust. Keep warm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Thread the marinated chicken onto soaked skewers, weaving each strip onto the skewer in an S-shape."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat a griddle pan over high heat until smoking. Grill the skewers for 3 to 4 minutes per side until cooked through with char marks."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve the skewers immediately with the warm peanut sauce for dipping."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Chicken is sticking to the griddle",
+              "cause": "Pan not hot enough or marinade excess not drained",
+              "fix": "Get the griddle very hot before adding skewers. Shake off excess marinade before grilling."
+            },
+            {
+              "symptom": "Peanut sauce is too thick",
+              "cause": "Sauce reduced too far",
+              "fix": "Add a splash of hot water and stir until smooth."
+            },
+            {
+              "symptom": "Chicken is dry and overcooked",
+              "cause": "Strips were too thin or grilled too long",
+              "fix": "Slice chicken into strips no thinner than 1.5 cm and check at 3 minutes per side."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Satay is sold from charcoal grills across Thailand and across Southeast Asia more broadly. The dish is thought to have arrived through trade routes from the Middle East and was adopted and transformed in each country it passed through. Thai satay is typically sweeter and more coconut-forward than Indonesian or Malaysian versions. The peanut sauce is always served warm rather than at room temperature. Street versions are cooked over glowing coals in minutes, which gives a smoke that a domestic griddle only partially replicates."
+          }
+        ]
+      }
+    ]
+  }
+}

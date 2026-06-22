@@ -1,0 +1,369 @@
+{
+  "slug": "paella-valenciana",
+  "title": "Paella Valenciana",
+  "subtitle": "The classic Spanish rice dish cooked in a wide pan over high heat",
+  "excerpt": "A traditional Valencian paella with chicken, vegetables and saffron-scented rice, cooked until the base forms a golden crust.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional Valencian recipe, a cornerstone of Spanish regional cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 45,
+    "restingMinutes": 5,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The sofrito base can be made up to a day ahead and refrigerated.",
+    "dietaryFlags": [
+      "gluten-free",
+      "dairy-free"
+    ],
+    "cuisine": "spanish",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "sharing"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "frying-pan-30",
+      "isOptional": false
+    },
+    {
+      "slug": "digital-scales",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "sofrito",
+      "term": "Sofrito",
+      "definition": "A slow-cooked base of onion, tomato and garlic used to build flavour in Spanish rice dishes."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This paella serves 4 and takes about 1 hour from start to finish, including 20 minutes of prep. Cook it in the widest pan you have so the rice spreads in a thin, even layer and develops a proper crust on the base."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Do not stir the rice once you have added the stock. Paella is not a risotto. Leave it alone and let the base catch slightly to form the coveted golden crust called socarrat. You will know it is ready when you hear a gentle crackling sound from the pan."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "bone-in, skin-on, cut into pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "long-grain-rice",
+              "amount": 320,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "large",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pepper-red",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "deseeded and sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pepper-green",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "deseeded and sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "steeped in 100ml hot water",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "paprika-sweet",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "sweet",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": null,
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 1,
+              "unit": "small bunch",
+              "prepNote": "roughly chopped, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Steep the saffron in 100ml of hot water and set aside. Measure out 900ml of water total (including the saffron water) and keep it warm in a jug."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the olive oil in a 30cm frying pan over a high heat. Season the chicken pieces and fry for 8 minutes, turning once, until deep golden on both sides. Move to the edges of the pan."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the onion and peppers to the centre of the pan and fry for 5 minutes until softened. Add the garlic and cook for 1 minute more."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the tinned tomatoes and paprika. Cook, stirring, for 5 minutes until the tomato reduces and darkens into a thick, glossy sofrito base."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the rice to the pan and stir once to coat it in the sofrito. Pour over all the warm water including the saffron and its soaking liquid. Add the bay leaves. Stir once to distribute evenly and bring to a vigorous boil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to medium-low and cook without stirring for 18 to 20 minutes until the water is fully absorbed and you hear a gentle crackling from the base. The rice should be just tender and the bottom lightly golden."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the heat, cover loosely with foil and rest for 5 minutes. Scatter with chopped parsley and serve straight from the pan."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The rice is still hard but all the liquid has gone",
+              "solution": "Add a small splash of hot water, cover the pan tightly and cook on the lowest heat for 3 to 4 more minutes."
+            },
+            {
+              "problem": "The bottom has burnt rather than formed a golden crust",
+              "solution": "The heat was too high. Next time reduce to a gentle simmer once the stock is in and do not rush the final stage."
+            },
+            {
+              "problem": "The rice is mushy and sticking together",
+              "solution": "Too much liquid or the rice was stirred during cooking. Use digital scales for the rice and resist the urge to stir."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Paella Valenciana comes from the Valencia region on Spain's eastern coast and is considered Spain's national dish. Traditionalists insist on rabbit and chicken cooked over orange wood, but chicken alone is a widely accepted version. The secret to any good paella is building a deep "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sofrito"
+                }
+              }
+            ],
+            "text": "sofrito"
+          },
+          {
+            "type": "text",
+            "text": " base before the rice ever goes in. Saffron is non-negotiable and gives the rice its characteristic golden colour. Serve it straight from the pan with a glass of cold dry white wine."
+          }
+        ]
+      }
+    ]
+  }
+}

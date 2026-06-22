@@ -1,0 +1,397 @@
+{
+  "slug": "apfelstrudel",
+  "title": "Apfelstrudel",
+  "subtitle": "austrian apple strudel with thin stretched pastry",
+  "excerpt": "Apfelstrudel is a classic Austrian pastry of paper-thin stretched dough wrapped around a cinnamon apple filling with breadcrumbs and raisins. The pastry is pulled to near-transparency before rolling. Serves 6.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Apfelstrudel is one of the most iconic pastries of the Austro-Hungarian tradition. The technique of hand-stretching the dough is centuries old.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 35,
+    "restingMinutes": 30,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dough can rest for up to 1 hour. Assemble and bake just before serving.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "austrian",
+    "mealType": "dessert",
+    "mood": [
+      "weekend"
+    ],
+    "temperatureCelsius": 190,
+    "temperatureNote": "Standard oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "rolling-pin",
+      "isOptional": false
+    },
+    {
+      "slug": "pastry-brush",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "strudel-stretch",
+      "term": "Strudel stretching",
+      "definition": "The technique of pulling strudel dough by hand over a large cloth-covered table until it is thin enough to read a newspaper through."
+    },
+    {
+      "slug": "toasted-breadcrumbs-strudel",
+      "term": "Toasted breadcrumbs",
+      "definition": "Breadcrumbs fried in butter until golden, used in strudel filling to absorb moisture from the fruit and keep the pastry crisp."
+    }
+  ],
+  "techniqueSlugs": [
+    "pastry-making"
+  ],
+  "criticalTechniques": [
+    "pastry-making"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The technique at the heart of the dish is "
+          },
+          {
+            "type": "text",
+            "text": "strudel stretching ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "strudel-stretch"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ": pulling the rested dough until it is paper-thin over a large floured cloth. "
+          },
+          {
+            "type": "text",
+            "text": "Toasted breadcrumbs",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "toasted-breadcrumbs-strudel"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " scattered over the filling absorb moisture from the apple and keep the pastry from going soggy. Serves 6."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The dough is delicate but forgiving. Small tears can be patched; they will not show after rolling."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "plus extra for dusting",
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "apple",
+              "amount": 6,
+              "unit": "whole",
+              "prepNote": "peeled, cored, thinly sliced",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-dried",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "melted, divided",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "zest and juice",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "vanilla-extract",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "icing-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "to dust",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the flour, oil, egg, and warm water together into a smooth, pliable dough. Knead for 8 minutes until very smooth and elastic. Brush with oil, cover, and rest for 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fry the breadcrumbs in 20g of the butter over medium heat until golden. Set aside. Mix the sliced apple with the sugar, lemon zest and juice, and vanilla."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lay a large clean cloth on the table and dust generously with flour. Roll the dough out on the cloth as thinly as possible with a rolling pin. Then gently pull the dough from the centre outwards using the backs of your hands until it is paper-thin, approximately 60 x 80cm. Trim thick edges."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Brush the stretched dough with melted butter. Scatter the toasted breadcrumbs over two-thirds of the dough. Spread the apple filling over the breadcrumbs, leaving a 5cm border. Fold the bare edge of dough over the filling, then roll the strudel into a log using the cloth to help. Transfer to a buttered baking tray, seam-side down."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Brush the outside generously with melted butter. Bake at 190C for 30 to 35 minutes until deeply golden. Dust with icing sugar and serve warm with vanilla ice cream or cream."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Dough tears during stretching"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Small tears are fine. Patch with a piece of dough from the edge. Make sure the dough rested the full 30 minutes so it is relaxed and elastic."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Pastry is soggy underneath"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ensure the breadcrumbs are well toasted to absorb juice. Also drain the apple of any excess liquid before filling."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Apple filling is dry"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Use a juicy apple variety such as Cox or Granny Smith. Bramley apples are ideal if available. The lemon juice also helps release the natural juices."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Apfelstrudel is the most iconic Austrian pastry, served in every Viennese coffee house and at home across Austria and Bavaria. The stretched dough technique came to Austria through Ottoman and Middle Eastern baking traditions via Hungary. It is best eaten warm, never cold."
+          }
+        ]
+      }
+    ]
+  }
+}

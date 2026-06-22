@@ -1,0 +1,395 @@
+{
+  "slug": "gulasch",
+  "title": "Beef Gulasch",
+  "subtitle": "hungarian-style beef stew in rich paprika sauce",
+  "excerpt": "Gulasch is a slow-braised beef stew where sweet paprika, onion, and a touch of caraway do all the work. The sauce reduces to something deep and slightly silky, coating every piece of tender beef. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Originating in Hungary as a herdsman's stew, gulasch spread across the Austro-Hungarian empire and became a staple of Central European cooking.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 150,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in portions for up to 3 months. Reheat gently, adding a splash of water.",
+    "batchable": true,
+    "batchNotes": "Gulasch improves overnight and is excellent made in large batches.",
+    "makeAheadNotes": "Make the day before for best flavour. Reheat gently before serving.",
+    "dietaryFlags": [],
+    "cuisine": "hungarian",
+    "mealType": "dinner",
+    "mood": [
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "paprika-sweet-term",
+      "term": "Sweet paprika",
+      "definition": "A mild, bright red spice ground from dried red peppers. It gives gulasch its characteristic colour and gentle warmth without heat."
+    },
+    {
+      "slug": "fond",
+      "term": "Fond",
+      "definition": "The browned bits stuck to the base of the pan after searing meat. Deglazing dissolves them into the sauce, adding deep flavour."
+    }
+  ],
+  "techniqueSlugs": [
+    "braising"
+  ],
+  "criticalTechniques": [
+    "braising"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The key is building flavour in layers: brown the beef in batches so you build a good "
+          },
+          {
+            "type": "text",
+            "text": "fond ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "fond"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", then cook the onion down completely before adding an enormous amount of "
+          },
+          {
+            "type": "text",
+            "text": "sweet paprika",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "paprika-sweet-term"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " off the heat. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Beef shin is the best cut here: it has enough collagen to make the sauce silky after a long braise."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-shin",
+              "amount": 900,
+              "unit": "g",
+              "prepNote": "cut into 4cm chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "paprika-sweet",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caraway-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine-vinegar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 600,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lard",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "or vegetable oil",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soured-cream",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": "to serve",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the lard in a dutch oven over high heat. Brown the beef in batches without crowding, about 3 to 4 minutes per batch. Set aside. Do not rush this step: good colour means good flavour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to medium. Add the diced onion and cook, stirring frequently, for 20 to 25 minutes until very soft and golden. Add the garlic and caraway seeds and cook for 2 more minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the heat. Stir in both paprikas and the tomato puree. Return to medium heat and cook for 1 minute. Add the vinegar, then pour in the beef stock."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return the beef and its resting juices to the pot. Add the bay leaves. Bring to a simmer, cover, and cook on the lowest heat for 2 to 2.5 hours, stirring every 30 minutes, until the beef is very tender and the sauce has thickened."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the bay leaves. Taste and adjust with a little more vinegar or paprika. Rest for 10 minutes before serving with egg noodles or bread and a dollop of sour cream."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Paprika tastes bitter"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Paprika burns easily. Always add it off the heat or at a low temperature, never into a very hot pan."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Sauce is too thin after braising"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the lid and simmer briskly for 10 to 15 minutes until the sauce reduces and thickens."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Beef is still chewy"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Braise for another 30 minutes. Shin needs full collagen conversion to become silky, not just cooked through."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gulasch started as a cattle herder's stew on the Hungarian plains, cooked in a cauldron over an open fire. It spread across the Austro-Hungarian empire and is now eaten in Hungary, Austria, Germany, and across Central Europe. The dish relies on good paprika above everything else. Use the freshest you can find."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,425 @@
+{
+  "slug": "gnocchi-alla-sorrentina",
+  "title": "Gnocchi alla Sorrentina",
+  "subtitle": "baked gnocchi with tomato sauce and mozzarella",
+  "excerpt": "Soft potato gnocchi baked in a rich tomato sauce and blanketed with melted mozzarella. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "From Sorrento on the Amalfi Coast. One of Campania's most comforting dishes.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make gnocchi and sauce ahead. Bake just before serving.",
+    "dietaryFlags": [
+      "VEGETARIAN"
+    ],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "dinner-party"
+    ],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Fan oven.",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "gnocchi",
+      "term": "Gnocchi",
+      "definition": "Small Italian dumplings made from potato and flour. They should be light and pillowy, not heavy or doughy."
+    },
+    {
+      "slug": "gratinate",
+      "term": "Gratinate",
+      "definition": "To bake a dish with a topping of cheese or breadcrumbs until browned and bubbling."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Good "
+          },
+          {
+            "type": "text",
+            "text": "gnocchi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "gnocchi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " should float in the water and feel light in the mouth. Once you have them, the dish is just tomato sauce, mozzarella, and a quick time in the oven to "
+          },
+          {
+            "type": "text",
+            "text": "gratinate",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "gratinate"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " until the cheese is bubbling and golden at the edges."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Do not overwork the gnocchi dough. Mix just until it comes together. Overworking develops gluten and makes them dense."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "potato",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "floury variety",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "plus extra for dusting",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 1,
+              "unit": "tin",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "basil",
+              "amount": 1,
+              "unit": "small bunch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mozzarella",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "torn, patted dry",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "for the dish",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 0,
+              "unit": "to taste",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Boil potatoes in their skins until very soft. Drain. Peel while hot."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Rice or mash potatoes onto a floured surface. Leave to cool for 10 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make a well. Add egg and 200g flour. Mix to a soft dough. Do not overwork."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Roll into logs. Cut into 2cm pieces."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook gnocchi in batches in heavily salted boiling water. Remove with a slotted spoon as they float to the surface."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make tomato sauce: heat oil, add garlic, cook for 1 minute. Add canned tomatoes. Simmer for 20 minutes. Season. Tear in half the basil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oven to 200C. Butter a baking dish."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Toss cooked gnocchi in tomato sauce. Pour into the dish."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Top with torn mozzarella and remaining basil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 15 to 20 minutes until bubbling and golden."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Gnocchi heavy and stodgy",
+              "cause": "Too much flour or potatoes not dried enough",
+              "fix": "Use floury potatoes, dry them well after boiling, and add flour gradually."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Gnocchi fall apart in water",
+              "cause": "Dough too wet or not shaped firmly",
+              "fix": "Add a little more flour. Roll firmly and cut cleanly."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Mozzarella watery on top",
+              "cause": "Wet fresh mozzarella releasing liquid",
+              "fix": "Pat mozzarella dry with kitchen paper before adding."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gnocchi alla sorrentina comes from the coastal town of Sorrento, overlooking the Bay of Naples. The Campania region produces extraordinary tomatoes and mozzarella, and the dish is built on both. In Sorrento it is traditionally baked in a terracotta pot called a pignatiello. The recipe spread across Italy in the 20th century and is now found from Milan to Palermo. It is one of those dishes where the quality of the tomatoes and the lightness of the gnocchi make or break the result."
+          }
+        ]
+      }
+    ]
+  }
+}

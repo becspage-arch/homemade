@@ -1,0 +1,436 @@
+{
+  "slug": "com-ga-hoi-an",
+  "title": "Cơm Gà Hội An",
+  "subtitle": "hoi an chicken rice",
+  "excerpt": "Cơm gà Hội An is a central Vietnamese dish of poached chicken served over turmeric-yellow rice cooked in the poaching broth, with a fresh herb and green mango salad. It is light, fragrant, and deeply satisfying. This recipe serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Cơm gà Hội An is the Hội An version of chicken rice, with a distinctively Vietnamese character from the turmeric-yellow rice and fresh herb salad. It is different from the Hainanese chicken rice found across Southeast Asia.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 60,
+    "restingMinutes": 15,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Poach the chicken up to a day ahead. Reheat gently in the broth before serving.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "dinner",
+    "mood": [
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "com-ga-rice",
+      "term": "Cơm gà rice",
+      "definition": "Rice cooked in the poaching broth from the chicken, with turmeric and shallots fried in fat skimmed from the broth. The rice is yellow, fragrant, and has a richness from the chicken fat."
+    },
+    {
+      "slug": "rau-ram",
+      "term": "Rau răm",
+      "definition": "Vietnamese coriander with a peppery, slightly lemony taste. It is used in the herb salad for cơm gà and has a more pungent flavour than regular coriander."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cơm gà Hội An is chicken rice made with the poaching broth cooked into the "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "com-ga-rice"
+                }
+              }
+            ],
+            "text": "cơm gà rice "
+          },
+          {
+            "type": "text",
+            "text": ". "
+          },
+          {
+            "type": "text",
+            "text": "The dish is served with a bright herb salad using "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "rau-ram"
+                }
+              }
+            ],
+            "text": "rau răm "
+          },
+          {
+            "type": "text",
+            "text": "and green mango. "
+          },
+          {
+            "type": "text",
+            "text": "This recipe serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Do not rush the poaching. Low heat and patience gives you tender, juicy chicken and a clear, rich broth."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-whole",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "about 1.5 kg",
+              "isOptional": false,
+              "groupLabel": "chicken"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "poaching"
+            },
+            {
+              "ingredientSlug": "shallots",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": "2 halved for poaching, 2 sliced for rice",
+              "isOptional": false,
+              "groupLabel": "poaching and rice"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "poaching"
+            },
+            {
+              "ingredientSlug": "jasmine-rice",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "rice"
+            },
+            {
+              "ingredientSlug": "turmeric-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "rice"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "rice"
+            },
+            {
+              "ingredientSlug": "mint",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "herb salad"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "herb salad"
+            },
+            {
+              "ingredientSlug": "radish",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "julienned",
+              "isOptional": false,
+              "groupLabel": "herb salad"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dressing"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dressing"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dressing"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "sliced",
+              "isOptional": true,
+              "groupLabel": "dressing"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the chicken in a stockpot and cover with cold water. Add the ginger, 2 halved shallots, and fish sauce. Bring to the boil and skim."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce to the lowest possible simmer. Poach for 45 to 50 minutes until cooked through. Remove the chicken and rest for 15 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Strain the poaching broth. Reserve 500 ml for the rice. Keep the rest warm for serving."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oil in a saucepan. Fry the 2 sliced shallots until golden. Add the turmeric and the dry rice. Stir to coat for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the 500 ml of reserved broth. Bring to the boil, then reduce to the lowest heat, cover, and cook for 15 minutes until the rice is done."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tear or slice the chicken into pieces. Mix the herb salad with the daikon and dressing ingredients."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve the yellow rice topped with chicken and herb salad. Pour a small bowl of warm broth on the side."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The chicken is dry and stringy.",
+              "cause": "The water was at a rolling boil rather than a gentle poach.",
+              "fix": "Poach at the lowest possible simmer - the water should barely move. High heat toughens the protein."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The rice is stodgy and lacks flavour.",
+              "cause": "Plain water was used instead of the poaching broth.",
+              "fix": "Always cook the rice in the poaching broth. This is what gives cơm gà its distinctive flavour."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The herb salad wilts before serving.",
+              "cause": "It was dressed too far in advance.",
+              "fix": "Toss the herb salad with the dressing only at the moment of serving."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cơm gà Hội An is one of the signature dishes of the ancient trading town of Hội An. "
+          },
+          {
+            "type": "text",
+            "text": "The town was a major port and trading hub for centuries, and the food shows many outside influences. "
+          },
+          {
+            "type": "text",
+            "text": "The dish is related to Hainanese chicken rice but is distinctly Vietnamese in character. "
+          },
+          {
+            "type": "text",
+            "text": "In Hội An, small restaurants serve it from the early morning as a breakfast meal. "
+          },
+          {
+            "type": "text",
+            "text": "It is one of the three dishes every visitor to Hội An is told they must eat."
+          }
+        ]
+      }
+    ]
+  }
+}

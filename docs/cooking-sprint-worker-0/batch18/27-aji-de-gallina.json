@@ -1,0 +1,397 @@
+{
+  "slug": "aji-de-gallina",
+  "title": "Aji de Gallina",
+  "subtitle": "peruvian chicken in walnut and chilli sauce",
+  "excerpt": "Shredded chicken in a creamy, golden sauce made with ground cashews, yellow chilli, and bread, served over rice with olives. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Aji de gallina is one of Peru's most beloved dishes, a legacy of colonial-era cooking that fused Spanish ingredients with Andean chillies.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the sauce and chicken together for up to 2 months. The texture may change slightly on reheating.",
+    "batchable": true,
+    "batchNotes": "Double the batch and freeze half.",
+    "makeAheadNotes": "The sauce keeps in the fridge for 3 days. Reheat gently and add a splash of stock if it thickens too much.",
+    "dietaryFlags": [],
+    "cuisine": "peruvian",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "dinner-party"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-30",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "nut-thickening",
+      "term": "Nut Thickening",
+      "definition": "Using ground nuts blended with liquid to create a rich, creamy sauce base without dairy."
+    },
+    {
+      "slug": "bread-binding",
+      "term": "Bread Binding",
+      "definition": "Adding soaked bread to a sauce to give it body and help it cling to the protein."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The sauce in aji de gallina is thickened by two things working together: "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "nut-thickening"
+                }
+              }
+            ],
+            "text": "nut thickening"
+          },
+          {
+            "type": "text",
+            "text": " from ground cashews, used here as a substitute for traditional walnuts, and "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "bread-binding"
+                }
+              }
+            ],
+            "text": "bread binding"
+          },
+          {
+            "type": "text",
+            "text": " from soaked white bread blended into the base. Together they give the sauce its characteristic dense, creamy texture."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tip: use the poaching liquid from the chicken to loosen the sauce. It carries flavour the water cannot replicate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 700,
+              "unit": "g",
+              "prepNote": "bone-in",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cashews",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "or walnuts, toasted",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "breadcrumbs-dried",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "soaked in 100ml milk",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-yellow",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": "or use 1 tbsp chilli powder and 1 tsp turmeric",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "for colour",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "large",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": "from poaching the chicken",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "basmati-rice",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Poach chicken thighs in 600ml water with a pinch of salt for 20 minutes. Remove and shred. Keep the stock."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blend cashews with soaked bread, milk, and 100ml stock until completely smooth."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oil in a large frying pan over medium heat. Fry onion for 8 minutes until soft. Add garlic and turmeric, fry for 2 more minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add chilli powder if using. Pour in the cashew-bread paste and stir well. The mixture will be very thick."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add remaining stock gradually, stirring until the sauce is smooth and pourable. Simmer for 8 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the shredded chicken. Taste for salt. Simmer for 5 more minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve over white rice. Garnish with a black olive or sliced boiled egg if you like."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Sauce is too thick and stiff",
+              "cause": "Too much bread or not enough liquid added.",
+              "fix": "Add warm stock a ladleful at a time, stirring after each addition, until the sauce flows freely."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Sauce has a grainy texture",
+              "cause": "Cashews were not blended long enough.",
+              "fix": "Return the sauce base to the blender with a splash of warm milk and blend for a full 2 minutes."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Colour is dull",
+              "cause": "Not enough turmeric for the golden hue.",
+              "fix": "Stir in a pinch more turmeric at the end. The sauce should be a warm, deep yellow."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Aji de gallina is one of Peru's great national dishes. Its origins lie in the colonial period when Spanish nuns adapted European bread-thickened sauces using Andean yellow chillies. The dish evolved over centuries into something distinctly Peruvian. Today it is eaten in every class and region of the country. Lima's restaurants serve elaborate versions, but the home cooking version, made with whatever chillies and nuts are available, is the one most Peruvians grew up eating."
+          }
+        ]
+      }
+    ]
+  }
+}

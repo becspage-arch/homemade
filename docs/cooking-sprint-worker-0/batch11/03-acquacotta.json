@@ -1,0 +1,365 @@
+{
+  "slug": "acquacotta",
+  "title": "Acquacotta",
+  "subtitle": "maremma vegetable soup with poached egg",
+  "excerpt": "Acquacotta is a rustic soup from the Maremma region of Tuscany, made with simple vegetables and finished with a poached egg stirred in at the end. The name means 'cooked water'. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Acquacotta was the food of the butteri, the cowboys of the Maremma marshlands in southern Tuscany. They would make it over open fires using only the vegetables they carried. The egg was a luxury addition when available.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the soup base up to a day ahead. Poach the eggs fresh when serving.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "italian",
+    "mealType": "lunch",
+    "mood": [
+      "weeknight",
+      "comfort"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "soffritto",
+      "term": "Soffritto",
+      "definition": "A base of finely chopped onion, carrot, and celery cooked slowly in oil until soft. It forms the flavour foundation of many Italian dishes."
+    },
+    {
+      "slug": "poaching",
+      "term": "Poaching",
+      "definition": "Cooking food gently in liquid kept just below boiling point. For eggs, the white sets around a still-runny yolk."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Acquacotta builds from a simple "
+          },
+          {
+            "type": "text",
+            "text": "soffritto",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "soffritto"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of onion and celery, then simmers tomatoes and stock until the soup is full of flavour. It serves 4 and the finishing touch is "
+          },
+          {
+            "type": "text",
+            "text": "poaching",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "poaching"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " an egg directly in the hot soup."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Each bowl is served over a slice of toasted bread, with the egg sitting on top. The yolk breaks and runs through the broth when you eat it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "large",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 3,
+              "unit": "sticks",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "cloves",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 4,
+              "unit": "large",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dried-chilli",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 1,
+              "unit": "litre",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 4,
+              "unit": "large",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "basil",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": "leaves picked",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a large saucepan over medium heat. Add the onion and celery. Cook for 8 minutes until softened."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the garlic and dried chilli. Cook for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the chopped tomatoes and cook for 10 minutes, breaking them down with a spoon."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the stock. Bring to a simmer and cook for 15 minutes. Season to taste."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat so the soup is just barely simmering. Crack each egg directly into the soup. Cover and cook for 3 to 4 minutes until the whites are just set."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place a slice of toasted bread in each bowl. Carefully ladle the soup and one egg into each bowl. Scatter basil and parmesan over the top."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "symptom": "Egg whites are rubbery",
+              "cause": "The soup was boiling too hard when the eggs were added",
+              "fix": "Reduce the heat to a bare simmer before cracking in the eggs"
+            }
+          },
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "symptom": "Soup tastes watery",
+              "cause": "The tomatoes were not cooked down long enough",
+              "fix": "Cook the tomatoes for a full 10 minutes before adding stock"
+            }
+          },
+          {
+            "type": "troubleshootItem",
+            "attrs": {
+              "symptom": "Eggs broke apart in the soup",
+              "cause": "They were dropped from too high or the liquid was disturbed",
+              "fix": "Crack each egg into a small cup first and slide gently into the soup"
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Acquacotta is from the Maremma, a coastal area in southern Tuscany. It was the food of herdsmen who worked the flat, marshy land. They made it with whatever vegetables they had and cooked it over a fire. Today it is served in local restaurants as a regional classic. The egg on top makes it more filling and more interesting."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,382 @@
+{
+  "slug": "nabe",
+  "title": "Nabe",
+  "subtitle": "simple Japanese hot pot with vegetables and tofu",
+  "excerpt": "Nabe is a Japanese table hot pot where ingredients are cooked at the table in a simmering dashi broth and eaten as they are ready. It is a sharing dish built for cold evenings. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Nabe is a broad category of Japanese hot pot dishes eaten communally at the table during autumn and winter. The simplest version uses just dashi broth, tofu, and vegetables.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Slice all ingredients and arrange on plates up to 2 hours before eating. Start the broth just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": [
+      "comfort",
+      "sharing",
+      "winter"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "nabe-broth",
+      "term": "Nabe broth",
+      "definition": "A lightly seasoned dashi broth used as the cooking liquid for Japanese hot pot. Ingredients are added gradually and eaten as they cook."
+    },
+    {
+      "slug": "ponzu",
+      "term": "Ponzu",
+      "definition": "A Japanese dipping sauce made from citrus juice, soy sauce, and dashi. It is sharp, bright, and suited to dipping hot pot ingredients."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Nabe is table cooking at its most relaxed. A pot of "
+          },
+          {
+            "type": "text",
+            "text": "nabe broth",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "nabe-broth"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " simmers in the middle of the table and everyone adds ingredients and lifts them out as they cook. Dip everything in "
+          },
+          {
+            "type": "text",
+            "text": "ponzu",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "ponzu"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " before eating. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The broth deepens and becomes richer as the meal progresses. At the end, add cooked rice or udon noodles to the remaining broth to make a final small soup."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 1200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "sake",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "kombu",
+              "amount": 1,
+              "unit": "piece",
+              "prepNote": "10 cm strip",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "tofu-firm",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "cut into large cubes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cabbage-white",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mushrooms-shiitake",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "stems removed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": "sliced into thin rounds",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "leek",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": "cut into 3 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 4,
+              "unit": "stalks",
+              "prepNote": "cut into 3 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "thinly sliced",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "ponzu"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "ponzu"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the ponzu: mix rice vinegar and soy sauce in a small bowl. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine dashi, soy sauce, mirin, sake, and kombu in the Dutch oven. Bring to a simmer over medium heat on the hob. Remove the kombu just before it boils."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Arrange all the prepared ingredients on a large platter or in small bowls around the table."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the pot in the centre of the table over a portable burner or trivet. Add the denser vegetables first: carrot, leek, and cabbage. Simmer for 5 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Let everyone add tofu, mushrooms, spring onion, and chicken to the pot as they like. Lift out cooked ingredients with chopsticks and dip in ponzu before eating."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth becomes too salty as the meal goes on",
+              "cause": "Evaporation concentrates the seasoning.",
+              "fix": "Top up with plain dashi or water whenever the broth level drops below halfway."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Tofu is falling apart when lifted out",
+              "cause": "Firm tofu was not used or it was cooked too long.",
+              "fix": "Use firm tofu and lift it gently with a slotted spoon after just 2 to 3 minutes in the broth."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth is cloudy and murky",
+              "cause": "Too many ingredients were added at once or the heat was too high.",
+              "fix": "Keep the broth at a gentle simmer and skim any foam from the surface every few minutes."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Nabe is how Japanese families eat together in winter. The pot sits in the centre of the table and everyone reaches in at their own pace. There are dozens of regional nabe styles across Japan. This simple version is the base that all of them grow from. The broth that is left at the end of the meal is often the best part."
+          }
+        ]
+      }
+    ]
+  }
+}

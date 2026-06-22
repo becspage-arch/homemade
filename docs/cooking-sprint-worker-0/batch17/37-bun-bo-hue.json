@@ -1,0 +1,458 @@
+{
+  "slug": "bun-bo-hue",
+  "title": "Bun Bo Hue",
+  "subtitle": "vietnamese spicy beef and pork noodle soup with lemongrass",
+  "excerpt": "A spicier, more intensely flavoured cousin of pho, this central Vietnamese noodle soup has a lemongrass-perfumed broth with a deep hit of fermented shrimp paste and dried chilli. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Bun bo Hue comes from the ancient imperial city of Hue in central Vietnam. It is considered by many Vietnamese food specialists to be technically more complex than pho, with a broth built on beef bones, pork trotters, lemongrass, and shrimp paste.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the strained broth for up to 3 months. The cooked beef and pork can be frozen separately.",
+    "batchable": true,
+    "batchNotes": "The broth rewards making in large batches. Portion and freeze for future bowls.",
+    "makeAheadNotes": "Make the broth a day ahead and refrigerate. Skim solidified fat before reheating.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "lunch",
+    "mood": [
+      "weekend",
+      "batch-cooking"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "annatto-oil",
+      "term": "Annatto Oil",
+      "definition": "Oil infused with annatto seeds to produce a deep red colour. Used in bun bo Hue to give the broth its distinctive rust-red colour. Simulated here using a small amount of turmeric and chilli."
+    },
+    {
+      "slug": "mam-ruoc",
+      "term": "Shrimp Paste",
+      "definition": "Fermented shrimp paste used in Southeast Asian cooking. In bun bo Hue, a small amount is dissolved in the broth at the end of cooking to add depth and a distinctive umami quality. Fish sauce can be increased to substitute."
+    },
+    {
+      "slug": "round-rice-noodles",
+      "term": "Round Rice Noodles",
+      "definition": "Thick, round rice noodles specific to bun bo Hue. About 3mm in diameter, they are thicker and rounder than the flat noodles used in pho. Dried round rice noodles (bun) need soaking before use."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bun bo Hue has a more complex broth than pho. Lemongrass goes in whole and perfumes the stock over 3 hours. A finishing chilli oil infused with "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "annatto-oil"
+                }
+              }
+            ],
+            "text": "annatto"
+          },
+          {
+            "type": "text",
+            "text": " gives the broth its red colour. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mam-ruoc"
+                }
+              }
+            ],
+            "text": "shrimp paste"
+          },
+          {
+            "type": "text",
+            "text": " is added at the very end, just before serving, and is used with a careful hand."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "round-rice-noodles"
+                }
+              }
+            ],
+            "text": "round rice noodles"
+          },
+          {
+            "type": "text",
+            "text": " if you can find them. They have more chew than the flat noodles used in pho and stand up better to the heavily seasoned broth."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-shin",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "for the broth",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "for the broth",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": "zest only, or 3 lemongrass stalks bruised",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "halved and charred",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "charred",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "star-anise",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": "for the finishing chilli oil",
+              "isOptional": false,
+              "groupLabel": "Chilli Oil"
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "for colour",
+              "isOptional": false,
+              "groupLabel": "Chilli Oil"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Chilli Oil"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "minced, for chilli oil",
+              "isOptional": false,
+              "groupLabel": "Chilli Oil"
+            },
+            {
+              "ingredientSlug": "noodles-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "round rice noodles soaked in warm water 20 minutes",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "bean-sprouts",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 4,
+              "unit": "stalks",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "cut into wedges",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            },
+            {
+              "ingredientSlug": "mint",
+              "amount": 1,
+              "unit": "small bunch",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": "Bowl"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blanch the beef shin and pork belly in boiling water for 5 minutes. Drain and rinse under cold water."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Char the onion and ginger over a gas flame or under the grill until deeply blackened."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the blanched meats, charred onion and ginger, lemon zest or lemongrass, and star anise in a stockpot. Cover with 3 litres of cold water. Bring to the boil, skim well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce to a very gentle simmer. Cook for 2 hours 30 minutes. Remove the pork belly after 1 hour if it is cooked through. It should be tender but not falling apart. Set aside. Continue simmering the beef shin."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the chilli oil. Heat the vegetable oil in a small pan. Add the garlic and cook for 30 seconds. Add the chilli powder and turmeric. Stir for 30 seconds until fragrant and sizzling. Remove from heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the beef shin from the broth. Slice both meats thinly. Strain the broth. Season with fish sauce, sugar, and salt. Stir in the chilli oil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blanch the soaked noodles briefly in boiling water, 30 to 60 seconds. Divide between 4 bowls. Top with the sliced meats. Ladle the hot broth over. Serve with spring onion, bean sprouts, mint, and lime."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth has no lemongrass fragrance",
+              "cause": "Lemon zest is a substitute and has less intensity than real lemongrass.",
+              "fix": "Simmer for longer with the zest in place. Alternatively, add a few drops of fresh lemon juice to the finished broth to lift the citrus note."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Pork belly is overcooked and falling apart",
+              "cause": "Left in the broth for too long alongside the beef.",
+              "fix": "Remove the pork belly after 1 hour and set it aside to cool. Slice and reheat in the bowl when serving."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bun bo Hue comes from the city of Hue in central Vietnam. Hue was the imperial capital of the Nguyen dynasty, and the city's food reflects a long tradition of refined cooking. This soup is spicier and more complex than pho."
+          }
+        ]
+      }
+    ]
+  }
+}

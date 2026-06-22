@@ -1,0 +1,441 @@
+{
+  "slug": "arancini",
+  "title": "Arancini",
+  "subtitle": "sicilian saffron rice balls with a meat filling",
+  "excerpt": "Arancini are Sicilian deep-fried rice balls with a crispy breadcrumb shell surrounding a filling of saffron risotto and a slow-cooked meat ragu. They are a street food staple of Palermo and Catania and take some time to prepare but deliver outstanding results. Makes about 12.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Arancini have been made in Sicily since the Arab occupation of the island in the ninth and tenth centuries, which introduced saffron and the habit of cooking rice. The name means little oranges in Italian, referring to their round shape and golden colour.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "makes about 12 arancini",
+    "prepMinutes": 60,
+    "cookMinutes": 90,
+    "restingMinutes": 60,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze before frying. Freeze the shaped, crumbed arancini on a tray then transfer to a bag. Fry from frozen, adding 3 to 4 extra minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the ragu and risotto the day before and assemble the next day.",
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "snack",
+    "mood": [
+      "weekend",
+      "special-occasion"
+    ],
+    "temperatureCelsius": 175,
+    "temperatureNote": "Oil temperature for deep frying",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": false
+    },
+    {
+      "slug": "colander",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "arancini-shape",
+      "term": "Arancini",
+      "definition": "Sicilian fried rice balls with a crisp breadcrumb exterior and a filling of saffron rice and meat ragu. The name means little oranges in Italian."
+    },
+    {
+      "slug": "soffritto",
+      "term": "Soffritto",
+      "definition": "A base of slowly cooked onion, carrot, and celery used to start sauces and braises in Italian cooking."
+    }
+  ],
+  "techniqueSlugs": [
+    "deep-frying",
+    "risotto"
+  ],
+  "criticalTechniques": [
+    "deep-frying"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Arancini are built in stages: a "
+          },
+          {
+            "type": "text",
+            "text": "soffritto ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "soffritto"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "-based meat ragu, a saffron risotto that is cooked and cooled, then the formed "
+          },
+          {
+            "type": "text",
+            "text": "arancini",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "arancini-shape"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " are crumbed and deep-fried until golden. The stages can be spread across two days. Makes about 12."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cold risotto is essential for shaping. Trying to shape warm rice results in arancini that fall apart in the oil."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "arborio-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 1200,
+              "unit": "ml",
+              "prepNote": "kept warm",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "threads steeped in 2 tbsp hot water",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "finely diced, for the ragu",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "finely diced, for the ragu",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 2,
+              "unit": "sticks",
+              "prepNote": "finely diced, for the ragu",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lamb-shoulder",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "minced, for the ragu",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "for the ragu",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": "for the ragu",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mozzarella",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "cut into small cubes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 3,
+              "unit": null,
+              "prepNote": "beaten, for crumbing",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "for crumbing",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "breadcrumbs-dried",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "for crumbing",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 1,
+              "unit": "litre",
+              "prepNote": "for deep frying",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the ragu: cook the onion, carrot, and celery in a little olive oil for 8 minutes over medium heat. Add the minced lamb and brown for 5 minutes. Pour in the red wine and let it evaporate. Add the tinned tomatoes and cook uncovered over low heat for 45 minutes until thick. Cool completely."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the saffron risotto: heat a little olive oil and butter in a large saucepan. Add the remaining onion and cook for 5 minutes. Add the rice and toast for 2 minutes. Add the saffron water and begin adding warm stock a ladleful at a time, stirring continuously, for 18 to 20 minutes. Stir in the parmesan and remaining butter. Spread onto a tray and cool completely, at least 1 hour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "To shape: wet your hands. Take about 80 g of cold risotto and flatten into a disc. Place a teaspoon of ragu and a cube of mozzarella in the centre. Cup your hands around the filling and press the rice firmly around it to form a ball. Repeat with all the rice."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Set up three bowls: flour, beaten egg, and breadcrumbs. Roll each arancino in flour, then egg, then breadcrumbs. Press the crumbs on firmly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil to 175C in a deep saucepan. Fry the arancini in batches of 3 or 4 for 4 to 5 minutes, turning, until deep golden all over. Drain on kitchen paper and serve hot."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Arancini falling apart in the oil"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The risotto was not cold enough or the crumbing was incomplete. Chill the shaped arancini for 20 minutes in the fridge before frying if they feel soft."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Pale or greasy coating"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "The oil temperature dropped. Do not overcrowd the pan and maintain 175C throughout. Use a thermometer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Filling leaking out"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Too much filling or the rice was not pressed firmly enough around it. Use a smaller amount of filling and press the rice very firmly to seal."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Arancini are the street food of Sicily. They are sold from market stalls and food carts across the island. Palermo and Catania each claim the definitive version. In Catania they are shaped into cones; in Palermo they are round. Both are delicious. They are best eaten hot, straight from the oil."
+          }
+        ]
+      }
+    ]
+  }
+}

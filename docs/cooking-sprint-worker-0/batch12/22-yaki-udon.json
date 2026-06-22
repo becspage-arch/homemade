@@ -1,0 +1,360 @@
+{
+  "slug": "yaki-udon",
+  "title": "Yaki Udon",
+  "subtitle": "stir-fried thick udon noodles with pork and vegetables",
+  "excerpt": "Yaki udon is a satisfying stir-fry of thick, chewy udon noodles with pork, cabbage, and mushrooms in a soy and mirin sauce. The noodles soak up all the savoury juices as they cook. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Yaki udon is said to have originated in Kokura, Fukuoka in the 1940s when soba noodles were scarce and udon was substituted.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 12,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "wok",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "udon",
+      "term": "Udon",
+      "definition": "Thick, white Japanese wheat noodles with a soft, chewy texture, used in both soups and stir-fries."
+    },
+    {
+      "slug": "shiitake",
+      "term": "Shiitake",
+      "definition": "A meaty, earthy Japanese mushroom used fresh or dried to add depth to stir-fries and broths."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Yaki udon uses pre-cooked "
+          },
+          {
+            "type": "text",
+            "text": "udon",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "udon"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " noodles stir-fried with pork belly, cabbage, and "
+          },
+          {
+            "type": "text",
+            "text": "shiitake",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "shiitake"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " mushrooms over high heat. The thick noodles hold their bite and absorb the sauce beautifully. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fresh vacuum-packed udon noodles work best here and need no pre-boiling, just a quick rinse in hot water to separate them before they go into the wok."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cabbage-white",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "roughly shredded",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mushrooms-shiitake",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "stems removed, caps sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 1,
+              "unit": "medium",
+              "prepNote": "julienned",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 3,
+              "unit": "stalks",
+              "prepNote": "cut into 4 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "sake",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "sauce"
+            },
+            {
+              "ingredientSlug": "bonito-flakes",
+              "amount": 5,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "to serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the soy sauce, mirin, sake, and sesame oil in a small bowl. Rinse the udon noodles in hot water, then drain well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the wok over the highest heat until smoking. Add the oil, then the pork belly. Cook for 2 minutes, stirring, until the pork is golden and cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the carrot, shiitake mushrooms, and cabbage. Stir-fry for 2 minutes until slightly softened."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the drained udon noodles to the wok. Use tongs to toss them with the pork and vegetables for 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the sauce over everything. Toss for 1 minute over high heat until the noodles are glossy and coated. Add the spring onion, toss once, and divide between bowls. Scatter over bonito flakes if using."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Noodles are sticking and tearing",
+              "cause": "The noodles were not loosened before adding to the hot wok.",
+              "fix": "Always rinse vacuum-packed udon in hot water and shake off excess before they go into the wok."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Vegetables are soggy",
+              "cause": "Too much moisture in the wok from undrained noodles or crowded vegetables.",
+              "fix": "Drain the noodles thoroughly and stir-fry vegetables in batches if your wok is small."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Sauce is too salty",
+              "cause": "Light soy sauce varies in saltiness between brands.",
+              "fix": "Add the sauce in stages, tasting as you go, and finish with a few drops of mirin to balance."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Yaki udon was born out of post-war scarcity in Fukuoka. Soba noodles ran out and a cook used udon instead. The thick noodles worked so well that the dish stuck. Today it is a home-cooking staple across Japan. It takes less than 15 minutes and uses whatever is in the fridge."
+          }
+        ]
+      }
+    ]
+  }
+}

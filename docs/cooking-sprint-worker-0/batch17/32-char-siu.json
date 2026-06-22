@@ -1,0 +1,376 @@
+{
+  "slug": "char-siu",
+  "title": "Char Siu",
+  "subtitle": "cantonese barbecued pork belly with hoisin-honey glaze",
+  "excerpt": "Pork belly marinated in hoisin, honey, and soy, then roasted until the glaze caramelises into a sticky, slightly charred crust. The definitive Cantonese BBQ pork. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Char siu means fork-roasted in Cantonese, referring to the traditional method of skewering pork on long forks and hanging it in a wood-fired oven. Home versions use an oven rack and a high final heat to replicate the char.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 45,
+    "restingMinutes": 10,
+    "chillingMinutes": 240,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze cooked, cooled char siu in slices. Reheat in the oven at 180C for 10 minutes from frozen.",
+    "batchable": true,
+    "batchNotes": "Works well in large batches. Excellent cold in bao buns, fried rice, or noodle soups.",
+    "makeAheadNotes": "Marinate overnight for the deepest colour and flavour. The longer the better, up to 24 hours.",
+    "dietaryFlags": [],
+    "cuisine": "chinese",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "batch-cooking"
+    ],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Final high temperature to caramelise the glaze",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "char-siu-marinade",
+      "term": "Char Siu Marinade",
+      "definition": "The classic Cantonese marinade combining hoisin sauce, honey, dark soy, and often red fermented bean curd for colour. The sugar in the marinade caramelises during roasting to create the characteristic sticky, slightly charred exterior."
+    },
+    {
+      "slug": "resting-meat",
+      "term": "Resting",
+      "definition": "Leaving cooked meat uncovered for 5 to 10 minutes before cutting. Resting allows the juices to redistribute evenly throughout the meat rather than running out when cut."
+    },
+    {
+      "slug": "glaze-basting",
+      "term": "Basting",
+      "definition": "Brushing or spooning cooking liquid or sauce over meat during the cooking process to build up a thicker, more caramelised exterior coating."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "char-siu-marinade"
+                }
+              }
+            ],
+            "text": "char siu marinade"
+          },
+          {
+            "type": "text",
+            "text": " is built from hoisin sauce, honey, and dark soy. A minimum 4-hour marinade is needed, but overnight produces a noticeably deeper colour and flavour. The high-heat final stage is not optional: it is what creates the characteristic dark, sticky patches that give char siu its name."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Always rest the pork before slicing. "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "resting-meat"
+                }
+              }
+            ],
+            "text": "Resting"
+          },
+          {
+            "type": "text",
+            "text": " for 10 minutes lets the juices settle. Brush with the last of the glaze while it rests and again while "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "glaze-basting"
+                }
+              }
+            ],
+            "text": "basting"
+          },
+          {
+            "type": "text",
+            "text": " during cooking builds the thick crust."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 700,
+              "unit": "g",
+              "prepNote": "skin removed, cut into 4 long strips",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "hoisin-sauce",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "honey",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "soy-sauce-dark",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "Shaoxing wine preferred",
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "chinese-five-spice",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "or a mix of ground star anise and cinnamon",
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix all the marinade ingredients together. Reserve 2 tablespoons in a small bowl for glazing. Pour the rest over the pork strips and toss to coat completely. Cover and refrigerate for at least 4 hours, ideally overnight."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the pork from the fridge 30 minutes before cooking. Preheat the oven to 180C. Line a baking tray with foil and place a rack on top. Pour 100ml of water into the tray below the rack to catch drips and prevent burning."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the pork strips on the rack. Roast for 20 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Turn the pork over. Brush generously with the reserved marinade. Roast for a further 15 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Increase the oven to 220C or switch to the grill. Brush with more marinade. Cook for a final 5 to 8 minutes, watching closely, until the glaze bubbles and chars in spots."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the oven. Brush with the last of the glaze. Rest for 10 minutes before slicing diagonally across the grain. Serve with rice and sliced cucumber."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Glaze burns before the pork is cooked through",
+              "cause": "The oven was too hot from the start, or there was too much sugar in the marinade.",
+              "fix": "Start at 160C for the first 25 minutes, then increase heat to caramelise at the end. Add water to the tray below if it dries out."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Colour is pale and the exterior is not sticky",
+              "cause": "Not enough marinade time or the glaze was not applied during cooking.",
+              "fix": "Brush on the reserved marinade at least twice during cooking and once more as soon as the pork comes out."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Char siu is one of the pillars of Cantonese siu mei, the tradition of roasted meats that hang in the windows of Chinese BBQ shops across Hong Kong and Guangdong. Alongside roast goose and crispy pork, char siu is the centrepiece of this cooking tradition. It is eaten alone with rice, stuffed into bao buns, added to fried rice, or used to fill wonton noodle soup. The pink food colouring used in restaurant versions comes from red fermented bean curd or food dye; the home version with honey and dark soy produces a dark, caramel colour instead."
+          }
+        ]
+      }
+    ]
+  }
+}

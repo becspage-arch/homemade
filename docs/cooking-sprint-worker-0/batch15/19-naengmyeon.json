@@ -1,0 +1,383 @@
+{
+  "slug": "naengmyeon",
+  "title": "Naengmyeon",
+  "subtitle": "korean cold noodles in chilled broth",
+  "excerpt": "Naengmyeon is a Korean cold noodle dish served in an icy, tangy beef broth with thin cucumber ribbons, a boiled egg, and mustard sauce. It is a refreshing summer dish. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Naengmyeon originated in the cold northern regions of the Korean peninsula, particularly in Pyongyang and Hamheung. Both cities have their own distinct versions of the dish.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 10,
+    "restingMinutes": 0,
+    "chillingMinutes": 240,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The broth must be made at least 4 hours ahead so it can chill fully. Overnight is better.",
+    "dietaryFlags": [
+      "gluten-free"
+    ],
+    "cuisine": "korean",
+    "mealType": "lunch",
+    "mood": [
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "colander",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "mul-naengmyeon",
+      "term": "Mul naengmyeon",
+      "definition": "The Pyongyang-style version of naengmyeon where the noodles are served in a clear, icy beef broth. Mul means water in Korean."
+    },
+    {
+      "slug": "gochujang",
+      "term": "Gochujang",
+      "definition": "A Korean fermented red chilli paste made from chilli powder, glutinous rice, and fermented soybeans. It is thick, spicy, and slightly sweet."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This recipe makes "
+          },
+          {
+            "type": "text",
+            "text": "mul naengmyeon ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "mul-naengmyeon"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", the clear-broth version. The broth should be as cold as possible, almost at slushy consistency. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A small amount of "
+          },
+          {
+            "type": "text",
+            "text": "gochujang",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "gochujang"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " paste and mustard are served on the side. Each diner adds them at the table to their own taste."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "noodles-rice",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "thin buckwheat or rice noodles, closest available to naengmyeon noodles",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "beef-sirloin",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "in one piece, for the broth",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 1000,
+              "unit": "ml",
+              "prepNote": "good quality",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": "smashed",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": "hard-boiled, halved",
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "peeled and cut into thin ribbons with a peeler",
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "gochujang",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "to serve at the table",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "extra, to serve at the table",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "sesame-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "to garnish",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the beef stock, water, beef sirloin, garlic, and ginger in a large saucepan. Bring to a boil and simmer for 30 minutes until the beef is tender. Remove the beef and cool."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Strain the broth and discard the aromatics. Season with soy sauce, rice vinegar, and sugar. Taste: the broth should be savoury with a slight tang. Chill the broth in the fridge for at least 4 hours or overnight until very cold. Skim any fat from the surface when cold."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Thinly slice the cooled beef and refrigerate."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the noodles according to the packet instructions. Drain and rinse under very cold running water until completely cold. Divide between four deep bowls."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the very cold broth over the noodles. Top with beef slices, halved boiled eggs, and carrot ribbons. Add a few ice cubes to keep the broth icy if liked. Serve with gochujang, extra vinegar, and sesame seeds at the table."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Broth is not cold enough",
+              "fix": "Return it to the fridge for longer. The broth must be very cold, almost slushy. Place in the freezer for 30 minutes before serving if it is not cold enough."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Noodles are sticky and clumping",
+              "fix": "Rinse under cold running water for a full minute after draining. Toss with a tiny amount of sesame oil if they still stick before adding to the bowl."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Broth tastes flat",
+              "fix": "Add a little more rice vinegar for tang. Naengmyeon broth should have a gentle tartness. Adjust soy sauce for saltiness."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Naengmyeon is a summer staple in Korea. It is eaten on the hottest days when cold food brings the most relief. The dish has roots in the cold northern provinces of historical Korea. Pyongyang naengmyeon and Hamheung naengmyeon each have devoted followings. The dish is also commonly served after Korean barbecue as a palate cleanser."
+          }
+        ]
+      }
+    ]
+  }
+}

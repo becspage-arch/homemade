@@ -1,0 +1,386 @@
+{
+  "slug": "che-ba-mau",
+  "title": "Chè Ba Màu",
+  "subtitle": "three-colour vietnamese dessert",
+  "excerpt": "Chè ba màu is a Vietnamese dessert drink of coloured beans, jelly, and crushed ice in sweetened coconut milk. The three colours are red beans, green pandan jelly, and yellow mung bean paste. This recipe serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Chè ba màu is a popular Vietnamese street dessert, especially in southern Vietnam. It is sold by vendors who carry it in large glass jars filled with layers of coloured ingredients, assembled to order over crushed ice.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 120,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "All three components can be made a day ahead and refrigerated. Assemble with ice just before serving.",
+    "makeAheadNotes": "Make all components a day ahead. Keep separately in the fridge.",
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "cuisine": "vietnamese",
+    "mealType": "dessert",
+    "mood": [
+      "casual",
+      "light"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "che-viet",
+      "term": "Chè",
+      "definition": "A category of Vietnamese sweet desserts that can be drinks, soups, or puddings. They are made with various legumes, jelly, fruit, and coconut milk and are sold at street stalls throughout Vietnam."
+    },
+    {
+      "slug": "pandan-leaf",
+      "term": "Pandan",
+      "definition": "A tropical plant with long, fragrant green leaves used across Southeast Asia. The leaves give a distinctive vanilla-like flavour and bright green colour to desserts and drinks."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chè ba màu is a layered Vietnamese "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "che-viet"
+                }
+              }
+            ],
+            "text": "chè "
+          },
+          {
+            "type": "text",
+            "text": "dessert with three coloured layers over crushed ice, finished with sweetened coconut milk. "
+          },
+          {
+            "type": "text",
+            "text": "The green colour comes from "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pandan-leaf"
+                }
+              }
+            ],
+            "text": "pandan "
+          },
+          {
+            "type": "text",
+            "text": "jelly, the red from sweet beans, and the yellow from mung bean paste. "
+          },
+          {
+            "type": "text",
+            "text": "This recipe serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pandan extract is available in bottles at Asian supermarkets. A few drops give the jelly its bright green colour and fragrant flavour."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "short-grain-rice",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "use dried mung beans, soaked overnight",
+              "isOptional": false,
+              "groupLabel": "yellow layer"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "yellow layer"
+            },
+            {
+              "ingredientSlug": "coconut-milk",
+              "amount": 250,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "coconut milk topping"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "coconut milk topping"
+            },
+            {
+              "ingredientSlug": "cornflour",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "mixed with 1 tbsp cold water",
+              "isOptional": false,
+              "groupLabel": "coconut milk topping"
+            },
+            {
+              "ingredientSlug": "tapioca-flour",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "green jelly"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "green jelly"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "green jelly"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "or use canned red beans in syrup",
+              "isOptional": false,
+              "groupLabel": "red layer"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the mung beans: drain the soaked beans and simmer in fresh water for 20 to 25 minutes until very soft. Drain and mash with 3 tbsp sugar until smooth. Shape into small balls or spoon into a layer. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the green jelly: dissolve the tapioca starch in the water in a small pan. Add 2 tbsp sugar and a few drops of pandan extract or green food colouring. Stir over medium heat for 3 to 4 minutes until it thickens to a clear, wobbly paste. Pour into a shallow tin, cool, then cut into small cubes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "If using dried red beans, cook in water with the palm sugar for 30 minutes until tender and syrupy. Or drain and rinse canned red beans in syrup."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the coconut milk topping: heat the coconut milk and 2 tbsp sugar in a small pan. Add the cornflour slurry and stir for 2 minutes until slightly thickened. Cool."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fill 4 tall glasses with crushed ice. Layer the mung bean paste, green jelly cubes, and red beans over the ice."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the sweetened coconut milk over the top. Serve immediately with a spoon and straw."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The green jelly is cloudy and rubbery.",
+              "cause": "The tapioca starch was not cooked long enough.",
+              "fix": "Cook the starch mixture until it turns from white and opaque to clear and translucent. This takes 3 to 5 minutes of steady stirring."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The mung bean paste is grainy and hard.",
+              "cause": "The beans were not cooked long enough or not mashed while hot.",
+              "fix": "Cook the mung beans until they break apart when pressed. Mash immediately while still hot for the smoothest texture."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The coconut milk is too thin and watery.",
+              "cause": "The cornflour was not used or not enough was added.",
+              "fix": "Add another half teaspoon of cornflour dissolved in cold water. Reheat and stir until the coconut milk coats a spoon lightly."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chè ba màu is a southern Vietnamese street dessert sold at markets and by roaming vendors. "
+          },
+          {
+            "type": "text",
+            "text": "The three colours are also said to represent the three regions of Vietnam . north, central, and south. "
+          },
+          {
+            "type": "text",
+            "text": "It is a common dessert at family celebrations and during summer months. "
+          },
+          {
+            "type": "text",
+            "text": "The dish belongs to a large family of Vietnamese chè sweets that include many regional variations. "
+          },
+          {
+            "type": "text",
+            "text": "Outside Vietnam it is found in Vietnamese communities worldwide and remains a popular dessert at pho restaurants."
+          }
+        ]
+      }
+    ]
+  }
+}

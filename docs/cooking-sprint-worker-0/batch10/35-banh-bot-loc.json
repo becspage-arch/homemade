@@ -1,0 +1,421 @@
+{
+  "slug": "banh-bot-loc",
+  "title": "Bánh Bột Lọc",
+  "subtitle": "tapioca dumplings with pork and prawn",
+  "excerpt": "Bánh bột lọc are translucent Vietnamese dumplings made from tapioca starch, filled with pork belly and prawn, and served with a sweet chilli dipping sauce. They are chewy, glossy, and deeply satisfying. This recipe serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Bánh bột lọc is a speciality of Huế in central Vietnam. It is one of the royal court dishes of the former imperial capital and is eaten throughout the central region as a snack or light meal.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 20,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze uncooked dumplings in a single layer, then bag. Steam from frozen for 12 minutes.",
+    "batchable": true,
+    "batchNotes": "Make a large batch and freeze. Steam from frozen for a quick snack.",
+    "makeAheadNotes": "The filling can be made a day ahead. Make the dough and steam just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "snack",
+    "mood": [
+      "weekend",
+      "special"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "steamer-pot",
+      "isOptional": false
+    },
+    {
+      "slug": "bamboo-steamer",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tapioca-dough",
+      "term": "Tapioca dough",
+      "definition": "A dough made from tapioca starch and boiling water. When steamed, it turns from white and opaque to completely translucent. The texture is chewy, springy, and very different from wheat dough."
+    },
+    {
+      "slug": "hue-cuisine",
+      "term": "Huế cuisine",
+      "definition": "The cooking style of Huế, the former imperial capital of Vietnam. It is known for elaborate presentation, small dishes, and complex flavours. Many iconic Vietnamese snacks originated here."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bánh bột lọc are glossy dumplings made from "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tapioca-dough"
+                }
+              }
+            ],
+            "text": "tapioca dough "
+          },
+          {
+            "type": "text",
+            "text": "filled with pork and prawn. "
+          },
+          {
+            "type": "text",
+            "text": "They come from "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "hue-cuisine"
+                }
+              }
+            ],
+            "text": "Huế cuisine "
+          },
+          {
+            "type": "text",
+            "text": "and turn beautifully translucent when steamed. "
+          },
+          {
+            "type": "text",
+            "text": "This recipe serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The dough must be made with boiling water and used while still warm. It becomes stiff and hard to work with once it cools."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "tapioca-flour",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 180,
+              "unit": "ml",
+              "prepNote": "boiling",
+              "isOptional": false,
+              "groupLabel": "dough"
+            },
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "prawns-raw",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "peeled and finely chopped",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "shallots",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "filling"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dipping sauce"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dipping sauce"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "dipping sauce"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "dipping sauce"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the filling: fry the shallots in oil until softened. Add the pork belly and cook for 3 minutes. Add the prawns and cook for 2 more minutes until pink. Season with fish sauce and sugar. Cool completely."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the dough: put the tapioca starch in a bowl. Pour in the boiling water all at once and stir quickly with a wooden spoon. The dough will be hot. Keep working it until it comes together into a smooth, pliable ball."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the warm dough into about 20 pieces. Working quickly, flatten each piece into a thin round disc about 8 cm across."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place a teaspoon of filling in the centre of each disc. Fold the dough over the filling to make a half-moon shape. Press the edges firmly to seal."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Line a steamer basket with banana leaf or baking paper. Arrange the dumplings in a single layer without touching."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Steam over boiling water for 8 to 10 minutes until the dumplings are completely translucent."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the dipping sauce and serve the hot dumplings immediately with the sauce and crispy fried shallots if you have them."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The dough cracks and breaks when folding.",
+              "cause": "The dough cooled down too much before shaping.",
+              "fix": "Work with the dough while it is still warm. Keep it covered with a damp cloth. If it cools and cracks, knead in a few drops of warm water."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The dumplings stay white and opaque after steaming.",
+              "cause": "They were not steamed for long enough.",
+              "fix": "Steam for at least 8 minutes. The dumplings should turn completely clear when done. A still-white patch means undercooked dough."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The dumplings stick to the steamer and tear.",
+              "cause": "The steamer was not lined or was not oiled.",
+              "fix": "Line the steamer with banana leaf, cabbage leaves, or lightly oiled baking paper. Never place dumplings directly on a metal steamer rack."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bánh bột lọc comes from Huế in central Vietnam, the seat of the Nguyễn dynasty. "
+          },
+          {
+            "type": "text",
+            "text": "Huế is famous for its complex, refined snack foods that developed in the royal court. "
+          },
+          {
+            "type": "text",
+            "text": "The dish is sold at street food stalls throughout the city, often wrapped in banana leaf. "
+          },
+          {
+            "type": "text",
+            "text": "Central Vietnamese people eat these dumplings as a snack rather than a main meal. "
+          },
+          {
+            "type": "text",
+            "text": "Visitors to Huế are encouraged to eat them as one of the most distinctive local dishes."
+          }
+        ]
+      }
+    ]
+  }
+}

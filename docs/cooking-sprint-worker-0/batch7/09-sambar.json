@@ -1,0 +1,437 @@
+{
+  "slug": "sambar",
+  "title": "Sambar",
+  "subtitle": "tangy lentil and vegetable stew",
+  "excerpt": "A South Indian lentil stew with vegetables, tamarind and a fragrant spice blend, served with rice or idli.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A daily dish in South Indian homes.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [
+      "vegan",
+      "vegetarian"
+    ],
+    "cuisine": "indian",
+    "mealType": "lunch",
+    "mood": [
+      "weeknight",
+      "comforting"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tamarind-paste",
+      "definition": "A sour fruit pulp used to add tang to many South Indian dishes.",
+      "term": "tamarind"
+    },
+    {
+      "slug": "tadka",
+      "definition": "A finishing technique where whole spices are bloomed in hot fat then poured over a dish.",
+      "term": "tadka"
+    },
+    {
+      "slug": "curry-leaves",
+      "definition": "Aromatic fresh leaves fried in oil to release their flavour.",
+      "term": "curry leaves"
+    },
+    {
+      "slug": "asafoetida",
+      "definition": "A strong dried resin used in tiny amounts to add a savoury, onion-like note.",
+      "term": "asafoetida"
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sambar serves 4 and takes about 50 minutes. Cook the lentils until very soft so the stew is smooth. Stir the "
+          },
+          {
+            "type": "text",
+            "text": "tamarind",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tamarind-paste"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " in near the end to keep its tang clear."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The finishing "
+          },
+          {
+            "type": "text",
+            "text": "tadka",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tadka"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of mustard seeds and curry leaves makes the whole dish sing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "red-lentils",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "rinsed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "piece",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 1,
+              "unit": "piece",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "aubergine",
+              "amount": 1,
+              "unit": "piece",
+              "prepNote": "cubed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "okra",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tamarind-paste",
+              "amount": 1.5,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mustard-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "curry-leaves",
+              "amount": 10,
+              "unit": "piece",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "asafoetida",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dried-chilli",
+              "amount": 2,
+              "unit": "piece",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Simmer the lentils with the turmeric and 700ml water until very soft, about 20 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the onion, tomato, aubergine and okra. Cook for 12 minutes until the vegetables are tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the coriander, chilli powder and the tamarind. Simmer for 5 minutes and season to taste."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a small pan. Add the mustard seeds, dried chilli, "
+                  },
+                  {
+                    "type": "text",
+                    "text": "curry leaves",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "curry-leaves"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": " and a "
+                  },
+                  {
+                    "type": "text",
+                    "text": "pinch of asafoetida",
+                    "marks": [
+                      {
+                        "type": "glossaryTooltip",
+                        "attrs": {
+                          "termSlug": "asafoetida"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "text": "."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "When the seeds crackle, pour this tempering over the sambar."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir once and serve hot with rice or idli."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The sambar is too sour",
+              "cause": "Too much tamarind",
+              "fix": "Add a little water and a pinch of jaggery or sugar to balance."
+            },
+            {
+              "symptom": "It is too thin",
+              "cause": "The lentils were undercooked",
+              "fix": "Simmer the lentils until fully broken down before adding vegetables."
+            },
+            {
+              "symptom": "The tempering burned",
+              "cause": "The oil was too hot",
+              "fix": "Add the curry leaves off the heat once the seeds pop."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sambar appears at nearly every South Indian meal. It goes with rice, idli, dosa and vada. Each home has its own spice balance. The mix of sour, spice and lentil is the heart of it. A pot lasts a family through the day."
+          }
+        ]
+      }
+    ]
+  }
+}

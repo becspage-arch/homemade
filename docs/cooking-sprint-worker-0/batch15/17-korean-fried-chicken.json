@@ -1,0 +1,386 @@
+{
+  "slug": "korean-fried-chicken",
+  "title": "Korean Fried Chicken",
+  "subtitle": "double-fried crispy chicken",
+  "excerpt": "Korean fried chicken is double-fried to achieve an exceptionally thin, shatteringly crisp coating. It is served either plain with a soy-garlic glaze or tossed in a sweet and spicy gochujang sauce. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Korean fried chicken developed its distinctive double-frying technique in the latter half of the 20th century. The method removes more moisture and fat, giving a crispier result than single-frying.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The first fry can be done up to 2 hours ahead. Do the second fry just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "korean",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "entertaining"
+    ],
+    "temperatureCelsius": 170,
+    "temperatureNote": "First fry at 170C, second fry at 190C",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "double-frying",
+      "term": "Double frying",
+      "definition": "A technique where food is fried twice: once at a lower temperature to cook through, and again at a higher temperature to crisp and colour the exterior."
+    },
+    {
+      "slug": "gochujang",
+      "term": "Gochujang",
+      "definition": "A Korean fermented red chilli paste made from chilli powder, glutinous rice, and fermented soybeans. It is thick, spicy, and slightly sweet."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The secret to Korean fried chicken's distinctive texture is "
+          },
+          {
+            "type": "text",
+            "text": "double frying ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "double-frying"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". The second fry pushes the crust to a crispness that stays crunchy even after the sauce is added. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Choose either the soy-garlic glaze or the "
+          },
+          {
+            "type": "text",
+            "text": "gochujang",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "gochujang"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " sauce. Both work well. Many households make half and half."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 1000,
+              "unit": "g",
+              "prepNote": "bone-in pieces, or wings",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cornflour",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "peppercorns-black",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "ground",
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "garlic powder if available, or finely grated fresh",
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 1,
+              "unit": "litre",
+              "prepNote": "for deep frying",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Soy-garlic glaze"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "Soy-garlic glaze"
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Soy-garlic glaze"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Soy-garlic glaze"
+            },
+            {
+              "ingredientSlug": "gochujang",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "Spicy sauce (alternative)"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "Spicy sauce (alternative)"
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "Spicy sauce (alternative)"
+            },
+            {
+              "ingredientSlug": "sesame-seeds",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "to serve",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pat the chicken pieces completely dry with kitchen paper. Mix the cornflour, plain flour, black pepper, and garlic together. Toss the chicken in the flour mixture to coat evenly. Shake off any excess. Rest on a wire rack for 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the vegetable oil in a deep, heavy pot to 170C. Fry the chicken in batches for 8 to 10 minutes until cooked through but only lightly golden. The internal temperature should reach 74C. Remove and drain on a rack."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Increase the oil temperature to 190C. Return the chicken and fry again in batches for 3 to 4 minutes until deep golden and very crisp. Drain on a rack."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make your chosen sauce. For the soy-garlic glaze: combine all ingredients in a small saucepan and simmer for 3 minutes until slightly thickened. For the spicy sauce: combine gochujang, sugar, and rice vinegar and warm gently."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Toss the hot chicken in the sauce immediately before serving. Scatter sesame seeds over the top. Serve at once."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Coating is falling off during frying",
+              "fix": "The chicken was not dry enough before coating. Pat it completely dry and let the coated chicken rest for at least 30 minutes before the first fry."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Chicken is not crispy after the second fry",
+              "fix": "The oil was not hot enough for the second fry. Use a thermometer and wait until the oil reaches 190C before adding the chicken."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Coating goes soft quickly after adding the sauce",
+              "fix": "Add the sauce at the very last moment and serve immediately. The cornflour crust stays crisper for longer than a flour-only coating."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Korean fried chicken is everywhere in Korea. It is a late-night favourite eaten with beer, a combination so popular it has its own nickname. It is ordered for delivery, eaten at street stalls, and made at home for weekends. The dish became internationally popular through Korean television and food culture in the early 2000s."
+          }
+        ]
+      }
+    ]
+  }
+}

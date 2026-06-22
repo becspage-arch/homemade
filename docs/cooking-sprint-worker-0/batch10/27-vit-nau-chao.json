@@ -1,0 +1,396 @@
+{
+  "slug": "vit-nau-chao",
+  "title": "Vịt Nấu Chao",
+  "subtitle": "duck braised in fermented bean curd",
+  "excerpt": "Vịt nấu chao is a Vietnamese duck braise where the cooking liquid is flavoured with fermented tofu, lemongrass, ginger, and coconut water. The duck becomes very tender and the sauce is rich, complex, and deeply savoury. This recipe serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Vịt nấu chao is a popular dish in southern Vietnam and the Mekong Delta region, where duck farming is common. The dish is especially associated with the Mekong Delta provinces.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the braised duck and sauce for up to 2 months. Reheat gently and add fresh herbs before serving.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "This dish tastes better the next day. Make ahead and reheat gently.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "special"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "chao-tofu",
+      "term": "Chao",
+      "definition": "Vietnamese fermented tofu. It has a very pungent smell and a creamy, salty flavour. In cooking, a small amount adds deep umami and complexity to braises and soups."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vịt nấu chao is duck legs braised slowly with "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "chao-tofu"
+                }
+              }
+            ],
+            "text": "chao "
+          },
+          {
+            "type": "text",
+            "text": "fermented tofu, lemongrass, and coconut water. "
+          },
+          {
+            "type": "text",
+            "text": "The fermented tofu gives the sauce a deeply savoury, complex flavour that is unlike any other Vietnamese braise. "
+          },
+          {
+            "type": "text",
+            "text": "This recipe serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fermented tofu is found in jars at Asian supermarkets. Use the white variety, not the red chilli version, for this dish."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "duck-legs",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "duck"
+            },
+            {
+              "ingredientSlug": "tofu-firm",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "use fermented tofu (chao) - 2 to 3 cubes",
+              "isOptional": false,
+              "groupLabel": "braise"
+            },
+            {
+              "ingredientSlug": "coconut-milk",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "braise"
+            },
+            {
+              "ingredientSlug": "lemongrass",
+              "amount": 3,
+              "unit": "stalks",
+              "prepNote": "bruised",
+              "isOptional": false,
+              "groupLabel": "aromatics"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "aromatics"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 5,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "aromatics"
+            },
+            {
+              "ingredientSlug": "shallots",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": "aromatics"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "seasoning"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "seasoning"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": "sliced, to garnish",
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "to serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pat the duck legs dry. Heat oil in a Dutch oven over medium-high heat. Sear the duck legs skin-side down for 5 to 6 minutes until the skin is golden and a lot of fat has rendered. Turn and sear for 2 minutes on the other side. Remove and set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour off most of the duck fat, leaving about 1 tbsp in the pot. Fry the shallots, garlic, ginger, and lemongrass over medium heat for 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mash the fermented tofu with a fork until smooth. Add it to the pot and stir for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return the duck legs to the pot. Add the coconut water, fish sauce, and sugar. Add enough water to come halfway up the duck legs."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a simmer. Cover and braise on the lowest heat for 60 to 75 minutes until the duck is very tender and falling from the bone."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the duck legs and reduce the sauce over high heat until it thickens slightly. Taste and adjust with more fish sauce if needed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve the duck legs with the sauce spooned over. Garnish with spring onion and coriander. Serve with steamed rice."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The sauce tastes too pungent and fermented.",
+              "cause": "Too much chao was used.",
+              "fix": "Start with 2 small cubes of fermented tofu. You can always add more but cannot reduce the flavour once it is in."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The duck skin is flabby and greasy.",
+              "cause": "The skin was not rendered properly before braising.",
+              "fix": "Sear the duck skin-side down on medium heat long enough to render the fat. The skin should look golden and slightly shrunken."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The duck meat is still tough after an hour.",
+              "cause": "The braise was simmering too vigorously.",
+              "fix": "Duck legs need very gentle, slow heat. Keep the lid on and the heat as low as possible. Check at 75 minutes."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vịt nấu chao comes from the Mekong Delta in southern Vietnam, where duck is a staple protein. "
+          },
+          {
+            "type": "text",
+            "text": "The use of fermented tofu in a braise shows the influence of Chinese cooking in the region. "
+          },
+          {
+            "type": "text",
+            "text": "Duck farming is common along the many canals and waterways of the delta. "
+          },
+          {
+            "type": "text",
+            "text": "This dish is considered a special-occasion meal and is served at family celebrations. "
+          },
+          {
+            "type": "text",
+            "text": "Outside the Mekong Delta, it is less well known but highly regarded by those who know it."
+          }
+        ]
+      }
+    ]
+  }
+}

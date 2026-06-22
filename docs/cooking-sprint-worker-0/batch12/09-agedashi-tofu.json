@@ -1,0 +1,372 @@
+{
+  "slug": "agedashi-tofu",
+  "title": "Agedashi Tofu",
+  "subtitle": "deep-fried silken tofu in dashi broth",
+  "excerpt": "Agedashi tofu is silken tofu dusted in cornflour and fried until lightly crisp, then served in a warm dashi broth with grated daikon and spring onion. It is a classic izakaya starter. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Agedashi tofu appears in Japanese cookbooks from the 18th century. It is a staple of izakaya menus and home cooking. The contrast between the soft tofu interior and the light crispy coating is what makes it special.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The dashi broth can be made up to 2 days ahead. Fry the tofu just before serving.",
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "cuisine": "japanese",
+    "mealType": "starter",
+    "mood": [
+      "weekend",
+      "dinner-party"
+    ],
+    "temperatureCelsius": 180,
+    "temperatureNote": "Oil temperature for frying the tofu",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "dashi",
+      "term": "Dashi",
+      "definition": "Japanese stock made from kombu and bonito flakes. It forms the savoury, light broth that agedashi tofu sits in."
+    },
+    {
+      "slug": "silken-tofu",
+      "term": "Silken Tofu",
+      "definition": "The softest style of tofu, with a smooth, custard-like texture. It must be handled very gently as it breaks apart easily."
+    },
+    {
+      "slug": "cornflour",
+      "term": "Cornflour",
+      "definition": "Fine white starch that creates a thin, light coating on the tofu. It fries crispier and lighter than plain flour."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Agedashi tofu requires good "
+          },
+          {
+            "type": "text",
+            "text": "dashi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "dashi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and careful handling of the "
+          },
+          {
+            "type": "text",
+            "text": "silken tofu ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "silken-tofu"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". The tofu must be pressed dry before coating in "
+          },
+          {
+            "type": "text",
+            "text": "cornflour",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cornflour"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " or the coating will slide off in the oil. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Press the silken tofu gently between two plates lined with kitchen paper for 15 minutes before frying. This is a critical step that should not be skipped."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "tofu-silken",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "cut into 8 rectangular pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cornflour",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": "for deep frying",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 2,
+              "unit": null,
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": "Garnish"
+            },
+            {
+              "ingredientSlug": "sesame-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "Garnish"
+            },
+            {
+              "ingredientSlug": "dried-chilli",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "crumbled, for heat",
+              "isOptional": true,
+              "groupLabel": "Garnish"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Line a plate with two layers of kitchen paper. Place the tofu pieces on top and cover with more paper. Rest a second plate on top and leave for 15 minutes to press out moisture."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the dashi, soy sauce and mirin in a small saucepan. Warm over low heat until steaming. Do not boil. Keep warm."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a medium saucepan to 180C. Dust each tofu piece gently in cornflour, shaking off the excess very carefully."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Lower the tofu into the oil using a slotted spoon. Fry for 2 to 3 minutes until the coating is lightly golden. Remove carefully and drain on a rack."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place two pieces of fried tofu in each shallow bowl. Pour the warm broth around the base. Top with spring onion, sesame seeds and chilli if using. Serve immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Coating slides off the tofu in the oil",
+              "cause": "Tofu was not pressed dry enough before coating",
+              "fix": "Press for a full 15 minutes with weight on top. Pat again with dry kitchen paper just before coating."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Tofu breaks apart when frying",
+              "cause": "Silken tofu is very delicate and was handled roughly",
+              "fix": "Use a wide slotted spoon to lower the tofu in. Do not move it once it is in the oil. Let it fry undisturbed."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Coating is thick and doughy",
+              "cause": "Too much cornflour was used or not shaken off",
+              "fix": "Coat lightly. Shake off all excess cornflour so only a thin dusting clings to the surface."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Agedashi tofu is one of the most ordered starters at izakaya restaurants across Japan. It showcases how Japanese cooking turns simple ingredients into something elegant. The dish requires care but not skill. Once you have pressed and fried the tofu a few times the process becomes very natural."
+          }
+        ]
+      }
+    ]
+  }
+}

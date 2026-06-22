@@ -1,0 +1,357 @@
+{
+  "slug": "suya",
+  "title": "Suya",
+  "subtitle": "Nigerian spiced grilled beef skewers",
+  "excerpt": "Suya is thinly sliced beef coated in a dry peanut spice blend and grilled over high heat until charred at the edges. Sold by street vendors across northern Nigeria, it is served with raw onion and tomato. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Originally from the Hausa people of northern Nigeria. Suya vendors (mai suya) are a fixture of Nigerian street life, cooking on charcoal grills from early evening.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "restingMinutes": 0,
+    "chillingMinutes": 60,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Marinate overnight in the fridge for a deeper flavour.",
+    "dietaryFlags": [
+      "gluten-free"
+    ],
+    "cuisine": "nigerian",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "dinner-party"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": "Cook over the highest possible heat for authentic char.",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "griddle-pan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "yaji",
+      "term": "Yaji",
+      "definition": "The dry spice blend used for suya, made primarily from ground peanuts, ginger, paprika and chilli. Each vendor has their own proportions."
+    },
+    {
+      "slug": "suya-skewers",
+      "term": "Suya skewers",
+      "definition": "Long flat metal skewers that hold thinly sliced meat for cooking over an open flame. Wooden skewers soaked in water are a workable substitute."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The spice mix called "
+          },
+          {
+            "type": "text",
+            "text": "yaji",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "yaji"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is what makes suya distinct. Ground peanuts are the base, not a garnish. Thread the meat onto "
+          },
+          {
+            "type": "text",
+            "text": "suya skewers",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "suya-skewers"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " or soaked wooden skewers and cook over the highest heat available."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Slice beef as thin as possible, around 3mm. Partially freezing the meat for 20 minutes makes this much easier."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-shin",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "sliced 3mm thin against the grain",
+              "isOptional": false,
+              "groupLabel": "Beef"
+            },
+            {
+              "ingredientSlug": "peanuts",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "roasted, skins removed, ground to a coarse powder",
+              "isOptional": false,
+              "groupLabel": "Yaji spice mix"
+            },
+            {
+              "ingredientSlug": "paprika-sweet",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Yaji spice mix"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "ground dried ginger",
+              "isOptional": false,
+              "groupLabel": "Yaji spice mix"
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "or to taste",
+              "isOptional": false,
+              "groupLabel": "Yaji spice mix"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "garlic powder",
+              "isOptional": false,
+              "groupLabel": "Yaji spice mix"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Yaji spice mix"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "sliced into rings, to serve",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "sliced, to serve",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix all yaji ingredients together in a wide bowl."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add oil to the spice mix and stir. Add the beef slices and press into the mix until evenly coated."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Thread 3 to 4 slices onto each skewer, spreading the meat flat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Chill for at least 1 hour, or overnight."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat a griddle pan or grill to very high heat. Cook skewers for 3 to 4 minutes per side until charred in places and cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dust with extra yaji and serve immediately with raw onion rings and sliced tomato."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Meat is tough",
+              "cause": "Sliced too thick or cooked too slowly",
+              "fix": "Slice as thin as possible and cook over the highest heat for a short time. The goal is char on the outside with just-cooked inside."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Peanuts burning",
+              "cause": "Pan not hot enough before meat was added",
+              "fix": "The pan must be fully preheated before the skewers go on. A smoking hot pan chars the outside fast before the coating can burn through."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Suya originated with the Hausa-Fulani people of northern Nigeria and has spread across the country and into neighbouring states. Street vendors set up charcoal grills after dark, skewering beef, chicken and offal for evening crowds. The dish has crossed into the Nigerian diaspora worldwide and is now sold in West African restaurants from London to Houston."
+          }
+        ]
+      }
+    ]
+  }
+}

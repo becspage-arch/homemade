@@ -1,0 +1,328 @@
+{
+  "slug": "banbury-cakes",
+  "title": "Banbury Cakes",
+  "subtitle": "oval spiced currant pastries from Oxfordshire",
+  "excerpt": "Banbury cakes are oval spiced currant pastries similar to Eccles cakes but flatter, oval in shape, and with a flakier cut on top. The currant filling is spiced with cinnamon and nutmeg. Makes about 10.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Banbury cakes are recorded from at least the early 17th century. Gervase Markham, The English Huswife (1615, EEBO Early English Books Online), gives a recipe for 'Banbury cakes' made with currants, spices, and an enriched dough. By the 18th and 19th centuries the cakes had moved to a puff or rough-puff pastry format. Hannah Glasse, The Art of Cookery (1747, Project Gutenberg), gives several versions of spiced fruit patties of this type. The distinctive features of a Banbury cake are its oval shape and the pattern of slashes across the top, which distinguish it from the round Eccles cake. Both come from the same family of northern English and Midlands spiced fruit pastry, but their respective towns maintain the distinction firmly.",
+  "recipe": {
+    "servings": null,
+    "yieldDescription": "10 cakes",
+    "prepMinutes": 25,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 30,
+    "scalable": false,
+    "freezable": true,
+    "freezeNotes": "Freeze unbaked on a tray, then bag. Bake from frozen at 200°C fan for 25 minutes.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The filling can be made a day ahead.",
+    "dietaryFlags": [],
+    "cuisine": "british",
+    "mealType": "snack",
+    "mood": [
+      "comfort-food",
+      "festive"
+    ],
+    "temperatureCelsius": 200,
+    "temperatureNote": "fan oven",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "rolling-pin",
+      "isOptional": false
+    },
+    {
+      "slug": "pastry-brush",
+      "isOptional": false
+    },
+    {
+      "slug": "digital-scales",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "rough-puff",
+      "term": "Rough puff pastry",
+      "definition": "A shortcut laminated pastry made by folding butter chunks into flour rather than the traditional lamination method. It gives a flaky, puffy result that is less uniform than proper puff pastry but faster to make. Ready-made all-butter puff pastry can be substituted."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Banbury cakes and Eccles cakes share a basic construction: a spiced currant filling enclosed in pastry. The differences are in shape and spice. Banbury cakes are oval, not round, and their filling includes more mixed spice and sometimes a small amount of rum or brandy. The slashes across the top are multiple and close together, giving the finished cake a furrowed appearance."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use ready-made all-butter "
+          },
+          {
+            "type": "text",
+            "text": "puff",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "rough-puff"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " pastry or make a rough puff. The filling is simple: currants softened in butter with spices and brown sugar. The cakes need a hot oven and a good egg wash for the pastry to blister and colour properly."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 10,
+          "items": [
+            {
+              "ingredientSlug": "puff-pastry",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "all-butter, ready-made",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "currants",
+              "amount": 175,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 35,
+              "unit": "g",
+              "prepNote": "melted",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "dark-brown-sugar",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "mixed-spice",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "nutmeg-ground",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "rum",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "beaten, for glaze",
+              "isOptional": false,
+              "groupLabel": "To finish"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "for sprinkling",
+              "isOptional": false,
+              "groupLabel": "To finish"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine {{currants}} of currants with {{unsalted-butter}} of melted butter, {{dark-brown-sugar}} of dark brown sugar, {{mixed-spice}} of mixed spice, {{cinnamon-ground}} of cinnamon, {{nutmeg-ground}} of nutmeg, and rum if using. Stir to coat. Leave to cool."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Roll {{puff-pastry}} of puff pastry on a lightly floured surface to about 4 mm thick. Cut out 10 ovals, about 14 cm x 10 cm each."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place a tablespoon of filling in the centre of each oval. Dampen the edges, fold the pastry over and pinch firmly to seal. Turn seam-side down and press gently to flatten slightly to an oval about 1 cm thick."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Brush with beaten egg and sprinkle with caster sugar. Make 4 to 5 close parallel slashes across the top with a sharp knife. Refrigerate for 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 200°C fan (220°C conventional). Bake for 15 to 20 minutes until deep golden brown and the pastry is puffed and crisp. Cool on the tray for 10 minutes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Filling leaks out during baking",
+              "cause": "Seal not tight enough, or too much filling",
+              "fix": "Pinch the edges firmly and make sure no filling sits in the seal line. One heaped tablespoon is enough."
+            },
+            {
+              "symptom": "Pastry is soft rather than flaky",
+              "cause": "Not chilled before baking, or oven not hot enough",
+              "fix": "Chill for 30 minutes. The oven must be fully preheated to 200°C fan before the cakes go in."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Banbury in Oxfordshire has been associated with these spiced currant cakes since at least the early 1600s. A street seller in Banbury Cross selling 'fine ladies upon white horses' and 'Banbury cakes' appears in the nursery rhyme Ride a Cock Horse, first published in 1784. The cakes were sold at fairs and markets throughout the Midlands. They remain a local speciality, though less widely known outside Oxfordshire than their northern cousin the Eccles cake. The oval shape and multiple slashes are not decorative; they are what make a Banbury cake a Banbury cake."
+          }
+        ]
+      }
+    ]
+  }
+}

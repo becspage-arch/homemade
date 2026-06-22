@@ -1,0 +1,402 @@
+{
+  "slug": "borscht",
+  "title": "Borscht",
+  "subtitle": "ukrainian beetroot soup with sour cream",
+  "excerpt": "Borscht is a deep crimson Ukrainian soup built on raw beetroot, cabbage, potato, and a concentrated tomato-vinegar broth. It is vivid in colour, earthy, and slightly sour. Serves 6.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Borscht is the national dish of Ukraine, with a history going back centuries. The 2022 UNESCO cultural heritage listing recognised it as Ukrainian culinary tradition.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freezes very well for up to 3 months. The colour stays vivid after reheating.",
+    "batchable": true,
+    "batchNotes": "Make a large pot. Borscht improves on standing and is excellent the next day.",
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "ukrainian",
+    "mealType": "lunch",
+    "mood": [
+      "midweek",
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "beetroot-borscht",
+      "term": "Raw beetroot",
+      "definition": "Uncooked, peeled beetroot that is grated or julienned and cooked in the broth to release its deep colour and earthy sweetness."
+    },
+    {
+      "slug": "smetana",
+      "term": "Sour cream",
+      "definition": "A thick, cultured cream with a tangy flavour. Stirred into borscht at the table, it balances the acidity of the soup."
+    }
+  ],
+  "techniqueSlugs": [
+    "soup-making"
+  ],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The key to vivid borscht is to use "
+          },
+          {
+            "type": "text",
+            "text": "raw beetroot",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "beetroot-borscht"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " rather than pre-cooked, and to add a splash of vinegar near the end to set the colour and sharpen the flavour. Serves 6."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "A spoonful of "
+          },
+          {
+            "type": "text",
+            "text": "sour cream",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "smetana"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " stirred in at the table is traditional and transforms the soup into something richer and more complex."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "beetroot",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "peeled and coarsely grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cabbage-white",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "finely shredded",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "potato",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "peeled and diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 1500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine-vinegar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dill",
+              "amount": 1,
+              "unit": "small bunch",
+              "prepNote": "chopped, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soured-cream",
+              "amount": 6,
+              "unit": "tbsp",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a large saucepan over medium heat. Add the onion and carrot and cook for 8 minutes until softened. Add the garlic and cook for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the grated beetroot and cook, stirring, for 5 minutes. Pour in the tinned tomatoes and cook for 3 more minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the stock and add the bay leaves. Bring to a boil, then add the diced potato. Simmer for 10 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the shredded cabbage. Simmer for a further 15 to 20 minutes until all the vegetables are tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the bay leaves. Stir in the red wine vinegar. Taste and adjust. Ladle into bowls, top with chopped dill and a spoonful of sour cream."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Soup has lost its colour and looks brown"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the vinegar earlier in the process. Acid locks the colour of beetroot. You can also add a small amount of grated raw beetroot right at the end to revive the colour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Soup tastes too earthy"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add a little more vinegar and a pinch of sugar to balance. Dill also lifts the earthiness significantly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "problem": "Potato is falling apart"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "You added the potato too early or the dice was too small. Add it after the beetroot has had its initial cook, and aim for 2cm cubes."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Borscht is the national soup of Ukraine and has been eaten there for hundreds of years. It also appears across Russia, Poland, and other Eastern European countries, each with their own version. The Ukrainian version is typically richer and more complex, with more vegetables and a full-flavoured broth. It was added to UNESCO's cultural heritage list in 2022."
+          }
+        ]
+      }
+    ]
+  }
+}

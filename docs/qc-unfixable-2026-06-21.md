@@ -1,0 +1,116 @@
+# qc-unfixable 2026-06-21
+
+Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will retry these on its next fire (after the 24-hour exclusion window).
+
+- eccles-cakes opening-pattern-missing-hook — applied: recipe-yield-appended
+- jacket-potato-chilli-con-carne prose-prep-steps — applied: 
+- ravioli-al-burro-e-salvia hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ravioli-di-zucca hero-missing — applied: hero-fill-deferred-to-standalone-script
+- risotto-ai-funghi-misti hero-missing — applied: hero-fill-deferred-to-standalone-script
+- risotto-ai-funghi-porcini hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spaghetti-al-pomodoro hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spaghetti-cacio-e-pepe hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tortellini-in-brodo hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- vegetarian-butternut-lasagne hero-missing — applied: hero-fill-deferred-to-standalone-script
+- yorkshire-parkin hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- beef-and-black-bean-chili  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- beef-and-mushroom-stew  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- bessara  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- black-bean-soup  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- boulangere-potatoes  — applied: hero-fill-deferred-to-standalone-script,ingredient-quantity:2,recipe-yield-appended,dry-run
+- broccoli-and-stilton-soup  — applied: placeholders,recipe-yield-appended,dry-run
+- bulgur-pilaf  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- cauliflower-cheese  — applied: body-rewrite:3,century-to-sourceNotes:1,recipe-yield-appended,dry-run
+- cheese-and-onion-pasties  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- chicken-and-leek-pie  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- chicken-coconut-curry  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- chicken-in-milk  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- chicken-katsu-curry  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- chicken-mole  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- chicken-noodle-soup  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- chimichurri-sauce  — applied: dry-run
+- chocolate-ice-cream  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- egg-curry  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- egyptian-koshari  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- fish-pie  — applied: recipe-yield-appended,dry-run
+- foul-mudammas  — applied: hero-fill-deferred-to-standalone-script,ingredient-quantity:1,recipe-yield-appended,dry-run
+- greek-chickpea-stew  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- guacamole  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- hummus  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- irish-soda-bread  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- kebab-koobideh  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- khoresh-ghormeh-sabzi  — applied: hero-fill-deferred-to-standalone-script,ingredient-quantity:1,recipe-yield-appended,dry-run
+- koshimbir-dal  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- lamb-and-orange-stew  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- lemon-chicken-pan-sauce  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- lemon-sorbet  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- maids-of-honour  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- moules-marinieres  — applied: hero-fill-deferred-to-standalone-script,ingredient-quantity:1,recipe-yield-appended,dry-run
+- mulligatawny  — applied: hero-fill-deferred-to-standalone-script,dry-run
+- pad-see-ew  — applied: recipe-yield-appended,dry-run
+- pasta-alla-norma  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- pasta-e-fagioli  — applied: hero-fill-deferred-to-standalone-script,placeholders,body-rewrite:2,century-to-sourceNotes:1,recipe-yield-appended,dry-run
+- pasta-with-anchovies-and-breadcrumbs  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- pear-and-almond-tart  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- pico-de-gallo  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- polenta-with-mushrooms  — applied: hero-fill-deferred-to-standalone-script,body-rewrite:4,century-to-sourceNotes:1,recipe-yield-appended,dry-run
+- pollo-alla-diavola  — applied: hero-fill-deferred-to-standalone-script,body-rewrite:1,recipe-yield-appended,dry-run
+- pork-and-cabbage-stew  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- pork-vindaloo  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- rice-pudding  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- risotto-al-radicchio  — applied: hero-fill-deferred-to-standalone-script,ingredient-quantity:2,recipe-yield-appended,dry-run
+- roast-shoulder-of-pork  — applied: hero-fill-deferred-to-standalone-script,dry-run
+- roasted-red-pepper-soup  — applied: recipe-yield-appended,dry-run
+- roasted-tomato-pasta  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- saffron-rice-chelow  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- slow-braised-beef-shin  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- slow-cooker-bolognese-sauce  — applied: hero-fill-deferred-to-standalone-script,dry-run
+- slow-cooker-chicken-cacciatore  — applied: hero-fill-deferred-to-standalone-script,dry-run
+- slow-cooker-chilli-con-carne  — applied: hero-fill-deferred-to-standalone-script,dry-run
+- slow-cooker-gammon-glazed  — applied: hero-fill-deferred-to-standalone-script,dry-run
+- slow-cooker-lamb-rogan-josh  — applied: hero-fill-deferred-to-standalone-script,dry-run
+- slow-cooker-lentil-chilli  — applied: hero-fill-deferred-to-standalone-script,dry-run
+- slow-cooker-mushroom-stroganoff  — applied: hero-fill-deferred-to-standalone-script,dry-run
+- slow-cooker-rice-pudding  — applied: hero-fill-deferred-to-standalone-script,dry-run
+- slow-cooker-whole-roast-chicken  — applied: hero-fill-deferred-to-standalone-script,dry-run
+- sole-meuniere  — applied: hero-fill-deferred-to-standalone-script,ingredient-quantity:1,recipe-yield-appended,dry-run
+- spinach-and-ricotta-cannelloni  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- sticky-toffee-pudding  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- tagliatelle-al-ragu-bolognese  — applied: hero-fill-deferred-to-standalone-script,body-rewrite:4,century-to-sourceNotes:1,recipe-yield-appended,dry-run
+- tamarind-chutney  — applied: hero-fill-deferred-to-standalone-script,body-rewrite:2,recipe-yield-appended,dry-run
+- vegetable-biryani  — applied: recipe-yield-appended,dry-run
+- vietnamese-beef-pho  — applied: hero-fill-deferred-to-standalone-script,recipe-yield-appended,dry-run
+- watercress-soup  — applied: hero-fill-deferred-to-standalone-script,placeholders,body-rewrite:2,century-to-sourceNotes:1,recipe-yield-appended,dry-run
+- wild-mushroom-and-chestnut-soup  — applied: hero-fill-deferred-to-standalone-script,placeholders,recipe-yield-appended,dry-run
+- yakitori  — applied: recipe-yield-appended,dry-run
+
+- crispy-roasted-chickpeas prose-prep-steps — applied: 
+- lamb-rogan-josh prose-prep-steps — applied: 
+- pork-and-apple-casserole prose-prep-steps — applied: 
+
+- apple-and-cinnamon-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- butternut-squash-and-sage-pasta prose-prep-steps — applied: 
+- chicken-and-chorizo-traybake grade-level-strict — applied: 
+- halloumi-thai-stir-fry prose-prep-steps — applied: 
+- shakshuka prose-prep-steps — applied: 
+- slow-roast-lamb-shoulder prose-prep-steps — applied: 
+- spaghetti-aglio-olio prose-prep-steps — applied: 
+- stir-fried-water-spinach prose-prep-steps — applied: 
+- teriyaki-salmon prose-prep-steps — applied: 
+
+- aloo-gobi grade-level-strict — applied: 
+- aubergine-curry prose-prep-steps — applied: 
+- devilled-mushrooms prose-prep-steps — applied: 
+- egg-and-vegetable-stir-fry prose-prep-steps — applied: 
+- honey-almond-cake opening-pattern-missing-hook — applied: recipe-yield-appended
+- japanese-style-pasta prose-prep-steps — applied: 
+- lamb-saag prose-prep-steps — applied: 
+- meatballs-in-tomato-sauce prose-prep-steps — applied: 
+- miso-glazed-cod grade-level-strict — applied: 
+- miso-ramen prose-prep-steps — applied: 
+- pork-katsu prose-prep-steps — applied: 
+- ratatouille prose-prep-steps — applied: 
+- sichuan-doubanjiang-beef prose-prep-steps — applied: 
+- simplified-fish-stew prose-prep-steps — applied: 
+- toad-in-the-hole prose-prep-steps — applied: 

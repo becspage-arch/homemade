@@ -1,0 +1,391 @@
+{
+  "slug": "sopa-de-lima",
+  "title": "Sopa de Lima",
+  "subtitle": "yucatan chicken lime soup",
+  "excerpt": "A clear chicken broth sharpened with lime juice and topped with crispy tortilla strips, a dish of the Yucatan Peninsula. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Sopa de lima is the defining soup of the Yucatan, using the local lima agria, a sour lime variety, to sharpen the broth.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 35,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Make the broth a day ahead. Add lime juice just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "mexican",
+    "mealType": "lunch",
+    "mood": [
+      "weeknight",
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-30",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "poaching",
+      "term": "Poaching",
+      "definition": "Cooking protein gently in barely simmering liquid so it stays tender and the cooking liquid becomes a flavoured broth."
+    },
+    {
+      "slug": "garnishing",
+      "term": "Garnishing",
+      "definition": "Adding finishing elements to a dish just before serving to add texture, colour, and freshness."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sopa de lima is built around "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "poaching"
+                }
+              }
+            ],
+            "text": "poaching"
+          },
+          {
+            "type": "text",
+            "text": " chicken directly in a spiced broth so the liquid absorbs the flavour of the bird as it cooks. Lime juice goes in at the end, off the heat, so it stays bright and sharp. The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "garnishing"
+                }
+              }
+            ],
+            "text": "garnishing"
+          },
+          {
+            "type": "text",
+            "text": " with fried tortilla strips is not optional. It adds the crunch that makes the soup complete."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tip: add the lime juice in two stages. Taste after the first addition and decide whether you want more bite."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "bone-in if possible",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": "juice only",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "medium",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": "whole",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 2,
+              "unit": "medium",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pepper-green",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-green",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "whole",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "small bunch",
+              "prepNote": "stalks for broth, leaves for serving",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaves",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 1200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "polenta",
+              "amount": 4,
+              "unit": "small tortillas",
+              "prepNote": "or corn tortillas, cut into strips",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Put chicken, halved onion, garlic, tomatoes, green pepper, whole chilli, coriander stalks, bay leaves, cumin, and stock in a large saucepan. Bring to a gentle boil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce to a low simmer. Cook uncovered for 25 minutes until the chicken is cooked through. Skim any foam from the surface."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the chicken and shred the meat. Strain the broth through a sieve and discard the solids. Return the broth to the pan."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "While the chicken cooks, fry tortilla strips in hot oil in a frying pan for 2 minutes per side until golden and crisp. Drain on kitchen paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring broth back to a simmer. Add shredded chicken and salt. Remove from heat. Stir in lime juice."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ladle into bowls. Top with tortilla strips and fresh coriander leaves."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth tastes flat",
+              "cause": "The aromatics were not cooked long enough to release flavour.",
+              "fix": "Add an extra squeeze of lime and a pinch of salt. If making again, let the broth simmer an extra 10 minutes before straining."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Tortilla strips go soggy fast",
+              "cause": "Strips were added too early or the oil was not hot enough when frying.",
+              "fix": "Fry in very hot oil and add to the soup only at the moment of serving, not before."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sopa de lima is one of the most beloved dishes of the Yucatan Peninsula in southeastern Mexico. The region has a cooking tradition distinct from the rest of the country, shaped by Mayan ingredients and centuries of isolation. The lima agria, a bitter lime local to the Yucatan, gives the soup its particular sharp edge. In Merida, the Yucatan capital, this soup appears on almost every menu. It is a light first course but satisfying enough to eat as a meal."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "slug": "sachertorte",
+  "title": "Sachertorte",
+  "subtitle": "viennese chocolate cake with apricot jam",
+  "excerpt": "Sachertorte is a dense, elegant Viennese chocolate cake made with two layers of chocolate sponge sandwiched with apricot jam and coated in a glossy dark chocolate glaze. It is served with unsweetened whipped cream. Serves 12.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Created in 1832 by sixteen-year-old Franz Sacher for Austrian Chancellor Metternich in Vienna. The recipe has been a subject of legal dispute between the Hotel Sacher and Demel bakery.",
+  "recipe": {
+    "servings": 12,
+    "yieldDescription": null,
+    "prepMinutes": 45,
+    "cookMinutes": 55,
+    "restingMinutes": 0,
+    "chillingMinutes": 120,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The sponge can be baked a day ahead. Glaze on the day of serving.",
+    "dietaryFlags": ["vegetarian"],
+    "cuisine": "austrian",
+    "mealType": "dessert",
+    "mood": ["weekend"],
+    "temperatureCelsius": 170,
+    "temperatureNote": "Fan oven; reduce standard oven temperature by 10C",
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "rectangular-baking-tin", "isOptional": false },
+    { "slug": "whisk", "isOptional": false },
+    { "slug": "sieve", "isOptional": false },
+    { "slug": "pastry-brush", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "ganache-glaze",
+      "term": "Ganache glaze",
+      "definition": "A smooth, glossy coating made by pouring hot cream over dark chocolate and stirring until melted. Poured over the cake while warm, it sets to a mirror-like finish."
+    },
+    {
+      "slug": "creaming-butter-sugar",
+      "term": "Creaming",
+      "definition": "Beating butter and sugar together until pale, light, and fluffy. This incorporates air into the cake batter and gives a lighter texture."
+    }
+  ],
+  "techniqueSlugs": ["cake-making"],
+  "criticalTechniques": ["cake-making"],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The Sachertorte sponge is denser than a typical chocolate cake, built by " },
+          {
+            "type": "text",
+            "text": "creaming",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "creaming-butter-sugar" } }]
+          },
+          { "type": "text", "text": " butter with melted dark chocolate and sugar, then finishing with a smooth " },
+          {
+            "type": "text",
+            "text": "ganache glaze",
+            "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ganache-glaze" } }]
+          },
+          { "type": "text", "text": " that sets to a glossy coat. Serves 12." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Warm the apricot jam and press it through a sieve before spreading. This gives the cleanest, most elegant finish under the glaze." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 12,
+          "items": [
+            { "ingredientSlug": "dark-chocolate", "amount": 150, "unit": "g", "prepNote": "70%, chopped and melted", "isOptional": false, "groupLabel": "sponge" },
+            { "ingredientSlug": "unsalted-butter", "amount": 150, "unit": "g", "prepNote": "softened", "isOptional": false, "groupLabel": "sponge" },
+            { "ingredientSlug": "caster-sugar", "amount": 120, "unit": "g", "prepNote": "divided", "isOptional": false, "groupLabel": "sponge" },
+            { "ingredientSlug": "egg-yolks", "amount": 6, "unit": "whole", "prepNote": null, "isOptional": false, "groupLabel": "sponge" },
+            { "ingredientSlug": "eggs", "amount": 6, "unit": "whites only", "prepNote": null, "isOptional": false, "groupLabel": "sponge" },
+            { "ingredientSlug": "plain-flour", "amount": 150, "unit": "g", "prepNote": "sifted", "isOptional": false, "groupLabel": "sponge" },
+            { "ingredientSlug": "apricot-jam", "amount": 200, "unit": "g", "prepNote": "warmed and sieved", "isOptional": false, "groupLabel": "filling" },
+            { "ingredientSlug": "dark-chocolate", "amount": 200, "unit": "g", "prepNote": "70%, chopped", "isOptional": false, "groupLabel": "ganache glaze" },
+            { "ingredientSlug": "double-cream", "amount": 150, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "ganache glaze" },
+            { "ingredientSlug": "caster-sugar", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "ganache glaze" },
+            { "ingredientSlug": "water", "amount": 60, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "ganache glaze" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Preheat the oven to 170C fan. Grease and line a 23cm round springform tin. Beat the softened butter with 80g of the sugar until pale and fluffy. Beat in the egg yolks one at a time. Stir in the melted cooled chocolate." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "In a clean bowl, whisk the egg whites until they hold soft peaks. Add the remaining 40g sugar and whisk to stiff, glossy peaks. Fold the flour into the chocolate mixture alternating with the egg whites in three additions." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Pour into the prepared tin and bake for 50 to 55 minutes until a skewer inserted in the centre comes out clean. Cool in the tin for 15 minutes then turn out and cool completely on a wire rack." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Split the cold cake into two horizontal layers. Brush the cut surfaces with warmed, sieved apricot jam. Sandwich together and brush the outside and top of the whole cake with the remaining jam. Allow to set for 30 minutes." }]
+            }]
+          },
+          {
+            "type": "listItem",
+            "content": [{
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "Make the ganache glaze: combine the sugar and water in a small saucepan and bring to a boil for 2 minutes. Pour over the chopped chocolate and cream in a bowl. Stir until completely smooth. Allow to cool to a thick, pourable consistency. Pour over the cake set on a wire rack over a tray, letting it run down the sides. Refrigerate for at least 2 hours before serving with plain whipped cream." }]
+            }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "problem": "Glaze sets before fully covering the cake" },
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Work quickly once the glaze reaches a pourable consistency. You can re-warm it very gently over a bain-marie if it sets in the bowl, but do not overheat." }] }]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "problem": "Cake has a large crack on top" },
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "This is common with dense chocolate cakes. The glaze will cover it. Make sure the oven is not too hot and that you use the fan setting if available." }] }]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": { "problem": "Glaze is dull and not glossy" },
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "It cooled too much before you poured it. The glaze should be shiny and pourable. Pour it before it thickens to the point of dragging. Let the finished cake set at room temperature, not in the fridge, for the most mirror-like result." }] }]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Sachertorte is one of the most famous cakes in the world and is the signature cake of Vienna. It was created in 1832 and has been made continuously since then. The Hotel Sacher and the Demel bakery fought a legal battle for decades over which version is authentic. Both are still made and sold today in Vienna alongside cups of Viennese coffee." }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,369 @@
+{
+  "slug": "galbijjim",
+  "title": "Galbijjim",
+  "subtitle": "Braised beef short ribs with vegetables",
+  "excerpt": "Galbijjim is a slow-braised Korean dish of beef short ribs cooked with Korean radish, carrots, and shiitake mushrooms in a rich soy and mirin sauce. The meat becomes fall-off-the-bone tender over 90 minutes. It serves 4 and is a centrepiece dish for celebrations and family gatherings.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Galbijjim has a long history in Korean royal court cuisine, where it was prepared as a special-occasion dish using the finest cuts of beef. The technique of slow-braising galbi in a sweetened soy sauce base evolved over centuries and the dish remains a standard at Korean festive meals including Chuseok and Lunar New Year.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze in the braising liquid for up to 2 months. Defrost overnight in the fridge and reheat gently, adding a splash of water if the sauce has thickened too much.",
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Galbijjim tastes even better the next day. Cook fully, cool, refrigerate overnight, and skim any fat from the surface before reheating.",
+    "dietaryFlags": [
+      "DAIRY_FREE"
+    ],
+    "cuisine": "korean",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "galbi",
+      "term": "Galbi",
+      "definition": "Galbi is the Korean word for ribs, typically beef short ribs cut across the bone into thick segments. The meat sits on and between the rib bones, and the cut has a good balance of meat and fat that makes it suited to slow cooking. Galbi is also the basis of the grilled dish galbi-gui, where the ribs are marinated and cooked over charcoal."
+    },
+    {
+      "slug": "jjim",
+      "term": "Jjim",
+      "definition": "Jjim is a Korean cooking method that involves steaming or braising food in a covered pot with a seasoned liquid. The dish name typically ends in jjim to signal this technique. The long, moist cooking time renders tough cuts tender while the braising liquid reduces to a concentrated, flavourful sauce."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This recipe serves 4 and requires about 110 minutes in total, with 90 minutes of hands-off "
+          },
+          {
+            "type": "text",
+            "text": "jjim",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "jjim"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " time in the pot. Galbijjim is a slow-braised dish built around "
+          },
+          {
+            "type": "text",
+            "text": "galbi",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "galbi"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", beef short ribs, cooked until the meat is completely tender and falling from the bone. The sauce is sweet, savoury, and deeply fragrant from garlic and ginger."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Soaking the ribs in cold water for 30 minutes before cooking draws out blood and impurities. This step is important for the clarity and cleanliness of the final sauce. Blanching the ribs briefly in boiling water before braising serves the same purpose and is equally effective. Do not skip one or the other. Adding the radish and carrots halfway through cooking ensures they stay intact rather than dissolving into the sauce."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-short-ribs",
+              "amount": 1200,
+              "unit": "g",
+              "prepNote": "cut into 5cm pieces, soaked in cold water for 30 minutes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "pinch",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "radish-korean",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "peeled and cut into large chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mushrooms-shiitake",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "fresh or rehydrated, stems removed, halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 5,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "to finish",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 6,
+              "unit": "cloves",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 3,
+              "unit": "pinch",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Drain the soaked ribs and place in a large pot. Cover with cold water, bring to the boil, and blanch for 5 minutes. Drain and rinse the ribs under cold water. Clean the pot."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Return the ribs to the clean pot. Add the soy sauce, sugar, mirin, garlic, ginger, and 600ml water. Stir to combine."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to the boil, then reduce the heat to low. Cover and simmer for 45 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the carrots, radish, and mushrooms. Cover again and cook for a further 35 to 40 minutes until the ribs are tender and pulling away from the bone."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the lid and increase the heat to medium. Cook for 5 to 10 minutes, stirring gently, until the sauce reduces to a glossy coating."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the sesame oil and scatter over the spring onions. Serve immediately with steamed rice."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The meat is still tough after the full cooking time",
+              "cause": "Short ribs vary considerably in size and the cut may need longer",
+              "fix": "Cover and continue to cook on low heat for another 20 to 30 minutes. The meat is done when a fork slides in and pulls the flesh easily from the bone"
+            },
+            {
+              "symptom": "The sauce is too thin at the end",
+              "cause": "Too much water was added or the lid was not venting enough steam",
+              "fix": "Remove the lid, increase the heat to medium-high, and reduce for 10 minutes, turning the ribs carefully to coat them in the thickening sauce"
+            },
+            {
+              "symptom": "The radish is too soft and falling apart",
+              "cause": "It was added too early in the cooking process",
+              "fix": "Cut the radish into larger pieces next time and add it no more than 40 minutes before the end of cooking"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Galbijjim is a celebration dish in Korea. It appears at weddings, at Chuseok and Lunar New Year family tables, and at birthday meals. The time and cost involved signal that it is special. In Korean royal court cooking it was one of the prestige dishes prepared for the king. At home today it is made on weekends when there is time to let the pot do its slow work. It also makes excellent leftovers and arguably tastes better reheated the following day, once the sauce has settled into the meat."
+          }
+        ]
+      }
+    ]
+  }
+}

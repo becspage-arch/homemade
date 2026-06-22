@@ -1,0 +1,433 @@
+{
+  "slug": "thai-boat-noodles",
+  "title": "Thai Boat Noodles",
+  "subtitle": "rich dark beef and pork noodle soup",
+  "excerpt": "An intensely flavoured dark Thai noodle broth with beef and pork, served over flat rice noodles. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Thai boat noodles originated on the floating market boats of central Thailand, particularly in Ayutthaya.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the broth without noodles for up to 2 months.",
+    "batchable": true,
+    "batchNotes": "Double the broth and freeze half.",
+    "makeAheadNotes": "Make the broth a day ahead. Reheat and add fresh noodles and meat just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "thai",
+    "mealType": "lunch",
+    "mood": [
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "soy-sauce-dark",
+      "term": "Dark soy sauce",
+      "definition": "Thick, sweet soy sauce that gives the broth its dark colour and caramel depth."
+    },
+    {
+      "slug": "fish-sauce",
+      "term": "Fish sauce",
+      "definition": "Fermented fish liquid. A key seasoning in the boat noodle broth."
+    },
+    {
+      "slug": "rice-noodles-flat",
+      "term": "Flat rice noodles",
+      "definition": "Wide rice flour noodles. They absorb the dark broth and are the standard noodle in boat noodles."
+    },
+    {
+      "slug": "shrimp-paste",
+      "term": "Shrimp paste",
+      "definition": "Fermented shrimp paste added to the broth for depth and complexity."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thai boat noodles serves 4 and takes about 65 minutes. The broth is rich and dark, built from beef and pork with "
+          },
+          {
+            "type": "text",
+            "text": "dark soy sauce",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "soy-sauce-dark"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", "
+          },
+          {
+            "type": "text",
+            "text": "fish sauce",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "fish-sauce"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", and a small amount of "
+          },
+          {
+            "type": "text",
+            "text": "shrimp paste",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "shrimp-paste"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". "
+          },
+          {
+            "type": "text",
+            "text": "Flat rice noodles",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "rice-noodles-flat"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " are cooked separately and the broth is ladled over at the table."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The broth deepens greatly if made a day ahead and refrigerated overnight. Skim the fat that solidifies on the surface before reheating."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-sirloin",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "sliced into strips",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "noodles-rice",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "soaked or fresh",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 5,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallots",
+              "amount": 3,
+              "unit": null,
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 4,
+              "unit": "slices",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-dark",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "palm-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bean-sprouts",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 3,
+              "unit": null,
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring 1.5 litres of water to the boil in a large pot. Add the garlic, shallots, and ginger. Simmer for 10 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the pork belly strips to the broth. Simmer for 20 minutes until tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add {{soy-sauce-dark}}, {{soy-sauce-light}}, {{fish-sauce}}, {{shrimp-paste}}, and {{palm-sugar}}. Stir and simmer for 10 more minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a steady simmer. Add the beef slices. Cook for 3 to 4 minutes until just cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the flat rice noodles separately in boiling water per packet instructions. Drain and divide between bowls."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ladle the hot broth with beef and pork over the noodles. Top with beansprouts, spring onions, and coriander. Serve immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Broth is too thin and pale",
+              "cause": "Not enough dark soy sauce or simmering time was too short",
+              "fix": "Add another tablespoon of dark soy and simmer for 10 more minutes uncovered to concentrate."
+            },
+            {
+              "symptom": "Beef is tough",
+              "cause": "Sliced too thick or overcooked",
+              "fix": "Slice to 2 mm. Cook only until the pink disappears and remove immediately."
+            },
+            {
+              "symptom": "Shrimp paste flavour is too strong",
+              "cause": "Added too much",
+              "fix": "Use no more than 1 teaspoon. Add palm sugar to soften the intensity."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thai boat noodles come from the floating markets and canal-side stalls of central Thailand. They were originally sold from small boats where the cook worked over a single burner. The bowls were small and cheap, so diners ordered several rounds. The broth is famously dark and intense. Shrimp paste is one of the traditional ingredients, though modern versions often reduce or omit it for a cleaner flavour. The dish is now found at specialist noodle shops in Bangkok, particularly in the Ayutthaya area where it originated."
+          }
+        ]
+      }
+    ]
+  }
+}

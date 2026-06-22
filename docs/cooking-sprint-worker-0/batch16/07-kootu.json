@@ -1,0 +1,415 @@
+{
+  "slug": "kootu",
+  "title": "Kootu",
+  "subtitle": "tamil mixed vegetable and lentil dish with coconut",
+  "excerpt": "A thick, dry-ish Tamil dish combining cooked vegetables and dal with a freshly ground coconut and cumin paste. Somewhere between a curry and a stew. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A staple of Tamil Brahmin cooking, where coconut is used as a binding agent rather than a flavouring. Made across Tamil Nadu with varying vegetables.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 30,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": true,
+    "batchNotes": "Makes a good quantity for two meals. Store up to two days in the fridge.",
+    "makeAheadNotes": "Cook the dal and vegetables separately ahead of time. Grind the coconut paste fresh just before combining.",
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ],
+    "cuisine": "indian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "kootu",
+      "term": "Kootu",
+      "definition": "A Tamil dish combining cooked vegetables with dal, bound with a ground coconut and spice paste. Thicker than a curry and drier than a stew."
+    },
+    {
+      "slug": "coconut-paste",
+      "term": "Coconut Paste",
+      "definition": "A freshly ground mixture of coconut, cumin, and peppercorns used to thicken and flavour South Indian vegetable dishes."
+    },
+    {
+      "slug": "urad-dal",
+      "term": "Urad Dal",
+      "definition": "Black gram split and hulled, producing small white lentils. Used in tempering across South Indian cooking for a nutty, slightly bitter flavour."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Kootu"
+          },
+          {
+            "type": "text",
+            "text": " ",
+            "marks": []
+          },
+          {
+            "type": "text",
+            "text": "kootu",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "kootu"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is bound together by a freshly ground "
+          },
+          {
+            "type": "text",
+            "text": "coconut paste",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "coconut-paste"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " stirred in at the end, and finished with a tadka using "
+          },
+          {
+            "type": "text",
+            "text": "urad dal",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "urad-dal"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " for nuttiness. Any firm vegetable works here: green beans, cabbage, raw plantain, or yam are all traditional choices."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The final consistency should be thick and cohesive, not runny. If using watery vegetables like courgette, cook them down well before adding the coconut paste."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "items": [
+            {
+              "ingredientSlug": "green-beans",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "trimmed and cut into 2cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "yellow-split-peas",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "rinsed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coconut-cream",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "or 50g desiccated coconut for grinding",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-seeds",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": "1 tsp for paste, 0.5 tsp for tadka",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "peppercorns-black",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "for the paste",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "curry-leaves",
+              "amount": 15,
+              "unit": "leaves",
+              "prepNote": "fresh",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mustard-seeds",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dried-chilli",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "asafoetida",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ],
+          "defaultServings": 4
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook yellow split peas in 400ml water with turmeric until very soft, about 20 minutes. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Boil or steam green beans until just tender, about 5 minutes. Drain."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Grind coconut cream (or desiccated coconut with a little water), 1 tsp cumin seeds, and black peppercorns to a coarse paste in a blender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine cooked split peas and green beans in a wide pan over medium heat. Add salt and the coconut paste."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir and cook for 5 minutes until the mixture thickens. Remove from heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oil in a small pan. Add mustard seeds and wait for them to pop. Add 0.5 tsp cumin, dried chilli, curry leaves, and asafoetida. Fry 30 seconds."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the oil and spices over the kootu. Stir through and serve with rice."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Kootu is too thin and watery",
+              "cause": "Dal not cooked down enough or too much water used",
+              "fix": "Cook the dal until it is almost dry. The mixture should hold its shape when scooped."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Coconut paste tastes raw and gritty",
+              "cause": "Paste was not cooked through",
+              "fix": "Stir the paste into the hot vegetable and dal mixture and cook for at least 5 minutes to mellow it."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Kootu is part of the Tamil Brahmin tradition, where meals are built around rice and a series of vegetable preparations. Each dish serves a different role at the table."
+          }
+        ]
+      }
+    ]
+  }
+}

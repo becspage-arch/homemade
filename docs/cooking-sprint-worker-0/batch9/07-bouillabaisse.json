@@ -1,0 +1,389 @@
+{
+  "slug": "bouillabaisse",
+  "title": "Bouillabaisse",
+  "subtitle": "Marseille fish stew with saffron broth and rouille toast",
+  "excerpt": "The grand fish stew of Marseille. A saffron and fennel broth built in stages, finished with rouille on crusty toast.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Traditional dish of Marseille, southern France, with strict regional definitions.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The broth base can be made a day ahead. Add fish only when ready to serve.",
+    "dietaryFlags": [
+      "gluten-free"
+    ],
+    "cuisine": "french",
+    "mealType": "dinner",
+    "mood": [
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "blender",
+      "isOptional": false
+    },
+    {
+      "slug": "sieve",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [
+    "making-fish-stock",
+    "building-broth"
+  ],
+  "criticalTechniques": [
+    "building-broth"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This serves 4 and takes about 1 hour 30 minutes from start to table. The thing to watch is the order you add the fish: firm-fleshed fish goes in first, shellfish last, so nothing overcooks in the fragrant broth."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bloom the saffron in warm water for at least 10 minutes before using. This releases the colour and flavour far more effectively than adding it directly to the pot."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "cod-fillet",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "cut into large chunks",
+              "isOptional": false,
+              "groupLabel": "Seafood"
+            },
+            {
+              "ingredientSlug": "mussels",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "scrubbed and debearded",
+              "isOptional": false,
+              "groupLabel": "Seafood"
+            },
+            {
+              "ingredientSlug": "prawns-raw",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "shell on",
+              "isOptional": false,
+              "groupLabel": "Seafood"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "large",
+              "prepNote": "diced",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "fennel",
+              "amount": 1,
+              "unit": "bulb",
+              "prepNote": "sliced, fronds reserved",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 4,
+              "unit": "large",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": "steeped in 3 tbsp warm water",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "stock-fish",
+              "amount": 1200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "white-wine-dry",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "thyme-fresh",
+              "amount": 3,
+              "unit": "sprigs",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": null,
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "chilli-flakes",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "baguette",
+              "amount": 8,
+              "unit": "slices",
+              "prepNote": "toasted",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Steep the saffron in 3 tablespoons of warm water and set aside for 10 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat olive oil in a large pot over medium heat. Cook the onion and fennel for 8 minutes until soft."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add garlic and cook 2 minutes. Add tomatoes, thyme, bay, and chilli flakes if using. Cook 10 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the wine and let it bubble for 2 minutes. Add the stock and saffron with its soaking water. Bring to a simmer and cook for 20 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season the broth well. Add the cod and simmer gently for 4 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the mussels and prawns. Cover and cook 3-4 minutes until mussels have opened and prawns are pink. Discard any mussels that remain closed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ladle into deep bowls. Serve with toasted baguette slices and rouille on the side."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Fish is overcooked and falling apart",
+              "cause": "Added too early or broth was boiling rather than simmering",
+              "fix": "Reduce to a gentle simmer before adding fish, and check after 3 minutes"
+            },
+            {
+              "symptom": "Broth is pale and lacks colour",
+              "cause": "Saffron not steeped long enough or too little used",
+              "fix": "Steep saffron for a full 10 minutes and use a generous pinch"
+            },
+            {
+              "symptom": "Some mussels did not open",
+              "cause": "They were dead before cooking",
+              "fix": "Discard any that remain shut after 5 minutes of cooking - they are not safe to eat"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bouillabaisse is the signature dish of Marseille. It started as a fisherman's stew using unsold catch. The rouille and croutons are served on the side, not stirred in. Families in Marseille argue over the correct fish. Saffron is not optional."
+          }
+        ]
+      }
+    ]
+  }
+}

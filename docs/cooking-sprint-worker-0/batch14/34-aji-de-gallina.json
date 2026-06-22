@@ -1,0 +1,383 @@
+{
+  "slug": "aji-de-gallina",
+  "title": "Aji de Gallina",
+  "subtitle": "peruvian creamy spiced chicken",
+  "excerpt": "Shredded chicken in a golden, walnut-thickened cream sauce spiced with yellow chilli and turmeric. One of Peru's most comforting dishes, served over rice with olives and boiled egg.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Aji de Gallina has Spanish colonial roots but was transformed by Peruvian ingredients, particularly aji amarillo chilli. The walnut-cream sauce is the signature element.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the sauce and chicken together for up to two months. Reheat gently and add a splash of stock if it thickens too much.",
+    "batchable": true,
+    "batchNotes": "Doubles well. Use a larger saucepan.",
+    "makeAheadNotes": "Make the sauce a day ahead. Poach and shred the chicken on the day.",
+    "dietaryFlags": [],
+    "cuisine": "peruvian",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "entertaining"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "blender",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "aji-amarillo",
+      "term": "Aji Amarillo",
+      "definition": "Peru's most widely used chilli pepper, fruity and moderately hot, central to many national dishes."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Aji de Gallina owes its colour and warmth to "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "aji-amarillo"
+                }
+              }
+            ],
+            "text": "Aji Amarillo "
+          },
+          {
+            "type": "text",
+            "text": ", Peru's bright yellow-orange chilli. Here, red chilli and turmeric stand in for it, giving the same golden hue and gentle heat. The sauce is thickened with ground walnuts and cream, which gives it a distinctive richness."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Poach the chicken in stock and shred it by hand for the best texture. The poaching liquid becomes your sauce base, so do not discard it."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-breast",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Poaching"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "large",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "pepper-yellow",
+              "amount": 1,
+              "unit": "large",
+              "prepNote": "roasted and peeled, or use chilli-red",
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "deseeded",
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "walnuts",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "blitzed to a rough powder",
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sauce"
+            },
+            {
+              "ingredientSlug": "long-grain-rice",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "cooked, to serve",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the chicken breasts in a saucepan with the stock. Bring to a gentle simmer and cook for 15 minutes until cooked through. Remove the chicken and reserve the poaching stock. When cool enough to handle, shred the chicken by hand into medium strips."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blend the pepper, chilli and half the reserved stock together until smooth. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a large saucepan over medium heat. Add the onion and cook for 8 minutes until soft. Add the garlic, cumin and turmeric and stir for 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the flour and stir for 1 minute. Pour in the blended pepper mixture and the remaining stock. Stir constantly to avoid lumps. Bring to a gentle simmer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the ground walnuts and cream. Stir well. Add the shredded chicken and simmer for 10 minutes until the sauce is thick and coats the chicken generously. Serve over rice."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Sauce has lumps from the flour"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour the sauce through a sieve and return to the pan. Add the liquid gradually next time while stirring constantly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Sauce is too thick"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add more of the poaching stock a little at a time until the sauce has the consistency of thick gravy."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "issue": "Walnuts make the sauce gritty"
+            },
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blitz the walnuts to a much finer powder, almost a paste. Add them with the cream and simmer for longer. The texture will smooth out as they cook into the sauce."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Aji de Gallina is Sunday lunch in Lima. It is the dish Peruvians crave when they are away from home. The name means chilli hen and it dates to colonial times. The Spanish brought cream-based cooking; Peru added the aji amarillo and the walnut. The result is unlike anything else in South American cooking. It is served at birthday parties, family gatherings, and neighbourhood restaurants across the country."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,401 @@
+{
+  "slug": "ramen-tonkotsu",
+  "title": "Tonkotsu Ramen",
+  "subtitle": "rich pork bone ramen broth, home method",
+  "excerpt": "This home method for tonkotsu ramen produces a rich, milky pork broth by simmering pork belly hard for several hours. Served with noodles, soft-boiled egg and spring onion. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Tonkotsu ramen originated in Fukuoka, Kyushu in the late 1930s. The milky, opaque broth comes from a hard, rolling boil that emulsifies the collagen and fat from pork bones. Fukuoka is still considered the home of authentic tonkotsu.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 240,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the broth for up to 3 months. Toppings and noodles are always fresh.",
+    "batchable": true,
+    "batchNotes": "Doubling the broth is worthwhile. Divide into portions and freeze. The effort is the same.",
+    "makeAheadNotes": "The broth improves made a day ahead. Chill, skim fat, then reheat before serving.",
+    "dietaryFlags": [],
+    "cuisine": "japanese",
+    "mealType": "dinner",
+    "mood": [
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "colander",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "tonkotsu",
+      "term": "Tonkotsu",
+      "definition": "A style of ramen broth made by boiling pork bones at a hard rolling boil for many hours. The vigorous boil emulsifies the fat and collagen to create a thick, milky white soup."
+    },
+    {
+      "slug": "tare",
+      "term": "Tare",
+      "definition": "A concentrated seasoning sauce added to ramen broth at the point of serving. It provides the salt and depth that the mild tonkotsu broth needs."
+    },
+    {
+      "slug": "chashu",
+      "term": "Chashu",
+      "definition": "Braised pork belly rolled and tied, then sliced to top ramen bowls. The same pork belly cooked in the broth can be sliced as chashu."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Authentic "
+          },
+          {
+            "type": "text",
+            "text": "tonkotsu",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tonkotsu"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " broth requires a full rolling boil for at least 3 hours. This home version uses pork belly instead of bones to get a rich, gelatinous broth that is achievable without specialist ingredients. The "
+          },
+          {
+            "type": "text",
+            "text": "tare",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tare"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " is added separately to each bowl so everyone can season to taste. Serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "The pork belly that simmered in the broth becomes "
+          },
+          {
+            "type": "text",
+            "text": "chashu ",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "chashu"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ": slice it and lay it on top of each bowl. Nothing is wasted."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "in one piece",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 6,
+              "unit": "cloves",
+              "prepNote": "lightly crushed",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 4,
+              "unit": null,
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 2000,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Broth"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tare"
+            },
+            {
+              "ingredientSlug": "mirin",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tare"
+            },
+            {
+              "ingredientSlug": "sake",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tare"
+            },
+            {
+              "ingredientSlug": "sesame-oil",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tare"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 4,
+              "unit": null,
+              "prepNote": "soft-boiled 7 minutes, peeled",
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 3,
+              "unit": null,
+              "prepNote": "sliced, to garnish",
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "sesame-seeds",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "nori",
+              "amount": 4,
+              "unit": "sheets",
+              "prepNote": "halved, to serve",
+              "isOptional": true,
+              "groupLabel": "Toppings"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the pork belly in a stockpot with the garlic, ginger and spring onion. Cover with the water. Bring to a hard rolling boil over high heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Maintain a hard boil, not just a simmer, for 3 hours. Top up with boiling water as needed to keep the pork submerged. The broth should look milky and white after about 1 hour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the pork belly and set aside. Strain the broth through a colander into a clean pot, discarding the solids. You should have about 1.2 litres."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the tare ingredients together. Taste and adjust. Cook ramen or egg noodles according to the packet. Slice the cooked pork belly into 1cm rounds. Halve the soft-boiled eggs."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon 1 to 2 tbsp tare into each bowl. Ladle in the hot broth. Add the noodles, pork slices and egg. Top with spring onion, sesame seeds and nori if using. Serve immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth is clear not milky",
+              "cause": "The boil was too gentle. Only a hard rolling boil emulsifies the fat.",
+              "fix": "Keep the heat on high for the full 3 hours. A simmer will never produce the characteristic milky tonkotsu broth."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth tastes bland",
+              "cause": "Tare was under-seasoned or not enough was added to the bowl",
+              "fix": "Add tare 1 tbsp at a time and taste. The broth itself is mild; the tare is where the salt and depth come from."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Pork is dry and stringy after 3 hours",
+              "cause": "Pork belly was too lean or the water level dropped and the pork was exposed",
+              "fix": "Use a fatty piece of pork belly. Keep the pork fully submerged throughout the cooking time."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tonkotsu ramen comes from Fukuoka in southern Japan. The city is famous for its tiny ramen counters where bowls are served fast and refills of noodles are expected. Home cooks rarely make it because of the time involved, but it is very achievable over a weekend. The leftover broth freezes perfectly. You do the hard work once and eat ramen for weeks."
+          }
+        ]
+      }
+    ]
+  }
+}

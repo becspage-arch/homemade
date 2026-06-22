@@ -1,0 +1,352 @@
+{
+  "slug": "pad-pak-boong",
+  "title": "Pad Pak Boong",
+  "subtitle": "morning glory stir-fried with garlic, chilli, and oyster sauce",
+  "excerpt": "A fast, high-heat Thai vegetable stir-fry with garlic and oyster sauce. Ready in 8 minutes. Serves two.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "One of Thailand's most popular street food side dishes, traditionally made with morning glory (water spinach).",
+  "recipe": {
+    "servings": 2,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 5,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "thai",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "wok",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "oyster-sauce",
+      "term": "Oyster sauce",
+      "definition": "A thick, sweet-savoury sauce made from oyster extract. It is the primary flavouring in this dish."
+    },
+    {
+      "slug": "garlic",
+      "term": "Garlic",
+      "definition": "Finely chopped garlic goes in first to infuse the hot oil before the greens are added."
+    },
+    {
+      "slug": "beansprouts",
+      "term": "Beansprouts",
+      "definition": "Crunchy sprouted mung beans. Used here in place of morning glory, which is a water spinach not widely available outside Southeast Asia."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pad pak boong serves 2 and takes about 10 minutes. Morning glory, also called water spinach, is the traditional vegetable but is not widely available outside Southeast Asia. This recipe uses "
+          },
+          {
+            "type": "text",
+            "text": "beansprouts",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "beansprouts"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " as a substitute with similar crunch. The dish is seasoned with "
+          },
+          {
+            "type": "text",
+            "text": "oyster sauce",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "oyster-sauce"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "text": "garlic",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "garlic"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". Speed and heat are the whole technique."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This dish cooks in under 3 minutes once the wok is hot. Have the sauce mixed and everything within arm's reach before you start. Delayed seasoning leads to overcooked, soggy greens."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 2,
+          "items": [
+            {
+              "ingredientSlug": "bean-sprouts",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 5,
+              "unit": "cloves",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 2,
+              "unit": null,
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "oyster-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the {{oyster-sauce}}, {{soy-sauce-light}}, and {{caster-sugar}} in a small bowl."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a wok over the highest heat until smoking."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the garlic and chilli. Stir for 20 seconds until golden and fragrant."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the beansprouts. Toss vigorously for 1 to 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the sauce. Toss for a further 30 seconds. The beansprouts should be tender but still have crunch."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve immediately. This dish waits for no one."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Beansprouts are limp and watery",
+              "cause": "Wok not hot enough or overcooked",
+              "fix": "The whole dish should take no more than 3 minutes once the wok is up to heat. Move fast."
+            },
+            {
+              "symptom": "Garlic is burnt",
+              "cause": "Garlic went in before the oil was fully hot, then overcooked",
+              "fix": "Add garlic only when the oil is smoking. Move it constantly and add the greens within 30 seconds."
+            },
+            {
+              "symptom": "Dish is too salty",
+              "cause": "Too much oyster sauce relative to the vegetable quantity",
+              "fix": "Add a pinch of sugar and serve with more rice to balance."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pad pak boong is one of Thailand's most famous street food side dishes. The original vegetable, morning glory or water spinach, grows in wetlands across Southeast Asia and is used in dishes from Thailand to Vietnam and Indonesia. Thai cooks stir-fry it in a screaming-hot wok, sometimes tossing it high in the air for the benefit of watching diners. The dish is quick, cheap, and deeply flavoured. Oyster sauce and garlic are the only seasoning it needs."
+          }
+        ]
+      }
+    ]
+  }
+}

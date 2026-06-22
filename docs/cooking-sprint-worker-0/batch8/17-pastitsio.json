@@ -1,0 +1,369 @@
+{
+  "slug": "pastitsio",
+  "title": "Pastitsio",
+  "subtitle": null,
+  "excerpt": null,
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": null,
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 55,
+    "restingMinutes": null,
+    "chillingMinutes": null,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "greek",
+    "mealType": "dinner",
+    "mood": [],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "rectangular-baking-tin",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pastitsio-term",
+      "term": "Pastitsio",
+      "definition": "A Greek baked pasta dish with spiced meat sauce and a thick bechamel topping, similar to lasagne."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This pastitsio serves 6 and takes 30 minutes of preparation plus 55 minutes in the oven. A spiced beef and tomato layer sits beneath a thick, set bechamel that forms a golden crust on top. This version uses bulgur wheat as the grain base in place of traditional tube pasta."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the meat sauce first and let it cool slightly before assembling. A hot meat sauce can cause the bechamel to slip when you pour it over. The assembled dish can be refrigerated unbaked for up to a day, which makes it a good choice when you need to prepare ahead."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {
+              "ingredientSlug": "bulgur-wheat",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "cooked according to packet, used in place of pasta",
+              "isOptional": false,
+              "groupLabel": "Grain base"
+            },
+            {
+              "ingredientSlug": "beef-mince",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Meat sauce"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": null,
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "Meat sauce"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": "Meat sauce"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "1 tin",
+              "isOptional": false,
+              "groupLabel": "Meat sauce"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Meat sauce"
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Meat sauce"
+            },
+            {
+              "ingredientSlug": "oregano-dried",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Meat sauce"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Bechamel"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Bechamel"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 750,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Bechamel"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": null,
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": "Bechamel"
+            },
+            {
+              "ingredientSlug": "parmesan",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "Bechamel"
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": null,
+              "unit": "pinch",
+              "prepNote": "to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oven to 180C. Cook the bulgur wheat according to the packet instructions, then drain if needed and set aside. Cook the bulgur with a pinch of salt for best flavour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the meat sauce. Warm a little oil in the large saucepan over a medium-high heat. Fry the onion for 5 minutes until soft, then add the garlic and cook for 1 minute. Add the beef mince and break it up, cooking until browned all over."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the tomato puree, tinned tomatoes, cinnamon and oregano. Season well. Simmer for 20 minutes until the sauce is thick and concentrated. Remove from the heat and allow to cool slightly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the bechamel. Melt the butter in the medium saucepan over a medium heat. Add the flour and stir constantly for 2 minutes. Gradually pour in the milk, whisking out any lumps as you go. Cook, stirring, for 8 to 10 minutes until the sauce is thick and smooth. Remove from the heat, let it cool for 2 minutes, then stir in the beaten eggs and most of the parmesan. Season."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spread the cooked bulgur wheat in an even layer across the base of the rectangular baking tin. Spoon the meat sauce evenly on top, then pour the bechamel over to cover completely. Scatter the remaining parmesan on top."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 45 to 55 minutes until the top is golden and set. A small amount of wobble in the very centre is fine; it will firm up as it rests. Leave to stand for 15 minutes before cutting into portions and serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "problem": "The bechamel has lumps",
+              "solution": "Add the milk slowly and whisk constantly. If lumps do form, pass the sauce through a sieve before adding the eggs."
+            },
+            {
+              "problem": "The top is browning before the centre is set",
+              "solution": "Cover loosely with foil after 30 minutes and continue baking until firm."
+            },
+            {
+              "problem": "The portions fall apart when serving",
+              "solution": "The dish needs the full 15-minute rest after coming out of the oven. Cutting too early means the layers have not had time to set."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": ""
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pastitsio-term"
+                }
+              }
+            ],
+            "text": "Pastitsio"
+          },
+          {
+            "type": "text",
+            "text": " is Sunday lunch food across Greece, the kind of dish that families make in large quantities and eat across several days. The cinnamon in the meat sauce is the hallmark of Greek spiced mince and separates it clearly from Italian-style ragus. It reheats well in a moderate oven covered with foil. Leftovers are arguably better the day after baking once the layers have fully set."
+          }
+        ]
+      }
+    ]
+  }
+}

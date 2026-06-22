@@ -1,0 +1,274 @@
+{
+  "slug": "polenta-taragna",
+  "title": "Polenta Taragna",
+  "subtitle": "Lombard buckwheat polenta with butter and Bitto cheese",
+  "excerpt": "Polenta taragna is a speciality of the Valtellina and Bergamasque Alps in Lombardy: polenta made from a mix of corn and buckwheat flour, finished with alpine cheese and butter. It has a darker colour and nuttier flavour than regular polenta. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": "WINTER",
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Polenta taragna (from tarel, the traditional wooden paddle used to stir polenta in Lombard dialect) is a speciality of the mountainous Bergamo and Valtellina provinces of Lombardy, where buckwheat (grano saraceno) has been cultivated since its introduction from Central Asia via trade routes in the 15th century. Buckwheat, unsuited to flat agricultural land, thrived in the mountain valleys of the Alps and became a staple crop. Polenta taragna blends corn polenta with buckwheat flour in varying proportions (typically 70:30), producing a darker, earthier, slightly bitter result. It is enriched with local cheeses: Bitto DOP or Casera DOP from Valtellina are traditional, but any good melting alpine cheese works. Fernanda Gosetti, La cucina regionale italiana (1967, Mondadori), documents polenta taragna as a defining Bergamasque dish.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 5,
+    "cookMinutes": 50,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "italian",
+    "mealType": "dinner",
+    "mood": [
+      "comfort-food",
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "whisk",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "buckwheat-flour",
+      "term": "Buckwheat flour (farina di grano saraceno)",
+      "definition": "Ground from buckwheat grain, which is not a grass but a relative of sorrel and dock. Despite the name, buckwheat contains no wheat and is gluten-free. It has a strong earthy, slightly bitter flavour that contrasts with the milder corn polenta it is blended with in polenta taragna."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Polenta taragna is darker, earthier, and more substantial than regular yellow polenta. The "
+          },
+          {
+            "type": "text",
+            "text": "buckwheat",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "buckwheat-flour"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " in the blend gives a slightly bitter, nutty background that makes the alpine cheese and butter taste even richer by contrast. It is classic mountain food: simple ingredients, straightforward technique, deeply satisfying."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pre-mixed polenta taragna (the corn and buckwheat blend) is sold at Italian delis and online. To make your own, blend coarse polenta with buckwheat flour in a 70:30 ratio. Traditional polenta taragna takes 40 to 50 minutes to cook; instant versions exist but the texture is not as good."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "polenta-taragna",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "pre-mixed buckwheat and corn polenta; or 175g coarse polenta + 75g buckwheat flour",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 1200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "cold, cubed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "fontina",
+              "amount": 120,
+              "unit": "g",
+              "prepNote": "or Bitto, Casera, or Gruyère, rind removed, diced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring {{water}} of water to the boil in a large heavy saucepan. Add {{salt-table}} of salt. Whisk in {{polenta-taragna}} of polenta taragna in a thin stream, whisking constantly. Reduce heat to its lowest setting."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook for 40 to 50 minutes, stirring every few minutes with a long wooden spoon. The polenta should be very thick, pulling away from the sides of the pan. Taste: it should be cooked through with no graininess."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove from the heat. Stir in {{unsalted-butter}} of cold butter piece by piece until melted. Add {{fontina}} of diced cheese in batches, stirring vigorously until completely melted and the polenta is smooth and glossy. Season with {{black-pepper}} of black pepper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve immediately in warm bowls. Polenta taragna is traditionally served alongside slow-braised meats or sausages, or simply on its own with an extra knob of butter."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Polenta has a gritty, undercooked texture",
+              "cause": "Cooked for too short a time",
+              "fix": "Traditional polenta taragna needs a full 40 to 50 minutes. Taste it: the graininess disappears when it is properly cooked."
+            },
+            {
+              "symptom": "Polenta scorches on the base of the pan",
+              "cause": "Heat too high or not stirred frequently enough",
+              "fix": "Use the lowest possible heat and stir every 2 to 3 minutes. A heavy-based pan distributes heat more evenly."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Polenta taragna comes from the Lombard Alps: the Valtellina, Val Brembana, and the mountains above Bergamo. It is heavier and more filling than yellow polenta. It was the daily staple of mountain communities before the Italian food supply changed in the 20th century. Today it appears in the agriturismi and trattorie of the Lombard Alps alongside bresaola, game birds, and the local cheeses. In Milan it is seen as mountain peasant food, and eaten with affection for that reason."
+          }
+        ]
+      }
+    ]
+  }
+}

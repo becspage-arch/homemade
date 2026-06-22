@@ -1,0 +1,401 @@
+{
+  "slug": "thit-kho",
+  "title": "Thịt Kho",
+  "subtitle": "caramelised pork belly and eggs",
+  "excerpt": "Thịt kho is a Vietnamese braise of pork belly and boiled eggs cooked in a dark, sweet caramel sauce with fish sauce and coconut water. The pork becomes meltingly tender and the eggs absorb the rich sauce. This recipe serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Thịt kho is eaten across Vietnam and is especially popular during Tết, the Vietnamese New Year. A large pot is made in advance and eaten over several days, as the flavours deepen over time.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 90,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze without the eggs for up to 2 months. The eggs do not freeze well. Add fresh soft-boiled eggs when reheating.",
+    "batchable": true,
+    "batchNotes": "This dish is suited to making in large batches. It keeps in the fridge for up to 4 days.",
+    "makeAheadNotes": "Thịt kho tastes better the next day when the flavours have deepened. Make ahead and reheat gently.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "comforting"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "thit-kho-caramel",
+      "term": "Nước hàng",
+      "definition": "A dark caramel sauce used to colour and flavour braised Vietnamese dishes. Sugar is cooked until very dark and then dissolved in water or coconut water."
+    },
+    {
+      "slug": "tet-dish",
+      "term": "Tết",
+      "definition": "The Vietnamese Lunar New Year celebration. Thịt kho is one of the traditional dishes made in large amounts at Tết and shared over several days with family."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thịt kho is a slow-braised dish of pork belly and eggs in a glossy dark caramel sauce. "
+          },
+          {
+            "type": "text",
+            "text": "The "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thit-kho-caramel"
+                }
+              }
+            ],
+            "text": "nước hàng "
+          },
+          {
+            "type": "text",
+            "text": "caramel gives the dish its deep colour and slightly bitter sweetness. "
+          },
+          {
+            "type": "text",
+            "text": "This recipe serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This dish is traditionally made for "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "tet-dish"
+                }
+              }
+            ],
+            "text": "Tết "
+          },
+          {
+            "type": "text",
+            "text": "celebrations, when a large pot is made to feed the family over several days. The flavours improve overnight."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 700,
+              "unit": "g",
+              "prepNote": "cut into 5 cm pieces",
+              "isOptional": false,
+              "groupLabel": "main"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 6,
+              "unit": "whole",
+              "prepNote": "hard-boiled and peeled",
+              "isOptional": false,
+              "groupLabel": "main"
+            },
+            {
+              "ingredientSlug": "coconut-milk",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "braise"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "braise"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "caramel"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": "aromatics"
+            },
+            {
+              "ingredientSlug": "shallots",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "aromatics"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "aromatics"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "sliced, optional",
+              "isOptional": true,
+              "groupLabel": "aromatics"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "sliced, to garnish",
+              "isOptional": false,
+              "groupLabel": "to serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blanch the pork belly in boiling water for 3 minutes. Drain and pat dry. This removes impurities and gives the pork a cleaner flavour."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the sugar in a Dutch oven over medium heat without stirring. Swirl gently when it starts to melt. Cook until it is a deep amber and smells slightly bitter."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Carefully add the pork belly to the caramel. Toss to coat. The caramel will seize up . this is normal. Stir over medium heat until it melts again."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the garlic, shallots, and ginger. Stir for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the coconut water and fish sauce. Add just enough water to almost cover the pork. Bring to the boil."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Reduce the heat to low. Add the peeled hard-boiled eggs. Simmer uncovered for 60 to 75 minutes until the pork is very tender and the sauce has reduced and thickened."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Taste the sauce and adjust with more fish sauce if needed. Garnish with spring onion and serve with steamed rice."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The pork is still tough after an hour.",
+              "cause": "The heat was too high and the braise was boiling rather than simmering.",
+              "fix": "Keep the heat at the lowest possible simmer. The pork needs slow, gentle heat to break down the collagen."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The eggs are rubbery and dry.",
+              "cause": "The eggs were over-boiled before being added to the braise.",
+              "fix": "Boil eggs for exactly 10 minutes for a firm but not chalky yolk. Add them to the braise for the last 30 minutes only."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The sauce is too thin at the end.",
+              "cause": "Too much liquid was added or the lid was left on during cooking.",
+              "fix": "Cook uncovered to allow evaporation. If still thin, increase heat for the last 10 minutes to reduce the sauce."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thịt kho is one of the most universally loved dishes in Vietnamese home cooking. "
+          },
+          {
+            "type": "text",
+            "text": "It is eaten across the country but is especially associated with Tết, the Lunar New Year. "
+          },
+          {
+            "type": "text",
+            "text": "Families make a large clay pot and eat it over the first few days of the new year. "
+          },
+          {
+            "type": "text",
+            "text": "Southern versions use coconut water in the braise, which is different from the northern style. "
+          },
+          {
+            "type": "text",
+            "text": "The dish has a place on almost every Vietnamese family table during celebrations."
+          }
+        ]
+      }
+    ]
+  }
+}

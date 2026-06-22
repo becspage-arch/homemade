@@ -1,0 +1,140 @@
+{
+  "slug": "bossam",
+  "title": "Bossam",
+  "subtitle": "korean boiled pork with wraps",
+  "excerpt": "Bossam is Korean boiled pork belly simmered until very tender in a spiced broth, then served in slices with napa cabbage leaves, fermented kimchi, garlic, and dipping sauce for wrapping and eating by hand. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Bossam is a classic Korean pork dish. It is traditionally eaten during kimchi-making season in late autumn and winter, when freshly made kimchi is served alongside.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 75,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the cooked pork in slices for up to 2 months. Reheat gently in a covered pan with a splash of water.",
+    "batchable": true,
+    "batchNotes": "Cook a larger joint and slice as needed. Keeps in the fridge for 4 days.",
+    "makeAheadNotes": "Cook the pork a day ahead and refrigerate. Slice and reheat gently before serving.",
+    "dietaryFlags": ["gluten-free"],
+    "cuisine": "korean",
+    "mealType": "dinner",
+    "mood": ["weekend", "entertaining"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    { "slug": "large-saucepan", "isOptional": false },
+    { "slug": "tongs", "isOptional": false }
+  ],
+  "glossaryTerms": [
+    { "slug": "bossam-kimchi", "term": "Bossam kimchi", "definition": "A type of whole-leaf kimchi made especially to accompany bossam pork. Fresh leaves are used as wrappers rather than fermented ones." },
+    { "slug": "ssamjang", "term": "Ssamjang", "definition": "A thick Korean dipping sauce made from doenjang (soybean paste), gochujang, garlic, and sesame oil. It is essential for Korean pork wraps." }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bossam is served with wrapping leaves, " },
+          { "type": "text", "text": "ssamjang", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "ssamjang" } }] },
+          { "type": "text", "text": " sauce, and a selection of condiments. Each diner builds their own wraps at the table. Serves 4." }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "The poaching liquid is flavoured with garlic, ginger, and doenjang paste, which removes the pork's strong smell and adds depth. " },
+          { "type": "text", "text": "Bossam kimchi", "marks": [{ "type": "glossaryTooltip", "attrs": { "termSlug": "bossam-kimchi" } }] },
+          { "type": "text", "text": " or regular kimchi on the side completes the dish." }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "What you need" }]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            { "ingredientSlug": "pork-belly", "amount": 900, "unit": "g", "prepNote": "skin on, in one piece", "isOptional": false, "groupLabel": "Pork" },
+            { "ingredientSlug": "garlic", "amount": 8, "unit": "cloves", "prepNote": "smashed", "isOptional": false, "groupLabel": "Poaching liquid" },
+            { "ingredientSlug": "ginger-fresh", "amount": 30, "unit": "g", "prepNote": "sliced", "isOptional": false, "groupLabel": "Poaching liquid" },
+            { "ingredientSlug": "miso-white", "amount": 2, "unit": "tbsp", "prepNote": "or Korean doenjang", "isOptional": false, "groupLabel": "Poaching liquid" },
+            { "ingredientSlug": "peppercorns-black", "amount": 1, "unit": "tsp", "prepNote": "whole", "isOptional": false, "groupLabel": "Poaching liquid" },
+            { "ingredientSlug": "soy-sauce-light", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Poaching liquid" },
+            { "ingredientSlug": "water", "amount": 2000, "unit": "ml", "prepNote": "enough to cover the pork", "isOptional": false, "groupLabel": "Poaching liquid" },
+            { "ingredientSlug": "cabbage-white", "amount": 0.5, "unit": "whole", "prepNote": "leaves separated, to serve", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "garlic", "amount": 6, "unit": "cloves", "prepNote": "thinly sliced, to serve", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "spring-onion", "amount": 4, "unit": "whole", "prepNote": "sliced, to serve", "isOptional": false, "groupLabel": "To serve" },
+            { "ingredientSlug": "gochujang", "amount": 2, "unit": "tbsp", "prepNote": "for the ssamjang", "isOptional": false, "groupLabel": "Ssamjang" },
+            { "ingredientSlug": "miso-white", "amount": 2, "unit": "tbsp", "prepNote": "for the ssamjang", "isOptional": false, "groupLabel": "Ssamjang" },
+            { "ingredientSlug": "sesame-oil", "amount": 1, "unit": "tsp", "prepNote": "for the ssamjang", "isOptional": false, "groupLabel": "Ssamjang" }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Method" }]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place the pork belly in a large saucepan. Cover with cold water, bring to a boil, and blanch for 5 minutes. Drain and rinse." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Return the pork to the pan. Add the poaching liquid ingredients and enough fresh water to cover. Bring to a boil, skim any foam, then reduce to a steady simmer. Cover and cook for 1 hour to 1 hour 15 minutes, until the pork is very tender when pierced with a knife." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Lift the pork from the liquid and rest for 10 minutes. Slice into 5 mm pieces across the grain, keeping both the fat and lean layers intact." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Mix the ssamjang ingredients together. Arrange the cabbage leaves, sliced garlic, and spring onion on a serving plate." }] }]
+          },
+          {
+            "type": "listItem",
+            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Place a slice of pork on a cabbage leaf. Add a sliver of garlic, a little spring onion, and a dab of ssamjang. Fold the leaf around the filling and eat in one or two bites." }] }]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          { "type": "troubleshooterItem", "attrs": { "issue": "Pork is still firm after 1 hour", "fix": "Continue simmering with the lid on. The pork is done when a knife slides in easily. Some pieces may take up to 90 minutes." } },
+          { "type": "troubleshooterItem", "attrs": { "issue": "Pork smell is strong", "fix": "The blanching step reduces this. Make sure to drain and rinse the pork fully after the first boil before adding the clean poaching liquid." } },
+          { "type": "troubleshooterItem", "attrs": { "issue": "Slices are falling apart when cutting", "fix": "Let the pork rest longer before slicing. Cold pork slices more cleanly. You can refrigerate it fully and slice cold, then reheat the slices gently." } }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": { "level": 2 },
+        "content": [{ "type": "text", "text": "Where this dish lives" }]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          { "type": "text", "text": "Bossam is closely linked to kimchi-making season in Korea. Families traditionally made it to feed the people who came together to make a year's supply of kimchi. It is now a popular restaurant dish and a common choice for shared family meals. The pork is eaten wrapped, with generous dipping and lots of kimchi on the side." }
+        ]
+      }
+    ]
+  }
+}

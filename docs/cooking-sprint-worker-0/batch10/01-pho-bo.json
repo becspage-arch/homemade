@@ -1,0 +1,460 @@
+{
+  "slug": "pho-bo",
+  "title": "Pho Bo",
+  "subtitle": "vietnamese beef noodle soup",
+  "excerpt": "Pho bo is a deeply fragrant beef noodle soup built on a long-simmered bone broth spiced with star anise, cinnamon, and charred ginger. The broth is the whole point . clear, rich, and faintly sweet. This recipe serves 4 and takes time, but most of it is hands-off.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Pho bo originated in northern Vietnam, most likely in the Nam Dinh province, in the early twentieth century. It became closely associated with Hanoi before spreading south after 1954. Andrea Nguyen's The Pho Cookbook (2017) is the most thorough English-language reference on its history and technique.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 180,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "The broth freezes well for up to 3 months. Freeze without noodles or garnishes.",
+    "batchable": true,
+    "batchNotes": "Double or triple the broth and freeze in portions. Cook noodles fresh each time.",
+    "makeAheadNotes": "The broth can be made up to 3 days ahead and refrigerated. Skim the fat cap before reheating.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "special"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    },
+    {
+      "slug": "sieve",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pho",
+      "term": "Pho",
+      "definition": "A Vietnamese noodle soup made with a spiced bone broth, flat rice noodles, and meat. The broth is charred and simmered for several hours to develop its distinctive flavour."
+    },
+    {
+      "slug": "char-aromatics",
+      "term": "Char aromatics",
+      "definition": "The technique of blackening onion and ginger directly over a flame or under a grill before adding to a broth. It adds colour, depth, and a faint smokiness."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pho bo is a Vietnamese beef noodle soup famous for its clear, spiced broth. The key technique is "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "char-aromatics"
+                }
+              }
+            ],
+            "text": "charring the aromatics "
+          },
+          {
+            "type": "text",
+            "text": ". blackening the onion and ginger before they go into the pot gives the broth colour and depth without cloudiness. This recipe serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Blanch the bones first to remove impurities . this is what keeps the broth clear. The spices go in whole and are strained out at the end."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "beef-brisket",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "large",
+              "prepNote": "halved",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "halved lengthways",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "star-anise",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "cloves",
+              "amount": 4,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "cardamom-pods",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": "lightly crushed",
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 3,
+              "unit": "litres",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "broth"
+            },
+            {
+              "ingredientSlug": "noodles-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "flat rice noodles, soaked",
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "beef-sirloin",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "very thinly sliced",
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "bean-sprouts",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 3,
+              "unit": "stalks",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "thai-basil",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "cut into wedges",
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "thinly sliced",
+              "isOptional": true,
+              "groupLabel": "to serve"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blanch the bones: put the beef bones in a stockpot and cover with cold water. Bring to a boil, cook for 5 minutes, then drain. Rinse the bones and the pot well."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Char the aromatics: hold the onion halves and ginger directly over a gas flame with tongs, or place them under a hot grill, until blackened in spots . about 3 to 4 minutes. This is the charring step."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Build the broth: return the blanched bones to the stockpot with 3 litres of cold water. Add the charred onion, ginger, star anise, cinnamon stick, cloves, and cardamom. Bring to a boil, then reduce to a gentle simmer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the brisket to the pot after 30 minutes. Continue simmering for a further 1 hour 30 minutes, or until the brisket is tender. Skim any foam that rises to the surface."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the brisket and set aside to cool slightly, then slice thinly. Strain the broth through a fine sieve and discard the solids. Return the broth to the pot."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season the broth with fish sauce, sugar, and salt to taste. Keep at a rolling simmer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the noodles according to the packet instructions, then divide between 4 deep bowls. Top with sliced brisket and raw sirloin."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ladle the boiling broth over the bowls . the heat will cook the raw sirloin. Serve immediately with bean sprouts, spring onion, coriander, Thai basil, lime wedges, and chilli on the side."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Broth is cloudy",
+              "cause": "The bones were not blanched, or the broth was boiled hard rather than simmered.",
+              "fix": "Always blanch and rinse the bones first. Keep the heat low . the surface should just tremble, not bubble."
+            },
+            {
+              "symptom": "Broth tastes flat",
+              "cause": "Not enough fish sauce or the spices were old.",
+              "fix": "Add fish sauce a tablespoon at a time. Toast the whole spices in a dry pan for 1 minute before adding them to the pot."
+            },
+            {
+              "symptom": "Raw sirloin is not cooked through",
+              "cause": "The broth was not hot enough when ladled over.",
+              "fix": "Make sure the broth is at a full simmer . not just warm . when you ladle it. Use a very thin slice of beef."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pho bo is a northern Vietnamese dish that most likely started in Nam Dinh province in the early 1900s. It became the signature dish of Hanoi. After Vietnam was divided in 1954, many northerners brought the dish south to Saigon. The southern version became sweeter and came with more garnishes on the side. Today "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pho"
+                }
+              }
+            ],
+            "text": "pho "
+          },
+          {
+            "type": "text",
+            "text": "is eaten for breakfast and dinner across Vietnam. It is also found wherever Vietnamese communities have settled around the world."
+          }
+        ]
+      }
+    ]
+  }
+}

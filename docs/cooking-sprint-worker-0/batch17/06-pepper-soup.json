@@ -1,0 +1,351 @@
+{
+  "slug": "pepper-soup",
+  "title": "Pepper Soup",
+  "subtitle": "Nigerian spiced broth",
+  "excerpt": "Pepper soup is a light, intensely spiced broth made with meat or fish and a blend of aromatic seeds. It is eaten as a starter, a remedy for colds, or a restorative after a long day. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "BEGINNER",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Found across Nigeria in countless versions, with each region specifying different cuts and spice combinations. Catfish pepper soup (point-and-kill) is the most celebrated restaurant version.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 40,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze broth and meat together for up to 2 months.",
+    "batchable": true,
+    "batchNotes": null,
+    "makeAheadNotes": null,
+    "dietaryFlags": [
+      "gluten-free"
+    ],
+    "cuisine": "nigerian",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "weekend"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "pepper-soup-spice",
+      "term": "Pepper soup spice",
+      "definition": "A blend of dried seeds including calabash nutmeg (ehuru), uziza seeds and African pepper. Sold pre-mixed at West African grocery stores. Allspice and black pepper are a partial substitute."
+    },
+    {
+      "slug": "point-and-kill",
+      "term": "Point and kill",
+      "definition": "Nigerian restaurant term for live catfish you choose yourself, killed fresh and cooked in pepper soup. The freshness intensifies the flavour."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "What separates pepper soup from plain broth is the "
+          },
+          {
+            "type": "text",
+            "text": "pepper soup spice",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "pepper-soup-spice"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " blend. Without it the dish is just soup. Restaurant versions using the "
+          },
+          {
+            "type": "text",
+            "text": "point-and-kill",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "point-and-kill"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " method use very fresh catfish. Chicken thighs make an excellent home alternative."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep the broth clear. Skim any foam from the surface during the first 10 minutes of cooking."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "bone-in, skinless, cut into pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "allspice",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "ground, as substitute for calabash nutmeg",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "peppercorns-black",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "coarsely crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "left whole",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "dried",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "to finish",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "or to taste",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place chicken in a pot with onion, garlic, ginger, bay leaves and thyme. Cover with 1.2 litres cold water."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bring to a boil. Skim any grey foam from the surface. Reduce to a steady simmer."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the allspice, crushed black pepper and whole chillies. Simmer for 30 minutes until chicken is cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Taste and season with salt. The broth should be clear, golden and noticeably hot."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve in bowls with fresh coriander if using. Eat with agidi (corn pudding) or plain bread."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Broth is cloudy",
+              "cause": "Not skimmed or boiled too hard",
+              "fix": "Skim thoroughly in the first 10 minutes and keep at a gentle simmer rather than a rolling boil."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Not enough heat",
+              "cause": "Not enough chilli",
+              "fix": "Pepper soup should have a building heat. Add more fresh chilli or a pinch of cayenne. Taste as you go."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pepper soup is the Nigerian equivalent of a restorative broth. It is served to new mothers, given to people with fevers, and eaten to counter the effects of a long night. Every region and every household has its own version. In the south the broth is typically made with goat or offal; in the north, chicken or fish is more common."
+          }
+        ]
+      }
+    ]
+  }
+}

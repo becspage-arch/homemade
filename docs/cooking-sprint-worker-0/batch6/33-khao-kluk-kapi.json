@@ -1,0 +1,395 @@
+{
+  "slug": "khao-kluk-kapi",
+  "title": "Khao Kluk Kapi",
+  "subtitle": "fried rice with shrimp paste, served with sweet pork and crispy shallots",
+  "excerpt": "A deeply fragrant Thai fried rice cooked with shrimp paste and served with sweet caramelised pork. Serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A classic Thai royal dish now popular throughout the country, especially in Bangkok.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 20,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Cook the sweet pork up to a day ahead. Fry the rice fresh just before serving.",
+    "dietaryFlags": [],
+    "cuisine": "thai",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "wok",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "shrimp-paste",
+      "term": "Shrimp paste",
+      "definition": "Fermented shrimp paste. It is fried in the oil before the rice, giving khao kluk kapi its distinctive pungent depth."
+    },
+    {
+      "slug": "jasmine-rice",
+      "term": "Jasmine rice",
+      "definition": "Long-grain Thai rice. Day-old cold rice fries best in this preparation."
+    },
+    {
+      "slug": "palm-sugar",
+      "term": "Palm sugar",
+      "definition": "Natural sweetener used to caramelise the pork topping."
+    },
+    {
+      "slug": "soy-sauce-dark",
+      "term": "Dark soy sauce",
+      "definition": "Thick, sweet soy sauce used to colour and season the caramelised pork."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Khao kluk kapi serves 4 and takes about 35 minutes. The dish has two main components: "
+          },
+          {
+            "type": "text",
+            "text": "jasmine rice",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "jasmine-rice"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " fried with "
+          },
+          {
+            "type": "text",
+            "text": "shrimp paste",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "shrimp-paste"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ", and a sweet caramelised pork topping made with "
+          },
+          {
+            "type": "text",
+            "text": "palm sugar",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "palm-sugar"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "text": "dark soy sauce",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "soy-sauce-dark"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": ". Crispy shallots and lime finish the dish."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry the shrimp paste in the oil before adding the rice. It will smell very strong at first. This is correct. The smell mellows into a deep savoury base once the rice is added."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "jasmine-rice",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "cooked and cold, day-old",
+              "isOptional": false,
+              "groupLabel": "Rice"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 1.5,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Rice"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Rice"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": null,
+              "prepNote": "fried or made into thin omelette strips",
+              "isOptional": false,
+              "groupLabel": "Rice"
+            },
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "cut into small cubes",
+              "isOptional": false,
+              "groupLabel": "Sweet pork"
+            },
+            {
+              "ingredientSlug": "palm-sugar",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": "Sweet pork"
+            },
+            {
+              "ingredientSlug": "soy-sauce-dark",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sweet pork"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Sweet pork"
+            },
+            {
+              "ingredientSlug": "shallots",
+              "amount": 4,
+              "unit": null,
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": "Garnish"
+            },
+            {
+              "ingredientSlug": "lime",
+              "amount": 2,
+              "unit": null,
+              "prepNote": "cut into wedges",
+              "isOptional": false,
+              "groupLabel": "Garnish"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Garnish"
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Make the sweet pork. Fry the pork cubes in a dry frying pan over medium heat for 8 minutes until browned and the fat has rendered. Add the {{palm-sugar}}, {{soy-sauce-dark}}, and {{fish-sauce}}. Stir and cook for 4 to 5 minutes until the pork is coated in a dark, sticky glaze. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Fry the shallots in 2 tablespoons of oil over medium heat until golden and crispy. Remove and set aside on kitchen paper."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat 1 tablespoon of oil in a wok over high heat. Add the {{shrimp-paste}} and fry, stirring, for 1 minute."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the cold rice. Toss and fry for 4 minutes over high heat until the rice is hot and coated with the paste."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve the rice on plates. Top with the sweet pork, crispy shallots, egg strips or a fried egg, and fresh coriander. Add lime wedges on the side."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Rice smells overpoweringly of shrimp paste",
+              "cause": "Shrimp paste not fried long enough before rice was added",
+              "fix": "Fry the paste for a full minute, stirring constantly, until the raw smell softens to a savoury one."
+            },
+            {
+              "symptom": "Sweet pork glaze has burnt",
+              "cause": "Too much palm sugar or heat too high",
+              "fix": "Lower the heat as soon as the sugar goes in. Stir constantly and remove from heat the moment it looks glossy and caramelised."
+            },
+            {
+              "symptom": "Shallots are soft rather than crispy",
+              "cause": "Not fried at high enough temperature or added to damp oil",
+              "fix": "Make sure the oil is properly hot before adding sliced shallots. Fry in a thin layer and move constantly."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Khao kluk kapi is a more complex dish than most Thai fried rice recipes. It has royal origins and the multiple components reflect a more elaborate style of cooking. Shrimp paste fried rice is the foundation, but the sweet pork, crispy shallots, and dressed garnishes are what make it distinctive. The dish is a study in contrasting textures and tastes: salty and sweet pork, pungent rice, sharp lime, crispy shallots. Every component is eaten together, not separately."
+          }
+        ]
+      }
+    ]
+  }
+}

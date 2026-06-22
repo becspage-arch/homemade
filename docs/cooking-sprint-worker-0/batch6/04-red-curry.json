@@ -1,0 +1,376 @@
+{
+  "slug": "red-curry",
+  "title": "Red Curry",
+  "subtitle": "pork in a red chilli and coconut sauce",
+  "excerpt": "A fragrant Thai red curry with tender pork belly, rich coconut milk, and a deep chilli base. Ready in 35 minutes and serves four.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Classic central Thai red curry, a staple across Thai households and street stalls.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 10,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the curry without garnish for up to 2 months.",
+    "batchable": true,
+    "batchNotes": "Double the recipe and freeze half.",
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "thai",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "wok",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "coconut-milk",
+      "term": "Coconut milk",
+      "definition": "Pressed liquid from grated coconut flesh. Full-fat gives the richest, most authentic curry base."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "This red curry serves 4 and takes about 35 minutes from start to finish. The method fries the curry paste in the thick part of "
+          },
+          {
+            "type": "text",
+            "text": "coconut milk",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "coconut-milk"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " before adding the pork, which gives a deeper, richer flavour than simply simmering everything together."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Buy full-fat coconut milk. The thick cream that rises to the top is what you fry the paste in. Shake the tin only lightly so the cream stays separate."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "cut into 3 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coconut-milk",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "dried-chilli",
+              "amount": 4,
+              "unit": null,
+              "prepNote": "soaked 10 minutes, drained",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemongrass",
+              "amount": 2,
+              "unit": "stalks",
+              "prepNote": "white part only, finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "galangal",
+              "amount": 3,
+              "unit": "slices",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "kaffir-lime-leaves",
+              "amount": 4,
+              "unit": null,
+              "prepNote": "torn",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "shallots",
+              "amount": 3,
+              "unit": null,
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "palm-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thai-basil",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-red",
+              "amount": 2,
+              "unit": null,
+              "prepNote": "sliced",
+              "isOptional": true,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pound the soaked dried chilli, lemongrass, galangal, shallots, garlic, and {{shrimp-paste}} together in a pestle and mortar until you have a rough paste. Set aside."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Open the coconut milk tin without shaking it. Spoon the thick cream from the top into a wok over medium-high heat. Fry for 2 minutes until it begins to spit and separate."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the paste to the hot cream. Stir and fry for 3 to 4 minutes until fragrant and the oil begins to show at the edges."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the pork pieces. Toss to coat in the paste and cook for 5 minutes, stirring often."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the remaining coconut milk and add the torn {{kaffir-lime-leaves}}. Bring to a simmer and cook for 15 minutes until the pork is tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season with {{fish-sauce}} and {{palm-sugar}}. Taste and adjust. The sauce should be rich, slightly sweet, and savoury."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in most of the Thai basil leaves. Serve topped with sliced red chilli and remaining basil alongside jasmine rice."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Curry tastes thin and watery",
+              "cause": "Coconut milk was not reduced before adding the pork",
+              "fix": "Simmer uncovered for 5 more minutes to concentrate the sauce."
+            },
+            {
+              "symptom": "Paste smells burnt and bitter",
+              "cause": "Heat was too high when frying the paste",
+              "fix": "Start again with a lower flame. The cream should sizzle gently, not scorch."
+            },
+            {
+              "symptom": "Pork is chewy",
+              "cause": "Cook time was not long enough",
+              "fix": "Continue simmering with the lid on for another 10 minutes until the pork gives easily when pressed."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Red curry is one of the most recognised dishes in Thai cooking. It appears on tables from Bangkok street stalls to home kitchens across the country. The paste is built around dried red chillies, lemongrass, and galangal. Coconut milk softens the heat and creates the silky sauce. Pork belly is the traditional choice because the fat keeps the meat moist through the long simmer. This is the dish most Thai cooks learn first."
+          }
+        ]
+      }
+    ]
+  }
+}

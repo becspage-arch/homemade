@@ -1,0 +1,381 @@
+{
+  "slug": "hong-shao-rou",
+  "title": "Hong Shao Rou",
+  "subtitle": "shanghainese red-braised pork belly",
+  "excerpt": "Pork belly braised slowly in soy sauce, Shaoxing wine, and rock sugar until the meat is tender and the skin turns glossy. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A Shanghainese classic, hong shao rou translates to red-braised pork. The dish appears across eastern China with regional variations in sweetness and spice level.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 20,
+    "cookMinutes": 120,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the braised pork in its sauce for up to 3 months. Reheat gently on the hob.",
+    "batchable": true,
+    "batchNotes": "Double the quantity easily. The braise improves after a day in the fridge.",
+    "makeAheadNotes": "Cook a day ahead and refrigerate. Skim the solidified fat before reheating.",
+    "dietaryFlags": [],
+    "cuisine": "chinese",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "dinner-party"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "red-braise",
+      "term": "Red Braise",
+      "definition": "A Chinese cooking method where meat is simmered in a sauce containing soy sauce, giving the dish a deep reddish-brown colour."
+    },
+    {
+      "slug": "rock-sugar",
+      "term": "Rock Sugar",
+      "definition": "Large amber crystals of sugar used in Chinese braising. It dissolves slowly and gives a glossy, less sharp sweetness than white sugar."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hong shao rou is built on patience. The pork belly goes through three stages: blanching to remove impurities, an initial sear to colour the skin, then a long "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "red-braise"
+                }
+              }
+            ],
+            "text": "red braise"
+          },
+          {
+            "type": "text",
+            "text": " that slowly tenderises the meat and thickens the sauce."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "rock-sugar"
+                }
+              }
+            ],
+            "text": "rock sugar"
+          },
+          {
+            "type": "text",
+            "text": " if you can find it. It gives a deeper gloss than caster sugar. If not, light brown sugar works well."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "pork-belly",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "cut into 5cm chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-dark",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "rice-vinegar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "Shaoxing wine preferred",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "light-brown-sugar",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": "or rock sugar",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "star-anise",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "sliced into rounds",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 4,
+              "unit": "stalks",
+              "prepNote": "tied in a knot",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "peppercorns-black",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the pork belly chunks in a large pan. Cover with cold water. Bring to the boil and cook for 5 minutes. Drain and rinse the pork under cold water. Pat dry."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the oil in a dutch oven or heavy-based pan over medium-high heat. Add the pork pieces skin-side down. Sear for 3 to 4 minutes until the skin is golden. Turn and sear the other sides briefly."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the sugar to the pan around the pork. Let it melt and caramelise for 1 to 2 minutes, stirring carefully."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the Shaoxing wine or rice vinegar. It will sizzle. Add both soy sauces, the star anise, cinnamon, ginger, spring onion bundle, and peppercorns."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in enough water to barely cover the pork. Bring to a boil, then reduce to a very low simmer. Cover and cook for 1 hour 30 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the lid. Increase heat to medium. Cook for 20 to 30 minutes more, turning the pork every few minutes, until the sauce reduces to a thick glaze that coats the meat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pick out the spring onion bundle, star anise, and cinnamon. Serve the pork over steamed rice, spooning the glaze over the top."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Sauce is too thin at the end",
+              "cause": "The lid was on during the reduction phase, trapping steam.",
+              "fix": "Remove the lid and cook uncovered on medium heat, stirring frequently, until the sauce thickens to a syrup."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Pork skin is tough, not gelatinous",
+              "cause": "The braise time was too short or the heat too high.",
+              "fix": "Return the pork to the pan with a splash of water, cover, and braise for another 30 minutes on the lowest heat."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hong shao rou is one of the signature dishes of Shanghai and the surrounding Jiangnan region. The technique of red-braising is common across eastern China, but the Shanghainese version is notably sweeter than those from Hunan or Sichuan. Chairman Mao Zedong was famously devoted to the Hunanese version of the dish, which helped cement its national profile. In Shanghai home kitchens, hong shao rou is considered comfort food and often appears at Lunar New Year family meals."
+          }
+        ]
+      }
+    ]
+  }
+}

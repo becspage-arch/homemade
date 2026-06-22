@@ -1,0 +1,425 @@
+{
+  "slug": "cao-lau",
+  "title": "Cao Lầu",
+  "subtitle": "hoi an rice noodles with pork and greens",
+  "excerpt": "Cao lầu is a dish unique to Hội An in central Vietnam. Thick, chewy rice noodles are topped with slow-braised pork, crispy croutons, bean sprouts, fresh herbs, and a small amount of rich broth. This recipe serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Cao lầu is believed to be unique to Hội An and traditionally made with water from local wells and ash from trees on the nearby Cham islands. Outside Hội An, the dish is made with regular water and approximates the original as closely as possible.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 30,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "Braise the pork a day ahead. The flavour deepens overnight.",
+    "dietaryFlags": [],
+    "cuisine": "vietnamese",
+    "mealType": "dinner",
+    "mood": [
+      "weekend",
+      "special"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "cao-lau-noodle",
+      "term": "Cao lầu noodle",
+      "definition": "A thick, chewy rice noodle specific to Hội An. The noodles have a distinctive slightly yellow colour and dense, springy texture from being made with ash water."
+    },
+    {
+      "slug": "xa-xiu-pork",
+      "term": "Xá xíu",
+      "definition": "Vietnamese-Chinese style barbecue pork braised or roasted with soy sauce, fish sauce, and five-spice until deeply flavoured. Used as the main topping in cao lầu."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cao lầu is Hội An's most distinctive dish. "
+          },
+          {
+            "type": "text",
+            "text": "Chewy "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "cao-lau-noodle"
+                }
+              }
+            ],
+            "text": "cao lầu noodles "
+          },
+          {
+            "type": "text",
+            "text": "are topped with braised "
+          },
+          {
+            "type": "text",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "xa-xiu-pork"
+                }
+              }
+            ],
+            "text": "xá xíu "
+          },
+          {
+            "type": "text",
+            "text": "pork, crispy croutons, fresh herbs, and just a splash of broth. "
+          },
+          {
+            "type": "text",
+            "text": "This recipe serves 4."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Thick udon noodles make a good substitute for authentic cao lầu noodles outside Vietnam. Cook them slightly firmer than the packet suggests."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "noodles-udon",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "cooked al dente as a substitute for cao lầu noodles",
+              "isOptional": false,
+              "groupLabel": "noodles"
+            },
+            {
+              "ingredientSlug": "pork-shoulder",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "in one piece",
+              "isOptional": false,
+              "groupLabel": "pork"
+            },
+            {
+              "ingredientSlug": "soy-sauce-light",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "pork marinade"
+            },
+            {
+              "ingredientSlug": "soy-sauce-dark",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "pork marinade"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "pork marinade"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "pork marinade"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": "minced",
+              "isOptional": false,
+              "groupLabel": "pork marinade"
+            },
+            {
+              "ingredientSlug": "star-anise",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "pork braise"
+            },
+            {
+              "ingredientSlug": "cinnamon-stick",
+              "amount": 1,
+              "unit": "whole",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "pork braise"
+            },
+            {
+              "ingredientSlug": "bean-sprouts",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "mint",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "to serve"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mix the soy sauces, fish sauce, sugar, and garlic. Rub all over the pork. Marinate for at least 1 hour or overnight."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oil in a Dutch oven. Sear the pork on all sides until browned, about 3 minutes per side."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add 300 ml of water, the star anise, and cinnamon. Bring to a simmer, cover and braise on low heat for 45 to 60 minutes until tender."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Remove the pork and slice thinly. Reduce the braising liquid over high heat until thick and glossy. This is the sauce for the bowls."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Cook the noodles according to the packet. Drain and toss with a little oil to prevent sticking."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the noodles between bowls. Top with sliced pork and ladle 2 to 3 tablespoons of sauce over each bowl."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add bean sprouts, mint, and coriander. Serve with extra sauce on the side."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The pork sauce burns and becomes bitter.",
+              "cause": "The reduction was left unattended on high heat.",
+              "fix": "Watch the sauce closely as it reduces. Stir frequently and remove from heat as soon as it coats the back of a spoon."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The pork is dry after braising.",
+              "cause": "Not enough liquid was used or the heat was too high.",
+              "fix": "Keep the heat very low and ensure the lid is tight. Add more water during cooking if the liquid reduces below halfway."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "The udon noodles are too soft and collapse.",
+              "cause": "They were cooked for too long.",
+              "fix": "Cook udon for 1 minute less than the packet suggests. They should be slightly firmer than you want to eat them as they continue to soften in the bowl."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Cao lầu is one of the most unique dishes in Vietnam because it is said to be impossible to make authentically outside Hội An. "
+          },
+          {
+            "type": "text",
+            "text": "The special noodles require well water and ash from the Cham islands. "
+          },
+          {
+            "type": "text",
+            "text": "Hội An itself is a UNESCO World Heritage town with a strong history of Chinese, Japanese, and Vietnamese trade. "
+          },
+          {
+            "type": "text",
+            "text": "The dish shows all of those influences in its noodles, pork, and flavour profile. "
+          },
+          {
+            "type": "text",
+            "text": "Visitors to Hội An eat it as one of the essential food experiences of the town."
+          }
+        ]
+      }
+    ]
+  }
+}

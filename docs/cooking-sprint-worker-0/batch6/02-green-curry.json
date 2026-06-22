@@ -1,0 +1,396 @@
+{
+  "slug": "green-curry",
+  "title": "Green Curry",
+  "subtitle": "chicken in a fragrant coconut and green chilli sauce",
+  "excerpt": "A rich, aromatic Thai curry made with green chilli paste and coconut milk. Tender chicken, Thai basil, and kaffir lime leaves make it deeply fragrant.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "Central Thai classic. One of the most popular curries in Thailand and abroad.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 15,
+    "cookMinutes": 25,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the sauce without the basil. Add fresh basil when reheating.",
+    "batchable": true,
+    "batchNotes": "Double the recipe and freeze half.",
+    "makeAheadNotes": null,
+    "dietaryFlags": [],
+    "cuisine": "thai",
+    "mealType": "dinner",
+    "mood": [
+      "weeknight",
+      "batch-cooking"
+    ],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": true
+  },
+  "recipeTools": [
+    {
+      "slug": "wok",
+      "isOptional": false
+    },
+    {
+      "slug": "large-saucepan",
+      "isOptional": true
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "kaffir-lime-leaves",
+      "term": "Kaffir lime leaves",
+      "definition": "The aromatic leaves of the kaffir lime tree. They have a floral citrus scent and are used whole or shredded in Thai cooking."
+    },
+    {
+      "slug": "thai-basil",
+      "term": "Thai basil",
+      "definition": "A variety of basil with slightly anise-scented leaves and purple stems. Sturdier than Italian basil and holds its flavour better in heat."
+    }
+  ],
+  "techniqueSlugs": [
+    "stir-frying"
+  ],
+  "criticalTechniques": [
+    "stir-frying"
+  ],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Green curry serves 4 and takes about 40 minutes from start to finish. The most important step is frying the paste in coconut cream before adding the rest of the liquid. That short fry builds the foundation of flavour."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the thick cream from the top of an unshaken tin of coconut milk to fry the paste. If you can only find coconut milk that has already mixed together, use 2 tablespoons of vegetable oil instead."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "cut into bite-sized pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "coconut-milk",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": "do not shake the tin",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chilli-green",
+              "amount": 4,
+              "unit": null,
+              "prepNote": "for the paste",
+              "isOptional": false,
+              "groupLabel": "Curry paste"
+            },
+            {
+              "ingredientSlug": "lemongrass",
+              "amount": 2,
+              "unit": "stalks",
+              "prepNote": "white part only, sliced",
+              "isOptional": false,
+              "groupLabel": "Curry paste"
+            },
+            {
+              "ingredientSlug": "galangal",
+              "amount": 3,
+              "unit": "cm",
+              "prepNote": "peeled and sliced",
+              "isOptional": false,
+              "groupLabel": "Curry paste"
+            },
+            {
+              "ingredientSlug": "shallots",
+              "amount": 4,
+              "unit": null,
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "Curry paste"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "cloves",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Curry paste"
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Curry paste"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 1,
+              "unit": "small bunch",
+              "prepNote": "roots and stalks for paste, leaves to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "kaffir-lime-leaves",
+              "amount": 6,
+              "unit": null,
+              "prepNote": "2 torn for curry, rest shredded to serve",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thai-basil",
+              "amount": 1,
+              "unit": "handful",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "fish-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "palm-sugar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "grated or crumbled",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "jasmine-rice",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Blend the green chillies, lemongrass, galangal, shallots, garlic, shrimp paste, and coriander roots into a smooth paste using a food processor or pestle and mortar. Add a splash of water if needed."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spoon the thick cream from the top of the coconut milk tin into a wok over a medium heat. When it sizzles, add the curry paste and fry for 3 to 4 minutes, stirring constantly, until fragrant and slightly darker."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the chicken and stir to coat in the paste. Cook for 3 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pour in the remaining coconut milk and add the torn kaffir lime leaves. Bring to a gentle simmer and cook for 12 to 15 minutes until the chicken is cooked through."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Season with fish sauce and palm sugar. Taste and adjust. Add the Thai basil and stir once."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Serve over jasmine rice topped with shredded kaffir lime leaves and coriander leaves."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "Curry tastes flat or watery",
+              "cause": "The paste was not fried long enough. The frying step concentrates and develops the flavour.",
+              "fix": "Fry the paste for at least 3 to 4 minutes. You should smell it change and see it darken slightly."
+            },
+            {
+              "symptom": "Curry is too spicy",
+              "cause": "Thai green chillies vary a lot in heat.",
+              "fix": "Use fewer chillies next time, or remove the seeds before blending. Add a little more coconut milk and palm sugar to tame the heat now."
+            },
+            {
+              "symptom": "Chicken is dry",
+              "cause": "Cooked too long at too high a heat.",
+              "fix": "Simmer gently rather than boiling hard. Chicken thighs are more forgiving than breast."
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Green curry comes from central Thailand and is named for the colour of its fresh chilli paste. The heat of the dish comes from those same green chillies. "
+          },
+          {
+            "type": "text",
+            "text": "Kaffir lime leaves",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "kaffir-lime-leaves"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " and "
+          },
+          {
+            "type": "text",
+            "text": "Thai basil",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "thai-basil"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " are added at the end to keep their brightness. The ratio of paste to coconut milk is the main thing that separates a bold curry from a mild one."
+          }
+        ]
+      }
+    ]
+  }
+}

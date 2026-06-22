@@ -1,0 +1,437 @@
+{
+  "slug": "bastilla",
+  "title": "Bastilla",
+  "subtitle": "Moroccan chicken and almond pie",
+  "excerpt": "Bastilla is a Moroccan pastry pie with a filling of spiced shredded chicken and almonds, dusted with icing sugar and cinnamon. The contrast of savoury, sweet and crunchy in one slice is unusual and memorable. Serves 4.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "ADVANCED",
+  "season": null,
+  "sourceType": "CLASSIC",
+  "sourceNotes": "A dish of Andalusian-Moroccan origin, originally made with pigeon. Bastilla is central to wedding banquets and formal Moroccan hospitality. The version using chicken is the most common today.",
+  "recipe": {
+    "servings": 4,
+    "yieldDescription": null,
+    "prepMinutes": 40,
+    "cookMinutes": 60,
+    "restingMinutes": 0,
+    "chillingMinutes": 0,
+    "scalable": false,
+    "freezable": false,
+    "freezeNotes": null,
+    "batchable": false,
+    "batchNotes": null,
+    "makeAheadNotes": "The filling can be made 2 days ahead and refrigerated. Assemble and bake fresh.",
+    "dietaryFlags": [],
+    "cuisine": "moroccan",
+    "mealType": "dinner",
+    "mood": [
+      "dinner-party",
+      "weekend"
+    ],
+    "temperatureCelsius": 200,
+    "temperatureNote": "Oven temperature for baking. Fan 180C. The pastry must be hot and quick to crisp.",
+    "foundational": false
+  },
+  "recipeTools": [
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "slug": "warqa",
+      "term": "Warqa",
+      "definition": "Traditional Moroccan pastry, thinner than filo, used for bastilla. Filo pastry is the standard substitute and produces a very similar result."
+    },
+    {
+      "slug": "sweet-savoury-dusting",
+      "term": "Sweet-savoury dusting",
+      "definition": "The final layer of icing sugar and cinnamon scattered over the baked bastilla. It is not optional: the contrast is the defining flavour of the dish."
+    }
+  ],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Traditional bastilla uses "
+          },
+          {
+            "type": "text",
+            "text": "warqa",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "warqa"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " pastry, but filo or homemade plain flour sheets both work. Do not skip the "
+          },
+          {
+            "type": "text",
+            "text": "sweet-savoury dusting",
+            "marks": [
+              {
+                "type": "glossaryTooltip",
+                "attrs": {
+                  "termSlug": "sweet-savoury-dusting"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": " of icing sugar and cinnamon. It sounds odd; it is essential."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the filling ahead and cool completely before assembling. Warm filling will steam the pastry and make it soggy."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 4,
+          "items": [
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "bone-in, skinless",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "whole",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "cloves",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "ginger-fresh",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": "in 2 tbsp warm water",
+              "isOptional": true,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 3,
+              "unit": "whole",
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "almonds-flaked",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "toasted, roughly chopped",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "coriander-fresh",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "chopped",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "extra-virgin-olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 6,
+              "unit": "sheets",
+              "prepNote": "filo pastry sheets, or homemade thin pastry",
+              "isOptional": false,
+              "groupLabel": "Pastry"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "melted, for brushing",
+              "isOptional": false,
+              "groupLabel": "Pastry"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": "icing sugar for dusting",
+              "isOptional": false,
+              "groupLabel": "To finish"
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "for dusting",
+              "isOptional": false,
+              "groupLabel": "To finish"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat oil in a saucepan. Fry onion for 8 minutes until golden. Add garlic, ginger and all spices. Cook 2 minutes."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add chicken thighs. Cover with 300ml water and saffron water. Simmer for 30 minutes until chicken is fully cooked. Remove chicken."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Increase heat. Cook the broth uncovered for 10 minutes until reduced to about 100ml. Add beaten eggs and stir constantly over medium heat until scrambled and dry. Remove from heat."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Shred the chicken off the bone into small pieces. Mix chicken, egg mixture, chopped almonds, caster sugar and coriander together. Taste and season. Cool completely."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Preheat oven to 200C (180C fan). Brush a 24cm ovenproof dish with butter. Layer 3 sheets of filo, brushing each with butter, letting the sheets overhang the edges."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Spread the filling in an even layer. Fold the overhanging pastry over the filling. Layer 3 more buttered filo sheets on top. Tuck edges underneath. Brush the top generously with butter."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bake for 25 to 30 minutes until deep golden brown. Dust immediately with icing sugar and cinnamon. Serve warm."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "troubleshooter",
+        "content": [
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Pastry is soggy on the bottom",
+              "cause": "Filling was too wet or still warm when assembled",
+              "fix": "Drain any liquid from the filling before mixing. Cool completely before wrapping in pastry."
+            }
+          },
+          {
+            "type": "troubleshooterItem",
+            "attrs": {
+              "symptom": "Pastry tearing on assembly",
+              "cause": "Filo dried out",
+              "fix": "Keep unused sheets under a damp tea towel while you work. Filo dries and tears within a minute of exposure to air."
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bastilla has roots in Andalusian-Arab cooking and arrived in Morocco with Moorish exiles from Spain. It was originally made with pigeon and remains a dish of ceremony in Fez and Marrakech, served at the start of large banquets. The contrast of sweet and savoury reflects the classical cooking of the Arab world that once stretched from Baghdad to Cordoba. A seafood version with shrimp and vermicelli is common in coastal cities like Casablanca."
+          }
+        ]
+      }
+    ]
+  }
+}
