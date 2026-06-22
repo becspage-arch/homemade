@@ -8,6 +8,44 @@ Updated each working session.
 
 ---
 
+## Premium checkout — Stripe, sandbox, behind CHECKOUT_ENABLED (2026-06-22)
+
+Full premium subscription billing built end to end in Stripe **TEST/sandbox**
+mode, gated behind a `CHECKOUT_ENABLED` flag that defaults **OFF** — nothing is
+publicly buyable; go-live is a separate launch step. Shipped to `main`, deploy
+green, `/healthz` 200, `/premium` still shows "Available soon" (zero buyable
+CTAs), webhook dormant in prod (503, no secret mounted).
+
+- New `apps/web/src/lib/stripe/` module (see its README): mode-aware client +
+  pure config (price-id resolution by mode+plan+currency), `entitlement.ts`
+  state machine, `checkout-actions.ts` (Checkout + Customer Portal server
+  actions), `provision.ts` (guest checkout / account-on-purchase), `sync.ts`
+  (webhook writer).
+- `/api/webhooks/stripe` — signature-verified; handles
+  checkout.session.completed, customer.subscription.created/updated/deleted,
+  invoice.payment_failed/paid. Added to proxy PUBLIC_PATHS.
+- Schema: `User.stripeCustomerId` + new `Subscription` mirror table (migration
+  `20260622000000_stripe_billing_001`, additive/nullable, applied). We own
+  billing state; `premiumActive/premiumSince/premiumUntil` are derived from it
+  (continuity safeguard #1).
+- Currency GBP/USD via the same geo detection as /premium; Stripe Tax GBP
+  inclusive / USD on top; 7-day failed-payment grace before access drops.
+- `/premium` CTA starts checkout when the flag is on; `/me/settings` gains a
+  Membership section with a Customer Portal "Manage subscription" button;
+  `/premium/welcome` post-checkout landing.
+- Sandbox prices created + persisted to `.env.credentials` as
+  `STRIPE_PRICE_*_TEST`. Verified in sandbox: pure logic, all 4 checkout combos,
+  tax behaviour, subscription lifecycle, webhook signature, and the full
+  webhook→DB entitlement sync (throwaway user, real DB + sandbox).
+- Readiness notes only (not built): continuity safeguards #2 (PCI
+  vault-migration path) + #3 (dormant backup processor); go-live sequence
+  (LIVE webhook secret, mount LIVE secrets into the ECS task, Smart Retries +
+  dunning in the Dashboard, flip `CHECKOUT_ENABLED=true`). All in the module
+  README. **STILL NEEDED before go-live:** `STRIPE_WEBHOOK_SECRET` (from
+  `stripe listen` locally or the dashboard endpoint at launch).
+
+---
+
 ## Pending decision — pattern "finished by" privacy (2026-06-19)
 
 The category pattern landing ("recently finished by the community") names
