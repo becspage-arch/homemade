@@ -64,6 +64,7 @@ export interface TutorialDoc {
   seasonSlugs: string[]
   styleSlugs: string[]
   subjectSlugs: string[]
+  audienceSlugs: string[]
   collectionText: string
 }
 
@@ -100,6 +101,7 @@ export interface PatternDoc {
   seasonSlugs: string[]
   styleSlugs: string[]
   subjectSlugs: string[]
+  audienceSlugs: string[]
   collectionText: string
 }
 
@@ -131,6 +133,7 @@ export interface CrochetPatternDoc {
   seasonSlugs: string[]
   styleSlugs: string[]
   subjectSlugs: string[]
+  audienceSlugs: string[]
   collectionText: string
 }
 
@@ -162,6 +165,7 @@ export const COLLECTION_TAG_FIELDS: CollectionCreateSchema['fields'] = [
   { name: 'seasonSlugs', type: 'string[]', facet: true, optional: true },
   { name: 'styleSlugs', type: 'string[]', facet: true, optional: true },
   { name: 'subjectSlugs', type: 'string[]', facet: true, optional: true },
+  { name: 'audienceSlugs', type: 'string[]', facet: true, optional: true },
   { name: 'collectionText', type: 'string', optional: true },
 ]
 

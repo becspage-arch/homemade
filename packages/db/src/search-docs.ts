@@ -33,16 +33,17 @@ import {
   type ContentTagFacets,
 } from './collection-tags'
 
-/** The five collection-tag fields every content doc carries (defaults empty). */
+/** The collection-tag facet fields every content doc carries (defaults empty). */
 function docTagFields(f: ContentTagFacets | undefined): Pick<
   TutorialDoc,
-  'occasionSlugs' | 'seasonSlugs' | 'styleSlugs' | 'subjectSlugs' | 'collectionText'
+  'occasionSlugs' | 'seasonSlugs' | 'styleSlugs' | 'subjectSlugs' | 'audienceSlugs' | 'collectionText'
 > {
   return {
     occasionSlugs: f?.occasionSlugs ?? [],
     seasonSlugs: f?.seasonSlugs ?? [],
     styleSlugs: f?.styleSlugs ?? [],
     subjectSlugs: f?.subjectSlugs ?? [],
+    audienceSlugs: f?.audienceSlugs ?? [],
     collectionText: f?.collectionText ?? '',
   }
 }

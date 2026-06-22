@@ -117,6 +117,17 @@ jobs:
           export DIRECT_URL="${DIRECT_URL:-${DATABASE_URL/-pooler./.}}"
           pnpm --filter @homemade/db migrate:deploy
 
+      # Cross-craft collection vocabulary (phase_collection_taxonomy_001 +
+      # phase_cross_craft_item_type_001). Reconciles CollectionTag to the
+      # controlled file on every deploy — upserts by slug, so vocabulary edits
+      # (e.g. the new AUDIENCE axis) land automatically. Idempotent.
+      - name: Seed collection vocabulary (idempotent)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
+          pnpm --filter @homemade/db exec tsx scripts/seed-collection-vocabulary.ts
+
       # Pattern Studio data backfills (phase_pattern_studio_001).
       # Both scripts are idempotent: the seed upserts on Pattern.slug,
       # and the chart migration only touches Tutorial body nodes still

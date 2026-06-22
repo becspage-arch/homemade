@@ -258,7 +258,11 @@ const CROSS_CRAFT_QUERY: Record<
   },
 }
 
-const CROSS_CRAFT_FACETS = 'occasionSlugs,seasonSlugs,styleSlugs,subjectSlugs,categorySlug,difficulty'
+// subCategorySlug carries the shared cross-craft ITEM TYPE (cardigan / blanket /
+// amigurumi — same slug across crafts); audienceSlugs is the "who it's for" tag
+// axis. Both federate as real filters alongside the four theme/style axes.
+const CROSS_CRAFT_FACETS =
+  'occasionSlugs,seasonSlugs,styleSlugs,subjectSlugs,audienceSlugs,subCategorySlug,categorySlug,difficulty'
 
 export interface CrossCraftSearchParams {
   /** optional free text; empty browses by tag/filters, newest first. */
@@ -267,7 +271,10 @@ export interface CrossCraftSearchParams {
   season?: string | null
   style?: string | null
   subject?: string | null
-  /** match a slug on ANY axis (when the caller doesn't know which axis). */
+  audience?: string | null
+  /** shared item-type slug ("cardigan") — returns the item across every craft. */
+  itemType?: string | null
+  /** match a slug on ANY tag axis (when the caller doesn't know which axis). */
   anyTag?: string | null
   difficulty?: string | null
   /** scope to these category slugs (e.g. the Make group); empty = everywhere. */
@@ -291,9 +298,13 @@ function crossCraftFilter(params: CrossCraftSearchParams): string | undefined {
   if (params.season) f.push(`seasonSlugs:=${escapeFilter(params.season)}`)
   if (params.style) f.push(`styleSlugs:=${escapeFilter(params.style)}`)
   if (params.subject) f.push(`subjectSlugs:=${escapeFilter(params.subject)}`)
+  if (params.audience) f.push(`audienceSlugs:=${escapeFilter(params.audience)}`)
+  if (params.itemType) f.push(`subCategorySlug:=${escapeFilter(params.itemType)}`)
   if (params.anyTag) {
     const t = escapeFilter(params.anyTag)
-    f.push(`(occasionSlugs:=${t} || seasonSlugs:=${t} || styleSlugs:=${t} || subjectSlugs:=${t})`)
+    f.push(
+      `(occasionSlugs:=${t} || seasonSlugs:=${t} || styleSlugs:=${t} || subjectSlugs:=${t} || audienceSlugs:=${t})`,
+    )
   }
   if (params.difficulty) f.push(`difficulty:=${escapeFilter(params.difficulty)}`)
   if (params.categorySlugs && params.categorySlugs.length > 0) {

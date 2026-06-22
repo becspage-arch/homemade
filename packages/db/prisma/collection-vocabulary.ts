@@ -12,7 +12,7 @@
  * means the term earns a standalone, indexable /themes/<slug> page.
  */
 
-export type CollectionAxis = 'OCCASION' | 'SEASON' | 'STYLE' | 'SUBJECT'
+export type CollectionAxis = 'OCCASION' | 'SEASON' | 'STYLE' | 'SUBJECT' | 'AUDIENCE'
 
 export interface VocabTerm {
   axis: CollectionAxis
@@ -126,7 +126,7 @@ const OCCASION: VocabTerm[] = [
   { axis: 'OCCASION', slug: 'anniversary', name: 'Anniversary', order: 125,
     description: 'Anniversary keepsakes and gifts.',
     taggerGuidance: 'Anniversary gifting and keepsakes.' },
-  { axis: 'OCCASION', slug: 'new-baby', name: 'New Baby', aliases: ['baby', 'newborn', 'nursery', 'baby shower', 'christening'], order: 130, themePage: true,
+  { axis: 'OCCASION', slug: 'new-baby', name: 'New Baby', aliases: ['nursery', 'baby shower', 'christening'], order: 130, themePage: true,
     description: 'New-baby projects and gifts: nursery makes, keepsakes, baby showers, christenings.',
     taggerGuidance: 'New-baby, nursery, shower and christening content.' },
   { axis: 'OCCASION', slug: 'birthday', name: 'Birthday', order: 135, themePage: true,
@@ -194,7 +194,7 @@ const SUBJECT: VocabTerm[] = [
   { axis: 'SUBJECT', slug: 'florals', name: 'Florals & Botanical', aliases: ['flowers', 'floral', 'botanical', 'wildflowers', 'blooms'], order: 10, themePage: true,
     description: 'Flowers and botanical designs: wildflowers, bouquets, single blooms, foliage and gardens.',
     taggerGuidance: 'Flowers, foliage, botanical subjects of any kind.' },
-  { axis: 'SUBJECT', slug: 'animals', name: 'Animals & Wildlife', aliases: ['animal', 'wildlife', 'creatures', 'pets', 'woodland'], order: 20, themePage: true,
+  { axis: 'SUBJECT', slug: 'animals', name: 'Animals & Wildlife', aliases: ['animal', 'wildlife', 'creatures', 'woodland'], order: 20, themePage: true,
     description: 'Animals and wildlife: pets, woodland and farm animals, sea life and more.',
     taggerGuidance: 'Real animals of any kind. Mythical creatures go to fantasy-creatures.' },
   { axis: 'SUBJECT', slug: 'birds', name: 'Birds, Bees & Butterflies', aliases: ['bird', 'bee', 'butterfly', 'moth', 'insects'], order: 30, themePage: true,
@@ -229,11 +229,39 @@ const SUBJECT: VocabTerm[] = [
     taggerGuidance: 'Sampler-format and traditional-motif designs. Common in counted needlework + cross-stitch.' },
 ]
 
+// ── AUDIENCE (who it's for — a cross-cutting "who" filter) ────────────────────
+// 0-1+ per item, text-judged with precision over recall: tag only when the make
+// is clearly FOR that audience (sized/styled for them), not merely depicting
+// them. A teddy-bear toy is not "kids" unless it's a children's make; a jumper
+// in a women's size is "women". Distinct from item type (what it IS) and from
+// the SUBJECT axis (what it depicts).
+const AUDIENCE: VocabTerm[] = [
+  { axis: 'AUDIENCE', slug: 'baby', name: 'Baby', aliases: ['babies', 'newborn', 'infant', '0-2'], order: 10, themePage: true,
+    description: 'Makes for babies: newborn and up to toddler sizes, nursery makes and baby gifts.',
+    taggerGuidance: 'The make is sized/intended for babies (roughly newborn–2). Nursery decor for a baby counts. New-baby gifting is the OCCASION new-baby; this is the wearer/user.' },
+  { axis: 'AUDIENCE', slug: 'kids', name: 'Kids', aliases: ['kid', 'children', 'child', 'toddler', 'boys', 'girls'], order: 20, themePage: true,
+    description: "Makes for children: kids' garments, toys and room makes beyond the baby stage.",
+    taggerGuidance: 'Sized/intended for children past babyhood (roughly 3–12). Folds in boys/girls/toddler. Babies are baby.' },
+  { axis: 'AUDIENCE', slug: 'women', name: 'Women', aliases: ['woman', 'ladies', 'womens', "women's"], order: 30, themePage: true,
+    description: "Makes for women: women's garments, accessories and gifts.",
+    taggerGuidance: "Sized/styled specifically for women. Use only when the make is clearly women's, not unisex." },
+  { axis: 'AUDIENCE', slug: 'men', name: 'Men', aliases: ['man', 'mens', "men's", 'gents'], order: 40, themePage: true,
+    description: "Makes for men: men's garments, accessories and gifts.",
+    taggerGuidance: "Sized/styled specifically for men. Use only when the make is clearly men's, not unisex." },
+  { axis: 'AUDIENCE', slug: 'unisex', name: 'Unisex', aliases: ['adult', 'everyone', 'gender-neutral'], order: 50, themePage: true,
+    description: 'Makes for anyone: unisex adult garments and accessories that suit any wearer.',
+    taggerGuidance: 'Adult makes that suit any wearer. Do not combine with men or women; use those when the make is clearly gendered.' },
+  { axis: 'AUDIENCE', slug: 'pets', name: 'Pets', aliases: ['pet', 'dog', 'cat', 'animal-wearer'], order: 60, themePage: true,
+    description: 'Makes for pets: dog and cat coats, beds, blankets and toys.',
+    taggerGuidance: 'The make is FOR an animal to wear/use (pet coat, bed, toy). An animal-themed make for a person is not pets.' },
+]
+
 export const COLLECTION_VOCABULARY: VocabTerm[] = [
   ...SEASON,
   ...OCCASION,
   ...STYLE,
   ...SUBJECT,
+  ...AUDIENCE,
 ]
 
 /** Quick validation: unique slugs, valid parent refs, parent shares axis. */

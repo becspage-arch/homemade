@@ -25,6 +25,21 @@ export {
   type TagWriteResult,
 } from './collection-tags'
 
+// Cross-craft item-type vocabulary (phase_cross_craft_item_type_001). The
+// controlled "what the object IS" dimension (cardigan / blanket / amigurumi);
+// a craft's SubCategory home shelves draw their slugs from here so one search
+// returns an item across every craft. Distinct from the Subject tag axis.
+export {
+  ITEM_TYPE_GROUPS,
+  ITEM_TYPE_VOCABULARY,
+  itemTypesForCraft,
+  resolveItemTypeSlug,
+  ensureCraftShelves,
+  type ItemType,
+  type ItemTypeCraft,
+  type EnsureShelvesResult,
+} from './item-types'
+
 // Category visibility helper — used by every publish path so a category
 // flips to publicly visible the moment it crosses the threshold.
 export {

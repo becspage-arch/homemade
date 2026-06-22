@@ -32,6 +32,7 @@ export interface ContentTagFacets {
   seasonSlugs: string[]
   styleSlugs: string[]
   subjectSlugs: string[]
+  audienceSlugs: string[]
   /** every assigned slug, any axis — for an "any theme" match. */
   allSlugs: string[]
   /** names + slugs + aliases joined, so a search for "xmas"/"fall" hits. */
@@ -157,6 +158,7 @@ function facetsFromTags(tags: CollectionTag[]): ContentTagFacets {
     seasonSlugs: byAxis('SEASON'),
     styleSlugs: byAxis('STYLE'),
     subjectSlugs: byAxis('SUBJECT'),
+    audienceSlugs: byAxis('AUDIENCE'),
     allSlugs: tags.map((t) => t.slug),
     collectionText,
   }
