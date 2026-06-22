@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { SITE_NAME, SITE_TWITTER, siteUrl } from './site-url'
+import { SITE_NOINDEX } from '@/lib/launch-flags'
 
 const MAX_TITLE = 60
 const MAX_DESCRIPTION = 160
@@ -44,7 +45,10 @@ export function buildPublicMetadata(input: PublicMetadataInput): Metadata {
   const absoluteUrl = siteUrl(input.path)
   const title = formatTitle(input.title)
   const description = trimDescription(input.description)
-  const indexable = input.index !== false
+  // Pre-launch, the whole site is held out of search regardless of per-page
+  // opt-in (SITE_NOINDEX). Flip the flag on launch day to honour each page's
+  // own index choice again.
+  const indexable = !SITE_NOINDEX && input.index !== false
 
   const ogImages =
     input.imageUrl

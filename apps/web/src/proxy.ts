@@ -1,5 +1,6 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 import { NextResponse } from 'next/server'
+import { SITE_NOINDEX, SPLASH_GATE_OPEN } from '@/lib/launch-flags'
 
 /**
  * Two gates layered:
@@ -17,6 +18,13 @@ const PUBLIC_PATHS = [
   '/api/unlock',
   '/favicon.ico',
   '/healthz',
+  // Legal pages must stay reachable without the splash cookie even if the gate
+  // is re-closed — Stripe + regulators + journalists check terms / refund /
+  // contact. (Launch-sequence requirement, project_pre_launch_checklist.)
+  '/legal',
+  // The /premium page is the public description of what we sell; Stripe checks
+  // it during business verification. Informational only, no checkout.
+  '/premium',
   // Sentry tunnels client error reports through /monitoring/sentry to dodge
   // ad-blockers — must bypass the splash gate or anonymous browsers can't report.
   '/monitoring/sentry',
@@ -46,6 +54,20 @@ const TUTORIAL_REDIRECTS: Record<string, string> = {
 
 const isAdminRoute = createRouteMatcher(['/admin(.*)'])
 const isAccountRoute = createRouteMatcher(['/me(.*)'])
+
+/**
+ * Build a pass-through response, stamping a site-wide noindex header while the
+ * pre-launch site is held out of search (SITE_NOINDEX). This belt-and-braces
+ * sits alongside the page-level robots metadata + the robots.txt disallow.
+ * TODO(launch): flip SITE_NOINDEX = false in lib/launch-flags.ts to drop it.
+ */
+function pass(): NextResponse {
+  const res = NextResponse.next()
+  if (SITE_NOINDEX) {
+    res.headers.set('X-Robots-Tag', 'noindex, nofollow')
+  }
+  return res
+}
 
 export default clerkMiddleware(async (auth, req) => {
   const { pathname } = req.nextUrl
@@ -89,15 +111,17 @@ export default clerkMiddleware(async (auth, req) => {
     if (isAdminRoute(req) || isAccountRoute(req)) {
       await auth.protect()
     }
-    return NextResponse.next()
+    return pass()
   }
 
-  // Splash gate — global until launch. Flip SPLASH_GATE=open in the ECS
-  // task definition env vars (or unset SPLASH_PASSWORD entirely) to take
-  // the gate down without a code deploy. Anything other than `open` keeps
-  // the cookie check in place. Default behaviour stays closed so a missing
-  // env var never accidentally exposes the site.
-  if (process.env.SPLASH_GATE !== 'open') {
+  // Splash gate. DOWN as of the Stripe go-live sequence (SPLASH_GATE_OPEN in
+  // lib/launch-flags) so the real public site is reachable for verification.
+  // Signups stay closed (SIGNUP_ALLOWLIST_ENABLED, server-enforced) and the
+  // site is held out of search (SITE_NOINDEX) until real launch. When the flag
+  // is false the gate falls back to the old cookie check, which the
+  // SPLASH_GATE=open env var can still lift without a deploy. Default stays
+  // closed so a missing env var never accidentally exposes the site.
+  if (!SPLASH_GATE_OPEN && process.env.SPLASH_GATE !== 'open') {
     const accessCookie = req.cookies.get('homemade-access')
     if (accessCookie?.value !== '1') {
       const url = req.nextUrl.clone()
@@ -111,7 +135,7 @@ export default clerkMiddleware(async (auth, req) => {
     await auth.protect()
   }
 
-  return NextResponse.next()
+  return pass()
 })
 
 export const config = {

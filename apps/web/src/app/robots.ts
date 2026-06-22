@@ -1,15 +1,24 @@
 import type { MetadataRoute } from 'next'
 import { siteOrigin, siteUrl } from '@/lib/seo/site-url'
+import { SITE_NOINDEX } from '@/lib/launch-flags'
 
 /**
- * Dynamic robots.txt. While the splash gate is closed the proxy rewrites
- * everything off `/coming-soon`, which is `noindex` via the root layout, so
- * the disallow list here is a belt-and-braces safety net rather than the
- * primary protection. Post-launch this becomes the canonical allow / deny
- * list — public surfaces stay open, account / admin / search-bot-targeted
- * routes stay closed.
+ * Dynamic robots.txt. Pre-launch (SITE_NOINDEX) the whole site is held out of
+ * search with a blanket disallow — the splash gate is down but the site is
+ * still half-built, so nothing should be crawled yet. Post-launch (flip
+ * SITE_NOINDEX = false) this becomes the canonical allow / deny list: public
+ * surfaces stay open, account / admin / search-bot-targeted routes stay closed.
  */
 export default function robots(): MetadataRoute.Robots {
+  if (SITE_NOINDEX) {
+    return {
+      // TODO(launch): drop this blanket block when SITE_NOINDEX flips to false.
+      rules: [{ userAgent: '*', disallow: '/' }],
+      sitemap: siteUrl('/sitemap.xml'),
+      host: siteOrigin(),
+    }
+  }
+
   return {
     rules: [
       {

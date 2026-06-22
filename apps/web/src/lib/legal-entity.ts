@@ -15,7 +15,11 @@ export const LEGAL_ENTITY = {
   contactEmail: 'privacy@homemade.education',
   dpoEmail: 'dpo@homemade.education',
   legalEmail: 'legal@homemade.education',
-  postalAddress: null as string | null, // null = "available on request"
+  // Rented virtual office (decided 2026-06-21). Serves the legal-page footer,
+  // the Stripe business address, and the marketing-email postal-address
+  // requirement (UK PECR / US CAN-SPAM).
+  postalAddress:
+    'Homemade Education, Office 7283, 58 Peregrine Road, Hainault, Ilford, Essex IG6 3SZ' as string | null,
   icoRegistrationNumber: null as string | null, // null = "pending"
   companiesHouseNumber: null as string | null,
   vatNumber: null as string | null,

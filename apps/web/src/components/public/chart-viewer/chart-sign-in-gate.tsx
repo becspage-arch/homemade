@@ -61,11 +61,10 @@ export function ChartSignInGate({
         save your place across devices. Sign in to start using the chart.
       </p>
       <div className="chart-sign-in-gate__actions">
+        {/* Public account creation is closed pre-launch, so the secondary
+            "create account" CTA is hidden. Restore it on launch day. */}
         <Link href="/sign-in" className="chart-sign-in-gate__cta">
           Sign in
-        </Link>
-        <Link href="/sign-up" className="chart-sign-in-gate__cta-secondary">
-          Create a free account
         </Link>
       </div>
     </div>

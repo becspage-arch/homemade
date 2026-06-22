@@ -6,7 +6,7 @@ import { LEGAL_ENTITY } from '@/lib/legal-entity'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 
 export const metadata: Metadata = buildPublicMetadata({
-  title: 'Subscription Terms — Homemade',
+  title: 'Subscription Terms | Homemade',
   description: 'Billing, cancellation, refunds and price changes for the planned premium tier.',
   path: '/legal/subscription-terms',
   ogType: 'article',
@@ -19,11 +19,10 @@ export default function SubscriptionTermsPage() {
 
       <div className="legal-body">
         <p>
-          These terms cover the premium subscription tier of Homemade. The
-          tier is currently planned and not yet available — pricing is
-          shown as a placeholder until Phase 8 of the build. When you take
-          out a premium subscription, you agree to these terms in addition
-          to our <Link href="/legal/terms">Terms of Service</Link>.
+          These terms cover the premium subscription tier of Homemade. The tier
+          is not yet available to buy. When you take out a premium subscription,
+          you agree to these terms in addition to our{' '}
+          <Link href="/legal/terms">Terms of Service</Link>.
         </p>
 
         <h2>What premium includes</h2>
@@ -43,17 +42,23 @@ export default function SubscriptionTermsPage() {
 
         <h2>Auto-renewal</h2>
         <p>
-          Your subscription renews automatically at the end of each cycle.
-          We send a reminder email before annual renewals so you have time
-          to cancel if you want to. Monthly renewals do not get a
-          per-renewal reminder, but you can cancel at any time from your
-          account.
+          <strong>
+            This subscription renews automatically each billing cycle unless
+            you cancel. Cancel anytime in your account settings.
+          </strong>
+        </p>
+        <p>
+          Your subscription renews automatically at the end of each cycle at
+          the price you are currently paying. We send a reminder email before
+          annual renewals so you have time to cancel if you want to. Monthly
+          renewals do not get a per-renewal reminder, but you can cancel at any
+          time from your account.
         </p>
 
         <h2>Cancellation</h2>
         <p>
           You can cancel at any time from your account settings. Cancellation
-          takes effect at the end of the current billing period — you keep
+          takes effect at the end of the current billing period. You keep
           access until then, and we do not pro-rate refunds for partial
           periods. Once a cancellation is in flight, automatic renewal
           stops.
@@ -71,14 +76,39 @@ export default function SubscriptionTermsPage() {
           right for that purchase.
         </p>
 
-        <h2>Refunds</h2>
+        <h2>Refunds: the Make-Something-You-Love Guarantee</h2>
         <p>
-          We do not give pro-rata refunds for partial periods. We may offer
-          a goodwill refund at our discretion — for example, if the service
-          has been substantially unavailable, if you were charged twice by
-          mistake, or in other cases where a refund seems fair. Email{' '}
+          If you don&apos;t make something you love in your first 90 days of
+          premium, we&apos;ll give you your money back and another three months
+          free to try again. To claim, email{' '}
           <a href={`mailto:${LEGAL_ENTITY.contactEmail}`}>{LEGAL_ENTITY.contactEmail}</a>{' '}
-          and we will look into it.
+          within your first 90 days and we&apos;ll sort it out. For most people
+          that&apos;s all it takes.
+        </p>
+        <p>
+          The conditions, so we can stop the rare person who tries it on: to
+          qualify, your account needs to show you gave it a go, which means
+          logging in and starting at least one project, pattern or recipe in
+          each of the three months. If you&apos;ve done that and premium
+          wasn&apos;t for you, the refund is yours.
+        </p>
+        <p>
+          If you pay monthly, we refund the months you&apos;ve paid within that
+          90 days. If you pay for the year, we refund the full year. Either way,
+          you also get three months of premium free. This is on top of your
+          normal cancellation rights, not instead of them.
+        </p>
+        <p>
+          The guarantee is for your first premium subscription, once per person.
+          We may turn down a claim if we see signs it&apos;s being abused, such
+          as multiple accounts or a chargeback already raised. We might change
+          or withdraw this for future subscribers, but we&apos;ll honour the
+          version that applied when you joined.
+        </p>
+        <p>
+          Outside the guarantee, we do not give pro-rata refunds for partial
+          periods. If you were charged twice by mistake, or the service has been
+          substantially unavailable, email us and we will put it right.
         </p>
 
         <h2>Price changes</h2>
@@ -103,7 +133,7 @@ export default function SubscriptionTermsPage() {
         <p>
           Closing your Homemade account also ends any active premium
           subscription. We do not refund the remaining portion of a
-          subscription when you close your account — please cancel
+          subscription when you close your account. Please cancel
           renewals first and let the period run out if you want to keep
           the access you have already paid for.
         </p>
