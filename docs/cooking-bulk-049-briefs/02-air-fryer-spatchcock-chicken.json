@@ -26,15 +26,27 @@
     "dietaryFlags": [],
     "cuisine": "british",
     "mealType": "dinner",
-    "mood": ["weeknight", "comfortFood"],
+    "mood": [
+      "weeknight",
+      "comfortFood"
+    ],
     "temperatureCelsius": 190,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false },
-    { "slug": "kitchen-scissors", "isOptional": false },
-    { "slug": "instant-read-thermometer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    },
+    {
+      "slug": "kitchen-scissors",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -45,76 +57,175 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Spatchcocking means cutting out the backbone with kitchen scissors so the bird opens flat. The flattened shape fits the air fryer basket better than a whole round bird and cooks in about 35 minutes at 190°C. Every part of the skin sits against circulating hot air, so the whole surface crisps at the same time." }
+          {
+            "type": "text",
+            "text": "Spatchcocking means cutting out the backbone with kitchen scissors so the bird opens flat. The flattened shape fits the air fryer basket better than a whole round bird and cooks in about 35 minutes at 190°C. Every part of the skin sits against circulating hot air, so the whole surface crisps at the same time."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Check the internal temperature at the thickest part of the thigh: 75°C. Rest for ten minutes before cutting through the breastbone to separate into halves for serving." }
+          {
+            "type": "text",
+            "text": "Check the internal temperature at the thickest part of the thigh: 75°C. Rest for ten minutes before cutting through the breastbone to separate into halves for serving."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "chicken-whole", "amount": 1, "unit": "each", "prepNote": "about 1.5 kg, backbone removed, flattened", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Rub" },
-            { "ingredientSlug": "sea-salt-flakes", "amount": 8, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Rub" },
-            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Rub" },
-            { "ingredientSlug": "garlic-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Rub" },
-            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "zested, zest mixed into rub; lemon cut into wedges to serve", "isOptional": true, "groupLabel": null }
+            {
+              "ingredientSlug": "chicken-whole",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "about 1.5 kg, backbone removed, flattened",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Rub"
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": 8,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Rub"
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Rub"
+            },
+            {
+              "ingredientSlug": "garlic-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Rub"
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "zested, zest mixed into rub; lemon cut into wedges to serve",
+              "isOptional": true,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Spatchcock the chicken" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Place the {{chicken-whole}} chicken breast-side down on a board. Using kitchen scissors, cut along both sides of the backbone and remove it. Flip the bird over and press firmly on the breastbone until it cracks flat. The chicken should now lie level." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Season" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Spatchcock the chicken"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Mix {{olive-oil}} of olive oil with {{sea-salt-flakes}} of salt, {{paprika-smoked}} of smoked paprika, and {{garlic-powder}} of garlic powder. Pat the chicken dry and rub the mixture all over both sides, getting under the skin over the breast where possible." }
+          {
+            "type": "text",
+            "text": "Place the {{chicken-whole}} chicken breast-side down on a board. Using kitchen scissors, cut along both sides of the backbone and remove it. Flip the bird over and press firmly on the breastbone until it cracks flat. The chicken should now lie level."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Air-fry" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Season"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Preheat the air fryer to 190°C for 3 minutes. Place the chicken skin-side down in the basket. Cook for 20 minutes. Flip skin-side up and cook for a further 12-15 minutes, until the skin is golden and crisp and a thermometer at the thigh reads 75°C. Rest for 10 minutes." }
+          {
+            "type": "text",
+            "text": "Mix {{olive-oil}} of olive oil with {{sea-salt-flakes}} of salt, {{paprika-smoked}} of smoked paprika, and {{garlic-powder}} of garlic powder. Pat the chicken dry and rub the mixture all over both sides, getting under the skin over the breast where possible."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Air-fry"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the air fryer to 190°C for 3 minutes. Place the chicken skin-side down in the basket. Cook for 20 minutes. Flip skin-side up and cook for a further 12-15 minutes, until the skin is golden and crisp and a thermometer at the thigh reads 75°C. Rest for 10 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -122,22 +233,48 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Bird won't lie flat", "cause": "Breastbone not cracked.", "fix": "After removing the backbone, turn the bird breast-side up and press firmly with both palms on the breastbone until you feel and hear it crack. The bird should then lie flat." },
-            { "symptom": "Skin not uniformly golden", "cause": "Parts of the skin not in contact with hot air flow.", "fix": "Make sure the basket is not overloaded. The chicken should fit in a single flat layer. If it curls at the edges, it may be too large for the basket." },
-            { "symptom": "Dry breast meat", "cause": "Overcooked, or started skin-side up.", "fix": "Start skin-side down and flip once. Check the temperature at 32 minutes and pull when the thigh reads 75°C ,  do not wait for a fixed time." },
-            { "symptom": "Thighs not cooked through when breast is done", "cause": "Thighs not flush against basket floor.", "fix": "Press the thighs down firmly before cooking. The bone slows heat transfer ,  the thigh is always the last part to reach temperature." }
+            {
+              "symptom": "Bird won't lie flat",
+              "cause": "Breastbone not cracked.",
+              "fix": "After removing the backbone, turn the bird breast-side up and press firmly with both palms on the breastbone until you feel and hear it crack. The bird should then lie flat."
+            },
+            {
+              "symptom": "Skin not uniformly golden",
+              "cause": "Parts of the skin not in contact with hot air flow.",
+              "fix": "Make sure the basket is not overloaded. The chicken should fit in a single flat layer. If it curls at the edges, it may be too large for the basket."
+            },
+            {
+              "symptom": "Dry breast meat",
+              "cause": "Overcooked, or started skin-side up.",
+              "fix": "Start skin-side down and flip once. Check the temperature at 32 minutes and pull when the thigh reads 75°C ,  do not wait for a fixed time."
+            },
+            {
+              "symptom": "Thighs not cooked through when breast is done",
+              "cause": "Thighs not flush against basket floor.",
+              "fix": "Press the thighs down firmly before cooking. The bone slows heat transfer ,  the thigh is always the last part to reach temperature."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Spatchcock chicken in the air fryer is faster than a whole bird in an oven, and the flat shape gives more skin per portion than any other method. Good with chips cooked in a second round, or sliced cold the next day for sandwiches." }
+          {
+            "type": "text",
+            "text": "Spatchcock chicken in the air fryer is faster than a whole bird in an oven, and the flat shape gives more skin per portion than any other method. Good with chips cooked in a second round, or sliced cold the next day for sandwiches."
+          }
         ]
       }
     ]

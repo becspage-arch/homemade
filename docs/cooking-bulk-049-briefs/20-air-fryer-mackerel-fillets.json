@@ -23,16 +23,24 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": null,
-    "dietaryFlags": ["gf", "df"],
+    "dietaryFlags": [
+      "gf",
+      "df"
+    ],
     "cuisine": "british",
     "mealType": "dinner",
-    "mood": ["weeknight"],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,46 +51,108 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Mackerel fillets cook fast and forgive little overcooking: a minute too long and the flesh dries out. At 200°C in the air fryer, two fillets take 8 minutes. Cook skin-side down for the first 6 minutes and the skin crisps while the flesh cooks through from the heat of the basket floor. A brief flip for the last 2 minutes finishes the top." }
+          {
+            "type": "text",
+            "text": "Mackerel fillets cook fast and forgive little overcooking: a minute too long and the flesh dries out. At 200°C in the air fryer, two fillets take 8 minutes. Cook skin-side down for the first 6 minutes and the skin crisps while the flesh cooks through from the heat of the basket floor. A brief flip for the last 2 minutes finishes the top."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 2,
           "items": [
-            { "ingredientSlug": "mackerel-fillets", "amount": 4, "unit": "each", "prepNote": "pin-boned", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "olive-oil", "amount": 10, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "sea-salt-flakes", "amount": 4, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "cut into wedges to serve", "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "mackerel-fillets",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "pin-boned",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 10,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": 4,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "cut into wedges to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Season and cook" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Pat the {{mackerel-fillets}} mackerel fillets dry. Brush the skin side with {{olive-oil}} of olive oil and season both sides with {{sea-salt-flakes}} of flaked salt and cracked black pepper. Preheat the air fryer to 200°C. Place fillets skin-side down. Cook for 6 minutes without disturbing, then flip carefully and cook for a further 1-2 minutes until the flesh is opaque throughout. Serve immediately with lemon wedges." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Season and cook"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pat the {{mackerel-fillets}} mackerel fillets dry. Brush the skin side with {{olive-oil}} of olive oil and season both sides with {{sea-salt-flakes}} of flaked salt and cracked black pepper. Preheat the air fryer to 200°C. Place fillets skin-side down. Cook for 6 minutes without disturbing, then flip carefully and cook for a further 1-2 minutes until the flesh is opaque throughout. Serve immediately with lemon wedges."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -90,21 +160,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Skin not crisp, still soft", "cause": "Skin was wet before cooking, or basket not hot enough.", "fix": "Pat the skin side completely dry before oiling. Preheat the air fryer fully before adding the fillets." },
-            { "symptom": "Fillet falling apart when flipped", "cause": "Moved too soon.", "fix": "Wait the full 6 minutes skin-side down. The fillet releases cleanly from the basket once the skin is fully crisped. If it sticks, give it another minute." },
-            { "symptom": "Dry flesh", "cause": "Overcooked.", "fix": "Mackerel needs only 8 minutes in total. The flesh is done when it has turned from translucent to opaque. Remove immediately." }
+            {
+              "symptom": "Skin not crisp, still soft",
+              "cause": "Skin was wet before cooking, or basket not hot enough.",
+              "fix": "Pat the skin side completely dry before oiling. Preheat the air fryer fully before adding the fillets."
+            },
+            {
+              "symptom": "Fillet falling apart when flipped",
+              "cause": "Moved too soon.",
+              "fix": "Wait the full 6 minutes skin-side down. The fillet releases cleanly from the basket once the skin is fully crisped. If it sticks, give it another minute."
+            },
+            {
+              "symptom": "Dry flesh",
+              "cause": "Overcooked.",
+              "fix": "Mackerel needs only 8 minutes in total. The flesh is done when it has turned from translucent to opaque. Remove immediately."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Air-fryer mackerel fillets are one of the fastest fresh-fish meals possible. Good with a green salad, crusty bread, or new potatoes. The same method works for salmon fillets or trout, with 10-12 minutes total for a thicker piece." }
+          {
+            "type": "text",
+            "text": "Air-fryer mackerel fillets are one of the fastest fresh-fish meals possible. Good with a green salad, crusty bread, or new potatoes. The same method works for salmon fillets or trout, with 10-12 minutes total for a thicker piece."
+          }
         ]
       }
     ]

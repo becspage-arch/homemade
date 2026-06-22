@@ -26,14 +26,23 @@
     "dietaryFlags": [],
     "cuisine": "british",
     "mealType": "dinner",
-    "mood": ["comfortFood", "weeknight"],
+    "mood": [
+      "comfortFood",
+      "weeknight"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "slow-cooker", "isOptional": false },
-    { "slug": "masher", "isOptional": false }
+    {
+      "slug": "slow-cooker",
+      "isOptional": false
+    },
+    {
+      "slug": "masher",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -70,31 +79,87 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 6,
           "items": [
-            { "ingredientSlug": "potato", "amount": 1500, "unit": "g", "prepNote": "peeled and cut into even chunks", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "unsalted-butter", "amount": 75, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "whole-milk", "amount": 150, "unit": "ml", "prepNote": "warmed", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "sea-salt-fine", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "black-pepper-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "potato",
+              "amount": 1500,
+              "unit": "g",
+              "prepNote": "peeled and cut into even chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 75,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": "warmed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook the potatoes" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the potatoes"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -116,8 +181,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Mash" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mash"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -157,8 +229,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",

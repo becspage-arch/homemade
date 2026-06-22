@@ -26,14 +26,25 @@
     "dietaryFlags": [],
     "cuisine": "middleEastern",
     "mealType": "dinner",
-    "mood": ["weeknight", "party", "summery", "bbq"],
+    "mood": [
+      "weeknight",
+      "party",
+      "summery",
+      "bbq"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "griddle-pan", "isOptional": false},
-    {"slug": "tongs", "isOptional": false}
+    {
+      "slug": "griddle-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,104 +54,336 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Adana kebabi is named after the city of Adana in southern Turkey and has protected status. The official version must use hand-chopped lamb from the Kivircik breed. At home, good-quality lamb mince with plenty of fat gets you most of the way there."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Adana kebabi is named after the city of Adana in southern Turkey and has protected status. The official version must use hand-chopped lamb from the Kivircik breed. At home, good-quality lamb mince with plenty of fat gets you most of the way there."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The key to a kebab that stays on the skewer is temperature and fat. Chilling the mixture for an hour before forming makes it firm enough to mould, and keeping enough fat in the lamb ensures it does not dry out during grilling."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The key to a kebab that stays on the skewer is temperature and fat. Chilling the mixture for an hour before forming makes it firm enough to mould, and keeping enough fat in the lamb ensures it does not dry out during grilling."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Flat metal skewers work much better than round ones; the meat grips the flat blade and does not rotate. If using wooden skewers, soak them first, but the kebab will be harder to turn."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Flat metal skewers work much better than round ones; the meat grips the flat blade and does not rotate. If using wooden skewers, soak them first, but the kebab will be harder to turn."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
-          "defaultServings": null,
+          "defaultServings": 4,
           "items": [
-            {"ingredientSlug": "lamb-mince", "amount": 600, "unit": "g", "prepNote": "20% fat; hand-chopped if possible for a coarser texture", "isOptional": false, "groupLabel": "Kebab mix"},
-            {"ingredientSlug": "red-onion", "amount": 1, "unit": "each", "prepNote": "small, finely grated and excess liquid squeezed out", "isOptional": false, "groupLabel": "Kebab mix"},
-            {"ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "finely grated", "isOptional": false, "groupLabel": "Kebab mix"},
-            {"ingredientSlug": "aleppo-pepper", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Kebab mix"},
-            {"ingredientSlug": "paprika-hot", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Kebab mix"},
-            {"ingredientSlug": "cumin-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Kebab mix"},
-            {"ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Kebab mix"},
-            {"ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "very finely chopped", "isOptional": false, "groupLabel": "Kebab mix"},
-            {"ingredientSlug": "pitta-bread", "amount": 4, "unit": "each", "prepNote": "to serve", "isOptional": false, "groupLabel": "To serve"},
-            {"ingredientSlug": "sumac", "amount": 1, "unit": "tsp", "prepNote": "to finish", "isOptional": false, "groupLabel": "To serve"},
-            {"ingredientSlug": "red-onion", "amount": 1, "unit": "each", "prepNote": "thinly sliced, tossed with sumac", "isOptional": false, "groupLabel": "To serve"},
-            {"ingredientSlug": "plain-yoghurt", "amount": 200, "unit": "g", "prepNote": "to serve alongside", "isOptional": false, "groupLabel": "To serve"}
+            {
+              "ingredientSlug": "lamb-mince",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "20% fat; hand-chopped if possible for a coarser texture",
+              "isOptional": false,
+              "groupLabel": "Kebab mix"
+            },
+            {
+              "ingredientSlug": "red-onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "small, finely grated and excess liquid squeezed out",
+              "isOptional": false,
+              "groupLabel": "Kebab mix"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "finely grated",
+              "isOptional": false,
+              "groupLabel": "Kebab mix"
+            },
+            {
+              "ingredientSlug": "aleppo-pepper",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Kebab mix"
+            },
+            {
+              "ingredientSlug": "paprika-hot",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Kebab mix"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Kebab mix"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Kebab mix"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "very finely chopped",
+              "isOptional": false,
+              "groupLabel": "Kebab mix"
+            },
+            {
+              "ingredientSlug": "pitta-bread",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "to serve",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "sumac",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "to finish",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "red-onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "thinly sliced, tossed with sumac",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            },
+            {
+              "ingredientSlug": "plain-yoghurt",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "to serve alongside",
+              "isOptional": false,
+              "groupLabel": "To serve"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Mix and chill"}]
-      },
-      {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Combine the lamb mince, grated onion, garlic, spices, salt, and parsley in a large bowl. Knead and squeeze the mixture with your hands for 3 to 4 minutes until it becomes cohesive and slightly sticky. This is important; under-worked mince will not hold on the skewer. Cover and refrigerate for at least 1 hour, or overnight."}]
-      },
-      {
-        "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Form the skewers"}]
-      },
-      {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Divide the mixture into 8 equal portions. With wet hands, mould each portion around a flat skewer, pressing it into a long, thin sausage shape about 20 cm long and 2 to 3 cm wide. Press firmly so there are no air pockets."}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Grill and serve"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix and chill"
+          }
+        ]
       },
       {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Heat a griddle pan or barbecue to very high heat. Grill the kebabs for 3 to 4 minutes per side, turning carefully, until charred in places and cooked through. Rest for 2 minutes. Slide the meat off the skewers onto warm pitta bread, scatter sumac over the top, and serve with the sumac onions and yoghurt."}]
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the lamb mince, grated onion, garlic, spices, salt, and parsley in a large bowl. Knead and squeeze the mixture with your hands for 3 to 4 minutes until it becomes cohesive and slightly sticky. This is important; under-worked mince will not hold on the skewer. Cover and refrigerate for at least 1 hour, or overnight."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Form the skewers"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the mixture into 8 equal portions. With wet hands, mould each portion around a flat skewer, pressing it into a long, thin sausage shape about 20 cm long and 2 to 3 cm wide. Press firmly so there are no air pockets."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Grill and serve"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat a griddle pan or barbecue to very high heat. Grill the kebabs for 3 to 4 minutes per side, turning carefully, until charred in places and cooked through. Rest for 2 minutes. Slide the meat off the skewers onto warm pitta bread, scatter sumac over the top, and serve with the sumac onions and yoghurt."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
-          "rows": [
-            {"symptom": "Meat falls off the skewer", "cause": "Mixture not worked enough or too wet from onion juice", "fix": "Knead longer and squeeze all excess liquid from the grated onion before mixing. Chilling helps firm the mixture."},
-            {"symptom": "Kebab dry and crumbly", "cause": "Lamb too lean or overcooked", "fix": "Use lamb with at least 15 to 20% fat. Cook over fierce heat briefly rather than slow-cooking."},
-            {"symptom": "Pale and steamed rather than charred", "cause": "Pan not hot enough or overcrowded", "fix": "Get the griddle smoking before adding the kebabs. Cook in batches if needed."}
+          "items": [
+            {
+              "symptom": "Meat falls off the skewer",
+              "cause": "Mixture not worked enough or too wet from onion juice",
+              "fix": "Knead longer and squeeze all excess liquid from the grated onion before mixing. Chilling helps firm the mixture."
+            },
+            {
+              "symptom": "Kebab dry and crumbly",
+              "cause": "Lamb too lean or overcooked",
+              "fix": "Use lamb with at least 15 to 20% fat. Cook over fierce heat briefly rather than slow-cooking."
+            },
+            {
+              "symptom": "Pale and steamed rather than charred",
+              "cause": "Pan not hot enough or overcrowded",
+              "fix": "Get the griddle smoking before adding the kebabs. Cook in batches if needed."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Urfa kebabi is the milder, slightly sweeter sibling from Urfa in southeastern Turkey. Use Urfa pepper (isot biber) instead of Aleppo for a darker, more chocolatey heat. For a leaner version, use a mix of lamb and beef mince, though the result is drier."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Urfa kebabi is the milder, slightly sweeter sibling from Urfa in southeastern Turkey. Use Urfa pepper (isot biber) instead of Aleppo for a darker, more chocolatey heat. For a leaner version, use a mix of lamb and beef mince, though the result is drier."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The seasoned lamb mixture improves with 24 hours of resting in the fridge. Form onto skewers just before you intend to grill; once formed they can sit for up to 2 hours if kept chilled."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The seasoned lamb mixture improves with 24 hours of resting in the fridge. Form onto skewers just before you intend to grill; once formed they can sit for up to 2 hours if kept chilled."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Adana kebabi is the signature dish of southeastern Turkey and is claimed with great civic pride by the city of Adana. It is served in dedicated ocakbasi restaurants where chefs fan charcoal grills with huge paddles, and the smoke and smell are part of the experience. Outside Turkey it is served in Turkish restaurants across Europe, often alongside lahmacun and pide."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Adana kebabi is the signature dish of southeastern Turkey and is claimed with great civic pride by the city of Adana. It is served in dedicated ocakbasi restaurants where chefs fan charcoal grills with huge paddles, and the smoke and smell are part of the experience. Outside Turkey it is served in Turkish restaurants across Europe, often alongside lahmacun and pide."
+          }
+        ]
       }
     ]
   }

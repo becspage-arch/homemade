@@ -26,15 +26,28 @@
     "dietaryFlags": [],
     "cuisine": "easternEuropean",
     "mealType": "dinner",
-    "mood": ["comfortFood", "weeknight", "hearty"],
+    "mood": [
+      "comfortFood",
+      "weeknight",
+      "hearty"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "slow-cooker", "isOptional": false },
-    { "slug": "frying-pan-26", "isOptional": true },
-    { "slug": "chopping-board", "isOptional": false }
+    {
+      "slug": "slow-cooker",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": true
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -71,38 +84,143 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "beef-mince", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the meatballs" },
-            { "ingredientSlug": "pork-mince", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the meatballs" },
-            { "ingredientSlug": "breadcrumbs-fresh", "amount": 50, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the meatballs" },
-            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "For the meatballs" },
-            { "ingredientSlug": "whole-milk", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the meatballs" },
-            { "ingredientSlug": "onion-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the meatballs" },
-            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the meatballs" },
-            { "ingredientSlug": "black-pepper-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the meatballs" },
-            { "ingredientSlug": "stock-beef", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
-            { "ingredientSlug": "dijon-mustard", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
-            { "ingredientSlug": "worcestershire-sauce", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
-            { "ingredientSlug": "double-cream", "amount": 150, "unit": "ml", "prepNote": "added at the end", "isOptional": false, "groupLabel": "For the sauce" }
+            {
+              "ingredientSlug": "beef-mince",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meatballs"
+            },
+            {
+              "ingredientSlug": "pork-mince",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meatballs"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-fresh",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meatballs"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meatballs"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meatballs"
+            },
+            {
+              "ingredientSlug": "onion-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meatballs"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meatballs"
+            },
+            {
+              "ingredientSlug": "black-pepper-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the meatballs"
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "dijon-mustard",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "worcestershire-sauce",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "double-cream",
+              "amount": 150,
+              "unit": "ml",
+              "prepNote": "added at the end",
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Make the meatballs" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the meatballs"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -115,8 +233,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook in the slow cooker" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook in the slow cooker"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -129,8 +254,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Finish the sauce" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finish the sauce"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -170,8 +302,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",

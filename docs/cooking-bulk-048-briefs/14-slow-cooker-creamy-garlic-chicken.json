@@ -26,14 +26,23 @@
     "dietaryFlags": [],
     "cuisine": "british",
     "mealType": "dinner",
-    "mood": ["comfortFood", "weeknight"],
+    "mood": [
+      "comfortFood",
+      "weeknight"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "slow-cooker", "isOptional": false },
-    { "slug": "chopping-board", "isOptional": false }
+    {
+      "slug": "slow-cooker",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -70,34 +79,111 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "chicken-breast", "amount": 4, "unit": "each", "prepNote": "skinless and boneless", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "garlic", "amount": 6, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "cream-cheese", "amount": 200, "unit": "g", "prepNote": "full-fat", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "stock-chicken", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "italian-seasoning", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "black-pepper-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "parsley", "amount": 1, "unit": "tbsp", "prepNote": "chopped, to serve", "isOptional": true, "groupLabel": null }
+            {
+              "ingredientSlug": "chicken-breast",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "skinless and boneless",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 6,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cream-cheese",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "full-fat",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "italian-seasoning",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "chopped, to serve",
+              "isOptional": true,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Make the sauce base" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the sauce base"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -110,8 +196,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Add the chicken" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the chicken"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -124,8 +217,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -165,8 +265,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",

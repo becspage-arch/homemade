@@ -23,18 +23,33 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "The flavour improves overnight. Make the day before and reheat gently before serving.",
-    "dietaryFlags": ["VEGAN"],
+    "dietaryFlags": [
+      "VEGAN"
+    ],
     "cuisine": "french",
     "mealType": "dinner",
-    "mood": ["comfortFood", "slowSunday", "hearty"],
+    "mood": [
+      "comfortFood",
+      "slowSunday",
+      "hearty"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "slow-cooker", "isOptional": false },
-    { "slug": "chefs-knife", "isOptional": false },
-    { "slug": "chopping-board", "isOptional": false }
+    {
+      "slug": "slow-cooker",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -71,39 +86,151 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "mushrooms-chestnut", "amount": 600, "unit": "g", "prepNote": "halved if large", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "mushrooms-porcini-dried", "amount": 20, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "peeled and cut into chunks", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "red-wine", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "stock-vegetable", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "cornflour", "amount": 1, "unit": "tbsp", "prepNote": "mixed with 2 tbsp cold water", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "black-pepper-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "mushrooms-chestnut",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "halved if large",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "mushrooms-porcini-dried",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "peeled and cut into chunks",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-wine",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "stock-vegetable",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cornflour",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "mixed with 2 tbsp cold water",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Combine everything" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine everything"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -116,8 +243,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -157,8 +291,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",

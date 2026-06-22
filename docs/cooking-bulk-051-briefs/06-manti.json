@@ -26,17 +26,36 @@
     "dietaryFlags": [],
     "cuisine": "middleEastern",
     "mealType": "dinner",
-    "mood": ["slowSunday", "showstopper", "comfortFood"],
+    "mood": [
+      "slowSunday",
+      "showstopper",
+      "comfortFood"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "rolling-pin", "isOptional": false},
-    {"slug": "stockpot", "isOptional": false},
-    {"slug": "small-saucepan", "isOptional": false},
-    {"slug": "chopping-board", "isOptional": false},
-    {"slug": "pastry-board", "isOptional": true}
+    {
+      "slug": "rolling-pin",
+      "isOptional": false
+    },
+    {
+      "slug": "stockpot",
+      "isOptional": false
+    },
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    },
+    {
+      "slug": "pastry-board",
+      "isOptional": true
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -46,106 +65,310 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Manti are Turkey's answer to ravioli, and they are a labour of love. The dough is rolled thin, cut into small squares, and each one is pinched closed around a tiny portion of spiced lamb mince. The smaller they are, the more accomplished the cook; in Kayseri, the standard is 40 per spoon."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Manti are Turkey's answer to ravioli, and they are a labour of love. The dough is rolled thin, cut into small squares, and each one is pinched closed around a tiny portion of spiced lamb mince. The smaller they are, the more accomplished the cook; in Kayseri, the standard is 40 per spoon."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The real magic is in the finishing: a pool of garlicky yoghurt on each plate, dumplings piled on top, and then a generous pour of browned butter infused with Aleppo pepper and dried mint. Every bite has something different in it."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The real magic is in the finishing: a pool of garlicky yoghurt on each plate, dumplings piled on top, and then a generous pour of browned butter infused with Aleppo pepper and dried mint. Every bite has something different in it."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Plan for 1.5 to 2 hours of patient work the first time. A pasta machine speeds up the rolling considerably, though a rolling pin and a good board will do. Let the dough rest properly; it becomes much easier to work with."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Plan for 1.5 to 2 hours of patient work the first time. A pasta machine speeds up the rolling considerably, though a rolling pin and a good board will do. Let the dough rest properly; it becomes much easier to work with."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": null,
           "items": [
-            {"ingredientSlug": "plain-flour", "amount": 300, "unit": "g", "prepNote": "plus extra for dusting", "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "water", "amount": 60, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "lamb-mince", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Filling"},
-            {"ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "small, finely grated", "isOptional": false, "groupLabel": "Filling"},
-            {"ingredientSlug": "black-pepper-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Filling"},
-            {"ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Filling"},
-            {"ingredientSlug": "greek-yoghurt", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Garlic yoghurt"},
-            {"ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed to a paste with a little salt", "isOptional": false, "groupLabel": "Garlic yoghurt"},
-            {"ingredientSlug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Spiced butter"},
-            {"ingredientSlug": "aleppo-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spiced butter"},
-            {"ingredientSlug": "mint-dried", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Spiced butter"},
-            {"ingredientSlug": "sumac", "amount": 1, "unit": "tsp", "prepNote": "to finish", "isOptional": true, "groupLabel": null}
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "plus extra for dusting",
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 60,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "lamb-mince",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "small, finely grated",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "black-pepper-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "greek-yoghurt",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Garlic yoghurt"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "crushed to a paste with a little salt",
+              "isOptional": false,
+              "groupLabel": "Garlic yoghurt"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spiced butter"
+            },
+            {
+              "ingredientSlug": "aleppo-pepper",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spiced butter"
+            },
+            {
+              "ingredientSlug": "mint-dried",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spiced butter"
+            },
+            {
+              "ingredientSlug": "sumac",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "to finish",
+              "isOptional": true,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Make the dough"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the dough"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Combine the flour, eggs, water, and salt in a bowl and bring together into a rough dough. Knead on a clean surface for 8 to 10 minutes until smooth and slightly elastic. Wrap in cling film and rest for at least 30 minutes at room temperature. Meanwhile, mix the lamb mince, grated onion, pepper, and salt together for the filling."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine the flour, eggs, water, and salt in a bowl and bring together into a rough dough. Knead on a clean surface for 8 to 10 minutes until smooth and slightly elastic. Wrap in cling film and rest for at least 30 minutes at room temperature. Meanwhile, mix the lamb mince, grated onion, pepper, and salt together for the filling."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Form the dumplings"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Form the dumplings"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Divide the dough into four pieces. Working one piece at a time and keeping the rest covered, roll out as thin as you can, ideally to about 2 mm. Cut into 3 to 4 cm squares. Place a very small amount of filling in the centre of each square; about half a teaspoon is plenty. Pinch two opposite corners together over the filling, then bring in the remaining corners and press to seal firmly. Set formed dumplings on a lightly floured tray and keep covered with a damp cloth."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Divide the dough into four pieces. Working one piece at a time and keeping the rest covered, roll out as thin as you can, ideally to about 2 mm. Cut into 3 to 4 cm squares. Place a very small amount of filling in the centre of each square; about half a teaspoon is plenty. Pinch two opposite corners together over the filling, then bring in the remaining corners and press to seal firmly. Set formed dumplings on a lightly floured tray and keep covered with a damp cloth."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Cook and assemble"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook and assemble"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Bring a large pot of well-salted water to the boil. Cook the manti in batches for 8 to 10 minutes until the dough is tender but not falling apart. Mix the garlic into the yoghurt and season with salt. Warm the yoghurt gently if you prefer it not stone-cold. Spoon yoghurt over warmed bowls, then top with the drained manti. Heat the butter in the small pan until it begins to brown, add the Aleppo pepper and mint, and pour over the dumplings immediately. Scatter sumac over the top."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Bring a large pot of well-salted water to the boil. Cook the manti in batches for 8 to 10 minutes until the dough is tender but not falling apart. Mix the garlic into the yoghurt and season with salt. Warm the yoghurt gently if you prefer it not stone-cold. Spoon yoghurt over warmed bowls, then top with the drained manti. Heat the butter in the small pan until it begins to brown, add the Aleppo pepper and mint, and pour over the dumplings immediately. Scatter sumac over the top."
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            {"symptom": "Dumplings opening during cooking", "cause": "Poorly sealed edges or too much filling", "fix": "Press the seams very firmly and use less filling. Wet your fingertips slightly to help the dough adhere."},
-            {"symptom": "Dough tearing when rolled", "cause": "Insufficient resting or too little water", "fix": "Let the dough rest a full 30 minutes. If it keeps tearing, knead in a teaspoon of water and rest again."},
-            {"symptom": "Filling too wet", "cause": "Onion added without squeezing", "fix": "Grate the onion and press out the excess juice in a cloth before mixing into the lamb."}
+            {
+              "symptom": "Dumplings opening during cooking",
+              "cause": "Poorly sealed edges or too much filling",
+              "fix": "Press the seams very firmly and use less filling. Wet your fingertips slightly to help the dough adhere."
+            },
+            {
+              "symptom": "Dough tearing when rolled",
+              "cause": "Insufficient resting or too little water",
+              "fix": "Let the dough rest a full 30 minutes. If it keeps tearing, knead in a teaspoon of water and rest again."
+            },
+            {
+              "symptom": "Filling too wet",
+              "cause": "Onion added without squeezing",
+              "fix": "Grate the onion and press out the excess juice in a cloth before mixing into the lamb."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Beef mince works in place of lamb. Some regions include a pinch of dried mint in the filling itself. For a quicker version that skips forming, roll the dough into small logs instead of folding individual parcels; this gives a lazier shape but the same flavours."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Beef mince works in place of lamb. Some regions include a pinch of dried mint in the filling itself. For a quicker version that skips forming, roll the dough into small logs instead of folding individual parcels; this gives a lazier shape but the same flavours."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Formed manti freeze beautifully. Lay them on a dusted tray, freeze until solid, then transfer to bags. Cook straight from frozen in boiling water, allowing 12 to 14 minutes total."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Formed manti freeze beautifully. Lay them on a dusted tray, freeze until solid, then transfer to bags. Cook straight from frozen in boiling water, allowing 12 to 14 minutes total."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Manti are the most celebrated dish of Kayseri in central Anatolia, and the region takes pride in making them especially small. The combination of garlic yoghurt and spiced butter sauce is distinctly Turkish. Similar dumplings exist across Central Asia and the Caucasus, but the Turkish version with this particular sauce is its own thing entirely."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Manti are the most celebrated dish of Kayseri in central Anatolia, and the region takes pride in making them especially small. The combination of garlic yoghurt and spiced butter sauce is distinctly Turkish. Similar dumplings exist across Central Asia and the Caucasus, but the Turkish version with this particular sauce is its own thing entirely."
+          }
+        ]
       }
     ]
   }

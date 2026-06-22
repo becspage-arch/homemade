@@ -26,13 +26,18 @@
     "dietaryFlags": [],
     "cuisine": "british",
     "mealType": "dinner",
-    "mood": ["weeknight"],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": 220,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,71 +48,202 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Chicken tikka needs a hot, dry environment to char properly. The air fryer at 220°C delivers this: the circulating heat dries the yoghurt coating fast, giving the lightly charred edges that define good tikka. Boneless thighs work better than breast here because they stay moist at high heat." }
+          {
+            "type": "text",
+            "text": "Chicken tikka needs a hot, dry environment to char properly. The air fryer at 220°C delivers this: the circulating heat dries the yoghurt coating fast, giving the lightly charred edges that define good tikka. Boneless thighs work better than breast here because they stay moist at high heat."
+          }
         ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Marinate for at least 2 hours, longer if you have time. The yoghurt tenderises the meat and the spices penetrate further with more time in the fridge." }
+          {
+            "type": "text",
+            "text": "Marinate for at least 2 hours, longer if you have time. The yoghurt tenderises the meat and the spices penetrate further with more time in the fridge."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "chicken-thighs-boneless", "amount": 8, "unit": "each", "prepNote": "cut into large chunks, about 4 cm", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "plain-yoghurt", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "lemon-juice", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "grated", "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "ginger-root", "amount": 20, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "garam-masala", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "turmeric", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "chilli-powder", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "sea-salt-fine", "amount": 6, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "cooking-spray", "amount": 5, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "chicken-thighs-boneless",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "cut into large chunks, about 4 cm",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-yoghurt",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "lemon-juice",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "ginger-root",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "garam-masala",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 6,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "cooking-spray",
+              "amount": 5,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Marinate" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Combine {{plain-yoghurt}} of yoghurt, {{lemon-juice}} of lemon juice, {{garlic}} of grated garlic, and {{ginger-root}} of grated ginger in a large bowl. Add {{garam-masala}} of garam masala, {{cumin-ground}} of cumin, {{turmeric}} of turmeric, {{paprika-smoked}} of smoked paprika, {{chilli-powder}} of chilli powder, and {{sea-salt-fine}} of salt. Stir well. Add the {{chicken-thighs-boneless}} chunks and toss until coated. Cover and refrigerate for at least 2 hours." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Air-fry" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Marinate"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Preheat the air fryer to 220°C. Shake excess marinade from the chicken pieces and place in a single layer in the basket. Spray lightly with cooking oil. Cook for 9 minutes, turn the pieces, and cook for a further 7-9 minutes until charred at the edges and cooked through. Serve with flatbreads, sliced red onion, and mint yoghurt." }
+          {
+            "type": "text",
+            "text": "Combine {{plain-yoghurt}} of yoghurt, {{lemon-juice}} of lemon juice, {{garlic}} of grated garlic, and {{ginger-root}} of grated ginger in a large bowl. Add {{garam-masala}} of garam masala, {{cumin-ground}} of cumin, {{turmeric}} of turmeric, {{paprika-smoked}} of smoked paprika, {{chilli-powder}} of chilli powder, and {{sea-salt-fine}} of salt. Stir well. Add the {{chicken-thighs-boneless}} chunks and toss until coated. Cover and refrigerate for at least 2 hours."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Air-fry"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the air fryer to 220°C. Shake excess marinade from the chicken pieces and place in a single layer in the basket. Spray lightly with cooking oil. Cook for 9 minutes, turn the pieces, and cook for a further 7-9 minutes until charred at the edges and cooked through. Serve with flatbreads, sliced red onion, and mint yoghurt."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -115,22 +251,48 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Chicken not charring, looks pale", "cause": "Too much marinade left on, or temperature too low.", "fix": "Shake off excess marinade before cooking. Make sure the fryer is fully preheated to 220°C." },
-            { "symptom": "Chicken dry", "cause": "Breast used instead of thigh, or overcooked.", "fix": "Use boneless thighs. They stay moist at high heat where breast meat dries out quickly." },
-            { "symptom": "Marinade burning and smoking", "cause": "Yoghurt dripping into the fryer pan.", "fix": "Empty and wipe the drip tray halfway through. A small amount of smoking is normal at 220°C." },
-            { "symptom": "Spice flavour faint", "cause": "Marinated for less than an hour.", "fix": "The minimum is 2 hours; 8-24 hours is noticeably better. Plan ahead." }
+            {
+              "symptom": "Chicken not charring, looks pale",
+              "cause": "Too much marinade left on, or temperature too low.",
+              "fix": "Shake off excess marinade before cooking. Make sure the fryer is fully preheated to 220°C."
+            },
+            {
+              "symptom": "Chicken dry",
+              "cause": "Breast used instead of thigh, or overcooked.",
+              "fix": "Use boneless thighs. They stay moist at high heat where breast meat dries out quickly."
+            },
+            {
+              "symptom": "Marinade burning and smoking",
+              "cause": "Yoghurt dripping into the fryer pan.",
+              "fix": "Empty and wipe the drip tray halfway through. A small amount of smoking is normal at 220°C."
+            },
+            {
+              "symptom": "Spice flavour faint",
+              "cause": "Marinated for less than an hour.",
+              "fix": "The minimum is 2 hours; 8-24 hours is noticeably better. Plan ahead."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Chicken tikka in the air fryer takes about 20 minutes of active work plus marinating time. Good as part of a spread with rice, dhal, and pickles, or served in wraps with shredded lettuce and mint yoghurt." }
+          {
+            "type": "text",
+            "text": "Chicken tikka in the air fryer takes about 20 minutes of active work plus marinating time. Good as part of a spread with rice, dhal, and pickles, or served in wraps with shredded lettuce and mint yoghurt."
+          }
         ]
       }
     ]

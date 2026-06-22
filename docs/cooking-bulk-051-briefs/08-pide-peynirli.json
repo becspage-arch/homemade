@@ -23,17 +23,28 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Dough can be made 24 hours ahead and cold-proved in the fridge. Bring to room temperature before shaping.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "middleEastern",
     "mealType": "dinner",
-    "mood": ["weeknight", "comfortFood"],
+    "mood": [
+      "weeknight",
+      "comfortFood"
+    ],
     "temperatureCelsius": 240,
     "temperatureNote": "Fan 220 C. The hotter the oven, the better.",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "baking-tray", "isOptional": false},
-    {"slug": "rolling-pin", "isOptional": false}
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "rolling-pin",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,101 +54,312 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Peynirli pide is the simplest and most satisfying of the pide family. White cheese melts into the dough as it bakes, turning golden at the edges, and an egg cracked over the top in the final minutes sets into a runny yolk that flows over the cheese as you tear into it."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Peynirli pide is the simplest and most satisfying of the pide family. White cheese melts into the dough as it bakes, turning golden at the edges, and an egg cracked over the top in the final minutes sets into a runny yolk that flows over the cheese as you tear into it."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Use any melting white cheese you can find. Turkish kashar or kasar (similar to mild cheddar) is traditional, but mozzarella melts beautifully and is easy to find. A half-and-half of feta and mozzarella gives good saltiness and melt."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Use any melting white cheese you can find. Turkish kashar or kasar (similar to mild cheddar) is traditional, but mozzarella melts beautifully and is easy to find. A half-and-half of feta and mozzarella gives good saltiness and melt."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "This uses the same dough as kiyma pide. If you are making both versions, one batch of dough is enough for four of each."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "This uses the same dough as kiyma pide. If you are making both versions, one batch of dough is enough for four of each."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
-          "defaultServings": null,
+          "defaultServings": 4,
           "items": [
-            {"ingredientSlug": "plain-flour", "amount": 500, "unit": "g", "prepNote": "plus extra for dusting", "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "water", "amount": 300, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "feta", "amount": 200, "unit": "g", "prepNote": "crumbled, or use white Turkish cheese such as kashar or akawi", "isOptional": false, "groupLabel": "Filling"},
-            {"ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "melted, to brush", "isOptional": false, "groupLabel": "Filling"},
-            {"ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": "one per pide, to crack over the top", "isOptional": true, "groupLabel": "Filling"},
-            {"ingredientSlug": "nigella-seeds", "amount": 1, "unit": "tsp", "prepNote": "to scatter over", "isOptional": true, "groupLabel": null}
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "plus extra for dusting",
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "yeast-fast-action",
+              "amount": 7,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "feta",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "crumbled, or use white Turkish cheese such as kashar or akawi",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "melted, to brush",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "one per pide, to crack over the top",
+              "isOptional": true,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "nigella-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "to scatter over",
+              "isOptional": true,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Make and prove the dough"}]
-      },
-      {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Combine the flour, yeast, salt, olive oil, and warm water. Knead for 8 minutes until smooth and slightly elastic. Place in an oiled bowl, cover with a damp cloth, and prove for 1 hour until doubled. Preheat the oven to its maximum heat with a heavy baking tray inside."}]
-      },
-      {
-        "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Shape and fill the pide"}]
-      },
-      {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Divide the dough into four pieces. Roll each into an oval about 30 cm long. Spread a quarter of the crumbled cheese over each, leaving a 2 cm border. Fold the long edges in and pinch the pointed ends together to form the boat shape. Brush the edges with melted butter. Scatter nigella seeds over the edges if using."}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Bake and add the egg"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make and prove the dough"
+          }
+        ]
       },
       {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Slide the pide onto the hot baking tray. Bake for 10 minutes until the cheese is melted and the edges are beginning to brown. Crack one egg over the centre of each pide. Return to the oven for 3 to 4 minutes until the white is just set and the yolk is still runny. Serve immediately."}]
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Combine the flour, yeast, salt, olive oil, and warm water. Knead for 8 minutes until smooth and slightly elastic. Place in an oiled bowl, cover with a damp cloth, and prove for 1 hour until doubled. Preheat the oven to its maximum heat with a heavy baking tray inside."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Shape and fill the pide"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Divide the dough into four pieces. Roll each into an oval about 30 cm long. Spread a quarter of the crumbled cheese over each, leaving a 2 cm border. Fold the long edges in and pinch the pointed ends together to form the boat shape. Brush the edges with melted butter. Scatter nigella seeds over the edges if using."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bake and add the egg"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Slide the pide onto the hot baking tray. Bake for 10 minutes until the cheese is melted and the edges are beginning to brown. Crack one egg over the centre of each pide. Return to the oven for 3 to 4 minutes until the white is just set and the yolk is still runny. Serve immediately."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
-          "rows": [
-            {"symptom": "Cheese runs out of the pide", "cause": "Too much filling or edges not sealed", "fix": "Use the recommended amount of cheese and pinch the ends firmly. A little spillage is normal."},
-            {"symptom": "Egg whites still raw when yolk is done", "cause": "Egg added too late or oven not hot enough", "fix": "Add the egg when the base is nearly done and the cheese fully melted, and use the highest heat."},
-            {"symptom": "Base is doughy", "cause": "Dough too thick or tray not preheated", "fix": "Roll the dough thin and preheat the tray in the oven for at least 30 minutes."}
+          "items": [
+            {
+              "symptom": "Cheese runs out of the pide",
+              "cause": "Too much filling or edges not sealed",
+              "fix": "Use the recommended amount of cheese and pinch the ends firmly. A little spillage is normal."
+            },
+            {
+              "symptom": "Egg whites still raw when yolk is done",
+              "cause": "Egg added too late or oven not hot enough",
+              "fix": "Add the egg when the base is nearly done and the cheese fully melted, and use the highest heat."
+            },
+            {
+              "symptom": "Base is doughy",
+              "cause": "Dough too thick or tray not preheated",
+              "fix": "Roll the dough thin and preheat the tray in the oven for at least 30 minutes."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "For a richer version, mix the cheese with a little cream or bechamel before spreading. Fresh baby spinach under the cheese adds colour and a mild green flavour. Some versions use kasar and fresh mozzarella together for a two-cheese blend."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "For a richer version, mix the cheese with a little cream or bechamel before spreading. Fresh baby spinach under the cheese adds colour and a mild green flavour. Some versions use kasar and fresh mozzarella together for a two-cheese blend."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The dough keeps overnight in the fridge. The assembled pide can sit for up to 30 minutes before baking; if leaving them to sit, chill them so the dough does not overprove."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The dough keeps overnight in the fridge. The assembled pide can sit for up to 30 minutes before baking; if leaving them to sit, chill them so the dough does not overprove."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Peynirli pide is the vegetarian staple of Turkish pide salons and is often the dish that converts newcomers to pide as a whole. It is eaten for breakfast, lunch, and dinner across Turkey, and is a favourite at bakeries that open early and close late."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Peynirli pide is the vegetarian staple of Turkish pide salons and is often the dish that converts newcomers to pide as a whole. It is eaten for breakfast, lunch, and dinner across Turkey, and is a favourite at bakeries that open early and close late."
+          }
+        ]
       }
     ]
   }

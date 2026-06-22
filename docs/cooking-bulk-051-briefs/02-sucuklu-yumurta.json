@@ -26,13 +26,20 @@
     "dietaryFlags": [],
     "cuisine": "middleEastern",
     "mealType": "breakfast",
-    "mood": ["weeknight", "brunchy", "comfortFood"],
+    "mood": [
+      "weeknight",
+      "brunchy",
+      "comfortFood"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "frying-pan-26", "isOptional": false}
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -42,87 +49,241 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Sucuk is a garlic-and-paprika-spiked dried beef sausage that is one of the defining flavours of the Turkish breakfast. It needs no oil; it fries in its own fat, which turns a deep brick-red and smells extraordinary."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Sucuk is a garlic-and-paprika-spiked dried beef sausage that is one of the defining flavours of the Turkish breakfast. It needs no oil; it fries in its own fat, which turns a deep brick-red and smells extraordinary."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The eggs go into that fat and pick up the spiced, smoky flavour as they set. The result is a plate that is deeply savoury, a little fatty in the best possible way, and gone very quickly."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The eggs go into that fat and pick up the spiced, smoky flavour as they set. The result is a plate that is deeply savoury, a little fatty in the best possible way, and gone very quickly."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Sucuk is available in Turkish and Middle Eastern food shops and some supermarkets. If you cannot find it, merguez makes a decent substitute, though the spice profile is different. Use a heavy pan; the sausage catches quickly in a thin one."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Sucuk is available in Turkish and Middle Eastern food shops and some supermarkets. If you cannot find it, merguez makes a decent substitute, though the spice profile is different. Use a heavy pan; the sausage catches quickly in a thin one."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
-          "defaultServings": null,
+          "defaultServings": 2,
           "items": [
-            {"ingredientSlug": "merguez", "amount": 200, "unit": "g", "prepNote": "or Turkish sucuk sausage, sliced into 1 cm rounds", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "eggs", "amount": 4, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "aleppo-pepper", "amount": 0.5, "unit": "tsp", "prepNote": "to finish", "isOptional": true, "groupLabel": null},
-            {"ingredientSlug": "parsley-flat", "amount": 10, "unit": "g", "prepNote": "chopped, to serve", "isOptional": true, "groupLabel": null}
+            {
+              "ingredientSlug": "merguez",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "or Turkish sucuk sausage, sliced into 1 cm rounds",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "aleppo-pepper",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "to finish",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "chopped, to serve",
+              "isOptional": true,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Fry the sausage"}]
-      },
-      {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Place the sliced sausage in a cold frying pan, then set it over a medium heat. As the pan warms, the fat will begin to render. Fry the sausage for 3 to 4 minutes, turning once, until both sides are browned and the fat in the pan is red and fragrant."}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Fry the eggs"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry the sausage"
+          }
+        ]
       },
       {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Push the sausage slices to the edges of the pan. Crack the eggs into the centre, into the fat. Cook over a medium heat until the whites are set and the yolks are still runny, about 3 minutes. Spoon some of the red fat over the whites as they cook. Scatter aleppo pepper and parsley over the top. Serve straight from the pan with bread."}]
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Place the sliced sausage in a cold frying pan, then set it over a medium heat. As the pan warms, the fat will begin to render. Fry the sausage for 3 to 4 minutes, turning once, until both sides are browned and the fat in the pan is red and fragrant."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry the eggs"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Push the sausage slices to the edges of the pan. Crack the eggs into the centre, into the fat. Cook over a medium heat until the whites are set and the yolks are still runny, about 3 minutes. Spoon some of the red fat over the whites as they cook. Scatter aleppo pepper and parsley over the top. Serve straight from the pan with bread."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
-          "rows": [
-            {"symptom": "Sausage burnt before eggs are cooked", "cause": "Pan too hot or sausage sliced too thin", "fix": "Use medium rather than high heat. Slice the sausage at least 1 cm thick so it holds together."},
-            {"symptom": "Eggs sticking to the pan", "cause": "Not enough fat or pan not hot enough", "fix": "Make sure the sausage renders enough fat first. If the pan looks dry, add a splash of olive oil before the eggs."},
-            {"symptom": "Eggs overcooked", "cause": "Left too long in residual heat", "fix": "Serve immediately off the heat; the pan stays very hot."}
+          "items": [
+            {
+              "symptom": "Sausage burnt before eggs are cooked",
+              "cause": "Pan too hot or sausage sliced too thin",
+              "fix": "Use medium rather than high heat. Slice the sausage at least 1 cm thick so it holds together."
+            },
+            {
+              "symptom": "Eggs sticking to the pan",
+              "cause": "Not enough fat or pan not hot enough",
+              "fix": "Make sure the sausage renders enough fat first. If the pan looks dry, add a splash of olive oil before the eggs."
+            },
+            {
+              "symptom": "Eggs overcooked",
+              "cause": "Left too long in residual heat",
+              "fix": "Serve immediately off the heat; the pan stays very hot."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Add a handful of chopped peppers to the pan after the sausage and let them soften in the fat before adding the eggs. This moves it towards a light menemen. Some cooks crack the eggs over the sausage without pushing them aside; the yolks sit on top of the slices and the whole thing bakes together."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Add a handful of chopped peppers to the pan after the sausage and let them soften in the fat before adding the eggs. This moves it towards a light menemen. Some cooks crack the eggs over the sausage without pushing them aside; the yolks sit on top of the slices and the whole thing bakes together."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "This is best cooked and eaten immediately. The sausage can be sliced ahead and kept in the fridge."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "This is best cooked and eaten immediately. The sausage can be sliced ahead and kept in the fridge."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Sucuklu yumurta is part of the Turkish kahvalti, a leisurely spread that can include 20 or more small dishes. It also appears as a quick supper or a restorative lunch. The combination of cured meat and egg appears across the region in different forms, but the sucuk version is distinctly Turkish."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Sucuklu yumurta is part of the Turkish kahvalti, a leisurely spread that can include 20 or more small dishes. It also appears as a quick supper or a restorative lunch. The combination of cured meat and egg appears across the region in different forms, but the sucuk version is distinctly Turkish."
+          }
+        ]
       }
     ]
   }

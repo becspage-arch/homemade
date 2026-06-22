@@ -23,18 +23,36 @@
     "batchable": true,
     "batchNotes": null,
     "makeAheadNotes": "Keeps in the fridge for 4 days. The bulgur thickens it further; add water when reheating.",
-    "dietaryFlags": ["vegan", "vegetarian"],
+    "dietaryFlags": [
+      "vegan",
+      "vegetarian"
+    ],
     "cuisine": "middleEastern",
     "mealType": "lunch",
-    "mood": ["weeknight", "comfortFood", "cosy", "hearty", "healthy"],
+    "mood": [
+      "weeknight",
+      "comfortFood",
+      "cosy",
+      "hearty",
+      "healthy"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "large-saucepan", "isOptional": false},
-    {"slug": "wooden-spoon", "isOptional": false},
-    {"slug": "small-saucepan", "isOptional": false}
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "wooden-spoon",
+      "isOptional": false
+    },
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -44,105 +62,344 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Ezogelin corbasi sits somewhere between mercimek corbasi and a thick grain soup. Red lentils provide a smooth, dissolving base while fine bulgur adds body and a gentle nuttiness. Tomato puree and paprika give it a warm, orange-red colour and a depth that plain lentil soup does not quite reach."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Ezogelin corbasi sits somewhere between mercimek corbasi and a thick grain soup. Red lentils provide a smooth, dissolving base while fine bulgur adds body and a gentle nuttiness. Tomato puree and paprika give it a warm, orange-red colour and a depth that plain lentil soup does not quite reach."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The soup is filling in a quiet way. A bowl of it with good bread is a complete meal. A squeeze of lemon at the end is not optional; it cuts through the richness and ties everything together."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The soup is filling in a quiet way. A bowl of it with good bread is a complete meal. A squeeze of lemon at the end is not optional; it cuts through the richness and ties everything together."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Fine bulgur is essential here rather than coarse bulgur, which would take much longer to cook. Most Turkish or Middle Eastern grocery shops stock it; it may be labelled number 1 or fine-ground."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Fine bulgur is essential here rather than coarse bulgur, which would take much longer to cook. Most Turkish or Middle Eastern grocery shops stock it; it may be labelled number 1 or fine-ground."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
-          "defaultServings": null,
+          "defaultServings": 4,
           "items": [
-            {"ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Soup"},
-            {"ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "Soup"},
-            {"ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Soup"},
-            {"ingredientSlug": "paprika-sweet", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Soup"},
-            {"ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Soup"},
-            {"ingredientSlug": "red-lentils", "amount": 150, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": "Soup"},
-            {"ingredientSlug": "bulgur-wheat", "amount": 80, "unit": "g", "prepNote": "fine (number 1 grade)", "isOptional": false, "groupLabel": "Soup"},
-            {"ingredientSlug": "stock-vegetable", "amount": 1500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Soup"},
-            {"ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Soup"},
-            {"ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "juice only, to finish", "isOptional": false, "groupLabel": "Soup"},
-            {"ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Pul biber butter"},
-            {"ingredientSlug": "aleppo-pepper", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Pul biber butter"},
-            {"ingredientSlug": "mint-dried", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": true, "groupLabel": "Pul biber butter"}
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "paprika-sweet",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "red-lentils",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "rinsed",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "bulgur-wheat",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "fine (number 1 grade)",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "stock-vegetable",
+              "amount": 1500,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "juice only, to finish",
+              "isOptional": false,
+              "groupLabel": "Soup"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Pul biber butter"
+            },
+            {
+              "ingredientSlug": "aleppo-pepper",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Pul biber butter"
+            },
+            {
+              "ingredientSlug": "mint-dried",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": true,
+              "groupLabel": "Pul biber butter"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Fry the base"}]
-      },
-      {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Warm the olive oil in the large pan over a medium heat. Add the onion and cook for 8 minutes until soft and starting to colour. Add the tomato puree, paprika, and cumin, stir well, and cook for 2 minutes until the puree darkens slightly."}]
-      },
-      {
-        "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Simmer the lentils and bulgur"}]
-      },
-      {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Add the lentils, bulgur, stock, and salt. Bring to the boil, then reduce the heat to a steady simmer. Cook for 25 to 30 minutes, stirring occasionally, until the lentils have completely dissolved and the bulgur is soft. The soup should be thick and spoonable but still pourable. Add a splash of water if it becomes too stiff."}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Finish and serve"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry the base"
+          }
+        ]
       },
       {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Stir in the lemon juice. Taste and adjust the salt. Melt the butter in the small pan, stir in the Aleppo pepper and dried mint, and pour a little over each bowl just before serving."}]
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Warm the olive oil in the large pan over a medium heat. Add the onion and cook for 8 minutes until soft and starting to colour. Add the tomato puree, paprika, and cumin, stir well, and cook for 2 minutes until the puree darkens slightly."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Simmer the lentils and bulgur"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Add the lentils, bulgur, stock, and salt. Bring to the boil, then reduce the heat to a steady simmer. Cook for 25 to 30 minutes, stirring occasionally, until the lentils have completely dissolved and the bulgur is soft. The soup should be thick and spoonable but still pourable. Add a splash of water if it becomes too stiff."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Finish and serve"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Stir in the lemon juice. Taste and adjust the salt. Melt the butter in the small pan, stir in the Aleppo pepper and dried mint, and pour a little over each bowl just before serving."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
-          "rows": [
-            {"symptom": "Soup too thick to pour", "cause": "Bulgur has absorbed too much liquid", "fix": "Add hot water or stock, stir well over the heat for a minute to loosen."},
-            {"symptom": "Bulgur still has bite", "cause": "Not cooked long enough", "fix": "Continue simmering; fine bulgur needs 25 to 30 minutes to soften fully in a thick base."},
-            {"symptom": "Tastes flat", "cause": "Not enough salt or no lemon juice", "fix": "Adjust salt and add lemon; the acidity makes a significant difference to this soup."}
+          "items": [
+            {
+              "symptom": "Soup too thick to pour",
+              "cause": "Bulgur has absorbed too much liquid",
+              "fix": "Add hot water or stock, stir well over the heat for a minute to loosen."
+            },
+            {
+              "symptom": "Bulgur still has bite",
+              "cause": "Not cooked long enough",
+              "fix": "Continue simmering; fine bulgur needs 25 to 30 minutes to soften fully in a thick base."
+            },
+            {
+              "symptom": "Tastes flat",
+              "cause": "Not enough salt or no lemon juice",
+              "fix": "Adjust salt and add lemon; the acidity makes a significant difference to this soup."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Some versions include a small amount of rice alongside the bulgur. For a smoky note, add a teaspoon of smoked paprika to the base with the sweet paprika. Serve with a slice of lemon and dried chilli on the side."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Some versions include a small amount of rice alongside the bulgur. For a smoky note, add a teaspoon of smoked paprika to the base with the sweet paprika. Serve with a slice of lemon and dried chilli on the side."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Keeps in the fridge for 4 days and freezes for 3 months. The soup thickens considerably when cold. Add a few tablespoons of water when reheating and stir over a gentle heat."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Keeps in the fridge for 4 days and freezes for 3 months. The soup thickens considerably when cold. Add a few tablespoons of water when reheating and stir over a gentle heat."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Ezogelin corbasi is named after Ezo, a bride from Nizip in southeastern Turkey whose story became part of Turkish folklore. The soup is a staple of southeastern Anatolia and is now served all over the country. It is especially good in winter."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Ezogelin corbasi is named after Ezo, a bride from Nizip in southeastern Turkey whose story became part of Turkish folklore. The soup is a staple of southeastern Anatolia and is now served all over the country. It is especially good in winter."
+          }
+        ]
       }
     ]
   }

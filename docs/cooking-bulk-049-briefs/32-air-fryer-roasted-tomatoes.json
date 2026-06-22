@@ -23,16 +23,27 @@
     "batchable": true,
     "batchNotes": "Roast in batches and keep warm, or serve at room temperature.",
     "makeAheadNotes": "Good at room temperature and can be roasted up to 4 hours ahead.",
-    "dietaryFlags": ["v", "V", "gf", "df", "nf"],
+    "dietaryFlags": [
+      "v",
+      "V",
+      "gf",
+      "df",
+      "nf"
+    ],
     "cuisine": "italian",
     "mealType": "side",
-    "mood": ["weeknight"],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": 180,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,46 +54,108 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Roasted cherry tomatoes in the air fryer are ready in 15 minutes and taste like the result of a much longer oven roast. Cook at 180°C rather than higher: too hot and the skins burst and scorch before the flesh collapses and concentrates. Leave them whole ,  halving makes them fall apart and lose their juices into the basket." }
+          {
+            "type": "text",
+            "text": "Roasted cherry tomatoes in the air fryer are ready in 15 minutes and taste like the result of a much longer oven roast. Cook at 180°C rather than higher: too hot and the skins burst and scorch before the flesh collapses and concentrates. Leave them whole ,  halving makes them fall apart and lose their juices into the basket."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "cherry-tomatoes", "amount": 400, "unit": "g", "prepNote": "left whole, on the vine if possible", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "olive-oil", "amount": 15, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "lightly crushed, skin on", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "sea-salt-flakes", "amount": 4, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "cherry-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "left whole, on the vine if possible",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 15,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "lightly crushed, skin on",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": 4,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Season and cook" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Toss the {{cherry-tomatoes}} tomatoes with {{olive-oil}} of olive oil, the {{garlic}} lightly crushed garlic cloves, and {{sea-salt-flakes}} of flaked salt. Preheat the air fryer to 180°C. Place in the basket ,  they can be piled up rather than in a single layer as they will shrink. Cook for 8 minutes, give the basket a gentle shake, and cook for a further 6-7 minutes until blistered and slightly collapsed. The juice from the tomatoes may collect in the drip tray ,  this is flavourful and can be poured over the tomatoes before serving." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Season and cook"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Toss the {{cherry-tomatoes}} tomatoes with {{olive-oil}} of olive oil, the {{garlic}} lightly crushed garlic cloves, and {{sea-salt-flakes}} of flaked salt. Preheat the air fryer to 180°C. Place in the basket ,  they can be piled up rather than in a single layer as they will shrink. Cook for 8 minutes, give the basket a gentle shake, and cook for a further 6-7 minutes until blistered and slightly collapsed. The juice from the tomatoes may collect in the drip tray ,  this is flavourful and can be poured over the tomatoes before serving."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -90,21 +163,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Tomatoes bursting and spattering", "cause": "Temperature too high.", "fix": "Cook at 180°C maximum. Gentle heat allows the skin to slowly blister rather than burst under steam pressure." },
-            { "symptom": "Skins still firm and not blistered after 15 minutes", "cause": "Air fryer not preheated, or tomatoes added cold from the fridge.", "fix": "Preheat the fryer and bring tomatoes to room temperature before cooking. Cold tomatoes need several extra minutes to start roasting." },
-            { "symptom": "Pale colour, no caramelisation", "cause": "Tomatoes too wet or basket too crowded.", "fix": "Pat the tomatoes dry and check there is enough space for hot air to circulate. Cook in a second batch if the basket is very full." }
+            {
+              "symptom": "Tomatoes bursting and spattering",
+              "cause": "Temperature too high.",
+              "fix": "Cook at 180°C maximum. Gentle heat allows the skin to slowly blister rather than burst under steam pressure."
+            },
+            {
+              "symptom": "Skins still firm and not blistered after 15 minutes",
+              "cause": "Air fryer not preheated, or tomatoes added cold from the fridge.",
+              "fix": "Preheat the fryer and bring tomatoes to room temperature before cooking. Cold tomatoes need several extra minutes to start roasting."
+            },
+            {
+              "symptom": "Pale colour, no caramelisation",
+              "cause": "Tomatoes too wet or basket too crowded.",
+              "fix": "Pat the tomatoes dry and check there is enough space for hot air to circulate. Cook in a second batch if the basket is very full."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Air-fryer roasted tomatoes work as a side with grilled meat or fish, spooned over scrambled eggs, stirred through pasta with basil and parmesan, or as a component in a salad with mozzarella and torn bread. They also keep well in a jar with olive oil for up to 3 days in the fridge." }
+          {
+            "type": "text",
+            "text": "Air-fryer roasted tomatoes work as a side with grilled meat or fish, spooned over scrambled eggs, stirred through pasta with basil and parmesan, or as a component in a salad with mozzarella and torn bread. They also keep well in a jar with olive oil for up to 3 days in the fridge."
+          }
         ]
       }
     ]

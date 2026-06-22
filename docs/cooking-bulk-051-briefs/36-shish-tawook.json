@@ -26,14 +26,24 @@
     "dietaryFlags": [],
     "cuisine": "middleEastern",
     "mealType": "dinner",
-    "mood": ["party", "weeknight", "dateNight"],
+    "mood": [
+      "party",
+      "weeknight",
+      "dateNight"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": "Grill or griddle at maximum heat",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "griddle-pan", "isOptional": false},
-    {"slug": "skewers", "isOptional": false}
+    {
+      "slug": "griddle-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "skewers",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,112 +53,330 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Shish tawook succeeds on the marinade and the heat. The yoghurt and lemon combination does two things: it flavours the chicken and it tenderises it so that a hot grill can char the outside without drying the inside. Two hours in the fridge is the minimum; overnight is better."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Shish tawook succeeds on the marinade and the heat. The yoghurt and lemon combination does two things: it flavours the chicken and it tenderises it so that a hot grill can char the outside without drying the inside. Two hours in the fridge is the minimum; overnight is better."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The companion sauce, toum, is a pungent Lebanese garlic sauce made by emulsifying garlic, oil, and lemon. It is very strong and very good. If you have never made it, this is the right dish to start with."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The companion sauce, toum, is a pungent Lebanese garlic sauce made by emulsifying garlic, oil, and lemon. It is very strong and very good. If you have never made it, this is the right dish to start with."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Use chicken thigh rather than breast. Thigh stays juicy even if slightly overcooked and takes on char much better than breast meat does."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Use chicken thigh rather than breast. Thigh stays juicy even if slightly overcooked and takes on char much better than breast meat does."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": null,
           "items": [
-            {"ingredientSlug": "chicken-thigh", "amount": 800, "unit": "g", "prepNote": "boneless, skinless, cut into 4 cm pieces", "isOptional": false, "groupLabel": "Chicken"},
-            {"ingredientSlug": "plain-yoghurt", "amount": 120, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Marinade"},
-            {"ingredientSlug": "lemon-juice", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade"},
-            {"ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "Marinade"},
-            {"ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade"},
-            {"ingredientSlug": "paprika-sweet", "amount": 1, "unit": "tsp", "prepNote": "or smoked for a deeper flavour", "isOptional": false, "groupLabel": "Marinade"},
-            {"ingredientSlug": "allspice", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade"},
-            {"ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade"},
-            {"ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade"},
-            {"ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade"},
-            {"ingredientSlug": "garlic", "amount": 6, "unit": "clove", "prepNote": null, "isOptional": false, "groupLabel": "Toum"},
-            {"ingredientSlug": "lemon-juice", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Toum"},
-            {"ingredientSlug": "vegetable-oil", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Toum"},
-            {"ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Toum"},
-            {"ingredientSlug": "water", "amount": 2, "unit": "tbsp", "prepNote": "ice cold", "isOptional": false, "groupLabel": "Toum"}
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "boneless, skinless, cut into 4 cm pieces",
+              "isOptional": false,
+              "groupLabel": "Chicken"
+            },
+            {
+              "ingredientSlug": "plain-yoghurt",
+              "amount": 120,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "lemon-juice",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "paprika-sweet",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "or smoked for a deeper flavour",
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "allspice",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 6,
+              "unit": "clove",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Toum"
+            },
+            {
+              "ingredientSlug": "lemon-juice",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Toum"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Toum"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Toum"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "ice cold",
+              "isOptional": false,
+              "groupLabel": "Toum"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Marinate the chicken"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Marinate the chicken"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Mix all the marinade ingredients together in a large bowl. Add the chicken pieces and turn to coat thoroughly. Cover and refrigerate for at least 2 hours, or overnight."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix all the marinade ingredients together in a large bowl. Add the chicken pieces and turn to coat thoroughly. Cover and refrigerate for at least 2 hours, or overnight."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Make the toum"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the toum"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Place the garlic and salt in a food processor or blender and blend to a fine paste. With the motor running, pour in the oil very slowly in a thin stream, adding a few drops of lemon juice and a drop of ice water alternately as you go. This creates an emulsion similar to mayonnaise. The finished toum should be white, thick, and fluffy. Season and refrigerate until needed."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the garlic and salt in a food processor or blender and blend to a fine paste. With the motor running, pour in the oil very slowly in a thin stream, adding a few drops of lemon juice and a drop of ice water alternately as you go. This creates an emulsion similar to mayonnaise. The finished toum should be white, thick, and fluffy. Season and refrigerate until needed."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Grill and serve"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Grill and serve"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Thread the marinated chicken onto metal skewers. Heat a griddle pan to its highest setting. Grill the skewers for 4 to 5 minutes per side until the chicken is charred in places and cooked through. Rest for 5 minutes. Serve with toum, flatbread, and a simple tomato and herb salad."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Thread the marinated chicken onto metal skewers. Heat a griddle pan to its highest setting. Grill the skewers for 4 to 5 minutes per side until the chicken is charred in places and cooked through. Rest for 5 minutes. Serve with toum, flatbread, and a simple tomato and herb salad."
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            {"symptom": "Chicken sticking to the griddle", "cause": "Griddle not hot enough or moved too soon", "fix": "Heat the griddle for at least 5 minutes before adding the chicken. Do not move the pieces until they release naturally."},
-            {"symptom": "Toum splits and becomes liquid", "cause": "Oil added too quickly", "fix": "Pour the oil in the thinnest possible stream. If it splits, start again with a fresh garlic base and drizzle the split toum in slowly."},
-            {"symptom": "Chicken dry", "cause": "Overcooked or breast meat used", "fix": "Use boneless thigh. Check at 4 minutes per side; it should reach 74 C internal temperature and be pulled promptly."}
+            {
+              "symptom": "Chicken sticking to the griddle",
+              "cause": "Griddle not hot enough or moved too soon",
+              "fix": "Heat the griddle for at least 5 minutes before adding the chicken. Do not move the pieces until they release naturally."
+            },
+            {
+              "symptom": "Toum splits and becomes liquid",
+              "cause": "Oil added too quickly",
+              "fix": "Pour the oil in the thinnest possible stream. If it splits, start again with a fresh garlic base and drizzle the split toum in slowly."
+            },
+            {
+              "symptom": "Chicken dry",
+              "cause": "Overcooked or breast meat used",
+              "fix": "Use boneless thigh. Check at 4 minutes per side; it should reach 74 C internal temperature and be pulled promptly."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Shish tawook can be served as a wrap in flatbread with pickles and shredded lettuce, like a shawarma. The toum also works as a sauce for grilled vegetables or roasted potatoes."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Shish tawook can be served as a wrap in flatbread with pickles and shredded lettuce, like a shawarma. The toum also works as a sauce for grilled vegetables or roasted potatoes."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The toum keeps in the fridge for 2 weeks. The chicken marinade can be applied up to 24 hours ahead. Grill the skewers fresh just before serving."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The toum keeps in the fridge for 2 weeks. The chicken marinade can be applied up to 24 hours ahead. Grill the skewers fresh just before serving."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Shish tawook is sold at grills and restaurants across Lebanon, Syria, and Jordan. In Beirut it is as common as a grilled chicken sandwich is in the UK. The dish has spread through the Lebanese diaspora and is found in Lebanese restaurants in cities worldwide. The combination of yoghurt-marinated chicken and toum is one of the defining flavour pairs of Levantine cooking."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Shish tawook is sold at grills and restaurants across Lebanon, Syria, and Jordan. In Beirut it is as common as a grilled chicken sandwich is in the UK. The dish has spread through the Lebanese diaspora and is found in Lebanese restaurants in cities worldwide. The combination of yoghurt-marinated chicken and toum is one of the defining flavour pairs of Levantine cooking."
+          }
+        ]
       }
     ]
   }

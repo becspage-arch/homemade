@@ -23,17 +23,29 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "The components can be prepared ahead and assembled just before eating. Do not assemble more than 15 minutes before serving or the bread will become too soft.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "middleEastern",
     "mealType": "lunch",
-    "mood": ["party", "brunchy", "weeknight"],
+    "mood": [
+      "party",
+      "brunchy",
+      "weeknight"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "large-saucepan", "isOptional": false},
-    {"slug": "baking-tray", "isOptional": false}
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,121 +55,351 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Fatteh is a dish of contrasts. Crisp toasted bread underneath. Warm, garlicky yoghurt on top. Soft chickpeas in between, soaked in a little of their own warm liquid. The timing matters: assemble it at the last moment so the bread retains some of its crunch at the edges."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Fatteh is a dish of contrasts. Crisp toasted bread underneath. Warm, garlicky yoghurt on top. Soft chickpeas in between, soaked in a little of their own warm liquid. The timing matters: assemble it at the last moment so the bread retains some of its crunch at the edges."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The yoghurt sauce is sharp and garlicky. Pine nuts and a drizzle of olive oil go over the top. A pinch of paprika gives a little colour. Eaten with a spoon, each bite gets all the layers at once."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The yoghurt sauce is sharp and garlicky. Pine nuts and a drizzle of olive oil go over the top. A pinch of paprika gives a little colour. Eaten with a spoon, each bite gets all the layers at once."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Toasting the bread in the oven rather than frying gives a slightly lighter result. Frying in oil gives a richer, crispier result. Both work."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Toasting the bread in the oven rather than frying gives a slightly lighter result. Frying in oil gives a richer, crispier result. Both work."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": null,
           "items": [
-            {"ingredientSlug": "pitta-bread", "amount": 2, "unit": "each", "prepNote": "torn into bite-sized pieces", "isOptional": false, "groupLabel": "Bread"},
-            {"ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": "to brush for toasting", "isOptional": false, "groupLabel": "Bread"},
-            {"ingredientSlug": "chickpeas-tinned", "amount": 800, "unit": "g", "prepNote": "2 tins, drained and rinsed", "isOptional": false, "groupLabel": "Chickpeas"},
-            {"ingredientSlug": "chicken-stock", "amount": 300, "unit": "ml", "prepNote": "or water from chickpeas", "isOptional": false, "groupLabel": "Chickpeas"},
-            {"ingredientSlug": "allspice", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Chickpeas"},
-            {"ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Chickpeas"},
-            {"ingredientSlug": "greek-yoghurt", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Yoghurt sauce"},
-            {"ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "Yoghurt sauce"},
-            {"ingredientSlug": "lemon-juice", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Yoghurt sauce"},
-            {"ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Yoghurt sauce"},
-            {"ingredientSlug": "tahini", "amount": 2, "unit": "tbsp", "prepNote": "optional, for richness", "isOptional": true, "groupLabel": "Yoghurt sauce"},
-            {"ingredientSlug": "pine-nuts", "amount": 60, "unit": "g", "prepNote": "toasted", "isOptional": false, "groupLabel": "Toppings"},
-            {"ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": "to drizzle", "isOptional": false, "groupLabel": "Toppings"},
-            {"ingredientSlug": "paprika-sweet", "amount": 0.5, "unit": "tsp", "prepNote": "to dust", "isOptional": false, "groupLabel": "Toppings"},
-            {"ingredientSlug": "parsley-flat", "amount": 15, "unit": "g", "prepNote": "finely chopped, to serve", "isOptional": true, "groupLabel": "Toppings"}
+            {
+              "ingredientSlug": "pitta-bread",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "torn into bite-sized pieces",
+              "isOptional": false,
+              "groupLabel": "Bread"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "to brush for toasting",
+              "isOptional": false,
+              "groupLabel": "Bread"
+            },
+            {
+              "ingredientSlug": "chickpeas-tinned",
+              "amount": 800,
+              "unit": "g",
+              "prepNote": "2 tins, drained and rinsed",
+              "isOptional": false,
+              "groupLabel": "Chickpeas"
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 300,
+              "unit": "ml",
+              "prepNote": "or water from chickpeas",
+              "isOptional": false,
+              "groupLabel": "Chickpeas"
+            },
+            {
+              "ingredientSlug": "allspice",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Chickpeas"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Chickpeas"
+            },
+            {
+              "ingredientSlug": "greek-yoghurt",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Yoghurt sauce"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "Yoghurt sauce"
+            },
+            {
+              "ingredientSlug": "lemon-juice",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Yoghurt sauce"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Yoghurt sauce"
+            },
+            {
+              "ingredientSlug": "tahini",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "optional, for richness",
+              "isOptional": true,
+              "groupLabel": "Yoghurt sauce"
+            },
+            {
+              "ingredientSlug": "pine-nuts",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "toasted",
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "to drizzle",
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "paprika-sweet",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": "to dust",
+              "isOptional": false,
+              "groupLabel": "Toppings"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 15,
+              "unit": "g",
+              "prepNote": "finely chopped, to serve",
+              "isOptional": true,
+              "groupLabel": "Toppings"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Toast the bread"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Toast the bread"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Preheat the oven to 200 C. Brush the torn flatbread pieces with olive oil, spread on a baking sheet, and toast for 10 to 12 minutes until golden and crisp. Set aside."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the oven to 200 C. Brush the torn flatbread pieces with olive oil, spread on a baking sheet, and toast for 10 to 12 minutes until golden and crisp. Set aside."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Warm the chickpeas"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Warm the chickpeas"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Place the chickpeas in a small saucepan with the stock, allspice, and salt. Warm over medium heat for 5 to 8 minutes until hot through. They should be slightly saucy, not dry."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the chickpeas in a small saucepan with the stock, allspice, and salt. Warm over medium heat for 5 to 8 minutes until hot through. They should be slightly saucy, not dry."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Make the yoghurt sauce"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the yoghurt sauce"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Mix the yoghurt, crushed garlic, lemon juice, salt, and tahini if using until smooth and combined. Taste and adjust the lemon and salt."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix the yoghurt, crushed garlic, lemon juice, salt, and tahini if using until smooth and combined. Taste and adjust the lemon and salt."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Assemble"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Assemble"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Spread the toasted bread across a large, wide serving dish. Spoon the warm chickpeas and their liquid evenly over the bread. Pour the yoghurt sauce over everything. Scatter the toasted pine nuts on top. Drizzle with olive oil and dust with paprika. Add chopped parsley if using. Serve immediately."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Spread the toasted bread across a large, wide serving dish. Spoon the warm chickpeas and their liquid evenly over the bread. Pour the yoghurt sauce over everything. Scatter the toasted pine nuts on top. Drizzle with olive oil and dust with paprika. Add chopped parsley if using. Serve immediately."
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            {"symptom": "Bread completely soft rather than having any texture", "cause": "Assembled too early or bread pieces too small", "fix": "Assemble within 5 minutes of serving. Tear the bread into larger pieces so the edges stay crisp longer."},
-            {"symptom": "Yoghurt sauce too sharp", "cause": "Yoghurt very acidic or too much lemon", "fix": "Start with 1 tablespoon of lemon juice and taste before adding more. Adding tahini softens the sharpness."},
-            {"symptom": "Chickpeas dry", "cause": "Too much stock evaporated", "fix": "The chickpeas need a little liquid; keep them moist. Add a splash of warm water when assembling if they look dry."}
+            {
+              "symptom": "Bread completely soft rather than having any texture",
+              "cause": "Assembled too early or bread pieces too small",
+              "fix": "Assemble within 5 minutes of serving. Tear the bread into larger pieces so the edges stay crisp longer."
+            },
+            {
+              "symptom": "Yoghurt sauce too sharp",
+              "cause": "Yoghurt very acidic or too much lemon",
+              "fix": "Start with 1 tablespoon of lemon juice and taste before adding more. Adding tahini softens the sharpness."
+            },
+            {
+              "symptom": "Chickpeas dry",
+              "cause": "Too much stock evaporated",
+              "fix": "The chickpeas need a little liquid; keep them moist. Add a splash of warm water when assembling if they look dry."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Add a layer of cooked aubergine below the yoghurt for a more substantial dish. In Egypt, a red tomato sauce is sometimes added as an additional layer between the chickpeas and yoghurt."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Add a layer of cooked aubergine below the yoghurt for a more substantial dish. In Egypt, a red tomato sauce is sometimes added as an additional layer between the chickpeas and yoghurt."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Toast the bread up to 2 hours ahead and keep in an airtight container. Warm the chickpeas and make the yoghurt sauce up to an hour ahead. Assemble just before serving so the bread stays intact."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Toast the bread up to 2 hours ahead and keep in an airtight container. Warm the chickpeas and make the yoghurt sauce up to an hour ahead. Assemble just before serving so the bread stays intact."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Fatteh appears at breakfast and lunch tables across Lebanon, Syria, Jordan, and Egypt. It is sold at food stalls and eaten at home, and is particularly popular during Ramadan as a filling breakfast after the fast. The combination of bread, pulses, and yoghurt is ancient and practical: nothing goes to waste and the dish is built from store-cupboard ingredients."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Fatteh appears at breakfast and lunch tables across Lebanon, Syria, Jordan, and Egypt. It is sold at food stalls and eaten at home, and is particularly popular during Ramadan as a filling breakfast after the fast. The combination of bread, pulses, and yoghurt is ancient and practical: nothing goes to waste and the dish is built from store-cupboard ingredients."
+          }
+        ]
       }
     ]
   }

@@ -26,14 +26,25 @@
     "dietaryFlags": [],
     "cuisine": "middleEastern",
     "mealType": "dinner",
-    "mood": ["slowSunday", "comfortFood", "cosy", "hearty"],
+    "mood": [
+      "slowSunday",
+      "comfortFood",
+      "cosy",
+      "hearty"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "dutch-oven", "isOptional": false},
-    {"slug": "frying-pan-26", "isOptional": false}
+    {
+      "slug": "dutch-oven",
+      "isOptional": false
+    },
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,107 +54,318 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Khoresh gheymeh is named for the small cubes of lamb that give it its body. Yellow split peas dissolve partly into the stew, thickening it to something between a stew and a thick soup. Dried limes are pierced and added whole; they slowly release a deep, fermented sourness that anchors everything."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Khoresh gheymeh is named for the small cubes of lamb that give it its body. Yellow split peas dissolve partly into the stew, thickening it to something between a stew and a thick soup. Dried limes are pierced and added whole; they slowly release a deep, fermented sourness that anchors everything."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The fried potato on top is not decoration. It is an essential textural contrast: the stew is soft and giving, and the thin, crisp potato on top provides the crunch that makes each spoonful complete."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The fried potato on top is not decoration. It is an essential textural contrast: the stew is soft and giving, and the thin, crisp potato on top provides the crunch that makes each spoonful complete."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Dried limes (loomi or limu omani) are available in Iranian, Turkish, and Middle Eastern food shops. Pierce each one several times with a skewer or fork before adding; this allows the flavour to escape into the stew during cooking."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Dried limes (loomi or limu omani) are available in Iranian, Turkish, and Middle Eastern food shops. Pierce each one several times with a skewer or fork before adding; this allows the flavour to escape into the stew during cooking."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": null,
           "items": [
-            {"ingredientSlug": "unsalted-butter", "amount": 40, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Stew"},
-            {"ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely diced", "isOptional": false, "groupLabel": "Stew"},
-            {"ingredientSlug": "lamb-shoulder", "amount": 600, "unit": "g", "prepNote": "cut into 2 cm cubes", "isOptional": false, "groupLabel": "Stew"},
-            {"ingredientSlug": "turmeric", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Stew"},
-            {"ingredientSlug": "cinnamon-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Stew"},
-            {"ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Stew"},
-            {"ingredientSlug": "split-peas-yellow", "amount": 150, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": "Stew"},
-            {"ingredientSlug": "chicken-stock", "amount": 800, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Stew"},
-            {"ingredientSlug": "lemon-juice", "amount": 2, "unit": "tbsp", "prepNote": "to mimic dried lime sourness if loomi unavailable", "isOptional": true, "groupLabel": "Stew"},
-            {"ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Stew"},
-            {"ingredientSlug": "saffron", "amount": 1, "unit": "pinch", "prepNote": "steeped in 2 tbsp hot water", "isOptional": true, "groupLabel": "Stew"},
-            {"ingredientSlug": "pomegranate-molasses", "amount": 1, "unit": "tbsp", "prepNote": "optional, to finish", "isOptional": true, "groupLabel": "Stew"},
-            {"ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "cut into thin matchsticks", "isOptional": false, "groupLabel": "Fried potato topping"},
-            {"ingredientSlug": "olive-oil", "amount": 4, "unit": "tbsp", "prepNote": "for frying", "isOptional": false, "groupLabel": "Fried potato topping"},
-            {"ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Fried potato topping"}
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 40,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Stew"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "finely diced",
+              "isOptional": false,
+              "groupLabel": "Stew"
+            },
+            {
+              "ingredientSlug": "lamb-shoulder",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "cut into 2 cm cubes",
+              "isOptional": false,
+              "groupLabel": "Stew"
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Stew"
+            },
+            {
+              "ingredientSlug": "cinnamon-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Stew"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Stew"
+            },
+            {
+              "ingredientSlug": "split-peas-yellow",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "rinsed",
+              "isOptional": false,
+              "groupLabel": "Stew"
+            },
+            {
+              "ingredientSlug": "chicken-stock",
+              "amount": 800,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Stew"
+            },
+            {
+              "ingredientSlug": "lemon-juice",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "to mimic dried lime sourness if loomi unavailable",
+              "isOptional": true,
+              "groupLabel": "Stew"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Stew"
+            },
+            {
+              "ingredientSlug": "saffron",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": "steeped in 2 tbsp hot water",
+              "isOptional": true,
+              "groupLabel": "Stew"
+            },
+            {
+              "ingredientSlug": "pomegranate-molasses",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "optional, to finish",
+              "isOptional": true,
+              "groupLabel": "Stew"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "cut into thin matchsticks",
+              "isOptional": false,
+              "groupLabel": "Fried potato topping"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": "for frying",
+              "isOptional": false,
+              "groupLabel": "Fried potato topping"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Fried potato topping"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Brown the lamb and build the stew"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Brown the lamb and build the stew"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Melt the butter in a heavy casserole over medium-high heat. Add the onion and cook for 8 minutes until golden. Push aside and add the lamb cubes in batches, browning well on all sides, about 6 minutes per batch. Return all the lamb to the pot. Add the turmeric, cinnamon, and tomato puree and stir for 1 minute. Add the yellow split peas, stock, salt, and saffron water if using. Stir in the lemon juice or pierce the dried limes if using and nestle them in the pot. Bring to the boil."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Melt the butter in a heavy casserole over medium-high heat. Add the onion and cook for 8 minutes until golden. Push aside and add the lamb cubes in batches, browning well on all sides, about 6 minutes per batch. Return all the lamb to the pot. Add the turmeric, cinnamon, and tomato puree and stir for 1 minute. Add the yellow split peas, stock, salt, and saffron water if using. Stir in the lemon juice or pierce the dried limes if using and nestle them in the pot. Bring to the boil."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Simmer slowly"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Simmer slowly"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Reduce the heat to a very gentle simmer, cover, and cook for 1 to 1.5 hours until the lamb is very tender and the split peas have softened and partially dissolved into the stew. The stew should be quite thick. Taste and adjust the salt. Add pomegranate syrup to balance if too heavy."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Reduce the heat to a very gentle simmer, cover, and cook for 1 to 1.5 hours until the lamb is very tender and the split peas have softened and partially dissolved into the stew. The stew should be quite thick. Taste and adjust the salt. Add pomegranate syrup to balance if too heavy."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Make the fried potato topping"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the fried potato topping"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Cut the carrots into very thin matchstick strips, or use 2 medium potatoes instead. Heat the olive oil in a frying pan over high heat until very hot. Add the matchsticks in a thin layer, season with salt, and fry for 5 to 7 minutes, stirring occasionally, until golden and crisp. Drain on kitchen paper. Spoon the stew over rice and pile the fried potato on top."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Cut the carrots into very thin matchstick strips, or use 2 medium potatoes instead. Heat the olive oil in a frying pan over high heat until very hot. Add the matchsticks in a thin layer, season with salt, and fry for 5 to 7 minutes, stirring occasionally, until golden and crisp. Drain on kitchen paper. Spoon the stew over rice and pile the fried potato on top."
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            {"symptom": "Stew too liquid after 90 minutes", "cause": "Split peas did not dissolve as expected", "fix": "Uncover and simmer on a slightly higher heat for 15 minutes to reduce. The split peas should dissolve enough to thicken the stew naturally."},
-            {"symptom": "Lamb still tough", "cause": "Insufficient cooking time or heat too low", "fix": "Continue simmering; lamb shoulder needs a full 90 minutes at a gentle but real simmer to become tender."},
-            {"symptom": "Fried potato soggy", "cause": "Oil not hot enough or potato too thick", "fix": "Cut the potato very thin and make sure the oil is very hot before adding. Fry in batches if necessary."}
+            {
+              "symptom": "Stew too liquid after 90 minutes",
+              "cause": "Split peas did not dissolve as expected",
+              "fix": "Uncover and simmer on a slightly higher heat for 15 minutes to reduce. The split peas should dissolve enough to thicken the stew naturally."
+            },
+            {
+              "symptom": "Lamb still tough",
+              "cause": "Insufficient cooking time or heat too low",
+              "fix": "Continue simmering; lamb shoulder needs a full 90 minutes at a gentle but real simmer to become tender."
+            },
+            {
+              "symptom": "Fried potato soggy",
+              "cause": "Oil not hot enough or potato too thick",
+              "fix": "Cut the potato very thin and make sure the oil is very hot before adding. Fry in batches if necessary."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Some versions include a small amount of pomegranate syrup stirred in at the end for a subtle sweet-sharp note. Replace the lamb with beef chuck if preferred. For a richer result, add a pinch of ground rose petals or advieh spice mix if you can find it."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Some versions include a small amount of pomegranate syrup stirred in at the end for a subtle sweet-sharp note. Replace the lamb with beef chuck if preferred. For a richer result, add a pinch of ground rose petals or advieh spice mix if you can find it."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The stew keeps for 3 days in the fridge and freezes for 3 months. The fried potato topping must be made fresh each time. Reheat gently on the hob with a splash of water to prevent sticking."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The stew keeps for 3 days in the fridge and freezes for 3 months. The fried potato topping must be made fresh each time. Reheat gently on the hob with a splash of water to prevent sticking."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Khoresh gheymeh is one of the most popular everyday stews in Iran, served at family meals throughout the year. It is a common feature at religious gatherings, served in large quantities over rice. The split pea version is the classic; a different variety called gheymeh bademjan adds fried aubergine in place of the potato topping."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Khoresh gheymeh is one of the most popular everyday stews in Iran, served at family meals throughout the year. It is a common feature at religious gatherings, served in large quantities over rice. The split pea version is the classic; a different variety called gheymeh bademjan adds fried aubergine in place of the potato topping."
+          }
+        ]
       }
     ]
   }

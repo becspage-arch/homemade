@@ -26,16 +26,32 @@
     "dietaryFlags": [],
     "cuisine": "middleEastern",
     "mealType": "dinner",
-    "mood": ["weeknight", "comfortFood", "hearty"],
+    "mood": [
+      "weeknight",
+      "comfortFood",
+      "hearty"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "griddle-pan", "isOptional": false},
-    {"slug": "medium-saucepan", "isOptional": false},
-    {"slug": "small-saucepan", "isOptional": false},
-    {"slug": "tongs", "isOptional": false}
+    {
+      "slug": "griddle-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "small-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "tongs",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -45,107 +61,360 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Iskender kebap is one of the truly great kebab dishes. Thin slices of spiced lamb sit on torn flatbread that has been soaked in a rich tomato sauce, and the whole thing arrives at the table with hot melted butter poured over and cold yoghurt on the side."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Iskender kebap is one of the truly great kebab dishes. Thin slices of spiced lamb sit on torn flatbread that has been soaked in a rich tomato sauce, and the whole thing arrives at the table with hot melted butter poured over and cold yoghurt on the side."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The traditional version uses slices of rotating doner kebab, which is difficult to replicate at home. The solution is to make seasoned lamb patties, grill them hot and fast, then slice them thinly while still hot. They carry all the right flavour and work perfectly with the rest of the dish."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The traditional version uses slices of rotating doner kebab, which is difficult to replicate at home. The solution is to make seasoned lamb patties, grill them hot and fast, then slice them thinly while still hot. They carry all the right flavour and work perfectly with the rest of the dish."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Heat the plates before serving if you can; in Bursa the dish arrives on a preheated copper plate that keeps sizzling at the table. A warmed deep bowl or plate gives you something similar."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the plates before serving if you can; in Bursa the dish arrives on a preheated copper plate that keeps sizzling at the table. A warmed deep bowl or plate gives you something similar."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
-          "defaultServings": null,
+          "defaultServings": 4,
           "items": [
-            {"ingredientSlug": "lamb-mince", "amount": 600, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Lamb"},
-            {"ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "small, grated and squeezed dry", "isOptional": false, "groupLabel": "Lamb"},
-            {"ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Lamb"},
-            {"ingredientSlug": "paprika-sweet", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Lamb"},
-            {"ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Lamb"},
-            {"ingredientSlug": "black-pepper-ground", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Lamb"},
-            {"ingredientSlug": "tinned-tomatoes", "amount": 400, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Tomato sauce"},
-            {"ingredientSlug": "unsalted-butter", "amount": 30, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Tomato sauce"},
-            {"ingredientSlug": "tomato-puree", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tomato sauce"},
-            {"ingredientSlug": "paprika-sweet", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Tomato sauce"},
-            {"ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Tomato sauce"},
-            {"ingredientSlug": "pitta-bread", "amount": 4, "unit": "each", "prepNote": "torn into large pieces", "isOptional": false, "groupLabel": "Assembly"},
-            {"ingredientSlug": "greek-yoghurt", "amount": 300, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Assembly"},
-            {"ingredientSlug": "unsalted-butter", "amount": 80, "unit": "g", "prepNote": "for the finishing butter", "isOptional": false, "groupLabel": "Assembly"},
-            {"ingredientSlug": "paprika-sweet", "amount": 1, "unit": "tsp", "prepNote": "for the finishing butter", "isOptional": false, "groupLabel": "Assembly"}
+            {
+              "ingredientSlug": "lamb-mince",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Lamb"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "small, grated and squeezed dry",
+              "isOptional": false,
+              "groupLabel": "Lamb"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Lamb"
+            },
+            {
+              "ingredientSlug": "paprika-sweet",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Lamb"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Lamb"
+            },
+            {
+              "ingredientSlug": "black-pepper-ground",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Lamb"
+            },
+            {
+              "ingredientSlug": "tinned-tomatoes",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tomato sauce"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tomato sauce"
+            },
+            {
+              "ingredientSlug": "tomato-puree",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tomato sauce"
+            },
+            {
+              "ingredientSlug": "paprika-sweet",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tomato sauce"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tomato sauce"
+            },
+            {
+              "ingredientSlug": "pitta-bread",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "torn into large pieces",
+              "isOptional": false,
+              "groupLabel": "Assembly"
+            },
+            {
+              "ingredientSlug": "greek-yoghurt",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Assembly"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": "for the finishing butter",
+              "isOptional": false,
+              "groupLabel": "Assembly"
+            },
+            {
+              "ingredientSlug": "paprika-sweet",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": "for the finishing butter",
+              "isOptional": false,
+              "groupLabel": "Assembly"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Make the tomato sauce and lamb patties"}]
-      },
-      {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Melt 30 g of butter in the saucepan, add the tomato puree and paprika and cook for 1 minute. Add the tinned tomatoes and salt. Simmer for 15 minutes until thickened. Keep warm. Meanwhile, mix the lamb mince, grated onion, spices, and salt together and knead briefly. Form into 8 flat oval patties about 1 cm thick."}]
-      },
-      {
-        "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Grill the lamb"}]
-      },
-      {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Heat the griddle pan over a high heat until very hot. Grill the patties for 3 minutes each side until charred on the outside and cooked through. Rest for 2 minutes, then slice thinly across the grain."}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Assemble and pour the butter"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the tomato sauce and lamb patties"
+          }
+        ]
       },
       {
-        "type": "paragraph",
-        "content": [{"type": "text", "text": "Arrange the torn pitta bread in warmed deep bowls or plates. Ladle the tomato sauce over the bread and let it soak in for a minute. Arrange the sliced lamb over the top. Spoon a generous amount of yoghurt alongside. Melt 80 g of butter in the small pan until it sizzles and begins to turn golden, add the paprika, and pour immediately over the lamb and bread. Serve at once."}]
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Melt 30 g of butter in the saucepan, add the tomato puree and paprika and cook for 1 minute. Add the tinned tomatoes and salt. Simmer for 15 minutes until thickened. Keep warm. Meanwhile, mix the lamb mince, grated onion, spices, and salt together and knead briefly. Form into 8 flat oval patties about 1 cm thick."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Grill the lamb"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Heat the griddle pan over a high heat until very hot. Grill the patties for 3 minutes each side until charred on the outside and cooked through. Rest for 2 minutes, then slice thinly across the grain."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Assemble and pour the butter"
+          }
+        ]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Arrange the torn pitta bread in warmed deep bowls or plates. Ladle the tomato sauce over the bread and let it soak in for a minute. Arrange the sliced lamb over the top. Spoon a generous amount of yoghurt alongside. Melt 80 g of butter in the small pan until it sizzles and begins to turn golden, add the paprika, and pour immediately over the lamb and bread. Serve at once."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
-          "rows": [
-            {"symptom": "Bread soggy rather than sauce-soaked", "cause": "Too much sauce or bread too soft", "fix": "Use just enough sauce to coat the bread, not drown it. A slightly drier pitta absorbs better without going to mush."},
-            {"symptom": "Lamb dry", "cause": "Overcooked or lean mince", "fix": "Use mince with some fat and grill fast. Slice thinly immediately after resting so it does not continue cooking."},
-            {"symptom": "Butter sauce too pale", "cause": "Not enough heat on the butter", "fix": "Let the butter foam and just turn golden before adding paprika; a pale finish means less flavour."}
+          "items": [
+            {
+              "symptom": "Bread soggy rather than sauce-soaked",
+              "cause": "Too much sauce or bread too soft",
+              "fix": "Use just enough sauce to coat the bread, not drown it. A slightly drier pitta absorbs better without going to mush."
+            },
+            {
+              "symptom": "Lamb dry",
+              "cause": "Overcooked or lean mince",
+              "fix": "Use mince with some fat and grill fast. Slice thinly immediately after resting so it does not continue cooking."
+            },
+            {
+              "symptom": "Butter sauce too pale",
+              "cause": "Not enough heat on the butter",
+              "fix": "Let the butter foam and just turn golden before adding paprika; a pale finish means less flavour."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "For a spicier version, add Aleppo pepper to the finishing butter alongside the paprika. Some restaurants serve it with grilled tomato and green pepper on top of the lamb. Replace the lamb with chicken mince for a lighter version."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "For a spicier version, add Aleppo pepper to the finishing butter alongside the paprika. Some restaurants serve it with grilled tomato and green pepper on top of the lamb. Replace the lamb with chicken mince for a lighter version."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The tomato sauce can be made 3 days ahead and reheated. The lamb patties can be seasoned and chilled a day ahead. Assemble everything just before serving; once assembled, it does not hold."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The tomato sauce can be made 3 days ahead and reheated. The lamb patties can be seasoned and chilled a day ahead. Assemble everything just before serving; once assembled, it does not hold."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Iskender Efendi invented this dish in Bursa in the 1860s. His descendants still run the original restaurant there. The combination of flatbread, tomato sauce, yoghurt, and hot butter has since spread to Turkish restaurants worldwide. The original in Bursa, served on copper plates, is still the standard to cook against."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Iskender Efendi invented this dish in Bursa in the 1860s. His descendants still run the original restaurant there. The combination of flatbread, tomato sauce, yoghurt, and hot butter has since spread to Turkish restaurants worldwide. The original in Bursa, served on copper plates, is still the standard to cook against."
+          }
+        ]
       }
     ]
   }

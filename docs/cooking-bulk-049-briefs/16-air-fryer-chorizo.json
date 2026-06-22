@@ -26,13 +26,18 @@
     "dietaryFlags": [],
     "cuisine": "spanish",
     "mealType": "snack",
-    "mood": ["weeknight"],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": 190,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,43 +48,84 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Chorizo needs no added oil in the air fryer: it renders its own fat as it cooks. Slice about 1 cm thick and lay in a single layer. The edges caramelise in 6-8 minutes at 190°C. Use the crisped slices over pasta, stirred into rice, or alongside fried eggs." }
+          {
+            "type": "text",
+            "text": "Chorizo needs no added oil in the air fryer: it renders its own fat as it cooks. Slice about 1 cm thick and lay in a single layer. The edges caramelise in 6-8 minutes at 190°C. Use the crisped slices over pasta, stirred into rice, or alongside fried eggs."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "chorizo", "amount": 200, "unit": "g", "prepNote": "cooking chorizo, sliced 1 cm thick", "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "chorizo",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "cooking chorizo, sliced 1 cm thick",
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Lay {{chorizo}} of sliced chorizo in a single layer in the air fryer basket. No oil needed. Cook at 190°C for 4 minutes, flip each slice, and cook for a further 3-4 minutes until the edges are caramelised and the fat has rendered. Tip onto a plate lined with paper towel to absorb any excess fat." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lay {{chorizo}} of sliced chorizo in a single layer in the air fryer basket. No oil needed. Cook at 190°C for 4 minutes, flip each slice, and cook for a further 3-4 minutes until the edges are caramelised and the fat has rendered. Tip onto a plate lined with paper towel to absorb any excess fat."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -87,21 +133,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Smoke filling the kitchen", "cause": "Rendered fat dripping into the hot pan.", "fix": "Add a small amount of water to the drip tray before cooking to prevent the fat from smoking. Empty and wipe after each batch." },
-            { "symptom": "Slices burning before fully cooked", "cause": "Temperature too high.", "fix": "Cook at 190°C rather than 200°C. Chorizo has sugars from the paprika that burn quickly at high heat." },
-            { "symptom": "Slices curling and cooking unevenly", "cause": "Sliced too thin.", "fix": "Aim for 1 cm slices. Thinner slices curl away from the basket and cook unevenly." }
+            {
+              "symptom": "Smoke filling the kitchen",
+              "cause": "Rendered fat dripping into the hot pan.",
+              "fix": "Add a small amount of water to the drip tray before cooking to prevent the fat from smoking. Empty and wipe after each batch."
+            },
+            {
+              "symptom": "Slices burning before fully cooked",
+              "cause": "Temperature too high.",
+              "fix": "Cook at 190°C rather than 200°C. Chorizo has sugars from the paprika that burn quickly at high heat."
+            },
+            {
+              "symptom": "Slices curling and cooking unevenly",
+              "cause": "Sliced too thin.",
+              "fix": "Aim for 1 cm slices. Thinner slices curl away from the basket and cook unevenly."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Crisped chorizo is a useful component. Add it to pasta with tinned tomatoes and basil, stir it through rice with peas, or pile it on toast with soft-boiled eggs. The rendered fat that collects in the drip tray can be poured into a small jar and used to fry eggs or potatoes." }
+          {
+            "type": "text",
+            "text": "Crisped chorizo is a useful component. Add it to pasta with tinned tomatoes and basil, stir it through rice with peas, or pile it on toast with soft-boiled eggs. The rendered fat that collects in the drip tray can be poured into a small jar and used to fry eggs or potatoes."
+          }
         ]
       }
     ]

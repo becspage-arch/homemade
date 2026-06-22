@@ -23,18 +23,33 @@
     "batchable": true,
     "batchNotes": null,
     "makeAheadNotes": "Each component keeps well. Store separately and assemble fresh when serving.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "middleEastern",
     "mealType": "lunch",
-    "mood": ["weeknight", "comfortFood", "party"],
+    "mood": [
+      "weeknight",
+      "comfortFood",
+      "party"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "large-saucepan", "isOptional": false},
-    {"slug": "small-frying-pan", "isOptional": false},
-    {"slug": "medium-saucepan", "isOptional": false}
+    {
+      "slug": "large-saucepan",
+      "isOptional": false
+    },
+    {
+      "slug": "small-frying-pan",
+      "isOptional": false
+    },
+    {
+      "slug": "medium-saucepan",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -44,115 +59,331 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Kushari is a dish of organised chaos. Rice, lentils, pasta, and chickpeas are each cooked separately and then combined. Two sauces go on top: a sharp, garlicky tomato sauce with vinegar and a darker oil with fried onion bits poured over everything. Every bite has multiple textures and temperature contrasts."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Kushari is a dish of organised chaos. Rice, lentils, pasta, and chickpeas are each cooked separately and then combined. Two sauces go on top: a sharp, garlicky tomato sauce with vinegar and a darker oil with fried onion bits poured over everything. Every bite has multiple textures and temperature contrasts."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The dish sounds unlikely. In practice it is one of those combinations that work completely. The acidity of the tomato sauce cuts through the starchiness of the base. The crisp onion gives texture. The vinegar sharpens everything."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The dish sounds unlikely. In practice it is one of those combinations that work completely. The acidity of the tomato sauce cuts through the starchiness of the base. The crisp onion gives texture. The vinegar sharpens everything."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Small pasta shapes are traditional: elbow macaroni, ditalini, or broken spaghetti. The pasta is cooked and drained first, then mixed into the rice and lentil base."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Small pasta shapes are traditional: elbow macaroni, ditalini, or broken spaghetti. The pasta is cooked and drained first, then mixed into the rice and lentil base."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": null,
           "items": [
-            {"ingredientSlug": "long-grain-rice", "amount": 300, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": "Rice and lentils"},
-            {"ingredientSlug": "lentils-brown", "amount": 200, "unit": "g", "prepNote": "rinsed", "isOptional": false, "groupLabel": "Rice and lentils"},
-            {"ingredientSlug": "pasta-dried", "amount": 150, "unit": "g", "prepNote": "small shapes: macaroni, ditalini, or similar", "isOptional": false, "groupLabel": "Pasta"},
-            {"ingredientSlug": "chickpeas-tinned", "amount": 400, "unit": "g", "prepNote": "drained and rinsed", "isOptional": false, "groupLabel": "Pasta"},
-            {"ingredientSlug": "olive-oil", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tomato sauce"},
-            {"ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "Tomato sauce"},
-            {"ingredientSlug": "tomato-passata", "amount": 400, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Tomato sauce"},
-            {"ingredientSlug": "white-wine-vinegar", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tomato sauce"},
-            {"ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Tomato sauce"},
-            {"ingredientSlug": "chilli-flakes", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Tomato sauce"},
-            {"ingredientSlug": "salt-table", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Tomato sauce"},
-            {"ingredientSlug": "onion", "amount": 2, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": "Crispy onion"},
-            {"ingredientSlug": "vegetable-oil", "amount": 6, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Crispy onion"},
-            {"ingredientSlug": "white-wine-vinegar", "amount": 1, "unit": "tbsp", "prepNote": "poured into the onion oil just before serving", "isOptional": false, "groupLabel": "Crispy onion"}
+            {
+              "ingredientSlug": "long-grain-rice",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "rinsed",
+              "isOptional": false,
+              "groupLabel": "Rice and lentils"
+            },
+            {
+              "ingredientSlug": "lentils-brown",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": "rinsed",
+              "isOptional": false,
+              "groupLabel": "Rice and lentils"
+            },
+            {
+              "ingredientSlug": "pasta-dried",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "small shapes: macaroni, ditalini, or similar",
+              "isOptional": false,
+              "groupLabel": "Pasta"
+            },
+            {
+              "ingredientSlug": "chickpeas-tinned",
+              "amount": 400,
+              "unit": "g",
+              "prepNote": "drained and rinsed",
+              "isOptional": false,
+              "groupLabel": "Pasta"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tomato sauce"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "Tomato sauce"
+            },
+            {
+              "ingredientSlug": "tomato-passata",
+              "amount": 400,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tomato sauce"
+            },
+            {
+              "ingredientSlug": "white-wine-vinegar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tomato sauce"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tomato sauce"
+            },
+            {
+              "ingredientSlug": "chilli-flakes",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tomato sauce"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tomato sauce"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": "Crispy onion"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 6,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Crispy onion"
+            },
+            {
+              "ingredientSlug": "white-wine-vinegar",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": "poured into the onion oil just before serving",
+              "isOptional": false,
+              "groupLabel": "Crispy onion"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Cook the lentils, then the rice"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the lentils, then the rice"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Simmer the brown lentils in plenty of water for 20 to 25 minutes until just tender. Drain and set aside. In a medium saucepan, heat 1 tbsp oil, add the rice, and stir for 1 minute. Add 550 ml of water and a pinch of salt. Bring to the boil, cover, and cook over the lowest heat for 15 minutes. Remove from the heat and leave covered for 5 minutes. Fold in the cooked lentils and the chickpeas."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Simmer the brown lentils in plenty of water for 20 to 25 minutes until just tender. Drain and set aside. In a medium saucepan, heat 1 tbsp oil, add the rice, and stir for 1 minute. Add 550 ml of water and a pinch of salt. Bring to the boil, cover, and cook over the lowest heat for 15 minutes. Remove from the heat and leave covered for 5 minutes. Fold in the cooked lentils and the chickpeas."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Cook the pasta"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the pasta"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Boil the pasta in salted water until just cooked. Drain well and fold into the rice and lentil base."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Boil the pasta in salted water until just cooked. Drain well and fold into the rice and lentil base."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Make the tomato sauce"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the tomato sauce"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Heat the olive oil in a saucepan over medium heat. Add the garlic and cook for 1 minute. Add the passata, vinegar, cumin, chilli flakes, and salt. Simmer for 10 minutes until thickened and sharp. Taste and adjust the seasoning."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the olive oil in a saucepan over medium heat. Add the garlic and cook for 1 minute. Add the passata, vinegar, cumin, chilli flakes, and salt. Simmer for 10 minutes until thickened and sharp. Taste and adjust the seasoning."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Fry the onion and serve"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry the onion and serve"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Fry the sliced onions in the vegetable oil over medium-high heat, stirring often, for 15 to 20 minutes until very dark and crisp. Remove with a slotted spoon. Remove the pan from the heat and add the vinegar to the hot onion oil; it will sizzle. Serve the rice base in deep bowls. Spoon tomato sauce generously over the top. Scatter the crispy onions and drizzle the vinegar oil over everything."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry the sliced onions in the vegetable oil over medium-high heat, stirring often, for 15 to 20 minutes until very dark and crisp. Remove with a slotted spoon. Remove the pan from the heat and add the vinegar to the hot onion oil; it will sizzle. Serve the rice base in deep bowls. Spoon tomato sauce generously over the top. Scatter the crispy onions and drizzle the vinegar oil over everything."
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            {"symptom": "Lentils mushy before rice is ready", "cause": "Cooked too long", "fix": "Cook the lentils just until tender; they should still hold their shape. Drain them while still slightly underdone."},
-            {"symptom": "Onions not crisp, just soft and dark", "cause": "Heat too low or too much oil", "fix": "Fry over medium-high heat. Spread the onions thinly in the pan so each piece gets contact with the hot surface."},
-            {"symptom": "Tomato sauce too sharp", "cause": "Too much vinegar or acidic passata", "fix": "Add a pinch of sugar and simmer for 2 more minutes to mellow the sharpness."}
+            {
+              "symptom": "Lentils mushy before rice is ready",
+              "cause": "Cooked too long",
+              "fix": "Cook the lentils just until tender; they should still hold their shape. Drain them while still slightly underdone."
+            },
+            {
+              "symptom": "Onions not crisp, just soft and dark",
+              "cause": "Heat too low or too much oil",
+              "fix": "Fry over medium-high heat. Spread the onions thinly in the pan so each piece gets contact with the hot surface."
+            },
+            {
+              "symptom": "Tomato sauce too sharp",
+              "cause": "Too much vinegar or acidic passata",
+              "fix": "Add a pinch of sugar and simmer for 2 more minutes to mellow the sharpness."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The classic kushari has no meat, but a version with spiced minced lamb added to the tomato sauce is served in some Egyptian households. The dish is endlessly adaptable; use whatever small pasta shape you have."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The classic kushari has no meat, but a version with spiced minced lamb added to the tomato sauce is served in some Egyptian households. The dish is endlessly adaptable; use whatever small pasta shape you have."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Each component stores well separately. The rice-lentil-pasta base can be refrigerated for 2 days; the tomato sauce for 3 days. Reheat and assemble fresh when needed. The crisp onions should be fried on the day."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Each component stores well separately. The rice-lentil-pasta base can be refrigerated for 2 days; the tomato sauce for 3 days. Reheat and assemble fresh when needed. The crisp onions should be fried on the day."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Kushari shops in Cairo are a Cairo institution. They are found all over the city and have been feeding workers and students a cheap, filling lunch since the nineteenth century. The dish reflects the mixed history of Egyptian food: lentils and rice from an ancient tradition, pasta from Italian influence, the vinegar-and-tomato sauce from a later era. It is one of the most distinctively Egyptian dishes there is."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Kushari shops in Cairo are a Cairo institution. They are found all over the city and have been feeding workers and students a cheap, filling lunch since the nineteenth century. The dish reflects the mixed history of Egyptian food: lentils and rice from an ancient tradition, pasta from Italian influence, the vinegar-and-tomato sauce from a later era. It is one of the most distinctively Egyptian dishes there is."
+          }
+        ]
       }
     ]
   }

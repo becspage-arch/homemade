@@ -26,16 +26,32 @@
     "dietaryFlags": [],
     "cuisine": "american",
     "mealType": "dinner",
-    "mood": ["comfortFood", "hearty", "bbq"],
+    "mood": [
+      "comfortFood",
+      "hearty",
+      "bbq"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "slow-cooker", "isOptional": false },
-    { "slug": "chefs-knife", "isOptional": false },
-    { "slug": "chopping-board", "isOptional": false },
-    { "slug": "baking-tray", "isOptional": true }
+    {
+      "slug": "slow-cooker",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": true
+    }
   ],
   "glossaryTerms": [
     {
@@ -62,7 +78,9 @@
             "marks": [
               {
                 "type": "glossaryTooltip",
-                "attrs": { "termSlug": "low-and-slow" }
+                "attrs": {
+                  "termSlug": "low-and-slow"
+                }
               }
             ]
           },
@@ -92,37 +110,135 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "pork-ribs", "amount": 1200, "unit": "g", "prepNote": "rack of ribs, or individual ribs", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "smoked-paprika", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "garlic-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "onion-powder", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "black-pepper-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the dry rub" },
-            { "ingredientSlug": "ketchup", "amount": 4, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
-            { "ingredientSlug": "dark-brown-sugar", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
-            { "ingredientSlug": "cider-vinegar", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
-            { "ingredientSlug": "worcestershire-sauce", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" },
-            { "ingredientSlug": "soy-sauce-dark", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "For the sauce" }
+            {
+              "ingredientSlug": "pork-ribs",
+              "amount": 1200,
+              "unit": "g",
+              "prepNote": "rack of ribs, or individual ribs",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "smoked-paprika",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion-powder",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the dry rub"
+            },
+            {
+              "ingredientSlug": "ketchup",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "dark-brown-sugar",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "cider-vinegar",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "worcestershire-sauce",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            },
+            {
+              "ingredientSlug": "soy-sauce-dark",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the sauce"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Season the ribs" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Season the ribs"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -135,8 +251,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Make the sauce" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the sauce"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -149,8 +272,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -163,8 +293,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Glaze under the grill" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Glaze under the grill"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -204,8 +341,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",

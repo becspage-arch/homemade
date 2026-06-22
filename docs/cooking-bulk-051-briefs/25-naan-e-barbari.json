@@ -23,18 +23,33 @@
     "batchable": true,
     "batchNotes": null,
     "makeAheadNotes": "The dough can be made the evening before and refrigerated overnight for a slow cold rise. Shape and bake the next day.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "middleEastern",
     "mealType": "breakfast",
-    "mood": ["slowSunday", "brunchy", "showstopper"],
+    "mood": [
+      "slowSunday",
+      "brunchy",
+      "showstopper"
+    ],
     "temperatureCelsius": 240,
     "temperatureNote": "Very hot oven — preheat fully for at least 30 minutes",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "stand-mixer", "isOptional": true},
-    {"slug": "baking-tray", "isOptional": false},
-    {"slug": "mixing-bowl-large", "isOptional": false}
+    {
+      "slug": "stand-mixer",
+      "isOptional": true
+    },
+    {
+      "slug": "baking-tray",
+      "isOptional": false
+    },
+    {
+      "slug": "mixing-bowl-large",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -44,109 +59,306 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Naan-e barbari is the bread most Iranians eat at breakfast: long and oval, about 30 to 40 cm, with a ridged surface and a shiny golden crust from the starch glaze. The inside is soft and slightly chewy, not dry like many flatbreads."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Naan-e barbari is the bread most Iranians eat at breakfast: long and oval, about 30 to 40 cm, with a ridged surface and a shiny golden crust from the starch glaze. The inside is soft and slightly chewy, not dry like many flatbreads."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The glaze is the detail that makes barbari distinct. A simple mixture of flour, water, oil, and a pinch of baking soda is brushed over the shaped dough before baking. It creates a burnished, slightly lacquered finish that ordinary breads lack."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The glaze is the detail that makes barbari distinct. A simple mixture of flour, water, oil, and a pinch of baking soda is brushed over the shaped dough before baking. It creates a burnished, slightly lacquered finish that ordinary breads lack."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The bread must be baked at a very high temperature. Preheat the oven for at least 30 minutes before baking and use the hottest shelf."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The bread must be baked at a very high temperature. Preheat the oven for at least 30 minutes before baking and use the hottest shelf."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": null,
           "items": [
-            {"ingredientSlug": "strong-bread-flour", "amount": 500, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "yeast-fast-action", "amount": 7, "unit": "g", "prepNote": "one sachet", "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "salt-table", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "caster-sugar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "olive-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "water", "amount": 320, "unit": "ml", "prepNote": "warm", "isOptional": false, "groupLabel": "Dough"},
-            {"ingredientSlug": "plain-flour", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Glaze"},
-            {"ingredientSlug": "water", "amount": 80, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Glaze"},
-            {"ingredientSlug": "vegetable-oil", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Glaze"},
-            {"ingredientSlug": "bicarbonate-of-soda", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Glaze"},
-            {"ingredientSlug": "sesame-seeds", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Seeds"},
-            {"ingredientSlug": "nigella-seeds", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Seeds"}
+            {
+              "ingredientSlug": "strong-bread-flour",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "yeast-fast-action",
+              "amount": 7,
+              "unit": "g",
+              "prepNote": "one sachet",
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 320,
+              "unit": "ml",
+              "prepNote": "warm",
+              "isOptional": false,
+              "groupLabel": "Dough"
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Glaze"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 80,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Glaze"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Glaze"
+            },
+            {
+              "ingredientSlug": "bicarbonate-of-soda",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Glaze"
+            },
+            {
+              "ingredientSlug": "sesame-seeds",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Seeds"
+            },
+            {
+              "ingredientSlug": "nigella-seeds",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Seeds"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Make and prove the dough"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make and prove the dough"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Mix the flour, yeast, salt, and sugar in a large bowl. Add the oil and warm water. Bring together into a dough and knead for 8 to 10 minutes by hand, or 6 minutes in a stand mixer with a dough hook, until smooth and elastic. Shape into a ball, place in a lightly oiled bowl, cover with a damp cloth, and leave to rise for 60 to 90 minutes until doubled."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix the flour, yeast, salt, and sugar in a large bowl. Add the oil and warm water. Bring together into a dough and knead for 8 to 10 minutes by hand, or 6 minutes in a stand mixer with a dough hook, until smooth and elastic. Shape into a ball, place in a lightly oiled bowl, cover with a damp cloth, and leave to rise for 60 to 90 minutes until doubled."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Shape the barbari"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Shape the barbari"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Divide the dough into two pieces. On a lightly floured surface, shape each into an oval about 30 cm long and 15 cm wide. Place on a lightly oiled baking sheet. Leave to rest for 20 minutes while you preheat the oven to 240 C."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Divide the dough into two pieces. On a lightly floured surface, shape each into an oval about 30 cm long and 15 cm wide. Place on a lightly oiled baking sheet. Leave to rest for 20 minutes while you preheat the oven to 240 C."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Glaze and bake"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Glaze and bake"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Whisk together the glaze ingredients (flour, water, oil, bicarbonate) until smooth. Brush generously over the surface of each bread. Use your fingertips to press five or six parallel grooves lengthways into each loaf, going about halfway through the dough. Scatter the sesame and nigella seeds into the grooves and over the surface. Bake at 240 C for 12 to 15 minutes until deep golden and hollow-sounding when tapped on the base. Eat the same day."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Whisk together the glaze ingredients (flour, water, oil, bicarbonate) until smooth. Brush generously over the surface of each bread. Use your fingertips to press five or six parallel grooves lengthways into each loaf, going about halfway through the dough. Scatter the sesame and nigella seeds into the grooves and over the surface. Bake at 240 C for 12 to 15 minutes until deep golden and hollow-sounding when tapped on the base. Eat the same day."
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            {"symptom": "Bread pale and not crisping", "cause": "Oven not hot enough or glaze too thin", "fix": "Preheat fully for 30 minutes. Apply glaze generously; a thin layer does not give the signature finish."},
-            {"symptom": "Dough too sticky to shape", "cause": "Slightly high hydration, which is normal", "fix": "Flour your hands well and work quickly. The dough is meant to be soft."},
-            {"symptom": "Grooves disappear during baking", "cause": "Grooves not deep enough or dough over-proved", "fix": "Press firmly with floured fingers; the grooves should be clearly visible. Bake promptly after shaping."}
+            {
+              "symptom": "Bread pale and not crisping",
+              "cause": "Oven not hot enough or glaze too thin",
+              "fix": "Preheat fully for 30 minutes. Apply glaze generously; a thin layer does not give the signature finish."
+            },
+            {
+              "symptom": "Dough too sticky to shape",
+              "cause": "Slightly high hydration, which is normal",
+              "fix": "Flour your hands well and work quickly. The dough is meant to be soft."
+            },
+            {
+              "symptom": "Grooves disappear during baking",
+              "cause": "Grooves not deep enough or dough over-proved",
+              "fix": "Press firmly with floured fingers; the grooves should be clearly visible. Bake promptly after shaping."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Poppy seeds can replace or supplement the nigella. For a slightly richer bread, replace 2 tbsp of water with whole milk. A stone or heavy baking steel in the oven gives an even better base crust."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Poppy seeds can replace or supplement the nigella. For a slightly richer bread, replace 2 tbsp of water with whole milk. A stone or heavy baking steel in the oven gives an even better base crust."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The dough can be refrigerated overnight after its first rise. Shape and bake the next day. Baked bread is best eaten the same day; freeze any leftovers as soon as they have cooled."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The dough can be refrigerated overnight after its first rise. Shape and bake the next day. Baked bread is best eaten the same day; freeze any leftovers as soon as they have cooled."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Barbari is the most popular bread in Iran and the one most likely to be found at a Persian breakfast table alongside fresh herbs, feta, butter, and honey. It is sold in dedicated bread shops (noonvai) that bake it fresh throughout the morning. In the UK it can be found in Iranian grocery shops."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Barbari is the most popular bread in Iran and the one most likely to be found at a Persian breakfast table alongside fresh herbs, feta, butter, and honey. It is sold in dedicated bread shops (noonvai) that bake it fresh throughout the morning. In the UK it can be found in Iranian grocery shops."
+          }
+        ]
       }
     ]
   }

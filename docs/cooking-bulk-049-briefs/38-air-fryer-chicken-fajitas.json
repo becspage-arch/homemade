@@ -23,16 +23,24 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Marinate the chicken up to 4 hours ahead in the fridge.",
-    "dietaryFlags": ["df"],
+    "dietaryFlags": [
+      "df"
+    ],
     "cuisine": "american",
     "mealType": "dinner",
-    "mood": ["weeknight", "entertaining"],
+    "mood": [
+      "weeknight",
+      "entertaining"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,63 +51,177 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Chicken fajitas in the air fryer produce slightly charred chicken strips and tender peppers in 15 minutes. Slice the chicken thighs against the grain so the strips stay tender when cooked at high heat. The chicken and peppers go in together as they take the same amount of time." }
+          {
+            "type": "text",
+            "text": "Chicken fajitas in the air fryer produce slightly charred chicken strips and tender peppers in 15 minutes. Slice the chicken thighs against the grain so the strips stay tender when cooked at high heat. The chicken and peppers go in together as they take the same amount of time."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "chicken-thighs-boneless", "amount": 6, "unit": "each", "prepNote": "sliced into 1 cm strips across the grain", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "pepper-red", "amount": 2, "unit": "each", "prepNote": "deseeded and cut into 1 cm strips", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "red-onion", "amount": 1, "unit": "each", "prepNote": "halved and cut into wedges", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Spice mix" },
-            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spice mix" },
-            { "ingredientSlug": "paprika-smoked", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spice mix" },
-            { "ingredientSlug": "garlic-powder", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spice mix" },
-            { "ingredientSlug": "chilli-powder", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spice mix" },
-            { "ingredientSlug": "sea-salt-fine", "amount": 6, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "tortilla-wrap", "amount": 8, "unit": "each", "prepNote": "warmed, to serve", "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "chicken-thighs-boneless",
+              "amount": 6,
+              "unit": "each",
+              "prepNote": "sliced into 1 cm strips across the grain",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "pepper-red",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "deseeded and cut into 1 cm strips",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "halved and cut into wedges",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spice mix"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spice mix"
+            },
+            {
+              "ingredientSlug": "paprika-smoked",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spice mix"
+            },
+            {
+              "ingredientSlug": "garlic-powder",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spice mix"
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spice mix"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 6,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tortilla-wrap",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "warmed, to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Season and cook" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Combine {{chicken-thighs-boneless}} of sliced chicken strips, {{pepper-red}} of red pepper strips, and {{red-onion}} of onion wedges in a large bowl. Toss with {{olive-oil}} of oil, {{cumin-ground}} of cumin, {{paprika-smoked}} of smoked paprika, {{garlic-powder}} of garlic powder, {{chilli-powder}} of chilli powder, and {{sea-salt-fine}} of salt. Preheat the air fryer to 200°C. Spread in the basket ,  it is fine if slightly piled. Cook for 8 minutes, toss, and cook for a further 6-7 minutes until the chicken is cooked through and the edges are charred." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Serve" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Season and cook"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Warm the {{tortilla-wrap}} tortillas in the microwave for 30 seconds wrapped in damp paper towel. Serve the chicken and peppers directly from the basket with the tortillas and toppings alongside." }
+          {
+            "type": "text",
+            "text": "Combine {{chicken-thighs-boneless}} of sliced chicken strips, {{pepper-red}} of red pepper strips, and {{red-onion}} of onion wedges in a large bowl. Toss with {{olive-oil}} of oil, {{cumin-ground}} of cumin, {{paprika-smoked}} of smoked paprika, {{garlic-powder}} of garlic powder, {{chilli-powder}} of chilli powder, and {{sea-salt-fine}} of salt. Preheat the air fryer to 200°C. Spread in the basket ,  it is fine if slightly piled. Cook for 8 minutes, toss, and cook for a further 6-7 minutes until the chicken is cooked through and the edges are charred."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Serve"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Warm the {{tortilla-wrap}} tortillas in the microwave for 30 seconds wrapped in damp paper towel. Serve the chicken and peppers directly from the basket with the tortillas and toppings alongside."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -107,21 +229,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Chicken strips tough and dry", "cause": "Overcooked, or sliced with the grain.", "fix": "Slice the chicken against the grain ,  the striation that runs along the thigh. Slicing with the grain makes longer muscle fibres that tighten and toughen." },
-            { "symptom": "Peppers still crunchy after 15 minutes", "cause": "Cut too thick.", "fix": "Slice peppers to 1 cm maximum. Thicker strips need more time than the chicken." },
-            { "symptom": "Chicken pale and steamed, no char", "cause": "Basket too full or not enough preheat time.", "fix": "The basket can be mounded slightly but not overfull. Preheat fully at 200°C before adding the chicken." }
+            {
+              "symptom": "Chicken strips tough and dry",
+              "cause": "Overcooked, or sliced with the grain.",
+              "fix": "Slice the chicken against the grain ,  the striation that runs along the thigh. Slicing with the grain makes longer muscle fibres that tighten and toughen."
+            },
+            {
+              "symptom": "Peppers still crunchy after 15 minutes",
+              "cause": "Cut too thick.",
+              "fix": "Slice peppers to 1 cm maximum. Thicker strips need more time than the chicken."
+            },
+            {
+              "symptom": "Chicken pale and steamed, no char",
+              "cause": "Basket too full or not enough preheat time.",
+              "fix": "The basket can be mounded slightly but not overfull. Preheat fully at 200°C before adding the chicken."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Air-fryer fajitas are a crowd-pleasing weeknight dinner. Set out soured cream, guacamole, grated cheddar, and sliced jalapeños for people to build their own. Leftover chicken and pepper filling works well in a quesadilla or over rice the next day." }
+          {
+            "type": "text",
+            "text": "Air-fryer fajitas are a crowd-pleasing weeknight dinner. Set out soured cream, guacamole, grated cheddar, and sliced jalapeños for people to build their own. Leftover chicken and pepper filling works well in a quesadilla or over rice the next day."
+          }
         ]
       }
     ]

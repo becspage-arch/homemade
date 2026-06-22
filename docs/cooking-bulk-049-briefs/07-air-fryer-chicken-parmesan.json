@@ -26,13 +26,19 @@
     "dietaryFlags": [],
     "cuisine": "american",
     "mealType": "dinner",
-    "mood": ["comfortFood", "weeknight"],
+    "mood": [
+      "comfortFood",
+      "weeknight"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,72 +49,182 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Chicken parmesan in the air fryer skips the hot oil but keeps the panko crust crisp. The trick is to flatten the chicken breast to an even thickness before breading: this gives even cooking and prevents the edges from drying out while the thick centre catches up. Pound to about 1.5 cm at the thickest point." }
+          {
+            "type": "text",
+            "text": "Chicken parmesan in the air fryer skips the hot oil but keeps the panko crust crisp. The trick is to flatten the chicken breast to an even thickness before breading: this gives even cooking and prevents the edges from drying out while the thick centre catches up. Pound to about 1.5 cm at the thickest point."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 2,
           "items": [
-            { "ingredientSlug": "chicken-breast", "amount": 2, "unit": "each", "prepNote": "about 200 g each, pounded to 1.5 cm thickness", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "plain-flour", "amount": 50, "unit": "g", "prepNote": "seasoned with salt and pepper", "isOptional": false, "groupLabel": "Coating" },
-            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": "Coating" },
-            { "ingredientSlug": "breadcrumbs-panko", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Coating" },
-            { "ingredientSlug": "cooking-spray", "amount": 10, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "tomato-passata", "amount": 100, "unit": "ml", "prepNote": "or a good-quality shop-bought tomato sauce", "isOptional": false, "groupLabel": "Topping" },
-            { "ingredientSlug": "mozzarella", "amount": 100, "unit": "g", "prepNote": "torn or sliced", "isOptional": false, "groupLabel": "Topping" },
-            { "ingredientSlug": "basil", "amount": 5, "unit": "g", "prepNote": "leaves, to finish", "isOptional": true, "groupLabel": null }
+            {
+              "ingredientSlug": "chicken-breast",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "about 200 g each, pounded to 1.5 cm thickness",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "seasoned with salt and pepper",
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-panko",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "cooking-spray",
+              "amount": 10,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "tomato-passata",
+              "amount": 100,
+              "unit": "ml",
+              "prepNote": "or a good-quality shop-bought tomato sauce",
+              "isOptional": false,
+              "groupLabel": "Topping"
+            },
+            {
+              "ingredientSlug": "mozzarella",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "torn or sliced",
+              "isOptional": false,
+              "groupLabel": "Topping"
+            },
+            {
+              "ingredientSlug": "basil",
+              "amount": 5,
+              "unit": "g",
+              "prepNote": "leaves, to finish",
+              "isOptional": true,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Bread the chicken" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Set up three shallow bowls: {{plain-flour}} of seasoned flour, {{eggs}} beaten egg, and {{breadcrumbs-panko}} of panko crumbs. Dredge each {{chicken-breast}} chicken breast in flour, then egg, then press firmly into the panko on both sides. Spray all over with cooking oil." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "First cook" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bread the chicken"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Preheat the air fryer to 200°C for 3 minutes. Cook the breaded chicken for 8 minutes, flip carefully, and cook for a further 5-6 minutes until the crumb is golden and the chicken is cooked through." }
+          {
+            "type": "text",
+            "text": "Set up three shallow bowls: {{plain-flour}} of seasoned flour, {{eggs}} beaten egg, and {{breadcrumbs-panko}} of panko crumbs. Dredge each {{chicken-breast}} chicken breast in flour, then egg, then press firmly into the panko on both sides. Spray all over with cooking oil."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Add topping and melt" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "First cook"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Spoon {{tomato-passata}} of tomato passata over each chicken breast. Top with {{mozzarella}} of torn mozzarella. Return to the air fryer at 180°C for 3-4 minutes until the cheese melts and begins to colour at the edges. Rest for 2-3 minutes and finish with fresh basil." }
+          {
+            "type": "text",
+            "text": "Preheat the air fryer to 200°C for 3 minutes. Cook the breaded chicken for 8 minutes, flip carefully, and cook for a further 5-6 minutes until the crumb is golden and the chicken is cooked through."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add topping and melt"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spoon {{tomato-passata}} of tomato passata over each chicken breast. Top with {{mozzarella}} of torn mozzarella. Return to the air fryer at 180°C for 3-4 minutes until the cheese melts and begins to colour at the edges. Rest for 2-3 minutes and finish with fresh basil."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -116,22 +232,48 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Crumb falls off during cooking", "cause": "Flour step skipped or chicken too wet.", "fix": "Pat the chicken dry. The flour layer is critical: it gives the egg something to grip." },
-            { "symptom": "Chicken dry inside", "cause": "Overcooked, or breast too thick.", "fix": "Pound to an even 1.5 cm. Use a thermometer: pull at 74°C internal temperature." },
-            { "symptom": "Cheese not melting evenly", "cause": "Mozzarella placed in thick clumps.", "fix": "Tear the mozzarella into small pieces and spread it evenly over the surface." },
-            { "symptom": "Crumb pale on one side", "cause": "Only one side against direct hot air.", "fix": "Flip halfway through the first cook so both sides brown evenly." }
+            {
+              "symptom": "Crumb falls off during cooking",
+              "cause": "Flour step skipped or chicken too wet.",
+              "fix": "Pat the chicken dry. The flour layer is critical: it gives the egg something to grip."
+            },
+            {
+              "symptom": "Chicken dry inside",
+              "cause": "Overcooked, or breast too thick.",
+              "fix": "Pound to an even 1.5 cm. Use a thermometer: pull at 74°C internal temperature."
+            },
+            {
+              "symptom": "Cheese not melting evenly",
+              "cause": "Mozzarella placed in thick clumps.",
+              "fix": "Tear the mozzarella into small pieces and spread it evenly over the surface."
+            },
+            {
+              "symptom": "Crumb pale on one side",
+              "cause": "Only one side against direct hot air.",
+              "fix": "Flip halfway through the first cook so both sides brown evenly."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Chicken parmesan is Italian-American comfort food: a breaded cutlet under tomato sauce and melted cheese. In the air fryer it takes about 25 minutes from prep to plate. Serve on spaghetti or with a green salad and good bread for a weeknight dinner." }
+          {
+            "type": "text",
+            "text": "Chicken parmesan is Italian-American comfort food: a breaded cutlet under tomato sauce and melted cheese. In the air fryer it takes about 25 minutes from prep to plate. Serve on spaghetti or with a green salad and good bread for a weeknight dinner."
+          }
         ]
       }
     ]

@@ -26,13 +26,19 @@
     "dietaryFlags": [],
     "cuisine": "british",
     "mealType": "breakfast",
-    "mood": ["comfortFood", "weeknight"],
+    "mood": [
+      "comfortFood",
+      "weeknight"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,57 +49,129 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "All three components of this sandwich cook in the same air fryer basket in sequence. The bacon goes first at high heat; when it is almost done, the bread toasts around it and the egg cooks in the rendered fat that collects in the basket tray. The method produces crisp bacon, toast, and a set egg in about 12 minutes." }
+          {
+            "type": "text",
+            "text": "All three components of this sandwich cook in the same air fryer basket in sequence. The bacon goes first at high heat; when it is almost done, the bread toasts around it and the egg cooks in the rendered fat that collects in the basket tray. The method produces crisp bacon, toast, and a set egg in about 12 minutes."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 1,
           "items": [
-            { "ingredientSlug": "back-bacon", "amount": 120, "unit": "g", "prepNote": "2-3 rashers", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "bread-white", "amount": 2, "unit": "each", "prepNote": "thick-cut white bread", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "unsalted-butter", "amount": 10, "unit": "g", "prepNote": "for the bread, optional", "isOptional": true, "groupLabel": null }
+            {
+              "ingredientSlug": "back-bacon",
+              "amount": 120,
+              "unit": "g",
+              "prepNote": "2-3 rashers",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "bread-white",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "thick-cut white bread",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "for the bread, optional",
+              "isOptional": true,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook the bacon" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Preheat the air fryer to 200°C. Place the {{back-bacon}} rashers in the basket. Cook for 5 minutes, flip, and cook for a further 2-3 minutes until the edges are starting to crisp. Slide the rashers to one side of the basket." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Add the bread and egg" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the bacon"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Add the {{bread-white}} bread slices to the basket next to the bacon. Crack the {{eggs}} egg into a small ramekin, then tip it carefully into the drip tray (or a small heatproof dish that fits in your basket). Cook for a further 4 minutes until the toast is golden and the egg white is set. Assemble the sandwich immediately ,  bacon first, then egg, then sauce of your choice." }
+          {
+            "type": "text",
+            "text": "Preheat the air fryer to 200°C. Place the {{back-bacon}} rashers in the basket. Cook for 5 minutes, flip, and cook for a further 2-3 minutes until the edges are starting to crisp. Slide the rashers to one side of the basket."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the bread and egg"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the {{bread-white}} bread slices to the basket next to the bacon. Crack the {{eggs}} egg into a small ramekin, then tip it carefully into the drip tray (or a small heatproof dish that fits in your basket). Cook for a further 4 minutes until the toast is golden and the egg white is set. Assemble the sandwich immediately ,  bacon first, then egg, then sauce of your choice."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -101,21 +179,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Egg spreading and not setting neatly", "cause": "Egg tipped directly into the basket without a container.", "fix": "The drip tray contains the egg. Alternatively, use a small ovenproof ramekin or silicone egg mould that fits in your basket." },
-            { "symptom": "Bread burning while bacon still underdone", "cause": "Both added at the same time.", "fix": "Cook the bacon first for 7-8 minutes before adding the bread. Bacon needs more time than bread to cook through." },
-            { "symptom": "Bacon not crisp, rubbery", "cause": "Rashers overlapping.", "fix": "Lay rashers flat without overlapping so hot air circulates around each one." }
+            {
+              "symptom": "Egg spreading and not setting neatly",
+              "cause": "Egg tipped directly into the basket without a container.",
+              "fix": "The drip tray contains the egg. Alternatively, use a small ovenproof ramekin or silicone egg mould that fits in your basket."
+            },
+            {
+              "symptom": "Bread burning while bacon still underdone",
+              "cause": "Both added at the same time.",
+              "fix": "Cook the bacon first for 7-8 minutes before adding the bread. Bacon needs more time than bread to cook through."
+            },
+            {
+              "symptom": "Bacon not crisp, rubbery",
+              "cause": "Rashers overlapping.",
+              "fix": "Lay rashers flat without overlapping so hot air circulates around each one."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The air-fryer breakfast sandwich is a quick weekend breakfast or midweek treat. Good with brown sauce, ketchup, or English mustard. Add a slice of cheddar to the hot bacon for 1 minute before assembling, or a sliced tomato roasted in the same batch." }
+          {
+            "type": "text",
+            "text": "The air-fryer breakfast sandwich is a quick weekend breakfast or midweek treat. Good with brown sauce, ketchup, or English mustard. Add a slice of cheddar to the hot bacon for 1 minute before assembling, or a sliced tomato roasted in the same batch."
+          }
         ]
       }
     ]

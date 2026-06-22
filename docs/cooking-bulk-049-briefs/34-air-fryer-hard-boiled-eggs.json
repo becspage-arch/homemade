@@ -23,16 +23,26 @@
     "batchable": true,
     "batchNotes": "Cook up to the capacity of your air fryer basket in one batch.",
     "makeAheadNotes": "Unpeeled cooked eggs keep in the fridge for up to 5 days.",
-    "dietaryFlags": ["v", "gf", "df", "nf"],
+    "dietaryFlags": [
+      "v",
+      "gf",
+      "df",
+      "nf"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weeknight"],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": 150,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,43 +53,84 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Eggs in the air fryer cook by dry heat rather than water, which changes the texture slightly ,  the white is a little more tender and the shell peels away cleanly. Cook at 150°C, not higher: above 160°C the white nearest the shell goes rubbery before the yolk is set. Transfer immediately to cold water when done so the residual heat doesn't carry the yolk to overcooking." }
+          {
+            "type": "text",
+            "text": "Eggs in the air fryer cook by dry heat rather than water, which changes the texture slightly ,  the white is a little more tender and the shell peels away cleanly. Cook at 150°C, not higher: above 160°C the white nearest the shell goes rubbery before the yolk is set. Transfer immediately to cold water when done so the residual heat doesn't carry the yolk to overcooking."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 6,
           "items": [
-            { "ingredientSlug": "eggs", "amount": 6, "unit": "each", "prepNote": "large, at room temperature", "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "eggs",
+              "amount": 6,
+              "unit": "each",
+              "prepNote": "large, at room temperature",
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook and peel" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Preheat the air fryer to 150°C. Place the {{eggs}} directly in the basket, not touching each other. Cook for 15 minutes. Using tongs, transfer the eggs immediately to a bowl of cold water and leave for 10 minutes. Peel under a thin trickle of cold water: the shell should come away cleanly in large pieces." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook and peel"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the air fryer to 150°C. Place the {{eggs}} directly in the basket, not touching each other. Cook for 15 minutes. Using tongs, transfer the eggs immediately to a bowl of cold water and leave for 10 minutes. Peel under a thin trickle of cold water: the shell should come away cleanly in large pieces."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -87,21 +138,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Grey ring around the yolk", "cause": "Overcooked or not transferred to cold water fast enough.", "fix": "Move eggs to cold water immediately when the timer goes. The grey ring forms when sulphur from the white meets iron in the yolk at high temperature." },
-            { "symptom": "Shell sticking and white tearing when peeled", "cause": "Eggs too fresh, or not chilled adequately.", "fix": "Very fresh eggs are notoriously hard to peel. If possible, use eggs 7-10 days old. Always peel under cold running water." },
-            { "symptom": "Runny or partially set yolk", "cause": "Eggs taken straight from the fridge rather than at room temperature.", "fix": "Cold eggs need 2-3 extra minutes. Bring to room temperature for 20 minutes before cooking." }
+            {
+              "symptom": "Grey ring around the yolk",
+              "cause": "Overcooked or not transferred to cold water fast enough.",
+              "fix": "Move eggs to cold water immediately when the timer goes. The grey ring forms when sulphur from the white meets iron in the yolk at high temperature."
+            },
+            {
+              "symptom": "Shell sticking and white tearing when peeled",
+              "cause": "Eggs too fresh, or not chilled adequately.",
+              "fix": "Very fresh eggs are notoriously hard to peel. If possible, use eggs 7-10 days old. Always peel under cold running water."
+            },
+            {
+              "symptom": "Runny or partially set yolk",
+              "cause": "Eggs taken straight from the fridge rather than at room temperature.",
+              "fix": "Cold eggs need 2-3 extra minutes. Bring to room temperature for 20 minutes before cooking."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Air-fryer hard-boiled eggs are useful for packed lunches, egg mayonnaise, Scotch eggs, salads, or devilled eggs. They keep unpeeled in the fridge for up to 5 days. The same method at 150°C for 10 minutes gives a set white with a slightly jammy, semi-soft yolk." }
+          {
+            "type": "text",
+            "text": "Air-fryer hard-boiled eggs are useful for packed lunches, egg mayonnaise, Scotch eggs, salads, or devilled eggs. They keep unpeeled in the fridge for up to 5 days. The same method at 150°C for 10 minutes gives a set white with a slightly jammy, semi-soft yolk."
+          }
         ]
       }
     ]

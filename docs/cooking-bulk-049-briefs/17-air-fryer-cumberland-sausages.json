@@ -26,13 +26,19 @@
     "dietaryFlags": [],
     "cuisine": "british",
     "mealType": "dinner",
-    "mood": ["comfortFood", "weeknight"],
+    "mood": [
+      "comfortFood",
+      "weeknight"
+    ],
     "temperatureCelsius": 180,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,44 +49,92 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Cumberland sausage in the air fryer produces an evenly browned skin without splitting. The coil shape sits flat in the basket, so the heat reaches all sides. Cook at 180°C rather than higher: the sausage skin splits easily above 190°C before the centre is cooked through." }
+          {
+            "type": "text",
+            "text": "Cumberland sausage in the air fryer produces an evenly browned skin without splitting. The coil shape sits flat in the basket, so the heat reaches all sides. Cook at 180°C rather than higher: the sausage skin splits easily above 190°C before the centre is cooked through."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 2,
           "items": [
-            { "ingredientSlug": "sausages-pork", "amount": 4, "unit": "each", "prepNote": "Cumberland sausage ring, or 4 thick pork sausages", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "cooking-spray", "amount": 3, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "sausages-pork",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "Cumberland sausage ring, or 4 thick pork sausages",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cooking-spray",
+              "amount": 3,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Spray the air fryer basket lightly with cooking oil. Place the {{sausages-pork}} sausages in the basket ,  the Cumberland coil flat, link sausages spaced apart. Cook at 180°C for 9 minutes, turn, and cook for a further 7-9 minutes until browned all over and cooked through with no pink visible when cut. Rest for 2 minutes." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Spray the air fryer basket lightly with cooking oil. Place the {{sausages-pork}} sausages in the basket ,  the Cumberland coil flat, link sausages spaced apart. Cook at 180°C for 9 minutes, turn, and cook for a further 7-9 minutes until browned all over and cooked through with no pink visible when cut. Rest for 2 minutes."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -88,21 +142,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Sausage skin splitting", "cause": "Temperature too high.", "fix": "Cook at 180°C, not 200°C. The skin needs time to cook slowly before the interior pressure builds." },
-            { "symptom": "Unevenly browned, pale patches", "cause": "Sausage resting against the basket wall.", "fix": "Leave space between sausages so hot air circulates around the whole surface." },
-            { "symptom": "Pale inside when cut", "cause": "Not cooked long enough.", "fix": "A thick Cumberland ring needs the full 18 minutes. Cut into the thickest part to check: no pink, juices run clear." }
+            {
+              "symptom": "Sausage skin splitting",
+              "cause": "Temperature too high.",
+              "fix": "Cook at 180°C, not 200°C. The skin needs time to cook slowly before the interior pressure builds."
+            },
+            {
+              "symptom": "Unevenly browned, pale patches",
+              "cause": "Sausage resting against the basket wall.",
+              "fix": "Leave space between sausages so hot air circulates around the whole surface."
+            },
+            {
+              "symptom": "Pale inside when cut",
+              "cause": "Not cooked long enough.",
+              "fix": "A thick Cumberland ring needs the full 18 minutes. Cut into the thickest part to check: no pink, juices run clear."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Cumberland sausage from the air fryer is good with mash and onion gravy, or with fried eggs and toast for a weekend breakfast. The skin stays intact and the sausage is easy to slice into rounds. The same method works for any thick pork sausage." }
+          {
+            "type": "text",
+            "text": "Cumberland sausage from the air fryer is good with mash and onion gravy, or with fried eggs and toast for a weekend breakfast. The skin stays intact and the sausage is easy to slice into rounds. The same method works for any thick pork sausage."
+          }
         ]
       }
     ]

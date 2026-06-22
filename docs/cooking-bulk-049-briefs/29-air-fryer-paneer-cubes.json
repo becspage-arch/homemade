@@ -23,16 +23,24 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "Marinate for up to 4 hours in the fridge for deeper flavour.",
-    "dietaryFlags": ["v", "gf"],
+    "dietaryFlags": [
+      "v",
+      "gf"
+    ],
     "cuisine": "indian",
     "mealType": "side",
-    "mood": ["weeknight"],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,62 +51,169 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Paneer cubes develop a golden, slightly crisp exterior in the air fryer when the marinade contains yoghurt ,  the sugars in the yoghurt help the surface colour without needing oil. A 30-minute marinade is enough; longer gives a deeper flavour. Soak the paneer in warm water for 5 minutes before marinating if it has been stored in brine, which removes the excess salt." }
+          {
+            "type": "text",
+            "text": "Paneer cubes develop a golden, slightly crisp exterior in the air fryer when the marinade contains yoghurt ,  the sugars in the yoghurt help the surface colour without needing oil. A 30-minute marinade is enough; longer gives a deeper flavour. Soak the paneer in warm water for 5 minutes before marinating if it has been stored in brine, which removes the excess salt."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 2,
           "items": [
-            { "ingredientSlug": "paneer", "amount": 250, "unit": "g", "prepNote": "cut into 2.5 cm cubes", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "plain-yoghurt", "amount": 60, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "garam-masala", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "turmeric", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "chilli-powder", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "grated", "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "sea-salt-fine", "amount": 4, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "cooking-spray", "amount": 5, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "paneer",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "cut into 2.5 cm cubes",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-yoghurt",
+              "amount": 60,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "garam-masala",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 4,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cooking-spray",
+              "amount": 5,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Marinate" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Mix {{plain-yoghurt}} of yoghurt with {{cumin-ground}} of cumin, {{garam-masala}} of garam masala, {{turmeric}} of turmeric, {{chilli-powder}} of chilli powder, {{garlic}} of grated garlic, and {{sea-salt-fine}} of salt. Add the {{paneer}} cubes and stir to coat. Leave for at least 30 minutes." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Marinate"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Preheat the air fryer to 200°C. Spray the basket with cooking oil. Shake excess marinade off the paneer cubes and place in a single layer. Cook for 6 minutes, turn, and cook for a further 5-6 minutes until golden and slightly charred at the edges. Serve immediately." }
+          {
+            "type": "text",
+            "text": "Mix {{plain-yoghurt}} of yoghurt with {{cumin-ground}} of cumin, {{garam-masala}} of garam masala, {{turmeric}} of turmeric, {{chilli-powder}} of chilli powder, {{garlic}} of grated garlic, and {{sea-salt-fine}} of salt. Add the {{paneer}} cubes and stir to coat. Leave for at least 30 minutes."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the air fryer to 200°C. Spray the basket with cooking oil. Shake excess marinade off the paneer cubes and place in a single layer. Cook for 6 minutes, turn, and cook for a further 5-6 minutes until golden and slightly charred at the edges. Serve immediately."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -106,21 +221,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Paneer sticking and tearing when turned", "cause": "Moved too soon or basket not oiled.", "fix": "Spray the basket before cooking and wait the full 6 minutes. Once the marinade crust has set, the cube releases cleanly." },
-            { "symptom": "Pale colour, no char", "cause": "Marinade too thick or excess not removed.", "fix": "Shake off the excess marinade before cooking. A thick coat of wet yoghurt steams rather than charring." },
-            { "symptom": "Very dry and crumbly", "cause": "Overcooked or paneer dried out before marinating.", "fix": "12 minutes total is the maximum. If your paneer is old or has dried out, soak in warm water for 5 minutes before marinating." }
+            {
+              "symptom": "Paneer sticking and tearing when turned",
+              "cause": "Moved too soon or basket not oiled.",
+              "fix": "Spray the basket before cooking and wait the full 6 minutes. Once the marinade crust has set, the cube releases cleanly."
+            },
+            {
+              "symptom": "Pale colour, no char",
+              "cause": "Marinade too thick or excess not removed.",
+              "fix": "Shake off the excess marinade before cooking. A thick coat of wet yoghurt steams rather than charring."
+            },
+            {
+              "symptom": "Very dry and crumbly",
+              "cause": "Overcooked or paneer dried out before marinating.",
+              "fix": "12 minutes total is the maximum. If your paneer is old or has dried out, soak in warm water for 5 minutes before marinating."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Air-fried paneer cubes work as a component in a wrap with sliced onion and mint chutney, or as a side with a dal and rice. Toss them into a warm spinach curry in the last few minutes, or serve simply with naan and a salad of sliced tomato and onion." }
+          {
+            "type": "text",
+            "text": "Air-fried paneer cubes work as a component in a wrap with sliced onion and mint chutney, or as a side with a dal and rice. Toss them into a warm spinach curry in the last few minutes, or serve simply with naan and a salad of sliced tomato and onion."
+          }
         ]
       }
     ]

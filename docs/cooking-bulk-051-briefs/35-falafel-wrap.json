@@ -23,18 +23,33 @@
     "batchable": true,
     "batchNotes": null,
     "makeAheadNotes": "The chickpea mixture must soak for at least 12 hours; make it the day before. Shape and fry just before serving.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "middleEastern",
     "mealType": "lunch",
-    "mood": ["weeknight", "lightAndFresh", "party"],
+    "mood": [
+      "weeknight",
+      "lightAndFresh",
+      "party"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": "Oil for deep frying at 175 C",
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "deep-fryer", "isOptional": false},
-    {"slug": "instant-read-thermometer", "isOptional": true},
-    {"slug": "food-processor", "isOptional": false}
+    {
+      "slug": "deep-fryer",
+      "isOptional": false
+    },
+    {
+      "slug": "instant-read-thermometer",
+      "isOptional": true
+    },
+    {
+      "slug": "food-processor",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -44,120 +59,371 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Real falafel are made from dried chickpeas soaked overnight and blended raw, not from tinned chickpeas. The soaked raw chickpea gives a firm, textured fritter that holds together and stays crisp. Tinned chickpeas make falafel that is dense and falls apart in the oil."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Real falafel are made from dried chickpeas soaked overnight and blended raw, not from tinned chickpeas. The soaked raw chickpea gives a firm, textured fritter that holds together and stays crisp. Tinned chickpeas make falafel that is dense and falls apart in the oil."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The mixture should look grainy and crumbly after blending, not smooth. If it looks like hummus, it has been blended too much and the falafel will not hold."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The mixture should look grainy and crumbly after blending, not smooth. If it looks like hummus, it has been blended too much and the falafel will not hold."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Sharp pickled turnips, shredded flat-leaf parsley, and a loose tahini sauce are the classic wrap accompaniments. Quick-pickled red cabbage works if turnips are unavailable."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Sharp pickled turnips, shredded flat-leaf parsley, and a loose tahini sauce are the classic wrap accompaniments. Quick-pickled red cabbage works if turnips are unavailable."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": null,
           "items": [
-            {"ingredientSlug": "chickpeas-dried", "amount": 250, "unit": "g", "prepNote": "soaked overnight in cold water; do NOT use tinned", "isOptional": false, "groupLabel": "Falafel"},
-            {"ingredientSlug": "onion", "amount": 0.5, "unit": "each", "prepNote": "roughly chopped", "isOptional": false, "groupLabel": "Falafel"},
-            {"ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": null, "isOptional": false, "groupLabel": "Falafel"},
-            {"ingredientSlug": "parsley-flat", "amount": 30, "unit": "g", "prepNote": "leaves only", "isOptional": false, "groupLabel": "Falafel"},
-            {"ingredientSlug": "coriander", "amount": 20, "unit": "g", "prepNote": "leaves only", "isOptional": false, "groupLabel": "Falafel"},
-            {"ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Falafel"},
-            {"ingredientSlug": "coriander-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Falafel"},
-            {"ingredientSlug": "bicarbonate-of-soda", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Falafel"},
-            {"ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Falafel"},
-            {"ingredientSlug": "vegetable-oil", "amount": 1, "unit": "litre", "prepNote": "for deep frying", "isOptional": false, "groupLabel": "Falafel"},
-            {"ingredientSlug": "tahini", "amount": 3, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tahini sauce"},
-            {"ingredientSlug": "lemon-juice", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tahini sauce"},
-            {"ingredientSlug": "garlic", "amount": 1, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "Tahini sauce"},
-            {"ingredientSlug": "water", "amount": 4, "unit": "tbsp", "prepNote": "to thin", "isOptional": false, "groupLabel": "Tahini sauce"},
-            {"ingredientSlug": "salt-table", "amount": 1, "unit": "pinch", "prepNote": null, "isOptional": false, "groupLabel": "Tahini sauce"},
-            {"ingredientSlug": "pitta-bread", "amount": 4, "unit": "each", "prepNote": "warmed", "isOptional": false, "groupLabel": "Wrap"},
-            {"ingredientSlug": "tomato", "amount": 2, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": "Wrap"},
-            {"ingredientSlug": "cucumber", "amount": 0.5, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": "Wrap"},
-            {"ingredientSlug": "cabbage-red", "amount": 100, "unit": "g", "prepNote": "shredded", "isOptional": false, "groupLabel": "Wrap"}
+            {
+              "ingredientSlug": "chickpeas-dried",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "soaked overnight in cold water; do NOT use tinned",
+              "isOptional": false,
+              "groupLabel": "Falafel"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 0.5,
+              "unit": "each",
+              "prepNote": "roughly chopped",
+              "isOptional": false,
+              "groupLabel": "Falafel"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Falafel"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 30,
+              "unit": "g",
+              "prepNote": "leaves only",
+              "isOptional": false,
+              "groupLabel": "Falafel"
+            },
+            {
+              "ingredientSlug": "coriander",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "leaves only",
+              "isOptional": false,
+              "groupLabel": "Falafel"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Falafel"
+            },
+            {
+              "ingredientSlug": "coriander-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Falafel"
+            },
+            {
+              "ingredientSlug": "bicarbonate-of-soda",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Falafel"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Falafel"
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 1,
+              "unit": "litre",
+              "prepNote": "for deep frying",
+              "isOptional": false,
+              "groupLabel": "Falafel"
+            },
+            {
+              "ingredientSlug": "tahini",
+              "amount": 3,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tahini sauce"
+            },
+            {
+              "ingredientSlug": "lemon-juice",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tahini sauce"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 1,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "Tahini sauce"
+            },
+            {
+              "ingredientSlug": "water",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": "to thin",
+              "isOptional": false,
+              "groupLabel": "Tahini sauce"
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1,
+              "unit": "pinch",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tahini sauce"
+            },
+            {
+              "ingredientSlug": "pitta-bread",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "warmed",
+              "isOptional": false,
+              "groupLabel": "Wrap"
+            },
+            {
+              "ingredientSlug": "tomato",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "Wrap"
+            },
+            {
+              "ingredientSlug": "cucumber",
+              "amount": 0.5,
+              "unit": "each",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": "Wrap"
+            },
+            {
+              "ingredientSlug": "cabbage-red",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "shredded",
+              "isOptional": false,
+              "groupLabel": "Wrap"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Make the falafel mixture"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the falafel mixture"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Drain and rinse the soaked chickpeas. Add to the food processor with the onion, garlic, parsley, coriander, cumin, ground coriander, bicarbonate of soda, and salt. Pulse 15 to 20 times until the mixture is finely ground but still has texture. It should hold its shape when pressed together between your fingers. Do not blend to a smooth paste. Transfer to a bowl and refrigerate for 30 minutes."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Drain and rinse the soaked chickpeas. Add to the food processor with the onion, garlic, parsley, coriander, cumin, ground coriander, bicarbonate of soda, and salt. Pulse 15 to 20 times until the mixture is finely ground but still has texture. It should hold its shape when pressed together between your fingers. Do not blend to a smooth paste. Transfer to a bowl and refrigerate for 30 minutes."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Make the tahini sauce"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the tahini sauce"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Whisk the tahini, lemon juice, crushed garlic, and salt together. Add water a tablespoon at a time and whisk until the sauce is smooth and flows from a spoon. It will seize up first before loosening; keep adding water. Season and set aside."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Whisk the tahini, lemon juice, crushed garlic, and salt together. Add water a tablespoon at a time and whisk until the sauce is smooth and flows from a spoon. It will seize up first before loosening; keep adding water. Season and set aside."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Fry the falafel"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry the falafel"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Heat the oil in a deep pan to 175 C. Shape the falafel mixture into balls or patties, about 30 g each. Fry in batches of 6 for 3 to 4 minutes until deep golden all over. Remove and drain on kitchen paper."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oil in a deep pan to 175 C. Shape the falafel mixture into balls or patties, about 30 g each. Fry in batches of 6 for 3 to 4 minutes until deep golden all over. Remove and drain on kitchen paper."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Assemble the wraps"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Assemble the wraps"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Warm the pitta-breads in a dry frying pan. Spread tahini sauce over each. Add tomato, cucumber, and red cabbage. Place 4 to 5 falafel in the centre. Drizzle with more tahini sauce, fold, and serve immediately."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Warm the pitta-breads in a dry frying pan. Spread tahini sauce over each. Add tomato, cucumber, and red cabbage. Place 4 to 5 falafel in the centre. Drizzle with more tahini sauce, fold, and serve immediately."
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            {"symptom": "Falafel falling apart in the oil", "cause": "Mixture too wet or tinned chickpeas used", "fix": "Use only soaked dried chickpeas and do not over-process. The mixture must be crumbly enough to hold a ball shape when pressed."},
-            {"symptom": "Falafel dark outside but raw inside", "cause": "Oil too hot or falafel too large", "fix": "Keep oil at 175 C; higher than 180 C burns the outside before the centre cooks. Make smaller patties."},
-            {"symptom": "Tahini sauce too thick", "cause": "Not enough water added", "fix": "Keep adding cold water one tablespoon at a time; it will loosen steadily once the initial seizing is worked through."}
+            {
+              "symptom": "Falafel falling apart in the oil",
+              "cause": "Mixture too wet or tinned chickpeas used",
+              "fix": "Use only soaked dried chickpeas and do not over-process. The mixture must be crumbly enough to hold a ball shape when pressed."
+            },
+            {
+              "symptom": "Falafel dark outside but raw inside",
+              "cause": "Oil too hot or falafel too large",
+              "fix": "Keep oil at 175 C; higher than 180 C burns the outside before the centre cooks. Make smaller patties."
+            },
+            {
+              "symptom": "Tahini sauce too thick",
+              "cause": "Not enough water added",
+              "fix": "Keep adding cold water one tablespoon at a time; it will loosen steadily once the initial seizing is worked through."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "For a baked version, brush the shaped falafel with oil and bake at 200 C for 25 minutes, turning once. They will be less crisp but fully cooked. Add a pinch of chilli to the mixture for heat."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "For a baked version, brush the shaped falafel with oil and bake at 200 C for 25 minutes, turning once. They will be less crisp but fully cooked. Add a pinch of chilli to the mixture for heat."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The falafel mixture keeps covered in the fridge for 2 days. Shape and fry fresh. Cooked falafel do not hold well and should be fried just before eating."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The falafel mixture keeps covered in the fridge for 2 days. Shape and fry fresh. Cooked falafel do not hold well and should be fried just before eating."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Falafel wraps are street food across Lebanon, Jordan, Egypt, and Israel. In Beirut and Amman they are sold from small shops called falafel stands, where the fritters are fried to order and wrapped in seconds. In the UK, falafel wraps appear at market stalls and in many cafes and restaurants and are among the most widely eaten Middle Eastern dishes outside the region."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Falafel wraps are street food across Lebanon, Jordan, Egypt, and Israel. In Beirut and Amman they are sold from small shops called falafel stands, where the fritters are fried to order and wrapped in seconds. In the UK, falafel wraps appear at market stalls and in many cafes and restaurants and are among the most widely eaten Middle Eastern dishes outside the region."
+          }
+        ]
       }
     ]
   }

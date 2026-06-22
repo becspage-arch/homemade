@@ -23,17 +23,29 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": "The potato mixture can be prepared an hour ahead and left to sit. Fry close to serving.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "middleEastern",
     "mealType": "snack",
-    "mood": ["weeknight", "party", "brunchy"],
+    "mood": [
+      "weeknight",
+      "party",
+      "brunchy"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "frying-pan-26", "isOptional": false},
-    {"slug": "box-grater", "isOptional": false}
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "box-grater",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,96 +55,253 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Kuku sibzamini is the Persian answer to a potato cake. The mixture is simple: grated potato, egg, turmeric, and herbs. But the technique matters. The potato must be squeezed very dry before mixing, otherwise the patties will not hold together or colour properly."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Kuku sibzamini is the Persian answer to a potato cake. The mixture is simple: grated potato, egg, turmeric, and herbs. But the technique matters. The potato must be squeezed very dry before mixing, otherwise the patties will not hold together or colour properly."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The flavour comes from fenugreek leaves and spring onion rather than heavy seasoning, which keeps the patties bright and herbal rather than stodgy. They are best eaten hot from the pan."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The flavour comes from fenugreek leaves and spring onion rather than heavy seasoning, which keeps the patties bright and herbal rather than stodgy. They are best eaten hot from the pan."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Dried fenugreek leaves (methi) are sold in most South Asian supermarkets. They are worth keeping in the cupboard; they appear in many Persian recipes."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Dried fenugreek leaves (methi) are sold in most South Asian supermarkets. They are worth keeping in the cupboard; they appear in many Persian recipes."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": null,
           "items": [
-            {"ingredientSlug": "potato", "amount": 600, "unit": "g", "prepNote": "peeled and coarsely grated (floury variety)", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "eggs", "amount": 3, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "spring-onion", "amount": 4, "unit": "each", "prepNote": "finely sliced", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "fenugreek-leaves", "amount": 2, "unit": "tsp", "prepNote": "dried (methi)", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "turmeric", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "salt-table", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "vegetable-oil", "amount": 4, "unit": "tbsp", "prepNote": "for frying", "isOptional": false, "groupLabel": null}
+            {
+              "ingredientSlug": "potato",
+              "amount": 600,
+              "unit": "g",
+              "prepNote": "peeled and coarsely grated (floury variety)",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "spring-onion",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "finely sliced",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "fenugreek-leaves",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": "dried (methi)",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "salt-table",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "black-pepper",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "vegetable-oil",
+              "amount": 4,
+              "unit": "tbsp",
+              "prepNote": "for frying",
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Method"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Prepare the potato mixture"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Prepare the potato mixture"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Place the grated potato in a clean tea towel and squeeze out as much water as possible. The potato should feel almost dry. Transfer to a bowl and add the beaten egg, spring onion, fenugreek, turmeric, salt, and pepper. Mix until fully combined."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Place the grated potato in a clean tea towel and squeeze out as much water as possible. The potato should feel almost dry. Transfer to a bowl and add the beaten egg, spring onion, fenugreek, turmeric, salt, and pepper. Mix until fully combined."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Fry the patties"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry the patties"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Heat the oil in a wide frying pan over medium heat. Drop heaped spoonfuls of the potato mixture into the pan and press gently to form patties about 1.5 cm thick and 8 cm wide. Fry for 5 to 6 minutes per side until deeply golden and cooked through. Do not move them in the first 4 minutes or they will break. Cook in batches to avoid overcrowding the pan. Drain briefly on kitchen paper and serve immediately."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the oil in a wide frying pan over medium heat. Drop heaped spoonfuls of the potato mixture into the pan and press gently to form patties about 1.5 cm thick and 8 cm wide. Fry for 5 to 6 minutes per side until deeply golden and cooked through. Do not move them in the first 4 minutes or they will break. Cook in batches to avoid overcrowding the pan. Drain briefly on kitchen paper and serve immediately."
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            {"symptom": "Patties break apart when flipping", "cause": "Potato not squeezed dry enough, or turned too soon", "fix": "Squeeze the potato very thoroughly and wait until the underside is well set before flipping."},
-            {"symptom": "Inside still raw when outside is golden", "cause": "Heat too high", "fix": "Reduce to medium-low after the first 2 minutes. The patties need time for the heat to reach the centre."},
-            {"symptom": "Patties greasy", "cause": "Oil too hot when patties added", "fix": "Test with a small piece of mixture first. The oil should sizzle gently, not aggressively."}
+            {
+              "symptom": "Patties break apart when flipping",
+              "cause": "Potato not squeezed dry enough, or turned too soon",
+              "fix": "Squeeze the potato very thoroughly and wait until the underside is well set before flipping."
+            },
+            {
+              "symptom": "Inside still raw when outside is golden",
+              "cause": "Heat too high",
+              "fix": "Reduce to medium-low after the first 2 minutes. The patties need time for the heat to reach the centre."
+            },
+            {
+              "symptom": "Patties greasy",
+              "cause": "Oil too hot when patties added",
+              "fix": "Test with a small piece of mixture first. The oil should sizzle gently, not aggressively."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "A small handful of fresh coriander or parsley stirred through the mixture adds brightness. For a more substantial kuku, add 100 g of crumbled feta to the mixture. Kuku sibzamini can also be served at room temperature as part of a mezze spread."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "A small handful of fresh coriander or parsley stirred through the mixture adds brightness. For a more substantial kuku, add 100 g of crumbled feta to the mixture. Kuku sibzamini can also be served at room temperature as part of a mezze spread."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "The uncooked mixture can sit covered for up to an hour before frying. The patties are at their best hot from the pan and do not hold well; reheat in a dry frying pan over medium heat if needed."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "The uncooked mixture can sit covered for up to an hour before frying. The patties are at their best hot from the pan and do not hold well; reheat in a dry frying pan over medium heat if needed."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Kuku of various kinds appear on the Persian Nowruz table. Kuku sabzi, made with a large quantity of herbs, is the most celebrated version. Kuku sibzamini is the everyday one. It works as a side dish, a quick lunch, or a snack, and requires almost nothing to make."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Kuku of various kinds appear on the Persian Nowruz table. Kuku sabzi, made with a large quantity of herbs, is the most celebrated version. Kuku sibzamini is the everyday one. It works as a side dish, a quick lunch, or a snack, and requires almost nothing to make."
+          }
+        ]
       }
     ]
   }

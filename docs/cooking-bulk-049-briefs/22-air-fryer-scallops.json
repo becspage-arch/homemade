@@ -23,16 +23,24 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": null,
-    "dietaryFlags": ["gf", "df"],
+    "dietaryFlags": [
+      "gf",
+      "df"
+    ],
     "cuisine": "british",
     "mealType": "starter",
-    "mood": ["entertaining"],
+    "mood": [
+      "entertaining"
+    ],
     "temperatureCelsius": 220,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,58 +51,137 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Scallops live or die by one thing: how dry the cut face is before it hits heat. Moisture on the surface creates steam, which prevents the caramelisation that gives a scallop its flavour. Pat them dry for a full minute, not a single press. Cook at the highest temperature your air fryer allows ,  220°C if possible. They need only 5-6 minutes total." }
+          {
+            "type": "text",
+            "text": "Scallops live or die by one thing: how dry the cut face is before it hits heat. Moisture on the surface creates steam, which prevents the caramelisation that gives a scallop its flavour. Pat them dry for a full minute, not a single press. Cook at the highest temperature your air fryer allows ,  220°C if possible. They need only 5-6 minutes total."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 2,
           "items": [
-            { "ingredientSlug": "scallops", "amount": 8, "unit": "each", "prepNote": "king scallops, roe on or off, thoroughly dried", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "olive-oil", "amount": 15, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "sea-salt-flakes", "amount": 4, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "unsalted-butter", "amount": 20, "unit": "g", "prepNote": "to finish", "isOptional": true, "groupLabel": null },
-            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "cut into wedges to serve", "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "scallops",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "king scallops, roe on or off, thoroughly dried",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 15,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": 4,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "to finish",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "cut into wedges to serve",
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Dry and season" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Take the {{scallops}} scallops out of the fridge 15 minutes before cooking. Lay them on a double layer of paper towel and press the cut faces firmly with more paper towel. Leave for 5 minutes. Pat again ,  there should be no moisture visible on the surface. Brush just the cut face with {{olive-oil}} of oil. Season with {{sea-salt-flakes}} of flaked salt on the cut face only." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dry and season"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Preheat the air fryer to 220°C. Place the scallops cut-face down in the basket, spaced apart. Cook for 3 minutes without opening. Flip carefully ,  the cut face should be golden with some caramelisation. Cook for a further 2 minutes. Remove immediately. If using butter, place a small piece on each scallop as it comes out. Serve with lemon wedges." }
+          {
+            "type": "text",
+            "text": "Take the {{scallops}} scallops out of the fridge 15 minutes before cooking. Lay them on a double layer of paper towel and press the cut faces firmly with more paper towel. Leave for 5 minutes. Pat again ,  there should be no moisture visible on the surface. Brush just the cut face with {{olive-oil}} of oil. Season with {{sea-salt-flakes}} of flaked salt on the cut face only."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the air fryer to 220°C. Place the scallops cut-face down in the basket, spaced apart. Cook for 3 minutes without opening. Flip carefully ,  the cut face should be golden with some caramelisation. Cook for a further 2 minutes. Remove immediately. If using butter, place a small piece on each scallop as it comes out. Serve with lemon wedges."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -102,21 +189,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "No colour, steamed-looking surface", "cause": "Scallop not dried sufficiently.", "fix": "The drying stage is the most important step. Take 5 full minutes and use fresh paper towel." },
-            { "symptom": "Rubbery texture throughout", "cause": "Overcooked.", "fix": "The centre of a scallop should be just opaque, not white all the way through. Pull at 5 minutes; it continues cooking briefly from retained heat." },
-            { "symptom": "Scallop sticking to basket", "cause": "Moved before the crust has fully formed.", "fix": "Do not touch for the full 3 minutes. The scallop will release cleanly once caramelised." }
+            {
+              "symptom": "No colour, steamed-looking surface",
+              "cause": "Scallop not dried sufficiently.",
+              "fix": "The drying stage is the most important step. Take 5 full minutes and use fresh paper towel."
+            },
+            {
+              "symptom": "Rubbery texture throughout",
+              "cause": "Overcooked.",
+              "fix": "The centre of a scallop should be just opaque, not white all the way through. Pull at 5 minutes; it continues cooking briefly from retained heat."
+            },
+            {
+              "symptom": "Scallop sticking to basket",
+              "cause": "Moved before the crust has fully formed.",
+              "fix": "Do not touch for the full 3 minutes. The scallop will release cleanly once caramelised."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Air-fryer scallops are a quick restaurant-style starter. Serve on a pool of pea puree with a few pea shoots, or over a small amount of cauliflower puree with pancetta. The same technique works for smaller queen scallops ,  reduce the time to 3 minutes total." }
+          {
+            "type": "text",
+            "text": "Air-fryer scallops are a quick restaurant-style starter. Serve on a pool of pea puree with a few pea shoots, or over a small amount of cauliflower puree with pancetta. The same technique works for smaller queen scallops ,  reduce the time to 3 minutes total."
+          }
         ]
       }
     ]

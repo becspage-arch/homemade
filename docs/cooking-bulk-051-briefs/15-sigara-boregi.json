@@ -23,17 +23,28 @@
     "batchable": true,
     "batchNotes": "Make a large batch and freeze half for later.",
     "makeAheadNotes": "Form and refrigerate up to 4 hours ahead. Cover with damp kitchen paper to prevent the filo drying out.",
-    "dietaryFlags": ["vegetarian"],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
     "cuisine": "middleEastern",
     "mealType": "snack",
-    "mood": ["party", "brunchy"],
+    "mood": [
+      "party",
+      "brunchy"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    {"slug": "frying-pan-26", "isOptional": false},
-    {"slug": "slotted-spoon", "isOptional": false}
+    {
+      "slug": "frying-pan-26",
+      "isOptional": false
+    },
+    {
+      "slug": "slotted-spoon",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,99 +54,254 @@
     "content": [
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Sigara boregi are one of those things that look impressive but take less time than you expect. A strip of filo, a spoonful of cheese, a roll and a seal: the process repeats itself until you have a plate of slim, tightly wound pastries ready for the pan."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Sigara boregi are one of those things that look impressive but take less time than you expect. A strip of filo, a spoonful of cheese, a roll and a seal: the process repeats itself until you have a plate of slim, tightly wound pastries ready for the pan."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Frying gives them their defining texture: the outside shatters into thousands of tiny crisp shards while the inside stays molten and salty. Baking works but does not give the same result."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Frying gives them their defining texture: the outside shatters into thousands of tiny crisp shards while the inside stays molten and salty. Baking works but does not give the same result."
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Keep the filo covered with a damp cloth while you work; it dries out within minutes and becomes brittle and unworkable. Work quickly and seal each roll with a dab of water or the egg mixture before setting aside."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Keep the filo covered with a damp cloth while you work; it dries out within minutes and becomes brittle and unworkable. Work quickly and seal each roll with a dab of water or the egg mixture before setting aside."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Ingredients"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Ingredients"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": null,
           "items": [
-            {"ingredientSlug": "filo-pastry", "amount": 8, "unit": "sheet", "prepNote": "cut in half to give 16 rectangles", "isOptional": false, "groupLabel": null},
-            {"ingredientSlug": "feta", "amount": 300, "unit": "g", "prepNote": "crumbled (or use any salty white cheese)", "isOptional": false, "groupLabel": "Filling"},
-            {"ingredientSlug": "parsley-flat", "amount": 20, "unit": "g", "prepNote": "finely chopped", "isOptional": false, "groupLabel": "Filling"},
-            {"ingredientSlug": "mint", "amount": 10, "unit": "g", "prepNote": "finely chopped", "isOptional": true, "groupLabel": "Filling"},
-            {"ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten, for sealing", "isOptional": false, "groupLabel": "Filling"},
-            {"ingredientSlug": "black-pepper-ground", "amount": 0.25, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Filling"},
-            {"ingredientSlug": "olive-oil", "amount": 200, "unit": "ml", "prepNote": "for frying", "isOptional": false, "groupLabel": null}
+            {
+              "ingredientSlug": "filo-pastry",
+              "amount": 8,
+              "unit": "sheet",
+              "prepNote": "cut in half to give 16 rectangles",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "feta",
+              "amount": 300,
+              "unit": "g",
+              "prepNote": "crumbled (or use any salty white cheese)",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "parsley-flat",
+              "amount": 20,
+              "unit": "g",
+              "prepNote": "finely chopped",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "mint",
+              "amount": 10,
+              "unit": "g",
+              "prepNote": "finely chopped",
+              "isOptional": true,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "beaten, for sealing",
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "black-pepper-ground",
+              "amount": 0.25,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Filling"
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": "for frying",
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Make the filling and prepare the filo"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the filling and prepare the filo"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Combine the crumbled feta, parsley, mint if using, egg, and black pepper in a bowl and mix well. Taste; the feta may be salty enough without adding more salt. Cut the filo sheets in half lengthways to give strips about 12 cm by 30 cm. Keep covered with a damp cloth."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Combine the crumbled feta, parsley, mint if using, egg, and black pepper in a bowl and mix well. Taste; the feta may be salty enough without adding more salt. Cut the filo sheets in half lengthways to give strips about 12 cm by 30 cm. Keep covered with a damp cloth."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Roll the pastries"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Roll the pastries"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Place a strip of filo on a clean surface with the short end nearest you. Spoon a heaped tablespoon of filling in a narrow sausage shape across the bottom of the strip, leaving a 1 cm gap at each side. Fold the bottom edge up over the filling, fold in the sides, and roll up tightly toward the top. Brush the final edge with a little beaten egg to seal. Set seam-side down on a tray. Repeat with all strips."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Place a strip of filo on a clean surface with the short end nearest you. Spoon a heaped tablespoon of filling in a narrow sausage shape across the bottom of the strip, leaving a 1 cm gap at each side. Fold the bottom edge up over the filling, fold in the sides, and roll up tightly toward the top. Brush the final edge with a little beaten egg to seal. Set seam-side down on a tray. Repeat with all strips."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 3},
-        "content": [{"type": "text", "text": "Fry the boregi"}]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Fry the boregi"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Heat the olive oil in the frying pan over medium heat until a small piece of filo sizzles immediately when dropped in. Fry the pastries in batches, seam-side down first, for about 2 minutes per side until golden all over. Remove with a slotted spoon and drain on kitchen paper. Serve immediately; they lose their crispness quickly."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Heat the olive oil in the frying pan over medium heat until a small piece of filo sizzles immediately when dropped in. Fry the pastries in batches, seam-side down first, for about 2 minutes per side until golden all over. Remove with a slotted spoon and drain on kitchen paper. Serve immediately; they lose their crispness quickly."
+          }
+        ]
       },
       {
         "type": "troubleshooter",
         "attrs": {
           "rows": [
-            {"symptom": "Filo tears during rolling", "cause": "Dried out or rolled too tightly", "fix": "Keep filo covered at all times. If a sheet tears, use two layers together."},
-            {"symptom": "Pastries unravel during frying", "cause": "End not properly sealed", "fix": "Make sure the final edge is sealed with egg and press firmly. Fry seam-side down first."},
-            {"symptom": "Oil soaked into the pastry and greasy result", "cause": "Oil not hot enough", "fix": "Test the oil temperature before frying. It must sizzle immediately on contact; oil that is too cool leads to greasy pastry."}
+            {
+              "symptom": "Filo tears during rolling",
+              "cause": "Dried out or rolled too tightly",
+              "fix": "Keep filo covered at all times. If a sheet tears, use two layers together."
+            },
+            {
+              "symptom": "Pastries unravel during frying",
+              "cause": "End not properly sealed",
+              "fix": "Make sure the final edge is sealed with egg and press firmly. Fry seam-side down first."
+            },
+            {
+              "symptom": "Oil soaked into the pastry and greasy result",
+              "cause": "Oil not hot enough",
+              "fix": "Test the oil temperature before frying. It must sizzle immediately on contact; oil that is too cool leads to greasy pastry."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Variations"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Variations"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Replace half the feta with mashed potato for a softer, less salty filling. Spinach and feta is a popular alternative: squeeze dry, chopped frozen spinach mixed into the cheese filling. For a meat version, replace the cheese with the spiced lamb filling from dolma biber."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Replace half the feta with mashed potato for a softer, less salty filling. Spinach and feta is a popular alternative: squeeze dry, chopped frozen spinach mixed into the cheese filling. For a meat version, replace the cheese with the spiced lamb filling from dolma biber."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Make ahead"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make ahead"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Form the pastries up to 4 hours ahead and cover with a damp cloth in the fridge. Fry just before serving. For longer storage, freeze the uncooked pastries and fry directly from frozen."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Form the pastries up to 4 hours ahead and cover with a damp cloth in the fridge. Fry just before serving. For longer storage, freeze the uncooked pastries and fry directly from frozen."
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": {"level": 2},
-        "content": [{"type": "text", "text": "Where this dish lives"}]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
-        "content": [{"type": "text", "text": "Sigara boregi are sold at Turkish patisseries and at the pastry counter of any good lokanta. They are a standard part of mezze spreads, appear on wedding buffets, and are made at home as a treat. The shape is consistent but the filling varies from region to region and family to family."}]
+        "content": [
+          {
+            "type": "text",
+            "text": "Sigara boregi are sold at Turkish patisseries and at the pastry counter of any good lokanta. They are a standard part of mezze spreads, appear on wedding buffets, and are made at home as a treat. The shape is consistent but the filling varies from region to region and family to family."
+          }
+        ]
       }
     ]
   }

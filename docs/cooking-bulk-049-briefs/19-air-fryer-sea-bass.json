@@ -23,16 +23,24 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": null,
-    "dietaryFlags": ["gf", "df"],
+    "dietaryFlags": [
+      "gf",
+      "df"
+    ],
     "cuisine": "british",
     "mealType": "dinner",
-    "mood": ["weeknight"],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,47 +51,116 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Sea bass in the air fryer crisps its skin in a way that a baking tray rarely manages. Score the skin with three diagonal cuts on each side so the heat reaches the flesh without the skin lifting. Pat the fish completely dry before oiling: moisture is what stops skin from crisping." }
+          {
+            "type": "text",
+            "text": "Sea bass in the air fryer crisps its skin in a way that a baking tray rarely manages. Score the skin with three diagonal cuts on each side so the heat reaches the flesh without the skin lifting. Pat the fish completely dry before oiling: moisture is what stops skin from crisping."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 2,
           "items": [
-            { "ingredientSlug": "sea-bass", "amount": 2, "unit": "each", "prepNote": "whole, gutted and scaled, about 400 g each", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "olive-oil", "amount": 20, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "sea-salt-flakes", "amount": 6, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "half sliced for inside the fish, half for serving", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "lightly crushed, to place inside", "isOptional": true, "groupLabel": null }
+            {
+              "ingredientSlug": "sea-bass",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "whole, gutted and scaled, about 400 g each",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 20,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": 6,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "half sliced for inside the fish, half for serving",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "lightly crushed, to place inside",
+              "isOptional": true,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Prepare and cook" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Pat the {{sea-bass}} fish completely dry inside and out with paper towel. Score three diagonal cuts on each side through the skin and into the flesh. Rub with {{olive-oil}} of oil and {{sea-salt-flakes}} of flaked salt, making sure the oil gets into the scores. Stuff the cavity with lemon slices and, if using, a crushed garlic clove. Preheat the air fryer to 200°C. Cook for 6 minutes, carefully flip, and cook for a further 5-6 minutes until the skin is crisp and the flesh pulls easily from the bone near the spine." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Prepare and cook"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pat the {{sea-bass}} fish completely dry inside and out with paper towel. Score three diagonal cuts on each side through the skin and into the flesh. Rub with {{olive-oil}} of oil and {{sea-salt-flakes}} of flaked salt, making sure the oil gets into the scores. Stuff the cavity with lemon slices and, if using, a crushed garlic clove. Preheat the air fryer to 200°C. Cook for 6 minutes, carefully flip, and cook for a further 5-6 minutes until the skin is crisp and the flesh pulls easily from the bone near the spine."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -91,21 +168,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Skin sticking to the basket", "cause": "Basket not oiled, or skin still wet.", "fix": "Spray the basket with oil before adding the fish. Make sure the fish is thoroughly dried first." },
-            { "symptom": "Skin not crisping, looks steamed", "cause": "Fish too wet before cooking.", "fix": "Pat dry thoroughly. Even a small amount of surface moisture turns to steam in the air fryer and prevents crisping." },
-            { "symptom": "Flesh not cooked near the spine", "cause": "Cuts not deep enough.", "fix": "Score all the way through the skin and about 5 mm into the flesh. The cuts allow heat to reach the thickest part of the fish." }
+            {
+              "symptom": "Skin sticking to the basket",
+              "cause": "Basket not oiled, or skin still wet.",
+              "fix": "Spray the basket with oil before adding the fish. Make sure the fish is thoroughly dried first."
+            },
+            {
+              "symptom": "Skin not crisping, looks steamed",
+              "cause": "Fish too wet before cooking.",
+              "fix": "Pat dry thoroughly. Even a small amount of surface moisture turns to steam in the air fryer and prevents crisping."
+            },
+            {
+              "symptom": "Flesh not cooked near the spine",
+              "cause": "Cuts not deep enough.",
+              "fix": "Score all the way through the skin and about 5 mm into the flesh. The cuts allow heat to reach the thickest part of the fish."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Air-fryer sea bass is a light midweek dinner. Serve with a green salad, new potatoes, or steamed rice and a squeeze of lemon. The scoring method works for any whole fish of a similar size: red snapper, bream, or small trout all take the same time." }
+          {
+            "type": "text",
+            "text": "Air-fryer sea bass is a light midweek dinner. Serve with a green salad, new potatoes, or steamed rice and a squeeze of lemon. The scoring method works for any whole fish of a similar size: red snapper, bream, or small trout all take the same time."
+          }
         ]
       }
     ]

@@ -26,15 +26,28 @@
     "dietaryFlags": [],
     "cuisine": "french",
     "mealType": "lunch",
-    "mood": ["comfortFood", "slowSunday", "cosy"],
+    "mood": [
+      "comfortFood",
+      "slowSunday",
+      "cosy"
+    ],
     "temperatureCelsius": 220,
     "temperatureNote": "Grill temperature for toasting the cheese",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "slow-cooker", "isOptional": false },
-    { "slug": "chefs-knife", "isOptional": false },
-    { "slug": "chopping-board", "isOptional": false }
+    {
+      "slug": "slow-cooker",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -71,36 +84,127 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "onion", "amount": 8, "unit": "each", "prepNote": "thinly sliced", "isOptional": false, "groupLabel": "For the soup" },
-            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the soup" },
-            { "ingredientSlug": "caster-sugar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the soup" },
-            { "ingredientSlug": "white-wine-dry", "amount": 200, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the soup" },
-            { "ingredientSlug": "stock-beef", "amount": 1000, "unit": "ml", "prepNote": "good quality", "isOptional": false, "groupLabel": "For the soup" },
-            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the soup" },
-            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the soup" },
-            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the soup" },
-            { "ingredientSlug": "bread", "amount": 4, "unit": "slice", "prepNote": "toasted", "isOptional": false, "groupLabel": "For the toasts" },
-            { "ingredientSlug": "cheddar", "amount": 100, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "For the toasts" }
+            {
+              "ingredientSlug": "onion",
+              "amount": 8,
+              "unit": "each",
+              "prepNote": "thinly sliced",
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "caster-sugar",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "white-wine-dry",
+              "amount": 200,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "stock-beef",
+              "amount": 1000,
+              "unit": "ml",
+              "prepNote": "good quality",
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the soup"
+            },
+            {
+              "ingredientSlug": "bread",
+              "amount": 4,
+              "unit": "slice",
+              "prepNote": "toasted",
+              "isOptional": false,
+              "groupLabel": "For the toasts"
+            },
+            {
+              "ingredientSlug": "cheddar",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": "For the toasts"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Caramelise the onions" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Caramelise the onions"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -113,8 +217,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Add the broth" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Add the broth"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -127,8 +238,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Make the cheese toasts" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the cheese toasts"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -168,8 +286,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",

@@ -26,13 +26,19 @@
     "dietaryFlags": [],
     "cuisine": "american",
     "mealType": "snack",
-    "mood": ["weeknight", "party"],
+    "mood": [
+      "weeknight",
+      "party"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,47 +49,116 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Lemon pepper wings use fresh lemon zest rather than dried seasoning mix: the result is brighter and more fragrant. The zest goes on before cooking, not after, so it toasts slightly against the hot circulating air. Pat the wings dry before seasoning ,  wet skin stays soft." }
+          {
+            "type": "text",
+            "text": "Lemon pepper wings use fresh lemon zest rather than dried seasoning mix: the result is brighter and more fragrant. The zest goes on before cooking, not after, so it toasts slightly against the hot circulating air. Pat the wings dry before seasoning ,  wet skin stays soft."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 2,
           "items": [
-            { "ingredientSlug": "chicken-wings", "amount": 500, "unit": "g", "prepNote": "wing tips removed, patted completely dry", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "lemon", "amount": 1, "unit": "each", "prepNote": "zested", "isOptional": false, "groupLabel": "Seasoning" },
-            { "ingredientSlug": "sea-salt-fine", "amount": 4, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Seasoning" },
-            { "ingredientSlug": "garlic-powder", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Seasoning" },
-            { "ingredientSlug": "cooking-spray", "amount": 5, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "chicken-wings",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "wing tips removed, patted completely dry",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "lemon",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "zested",
+              "isOptional": false,
+              "groupLabel": "Seasoning"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 4,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Seasoning"
+            },
+            {
+              "ingredientSlug": "garlic-powder",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Seasoning"
+            },
+            {
+              "ingredientSlug": "cooking-spray",
+              "amount": 5,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Season and cook" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Pat {{chicken-wings}} of wings completely dry. Toss with the zest of {{lemon}} lemon, {{sea-salt-fine}} of salt, {{garlic-powder}} of garlic powder, and a generous amount of cracked black pepper. Spray lightly with cooking oil. Preheat the air fryer to 200°C. Cook in a single layer for 12 minutes, flip, then cook for a further 10-13 minutes until golden and crisp. Squeeze the zested lemon over the wings before serving." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Season and cook"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pat {{chicken-wings}} of wings completely dry. Toss with the zest of {{lemon}} lemon, {{sea-salt-fine}} of salt, {{garlic-powder}} of garlic powder, and a generous amount of cracked black pepper. Spray lightly with cooking oil. Preheat the air fryer to 200°C. Cook in a single layer for 12 minutes, flip, then cook for a further 10-13 minutes until golden and crisp. Squeeze the zested lemon over the wings before serving."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -91,21 +166,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Lemon flavour too faint", "cause": "Zest applied too lightly or the wings were wet.", "fix": "Use the zest of a whole lemon for 500 g of wings. Wet skin absorbs seasoning poorly ,  always dry first." },
-            { "symptom": "Skin soft, not crisp", "cause": "Wings crowded in the basket.", "fix": "Cook in a single layer with space between pieces. Cook two batches rather than pile them in." },
-            { "symptom": "Bitter taste", "cause": "Pith included with the zest.", "fix": "Zest only the coloured surface of the skin. Stop when you see white pith." }
+            {
+              "symptom": "Lemon flavour too faint",
+              "cause": "Zest applied too lightly or the wings were wet.",
+              "fix": "Use the zest of a whole lemon for 500 g of wings. Wet skin absorbs seasoning poorly ,  always dry first."
+            },
+            {
+              "symptom": "Skin soft, not crisp",
+              "cause": "Wings crowded in the basket.",
+              "fix": "Cook in a single layer with space between pieces. Cook two batches rather than pile them in."
+            },
+            {
+              "symptom": "Bitter taste",
+              "cause": "Pith included with the zest.",
+              "fix": "Zest only the coloured surface of the skin. Stop when you see white pith."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Lemon pepper wings are slightly fresher tasting than buffalo or barbecue versions. Good with a yoghurt and herb dip, or simply on their own as a quick snack. The same seasoning works on chicken thighs or drumsticks." }
+          {
+            "type": "text",
+            "text": "Lemon pepper wings are slightly fresher tasting than buffalo or barbecue versions. Good with a yoghurt and herb dip, or simply on their own as a quick snack. The same seasoning works on chicken thighs or drumsticks."
+          }
         ]
       }
     ]

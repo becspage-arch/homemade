@@ -23,16 +23,27 @@
     "batchable": true,
     "batchNotes": "Roast in batches if your air fryer is small. Keep warm in a low oven while the second batch cooks.",
     "makeAheadNotes": "Roasted vegetables keep in the fridge for up to 3 days and are good cold.",
-    "dietaryFlags": ["v", "V", "gf", "df", "nf"],
+    "dietaryFlags": [
+      "v",
+      "V",
+      "gf",
+      "df",
+      "nf"
+    ],
     "cuisine": "british",
     "mealType": "side",
-    "mood": ["weeknight"],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,49 +54,132 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "The key to roasted vegetables in the air fryer is cutting everything to a similar size so the pieces cook at the same rate, and not crowding the basket. A mounded basket produces steamed vegetables with no caramelisation. If you have a small air fryer, cook in two batches. Cut all vegetables to roughly 3 cm pieces." }
+          {
+            "type": "text",
+            "text": "The key to roasted vegetables in the air fryer is cutting everything to a similar size so the pieces cook at the same rate, and not crowding the basket. A mounded basket produces steamed vegetables with no caramelisation. If you have a small air fryer, cook in two batches. Cut all vegetables to roughly 3 cm pieces."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "pepper-red", "amount": 2, "unit": "each", "prepNote": "deseeded and cut into 3 cm pieces", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "courgette", "amount": 2, "unit": "each", "prepNote": "cut into 2 cm half-rounds", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "red-onion", "amount": 1, "unit": "each", "prepNote": "cut into 8 wedges, layers kept together", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "olive-oil", "amount": 30, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "sea-salt-flakes", "amount": 5, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "lightly crushed, skin on", "isOptional": true, "groupLabel": null },
-            { "ingredientSlug": "balsamic-vinegar", "amount": 20, "unit": "ml", "prepNote": "to drizzle after cooking", "isOptional": true, "groupLabel": null }
+            {
+              "ingredientSlug": "pepper-red",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "deseeded and cut into 3 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "courgette",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "cut into 2 cm half-rounds",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "red-onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "cut into 8 wedges, layers kept together",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 30,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-flakes",
+              "amount": 5,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "lightly crushed, skin on",
+              "isOptional": true,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "balsamic-vinegar",
+              "amount": 20,
+              "unit": "ml",
+              "prepNote": "to drizzle after cooking",
+              "isOptional": true,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Season and cook" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Toss the {{pepper-red}} red pepper pieces, {{courgette}} courgette rounds, and {{red-onion}} red onion wedges with {{olive-oil}} of olive oil and {{sea-salt-flakes}} of flaked salt in a large bowl. Add the {{garlic}} crushed garlic cloves if using. Preheat the air fryer to 200°C. Spread in a single layer in the basket ,  cook in two batches if necessary. Cook for 11 minutes, shake the basket, and cook for a further 10-11 minutes until the edges are caramelised and the vegetables are tender. Drizzle with {{balsamic-vinegar}} of balsamic vinegar if using." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Season and cook"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Toss the {{pepper-red}} red pepper pieces, {{courgette}} courgette rounds, and {{red-onion}} red onion wedges with {{olive-oil}} of olive oil and {{sea-salt-flakes}} of flaked salt in a large bowl. Add the {{garlic}} crushed garlic cloves if using. Preheat the air fryer to 200°C. Spread in a single layer in the basket ,  cook in two batches if necessary. Cook for 11 minutes, shake the basket, and cook for a further 10-11 minutes until the edges are caramelised and the vegetables are tender. Drizzle with {{balsamic-vinegar}} of balsamic vinegar if using."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -93,21 +187,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Vegetables steamed rather than caramelised", "cause": "Too many vegetables in the basket at once.", "fix": "Cook in a single layer. If the vegetables are piled, the moisture they release stays trapped and produces steam rather than dry heat." },
-            { "symptom": "Courgette collapsing to mush", "cause": "Cut too thin or cooked too long.", "fix": "Cut courgette into 2 cm rounds, not slices. Check at 20 minutes ,  courgette cooks faster than pepper and onion." },
-            { "symptom": "Onion charring while other vegetables still raw", "cause": "Onion wedges cut too small or layers separated.", "fix": "Keep the onion wedges large and keep the layers together. Small separated pieces char very quickly." }
+            {
+              "symptom": "Vegetables steamed rather than caramelised",
+              "cause": "Too many vegetables in the basket at once.",
+              "fix": "Cook in a single layer. If the vegetables are piled, the moisture they release stays trapped and produces steam rather than dry heat."
+            },
+            {
+              "symptom": "Courgette collapsing to mush",
+              "cause": "Cut too thin or cooked too long.",
+              "fix": "Cut courgette into 2 cm rounds, not slices. Check at 20 minutes ,  courgette cooks faster than pepper and onion."
+            },
+            {
+              "symptom": "Onion charring while other vegetables still raw",
+              "cause": "Onion wedges cut too small or layers separated.",
+              "fix": "Keep the onion wedges large and keep the layers together. Small separated pieces char very quickly."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Roasted vegetables from the air fryer work as a side to grilled meat or fish, stirred through pasta with a little olive oil and grated parmesan, or layered into a sandwich or wrap. They are also good cold in a grain salad or over hummus with flatbread." }
+          {
+            "type": "text",
+            "text": "Roasted vegetables from the air fryer work as a side to grilled meat or fish, stirred through pasta with a little olive oil and grated parmesan, or layered into a sandwich or wrap. They are also good cold in a grain salad or over hummus with flatbread."
+          }
         ]
       }
     ]

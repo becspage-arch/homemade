@@ -23,16 +23,23 @@
     "batchable": true,
     "batchNotes": "Coat a larger batch and keep in the freezer, cooking on demand.",
     "makeAheadNotes": "Coat and freeze ,  1 hour minimum, overnight is better. Do not cook fresh.",
-    "dietaryFlags": ["v"],
+    "dietaryFlags": [
+      "v"
+    ],
     "cuisine": "american",
     "mealType": "snack",
-    "mood": ["entertaining"],
+    "mood": [
+      "entertaining"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,60 +50,153 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Mozzarella sticks only work in the air fryer if the cheese is frozen solid before cooking. Fresh mozzarella melts in less than 2 minutes at 200°C, well before the panko coating has had time to turn golden and set. Freeze for at least 1 hour ,  overnight is better. A double coat of panko (two rounds of egg and breadcrumb) creates a thicker crust that holds as the cheese melts." }
+          {
+            "type": "text",
+            "text": "Mozzarella sticks only work in the air fryer if the cheese is frozen solid before cooking. Fresh mozzarella melts in less than 2 minutes at 200°C, well before the panko coating has had time to turn golden and set. Freeze for at least 1 hour ,  overnight is better. A double coat of panko (two rounds of egg and breadcrumb) creates a thicker crust that holds as the cheese melts."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 2,
           "items": [
-            { "ingredientSlug": "mozzarella", "amount": 250, "unit": "g", "prepNote": "block mozzarella (not fresh ball), cut into 8 sticks about 8 cm long", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "plain-flour", "amount": 50, "unit": "g", "prepNote": "seasoned with salt and pepper", "isOptional": false, "groupLabel": "Coating" },
-            { "ingredientSlug": "eggs", "amount": 2, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": "Coating" },
-            { "ingredientSlug": "breadcrumbs-panko", "amount": 100, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Coating" },
-            { "ingredientSlug": "garlic-powder", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Coating" },
-            { "ingredientSlug": "sea-salt-fine", "amount": 3, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "cooking-spray", "amount": 10, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "mozzarella",
+              "amount": 250,
+              "unit": "g",
+              "prepNote": "block mozzarella (not fresh ball), cut into 8 sticks about 8 cm long",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "seasoned with salt and pepper",
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-panko",
+              "amount": 100,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "garlic-powder",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 3,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cooking-spray",
+              "amount": 10,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Coat and freeze" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Mix {{breadcrumbs-panko}} of panko with {{garlic-powder}} of garlic powder in a shallow bowl. Set up the coating station: seasoned {{plain-flour}}, then {{eggs}} of beaten egg, then the spiced panko. Coat each {{mozzarella}} stick in flour, then egg, then panko, pressing firmly. Repeat the egg and panko coating for a second layer. Place on a lined tray and freeze for at least 1 hour." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Coat and freeze"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Preheat the air fryer to 200°C. Spray the basket with cooking oil. Place frozen sticks in a single layer. Spray the tops generously. Cook for 4 minutes, flip with tongs, spray again, and cook for a further 3-4 minutes until the coating is golden. Serve immediately." }
+          {
+            "type": "text",
+            "text": "Mix {{breadcrumbs-panko}} of panko with {{garlic-powder}} of garlic powder in a shallow bowl. Set up the coating station: seasoned {{plain-flour}}, then {{eggs}} of beaten egg, then the spiced panko. Coat each {{mozzarella}} stick in flour, then egg, then panko, pressing firmly. Repeat the egg and panko coating for a second layer. Place on a lined tray and freeze for at least 1 hour."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the air fryer to 200°C. Spray the basket with cooking oil. Place frozen sticks in a single layer. Spray the tops generously. Cook for 4 minutes, flip with tongs, spray again, and cook for a further 3-4 minutes until the coating is golden. Serve immediately."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -104,21 +204,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Cheese leaking out before coating turns golden", "cause": "Not frozen long enough, or only one coat of panko.", "fix": "Freeze for a minimum of 1 hour; overnight is more reliable. Two coats of panko are essential." },
-            { "symptom": "Coating soft and pale", "cause": "Not enough oil spray or air fryer too full.", "fix": "Spray generously before and after placing in the basket. Cook in a single layer with space between sticks." },
-            { "symptom": "Sticks sticking to the basket", "cause": "Basket not sprayed or sticks turned before the coating set.", "fix": "Spray the basket generously and wait the full 4 minutes before turning." }
+            {
+              "symptom": "Cheese leaking out before coating turns golden",
+              "cause": "Not frozen long enough, or only one coat of panko.",
+              "fix": "Freeze for a minimum of 1 hour; overnight is more reliable. Two coats of panko are essential."
+            },
+            {
+              "symptom": "Coating soft and pale",
+              "cause": "Not enough oil spray or air fryer too full.",
+              "fix": "Spray generously before and after placing in the basket. Cook in a single layer with space between sticks."
+            },
+            {
+              "symptom": "Sticks sticking to the basket",
+              "cause": "Basket not sprayed or sticks turned before the coating set.",
+              "fix": "Spray the basket generously and wait the full 4 minutes before turning."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Air-fryer mozzarella sticks are a quick sharing snack. Serve with marinara sauce, sweet chilli sauce, or a simple tomato dip. Eat within 2 minutes of coming out of the fryer ,  the cheese firms back up quickly and loses the molten stretch." }
+          {
+            "type": "text",
+            "text": "Air-fryer mozzarella sticks are a quick sharing snack. Serve with marinara sauce, sweet chilli sauce, or a simple tomato dip. Eat within 2 minutes of coming out of the fryer ,  the cheese firms back up quickly and loses the molten stretch."
+          }
         ]
       }
     ]

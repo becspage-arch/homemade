@@ -26,13 +26,18 @@
     "dietaryFlags": [],
     "cuisine": "middle-eastern",
     "mealType": "dinner",
-    "mood": ["weeknight"],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,61 +48,161 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Kofta needs fat in the mix to stay juicy: lamb mince at 20% fat is ideal. Too lean and the kofta falls apart on the skewer and dries out quickly. Mix firmly ,  the protein in the meat acts as a binder ,  and chill for 30 minutes before cooking so they hold their shape." }
+          {
+            "type": "text",
+            "text": "Kofta needs fat in the mix to stay juicy: lamb mince at 20% fat is ideal. Too lean and the kofta falls apart on the skewer and dries out quickly. Mix firmly ,  the protein in the meat acts as a binder ,  and chill for 30 minutes before cooking so they hold their shape."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "lamb-mince", "amount": 500, "unit": "g", "prepNote": "20% fat if possible", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "grated, moisture squeezed out", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "garlic", "amount": 3, "unit": "clove", "prepNote": "grated", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "cumin-ground", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spice mix" },
-            { "ingredientSlug": "garam-masala", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spice mix" },
-            { "ingredientSlug": "chilli-powder", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Spice mix" },
-            { "ingredientSlug": "sea-salt-fine", "amount": 6, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "cooking-spray", "amount": 5, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "lamb-mince",
+              "amount": 500,
+              "unit": "g",
+              "prepNote": "20% fat if possible",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "grated, moisture squeezed out",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 3,
+              "unit": "clove",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spice mix"
+            },
+            {
+              "ingredientSlug": "garam-masala",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spice mix"
+            },
+            {
+              "ingredientSlug": "chilli-powder",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Spice mix"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 6,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "cooking-spray",
+              "amount": 5,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Mix and shape" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Grate {{onion}} onion and squeeze the moisture out firmly in a clean cloth or with your hands. Combine {{lamb-mince}} of lamb mince with the squeezed onion, {{garlic}} of grated garlic, {{cumin-ground}} of cumin, {{garam-masala}} of garam masala, {{chilli-powder}} of chilli powder, and {{sea-salt-fine}} of salt. Mix with your hands for 2 minutes until the mixture feels sticky and holds together. Divide into 8 portions and shape each around a flat metal or pre-soaked wooden skewer, pressing firmly. Refrigerate for 30 minutes." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Mix and shape"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Preheat the air fryer to 200°C. Spray the kofta lightly with cooking oil and cook for 6 minutes, turn, and cook for a further 4-6 minutes until browned and cooked through." }
+          {
+            "type": "text",
+            "text": "Grate {{onion}} onion and squeeze the moisture out firmly in a clean cloth or with your hands. Combine {{lamb-mince}} of lamb mince with the squeezed onion, {{garlic}} of grated garlic, {{cumin-ground}} of cumin, {{garam-masala}} of garam masala, {{chilli-powder}} of chilli powder, and {{sea-salt-fine}} of salt. Mix with your hands for 2 minutes until the mixture feels sticky and holds together. Divide into 8 portions and shape each around a flat metal or pre-soaked wooden skewer, pressing firmly. Refrigerate for 30 minutes."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the air fryer to 200°C. Spray the kofta lightly with cooking oil and cook for 6 minutes, turn, and cook for a further 4-6 minutes until browned and cooked through."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -105,21 +210,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Kofta crumbles off the skewer", "cause": "Meat not mixed firmly, or too much moisture from the onion.", "fix": "Mix the meat aggressively for 2 full minutes. Squeeze every drop of moisture from the grated onion before mixing." },
-            { "symptom": "Dry and compact", "cause": "Mince too lean.", "fix": "Use lamb mince with at least 20% fat. Lean mince makes kofta that is tight and dry rather than juicy." },
-            { "symptom": "Raw inside after 12 minutes", "cause": "Skewer too thick or pieces too large.", "fix": "Keep the kofta to about 3 cm diameter and 12 cm long. Thicker pieces take longer to cook through." }
+            {
+              "symptom": "Kofta crumbles off the skewer",
+              "cause": "Meat not mixed firmly, or too much moisture from the onion.",
+              "fix": "Mix the meat aggressively for 2 full minutes. Squeeze every drop of moisture from the grated onion before mixing."
+            },
+            {
+              "symptom": "Dry and compact",
+              "cause": "Mince too lean.",
+              "fix": "Use lamb mince with at least 20% fat. Lean mince makes kofta that is tight and dry rather than juicy."
+            },
+            {
+              "symptom": "Raw inside after 12 minutes",
+              "cause": "Skewer too thick or pieces too large.",
+              "fix": "Keep the kofta to about 3 cm diameter and 12 cm long. Thicker pieces take longer to cook through."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Kofta from the air fryer is a quick weeknight dinner. Serve in flatbreads with sliced tomato, onion, and yoghurt, or over rice with a herb salad. The same mix makes good meatballs for pasta if you drop the skewers and form into rounds instead." }
+          {
+            "type": "text",
+            "text": "Kofta from the air fryer is a quick weeknight dinner. Serve in flatbreads with sliced tomato, onion, and yoghurt, or over rice with a herb salad. The same mix makes good meatballs for pasta if you drop the skewers and form into rounds instead."
+          }
         ]
       }
     ]

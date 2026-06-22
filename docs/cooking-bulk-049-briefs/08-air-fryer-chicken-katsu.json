@@ -26,13 +26,19 @@
     "dietaryFlags": [],
     "cuisine": "british",
     "mealType": "dinner",
-    "mood": ["weeknight", "comfortFood"],
+    "mood": [
+      "weeknight",
+      "comfortFood"
+    ],
     "temperatureCelsius": 200,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,61 +49,161 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Chicken katsu is a breaded chicken cutlet served with a thick, dark dipping sauce made from Worcestershire sauce, soy sauce, and a little ketchup. The air fryer gives you a panko crust with good colour without the splatter of deep-frying. Flatten the chicken to an even 1.5 cm so it cooks through before the crust burns." }
+          {
+            "type": "text",
+            "text": "Chicken katsu is a breaded chicken cutlet served with a thick, dark dipping sauce made from Worcestershire sauce, soy sauce, and a little ketchup. The air fryer gives you a panko crust with good colour without the splatter of deep-frying. Flatten the chicken to an even 1.5 cm so it cooks through before the crust burns."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 2,
           "items": [
-            { "ingredientSlug": "chicken-breast", "amount": 2, "unit": "each", "prepNote": "about 200 g each, pounded to 1.5 cm", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "plain-flour", "amount": 50, "unit": "g", "prepNote": "seasoned with salt", "isOptional": false, "groupLabel": "Coating" },
-            { "ingredientSlug": "eggs", "amount": 1, "unit": "each", "prepNote": "beaten", "isOptional": false, "groupLabel": "Coating" },
-            { "ingredientSlug": "breadcrumbs-panko", "amount": 80, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Coating" },
-            { "ingredientSlug": "cooking-spray", "amount": 10, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "ketchup", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tonkatsu sauce" },
-            { "ingredientSlug": "soy-sauce-dark", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tonkatsu sauce" },
-            { "ingredientSlug": "honey", "amount": 1, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Tonkatsu sauce" }
+            {
+              "ingredientSlug": "chicken-breast",
+              "amount": 2,
+              "unit": "each",
+              "prepNote": "about 200 g each, pounded to 1.5 cm",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-flour",
+              "amount": 50,
+              "unit": "g",
+              "prepNote": "seasoned with salt",
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "eggs",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "beaten",
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "breadcrumbs-panko",
+              "amount": 80,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Coating"
+            },
+            {
+              "ingredientSlug": "cooking-spray",
+              "amount": 10,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "ketchup",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tonkatsu sauce"
+            },
+            {
+              "ingredientSlug": "soy-sauce-dark",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tonkatsu sauce"
+            },
+            {
+              "ingredientSlug": "honey",
+              "amount": 1,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Tonkatsu sauce"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Make the tonkatsu sauce" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Mix {{ketchup}} of ketchup with {{soy-sauce-dark}} of dark soy sauce and {{honey}} of honey. Set aside ,  this is the dipping sauce." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Bread and cook" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make the tonkatsu sauce"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Set up three bowls: {{plain-flour}} of seasoned flour, {{eggs}} beaten egg, and {{breadcrumbs-panko}} of panko. Coat each {{chicken-breast}} chicken breast through flour, then egg, then panko, pressing the crumbs on firmly. Spray all over with cooking oil. Preheat the air fryer to 200°C. Cook for 9 minutes, flip carefully, spray again, and cook for 7-9 more minutes until golden. Rest for 3 minutes before slicing." }
+          {
+            "type": "text",
+            "text": "Mix {{ketchup}} of ketchup with {{soy-sauce-dark}} of dark soy sauce and {{honey}} of honey. Set aside ,  this is the dipping sauce."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Bread and cook"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Set up three bowls: {{plain-flour}} of seasoned flour, {{eggs}} beaten egg, and {{breadcrumbs-panko}} of panko. Coat each {{chicken-breast}} chicken breast through flour, then egg, then panko, pressing the crumbs on firmly. Spray all over with cooking oil. Preheat the air fryer to 200°C. Cook for 9 minutes, flip carefully, spray again, and cook for 7-9 more minutes until golden. Rest for 3 minutes before slicing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -105,21 +211,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Crumb too pale", "cause": "Not enough cooking oil spray.", "fix": "Spray generously before cooking and again when you flip. Panko browns poorly without oil." },
-            { "symptom": "Crumb falls off when flipping", "cause": "Moved too early, or flour stage skipped.", "fix": "Wait until the first side is properly golden before flipping. Use tongs or a fish slice rather than a fork." },
-            { "symptom": "Chicken dry inside", "cause": "Breast not pounded flat, so edges overcooked before centre done.", "fix": "Pound to a uniform 1.5 cm thickness. A thin even breast cooks much more reliably than a thick uneven one." }
+            {
+              "symptom": "Crumb too pale",
+              "cause": "Not enough cooking oil spray.",
+              "fix": "Spray generously before cooking and again when you flip. Panko browns poorly without oil."
+            },
+            {
+              "symptom": "Crumb falls off when flipping",
+              "cause": "Moved too early, or flour stage skipped.",
+              "fix": "Wait until the first side is properly golden before flipping. Use tongs or a fish slice rather than a fork."
+            },
+            {
+              "symptom": "Chicken dry inside",
+              "cause": "Breast not pounded flat, so edges overcooked before centre done.",
+              "fix": "Pound to a uniform 1.5 cm thickness. A thin even breast cooks much more reliably than a thick uneven one."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Chicken katsu became a British lunch staple. Serve sliced over steamed rice with shredded white cabbage and the tonkatsu sauce on the side. The same preparation works on pork loin escalopes for the classic tonkatsu version." }
+          {
+            "type": "text",
+            "text": "Chicken katsu became a British lunch staple. Serve sliced over steamed rice with shredded white cabbage and the tonkatsu sauce on the side. The same preparation works on pork loin escalopes for the classic tonkatsu version."
+          }
         ]
       }
     ]

@@ -26,15 +26,28 @@
     "dietaryFlags": [],
     "cuisine": "british",
     "mealType": "dinner",
-    "mood": ["comfortFood", "cosy", "hearty"],
+    "mood": [
+      "comfortFood",
+      "cosy",
+      "hearty"
+    ],
     "temperatureCelsius": null,
     "temperatureNote": null,
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "slow-cooker", "isOptional": false },
-    { "slug": "chefs-knife", "isOptional": false },
-    { "slug": "chopping-board", "isOptional": false }
+    {
+      "slug": "slow-cooker",
+      "isOptional": false
+    },
+    {
+      "slug": "chefs-knife",
+      "isOptional": false
+    },
+    {
+      "slug": "chopping-board",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -71,40 +84,159 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "chicken-thighs-boneless", "amount": 700, "unit": "g", "prepNote": "skinless, cut into large pieces", "isOptional": false, "groupLabel": "For the stew" },
-            { "ingredientSlug": "carrot", "amount": 3, "unit": "each", "prepNote": "peeled and cut into chunks", "isOptional": false, "groupLabel": "For the stew" },
-            { "ingredientSlug": "celery", "amount": 3, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": "For the stew" },
-            { "ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "diced", "isOptional": false, "groupLabel": "For the stew" },
-            { "ingredientSlug": "leek", "amount": 1, "unit": "each", "prepNote": "sliced", "isOptional": false, "groupLabel": "For the stew" },
-            { "ingredientSlug": "garlic", "amount": 2, "unit": "clove", "prepNote": "crushed", "isOptional": false, "groupLabel": "For the stew" },
-            { "ingredientSlug": "stock-chicken", "amount": 600, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": "For the stew" },
-            { "ingredientSlug": "thyme", "amount": 3, "unit": "sprig", "prepNote": null, "isOptional": false, "groupLabel": "For the stew" },
-            { "ingredientSlug": "bay-leaves", "amount": 2, "unit": "leaf", "prepNote": null, "isOptional": false, "groupLabel": "For the stew" },
-            { "ingredientSlug": "cornflour", "amount": 2, "unit": "tbsp", "prepNote": "mixed with 3 tbsp cold water", "isOptional": false, "groupLabel": "For the stew" },
-            { "ingredientSlug": "sea-salt-fine", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "For the stew" },
-            { "ingredientSlug": "self-raising-flour", "amount": 150, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "For the dumplings" },
-            { "ingredientSlug": "unsalted-butter", "amount": 60, "unit": "g", "prepNote": "cold, grated", "isOptional": false, "groupLabel": "For the dumplings" },
-            { "ingredientSlug": "whole-milk", "amount": 80, "unit": "ml", "prepNote": "cold", "isOptional": false, "groupLabel": "For the dumplings" }
+            {
+              "ingredientSlug": "chicken-thighs-boneless",
+              "amount": 700,
+              "unit": "g",
+              "prepNote": "skinless, cut into large pieces",
+              "isOptional": false,
+              "groupLabel": "For the stew"
+            },
+            {
+              "ingredientSlug": "carrot",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "peeled and cut into chunks",
+              "isOptional": false,
+              "groupLabel": "For the stew"
+            },
+            {
+              "ingredientSlug": "celery",
+              "amount": 3,
+              "unit": "each",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "For the stew"
+            },
+            {
+              "ingredientSlug": "onion",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "diced",
+              "isOptional": false,
+              "groupLabel": "For the stew"
+            },
+            {
+              "ingredientSlug": "leek",
+              "amount": 1,
+              "unit": "each",
+              "prepNote": "sliced",
+              "isOptional": false,
+              "groupLabel": "For the stew"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 2,
+              "unit": "clove",
+              "prepNote": "crushed",
+              "isOptional": false,
+              "groupLabel": "For the stew"
+            },
+            {
+              "ingredientSlug": "stock-chicken",
+              "amount": 600,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the stew"
+            },
+            {
+              "ingredientSlug": "thyme",
+              "amount": 3,
+              "unit": "sprig",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the stew"
+            },
+            {
+              "ingredientSlug": "bay-leaves",
+              "amount": 2,
+              "unit": "leaf",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the stew"
+            },
+            {
+              "ingredientSlug": "cornflour",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": "mixed with 3 tbsp cold water",
+              "isOptional": false,
+              "groupLabel": "For the stew"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the stew"
+            },
+            {
+              "ingredientSlug": "self-raising-flour",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "For the dumplings"
+            },
+            {
+              "ingredientSlug": "unsalted-butter",
+              "amount": 60,
+              "unit": "g",
+              "prepNote": "cold, grated",
+              "isOptional": false,
+              "groupLabel": "For the dumplings"
+            },
+            {
+              "ingredientSlug": "whole-milk",
+              "amount": 80,
+              "unit": "ml",
+              "prepNote": "cold",
+              "isOptional": false,
+              "groupLabel": "For the dumplings"
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Method"
+          }
+        ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Build the stew" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Build the stew"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -117,8 +249,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook the stew" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook the stew"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -131,8 +270,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Make and cook the dumplings" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Make and cook the dumplings"
+          }
+        ]
       },
       {
         "type": "paragraph",
@@ -181,8 +327,15 @@
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",

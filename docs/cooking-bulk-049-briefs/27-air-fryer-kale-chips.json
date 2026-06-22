@@ -23,16 +23,27 @@
     "batchable": false,
     "batchNotes": null,
     "makeAheadNotes": null,
-    "dietaryFlags": ["v", "V", "gf", "df", "nf"],
+    "dietaryFlags": [
+      "v",
+      "V",
+      "gf",
+      "df",
+      "nf"
+    ],
     "cuisine": "british",
     "mealType": "snack",
-    "mood": ["weeknight"],
+    "mood": [
+      "weeknight"
+    ],
     "temperatureCelsius": 150,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,56 +54,121 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Kale chips need low heat and a completely dry leaf. Cook at 150°C rather than 200°C: higher temperatures char the thin leaf edges before the thick stem dries out. The kale must be completely dry before oiling or the moisture prevents crisping. Use only a small amount of oil ,  too much makes them soggy rather than crisp." }
+          {
+            "type": "text",
+            "text": "Kale chips need low heat and a completely dry leaf. Cook at 150°C rather than 200°C: higher temperatures char the thin leaf edges before the thick stem dries out. The kale must be completely dry before oiling or the moisture prevents crisping. Use only a small amount of oil ,  too much makes them soggy rather than crisp."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 2,
           "items": [
-            { "ingredientSlug": "kale", "amount": 150, "unit": "g", "prepNote": "curly kale, thick central ribs removed, torn into 5 cm pieces", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "olive-oil", "amount": 10, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "sea-salt-fine", "amount": 2, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "kale",
+              "amount": 150,
+              "unit": "g",
+              "prepNote": "curly kale, thick central ribs removed, torn into 5 cm pieces",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "olive-oil",
+              "amount": 10,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 2,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Dry and season" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Wash the {{kale}} and spin completely dry in a salad spinner. If you don't have a spinner, spread on a clean tea towel and pat dry ,  any remaining moisture will stop the chips crisping. Toss the dry kale with {{olive-oil}} of oil, massaging it in with your hands so every piece is coated. Season with {{sea-salt-fine}} of salt." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Cook" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Dry and season"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Preheat the air fryer to 150°C. Place the kale in the basket ,  it can be loosely layered rather than a single layer as it will shrink. Cook for 4 minutes, shake, and cook for a further 3-4 minutes until the pieces are completely dry, crisp, and papery. Check after 6 minutes: kale goes from crisp to burnt quickly. Remove and cool for 2 minutes before eating ,  they crisp further as they cool." }
+          {
+            "type": "text",
+            "text": "Wash the {{kale}} and spin completely dry in a salad spinner. If you don't have a spinner, spread on a clean tea towel and pat dry ,  any remaining moisture will stop the chips crisping. Toss the dry kale with {{olive-oil}} of oil, massaging it in with your hands so every piece is coated. Season with {{sea-salt-fine}} of salt."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Cook"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the air fryer to 150°C. Place the kale in the basket ,  it can be loosely layered rather than a single layer as it will shrink. Cook for 4 minutes, shake, and cook for a further 3-4 minutes until the pieces are completely dry, crisp, and papery. Check after 6 minutes: kale goes from crisp to burnt quickly. Remove and cool for 2 minutes before eating ,  they crisp further as they cool."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -100,21 +176,43 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Chips soft and chewy, not crisp", "cause": "Kale still wet, or too much oil.", "fix": "The kale must be completely dry before oiling. Use the minimum amount of oil ,  enough to just coat each piece, not drench it." },
-            { "symptom": "Chips burning at the edges before crisping", "cause": "Temperature too high.", "fix": "Cook at 150°C only. Higher temperatures char the thin edges before the thicker pieces dry out." },
-            { "symptom": "Chips soggy once cooled", "cause": "Still slightly moist when removed from the fryer.", "fix": "Leave in the air fryer for an extra minute with the heat off. They should be papery and light, not at all pliable." }
+            {
+              "symptom": "Chips soft and chewy, not crisp",
+              "cause": "Kale still wet, or too much oil.",
+              "fix": "The kale must be completely dry before oiling. Use the minimum amount of oil ,  enough to just coat each piece, not drench it."
+            },
+            {
+              "symptom": "Chips burning at the edges before crisping",
+              "cause": "Temperature too high.",
+              "fix": "Cook at 150°C only. Higher temperatures char the thin edges before the thicker pieces dry out."
+            },
+            {
+              "symptom": "Chips soggy once cooled",
+              "cause": "Still slightly moist when removed from the fryer.",
+              "fix": "Leave in the air fryer for an extra minute with the heat off. They should be papery and light, not at all pliable."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Kale chips are a savoury snack to eat immediately after cooking. They do not keep well once they are crisp ,  even in a sealed container they soften within a few hours. The method works with cavolo nero leaves stripped from the stems in the same way." }
+          {
+            "type": "text",
+            "text": "Kale chips are a savoury snack to eat immediately after cooking. They do not keep well once they are crisp ,  even in a sealed container they soften within a few hours. The method works with cavolo nero leaves stripped from the stems in the same way."
+          }
         ]
       }
     ]

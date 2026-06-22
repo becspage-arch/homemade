@@ -26,13 +26,19 @@
     "dietaryFlags": [],
     "cuisine": "british",
     "mealType": "dinner",
-    "mood": ["weeknight", "comfortFood"],
+    "mood": [
+      "weeknight",
+      "comfortFood"
+    ],
     "temperatureCelsius": 220,
     "temperatureNote": "air fryer",
     "foundational": false
   },
   "recipeTools": [
-    { "slug": "air-fryer", "isOptional": false }
+    {
+      "slug": "air-fryer",
+      "isOptional": false
+    }
   ],
   "glossaryTerms": [],
   "techniqueSlugs": [],
@@ -43,65 +49,193 @@
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Tandoori chicken is the chicken tikka's bone-in relation: larger pieces, more spice, longer cooking. The marinade is similar but bolder, and the cooking time is longer because bone-in pieces take more time to cook through. Slash the skin before marinating so the spice paste reaches the meat." }
+          {
+            "type": "text",
+            "text": "Tandoori chicken is the chicken tikka's bone-in relation: larger pieces, more spice, longer cooking. The marinade is similar but bolder, and the cooking time is longer because bone-in pieces take more time to cook through. Slash the skin before marinating so the spice paste reaches the meat."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "What you need" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "What you need"
+          }
+        ]
       },
       {
         "type": "ingredientsList",
         "attrs": {
           "defaultServings": 4,
           "items": [
-            { "ingredientSlug": "chicken-thigh", "amount": 4, "unit": "each", "prepNote": "bone-in, skin-on, slashed 3 times to the bone", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "chicken-drumsticks", "amount": 4, "unit": "each", "prepNote": "slashed twice to the bone", "isOptional": false, "groupLabel": null },
-            { "ingredientSlug": "plain-yoghurt", "amount": 200, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "lemon-juice", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "garlic", "amount": 4, "unit": "clove", "prepNote": "grated", "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "ginger-root", "amount": 25, "unit": "g", "prepNote": "grated", "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "garam-masala", "amount": 2, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "cumin-ground", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "paprika-hot", "amount": 1.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "turmeric", "amount": 0.5, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "sea-salt-fine", "amount": 8, "unit": "g", "prepNote": null, "isOptional": false, "groupLabel": "Marinade" },
-            { "ingredientSlug": "cooking-spray", "amount": 5, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null }
+            {
+              "ingredientSlug": "chicken-thigh",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "bone-in, skin-on, slashed 3 times to the bone",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "chicken-drumsticks",
+              "amount": 4,
+              "unit": "each",
+              "prepNote": "slashed twice to the bone",
+              "isOptional": false,
+              "groupLabel": null
+            },
+            {
+              "ingredientSlug": "plain-yoghurt",
+              "amount": 200,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "lemon-juice",
+              "amount": 2,
+              "unit": "tbsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "garlic",
+              "amount": 4,
+              "unit": "clove",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "ginger-root",
+              "amount": 25,
+              "unit": "g",
+              "prepNote": "grated",
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "garam-masala",
+              "amount": 2,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "cumin-ground",
+              "amount": 1,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "paprika-hot",
+              "amount": 1.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "turmeric",
+              "amount": 0.5,
+              "unit": "tsp",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "sea-salt-fine",
+              "amount": 8,
+              "unit": "g",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": "Marinade"
+            },
+            {
+              "ingredientSlug": "cooking-spray",
+              "amount": 5,
+              "unit": "ml",
+              "prepNote": null,
+              "isOptional": false,
+              "groupLabel": null
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Method" }]
-      },
-      {
-        "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Marinate" }]
-      },
-      {
-        "type": "paragraph",
+        "attrs": {
+          "level": 2
+        },
         "content": [
-          { "type": "text", "text": "Combine {{plain-yoghurt}} of yoghurt, {{lemon-juice}} of lemon juice, {{garlic}} of grated garlic, and {{ginger-root}} of ginger in a bowl. Add {{garam-masala}} of garam masala, {{cumin-ground}} of cumin, {{paprika-hot}} of hot paprika, {{turmeric}} of turmeric, and {{sea-salt-fine}} of salt. Stir well. Slash the skin on the {{chicken-thigh}} thighs and {{chicken-drumsticks}} drumsticks. Rub the marinade deep into the cuts. Cover and refrigerate for at least 4 hours." }
+          {
+            "type": "text",
+            "text": "Method"
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 3 },
-        "content": [{ "type": "text", "text": "Air-fry" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Marinate"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Preheat the air fryer to 220°C. Shake excess marinade from the pieces and place in a single layer. Spray with cooking oil. Cook for 13 minutes, flip, and cook for a further 10-12 minutes until charred at the edges and the juices run clear. Check that the thickest part of the thigh reads 75°C." }
+          {
+            "type": "text",
+            "text": "Combine {{plain-yoghurt}} of yoghurt, {{lemon-juice}} of lemon juice, {{garlic}} of grated garlic, and {{ginger-root}} of ginger in a bowl. Add {{garam-masala}} of garam masala, {{cumin-ground}} of cumin, {{paprika-hot}} of hot paprika, {{turmeric}} of turmeric, and {{sea-salt-fine}} of salt. Stir well. Slash the skin on the {{chicken-thigh}} thighs and {{chicken-drumsticks}} drumsticks. Rub the marinade deep into the cuts. Cover and refrigerate for at least 4 hours."
+          }
         ]
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Troubleshooting" }]
+        "attrs": {
+          "level": 3
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Air-fry"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Preheat the air fryer to 220°C. Shake excess marinade from the pieces and place in a single layer. Spray with cooking oil. Cook for 13 minutes, flip, and cook for a further 10-12 minutes until charred at the edges and the juices run clear. Check that the thickest part of the thigh reads 75°C."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Troubleshooting"
+          }
+        ]
       },
       {
         "type": "troubleshooter",
@@ -109,22 +243,48 @@
           "heading": "Common problems",
           "intro": null,
           "items": [
-            { "symptom": "Chicken undercooked at the bone", "cause": "Pieces not slashed before marinating.", "fix": "Slash the skin and flesh before marinating. The marinade penetrates the cuts and the slashes also help heat reach the bone." },
-            { "symptom": "Marinade burning on the basket", "cause": "Yoghurt dripping into the pan.", "fix": "Empty the drip tray halfway through cooking. A small amount of smoke is expected at 220°C." },
-            { "symptom": "Skin pale despite long cooking", "cause": "Temperature not high enough, or too much marinade left on.", "fix": "Shake off the excess before cooking. The fryer must be fully preheated." },
-            { "symptom": "Dry thigh meat near the bone", "cause": "Overcooked.", "fix": "Pull at 75°C. Bone-in thighs hold moisture well, but overcooking past 80°C dries them out." }
+            {
+              "symptom": "Chicken undercooked at the bone",
+              "cause": "Pieces not slashed before marinating.",
+              "fix": "Slash the skin and flesh before marinating. The marinade penetrates the cuts and the slashes also help heat reach the bone."
+            },
+            {
+              "symptom": "Marinade burning on the basket",
+              "cause": "Yoghurt dripping into the pan.",
+              "fix": "Empty the drip tray halfway through cooking. A small amount of smoke is expected at 220°C."
+            },
+            {
+              "symptom": "Skin pale despite long cooking",
+              "cause": "Temperature not high enough, or too much marinade left on.",
+              "fix": "Shake off the excess before cooking. The fryer must be fully preheated."
+            },
+            {
+              "symptom": "Dry thigh meat near the bone",
+              "cause": "Overcooked.",
+              "fix": "Pull at 75°C. Bone-in thighs hold moisture well, but overcooking past 80°C dries them out."
+            }
           ]
         }
       },
       {
         "type": "heading",
-        "attrs": { "level": 2 },
-        "content": [{ "type": "text", "text": "Where this dish lives" }]
+        "attrs": {
+          "level": 2
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Where this dish lives"
+          }
+        ]
       },
       {
         "type": "paragraph",
         "content": [
-          { "type": "text", "text": "Tandoori chicken is a centrepiece dish: serve it with naan, rice, sliced onion and lemon wedges, raita on the side. The same marinade works on a whole spatchcocked chicken, which then needs about 35 minutes in the air fryer." }
+          {
+            "type": "text",
+            "text": "Tandoori chicken is a centrepiece dish: serve it with naan, rice, sliced onion and lemon wedges, raita on the side. The same marinade works on a whole spatchcocked chicken, which then needs about 35 minutes in the air fryer."
+          }
         ]
       }
     ]
