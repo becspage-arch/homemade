@@ -6,7 +6,8 @@
   "types": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./pattern": "./src/pattern.ts"
+    "./pattern": "./src/pattern.ts",
+    "./search-docs": "./src/search-docs.ts"
   },
   "scripts": {
     "postinstall": "prisma generate",

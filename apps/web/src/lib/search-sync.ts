@@ -1,8 +1,14 @@
 import 'server-only'
 
-import { buildContentTagFacets, prisma, TutorialStatus, Visibility } from '@homemade/db'
+import { prisma, TutorialStatus, Visibility } from '@homemade/db'
 import {
-  extractBodyText,
+  buildCategoryDoc,
+  buildCrochetPatternDoc,
+  buildGlossaryDoc,
+  buildPatternDoc,
+  buildTutorialDoc,
+} from '@homemade/db/search-docs'
+import {
   removeCategoryFromSearch,
   removeCrochetPatternFromSearch,
   removeGlossaryFromSearch,
@@ -13,73 +19,19 @@ import {
   syncGlossaryDoc,
   syncPatternDoc,
   syncTutorialDoc,
-  type CategoryDoc,
-  type CrochetPatternDoc,
-  type GlossaryDoc,
-  type PatternDoc,
-  type TutorialDoc,
 } from '@homemade/search'
 
 /**
- * Build a Typesense tutorial doc from a freshly-read Prisma row.
+ * Per-row search sync — called from admin server actions after a Prisma write.
+ * The row→doc mapping lives once in `@homemade/db/search-docs`; this file owns
+ * the publish gating (what is eligible to be indexed) + remove-on-unpublish.
+ * Fire-and-forget: a Typesense outage must never fail an admin save, so each
+ * path swallows + logs.
  */
-async function buildTutorialDoc(id: string): Promise<TutorialDoc | null> {
-  const tutorial = await prisma.tutorial.findUnique({
-    where: { id },
-    include: {
-      category: { select: { slug: true, name: true } },
-      subCategory: { select: { slug: true, name: true } },
-      tags: { select: { slug: true } },
-      hero: { select: { cloudflareId: true, r2Key: true } },
-    },
-  })
-  if (!tutorial) return null
 
-  const tags = await buildContentTagFacets({ type: 'TUTORIAL', id })
-
-  return {
-    id: tutorial.id,
-    slug: tutorial.slug,
-    title: tutorial.title,
-    subtitle: tutorial.subtitle,
-    excerpt: tutorial.excerpt,
-    bodyText: extractBodyText(tutorial.body),
-    categoryId: tutorial.categoryId,
-    categorySlug: tutorial.category.slug,
-    categoryName: tutorial.category.name,
-    subCategorySlug: tutorial.subCategory?.slug ?? null,
-    subCategoryName: tutorial.subCategory?.name ?? null,
-    difficulty: tutorial.difficulty,
-    season: tutorial.season,
-    timeMinutes: tutorial.timeMinutes,
-    totalMinutes: tutorial.totalMinutes,
-    tagSlugs: tutorial.tags.map((t) => t.slug),
-    heroCloudflareId: tutorial.hero?.cloudflareId ?? null,
-    heroR2Key: tutorial.hero?.r2Key ?? null,
-    publishedAt: tutorial.publishedAt ? tutorial.publishedAt.getTime() : null,
-    type: tutorial.type,
-    mealType: tutorial.mealType,
-    cuisine: tutorial.cuisine,
-    dietaryFlags: tutorial.dietaryFlags,
-    mood: tutorial.mood,
-    practiceType: tutorial.practiceType,
-    practiceTargets: tutorial.practiceTargets,
-    timeBand: tutorial.timeBand,
-    bestTime: tutorial.bestTime,
-    practiceDepth: tutorial.practiceDepth,
-    plantingMonths: tutorial.plantingMonths,
-    harvestMonths: tutorial.harvestMonths,
-    containerFriendly: tutorial.containerFriendly,
-    indoorFriendly: tutorial.indoorFriendly,
-    regionsApplicable: tutorial.regionsApplicable,
-    foundational: tutorial.foundational,
-    occasionSlugs: tags.occasionSlugs,
-    seasonSlugs: tags.seasonSlugs,
-    styleSlugs: tags.styleSlugs,
-    subjectSlugs: tags.subjectSlugs,
-    collectionText: tags.collectionText,
-  }
-}
+// ────────────────────────────────────────────────────────────────────────────
+// Tutorials
+// ────────────────────────────────────────────────────────────────────────────
 
 export async function syncTutorialById(id: string): Promise<void> {
   try {
@@ -87,11 +39,7 @@ export async function syncTutorialById(id: string): Promise<void> {
       where: { id },
       select: { id: true, status: true },
     })
-    if (!tutorial) {
-      await removeTutorialFromSearch(id)
-      return
-    }
-    if (tutorial.status !== TutorialStatus.PUBLISHED) {
+    if (!tutorial || tutorial.status !== TutorialStatus.PUBLISHED) {
       await removeTutorialFromSearch(id)
       return
     }
@@ -112,83 +60,18 @@ export async function removeTutorialById(id: string): Promise<void> {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// Patterns
+// Patterns (cross-stitch / knitting-chart / crochet-chart)
 // ────────────────────────────────────────────────────────────────────────────
-
-async function buildPatternDoc(id: string): Promise<PatternDoc | null> {
-  const pattern = await prisma.pattern.findUnique({
-    where: { id },
-    include: {
-      designer: { select: { slug: true, displayName: true } },
-      subCategory: {
-        select: {
-          slug: true,
-          name: true,
-          category: { select: { slug: true } },
-        },
-      },
-      hero: { select: { cloudflareId: true, r2Key: true } },
-      thumbnail: { select: { cloudflareId: true, r2Key: true } },
-    },
-  })
-  if (!pattern) return null
-  if (!pattern.subCategory) return null
-
-  const tags = await buildContentTagFacets({ type: 'CROSS_STITCH_PATTERN', id })
-
-  return {
-    id: pattern.id,
-    slug: pattern.slug,
-    name: pattern.name,
-    description: pattern.description,
-    type: pattern.type,
-    categorySlug: pattern.subCategory.category.slug,
-    subCategorySlug: pattern.subCategory.slug,
-    subCategoryName: pattern.subCategory.name,
-    designerSlug: pattern.designer?.slug ?? null,
-    designerName: pattern.designer?.displayName ?? null,
-    difficulty: pattern.difficulty,
-    widthCells: pattern.widthCells,
-    heightCells: pattern.heightCells,
-    colourCount: pattern.colourCount,
-    totalStitches: pattern.totalStitches,
-    estimatedHours: pattern.estimatedHours,
-    hasBackstitch: pattern.hasBackstitch,
-    hasFrenchKnots: pattern.hasFrenchKnots,
-    hasBeads: pattern.hasBeads,
-    hasQuarterStitches: pattern.hasQuarterStitches,
-    fabricCountSuggested: pattern.fabricCountSuggested,
-    premium: pattern.premium,
-    heroCloudflareId: pattern.hero?.cloudflareId ?? null,
-    heroR2Key: pattern.hero?.r2Key ?? null,
-    thumbnailCloudflareId: pattern.thumbnail?.cloudflareId ?? null,
-    thumbnailR2Key: pattern.thumbnail?.r2Key ?? null,
-    publishedAt: pattern.publishedAt ? pattern.publishedAt.getTime() : null,
-    occasionSlugs: tags.occasionSlugs,
-    seasonSlugs: tags.seasonSlugs,
-    styleSlugs: tags.styleSlugs,
-    subjectSlugs: tags.subjectSlugs,
-    collectionText: tags.collectionText,
-  }
-}
 
 export async function syncPatternById(id: string): Promise<void> {
   try {
     const pattern = await prisma.pattern.findUnique({
       where: { id },
-      select: {
-        id: true,
-        visibility: true,
-        publishedAt: true,
-        ownerUserId: true,
-      },
+      select: { id: true, visibility: true, publishedAt: true, ownerUserId: true },
     })
-    if (!pattern) {
-      await removePatternFromSearch(id)
-      return
-    }
     // Only catalogue patterns (ownerUserId null) that are PUBLIC and published.
     if (
+      !pattern ||
       pattern.ownerUserId !== null ||
       pattern.visibility !== Visibility.PUBLIC ||
       pattern.publishedAt === null
@@ -213,77 +96,17 @@ export async function removePatternById(id: string): Promise<void> {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// Crochet patterns
+// Crochet patterns (row-by-row written / charted crochet)
 // ────────────────────────────────────────────────────────────────────────────
-
-async function buildCrochetPatternDoc(id: string): Promise<CrochetPatternDoc | null> {
-  const pattern = await prisma.crochetPattern.findUnique({
-    where: { id },
-    include: {
-      designer: { select: { slug: true, displayName: true } },
-      subCategory: {
-        select: {
-          slug: true,
-          name: true,
-          category: { select: { slug: true } },
-        },
-      },
-      primaryYarnWeight: { select: { canonicalName: true } },
-      primaryHook: { select: { mmSize: true } },
-    },
-  })
-  if (!pattern) return null
-  if (!pattern.subCategory) return null
-
-  const tags = await buildContentTagFacets({ type: 'CROCHET_PATTERN', id })
-
-  return {
-    id: pattern.id,
-    slug: pattern.slug,
-    name: pattern.name,
-    description: pattern.description,
-    categorySlug: pattern.subCategory.category.slug,
-    subCategorySlug: pattern.subCategory.slug,
-    subCategoryName: pattern.subCategory.name,
-    designerSlug: pattern.designer?.slug ?? null,
-    designerName: pattern.designer?.displayName ?? null,
-    difficulty: pattern.difficulty,
-    estimatedHours: pattern.estimatedHours,
-    shape: pattern.shapeCategory,
-    construction: pattern.construction,
-    primaryStitches: pattern.specialStitchesUsed,
-    yarnWeight: pattern.primaryYarnWeight?.canonicalName ?? null,
-    hookSizeMm: pattern.primaryHook?.mmSize ?? null,
-    hasMultipleSizes: pattern.sizesGraded !== null,
-    terminology: pattern.terminologyConvention,
-    premium: pattern.premium,
-    heroCloudflareId: null,
-    heroR2Key: null,
-    publishedAt: pattern.publishedAt ? pattern.publishedAt.getTime() : null,
-    occasionSlugs: tags.occasionSlugs,
-    seasonSlugs: tags.seasonSlugs,
-    styleSlugs: tags.styleSlugs,
-    subjectSlugs: tags.subjectSlugs,
-    collectionText: tags.collectionText,
-  }
-}
 
 export async function syncCrochetPatternById(id: string): Promise<void> {
   try {
     const pattern = await prisma.crochetPattern.findUnique({
       where: { id },
-      select: {
-        id: true,
-        visibility: true,
-        publishedAt: true,
-        ownerUserId: true,
-      },
+      select: { id: true, visibility: true, publishedAt: true, ownerUserId: true },
     })
-    if (!pattern) {
-      await removeCrochetPatternFromSearch(id)
-      return
-    }
     if (
+      !pattern ||
       pattern.ownerUserId !== null ||
       pattern.visibility !== Visibility.PUBLIC ||
       pattern.publishedAt === null
@@ -313,17 +136,10 @@ export async function removeCrochetPatternById(id: string): Promise<void> {
 
 export async function syncCategoryById(id: string): Promise<void> {
   try {
-    const category = await prisma.category.findUnique({ where: { id } })
-    if (!category) {
+    const doc = await buildCategoryDoc(id)
+    if (!doc) {
       await removeCategoryFromSearch(id)
       return
-    }
-    const doc: CategoryDoc = {
-      id: category.id,
-      slug: category.slug,
-      name: category.name,
-      description: category.description,
-      archetype: category.archetype,
     }
     await syncCategoryDoc(doc)
   } catch (err) {
@@ -345,17 +161,10 @@ export async function removeCategoryById(id: string): Promise<void> {
 
 export async function syncGlossaryById(id: string): Promise<void> {
   try {
-    const term = await prisma.glossaryTerm.findUnique({ where: { id } })
-    if (!term) {
+    const doc = await buildGlossaryDoc(id)
+    if (!doc) {
       await removeGlossaryFromSearch(id)
       return
-    }
-    const doc: GlossaryDoc = {
-      id: term.id,
-      slug: term.slug,
-      term: term.term,
-      definition: term.definition,
-      categoryId: term.categoryId,
     }
     await syncGlossaryDoc(doc)
   } catch (err) {
