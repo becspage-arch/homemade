@@ -55,7 +55,7 @@ function parseSettings(raw: unknown): CrochetPlannerSettings {
 }
 
 /** Resolve total metres of yarn from `yardageBySize` for the chosen size. */
-function resolveYardage(yardageBySize: unknown, size: string | null): number | null {
+function resolveYardage(yardageBySize: unknown, size: string | null | undefined): number | null {
   if (!yardageBySize || typeof yardageBySize !== 'object') return null
   const map = yardageBySize as Record<string, unknown>
   const pick = (v: unknown): number | null =>
