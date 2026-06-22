@@ -79,3 +79,49 @@ SKIPPED: 0
 - green-curry: prose-prep-steps
 - khao-man-gai: prose-prep-steps
 - khao-moo-dang: prose-prep-steps
+
+---
+
+## Run at 06:32:55
+
+Generated: 2026-06-22T06:32:55.333Z
+
+Processed: 422
+PASS: 337
+STILL_BLOCKED: 85
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| content-type-opening-mismatch | 219 |
+| opening-pattern-missing-hook | 204 |
+| placeholder-string | 158 |
+| hero-missing | 150 |
+| prose-prep-steps | 114 |
+| grade-level-strict | 60 |
+| historical-century-in-body | 30 |
+
+## Still BLOCKED (sample 20)
+
+- ackee-saltfish: hero-missing
+- banbury-cakes: opening-pattern-missing-hook
+- beef-olives-british: prose-prep-steps
+- beef-stew-and-dumplings: hero-missing
+- beef-wellington: hero-missing
+- boeuf-bourguignon: prose-prep-steps
+- bouillabaisse: hero-missing
+- branzino-al-sale: hero-missing
+- bread-sauce: hero-missing
+- bubble-and-squeak: hero-missing
+- calamari-ripieni: hero-missing
+- chana-aloo: prose-prep-steps
+- chana-masala: prose-prep-steps
+- cheese-and-potato-pasty: prose-prep-steps
+- chicken-chettinad: grade-level-strict
+- chicken-tagine-apricots: prose-prep-steps
+- chicken-tikka-masala: hero-missing, prose-prep-steps
+- cocido-madrileno: prose-prep-steps
+- confit-de-canard: hero-missing
+- cornish-pasty: hero-missing

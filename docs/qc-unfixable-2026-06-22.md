@@ -54,3 +54,89 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - thai-egg-salad prose-prep-steps — applied: 
 - tuna-casserole prose-prep-steps — applied: 
 - yellow-curry prose-prep-steps — applied: 
+
+- ackee-saltfish hero-missing — applied: hero-fill-deferred-to-standalone-script
+- banbury-cakes opening-pattern-missing-hook — applied: recipe-yield-appended
+- beef-olives-british prose-prep-steps — applied: 
+- beef-stew-and-dumplings hero-missing — applied: hero-fill-deferred-to-standalone-script
+- beef-wellington hero-missing — applied: hero-fill-deferred-to-standalone-script
+- boeuf-bourguignon prose-prep-steps — applied: 
+- bouillabaisse hero-missing — applied: hero-fill-deferred-to-standalone-script
+- branzino-al-sale hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bread-sauce hero-missing — applied: hero-fill-deferred-to-standalone-script
+- bubble-and-squeak hero-missing — applied: hero-fill-deferred-to-standalone-script
+- calamari-ripieni hero-missing — applied: hero-fill-deferred-to-standalone-script
+- chana-aloo prose-prep-steps — applied: 
+- chana-masala prose-prep-steps — applied: 
+- cheese-and-potato-pasty prose-prep-steps — applied: 
+- chicken-chettinad grade-level-strict — applied: 
+- chicken-tagine-apricots prose-prep-steps — applied: 
+- chicken-tikka-masala hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- cocido-madrileno prose-prep-steps — applied: 
+- confit-de-canard hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cornish-pasty hero-missing — applied: hero-fill-deferred-to-standalone-script
+- coronation-chicken hero-missing — applied: hero-fill-deferred-to-standalone-script
+- cullen-skink hero-missing — applied: hero-fill-deferred-to-standalone-script
+- dal-tadka prose-prep-steps — applied: 
+- daube-de-boeuf-provencale hero-missing — applied: hero-fill-deferred-to-standalone-script
+- devilled-kidneys hero-missing — applied: hero-fill-deferred-to-standalone-script
+- eccles-cakes opening-pattern-missing-hook — applied: recipe-yield-appended
+- egg-madras prose-prep-steps — applied: 
+- egusi-soup hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- egyptian-koshari hero-missing,prose-prep-steps — applied: hero-fill-deferred-to-standalone-script
+- espinacas-con-garbanzos prose-prep-steps — applied: 
+- faggots-and-peas prose-prep-steps — applied: 
+- fish-and-chips hero-missing — applied: hero-fill-deferred-to-standalone-script
+- full-english-breakfast hero-missing — applied: hero-fill-deferred-to-standalone-script
+- gnocchi-alla-sorrentina prose-prep-steps — applied: 
+- grilled-polenta-wedges hero-missing — applied: hero-fill-deferred-to-standalone-script
+- groundnut-stew hero-missing — applied: hero-fill-deferred-to-standalone-script
+- hamburger-steak prose-prep-steps — applied: 
+- jacket-potato-chilli-con-carne prose-prep-steps — applied: 
+- kedgeree hero-missing — applied: hero-fill-deferred-to-standalone-script
+- keema-aloo prose-prep-steps — applied: 
+- kerala-fish-curry prose-prep-steps — applied: 
+- kisir-salad prose-prep-steps — applied: 
+- kottbullar-sauce prose-prep-steps — applied: 
+- lamb-tagine prose-prep-steps — applied: 
+- lancashire-hotpot hero-missing — applied: hero-fill-deferred-to-standalone-script
+- mafe-lamb hero-missing — applied: hero-fill-deferred-to-standalone-script
+- malloreddus-alla-campidanese prose-prep-steps — applied: 
+- matar-paneer prose-prep-steps — applied: 
+- moroccan-harira hero-missing — applied: hero-fill-deferred-to-standalone-script
+- orata-al-cartoccio hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ossobuco-alla-milanese grade-level-strict — applied: 
+- palak-paneer prose-prep-steps — applied: 
+- papoutsakia-vegetable prose-prep-steps — applied: 
+- pappardelle-ai-funghi-misti hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pappardelle-al-ragu-di-lepre hero-missing — applied: hero-fill-deferred-to-standalone-script
+- pasta-con-le-sarde hero-missing — applied: hero-fill-deferred-to-standalone-script
+- patatas-bravas prose-prep-steps — applied: 
+- pici-con-le-briciole hero-missing — applied: hero-fill-deferred-to-standalone-script
+- polenta-con-funghi hero-missing — applied: hero-fill-deferred-to-standalone-script
+- polenta-con-gorgonzola hero-missing — applied: hero-fill-deferred-to-standalone-script
+- polenta-taragna hero-missing — applied: hero-fill-deferred-to-standalone-script
+- porcupine-meatballs prose-prep-steps — applied: 
+- potted-shrimp hero-missing — applied: hero-fill-deferred-to-standalone-script
+- prawn-masala prose-prep-steps — applied: 
+- red-red hero-missing — applied: hero-fill-deferred-to-standalone-script
+- risi-e-bisi prose-prep-steps — applied: 
+- risotto-al-radicchio hero-missing — applied: hero-fill-deferred-to-standalone-script
+- roast-beef-and-yorkshire-pudding hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sarde-a-beccafico hero-missing — applied: hero-fill-deferred-to-standalone-script
+- sarde-in-saor prose-prep-steps — applied: 
+- scotch-broth hero-missing — applied: hero-fill-deferred-to-standalone-script
+- shepherds-pie hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spaghetti-ai-ricci-di-mare hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spaghetti-alle-vongole-rosso hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spaghetti-con-bottarga hero-missing — applied: hero-fill-deferred-to-standalone-script
+- spezzatino-di-vitello prose-prep-steps — applied: 
+- spotted-dick hero-missing — applied: hero-fill-deferred-to-standalone-script
+- steak-and-kidney-pudding hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tagliatelle-ai-funghi hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tagliatelle-al-tartufo hero-missing — applied: hero-fill-deferred-to-standalone-script
+- toad-in-the-hole hero-missing — applied: hero-fill-deferred-to-standalone-script
+- tomato-and-onion-curry prose-prep-steps — applied: 
+- vegan-mushroom-risotto hero-missing,grade-level-strict — applied: hero-fill-deferred-to-standalone-script
+- welsh-cawl hero-missing — applied: hero-fill-deferred-to-standalone-script
+- ziti-al-forno prose-prep-steps — applied: 
