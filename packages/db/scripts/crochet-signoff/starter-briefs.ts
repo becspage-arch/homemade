@@ -86,9 +86,9 @@ export const CROCHET_STARTER_BRIEFS: CreativeBrief[] = [
   // ── Garments ──
   { craft: 'crochet', territory: 'painterly-landscapes', look: 'soft-modern', itemType: 'cardigan', palette: 'scandi-calm', size: 'large', difficulty: 'advanced',
     concept: 'An oversized cocoon cardigan in oatmeal with deep ribbed cuffs and patch pockets.' },
-  { craft: 'crochet', territory: 'modern-botanicals', look: 'bright-playful', itemType: 'tee', palette: 'bright-pop', size: 'medium', difficulty: 'intermediate',
+  { craft: 'crochet', territory: 'modern-botanicals', look: 'bright-playful', itemType: 'tee-top', palette: 'bright-pop', size: 'medium', difficulty: 'intermediate',
     concept: 'A cropped granny-square tee: six coordinated blooms across the front.' },
-  { craft: 'crochet', territory: 'modern-botanicals', look: 'cottagecore-botanical', itemType: 'tank-top', palette: 'wildflower-meadow', size: 'medium', difficulty: 'intermediate',
+  { craft: 'crochet', territory: 'modern-botanicals', look: 'cottagecore-botanical', itemType: 'vest', palette: 'wildflower-meadow', size: 'medium', difficulty: 'intermediate',
     concept: 'A fitted vest top with a single climbing-vine motif up one side.' },
   { craft: 'crochet', territory: 'kawaii-animals-pets', look: 'storybook-whimsical', itemType: 'dress', palette: 'candy-kawaii', size: 'medium', difficulty: 'advanced',
     concept: 'A toddler pinafore dress with a strawberry-patch hem and shoulder buttons.' },

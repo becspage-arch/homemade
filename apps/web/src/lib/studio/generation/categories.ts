@@ -1,4 +1,5 @@
 import type { PatternType } from '@homemade/db'
+import { itemTypesForCraft } from '@homemade/db'
 import type { Spec } from './spec'
 
 /**
@@ -51,7 +52,24 @@ export const PATTERN_CATEGORIES: Record<string, PatternCategoryConfig> = {
       'home-cosy': ['scene', 'illustration'],
     },
   },
-  // Future pattern-led categories (knitting, crochet, needlework) get their own
+  crochet: {
+    slug: 'crochet',
+    patternType: 'CROCHET_CHART',
+    designerId: HOMEMADE_DESIGNER,
+    // Floor target — originals-dominant and expected to grow well past it
+    // (like cross-stitch 500 → thousands). Drives the admin dashboard count.
+    patternTarget: 1200,
+    // Home shelves are the crochet subset of the controlled item-type
+    // vocabulary (packages/db/prisma/item-type-vocabulary.ts) — derived, never
+    // hand-listed, so they stay in lockstep with the shared cross-craft slugs.
+    subCategories: itemTypesForCraft('crochet').map((t) => t.slug),
+    // Crochet does NOT use the cross-stitch Spec tiers. Its generation is
+    // driven by the shared design-direction system (looks × territories ×
+    // item-type briefs) in packages/db/prisma/design-direction.ts, and its
+    // heroes by the loom render engine. Left empty by design.
+    tierGuide: {},
+  },
+  // Future pattern-led categories (knitting, needlework, sewing) get their own
   // entry here after their sign-off pass agrees the look + sub-categories.
 }
 
