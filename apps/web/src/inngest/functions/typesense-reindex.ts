@@ -1,5 +1,11 @@
 import 'server-only'
-import { prisma, TutorialStatus, Visibility } from '@homemade/db'
+import {
+  getTagFacetsForContents,
+  prisma,
+  TutorialStatus,
+  Visibility,
+  type ContentTagFacets,
+} from '@homemade/db'
 import {
   ALL_SCHEMAS,
   CATEGORIES_COLLECTION,
@@ -19,6 +25,23 @@ import {
   type TutorialDoc,
 } from '@homemade/search'
 import { inngest } from '../client'
+
+/** Pull just the five search-doc collection-tag fields (defaults empty). */
+function tagDocFields(f: ContentTagFacets | undefined): {
+  occasionSlugs: string[]
+  seasonSlugs: string[]
+  styleSlugs: string[]
+  subjectSlugs: string[]
+  collectionText: string
+} {
+  return {
+    occasionSlugs: f?.occasionSlugs ?? [],
+    seasonSlugs: f?.seasonSlugs ?? [],
+    styleSlugs: f?.styleSlugs ?? [],
+    subjectSlugs: f?.subjectSlugs ?? [],
+    collectionText: f?.collectionText ?? '',
+  }
+}
 
 /**
  * Wipe and rebuild all Typesense collections from Prisma. Triggered on
@@ -62,6 +85,7 @@ export const typesenseReindex = inngest.createFunction(
           hero: { select: { cloudflareId: true, r2Key: true } },
         },
       })
+      const facets = await getTagFacetsForContents('TUTORIAL', tutorials.map((t) => t.id))
       const docs: TutorialDoc[] = tutorials.map((t) => ({
         id: t.id,
         slug: t.slug,
@@ -98,6 +122,7 @@ export const typesenseReindex = inngest.createFunction(
         indoorFriendly: t.indoorFriendly,
         regionsApplicable: t.regionsApplicable,
         foundational: t.foundational,
+        ...tagDocFields(facets.get(t.id)),
       }))
       await bulkImport(TUTORIALS_COLLECTION, docs)
       return docs.length
@@ -124,6 +149,7 @@ export const typesenseReindex = inngest.createFunction(
           thumbnail: { select: { cloudflareId: true, r2Key: true } },
         },
       })
+      const facets = await getTagFacetsForContents('CROSS_STITCH_PATTERN', patterns.map((p) => p.id))
       const docs: PatternDoc[] = patterns
         .filter((p) => p.subCategory !== null)
         .map((p) => ({
@@ -154,6 +180,7 @@ export const typesenseReindex = inngest.createFunction(
           thumbnailCloudflareId: p.thumbnail?.cloudflareId ?? null,
           thumbnailR2Key: p.thumbnail?.r2Key ?? null,
           publishedAt: p.publishedAt ? p.publishedAt.getTime() : null,
+          ...tagDocFields(facets.get(p.id)),
         }))
       await bulkImport(PATTERNS_COLLECTION, docs)
       return docs.length
@@ -180,6 +207,7 @@ export const typesenseReindex = inngest.createFunction(
           primaryHook: { select: { mmSize: true } },
         },
       })
+      const facets = await getTagFacetsForContents('CROCHET_PATTERN', patterns.map((p) => p.id))
       const docs: CrochetPatternDoc[] = patterns
         .filter((p) => p.subCategory !== null)
         .map((p) => ({
@@ -205,6 +233,7 @@ export const typesenseReindex = inngest.createFunction(
           heroCloudflareId: null,
           heroR2Key: null,
           publishedAt: p.publishedAt ? p.publishedAt.getTime() : null,
+          ...tagDocFields(facets.get(p.id)),
         }))
       await bulkImport(CROCHET_PATTERNS_COLLECTION, docs)
       return docs.length
