@@ -187,7 +187,7 @@ export const tutorialSchema: CollectionCreateSchema = {
     { name: 'tagSlugs', type: 'string[]', facet: true, optional: true },
     { name: 'heroCloudflareId', type: 'string', optional: true, index: false },
     { name: 'heroR2Key', type: 'string', optional: true, index: false },
-    { name: 'publishedAt', type: 'int64', optional: true },
+    { name: 'publishedAt', type: 'int64' },
     { name: 'type', type: 'string', optional: true, facet: true },
     { name: 'mealType', type: 'string', optional: true, facet: true },
     { name: 'cuisine', type: 'string', optional: true, facet: true },
@@ -238,7 +238,7 @@ export const patternSchema: CollectionCreateSchema = {
     { name: 'heroR2Key', type: 'string', optional: true, index: false },
     { name: 'thumbnailCloudflareId', type: 'string', optional: true, index: false },
     { name: 'thumbnailR2Key', type: 'string', optional: true, index: false },
-    { name: 'publishedAt', type: 'int64', optional: true },
+    { name: 'publishedAt', type: 'int64' },
     ...COLLECTION_TAG_FIELDS,
   ],
 }
@@ -268,7 +268,7 @@ export const crochetPatternSchema: CollectionCreateSchema = {
     { name: 'premium', type: 'bool', facet: true },
     { name: 'heroCloudflareId', type: 'string', optional: true, index: false },
     { name: 'heroR2Key', type: 'string', optional: true, index: false },
-    { name: 'publishedAt', type: 'int64', optional: true },
+    { name: 'publishedAt', type: 'int64' },
     ...COLLECTION_TAG_FIELDS,
   ],
 }

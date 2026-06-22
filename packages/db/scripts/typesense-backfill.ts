@@ -24,8 +24,6 @@ import type { ContentTagFacets } from '../src/collection-tags.js'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 loadEnv({ path: resolve(__dirname, '../../..', '.env.credentials') })
 
-const { prisma, TutorialStatus, Visibility, getTagFacetsForContents } = await import('../src/index.js')
-
 /** Pull just the five search-doc tag fields from a facets entry (defaults empty). */
 function tagDocFields(f: ContentTagFacets | undefined): {
   occasionSlugs: string[]
@@ -42,21 +40,25 @@ function tagDocFields(f: ContentTagFacets | undefined): {
     collectionText: f?.collectionText ?? '',
   }
 }
-const {
-  ALL_SCHEMAS,
-  CATEGORIES_COLLECTION,
-  CROCHET_PATTERNS_COLLECTION,
-  GLOSSARY_COLLECTION,
-  PATTERNS_COLLECTION,
-  TUTORIALS_COLLECTION,
-  bulkImport,
-  dropCollection,
-  ensureCollections,
-  extractBodyText,
-  getAdminClient,
-} = await import('@homemade/search')
 
 async function main(): Promise<void> {
+  // Dynamic imports inside main() so loadEnv (module top) runs first and so the
+  // file has no top-level await (esbuild transforms this package as CJS).
+  const { prisma, TutorialStatus, Visibility, getTagFacetsForContents } = await import('../src/index.js')
+  const {
+    ALL_SCHEMAS,
+    CATEGORIES_COLLECTION,
+    CROCHET_PATTERNS_COLLECTION,
+    GLOSSARY_COLLECTION,
+    PATTERNS_COLLECTION,
+    TUTORIALS_COLLECTION,
+    bulkImport,
+    dropCollection,
+    ensureCollections,
+    extractBodyText,
+    getAdminClient,
+  } = await import('@homemade/search')
+
   if (!getAdminClient()) {
     console.error(
       '[backfill] TYPESENSE_HOST or TYPESENSE_ADMIN_API_KEY not set. ' +
