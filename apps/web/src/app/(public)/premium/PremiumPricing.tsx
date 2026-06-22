@@ -1,12 +1,26 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 
 export type Currency = 'GBP' | 'USD'
 type Cycle = 'monthly' | 'annual'
 
 const CURRENCY_KEY = 'homemade-currency'
+
+function readStoredCurrency(): Currency | null {
+  try {
+    const v = window.localStorage.getItem(CURRENCY_KEY)
+    return v === 'GBP' || v === 'USD' ? v : null
+  } catch {
+    return null
+  }
+}
+
+function subscribeToStorage(callback: () => void): () => void {
+  window.addEventListener('storage', callback)
+  return () => window.removeEventListener('storage', callback)
+}
 
 // Locked pricing (rounded local numbers, not FX conversions). See
 // project_business_model. Annual is framed as "2 months free", never a percent.
@@ -40,25 +54,24 @@ export function PremiumPricing({
   initialCurrency: Currency
   libraryCountLabel: string
 }) {
-  const [currency, setCurrency] = useState<Currency>(initialCurrency)
   const [cycle, setCycle] = useState<Cycle>('monthly')
-
-  // Remembered choice overrides the geo default once the client hydrates.
-  useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem(CURRENCY_KEY)
-      if (saved === 'GBP' || saved === 'USD') setCurrency(saved)
-    } catch {
-      // localStorage unavailable (private mode) — geo default stands.
-    }
-  }, [])
+  // An explicit click wins. Otherwise fall back to the remembered choice (read
+  // post-hydration via useSyncExternalStore so there's no mismatch), then the
+  // geo default from the server. No setState-in-effect.
+  const [override, setOverride] = useState<Currency | null>(null)
+  const storedCurrency = useSyncExternalStore(
+    subscribeToStorage,
+    readStoredCurrency,
+    () => null,
+  )
+  const currency: Currency = override ?? storedCurrency ?? initialCurrency
 
   function chooseCurrency(next: Currency) {
-    setCurrency(next)
+    setOverride(next)
     try {
       window.localStorage.setItem(CURRENCY_KEY, next)
     } catch {
-      // Ignore — the choice just won't persist this session.
+      // localStorage unavailable (private mode): the choice just won't persist.
     }
   }
 
