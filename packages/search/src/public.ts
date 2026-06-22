@@ -224,6 +224,125 @@ export async function searchCrochetPatterns(
   }
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// Cross-craft search (phase_collection_taxonomy_001)
+//
+// One federated query across every content collection, filtered by the shared
+// collection-tag axes (occasion / season / style / subject) and optionally
+// scoped to a set of categories. Powers the /themes/<slug> pages ("christmas
+// across everything", or "christmas across the Make group only") and a future
+// cross-craft search mode. Uses Typesense multi_search so it's a single round
+// trip.
+// ────────────────────────────────────────────────────────────────────────────
+
+export type CrossCraftCollection = 'tutorials' | 'patterns' | 'crochet'
+
+const CROSS_CRAFT_QUERY: Record<
+  CrossCraftCollection,
+  { collection: string; queryBy: string; weights: string }
+> = {
+  tutorials: {
+    collection: TUTORIALS_COLLECTION,
+    queryBy: 'title,subtitle,excerpt,collectionText,categoryName',
+    weights: '6,4,3,3,2',
+  },
+  patterns: {
+    collection: PATTERNS_COLLECTION,
+    queryBy: 'name,description,collectionText,subCategoryName',
+    weights: '6,3,3,2',
+  },
+  crochet: {
+    collection: CROCHET_PATTERNS_COLLECTION,
+    queryBy: 'name,description,collectionText,subCategoryName',
+    weights: '6,3,3,2',
+  },
+}
+
+const CROSS_CRAFT_FACETS = 'occasionSlugs,seasonSlugs,styleSlugs,subjectSlugs,categorySlug,difficulty'
+
+export interface CrossCraftSearchParams {
+  /** optional free text; empty browses by tag/filters, newest first. */
+  q?: string
+  occasion?: string | null
+  season?: string | null
+  style?: string | null
+  subject?: string | null
+  /** match a slug on ANY axis (when the caller doesn't know which axis). */
+  anyTag?: string | null
+  difficulty?: string | null
+  /** scope to these category slugs (e.g. the Make group); empty = everywhere. */
+  categorySlugs?: string[] | null
+  /** which content collections to include; defaults to all three. */
+  collections?: CrossCraftCollection[]
+  perPage?: number
+  page?: number
+}
+
+export interface CrossCraftSearchResults {
+  tutorials?: SearchResults<TutorialDoc>
+  patterns?: SearchResults<PatternDoc>
+  crochet?: SearchResults<CrochetPatternDoc>
+  totalFound: number
+}
+
+function crossCraftFilter(params: CrossCraftSearchParams): string | undefined {
+  const f: string[] = []
+  if (params.occasion) f.push(`occasionSlugs:=${escapeFilter(params.occasion)}`)
+  if (params.season) f.push(`seasonSlugs:=${escapeFilter(params.season)}`)
+  if (params.style) f.push(`styleSlugs:=${escapeFilter(params.style)}`)
+  if (params.subject) f.push(`subjectSlugs:=${escapeFilter(params.subject)}`)
+  if (params.anyTag) {
+    const t = escapeFilter(params.anyTag)
+    f.push(`(occasionSlugs:=${t} || seasonSlugs:=${t} || styleSlugs:=${t} || subjectSlugs:=${t})`)
+  }
+  if (params.difficulty) f.push(`difficulty:=${escapeFilter(params.difficulty)}`)
+  if (params.categorySlugs && params.categorySlugs.length > 0) {
+    f.push(`categorySlug:=[${params.categorySlugs.map(escapeFilter).join(',')}]`)
+  }
+  return f.length > 0 ? f.join(' && ') : undefined
+}
+
+export async function searchCrossCraft(
+  params: CrossCraftSearchParams,
+): Promise<CrossCraftSearchResults> {
+  const perPage = params.perPage ?? 24
+  const client = getSearchClient()
+  if (!client) return { totalFound: 0 }
+
+  const cols = params.collections ?? (['tutorials', 'patterns', 'crochet'] as CrossCraftCollection[])
+  const filter_by = crossCraftFilter(params)
+  const q = (params.q ?? '').trim()
+  const isEmptyQuery = q === ''
+
+  const searches = cols.map((col) => ({
+    collection: CROSS_CRAFT_QUERY[col].collection,
+    q: isEmptyQuery ? '*' : q,
+    query_by: CROSS_CRAFT_QUERY[col].queryBy,
+    query_by_weights: CROSS_CRAFT_QUERY[col].weights,
+    sort_by: isEmptyQuery ? 'publishedAt:desc' : '_text_match:desc,publishedAt:desc',
+    filter_by,
+    facet_by: CROSS_CRAFT_FACETS,
+    per_page: perPage,
+    page: params.page ?? 1,
+  }))
+
+  try {
+    const res = (await client.multiSearch.perform({ searches })) as { results?: unknown[] }
+    const out: CrossCraftSearchResults = { totalFound: 0 }
+    ;(res.results ?? []).forEach((raw, i) => {
+      const col = cols[i]
+      const shaped = shapeResult<TutorialDoc | PatternDoc | CrochetPatternDoc>(raw, perPage, params.page)
+      out.totalFound += shaped.found
+      if (col === 'tutorials') out.tutorials = shaped as SearchResults<TutorialDoc>
+      else if (col === 'patterns') out.patterns = shaped as SearchResults<PatternDoc>
+      else out.crochet = shaped as SearchResults<CrochetPatternDoc>
+    })
+    return out
+  } catch {
+    return { totalFound: 0 }
+  }
+}
+
 interface RawResultLike {
   found: number
   page?: number
