@@ -35,3 +35,47 @@ SKIPPED: 0
 - dubu-jorim: hero-missing
 - galbi: hero-missing
 - pommes-allumettes: hero-missing
+
+---
+
+## Run at 06:12:13
+
+Generated: 2026-06-22T06:12:13.445Z
+
+Processed: 244
+PASS: 206
+STILL_BLOCKED: 38
+SKIPPED: 0
+
+## Initial BLOCK rule kinds (before fix)
+
+| Rule kind | Count |
+|---|---:|
+| prose-prep-steps | 108 |
+| content-type-opening-mismatch | 44 |
+| opening-pattern-missing-hook | 40 |
+| grade-level-strict | 9 |
+| ingredient-amount-missing | 4 |
+
+## Still BLOCKED (sample 20)
+
+- ajiaco-bogotano: prose-prep-steps
+- aloo-baingan: prose-prep-steps
+- burrata-con-pesche: grade-level-strict
+- causa-rellena: prose-prep-steps
+- cheese-and-bacon-turnover: prose-prep-steps
+- chicken-and-rice-casserole: grade-level-strict, prose-prep-steps
+- chicken-biryani-hyderabadi: grade-level-strict
+- chicken-do-pyaza: prose-prep-steps
+- chicken-methi-malai: prose-prep-steps
+- chicken-pot-pie: prose-prep-steps
+- cincinnati-chilli: prose-prep-steps
+- creme-de-chataignes: prose-prep-steps
+- crostini-misti: prose-prep-steps
+- crying-tiger-beef: prose-prep-steps
+- fagiolini-in-umido: prose-prep-steps
+- gamjatang: prose-prep-steps
+- gammon-and-leek-pie: prose-prep-steps
+- green-curry: prose-prep-steps
+- khao-man-gai: prose-prep-steps
+- khao-moo-dang: prose-prep-steps

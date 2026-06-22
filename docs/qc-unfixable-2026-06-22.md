@@ -15,3 +15,42 @@ Slugs that still BLOCK after 3 qc-fix attempts. The qc-fix-batch routine will re
 - dubu-jorim hero-missing — applied: hero-fill-deferred-to-standalone-script
 - galbi hero-missing — applied: hero-fill-deferred-to-standalone-script
 - pommes-allumettes hero-missing — applied: hero-fill-deferred-to-standalone-script
+
+- ajiaco-bogotano prose-prep-steps — applied: 
+- aloo-baingan prose-prep-steps — applied: 
+- burrata-con-pesche grade-level-strict — applied: 
+- causa-rellena prose-prep-steps — applied: 
+- cheese-and-bacon-turnover prose-prep-steps — applied: 
+- chicken-and-rice-casserole grade-level-strict,prose-prep-steps — applied: 
+- chicken-biryani-hyderabadi grade-level-strict — applied: 
+- chicken-do-pyaza prose-prep-steps — applied: 
+- chicken-methi-malai prose-prep-steps — applied: 
+- chicken-pot-pie prose-prep-steps — applied: 
+- cincinnati-chilli prose-prep-steps — applied: 
+- creme-de-chataignes prose-prep-steps — applied: 
+- crostini-misti prose-prep-steps — applied: 
+- crying-tiger-beef prose-prep-steps — applied: 
+- fagiolini-in-umido prose-prep-steps — applied: 
+- gamjatang prose-prep-steps — applied: 
+- gammon-and-leek-pie prose-prep-steps — applied: 
+- green-curry prose-prep-steps — applied: 
+- khao-man-gai prose-prep-steps — applied: 
+- khao-moo-dang prose-prep-steps — applied: 
+- kimchi-jjigae prose-prep-steps — applied: 
+- mango-sticky-rice prose-prep-steps — applied: 
+- minestrone-alla-genovese prose-prep-steps — applied: 
+- mushroom-matar prose-prep-steps — applied: 
+- paneer-jalfrezi prose-prep-steps — applied: 
+- patate-in-tegame prose-prep-steps — applied: 
+- peperonata-rossa prose-prep-steps — applied: 
+- pollo-alla-cacciatora-rosso prose-prep-steps — applied: 
+- prawn-jalfrezi prose-prep-steps — applied: 
+- salade-de-lentilles prose-prep-steps — applied: 
+- soupe-a-l-oignon-gratinee prose-prep-steps — applied: 
+- spezzatino-di-manzo prose-prep-steps — applied: 
+- stuffed-cabbage-rolls prose-prep-steps — applied: 
+- sundubu-jjigae prose-prep-steps — applied: 
+- thai-coconut-soup-vegan prose-prep-steps — applied: 
+- thai-egg-salad prose-prep-steps — applied: 
+- tuna-casserole prose-prep-steps — applied: 
+- yellow-curry prose-prep-steps — applied: 

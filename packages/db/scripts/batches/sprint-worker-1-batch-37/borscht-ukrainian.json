@@ -1,0 +1,152 @@
+{
+  "slug": "borscht-ukrainian",
+  "title": "Ukrainian Borscht",
+  "subtitle": "Hearty beetroot and cabbage soup with smoked pork",
+  "excerpt": "A thick, deeply coloured beetroot soup with cabbage, potato, carrot, and smoked pork in a rich beef stock. Serve with a spoonful of soured cream and dark bread.",
+  "type": "RECIPE",
+  "categorySlug": "cooking",
+  "subCategorySlug": null,
+  "difficulty": "INTERMEDIATE",
+  "season": null,
+  "sourceType": "SYNTHESISED",
+  "sourceNotes": "Ukrainian borscht; thicker and more vegetable-laden than Russian versions. Smoked pork and beef stock are the traditional base. Vinegar is added to fix the red colour.",
+  "recipe": {
+    "servings": 6,
+    "yieldDescription": null,
+    "prepMinutes": 25,
+    "cookMinutes": 70,
+    "restingMinutes": 10,
+    "chillingMinutes": 0,
+    "scalable": true,
+    "freezable": true,
+    "freezeNotes": "Freeze the soup without the soured cream. Cool completely, freeze in portions for up to 3 months. Reheat gently and add soured cream at serving.",
+    "batchable": true,
+    "batchNotes": "Makes a large pot naturally. Keeps well in the fridge for up to 4 days and improves overnight.",
+    "makeAheadNotes": "Best made a day ahead. The flavour deepens overnight. Reheat gently over a low heat, stirring often, as the soup can catch on the bottom.",
+    "dietaryFlags": [],
+    "cuisine": "ukrainian",
+    "mealType": "dinner",
+    "mood": ["weekend", "comforting", "budget"],
+    "temperatureCelsius": null,
+    "temperatureNote": null,
+    "foundational": false
+  },
+  "recipeTools": [
+    {"slug": "stockpot", "isOptional": false},
+    {"slug": "frying-pan-28", "isOptional": false},
+    {"slug": "box-grater", "isOptional": false},
+    {"slug": "chopping-board", "isOptional": false},
+    {"slug": "chefs-knife", "isOptional": false},
+    {"slug": "wooden-spoon", "isOptional": false},
+    {"slug": "ladle", "isOptional": false},
+    {"slug": "peeler-y", "isOptional": false}
+  ],
+  "glossaryTerms": [],
+  "techniqueSlugs": [],
+  "criticalTechniques": [],
+  "body": {
+    "type": "doc",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": [{"type": "text", "text": "Ukrainian borscht is a thick, hearty soup built on beetroot, cabbage, and potato in a meaty stock. The vinegar added at the end is not optional: it holds the deep red colour and gives the soup its characteristic sharpness. Add soured cream at the table, not while the pot is still on the heat."}]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "What you need"}]
+      },
+      {
+        "type": "ingredientsList",
+        "attrs": {
+          "defaultServings": 6,
+          "items": [
+            {"ingredientSlug": "smoked-pork-sausage", "amount": 300, "unit": "g", "prepNote": "sliced into rounds", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "stock-beef", "amount": 1500, "unit": "ml", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "beetroot", "amount": 400, "unit": "g", "prepNote": "peeled and coarsely grated", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "cabbage-white", "amount": 300, "unit": "g", "prepNote": "finely shredded", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "potato", "amount": 300, "unit": "g", "prepNote": "peeled and cut into 2cm cubes", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "carrot", "amount": 2, "unit": "each", "prepNote": "peeled and coarsely grated", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "onion", "amount": 1, "unit": "each", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "garlic", "amount": 3, "unit": "cloves", "prepNote": "finely chopped", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "tomato-puree", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "tinned-tomatoes", "amount": 200, "unit": "g", "prepNote": "half a tin", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "bay-leaves", "amount": 3, "unit": "each", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "cider-vinegar", "amount": 1, "unit": "tbsp", "prepNote": "to fix the colour", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "granulated-sugar", "amount": 1, "unit": "tsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "sunflower-oil", "amount": 2, "unit": "tbsp", "prepNote": null, "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "sea-salt", "amount": 1.5, "unit": "tsp", "prepNote": "plus more to taste", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "black-pepper", "amount": 0.5, "unit": "tsp", "prepNote": "freshly ground", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "dill", "amount": 20, "unit": "g", "prepNote": "finely chopped, to finish", "isOptional": false, "groupLabel": null},
+            {"ingredientSlug": "soured-cream", "amount": 150, "unit": "ml", "prepNote": "to serve", "isOptional": false, "groupLabel": null}
+          ]
+        }
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Method"}]
+      },
+      {
+        "type": "orderedList",
+        "content": [
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Heat the oil in the frying pan over a medium heat. Cook the onion for 6 minutes until soft. Add the carrot and cook for another 4 minutes. Add the garlic and tomato puree and stir for 2 minutes. Set aside."}]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Pour the stock into the stockpot and bring to a simmer. Add the smoked pork sausage and bay leaves. Simmer for 15 minutes."}]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the potato and cabbage. Simmer for 10 minutes."}]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the grated beetroot, the onion and carrot mixture, and the tinned tomatoes. Stir well. Simmer for 25 minutes until all the vegetables are completely tender."}]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Add the cider vinegar and sugar. Taste and adjust with salt, pepper, and more vinegar. The soup should be savoury, slightly sharp, and just lightly sweet."}]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Remove the bay leaves. Stir in the dill. Rest for 10 minutes off the heat before serving."}]}]
+          },
+          {
+            "type": "listItem",
+            "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Ladle into deep bowls. Top each portion with a spoonful of soured cream. Serve with dark rye bread."}]}]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "attrs": {"level": 2},
+        "content": [{"type": "text", "text": "Troubleshooting"}]
+      },
+      {
+        "type": "troubleshooter",
+        "attrs": {
+          "items": [
+            {
+              "symptom": "The soup has turned brown rather than red.",
+              "cause": "The vinegar was not added, or the soup boiled hard for too long.",
+              "fix": "Add the vinegar as soon as possible and avoid boiling at full heat. A tablespoon of beetroot juice stirred in at the end also helps restore colour."
+            },
+            {
+              "symptom": "The beetroot still tastes raw and sharp.",
+              "cause": "The soup was not simmered long enough after the beetroot was added.",
+              "fix": "Continue simmering until the beetroot is completely soft with no bite remaining. This takes at least 25 minutes."
+            },
+            {
+              "symptom": "The soup tastes flat despite seasoning.",
+              "cause": "The balance of sour, sweet, and salt is off.",
+              "fix": "Add a pinch more sugar and another small splash of vinegar before adjusting salt. These three elements must work together in borscht."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
