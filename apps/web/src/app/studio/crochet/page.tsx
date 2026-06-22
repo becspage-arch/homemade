@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { prisma, Visibility } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { StudioAuthGate } from '@/components/premium/StudioAuthGate'
 import { CrochetStudioShell } from '@/components/studio/crochet/CrochetStudioShell'
 import type { CrochetPatternData, MyCrochetProjectListItem } from '@/components/studio/crochet/types'
 import { mediaUrl } from '@/lib/media'
@@ -40,6 +41,23 @@ interface PageProps {
 export default async function CrochetStudioPage({ searchParams }: PageProps) {
   const sp = await searchParams
   const user = await getCurrentDbUser()
+
+  // The Studio is a free signed-in surface (an auth gate, NOT a paywall).
+  // Anonymous visitors browse the library and see the Studio's front door, but
+  // opening a working surface — a pattern, or a create-your-own mode — needs a
+  // free account. Content viewing on /crochet stays open. (Premium create
+  // modes are additionally premium-gated downstream.)
+  const wantsWorkingSurface = Boolean(
+    sp.crochetPatternId || sp.crochetPatternSlug || sp.new,
+  )
+  if (!user && wantsWorkingSurface) {
+    const q = new URLSearchParams()
+    if (sp.crochetPatternId) q.set('crochetPatternId', sp.crochetPatternId)
+    if (sp.crochetPatternSlug) q.set('crochetPatternSlug', sp.crochetPatternSlug)
+    if (sp.new) q.set('new', sp.new)
+    const returnTo = `/studio/crochet${q.toString() ? `?${q.toString()}` : ''}`
+    return <StudioAuthGate craftLabel="the crochet Studio" returnTo={returnTo} />
+  }
 
   let pattern: CrochetPatternData | null = null
   let progress: Awaited<ReturnType<typeof loadProgress>> = null

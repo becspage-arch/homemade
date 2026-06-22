@@ -6,11 +6,13 @@
 import type { PlannerCraft } from '@homemade/db'
 import type { MaterialsProvider } from './types'
 import { crossStitchProvider } from './providers/cross-stitch'
+import { crochetProvider } from './providers/crochet'
 
 const PROVIDERS: Partial<Record<PlannerCraft, MaterialsProvider>> = {
   CROSS_STITCH: crossStitchProvider,
-  // CROCHET / KNITTING / NEEDLEWORK / SEWING adapters land with their own
-  // category sign-offs — each is one entry here plus a providers/ file.
+  CROCHET: crochetProvider,
+  // KNITTING / NEEDLEWORK / SEWING adapters land with their own category
+  // sign-offs — each is one entry here plus a providers/ file.
 }
 
 export function getMaterialsProvider(craft: PlannerCraft): MaterialsProvider | null {

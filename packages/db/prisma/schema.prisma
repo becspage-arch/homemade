@@ -4802,6 +4802,18 @@ model CrochetPattern {
   gaugeText           String?
   finishedSizeText    String?
 
+  // Expanded pattern template (phase_crochet_signoff_001). videoUrl is
+  // optional — independent designers may add a walkthrough; Homemade-authored
+  // patterns ship without one initially. notions is the structured supply list
+  // (stitch markers, tapestry needle, safety eyes, stuffing, buttons) the
+  // planner materials roll-up + the Studio supply tick-list read directly,
+  // instead of parsing it out of the body prose. safetyNotes carries toy /
+  // baby cautions (e.g. choking hazard — use embroidered eyes for under-3s)
+  // where the finished item warrants it; null when not relevant.
+  videoUrl    String?
+  notions     String[] @default([])
+  safetyNotes String?
+
   // ──────────────────────────────────────────────────────────────────────────
   // Multi-piece patterns (amigurumi, seamed garments).
   //
