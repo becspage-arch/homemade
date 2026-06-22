@@ -8,6 +8,38 @@ Updated each working session.
 
 ---
 
+## Cross-craft content gate applied to cross-stitch + cooking/baking (2026-06-22)
+
+Wired the shared content rule (`isPremiumContent` / `isIndependentDesignerContent` /
+`canAccessPremiumContent` in `lib/entitlements.ts`) consistently across the three
+finished categories so the line is identical everywhere: **content is premium when
+its `premium` flag is set OR it is independent-designer / creator content** (a
+`Designer` with `isHouseDesigner === false`, or — for recipes, which have no designer
+relation — a creator-authored row). House content stays free. Printing / downloading
+stays the separate **universal** `hasPremium` action, untouched. Added the helper +
+`StudioPremiumGate` (the access half for signed-in free Makers opening premium content
+in a Studio). Deploy green, `/healthz` 200.
+
+- **Cross-stitch.** Grid card badge now reads `isPremiumContent` (flag OR non-house
+  designer). Detail page badges premium content and routes the Studio CTA to `/premium`
+  when the reader can't access it (page stays a full preview). Studio enforces access
+  server-side — a free Maker opening a library premium (independent-designer) pattern
+  gets `StudioPremiumGate`; owners + house + free patterns open straight in.
+- **Cooking + baking.** Library recipe page (scoped to the `cooking` / `baking` category
+  slugs): a creator recipe (`creatorId` set) is premium — badged, ingredients + method
+  body held behind an `UpgradeBlock` for non-premium readers; house recipes stay free.
+  Community recipe page (`/recipes/[slug]`): a Maker's recipe is creator content — owner
+  reads their own free, everyone else previews head + hero with the body held.
+- Existing tool gates (recipe scaling, meal planner, shopping list) unchanged.
+- Verified the truth table (premium-on/off × house / non-house): house → free for all;
+  premium-flagged or non-house → gated for free, open for premium. Typecheck + lint clean.
+- Note: the helper matches the crochet sign-off branch's version verbatim, so it merges
+  patch-identical. Follow-up (not live yet, no creator library recipes exist): the library
+  recipe page still emits full Recipe JSON-LD when gated — suppress instructions on gated
+  rows once creator library content goes live.
+
+---
+
 ## Premium checkout — Stripe, sandbox, behind CHECKOUT_ENABLED (2026-06-22)
 
 Full premium subscription billing built end to end in Stripe **TEST/sandbox**
