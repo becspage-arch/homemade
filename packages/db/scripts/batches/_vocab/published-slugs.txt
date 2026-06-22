@@ -1,5 +1,5 @@
-◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
-◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (42) from ..\..\.env.credentials // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
 aash-e-anar
 abbacchio-alla-romana
 abgoosht
@@ -115,6 +115,7 @@ albaloo-polo
 albondigas-en-salsa
 albondigas-tomato
 alfajores
+ali-nazik
 alloco-cote-divoire
 almond-butter-fudge
 aloha-pineapple-smoothie
@@ -197,6 +198,7 @@ baked-rice-pudding
 baked-salmon
 baked-salmon-en-croute
 baked-salmon-with-lemon
+baked-stuffed-shells
 baked-ziti
 bakewell-pudding
 bakewell-tart
@@ -300,6 +302,7 @@ birria-de-res
 biryani-chicken
 biryani-lamb
 biscuits-and-gravy
+biscuits-and-gravy-classic
 bissara
 bistecca-alla-fiorentina
 black-bean-and-avocado-bowl
@@ -343,6 +346,7 @@ braised-red-cabbage
 braised-short-ribs
 braised-white-cabbage
 bramboraky
+brandade
 brandade-de-morue
 branzino-al-forno
 bratwurst-and-sauerkraut
@@ -353,6 +357,7 @@ bread-and-butter-pudding
 bread-sauce
 breakfast-burrito
 briam
+briam-roast
 brigadeiro
 brik
 brined-roast-turkey
@@ -413,6 +418,7 @@ caldo-gallego
 caldo-tlalpeno
 caldo-verde
 callaloo
+callaloo-and-saltfish
 callaloo-soup-trinidad
 callaloo-stew
 calzone
@@ -451,6 +457,7 @@ carrot-and-orange-soup
 carrot-and-parsnip-soup
 carrot-cake
 carrot-orange-salad-moroccan
+casarecce-with-sausage
 cassoulet
 cauliflower-and-cheese-soup
 cauliflower-bites
@@ -517,6 +524,7 @@ chicken-biryani
 chicken-biryani-hyderabadi
 chicken-burrito
 chicken-cacciatore
+chicken-cacciatore-white
 chicken-caesar-salad
 chicken-casserole-cider-tarragon
 chicken-ceylon
@@ -532,6 +540,7 @@ chicken-enchiladas-verde
 chicken-fajitas
 chicken-francese
 chicken-fried-steak
+chicken-fried-steak-classic
 chicken-goujons
 chicken-gumbo
 chicken-hunter-stew
@@ -555,6 +564,7 @@ chicken-passanda
 chicken-pathia
 chicken-pesto-pasta-salad
 chicken-piccata
+chicken-porkolt
 chicken-pot-pie
 chicken-provencal
 chicken-quesadillas
@@ -629,6 +639,7 @@ churros
 churros-chocolate
 cicoria-ripassata
 cicoria-saltata
+cig-kofte
 cinnamon-ice-cream
 cinnamon-roll-smoothie
 civet-de-chevreuil
@@ -693,6 +704,7 @@ cote-de-boeuf
 cotoletta-alla-milanese
 cottage-pie
 coucou-and-flying-fish
+country-fried-chicken
 country-fried-steak
 courgette-and-ricotta-pasta
 courgette-fritters
@@ -840,10 +852,12 @@ escargots-de-bourgogne
 escovitch-fish
 espinacas-con-garbanzos
 estouffade-de-boeuf
+etli-ekmek
 eton-mess
 extra-crispy-chicken-wraps
 fabada-asturiana
 faggots
+fagioli-all-uccelletto
 fagioli-alluccelletto
 fajitas-beef
 fajitas-chicken
@@ -856,6 +870,7 @@ farfalle-al-salmone
 farfalle-estive
 farfalle-with-peas-and-ham
 fasolada
+fasolakia
 fatayer-spinach
 fatteh
 fattoush
@@ -884,6 +899,7 @@ fish-tacos-baja
 fish-tagine-chermoula
 fishcakes
 fiskesuppa
+flamiche
 flapjack
 flapjacks
 floating-islands
@@ -948,6 +964,7 @@ german-potato-salad
 ghana-jollof
 ghormeh-sabzi
 gigantes-plaki
+gigli-with-courgette
 gigot-d-agneau
 gigot-d-agneau-a-la-cuillere
 gigot-dagneau
@@ -1072,6 +1089,7 @@ hot-brown
 hot-chocolate
 hot-cross-buns
 hot-dog
+htipiti
 hu-tieu
 huevos-a-la-flamenca
 huevos-rancheros
@@ -1079,6 +1097,8 @@ hummus
 hummus-classic
 hummus-with-warm-pita
 hungarian-goulash
+hungarian-mushroom-soup
+hungarian-stuffed-peppers
 hunter-chicken
 hunters-chicken
 iced-tea-southern
@@ -1105,11 +1125,14 @@ jackfruit-curry
 jam-roly-poly
 jamaican-beef-patties
 jamaican-beef-patty
+jamaican-cabbage
 jamaican-chicken-soup
 jamaican-cornmeal-porridge
 jamaican-fish-tea
+jamaican-fried-dumplings
 jamaican-oxtail-stew
 jamaican-pumpkin-soup
+jamaican-rice-and-peas-classic
 jambalaya
 jammy-boiled-eggs
 jangjorim
@@ -1373,10 +1396,12 @@ mechouia-salad
 medialunas
 meggyleves
 melanzane-alla-parmigiana
+melanzane-funghetto
 melanzane-ripiene
 melitzanosalata
 memphis-dry-rub-ribs
 menemen
+mercimek-koftesi
 merguez-sausages
 merluza-en-salsa-verde
 mexican-rice
@@ -1407,6 +1432,7 @@ moi-moi
 mole-negro
 molokhia
 molokhia-chicken
+monte-cristo
 monte-cristo-sandwich
 moqueca
 moqueca-baiana
@@ -1572,6 +1598,7 @@ pashtet
 passion-fruit-curd
 passionfruit-martini
 pasta-aglio-e-olio
+pasta-alla-gricia
 pasta-alla-norma
 pasta-alla-zozzona
 pasta-amatriciana
@@ -1599,6 +1626,7 @@ patbingsu
 pate-de-campagne
 patlican-salatasi
 patty-melt
+patty-melt-diner
 pav-bhaji
 pavlova
 pea-and-ham-soup
@@ -1654,6 +1682,7 @@ petits-pois-a-la-francaise
 phaal
 phat-phrik-khing
 philly-cheesesteak
+philly-cheesesteak-classic
 pho
 pho-bo
 pho-ga
@@ -1669,6 +1698,7 @@ pickled-cucumbers-quick
 pickled-red-cabbage
 pickled-red-onions
 pico-de-gallo
+pide
 pide-kiymali
 pide-sucuklu
 pie-and-mash
@@ -1692,6 +1722,7 @@ pinzimonio
 piperade
 piri-piri-chicken
 pissaladiere
+pissaladiere-nicoise
 pistachio-ice-cream
 pisto-manchego
 pithla
@@ -1811,6 +1842,7 @@ poulet-roti
 poulet-roti-aux-40-gousses-d-ail
 poulet-vallee-d-auge
 pozole-rojo
+prasorizo
 prawn-and-avocado-salad
 prawn-and-coconut-curry
 prawn-bhuna
@@ -1930,7 +1962,9 @@ redcurrant-jelly
 refried-beans
 rendang
 reuben
+reuben-classic
 reuben-sandwich
+revithada
 rhubarb-and-ginger-jam
 rhubarb-cordial
 rhubarb-crumble
@@ -2057,6 +2091,7 @@ sage-and-onion-stuffing
 salad-shirazi
 salade-lyonnaise
 salade-nicoise
+salade-nicoise-composed
 salmon-and-dill-pie
 salmon-en-croute
 salmon-fishcakes
@@ -2149,6 +2184,7 @@ shortbread
 shortbread-biscuits
 shoyu-ramen
 shrimp-and-grits
+shrimp-fra-diavolo
 shrimp-tacos
 sichuan-doubanjiang-beef
 sichuan-dry-fried-green-beans
@@ -2166,6 +2202,7 @@ slaw-kale-apple
 sledzie-w-oleju
 sloppy-joe
 sloppy-joes
+sloppy-joes-classic
 slow-braised-beef-shin
 slow-cooked-brisket
 slow-cooker-apple-crumble
@@ -2329,6 +2366,7 @@ spaghetti-bolognese
 spaghetti-cacio-e-pepe
 spaghetti-carbonara
 spanakopita
+spanakorizo
 spanish-omelette
 spanish-omelette-baked
 spanish-tortilla
@@ -2380,6 +2418,7 @@ strawberry-trifle
 street-corn-salad
 stroganina
 strozzapreti-al-ragu
+strozzapreti-with-tomato
 stuffed-aubergine
 stuffed-bell-peppers
 stuffed-cabbage
@@ -2418,6 +2457,7 @@ sweet-potato-soup
 sweetcorn-fritters
 syllabub
 syllabub-lemon
+szekely-goulash
 ta-ameya
 tabbouleh
 tablet
@@ -2505,6 +2545,7 @@ tortilla-espanola
 tortilla-soup
 tostones
 tournedos-rossini
+tourte-lorraine
 treacle-sponge-pudding
 treacle-tart
 trenette-al-pesto
@@ -2519,13 +2560,16 @@ tteok-guk
 tteokbokki
 tuna-and-bean-salad
 tuna-melt
+tuna-melt-diner
 tuna-pasta-bake
 tuna-pasta-salad
 tunisian-fish-couscous
 tunisian-tajine
 turkish-delight
 turkish-eggs
+turkish-lentil-soup
 turkish-red-lentil-soup
+turos-csusza
 twice-cooked-pork
 tzatziki
 udon-soup
@@ -2623,6 +2667,7 @@ zapiekanka
 zeppole
 zereshk-polo
 zereshk-polo-morgh
+zucchine-trifolate
 zupa-pomidorowa
 zuppa-di-pesce
 zuppa-di-pesce-italiana
