@@ -3,10 +3,12 @@ import { redirect } from 'next/navigation'
 import { SignOutButton } from '@clerk/nextjs'
 import { prisma } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { hasPremium } from '@/lib/entitlements'
 import { SettingsForm } from './settings-form'
 import { PushSettings } from './push-settings'
 import { MakerProfileSettings } from './maker-profile-settings'
 import { CookingUnitsSettings } from './cooking-units-settings'
+import { ManageSubscriptionButton } from './manage-subscription'
 
 export const dynamic = 'force-dynamic'
 
@@ -19,6 +21,23 @@ export default async function MeSettingsPage() {
     orderBy: { lastActiveAt: 'desc' },
     select: { enabledCategories: true },
   })
+
+  // Latest billing subscription mirror (if they've ever subscribed) for the
+  // Membership section. The Stripe Customer Portal is the source of truth; this
+  // is a friendly summary so the page isn't blank before the portal opens.
+  const subscription = await prisma.subscription.findFirst({
+    where: { userId: user.id },
+    orderBy: { createdAt: 'desc' },
+    select: {
+      status: true,
+      plan: true,
+      currency: true,
+      currentPeriodEnd: true,
+      cancelAtPeriodEnd: true,
+    },
+  })
+  const isPremium = hasPremium(user)
+  const hasBilling = Boolean(user.stripeCustomerId)
 
   return (
     <>
@@ -91,6 +110,54 @@ export default async function MeSettingsPage() {
           initialPushEnabled={user.pushNotificationsEnabled}
           initialCategories={activeSub?.enabledCategories ?? []}
         />
+      </section>
+
+      <section>
+        <span className="me-section-label">Membership</span>
+        <h2 className="me-section-title">Homemade Premium</h2>
+        {hasBilling ? (
+          <>
+            <p className="me-section-description">
+              {isPremium ? (
+                <>
+                  Your premium membership is active
+                  {subscription?.plan
+                    ? ` (${subscription.plan === 'annual' ? 'annual' : 'monthly'})`
+                    : ''}
+                  .{' '}
+                  {subscription?.cancelAtPeriodEnd && subscription.currentPeriodEnd
+                    ? `It ends on ${subscription.currentPeriodEnd.toLocaleDateString(
+                        'en-GB',
+                        { day: 'numeric', month: 'long', year: 'numeric' },
+                      )} and won't renew.`
+                    : subscription?.currentPeriodEnd
+                      ? `It renews on ${subscription.currentPeriodEnd.toLocaleDateString(
+                          'en-GB',
+                          { day: 'numeric', month: 'long', year: 'numeric' },
+                        )}.`
+                      : ''}
+                </>
+              ) : (
+                <>
+                  Your premium membership isn&apos;t active right now. You can
+                  restart or update it from the billing portal.
+                </>
+              )}{' '}
+              Change your plan, update your card or cancel anytime — your work
+              always stays with you.
+            </p>
+            <ManageSubscriptionButton />
+          </>
+        ) : (
+          <p className="me-section-description">
+            You&apos;re on the free plan. Premium adds downloads, custom-fit
+            patterns, recipe planning and your own AI assistant.{' '}
+            <Link href="/premium" className="me-nav-link">
+              See what&apos;s included
+            </Link>
+            .
+          </p>
+        )}
       </section>
 
       <section>

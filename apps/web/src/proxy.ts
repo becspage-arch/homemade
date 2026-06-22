@@ -36,6 +36,9 @@ const PUBLIC_PATHS = [
   '/sign-in',
   '/sign-up',
   '/api/webhooks/clerk',
+  // Stripe posts subscription/payment events here; it can't carry the splash
+  // cookie, so it must bypass the gate. Signature-verified in the handler.
+  '/api/webhooks/stripe',
 ]
 
 // Permanent (301) tutorial-path redirects for content that moved between

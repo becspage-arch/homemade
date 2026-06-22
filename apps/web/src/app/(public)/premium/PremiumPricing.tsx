@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useSyncExternalStore } from 'react'
+import { useState, useSyncExternalStore, useTransition } from 'react'
+import { createCheckoutSession } from '@/lib/stripe/checkout-actions'
 
 export type Currency = 'GBP' | 'USD'
 type Cycle = 'monthly' | 'annual'
@@ -50,11 +51,18 @@ function perDayLabel(currency: Currency): string {
 export function PremiumPricing({
   initialCurrency,
   libraryCountLabel,
+  checkoutEnabled = false,
 }: {
   initialCurrency: Currency
   libraryCountLabel: string
+  // When false (the default, and the production state pre-launch) the Premium
+  // CTA stays an inert "Available soon". When true (sandbox / launch) it starts
+  // a real Stripe Checkout for the chosen plan + currency.
+  checkoutEnabled?: boolean
 }) {
   const [cycle, setCycle] = useState<Cycle>('monthly')
+  const [checkoutPending, startCheckout] = useTransition()
+  const [checkoutError, setCheckoutError] = useState<string | null>(null)
   // An explicit click wins. Otherwise fall back to the remembered choice (read
   // post-hydration via useSyncExternalStore so there's no mismatch), then the
   // geo default from the server. No setState-in-effect.
@@ -73,6 +81,18 @@ export function PremiumPricing({
     } catch {
       // localStorage unavailable (private mode): the choice just won't persist.
     }
+  }
+
+  function onCheckout() {
+    setCheckoutError(null)
+    startCheckout(async () => {
+      const res = await createCheckoutSession({ plan: cycle, currency })
+      if (res.ok) {
+        window.location.assign(res.url)
+      } else {
+        setCheckoutError(res.error)
+      }
+    })
   }
 
   const c = PRICES[currency]
@@ -176,13 +196,31 @@ export function PremiumPricing({
               make
             </li>
           </ul>
-          <span
-            className="premium-plan-cta is-disabled"
-            aria-disabled="true"
-            role="button"
-          >
-            Available soon
-          </span>
+          {checkoutEnabled ? (
+            <>
+              <button
+                type="button"
+                className="premium-plan-cta"
+                onClick={onCheckout}
+                disabled={checkoutPending}
+              >
+                {checkoutPending ? 'Taking you to checkout…' : 'Go Premium'}
+              </button>
+              {checkoutError && (
+                <p className="premium-plan-error" role="alert">
+                  {checkoutError}
+                </p>
+              )}
+            </>
+          ) : (
+            <span
+              className="premium-plan-cta is-disabled"
+              aria-disabled="true"
+              role="button"
+            >
+              Available soon
+            </span>
+          )}
         </article>
       </div>
     </div>

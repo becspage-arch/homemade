@@ -3,6 +3,7 @@ import { headers } from 'next/headers'
 import Link from 'next/link'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { countPublishedLibrary, formatLibraryCount } from '@/lib/library-count'
+import { checkoutEnabled } from '@/lib/stripe/config'
 import { PremiumPricing, type Currency } from './PremiumPricing'
 import './premium-page.css'
 
@@ -190,6 +191,7 @@ export default async function PremiumPage() {
       <PremiumPricing
         initialCurrency={currency}
         libraryCountLabel={libraryCountLabel}
+        checkoutEnabled={checkoutEnabled()}
       />
 
       <section className="premium-compare" aria-label="What's included">
@@ -259,10 +261,12 @@ export default async function PremiumPage() {
         </div>
       </section>
 
-      <p className="premium-footnote">
-        Some premium features are still being built. Nothing is for sale here
-        yet; this page describes what premium will include.
-      </p>
+      {!checkoutEnabled() && (
+        <p className="premium-footnote">
+          Some premium features are still being built. Nothing is for sale here
+          yet; this page describes what premium will include.
+        </p>
+      )}
     </div>
   )
 }

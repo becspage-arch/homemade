@@ -234,6 +234,23 @@
 .premium-plan-cta.is-disabled:hover {
   opacity: 1;
 }
+/* The Premium CTA is a <button> when checkout is live; reset the UA chrome so
+   it matches the Link-based CTAs. */
+button.premium-plan-cta {
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+button.premium-plan-cta:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+.premium-plan-error {
+  margin-top: 10px;
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-burnt-sienna);
+}
 
 /* Comparison table */
 .premium-compare {

@@ -72,6 +72,17 @@ model User {
   premiumSince  DateTime?
   premiumUntil  DateTime?
 
+  // Stripe billing (Session F). `stripeCustomerId` links this Maker to their
+  // Stripe Customer so the Customer Portal + repeat checkouts reuse one
+  // customer. Set the first time a checkout completes for this account.
+  // Nullable + unique: most rows never buy; the ones that do hold exactly one.
+  // `Subscription` rows mirror Stripe's subscription objects so we OWN billing
+  // state in our DB (continuity safeguard #1 — a Stripe outage never loses who
+  // is a member or their renewal date). `premiumActive` stays the single
+  // entitlement source `hasPremium()` reads; the webhook keeps it in step.
+  stripeCustomerId String?        @unique
+  subscriptions    Subscription[]
+
   // Analytics — acquisition + cohort plumbing. All nullable: existing users
   // pre-date the capture and that's fine. Captured client-side on first visit
   // (localStorage) and persisted here on first signup (Clerk webhook).
@@ -359,6 +370,44 @@ model User {
   @@index([lastSeenAt])
   @@index([isPublicMakerProfile])
   @@index([premiumActive])
+}
+
+/// Mirror of a Stripe Subscription object (Session F — Stripe billing).
+///
+/// We own billing state in our own DB so a Stripe loss never loses who is a
+/// member or when they renew (continuity safeguard #1 from the business model).
+/// The Stripe webhook is the only writer: it upserts on `stripeSubscriptionId`
+/// for every checkout.session.completed and customer.subscription.* /
+/// invoice.* event, and `lib/stripe/sync.ts` recomputes the owning User's
+/// `premiumActive` / `premiumUntil` from `status` each time.
+///
+/// `status` mirrors Stripe verbatim (active, trialing, past_due, canceled,
+/// unpaid, incomplete, incomplete_expired, paused) as a plain String rather
+/// than a Prisma enum so a new Stripe status never breaks the webhook.
+/// `plan` ('monthly' | 'annual') and `currency` ('gbp' | 'usd') are resolved
+/// back from the price id so admin + analytics don't have to re-derive them.
+model Subscription {
+  id                   String    @id @default(cuid())
+  userId               String
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  stripeSubscriptionId String    @unique
+  stripeCustomerId     String
+  stripePriceId        String
+  status               String
+  plan                 String?
+  currency             String?
+  currentPeriodEnd     DateTime?
+  cancelAtPeriodEnd    Boolean   @default(false)
+  // Set when Stripe reports the subscription fully canceled (the deleted
+  // event), distinct from cancelAtPeriodEnd which is a pending end-of-period
+  // cancellation the user can still undo from the portal.
+  canceledAt           DateTime?
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  @@index([userId])
+  @@index([stripeCustomerId])
+  @@index([status])
 }
 
 enum ExperienceLevel {
