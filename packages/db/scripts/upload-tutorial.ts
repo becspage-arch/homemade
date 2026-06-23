@@ -411,6 +411,7 @@ export async function uploadTutorial(
   const sewing = input.sewing ?? null
   const crochet = input.crochet ?? null
   const knitting = input.knitting ?? null
+  const needlework = input.needlework ?? null
 
   // Resolve garden.plantSlug against the master `Species` table when set.
   // plantSlug is optional on activity-axis sub-cats per the cleanup-A
@@ -540,6 +541,27 @@ export async function uploadTutorial(
         throw new Error(
           `[knitting] craftStitchSlugs not in master Stitch table: ${missing.join(', ')}. ` +
           `Seed via seed-stitches.ts or add knitting rows to scripts/data/stitches.ts first.`,
+        )
+      }
+    }
+  }
+
+  // Resolve needlework (embroidery) stitch references against the master
+  // Stitch table. Same loud-fail policy as crochet / knitting. The embroidery
+  // dictionary is seeded by seed-embroidery-stitches.ts with the
+  // 'embroidery-' slug prefix and craft = 'embroidery'.
+  if (needlework) {
+    if (needlework.craftStitchSlugs && needlework.craftStitchSlugs.length > 0) {
+      const stitchRows = await prisma.stitch.findMany({
+        where: { slug: { in: needlework.craftStitchSlugs } },
+        select: { slug: true },
+      })
+      const found = new Set(stitchRows.map((r) => r.slug))
+      const missing = needlework.craftStitchSlugs.filter((s) => !found.has(s))
+      if (missing.length > 0) {
+        throw new Error(
+          `[needlework] craftStitchSlugs not in master Stitch table: ${missing.join(', ')}. ` +
+          `Add to scripts/data/embroidery-stitches.ts and reseed via seed-embroidery-stitches.ts first.`,
         )
       }
     }
@@ -735,6 +757,7 @@ export async function uploadTutorial(
     // to disambiguate without needing the column.
     craftType: sewing?.craftType
       ?? (input.knitting ? 'knitting' : null)
+      ?? (input.needlework ? 'needlework' : null)
       ?? ((input.type === 'PATTERN' || input.type === 'TECHNIQUE') && !input.crochet && !input.sewing
         ? input.categorySlug
         : null),
@@ -760,9 +783,10 @@ export async function uploadTutorial(
     terminologyConvention:
       crochet?.terminologyConvention ?? knitting?.terminologyConvention ?? null,
     chartDefinition: (crochet?.chartDefinition ?? knitting?.chartDefinition ?? null) as Prisma.InputJsonValue,
-    craftStitchSlugs: crochet?.craftStitchSlugs ?? knitting?.craftStitchSlugs ?? [],
+    craftStitchSlugs:
+      crochet?.craftStitchSlugs ?? knitting?.craftStitchSlugs ?? needlework?.craftStitchSlugs ?? [],
     craftTechniqueTags:
-      crochet?.craftTechniqueTags ?? knitting?.craftTechniqueTags ?? [],
+      crochet?.craftTechniqueTags ?? knitting?.craftTechniqueTags ?? needlework?.craftTechniqueTags ?? [],
     // Technique linking (phase_technique_linking_001). Deduplicated at
     // persistence so an author who lists the same slug twice (e.g. one
     // critical entry plus the same slug in the full set) doesn't end up

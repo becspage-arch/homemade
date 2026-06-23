@@ -469,6 +469,39 @@ export interface KnittingMetadata {
   craftTechniqueTags?: string[]
 }
 
+/**
+ * Needlework (surface embroidery) tutorial metadata. Recommended when
+ * `type === 'STITCH'` under the `needlework` Category, and accepted on
+ * needlework `type === 'PATTERN'` rows. Null / omitted on every other type
+ * and category.
+ *
+ * Embroidery has no yarn-weight / hook / needle-size master row to resolve
+ * (the needle is a plain embroidery / crewel / chenille needle named in the
+ * supplies card, not a sized master entity), so this block is deliberately
+ * thin: it carries the stitch slug(s) the tutorial teaches and any free-form
+ * technique tags. It writes through to the same `Tutorial.craftStitchSlugs`
+ * / `craftTechniqueTags` columns the crochet + knitting blocks use.
+ *
+ * STITCH rows carry one slug — the embroidery stitch being taught (e.g.
+ * `embroidery-satin`); PATTERN rows carry every stitch the pattern uses.
+ * Every slug must exist in the master `Stitch` table with
+ * `craft = 'embroidery'`; the upload script validates and fails loudly.
+ */
+export interface NeedleworkMetadata {
+  /**
+   * Slugs of embroidery stitches featured in this tutorial. Every slug must
+   * exist in the master `Stitch` table (craft = 'embroidery'); the upload
+   * script resolves them and fails on a miss. Writes through to
+   * `Tutorial.craftStitchSlugs`.
+   */
+  craftStitchSlugs?: string[]
+  /**
+   * Free-form technique tags surfaced on the public browse — e.g.
+   * 'shading', 'counted', 'whitework', 'goldwork', 'stumpwork', 'ribbon'.
+   */
+  craftTechniqueTags?: string[]
+}
+
 export interface RecipeMetadata {
   /** Default yield. Drives the "Serves N" line and the scale selector. */
   servings?: number | null
@@ -725,6 +758,17 @@ export interface TutorialUploadInput {
    * added by `phase_knitting_pipeline_001`.
    */
   knitting?: KnittingMetadata | null
+
+  /**
+   * Needlework (surface embroidery) metadata. Recommended when
+   * `type === 'STITCH'` under the `needlework` Category; accepted on
+   * needlework PATTERN rows. Null / omitted on every other type and
+   * category. Carries the embroidery stitch slug(s) the tutorial teaches
+   * (resolved against the master `Stitch` table, craft = 'embroidery') and
+   * writes through to the same `Tutorial.craftStitchSlugs` /
+   * `craftTechniqueTags` columns the crochet + knitting blocks use.
+   */
+  needlework?: NeedleworkMetadata | null
 
   /**
    * Tools the recipe uses. The structured `equipmentList` TipTap block is
@@ -1261,9 +1305,30 @@ export function validateInput(
       }
     }
   }
-  if (input.type === 'STITCH' && !input.crochet && !input.knitting) {
+  // Needlework block validation. Thin carrier — only craftStitchSlugs +
+  // craftTechniqueTags. Slugs are checked for shape here; the upload script
+  // resolves them against the master Stitch table (craft = 'embroidery').
+  if (input.needlework) {
+    const n = input.needlework
+    for (const stitch of n.craftStitchSlugs ?? []) {
+      if (!SLUG_PATTERN.test(stitch)) {
+        throw new Error(
+          `needlework.craftStitchSlugs entry "${stitch}" must match the slug pattern.`,
+        )
+      }
+    }
+    for (const tag of n.craftTechniqueTags ?? []) {
+      if (typeof tag !== 'string' || tag.length === 0) {
+        throw new Error(
+          `needlework.craftTechniqueTags entries must be non-empty strings (got "${tag}").`,
+        )
+      }
+    }
+  }
+  if (input.type === 'STITCH' && !input.crochet && !input.knitting && !input.needlework) {
     throw new Error(
-      'input.crochet or input.knitting is required when type is "STITCH" (carries the stitch slug + optional chart definition).',
+      'input.crochet, input.knitting, or input.needlework is required when type is "STITCH" ' +
+        '(carries the stitch slug + optional chart definition / technique tags).',
     )
   }
   for (const g of input.glossaryTerms ?? []) {

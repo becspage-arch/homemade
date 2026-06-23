@@ -61,6 +61,8 @@ export const EMBROIDERY_STITCHES: EmbroideryStitch[] = [
   { slug: 'seed', canonicalName: 'Seed stitch', family: 'flat-line', difficulty: 'BEGINNER', usedFor: 'light scattered texture and shading' },
   { slug: 'holbein', canonicalName: 'Holbein stitch', usName: 'Double running stitch', family: 'flat-line', difficulty: 'INTERMEDIATE', usedFor: 'reversible line work for blackwork' },
   { slug: 'chevron', canonicalName: 'Chevron stitch', family: 'flat-line', difficulty: 'INTERMEDIATE', usedFor: 'zig-zag bands and borders' },
+  { slug: 'brick', canonicalName: 'Brick stitch', family: 'flat-line', difficulty: 'BEGINNER', usedFor: 'offset rows of straight stitches for a smooth brick-laid filling' },
+  { slug: 'pekinese', canonicalName: 'Pekinese stitch', family: 'flat-line', difficulty: 'INTERMEDIATE', usedFor: 'a decorative interlaced line laced through a back-stitch base' },
 
   // ── CHAIN ───────────────────────────────────────────────────────────────────
   { slug: 'chain', canonicalName: 'Chain stitch', family: 'chain', difficulty: 'BEGINNER', usedFor: 'bold outlines and line filling' },
@@ -132,6 +134,7 @@ export const EMBROIDERY_STITCHES: EmbroideryStitch[] = [
   { slug: 'cloud-filling', canonicalName: 'Cloud filling stitch', family: 'couching-filling', difficulty: 'BEGINNER', usedFor: 'a light laced two-colour filling' },
   { slug: 'pattern-darning', canonicalName: 'Pattern darning', family: 'couching-filling', difficulty: 'BEGINNER', usedFor: 'geometric running-stitch fillings' },
   { slug: 'burden', canonicalName: 'Burden stitch', family: 'couching-filling', difficulty: 'INTERMEDIATE', usedFor: 'shaded brick-like couched filling' },
+  { slug: 'basket-filling', canonicalName: 'Basket filling stitch', family: 'couching-filling', difficulty: 'INTERMEDIATE', usedFor: 'a woven two-direction filling with a basket texture' },
 
   // ── GOLDWORK (specialist) ───────────────────────────────────────────────────
   { slug: 'or-nue', canonicalName: 'Or nué', family: 'goldwork', difficulty: 'ADVANCED', usedFor: 'shaded couching over laid metal threads' },

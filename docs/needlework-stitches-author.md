@@ -2,8 +2,15 @@
 
 Canonical input for authoring the embroidery STITCH teaching library: one
 tutorial per stitch in the controlled dictionary
-(`packages/db/scripts/data/embroidery-stitches.ts`, 91 stitches, seeded into the
+(`packages/db/scripts/data/embroidery-stitches.ts`, 94 stitches, seeded into the
 `Stitch` table as `craft='embroidery'`, slug `embroidery-<slug>`).
+
+The teaching tutorials live on the `stitch-library` shelf as `STITCH` rows with
+slug `embroidery-<slug>-stitch`, linked to their dictionary stitch via the
+`needlework` upload-metadata block (`needlework.craftStitchSlugs`). Brick stitch,
+Pekinese stitch and basket filling were added to the dictionary on 2026-06-23
+when the earlier `surface-embroidery` stitch effort was migrated onto the
+dictionary and that shelf's STITCH rows were archived.
 
 This is a PREREQUISITE: every needlework pattern links several stitches via the
 glossary / technique marks, so the teaching entry must exist first or pattern
