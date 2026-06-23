@@ -4286,3 +4286,63 @@ styles in pattern-layout.css can be removed in a later pass.
 Next: checkpoint 3 — review the other archetypes (recipe / skill / practice /
 plant / fix) and apply the parts that fit (inline search, most-popular default,
 new tag axes, remove any standalone search block).
+
+## 🚀 Go-live — signups open, premium charging ON, indexable, signed-off categories only ✅ 2026-06-23
+
+The site is live for real. Stripe is charging, free signups are open, the public
+site is crawlable, and only the three signed-off categories (cooking, baking,
+cross-stitch) are publicly visible.
+
+**Premium charging LIVE.** Followed the stripe/README go-live sequence:
+- Created the production webhook endpoint (`we_1TlX7y…`) at
+  `/api/webhooks/stripe` via the Stripe API (live key), no pinned api_version so
+  payloads match the SDK's account-default. Signing secret stored as
+  `STRIPE_WEBHOOK_SECRET` (Secrets Manager + .env.credentials).
+- Two Secrets Manager secrets (`homemade/stripe-secret-key`,
+  `homemade/stripe-webhook-signing-secret-v2`) mounted into ECS via the CDK
+  two-step IAM-grant-then-mount pattern (`MOUNT_STRIPE_SECRETS`). Deploy 1 =
+  IAM grant (no task replacement); Deploy 2 = env + secret refs +
+  `STRIPE_MODE=live` + `CHECKOUT_ENABLED=true` + the four LIVE price ids.
+- Publishable key intentionally NOT mounted (unused — hosted-redirect checkout,
+  no Stripe.js).
+- Verified: 4 live prices active (10.99/14.99 monthly, 109.99/149.99 annual),
+  a live Checkout Session creates against checkout.stripe.com with automatic_tax,
+  webhook returns 400 (signature-verifying, no longer 503), live Customer Portal
+  config active. `/premium` button now reads "Go Premium".
+- FLAGGED for Rebecca (Dashboard-only, no public API): turn on Smart Retries +
+  failed-payment (dunning) emails under Billing → Revenue Recovery. Code already
+  keeps a 7-day grace window; Smart Retries is the collection-side complement.
+
+**/premium shows only what's live.** New `lib/premium/feature-availability.ts`
+(live | coming per feature) drives both the pricing-card bullets and the
+comparison table; coming features are hidden, not rebuilt. Live: downloads/print,
+recipe scaling + meal planner + shopping list, cross-stitch photo-to-chart,
+project + materials planner. Hidden: AI Assistant, Make-a-thons, design-a-pattern,
+grading, reference-category planners/calculators/journals, independent-designer
+library. Hero + meta copy trimmed to live features; library count scoped to
+visible categories (≈4,300, was ≈9,800).
+
+**Signups open.** `SIGNUP_ALLOWLIST_ENABLED=false`, live Clerk `<SignUp/>`
+restored. New accounts land as free MEMBER.
+
+**Indexable + visibility.** `SITE_NOINDEX=false` (X-Robots-Tag header + page
+noindex meta + blanket robots.txt disallow all dropped; robots.txt now the
+allow/deny list). New `enforce-launch-visibility.ts` (wired as the final DB step
+in deploy.yml) is the single source of truth for public visibility: visible set =
+cooking, baking, cross-stitch; 14 other categories hidden. `flip-crochet-public`
+and `flip-needlework-ready` no longer write isPublicVisible. Sitemap + library
+count scoped to visible categories (sitemap 4,385 URLs). Mindset left hidden per
+brief, pending its hero review.
+
+**Known fast-follows (NOT done here, Rebecca/next session):**
+- **Clerk production keys.** The deployed task still uses the Clerk *test*
+  publishable key (kept as-is — live Clerk is a separate fast-follow). So signups
+  work but are capped at ~100 users (Clerk dev limit), and hidden categories
+  currently soft-404 (HTTP 200 + a noindex not-found page) instead of a hard 404.
+  Both resolve when Clerk prod keys land. Hidden content is not exposed and not
+  in the sitemap, so the soft-404 is SEO-safe in the meantime (noindex meta).
+- Smart Retries/dunning toggle (above), analytics consent wiring, repo back to
+  private, credential rotation.
+
+The real first end-to-end purchase (real card, then self-refund) is Rebecca's to
+run.
