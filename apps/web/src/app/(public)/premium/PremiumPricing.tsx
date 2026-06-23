@@ -3,6 +3,10 @@
 import Link from 'next/link'
 import { useState, useSyncExternalStore, useTransition } from 'react'
 import { createCheckoutSession } from '@/lib/stripe/checkout-actions'
+import {
+  isFeatureLive,
+  type PremiumFeatureKey,
+} from '@/lib/premium/feature-availability'
 
 export type Currency = 'GBP' | 'USD'
 type Cycle = 'monthly' | 'annual'
@@ -36,6 +40,47 @@ const PRICES: Record<
 function formatPrice(symbol: string, amount: number): string {
   return `${symbol}${amount.toFixed(2)}`
 }
+
+// Premium card bullets, each tagged by feature. Only the live ones render, so
+// the card never promises something that isn't built yet (see
+// feature-availability.ts). Flip a feature to 'live' there and its bullet
+// appears automatically.
+const PREMIUM_BULLETS: { feature: PremiumFeatureKey; label: string }[] = [
+  {
+    feature: 'downloads',
+    label:
+      'Downloadable tutorial packs, pattern pieces and instructions so you can print and make anything offline',
+  },
+  {
+    feature: 'recipeScaling',
+    label: 'Scale recipes, plan meals and build shopping lists',
+  },
+  {
+    feature: 'photoToChart',
+    label: 'Turn a photo into your own cross-stitch pattern',
+  },
+  {
+    feature: 'projectPlanner',
+    label: 'Plan your projects and materials, ready to print',
+  },
+  {
+    feature: 'grading',
+    label: 'Resize any pattern to your size and body shape',
+  },
+  {
+    feature: 'designAPattern',
+    label: 'Design your own, from a photo or from scratch',
+  },
+  {
+    feature: 'designerLibrary',
+    label: 'A whole library of independent designer patterns',
+  },
+  {
+    feature: 'aiAssistant',
+    label:
+      'Your very own AI Assistant to plan, adapt and troubleshoot as you make',
+  },
+]
 
 /**
  * "Under Xp a day", derived from the monthly price in the shown currency.
@@ -151,8 +196,8 @@ export function PremiumPricing({
           <p className="premium-plan-cadence">Free, forever</p>
           <ul className="premium-plan-list">
             <li>
-              {libraryCountLabel} patterns, tutorials and recipes across every
-              craft
+              {libraryCountLabel} patterns, tutorials and recipes across
+              cooking, baking and cross-stitch
             </li>
             <li>
               The Studio: work through any pattern on screen, with instructions,
@@ -183,18 +228,9 @@ export function PremiumPricing({
           </p>
           <p className="premium-plan-everything">Everything in Free, plus</p>
           <ul className="premium-plan-list">
-            <li>
-              Downloadable tutorial packs, pattern pieces and instructions so
-              you can print and make anything offline
-            </li>
-            <li>Resize any pattern to your size and body shape</li>
-            <li>Design your own, from a photo or from scratch</li>
-            <li>A whole library of independent designer patterns</li>
-            <li>Scale recipes, plan meals and build shopping lists</li>
-            <li>
-              Your very own AI Assistant to plan, adapt and troubleshoot as you
-              make
-            </li>
+            {PREMIUM_BULLETS.filter((b) => isFeatureLive(b.feature)).map((b) => (
+              <li key={b.feature}>{b.label}</li>
+            ))}
           </ul>
           {checkoutEnabled ? (
             <>

@@ -1,11 +1,14 @@
 /**
- * Crochet category public visibility + foundations flip (step 5).
+ * Crochet foundations flip (step 5).
  *
- * Idempotent maintenance script that:
- *   1. Sets Category.isPublicVisible = true on the crochet row.
- *   2. Marks the four foundation tutorials with foundational = true so
- *      they appear in the FoundationsPath "Start here" ladder on the
- *      /crochet category landing page.
+ * Idempotent maintenance script that marks the four foundation tutorials with
+ * foundational = true so they appear in the FoundationsPath "Start here" ladder
+ * on the /crochet category landing page.
+ *
+ * NOTE: this no longer touches Category.isPublicVisible. Public visibility is
+ * owned by enforce-launch-visibility.ts (crochet stays hidden until it signs
+ * off and is added to that script's visible set). Leaving the flip here would
+ * fight that enforcer on every deploy.
  *
  * Safe to re-run; reports before / after state.
  *
@@ -65,19 +68,8 @@ async function main(): Promise<void> {
     process.exit(2)
   }
 
-  if (category.isPublicVisible) {
-    console.log('[flip-public] Category already public, no change.')
-  } else {
-    if (DRY_RUN) {
-      console.log('[flip-public] DRY RUN: would set crochet.isPublicVisible = true')
-    } else {
-      await prisma.category.update({
-        where: { id: category.id },
-        data: { isPublicVisible: true },
-      })
-      console.log('[flip-public] crochet.isPublicVisible -> true')
-    }
-  }
+  // Visibility intentionally NOT set here — owned by
+  // enforce-launch-visibility.ts. See header.
 
   const tutorials = await prisma.tutorial.findMany({
     where: { slug: { in: FOUNDATION_SLUGS } },

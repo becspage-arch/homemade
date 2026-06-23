@@ -2,17 +2,27 @@ import 'server-only'
 import { prisma, TutorialStatus, Visibility } from '@homemade/db'
 
 /**
- * Live count of everything published across the whole library.
+ * Live count of everything published that a member can actually reach.
  *
- * Same definition the admin dashboard uses for "real library total":
- * published tutorials + public house-owned patterns (ownerUserId null). Pulled
- * at render so the /premium page never hardcodes the figure.
+ * Published tutorials + public house-owned patterns (ownerUserId null), but
+ * scoped to publicly-visible (signed-off) categories only. Hidden categories
+ * 404 to the public, so counting their content would over-claim the library on
+ * /premium. Pulled at render so the page never hardcodes the figure.
  */
 export async function countPublishedLibrary(): Promise<number> {
   const [tutorials, patterns] = await Promise.all([
-    prisma.tutorial.count({ where: { status: TutorialStatus.PUBLISHED } }),
+    prisma.tutorial.count({
+      where: {
+        status: TutorialStatus.PUBLISHED,
+        category: { isPublicVisible: true },
+      },
+    }),
     prisma.pattern.count({
-      where: { visibility: Visibility.PUBLIC, ownerUserId: null },
+      where: {
+        visibility: Visibility.PUBLIC,
+        ownerUserId: null,
+        subCategory: { category: { isPublicVisible: true } },
+      },
     }),
   ])
   return tutorials + patterns

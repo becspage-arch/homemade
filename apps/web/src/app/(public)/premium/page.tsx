@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { countPublishedLibrary, formatLibraryCount } from '@/lib/library-count'
 import { checkoutEnabled } from '@/lib/stripe/config'
+import { isFeatureLive, type PremiumFeatureKey } from '@/lib/premium/feature-availability'
 import { PremiumPricing, type Currency } from './PremiumPricing'
 import './premium-page.css'
 
@@ -13,7 +14,7 @@ export const dynamic = 'force-dynamic'
 export const metadata: Metadata = buildPublicMetadata({
   title: 'Homemade Premium',
   description:
-    'Everything in the free library, plus downloads, custom-fit patterns, design-your-own, recipe planning and your very own AI assistant.',
+    'Everything in the free library, plus downloads and printing, recipe scaling, meal plans and shopping lists, and turning a photo into a cross-stitch pattern.',
   path: '/premium',
 })
 
@@ -34,6 +35,8 @@ async function readCurrency(): Promise<Currency> {
 interface Row {
   label: string
   free: boolean
+  /** Premium rows carry a feature key; only shown when that feature is live. */
+  feature?: PremiumFeatureKey
 }
 
 interface Group {
@@ -41,8 +44,14 @@ interface Group {
   rows: Row[]
 }
 
+/**
+ * The full comparison table, with each premium row tagged by feature. Free rows
+ * (already live) always show; premium rows show only when their feature is
+ * live (see feature-availability.ts). Groups that end up with no rows are
+ * dropped, and the page only names the categories that are actually public.
+ */
 function buildGroups(libraryCountLabel: string): Group[] {
-  return [
+  const all: Group[] = [
     {
       heading: "Here's what you get",
       rows: [
@@ -56,40 +65,52 @@ function buildGroups(libraryCountLabel: string): Group[] {
           label:
             'Downloadable packs, pieces and instructions to print and make offline',
           free: false,
+          feature: 'downloads',
         },
         {
-          label:
-            'Your very own AI Assistant to plan, adapt and troubleshoot',
+          label: 'Your very own AI Assistant to plan, adapt and troubleshoot',
           free: false,
+          feature: 'aiAssistant',
         },
         {
           label: "Members' Make-a-thons and seasonal collections to join",
           free: false,
+          feature: 'makeAThons',
         },
       ],
     },
     {
-      heading: 'Crochet, knitting, cross-stitch, needlework and sewing',
+      heading: 'Cross-stitch',
       rows: [
         { label: 'The Studio', free: true },
         {
           label:
             'Resize to your size and body shape, with full-bust and other fit adjustments',
           free: false,
+          feature: 'grading',
         },
         {
-          label: 'Turn a photo into your own pattern, or design from scratch',
+          label: 'Turn a photo into your own cross-stitch pattern',
           free: false,
+          feature: 'photoToChart',
+        },
+        {
+          label:
+            'Design a pattern from scratch',
+          free: false,
+          feature: 'designAPattern',
         },
         {
           label:
             'Personalised project and materials planners, download and printable',
           free: false,
+          feature: 'projectPlanner',
         },
         {
           label:
             'A whole library of independent designer patterns, new ones added every week',
           free: false,
+          feature: 'designerLibrary',
         },
       ],
     },
@@ -105,42 +126,31 @@ function buildGroups(libraryCountLabel: string): Group[] {
           label:
             'Scale any recipe up or down for smaller meals, meal prepping and batch cooking',
           free: false,
+          feature: 'recipeScaling',
         },
         {
           label: 'Plan a whole week of meals, batch-cooks and leftovers',
           free: false,
+          feature: 'mealPlanner',
         },
         {
           label:
             "Turn your week's recipes into one shopping list, summed and sorted by aisle",
           free: false,
-        },
-      ],
-    },
-    {
-      heading:
-        'Garden, home repair, natural home, herbal, smallholding, sustainability, mindset, paper, wood, pottery and more',
-      rows: [
-        { label: 'Every guide and tutorial', free: true },
-        { label: 'Planners and schedules made for each craft', free: false },
-        {
-          label:
-            'Calculators that customise tutorials to your garden, space and project',
-          free: false,
-        },
-        {
-          label:
-            'Keep a journal of your garden, flock and projects with reminders for what needs doing and when',
-          free: false,
-        },
-        {
-          label:
-            "Print your daily steps or whole plan to take into the garden, workshop or wherever you're working",
-          free: false,
+          feature: 'shoppingList',
         },
       ],
     },
   ]
+
+  return all
+    .map((group) => ({
+      ...group,
+      rows: group.rows.filter(
+        (row) => row.free || (row.feature && isFeatureLive(row.feature)),
+      ),
+    }))
+    .filter((group) => group.rows.length > 0)
 }
 
 function Tick({ on }: { on: boolean }) {
@@ -181,10 +191,10 @@ export default async function PremiumPage() {
         <p className="premium-hero-eyebrow">Homemade Premium</p>
         <h1 className="premium-hero-title">Make beautiful things, in any craft</h1>
         <p className="premium-hero-lede">
-          One membership for every craft on Homemade. Start free and stay free
-          for as long as you like. Premium adds the tools that make bigger
-          projects easier, from downloads and custom-fit patterns to your own AI
-          assistant.
+          One Homemade membership. Start free and stay free for as long as you
+          like. Premium adds the tools that make bigger projects easier:
+          downloads and printing, recipe planning, and turning a photo into a
+          cross-stitch pattern.
         </p>
       </header>
 

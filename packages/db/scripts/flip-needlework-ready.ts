@@ -7,9 +7,9 @@
  *                                                10 master author prompts
  *   Category.needlework.criticalTechniques[]   = must-know prerequisites
  *   Category.needlework.aliases[]              = search synonyms
- *   Category.needlework.isPublicVisible        = true
  *
- * Does NOT touch pipelineStatus. This script runs on every deploy, so
+ * Does NOT touch isPublicVisible (owned by enforce-launch-visibility.ts —
+ * needlework stays hidden until it signs off) and does NOT touch pipelineStatus. This script runs on every deploy, so
  * forcing READY here re-armed the autopilot gate each rollout and undid
  * any pause. The gate is now owned by the per-category sign-off flow and
  * the admin Ready/Paused toggle (/admin/system/autopilot). Until needlework
@@ -345,7 +345,7 @@ async function main(): Promise<void> {
     console.log('  techniqueSlugs count     = ' + TECHNIQUE_SLUGS.length)
     console.log('  criticalTechniques count = ' + CRITICAL_TECHNIQUES.length)
     console.log('  aliases count            = ' + ALIASES.length)
-    console.log('  isPublicVisible          = true')
+    console.log('  isPublicVisible          = (left untouched — owned by enforce-launch-visibility.ts)')
     console.log('[flip] would set SubCategory.autopilotEnabled per discipline:')
     for (const row of SUB_CAT_FLAGS) {
       console.log(`  ${row.slug.padEnd(20)} = ${row.autopilotEnabled}`)
@@ -365,7 +365,8 @@ async function main(): Promise<void> {
       techniqueSlugs: TECHNIQUE_SLUGS,
       criticalTechniques: CRITICAL_TECHNIQUES,
       aliases: ALIASES,
-      isPublicVisible: true,
+      // isPublicVisible intentionally NOT set — owned by
+      // enforce-launch-visibility.ts (needlework stays hidden until sign-off).
     },
     select: {
       slug: true,

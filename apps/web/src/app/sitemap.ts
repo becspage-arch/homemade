@@ -23,7 +23,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const [tutorials, categories, makers, madeIt] = await Promise.all([
     prisma.tutorial.findMany({
-      where: { status: TutorialStatus.PUBLISHED },
+      // Only tutorials in a publicly-visible (signed-off) category. A published
+      // tutorial in a hidden category 404s to the public, so it must not appear
+      // in the sitemap or it would invite crawlers to a dead URL.
+      where: {
+        status: TutorialStatus.PUBLISHED,
+        category: { isPublicVisible: true },
+      },
       orderBy: { publishedAt: 'desc' },
       select: {
         slug: true,

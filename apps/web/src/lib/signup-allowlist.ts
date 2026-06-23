@@ -18,8 +18,11 @@ import { extractEmailDomain, hashEmailForAnalytics } from './email-hash'
  *
  * Launch-day flip: set to `false`, redeploy, and any email can sign up again.
  * Tracked in `project_pre_launch_checklist.md` under "Signup allowlist removal".
+ *
+ * FLIPPED OFF at go-live (2026-06-23): public signups are open. New accounts
+ * land as free MEMBER; the allowlist deletion paths below are now inert.
  */
-export const SIGNUP_ALLOWLIST_ENABLED = true
+export const SIGNUP_ALLOWLIST_ENABLED = false
 
 export type RejectionVia = 'webhook' | 'jit'
 

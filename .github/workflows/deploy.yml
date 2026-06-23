@@ -249,6 +249,19 @@ jobs:
           export DATABASE_URL="${DATABASE_URL/-pooler./.}"
           pnpm --filter @homemade/web exec tsx scripts/render-sewing-hero-flats.ts
 
+      # Canonical launch visibility — MUST run after every per-category flip
+      # above so it is the authority on Category.isPublicVisible. Reveals only
+      # the signed-off categories (cooking, baking, cross-stitch) and hides the
+      # rest, so unsigned categories 404 to the public and stay out of search.
+      # Add a slug to LAUNCH_VISIBLE_CATEGORY_SLUGS in the script when a
+      # category signs off. Blocking: visibility correctness gates the launch.
+      - name: Enforce launch visibility (idempotent)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
+          pnpm --filter @homemade/db exec tsx scripts/enforce-launch-visibility.ts
+
       - name: Update ECS service (ensures >=2 tasks and pulls new image)
         # Steady state is 2 tasks — eliminates the ~90s cold-start downtime
         # when a single task crashes (perf-audit-001 issue #8). Must match
