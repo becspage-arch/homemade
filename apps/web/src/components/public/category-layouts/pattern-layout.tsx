@@ -202,9 +202,16 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
             subCategory: { categoryId: category.id },
             hero: { isNot: null },
           },
-          // Most popular first (falls back to most-recent while engagement
-          // builds), so the hero strip is the genuine top of the library.
-          orderBy: [{ popularityScore: 'desc' }, { publishedAt: 'desc' }],
+          // Most popular first (real signal as engagement accrues). Pre-launch
+          // every score is 0 and the seed catalogue shares a publish date, so a
+          // plain recency tie-break would be arbitrary; fall back to the most
+          // detailed pieces (totalStitches) so the strip showcases the richest
+          // work, then newest, deterministically.
+          orderBy: [
+            { popularityScore: 'desc' },
+            { totalStitches: 'desc' },
+            { publishedAt: 'desc' },
+          ],
           take: 6,
           select: {
             id: true,
@@ -571,8 +578,8 @@ function patternHeaderTitle(slug: string): string {
   switch (slug) {
     case 'cross-stitch': return 'Stitch something beautiful.'
     case 'knitting': return 'Knit something quietly extraordinary.'
-    case 'crochet': return 'Hook something heirloom.'
-    case 'needlework': return 'Thread a needle, pick a discipline.'
+    case 'crochet': return 'Crochet something cosy.'
+    case 'needlework': return 'Find your kind of stitching.'
     case 'sewing': return 'Sew something well-made.'
     default: return 'Make something with your hands.'
   }
@@ -583,7 +590,7 @@ function patternHeaderLede(slug: string): string {
     case 'cross-stitch':
       return 'Counted designs from quick motifs to detailed samplers and famous paintings, each ready to stitch in the Studio.'
     case 'knitting':
-      return 'Designed knitting patterns from independent designers. Open one in the Studio when it ships; read the foundation tutorials below today.'
+      return 'Start with the foundation tutorials below: casting on, the knit and purl stitches, shaping, and binding off. The Knitting Studio and its patterns are on their way.'
     case 'crochet':
       return 'Row-by-row patterns with UK and US terminology, gauge logging, and per-size grading in the Crochet Studio.'
     case 'needlework':
