@@ -145,7 +145,13 @@ export async function RecipeLayout({
         ...(dietary ? { dietaryFlags: { has: dietary } } : {}),
         ...(activeSubSlug && subCategory ? { subCategoryId: subCategory.id } : {}),
       },
-      orderBy: [{ publishedAt: 'desc' }],
+      // Most-loved first (matches how the unfiltered rails already order), so a
+      // dietary / sub filter leads with the best of that slice, then newest.
+      orderBy: [
+        { bookmarks: { _count: 'desc' } },
+        { projects: { _count: 'desc' } },
+        { publishedAt: 'desc' },
+      ],
       select: CARD_SELECT,
     })
     filteredTutorials = tutorials as TutorialCardLike[]

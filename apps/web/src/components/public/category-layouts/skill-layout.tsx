@@ -186,7 +186,13 @@ export async function SkillLayout({
         ...(tool ? { requiredTools: { has: tool } } : {}),
         ...equipmentWhere,
       },
-      orderBy: [{ publishedAt: 'desc' }],
+      // Most-loved first (matches how the unfiltered rails already order), so a
+      // difficulty / tool / sub filter leads with the best of that slice.
+      orderBy: [
+        { bookmarks: { _count: 'desc' } },
+        { projects: { _count: 'desc' } },
+        { publishedAt: 'desc' },
+      ],
       select: CARD_SELECT,
     })
     filteredTutorials = tutorials as TutorialCardLike[]
