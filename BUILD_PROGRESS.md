@@ -4231,3 +4231,33 @@ seed (it recreated demo-blue-hydrangea / demo-pink-peony / demo-african-elephant
 under Stitching Mama every deploy) and deleted the rows + media; genuine
 Stitching Mama catalogue untouched. Rollout to the other 4 pattern categories +
 the other-archetype review are the next two checkpoints.
+
+## Category pages — rolled across all pattern categories ✅ landed 2026-06-23
+
+Checkpoint 2 of the category-page overhaul. The shared pattern-layout already
+carried points 1-6 (popularity ordering, Open-the-Studio hero button, removed
+redundant Studio/search blocks, single-row designer spotlight, cross-craft tag
+facets) to every pattern category; brought the crochet grid (its own component)
+to parity — same shell + styles as the cross-stitch library (sidebar filters,
+inline search, count + Most-popular sort) with crochet cards (yarn / hook /
+finished size) and the tag facets. Verified live: cross-stitch (reference),
+crochet (new grid), knitting + needlework (shared changes, graceful empty
+states). Sewing is still a gated, non-public category (404), nothing to roll.
+
+Data cleanup (round 2): seed-cross-stitch-patterns.ts upserted three crude
+early-scaffolding placeholder patterns every deploy (tiny-alphabet-sampler,
+garden-bird-silhouette, wild-flower) that showed as junk under the Stitching
+Mama / Homemade house designers. Reduced that seed to just the designer-row
+upsert and deleted the rows + media. Combined with the earlier photographic-demo
+seed removal, the public cross-stitch library no longer carries any seeded
+placeholder patterns.
+
+Build unblock: excluded apps/web/scripts/needlework-counted-proof.ts from the
+web tsconfig (it imports dotenv, not a web dep, like the 9 other db-touching
+scripts already excluded). It was failing `next build` typecheck and blocking
+the deploy pipeline. Follow-up debt: the now-dead `.crochet-pattern-grid-*`
+styles in pattern-layout.css can be removed in a later pass.
+
+Next: checkpoint 3 — review the other archetypes (recipe / skill / practice /
+plant / fix) and apply the parts that fit (inline search, most-popular default,
+new tag axes, remove any standalone search block).
