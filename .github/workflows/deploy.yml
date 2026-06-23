@@ -203,19 +203,11 @@ jobs:
           export DATABASE_URL="${DATABASE_URL/-pooler./.}"
           pnpm --filter @homemade/db exec tsx scripts/flip-needlework-ready.ts
 
-      # Photographic demo patterns — pulls 3 public-domain Wikimedia
-      # photos through the live photo-to-chart pipeline at ~120 cells
-      # / ~36 colours so the library shows what dense subject matter
-      # looks like through the hero renderer. Idempotent on slug.
-      # Continues on failure: a Wikimedia outage shouldn't block the
-      # rollout, and a re-run picks the photos up on the next deploy.
-      - name: Seed photographic demo patterns (idempotent, non-blocking)
-        continue-on-error: true
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: |
-          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
-          pnpm --filter @homemade/web exec tsx scripts/seed-photographic-patterns.ts
+      # (Removed) The photographic demo patterns seed (demo-blue-hydrangea /
+      # demo-pink-peony / demo-african-elephant) used to run here every deploy.
+      # They were sample renders wrongly filed under the Stitching Mama designer
+      # and showing in the public library, so the seed has been retired and the
+      # rows deleted. The genuine Stitching Mama catalogue patterns stay.
 
       # Seed the demo sewing pattern row so /studio/sewing/demo-a-line-skirt
       # and ?demo=1 both resolve. Idempotent on slug. Non-blocking like the
