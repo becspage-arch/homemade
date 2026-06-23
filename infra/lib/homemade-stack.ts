@@ -223,6 +223,24 @@ export class HomemadeStack extends cdk.Stack {
       'homemade/fal-key',
     )
 
+    // Stripe LIVE secrets (go-live). The secret key + webhook signing secret are
+    // the only sensitive Stripe values — the publishable key is public and the
+    // price ids are plain identifiers (mounted as env below). Stored manually in
+    // Secrets Manager. Same two-step IAM-grant-then-mount pattern: the grant
+    // below lands first (Deploy 1), then MOUNT_STRIPE_SECRETS=1 adds the env +
+    // secret references (Deploy 2). Webhook secret name avoids the "-secret"
+    // suffix that breaks the no-suffix ARN form ECS Fargate uses.
+    const stripeSecretKeySecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'StripeSecretKeySecret',
+      'homemade/stripe-secret-key',
+    )
+    const stripeWebhookSecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'StripeWebhookSecret',
+      'homemade/stripe-webhook-signing-secret-v2',
+    )
+
     // The Clerk webhook signing secret is wired in two deploys to avoid the
     // CFN circuit breaker race (IAM grant landing in parallel with task
     // replacement to new tasks try to pull the secret before the grant exists).
@@ -251,6 +269,16 @@ export class HomemadeStack extends cdk.Stack {
     // The image-sourcing orchestrator no-ops per source when the env var is
     // missing — the app boots fine without these mounted.
     const mountImageSourcingSecrets = process.env.MOUNT_IMAGE_SOURCING_SECRETS === '1'
+
+    // Stripe go-live. Two-step pattern:
+    //   Deploy 1: this stack lands the IAM grant on the two Stripe secret ARNs
+    //             (no MOUNT flag) — pure IAM update, no task replacement.
+    //   Deploy 2: MOUNT_STRIPE_SECRETS=1 adds STRIPE_MODE=live,
+    //             CHECKOUT_ENABLED=true, the four LIVE price ids (env), and the
+    //             secret-key + webhook-secret references — turning charging on.
+    // The price ids + the flip are read from the deploy env (requireEnv), so
+    // run Deploy 2 with .env.credentials loaded.
+    const mountStripeSecrets = process.env.MOUNT_STRIPE_SECRETS === '1'
 
     // ────────────────────────────────────────────────────────────────
     // CloudWatch — task logs
@@ -315,6 +343,8 @@ export class HomemadeStack extends cdk.Stack {
           `${pexelsApiKeySecret.secretArn}-??????`,
           `${pixabayApiKeySecret.secretArn}-??????`,
           `${falKeySecret.secretArn}-??????`,
+          `${stripeSecretKeySecret.secretArn}-??????`,
+          `${stripeWebhookSecret.secretArn}-??????`,
         ],
       }),
     )
@@ -345,6 +375,22 @@ export class HomemadeStack extends cdk.Stack {
         // that Deploy 1 (IAM grant only) doesn't replace the task.
         ...(mountImageSourcingSecrets
           ? { UNSPLASH_APPLICATION_ID: requireEnv('UNSPLASH_APPLICATION_ID') }
+          : {}),
+        // Stripe go-live (Deploy 2). Non-secret values: mode, the checkout
+        // kill-switch, and the four LIVE price ids (plain identifiers). The
+        // sensitive key + webhook secret are mounted from Secrets Manager
+        // below. Gated on MOUNT_STRIPE_SECRETS so Deploy 1 (IAM grant only)
+        // leaves the task definition untouched and checkout stays off until the
+        // secrets are actually present.
+        ...(mountStripeSecrets
+          ? {
+              STRIPE_MODE: 'live',
+              CHECKOUT_ENABLED: 'true',
+              STRIPE_PRICE_MONTHLY_GBP: requireEnv('STRIPE_PRICE_MONTHLY_GBP'),
+              STRIPE_PRICE_MONTHLY_USD: requireEnv('STRIPE_PRICE_MONTHLY_USD'),
+              STRIPE_PRICE_ANNUAL_GBP: requireEnv('STRIPE_PRICE_ANNUAL_GBP'),
+              STRIPE_PRICE_ANNUAL_USD: requireEnv('STRIPE_PRICE_ANNUAL_USD'),
+            }
           : {}),
       },
       secrets: {
@@ -383,6 +429,13 @@ export class HomemadeStack extends cdk.Stack {
               PEXELS_API_KEY: ecs.Secret.fromSecretsManager(pexelsApiKeySecret),
               PIXABAY_API_KEY: ecs.Secret.fromSecretsManager(pixabayApiKeySecret),
               FAL_KEY: ecs.Secret.fromSecretsManager(falKeySecret),
+            }
+          : {}),
+        // Stripe LIVE secret key + webhook signing secret (Deploy 2).
+        ...(mountStripeSecrets
+          ? {
+              STRIPE_SECRET_KEY: ecs.Secret.fromSecretsManager(stripeSecretKeySecret),
+              STRIPE_WEBHOOK_SECRET: ecs.Secret.fromSecretsManager(stripeWebhookSecret),
             }
           : {}),
       },
