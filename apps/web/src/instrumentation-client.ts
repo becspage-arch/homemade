@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/nextjs'
+import { shouldSendSentryEvent } from '@/lib/analytics-consent'
 
 // Clear the chunk-error reload guard once the page has rendered successfully.
 // The guard prevents a reload loop when a NEW build is also broken; clearing
@@ -25,6 +26,9 @@ if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
     replaysOnErrorSampleRate: 0,
     replaysSessionSampleRate: 0,
     beforeSend(event: Sentry.ErrorEvent): Sentry.ErrorEvent | null {
+      // Drop the event entirely unless the user has granted error-monitoring
+      // consent via the cookie banner.
+      if (!shouldSendSentryEvent()) return null
       if (event.request) {
         delete event.request.cookies
         delete event.request.data

@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/nextjs'
+import { shouldSendSentryEvent } from '@/lib/analytics-consent'
 
 export async function register() {
   if (!process.env.NEXT_PUBLIC_SENTRY_DSN) return
@@ -32,6 +33,10 @@ const ALLOWED_REQUEST_HEADERS = new Set([
 ])
 
 function scrubEvent(event: Sentry.ErrorEvent): Sentry.ErrorEvent | null {
+  // Consent gate. On the server this returns true (server errors aren't tied
+  // to a single visitor's consent), so it's a no-op here today; wiring it in
+  // keeps every Sentry config — browser, node, edge — behind one predicate.
+  if (!shouldSendSentryEvent()) return null
   if (event.request) {
     delete event.request.cookies
     delete event.request.data
