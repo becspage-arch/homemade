@@ -36,8 +36,11 @@ routed through the orchestrator.
    step: where the needle comes UP, where it goes DOWN, how the loop/wrap is held,
    how to space it. Reference points as "A, B, C" matching the diagram. 5–10 steps.
    For variants (e.g. padded satin), a second H2 for the variation.
-4. **The how-to diagram** — an `image` block showing the needle path / working
-   steps for THIS stitch (numbered A/B/C to match the steps). See "Diagrams" below.
+4. **The how-to diagram** — added LATER by the procedural-diagram pass (an `image`
+   block showing the needle path / working steps). NOT required to publish — the
+   completeness gate does not require a diagram on STITCH tutorials, so author the
+   text now (describe the needle path clearly in the `orderedList`); the diagram
+   attaches as an enhancement. See "Diagrams" below.
 5. **`troubleshooter`** — 3–5 common failures → cause → fix (e.g. satin: "stitches
    look loose and gappy → tension too slack / strands untwisted → keep the hoop
    drum-tight and lay strands flat with a laying tool").
@@ -78,8 +81,9 @@ every wrapped term must be registered (the glossary-coverage rule).
   (canonical) — the renderer converts to inches per user preference.
 - Length ~600–1200 words.
 - Publishes through the standard gate: non-empty body, no NaN/undefined/placeholder,
-  the diagram attached, glossary coverage satisfied. The PATTERN completeness rule
-  does NOT fire on STITCH type.
+  glossary coverage satisfied (every registered term used inline, every wrapped term
+  registered). The PATTERN completeness rule does NOT fire on STITCH type, and a
+  diagram is NOT gate-required — so the text publishes now; diagrams follow.
 
 ## Batch + scale
 
