@@ -209,10 +209,13 @@
   margin: 0;
   display: grid;
   /* Single row that fits the width: auto-fill keeps every visible column a
-     full ≥160px cell (never a partial), and any item that doesn't fit wraps to
-     a zero-height row that's clipped — so the overflow is dropped rather than
-     half-shown or scrolled. The column count recomputes at every width. */
+     full ≥160px cell (never a partial). The one explicit row (grid-template-rows:
+     auto) holds its natural height; any item that doesn't fit wraps to an
+     implicit zero-height row (grid-auto-rows: 0) that overflow:hidden clips — so
+     the overflow is dropped rather than half-shown or scrolled. The column count
+     recomputes at every width. */
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-rows: auto;
   grid-auto-rows: 0;
   column-gap: 16px;
   row-gap: 0;
