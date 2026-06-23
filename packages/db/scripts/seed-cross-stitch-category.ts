@@ -39,7 +39,7 @@ const CATEGORY_SPEC = {
   slug: 'cross-stitch',
   name: 'Cross-stitch',
   description:
-    'Counted-thread stitching on Aida or evenweave fabric. Library patterns, project tutorials, and the cross-stitch Studio.',
+    'Animals, florals, landscapes, art reproductions, quotes and sayings, seasonal, monochrome, cocktails, home and cosy, and pride and inclusive patterns.',
   // Sits alongside the other fibre crafts in the admin list. launchOrder
   // stays null until the Studio ships and Rebecca opts the category into
   // the public nav rotation.

@@ -580,7 +580,7 @@ function patternHeaderTitle(slug: string): string {
 function patternHeaderLede(slug: string): string {
   switch (slug) {
     case 'cross-stitch':
-      return 'Open any chart in the Studio, mark off stitches as you go, and print a clean PDF whenever you want one.'
+      return 'Counted designs from quick motifs to detailed samplers and famous paintings, each ready to stitch in the Studio.'
     case 'knitting':
       return 'Designed knitting patterns from independent designers. Open one in the Studio when it ships; read the foundation tutorials below today.'
     case 'crochet':
