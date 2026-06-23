@@ -8,6 +8,31 @@ Updated each working session.
 
 ---
 
+## Independent-designer content reads premium + spotlight is independent-only (2026-06-23)
+
+Two shared-pattern fixes (all pattern categories inherit them).
+
+1. Independent (non-house) designer content now reads premium on the live
+   surfaces. The cross-stitch grid badge, the pattern detail preview + access
+   CTA, and the Studio access check already consulted
+   `isPremiumContent({ premium, designer })` — the gap was data. The Stitching
+   Mama catalogue import had created the Designer row with
+   `isHouseDesigner = true`, so the gate scored its ~38 genuine independent
+   patterns as free. New migration
+   (`20260924000000_stitching_mama_independent_designer_001`) flips
+   `stitching-mama` to non-house; the import script is corrected so a re-run no
+   longer undoes it. Verified live: a Stitching Mama pattern detail page shows
+   the Premium badge and the gated "Stitch this pattern · Premium" /
+   "Download PDF · Premium" CTAs for anonymous readers. Printing/download stays
+   on `hasPremium`.
+
+2. Designer spotlight is independent-only. `pickRotatingDesigner` now excludes
+   house designers and requires ≥2 matching patterns before the rotation lands
+   on a designer, returning null (whole section hidden) when no independent
+   qualifies — so a house-only category never features Homemade as the lone
+   "designer". Verified live: the cross-stitch spotlight now features Stitching
+   Mama.
+
 ## Cross-craft content gate applied to cross-stitch + cooking/baking (2026-06-22)
 
 Wired the shared content rule (`isPremiumContent` / `isIndependentDesignerContent` /
