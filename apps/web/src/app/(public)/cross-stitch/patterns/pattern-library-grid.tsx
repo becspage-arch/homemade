@@ -2,8 +2,15 @@
 
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { Filter } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { Filter, Search, X } from 'lucide-react'
 import { PatternSaveHeart } from '@/components/public/pattern-save-heart'
+import {
+  TAG_AXES,
+  TAG_AXIS_LABEL,
+  TAG_AXIS_PARAM,
+  type TagFacets,
+} from '@/lib/pattern-tag-axes'
 
 interface PatternCard {
   id: string
@@ -31,6 +38,9 @@ interface PatternCard {
 interface PatternLibraryGridProps {
   patterns: PatternCard[]
   subCategories: { slug: string; name: string }[]
+  /** Cross-craft tag axes (occasion / season / style / subject / audience). */
+  tagFacets: TagFacets
+  searchPlaceholder: string
   currentFilters: {
     sub: string | null
     difficulty: string | null
@@ -38,14 +48,24 @@ interface PatternLibraryGridProps {
     sort: string
     hasBackstitch: boolean
     hasFrenchKnots: boolean
+    q: string | null
+    occasion: string | null
+    season: string | null
+    style: string | null
+    subject: string | null
+    audience: string | null
   }
   /** Where the filter-link router pushes to. Defaults to /cross-stitch/patterns. */
   basePath?: string
 }
 
+const TAG_FILTER_KEYS = ['occasion', 'season', 'style', 'subject', 'audience'] as const
+
 export function PatternLibraryGrid({
   patterns,
   subCategories,
+  tagFacets,
+  searchPlaceholder,
   currentFilters,
   basePath = '/cross-stitch/patterns',
 }: PatternLibraryGridProps) {
@@ -57,13 +77,57 @@ export function PatternLibraryGrid({
     if (value === null || value === '') params.delete(key)
     else params.set(key, value)
     const qs = params.toString()
-    router.push(qs ? `${basePath}?${qs}` : basePath, { scroll: false })
+    router.push(qs ? `${basePath}?${qs}#patterns` : `${basePath}#patterns`, { scroll: false })
+  }
+
+  // Which tag axes have terms to show — an empty axis (e.g. Audience on
+  // cross-stitch) renders nothing.
+  const activeAxes = TAG_AXES.filter((axis) => tagFacets[axis]?.length)
+
+  const currentTag = (axis: (typeof TAG_AXES)[number]): string | null =>
+    currentFilters[TAG_AXIS_PARAM[axis] as keyof typeof currentFilters] as string | null
+
+  const tagFiltersActive = TAG_FILTER_KEYS.some((k) => currentFilters[k])
+  const anyFilterActive =
+    Boolean(currentFilters.sub) ||
+    Boolean(currentFilters.difficulty) ||
+    Boolean(currentFilters.size) ||
+    currentFilters.hasBackstitch ||
+    currentFilters.hasFrenchKnots ||
+    Boolean(currentFilters.q) ||
+    tagFiltersActive
+
+  const clearAll = () => {
+    const params = new URLSearchParams(searchParams.toString())
+    for (const k of [
+      'sub',
+      'difficulty',
+      'size',
+      'hasBackstitch',
+      'hasFrenchKnots',
+      'q',
+      'minColour',
+      'maxColour',
+      'maxHours',
+      ...TAG_FILTER_KEYS,
+    ]) {
+      params.delete(k)
+    }
+    const qs = params.toString()
+    router.push(qs ? `${basePath}?${qs}#patterns` : `${basePath}#patterns`, { scroll: false })
   }
 
   return (
     <div className="cross-stitch-library-content">
       <aside className="cross-stitch-library-sidebar" aria-label="Filters">
-        <h2><Filter size={14} strokeWidth={1.6} /> Filter</h2>
+        <div className="cross-stitch-library-sidebar-head">
+          <h2><Filter size={14} strokeWidth={1.6} /> Filter</h2>
+          {anyFilterActive && (
+            <button type="button" className="cross-stitch-library-clear" onClick={clearAll}>
+              Clear all
+            </button>
+          )}
+        </div>
 
         <FilterGroup title="Theme">
           <FilterButton
@@ -80,6 +144,24 @@ export function PatternLibraryGrid({
             />
           ))}
         </FilterGroup>
+
+        {activeAxes.map((axis) => {
+          const param = TAG_AXIS_PARAM[axis]
+          const selected = currentTag(axis)
+          return (
+            <FilterGroup key={axis} title={TAG_AXIS_LABEL[axis]}>
+              {tagFacets[axis].map((term) => (
+                <FilterButton
+                  key={term.slug}
+                  label={term.name}
+                  count={term.count}
+                  active={selected === term.slug}
+                  onClick={() => updateFilter(param, selected === term.slug ? null : term.slug)}
+                />
+              ))}
+            </FilterGroup>
+          )
+        })}
 
         <FilterGroup title="Difficulty">
           {['BEGINNER', 'INTERMEDIATE', 'ADVANCED'].map((d) => (
@@ -123,6 +205,11 @@ export function PatternLibraryGrid({
 
       <section className="cross-stitch-library-main">
         <div className="cross-stitch-library-sortbar">
+          <InlineSearch
+            value={currentFilters.q ?? ''}
+            placeholder={searchPlaceholder}
+            onCommit={(v) => updateFilter('q', v || null)}
+          />
           <span className="cross-stitch-library-result-count">
             {patterns.length} pattern{patterns.length === 1 ? '' : 's'}
           </span>
@@ -132,9 +219,9 @@ export function PatternLibraryGrid({
               value={currentFilters.sort}
               onChange={(e) => updateFilter('sort', e.target.value)}
             >
-              <option value="featured">Featured</option>
+              <option value="popular">Most popular</option>
               <option value="newest">Newest</option>
-              <option value="popular">Popular</option>
+              <option value="featured">Featured</option>
               <option value="size">By size</option>
             </select>
           </label>
@@ -157,6 +244,77 @@ export function PatternLibraryGrid({
   )
 }
 
+/**
+ * Inline search box for the grid header. Keeps a local value for snappy typing
+ * and commits to the `q` URL param on submit, on blur, or after a short pause —
+ * so the server-side filter and the shareable URL stay in step.
+ */
+function InlineSearch({
+  value,
+  placeholder,
+  onCommit,
+}: {
+  value: string
+  placeholder: string
+  onCommit: (value: string) => void
+}) {
+  const [text, setText] = useState(value)
+  const committed = useRef(value)
+
+  // Keep local text in step when the URL value changes from elsewhere (back
+  // button, Clear all).
+  useEffect(() => {
+    setText(value)
+    committed.current = value
+  }, [value])
+
+  // Debounced commit: push the query a beat after the reader stops typing.
+  useEffect(() => {
+    const trimmed = text.trim()
+    if (trimmed === committed.current) return
+    const t = setTimeout(() => {
+      committed.current = trimmed
+      onCommit(trimmed)
+    }, 350)
+    return () => clearTimeout(t)
+  }, [text, onCommit])
+
+  return (
+    <form
+      className="cross-stitch-library-search"
+      onSubmit={(e) => {
+        e.preventDefault()
+        const trimmed = text.trim()
+        committed.current = trimmed
+        onCommit(trimmed)
+      }}
+      role="search"
+    >
+      <Search size={15} strokeWidth={1.7} aria-hidden="true" />
+      <input
+        type="search"
+        value={text}
+        placeholder={placeholder}
+        aria-label="Search patterns"
+        onChange={(e) => setText(e.target.value)}
+      />
+      {text && (
+        <button
+          type="button"
+          aria-label="Clear search"
+          onClick={() => {
+            setText('')
+            committed.current = ''
+            onCommit('')
+          }}
+        >
+          <X size={14} strokeWidth={1.8} />
+        </button>
+      )}
+    </form>
+  )
+}
+
 function FilterGroup({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="cross-stitch-library-filter-group">
@@ -166,14 +324,27 @@ function FilterGroup({ title, children }: { title: string; children: React.React
   )
 }
 
-function FilterButton({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
+function FilterButton({
+  label,
+  active,
+  onClick,
+  count,
+}: {
+  label: string
+  active: boolean
+  onClick: () => void
+  count?: number
+}) {
   return (
     <button
       type="button"
       className={['cross-stitch-library-filter-button', active ? 'is-active' : ''].join(' ')}
       onClick={onClick}
     >
-      {label}
+      <span>{label}</span>
+      {typeof count === 'number' && (
+        <span className="cross-stitch-library-filter-count">{count}</span>
+      )}
     </button>
   )
 }

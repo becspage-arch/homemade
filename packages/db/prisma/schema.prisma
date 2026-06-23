@@ -4492,6 +4492,17 @@ model Pattern {
   fabricCountSuggested  Int          @default(14)
   recommendedHoopInches Decimal?     @db.Decimal(5, 2)
 
+  // Popularity signal (phase_pattern_popularity_001). Denormalised engagement
+  // counters + a derived popularityScore so "most popular" sorts on one indexed
+  // column. popularityScore = viewCount + 3*saveCount + 5*completionCount, kept
+  // consistent by atomic delta updates at each event (see lib/popularity.ts).
+  // Pre-launch every counter is 0, so a popularityScore sort falls back to
+  // publishedAt — i.e. most-recent — and auto-fills as real usage arrives.
+  viewCount       Int @default(0)
+  saveCount       Int @default(0)
+  completionCount Int @default(0)
+  popularityScore Int @default(0)
+
   // Additional finished-piece photographs the library detail page rotates
   // through. JSON array of Media.id strings; ordering is the rotation order.
   // Heroes (heroMediaId) take the primary card slot; gallery is the
@@ -4528,6 +4539,7 @@ model Pattern {
   @@index([forkedFromId])
   @@index([sourceTutorialId])
   @@index([heroMediaId])
+  @@index([popularityScore])
 }
 
 /// Sidecar so a Pattern can be retagged (free → marketplace → premium)
@@ -4863,6 +4875,15 @@ model CrochetPattern {
   visibility     Visibility  @default(PRIVATE)
   publishedAt    DateTime?
 
+  // Popularity signal (phase_pattern_popularity_001) — mirrors Pattern. Shared
+  // formula popularityScore = viewCount + 3*saveCount + 5*completionCount kept
+  // consistent by atomic delta updates. saveCount stays 0 until a crochet
+  // save path exists; completionCount seeds from CrochetProjectProgress.
+  viewCount       Int @default(0)
+  saveCount       Int @default(0)
+  completionCount Int @default(0)
+  popularityScore Int @default(0)
+
   // Relations
   designerId       String?
   designer         Designer?        @relation("DesignerCrochetPatterns", fields: [designerId], references: [id], onDelete: SetNull)
@@ -4903,6 +4924,7 @@ model CrochetPattern {
   @@index([primaryYarnWeightId])
   @@index([primaryHookId])
   @@index([heroMediaId])
+  @@index([popularityScore])
   @@index([craftStitchSlugs], type: Gin)
   @@index([craftTechniqueTags], type: Gin)
 }

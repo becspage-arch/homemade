@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { headers } from 'next/headers'
+import { after } from 'next/server'
 import { notFound } from 'next/navigation'
 import { prisma, Visibility, parsePatternData, estimateSkeinCount } from '@homemade/db'
+import { bumpPatternView } from '@/lib/popularity'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { buildBreadcrumbSchema } from '@/lib/seo/schema-builders'
 import { JsonLd } from '@/components/seo/json-ld'
@@ -52,6 +54,12 @@ export default async function PatternDetailPage({ params }: PageProps) {
     },
   })
   if (!row || row.ownerUserId !== null || row.visibility !== Visibility.PUBLIC) notFound()
+
+  // Real view signal feeding popularityScore. Runs after the response so it
+  // never adds latency to the page; a failed bump must not break the page.
+  after(async () => {
+    try { await bumpPatternView(row.id) } catch { /* best-effort counter */ }
+  })
 
   let data
   try { data = parsePatternData(row.data) } catch { notFound() }

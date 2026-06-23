@@ -1,13 +1,15 @@
 import Link from 'next/link'
 import { prisma, TutorialStatus, Visibility } from '@homemade/db'
-import { CategoryScopedSearch } from '@/components/public/category/category-scoped-search'
 import { FoundationsPath } from '@/components/public/category/foundations-path'
 import { PatternLibraryGrid } from '@/app/(public)/cross-stitch/patterns/pattern-library-grid'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import { isPremiumContent } from '@/lib/entitlements'
 import { CrochetPatternGrid } from './crochet-pattern-grid'
-import { CategoryStudioCTA } from '@/components/category/CategoryStudioCTA'
-import { isStudioCategorySlug } from '@/lib/studio/category-config'
+import {
+  getPatternTagFacets,
+  patternIdsForTags,
+  type TagFacets,
+} from '@/lib/pattern-tag-facets'
 
 const DESIGNER_SPOTLIGHT_TAKE = 6
 const RECENTLY_COMPLETED_TAKE = 8
@@ -33,6 +35,13 @@ interface PatternLayoutProps {
     hasBackstitch?: '1' | '0'
     hasFrenchKnots?: '1'
     yarnWeight?: string
+    // Free-text search scoped to this library + the cross-craft tag axes.
+    q?: string
+    occasion?: string
+    season?: string
+    style?: string
+    subject?: string
+    audience?: string
   }
   currentUserId: string | null
 }
@@ -47,47 +56,6 @@ const PATTERN_TYPE_BY_SLUG: Record<string, 'CROSS_STITCH' | 'KNITTING_CHART' | '
   'cross-stitch': 'CROSS_STITCH',
   knitting: 'KNITTING_CHART',
   crochet: 'CROCHET_CHART',
-}
-
-const SEARCH_SUGGESTIONS: Record<string, { label: string; q?: string; href?: string }[]> = {
-  // Cross-stitch chips jump straight to a filtered grid view (the scoped
-  // /search index covers tutorials, not patterns, so a text search returns
-  // nothing for a pattern library).
-  'cross-stitch': [
-    { label: 'Animals', href: '/cross-stitch?sub=animals#patterns' },
-    { label: 'Florals', href: '/cross-stitch?sub=florals#patterns' },
-    { label: 'Beginner-friendly', href: '/cross-stitch?difficulty=BEGINNER#patterns' },
-    { label: 'Under 5 hours', href: '/cross-stitch?maxHours=5#patterns' },
-    { label: 'No back-stitch', href: '/cross-stitch?hasBackstitch=0#patterns' },
-  ],
-  knitting: [
-    { label: 'Beginner scarf', q: 'beginner scarf' },
-    { label: 'Hats', q: 'hat' },
-    { label: 'Baby blanket', q: 'baby blanket' },
-    { label: 'Socks', q: 'sock' },
-    { label: 'Garments', q: 'garment sweater' },
-  ],
-  crochet: [
-    { label: 'Granny squares', q: 'granny square' },
-    { label: 'Amigurumi', q: 'amigurumi' },
-    { label: 'Blankets', q: 'blanket' },
-    { label: 'Quick gift', q: 'small gift' },
-    { label: 'Beginner', q: 'beginner' },
-  ],
-  needlework: [
-    { label: 'Blackwork', q: 'blackwork' },
-    { label: 'Hardanger', q: 'hardanger' },
-    { label: 'Sashiko', q: 'sashiko' },
-    { label: 'Surface embroidery', q: 'embroidery' },
-    { label: 'Beginner', q: 'beginner' },
-  ],
-  sewing: [
-    { label: 'Aprons', q: 'apron' },
-    { label: 'Bags', q: 'bag' },
-    { label: 'Mending', q: 'mending' },
-    { label: 'Quilting', q: 'quilt' },
-    { label: 'Soft toys', q: 'soft toy' },
-  ],
 }
 
 const STUDIO_CTAS: Record<string, { primary?: { label: string; href: string }; secondary?: { label: string; href: string } }> = {
@@ -105,9 +73,32 @@ const STUDIO_CTAS: Record<string, { primary?: { label: string; href: string }; s
   sewing: {},
 }
 
+// The Studio home for the third hero button ("Open the Studio"). Only set for
+// crafts whose Studio is live; the photo / blank CTAs above open the same
+// Studio in a starting mode, so this is the plain "just open it" door.
+const STUDIO_HOME_HREF: Record<string, string> = {
+  'cross-stitch': '/studio/cross-stitch',
+}
+
 export async function PatternLayout({ category, searchParams, currentUserId }: PatternLayoutProps) {
   const sp = searchParams
   const patternType = PATTERN_TYPE_BY_SLUG[category.slug]
+  const isCrochet = category.slug === 'crochet'
+
+  // Cross-craft tag filters (Occasion / Season / Style / Subject / Audience) +
+  // free-text search, resolved against the live tag assignments. The selected
+  // tags AND together; an empty selection means no constraint.
+  const selectedTagSlugs = [sp.occasion, sp.season, sp.style, sp.subject, sp.audience].filter(
+    (s): s is string => Boolean(s),
+  )
+  const q = (sp.q ?? '').trim()
+  const tagIds = await patternIdsForTags(category.slug, selectedTagSlugs)
+  const textOr = q
+    ? [
+        { name: { contains: q, mode: 'insensitive' as const } },
+        { description: { contains: q, mode: 'insensitive' as const } },
+      ]
+    : null
 
   // Load patterns + foundations + designer spotlight in parallel.
   const where: Record<string, unknown> = {
@@ -123,21 +114,24 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
   if (sp.hasFrenchKnots === '1') where.hasFrenchKnots = true
   if (sp.maxHours) where.estimatedHours = { lte: Number(sp.maxHours) }
   if (sp.sub) where.subCategory = { slug: sp.sub, categoryId: category.id }
+  if (!isCrochet && tagIds !== null) where.id = { in: tagIds }
+  if (!isCrochet && textOr) where.OR = textOr
 
-  const sort = sp.sort ?? 'featured'
+  const sort = sp.sort ?? 'popular'
+  // Most popular leads; popularityScore falls back to publishedAt (most-recent)
+  // when engagement is still building, so the order always looks intentional.
   const orderBy =
     sort === 'newest'
-      ? { publishedAt: 'desc' as const }
+      ? [{ publishedAt: 'desc' as const }]
       : sort === 'size'
-        ? { totalStitches: 'asc' as const }
+        ? [{ totalStitches: 'asc' as const }]
         : sort === 'popular'
-          ? { updatedAt: 'desc' as const }
-          : { publishedAt: 'desc' as const }
+          ? [{ popularityScore: 'desc' as const }, { publishedAt: 'desc' as const }]
+          : [{ publishedAt: 'desc' as const }]
 
   // Crochet category surfaces CrochetPattern rows alongside the
   // cross-stitch-shaped Pattern surface. The PatternLayout falls
   // through to the Crochet block when category.slug === 'crochet'.
-  const isCrochet = category.slug === 'crochet'
   const crochetWhere: Record<string, unknown> = {
     ownerUserId: null,
     visibility: Visibility.PUBLIC,
@@ -147,13 +141,17 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
   if (sp.difficulty) crochetWhere.difficulty = sp.difficulty
   if (sp.sub) crochetWhere.subCategory = { slug: sp.sub, categoryId: category.id }
   if (sp.yarnWeight) crochetWhere.primaryYarnWeight = { slug: sp.yarnWeight }
+  if (isCrochet && tagIds !== null) crochetWhere.id = { in: tagIds }
+  if (isCrochet && textOr) crochetWhere.OR = textOr
 
   const crochetOrderBy =
     sp.sort === 'name'
       ? { name: 'asc' as const }
-      : { publishedAt: 'desc' as const }
+      : sp.sort === 'popular' || sp.sort === undefined
+        ? [{ popularityScore: 'desc' as const }, { publishedAt: 'desc' as const }]
+        : { publishedAt: 'desc' as const }
 
-  const [patterns, foundations, anchorPatterns, spotlightDesigner, crochetPatterns, recentlyCompleted] = await Promise.all([
+  const [patterns, foundations, anchorPatterns, spotlightDesigner, crochetPatterns, recentlyCompleted, tagFacets] = await Promise.all([
     patternType
       ? prisma.pattern.findMany({
           where,
@@ -208,7 +206,9 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
             subCategory: { categoryId: category.id },
             hero: { isNot: null },
           },
-          orderBy: { publishedAt: 'desc' },
+          // Most popular first (falls back to most-recent while engagement
+          // builds), so the hero strip is the genuine top of the library.
+          orderBy: [{ popularityScore: 'desc' }, { publishedAt: 'desc' }],
           take: 6,
           select: {
             id: true,
@@ -271,6 +271,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
           },
         })
       : Promise.resolve([]),
+    getPatternTagFacets(category.slug, category.id),
   ])
 
   const sizeFilter = sp.size ? SIZE_RANGES[sp.size] : null
@@ -296,8 +297,8 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
       )
     : new Set<string>()
 
-  const suggestions = SEARCH_SUGGESTIONS[category.slug]
   const studioCtas = STUDIO_CTAS[category.slug] ?? {}
+  const studioHomeHref = STUDIO_HOME_HREF[category.slug]
   const foundationsSubCat = category.subCategories.find(
     (sc) => sc.slug === 'foundations',
   )
@@ -321,9 +322,15 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
                 {studioCtas.secondary.label}
               </Link>
             )}
-            <Link href="#patterns" className="pattern-landing-action ghost">
-              Browse patterns ↓
-            </Link>
+            {studioHomeHref ? (
+              <Link href={studioHomeHref} className="pattern-landing-action ghost">
+                Open the Studio
+              </Link>
+            ) : (
+              <Link href="#patterns" className="pattern-landing-action ghost">
+                Browse patterns ↓
+              </Link>
+            )}
           </div>
         </div>
         {anchorPatterns.length > 0 && (
@@ -342,24 +349,6 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
           </ul>
         )}
       </header>
-
-      {isStudioCategorySlug(category.slug) && (() => {
-        const ctaHero = anchorPatterns[0]
-        return (
-          <CategoryStudioCTA
-            category={category.slug}
-            heroImageUrl={
-              ctaHero ? patternHeroUrl({ id: ctaHero.id, hero: ctaHero.hero }, 'card') : null
-            }
-          />
-        )
-      })()}
-
-      <CategoryScopedSearch
-        categorySlug={category.slug}
-        placeholder={patternSearchPlaceholder(category.slug)}
-        suggestions={suggestions}
-      />
 
       {foundations.length > 0 && (
         <FoundationsPath
@@ -544,6 +533,8 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
                 slug: s.slug,
                 name: s.name,
               }))}
+              tagFacets={tagFacets}
+              searchPlaceholder={patternSearchPlaceholder(category.slug)}
               currentFilters={{
                 sub: sp.sub ?? null,
                 difficulty: sp.difficulty ?? null,
@@ -551,6 +542,12 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
                 sort,
                 hasBackstitch: sp.hasBackstitch === '1',
                 hasFrenchKnots: sp.hasFrenchKnots === '1',
+                q: q || null,
+                occasion: sp.occasion ?? null,
+                season: sp.season ?? null,
+                style: sp.style ?? null,
+                subject: sp.subject ?? null,
+                audience: sp.audience ?? null,
               }}
               basePath={`/${category.slug}`}
             />

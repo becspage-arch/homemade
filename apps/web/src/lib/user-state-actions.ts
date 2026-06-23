@@ -6,6 +6,7 @@ import { prisma, UserProjectStatus, type Prisma } from '@homemade/db'
 import { audit } from './audit'
 import { getCurrentDbUser } from './get-current-user'
 import { captureServerEvent } from './posthog'
+import { bumpPatternSave } from './popularity'
 import {
   nextHandleChangeAllowedAt,
   validateHandle,
@@ -106,6 +107,9 @@ export async function toggleSavedPattern(patternId: string): Promise<
     await prisma.savedPattern.create({ data: { userId: user.id, patternId } })
     saved = true
   }
+
+  // Keep the popularity counters in step with the save (real engagement signal).
+  await bumpPatternSave(patternId, saved ? 1 : -1)
 
   if (pattern.slug) revalidatePath(`/cross-stitch/patterns/${pattern.slug}`)
   revalidatePath('/me/bookmarks')
