@@ -208,8 +208,15 @@
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
+  /* Single row that fits the width: auto-fill keeps every visible column a
+     full ≥160px cell (never a partial), and any item that doesn't fit wraps to
+     a zero-height row that's clipped — so the overflow is dropped rather than
+     half-shown or scrolled. The column count recomputes at every width. */
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-auto-rows: 0;
+  column-gap: 16px;
+  row-gap: 0;
+  overflow: hidden;
 }
 
 .pattern-landing-spotlight-card a {
