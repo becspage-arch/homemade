@@ -37,7 +37,7 @@ function init() {
   applyAnalyticsConsent()
 }
 
-export function PostHogProvider({ children }: { children: React.ReactNode }) {
+export function PostHogProvider() {
   const { user, isLoaded } = useUser()
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -82,5 +82,10 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     posthog.capture('$pageview', { $current_url: url })
   }, [pathname, searchParams])
 
-  return <>{children}</>
+  // Pure analytics tracker — renders nothing. Kept out of the children tree so
+  // the page subtree below isn't forced behind this component's Suspense
+  // boundary (which exists only because useSearchParams() requires one). A page
+  // wrapped in that boundary streams its shell at 200 before notFound() can set
+  // a 404 — the soft-404 SEO bug. See layout.tsx.
+  return null
 }

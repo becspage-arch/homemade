@@ -55,12 +55,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <JsonLd data={[buildOrganizationSchema(), buildWebSiteSchema()]} />
         </head>
         <body>
+          {/*
+           * Analytics trackers live inside their own Suspense boundary because
+           * PostHogProvider calls useSearchParams(), which Next requires to be
+           * Suspense-wrapped. Crucially, {children} sits OUTSIDE this boundary:
+           * if the page subtree streamed behind a Suspense boundary, Next would
+           * flush the shell at HTTP 200 before a page's notFound() could set a
+           * 404 — the soft-404 SEO bug. Keeping children unsuspended forces the
+           * full page (including any notFound()) to resolve before the first
+           * byte, so the 404 status survives.
+           */}
           <Suspense>
-            <PostHogProvider>
-              <AcquisitionTracker />
-              {children}
-            </PostHogProvider>
+            <PostHogProvider />
+            <AcquisitionTracker />
           </Suspense>
+          {children}
         </body>
       </html>
     </ClerkProvider>
