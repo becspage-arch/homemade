@@ -5,11 +5,7 @@ import { PatternLibraryGrid } from '@/app/(public)/cross-stitch/patterns/pattern
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import { isPremiumContent } from '@/lib/entitlements'
 import { CrochetPatternGrid } from './crochet-pattern-grid'
-import {
-  getPatternTagFacets,
-  patternIdsForTags,
-  type TagFacets,
-} from '@/lib/pattern-tag-facets'
+import { getPatternTagFacets, patternIdsForTags } from '@/lib/pattern-tag-facets'
 
 const DESIGNER_SPOTLIGHT_TAKE = 6
 const RECENTLY_COMPLETED_TAKE = 8

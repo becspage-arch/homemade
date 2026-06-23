@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useEffect, useRef, useState } from 'react'
 import { Filter, Search, X } from 'lucide-react'
 import { PatternSaveHeart } from '@/components/public/pattern-save-heart'
 import {
@@ -245,9 +244,11 @@ export function PatternLibraryGrid({
 }
 
 /**
- * Inline search box for the grid header. Keeps a local value for snappy typing
- * and commits to the `q` URL param on submit, on blur, or after a short pause —
- * so the server-side filter and the shareable URL stay in step.
+ * Inline search box for the grid header. Uncontrolled native form (so it needs
+ * no client state and stays simple): it commits the typed query to the `q` URL
+ * param on submit — Enter or the search icon — and the X clears it. `key={value}`
+ * resets the field whenever the committed query changes from elsewhere (Clear
+ * all, the back button).
  */
 function InlineSearch({
   value,
@@ -258,56 +259,30 @@ function InlineSearch({
   placeholder: string
   onCommit: (value: string) => void
 }) {
-  const [text, setText] = useState(value)
-  const committed = useRef(value)
-
-  // Keep local text in step when the URL value changes from elsewhere (back
-  // button, Clear all).
-  useEffect(() => {
-    setText(value)
-    committed.current = value
-  }, [value])
-
-  // Debounced commit: push the query a beat after the reader stops typing.
-  useEffect(() => {
-    const trimmed = text.trim()
-    if (trimmed === committed.current) return
-    const t = setTimeout(() => {
-      committed.current = trimmed
-      onCommit(trimmed)
-    }, 350)
-    return () => clearTimeout(t)
-  }, [text, onCommit])
-
   return (
     <form
+      key={value}
+      role="search"
       className="cross-stitch-library-search"
       onSubmit={(e) => {
         e.preventDefault()
-        const trimmed = text.trim()
-        committed.current = trimmed
-        onCommit(trimmed)
+        const fd = new FormData(e.currentTarget)
+        onCommit(String(fd.get('q') ?? '').trim())
       }}
-      role="search"
     >
-      <Search size={15} strokeWidth={1.7} aria-hidden="true" />
+      <button type="submit" aria-label="Search patterns" className="cross-stitch-library-search-go">
+        <Search size={15} strokeWidth={1.7} aria-hidden="true" />
+      </button>
       <input
         type="search"
-        value={text}
+        name="q"
+        defaultValue={value}
         placeholder={placeholder}
         aria-label="Search patterns"
-        onChange={(e) => setText(e.target.value)}
+        autoComplete="off"
       />
-      {text && (
-        <button
-          type="button"
-          aria-label="Clear search"
-          onClick={() => {
-            setText('')
-            committed.current = ''
-            onCommit('')
-          }}
-        >
+      {value && (
+        <button type="button" aria-label="Clear search" onClick={() => onCommit('')}>
           <X size={14} strokeWidth={1.8} />
         </button>
       )}
