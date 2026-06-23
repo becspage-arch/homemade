@@ -1,4 +1,14 @@
+'use client'
+
 import Link from 'next/link'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { Filter, Search, X } from 'lucide-react'
+import {
+  TAG_AXES,
+  TAG_AXIS_LABEL,
+  TAG_AXIS_PARAM,
+  type TagFacets,
+} from '@/lib/pattern-tag-axes'
 
 interface CrochetPatternCardData {
   id: string
@@ -25,130 +35,275 @@ interface SubCategoryRef {
 interface Props {
   patterns: CrochetPatternCardData[]
   subCategories: SubCategoryRef[]
+  tagFacets: TagFacets
+  searchPlaceholder: string
   currentFilters: {
     sub: string | null
     difficulty: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' | null
     yarnWeight: string | null
-    sort: 'newest' | 'name'
+    sort: string
+    q: string | null
+    occasion: string | null
+    season: string | null
+    style: string | null
+    subject: string | null
+    audience: string | null
   }
   basePath: string
 }
 
+const TAG_FILTER_KEYS = ['occasion', 'season', 'style', 'subject', 'audience'] as const
+
 /**
- * Crochet pattern library grid — surfaces CrochetPattern rows on the
- * /crochet category landing. Cards lead with the thumbnail, then name,
- * sub-category, finished size, yarn + hook. Tap opens the Studio at
- * the pattern.
- *
- * Filters drive query-string navigation (Server Component pattern):
- * sub-category, difficulty, yarn weight, sort. The page re-renders
- * with the new params; client-side state isn't needed.
+ * Crochet pattern library grid. Shares the cross-stitch library shell + styles
+ * (sidebar filters + inline search + sort) so the pattern categories read the
+ * same, with crochet-specific card content (yarn / hook / finished size) and
+ * the cross-craft tag facets. Cards open straight into the Crochet Studio.
  */
-export function CrochetPatternGrid({ patterns, subCategories, currentFilters, basePath }: Props) {
-  const buildHref = (overrides: Partial<typeof currentFilters>): string => {
-    const params = new URLSearchParams()
-    const next = { ...currentFilters, ...overrides }
-    if (next.sub) params.set('sub', next.sub)
-    if (next.difficulty) params.set('difficulty', next.difficulty)
-    if (next.yarnWeight) params.set('yarnWeight', next.yarnWeight)
-    if (next.sort && next.sort !== 'newest') params.set('sort', next.sort)
+export function CrochetPatternGrid({
+  patterns,
+  subCategories,
+  tagFacets,
+  searchPlaceholder,
+  currentFilters,
+  basePath,
+}: Props) {
+  const router = useRouter()
+  const searchParams = useSearchParams()
+
+  const updateFilter = (key: string, value: string | null) => {
+    const params = new URLSearchParams(searchParams.toString())
+    if (value === null || value === '') params.delete(key)
+    else params.set(key, value)
     const qs = params.toString()
-    return qs ? `${basePath}?${qs}` : basePath
+    router.push(qs ? `${basePath}?${qs}#patterns` : `${basePath}#patterns`, { scroll: false })
+  }
+
+  const activeAxes = TAG_AXES.filter((axis) => tagFacets[axis]?.length)
+  const currentTag = (axis: (typeof TAG_AXES)[number]): string | null =>
+    currentFilters[TAG_AXIS_PARAM[axis] as keyof typeof currentFilters] as string | null
+
+  const anyFilterActive =
+    Boolean(currentFilters.sub) ||
+    Boolean(currentFilters.difficulty) ||
+    Boolean(currentFilters.yarnWeight) ||
+    Boolean(currentFilters.q) ||
+    TAG_FILTER_KEYS.some((k) => currentFilters[k])
+
+  const clearAll = () => {
+    const params = new URLSearchParams(searchParams.toString())
+    for (const k of ['sub', 'difficulty', 'yarnWeight', 'q', ...TAG_FILTER_KEYS]) params.delete(k)
+    const qs = params.toString()
+    router.push(qs ? `${basePath}?${qs}#patterns` : `${basePath}#patterns`, { scroll: false })
   }
 
   return (
-    <div className="crochet-pattern-grid">
-      <nav className="crochet-pattern-grid-filters" aria-label="Filter crochet patterns">
-        <div className="crochet-pattern-grid-filter-row">
-          <span className="crochet-pattern-grid-filter-label">Section</span>
-          <Link
-            href={buildHref({ sub: null })}
-            className={`crochet-pattern-grid-chip${currentFilters.sub === null ? ' is-active' : ''}`}
-          >
-            All
-          </Link>
+    <div className="cross-stitch-library-content">
+      <aside className="cross-stitch-library-sidebar" aria-label="Filters">
+        <div className="cross-stitch-library-sidebar-head">
+          <h2><Filter size={14} strokeWidth={1.6} /> Filter</h2>
+          {anyFilterActive && (
+            <button type="button" className="cross-stitch-library-clear" onClick={clearAll}>
+              Clear all
+            </button>
+          )}
+        </div>
+
+        <FilterGroup title="Section">
+          <FilterButton label="All sections" active={!currentFilters.sub} onClick={() => updateFilter('sub', null)} />
           {subCategories.map((s) => (
-            <Link
+            <FilterButton
               key={s.slug}
-              href={buildHref({ sub: s.slug })}
-              className={`crochet-pattern-grid-chip${currentFilters.sub === s.slug ? ' is-active' : ''}`}
-            >
-              {s.name}
-            </Link>
+              label={s.name}
+              active={currentFilters.sub === s.slug}
+              onClick={() => updateFilter('sub', s.slug)}
+            />
           ))}
-        </div>
+        </FilterGroup>
 
-        <div className="crochet-pattern-grid-filter-row">
-          <span className="crochet-pattern-grid-filter-label">Skill</span>
-          {(['BEGINNER', 'INTERMEDIATE', 'ADVANCED'] as const).map((d) => (
-            <Link
+        {activeAxes.map((axis) => {
+          const param = TAG_AXIS_PARAM[axis]
+          const selected = currentTag(axis)
+          return (
+            <FilterGroup key={axis} title={TAG_AXIS_LABEL[axis]}>
+              {tagFacets[axis].map((term) => (
+                <FilterButton
+                  key={term.slug}
+                  label={term.name}
+                  count={term.count}
+                  active={selected === term.slug}
+                  onClick={() => updateFilter(param, selected === term.slug ? null : term.slug)}
+                />
+              ))}
+            </FilterGroup>
+          )
+        })}
+
+        <FilterGroup title="Difficulty">
+          {['BEGINNER', 'INTERMEDIATE', 'ADVANCED'].map((d) => (
+            <FilterButton
               key={d}
-              href={buildHref({ difficulty: currentFilters.difficulty === d ? null : d })}
-              className={`crochet-pattern-grid-chip${currentFilters.difficulty === d ? ' is-active' : ''}`}
-            >
-              {d.charAt(0) + d.slice(1).toLowerCase()}
-            </Link>
+              label={pretty(d)}
+              active={currentFilters.difficulty === d}
+              onClick={() => updateFilter('difficulty', currentFilters.difficulty === d ? null : d)}
+            />
           ))}
-        </div>
-      </nav>
+        </FilterGroup>
+      </aside>
 
-      {patterns.length === 0 ? (
-        <p className="crochet-pattern-grid-empty">
-          No patterns match these filters yet. Try clearing one or browsing all.
-        </p>
-      ) : (
-        <ul className="crochet-pattern-grid-list">
-          {patterns.map((p) => {
-            const href = p.slug
-              ? `/studio/crochet?crochetPatternSlug=${encodeURIComponent(p.slug)}`
-              : `/studio/crochet?crochetPatternId=${encodeURIComponent(p.id)}`
-            return (
-              <li key={p.id} className="crochet-pattern-grid-card">
-                <Link href={href}>
-                  <div className="crochet-pattern-grid-thumb">
-                    {p.thumbnailMediaId ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={`/api/media/${p.thumbnailMediaId}?variant=card`}
-                        alt={p.name}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    ) : (
-                      <div className="crochet-pattern-grid-thumb-placeholder" aria-hidden />
-                    )}
-                    {p.premium && (
-                      <span className="crochet-pattern-grid-premium">Premium</span>
-                    )}
-                  </div>
-                  <div className="crochet-pattern-grid-meta">
-                    <span className="crochet-pattern-grid-name">{p.name}</span>
-                    <span className="crochet-pattern-grid-sub">
-                      {[
-                        p.subCategoryName,
-                        p.difficulty
-                          ? p.difficulty.charAt(0) + p.difficulty.slice(1).toLowerCase()
-                          : null,
-                        p.finishedSizeText,
-                      ]
-                        .filter(Boolean)
-                        .join(' · ')}
-                    </span>
-                    {(p.primaryYarnWeightName || p.primaryHookName) && (
-                      <span className="crochet-pattern-grid-yarn">
-                        {[p.primaryYarnWeightName, p.primaryHookName].filter(Boolean).join(' · ')}
-                      </span>
-                    )}
-                    {p.designerName && (
-                      <span className="crochet-pattern-grid-designer">by {p.designerName}</span>
-                    )}
-                  </div>
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
-      )}
+      <section className="cross-stitch-library-main">
+        <div className="cross-stitch-library-sortbar">
+          <InlineSearch
+            value={currentFilters.q ?? ''}
+            placeholder={searchPlaceholder}
+            onCommit={(v) => updateFilter('q', v || null)}
+          />
+          <span className="cross-stitch-library-result-count">
+            {patterns.length} pattern{patterns.length === 1 ? '' : 's'}
+          </span>
+          <label className="cross-stitch-library-sort">
+            <span>Sort</span>
+            <select value={currentFilters.sort} onChange={(e) => updateFilter('sort', e.target.value)}>
+              <option value="popular">Most popular</option>
+              <option value="newest">Newest</option>
+              <option value="name">By name</option>
+            </select>
+          </label>
+        </div>
+
+        {patterns.length === 0 ? (
+          <div className="cross-stitch-library-empty">
+            <p>No patterns match these filters yet.</p>
+            <p className="muted">Try lifting a filter, or browse all sections.</p>
+          </div>
+        ) : (
+          <ul className="cross-stitch-library-grid">
+            {patterns.map((p) => (
+              <CrochetCard key={p.id} pattern={p} />
+            ))}
+          </ul>
+        )}
+      </section>
     </div>
   )
+}
+
+function InlineSearch({
+  value,
+  placeholder,
+  onCommit,
+}: {
+  value: string
+  placeholder: string
+  onCommit: (value: string) => void
+}) {
+  return (
+    <form
+      key={value}
+      role="search"
+      className="cross-stitch-library-search"
+      onSubmit={(e) => {
+        e.preventDefault()
+        const fd = new FormData(e.currentTarget)
+        onCommit(String(fd.get('q') ?? '').trim())
+      }}
+    >
+      <button type="submit" aria-label="Search patterns" className="cross-stitch-library-search-go">
+        <Search size={15} strokeWidth={1.7} aria-hidden="true" />
+      </button>
+      <input
+        type="search"
+        name="q"
+        defaultValue={value}
+        placeholder={placeholder}
+        aria-label="Search patterns"
+        autoComplete="off"
+      />
+      {value && (
+        <button type="button" aria-label="Clear search" onClick={() => onCommit('')}>
+          <X size={14} strokeWidth={1.8} />
+        </button>
+      )}
+    </form>
+  )
+}
+
+function FilterGroup({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="cross-stitch-library-filter-group">
+      <h3>{title}</h3>
+      <div className="cross-stitch-library-filter-stack">{children}</div>
+    </div>
+  )
+}
+
+function FilterButton({
+  label,
+  active,
+  onClick,
+  count,
+}: {
+  label: string
+  active: boolean
+  onClick: () => void
+  count?: number
+}) {
+  return (
+    <button
+      type="button"
+      className={['cross-stitch-library-filter-button', active ? 'is-active' : ''].join(' ')}
+      onClick={onClick}
+    >
+      <span>{label}</span>
+      {typeof count === 'number' && <span className="cross-stitch-library-filter-count">{count}</span>}
+    </button>
+  )
+}
+
+function CrochetCard({ pattern: p }: { pattern: CrochetPatternCardData }) {
+  const href = p.slug
+    ? `/studio/crochet?crochetPatternSlug=${encodeURIComponent(p.slug)}`
+    : `/studio/crochet?crochetPatternId=${encodeURIComponent(p.id)}`
+  const meta = [
+    p.subCategoryName,
+    p.difficulty ? pretty(p.difficulty) : null,
+    p.finishedSizeText,
+  ].filter(Boolean)
+  const yarn = [p.primaryYarnWeightName, p.primaryHookName].filter(Boolean).join(' · ')
+  return (
+    <li className="cross-stitch-library-card">
+      <Link href={href} className="cross-stitch-library-card-thumb">
+        {p.thumbnailMediaId ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={`/api/media/${p.thumbnailMediaId}?variant=card`} alt="" loading="lazy" />
+        ) : (
+          <span aria-hidden />
+        )}
+        {p.premium && <span className="cross-stitch-library-card-badge">Premium</span>}
+      </Link>
+      <div className="cross-stitch-library-card-body">
+        <h4 className="cross-stitch-library-card-name">
+          <Link href={href}>{p.name}</Link>
+        </h4>
+        {p.designerName && <p className="cross-stitch-library-card-designer">by {p.designerName}</p>}
+        {meta.length > 0 && (
+          <ul className="cross-stitch-library-card-meta">
+            {meta.map((m, i) => (
+              <li key={i}>{m}</li>
+            ))}
+          </ul>
+        )}
+        <div className="cross-stitch-library-card-actions">
+          <Link href={href} className="cross-stitch-library-card-cta primary">
+            Open in Studio
+          </Link>
+        </div>
+        {yarn && <p className="cross-stitch-library-card-designer">{yarn}</p>}
+      </div>
+    </li>
+  )
+}
+
+function pretty(s: string): string {
+  return s.charAt(0) + s.slice(1).toLowerCase()
 }

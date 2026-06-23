@@ -482,11 +482,19 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
               subCategorySlug: p.subCategory?.slug ?? null,
             }))}
             subCategories={category.subCategories.map((s) => ({ slug: s.slug, name: s.name }))}
+            tagFacets={tagFacets}
+            searchPlaceholder={patternSearchPlaceholder(category.slug)}
             currentFilters={{
               sub: sp.sub ?? null,
               difficulty: sp.difficulty ?? null,
               yarnWeight: sp.yarnWeight ?? null,
-              sort: sp.sort === 'name' ? 'name' : 'newest',
+              sort: sp.sort ?? 'popular',
+              q: q || null,
+              occasion: sp.occasion ?? null,
+              season: sp.season ?? null,
+              style: sp.style ?? null,
+              subject: sp.subject ?? null,
+              audience: sp.audience ?? null,
             }}
             basePath={`/${category.slug}`}
           />
