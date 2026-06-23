@@ -4208,3 +4208,26 @@ culled ~636 crochet PATTERN rows to DRAFT; only one crochet chart row existed).
 ## Autopilot — Cross-stitch bulk-003 ✅ landed 2026-06-20
 
 50 net new PUBLISHED (23 → 73). Resumed from a previous context-reset session that had authored 19 briefs; completed the remaining 21 + re-used 6 fixed briefs from bulk-002. All 40 are TECHNIQUE type covering: foundation skills (stripping floss, threading, loop-start, half-cross, satin stitch, lazy daisy), fabric and tension (Aida selection, evenweave, cutting, hooping, in-hand, dark fabric, waste canvas), materials (floss estimation, colour selection, thread management, scroll frames, floor stand, hoop sizing), finishing (washing, ironing, pressing, framing, lacing on card, hoop display, sealing back, finishing back), and reference skills (chart reading, chart marking, magnetic chart keeper, needle minder, guideline removal, Aida band, over-two evenweave). Voice-check: 40/40 pass (0 errors, 0 warnings). Makeability gate: 40/40 pass. Heroes: all assigned via fixup-hero-fill (34 tutorials with images, 0 failures). QC: 62 cross-stitch candidates checked, 0 still-blocked. Cross-stitch 23 → 73 (32% of 230 target). Report: docs/cross-stitch-bulk-003-report.md. Briefs: docs/cross-stitch-bulk-003-briefs/.
+
+## Category pages — popularity + cross-stitch reference ✅ landed 2026-06-23
+
+Reworked the shared pattern-category page, cross-stitch as the reference
+(checkpoint 1 of the category-page overhaul). Real popularity signal:
+`viewCount`/`saveCount`/`completionCount` + a derived `popularityScore` on
+`Pattern` + `CrochetPattern` (migration `phase_pattern_popularity_001`, seeds
+from existing saves + completed progress, indexes the score). Atomic delta
+updates on detail-page view (`after()`, in `lib/popularity.ts`) and on save
+(`toggleSavedPattern`); pre-launch all zero, so popularity sorts fall back to
+most-recent. Hero strip + grid + "Popular" sort now order by `popularityScore`
+and **Most popular** is the default sort. Hero third button is **Open the
+Studio**; removed the redundant standalone Studio CTA card and scoped-search
+block. Grid header gained an inline search box (free-text `q`, server-filtered).
+Filters now surface the cross-craft tag axes — Subject / Style / Occasion /
+Season / Audience — derived live from `CollectionTagAssignment` with counts
+(`lib/pattern-tag-facets.ts`); empty axes (e.g. Audience on cross-stitch) don't
+render. Designer spotlight is now a single fitted row (clipped overflow, no
+partial/scroll). Data cleanup: retired the deploy's photographic demo-pattern
+seed (it recreated demo-blue-hydrangea / demo-pink-peony / demo-african-elephant
+under Stitching Mama every deploy) and deleted the rows + media; genuine
+Stitching Mama catalogue untouched. Rollout to the other 4 pattern categories +
+the other-archetype review are the next two checkpoints.
