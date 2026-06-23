@@ -250,16 +250,21 @@ async function ensureDesigner(): Promise<{ id: string; slug: string }> {
   if (DRY_RUN) return { id: 'DRY_RUN_DESIGNER', slug: 'stitching-mama' }
   return prisma.designer.upsert({
     where: { slug: 'stitching-mama' },
+    // Stitching Mama is an INDEPENDENT designer, not the Homemade house label.
+    // isHouseDesigner MUST stay false: the content gate keys premium status on
+    // it (non-house designer ⇒ premium content), and the designer spotlight
+    // only ever features non-house designers. Flipping this to true would
+    // silently make all ~38 patterns read as free.
     create: {
       slug: 'stitching-mama',
       displayName: 'Stitching Mama',
       bio: DESIGNER_BIO,
-      isHouseDesigner: true,
+      isHouseDesigner: false,
     },
     update: {
       displayName: 'Stitching Mama',
       bio: DESIGNER_BIO,
-      isHouseDesigner: true,
+      isHouseDesigner: false,
     },
     select: { id: true, slug: true },
   })

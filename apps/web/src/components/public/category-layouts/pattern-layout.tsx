@@ -616,13 +616,16 @@ function patternSearchPlaceholder(slug: string): string {
 /**
  * Pick the designer to spotlight for this category, rotating every 2 days.
  *
- * Eligible designers are those with at least 2 PUBLIC + published patterns
- * in the category. They're ordered newest-first by their createdAt; the
- * rotation index advances every 2 days so each designer gets a fair turn.
+ * The spotlight only ever features INDEPENDENT (non-house) designers — it's
+ * the showcase for the designer revenue-share library, never the Homemade
+ * house designer. Eligible designers are non-house designers with at least 2
+ * PUBLIC + published patterns in the category. They're ordered newest-first by
+ * their createdAt; the rotation index advances every 2 days so each designer
+ * gets a fair turn.
  *
- * Falls back to most-popular ordering (patternCount desc) when the
- * newest-first cycle would land on the same designer it just left, which
- * happens when the category has only one eligible designer.
+ * Returns null when no independent designer qualifies — the caller then renders
+ * nothing for the spotlight, so a house-only category shows no section rather
+ * than featuring Homemade as the lone "designer".
  */
 async function pickRotatingDesigner({
   categoryId,
@@ -631,26 +634,39 @@ async function pickRotatingDesigner({
   categoryId: string
   patternType: 'CROSS_STITCH' | 'KNITTING_CHART' | 'CROCHET_CHART'
 }) {
+  // The pattern filter that defines an "eligible" pattern for this category.
+  // Reused for the eligibility count and the hydration query so they agree.
+  const patternFilter = {
+    ownerUserId: null,
+    visibility: Visibility.PUBLIC,
+    publishedAt: { not: null },
+    type: patternType,
+    subCategory: { categoryId },
+  }
+
   const eligibleWhere = {
-    patterns: {
-      some: {
-        ownerUserId: null,
-        visibility: Visibility.PUBLIC,
-        publishedAt: { not: null },
-        type: patternType,
-        subCategory: { categoryId },
-      },
-    },
+    // Independent-only: never feature the house designer (Homemade).
+    isHouseDesigner: false,
+    patterns: { some: patternFilter },
   }
 
   // Pull the full eligible list with a hard cap so a deep designer list
   // doesn't pull a huge result set; 50 is generous for the foreseeable.
-  const newestFirst = await prisma.designer.findMany({
+  // _count is the number of patterns matching the same filter, so we can
+  // require at least 2 before the rotation ever lands on a designer — that
+  // keeps the cycle from picking a 1-pattern designer the section would then
+  // hide, leaving the spotlight blank while another independent qualifies.
+  const candidates = await prisma.designer.findMany({
     where: eligibleWhere,
     orderBy: [{ createdAt: 'desc' }],
     take: 50,
-    select: { id: true, createdAt: true },
+    select: {
+      id: true,
+      createdAt: true,
+      _count: { select: { patterns: { where: patternFilter } } },
+    },
   })
+  const newestFirst = candidates.filter((d) => d._count.patterns >= 2)
 
   if (newestFirst.length === 0) return null
 
@@ -679,13 +695,7 @@ async function pickRotatingDesigner({
       websiteUrl: true,
       avatar: { select: { cloudflareId: true, r2Key: true } },
       patterns: {
-        where: {
-          ownerUserId: null,
-          visibility: Visibility.PUBLIC,
-          publishedAt: { not: null },
-          type: patternType,
-          subCategory: { categoryId },
-        },
+        where: patternFilter,
         orderBy: { publishedAt: 'desc' },
         take: DESIGNER_SPOTLIGHT_TAKE,
         select: {
