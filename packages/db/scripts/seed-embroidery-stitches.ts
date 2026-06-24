@@ -50,6 +50,7 @@ async function main(): Promise<void> {
         category: s.family,
         difficulty: s.difficulty,
         notes: s.usedFor,
+        aliases: s.aliases ?? [],
       },
       update: {
         craft: 'embroidery',
@@ -58,6 +59,7 @@ async function main(): Promise<void> {
         category: s.family,
         difficulty: s.difficulty,
         notes: s.usedFor,
+        aliases: s.aliases ?? [],
       },
     })
   }

@@ -36,6 +36,10 @@ export interface EmbroideryStitch {
   canonicalName: string
   /** only when the US name genuinely differs from the UK canonical. */
   usName?: string
+  /** alternate / historic / non-English names external patterns may use (whipped
+   *  wheel, point d'araignee, daisy stitch...). Lower-case. Seeds Stitch.aliases so
+   *  an external pattern's stitch name resolves to the controlled slug. */
+  aliases?: string[]
   family: StitchFamily
   difficulty: StitchDifficulty
   /** short "what it's for" — becomes Stitch.notes + seeds the teaching intro. */
@@ -59,14 +63,14 @@ export const EMBROIDERY_STITCHES: EmbroideryStitch[] = [
   { slug: 'long-and-short', canonicalName: 'Long and short stitch', family: 'flat-line', difficulty: 'ADVANCED', usedFor: 'painterly blended shading (needle painting)' },
   { slug: 'straight', canonicalName: 'Straight stitch', family: 'flat-line', difficulty: 'BEGINNER', usedFor: 'single spokes, rays and scattered fillings' },
   { slug: 'seed', canonicalName: 'Seed stitch', family: 'flat-line', difficulty: 'BEGINNER', usedFor: 'light scattered texture and shading' },
-  { slug: 'holbein', canonicalName: 'Holbein stitch', usName: 'Double running stitch', family: 'flat-line', difficulty: 'INTERMEDIATE', usedFor: 'reversible line work for blackwork' },
+  { slug: 'holbein', canonicalName: 'Holbein stitch', usName: 'Double running stitch', aliases: ['double-running stitch', 'two-sided line stitch', 'spanish stitch'], family: 'flat-line', difficulty: 'INTERMEDIATE', usedFor: 'reversible line work for blackwork' },
   { slug: 'chevron', canonicalName: 'Chevron stitch', family: 'flat-line', difficulty: 'INTERMEDIATE', usedFor: 'zig-zag bands and borders' },
   { slug: 'brick', canonicalName: 'Brick stitch', family: 'flat-line', difficulty: 'BEGINNER', usedFor: 'offset rows of straight stitches for a smooth brick-laid filling' },
   { slug: 'pekinese', canonicalName: 'Pekinese stitch', family: 'flat-line', difficulty: 'INTERMEDIATE', usedFor: 'a decorative interlaced line laced through a back-stitch base' },
 
   // ── CHAIN ───────────────────────────────────────────────────────────────────
   { slug: 'chain', canonicalName: 'Chain stitch', family: 'chain', difficulty: 'BEGINNER', usedFor: 'bold outlines and line filling' },
-  { slug: 'detached-chain', canonicalName: 'Detached chain', usName: 'Lazy daisy', family: 'chain', difficulty: 'BEGINNER', usedFor: 'individual petals and leaves' },
+  { slug: 'detached-chain', canonicalName: 'Detached chain', usName: 'Lazy daisy', aliases: ['daisy stitch', 'single chain', 'lazy daisy stitch'], family: 'chain', difficulty: 'BEGINNER', usedFor: 'individual petals and leaves' },
   { slug: 'open-chain', canonicalName: 'Open chain stitch', family: 'chain', difficulty: 'INTERMEDIATE', usedFor: 'a ladder-like band, good over a second colour' },
   { slug: 'twisted-chain', canonicalName: 'Twisted chain stitch', family: 'chain', difficulty: 'INTERMEDIATE', usedFor: 'a textured knotted-looking line' },
   { slug: 'cable-chain', canonicalName: 'Cable chain stitch', family: 'chain', difficulty: 'INTERMEDIATE', usedFor: 'a chain with a link of thread between each loop' },
@@ -105,20 +109,20 @@ export const EMBROIDERY_STITCHES: EmbroideryStitch[] = [
 
   // ── KNOTTED ─────────────────────────────────────────────────────────────────
   { slug: 'french-knot', canonicalName: 'French knot', family: 'knotted', difficulty: 'INTERMEDIATE', usedFor: 'dotted texture, flower centres and stamens' },
-  { slug: 'colonial-knot', canonicalName: 'Colonial knot', family: 'knotted', difficulty: 'INTERMEDIATE', usedFor: 'a firmer knot for candlewicking and texture' },
-  { slug: 'bullion-knot', canonicalName: 'Bullion knot', family: 'knotted', difficulty: 'ADVANCED', usedFor: 'raised coils, rosebuds and lettering' },
+  { slug: 'colonial-knot', canonicalName: 'Colonial knot', aliases: ['candlewick knot', 'figure-eight knot'], family: 'knotted', difficulty: 'INTERMEDIATE', usedFor: 'a firmer knot for candlewicking and texture' },
+  { slug: 'bullion-knot', canonicalName: 'Bullion knot', aliases: ['bullion stitch', 'caterpillar stitch', 'worm stitch', 'roll stitch', 'coil stitch', 'post stitch'], family: 'knotted', difficulty: 'ADVANCED', usedFor: 'raised coils, rosebuds and lettering' },
   { slug: 'bullion-rose', canonicalName: 'Bullion rose', family: 'knotted', difficulty: 'ADVANCED', usedFor: 'dimensional roses built from bullion knots' },
   { slug: 'coral', canonicalName: 'Coral stitch', family: 'knotted', difficulty: 'BEGINNER', usedFor: 'a knotted outline line' },
   { slug: 'knotted-pearl', canonicalName: 'Knotted pearl stitch', family: 'knotted', difficulty: 'ADVANCED', usedFor: 'a raised beaded-looking band' },
   { slug: 'palestrina', canonicalName: 'Palestrina stitch', family: 'knotted', difficulty: 'INTERMEDIATE', usedFor: 'a knotted, bobbled outline' },
   { slug: 'four-legged-knot', canonicalName: 'Four-legged knot stitch', family: 'knotted', difficulty: 'INTERMEDIATE', usedFor: 'a scattered cross-with-knot filling' },
   { slug: 'drizzle', canonicalName: 'Drizzle stitch', family: 'knotted', difficulty: 'ADVANCED', usedFor: 'raised cast-on tendrils and stamens' },
-  { slug: 'turkey-work', canonicalName: 'Turkey work', family: 'knotted', difficulty: 'INTERMEDIATE', usedFor: 'looped or cut pile, fur and fluffy texture' },
+  { slug: 'turkey-work', canonicalName: 'Turkey work', aliases: ['turkey stitch', 'ghiordes knot', 'rug knot', 'velvet stitch'], family: 'knotted', difficulty: 'INTERMEDIATE', usedFor: 'looped or cut pile, fur and fluffy texture' },
 
   // ── COMPOSITE / RAISED (stumpwork tier) ─────────────────────────────────────
-  { slug: 'woven-wheel', canonicalName: 'Woven wheel', usName: 'Woven spider web', family: 'composite-raised', difficulty: 'BEGINNER', usedFor: 'raised woven roses' },
-  { slug: 'ribbed-spider-web', canonicalName: 'Ribbed spider web', family: 'composite-raised', difficulty: 'INTERMEDIATE', usedFor: 'spoked decorative wheels' },
-  { slug: 'woven-picot', canonicalName: 'Woven picot', family: 'composite-raised', difficulty: 'ADVANCED', usedFor: 'detached petals and leaves in stumpwork' },
+  { slug: 'woven-wheel', canonicalName: 'Woven wheel', usName: 'Woven spider web', aliases: ['woven spider web wheel', 'spider web rose', 'woven rose'], family: 'composite-raised', difficulty: 'BEGINNER', usedFor: 'raised woven roses' },
+  { slug: 'ribbed-spider-web', canonicalName: 'Ribbed spider web', aliases: ['whipped wheel', 'whipped spider web', "point d'araignee", 'spider wheel'], family: 'composite-raised', difficulty: 'INTERMEDIATE', usedFor: 'spoked decorative wheels' },
+  { slug: 'woven-picot', canonicalName: 'Woven picot', aliases: ['detached leaf', 'detached petal', 'picot stitch'], family: 'composite-raised', difficulty: 'ADVANCED', usedFor: 'detached petals and leaves in stumpwork' },
   { slug: 'raised-cup', canonicalName: 'Raised cup stitch', family: 'composite-raised', difficulty: 'ADVANCED', usedFor: 'small raised cups and rings' },
   { slug: 'oyster', canonicalName: 'Oyster stitch', family: 'composite-raised', difficulty: 'INTERMEDIATE', usedFor: 'small twisted detached units, rosebuds' },
   { slug: 'granitos', canonicalName: 'Granitos', family: 'composite-raised', difficulty: 'BEGINNER', usedFor: 'small padded seed and petal shapes' },

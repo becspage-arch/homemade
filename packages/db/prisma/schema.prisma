@@ -4076,6 +4076,12 @@ model Stitch {
 
   notes String?
 
+  /// Alternate / historic / non-English names this stitch is also known by
+  /// (whipped wheel, lazy daisy, point d'araignee...). Lets an external
+  /// pattern's stitch name resolve to the canonical slug. Seeded from the
+  /// craft stitch dictionaries.
+  aliases String[] @default([])
+
   // Crochet image pipeline C — small (256x256) PNG render of the
   // chartSymbol glyph in isolation. Used by the stitch chooser picker,
   // the symbol-key explainer, and the public stitch directory. Rendered
