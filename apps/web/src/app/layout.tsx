@@ -11,6 +11,7 @@ import {
   buildWebSiteSchema,
 } from '@/lib/seo/schema-builders'
 import { siteOrigin } from '@/lib/seo/site-url'
+import { GA_MEASUREMENT_ID, gaConsentBootstrap } from '@/lib/ga'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -54,6 +55,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <html lang="en-GB" className={`${fraunces.variable} ${lora.variable}`}>
         <head>
           <JsonLd data={[buildOrganizationSchema(), buildWebSiteSchema()]} />
+          {/*
+           * Google Analytics 4 + Consent Mode v2. The bootstrap snippet sets
+           * every storage signal to denied BEFORE the gtag.js library loads
+           * and before hydration, so GA4 is cookieless until the visitor
+           * grants analytics consent. <GoogleAnalytics/> (in the body) flips
+           * analytics_storage reactively when the banner choice changes.
+           */}
+          {GA_MEASUREMENT_ID && (
+            <>
+              <script
+                dangerouslySetInnerHTML={{ __html: gaConsentBootstrap(GA_MEASUREMENT_ID) }}
+              />
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              />
+            </>
+          )}
         </head>
         <body>
           {/*
@@ -71,11 +90,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <AcquisitionTracker />
           </Suspense>
           {/*
-           * GA4 lives outside the Suspense boundary on purpose: it does not
-           * call useSearchParams(), so it must not sit behind the boundary
-           * that would otherwise flush the shell before notFound() resolves
-           * (the soft-404 SEO bug). Consent Mode keeps it cookieless until
-           * the visitor opts in.
+           * Reactive Consent Mode listener — pushes consent updates to GA4
+           * when the banner choice changes. The tag itself loads from <head>
+           * above. Renders null; kept outside the Suspense boundary so it
+           * never affects the soft-404 streaming behaviour.
            */}
           <GoogleAnalytics />
           {children}
