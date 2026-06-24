@@ -5,6 +5,8 @@ import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { countPublishedLibrary, formatLibraryCount } from '@/lib/library-count'
 import { checkoutEnabled } from '@/lib/stripe/config'
 import { isFeatureLive, type PremiumFeatureKey } from '@/lib/premium/feature-availability'
+import { getCurrentDbUser } from '@/lib/get-current-user'
+import { captureServerEvent } from '@/lib/posthog'
 import { PremiumPricing, type Currency } from './PremiumPricing'
 import './premium-page.css'
 
@@ -178,12 +180,20 @@ function Tick({ on }: { on: boolean }) {
 }
 
 export default async function PremiumPage() {
-  const [count, currency] = await Promise.all([
+  const [count, currency, user] = await Promise.all([
     countPublishedLibrary(),
     readCurrency(),
+    getCurrentDbUser(),
   ])
   const libraryCountLabel = formatLibraryCount(count)
   const groups = buildGroups(libraryCountLabel)
+
+  // Top of the revenue funnel — server-rendered so it always fires.
+  void captureServerEvent({
+    event: 'premium_page_viewed',
+    distinctId: user?.clerkId ?? 'anonymous',
+    properties: { currency, isPremium: Boolean(user?.premiumActive), signedIn: Boolean(user) },
+  })
 
   return (
     <div className="premium-page">

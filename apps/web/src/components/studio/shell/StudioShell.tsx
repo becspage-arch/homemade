@@ -29,6 +29,7 @@ import { useStudioAutosave } from './use-studio-autosave'
 import { BrandSwapDialog } from './BrandSwapDialog'
 import { UpgradeBlock } from '@/components/premium/UpgradeBlock'
 import { getStudioGateCopy } from '@/lib/studio/premium-gates'
+import { captureClientEvent } from '@/lib/client-analytics'
 import {
   StudioRecentlyAddedRail,
   type RailCard,
@@ -84,6 +85,13 @@ export function StudioShell({
   const [brandSwapOpen, setBrandSwapOpen] = useState(false)
 
   const initialStitched = useMemo(() => new Set(stitchedKeys), [stitchedKeys])
+
+  // Feature-adoption signal — one per Studio open. `feature_used` powers the
+  // cross-product reach metric; `studio_opened` carries the craft + entry mode.
+  useEffect(() => {
+    captureClientEvent('studio_opened', { craft: 'cross_stitch', mode: startMode })
+    captureClientEvent('feature_used', { feature: 'studio', productArea: 'cross_stitch' })
+  }, [startMode])
 
   // Pull stable action refs via selectors. `const store = useChartStore()`
   // would subscribe this component to every store change and put a new

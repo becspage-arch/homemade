@@ -104,6 +104,47 @@ export type PosthogEvent =
   | 'signup_rejected_not_allowlisted'
   | 'signup_allowlist_email_added'
   | 'signup_allowlist_email_removed'
+  // Feature adoption (cross-product reach)
+  | 'feature_used'
+  | 'studio_opened'
+  | 'studio_pattern_rendered'
+  | 'studio_exported'
+  // Revenue / subscription (Stripe — live)
+  | 'premium_page_viewed'
+  | 'premium_plan_selected'
+  | 'checkout_started'
+  | 'checkout_completed'
+  | 'checkout_abandoned'
+  | 'subscription_started'
+  | 'subscription_renewed'
+  | 'subscription_payment_failed'
+  | 'subscription_dunning_recovered'
+  | 'subscription_cancellation_scheduled'
+  | 'subscription_cancelled'
+  | 'subscription_reactivated'
+  | 'subscription_plan_changed'
+  | 'subscription_refunded'
+  | 'billing_portal_opened'
+  | 'guarantee_refund_claimed'
+  // Conversion gates (every premium gate, any product area)
+  | 'premium_gate_viewed'
+  | 'premium_gate_cta_clicked'
+  | 'upgrade_cta_clicked'
+  // Creator economy — money (mostly catalogued ahead of the surface)
+  | 'gift_sent'
+  | 'gift_received'
+  | 'creator_earning_accrued'
+  | 'affiliate_link_clicked'
+  | 'affiliate_commission_earned'
+  | 'credit_earned'
+  | 'credit_redeemed'
+  | 'payout_requested'
+  | 'payout_completed'
+  | 'creator_fund_allocated'
+  // Referral / virality (catalogued ahead of the surface)
+  | 'invite_sent'
+  | 'invite_accepted'
+  | 'creator_earnings_shared'
   // Recipe authoring + scaling
   | 'ingredients_scaled'
   | 'ingredient_created_inline'
@@ -167,6 +208,42 @@ const EVENT_CATEGORIES: Record<string, string> = {
   tutorial_shared: 'engagement',
   ingredients_scaled: 'engagement',
   ingredient_created_inline: 'engagement',
+  feature_used: 'engagement',
+  studio_opened: 'engagement',
+  studio_pattern_rendered: 'engagement',
+  studio_exported: 'engagement',
+  premium_page_viewed: 'revenue',
+  premium_plan_selected: 'revenue',
+  checkout_started: 'revenue',
+  checkout_completed: 'revenue',
+  checkout_abandoned: 'revenue',
+  subscription_started: 'revenue',
+  subscription_renewed: 'revenue',
+  subscription_payment_failed: 'revenue',
+  subscription_dunning_recovered: 'revenue',
+  subscription_cancellation_scheduled: 'revenue',
+  subscription_cancelled: 'revenue',
+  subscription_reactivated: 'revenue',
+  subscription_plan_changed: 'revenue',
+  subscription_refunded: 'revenue',
+  billing_portal_opened: 'revenue',
+  guarantee_refund_claimed: 'revenue',
+  premium_gate_viewed: 'conversion',
+  premium_gate_cta_clicked: 'conversion',
+  upgrade_cta_clicked: 'conversion',
+  gift_sent: 'creator_economy',
+  gift_received: 'creator_economy',
+  creator_earning_accrued: 'creator_economy',
+  affiliate_link_clicked: 'creator_economy',
+  affiliate_commission_earned: 'creator_economy',
+  credit_earned: 'creator_economy',
+  credit_redeemed: 'creator_economy',
+  payout_requested: 'creator_economy',
+  payout_completed: 'creator_economy',
+  creator_fund_allocated: 'creator_economy',
+  invite_sent: 'referral',
+  invite_accepted: 'referral',
+  creator_earnings_shared: 'referral',
   user_recipe_draft_saved: 'content',
   user_recipe_submitted: 'content',
   user_recipe_approved: 'content',

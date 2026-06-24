@@ -26,6 +26,7 @@ export function PremiumDownloadButton({
   isPremium,
   gateMessage = 'Printing and downloading are part of Homemade Premium.',
   gateRationale = 'Premium unlocks a clean PDF or print of any recipe, list, or pattern.',
+  productArea,
 }: {
   children: ReactNode
   className?: string
@@ -36,6 +37,8 @@ export function PremiumDownloadButton({
   isPremium?: boolean
   gateMessage?: string
   gateRationale?: string
+  /** Product area for gate analytics, e.g. `cooking`, `cross_stitch`. */
+  productArea?: string
 }) {
   const ctxPremium = useHasPremium()
   const premium = isPremium ?? ctxPremium
@@ -67,7 +70,13 @@ export function PremiumDownloadButton({
         {children}
       </button>
       {showGate && (
-        <UpgradeBlock message={gateMessage} rationale={gateRationale} compact />
+        <UpgradeBlock
+          message={gateMessage}
+          rationale={gateRationale}
+          compact
+          gate="download"
+          productArea={productArea}
+        />
       )}
     </>
   )

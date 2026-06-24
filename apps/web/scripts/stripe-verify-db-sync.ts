@@ -67,7 +67,7 @@ async function main() {
     // ── Sync the active subscription ──
     console.log('Sync active subscription')
     const resolved = await syncSubscription(stripe, sub)
-    check('resolved to our user', resolved === user.id)
+    check('resolved to our user', resolved?.userId === user.id)
 
     const afterActive = await prisma.user.findUnique({ where: { id: user.id } })
     check('premiumActive = true', afterActive?.premiumActive === true)

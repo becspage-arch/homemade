@@ -4,7 +4,23 @@ import * as Sentry from '@sentry/nextjs'
 import { prisma } from '@homemade/db'
 import { getStripe } from '@/lib/stripe/client'
 import { provisionAccountForCheckout } from '@/lib/stripe/provision'
-import { syncSubscription, syncSubscriptionById } from '@/lib/stripe/sync'
+import { syncSubscription, syncSubscriptionById, type SyncOutcome } from '@/lib/stripe/sync'
+import { capturePremiumServerEvent } from '@/lib/posthog'
+import type { PosthogEvent } from '@/lib/analytics-events'
+
+/** Fire a revenue event first-party only (never to PostHog). Never throws. */
+async function billingEvent(
+  clerkId: string | null | undefined,
+  event: PosthogEvent,
+  properties: Record<string, unknown>,
+): Promise<void> {
+  if (!clerkId) return
+  try {
+    await capturePremiumServerEvent({ event, distinctId: clerkId, properties })
+  } catch {
+    // analytics must never break the billing webhook
+  }
+}
 
 /**
  * Stripe webhook receiver — the ONLY writer of our billing state, so we own who
@@ -61,10 +77,57 @@ export async function POST(req: Request): Promise<Response> {
         await syncSubscription(stripe, event.data.object)
         break
       }
-      case 'invoice.payment_failed':
+      case 'invoice.payment_failed': {
+        const invoice = event.data.object
+        const subId = extractSubscriptionId(invoice)
+        const outcome = subId ? await syncSubscriptionById(stripe, subId) : null
+        await billingEvent(outcome?.clerkId, 'subscription_payment_failed', {
+          plan: outcome?.plan ?? null,
+          currency: invoice.currency ?? outcome?.currency ?? null,
+          amountDue: typeof invoice.amount_due === 'number' ? invoice.amount_due / 100 : null,
+          attemptCount: invoice.attempt_count ?? null,
+        })
+        break
+      }
       case 'invoice.paid': {
-        const subId = extractSubscriptionId(event.data.object)
-        if (subId) await syncSubscriptionById(stripe, subId)
+        const invoice = event.data.object
+        const subId = extractSubscriptionId(invoice)
+        const outcome = subId ? await syncSubscriptionById(stripe, subId) : null
+        // The very first invoice (subscription_create) is covered by
+        // subscription_started; only count recurring cycles as renewals.
+        if (outcome && invoice.billing_reason === 'subscription_cycle') {
+          await billingEvent(outcome.clerkId, 'subscription_renewed', {
+            plan: outcome.plan,
+            currency: invoice.currency ?? outcome.currency ?? null,
+            amountPaid: typeof invoice.amount_paid === 'number' ? invoice.amount_paid / 100 : null,
+          })
+        }
+        // A paid invoice after >1 attempt means dunning recovered the payment.
+        if (outcome && (invoice.attempt_count ?? 0) > 1) {
+          await billingEvent(outcome.clerkId, 'subscription_dunning_recovered', {
+            plan: outcome.plan,
+            currency: invoice.currency ?? outcome.currency ?? null,
+            attemptCount: invoice.attempt_count ?? null,
+          })
+        }
+        break
+      }
+      case 'charge.refunded': {
+        const charge = event.data.object
+        const customerId =
+          typeof charge.customer === 'string' ? charge.customer : (charge.customer?.id ?? null)
+        const user = customerId
+          ? await prisma.user.findUnique({
+              where: { stripeCustomerId: customerId },
+              select: { clerkId: true },
+            })
+          : null
+        await billingEvent(user?.clerkId, 'subscription_refunded', {
+          currency: charge.currency ?? null,
+          amountRefunded:
+            typeof charge.amount_refunded === 'number' ? charge.amount_refunded / 100 : null,
+          fullyRefunded: charge.refunded === true,
+        })
         break
       }
       default:
@@ -97,6 +160,8 @@ async function handleCheckoutCompleted(
 ): Promise<void> {
   // Subscriptions only — ignore any future one-off payment sessions.
   if (session.mode !== 'subscription') return
+
+  const isGuestCheckout = !session.metadata?.homemadeUserId
 
   const stripeCustomerId =
     typeof session.customer === 'string'
@@ -133,10 +198,18 @@ async function handleCheckoutCompleted(
     typeof session.subscription === 'string'
       ? session.subscription
       : (session.subscription?.id ?? null)
+  let outcome: SyncOutcome | null = null
   if (subscriptionId) {
     const sub = await stripe.subscriptions.retrieve(subscriptionId)
-    await syncSubscription(stripe, sub, { knownUserId: userId ?? undefined })
+    outcome = await syncSubscription(stripe, sub, { knownUserId: userId ?? undefined })
   }
+
+  await billingEvent(outcome?.clerkId, 'checkout_completed', {
+    plan: session.metadata?.plan ?? outcome?.plan ?? null,
+    currency: session.currency ?? session.metadata?.currency ?? null,
+    amountTotal: typeof session.amount_total === 'number' ? session.amount_total / 100 : null,
+    isGuestCheckout,
+  })
 }
 
 /** Pull the subscription id off an invoice object, defensive across versions. */

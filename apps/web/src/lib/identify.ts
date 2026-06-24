@@ -32,6 +32,10 @@ export async function identifyCurrentUser(user: User | null): Promise<void> {
       utmTerm: user.utmTerm ?? undefined,
       country: user.country ?? undefined,
       deviceClass: user.deviceClass ?? undefined,
+      // Subscription state — lets retention/cohort queries slice on paid status.
+      isPremium: user.premiumActive,
+      premiumSince: user.premiumSince?.toISOString() ?? undefined,
+      premiumUntil: user.premiumUntil?.toISOString() ?? undefined,
     },
   })
 }

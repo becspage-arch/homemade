@@ -182,7 +182,7 @@ analytics).
 | `form_abandoned` | Client-side: any signup / multi-step form where the user opens it, interacts with a field, and navigates away without submitting. Fired on `pagehide`. | `formId` |
 | `rate_limit_hit` | `checkRateLimit` returns `allowed: false` in any of the UGC server actions. Server-side. | `bucket`, `tutorialId?` |
 | `nsfw_auto_rejected` | `submitUgcPhoto` decision is `auto-reject`. Server-side. | `tutorialId`, `photoId`, `score` |
-| `payment_failed` | Phase 7 / 8 placeholder — no firing path yet. | (TBD) |
+| `payment_failed` | Superseded by `subscription_payment_failed` (see Revenue). | — |
 | `error_boundary_triggered` | React error boundary catches a render error in the `(public)` route group (root + tutorial-scoped boundaries). Client-side. Also reported to Sentry via `Sentry.captureException`. | `path`, `errorName`, `errorMessage` (truncated to 120 chars), `digest` (Next.js error digest, nullable), `scope` (`tutorial` for the per-tutorial boundary, omitted for the root one) |
 
 ### Admin overhaul (cmd-K + saved filters + bulk + dashboard)
@@ -213,6 +213,74 @@ Already wired by Phase 5 / services-activation; properties expanded here.
 | `question_answered` | `questionId`, `isAuthorAnswer` |
 | `errata_submitted` | `tutorialId` |
 
+### Revenue / subscription (Stripe — LIVE)
+
+Fired first-party only (`capturePremiumServerEvent`, never mirrored to
+PostHog) so £ amounts / MRR never leave our own store. Distinct id is the
+Clerk id. All amounts are major units (pounds/dollars), currency carried
+alongside; MRR/ARR/churn are derived in dashboards by summing per currency.
+
+| Event | Fires when | Properties |
+|---|---|---|
+| `premium_page_viewed` | `/premium` server render. Dual-fired (funnel entry, not money). | `currency`, `isPremium`, `signedIn` |
+| `premium_plan_selected` | Plan or currency toggle on `/premium`. Client. | `plan`, `currency` |
+| `checkout_started` | `createCheckoutSession` creates a Stripe session. Server, first-party. | `plan`, `currency`, `priceGbpOrUsd`, `signedIn` |
+| `checkout_completed` | `checkout.session.completed` webhook. | `plan`, `currency`, `amountTotal`, `isGuestCheckout` |
+| `checkout_abandoned` | Catalogued — derive in dashboards from `checkout_started` with no matching `checkout_completed`. Not fired. | — |
+| `subscription_started` | First-ever premium grant (exactly-once via the `premiumSince` stamp). | `plan`, `currency`, `interval`, `unitAmount`, `mrrApprox` |
+| `subscription_renewed` | `invoice.paid` with `billing_reason = subscription_cycle`. | `plan`, `currency`, `amountPaid` |
+| `subscription_payment_failed` | `invoice.payment_failed`. | `plan`, `currency`, `amountDue`, `attemptCount` |
+| `subscription_dunning_recovered` | `invoice.paid` after `attemptCount > 1`. | `plan`, `currency`, `attemptCount` |
+| `subscription_cancellation_scheduled` | `cancel_at_period_end` flips on while active. | `plan`, `currency`, `currentPeriodEnd` |
+| `subscription_cancelled` | Status transitions to `canceled`. | `plan`, `currency`, `wasScheduled` |
+| `subscription_reactivated` | Pending cancel un-scheduled, or a canceled sub revived. | `plan`, `currency` |
+| `subscription_plan_changed` | Price id on the sub changes (monthly↔annual etc.). | `fromPriceId`, `toPriceId`, `plan`, `currency` |
+| `subscription_refunded` | `charge.refunded` webhook. | `currency`, `amountRefunded`, `fullyRefunded` |
+| `billing_portal_opened` | `createPortalSession` opens the Stripe Customer Portal. | — |
+| `guarantee_refund_claimed` | Catalogued — wire when the Make-Something-You-Love guarantee claim flow exists. | (TBD) |
+
+### Conversion gates (every premium gate, any product area)
+
+Generic across all gates via the shared `UpgradeBlock` / `PreviewGate` /
+`PremiumDownloadButton` (pass `gate` + `productArea`). Dual-fired,
+consent-aware. Answers "which gate drives upgrades".
+
+| Event | Fires when | Properties |
+|---|---|---|
+| `premium_gate_viewed` | A gate is shown to a non-premium user. Client, on mount. | `gate`, `productArea` |
+| `premium_gate_cta_clicked` / `upgrade_cta_clicked` | The gate's upgrade CTA is tapped. Client. | `gate`, `productArea` |
+
+`gate` examples: `recipe_scaling`, `creator_content`, `download`,
+`photo_to_chart`, `grading`, `designer_library`. The sewing studio keeps its
+own richer `sewing_premium_gate_*` events; this trio covers everywhere else.
+
+### Creator economy — money (catalogued ahead of the surface)
+
+Most surfaces (Gifts, payouts via Stripe Connect, marketplace, affiliate)
+aren't built yet — these are in the type union so they're ready to wire the
+moment each surface lands, same discipline as the rest of the catalogue.
+When wired, fire first-party only (creator/maker earnings are sensitive).
+
+`gift_sent`, `gift_received`, `creator_earning_accrued`,
+`affiliate_link_clicked`, `affiliate_commission_earned`, `credit_earned`,
+`credit_redeemed`, `payout_requested`, `payout_completed`,
+`creator_fund_allocated`. None fired yet.
+
+### Referral / virality (catalogued ahead of the surface)
+
+No invite system exists yet, so K-factor is currently uncomputable. Wire
+these when the invite + creator-earnings-share surfaces land.
+
+`invite_sent`, `invite_accepted`, `creator_earnings_shared`. None fired yet.
+
+### Feature adoption (cross-product reach)
+
+| Event | Fires when | Properties |
+|---|---|---|
+| `feature_used` | Generic reach event, ≤ once per user per feature per day. | `feature`, `productArea?` |
+| `studio_opened` | A craft Studio opens. **Wired: cross-stitch.** TODO: sewing / crochet / knitting / loom. | `craft`, `mode` |
+| `studio_pattern_rendered` / `studio_exported` | Catalogued — wire alongside the loom render + export surfaces. | (TBD) |
+
 ---
 
 ## User properties
@@ -240,8 +308,12 @@ Clerk webhook on `user.created`.
 - `deviceClass` — `mobile` / `tablet` / `desktop` (UA-sniffed at signup)
 - `firstSeenAt` — ISO timestamp of first visit / signup
 
-### Subscription (Phase 7 / 8 placeholder)
-- `subscriptionTier` — left `null` until premium ships
+### Subscription (LIVE — set from the User row via `identifyCurrentUser`)
+- `isPremium` — `User.premiumActive`
+- `premiumSince` — ISO timestamp of the first-ever premium grant
+- `premiumUntil` — ISO timestamp the current entitlement runs to
+- Plan / currency / status live on the `Subscription` mirror table; join
+  there for paid-cohort splits rather than denormalising onto the person.
 
 ---
 
@@ -271,6 +343,15 @@ bookmark used as a proxy for "showed interest beyond signup")_
 
 ### Deletion funnel
 `account_deletion_scheduled → ⚠ if cancelled within 30 days, drop out → account_deletion_completed`
+
+### Free → paid funnel
+`signup_completed → premium_page_viewed → checkout_started → checkout_completed → subscription_started`
+
+### Gate → upgrade funnel (per gate)
+`premium_gate_viewed → upgrade_cta_clicked → checkout_started → checkout_completed`, broken down by `gate` — shows which gate converts best.
+
+### Retained-paid funnel
+`subscription_started → subscription_renewed` (and churn = `subscription_cancelled` / `subscription_started` per cohort). Voluntary (`subscription_cancelled`) vs involuntary (`subscription_payment_failed` with no `subscription_dunning_recovered`).
 
 ---
 

@@ -4,12 +4,14 @@ import { headers } from 'next/headers'
 import * as Sentry from '@sentry/nextjs'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { siteOrigin } from '@/lib/seo/site-url'
+import { capturePremiumServerEvent } from '@/lib/posthog'
 import { getStripe } from './client'
 import {
   checkoutEnabled,
   isCurrency,
   isPlan,
   resolvePriceId,
+  PRICE_DISPLAY,
   type Currency,
   type Plan,
 } from './config'
@@ -100,6 +102,23 @@ export async function createCheckoutSession(input: {
     if (!session.url) {
       return { ok: false, error: 'Could not start checkout. Please try again.' }
     }
+
+    // Top of the revenue funnel — fired server-side so it can't be ad-blocked.
+    try {
+      await capturePremiumServerEvent({
+        event: 'checkout_started',
+        distinctId: user?.clerkId ?? 'anonymous',
+        properties: {
+          plan: input.plan,
+          currency: input.currency,
+          priceGbpOrUsd: PRICE_DISPLAY[input.currency][input.plan],
+          signedIn: Boolean(user),
+        },
+      })
+    } catch {
+      // analytics must never block a purchase
+    }
+
     return { ok: true, url: session.url }
   } catch (err) {
     Sentry.captureException(err, {
@@ -129,6 +148,15 @@ export async function createPortalSession(): Promise<CheckoutResult> {
       customer: user.stripeCustomerId,
       return_url: `${origin}/me/settings`,
     })
+    try {
+      await capturePremiumServerEvent({
+        event: 'billing_portal_opened',
+        distinctId: user.clerkId,
+        properties: {},
+      })
+    } catch {
+      // never block the portal redirect on analytics
+    }
     return { ok: true, url: session.url }
   } catch (err) {
     Sentry.captureException(err, {

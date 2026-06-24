@@ -16,6 +16,8 @@ export function PreviewGate({
   full,
   message,
   rationale,
+  gate = 'creator_content',
+  productArea,
 }: {
   isPremium: boolean
   /** Shown to non-premium users — the opening part of the content. */
@@ -24,12 +26,14 @@ export function PreviewGate({
   full: ReactNode
   message: string
   rationale?: string
+  gate?: string
+  productArea?: string
 }) {
   if (isPremium) return <>{full}</>
   return (
     <div className="premium-preview">
       <div className="premium-preview-fade">{preview}</div>
-      <UpgradeBlock message={message} rationale={rationale} />
+      <UpgradeBlock message={message} rationale={rationale} gate={gate} productArea={productArea} />
     </div>
   )
 }

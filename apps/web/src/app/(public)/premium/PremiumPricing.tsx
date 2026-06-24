@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState, useSyncExternalStore, useTransition } from 'react'
 import { createCheckoutSession } from '@/lib/stripe/checkout-actions'
+import { captureClientEvent } from '@/lib/client-analytics'
 import {
   isFeatureLive,
   type PremiumFeatureKey,
@@ -121,11 +122,17 @@ export function PremiumPricing({
 
   function chooseCurrency(next: Currency) {
     setOverride(next)
+    captureClientEvent('premium_plan_selected', { plan: cycle, currency: next })
     try {
       window.localStorage.setItem(CURRENCY_KEY, next)
     } catch {
       // localStorage unavailable (private mode): the choice just won't persist.
     }
+  }
+
+  function chooseCycle(next: Cycle) {
+    setCycle(next)
+    captureClientEvent('premium_plan_selected', { plan: next, currency })
   }
 
   function onCheckout() {
@@ -152,7 +159,7 @@ export function PremiumPricing({
             type="button"
             className={`premium-cycle-option${cycle === 'monthly' ? ' is-active' : ''}`}
             aria-pressed={cycle === 'monthly'}
-            onClick={() => setCycle('monthly')}
+            onClick={() => chooseCycle('monthly')}
           >
             Monthly
           </button>
@@ -160,7 +167,7 @@ export function PremiumPricing({
             type="button"
             className={`premium-cycle-option${cycle === 'annual' ? ' is-active' : ''}`}
             aria-pressed={cycle === 'annual'}
-            onClick={() => setCycle('annual')}
+            onClick={() => chooseCycle('annual')}
           >
             Annual
             <span className="premium-cycle-flag">2 months free</span>
