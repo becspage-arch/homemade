@@ -1,50 +1,101 @@
+/* /about — the brand story. Brand: Fraunces display, Lora body, cream / sage /
+   espresso palette. Calm, editorial, generous whitespace. Sibling to /premium. */
+
 .about-page {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 32px 24px 64px;
+  padding: 40px 24px 96px;
 }
 
-.about-header {
-  margin: 24px 0 32px;
+/* Hero */
+.about-hero {
+  text-align: center;
+  max-width: 660px;
+  margin: 28px auto 12px;
 }
-
 .about-eyebrow {
-  display: block;
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--color-warm-taupe, #8a7d68);
-  margin-bottom: 6px;
+  color: var(--color-warm-taupe);
+  margin: 0 0 16px;
 }
-
 .about-title {
   font-family: var(--font-fraunces);
-  font-size: 38px;
   font-weight: 400;
-  line-height: 1.15;
-  color: var(--color-charcoal, #2b2b2b);
+  font-size: clamp(34px, 6vw, 48px);
+  line-height: 1.1;
+  color: var(--color-espresso);
+  margin: 0 0 22px;
+}
+.about-lede {
+  font-family: var(--font-lora);
+  font-size: 19px;
+  line-height: 1.62;
+  color: var(--color-warm-taupe);
   margin: 0;
 }
 
-.about-body {
+/* Body sections */
+.about-section {
+  max-width: 620px;
+  margin: 0 auto;
+  padding-top: 44px;
+}
+.about-section h2 {
+  font-family: var(--font-fraunces);
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--color-forest);
+  margin: 0 0 14px;
+}
+.about-section p {
   font-family: var(--font-lora);
   font-size: 17px;
-  line-height: 1.65;
-  color: var(--color-charcoal, #2b2b2b);
-}
-
-.about-body h2 {
-  font-family: var(--font-fraunces);
-  font-size: 24px;
-  font-weight: 500;
-  margin: 32px 0 10px;
-}
-
-.about-body p {
+  line-height: 1.72;
+  color: var(--color-warm-taupe);
   margin: 0 0 16px;
 }
+.about-section p:last-child {
+  margin-bottom: 0;
+}
 
-.about-body a {
-  color: inherit;
+/* Worldview pull-quote — echoes the wordmark lockup: thin sage rule, italic */
+.about-quote {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 52px;
+  margin-top: 44px;
+  text-align: center;
+  font-family: var(--font-lora);
+  font-style: italic;
+  font-size: clamp(21px, 3.4vw, 26px);
+  line-height: 1.45;
+  color: var(--color-sage);
+}
+.about-quote::before {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 1.5px;
+  background: var(--color-sage);
+  opacity: 0.6;
+  margin: 0 auto 30px;
+}
+
+/* Maker call-to-action */
+.about-cta {
+  margin-top: 4px;
+}
+.about-cta a {
+  font-family: var(--font-lora);
+  color: var(--color-sage);
   border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+.about-cta a:hover {
+  color: var(--color-forest);
 }

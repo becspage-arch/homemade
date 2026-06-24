@@ -200,12 +200,6 @@ export default async function PremiumPage() {
       <header className="premium-hero">
         <p className="premium-hero-eyebrow">Homemade Premium</p>
         <h1 className="premium-hero-title">Make beautiful things, in any craft</h1>
-        <p className="premium-hero-lede">
-          One Homemade membership. Start free and stay free for as long as you
-          like. Premium adds the tools that make bigger projects easier:
-          downloads and printing, recipe planning, and turning a photo into a
-          cross-stitch pattern.
-        </p>
       </header>
 
       <PremiumPricing

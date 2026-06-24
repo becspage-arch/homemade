@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { LEGAL_ENTITY } from '@/lib/legal-entity'
 import { Breadcrumbs } from '@/components/public/breadcrumbs'
 import { JsonLd } from '@/components/seo/json-ld'
 import {
@@ -12,9 +11,9 @@ import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import './about-page.css'
 
 export const metadata: Metadata = buildPublicMetadata({
-  title: 'About Homemade — how the library is made',
+  title: 'About Homemade',
   description:
-    'How Homemade is built: editorial process, AI-assistance disclosure, sourcing policy and how to get in touch.',
+    'Homemade is one place for everything you might want to make at home: cooking, baking, growing, herbal preparations and traditional crafts, each one written out properly.',
   path: '/about',
   ogType: 'website',
 })
@@ -27,77 +26,82 @@ export default function AboutPage() {
   return (
     <article className="about-page">
       <JsonLd
-        data={[
-          buildOrganizationSchema(),
-          buildBreadcrumbSchema(breadcrumbs),
-        ]}
+        data={[buildOrganizationSchema(), buildBreadcrumbSchema(breadcrumbs)]}
       />
       <Breadcrumbs items={breadcrumbs} />
 
-      <header className="about-header">
-        <span className="about-eyebrow">About</span>
-        <h1 className="about-title">How Homemade is made</h1>
+      <header className="about-hero">
+        <p className="about-eyebrow">About</p>
+        <h1 className="about-title">The home of making things yourself</h1>
+        <p className="about-lede">
+          Homemade is one place for everything you might want to make at home.
+          The bread your family actually eats. The herbs on the kitchen
+          windowsill. The blanket you knit for someone you love. Recipes,
+          patterns and how-tos, each one written out properly and kept somewhere
+          calm enough to follow.
+        </p>
       </header>
 
-      <section className="about-body">
-        <h2>The brief</h2>
+      <section className="about-section">
+        <h2>The idea</h2>
         <p>
-          Homemade is a library of clear, tested instructions for making things
-          yourself — cooking, baking, herbal medicine, sewing, knitting, pottery,
-          growing, and the rest. Every tutorial is structured the same way so
-          you always know where to find ingredients, times, technique notes,
-          and the bit you actually need at 9pm on a Tuesday.
+          Making things by hand is one of the good, steady pleasures, and the
+          internet has made it strangely hard. The method you want is buried
+          under ten minutes of video, forty photographs and someone&apos;s life
+          story. The measurements contradict the comments. You give up, or you
+          muddle through.
         </p>
+        <p>
+          Homemade is the other way round. Every recipe, every craft, every
+          growing season is taken seriously and laid out with care, so you can
+          find what you need and get on with the making.
+        </p>
+      </section>
 
-        <h2>The editorial process</h2>
-        <p>
-          Every tutorial passes through one editorial pass before it goes live.
-          The pass checks the recipe scales, the times are realistic, the
-          technique cross-references resolve to genuine technique tutorials,
-          and the sources line up with what&apos;s claimed. Where a tutorial draws on
-          a specific text — a classic recipe, an extension service guide, a
-          herbal materia medica — that source is cited at the bottom of the
-          tutorial.
-        </p>
+      <blockquote className="about-quote">
+        Skills worth keeping are worth teaching properly. A slower life at home
+        is something to be proud of, not performed.
+      </blockquote>
 
-        <h2>AI assistance, used transparently</h2>
+      <section className="about-section">
+        <h2>What you&apos;ll find</h2>
         <p>
-          Drafts of the technique copy and the first cut of most tutorial
-          structures are produced with AI assistance. Every published tutorial
-          is reviewed by a human editor before it goes live; if a tutorial says
-          it was tested in the Homemade kitchen, garden or studio, it was. AI
-          is a drafting tool, not a publishing pipeline. We do not generate
-          tutorials and publish them blind.
+          Cooking and baking. Growing things, indoors and out. Herbal
+          preparations and a natural home. Knitting, crochet, cross-stitch,
+          sewing, pottery and more, with new crafts added as we go. Whatever you
+          are making, the page is built the same way, so you always know where
+          the ingredients are, how long it takes, and the one step you needed
+          reminding of.
         </p>
-        <p>
-          Photography is sourced from licenced libraries (Unsplash, Pexels,
-          Wikimedia Commons and similar) where it makes sense, original
-          photography where it doesn&apos;t, and clearly labelled procedural
-          cards as a last-resort fallback. Attribution sits on the hero image
-          and the source files are tracked per tutorial.
-        </p>
+      </section>
 
-        <h2>Makers</h2>
+      <section className="about-section">
+        <h2>How the library is made</h2>
         <p>
-          Makers are the people who use Homemade. Some publish their own
-          tutorials (the verified-Maker programme). Some share what they&apos;ve
-          made on their public profile under <Link href="/makers">/makers</Link>.
-          Both flow into the library — the Maker projects on a tutorial page
-          are the real test that the instructions work outside the kitchen
-          they were written in.
+          Every tutorial is researched, drafted and checked against the same
+          standard before it goes live: that the quantities work, the timings
+          are real, the techniques link through to proper instructions, and the
+          sources hold up. Where a tutorial leans on a particular book or guide,
+          it says so at the bottom.
         </p>
-
-        <h2>Getting in touch</h2>
         <p>
-          Privacy questions: <a href={`mailto:${LEGAL_ENTITY.dpoEmail}`}>{LEGAL_ENTITY.dpoEmail}</a>.
-          Copyright takedown: see <Link href="/legal/dmca">the DMCA policy</Link>.
-          Anything else: <a href={`mailto:${LEGAL_ENTITY.contactEmail}`}>{LEGAL_ENTITY.contactEmail}</a>.
+          We use modern tools to research and draft, and a strict set of checks
+          to make sure what reaches you is accurate, original, and written in a
+          real voice rather than churned-out filler.
         </p>
+      </section>
 
+      <section className="about-section">
+        <h2>Made with you</h2>
         <p>
-          Homemade is run by {LEGAL_ENTITY.name} in {LEGAL_ENTITY.jurisdiction}.
-          See the <Link href="/legal">legal pages</Link> for the full set of
-          policies that govern how the site works.
+          The people who use Homemade are Makers. Some cook from it on a Tuesday
+          night and never tell a soul. Some share what they have made on their
+          profile, and a few write tutorials of their own. What gets made from
+          these pages is the real test of whether the instructions work, and it
+          shapes what we write next.
+        </p>
+        <p className="about-cta">
+          <Link href="/makers">See what Makers are making</Link>
         </p>
       </section>
     </article>
