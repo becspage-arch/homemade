@@ -53,6 +53,14 @@ const COOKIES: CookieRow[] = [
     category: 'Analytics',
   },
   {
+    name: '_ga, _ga_*',
+    purpose:
+      'Google Analytics. Counts visits and measures which pages and features get used, using a pseudonymous identifier. Only set when you accept analytics cookies — until then Google runs in cookieless consent mode and stores nothing on your device.',
+    expiry: 'Up to 13 months',
+    party: 'Third',
+    category: 'Analytics',
+  },
+  {
     name: 'sentry-replay-session',
     purpose:
       'Sentry session replay (if enabled). Records error context so we can debug crashes. Only set when you accept error monitoring.',
@@ -102,9 +110,11 @@ export default function CookiesPage() {
         <h3>Analytics</h3>
         <p>
           Help us understand which tutorials are read, which features get
-          used, and where readers get stuck. We use PostHog with IP
-          truncation and a pseudonymous user ID. We never sell analytics
-          data to anyone.
+          used, and where readers get stuck. We use PostHog and Google
+          Analytics, both with a pseudonymous identifier and no selling of
+          your data to anyone. Until you accept analytics cookies, Google
+          Analytics runs in consent mode — it sends only aggregate, modelled
+          measurement and stores nothing on your device.
         </p>
 
         <h3>Error monitoring</h3>

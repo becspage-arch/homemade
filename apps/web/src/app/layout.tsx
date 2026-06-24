@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 import { Fraunces, Lora } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
 import { PostHogProvider } from '@/components/posthog-provider'
+import { GoogleAnalytics } from '@/components/google-analytics'
 import { AcquisitionTracker } from '@/components/acquisition-tracker'
 import { JsonLd } from '@/components/seo/json-ld'
 import {
@@ -69,6 +70,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <PostHogProvider />
             <AcquisitionTracker />
           </Suspense>
+          {/*
+           * GA4 lives outside the Suspense boundary on purpose: it does not
+           * call useSearchParams(), so it must not sit behind the boundary
+           * that would otherwise flush the shell before notFound() resolves
+           * (the soft-404 SEO bug). Consent Mode keeps it cookieless until
+           * the visitor opts in.
+           */}
+          <GoogleAnalytics />
           {children}
         </body>
       </html>

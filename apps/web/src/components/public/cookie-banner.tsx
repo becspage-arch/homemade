@@ -23,8 +23,11 @@ type View = 'compact' | 'customise'
 export function CookieBanner() {
   const [open, setOpen] = useState(false)
   const [view, setView] = useState<View>('compact')
-  const [analytics, setAnalytics] = useState(true)
-  const [errorMonitoring, setErrorMonitoring] = useState(true)
+  // GDPR/PECR: non-essential categories must default OFF. First-time visitors
+  // who open "Customise" see them unticked; returning visitors get their
+  // stored choice synced in on mount (below).
+  const [analytics, setAnalytics] = useState(false)
+  const [errorMonitoring, setErrorMonitoring] = useState(false)
   const [saving, setSaving] = useState(false)
 
   // Decide on mount whether the banner should be open. The initial render
@@ -199,7 +202,8 @@ export function CookieBanner() {
                   <span>
                     <strong>Analytics</strong>
                     <span className="cookie-banner-category-hint">
-                      PostHog product analytics, pseudonymous.
+                      How the site gets used, so we can make it better.
+                      PostHog and Google Analytics, both pseudonymous.
                     </span>
                   </span>
                 </label>

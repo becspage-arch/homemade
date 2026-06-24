@@ -136,6 +136,12 @@ export default function PrivacyPage() {
             consent) — pseudonymous event data. EU-region cluster.
           </li>
           <li>
+            <strong>Google Analytics</strong> (product analytics, only with
+            your consent) — pseudonymous usage measurement with IP
+            anonymisation. United States; until you consent it runs in
+            cookieless consent mode and sets nothing on your device.
+          </li>
+          <li>
             <strong>Sentry</strong> (error monitoring, only with your
             consent) — error events, stack traces, IP address. EU-region
             where available, otherwise United States.

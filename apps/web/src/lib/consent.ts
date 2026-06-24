@@ -14,9 +14,21 @@
  *    every user whose stored consent has an older version.
  */
 
-export const CURRENT_CONSENT_VERSION = '2026-05-11'
+// Bumped 2026-06-24: Google Analytics 4 added as an analytics processor
+// (wired to Google Consent Mode v2, default-denied). Adding a new third-party
+// analytics processor is a material change, so every existing visitor is
+// re-prompted to make a fresh, informed choice.
+export const CURRENT_CONSENT_VERSION = '2026-06-24'
 
 export const CONSENT_STORAGE_KEY = 'homemade-consent'
+/**
+ * Mirror of the consent decision written as a real cookie (not httpOnly) so
+ * server code can read it on the request. localStorage is the device source
+ * of truth for the client; this cookie is what lets the server gate the
+ * first-party analytics session identifier (PECR) without a round-trip.
+ */
+export const CONSENT_COOKIE_NAME = 'homemade-consent'
+const CONSENT_COOKIE_MAX_AGE = 60 * 60 * 24 * 365 // 12 months — matches the cookie policy
 /** Fired on the window when consent changes (banner -> wrappers). */
 export const CONSENT_CHANGE_EVENT = 'homemade-consent-changed'
 
@@ -88,12 +100,30 @@ export function setConsent(prefs: Omit<ConsentPreferences, 'version' | 'decidedA
   if (typeof window === 'undefined') return next
   try {
     window.localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(next))
+    writeConsentCookie(next)
     window.dispatchEvent(new CustomEvent(CONSENT_CHANGE_EVENT, { detail: next }))
   } catch {
     // localStorage may be unavailable in private mode; we still return the
     // intended state so the in-memory wrappers can opt in for the session.
   }
   return next
+}
+
+/**
+ * Write the consent decision to a readable cookie so the server can gate the
+ * first-party analytics session cookie. The cookie itself is "necessary"
+ * (it records your choice), so it is always allowed.
+ */
+function writeConsentCookie(prefs: ConsentPreferences): void {
+  if (typeof document === 'undefined') return
+  const value = encodeURIComponent(JSON.stringify(prefs))
+  const secure = window.location.protocol === 'https:' ? '; Secure' : ''
+  document.cookie = `${CONSENT_COOKIE_NAME}=${value}; Max-Age=${CONSENT_COOKIE_MAX_AGE}; Path=/; SameSite=Lax${secure}`
+}
+
+function clearConsentCookie(): void {
+  if (typeof document === 'undefined') return
+  document.cookie = `${CONSENT_COOKIE_NAME}=; Max-Age=0; Path=/; SameSite=Lax`
 }
 
 /**
@@ -104,6 +134,7 @@ export function clearConsent(): void {
   if (typeof window === 'undefined') return
   try {
     window.localStorage.removeItem(CONSENT_STORAGE_KEY)
+    clearConsentCookie()
     window.dispatchEvent(new CustomEvent(CONSENT_CHANGE_EVENT, { detail: null }))
   } catch {
     // ignore

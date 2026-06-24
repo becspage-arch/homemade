@@ -324,6 +324,26 @@ above.
 - **Client capture wrapper:** `apps/web/src/lib/client-analytics.ts`
   — thin `posthog.capture` wrapper that respects consent + adds
   standard props.
+- **Google Analytics 4:** `apps/web/src/components/google-analytics.tsx`
+  — native gtag.js for `G-XSRLKQR9JQ`, mounted in the root layout,
+  wired to Google Consent Mode v2 (every signal default-denied; the
+  `analytics` consent category flips `analytics_storage` to granted).
+  No tag manager, no paid SDK. GA4 is the "collect now in case" insurance
+  layer alongside our first-party store + PostHog.
+
+## Consent + PECR
+
+- The cookie banner (`components/public/cookie-banner.tsx`) writes the
+  decision to localStorage, the signed-in `User.cookieConsent`, AND a
+  readable `homemade-consent` cookie. Non-essential categories default
+  OFF; reject is as easy as accept.
+- The first-party `homemade-session` analytics cookie is only stored once
+  analytics consent is granted (gated server-side in
+  `lib/analytics-session.ts` by reading the consent cookie). Without
+  consent, server/client events still record but with a non-persisted
+  `eph:` session id — cookieless, un-stitchable across requests.
+- `CURRENT_CONSENT_VERSION` bumps re-prompt every visitor. Bumped to
+  `2026-06-24` when GA4 was added.
 
 ---
 
