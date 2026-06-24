@@ -23,7 +23,6 @@ export function buildOrganizationSchema(): JsonLd {
     url: siteUrl('/'),
     logo: siteUrl('/icon.png'),
     foundingDate: '2026',
-    founder: { '@type': 'Person', name: 'Rebecca Page' },
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',

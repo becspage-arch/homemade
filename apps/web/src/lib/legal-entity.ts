@@ -2,16 +2,16 @@
  * Legal entity config for Homemade.
  *
  * One place that holds the controller / contact / registration details every
- * legal page references. Until a Ltd company exists, Rebecca operates as a
- * sole trader; once she incorporates, this file is the only place that
- * changes (the privacy / terms / etc. pages re-render from these values).
+ * legal page references. The operating entity is Page Ventures Ltd, trading as
+ * Homemade; this file is the only place those details live, so the privacy /
+ * terms / etc. pages re-render from these values.
  *
  * British English throughout. Voice rules in feedback_homemade_voice.md still
  * apply — legal precision wins where they conflict, but plain English wins
  * over jargon everywhere else.
  */
 export const LEGAL_ENTITY = {
-  name: 'Rebecca Page (trading as Homemade)',
+  name: 'Page Ventures Ltd (trading as Homemade)',
   contactEmail: 'privacy@homemade.education',
   dpoEmail: 'dpo@homemade.education',
   legalEmail: 'legal@homemade.education',
