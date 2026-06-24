@@ -21,7 +21,7 @@ export const LEGAL_ENTITY = {
   postalAddress:
     'Homemade Education, Office 7283, 58 Peregrine Road, Hainault, Ilford, Essex IG6 3SZ' as string | null,
   icoRegistrationNumber: null as string | null, // null = "pending"
-  companiesHouseNumber: null as string | null,
+  companiesHouseNumber: '17080516' as string | null, // Page Ventures Ltd
   vatNumber: null as string | null,
   jurisdiction: 'England and Wales' as const,
   effectiveDate: '2026-05-11',

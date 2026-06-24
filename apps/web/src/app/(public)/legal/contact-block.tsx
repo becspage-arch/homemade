@@ -18,6 +18,12 @@ export function ContactBlock({ topic }: ContactBlockProps) {
       <p>
         <strong>Controller:</strong> {LEGAL_ENTITY.name}
       </p>
+      {LEGAL_ENTITY.companiesHouseNumber && (
+        <p>
+          <strong>Company number:</strong> {LEGAL_ENTITY.companiesHouseNumber}{' '}
+          (registered in {LEGAL_ENTITY.jurisdiction})
+        </p>
+      )}
       <p>
         <strong>Email:</strong>{' '}
         <a href={`mailto:${email}`}>{email}</a>
