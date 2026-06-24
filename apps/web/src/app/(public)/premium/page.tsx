@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
-import Link from 'next/link'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { countPublishedLibrary, formatLibraryCount } from '@/lib/library-count'
 import { checkoutEnabled } from '@/lib/stripe/config'
@@ -84,7 +83,11 @@ function buildGroups(libraryCountLabel: string): Group[] {
     {
       heading: 'Cross-stitch',
       rows: [
-        { label: 'The Studio', free: true },
+        {
+          label:
+            'The Studio: open any pattern on screen, zoom the chart and mark off each stitch as you go',
+          free: true,
+        },
         {
           label:
             'Resize to your size and body shape, with full-bust and other fit adjustments',
@@ -269,8 +272,7 @@ export default async function PremiumPage() {
           <p>
             If you don&apos;t make something you love in your first 90 days,
             email us and we&apos;ll give you your money back plus another three
-            months free to try again. The full details are in the{' '}
-            <Link href="/legal/subscription-terms">subscription terms</Link>.
+            months free to try again.
           </p>
         </div>
       </section>
