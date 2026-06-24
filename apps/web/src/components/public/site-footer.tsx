@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { UserRole } from '@homemade/db'
 import { getCurrentDbUser, hasRoleAtLeast } from '@/lib/auth'
-import { LEGAL_ENTITY, legalField } from '@/lib/legal-entity'
 import { CookiePreferencesButton } from './cookie-banner'
 
 const SOCIAL_LINKS = [
@@ -112,11 +111,6 @@ export async function SiteFooter() {
             </li>
           ))}
         </ul>
-
-        <p className="site-footer-fineprint">
-          {LEGAL_ENTITY.name}. {LEGAL_ENTITY.jurisdiction}. ICO registration:{' '}
-          {legalField(LEGAL_ENTITY.icoRegistrationNumber, 'pending')}.
-        </p>
       </div>
     </footer>
   )
