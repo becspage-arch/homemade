@@ -1,0 +1,141 @@
+/**
+ * Build the Blender backend scene from the loom's thread strokes.
+ *
+ * `loom_render.py` (the photoreal hero backend) reads a JSON scene of the form
+ * `{ fabric, strokes: [{ hex, sheen, radiusMm, filaments }] }`. Both proof
+ * scripts (`loom-blender-proof`, `loom-render-fixture`) hand-rolled this same
+ * conversion; this factors it into one pure function so the production
+ * `renderHero` entrypoint and the proof scripts agree byte-for-byte.
+ *
+ * Pure + deterministic: no node deps, no I/O. It also carries the one cosmetic
+ * grade we want applied BEFORE Blender sees the colours — pulling over-saturated
+ * greens back a touch (the foliage was rendering a shade too electric). Doing it
+ * here (rather than a global compositor saturation) keeps it per-pattern: only
+ * the greens that are actually present get nudged, every other floss colour is
+ * passed through untouched.
+ */
+
+import { filamentPolylines, type ThreadStroke } from './thread'
+
+export interface BlenderFabric {
+  widthMm: number
+  heightMm: number
+  hex: string
+}
+
+export interface BlenderStroke {
+  hex: string
+  sheen: number
+  radiusMm: number
+  filaments: number[][][]
+}
+
+export interface BlenderScene {
+  fabric: BlenderFabric
+  strokes: BlenderStroke[]
+}
+
+export interface BlenderSceneOptions {
+  /**
+   * Pull saturated greens down a touch (the foliage over-saturates under the
+   * AgX + saturation grade). Default on; the magnitude is `greenDesat`.
+   */
+  tameGreens?: boolean
+  /** Multiplier applied to a green's saturation when `tameGreens` (1 = no-op). */
+  greenDesat?: number
+}
+
+const clamp = (v: number, lo: number, hi: number): number => Math.max(lo, Math.min(hi, v))
+
+function channelHex(c: number): string {
+  return clamp(Math.round(c), 0, 255).toString(16).padStart(2, '0')
+}
+
+function rgbToHex(r: number, g: number, b: number): string {
+  return `#${channelHex(r)}${channelHex(g)}${channelHex(b)}`
+}
+
+/** sRGB 0-255 -> HSL (h in degrees 0-360, s/l in 0-1). */
+function rgbToHsl(r: number, g: number, b: number): { h: number; s: number; l: number } {
+  const rn = r / 255
+  const gn = g / 255
+  const bn = b / 255
+  const max = Math.max(rn, gn, bn)
+  const min = Math.min(rn, gn, bn)
+  const l = (max + min) / 2
+  const d = max - min
+  if (d === 0) return { h: 0, s: 0, l }
+  const s = d / (1 - Math.abs(2 * l - 1))
+  let h: number
+  if (max === rn) h = ((gn - bn) / d) % 6
+  else if (max === gn) h = (bn - rn) / d + 2
+  else h = (rn - gn) / d + 4
+  h *= 60
+  if (h < 0) h += 360
+  return { h, s, l }
+}
+
+function hslToRgb(h: number, s: number, l: number): { r: number; g: number; b: number } {
+  const c = (1 - Math.abs(2 * l - 1)) * s
+  const hp = h / 60
+  const x = c * (1 - Math.abs((hp % 2) - 1))
+  let r = 0
+  let g = 0
+  let b = 0
+  if (hp >= 0 && hp < 1) [r, g, b] = [c, x, 0]
+  else if (hp < 2) [r, g, b] = [x, c, 0]
+  else if (hp < 3) [r, g, b] = [0, c, x]
+  else if (hp < 4) [r, g, b] = [0, x, c]
+  else if (hp < 5) [r, g, b] = [x, 0, c]
+  else [r, g, b] = [c, 0, x]
+  const m = l - c / 2
+  return { r: (r + m) * 255, g: (g + m) * 255, b: (b + m) * 255 }
+}
+
+/**
+ * Tame an over-saturated green. Greens (hue ~70-165) that carry a lot of chroma
+ * read as electric once AgX + the saturation grade hit them; nudge their
+ * saturation down. Everything outside the green band is returned untouched.
+ */
+export function tameGreen(hex: string, desat: number): string {
+  const m = /^#?([0-9a-f]{6})$/i.exec(hex)
+  if (!m) return hex
+  const n = parseInt(m[1]!, 16)
+  const r = (n >> 16) & 0xff
+  const g = (n >> 8) & 0xff
+  const b = n & 0xff
+  const { h, s, l } = rgbToHsl(r, g, b)
+  const isGreen = h >= 70 && h <= 165
+  if (!isGreen || s < 0.35) return rgbToHex(r, g, b)
+  // Scale the saturation toward grey; the stronger the saturation the more we
+  // pull, so a deep forest green is calmed more than a soft sage.
+  const pull = desat + (1 - desat) * (1 - clamp(s, 0, 1))
+  const out = hslToRgb(h, clamp(s * pull, 0, 1), l)
+  return rgbToHex(out.r, out.g, out.b)
+}
+
+/**
+ * Convert a flat list of thread strokes into the Blender backend scene. This is
+ * the single source of truth for that conversion.
+ */
+export function strokesToBlenderScene(
+  strokes: ThreadStroke[],
+  fabric: BlenderFabric,
+  options: BlenderSceneOptions = {},
+): BlenderScene {
+  const tame = options.tameGreens ?? true
+  const desat = options.greenDesat ?? 0.82
+  return {
+    fabric,
+    strokes: strokes.map((st) => {
+      const fp = filamentPolylines(st)
+      const raw = rgbToHex(st.material.colour.r, st.material.colour.g, st.material.colour.b)
+      return {
+        hex: tame ? tameGreen(raw, desat) : raw,
+        sheen: st.material.sheen,
+        radiusMm: fp.radiusMm,
+        filaments: fp.filaments.map((poly) => poly.map((q) => [q.x, q.y, q.z])),
+      }
+    }),
+  }
+}

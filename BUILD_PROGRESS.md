@@ -8,6 +8,24 @@ Updated each working session.
 
 ---
 
+## The loom hero pipeline wired to one production entrypoint (2026-06-24)
+
+The proven loom render chain (deterministic stitch render → Blender photoreal base
+→ locked Fal creative-upscale → fidelity gate) is now a single build-time
+entrypoint: `renderHero(stitchedElements)` in `apps/web/scripts/loom-render-hero.ts`.
+A pattern-generator hands it a pattern's stitched elements and gets back a
+persisted, fidelity-checked hero (R2, prefix `patterns/loom`). The gate is
+automated: a passing creative-upscale ships; a FAIL auto-retries at lower
+creativity (0.5 → 0.35 → 0.2), and if every upscale still drifts it falls back to
+the deterministic base — a drifted hero is never shipped; `pathTaken`/`attempts`
+log the route. New `render/blenderScene.ts` factors the strokes→scene conversion
+and tames over-saturated greens per-pattern; framing already centres on the main
+stitch mass. Proven end-to-end on the bouquet (our-format) + Countryside fixtures
+(both pass the gate at creativity 0.5, live heroes persisted). Blender + Fal run
+only where patterns are generated (worker/local), never in the ECS runtime; the
+live Studio preview stays the fast CPU renderer. dotenv-importing loom scripts are
+in `apps/web/tsconfig.json` `exclude` so `next build` stays green.
+
 ## Independent-designer content reads premium + spotlight is independent-only (2026-06-23)
 
 Two shared-pattern fixes (all pattern categories inherit them).
