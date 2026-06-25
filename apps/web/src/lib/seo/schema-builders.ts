@@ -6,6 +6,7 @@
  */
 
 import { LEGAL_ENTITY } from '@/lib/legal-entity'
+import type { RecipeStep } from './extract-recipe-instructions'
 import { SITE_NAME, siteOrigin, siteUrl } from './site-url'
 
 type JsonLd = Record<string, unknown>
@@ -116,9 +117,23 @@ interface RecipeSchemaInput {
   mealType: string | null
   dietaryFlags: string[]
   ingredients: RecipeIngredientRow[]
-  instructions: string[]
+  steps: RecipeStep[]
   keywords: string[]
   rating: RecipeRatingSummary | null
+  /** Per-serving estimate; null when not every ingredient has the data. */
+  nutrition: RecipeNutritionInput | null
+}
+
+/** Per-serving nutrition the builder formats into schema.org units. */
+export interface RecipeNutritionInput {
+  calories: number
+  protein: number | null
+  fat: number | null
+  saturatedFat: number | null
+  carbohydrate: number | null
+  sugar: number | null
+  fibre: number | null
+  sodiumMg: number | null
 }
 
 export function buildRecipeSchema(input: RecipeSchemaInput): JsonLd {
@@ -145,13 +160,14 @@ export function buildRecipeSchema(input: RecipeSchemaInput): JsonLd {
       ? input.dietaryFlags.map(dietaryFlagToSchema)
       : undefined,
     recipeIngredient: input.ingredients.map(formatIngredient),
-    recipeInstructions: input.instructions.map((text, idx) => ({
+    recipeInstructions: input.steps.map((step, idx) => ({
       '@type': 'HowToStep',
       position: idx + 1,
-      name: deriveStepName(text),
-      text,
+      name: step.name?.trim() || deriveStepName(step.text),
+      text: step.text,
     })),
     keywords: input.keywords.length ? input.keywords.join(', ') : undefined,
+    nutrition: buildNutritionInformation(input.nutrition, input.servings),
   }
   if (input.rating && input.rating.total > 0) {
     schema.aggregateRating = {
@@ -403,6 +419,32 @@ function deriveStepName(text: string): string {
   name = name.replace(/[\s,;:.!?–—-]+$/, '').trim()
   if (name) name = name.charAt(0).toUpperCase() + name.slice(1)
   return name || text.slice(0, 55).trim()
+}
+
+/**
+ * schema.org NutritionInformation from the per-serving estimate. Calories are
+ * always present (the gate nutrient); the rest emit only when the calculation
+ * had complete data for them. Values carry their units as schema.org expects
+ * ("8 g", "300 mg"). Returns undefined when there's nothing to emit.
+ */
+function buildNutritionInformation(
+  n: RecipeNutritionInput | null,
+  servings: number | null,
+): JsonLd | undefined {
+  if (!n) return undefined
+  const info: JsonLd = {
+    '@type': 'NutritionInformation',
+    calories: `${Math.round(n.calories)} calories`,
+  }
+  if (servings && servings > 0) info.servingSize = '1 serving'
+  if (n.protein != null) info.proteinContent = `${n.protein} g`
+  if (n.fat != null) info.fatContent = `${n.fat} g`
+  if (n.saturatedFat != null) info.saturatedFatContent = `${n.saturatedFat} g`
+  if (n.carbohydrate != null) info.carbohydrateContent = `${n.carbohydrate} g`
+  if (n.sugar != null) info.sugarContent = `${n.sugar} g`
+  if (n.fibre != null) info.fiberContent = `${n.fibre} g`
+  if (n.sodiumMg != null) info.sodiumContent = `${Math.round(n.sodiumMg)} mg`
+  return info
 }
 
 function isoDuration(minutes: number | null): string | undefined {

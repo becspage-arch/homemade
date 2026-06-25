@@ -109,6 +109,43 @@ export interface IngredientSeed {
   storage?: StorageLocation
 }
 
+/**
+ * Per-100g nutrition facts for one ingredient, sourced from USDA FoodData
+ * Central (public domain). Seeded onto `Ingredient.nutritionalInfoPer100g`
+ * by `seed-ingredient-nutrition.ts`. Every numeric is per 100 g of the
+ * ingredient. Leave a field out rather than guess it — a missing field just
+ * drops out of the per-serving rollup; a missing whole record omits nutrition
+ * for any recipe that uses the ingredient.
+ */
+export interface IngredientNutritionSeed {
+  /** Must match an existing Ingredient.slug. */
+  slug: string
+  /** kcal per 100 g — required; it's the gate nutrient. */
+  kcal: number
+  /** Grams of protein per 100 g. */
+  protein?: number
+  /** Grams of total fat per 100 g. */
+  fat?: number
+  /** Grams of saturated fat per 100 g. */
+  saturatedFat?: number
+  /** Grams of carbohydrate per 100 g. */
+  carbohydrate?: number
+  /** Grams of total sugars per 100 g. */
+  sugar?: number
+  /** Grams of fibre per 100 g. */
+  fibre?: number
+  /** Sodium in milligrams per 100 g. */
+  sodiumMg?: number
+  /**
+   * Gram weight of one of a count / descriptive unit, e.g. `{ each: 50 }` for
+   * an egg. Only needed for ingredients whose recipes give amounts by count
+   * rather than weight or volume.
+   */
+  gramsPerUnit?: Record<string, number>
+  /** FDC food id the values came from, for traceability. */
+  fdcId?: number
+}
+
 export type ToolCategory =
   | 'knife'
   | 'pan'

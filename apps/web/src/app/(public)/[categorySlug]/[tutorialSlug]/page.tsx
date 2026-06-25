@@ -41,7 +41,16 @@ import {
   notFoundMetadata,
   type OpenGraphType,
 } from '@/lib/seo/metadata-helpers'
-import { extractRecipeInstructions, extractPlainText } from '@/lib/seo/extract-recipe-instructions'
+import {
+  extractRecipeInstructions,
+  extractRecipeSteps,
+  extractPlainText,
+} from '@/lib/seo/extract-recipe-instructions'
+import {
+  parseIngredientNutrition,
+  computeRecipeNutrition,
+} from '@/lib/recipes/nutrition'
+import { NutritionPanel } from '@/components/public/recipes/nutrition-panel'
 import { BookmarkButton } from '@/components/public/tutorial-reader/bookmark-button'
 import { ProjectButton } from '@/components/public/tutorial-reader/project-button'
 import { ReadingProgress } from '@/components/public/tutorial-reader/reading-progress'
@@ -356,7 +365,13 @@ export default async function TutorialPage({ params }: PageProps) {
             amount: true,
             unit: true,
             prepNote: true,
-            ingredient: { select: { name: true } },
+            ingredient: {
+              select: {
+                name: true,
+                densityGPerMl: true,
+                nutritionalInfoPer100g: true,
+              },
+            },
           },
         })
       : []
@@ -373,6 +388,28 @@ export default async function TutorialPage({ params }: PageProps) {
       : []
 
   const recipeInstructions = extractRecipeInstructions(body)
+
+  // Per-serving nutrition estimate. Food only (cooking + baking) so a calorie
+  // count never lands on a natural-home soap or balm. computeRecipeNutrition
+  // returns null unless every ingredient has USDA per-100g data AND a
+  // gram-resolvable amount — so a single gap omits nutrition entirely rather
+  // than shipping a figure built on missing data.
+  const recipeNutrition =
+    tutorial.type === TutorialType.RECIPE && isCookingOrBaking
+      ? computeRecipeNutrition(
+          recipeIngredients.map((row) => ({
+            amount: row.amount,
+            unit: row.unit,
+            densityGPerMl:
+              row.ingredient.densityGPerMl != null
+                ? Number(row.ingredient.densityGPerMl)
+                : null,
+            nutrition: parseIngredientNutrition(row.ingredient.nutritionalInfoPer100g),
+          })),
+          tutorial.servings,
+        )
+      : null
+
   const schemaAuthor = {
     name: tutorial.creator?.name ?? tutorial.creator?.displayHandle ?? 'Homemade Editorial',
     handle: tutorial.creator?.displayHandle ?? null,
@@ -405,12 +442,13 @@ export default async function TutorialPage({ params }: PageProps) {
       mealType: tutorial.mealType,
       dietaryFlags: tutorial.dietaryFlags,
       ingredients: recipeIngredients,
-      instructions: recipeInstructions,
+      steps: extractRecipeSteps(body),
       keywords,
       rating:
         ugc.reviews.avg != null && ugc.reviews.total > 0
           ? { avg: ugc.reviews.avg, total: ugc.reviews.total }
           : null,
+      nutrition: recipeNutrition,
     })
   } else if (tutorial.type === TutorialType.TECHNIQUE) {
     tutorialSchema = buildHowToSchema({
@@ -812,6 +850,9 @@ export default async function TutorialPage({ params }: PageProps) {
                   : null
               }
             />
+          )}
+          {!gatePremiumRecipe && recipeNutrition && (
+            <NutritionPanel nutrition={recipeNutrition} servings={tutorial.servings} />
           )}
           {!gatePremiumRecipe && tutorial.diagramGenerationStatus === 'NO_SOURCE' && (
             <DiagramPendingMarker />

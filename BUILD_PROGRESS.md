@@ -8,6 +8,37 @@ Updated each working session.
 
 ---
 
+## Recipe completeness: prose-method steps + per-serving nutrition (2026-06-25)
+
+Two recipe structured-data gaps closed.
+
+Part A (steps). Recipe JSON-LD emitted zero `recipeInstructions` whenever the
+method was written as the house "Method" heading + step sub-headings +
+paragraphs rather than a TipTap `orderedList`. That was 1,980 of 4,618 published
+recipes. `extract-recipe-instructions.ts` now falls back, when there's no
+ordered list, to the labelled method section: each paragraph becomes a
+`HowToStep`, carrying its `h3` step heading through as the step `name` (else the
+existing derived name). A loose post-ingredients fallback and a sentence-split
+last resort cover the stragglers. Faithful only: every step's text is prose the
+author wrote, nothing invented. After the change all 4,618 published recipes
+emit at least one step. The Recipe builder switched from `instructions: string[]`
+to `steps: RecipeStep[]`; the HowTo/Article builders are untouched (HowTo still
+takes the flat `extractRecipeInstructions`).
+
+Part B (nutrition). New `lib/recipes/nutrition.ts` computes a per-serving
+estimate from `Ingredient.nutritionalInfoPer100g` (USDA FoodData Central, public
+domain) with a unit→grams converter (mass direct, volume via the ingredient's
+density, count units via a per-unit gram weight). Integrity gate: a recipe emits
+nutrition only when EVERY ingredient resolves to grams AND has calories; one gap
+omits the whole panel, so no figure is ever built on missing data. The Recipe
+schema gains `NutritionInformation`; a server-rendered `NutritionPanel` shows the
+estimate on the page, clearly labelled. Per-serving is derived live at render,
+not persisted. First data batch seeded: 32 common cooking + baking staples
+(`data/ingredient-nutrition.ts`, idempotent `seed-ingredient-nutrition.ts`); 7
+published recipes now fully qualify and render a panel. The used-ingredient set
+is 1,020 (all were empty); the remaining ~988 are a follow-up batch pending an
+accuracy eyeball.
+
 ## The loom hero pipeline wired to one production entrypoint (2026-06-24)
 
 The proven loom render chain (deterministic stitch render → Blender photoreal base
