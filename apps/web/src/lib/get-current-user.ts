@@ -2,7 +2,7 @@ import 'server-only'
 import { cache } from 'react'
 import { currentUser } from '@clerk/nextjs/server'
 import * as Sentry from '@sentry/nextjs'
-import { prisma, UserRole, type User } from '@homemade/db'
+import { prisma, Prisma, UserRole, type User } from '@homemade/db'
 import {
   SIGNUP_ALLOWLIST_ENABLED,
   findAllowlistEntry,
@@ -72,21 +72,65 @@ export const getCurrentDbUser = cache(async (): Promise<User | null> => {
 
   const name =
     [clerkUser.firstName, clerkUser.lastName].filter(Boolean).join(' ').trim() || null
+  const emailLower = email.toLowerCase()
 
-  const created = await prisma.user.create({
-    data: {
-      clerkId: clerkUser.id,
-      email: email.toLowerCase(),
-      name,
-      role: deriveRoleFromEmail(email),
-    },
-  })
+  // JIT provisioning. Loading a single page fires several concurrent server
+  // requests (main document + RSC prefetches); React `cache()` only dedupes
+  // *within* one request, so two concurrent requests can both pass the
+  // `findUnique(clerkId)` miss above and both attempt the create — the loser
+  // hits the unique constraint. A row can also already exist under a *different*
+  // clerkId (a Dev→Prod Clerk key switch at go-live left rows tied to old dev
+  // Clerk IDs). Both surface as Prisma P2002; recover instead of 500-ing.
+  try {
+    const created = await prisma.user.create({
+      data: {
+        clerkId: clerkUser.id,
+        email: emailLower,
+        name,
+        role: deriveRoleFromEmail(email),
+      },
+    })
+    // Only stamp the allowlist on a genuine first-time create — never on a
+    // recovered/re-linked row below.
+    if (SIGNUP_ALLOWLIST_ENABLED) {
+      await markAllowlistUsed(email)
+    }
+    return created
+  } catch (err) {
+    if (
+      !(err instanceof Prisma.PrismaClientKnownRequestError) ||
+      err.code !== 'P2002'
+    ) {
+      throw err
+    }
 
-  if (SIGNUP_ALLOWLIST_ENABLED) {
-    await markAllowlistUsed(email)
+    // Concurrent-create race: the winning request already inserted the row for
+    // this clerkId. Return it.
+    const byClerkId = await prisma.user.findUnique({
+      where: { clerkId: clerkUser.id },
+    })
+    if (byClerkId) return byClerkId
+
+    // Stale-clerkId orphan: a row exists under this email but a different
+    // clerkId (Dev→Prod migration). This request is authenticated by Clerk for
+    // exactly this verified email, so re-link the row to the current clerkId.
+    const byEmail = await prisma.user.findUnique({ where: { email: emailLower } })
+    if (byEmail) {
+      Sentry.captureMessage('Re-linked stale clerkId on existing user row', {
+        level: 'info',
+        tags: { source: 'getCurrentDbUser' },
+        extra: { userId: byEmail.id },
+      })
+      return prisma.user.update({
+        where: { id: byEmail.id },
+        data: { clerkId: clerkUser.id },
+      })
+    }
+
+    // P2002 on neither clerkId nor email — an unexpected constraint. Don't
+    // swallow it.
+    throw err
   }
-
-  return created
 })
 
 export function isAdmin(user: { role: UserRole } | null | undefined): boolean {

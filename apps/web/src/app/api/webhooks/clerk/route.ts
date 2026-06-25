@@ -1,6 +1,6 @@
 import { headers } from 'next/headers'
 import { Webhook } from 'svix'
-import { prisma, UserRole } from '@homemade/db'
+import { prisma, Prisma, UserRole } from '@homemade/db'
 import { captureServerEvent, flushPostHog, identifyServerUser } from '@/lib/posthog'
 import { isoWeek } from '@/lib/cohort'
 import { deriveDeviceClass } from '@/lib/acquisition'
@@ -123,28 +123,50 @@ export async function POST(req: Request): Promise<Response> {
         const country = hdrs.get('cf-ipcountry') ?? null
         const deviceClass = deriveDeviceClass(hdrs.get('user-agent'))
         const cohortWeek = isoWeek(new Date())
-        const upserted = await prisma.user.upsert({
-          where: { clerkId: evt.data.id },
-          create: {
-            clerkId: evt.data.id,
-            email,
-            name,
-            role: deriveRole(email),
-            // Acquisition data is filled in by the client tracker on next
-            // page load via `persistAcquisitionIfMissing`. Cohort + first-
-            // touch headers we know now.
-            signupCohortWeek: cohortWeek,
-            country,
-            deviceClass,
-          },
-          update: {
-            email,
-            name,
-            // Don't overwrite role on update — admin role might have been
-            // promoted from inside the app. Only re-derive on user.created
-            // (handled by upsert.create).
-          },
-        })
+        // `upsert` keyed on clerkId handles webhook-vs-JIT collisions and
+        // concurrent webhook deliveries for the *same* clerkId. It does NOT
+        // cover a row that exists under the same email but a *different*
+        // clerkId (Dev→Prod Clerk key switch left orphaned dev-id rows) — that
+        // hits the email unique constraint as P2002 in the create branch.
+        // Recover by re-linking the existing row to the current clerkId.
+        let upserted
+        try {
+          upserted = await prisma.user.upsert({
+            where: { clerkId: evt.data.id },
+            create: {
+              clerkId: evt.data.id,
+              email,
+              name,
+              role: deriveRole(email),
+              // Acquisition data is filled in by the client tracker on next
+              // page load via `persistAcquisitionIfMissing`. Cohort + first-
+              // touch headers we know now.
+              signupCohortWeek: cohortWeek,
+              country,
+              deviceClass,
+            },
+            update: {
+              email,
+              name,
+              // Don't overwrite role on update — admin role might have been
+              // promoted from inside the app. Only re-derive on user.created
+              // (handled by upsert.create).
+            },
+          })
+        } catch (err) {
+          if (
+            !(err instanceof Prisma.PrismaClientKnownRequestError) ||
+            err.code !== 'P2002'
+          ) {
+            throw err
+          }
+          const byEmail = await prisma.user.findUnique({ where: { email } })
+          if (!byEmail) throw err
+          upserted = await prisma.user.update({
+            where: { id: byEmail.id },
+            data: { clerkId: evt.data.id, email, name },
+          })
+        }
         if (evt.type === 'user.created') {
           if (SIGNUP_ALLOWLIST_ENABLED) {
             await markAllowlistUsed(email)
