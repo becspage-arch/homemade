@@ -385,10 +385,9 @@ function deriveStepName(text: string): string {
   const firstSentence = text.trim().split(/(?<=[.!?])\s+/)[0] ?? text.trim()
   let words = firstSentence.split(/\s+/).filter(Boolean)
   if (words.length > 6) words = words.slice(0, 6)
-  while (
-    words.length > 2 &&
-    TRAILING_FILLER.has(words[words.length - 1].toLowerCase().replace(/[^a-z]/g, ''))
-  ) {
+  while (words.length > 2) {
+    const last = words[words.length - 1]?.toLowerCase().replace(/[^a-z]/g, '') ?? ''
+    if (!TRAILING_FILLER.has(last)) break
     words.pop()
   }
   let name = words.join(' ')
