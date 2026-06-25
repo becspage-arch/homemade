@@ -55,6 +55,12 @@ export interface RenderHeroInput {
   defaultThread?: { type: string; weight: string } | null
   /** Strand count for stranded floss (perle/metallic ignore it). Default 6. */
   strands?: number
+  /**
+   * Frame shape + fit. 'auto' (default) picks a round hoop for a squarish design
+   * and a rectangle for a clearly wide/tall one; 'oval'/'square'/'rect' force it.
+   * `fit` hugs the content (1.06 = small even margin, no big empty gap).
+   */
+  frame?: { shape?: 'auto' | 'round' | 'oval' | 'square' | 'rect'; fit?: number }
 }
 
 export interface RenderHeroOptions {
@@ -179,7 +185,7 @@ export async function renderHero(
   const scene = strokesToBlenderScene(
     strokes,
     { widthMm: input.finishedSizeMm.width, heightMm: input.finishedSizeMm.height, hex: input.fabricHex ?? '#e3d8c0' },
-    { tameGreens: options.tameGreens ?? true },
+    { tameGreens: options.tameGreens ?? true, frame: input.frame ?? { shape: 'auto' } },
   )
   writeFileSync(scenePath, JSON.stringify(scene))
   log(`[loom:${safe}] ${input.stitchedElements.length} elements -> ${strokes.length} strokes -> scene`)

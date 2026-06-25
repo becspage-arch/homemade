@@ -30,9 +30,20 @@ export interface BlenderStroke {
   filaments: number[][][]
 }
 
+/**
+ * How the finished piece is framed. `shape` 'auto' picks a round hoop for a
+ * squarish design and a rectangle for a clearly wide/tall one. `fit` hugs the
+ * content (1.06 = a small even margin between the embroidery and the frame).
+ */
+export interface BlenderFrame {
+  shape?: 'auto' | 'round' | 'oval' | 'square' | 'rect'
+  fit?: number
+}
+
 export interface BlenderScene {
   fabric: BlenderFabric
   strokes: BlenderStroke[]
+  frame?: BlenderFrame
 }
 
 export interface BlenderSceneOptions {
@@ -43,6 +54,8 @@ export interface BlenderSceneOptions {
   tameGreens?: boolean
   /** Multiplier applied to a green's saturation when `tameGreens` (1 = no-op). */
   greenDesat?: number
+  /** Frame shape + fit. Default = round hoop, today's behaviour. */
+  frame?: BlenderFrame
 }
 
 const clamp = (v: number, lo: number, hi: number): number => Math.max(lo, Math.min(hi, v))
@@ -127,6 +140,7 @@ export function strokesToBlenderScene(
   const desat = options.greenDesat ?? 0.82
   return {
     fabric,
+    ...(options.frame ? { frame: options.frame } : {}),
     strokes: strokes.map((st) => {
       const fp = filamentPolylines(st)
       const raw = rgbToHex(st.material.colour.r, st.material.colour.g, st.material.colour.b)

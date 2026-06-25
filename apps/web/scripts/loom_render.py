@@ -295,16 +295,17 @@ def wood_material():
     return mat
 
 
-def add_hoop(cx, cy, ring_radius, tube):
-    """A round wooden embroidery hoop sitting proud of the cloth, framing the
-    design — the single biggest 'this is a real stitched piece' cue."""
+def add_hoop(cx, cy, ring_radius, tube, scale_y=1.0):
+    """A round (or, with scale_y != 1, oval) wooden embroidery hoop sitting proud
+    of the cloth, framing the design — the single biggest 'real stitched piece'
+    cue. scale_y < 1 = a landscape oval; > 1 = a portrait oval."""
     bpy.ops.mesh.primitive_torus_add(
         major_radius=ring_radius, minor_radius=tube,
-        location=(cx, cy, tube * 0.2), major_segments=160, minor_segments=24,
+        location=(cx, cy, tube * 0.2), major_segments=180, minor_segments=24,
     )
     hoop = bpy.context.active_object
     # Flatten the tube a little so it reads as a flat-section hoop, not a doughnut.
-    hoop.scale = (1.0, 1.0, 0.62)
+    hoop.scale = (1.0, scale_y, 0.62)
     hoop.data.materials.append(wood_material())
     try:
         for p in hoop.data.polygons:
@@ -312,6 +313,72 @@ def add_hoop(cx, cy, ring_radius, tube):
     except Exception:
         pass
     return hoop
+
+
+def add_frame_rect(cx, cy, half_x, half_y, bar, corner_round=True):
+    """A rectangular / square wooden frame (4 flat bars) hugging the design.
+    half_x / half_y are the INNER half-extents (the opening); bar is the wood
+    thickness. Used where a round hoop is wrong — a wide skyline, a tall panel."""
+    wood = wood_material()
+    zc = bar * 0.2
+    hz = bar * 0.62  # flat section, like the flattened hoop
+    bars = [
+        # (location, scale) — cube primitive is -1..1, so scale = half-extent.
+        ((cx, cy + half_y + bar, zc), (half_x + 2 * bar, bar, hz)),  # top
+        ((cx, cy - half_y - bar, zc), (half_x + 2 * bar, bar, hz)),  # bottom
+        ((cx - half_x - bar, cy, zc), (bar, half_y, hz)),            # left
+        ((cx + half_x + bar, cy, zc), (bar, half_y, hz)),            # right
+    ]
+    objs = []
+    for loc, scl in bars:
+        bpy.ops.mesh.primitive_cube_add(size=2.0, location=loc)
+        o = bpy.context.active_object
+        o.scale = scl
+        if corner_round:
+            try:
+                m = o.modifiers.new("bevel", "BEVEL")
+                m.width = bar * 0.35
+                m.segments = 3
+            except Exception:
+                pass
+        o.data.materials.append(wood)
+        objs.append(o)
+    return objs
+
+
+def build_frame(shape, cx, cy, content_w, content_h, fit):
+    """Build the frame for the design and return its OUTER half-extents
+    (half_x, half_y) so the camera + cloth can be sized to it. shape is
+    'round' | 'oval' | 'rect' | 'square' | 'auto'."""
+    aspect = (content_w / content_h) if content_h > 1e-6 else 1.0
+    if shape == "auto":
+        # Squarish -> a classic round hoop; clearly wide/tall -> a rectangle.
+        shape = "round" if 0.8 <= aspect <= 1.25 else "rect"
+
+    if shape in ("round", "oval"):
+        if shape == "round":
+            r = max(content_w, content_h) * 0.5 * fit
+            tube = r * 0.10
+            add_hoop(cx, cy, r + tube, tube)
+            return (r + tube, r + tube)
+        # oval: radius on the long axis, squashed on the short one.
+        rx = content_w * 0.5 * fit
+        ry = content_h * 0.5 * fit
+        tube = max(rx, ry) * 0.09
+        # torus is built at rx then scaled in y to ry.
+        add_hoop(cx, cy, rx + tube, tube, scale_y=(ry + tube) / (rx + tube))
+        return (rx + tube, ry + tube)
+
+    # rect / square
+    if shape == "square":
+        half = max(content_w, content_h) * 0.5 * fit
+        hx = hy = half
+    else:
+        hx = content_w * 0.5 * fit
+        hy = content_h * 0.5 * fit
+    bar = max(hx, hy) * 0.085
+    add_frame_rect(cx, cy, hx, hy, bar)
+    return (hx + 2 * bar, hy + 2 * bar)
 
 
 def main():
@@ -346,13 +413,25 @@ def main():
     cy = (miny + maxy) * 0.5
     contentW = maxx - minx
     contentH = maxy - miny
-    content_r = max(contentW, contentH) * 0.5
-    margin = content_r * 0.95  # zoomed out a touch — more cloth around the hoop
-    halfW = contentW * 0.5 + margin
-    halfH = contentH * 0.5 + margin
+
+    build_threads(strokes)
+
+    # Frame the design. Shape is chosen by the caller (round / oval / square /
+    # rect) or 'auto' from the aspect; `fit` hugs the content (1.06 = a small even
+    # margin between the embroidery and the frame, not the old 1.22 big gap).
+    frame_opt = data.get("frame", {}) or {}
+    shape = frame_opt.get("shape", "auto")
+    fit = float(frame_opt.get("fit", 1.06))
+    frameHalfW, frameHalfH = build_frame(shape, cx, cy, contentW, contentH, fit)
+
+    # Camera + cloth are sized to the FRAME (plus a modest cloth border) so the
+    # framed design fills the shot instead of floating in a big empty hoop.
+    cloth = max(frameHalfW, frameHalfH) * 0.18
+    halfW = frameHalfW + cloth
+    halfH = frameHalfH + cloth
 
     # Fabric plane — extends well past the frame so it reads as taut cloth the
-    # hoop is stretched over, not a small swatch.
+    # frame is stretched over, not a small swatch.
     bpy.ops.mesh.primitive_plane_add(size=1.0, location=(cx, cy, 0.0))
     plane = bpy.context.active_object
     plane.scale = (halfW * 4, halfH * 4, 1.0)
@@ -360,13 +439,6 @@ def main():
     ny = max(8, round((halfH * 2 / S) * 0.5))
     # Natural beige linen (the scene hex is near-white aida; heroes read warmer).
     plane.data.materials.append(fabric_material("#e3d8c0", nx, ny))
-
-    build_threads(strokes)
-
-    # Wooden hoop framing the design — thinner ring, sized to the content not the
-    # (now larger) margin so it sits with breathing room.
-    ring_radius = content_r * 1.22
-    add_hoop(cx, cy, ring_radius, content_r * 0.11)
 
     # Target at the content centre.
     tgt = bpy.data.objects.new("target", None)
