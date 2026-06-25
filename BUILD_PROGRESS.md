@@ -50,6 +50,22 @@ a field left blank rather than guessed; only the small seasoning amounts are
 nominal. Recipes without nutrition are unaffected — NutritionInformation is an
 optional Recipe property, so Search Console never errors on its absence.
 
+Catalogue dedup + spoon densities (follow-up same day). `dedup-ingredients.ts`
+merged 52 duplicate Ingredient rows (slug reorders + plurals: salt-table/
+table-salt, shallot/shallots, turmeric/turmeric-ground, stock-chicken/
+chicken-stock, …) into the highest-used canonical — repointing 625 recipe
+bodies (ingredientId + slug + name), 626 join rows, substitutions (collisions
+collapsed), and commonSubstitutes slug lists, with the loser slug/name kept as
+aliases; 4 genuinely-distinct groups (soy-wax blends, rice-cake variants,
+cosmetic vs herb calendula) deliberately left. Body-integrity scan across 11,528
+tutorials found 0 dangling references afterwards (one pre-existing stale id in
+pear-frangipane-tart reconciled to its valid slug). `set-spoon-densities.ts`
+then gave 37 spoon-measured ingredients (ground spices, dried herbs, thin
+sauces) a density derived from their vetted per-tsp weight, so tsp / tbsp / cup
+now convert to grams in the ingredients-list units renderer as well as in
+nutrition. Coverage 1,484 → 1,504 with no regression. Both scripts dry-run
+before --apply.
+
 QC (future recipes). `recipeYieldsSteps` added to the completeness gate
 (`qc-completeness-rules/shared.ts`), wired into the RECIPE rule: a recipe whose
 body yields no extractable steps for the Recipe JSON-LD stays DRAFT. Verified to
