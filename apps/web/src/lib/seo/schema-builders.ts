@@ -148,6 +148,7 @@ export function buildRecipeSchema(input: RecipeSchemaInput): JsonLd {
     recipeInstructions: input.instructions.map((text, idx) => ({
       '@type': 'HowToStep',
       position: idx + 1,
+      name: deriveStepName(text),
       text,
     })),
     keywords: input.keywords.length ? input.keywords.join(', ') : undefined,
@@ -361,6 +362,48 @@ function buildAuthorRef(author: TutorialAuthorRef): JsonLd {
     name: author.name,
     '@id': siteUrl('/#organization'),
   }
+}
+
+// Trailing connector / filler words that read as dangling at the end of a
+// short step name ("Tip the dough out onto a" → "Tip the dough out").
+const TRAILING_FILLER = new Set([
+  'a', 'an', 'the', 'to', 'and', 'or', 'with', 'until', 'onto', 'into',
+  'of', 'in', 'on', 'for', 'at', 'then', 'your', 'it', 'over', 'up',
+])
+
+/**
+ * Derive a concise, customer-visible `name` for a recipe HowToStep from its
+ * full step text. Steps arrive as plain prose with no authored heading, but
+ * Google's Recipe rich result wants a `name` on every step. We take the first
+ * sentence, trim to roughly the first clause / six words, drop dangling
+ * connector words, cap at ~55 chars on a word boundary, strip trailing
+ * punctuation, and sentence-case the first letter. The full `text` is left
+ * untouched, so nothing is invented — the name is a faithful shortening of
+ * what the author wrote.
+ */
+function deriveStepName(text: string): string {
+  const firstSentence = text.trim().split(/(?<=[.!?])\s+/)[0] ?? text.trim()
+  let words = firstSentence.split(/\s+/).filter(Boolean)
+  if (words.length > 6) words = words.slice(0, 6)
+  while (
+    words.length > 2 &&
+    TRAILING_FILLER.has(words[words.length - 1].toLowerCase().replace(/[^a-z]/g, ''))
+  ) {
+    words.pop()
+  }
+  let name = words.join(' ')
+  if (name.length > 55) {
+    name = name.slice(0, 55)
+    const lastSpace = name.lastIndexOf(' ')
+    if (lastSpace > 2) name = name.slice(0, lastSpace)
+  }
+  // Drop a dangling, never-closed opening parenthesis ("200°C (180°C" → "200°C").
+  if ((name.match(/\(/g)?.length ?? 0) > (name.match(/\)/g)?.length ?? 0)) {
+    name = name.slice(0, name.lastIndexOf('(')).trim()
+  }
+  name = name.replace(/[\s,;:.!?–—-]+$/, '').trim()
+  if (name) name = name.charAt(0).toUpperCase() + name.slice(1)
+  return name || text.slice(0, 55).trim()
 }
 
 function isoDuration(minutes: number | null): string | undefined {
