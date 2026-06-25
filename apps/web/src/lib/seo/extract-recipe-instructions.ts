@@ -87,6 +87,16 @@ export function extractRecipeSteps(body: TipTapNode | null | undefined): RecipeS
   let currentH3: string | null = null
   let seenIngredients = false
 
+  // Which bucket does a block under the current section belong to? The
+  // labelled method section wins; otherwise a post-ingredients section that
+  // isn't one of the excluded kinds (storage, notes, serving, …).
+  const bucketFor = (): RecipeStep[] | null => {
+    if (currentH2 != null && METHOD_HEADING_RE.test(currentH2)) return methodSteps
+    const excluded = currentH2 != null && EXCLUDE_HEADING_RE.test(currentH2)
+    if (seenIngredients && currentH2 != null && !excluded) return looseSteps
+    return null
+  }
+
   for (const node of top) {
     if (node.type === 'ingredientsList') {
       seenIngredients = true
@@ -102,22 +112,33 @@ export function extractRecipeSteps(body: TipTapNode | null | undefined): RecipeS
       currentH3 = plainText(node).trim() || null
       continue
     }
+
+    // A numbered / bulleted list nested under a section heading (a method
+    // written as a list rather than the house heading-per-step) — expand each
+    // item to a step. (A top-level orderedList was already handled above.)
+    if ((node.type === 'orderedList' || node.type === 'bulletList') && node.content) {
+      const bucket = bucketFor()
+      if (bucket) {
+        for (const li of node.content) {
+          const t = plainText(li).replace(/\s+/g, ' ').trim()
+          if (t) {
+            bucket.push({ name: currentH3, text: t })
+            currentH3 = null
+          }
+        }
+      }
+      continue
+    }
+
     if (node.type !== 'paragraph') continue
 
     const text = plainText(node).replace(/\s+/g, ' ').trim()
     if (!text) continue
 
-    const inMethod = currentH2 != null && METHOD_HEADING_RE.test(currentH2)
-    if (inMethod) {
-      methodSteps.push({ name: currentH3, text })
-      currentH3 = null // only the first paragraph after an h3 takes its name
-      continue
-    }
-
-    const excluded = currentH2 != null && EXCLUDE_HEADING_RE.test(currentH2)
-    if (seenIngredients && currentH2 != null && !excluded) {
-      looseSteps.push({ name: currentH3, text })
-      currentH3 = null
+    const bucket = bucketFor()
+    if (bucket) {
+      bucket.push({ name: currentH3, text })
+      currentH3 = null // only the first block after an h3 takes its name
     }
   }
 

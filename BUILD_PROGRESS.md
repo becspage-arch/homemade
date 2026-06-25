@@ -28,16 +28,34 @@ takes the flat `extractRecipeInstructions`).
 Part B (nutrition). New `lib/recipes/nutrition.ts` computes a per-serving
 estimate from `Ingredient.nutritionalInfoPer100g` (USDA FoodData Central, public
 domain) with a unit→grams converter (mass direct, volume via the ingredient's
-density, count units via a per-unit gram weight). Integrity gate: a recipe emits
-nutrition only when EVERY ingredient resolves to grams AND has calories; one gap
-omits the whole panel, so no figure is ever built on missing data. The Recipe
-schema gains `NutritionInformation`; a server-rendered `NutritionPanel` shows the
-estimate on the page, clearly labelled. Per-serving is derived live at render,
-not persisted. First data batch seeded: 32 common cooking + baking staples
-(`data/ingredient-nutrition.ts`, idempotent `seed-ingredient-nutrition.ts`); 7
-published recipes now fully qualify and render a panel. The used-ingredient set
-is 1,020 (all were empty); the remaining ~988 are a follow-up batch pending an
-accuracy eyeball.
+density, count / descriptive / spoon units via a per-unit gram weight, plural →
+singular). Integrity gate: a recipe emits nutrition only when EVERY ingredient
+resolves to grams AND has calories; one gap omits the whole panel, so no figure
+is ever built on missing data. Gated to cooking + baking so a calorie count
+never lands on a natural-home soap. The Recipe schema gains
+`NutritionInformation`; a server-rendered `NutritionPanel` shows the estimate,
+clearly labelled. Per-serving is derived live at render, not persisted.
+
+Data: `data/ingredient-nutrition.ts` + idempotent `seed-ingredient-nutrition.ts`
+now cover 333 ingredients (the food set used by published cooking + baking
+recipes is 847; the rest are rarer long-tail or non-food). Vague seasoning
+amounts ("salt to taste", "a pinch", "oil for greasing", "a handful") resolve to
+a small nominal weight (what mainstream recipe sites assume) — they're
+low-calorie seasonings, so the headline figures stay honest and the panel says
+estimate. 1,484 of 2,981 cooking + baking recipes (~50%) now render a panel; the
+rest are mostly blocked by un-seeded long-tail ingredients (each unlocks only a
+few). `scripts/nutrition-coverage.ts` reports coverage + the highest-impact gaps
+for the next pass. Accuracy rule held: only USDA-substantiated per-100g values,
+a field left blank rather than guessed; only the small seasoning amounts are
+nominal. Recipes without nutrition are unaffected — NutritionInformation is an
+optional Recipe property, so Search Console never errors on its absence.
+
+QC (future recipes). `recipeYieldsSteps` added to the completeness gate
+(`qc-completeness-rules/shared.ts`), wired into the RECIPE rule: a recipe whose
+body yields no extractable steps for the Recipe JSON-LD stays DRAFT. Verified to
+block 0 of the 4,618 existing recipes. The extractor also now reads bullet /
+numbered lists nested under a Method heading. No QC rule for nutrition — it's
+correctly optional (all-or-nothing).
 
 ## The loom hero pipeline wired to one production entrypoint (2026-06-24)
 

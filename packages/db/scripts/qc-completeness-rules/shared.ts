@@ -124,6 +124,53 @@ export function hasSteps(body: unknown, text: string): boolean {
   return hasList(body) || hasMethodHeading(body) || hasImperativeStepRun(text)
 }
 
+// Mirror of the SEO step extractor's section detection
+// (apps/web/src/lib/seo/extract-recipe-instructions.ts). Kept in step with it
+// so a recipe that passes this gate always emits recipeInstructions in its
+// Recipe JSON-LD. The method-heading set and excluded-section set match the
+// extractor exactly.
+const RECIPE_METHOD_HEADING_RE =
+  /\b(method|instructions?|directions?|steps|how to (make|do)|to make|preparation|what to do|the practice)\b/i
+const RECIPE_EXCLUDE_HEADING_RE =
+  /\b(ingredient|what you need|you will need|equipment|tools?|storage|shelf life|keeps?|notes?|tips?|troubleshoot|variation|substitut|serve|serving|source|reference|nutrition|before you (start|begin)|safety|why|about|first burn)\b/i
+
+/**
+ * Does the recipe body yield at least one structured step the SEO extractor
+ * can pull into `recipeInstructions`? An ordered list anywhere counts; failing
+ * that, a paragraph or list nested under a labelled "Method" section; failing
+ * that, the same under any post-ingredients section that isn't storage / notes
+ * / serving / sources. Future recipes that don't satisfy this stay DRAFT, which
+ * stops the zero-step JSON-LD regression at the source.
+ */
+export function recipeYieldsSteps(body: unknown): boolean {
+  if (hasNodeType(body, 'orderedList')) return true
+  const top =
+    body && typeof body === 'object' && Array.isArray((body as TipTapNode).content)
+      ? ((body as TipTapNode).content as TipTapNode[])
+      : []
+  let h2: string | null = null
+  let seenIngredients = false
+  const eligible = (): boolean => {
+    if (h2 != null && RECIPE_METHOD_HEADING_RE.test(h2)) return true
+    const excluded = h2 != null && RECIPE_EXCLUDE_HEADING_RE.test(h2)
+    return seenIngredients && h2 != null && !excluded
+  }
+  for (const node of top) {
+    if (!node || typeof node !== 'object') continue
+    if (node.type === 'ingredientsList') { seenIngredients = true; continue }
+    if (node.type === 'heading' && node.attrs?.level === 2) { h2 = bodyText(node).trim(); continue }
+    if (node.type === 'heading') continue
+    if (node.type === 'paragraph') {
+      if (bodyText(node).trim() && eligible()) return true
+      continue
+    }
+    if ((node.type === 'orderedList' || node.type === 'bulletList') && eligible()) {
+      if (bodyText(node).trim()) return true
+    }
+  }
+  return false
+}
+
 const STEP_IMPERATIVES = new Set<string>([
   'steep', 'strain', 'apply', 'mix', 'pour', 'heat', 'cool', 'stir', 'bring',
   'cover', 'boil', 'simmer', 'bake', 'place', 'set', 'leave', 'transfer',
@@ -254,6 +301,12 @@ export function recipeRule(opts: { requireYieldTiming: boolean }): CategoryRule[
         ingredientsListHasItems(ctx.body)
       if (!hasIngredients) reasons.push('recipe/remedy has no ingredientsList items')
       if (!hasSteps(ctx.body, text)) reasons.push('recipe/remedy has no method or steps')
+      // A RECIPE must also yield steps the SEO extractor can pull into the
+      // Recipe JSON-LD — passing `hasSteps` (a method heading exists) isn't
+      // enough if the method has no extractable paragraphs/list under it.
+      if (ctx.type === 'RECIPE' && !recipeYieldsSteps(ctx.body)) {
+        reasons.push('recipe method yields no structured steps for the Recipe schema (needs an ordered list, or paragraphs/list under a Method heading)')
+      }
       if (opts.requireYieldTiming && ctx.type === 'RECIPE' && !hasYieldOrTiming(ctx)) {
         reasons.push('recipe has no yield (servings / yieldDescription) and no timing')
       }

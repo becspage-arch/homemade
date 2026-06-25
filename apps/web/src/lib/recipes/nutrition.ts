@@ -99,31 +99,66 @@ const G_PER_MASS_UNIT: Record<string, number> = {
   kg: 1000,
 }
 
+// Nominal gram weights for the vague "seasoning" amounts a recipe leaves to the
+// cook: "salt to taste", "a pinch", "oil for greasing", "a handful of parsley".
+// These are overwhelmingly low-calorie seasonings, so a small default gives a
+// useful per-serving estimate without materially moving the headline figures
+// (it's only ever a few calories, plus a rough sodium guess for salt). The
+// panel is labelled an estimate. Used as a LAST resort, after the ingredient's
+// own per-unit weights, and it's what mainstream recipe sites assume. A real
+// per-unit weight on the ingredient always wins over these generic defaults.
+const NOMINAL_UNIT_GRAMS: Record<string, number> = {
+  'to taste': 1, season: 1, 'to season': 1, 'for seasoning': 1, seasoning: 1,
+  'to serve': 1, 'to garnish': 1, 'to finish': 1,
+  pinch: 0.4, 'small pinch': 0.2, 'good pinch': 0.6, 'large pinch': 0.8, pinches: 0.4,
+  dash: 1, dashes: 1, splash: 5, glug: 12, knob: 12, drizzle: 5,
+  grind: 0.2, grinds: 0.2, 'few grinds': 0.4, twist: 0.2,
+  drop: 0.05, drops: 0.05, 'few drops': 0.2,
+  'for dusting': 2, 'for greasing': 3, 'for frying': 10, 'for drizzling': 5,
+  'for brushing': 3, 'for sprinkling': 2, 'for rolling': 5, 'for coating': 5,
+  'for the tin': 3, 'for shallow frying': 15, 'for deep frying': 20,
+  handful: 15, 'small handful': 8, 'large handful': 25,
+}
+
 /**
  * Convert an authored ingredient amount to grams, or null when it can't be
  * done faithfully. Mass units convert directly; volume units need the
- * ingredient's density; count / descriptive units need a per-unit gram weight
- * from the nutrition record.
+ * ingredient's density; count / descriptive units take a per-unit gram weight
+ * from the nutrition record; and vague seasoning units fall back to a small
+ * nominal weight (so "salt to taste" doesn't block the whole recipe).
  */
 export function amountToGrams(
   amount: number | null,
   unit: string | null,
   opts: { densityGPerMl: number | null; gramsPerUnit?: Record<string, number> },
 ): number | null {
-  if (amount == null || !Number.isFinite(amount) || amount <= 0) return null
   const u = (unit ?? '').trim().toLowerCase()
+  const hasAmount = amount != null && Number.isFinite(amount) && amount > 0
 
-  if (u in G_PER_MASS_UNIT) return amount * G_PER_MASS_UNIT[u]!
-
-  if (u in ML_PER_UNIT) {
-    if (opts.densityGPerMl == null || opts.densityGPerMl <= 0) return null
-    return amount * ML_PER_UNIT[u]! * opts.densityGPerMl
+  // Mass + volume need a real number to scale.
+  if (hasAmount) {
+    if (u in G_PER_MASS_UNIT) return amount! * G_PER_MASS_UNIT[u]!
+    if (u in ML_PER_UNIT && opts.densityGPerMl != null && opts.densityGPerMl > 0) {
+      return amount! * ML_PER_UNIT[u]! * opts.densityGPerMl
+    }
   }
 
-  // Count / descriptive units ("each", "clove", "sprig", "pinch", "handful",
-  // "slice", "leaf", "sheet", "bunch") — only convertible with a per-unit weight.
-  const per = opts.gramsPerUnit?.[u] ?? (u === '' ? opts.gramsPerUnit?.each : undefined)
-  if (per != null && per > 0) return amount * per
+  // Per-unit weight. Covers count / descriptive units ("each", "clove",
+  // "sprig", "slice"), a spoon weight for densityless ground spices, and the
+  // generic seasoning nominals. Recipes write the unit both singular and
+  // plural ("clove" / "cloves"), so a plural also matches its singular key.
+  // The count defaults to 1 when the recipe gave no number ("a pinch", "to
+  // taste") — those units always carry an implied "some".
+  const map = opts.gramsPerUnit
+  const per =
+    map?.[u] ??
+    (u.endsWith('s') ? map?.[u.slice(0, -1)] : undefined) ??
+    (u === '' ? map?.each : undefined) ??
+    NOMINAL_UNIT_GRAMS[u]
+  if (per != null && per > 0) {
+    const count = hasAmount ? amount! : 1
+    return count * per
+  }
   return null
 }
 
