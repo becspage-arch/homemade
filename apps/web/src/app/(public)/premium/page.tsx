@@ -202,7 +202,7 @@ export default async function PremiumPage() {
     <div className="premium-page">
       <header className="premium-hero">
         <p className="premium-hero-eyebrow">Homemade Premium</p>
-        <h1 className="premium-hero-title">Make beautiful things, in any craft</h1>
+        <h1 className="premium-hero-title">The home of all things homemade</h1>
       </header>
 
       <PremiumPricing

@@ -1,6 +1,6 @@
 # Homemade
 
-The home of making things yourself.
+The home of all things homemade.
 
 - Web: `apps/web` (Next.js 16, Tailwind v4)
 - Canonical planning docs live in Google Drive (`I:\My Drive\Homemade\`)

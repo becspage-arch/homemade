@@ -36,7 +36,7 @@ const lora = Lora({
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin()),
   title: 'Homemade',
-  description: 'The home of making things yourself.',
+  description: 'The home of all things homemade.',
   robots: { index: false, follow: false },
   other: process.env.GOOGLE_SITE_VERIFICATION
     ? { 'google-site-verification': process.env.GOOGLE_SITE_VERIFICATION }

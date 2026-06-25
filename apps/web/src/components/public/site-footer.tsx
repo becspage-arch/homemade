@@ -68,7 +68,7 @@ export async function SiteFooter() {
         <div className="site-footer-brand">
           <span className="site-footer-wordmark">homemade</span>
           <span className="site-footer-tagline">
-            The home of making things yourself.
+            The home of all things homemade.
           </span>
         </div>
 

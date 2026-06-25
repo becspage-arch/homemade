@@ -22,7 +22,7 @@ import './home-page.css'
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = buildPublicMetadata({
-  title: 'Homemade — the home of making things yourself',
+  title: 'Homemade — the home of all things homemade',
   description:
     'Cooking, baking, growing, herbal medicine, sewing, knitting, pottery and more — tested recipes and clear techniques from independent makers.',
   path: '/',
@@ -49,7 +49,7 @@ export default async function HomePage() {
       <div className="home-fallback">
         <Wordmark />
         <div className="home-fallback-rule" />
-        <p className="home-fallback-tagline">the home of making things yourself</p>
+        <p className="home-fallback-tagline">the home of all things homemade</p>
       </div>
     )
   }
@@ -137,7 +137,7 @@ export default async function HomePage() {
           {data.hero.kind === 'WORDMARK_FALLBACK' && (
             <div className="home-hero-wordmark">
               <Wordmark />
-              <p className="home-hero-tagline">the home of making things yourself</p>
+              <p className="home-hero-tagline">the home of all things homemade</p>
             </div>
           )}
         </section>

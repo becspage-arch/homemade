@@ -32,7 +32,7 @@ export default function AboutPage() {
 
       <header className="about-hero">
         <p className="about-eyebrow">About</p>
-        <h1 className="about-title">The home of making things yourself</h1>
+        <h1 className="about-title">The home of all things homemade</h1>
         <p className="about-lede">
           Homemade is one place for everything you might want to make at home.
           The bread your family actually eats. The herbs on the kitchen
