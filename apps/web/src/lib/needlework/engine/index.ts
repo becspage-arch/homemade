@@ -21,6 +21,10 @@ export { patternToLineArtSvg } from './lineart'
 export type { LineArtOptions } from './lineart'
 export { patternToPrintTemplate } from './print-template'
 export type { PrintTemplate, PrintPage, PrintOptions } from './print-template'
+export { traceLineArt } from './trace'
+export type { TracedCell, TraceResult, TraceOptions } from './trace'
+export { dmcRamp, dmc, centroidOf, axisDeg, shadedFill, workedLine, frenchKnot, frenchKnotRing, placePoly, fitToHoopMm } from './author'
+export type { Pt } from './author'
 export type { StitchedElement } from '../../loom/render/renderPattern'
 
 /** A planned pattern element — the loom contract, with optional shading. */

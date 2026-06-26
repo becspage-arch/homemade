@@ -43,6 +43,16 @@ export interface BlenderSceneOptions {
   tameGreens?: boolean
   /** Multiplier applied to a green's saturation when `tameGreens` (1 = no-op). */
   greenDesat?: number
+  /**
+   * Pull HIGHLY-saturated WARM hues (reds / warm pinks) down a touch. AgX skews
+   * bright saturated reds toward orange; easing their saturation (and the very
+   * brightest a hair darker) keeps them reading as true red/rose. OFF by default
+   * so other crafts are untouched; surface-embroidery (needle-painting in rich
+   * rose/red palettes) opts in. Muted warm tones are left alone.
+   */
+  tameWarm?: boolean
+  /** Multiplier applied to a warm hue's saturation when `tameWarm` (1 = no-op). */
+  warmDesat?: number
 }
 
 const clamp = (v: number, lo: number, hi: number): number => Math.max(lo, Math.min(hi, v))
@@ -115,6 +125,32 @@ export function tameGreen(hex: string, desat: number): string {
 }
 
 /**
+ * Tame an over-saturated WARM hue (red / orange / warm pink). AgX skews bright
+ * saturated reds toward orange; pull their saturation down (the more saturated,
+ * the more pull) and ease the very brightest a hair darker so they stay out of
+ * AgX's bright-red rolloff. Muted warm tones and everything outside the warm band
+ * are returned untouched.
+ */
+export function tameWarm(hex: string, desat: number): string {
+  const m = /^#?([0-9a-f]{6})$/i.exec(hex)
+  if (!m) return hex
+  const n = parseInt(m[1]!, 16)
+  const r = (n >> 16) & 0xff
+  const g = (n >> 8) & 0xff
+  const b = n & 0xff
+  const { h, s, l } = rgbToHsl(r, g, b)
+  const isWarm = h >= 330 || h <= 38
+  if (!isWarm || s < 0.4) return rgbToHex(r, g, b)
+  // AgX skews even medium warm-reds to orange, so pull saturated warm tones down
+  // firmly (a would-be-orange red lands as a true dusty rose). Soft tones (s<0.4)
+  // are already faithful and left alone.
+  const s2 = Math.min(s * desat, 0.34)
+  const l2 = s > 0.6 ? l * 0.95 : l
+  const out = hslToRgb(h, clamp(s2, 0, 1), clamp(l2, 0, 1))
+  return rgbToHex(out.r, out.g, out.b)
+}
+
+/**
  * Convert a flat list of thread strokes into the Blender backend scene. This is
  * the single source of truth for that conversion.
  */
@@ -125,13 +161,17 @@ export function strokesToBlenderScene(
 ): BlenderScene {
   const tame = options.tameGreens ?? true
   const desat = options.greenDesat ?? 0.82
+  const tameW = options.tameWarm ?? false
+  const warmDesat = options.warmDesat ?? 0.7
   return {
     fabric,
     strokes: strokes.map((st) => {
       const fp = filamentPolylines(st)
       const raw = rgbToHex(st.material.colour.r, st.material.colour.g, st.material.colour.b)
+      let hex = tame ? tameGreen(raw, desat) : raw
+      if (tameW) hex = tameWarm(hex, warmDesat)
       return {
-        hex: tame ? tameGreen(raw, desat) : raw,
+        hex,
         sheen: st.material.sheen,
         radiusMm: fp.radiusMm,
         filaments: fp.filaments.map((poly) => poly.map((q) => [q.x, q.y, q.z])),

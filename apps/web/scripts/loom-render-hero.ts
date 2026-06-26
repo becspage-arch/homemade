@@ -74,6 +74,8 @@ export interface RenderHeroOptions {
   r2Prefix?: string
   /** Pull over-saturated greens down a touch (cosmetic). Default true. */
   tameGreens?: boolean
+  /** Pull highly-saturated warm reds/pinks down so AgX doesn't skew them orange. Default false. */
+  tameWarm?: boolean
   /** Persist the chosen hero to R2. Default true; false = local-only proof. */
   persist?: boolean
   /** Override the fidelity-gate thresholds (defaults are the calibrated lock). */
@@ -179,7 +181,7 @@ export async function renderHero(
   const scene = strokesToBlenderScene(
     strokes,
     { widthMm: input.finishedSizeMm.width, heightMm: input.finishedSizeMm.height, hex: input.fabricHex ?? '#e3d8c0' },
-    { tameGreens: options.tameGreens ?? true },
+    { tameGreens: options.tameGreens ?? true, tameWarm: options.tameWarm ?? false },
   )
   writeFileSync(scenePath, JSON.stringify(scene))
   log(`[loom:${safe}] ${input.stitchedElements.length} elements -> ${strokes.length} strokes -> scene`)
