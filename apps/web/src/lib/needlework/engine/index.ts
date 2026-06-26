@@ -19,6 +19,8 @@ export { buildPatternDocument } from './document'
 export type { PatternDocument, FlossRow, StitchRow, ElementLabel } from './document'
 export { patternToLineArtSvg } from './lineart'
 export type { LineArtOptions } from './lineart'
+export { patternToPrintTemplate } from './print-template'
+export type { PrintTemplate, PrintPage, PrintOptions } from './print-template'
 export type { StitchedElement } from '../../loom/render/renderPattern'
 
 /** A planned pattern element — the loom contract, with optional shading. */
