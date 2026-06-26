@@ -20,6 +20,7 @@ import { backStitch, stemStitch, straightStitch } from '../stitches/line'
 import { satinBand, satinFillPolygon } from '../stitches/satin'
 import { frenchKnot, lazyDaisy, wovenWheel } from '../stitches/detached'
 import { fernStitch } from '../stitches/chain'
+import { needlePaintFill } from '../stitches/needlepaint'
 
 export interface StitchedGeom {
   kind: 'path' | 'point' | 'disc'
@@ -34,6 +35,13 @@ export interface StitchedElement {
   thread?: { type: string; weight: string } | null
   directionDeg?: number | null
   geometry: StitchedGeom
+  /**
+   * Optional shading for a worked fill (satin / long-and-short): a dark→light DMC
+   * ramp plus the fade direction. When present, the fill is rendered as BLENDED
+   * long-and-short (needle-painting) across the ramp instead of one flat colour —
+   * this is what makes shaded petals/leaves read as a smooth blend, not stripes.
+   */
+  shade?: { ramp: string[]; axisDeg?: number } | null
 }
 
 function threadKind(type: string | undefined): ThreadKind {
@@ -116,8 +124,9 @@ export function patternToStrokes(
         // direction. This is what makes a filled petal/leaf read as stitched
         // colour, not a flat blob.
         if (pts.length >= 3) {
-          const angle = el.directionDeg ?? satinAngle(pts)
-          out.push(...satinFillPolygon(pts, ctx, { angleDeg: angle }))
+          const angle = el.directionDeg ?? el.shade?.axisDeg ?? satinAngle(pts)
+          if (el.shade?.ramp?.length) out.push(...needlePaintFill(pts, el.shade.ramp, angle, ctx))
+          else out.push(...satinFillPolygon(pts, ctx, { angleDeg: angle }))
         }
         break
       }
