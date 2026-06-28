@@ -20,6 +20,7 @@ import bpy
 import json
 import sys
 import math
+import os
 
 # Loom millimetres -> Blender units (1 unit = 1 cm) keeps lights/camera sane.
 S = 0.1
@@ -445,9 +446,11 @@ def main():
     world = bpy.data.worlds.new("w")
     scene.world = world
     world.use_nodes = True
-    # Low, warm ambient — enough to keep shadows from going black, not so much it
-    # flattens the relief.
-    world.node_tree.nodes["Background"].inputs["Color"].default_value = (0.95, 0.93, 0.9, 1.0)
+    # Low ambient — enough to keep shadows from going black, not so much it
+    # flattens the relief. Default is a warm tint; LOOM_AMBIENT=neutral makes it
+    # neutral grey so floss colours aren't lit warm (colour-calibration option).
+    amb = (0.94, 0.94, 0.94, 1.0) if os.environ.get("LOOM_AMBIENT") == "neutral" else (0.95, 0.93, 0.9, 1.0)
+    world.node_tree.nodes["Background"].inputs["Color"].default_value = amb
     world.node_tree.nodes["Background"].inputs["Strength"].default_value = 0.45
 
     # ---- Camera: top-down, long lens (near-ortho, low distortion), gentle DoF ----
@@ -474,13 +477,21 @@ def main():
     aspect = (halfW * 2) / (halfH * 2)
     scene.render.resolution_y = 900
     scene.render.resolution_x = int(900 * aspect)
-    # AgX = photographic highlight rolloff (the "real photo" look). It mutes
-    # colour, so a modest saturation lift in the compositor brings the floss back
-    # to rich-but-natural — not the neon of Standard.
-    scene.view_settings.view_transform = "AgX"
-    scene.view_settings.look = "AgX - Base Contrast"
-    scene.view_settings.exposure = 0.9  # lower: ambient no longer doing the lifting
-    grade_saturation(scene, 1.5)  # counter AgX's desaturation so floss reads vivid
+    # Colour pipeline. Defaults = the production look (AgX filmic + a saturation
+    # lift to counter AgX's desaturation). Overridable via env for colour
+    # calibration A/B (LOOM_VIEW=Standard|AgX, LOOM_SAT=<float>, LOOM_EXP=<float>)
+    # WITHOUT changing the production defaults.
+    view = os.environ.get("LOOM_VIEW", "AgX")
+    sat = float(os.environ.get("LOOM_SAT", "1.5"))
+    exp = float(os.environ.get("LOOM_EXP", "0.9"))
+    if view == "Standard":
+        scene.view_settings.view_transform = "Standard"
+    else:
+        scene.view_settings.view_transform = "AgX"
+        scene.view_settings.look = "AgX - Base Contrast"
+    scene.view_settings.exposure = exp
+    if abs(sat - 1.0) > 1e-6:
+        grade_saturation(scene, sat)
     scene.render.filepath = out_path
     bpy.ops.render.render(write_still=True)
     print("RENDERED", out_path)
