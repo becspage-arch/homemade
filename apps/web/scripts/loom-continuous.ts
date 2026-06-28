@@ -18,11 +18,13 @@ mkdirSync(OUT, { recursive: true })
 const BLENDER = 'C:/Users/Rebecca/blender/blender-4.2.9-windows-x64/blender.exe'
 
 function main() {
-  const mode = process.argv[2] ?? 'sc'
-  const yr = 3.0
-  const rows: StitchId[] =
-    mode === 'mix' ? ['sc', 'sc', 'hdc', 'hdc', 'dc', 'dc'] : (['sc', 'sc', 'sc', 'sc', 'sc', 'sc'] as StitchId[])
-  const W = 12 // more, smaller stitches in view (real sc is fine + dense)
+  // args: yarnRadiusMm, stitchesPerRow, colourHex, name  (defaults = chunky cream)
+  const yr = Number(process.argv[2] ?? 3.0) // yarn WEIGHT (radius mm): ~1.3 fine, ~2 worsted, ~3 bulky
+  const W = Number(process.argv[3] ?? 12)
+  const hex = process.argv[4] ?? '#e6d4c0'
+  const name = process.argv[5] ?? 'continuous-sc'
+  const nRows = 8
+  const rows: StitchId[] = Array(nRows).fill('sc') as StitchId[]
   const built = buildContinuous(rows, W, yr)
 
   // Light relax only: settle + keep yarns a diameter apart WITHOUT collapsing the
@@ -41,17 +43,16 @@ function main() {
   const ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
   const center = smooth(ctrl, 4)
   const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, 0.1) // gentle twist = plied wool fibre (path no longer knots)
-  const strokes = [{ hex: '#e6d4c0', sheen: 0.85, radiusMm, filaments }]
+  const strokes = [{ hex, sheen: 0.85, radiusMm, filaments }]
 
   const scene = {
-    fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex: '#efe4d6' },
+    fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
     strokes,
     view: { bgHex: '#6f5440', marginFactor: 0.12 },
   }
-  const name = `continuous-${mode}`
   const scenePath = resolve(OUT, `${name}.json`)
   writeFileSync(scenePath, JSON.stringify(scene))
-  console.log(`continuous ${mode}: ${built.strandPath.length} nodes, 1 strand, ${filaments.length} plies`)
+  console.log(`${name}: yr=${yr} W=${W}, ${built.strandPath.length} nodes, 1 strand`)
   console.log(`wrote ${scenePath}`)
 
   const outPng = resolve(OUT, `${name}.png`)
