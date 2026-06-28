@@ -45,10 +45,10 @@ function main() {
   if (mode === 'swatch') {
     // Fewer, bigger stitches + crop INTO the fabric (negative margin) so it fills
     // the frame edge-to-edge and the loops are clearly readable.
-    layout = layoutAspen({ patch: { stitches: 18, rows: 15 }, strands: 4 })
+    layout = layoutAspen({ patch: { stitches: 30, rows: 24 }, strands: 4, fuzz: 3 })
     name = 'aspen-swatch'
-    samples = 160
-    view = { bgHex: '#6f5440', marginFactor: -0.16 }
+    samples = 170
+    view = { bgHex: '#6f5440', marginFactor: -0.08 }
   } else if (mode === 'throw') {
     // Full blanket at true proportion + fringe. Gauge coarsened (~2.2x) so the
     // ~14k true-gauge stitches fit one Blender scene; the diagonal rib, the 42:50

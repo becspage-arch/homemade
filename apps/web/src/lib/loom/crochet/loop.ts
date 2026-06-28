@@ -42,6 +42,8 @@ export interface CrochetCell {
   kind?: ThreadKind
   /** Strand/ply count of the yarn bundle. */
   strands?: number
+  /** Number of stray fuzz fibres to add per stitch (the wool halo; swatch zoom). */
+  fuzz?: number
 }
 
 const lerp = (a: number, b: number, t: number): number => a + (b - a) * t
@@ -85,48 +87,78 @@ export function hdcBloStitch(cell: CrochetCell): ThreadStroke[] {
   const w = sw * 0.5
   const out: ThreadStroke[] = []
 
+  // Strong twist so the bundle's filaments read as visibly spiralling PLIES — the
+  // single biggest "this is yarn, not a smooth tube" cue. ~3 fat plies.
+  const PLY = 3
+  const ribTwist = 0.42 // twists per mm — a clear barber-pole over a stitch
+
   // ---- 1. Rib cord: continuous along the row, centred at lv ~ 0, overshooting
-  // the cell so neighbouring cords merge into one rib. A gentle per-stitch dip at
-  // the joins + a rise at the centre makes each stitch read as a plump bump. ----
+  // the cell so neighbouring cords merge into one rib. Sits only modestly proud
+  // so the groove between rows is a soft shadow (connected fabric), not a black
+  // gap (which read as separate sausages). ----
   const cord: Vec2[] = []
-  const N = 8
+  const N = 10
   for (let i = 0; i <= N; i++) {
     const t = i / N
     const lu = lerp(-w * 1.12, w * 1.12, t) // overshoot -> ribs are continuous
-    const lv = rh * 0.04 + jitter(cell.seed, 20 + i) * rh * 0.01
+    const lv = rh * 0.04 + jitter(cell.seed, 20 + i) * rh * 0.012
     cord.push(toWorld(lu, lv))
   }
   out.push({
     path: cord,
-    z0: yr * 1.95, // rides high -> deep shadow drops into the groove below it
-    arch: yr * 0.22,
-    radiusMm: yr * 0.95, // narrower than the cell -> the inter-row groove stays open
-    filaments: filaments + 1,
-    twistPerMm,
+    z0: yr * 1.25, // lower -> softer groove, rows read connected
+    arch: yr * 0.2,
+    radiusMm: yr * 1.02,
+    filaments: PLY,
+    twistPerMm: ribTwist,
     material: mat,
     seed: cell.seed,
   })
 
-  // ---- 2. Top-loop V: a short chevron lying ON the rib — the two top loops of
-  // the hdc, giving the rib its crochet grain. Subtle: low and thin so it only
-  // textures the rib and never builds a competing cross-grid. ----
+  // ---- 2. Top-loop V: a short plied chevron lying ON the rib — the two top
+  // loops of the hdc, the crochet grain. ----
   const vChev: Vec2[] = [
-    toWorld(-w * 0.5, rh * 0.02),
-    toWorld(-w * 0.14, rh * 0.12),
-    toWorld(0, rh * 0.05), // shallow notch between the two loops
-    toWorld(w * 0.14, rh * 0.12),
-    toWorld(w * 0.5, rh * 0.02),
+    toWorld(-w * 0.5, rh * 0.06),
+    toWorld(-w * 0.14, rh * 0.16),
+    toWorld(0, rh * 0.09), // shallow notch between the two loops
+    toWorld(w * 0.14, rh * 0.16),
+    toWorld(w * 0.5, rh * 0.06),
   ]
   out.push({
     path: vChev,
-    z0: yr * 2.05,
+    z0: yr * 1.55,
     arch: yr * 0.18,
-    radiusMm: yr * 0.4,
-    filaments: Math.max(2, filaments - 1),
-    twistPerMm: twistPerMm * 1.5,
+    radiusMm: yr * 0.5,
+    filaments: 2,
+    twistPerMm: ribTwist * 1.5,
     material: mat,
     seed: cell.seed + 0.5,
   })
+
+  // ---- 4. Fuzz: a few fine fly-away fibres, the wool halo. Cheap (a handful of
+  // thin strokes per stitch) and only worth it at swatch zoom. ----
+  const nFuzz = cell.fuzz ?? 0
+  for (let f = 0; f < nFuzz; f++) {
+    const lu0 = jitter(cell.seed, 40 + f) * w * 0.9
+    const lv0 = rh * 0.1 + jitter(cell.seed, 50 + f) * rh * 0.18
+    const len = yr * (1.1 + 0.6 * Math.abs(jitter(cell.seed, 60 + f)))
+    const ang = jitter(cell.seed, 70 + f) * Math.PI
+    const hair: Vec2[] = [
+      toWorld(lu0, lv0),
+      toWorld(lu0 + Math.cos(ang) * len * 0.5, lv0 + Math.sin(ang) * len * 0.5),
+      toWorld(lu0 + Math.cos(ang) * len, lv0 + Math.sin(ang) * len),
+    ]
+    out.push({
+      path: hair,
+      z0: yr * 1.7,
+      arch: yr * 0.9, // lifts off the surface -> reads as a stray fibre
+      radiusMm: yr * 0.12,
+      filaments: 1,
+      twistPerMm: 0,
+      material: mat,
+      seed: cell.seed + 3 + f,
+    })
+  }
 
   return out
 }

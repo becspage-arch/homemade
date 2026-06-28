@@ -69,12 +69,21 @@ def yarn_material(name, hexcol, sheen):
     fib.inputs["Scale"].default_value = 8.0
     fib.inputs["Detail"].default_value = 5.0
     bump = nt.nodes.new("ShaderNodeBump")
-    bump.inputs["Strength"].default_value = 0.95
-    bump.inputs["Distance"].default_value = 0.02
+    bump.inputs["Strength"].default_value = 1.3       # pronounced spun-fibre relief
+    bump.inputs["Distance"].default_value = 0.03
     nt.links.new(tex.outputs["Object"], mapp.inputs["Vector"])
     nt.links.new(mapp.outputs["Vector"], fib.inputs["Vector"])
     nt.links.new(fib.outputs["Fac"], bump.inputs["Height"])
-    nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    # A finer, denser fuzz bump layered on top — the wool's haze of short fibres.
+    fuzz = nt.nodes.new("ShaderNodeTexNoise")
+    fuzz.inputs["Scale"].default_value = 60.0
+    fuzz.inputs["Detail"].default_value = 6.0
+    bump2 = nt.nodes.new("ShaderNodeBump")
+    bump2.inputs["Strength"].default_value = 0.45
+    bump2.inputs["Distance"].default_value = 0.006
+    nt.links.new(fuzz.outputs["Fac"], bump2.inputs["Height"])
+    nt.links.new(bump.outputs["Normal"], bump2.inputs["Normal"])
+    nt.links.new(bump2.outputs["Normal"], bsdf.inputs["Normal"])
     # Roughness varies along the fibre (matte fluff vs catching strands).
     rough = nt.nodes.new("ShaderNodeMapRange")
     rough.inputs["To Min"].default_value = 0.62
@@ -135,7 +144,7 @@ def backing_material(hexcol):
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
     base = hex_to_lin(hexcol)
-    darker = tuple(c * 0.72 for c in base[:3]) + (1.0,)  # shadowed yarn, not a black gap
+    darker = tuple(c * 0.82 for c in base[:3]) + (1.0,)  # soft shadow, rows read connected
     set_in(bsdf, "Base Color", darker)
     set_in(bsdf, "Roughness", 0.9)
     set_in(bsdf, "Specular IOR Level", 0.1)

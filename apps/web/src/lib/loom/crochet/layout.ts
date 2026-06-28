@@ -34,6 +34,8 @@ export interface LayoutOptions {
   fringe?: boolean
   /** Render only a close-up patch this many stitches wide x rows tall (centred). */
   patch?: { stitches: number; rows: number }
+  /** Stray fuzz fibres per stitch (the wool halo) — worth it at swatch zoom. */
+  fuzz?: number
   /**
    * Coarsen the gauge by this factor for the full-blanket view (the true 42x50
    * gauge is ~14k stitches — too much yarn geometry for one Blender scene). A
@@ -95,6 +97,7 @@ export function layoutAspen(options: LayoutOptions = {}): LayoutResult {
           hex,
           seed: r * 131.5 + s * 7.31 + 0.123,
           strands,
+          fuzz: options.fuzz,
         })
       }
     }
