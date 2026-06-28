@@ -5,7 +5,11 @@
   padding: 32px;
   box-shadow: 0 8px 24px rgba(60, 47, 34, 0.06);
   max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
 }
+.pattern-unlock-list { text-align: left; max-width: 360px; margin-left: auto; margin-right: auto; }
+.pattern-unlock-actions { justify-content: center; }
 .pattern-unlock-overline {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 11px;
@@ -78,3 +82,47 @@
 }
 .pattern-unlock-premium-link { color: var(--color-sage); text-decoration: none; }
 .pattern-unlock-premium-link:hover { text-decoration: underline; }
+
+/* In-page premium overlay (iframe of the real /premium page). */
+.premium-overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(40, 30, 20, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.premium-overlay-panel {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  height: 88vh;
+  background: var(--color-cream, #f7f3ea);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+}
+.premium-overlay-iframe { width: 100%; height: 100%; border: 0; display: block; }
+.premium-overlay-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-espresso);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.premium-overlay-close:hover { background: #fff; }
+@media (max-width: 760px) {
+  .premium-overlay-backdrop { padding: 0; }
+  .premium-overlay-panel { max-width: none; height: 100vh; border-radius: 0; }
+}

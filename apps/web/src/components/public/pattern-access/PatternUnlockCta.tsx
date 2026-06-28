@@ -5,19 +5,19 @@
  *
  * Reusable across cross-stitch / crochet / needlework: the page renders the
  * SEO shop window (hero, photo, description, materials, stitches, size) and
- * drops this in where the usable pattern would be. It offers BOTH log in and
- * sign up as INLINE Clerk modals (mode="modal") — no redirect-away first, which
- * is what irritates people — and on success Clerk returns the visitor to the
- * SAME page (`returnTo`), where the now-signed-in render reveals the diagram,
- * the printable template and the Studio.
+ * drops this in where the usable pattern would be.
  *
- * The core pattern is FREE-with-login: signing up gives full access. The premium
- * tier (grading / create-your-own / independent-designer patterns) is a separate,
- * optional upsell linked beneath — not a gate on this pattern.
+ *  - "Log in" → inline Clerk sign-in modal (no redirect-away); returns to this
+ *    same page on success, where the signed-in render reveals the pattern.
+ *  - "Sign up free" → opens the in-page premium overlay (the real /premium page
+ *    embedded) so we upsell premium at the conversion moment while keeping the
+ *    visitor here. The core pattern stays FREE-with-login; premium is the
+ *    optional upgrade surfaced there.
  */
 
-import { SignInButton, SignUpButton } from '@clerk/nextjs'
-import Link from 'next/link'
+import { useState } from 'react'
+import { SignInButton } from '@clerk/nextjs'
+import { PremiumOverlay } from './PremiumOverlay'
 import './pattern-access.css'
 
 interface PatternUnlockCtaProps {
@@ -40,6 +40,8 @@ export function PatternUnlockCta({
   returnTo,
   unlocks = DEFAULT_UNLOCKS,
 }: PatternUnlockCtaProps) {
+  const [premiumOpen, setPremiumOpen] = useState(false)
+
   return (
     <aside className="pattern-unlock" aria-label="Log in to get the pattern">
       <p className="pattern-unlock-overline">Free with an account</p>
@@ -50,31 +52,23 @@ export function PatternUnlockCta({
         ))}
       </ul>
       <div className="pattern-unlock-actions">
-        <SignInButton
-          mode="modal"
-          forceRedirectUrl={returnTo}
-          signUpForceRedirectUrl={returnTo}
-        >
+        <SignInButton mode="modal" forceRedirectUrl={returnTo} signUpForceRedirectUrl={returnTo}>
           <button type="button" className="pattern-unlock-cta primary">
             Log in
           </button>
         </SignInButton>
-        <SignUpButton
-          mode="modal"
-          forceRedirectUrl={returnTo}
-          signInForceRedirectUrl={returnTo}
+        <button
+          type="button"
+          className="pattern-unlock-cta ghost"
+          onClick={() => setPremiumOpen(true)}
         >
-          <button type="button" className="pattern-unlock-cta ghost">
-            Sign up free
-          </button>
-        </SignUpButton>
+          Sign up free
+        </button>
       </div>
       <p className="pattern-unlock-foot">
-        It only takes a moment, and your progress saves across every device.{' '}
-        <Link href="/premium" className="pattern-unlock-premium-link">
-          See Premium
-        </Link>
+        It only takes a moment, and your progress saves across every device.
       </p>
+      <PremiumOverlay open={premiumOpen} onClose={() => setPremiumOpen(false)} />
     </aside>
   )
 }

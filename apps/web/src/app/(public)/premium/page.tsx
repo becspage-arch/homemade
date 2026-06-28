@@ -182,7 +182,12 @@ function Tick({ on }: { on: boolean }) {
   )
 }
 
-export default async function PremiumPage() {
+export default async function PremiumPage({
+  searchParams,
+}: {
+  searchParams?: Promise<{ embed?: string }>
+}) {
+  const embed = (await searchParams)?.embed === '1'
   const [count, currency, user] = await Promise.all([
     countPublishedLibrary(),
     readCurrency(),
@@ -200,6 +205,11 @@ export default async function PremiumPage() {
 
   return (
     <div className="premium-page">
+      {embed && (
+        // Rendered inside the in-page premium overlay (an iframe of this same
+        // page) — hide the site chrome so only the premium content shows.
+        <style dangerouslySetInnerHTML={{ __html: '.site-header,.site-footer,.cookie-banner,.mobile-tab-bar,.offline-banner{display:none!important}.public-main{padding-top:0!important}' }} />
+      )}
       <header className="premium-hero">
         <p className="premium-hero-eyebrow">Homemade Premium</p>
         <h1 className="premium-hero-title">The home of all things homemade</h1>

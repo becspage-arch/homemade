@@ -81,6 +81,9 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
     buildPatternDocument(canonical.stitchedElements, canonical.finishedSizeMm, { title: row.name })
 
   const heroUrl = mediaUrl(row.hero, 'hero')
+  // Extra finished-piece photos beyond the hero → a gallery. Empty until a
+  // pattern carries multiple Media (wiring galleryMediaIds→Media is a follow-up).
+  const galleryUrls: string[] = []
   const finishedW = canonical.finishedSizeMm.width
   const finishedH = canonical.finishedSizeMm.height
   const disciplineLabel =
@@ -151,7 +154,6 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
           <p className="nw-detail-overline">{disciplineLabel} pattern</p>
           <h1 className="nw-detail-title">{row.name}</h1>
           {row.designer && <p className="nw-detail-designer">by {row.designer.displayName}</p>}
-          {row.description && <p className="nw-detail-description">{row.description}</p>}
 
           <dl className="nw-detail-spec">
             <div><dt>Finished size</dt><dd>{finishedW.toFixed(0)} × {finishedH.toFixed(0)} mm</dd></div>
@@ -162,6 +164,8 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
             {row.frameType && <div><dt>Frame</dt><dd>{prettify(row.frameType.replace(/_/g, ' '))}</dd></div>}
           </dl>
 
+          {row.description && <p className="nw-detail-description">{row.description}</p>}
+
           {unlocked && (
             <div className="nw-detail-actions">
               <Link href={studioHref} className="nw-detail-action primary">Stitch this in the Studio</Link>
@@ -171,13 +175,14 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
         </div>
       </header>
 
-      {/* A clear FULL finished-piece photo, front and centre — the promise of
-          exactly what the maker will produce. Indexable for logged-out visitors. */}
-      {heroUrl && (
-        <section className="nw-detail-finished-shot">
-          <h2>The finished piece</h2>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={mediaUrl(row.hero, 'public') ?? heroUrl} alt={`${row.name} — finished embroidery`} loading="lazy" />
+      {/* Extra finished-piece photos (a gallery) only when there's more than the
+          hero — the hero already shows the finished piece, so no duplicate. */}
+      {galleryUrls.length > 0 && (
+        <section className="nw-detail-gallery">
+          {galleryUrls.map((g, i) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={i} src={g} alt={`${row.name} — view ${i + 2}`} loading="lazy" />
+          ))}
         </section>
       )}
 
@@ -206,11 +211,10 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
       {/* Stitches used — indexable shop window. */}
       <section className="nw-detail-stitches">
         <h2>Stitches used</h2>
-        <ul>
+        <ul className="nw-detail-stitch-list">
           {doc.stitchKey.map((s) => (
             <li key={s.slug}>
-              <span className="nw-detail-stitch-name">{s.name}</span>
-              {s.how && <span className="nw-detail-stitch-how">{s.how}</span>}
+              <strong>{s.name}</strong>{s.how ? ` — ${s.how}` : ''}
             </li>
           ))}
         </ul>
