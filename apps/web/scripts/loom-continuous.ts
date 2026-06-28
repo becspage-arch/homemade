@@ -26,11 +26,11 @@ function main() {
   const built = buildContinuous(rows, W, yr)
 
   relax(built.model, {
-    collMinDist: yr * 2,
-    collK: 0.25,
+    collMinDist: yr * 1.7, // tighter -> loops don't puff into balls
+    collK: 0.22,
     collAdjacency: 4,
     planeZ: 0,
-    planeK: 0.02,
+    planeK: 0.06, // pull firmly toward the plane -> flat fabric, not dumplings
     iterations: 550,
   })
 
@@ -38,7 +38,7 @@ function main() {
   const nodes = built.model.nodes
   const ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
   const center = smooth(ctrl, 4)
-  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.9, 3, 0.16)
+  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.78, 3, 0.16)
   const strokes = [{ hex: '#e6d4c0', sheen: 0.85, radiusMm, filaments }]
 
   const scene = {
