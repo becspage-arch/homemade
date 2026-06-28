@@ -17,8 +17,8 @@
 import { resolve } from 'node:path'
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { expandProgram } from '../src/lib/loom/crochet/aspenProgram'
-import { layoutAspen } from '../src/lib/loom/crochet/layout'
-import { strokesToBlenderScene } from '../src/lib/loom/render/blenderScene'
+import { aspenCells } from '../src/lib/loom/crochet/layout'
+import { hdcYarnStroke } from '../src/lib/loom/crochet/yarnLoop'
 
 const OUT = resolve(process.cwd(), '../../.loom-scratch/crochet')
 mkdirSync(OUT, { recursive: true })
@@ -36,28 +36,18 @@ function main() {
       `(Row 1=${prog.rows[0]!.count}, Row 56=${prog.rows[55]!.count}, Row 123=${prog.rows[122]!.count}).`,
   )
 
-  let layout
   let name: string
   let samples: number
-  // View controls for the Blender backend (legibility): a contrasting ground so
-  // the cream pops, a crop, and — for the throw — drape + perspective.
   let view: Record<string, number | string>
+  let patch: { stitches: number; rows: number } | undefined
+  let gaugeScale: number | undefined
   if (mode === 'swatch') {
-    // Fewer, bigger stitches + crop INTO the fabric (negative margin) so it fills
-    // the frame edge-to-edge and the loops are clearly readable.
-    // Clean deterministic base for Step 4: clear diagonal ribs + relief, no
-    // geometry fuzz (the locked upscale supplies the real yarn fibre/halo).
-    layout = layoutAspen({ patch: { stitches: 15, rows: 12 }, strands: 4, fuzz: 0 })
+    patch = { stitches: 15, rows: 12 }
     name = 'aspen-swatch'
     samples = 170
     view = { bgHex: '#6f5440', marginFactor: -0.1 }
   } else if (mode === 'throw') {
-    // Full blanket at true proportion + fringe. Gauge coarsened (~2.2x) so the
-    // ~14k true-gauge stitches fit one Blender scene; the diagonal rib, the 42:50
-    // proportion and the fringe all read at this scale. Clean flat-lay on a
-    // contrasting ground (real lifestyle drape is a separate staging step — a
-    // faked height-field + tilt reads as torn, not draped).
-    layout = layoutAspen({ fringe: true, strands: 2, gaugeScale: 2.2 })
+    gaugeScale = 2.2
     name = 'aspen-throw'
     samples = 120
     view = { bgHex: '#6f5440', marginFactor: 0.12 }
@@ -65,18 +55,19 @@ function main() {
     throw new Error(`unknown mode "${mode}" (use swatch | throw)`)
   }
 
-  const scene = strokesToBlenderScene(layout.strokes, {
-    widthMm: layout.widthMm,
-    heightMm: layout.heightMm,
-    hex: '#efe4d6',
-  }) as ReturnType<typeof strokesToBlenderScene> & { view?: Record<string, number | string> }
-  scene.view = view
+  // Yarn-level model: place cells, then render each stitch as a real 3D yarn
+  // centre-line (weaving over/under) spun into plies.
+  const { cells, widthMm, heightMm } = aspenCells({ patch, gaugeScale })
+  const strokes = cells.map((cell) => hdcYarnStroke(cell))
+  const scene = {
+    fabric: { widthMm, heightMm, hex: '#efe4d6' },
+    strokes,
+    view,
+  }
   const scenePath = resolve(OUT, `${name}.json`)
   writeFileSync(scenePath, JSON.stringify(scene))
   const filaments = scene.strokes.reduce((n, s) => n + s.filaments.length, 0)
-  console.log(
-    `[${mode}] ${layout.stitchCount} stitches -> ${scene.strokes.length} strokes, ${filaments} filaments`,
-  )
+  console.log(`[${mode}] ${cells.length} stitches -> ${scene.strokes.length} strokes, ${filaments} filaments`)
   console.log(`wrote ${scenePath}`)
 
   const outPng = resolve(OUT, `${name}.png`)
