@@ -73,9 +73,9 @@ export function layoutAspen(options: LayoutOptions = {}): LayoutResult {
     let maxY = -Infinity
     const cells: CrochetCell[] = []
     for (let r = 0; r < rows; r++) {
-      // Slight stagger per row (loops sit between the two below — real fabric);
-      // kept modest so the rib diagonal stays dominant over the cross diagonal.
-      const stagger = (r % 2) * 0.32
+      // Half-stitch stagger per row so each row's legs nest between the heads of
+      // the row below — exactly how crochet loops interlock.
+      const stagger = (r % 2) * 0.5
       for (let s = 0; s < stitches; s++) {
         const u = (s - half(stitches) + stagger) * swMm
         const v = (r - half(rows)) * rhMm

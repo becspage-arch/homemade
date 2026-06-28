@@ -47,7 +47,7 @@ function main() {
     // the frame edge-to-edge and the loops are clearly readable.
     // Clean deterministic base for Step 4: clear diagonal ribs + relief, no
     // geometry fuzz (the locked upscale supplies the real yarn fibre/halo).
-    layout = layoutAspen({ patch: { stitches: 22, rows: 18 }, strands: 4, fuzz: 0 })
+    layout = layoutAspen({ patch: { stitches: 15, rows: 12 }, strands: 4, fuzz: 0 })
     name = 'aspen-swatch'
     samples = 170
     view = { bgHex: '#6f5440', marginFactor: -0.1 }

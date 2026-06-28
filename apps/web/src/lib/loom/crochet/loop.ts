@@ -57,119 +57,85 @@ function jitter(seed: number, i: number): number {
 /**
  * Build the yarn strokes for one hdc-blo stitch.
  *
- * The signature of this blanket is a bold raised RIDGE per row (the worked tops
- * plus the unworked blo front loop) with a recessed groove between rows — tiled
- * along the diagonal row that becomes the diagonal ribbing. So the stitch is
- * built rib-first:
- *   1. the RIB CORD — a fat continuous cord along the row, sitting proud, with a
- *      per-stitch bump so individual stitches read along it,
- *   2. a small top-loop "V" sitting on the rib — the two crochet top loops, for
- *      character (kept low so it textures the rib, never a competing grid).
- * The cord deliberately occupies only the centre of the cell, leaving the top
- * and bottom of the cell open so the darker backing reads as the groove.
+ * Modelled as the REAL hdc loop, not a cord: each stitch is a continuous strand
+ * that rises on two legs to a head split by a shallow V-notch (the two top loops
+ * of a crochet stitch), then back down — an interlocking loop. With a half-stitch
+ * stagger row-to-row, one row's legs nest down between the heads of the row below
+ * (exactly how crochet fabric links), and the row of V-notched heads reads as the
+ * chain-top ridge. That nested-loop structure — NOT a twisted cord — is what makes
+ * the eye read "crochet". Worked in blo, so the heads ride at the front of the cell.
  */
 export function hdcBloStitch(cell: CrochetCell): ThreadStroke[] {
   const { center: c, rowDir: U, buildDir: V, widthMm: sw, heightMm: rh, yarnRadiusMm: yr } = cell
   const kind: ThreadKind = cell.kind ?? 'crewel-wool'
   const strands = cell.strands ?? 4
   const mat = material(kind, cell.hex)
-  const { filaments, twistPerMm } = threadStructure(kind, strands)
+  const { filaments } = threadStructure(kind, strands)
 
   // Local (lu, lv) -> world. lu spans the row, lv the build direction. A little
   // per-stitch jitter so the fabric reads hand-made, not machine-perfect.
-  const jx = jitter(cell.seed, 1) * sw * 0.06
-  const jy = jitter(cell.seed, 2) * rh * 0.05
+  const jx = jitter(cell.seed, 1) * sw * 0.05
+  const jy = jitter(cell.seed, 2) * rh * 0.04
   const toWorld = (lu: number, lv: number): Vec2 => ({
     x: c.x + U.x * (lu + jx) + V.x * (lv + jy),
     y: c.y + U.y * (lu + jx) + V.y * (lv + jy),
   })
 
   const w = sw * 0.5
+  const h = rh * 0.5
   const out: ThreadStroke[] = []
 
-  // Strong twist so the bundle's filaments read as visibly spiralling PLIES — the
-  // single biggest "this is yarn, not a smooth tube" cue. ~3 fat plies.
-  const PLY = 3
-  const ribTwist = 0.42 // twists per mm — a clear barber-pole over a stitch
+  const PLY = 3 // fat plies + twist so it reads as spun yarn, not a smooth tube
+  const twist = 0.34
 
-  // ---- 1. Rib cord: continuous along the row, centred at lv ~ 0, overshooting
-  // the cell so neighbouring cords merge into one rib. Sits only modestly proud
-  // so the groove between rows is a soft shadow (connected fabric), not a black
-  // gap (which read as separate sausages). ----
-  // A clear per-stitch swell along the rib: the cord plumps in the middle of the
-  // cell and pinches at the joins, so each stitch reads as a distinct unit (the
-  // upscale then renders crochet STITCHES, not a smooth rope).
-  const cord: Vec2[] = []
-  const N = 10
-  for (let i = 0; i <= N; i++) {
-    const t = i / N
-    const lu = lerp(-w * 1.06, w * 1.06, t) // slight overshoot -> stitches just touch
-    const swell = Math.sin(t * Math.PI) // 0 at joins, 1 at the stitch centre
-    const lv = rh * 0.04 + swell * rh * 0.026 + jitter(cell.seed, 20 + i) * rh * 0.012
-    cord.push(toWorld(lu, lv))
-  }
+  // ---- The stitch loop: left foot -> up the left leg -> over the head (with a
+  // central V-notch = the two top loops) -> down the right leg -> right foot. The
+  // feet sink toward the row below; the head rides high at the front of the cell
+  // (blo). Tiled with the row stagger, the feet nest between the heads below. ----
+  // The head dominates (it is the visible part of a blo stitch); the legs are
+  // short and tuck under. Two head peaks split by a deep central V-notch = the two
+  // top loops of the hdc. A row of these = the chain-top ridge, clearly made of
+  // stitches.
+  // Compressed into the upper ~60% of the cell, so the lower part is a recessed
+  // VALLEY between rows — the rib reads as a raised ridge with a groove below it,
+  // not a cell-filling blob. Feet land at the valley floor (into the row below).
+  const loop: Vec2[] = [
+    toWorld(-w * 0.42, -h * 0.15), // left foot at the valley floor
+    toWorld(-w * 0.66, h * 0.35), // left leg, bowed out
+    toWorld(-w * 0.5, h * 0.72), // left shoulder rising
+    toWorld(-w * 0.26, h * 0.99), // LEFT top loop (peak)
+    toWorld(0, h * 0.58), // V-notch between the two top loops
+    toWorld(w * 0.26, h * 0.99), // RIGHT top loop (peak)
+    toWorld(w * 0.5, h * 0.72), // right shoulder
+    toWorld(w * 0.66, h * 0.35), // right leg, bowed out
+    toWorld(w * 0.42, -h * 0.15), // right foot
+  ]
   out.push({
-    path: cord,
-    z0: yr * 1.25, // lower -> softer groove, rows read connected
-    arch: yr * 0.22,
-    radiusMm: yr * 0.98,
+    path: loop,
+    z0: yr * 0.85,
+    arch: yr * 1.25, // the two top loops stand proud of the fabric
+    radiusMm: yr * 0.9,
     filaments: PLY,
-    twistPerMm: ribTwist,
+    twistPerMm: twist,
     material: mat,
     seed: cell.seed,
   })
 
-  // A short cross "pinch" at each stitch's leading join — the gap between
-  // neighbouring stitches along the rib, so the stitch boundaries read.
-  const joinShadow: Vec2[] = [toWorld(w * 0.96, -rh * 0.02), toWorld(w * 0.96, rh * 0.12)]
-  out.push({
-    path: joinShadow,
-    z0: yr * 0.5,
-    arch: yr * 0.08,
-    radiusMm: yr * 0.22,
-    filaments: 2,
-    twistPerMm: ribTwist * 1.3,
-    material: mat,
-    seed: cell.seed + 0.8,
-  })
-
-  // ---- 2. Top-loop V: a short plied chevron lying ON the rib — the two top
-  // loops of the hdc, the crochet grain. ----
-  const vChev: Vec2[] = [
-    toWorld(-w * 0.5, rh * 0.06),
-    toWorld(-w * 0.14, rh * 0.16),
-    toWorld(0, rh * 0.09), // shallow notch between the two loops
-    toWorld(w * 0.14, rh * 0.16),
-    toWorld(w * 0.5, rh * 0.06),
-  ]
-  out.push({
-    path: vChev,
-    z0: yr * 1.55,
-    arch: yr * 0.18,
-    radiusMm: yr * 0.5,
-    filaments: 2,
-    twistPerMm: ribTwist * 1.5,
-    material: mat,
-    seed: cell.seed + 0.5,
-  })
-
-  // ---- 4. Fuzz: a few fine fly-away fibres, the wool halo. Cheap (a handful of
-  // thin strokes per stitch) and only worth it at swatch zoom. ----
+  // ---- Fuzz: a few fine fly-away fibres (the wool halo). Optional; swatch zoom. ----
   const nFuzz = cell.fuzz ?? 0
   for (let f = 0; f < nFuzz; f++) {
     const lu0 = jitter(cell.seed, 40 + f) * w * 0.9
-    const lv0 = rh * 0.1 + jitter(cell.seed, 50 + f) * rh * 0.18
-    const len = yr * (1.1 + 0.6 * Math.abs(jitter(cell.seed, 60 + f)))
+    const lv0 = h * 0.2 + jitter(cell.seed, 50 + f) * rh * 0.18
+    const len = yr * (1.0 + 0.6 * Math.abs(jitter(cell.seed, 60 + f)))
     const ang = jitter(cell.seed, 70 + f) * Math.PI
     const hair: Vec2[] = [
       toWorld(lu0, lv0),
-      toWorld(lu0 + Math.cos(ang) * len * 0.5, lv0 + Math.sin(ang) * len * 0.5),
       toWorld(lu0 + Math.cos(ang) * len, lv0 + Math.sin(ang) * len),
     ]
     out.push({
       path: hair,
       z0: yr * 1.7,
-      arch: yr * 0.9, // lifts off the surface -> reads as a stray fibre
+      arch: yr * 0.9,
       radiusMm: yr * 0.12,
       filaments: 1,
       twistPerMm: 0,
@@ -178,6 +144,7 @@ export function hdcBloStitch(cell: CrochetCell): ThreadStroke[] {
     })
   }
 
+  void filaments
   return out
 }
 
