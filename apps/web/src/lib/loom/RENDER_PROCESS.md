@@ -88,6 +88,33 @@ from the one our-format dataset, so they can't diverge.
 
 ---
 
+## Per-craft adaptation (the principle + two phases are identical; only two things change)
+
+The process above is written around embroidery. For any other craft, only two things change:
+**(1)** what "our format" is, and **(2)** what the Step-3 "show me it's right" artifact is. Phases
+A and B, and the rule "never render until it's validated", are identical.
+
+### Crochet (and knitting — same shape)
+- **No "line drawing to trace."** A crochet/knit pattern is a **stitch program** — rows/rounds of
+  stitch instructions. That program *is* the geometry.
+- **Our format** = a structured stitch program: rows/rounds, each a sequence of stitch operations
+  (stitch-dictionary slug + count + placement / shaping / repeats), colour changes, gauge, finished
+  dimensions, yarn + hook/needle. (The `ChartDefinition` / structured-stitch-program shape.)
+- **Phase A** = read the written pattern (e.g. a Word doc) — EVERY row, EVERY stitch, **no
+  summarising** (expand "repeat to end" to the actual count) — into the structured stitch program.
+  Sources vary by pattern: written rows = the program; the stitch key = stitch types; the yarn
+  section = colours; gauge + finished size = dimensions.
+- **Step 3 — SHOW THE STITCHES (validate):** produce the stitch **SYMBOL CHART** (+ the written
+  program) from the our-format data and SHOW it for sign-off. The stitches must be **visible and
+  confirmed faithful BEFORE any photo.** (Embroidery's validation artifact is the line-art overlay;
+  crochet's is the symbol chart. Same gate: see the stitches, confirm, *then* render.) **Never
+  render the photoreal hero before the stitches are signed off** — jumping to the photo while the
+  stitches can't be seen is the exact failure this prevents.
+- **Step 4 — RENDER:** the photoreal yarn hero, only after sign-off.
+
+The same pattern holds for every future craft: name "our format" and the "show the stitches"
+artifact; keep Phases A and B identical.
+
 ## What this means in practice
 
 - Two jobs, never mixed: **(A)** produce the pattern in our format (per-pattern, careful,
