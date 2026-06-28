@@ -4,8 +4,12 @@ geometry (the same filaments the raster draws). Accuracy is unchanged; this only
 swaps the final shading to physically-based light transport for photo-realism.
 
 Reads scene.json:
-  { "fabric": {"widthMm","heightMm","hex"},
+  { "fabric": {"widthMm","heightMm","hex","frameType"?},
     "strokes": [ {"hex","sheen","radiusMm","filaments":[ [[x,y,z],...], ... ]} ] }
+
+  fabric.frameType (optional): HOOP / RING_FRAME / null -> round hoop on a SQUARE
+  canvas; SLATE_FRAME / STRETCHER_BARS / Q_SNAPS -> rectangular frame hugging the
+  design; NONE -> no frame.
 
 Run:
   blender --background --factory-startup --python loom_render.py -- \
@@ -314,6 +318,27 @@ def add_hoop(cx, cy, ring_radius, tube):
     return hoop
 
 
+def add_rect_frame(cx, cy, half_w, half_h, tube):
+    """A rectangular wooden frame (slate frame / stretcher bars / Q-snaps) hugging
+    the design — the right cue for portrait / large-format surface work that is
+    mounted on bars rather than a round hoop."""
+    z = tube * 0.2
+    wood = wood_material()
+    bars = [
+        # top + bottom span the full width (incl. the corners)
+        ((cx, cy + half_h, z), (2 * half_w + 2 * tube, 2 * tube, tube * 1.3)),
+        ((cx, cy - half_h, z), (2 * half_w + 2 * tube, 2 * tube, tube * 1.3)),
+        # left + right span just the design height (corners already covered)
+        ((cx - half_w, cy, z), (2 * tube, 2 * half_h, tube * 1.3)),
+        ((cx + half_w, cy, z), (2 * tube, 2 * half_h, tube * 1.3)),
+    ]
+    for loc, scale in bars:
+        bpy.ops.mesh.primitive_cube_add(size=1.0, location=loc)
+        bar = bpy.context.active_object
+        bar.scale = (scale[0] * 0.5, scale[1] * 0.5, scale[2] * 0.5)
+        bar.data.materials.append(wood)
+
+
 def main():
     args = argv_after_dashes()
     in_path, out_path = args[0], args[1]
@@ -347,12 +372,28 @@ def main():
     contentW = maxx - minx
     contentH = maxy - miny
     content_r = max(contentW, contentH) * 0.5
-    margin = content_r * 0.95  # zoomed out a touch — more cloth around the hoop
-    halfW = contentW * 0.5 + margin
-    halfH = contentH * 0.5 + margin
+    margin = content_r * 0.95  # zoomed out a touch — more cloth around the frame
+
+    # Frame style from the pattern's mounting frame. A ROUND hoop only frames the
+    # design cleanly on a SQUARE canvas (otherwise a tall portrait design's
+    # circular hoop is clipped left/right, because halfW would track the narrow
+    # content width). A RECTANGULAR frame hugs the design, so the canvas follows
+    # the design's own aspect.
+    frame_type = (fab.get("frameType") or "HOOP").upper()
+    rect_frames = ("SLATE_FRAME", "STRETCHER_BARS", "Q_SNAPS")
+    is_rect = frame_type in rect_frames
+    if is_rect:
+        halfW = contentW * 0.5 + margin
+        halfH = contentH * 0.5 + margin
+    else:
+        # Round hoop (HOOP / RING_FRAME) or no frame (NONE): square the canvas so
+        # the design sits centred with even cloth all round, whatever its aspect.
+        half = content_r + margin
+        halfW = half
+        halfH = half
 
     # Fabric plane — extends well past the frame so it reads as taut cloth the
-    # hoop is stretched over, not a small swatch.
+    # frame is stretched over, not a small swatch.
     bpy.ops.mesh.primitive_plane_add(size=1.0, location=(cx, cy, 0.0))
     plane = bpy.context.active_object
     plane.scale = (halfW * 4, halfH * 4, 1.0)
@@ -363,10 +404,17 @@ def main():
 
     build_threads(strokes)
 
-    # Wooden hoop framing the design — thinner ring, sized to the content not the
-    # (now larger) margin so it sits with breathing room.
-    ring_radius = content_r * 1.22
-    add_hoop(cx, cy, ring_radius, content_r * 0.11)
+    # The mounting frame around the design.
+    if frame_type == "NONE":
+        pass  # bare taut cloth, no frame
+    elif is_rect:
+        # Rectangular frame hugging the design, just outside the stitching.
+        add_rect_frame(cx, cy, contentW * 0.5 * 1.08 + content_r * 0.06,
+                       contentH * 0.5 * 1.08 + content_r * 0.06, content_r * 0.1)
+    else:
+        # Round wooden hoop — thinner ring, sized to the content not the (now
+        # larger) margin so it sits with breathing room.
+        add_hoop(cx, cy, content_r * 1.22, content_r * 0.11)
 
     # Target at the content centre.
     tgt = bpy.data.objects.new("target", None)

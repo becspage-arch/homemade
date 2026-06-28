@@ -21,6 +21,15 @@ export interface BlenderFabric {
   widthMm: number
   heightMm: number
   hex: string
+  /**
+   * Mounting frame, drives how `loom_render.py` frames the hero:
+   *   HOOP / RING_FRAME / null → a round wooden hoop on a SQUARED canvas (so a
+   *     portrait design's circular hoop isn't clipped left/right).
+   *   SLATE_FRAME / STRETCHER_BARS / Q_SNAPS → a rectangular wooden frame hugging
+   *     the design (canvas follows the design's aspect).
+   *   NONE → no frame, just taut cloth (canvas squared for portrait).
+   */
+  frameType?: string | null
 }
 
 export interface BlenderStroke {

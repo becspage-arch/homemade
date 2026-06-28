@@ -54,6 +54,10 @@ function drawBody(elements: StitchedElement[], stroke: string): string {
       body += `<circle cx="${r2(g.at[0])}" cy="${r2(g.at[1])}" r="1.3" fill="none" stroke="${stroke}" stroke-width="0.4"/>`
       continue
     }
+    if (g.kind === 'disc' && g.at) {
+      body += `<circle cx="${r2(g.at[0])}" cy="${r2(g.at[1])}" r="${r2(g.radiusMm ?? 3)}" fill="none" stroke="${stroke}" stroke-width="0.5"/>`
+      continue
+    }
     const pts = g.points
     if (pts && pts.length >= 2) {
       const d = pts.map((p) => `${r2(p[0])},${r2(p[1])}`).join(' ')

@@ -1,0 +1,207 @@
+.nw-detail {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 96px;
+  color: var(--color-espresso);
+}
+
+.nw-detail-breadcrumb {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--color-warm-taupe);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.nw-detail-breadcrumb a { color: var(--color-warm-taupe); text-decoration: none; }
+.nw-detail-breadcrumb a:hover { color: var(--color-sage); }
+
+/* ── Hero ──────────────────────────────────────────────────────────────────
+   Desktop: image + meta side by side. Mobile: the finished piece comes FIRST
+   and fills the width — front and centre — with the title + spec below it, so
+   the subject is never buried by a crop or a title card. */
+.nw-detail-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 56px;
+}
+.nw-detail-hero-image {
+  background: #fafaf6;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(60, 47, 34, 0.08);
+}
+.nw-detail-hero-image img,
+.nw-detail-hero-svg svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.nw-detail-overline {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #a86547;
+  margin: 0 0 12px;
+}
+.nw-detail-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0 0 12px;
+}
+.nw-detail-designer { font-size: 15px; color: var(--color-warm-taupe); margin: 0 0 18px; }
+.nw-detail-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-warm-taupe);
+  margin: 0 0 24px;
+}
+.nw-detail-spec {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 16px;
+  margin: 0 0 24px;
+  padding: 18px;
+  background: #fafaf6;
+  border-radius: 12px;
+}
+.nw-detail-spec > div { display: flex; flex-direction: column; gap: 2px; }
+.nw-detail-spec dt {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  margin: 0;
+}
+.nw-detail-spec dd {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--color-espresso);
+  margin: 0;
+}
+
+.nw-detail-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.nw-detail-action {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 160ms ease-out, transform 160ms ease-out;
+}
+.nw-detail-action.primary { background: #c4856b; color: #fafaf6; }
+.nw-detail-action.primary:hover { background: #a86547; transform: translateY(-1px); }
+.nw-detail-action.ghost {
+  background: transparent;
+  color: var(--color-espresso);
+  box-shadow: inset 0 0 0 1px rgba(60, 47, 34, 0.16);
+}
+.nw-detail-action.ghost:hover { background: #f0e9da; }
+
+/* ── Section headings ── */
+.nw-detail-finished-shot h2,
+.nw-detail-materials h2,
+.nw-detail-stitches h2,
+.nw-detail-diagram h2,
+.nw-detail-steps h2,
+.nw-detail-designer-card h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 24px;
+  margin: 0 0 18px;
+  color: var(--color-warm-taupe);
+}
+.nw-detail-finished-shot,
+.nw-detail-materials,
+.nw-detail-stitches,
+.nw-detail-diagram,
+.nw-detail-steps,
+.nw-detail-gate,
+.nw-detail-studio-cta,
+.nw-detail-designer-card { margin: 0 0 56px; }
+
+/* The full finished-piece shot — big, centred, the promise of the make. */
+.nw-detail-finished-shot img {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(60, 47, 34, 0.1);
+}
+
+.nw-detail-materials h3 {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+  margin: 24px 0 12px;
+}
+.nw-detail-materials-list { margin: 0; padding-left: 20px; line-height: 1.7; color: var(--color-warm-taupe); }
+
+.nw-detail-floss {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+.nw-detail-floss li { display: flex; align-items: center; gap: 10px; }
+.nw-detail-floss-swatch {
+  width: 26px; height: 26px; border-radius: 6px; flex: 0 0 auto;
+  box-shadow: inset 0 0 0 1px rgba(60, 47, 34, 0.12);
+}
+.nw-detail-floss-detail { display: flex; flex-direction: column; }
+.nw-detail-floss-name { font-size: 14px; color: var(--color-espresso); }
+.nw-detail-floss-code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px; color: var(--color-warm-taupe);
+}
+
+.nw-detail-stitches ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.nw-detail-stitches li { display: flex; flex-direction: column; gap: 2px; }
+.nw-detail-stitch-name { font-family: var(--font-display); font-size: 17px; color: var(--color-espresso); }
+.nw-detail-stitch-how { font-size: 14px; line-height: 1.5; color: var(--color-warm-taupe); }
+
+.nw-detail-diagram-note { font-size: 14px; color: var(--color-warm-taupe); margin: 0 0 16px; }
+.nw-detail-diagram-svg {
+  background: #ffffff;
+  border: 1px solid rgba(60, 47, 34, 0.12);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.nw-detail-diagram-svg svg { width: 100%; height: auto; display: block; }
+
+.nw-detail-steps ol { margin: 0; padding-left: 22px; display: grid; gap: 12px; }
+.nw-detail-steps li { font-size: 16px; line-height: 1.55; color: var(--color-espresso); }
+
+.nw-detail-studio-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.nw-detail-studio-cta p { font-size: 14px; color: var(--color-warm-taupe); margin: 0; }
+
+.nw-detail-designer-card p { font-size: 15px; line-height: 1.6; color: var(--color-warm-taupe); margin: 0; }
+
+@media (max-width: 760px) {
+  .nw-detail { padding: 20px 16px 72px; }
+  /* Finished piece first and full-bleed-ish; title + spec follow. */
+  .nw-detail-hero { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+  .nw-detail-hero-image { padding: 12px; }
+  .nw-detail-title { font-size: clamp(26px, 8vw, 34px); }
+}

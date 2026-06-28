@@ -39,6 +39,11 @@ export function patternToLineArtSvg(
       body += `<circle cx="${r2(g.at[0])}" cy="${r2(g.at[1])}" r="${r2(sw * 2.6)}" fill="none" stroke="${stroke}" stroke-width="${r2(sw * 0.8)}"/>`
       continue
     }
+    if (g.kind === 'disc' && g.at) {
+      // A worked wheel/rose — drawn as its outline ring on the transfer template.
+      body += `<circle cx="${r2(g.at[0])}" cy="${r2(g.at[1])}" r="${r2(g.radiusMm ?? sw * 3)}" fill="none" stroke="${stroke}" stroke-width="${r2(sw)}"/>`
+      continue
+    }
     const pts = g.points
     if (pts && pts.length >= 2) {
       const d = pts.map((p) => `${r2(p[0])},${r2(p[1])}`).join(' ')

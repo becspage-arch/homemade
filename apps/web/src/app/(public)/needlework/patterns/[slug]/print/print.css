@@ -1,0 +1,66 @@
+.nw-print {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 24px 24px 80px;
+  color: #1b2a4a;
+  font-family: var(--font-display), Georgia, serif;
+}
+.nw-print--a4 { --page-w: 210mm; }
+.nw-print--letter { --page-w: 215.9mm; }
+
+.nw-print-controls {
+  background: #fafaf6;
+  border: 1px solid rgba(60, 47, 34, 0.12);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 28px;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.nw-print-controls strong { display: block; margin-bottom: 6px; font-size: 15px; }
+.nw-print-controls a { color: #6b7f4f; }
+
+.nw-print-header { text-align: center; margin-bottom: 28px; }
+.nw-print-header h1 { font-size: 30px; margin: 0 0 6px; font-weight: 400; }
+.nw-print-designer { margin: 0 0 4px; color: #6b6256; font-size: 14px; }
+.nw-print-size { margin: 0; font-size: 13px; color: #6b6256; }
+
+/* Each true-mm template page sits on its own printed sheet. */
+.nw-print-page {
+  margin: 0 auto 24px;
+  text-align: center;
+}
+.nw-print-svg svg {
+  width: 100%;
+  max-width: var(--page-w);
+  height: auto;
+  border: 1px solid #e7e2d6;
+}
+
+.nw-print-guide h2,
+.nw-print-keys h2,
+.nw-print-steps h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 28px 0 14px;
+}
+.nw-print-guide-svg svg { width: 100%; max-width: 560px; height: auto; display: block; margin: 0 auto; }
+
+.nw-print-keys table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.nw-print-keys th,
+.nw-print-keys td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #ece7db; vertical-align: top; }
+.nw-print-keys th { font-family: system-ui, sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #6b6256; }
+.nw-print-swatch { display: inline-block; width: 16px; height: 16px; border-radius: 3px; vertical-align: middle; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.12); margin-right: 4px; }
+.nw-print-keys ul { margin: 0; padding-left: 20px; line-height: 1.7; font-size: 14px; }
+
+.nw-print-steps ol { padding-left: 22px; line-height: 1.55; font-size: 15px; }
+.nw-print-steps li { margin-bottom: 8px; }
+
+@media print {
+  .no-print { display: none !important; }
+  .nw-print { max-width: none; margin: 0; padding: 0; }
+  .nw-print-page { page-break-after: always; margin: 0; }
+  .nw-print-svg svg { border: none; max-width: 100%; }
+  .nw-print-guide, .nw-print-keys, .nw-print-steps { page-break-inside: avoid; }
+}

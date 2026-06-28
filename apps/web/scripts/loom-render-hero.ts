@@ -51,6 +51,8 @@ export interface RenderHeroInput {
   finishedSizeMm: { width: number; height: number }
   /** Linen/aida ground colour. Defaults to the warm even-weave linen we use. */
   fabricHex?: string
+  /** Mounting frame (HOOP/SLATE_FRAME/…). Drives the hero's frame + canvas. */
+  frameType?: string | null
   /** Default thread when an element doesn't carry its own. */
   defaultThread?: { type: string; weight: string } | null
   /** Strand count for stranded floss (perle/metallic ignore it). Default 6. */
@@ -180,7 +182,12 @@ export async function renderHero(
   })
   const scene = strokesToBlenderScene(
     strokes,
-    { widthMm: input.finishedSizeMm.width, heightMm: input.finishedSizeMm.height, hex: input.fabricHex ?? '#e3d8c0' },
+    {
+      widthMm: input.finishedSizeMm.width,
+      heightMm: input.finishedSizeMm.height,
+      hex: input.fabricHex ?? '#e3d8c0',
+      frameType: input.frameType ?? null,
+    },
     { tameGreens: options.tameGreens ?? true, tameWarm: options.tameWarm ?? false },
   )
   writeFileSync(scenePath, JSON.stringify(scene))
@@ -267,6 +274,7 @@ interface PatternFile {
   name?: string
   finishedSizeMm?: { width: number; height: number }
   fabricSpec?: { colourHex?: string | null }
+  frameType?: string | null
   defaultThread?: { type: string; weight: string } | null
   stitchedElements: StitchedElement[]
 }
@@ -288,6 +296,7 @@ export async function renderHeroFromPatternFile(
       stitchedElements: data.stitchedElements,
       finishedSizeMm: data.finishedSizeMm ?? { width: 150, height: 150 },
       fabricHex: data.fabricSpec?.colourHex ?? undefined,
+      frameType: data.frameType ?? null,
       defaultThread: data.defaultThread ?? null,
     },
     options,
