@@ -25,20 +25,22 @@ function main() {
   const W = 12 // more, smaller stitches in view (real sc is fine + dense)
   const built = buildContinuous(rows, W, yr)
 
+  // Light relax only: settle + keep yarns a diameter apart WITHOUT collapsing the
+  // front(+z)/back(−z) separation that keeps the V's clean and the link hidden.
   relax(built.model, {
-    collMinDist: yr * 1.3, // ≈ one yarn diameter -> stitches pack tight + even
-    collK: 0.2,
+    collMinDist: yr * 1.25,
+    collK: 0.15,
     collAdjacency: 4,
     planeZ: 0,
-    planeK: 0.11, // pull HARD to the plane -> flat fabric, not raised knots
-    iterations: 650,
+    planeK: 0, // no plane pull — it would flatten the V relief and lift the hidden link
+    iterations: 220,
   })
 
   // Render the ONE strand as a single continuous plied yarn.
   const nodes = built.model.nodes
   const ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
   const center = smooth(ctrl, 4)
-  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, 0.16)
+  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, 0.0) // no twist — smooth, not roped
   const strokes = [{ hex: '#e6d4c0', sheen: 0.85, radiusMm, filaments }]
 
   const scene = {

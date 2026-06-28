@@ -32,9 +32,9 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
   const yr = yarnRadiusMm
   const W = stitchesPerRow
   const sw = yr * 2.6 // column spacing — denser (real sc packs small, even stitches)
-  const tw = yr * 1.05 // stitch half-width
-  const vh = yr * 0.42 // crown height — small
-  const z = yr * 0.34 // front relief — very LOW, so sc lies nearly flat
+  const tw = yr * 1.0 // stitch half-width
+  const vh = yr * 0.95 // V height (the visible "V" of the two top loops)
+  const z = yr * 0.55 // front relief of the visible V
   const baseRow = yr * 2.0
 
   const rowH = rowTypes.map((t) => baseRow * STITCHES[t].heightFactor)
@@ -69,51 +69,45 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
     return idx
   }
 
-  // Foundation chain (row 0): pinned crowns the first row hooks into.
-  const crownBelow: number[] = new Array(W).fill(-1)
+  // Foundation (row 0): pinned front "V" crowns the first row links behind.
+  const vBelow: number[] = new Array(W).fill(-1) // each stitch's V-centre below
   for (let c = 0; c < W; c++) {
-    push(c * sw - tw, 0, z * 0.6, 0)
-    const cr = push(c * sw, vh * 0.7, z * 0.7, 0)
-    push(c * sw + tw, 0, z * 0.6, 0)
-    crownBelow[c] = cr
+    push(c * sw - tw, vh * 0.6, z, 0)
+    const vc = push(c * sw, -vh * 0.4, z, 0) // V bottom-centre
+    push(c * sw + tw, vh * 0.6, z, 0)
+    vBelow[c] = vc
   }
 
-  // Worked rows.
+  // Worked rows: each stitch is a clean FRONT V (visible, +z); the link to the
+  // row below is a small excursion BEHIND the fabric (−z), hidden by the backing,
+  // so the top face reads as a tidy grid of V's — like real single crochet.
   for (let j = 0; j < rowTypes.length; j++) {
     const ty = yTop[j]!
     const by = j === 0 ? 0 : yTop[j - 1]!
     const mid = (ty + by) * 0.5
-    const dir = j % 2 === 0 ? 1 : -1 // serpentine
-    const crownThis: number[] = new Array(W).fill(-1)
-
-    // Turning chain at the start of the row (lifts the yarn to this row).
-    const startC = dir > 0 ? 0 : W - 1
-    push(startC * sw - dir * tw * 1.4, ty - vh, z * 0.6, 1)
+    const dir = j % 2 === 0 ? 1 : -1
+    const vThis: number[] = new Array(W).fill(-1)
 
     for (let o = 0; o < W; o++) {
       const c = dir > 0 ? o : W - 1 - o
       const s = dir
       const x = c * sw
-      const bc = crownBelow[c]! // the crown of the stitch directly below
-      const bx = bc >= 0 ? nodes[bc]!.x : x
-      const byy = bc >= 0 ? nodes[bc]!.y : by
+      const bv = vBelow[c]!
 
-      // top-left -> down -> UNDER the below crown (threading) -> up -> top-right
-      push(x - s * tw, ty, z)
-      push(x - s * tw * 0.45, mid, z * 0.4)
-      push(x - s * tw * 0.22, byy + vh * 0.35, -z * 0.95) // behind below crown (near side)
-      const under = push(bx, byy - yr * 0.15, -z * 0.45) // UNDER the below crown
-      push(x + s * tw * 0.22, byy + vh * 0.35, -z * 0.95) // behind below crown (far side)
-      push(x + s * tw * 0.45, mid, z * 0.4)
-      push(x + s * tw, ty, z) // top-right
-      const cr = push(x, ty + vh, z * 1.15) // crown (next row hooks this)
-      crownThis[c] = cr
+      // hidden link into the row below (BEHIND, −z): down → behind below-V → up
+      push(x + s * tw * 0.4, mid, -z * 0.6)
+      const link = push(x, by + vh * 0.2, -z * 1.5) // tucked behind the below stitch
+      push(x - s * tw * 0.4, mid, -z * 0.6)
+      // visible front V (+z): left-top → bottom-centre → right-top
+      push(x - s * tw, ty + vh * 0.55, z)
+      const vc = push(x, ty - vh * 0.45, z * 1.05) // V bottom-centre
+      push(x + s * tw, ty + vh * 0.55, z)
+      vThis[c] = vc
 
-      // Hold the stitch onto the correct stitch below (soft; collision does the rest).
-      if (bc >= 0) dist.push({ a: under, b: bc, rest: yr * 1.0, k: 0.4 })
+      if (bv >= 0) dist.push({ a: link, b: bv, rest: yr * 1.1, k: 0.45 })
     }
 
-    for (let c = 0; c < W; c++) crownBelow[c] = crownThis[c]!
+    for (let c = 0; c < W; c++) vBelow[c] = vThis[c]!
   }
 
   const strand = new Array(nodes.length).fill(0)
