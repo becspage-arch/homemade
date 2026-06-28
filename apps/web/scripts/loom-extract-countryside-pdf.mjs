@@ -48,7 +48,7 @@ async function pagePaths(doc, pn) {
         if(op===D.moveTo){const p=ap(ctm,buf[i++],buf[i++]);cur=[p];paths.push(cur)}
         else if(op===D.lineTo){const p=ap(ctm,buf[i++],buf[i++]);if(cur)cur.push(p)}
         else if(op===D.curveTo){const c1=ap(ctm,buf[i++],buf[i++]),c2=ap(ctm,buf[i++],buf[i++]),e=ap(ctm,buf[i++],buf[i++]);if(cur)for(const q of bez(cur[cur.length-1],c1,c2,e))cur.push(q)}
-        else if(op===D.quad){const c=ap(ctm,buf[i++],buf[i++]),e=ap(ctm,buf[i++],buf[i++]);if(cur)cur.push(e)}
+        else if(op===D.quad){i+=2;const e=ap(ctm,buf[i++],buf[i++]);if(cur)cur.push(e)}
         else if(op===D.close){if(cur&&cur.length)cur.push(cur[0])}
         else break
       }
@@ -63,7 +63,7 @@ async function pageLabels(doc, pn) {
   // Combine letter + number tokens that are a [A-G] code (some split "A 7", some joined "A5").
   const labels = []
   for (const it of items){
-    let m = /^([A-G])\s?(\d{1,2})$/.exec(it.s)
+    const m = /^([A-G])\s?(\d{1,2})$/.exec(it.s)
     if (m){ labels.push({ letter:m[1], num:+m[2], x:it.x, y:it.y }); continue }
   }
   // join split letter/number pairs: a lone [A-G] with a nearby lone number
@@ -94,16 +94,6 @@ function keepDesign(paths, pageW, pageH){
     if(c[1] < FOOT || c[1] > HEAD) return false            // footer/logo + header bands
     return true
   })
-}
-
-function classify(p, scale){
-  const b=bbox(p); const maxmm=Math.max(b.w,b.h)*scale; const minmm=Math.min(b.w,b.h)*scale
-  const closed=Math.hypot(p[0][0]-p[p.length-1][0],p[0][1]-p[p.length-1][1])*scale < 0.8
-  const aspect=b.w/(b.h||1e-6)
-  if(closed && maxmm<3.2) return 'dot'
-  if(closed && maxmm>=3.2 && maxmm<=18 && aspect>0.55 && aspect<1.8 && minmm>maxmm*0.45) return 'wheel'
-  if(closed && maxmm<9) return 'petal'
-  return 'line'
 }
 
 async function main(){
@@ -159,7 +149,6 @@ async function main(){
   const elements=[]
   const counts={dot:0,wheel:0,petal:0,line:0}
   for(let pi=0; pi<design.length; pi++){
-    const p=design[pi]
     const mm=mmPaths[pi]; const [cx,cy]=centroid(mm)
     const b=bbox(mm); const mx=Math.max(b.w,b.h),mn=Math.min(b.w,b.h) // mm (already scaled)
     const closed=Math.hypot(mm[0][0]-mm[mm.length-1][0],mm[0][1]-mm[mm.length-1][1])<0.8

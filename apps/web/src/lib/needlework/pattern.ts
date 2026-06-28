@@ -99,8 +99,6 @@ function baseSlug(s: string): string {
   return s.replace(/^embroidery-/, '')
 }
 
-const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
-
 /** Stable region id for a (stitch, colour) group. */
 function groupId(stitchSlug: string, hex: string): string {
   return `${baseSlug(stitchSlug)}__${hex.replace('#', '').toLowerCase()}`
