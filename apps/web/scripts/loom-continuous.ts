@@ -22,23 +22,23 @@ function main() {
   const yr = 3.0
   const rows: StitchId[] =
     mode === 'mix' ? ['sc', 'sc', 'hdc', 'hdc', 'dc', 'dc'] : (['sc', 'sc', 'sc', 'sc', 'sc', 'sc'] as StitchId[])
-  const W = 8
+  const W = 12 // more, smaller stitches in view (real sc is fine + dense)
   const built = buildContinuous(rows, W, yr)
 
   relax(built.model, {
-    collMinDist: yr * 1.7, // tighter -> loops don't puff into balls
-    collK: 0.22,
+    collMinDist: yr * 1.3, // ≈ one yarn diameter -> stitches pack tight + even
+    collK: 0.2,
     collAdjacency: 4,
     planeZ: 0,
-    planeK: 0.06, // pull firmly toward the plane -> flat fabric, not dumplings
-    iterations: 550,
+    planeK: 0.11, // pull HARD to the plane -> flat fabric, not raised knots
+    iterations: 650,
   })
 
   // Render the ONE strand as a single continuous plied yarn.
   const nodes = built.model.nodes
   const ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
   const center = smooth(ctrl, 4)
-  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.78, 3, 0.16)
+  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, 0.16)
   const strokes = [{ hex: '#e6d4c0', sheen: 0.85, radiusMm, filaments }]
 
   const scene = {

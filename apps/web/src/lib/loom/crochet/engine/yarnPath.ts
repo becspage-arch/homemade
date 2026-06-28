@@ -31,11 +31,11 @@ export interface BuiltContinuous {
 export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, yarnRadiusMm: number): BuiltContinuous {
   const yr = yarnRadiusMm
   const W = stitchesPerRow
-  const sw = yr * 3.4 // column spacing (a touch looser so the stitch isn't all yarn)
-  const tw = yr * 1.25 // stitch half-width
-  const vh = yr * 0.55 // crown height above the row line
-  const z = yr * 0.5 // front relief — LOW, so sc lies flat (not 3D dumplings)
-  const baseRow = yr * 2.6
+  const sw = yr * 2.6 // column spacing — denser (real sc packs small, even stitches)
+  const tw = yr * 1.05 // stitch half-width
+  const vh = yr * 0.42 // crown height — small
+  const z = yr * 0.34 // front relief — very LOW, so sc lies nearly flat
+  const baseRow = yr * 2.0
 
   const rowH = rowTypes.map((t) => baseRow * STITCHES[t].heightFactor)
   const yTop: number[] = []
