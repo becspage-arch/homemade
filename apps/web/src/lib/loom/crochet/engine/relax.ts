@@ -69,7 +69,8 @@ function projectDistance(nodes: RNode[], c: DistConstraint): void {
   const dx = b.x - a.x
   const dy = b.y - a.y
   const dz = b.z - a.z
-  const d = Math.hypot(dx, dy, dz) || 1e-9
+  const d = Math.hypot(dx, dy, dz)
+  if (d < 1e-5) return // coincident — direction undefined, skip (prevents blow-up)
   const wsum = a.w + b.w
   if (wsum === 0) return
   const diff = ((d - c.rest) / d) * c.k
@@ -131,7 +132,7 @@ class Grid {
 }
 
 export function relax(model: YarnModel, cfg: RelaxConfig): void {
-  const { nodes, dist, bend, strand } = model
+  const { nodes, dist, bend, strand, along } = model
   const grid = new Grid(cfg.collMinDist)
   const minD2 = cfg.collMinDist * cfg.collMinDist
 
@@ -159,8 +160,11 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
       const a = nodes[i]!
       for (const j of grid.near(a)) {
         if (j <= i) continue
-        // Skip near-neighbours on the same strand (the yarn IS that close there).
+        // Skip near-neighbours along the yarn (it IS that close there) and any
+        // pair joined by a constraint (connected yarn touches). Everything else is
+        // separate yarn that must stay a diameter apart — that's the weave.
         if (strand[i] === strand[j] && Math.abs(along[i]! - along[j]!) <= cfg.collAdjacency) continue
+        if (bonded.has(key(i, j))) continue
         const b = nodes[j]!
         const dx = b.x - a.x
         const dy = b.y - a.y
