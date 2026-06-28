@@ -131,9 +131,21 @@ class Grid {
 }
 
 export function relax(model: YarnModel, cfg: RelaxConfig): void {
-  const { nodes, dist, bend, strand, along } = model
+  const { nodes, dist, bend, strand } = model
   const grid = new Grid(cfg.collMinDist)
   const minD2 = cfg.collMinDist * cfg.collMinDist
+
+  // Bonded pairs (anything joined by a constraint) never collide — connected yarn
+  // touches. A node also never collides with another node on the SAME stitch
+  // (its own shape is set by its constraints). What's LEFT is genuinely separate
+  // yarn, which collision keeps a diameter apart — and that is what threads a post
+  // through the loops of the stitch below (the link pulls it to the loop centre,
+  // collision stops it passing through the loop's sides).
+  const N = nodes.length
+  const bonded = new Set<number>()
+  const key = (a: number, b: number): number => (a < b ? a * N + b : b * N + a)
+  for (const c of dist) bonded.add(key(c.a, c.b))
+  for (const c of bend) bonded.add(key(c.a, c.b))
 
   for (let it = 0; it < cfg.iterations; it++) {
     // 1. Yarn length.
