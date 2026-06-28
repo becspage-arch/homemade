@@ -18,6 +18,7 @@ Run:
 import bpy
 import json
 import sys
+import math
 
 # Loom millimetres -> Blender units (1 unit = 1 cm).
 S = 0.1
@@ -83,12 +84,22 @@ def yarn_material(name, hexcol, sheen):
     return mat
 
 
-def build_yarn(strokes):
+def build_yarn(strokes, drape=None):
     # One curve object per (colour, radius) for speed. Bulky yarn sits proud.
+    # `drape`, if given, is (cx, cy, amp, fx, fy) — a low-frequency height field
+    # that lifts the whole blanket into soft hills/valleys so it reads as draped
+    # textile, not a rigid placemat. The backing follows the same field.
     groups = {}
     for st in strokes:
         key = (st["hex"], round(st["radiusMm"], 3), round(st.get("sheen", 0.7), 2))
         groups.setdefault(key, []).append(st)
+
+    def drape_z(bx, by):
+        if not drape:
+            return 0.0
+        cx, cy, amp, fx, fy = drape
+        return amp * (math.sin((bx - cx) * fx) + math.cos((by - cy) * fy)
+                      + 0.5 * math.sin((bx - cx + by - cy) * fx * 0.6))
 
     for (hexcol, radius, sheen), group in groups.items():
         cu = bpy.data.curves.new("yarn", type="CURVE")
@@ -106,7 +117,9 @@ def build_yarn(strokes):
                 sp = cu.splines.new("POLY")
                 sp.points.add(len(poly) - 1)
                 for i, p in enumerate(poly):
-                    sp.points[i].co = (p[0] * S, -p[1] * S, p[2] * S + zlift, 1.0)
+                    bx = p[0] * S
+                    by = -p[1] * S
+                    sp.points[i].co = (bx, by, p[2] * S + zlift + drape_z(bx, by), 1.0)
                     sp.points[i].radius = r
         ob = bpy.data.objects.new("yarn_" + hexcol.lstrip("#"), cu)
         ob.data.materials.append(yarn_material("y_" + hexcol, hexcol, sheen))
@@ -122,7 +135,7 @@ def backing_material(hexcol):
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
     base = hex_to_lin(hexcol)
-    darker = tuple(c * 0.55 for c in base[:3]) + (1.0,)
+    darker = tuple(c * 0.72 for c in base[:3]) + (1.0,)  # shadowed yarn, not a black gap
     set_in(bsdf, "Base Color", darker)
     set_in(bsdf, "Roughness", 0.9)
     set_in(bsdf, "Specular IOR Level", 0.1)
@@ -130,16 +143,17 @@ def backing_material(hexcol):
     return mat
 
 
-def surface_material():
-    """The neutral surface the blanket rests on — a soft warm off-white, matte."""
+def surface_material(hexcol):
+    """The surface the blanket rests on — matte, so a contrasting tone makes the
+    cream pop (cream-on-cream is invisible)."""
     mat = bpy.data.materials.new("surface")
     mat.use_nodes = True
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
-    set_in(bsdf, "Base Color", hex_to_lin("#efece6"))
-    set_in(bsdf, "Roughness", 0.92)
-    set_in(bsdf, "Specular IOR Level", 0.08)
-    set_in(bsdf, "Sheen Weight", 0.4)
+    set_in(bsdf, "Base Color", hex_to_lin(hexcol))
+    set_in(bsdf, "Roughness", 0.94)
+    set_in(bsdf, "Specular IOR Level", 0.06)
+    set_in(bsdf, "Sheen Weight", 0.3)
     return mat
 
 
@@ -154,6 +168,12 @@ def main():
     scene = bpy.context.scene
     strokes = data["strokes"]
     yarn_hex = strokes[0]["hex"] if strokes else "#efe4d6"
+
+    view = data.get("view", {})
+    bg_hex = view.get("bgHex", "#7c6049")          # contrasting warm walnut
+    margin_factor = view.get("marginFactor", 0.06)  # negative crops INTO the fabric
+    tilt_deg = view.get("tiltDeg", 0.0)             # 0 = flat top-down; >0 = perspective
+    drape_amp = view.get("drapeAmp", 0.0)           # soft hills/valleys (cm)
 
     # Content bounds (blender units) for framing + the backing size.
     minx = 1e9
@@ -173,23 +193,30 @@ def main():
     cy = (miny + maxy) * 0.5
     contentW = maxx - minx
     contentH = maxy - miny
-    margin = max(contentW, contentH) * 0.06
+    margin = max(contentW, contentH) * margin_factor
     halfW = contentW * 0.5 + margin
     halfH = contentH * 0.5 + margin
 
+    drape = None
+    if drape_amp:
+        span0 = max(contentW, contentH)
+        drape = (cx, cy, drape_amp, 6.2 / span0, 5.0 / span0)
+
     # Backing right under the loops (yarn colour, darker) so no gap shows surface.
+    # Sized to the full content (not the possibly-cropped frame) so a tight crop
+    # never reveals its edge.
     bpy.ops.mesh.primitive_plane_add(size=1.0, location=(cx, cy, S * 1.4))
     backing = bpy.context.active_object
-    backing.scale = (halfW * 1.04, halfH * 1.04, 1.0)
+    backing.scale = (contentW * 0.54, contentH * 0.54, 1.0)
     backing.data.materials.append(backing_material(yarn_hex))
 
     # The surface the throw sits on, well below + wider.
     bpy.ops.mesh.primitive_plane_add(size=1.0, location=(cx, cy, 0.0))
     surface = bpy.context.active_object
-    surface.scale = (halfW * 4, halfH * 4, 1.0)
-    surface.data.materials.append(surface_material())
+    surface.scale = (max(halfW, contentW) * 5, max(halfH, contentH) * 5, 1.0)
+    surface.data.materials.append(surface_material(bg_hex))
 
-    build_yarn(strokes)
+    build_yarn(strokes, drape)
 
     # Target at content centre.
     tgt = bpy.data.objects.new("target", None)
@@ -227,7 +254,14 @@ def main():
     cam = bpy.data.objects.new("cam", cam_data)
     scene.collection.objects.link(cam)
     dist = span * 2.1
-    cam.location = (cx, cy, dist)
+    if tilt_deg:
+        # Tilt off straight-down toward the viewer for perspective (a draped, 3/4
+        # look instead of a flat placemat). Pull back a little to keep it framed.
+        t = math.radians(tilt_deg)
+        dist *= 1.12
+        cam.location = (cx, cy - dist * math.sin(t), dist * math.cos(t))
+    else:
+        cam.location = (cx, cy, dist)
     cc = cam.constraints.new("TRACK_TO")
     cc.target = tgt
     cc.track_axis = "TRACK_NEGATIVE_Z"

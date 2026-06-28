@@ -39,17 +39,26 @@ function main() {
   let layout
   let name: string
   let samples: number
+  // View controls for the Blender backend (legibility): a contrasting ground so
+  // the cream pops, a crop, and — for the throw — drape + perspective.
+  let view: Record<string, number | string>
   if (mode === 'swatch') {
-    layout = layoutAspen({ patch: { stitches: 24, rows: 22 }, strands: 4 })
+    // Fewer, bigger stitches + crop INTO the fabric (negative margin) so it fills
+    // the frame edge-to-edge and the loops are clearly readable.
+    layout = layoutAspen({ patch: { stitches: 18, rows: 15 }, strands: 4 })
     name = 'aspen-swatch'
     samples = 160
+    view = { bgHex: '#6f5440', marginFactor: -0.16 }
   } else if (mode === 'throw') {
     // Full blanket at true proportion + fringe. Gauge coarsened (~2.2x) so the
     // ~14k true-gauge stitches fit one Blender scene; the diagonal rib, the 42:50
-    // proportion and the fringe all read at this scale.
+    // proportion and the fringe all read at this scale. Clean flat-lay on a
+    // contrasting ground (real lifestyle drape is a separate staging step — a
+    // faked height-field + tilt reads as torn, not draped).
     layout = layoutAspen({ fringe: true, strands: 2, gaugeScale: 2.2 })
     name = 'aspen-throw'
     samples = 120
+    view = { bgHex: '#6f5440', marginFactor: 0.12 }
   } else {
     throw new Error(`unknown mode "${mode}" (use swatch | throw)`)
   }
@@ -58,7 +67,8 @@ function main() {
     widthMm: layout.widthMm,
     heightMm: layout.heightMm,
     hex: '#efe4d6',
-  })
+  }) as ReturnType<typeof strokesToBlenderScene> & { view?: Record<string, number | string> }
+  scene.view = view
   const scenePath = resolve(OUT, `${name}.json`)
   writeFileSync(scenePath, JSON.stringify(scene))
   const filaments = scene.strokes.reduce((n, s) => n + s.filaments.length, 0)
