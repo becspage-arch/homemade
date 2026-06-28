@@ -40,7 +40,7 @@ function main() {
   const nodes = built.model.nodes
   const ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
   const center = smooth(ctrl, 4)
-  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, 0.0) // no twist — smooth, not roped
+  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, 0.1) // gentle twist = plied wool fibre (path no longer knots)
   const strokes = [{ hex: '#e6d4c0', sheen: 0.85, radiusMm, filaments }]
 
   const scene = {

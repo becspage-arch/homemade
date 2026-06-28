@@ -31,11 +31,11 @@ export interface BuiltContinuous {
 export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, yarnRadiusMm: number): BuiltContinuous {
   const yr = yarnRadiusMm
   const W = stitchesPerRow
-  const sw = yr * 2.6 // column spacing — denser (real sc packs small, even stitches)
+  const sw = yr * 2.4 // column spacing — denser
   const tw = yr * 1.0 // stitch half-width
-  const vh = yr * 0.95 // V height (the visible "V" of the two top loops)
-  const z = yr * 0.55 // front relief of the visible V
-  const baseRow = yr * 2.0
+  const vh = yr * 0.66 // V height — shorter/blockier (sc is compact, not a tall knit V)
+  const z = yr * 0.5 // front relief of the visible V
+  const baseRow = yr * 1.7 // shorter rows -> dense sc, not airy
 
   const rowH = rowTypes.map((t) => baseRow * STITCHES[t].heightFactor)
   const yTop: number[] = []
@@ -98,10 +98,14 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
       push(x + s * tw * 0.4, mid, -z * 0.6)
       const link = push(x, by + vh * 0.2, -z * 1.5) // tucked behind the below stitch
       push(x - s * tw * 0.4, mid, -z * 0.6)
-      // visible front V (+z): left-top → bottom-centre → right-top
-      push(x - s * tw, ty + vh * 0.55, z)
-      const vc = push(x, ty - vh * 0.45, z * 1.05) // V bottom-centre
-      push(x + s * tw, ty + vh * 0.55, z)
+      // visible front of the stitch (+z): a flatter, BARRED top (the horizontal
+      // top chain of single crochet) with only a shallow notch — denser + more
+      // horizontal than a sharp knit V, so it reads as crochet, not stockinette.
+      push(x - s * tw, ty + vh * 0.15, z)
+      push(x - s * tw * 0.34, ty + vh * 0.6, z * 1.05) // bar, left
+      const vc = push(x, ty + vh * 0.2, z * 1.0) // shallow notch (not a deep V)
+      push(x + s * tw * 0.34, ty + vh * 0.6, z * 1.05) // bar, right
+      push(x + s * tw, ty + vh * 0.15, z)
       vThis[c] = vc
 
       if (bv >= 0) dist.push({ a: link, b: bv, rest: yr * 1.1, k: 0.45 })

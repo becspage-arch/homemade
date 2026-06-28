@@ -25,11 +25,10 @@ const UPSCALE_ENDPOINT = 'https://fal.run/fal-ai/clarity-upscaler'
 // Crochet-specific guidance: the upscaler must read the base as CHUNKY CROCHET
 // (not embroidery), so it repaints the ribs as real bulky wool yarn.
 const PROMPT = [
-  'An extreme close-up macro photograph of a chunky hand-crocheted blanket in soft cream wool yarn.',
-  'Thick bulky yarn worked in half double crochet, back loop only, forming bold raised diagonal ribs.',
-  'Real visible yarn: clearly plied strands twisting along each rib, a soft fuzzy fibre halo, cosy wool texture.',
-  'The ribs sit proud and cast soft shadows in the valleys between them.',
-  'Soft natural window light, shallow depth of field, extremely detailed, photorealistic, looks like a real crocheted throw.',
+  'An extreme close-up macro photograph of a soft cream wool crochet swatch worked in single crochet.',
+  'Neat, even, dense rows of small V-shaped single-crochet stitches in fluffy cream wool yarn.',
+  'Real visible yarn: soft plied fibres, a gentle fuzzy halo, cosy hand-crocheted wool texture, each stitch tidy and uniform.',
+  'Soft natural window light, shallow depth of field, extremely detailed, photorealistic, looks like a real crocheted swatch.',
 ].join(' ')
 
 const NEG =
