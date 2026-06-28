@@ -9,7 +9,7 @@ import { getCurrentDbUser } from '@/lib/get-current-user'
 import { mediaUrl } from '@/lib/media'
 import { fromStoredVectorData, storedDocument } from '@/lib/needlework/pattern'
 import { buildPatternDocument } from '@/lib/needlework/engine/document'
-import { DISCIPLINE_LABELS, type NeedleworkDiscipline } from '@/components/studio/needlework/types'
+import { DISCIPLINE_LABELS } from '@/components/studio/needlework/types'
 import { PatternUnlockCta } from '@/components/public/pattern-access/PatternUnlockCta'
 import './needlework-pattern-detail.css'
 
@@ -84,7 +84,7 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
   const finishedW = canonical.finishedSizeMm.width
   const finishedH = canonical.finishedSizeMm.height
   const disciplineLabel =
-    DISCIPLINE_LABELS[row.discipline as NeedleworkDiscipline] ?? prettify(row.discipline)
+    (DISCIPLINE_LABELS as Record<string, string>)[row.discipline] ?? prettify(row.discipline)
 
   const user = await getCurrentDbUser()
   const unlocked = Boolean(user)
