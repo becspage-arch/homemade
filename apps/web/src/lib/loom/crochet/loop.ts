@@ -96,23 +96,41 @@ export function hdcBloStitch(cell: CrochetCell): ThreadStroke[] {
   // the cell so neighbouring cords merge into one rib. Sits only modestly proud
   // so the groove between rows is a soft shadow (connected fabric), not a black
   // gap (which read as separate sausages). ----
+  // A clear per-stitch swell along the rib: the cord plumps in the middle of the
+  // cell and pinches at the joins, so each stitch reads as a distinct unit (the
+  // upscale then renders crochet STITCHES, not a smooth rope).
   const cord: Vec2[] = []
   const N = 10
   for (let i = 0; i <= N; i++) {
     const t = i / N
-    const lu = lerp(-w * 1.12, w * 1.12, t) // overshoot -> ribs are continuous
-    const lv = rh * 0.04 + jitter(cell.seed, 20 + i) * rh * 0.012
+    const lu = lerp(-w * 1.06, w * 1.06, t) // slight overshoot -> stitches just touch
+    const swell = Math.sin(t * Math.PI) // 0 at joins, 1 at the stitch centre
+    const lv = rh * 0.04 + swell * rh * 0.026 + jitter(cell.seed, 20 + i) * rh * 0.012
     cord.push(toWorld(lu, lv))
   }
   out.push({
     path: cord,
     z0: yr * 1.25, // lower -> softer groove, rows read connected
-    arch: yr * 0.2,
-    radiusMm: yr * 1.02,
+    arch: yr * 0.22,
+    radiusMm: yr * 0.98,
     filaments: PLY,
     twistPerMm: ribTwist,
     material: mat,
     seed: cell.seed,
+  })
+
+  // A short cross "pinch" at each stitch's leading join — the gap between
+  // neighbouring stitches along the rib, so the stitch boundaries read.
+  const joinShadow: Vec2[] = [toWorld(w * 0.96, -rh * 0.02), toWorld(w * 0.96, rh * 0.12)]
+  out.push({
+    path: joinShadow,
+    z0: yr * 0.5,
+    arch: yr * 0.08,
+    radiusMm: yr * 0.22,
+    filaments: 2,
+    twistPerMm: ribTwist * 1.3,
+    material: mat,
+    seed: cell.seed + 0.8,
   })
 
   // ---- 2. Top-loop V: a short plied chevron lying ON the rib — the two top
