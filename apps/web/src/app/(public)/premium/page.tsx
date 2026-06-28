@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { headers } from 'next/headers'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { countPublishedLibrary, formatLibraryCount } from '@/lib/library-count'
@@ -208,18 +209,20 @@ export default async function PremiumPage({
       {embed && (
         // Rendered inside the in-page premium overlay (an iframe of this same
         // page) — hide the site chrome so only the premium content shows.
-        <style dangerouslySetInnerHTML={{ __html: '.site-header,.site-footer,.cookie-banner,.mobile-tab-bar,.offline-banner{display:none!important}.public-main{padding-top:0!important}' }} />
+        <style dangerouslySetInnerHTML={{ __html: '.site-header,.site-footer,.cookie-banner,.mobile-tab-bar,.offline-banner{display:none!important}.public-main{padding-top:0!important}.premium-hero{padding-top:26px!important;padding-bottom:6px!important}.premium-hero-title{font-size:34px!important;line-height:1.12!important;max-width:none!important}' }} />
       )}
       <header className="premium-hero">
         <p className="premium-hero-eyebrow">Homemade Premium</p>
         <h1 className="premium-hero-title">The home of all things homemade</h1>
       </header>
 
-      <PremiumPricing
-        initialCurrency={currency}
-        libraryCountLabel={libraryCountLabel}
-        checkoutEnabled={checkoutEnabled()}
-      />
+      <div id="premium-pricing">
+        <PremiumPricing
+          initialCurrency={currency}
+          libraryCountLabel={libraryCountLabel}
+          checkoutEnabled={checkoutEnabled()}
+        />
+      </div>
 
       <section className="premium-compare" aria-label="What's included">
         {groups.map((group) => (
@@ -253,6 +256,10 @@ export default async function PremiumPage({
           get your money back <strong>and</strong> another 3 months free to try
           again.
         </p>
+        <div className="premium-cta-foot">
+          <Link href="/sign-in" className="premium-plan-cta is-secondary">Start free</Link>
+          <a href="#premium-pricing" className="premium-plan-cta">Go Premium</a>
+        </div>
       </section>
 
       <section className="premium-faq" aria-label="Questions">

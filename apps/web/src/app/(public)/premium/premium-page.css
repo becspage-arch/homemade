@@ -348,6 +348,19 @@ button.premium-plan-cta:disabled {
   color: var(--color-espresso);
   font-weight: 600;
 }
+/* Repeated CTA after the guarantee — a clear free/premium choice for anyone who
+   has scrolled the whole page, so they never have to scroll back up. */
+.premium-cta-foot {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+.premium-cta-foot .premium-plan-cta {
+  font-size: 16px;
+  padding: 15px 32px;
+}
 
 /* FAQ */
 .premium-faq {

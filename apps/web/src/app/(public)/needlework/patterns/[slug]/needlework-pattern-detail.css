@@ -91,6 +91,14 @@
   margin: 0;
 }
 
+.nw-detail-madeby {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--color-sage);
+  margin: 0 0 20px;
+}
+
 .nw-detail-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .nw-detail-action {
   display: inline-flex;

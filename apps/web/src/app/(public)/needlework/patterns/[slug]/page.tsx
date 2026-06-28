@@ -80,6 +80,12 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
     storedDocument(row.vectorData) ??
     buildPatternDocument(canonical.stitchedElements, canonical.finishedSizeMm, { title: row.name })
 
+  // Social proof: how many makers have started this pattern (a progress row is
+  // created when someone opens it in the Studio). Hidden until it's meaningful.
+  const makerCount = await prisma.needleworkProjectProgress.count({
+    where: { needleworkPatternId: row.id },
+  })
+
   const heroUrl = mediaUrl(row.hero, 'hero')
   // Extra finished-piece photos beyond the hero → a gallery. Empty until a
   // pattern carries multiple Media (wiring galleryMediaIds→Media is a follow-up).
@@ -165,6 +171,12 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
           </dl>
 
           {row.description && <p className="nw-detail-description">{row.description}</p>}
+
+          {makerCount >= 5 && (
+            <p className="nw-detail-madeby">
+              Made by {makerCount.toLocaleString()} {makerCount === 1 ? 'maker' : 'makers'}
+            </p>
+          )}
 
           {unlocked && (
             <div className="nw-detail-actions">
