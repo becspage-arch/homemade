@@ -4449,10 +4449,12 @@ fix, not a rebuild.
 - **Every recipe classified** (`scripts/_classify_dishtypes.ts`): 4,287 rows;
   0 unshelved either category; 1,176 flagged `familiarCanon` (migration
   `phase_dish_type_001`); cuisine normalised; canonical collection moods added.
-- **Region-aware featuring** (`lib/familiar-for-category.ts`, recipe-layout):
-  "Comfort classics / Classic bakes" lead rail + familiar-first magazine feature
-  (reuses cf-ipcountry); familiar canon leads every shelf rail + filtered grid.
-  World-cuisine browse chips + `?cuisine=` keep world food as discovery.
+- **Page featuring/layout: REVERTED.** An attempt to add familiar-first
+  featuring + a faceted-library page rebuild was out of scope and rejected; the
+  original /cooking + /baking pages were restored verbatim. The existing page
+  surfaces the now-populated SubCategory shelves through its own chips + per-sub
+  rails — populating the categories was the fix. `familiarCanon` column +
+  vocab/seed/classification stay in the DB but are unused by the page.
 - **Canon gap report** (`food-canon.ts` + `scripts/_canon_gap_report.ts`): 160
   UK/US canon dishes audited, **158 present, 2 genuine gaps** (bread & butter
   pudding, trifle) + ~26 thin. Fill is a follow-on.
