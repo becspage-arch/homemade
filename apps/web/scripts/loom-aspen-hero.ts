@@ -23,13 +23,28 @@ loadCredentials()
 const UPSCALE_ENDPOINT = 'https://fal.run/fal-ai/clarity-upscaler'
 
 // Crochet-specific guidance: the upscaler must read the base as CHUNKY CROCHET
-// (not embroidery), so it repaints the ribs as real bulky wool yarn.
-const PROMPT = [
-  'An extreme close-up macro photograph of a soft cream wool crochet swatch worked in single crochet.',
-  'Neat, even, dense rows of small V-shaped single-crochet stitches in fluffy cream wool yarn.',
-  'Real visible yarn: soft plied fibres, a gentle fuzzy halo, cosy hand-crocheted wool texture, each stitch tidy and uniform.',
-  'Soft natural window light, shallow depth of field, extremely detailed, photorealistic, looks like a real crocheted swatch.',
-].join(' ')
+// (not embroidery), so it repaints the ribs as real bulky wool yarn. The stitch
+// description must MATCH the base's stitch or the upscale fights the structure.
+const STITCH_PROMPTS: Record<string, string> = {
+  sc: [
+    'An extreme close-up macro photograph of a soft wool crochet swatch worked in single crochet.',
+    'Neat, even, dense rows of small V-shaped single-crochet stitches in fluffy wool yarn.',
+  ].join(' '),
+  hdc: [
+    'An extreme close-up macro photograph of a soft wool crochet swatch worked in half double crochet.',
+    'Even rows of half-double-crochet stitches with the distinctive horizontal third-loop ridge between rows, in fluffy wool yarn.',
+  ].join(' '),
+  dc: [
+    'An extreme close-up macro photograph of a soft wool crochet swatch worked in double crochet.',
+    'Tall, distinct vertical double-crochet posts standing in even columns, each topped by a small chain V, with the characteristic small open spaces between posts, in fluffy wool yarn.',
+  ].join(' '),
+  tr: [
+    'An extreme close-up macro photograph of a soft wool crochet swatch worked in treble crochet.',
+    'Very tall vertical treble-crochet posts in open even columns, each topped by a small chain V, airy and open, in fluffy wool yarn.',
+  ].join(' '),
+}
+const COMMON =
+  'Real visible yarn: soft plied fibres, a gentle fuzzy halo, cosy hand-crocheted wool texture, each stitch tidy and uniform. Soft natural window light, shallow depth of field, extremely detailed, photorealistic, looks like a real crocheted swatch.'
 
 const NEG =
   'embroidery, cross stitch, knitting, woven fabric, basket weave, smooth plastic, dough, cartoon, illustration, vector art, flat colours, 3d render, cgi, digital art'
@@ -45,13 +60,13 @@ interface FalResponse {
   seed?: number
 }
 
-async function upscale(initPath: string, outPath: string, creativity: number, resemblance: number) {
+async function upscale(initPath: string, outPath: string, creativity: number, resemblance: number, prompt: string) {
   const key = process.env.FAL_KEY
   if (!key) throw new Error('FAL_KEY not found (.env.credentials).')
   const b64 = readFileSync(initPath).toString('base64')
   const body = {
     image_url: `data:image/png;base64,${b64}`,
-    prompt: PROMPT,
+    prompt,
     negative_prompt: NEG,
     upscale_factor: 2,
     creativity,
@@ -90,11 +105,13 @@ async function main() {
   const base = resolve(process.cwd(), process.argv[2] ?? '../../.loom-scratch/crochet/aspen-swatch.png')
   const creativity = Number(process.argv[3] ?? 0.5)
   const resemblance = Number(process.argv[4] ?? 0.85)
+  const stitch = (process.argv[5] ?? 'sc').toLowerCase()
   if (!existsSync(base)) throw new Error(`base not found: ${base}`)
 
+  const prompt = `${STITCH_PROMPTS[stitch] ?? STITCH_PROMPTS.sc} ${COMMON}`
   const out = base.replace(/\.png$/, '-hero.png')
-  console.log(`[Step 4] upscale base=${basename(base)} creativity=${creativity} resemblance=${resemblance}`)
-  const meta = await upscale(base, out, creativity, resemblance)
+  console.log(`[Step 4] upscale base=${basename(base)} stitch=${stitch} creativity=${creativity} resemblance=${resemblance}`)
+  const meta = await upscale(base, out, creativity, resemblance, prompt)
   console.log(`wrote ${out} (${(meta.bytes / 1024).toFixed(0)} KB, ${meta.width}x${meta.height})`)
 
   // Fidelity gate: confirm the upscale didn't move the stitches.

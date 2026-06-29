@@ -28,15 +28,17 @@ function main() {
   const rows: StitchId[] = Array(nRows).fill(stitch) as StitchId[]
   const built = buildContinuous(rows, W, yr)
 
-  // Light relax only: settle + keep yarns a diameter apart WITHOUT collapsing the
-  // front(+z)/back(−z) separation that keeps the V's clean and the link hidden.
+  // Collision is what now HOLDS the interlock (yarn can't pass through yarn), so it
+  // runs firm and long. No plane pull — the +z/−z relief at each hook IS the
+  // interlock; flattening it would unlink the rows.
   relax(built.model, {
     collMinDist: yr * 1.25,
-    collK: 0.15,
-    collAdjacency: 4,
+    collK: 0.28,
+    collAdjacency: 9, // a post's own two legs (≤9 apart) stay a tight pair; cross-row interlock is ~a full row apart, so it still collides
     planeZ: 0,
-    planeK: 0, // no plane pull — it would flatten the V relief and lift the hidden link
-    iterations: 220,
+    planeK: 0,
+    layoutK: 0.06, // blocked flat — holds rows at their worked height so posts stand
+    iterations: 320,
   })
 
   // Render the ONE strand as a single continuous plied yarn.
@@ -46,10 +48,13 @@ function main() {
   const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, 0.1) // gentle twist = plied wool fibre (path no longer knots)
   const strokes = [{ hex, sheen: 0.85, radiusMm, filaments }]
 
+  // Tall stitches (dc/tr) read as standing vertical posts from a slight 3/4 angle —
+  // the way the reference photos are shot. sc/hdc stay flat top-down.
+  const tall = stitch === 'dc' || stitch === 'tr'
   const scene = {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
     strokes,
-    view: { bgHex: '#6f5440', marginFactor: 0.12 },
+    view: { bgHex: '#6f5440', marginFactor: 0.12, tiltDeg: tall ? 16 : 0, resY: 1200 },
   }
   const scenePath = resolve(OUT, `${name}.json`)
   writeFileSync(scenePath, JSON.stringify(scene))

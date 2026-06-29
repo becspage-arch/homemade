@@ -23,6 +23,6 @@ export const STITCHES: Record<StitchId, StitchDef> = {
   ch: { id: 'ch', heightFactor: 0.5, topLoops: 2 },
   sc: { id: 'sc', heightFactor: 1.0, topLoops: 2 },
   hdc: { id: 'hdc', heightFactor: 1.45, topLoops: 2 },
-  dc: { id: 'dc', heightFactor: 2.0, topLoops: 2 },
-  tr: { id: 'tr', heightFactor: 2.7, topLoops: 2 },
+  dc: { id: 'dc', heightFactor: 3.2, topLoops: 2 },
+  tr: { id: 'tr', heightFactor: 4.2, topLoops: 2 },
 }

@@ -93,7 +93,7 @@ def yarn_material(name, hexcol, sheen):
     return mat
 
 
-def build_yarn(strokes, drape=None):
+def build_yarn(strokes, drape=None, z_offset=0.0):
     # One curve object per (colour, radius) for speed. Bulky yarn sits proud.
     # `drape`, if given, is (cx, cy, amp, fx, fy) — a low-frequency height field
     # that lifts the whole blanket into soft hills/valleys so it reads as draped
@@ -128,7 +128,7 @@ def build_yarn(strokes, drape=None):
                 for i, p in enumerate(poly):
                     bx = p[0] * S
                     by = -p[1] * S
-                    sp.points[i].co = (bx, by, p[2] * S + zlift + drape_z(bx, by), 1.0)
+                    sp.points[i].co = (bx, by, p[2] * S + zlift + z_offset + drape_z(bx, by), 1.0)
                     sp.points[i].radius = r
         ob = bpy.data.objects.new("yarn_" + hexcol.lstrip("#"), cu)
         ob.data.materials.append(yarn_material("y_" + hexcol, hexcol, sheen))
@@ -189,6 +189,7 @@ def main():
     miny = 1e9
     maxx = -1e9
     maxy = -1e9
+    minz = 1e9
     for st in strokes:
         for poly in st["filaments"]:
             for p in poly:
@@ -198,6 +199,7 @@ def main():
                 maxx = max(maxx, bx)
                 miny = min(miny, by)
                 maxy = max(maxy, by)
+                minz = min(minz, p[2] * S)
     cx = (minx + maxx) * 0.5
     cy = (miny + maxy) * 0.5
     contentW = maxx - minx
@@ -211,10 +213,17 @@ def main():
         span0 = max(contentW, contentH)
         drape = (cx, cy, drape_amp, 6.2 / span0, 5.0 / span0)
 
+    # Turned crochet works alternate rows from the back, so the fabric has relief on
+    # BOTH faces (some nodes go to −z). Float the whole piece up so its lowest point
+    # sits just above the table, and slip the backing just under it — otherwise the
+    # back-worked rows clip through the table or hide behind the backing.
+    z_offset = 0.08 - minz
+    backing_z = 0.04
+
     # Backing right under the loops (yarn colour, darker) so no gap shows surface.
     # Sized to the full content (not the possibly-cropped frame) so a tight crop
     # never reveals its edge.
-    bpy.ops.mesh.primitive_plane_add(size=1.0, location=(cx, cy, S * 1.4))
+    bpy.ops.mesh.primitive_plane_add(size=1.0, location=(cx, cy, backing_z))
     backing = bpy.context.active_object
     backing.scale = (contentW * 0.54, contentH * 0.54, 1.0)
     backing.data.materials.append(backing_material(yarn_hex))
@@ -225,7 +234,7 @@ def main():
     surface.scale = (max(halfW, contentW) * 5, max(halfH, contentH) * 5, 1.0)
     surface.data.materials.append(surface_material(bg_hex))
 
-    build_yarn(strokes, drape)
+    build_yarn(strokes, drape, z_offset)
 
     # Target at content centre.
     tgt = bpy.data.objects.new("target", None)
@@ -286,8 +295,9 @@ def main():
     scene.cycles.samples = samples
     scene.cycles.use_denoising = True
     aspect = (halfW * 2) / (halfH * 2)
-    scene.render.resolution_y = 960
-    scene.render.resolution_x = int(960 * aspect)
+    res_y = int(view.get("resY", 960))
+    scene.render.resolution_y = res_y
+    scene.render.resolution_x = int(res_y * aspect)
     scene.view_settings.view_transform = "AgX"
     scene.view_settings.look = "AgX - Base Contrast"
     scene.view_settings.exposure = 0.65  # lower: stop the pale cream blowing out

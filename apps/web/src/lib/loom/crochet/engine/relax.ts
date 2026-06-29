@@ -50,6 +50,15 @@ export interface RelaxConfig {
   /** Pull z toward this target with `planeK` (soft, keeps relief). */
   planeZ: number
   planeK: number
+  /**
+   * "Laid flat / blocked" pull: each free node's y is drawn toward its worked row
+   * line (its initial y) with this stiffness. Represents blocking the finished
+   * swatch to its worked dimensions — it keeps rows at the spacing the yarn was
+   * worked to (so a tall stitch's fed length stands as a tall post instead of
+   * coiling shut), WITHOUT touching the loop/twist/interlock, which still relax
+   * freely in x and z. 0 = off.
+   */
+  layoutK: number
   iterations: number
 }
 
@@ -135,6 +144,8 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
   const { nodes, dist, bend, strand, along } = model
   const grid = new Grid(cfg.collMinDist)
   const minD2 = cfg.collMinDist * cfg.collMinDist
+  // Capture each node's worked row line (initial y) for the "laid flat" pull.
+  const y0 = cfg.layoutK > 0 ? nodes.map((n) => n.y) : null
 
   // Bonded pairs (anything joined by a constraint) never collide — connected yarn
   // touches. A node also never collides with another node on the SAME stitch
@@ -192,6 +203,15 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
       for (const n of nodes) {
         if (n.w === 0) continue
         n.z += (cfg.planeZ - n.z) * cfg.planeK
+      }
+    }
+
+    // 5. "Laid flat / blocked": hold each row at its worked y (keeps posts extended).
+    if (y0) {
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i]!
+        if (n.w === 0) continue
+        n.y += (y0[i]! - n.y) * cfg.layoutK
       }
     }
   }
