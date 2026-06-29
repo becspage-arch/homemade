@@ -4429,3 +4429,30 @@ brief, pending its hero review.
 
 The real first end-to-end purchase (real card, then self-refund) is Rebecca's to
 run.
+
+---
+
+## 2026-06-29 — Cooking + baking discoverability (phase_dish_type_001)
+
+/cooking and /baking surfaced almost only exotic dishes and were barely
+browsable (3,037 of 3,083 cooking recipes had no sub-category; featuring
+ordered by recency so only the newest world-cuisine fills showed). The
+catalogue was already British/American-heavy — a discoverability + curation
+fix, not a rebuild.
+
+- **Dish-type shelves** (`prisma/dish-type-vocabulary.ts`, food sibling of
+  item-type-vocabulary.ts; `src/dish-types.ts` `ensureDishShelves`): cooking now
+  has 19 SubCategory home shelves (Pasta, Curries, Roasts, Savoury pies, Stews,
+  Soups, Salads, Puddings & desserts, …); baking adopts its existing 8. Seeded
+  idempotently on deploy. Cross-cutting collections reuse `mood[]`; world
+  cuisine reuses `cuisine`. No parallel taxonomy.
+- **Every recipe classified** (`scripts/_classify_dishtypes.ts`): 4,287 rows;
+  0 unshelved either category; 1,176 flagged `familiarCanon` (migration
+  `phase_dish_type_001`); cuisine normalised; canonical collection moods added.
+- **Region-aware featuring** (`lib/familiar-for-category.ts`, recipe-layout):
+  "Comfort classics / Classic bakes" lead rail + familiar-first magazine feature
+  (reuses cf-ipcountry); familiar canon leads every shelf rail + filtered grid.
+  World-cuisine browse chips + `?cuisine=` keep world food as discovery.
+- **Canon gap report** (`food-canon.ts` + `scripts/_canon_gap_report.ts`): 160
+  UK/US canon dishes audited, 156 present, **4 genuine gaps** (Battenberg,
+  Madeira cake, bread & butter pudding, trifle) + ~26 thin. Fill is a follow-on.

@@ -184,11 +184,12 @@ export async function RecipeLayout({
               status: TutorialStatus.PUBLISHED,
             },
             // Familiar canon first so each dish-type shelf leads with the
-            // dishes a UK/US cook recognises, then most-loved, then newest.
+            // dishes a UK/US cook recognises, then newest. (Ordering by the
+            // bookmark/project _counts here meant 19 correlated aggregations
+            // per request — ~3s of the page's TTFB — for no signal while
+            // engagement is empty. familiarCanon + publishedAt are indexed.)
             orderBy: [
               { familiarCanon: 'desc' },
-              { bookmarks: { _count: 'desc' } },
-              { projects: { _count: 'desc' } },
               { publishedAt: 'desc' },
             ],
             take: 8,
