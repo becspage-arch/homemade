@@ -96,25 +96,40 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
       const s = dir
       const x = c * sw
       const bv = vBelow[c]!
+      const isDc = rowTypes[j] === 'dc' || rowTypes[j] === 'tr'
 
-      // hidden link into the row below (BEHIND, −z): down → behind below-V → up
-      push(x + s * tw * 0.4, mid, -z * 0.6)
-      const link = push(x, by + vh * 0.2, -z * 1.5) // tucked behind the below stitch
-      push(x - s * tw * 0.4, mid, -z * 0.6)
-      // hdc/dc third-loop ridge: a horizontal bar across the front-base of the
-      // stitch, proud (+z), which tiles into the visible ridge line between rows.
-      if (tall) {
-        push(x - s * tw * 0.95, ty - vh * 0.95, z * 1.2)
-        push(x + s * tw * 0.95, ty - vh * 0.95, z * 1.2)
+      let link: number
+      let vc: number
+      if (isDc) {
+        // dc/tr: a VISIBLE tall front POST (down one side, up the other — the
+        // double-bar of a dc) worked into the stitch below, then the V on top.
+        // The post stands on the front (+z), which is the whole look of dc.
+        push(x - s * tw * 0.45, ty - vh * 0.3, z)
+        push(x - s * tw * 0.4, (ty + by) * 0.5, z * 1.0) // left post strand, down
+        push(x - s * tw * 0.2, by + vh * 0.35, z * 0.6)
+        link = push(x, by + vh * 0.1, -z * 0.5) // brief dip behind to hook the below V
+        push(x + s * tw * 0.2, by + vh * 0.35, z * 0.6)
+        push(x + s * tw * 0.4, (ty + by) * 0.5, z * 1.0) // right post strand, up
+        push(x + s * tw * 0.45, ty - vh * 0.3, z)
+        push(x - s * tw, ty + vh * 0.45, z)
+        vc = push(x, ty + vh * 0.8, z * 1.1) // V top (the chain the next row works)
+        push(x + s * tw, ty + vh * 0.45, z)
+      } else {
+        // sc/hdc: link routed BEHIND (hidden); front shows a flat barred top.
+        push(x + s * tw * 0.4, mid, -z * 0.6)
+        link = push(x, by + vh * 0.2, -z * 1.5) // tucked behind the below stitch
+        push(x - s * tw * 0.4, mid, -z * 0.6)
+        // hdc third-loop ridge: a horizontal bar across the front-base, proud (+z).
+        if (tall) {
+          push(x - s * tw * 0.95, ty - vh * 0.95, z * 1.2)
+          push(x + s * tw * 0.95, ty - vh * 0.95, z * 1.2)
+        }
+        push(x - s * tw, ty + vh * 0.15, z)
+        push(x - s * tw * 0.34, ty + vh * 0.6, z * 1.05) // bar, left
+        vc = push(x, ty + vh * 0.2, z * 1.0) // shallow notch (not a deep knit V)
+        push(x + s * tw * 0.34, ty + vh * 0.6, z * 1.05) // bar, right
+        push(x + s * tw, ty + vh * 0.15, z)
       }
-      // visible front of the stitch (+z): a flatter, BARRED top (the horizontal
-      // top chain of single crochet) with only a shallow notch — denser + more
-      // horizontal than a sharp knit V, so it reads as crochet, not stockinette.
-      push(x - s * tw, ty + vh * 0.15, z)
-      push(x - s * tw * 0.34, ty + vh * 0.6, z * 1.05) // bar, left
-      const vc = push(x, ty + vh * 0.2, z * 1.0) // shallow notch (not a deep V)
-      push(x + s * tw * 0.34, ty + vh * 0.6, z * 1.05) // bar, right
-      push(x + s * tw, ty + vh * 0.15, z)
       vThis[c] = vc
 
       if (bv >= 0) dist.push({ a: link, b: bv, rest: yr * 1.1, k: 0.45 })
