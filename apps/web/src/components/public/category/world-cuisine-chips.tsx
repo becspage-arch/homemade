@@ -66,20 +66,23 @@ export function WorldCuisineChips({
   }
 
   return (
-    <div className="category-filter-row" aria-label="Cuisines">
-      {cuisines.map((slug) => {
-        const isActive = activeCuisine === slug
-        const next = isActive ? null : slug
-        return (
-          <Link
-            key={slug}
-            href={hrefFor(next)}
-            className={`category-filter-chip${isActive ? ' is-active' : ''}`}
-          >
-            {labelFor(slug)}
-          </Link>
-        )
-      })}
+    <div className="category-cuisine-row">
+      <span className="category-strip-label">Cuisine</span>
+      <nav className="category-chip-strip category-cuisine-strip" aria-label="Cuisines">
+        {cuisines.map((slug) => {
+          const isActive = activeCuisine === slug
+          const next = isActive ? null : slug
+          return (
+            <Link
+              key={slug}
+              href={hrefFor(next)}
+              className={`category-filter-chip${isActive ? ' is-active' : ''}`}
+            >
+              {labelFor(slug)}
+            </Link>
+          )
+        })}
+      </nav>
     </div>
   )
 }

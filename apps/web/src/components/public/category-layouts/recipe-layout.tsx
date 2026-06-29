@@ -273,9 +273,15 @@ export async function RecipeLayout({
     inSeasonForCategory = seasonal as TutorialCardLike[]
     quickWins = quick as TutorialCardLike[]
     familiarRail = familiar as TutorialCardLike[]
-    worldCuisines = (cuisineGroups as { cuisine: string | null }[])
-      .map((g) => g.cuisine)
-      .filter((c): c is string => Boolean(c))
+    // Only surface cuisines with real depth, and cap the bar so it stays a
+    // single tidy scrollable row rather than a 70-chip wall. The long tail of
+    // one-off cuisines is still reachable via ?cuisine= / search. Drop vague
+    // umbrella terms that aren't a useful browse facet.
+    const CUISINE_NOISE = new Set(['international', 'asian', 'european', 'global', 'fusion'])
+    worldCuisines = (cuisineGroups as { cuisine: string | null; _count: { cuisine: number } }[])
+      .filter((g) => g.cuisine && !CUISINE_NOISE.has(g.cuisine) && g._count.cuisine >= 10)
+      .map((g) => g.cuisine as string)
+      .slice(0, 16)
 
     // Prefer admin-pinned magazine picks for the current week. Then, for food
     // categories, lead the feature with the region-aware familiar canon (so the

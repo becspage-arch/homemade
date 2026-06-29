@@ -123,6 +123,28 @@
   color: var(--color-cream);
 }
 
+/* World-cuisine row: a quiet eyebrow label above a single horizontally
+   scrollable strip, so a long cuisine list reads as one tidy rail instead of
+   a wrapping wall of pills. */
+.category-cuisine-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.category-strip-label {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-espresso);
+  opacity: 0.5;
+}
+
+.category-cuisine-strip .category-filter-chip {
+  flex: 0 0 auto;
+}
+
 /* ── Filtered grid (single dense grid when a filter is active) ─────────── */
 
 .category-filtered-section {
