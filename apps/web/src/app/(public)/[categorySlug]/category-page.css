@@ -186,3 +186,134 @@
     gap: 16px 10px;
   }
 }
+
+/* ── Category chips wrap (no off-screen horizontal scroll) ─────────────────
+   With a full set of dish-type categories the strip would run off the right
+   edge with no affordance. Let it wrap to as many rows as needed so every
+   category is visible at a glance. Recipe pages only (scoped to chip-rows). */
+.category-chip-rows .category-chip-strip {
+  flex-wrap: wrap;
+  overflow-x: visible;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ── Recipe filtered view: faceted filter sidebar + grid ───────────────────
+   Shown only when a filter is active. Mirrors the cross-stitch pattern library
+   so selection works the same site-wide: a left rail of grouped, individually-
+   toggleable filter buttons (click an active one to clear it), a Clear-all, a
+   result count and a sort select. The unfiltered landing is untouched. */
+.recipe-library-content {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+}
+.recipe-library-sidebar-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 18px;
+}
+.recipe-library-sidebar h2 {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-espresso);
+  opacity: 0.65;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.recipe-library-clear {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-lora);
+  font-size: 12px;
+  color: var(--color-sage);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.recipe-library-clear:hover { color: var(--color-espresso); }
+.recipe-library-filter-group { margin-bottom: 22px; }
+.recipe-library-filter-group h3 {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-espresso);
+  margin: 0 0 8px;
+}
+.recipe-library-filter-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.recipe-library-filter-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: var(--font-lora);
+  color: var(--color-espresso);
+  cursor: pointer;
+  transition: background 140ms ease-out, color 140ms ease-out;
+}
+.recipe-library-filter-button:hover { background: var(--color-soft-parchment); }
+.recipe-library-filter-button.is-active {
+  background: var(--color-sage);
+  color: var(--color-cream);
+}
+.recipe-library-filter-count {
+  font-size: 11px;
+  opacity: 0.55;
+}
+.recipe-library-filter-button.is-active .recipe-library-filter-count { opacity: 0.85; }
+.recipe-library-sortbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+  font-size: 12px;
+  color: var(--color-espresso);
+}
+.recipe-library-result-count {
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  opacity: 0.7;
+}
+.recipe-library-sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.04em;
+  opacity: 0.8;
+}
+.recipe-library-sort select {
+  appearance: none;
+  background: var(--color-soft-parchment);
+  border: none;
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-espresso);
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px var(--color-linen-grey);
+}
+@media (max-width: 880px) {
+  .recipe-library-content { grid-template-columns: 1fr; }
+  .recipe-library-sidebar { order: 2; }
+  .recipe-library-main { order: 1; }
+}

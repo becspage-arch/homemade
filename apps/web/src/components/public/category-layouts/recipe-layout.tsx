@@ -1,6 +1,11 @@
 import { headers } from 'next/headers'
-import { prisma, TutorialStatus } from '@homemade/db'
+import { prisma, Prisma, TutorialStatus } from '@homemade/db'
 import { HomeCard } from '@/components/public/home-card'
+import {
+  RecipeFilterSidebar,
+  type RecipeFacetGroup,
+} from '@/components/public/category/recipe-filter-sidebar'
+import { cuisineLabel } from '@/lib/cuisine-label'
 import { CategoryHero } from '@/components/public/category-hero'
 import { SubCategoryChips } from '@/components/public/sub-category-chips'
 import { CategorySubRail } from '@/components/public/category-sub-rail'
@@ -33,8 +38,23 @@ interface RecipeLayoutProps {
   searchParams: {
     sub?: string
     dietary?: string
+    cuisine?: string
+    sort?: string
   }
   currentUserId: string | null
+}
+
+/** Food categories that get the cuisine facet in the filtered view. */
+const FOOD_CATEGORIES = new Set(['cooking', 'baking'])
+/** Vague umbrella cuisines that aren't a useful browse facet. */
+const CUISINE_NOISE = new Set(['international', 'asian', 'european', 'global', 'fusion'])
+/** Dietary facet labels. */
+const DIETARY_LABELS: Record<string, string> = {
+  vegetarian: 'Vegetarian',
+  vegan: 'Vegan',
+  glutenFree: 'Gluten-free',
+  dairyFree: 'Dairy-free',
+  nutFree: 'Nut-free',
 }
 
 const CARD_SELECT = {
@@ -115,15 +135,19 @@ export async function RecipeLayout({
 }: RecipeLayoutProps) {
   const subSlug = searchParams.sub ?? null
   const dietary = searchParams.dietary ?? null
+  const cuisineFilter = searchParams.cuisine ?? null
+  const filterSort = searchParams.sort ?? 'popular'
+  const isFoodCategory = FOOD_CATEGORIES.has(category.slug)
 
   const subCategory = subSlug
     ? category.subCategories.find((s) => s.slug === subSlug) ?? null
     : null
   const activeSubSlug = subCategory ? subCategory.slug : null
-  const isFiltered = Boolean(dietary) || Boolean(activeSubSlug)
+  const isFiltered = Boolean(dietary) || Boolean(activeSubSlug) || Boolean(cuisineFilter)
 
   const preserveQuery: Record<string, string> = {}
   if (dietary) preserveQuery.dietary = dietary
+  if (cuisineFilter) preserveQuery.cuisine = cuisineFilter
 
   const [countryCode, recentlyMade] = await Promise.all([
     readCountryCode(),
@@ -136,25 +160,67 @@ export async function RecipeLayout({
   let quickWins: TutorialCardLike[] = []
   let magazineFeature: TutorialCardLike | null = null
   let magazineSupporting: TutorialCardLike[] = []
+  let filterGroups: RecipeFacetGroup[] = []
+  let filteredCount = 0
 
   if (isFiltered) {
-    const tutorials = await prisma.tutorial.findMany({
-      where: {
-        categoryId: category.id,
-        status: TutorialStatus.PUBLISHED,
-        ...(dietary ? { dietaryFlags: { has: dietary } } : {}),
-        ...(activeSubSlug && subCategory ? { subCategoryId: subCategory.id } : {}),
-      },
-      // Most-loved first (matches how the unfiltered rails already order), so a
-      // dietary / sub filter leads with the best of that slice, then newest.
-      orderBy: [
-        { bookmarks: { _count: 'desc' } },
-        { projects: { _count: 'desc' } },
-        { publishedAt: 'desc' },
-      ],
-      select: CARD_SELECT,
-    })
+    const where: Prisma.TutorialWhereInput = {
+      categoryId: category.id,
+      status: TutorialStatus.PUBLISHED,
+      ...(dietary ? { dietaryFlags: { has: dietary } } : {}),
+      ...(activeSubSlug && subCategory ? { subCategoryId: subCategory.id } : {}),
+      ...(cuisineFilter ? { cuisine: cuisineFilter } : {}),
+    }
+    const orderBy: Prisma.TutorialOrderByWithRelationInput[] =
+      filterSort === 'newest'
+        ? [{ publishedAt: 'desc' }]
+        : filterSort === 'quick'
+          ? [{ totalMinutes: { sort: 'asc', nulls: 'last' } }, { publishedAt: 'desc' }]
+          : [{ bookmarks: { _count: 'desc' } }, { projects: { _count: 'desc' } }, { publishedAt: 'desc' }]
+
+    const [tutorials, count, subCatGroups, cuisineGroups, dietRows] = await Promise.all([
+      prisma.tutorial.findMany({ where, orderBy, take: 96, select: CARD_SELECT }),
+      prisma.tutorial.count({ where }),
+      prisma.tutorial.groupBy({
+        by: ['subCategoryId'],
+        where: { categoryId: category.id, status: TutorialStatus.PUBLISHED },
+        _count: { _all: true },
+      }),
+      isFoodCategory
+        ? prisma.tutorial.groupBy({
+            by: ['cuisine'],
+            where: { categoryId: category.id, status: TutorialStatus.PUBLISHED, cuisine: { not: null } },
+            _count: { cuisine: true },
+            orderBy: { _count: { cuisine: 'desc' } },
+          })
+        : Promise.resolve([]),
+      prisma.$queryRaw<{ value: string; count: number }[]>`
+        SELECT d AS value, COUNT(*)::int AS count FROM "Tutorial", unnest("dietaryFlags") d
+        WHERE "categoryId" = ${category.id} AND status = 'PUBLISHED' GROUP BY d`,
+    ])
     filteredTutorials = tutorials as TutorialCardLike[]
+    filteredCount = count
+
+    const subCount = new Map(subCatGroups.map((g) => [g.subCategoryId, g._count._all]))
+    const dishOptions = category.subCategories
+      .map((s) => ({ value: s.slug, label: s.name, count: subCount.get(s.id) ?? 0 }))
+      .filter((o) => o.count > 0)
+    const cuisineOptions = (cuisineGroups as { cuisine: string | null; _count: { cuisine: number } }[])
+      .filter((g) => g.cuisine && !CUISINE_NOISE.has(g.cuisine) && g._count.cuisine >= 5)
+      .slice(0, 18)
+      .map((g) => ({ value: g.cuisine as string, label: cuisineLabel(g.cuisine as string), count: g._count.cuisine }))
+    const dietCount = new Map(dietRows.map((r) => [r.value, r.count]))
+    const dietaryOptions = ['vegetarian', 'vegan', 'glutenFree', 'dairyFree', 'nutFree']
+      .map((v) => ({ value: v, label: DIETARY_LABELS[v] ?? v, count: dietCount.get(v) ?? 0 }))
+      .filter((o) => o.count > 0)
+
+    filterGroups = [
+      { key: 'sub', title: 'Dish type', allLabel: 'All dishes', options: dishOptions },
+      ...(cuisineOptions.length
+        ? [{ key: 'cuisine', title: 'Cuisine', allLabel: 'All cuisines', options: cuisineOptions }]
+        : []),
+      ...(dietaryOptions.length ? [{ key: 'dietary', title: 'Dietary', options: dietaryOptions }] : []),
+    ]
   } else {
     const weekStart = isoWeekStartUtc(new Date())
     const [perSubResults, seasonal, quick, mostLoved, magazinePicks] = await Promise.all([
@@ -370,21 +436,29 @@ export async function RecipeLayout({
 
       {isFiltered && (
         <section className="category-filtered-section">
-          {filteredTutorials.length === 0 ? (
-            <p className="category-empty">
-              Nothing in {category.name.toLowerCase()} matches that filter yet.
-            </p>
-          ) : (
-            <div className="category-filtered-grid">
-              {filteredTutorials.map((t) => (
-                <HomeCard
-                  key={t.id}
-                  tutorial={t}
-                  state={readerStateFor(readerState, t.id)}
-                />
-              ))}
-            </div>
-          )}
+          <RecipeFilterSidebar
+            groups={filterGroups}
+            current={{ sub: activeSubSlug, cuisine: cuisineFilter, dietary }}
+            count={filteredCount}
+            sort={filterSort}
+            basePath={`/${category.slug}`}
+          >
+            {filteredTutorials.length === 0 ? (
+              <p className="category-empty">
+                Nothing in {category.name.toLowerCase()} matches that filter yet.
+              </p>
+            ) : (
+              <div className="category-filtered-grid">
+                {filteredTutorials.map((t) => (
+                  <HomeCard
+                    key={t.id}
+                    tutorial={t}
+                    state={readerStateFor(readerState, t.id)}
+                  />
+                ))}
+              </div>
+            )}
+          </RecipeFilterSidebar>
         </section>
       )}
     </div>
