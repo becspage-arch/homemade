@@ -23,8 +23,9 @@ function main() {
   const W = Number(process.argv[3] ?? 12)
   const hex = process.argv[4] ?? '#e6d4c0'
   const name = process.argv[5] ?? 'continuous-sc'
+  const stitch = (process.argv[6] ?? 'sc') as StitchId
   const nRows = 8
-  const rows: StitchId[] = Array(nRows).fill('sc') as StitchId[]
+  const rows: StitchId[] = Array(nRows).fill(stitch) as StitchId[]
   const built = buildContinuous(rows, W, yr)
 
   // Light relax only: settle + keep yarns a diameter apart WITHOUT collapsing the

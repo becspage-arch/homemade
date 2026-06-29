@@ -87,6 +87,9 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
     const mid = (ty + by) * 0.5
     const dir = j % 2 === 0 ? 1 : -1
     const vThis: number[] = new Array(W).fill(-1)
+    // hdc/dc/tr leave a visible horizontal "third loop" ridge across each row —
+    // the signature bar that tells hdc apart from sc.
+    const tall = rowTypes[j] === 'hdc' || rowTypes[j] === 'dc' || rowTypes[j] === 'tr'
 
     for (let o = 0; o < W; o++) {
       const c = dir > 0 ? o : W - 1 - o
@@ -98,6 +101,12 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
       push(x + s * tw * 0.4, mid, -z * 0.6)
       const link = push(x, by + vh * 0.2, -z * 1.5) // tucked behind the below stitch
       push(x - s * tw * 0.4, mid, -z * 0.6)
+      // hdc/dc third-loop ridge: a horizontal bar across the front-base of the
+      // stitch, proud (+z), which tiles into the visible ridge line between rows.
+      if (tall) {
+        push(x - s * tw * 0.95, ty - vh * 0.95, z * 1.2)
+        push(x + s * tw * 0.95, ty - vh * 0.95, z * 1.2)
+      }
       // visible front of the stitch (+z): a flatter, BARRED top (the horizontal
       // top chain of single crochet) with only a shallow notch — denser + more
       // horizontal than a sharp knit V, so it reads as crochet, not stockinette.
