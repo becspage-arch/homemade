@@ -12,7 +12,7 @@
  */
 
 import { nearestDmcFull } from '../../floss/dmc-full'
-import { patternToLineArtSvg } from './lineart'
+import { patternToGuideSvg } from './guide'
 import type { StitchedElement } from '../../loom/render/renderPattern'
 
 /** Canonical stitch names + a one-line how-to for the stitch key. */
@@ -72,6 +72,59 @@ function r2(n: number): number {
   return Math.round(n * 100) / 100
 }
 
+/** Rough area of an element — to pick the LARGEST region of a (stitch,colour)
+ *  group as the natural home for its label (a centroid average piles symmetric
+ *  items onto the centre line). */
+function elementArea(el: StitchedElement): number {
+  const g = el.geometry
+  if (g.kind === 'disc') return Math.PI * (g.radiusMm ?? 1) ** 2
+  const pts = g.points
+  if (g.kind === 'point' || !pts) return 1
+  if (pts.length < 3) {
+    return pts.length === 2 ? Math.hypot(pts[1]![0] - pts[0]![0], pts[1]![1] - pts[0]![1]) : 0.5
+  }
+  let a = 0
+  for (let i = 0; i < pts.length; i++) {
+    const j = (i + 1) % pts.length
+    a += pts[i]![0] * pts[j]![1] - pts[j]![0] * pts[i]![1]
+  }
+  return Math.abs(a) / 2
+}
+
+/** Push overlapping labels apart so they're readable and spread across the design
+ *  rather than stacked. Simple pairwise repulsion, then clamp into the frame. */
+function spreadLabels(
+  labels: ElementLabel[],
+  size: { width: number; height: number },
+): ElementLabel[] {
+  const min = Math.max(size.width, size.height) * 0.058
+  const m = size.width * 0.04
+  const pts = labels.map((l) => ({ ...l }))
+  for (let it = 0; it < 80; it++) {
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i + 1; j < pts.length; j++) {
+        let dx = pts[j]!.x - pts[i]!.x
+        let dy = pts[j]!.y - pts[i]!.y
+        const d = Math.hypot(dx, dy) || 0.01
+        if (d < min) {
+          const push = (min - d) / 2
+          dx /= d
+          dy /= d
+          pts[i]!.x -= dx * push
+          pts[i]!.y -= dy * push
+          pts[j]!.x += dx * push
+          pts[j]!.y += dy * push
+        }
+      }
+    }
+  }
+  for (const p of pts) {
+    p.x = Math.max(m, Math.min(size.width - m, p.x))
+    p.y = Math.max(m, Math.min(size.height - m, p.y))
+  }
+  return pts
+}
+
 export function buildPatternDocument(
   elements: StitchedElement[],
   finishedSizeMm: { width: number; height: number },
@@ -113,27 +166,36 @@ export function buildPatternDocument(
     return { el, floss, stitch: ensureStitch(baseSlug(el.stitchType)) }
   })
 
-  // One label per (stitch, colour) group, at the group's mean centre.
-  const groups = new Map<string, { x: number; y: number; n: number; text: string }>()
+  // One label per (stitch, colour) group, placed inside that group's LARGEST
+  // element (its biggest, most natural region), then de-clustered so labels
+  // spread across the design instead of stacking down the centre line.
+  const groups = new Map<string, { x: number; y: number; area: number; text: string }>()
   for (const r of resolved) {
     const key = `${r.stitch.letter}|${r.floss.number}`
-    const [cx, cy] = geomCentre(r.el)
+    const area = elementArea(r.el)
     const g = groups.get(key)
-    if (g) {
-      g.x += cx
-      g.y += cy
-      g.n++
-    } else {
-      groups.set(key, { x: cx, y: cy, n: 1, text: `${r.stitch.letter}${r.floss.number}` })
+    if (!g || area > g.area) {
+      const [cx, cy] = geomCentre(r.el)
+      groups.set(key, { x: cx, y: cy, area, text: `${r.stitch.letter}${r.floss.number}` })
     }
   }
-  const labels: ElementLabel[] = [...groups.values()].map((g) => ({ x: g.x / g.n, y: g.y / g.n, text: g.text }))
+  const labels = spreadLabels(
+    [...groups.values()].map((g) => ({ x: g.x, y: g.y, text: g.text })),
+    finishedSizeMm,
+  )
 
   const flossKey = [...flossByCode.values()]
   const stitchKey = [...stitchBySlug.values()]
   const steps = buildSteps(stitchKey, flossKey, resolved)
-  const technicalChartSvg = patternToLineArtSvg(elements, finishedSizeMm)
-  const colourGuideSvg = withLabels(technicalChartSvg, labels, finishedSizeMm)
+  // Clean, layered artwork (occlusion: front shapes hide the lines behind them):
+  // a white-filled transfer template and a thread-colour colour guide with the
+  // outline on top + short stitch-direction ticks, then the [stitch][colour] labels.
+  const technicalChartSvg = patternToGuideSvg(elements, finishedSizeMm, { mode: 'template' })
+  const colourGuideSvg = withLabels(
+    patternToGuideSvg(elements, finishedSizeMm, { mode: 'colour', background: '#f1ead9', directionHints: true }),
+    labels,
+    finishedSizeMm,
+  )
 
   return { title: opts.title ?? 'Pattern', finishedSizeMm, flossKey, stitchKey, steps, labels, technicalChartSvg, colourGuideSvg }
 }

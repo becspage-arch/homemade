@@ -52,6 +52,9 @@ interface Fixture {
   threadTypes?: string[]
   defaultThread?: { type: string; weight: string } | null
   finishedSizeMm?: { width: number; height: number }
+  /** Pull saturated warm hues down before AgX (toadstool reds). Default true;
+   *  set false for designs whose warmth is the point (a fox's orange fur). */
+  tameWarm?: boolean
   description?: string
   palette?: NeedleworkSurfacePattern['palette']
   stitchLegend?: NeedleworkSurfacePattern['stitchLegend']
@@ -129,7 +132,7 @@ async function main(): Promise<void> {
         defaultThread: fx.defaultThread ?? null,
         strands: fx.defaultThread?.type === 'perle' ? 1 : 6,
       },
-      { persist: true, tameWarm: true, r2Prefix: 'patterns/needlework' },
+      { persist: true, tameWarm: fx.tameWarm ?? true, r2Prefix: 'patterns/needlework' },
     )
     if (!hero.r2) throw new Error('renderHero did not persist to R2 (no r2 result)')
     const meta = await sharp(hero.localHeroPath).metadata()
