@@ -748,6 +748,18 @@ model Tutorial {
   dietaryFlags              String[] // vegetarian / vegan / glutenFree / dairyFree / halal / kosher / nutFree / pescatarian
   cuisine                   String? // Italian / British / French / etc. Single-valued.
   mealType                  String? // breakfast / lunch / dinner / snack / dessert / drink / side
+
+  // Discoverability (phase_dish_type_001). `familiarCanon` flags the everyday
+  // UK/US household staples (spaghetti bolognese, mac & cheese, shepherd's pie,
+  // Victoria sponge...) so the region-aware category featuring can lead with
+  // the familiar comfort canon and weave world food in as discovery, instead
+  // of the old recency-ordered default that surfaced only the newest (exotic)
+  // fills. Set by the dish-type classification pass; false on world-cuisine
+  // discovery content and on every non-food category. The dish-type SHELF a
+  // recipe browses under is its `subCategoryId` (drawn from
+  // prisma/dish-type-vocabulary.ts); cross-cutting collections reuse `mood[]`;
+  // the world-cuisine shelf reuses `cuisine` — no parallel taxonomy.
+  familiarCanon             Boolean  @default(false)
   mood                      String[] // multi-tag — genre / register / vibe. Cooking values: comfortFood / weeknight / party / kidFriendly / freezerFriendly / healthy. Mindset values (Phase 8 Step 13 rebalance): manifesting / magical / playful / symbolic. Use the canonical strings exactly. Filterable via the GIN index.
   temperatureCelsius        Int?
   temperatureNote           String? // "fan oven", "low and slow"
@@ -1358,6 +1370,7 @@ model Tutorial {
   @@index([type])
   @@index([type, cuisine])
   @@index([type, mealType])
+  @@index([categoryId, status, familiarCanon])
   @@index([type, totalMinutes])
   @@index([type, freezable])
   @@index([type, batchable])

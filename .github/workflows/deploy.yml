@@ -128,6 +128,18 @@ jobs:
           export DATABASE_URL="${DATABASE_URL/-pooler./.}"
           pnpm --filter @homemade/db exec tsx scripts/seed-collection-vocabulary.ts
 
+      # Dish-type shelves for the food categories (phase_dish_type_001).
+      # Reconciles cooking + baking SubCategory home shelves to the controlled
+      # file prisma/dish-type-vocabulary.ts on every deploy — upserts by
+      # (categoryId, slug), never deletes, so the eight pre-existing baking
+      # shelves are adopted, not churned. Idempotent.
+      - name: Seed dish-type shelves (idempotent)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          export DATABASE_URL="${DATABASE_URL/-pooler./.}"
+          pnpm --filter @homemade/db exec tsx scripts/seed-dish-type-shelves.ts
+
       # Pattern Studio data backfills (phase_pattern_studio_001).
       # Both scripts are idempotent: the seed upserts on Pattern.slug,
       # and the chart migration only touches Tutorial body nodes still

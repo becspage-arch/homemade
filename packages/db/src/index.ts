@@ -40,6 +40,23 @@ export {
   type EnsureShelvesResult,
 } from './item-types'
 
+// Dish-type shelf service (phase_dish_type_001) — the food-category sibling of
+// item-types: cooking/baking SubCategory home shelves draw their slugs from
+// prisma/dish-type-vocabulary.ts. Cross-cutting collections reuse Tutorial.mood[]
+// (DISH_COLLECTIONS); world cuisine reuses Tutorial.cuisine. No parallel taxonomy.
+export {
+  DISH_TYPE_GROUPS,
+  DISH_TYPE_VOCABULARY,
+  DISH_COLLECTIONS,
+  dishTypesForCategory,
+  resolveDishTypeSlug,
+  ensureDishShelves,
+  type DishType,
+  type DishCategory,
+  type DishCollection,
+  type EnsureDishShelvesResult,
+} from './dish-types'
+
 // Category visibility helper — used by every publish path so a category
 // flips to publicly visible the moment it crosses the threshold.
 export {

@@ -11,8 +11,10 @@ import { RecipeDietaryChips } from '@/components/public/category/recipe-dietary-
 import { EditorialMagazineBlock } from '@/components/public/category/editorial-magazine-block'
 import { CommunityRecipesRail } from '@/components/public/recipes/community-recipes-rail'
 import { FreshRecipesRail } from '@/components/public/recipes/fresh-recipes-rail'
+import { WorldCuisineChips } from '@/components/public/category/world-cuisine-chips'
 import { loadRecentlyMade } from '@/lib/recently-made'
 import { loadInSeasonForCategory } from '@/lib/in-season-for-category'
+import { loadFamiliarForCategory } from '@/lib/familiar-for-category'
 import { isoWeekStartUtc } from '@/lib/editorial-picks'
 import {
   emptyReaderState,
@@ -33,6 +35,7 @@ interface RecipeLayoutProps {
   searchParams: {
     sub?: string
     dietary?: string
+    cuisine?: string
   }
   currentUserId: string | null
 }
@@ -103,6 +106,13 @@ const PLACEHOLDER_BY_SLUG: Record<string, string> = {
   'natural-home': 'What are you making? Try a soap or a cleaning spray',
 }
 
+/**
+ * Food categories that get the dish-type discoverability treatment
+ * (phase_dish_type_001): region-aware familiar-canon featuring + world-cuisine
+ * browse chips. Built reusably; only cooking + baking are wired on for now.
+ */
+const FOOD_CATEGORIES = new Set(['cooking', 'baking'])
+
 /** Recipe categories where time-aware "quick wins" is meaningful. */
 const QUICK_WINS_CATEGORIES = new Set(['cooking', 'baking', 'natural-home'])
 /** Recipe categories where the seasonal rail is meaningful. */
@@ -115,15 +125,18 @@ export async function RecipeLayout({
 }: RecipeLayoutProps) {
   const subSlug = searchParams.sub ?? null
   const dietary = searchParams.dietary ?? null
+  const cuisineFilter = searchParams.cuisine ?? null
 
   const subCategory = subSlug
     ? category.subCategories.find((s) => s.slug === subSlug) ?? null
     : null
   const activeSubSlug = subCategory ? subCategory.slug : null
-  const isFiltered = Boolean(dietary) || Boolean(activeSubSlug)
+  const isFiltered = Boolean(dietary) || Boolean(activeSubSlug) || Boolean(cuisineFilter)
+  const isFoodCategory = FOOD_CATEGORIES.has(category.slug)
 
   const preserveQuery: Record<string, string> = {}
   if (dietary) preserveQuery.dietary = dietary
+  if (cuisineFilter) preserveQuery.cuisine = cuisineFilter
 
   const [countryCode, recentlyMade] = await Promise.all([
     readCountryCode(),
@@ -136,6 +149,8 @@ export async function RecipeLayout({
   let quickWins: TutorialCardLike[] = []
   let magazineFeature: TutorialCardLike | null = null
   let magazineSupporting: TutorialCardLike[] = []
+  let familiarRail: TutorialCardLike[] = []
+  let worldCuisines: string[] = []
 
   if (isFiltered) {
     const tutorials = await prisma.tutorial.findMany({
@@ -144,10 +159,12 @@ export async function RecipeLayout({
         status: TutorialStatus.PUBLISHED,
         ...(dietary ? { dietaryFlags: { has: dietary } } : {}),
         ...(activeSubSlug && subCategory ? { subCategoryId: subCategory.id } : {}),
+        ...(cuisineFilter ? { cuisine: cuisineFilter } : {}),
       },
-      // Most-loved first (matches how the unfiltered rails already order), so a
-      // dietary / sub filter leads with the best of that slice, then newest.
+      // Familiar canon first, then most-loved, so a filtered slice still leads
+      // with the dishes a UK/US cook recognises before world-food discovery.
       orderBy: [
+        { familiarCanon: 'desc' },
         { bookmarks: { _count: 'desc' } },
         { projects: { _count: 'desc' } },
         { publishedAt: 'desc' },
@@ -157,7 +174,7 @@ export async function RecipeLayout({
     filteredTutorials = tutorials as TutorialCardLike[]
   } else {
     const weekStart = isoWeekStartUtc(new Date())
-    const [perSubResults, seasonal, quick, mostLoved, magazinePicks] = await Promise.all([
+    const [perSubResults, seasonal, quick, mostLoved, magazinePicks, familiar, cuisineGroups] = await Promise.all([
       Promise.all(
         category.subCategories.map((sub) =>
           prisma.tutorial.findMany({
@@ -166,7 +183,10 @@ export async function RecipeLayout({
               subCategoryId: sub.id,
               status: TutorialStatus.PUBLISHED,
             },
+            // Familiar canon first so each dish-type shelf leads with the
+            // dishes a UK/US cook recognises, then most-loved, then newest.
             orderBy: [
+              { familiarCanon: 'desc' },
               { bookmarks: { _count: 'desc' } },
               { projects: { _count: 'desc' } },
               { publishedAt: 'desc' },
@@ -226,6 +246,24 @@ export async function RecipeLayout({
           },
         },
       }),
+      // Region-aware familiar comfort canon (food categories only).
+      isFoodCategory
+        ? loadFamiliarForCategory({ categoryId: category.id, countryCode, limit: 12 })
+        : Promise.resolve([]),
+      // Cuisines present in this category, ordered by count, for the world
+      // browse chips (food categories only).
+      isFoodCategory
+        ? prisma.tutorial.groupBy({
+            by: ['cuisine'],
+            where: {
+              categoryId: category.id,
+              status: TutorialStatus.PUBLISHED,
+              cuisine: { not: null },
+            },
+            _count: { cuisine: true },
+            orderBy: { _count: { cuisine: 'desc' } },
+          })
+        : Promise.resolve([]),
     ])
 
     unfilteredRails = category.subCategories
@@ -233,9 +271,15 @@ export async function RecipeLayout({
       .filter((r) => r.tutorials.length > 0)
     inSeasonForCategory = seasonal as TutorialCardLike[]
     quickWins = quick as TutorialCardLike[]
+    familiarRail = familiar as TutorialCardLike[]
+    worldCuisines = (cuisineGroups as { cuisine: string | null }[])
+      .map((g) => g.cuisine)
+      .filter((c): c is string => Boolean(c))
 
-    // Prefer admin-pinned magazine picks for the current week. Falls back
-    // to algorithmic most-loved EDITORIAL heroes when none are scheduled.
+    // Prefer admin-pinned magazine picks for the current week. Then, for food
+    // categories, lead the feature with the region-aware familiar canon (so the
+    // "kitchen this week" hero is a dish a UK/US cook recognises, not whatever
+    // was authored most recently). Otherwise fall back to most-loved EDITORIAL.
     if (magazinePicks.length > 0) {
       const feature = magazinePicks.find((p) => p.position === 1)
       const supporting = magazinePicks
@@ -244,6 +288,13 @@ export async function RecipeLayout({
       if (feature) {
         magazineFeature = feature.tutorial as TutorialCardLike
         magazineSupporting = supporting
+      }
+    }
+    if (!magazineFeature && isFoodCategory) {
+      const withHero = familiarRail.filter((t) => t.hero)
+      if (withHero.length >= 4) {
+        magazineFeature = withHero[0] ?? null
+        magazineSupporting = withHero.slice(1, 4)
       }
     }
     if (!magazineFeature) {
@@ -260,6 +311,7 @@ export async function RecipeLayout({
   for (const r of unfilteredRails) for (const t of r.tutorials) allIds.add(t.id)
   for (const t of inSeasonForCategory) allIds.add(t.id)
   for (const t of quickWins) allIds.add(t.id)
+  for (const t of familiarRail) allIds.add(t.id)
   if (magazineFeature) allIds.add(magazineFeature.id)
   for (const t of magazineSupporting) allIds.add(t.id)
   const readerState = currentUserId
@@ -297,6 +349,19 @@ export async function RecipeLayout({
               activeSubSlug ? { ...preserveQuery, sub: activeSubSlug } : preserveQuery
             }
           />
+          {isFoodCategory && worldCuisines.length > 0 && (
+            <WorldCuisineChips
+              categorySlug={category.slug}
+              cuisines={worldCuisines}
+              activeCuisine={cuisineFilter}
+              preserveQuery={(() => {
+                const q: Record<string, string> = {}
+                if (dietary) q.dietary = dietary
+                if (activeSubSlug) q.sub = activeSubSlug
+                return q
+              })()}
+            />
+          )}
         </div>
       )}
 
@@ -309,6 +374,30 @@ export async function RecipeLayout({
           readerState={readerState}
         />
       )}
+
+      {!isFiltered && isFoodCategory && (() => {
+        const usedIds = new Set<string>(
+          [magazineFeature?.id, ...magazineSupporting.map((t) => t.id)].filter(
+            (id): id is string => Boolean(id),
+          ),
+        )
+        const rail = familiarRail.filter((t) => !usedIds.has(t.id)).slice(0, 10)
+        if (rail.length === 0) return null
+        return (
+          <HomeRail
+            heading={familiarHeadingFor(category.slug)}
+            subheading="The dishes everyone knows, front and centre."
+          >
+            {rail.map((t) => (
+              <HomeCard
+                key={t.id}
+                tutorial={t}
+                state={readerStateFor(readerState, t.id)}
+              />
+            ))}
+          </HomeRail>
+        )
+      })()}
 
       {!isFiltered && inSeasonForCategory.length > 0 && (
         <HomeRail heading={`In season right now in ${category.name.toLowerCase()}`}>
@@ -389,6 +478,14 @@ export async function RecipeLayout({
       )}
     </div>
   )
+}
+
+function familiarHeadingFor(slug: string): string {
+  switch (slug) {
+    case 'cooking': return 'Comfort classics'
+    case 'baking': return 'Classic bakes'
+    default: return 'Familiar favourites'
+  }
 }
 
 function quickWinsHeadingFor(slug: string): string {
