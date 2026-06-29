@@ -4454,5 +4454,11 @@ fix, not a rebuild.
   (reuses cf-ipcountry); familiar canon leads every shelf rail + filtered grid.
   World-cuisine browse chips + `?cuisine=` keep world food as discovery.
 - **Canon gap report** (`food-canon.ts` + `scripts/_canon_gap_report.ts`): 160
-  UK/US canon dishes audited, 156 present, **4 genuine gaps** (Battenberg,
-  Madeira cake, bread & butter pudding, trifle) + ~26 thin. Fill is a follow-on.
+  UK/US canon dishes audited, **158 present, 2 genuine gaps** (bread & butter
+  pudding, trifle) + ~26 thin. Fill is a follow-on.
+- **Mis-filed bakes re-homed** (follow-up): 43 bakes (Victoria sponge, Madeira
+  cake, Battenberg, carrot cake, cheesecakes, shortbread, …) were authored under
+  the cooking category and showed on /cooking; moved to baking + correct shelf,
+  familiarCanon re-judged. This dropped the canon gap from 4 to 2 (Madeira cake
+  + Battenberg existed, just mis-filed). 2 savoury tarts nudged onto cooking's
+  pies-bakes; overnight-oats / French-toast correctly left in cooking. DB-only.
