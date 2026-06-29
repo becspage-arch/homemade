@@ -202,7 +202,7 @@
 /* ── Find bar: search + "Browse all" entry into the filter view ───────────── */
 .category-find-bar {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: 12px;
   margin-bottom: 24px;
   flex-wrap: wrap;
@@ -214,6 +214,7 @@
   flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
+  height: 44px;
   font-family: var(--font-lora);
   font-size: 14px;
   letter-spacing: 0.02em;
