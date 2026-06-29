@@ -54,6 +54,14 @@ const STITCH_PROMPTS: Record<string, string> = {
     'An extreme close-up macro photograph of a single soft wool crochet foundation chain.',
     'A neat row of interlocking V-shaped chain loops forming a braid, in fluffy wool yarn, on a plain background.',
   ].join(' '),
+  scblo: [
+    'An extreme close-up macro photograph of a soft wool crochet swatch worked in single crochet through the back loop only.',
+    'Dense even rows of single crochet with a pronounced raised horizontal ridge between every row (the unworked front loops), in fluffy wool yarn.',
+  ].join(' '),
+  scflo: [
+    'An extreme close-up macro photograph of a soft wool crochet swatch worked in single crochet through the front loop only.',
+    'Dense even rows of single crochet with a soft raised horizontal ridge line per row (the unworked loops), in fluffy wool yarn.',
+  ].join(' '),
 }
 const COMMON =
   'Real visible yarn: soft plied fibres, a gentle fuzzy halo, cosy hand-crocheted wool texture, each stitch tidy and uniform. Soft natural window light, shallow depth of field, extremely detailed, photorealistic, looks like a real crocheted swatch.'

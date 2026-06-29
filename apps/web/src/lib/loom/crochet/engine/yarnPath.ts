@@ -38,7 +38,7 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
   // Column spacing is gauge: a short stitch (sc) packs dense with almost no holes;
   // a tall stitch (dc/tr) is more open. Keyed off the swatch's stitch.
   const st0 = rowTypes[0] ?? 'sc'
-  const sw = yr * (st0 === 'slst' ? 1.9 : st0 === 'sc' ? 2.0 : st0 === 'hdc' ? 2.2 : 2.5) // column spacing
+  const sw = yr * (st0 === 'slst' ? 1.9 : st0 === 'sc' || st0 === 'scblo' || st0 === 'scflo' ? 2.0 : st0 === 'hdc' ? 2.2 : 2.5) // column spacing
   const z = yr * 0.3 // base relief (gentle — turned fabric is fairly flat, not corrugated)
   const zh = yr * 0.5 // crown relief (the head rides proud on its worked face)
   const cw = yr * 0.4 // crown half-width — a slim head-line, not a fat rope
@@ -82,9 +82,12 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
     return idx
   }
 
-  // crownBelow[c] = the crown node of the stitch below at column c (what this row
-  // hooks under). Seeded by the foundation chain.
-  const crownBelow: number[] = new Array(W).fill(-1)
+  // Per column, the BACK loop and FRONT loop of the stitch below (the head's two
+  // loops). A normal stitch hooks the back loop; back-loop-only / front-loop-only
+  // pick one and leave the other floating as a ridge. For a plain head the two
+  // point at the same node, so plain stitches behave exactly as before.
+  const belowBack: number[] = new Array(W).fill(-1)
+  const belowFront: number[] = new Array(W).fill(-1)
 
   // Foundation chain (row -1): a row of proud crowns, pinned (the cast-on edge the
   // first worked row hooks into). One continuous strand, left to right.
@@ -92,7 +95,8 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
     push(c * sw - cw, -dh * 0.4, zh, 0)
     const crown = push(c * sw, 0, zh * 1.15, 0)
     push(c * sw + cw, -dh * 0.4, zh, 0)
-    crownBelow[c] = crown
+    belowBack[c] = crown
+    belowFront[c] = crown
   }
 
   // Worked rows. Each stitch: down-leg → hook UNDER the below crown → up-leg → throw
@@ -120,13 +124,20 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
     // consecutive yarn-overs line up into hdc's signature horizontal ridge. (sc has
     // no yarn-over; dc's is absorbed up the tall post.)
     const thirdLoop = rowTypes[j] === 'hdc'
-    const crownThis: number[] = new Array(W).fill(-1)
+    // Loop mode: which of the below head's two loops this row hooks. blo hooks the
+    // BACK loop (the front loop is left floating as a front ridge); flo hooks the
+    // FRONT loop (back loop floats); both hooks the back (plain — leaves no ridge).
+    const id = rowTypes[j]
+    const loopMode = id === 'scblo' ? 'blo' : id === 'scflo' ? 'flo' : 'both'
+    const crownThisBack: number[] = new Array(W).fill(-1)
+    const crownThisFront: number[] = new Array(W).fill(-1)
 
     for (let o = 0; o < W; o++) {
       const c = dir > 0 ? o : W - 1 - o
       const s = dir
       const x = c * sw
-      const bc = crownBelow[c]! // the crown this stitch hooks under
+      const bc = (loopMode === 'flo' ? belowFront[c] : belowBack[c])! // the loop this stitch hooks under
+      const bcOther = (loopMode === 'flo' ? belowBack[c] : belowFront[c])! // the loop left to float as a ridge
       const cy = nodes[bc]!.y // its actual y (the row joins where the loop below sits)
       const hookZ = (nodes[bc]!.z >= 0 ? -1 : 1) * z * 1.6 // dive to the FAR side of that crown
 
@@ -148,15 +159,29 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
       push(x - s * pw, by + px * 0.26, z * 1.1 * fz)
       push(x - s * pw, by + px * 0.52, z * fz)
       push(x - s * pw, by + px * 0.8, z * fz)
-      // Throw this stitch's crown (head loop) at the top, proud on the worked face —
-      // the next (turned) row hooks it from the other side.
+      // Float the BELOW head's unworked loop proud as a ridge (only blo/flo leave one).
+      if (loopMode !== 'both' && bcOther !== bc) nodes[bcOther]!.z *= 1.7
+
+      // Throw this stitch's crown (head loop) at the top. A plain stitch leaves a
+      // single apex (back == front, identical to before). blo/flo split the head into
+      // two distinct loops — a back loop (lower z) and a proud front loop — so the
+      // next row can hook just one and leave the other as a ridge.
       push(x - s * cw, ty - dh * 0.3, zh * fz)
-      const crown = push(x, ty, zh * 1.15 * fz)
+      if (loopMode === 'both') {
+        const crown = push(x, ty, zh * 1.15 * fz)
+        crownThisBack[c] = crown
+        crownThisFront[c] = crown
+      } else {
+        crownThisBack[c] = push(x - s * cw * 0.18, ty, zh * 0.72 * fz) // back loop (tucked)
+        crownThisFront[c] = push(x + s * cw * 0.18, ty, zh * 1.25 * fz) // front loop (proud)
+      }
       push(x + s * cw, ty - dh * 0.3, zh * fz)
-      crownThis[c] = crown
     }
 
-    for (let c = 0; c < W; c++) crownBelow[c] = crownThis[c]!
+    for (let c = 0; c < W; c++) {
+      belowBack[c] = crownThisBack[c]!
+      belowFront[c] = crownThisFront[c]!
+    }
   }
 
   const strand = new Array(nodes.length).fill(0)

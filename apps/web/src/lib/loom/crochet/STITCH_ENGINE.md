@@ -154,6 +154,7 @@ y-pull (`layoutK`). No pinned shapes, no spring joins (HARD RULE, §9).
 | **dtr** | taller again (`heightFactor 5.4`) | ✅ **LOCKED** 2026-06-29 |
 | **sl st** | shortest worked (`heightFactor 0.8` — a row is still ≈1 yarn thick), tight gauge | ✅ **LOCKED** 2026-06-29 (flat dense ridges) |
 | **ch** | foundation chain alone (`nRows=0`) | ◑ reads as a chain *cord*; crisp interlocking-loop rebuild deferred to the chain-space/rounds batch |
+| **sc blo / flo** | head split into a real back + front loop; hook one, float the other as a ridge | ✅ **LOCKED** 2026-06-29 — ridged sc; blo/flo are mirrors |
 
 Regeneration commands (from `apps/web`; use ABSOLUTE paths for the Blender out, or it
 lands in the wrong dir; then upscale with `loom-aspen-hero.ts <basePng> 0.6 0.8 <stitch>`):

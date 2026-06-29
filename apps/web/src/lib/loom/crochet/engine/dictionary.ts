@@ -9,7 +9,7 @@
  * relaxer resolves the actual shape from there.
  */
 
-export type StitchId = 'ch' | 'slst' | 'sc' | 'hdc' | 'dc' | 'tr' | 'dtr'
+export type StitchId = 'ch' | 'slst' | 'sc' | 'hdc' | 'dc' | 'tr' | 'dtr' | 'scblo' | 'scflo'
 
 export interface StitchDef {
   id: StitchId
@@ -27,4 +27,8 @@ export const STITCHES: Record<StitchId, StitchDef> = {
   dc: { id: 'dc', heightFactor: 3.2, topLoops: 2 },
   tr: { id: 'tr', heightFactor: 4.2, topLoops: 2 },
   dtr: { id: 'dtr', heightFactor: 5.4, topLoops: 2 }, // double treble — taller again
+  // sc worked into back-loop-only / front-loop-only: same height as sc; the loop
+  // left unworked floats as a horizontal ridge (handled in yarnPath by loopMode).
+  scblo: { id: 'scblo', heightFactor: 1.0, topLoops: 2 },
+  scflo: { id: 'scflo', heightFactor: 1.0, topLoops: 2 },
 }
