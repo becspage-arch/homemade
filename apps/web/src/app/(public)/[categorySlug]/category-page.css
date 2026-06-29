@@ -199,6 +199,34 @@
   padding-right: 0;
 }
 
+/* ── Find bar: search + "Browse all" entry into the filter view ───────────── */
+.category-find-bar {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.category-find-bar > :first-child {
+  flex: 1 1 320px;
+}
+.category-browse-all {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-lora);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--color-cream);
+  background: var(--color-sage);
+  border-radius: 999px;
+  padding: 0 22px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+}
+.category-browse-all:hover { opacity: 0.88; }
+
 /* ── Recipe filtered view: faceted filter sidebar + grid ───────────────────
    Shown only when a filter is active. Mirrors the cross-stitch pattern library
    so selection works the same site-wide: a left rail of grouped, individually-

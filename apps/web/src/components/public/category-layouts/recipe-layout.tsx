@@ -7,12 +7,11 @@ import {
 } from '@/components/public/category/recipe-filter-sidebar'
 import { cuisineLabel } from '@/lib/cuisine-label'
 import { CategoryHero } from '@/components/public/category-hero'
-import { SubCategoryChips } from '@/components/public/sub-category-chips'
 import { CategorySubRail } from '@/components/public/category-sub-rail'
 import { RecentlyMadeRail } from '@/components/public/recently-made-rail'
 import { HomeRail } from '@/components/public/home-rail'
+import Link from 'next/link'
 import { CategoryScopedSearch } from '@/components/public/category/category-scoped-search'
-import { RecipeDietaryChips } from '@/components/public/category/recipe-dietary-chips'
 import { EditorialMagazineBlock } from '@/components/public/category/editorial-magazine-block'
 import { CommunityRecipesRail } from '@/components/public/recipes/community-recipes-rail'
 import { FreshRecipesRail } from '@/components/public/recipes/fresh-recipes-rail'
@@ -39,7 +38,10 @@ interface RecipeLayoutProps {
     sub?: string
     dietary?: string
     cuisine?: string
+    meal?: string
+    time?: string
     sort?: string
+    browse?: string
   }
   currentUserId: string | null
 }
@@ -56,6 +58,26 @@ const DIETARY_LABELS: Record<string, string> = {
   dairyFree: 'Dairy-free',
   nutFree: 'Nut-free',
 }
+
+/** Meal facet (mealType values → label), in serving order. */
+const MEAL_FACETS: { value: string; label: string }[] = [
+  { value: 'breakfast', label: 'Breakfast' },
+  { value: 'brunch', label: 'Brunch' },
+  { value: 'lunch', label: 'Lunch' },
+  { value: 'dinner', label: 'Dinner' },
+  { value: 'starter', label: 'Starter' },
+  { value: 'side', label: 'Side' },
+  { value: 'dessert', label: 'Dessert' },
+  { value: 'snack', label: 'Snack' },
+  { value: 'drink', label: 'Drink' },
+]
+
+/** Time facet (URL value → label + max minutes). */
+const TIME_FACETS: { value: string; label: string; max: number }[] = [
+  { value: 'q30', label: 'Under 30 mins', max: 30 },
+  { value: 'q60', label: 'Under 1 hour', max: 60 },
+  { value: 'q90', label: 'Under 1½ hours', max: 90 },
+]
 
 const CARD_SELECT = {
   id: true,
@@ -85,37 +107,6 @@ async function readCountryCode(): Promise<string | null> {
   return null
 }
 
-const SUGGESTIONS_BY_SLUG: Record<string, { label: string; q: string }[]> = {
-  cooking: [
-    { label: 'Tonight', q: 'weeknight dinner' },
-    { label: 'Vegan', q: 'vegan' },
-    { label: 'Under 30 minutes', q: 'quick' },
-    { label: 'Comfort food', q: 'comfort food' },
-    { label: 'In season', q: 'seasonal' },
-  ],
-  baking: [
-    { label: 'Sourdough', q: 'sourdough' },
-    { label: 'Weekend bake', q: 'weekend' },
-    { label: 'Birthday cake', q: 'birthday' },
-    { label: 'Quick bread', q: 'no knead' },
-    { label: 'Pastry', q: 'pastry' },
-  ],
-  'herbal-medicine': [
-    { label: 'Anxiety', q: 'anxiety' },
-    { label: "Child's cough", q: 'cough child' },
-    { label: 'Hayfever', q: 'hayfever' },
-    { label: 'Winter immunity', q: 'immune winter' },
-    { label: 'Sleep', q: 'sleep insomnia' },
-  ],
-  'natural-home': [
-    { label: 'Cold-process soap', q: 'soap cold process' },
-    { label: 'Beeswax candles', q: 'beeswax candle' },
-    { label: 'Sensitive skin', q: 'sensitive skin' },
-    { label: 'Cleaning spray', q: 'multipurpose cleaner' },
-    { label: 'Gift idea', q: 'gift' },
-  ],
-}
-
 const PLACEHOLDER_BY_SLUG: Record<string, string> = {
   cooking: 'What are you cooking?',
   baking: 'What are you baking?',
@@ -136,6 +127,8 @@ export async function RecipeLayout({
   const subSlug = searchParams.sub ?? null
   const dietary = searchParams.dietary ?? null
   const cuisineFilter = searchParams.cuisine ?? null
+  const mealFilter = searchParams.meal ?? null
+  const timeFilter = searchParams.time ?? null
   const filterSort = searchParams.sort ?? 'popular'
   const isFoodCategory = FOOD_CATEGORIES.has(category.slug)
 
@@ -143,11 +136,14 @@ export async function RecipeLayout({
     ? category.subCategories.find((s) => s.slug === subSlug) ?? null
     : null
   const activeSubSlug = subCategory ? subCategory.slug : null
-  const isFiltered = Boolean(dietary) || Boolean(activeSubSlug) || Boolean(cuisineFilter)
-
-  const preserveQuery: Record<string, string> = {}
-  if (dietary) preserveQuery.dietary = dietary
-  if (cuisineFilter) preserveQuery.cuisine = cuisineFilter
+  const anyFilter =
+    Boolean(dietary) || Boolean(activeSubSlug) || Boolean(cuisineFilter) ||
+    Boolean(mealFilter) || Boolean(timeFilter)
+  // The results view (search-style faceted grid) shows when the visitor is
+  // filtering OR has tapped "Browse all recipes". Otherwise the landing
+  // (hero + magazine + rails) shows, exactly as before.
+  const showResults = anyFilter || searchParams.browse === '1'
+  const isFiltered = showResults
 
   const [countryCode, recentlyMade] = await Promise.all([
     readCountryCode(),
@@ -164,12 +160,15 @@ export async function RecipeLayout({
   let filteredCount = 0
 
   if (isFiltered) {
+    const timeMax = TIME_FACETS.find((t) => t.value === timeFilter)?.max ?? null
     const where: Prisma.TutorialWhereInput = {
       categoryId: category.id,
       status: TutorialStatus.PUBLISHED,
       ...(dietary ? { dietaryFlags: { has: dietary } } : {}),
       ...(activeSubSlug && subCategory ? { subCategoryId: subCategory.id } : {}),
       ...(cuisineFilter ? { cuisine: cuisineFilter } : {}),
+      ...(mealFilter ? { mealType: mealFilter } : {}),
+      ...(timeMax ? { totalMinutes: { lte: timeMax, not: null } } : {}),
     }
     const orderBy: Prisma.TutorialOrderByWithRelationInput[] =
       filterSort === 'newest'
@@ -178,22 +177,24 @@ export async function RecipeLayout({
           ? [{ totalMinutes: { sort: 'asc', nulls: 'last' } }, { publishedAt: 'desc' }]
           : [{ bookmarks: { _count: 'desc' } }, { projects: { _count: 'desc' } }, { publishedAt: 'desc' }]
 
-    const [tutorials, count, subCatGroups, cuisineGroups, dietRows] = await Promise.all([
+    const catWhere = { categoryId: category.id, status: TutorialStatus.PUBLISHED }
+    const [tutorials, count, subCatGroups, cuisineGroups, mealGroups, dietRows] = await Promise.all([
       prisma.tutorial.findMany({ where, orderBy, take: 96, select: CARD_SELECT }),
       prisma.tutorial.count({ where }),
-      prisma.tutorial.groupBy({
-        by: ['subCategoryId'],
-        where: { categoryId: category.id, status: TutorialStatus.PUBLISHED },
-        _count: { _all: true },
-      }),
+      prisma.tutorial.groupBy({ by: ['subCategoryId'], where: catWhere, _count: { _all: true } }),
       isFoodCategory
         ? prisma.tutorial.groupBy({
             by: ['cuisine'],
-            where: { categoryId: category.id, status: TutorialStatus.PUBLISHED, cuisine: { not: null } },
+            where: { ...catWhere, cuisine: { not: null } },
             _count: { cuisine: true },
             orderBy: { _count: { cuisine: 'desc' } },
           })
         : Promise.resolve([]),
+      prisma.tutorial.groupBy({
+        by: ['mealType'],
+        where: { ...catWhere, mealType: { not: null } },
+        _count: { mealType: true },
+      }),
       prisma.$queryRaw<{ value: string; count: number }[]>`
         SELECT d AS value, COUNT(*)::int AS count FROM "Tutorial", unnest("dietaryFlags") d
         WHERE "categoryId" = ${category.id} AND status = 'PUBLISHED' GROUP BY d`,
@@ -209,16 +210,25 @@ export async function RecipeLayout({
       .filter((g) => g.cuisine && !CUISINE_NOISE.has(g.cuisine) && g._count.cuisine >= 5)
       .slice(0, 18)
       .map((g) => ({ value: g.cuisine as string, label: cuisineLabel(g.cuisine as string), count: g._count.cuisine }))
+    const mealCount = new Map(
+      (mealGroups as { mealType: string | null; _count: { mealType: number } }[]).map((g) => [g.mealType, g._count.mealType]),
+    )
+    const mealOptions = MEAL_FACETS
+      .map((m) => ({ value: m.value, label: m.label, count: mealCount.get(m.value) ?? 0 }))
+      .filter((o) => o.count > 0)
     const dietCount = new Map(dietRows.map((r) => [r.value, r.count]))
     const dietaryOptions = ['vegetarian', 'vegan', 'glutenFree', 'dairyFree', 'nutFree']
       .map((v) => ({ value: v, label: DIETARY_LABELS[v] ?? v, count: dietCount.get(v) ?? 0 }))
       .filter((o) => o.count > 0)
+    const timeOptions = TIME_FACETS.map((t) => ({ value: t.value, label: t.label }))
 
     filterGroups = [
       { key: 'sub', title: 'Dish type', allLabel: 'All dishes', options: dishOptions },
       ...(cuisineOptions.length
         ? [{ key: 'cuisine', title: 'Cuisine', allLabel: 'All cuisines', options: cuisineOptions }]
         : []),
+      ...(mealOptions.length ? [{ key: 'meal', title: 'Meal', options: mealOptions }] : []),
+      { key: 'time', title: 'Time', options: timeOptions },
       ...(dietaryOptions.length ? [{ key: 'dietary', title: 'Dietary', options: dietaryOptions }] : []),
     ]
   } else {
@@ -332,39 +342,20 @@ export async function RecipeLayout({
     ? await loadReaderState(currentUserId, Array.from(allIds))
     : emptyReaderState()
 
-  const suggestions = SUGGESTIONS_BY_SLUG[category.slug]
   const placeholder = PLACEHOLDER_BY_SLUG[category.slug] ?? 'What are you making?'
 
   return (
     <div className="category-page">
       <CategoryHero category={category} />
 
-      <CategoryScopedSearch
-        categorySlug={category.slug}
-        placeholder={placeholder}
-        suggestions={suggestions}
-      />
-
-      {category.subCategories.length > 0 && (
-        <div className="category-chip-rows">
-          <SubCategoryChips
-            categorySlug={category.slug}
-            subCategories={category.subCategories.map((s) => ({
-              slug: s.slug,
-              name: s.name,
-            }))}
-            activeSlug={activeSubSlug}
-            preserveQuery={preserveQuery}
-          />
-          <RecipeDietaryChips
-            categorySlug={category.slug}
-            activeFlag={dietary}
-            preserveQuery={
-              activeSubSlug ? { ...preserveQuery, sub: activeSubSlug } : preserveQuery
-            }
-          />
-        </div>
-      )}
+      <div className="category-find-bar">
+        <CategoryScopedSearch categorySlug={category.slug} placeholder={placeholder} />
+        {!showResults && (
+          <Link href={`/${category.slug}?browse=1`} className="category-browse-all">
+            Browse all {category.name.toLowerCase()} →
+          </Link>
+        )}
+      </div>
 
       {!isFiltered && magazineFeature && magazineSupporting.length > 0 && (
         <EditorialMagazineBlock
@@ -438,7 +429,13 @@ export async function RecipeLayout({
         <section className="category-filtered-section">
           <RecipeFilterSidebar
             groups={filterGroups}
-            current={{ sub: activeSubSlug, cuisine: cuisineFilter, dietary }}
+            current={{
+              sub: activeSubSlug,
+              cuisine: cuisineFilter,
+              meal: mealFilter,
+              time: timeFilter,
+              dietary,
+            }}
             count={filteredCount}
             sort={filterSort}
             basePath={`/${category.slug}`}
