@@ -38,6 +38,7 @@ interface RecipeLayoutProps {
     sub?: string
     dietary?: string
     cuisine?: string
+    ingredient?: string
     meal?: string
     time?: string
     sort?: string
@@ -78,6 +79,50 @@ const TIME_FACETS: { value: string; label: string; max: number }[] = [
   { value: 'q60', label: 'Under 1 hour', max: 60 },
   { value: 'q90', label: 'Under 1½ hours', max: 90 },
 ]
+
+/**
+ * Curated "headline" ingredients people actually filter by — each groups the
+ * many specific slugs (chicken-thigh, chicken-breast…) under one label and
+ * deliberately excludes pantry staples (salt, oil, flour) and false matches
+ * (chicken STOCK, fish SAUCE). `match`/`exclude` are lowercase slug substrings.
+ */
+interface HeadlineIngredient {
+  value: string
+  label: string
+  categories: ('cooking' | 'baking')[]
+  match: string[]
+  exclude?: string[]
+}
+const HEADLINE_INGREDIENTS: HeadlineIngredient[] = [
+  // cooking — proteins first (what people search by most)
+  { value: 'chicken', label: 'Chicken', categories: ['cooking'], match: ['chicken'], exclude: ['stock-chicken', 'chicken-stock'] },
+  { value: 'beef', label: 'Beef', categories: ['cooking'], match: ['beef', 'steak'], exclude: ['stock-beef', 'beef-stock'] },
+  { value: 'pork', label: 'Pork & bacon', categories: ['cooking'], match: ['pork', 'bacon', 'gammon', 'pancetta', 'chorizo', 'sausage'] },
+  { value: 'lamb', label: 'Lamb', categories: ['cooking'], match: ['lamb'] },
+  { value: 'fish-seafood', label: 'Fish & seafood', categories: ['cooking'], match: ['salmon', 'cod', 'haddock', 'tuna', 'prawn', 'shrimp', 'mussel', 'crab', 'squid', 'mackerel', 'sardine', 'seafood', 'anchov', 'scallop'], exclude: ['fish-sauce', 'fish-stock'] },
+  { value: 'eggs', label: 'Eggs', categories: ['cooking'], match: ['egg'], exclude: ['eggplant'] },
+  { value: 'cheese', label: 'Cheese', categories: ['cooking', 'baking'], match: ['cheese', 'parmesan', 'cheddar', 'mozzarella', 'feta', 'halloumi', 'ricotta', 'paneer', 'mascarpone'] },
+  { value: 'potato', label: 'Potatoes', categories: ['cooking'], match: ['potato'] },
+  { value: 'mushroom', label: 'Mushrooms', categories: ['cooking'], match: ['mushroom'] },
+  { value: 'tomato', label: 'Tomatoes', categories: ['cooking'], match: ['tomato'] },
+  { value: 'rice', label: 'Rice', categories: ['cooking'], match: ['rice'], exclude: ['rice-vinegar', 'rice-wine', 'rice-flour', 'rice-paper'] },
+  { value: 'pasta', label: 'Pasta & noodles', categories: ['cooking'], match: ['pasta', 'spaghetti', 'penne', 'macaroni', 'noodle', 'lasagne', 'tagliatelle', 'rigatoni', 'fusilli', 'gnocchi'] },
+  { value: 'beans-pulses', label: 'Beans & pulses', categories: ['cooking'], match: ['lentil', 'chickpea', 'kidney-bean', 'black-bean', 'cannellini', 'butter-bean', 'borlotti', 'dal'] },
+  // baking
+  { value: 'chocolate', label: 'Chocolate', categories: ['baking'], match: ['chocolate', 'cocoa', 'cacao'] },
+  { value: 'vanilla', label: 'Vanilla', categories: ['baking'], match: ['vanilla'] },
+  { value: 'berries', label: 'Berries', categories: ['baking'], match: ['berry', 'strawberr', 'raspberr', 'blueberr', 'blackberr'] },
+  { value: 'apple-pear', label: 'Apple & pear', categories: ['baking'], match: ['apple', 'pear'], exclude: ['pineapple'] },
+  { value: 'citrus', label: 'Citrus', categories: ['baking'], match: ['lemon', 'orange', 'lime', 'citrus'] },
+  { value: 'banana', label: 'Banana', categories: ['baking'], match: ['banana'] },
+  { value: 'nuts', label: 'Nuts', categories: ['baking'], match: ['almond', 'walnut', 'pecan', 'hazelnut', 'pistachio', 'peanut', 'cashew'] },
+  { value: 'caramel', label: 'Caramel & toffee', categories: ['baking'], match: ['caramel', 'toffee', 'dulce', 'butterscotch'] },
+  { value: 'dried-fruit', label: 'Dried fruit', categories: ['baking'], match: ['raisin', 'sultana', 'currant', 'date-', 'fig', 'apricot', 'mixed-peel'] },
+]
+
+function slugInGroup(slug: string, g: HeadlineIngredient): boolean {
+  return g.match.some((m) => slug.includes(m)) && !(g.exclude ?? []).some((m) => slug.includes(m))
+}
 
 const CARD_SELECT = {
   id: true,
@@ -127,6 +172,7 @@ export async function RecipeLayout({
   const subSlug = searchParams.sub ?? null
   const dietary = searchParams.dietary ?? null
   const cuisineFilter = searchParams.cuisine ?? null
+  const ingredientFilter = searchParams.ingredient ?? null
   const mealFilter = searchParams.meal ?? null
   const timeFilter = searchParams.time ?? null
   const filterSort = searchParams.sort ?? 'popular'
@@ -138,7 +184,7 @@ export async function RecipeLayout({
   const activeSubSlug = subCategory ? subCategory.slug : null
   const anyFilter =
     Boolean(dietary) || Boolean(activeSubSlug) || Boolean(cuisineFilter) ||
-    Boolean(mealFilter) || Boolean(timeFilter)
+    Boolean(ingredientFilter) || Boolean(mealFilter) || Boolean(timeFilter)
   // The results view (search-style faceted grid) shows when the visitor is
   // filtering OR has tapped "Browse all recipes". Otherwise the landing
   // (hero + magazine + rails) shows, exactly as before.
@@ -161,6 +207,25 @@ export async function RecipeLayout({
 
   if (isFiltered) {
     const timeMax = TIME_FACETS.find((t) => t.value === timeFilter)?.max ?? null
+    const ingGroup = ingredientFilter
+      ? HEADLINE_INGREDIENTS.find((g) => g.value === ingredientFilter && g.categories.includes(category.slug as 'cooking' | 'baking'))
+      : null
+    const ingredientWhere: Prisma.TutorialWhereInput | null = ingGroup
+      ? {
+          recipeIngredients: {
+            some: {
+              ingredient: {
+                AND: [
+                  { OR: ingGroup.match.map((m) => ({ slug: { contains: m } })) },
+                  ...(ingGroup.exclude?.length
+                    ? [{ NOT: { OR: ingGroup.exclude.map((m) => ({ slug: { contains: m } })) } }]
+                    : []),
+                ],
+              },
+            },
+          },
+        }
+      : null
     const where: Prisma.TutorialWhereInput = {
       categoryId: category.id,
       status: TutorialStatus.PUBLISHED,
@@ -169,6 +234,7 @@ export async function RecipeLayout({
       ...(cuisineFilter ? { cuisine: cuisineFilter } : {}),
       ...(mealFilter ? { mealType: mealFilter } : {}),
       ...(timeMax ? { totalMinutes: { lte: timeMax, not: null } } : {}),
+      ...(ingredientWhere ?? {}),
     }
     const orderBy: Prisma.TutorialOrderByWithRelationInput[] =
       filterSort === 'newest'
@@ -178,7 +244,7 @@ export async function RecipeLayout({
           : [{ bookmarks: { _count: 'desc' } }, { projects: { _count: 'desc' } }, { publishedAt: 'desc' }]
 
     const catWhere = { categoryId: category.id, status: TutorialStatus.PUBLISHED }
-    const [tutorials, count, subCatGroups, cuisineGroups, mealGroups, dietRows] = await Promise.all([
+    const [tutorials, count, subCatGroups, cuisineGroups, mealGroups, dietRows, usedIngRows] = await Promise.all([
       prisma.tutorial.findMany({ where, orderBy, take: 96, select: CARD_SELECT }),
       prisma.tutorial.count({ where }),
       prisma.tutorial.groupBy({ by: ['subCategoryId'], where: catWhere, _count: { _all: true } }),
@@ -198,6 +264,11 @@ export async function RecipeLayout({
       prisma.$queryRaw<{ value: string; count: number }[]>`
         SELECT d AS value, COUNT(*)::int AS count FROM "Tutorial", unnest("dietaryFlags") d
         WHERE "categoryId" = ${category.id} AND status = 'PUBLISHED' GROUP BY d`,
+      prisma.$queryRaw<{ slug: string }[]>`
+        SELECT DISTINCT i.slug FROM "RecipeIngredient" ri
+        JOIN "Tutorial" t ON t.id = ri."tutorialId"
+        JOIN "Ingredient" i ON i.id = ri."ingredientId"
+        WHERE t."categoryId" = ${category.id} AND t.status = 'PUBLISHED'`,
     ])
     filteredTutorials = tutorials as TutorialCardLike[]
     filteredCount = count
@@ -221,11 +292,19 @@ export async function RecipeLayout({
       .map((v) => ({ value: v, label: DIETARY_LABELS[v] ?? v, count: dietCount.get(v) ?? 0 }))
       .filter((o) => o.count > 0)
     const timeOptions = TIME_FACETS.map((t) => ({ value: t.value, label: t.label }))
+    const usedSlugs = (usedIngRows as { slug: string }[]).map((r) => r.slug)
+    const ingredientOptions = HEADLINE_INGREDIENTS
+      .filter((g) => g.categories.includes(category.slug as 'cooking' | 'baking'))
+      .filter((g) => usedSlugs.some((s) => slugInGroup(s, g)))
+      .map((g) => ({ value: g.value, label: g.label }))
 
     filterGroups = [
       { key: 'sub', title: 'Dish type', allLabel: 'All dishes', options: dishOptions },
       ...(cuisineOptions.length
         ? [{ key: 'cuisine', title: 'Cuisine', allLabel: 'All cuisines', options: cuisineOptions }]
+        : []),
+      ...(ingredientOptions.length
+        ? [{ key: 'ingredient', title: 'Main ingredient', options: ingredientOptions }]
         : []),
       ...(mealOptions.length ? [{ key: 'meal', title: 'Meal', options: mealOptions }] : []),
       { key: 'time', title: 'Time', options: timeOptions },
@@ -432,6 +511,7 @@ export async function RecipeLayout({
             current={{
               sub: activeSubSlug,
               cuisine: cuisineFilter,
+              ingredient: ingredientFilter,
               meal: mealFilter,
               time: timeFilter,
               dietary,
