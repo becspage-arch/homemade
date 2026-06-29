@@ -7,7 +7,9 @@
   "exports": {
     ".": "./src/index.ts",
     "./pattern": "./src/pattern.ts",
-    "./search-docs": "./src/search-docs.ts"
+    "./search-docs": "./src/search-docs.ts",
+    "./recipe-consistency": "./src/recipe-consistency.ts",
+    "./recipe-consistency-gate": "./src/recipe-consistency-gate.ts"
   },
   "scripts": {
     "postinstall": "prisma generate",

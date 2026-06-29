@@ -105,6 +105,7 @@ import type {
 import { validateInput } from './upload-tutorial-types.js'
 import { exitCodeFor, formatReport, runVoiceCheck } from './voice-check-lib.js'
 import { buildQcBlockReason, checkCompleteness } from './qc-completeness-rules/index.js'
+import { findRecipeMethodGaps } from '../src/recipe-consistency-gate.js'
 import { checkRowPublishable } from './qc-publish-gate.js'
 
 type PrismaModule = typeof import('../src/index.js')
@@ -842,6 +843,36 @@ export async function uploadTutorial(
       }) as Prisma.InputJsonValue
       console.warn(
         `  [completeness] BLOCKED ${input.slug} — held at DRAFT: ${completeness.reasons.join('; ')}`,
+      )
+    }
+  }
+
+  // Ingredient ↔ method consistency gate. A RECIPE whose steps use a measured
+  // ingredient absent from the structured list is held at DRAFT — a reader
+  // couldn't shop for it. Vocab-aware (synonyms count as covered). Binary, no
+  // warning tier. Mirrors the admin publish-path check.
+  if (effectiveStatus === 'PUBLISHED' && tutorialType === 'RECIPE') {
+    const gaps = await findRecipeMethodGaps(body)
+    if (gaps.length > 0) {
+      effectiveStatus = 'DRAFT'
+      qcBlockReason = buildQcBlockReason(
+        {
+          ok: false,
+          reasons: [
+            `recipe method uses measured ingredient(s) absent from the list: ${gaps
+              .map((g) => g.text)
+              .join('; ')}`,
+          ],
+          rules: ['cooking:recipe-method-consistency'],
+        },
+        {
+          blockedFromStatus: 'PUBLISHED',
+          checkedAt: new Date().toISOString(),
+          source: 'uploadTutorial:consistency',
+        },
+      ) as Prisma.InputJsonValue
+      console.warn(
+        `  [consistency] BLOCKED ${input.slug} — held at DRAFT: ${gaps.map((g) => g.text).join('; ')}`,
       )
     }
   }

@@ -17,6 +17,7 @@ import {
 import { getCurrentDbUser, isAdmin, hasRoleAtLeast } from '@/lib/auth'
 import { audit } from '@/lib/audit'
 import { isValidSlug, slugify } from '@/lib/slug'
+import { recipeMethodConsistencyFailure } from '@homemade/db/recipe-consistency-gate'
 import { syncTutorialById, removeTutorialById } from '@/lib/search-sync'
 import { syncRecipeIngredientsFromBody } from '@/lib/recipe-ingredients-sync'
 import { notifyTechniquePublished } from '@/lib/technique-sweep-events'
@@ -726,6 +727,13 @@ export async function transitionTutorialStatus(
             'Add the structured ingredients block in the editor before publishing, ' +
             'or change the tutorial type to TECHNIQUE if it isn\'t a recipe.',
         )
+      }
+      // Ingredient ↔ method consistency: a recipe whose steps use a measured
+      // ingredient absent from the list is held at DRAFT (a reader couldn't shop
+      // for it). Binary, no warning tier. See @homemade/db/recipe-consistency.
+      const consistencyFailure = await recipeMethodConsistencyFailure(existing.body)
+      if (consistencyFailure) {
+        throw new Error(`Cannot publish — ${consistencyFailure} before publishing.`)
       }
     }
     // Content-completeness guard (2026-06-15) — refuse to publish a skeleton
