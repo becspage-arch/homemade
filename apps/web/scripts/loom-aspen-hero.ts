@@ -42,6 +42,18 @@ const STITCH_PROMPTS: Record<string, string> = {
     'An extreme close-up macro photograph of a soft wool crochet swatch worked in treble crochet.',
     'Very tall vertical treble-crochet posts in open even columns, each topped by a small chain V, airy and open, in fluffy wool yarn.',
   ].join(' '),
+  dtr: [
+    'An extreme close-up macro photograph of a soft wool crochet swatch worked in double treble crochet.',
+    'Extra-tall slender vertical posts in open airy columns, each topped by a small chain V, in fluffy wool yarn.',
+  ].join(' '),
+  slst: [
+    'An extreme close-up macro photograph of a soft wool crochet swatch worked in slip stitch.',
+    'Dense, very flat, tight rows of small slip-stitch loops forming neat horizontal ridges, low relief, in fluffy wool yarn.',
+  ].join(' '),
+  ch: [
+    'An extreme close-up macro photograph of a single soft wool crochet foundation chain.',
+    'A neat row of interlocking V-shaped chain loops forming a braid, in fluffy wool yarn, on a plain background.',
+  ].join(' '),
 }
 const COMMON =
   'Real visible yarn: soft plied fibres, a gentle fuzzy halo, cosy hand-crocheted wool texture, each stitch tidy and uniform. Soft natural window light, shallow depth of field, extremely detailed, photorealistic, looks like a real crocheted swatch.'

@@ -24,7 +24,9 @@ function main() {
   const hex = process.argv[4] ?? '#e6d4c0'
   const name = process.argv[5] ?? 'continuous-sc'
   const stitch = (process.argv[6] ?? 'sc') as StitchId
-  const nRows = 8
+  // ch is the starting chain itself — render the foundation chain alone (no worked
+  // rows). Every other stitch is worked in rows on top of the foundation.
+  const nRows = stitch === 'ch' ? 0 : 8
   const rows: StitchId[] = Array(nRows).fill(stitch) as StitchId[]
   const built = buildContinuous(rows, W, yr)
 
@@ -50,7 +52,7 @@ function main() {
 
   // Tall stitches (dc/tr) read as standing vertical posts from a slight 3/4 angle —
   // the way the reference photos are shot. sc/hdc stay flat top-down.
-  const tall = stitch === 'dc' || stitch === 'tr'
+  const tall = stitch === 'dc' || stitch === 'tr' || stitch === 'dtr'
   const scene = {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
     strokes,

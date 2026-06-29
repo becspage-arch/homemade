@@ -150,6 +150,10 @@ y-pull (`layoutK`). No pinned shapes, no spring joins (HARD RULE, §9).
 | **sc** | short stitch, dense gauge (`sw≈2.0yr`), no yarn-over | ✅ **LOCKED** 2026-06-29 (Rebecca signed off) |
 | **hdc** | mid stitch + the real **third-loop** yarn-over ridge per row | ✅ **LOCKED** 2026-06-29 — reads distinctly as hdc |
 | **dc** | tall **post** (`heightFactor 3.2`), open gauge (`sw≈2.5yr`) | ✅ **LOCKED** 2026-06-29 — tall posts, columns, chain heads |
+| **tr** | taller post (`heightFactor 4.2`), open gauge | ✅ **LOCKED** 2026-06-29 |
+| **dtr** | taller again (`heightFactor 5.4`) | ✅ **LOCKED** 2026-06-29 |
+| **sl st** | shortest worked (`heightFactor 0.8` — a row is still ≈1 yarn thick), tight gauge | ✅ **LOCKED** 2026-06-29 (flat dense ridges) |
+| **ch** | foundation chain alone (`nRows=0`) | ◑ reads as a chain *cord*; crisp interlocking-loop rebuild deferred to the chain-space/rounds batch |
 
 Regeneration commands (from `apps/web`; use ABSOLUTE paths for the Blender out, or it
 lands in the wrong dir; then upscale with `loom-aspen-hero.ts <basePng> 0.6 0.8 <stitch>`):

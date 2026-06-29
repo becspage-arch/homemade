@@ -247,12 +247,15 @@ def main():
     # Key raking LOW and across the diagonal ribs (from upper-left) so each rib
     # casts a soft shadow into the groove below it = the ribbing reads in relief.
     bpy.ops.object.light_add(type="AREA", location=(cx - span * 0.85, cy + span * 0.7, span * 0.42))
+    # `light` scales the key+fill energy; ease it for pale wool so it doesn't clip
+    # to white under AgX (the wash in §11). 1.0 = original; ~0.65 keeps cream as cream.
+    light = view.get("light", 0.65)
     key = bpy.context.active_object
-    key.data.energy = span * span * 13.0
+    key.data.energy = span * span * 13.0 * light
     key.data.size = span * 0.55
     bpy.ops.object.light_add(type="AREA", location=(cx + span * 0.6, cy - span * 0.4, span * 1.0))
     fill = bpy.context.active_object
-    fill.data.energy = span * span * 3.2
+    fill.data.energy = span * span * 3.2 * light
     fill.data.size = span * 2.4
     for lt in (key, fill):
         c = lt.constraints.new("TRACK_TO")
@@ -300,8 +303,8 @@ def main():
     scene.render.resolution_x = int(res_y * aspect)
     scene.view_settings.view_transform = "AgX"
     scene.view_settings.look = "AgX - Base Contrast"
-    scene.view_settings.exposure = 0.65  # lower: stop the pale cream blowing out
-    grade_saturation(scene, 1.22)  # bring the warmth back after AgX desaturates
+    scene.view_settings.exposure = view.get("exposure", 0.2)  # lower: stop pale wool blowing white
+    grade_saturation(scene, view.get("saturation", 1.4))  # bring warmth back after AgX desaturates
     scene.render.filepath = out_path
     bpy.ops.render.render(write_still=True)
     print("RENDERED", out_path)

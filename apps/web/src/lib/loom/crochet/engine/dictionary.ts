@@ -9,7 +9,7 @@
  * relaxer resolves the actual shape from there.
  */
 
-export type StitchId = 'ch' | 'sc' | 'hdc' | 'dc' | 'tr'
+export type StitchId = 'ch' | 'slst' | 'sc' | 'hdc' | 'dc' | 'tr' | 'dtr'
 
 export interface StitchDef {
   id: StitchId
@@ -21,8 +21,10 @@ export interface StitchDef {
 
 export const STITCHES: Record<StitchId, StitchDef> = {
   ch: { id: 'ch', heightFactor: 0.5, topLoops: 2 },
+  slst: { id: 'slst', heightFactor: 0.8, topLoops: 2 }, // shortest worked stitch — flat + tight, but a row is still ≈1 yarn thick (can't pack thinner)
   sc: { id: 'sc', heightFactor: 1.0, topLoops: 2 },
   hdc: { id: 'hdc', heightFactor: 1.45, topLoops: 2 },
   dc: { id: 'dc', heightFactor: 3.2, topLoops: 2 },
   tr: { id: 'tr', heightFactor: 4.2, topLoops: 2 },
+  dtr: { id: 'dtr', heightFactor: 5.4, topLoops: 2 }, // double treble — taller again
 }

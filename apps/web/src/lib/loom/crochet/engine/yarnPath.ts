@@ -38,7 +38,7 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
   // Column spacing is gauge: a short stitch (sc) packs dense with almost no holes;
   // a tall stitch (dc/tr) is more open. Keyed off the swatch's stitch.
   const st0 = rowTypes[0] ?? 'sc'
-  const sw = yr * (st0 === 'sc' ? 2.0 : st0 === 'hdc' ? 2.2 : 2.5) // column spacing
+  const sw = yr * (st0 === 'slst' ? 1.9 : st0 === 'sc' ? 2.0 : st0 === 'hdc' ? 2.2 : 2.5) // column spacing
   const z = yr * 0.3 // base relief (gentle — turned fabric is fairly flat, not corrugated)
   const zh = yr * 0.5 // crown relief (the head rides proud on its worked face)
   const cw = yr * 0.4 // crown half-width — a slim head-line, not a fat rope
