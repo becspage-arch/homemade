@@ -42,11 +42,15 @@ const CUISINE_LABELS: Record<string, string> = {
   israeli: 'Israeli', singaporean: 'Singaporean', ghanaian: 'Ghanaian', senegalese: 'Senegalese',
 }
 
-function labelFor(slug: string): string {
+export function cuisineLabel(slug: string): string {
   return (
     CUISINE_LABELS[slug] ??
     slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
   )
+}
+
+function labelFor(slug: string): string {
+  return cuisineLabel(slug)
 }
 
 export function WorldCuisineChips({

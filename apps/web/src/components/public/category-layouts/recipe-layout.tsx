@@ -1,5 +1,5 @@
 import { headers } from 'next/headers'
-import { prisma, TutorialStatus } from '@homemade/db'
+import { prisma, Prisma, TutorialStatus, DISH_COLLECTIONS } from '@homemade/db'
 import { HomeCard } from '@/components/public/home-card'
 import { CategoryHero } from '@/components/public/category-hero'
 import { SubCategoryChips } from '@/components/public/sub-category-chips'
@@ -11,7 +11,8 @@ import { RecipeDietaryChips } from '@/components/public/category/recipe-dietary-
 import { EditorialMagazineBlock } from '@/components/public/category/editorial-magazine-block'
 import { CommunityRecipesRail } from '@/components/public/recipes/community-recipes-rail'
 import { FreshRecipesRail } from '@/components/public/recipes/fresh-recipes-rail'
-import { WorldCuisineChips } from '@/components/public/category/world-cuisine-chips'
+import { WorldCuisineChips, cuisineLabel } from '@/components/public/category/world-cuisine-chips'
+import { RecipeLibraryControls, type RecipeFacetGroup } from '@/components/public/category/recipe-library-controls'
 import { loadRecentlyMade } from '@/lib/recently-made'
 import { loadInSeasonForCategory } from '@/lib/in-season-for-category'
 import { loadFamiliarForCategory } from '@/lib/familiar-for-category'
@@ -36,8 +37,23 @@ interface RecipeLayoutProps {
     sub?: string
     dietary?: string
     cuisine?: string
+    collection?: string
+    sort?: string
   }
   currentUserId: string | null
+}
+
+/** Vague umbrella cuisines that aren't a useful browse facet. */
+const CUISINE_NOISE = new Set(['international', 'asian', 'european', 'global', 'fusion'])
+
+/** Dietary facet labels (food categories). */
+const DIETARY_LABELS: Record<string, string> = {
+  vegetarian: 'Vegetarian',
+  vegan: 'Vegan',
+  glutenFree: 'Gluten-free',
+  dairyFree: 'Dairy-free',
+  nutFree: 'Nut-free',
+  pescatarian: 'Pescatarian',
 }
 
 const CARD_SELECT = {
@@ -118,7 +134,17 @@ const QUICK_WINS_CATEGORIES = new Set(['cooking', 'baking', 'natural-home'])
 /** Recipe categories where the seasonal rail is meaningful. */
 const SEASONAL_CATEGORIES = new Set(['cooking', 'baking', 'herbal-medicine'])
 
-export async function RecipeLayout({
+export async function RecipeLayout(props: RecipeLayoutProps) {
+  // Food categories use the faceted library (sidebar filters + grid), matching
+  // the pattern categories' selection UX. Other recipe archetypes
+  // (herbal-medicine, natural-home) keep the legacy rails + chip layout.
+  if (FOOD_CATEGORIES.has(props.category.slug)) {
+    return <FoodRecipeLayout {...props} />
+  }
+  return <LegacyRecipeLayout {...props} />
+}
+
+async function LegacyRecipeLayout({
   category,
   searchParams,
   currentUserId,
@@ -277,7 +303,6 @@ export async function RecipeLayout({
     // single tidy scrollable row rather than a 70-chip wall. The long tail of
     // one-off cuisines is still reachable via ?cuisine= / search. Drop vague
     // umbrella terms that aren't a useful browse facet.
-    const CUISINE_NOISE = new Set(['international', 'asian', 'european', 'global', 'fusion'])
     worldCuisines = (cuisineGroups as { cuisine: string | null; _count: { cuisine: number } }[])
       .filter((g) => g.cuisine && !CUISINE_NOISE.has(g.cuisine) && g._count.cuisine >= 10)
       .map((g) => g.cuisine as string)
@@ -482,6 +507,281 @@ export async function RecipeLayout({
             </div>
           )}
         </section>
+      )}
+    </div>
+  )
+}
+
+/**
+ * Faceted recipe library for the food categories (phase_dish_type_001).
+ *
+ * Discovery rails up top (inspiration), then a single faceted library — a
+ * left filter sidebar (Dish type / Cuisine / Collections / Dietary, each a
+ * vertical list of toggle buttons that clear on a second click) plus the
+ * results grid. This replaces the off-screen chip strips with the same
+ * selection model the pattern categories use. When a filter is active the
+ * inspiration rails collapse so the library is the whole focus.
+ */
+async function FoodRecipeLayout({ category, searchParams, currentUserId }: RecipeLayoutProps) {
+  const subSlug = searchParams.sub ?? null
+  const dietary = searchParams.dietary ?? null
+  const cuisineFilter = searchParams.cuisine ?? null
+  const collection = searchParams.collection ?? null
+  const sort = searchParams.sort ?? 'familiar'
+  const subCategory = subSlug
+    ? category.subCategories.find((s) => s.slug === subSlug) ?? null
+    : null
+  const isFiltered = Boolean(subSlug || dietary || cuisineFilter || collection)
+
+  const countryCode = await readCountryCode()
+
+  const where: Prisma.TutorialWhereInput = {
+    categoryId: category.id,
+    status: TutorialStatus.PUBLISHED,
+    ...(subCategory ? { subCategoryId: subCategory.id } : {}),
+    ...(dietary ? { dietaryFlags: { has: dietary } } : {}),
+    ...(cuisineFilter ? { cuisine: cuisineFilter } : {}),
+    ...(collection ? { mood: { has: collection } } : {}),
+  }
+  const orderBy: Prisma.TutorialOrderByWithRelationInput[] =
+    sort === 'newest'
+      ? [{ publishedAt: 'desc' }]
+      : sort === 'quick'
+        ? [{ totalMinutes: { sort: 'asc', nulls: 'last' } }, { publishedAt: 'desc' }]
+        : sort === 'popular'
+          ? [{ bookmarks: { _count: 'desc' } }, { projects: { _count: 'desc' } }, { publishedAt: 'desc' }]
+          : [{ familiarCanon: 'desc' }, { bookmarks: { _count: 'desc' } }, { publishedAt: 'desc' }]
+
+  const weekStart = isoWeekStartUtc(new Date())
+  const [
+    results,
+    totalCount,
+    subCatGroups,
+    cuisineGroups,
+    moodRows,
+    dietRows,
+    magazinePicks,
+    familiar,
+    seasonal,
+    quick,
+    recentlyMade,
+  ] = await Promise.all([
+    prisma.tutorial.findMany({ where, orderBy, take: 96, select: CARD_SELECT }),
+    prisma.tutorial.count({ where }),
+    prisma.tutorial.groupBy({
+      by: ['subCategoryId'],
+      where: { categoryId: category.id, status: TutorialStatus.PUBLISHED },
+      _count: { _all: true },
+    }),
+    prisma.tutorial.groupBy({
+      by: ['cuisine'],
+      where: { categoryId: category.id, status: TutorialStatus.PUBLISHED, cuisine: { not: null } },
+      _count: { cuisine: true },
+      orderBy: { _count: { cuisine: 'desc' } },
+    }),
+    prisma.$queryRaw<{ value: string; count: number }[]>`
+      SELECT m AS value, COUNT(*)::int AS count FROM "Tutorial", unnest(mood) m
+      WHERE "categoryId" = ${category.id} AND status = 'PUBLISHED' GROUP BY m`,
+    prisma.$queryRaw<{ value: string; count: number }[]>`
+      SELECT d AS value, COUNT(*)::int AS count FROM "Tutorial", unnest("dietaryFlags") d
+      WHERE "categoryId" = ${category.id} AND status = 'PUBLISHED' GROUP BY d`,
+    isFiltered
+      ? Promise.resolve([])
+      : prisma.categoryMagazinePick.findMany({
+          where: { categoryId: category.id, weekStarting: weekStart },
+          orderBy: { position: 'asc' },
+          include: { tutorial: { select: CARD_SELECT } },
+        }),
+    isFiltered
+      ? Promise.resolve([])
+      : loadFamiliarForCategory({ categoryId: category.id, countryCode, limit: 12 }),
+    isFiltered
+      ? Promise.resolve([])
+      : loadInSeasonForCategory({ categoryId: category.id, now: new Date(), countryCode, limit: 8 }),
+    isFiltered
+      ? Promise.resolve([])
+      : prisma.tutorial.findMany({
+          where: { categoryId: category.id, status: TutorialStatus.PUBLISHED, totalMinutes: { lte: 30, not: null } },
+          orderBy: [{ familiarCanon: 'desc' }, { publishedAt: 'desc' }],
+          take: 8,
+          select: CARD_SELECT,
+        }),
+    isFiltered ? Promise.resolve([]) : loadRecentlyMade({ limit: 10, categorySlug: category.slug }),
+  ])
+
+  // ── facet groups ──────────────────────────────────────────────────────────
+  const subCount = new Map(subCatGroups.map((g) => [g.subCategoryId, g._count._all]))
+  const dishOptions = category.subCategories
+    .map((s) => ({ value: s.slug, label: s.name, count: subCount.get(s.id) ?? 0 }))
+    .filter((o) => o.count > 0)
+
+  const cuisineOptions = (cuisineGroups as { cuisine: string | null; _count: { cuisine: number } }[])
+    .filter((g) => g.cuisine && !CUISINE_NOISE.has(g.cuisine) && g._count.cuisine >= 5)
+    .slice(0, 18)
+    .map((g) => ({ value: g.cuisine as string, label: cuisineLabel(g.cuisine as string), count: g._count.cuisine }))
+
+  const moodCount = new Map(moodRows.map((r) => [r.value, r.count]))
+  const collectionOptions = DISH_COLLECTIONS.filter((c) =>
+    (c.categories as string[]).includes(category.slug),
+  )
+    .map((c) => ({ value: c.mood, label: c.name, count: moodCount.get(c.mood) ?? 0 }))
+    .filter((o) => o.count > 0)
+
+  const dietCount = new Map(dietRows.map((r) => [r.value, r.count]))
+  const dietaryOptions = ['vegetarian', 'vegan', 'glutenFree', 'dairyFree', 'nutFree']
+    .map((v) => ({ value: v, label: DIETARY_LABELS[v] ?? v, count: dietCount.get(v) ?? 0 }))
+    .filter((o) => o.count > 0)
+
+  const groups: RecipeFacetGroup[] = [
+    { key: 'sub', title: 'Dish type', allLabel: 'All dishes', options: dishOptions },
+    ...(cuisineOptions.length
+      ? [{ key: 'cuisine', title: 'Cuisine', allLabel: 'All cuisines', options: cuisineOptions }]
+      : []),
+    ...(collectionOptions.length ? [{ key: 'collection', title: 'Collections', options: collectionOptions }] : []),
+    ...(dietaryOptions.length ? [{ key: 'dietary', title: 'Dietary', options: dietaryOptions }] : []),
+  ]
+  const current = { sub: subSlug, cuisine: cuisineFilter, collection, dietary }
+
+  // ── magazine feature (familiar-first), only on the unfiltered landing ──────
+  let magazineFeature: TutorialCardLike | null = null
+  let magazineSupporting: TutorialCardLike[] = []
+  const familiarRail = familiar as TutorialCardLike[]
+  if (!isFiltered) {
+    if (magazinePicks.length > 0) {
+      const feature = magazinePicks.find((p) => p.position === 1)
+      if (feature) {
+        magazineFeature = feature.tutorial as TutorialCardLike
+        magazineSupporting = magazinePicks
+          .filter((p) => p.position >= 2 && p.position <= 4)
+          .map((p) => p.tutorial as TutorialCardLike)
+      }
+    }
+    if (!magazineFeature) {
+      const withHero = familiarRail.filter((t) => t.hero)
+      if (withHero.length >= 4) {
+        magazineFeature = withHero[0] ?? null
+        magazineSupporting = withHero.slice(1, 4)
+      }
+    }
+  }
+
+  // ── reader state for every visible card ───────────────────────────────────
+  const allIds = new Set<string>()
+  for (const t of results) allIds.add(t.id)
+  for (const t of familiarRail) allIds.add(t.id)
+  for (const t of seasonal as TutorialCardLike[]) allIds.add(t.id)
+  for (const t of quick as TutorialCardLike[]) allIds.add(t.id)
+  if (magazineFeature) allIds.add(magazineFeature.id)
+  for (const t of magazineSupporting) allIds.add(t.id)
+  const readerState = currentUserId
+    ? await loadReaderState(currentUserId, Array.from(allIds))
+    : emptyReaderState()
+
+  const usedFeatureIds = new Set(
+    [magazineFeature?.id, ...magazineSupporting.map((t) => t.id)].filter((id): id is string => Boolean(id)),
+  )
+  const familiarStrip = familiarRail.filter((t) => !usedFeatureIds.has(t.id)).slice(0, 10)
+  const seasonalRail = seasonal as TutorialCardLike[]
+  const quickRail = quick as TutorialCardLike[]
+
+  return (
+    <div className="category-page">
+      <CategoryHero category={category} />
+
+      <CategoryScopedSearch
+        categorySlug={category.slug}
+        placeholder={PLACEHOLDER_BY_SLUG[category.slug] ?? 'What are you making?'}
+        suggestions={SUGGESTIONS_BY_SLUG[category.slug]}
+      />
+
+      {!isFiltered && magazineFeature && magazineSupporting.length > 0 && (
+        <EditorialMagazineBlock
+          heading={magazineHeadingFor(category.slug)}
+          subheading={magazineSubheadingFor(category.slug)}
+          feature={magazineFeature}
+          supporting={magazineSupporting}
+          readerState={readerState}
+        />
+      )}
+
+      {!isFiltered && familiarStrip.length > 0 && (
+        <HomeRail
+          heading={familiarHeadingFor(category.slug)}
+          subheading="The dishes everyone knows, front and centre."
+        >
+          {familiarStrip.map((t) => (
+            <HomeCard key={t.id} tutorial={t} state={readerStateFor(readerState, t.id)} />
+          ))}
+        </HomeRail>
+      )}
+
+      {!isFiltered && seasonalRail.length > 0 && (
+        <HomeRail heading={`In season right now in ${category.name.toLowerCase()}`}>
+          {seasonalRail.map((t) => (
+            <HomeCard key={t.id} tutorial={t} state={readerStateFor(readerState, t.id)} />
+          ))}
+        </HomeRail>
+      )}
+
+      {!isFiltered && quickRail.length > 0 && (
+        <HomeRail
+          heading={quickWinsHeadingFor(category.slug)}
+          subheading="Under 30 minutes, start to finish."
+        >
+          {quickRail.map((t) => (
+            <HomeCard key={t.id} tutorial={t} state={readerStateFor(readerState, t.id)} />
+          ))}
+        </HomeRail>
+      )}
+
+      {!isFiltered && recentlyMade.length > 0 && (
+        <RecentlyMadeRail
+          heading={`Recent makes in ${category.name.toLowerCase()}`}
+          tiles={recentlyMade}
+        />
+      )}
+
+      <section id="recipes" className="recipe-library">
+        <h2 className="recipe-library-heading">
+          {isFiltered ? 'Matching recipes' : `Browse every ${category.name.toLowerCase()} recipe`}
+        </h2>
+        <p className="recipe-library-sub">
+          Filter by dish, cuisine, collection or diet — pick again to clear.
+        </p>
+        <RecipeLibraryControls
+          groups={groups}
+          current={current}
+          count={totalCount}
+          sort={sort}
+          basePath={`/${category.slug}`}
+        >
+          {results.length === 0 ? (
+            <p className="recipe-library-empty">
+              Nothing matches that yet. Try lifting a filter.
+            </p>
+          ) : (
+            <div className="category-filtered-grid">
+              {results.map((t) => (
+                <HomeCard
+                  key={t.id}
+                  tutorial={t as TutorialCardLike}
+                  state={readerStateFor(readerState, t.id)}
+                />
+              ))}
+            </div>
+          )}
+        </RecipeLibraryControls>
+      </section>
+
+      {!isFiltered && (
+        <CommunityRecipesRail categorySlug={category.slug} signedIn={Boolean(currentUserId)} />
+      )}
+      {!isFiltered && (
+        <FreshRecipesRail
+          categoryId={category.id}
+          categorySlug={category.slug}
+          categoryName={category.name}
+        />
       )}
     </div>
   )
