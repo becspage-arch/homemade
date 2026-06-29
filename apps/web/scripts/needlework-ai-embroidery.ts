@@ -79,7 +79,7 @@ function regionsToElements(regions: Region[], W: number, H: number, sizeMm: numb
   return { els: [...fills, ...outlines], height: 2 * half * scale }
 }
 
-const OUTLINE = ', bold black outlines around every shape, flat solid colour fill, bold saturated vibrant colours, no large plain white areas, simple bold graphic sticker style, thick clean black linework, no shading, centered, plain white background'
+const OUTLINE = ', SINGLE FLAT solid colour per shape with absolutely no shading, gradients or internal detail lines, thick bold black outlines ONLY between different coloured areas, bold saturated vibrant colours, no large plain white areas, simple bold graphic vector sticker style, centered, plain white background'
 interface Brief { slug: string; prompt: string }
 const BRIEFS: Brief[] = [
   { slug: 'e2-heart', prompt: 'a heart shape made of bold red and pink roses with green leaves' + OUTLINE },
@@ -120,8 +120,9 @@ async function main(): Promise<void> {
     const { data: rgb, info } = await sharp(img).resize(SIZE, SIZE, { fit: 'inside' }).removeAlpha().raw().toBuffer({ resolveWithObject: true })
     const W = info.width, H = info.height
     const gray = new Uint8Array(await sharp(img).resize(W, H, { fit: 'fill' }).grayscale().raw().toBuffer())
-    // black linework = shape boundaries; the enclosed cells are the colour shapes
-    const traced = traceLineArt(gray, W, H, { inkBelow: 105, dilate: 1, minAreaFrac: 0.0015, simplifyPx: 1.3 })
+    // ONLY the bold black outlines count as boundaries (inkBelow low) so faint
+    // internal shading lines don't shatter one object into many cells.
+    const traced = traceLineArt(gray, W, H, { inkBelow: 62, dilate: 2, minAreaFrac: 0.0015, simplifyPx: 1.4 })
     const regions: Region[] = traced.cells.map((c) => ({ poly: c.polygon, hex: meanColour(rgb, W, c.polygon), area: c.areaPx }))
     regions.sort((a, b) => b.area - a.area)
     const { els, height } = regionsToElements(regions, W, H, 180)
