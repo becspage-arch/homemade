@@ -91,9 +91,12 @@ When both checks pass, the session is done.
   `schema.prisma` `datasource` block.
 - For Bash invocations the harness needs
   `PATH="$PATH:$HOME/AppData/Roaming/npm"` so pnpm resolves.
-- The single main checkout is the ONLY place `tsx` resolves `@homemade/db`
-  (worktrees have no `node_modules`), so sessions publish/run DB ops from it.
-  Keep it clean: name throwaway ops/query scripts `*.tmp.ts` (or prefix `__`)
-  so they're gitignored, never run `git add -A` there, and PUSH from a clean
-  worktree — never commit the main checkout's working tree. A dirty shared
-  checkout is how stray junk/deletions sweep into a deploy.
+- Running DB/publish ops (tsx importing `@homemade/db`): a worktree resolves it
+  after ONE `pnpm install --frozen-lockfile --prefer-offline` in the worktree
+  (~3 min, hardlinks from the global pnpm store; verified — it then queries the
+  live DB fine). PREFER this: the session stays fully in its own worktree and
+  never touches the shared main checkout. The main checkout also resolves it
+  (already installed) and is a fine faster no-install path. Either way, keep any
+  shared checkout clean: name throwaway scripts `*.tmp.ts` (gitignored), never
+  run `git add -A` there, and PUSH from a clean worktree — never commit a working
+  tree full of stray junk/deletions; that's how a deploy gets polluted.
