@@ -37,12 +37,17 @@ export function NeedleworkSurfaceView({
 }: NeedleworkSurfaceViewProps) {
   const [, setHoveredRegion] = useState<string | null>(null)
   const [zoom, setZoom] = useState(1)
+  const [view, setView] = useState<'outline' | 'colour'>('outline')
   const zoomIn = useCallback(() => setZoom((z) => Math.min(5, +(z * 1.25).toFixed(2))), [])
   const zoomOut = useCallback(() => setZoom((z) => Math.max(0.5, +(z / 1.25).toFixed(2))), [])
 
   const completedRegions = useMemo(() => progress?.completedRegions ?? {}, [progress])
   const annotations: NeedleworkRegionAnnotation[] = pattern.regionAnnotations ?? []
   const vectorData = pattern.vectorData
+  const colourMapSvg = vectorData?.colourMapSvg ?? null
+  // Which design to show in the canvas: the clean outline (the transfer template)
+  // or the colour / stitch-direction map. Only offered when a colour map exists.
+  const designSvg = view === 'colour' && colourMapSvg ? colourMapSvg : vectorData?.svgContent
 
   const completedCount = Object.keys(completedRegions).length
   const totalCount = annotations.length
@@ -74,19 +79,39 @@ export function NeedleworkSurfaceView({
     <div className="needlework-surface-view">
       <div className="needlework-surface-main">
         <div className="needlework-surface-zoombar">
+          {colourMapSvg && (
+            <div className="needlework-surface-viewtoggle" role="group" aria-label="Design view">
+              <button
+                type="button"
+                className={`needlework-surface-zoom-btn${view === 'outline' ? ' is-active' : ''}`}
+                onClick={() => setView('outline')}
+              >
+                Outline
+              </button>
+              <button
+                type="button"
+                className={`needlework-surface-zoom-btn${view === 'colour' ? ' is-active' : ''}`}
+                onClick={() => setView('colour')}
+              >
+                Colour map
+              </button>
+              <span className="needlework-surface-zoom-divider" aria-hidden="true" />
+            </div>
+          )}
           <button type="button" className="needlework-surface-zoom-btn" onClick={zoomOut} aria-label="Zoom out">−</button>
           <button type="button" className="needlework-surface-zoom-btn" onClick={() => setZoom(1)}>Fit</button>
           <button type="button" className="needlework-surface-zoom-btn" onClick={zoomIn} aria-label="Zoom in">+</button>
           <span className="needlework-surface-zoom-pct">{Math.round(zoom * 100)}%</span>
         </div>
         <div className="needlework-surface-canvas-area">
-          {vectorData ? (
+          {designSvg ? (
             // The design fills the canvas at Fit; zooming widens it past the
             // canvas so it scrolls (pan) for a close look.
             <div
+              key={view}
               className="needlework-surface-svg-wrapper"
               style={{ width: `${Math.round(zoom * 100)}%`, maxWidth: zoom <= 1 ? 760 : undefined }}
-              dangerouslySetInnerHTML={{ __html: vectorData.svgContent }}
+              dangerouslySetInnerHTML={{ __html: designSvg }}
             />
           ) : (
             <div style={{ padding: '2rem', color: 'var(--colour-text-muted)', fontSize: '0.875rem' }}>

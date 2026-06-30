@@ -4,6 +4,7 @@ import { getCurrentDbUser } from '@/lib/get-current-user'
 import { NeedleworkStudioShell } from '@/components/studio/needlework/NeedleworkStudioShell'
 import type {
   NeedleworkPatternData,
+  NeedleworkVectorData,
   NeedleworkProjectProgressData,
   MyNeedleworkProjectListItem,
   NeedleworkDiscipline,
@@ -88,6 +89,19 @@ export default async function NeedleworkStudioPage({ searchParams }: PageProps) 
         (row.visibility === Visibility.PUBLIC || row.visibility === Visibility.UNLISTED)
 
       if (isOwned || isLibrary) {
+        // The stored vectorData carries the printable document; lift its dense
+        // colour map out as an alternate Studio view to the clean outline.
+        const rawVd = row.vectorData as
+          | (NeedleworkVectorData & {
+              document?: { denseMapSvg?: string; colourGuideSvg?: string }
+            })
+          | null
+        const vectorData: NeedleworkVectorData | null = rawVd
+          ? {
+              ...rawVd,
+              colourMapSvg: rawVd.document?.denseMapSvg ?? rawVd.document?.colourGuideSvg ?? null,
+            }
+          : null
         pattern = {
           id: row.id,
           slug: row.slug,
@@ -97,7 +111,7 @@ export default async function NeedleworkStudioPage({ searchParams }: PageProps) 
           patternFormat: row.patternFormat as NeedleworkPatternFormat,
           gridData: row.gridData,
           chartData: row.chartData,
-          vectorData: row.vectorData as NeedleworkPatternData['vectorData'],
+          vectorData,
           regionAnnotations: row.regionAnnotations as NeedleworkPatternData['regionAnnotations'],
           widthCells: row.widthCells,
           heightCells: row.heightCells,

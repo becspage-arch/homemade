@@ -100,6 +100,10 @@ export interface NeedleworkVectorData {
   width: number
   height: number
   regions: Array<{ id: string; label: string }>
+  /** Dense thread-painting patterns: the colour / stitch-direction map (with the
+   *  clean outline overlaid), offered as an alternate Studio view to the outline
+   *  in `svgContent`. Absent for patterns with no colour map. */
+  colourMapSvg?: string | null
 }
 
 // ──────────────────────────────────────────────────────────────────────────────

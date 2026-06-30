@@ -406,6 +406,25 @@
   background: var(--colour-surface);
 }
 
+.needlework-surface-zoom-btn.is-active {
+  background: var(--colour-text);
+  border-color: var(--colour-text);
+  color: var(--colour-bg);
+}
+
+.needlework-surface-viewtoggle {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.needlework-surface-zoom-divider {
+  width: 1px;
+  height: 20px;
+  margin: 0 0.25rem;
+  background: var(--colour-border);
+}
+
 .needlework-surface-zoom-pct {
   margin-left: 0.25rem;
   font-size: 0.75rem;
