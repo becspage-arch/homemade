@@ -382,9 +382,16 @@ async function main(): Promise<void> {
   for (const b of briefs) {
     try {
       const raw = await fluxCached(dir, b.slug, b.prompt, imageSizeFor(b.w, b.h), regen)
-      // Pre-saturate the source so the floss palette is bold, not pastel.
-      const img = await sharp(raw).modulate({ saturation: SRC_SAT[b.style] }).png().toBuffer()
-      const { data } = await photoToPatternData(img, { width: b.w, height: b.h, colours: b.colours, fabricCount: 14, brand: 'DMC', confettiMin: 'medium', backgroundRemoval: false })
+      // Dense showpiece tier (100+ colour briefs): lift the 96 ceiling AND map into
+      // the full ~458-colour DMC range so the brief's colour count lands as that many
+      // genuinely-distinct stands instead of re-merging onto the sparse curated set.
+      const dense = b.colours > 96
+      // Pre-saturate so the floss palette is bold, not pastel. For the dense tier ALSO
+      // median-denoise the 4-step Flux source first: its grain would otherwise resolve
+      // into single-stitch confetti across flat areas once the rich palette is in play
+      // (the denoise keeps the distinct-floss count but cleans the stitch-level noise).
+      const img = await (dense ? sharp(raw).median(3) : sharp(raw)).modulate({ saturation: SRC_SAT[b.style] }).png().toBuffer()
+      const { data } = await photoToPatternData(img, { width: b.w, height: b.h, colours: b.colours, fabricCount: 14, brand: 'DMC', confettiMin: dense ? 'high' : 'medium', backgroundRemoval: false, ...(dense ? { maxColours: b.colours, flossRange: 'full' as const } : {}) })
       data.fabric.colourRgb = FABRIC
       const bb = stitchedBoundingBox(data)
       const mg = 2

@@ -64,11 +64,31 @@ export interface ImageToChartOptions {
   brand?: 'DMC' | 'ANCHOR' | 'MADEIRA'
   confettiMin?: 'low' | 'medium' | 'high'
   preprocess?: PreprocessOptions | false
+  /**
+   * Override the converter's 96-colour ceiling. Leave unset for the normal
+   * tier; the dense showpiece tier (see auto-gate below) lifts it itself.
+   */
+  maxColours?: number
+  /**
+   * `'curated'` | `'full'` DMC table. Leave unset and it auto-selects:
+   * requests over 96 colours need the full ~458-colour range to actually
+   * land that many distinct stands, so they opt into `'full'` automatically.
+   */
+  flossRange?: 'curated' | 'full'
 }
+
+// The colour count above which a chart is treated as the dense showpiece tier:
+// it needs both a lifted ceiling and the full DMC range, or the extra colours
+// quantise out and re-merge back down onto the sparse curated set.
+const DENSE_TIER_THRESHOLD = 96
 
 /** Convert a photo / illustration buffer into validated PatternData. */
 export async function imageToChart(buf: Buffer, opts: ImageToChartOptions): Promise<PatternData> {
   const { longestCells, colours, fabricCount = 14, brand = 'DMC', confettiMin = 'medium' } = opts
+  const isDense = colours > DENSE_TIER_THRESHOLD
+  // Auto-gated by colour count, still overridable per call.
+  const maxColours = opts.maxColours ?? (isDense ? colours : undefined)
+  const flossRange = opts.flossRange ?? (isDense ? 'full' : undefined)
   const source = opts.preprocess === false ? buf : await preprocessImage(buf, opts.preprocess ?? {})
   const meta = await sharp(source).metadata()
   const ar = (meta.width ?? 1) / (meta.height ?? 1)
@@ -82,6 +102,8 @@ export async function imageToChart(buf: Buffer, opts: ImageToChartOptions): Prom
     brand,
     confettiMin,
     backgroundRemoval: false,
+    maxColours,
+    flossRange,
   })
   return data
 }
