@@ -39,6 +39,12 @@ interface PatternLibraryGridProps {
   subCategories: { slug: string; name: string }[]
   /** Cross-craft tag axes (occasion / season / style / subject / audience). */
   tagFacets: TagFacets
+  /**
+   * Designers with published patterns in this category, with counts. The
+   * Designer dropdown only renders once there are DESIGNER_FILTER_MIN of them —
+   * a one- or two-designer category keeps it hidden.
+   */
+  designerFacets: { slug: string; name: string; count: number }[]
   searchPlaceholder: string
   currentFilters: {
     sub: string | null
@@ -53,6 +59,7 @@ interface PatternLibraryGridProps {
     style: string | null
     subject: string | null
     audience: string | null
+    designer: string | null
   }
   /** Where the filter-link router pushes to. Defaults to /cross-stitch/patterns. */
   basePath?: string
@@ -60,10 +67,16 @@ interface PatternLibraryGridProps {
 
 const TAG_FILTER_KEYS = ['occasion', 'season', 'style', 'subject', 'audience'] as const
 
+// Minimum number of distinct designers in a category before the Designer
+// dropdown appears. Below this the filter is noise (it's just the house
+// designer and a name or two); as the roster grows it becomes useful. Tunable.
+const DESIGNER_FILTER_MIN = 4
+
 export function PatternLibraryGrid({
   patterns,
   subCategories,
   tagFacets,
+  designerFacets,
   searchPlaceholder,
   currentFilters,
   basePath = '/cross-stitch/patterns',
@@ -86,6 +99,11 @@ export function PatternLibraryGrid({
   const currentTag = (axis: (typeof TAG_AXES)[number]): string | null =>
     currentFilters[TAG_AXIS_PARAM[axis] as keyof typeof currentFilters] as string | null
 
+  // The Designer dropdown only appears once the category has a real roster
+  // (DESIGNER_FILTER_MIN+). A selected designer still counts as active even if
+  // the threshold isn't met, so a shared/deep link keeps Clear-all working.
+  const showDesignerFilter = designerFacets.length >= DESIGNER_FILTER_MIN
+
   const tagFiltersActive = TAG_FILTER_KEYS.some((k) => currentFilters[k])
   const anyFilterActive =
     Boolean(currentFilters.sub) ||
@@ -94,6 +112,7 @@ export function PatternLibraryGrid({
     currentFilters.hasBackstitch ||
     currentFilters.hasFrenchKnots ||
     Boolean(currentFilters.q) ||
+    Boolean(currentFilters.designer) ||
     tagFiltersActive
 
   const clearAll = () => {
@@ -108,6 +127,7 @@ export function PatternLibraryGrid({
       'minColour',
       'maxColour',
       'maxHours',
+      'designer',
       ...TAG_FILTER_KEYS,
     ]) {
       params.delete(k)
@@ -200,6 +220,24 @@ export function PatternLibraryGrid({
             onClick={() => updateFilter('hasFrenchKnots', currentFilters.hasFrenchKnots ? null : '1')}
           />
         </FilterGroup>
+
+        {showDesignerFilter && (
+          <FilterGroup title="Designer">
+            <select
+              className="cross-stitch-library-designer-select"
+              aria-label="Filter by designer"
+              value={currentFilters.designer ?? ''}
+              onChange={(e) => updateFilter('designer', e.target.value || null)}
+            >
+              <option value="">All designers</option>
+              {designerFacets.map((d) => (
+                <option key={d.slug} value={d.slug}>
+                  {d.name} ({d.count})
+                </option>
+              ))}
+            </select>
+          </FilterGroup>
+        )}
       </aside>
 
       <section className="cross-stitch-library-main">

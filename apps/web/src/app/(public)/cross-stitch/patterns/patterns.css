@@ -140,6 +140,25 @@
 }
 .cross-stitch-library-filter-button.is-active .cross-stitch-library-filter-count { opacity: 0.85; }
 
+/* Sidebar "Designer" dropdown — appears once a category has a real roster. */
+.cross-stitch-library-designer-select {
+  width: 100%;
+  appearance: none;
+  background: #fafaf6;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-espresso);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(60, 47, 34, 0.1);
+}
+.cross-stitch-library-designer-select:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 1px var(--color-sage);
+}
+
 .cross-stitch-library-sortbar {
   display: flex;
   justify-content: flex-end;

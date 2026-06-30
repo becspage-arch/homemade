@@ -6,6 +6,7 @@ import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import { isPremiumContent } from '@/lib/entitlements'
 import { CrochetPatternGrid } from './crochet-pattern-grid'
 import { getPatternTagFacets, patternIdsForTags } from '@/lib/pattern-tag-facets'
+import { getPatternDesignerFacets } from '@/lib/pattern-designer-facets'
 
 const DESIGNER_SPOTLIGHT_TAKE = 6
 const RECENTLY_COMPLETED_TAKE = 8
@@ -38,6 +39,7 @@ interface PatternLayoutProps {
     style?: string
     subject?: string
     audience?: string
+    designer?: string
   }
   currentUserId: string | null
 }
@@ -112,6 +114,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
   if (sp.sub) where.subCategory = { slug: sp.sub, categoryId: category.id }
   if (!isCrochet && tagIds !== null) where.id = { in: tagIds }
   if (!isCrochet && textOr) where.OR = textOr
+  if (!isCrochet && sp.designer) where.designer = { slug: sp.designer }
 
   const sort = sp.sort ?? 'popular'
   // Most popular leads; popularityScore falls back to publishedAt (most-recent)
@@ -139,6 +142,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
   if (sp.yarnWeight) crochetWhere.primaryYarnWeight = { slug: sp.yarnWeight }
   if (isCrochet && tagIds !== null) crochetWhere.id = { in: tagIds }
   if (isCrochet && textOr) crochetWhere.OR = textOr
+  if (isCrochet && sp.designer) crochetWhere.designer = { slug: sp.designer }
 
   const crochetOrderBy =
     sp.sort === 'name'
@@ -147,7 +151,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
         ? [{ popularityScore: 'desc' as const }, { publishedAt: 'desc' as const }]
         : { publishedAt: 'desc' as const }
 
-  const [patterns, foundations, anchorPatterns, spotlightDesigner, crochetPatterns, recentlyCompleted, tagFacets] = await Promise.all([
+  const [patterns, foundations, anchorPatterns, spotlightDesigner, crochetPatterns, recentlyCompleted, tagFacets, designerFacets] = await Promise.all([
     patternType
       ? prisma.pattern.findMany({
           where,
@@ -280,6 +284,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
         })
       : Promise.resolve([]),
     getPatternTagFacets(category.slug, category.id),
+    getPatternDesignerFacets(category.slug, category.id),
   ])
 
   const sizeFilter = sp.size ? SIZE_RANGES[sp.size] : null
@@ -550,6 +555,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
                 name: s.name,
               }))}
               tagFacets={tagFacets}
+              designerFacets={designerFacets}
               searchPlaceholder={patternSearchPlaceholder(category.slug)}
               currentFilters={{
                 sub: sp.sub ?? null,
@@ -564,6 +570,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
                 style: sp.style ?? null,
                 subject: sp.subject ?? null,
                 audience: sp.audience ?? null,
+                designer: sp.designer ?? null,
               }}
               basePath={`/${category.slug}`}
             />
