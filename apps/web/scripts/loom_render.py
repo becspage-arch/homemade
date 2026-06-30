@@ -320,24 +320,28 @@ def add_hoop(cx, cy, ring_radius, tube):
 
 
 def add_rect_frame(cx, cy, half_w, half_h, tube):
-    """A rectangular wooden frame (slate frame / stretcher bars / Q-snaps) hugging
-    the design — the right cue for portrait / large-format surface work that is
-    mounted on bars rather than a round hoop."""
+    """A SOLID rectangular wooden frame (picture-frame style) around the design —
+    four moulding bars that meet at the corners, sitting proud of the cloth like
+    the round hoop does. half_w/half_h are the inner opening half-extents."""
     z = tube * 0.2
     wood = wood_material()
-    bars = [
-        # top + bottom span the full width (incl. the corners)
-        ((cx, cy + half_h, z), (2 * half_w + 2 * tube, 2 * tube, tube * 1.3)),
-        ((cx, cy - half_h, z), (2 * half_w + 2 * tube, 2 * tube, tube * 1.3)),
-        # left + right span just the design height (corners already covered)
-        ((cx - half_w, cy, z), (2 * tube, 2 * half_h, tube * 1.3)),
-        ((cx + half_w, cy, z), (2 * tube, 2 * half_h, tube * 1.3)),
+    bar = tube * 1.8            # face width of the moulding
+    depth = tube * 1.3
+    ow = half_w + bar * 0.5     # centre-line of the left/right rails
+    oh = half_h + bar * 0.5     # centre-line of the top/bottom rails
+    # Each tuple is the bar's full WORLD dimensions. A size-1 cube spans ±0.5, so
+    # object.scale set to half the dimension gives that world length.
+    pieces = [
+        ((cx, cy + oh, z), (2 * ow + bar, bar, depth)),   # top (full width, incl corners)
+        ((cx, cy - oh, z), (2 * ow + bar, bar, depth)),   # bottom
+        ((cx - ow, cy, z), (bar, 2 * oh, depth)),         # left
+        ((cx + ow, cy, z), (bar, 2 * oh, depth)),         # right
     ]
-    for loc, scale in bars:
+    for loc, dims in pieces:
         bpy.ops.mesh.primitive_cube_add(size=1.0, location=loc)
-        bar = bpy.context.active_object
-        bar.scale = (scale[0] * 0.5, scale[1] * 0.5, scale[2] * 0.5)
-        bar.data.materials.append(wood)
+        b = bpy.context.active_object
+        b.scale = (dims[0], dims[1], dims[2])  # size-1 cube: world edge == scale
+        b.data.materials.append(wood)
 
 
 def main():
@@ -373,7 +377,6 @@ def main():
     contentW = maxx - minx
     contentH = maxy - miny
     content_r = max(contentW, contentH) * 0.5
-    margin = content_r * 0.95  # zoomed out a touch — more cloth around the frame
 
     # Frame style from the pattern's mounting frame. A ROUND hoop only frames the
     # design cleanly on a SQUARE canvas (otherwise a tall portrait design's
@@ -383,6 +386,10 @@ def main():
     frame_type = (fab.get("frameType") or "HOOP").upper()
     rect_frames = ("SLATE_FRAME", "STRETCHER_BARS", "Q_SNAPS")
     is_rect = frame_type in rect_frames
+    # A hoop leaves a generous ring of linen; a frameless flat-lay keeps a SMALL
+    # but real margin (a little breathing room, art-print style) — not swimming in
+    # white space, but not cropped to the edge either.
+    margin = content_r * (0.55 if frame_type == "NONE" else 1.25)
     if is_rect:
         halfW = contentW * 0.5 + margin
         halfH = contentH * 0.5 + margin
@@ -410,12 +417,12 @@ def main():
         pass  # bare taut cloth, no frame
     elif is_rect:
         # Rectangular frame hugging the design, just outside the stitching.
-        add_rect_frame(cx, cy, contentW * 0.5 * 1.08 + content_r * 0.06,
-                       contentH * 0.5 * 1.08 + content_r * 0.06, content_r * 0.1)
+        add_rect_frame(cx, cy, contentW * 0.5 * 1.32 + content_r * 0.1,
+                       contentH * 0.5 * 1.32 + content_r * 0.1, content_r * 0.1)
     else:
         # Round wooden hoop — thinner ring, sized to the content not the (now
         # larger) margin so it sits with breathing room.
-        add_hoop(cx, cy, content_r * 1.22, content_r * 0.11)
+        add_hoop(cx, cy, content_r * 1.5, content_r * 0.1)
 
     # Target at the content centre.
     tgt = bpy.data.objects.new("target", None)
