@@ -21,6 +21,60 @@ theme customers expect.
    ruthless full-size gate, gems only.
 3. Update the **Status** column as themes are generated / gated / published.
 
+---
+
+## THE SYSTEM — the exact steps every worker follows (DO NOT SKIP)
+
+The HOW lives in `apps/web/src/lib/studio/generation/NORTH_STAR.md` (quality bar, the
+proven colour fix, the gate checklist, the specialist carve-outs). This is the operating
+procedure. Following it exactly is what stops the regressions we hit building it.
+
+**The loop, per theme:**
+
+1. **Brief.** Add briefs to `BRIEFS` in `apps/web/scripts/xs-volume-gen.ts`. Vary
+   SIZE + ASPECT + SHAPE to the design (small character → big showpiece; square/wide/
+   tall/circular). Pick the right `style` key; busy/detailed subjects must be BIG or
+   detail turns to mush. New style? add it to `STYLE` + `SRC_SAT`.
+2. **Generate**, max 2 batches at a time, from the WORKTREE:
+   `cd apps/web && npx tsx scripts/xs-volume-gen.ts --batch X`. The colour fix is
+   automatic (per-lane source pre-saturation + ivory aida `#FCFAF6` + post-saturation).
+   **Do NOT touch the shared renderer** — the fix is self-contained in the scripts.
+3. **GATE — ruthlessly, FULL-SIZE, every single render.** This is the step that gets
+   skipped and must not be. Open each render at full resolution (not a thumbnail tile,
+   not a skim). Reject anything that fails:
+   - **Anatomy** — faces: forehead present, both eyes, correct proportions; animals:
+     correct features/snout/eyes; no floating objects, no extra limbs.
+   - **No gibberish text** — the converter can't render lettering; avoid readable
+     signage/words (those are the SPECIAL word-art track).
+   - **Crisp + vivid + best-seller bar** — would a customer buy and hang it? Compare to
+     the north-star refs.
+   - **Original** — NEVER a near-copy of a competitor's specific design (e.g. diy-artclub /
+     Caterpillar pieces are STYLE references only; copying a specific one is an IP breach
+     and must be pulled).
+   Re-roll fixable fails (`--regen <slug>` re-rolls Flux); cull the rest.
+4. **Approve.** Write `approved.json` = `[{slug,name,sub,subName}]` for the gems only,
+   mapped to the right shelf.
+5. **Enrich + publish** from the MAIN checkout (the worktree can't resolve `@homemade/db`):
+   `npx tsx scripts/xs-enrich.ts approved.json approved-full.json` (from worktree), then
+   `XS_VOL_DIR=<worktree>/.loom-scratch/needlework/volume npx tsx scripts/xs-volume-publish.ts approved-full.json`
+   (from main checkout). Publishes PUBLIC + thumbnail + search-sync. Idempotent on slug.
+6. **Fill the shelf to ~40+** before moving on — Rebecca wants the categories really full.
+7. **Cull tool** for reversible takedowns: `xs-volume.../xs-cull.ts` sets PRIVATE + drops
+   from search, with a manifest. NEVER hard-delete.
+
+**Tooling gotchas (each one cost a debugging cycle):**
+- Run DB/publish scripts from the MAIN checkout; generate from the worktree.
+- Every new build-time script MUST be in `apps/web/tsconfig.json` `exclude` **and** be
+  ESLint-clean (no unused vars — `'X' is assigned but never used` FAILS the deploy lint).
+- Deploy verify after any push to main: `gh run watch` to green, then `/healthz` = 200
+  (see CLAUDE.md). Concurrent workers' pushes can cancel your run — watch the latest.
+
+**Reserved SPECIALIST categories — do NOT generic-generate** (own dedicated sessions, see
+memory `project_cross_stitch_specialist_types`): word-art/quotes (SPEC:word), maps
+(SPEC:map), outline-filled-with-icons (SPEC:fill), famous-PAINTING replications
+(SPEC:painting), alphabet/samplers (SPEC:sampler). Reference examples committed at
+`apps/web/src/lib/studio/generation/north-star-refs/`.
+
 ### Route legend (from the north star)
 
 - **GEN** — generic generation works (Flux → convert → gate). The default.
