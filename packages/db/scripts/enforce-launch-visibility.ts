@@ -52,7 +52,7 @@ const DRY_RUN = process.argv.includes('--dry-run')
  * The only categories the public can see. Add a slug here when the category
  * has been signed off (see playbook_category_signoff).
  */
-const LAUNCH_VISIBLE_CATEGORY_SLUGS = ['cooking', 'baking', 'cross-stitch']
+const LAUNCH_VISIBLE_CATEGORY_SLUGS = ['cooking', 'baking', 'cross-stitch', 'needlework']
 
 async function main(): Promise<void> {
   const { prisma } = await import('../src/index.js')
