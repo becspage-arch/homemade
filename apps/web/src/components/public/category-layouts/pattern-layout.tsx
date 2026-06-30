@@ -200,7 +200,11 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
             publishedAt: { not: null },
             type: patternType,
             subCategory: { categoryId: category.id },
-            hero: { isNot: null },
+            // Show pieces that carry a persisted image — a finished-piece hero
+            // OR the saved chart thumbnail. Post-cull the gems are thumbnail-
+            // only, so hard-requiring a hero emptied the strip. patternHeroUrl
+            // resolves hero → thumbnail (same fallback the cards use).
+            OR: [{ hero: { isNot: null } }, { thumbnail: { isNot: null } }],
           },
           // Most popular first (real signal as engagement accrues). Pre-launch
           // every score is 0 and the seed catalogue shares a publish date, so a
@@ -217,6 +221,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
             id: true,
             slug: true,
             hero: { select: { cloudflareId: true, r2Key: true } },
+            thumbnail: { select: { cloudflareId: true, r2Key: true } },
           },
         })
       : Promise.resolve([]),
@@ -342,7 +347,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
               <li key={p.id}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={patternHeroUrl({ id: p.id, hero: p.hero }, 'card')}
+                  src={patternHeroUrl({ id: p.id, hero: p.hero, thumbnail: p.thumbnail }, 'card')}
                   alt=""
                   loading="eager"
                   decoding="async"
