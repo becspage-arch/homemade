@@ -1,4 +1,5 @@
 import sharp from 'sharp'
+import { generateWithFluxPro } from '@/lib/image-sourcing/flux-pro'
 
 /**
  * Source acquisition for cross-stitch generation. Each helper returns the
@@ -111,4 +112,29 @@ export async function fluxIllustration(
   if (!url) throw new Error('fluxIllustration: no image returned')
   const buffer = Buffer.from(await (await fetch(url)).arrayBuffer())
   return { buffer, credit: 'Homemade-original (AI-assisted illustration)', licence: 'HOMEMADE-AI', title: subject.slice(0, 80) }
+}
+
+// Flux 1.1 Pro showpiece style — used for the DENSE 100+ colour tier only. Pro's
+// cleaner inference (vs schnell's 4-step aggregate) carries far more genuinely
+// distinct tonal gradations, which is what lets the full-DMC converter resolve
+// 100+ real stands instead of plateauing ~88. NOT flat paint-by-numbers: the
+// dense tier wants rich layered colour, and Pro + the full-range converter render
+// that crisply (gated full-size). Negative still guards against gibberish text.
+const PRO_SHOWPIECE_STYLE =
+  'masterful highly detailed storybook illustration, intricate fine detail throughout, a rich and wide colour palette with subtle shading and depth, luminous characterful and full of little details'
+
+/**
+ * Flux 1.1 Pro illustration for the dense showpiece tier. `subject` is the full
+ * brief prompt (already carries the showpiece style + composition). Pass pixel
+ * dims preserving the chart aspect so detail isn't squashed. ~£0.032/call —
+ * reserved for the few big showpieces under the hero carve-out.
+ */
+export async function fluxIllustrationPro(
+  subject: string,
+  opts: { width?: number; height?: number } = {},
+): Promise<SourcedImage> {
+  const prompt = `${subject}, ${PRO_SHOWPIECE_STYLE}, ${TIER_E_NEG}`
+  const { url } = await generateWithFluxPro(prompt, { width: opts.width, height: opts.height })
+  const buffer = Buffer.from(await (await fetch(url)).arrayBuffer())
+  return { buffer, credit: 'Homemade-original (AI-assisted illustration, Flux 1.1 Pro)', licence: 'HOMEMADE-AI', title: subject.slice(0, 80) }
 }

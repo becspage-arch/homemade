@@ -23,7 +23,7 @@ function loadEnvFile(path: string): void {
 loadEnvFile(process.env.HOMEMADE_ENV_FILE ?? 'C:/Users/Rebecca/Projects/code/homemade/.env.credentials')
 
 import sharp from 'sharp'
-import { fluxIllustration } from '@/lib/studio/generation/sources'
+import { fluxIllustration, fluxIllustrationPro } from '@/lib/studio/generation/sources'
 import { photoToPatternData } from '@/lib/studio/photo-to-pattern'
 import { renderPatternSvgString } from '@/components/studio/chart/render-svg-string'
 import { stitchedBoundingBox } from '@/components/studio/chart/render-helpers'
@@ -344,11 +344,11 @@ export const BRIEFS: Brief[] = [
   B('M', 'm-floral-peony-cascade', 160, 170, 42, 'bright', 'a luxurious cascade of blush peonies, garden roses and ranunculus with trailing greenery'),
   B('M', 'm-wre-wildflower-lush', 165, 165, 44, 'wreath', 'a lush wildflower wreath packed with poppies, cornflowers, daisies, ferns and grasses'),
   // ── HUGE detailed showpieces (XL, 100+ colours — Rebecca's favourite tier) ──
-  B('M', 'm-big-fairy-garden', 230, 250, 120, 'showpiece', 'a hugely detailed enchanted fairy garden packed with toadstool cottages, lanterns, many tiny fairies, glowing flowers, a winding stream and fireflies, full coverage'),
-  B('M', 'm-big-enchanted-forest', 240, 240, 130, 'showpiece', 'an intricate richly detailed enchanted forest scene with fairy mushroom houses, fireflies, deer, a stream, owls and twisting trees, dense full coverage'),
-  B('M', 'm-big-cat-bookshop', 220, 240, 120, 'showpiece', 'a charming corner cat bookshop façade packed with little story details: sleeping cats on the sign, books in arched windows, roses over the door, lanterns and a chalkboard, warm full coverage'),
-  B('M', 'm-big-botanical-garden', 220, 260, 110, 'showpiece', 'a lush full-coverage cottage garden border densely packed with many species of flowers, bees, butterflies and songbirds, intricate and richly coloured'),
-  B('M', 'm-big-cottage-market', 235, 220, 115, 'showpiece', 'a bustling cottage village market street with stalls of flowers, fruit and bread, striped awnings, bunting, lamp posts and many little shoppers, intricate full coverage'),
+  B('M', 'm-big-fairy-garden', 230, 250, 150, 'showpiece', 'a hugely detailed enchanted fairy garden packed with toadstool cottages, lanterns, many tiny fairies, glowing flowers, a winding stream and fireflies, full coverage'),
+  B('M', 'm-big-enchanted-forest', 240, 240, 150, 'showpiece', 'an intricate richly detailed enchanted forest scene with fairy mushroom houses, fireflies, deer, a stream, owls and twisting trees, dense full coverage'),
+  B('M', 'm-big-cat-bookshop', 220, 240, 150, 'showpiece', 'a charming corner cat bookshop façade packed with little story details: sleeping cats on the sign, books in arched windows, roses over the door, lanterns and a chalkboard, warm full coverage'),
+  B('M', 'm-big-botanical-garden', 220, 260, 150, 'showpiece', 'a lush full-coverage cottage garden border densely packed with many species of flowers, bees, butterflies and songbirds, intricate and richly coloured'),
+  B('M', 'm-big-cottage-market', 235, 220, 150, 'showpiece', 'a bustling cottage village market street with stalls of flowers, fruit and bread, striped awnings, bunting, lamp posts and many little shoppers, intricate full coverage'),
 ]
 
 type FluxSize = 'square_hd' | 'landscape_4_3' | 'portrait_4_3'
@@ -358,11 +358,31 @@ export function imageSizeFor(w: number, h: number): FluxSize {
   return 'square_hd'
 }
 
+/** Pixel dims for Flux Pro, longest side 1440, chart aspect preserved, /16. */
+export function proSizeFor(w: number, h: number): { width: number; height: number } {
+  const round16 = (n: number) => Math.max(512, Math.round(n / 16) * 16)
+  return w >= h
+    ? { width: 1440, height: round16(1440 * (h / w)) }
+    : { width: round16(1440 * (w / h)), height: 1440 }
+}
+
 async function fluxCached(dir: string, slug: string, prompt: string, size: FluxSize, regen: boolean): Promise<Buffer> {
   const p = resolve(dir, `${slug}.flux.png`)
   if (regen && existsSync(p)) rmSync(p)
   if (existsSync(p)) return readFileSync(p)
   const src = await fluxIllustration(prompt, { imageSize: size })
+  writeFileSync(p, src.buffer)
+  return src.buffer
+}
+
+/** Dense-tier source via Flux 1.1 Pro, cached separately so it never collides
+ *  with a schnell `.flux.png`. The whole point of the dense tier is Pro's richer
+ *  colour content; schnell plateaus ~88 stands, Pro reaches 100+. */
+async function fluxProCached(dir: string, slug: string, prompt: string, w: number, h: number, regen: boolean): Promise<Buffer> {
+  const p = resolve(dir, `${slug}.flux-pro.png`)
+  if (regen && existsSync(p)) rmSync(p)
+  if (existsSync(p)) return readFileSync(p)
+  const src = await fluxIllustrationPro(prompt, proSizeFor(w, h))
   writeFileSync(p, src.buffer)
   return src.buffer
 }
@@ -381,16 +401,16 @@ async function main(): Promise<void> {
   let ok = 0
   for (const b of briefs) {
     try {
-      const raw = await fluxCached(dir, b.slug, b.prompt, imageSizeFor(b.w, b.h), regen)
-      // Dense showpiece tier (100+ colour briefs): lift the 96 ceiling AND map into
-      // the full ~458-colour DMC range so the brief's colour count lands as that many
-      // genuinely-distinct stands instead of re-merging onto the sparse curated set.
       const dense = b.colours > 96
-      // Pre-saturate so the floss palette is bold, not pastel. For the dense tier ALSO
-      // median-denoise the 4-step Flux source first: its grain would otherwise resolve
-      // into single-stitch confetti across flat areas once the rich palette is in play
-      // (the denoise keeps the distinct-floss count but cleans the stitch-level noise).
-      const img = await (dense ? sharp(raw).median(3) : sharp(raw)).modulate({ saturation: SRC_SAT[b.style] }).png().toBuffer()
+      const raw = dense
+        ? await fluxProCached(dir, b.slug, b.prompt, b.w, b.h, regen)
+        : await fluxCached(dir, b.slug, b.prompt, imageSizeFor(b.w, b.h), regen)
+      // Dense showpiece tier (150-colour briefs): source from Flux 1.1 Pro (above) and
+      // map into the full ~458-colour DMC range with the 96 ceiling lifted, so the brief
+      // lands 100+ genuinely-distinct stands instead of re-merging onto the sparse curated
+      // set. Pro's clean inference needs NO denoise (unlike 4-step schnell, whose grain
+      // would confetti) — keeping every colour. confettiMin 'high' tidies stray singles.
+      const img = await sharp(raw).modulate({ saturation: SRC_SAT[b.style] }).png().toBuffer()
       const { data } = await photoToPatternData(img, { width: b.w, height: b.h, colours: b.colours, fabricCount: 14, brand: 'DMC', confettiMin: dense ? 'high' : 'medium', backgroundRemoval: false, ...(dense ? { maxColours: b.colours, flossRange: 'full' as const } : {}) })
       data.fabric.colourRgb = FABRIC
       const bb = stitchedBoundingBox(data)
