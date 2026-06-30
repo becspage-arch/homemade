@@ -446,41 +446,50 @@ export async function loadHomepageData(
   // detail href so the render layer stays routing-agnostic. Cross-stitch +
   // needlework have public detail pages; a knitting / crochet row without a
   // detail route falls back to opening its Studio.
-  const discoveryPatterns: DiscoveryPatternCard[] = [
-    ...featuredPatternRows.map((p) => {
-      const craftSlug = patternCraftSlug(p.type, p.subCategory?.category.slug)
-      return {
-        id: p.id,
-        slug: p.slug,
-        name: p.name,
-        craftSlug,
-        detailHref: patternDetailHref({
-          source: 'pattern',
-          slug: p.slug,
-          id: p.id,
-          craftSlug,
-          patternType: p.type,
-        }),
-        hero: p.hero,
-        thumbnail: p.thumbnail,
-      }
-    }),
-    ...featuredNeedleworkRows.map((p) => ({
+  const genericPatternCards: DiscoveryPatternCard[] = featuredPatternRows.map((p) => {
+    const craftSlug = patternCraftSlug(p.type, p.subCategory?.category.slug)
+    return {
       id: p.id,
       slug: p.slug,
       name: p.name,
-      craftSlug: 'needlework',
+      craftSlug,
       detailHref: patternDetailHref({
-        source: 'needlework',
+        source: 'pattern',
         slug: p.slug,
         id: p.id,
-        craftSlug: 'needlework',
-        patternType: null,
+        craftSlug,
+        patternType: p.type,
       }),
       hero: p.hero,
       thumbnail: p.thumbnail,
-    })),
-  ]
+    }
+  })
+  const needleworkPatternCards: DiscoveryPatternCard[] = featuredNeedleworkRows.map((p) => ({
+    id: p.id,
+    slug: p.slug,
+    name: p.name,
+    craftSlug: 'needlework',
+    detailHref: patternDetailHref({
+      source: 'needlework',
+      slug: p.slug,
+      id: p.id,
+      craftSlug: 'needlework',
+      patternType: null,
+    }),
+    hero: p.hero,
+    thumbnail: p.thumbnail,
+  }))
+  // Interleave the two pattern models (Pattern + NeedleworkPattern) rather than
+  // concatenating, so needlework actually surfaces in the discovery wall's
+  // visible window instead of being crowded out behind a full block of
+  // cross-stitch rows.
+  const discoveryPatterns: DiscoveryPatternCard[] = []
+  for (let i = 0, n = Math.max(genericPatternCards.length, needleworkPatternCards.length); i < n; i++) {
+    const g = genericPatternCards[i]
+    if (g) discoveryPatterns.push(g)
+    const nw = needleworkPatternCards[i]
+    if (nw) discoveryPatterns.push(nw)
+  }
 
   // Build the consolidated tutorial-id set for reader state.
   const allTutorialIds = new Set<string>()
