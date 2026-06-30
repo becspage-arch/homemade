@@ -43,12 +43,13 @@ export const STYLE = {
   artface: 'a striking fine-art portrait illustration of a beautiful face adorned with flowers, THE WHOLE HEAD AND FOREHEAD CLEARLY VISIBLE with anatomically correct features and both eyes, bold clean areas of colour with elegant detail, sophisticated rich harmonious palette, gallery-art feel, plain background, stylised NOT photographic',
   icon: 'a bold stylised flat pop-art portrait of a historical figure, iconic and recognisable, the whole head clearly visible with correct features, clean areas of colour, limited sophisticated palette, plain background, NOT photographic',
   dogportrait: 'a clean realistic illustrated portrait of the dog, head and shoulders, accurate breed features and markings, crisp detailed but flat-shaded illustration (NOT photographic, NOT painterly), the dog is the hero on a soft plain warm background',
+  fantasy: 'an enchanting fairytale illustration, storybook fantasy, soft glowing magical light, bold clear outlines with rich saturated jewel-tone fills, whimsical and charming, crisp clear detail, NOT photographic, NOT muddy',
 }
 // Per-lane SOURCE saturation — pre-saturate the Flux art before it's quantised into
 // floss so the palette itself is bold (Flux trends soft/pastel → washed otherwise).
 // The elegant botanical lane is deliberately muted, so barely touched.
 export const SRC_SAT: Record<keyof typeof STYLE, number> = {
-  bright: 1.5, cute: 1.45, pastel: 1.28, botanical: 1.12, wreath: 1.45, showpiece: 1.4, fun: 1.5, scene: 1.3, popart: 1.25, artface: 1.25, icon: 1.25, dogportrait: 1.18,
+  bright: 1.5, cute: 1.45, pastel: 1.28, botanical: 1.12, wreath: 1.45, showpiece: 1.4, fun: 1.5, scene: 1.3, popart: 1.25, artface: 1.25, icon: 1.25, dogportrait: 1.18, fantasy: 1.38,
 }
 // Bright ivory aida (was a dull #F5EBD8 oatmeal that greyed every colour).
 export const FABRIC = '#FCFAF6'
@@ -307,6 +308,47 @@ export const BRIEFS: Brief[] = [
   B('L', 'dog-frenchbulldog', 160, 165, 30, 'dogportrait', 'a fawn French bulldog with big bat ears'),
   B('L', 'dog-bordercollie', 160, 170, 32, 'dogportrait', 'a black-and-white border collie'),
   B('L', 'dog-goldenretriever', 160, 170, 34, 'dogportrait', 'a golden retriever with a soft smiling face'),
+
+  // ─────────── BATCH M — PRIORITY: pop art/faces, fairies/fantasy, animals-as-humans,
+  //             beautiful florals + HUGE 100+ colour showpieces. Deliberate complexity
+  //             RANGE: small/simple (14–18) → medium (28–48) → huge dense (100–135). ───────────
+  // ── quick + simple small (BEGINNER, ~14–18 colours) ──
+  B('M', 'm-cute-bee-heart', 110, 110, 14, 'cute', 'a tiny smiling bumblebee carrying a little red heart'),
+  B('M', 'm-cute-cat-moon', 115, 120, 16, 'cute', 'a little sleeping cat curled on a crescent moon among stars'),
+  B('M', 'm-cute-mushroom-pair', 110, 115, 16, 'cute', 'two cheerful red toadstools with white spots and a little snail'),
+  B('M', 'm-cute-dragon-gem', 118, 118, 18, 'cute', 'a cute chubby baby dragon curled around a glowing gem'),
+  B('M', 'm-cute-fairy-toadstool', 120, 130, 20, 'fantasy', 'a sweet little fairy with gauzy wings sitting on a red toadstool'),
+  // ── fairies & fantasy (medium → large) ──
+  B('M', 'm-unicorn-meadow', 150, 150, 28, 'fantasy', 'a gentle unicorn with a flowing mane standing in a flower meadow under a rainbow'),
+  B('M', 'm-fairy-flower-cup', 150, 160, 32, 'fantasy', 'a delicate fairy curled asleep inside the petals of a large bluebell flower'),
+  B('M', 'm-mermaid-cove', 165, 200, 44, 'fantasy', 'a graceful mermaid with flowing hair sitting on a rock in a coral cove with fish and shells'),
+  B('M', 'm-fairy-ring-dusk', 195, 195, 58, 'fantasy', 'a circle of fairies dancing in a moonlit toadstool ring with glowing lanterns and fireflies'),
+  // ── pop art & portraits (popart) ──
+  B('M', 'm-popart-headphones', 150, 195, 22, 'popart', 'a cool young woman in big retro headphones with a sleek bob, bold orange background'),
+  B('M', 'm-popart-fur-hat', 150, 195, 22, 'popart', 'a glamorous woman in a fluffy fur hat and bold red lipstick, deep teal background'),
+  B('M', 'm-popart-gent-pipe', 150, 195, 22, 'popart', 'a dapper gentleman with a neat beard, flat cap and a pipe, mustard background'),
+  B('M', 'm-popart-sunhat', 150, 195, 24, 'popart', 'a chic woman in a wide sunhat and cat-eye sunglasses sipping a cocktail, coral background'),
+  // ── fabulous faces (artface, detailed, varied skin tones) ──
+  B('M', 'm-face-peacock-crown', 160, 205, 46, 'artface', 'a woman with warm brown skin and a magnificent crown of peacock feathers and jewels, rich teal and gold'),
+  B('M', 'm-face-autumn-deep', 160, 205, 42, 'artface', 'a woman with deep dark skin and a crown of autumn leaves, rosehips and berries in russet and gold'),
+  B('M', 'm-face-lotus-gold', 160, 205, 44, 'artface', 'a woman with brown skin, gold lotus flowers and dragonflies crowning her head, jewel tones'),
+  B('M', 'm-face-winter-cardinal', 160, 205, 40, 'artface', 'a woman with fair skin, a crown of frosted pine, holly and a red cardinal, cool icy palette'),
+  B('M', 'm-face-sunflower-tan', 160, 205, 38, 'artface', 'a woman with tan skin and a golden halo of sunflowers and wheat, warm summer palette'),
+  // ── animals doing human things, FULL SCENES (scene, flat detailed) ──
+  B('M', 'm-scene-cat-painter', 150, 190, 40, 'scene', 'a cat in a paint-smeared smock and beret painting at an easel in a sunny art studio'),
+  B('M', 'm-scene-fox-tailor', 150, 190, 40, 'scene', 'a fox tailor in glasses sewing a tiny waistcoat in a cosy workshop full of fabric rolls'),
+  B('M', 'm-scene-rabbit-baker', 150, 190, 38, 'scene', 'a rabbit baker in an apron pulling a fresh loaf from a country kitchen oven, shelves of bread'),
+  B('M', 'm-scene-bear-fishing', 150, 190, 34, 'scene', 'a brown bear in waders and a bucket hat fishing from a riverbank with a picnic basket'),
+  B('M', 'm-scene-mouse-clockmaker', 150, 190, 40, 'scene', 'a mouse clockmaker at a workbench mending a pocket watch with tiny tools, walls of clocks'),
+  // ── beautiful florals (medium–large, richer palettes) ──
+  B('M', 'm-floral-peony-cascade', 160, 170, 42, 'bright', 'a luxurious cascade of blush peonies, garden roses and ranunculus with trailing greenery'),
+  B('M', 'm-wre-wildflower-lush', 165, 165, 44, 'wreath', 'a lush wildflower wreath packed with poppies, cornflowers, daisies, ferns and grasses'),
+  // ── HUGE detailed showpieces (XL, 100+ colours — Rebecca's favourite tier) ──
+  B('M', 'm-big-fairy-garden', 230, 250, 120, 'showpiece', 'a hugely detailed enchanted fairy garden packed with toadstool cottages, lanterns, many tiny fairies, glowing flowers, a winding stream and fireflies, full coverage'),
+  B('M', 'm-big-enchanted-forest', 240, 240, 130, 'showpiece', 'an intricate richly detailed enchanted forest scene with fairy mushroom houses, fireflies, deer, a stream, owls and twisting trees, dense full coverage'),
+  B('M', 'm-big-cat-bookshop', 220, 240, 120, 'showpiece', 'a charming corner cat bookshop façade packed with little story details: sleeping cats on the sign, books in arched windows, roses over the door, lanterns and a chalkboard, warm full coverage'),
+  B('M', 'm-big-botanical-garden', 220, 260, 110, 'showpiece', 'a lush full-coverage cottage garden border densely packed with many species of flowers, bees, butterflies and songbirds, intricate and richly coloured'),
+  B('M', 'm-big-cottage-market', 235, 220, 115, 'showpiece', 'a bustling cottage village market street with stalls of flowers, fruit and bread, striped awnings, bunting, lamp posts and many little shoppers, intricate full coverage'),
 ]
 
 type FluxSize = 'square_hd' | 'landscape_4_3' | 'portrait_4_3'

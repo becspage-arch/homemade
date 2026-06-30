@@ -100,6 +100,15 @@ Sizes: `S` (~110) · `M` (~150) · `L` (~190) · `XL` (~220+). Match to detail n
 
 `todo` · `gen` (generated, awaiting gate) · `live` (published) · `deferred` (specialist, later).
 
+**2026-06-30 — Batch M shipped 24 gate-passed gems** (30 generated, 24 passed the full-size
+gate): pop art (4) + fine-art faces (5, skin tones deep→fair), fairies/fantasy (5 — new
+**Fantasy & Fairytale** shelf: dragon, unicorn, mermaid, fairy ring, big fairy garden),
+animals-as-humans (4 whimsical scenes), cute small (2), beautiful florals (3), and 2 big
+78-colour dense showpieces. Deliberate complexity RANGE: 14 → 78 colours, 110 → 260 cells.
+NOTE: the converter caps the floss palette at ~78 (shared `photoToPatternData` `Math.min(colours, 96)`
+→ ~78 after CIELAB floss-merge), so true 100+ colour pieces need a considered cap lift + re-gate
+(follow-up, not done here — don't touch the shared converter mid-batch).
+
 ---
 
 ## PROGRESS TABLE
@@ -113,7 +122,7 @@ Sizes: `S` (~110) · `M` (~150) · `L` (~190) · `XL` (~220+). Match to detail n
 | 3 | Farm & smallholding | GEN | sq | todo |
 | 4 | Birds, bees, butterflies & moths | GEN | sq/circ | partial |
 | 5 | Sea life & coastal | GEN | sq/wide | partial (B,D) |
-| 6 | Cute fantasy creatures | GEN | sq | todo |
+| 6 | Cute fantasy creatures | GEN | sq/big | live (M — new Fantasy & Fairytale shelf) |
 | 7 | Florals & bouquets | GEN | sq/circ | gen (A–C) |
 | 8 | Single botanical stems | GEN | tall | gen (A,C,D) |
 | 9 | Wreaths & circular | GEN | circ | gen (A,C,D) |
