@@ -9,7 +9,7 @@
  * relaxer resolves the actual shape from there.
  */
 
-export type StitchId = 'ch' | 'slst' | 'sc' | 'hdc' | 'dc' | 'tr' | 'dtr' | 'scblo' | 'scflo'
+export type StitchId = 'ch' | 'slst' | 'sc' | 'hdc' | 'dc' | 'tr' | 'dtr' | 'scblo' | 'scflo' | 'fpdc' | 'bpdc'
 
 export interface StitchDef {
   id: StitchId
@@ -31,4 +31,8 @@ export const STITCHES: Record<StitchId, StitchDef> = {
   // left unworked floats as a horizontal ridge (handled in yarnPath by loopMode).
   scblo: { id: 'scblo', heightFactor: 1.0, topLoops: 2 },
   scflo: { id: 'scflo', heightFactor: 1.0, topLoops: 2 },
+  // front/back post dc: dc-height, but worked AROUND the post below (yarnPath rings
+  // the stem). fp pops proud, bp recedes — the basis of post ribbing + basketweave.
+  fpdc: { id: 'fpdc', heightFactor: 3.0, topLoops: 2 }, // tall full posts → each rib reads as one clean column
+  bpdc: { id: 'bpdc', heightFactor: 3.0, topLoops: 2 },
 }

@@ -23,12 +23,30 @@ function main() {
   const W = Number(process.argv[3] ?? 12)
   const hex = process.argv[4] ?? '#e6d4c0'
   const name = process.argv[5] ?? 'continuous-sc'
-  const stitch = (process.argv[6] ?? 'sc') as StitchId
-  // ch is the starting chain itself — render the foundation chain alone (no worked
-  // rows). Every other stitch is worked in rows on top of the foundation.
+  const stitchArg = process.argv[6] ?? 'sc'
+  // 'basketweave' is a PATTERN of fpdc/bpdc, not a single stitch. Post stitches need
+  // a plain dc row 0 first (something to wrap), so we override per-stitch.
+  const isBasket = stitchArg === 'basketweave'
+  const isPostRib = stitchArg === 'postrib' // alternating fp/bp columns = ribbing
+  const isPost = stitchArg === 'fpdc' || stitchArg === 'bpdc'
+  const stitch = (isBasket ? 'dc' : isPostRib ? 'fpdc' : stitchArg) as StitchId // drives gauge + row height
+  // ch is the starting chain itself — render the foundation chain alone (no worked rows).
   const nRows = stitch === 'ch' ? 0 : 8
   const rows: StitchId[] = Array(nRows).fill(stitch) as StitchId[]
-  const built = buildContinuous(rows, W, yr)
+  let stitchAt: ((j: number, c: number) => StitchId) | undefined
+  if (isBasket) {
+    stitchAt = (j, c) => {
+      if (j === 0) return 'dc' // establish posts to wrap
+      const block = Math.floor(c / 3)
+      const rb = Math.floor((j - 1) / 2)
+      return (block + rb) % 2 === 0 ? 'fpdc' : 'bpdc' // 3-wide blocks, swap every 2 rows
+    }
+  } else if (isPostRib) {
+    stitchAt = (j, c) => (j === 0 ? 'dc' : c % 2 === 0 ? 'fpdc' : 'bpdc') // raised rib / recessed valley
+  } else if (isPost) {
+    stitchAt = (j, c) => (j === 0 ? 'dc' : (stitchArg as StitchId))
+  }
+  const built = buildContinuous(rows, W, yr, { stitchAt })
 
   // Collision is what now HOLDS the interlock (yarn can't pass through yarn), so it
   // runs firm and long. No plane pull — the +z/−z relief at each hook IS the
@@ -47,16 +65,22 @@ function main() {
   const nodes = built.model.nodes
   const ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
   const center = smooth(ctrl, 4)
-  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, 0.1) // gentle twist = plied wool fibre (path no longer knots)
+  // Post-stitch ribs read cleaner with a smoother (less barber-poled) yarn.
+  const twist = isPost || isPostRib || isBasket ? 0.05 : 0.1
+  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, twist) // gentle twist = plied wool fibre (path no longer knots)
   const strokes = [{ hex, sheen: 0.85, radiusMm, filaments }]
 
   // Tall stitches (dc/tr) read as standing vertical posts from a slight 3/4 angle —
   // the way the reference photos are shot. sc/hdc stay flat top-down.
-  const tall = stitch === 'dc' || stitch === 'tr' || stitch === 'dtr'
+  const tall = stitch === 'dc' || stitch === 'tr' || stitch === 'dtr' || isPost || isBasket || isPostRib
+  // Post stitches stand off the surface, so shoot them more side-on (so the raised
+  // ribs cast shadow into the valleys, the way the reference photo is lit).
+  const postLike = isPost || isBasket || isPostRib
+  const tiltDeg = postLike ? 40 : tall ? 16 : 0
   const scene = {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
     strokes,
-    view: { bgHex: '#6f5440', marginFactor: 0.12, tiltDeg: tall ? 16 : 0, resY: 1200 },
+    view: { bgHex: '#6f5440', marginFactor: 0.12, tiltDeg, resY: 1200 },
   }
   const scenePath = resolve(OUT, `${name}.json`)
   writeFileSync(scenePath, JSON.stringify(scene))

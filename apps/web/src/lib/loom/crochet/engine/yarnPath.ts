@@ -32,13 +32,34 @@ export interface BuiltContinuous {
   heightMm: number
 }
 
-export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, yarnRadiusMm: number): BuiltContinuous {
+export interface BuildOpts {
+  /** Per-stitch override (row j, column c) → stitch id. For patterns like
+   *  basketweave / mixed-stitch motifs. Falls back to rowTypes[j] when absent. */
+  stitchAt?: (j: number, c: number) => StitchId
+}
+
+export function buildContinuous(
+  rowTypes: StitchId[],
+  stitchesPerRow: number,
+  yarnRadiusMm: number,
+  opts: BuildOpts = {},
+): BuiltContinuous {
   const yr = yarnRadiusMm
   const W = stitchesPerRow
   // Column spacing is gauge: a short stitch (sc) packs dense with almost no holes;
   // a tall stitch (dc/tr) is more open. Keyed off the swatch's stitch.
   const st0 = rowTypes[0] ?? 'sc'
-  const sw = yr * (st0 === 'slst' ? 1.9 : st0 === 'sc' || st0 === 'scblo' || st0 === 'scflo' ? 2.0 : st0 === 'hdc' ? 2.2 : 2.5) // column spacing
+  const sw =
+    yr *
+    (st0 === 'fpdc' || st0 === 'bpdc'
+      ? 1.9 // post stitches pack DENSE — ribs touch into solid fabric, not isolated sticks
+      : st0 === 'slst'
+        ? 1.9
+        : st0 === 'sc' || st0 === 'scblo' || st0 === 'scflo'
+          ? 2.0
+          : st0 === 'hdc'
+            ? 2.2
+            : 2.5) // column spacing
   const z = yr * 0.3 // base relief (gentle — turned fabric is fairly flat, not corrugated)
   const zh = yr * 0.5 // crown relief (the head rides proud on its worked face)
   const cw = yr * 0.4 // crown half-width — a slim head-line, not a fat rope
@@ -106,66 +127,99 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
   // left→right (ends on the RIGHT), so the first worked row starts on the right
   // (dir = −1) and turns into it like every other row; otherwise the yarn floats
   // across from the foundation's right end to a left-hand start.
+  // Post mid of the stitch below at each column — the stem a front/back-post stitch
+  // rings around. Seeded to the foundation crown (row 0 has no real post below).
+  const postBelow: number[] = belowBack.slice()
+
   for (let j = 0; j < rowTypes.length; j++) {
     const ty = yTop[j]!
     const by = j === 0 ? 0 : yTop[j - 1]!
     const dir = j % 2 === 0 ? -1 : 1
     // TURN the work: alternate rows are worked from the opposite face (right side /
-    // wrong side). In the fabric's fixed frame that flips the relief to the worked
-    // face — `fz` carries the stitch's +z/−z handedness. Even rows ride the front
-    // (+z), odd rows the back (−z), exactly as a flipped row sits. The hook still
-    // genuinely goes UNDER the crown below, so it always dives to the OPPOSITE
-    // z-side of whichever crown it links (computed per stitch), keeping the
-    // interlock real regardless of which face this row is worked from.
+    // wrong side). `fz` carries the stitch's +z/−z handedness. The hook always dives
+    // to the OPPOSITE z-side of whichever loop it links, so the interlock is real on
+    // either face.
     const fz = j % 2 === 0 ? 1 : -1
-    // hdc leaves a real THIRD LOOP: the yarn-over made at the start of the stitch is
-    // left as a horizontal loop when the hook pulls through all three loops at once.
-    // Laying it across the head line at the start of every hdc stitch makes the
-    // consecutive yarn-overs line up into hdc's signature horizontal ridge. (sc has
-    // no yarn-over; dc's is absorbed up the tall post.)
-    const thirdLoop = rowTypes[j] === 'hdc'
-    // Loop mode: which of the below head's two loops this row hooks. blo hooks the
-    // BACK loop (the front loop is left floating as a front ridge); flo hooks the
-    // FRONT loop (back loop floats); both hooks the back (plain — leaves no ridge).
-    const id = rowTypes[j]
-    const loopMode = id === 'scblo' ? 'blo' : id === 'scflo' ? 'flo' : 'both'
     const crownThisBack: number[] = new Array(W).fill(-1)
     const crownThisFront: number[] = new Array(W).fill(-1)
+    const postThis: number[] = new Array(W).fill(-1)
 
     for (let o = 0; o < W; o++) {
       const c = dir > 0 ? o : W - 1 - o
       const s = dir
       const x = c * sw
+      const id = opts.stitchAt ? opts.stitchAt(j, c) : rowTypes[j]!
+      // Per-stitch variants: hdc's third loop; blo/flo loop choice; front/back post.
+      const thirdLoop = id === 'hdc'
+      const loopMode = id === 'scblo' ? 'blo' : id === 'scflo' ? 'flo' : 'both'
+      const postMode = id === 'fpdc' ? 'fp' : id === 'bpdc' ? 'bp' : 'none'
+      const px = ty - by // post span (tall for dc, short for sc)
+
+      if (postMode !== 'none') {
+        // FRONT/BACK POST: instead of hooking the head, the yarn RINGS around the
+        // stem of the post below (front post pops the new post PROUD on the front,
+        // back post sinks it to the back). The ring threads the post and is held on
+        // it by collision — a genuine wrap, not a spring. This is what builds the
+        // raised/recessed columns of post-stitch ribbing + basketweave.
+        const pa = postBelow[c]!
+        const ay = nodes[pa]!.y
+        const az = nodes[pa]!.z
+        const front = postMode === 'fp' ? 1 : -1
+        // Only the post BODY pops (fp proud forward, bp mildly recessed but still
+        // visible); the HEAD stays at the fabric plane so the stitch-to-stitch travel
+        // runs flat along the row — otherwise adjacent fp/bp heads jump z and tangle.
+        const ppz = postMode === 'fp' ? z * 3.0 : -z * 2.2 // fp ribs pop forward, bp valleys sink back — the contrast IS the rib
+        // A FULL two-strand post (like a dc), wrapped around the stem below and popped
+        // boldly forward (fp) or back (bp). Heads stay at the PLANE so the row's travel
+        // runs flat and alternating fp/bp columns don't tangle; the body pop alone
+        // makes the raised ribs + recessed valleys.
+        push(x + s * pw, by + px * 0.85, zh * 0.35 * fz) // leave the previous head near the plane
+        push(x + s * pw, by + px * 0.52, ppz) // down-leg, popped
+        push(x + s * pw, by + px * 0.22, ppz)
+        // ring around the below post stem (encircle it → linked, collision-held)
+        push(x + cw * 1.15, ay, az)
+        push(x, ay - dh * 0.2, az - front * cw * 1.5) // around the far z-side of the stem
+        push(x - cw * 1.15, ay, az)
+        push(x - s * pw, by + px * 0.22, ppz) // up-leg, popped
+        const postMid = push(x - s * pw, by + px * 0.52, ppz)
+        push(x - s * pw, by + px * 0.85, zh * 0.35 * fz)
+        postThis[c] = postMid
+        // Head at the PLANE (flat) — keeps the row connected and lets fp/bp alternate.
+        push(x - s * cw, ty - dh * 0.3, zh * fz)
+        const crown = push(x, ty, zh * 1.15 * fz)
+        push(x + s * cw, ty - dh * 0.3, zh * fz)
+        crownThisBack[c] = crown
+        crownThisFront[c] = crown
+        continue
+      }
+
       const bc = (loopMode === 'flo' ? belowFront[c] : belowBack[c])! // the loop this stitch hooks under
       const bcOther = (loopMode === 'flo' ? belowBack[c] : belowFront[c])! // the loop left to float as a ridge
       const cy = nodes[bc]!.y // its actual y (the row joins where the loop below sits)
       const hookZ = (nodes[bc]!.z >= 0 ? -1 : 1) * z * 1.6 // dive to the FAR side of that crown
 
-      const px = ty - by // post span (tall for dc, short for sc)
       // hdc third loop: the start-of-stitch yarn-over, laid horizontally across the
       // head line before the hook dives. Consecutive ones form the signature ridge.
       if (thirdLoop) push(x + s * cw * 1.1, ty - dh * 0.9, z * 1.7 * fz)
       // Down-leg: descend the worked face from the previous head toward the insertion.
-      // Several nodes so the post renders as a continuous tall column, not a stub.
       push(x + s * pw, by + px * 0.8, z * fz)
       push(x + s * pw, by + px * 0.52, z * fz)
       push(x + s * pw, by + px * 0.26, z * 1.1 * fz)
       push(x + s * pw * 0.4, cy + dh * 0.5, z * 0.6 * fz) // approach the below crown
-      // Hook UNDER the crown below — tuck to the far z-side of it. They are now linked,
-      // and collision (neither can pass through the other) holds the link — no spring.
+      // Hook UNDER the crown below — tuck to the far z-side of it. Collision (neither
+      // can pass through the other) holds the link — no spring.
       push(x, cy - dh, hookZ)
       push(x - s * pw * 0.4, cy + dh * 0.5, z * 0.6 * fz) // emerge
       // Up-leg: pulled back UP just beside the down-leg → the two strands of the post.
       push(x - s * pw, by + px * 0.26, z * 1.1 * fz)
-      push(x - s * pw, by + px * 0.52, z * fz)
+      const postMid = push(x - s * pw, by + px * 0.52, z * fz)
       push(x - s * pw, by + px * 0.8, z * fz)
+      postThis[c] = postMid
       // Float the BELOW head's unworked loop proud as a ridge (only blo/flo leave one).
       if (loopMode !== 'both' && bcOther !== bc) nodes[bcOther]!.z *= 1.7
 
-      // Throw this stitch's crown (head loop) at the top. A plain stitch leaves a
-      // single apex (back == front, identical to before). blo/flo split the head into
-      // two distinct loops — a back loop (lower z) and a proud front loop — so the
-      // next row can hook just one and leave the other as a ridge.
+      // Throw this stitch's crown. A plain stitch leaves a single apex (back == front,
+      // identical to before); blo/flo split it into a back loop + proud front loop.
       push(x - s * cw, ty - dh * 0.3, zh * fz)
       if (loopMode === 'both') {
         const crown = push(x, ty, zh * 1.15 * fz)
@@ -181,6 +235,7 @@ export function buildContinuous(rowTypes: StitchId[], stitchesPerRow: number, ya
     for (let c = 0; c < W; c++) {
       belowBack[c] = crownThisBack[c]!
       belowFront[c] = crownThisFront[c]!
+      postBelow[c] = postThis[c]!
     }
   }
 

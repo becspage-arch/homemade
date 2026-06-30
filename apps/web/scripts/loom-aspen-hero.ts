@@ -62,6 +62,14 @@ const STITCH_PROMPTS: Record<string, string> = {
     'An extreme close-up macro photograph of a soft wool crochet swatch worked in single crochet through the front loop only.',
     'Dense even rows of single crochet with a soft raised horizontal ridge line per row (the unworked loops), in fluffy wool yarn.',
   ].join(' '),
+  fpdc: [
+    'An extreme close-up macro photograph of a soft wool crochet swatch worked in front-post and back-post double crochet ribbing.',
+    'Bold, smooth, rounded vertical cabled ribs standing proud of the fabric, alternating with cleanly recessed vertical valleys, dense and dimensional, lit from the side so the ribs cast soft shadows, in fluffy wool yarn.',
+  ].join(' '),
+  bpdc: [
+    'An extreme close-up macro photograph of a soft wool crochet swatch worked in back-post double crochet.',
+    'Vertical post columns set back into the fabric in even recessed ribs, in fluffy wool yarn.',
+  ].join(' '),
 }
 const COMMON =
   'Real visible yarn: soft plied fibres, a gentle fuzzy halo, cosy hand-crocheted wool texture, each stitch tidy and uniform. Soft natural window light, shallow depth of field, extremely detailed, photorealistic, looks like a real crocheted swatch.'
