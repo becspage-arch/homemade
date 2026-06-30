@@ -63,18 +63,28 @@ export function NeedleworkSurfaceView({
     if (!el) return
     const compute = () => {
       const cs = getComputedStyle(el)
-      const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight)
-      const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom)
+      const padX = (parseFloat(cs.paddingLeft) || 0) + (parseFloat(cs.paddingRight) || 0)
+      const padY = (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0)
       const availW = Math.max(0, el.clientWidth - padX)
       const availH = Math.max(0, el.clientHeight - padY)
       // contain: the largest width whose height (w/aspect) still fits availH.
       const w = Math.min(availW, availH * aspect)
-      setFitW(w)
+      // Only adopt a real measurement — never clobber a good fit with a transient
+      // 0 (the canvas can measure 0 for a frame during hydration / before layout).
+      if (w > 0) setFitW(w)
     }
     compute()
+    // A second pass after paint catches the case where the canvas hadn't been
+    // laid out yet on the synchronous mount measure.
+    const raf = requestAnimationFrame(compute)
     const ro = new ResizeObserver(compute)
     ro.observe(el)
-    return () => ro.disconnect()
+    window.addEventListener('resize', compute)
+    return () => {
+      cancelAnimationFrame(raf)
+      ro.disconnect()
+      window.removeEventListener('resize', compute)
+    }
   }, [aspect])
   const designW = fitW > 0 ? Math.round(fitW * zoom) : undefined
 
