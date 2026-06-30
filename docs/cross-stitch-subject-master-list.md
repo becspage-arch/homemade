@@ -59,8 +59,12 @@ procedure. Following it exactly is what stops the regressions we hit building it
    `XS_VOL_DIR=<worktree>/.loom-scratch/needlework/volume npx tsx scripts/xs-volume-publish.ts approved-full.json`
    (from main checkout). Publishes PUBLIC + thumbnail + search-sync. Idempotent on slug.
 6. **Fill the shelf to ~40+** before moving on — Rebecca wants the categories really full.
-7. **Cull tool** for reversible takedowns: `xs-volume.../xs-cull.ts` sets PRIVATE + drops
-   from search, with a manifest. NEVER hard-delete.
+7. **Cull tool** for reversible takedowns: `scripts/xs-cull.ts` sets PRIVATE + drops
+   from search, with a manifest. NEVER hard-delete. Review helpers:
+   `xs-thumbs.ts` (download live thumbnails), `xs-sheet.ts` / `xs-tile-dir.ts` (build
+   contact sheets — but still gate FULL-SIZE), `xs-upload-sheet.ts` (push a sheet to R2
+   to view), `xs-inventory.ts` (catalogue counts), `xs-default-view.ts` (the default
+   browse surface). Run all of these from the MAIN checkout.
 
 **Tooling gotchas (each one cost a debugging cycle):**
 - Run DB/publish scripts from the MAIN checkout; generate from the worktree.
