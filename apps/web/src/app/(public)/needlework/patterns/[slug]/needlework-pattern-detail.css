@@ -212,6 +212,25 @@
 }
 .nw-detail-diagram-svg svg { width: 100%; height: auto; display: block; }
 
+/* Dense thread-painting: the clean transfer template and the dense colour/
+   direction map side by side — they share coordinates, so they line up. */
+.nw-detail-diagram-pair {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.nw-detail-diagram-pair figure { margin: 0; }
+.nw-detail-diagram-pair .nw-detail-diagram-svg { margin-bottom: 8px; }
+.nw-detail-diagram-pair figcaption {
+  font-size: 13px;
+  color: var(--color-warm-taupe);
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .nw-detail-diagram-pair { grid-template-columns: 1fr; }
+}
+
 .nw-detail-steps ol { margin: 0; padding-left: 22px; display: grid; gap: 12px; }
 .nw-detail-steps li { font-size: 16px; line-height: 1.55; color: var(--color-espresso); }
 

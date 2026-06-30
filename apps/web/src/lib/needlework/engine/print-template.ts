@@ -11,6 +11,7 @@
  */
 
 import type { StitchedElement } from '../../loom/render/renderPattern'
+import type { OutlinePath } from '../illustration-engine'
 
 const PAGE = {
   A4: { widthMm: 210, heightMm: 297 },
@@ -34,6 +35,10 @@ export interface PrintOptions {
   /** Overlap between tiles (mm) for gluing. Default 12. */ overlapMm?: number
   /** Calibration square side (mm). Default 50. */ calibrationMm?: number
   stroke?: string
+  /** Dense thread-painting patterns: tile this clean derived OUTLINE instead of
+   *  the thousands of individual stitches (which would print as an unusable
+   *  stitch cloud). Registered to the same coordinates as the design. */
+  outline?: OutlinePath[]
 }
 
 const LINE_SLUGS = new Set([
@@ -43,6 +48,20 @@ const LINE_SLUGS = new Set([
 
 function r2(n: number): number {
   return Math.round(n * 100) / 100
+}
+
+/** Draw a clean outline as closed polygons in design-mm coordinates (no wrapper).
+ *  The silhouette draws a touch heavier so the subject edge reads as the main line. */
+function drawOutlineBody(outline: OutlinePath[], stroke: string): string {
+  let body = ''
+  for (const path of outline) {
+    const pts = path.points
+    if (!pts || pts.length < 3) continue
+    const d = pts.map((p) => `${r2(p[0])},${r2(p[1])}`).join(' ')
+    const sw = path.kind === 'silhouette' ? 0.65 : 0.4
+    body += `<polygon points="${d}" fill="none" stroke="${stroke}" stroke-width="${sw}" stroke-linejoin="round" stroke-linecap="round"/>`
+  }
+  return body
 }
 
 /** Draw the elements as a line drawing in design-mm coordinates (no <svg> wrapper). */
@@ -98,7 +117,9 @@ export function patternToPrintTemplate(
   const cols = Math.max(1, Math.ceil((designSizeMm.width - overlap) / stepX))
   const rows = Math.max(1, Math.ceil((designSizeMm.height - overlap) / stepY))
 
-  const body = drawBody(elements, stroke)
+  // Dense patterns tile the clean derived outline; shape/vector patterns tile the
+  // elements (their geometry IS the line drawing).
+  const body = opts.outline?.length ? drawOutlineBody(opts.outline, stroke) : drawBody(elements, stroke)
   const pages: PrintPage[] = []
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {

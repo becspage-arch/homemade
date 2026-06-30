@@ -13,6 +13,8 @@
 
 import { nearestDmcFull } from '../../floss/dmc-full'
 import { patternToGuideSvg } from './guide'
+import { outlineToSvg, overlayOutline } from './outline'
+import type { OutlinePath } from '../illustration-engine'
 import type { StitchedElement } from '../../loom/render/renderPattern'
 
 /** Canonical stitch names + a one-line how-to for the stitch key. */
@@ -47,7 +49,13 @@ export interface PatternDocument {
   steps: string[]
   /** One label per (stitch, colour) group, at the group's centre. */ labels: ElementLabel[]
   /** Clean transfer template (line drawing). */ technicalChartSvg: string
-  /** The transfer template + the [letter][number] labels. */ colourGuideSvg: string
+  /** The working guide: for shape patterns the labelled colour guide; for dense
+   *  thread-painting the colour/stitch-direction map with the outline overlaid. */ colourGuideSvg: string
+  /** Dense patterns only — a clean traceable outline, separate from the dense map,
+   *  registered to the same coordinates (undefined for shape/vector patterns). */ outlineSvg?: string
+  /** Dense patterns only — the dense colour/stitch-direction map (the working
+   *  guide), with the outline overlaid so it visibly registers. */ denseMapSvg?: string
+  /** True for a dense thread-painting pattern (stitch field + derived outline). */ isDense: boolean
 }
 
 function baseSlug(s: string): string {
@@ -128,8 +136,9 @@ function spreadLabels(
 export function buildPatternDocument(
   elements: StitchedElement[],
   finishedSizeMm: { width: number; height: number },
-  opts: { title?: string } = {},
+  opts: { title?: string; outline?: OutlinePath[] } = {},
 ): PatternDocument {
+  const outline = opts.outline?.length ? opts.outline : null
   const flossByCode = new Map<string, FlossRow>()
   const stitchBySlug = new Map<string, StitchRow>()
   const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
@@ -187,9 +196,26 @@ export function buildPatternDocument(
   const flossKey = [...flossByCode.values()]
   const stitchKey = [...stitchBySlug.values()]
   const steps = buildSteps(stitchKey, flossKey, resolved)
-  // Clean, layered artwork (occlusion: front shapes hide the lines behind them):
-  // a white-filled transfer template and a thread-colour colour guide with the
-  // outline on top + short stitch-direction ticks, then the [stitch][colour] labels.
+
+  if (outline) {
+    // DENSE thread-painting: the elements are thousands of tiny stitches, so the
+    // clean transfer template is the DERIVED outline (the major shapes), and the
+    // working guide is the dense colour/direction map with that outline overlaid
+    // — the two share coordinates, so they register and overlay exactly. The
+    // [stitch][colour] labels are dropped here (one stitch × many colours makes
+    // them noise; the dense map shows the colour directly, keyed by the floss list).
+    const outlineSvg = outlineToSvg(outline, finishedSizeMm)
+    const denseMap = patternToGuideSvg(elements, finishedSizeMm, { mode: 'colour', background: '#f1ead9' })
+    const denseMapSvg = overlayOutline(denseMap, outline, finishedSizeMm)
+    return {
+      title: opts.title ?? 'Pattern', finishedSizeMm, flossKey, stitchKey, steps, labels,
+      technicalChartSvg: outlineSvg, colourGuideSvg: denseMapSvg, outlineSvg, denseMapSvg, isDense: true,
+    }
+  }
+
+  // SHAPE/vector patterns: clean, layered artwork (occlusion: front shapes hide
+  // the lines behind them) — a white-filled transfer template and a thread-colour
+  // colour guide with the outline on top + direction ticks, then the labels.
   const technicalChartSvg = patternToGuideSvg(elements, finishedSizeMm, { mode: 'template' })
   const colourGuideSvg = withLabels(
     patternToGuideSvg(elements, finishedSizeMm, { mode: 'colour', background: '#f1ead9', directionHints: true }),
@@ -197,7 +223,7 @@ export function buildPatternDocument(
     finishedSizeMm,
   )
 
-  return { title: opts.title ?? 'Pattern', finishedSizeMm, flossKey, stitchKey, steps, labels, technicalChartSvg, colourGuideSvg }
+  return { title: opts.title ?? 'Pattern', finishedSizeMm, flossKey, stitchKey, steps, labels, technicalChartSvg, colourGuideSvg, isDense: false }
 }
 
 /** Worked order: fills first, then lines/outlines, then wheels, then knots. */

@@ -28,6 +28,8 @@
 import type { StitchedElement } from '../loom/render/renderPattern'
 import { nearestDmcFull } from '../floss/dmc-full'
 import { patternToLineArtSvg } from './engine/lineart'
+import { outlineToSvg } from './engine/outline'
+import type { OutlinePath } from './illustration-engine'
 import type { PatternDocument } from './engine/document'
 
 export interface NeedleworkFabricSpec {
@@ -59,6 +61,11 @@ export interface NeedleworkSurfacePattern {
   frameType?: string | null
   palette?: NeedleworkPaletteEntry[]
   stitchLegend?: NeedleworkStitchLegendEntry[]
+  /** Dense thread-painting patterns: the clean traceable outline of the major
+   *  shapes, registered to the stitch field. The transfer template renders from
+   *  this; the dense stitch map stays the working guide. Absent for shape/vector
+   *  patterns (their element geometry IS the line drawing). */
+  outline?: OutlinePath[]
 }
 
 /** A surface pattern region (Studio surface editor view). */
@@ -91,6 +98,8 @@ export interface StoredNeedleworkVectorData {
   frameType?: string | null
   palette?: NeedleworkPaletteEntry[]
   stitchLegend?: NeedleworkStitchLegendEntry[]
+  /** Dense thread-painting patterns: clean traceable outline of the major shapes. */
+  outline?: OutlinePath[]
   /** Precomputed printable document (floss key, stitch key, steps, SVGs). */
   document?: PatternDocument
 }
@@ -148,7 +157,11 @@ export function toStoredVectorData(
   opts: { document?: PatternDocument } = {},
 ): { vectorData: StoredNeedleworkVectorData; regionAnnotations: NeedleworkRegionAnnotation[] } {
   const { regions, regionAnnotations } = deriveRegions(pattern.stitchedElements)
-  const svgContent = patternToLineArtSvg(pattern.stitchedElements, pattern.finishedSizeMm)
+  // Studio surface view: for dense patterns the line-art-from-stitches is a stitch
+  // cloud, so show the clean derived outline; shape patterns keep the element outline.
+  const svgContent = pattern.outline?.length
+    ? outlineToSvg(pattern.outline, pattern.finishedSizeMm)
+    : patternToLineArtSvg(pattern.stitchedElements, pattern.finishedSizeMm)
   const vectorData: StoredNeedleworkVectorData = {
     schemaVersion: 2,
     svgContent,
@@ -162,6 +175,7 @@ export function toStoredVectorData(
     frameType: pattern.frameType ?? null,
     palette: pattern.palette,
     stitchLegend: pattern.stitchLegend,
+    outline: pattern.outline,
     document: opts.document,
   }
   return { vectorData, regionAnnotations }
@@ -202,6 +216,7 @@ export function fromStoredVectorData(
     frameType: v.frameType ?? null,
     palette: v.palette,
     stitchLegend: v.stitchLegend,
+    outline: v.outline,
   }
 }
 

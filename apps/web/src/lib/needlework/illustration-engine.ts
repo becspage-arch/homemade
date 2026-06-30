@@ -33,11 +33,22 @@ export interface IllustrationEngineOpts {
   widthMm?: number
 }
 
+/** A clean traceable boundary of a MAJOR shape, in finished-mm coordinates
+ *  (the SAME space as `stitchedElements`, so the two register and overlay). */
+export interface OutlinePath {
+  /** silhouette = the subject's outer edge; internal = a petal/leaf/region boundary. */
+  kind: 'silhouette' | 'internal'
+  points: Pt[]
+}
+
 export interface IllustrationPattern {
   stitchedElements: StitchedElement[]
   /** HOOP (round) | SLATE_FRAME (square/rect) | NONE (frameless). */
   frameType: string
   finishedSizeMm: { width: number; height: number }
+  /** Clean, simplified line-art of the major shapes (silhouette + key internal
+   *  boundaries) — the transfer template, registered to the stitch field. */
+  outline: OutlinePath[]
 }
 
 const dmcMemo = new Map<number, string>()
@@ -64,6 +75,88 @@ function boxBlur(src: Float64Array, W: number, H: number, rad: number): Float64A
     for (let d = -rad; d <= rad; d++) { const yy = y + d; if (yy >= 0 && yy < H) { s += tmp[yy * W + x]!; n++ } }
     out[y * W + x] = s / n
   }
+  return out
+}
+
+/** Moore-neighbour boundary trace of a binary mask, starting at (sx,sy) — the
+ *  same machinery the clean-line-art tracer uses, but predicate-driven so it
+ *  works on a foreground mask OR a single connected colour region. */
+function mooreTrace(inMask: (x: number, y: number) => boolean, sx: number, sy: number): Pt[] {
+  const nb: Pt[] = [[1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1], [1, -1]]
+  const ring: Pt[] = []
+  let cx = sx, cy = sy, dir = 6, guard = 0
+  do {
+    ring.push([cx, cy])
+    let found = false
+    for (let k = 0; k < 8; k++) {
+      const d = (dir + k) % 8
+      const nx = cx + nb[d]![0], ny = cy + nb[d]![1]
+      if (inMask(nx, ny)) { cx = nx; cy = ny; dir = (d + 5) % 8; found = true; break }
+    }
+    if (!found) break
+    if (++guard > 4_000_000) break
+  } while (!(cx === sx && cy === sy) || ring.length < 2)
+  return ring
+}
+
+/** Laplacian smoothing of a CLOSED ring — rounds the pixel staircase and the
+ *  brushwork wiggle of a region boundary into a flowing, traceable line. */
+function smoothClosed(points: Pt[], iterations: number, strength: number): Pt[] {
+  if (points.length < 4) return points
+  let pts = points
+  const n = pts.length
+  for (let it = 0; it < iterations; it++) {
+    const out: Pt[] = new Array(n)
+    for (let i = 0; i < n; i++) {
+      const a = pts[(i - 1 + n) % n]!, b = pts[i]!, c = pts[(i + 1) % n]!
+      out[i] = [
+        b[0] + strength * ((a[0] + c[0]) / 2 - b[0]),
+        b[1] + strength * ((a[1] + c[1]) / 2 - b[1]),
+      ]
+    }
+    pts = out
+  }
+  return pts
+}
+
+/** Chaikin corner-cutting on a CLOSED polygon — turns a coarse simplified outline
+ *  into smooth, flowing curves (the look of a hand-drawn transfer template). */
+function chaikinClosed(points: Pt[], iterations: number): Pt[] {
+  let pts = points
+  for (let it = 0; it < iterations; it++) {
+    if (pts.length < 3) break
+    const out: Pt[] = []
+    const n = pts.length
+    for (let i = 0; i < n; i++) {
+      const a = pts[i]!, b = pts[(i + 1) % n]!
+      out.push([a[0] * 0.75 + b[0] * 0.25, a[1] * 0.75 + b[1] * 0.25])
+      out.push([a[0] * 0.25 + b[0] * 0.75, a[1] * 0.25 + b[1] * 0.75])
+    }
+    pts = out
+  }
+  return pts
+}
+
+/** Ramer–Douglas–Peucker simplification of a closed ring → a clean polygon. */
+function rdpRing(points: Pt[], eps: number): Pt[] {
+  if (points.length < 3) return points
+  const keep = new Uint8Array(points.length)
+  keep[0] = 1; keep[points.length - 1] = 1
+  const stack: Array<[number, number]> = [[0, points.length - 1]]
+  while (stack.length) {
+    const [a, b] = stack.pop()!
+    let dmax = 0, idx = -1
+    const [ax, ay] = points[a]!, [bx, by] = points[b]!
+    const dx = bx - ax, dy = by - ay, len = Math.hypot(dx, dy) || 1
+    for (let i = a + 1; i < b; i++) {
+      const [px, py] = points[i]!
+      const dist = Math.abs((px - ax) * dy - (py - ay) * dx) / len
+      if (dist > dmax) { dmax = dist; idx = i }
+    }
+    if (dmax > eps && idx > 0) { keep[idx] = 1; stack.push([a, idx], [idx, b]) }
+  }
+  const out: Pt[] = []
+  for (let i = 0; i < points.length; i++) if (keep[i]) out.push(points[i]!)
   return out
 }
 
@@ -151,5 +244,98 @@ export function bitmapToStitches(
     }
   }
 
-  return { stitchedElements: els, frameType, finishedSizeMm: { width: Wmm, height: finishedH } }
+  // 5. CLEAN OUTLINE — a traceable line-art of the MAJOR shapes, in the SAME
+  // finished-mm space as the stitches (so the transfer template registers exactly
+  // over the dense colour/stitch map). Derived from the illustration's regions,
+  // NOT from the thousands of stitches: smooth the picture, posterise it into
+  // coarse colour regions, keep only the large ones (real petals/leaves/masses),
+  // and trace each one's boundary + the subject silhouette into simplified polygons.
+  const outline = deriveOutline(data, W, H, fg, tx, { bleed: opts.bleed === true, mnx, mny, mxx, mxy })
+
+  return { stitchedElements: els, frameType, finishedSizeMm: { width: Wmm, height: finishedH }, outline }
+}
+
+/** Derive the clean major-shape outline (silhouette + internal region boundaries). */
+function deriveOutline(
+  data: Uint8Array | Buffer,
+  W: number,
+  H: number,
+  fg: (x: number, y: number) => boolean,
+  tx: (x: number, y: number) => Pt,
+  o: { bleed: boolean; mnx: number; mny: number; mxx: number; mxy: number },
+): OutlinePath[] {
+  const paths: OutlinePath[] = []
+  const bw = o.mxx - o.mnx, bh = o.mxy - o.mny
+  const span = Math.max(1, Math.max(bw, bh))
+  // RDP tolerance scales with the subject so the cleanup is resolution-independent.
+  // Chaikin (below) re-rounds the corners, so a moderate eps keeps the petal masses
+  // while shedding brushwork noise.
+  const epsPx = Math.max(1.8, span / 60)
+  // ring → de-noise → simplify to major structure → round into flowing curves.
+  const cleanRing = (ring: Pt[]): Pt[] => chaikinClosed(rdpRing(smoothClosed(ring, 3, 0.5), epsPx), 2)
+
+  // Silhouette: the subject's outer edge (skip for full-bleed scenes — there the
+  // edge is just the crop, not a shape). Trace the foreground mask.
+  if (!o.bleed) {
+    // topmost-leftmost foreground pixel = a guaranteed boundary start.
+    let start: Pt | null = null
+    for (let y = Math.max(0, o.mny); y <= Math.min(H - 1, o.mxy) && !start; y++)
+      for (let x = Math.max(0, o.mnx); x <= Math.min(W - 1, o.mxx); x++)
+        if (fg(x, y)) { start = [x, y]; break }
+    if (start) {
+      const ring = mooreTrace((x, y) => x >= 0 && y >= 0 && x < W && y < H && fg(x, y), start[0], start[1])
+      const poly = cleanRing(ring)
+      if (poly.length >= 3) paths.push({ kind: 'silhouette', points: poly.map((p) => tx(p[0], p[1])) })
+    }
+  }
+
+  // Internal boundaries: posterise the smoothed picture, segment the foreground
+  // into coarse colour regions, keep the large ones, trace each.
+  const rCh = (i: number): number => data[i * 3]!
+  const gCh = (i: number): number => data[i * 3 + 1]!
+  const bCh = (i: number): number => data[i * 3 + 2]!
+  const rB = new Float64Array(W * H), gB = new Float64Array(W * H), bB = new Float64Array(W * H)
+  for (let i = 0; i < W * H; i++) { rB[i] = rCh(i); gB[i] = gCh(i); bB[i] = bCh(i) }
+  const blurRad = Math.max(3, Math.round(Math.min(W, H) / 54))
+  const rS = boxBlur(rB, W, H, blurRad), gS = boxBlur(gB, W, H, blurRad), bS = boxBlur(bB, W, H, blurRad)
+  const STEP = 46 // coarse bins per channel → major colour masses, not brushwork
+  const key = new Int32Array(W * H).fill(-1)
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+    const i = y * W + x
+    if (!fg(x, y)) continue
+    const qr = Math.round(rS[i]! / STEP), qg = Math.round(gS[i]! / STEP), qb = Math.round(bS[i]! / STEP)
+    key[i] = (qr << 8) | (qg << 4) | qb
+  }
+  // connected components of equal posterised key (4-connected) over the foreground.
+  const label = new Int32Array(W * H).fill(-1)
+  const compStart: number[] = []
+  const compArea: number[] = []
+  const stack: number[] = []
+  let next = 0
+  for (let s = 0; s < W * H; s++) {
+    if (key[s] === -1 || label[s] !== -1) continue
+    const id = next++
+    const k = key[s]!
+    label[s] = id; compStart.push(s); let area = 0
+    stack.length = 0; stack.push(s)
+    while (stack.length) {
+      const p = stack.pop()!; area++
+      const x = p % W, y = (p - x) / W
+      if (x > 0) { const q = p - 1; if (key[q] === k && label[q] === -1) { label[q] = id; stack.push(q) } }
+      if (x < W - 1) { const q = p + 1; if (key[q] === k && label[q] === -1) { label[q] = id; stack.push(q) } }
+      if (y > 0) { const q = p - W; if (key[q] === k && label[q] === -1) { label[q] = id; stack.push(q) } }
+      if (y < H - 1) { const q = p + W; if (key[q] === k && label[q] === -1) { label[q] = id; stack.push(q) } }
+    }
+    compArea.push(area)
+  }
+  const minArea = Math.max(90, Math.round(span * span * 0.006)) // ≥~0.6% of the subject box
+  for (let id = 0; id < next; id++) {
+    if (compArea[id]! < minArea) continue
+    const s = compStart[id]!
+    const sx = s % W, sy = (s - sx) / W
+    const ring = mooreTrace((x, y) => x >= 0 && y >= 0 && x < W && y < H && label[y * W + x] === id, sx, sy)
+    const poly = cleanRing(ring)
+    if (poly.length >= 3) paths.push({ kind: 'internal', points: poly.map((p) => tx(p[0], p[1])) })
+  }
+  return paths
 }

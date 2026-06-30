@@ -83,7 +83,10 @@ export default async function NeedleworkPrintPage({ params, searchParams }: Page
   if (!canonical) notFound()
   const doc =
     storedDocument(row.vectorData) ??
-    buildPatternDocument(canonical.stitchedElements, canonical.finishedSizeMm, { title: row.name })
+    buildPatternDocument(canonical.stitchedElements, canonical.finishedSizeMm, {
+      title: row.name,
+      outline: canonical.outline,
+    })
 
   const h = await headers()
   const cc = (h.get('cf-ipcountry') ?? h.get('x-vercel-ip-country') ?? '').toUpperCase()
@@ -91,7 +94,11 @@ export default async function NeedleworkPrintPage({ params, searchParams }: Page
   const paper: 'A4' | 'Letter' =
     paperParam === 'letter' ? 'Letter' : paperParam === 'a4' ? 'A4' : LETTER_COUNTRIES.has(cc) ? 'Letter' : 'A4'
 
-  const template = patternToPrintTemplate(canonical.stitchedElements, canonical.finishedSizeMm, { page: paper })
+  const template = patternToPrintTemplate(canonical.stitchedElements, canonical.finishedSizeMm, {
+    page: paper,
+    // Dense patterns tile the clean derived outline, not the stitch cloud.
+    outline: canonical.outline,
+  })
 
   return (
     <div className={`nw-print nw-print--${paper.toLowerCase()}`}>

@@ -78,7 +78,10 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
   // from the same elements (deterministic — can never drift from the hero).
   const doc =
     storedDocument(row.vectorData) ??
-    buildPatternDocument(canonical.stitchedElements, canonical.finishedSizeMm, { title: row.name })
+    buildPatternDocument(canonical.stitchedElements, canonical.finishedSizeMm, {
+      title: row.name,
+      outline: canonical.outline,
+    })
 
   // Social proof: how many makers have started this pattern (a progress row is
   // created when someone opens it in the Studio). Hidden until it's meaningful.
@@ -236,18 +239,47 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
           logged-in get the diagram, the printable template and the steps. */}
       {unlocked ? (
         <>
-          <section className="nw-detail-diagram">
-            <h2>Transfer template &amp; colour guide</h2>
-            <p className="nw-detail-diagram-note">
-              Each area is labelled <em>[stitch][colour]</em> — match the keys below. Print the
-              full 1:1 template to trace onto your fabric.
-            </p>
-            <div
-              className="nw-detail-diagram-svg"
-              dangerouslySetInnerHTML={{ __html: doc.colourGuideSvg }}
-            />
-            <a href={printHref} className="nw-detail-action ghost">Print the transfer template (A4 / Letter)</a>
-          </section>
+          {doc.isDense && doc.outlineSvg && doc.denseMapSvg ? (
+            <section className="nw-detail-diagram">
+              <h2>Transfer template &amp; colour map</h2>
+              <p className="nw-detail-diagram-note">
+                Two sheets that line up exactly. <strong>Transfer the outline</strong> onto your
+                fabric (trace or iron-on), then <strong>fill it following the colour map</strong> —
+                each area shows its thread colour and the stitch direction. Match colours to the
+                floss key above.
+              </p>
+              <div className="nw-detail-diagram-pair">
+                <figure>
+                  <div
+                    className="nw-detail-diagram-svg"
+                    dangerouslySetInnerHTML={{ __html: doc.outlineSvg }}
+                  />
+                  <figcaption>Transfer template — trace this onto your fabric.</figcaption>
+                </figure>
+                <figure>
+                  <div
+                    className="nw-detail-diagram-svg"
+                    dangerouslySetInnerHTML={{ __html: doc.denseMapSvg }}
+                  />
+                  <figcaption>Colour &amp; stitch-direction map — work from this.</figcaption>
+                </figure>
+              </div>
+              <a href={printHref} className="nw-detail-action ghost">Print the transfer template (A4 / Letter)</a>
+            </section>
+          ) : (
+            <section className="nw-detail-diagram">
+              <h2>Transfer template &amp; colour guide</h2>
+              <p className="nw-detail-diagram-note">
+                Each area is labelled <em>[stitch][colour]</em> — match the keys below. Print the
+                full 1:1 template to trace onto your fabric.
+              </p>
+              <div
+                className="nw-detail-diagram-svg"
+                dangerouslySetInnerHTML={{ __html: doc.colourGuideSvg }}
+              />
+              <a href={printHref} className="nw-detail-action ghost">Print the transfer template (A4 / Letter)</a>
+            </section>
+          )}
 
           <section className="nw-detail-steps">
             <h2>How to stitch it</h2>

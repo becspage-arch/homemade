@@ -76,16 +76,44 @@ async function fluxCached(job: Job): Promise<Buffer> {
 
 async function run(job: Job): Promise<void> {
   const publish = flag('publish')
+  const refreshDoc = flag('refresh-doc')
   const frameless = flag('none')
   const img = await fluxCached(job)
   const WORK = 460
   const { data, info } = await sharp(img).resize(WORK, WORK, { fit: 'inside' }).removeAlpha().raw().toBuffer({ resolveWithObject: true })
 
   const engineFrame = frameless ? 'none' : (job.frame === 'round' ? 'round' : job.frame ?? 'round')
-  const { stitchedElements, frameType, finishedSizeMm } = bitmapToStitches(data, info.width, info.height, {
+  const { stitchedElements, frameType, finishedSizeMm, outline } = bitmapToStitches(data, info.width, info.height, {
     mode: job.mode, frame: engineFrame, bleed: job.bleed, detail: job.detail, widthMm: job.widthMm,
   })
-  console.log(`[${job.slug}] ${job.mode ?? 'dense'} · ${frameType} · ${stitchedElements.length} stitches · ${Math.round(finishedSizeMm.width)}x${Math.round(finishedSizeMm.height)}mm`)
+  console.log(`[${job.slug}] ${job.mode ?? 'dense'} · ${frameType} · ${stitchedElements.length} stitches · ${outline.length} outline paths · ${Math.round(finishedSizeMm.width)}x${Math.round(finishedSizeMm.height)}mm`)
+
+  // --refresh-doc: rebuild the document + outline + vectorData on the EXISTING
+  // row and re-store, WITHOUT re-rendering the hero. The engine is deterministic
+  // from the cached Flux image, so the stored hero still matches these elements.
+  if (refreshDoc) {
+    const { prisma } = await import('@homemade/db')
+    const existing = await prisma.needleworkPattern.findUnique({ where: { slug: job.slug }, select: { id: true } })
+    if (!existing) throw new Error(`no NeedleworkPattern row for slug "${job.slug}" — publish it first`)
+    const name = job.name ?? titleCase(job.slug)
+    const canonical: NeedleworkSurfacePattern = {
+      stitchedElements, finishedSizeMm, fabricSpec: { material: 'linen', colourHex: FABRIC, count: null },
+      defaultThread: { type: 'stranded-cotton', weight: '3-strand' }, frameType, outline,
+    }
+    const document = buildPatternDocument(stitchedElements, finishedSizeMm, { title: name, outline })
+    const { vectorData, regionAnnotations } = toStoredVectorData(canonical, { document })
+    await prisma.needleworkPattern.update({
+      where: { id: existing.id },
+      data: {
+        vectorData: vectorData as unknown as object,
+        regionAnnotations: regionAnnotations as unknown as object,
+        colourCount: document.flossKey.length,
+      },
+    })
+    console.log(`[${job.slug}] REFRESHED doc on NeedleworkPattern ${existing.id} — ${document.flossKey.length} colours, ${outline.length} outline paths (hero untouched)`)
+    await prisma.$disconnect()
+    return
+  }
 
   const hero = await renderHero(
     { name: job.slug, stitchedElements, finishedSizeMm, fabricHex: FABRIC, frameType,
@@ -115,9 +143,9 @@ async function run(job: Job): Promise<void> {
   })
   const canonical: NeedleworkSurfacePattern = {
     stitchedElements, finishedSizeMm, fabricSpec: { material: 'linen', colourHex: FABRIC, count: null },
-    defaultThread: { type: 'stranded-cotton', weight: '3-strand' }, frameType,
+    defaultThread: { type: 'stranded-cotton', weight: '3-strand' }, frameType, outline,
   }
-  const document = buildPatternDocument(stitchedElements, finishedSizeMm, { title: name })
+  const document = buildPatternDocument(stitchedElements, finishedSizeMm, { title: name, outline })
   const { vectorData, regionAnnotations } = toStoredVectorData(canonical, { document })
   const data2 = {
     slug: job.slug, name, description: job.description ?? null,
