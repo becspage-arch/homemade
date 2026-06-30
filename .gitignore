@@ -91,3 +91,14 @@ packages/db/docs/rebuild-work/
 
 # Loom render engine scratch output (proof PNGs, scene JSON, heroes)
 .loom-scratch/
+
+# Throwaway one-off ops/query scripts. Sessions run these from apps/web (so tsx
+# resolves the @/ alias + @homemade/db, which only the main checkout's node_modules
+# can do), but they must NEVER be committed and should not dirty the shared checkout.
+# Name any throwaway script *.tmp.ts (or prefix it __) and it stays local.
+# A PERMANENT committed script gets a real name + a tsconfig "exclude" entry instead.
+apps/web/scripts/*.tmp.ts
+apps/web/scripts/*-tmp.ts
+apps/web/scripts/__*.ts
+packages/db/scripts/*.tmp.ts
+packages/db/scripts/__*.ts
