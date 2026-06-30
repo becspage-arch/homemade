@@ -89,8 +89,8 @@ A theme must contain subjects across **all four tiers**. Never all one level.
 | 8   | Sea life & coastal                     | D / B       | hoop/none   | todo    |
 | 9   | Cute fantasy creatures                 | D           | hoop        | todo    |
 | 10  | Florals & bouquets                     | D / L       | hoop/none   | started |
-| 11  | Single botanical stems                 | L           | hoop/none   | todo    |
-| 12  | Delicate line motifs (jars/sprigs)     | L           | hoop        | todo    |
+| 11  | Single botanical stems                 | L           | hoop/none   | started |
+| 12  | Delicate line motifs (jars/sprigs)     | L           | hoop/none   | started |
 | 13  | Wreaths & circular compositions        | D / L       | hoop        | todo    |
 | 14  | Houseplants & terrariums               | D / L       | hoop/none   | todo    |
 | 15  | Mushrooms & cottagecore                | D / B       | hoop        | started |
@@ -122,7 +122,7 @@ hidden; not yet exhausted). See the Batch log for the exact subjects.
 ## Batch log
 
 **Batch 1 — 2026-06-30** (first gated catalogue batch; category stays hidden).
-13 gems published UNLISTED (gated shop-window / free-login pattern + Studio), spanning
+15 gems published PUBLIC (gated shop-window / free-login pattern + Studio), spanning
 the full range simple → XL and all three engine modes. Driver: `needlework-paint.ts`.
 
 | Slug | Name | Theme | Mode·Cx | Frame |
@@ -140,10 +140,14 @@ the full range simple → XL and all three engine modes. Driver: `needlework-pai
 | bee | Bumblebee & Lavender | 7 Bees & butterflies | D·m | hoop |
 | mushroomscene | Toadstool Glade | 15 Mushrooms & cottagecore | D·r | frameless |
 | bluetit | Blue Tit | 6 Birds | D·s | hoop |
+| jar | Wildflower Jar | 12 Line motifs / 10 Florals | L·m | frameless |
+| sprig | Lavender Sprig | 11 Botanical stems / 12 Line motifs | L·s | hoop |
 
-Culled this batch: `jar`, `sprig` (line mode — back-stitched jar/stems render as a grey
-scrawl; line mode is the weak spot and needs a focused engine pass before it ships). The
-simple tier is covered by `bluetit` (simple dense motif) instead.
+Line-mode note (owner steer 2026-06-30): the delicate line look is wanted — a loose,
+artistic, "not-finished-but-pretty" jar/sprig is a keeper, NOT a cull. The earlier mistake
+was (a) gating line pieces against the dense naturalistic bar, and (b) leaving the cheap
+rectangular frame on `jar` — non-circular subjects must render FRAMELESS (`--none`), which
+fixed it. Nothing culled this batch.
 
 ---
 
