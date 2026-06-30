@@ -7,6 +7,15 @@
   background: var(--colour-bg);
 }
 
+/* Active project = a fixed-height app shell: the toolbar stays put and the
+   canvas + stitch list scroll INTERNALLY, instead of the whole page growing
+   tall to fit a long (e.g. 100-colour) stitch list. */
+.needlework-studio-surface.needlework-studio-active-surface {
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+}
+
 /* Empty state */
 .needlework-studio-empty-surface {
   align-items: center;
@@ -359,21 +368,61 @@
   display: flex;
   gap: 0;
   overflow: hidden;
+  min-height: 0;
+}
+
+/* Left column: a small zoom bar above a scrollable canvas. */
+.needlework-surface-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.needlework-surface-zoombar {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--colour-border);
+  background: var(--colour-bg);
+  flex-shrink: 0;
+}
+
+.needlework-surface-zoom-btn {
+  min-width: 34px;
+  height: 30px;
+  padding: 0 0.5rem;
+  font-size: 0.8125rem;
+  background: var(--colour-bg);
+  border: 1px solid var(--colour-border);
+  border-radius: 6px;
+  color: var(--colour-text);
+  cursor: pointer;
+}
+
+.needlework-surface-zoom-btn:hover {
+  background: var(--colour-surface);
+}
+
+.needlework-surface-zoom-pct {
+  margin-left: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--colour-text-muted);
 }
 
 .needlework-surface-canvas-area {
   flex: 1;
   overflow: auto;
   padding: 1.5rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  text-align: center;
 }
 
 .needlework-surface-svg-wrapper {
   position: relative;
   display: inline-block;
-  max-width: 100%;
+  margin: 0 auto;
 }
 
 .needlework-surface-svg-wrapper svg {

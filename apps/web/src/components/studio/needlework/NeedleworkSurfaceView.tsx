@@ -17,6 +17,11 @@
 import { useState, useCallback, useMemo } from 'react'
 import type { NeedleworkPatternData, NeedleworkProjectProgressData, NeedleworkRegionAnnotation } from './types'
 
+/** "embroidery-straight" → "Straight" for the stitch checklist. */
+function prettyStitch(s: string): string {
+  return s.replace(/^embroidery-/, '').replace(/-/g, ' ').replace(/^\w/, (c) => c.toUpperCase())
+}
+
 interface NeedleworkSurfaceViewProps {
   pattern: NeedleworkPatternData
   progress: NeedleworkProjectProgressData | null
@@ -31,6 +36,9 @@ export function NeedleworkSurfaceView({
   onRegionToggle,
 }: NeedleworkSurfaceViewProps) {
   const [, setHoveredRegion] = useState<string | null>(null)
+  const [zoom, setZoom] = useState(1)
+  const zoomIn = useCallback(() => setZoom((z) => Math.min(5, +(z * 1.25).toFixed(2))), [])
+  const zoomOut = useCallback(() => setZoom((z) => Math.max(0.5, +(z / 1.25).toFixed(2))), [])
 
   const completedRegions = useMemo(() => progress?.completedRegions ?? {}, [progress])
   const annotations: NeedleworkRegionAnnotation[] = pattern.regionAnnotations ?? []
@@ -64,20 +72,28 @@ export function NeedleworkSurfaceView({
 
   return (
     <div className="needlework-surface-view">
-      <div className="needlework-surface-canvas-area">
-        {vectorData ? (
-          <div className="needlework-surface-svg-wrapper">
-            {/* Render the SVG outline */}
+      <div className="needlework-surface-main">
+        <div className="needlework-surface-zoombar">
+          <button type="button" className="needlework-surface-zoom-btn" onClick={zoomOut} aria-label="Zoom out">−</button>
+          <button type="button" className="needlework-surface-zoom-btn" onClick={() => setZoom(1)}>Fit</button>
+          <button type="button" className="needlework-surface-zoom-btn" onClick={zoomIn} aria-label="Zoom in">+</button>
+          <span className="needlework-surface-zoom-pct">{Math.round(zoom * 100)}%</span>
+        </div>
+        <div className="needlework-surface-canvas-area">
+          {vectorData ? (
+            // The design fills the canvas at Fit; zooming widens it past the
+            // canvas so it scrolls (pan) for a close look.
             <div
+              className="needlework-surface-svg-wrapper"
+              style={{ width: `${Math.round(zoom * 100)}%`, maxWidth: zoom <= 1 ? 760 : undefined }}
               dangerouslySetInnerHTML={{ __html: vectorData.svgContent }}
-              style={{ maxWidth: vectorData.width, width: '100%' }}
             />
-          </div>
-        ) : (
-          <div style={{ padding: '2rem', color: 'var(--colour-text-muted)', fontSize: '0.875rem' }}>
-            Design outline not available for this pattern. Follow the printed transfer sheet.
-          </div>
-        )}
+          ) : (
+            <div style={{ padding: '2rem', color: 'var(--colour-text-muted)', fontSize: '0.875rem' }}>
+              Design outline not available for this pattern. Follow the printed transfer sheet.
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="needlework-surface-annotations">
@@ -111,7 +127,7 @@ export function NeedleworkSurfaceView({
                     />
                     <div className="needlework-surface-annotation-body">
                       <div className="needlework-surface-annotation-stitch">
-                        {annotation.stitchType}
+                        {prettyStitch(annotation.stitchType)}
                       </div>
                       <div className="needlework-surface-annotation-thread">
                         {annotation.threadRef}

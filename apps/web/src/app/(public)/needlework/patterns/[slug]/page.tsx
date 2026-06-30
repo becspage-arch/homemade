@@ -167,7 +167,7 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
           <dl className="nw-detail-spec">
             <div><dt>Finished size</dt><dd>{finishedW.toFixed(0)} × {finishedH.toFixed(0)} mm</dd></div>
             <div><dt>Colours</dt><dd>{doc.flossKey.length}</dd></div>
-            <div><dt>Stitches used</dt><dd>{doc.stitchKey.length}</dd></div>
+            <div><dt>Stitch types</dt><dd>{doc.stitchKey.length}</dd></div>
             {row.difficulty && <div><dt>Difficulty</dt><dd>{prettify(row.difficulty)}</dd></div>}
             {row.estimatedHours && <div><dt>Time</dt><dd>~{row.estimatedHours}h</dd></div>}
             {row.frameType && <div><dt>Frame</dt><dd>{prettify(row.frameType.replace(/_/g, ' '))}</dd></div>}
