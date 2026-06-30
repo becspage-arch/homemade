@@ -427,7 +427,10 @@
 
 .needlework-surface-svg-wrapper svg {
   display: block;
-  max-width: 100%;
+  /* Fill the wrapper (whose width the zoom controls drive) rather than sitting
+     at the SVG's intrinsic mm size — so Fit fills the canvas and + actually
+     enlarges the design. */
+  width: 100%;
   height: auto;
 }
 
