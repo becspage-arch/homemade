@@ -3,7 +3,9 @@ import { headers } from 'next/headers'
 import {
   prisma,
   TutorialStatus,
+  TutorialType,
   UserProjectStatus,
+  Visibility,
   type User,
 } from '@homemade/db'
 import {
@@ -20,10 +22,27 @@ import { getCurrentWeekPicks, isoWeekStartUtc } from './editorial-picks'
 
 const SPINE_CATEGORY_SLUGS = ['cooking', 'baking', 'garden', 'mindset', 'herbal']
 
+// Tutorial types that count as "make something this week" on the discovery
+// wall + the inspiring hero. Learn-type tutorials (TECHNIQUE, STITCH, READING,
+// HERB_PROFILE) teach a skill rather than produce a finished make, so they're
+// kept out of these inspire-to-make surfaces (they still appear on category
+// pages + search). PRACTICE (mindset) is excluded pending owner sign-off on
+// whether a mindset practice counts as "making something".
+export const MAKE_SOMETHING_TUTORIAL_TYPES: TutorialType[] = [
+  TutorialType.RECIPE,
+  TutorialType.REMEDY,
+  TutorialType.GROWING_GUIDE,
+  TutorialType.PATTERN,
+]
+
+// How many real patterns to surface in the discovery feed / hero rotation.
+const DISCOVERY_PATTERN_LIMIT = 24
+
 interface TutorialCardSelect {
   id: string
   slug: string
   title: string
+  type: TutorialType
   excerpt: string | null
   difficulty: string
   totalMinutes: number | null
@@ -44,6 +63,7 @@ const CARD_SELECT = {
   id: true,
   slug: true,
   title: true,
+  type: true,
   excerpt: true,
   difficulty: true,
   totalMinutes: true,
@@ -72,6 +92,27 @@ export interface HomepageScheduledAction {
   nextScheduledAt: Date
 }
 
+interface HomepageMedia {
+  cloudflareId: string | null
+  r2Key: string | null
+  alt: string | null
+}
+
+// A real, published pattern from the catalogue, shaped for the discovery wall
+// and the inspiring hero. Spans the generic Pattern model (cross-stitch /
+// knitting / crochet) and the NeedleworkPattern model. `craftSlug` is the
+// public category the detail page lives under; `detailHref` is pre-resolved by
+// the loader so the render layer doesn't need to know the routing rules.
+export interface DiscoveryPatternCard {
+  id: string
+  slug: string | null
+  name: string
+  craftSlug: string
+  detailHref: string
+  hero: HomepageMedia | null
+  thumbnail: HomepageMedia | null
+}
+
 // In-progress pattern (from UserPatternProgress) shaped for the resume rail.
 // Patterns live in a separate progress system from tutorials, so they carry
 // their own minimal card shape and route to the right Studio by type.
@@ -98,6 +139,10 @@ export interface HomepageData {
   whereYouLeftOff: TutorialCardSelect[]
   newSinceLastVisit: TutorialCardSelect[]
   mostLovedBySpine: { categorySlug: string; categoryName: string; tutorials: TutorialCardSelect[] }[]
+  // Real published patterns (Pattern + NeedleworkPattern) for the discovery
+  // wall — interleaved with the tutorials so the wall mixes recipes, makes and
+  // patterns rather than food alone.
+  discoveryPatterns: DiscoveryPatternCard[]
   allCategories: { slug: string; name: string; description: string | null }[]
   // Reader state (bookmarks + project status) for every tutorial across every
   // rail. Lookups in the render layer pull from this map.
@@ -111,6 +156,7 @@ export type HomepageHero =
   | { kind: 'SCHEDULED_STEP'; action: HomepageScheduledAction }
   | { kind: 'CONTINUE_MAKING'; project: TutorialCardSelect }
   | { kind: 'EDITORIAL_PICK'; tutorial: TutorialCardSelect }
+  | { kind: 'PATTERN_PICK'; pattern: DiscoveryPatternCard }
   | { kind: 'WORDMARK_FALLBACK' }
 
 async function readCountryCode(): Promise<string | null> {
@@ -154,6 +200,8 @@ export async function loadHomepageData(
     newSinceLastVisitRows,
     spineCategoryRows,
     allCategoryRows,
+    featuredPatternRows,
+    featuredNeedleworkRows,
   ] = await Promise.all([
     // Today's scheduled project actions — any UserProject whose next step is
     // due within the last 7 days and not completed.
@@ -244,6 +292,51 @@ export async function loadHomepageData(
       where: { isPublicVisible: true },
       orderBy: [{ launchOrder: 'asc' }, { order: 'asc' }, { name: 'asc' }],
       select: { id: true, slug: true, name: true, description: true },
+    }),
+    // Real published patterns for the discovery wall + hero rotation. Only
+    // rows with a persisted image (chart render thumbnail or finished-piece
+    // hero) so every tile resolves to a picture, ranked by popularity then
+    // recency. Limited to publicly-visible craft categories so links resolve.
+    prisma.pattern.findMany({
+      where: {
+        visibility: Visibility.PUBLIC,
+        publishedAt: { not: null },
+        OR: [
+          { thumbnailMediaId: { not: null } },
+          { heroMediaId: { not: null } },
+        ],
+        subCategory: { category: { isPublicVisible: true } },
+      },
+      orderBy: [{ popularityScore: 'desc' }, { publishedAt: 'desc' }],
+      take: DISCOVERY_PATTERN_LIMIT,
+      select: {
+        id: true,
+        slug: true,
+        name: true,
+        type: true,
+        hero: { select: { cloudflareId: true, r2Key: true, alt: true } },
+        thumbnail: { select: { cloudflareId: true, r2Key: true, alt: true } },
+        subCategory: { select: { category: { select: { slug: true } } } },
+      },
+    }),
+    prisma.needleworkPattern.findMany({
+      where: {
+        visibility: Visibility.PUBLIC,
+        publishedAt: { not: null },
+        OR: [
+          { thumbnailMediaId: { not: null } },
+          { heroMediaId: { not: null } },
+        ],
+      },
+      orderBy: [{ publishedAt: 'desc' }],
+      take: DISCOVERY_PATTERN_LIMIT,
+      select: {
+        id: true,
+        slug: true,
+        name: true,
+        hero: { select: { cloudflareId: true, r2Key: true, alt: true } },
+        thumbnail: { select: { cloudflareId: true, r2Key: true, alt: true } },
+      },
     }),
   ])
 
@@ -349,6 +442,46 @@ export async function loadHomepageData(
     }
   }
 
+  // Map the two pattern models into one discovery shape, pre-resolving the
+  // detail href so the render layer stays routing-agnostic. Cross-stitch +
+  // needlework have public detail pages; a knitting / crochet row without a
+  // detail route falls back to opening its Studio.
+  const discoveryPatterns: DiscoveryPatternCard[] = [
+    ...featuredPatternRows.map((p) => {
+      const craftSlug = patternCraftSlug(p.type, p.subCategory?.category.slug)
+      return {
+        id: p.id,
+        slug: p.slug,
+        name: p.name,
+        craftSlug,
+        detailHref: patternDetailHref({
+          source: 'pattern',
+          slug: p.slug,
+          id: p.id,
+          craftSlug,
+          patternType: p.type,
+        }),
+        hero: p.hero,
+        thumbnail: p.thumbnail,
+      }
+    }),
+    ...featuredNeedleworkRows.map((p) => ({
+      id: p.id,
+      slug: p.slug,
+      name: p.name,
+      craftSlug: 'needlework',
+      detailHref: patternDetailHref({
+        source: 'needlework',
+        slug: p.slug,
+        id: p.id,
+        craftSlug: 'needlework',
+        patternType: null,
+      }),
+      hero: p.hero,
+      thumbnail: p.thumbnail,
+    })),
+  ]
+
   // Build the consolidated tutorial-id set for reader state.
   const allTutorialIds = new Set<string>()
   for (const a of todaysScheduledActions) allTutorialIds.add(a.tutorial.id)
@@ -365,30 +498,41 @@ export async function loadHomepageData(
     ? await loadReaderState(currentUser.id, Array.from(allTutorialIds))
     : emptyReaderState()
 
-  // Hero selection. The big hero is always the seasonal editorial pick —
-  // never a previously-viewed project. "Continue where you left off" has its
-  // own rail below; the hero's job is to inspire, not to resume (Rebecca,
-  // 2026-06-19). Rotates on a weekly bucket so it refreshes once a week with
-  // no manual curation. Pool preference: EDITORIAL-graded picks → the full
-  // weekly pick list → in-season content, landing on the wordmark only when
-  // there is genuinely nothing to show.
+  // Hero selection. The big hero is always an inspiring make — never a
+  // previously-viewed project. "Continue where you left off" has its own rail
+  // below; the hero's job is to inspire, not to resume (Rebecca, 2026-06-19).
+  //
+  // Rotates on a DAILY bucket so it visibly changes day to day, and the pool
+  // mixes real patterns (crafts) in among the editorial / seasonal tutorials
+  // so it isn't forever a recipe. Tutorial pool preference: EDITORIAL-graded
+  // picks → the full weekly pick list → in-season content; only "make
+  // something" types ever lead the hero. Patterns are interleaved with the
+  // tutorials so consecutive days alternate a make and a pattern. Lands on the
+  // wordmark only when there is genuinely nothing to show.
   let hero: HomepageHero
   if (isOnboardingPending) {
     hero = { kind: 'ONBOARDING' }
   } else {
-    const editorialPool = thisWeeksEditorialPicks.filter(
+    const editorialGraded = thisWeeksEditorialPicks.filter(
       (t) => t.heroQuality === 'EDITORIAL',
     )
-    const rotationPool =
-      editorialPool.length > 0
-        ? editorialPool
+    const tutorialPoolRaw =
+      editorialGraded.length > 0
+        ? editorialGraded
         : thisWeeksEditorialPicks.length > 0
           ? thisWeeksEditorialPicks
           : inSeasonNow
-    const editorialPick = pickByDayBucket(rotationPool, now, 7)
-    hero = editorialPick
-      ? { kind: 'EDITORIAL_PICK', tutorial: editorialPick }
-      : { kind: 'WORDMARK_FALLBACK' }
+    const tutorialPool = tutorialPoolRaw.filter((t) =>
+      MAKE_SOMETHING_TUTORIAL_TYPES.includes(t.type),
+    )
+
+    // Interleave tutorials and patterns into one rotation pool so daily
+    // walking alternates crafts and makes rather than blocking by source.
+    const heroPool: HomepageHero[] = interleaveHero<HomepageHero>(
+      tutorialPool.map((t): HomepageHero => ({ kind: 'EDITORIAL_PICK', tutorial: t })),
+      discoveryPatterns.map((p): HomepageHero => ({ kind: 'PATTERN_PICK', pattern: p })),
+    )
+    hero = pickByDayBucket(heroPool, now, 1) ?? { kind: 'WORDMARK_FALLBACK' }
   }
 
   // Update lastSeenAt so the "new since last visit" rail uses last-real-visit
@@ -445,6 +589,7 @@ export async function loadHomepageData(
     whereYouLeftOff,
     newSinceLastVisit,
     mostLovedBySpine,
+    discoveryPatterns,
     allCategories: allCategoryRows,
     readerState,
     hero,
@@ -467,4 +612,56 @@ function pickByDayBucket<T>(pool: T[], now: Date, windowDays: number): T | null 
   const bucket = Math.floor(now.getTime() / msPerWindow)
   const index = ((bucket % pool.length) + pool.length) % pool.length
   return pool[index] ?? null
+}
+
+/** Round-robin merge of two lists — take a, then b, then a, … — so the hero
+ *  rotation pool alternates tutorials and patterns rather than blocking by
+ *  source. */
+function interleaveHero<T>(a: T[], b: T[]): T[] {
+  const out: T[] = []
+  const max = Math.max(a.length, b.length)
+  for (let i = 0; i < max; i += 1) {
+    if (a[i]) out.push(a[i]!)
+    if (b[i]) out.push(b[i]!)
+  }
+  return out
+}
+
+/** Public craft category a Pattern row lives under. Prefers the row's
+ *  sub-category's category; falls back to the pattern type when unset. */
+function patternCraftSlug(type: string, categorySlug?: string): string {
+  if (categorySlug) return categorySlug
+  switch (type) {
+    case 'KNITTING_CHART':
+      return 'knitting'
+    case 'CROCHET_CHART':
+      return 'crochet'
+    default:
+      return 'cross-stitch'
+  }
+}
+
+/** Resolve the public detail href for a pattern. Cross-stitch + needlework
+ *  have detail pages; a slug-less (or route-less) row opens its Studio. */
+function patternDetailHref(p: {
+  source: 'pattern' | 'needlework'
+  slug: string | null
+  id: string
+  craftSlug: string
+  patternType: string | null
+}): string {
+  if (p.source === 'needlework') {
+    return p.slug ? `/needlework/patterns/${p.slug}` : '/needlework'
+  }
+  if (p.craftSlug === 'cross-stitch' && p.slug) {
+    return `/cross-stitch/patterns/${p.slug}`
+  }
+  // Knitting / crochet have no public detail route yet — open the Studio.
+  const studio =
+    p.patternType === 'KNITTING_CHART'
+      ? 'knitting'
+      : p.patternType === 'CROCHET_CHART'
+        ? 'crochet'
+        : 'cross-stitch'
+  return `/studio/${studio}?patternId=${p.id}`
 }

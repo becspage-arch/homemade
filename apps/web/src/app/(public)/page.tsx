@@ -9,7 +9,10 @@ import { HeroOverlay } from '@/components/public/home-cards/hero-overlay'
 import { ScheduledActionCard } from '@/components/public/home-cards/scheduled-action-card'
 import { Wordmark } from '@/components/wordmark'
 import { getCurrentDbUser } from '@/lib/get-current-user'
-import { loadHomepageData } from '@/lib/homepage-data'
+import {
+  loadHomepageData,
+  MAKE_SOMETHING_TUTORIAL_TYPES,
+} from '@/lib/homepage-data'
 import { loadRecentlyMade } from '@/lib/recently-made'
 import { loadActiveMakerOfTheMonth } from '@/lib/maker-of-the-month'
 import { MakerOfTheMonthTile } from '@/components/public/maker-of-the-month-tile'
@@ -66,24 +69,41 @@ export default async function HomePage() {
 
   // Discover wall: fold the discovery rails (in-season, this week's editorial
   // picks, new, most-loved) into one deduped, source-interleaved list so the
-  // wall mixes categories rather than clustering them, then weave community
-  // makes in among the tutorials.
+  // wall mixes categories rather than clustering them. Only "make something"
+  // tutorial types qualify — learn-type tutorials (techniques, stitches,
+  // readings, herb profiles) are filtered out so the wall is things to make,
+  // not things to study. Real catalogue patterns are then round-robined in
+  // among the tutorials, and community makes woven through both.
   const discoveryTutorials = interleaveDedupe([
     data.inSeasonNow,
     data.thisWeeksEditorialPicks,
     data.newSinceLastVisit,
     ...data.mostLovedBySpine.map((g) => g.tutorials),
-  ]).slice(0, 28)
+  ])
+    .filter((t) => MAKE_SOMETHING_TUTORIAL_TYPES.includes(t.type))
+    .slice(0, 24)
 
+  // Round-robin tutorials and patterns so the wall alternates makes and
+  // patterns rather than blocking one source then the other.
+  const makes: DiscoveryItem[] = []
+  const maxMakes = Math.max(discoveryTutorials.length, data.discoveryPatterns.length)
+  for (let i = 0; i < maxMakes; i++) {
+    const t = discoveryTutorials[i]
+    if (t) makes.push({ kind: 'tutorial', tutorial: t })
+    const p = data.discoveryPatterns[i]
+    if (p) makes.push({ kind: 'pattern', pattern: p })
+  }
+
+  // Weave community makes in every sixth tile, then top up at the tail.
   const discoveryItems: DiscoveryItem[] = []
   let communityIdx = 0
-  discoveryTutorials.forEach((tutorial, i) => {
-    discoveryItems.push({ kind: 'tutorial', tutorial })
+  makes.slice(0, 36).forEach((item, i) => {
+    discoveryItems.push(item)
     if ((i + 1) % 6 === 0 && communityIdx < recentlyMade.length) {
       discoveryItems.push({ kind: 'community', tile: recentlyMade[communityIdx++]! })
     }
   })
-  while (communityIdx < recentlyMade.length && discoveryItems.length < 36) {
+  while (communityIdx < recentlyMade.length && discoveryItems.length < 42) {
     discoveryItems.push({ kind: 'community', tile: recentlyMade[communityIdx++]! })
   }
 
@@ -131,6 +151,18 @@ export default async function HomePage() {
               title={data.hero.tutorial.title}
               excerpt={data.hero.tutorial.excerpt}
               ctaLabel={heroCtaLabel(data.hero.tutorial.category.slug)}
+            />
+          )}
+
+          {data.hero.kind === 'PATTERN_PICK' && (
+            <HeroOverlay
+              href={data.hero.pattern.detailHref}
+              imageMedia={data.hero.pattern.hero ?? data.hero.pattern.thumbnail}
+              overline={null}
+              eyebrow={null}
+              title={data.hero.pattern.name}
+              excerpt={null}
+              ctaLabel="Start stitching →"
             />
           )}
 

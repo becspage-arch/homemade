@@ -367,6 +367,12 @@ export async function getCurrentWeekPicks(now: Date = new Date()) {
           id: true,
           slug: true,
           title: true,
+          // type + heroQuality drive the homepage hero: heroQuality lets the
+          // hero prefer EDITORIAL-graded imagery (the filter was dead without
+          // it), type keeps learn-type tutorials out of the inspire-to-make
+          // hero + discovery wall.
+          type: true,
+          heroQuality: true,
           excerpt: true,
           difficulty: true,
           season: true,

@@ -1,19 +1,23 @@
 import Link from 'next/link'
 import { DiscoveryCard, type DiscoveryCardTutorial } from './home-cards/discovery-card'
+import { DiscoveryPatternCard } from './home-cards/discovery-pattern-card'
 import { PinterestCard } from './home-cards/pinterest-card'
 import type { ReaderStateMap } from '@/lib/user-state'
 import { readerStateFor } from '@/lib/user-state'
 import type { RecentlyMadeTile } from '@/lib/recently-made'
+import type { DiscoveryPatternCard as DiscoveryPattern } from '@/lib/homepage-data'
 
 import './home-cards/home-cards.css'
 
 /**
- * One entry in the discovery wall: either a tutorial to make, or a real make
- * from the community. Built in the homepage loader and interleaved so the
- * wall mixes categories and community work rather than siloing them.
+ * One entry in the discovery wall: a tutorial to make, a real catalogue
+ * pattern, or a real make from the community. Built in the homepage loader and
+ * interleaved so the wall mixes categories, patterns and community work rather
+ * than siloing them.
  */
 export type DiscoveryItem =
   | { kind: 'tutorial'; tutorial: DiscoveryCardTutorial }
+  | { kind: 'pattern'; pattern: DiscoveryPattern }
   | { kind: 'community'; tile: RecentlyMadeTile }
 
 interface DiscoveryFeedProps {
@@ -49,15 +53,25 @@ export function DiscoveryFeed({
       </header>
 
       <div className="home-discovery-masonry">
-        {items.map((item) =>
-          item.kind === 'tutorial' ? (
-            <div className="home-discovery-item" key={`t-${item.tutorial.id}`}>
-              <DiscoveryCard
-                tutorial={item.tutorial}
-                saved={readerStateFor(readerState, item.tutorial.id).bookmarked}
-              />
-            </div>
-          ) : (
+        {items.map((item) => {
+          if (item.kind === 'tutorial') {
+            return (
+              <div className="home-discovery-item" key={`t-${item.tutorial.id}`}>
+                <DiscoveryCard
+                  tutorial={item.tutorial}
+                  saved={readerStateFor(readerState, item.tutorial.id).bookmarked}
+                />
+              </div>
+            )
+          }
+          if (item.kind === 'pattern') {
+            return (
+              <div className="home-discovery-item" key={`p-${item.pattern.id}`}>
+                <DiscoveryPatternCard pattern={item.pattern} saved={false} />
+              </div>
+            )
+          }
+          return (
             <div className="home-discovery-item" key={`c-${item.tile.projectId}`}>
               <PinterestCard
                 href={`/m/${item.tile.makerHandle}/made/${item.tile.projectId}`}
@@ -66,8 +80,8 @@ export function DiscoveryFeed({
                 byline={`Made by ${item.tile.makerName}`}
               />
             </div>
-          ),
-        )}
+          )
+        })}
       </div>
 
       {moreHref && (

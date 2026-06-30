@@ -522,6 +522,16 @@ model Category {
   // FIX      → home-repair
   archetype CategoryArchetype @default(RECIPE)
 
+  // Deliberate homepage browse-tile image override. When set, the "Browse all
+  // categories" grid uses this Media instead of deriving a tile from the
+  // category's content. Lets a category show a hand-picked, on-brand image
+  // (e.g. a real cross-stitch chart render rather than a stock technique
+  // photo a tutorial happened to carry). When null, pattern-craft categories
+  // fall back to their most-popular published pattern, and everything else to
+  // the most-loved published tutorial's photo. Nullable + additive.
+  tileImageMediaId String?
+  tileImage        Media?  @relation("CategoryTileImage", fields: [tileImageMediaId], references: [id], onDelete: SetNull)
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -1608,6 +1618,9 @@ model Media {
   tutorialsHero    Tutorial[]
   ugcPhotos        UGCPhoto[]
   makerHeaderUsers User[]     @relation("UserMakerHeader")
+
+  // Homepage browse-tile overrides (phase_homepage_fixes_001).
+  categoryTileImages Category[] @relation("CategoryTileImage")
 
   // Pattern Studio (phase_pattern_studio_001).
   patternThumbnails Pattern[]  @relation("PatternThumbnail")

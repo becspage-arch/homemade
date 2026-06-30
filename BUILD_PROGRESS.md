@@ -4464,3 +4464,35 @@ fix, not a rebuild.
   familiarCanon re-judged. This dropped the canon gap from 4 to 2 (Madeira cake
   + Battenberg existed, just mis-filed). 2 savoury tarts nudged onto cooking's
   pies-bakes; overnight-oats / French-toast correctly left in cooking. DB-only.
+
+## 2026-06-30 — Homepage fixes (phase_homepage_fixes_001)
+
+Three live-site problems the owner spotted on the homepage:
+
+- **Hero felt static + always a recipe.** It rotated on a 7-day bucket (fixed
+  within a week) over the weekly editorial picks (cooking/baking-dominated).
+  Now rotates DAILY and the rotation pool interleaves real patterns (crafts)
+  with the editorial/seasonal tutorials, so consecutive days alternate a make
+  and a pattern. New `PATTERN_PICK` hero kind. Verified: hero renders a
+  cross-stitch chart ("French Bulldog", "Start stitching →").
+- **heroQuality filter was dead.** `homepage-data.ts` filtered editorial picks
+  by `heroQuality === 'EDITORIAL'`, but `getCurrentWeekPicks()` never selected
+  `heroQuality` — so the "prefer best imagery" preference was always empty.
+  Added `heroQuality` + `type` to the pick select; the preference works again.
+- **"Make something this week" only showed food.** The discovery wall was fed
+  from Tutorials only (and most-loved was hard-limited to the spine slugs), so
+  it pulled ZERO patterns. Now: learn-type tutorials (TECHNIQUE / STITCH /
+  READING / HERB_PROFILE) are excluded; RECIPE / REMEDY / GROWING_GUIDE /
+  Tutorial-PATTERN kept; and the real pattern catalogue (Pattern +
+  NeedleworkPattern) is round-robined in via a new `pattern` DiscoveryItem
+  kind + `DiscoveryPatternCard`. Verified: wall interleaves recipes + cross-
+  stitch patterns. PRACTICE (mindset) left OUT pending owner sign-off (open
+  question raised in the hand-off).
+- **Cross-stitch category tile was a stock embroidery photo.** Tiles derived
+  from the most-loved published TUTORIAL's photo, so cross-stitch showed a
+  technique article's stock shot. Added `Category.tileImageMediaId` (migration
+  `phase_homepage_fixes_001`, additive nullable) for deliberate overrides, and
+  a resolution order: override → pattern-craft categories use their most-
+  popular published pattern (a real chart render) → tutorial photo. Verified:
+  cross-stitch tile now a chart render; cooking/baking unchanged (recipe
+  photos, correct). Only 3 categories are public-visible today.
