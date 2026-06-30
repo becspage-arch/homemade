@@ -101,6 +101,9 @@ export function stepText(body: unknown): string {
     }
     if (node.type === 'heading') continue
     if (node.type === 'ingredientsList') continue
+    // Tip / note blocks are not method steps — a "if you have no buttermilk,
+    // mix milk with lemon" infoPanel names a substitute, not a required line.
+    if (node.type === 'infoPanel' || node.type === 'troubleshooter') continue
     if (inMethod) parts.push(nodeText(node))
     else if (node.type === 'orderedList') parts.push(nodeText(node))
   }
