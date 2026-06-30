@@ -79,21 +79,21 @@ A theme must contain subjects across **all four tiers**. Never all one level.
 
 | #   | Theme                                  | Mode(s)     | Frame       | Status  |
 |-----|----------------------------------------|-------------|-------------|---------|
-| 1   | Cute animals & pets                    | D           | hoop/none   | todo    |
+| 1   | Cute animals & pets                    | D           | hoop/none   | started |
 | 2   | Dog breed portraits (realistic)        | D           | hoop/none   | todo    |
 | 3   | Cat breed portraits (realistic)        | D           | hoop/none   | todo    |
-| 4   | Woodland & wildlife                    | D / B       | hoop/none   | todo    |
+| 4   | Woodland & wildlife                    | D / B       | hoop/none   | started |
 | 5   | Farm animals & smallholding            | D / B       | hoop        | todo    |
-| 6   | Garden & exotic birds                  | D           | hoop/none   | todo    |
-| 7   | Bees, butterflies & moths              | D / L       | hoop        | todo    |
+| 6   | Garden & exotic birds                  | D           | hoop/none   | started |
+| 7   | Bees, butterflies & moths              | D / L       | hoop        | started |
 | 8   | Sea life & coastal                     | D / B       | hoop/none   | todo    |
 | 9   | Cute fantasy creatures                 | D           | hoop        | todo    |
-| 10  | Florals & bouquets                     | D / L       | hoop/none   | todo    |
+| 10  | Florals & bouquets                     | D / L       | hoop/none   | started |
 | 11  | Single botanical stems                 | L           | hoop/none   | todo    |
 | 12  | Delicate line motifs (jars/sprigs)     | L           | hoop        | todo    |
 | 13  | Wreaths & circular compositions        | D / L       | hoop        | todo    |
 | 14  | Houseplants & terrariums               | D / L       | hoop/none   | todo    |
-| 15  | Mushrooms & cottagecore                | D / B       | hoop        | todo    |
+| 15  | Mushrooms & cottagecore                | D / B       | hoop        | started |
 | 16  | Food, drink & baking                   | D / L       | hoop        | todo    |
 | 17  | Seasonal — Halloween                   | D / B       | hoop        | todo    |
 | 18  | Seasonal — Christmas & winter          | D / B       | hoop/none   | todo    |
@@ -103,16 +103,47 @@ A theme must contain subjects across **all four tiers**. Never all one level.
 | 22  | Celestial & constellations             | D / L       | hoop        | todo    |
 | 23  | Witchy & gothic                        | D / L       | hoop/none   | todo    |
 | 24  | Fairies & fantasy                      | D / B       | hoop        | todo    |
-| 25  | Cottages, shops & cosy scenes          | B           | none        | todo    |
+| 25  | Cottages, shops & cosy scenes          | B           | none        | started |
 | 26  | Landscapes & seascapes                 | B           | none        | todo    |
-| 27  | Animals doing human things             | B           | none        | todo    |
-| 28  | Fabulous / artistic faces              | D           | hoop/none   | todo    |
+| 27  | Animals doing human things             | B           | none        | started |
+| 28  | Fabulous / artistic faces              | D           | hoop/none   | started |
 | 29  | Pop-art & fashion portraits (PD/orig)  | D           | none        | todo    |
 | 30  | Nursery & baby                         | D / L       | hoop        | todo    |
 | 31  | Heritage PD reinterpretations          | D / L       | hoop        | todo    |
 | S1  | Word art / affirmations                | SPEC:word   | none        | deferred |
 | S2  | Maps with landmarks                    | SPEC:map    | none        | deferred |
 | S3  | Alphabet & stitch samplers             | SPEC:sampler| hoop/none   | deferred |
+
+"started" = at least one gem published into the gated catalogue (category still
+hidden; not yet exhausted). See the Batch log for the exact subjects.
+
+---
+
+## Batch log
+
+**Batch 1 — 2026-06-30** (first gated catalogue batch; category stays hidden).
+13 gems published UNLISTED (gated shop-window / free-login pattern + Studio), spanning
+the full range simple → XL and all three engine modes. Driver: `needlework-paint.ts`.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| peony | Peony Bloom | 10 Florals | D·XL (103 col) | hoop |
+| peacock | Peacock in Full Display | 6 Birds | D·XL | hoop |
+| facecrown | Flower Crown | 28 Fabulous faces | D·r | frameless |
+| cottage | Thatched Cottage Garden | 25 Cosy scenes | B·r | frameless |
+| dogwine | Rosé Dachshund | 27 Animals doing human things | B·r | frameless |
+| fox | Red Fox | 4 Woodland | D·r | frameless |
+| kingfisher | Kingfisher | 4 Woodland / 6 Birds | D·r | frameless |
+| cat | Sleeping Cat | 1 Cute animals | D·m | frameless |
+| hare | Brown Hare | 4 Woodland | D·m | hoop |
+| robin | Robin & Berries | 4 Woodland / 6 Birds | D·m | hoop |
+| bee | Bumblebee & Lavender | 7 Bees & butterflies | D·m | hoop |
+| mushroomscene | Toadstool Glade | 15 Mushrooms & cottagecore | D·r | frameless |
+| bluetit | Blue Tit | 6 Birds | D·s | hoop |
+
+Culled this batch: `jar`, `sprig` (line mode — back-stitched jar/stems render as a grey
+scrawl; line mode is the weak spot and needs a focused engine pass before it ships). The
+simple tier is covered by `bluetit` (simple dense motif) instead.
 
 ---
 
