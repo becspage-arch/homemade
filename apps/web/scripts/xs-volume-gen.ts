@@ -325,7 +325,7 @@ export const BRIEFS: Brief[] = [
   B('M', 'm-fairy-ring-dusk', 195, 195, 58, 'fantasy', 'a circle of fairies dancing in a moonlit toadstool ring with glowing lanterns and fireflies'),
   // ── pop art & portraits (popart) ──
   B('M', 'm-popart-headphones', 150, 195, 22, 'popart', 'a cool young woman in big retro headphones with a sleek bob, bold orange background'),
-  B('M', 'm-popart-fur-hat', 150, 195, 22, 'popart', 'a glamorous woman in a fluffy fur hat and bold red lipstick, deep teal background'),
+  B('M', 'm-popart-fur-hat', 150, 195, 22, 'popart', 'a glamorous woman in a fluffy fur hat and bold red lipstick, shown head AND shoulders wearing an elegant black coat with a visible collar and neckline, deep teal background'),
   B('M', 'm-popart-gent-pipe', 150, 195, 22, 'popart', 'a dapper gentleman with a neat beard, flat cap and a pipe, mustard background'),
   B('M', 'm-popart-sunhat', 150, 195, 24, 'popart', 'a chic woman in a wide sunhat and cat-eye sunglasses sipping a cocktail, coral background'),
   // ── fabulous faces (artface, detailed, varied skin tones) ──
