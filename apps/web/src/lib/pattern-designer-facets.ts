@@ -15,12 +15,9 @@
 
 import { prisma } from '@homemade/db'
 import { tagSourceForCategory } from './pattern-tag-facets'
+import type { DesignerFacet } from './pattern-tag-axes'
 
-export interface DesignerFacet {
-  slug: string
-  name: string
-  count: number
-}
+export type { DesignerFacet } from './pattern-tag-axes'
 
 export async function getPatternDesignerFacets(
   categorySlug: string,

@@ -7,7 +7,9 @@ import {
   TAG_AXES,
   TAG_AXIS_LABEL,
   TAG_AXIS_PARAM,
+  DESIGNER_FILTER_MIN,
   type TagFacets,
+  type DesignerFacet,
 } from '@/lib/pattern-tag-axes'
 
 interface CrochetPatternCardData {
@@ -36,6 +38,8 @@ interface Props {
   patterns: CrochetPatternCardData[]
   subCategories: SubCategoryRef[]
   tagFacets: TagFacets
+  /** Designers with published patterns here; gates the Designer dropdown. */
+  designerFacets: DesignerFacet[]
   searchPlaceholder: string
   currentFilters: {
     sub: string | null
@@ -48,6 +52,7 @@ interface Props {
     style: string | null
     subject: string | null
     audience: string | null
+    designer: string | null
   }
   basePath: string
 }
@@ -64,6 +69,7 @@ export function CrochetPatternGrid({
   patterns,
   subCategories,
   tagFacets,
+  designerFacets,
   searchPlaceholder,
   currentFilters,
   basePath,
@@ -83,16 +89,19 @@ export function CrochetPatternGrid({
   const currentTag = (axis: (typeof TAG_AXES)[number]): string | null =>
     currentFilters[TAG_AXIS_PARAM[axis] as keyof typeof currentFilters] as string | null
 
+  const showDesignerFilter = designerFacets.length >= DESIGNER_FILTER_MIN
+
   const anyFilterActive =
     Boolean(currentFilters.sub) ||
     Boolean(currentFilters.difficulty) ||
     Boolean(currentFilters.yarnWeight) ||
     Boolean(currentFilters.q) ||
+    Boolean(currentFilters.designer) ||
     TAG_FILTER_KEYS.some((k) => currentFilters[k])
 
   const clearAll = () => {
     const params = new URLSearchParams(searchParams.toString())
-    for (const k of ['sub', 'difficulty', 'yarnWeight', 'q', ...TAG_FILTER_KEYS]) params.delete(k)
+    for (const k of ['sub', 'difficulty', 'yarnWeight', 'q', 'designer', ...TAG_FILTER_KEYS]) params.delete(k)
     const qs = params.toString()
     router.push(qs ? `${basePath}?${qs}#patterns` : `${basePath}#patterns`, { scroll: false })
   }
@@ -149,6 +158,24 @@ export function CrochetPatternGrid({
             />
           ))}
         </FilterGroup>
+
+        {showDesignerFilter && (
+          <FilterGroup title="Designer">
+            <select
+              className="cross-stitch-library-designer-select"
+              aria-label="Filter by designer"
+              value={currentFilters.designer ?? ''}
+              onChange={(e) => updateFilter('designer', e.target.value || null)}
+            >
+              <option value="">All designers</option>
+              {designerFacets.map((d) => (
+                <option key={d.slug} value={d.slug}>
+                  {d.name} ({d.count})
+                </option>
+              ))}
+            </select>
+          </FilterGroup>
+        )}
       </aside>
 
       <section className="cross-stitch-library-main">

@@ -8,7 +8,9 @@ import {
   TAG_AXES,
   TAG_AXIS_LABEL,
   TAG_AXIS_PARAM,
+  DESIGNER_FILTER_MIN,
   type TagFacets,
+  type DesignerFacet,
 } from '@/lib/pattern-tag-axes'
 
 interface PatternCard {
@@ -44,7 +46,7 @@ interface PatternLibraryGridProps {
    * Designer dropdown only renders once there are DESIGNER_FILTER_MIN of them —
    * a one- or two-designer category keeps it hidden.
    */
-  designerFacets: { slug: string; name: string; count: number }[]
+  designerFacets: DesignerFacet[]
   searchPlaceholder: string
   currentFilters: {
     sub: string | null
@@ -66,11 +68,6 @@ interface PatternLibraryGridProps {
 }
 
 const TAG_FILTER_KEYS = ['occasion', 'season', 'style', 'subject', 'audience'] as const
-
-// Minimum number of distinct designers in a category before the Designer
-// dropdown appears. Below this the filter is noise (it's just the house
-// designer and a name or two); as the roster grows it becomes useful. Tunable.
-const DESIGNER_FILTER_MIN = 4
 
 export function PatternLibraryGrid({
   patterns,
