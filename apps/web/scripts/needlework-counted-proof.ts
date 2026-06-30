@@ -117,7 +117,7 @@ const PATTERNS = [
 ]
 
 async function main(): Promise<void> {
-  const { prisma, parsePatternData, computePatternMetrics, Visibility, setContentTags, r2Upload } = await import('@homemade/db')
+  const { prisma, parsePatternData, computePatternMetrics, Visibility, setContentTags, r2Upload, ensureHouseDesigner } = await import('@homemade/db')
   // Render + sync inline (mirrors persistPatternThumbnail) to avoid the
   // 'server-only' guard in pattern-thumbnail.ts / search-sync.ts.
   const { buildPatternDoc } = await import('@homemade/db/search-docs')
@@ -130,12 +130,7 @@ async function main(): Promise<void> {
   const cat = await prisma.category.findUnique({ where: { slug: 'needlework' }, select: { id: true } })
   if (!cat) { console.error('no needlework category'); process.exit(1) }
 
-  const designer = await prisma.designer.upsert({
-    where: { slug: 'homemade-needlework' },
-    create: { slug: 'homemade-needlework', displayName: 'Homemade', bio: 'The Homemade house needlework label.', isHouseDesigner: true },
-    update: {},
-    select: { id: true },
-  })
+  const designer = await ensureHouseDesigner()
 
   for (const def of PATTERNS) {
     const sub = await prisma.subCategory.upsert({

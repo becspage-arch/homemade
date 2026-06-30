@@ -69,6 +69,11 @@ export {
 // with maybeFlipCategoryVisibility on every publish path.
 export { maybeFlipCategoryPipelineComplete } from './category-pipeline-status'
 
+// The single canonical Homemade house designer. Every publish path attaches
+// house-original patterns through ensureHouseDesigner() so duplicate "Homemade"
+// rows can't drift back into existence.
+export { ensureHouseDesigner, HOUSE_DESIGNER_SLUG } from './house-designer'
+
 // Reverse-sweep helpers (phase_technique_linking_002). The Inngest function
 // and the backfill script both call into `sweepForTechnique`; the pure
 // matcher helpers ship alongside for unit-testing without a database.

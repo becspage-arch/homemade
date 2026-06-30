@@ -25,7 +25,7 @@ function loadEnvFile(path: string): void {
 loadEnvFile(process.env.HOMEMADE_ENV_FILE ?? 'C:/Users/Rebecca/Projects/code/homemade/.env.credentials')
 
 import sharp from 'sharp'
-import { prisma, computePatternMetrics, Visibility, r2Upload } from '@homemade/db'
+import { prisma, computePatternMetrics, Visibility, r2Upload, ensureHouseDesigner } from '@homemade/db'
 import { fluxIllustration } from '../src/lib/studio/generation/sources'
 import { photoToPatternData } from '../src/lib/studio/photo-to-pattern'
 import { renderPatternSvgString } from '../src/components/studio/chart/render-svg-string'
@@ -85,12 +85,7 @@ async function main(): Promise<void> {
 
   const cat = await prisma.category.findUnique({ where: { slug: 'cross-stitch' }, select: { id: true } })
   if (!cat) throw new Error('no cross-stitch category')
-  const designer = await prisma.designer.upsert({
-    where: { slug: 'homemade-cross-stitch' },
-    create: { slug: 'homemade-cross-stitch', displayName: 'Homemade', bio: 'The Homemade house cross-stitch label.', isHouseDesigner: true },
-    update: {},
-    select: { id: true },
-  })
+  const designer = await ensureHouseDesigner()
   const { buildPatternDoc } = await import('@homemade/db/search-docs')
   const { syncPatternDoc } = await import('@homemade/search')
 
