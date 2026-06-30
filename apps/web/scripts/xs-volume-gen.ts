@@ -42,12 +42,13 @@ export const STYLE = {
   popart: 'minimalist FLAT vector pop-art portrait, bold clean areas of solid colour, elegant and stylish, limited sophisticated palette, simple plain background, NOT photographic',
   artface: 'a striking fine-art portrait illustration of a beautiful face adorned with flowers, THE WHOLE HEAD AND FOREHEAD CLEARLY VISIBLE with anatomically correct features and both eyes, bold clean areas of colour with elegant detail, sophisticated rich harmonious palette, gallery-art feel, plain background, stylised NOT photographic',
   icon: 'a bold stylised flat pop-art portrait of a historical figure, iconic and recognisable, the whole head clearly visible with correct features, clean areas of colour, limited sophisticated palette, plain background, NOT photographic',
+  dogportrait: 'a clean realistic illustrated portrait of the dog, head and shoulders, accurate breed features and markings, crisp detailed but flat-shaded illustration (NOT photographic, NOT painterly), the dog is the hero on a soft plain warm background',
 }
 // Per-lane SOURCE saturation — pre-saturate the Flux art before it's quantised into
 // floss so the palette itself is bold (Flux trends soft/pastel → washed otherwise).
 // The elegant botanical lane is deliberately muted, so barely touched.
 export const SRC_SAT: Record<keyof typeof STYLE, number> = {
-  bright: 1.5, cute: 1.45, pastel: 1.28, botanical: 1.12, wreath: 1.45, showpiece: 1.4, fun: 1.5, scene: 1.3, popart: 1.25, artface: 1.25, icon: 1.25,
+  bright: 1.5, cute: 1.45, pastel: 1.28, botanical: 1.12, wreath: 1.45, showpiece: 1.4, fun: 1.5, scene: 1.3, popart: 1.25, artface: 1.25, icon: 1.25, dogportrait: 1.18,
 }
 // Bright ivory aida (was a dull #F5EBD8 oatmeal that greyed every colour).
 export const FABRIC = '#FCFAF6'
@@ -298,6 +299,14 @@ export const BRIEFS: Brief[] = [
   B('K', 'bigscene-hamster-bakery', 195, 230, 50, 'scene', 'a hamster running a tiny bakery, trays of bread and cakes, a chalkboard menu and a queue'),
   B('K', 'bigscene-dog-wedding', 195, 230, 50, 'scene', 'a charming dog wedding with two dogs under a flower arch, guests in hats and confetti'),
   B('K', 'bigscene-owl-library', 195, 230, 50, 'scene', 'a wise owl librarian on a tall ladder in a grand library of towering bookshelves, lamps and a reading cat'),
+
+  // ─────────── BATCH L — dog breed portraits PILOT (de-risk the realistic lane) ───────────
+  B('L', 'dog-labrador-yellow', 160, 170, 32, 'dogportrait', 'a yellow Labrador retriever'),
+  B('L', 'dog-cockapoo', 160, 170, 32, 'dogportrait', 'an apricot cockapoo with a fluffy curly coat'),
+  B('L', 'dog-dachshund', 165, 160, 30, 'dogportrait', 'a smooth-haired black-and-tan dachshund'),
+  B('L', 'dog-frenchbulldog', 160, 165, 30, 'dogportrait', 'a fawn French bulldog with big bat ears'),
+  B('L', 'dog-bordercollie', 160, 170, 32, 'dogportrait', 'a black-and-white border collie'),
+  B('L', 'dog-goldenretriever', 160, 170, 34, 'dogportrait', 'a golden retriever with a soft smiling face'),
 ]
 
 type FluxSize = 'square_hd' | 'landscape_4_3' | 'portrait_4_3'

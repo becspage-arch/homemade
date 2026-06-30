@@ -49,6 +49,8 @@ Sizes: `S` (~110) · `M` (~150) · `L` (~190) · `XL` (~220+). Match to detail n
 | # | Theme | Route | Shapes | Status |
 |---|-------|-------|--------|--------|
 | 1 | Cute animals & pets | GEN | sq/circ | gen (A–E) |
+| 1b | Dog breed portraits (realistic) | GEN | sq | todo — HIGH DEMAND |
+| 1c | Cat breed portraits (realistic) | GEN | sq | todo |
 | 2 | Woodland & wildlife | GEN | sq/tall | gen (A–E) |
 | 3 | Farm & smallholding | GEN | sq | todo |
 | 4 | Birds, bees, butterflies & moths | GEN | sq/circ | partial |
@@ -91,6 +93,29 @@ Small pets: rabbit/bunny, guinea pig, hamster with full cheeks, gerbil, chinchil
 ferret, budgie, parrot, goldfish, tortoise, hedgehog (pet).
 Poses/props: with a flower, with a scarf, in a teacup, peeking, sleeping, with a ball
 of yarn, with a tiny hat, in a basket, with a butterfly.
+
+## 1b. Dog breed portraits (realistic) — GEN — HIGH DEMAND
+People are devoted to their own breed and will buy the one that's *theirs* — make this
+shelf deep. **Realistic but CLEAN-ILLUSTRATION portraits** (a crisp detailed head/shoulders
+portrait per breed — NOT photographic/painterly, which the converter mushes; flat-but-detailed
+like the pop-art/scene lanes that convert well). One portrait per breed, ideally on a soft
+plain ground so the dog is the hero. Cover the popular breeds (UK-weighted), incl. coat
+variants where they matter (e.g. Labrador black/yellow/chocolate; Dachshund smooth/long/wire):
+Labrador, Golden Retriever, German Shepherd, French Bulldog, English Bulldog, Cockapoo,
+Cavapoo, Cavalier King Charles Spaniel, Cocker Spaniel, Springer Spaniel, Dachshund, Border
+Collie, Labradoodle, Pug, Shih Tzu, Yorkshire Terrier, Jack Russell, Staffordshire Bull
+Terrier, Boxer, Rottweiler, Husky, Corgi, Chihuahua, Pomeranian, Border Terrier, West
+Highland Terrier (Westie), Scottish Terrier, Bichon Frise, Maltese, Miniature Schnauzer,
+Whippet, Greyhound, Italian Greyhound, Lurcher, Beagle, Basset Hound, Dalmatian, Great Dane,
+Bernese Mountain Dog, Newfoundland, Saint Bernard, Doberman, Vizsla, Weimaraner, Pointer,
+English/Irish Setter, Akita, Shiba Inu, Samoyed, Chow Chow, Australian Shepherd, Bullmastiff,
+Rhodesian Ridgeback, Poodle (standard/toy), Sausage-dog-in-jumper crossover stays in Whimsical.
+(Build first wave ~30 most-popular, then extend. Same hero-portrait treatment will suit cats — see 1c.)
+
+## 1c. Cat breed portraits (realistic) — GEN
+Same clean-portrait treatment for cats: British Shorthair, Maine Coon, Ragdoll, Siamese,
+Bengal, Persian, Sphynx, Norwegian Forest, Russian Blue, Tabby, Tuxedo, Tortoiseshell,
+Ginger, Scottish Fold, Birman, Burmese, Abyssinian, Devon Rex.
 
 ## 2. Woodland & wildlife — GEN
 Fox (curled, standing, with cubs), red squirrel, hedgehog, badger, deer/fawn/stag,
