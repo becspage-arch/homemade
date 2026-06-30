@@ -433,22 +433,31 @@
 
 .needlework-surface-canvas-area {
   flex: 1;
+  min-width: 0;
   overflow: auto;
   padding: 1.5rem;
-  text-align: center;
+}
+
+/* A stage that is at least the size of the canvas, so the design centres when
+   it fits and grows (scroll to pan) when zoomed past the canvas — responsive to
+   any screen size, no fixed width. */
+.needlework-surface-stage {
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .needlework-surface-svg-wrapper {
   position: relative;
-  display: inline-block;
-  margin: 0 auto;
+  flex: 0 0 auto;
 }
 
 .needlework-surface-svg-wrapper svg {
   display: block;
-  /* Fill the wrapper (whose width the zoom controls drive) rather than sitting
-     at the SVG's intrinsic mm size — so Fit fills the canvas and + actually
-     enlarges the design. */
+  /* Fill the wrapper, whose pixel width is the measured fit × zoom — so Fit
+     contains the canvas on any screen and + enlarges + pans. */
   width: 100%;
   height: auto;
 }

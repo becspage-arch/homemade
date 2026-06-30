@@ -14,7 +14,7 @@
  * that the feature is coming and direct to the library.
  */
 
-import { useState, useCallback, useMemo } from 'react'
+import { useState, useCallback, useMemo, useEffect, useRef } from 'react'
 import type { NeedleworkPatternData, NeedleworkProjectProgressData, NeedleworkRegionAnnotation } from './types'
 
 /** "embroidery-straight" → "Straight" for the stitch checklist. */
@@ -36,10 +36,12 @@ export function NeedleworkSurfaceView({
   onRegionToggle,
 }: NeedleworkSurfaceViewProps) {
   const [, setHoveredRegion] = useState<string | null>(null)
+  // zoom is a multiplier on the FIT size (1 = fit the canvas), so the design is
+  // always sized relative to whatever space the screen gives it — no fixed width.
   const [zoom, setZoom] = useState(1)
   const [view, setView] = useState<'outline' | 'colour'>('outline')
-  const zoomIn = useCallback(() => setZoom((z) => Math.min(5, +(z * 1.25).toFixed(2))), [])
-  const zoomOut = useCallback(() => setZoom((z) => Math.max(0.5, +(z / 1.25).toFixed(2))), [])
+  const zoomIn = useCallback(() => setZoom((z) => Math.min(6, +(z * 1.25).toFixed(2))), [])
+  const zoomOut = useCallback(() => setZoom((z) => Math.max(1, +(z / 1.25).toFixed(2))), [])
 
   const completedRegions = useMemo(() => progress?.completedRegions ?? {}, [progress])
   const annotations: NeedleworkRegionAnnotation[] = pattern.regionAnnotations ?? []
@@ -48,6 +50,33 @@ export function NeedleworkSurfaceView({
   // Which design to show in the canvas: the clean outline (the transfer template)
   // or the colour / stitch-direction map. Only offered when a colour map exists.
   const designSvg = view === 'colour' && colourMapSvg ? colourMapSvg : vectorData?.svgContent
+
+  // Responsive fit: measure the canvas and scale the design to CONTAIN within it
+  // (fit both width and height, centred), recomputed on resize. The on-screen
+  // design size is then fit × zoom, so Fit fills any screen and zoom pans via scroll.
+  const canvasRef = useRef<HTMLDivElement>(null)
+  const aspect =
+    vectorData && vectorData.width && vectorData.height ? vectorData.width / vectorData.height : 1
+  const [fitW, setFitW] = useState(0)
+  useEffect(() => {
+    const el = canvasRef.current
+    if (!el) return
+    const compute = () => {
+      const cs = getComputedStyle(el)
+      const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight)
+      const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom)
+      const availW = Math.max(0, el.clientWidth - padX)
+      const availH = Math.max(0, el.clientHeight - padY)
+      // contain: the largest width whose height (w/aspect) still fits availH.
+      const w = Math.min(availW, availH * aspect)
+      setFitW(w)
+    }
+    compute()
+    const ro = new ResizeObserver(compute)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [aspect])
+  const designW = fitW > 0 ? Math.round(fitW * zoom) : undefined
 
   const completedCount = Object.keys(completedRegions).length
   const totalCount = annotations.length
@@ -103,21 +132,23 @@ export function NeedleworkSurfaceView({
           <button type="button" className="needlework-surface-zoom-btn" onClick={zoomIn} aria-label="Zoom in">+</button>
           <span className="needlework-surface-zoom-pct">{Math.round(zoom * 100)}%</span>
         </div>
-        <div className="needlework-surface-canvas-area">
-          {designSvg ? (
-            // The design fills the canvas at Fit; zooming widens it past the
-            // canvas so it scrolls (pan) for a close look.
-            <div
-              key={view}
-              className="needlework-surface-svg-wrapper"
-              style={{ width: `${Math.round(zoom * 100)}%`, maxWidth: zoom <= 1 ? 760 : undefined }}
-              dangerouslySetInnerHTML={{ __html: designSvg }}
-            />
-          ) : (
-            <div style={{ padding: '2rem', color: 'var(--colour-text-muted)', fontSize: '0.875rem' }}>
-              Design outline not available for this pattern. Follow the printed transfer sheet.
-            </div>
-          )}
+        <div className="needlework-surface-canvas-area" ref={canvasRef}>
+          <div className="needlework-surface-stage">
+            {designSvg ? (
+              // At Fit the design is sized to contain the canvas (any screen);
+              // zooming widens it past the canvas so it scrolls (pan) for detail.
+              <div
+                key={view}
+                className="needlework-surface-svg-wrapper"
+                style={{ width: designW }}
+                dangerouslySetInnerHTML={{ __html: designSvg }}
+              />
+            ) : (
+              <div style={{ padding: '2rem', color: 'var(--colour-text-muted)', fontSize: '0.875rem' }}>
+                Design outline not available for this pattern. Follow the printed transfer sheet.
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
