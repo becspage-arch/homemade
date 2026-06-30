@@ -11,6 +11,9 @@
  *             each region.
  */
 
+import type { LocateModel } from '@/lib/needlework/locate'
+export type { LocateModel, LocateFloss, LocateArea } from '@/lib/needlework/locate'
+
 export type NeedleworkDiscipline =
   | 'BLACKWORK'
   | 'HARDANGER'
@@ -126,6 +129,9 @@ export interface NeedleworkPatternData {
   // Surface patterns
   vectorData: NeedleworkVectorData | null
   regionAnnotations: NeedleworkRegionAnnotation[] | null
+  /** Dense thread-painting only — the interactive colour map + floss/area lists
+   *  that power "select a colour or area, see where it goes". Null otherwise. */
+  locate?: LocateModel | null
   // Shared metadata
   fabricSpec: unknown | null
   threadTypes: string[]

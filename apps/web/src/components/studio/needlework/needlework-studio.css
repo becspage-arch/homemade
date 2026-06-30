@@ -1,5 +1,28 @@
 /* ── Needlework Studio layout ────────────────────────────────────────────── */
 
+/* Brand token bridge. The needlework Studio was authored against a `--colour-*`
+   namespace that is defined NOWHERE (so its buttons rendered as bare text). The
+   real Studio tokens are `--studio-*`, defined on `.studio-root` (which wraps
+   every Studio route). Map the old names onto them here, in one place, so the
+   whole needlework Studio reads on-brand without touching 90 call-sites. */
+.needlework-studio-surface {
+  --colour-bg: var(--studio-bg);
+  --colour-surface: var(--studio-surface);
+  --colour-surface-raised: var(--studio-surface-2);
+  --colour-text: var(--studio-ink);
+  --colour-text-muted: var(--studio-ink-mute);
+  --colour-border: var(--studio-line-strong);
+  --colour-sage-50: var(--studio-surface-2);
+  --colour-sage-100: var(--studio-surface-2);
+  --colour-sage-200: var(--studio-surface-3);
+  --colour-sage-600: var(--studio-accent);
+  --colour-sage-700: var(--studio-accent-strong);
+  --colour-warm-50: var(--studio-surface-2);
+  --colour-warm-100: var(--studio-surface-2);
+  --colour-warm-200: var(--studio-surface-3);
+  --colour-warm-700: var(--studio-ink-soft);
+}
+
 .needlework-studio-surface {
   display: flex;
   flex-direction: column;
@@ -383,46 +406,204 @@
 .needlework-surface-zoombar {
   display: flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: 0.5rem;
   padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid var(--colour-border);
-  background: var(--colour-bg);
+  border-bottom: 1px solid var(--studio-line);
+  background: var(--studio-bg);
   flex-shrink: 0;
 }
 
+.needlework-surface-zoom-spacer { flex: 1; }
+
+/* Segmented Outline / Colour-map control — a proper brand pill, obviously a
+   control (the terracotta accent marks the active view). */
+.needlework-surface-viewtoggle {
+  display: inline-flex;
+  padding: 2px;
+  gap: 2px;
+  background: var(--studio-surface-2);
+  border-radius: 999px;
+}
+
+.nw-seg {
+  appearance: none;
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-family: var(--studio-font-body);
+  font-size: 13px;
+  line-height: 1;
+  color: var(--studio-ink-soft);
+  cursor: pointer;
+  transition: background 120ms, color 120ms;
+}
+.nw-seg:hover { color: var(--studio-ink); }
+.nw-seg.is-active {
+  background: var(--studio-accent);
+  color: #fff;
+  box-shadow: var(--studio-shadow-soft);
+}
+
 .needlework-surface-zoom-btn {
-  min-width: 34px;
+  min-width: 32px;
   height: 30px;
   padding: 0 0.5rem;
-  font-size: 0.8125rem;
-  background: var(--colour-bg);
-  border: 1px solid var(--colour-border);
-  border-radius: 6px;
-  color: var(--colour-text);
+  font-size: 0.875rem;
+  background: var(--studio-surface);
+  border: 1px solid var(--studio-line-strong);
+  border-radius: var(--studio-radius-s);
+  color: var(--studio-ink);
+  cursor: pointer;
+  transition: background 120ms;
+}
+.needlework-surface-zoom-btn:hover { background: var(--studio-surface-2); }
+
+.needlework-surface-zoom-pct {
+  font-size: 12px;
+  color: var(--studio-ink-mute);
+  min-width: 38px;
+  font-variant-numeric: tabular-nums;
+}
+
+.needlework-surface-clearsel {
+  appearance: none;
+  border: 1px solid var(--studio-line-strong);
+  background: var(--studio-surface);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-family: var(--studio-font-body);
+  font-size: 12px;
+  color: var(--studio-ink-soft);
   cursor: pointer;
 }
+.needlework-surface-clearsel:hover { background: var(--studio-surface-2); color: var(--studio-ink); }
 
-.needlework-surface-zoom-btn:hover {
-  background: var(--colour-surface);
+/* Colour map is locatable — a pointer cue. */
+.needlework-surface-svg-wrapper.is-locatable { cursor: pointer; }
+
+/* ── Locate panel (Colours / Areas) ─────────────────────────────────────── */
+.nw-panel-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0.75rem 0.875rem 0;
+  position: sticky;
+  top: 0;
+  background: var(--studio-bg);
+  z-index: 1;
+}
+.nw-panel-tab {
+  appearance: none;
+  border: none;
+  background: transparent;
+  font-family: var(--studio-font-body);
+  font-size: 13px;
+  color: var(--studio-ink-soft);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.nw-panel-tab span {
+  font-size: 11px;
+  color: var(--studio-ink-mute);
+  background: var(--studio-surface-2);
+  border-radius: 999px;
+  padding: 1px 7px;
+}
+.nw-panel-tab.is-active {
+  background: var(--studio-surface-2);
+  color: var(--studio-ink);
+  font-weight: 600;
+}
+.nw-panel-tab.is-active span { background: var(--studio-bg); }
+
+.nw-panel-hint {
+  margin: 0;
+  padding: 0.5rem 0.875rem 0.625rem;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--studio-ink-mute);
 }
 
-.needlework-surface-zoom-btn.is-active {
-  background: var(--colour-text);
-  border-color: var(--colour-text);
-  color: var(--colour-bg);
+.nw-locate-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
-
-.needlework-surface-viewtoggle {
+.nw-locate-li {
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+}
+.nw-locate-row {
+  flex: 1;
+  min-width: 0;
   display: flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: 0.625rem;
+  padding: 0.4rem 0.5rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--studio-radius-s);
+  cursor: pointer;
+  text-align: left;
 }
+.nw-locate-row:hover { background: var(--studio-surface-2); }
+.nw-locate-row.is-active {
+  background: var(--studio-surface-2);
+  box-shadow: inset 0 0 0 1.5px var(--studio-accent);
+}
+.nw-locate-row.is-done { opacity: 0.55; }
+.nw-locate-row.is-done .nw-locate-name { text-decoration: line-through; }
 
-.needlework-surface-zoom-divider {
-  width: 1px;
-  height: 20px;
-  margin: 0 0.25rem;
-  background: var(--colour-border);
+.nw-locate-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(60, 47, 34, 0.18);
+}
+.nw-locate-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.nw-locate-name {
+  font-family: var(--studio-font-body);
+  font-size: 13px;
+  color: var(--studio-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nw-locate-sub {
+  font-size: 11px;
+  color: var(--studio-ink-mute);
+  font-variant-numeric: tabular-nums;
+}
+.nw-locate-check {
+  flex-shrink: 0;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--studio-line-strong);
+  border-radius: var(--studio-radius-s);
+  color: transparent;
+  cursor: pointer;
+}
+.nw-locate-check:hover { background: var(--studio-surface-2); color: var(--studio-ink-mute); }
+.nw-locate-check.is-done {
+  background: var(--studio-accent);
+  border-color: var(--studio-accent);
+  color: #fff;
 }
 
 .needlework-surface-zoom-pct {

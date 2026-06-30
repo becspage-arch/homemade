@@ -12,6 +12,7 @@ import type {
   NeedleworkProjectPhase,
 } from '@/components/studio/needlework/types'
 import { mediaUrl } from '@/lib/media'
+import { buildLocateModel } from '@/lib/needlework/locate'
 
 export const dynamic = 'force-dynamic'
 
@@ -89,17 +90,48 @@ export default async function NeedleworkStudioPage({ searchParams }: PageProps) 
         (row.visibility === Visibility.PUBLIC || row.visibility === Visibility.UNLISTED)
 
       if (isOwned || isLibrary) {
-        // The stored vectorData carries the printable document; lift its dense
-        // colour map out as an alternate Studio view to the clean outline.
+        // The stored vectorData carries the full stitch data + printable document.
+        // Build the interactive "locate" model (colour map + floss/area lists) on
+        // the server, and ship the Studio a SLIM vectorData (outline + colour map)
+        // instead of the thousands of raw stitches.
         const rawVd = row.vectorData as
           | (NeedleworkVectorData & {
-              document?: { denseMapSvg?: string; colourGuideSvg?: string }
+              stitchedElements?: unknown[]
+              outline?: unknown[]
+              finishedSizeMm?: { width: number; height: number }
+              document?: {
+                denseMapSvg?: string
+                colourGuideSvg?: string
+                isDense?: boolean
+                flossKey?: Array<{ number: number; code: string; name: string; hex: string }>
+              }
             })
           | null
+        const sizeMm =
+          rawVd?.finishedSizeMm ??
+          (rawVd && typeof rawVd.width === 'number' && typeof rawVd.height === 'number'
+            ? { width: rawVd.width, height: rawVd.height }
+            : null)
+        const locate =
+          rawVd?.document?.isDense &&
+          Array.isArray(rawVd.stitchedElements) &&
+          rawVd.stitchedElements.length > 0 &&
+          rawVd.document.flossKey?.length &&
+          sizeMm
+            ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              buildLocateModel(rawVd.stitchedElements as any, rawVd.outline as any, rawVd.document.flossKey, sizeMm)
+            : null
         const vectorData: NeedleworkVectorData | null = rawVd
           ? {
-              ...rawVd,
-              colourMapSvg: rawVd.document?.denseMapSvg ?? rawVd.document?.colourGuideSvg ?? null,
+              svgContent: rawVd.svgContent,
+              width: rawVd.width,
+              height: rawVd.height,
+              regions: rawVd.regions,
+              // When we have the interactive locate map, don't also ship the
+              // static one — the Studio uses locate.mapSvg.
+              colourMapSvg: locate
+                ? null
+                : rawVd.document?.denseMapSvg ?? rawVd.document?.colourGuideSvg ?? null,
             }
           : null
         pattern = {
@@ -112,6 +144,7 @@ export default async function NeedleworkStudioPage({ searchParams }: PageProps) 
           gridData: row.gridData,
           chartData: row.chartData,
           vectorData,
+          locate,
           regionAnnotations: row.regionAnnotations as NeedleworkPatternData['regionAnnotations'],
           widthCells: row.widthCells,
           heightCells: row.heightCells,
