@@ -502,13 +502,15 @@ export async function loadHomepageData(
   // previously-viewed project. "Continue where you left off" has its own rail
   // below; the hero's job is to inspire, not to resume (Rebecca, 2026-06-19).
   //
-  // Rotates on a DAILY bucket so it visibly changes day to day, and the pool
-  // mixes real patterns (crafts) in among the editorial / seasonal tutorials
-  // so it isn't forever a recipe. Tutorial pool preference: EDITORIAL-graded
-  // picks → the full weekly pick list → in-season content; only "make
-  // something" types ever lead the hero. Patterns are interleaved with the
-  // tutorials so consecutive days alternate a make and a pattern. Lands on the
-  // wordmark only when there is genuinely nothing to show.
+  // Rotates on a DAILY bucket and deliberately STEPS THROUGH THE CATEGORIES in
+  // turn — cooking → baking → cross-stitch → … one category per day — instead
+  // of leaning on whichever category has the most content. Candidates are
+  // grouped by category (each category's editorial / seasonal tutorials +
+  // real patterns) then round-robined across categories, so consecutive days
+  // feature different categories and every live category gets the spotlight.
+  // Tutorial pool preference: EDITORIAL-graded picks → the full weekly pick
+  // list → in-season content; only "make something" types ever lead the hero.
+  // Lands on the wordmark only when there is genuinely nothing to show.
   let hero: HomepageHero
   if (isOnboardingPending) {
     hero = { kind: 'ONBOARDING' }
@@ -526,12 +528,37 @@ export async function loadHomepageData(
       MAKE_SOMETHING_TUTORIAL_TYPES.includes(t.type),
     )
 
-    // Interleave tutorials and patterns into one rotation pool so daily
-    // walking alternates crafts and makes rather than blocking by source.
-    const heroPool: HomepageHero[] = interleaveHero<HomepageHero>(
-      tutorialPool.map((t): HomepageHero => ({ kind: 'EDITORIAL_PICK', tutorial: t })),
-      discoveryPatterns.map((p): HomepageHero => ({ kind: 'PATTERN_PICK', pattern: p })),
-    )
+    // Group hero candidates by their category.
+    const byCategory = new Map<string, HomepageHero[]>()
+    const pushCandidate = (slug: string, item: HomepageHero) => {
+      const list = byCategory.get(slug) ?? []
+      list.push(item)
+      byCategory.set(slug, list)
+    }
+    for (const t of tutorialPool) {
+      pushCandidate(t.category.slug, { kind: 'EDITORIAL_PICK', tutorial: t })
+    }
+    for (const p of discoveryPatterns) {
+      pushCandidate(p.craftSlug, { kind: 'PATTERN_PICK', pattern: p })
+    }
+
+    // Round-robin across categories in public launch order: one candidate from
+    // each category per pass. Walking this pool a day at a time therefore moves
+    // to a new category each day and cycles through them all.
+    const orderedSlugs = allCategoryRows
+      .map((c) => c.slug)
+      .filter((s) => byCategory.has(s))
+    const heroPool: HomepageHero[] = []
+    for (let i = 0, added = true; added; i += 1) {
+      added = false
+      for (const slug of orderedSlugs) {
+        const item = byCategory.get(slug)?.[i]
+        if (item) {
+          heroPool.push(item)
+          added = true
+        }
+      }
+    }
     hero = pickByDayBucket(heroPool, now, 1) ?? { kind: 'WORDMARK_FALLBACK' }
   }
 
@@ -612,19 +639,6 @@ function pickByDayBucket<T>(pool: T[], now: Date, windowDays: number): T | null 
   const bucket = Math.floor(now.getTime() / msPerWindow)
   const index = ((bucket % pool.length) + pool.length) % pool.length
   return pool[index] ?? null
-}
-
-/** Round-robin merge of two lists — take a, then b, then a, … — so the hero
- *  rotation pool alternates tutorials and patterns rather than blocking by
- *  source. */
-function interleaveHero<T>(a: T[], b: T[]): T[] {
-  const out: T[] = []
-  const max = Math.max(a.length, b.length)
-  for (let i = 0; i < max; i += 1) {
-    if (a[i]) out.push(a[i]!)
-    if (b[i]) out.push(b[i]!)
-  }
-  return out
 }
 
 /** Public craft category a Pattern row lives under. Prefers the row's

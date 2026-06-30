@@ -4471,10 +4471,14 @@ Three live-site problems the owner spotted on the homepage:
 
 - **Hero felt static + always a recipe.** It rotated on a 7-day bucket (fixed
   within a week) over the weekly editorial picks (cooking/baking-dominated).
-  Now rotates DAILY and the rotation pool interleaves real patterns (crafts)
-  with the editorial/seasonal tutorials, so consecutive days alternate a make
-  and a pattern. New `PATTERN_PICK` hero kind. Verified: hero renders a
-  cross-stitch chart ("French Bulldog", "Start stitching →").
+  Now rotates DAILY and deliberately STEPS THROUGH THE CATEGORIES in turn:
+  candidates (each category's editorial/seasonal tutorials + real patterns) are
+  grouped by category and round-robined in public launch order, so a daily walk
+  moves to a new category each day (cooking → baking → cross-stitch → …) and
+  every live category gets the spotlight rather than the most-content one
+  winning. New `PATTERN_PICK` hero kind. Verified: hero renders a cross-stitch
+  chart ("French Bulldog", "Start stitching →"); cycle proven to give a fresh
+  category each day.
 - **heroQuality filter was dead.** `homepage-data.ts` filtered editorial picks
   by `heroQuality === 'EDITORIAL'`, but `getCurrentWeekPicks()` never selected
   `heroQuality` — so the "prefer best imagery" preference was always empty.
