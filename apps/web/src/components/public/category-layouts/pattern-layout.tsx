@@ -1,10 +1,13 @@
 import Link from 'next/link'
-import { prisma, TutorialStatus, Visibility } from '@homemade/db'
+import { Prisma, prisma, TutorialStatus, Visibility } from '@homemade/db'
 import { FoundationsPath } from '@/components/public/category/foundations-path'
 import { PatternLibraryGrid } from '@/app/(public)/cross-stitch/patterns/pattern-library-grid'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
+import { mediaUrl } from '@/lib/media'
 import { isPremiumContent } from '@/lib/entitlements'
 import { CrochetPatternGrid } from './crochet-pattern-grid'
+import { NeedleworkPatternGrid } from './needlework-pattern-grid'
+import { DISCIPLINE_LABELS } from '@/components/studio/needlework/types'
 import { getPatternTagFacets, patternIdsForTags } from '@/lib/pattern-tag-facets'
 import { getPatternDesignerFacets } from '@/lib/pattern-designer-facets'
 
@@ -23,7 +26,7 @@ interface PatternLayoutProps {
   category: PatternLayoutCategory
   searchParams: {
     sub?: string
-    sort?: 'featured' | 'newest' | 'size' | 'popular' | 'name'
+    sort?: 'featured' | 'newest' | 'size' | 'popular' | 'name' | 'colours'
     difficulty?: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED'
     size?: 's' | 'm' | 'l'
     minColour?: string
@@ -82,6 +85,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
   const sp = searchParams
   const patternType = PATTERN_TYPE_BY_SLUG[category.slug]
   const isCrochet = category.slug === 'crochet'
+  const isNeedlework = category.slug === 'needlework'
 
   // Cross-craft tag filters (Occasion / Season / Style / Subject / Audience) +
   // free-text search, resolved against the live tag assignments. The selected
@@ -151,7 +155,28 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
         ? [{ popularityScore: 'desc' as const }, { publishedAt: 'desc' as const }]
         : { publishedAt: 'desc' as const }
 
-  const [patterns, foundations, anchorPatterns, spotlightDesigner, crochetPatterns, recentlyCompleted, tagFacets, designerFacets] = await Promise.all([
+  // Needlework surfaces NeedleworkPattern rows on the same shared library shell.
+  // Only PUBLIC, published, library-owned (ownerUserId null) rows with a real
+  // sub-category (so the row is filed into a shelf) — mirrors the crochet gate.
+  const needleworkWhere: Record<string, unknown> = {
+    ownerUserId: null,
+    visibility: Visibility.PUBLIC,
+    publishedAt: { not: null },
+    subCategory: { categoryId: category.id },
+  }
+  if (sp.difficulty) needleworkWhere.difficulty = sp.difficulty
+  if (sp.sub) needleworkWhere.subCategory = { slug: sp.sub, categoryId: category.id }
+  if (isNeedlework && textOr) needleworkWhere.OR = textOr
+
+  // NeedleworkPattern has no popularityScore; "newest" leads, then name / colours.
+  const needleworkOrderBy =
+    sp.sort === 'name'
+      ? { name: 'asc' as const }
+      : sp.sort === 'colours'
+        ? [{ colourCount: 'desc' as const }, { publishedAt: 'desc' as const }]
+        : { publishedAt: 'desc' as const }
+
+  const [patterns, foundations, anchorPatterns, spotlightDesigner, crochetPatterns, needleworkPatterns, recentlyCompleted, tagFacets, designerFacets] = await Promise.all([
     patternType
       ? prisma.pattern.findMany({
           where,
@@ -253,6 +278,26 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
           },
         })
       : Promise.resolve([]),
+    isNeedlework
+      ? prisma.needleworkPattern.findMany({
+          where: needleworkWhere,
+          orderBy: needleworkOrderBy,
+          take: 96,
+          select: {
+            id: true,
+            slug: true,
+            name: true,
+            discipline: true,
+            difficulty: true,
+            colourCount: true,
+            premium: true,
+            designer: { select: { displayName: true, slug: true, isHouseDesigner: true } },
+            subCategory: { select: { slug: true, name: true } },
+            hero: { select: { cloudflareId: true, r2Key: true } },
+            thumbnail: { select: { cloudflareId: true, r2Key: true } },
+          },
+        })
+      : Promise.resolve([]),
     patternType
       ? prisma.userPatternProgress.findMany({
           where: {
@@ -309,6 +354,27 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
         ).map((s) => s.patternId),
       )
     : new Set<string>()
+
+  // Finished size lives in the (large) vectorData JSON; pull just the mm
+  // dimensions for the visible needlework rows with a targeted JSON extract so
+  // the grid never loads the full stitch geometry.
+  const needleworkSizeById = new Map<string, { width: number; height: number }>()
+  if (isNeedlework && needleworkPatterns.length > 0) {
+    const sizeRows = await prisma.$queryRaw<
+      { id: string; width: number | null; height: number | null }[]
+    >`
+      SELECT id,
+        ("vectorData"->'finishedSizeMm'->>'width')::float8  AS width,
+        ("vectorData"->'finishedSizeMm'->>'height')::float8 AS height
+      FROM "NeedleworkPattern"
+      WHERE id IN (${Prisma.join(needleworkPatterns.map((p) => p.id))})
+    `
+    for (const r of sizeRows) {
+      if (r.width != null && r.height != null) {
+        needleworkSizeById.set(r.id, { width: r.width, height: r.height })
+      }
+    }
+  }
 
   const studioCtas = STUDIO_CTAS[category.slug] ?? {}
   const studioHomeHref = STUDIO_HOME_HREF[category.slug]
@@ -520,7 +586,61 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
         </section>
       )}
 
-      <section id="patterns-classic" className="pattern-landing-library" hidden={isCrochet}>
+      {isNeedlework && (
+        <section id="patterns" className="pattern-landing-library">
+          <header className="pattern-landing-library-header">
+            <h2 className="pattern-landing-library-heading">Needlework patterns</h2>
+            <p className="pattern-landing-library-sub">
+              Each pattern carries a transfer template, a colour and stitch guide, and the
+              Studio to follow it stitch by stitch.
+            </p>
+          </header>
+          <NeedleworkPatternGrid
+            patterns={needleworkPatterns.map((p) => {
+              const size = needleworkSizeById.get(p.id)
+              return {
+                id: p.id,
+                slug: p.slug,
+                name: p.name,
+                thumbnailUrl: mediaUrl(p.hero ?? p.thumbnail, 'card'),
+                difficulty: p.difficulty,
+                disciplineLabel:
+                  (DISCIPLINE_LABELS as Record<string, string>)[p.discipline] ?? null,
+                finishedSizeText: size
+                  ? `${Math.round(size.width)} × ${Math.round(size.height)} mm`
+                  : null,
+                colourCount: p.colourCount,
+                // House needlework patterns are FREE-with-login; the badge only
+                // shows for genuinely premium / independent-designer content.
+                premium: isPremiumContent({ premium: p.premium, designer: p.designer }),
+                designerName: p.designer?.displayName ?? null,
+                designerSlug: p.designer?.slug ?? null,
+                subCategoryName: p.subCategory?.name ?? null,
+                subCategorySlug: p.subCategory?.slug ?? null,
+              }
+            })}
+            subCategories={category.subCategories.map((s) => ({ slug: s.slug, name: s.name }))}
+            tagFacets={tagFacets}
+            designerFacets={designerFacets}
+            searchPlaceholder={patternSearchPlaceholder(category.slug)}
+            currentFilters={{
+              sub: sp.sub ?? null,
+              difficulty: sp.difficulty ?? null,
+              sort: sp.sort ?? 'newest',
+              q: q || null,
+              occasion: sp.occasion ?? null,
+              season: sp.season ?? null,
+              style: sp.style ?? null,
+              subject: sp.subject ?? null,
+              audience: sp.audience ?? null,
+              designer: sp.designer ?? null,
+            }}
+            basePath={`/${category.slug}`}
+          />
+        </section>
+      )}
+
+      <section id="patterns-classic" className="pattern-landing-library" hidden={isCrochet || isNeedlework}>
         {patternType ? (
           patterns.length === 0 && filtered.length === 0 && Object.keys(sp).length === 0 ? (
             <div className="pattern-landing-empty">

@@ -11,6 +11,7 @@ import { getCurrentDbUser } from '@/lib/get-current-user'
 import { SearchForm } from './search-form'
 import { SearchResults } from './search-results'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
+import { mediaUrl } from '@/lib/media'
 
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 
@@ -128,6 +129,33 @@ export default async function SearchPage({ searchParams }: PageProps) {
       })
     : []
 
+  // Needlework lives on a separate model (NeedleworkPattern), so it has its own
+  // direct-DB branch — same shape as the Pattern branch above.
+  const isNeedlework = categorySlug === 'needlework'
+  const needleworkHits = isNeedlework && q !== '' && !rateLimited
+    ? await prisma.needleworkPattern.findMany({
+        where: {
+          ownerUserId: null,
+          visibility: 'PUBLIC',
+          publishedAt: { not: null },
+          OR: [
+            { name: { contains: q, mode: 'insensitive' } },
+            { description: { contains: q, mode: 'insensitive' } },
+          ],
+          ...(difficulty && DIFFICULTIES.has(difficulty) ? { difficulty: difficulty as 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' } : {}),
+        },
+        orderBy: { publishedAt: 'desc' },
+        take: RESULTS_PER_PAGE,
+        select: {
+          id: true,
+          slug: true,
+          name: true,
+          hero: { select: { cloudflareId: true, r2Key: true } },
+          thumbnail: { select: { cloudflareId: true, r2Key: true } },
+        },
+      })
+    : []
+
   if (results) {
     const dbUser = await getCurrentDbUser()
     const ip = await getClientIp()
@@ -183,7 +211,30 @@ export default async function SearchPage({ searchParams }: PageProps) {
         </section>
       )}
 
-      {!configured && !patternType && (
+      {isNeedlework && q !== '' && !rateLimited && (
+        <section aria-live="polite">
+          <p className="search-summary">
+            {needleworkHits.length === 0
+              ? `No patterns matched "${q}" yet.`
+              : `${needleworkHits.length} pattern${needleworkHits.length === 1 ? '' : 's'} for "${q}"`}
+          </p>
+          {needleworkHits.length > 0 && (
+            <ul className="search-pattern-grid">
+              {needleworkHits.map((p) => (
+                <li key={p.id} className="search-pattern-card">
+                  <Link href={`/needlework/patterns/${p.slug}`}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={mediaUrl(p.hero ?? p.thumbnail, 'card') ?? ''} alt={p.name} loading="lazy" />
+                    <span>{p.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
+
+      {!configured && !patternType && !isNeedlework && (
         <p className="search-empty">
           Search is not yet wired up in this environment. Try the category
           pages from the menu while we finish setting it up.
