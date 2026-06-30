@@ -9,7 +9,9 @@
  * relaxer resolves the actual shape from there.
  */
 
-export type StitchId = 'ch' | 'slst' | 'sc' | 'hdc' | 'dc' | 'tr' | 'dtr' | 'scblo' | 'scflo' | 'fpdc' | 'bpdc'
+export type StitchId =
+  | 'ch' | 'slst' | 'sc' | 'hdc' | 'dc' | 'tr' | 'dtr'
+  | 'scblo' | 'scflo' | 'fpdc' | 'bpdc' | 'bobble'
 
 export interface StitchDef {
   id: StitchId
@@ -35,4 +37,8 @@ export const STITCHES: Record<StitchId, StitchDef> = {
   // the stem). fp pops proud, bp recedes — the basis of post ribbing + basketweave.
   fpdc: { id: 'fpdc', heightFactor: 3.0, topLoops: 2 }, // tall full posts → each rib reads as one clean column
   bpdc: { id: 'bpdc', heightFactor: 3.0, topLoops: 2 },
+  // bobble: several partial dc in one stitch gathered to one top → a raised bump.
+  // Usually dotted on an sc background, so it borrows the row's height and just
+  // bulges forward; this factor only applies to an all-bobble row.
+  bobble: { id: 'bobble', heightFactor: 1.4, topLoops: 2 },
 }

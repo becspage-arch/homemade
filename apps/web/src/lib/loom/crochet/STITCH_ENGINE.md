@@ -153,7 +153,8 @@ y-pull (`layoutK`). No pinned shapes, no spring joins (HARD RULE, §9).
 | **tr** | taller post (`heightFactor 4.2`), open gauge | ✅ **LOCKED** 2026-06-29 |
 | **dtr** | taller again (`heightFactor 5.4`) | ✅ **LOCKED** 2026-06-29 |
 | **sl st** | shortest worked (`heightFactor 0.8` — a row is still ≈1 yarn thick), tight gauge | ✅ **LOCKED** 2026-06-29 (flat dense ridges) |
-| **ch** | foundation chain alone (`nRows=0`) | ◑ reads as a chain *cord*; crisp interlocking-loop rebuild deferred to the chain-space/rounds batch |
+| **ch** | foundation chain alone (`nRows=0`) — now GENUINE threaded loops (real loops pulled through each other, collision-held, low `collAdjacency` relax) | ◑ **WIP, not signed off**. Drifted twice into drawn/pinned shapes (alternating-z pinned ovals; flat zigzag) before reaching genuine loops. Genuine version reads as a tight twisted loop-braid, NOT the reference's flat plait. Verified single-strand, but look rejected. |
+| **bobble** | gathered cluster: genuine base hook + N loops bulging forward to one top | ◑ **WIP, not signed off**. Reads as lumps in a busy field, not distinct round berries. The raised-bump family needs a calm/flat background + a tighter gathered ball — not cracked. |
 | **sc blo / flo** | head split into a real back + front loop; hook one, float the other as a ridge | ✅ **LOCKED** 2026-06-29 — ridged sc; blo/flo are mirrors |
 | **fpdc / bpdc** | post RINGS the stem below (collision-held); body pops front (fp) / back (bp), head stays at plane; dense gauge | ✅ **LOCKED** 2026-06-29 — best shown as alternating `postrib` (raised ribs + valleys), side-on tilt 40°, smoother yarn (twist 0.05). Basketweave/waffle = same move in blocks, deferred to combos |
 

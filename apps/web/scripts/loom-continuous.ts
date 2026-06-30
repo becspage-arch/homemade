@@ -29,7 +29,8 @@ function main() {
   const isBasket = stitchArg === 'basketweave'
   const isPostRib = stitchArg === 'postrib' // alternating fp/bp columns = ribbing
   const isPost = stitchArg === 'fpdc' || stitchArg === 'bpdc'
-  const stitch = (isBasket ? 'dc' : isPostRib ? 'fpdc' : stitchArg) as StitchId // drives gauge + row height
+  const isBobbles = stitchArg === 'bobbles' // bobbles dotted on an sc background
+  const stitch = (isBasket ? 'dc' : isPostRib ? 'fpdc' : isBobbles ? 'sc' : stitchArg) as StitchId // drives gauge + row height
   // ch is the starting chain itself — render the foundation chain alone (no worked rows).
   const nRows = stitch === 'ch' ? 0 : 8
   const rows: StitchId[] = Array(nRows).fill(stitch) as StitchId[]
@@ -43,6 +44,9 @@ function main() {
     }
   } else if (isPostRib) {
     stitchAt = (j, c) => (j === 0 ? 'dc' : c % 2 === 0 ? 'fpdc' : 'bpdc') // raised rib / recessed valley
+  } else if (isBobbles) {
+    // bumps on a polka-dot grid over plain sc, offset row to row
+    stitchAt = (j, c) => (j > 0 && j % 2 === 1 && (c + (Math.floor(j / 2) % 2) * 2) % 4 === 0 ? 'bobble' : 'sc')
   } else if (isPost) {
     stitchAt = (j, c) => (j === 0 ? 'dc' : (stitchArg as StitchId))
   }
@@ -51,15 +55,30 @@ function main() {
   // Collision is what now HOLDS the interlock (yarn can't pass through yarn), so it
   // runs firm and long. No plane pull — the +z/−z relief at each hook IS the
   // interlock; flattening it would unlink the rows.
-  relax(built.model, {
-    collMinDist: yr * 1.25,
-    collK: 0.28,
-    collAdjacency: 9, // a post's own two legs (≤9 apart) stay a tight pair; cross-row interlock is ~a full row apart, so it still collides
-    planeZ: 0,
-    planeK: 0,
-    layoutK: 0.06, // blocked flat — holds rows at their worked height so posts stand
-    iterations: 320,
-  })
+  if (stitch === 'ch') {
+    // A chain's links are consecutive along the strand, so collision must act between
+    // NEAR neighbours (low adjacency) to hold each loop threaded through the previous.
+    // A gentle plane pull lays the run flat into a tidy braid.
+    relax(built.model, {
+      collMinDist: yr * 1.15,
+      collK: 0.3,
+      collAdjacency: 2,
+      planeZ: 0,
+      planeK: 0.015, // only a whisper of flattening — keep the loops open, don't compact to a cord
+      layoutK: 0,
+      iterations: 220,
+    })
+  } else {
+    relax(built.model, {
+      collMinDist: yr * 1.25,
+      collK: 0.28,
+      collAdjacency: 9, // a post's own two legs (≤9 apart) stay a tight pair; cross-row interlock is ~a full row apart, so it still collides
+      planeZ: 0,
+      planeK: 0,
+      layoutK: 0.06, // blocked flat — holds rows at their worked height so posts stand
+      iterations: 320,
+    })
+  }
 
   // Render the ONE strand as a single continuous plied yarn.
   const nodes = built.model.nodes
@@ -76,7 +95,7 @@ function main() {
   // Post stitches stand off the surface, so shoot them more side-on (so the raised
   // ribs cast shadow into the valleys, the way the reference photo is lit).
   const postLike = isPost || isBasket || isPostRib
-  const tiltDeg = postLike ? 40 : tall ? 16 : 0
+  const tiltDeg = postLike ? 40 : tall ? 16 : isBobbles ? 24 : 0 // tilt so the bobbles read as raised balls
   const scene = {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
     strokes,

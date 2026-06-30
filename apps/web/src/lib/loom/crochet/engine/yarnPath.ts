@@ -110,6 +110,39 @@ export function buildContinuous(
   const belowBack: number[] = new Array(W).fill(-1)
   const belowFront: number[] = new Array(W).fill(-1)
 
+  // A real CHAIN on its own (no worked rows): a row of interlocking loops, each
+  // pulled through the previous, so the front reads as the classic braid of
+  // overlapping V's — not a twisted cord. Consecutive links sit on alternating
+  // z-sides and overlap, so each threads the one before (held by self-collision).
+  if (rowTypes.length === 0) {
+    // GENUINELY stitched: each chain is a real loop, and the next loop is pulled
+    // THROUGH it. We trace one continuous strand as a run of loops; consecutive
+    // loops cross on opposite z-sides (over / under) so they are topologically
+    // linked from the start, and the relaxer's self-collision (run with low
+    // adjacency so neighbouring loops actually collide) keeps them linked while it
+    // settles into the natural flat chain. Nodes are FREE (not pinned to a drawn
+    // shape) — only the very first is anchored so the run doesn't drift.
+    const cs = yr * 1.6 // pitch — enough overlap to thread, open enough that each loop reads
+    const lr = yr * 1.15 // loop radius
+    for (let i = 0; i < W; i++) {
+      const cx = i * cs
+      const free = i === 0 ? 0 : 1
+      push(cx - lr * 0.7, -lr * 0.5, z * 0.9, free) // lower-left — OVER (threads through the previous loop)
+      push(cx - lr * 0.4, lr, z * 0.5, 1) // upper-left
+      push(cx + lr * 0.4, lr, -z * 0.5, 1) // upper-right
+      push(cx + lr * 0.7, -lr * 0.5, -z * 0.9, 1) // lower-right — UNDER (the next loop threads here)
+    }
+    const strand0 = new Array(nodes.length).fill(0)
+    const along0 = nodes.map((_, k) => k)
+    return {
+      model: { nodes, dist, bend, strand: strand0, along: along0 },
+      strandPath,
+      yarnRadiusMm: yr,
+      widthMm: W * cs,
+      heightMm: lr * 2,
+    }
+  }
+
   // Foundation chain (row -1): a row of proud crowns, pinned (the cast-on edge the
   // first worked row hooks into). One continuous strand, left to right.
   for (let c = 0; c < W; c++) {
@@ -154,6 +187,35 @@ export function buildContinuous(
       const loopMode = id === 'scblo' ? 'blo' : id === 'scflo' ? 'flo' : 'both'
       const postMode = id === 'fpdc' ? 'fp' : id === 'bpdc' ? 'bp' : 'none'
       const px = ty - by // post span (tall for dc, short for sc)
+
+      if (id === 'bobble') {
+        // BOBBLE: several partial stitches worked into ONE base loop and gathered to
+        // one top — a raised bump. The base genuinely hooks the crown below; the N
+        // loops all rise from it, bulge forward, and meet at the gathered top (the
+        // head the next row works). Continuous strand throughout; the bump pops +z.
+        const bc = belowBack[c]!
+        const cy = nodes[bc]!.y
+        const hookZ = (nodes[bc]!.z >= 0 ? -1 : 1) * z * 1.6
+        const bz = z * 5.0 // bulge boldly off the surface so it reads as a distinct berry
+        const midY = cy + (ty - cy) * 0.55
+        push(x + s * pw, by + px * 0.45, z * fz) // down from the previous head toward the base
+        push(x, cy - dh, hookZ) // hook UNDER the crown below — the shared base
+        const N = 5
+        for (let k = 0; k < N; k++) {
+          const ox = ((k + 0.5) / N - 0.5) * cw * 1.5 // narrow fan → a round ball, not a spread
+          push(x + ox * 0.7, cy + dh * 0.8, bz * 0.45) // low on the ball, just forward
+          push(x + ox, midY, bz) // the widest, most-forward bulge (the berry)
+          push(x + ox * 0.55, ty - dh * 0.9, bz * 0.5) // high on the ball, heading to the gather
+        }
+        // gather the loops to one top → the head (at the plane, the next row works it)
+        push(x - s * cw * 0.3, ty - dh * 0.2, z * 0.8 * fz)
+        const crown = push(x, ty, z * 0.95 * fz)
+        push(x + s * cw * 0.3, ty - dh * 0.2, z * 0.8 * fz)
+        crownThisBack[c] = crown
+        crownThisFront[c] = crown
+        postThis[c] = crown
+        continue
+      }
 
       if (postMode !== 'none') {
         // FRONT/BACK POST: instead of hooking the head, the yarn RINGS around the

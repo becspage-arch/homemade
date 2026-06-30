@@ -70,6 +70,10 @@ const STITCH_PROMPTS: Record<string, string> = {
     'An extreme close-up macro photograph of a soft wool crochet swatch worked in back-post double crochet.',
     'Vertical post columns set back into the fabric in even recessed ribs, in fluffy wool yarn.',
   ].join(' '),
+  bobble: [
+    'An extreme close-up macro photograph of a crochet bobble-stitch swatch in soft wool.',
+    'Distinct round raised bobble berries (little balls of yarn) popping up in a neat offset polka-dot pattern on a flat, calm single-crochet background, each bobble a tight rounded bump, in fluffy wool yarn.',
+  ].join(' '),
 }
 const COMMON =
   'Real visible yarn: soft plied fibres, a gentle fuzzy halo, cosy hand-crocheted wool texture, each stitch tidy and uniform. Soft natural window light, shallow depth of field, extremely detailed, photorealistic, looks like a real crocheted swatch.'
