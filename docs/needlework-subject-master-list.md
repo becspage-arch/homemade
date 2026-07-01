@@ -92,17 +92,17 @@ A theme must contain subjects across **all four tiers**. Never all one level.
 | 11  | Single botanical stems                 | L           | hoop/none   | started |
 | 12  | Delicate line motifs (jars/sprigs)     | L           | hoop/none   | started |
 | 13  | Wreaths & circular compositions        | D / L       | hoop        | started |
-| 14  | Houseplants & terrariums               | D / L       | hoop/none   | todo    |
+| 14  | Houseplants & terrariums               | D / L       | hoop/none   | started |
 | 15  | Mushrooms & cottagecore                | D / B       | hoop        | started |
 | 16  | Food, drink & baking                   | D / L       | hoop        | started |
 | 17  | Seasonal — Halloween                   | D / B       | hoop        | started |
 | 18  | Seasonal — Christmas & winter          | D / B       | hoop/none   | started |
 | 19  | Seasonal — Easter & spring             | D / L       | hoop        | started |
 | 20  | Seasonal — Autumn / harvest            | D / B       | hoop/none   | started |
-| 21  | Seasonal — Valentine's                 | D / L       | hoop        | todo    |
+| 21  | Seasonal — Valentine's                 | D / L       | hoop        | started |
 | 22  | Celestial & constellations             | D / L       | hoop        | started |
-| 23  | Witchy & gothic                        | D / L       | hoop/none   | todo    |
-| 24  | Fairies & fantasy                      | D / B       | hoop        | todo    |
+| 23  | Witchy & gothic                        | D / L       | hoop/none   | started |
+| 24  | Fairies & fantasy                      | D / B       | hoop        | started |
 | 25  | Cottages, shops & cosy scenes          | B           | none        | started |
 | 26  | Landscapes & seascapes                 | B           | none        | started |
 | 27  | Animals doing human things             | B           | none        | started |
@@ -177,12 +177,14 @@ ground-coloured connected components that touch the edge OR form a large enclose
 (>= 1% of the image), keeping small enclosed blobs (eye glints) as subject. **This UNLOCKS
 wreaths/rings — `hollywreath` was recovered as a gem** (clean open linen centre), now published.
 
-Still held (2 culls): `monstera` + `fairymushroom` — narrower, harder cases the fix improves but
-doesn't fully solve. `fairymushroom` is really a full SCENE whose foliage rings the whole border,
-which skews the ground estimate so the white sky isn't recognised as ground (route fairy/woodland
-SCENES through `bleed` mode, not dense cut-out). `monstera` has very fine internal leaf-gaps below
-the size floor. So: wreaths/rings + subjects on a removable ground now work; a subject that RINGS
-the border (framed scenes) or has fine internal gaps still needs the right mode/subject choice.
+BOTH held culls LATER RESCUED (2026-07-01, repair-first): `fairymushroom` re-rolled with a COLOURED
+twilight sky + rendered as `bleed` + frameless → a lush magical scene, no white ground (a fairy/
+woodland SCENE must be bleed, never dense cut-out). `monstera` re-rolled as a single COMPACT potted
+plant with a clear margin → outer ground removes clean; minor white remains in the split-leaf gaps
+(inherent to a fenestrated plant) but it reads as a proper potted monstera and is kept. Both PUBLIC.
+Standing rule: wreaths/rings + subjects on a removable ground render clean via dense; full SCENES go
+through bleed + frameless; fine-internal-gap plants are the one soft spot (solid-leaf houseplants are
+cleaner than fenestrated ones if a spotless result is needed).
 
 **Batch 3 — 2026-07-01** (new themes; rendered ONE at a time). **11 gems published PUBLIC, 0 culled**
 (11 generated). **37 PUBLIC needlework patterns total.**
@@ -209,6 +211,33 @@ DENSE mode + a fuller tulip → solid filled bloom. LESSON: a "white-ground" or 
 usually a COMPOSITION/MODE problem — re-roll tighter + on a removable ground, or switch line→dense,
 before ever culling.
 LEARNING: celestial/night-sky works via `bleed` + frameless; route all full SCENES that way.
+
+**Batch 4 — 2026-07-01** (new themes + earlier rescues; rendered ONE at a time). **11 gems published
+PUBLIC, 0 culled** (11 generated). Plus the 2 held culls (`monstera`, `fairymushroom`) rescued in the
+same task. **50 PUBLIC needlework patterns total.**
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| cockapoo | Cockapoo | 3 Dog breeds | D·r | hoop |
+| redsquirrel | Red Squirrel | 4 Woodland | D·m | hoop |
+| peoniesbouquet | Peony Bouquet | 10 Floral showpiece | D·r | hoop |
+| seahorse | Seahorse | 8 Sea life | D·m | hoop |
+| valentineheart | Rose Heart | 21 Valentine's | D·m | hoop |
+| hummingbird | Hummingbird | 5 Birds | D·m | hoop |
+| cherryblossom | Cherry Blossom | 10 Floral | D·m | hoop |
+| witchymoon | Cat & Moon | 23 Witchy/gothic | B·m | frameless |
+| lavenderfield | Lavender Field | 26 Landscapes | B·m | frameless |
+| babyelephant | Baby Elephant | 1 Cute animals (nursery) | D·m | hoop |
+| snowdrop | Snowdrop | 11 Botanical stems | D·m | hoop |
+
+REPAIRS that passed (repair-first): `babyelephant` FIRST published 0 colours — the cached Flux image
+had come back **fully black** (a transient generation failure); the black cache silently re-used on
+re-run. Deleted the `.flux.png` cache to force regen + re-rolled the body to saturated periwinkle-blue
+with bold dark outlines (so it can't be flood-filled as ground) → 96-colour charming nursery gem.
+`snowdrop` FIRST failed in line mode (wispy nodding head lost on white); switched to DENSE + explicit
+green-tipped markings and shadowed side so the white reads → clean 39-colour bell. LESSON: when a
+render is EMPTY (0 stitches/0 colours), check the cached `.flux.png` first — a black/blank Flux result
+caches and silently repeats until deleted.
 
 ---
 
