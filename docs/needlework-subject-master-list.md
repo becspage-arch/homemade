@@ -81,7 +81,7 @@ A theme must contain subjects across **all four tiers**. Never all one level.
 |-----|----------------------------------------|-------------|-------------|---------|
 | 1   | Cute animals & pets                    | D           | hoop/none   | started |
 | 2   | Dog breed portraits (realistic)        | D           | hoop/none   | started |
-| 3   | Cat breed portraits (realistic)        | D           | hoop/none   | todo    |
+| 3   | Cat breed portraits (realistic)        | D           | hoop/none   | started |
 | 4   | Woodland & wildlife                    | D / B       | hoop/none   | started |
 | 5   | Farm animals & smallholding            | D / B       | hoop        | started |
 | 6   | Garden & exotic birds                  | D           | hoop/none   | started |
@@ -95,12 +95,12 @@ A theme must contain subjects across **all four tiers**. Never all one level.
 | 14  | Houseplants & terrariums               | D / L       | hoop/none   | todo    |
 | 15  | Mushrooms & cottagecore                | D / B       | hoop        | started |
 | 16  | Food, drink & baking                   | D / L       | hoop        | started |
-| 17  | Seasonal — Halloween                   | D / B       | hoop        | todo    |
+| 17  | Seasonal — Halloween                   | D / B       | hoop        | started |
 | 18  | Seasonal — Christmas & winter          | D / B       | hoop/none   | started |
-| 19  | Seasonal — Easter & spring             | D / L       | hoop        | todo    |
+| 19  | Seasonal — Easter & spring             | D / L       | hoop        | started |
 | 20  | Seasonal — Autumn / harvest            | D / B       | hoop/none   | started |
 | 21  | Seasonal — Valentine's                 | D / L       | hoop        | todo    |
-| 22  | Celestial & constellations             | D / L       | hoop        | todo    |
+| 22  | Celestial & constellations             | D / L       | hoop        | started |
 | 23  | Witchy & gothic                        | D / L       | hoop/none   | todo    |
 | 24  | Fairies & fantasy                      | D / B       | hoop        | todo    |
 | 25  | Cottages, shops & cosy scenes          | B           | none        | started |
@@ -183,6 +183,28 @@ which skews the ground estimate so the white sky isn't recognised as ground (rou
 SCENES through `bleed` mode, not dense cut-out). `monstera` has very fine internal leaf-gaps below
 the size floor. So: wreaths/rings + subjects on a removable ground now work; a subject that RINGS
 the border (framed scenes) or has fine internal gaps still needs the right mode/subject choice.
+
+**Batch 3 — 2026-07-01** (new themes; rendered ONE at a time). 9 gems published PUBLIC; 11
+generated, 2 culled. **35 PUBLIC needlework patterns total.**
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| ragdoll | Ragdoll Cat | 3 Cat breeds | D·r | hoop |
+| owl | Barn Owl | 4 Woodland | D·r | hoop |
+| springbunny | Spring Bunny | 19 Easter/spring | D·r | hoop |
+| butterfly | Monarch Butterfly | 7 Butterflies | D·m | hoop |
+| hedgehog | Autumn Hedgehog | 1 Cute animals | D·m | hoop |
+| halloweencat | Halloween Cat | 17 Halloween | D·m | hoop |
+| mountainlake | Mountain Lake | 26 Landscapes | B·r | frameless |
+| moon | Crescent Moon & Stars | 22 Celestial | B·m | frameless |
+| ladybird | Ladybird | 7 Butterflies (simple) | D·s | hoop |
+
+Culled (2): `strawberries` (scattered fruit fill the frame edge-to-edge on white → ground not
+cleanly removable → white block — the SAME class as monstera; a single strawberry cluster on a
+removable ground would work), `singletulip` (line-mode flower head came out wispy/incomplete — the
+petals didn't fill; fernstem shows line mode works when the motif is a single filled shape).
+Repair that passed: `moon` re-rendered FRAMELESS (a bleed scene should not sit in a round hoop).
+LEARNING: celestial/night-sky works via `bleed` + frameless; route all full SCENES that way.
 
 ---
 
