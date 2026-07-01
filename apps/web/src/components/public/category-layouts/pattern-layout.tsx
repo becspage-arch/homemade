@@ -382,6 +382,47 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
     (sc) => sc.slug === 'foundations',
   )
 
+  // Which sub-categories actually hold ≥1 PUBLIC, published pattern in this
+  // category's model. Empty shelves (e.g. needlework blackwork / hardanger /
+  // needlepoint — technique tutorials exist but no patterns yet) are dropped
+  // from the Section filter so a chip never lands on an empty grid. Mirrors
+  // RecipeLayout's groupBy + count > 0 approach. The count is category-wide
+  // (it ignores the active sub / difficulty / tag filters) so the shelf list
+  // stays stable as the visitor filters.
+  const subCatBaseWhere = {
+    ownerUserId: null,
+    visibility: Visibility.PUBLIC,
+    publishedAt: { not: null },
+    subCategory: { categoryId: category.id },
+  }
+  const populatedSubGroups = isCrochet
+    ? await prisma.crochetPattern.groupBy({
+        by: ['subCategoryId'],
+        where: subCatBaseWhere,
+        _count: { _all: true },
+      })
+    : isNeedlework
+      ? await prisma.needleworkPattern.groupBy({
+          by: ['subCategoryId'],
+          where: subCatBaseWhere,
+          _count: { _all: true },
+        })
+      : patternType
+        ? await prisma.pattern.groupBy({
+            by: ['subCategoryId'],
+            where: { ...subCatBaseWhere, type: patternType },
+            _count: { _all: true },
+          })
+        : []
+  const populatedSubCategoryIds = new Set(
+    populatedSubGroups
+      .filter((g) => g._count._all > 0 && g.subCategoryId != null)
+      .map((g) => g.subCategoryId as string),
+  )
+  const nonEmptySubCategories = category.subCategories.filter((s) =>
+    populatedSubCategoryIds.has(s.id),
+  )
+
   return (
     <div className="pattern-landing">
       {/* Header: lede + Studio CTAs + decorative thumbnail strip. */}
@@ -564,7 +605,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
               subCategoryName: p.subCategory?.name ?? null,
               subCategorySlug: p.subCategory?.slug ?? null,
             }))}
-            subCategories={category.subCategories.map((s) => ({ slug: s.slug, name: s.name }))}
+            subCategories={nonEmptySubCategories.map((s) => ({ slug: s.slug, name: s.name }))}
             tagFacets={tagFacets}
             designerFacets={designerFacets}
             searchPlaceholder={patternSearchPlaceholder(category.slug)}
@@ -619,7 +660,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
                 subCategorySlug: p.subCategory?.slug ?? null,
               }
             })}
-            subCategories={category.subCategories.map((s) => ({ slug: s.slug, name: s.name }))}
+            subCategories={nonEmptySubCategories.map((s) => ({ slug: s.slug, name: s.name }))}
             tagFacets={tagFacets}
             designerFacets={designerFacets}
             searchPlaceholder={patternSearchPlaceholder(category.slug)}
@@ -672,7 +713,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
                 thumbnailUrl: patternHeroUrl({ id: p.id, hero: p.hero, thumbnail: p.thumbnail }, 'card'),
                 saved: savedPatternIds.has(p.id),
               }))}
-              subCategories={category.subCategories.map((s) => ({
+              subCategories={nonEmptySubCategories.map((s) => ({
                 slug: s.slug,
                 name: s.name,
               }))}
