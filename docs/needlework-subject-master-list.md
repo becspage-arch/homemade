@@ -80,31 +80,31 @@ A theme must contain subjects across **all four tiers**. Never all one level.
 | #   | Theme                                  | Mode(s)     | Frame       | Status  |
 |-----|----------------------------------------|-------------|-------------|---------|
 | 1   | Cute animals & pets                    | D           | hoop/none   | started |
-| 2   | Dog breed portraits (realistic)        | D           | hoop/none   | todo    |
+| 2   | Dog breed portraits (realistic)        | D           | hoop/none   | started |
 | 3   | Cat breed portraits (realistic)        | D           | hoop/none   | todo    |
 | 4   | Woodland & wildlife                    | D / B       | hoop/none   | started |
-| 5   | Farm animals & smallholding            | D / B       | hoop        | todo    |
+| 5   | Farm animals & smallholding            | D / B       | hoop        | started |
 | 6   | Garden & exotic birds                  | D           | hoop/none   | started |
 | 7   | Bees, butterflies & moths              | D / L       | hoop        | started |
-| 8   | Sea life & coastal                     | D / B       | hoop/none   | todo    |
-| 9   | Cute fantasy creatures                 | D           | hoop        | todo    |
+| 8   | Sea life & coastal                     | D / B       | hoop/none   | started |
+| 9   | Cute fantasy creatures                 | D           | hoop        | started |
 | 10  | Florals & bouquets                     | D / L       | hoop/none   | started |
 | 11  | Single botanical stems                 | L           | hoop/none   | started |
 | 12  | Delicate line motifs (jars/sprigs)     | L           | hoop/none   | started |
 | 13  | Wreaths & circular compositions        | D / L       | hoop        | todo    |
 | 14  | Houseplants & terrariums               | D / L       | hoop/none   | todo    |
 | 15  | Mushrooms & cottagecore                | D / B       | hoop        | started |
-| 16  | Food, drink & baking                   | D / L       | hoop        | todo    |
+| 16  | Food, drink & baking                   | D / L       | hoop        | started |
 | 17  | Seasonal — Halloween                   | D / B       | hoop        | todo    |
 | 18  | Seasonal — Christmas & winter          | D / B       | hoop/none   | todo    |
 | 19  | Seasonal — Easter & spring             | D / L       | hoop        | todo    |
-| 20  | Seasonal — Autumn / harvest            | D / B       | hoop/none   | todo    |
+| 20  | Seasonal — Autumn / harvest            | D / B       | hoop/none   | started |
 | 21  | Seasonal — Valentine's                 | D / L       | hoop        | todo    |
 | 22  | Celestial & constellations             | D / L       | hoop        | todo    |
 | 23  | Witchy & gothic                        | D / L       | hoop/none   | todo    |
 | 24  | Fairies & fantasy                      | D / B       | hoop        | todo    |
 | 25  | Cottages, shops & cosy scenes          | B           | none        | started |
-| 26  | Landscapes & seascapes                 | B           | none        | todo    |
+| 26  | Landscapes & seascapes                 | B           | none        | started |
 | 27  | Animals doing human things             | B           | none        | started |
 | 28  | Fabulous / artistic faces              | D           | hoop/none   | started |
 | 29  | Pop-art & fashion portraits (PD/orig)  | D           | none        | todo    |
@@ -148,6 +148,33 @@ artistic, "not-finished-but-pretty" jar/sprig is a keeper, NOT a cull. The earli
 was (a) gating line pieces against the dense naturalistic bar, and (b) leaving the cheap
 rectangular frame on `jar` — non-circular subjects must render FRAMELESS (`--none`), which
 fixed it. Nothing culled this batch.
+
+**Batch 2 — 2026-07-01** (new themes across the range; rendered ONE render at a time to
+avoid overloading the machine). 9 gems published PUBLIC; 12 subjects generated, 3 culled.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| highlandcow | Highland Cow | 5 Farm animals | D·XL | hoop |
+| goldenretriever | Golden Retriever | 2 Dog breeds | D·r | hoop |
+| whale | Humpback Whale | 8 Sea life | B·r | frameless |
+| lighthouse | Cliffside Lighthouse | 26 Landscapes | B·r | frameless |
+| dragon | Baby Dragon | 9 Cute fantasy | D·r | hoop |
+| pumpkins | Autumn Pumpkins | 20 Autumn/harvest | D·m | hoop |
+| seaturtle | Sea Turtle | 8 Sea life | D·m | hoop |
+| cupcake | Frosted Cupcake | 16 Food & baking | D·s | hoop |
+| fernstem | Fern Frond | 11 Botanical stems | L·s | hoop |
+
+Repaired before passing: `goldenretriever` re-rendered with `tameWarm:true` (fur had blown
+red/orange — golden fur needs tameWarm on, unlike the fox).
+
+Culled this batch (3): `fairymushroom`, `monstera`, `hollywreath` — all hit the SAME engine
+limitation: a white/pale background (or a wreath's enclosed centre) that the edge flood-fill
+can't remove, so it gets stitched as a solid block instead of left as bare linen. Re-rolls
+didn't fix it (it's systemic, not a bad generation). **Engine TODO: interior/enclosed
+background removal (seed the flood-fill from interior holes; handle subjects touching the
+frame edge). Until then, avoid white-ground single-subjects + wreaths/rings** (houseplants,
+fairies-on-white, wreaths). Subjects that sit on a removable ground, or full-bleed scenes,
+render fine.
 
 ---
 
