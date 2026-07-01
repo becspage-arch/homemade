@@ -281,6 +281,41 @@ REPAIRS that passed (repair-first — 0 culls despite several first-attempt fail
 - `popartlady` (bold flat pop-art) + `macaw`/`stag` (dense showpieces) passed first time. `tameWarm: true`
   kept the scarlet macaw TRUE red (not orange); `stag` left `tameWarm` OFF to keep the autumn-bracken warmth.
 
+**Batch 6 — 2026-07-01** (full range across new themes; rendered ONE at a time). **11 gems published
+PUBLIC, 0 culled** (every fail repaired to a pass). **72 PUBLIC needlework patterns total.** Contact
+sheet: media.homemade.education/scratch-review/bafb7e15-2c34-40c3-b648-f6853b662374.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| guineapig | Guinea Pig | 1 Cute animals | D·s (98c) | hoop |
+| labrador | Golden Labrador | 2 Dog breeds | D·m (110c) | hoop |
+| mainecoon | Maine Coon | 3 Cat breeds | D·r (141c) | hoop |
+| rooster | Rooster | 5 Farm animals | D·r (229c) | hoop |
+| goldfinch | Goldfinch on a Thistle | 6 Garden birds | D·r (186c) | hoop |
+| lunamoth | Emperor Moth | 7 Bees/butterflies/moths | D·r (139c) | hoop |
+| narwhal | Narwhal | 8 Sea life | D·m (69c) | hoop |
+| phoenix | Phoenix | 9 Cute fantasy | D·m (126c) | hoop |
+| sunflower | Sunflower | 10 Florals | D·s (48c) | hoop |
+| cottagegardenmix | Cottage Garden Bouquet | 10 Floral showpiece | D·XL (362c) | hoop |
+| englishroseswreath | English Roses Wreath | 13 Wreaths showpiece | D·XL (172c) | hoop |
+
+REPAIRS that passed (repair-first — 0 culls despite several first-attempt fails):
+- **Source-baked red markings (not a render blow-out):** `mainecoon` first rendered with bright scarlet
+  war-paint streaks on the face. `tameWarm: true` did NOT fix it — the red was IN the Flux illustration,
+  not a render-time warm blow-out, so the render lever can't remove it. Deleting the flux + re-rolling
+  with an explicit "natural brown/black tabby, absolutely no red markings, no face paint" prompt gave a
+  clean natural Maine Coon. LESSON: if a warm/odd colour survives `tameWarm`, it's in the source image →
+  delete the flux + re-roll the prompt; `tameWarm` only tames a render-grade warm shift.
+- **Bad Flux composite:** `narwhal` first rendered as a lumpy amorphous body with TWO horns + a stray red
+  rose on the cheek. Deleted flux + re-rolled with a "single spiralled tusk, clean side profile, torpedo
+  body, no extra horns, no flowers" prompt → a cute coherent narwhal.
+- **Warm-streaked sunflower:** `sunflower` first came out coral-flushed with a green centre; a re-roll gave
+  a well-SHAPED sunflower but with red-streaked petals (`tameWarm` didn't mute them — the streaks read as a
+  real "Ring of Fire" ornamental variety). Kept as an ornamental sunflower (clean, complete, recognisable).
+- **Naming accuracy:** the "Luna Moth" render came out with four eyespots + short tails = an EMPEROR moth,
+  not a luna (luna = pale green, long twisted tails). Renamed the row to "Emperor Moth" (slug stays
+  `lunamoth`). LESSON: gate for subject ACCURACY, not just cleanliness — rename to what actually rendered.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
