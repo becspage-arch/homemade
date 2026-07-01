@@ -192,6 +192,21 @@ the lane toward heavy contouring; a "bright FLAT even studio lighting, NO grey c
 forehead visible" re-roll fixed it → kept). All 5 non-red-fur scenes passed clean. **687 → 717 PUBLIC.**
 Deploy green + /healthz 200.
 
+**2026-07-01 — Batch S shipped 31 gate-passed gems** (31 generated, 0 culls — best yield yet). RANGE
+10 → 109 colours: cuties (sloth, llama, hamster, baby-owl, dolphin, goldfinch) → fantasy (pegasus-foal,
+gnome-mushroom, unicorn-night, dragon-egg-nest, fairy-teacup) → 5 popart + 3 fabulous faces (peony/
+forget-me-not/marigold, fair) → whimsical animal scenes (rabbit-painter, bear-baker, hedgehog-postman,
+owl-teacher, beaver-carpenter) → florals → **4 dense 100+ Flux-1.1-Pro showpieces** (enchanted-forest 78 —
+dusk palette collapsed the count but reads richly, paris-street 109, cottage-garden 102, safari-savanna 107).
+Shelves: portraits +8, animals +6, fantasy +5, whimsical +5, scenes +4, floral +3. Deep-skin `sat:1.1` popart
+held a FOURTH batch (cornrows-man, afro-puffs, curly-bob — all correct rich brown). 3 re-rolls, ALL saved (0
+culls): owl-teacher had faint gibberish chalk-writing → re-briefed the board as a wordless chalk sun/stars
+drawing (NO letters) since Flux can't write clean text; dragon-egg-nest was a muddy jumble → "two clearly
+defined dragons + simple uncluttered background" fixed it; fairy-teacup was hazy/washed-out → "bold crisp
+high-contrast outlines + simple clean background" fixed it. NEW GATE NOTE: watch chalkboards/signs for faint
+gibberish text (hard fail) — brief scene props as wordless drawings. **717 → 748 PUBLIC.** Deploy green +
+/healthz 200.
+
 ---
 
 ## PROGRESS TABLE

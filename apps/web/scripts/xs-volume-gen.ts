@@ -566,6 +566,48 @@ export const BRIEFS: Brief[] = [
   B('R', 'r-big-cherry-festival', 240, 220, 150, 'showpiece', 'a joyful spring cherry-blossom festival with paper lanterns, food stalls, a little shrine and a bridge over a stream, people in kimono and drifting pink petals, intricate full coverage'),
   B('R', 'r-big-christmas-parlour', 220, 245, 150, 'showpiece', 'a cosy Christmas living room at night with a decorated tree, wrapped presents, stockings on a glowing fireplace, garlands, a sleeping cat and softly lit windows, intricate warm full coverage'),
   B('R', 'r-big-mermaid-kingdom', 220, 245, 150, 'showpiece', 'a magical underwater mermaid kingdom with a coral palace, mermaids, seahorses, dolphins, treasure chests, glowing jellyfish and shafts of light, intricate jewel-toned full coverage'),
+
+  // ─────────── BATCH S — same priorities: more deep-skin popart (sat:1.1), fabulous faces
+  //             (fair, sat:1.0, bright FLAT lighting), animal-as-human scenes (NO red/orange
+  //             fur), fantasy, florals + HUGE 100+ Flux-1.1-Pro showpieces. RANGE 11 → 120. ──
+  // ── quick + simple small cuties (BEGINNER, ~11–16 colours) ──
+  B('S', 's-cute-sloth-branch', 118, 118, 14, 'cute', 'an adorable smiling sloth hanging from a leafy branch, sweet clean face with both eyes symmetrical, clean pale background'),
+  B('S', 's-cute-llama-flowers', 115, 122, 16, 'cute', 'a cute fluffy llama with a little garland of flowers around its neck, sweet clean face with both eyes symmetrical, clean white background'),
+  B('S', 's-cute-hamster-seed', 112, 112, 13, 'cute', 'an adorable chubby-cheeked hamster nibbling a sunflower seed, sweet clean face with both eyes symmetrical, clean white background'),
+  B('S', 's-cute-baby-owl', 112, 120, 14, 'cute', 'a tiny fluffy baby owl with big round eyes perched on a little branch, sweet clean face with both eyes symmetrical, clean white background'),
+  B('S', 's-cute-dolphin-splash', 120, 112, 12, 'cute', 'a cheerful little dolphin leaping from sparkling blue water with a splash, both eyes symmetrical, clean pale background'),
+  // ── fairies & fantasy (medium → large) ──
+  B('S', 's-fantasy-pegasus-foal', 140, 160, 28, 'fantasy', 'a sweet baby pegasus foal with soft feathery wings standing in a cloud meadow of stars, soft dreamy pastel-and-jewel palette, a clear sweet face with both eyes symmetrical, crisp clean outlines'),
+  B('S', 's-fantasy-gnome-mushroom', 130, 150, 26, 'fantasy', 'a jolly little garden gnome with a red pointed hat sitting on a spotted toadstool beside a snail, warm storybook light, a clear friendly face, crisp clean bold outlines, NOT muddy'),
+  B('S', 's-fantasy-unicorn-night', 150, 170, 30, 'fantasy', 'a graceful unicorn with a starry mane rearing on a moonlit hilltop under a sky of constellations, deep indigo-and-silver jewel palette with soft glow, crisp clean outlines, NOT muddy'),
+  B('S', 's-fantasy-dragon-egg-nest', 140, 160, 28, 'fantasy', 'two adorable baby dragons hatching from speckled eggs in a cosy straw nest, each dragon clearly defined with big friendly eyes and tiny wings, bold clean outlines, bright emerald-and-gold jewel tones, a simple clean uncluttered background, crisp and clear, NOT a chaotic jumble, NOT muddy'),
+  B('S', 's-fantasy-fairy-teacup', 130, 150, 28, 'fantasy', 'a cute little fairy with luminous wings perched on the rim of a pretty flowered teacup, the fairy clearly defined with a sweet face and both eyes symmetrical, a couple of roses beside it, bold clean crisp high-contrast outlines, bright and clear, a simple clean uncluttered pale background, NOT hazy NOT washed-out NOT busy'),
+  // ── pop art & portraits (popart — deep skin sat:1.1) ──
+  B('S', 's-popart-cornrows-man', 150, 195, 20, 'popart', 'a handsome man with neat cornrows and a short beard, rich dark chocolate-brown skin (deep and clearly brown, absolutely not pink coral or orange), warm ochre background', 1.1),
+  B('S', 's-popart-afropuff-woman', 150, 195, 20, 'popart', 'a beautiful woman with two big afro puffs and gold jewellery and bold lips, rich dark chocolate-brown skin (deep and clearly brown, absolutely not pink coral or orange), teal background', 1.1),
+  B('S', 's-popart-curlybob-woman', 150, 195, 20, 'popart', 'an elegant woman with a chin-length curly bob and hoop earrings, deep brown skin in a natural believable tone (not orange), coral-pink background', 1.1),
+  B('S', 's-popart-fedora-man', 150, 195, 20, 'popart', 'a cool man in a felt fedora and a roll-neck jumper, mid-brown skin in a natural believable tone, sage-green background'),
+  B('S', 's-popart-turtleneck-woman', 150, 195, 18, 'popart', 'a chic woman with a sleek dark ponytail in a black turtleneck and bold red lips, fair skin in a natural believable tone, deep teal background'),
+  // ── fabulous faces (artface — FAIR/PALE skin ONLY; sat:1.0, bright FLAT lighting) ──
+  B('S', 's-face-peony-fair', 160, 205, 28, 'artface', 'a woman with fair skin and a crown of blush-pink peonies, a serene beautiful face in bright FLAT even studio lighting with NO grey contouring shadows, clean smooth matte even fair skin, the whole head and full forehead clearly visible above the brows, both eyes symmetrical, soft flat clean shading, no grey shadows or patches on the face, natural skin', 1.0),
+  B('S', 's-face-forgetmenot-pale', 160, 205, 26, 'artface', 'a woman with pale skin and a crown of blue forget-me-nots and greenery, a serene beautiful face in bright FLAT even studio lighting with NO grey contouring shadows, clean smooth matte even skin, the whole head and full forehead clearly visible above the brows, both eyes symmetrical, soft flat clean shading, no grey patches on the face, natural skin', 1.0),
+  B('S', 's-face-marigold-fair', 160, 205, 26, 'artface', 'a woman with fair skin and a crown of orange and yellow marigolds, a serene beautiful face in bright FLAT even studio lighting with NO grey contouring shadows, clean smooth matte even fair skin, the whole head and full forehead clearly visible above the brows, both eyes symmetrical, soft flat clean shading, no grey shadows or orange patches on the face, natural skin', 1.0),
+  // ── animals doing human things, FULL SCENES (scene lane — NO red/orange fur) ──
+  B('S', 's-scene-rabbit-painter', 150, 190, 30, 'scene', 'a cheerful white rabbit in a smock and beret painting a landscape at an easel in a bright sunny studio with canvases and paint pots'),
+  B('S', 's-scene-bear-baker', 150, 190, 30, 'scene', 'a friendly brown bear in an apron and chef hat piping icing onto a tiered cake in a cosy bakery full of pastries and jars'),
+  B('S', 's-scene-hedgehog-postman', 150, 190, 28, 'scene', 'a busy little hedgehog postman in a cap and satchel delivering letters along a cobbled village lane with cottages and flowerpots'),
+  B('S', 's-scene-owl-teacher', 150, 190, 30, 'scene', 'a kindly owl schoolteacher in spectacles standing by a green chalkboard that has a simple chalk drawing of a smiling sun, a few stars and a flower on it (NO written words, NO letters, NO text at all), in a cosy little classroom with desks, books and a globe'),
+  B('S', 's-scene-beaver-carpenter', 150, 190, 30, 'scene', 'a hardworking beaver in dungarees sawing wood at a workbench in a busy little carpentry workshop full of tools and timber'),
+  // ── beautiful florals + a bright bird (medium–large, richer palettes) ──
+  B('S', 's-floral-iris-vase', 150, 175, 32, 'bright', 'a striking bunch of purple and blue irises with green blades in a tall ceramic vase'),
+  B('S', 's-floral-magnolia-branch', 150, 165, 26, 'bright', 'an elegant branch of pink and white magnolia blossom against a soft sky'),
+  B('S', 's-wre-spring-blossom', 165, 165, 38, 'wreath', 'a fresh spring wreath of cherry blossom, tulips, daffodils and green leaves'),
+  B('S', 's-bright-goldfinch-thistle', 130, 150, 22, 'bright', 'a bright yellow goldfinch perched on a purple thistle'),
+  // ── HUGE detailed showpieces (XL, 150-brief → Flux 1.1 Pro, 100+ floss) ──
+  B('S', 's-big-enchanted-forest', 235, 220, 150, 'showpiece', 'a magical enchanted forest at dusk with glowing lanterns and fairy lights strung between ancient twisted trees, toadstools, a little stream, deer and fireflies, intricate jewel-toned full coverage'),
+  B('S', 's-big-paris-street', 220, 245, 150, 'showpiece', 'a charming Parisian street scene with a corner café, striped awnings, flower boxes, cyclists, the Eiffel Tower beyond and a golden-hour sky, intricate richly-coloured full coverage'),
+  B('S', 's-big-cottage-garden', 240, 220, 150, 'showpiece', 'a glorious English cottage garden in full summer bloom with a thatched cottage, hollyhocks, roses climbing a trellis, a winding path, a birdbath and butterflies, intricate full coverage'),
+  B('S', 's-big-safari-savanna', 240, 220, 150, 'showpiece', 'a sweeping African savanna at golden hour with elephants, giraffes, zebras and lions at a watering hole, acacia trees and a big warm sky, intricate richly-coloured full coverage'),
 ]
 
 type FluxSize = 'square_hd' | 'landscape_4_3' | 'portrait_4_3'
