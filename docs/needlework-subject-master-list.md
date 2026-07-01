@@ -184,8 +184,8 @@ SCENES through `bleed` mode, not dense cut-out). `monstera` has very fine intern
 the size floor. So: wreaths/rings + subjects on a removable ground now work; a subject that RINGS
 the border (framed scenes) or has fine internal gaps still needs the right mode/subject choice.
 
-**Batch 3 — 2026-07-01** (new themes; rendered ONE at a time). 9 gems published PUBLIC; 11
-generated, 2 culled. **35 PUBLIC needlework patterns total.**
+**Batch 3 — 2026-07-01** (new themes; rendered ONE at a time). **11 gems published PUBLIC, 0 culled**
+(11 generated). **37 PUBLIC needlework patterns total.**
 
 | Slug | Name | Theme | Mode·Cx | Frame |
 |------|------|-------|---------|-------|
@@ -198,12 +198,16 @@ generated, 2 culled. **35 PUBLIC needlework patterns total.**
 | mountainlake | Mountain Lake | 26 Landscapes | B·r | frameless |
 | moon | Crescent Moon & Stars | 22 Celestial | B·m | frameless |
 | ladybird | Ladybird | 7 Butterflies (simple) | D·s | hoop |
+| strawberries | Strawberries | 16 Food & baking | D·r | hoop |
+| singletulip | Single Tulip | 11 Botanical stems | D·s | hoop |
 
-Culled (2): `strawberries` (scattered fruit fill the frame edge-to-edge on white → ground not
-cleanly removable → white block — the SAME class as monstera; a single strawberry cluster on a
-removable ground would work), `singletulip` (line-mode flower head came out wispy/incomplete — the
-petals didn't fill; fernstem shows line mode works when the motif is a single filled shape).
-Repair that passed: `moon` re-rendered FRAMELESS (a bleed scene should not sit in a round hoop).
+REPAIRS that passed (repair-first, don't cull hastily): `moon` re-rendered FRAMELESS (a bleed scene
+must not sit in a round hoop). `strawberries` FIRST failed (fruit scattered edge-to-edge on white →
+ground not removable → white block); re-rolled as a COMPACT centred cluster with a clear margin →
+clean cut-out on linen. `singletulip` FIRST failed in line mode (wispy flower head); switched to
+DENSE mode + a fuller tulip → solid filled bloom. LESSON: a "white-ground" or "wispy-line" fail is
+usually a COMPOSITION/MODE problem — re-roll tighter + on a removable ground, or switch line→dense,
+before ever culling.
 LEARNING: celestial/night-sky works via `bleed` + frameless; route all full SCENES that way.
 
 ---
