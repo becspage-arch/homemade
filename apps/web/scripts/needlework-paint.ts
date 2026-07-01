@@ -147,6 +147,12 @@ async function run(job: Job): Promise<void> {
   // ---- publish: persist through the proven NeedleworkPattern pipeline ----
   const { prisma, Visibility } = await import('@homemade/db')
   if (!hero.r2) throw new Error('renderHero did not persist to R2')
+  // File into the surface-embroidery shelf. The live needlework category grid
+  // only shows rows with a sub-category in the needlework category
+  // (pattern-layout.tsx needleworkWhere) — an unfiled row is invisible on-site.
+  const nwCat = await prisma.category.findUnique({ where: { slug: 'needlework' }, select: { id: true } })
+  const nwSub = nwCat ? await prisma.subCategory.findFirst({ where: { categoryId: nwCat.id, slug: 'surface-embroidery' }, select: { id: true } }) : null
+  if (!nwSub) throw new Error('surface-embroidery sub-category not found for needlework')
   const name = job.name ?? titleCase(job.slug)
   const meta = await sharp(hero.localHeroPath).metadata()
   const media = await prisma.media.create({
@@ -172,6 +178,7 @@ async function run(job: Job): Promise<void> {
     frameType: (frameType === 'NONE' ? null : frameType) as never,
     threadTypes: ['stranded-cotton'], colourCount: document.flossKey.length,
     difficulty: 'INTERMEDIATE' as never, heroMediaId: media.id, thumbnailMediaId: media.id,
+    subCategoryId: nwSub.id,
     visibility: Visibility.UNLISTED, publishedAt: new Date(),
   }
   const pattern = await prisma.needleworkPattern.upsert({ where: { slug: job.slug }, create: data2, update: data2, select: { id: true } })
