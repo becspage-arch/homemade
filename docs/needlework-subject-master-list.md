@@ -107,9 +107,9 @@ A theme must contain subjects across **all four tiers**. Never all one level.
 | 26  | Landscapes & seascapes                 | B           | none        | started |
 | 27  | Animals doing human things             | B           | none        | started |
 | 28  | Fabulous / artistic faces              | D           | hoop/none   | started |
-| 29  | Pop-art & fashion portraits (PD/orig)  | D           | none        | todo    |
-| 30  | Nursery & baby                         | D / L       | hoop        | todo    |
-| 31  | Heritage PD reinterpretations          | D / L       | hoop        | todo    |
+| 29  | Pop-art & fashion portraits (PD/orig)  | D           | none        | started |
+| 30  | Nursery & baby                         | D / L       | hoop        | started |
+| 31  | Heritage PD reinterpretations          | D / L       | hoop        | started |
 | S1  | Word art / affirmations                | SPEC:word   | none        | deferred |
 | S2  | Maps with landmarks                    | SPEC:map    | none        | deferred |
 | S3  | Alphabet & stitch samplers             | SPEC:sampler| hoop/none   | deferred |
@@ -238,6 +238,48 @@ with bold dark outlines (so it can't be flood-filled as ground) → 96-colour ch
 green-tipped markings and shadowed side so the white reads → clean 39-colour bell. LESSON: when a
 render is EMPTY (0 stitches/0 colours), check the cached `.flux.png` first — a black/blank Flux result
 caches and silently repeats until deleted.
+
+**Batch 5 — 2026-07-01** (closes the last 3 `todo` themes 29/30/31 + range spread; rendered ONE at a
+time). **11 gems published PUBLIC, 0 culled** (11 generated — every fail repaired to a pass). **61
+PUBLIC needlework patterns total.** Contact sheet: media.homemade.education/scratch-review/de5489f5-a7cf-4f79-853a-98e4563ca379.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| toadstoolsingle | Red Toadstool | 15 Mushrooms | D·s | hoop |
+| eucalyptussprig | Eucalyptus Sprig | 11 Botanical stems | D·m | hoop |
+| dandelionclock | Dandelion Clock | 11 Botanical stems | D·m | hoop |
+| teddybear | Teddy Bear | 30 Nursery & baby | D·m | hoop |
+| dragonfly | Dragonfly | 7 Bees/butterflies | D·m | hoop |
+| artnouveauiris | Art Nouveau Iris | 31 Heritage reinterp | D·m | hoop |
+| puffin | Puffin on the Cliffs | 8 Sea life & coastal | B·r | frameless |
+| popartlady | Pop-Art Lady | 29 Pop-art & fashion | B·r | frameless |
+| macaw | Scarlet Macaw | 6 Exotic birds (showpiece) | D·r | hoop |
+| stag | Red Deer Stag | 4 Woodland (showpiece) | D·r | hoop |
+| hydrangea | Hydrangea Bloom | 10 Floral (showpiece) | D·r | hoop |
+
+REPAIRS that passed (repair-first — 0 culls despite several first-attempt fails):
+- **Line-mode botanicals scrawl** (again): `eucalyptussprig` + `dandelionclock` first rendered in `line`
+  mode came out as confetti-coloured stems / muddy ghost leaves. Switched BOTH to `dense` + clearer
+  prompts → clean sprig / fluffy seed-head. Confirms the standing rule: wispy single botanicals want
+  DENSE, not line (line is only safe for a bold single filled shape like `fernstem`).
+- **Stubborn warm centre:** `dandelionclock` kept painting a red/orange gerbera-like ring in the middle
+  even after "no red, no orange" prompts (Flux conflates dandelion-clock with the yellow flower). Fixed
+  at RENDER time with `tameWarm: true` (no flux regen needed) — it muted the warm ring to a natural
+  brown receptacle. NEW LEVER USE: `tameWarm` also rescues an unwanted warm colour cast, not just
+  reds-blowing-orange.
+- **White subject eaten by pale ground:** `puffin` (large pure-white belly ≈#f5f5f5) fell within the
+  background-removal threshold of the cream linen → a hollow gap through its torso. Re-routed to a
+  coastal `bleed` SCENE (grassy clifftop + sea thrift + sea) → coloured ground, nothing removed, solid
+  belly, and a richer piece (289 colours). Rule: a large white/pale subject on cream → make it a bleed
+  scene (or shade the white), never a dense cut-out.
+- **White-square block** (fairymushroom class): `hydrangea` first filled the frame with white ground +
+  corner florets ringing the border → the white read as enclosed, un-removable, and stitched as a solid
+  white SQUARE inside the hoop. Re-rolled as ONE compact centred mophead with a generous clear margin
+  (nothing touching edges) → ground removes clean, tidy cut-out. Same "compact centred cluster + clear
+  margin" fix as `strawberries`. LESSON: for a clean hoop cut-out the subject must NOT touch the frame
+  edges — override the shared PLAIN "filling the frame" suffix with an explicit margin instruction.
+- `popartlady` (bold flat pop-art) + `macaw`/`stag` (dense showpieces) passed first time. `tameWarm: true`
+  kept the scarlet macaw TRUE red (not orange); `stag` left `tameWarm` OFF to keep the autumn-bracken warmth.
 
 ---
 
