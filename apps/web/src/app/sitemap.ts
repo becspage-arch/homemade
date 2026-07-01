@@ -21,7 +21,7 @@ const ONE_DAY_MS = 24 * 60 * 60 * 1000
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date()
 
-  const [tutorials, categories, needleworkPatterns, makers, madeIt] = await Promise.all([
+  const [tutorials, categories, makers, madeIt] = await Promise.all([
     prisma.tutorial.findMany({
       // Only tutorials in a publicly-visible (signed-off) category. A published
       // tutorial in a hidden category 404s to the public, so it must not appear
@@ -40,19 +40,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     prisma.category.findMany({
       where: { isPublicVisible: true },
       orderBy: [{ launchOrder: 'asc' }, { name: 'asc' }],
-      select: { slug: true, updatedAt: true },
-    }),
-    // Needlework pattern detail pages — a separate model from Pattern, so it
-    // needs its own query. Only PUBLIC, published, library-owned rows with a
-    // slug; emitted only when the needlework category itself is public (below).
-    prisma.needleworkPattern.findMany({
-      where: {
-        ownerUserId: null,
-        visibility: 'PUBLIC',
-        publishedAt: { not: null },
-        slug: { not: null },
-      },
-      orderBy: { publishedAt: 'desc' },
       select: { slug: true, updatedAt: true },
     }),
     prisma.user.findMany({
@@ -145,20 +132,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.7,
     })
-  }
-
-  // Needlework pattern detail pages — only when the category is public (else the
-  // detail pages aren't part of the live surface yet).
-  if (categories.some((c) => c.slug === 'needlework')) {
-    for (const p of needleworkPatterns) {
-      if (!p.slug) continue
-      entries.push({
-        url: siteUrl(`/needlework/patterns/${p.slug}`),
-        lastModified: p.updatedAt,
-        changeFrequency: 'monthly',
-        priority: 0.6,
-      })
-    }
   }
 
   // Maker profiles
