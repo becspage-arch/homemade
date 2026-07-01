@@ -141,6 +141,28 @@ CONFIRMED PATTERN: `artface` renders **fair/pale skin clean** (holly-pale, cherr
 passed) but **deep/tan skin will not converge** (orange/magenta patchwork) — for deep-skin faces prefer the
 `popart` lane, which is reliable across skin tones. **601 → 629 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-01 — Batch P shipped 28 gate-passed gems** (31 generated, 3 culled). Complexity RANGE 12 → 106
+colours: small/simple cuties (penguin-scarf, panda-bamboo, bunny-carrot, fox-cub-leaf, lamb-bow; 13–15 col)
+→ medium (wizard-cat, genie-lamp, unicorn-rainbow, snow-queen, 4 pop-art portraits, 3 fabulous faces
+rose/poppy/daisy, hummingbird, 2 florals + lavender wreath) → large whimsical scenes (rabbit baker, bear
+fisherman, frog banjo, badger gardener) → **HUGE dense 100+ tier on Flux 1.1 Pro** (christmas-village 101,
+japanese-garden 101, coral-reef 106, cosy-bookshop 100 — all at full floss via the dense-aware path).
+Shelves: portraits +7, animals +6, fantasy +4, whimsical +4, floral +3, scenes +4. 3 culls: hijab-emerald
+(residual orange face patches + muddy eyes after one repair), fairy-toadstool (blank green-orb eyes + odd
+mouth wouldn't converge), squirrel-artist (red-brown fur cooked to a flat magenta blob by the `scene` lane's
+1.3 saturation). **KEY FIX THIS BATCH — per-brief `sat` override:** the deep/tan-skin over-cook diagnosed in
+Batch O turned out to be the *compound saturation boost* (per-lane `SRC_SAT` pre-saturation × the `×1.3`
+post-render modulate ≈ 1.6× total), not a Flux limit. Added an optional `sat` field to `Brief`/`B()` in
+`xs-volume-gen.ts` (line ~33) that, when set, is used for BOTH the pre-saturation AND forces the post-render
+modulate to 1.0 (line ~545/556) — a clean, contained bypass of the double boost that does NOT touch the shared
+`photoToPatternData` converter. `xs-enrich.ts` now emits `srcSat = b.sat ?? SRC_SAT[style]` and
+`postSat = b.sat != null ? 1 : 1.3`; `xs-volume-publish.ts` reads `a.postSat ?? POST_SAT`. **VALIDATED:**
+afro-gold re-rolled at `sat:1.1` now renders correct warm dark-brown skin — **deep-skin portraits are now
+shippable.** rose-fair + poppy-fair at `sat:1.0` render clean fair skin with no orange streaking. Residual
+lesson: `sat` fixes the *base* skin tone; it does NOT remove orange patches baked into the Flux render itself
+(hijab-emerald still had them), and it doesn't help red-furred animals in the `scene` lane (squirrel-artist).
+**629 → 657 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE

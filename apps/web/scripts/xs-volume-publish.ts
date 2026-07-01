@@ -38,7 +38,7 @@ const TARGET = 1000
 
 interface Approved {
   slug: string; name: string; sub: string; subName: string
-  w: number; h: number; colours: number; style: string; srcSat: number; batch: string
+  w: number; h: number; colours: number; style: string; srcSat: number; postSat?: number; batch: string
   difficulty?: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED'; description?: string
 }
 function difficultyFor(colours: number): 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' {
@@ -110,7 +110,7 @@ async function main(): Promise<void> {
     const rw = region?.width ?? data.grid.width
     const cellPx = rw <= 70 ? 26 : rw <= 130 ? 16 : 10
     const svg = renderPatternSvgString(data, { mode: 'beauty', cellPx, showSymbols: false, showGrid: false, showCentreCrosshairs: false, padding: Math.round(cellPx * 0.8), region })
-    const png = await sharp(Buffer.from(svg)).modulate({ saturation: POST_SAT }).resize(TARGET, TARGET, { fit: 'inside' }).png({ quality: 90 }).toBuffer()
+    const png = await sharp(Buffer.from(svg)).modulate({ saturation: a.postSat ?? POST_SAT }).resize(TARGET, TARGET, { fit: 'inside' }).png({ quality: 90 }).toBuffer()
     const meta = await sharp(png).metadata()
     const { key, publicUrl } = await r2UploadRetry(png, { prefix: 'pattern-thumbnails', filename: `${p.id}.png` })
     const media = await prisma.media.create({ data: { type: 'ILLUSTRATION', mimeType: 'image/png', r2Key: key, width: meta.width ?? TARGET, height: meta.height ?? TARGET, bytes: png.byteLength, status: 'READY', source: 'original', alt: `${a.name} cross-stitch chart` }, select: { id: true } })

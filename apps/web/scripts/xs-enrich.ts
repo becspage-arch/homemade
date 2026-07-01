@@ -16,7 +16,7 @@ function main(): void {
   for (const a of list) {
     const b = BRIEFS.find((x) => x.slug === a.slug)
     if (!b) { missing.push(a.slug); continue }
-    out.push({ ...a, w: b.w, h: b.h, colours: b.colours, style: b.style, srcSat: SRC_SAT[b.style], batch: b.batch })
+    out.push({ ...a, w: b.w, h: b.h, colours: b.colours, style: b.style, srcSat: b.sat ?? SRC_SAT[b.style], postSat: b.sat != null ? 1 : 1.3, batch: b.batch })
   }
   writeFileSync(resolve(outFile), JSON.stringify(out, null, 2))
   console.log(`enriched ${out.length}/${list.length}${missing.length ? ` · MISSING: ${missing.join(', ')}` : ''}`)

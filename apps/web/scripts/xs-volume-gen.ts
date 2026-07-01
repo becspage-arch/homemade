@@ -53,9 +53,13 @@ export const SRC_SAT: Record<keyof typeof STYLE, number> = {
 }
 // Bright ivory aida (was a dull #F5EBD8 oatmeal that greyed every colour).
 export const FABRIC = '#FCFAF6'
-export interface Brief { slug: string; batch: string; w: number; h: number; colours: number; style: keyof typeof STYLE; prompt: string }
-const B = (batch: string, slug: string, w: number, h: number, colours: number, style: keyof typeof STYLE, subject: string): Brief =>
-  ({ slug, batch, w, h, colours, style, prompt: `${subject}, ${STYLE[style]}, clean composition, centred` })
+// `sat` (optional) overrides the per-lane source saturation for THIS brief AND skips the
+// post-render saturation boost. Use it for skin-heavy portraits: the compound boost
+// (srcSat ~1.25 × post 1.3 ≈ 1.6×) cooks brown/tan skin into orange/coral. sat:1.0 keeps
+// the raw Flux skin true; ~1.1 keeps a little punch for pop-art backgrounds.
+export interface Brief { slug: string; batch: string; w: number; h: number; colours: number; style: keyof typeof STYLE; prompt: string; sat?: number }
+const B = (batch: string, slug: string, w: number, h: number, colours: number, style: keyof typeof STYLE, subject: string, sat?: number): Brief =>
+  ({ slug, batch, w, h, colours, style, prompt: `${subject}, ${STYLE[style]}, clean composition, centred`, ...(sat != null ? { sat } : {}) })
 
 export const BRIEFS: Brief[] = [
   // ─────────── BATCH A — varied subjects × shapes ───────────
@@ -434,6 +438,49 @@ export const BRIEFS: Brief[] = [
   B('O', 'o-big-enchanted-library', 220, 250, 150, 'showpiece', 'a vast enchanted library with towering bookshelves, rolling ladders, glowing floating books, lanterns, a spiral staircase and a small friendly dragon, dense richly-coloured full coverage'),
   B('O', 'o-big-seaside-town', 240, 220, 150, 'showpiece', 'a colourful seaside harbour town with tiers of pastel cottages, fishing boats, a lighthouse, market stalls, gulls and many little people, intricate full coverage'),
   B('O', 'o-big-butterfly-garden', 220, 255, 150, 'showpiece', 'a densely packed summer butterfly garden with hundreds of flowers in every colour, many butterflies, bees, a birdbath and trailing blooms, intricate full coverage'),
+
+  // ═══════════════ BATCH P (2026-07-01) — priorities: pop art & portraits (deep→fair via the RELIABLE
+  //             popart lane, since artface can't converge on deep/tan skin), fabulous faces (artface =
+  //             FAIR/PALE only), animals-as-humans, fairies/fantasy, beautiful florals + HUGE 100+
+  //             Flux-1.1-Pro showpieces. Full RANGE 14 → 113. ───────────────────────────────────────
+  // ── quick + simple small cuties (BEGINNER, ~14–18 colours) ──
+  B('P', 'p-cute-bunny-carrot', 112, 118, 16, 'cute', 'a fluffy white bunny with soft grey shading and a clear grey outline so it reads on pale fabric, hugging a bright orange carrot (solid orange, no pink), clear friendly face with both eyes symmetrical, clean pale background'),
+  B('P', 'p-cute-fox-cub-leaf', 112, 118, 16, 'cute', 'a tiny sitting orange fox cub with a clean white chest and one clear red maple leaf held beside it, tidy solid fills, sweet clean face with both eyes symmetrical, clean pale background'),
+  B('P', 'p-cute-penguin-scarf', 110, 120, 15, 'cute', 'a round fluffy baby penguin wearing a cosy striped knitted scarf, clear sweet face with both eyes symmetrical, clean white background'),
+  B('P', 'p-cute-lamb-bow', 112, 112, 16, 'cute', 'a fluffy little cream lamb with soft grey-brown wool shading and a clear outline so it reads on pale fabric, a pastel blue bow, sweet clean face with both eyes symmetrical, clean white background'),
+  B('P', 'p-cute-panda-bamboo', 112, 118, 16, 'cute', 'an adorable roly-poly baby panda holding a green bamboo shoot, clear friendly face with both eyes symmetrical, clean white background'),
+  // ── fairies & fantasy (medium → large) ──
+  B('P', 'p-fantasy-fairy-toadstool', 130, 160, 26, 'fantasy', 'a sweet little fairy with luminous gauzy wings sitting on a bright red spotted toadstool in a sunlit flower glade, a clear pretty well-defined face with both eyes symmetrical and normal-sized, crisp clean bold outlines, bright airy daylight, NOT muddy NOT hazy'),
+  B('P', 'p-fantasy-wizard-cat', 140, 160, 30, 'fantasy', 'a whimsical wizard cat in a starry pointed hat and robe holding a glowing spellbook, warm magical light, clear friendly face, crisp clear detail'),
+  B('P', 'p-fantasy-genie-lamp', 150, 160, 30, 'fantasy', 'a friendly smiling genie with a jewelled turban swirling up out of a golden lamp in a puff of magic, rich jewel-tone palette, clear face with both eyes symmetrical'),
+  B('P', 'p-fantasy-unicorn-rainbow', 160, 175, 32, 'fantasy', 'a graceful white unicorn with a flowing rainbow mane and tail on a flowery hilltop beneath a rainbow, soft dreamy pastel-and-jewel palette, crisp clear detail'),
+  B('P', 'p-fantasy-snow-queen', 160, 200, 36, 'fantasy', 'an elegant snow queen with fair skin in an icy-blue gown and crystal crown in a glittering winter palace, cool sparkling palette, a clear beautiful face with both eyes symmetrical'),
+  // ── pop art & portraits (popart — reliable across ALL skin tones, deep→fair) ──
+  B('P', 'p-popart-afro-gold', 150, 195, 20, 'popart', 'a striking woman with a big natural afro and gold hoop earrings, rich dark chocolate-brown skin (deep and clearly brown, absolutely not pink coral or orange), bold teal background', 1.1),
+  B('P', 'p-popart-hijab-emerald', 150, 195, 20, 'popart', 'an elegant woman in a flowing rich emerald-green hijab (clearly green) with bold red lips, warm mid-brown skin (natural believable brown, not orange), warm coral-pink background', 1.1),
+  B('P', 'p-popart-beard-cap', 150, 195, 20, 'popart', 'a handsome man with a neat dark beard and a flat cap, mid-brown skin in a natural believable tone, mustard-yellow background'),
+  B('P', 'p-popart-curls-red', 150, 195, 20, 'popart', 'a stylish woman with voluminous red curly hair and green eyes, fair freckled skin, deep plum background'),
+  B('P', 'p-popart-bald-earring', 150, 195, 18, 'popart', 'a striking confident bald woman with one big statement earring and bold lips, deep brown skin in a natural believable tone, sage-green background'),
+  // ── fabulous faces (artface — FAIR/PALE skin ONLY; the lane will not converge on deep/tan) ──
+  B('P', 'p-face-rose-fair', 160, 205, 28, 'artface', 'a woman with fair skin and a crown of red and pink roses, a serene beautiful evenly-lit face with smooth even skin, both eyes symmetrical, clean soft shading, no orange patches or streaks on the face, natural skin', 1.0),
+  B('P', 'p-face-daisy-pale', 160, 205, 24, 'artface', 'a woman with pale porcelain skin and a crown of white daisies and greenery, a serene beautiful evenly-lit face with smooth even skin, both eyes symmetrical, clean soft shading, no markings or patches on the face'),
+  B('P', 'p-face-poppy-fair', 160, 205, 28, 'artface', 'a woman with fair skin and a crown of red poppies and golden wheat, a serene beautiful evenly-lit face with smooth even skin, both eyes symmetrical, clean flat shading, no orange patches or streaks on the face, natural skin', 1.0),
+  // ── animals doing human things, FULL SCENES (scene, flat detailed) ──
+  B('P', 'p-scene-rabbit-baker', 150, 190, 34, 'scene', 'a cheerful rabbit baker in an apron and chef hat pulling a fresh loaf from a brick oven in a cosy bakery full of breads and cakes'),
+  B('P', 'p-scene-bear-fisherman', 150, 190, 32, 'scene', 'a big friendly bear in a fishing hat and waders standing in a river holding a fishing rod, with pine trees and mountains behind'),
+  B('P', 'p-scene-squirrel-artist', 150, 190, 34, 'scene', 'a red squirrel with a big bushy tail (clearly a squirrel), in a paint-smock and beret, painting at an easel in a bright cosy studio with paint pots and canvases, crisp clean shapes, clear and not hazy'),
+  B('P', 'p-scene-frog-banjo', 150, 190, 30, 'scene', 'a cheerful frog in dungarees playing a banjo on a lily pad at a moonlit pond with cattails and fireflies'),
+  B('P', 'p-scene-badger-gardener', 150, 190, 34, 'scene', 'a kindly badger in a gardening apron potting flowers at a wooden potting bench in a sunny cottage-garden greenhouse'),
+  // ── beautiful florals + a bright bird (medium–large, richer palettes) ──
+  B('P', 'p-floral-sunflower-jug', 150, 175, 34, 'bright', 'a cheerful bunch of sunflowers and white daisies in a rustic blue enamel jug'),
+  B('P', 'p-floral-tulip-basket', 150, 165, 34, 'bright', 'a pretty woven basket overflowing with pink, yellow and red tulips'),
+  B('P', 'p-wre-lavender-wild', 165, 165, 40, 'wreath', 'a lush wreath of lavender, white wild daisies, blue cornflowers and trailing eucalyptus'),
+  B('P', 'p-bright-hummingbird', 130, 150, 24, 'bright', 'a jewel-bright emerald hummingbird hovering at a spray of pink trumpet flowers'),
+  // ── HUGE detailed showpieces (XL, 150-brief → Flux 1.1 Pro, 100+ floss) ──
+  B('P', 'p-big-christmas-village', 240, 220, 150, 'showpiece', 'a magical snowy Christmas village at night with twinkling lit cottages, a little church, a decorated tree in the square, carol singers, a horse and sleigh, snowy pines and softly falling snow, intricate warm full coverage'),
+  B('P', 'p-big-japanese-garden', 235, 220, 150, 'showpiece', 'a serene Japanese garden in spring with a red arched bridge over a koi pond, blossoming cherry trees, a stone lantern, a pagoda and maples, intricate richly-coloured full coverage'),
+  B('P', 'p-big-coral-reef', 240, 220, 150, 'showpiece', 'a vibrant tropical coral reef teeming with clownfish, angelfish, a sea turtle, seahorses, starfish and swaying anemones in clear blue water, intricate full coverage'),
+  B('P', 'p-big-cosy-bookshop', 220, 250, 150, 'showpiece', 'a cosy multi-storey bookshop café interior packed with towering bookshelves, rolling ladders, reading nooks, hanging lamps, potted plants, a sleeping cat and steaming mugs, intricate warm full coverage'),
 ]
 
 type FluxSize = 'square_hd' | 'landscape_4_3' | 'portrait_4_3'
@@ -495,7 +542,7 @@ async function main(): Promise<void> {
       // lands 100+ genuinely-distinct stands instead of re-merging onto the sparse curated
       // set. Pro's clean inference needs NO denoise (unlike 4-step schnell, whose grain
       // would confetti) — keeping every colour. confettiMin 'high' tidies stray singles.
-      const img = await sharp(raw).modulate({ saturation: SRC_SAT[b.style] }).png().toBuffer()
+      const img = await sharp(raw).modulate({ saturation: b.sat ?? SRC_SAT[b.style] }).png().toBuffer()
       const { data } = await photoToPatternData(img, { width: b.w, height: b.h, colours: b.colours, fabricCount: 14, brand: 'DMC', confettiMin: dense ? 'high' : 'medium', backgroundRemoval: false, ...(dense ? { maxColours: b.colours, flossRange: 'full' as const } : {}) })
       data.fabric.colourRgb = FABRIC
       const bb = stitchedBoundingBox(data)
@@ -505,8 +552,9 @@ async function main(): Promise<void> {
       const cellPx = rw <= 70 ? 26 : rw <= 130 ? 16 : 10
       const colours = data.palette.length
       const svg = renderPatternSvgString(data, { mode: 'beauty', cellPx, showSymbols: false, showGrid: false, showCentreCrosshairs: false, padding: Math.round(cellPx * 0.8), region })
-      // post-process saturation (matches the publish step) so floss reads vivid.
-      await sharp(Buffer.from(svg)).modulate({ saturation: 1.3 }).resize(1000, 1000, { fit: 'inside' }).png().toFile(resolve(dir, `${b.slug}.render.png`))
+      // post-process saturation (matches the publish step) so floss reads vivid. A per-brief
+      // `sat` override (skin-heavy portraits) skips this boost so skin stays true.
+      await sharp(Buffer.from(svg)).modulate({ saturation: b.sat != null ? 1 : 1.3 }).resize(1000, 1000, { fit: 'inside' }).png().toFile(resolve(dir, `${b.slug}.render.png`))
       ok++
       console.log(`[${batch}] ${b.slug} · ${data.grid.width}×${data.grid.height} · ${colours} colours${colours <= 2 ? ' ⚠️FLAT' : ''} -> ${b.slug}.render.png`)
     } catch (e) {
