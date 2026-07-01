@@ -91,12 +91,12 @@ A theme must contain subjects across **all four tiers**. Never all one level.
 | 10  | Florals & bouquets                     | D / L       | hoop/none   | started |
 | 11  | Single botanical stems                 | L           | hoop/none   | started |
 | 12  | Delicate line motifs (jars/sprigs)     | L           | hoop/none   | started |
-| 13  | Wreaths & circular compositions        | D / L       | hoop        | todo    |
+| 13  | Wreaths & circular compositions        | D / L       | hoop        | started |
 | 14  | Houseplants & terrariums               | D / L       | hoop/none   | todo    |
 | 15  | Mushrooms & cottagecore                | D / B       | hoop        | started |
 | 16  | Food, drink & baking                   | D / L       | hoop        | started |
 | 17  | Seasonal — Halloween                   | D / B       | hoop        | todo    |
-| 18  | Seasonal — Christmas & winter          | D / B       | hoop/none   | todo    |
+| 18  | Seasonal — Christmas & winter          | D / B       | hoop/none   | started |
 | 19  | Seasonal — Easter & spring             | D / L       | hoop        | todo    |
 | 20  | Seasonal — Autumn / harvest            | D / B       | hoop/none   | started |
 | 21  | Seasonal — Valentine's                 | D / L       | hoop        | todo    |
@@ -150,7 +150,7 @@ rectangular frame on `jar` — non-circular subjects must render FRAMELESS (`--n
 fixed it. Nothing culled this batch.
 
 **Batch 2 — 2026-07-01** (new themes across the range; rendered ONE render at a time to
-avoid overloading the machine). 9 gems published PUBLIC; 12 subjects generated, 3 culled.
+avoid overloading the machine). 10 gems published PUBLIC (incl. hollywreath, recovered by the engine fix below); 12 generated, 2 culled.
 
 | Slug | Name | Theme | Mode·Cx | Frame |
 |------|------|-------|---------|-------|
@@ -163,18 +163,26 @@ avoid overloading the machine). 9 gems published PUBLIC; 12 subjects generated, 
 | seaturtle | Sea Turtle | 8 Sea life | D·m | hoop |
 | cupcake | Frosted Cupcake | 16 Food & baking | D·s | hoop |
 | fernstem | Fern Frond | 11 Botanical stems | L·s | hoop |
+| hollywreath | Holly Wreath | 18 Christmas / 13 Wreaths | D·r | hoop |
 
 Repaired before passing: `goldenretriever` re-rendered with `tameWarm:true` (fur had blown
 red/orange — golden fur needs tameWarm on, unlike the fox).
 
-Culled this batch (3): `fairymushroom`, `monstera`, `hollywreath` — all hit the SAME engine
-limitation: a white/pale background (or a wreath's enclosed centre) that the edge flood-fill
-can't remove, so it gets stitched as a solid block instead of left as bare linen. Re-rolls
-didn't fix it (it's systemic, not a bad generation). **Engine TODO: interior/enclosed
-background removal (seed the flood-fill from interior holes; handle subjects touching the
-frame edge). Until then, avoid white-ground single-subjects + wreaths/rings** (houseplants,
-fairies-on-white, wreaths). Subjects that sit on a removable ground, or full-bleed scenes,
-render fine.
+**ENGINE FIX LANDED (2026-07-01, commit `137d7df0`): enclosed / walled-off background removal.**
+The engine flood-filled the plain ground inward from the edges only, so an ENCLOSED background
+(a wreath's centre) or a field the subject seals off by touching the frame stitched as a solid
+block. Fixed in `bitmapToStitches`: (a) ground colour = MEDIAN of the border pixels (resists the
+subject touching a corner/edge — a corner leaf used to make the "ground" green); (b) background =
+ground-coloured connected components that touch the edge OR form a large enclosed pocket
+(>= 1% of the image), keeping small enclosed blobs (eye glints) as subject. **This UNLOCKS
+wreaths/rings — `hollywreath` was recovered as a gem** (clean open linen centre), now published.
+
+Still held (2 culls): `monstera` + `fairymushroom` — narrower, harder cases the fix improves but
+doesn't fully solve. `fairymushroom` is really a full SCENE whose foliage rings the whole border,
+which skews the ground estimate so the white sky isn't recognised as ground (route fairy/woodland
+SCENES through `bleed` mode, not dense cut-out). `monstera` has very fine internal leaf-gaps below
+the size floor. So: wreaths/rings + subjects on a removable ground now work; a subject that RINGS
+the border (framed scenes) or has fine internal gaps still needs the right mode/subject choice.
 
 ---
 
