@@ -163,6 +163,21 @@ lesson: `sat` fixes the *base* skin tone; it does NOT remove orange patches bake
 (hijab-emerald still had them), and it doesn't help red-furred animals in the `scene` lane (squirrel-artist).
 **629 → 657 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-01 — Batch Q shipped 30 gate-passed gems** (31 generated, 1 culled). RANGE 11 → 120 colours:
+simple cuties (otter-shell, duckling-umbrella, kitten-yarn, hedgehog-mushroom, seal-pup, kingfisher; 11–21 col)
+→ fantasy (mermaid-pearl, baby-dragon, witch-cauldron, phoenix) → 5 pop-art portraits + 3 fabulous faces
+(sunflower/wisteria/holly, fair) → whimsical animal scenes (hedgehog-tea, otter-boat, owl-librarian,
+mole-tailor, tortoise-postman) → florals → **4 dense 100+ Flux-1.1-Pro showpieces** (autumn-market 96,
+fairy-village 97, venice-canal 120, tropical-jungle 109). Shelves: portraits +8, animals +6, fantasy +5,
+whimsical +5, floral +3, scenes +3. **DEEP-SKIN FIX HELD ON FRESH SUBJECTS:** popart locs-teal + headwrap-orange
+at `sat:1.1` both rendered correct rich dark-brown skin first try — the per-brief `sat` override is now the
+standard tool for deep-skin portraits. 2 re-rolls needed: fairy-lantern (came back FLAT/1-colour — a dead Flux
+render — re-rolled brighter but the wood stayed muddy grey + the lantern never appeared, so CULLED) and
+sunflower-fair (`artface` face first came out gaunt/grey-shadowed; a "bright even frontal daylight, minimal
+shadow, whole forehead visible" re-roll fixed it → kept). LANE NOTE reconfirmed: keep red/orange-furred animals
+OUT of the high-sat `scene` lane; chose brown/grey/green animals (hedgehog, otter, owl, mole, tortoise) and all
+5 scenes passed clean. **657 → 687 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE

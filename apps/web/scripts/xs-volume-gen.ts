@@ -481,6 +481,49 @@ export const BRIEFS: Brief[] = [
   B('P', 'p-big-japanese-garden', 235, 220, 150, 'showpiece', 'a serene Japanese garden in spring with a red arched bridge over a koi pond, blossoming cherry trees, a stone lantern, a pagoda and maples, intricate richly-coloured full coverage'),
   B('P', 'p-big-coral-reef', 240, 220, 150, 'showpiece', 'a vibrant tropical coral reef teeming with clownfish, angelfish, a sea turtle, seahorses, starfish and swaying anemones in clear blue water, intricate full coverage'),
   B('P', 'p-big-cosy-bookshop', 220, 250, 150, 'showpiece', 'a cosy multi-storey bookshop café interior packed with towering bookshelves, rolling ladders, reading nooks, hanging lamps, potted plants, a sleeping cat and steaming mugs, intricate warm full coverage'),
+
+  // ─────────── BATCH Q — priorities: portraits/faces ACROSS skin tones (per-brief `sat`
+  //             now makes deep skin shippable in popart), animals-as-humans (NO red/orange
+  //             fur in the high-sat scene lane — it cooks to magenta), fantasy, florals +
+  //             HUGE 100+ Flux-1.1-Pro showpieces. Full RANGE 13 → 106. ───────────────────
+  // ── quick + simple small cuties (BEGINNER, ~13–16 colours) ──
+  B('Q', 'q-cute-otter-shell', 118, 112, 15, 'cute', 'an adorable baby sea otter floating on its back holding a little shell on its tummy, clean sweet face with both eyes symmetrical, soft blue water, clean pale background'),
+  B('Q', 'q-cute-duckling-umbrella', 112, 120, 14, 'cute', 'a fluffy yellow duckling sheltering under a bright red umbrella, sweet clean face with both eyes symmetrical, clean white background'),
+  B('Q', 'q-cute-kitten-yarn', 118, 115, 15, 'cute', 'a playful grey tabby kitten with a clear outline patting a ball of pink yarn, sweet clean face with both eyes symmetrical, clean white background'),
+  B('Q', 'q-cute-hedgehog-mushroom', 115, 115, 15, 'cute', 'a little round hedgehog standing beside a red spotted mushroom among a few autumn leaves, sweet clean face with both eyes symmetrical, clean pale background'),
+  B('Q', 'q-cute-seal-pup', 118, 112, 13, 'cute', 'a fluffy white baby seal pup with big dark eyes lying on pale blue ice, clear soft grey outline so it reads on pale fabric, sweet clean face with both eyes symmetrical, clean background'),
+  // ── fairies & fantasy (medium → large) ──
+  B('Q', 'q-fantasy-mermaid-pearl', 150, 185, 32, 'fantasy', 'a beautiful mermaid with fair skin and flowing auburn hair cradling a glowing pearl in a coral grotto, shimmering teal-and-coral jewel palette, a clear pretty face with both eyes symmetrical, crisp clean outlines'),
+  B('Q', 'q-fantasy-dragon-baby', 130, 140, 26, 'fantasy', 'a cute chubby baby dragon hatching from a cracked speckled egg, big friendly eyes, bright emerald-and-gold jewel tones, crisp clean bold outlines, bright airy light, NOT muddy'),
+  B('Q', 'q-fantasy-witch-cauldron', 140, 165, 30, 'fantasy', 'a friendly little witch with fair skin in a starry pointed hat stirring a bubbling green cauldron with floating sparkles and stars, warm magical light, a clear sweet face with both eyes symmetrical, crisp clear detail'),
+  B('Q', 'q-fantasy-phoenix', 150, 175, 34, 'fantasy', 'a majestic phoenix with outstretched wings rising in swirling flame, brilliant crimson-orange-and-gold jewel tones against a deep indigo sky, crisp clean bold outlines, NOT muddy NOT hazy'),
+  B('Q', 'q-fantasy-fairy-lantern', 140, 170, 30, 'fantasy', 'a graceful fairy with fair skin and luminous gauzy wings holding up a glowing golden lantern among bluebells at bright twilight, luminous clear bright jewel colours, a clear pretty well-defined face with both eyes symmetrical and normal-sized, crisp clean bold outlines, bright and vivid, NOT dark NOT hazy NOT muddy'),
+  // ── pop art & portraits (popart — reliable across ALL skin tones; deep skin uses sat:1.1) ──
+  B('Q', 'q-popart-locs-teal', 150, 195, 20, 'popart', 'a handsome man with long neat locs and a trimmed beard, rich dark chocolate-brown skin (deep and clearly brown, absolutely not pink coral or orange), bold teal background', 1.1),
+  B('Q', 'q-popart-headwrap-orange', 150, 195, 20, 'popart', 'an elegant woman in a bold patterned headwrap with large gold hoop earrings, rich dark chocolate-brown skin (deep and clearly brown, absolutely not pink coral or orange), warm plum background', 1.1),
+  B('Q', 'q-popart-glasses-blue', 150, 195, 20, 'popart', 'a stylish man with round tortoiseshell glasses and a neat side part, mid-brown skin in a natural believable tone, soft blue background'),
+  B('Q', 'q-popart-bob-black', 150, 195, 18, 'popart', 'a chic woman with a sleek jet-black bob and bold red lips, fair skin in a natural believable tone, mustard-yellow background'),
+  B('Q', 'q-popart-freckles-ginger', 150, 195, 20, 'popart', 'a fresh-faced woman with wavy ginger hair and lots of freckles and green eyes, fair skin, sage-green background'),
+  // ── fabulous faces (artface — FAIR/PALE skin ONLY; sat:1.0 keeps skin true) ──
+  B('Q', 'q-face-sunflower-fair', 160, 205, 28, 'artface', 'a woman with fair skin and a crown of golden sunflowers, a serene beautiful face in bright even frontal daylight with minimal shadow, smooth clean even fair skin, the whole forehead clearly visible above the brows, both eyes symmetrical, soft flat shading, no grey shadows or patches on the face, natural skin', 1.0),
+  B('Q', 'q-face-wisteria-pale', 160, 205, 26, 'artface', 'a woman with pale porcelain skin and a crown of trailing lilac wisteria, a serene beautiful evenly-lit face with smooth even skin, both eyes symmetrical, clean soft shading, no markings or patches on the face', 1.0),
+  B('Q', 'q-face-holly-fair', 160, 205, 26, 'artface', 'a woman with fair skin and a winter crown of holly leaves and red berries and pinecones, a serene beautiful evenly-lit face with smooth even skin, both eyes symmetrical, clean flat shading, no orange patches on the face, natural skin', 1.0),
+  // ── animals doing human things, FULL SCENES (scene lane — NO red/orange fur here) ──
+  B('Q', 'q-scene-hedgehog-tea', 150, 190, 32, 'scene', 'a dapper hedgehog in a waistcoat pouring tea at a pretty set table with a cake stand and teapot in a cosy cottage parlour'),
+  B('Q', 'q-scene-otter-boat', 150, 190, 30, 'scene', 'a cheerful otter in a striped jumper rowing a little wooden boat down a leafy river with reeds and dragonflies'),
+  B('Q', 'q-scene-owl-librarian', 150, 190, 32, 'scene', 'a wise owl librarian in half-moon glasses on a rolling ladder among towering bookshelves in a grand cosy library'),
+  B('Q', 'q-scene-mole-tailor', 150, 190, 32, 'scene', 'a kindly mole tailor in a waistcoat sewing a jacket at a workbench in a snug workshop full of fabric bolts, threads and a mannequin'),
+  B('Q', 'q-scene-tortoise-postman', 150, 190, 30, 'scene', 'a friendly tortoise postman in a cap and satchel delivering letters along a cobbled village lane with little cottages and flowerpots'),
+  // ── beautiful florals + a bright bird (medium–large, richer palettes) ──
+  B('Q', 'q-floral-peony-jug', 150, 175, 34, 'bright', 'a lavish bunch of blush-pink and coral peonies in a white ceramic jug'),
+  B('Q', 'q-floral-daffodil-basket', 150, 165, 30, 'bright', 'a cheerful woven basket of bright yellow daffodils and narcissi with spring greenery'),
+  B('Q', 'q-wre-poppy-cornflower', 165, 165, 40, 'wreath', 'a lush summer wreath of red poppies, blue cornflowers, white daisies and golden wheat'),
+  B('Q', 'q-bright-kingfisher', 130, 150, 24, 'bright', 'a brilliant kingfisher with electric-blue and orange plumage perched on a reed above a stream'),
+  // ── HUGE detailed showpieces (XL, 150-brief → Flux 1.1 Pro, 100+ floss) ──
+  B('Q', 'q-big-autumn-market', 240, 220, 150, 'showpiece', 'a bustling autumn farmers market at golden hour with stalls of pumpkins, apples, flowers and bread, striped awnings, bunting, shoppers and baskets, falling leaves, intricate warm full coverage'),
+  B('Q', 'q-big-fairy-village', 220, 245, 150, 'showpiece', 'a magical fairy village built into a giant old tree at twilight with glowing lantern-lit toadstool houses, tiny rope bridges, winding stairs, fireflies and flitting fairies, intricate jewel-toned full coverage'),
+  B('Q', 'q-big-venice-canal', 240, 220, 150, 'showpiece', 'a sun-drenched Venice canal scene with gondolas, an arched stone bridge, weathered pastel palazzos with flower balconies, reflections in the water and a distant church dome, intricate richly-coloured full coverage'),
+  B('Q', 'q-big-tropical-jungle', 235, 220, 150, 'showpiece', 'a lush tropical rainforest teeming with colourful parrots and toucans, a monkey, a tiger peeking through, exotic flowers, giant leaves and a cascading waterfall, intricate saturated full coverage'),
 ]
 
 type FluxSize = 'square_hd' | 'landscape_4_3' | 'portrait_4_3'
