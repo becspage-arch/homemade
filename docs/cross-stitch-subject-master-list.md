@@ -178,6 +178,20 @@ shadow, whole forehead visible" re-roll fixed it → kept). LANE NOTE reconfirme
 OUT of the high-sat `scene` lane; chose brown/grey/green animals (hedgehog, otter, owl, mole, tortoise) and all
 5 scenes passed clean. **657 → 687 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-01 — Batch R shipped 30 gate-passed gems** (31 generated, 1 culled). RANGE 10 → 104 colours:
+simple cuties (red-panda, baby-elephant, pug-puppy, chick-egg, baby-turtle, robin; 10–19 col) → fantasy
+(unicorn-foal, dragon-treasure, fairy-ring, wizard-owl, snow-fox) → 4 pop-art portraits + 3 fabulous faces
+(cherry/autumn/lily, fair) → whimsical animal scenes (cat-baker, sheep-knitter, penguin-skater, panda-chef,
+duck-sailor) → florals → **4 dense 100+ Flux-1.1-Pro showpieces** (fairytale-castle 104, cherry-festival 94,
+christmas-parlour 100, mermaid-kingdom 104). Shelves: portraits +7, animals +6, fantasy +6, whimsical +5,
+floral +3, scenes +3. Deep-skin `sat:1.1` popart held again (turban-man, braids-blue — correct rich brown
+first try). Same two recurring re-roll modes as Batch Q: one popart came back FLAT/dead-Flux (updo-elegant —
+re-rolled but the eyes came out odd/wall-eyed + crop tight, so CULLED; 2 clean deep-skin portraits already in
+the batch) and one `artface` face came out gaunt/grey-shadowed (autumn-pale — the darker autumn palette pulls
+the lane toward heavy contouring; a "bright FLAT even studio lighting, NO grey contouring shadows, full
+forehead visible" re-roll fixed it → kept). All 5 non-red-fur scenes passed clean. **687 → 717 PUBLIC.**
+Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
