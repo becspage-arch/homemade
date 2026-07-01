@@ -349,6 +349,49 @@ export const BRIEFS: Brief[] = [
   B('M', 'm-big-cat-bookshop', 220, 240, 150, 'showpiece', 'a charming corner cat bookshop façade packed with little story details: sleeping cats on the sign, books in arched windows, roses over the door, lanterns and a chalkboard, warm full coverage'),
   B('M', 'm-big-botanical-garden', 220, 260, 150, 'showpiece', 'a lush full-coverage cottage garden border densely packed with many species of flowers, bees, butterflies and songbirds, intricate and richly coloured'),
   B('M', 'm-big-cottage-market', 235, 220, 150, 'showpiece', 'a bustling cottage village market street with stalls of flowers, fruit and bread, striped awnings, bunting, lamp posts and many little shoppers, intricate full coverage'),
+
+  // ─────────── BATCH N — PRIORITY: pop art/portraits, faces (deep→fair), fairies/
+  //             fantasy, animals-as-humans, beautiful florals + HUGE 100+ colour
+  //             showpieces. Deliberate complexity RANGE: small/simple (14–18) →
+  //             medium (22–46) → huge dense Flux-1.1-Pro (150-brief → 100+ floss). ───────────
+  // ── quick + simple small (BEGINNER, ~14–18 colours) ──
+  B('N', 'n-cute-chick-daisy', 110, 110, 14, 'cute', 'a fluffy yellow chick holding a single white daisy'),
+  B('N', 'n-cute-hedgehog-heart', 112, 112, 16, 'cute', 'a tiny round hedgehog cuddling a little red heart'),
+  B('N', 'n-cute-axolotl-bubble', 115, 115, 16, 'cute', 'a smiling pink axolotl blowing a shiny round bubble'),
+  B('N', 'n-cute-frog-crown', 110, 118, 16, 'cute', 'a cheerful little green frog wearing a tiny gold crown on a lily pad'),
+  B('N', 'n-cute-bat-moon', 115, 120, 16, 'fantasy', 'a cute round-eared bat hanging upside-down from a crescent moon among stars'),
+  // ── fairies & fantasy (medium → large) ──
+  B('N', 'n-fantasy-dragon-stars', 120, 125, 20, 'fantasy', 'a chubby baby dragon curled asleep on a cloud among twinkling stars'),
+  B('N', 'n-fantasy-mushroom-house', 140, 160, 30, 'fantasy', 'a glowing fairy toadstool cottage with tiny lit windows, a round door and flowers, at dusk'),
+  B('N', 'n-fantasy-unicorn-galaxy', 150, 150, 30, 'fantasy', 'a gentle unicorn with a flowing galaxy-coloured mane standing among glowing stars and flowers'),
+  B('N', 'n-fantasy-phoenix', 160, 200, 44, 'fantasy', 'a graceful phoenix rising with magnificent flame-coloured plumage in red, orange and gold against a deep night sky'),
+  B('N', 'n-fantasy-mermaid-moon', 165, 205, 46, 'fantasy', 'a serene mermaid with long flowing hair sitting on a rock under a huge full moon, glowing jellyfish drifting around her'),
+  // ── pop art & portraits (popart) ──
+  B('N', 'n-popart-vinyl-girl', 150, 195, 22, 'popart', 'a cool retro woman with a sleek bob holding a vinyl record up beside her face, bold orange background'),
+  B('N', 'n-popart-redhead-freckles', 150, 195, 22, 'popart', 'a striking woman with wavy red hair, freckles and green eyes, sage-green background'),
+  B('N', 'n-popart-gent-bowtie', 150, 195, 22, 'popart', 'a dapper black man with short cropped hair, round glasses and a polka-dot bow tie, mustard background'),
+  B('N', 'n-popart-bobblehat', 150, 195, 22, 'popart', 'a woman in a chunky knitted bobble hat with rosy cheeks holding a steaming mug, a clear clean evenly-lit smooth face with both eyes symmetrical and correct, tidy neat hair, no shadows or smudges on the face, teal background'),
+  B('N', 'n-popart-redlips-wink', 150, 195, 22, 'popart', 'a glamorous woman winking with bold red lipstick and a flicked fringe, blush-pink background'),
+  // ── fabulous faces (artface) — skin tones DEEP → FAIR ──
+  B('N', 'n-face-orchid-deep', 160, 205, 44, 'artface', 'a woman with deep dark ebony skin and a lavish crown of purple orchids and gold leaves, jewel tones, a serene beautiful evenly-lit face with smooth even skin and gentle natural features, no face paint, no markings, no tribal patterns on the face'),
+  B('N', 'n-face-rose-darkbrown', 160, 205, 42, 'artface', 'a woman with rich dark brown skin, a crown of red roses and a blue butterfly resting on her cheek, a serene beautiful front-facing evenly-lit face with smooth even skin and gentle natural features, both eyes symmetrical, clean flat shading, no markings or blotches on the face'),
+  B('N', 'n-face-poppy-brown', 160, 205, 40, 'artface', 'a woman with warm brown skin and a crown of red poppies and golden wheat, a serene beautiful evenly-lit face with smooth even skin and soft natural features, both eyes symmetrical, gentle clean flat shading, no harsh orange patches or streaks on the face, warm summer palette'),
+  B('N', 'n-face-bluebird-tan', 160, 205, 38, 'artface', 'a woman with a natural tan skin tone, a little bluebird and trailing forget-me-nots and blossom beside her face, a serene beautiful evenly-lit face with smooth even skin, gentle clean flat shading, both eyes symmetrical, natural skin colour not orange, not loose or painterly'),
+  B('N', 'n-face-magnolia-fair', 160, 205, 38, 'artface', 'a woman with fair skin, a crown of pink magnolia blossoms and a soft luna moth, pale dawn palette'),
+  // ── animals doing human things, FULL SCENES (scene, flat detailed) ──
+  B('N', 'n-scene-cat-bookshop', 150, 190, 40, 'scene', 'a cat in round glasses reading a book at the window of a cosy bookshop, stacks of books and a lamp'),
+  B('N', 'n-scene-fox-teagarden', 150, 190, 38, 'scene', 'a fox in a waistcoat having afternoon tea at a little table in a flower garden with a teapot and cakes'),
+  B('N', 'n-scene-otter-painter', 150, 190, 38, 'scene', 'a cute otter in a paint-smock painting at an easel on a riverbank, the otter fills the frame with a clear sweet face and both eyes clearly visible, tidy whiskers, paint pots and bulrushes, clean full composition'),
+  B('N', 'n-scene-hedgehog-greenhouse', 150, 190, 38, 'scene', 'a hedgehog in dungarees watering potted plants in a sunny greenhouse full of flowers and tools'),
+  B('N', 'n-scene-mouse-postman', 150, 190, 36, 'scene', 'a mouse postman in a little cap delivering tiny letters at a flowery cottage door with a red postbox'),
+  // ── beautiful florals (medium–large, richer palettes) ──
+  B('N', 'n-floral-rose-bouquet', 160, 170, 42, 'bright', 'a luxurious bouquet of garden roses, ranunculus and sweet peas in blush, peach and cream with trailing greenery'),
+  B('N', 'n-wre-blossom-wreath', 165, 165, 40, 'wreath', 'a fresh spring wreath of pink cherry blossom, tulips and green leaves with a little bird'),
+  // ── HUGE detailed showpieces (XL, 150-brief → Flux 1.1 Pro, 100+ floss) ──
+  B('N', 'n-big-flower-market', 240, 220, 150, 'showpiece', 'a bustling flower-market scene packed with stalls of colourful blooms in buckets, hanging baskets, striped awnings, lamp posts and many little shoppers, intricate full coverage'),
+  B('N', 'n-big-fairy-treehouse', 220, 250, 150, 'showpiece', 'a hugely detailed enchanted fairy treehouse village built into a great twisting tree, tiny lit windows, rope bridges, lanterns, many little fairies, glowing flowers and fireflies, dense full coverage'),
+  B('N', 'n-big-cottage-kitchen', 235, 220, 150, 'showpiece', 'a richly detailed cosy cottage kitchen packed with hanging herbs and copper pots, a dresser of crockery, jars on shelves, fresh bread and cakes, a sleeping cat by the range, warm full coverage'),
+  B('N', 'n-big-secret-garden', 220, 255, 150, 'showpiece', 'a lush walled secret garden densely packed with climbing roses, foxgloves and many flower species, a stone fountain, butterflies, songbirds and an arched gate, intricate full coverage'),
 ]
 
 type FluxSize = 'square_hd' | 'landscape_4_3' | 'portrait_4_3'

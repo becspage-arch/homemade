@@ -109,6 +109,22 @@ NOTE: the converter caps the floss palette at ~78 (shared `photoToPatternData` `
 → ~78 after CIELAB floss-merge), so true 100+ colour pieces need a considered cap lift + re-gate
 (follow-up, not done here — don't touch the shared converter mid-batch).
 
+**2026-07-01 — Batch N shipped 28 gate-passed gems** (31 generated, 3 culled: bat-moon muddy, and
+2 fabulous-faces — poppy-brown + bluebird-tan — whose `artface` skin came out harshly orange/patchy
+and would NOT converge on a re-roll). Six needed a repair re-roll; 4 were saved (pop-art bobble-hat,
+face orchid-deep, face rose-darkbrown, otter-painter). Deliberate complexity RANGE 11 → 126 colours:
+small/simple cuties (chick, hedgehog+heart, axolotl, frog-prince, baby dragon; 11–14 col) → medium
+(toadstool cottage, galaxy unicorn, phoenix, mermaid, 5 pop-art portraits, 3 fabulous faces deep→fair,
+2 florals, blossom wreath) → large whimsical scenes (bookshop cat, fox's tea, hedgehog greenhouse, the
+little postman, otter artist) → **HUGE dense 100+ tier on Flux 1.1 Pro** (flower-market 126, secret-garden
+114, fairy-treehouse 96, cottage-kitchen 93). Shelves: portraits +8, fantasy +6, whimsical +5, animals
++4, floral +3, scenes +1, home-cosy +1 (first Home & cosy piece). **537 → 601 PUBLIC** (573 pre-batch;
+grew via other work between M and N). PIPELINE NOTE: `xs-volume-publish.ts` is now DENSE-AWARE — for
+`colours > 96` briefs it reads `<slug>.flux-pro.png` and converts with `maxColours` + `flossRange:'full'`
++ `confettiMin:'high'`, mirroring the gen script's dense branch, so a dense showpiece publishes at its
+full 100+ floss count in ONE path (no separate pro-emit/upgrade step needed for NEW rows). Deploy green
++ /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
@@ -122,7 +138,7 @@ NOTE: the converter caps the floss palette at ~78 (shared `photoToPatternData` `
 | 3 | Farm & smallholding | GEN | sq | todo |
 | 4 | Birds, bees, butterflies & moths | GEN | sq/circ | partial |
 | 5 | Sea life & coastal | GEN | sq/wide | partial (B,D) |
-| 6 | Cute fantasy creatures | GEN | sq/big | live (M — new Fantasy & Fairytale shelf) |
+| 6 | Cute fantasy creatures | GEN | sq/big | live (M, N — Fantasy & Fairytale shelf now 11: +dragon/unicorn/phoenix/mermaid/toadstool cottage/fairy treehouse) |
 | 7 | Florals & bouquets | GEN | sq/circ | gen (A–C) |
 | 8 | Single botanical stems | GEN | tall | gen (A,C,D) |
 | 9 | Wreaths & circular | GEN | circ | gen (A,C,D) |

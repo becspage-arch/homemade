@@ -69,10 +69,14 @@ async function main(): Promise<void> {
   const failed: string[] = []
   for (const a of approved) {
    try {
-    const fluxPath = resolve(VOL, a.batch, `${a.slug}.flux.png`)
+    // Dense 100+ colour briefs (>96) are sourced from Flux 1.1 Pro (.flux-pro.png) and
+    // converted with the floss ceiling lifted + full DMC range — mirror the gen script's
+    // dense branch EXACTLY so the published thumbnail matches the gated render.
+    const dense = a.colours > 96
+    const fluxPath = resolve(VOL, a.batch, `${a.slug}.${dense ? 'flux-pro' : 'flux'}.png`)
     const raw = readFileSync(fluxPath)
     const img = await sharp(raw).modulate({ saturation: a.srcSat }).png().toBuffer()
-    const { data } = await photoToPatternData(img, { width: a.w, height: a.h, colours: a.colours, fabricCount: 14, brand: 'DMC', confettiMin: 'medium', backgroundRemoval: false })
+    const { data } = await photoToPatternData(img, { width: a.w, height: a.h, colours: a.colours, fabricCount: 14, brand: 'DMC', confettiMin: dense ? 'high' : 'medium', backgroundRemoval: false, ...(dense ? { maxColours: a.colours, flossRange: 'full' as const } : {}) })
     data.fabric.colourRgb = FABRIC
     const m = computePatternMetrics(data)
 
