@@ -207,6 +207,14 @@ high-contrast outlines + simple clean background" fixed it. NEW GATE NOTE: watch
 gibberish text (hard fail) — brief scene props as wordless drawings. **717 → 748 PUBLIC.** Deploy green +
 /healthz 200.
 
+**2026-07-01 — Batch T shipped 10 gate-passed gems** (11 generated, 1 culled — mermaid-moon stayed FLAT/
+1-colour through 3 re-rolls incl. a brightened brief, so culled; LESSON: a persistent flat render = cull after
+ONE re-roll, don't get stuck). Timed reference batch for the cron cadence: gen 11 (incl. 2 Flux-1.1-Pro dense)
+= 2m51s, enrich+publish 10 = 3m36s, deploy+verify ≈ 13–15m. Deep-skin `sat:1.1` held (headtie-man). RANGE
+13 → 116 col: cuties (baby-deer, chinchilla) → 3 portraits → whimsical (mouse-baker, cat-gardener) → florals
+→ 2 dense showpieces (alpine-village 105, butterfly-meadow 116). **748 → 758 PUBLIC.** Deploy green + /healthz
+200.
+
 ---
 
 ## PROGRESS TABLE

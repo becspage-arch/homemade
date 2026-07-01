@@ -608,6 +608,19 @@ export const BRIEFS: Brief[] = [
   B('S', 's-big-paris-street', 220, 245, 150, 'showpiece', 'a charming Parisian street scene with a corner café, striped awnings, flower boxes, cyclists, the Eiffel Tower beyond and a golden-hour sky, intricate richly-coloured full coverage'),
   B('S', 's-big-cottage-garden', 240, 220, 150, 'showpiece', 'a glorious English cottage garden in full summer bloom with a thatched cottage, hollyhocks, roses climbing a trellis, a winding path, a birdbath and butterflies, intricate full coverage'),
   B('S', 's-big-safari-savanna', 240, 220, 150, 'showpiece', 'a sweeping African savanna at golden hour with elephants, giraffes, zebras and lions at a watering hole, acacia trees and a big warm sky, intricate richly-coloured full coverage'),
+
+  // ─────────── BATCH T — timed reference batch (~10 gems, full range) for the cron cadence. ──
+  B('T', 't-cute-baby-deer', 118, 118, 15, 'cute', 'an adorable spotted baby deer fawn sitting among ferns and a few flowers, sweet clean face with both eyes symmetrical, clean pale background'),
+  B('T', 't-cute-chinchilla', 112, 115, 13, 'cute', 'an adorable fluffy grey chinchilla holding a tiny flower, clear soft outline so it reads on pale fabric, sweet clean face with both eyes symmetrical, clean white background'),
+  B('T', 't-popart-headtie-man', 150, 195, 20, 'popart', 'a distinguished older man with a short grey beard and a woven kufi cap, rich dark chocolate-brown skin (deep and clearly brown, absolutely not pink coral or orange), warm ochre background', 1.1),
+  B('T', 't-popart-beret-woman', 150, 195, 18, 'popart', 'a chic woman with a dark bob and a red beret and bold red lips, fair skin in a natural believable tone, teal background'),
+  B('T', 't-face-bluebell-fair', 160, 205, 26, 'artface', 'a woman with fair skin and a crown of blue bluebells and greenery, a serene beautiful face in bright FLAT even studio lighting with NO grey contouring shadows, clean smooth matte even fair skin, the whole head and full forehead clearly visible above the brows, both eyes symmetrical, soft flat clean shading, no grey shadows or patches on the face, natural skin', 1.0),
+  B('T', 't-fantasy-mermaid-moon', 150, 175, 30, 'fantasy', 'a graceful mermaid with fair skin and flowing teal hair sitting on a rock by a moonlit turquoise sea, bright luminous jewel colours, a clear pretty face with both eyes symmetrical, crisp clean bold outlines, bright and vivid, NOT dark NOT muddy'),
+  B('T', 't-scene-mouse-baker', 150, 190, 28, 'scene', 'a sweet little grey mouse in an apron and chef hat icing tiny cupcakes at a floury counter in a cosy miniature bakery with jars and rolling pins'),
+  B('T', 't-scene-cat-gardener', 150, 190, 30, 'scene', 'a happy grey tabby cat in a straw hat and apron watering flowers with a little watering can in a sunny cottage garden full of blooms and pots'),
+  B('T', 't-floral-poppy-vase', 150, 175, 32, 'bright', 'a cheerful bunch of red and orange poppies with green foliage in a blue ceramic vase'),
+  B('T', 't-big-alpine-village', 240, 220, 150, 'showpiece', 'a picturesque alpine village in summer with wooden chalets, flower-filled window boxes, a church steeple, a winding lane, cows in a meadow and snow-capped mountains behind, intricate richly-coloured full coverage'),
+  B('T', 't-big-butterfly-meadow', 235, 220, 150, 'showpiece', 'a radiant summer wildflower meadow filled with butterflies of every colour, poppies, daisies, cornflowers and lavender under a bright blue sky, intricate saturated full coverage'),
 ]
 
 type FluxSize = 'square_hd' | 'landscape_4_3' | 'portrait_4_3'
