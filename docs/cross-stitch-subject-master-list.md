@@ -125,6 +125,22 @@ grew via other work between M and N). PIPELINE NOTE: `xs-volume-publish.ts` is n
 full 100+ floss count in ONE path (no separate pro-emit/upgrade step needed for NEW rows). Deploy green
 + /healthz 200.
 
+**2026-07-01 — Batch O shipped 28 gate-passed gems** (31 generated, 3 culled). Complexity RANGE 13 → 113
+colours: small/simple cuties (owlet-moon, narwhal-star, piglet-daisy, baby-dragon+cupcake; 13–18 col) →
+medium (fairy+lantern, toadstool village, dragon+castle, mermaid treasure, pegasus, 5 pop-art portraits,
+2 fabulous faces — tulip-darkbrown + cherry-fair, peony vase, autumn wreath) → large whimsical scenes
+(noodle-chef cat, hare violinist, teashop mouse, professor owl, pig gardener) → **HUGE dense 100+ tier on
+Flux 1.1 Pro** (cat café 106, enchanted library 98, seaside town 110, butterfly garden 113 — all published
+at full floss via the dense-aware path). Shelves: portraits +6, fantasy +7, whimsical +6, animals +3,
+floral +3, scenes +1. **3 culls, all the known `artface` deep/tan-skin failure or grey-fur confetti:**
+kitten-teacup (red confetti round both eyes, didn't converge), sunflower-deep (skin went garish
+orange/magenta patchwork), lavender-tan (skin went flat orange despite explicit "not orange"). 5 of the 8
+repair re-rolls SAVED (piglet-daisy, baby-dragon→switched to `cute` style for a clean white ground,
+fairy-lantern brightened, toadstool village brightened, holly-pale with robin moved off the face).
+CONFIRMED PATTERN: `artface` renders **fair/pale skin clean** (holly-pale, cherry-fair, tulip-darkbrown all
+passed) but **deep/tan skin will not converge** (orange/magenta patchwork) — for deep-skin faces prefer the
+`popart` lane, which is reliable across skin tones. **601 → 629 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE

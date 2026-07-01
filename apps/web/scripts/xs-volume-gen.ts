@@ -392,6 +392,48 @@ export const BRIEFS: Brief[] = [
   B('N', 'n-big-fairy-treehouse', 220, 250, 150, 'showpiece', 'a hugely detailed enchanted fairy treehouse village built into a great twisting tree, tiny lit windows, rope bridges, lanterns, many little fairies, glowing flowers and fireflies, dense full coverage'),
   B('N', 'n-big-cottage-kitchen', 235, 220, 150, 'showpiece', 'a richly detailed cosy cottage kitchen packed with hanging herbs and copper pots, a dresser of crockery, jars on shelves, fresh bread and cakes, a sleeping cat by the range, warm full coverage'),
   B('N', 'n-big-secret-garden', 220, 255, 150, 'showpiece', 'a lush walled secret garden densely packed with climbing roses, foxgloves and many flower species, a stone fountain, butterflies, songbirds and an arched gate, intricate full coverage'),
+
+  // ─────────── BATCH O — PRIORITY: pop art/portraits, faces (deep→fair, clean-face
+  //             brief baked in from N's learning), fairies/fantasy, animals-as-humans,
+  //             beautiful florals + HUGE 100+ Flux-1.1-Pro showpieces. Full RANGE 12→150. ───────────
+  // ── quick + simple small (BEGINNER, ~12–18 colours) ──
+  B('O', 'o-cute-owlet-moon', 112, 120, 16, 'cute', 'a tiny fluffy owlet perched on a crescent moon among little stars'),
+  B('O', 'o-cute-piglet-daisy', 110, 110, 14, 'cute', 'a sweet little rosy-pink piglet holding a white daisy, soft even lighting, clear friendly face with both eyes symmetrical, rounded rich pink shading with no blown-out white highlights, clean pale background'),
+  B('O', 'o-cute-narwhal-star', 115, 115, 14, 'cute', 'a chubby baby narwhal balancing a yellow star on its horn'),
+  B('O', 'o-cute-kitten-teacup', 112, 118, 16, 'cute', 'an adorable fluffy grey kitten peeking out of a pink floral teacup, big clear symmetrical eyes and a sweet clean face, soft pastel palette, clean white background'),
+  B('O', 'o-cute-dragon-cupcake', 118, 118, 18, 'cute', 'a cute chubby green baby dragon holding a little pink frosted cupcake, clear friendly face with both eyes symmetrical, soft even lighting, clean pale background'),
+  // ── fairies & fantasy (medium → large) ──
+  B('O', 'o-fantasy-fairy-lantern', 130, 155, 26, 'fantasy', 'a sweet fairy with luminous gauzy wings holding a glowing lantern in a moonlit forest glade, a clear pretty face with both eyes symmetrical, soft luminous lighting so the scene reads brightly, airy not muddy'),
+  B('O', 'o-fantasy-mushroom-village', 150, 150, 30, 'fantasy', 'a cheerful cluster of red-and-white toadstool cottages with cosy lit windows and winding paths among ferns and flowers, bright daylight, clear crisp little cottages, airy and colourful not dark or muddy'),
+  B('O', 'o-fantasy-dragon-castle', 160, 160, 34, 'fantasy', 'a friendly jewel-scaled dragon curled around a fairytale castle tower under the stars'),
+  B('O', 'o-fantasy-mermaid-treasure', 165, 200, 44, 'fantasy', 'a graceful mermaid with flowing hair beside an open treasure chest of pearls, with colourful fish and coral'),
+  B('O', 'o-fantasy-pegasus-clouds', 165, 200, 42, 'fantasy', 'a graceful white winged pegasus soaring among soft pink clouds and glowing stars at dusk'),
+  // ── pop art & portraits (popart — reliable clean lane) ──
+  B('O', 'o-popart-headscarf-blue', 150, 195, 22, 'popart', 'a chic woman in a blue polka-dot headscarf with bold red lips, warm coral background'),
+  B('O', 'o-popart-man-turtleneck', 150, 195, 22, 'popart', 'a stylish man with short dark hair in a black turtleneck and clear round glasses, sage background'),
+  B('O', 'o-popart-cat-lady', 150, 195, 24, 'popart', 'an elegant woman with an updo holding a sleek black cat, mustard-yellow background'),
+  B('O', 'o-popart-sunglasses-red', 150, 195, 22, 'popart', 'a glamorous woman in big round red sunglasses and a headband, teal background'),
+  B('O', 'o-popart-braids-gold', 150, 195, 24, 'popart', 'a striking Black woman with long box braids and large gold hoop earrings, deep plum background'),
+  // ── fabulous faces (artface, deep→fair) — CLEAN-FACE brief baked in ──
+  B('O', 'o-face-sunflower-deep', 160, 205, 42, 'artface', 'a beautiful woman with warm deep brown skin lit brightly and evenly with soft luminous highlights so the whole face reads clearly, a golden crown of sunflowers, serene front-facing, both eyes symmetrical, clean flat shading, no muddy dark shadows and no markings or patches on the face'),
+  B('O', 'o-face-tulip-darkbrown', 160, 205, 40, 'artface', 'a woman with rich dark brown skin and a crown of pink and red tulips, a serene beautiful evenly-lit face with smooth even skin, both eyes symmetrical, clean flat shading, no markings or patches on the face'),
+  B('O', 'o-face-lavender-tan', 160, 205, 38, 'artface', 'a beautiful woman with soft natural light-brown skin (a gentle warm beige, definitely not orange or tanned-orange), a crown of lavender and little bees, serene evenly-lit face with smooth even skin, both eyes symmetrical, gentle clean flat shading, natural believable skin colour'),
+  B('O', 'o-face-cherry-fair', 160, 205, 38, 'artface', 'a woman with fair skin and a crown of pink cherry blossom, a serene beautiful evenly-lit face with smooth even skin, both eyes symmetrical, clean soft shading, no markings or patches on the face'),
+  B('O', 'o-face-holly-pale', 160, 205, 38, 'artface', 'a beautiful woman with pale porcelain skin and a winter crown of holly and frosted pine, a little red robin perched on the greenery to one side beside her head (not on her face), serene evenly-lit face with smooth even skin, both eyes symmetrical, clean shading, cool palette'),
+  // ── animals doing human things, FULL SCENES (scene, flat detailed) ──
+  B('O', 'o-scene-cat-noodles', 150, 190, 38, 'scene', 'a cat chef in an apron cooking a steaming bowl of noodles at a cosy little food stall with lanterns'),
+  B('O', 'o-scene-hare-violin', 150, 190, 36, 'scene', 'a hare in a waistcoat playing a violin on a little wooden stage with warm spotlights and flowers'),
+  B('O', 'o-scene-mouse-teashop', 150, 190, 40, 'scene', 'a mouse in an apron serving tea and cakes in a tiny cosy teashop full of shelves and teapots'),
+  B('O', 'o-scene-owl-professor', 150, 190, 36, 'scene', 'a wise owl professor in round glasses at a chalkboard in a cosy study full of books and globes'),
+  B('O', 'o-scene-pig-gardener', 150, 190, 38, 'scene', 'a cheerful pig in dungarees and a straw hat tending a vegetable garden with a wheelbarrow and sunflowers'),
+  // ── beautiful florals (medium–large, richer palettes) ──
+  B('O', 'o-floral-peony-vase', 150, 175, 40, 'bright', 'a generous arrangement of blush and coral peonies in a blue-and-white china vase'),
+  B('O', 'o-wre-autumn-lush', 165, 165, 44, 'wreath', 'a lush autumn wreath of orange and gold leaves, rosehips, acorns, berries and little pumpkins'),
+  // ── HUGE detailed showpieces (XL, 150-brief → Flux 1.1 Pro, 100+ floss) ──
+  B('O', 'o-big-cat-cafe', 235, 220, 150, 'showpiece', 'a bustling cosy cat café packed with many cats lounging on shelves and chairs, cake stands, hanging plants, teapots, fairy lights and little tables, intricate warm full coverage'),
+  B('O', 'o-big-enchanted-library', 220, 250, 150, 'showpiece', 'a vast enchanted library with towering bookshelves, rolling ladders, glowing floating books, lanterns, a spiral staircase and a small friendly dragon, dense richly-coloured full coverage'),
+  B('O', 'o-big-seaside-town', 240, 220, 150, 'showpiece', 'a colourful seaside harbour town with tiers of pastel cottages, fishing boats, a lighthouse, market stalls, gulls and many little people, intricate full coverage'),
+  B('O', 'o-big-butterfly-garden', 220, 255, 150, 'showpiece', 'a densely packed summer butterfly garden with hundreds of flowers in every colour, many butterflies, bees, a birdbath and trailing blooms, intricate full coverage'),
 ]
 
 type FluxSize = 'square_hd' | 'landscape_4_3' | 'portrait_4_3'
