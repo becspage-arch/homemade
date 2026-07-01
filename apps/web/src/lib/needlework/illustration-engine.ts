@@ -173,18 +173,44 @@ export function bitmapToStitches(
   const frame = opts.frame ?? 'round'
   const at = (x: number, y: number): [number, number, number] => { const k = (y * W + x) * 3; return [data[k]!, data[k + 1]!, data[k + 2]!] }
 
-  // 1. background mask: flood-fill the plain ground from the edges, matching the
-  // actual corner colour within tolerance (interior whites are safe — not edge-connected).
+  // 1. background mask. The plain ground is every ground-coloured region that is
+  // EITHER connected to the image edge (the outer ground) OR a large enclosed
+  // pocket walled off by the subject — a wreath's centre, or a field the subject
+  // seals off by touching the frame. Small enclosed ground-coloured blobs (an eye
+  // glint, a tiny white flower) stay as subject. This replaces an edge-only
+  // flood-fill, which left interior/sealed ground stitched as a solid block.
   const bg = new Uint8Array(W * H)
-  const corners = [at(2, 2), at(W - 3, 2), at(2, H - 3), at(W - 3, H - 3)]
-  const bgR = corners.reduce((s, c) => s + c[0], 0) / 4
-  const bgG = corners.reduce((s, c) => s + c[1], 0) / 4
-  const bgB = corners.reduce((s, c) => s + c[2], 0) / 4
+  // Robust ground colour = MEDIAN of the border pixels. The median resists the
+  // subject touching an edge or corner (which broke fixed 4-corner sampling — a
+  // leaf in the corner made the "ground" green and the real white field opaque).
+  const brR: number[] = [], brG: number[] = [], brB: number[] = []
+  const pushBorder = (x: number, y: number): void => { const [r, g, b] = at(x, y); brR.push(r); brG.push(g); brB.push(b) }
+  for (let x = 0; x < W; x++) { pushBorder(x, 0); pushBorder(x, H - 1) }
+  for (let y = 0; y < H; y++) { pushBorder(0, y); pushBorder(W - 1, y) }
+  const median = (a: number[]): number => { a.sort((p, q) => p - q); return a[a.length >> 1]! }
+  const bgR = median(brR), bgG = median(brG), bgB = median(brB)
   const isBg = (x: number, y: number): boolean => { const [r, g, b] = at(x, y); const dr = r - bgR, dg = g - bgG, db = b - bgB; return dr * dr + dg * dg + db * db < 46 * 46 }
-  const stack: number[] = []
-  for (let x = 0; x < W; x++) stack.push(x, 0, x, H - 1)
-  for (let y = 0; y < H; y++) stack.push(0, y, W - 1, y)
-  while (stack.length) { const y = stack.pop()!, x = stack.pop()!; if (x < 0 || y < 0 || x >= W || y >= H || bg[y * W + x] || !isBg(x, y)) continue; bg[y * W + x] = 1; stack.push(x + 1, y, x - 1, y, x, y + 1, x, y - 1) }
+  // Label 4-connected ground-coloured components; a component is background if it
+  // touches the edge or is large (>= ~2% of the image = a real hole, not a glint).
+  const seen = new Uint8Array(W * H)
+  const MIN_ENCLOSED = Math.round(0.01 * W * H)
+  const comp: number[] = []
+  for (let sy = 0; sy < H; sy++) for (let sx = 0; sx < W; sx++) {
+    if (seen[sy * W + sx] || !isBg(sx, sy)) continue
+    comp.length = 0
+    let touchesEdge = false
+    const q: number[] = [sx, sy]; seen[sy * W + sx] = 1
+    while (q.length) {
+      const y = q.pop()!, x = q.pop()!, i = y * W + x
+      comp.push(i)
+      if (x === 0 || y === 0 || x === W - 1 || y === H - 1) touchesEdge = true
+      if (x > 0 && !seen[i - 1] && isBg(x - 1, y)) { seen[i - 1] = 1; q.push(x - 1, y) }
+      if (x < W - 1 && !seen[i + 1] && isBg(x + 1, y)) { seen[i + 1] = 1; q.push(x + 1, y) }
+      if (y > 0 && !seen[i - W] && isBg(x, y - 1)) { seen[i - W] = 1; q.push(x, y - 1) }
+      if (y < H - 1 && !seen[i + W] && isBg(x, y + 1)) { seen[i + W] = 1; q.push(x, y + 1) }
+    }
+    if (touchesEdge || comp.length >= MIN_ENCLOSED) for (const i of comp) bg[i] = 1
+  }
   const fg = (x: number, y: number): boolean => (opts.bleed ? true : !bg[y * W + x])
 
   // 2. structure-tensor flow: stitches run ALONG image structure (perpendicular to gradient).
