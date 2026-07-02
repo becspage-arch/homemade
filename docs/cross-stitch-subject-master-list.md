@@ -215,6 +215,21 @@ ONE re-roll, don't get stuck). Timed reference batch for the cron cadence: gen 1
 → 2 dense showpieces (alpine-village 105, butterfly-meadow 116). **748 → 758 PUBLIC.** Deploy green + /healthz
 200.
 
+**2026-07-02 — Batch 07012204 (auto cron) shipped 13 gate-passed gems** (13 generated, 0 culls — all 4
+flagged renders saved on a single re-roll). RANGE 12 → 101 col: cuties (koala-eucalyptus, raccoon-acorn,
+polar-bear-cub) → 3 portraits (goldturban-woman deep-skin `sat:1.1` held again — correct rich brown first
+try; flatcap-man fair; dahlia-fair artface) → fantasy (fairy-swing, seahorse-magic) → whimsical
+(owl-astronomer, rabbit-florist) → blue-tit → 2 dense Flux-1.1-Pro showpieces (lavender-farm 98,
+hot-air-balloons 101). Shelves: animals +4 (incl. blue-tit), portraits +3, fantasy +2, whimsical +2,
+scenes +2. FOUR re-rolls, ALL saved: polar-bear-cub + koala were washed-out/muddy-faced on pale fabric →
+"bold clear dark outline + two clearly separated eyes and a distinct nose (not one blob)" fixed both;
+dahlia-fair artface had grey/green under-eye contouring → the standard "bright FLAT even frontal lighting,
+NO grey/green contouring shadows, warm healthy skin, no dark hollows" re-roll fixed it; fairy-swing came
+back with huge black chibi eyes + hazy → "both eyes NORMAL-SIZED (not huge black eyes), crisp BOLD
+high-contrast, NOT hazy" fixed it. Recurring lesson reconfirmed: white/pale animals (polar bear, koala)
+need an explicit bold dark outline + a coloured base/prop or they ghost out on pale aida. **758 → 771
+PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
