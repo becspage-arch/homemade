@@ -407,6 +407,37 @@ REPAIRS + CULL:
   Magnolia petals are inherently wisp-prone in this engine; florals already richly covered (peony/hydrangea/wisteria/
   sweetpeas/cottagegardenmix/dahliabouquet/botanicalheart…), so held to the bar rather than publish frayed petals.
 
+**Batch 10 — 2026-07-02** (full range across new themes; rendered ONE at a time, hooped groups separate from the
+frameless scene). **8 gems published PUBLIC, 2 culled** (10 subjects). **108 PUBLIC needlework patterns total.**
+Contact sheet: media.homemade.education/scratch-review/d6b1914a-2ce6-462c-8b22-cc00b69dfe8a.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| duckling | Duckling | 5 Farm animals | D·s (82c) | hoop |
+| fieldmouse | Field Mouse | 4 Woodland | D·s (127c) | hoop |
+| redpoppy | Red Poppy | 10 Florals | D·m (76c) | hoop |
+| sealpup | Seal Pup | 8 Sea life | D·m (47c) | hoop |
+| springerspaniel | Springer Spaniel | 2 Dog breeds | D·m (85c) | hoop |
+| gingerbreadhouse | Gingerbread House | 18 Christmas & winter | D·m (237c) | hoop |
+| treeoflife | Tree of Life | 31 Heritage reinterp | D·XL (270c) | hoop |
+| halloweenscene | Cosy Halloween Night | 17 Halloween showpiece | B·XL (120c) | frameless |
+
+REPAIRS + CULLS:
+- **springerspaniel** first rendered with a hollow unstitched forehead (linen gap between the ears) + a garish red smear on
+  the nose bridge. Two repairs: (1) delete flux + re-roll with "full domed forehead connecting the ears, plain dark nose, no
+  red on the muzzle" fixed the head but a small red nose-smear remained; (2) a second flux re-roll with a hyper-explicit
+  "completely plain brown-black nose leather, no red/orange/pink on or above the nose" cleared it → clean coherent spaniel, gem.
+  Confirms: a hollow-head fail is a flux composition problem (re-roll), and a source-baked red nose needs an explicit nose
+  constraint, not `tameWarm` (which was on throughout and never touched it).
+- **bullfinch CULLED**. Two attempts (original, then "rosy salmon-pink breast, no orange, no teal, no blue"): Flux insists on
+  giving a black-hooded bird with an ORANGE breast patch + BLUE wings — a robin/chaffinch chimera, NOT a true bullfinch (rosy-pink
+  breast, grey back). Lovely stitching but mislabelled and not cleanly any other nameable British garden bird; birds already richly
+  covered (robin/bluetit/kingfisher/goldfinch/wren/pheasant/hummingbird). Held to the accuracy bar rather than publish a mis-named bird.
+- **britishshorthair CULLED**. Two attempts: both baked heavy TEAL-GREEN shading into the grey fur + NEON-ORANGE inner ears + a
+  red nose that survived the explicit "no teal, no orange, pink ears, grey nose" prompt AND `tameWarm:true` (the 2nd attempt was
+  worse on teal). Same source-baked-warm-resists-re-roll pattern as the culled siamese; cat breeds already covered (ragdoll/mainecoon/
+  bengal). Hard subject → cull rather than drift.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
