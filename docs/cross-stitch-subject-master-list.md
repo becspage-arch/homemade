@@ -246,6 +246,28 @@ saturation cooks brown fur to orange (quokka/wombat/capybara all trended orange)
 cheerful characters but don't stack 3+ brown animals in a batch. **771 → 784 PUBLIC.** Deploy green +
 /healthz 200.
 
+**2026-07-02 — Batch 07020918 (auto cron) shipped 12 gate-passed gems** (14 generated, 2 culls). RANGE
+14 → 95 col: cuties (penguin-chick, kitten-basket — both grey/non-brown to dodge the orange cook) →
+portraits (beanie-man fair; anemone-fair artface clean full-forehead face) → fantasy (unicorn-meadow,
+mermaid-shell) → whimsical (frog-fishing green frog, mole-gardener grey mole — non-red fur, no lettering) →
+floral (hydrangea-ring wreath, nuthatch bird) → 2 dense Flux-1.1-Pro showpieces (desert-oasis 87,
+mountain-lake-cabin 95 — a gorgeous painterly autumn-lake scene). Shelves: animals +3 (incl. nuthatch),
+portraits +2, fantasy +2, whimsical +2, floral +1, scenes +2. FOUR re-rolls: unicorn-meadow (first came
+back hazy with a weak white outline ghosting into the pale sky → "STRONG bold dark outline on the whole
+body, set against a bright blue sky, HIGH-CONTRAST NOT hazy" fixed it → kept) and nuthatch (first had
+floating disconnected leaves + a ghost-smudge branch → "ONE simple branch, leaves attached to that same
+branch, NO floating leaves or stray smudges" fixed it → kept) were SAVED; but popart-hoops-woman (deep-skin
+`sat:1.1`) and cute-badger-cub were CULLED after their one re-roll — the afro portrait's eyes stayed blank
+whites with weak irises even after the face was re-centred, and the badger's eyes kept merging into its
+black face-stripes (asymmetric, one a blob). LESSONS RECONFIRMED: a big afro crushes the face composition
+(brief a NEUTRAL rounded afro + "face large and clearly centred"); badger black-stripe faces are a recurring
+eye-merge trap; deep-skin popart eyes remain the hardest failure mode — cull rather than ship blank whites.
+INFRA NOTE this run: a concurrent process ran `git reset --hard` mid-run and wiped the working-tree brief
+edits AFTER generation — the renders/flux PNGs on disk survived, so I published by writing approved-full.json
+directly (publish re-derives from the flux PNGs + metadata, no dependency on the tracked BRIEFS file), then
+re-applied the source edits and committed. If enrich reports MISSING for a whole fresh batch, suspect the
+revert and hand-write approved-full.json. **784 → 796 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
