@@ -230,6 +230,22 @@ high-contrast, NOT hazy" fixed it. Recurring lesson reconfirmed: white/pale anim
 need an explicit bold dark outline + a coloured base/prop or they ghost out on pale aida. **758 → 771
 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-02 — Batch 07020854 (auto cron) shipped 13 gate-passed gems** (14 generated, 1 cull:
+capybara-orange came back a flat orange blob with a muddled bath concept — the 3rd orange animal, culled
+rather than re-rolled). RANGE 12 → 101 col: cuties (quokka-leaf, wombat-flower) → floral (wren-foxglove
+bird, eucalyptus-berry wreath) → 3 portraits (beads-woman deep-skin `sat:1.1` held rich brown first try;
+bob-blonde fair; camellia-fair artface) → fantasy (griffin-cub, fairy-bee) → whimsical (mouse-cheesemonger,
+bear-beekeeper — both grey/brown fur per no-ginger rule, no gibberish text) → 2 dense Flux-1.1-Pro
+showpieces (moroccan-souk 101, tuscan-vineyard 83). Shelves: animals +2, floral +2, portraits +3,
+fantasy +2, whimsical +2, scenes +2. TWO re-rolls, both saved: wren-foxglove first came back a malformed
+yellow/blue blob merged into the flowers → "a single plump bird perched clearly to one side, bold clean
+outline, NOT overlapping the flowers" fixed it; griffin-cub was a hazy all-yellow wash melting into the
+background → "distinct white eagle head, feathered wings, on a clear SKY-BLUE background, strong dark
+outline, HIGH-CONTRAST, NOT all one colour" fixed it. Recurring lesson reconfirmed: the cute lane's high
+saturation cooks brown fur to orange (quokka/wombat/capybara all trended orange) — accept one or two as
+cheerful characters but don't stack 3+ brown animals in a batch. **771 → 784 PUBLIC.** Deploy green +
+/healthz 200.
+
 ---
 
 ## PROGRESS TABLE
