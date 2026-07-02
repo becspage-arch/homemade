@@ -268,6 +268,24 @@ directly (publish re-derives from the flux PNGs + metadata, no dependency on the
 re-applied the source edits and committed. If enrich reports MISSING for a whole fresh batch, suspect the
 revert and hand-write approved-full.json. **784 → 796 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-02 — Batch 07021337 (auto cron) shipped 13 gate-passed gems** (13 generated, 0 culls — both
+flagged renders saved on a single re-roll). RANGE 13 → 114 col: cuties (spring-lamb white, lop-bunny grey,
+corgi-puppy) → bird (bullfinch) → 3 portraits (gele-woman deep-skin `sat:1.1`; redscarf-woman fair;
+lavender-fair artface clean full-forehead face) → fantasy (fairy-toadstool, baby-dragon) → whimsical
+(mouse-clockmaker grey mouse, owl-baker brown owl — non-red fur, blank signs no lettering) → 2 dense
+Flux-1.1-Pro showpieces (japanese-garden 114 — a gorgeous red moon-bridge/cherry-blossom/koi scene,
+cozy-bookshop 93 — warm painterly interior, grey cat, blank book spines). Shelves: animals +4 (incl.
+bullfinch), portraits +3, fantasy +2, whimsical +2, scenes +2. TWO re-rolls, BOTH saved: gele-woman first
+came back with the classic deep-skin failure — blank white eye-patches, no nose/features on the dark skin →
+"both eyes clearly drawn with visible dark-brown irises and pupils looking forward (NOT blank white eyes),
+clearly drawn eyebrows, defined nose with bridge and nostrils, all features boldly outlined on the dark
+skin" fixed it → correct dignified rich-brown portrait; spring-lamb first was washed-out with a weak outline
+ghosting into pale fabric → "a BOLD solid dark charcoal outline all around the body + a solid green grass
+base to ground it" fixed it → reads crisply. LESSON RECONFIRMED: deep-skin popart eyes are the #1 failure
+mode — brief the irises/pupils EXPLICITLY (not just "clear dark irises"), demand pupils looking forward and
+all features boldly outlined, and it converges; white animals still need an explicit bold dark outline +
+coloured base or they ghost on pale aida. **796 → 809 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
