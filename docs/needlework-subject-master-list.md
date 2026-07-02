@@ -316,6 +316,35 @@ REPAIRS that passed (repair-first — 0 culls despite several first-attempt fail
   not a luna (luna = pale green, long twisted tails). Renamed the row to "Emperor Moth" (slug stays
   `lunamoth`). LESSON: gate for subject ACCURACY, not just cleanliness — rename to what actually rendered.
 
+**Batch 7 — 2026-07-02** (full range across new themes; rendered ONE at a time, hooped groups separate from
+the frameless scene). **9 gems published PUBLIC, 1 culled** (10 subjects). **81 PUBLIC needlework patterns
+total.** Contact sheet: media.homemade.education/scratch-review/2193a375-0207-4642-ac6b-4062dce54e77.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| hamster | Hamster | 1 Cute animals | D·s (143c) | hoop |
+| chick | Baby Chick | 5 Farm animals | D·s (69c) | hoop |
+| frenchbulldog | French Bulldog | 2 Dog breeds | D·m (93c) | hoop |
+| swallowtail | Swallowtail Butterfly | 7 Bees/butterflies/moths | D·m (194c) | hoop |
+| sweetpeas | Sweet Peas | 10 Florals | D·m (227c) | hoop |
+| pheasant | Pheasant | 6 Garden birds | D·r (202c) | hoop |
+| dahliabouquet | Dahlia Bouquet | 10 Floral showpiece | D·XL (223c) | hoop |
+| autumnforest | Autumn Forest | 20 Autumn/harvest | B·XL (220c) | frameless |
+| otter | River Otter | 4 Woodland | D·m (88c) | hoop |
+
+REPAIRS + CULL:
+- **chick** first blew coral/orange on the body (soft-yellow intended); `tameWarm:true` re-run (no flux delete)
+  pulled it back to true butter-yellow → gem. Confirms the standing rule: an unwanted warm CAST is a render-grade
+  fix (tameWarm), not a re-roll.
+- **otter** first had stray magenta/purple streaks down the chest + tail (spurious dark-shadow colour, NOT a warm
+  cast so tameWarm couldn't touch it). Deleted flux + re-rolled with "natural brown and cream only, no purple/
+  magenta/pink shadows" → clean chestnut-and-cream otter, gem.
+- **siamese CULLED** (only cull). Two attempts: the seal-point face + blue eyes came good, but the inner ears kept
+  painting vivid source-baked ORANGE that survived BOTH a "no orange" flux re-roll AND `tameWarm:true` (Flux
+  insists on warm ears for this subject), plus loose white threads dangled below the chin. Held to the bar rather
+  than publish a flawed cat — cat breeds already covered by ragdoll + mainecoon. LESSON reaffirmed: if a warm
+  colour is baked into the flux AND resists a targeted re-roll, it's a hard subject; cull rather than drift.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
