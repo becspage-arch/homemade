@@ -376,6 +376,37 @@ REPAIRS that passed (repair-first — 0 culls):
 - Note: `wren` rendered with a warmer rufous-orange crown than a classic brown wren but reads as a coherent, clean,
   complete little garden bird — kept as a gem (a warm-toned wren is plausible; not worth a re-roll).
 
+**Batch 9 — 2026-07-02** (full range across new themes; rendered ONE at a time, hooped groups separate from the
+frameless scene). **9 gems published PUBLIC, 1 culled** (10 subjects). **100 PUBLIC needlework patterns total.**
+Contact sheet: media.homemade.education/scratch-review/0b68da73-709e-41d9-85b3-7bdb042f50ce.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| corgi | Corgi | 2 Dog breeds | D·m (145c) | hoop |
+| bengal | Bengal Cat | 3 Cat breeds | D·r (155c) | hoop |
+| badger | Badger | 4 Woodland | D·s (86c) | hoop |
+| piglet | Piglet | 5 Farm animals | D·s (69c) | hoop |
+| koifish | Koi Fish | 8 Sea life | D·m (142c) | hoop |
+| nutcracker | Nutcracker | 18 Christmas & winter | D·m (207c) | hoop |
+| macarons | Macaron Stack | 16 Food & baking | D·m (88c) | hoop |
+| botanicalheart | Botanical Heart | 21 Valentine's showpiece | D·XL (243c) | hoop |
+| highlandglen | Highland Glen | 26 Landscapes | B·XL (105c) | frameless |
+
+REPAIRS + CULL:
+- **koifish** first rendered a lovely koi but its "green lily pad" rendered as a garish flat neon-green ring/blob beside
+  the fish. Deleted flux + re-rolled with "side profile, no lily pad, no water plants" → a clean flowing koi, gem.
+- **macarons** first came out stringy/loose (shells read as tangled thread, not crisp discs). Re-rolled with a bolder,
+  cleaner, simpler prompt ("three smooth round crisp shells, well-defined edges") → a clean recognisable stack, gem.
+- **highlandglen** first TWO attempts blew the heather to neon magenta + bracken to acid orange. `tameWarm:true` did NOT
+  fix it (the render came back identical) → the garish colour was BAKED INTO THE FLUX, not a render-grade warm shift.
+  Deleted flux + re-rolled with a strongly MUTED/desaturated palette prompt ("gently muted dusky-purple heather, soft
+  golden-brown bracken, not neon, no bright magenta/orange") → a calm naturalistic misty autumn glen with a lone stag,
+  gem. Confirms the standing rule: a garish colour that survives `tameWarm` is source-baked → delete flux + re-roll.
+- **magnolia CULLED** (only cull). Two attempts (original, then "compact solid petals, no wispy/frayed threads"): both
+  frayed the magnolia's long floppy petals into stringy loose threads with an unstitched white mass between the blooms.
+  Magnolia petals are inherently wisp-prone in this engine; florals already richly covered (peony/hydrangea/wisteria/
+  sweetpeas/cottagegardenmix/dahliabouquet/botanicalheart…), so held to the bar rather than publish frayed petals.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
