@@ -345,6 +345,37 @@ REPAIRS + CULL:
   than publish a flawed cat — cat breeds already covered by ragdoll + mainecoon. LESSON reaffirmed: if a warm
   colour is baked into the flux AND resists a targeted re-roll, it's a hard subject; cull rather than drift.
 
+**Batch 8 — 2026-07-02** (full range across new themes; rendered ONE at a time, hooped groups separate from the
+frameless scenes). **10 gems published PUBLIC, 0 culled** (10 subjects — both first-attempt fails repaired to a
+pass). **91 PUBLIC needlework patterns total.** Contact sheet:
+media.homemade.education/scratch-review/21825b59-8cbb-4448-85be-609b6544b442.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| wren | Wren | 6 Garden birds | D·s (97c) | hoop |
+| penguin | Penguin in a Scarf | 18 Christmas & winter | D·s (106c) | hoop |
+| beagle | Beagle | 2 Dog breeds | D·m (98c) | hoop |
+| octopus | Octopus | 8 Sea life | D·m (68c) | hoop |
+| alpaca | Alpaca | 5 Farm animals | D·m (58c) | hoop |
+| foxglove | Foxglove | 11 Botanical stems | D·m (140c) | hoop |
+| wisteria | Wisteria | 10 Florals | D·r (170c) | hoop |
+| autumnwreath | Autumn Harvest Wreath | 13 Wreaths showpiece | D·XL (182c) | hoop |
+| bluebellwood | Bluebell Wood | 26 Landscapes | B·r (258c) | frameless |
+| oceanreef | Coral Reef | 8 Sea life showpiece | B·XL (362c) | frameless |
+
+REPAIRS that passed (repair-first — 0 culls):
+- **beagle** first rendered with a stray red/pink SMEAR under the nose/muzzle. `tameWarm:true` was already on and did
+  NOT remove it → the red was baked into the flux, not a render-grade warm shift. Deleted the flux + re-rolled with
+  "plain black nose, clean white/tan muzzle, absolutely no red or pink around the mouth or lips, closed mouth" →
+  clean tricolour portrait. Confirms the standing rule: a warm colour that survives `tameWarm` is source-baked →
+  delete flux + re-roll, don't rely on the render lever.
+- **foxglove** first blew the pink bells to a garish CORAL-RED (I left `tameWarm` off; the AgX+1.5× grade pushed the
+  magenta-pink warm). Cheap render-grade fix: added `tameWarm:true` and re-rendered off the SAME cached flux (no
+  delete) → true pink bells with natural speckled throats. Confirms `tameWarm` rescues a pink-blowing-red cast, not
+  just reds. Pink/magenta botanicals should carry `tameWarm:true` from the start.
+- Note: `wren` rendered with a warmer rufous-orange crown than a classic brown wren but reads as a coherent, clean,
+  complete little garden bird — kept as a gem (a warm-toned wren is plausible; not worth a re-roll).
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
