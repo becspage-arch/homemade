@@ -23,10 +23,27 @@
 import { type RNode, type DistConstraint, type YarnModel } from './relax'
 import { STITCHES, type StitchId } from './dictionary'
 
+/**
+ * One genuine interlock, recorded at build time so it can be VERIFIED in data
+ * after relaxation (the audit checks the link actually held — renders lie).
+ * `hook` = the node that passes under/through/around; `below` = the node of the
+ * loop/crown/stem it is linked to. Roles: 'hook' dives under a crown; 'ring'
+ * encircles a post stem; 'cross' passes through a chain loop's opening.
+ */
+export interface StitchLink {
+  j: number
+  c: number
+  role: 'hook' | 'ring' | 'cross'
+  hook: number
+  below: number
+}
+
 export interface BuiltContinuous {
   model: YarnModel
   /** The single ordered strand (node indices) to render as one yarn. */
   strandPath: number[]
+  /** Every interlock the build claims — the audit verifies these after relax. */
+  links: StitchLink[]
   yarnRadiusMm: number
   widthMm: number
   heightMm: number
@@ -79,6 +96,7 @@ export function buildContinuous(
   const dist: DistConstraint[] = []
   const bend: DistConstraint[] = []
   const strandPath: number[] = []
+  const links: StitchLink[] = []
   const dst = (i: number, j: number): number =>
     Math.hypot(nodes[i]!.x - nodes[j]!.x, nodes[i]!.y - nodes[j]!.y, nodes[i]!.z - nodes[j]!.z)
 
@@ -147,24 +165,25 @@ export function buildContinuous(
     // what it wraps, leaving only the two converging legs visible — the V. The
     // body starts on the front layer and eases back toward its fold, so each loop
     // shingles under the next.
-    const loopBody = (t: number, free = 1): void => {
+    const loopBody = (t: number, free = 1): number => {
       // Straight-sided taper, widest right at the fold end — the legs draw the
       // V's line from apex to edge (a mid-body bulge reads as edge-parallel
-      // strands, not a V).
+      // strands, not a V). Returns the fold-apex node (the next stitch links it).
       push(t + p * 0.2, hw * 0.35, zf, free)
       push(t + p * 0.55, hw * 0.6, zf, free)
       push(t + p * 0.9, hw * 0.85, zf * 0.6, free)
       push(t + p + r * 0.7, hw * 0.9, zfold * 0.8, free)
-      push(t + p + r, 0, zfold, free) // the fold — the head, hugging the strands it wraps
+      const apex = push(t + p + r, 0, zfold, free) // the fold — the head, hugging the strands it wraps
       push(t + p + r * 0.7, -hw * 0.9, zfold * 0.8, free)
       push(t + p * 0.9, -hw * 0.85, zf * 0.6, free)
       push(t + p * 0.55, -hw * 0.6, zf, free)
       push(t + p * 0.2, -hw * 0.35, zf, free)
+      return apex
     }
 
     // Slip knot (loop 0): the pinned anchor — small and tucked, like a real one.
     push(-p * 0.2, hw * 0.3, zf * 0.5, 0)
-    loopBody(0, 0)
+    let prevApex = loopBody(0, 0)
     push(p * 0.05, -hw * 0.15, -zb * 0.4, 0) // dive behind toward the first bump
 
     for (let n = 1; n < W; n++) {
@@ -174,12 +193,15 @@ export function buildContinuous(
       push(t - p * 0.3, 0, -zb)
       // Pull-through strand 1: up through the previous loop's opening, back→front.
       push(t, yin, -zb * 0.5)
-      push(t, yin, zf * 0.1) // inside the hole
+      const crossUp = push(t, yin, zf * 0.1) // inside the hole
       // The new loop, lying flat on the front face.
-      loopBody(t)
+      const apex = loopBody(t)
       // Pull-through strand 2: back down through the same opening, front→back.
-      push(t, -yin, zf * 0.1)
+      const crossDn = push(t, -yin, zf * 0.1)
       push(t, -yin, -zb * 0.5)
+      links.push({ j: 0, c: n, role: 'cross', hook: crossUp, below: prevApex })
+      links.push({ j: 0, c: n, role: 'cross', hook: crossDn, below: prevApex })
+      prevApex = apex
     }
     // The working loop's tail (the end that would still be on the hook).
     push((W - 1) * p + p * 0.1, -hw * 0.1, -zb)
@@ -189,6 +211,7 @@ export function buildContinuous(
     return {
       model: { nodes, dist, bend, strand: strand0, along: along0 },
       strandPath,
+      links,
       yarnRadiusMm: yr,
       widthMm: W * p + r * 2,
       heightMm: (hw + yr) * 2,
@@ -234,6 +257,15 @@ export function buildContinuous(
       const s = dir
       const x = c * sw
       const id = opts.stitchAt ? opts.stitchAt(j, c) : rowTypes[j]!
+      // The turning chain up into the first row: a crocheter chains up before the
+      // first stitch, leaving real slack between the foundation's end and the
+      // first worked stitch. Without it the corner stitch strangles — its hook
+      // gets dragged out of its dive by tension from the pinned foundation
+      // (found by the audit on sl st, the shortest stitch).
+      if (j === 0 && o === 0) {
+        push(x - s * cw * 0.8, by + (ty - by) * 0.75, zh * 0.9 * fz)
+        push(x - s * cw * 0.1, by + (ty - by) * 0.95, zh * 0.4 * fz)
+      }
       // Per-stitch variants: hdc's third loop; blo/flo loop choice; front/back post.
       const thirdLoop = id === 'hdc'
       const loopMode = id === 'scblo' ? 'blo' : id === 'scflo' ? 'flo' : 'both'
@@ -251,7 +283,8 @@ export function buildContinuous(
         const bz = z * 5.0 // bulge boldly off the surface so it reads as a distinct berry
         const midY = cy + (ty - cy) * 0.55
         push(x + s * pw, by + px * 0.45, z * fz) // down from the previous head toward the base
-        push(x, cy - dh, hookZ) // hook UNDER the crown below — the shared base
+        const bobbleHook = push(x, cy - dh, hookZ) // hook UNDER the crown below — the shared base
+        links.push({ j, c, role: 'hook', hook: bobbleHook, below: bc })
         const N = 5
         for (let k = 0; k < N; k++) {
           const ox = ((k + 0.5) / N - 0.5) * cw * 1.5 // narrow fan → a round ball, not a spread
@@ -292,7 +325,8 @@ export function buildContinuous(
         push(x + s * pw, by + px * 0.22, ppz)
         // ring around the below post stem (encircle it → linked, collision-held)
         push(x + cw * 1.15, ay, az)
-        push(x, ay - dh * 0.2, az - front * cw * 1.5) // around the far z-side of the stem
+        const ringFar = push(x, ay - dh * 0.2, az - front * cw * 1.5) // around the far z-side of the stem
+        links.push({ j, c, role: 'ring', hook: ringFar, below: pa })
         push(x - cw * 1.15, ay, az)
         push(x - s * pw, by + px * 0.22, ppz) // up-leg, popped
         const postMid = push(x - s * pw, by + px * 0.52, ppz)
@@ -322,7 +356,8 @@ export function buildContinuous(
       push(x + s * pw * 0.4, cy + dh * 0.5, z * 0.6 * fz) // approach the below crown
       // Hook UNDER the crown below — tuck to the far z-side of it. Collision (neither
       // can pass through the other) holds the link — no spring.
-      push(x, cy - dh, hookZ)
+      const hookIdx = push(x, cy - dh, hookZ)
+      links.push({ j, c, role: 'hook', hook: hookIdx, below: bc })
       push(x - s * pw * 0.4, cy + dh * 0.5, z * 0.6 * fz) // emerge
       // Up-leg: pulled back UP just beside the down-leg → the two strands of the post.
       push(x - s * pw, by + px * 0.26, z * 1.1 * fz)
@@ -358,6 +393,7 @@ export function buildContinuous(
   return {
     model: { nodes, dist, bend, strand, along },
     strandPath,
+    links,
     yarnRadiusMm: yr,
     widthMm: W * sw,
     heightMm: acc,

@@ -1,104 +1,42 @@
 /**
- * Continuous-yarn proof — ONE strand weaving a whole swatch, relaxed, rendered.
- * Start with plain single crochet (the simplest) to prove the real model before
- * anything else.
+ * Continuous-yarn swatch renderer — ONE strand weaving a whole swatch, relaxed,
+ * rendered. Build + relax live in engine/buildSwatch.ts (shared with the audit,
+ * so what gets audited is exactly what gets rendered).
  *
- *   cd apps/web && npx tsx scripts/loom-continuous.ts [sc|mix]
+ *   cd apps/web && npx tsx scripts/loom-continuous.ts <yarnRadiusMm> <W> <hex> <name> <stitch>
  */
 
 import { resolve } from 'node:path'
 import { mkdirSync, writeFileSync } from 'node:fs'
-import { buildContinuous } from '../src/lib/loom/crochet/engine/yarnPath'
-import { relax } from '../src/lib/loom/crochet/engine/relax'
+import { buildRelaxedSwatch } from '../src/lib/loom/crochet/engine/buildSwatch'
 import { pliedFilaments, smooth, type V3 } from '../src/lib/loom/crochet/yarnLoop'
-import type { StitchId } from '../src/lib/loom/crochet/engine/dictionary'
 
 const OUT = resolve(process.cwd(), '../../.loom-scratch/crochet')
 mkdirSync(OUT, { recursive: true })
 const BLENDER = 'C:/Users/Rebecca/blender/blender-4.2.9-windows-x64/blender.exe'
 
 function main() {
-  // args: yarnRadiusMm, stitchesPerRow, colourHex, name  (defaults = chunky cream)
+  // args: yarnRadiusMm, stitchesPerRow, colourHex, name, stitch  (defaults = chunky cream)
   const yr = Number(process.argv[2] ?? 3.0) // yarn WEIGHT (radius mm): ~1.3 fine, ~2 worsted, ~3 bulky
   const W = Number(process.argv[3] ?? 12)
   const hex = process.argv[4] ?? '#e6d4c0'
   const name = process.argv[5] ?? 'continuous-sc'
   const stitchArg = process.argv[6] ?? 'sc'
-  // 'basketweave' is a PATTERN of fpdc/bpdc, not a single stitch. Post stitches need
-  // a plain dc row 0 first (something to wrap), so we override per-stitch.
-  const isBasket = stitchArg === 'basketweave'
-  const isPostRib = stitchArg === 'postrib' // alternating fp/bp columns = ribbing
-  const isPost = stitchArg === 'fpdc' || stitchArg === 'bpdc'
-  const isBobbles = stitchArg === 'bobbles' // bobbles dotted on an sc background
-  const stitch = (isBasket ? 'dc' : isPostRib ? 'fpdc' : isBobbles ? 'sc' : stitchArg) as StitchId // drives gauge + row height
-  // ch is the starting chain itself — render the foundation chain alone (no worked rows).
-  const nRows = stitch === 'ch' ? 0 : 8
-  const rows: StitchId[] = Array(nRows).fill(stitch) as StitchId[]
-  let stitchAt: ((j: number, c: number) => StitchId) | undefined
-  if (isBasket) {
-    stitchAt = (j, c) => {
-      if (j === 0) return 'dc' // establish posts to wrap
-      const block = Math.floor(c / 3)
-      const rb = Math.floor((j - 1) / 2)
-      return (block + rb) % 2 === 0 ? 'fpdc' : 'bpdc' // 3-wide blocks, swap every 2 rows
-    }
-  } else if (isPostRib) {
-    stitchAt = (j, c) => (j === 0 ? 'dc' : c % 2 === 0 ? 'fpdc' : 'bpdc') // raised rib / recessed valley
-  } else if (isBobbles) {
-    // bumps on a polka-dot grid over plain sc, offset row to row
-    stitchAt = (j, c) => (j > 0 && j % 2 === 1 && (c + (Math.floor(j / 2) % 2) * 2) % 4 === 0 ? 'bobble' : 'sc')
-  } else if (isPost) {
-    stitchAt = (j, c) => (j === 0 ? 'dc' : (stitchArg as StitchId))
-  }
-  const built = buildContinuous(rows, W, yr, { stitchAt })
-
-  // Collision is what now HOLDS the interlock (yarn can't pass through yarn), so it
-  // runs firm and long. No plane pull — the +z/−z relief at each hook IS the
-  // interlock; flattening it would unlink the rows.
-  if (stitch === 'ch') {
-    // A chain's links are consecutive along the strand, so collision must act between
-    // NEAR neighbours (low adjacency) to hold each loop threaded through the previous
-    // and to snug each head around the next stitch's two pulled-through strands.
-    // A gentle plane pull lays the run flat into the nested-V plait face.
-    relax(built.model, {
-      collMinDist: yr * 1.0, // SOFT — a drawn-tight chain squashes its yarn; firmer than this and the loop can't contain the two strands pulled through it
-      collK: 0.3,
-      collAdjacency: 2,
-      planeZ: 0,
-      planeK: 0.01, // barely any symmetric pull — the TABLE does the flattening, one-sided, so the front/back layering survives
-      layoutK: 0,
-      floorZ: -yr * 1.6, // the table the chain lies on — deep enough for the bump layer, or the back overcrowds
-      iterations: 400,
-    })
-  } else {
-    relax(built.model, {
-      collMinDist: yr * 1.25,
-      collK: 0.28,
-      collAdjacency: 9, // a post's own two legs (≤9 apart) stay a tight pair; cross-row interlock is ~a full row apart, so it still collides
-      planeZ: 0,
-      planeK: 0,
-      layoutK: 0.06, // blocked flat — holds rows at their worked height so posts stand
-      iterations: 320,
-    })
-  }
+  const { built, flags } = buildRelaxedSwatch(stitchArg, W, yr)
 
   // Render the ONE strand as a single continuous plied yarn.
   const nodes = built.model.nodes
   const ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
   const center = smooth(ctrl, 4)
-  // Post-stitch ribs read cleaner with a smoother (less barber-poled) yarn.
   // Post ribs and the chain read cleaner with a smoother (less barber-poled) yarn.
-  const twist = isPost || isPostRib || isBasket || stitch === 'ch' ? 0.05 : 0.1
+  const twist = flags.postLike || flags.chain ? 0.05 : 0.1
   const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, twist) // gentle twist = plied wool fibre (path no longer knots)
   const strokes = [{ hex, sheen: 0.85, radiusMm, filaments }]
 
   // Tall stitches (dc/tr) read as standing vertical posts from a slight 3/4 angle —
-  // the way the reference photos are shot. sc/hdc stay flat top-down.
-  const tall = stitch === 'dc' || stitch === 'tr' || stitch === 'dtr' || isPost || isBasket || isPostRib
-  // Post stitches stand off the surface, so shoot them more side-on (so the raised
-  // ribs cast shadow into the valleys, the way the reference photo is lit).
-  const postLike = isPost || isBasket || isPostRib
-  const tiltDeg = postLike ? 40 : tall ? 16 : isBobbles ? 24 : 0 // tilt so the bobbles read as raised balls
+  // the way the reference photos are shot. sc/hdc/ch stay flat top-down. Post
+  // stitches shoot more side-on (raised ribs cast shadow into the valleys).
+  const tiltDeg = flags.postLike ? 40 : flags.tall ? 16 : flags.bobbles ? 24 : 0
   const scene = {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
     strokes,
@@ -106,7 +44,7 @@ function main() {
   }
   const scenePath = resolve(OUT, `${name}.json`)
   writeFileSync(scenePath, JSON.stringify(scene))
-  console.log(`${name}: yr=${yr} W=${W}, ${built.strandPath.length} nodes, 1 strand`)
+  console.log(`${name}: yr=${yr} W=${W}, ${built.strandPath.length} nodes, 1 strand, ${built.links.length} recorded interlocks`)
   console.log(`wrote ${scenePath}`)
 
   const outPng = resolve(OUT, `${name}.png`)

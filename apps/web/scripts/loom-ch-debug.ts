@@ -3,22 +3,11 @@
  * driver does, then print where each stitch's parts settled — fold apex, body
  * legs, crossing legs, back bump — and each loop's rotation about the chain axis.
  */
-import { buildContinuous } from '../src/lib/loom/crochet/engine/yarnPath'
-import { relax } from '../src/lib/loom/crochet/engine/relax'
+import { buildRelaxedSwatch } from '../src/lib/loom/crochet/engine/buildSwatch'
 
 const yr = 2.4
 const W = 16
-const built = buildContinuous([], W, yr)
-relax(built.model, {
-  collMinDist: yr * 1.0,
-  collK: 0.3,
-  collAdjacency: 2,
-  planeZ: 0,
-  planeK: 0.01,
-  layoutK: 0,
-  floorZ: -yr * 1.6,
-  iterations: 400,
-})
+const { built } = buildRelaxedSwatch('ch', W, yr)
 
 const n = built.model.nodes
 const f = (v: number): string => (v / yr).toFixed(2).padStart(6)
