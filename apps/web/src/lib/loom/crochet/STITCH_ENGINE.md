@@ -153,7 +153,7 @@ y-pull (`layoutK`). No pinned shapes, no spring joins (HARD RULE, §9).
 | **tr** | taller post (`heightFactor 4.2`), open gauge | ✅ **LOCKED** 2026-06-29 |
 | **dtr** | taller again (`heightFactor 5.4`) | ✅ **LOCKED** 2026-06-29 |
 | **sl st** | shortest worked (`heightFactor 0.8` — a row is still ≈1 yarn thick), tight gauge | ✅ **LOCKED** 2026-06-29 (flat dense ridges) |
-| **ch** | foundation chain alone (`nRows=0`) — now GENUINE threaded loops (real loops pulled through each other, collision-held, low `collAdjacency` relax) | ◑ **WIP, not signed off**. Drifted twice into drawn/pinned shapes (alternating-z pinned ovals; flat zigzag) before reaching genuine loops. Genuine version reads as a tight twisted loop-braid, NOT the reference's flat plait. Verified single-strand, but look rejected. |
+| **ch** | REBUILT 2026-07-02 as the true pull-through topology: each loop a flat teardrop; BOTH strands of loop n thread loop n−1's opening; connector = the back bump behind the work; only the slip knot pinned. Soft chain collision (`collMinDist 1.0yr` — drawn-tight chain squashes), whisper plane pull, TABLE floor (`floorZ`), 400 iters. Settled geometry verified numerically (`scripts/loom-ch-debug.ts`): folds centred + hidden mid-depth, legs symmetric on the front, both crossings inside each hole, bumps at the back, loop rotation ~2°. Face = nested-V plait. | ✅ **LOCKED 2026-07-02** (Rebecca signed off vs the eyeloveknots chain reference). Cross-weight (fine/worsted) confirmation folded into the audit sweep. |
 | **bobble** | gathered cluster: genuine base hook + N loops bulging forward to one top | ◑ **WIP, not signed off**. Reads as lumps in a busy field, not distinct round berries. The raised-bump family needs a calm/flat background + a tighter gathered ball — not cracked. |
 | **sc blo / flo** | head split into a real back + front loop; hook one, float the other as a ridge | ✅ **LOCKED** 2026-06-29 — ridged sc; blo/flo are mirrors |
 | **fpdc / bpdc** | post RINGS the stem below (collision-held); body pops front (fp) / back (bp), head stays at plane; dense gauge | ✅ **LOCKED** 2026-06-29 — best shown as alternating `postrib` (raised ribs + valleys), side-on tilt 40°, smoother yarn (twist 0.05). Basketweave/waffle = same move in blocks, deferred to combos |
@@ -165,6 +165,7 @@ lands in the wrong dir; then upscale with `loom-aspen-hero.ts <basePng> 0.6 0.8 
 npx tsx scripts/loom-continuous.ts 2.4 16 "#c98a5e" continuous-sc  sc
 npx tsx scripts/loom-continuous.ts 2.4 14 "#c98a5e" continuous-hdc hdc
 npx tsx scripts/loom-continuous.ts 2.4 11 "#c98a5e" continuous-dc  dc
+npx tsx scripts/loom-continuous.ts 2.4 16 "#c98a5e" continuous-ch  ch
 # then (absolute out path):
 "<BLENDER>" --background --factory-startup --python scripts/loom_render_crochet.py -- \
   "<ABS>/.loom-scratch/crochet/continuous-dc.json" "<ABS>/.loom-scratch/crochet/continuous-dc.png" 110
@@ -220,6 +221,23 @@ markdown links to the PNG, relative to the working dir (`.loom-scratch/crochet/.
   real crochet turns each row (alternating worked face). Fixed by the `fz` face-flip.
 - **Too-strong face-flip relief** → corrugated bands, not flat fabric. Keep relief
   gentle (`z≈0.3yr`).
+- **Chain: upright overlapping C-loops with alternating z tilts** → structurally a
+  twisted cord, and that's exactly how it renders. A chain's loops lie FLAT in the
+  plane; the next loop's two strands pass THROUGH the previous opening; the
+  connector crosses the BACK (the bump). Build that topology or nothing else matters.
+- **Chain: a loop tighter than its contents** → collision EXPELS a strand from the
+  hole (it ends up outside the loop's own leg — check numerically, the renders lie
+  to the eye). At collision distance d a loop wrapping two strands needs ≈ 2d+2πd
+  of perimeter. Chain tightness comes from SOFT collision (squashed yarn), never
+  from starving the loop.
+- **Symmetric plane pull to flatten a chain** → crushes the front/back layering and
+  the crowding resolves sideways (lean, escapes). Flatten with the one-sided TABLE
+  (`floorZ`) — and give the back-bump layer real depth or the centre-back
+  overcrowds and ejects the crossings.
+- **Diagnose with numbers, not renders**: when a topology-correct build looks wrong,
+  dump the settled positions per stitch (`scripts/loom-ch-debug.ts` pattern) before
+  touching parameters. Two renders in a row got misread until the dump showed the
+  expelled strand.
 
 ---
 

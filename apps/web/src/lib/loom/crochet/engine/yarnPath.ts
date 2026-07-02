@@ -110,36 +110,88 @@ export function buildContinuous(
   const belowBack: number[] = new Array(W).fill(-1)
   const belowFront: number[] = new Array(W).fill(-1)
 
-  // A real CHAIN on its own (no worked rows): a row of interlocking loops, each
-  // pulled through the previous, so the front reads as the classic braid of
-  // overlapping V's — not a twisted cord. Consecutive links sit on alternating
-  // z-sides and overlap, so each threads the one before (held by self-collision).
+  // A real CHAIN on its own (no worked rows). Each chain stitch is a PULL-THROUGH:
+  // the hook reaches through the loop on the hook, grabs the working yarn behind
+  // the work, and drags a folded bight of it through — the fold becomes the new
+  // loop, and the old loop closes around the new loop's two strands. Traced
+  // genuinely as that topology:
+  //   - every loop lies flat-ish in the fabric plane, elongated along the chain;
+  //   - BOTH strands of loop n pass through the opening of loop n−1 (initialised
+  //     actually inside it — one crossing back→front, one front→back);
+  //   - the stitch-to-stitch connector runs across the BACK (the "back bump",
+  //     one per stitch on the wrong side).
+  // Nothing is positioned to look like a chain. The nested-V plait face must
+  // EMERGE in relaxation: collision splays each loop's legs and snugs each head
+  // around the next stitch's legs (it can't slip off — that would need yarn to
+  // pass through yarn). Only the slip knot (loop 0) is pinned, as the anchor.
   if (rowTypes.length === 0) {
-    // GENUINELY stitched: each chain is a real loop, and the next loop is pulled
-    // THROUGH it. We trace one continuous strand as a run of loops; consecutive
-    // loops cross on opposite z-sides (over / under) so they are topologically
-    // linked from the start, and the relaxer's self-collision (run with low
-    // adjacency so neighbouring loops actually collide) keeps them linked while it
-    // settles into the natural flat chain. Nodes are FREE (not pinned to a drawn
-    // shape) — only the very first is anchored so the run doesn't drift.
-    const cs = yr * 1.6 // pitch — enough overlap to thread, open enough that each loop reads
-    const lr = yr * 1.15 // loop radius
-    for (let i = 0; i < W; i++) {
-      const cx = i * cs
-      const free = i === 0 ? 0 : 1
-      push(cx - lr * 0.7, -lr * 0.5, z * 0.9, free) // lower-left — OVER (threads through the previous loop)
-      push(cx - lr * 0.4, lr, z * 0.5, 1) // upper-left
-      push(cx + lr * 0.4, lr, -z * 0.5, 1) // upper-right
-      push(cx + lr * 0.7, -lr * 0.5, -z * 0.9, 1) // lower-right — UNDER (the next loop threads here)
+    // Sizing = the yarn FED per chain (a crocheter pulls each loop snug, so a
+    // chain is tight: the hole barely fits the next stitch's two strands).
+    // Loop sizing is a real BUDGET, not a look: at chain collision distance d the
+    // loop must have ~2d + 2πd of perimeter to genuinely contain the two strands
+    // pulled through it — feed it less and collision EXPELS one strand from the
+    // hole (measured: the exit strand ended up outside the loop's own leg). Chain
+    // collision runs soft (yarn squashes hard in a drawn-tight chain), so the
+    // budget stays close to real chain proportions.
+    const p = yr * 2.2 // pitch: one threading point to the next (~1.1 yarn diameters)
+    const hw = yr * 1.0 // loop half-width — the chain face is ~2 yarn-widths across
+    const r = yr * 0.7 // head-fold reach beyond the next stitch's threading point
+    const zf = yr * 0.45 // the loop body rides just in front of the plane
+    const zfold = -yr * 0.5 // the head fold tucks BEHIND: its clearance from the legs it wraps is in DEPTH, so from the front you see only legs (the reference face never shows a fold)
+    const zb = yr * 1.4 // the back-bump connector runs at the VERY back — a full layer below the folds, or the centre-back overcrowds and collision ejects the crossings sideways
+    const yin = yr * 0.3 // where the two pulled-through strands sit in the hole
+
+    // The loop body: a snug TEARDROP — pinched at its base (where it emerged
+    // through the previous loop), widest just before the fold (where it wraps the
+    // NEXT stitch's two strands). A chain is drawn tight: the hole is filled by
+    // what it wraps, leaving only the two converging legs visible — the V. The
+    // body starts on the front layer and eases back toward its fold, so each loop
+    // shingles under the next.
+    const loopBody = (t: number, free = 1): void => {
+      // Straight-sided taper, widest right at the fold end — the legs draw the
+      // V's line from apex to edge (a mid-body bulge reads as edge-parallel
+      // strands, not a V).
+      push(t + p * 0.2, hw * 0.35, zf, free)
+      push(t + p * 0.55, hw * 0.6, zf, free)
+      push(t + p * 0.9, hw * 0.85, zf * 0.6, free)
+      push(t + p + r * 0.7, hw * 0.9, zfold * 0.8, free)
+      push(t + p + r, 0, zfold, free) // the fold — the head, hugging the strands it wraps
+      push(t + p + r * 0.7, -hw * 0.9, zfold * 0.8, free)
+      push(t + p * 0.9, -hw * 0.85, zf * 0.6, free)
+      push(t + p * 0.55, -hw * 0.6, zf, free)
+      push(t + p * 0.2, -hw * 0.35, zf, free)
     }
+
+    // Slip knot (loop 0): the pinned anchor — small and tucked, like a real one.
+    push(-p * 0.2, hw * 0.3, zf * 0.5, 0)
+    loopBody(0, 0)
+    push(p * 0.05, -hw * 0.15, -zb * 0.4, 0) // dive behind toward the first bump
+
+    for (let n = 1; n < W; n++) {
+      const t = n * p
+      // Back bump: the connector runs across the BACK of the previous loop.
+      push(t - p * 0.65, 0, -zb)
+      push(t - p * 0.3, 0, -zb)
+      // Pull-through strand 1: up through the previous loop's opening, back→front.
+      push(t, yin, -zb * 0.5)
+      push(t, yin, zf * 0.1) // inside the hole
+      // The new loop, lying flat on the front face.
+      loopBody(t)
+      // Pull-through strand 2: back down through the same opening, front→back.
+      push(t, -yin, zf * 0.1)
+      push(t, -yin, -zb * 0.5)
+    }
+    // The working loop's tail (the end that would still be on the hook).
+    push((W - 1) * p + p * 0.1, -hw * 0.1, -zb)
+
     const strand0 = new Array(nodes.length).fill(0)
     const along0 = nodes.map((_, k) => k)
     return {
       model: { nodes, dist, bend, strand: strand0, along: along0 },
       strandPath,
       yarnRadiusMm: yr,
-      widthMm: W * cs,
-      heightMm: lr * 2,
+      widthMm: W * p + r * 2,
+      heightMm: (hw + yr) * 2,
     }
   }
 

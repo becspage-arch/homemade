@@ -59,6 +59,13 @@ export interface RelaxConfig {
    * freely in x and z. 0 = off.
    */
   layoutK: number
+  /**
+   * A hard TABLE under the work: free nodes are clamped to z >= floorZ. One-sided
+   * contact, exactly like the surface a swatch is photographed on — it stops loops
+   * rolling under the work without pressing the relief out of the front. Omit for
+   * no floor.
+   */
+  floorZ?: number
   iterations: number
 }
 
@@ -203,6 +210,14 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
       for (const n of nodes) {
         if (n.w === 0) continue
         n.z += (cfg.planeZ - n.z) * cfg.planeK
+      }
+    }
+
+    // 4b. The table: one-sided contact, nothing sinks below the surface.
+    if (cfg.floorZ !== undefined) {
+      for (const n of nodes) {
+        if (n.w === 0) continue
+        if (n.z < cfg.floorZ) n.z = cfg.floorZ
       }
     }
 

@@ -57,16 +57,18 @@ function main() {
   // interlock; flattening it would unlink the rows.
   if (stitch === 'ch') {
     // A chain's links are consecutive along the strand, so collision must act between
-    // NEAR neighbours (low adjacency) to hold each loop threaded through the previous.
-    // A gentle plane pull lays the run flat into a tidy braid.
+    // NEAR neighbours (low adjacency) to hold each loop threaded through the previous
+    // and to snug each head around the next stitch's two pulled-through strands.
+    // A gentle plane pull lays the run flat into the nested-V plait face.
     relax(built.model, {
-      collMinDist: yr * 1.15,
+      collMinDist: yr * 1.0, // SOFT — a drawn-tight chain squashes its yarn; firmer than this and the loop can't contain the two strands pulled through it
       collK: 0.3,
       collAdjacency: 2,
       planeZ: 0,
-      planeK: 0.015, // only a whisper of flattening — keep the loops open, don't compact to a cord
+      planeK: 0.01, // barely any symmetric pull — the TABLE does the flattening, one-sided, so the front/back layering survives
       layoutK: 0,
-      iterations: 220,
+      floorZ: -yr * 1.6, // the table the chain lies on — deep enough for the bump layer, or the back overcrowds
+      iterations: 400,
     })
   } else {
     relax(built.model, {
@@ -85,7 +87,8 @@ function main() {
   const ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
   const center = smooth(ctrl, 4)
   // Post-stitch ribs read cleaner with a smoother (less barber-poled) yarn.
-  const twist = isPost || isPostRib || isBasket ? 0.05 : 0.1
+  // Post ribs and the chain read cleaner with a smoother (less barber-poled) yarn.
+  const twist = isPost || isPostRib || isBasket || stitch === 'ch' ? 0.05 : 0.1
   const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, twist) // gentle twist = plied wool fibre (path no longer knots)
   const strokes = [{ hex, sheen: 0.85, radiusMm, filaments }]
 
