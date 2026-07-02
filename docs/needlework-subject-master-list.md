@@ -438,6 +438,43 @@ REPAIRS + CULLS:
   worse on teal). Same source-baked-warm-resists-re-roll pattern as the culled siamese; cat breeds already covered (ragdoll/mainecoon/
   bengal). Hard subject → cull rather than drift.
 
+**Batch 11 (2026-07-02)** — 9 gems PUBLIC, 1 culled (10 subjects; 4 first-attempt fails, 3 repaired to a pass). **117 PUBLIC total.**
+Full range: 2 simple (pug D·s 71c, cactus D·s 108c), 5 mid, 1 rich (irisbloom D·r 221c), 2 XL (springwreath D·XL 370c hooped
+wreath; coastalcove B·XL 253c frameless coastal scene). Themes 2/5/6/7/8/9/10/13/14/26. Sheet:
+media.homemade.education/scratch-review/fd2fda30-9c2b-49da-9b37-17f243e8bbc1.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| pug | Pug | 2 Dog breeds | D·s (71c) | hoop |
+| cactus | Potted Cactus | 14 Houseplants | D·s (108c) | hoop |
+| dolphin | Bottlenose Dolphin | 8 Sea life | D·m (44c) | hoop |
+| redadmiral | Painted Lady Butterfly | 7 Bees/butterflies/moths | D·m (141c) | hoop |
+| sheep | Sheep | 5 Farm animals | D·m (47c) | hoop |
+| unicorn | Unicorn | 9 Cute fantasy | D·m (130c) | hoop |
+| irisbloom | Bearded Iris | 10 Florals | D·r (221c) | hoop |
+| springwreath | Spring Wreath | 13 Wreaths showpiece | D·XL (370c) | hoop |
+| coastalcove | Coastal Cove | 26 Landscapes showpiece | B·XL (253c) | frameless |
+
+REPAIRS + CULL:
+- **dolphin** — cream belly/throat blew ORANGE under the AgX grade (dolphins aren't orange). Added `tameWarm:true` + reworded the
+  belly to "cool silvery-grey and white (no orange/cream/tan)" + deleted flux → clean silvery belly. Warm-cast fix (the chick/foxglove class).
+- **sheep** — first render was a lumpy mis-formed body with spiky straw-like fleece + unwanted yellow neck/leg bands (flux composition
+  fail). Delete flux + re-roll "plump, cloud-like soft curly wool (not spiky, no yellow), four legs clearly visible, cute" → charming sheep.
+- **unicorn** — first render had a HOLLOW face: the pale lilac/cream coat was eaten by the cream ground (white-eaten class), leaving bare
+  linen with only the mane + horn stitched. Delete flux + re-roll a SATURATED lavender-purple coat with bold dark outline/shading so it
+  can't be flood-filled → full 130c whimsical unicorn. Same fix as puffin/babyelephant (pale subject → saturate or bleed).
+- **redadmiral → renamed "Painted Lady Butterfly"**: a clean, lovely butterfly but the pattern rendered is a PAINTED LADY (mottled
+  orange-brown, white-spotted dark tips), NOT a red admiral (near-black with one clean scarlet band). Renamed to what actually rendered
+  (slug stays `redadmiral`), same accuracy discipline as lunamoth→Emperor Moth. Gem.
+- **jay CULLED** (only cull). Two attempts: the feet scribble/red-tangle was fixed on re-roll (clean bare twig), but Flux STILL refused a
+  true Eurasian jay — both times an orange-breasted blue-and-grey bird (bluebird/robin chimera, not the pinkish-brown jay), and not cleanly
+  any other nameable species to rename to. Birds already very richly covered (robin/bluetit/kingfisher/goldfinch/hummingbird/macaw/pheasant/
+  wren/peacock). Held to the accuracy bar per the bullfinch precedent → cull rather than publish a mislabelled chimera. NEW rule: "Eurasian
+  jay" is a hard Flux subject (it insists on an orange-breasted blue jay); skip or expect a cull.
+- Theme 14 (houseplants) newly `started` via cactus. MACHINE: one Blender throughout (checked before every render command; killed one
+  orphaned Blender left by a transient `fetch failed` mid-run before restarting). The `upscale@0.5 errored: fetch failed` warning recurred on
+  most renders but is NON-FATAL — the engine falls back to upscale@0.35 and the gate still runs/passes.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
