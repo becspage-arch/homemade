@@ -306,6 +306,25 @@ brief edits mid-run (right after the first gen) — re-applied the 13 briefs to 
 deleted re-roll slugs (the 9 kept renders stayed cached on disk); publish worked off the on-disk flux PNGs +
 approved-full.json regardless. **809 → 820 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-03 — Batch 07031721 (auto cron) shipped 12 gate-passed gems** (13 generated, 1 cull). RANGE 13 →
+94 col: cuties (tabby-kitten grey, piglet-puddle pink+rubber-duck, duckling-boots yellow — all self-contrasting,
+no pure-white ghost-out) → 2 portraits (fulani-woman deep chocolate-brown popart clean symmetric forward-looking
+irises at `sat:1.1` first try; pageboy-woman fair popart clean even skin at `sat:1.0`) → fantasy (baby-dragon-
+stars bright teal dragon on a NOT-dark blue starry sky, fairy-pond clean normal-sized symmetric eyes) → whimsical
+(tortoise-gardener green tortoise in a greenhouse, cat-clockmaker grey cat — both non-red fur, blank clock faces/
+seed packets no lettering) → floral (cottage-bouquet bright mixed jug) → 2 dense Flux-1.1-Pro showpieces
+(swiss-alps-winter 74 — bright daytime alpine village, red train, glowing chalets, NOT gloomy; tropical-waterfall
+94 — turquoise falls, toucan+macaws, hibiscus). Shelves: animals +3, portraits +2, fantasy +2, whimsical +2,
+floral +1, scenes +2. TWO re-rolled, ONE saved: **cat-clockmaker** first came back muddy/dark/gloomy with a
+jumbled orange bench → brighter "clear warm daylight, HIGH-CONTRAST, tidy uncluttered bench, NOT dark NOT flooded
+in one brown/orange tone" + `sat:1.15` gave a clean bright workshop → kept. ONE CULLED after its one re-roll:
+**face-primrose-fair** (artface) stayed grey/brown-contoured with heavy under-eye hollows and muddy non-flat
+skin BOTH attempts even with an explicit "SIMPLE FLAT poster style, ONE single solid even skin tone, NO
+contouring, NO tear-streaks, full not gaunt features" re-roll — reconfirms the recurring artface deep-shadow trap
+(cosmos, ranunculus, primrose all culled): prefer `popart` for skin, keep `artface` fair-only and even so it can
+gaunt-out. Deep-skin `sat:1.1` popart held (fulani-woman correct rich brown first try). **838 → 850 PUBLIC.**
+Deploy green + /healthz 200.
+
 **2026-07-03 — Batch 07031525 (auto cron) shipped 10 gate-passed gems** (13 generated, 3 culls). RANGE
 15 → 114 col: cuties (fennec-kit cream, snowy-owlet white) → bird (waxwing) → fantasy (baby-dragon-garden,
 big amber symmetric eyes) → 2 portraits (coils-woman deep chocolate-brown popart clean symmetric eyes at
