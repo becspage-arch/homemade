@@ -286,6 +286,26 @@ mode — brief the irises/pupils EXPLICITLY (not just "clear dark irises"), dema
 all features boldly outlined, and it converges; white animals still need an explicit bold dark outline +
 coloured base or they ghost on pale aida. **796 → 809 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-03 — Batch 07021422 (auto cron) shipped 11 gate-passed gems** (13 generated, 2 culls). RANGE
+12 → 107 col: cuties (gosling yellow, squirrel-acorn grey) → bird (great-tit) → 2 portraits (cornflower-fair
+artface clean full-forehead face; ponytail-woman fair popart) → fantasy (mermaid-seahorse, fairy-lily) →
+whimsical (panda-painter B&W, frog-gardener green — non-red fur, blank signs/canvas no lettering) → 2 dense
+Flux-1.1-Pro showpieces (tulip-windmill 107 — vivid Dutch tulip fields + windmill + cherry blossom,
+harbour-town 98 — golden-hour coastal fishing harbour). Shelves: animals +3 (incl. great-tit), portraits +2,
+fantasy +2, whimsical +2, scenes +2. THREE re-rolled, ONE saved: ponytail-woman first came back blotchy
+orange with grey/green contour patches → flat-even-lighting + `sat:1.0` + "NO grey/green blotches, NOT
+orange" fixed it → clean symmetric portrait (one attempt came back FLAT/dead-Flux and was simply re-rolled
+again). TWO CULLED after their one re-roll: **fro-man** (deep-skin popart) stayed cross-eyed with pupils
+shoved into the inner corners even after an explicit "pupils centred in the MIDDLE looking straight ahead,
+NOT cross-eyed" re-roll — deep-skin popart eyes remain the #1 failure mode, cull rather than ship; and
+**cute-kid-goat** (white/cream) stayed washed-out and ghosting into the pale fabric even after a "VERY BOLD
+thick dark charcoal outline" re-roll — a pure white/cream animal on pale aida is a recurring ghost-out trap,
+so prefer a coloured or clearly-marked animal (the yellow gosling + grey squirrel read fine because they
+carry their own contrast). INFRA NOTE reconfirmed: a concurrent `git reset --hard` wiped the working-tree
+brief edits mid-run (right after the first gen) — re-applied the 13 briefs to the file and re-generated the
+deleted re-roll slugs (the 9 kept renders stayed cached on disk); publish worked off the on-disk flux PNGs +
+approved-full.json regardless. **809 → 820 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
