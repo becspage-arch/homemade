@@ -435,6 +435,32 @@ ship; **face-buttercup-fair** (artface) came back half in heavy grey-green conto
 hollows — the known artface deep-shadow trap that never converges, culled fast without wasting a re-roll (prefer
 popart for skin, artface keeps failing). **871 → 882 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-03 — Batch 07032120 (auto cron) shipped 11 gate-passed gems** (13 generated, 2 culls). RANGE 14 →
+102 col: cuties (baby-panda black/white hugging bamboo — strong self-contrast reads on ivory; fox-kit in
+bluebells) → bird (hummingbird-fuchsia, jewel emerald/blue/ruby) → 1 fair portrait (braidcrown-woman fair
+popart, sat 1.0, clean even skin, symmetric centred eyes) → 1 fair artface (poppy-fair — one of the CLEANER
+artface results: even flat lighting, full forehead, symmetric eyes, bold red-poppy crown, no gaunt shadow
+trap) → fantasy (unicorn-blossom, mermaid-coral) → whimsical (cat-bookseller grey tabby + BLANK book spines
+no lettering; bear-greengrocer brown bear + blank labels — both non-red, balanced colours) → 2 dense
+Flux-1.1-Pro showpieces (lake-como 102 — pastel villas, cypresses, blue lake; new-england-autumn 102 —
+white-steeple church, blazing maples, covered bridge, blue stream). Shelves: animals +3 (incl. hummingbird),
+portraits +2, fantasy +2, whimsical +2, scenes +2. TWO fantasy re-rolled + SAVED: **unicorn-blossom** first
+ghosted (white body dissolved into a hazy pale-blossom background + big vacant dark orbs) → a THICK BOLD dark
+outline + a bright green meadow & clear blue sky (coloured background, not pale haze) + "NORMAL eyes with
+iris+pupil, NOT big blank orbs" gave a crisp readable unicorn; **mermaid-coral** first was murky grey-teal +
+hazy with big blank eyes → "BRIGHT CLEAR turquoise water, defined iris+pupil, NOT grey NOT hazy" gave a
+bright crisp charming mermaid. **fox-kit** re-rolled once (first roll had hot-pink/magenta speckles scattered
+over the warm orange fur — the cute lane's srcSat 1.45 cooking warm fur) → "clean even fur, NO stray pink/
+magenta speckles" + sat 1.15 removed the speckles for a clean sleepy fox in bluebells. TWO CULLED: **popart-
+boxbraids-woman** (deep-skin) came back dead-Flux FLAT/1-colour on BOTH the first roll and its re-roll —
+culled per the "flat after one re-roll = cull" rule (the deep-skin popart lane is the single hardest);
+**cute-guinea-pig** first roll was muddy with magenta ear patches → the anti-magenta re-roll (sat 1.15) went
+too pale and ghosted into the ivory (pale golden fur on pale fabric washes out) — culled. NOTE: the concurrent
+needlework session `git reset --hard`-ed the shared main checkout mid-run and wiped this batch's uncommitted
+brief edit (renders in .loom-scratch survived; re-applied the briefs then committed in a tight edit→add→commit
+sequence — no husky/pre-commit hook is active so no worktree/install was needed). **882 → 893 PUBLIC.**
+Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
