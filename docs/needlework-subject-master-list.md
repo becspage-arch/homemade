@@ -501,6 +501,37 @@ cream is eaten like a white animal — give it a coloured glaze (don't leave it 
 MACHINE: one Blender throughout (checked before every render command). Note: the shell cwd drifted to `.loom-scratch/heroes` after a `cd`
 for gating and a re-render failed ERR_MODULE_NOT_FOUND — always `cd apps/web` in the render command itself.
 
+**Batch 13 (2026-07-03)** — 10 gems PUBLIC, 0 culled (10 subjects; russianblue + rose both repaired to a pass). **137 PUBLIC total.**
+Full range: 2 simple (tortoise D·s, thistle D·s 82c), 4 mid (dachshund D·m 97c, russianblue D·m 80c, flamingo D·m 130c, jellyfish D·m 56c),
+2 rich (peacockbutterfly D·r 262c, rose D·r 67c), 2 XL (springbouquet D·XL 317c hooped floral showpiece; wintervillage B·XL 210c frameless
+winter scene). Themes 1/2/3/6/7/8/10/11/18/26. Sheet: media.homemade.education/scratch-review/067289e9-36dd-4f28-b4d9-c5daf73a8c8f.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| tortoise | Tortoise | 1 Cute animals | D·s | hoop |
+| thistle | Scottish Thistle | 11 Botanical stems | D·s (82c) | hoop |
+| dachshund | Dachshund | 2 Dog breeds | D·m (97c) | hoop |
+| russianblue | Russian Blue Cat | 3 Cat breeds | D·m (80c) | hoop |
+| flamingo | Flamingo | 6 Garden/exotic birds | D·m (130c) | hoop |
+| jellyfish | Jellyfish | 8 Sea life | D·m (56c) | hoop |
+| peacockbutterfly | Peacock Butterfly | 7 Bees/butterflies/moths | D·r (262c) | hoop |
+| rose | Red Rose | 10 Florals | D·r (67c) | hoop |
+| springbouquet | Spring Bouquet | 10 Floral showpiece | D·XL (317c) | hoop |
+| wintervillage | Snowy Village at Dusk | 18/26 Christmas/Landscapes | B·XL (210c) | frameless |
+
+REPAIRS (2, both repaired to a pass — 0 culls):
+- **russianblue** first rendered with a garish SCARLET nose, bright red inner ears and red eye-rims (the source-baked-warm cat failure that
+  culled siamese + britishshorthair). Deleted flux + re-rolled with explicit "soft dusky grey inner ears, plain grey eyelids no red rims,
+  small solid slate-grey nose, no red/pink/orange anywhere" + added `tameWarm:true` → natural soft-pink nose, pink inner ears, green eyes,
+  clean plush blue-grey coat. Confirms the standing rule: source-baked warm on a cat needs an explicit no-red re-roll, not just `tameWarm`.
+  (Reads slightly tabby rather than a pure solid Russian Blue, but coherent + natural; kept.)
+- **rose** first blew ORANGE-vermilion with clashy purple/teal thread streaks (the AgX+1.5× grade pushing crimson→orange; tameWarm on but the
+  colour was baked). Deleted flux + re-rolled with a "muted burgundy / dark-crimson, definitely not orange/scarlet, no purple/blue/teal
+  streaks" palette prompt → a true deep-red rose, full and lush. Confirms: a crimson-blowing-orange rose needs a muted deep-red source re-roll.
+MACHINE: one Blender throughout (checked before every render command; ONE render command per Blender, hooped batch separate from the frameless
+scene). GOTCHA repeated: after a `cd` for gating, a render command WITHOUT `cd apps/web` failed ERR_MODULE_NOT_FOUND (looked in repo root) —
+always put `cd apps/web` inside the render command.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
