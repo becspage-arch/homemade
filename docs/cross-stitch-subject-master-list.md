@@ -461,6 +461,27 @@ brief edit (renders in .loom-scratch survived; re-applied the briefs then commit
 sequence — no husky/pre-commit hook is active so no worktree/install was needed). **882 → 893 PUBLIC.**
 Deploy green + /healthz 200.
 
+**2026-07-03 — Batch 07032220 (auto cron) shipped 10 gate-passed gems** (13 generated, 3 culls). RANGE 11 →
+105 col: cuties (baby-raccoon grey+bold-black-mask, strong self-contrast on ivory; baby-quokka golden-brown
+with symmetric green eyes) → bird (bluetit-blossom, vivid blue/yellow blue tit on pink cherry blossom) → 1
+fair portrait (wavylob-woman fair popart, clean even skin, symmetric centred eyes, full forehead) → fantasy
+(gnome-garden cheerful red-hatted gnome with symmetric blue eyes in a bright flower garden; mermaid-seahorse
+bright purple-tailed mermaid hugging a golden seahorse in clear turquoise water, symmetric eyes with iris+pupil)
+→ whimsical (frog-fisherman green frog in a yellow raincoat on a lily-pad jetty, blank signage; hedgehog-
+florist brown hedgehog in a green apron at a flower stall, all tags left blank) → 2 dense Flux-1.1-Pro
+showpieces (japanese-garden 105 — red arched bridge over a koi pond, cherry blossom, pagoda; santorini-blue
+99 — whitewashed houses, blue domes, pink bougainvillea, Aegean sea). Shelves: animals +3 (incl. bluetit),
+portraits +1, fantasy +2, whimsical +2, scenes +2. ONE re-rolled + kept: **cute-quokka** first roll had
+magenta/purple ear + nose speckles (warm-fur srcSat trap) → the anti-magenta re-roll (sat 1.1) gave a sweeter
+symmetric-eyed cutie (faint inner-ear tint remains but reads as natural). THREE CULLED: **face-daisy-fair**
+(artface) came back with the lane's known heavy grey/brown contour shadows + blotchy muddy skin — culled fast
+without a wasted re-roll (artface never converges; prefer popart for skin); **popart-bantuknots-woman** (deep-
+skin) had garish pink/coral blush flooding forehead + both cheeks, muddy tan (not deep-brown) tone, missing
+bantu knots + downward gaze — the recurring deep-skin blush trap, cull rather than ship; **cute-baby-goat**
+(pale cutie) ghosted into the ivory first roll then came back washed-out/muddy with an asymmetric muddy face
+on its one re-roll — the white/pale-cutie-on-ivory trap again, culled after one re-roll. **893 → 903 PUBLIC.**
+Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
