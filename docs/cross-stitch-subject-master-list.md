@@ -306,6 +306,26 @@ brief edits mid-run (right after the first gen) — re-applied the 13 briefs to 
 deleted re-roll slugs (the 9 kept renders stayed cached on disk); publish worked off the on-disk flux PNGs +
 approved-full.json regardless. **809 → 820 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-03 — Batch 07031525 (auto cron) shipped 10 gate-passed gems** (13 generated, 3 culls). RANGE
+15 → 114 col: cuties (fennec-kit cream, snowy-owlet white) → bird (waxwing) → fantasy (baby-dragon-garden,
+big amber symmetric eyes) → 2 portraits (coils-woman deep chocolate-brown popart clean symmetric eyes at
+`sat:1.1`; earmuffs-woman fair popart at `sat:1.0`) → whimsical (rabbit-potter grey rabbit at the wheel,
+bear-cellist brown bear + cello — both non-red, blank pots/sheet music no lettering) → 2 dense Flux-1.1-Pro
+showpieces (amalfi-coast 114 — pastel cliffside village + turquoise sea + bougainvillea, orchard-harvest 62
+— autumn apple orchard + red barn + horse). Shelves: animals +2, portraits +2, fantasy +1, whimsical +2,
+floral +1, scenes +2. FOUR re-rolled, ONE saved: **bear-cellist** first came back flooded in one garish
+orange tone (warm subject × scene srcSat 1.3 × post 1.3 ≈ 1.7×) → adding cool blue elements + `sat:1.15`
+("clearly SEPARATED colours, NOT flooded in one orange tone") gave a clean balanced blue/brown/green scene —
+the warm-scene orange-flood fix is a per-brief `sat` override, mirroring the skin fix. THREE CULLED after
+their one re-roll: **face-ranunculus-fair** (artface) stayed grey/green-contoured with dark eye-hollows and
+sickly skin BOTH attempts even with an explicit "ONE flat matte tone, NO grey/green/brown contouring" re-roll
+— the artface lane keeps trending painterly-shadowed, cull it fast; **cute-cygnet** (white) stayed muddy
+with a distorted central face-blob both attempts (white-on-ivory ghost-out + bad face) — reconfirms the pure-
+white-cutie trap from Batch 07021422; **fantasy-fairy-moth** stayed hazy/washed-out with no bold outline (one
+fantasy from the dragon was plenty). Note: swapped the failed warm-fur **chipmunk** cutie for a cool-toned
+**snowy-owlet** rather than re-roll the same subject — brown/ginger fur cooks to orange in the cute lane. **820
+→ 830 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
