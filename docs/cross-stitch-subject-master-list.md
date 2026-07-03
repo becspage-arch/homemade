@@ -364,6 +364,32 @@ FLAT/1-colour dead-Flux on re-roll → culled per the "flat after one re-roll = 
 SAVED by re-roll: first roll put the badger's back to us as a dark blob → "FACING the viewer holding an open
 book" gave a clear charming front-facing badger. **830 → 838 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-03 — Batch 07031820 (auto cron) shipped 10 gate-passed gems** (13 generated, 3 culls). RANGE 13 →
+110 col: cuties (baby-donkey grey+charcoal-mane in buttercups, dormouse-berry golden) → bird (garden-jay,
+vivid blue/black/red) → 1 portrait (wavybob-woman fair popart, sat 1.0, clean even skin) → fantasy (fairy-
+sunflower golden fairy, dragon-rainbow cheerful cloud-dragon) → whimsical (penguin-postman snowy village,
+hedgehog-baker cosy bakery — both non-red, blank labels no lettering) → 2 dense Flux-1.1-Pro showpieces
+(cotswolds-village 110 — honey-stone cottages, bridge, ducks, red phone box; lighthouse-cove 93 — red/white
+lighthouse, turquoise cove, poppies, gulls). Shelves: animals +3 (incl. jay), portraits +1, fantasy +2,
+whimsical +2, scenes +2. TWO re-rolled + SAVED: **dragon-rainbow** first came back with one giant black-orb
+eye vs a small one (wildly asymmetric) → "TWO eyes EXACTLY the same size, each a clean round eye with iris +
+small pupil + highlight, NOT one big black orb" gave two clean symmetric eyes; **hedgehog-baker** first came
+back flooded in one yellow/orange tone (warm scene × srcSat 1.3) → cool teal cupboards + separated jar
+colours + `sat:1.15` ("balanced warm-and-cool, NOT flooded in one yellow tone") gave a bright balanced
+bakery. THREE CULLED after their one re-roll: **popart-twistout-woman** (deep-skin) kept garish pink blush
+circles baked into the cheeks BOTH rolls even with an explicit "cheeks the EXACT SAME even brown, NO blusher,
+NO pink circles" re-roll — reconfirms `sat:1.1` fixes base tone but can NOT remove pink patches baked into
+the Flux render (the recurring deep-skin blush trap); **face-jasmine-fair** (artface) stayed heavily
+grey/brown/orange contoured + gaunt hollows BOTH rolls even zoomed-out with a strict "SIMPLE FLAT poster, ONE
+even tone, NO contouring" re-roll — the known artface deep-shadow trap that won't converge (prefer popart for
+skin, artface keeps failing); **cute-meerkat-pup** stayed muddy BOTH rolls (the dark eye-mask merges with the
+eyes into a smudgy dark blob + the pale tan body ghosts on ivory) even with a "rich deep tan, bold thick dark
+outline, CLEAN separated round eyes not merged into the mask" re-roll — a pale animal with a dark facial mask
+on pale aida is a mud trap, prefer a clearly-coloured animal without a face-mask. Ran the tracked-file commit
+in an isolated worktree again (concurrent session `git reset --hard`-ed the shared main checkout and wiped the
+brief edit mid-run TWICE; renders in .loom-scratch survived, generation + publish ran fine from main). **850
+→ 860 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
