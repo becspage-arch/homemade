@@ -410,6 +410,31 @@ bottom of the eye) — reconfirms deep-skin popart EYES are the #1 failure mode,
 pink/grey cuties (mouse, piglet) render soft/pale on ivory but self-contrasting accents (red berry, green
 clover, pink ears) keep them reading. **860 → 871 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-03 — Batch 07032021 (auto cron) shipped 11 gate-passed gems** (13 generated, 2 culls). RANGE 9 →
+91 col: cuties (mole-flower grey+pink-flower, baby-walrus blue-grey+rosy-cheeks+fish, baby-tortoise orange-
+gold shell — all self-contrasting) → 1 portrait (windswept-woman fair popart, sat 1.0, symmetric forward gaze,
+clean even skin) → fantasy (dragon-teacup bright green front-facing dragon in a floral teacup with two
+symmetric eyes, fairy-firefly lilac fairy with defined symmetric eyes among fireflies) → whimsical (mouse-
+cheesemonger grey mouse, duck-greengrocer white duck — both non-red, blank signage) → floral (cosmos-jug
+pink/white/magenta cosmos in a blue jug) → 2 dense Flux-1.1-Pro showpieces (nordic-fjord 91 — bright
+Norwegian fjord village, red cabins, waterfall, boats; rice-terraces 90 — emerald Balinese rice terraces,
+temple, palms, water buffalo). Shelves: animals +3, portraits +1, fantasy +2, whimsical +2, floral +1,
+scenes +2. FOUR re-rolled + ALL FOUR saved: **cute-mole-flower** first came back a muddy washed-out grey blob
+with random pink patches all over it → "clear friendly face, bold clean dark outline, ONE flower, NO extra
+patches on its body, NOT washed-out" gave a clean sweet cutie; **cute-baby-tortoise** first blended green-on-
+green into its leaf with a murky face → swapping the big green leaf for a brown log + "colours that DO NOT
+blend into the background" gave a clear orange-shelled tortoise; **fantasy-dragon-teacup** first came back hazy
+with only one visible eye in profile → "FACING the viewer with TWO symmetrical round eyes, bold dark outline,
+NOT hazy" gave a crisp charming front-facing dragon; **fantasy-fairy-firefly** first had vacant blank pale
+empty eyes → "TWO symmetrical eyes each with a clear coloured iris and defined dark pupil, NOT big blank empty
+pale eyes" gave a clear defined face. TWO CULLED after one re-roll: **popart-hibiscus-woman** (deep-skin) — the
+re-roll FIXED the sideways gaze (eyes centred + symmetric) BUT the garish mauve blush circles stayed baked into
+both cheeks even with "NO pink rosy or mauve blush patches anywhere" — reconfirms sat:1.1 fixes base tone but
+can NOT remove blush patches baked into the Flux render (the recurring deep-skin blush trap), cull rather than
+ship; **face-buttercup-fair** (artface) came back half in heavy grey-green contour shadow with gaunt cheek
+hollows — the known artface deep-shadow trap that never converges, culled fast without wasting a re-roll (prefer
+popart for skin, artface keeps failing). **871 → 882 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
