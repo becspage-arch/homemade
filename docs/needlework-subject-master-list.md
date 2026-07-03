@@ -475,6 +475,32 @@ REPAIRS + CULL:
   orphaned Blender left by a transient `fetch failed` mid-run before restarting). The `upscale@0.5 errored: fetch failed` warning recurred on
   most renders but is NON-FATAL — the engine falls back to upscale@0.35 and the gate still runs/passes.
 
+**Batch 12 (2026-07-03)** — 10 gems PUBLIC, 0 culled (10 subjects; teapot repaired to a pass). **127 PUBLIC total.**
+Full range: 3 simple (budgie D·s 149c, starfish D·s 44c, succulent D·s 71c), 3 mid (germanshepherd D·m 84c, teapot D·m 155c,
+easterbasket D·m 217c), 2 rich bleed scenes (flowerfairy B·r 313c, catreading B·r 193c), 2 XL (autumnbounty D·XL 191c hooped harvest
+still-life; wildflowermeadow B·XL 265c frameless meadow). Themes 2/6/8/10/14/16/19/20/24/26/27. Sheet:
+media.homemade.education/scratch-review/c0a7d3aa-c6f2-4566-ab29-4751047b933b.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| budgie | Budgerigar | 6 Garden/exotic birds | D·s (149c) | hoop |
+| starfish | Starfish | 8 Sea life | D·s (44c) | hoop |
+| succulent | Potted Succulent | 14 Houseplants | D·s (71c) | hoop |
+| germanshepherd | German Shepherd | 2 Dog breeds | D·m (84c) | hoop |
+| teapot | Floral Teapot | 16 Food/cottagecore | D·m (155c) | hoop |
+| easterbasket | Easter Basket | 19 Easter/spring | D·m (217c) | hoop |
+| autumnbounty | Autumn Harvest | 20 Autumn/harvest showpiece | D·XL (191c) | hoop |
+| flowerfairy | Flower Fairy | 24 Fairies & fantasy | B·r (313c) | frameless |
+| catreading | Cat Reading by the Window | 27 Animals doing human things | B·r (193c) | frameless |
+| wildflowermeadow | Wildflower Meadow | 10/26 Florals/Landscapes showpiece | B·XL (265c) | frameless |
+
+REPAIR (1): **teapot** first rendered a lovely rose+forget-me-not spray but the WHITE china body was eaten by the cream ground (wispy
+hollow outline, no solid vessel — the puffin/unicorn white-on-cream class). Delete flux + re-roll with a SOLID duck-egg-blue glazed body
+with a clear dark outline (so it reads darker than the ground) → clean solid floral teapot, gem. LESSON reaffirmed: a white/pale VESSEL on
+cream is eaten like a white animal — give it a coloured glaze (don't leave it white). All 10 themes already `started`; no status flips.
+MACHINE: one Blender throughout (checked before every render command). Note: the shell cwd drifted to `.loom-scratch/heroes` after a `cd`
+for gating and a re-render failed ERR_MODULE_NOT_FOUND — always `cd apps/web` in the render command itself.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
