@@ -76,7 +76,7 @@ export function buildContinuous(
           ? 1.8 // sc packs DENSE — the reference's gaps are pinpricks, not holes (audit 2026-07-02)
           : st0 === 'hdc'
             ? 2.0 // hdc packs dense like sc — the reference shows notches, not holes (audit 2026-07-03)
-            : 2.5) // column spacing
+            : 2.3) // dc/tr/dtr: open, but posts lean on each other — slits not gaps (audit 2026-07-03)
   const z = yr * 0.3 // base relief (gentle — turned fabric is fairly flat, not corrugated)
   const zh = yr * 0.5 // crown relief (the head rides proud on its worked face)
   const cw = yr * 0.4 // crown half-width — a slim head-line, not a fat rope
