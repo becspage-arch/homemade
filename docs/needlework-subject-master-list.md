@@ -568,6 +568,48 @@ my uncommitted `needlework-paint.ts` batch-14 edits (HEAD advanced fed8244c→fb
 was lost — re-applied the JOB edits from context before committing. FUTURE: consider working the needlework batch in a throwaway worktree to
 avoid the cross-stitch cron stashing the shared checkout, or commit the script edits early.
 
+**Batch 15 (2026-07-03)** — 10 gems PUBLIC, 0 culled (10 subjects; bordercollie + mallard + gnome each
+repaired to a pass). **157 PUBLIC total.** Full range: 2 simple (snail D·s 95c, acorn D·s 80c), 5 mid
+(sloth D·m 120c, bordercollie D·m 53c, mallard D·m 153c, frog D·m 144c, gnome D·m 180c), 1 rich
+(waterlily D·r 130c), 2 XL (flowerbasket D·XL 335c hooped floral basket; northernlights B·XL 78c frameless
+aurora scene). Themes 1/2/4/6/10/15/20/22/24/26. Sheet: media.homemade.education/scratch-review/56f0eb14-e3ce-45be-88b6-11ca48e79626.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| snail | Garden Snail | 15 Mushrooms/cottagecore / 1 | D·s (95c) | hoop |
+| acorn | Acorns & Oak Leaves | 20 Autumn/harvest | D·s (80c) | hoop |
+| sloth | Sloth | 1 Cute animals | D·m (120c) | hoop |
+| bordercollie | Border Collie | 2 Dog breeds | D·m (53c) | hoop |
+| mallard | Mallard Duck | 6 Garden/exotic birds | D·m (153c) | hoop |
+| frog | Tree Frog | 4 Woodland | D·m (144c) | hoop |
+| gnome | Cottagecore Gnome | 24 Fairies & fantasy | D·m (180c) | hoop |
+| waterlily | Water Lily | 10 Florals | D·r (130c) | hoop |
+| flowerbasket | Flower Basket | 10 Floral showpiece | D·XL (335c) | hoop |
+| northernlights | Northern Lights | 22 Celestial / 26 Landscapes | B·XL (78c) | frameless |
+
+REPAIRS (3, all to a pass — 0 culls):
+- **bordercollie** first rendered with vivid NEON-RED inner ears + red-orange eyes. The eyes fixed with an
+  explicit "no red/orange eyes" re-roll + `tameWarm:true`, but the red inner ears survived BOTH that AND
+  `tameWarm` (source-baked warm, the siamese/britishshorthair class). A 3rd re-roll with "both ears folded
+  down and fully covered in black fur, inner ear not visible" removed the red → clean B&W dog (slight olive
+  shadow on the face but coherent). LESSON reaffirmed: source-baked warm ears → hide/black-out the ear, don't
+  rely on `tameWarm`.
+- **mallard** first painted two vivid RED rose-swirls on the flank (Flux hallucinated flowers, narwhal class);
+  a "no red/no flowers" re-roll reduced them to one solid SCARLET breast patch that then survived `tameWarm`
+  too (source-baked). The FIX was a strongly MUTED-palette re-roll ("soft muted greyish-brown breast, dull
+  earthy brown, absolutely no red/scarlet/crimson") → natural chestnut breast, blue speculum, clean drake.
+  Same muted-palette rescue as rose/russianblue/highlandglen.
+- **gnome** first rendered with a HOLLOW bare-linen hole where the white beard met the cream ground (white-on-
+  cream eaten, puffin/teapot/unicorn class); "grey-and-white beard + grey shadows" still went wispy/holed. The
+  FIX (proven saturate-the-pale-element): a solid SILVER/DOVE-GREY beard "clearly darker than the cream, NOT
+  white" → the beard fills solid, no gap. LESSON: a white beard on cream must be given a real mid-grey colour,
+  not white, or the ground-removal eats it.
+- CONCURRENCY (recurred): mid-batch the hourly cross-stitch cron ran `git stash -u`/rebase on the shared MAIN
+  checkout and swept my uncommitted `needlework-paint.ts` Batch-15 edits into a stash (HEAD 0e63b0d6→f3270248),
+  so a repair re-render printed "no job". Recovered with `git stash pop stash@{0}` (edits intact) + re-ran. DB
+  gems already persisted so nothing lost. FUTURE: work the batch in a throwaway worktree, or commit the script
+  edits before the first render.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
