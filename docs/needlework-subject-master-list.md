@@ -532,6 +532,42 @@ MACHINE: one Blender throughout (checked before every render command; ONE render
 scene). GOTCHA repeated: after a `cd` for gating, a render command WITHOUT `cd apps/web` failed ERR_MODULE_NOT_FOUND (looked in repo root) —
 always put `cd apps/web` inside the render command.
 
+**Batch 14 (2026-07-03)** — 10 gems PUBLIC, 0 culled (10 subjects; mole + axolotl both repaired to a pass). **147 PUBLIC total.**
+Full range: 2 simple (mole D·s 131c, chinchilla D·s 81c), 5 mid (husky D·m 95c, toucan D·m 185c, axolotl D·m 61c, mermaid D·m 177c,
+donkey D·m 121c), 1 rich (morphobutterfly D·r 151c), 2 XL (birdofparadise→"Tropical Flowers" D·XL 337c hooped tropical floral showpiece;
+harbourscene B·XL 290c frameless coastal scene). Themes 1/2/4/5/6/7/8/9. Sheet:
+media.homemade.education/scratch-review/133a598a-b0df-4f15-9256-3fdb162d7ee3.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| mole | Mole | 4 Woodland | D·s (131c) | hoop |
+| chinchilla | Chinchilla | 1 Cute animals | D·s (81c) | hoop |
+| husky | Siberian Husky | 2 Dog breeds | D·m (95c) | hoop |
+| toucan | Toucan | 6 Garden/exotic birds | D·m (185c) | hoop |
+| axolotl | Axolotl | 8 Sea life | D·m (61c) | hoop |
+| mermaid | Mermaid | 9 Cute fantasy | D·m (177c) | hoop |
+| donkey | Donkey | 5 Farm animals | D·m (121c) | hoop |
+| morphobutterfly | Blue Morpho Butterfly | 7 Bees/butterflies/moths | D·r (151c) | hoop |
+| birdofparadise | Tropical Flowers | 6 Garden/exotic birds showpiece | D·XL (337c) | hoop |
+| harbourscene | Fishing Harbour | 8 Sea life & coastal | B·XL (290c) | frameless |
+
+REPAIRS (2, both to a pass — 0 culls):
+- **mole** first rendered with stray red scribble-streaks baked across the crown + an over-red snout. Deleted flux + re-rolled with
+  "smooth dark grey-brown velvety fur all over, pale pink snout, absolutely no red markings/streaks" → a clean curled velvety mole, gem.
+  Confirms: source-baked red streaks need an explicit no-red re-roll, not `tameWarm`.
+- **axolotl** first came back as a FLAT CARTOON with heavy black line-art outlines (no dimensional shading — below the thread-painting bar).
+  Deleted flux + re-rolled with "soft dimensional painterly shading, gentle highlights, no bold outlines, no flat cartoon lines" → a proper
+  dimensional thread-painted axolotl with feathery red gills, gem. LESSON: if Flux returns flat outlined cartoon line-art, re-roll for
+  "painterly dimensional shading, no outlines".
+- **birdofparadise → renamed "Tropical Flowers"**: rendered as a lush tropical floral showpiece (hibiscus/lilies/leaves with a central
+  strelitzia "bird-of-paradise flower" plume), not the BIRD. Coherent, dense, vibrant → renamed the row to what actually rendered, same
+  accuracy discipline as lunamoth→Emperor Moth / redadmiral→Painted Lady. Gem.
+MACHINE: one Blender throughout (checked before every render command; hooped batch separate from the frameless scene).
+CONCURRENCY GOTCHA (new): mid-session the hourly cross-stitch cron ran a `git stash -u`/rebase in the shared MAIN checkout and SWEPT AWAY
+my uncommitted `needlework-paint.ts` batch-14 edits (HEAD advanced fed8244c→fb1d46cf under me). The DB gems were already persisted so nothing
+was lost — re-applied the JOB edits from context before committing. FUTURE: consider working the needlework batch in a throwaway worktree to
+avoid the cross-stitch cron stashing the shared checkout, or commit the script edits early.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
