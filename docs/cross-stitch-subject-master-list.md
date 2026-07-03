@@ -390,6 +390,26 @@ in an isolated worktree again (concurrent session `git reset --hard`-ed the shar
 brief edit mid-run TWICE; renders in .loom-scratch survived, generation + publish ran fine from main). **850
 → 860 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-03 — Batch 07031921 (auto cron) shipped 11 gate-passed gems** (13 generated, 2 culls). RANGE 12 →
+125 col: cuties (mouse-strawberry grey+red-berry, piglet-clover pink, frog-lilypad green — all self-
+contrasting, no pure-white ghost-out) → bird (sunlit-songbird, vivid yellow/red — brief said yellowhammer but
+markings rendered stylised, so named generically) → 1 portrait (sleekbun-woman fair popart, sat 1.0, clean
+even skin, symmetric) → fantasy (fairy-bluebell clear symmetric normal eyes, dragon-flowers cheerful green
+dragon in a bright flower meadow with two symmetric highlighted eyes) → whimsical (otter-baker brown otter in
+a balanced warm-and-cool bakery at sat 1.15 — the warm-scene cool-elements fix held; koala-librarian grey
+koala + colourful BLANK book spines no lettering) → 2 dense Flux-1.1-Pro showpieces (provence-market 125 —
+bright Provençal flower-market street + wisteria + lavender fields; scottish-highlands 93 — bright loch +
+grey castle + highland cow + heather). Shelves: animals +4 (incl. songbird), portraits +1, fantasy +2,
+whimsical +2, scenes +2. ONE re-rolled + saved: **cute-mouse-strawberry** came back FLAT/1-colour dead-Flux
+first roll → simple re-roll gave a live 12-col cutie. TWO CULLED after their one re-roll: **face-freesia-fair**
+(artface) came back with the lane's known heavy grey/green contouring + under-eye hollows + cropped forehead
+— culled fast without wasting a re-roll (artface never converges; prefer popart for skin); **popart-goldhoops-
+woman** (deep-skin) had garish rosy blush circles first roll → the strengthened "cheeks IDENTICAL to forehead,
+NO pink circles" re-roll removed the blush BUT introduced a downward whites-showing gaze (pupils shoved to the
+bottom of the eye) — reconfirms deep-skin popart EYES are the #1 failure mode, cull rather than ship. Note:
+pink/grey cuties (mouse, piglet) render soft/pale on ivory but self-contrasting accents (red berry, green
+clover, pink ears) keep them reading. **860 → 871 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
