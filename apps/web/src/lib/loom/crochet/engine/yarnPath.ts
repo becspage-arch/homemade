@@ -73,7 +73,7 @@ export function buildContinuous(
       : st0 === 'slst'
         ? 1.9
         : st0 === 'sc' || st0 === 'scblo' || st0 === 'scflo'
-          ? 2.0
+          ? 1.8 // sc packs DENSE — the reference's gaps are pinpricks, not holes (audit 2026-07-02)
           : st0 === 'hdc'
             ? 2.2
             : 2.5) // column spacing
