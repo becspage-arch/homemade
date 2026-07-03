@@ -326,6 +326,25 @@ fantasy from the dragon was plenty). Note: swapped the failed warm-fur **chipmun
 **snowy-owlet** rather than re-roll the same subject — brown/ginger fur cooks to orange in the cute lane. **820
 → 830 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-03 — Batch 07031620 (auto cron) shipped 8 gate-passed gems** (12 generated, 4 culls). RANGE
+14 → 101 col: cuties (baby-giraffe, baby-hippo) → chaffinch bird → 1 portrait (highbun-glasses fair popart,
+sat 1.0) → whimsical animal scenes (mouse-florist, badger-bookseller) → 2 dense Flux-1.1-Pro showpieces
+(santorini-sunset 101, pumpkin-patch 90). Shelves: animals +3 (incl. chaffinch), whimsical +2, portraits +1,
+scenes +2. **RAN IN AN ISOLATED WORKTREE** — a concurrent needlework session was doing `git reset --hard` in
+the shared main checkout and wiped this batch's uncommitted brief edit mid-run (untracked renders in
+.loom-scratch survived); moved all tracked-file + commit work into a dedicated worktree (one
+`pnpm install --frozen-lockfile`, ~4m) so the concurrent resets couldn't clobber it. **4 culls, all failed
+after ONE repair re-roll:** baby-skunk (jumbled twin-face first roll → single but faded ghost-blob with no
+white stripe on re-roll — the pure-black/white cutie ghosts on ivory), popart-bantuknots-woman (garish clown-
+cheek blush first roll → a big dusty-pink mask patch flooding the whole face on re-roll; `sat:1.1` fixes base
+tone but can NOT remove pink/orange patches baked into the Flux render — the recurring deep-skin lesson),
+face-cosmos-fair (heavy grey/brown contouring shadow + gaunt hollows both rolls — the artface lane's known
+shadow trap that won't converge; the reliable fix stays: prefer `popart` for skin, keep artface fair-only and
+even so it can gaunt-out), fantasy-mermaid-lagoon (huge black chibi eyes + hazy first roll → came back
+FLAT/1-colour dead-Flux on re-roll → culled per the "flat after one re-roll = cull" rule). badger-bookseller
+SAVED by re-roll: first roll put the badger's back to us as a dark blob → "FACING the viewer holding an open
+book" gave a clear charming front-facing badger. **830 → 838 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
