@@ -533,6 +533,32 @@ RE-ROLLED once (first roll soft/hazy with closed eyes; the re-roll opened the ey
 a muddy dark blob in the centre of the face — muddy = hard fail), culled after one re-roll. **915 → 923 PUBLIC.**
 Deploy green + /healthz 200.
 
+**2026-07-04 — Batch 07041225 (auto cron) shipped 9 gate-passed gems** (13 generated, 4 culls). RANGE 14 →
+115 col: cutie (baby-toucan glossy black body + banded orange/yellow/green beak + white bib, one clear
+highlighted eye) → bird (songbird-on-blossom, blue back + red throat + cream breast that reads on a blue
+sky, named generically as it rendered plumper than a true forked-tail swallow) → 1 fair artface (sweetpea-
+fair — full forehead, symmetric iris+pupil eyes, soft pink/lilac sweet-pea crown, only mild grey under-eye,
+clear of the gaunt-hollow trap) → fantasy (fairy-rose chibi fairy on a bold red rose with symmetric green
+eyes and a coloured blue sky; dragon-sunflowers cheerful green kawaii dragon in a sunflower field, symmetric
+dark eyes WITH white highlights so not blank orbs) → whimsical (cat-tailor grey tabby in a waistcoat with a
+tape measure + colourful fabric bolts, all bolts/patterns blank no lettering; hedgehog-knitter cosy bespectacled
+granny with symmetric eyes + colourful yarn baskets + blue shawl — RE-ROLLED: first roll flooded in a warm
+orange monotone with slightly asymmetric eyes, the "separated balanced colours + cool blue/green accents + no
+frame" re-brief gave balanced yarn colours + symmetric eyes, kept) → 2 dense Flux-1.1-Pro showpieces (prague-
+old-town 115 — gothic Tyn spires, colourful baroque houses, market stalls, blank signage; underwater-reef 107
+— vibrant coral reef, green sea turtle, tropical fish, sunbeams). Shelves: animals +2, portraits +1, fantasy
++2, whimsical +2, scenes +2. FOUR CULLS (portraits + white/pale cuties, the two hardest lanes): **popart-
+twists-man** (deep-skin) — clean even deep-brown skin BUT the eyes rolled UP with whites showing below the
+iris on BOTH the first roll and the "level gaze, iris centred, no white showing" re-roll — reconfirms the
+deep-skin popart gaze trap does NOT respond to prompting; **popart-pompadour-man** (fair) came back flat
+ORANGE/tangerine on the first roll AND, even at sat 0.95 with explicit "not orange" language, the re-roll went
+orange-flooded across skin AND shirt — the fair-skin-orange trap; **cute-baby-beaver** first had mismatched
+eyes (one clean dark, one green/muddy), the "matching symmetric eyes, no green tint" re-roll went hazy with the
+eyes/nose merging into a muddy blob — muddy = fail; **cute-baby-zebra** first washed into the ivory (white-on-
+ivory ghost), the "bold BLACK stripes + thick outline" re-roll fixed the body contrast BUT the face collapsed
+into a muddy dark mass with no clear eyes — a cutie lives on its face, culled. **923 → 932 PUBLIC.**
+Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
