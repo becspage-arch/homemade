@@ -767,6 +767,45 @@ REPAIRS + CULLS (repair-first):
   printed "no job" twice. All gems already persisted to the DB so nothing lost; restored the block from a scratchpad backup
   each time + re-launched. All 10 chosen themes already `started`; no status flips.
 
+**Batch 20 (2026-07-04)** — 8 gems PUBLIC, 2 culled (scottishfold, panda). **202 PUBLIC total.** Full range across themes
+1/3/4/9/10/14/16/21/23/26: 1 simple (fawn D·s 123c), 5 mid (triceratops D·m 72c, raven→Magpie D·m 71c, lovebirds D·m 153c,
+birthdaycake D·m 137c, snakeplant D·m 82c), 2 XL (gardenroses D·XL 191c hooped rose showpiece; enchantedforest B·XL 211c
+frameless moonlit-forest scene). Sheet: media.homemade.education/scratch-review/d520e95b-ba7a-4508-9da7-d9667813a52e.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| fawn | Fawn | 4 Woodland | D·s (123c) | hoop |
+| triceratops | Triceratops | 9 Cute fantasy (nursery) | D·m (72c) | hoop |
+| raven | Magpie | 23 Witchy & gothic | D·m (71c) | hoop |
+| lovebirds | Lovebirds | 21 Valentine's | D·m (153c) | hoop |
+| birthdaycake | Birthday Cake | 16 Food & baking | D·m (137c) | hoop |
+| snakeplant | Snake Plant | 14 Houseplants | D·m (82c) | hoop |
+| gardenroses | Garden Roses | 10 Floral showpiece | D·XL (191c) | hoop |
+| enchantedforest | Enchanted Forest | 4/26 Woodland/Landscapes scene | B·XL (211c) | frameless |
+
+REPAIRS + CULLS (repair-first):
+- **birthdaycake** first rendered a garbled melting stringy blob (tiers/candles all smeared). Delete flux + re-roll a bolder,
+  cleaner "two neat well-defined round tiers, crisp clean edges, not melting, no drips, no garbled shapes" → a clean coherent
+  light line-style two-tier cake with three candles, gem. LESSON: a garbled/melty food render is a composition fail — re-roll
+  demanding well-defined solid shapes and "not melting, no garbled shapes".
+- **raven → renamed "Magpie"**: rendered a clean glossy corvid but with a white belly + white wing flashes + iridescent blue
+  and a red eye — reads as a pied MAGPIE, not an all-black raven. Renamed the row to "Magpie" at publish (slug stays `raven`),
+  same accuracy discipline as lunamoth→Emperor Moth / chaffinch→Eastern Bluebird. Fits the witchy/folklore theme. Gem.
+- **panda CULLED**. Three approaches (original, explicit "no orange / plain black paw pads", then `tameWarm:true`): all three kept
+  bright ORANGE paw-pads (and orange cheek blushes) baked into the flux; `tameWarm` did NOT mute them (source-baked-warm-resists,
+  the highlandglen/mainecoon class). Cute-animals already very richly covered (koala/redpanda/chinchilla/tortoise/hamster/sloth/…)
+  → held the bar. NEW RULE: a cute giant panda renders with orange paw-pads that resist re-roll AND tameWarm — a hard subject, skip or expect a cull.
+- **scottishfold CULLED**. Two attempts (original, then "ears folded flat forward and down, inside hidden, no red/pink/orange"): both
+  rendered UPRIGHT pointed ears (not folded — so not even the right breed) with vivid NEON-ORANGE inner ears (source-baked warm that
+  resists a re-roll, the siamese/britishshorthair/shibainu class). Cat breeds already covered (ragdoll/mainecoon/bengal/russianblue/
+  tortoiseshellcat) → held the bar. Confirms: Flux won't fold a Scottish Fold's ears and bakes neon inner-ear warm — hard combo, cull.
+- MACHINE: one Blender throughout (checked before every render command; 9 hooped in ONE sequential process, then the frameless
+  enchantedforest scene, then 3 hooped repairs, then the panda tameWarm retry — never concurrent). GOTCHA (recurred): the frameless
+  enchantedforest render first failed ERR_MODULE_NOT_FOUND because the shell cwd had drifted to repo root — always put `cd apps/web`
+  inside the render command. CONCURRENCY (recurred): the sibling cross-stitch cron ran `git stash -u`/rebase mid-batch (HEAD →
+  `71fb28a4`) and swept my uncommitted needlework-paint.ts Batch-20 JOBS block; all gems already persisted to the DB so nothing lost —
+  restored the block from a scratchpad backup (diff-verified only my 10 JOBS differed from the committed file) before committing.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
