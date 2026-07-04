@@ -691,6 +691,40 @@ REPAIRS + CULL (repair-first):
   sibling cross-stitch cron FF'd HEAD to its commit `e986835e` mid-batch but left my uncommitted needlework-paint.ts
   edits intact (clean FF, no `git stash -u`). All 10 chosen themes already `started`; no status flips.
 
+**Batch 18 (2026-07-04)** — 10 gems PUBLIC, 0 culled (cherries repaired to a pass). **186 PUBLIC total.** Full range
+across 10 distinct themes 1/2/5/6/7/8/10/11/16/25: 2 simple (cherries D·s 93c, swallow D·s 124c), 5 mid (redpanda
+D·m 146c, cavalier D·m 113c, shetlandpony D·m 99c, lobster D·m 75c, allium D·m 91c), 3 XL (butterflycollection D·XL
+217c hooped specimen collection; cuttinggarden D·XL 296c hooped floral bouquet; cotswoldvillage B·XL 270c frameless
+village scene). Sheet: media.homemade.education/scratch-review/e1a3ce4e-3bc0-4c6d-bd85-a7f0e440d883.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| cherries | Cherries | 16 Food & baking | D·s (93c) | hoop |
+| swallow | Barn Swallow | 6 Garden birds | D·s (124c) | hoop |
+| redpanda | Red Panda | 1 Cute animals | D·m (146c) | hoop |
+| cavalier | Cavalier King Charles Spaniel | 2 Dog breeds | D·m (113c) | hoop |
+| shetlandpony | Shetland Pony | 5 Farm animals | D·m (99c) | hoop |
+| lobster | Lobster | 8 Sea life & coastal | D·m (75c) | hoop |
+| allium | Allium | 11 Botanical stems | D·m (91c) | hoop |
+| butterflycollection | Butterfly & Moth Collection | 7 Bees/butterflies/moths | D·XL (217c) | hoop |
+| cuttinggarden | The Cutting Garden | 10 Florals | D·XL (296c) | hoop |
+| cotswoldvillage | Cotswold Village | 25 Cottages & cosy scenes | B·XL (270c) | frameless |
+
+REPAIRS (1, repaired to a pass — 0 culls):
+- **cherries** first rendered ONE solid red cherry (lovely) but the second as a pale pink/white amorphous cloud-blob
+  with a garbled brown stem-knot — a HIGHLIGHTED/pale fruit eaten toward the cream ground (the puffin/teapot white-on-
+  cream class, applied to a pale-highlighted second fruit). Delete flux + re-roll forcing BOTH cherries the SAME solid
+  deep-red with "no pale pink cherry, no white cherry, no washed-out or hollow fruit, no garbled shapes" → three clean
+  solid-red cherries with green stems and a leaf, gem. NEW LESSON: in a paired/clustered fruit motif, a lighter/
+  highlighted second fruit can render as a pale eaten blob — force every fruit the same solid saturated colour.
+- MACHINE: one Blender throughout (checked before every render command; 9 hooped in ONE sequential process, then the
+  frameless cotswoldvillage scene, then the cherries repair — never concurrent). `upscale@0.5 fetch-failed` on most
+  renders (non-fatal, @0.35 fallback; all gates passed). CONCURRENCY (recurred): the sibling cross-stitch cron ran
+  `git stash -u`/rebase mid-batch (HEAD ff665daa→7f017a62) and swept my uncommitted needlework-paint.ts Batch-18 JOBS
+  block into a stash — the first cotswoldvillage render printed "no job". All 9 hooped gems were already persisted to
+  the DB so nothing lost; restored the block from a scratchpad backup + re-rendered cotswoldvillage. All 10 chosen
+  themes already `started`; no status flips.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
