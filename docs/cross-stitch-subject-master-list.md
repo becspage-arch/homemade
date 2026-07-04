@@ -633,6 +633,30 @@ tree was reverted to HEAD once by an external editor/watcher (git clean, reflog 
 and enrich/publish read them fine; an unrelated `needlework-paint.ts` edit appeared in the tree and was left
 unstaged (only the two intended files committed). **953 → 963 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-04 — Batch 07041621 (auto cron) shipped 11 gate-passed gems** (13 generated, 2 culls). RANGE 13 →
+117 col: cuties — BREED PORTRAITS (theme 1b/1c HIGH DEMAND, all self-contrasting so no white-on-ivory wash):
+siamese-kitten (cream body + dark seal points + symmetric blue eyes), husky-puppy (bold grey/white markings +
+symmetric ice-blue eyes), dalmatian-puppy (white coat but bold black spots + black nose + red collar anchor the
+contrast, symmetric dark eyes) → 1 fair popart (halfup-woman — clean single even pale-beige tone, symmetric
+forward eyes, full forehead, no orange, elegant updo) → fantasy (unicorn-strawberry white foal + pink mane +
+gold horn popping against a bright blue sky in a strawberry patch; fairy-tulip — RE-ROLLED: first roll had the
+classic big blank dark ORB eyes, the "TWO SMALL eyes each showing a coloured iris ring + small pupil + highlight,
+NOT big blank dark orbs" re-brief gave clear detailed blue eyes + a sweet smile, kept though the framing sits a
+touch off-centre) → whimsical (penguin-baker cheerful black-and-white penguin in a chef hat with colourful jars +
+cupcakes, all labels blank; badger-tailor — RE-ROLLED: first roll came back muddy/dull with a brown-cast cluttered
+workshop, the "bright airy UNCLUTTERED workshop, clean separated colours NOT muddy NOT brown-cast, blue waistcoat +
+red jacket" re-brief gave a crisp bright readable badger tailor, kept) → floral (anemone-jug bold jewel-toned
+purple/magenta/white anemones with dark navy centres in a cream jug) → 2 dense Flux-1.1-Pro showpieces (christmas-
+market 117 — a bright snowy-DAY European Christmas market, decorated tree with a star, timbered town hall,
+colourful stalls, blank signage; sunflower-farm 84 — a vast golden sunflower field, red barn + white farmhouse,
+winding path, blue sky). Shelves: animals +3 (breed portraits), portraits +1, fantasy +2, whimsical +2, floral +1,
+scenes +2. TWO CULLS (both hardest lanes): **popart-afrofade-man** (deep-skin) — grey mottled patches across the
+skin (not one even brown) + prominent white sclera with an off/vacant gaze — the documented deep-skin popart
+gaze/patch trap that does NOT respond to prompting, culled without a wasted re-roll; **face-carnation-fair**
+(artface) — a lovely carnation crown BUT heavy grey/green contour shadows down one side, dark under-eye hollows +
+gaunt patchy skin — the artface grey-shadow trap that rarely converges, culled. **963 → 974 PUBLIC.** Deploy green
++ /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
