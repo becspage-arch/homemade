@@ -655,6 +655,42 @@ REPAIRS (3, all to a pass — 0 culls):
   rendering the frameless poppyfield scene. One Blender throughout; upscale@0.5 fetch-failed on most renders
   (non-fatal, @0.35 fallback, all gates passed).
 
+**Batch 17 (2026-07-04)** — 9 gems PUBLIC, 1 culled (snapdragon). **176 PUBLIC total.** Full range across 10
+themes 2/3/4/6/8/10/13/14/26: 2 simple (chipmunk D·s 102c, crab D·s 83c), 4 mid (boxer D·m 97c, tortoiseshellcat
+D·m 135c, chrysanthemum D·m 130c, terrarium D·m 111c), 1 rich (mandarinduck D·r 182c), 2 XL (summerwreath D·XL
+368c hooped floral wreath; tuscanhills B·XL 114c frameless landscape scene). Sheet:
+media.homemade.education/scratch-review/9131e635-6192-40e0-bedd-a76628110159.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| chipmunk | Chipmunk | 4 Woodland | D·s (102c) | hoop |
+| crab | Crab | 8 Sea life & coastal | D·s (83c) | hoop |
+| boxer | Boxer Dog | 2 Dog breeds | D·m (97c) | hoop |
+| tortoiseshellcat | Tortoiseshell Cat | 3 Cat breeds | D·m (135c) | hoop |
+| chrysanthemum | Chrysanthemum | 10 Florals | D·m (130c) | hoop |
+| terrarium | Glass Terrarium | 14 Houseplants | D·m (111c) | hoop |
+| mandarinduck | Mandarin Duck | 6 Garden/exotic birds | D·r (182c) | hoop |
+| summerwreath | Summer Flower Wreath | 13 Wreaths | D·XL (368c) | hoop |
+| tuscanhills | Tuscan Hills | 26 Landscapes | B·XL (114c) | frameless |
+
+REPAIRS + CULL (repair-first):
+- **terrarium** first-pass gem: the glass-vessel-on-cream risk (puffin/teapot class) was pre-empted by prompting a
+  clear dark rim outline + a solid overlapping green plant mass fully filling the glass → no white gaps, solid fill.
+- **mandarinduck** rendered a superb ornate drake (green/purple crest, orange cheek ruff, blue breast, coppery sail
+  fins) with rich but naturalistic colour — `tameWarm:true` + "not neon" held the orange without dulling it.
+- **snapdragon CULLED** (only cull). First render was stringy/wispy florets with harsh red gash-streaks (the thin-
+  botanical scrawl class). Repair (delete flux + re-roll BOLDER: "solid full dense column of plump rounded blooms,
+  no wispy threads, no gaps, no red streaks") cleared the gashes and gave a clean solid coral spike — BUT it rendered
+  thin and small-in-frame (lots of empty hoop) and reads generically (more coral gladiolus than a distinct snapdragon).
+  After 2 attempts still modest; botanical stems already covered (thistle/foxglove/lupin/fernstem) → held the bar and
+  culled rather than ship a weak thin piece. NEW RULE: snapdragon (tall thin spike) is a hard subject — renders thin/
+  small in the hoop; skip or expect a cull for single-spike botanicals that don't fill the frame.
+- MACHINE: one Blender throughout (checked before every render command; 9 hooped in ONE sequential process, then the
+  frameless tuscanhills scene, then the snapdragon repair — never concurrent). `upscale@0.5 fetch-failed` on most
+  renders (non-fatal, @0.35 fallback; summerwreath + tuscanhills used @0.5 fine). No driver-revert this run — the
+  sibling cross-stitch cron FF'd HEAD to its commit `e986835e` mid-batch but left my uncommitted needlework-paint.ts
+  edits intact (clean FF, no `git stash -u`). All 10 chosen themes already `started`; no status flips.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
