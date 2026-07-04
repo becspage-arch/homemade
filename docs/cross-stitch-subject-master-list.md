@@ -482,6 +482,30 @@ bantu knots + downward gaze — the recurring deep-skin blush trap, cull rather 
 on its one re-roll — the white/pale-cutie-on-ivory trap again, culled after one re-roll. **893 → 903 PUBLIC.**
 Deploy green + /healthz 200.
 
+**2026-07-04 — Batch 07041113 (auto cron) shipped 12 gate-passed gems** (13 generated, 1 cull). RANGE 12 →
+119 col: cuties (baby-lynx grey-brown spotted cub with black-tufted ears; baby-chipmunk russet with bold
+cream-and-dark stripes; dachshund-puppy warm chestnut sausage-dog among daisies — all self-contrasting) →
+bird (bee-eater, vivid green/gold/turquoise jewel tones) → 1 fair popart (fingerwaves-woman art-deco, sat 1.0,
+symmetric eyes, full forehead, red lips) → 1 fair artface (rose-fair — a CLEAN one: full forehead, symmetric
+eyes, lovely pink-rose crown, only mild shadow, well clear of the gaunt-hollow trap) → fantasy (dragon-castle
+cheerful front-facing green dragon at a pastel fairytale castle with two symmetric blue eyes; fairy-butterfly
+chibi fairy with big pink-and-yellow butterfly wings, symmetric matching eyes) → whimsical (rabbit-teacher grey
+rabbit + glasses at a chalkboard drawing only a chalk sun+stars no lettering; panda-gardener black-and-white
+panda in dungarees with a watering can, blank plant labels) → 2 dense Flux-1.1-Pro showpieces (cinque-terre 119
+— pastel Italian Riviera cliff village over turquoise sea; kyoto-street 107 — Kyoto machiya street, cherry
+blossom, pagoda, kimono figures, blank lanterns/noren). Shelves: animals +4 (incl. bee-eater), portraits +2,
+fantasy +2, whimsical +2, scenes +2. THREE re-rolled + ALL THREE saved: **cute-baby-chipmunk** first came back
+muddy/washed-out with soft outline + asymmetric dark-blob eyes → "TWO round symmetric eyes each with a bright
+white highlight, THICK BOLD dark outline, crisp NOT hazy" gave a crisp smiley cutie; **fantasy-fairy-butterfly**
+first had one dark hollow shadow-eye + one defined eye (mismatched) → "TWO SYMMETRICAL MATCHING eyes the SAME
+size, NO dark shadow patch over either eye" gave a cute symmetric-eyed fairy; **scene-panda-gardener** first had
+a faint hallucinated cursive scribble/watermark in the top-left corner → "NO text signature or watermark in any
+corner" gave a clean brighter panda. ONE CULLED: **popart-passiontwists-woman** (deep-skin) — BOTH the first
+roll AND its re-roll came back with garish coral blush circles flooding both cheeks + a downward gaze with the
+whites showing above the iris, even with explicit "NO blush, cheeks EXACTLY the same flat brown, iris centred, NO
+white showing" language — reconfirms the deep-skin popart blush + downward-gaze trap does NOT respond to
+prompting (the single hardest lane), cull rather than ship. **903 → 915 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
