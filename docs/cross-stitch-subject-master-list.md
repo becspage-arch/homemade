@@ -763,6 +763,33 @@ fair-only; (3) pure-pale cuties (baby-rhino) need a green base + very bold charc
 they ghost eyeless on ivory; (4) cutie-lane orange over-cook on webbed feet fixed by lowering to sat 1.25. **1006 →
 1018 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-04 — Batch 07042120 (auto cron) shipped 10 gate-passed gems** (13 generated, 3 culls). RANGE 13 →
+118 col: cuties (baby-meerkat sandy-tan upright with symmetric highlighted eyes + a tiny cactus at sat 1.2 — warm
+tan stayed clean; baby-hedgehog — RE-ROLLED: first roll had three confused dark spots on the face (nose read as a
+third eye), the "EXACTLY TWO eyes side by side at the same height, nose set BELOW and between them, not three dark
+spots" re-roll gave a clear spiky brown-cream hedgehog with two proper eyes + a toadstool, kept) → 1 fair popart
+(sleekpony-woman — even pale-beige skin at sat 0.88, symmetric forward eyes, full forehead, sleek pulled-back
+updo) → fantasy (fairy-bluebell — RE-ROLLED: first roll had flat blank dark-orb eyes, the "small defined eyes with
+a visible coloured iris ring + pupil + white highlight, NOT big blank orbs" re-roll gave symmetric big-eyed-style
+eyes WITH highlights, a pretty flower-crown fairy in a bluebell meadow, kept; dragon-hatchling chubby emerald baby
+dragon breaking out of a cracked egg in a straw nest, big shiny symmetric highlighted eyes, bright sky-blue) →
+whimsical (panda-bookseller — RE-ROLLED: first roll had a garbled gibberish shop SIGN above the door (hard-fail
+text), the "shelves fill the ENTIRE background, absolutely NO sign NO nameboard NO window NO door, no lettering
+anywhere" re-roll removed the sign entirely — bespectacled panda + burgundy waistcoat + blank separated spines,
+kept; duck-florist yellow-and-white duck in a green apron at a flower stall, symmetric eyes, blank price tags, no
+lettering) → bird (chaffinch rosy-pink breast + blue-grey crown + chestnut back on white hawthorn blossom, neat
+border) → 2 dense Flux-1.1-Pro showpieces (moroccan-souk 118 — vibrant spice-market lane with keyhole arches
+lanterns rugs + robed shoppers; tropical-waterfall 95 — turquoise jungle waterfall lagoon with hibiscus orchids +
+parrots). Shelves: animals +3, portraits +1, fantasy +2, whimsical +2, scenes +2. THREE CULLS: **popart-twa-woman**
+(deep-skin) — heavy pink blush blotches on cheeks + forehead + sideways gaze with sclera, the documented deep-skin
+blush+gaze traps, culled without a wasted re-roll (already had a clean fair popart); **face-wildrose-fair**
+(artface) — blotchy mottled pink-and-tan patches + grey side contour, the artface non-converging trap, culled fast;
+**cute-baby-skunk** — RE-ROLLED once (black-on-white ghosting + hot-pink cheek/ear blobs + malformed eyes; the
+"NO pink NO magenta anywhere, two clear symmetric eyes, bold outline" re-roll STILL had pink ear/cheek blobs +
+muddy undefined eyes), culled. NOTE: black-and-white cuties on ivory fabric are a wash/muddy trap like the pale
+ones — the skunk never resolved clean eyes; prefer self-contrasting COLOURED cuties (grey/tan). **1018 → 1028
+PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
