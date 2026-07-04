@@ -583,6 +583,31 @@ deep-brown skin on BOTH rolls BUT the eyes rolled UP with whites showing below t
 on the first roll AND the tightened "eyes level and forward, NO white sclera, NO grey patches" re-roll — reconfirms
 the deep-skin popart gaze trap does NOT respond to prompting. **932 → 942 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-04 — Batch 07041421 (auto cron) shipped 11 gate-passed gems** (13 generated, 2 culls). RANGE 13 →
+106 col: cuties (baby-hippo blue-grey with pink muzzle + symmetric eyes/nostrils; baby-giraffe golden with brown
+patches + matching highlighted eyes; baby-tiger — RE-ROLLED: first roll's eyes were dim grey vacant patches, the
+"big bright eyes each with a dark pupil + white highlight, NOT grey smudges" re-roll gave crisp symmetric eyes,
+kept) → bird (garden jay, warm pinkish-brown body + brilliant blue-and-black barred wing patch on an oak branch)
+→ 1 fair popart (quiff-man, even flat pale-beige skin at sat 0.88, symmetric forward eyes, neat quiff + beard) →
+1 artface (ranunculus-fair — RE-ROLLED: first roll had the classic grey/green contour shadows down one side +
+gaunt patchy skin; the "bright FLAT even frontal daylight, NO grey/green contour, warm even skin, full forehead"
+re-roll gave a clean symmetric evenly-lit rose-crowned face, kept — a rare artface SAVE) → fantasy (mermaids'-
+castle — two mermaids with clear symmetric eyes before a pastel coral castle + reef) → whimsical (rabbit-cobbler
+grey bespectacled rabbit in a shoe workshop, colourful boots on shelves, blank labels; panda-cellist — RE-ROLLED:
+first roll's lower half was a cluttered jumble with doubled music stands, the "ONE stand, clean uncluttered, one
+panda one cello, no extra limbs" re-roll gave a clean readable seated cellist, kept) → 2 dense Flux-1.1-Pro
+showpieces (cotswolds-village 106 — honey-stone cottages, rose gardens, arched bridge over a stream, bright
+summer; water-lily-garden 102 — impressionist Giverny-style pond, arched footbridge, pink water-lilies + willows).
+Shelves: animals +4 (incl. jay), portraits +2, fantasy +1, whimsical +2, scenes +2. TWO CULLS (both hardest
+lanes): **popart-twistout-woman** (deep-skin) — first roll had even brown skin BUT the pupils shoved into the inner
+corners (cross-eyed) with wide outer sclera; the tightened "pupils level + parallel looking straight ahead, NOT
+inward" re-roll came back WORSE with blotchy red skin patches AND the eyes rolled UP showing white below — the
+deep-skin popart gaze trap reconfirmed unfixable by prompting, cull; **fantasy-fairy-dragonfly** — first roll had
+big blank dark orb eyes + a hazy dissolved meadow; the "small normal-sized eyes with iris+pupil, crisp daisies,
+BOLD high-contrast NOT hazy" re-roll fixed the eyes and daisies BUT the fairy's body + the dragonfly stayed washed-
+out/low-contrast dissolving into the pale background, cull for haziness. **942 → 953 PUBLIC.** Deploy green +
+/healthz 200.
+
 ---
 
 ## PROGRESS TABLE
