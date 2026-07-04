@@ -686,6 +686,29 @@ came back asymmetric — one dark one bluish mis-shaped — plus lingering purpl
 low-colour puppies (corgi/cavalier) with lots of white wash out on a white ground; a soft pale-blue cushion + a very
 bold outline rescues them (corgi saved, cavalier not). **974 → 983 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-04 — Batch 07041820 (auto cron) shipped 12 gate-passed gems** (14 generated, 2 culls). RANGE 13 →
+86 col: cuties (baby-otter warm chocolate-brown with a cream face + symmetric highlighted eyes floating with a
+shell; baby-panda bold black-and-white munching bamboo + symmetric highlighted eyes; lion-cub warm golden-tan with
+symmetric amber highlighted eyes in grass — all self-contrasting) → bird (bullfinch, rosy-red breast + black cap +
+blue-grey back on a cherry-blossom branch, neat framed border) → 1 fair popart (sideswept-woman — even flat pale-
+beige skin at sat 0.88, symmetric forward eyes, full forehead, rose lips, natural symmetric blush) → fantasy
+(phoenix-flame a bold fiery orange-scarlet-gold firebird with wings spread against a soft pastel-blue sky, the bird
+pops high-contrast; unicorn-waterfall white foal + pastel-rainbow mane + gold horn by a blue waterfall + rainbow,
+bright) → whimsical (badger-beekeeper black-and-white badger in a straw hat + teal apron holding a honeycomb in a
+sunny meadow, honey jars blank; tortoise-gardener green tortoise in dungarees watering flowers in a cottage garden,
+symmetric friendly eyes, wordless seed packets) → floral (ranunculus-vase lush coral/peach/pink layered ranunculus
+in a glass vase) → 2 dense Flux-1.1-Pro showpieces (tuscan-village 86 — honey-stone terracotta village, cypresses,
+golden vineyards, red poppies, radiant sun; lavender-farm 82 — Provence purple lavender rows to a stone farmhouse,
+sunflowers, cypresses, blue sky). Shelves: animals +4 (incl. bullfinch), portraits +1, fantasy +2, whimsical +2,
+floral +1, scenes +2. TWO CULLS (both hardest lanes): **face-camellia-fair** (artface) — heavy grey contour shadows
++ blotchy patchy skin + dark under-eye hollows, the documented artface grey-shadow trap that rarely converges,
+culled without a wasted re-roll (prefer popart for faces); **popart-locs-man** (deep-skin) — first roll had correct
+symmetric forward eyes BUT a grey ashy cast across the mid-face/cheeks; the "one even WARM-brown tone, NO grey/ashy
+patch" re-roll fixed the skin AND gave a bold coral background but the eyes came back glancing UP with white sclera
+below (the documented deep-skin gaze trap) — worse trade, culled. NOTE: the working tree was reverted to HEAD by an
+external watcher TWICE mid-run (once before enrich); renders survive in .loom-scratch, so re-adding the briefs and
+re-running enrich/publish read them fine. **983 → 995 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
