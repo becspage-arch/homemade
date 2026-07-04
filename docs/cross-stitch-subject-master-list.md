@@ -559,6 +559,30 @@ ivory ghost), the "bold BLACK stripes + thick outline" re-roll fixed the body co
 into a muddy dark mass with no clear eyes — a cutie lives on its face, culled. **923 → 932 PUBLIC.**
 Deploy green + /healthz 200.
 
+**2026-07-04 — Batch 07041321 (auto cron) shipped 10 gate-passed gems** (13 generated, 3 culls). RANGE 11 →
+116 col: cuties (baby-panda black-and-white cub with bamboo + symmetric eyes; baby-badger bold black-and-white
+striped face with two clear symmetric highlighted eyes — both self-contrasting non-white) → bird (budgie, crisp
+grass-green-and-yellow budgerigar with black wing-barring + blue cheek patch on a pink blossom branch) → 1 fair
+popart (sidepart-woman — RE-ROLLED: first roll had garish orange blush blotches flooding both cheeks + neck; the
+sat-0.88 "one single flat even pale-beige tone, NO orange NO blush patches NO contour shading" re-roll gave a clean
+even fair face with only mild stylistic blush, symmetric level eyes, full forehead, kept) → fantasy (fairy-toadstool
+red-and-white toadstool fairy with green-yellow wings + symmetric matching green eyes; pegasus-clouds — RE-ROLLED:
+first roll's white body washed into the pale white-cloud background with a weak outline; the "strong MEDIUM-BLUE sky
+NOT white, NO big white sun/halo, THICK BOLD outline" re-roll popped the white pegasus against a blue sky with a
+rainbow, kept though the mane came paler than briefed) → whimsical (frog-painter green frog artist in a blue beret
+with a colourful palette at an easel showing a wordless hills+sun canvas; mouse-gardener grey mouse in a straw hat
+with a watering can + terracotta flowerpots, all seed packets blank) → 2 dense Flux-1.1-Pro showpieces (amsterdam-
+canal 116 — bright sunlit Dutch canal houses, arched bridge, boats, blossom trees; tuscan-village 67 — golden
+hilltop village, cypress-lined lane, vineyards + sunflowers). Shelves: animals +3 (incl. budgie), portraits +1,
+fantasy +2, whimsical +2, scenes +2. THREE CULLS (both hardest lanes): **face-cornflower-fair** (artface) had a
+lovely cornflower crown BUT heavy grey/pink contour shadows + blotchy muddy skin — culled fast, artface never
+converges (prefer popart for skin); **cute-baby-meerkat** RE-ROLLED once (first roll's eyes merged into big dark
+blobs + washed body; the re-roll STILL had merged dark-blob eyes with uncanny green tints + a washed-out body) —
+meerkat's inherent big dark eye-patches swallow the eyes, culled; **popart-tinyafro-woman** (deep-skin) — clean
+deep-brown skin on BOTH rolls BUT the eyes rolled UP with whites showing below the iris + grey mottled skin patches
+on the first roll AND the tightened "eyes level and forward, NO white sclera, NO grey patches" re-roll — reconfirms
+the deep-skin popart gaze trap does NOT respond to prompting. **932 → 942 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
