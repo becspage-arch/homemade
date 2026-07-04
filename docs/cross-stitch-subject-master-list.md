@@ -506,6 +506,33 @@ whites showing above the iris, even with explicit "NO blush, cheeks EXACTLY the 
 white showing" language — reconfirms the deep-skin popart blush + downward-gaze trap does NOT respond to
 prompting (the single hardest lane), cull rather than ship. **903 → 915 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-04 — Batch 07041149 (auto cron) shipped 8 gate-passed gems** (13 generated, 5 culls — a
+harsher-than-usual gate). RANGE 14 → 106 col: cuties (mouse-acorn warm-orange harvest mouse with crisp
+symmetric highlighted eyes holding an acorn; baby-lemur grey ring-tailed cub — RE-ROLLED once: the first roll
+had uncanny red/green-speckled eyes and a washed grey body, the re-roll with "warm amber eyes each ONE dark
+pupil, NO red/green/magenta, THICK BOLD outline all round the body" gave a sweet clean cutie on green leaves)
+→ 1 fair artface (hydrangea-fair — a CLEAN one: full forehead, symmetric blue eyes, blue-and-white hydrangea
+crown, only a mild forehead highlight, well clear of the gaunt-hollow trap) → fantasy (unicorn-waterfall white
+unicorn with purple-gold mane, rainbow + waterfall, symmetric defined eyes; mermaid-dolphin teal-haired
+mermaid hugging a grey dolphin in bright turquoise water, symmetric matching eyes) → whimsical (badger-baker —
+RE-ROLLED once: first roll was hazy with faint chalk-scribble gibberish on a chalkboard; re-brief removing the
+chalkboard entirely + "crisp NOT hazy, plain warm wall, NO text" gave a crisp striped-faced badger with a tray
+of cupcakes among colourful jars) → 2 dense Flux-1.1-Pro showpieces (porto-riverside 106 — colourful Ribeira
+houses stacked over the Douro, rabelo boats, iron bridge; english-pier 100 — bright Victorian seaside pier,
+carousel, golden beach, blue sea). Shelves: animals +2, portraits +1, fantasy +2, whimsical +1, scenes +2.
+FIVE CULLS (the gate held hard rather than shipping weak pieces): **popart-beehive-woman** (fair) came back
+dead-Flux FLAT/1-colour on BOTH the first roll and its re-roll → culled per the flat-after-one-re-roll rule;
+**popart-goddessbraids-woman** (deep-skin) had the recurring garish coral blush circles flooding both cheeks +
+whites showing above the iris — the deep-skin popart trap that batch notes show does NOT respond to prompting,
+culled without a wasted re-roll; **scene-duck-postman** RE-ROLLED once (first roll had a doubled second duck
+head on the chest; the re-roll fixed the anatomy to a single clean head BUT the red postbox came back with a
+gibberish-text collection-times notice — a hard signage fail), culled; **bright-puffin** RE-ROLLED once (first
+roll's white breast washed into the ivory + blue-not-black back; the re-roll still washed the white breast into
+a pale-grey sky and kept the wrong blue back — the white-subject-on-ivory trap), culled; **cute-baby-otter**
+RE-ROLLED once (first roll soft/hazy with closed eyes; the re-roll opened the eyes but the eyes+nose merged into
+a muddy dark blob in the centre of the face — muddy = hard fail), culled after one re-roll. **915 → 923 PUBLIC.**
+Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
