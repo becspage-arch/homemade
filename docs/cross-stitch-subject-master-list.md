@@ -657,6 +657,35 @@ gaze/patch trap that does NOT respond to prompting, culled without a wasted re-r
 gaunt patchy skin — the artface grey-shadow trap that rarely converges, culled. **963 → 974 PUBLIC.** Deploy green
 + /healthz 200.
 
+**2026-07-04 — Batch 07041720 (auto cron) shipped 9 gate-passed gems** (13 generated, 4 culls). RANGE 15 →
+120 col: cuties (baby-koala blue-grey with cream ears + big dark nose + symmetric highlighted eyes clutching a
+eucalyptus branch; corgi-puppy — RE-ROLLED: first roll was soft/hazy with a weak outline + flat dark-blob eyes,
+the "VERY THICK BOLD outline all the way around, eyes with a pupil AND a white highlight NOT flat dark blobs, on a
+soft pale-blue cushion" re-roll gave a crisp golden corgi grounded on a blue cushion, kept) → bird (kingfisher,
+electric-blue back + orange breast on a reed with a water reflection, elegant clean composition) → 1 fair popart
+(glasses-man — even flat pale-beige skin at sat 0.88, symmetric forward eyes, full forehead, slicked hair + beard +
+round glasses) → fantasy (baby-dragon chubby emerald dragon with a cream belly + gold horns on a small treasure
+hoard, big shiny highlighted cartoon eyes, bright fiery-cave ring against blue sky) → whimsical (hedgehog-florist —
+RE-ROLLED: first roll rendered as a fluffy ginger lion/cat NOT a hedgehog, the "clearly a HEDGEHOG with SPIKY
+brown-and-cream QUILLS, pointed snout, small low ears, NOT fluffy fur NOT a mane NOT big cat ears" re-roll gave a
+proper spiky hedgehog at a flower stall, blank labels, kept; cat-tailor grey tabby in a blue waistcoat with a
+yellow tape measure at a workbench, symmetric green eyes, colourful fabric bolts, no lettering) → 2 dense Flux-1.1-
+Pro showpieces (japanese-garden 104 — red arched bridge over a koi pond, red maple + pink cherry blossom, pagoda,
+stone lantern, purple irises; coral-reef 120 — vibrant full-coverage reef, green turtle, tropical fish, sunbeams).
+Shelves: animals +3 (koala/corgi/kingfisher), portraits +1, fantasy +1, whimsical +2, scenes +2. FOUR CULLS (the two
+hardest lanes + two washed cuties): **popart-lowbun-woman** (deep-skin) — muddy tan-not-brown skin with heavy grey
+contour shadows down the sides + nose and visible sclera, the documented deep-skin gaze/patch trap, culled without a
+wasted re-roll; **face-daisy-fair** (artface) — RE-ROLLED once (first roll had a grey/green contour shadow down one
+side, the re-roll came back with heavy blotchy warm-brown mottling across the neck/chest, not one flat tone) —
+artface never converges, prefer popart for faces, culled; **fantasy-mermaid-seahorse** — RE-ROLLED once (first roll
+had big blank dark orb eyes + yellow under-eye streaks, the "SMALL eyes with iris+pupil+highlight NOT big blank dark
+orbs" re-roll STILL had big dark orbs + a hazy dominant purple hair mass + white background patches), culled;
+**cute-cavalier-puppy** — RE-ROLLED once (first roll was soft with a white-on-white wash + magenta contamination in
+the chestnut; the bold-outline + blue-cushion + "NO purple NO magenta" re-roll fixed the outline but the two eyes
+came back asymmetric — one dark one bluish mis-shaped — plus lingering purple patches), culled. NOTE the warm
+low-colour puppies (corgi/cavalier) with lots of white wash out on a white ground; a soft pale-blue cushion + a very
+bold outline rescues them (corgi saved, cavalier not). **974 → 983 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
