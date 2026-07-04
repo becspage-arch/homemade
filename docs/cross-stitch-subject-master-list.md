@@ -735,6 +735,34 @@ the tightened forward-gaze re-roll FIXED the eyes but flooded the forehead/cheek
 the cutie lane (sat 1.15) — the magenta cook is a SCENE-lane (sat 1.3) problem, not a cutie one. **995 → 1006
 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-04 — Batch 07042021 (auto cron) shipped 12 gate-passed gems** (13 generated, 1 cull). RANGE 11 →
+111 col: cuties (baby-rhino lavender-grey with pink belly + bold charcoal outline + green grass base + two clear
+symmetric eyes — RE-ROLLED: first roll ghosted on pale fabric with NO eyes, just a nose blob → "solid green base,
+VERY THICK bold charcoal outline, TWO large eyes side-by-side" fixed it; grey-kitten-bell grey tabby with clear
+green symmetric eyes + red collar + pink yarn; duckling-daisy yellow chick — RE-ROLLED: first roll's feet cooked to
+red/magenta blobs → clean bright ORANGE feet + beak at cutie sat 1.25) → bird (long-tailed-tit soft garden bird +
+long tail on pink blossom, neat border) → fantasy (unicorn-castle white unicorn + pastel rainbow mane + pink
+fairytale castle + rainbow, one defined eye; mermaid-grotto chibi mermaid + auburn hair + teal tail in a sparkling
+coral grotto, two clear symmetric eyes) → 1 fair popart (messybun-woman — clean even pale-beige skin at sat 0.88,
+symmetric forward eyes, full forehead, loose bun) → 1 fair artface (magnolia-fair — RE-ROLLED: first roll had the
+documented artface grey-gaunt shadow trap → "SIMPLE FLAT POSTER style, ONE solid tone, NO contouring, full un-gaunt
+cheeks" re-roll gave an even warm pretty flower-crown face, only soft tan modelling left, marginal keep) → whimsical
+(penguin-gardener B&W penguin in a green apron in a sunny greenhouse, symmetric eyes, no lettering; mouse-bookseller
+grey mouse in a teal waistcoat + round glasses in a bookshop — RE-ROLLED: first roll flooded the whole scene in one
+orange/amber tone → teal waistcoat + "clearly SEPARATED blue/green/red/cream book spines, cool daylight" at scene
+sat 1.15 gave a balanced bright bookshop, blank spines no lettering) → 2 dense Flux-1.1-Pro showpieces (bruges-canal
+107 — vivid step-gabled canal houses reflected in a green canal + bell-tower + swans, bright daytime; fairground-
+carousel 111 — festive vintage fair with a striped carousel + Ferris wheel + tents + flower beds, sunny daytime).
+Shelves: animals +4 (incl. long-tailed-tit), fantasy +2, portraits +2, whimsical +2, scenes +2. ONE CULL:
+**popart-highfade-man** (deep-skin) — both the first roll AND the re-roll had pink/salmon patches baked across the
+forehead/nose/cheeks that sat 1.1 can NOT remove (the documented deep-skin blush-contamination trap), culled after
+its one re-roll (already had a clean fair popart + artface). Lessons RECONFIRMED: (1) deep-skin popart blush-patch
+contamination stays the #1 failure mode — cull fast, sat fixes base tone not baked patches; (2) artface grey-gaunt
+shadow trap sometimes converges with an aggressive FLAT-POSTER re-roll (magnolia-fair saved) but keep artface
+fair-only; (3) pure-pale cuties (baby-rhino) need a green base + very bold charcoal outline + explicitly TWO eyes or
+they ghost eyeless on ivory; (4) cutie-lane orange over-cook on webbed feet fixed by lowering to sat 1.25. **1006 →
+1018 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
