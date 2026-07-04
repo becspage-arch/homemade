@@ -608,6 +608,31 @@ BOLD high-contrast NOT hazy" re-roll fixed the eyes and daisies BUT the fairy's 
 out/low-contrast dissolving into the pale background, cull for haziness. **942 → 953 PUBLIC.** Deploy green +
 /healthz 200.
 
+**2026-07-04 — Batch 07041520 (auto cron) shipped 10 gate-passed gems** (13 generated, 3 culls). RANGE 11 →
+126 col: cuties (baby-fox reddish-orange kit with clean white chest + white-tipped tail + symmetric highlighted
+eyes; baby-penguin dove-grey chick with white face + orange beak/feet + symmetric eyes on snow — both self-
+contrasting) → bird (blue-tit, sky-blue cap + lemon breast + white cheeks on a cherry-blossom branch, with a
+neat framed border) → 1 fair popart (chignon-woman — clean single even pale-beige tone at sat 0.88, symmetric
+forward eyes, full forehead, red lips, elegant high-neck top) → fantasy (unicorn-blossom white foal with pastel-
+pink mane + golden horn popping against a bright blue sky in a cherry-blossom orchard; gnome-toadstool — RE-
+ROLLED: the first roll came back dead-Flux 1-colour FLAT, the "standing beside the toadstool, bright BLUE sky +
+green grass, NOT flat NOT grey NOT monochrome" re-brief gave a jolly bright classic tomte gnome with a red hat +
+white beard among red toadstools, kept) → whimsical (otter-baker warm-brown otter in a chef hat piping cream on
+colourful cupcakes among blank jars; frog-fisherman green frog in a yellow rain hat rowing a boat on a lily pond,
+symmetric friendly eyes) → 2 dense Flux-1.1-Pro showpieces (santorini-village 113 — whitewashed Cycladic houses,
+blue domes, pink bougainvillea over the turquoise Aegean; flower-market 126 — bustling cobbled flower-market
+street, striped awnings, buckets of blooms, blank signs). Shelves: animals +3 (incl. blue-tit), portraits +1,
+fantasy +2, whimsical +2, scenes +2. THREE CULLS (the two hardest lanes + the mask-eye trap): **popart-
+bantuknots-woman** (deep-skin) had even deep-brown skin BUT asymmetric eyes with white sclera showing + stray
+red speckles on both cheeks — the deep-skin popart gaze/blush trap the notes show does NOT respond to prompting,
+culled without a wasted re-roll; **face-dahlia-fair** (artface) had a lovely dahlia crown BUT a grey/green contour
+shadow down the right cheek/temple — the artface grey-shadow trap that rarely converges, culled; **cute-baby-
+raccoon** — the bold black eye-mask swallowed the eyes into faint uncanny slits AND the pale grey body washed into
+the ivory (the same mask-swallow + white-on-ivory trap that culled the meerkat), culled. NOTE: mid-run the working
+tree was reverted to HEAD once by an external editor/watcher (git clean, reflog untouched) — re-added the briefs
+and enrich/publish read them fine; an unrelated `needlework-paint.ts` edit appeared in the tree and was left
+unstaged (only the two intended files committed). **953 → 963 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
