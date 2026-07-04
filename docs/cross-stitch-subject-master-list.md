@@ -790,6 +790,34 @@ muddy undefined eyes), culled. NOTE: black-and-white cuties on ivory fabric are 
 ones — the skunk never resolved clean eyes; prefer self-contrasting COLOURED cuties (grey/tan). **1018 → 1028
 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-04 — Batch 07042221 (auto cron) shipped 11 gate-passed gems** (13 generated, 2 culls). RANGE 12 →
+109 col: cuties (baby-koala blue-grey with a pale chest + big dark oval nose + two symmetric highlighted eyes on a
+eucalyptus branch — self-contrasting on ivory; baby-red-squirrel warm russet with a bushy tail + acorn, symmetric
+highlighted eyes, warm fur stayed clean russet NOT magenta at cutie sat 1.2; tiger-cub orange with BOLD black
+stripes + white muzzle, two clear symmetric eyes — the bold stripes make it strongly self-contrasting) → bird
+(wren — RE-ROLLED: first bright-lane roll cooked hot-magenta patches across the throat/breast + a muddy smudged
+eye; the "natural chestnut-brown/buff/cream ONLY, NO pink NO magenta, ONE clear dark eye with a white highlight" +
+sat 1.15 re-roll gave a clean warm chestnut-and-orange wren, kept) → 1 fair popart (wavylob-woman — even pale-
+beige skin at sat 0.88, symmetric forward eyes, full forehead, soft symmetric blush, chic wavy bob) → fantasy
+(mermaid-seahorse chibi mermaid + turquoise hair riding a golden seahorse, two big symmetric highlighted chibi
+eyes, bright underwater; baby-griffin fluffy golden eagle head + tawny lion body, big symmetric highlighted eyes,
+bright sky) → whimsical (mouse-clockmaker grey mouse + round glasses + brown waistcoat in a workshop of clocks
+with BLANK tick-only faces, symmetric forward eyes, no signage no lettering; owl-painter brown owl + beret + blue
+smock at an easel with a WORDLESS sun-and-hills canvas, symmetric forward eyes, no lettering) → 2 dense Flux-1.1-
+Pro showpieces (japanese-garden 109 — red arched bridge over a koi pond, cherry blossom, pagoda, stone lanterns,
+bright springtime; coral-reef 107 — vivid reef with clownfish/tangs/angelfish + a green sea turtle + corals +
+sunbeams, bright sunlit water). Shelves: animals +4 (incl. wren), fantasy +2, portraits +1, whimsical +2, scenes
++2. TWO CULLS (both hardest lanes): **face-cosmos-fair** (artface) — heavy grey contour down the right side +
+dark under-eye hollows + patchy gaunt modelling, the documented artface grey-shadow trap that rarely converges,
+culled without a wasted re-roll (prefer popart for faces, already had a clean fair popart); **popart-bantuknots-
+woman** (deep-skin) — eyes glancing sideways with white sclera below (gaze trap) AND pink blush patches on the
+cheeks (blush-contamination trap) simultaneously, the two documented deep-skin traps a single re-roll only trades,
+culled fast. Lessons RECONFIRMED: (1) bright-lane birds cook warm tones to hot-magenta at SRC_SAT 1.5 — a sat~1.15
+override + explicit "natural browns ONLY, NO pink/magenta" fixes it in one re-roll; (2) tiger-cub confirms bold
+black markings make an orange cutie strongly self-contrasting on ivory; (3) deep-skin popart double-trap (gaze +
+blush) is still the #1 cull — cull fast when a clean fair popart is already in hand. **1028 → 1039 PUBLIC.**
+Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
