@@ -610,6 +610,51 @@ REPAIRS (3, all to a pass — 0 culls):
   gems already persisted so nothing lost. FUTURE: work the batch in a throwaway worktree, or commit the script
   edits before the first render.
 
+**Batch 16 (2026-07-04)** — 10 gems PUBLIC, 0 culled (10 subjects; clownfish + goatkid + fiddleleaffig each
+repaired to a pass). **167 PUBLIC total.** Full range across 10 themes 2/5/6/7/8/10/11/13/14/26: 2 simple
+(clownfish D·s 91c, commonblue D·s 178c), 5 mid (goatkid D·m 99c, chaffinch→Eastern Bluebird D·m 166c,
+anemoneflower D·m 122c, lupin D·m 128c, fiddleleaffig D·m 75c), 1 rich (bernese D·r 104c), 2 XL
+(wildflowerwreath D·XL 404c hooped wreath — richest of the whole effort; poppyfield B·XL 220c frameless
+landscape). Sheet: media.homemade.education/scratch-review/8b6f5b2b-6038-4aec-b4a9-9443286aee16.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| clownfish | Clownfish | 8 Sea life & coastal | D·s (91c) | hoop |
+| commonblue | Common Blue Butterfly | 7 Bees/butterflies/moths | D·s (178c) | hoop |
+| goatkid | Baby Goat | 5 Farm animals | D·m (99c) | hoop |
+| chaffinch | Eastern Bluebird | 6 Garden/exotic birds | D·m (166c) | hoop |
+| anemoneflower | Anemone | 10 Florals | D·m (122c) | hoop |
+| lupin | Lupin | 11 Botanical stems | D·m (128c) | hoop |
+| fiddleleaffig | Fiddle-Leaf Fig | 14 Houseplants | D·m (75c) | hoop |
+| bernese | Bernese Mountain Dog | 2 Dog breeds | D·r (104c) | hoop |
+| wildflowerwreath | Wildflower Wreath | 13 Wreaths | D·XL (404c) | hoop |
+| poppyfield | Poppy Field | 26 Landscapes | B·XL (220c) | frameless |
+
+REPAIRS (3, all to a pass — 0 culls):
+- **clownfish** first rendered the fish cleanly but painted the sea-anemone beside it as a messy pale-pink blob
+  with harsh RED gash-streaks (reads as a wound, not thread-painting). FIX: delete flux + re-roll a SINGLE
+  clownfish with "absolutely no sea anemone, no coral, no plants, no tentacles" + a few bubbles → clean cheerful
+  cut-out. LESSON: a busy secondary element (anemone/foliage) beside a clean subject can render as a smear — drop
+  it and keep the subject solo.
+- **goatkid** first rendered a lurid ORANGE goat with a garish PURPLE eye + SCARLET inner ear (I left tameWarm
+  OFF). FIX: delete flux + re-roll "natural soft chestnut-brown and cream-white, a plain dark eye, no orange, no
+  purple/blue in the eye, no red inside the ears" + `tameWarm:true` → natural caramel-and-white kid, dark eye.
+  LESSON: pale/tan farm animals need tameWarm ON from the start + explicit no-orange/no-purple or Flux invents a
+  fantasy palette.
+- **fiddleleaffig** first left bright WHITE GAPS/holes between the separated leaves (bare linen showing as holes,
+  the fenestrated-plant soft spot). FIX: delete flux + re-roll a "full bushy plant, leaves overlapping and
+  layered so they fully cover one another forming one solid connected leafy mass, no gaps, no bare linen between
+  leaves" → solid lush plant, no holes. LESSON: for a leafy houseplant ask for a bushy OVERLAPPING mass (one
+  connected shape), not a sparse stem with separated leaves, or the gaps read as holes.
+- ACCURACY RENAME: `chaffinch` rendered as an **Eastern Bluebird** (blue head/back + rusty-orange breast + white
+  belly), not a chaffinch (chestnut back, pink breast). Clean + lovely → renamed the row "Eastern Bluebird" at
+  publish (slug stays `chaffinch`), per the lunamoth→Emperor Moth / redadmiral→Painted Lady discipline.
+- CONCURRENCY: the sibling cross-stitch cron pushed `be43ee68` and its rebase FF'd the shared MAIN checkout
+  mid-batch, sweeping my whole uncommitted Batch-16 JOBS block from `needlework-paint.ts` (all 9 hooped rows had
+  already rendered + persisted to the DB, so nothing lost). Re-applied the block from a scratchpad backup before
+  rendering the frameless poppyfield scene. One Blender throughout; upscale@0.5 fetch-failed on most renders
+  (non-fatal, @0.35 fallback, all gates passed).
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
