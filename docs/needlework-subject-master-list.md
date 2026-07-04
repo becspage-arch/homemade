@@ -725,6 +725,48 @@ REPAIRS (1, repaired to a pass — 0 culls):
   the DB so nothing lost; restored the block from a scratchpad backup + re-rendered cotswoldvillage. All 10 chosen
   themes already `started`; no status flips.
 
+**Batch 19 (2026-07-04)** — 8 gems PUBLIC, 2 culled (conkers, shibainu). **194 PUBLIC total.** Full range across themes
+1/2/4/6/8/10/11/18/20/26: 2 simple (koala D·s 92c, daffodil D·s 52c), 4 mid (raccoon D·m 27c, cockatiel D·m 113c,
+mantaray D·m 26c, poinsettia D·m 140c), 2 XL (tulipbouquet D·XL 285c hooped floral showpiece; japanesegarden B·XL 279c
+frameless garden scene). Sheet: media.homemade.education/scratch-review/815f1dbf-0d60-437d-8977-2885f4ea4d09.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| koala | Koala | 1 Cute animals | D·s (92c) | hoop |
+| daffodil | Daffodil | 11 Botanical stems | D·s (52c) | hoop |
+| raccoon | Raccoon | 4 Woodland | D·m (27c) | hoop |
+| cockatiel | Cockatiel | 6 Garden/exotic birds | D·m (113c) | hoop |
+| mantaray | Manta Ray | 8 Sea life & coastal | D·m (26c) | hoop |
+| poinsettia | Poinsettia | 18 Christmas & winter | D·m (140c) | hoop |
+| tulipbouquet | Tulip Bouquet | 10 Floral showpiece | D·XL (285c) | hoop |
+| japanesegarden | Japanese Garden | 26 Landscapes | B·XL (279c) | frameless |
+
+REPAIRS + CULLS (repair-first):
+- **daffodil** first blew PEACH/apricot (I put `tameWarm:true` on a yellow flower — tameWarm mutes warm hues so the yellow
+  washed to peach). Removed tameWarm + re-rolled "clear sunny daffodil yellow, not peach/apricot/cream" → proper golden
+  petals (with a coral cup, reads as a red-cupped daffodil variety), gem. LESSON: do NOT put `tameWarm` on a YELLOW subject
+  (sunflower/daffodil) — it desaturates the yellow to peach; tameWarm is for reds/pinks blowing orange, not yellows.
+- **mantaray** first rendered a dark van-gogh swirl blob sitting on a big amorphous mint-green water blob (the "soft teal
+  water shading beneath it" clause became a separate green blob; wings not read). Deleted flux + re-rolled dropping the water
+  clause, "seen from directly above, two broad triangular wings clearly spread wide flat and symmetrical, one clean solid
+  flat body, no water, no background" → a clean recognisable manta (stylised blue), gem. LESSON: a "water/shading beneath it"
+  clause on a plain-ground cut-out renders as a separate blob — keep single subjects on plain ground, no environment element.
+- **conkers CULLED**. Two attempts (glossy mahogany conkers): both rendered the conkers as swirled brown discs with big
+  cream-swirl centres (reads like cinnamon-buns/pinwheels, not glossy conkers) + odd red streaks; the "pale round scar"
+  ballooned into a full swirl centre. Autumn theme already well covered (acorn/pumpkins/autumnforest/autumnwreath/autumnbounty)
+  → held the bar. NEW RULE: conkers (round nut with a big pale scar) render as swirl-blobs; a hard subject, skip or expect a cull.
+- **shibainu CULLED**. Two attempts: face came good but both kept RED inner-ear patches (source-baked, survived a re-roll AND
+  `tameWarm`, the siamese/britishshorthair/bordercollie class) AND the pale cream urajiro chest was eaten by the cream ground
+  leaving a hollow bare-linen chest. Dog breeds already very richly covered (15+: goldenretriever/labrador/corgi/pug/beagle/
+  husky/bernese/boxer/cavalier/…) → held the bar rather than ship a portrait with red ears + a hollow chest. Confirms: a
+  white/cream-chested breed on cream + source-baked red ears is a hard combo → skip or expect a cull.
+- MACHINE: one Blender throughout (checked before every render command; 9 hooped in ONE sequential process, then 4 hooped
+  repairs in ONE process, then the frameless japanesegarden scene — never concurrent). `upscale@0.5 fetch-failed` on most
+  renders (non-fatal, @0.35 fallback; all gates passed). CONCURRENCY (recurred, TWICE this batch): the sibling cross-stitch
+  cron ran `git stash -u`/rebase and swept my uncommitted needlework-paint.ts edits mid-batch — the japanesegarden render
+  printed "no job" twice. All gems already persisted to the DB so nothing lost; restored the block from a scratchpad backup
+  each time + re-launched. All 10 chosen themes already `started`; no status flips.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
