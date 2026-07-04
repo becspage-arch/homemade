@@ -709,6 +709,32 @@ below (the documented deep-skin gaze trap) — worse trade, culled. NOTE: the wo
 external watcher TWICE mid-run (once before enrich); renders survive in .loom-scratch, so re-adding the briefs and
 re-running enrich/publish read them fine. **983 → 995 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-04 — Batch 07041922 (auto cron) shipped 11 gate-passed gems** (13 generated, 2 culls). RANGE 12 →
+106 col: cuties (baby-raccoon blue-grey with a bold black bandit mask + cream chest + ringed tail, symmetric
+highlighted eyes — self-contrasting; penguin-chick fluffy dove-grey with a dark cap white tummy orange beak+feet,
+symmetric highlighted eyes, soft-on-pale but the cap/beak/feet anchor it; baby-fox warm russet-orange coat with a
+cream muzzle/chest, symmetric amber highlighted eyes — warm fur stayed clean orange NOT magenta at cutie sat 1.15)
+→ 1 fair popart (quiff-man — even flat pale-beige skin at sat 0.88, symmetric forward eyes, full forehead, swept
+quiff + stubble) → fantasy (gnome-toadstool cheerful red-hatted gnome with a big white beard by red-and-white
+toadstools in a bright green glade, face rightly hidden by beard/hat; pegasus-rainbow — RE-ROLLED: first roll had a
+big blank dark blob eye + a soft white-on-pale outline, the "clear side-on pose with ONE small defined eye iris+
+pupil+highlight NOT a blob, THICK bold outline" re-roll gave a crisp winged unicorn on clouds under a rainbow, kept)
+→ whimsical (penguin-baker black-and-white penguin in a chef's hat holding a tray of iced cupcakes in a sunny
+bakery, symmetric highlighted eyes, no lettering; frog-fisherman green frog in yellow dungarees + straw hat on a
+mossy rock by a blue pond with a rod, cattails, floats, symmetric eyes, no lettering) → bird (blue-tit cobalt cap+
+wings + yellow breast + white cheek on a pink apple-blossom branch, crisp high-contrast, neat border) → 2 dense
+Flux-1.1-Pro showpieces (santorini-village 102 — whitewashed Greek village + blue domes + bougainvillea over a
+sparkling Aegean sea, windmills, bright daytime; dutch-tulip-fields 106 — vivid striped tulip fields to a windmill +
+canal + farmhouse, bright spring daytime). Shelves: animals +3, portraits +1, fantasy +2, whimsical +2, floral +1,
+scenes +2. TWO CULLS (both hardest lanes): **face-rose-fair** (artface) — a heavy dark shadow patch down the right
+cheek/jaw + pink blotching, the documented artface grey-shadow trap that rarely converges, culled without a wasted
+re-roll (prefer popart for faces, already had a clean fair popart); **popart-boxbraids-woman** (deep-skin) — first
+roll had good deep warm-brown skin BUT the eyes glanced sideways with white sclera below (the deep-skin gaze trap);
+the tightened forward-gaze re-roll FIXED the eyes but flooded the forehead/cheeks/nose with big pink blush blotches
+(the deep-skin blush-contamination trap) — worse trade, culled. NOTE: baby-fox confirms warm-orange fur is SAFE in
+the cutie lane (sat 1.15) — the magenta cook is a SCENE-lane (sat 1.3) problem, not a cutie one. **995 → 1006
+PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
