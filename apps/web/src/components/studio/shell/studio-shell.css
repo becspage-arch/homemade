@@ -1017,6 +1017,86 @@
   overflow-y: auto;
   background: var(--studio-surface);
 }
+
+/* Combined "Design your own" surface — shared header + idea/photo toggle. */
+.studio-p2c-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.studio-p2c-title {
+  font-family: var(--studio-font-display);
+  font-weight: 500;
+  font-size: 22px;
+  margin: 0;
+}
+.studio-p2c-modeswitch {
+  display: inline-flex;
+  background: var(--studio-bg);
+  border: 1px solid var(--studio-line-strong);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+.studio-p2c-modeswitch button {
+  border: none;
+  background: transparent;
+  font-family: var(--studio-font-body);
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--studio-ink-soft);
+  transition: background 140ms var(--studio-easing-out), color 140ms var(--studio-easing-out);
+}
+.studio-p2c-modeswitch button.active {
+  background: var(--studio-ink);
+  color: var(--studio-bg);
+}
+
+/* Non-premium "Design your own" teaser (behind the premium popup). */
+.studio-p2c-gate-art {
+  max-width: 360px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--studio-ink);
+}
+.studio-p2c-gate-art h2 {
+  font-family: var(--studio-font-display);
+  font-size: 26px;
+  margin: 0;
+}
+.studio-p2c-gate-art p {
+  font-family: var(--studio-font-body);
+  font-size: 14px;
+  color: var(--studio-ink-soft);
+  margin: 0;
+  line-height: 1.5;
+}
+.studio-p2c-gate-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.studio-p2c-gate-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--studio-ink);
+}
+.studio-p2c-gate-list svg {
+  color: var(--studio-accent);
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
 .studio-p2c-dropzone {
   border: 2px dashed var(--studio-line-strong);
   border-radius: var(--studio-radius-l);

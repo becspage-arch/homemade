@@ -20,10 +20,20 @@
 export interface PremiumEntitlementFields {
   premiumActive?: boolean | null
   premiumUntil?: Date | null
+  /**
+   * The user's role. Admins get full premium access without a paid entitlement
+   * — they run and support the product, so every premium surface (Studio
+   * create-your-own, printing, the planning suite) must open for them the same
+   * as a paying member. Typed loosely as a string so this module keeps no
+   * Prisma-enum import and stays safe to call from client code.
+   */
+  role?: string | null
 }
 
 export function hasPremium(user: PremiumEntitlementFields | null | undefined): boolean {
   if (!user) return false
+  // Admins are always treated as premium (product owners / support).
+  if (user.role === 'ADMIN') return true
   if (!user.premiumActive) return false
   if (user.premiumUntil && user.premiumUntil.getTime() < Date.now()) return false
   return true

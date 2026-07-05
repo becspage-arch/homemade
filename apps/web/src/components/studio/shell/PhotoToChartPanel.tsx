@@ -26,7 +26,7 @@
  * actually wants.
  */
 
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { UploadCloud, X, Loader2 } from 'lucide-react'
 import type { PatternData } from '@homemade/db/pattern'
 import { ChartViewport } from '../chart/ChartViewport'
@@ -35,6 +35,10 @@ interface PhotoToChartPanelProps {
   signedIn: boolean
   onSaved: (newId: string) => void
   onCancel: () => void
+  /** When embedded in the combined "Design your own" surface, the parent
+   *  supplies the header (the idea/photo toggle + close) so the panel doesn't
+   *  render its own title row. Standalone use falls back to the default. */
+  header?: ReactNode
 }
 
 interface Settings {
@@ -59,7 +63,7 @@ const DEFAULT_SETTINGS: Settings = {
   lockAspect: true,
 }
 
-export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartPanelProps) {
+export function PhotoToChartPanel({ signedIn, onSaved, onCancel, header }: PhotoToChartPanelProps) {
   const [file, setFile] = useState<File | null>(null)
   const [previewUrl, setPreviewUrl] = useState<string | null>(null)
   const [photoAspect, setPhotoAspect] = useState<number | null>(null)
@@ -244,14 +248,16 @@ export function PhotoToChartPanel({ signedIn, onSaved, onCancel }: PhotoToChartP
       </div>
 
       <div className="studio-p2c-controls">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h2 style={{ fontFamily: 'var(--studio-font-display)', fontWeight: 500, fontSize: 22, margin: 0 }}>
-            Photo to chart
-          </h2>
-          <button type="button" className="studio-icon-button" onClick={onCancel} aria-label="Close">
-            <X size={18} strokeWidth={1.6} />
-          </button>
-        </div>
+        {header ?? (
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <h2 style={{ fontFamily: 'var(--studio-font-display)', fontWeight: 500, fontSize: 22, margin: 0 }}>
+              Photo to chart
+            </h2>
+            <button type="button" className="studio-icon-button" onClick={onCancel} aria-label="Close">
+              <X size={18} strokeWidth={1.6} />
+            </button>
+          </div>
+        )}
 
         {!signedIn && (
           <div className="studio-dialog-notice">

@@ -61,7 +61,7 @@ const PATTERN_TYPE_BY_SLUG: Record<string, 'CROSS_STITCH' | 'KNITTING_CHART' | '
 
 const STUDIO_CTAS: Record<string, { primary?: { label: string; href: string }; secondary?: { label: string; href: string } }> = {
   'cross-stitch': {
-    primary: { label: 'Make one from a photo', href: '/studio/cross-stitch?new=photo' },
+    primary: { label: 'Design your own', href: '/studio/cross-stitch?new=design' },
     secondary: { label: 'Start with a blank canvas', href: '/studio/cross-stitch?new=blank' },
   },
   crochet: {

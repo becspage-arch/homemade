@@ -19,7 +19,7 @@
  * rather than forking a second one.
  */
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState, type ReactNode } from 'react'
 import { Sparkles, X, Loader2, RefreshCw } from 'lucide-react'
 import type { PatternData } from '@homemade/db/pattern'
 import { captureClientEvent } from '@/lib/client-analytics'
@@ -28,6 +28,10 @@ interface IdeaToPatternPanelProps {
   signedIn: boolean
   onSaved: (newId: string) => void
   onCancel: () => void
+  /** When embedded in the combined "Design your own" surface, the parent
+   *  supplies the header (the idea/photo toggle + close) so the panel doesn't
+   *  render its own title row. Standalone use falls back to the default. */
+  header?: ReactNode
 }
 
 interface Settings {
@@ -53,7 +57,7 @@ const SIZE_OPTIONS = [
   { value: 220, label: 'Extra large — showpiece (220 cells)' },
 ]
 
-export function IdeaToPatternPanel({ signedIn, onSaved, onCancel }: IdeaToPatternPanelProps) {
+export function IdeaToPatternPanel({ signedIn, onSaved, onCancel, header }: IdeaToPatternPanelProps) {
   const [brief, setBrief] = useState('')
   const [image, setImage] = useState<string | null>(null)
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS)
@@ -171,14 +175,16 @@ export function IdeaToPatternPanel({ signedIn, onSaved, onCancel }: IdeaToPatter
       </div>
 
       <div className="studio-p2c-controls">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h2 style={{ fontFamily: 'var(--studio-font-display)', fontWeight: 500, fontSize: 22, margin: 0 }}>
-            Describe an idea
-          </h2>
-          <button type="button" className="studio-icon-button" onClick={onCancel} aria-label="Close">
-            <X size={18} strokeWidth={1.6} />
-          </button>
-        </div>
+        {header ?? (
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <h2 style={{ fontFamily: 'var(--studio-font-display)', fontWeight: 500, fontSize: 22, margin: 0 }}>
+              Describe an idea
+            </h2>
+            <button type="button" className="studio-icon-button" onClick={onCancel} aria-label="Close">
+              <X size={18} strokeWidth={1.6} />
+            </button>
+          </div>
+        )}
 
         {!signedIn && (
           <div className="studio-dialog-notice">

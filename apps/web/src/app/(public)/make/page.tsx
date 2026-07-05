@@ -166,15 +166,16 @@ export default async function MakeLandingPage() {
             </h2>
             <p className="group-landing-feature-body">
               Every designed pattern in the library opens in the Studio.
-              Make one from a photograph, start from a blank canvas, or
-              browse the catalogue and pick something that speaks to you.
+              Design your own from an idea or a photograph, start from a
+              blank canvas, or browse the catalogue and pick something that
+              speaks to you.
             </p>
             <div className="group-landing-feature-actions">
               <Link
-                href="/studio/cross-stitch?new=photo"
+                href="/studio/cross-stitch?new=design"
                 className="group-landing-feature-action primary"
               >
-                Make one from a photo →
+                Design your own →
               </Link>
               <Link
                 href="/cross-stitch"

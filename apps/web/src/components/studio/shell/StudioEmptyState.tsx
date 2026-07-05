@@ -9,7 +9,7 @@
  * and three muted cards that read as choices, not as a menu.
  */
 
-import { LibraryBig, Image as ImageIcon, FilePlus2, Sparkles } from 'lucide-react'
+import { LibraryBig, FilePlus2, Sparkles } from 'lucide-react'
 import { StudioLandingHero } from '../StudioLandingHero'
 
 interface StudioEmptyStateProps {
@@ -17,8 +17,7 @@ interface StudioEmptyStateProps {
   userName: string | null
   onBrowseLibrary: () => void
   onStartBlank: () => void
-  onStartFromPhoto: () => void
-  onStartFromIdea: () => void
+  onStartDesign: () => void
 }
 
 export function StudioEmptyState({
@@ -26,8 +25,7 @@ export function StudioEmptyState({
   userName,
   onBrowseLibrary,
   onStartBlank,
-  onStartFromPhoto,
-  onStartFromIdea,
+  onStartDesign,
 }: StudioEmptyStateProps) {
   return (
     <section className="studio-empty">
@@ -37,8 +35,8 @@ export function StudioEmptyState({
         userName={userName}
         lede={
           signedIn
-            ? 'Open a pattern below, browse the library, or start fresh from a photo.'
-            : 'Browse the library, turn a photo into a chart, or start with a blank canvas. Mark stitched as you go, switch fabric counts, swap floss brands, and print a clean PDF when you are ready.'
+            ? 'Open a pattern below, browse the library, or design your own from an idea or a photo.'
+            : 'Browse the library, design your own from an idea or a photo, or start with a blank canvas. Mark stitched as you go, switch fabric counts, swap floss brands, and print a clean PDF when you are ready.'
         }
       />
 
@@ -50,18 +48,11 @@ export function StudioEmptyState({
             <div className="studio-empty-card-sub">Designed patterns ready to stitch</div>
           </div>
         </button>
-        <button type="button" className="studio-empty-card" onClick={onStartFromIdea}>
+        <button type="button" className="studio-empty-card" onClick={onStartDesign}>
           <Sparkles size={24} strokeWidth={1.4} />
           <div className="studio-empty-card-body">
-            <div className="studio-empty-card-title">Describe an idea</div>
-            <div className="studio-empty-card-sub">Tell us your idea, we draw it, you stitch it</div>
-          </div>
-        </button>
-        <button type="button" className="studio-empty-card" onClick={onStartFromPhoto}>
-          <ImageIcon size={24} strokeWidth={1.4} />
-          <div className="studio-empty-card-body">
-            <div className="studio-empty-card-title">Start from a photo</div>
-            <div className="studio-empty-card-sub">Drop in a photo, watch it become a chart</div>
+            <div className="studio-empty-card-title">Design your own</div>
+            <div className="studio-empty-card-sub">Describe an idea or upload a photo — we make the chart</div>
           </div>
         </button>
         <button type="button" className="studio-empty-card" onClick={onStartBlank}>
