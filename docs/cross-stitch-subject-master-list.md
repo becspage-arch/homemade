@@ -957,6 +957,36 @@ kitten meet the cutie minimum). Lesson RECONFIRMED: all three FACE lanes are the
 + artface both cull on the grey-shadow/blotch trap, and a fair popart can still catch grey contouring; a batch
 shipping 0 portraits is fine, never force a shadowed face. **1076 → 1085 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-05 — Batch 07051722 (auto cron) shipped 11 gate-passed gems** (13 generated, 2 culls — a strong,
+clean batch; the only two failures were the two documented face traps). RANGE 12 → 109 col: 3 cuties (baby-koala
+soft blue-grey with big fluffy pink-lined ears + large dark nose + two symmetric highlighted eyes + pink cheeks on
+a eucalyptus branch, self-contrasts on ivory; baby-lamb cream-white curly fleece + pink ears + two symmetric green-
+ringed eyes + pink nose among green grass and yellow daffodils, body a touch pale but the flower/grass anchors and
+clear face carry it; baby-raccoon silver-grey with a bold black bandit mask, TWO symmetric eyes each within its
+mask patch, black nose, a green leaf pop, strong self-contrast — a touch monochrome but crisp and sweet) → bird
+(bee-eater crimson crown + gold throat + green wings + turquoise belly + black eye-stripe on a leafy branch, vivid
+clearly-separated feather areas) → 1 FAIR popart (ponytail-woman — even flat pale-beige skin at sat 0.9, symmetric
+forward eyes, full forehead below a sleek high ponytail, flat blush spots, teal ground; the one clean face) → 2
+fantasy (pegasus-cloud white foal + pastel-rainbow mane/tail + feathered wings + ONE clear defined eye on a fluffy
+cloud under a bright rainbow, crisp sky-blue; mermaid-seahorse blonde chibi mermaid with TWO symmetric defined eyes
+riding a friendly orange seahorse, bright turquoise underwater, no haze) → 2 whimsical (mouse-florist grey mouse in
+an apron among a vivid separated flower stall — roses/tulips/daffodils/delphiniums, buckets + watering can, wordless
+tags; frog-fisherman green frog in a straw hat + blue jacket on a mossy log by a blue lily-pad pond, TWO symmetric
+forward eyes, soft but well-balanced palette) → 2 dense Flux-1.1-Pro showpieces (japanese-garden 98 — red arched
+bridge over a koi pond + full cherry blossom + red pagoda + snow-capped Mount Fuji, bright daytime; cinque-terre
+109 — colourful pastel Italian-Riviera cliffside houses stacked above a sparkling blue sea + boats + red flowers,
+bright daytime). Shelves: animals +4 (incl. bee-eater), portraits +1, fantasy +2, whimsical +2, scenes +2. Master-
+list subjects covered: theme 4 bird (bee-eater), theme 20/21 scenes (Japanese garden, Cinque Terre). TWO CULLS —
+both faces, as usual: **popart-boxbraids-woman** (deep-skin) — muddy olive-grey-brown skin (not one clean rich
+brown) + GREY box braids (should be dark) + asymmetric messy sideways eyes with mismatched whites, the documented
+deep-skin double-trap, culled WITHOUT a wasted re-roll (a clean fair popart already in hand — don't force deep skin);
+**face-rose-fair** (artface) — a lovely rose crown but heavy grey/green contour shadow flooding the right side of
+the face + pink cheek smears + hazy painterly modelling, the documented artface grey-shadow/haze trap, culled fast.
+Lesson RECONFIRMED: the two face-flower/deep-skin lanes remain the batch's only reliable failures; with one clean
+fair popart in hand, cull both instantly rather than burning re-rolls. Everything else (cuties, fantasy, whimsical,
+bird, showpieces) passed clean on the first roll — no re-rolls this batch. **1085 → 1096 PUBLIC.** Deploy green +
+/healthz 200.
+
 ---
 
 ## PROGRESS TABLE
