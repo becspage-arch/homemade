@@ -95,11 +95,21 @@ through new `scripts/loom-fargate-render.ts` (`fargateRenderBase`, a drop-in for
 the local `blenderRenderBase` — scene up to S3, run task, poll, PNG back down);
 the local `blender.exe` stays the dev default and fallback. The rest of the chain
 (Fal upscale → fidelity gate → R2) is unchanged and runs in the caller. Transport
-is S3 with an IAM task role (no secrets in the container). Build+push (needs
-Docker) and `cdk deploy` (full-prod-env, `cdk diff` first) are Rebecca-run — see
-`apps/web/scripts/loom-render/README.md`. Cross-OS note: same Blender + script +
-scene, so visually identical, but Cycles CPU isn't guaranteed bit-identical
-Windows↔Linux — it's the same pipeline, not a pixel clone.
+is S3 with an IAM task role (no secrets in the container).
+
+**DEPLOYED + VERIFIED 2026-07-05.** `cdk deploy` ran clean (WebTask reconciled
+CLI-revision :19 → CDK-managed :20, pk_live preserved; only the loom resources
+added). The image is built by a GitHub Actions workflow
+(`.github/workflows/loom-render-image.yml`) on a Docker-capable runner and
+pushed to ECR `homemade/loom-render:latest` — the GitHub deploy does NOT build
+it. End-to-end proof: the golden Countryside `scene.json` rendered on Fargate and
+the fidelity gate scored it against the local Windows base at structure 1.0 /
+colour 0 (PASS) — the Linux container reproduces the local render essentially
+pixel-for-pixel. The `claude-deploy` user carries a scoped `LoomRenderBreakGlass`
+inline policy (ECR push to loom-render + S3 on the scratch bucket + PassRole on
+the two loom roles) so the build workflow + any invoker can drive it. Activate
+the server-side path with `LOOM_RENDER=fargate` + the six `LOOM_RENDER_*` env
+vars (from the CDK outputs). See `apps/web/scripts/loom-render/README.md`.
 
 ## The loom hero pipeline wired to one production entrypoint (2026-06-24)
 
