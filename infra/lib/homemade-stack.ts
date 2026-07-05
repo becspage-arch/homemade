@@ -405,11 +405,14 @@ export class HomemadeStack extends cdk.Stack {
         // leaves the task definition untouched and checkout stays off until the
         // secrets are actually present.
         // Bulk catalogue autopilot cadence (Deploy 2, alongside the Anthropic
-        // key). '1' turns the cron fill on; anything else pauses it. The manual
-        // admin trigger is unaffected. Gated on the same flag so Deploy 1 doesn't
-        // replace the task.
+        // key). Per craft: '1' turns that craft's cron fill on; anything else
+        // pauses it. The manual admin trigger is unaffected. Gated on the same
+        // flag so Deploy 1 doesn't replace the task.
         ...(mountAnthropicSecrets
-          ? { BULK_AUTOPILOT: process.env.BULK_AUTOPILOT === '1' ? '1' : '0' }
+          ? {
+              BULK_AUTOPILOT_CROSS_STITCH: process.env.BULK_AUTOPILOT_CROSS_STITCH === '1' ? '1' : '0',
+              BULK_AUTOPILOT_NEEDLEWORK: process.env.BULK_AUTOPILOT_NEEDLEWORK === '1' ? '1' : '0',
+            }
           : {}),
         ...(mountStripeSecrets
           ? {

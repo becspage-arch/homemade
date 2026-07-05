@@ -46,7 +46,8 @@ export default async function AdminBulkGenerationPage() {
 
   const gateWired = anthropicConfigured()
   const renderWired = process.env.LOOM_RENDER === 'fargate'
-  const autopilotOn = process.env.BULK_AUTOPILOT === '1'
+  const xsAutopilot = process.env.BULK_AUTOPILOT_CROSS_STITCH === '1'
+  const nwAutopilot = process.env.BULK_AUTOPILOT_NEEDLEWORK === '1'
 
   return (
     <div className="admin-placeholder">
@@ -72,7 +73,7 @@ export default async function AdminBulkGenerationPage() {
         <ul style={{ marginTop: 8, lineHeight: 1.8 }}>
           <li>Vision gate (Anthropic API): <strong>{gateWired ? 'wired' : 'NOT wired'}</strong>{!gateWired && ' — set ANTHROPIC_API_KEY (MOUNT_ANTHROPIC_SECRETS) or batches no-op'}</li>
           <li>Needlework render (Fargate): <strong>{renderWired ? 'wired' : 'NOT wired'}</strong>{!renderWired && ' — needlework batches no-op until LOOM_RENDER=fargate'}</li>
-          <li>Unattended cron autopilot: <strong>{autopilotOn ? 'ON' : 'paused'}</strong> (BULK_AUTOPILOT)</li>
+          <li>Cron autopilot — cross-stitch: <strong>{xsAutopilot ? 'ON' : 'paused'}</strong>, needlework: <strong>{nwAutopilot ? 'ON' : 'paused'}</strong> (stops at target automatically)</li>
         </ul>
       </section>
 

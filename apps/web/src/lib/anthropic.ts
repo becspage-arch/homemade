@@ -20,8 +20,13 @@ import 'server-only'
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages'
 const ANTHROPIC_VERSION = '2023-06-01'
 
-/** Cheap tier for the per-candidate vision gate (runs once per generated image). */
-export const GATE_MODEL = process.env.BULK_GATE_MODEL ?? 'claude-haiku-4-5-20251001'
+/**
+ * Model for the per-candidate vision gate. Sonnet 5 by default: in testing Haiku
+ * 4.5 let off-brief / malformed candidates through, and the whole point of the
+ * gate is a world-class bar, so the extra fraction-of-a-penny per image is worth
+ * it. Override with BULK_GATE_MODEL (e.g. the Haiku id) to trade strictness for cost.
+ */
+export const GATE_MODEL = process.env.BULK_GATE_MODEL ?? 'claude-sonnet-5'
 /** Slightly stronger tier for the per-batch brief planner (runs once per batch). */
 export const PLANNER_MODEL = process.env.BULK_PLANNER_MODEL ?? 'claude-sonnet-5'
 
@@ -44,8 +49,6 @@ export interface AnthropicMessageOptions {
   /** Optional images shown alongside the prompt (vision). */
   images?: AnthropicImage[]
   maxTokens?: number
-  /** 0 = deterministic-ish; the gate wants low, the planner a little higher. */
-  temperature?: number
   /** How many times to retry a transient (5xx / 429 / network) failure. */
   retries?: number
 }
@@ -83,10 +86,12 @@ export async function anthropicMessage(opts: AnthropicMessageOptions): Promise<s
   }
   content.push({ type: 'text', text: opts.prompt })
 
+  // NOTE: `temperature` is intentionally NOT sent — the current models (Sonnet 5
+  // etc.) reject it ("temperature is deprecated for this model"). The API default
+  // is fine for both the gate and the planner.
   const body = {
     model: opts.model,
     max_tokens: opts.maxTokens ?? 1024,
-    temperature: opts.temperature ?? 0,
     ...(opts.system ? { system: opts.system } : {}),
     messages: [{ role: 'user', content }],
   }

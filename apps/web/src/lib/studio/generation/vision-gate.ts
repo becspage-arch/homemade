@@ -53,10 +53,12 @@ Judge against, per design (every box must be YES):
 
 Decide ONE verdict:
 - "keep" — passes every box; a gem.
-- "repair" — a SINGLE clearly-fixable fault (washed-out → more-saturation; too sparse/simple → more-colours; mushy/confetti → fewer-colours; cut-off/garbled/wrong-subject/lopsided → reroll or re-centre). Give the repairAction.
-- "kill" — anything else: not best-seller, off-subject, gibberish text, IP-risky, near-duplicate, or multiple faults.
+- "repair" — a SINGLE clearly-fixable fault (washed-out → more-saturation; too sparse/simple → more-colours; mushy/confetti → fewer-colours; slightly cropped/lopsided → re-centre). Give the repairAction.
+- "kill" — anything else: not best-seller, off-brief (does not clearly depict what was asked), gibberish text, IP-risky, near-duplicate, or multiple faults.
 
-When in doubt between keep and repair/kill, do NOT keep. Reply ONLY with JSON:
+KILL, do not keep or repair, if ANY of these: the main subject is malformed, ugly, anatomically wrong, or a blobby/melted "AI creature"; the render doesn't clearly read as the requested subject; a face or animal has wrong/duplicated/missing eyes or features; the piece is a generic under-detailed blob. These are the misses that must not reach the catalogue — be strict, a low pass rate is correct.
+
+When in doubt between keep and repair/kill, do NOT keep. Reply ONLY with compact JSON, at most TWO short reasons (each under 12 words):
 {"verdict":"keep|repair|kill","reasons":["..."],"repairAction":"reroll|more-saturation|fewer-colours|more-colours|re-centre"}
 Omit repairAction unless verdict is "repair".`
 
@@ -84,14 +86,19 @@ We asked the illustrator for: "${ctx.subject}".${ctx.colours ? ` The converted c
 ${kept}
 Judge it and reply with the JSON verdict only.`
 
-  const raw = await anthropicJson<{ verdict?: string; reasons?: unknown; repairAction?: string }>({
-    model: GATE_MODEL,
-    system: SYSTEM,
-    prompt,
-    images: [{ buffer: png, mediaType: 'image/png' }],
-    maxTokens: 400,
-    temperature: 0,
-  })
+  let raw: { verdict?: string; reasons?: unknown; repairAction?: string }
+  try {
+    raw = await anthropicJson<{ verdict?: string; reasons?: unknown; repairAction?: string }>({
+      model: GATE_MODEL,
+      system: SYSTEM,
+      prompt,
+      images: [{ buffer: png, mediaType: 'image/png' }],
+      maxTokens: 600,
+    })
+  } catch (err) {
+    // An unparseable/truncated verdict must never publish — fail safe to kill.
+    return { verdict: 'kill', reasons: [`gate response unparseable: ${err instanceof Error ? err.message.slice(0, 80) : 'error'}`] }
+  }
 
   const verdict: GateVerdict =
     raw.verdict === 'keep' || raw.verdict === 'repair' || raw.verdict === 'kill'

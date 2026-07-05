@@ -36,8 +36,8 @@ export interface CrossStitchTheme {
 export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
   {
     id: 'cute-animals', title: 'Cute animals & pets', shelf: 'animals', shelfName: 'Animals',
-    styles: ['cute', 'bright'],
-    examples: ['a sleeping curled-up red fox', 'a corgi in a daisy patch', 'a fluffy owl on a blossom branch', 'a hedgehog carrying an apple', 'a cat loaf on a windowsill'],
+    styles: ['cute', 'bright', 'fun'],
+    examples: ['a fox in a tiny raincoat with a paper boat', 'a corgi napping in a teacup of daisies', 'an owl librarian with a stack of tiny books', 'a hedgehog under a mushroom umbrella in the rain', 'a cat curled asleep on a pile of vintage books with a candle'],
     notes: 'No readable text. Avoid red/orange-furred animals in the high-sat lanes (they cook to orange) — keep foxes/gingers at a lower saturation.',
   },
   {
@@ -69,8 +69,8 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
   },
   {
     id: 'sea-life', title: 'Sea life & coastal', shelf: 'animals', shelfName: 'Animals',
-    styles: ['bright', 'scene', 'cute'],
-    examples: ['an octopus among coral', 'a sea turtle over a reef', 'a pod of whales', 'a rockpool of starfish and shells'],
+    styles: ['bright', 'scene', 'fantasy'],
+    examples: ['a jewel-toned octopus wearing a tiny pearl crown', 'a whale carrying a whole starlit galaxy on its back', 'an art-nouveau seahorse among swirling kelp and bubbles', 'a mermaid\'s treasure grotto glowing with bioluminescence'],
   },
   {
     id: 'fantasy-creatures', title: 'Cute fantasy creatures', shelf: 'fantasy', shelfName: 'Fantasy & Fairytale',
@@ -79,8 +79,8 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
   },
   {
     id: 'florals', title: 'Florals & bouquets', shelf: 'florals', shelfName: 'Florals',
-    styles: ['bright', 'botanical'],
-    examples: ['a bunch of blush and coral peonies', 'a rustic jug of cottage-garden flowers', 'three cheerful sunflowers', 'a poppy and cornflower cluster'],
+    styles: ['bright', 'botanical', 'fantasy'],
+    examples: ['an art-nouveau spray of irises with gold-line stems', 'moody dark-academia florals — deep plum peonies and trailing ivy on near-black', 'a moon-phase arch wreathed in wildflowers and moths', 'a stained-glass window of poppies and cornflowers'],
   },
   {
     id: 'botanical-stems', title: 'Single botanical stems (tall)', shelf: 'florals', shelfName: 'Florals',
@@ -90,9 +90,9 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
   },
   {
     id: 'wreaths', title: 'Wreaths & circular', shelf: 'florals', shelfName: 'Florals',
-    styles: ['wreath'],
-    examples: ['a spring flower wreath', 'a lavender and wildflower wreath', 'a holly-and-berry winter wreath', 'a daisy and buttercup wreath'],
-    notes: 'Circular composition with a clear open centre; square aspect.',
+    styles: ['wreath', 'fantasy'],
+    examples: ['a crescent-moon wreath of wildflowers, stars and a sleeping fox', 'a wreath of luminous toadstools, ferns and fireflies', 'an art-nouveau ring of trailing wisteria and hummingbirds', 'a celestial wreath of sun, moon and botanicals'],
+    notes: 'Circular composition with a clear open centre; square aspect. Give the ring a hook (a moon, an animal, a season, a mood) — not a plain flower ring.',
   },
   {
     id: 'houseplants', title: 'Houseplants & terrariums', shelf: 'florals', shelfName: 'Florals',
@@ -176,8 +176,8 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
   {
     id: 'quirky', title: 'Fun / quirky / funny', shelf: 'whimsical', shelfName: 'Whimsical',
     styles: ['fun'],
-    examples: ['a sloth hanging from a branch looking smug', 'a grumpy cat in a party hat', 'a llama in sunglasses', 'a highland cow with a fringe over its eyes'],
-    notes: 'The visual joke carries it — a wordless gag, not a caption.',
+    examples: ['a frog knight in acorn armour with a thorn sword', 'a raccoon burglar tiptoeing off with a jam jar', 'a pug astronaut floating among doughnut planets', 'a hedgehog barista pulling a tiny espresso', 'a dinosaur in a party hat eating a giant cupcake'],
+    notes: 'The visual joke + character carries it — a wordless gag with personality, not a plain animal.',
   },
   {
     id: 'nursery', title: 'Nursery & baby', shelf: 'nursery', shelfName: 'Nursery & baby',

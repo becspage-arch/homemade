@@ -54,6 +54,23 @@ const STYLE_KEYS = Object.keys(STYLE) as StyleKey[]
 const clamp = (n: number, lo: number, hi: number): number => Math.max(lo, Math.min(hi, Math.round(n)))
 const pick = <T>(arr: readonly T[]): T => arr[Math.floor(Math.random() * arr.length)]!
 
+/**
+ * Detailed styles (realistic pet portraits, fine-art faces) need a size + colour
+ * floor — under-resolved they turn to mush (a 120-cell realistic collie has muddy
+ * eyes). Raise the brief to at least a medium canvas. Flat/graphic styles are fine
+ * small, so they're untouched.
+ */
+function applyStyleFloors(b: CrossStitchBrief): CrossStitchBrief {
+  const needsDetail: StyleKey[] = ['dogportrait', 'artface', 'icon']
+  if (!needsDetail.includes(b.style)) return b
+  return {
+    ...b,
+    w: Math.max(b.w, 160),
+    h: Math.max(b.h, 160),
+    colours: Math.max(b.colours, 34),
+  }
+}
+
 function slugify(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 48)
 }
@@ -64,11 +81,27 @@ function uniqueSuffix(): string {
 
 // ─────────────────────────── CROSS-STITCH ───────────────────────────
 
-const XS_SYSTEM = `You compose briefs for Homemade's cross-stitch catalogue — the best cross-stitch collection in the world. You pick WHAT to make; a separate illustrator + a ruthless quality gate handle HOW. Your only job is a varied, best-seller set.
+const XS_SYSTEM = `You are the creative director composing briefs for Homemade's cross-stitch catalogue — aiming to be the BEST cross-stitch collection in the world. You pick WHAT to make; a separate illustrator + a ruthless quality gate handle HOW. Your job is a set of STANDOUT designs people stop scrolling for.
+
+THE BAR — every brief must be beautiful OR genuinely fun, ideally with a hook:
+- BEAUTIFUL: rich jewel-tone fantasy, moody botanicals, art-nouveau florals, celestial + moon-phase pieces, stained-glass styling, gothic-elegant, folk-art with intricate borders, magical glowing scenes, cottagecore and dark-academia moods.
+- FUN / CHARACTERFUL: animals doing human things with real personality and props, witty visual gags, kawaii-with-attitude, unexpected charming mash-ups. Give the subject a STORY or a hook, not just "an animal".
+- Trend-aware best-sellers: cottagecore, mushroom houses, witchy apothecary, galaxy/celestial, goblincore, moody florals, moon-and-botanicals.
+
+Gold-standard examples of the bar (invent NEW ideas of THIS calibre — do not copy these):
+- "a fox in a tiny mustard raincoat reading a treasure map by lantern light"
+- "a cosy mushroom cottage with glowing windows, fairy lights and a snail visitor at dusk"
+- "a celestial black cat curled inside a crescent moon among stars and moths"
+- "a highland cow with a crown of wildflowers and a bumblebee on its nose"
+- "an art-nouveau peacock with jewel-tone tail feathers and trailing irises"
+- "a hedgehog barista pulling a tiny espresso in a woodland cafe"
+- "a witch's apothecary shelf of glowing potion bottles, herbs and a curious cat"
+
+AVOID generic filler: a plain basket of fruit, a plain single flower, "a [breed] portrait", a bare wreath — UNLESS you elevate it with a distinctive hook, character, rich styling or a twist. If it sounds like every other Etsy chart, rewrite it.
 
 Hard rules:
 - Span the full COMPLEXITY RANGE in every batch: mostly small/medium, a couple of large showpieces, and occasionally one dense 100+ colour showpiece. Never all one size.
-- Vary SUBJECT, STYLE, SHAPE (square/tall/wide/circular) and SIZE — a set that comes out samey fails even if each piece is fine.
+- Vary SUBJECT, STYLE, SHAPE (square/tall/wide/circular) and SIZE — a samey set fails even if each piece is fine.
 - Only the generic-generation lanes below. No readable text/lettering (the converter can't render text). No copying a specific shop/celebrity/brand/franchise design.
 - Respect each theme's notes (e.g. faces fair/pale only; wordless signage; tame warm-red animals).
 - Use ONLY the style keys and shelf slugs given. Reply with JSON only.`
@@ -123,7 +156,7 @@ function coerceXsBrief(raw: RawXsBrief, seen: Set<string>): CrossStitchBrief | n
   let slug = `${base}-${uniqueSuffix()}`
   while (seen.has(slug)) slug = `${base}-${uniqueSuffix()}`
   seen.add(slug)
-  return {
+  return applyStyleFloors({
     slug,
     subject: raw.subject.trim(),
     style,
@@ -134,7 +167,7 @@ function coerceXsBrief(raw: RawXsBrief, seen: Set<string>): CrossStitchBrief | n
     shelf: theme.shelf,
     shelfName: theme.shelfName,
     themeId: theme.id,
-  }
+  })
 }
 
 /** Deterministic-ish fallback brief from the curated examples (always safe). */
@@ -152,12 +185,12 @@ function sampleXsBrief(theme: CrossStitchTheme, seen: Set<string>): CrossStitchB
   let slug = `${base}-${uniqueSuffix()}`
   while (seen.has(slug)) slug = `${base}-${uniqueSuffix()}`
   seen.add(slug)
-  return {
+  return applyStyleFloors({
     slug, subject, style: pick(theme.styles),
     w: clamp(w, 90, 240), h: clamp(h, 90, 240),
     colours: clamp((loC! + hiC!) / 2, 6, 160),
     shelf: theme.shelf, shelfName: theme.shelfName, themeId: theme.id,
-  }
+  })
 }
 
 export async function planCrossStitchBriefs(count: number, recentSlugs: string[] = []): Promise<CrossStitchBrief[]> {
@@ -170,7 +203,6 @@ export async function planCrossStitchBriefs(count: number, recentSlugs: string[]
         system: XS_SYSTEM,
         prompt: xsPromptText(count, recentSlugs),
         maxTokens: 2200,
-        temperature: 0.8,
       })
       for (const r of Array.isArray(raw) ? raw : []) {
         const b = coerceXsBrief(r, seen)
@@ -259,7 +291,6 @@ export async function planNeedleworkBriefs(count: number, recentSlugs: string[] 
         system: NW_SYSTEM,
         prompt: nwPromptText(count, recentSlugs),
         maxTokens: 1800,
-        temperature: 0.8,
       })
       for (const r of Array.isArray(raw) ? raw : []) {
         const b = coerceNwBrief(r, seen)
