@@ -9,6 +9,7 @@ import * as ecr from 'aws-cdk-lib/aws-ecr'
 import * as elbv2 from 'aws-cdk-lib/aws-elasticloadbalancingv2'
 import * as iam from 'aws-cdk-lib/aws-iam'
 import * as logs from 'aws-cdk-lib/aws-logs'
+import * as s3 from 'aws-cdk-lib/aws-s3'
 import * as secretsmanager from 'aws-cdk-lib/aws-secretsmanager'
 import * as sns from 'aws-cdk-lib/aws-sns'
 import * as snsSubscriptions from 'aws-cdk-lib/aws-sns-subscriptions'
@@ -686,8 +687,117 @@ export class HomemadeStack extends cdk.Stack {
     cdk.Tags.of(runningTaskCountAlarm).add('Project', 'Homemade')
 
     // ────────────────────────────────────────────────────────────────
+    // Loom render — headless CPU Blender on Fargate (run ON-DEMAND).
+    //
+    // The loom's photoreal base render is Blender (CPU Cycles, headless). It
+    // runs locally on Rebecca's PC today; this containerises the IDENTICAL
+    // render (same pinned Blender + loom_render.py + scene.json + samples) so
+    // pattern generation can run server-side. It is NOT a long-running service
+    // — `scripts/loom-fargate-render.ts` invokes it via `ecs run-task`, one
+    // task per render, and it stops when done. Scene.json in / PNG out move
+    // through a short-lived S3 bucket. No ALB, no inbound; egress only (ECR
+    // pull + S3). This is additive infra: it does not touch the web service,
+    // task, ALB, or any secret.
+    // ────────────────────────────────────────────────────────────────
+    const loomRenderRepo = new ecr.Repository(this, 'LoomRenderRepo', {
+      repositoryName: 'homemade/loom-render',
+      removalPolicy: cdk.RemovalPolicy.RETAIN,
+      imageScanOnPush: true,
+      lifecycleRules: [
+        {
+          rulePriority: 1,
+          description: 'Keep last 5 tagged images',
+          maxImageCount: 5,
+          tagStatus: ecr.TagStatus.TAGGED,
+          tagPatternList: ['*'],
+        },
+        {
+          rulePriority: 2,
+          description: 'Expire untagged images after 7 days',
+          maxImageAge: cdk.Duration.days(7),
+          tagStatus: ecr.TagStatus.UNTAGGED,
+        },
+      ],
+    })
+
+    // Short-lived transfer bucket for scene.json (in) + rendered PNG (out).
+    // Objects are transient — expire after a day so nothing accumulates.
+    const loomScratchBucket = new s3.Bucket(this, 'LoomRenderScratch', {
+      bucketName: 'homemade-loom-render',
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
+      encryption: s3.BucketEncryption.S3_MANAGED,
+      enforceSSL: true,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      lifecycleRules: [{ expiration: cdk.Duration.days(1) }],
+    })
+
+    const loomLogGroup = new logs.LogGroup(this, 'LoomRenderLogs', {
+      logGroupName: '/homemade/loom-render',
+      retention: logs.RetentionDays.TWO_WEEKS,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+    })
+
+    // 4 vCPU / 8 GB — Cycles CPU path tracing is compute-bound; more vCPUs cut
+    // wall-clock. 8192 MiB is the Fargate minimum for 4096 CPU. Bump both here
+    // if renders get heavier.
+    const loomTaskDef = new ecs.FargateTaskDefinition(this, 'LoomRenderTask', {
+      family: 'homemade-loom-render',
+      cpu: 4096,
+      memoryLimitMiB: 8192,
+      runtimePlatform: {
+        cpuArchitecture: ecs.CpuArchitecture.X86_64,
+        operatingSystemFamily: ecs.OperatingSystemFamily.LINUX,
+      },
+    })
+    // The task role only needs read/write on the scratch bucket (no secrets —
+    // S3 access is via the task role, not credentials in the container).
+    loomScratchBucket.grantReadWrite(loomTaskDef.taskRole)
+    loomTaskDef.addContainer('loom-render', {
+      containerName: 'loom-render',
+      image: ecs.ContainerImage.fromEcrRepository(loomRenderRepo, 'latest'),
+      logging: ecs.LogDriver.awsLogs({ streamPrefix: 'loom-render', logGroup: loomLogGroup }),
+      // The bucket is a stable default; the per-job scene/out keys + samples
+      // arrive as `run-task` container overrides (see loom-fargate-render.ts).
+      environment: { LOOM_S3_BUCKET: loomScratchBucket.bucketName },
+      essential: true,
+    })
+
+    // Egress-only SG (the task pulls from ECR + talks to S3; nothing connects
+    // in). Runs in the same public subnets as the web service — no NAT.
+    const loomRenderSg = new ec2.SecurityGroup(this, 'LoomRenderSg', {
+      vpc,
+      description: 'Loom render Fargate task — egress only',
+      allowAllOutbound: true,
+    })
+
+    // ────────────────────────────────────────────────────────────────
     // Outputs
     // ────────────────────────────────────────────────────────────────
+    new cdk.CfnOutput(this, 'LoomRenderRepoUri', {
+      value: loomRenderRepo.repositoryUri,
+      description: 'Push the loom-render image here (docker build/push target)',
+    })
+    new cdk.CfnOutput(this, 'LoomRenderClusterArn', {
+      value: cluster.clusterArn,
+      description: 'LOOM_RENDER_CLUSTER for loom-fargate-render.ts',
+    })
+    new cdk.CfnOutput(this, 'LoomRenderTaskDefArn', {
+      value: loomTaskDef.taskDefinitionArn,
+      description: 'LOOM_RENDER_TASKDEF for loom-fargate-render.ts',
+    })
+    new cdk.CfnOutput(this, 'LoomRenderSubnets', {
+      value: vpc.publicSubnets.map((s) => s.subnetId).join(','),
+      description: 'LOOM_RENDER_SUBNETS (comma-separated public subnet ids)',
+    })
+    new cdk.CfnOutput(this, 'LoomRenderSecurityGroup', {
+      value: loomRenderSg.securityGroupId,
+      description: 'LOOM_RENDER_SECURITY_GROUP for loom-fargate-render.ts',
+    })
+    new cdk.CfnOutput(this, 'LoomRenderScratchBucket', {
+      value: loomScratchBucket.bucketName,
+      description: 'LOOM_RENDER_S3_BUCKET for loom-fargate-render.ts',
+    })
+
     new cdk.CfnOutput(this, 'AlbDnsName', {
       value: alb.loadBalancerDnsName,
       description: 'Point Cloudflare DNS at this',

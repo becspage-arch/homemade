@@ -73,6 +73,34 @@ block 0 of the 4,618 existing recipes. The extractor also now reads bullet /
 numbered lists nested under a Method heading. No QC rule for nutrition — it's
 correctly optional (all-or-nothing).
 
+## Loom Blender render containerised for Fargate (2026-07-05)
+
+The loom's photoreal base render (Blender, CPU Cycles, headless) can now run
+server-side on AWS Fargate as well as on Rebecca's local box — the SAME render,
+relocated, not redesigned. `loom_render.py`'s scene, lighting, samples, and
+grade are untouched; only *where* Blender runs changes. This is what lets
+needlework generation (customer create-your-own + bulk) eventually run off her
+machine.
+
+Pieces: `apps/web/scripts/loom-render/Dockerfile` builds a Debian image with the
+pinned Blender 4.2.9 + the unchanged `loom_render.py` + the AWS CLI;
+`entrypoint.sh` fetches `scene.json` from S3, runs the identical headless CPU
+Blender, and uploads the PNG. The CDK stack (`infra/lib/homemade-stack.ts`) gains
+an ECR repo `homemade/loom-render`, a 1-day-lifecycle scratch bucket
+`homemade-loom-render`, a log group `/homemade/loom-render`, and the
+`homemade-loom-render` Fargate task def (4 vCPU / 8 GB) — run on-demand via
+`ecs run-task`, not a standing service. `renderHero` selects the path by config:
+`LOOM_RENDER=fargate` (or `{ renderMode: 'fargate' }`) routes the base render
+through new `scripts/loom-fargate-render.ts` (`fargateRenderBase`, a drop-in for
+the local `blenderRenderBase` — scene up to S3, run task, poll, PNG back down);
+the local `blender.exe` stays the dev default and fallback. The rest of the chain
+(Fal upscale → fidelity gate → R2) is unchanged and runs in the caller. Transport
+is S3 with an IAM task role (no secrets in the container). Build+push (needs
+Docker) and `cdk deploy` (full-prod-env, `cdk diff` first) are Rebecca-run — see
+`apps/web/scripts/loom-render/README.md`. Cross-OS note: same Blender + script +
+scene, so visually identical, but Cycles CPU isn't guaranteed bit-identical
+Windows↔Linux — it's the same pipeline, not a pixel clone.
+
 ## The loom hero pipeline wired to one production entrypoint (2026-06-24)
 
 The proven loom render chain (deterministic stitch render → Blender photoreal base

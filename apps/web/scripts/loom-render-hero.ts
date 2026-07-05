@@ -35,6 +35,7 @@ import { patternToStrokes, type StitchedElement } from '../src/lib/loom/render/r
 import { strokesToBlenderScene } from '../src/lib/loom/render/blenderScene'
 import { loadCredentials, falCreativeUpscale } from './loom-hybrid-fal'
 import { fidelityGate, type FidelityVerdict } from './loom-fidelity-gate'
+import { fargateRenderBase } from './loom-fargate-render'
 import { r2UploadScript } from './import-lib/r2-script'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -59,7 +60,17 @@ export interface RenderHeroInput {
   strands?: number
 }
 
+export type RenderMode = 'local' | 'fargate'
+
 export interface RenderHeroOptions {
+  /**
+   * Where the Blender base render runs:
+   *   'local'   — spawn the local blender.exe (dev default).
+   *   'fargate' — run the identical render in the Fargate container (server-side).
+   * Defaults to $LOOM_RENDER === 'fargate' ? 'fargate' : 'local'. The rest of
+   * the pipeline (Fal upscale, fidelity gate, R2) is identical either way.
+   */
+  renderMode?: RenderMode
   /** Absolute path to blender.exe. Defaults to $LOOM_BLENDER or the known box. */
   blenderExe?: string
   /** Cycles samples for the base render. Default 200. */
@@ -107,6 +118,11 @@ export interface RenderHeroResult {
   attempts: Array<{ path: HeroPath; verdict: FidelityVerdict }>
   /** R2 result, when persisted. */
   r2?: { key: string; publicUrl: string }
+}
+
+function resolveRenderMode(opts: RenderHeroOptions): RenderMode {
+  if (opts.renderMode) return opts.renderMode
+  return process.env.LOOM_RENDER === 'fargate' ? 'fargate' : 'local'
 }
 
 function resolveBlender(opts: RenderHeroOptions): string {
@@ -162,7 +178,7 @@ export async function renderHero(
   options: RenderHeroOptions = {},
 ): Promise<RenderHeroResult> {
   loadCredentials()
-  const blenderExe = resolveBlender(options)
+  const renderMode = resolveRenderMode(options)
   const samples = options.samples ?? 200
   const startCreativity = options.creativity ?? 0.5
   const resemblance = options.resemblance ?? 0.85
@@ -193,9 +209,17 @@ export async function renderHero(
   writeFileSync(scenePath, JSON.stringify(scene))
   log(`[loom:${safe}] ${input.stitchedElements.length} elements -> ${strokes.length} strokes -> scene`)
 
-  // 2. photoreal base in Blender (deterministic; the exact pattern).
-  blenderRenderBase(blenderExe, scenePath, basePath, samples)
-  log(`[loom:${safe}] base rendered: ${basePath}`)
+  // 2. photoreal base in Blender (deterministic; the exact pattern). Same
+  //    render either way — local blender.exe for dev, or the Fargate container
+  //    (identical Blender + loom_render.py + scene + samples) server-side.
+  if (renderMode === 'fargate') {
+    await fargateRenderBase(scenePath, basePath, samples)
+    log(`[loom:${safe}] base rendered on Fargate: ${basePath}`)
+  } else {
+    const blenderExe = resolveBlender(options)
+    blenderRenderBase(blenderExe, scenePath, basePath, samples)
+    log(`[loom:${safe}] base rendered locally: ${basePath}`)
+  }
 
   // 3. creative-upscale finish + automated fidelity gate, with retry/fallback.
   const attempts: RenderHeroResult['attempts'] = []

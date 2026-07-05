@@ -1,0 +1,4 @@
+# The container entrypoint MUST stay LF — a CRLF shebang breaks
+# `#!/usr/bin/env bash` inside the Linux image (bash\r: bad interpreter).
+*.sh text eol=lf
+Dockerfile text eol=lf
