@@ -860,6 +860,34 @@ white ghosting the outline prompt could not overcome), culled — avoid all-whit
 **cute-quokka** — RE-ROLLED once (first roll over-orange + magenta artefacts; the re-roll fixed the warmth but left
 asymmetric eyes — one squinting), culled after one re-roll. **1048 → 1058 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-05 — Batch 07051321 (auto cron) shipped 10 gate-passed gems** (13 generated, 3 culls). RANGE 13 → 109
+colours: 3 simple cuties (baby-panda — RE-ROLLED once, first roll had a smudgy muddy face with unclear/asymmetric
+eyes swallowed by the patches, a "TWO clear black eye-patches SAME size and level, each a small CRISP separate eye
+inside its patch, neat black nose, clean white muzzle NOT smudgy" re-roll fixed it → a crisp bold black-and-white
+cub, kept; penguin-chick blue-grey fluffy chick with two symmetric highlighted eyes + orange beak, self-contrasting
+on ivory; baby-giraffe cream-and-golden with clear brown patches + two symmetric highlighted eyes) → bird (blue tit
+on apple blossom — cobalt cap + black eye-stripe + yellow breast, clean first roll) → 1 fair popart (fringebob-woman
+— even pale-beige skin at sat 0.88, symmetric forward eyes, full forehead below a blunt fringe) → fantasy (mermaid-
+dolphin chibi mermaid riding a smiling grey dolphin, symmetric defined chibi eyes, bright underwater; fairy-toadstool
+— RE-ROLLED once, first roll was hazy/bloomed pale-yellow all over, a "clear CRISP bright sky-blue + green
+background, NO glare NO bloom NO overexposed haze, wings with crisp edges" re-roll gave a bold red toadstool + clear
+symmetric-eyed fairy, kept) → 1 whimsical (hedgehog-greengrocer at a bright market stall of vivid separated produce,
+wordless tags) → 2 dense Flux-1.1-Pro showpieces (amsterdam-canal 109 — Dutch gabled canal houses + bridge + tulips
++ bikes, bright daytime; tuscan-village 107 — honey-stone houses + terracotta roofs + cypress + sunflowers + hilltop
+castle, golden daytime). Shelves: animals +4 (incl. blue tit), portraits +1, fantasy +2, whimsical +1, scenes +2.
+Master-list subjects covered: theme 4 bird (blue tit), theme 20/21 scenes (Amsterdam, Tuscan village). THREE CULLS:
+**popart-roundafro-woman** (deep-skin) — heavy pink/coral blush patches across forehead cheeks and nose + orange
+highlight blotches, skin not one even brown, the documented deep-skin double-trap that does NOT respond to prompting,
+culled without a wasted re-roll; **face-daisy-fair** (artface) — grey/green contour shading down one side of the
+face + neck + grey under-eye hollows + blotchy painterly modelling, the documented artface grey-shadow trap that
+rarely converges, culled fast (prefer popart for faces, already had a clean fair popart); **scene-owl-clockmaker**
+(whimsical) — RE-ROLLED once (first roll beige/brown-flooded one-tone with faint clock-face marks; the re-roll added
+bright separated clock cases BUT stayed muddy/hazy with a murky beige background and slightly mismatched eyes),
+still under the crisp-bright bar after one re-roll → culled, accepting 1 clean whimsical over forcing a murky second.
+NOTE: worked in an ISOLATED WORKTREE this run — a concurrent session doing its own fetch+rebase in the shared main
+checkout clobbered the in-progress brief edits once; the worktree avoided any further collision. **1058 → 1068
+PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
