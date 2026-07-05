@@ -102,3 +102,6 @@ apps/web/scripts/*-tmp.ts
 apps/web/scripts/__*.ts
 packages/db/scripts/*.tmp.ts
 packages/db/scripts/__*.ts
+
+# Service-account keys and other local secrets (never commit)
+.secrets/
