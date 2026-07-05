@@ -818,6 +818,34 @@ black markings make an orange cutie strongly self-contrasting on ivory; (3) deep
 blush) is still the #1 cull — cull fast when a clean fair popart is already in hand. **1028 → 1039 PUBLIC.**
 Deploy green + /healthz 200.
 
+**2026-07-05 — Batch 07051139 (auto cron) shipped 9 gate-passed gems** (13 generated, 4 culls — the gate held
+hard on the four hardest lanes). RANGE 12 → 111 col: cuties (baby-owl warm tawny-and-cream owlet with TWO big
+symmetric amber highlighted eyes + orange beak on a branch; baby-elephant soft blue-grey with big symmetric
+highlighted eyes + pink inner ears holding a pink flower — both self-contrasting on ivory) → bird (goldfinch —
+RE-ROLLED: the first roll bled the crimson face onto the breast as magenta patches with a muddy head, the "crimson
+confined to the small face mask ONLY, clean creamy-white breast with NO red, crisp black-and-white head" re-roll
+gave a proper clean goldfinch on purple thistles, kept) → 1 fair popart (topknot-woman — even flat pale-beige skin
+at sat 0.88, symmetric forward eyes, full forehead, neat high top-knot, red lips) → fantasy (fairy-poppy — RE-
+ROLLED: first roll had big blank green orb eyes + no clear mouth, the "TWO small neat eyes with a defined green
+iris ring + pupil + highlight NOT big blank orbs, clear smiling mouth" re-roll gave a sweet symmetric-eyed chibi
+fairy beside a red poppy, kept; unicorn-rainbow white unicorn + pastel-rainbow mane + gold horn leaping over clouds
+under a rainbow, one defined eye, bright sky-blue) → whimsical (cat-gardener grey tabby in a straw hat + green
+apron with big symmetric green eyes among delphiniums/tulips/terracotta pots, blank sign, bright separated colours)
+→ 2 dense Flux-1.1-Pro showpieces (venice-canal 111 — colourful Venetian palazzos + gondolier on a green canal +
+bell-tower, bright daytime; alpine-village 104 — wooden chalets + white church + grazing cows + wildflower meadow +
+stream + snow-capped mountains). Shelves: animals +3 (incl. goldfinch), portraits +1, fantasy +2, whimsical +1,
+scenes +2. Master-list subjects covered: theme 4 bird (goldfinch), theme scenes (Venice, alpine village). FOUR
+CULLS: **face-peony-fair** (artface) — heavy grey/pink contour shadows + blotchy mottled skin down one side, the
+documented artface grey-shadow trap that rarely converges, culled fast (prefer popart for faces, already had a
+clean fair popart); **popart-fulani-woman** (deep-skin) — pink blush blotches on both cheeks + heavy grey/ashy
+mottled skin cast (not one even warm brown), the documented deep-skin popart trap that does NOT respond to
+prompting, culled without a wasted re-roll; **cute-baby-red-panda** — RE-ROLLED once (both rolls had dark-blob eyes
++ an oversized dark nose + magenta patches flooding the cheeks and body), the mask-eye + magenta trap (like
+raccoon/meerkat/skunk) that rarely converges, culled after one re-roll; **scene-rabbit-baker** — RE-ROLLED once
+(first roll was muted/beige-flooded and hazy; the re-roll brightened the background jars BUT gave the rabbit an
+uncanny elongated stern muzzle + a washed pale top third), neither roll a clean keep, culled (cat-gardener already
+covers the whimsical lane). **1039 → 1048 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
