@@ -45,7 +45,11 @@ const DEFAULT_SETTINGS: NeedleworkSettings = {
   widthMm: 200,
   frame: 'round',
   detail: true,
-  fullScene: false,
+  // Default ON: generated / uploaded images usually have a real background, and
+  // stitching the whole picture always looks intentional. With it off, the
+  // engine cuts the subject out of its background — which leaves stray blobs
+  // when the picture is a scene rather than a clean subject on plain ground.
+  fullScene: true,
 }
 
 const SIZE_OPTIONS = [
@@ -144,7 +148,8 @@ function NeedleworkSettingsControls({
           <span>
             Full scene
             <span className="studio-p2c-checkbox-hint">
-              Stitch the whole picture edge to edge. Leave off for a single subject on bare linen.
+              On stitches the whole picture — best for scenes and any image with a
+              background. Turn off only for a single subject you want cut out onto bare linen.
             </span>
           </span>
         </label>
@@ -292,7 +297,7 @@ export function NeedleworkIdeaPanel({ signedIn, onSaved, onCancel, header }: Pan
               settings={settings}
               onChange={(patch) => setSettings((s) => ({ ...s, ...patch }))}
               busy={busy}
-              showScene={false}
+              showScene
             />
             <div className="studio-dialog-actions">
               <button type="button" className="studio-button ghost" onClick={onCancel} disabled={busy}>

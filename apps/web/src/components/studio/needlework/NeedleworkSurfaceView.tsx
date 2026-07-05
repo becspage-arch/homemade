@@ -39,7 +39,10 @@ export function NeedleworkSurfaceView({
   const hasColour = Boolean(colourMapSvg)
 
   const [zoom, setZoom] = useState(1)
-  const [view, setView] = useState<'outline' | 'colour'>('outline')
+  // Open on the colour map — it's the finished-look guide customers expect; the
+  // bare outline read as "broken" to first-time users. Fall back to outline only
+  // when there's no colour map to show.
+  const [view, setView] = useState<'outline' | 'colour'>(hasColour ? 'colour' : 'outline')
   const [tab, setTab] = useState<'colours' | 'areas'>('colours')
   const [sel, setSel] = useState<{ axis: 'f' | 'r'; id: number } | null>(null)
   const rawId = useId()
