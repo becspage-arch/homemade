@@ -1,28 +1,28 @@
 'use client'
 
-import { LibraryBig, Grid3x3, Pencil, Sparkles } from 'lucide-react'
-import {
-  COUNTED_DISCIPLINES,
-  SURFACE_DISCIPLINES,
-  DISCIPLINE_LABELS,
-  DISCIPLINE_DESCRIPTIONS,
-  type NeedleworkDiscipline,
-} from './types'
+import { LibraryBig, Sparkles } from 'lucide-react'
 import { StudioLandingHero } from '../StudioLandingHero'
 
 interface NeedleworkEmptyStateProps {
   signedIn: boolean
   userName: string | null
   onBrowseLibrary: () => void
-  onSelectDiscipline: (d: NeedleworkDiscipline) => void
   onDesignYourOwn: () => void
 }
 
+/**
+ * Needlework Studio empty state. Mirrors the cross-stitch Studio empty state
+ * (`StudioEmptyState`): browse the library, design your own, and — rendered by
+ * the shell below this — your own projects. It deliberately does NOT offer a
+ * discipline picker: only surface embroidery has published patterns, and the
+ * other disciplines (blackwork, hardanger, sashiko, …) would dead-end on empty
+ * shelves. Browsing by discipline still happens on the /needlework category
+ * page, which shows only the shelves that have content.
+ */
 export function NeedleworkEmptyState({
   signedIn,
   userName,
   onBrowseLibrary,
-  onSelectDiscipline,
   onDesignYourOwn,
 }: NeedleworkEmptyStateProps) {
   return (
@@ -33,8 +33,8 @@ export function NeedleworkEmptyState({
         userName={userName}
         lede={
           signedIn
-            ? 'Open a project below, browse the library, or pick a discipline to start.'
-            : 'Follow patterns stitch by stitch. Track counted work on the grid or annotate a surface design. Save your place, add notes, print a clean PDF.'
+            ? 'Open a project below, browse the library, or design your own from an idea or a photo.'
+            : 'Follow patterns stitch by stitch, or design your own from an idea or a photo. Save your place, add notes, print a clean PDF.'
         }
       />
 
@@ -42,24 +42,27 @@ export function NeedleworkEmptyState({
         type="button"
         className="needlework-studio-library-cta"
         onClick={onBrowseLibrary}
-        style={{ marginBottom: '2rem' }}
+        style={{ marginBottom: '1rem' }}
       >
-        <LibraryBig size={22} strokeWidth={1.4} style={{ flexShrink: 0, color: 'var(--colour-text-muted)' }} />
+        <LibraryBig
+          size={22}
+          strokeWidth={1.4}
+          style={{ flexShrink: 0, color: 'var(--colour-text-muted)' }}
+        />
         <div className="needlework-studio-library-cta-body">
           <div className="needlework-studio-library-cta-title">Browse the library</div>
           <div className="needlework-studio-library-cta-sub">
-            Blackwork, hardanger, sashiko, embroidery, goldwork and more
+            Thread-painting and surface embroidery patterns ready to stitch
           </div>
         </div>
       </button>
 
-      <button
-        type="button"
-        className="needlework-studio-library-cta"
-        onClick={onDesignYourOwn}
-        style={{ marginBottom: '2rem' }}
-      >
-        <Sparkles size={22} strokeWidth={1.4} style={{ flexShrink: 0, color: 'var(--colour-text-muted)' }} />
+      <button type="button" className="needlework-studio-library-cta" onClick={onDesignYourOwn}>
+        <Sparkles
+          size={22}
+          strokeWidth={1.4}
+          style={{ flexShrink: 0, color: 'var(--colour-text-muted)' }}
+        />
         <div className="needlework-studio-library-cta-body">
           <div className="needlework-studio-library-cta-title">Design your own</div>
           <div className="needlework-studio-library-cta-sub">
@@ -67,44 +70,6 @@ export function NeedleworkEmptyState({
           </div>
         </div>
       </button>
-
-      <p className="needlework-studio-discipline-heading">
-        <Grid3x3 size={12} strokeWidth={2} style={{ marginRight: '0.375rem', verticalAlign: 'middle' }} />
-        Counted thread
-      </p>
-      <div className="needlework-studio-empty-actions" style={{ marginBottom: '1.5rem' }}>
-        {COUNTED_DISCIPLINES.map((d) => (
-          <button
-            key={d}
-            type="button"
-            className="needlework-studio-empty-card"
-            onClick={() => onSelectDiscipline(d)}
-          >
-            <span className="needlework-studio-empty-card-tag counted">Counted</span>
-            <div className="needlework-studio-empty-card-title">{DISCIPLINE_LABELS[d]}</div>
-            <div className="needlework-studio-empty-card-sub">{DISCIPLINE_DESCRIPTIONS[d]}</div>
-          </button>
-        ))}
-      </div>
-
-      <p className="needlework-studio-discipline-heading">
-        <Pencil size={12} strokeWidth={2} style={{ marginRight: '0.375rem', verticalAlign: 'middle' }} />
-        Surface embroidery
-      </p>
-      <div className="needlework-studio-empty-actions">
-        {SURFACE_DISCIPLINES.map((d) => (
-          <button
-            key={d}
-            type="button"
-            className="needlework-studio-empty-card"
-            onClick={() => onSelectDiscipline(d)}
-          >
-            <span className="needlework-studio-empty-card-tag surface">Surface</span>
-            <div className="needlework-studio-empty-card-title">{DISCIPLINE_LABELS[d]}</div>
-            <div className="needlework-studio-empty-card-sub">{DISCIPLINE_DESCRIPTIONS[d]}</div>
-          </button>
-        ))}
-      </div>
     </section>
   )
 }

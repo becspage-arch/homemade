@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { prisma, TutorialStatus } from '@homemade/db'
+import { prisma, TutorialStatus, Visibility, PatternType } from '@homemade/db'
 import { siteUrl } from '@/lib/seo/site-url'
 
 /**
@@ -68,6 +68,33 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }),
   ])
 
+  // Pattern detail pages (/<craft>/patterns/<slug>). Only house/library patterns
+  // (ownerUserId null) that are PUBLIC, mirroring each detail route's own guard.
+  // Crochet/knitting patterns are intentionally absent — they have no public
+  // /<craft>/patterns/<slug> route (crochet surfaces via its source tutorial,
+  // already covered by the tutorial loop above).
+  const [crossStitchPatterns, needleworkPatterns] = await Promise.all([
+    prisma.pattern.findMany({
+      where: {
+        type: PatternType.CROSS_STITCH,
+        ownerUserId: null,
+        visibility: Visibility.PUBLIC,
+        slug: { not: null },
+      },
+      orderBy: { publishedAt: 'desc' },
+      select: { slug: true, updatedAt: true },
+    }),
+    prisma.needleworkPattern.findMany({
+      where: {
+        ownerUserId: null,
+        visibility: Visibility.PUBLIC,
+        slug: { not: null },
+      },
+      orderBy: { publishedAt: 'desc' },
+      select: { slug: true, updatedAt: true },
+    }),
+  ])
+
   const entries: MetadataRoute.Sitemap = []
 
   // Homepage
@@ -132,6 +159,33 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.7,
     })
+  }
+
+  // Pattern detail pages. A published pattern in a hidden category 404s to the
+  // public (same as tutorials), so only emit when its craft category is
+  // publicly visible.
+  const publicCategorySlugs = new Set(categories.map((c) => c.slug))
+  if (publicCategorySlugs.has('cross-stitch')) {
+    for (const p of crossStitchPatterns) {
+      if (!p.slug) continue
+      entries.push({
+        url: siteUrl(`/cross-stitch/patterns/${p.slug}`),
+        lastModified: p.updatedAt,
+        changeFrequency: 'monthly',
+        priority: 0.6,
+      })
+    }
+  }
+  if (publicCategorySlugs.has('needlework')) {
+    for (const p of needleworkPatterns) {
+      if (!p.slug) continue
+      entries.push({
+        url: siteUrl(`/needlework/patterns/${p.slug}`),
+        lastModified: p.updatedAt,
+        changeFrequency: 'monthly',
+        priority: 0.6,
+      })
+    }
   }
 
   // Maker profiles

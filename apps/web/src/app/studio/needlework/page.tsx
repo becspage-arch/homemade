@@ -38,7 +38,7 @@ interface PageProps {
  *
  * URL state:
  *
- *   no needleworkPatternId   → empty state (discipline picker + your projects)
+ *   no needleworkPatternId   → empty state (browse + design + your projects)
  *   needleworkPatternId=…    → load pattern + render active-project surface
  *   needleworkPatternSlug=…  → load by slug (from library deep-links)
  */

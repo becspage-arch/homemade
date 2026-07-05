@@ -5,11 +5,11 @@
  *
  * URL-driven state. Two top-level surfaces:
  *
- *   empty   — discipline picker + "Your projects" grid
+ *   empty   — browse-library + design-your-own + "Your projects" grid
  *   pattern — active-project surface (Counted / Surface view)
  *
- * The discipline picker is the empty state. The user picks a discipline to
- * browse the library; the library sends them back with ?needleworkPatternId.
+ * The empty state mirrors the cross-stitch Studio: browse the library or design
+ * your own. The library sends the user back with ?needleworkPatternId.
  */
 
 import { useCallback, useState } from 'react'
@@ -27,12 +27,8 @@ import type {
   NeedleworkPatternData,
   NeedleworkProjectProgressData,
   MyNeedleworkProjectListItem,
-  NeedleworkDiscipline,
 } from './types'
-import {
-  StudioRecentlyAddedRail,
-  type RailCard,
-} from '../StudioLandingRails'
+import { StudioRecentlyAddedRail, type RailCard } from '../StudioLandingRails'
 import './needlework-studio.css'
 
 export interface RecentlyAddedNeedleworkItem {
@@ -89,32 +85,19 @@ export function NeedleworkStudioShell({
     [router, searchParams],
   )
 
-  const browseLibrary = useCallback(
-    (discipline?: NeedleworkDiscipline) => {
-      if (discipline) {
-        const subSlugMap: Record<NeedleworkDiscipline, string> = {
-          BLACKWORK: 'blackwork',
-          HARDANGER: 'hardanger',
-          NEEDLEPOINT: 'needlepoint',
-          SASHIKO: 'sashiko',
-          SURFACE_EMBROIDERY: 'surface-embroidery',
-          CREWEL: 'surface-embroidery',
-          GOLDWORK: 'goldwork',
-          RIBBON: 'ribbon-embroidery',
-          STUMPWORK: 'stumpwork',
-          CANDLEWICKING: 'candlewicking',
-        }
-        const sub = subSlugMap[discipline]
-        router.push(`/needlework?sub=${sub}`)
-      } else {
-        router.push('/needlework')
-      }
-    },
-    [router],
-  )
+  const browseLibrary = useCallback(() => {
+    router.push('/needlework')
+  }, [router])
 
   const cancelToEmpty = useCallback(() => {
     router.replace('/studio/needlework', { scroll: false })
+  }, [router])
+
+  // Customers reach "Design your own" from the /needlework category page, so
+  // cancelling it returns them there rather than dropping them on the Studio
+  // empty state they never saw.
+  const cancelDesign = useCallback(() => {
+    router.push('/needlework')
   }, [router])
 
   // ── Design your own (create-your-own) ───────────────────────────────────────
@@ -128,7 +111,7 @@ export function NeedleworkStudioShell({
           onSaved={(newId) =>
             router.replace(`/studio/needlework?needleworkPatternId=${newId}`, { scroll: false })
           }
-          onCancel={cancelToEmpty}
+          onCancel={cancelDesign}
         />
       </div>
     )
@@ -140,17 +123,14 @@ export function NeedleworkStudioShell({
       id: p.id,
       name: p.name,
       thumbnailUrl: p.thumbnailUrl,
-      href: p.slug
-        ? `/needlework/${p.slug}`
-        : `/studio/needlework?needleworkPatternId=${p.id}`,
+      href: p.slug ? `/needlework/${p.slug}` : `/studio/needlework?needleworkPatternId=${p.id}`,
     }))
     return (
       <div className="needlework-studio-surface needlework-studio-empty-surface">
         <NeedleworkEmptyState
           signedIn={signedIn}
           userName={userName}
-          onBrowseLibrary={() => browseLibrary()}
-          onSelectDiscipline={(d) => browseLibrary(d)}
+          onBrowseLibrary={browseLibrary}
           onDesignYourOwn={() => openDesignYourOwn('idea')}
         />
         {signedIn && myProjects.length > 0 && (

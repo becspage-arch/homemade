@@ -138,15 +138,17 @@ export interface RecipeNutritionInput {
 
 export function buildRecipeSchema(input: RecipeSchemaInput): JsonLd {
   const url = siteUrl(`/${input.categorySlug}/${input.tutorialSlug}`)
-  const recipeYield = input.yieldDescription
-    ?? (input.servings ? `Serves ${input.servings}` : null)
+  const recipeYield = input.yieldDescription ?? (input.servings ? `Serves ${input.servings}` : null)
   const schema: JsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Recipe',
     '@id': `${url}#recipe`,
     name: input.title,
     description: input.excerpt ?? undefined,
-    image: input.heroUrl ?? undefined,
+    // Google wants `image` as a repeated field of absolute URLs. Recipes with
+    // no verified hero fall back to the procedural card, whose URL is relative
+    // (/api/procedural-card/…) — invalid for schema.org — so absolutise it.
+    image: absoluteImages(input.heroUrl),
     author: buildAuthorRef(input.author),
     datePublished: input.publishedAt?.toISOString(),
     dateModified: input.updatedAt.toISOString(),
@@ -156,9 +158,7 @@ export function buildRecipeSchema(input: RecipeSchemaInput): JsonLd {
     recipeYield: recipeYield ?? undefined,
     recipeCuisine: input.cuisine ?? undefined,
     recipeCategory: input.mealType ?? undefined,
-    suitableForDiet: input.dietaryFlags.length
-      ? input.dietaryFlags.map(dietaryFlagToSchema)
-      : undefined,
+    suitableForDiet: mapDiets(input.dietaryFlags),
     recipeIngredient: input.ingredients.map(formatIngredient),
     recipeInstructions: input.steps.map((step, idx) => ({
       '@type': 'HowToStep',
@@ -205,7 +205,7 @@ export function buildHowToSchema(input: HowToSchemaInput): JsonLd {
     '@id': `${url}#howto`,
     name: input.title,
     description: input.excerpt ?? undefined,
-    image: input.heroUrl ?? undefined,
+    image: absoluteImages(input.heroUrl),
     author: buildAuthorRef(input.author),
     datePublished: input.publishedAt?.toISOString(),
     dateModified: input.updatedAt.toISOString(),
@@ -242,7 +242,7 @@ export function buildArticleSchema(input: ArticleSchemaInput): JsonLd {
     '@id': `${url}#article`,
     headline: input.title,
     description: input.excerpt ?? undefined,
-    image: input.heroUrl ?? undefined,
+    image: absoluteImages(input.heroUrl),
     author: buildAuthorRef(input.author),
     publisher: { '@id': siteUrl('/#organization') },
     datePublished: input.publishedAt?.toISOString(),
@@ -383,8 +383,26 @@ function buildAuthorRef(author: TutorialAuthorRef): JsonLd {
 // Trailing connector / filler words that read as dangling at the end of a
 // short step name ("Tip the dough out onto a" → "Tip the dough out").
 const TRAILING_FILLER = new Set([
-  'a', 'an', 'the', 'to', 'and', 'or', 'with', 'until', 'onto', 'into',
-  'of', 'in', 'on', 'for', 'at', 'then', 'your', 'it', 'over', 'up',
+  'a',
+  'an',
+  'the',
+  'to',
+  'and',
+  'or',
+  'with',
+  'until',
+  'onto',
+  'into',
+  'of',
+  'in',
+  'on',
+  'for',
+  'at',
+  'then',
+  'your',
+  'it',
+  'over',
+  'up',
 ])
 
 /**
@@ -470,20 +488,50 @@ function formatIngredient(row: RecipeIngredientRow): string {
   return parts.join(' ').replace(' ,', ',').trim()
 }
 
-// Maps Homemade dietaryFlags to schema.org RestrictedDiet enum values.
-// Unknown flags drop out — schema.org rejects free-form values.
-const DIETARY_TO_SCHEMA: Record<string, string> = {
+// Maps Homemade dietaryFlags to schema.org RestrictedDiet enum values. The
+// dietaryFlags column is dirty — the same diet appears as `vegetarian`,
+// `VEGETARIAN`, `v`; `glutenFree`, `GLUTEN_FREE`, `gf`; and so on — so we
+// normalise (lower-case, strip separators) before lookup rather than emit a
+// free-form value, which Google rejects as invalid. Only flags with a real
+// RestrictedDiet equivalent are emitted: nutFree / pescatarian have no
+// schema.org value, and `contains*` are allergen *warnings* (the opposite of a
+// suitability claim) — both are dropped, never mislabelled.
+const DIET_ALIASES: Record<string, string> = {
   vegetarian: 'https://schema.org/VegetarianDiet',
+  v: 'https://schema.org/VegetarianDiet',
   vegan: 'https://schema.org/VeganDiet',
-  glutenFree: 'https://schema.org/GlutenFreeDiet',
+  vg: 'https://schema.org/VeganDiet',
+  glutenfree: 'https://schema.org/GlutenFreeDiet',
+  gf: 'https://schema.org/GlutenFreeDiet',
+  dairyfree: 'https://schema.org/LowLactoseDiet',
+  df: 'https://schema.org/LowLactoseDiet',
   halal: 'https://schema.org/HalalDiet',
   kosher: 'https://schema.org/KosherDiet',
-  lowFodmap: 'https://schema.org/LowLactoseDiet',
-  lowCarb: 'https://schema.org/LowCalorieDiet',
 }
 
-function dietaryFlagToSchema(flag: string): string {
-  return DIETARY_TO_SCHEMA[flag] ?? flag
+/** Valid, de-duplicated schema.org RestrictedDiet URLs for the flags, or undefined. */
+function mapDiets(flags: string[]): string[] | undefined {
+  const out = new Set<string>()
+  for (const raw of flags) {
+    const key = raw
+      .trim()
+      .toLowerCase()
+      .replace(/[\s_-]+/g, '')
+    const url = DIET_ALIASES[key]
+    if (url) out.add(url)
+  }
+  return out.size ? [...out] : undefined
+}
+
+/**
+ * schema.org `image` as a repeated field of absolute URLs. Procedural-card
+ * hero fallbacks are relative (/api/procedural-card/…); Google needs absolute
+ * URLs, so prefix the origin when the value isn't already absolute.
+ */
+function absoluteImages(heroUrl: string | null): string[] | undefined {
+  if (!heroUrl) return undefined
+  const abs = /^https?:\/\//i.test(heroUrl) ? heroUrl : siteUrl(heroUrl)
+  return [abs]
 }
 
 function stripUndefined(obj: JsonLd): JsonLd {
