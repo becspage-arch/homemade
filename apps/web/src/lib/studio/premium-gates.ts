@@ -31,6 +31,7 @@ export const STUDIO_PREMIUM_GATING_ENABLED = false
 
 export type StudioGateFeature =
   | 'PHOTO_TO_CHART'
+  | 'IDEA_TO_CHART'
   | 'PUBLIC_SUBMISSION'
   | 'SEWING_PERSONALISATION'
   | 'SEWING_PERSONALISATION_LAYERED_PDF'
@@ -55,6 +56,10 @@ const COPY: Record<StudioGateFeature, { message: string; rationale: string }> = 
   PHOTO_TO_CHART: {
     message: 'Photo-to-chart is a Homemade Premium feature.',
     rationale: 'Premium turns any photo into a stitchable pattern, palette-mapped to DMC, Anchor, or Madeira.',
+  },
+  IDEA_TO_CHART: {
+    message: 'Designing a pattern from an idea is a Homemade Premium feature.',
+    rationale: 'Premium draws your idea, lets you regenerate until you love it, then turns it into your own stitchable chart.',
   },
   PUBLIC_SUBMISSION: {
     message: 'Submitting to the public library is a Homemade Premium feature.',

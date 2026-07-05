@@ -24,6 +24,7 @@ import { ToolDock } from './ToolDock'
 import { StudioEmptyState } from './StudioEmptyState'
 import { NewBlankPanel } from './NewBlankPanel'
 import { PhotoToChartPanel } from './PhotoToChartPanel'
+import { IdeaToPatternPanel } from './IdeaToPatternPanel'
 import { MyPatternsGrid } from './MyPatternsGrid'
 import { useStudioAutosave } from './use-studio-autosave'
 import { BrandSwapDialog } from './BrandSwapDialog'
@@ -35,7 +36,7 @@ import {
   type RailCard,
 } from '../StudioLandingRails'
 
-export type StudioStartMode = 'empty' | 'pattern' | 'new-blank' | 'new-photo'
+export type StudioStartMode = 'empty' | 'pattern' | 'new-blank' | 'new-photo' | 'new-idea'
 
 export interface MyPatternListItem {
   id: string
@@ -150,6 +151,27 @@ export function StudioShell({
         />
       )
     }
+    if (startMode === 'new-idea') {
+      // Describe-an-idea is create-your-own — premium, same as photo-to-chart.
+      // Non-premium signed-in Makers see the calm upgrade block, not the panel.
+      if (!isPremium) {
+        const copy = getStudioGateCopy('IDEA_TO_CHART')
+        return (
+          <div className="studio-empty-surface">
+            <div style={{ maxWidth: 560, margin: '48px auto', padding: '0 24px' }}>
+              <UpgradeBlock message={copy.message} rationale={copy.rationale} />
+            </div>
+          </div>
+        )
+      }
+      return (
+        <IdeaToPatternPanel
+          signedIn={signedIn}
+          onSaved={(newId) => router.replace(`/studio/cross-stitch?patternId=${newId}`, { scroll: false })}
+          onCancel={() => router.replace('/studio/cross-stitch', { scroll: false })}
+        />
+      )
+    }
     const recentlyAddedRailItems: RailCard[] = recentlyAdded.map((p) => ({
       id: p.id,
       name: p.name,
@@ -166,6 +188,7 @@ export function StudioShell({
           onBrowseLibrary={() => router.push('/cross-stitch/patterns')}
           onStartBlank={() => router.replace('/studio/cross-stitch?new=blank', { scroll: false })}
           onStartFromPhoto={() => router.replace('/studio/cross-stitch?new=photo', { scroll: false })}
+          onStartFromIdea={() => router.replace('/studio/cross-stitch?new=idea', { scroll: false })}
         />
         {signedIn && myPatterns.length > 0 && (
           <MyPatternsGrid

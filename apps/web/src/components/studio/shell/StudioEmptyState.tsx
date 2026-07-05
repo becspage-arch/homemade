@@ -9,7 +9,7 @@
  * and three muted cards that read as choices, not as a menu.
  */
 
-import { LibraryBig, Image as ImageIcon, FilePlus2 } from 'lucide-react'
+import { LibraryBig, Image as ImageIcon, FilePlus2, Sparkles } from 'lucide-react'
 import { StudioLandingHero } from '../StudioLandingHero'
 
 interface StudioEmptyStateProps {
@@ -18,6 +18,7 @@ interface StudioEmptyStateProps {
   onBrowseLibrary: () => void
   onStartBlank: () => void
   onStartFromPhoto: () => void
+  onStartFromIdea: () => void
 }
 
 export function StudioEmptyState({
@@ -26,6 +27,7 @@ export function StudioEmptyState({
   onBrowseLibrary,
   onStartBlank,
   onStartFromPhoto,
+  onStartFromIdea,
 }: StudioEmptyStateProps) {
   return (
     <section className="studio-empty">
@@ -46,6 +48,13 @@ export function StudioEmptyState({
           <div className="studio-empty-card-body">
             <div className="studio-empty-card-title">Browse the library</div>
             <div className="studio-empty-card-sub">Designed patterns ready to stitch</div>
+          </div>
+        </button>
+        <button type="button" className="studio-empty-card" onClick={onStartFromIdea}>
+          <Sparkles size={24} strokeWidth={1.4} />
+          <div className="studio-empty-card-body">
+            <div className="studio-empty-card-title">Describe an idea</div>
+            <div className="studio-empty-card-sub">Tell us your idea, we draw it, you stitch it</div>
           </div>
         </button>
         <button type="button" className="studio-empty-card" onClick={onStartFromPhoto}>

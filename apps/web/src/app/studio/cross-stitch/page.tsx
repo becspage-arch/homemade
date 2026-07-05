@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 interface PageProps {
   searchParams: Promise<{
     patternId?: string
-    new?: 'blank' | 'photo'
+    new?: 'blank' | 'photo' | 'idea'
     progress?: 'local' | 'server'
   }>
 }
@@ -32,7 +32,8 @@ interface PageProps {
  *   no patternId, no ?new            → empty state (sign-in hero or "Your patterns")
  *   patternId=…                      → load that pattern + render the Studio
  *   ?new=blank                       → blank-canvas dialog
- *   ?new=photo                       → photo-to-chart panel
+ *   ?new=photo                       → photo-to-chart panel (premium)
+ *   ?new=idea                        → describe-an-idea panel (premium)
  *
  * Library patterns load read-only until the user makes their first edit;
  * the silent-fork path then swaps `patternId` for the new fork's id.
@@ -47,7 +48,7 @@ export default async function CrossStitchStudioPage({ searchParams }: PageProps)
   // but opening a working surface — a pattern, a blank canvas, photo-to-chart —
   // needs a free account. Content viewing on /cross-stitch/patterns stays open.
   const wantsWorkingSurface =
-    Boolean(sp.patternId) || sp.new === 'blank' || sp.new === 'photo'
+    Boolean(sp.patternId) || sp.new === 'blank' || sp.new === 'photo' || sp.new === 'idea'
   if (!user && wantsWorkingSurface) {
     const q = new URLSearchParams()
     if (sp.patternId) q.set('patternId', sp.patternId)
@@ -168,12 +169,14 @@ export default async function CrossStitchStudioPage({ searchParams }: PageProps)
     thumbnailUrl: patternHeroUrl({ id: p.id, hero: p.hero }, 'card'),
   }))
 
-  const startMode: 'empty' | 'pattern' | 'new-blank' | 'new-photo' = pattern
+  const startMode: 'empty' | 'pattern' | 'new-blank' | 'new-photo' | 'new-idea' = pattern
     ? 'pattern'
     : sp.new === 'blank'
     ? 'new-blank'
     : sp.new === 'photo'
     ? 'new-photo'
+    : sp.new === 'idea'
+    ? 'new-idea'
     : 'empty'
 
   return (

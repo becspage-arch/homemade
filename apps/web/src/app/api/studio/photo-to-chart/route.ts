@@ -1,9 +1,8 @@
 import { createHash } from 'crypto'
 import { NextResponse } from 'next/server'
-import { computePatternMetrics } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { hasPremium } from '@/lib/entitlements'
-import { photoToPatternData } from '@/lib/studio/photo-to-pattern'
+import { imageToPattern } from '@/lib/studio/generation/pattern-engine'
 import {
   downscaleCacheKey,
   getDownscale,
@@ -16,11 +15,12 @@ export const runtime = 'nodejs'
 /**
  * POST /api/studio/photo-to-chart — image → pattern data.
  *
- * The heavy lifting (sharp + image-q + nearest-floss + confetti pass)
- * lives in `@/lib/studio/photo-to-pattern` so the photographic-seed
- * script can call the same pipeline server-side. This route adds the
- * per-(image, dimensions, bg-removal) LRU cache so a slider drag that
- * only changes the colour count or confetti pass skips the sharp
+ * The heavy lifting (sharp + image-q + nearest-floss + confetti pass) is the
+ * rigorous converter behind `imageToPattern` in the shared `pattern-engine`
+ * service — the same convert path the bulk catalogue routine and the
+ * describe-an-idea flow use, so a customer's own pattern is catalogue quality.
+ * This route adds the per-(image, dimensions, bg-removal) LRU cache so a slider
+ * drag that only changes the colour count or confetti pass skips the sharp
  * downscale step.
  */
 export async function POST(req: Request) {
@@ -69,12 +69,12 @@ export async function POST(req: Request) {
     backgroundRemoval: removeBackground,
   })
   const cached = getDownscale(cacheKey)
-  const { data, rgba } = await photoToPatternData(
+  const { data, metrics, rgba } = await imageToPattern(
     buf,
     { width, height, colours, fabricCount, brand, confettiMin, backgroundRemoval: removeBackground },
     cached?.rgba ?? null,
   )
   if (!cached) putDownscale(cacheKey, rgba, width, height)
 
-  return NextResponse.json({ pattern: data, metrics: computePatternMetrics(data) })
+  return NextResponse.json({ pattern: data, metrics })
 }
