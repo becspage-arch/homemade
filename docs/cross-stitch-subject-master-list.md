@@ -921,6 +921,42 @@ the #1 cull and a single re-roll only trades faults; artface grey/blotch trap cu
 is in hand; the cute/whimsical warm-fur (fox, ginger beaver) magenta/flood trap is a two-sided knife — raising sat
 cooks magenta, dropping it washes the piece pale. **1068 → 1076 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-05 — Batch 07051643 (auto cron) shipped 9 gate-passed gems** (13 generated, 4 culls — the gate held
+hard on ALL THREE face lanes plus one warm-fur cutie). RANGE 14 → 111 col: cuties (baby-hedgehog warm-brown spiny
+coat + cream face + TWO symmetric highlighted eyes + dark nose among green leaves and a red berry, strong self-
+contrast on ivory; grey-kitten — RE-ROLLED once, first roll had messy amber eyes full of red/yellow colour noise +
+a magenta nose-smear + pink flooding the grey fur, a "clean even blue-grey fur NO pink NO magenta anywhere, each eye
+a clean amber iris + single dark pupil + one white highlight and NOTHING else inside it, ONE small clean pink nose"
+re-roll gave a sweet clean symmetric-eyed British-shorthair kitten with a purple flower, kept) → bird (robin —
+warm orange-red breast cleanly confined to the breast/face with NO magenta bleed, brown-grey back, on a mossy twig
+framed by green holly and red berries, one clear eye, clean first roll) → fantasy (dragon-treasure chubby emerald
+baby dragon with ONE well-defined eye curled round a bright pile of red/blue/purple gems + gold, cheerful crisp;
+mermaid-pearl chibi mermaid with auburn hair + TWO symmetric defined blue eyes holding a pearl in an open clam +
+orange starfish, bright underwater) → whimsical (penguin-greengrocer black-and-white penguin in a green apron at a
+bright produce stall with steel scales + blank tags, two symmetric forward eyes, striped awning, clean and bright;
+hedgehog-tailor brown hedgehog in round glasses + waistcoat sewing colourful patchwork with vivid separated thread
+spools, wordless props — focal area charming though the upper-third background runs a touch beige) → 2 dense Flux-
+1.1-Pro showpieces (hallstatt-lake 100 — pastel red-roofed alpine village + church spire + boats on a blue lake
+reflecting snow-capped peaks; english-cottage-garden 111 — thatched rose-clad cottage + deep hollyhock/foxglove/
+delphinium borders + lily pond + terracotta pots, bright summer). Shelves: animals +3 (incl. robin), fantasy +2,
+whimsical +2, scenes +2; portraits +0 this batch. Master-list subjects covered: theme 4 bird (robin), theme 20/21
+scenes (Hallstatt alpine village, English cottage garden). FOUR CULLS — ALL THREE FACES fell plus one warm-fur
+cutie: **popart-flattwists-woman** (deep-skin) — mottled grey contour shadows down one side + pale glowing highlight
+blotches on forehead/cheek/chin, not one even brown, the documented deep-skin double-trap that does NOT respond to
+prompting, culled WITHOUT a wasted re-roll (no deep-skin popart this batch — correct per playbook, don't force it);
+**face-tulip-fair** (artface) — heavy grey contour shadows down BOTH sides + a hazy washed lower face dissolving
+into the background bloom, the documented artface grey-shadow/haze trap that rarely converges, culled fast (the
+tulip crown was lovely but the face is the point); **popart-messybun-woman** — first roll had grey/olive contour
+shadows + grey under-eye hollows (the grey-shadow trap creeping into the popart lane); the heavier "ONE flat even
+tone edge to edge, NO grey contour NO under-eye hollows, blush only two flat spots" RE-ROLL came back ⚠️FLAT (a dead
+1-colour generation), culled — no fair popart landed so portraits shipped 0 (acceptable, don't force faces);
+**cute-beagle-puppy** — RE-ROLLED once (first roll cooked the tan ears bright orange + a seam line down the face +
+weak washed outlines on the white legs; the re-roll traded it for stray magenta outline stitches + asymmetric eyes,
+still orange), the warm-fur-dog cook (orange + magenta two-sided knife), culled after one re-roll (hedgehog + grey-
+kitten meet the cutie minimum). Lesson RECONFIRMED: all three FACE lanes are the batch's hardest — deep-skin popart
++ artface both cull on the grey-shadow/blotch trap, and a fair popart can still catch grey contouring; a batch
+shipping 0 portraits is fine, never force a shadowed face. **1076 → 1085 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
