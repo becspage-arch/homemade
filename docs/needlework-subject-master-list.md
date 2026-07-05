@@ -841,6 +841,53 @@ REPAIRS (2, both to a pass — 0 culls):
   uncommitted Batch-21 JOBS block + tmp scripts; all gems already persisted to the DB so nothing lost — restored the driver from a
   scratchpad backup (diff-verified: 11 insertions, 0 deletions) before committing. All 9 chosen themes already `started`; no status flips.
 
+**Batch 22 (2026-07-05)** — 9 gems PUBLIC, 1 culled (tuxedocat). **221 PUBLIC total.** Full range across fresh themes
+1/2/4/5/8/9/10/13/14/25: 1 simple (hermitcrab D·s 68c), 5 mid (poodle D·m 93c, pinemarten D·m 121c, turkey D·m 170c,
+calathea→Red Aglaonema D·m 98c, pegasus D·m 69c), 1 rich (hibiscus D·r 165c), 2 XL (fourseasonswreath D·XL 347c hooped
+floral wreath; flowershop B·XL 349c frameless shopfront scene). Sheet:
+media.homemade.education/scratch-review/88e06e72-0106-46bd-8c36-81255f052a78.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| poodle | Apricot Poodle | 2 Dog breeds | D·m (93c) | hoop |
+| pinemarten | Pine Marten | 4 Woodland | D·m (121c) | hoop |
+| turkey | Turkey in Full Fan | 5 Farm animals | D·m (170c) | hoop |
+| calathea | Red Aglaonema | 14 Houseplants | D·m (98c) | hoop |
+| hibiscus | Hibiscus Bloom | 10 Florals | D·r (165c) | hoop |
+| fourseasonswreath | Four Seasons Wreath | 13 Wreaths showpiece | D·XL (347c) | hoop |
+| hermitcrab | Hermit Crab | 8 Sea life & coastal | D·s (68c) | hoop |
+| pegasus | Pegasus | 9 Cute fantasy | D·m (69c) | hoop |
+| flowershop | The Flower Shop | 25 Cottages & cosy scenes | B·XL (349c) | frameless |
+
+REPAIRS + CULL (repair-first):
+- **hermitcrab** first rendered as a cinnamon-swirl/snail hybrid (a huge flat spiral shell with a snail-foot, barely a crab). Delete
+  flux + re-roll "a crab body with jointed legs, claws and stalked eyes clearly emerging from a spiral shell, side view, definitely
+  not a snail, no cinnamon-bun swirl" → a clear recognisable hermit crab carrying its shell, gem. LESSON: a shelled subject can render
+  as a flat decorative swirl; force the animal to clearly EMERGE from the shell in side view.
+- **pegasus** first FAILED — the pale dove-grey/white coat was eaten by the cream ground (unicorn/puffin white-on-cream class):
+  torso missing, legs floating disconnected, only 2982 stitches. Delete flux + re-roll a SATURATED lavender-lilac coat with bold dark
+  charcoal outlines "clearly much darker than the background, all four legs connected to a solid body, no bare gaps" → a complete
+  whimsical pastel pegasus (6403 stitches), gem. Same saturate-the-pale-subject fix as unicorn/teapot.
+- **calathea → renamed "Red Aglaonema"**: rendered with red-and-green variegated leaves (classic red aglaonema, not a green/pink
+  calathea). Clean lush potted plant, solid overlapping leaves (no gaps) → renamed the row to what actually rendered, same accuracy
+  discipline as lunamoth→Emperor Moth / chaffinch→Eastern Bluebird. Gem.
+- **pinemarten** rendered with bright BLUE eyes (pine martens have dark eyes) but is otherwise a rich, clean, beautiful woodland
+  portrait — kept as a gem (minor stylistic quirk, subject unmistakable). Accuracy note logged, not worth gambling the nice pose on a re-roll.
+- **tuxedocat CULLED** (only cull). Two render attempts (original, then explicit "pale pink inner ears, no red" + `tameWarm:true`): both
+  kept vivid NEON-RED inner ears + an orange nose (source-baked warm that resists `tameWarm`, the siamese/britishshorthair/shibainu/
+  scottishfold/panda class) and the fur rendered grey not black. A third re-roll ("dark-grey inner ears, no colour, solid black fur") was
+  authored but the sibling cross-stitch cron swept the driver before it rendered; cat breeds/colours already covered (ragdoll/mainecoon/
+  bengal/russianblue/tortoiseshellcat) → held the world-class bar and culled rather than ship red-eared. Confirms the standing rule:
+  Flux bakes warm inner ears on cats and nothing removes it — a hard subject, cull after 2 attempts.
+- MACHINE: one Blender throughout (checked before every render command; groups of 3 hooped rendered sequentially in one process each,
+  repairs in one process, the frameless flowershop scene separately — never concurrent). `upscale@0.5 fetch-failed` on every render
+  (non-fatal, @0.35 fallback; all gates passed). CONCURRENCY (recurred, badly this batch): sibling sessions FF'd/stashed the shared MAIN
+  checkout repeatedly mid-batch — the cross-stitch cron (`git stash -u`) AND a separate needlework "create-your-own" session (commit
+  `2c910b09`) — sweeping my uncommitted `needlework-paint.ts` edits at least 3 times (flowershop + tuxedocat retry both printed "no job").
+  All gems already persisted to the DB so nothing lost; restored the driver from a scratchpad backup each time (diff-verified 11 insertions).
+  FUTURE: strongly consider working the batch in a throwaway worktree — the shared checkout is now contended by multiple sibling sessions.
+  All 10 chosen themes already `started`; no status flips.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
