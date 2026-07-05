@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { prisma, Visibility } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { hasPremium } from '@/lib/entitlements'
 import { NeedleworkStudioShell } from '@/components/studio/needlework/NeedleworkStudioShell'
+import type { NeedleworkDesignMode } from '@/components/studio/needlework/NeedleworkCreateYourOwnPanel'
 import type {
   NeedleworkPatternData,
   NeedleworkVectorData,
@@ -27,6 +29,7 @@ interface PageProps {
   searchParams: Promise<{
     needleworkPatternId?: string
     needleworkPatternSlug?: string
+    create?: string
   }>
 }
 
@@ -42,6 +45,10 @@ interface PageProps {
 export default async function NeedleworkStudioPage({ searchParams }: PageProps) {
   const sp = await searchParams
   const user = await getCurrentDbUser()
+  const isPremium = hasPremium(user)
+
+  // ?create=idea|photo → the premium "Design your own" surface.
+  const createParam = sp.create === 'idea' || sp.create === 'photo' ? sp.create : null
 
   let pattern: NeedleworkPatternData | null = null
   let progress: NeedleworkProjectProgressData | null = null
@@ -230,18 +237,20 @@ export default async function NeedleworkStudioPage({ searchParams }: PageProps) 
     thumbnailUrl: mediaUrl(p.thumbnail, 'card'),
   }))
 
-  const startMode = pattern ? 'pattern' : 'empty'
+  const startMode = pattern ? 'pattern' : createParam ? 'new-design' : 'empty'
 
   return (
     <NeedleworkStudioShell
       startMode={startMode}
       signedIn={Boolean(user)}
+      isPremium={isPremium}
       userEmail={user?.email ?? null}
       userName={user?.name ?? null}
       pattern={pattern}
       progress={progress}
       myProjects={myProjects}
       recentlyAdded={recentlyAdded}
+      designMode={(createParam ?? undefined) as NeedleworkDesignMode | undefined}
     />
   )
 }

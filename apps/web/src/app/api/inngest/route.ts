@@ -13,6 +13,7 @@ import { autopilotHaltNotify } from '@/inngest/functions/autopilot-halt-notify'
 import { scheduledStepPush } from '@/inngest/functions/scheduled-step-push'
 import { techniquePublishSweep } from '@/inngest/functions/technique-publish-sweep'
 import { moderateUserRecipesCron } from '@/inngest/functions/moderate-user-recipes-cron'
+import { needleworkHeroRender } from '@/inngest/functions/needlework-hero-render'
 
 export const { GET, POST, PUT } = serve({
   client: inngest,
@@ -28,5 +29,6 @@ export const { GET, POST, PUT } = serve({
     scheduledStepPush,
     techniquePublishSweep,
     moderateUserRecipesCron,
+    needleworkHeroRender,
   ],
 })

@@ -67,6 +67,13 @@ ENV NEXT_TELEMETRY_DISABLED=1
 # chart symbols. fontconfig is required for librsvg to discover them.
 RUN apk add --no-cache fontconfig font-dejavu
 
+# AWS CLI v2 (Alpine community repo) — the loom's Fargate render path
+# (scripts/loom-fargate-render.ts, reached by the needlework create-your-own
+# hero job when LOOM_RENDER=fargate) shells out to `aws ecs run-task` +
+# `aws s3 cp` to drive the render task and move scene/PNG through S3. Inert
+# unless that env is set (see MOUNT_LOOM_RENDER in infra/lib/homemade-stack.ts).
+RUN apk add --no-cache aws-cli
+
 RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
 
 # Next.js standalone output for a monorepo lays the tree as:

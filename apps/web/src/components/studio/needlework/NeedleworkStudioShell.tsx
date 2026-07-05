@@ -19,6 +19,10 @@ import { NeedleworkEmptyState } from './NeedleworkEmptyState'
 import { MyNeedleworkProjectsGrid } from './MyNeedleworkProjectsGrid'
 import { NeedleworkStudioToolbar } from './NeedleworkStudioToolbar'
 import { NeedleworkActiveProject } from './NeedleworkActiveProject'
+import {
+  NeedleworkCreateYourOwnPanel,
+  type NeedleworkDesignMode,
+} from './NeedleworkCreateYourOwnPanel'
 import type {
   NeedleworkPatternData,
   NeedleworkProjectProgressData,
@@ -38,31 +42,43 @@ export interface RecentlyAddedNeedleworkItem {
   thumbnailUrl: string | null
 }
 
-export type NeedleworkStudioStartMode = 'empty' | 'pattern'
+export type NeedleworkStudioStartMode = 'empty' | 'pattern' | 'new-design'
 
 interface NeedleworkStudioShellProps {
   startMode: NeedleworkStudioStartMode
   signedIn: boolean
+  isPremium: boolean
   userEmail: string | null
   userName: string | null
   pattern: NeedleworkPatternData | null
   progress: NeedleworkProjectProgressData | null
   myProjects: MyNeedleworkProjectListItem[]
   recentlyAdded?: RecentlyAddedNeedleworkItem[]
+  /** Which tab the "Design your own" surface opens on. */
+  designMode?: NeedleworkDesignMode
 }
 
 export function NeedleworkStudioShell({
   startMode,
   signedIn,
+  isPremium,
   userName,
   pattern,
   progress,
   myProjects,
   recentlyAdded = [],
+  designMode,
 }: NeedleworkStudioShellProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [notesOpen, setNotesOpen] = useState(false)
+
+  const openDesignYourOwn = useCallback(
+    (m: NeedleworkDesignMode) => {
+      router.push(`/studio/needlework?create=${m}`)
+    },
+    [router],
+  )
 
   const openProject = useCallback(
     (id: string) => {
@@ -101,6 +117,23 @@ export function NeedleworkStudioShell({
     router.replace('/studio/needlework', { scroll: false })
   }, [router])
 
+  // ── Design your own (create-your-own) ───────────────────────────────────────
+  if (startMode === 'new-design') {
+    return (
+      <div className="needlework-studio-surface needlework-studio-empty-surface">
+        <NeedleworkCreateYourOwnPanel
+          signedIn={signedIn}
+          isPremium={isPremium}
+          initialMode={designMode ?? 'idea'}
+          onSaved={(newId) =>
+            router.replace(`/studio/needlework?needleworkPatternId=${newId}`, { scroll: false })
+          }
+          onCancel={cancelToEmpty}
+        />
+      </div>
+    )
+  }
+
   // ── Empty state ────────────────────────────────────────────────────────────
   if (startMode === 'empty' || !pattern) {
     const recentlyAddedRailItems: RailCard[] = recentlyAdded.map((p) => ({
@@ -118,6 +151,7 @@ export function NeedleworkStudioShell({
           userName={userName}
           onBrowseLibrary={() => browseLibrary()}
           onSelectDiscipline={(d) => browseLibrary(d)}
+          onDesignYourOwn={() => openDesignYourOwn('idea')}
         />
         {signedIn && myProjects.length > 0 && (
           <MyNeedleworkProjectsGrid projects={myProjects} onOpen={openProject} />

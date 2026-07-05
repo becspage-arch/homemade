@@ -350,7 +350,7 @@ export class HomemadeStack extends cdk.Stack {
       }),
     )
 
-    taskDef.addContainer('web', {
+    const webContainer = taskDef.addContainer('web', {
       containerName: 'web',
       image: ecs.ContainerImage.fromEcrRepository(webRepo, 'latest'),
       logging: ecs.LogDriver.awsLogs({ streamPrefix: 'web', logGroup }),
@@ -770,6 +770,59 @@ export class HomemadeStack extends cdk.Stack {
       description: 'Loom render Fargate task - egress only',
       allowAllOutbound: true,
     })
+
+    // ────────────────────────────────────────────────────────────────
+    // Wire the WEB task to invoke the loom render on Fargate server-side.
+    //
+    // The customer create-your-own needlework feature renders its hero via the
+    // loom's Fargate task (the `needlework/hero.render` Inngest job calls
+    // `renderHero` with LOOM_RENDER=fargate). That path shells out to the AWS
+    // CLI (baked into the web image) to `ecs run-task` the loom-render task and
+    // move scene/PNG through the scratch bucket. It needs the six LOOM_RENDER_*
+    // env vars + IAM to run the task and pass its roles. FAL_KEY + R2 + the
+    // Cloudflare creds the render also uses are already on the web task.
+    //
+    // Flag-gated exactly like the secret mounts above (MOUNT_R2_SECRETS etc.) so
+    // it is INERT on any deploy that doesn't set MOUNT_LOOM_RENDER=1 — turning
+    // it on is a deliberate opt-in that only adds env + IAM to the web task.
+    if (process.env.MOUNT_LOOM_RENDER === '1') {
+      webContainer.addEnvironment('LOOM_RENDER', 'fargate')
+      webContainer.addEnvironment('LOOM_RENDER_S3_BUCKET', loomScratchBucket.bucketName)
+      webContainer.addEnvironment('LOOM_RENDER_CLUSTER', cluster.clusterArn)
+      webContainer.addEnvironment('LOOM_RENDER_TASKDEF', loomTaskDef.taskDefinitionArn)
+      webContainer.addEnvironment(
+        'LOOM_RENDER_SUBNETS',
+        vpc.publicSubnets.map((s) => s.subnetId).join(','),
+      )
+      webContainer.addEnvironment('LOOM_RENDER_SECURITY_GROUP', loomRenderSg.securityGroupId)
+      webContainer.addEnvironment('LOOM_RENDER_REGION', this.region)
+
+      // Move scene.json in / rendered PNG out through the scratch bucket.
+      loomScratchBucket.grantReadWrite(taskDef.taskRole)
+      // Launch the render task (any revision of the loom-render family) …
+      taskDef.taskRole.addToPrincipalPolicy(
+        new iam.PolicyStatement({
+          actions: ['ecs:RunTask'],
+          resources: [
+            `arn:aws:ecs:${this.region}:${this.account}:task-definition/homemade-loom-render:*`,
+          ],
+        }),
+      )
+      // … poll it to completion …
+      taskDef.taskRole.addToPrincipalPolicy(
+        new iam.PolicyStatement({ actions: ['ecs:DescribeTasks'], resources: ['*'] }),
+      )
+      // … and pass the loom task's execution + task roles to ECS.
+      taskDef.taskRole.addToPrincipalPolicy(
+        new iam.PolicyStatement({
+          actions: ['iam:PassRole'],
+          resources: [
+            loomTaskDef.taskRole.roleArn,
+            ...(loomTaskDef.executionRole ? [loomTaskDef.executionRole.roleArn] : []),
+          ],
+        }),
+      )
+    }
 
     // ────────────────────────────────────────────────────────────────
     // Outputs

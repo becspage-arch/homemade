@@ -1,6 +1,6 @@
 'use client'
 
-import { LibraryBig, Grid3x3, Pencil } from 'lucide-react'
+import { LibraryBig, Grid3x3, Pencil, Sparkles } from 'lucide-react'
 import {
   COUNTED_DISCIPLINES,
   SURFACE_DISCIPLINES,
@@ -15,6 +15,7 @@ interface NeedleworkEmptyStateProps {
   userName: string | null
   onBrowseLibrary: () => void
   onSelectDiscipline: (d: NeedleworkDiscipline) => void
+  onDesignYourOwn: () => void
 }
 
 export function NeedleworkEmptyState({
@@ -22,6 +23,7 @@ export function NeedleworkEmptyState({
   userName,
   onBrowseLibrary,
   onSelectDiscipline,
+  onDesignYourOwn,
 }: NeedleworkEmptyStateProps) {
   return (
     <section className="needlework-studio-empty">
@@ -47,6 +49,21 @@ export function NeedleworkEmptyState({
           <div className="needlework-studio-library-cta-title">Browse the library</div>
           <div className="needlework-studio-library-cta-sub">
             Blackwork, hardanger, sashiko, embroidery, goldwork and more
+          </div>
+        </div>
+      </button>
+
+      <button
+        type="button"
+        className="needlework-studio-library-cta"
+        onClick={onDesignYourOwn}
+        style={{ marginBottom: '2rem' }}
+      >
+        <Sparkles size={22} strokeWidth={1.4} style={{ flexShrink: 0, color: 'var(--colour-text-muted)' }} />
+        <div className="needlework-studio-library-cta-body">
+          <div className="needlework-studio-library-cta-title">Design your own</div>
+          <div className="needlework-studio-library-cta-sub">
+            Describe an idea or upload a photo — we turn it into your own thread-painting pattern
           </div>
         </div>
       </button>
