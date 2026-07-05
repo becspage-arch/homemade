@@ -88,7 +88,7 @@ export async function listSitemaps(): Promise<unknown> {
 }
 
 // CLI dispatch — only when this file is the entrypoint (not when imported).
-if (process.argv[1]?.replace(/\/g, '/').endsWith('scripts/gsc/gsc.ts')) {
+if (process.argv[1]?.replace(/\\/g, '/').endsWith('scripts/gsc/gsc.ts')) {
   const cmd = process.argv[2]
   const daysAgo = (n: number) => new Date(Date.now() - n * 864e5).toISOString().slice(0, 10)
   const today = new Date().toISOString().slice(0, 10)
