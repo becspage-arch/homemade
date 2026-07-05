@@ -846,6 +846,20 @@ raccoon/meerkat/skunk) that rarely converges, culled after one re-roll; **scene-
 uncanny elongated stern muzzle + a washed pale top third), neither roll a clean keep, culled (cat-gardener already
 covers the whimsical lane). **1039 → 1048 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-05 — Batch 07051220 (auto cron) shipped 10 gate-passed gems** (12 generated, 2 culls). RANGE 15 → 111
+colours: 1 simple cutie (baby alpaca), 3 portraits (goddess-braids deep-skin popart — clean deep brown, kept first
+roll; sleek-ponytail fair popart; hydrangea-crown artface — RE-ROLLED once, first roll had the documented artface
+brown/grey contour-shadow + blotchy skin, a heavier "ONE flat even tone, blush only as two flat spots" brief fixed
+it → kept), 1 fantasy fairy (RE-ROLLED once — first roll rendered a DOUBLED/conjoined face, "ONE single fairy, one
+face, blonde hair contrasting the rose" re-roll fixed it → kept), 2 non-red-fur whimsical scenes (badger-bookseller,
+panda-florist — both clean, wordless props), 1 bird (bullfinch → Animals), 2 dense showpieces (Edinburgh Royal Mile
+111, cherry-blossom-park 100). Shelves: animals +2, portraits +3, fantasy +1, whimsical +2, scenes +2. Master-list
+subjects covered: theme 4 bird (bullfinch), theme 20/21 scenes (Edinburgh, cherry-blossom park). TWO CULLS:
+**cute-baby-polarbear** — RE-ROLLED once, both rolls rendered a white cub on pale fabric that barely reads (white-on-
+white ghosting the outline prompt could not overcome), culled — avoid all-white animals in the cute lane;
+**cute-quokka** — RE-ROLLED once (first roll over-orange + magenta artefacts; the re-roll fixed the warmth but left
+asymmetric eyes — one squinting), culled after one re-roll. **1048 → 1058 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
