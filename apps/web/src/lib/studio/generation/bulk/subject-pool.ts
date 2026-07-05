@@ -259,9 +259,15 @@ export const NEEDLEWORK_THEMES: NeedleworkTheme[] = [
   { id: 'heritage', title: 'Heritage reinterpretations', frame: 'round', fullScene: false, examples: ['a folk-art bird', 'a William-Morris-style sprig'], notes: 'Original reinterpretation, never a copy.' },
 ]
 
-/** Needlework size lanes (finished width in mm) — spread a batch across these. */
+/**
+ * Needlework size lanes (finished width in mm). Kept conservative: stitch-stroke
+ * count scales with area × detail, and the loom (Blender on Fargate) chokes on an
+ * over-dense scene (a 240mm full-bleed piece produced ~28k strokes / a 60MB scene
+ * that hung the render). These bounds mirror the customer create-your-own default
+ * (200mm) and keep every piece renderable.
+ */
 export const NEEDLEWORK_SIZE_LANES = [
-  { lane: 'small', widthMm: 150, detail: true, note: 'a single motif in a small hoop' },
-  { lane: 'medium', widthMm: 200, detail: true, note: 'the default — a filled hoop' },
-  { lane: 'large', widthMm: 260, detail: true, note: 'a rich detailed piece or a bleed scene' },
+  { lane: 'small', widthMm: 140, detail: true, note: 'a single motif in a small hoop' },
+  { lane: 'medium', widthMm: 170, detail: true, note: 'the default — a filled hoop' },
+  { lane: 'large', widthMm: 200, detail: false, note: 'a larger hoop; detail eased so it stays renderable' },
 ] as const

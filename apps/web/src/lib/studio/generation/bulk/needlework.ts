@@ -54,6 +54,12 @@ export function fargateRenderWired(): boolean {
   return process.env.LOOM_RENDER === 'fargate'
 }
 
+/**
+ * Max stitch strokes we'll send to the loom. A ~200mm hoop piece sits well under
+ * this; a full-bleed 240mm scene blew past it (~28k) and hung the renderer.
+ */
+const MAX_STITCHES = 16000
+
 export interface NeedleworkCandidate {
   conversion: NeedleworkConversion
   /** The finished loom hero PNG — the exact image that would ship, gated as-is. */
@@ -82,6 +88,12 @@ export async function generateNeedleworkCandidate(brief: NeedleworkBrief): Promi
     detail: brief.detail,
     fullScene: brief.fullScene,
   })
+
+  // Density backstop: the loom (Blender) hangs on an over-dense scene. Skip
+  // anything past a sane stroke budget rather than send it to a doomed render.
+  if (conversion.stitchCount > MAX_STITCHES) {
+    throw new Error(`needlework candidate too dense (${conversion.stitchCount} > ${MAX_STITCHES} strokes) — skipped before render`)
+  }
 
   // Loom hero on Fargate — unpersisted; we upload only if it passes the gate.
   const outDir = path.join(os.tmpdir(), 'homemade-bulk-nw-heroes')

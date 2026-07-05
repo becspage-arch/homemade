@@ -268,14 +268,17 @@ function buildNwBrief(theme: NeedleworkTheme, subject: string, sizeLane: string 
   while (seen.has(slug)) slug = `${base}-${uniqueSuffix()}`
   seen.add(slug)
   const name = subject.replace(/^an?\s+/i, '').replace(/\b\w/, (c) => c.toUpperCase())
+  // Bulk needlework stays within renderable density: bounded width, and NO
+  // full-bleed scenes (they stitch the whole canvas → tens of thousands of
+  // strokes → the loom hangs). Frameless themes become a framed subject instead.
   return {
     slug,
     name,
     subject,
-    widthMm: theme.fullScene ? Math.max(lane.widthMm, 240) : lane.widthMm,
-    frame: theme.frame,
+    widthMm: Math.min(lane.widthMm, 200),
+    frame: theme.frame === 'none' ? 'rect' : theme.frame,
     detail: lane.detail,
-    fullScene: theme.fullScene,
+    fullScene: false,
     tameWarm: theme.tameWarm ?? false,
     themeId: theme.id,
   }
