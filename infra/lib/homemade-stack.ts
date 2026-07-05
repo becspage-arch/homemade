@@ -224,6 +224,19 @@ export class HomemadeStack extends cdk.Stack {
       'homemade/fal-key',
     )
 
+    // Anthropic API key — build-time carve-out for the SERVER-SIDE bulk catalogue
+    // routine only (the ruthless per-candidate vision gate + the per-batch brief
+    // planner in the bulk-generation Inngest jobs). Never on the customer request
+    // path. Same two-step pattern: the IAM grant below lands first (Deploy 1),
+    // then MOUNT_ANTHROPIC_SECRETS=1 adds the env reference (Deploy 2). The bulk
+    // job no-ops (publishes nothing) until this is present, so nothing ships
+    // un-gated. Create the secret value manually in Secrets Manager first.
+    const anthropicApiKeySecret = secretsmanager.Secret.fromSecretNameV2(
+      this,
+      'AnthropicApiKeySecret',
+      'homemade/anthropic-api-key',
+    )
+
     // Stripe LIVE secrets (go-live). The secret key + webhook signing secret are
     // the only sensitive Stripe values — the publishable key is public and the
     // price ids are plain identifiers (mounted as env below). Stored manually in
@@ -270,6 +283,13 @@ export class HomemadeStack extends cdk.Stack {
     // The image-sourcing orchestrator no-ops per source when the env var is
     // missing — the app boots fine without these mounted.
     const mountImageSourcingSecrets = process.env.MOUNT_IMAGE_SOURCING_SECRETS === '1'
+
+    // Anthropic API key for the server-side bulk catalogue routine (vision gate +
+    // brief planner). Two-step pattern: Deploy 1 lands the IAM grant only; Deploy 2
+    // (MOUNT_ANTHROPIC_SECRETS=1) mounts ANTHROPIC_API_KEY. BULK_AUTOPILOT (read
+    // from the deploy env on Deploy 2) turns the unattended cron cadence on; the
+    // admin "Run a batch" button works whenever the key is mounted regardless.
+    const mountAnthropicSecrets = process.env.MOUNT_ANTHROPIC_SECRETS === '1'
 
     // Stripe go-live. Two-step pattern:
     //   Deploy 1: this stack lands the IAM grant on the two Stripe secret ARNs
@@ -344,6 +364,7 @@ export class HomemadeStack extends cdk.Stack {
           `${pexelsApiKeySecret.secretArn}-??????`,
           `${pixabayApiKeySecret.secretArn}-??????`,
           `${falKeySecret.secretArn}-??????`,
+          `${anthropicApiKeySecret.secretArn}-??????`,
           `${stripeSecretKeySecret.secretArn}-??????`,
           `${stripeWebhookSecret.secretArn}-??????`,
         ],
@@ -383,6 +404,13 @@ export class HomemadeStack extends cdk.Stack {
         // below. Gated on MOUNT_STRIPE_SECRETS so Deploy 1 (IAM grant only)
         // leaves the task definition untouched and checkout stays off until the
         // secrets are actually present.
+        // Bulk catalogue autopilot cadence (Deploy 2, alongside the Anthropic
+        // key). '1' turns the cron fill on; anything else pauses it. The manual
+        // admin trigger is unaffected. Gated on the same flag so Deploy 1 doesn't
+        // replace the task.
+        ...(mountAnthropicSecrets
+          ? { BULK_AUTOPILOT: process.env.BULK_AUTOPILOT === '1' ? '1' : '0' }
+          : {}),
         ...(mountStripeSecrets
           ? {
               STRIPE_MODE: 'live',
@@ -431,6 +459,10 @@ export class HomemadeStack extends cdk.Stack {
               PIXABAY_API_KEY: ecs.Secret.fromSecretsManager(pixabayApiKeySecret),
               FAL_KEY: ecs.Secret.fromSecretsManager(falKeySecret),
             }
+          : {}),
+        // Anthropic API key for the server-side bulk vision gate + planner (Deploy 2).
+        ...(mountAnthropicSecrets
+          ? { ANTHROPIC_API_KEY: ecs.Secret.fromSecretsManager(anthropicApiKeySecret) }
           : {}),
         // Stripe LIVE secret key + webhook signing secret (Deploy 2).
         ...(mountStripeSecrets
