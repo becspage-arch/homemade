@@ -806,6 +806,41 @@ REPAIRS + CULLS (repair-first):
   `71fb28a4`) and swept my uncommitted needlework-paint.ts Batch-20 JOBS block; all gems already persisted to the DB so nothing lost —
   restored the block from a scratchpad backup (diff-verified only my 10 JOBS differed from the committed file) before committing.
 
+**Batch 21 (2026-07-05)** — 10 gems PUBLIC, 0 culled (10 subjects; capybara + pufferfish both repaired to a pass). **212 PUBLIC
+total.** Full range across fresh themes 1/4/8/9/10/14/16/18/27: 2 simple (capybara D·s 64c, pufferfish D·s 93c), 5 mid (cardinal
+D·m 209c, teacup D·m 202c, pothos D·m 83c, cosmos D·m 210c, stegosaurus D·m 54c), 1 rich (lynx D·r 108c), 2 XL (hydrangeabouquet
+D·XL 167c hooped floral showpiece; foxreading B·XL 155c frameless cosy scene). Sheet:
+media.homemade.education/scratch-review/6934860e-f119-4503-9dff-bc837e02bc7e.png.
+
+| Slug | Name | Theme | Mode·Cx | Frame |
+|------|------|-------|---------|-------|
+| capybara | Capybara | 1 Cute animals | D·s (64c) | hoop |
+| pufferfish | Pufferfish | 8 Sea life & coastal | D·s (93c) | hoop |
+| cardinal | Cardinal in the Snow | 18 Christmas & winter | D·m (209c) | hoop |
+| teacup | Rose Teacup | 16 Food & baking | D·m (202c) | hoop |
+| pothos | Trailing Pothos | 14 Houseplants | D·m (83c) | hoop |
+| cosmos | Cosmos Posy | 10 Florals | D·m (210c) | hoop |
+| stegosaurus | Stegosaurus | 9 Cute fantasy (nursery) | D·m (54c) | hoop |
+| lynx | Eurasian Lynx | 4 Woodland | D·r (108c) | hoop |
+| hydrangeabouquet | Hydrangea Bouquet | 10 Floral showpiece | D·XL (167c) | hoop |
+| foxreading | The Reading Fox | 27 Animals doing human things | B·XL (155c) | frameless |
+
+REPAIRS (2, both to a pass — 0 culls):
+- **capybara** first rendered a bright ORANGE hamster-faced rodent (I omitted tameWarm; it read as an orange marmot/squirrel, not a
+  brown capybara). Deleted flux + re-rolled with "blunt rectangular head, squared muzzle, muted grey-brown and chestnut, absolutely no
+  orange/ginger, not a squirrel" + `tameWarm:true` → a solid, chunky, browner capybara that reads correctly (12075 stitches vs 6606).
+  Confirms: a warm-blowing cute animal needs tameWarm ON from the start + an explicit no-orange + the distinctive-silhouette cue.
+- **pufferfish** first rendered a HOLLOW scrawly outline with a bare-linen centre + tassel-fins (only 1838 stitches) — its sandy-BEIGE body
+  fell within the cream-ground removal threshold and was flood-filled away, leaving just the outline + spots (the puffin/teapot white-on-
+  cream class applied to a beige subject). Deleted flux + re-rolled a SATURATED golden-yellow + teal body "clearly darker than the
+  background, bold dark outline, one solid fully-filled round body, no empty centre" → an adorable solid kawaii pufferfish (7890 stitches,
+  structure 0.962). LESSON: a pale/BEIGE subject on cream linen is eaten just like a white one — give it a saturated colour + dark outline.
+- MACHINE: one Blender throughout (checked before every render command; 9 hooped in ONE sequential process, then the frameless foxreading
+  scene, then the 2 hooped repairs — never concurrent). `upscale@0.5 fetch-failed` on every render (non-fatal, @0.35 fallback; all gates
+  passed). CONCURRENCY (recurred): the sibling cross-stitch cron ran `git stash -u`/rebase mid-batch (HEAD → `5f4663d8`) and swept my
+  uncommitted Batch-21 JOBS block + tmp scripts; all gems already persisted to the DB so nothing lost — restored the driver from a
+  scratchpad backup (diff-verified: 11 insertions, 0 deletions) before committing. All 9 chosen themes already `started`; no status flips.
+
 ---
 
 ## 1. Cute animals & pets — D — hoop
