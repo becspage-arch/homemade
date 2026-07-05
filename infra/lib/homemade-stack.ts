@@ -766,7 +766,8 @@ export class HomemadeStack extends cdk.Stack {
     // in). Runs in the same public subnets as the web service — no NAT.
     const loomRenderSg = new ec2.SecurityGroup(this, 'LoomRenderSg', {
       vpc,
-      description: 'Loom render Fargate task — egress only',
+      // ASCII only — EC2 rejects non-ASCII in a security group description.
+      description: 'Loom render Fargate task - egress only',
       allowAllOutbound: true,
     })
 
