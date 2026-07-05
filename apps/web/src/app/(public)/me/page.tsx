@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { prisma, TutorialType, UserProjectStatus } from '@homemade/db'
+import { prisma, TutorialType, UserProjectStatus, PatternType } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { redirect } from 'next/navigation'
 import { TutorialCard } from '@/components/public/tutorial-card'
@@ -11,6 +11,13 @@ export const dynamic = 'force-dynamic'
 const IN_PROGRESS_LIMIT = 3
 const BOOKMARK_LIMIT = 6
 const COMPLETED_LIMIT = 3
+const DESIGN_LIMIT = 4
+
+const DESIGN_STUDIO_HREF: Record<PatternType, string> = {
+  CROSS_STITCH: '/studio/cross-stitch',
+  KNITTING_CHART: '/studio/knitting',
+  CROCHET_CHART: '/studio/crochet',
+}
 
 interface CompletedRow {
   completedAt: Date | null
@@ -33,7 +40,7 @@ export default async function MeDashboard() {
   // One COMPLETED query covers both the "Recently completed" rail and the
   // stats strip — sort by completedAt desc, slice for the rail, fold the
   // whole set for stats. Userid+status index covers it.
-  const [counts, inProgress, bookmarks, allCompleted] = await Promise.all([
+  const [counts, inProgress, bookmarks, allCompleted, recentDesigns, designCount] = await Promise.all([
     getReaderCounts(user.id),
     prisma.userProject.findMany({
       where: { userId: user.id, status: UserProjectStatus.IN_PROGRESS },
@@ -89,6 +96,13 @@ export default async function MeDashboard() {
         },
       },
     }),
+    prisma.pattern.findMany({
+      where: { ownerUserId: user.id },
+      orderBy: { updatedAt: 'desc' },
+      take: DESIGN_LIMIT,
+      select: { id: true, name: true, type: true },
+    }),
+    prisma.pattern.count({ where: { ownerUserId: user.id } }),
   ])
 
   const completed = allCompleted.slice(0, COMPLETED_LIMIT)
@@ -169,6 +183,38 @@ export default async function MeDashboard() {
           </div>
         )}
       </section>
+
+      {recentDesigns.length > 0 && (
+        <section>
+          <span className="me-section-label">Yours to keep</span>
+          <h2 className="me-section-title">Your designs</h2>
+          <ul className="me-designs-grid">
+            {recentDesigns.map((d) => (
+              <li key={d.id} className="me-design-card">
+                <Link
+                  href={`${DESIGN_STUDIO_HREF[d.type]}?patternId=${d.id}`}
+                  className="me-design-card-link"
+                >
+                  <span className="me-design-thumb">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`/api/studio/patterns/${d.id}/thumbnail`} alt="" loading="lazy" />
+                  </span>
+                  <span className="me-design-meta">
+                    <span className="me-design-name">{d.name}</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          {designCount > DESIGN_LIMIT && (
+            <p style={{ marginTop: 16 }}>
+              <Link href="/me/designs" className="me-nav-link">
+                All {designCount} of your designs →
+              </Link>
+            </p>
+          )}
+        </section>
+      )}
 
       <section>
         <span className="me-section-label">Make it list</span>

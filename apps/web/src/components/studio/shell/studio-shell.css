@@ -915,7 +915,8 @@
 
 .studio-p2c {
   position: fixed;
-  inset: 0;
+  /* Sit below the 48px sticky Studio topnav, not under it. */
+  inset: 48px 0 0 0;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   background: var(--studio-bg);
@@ -1055,47 +1056,17 @@
   color: var(--studio-bg);
 }
 
-/* Non-premium "Design your own" teaser (behind the premium popup). */
-.studio-p2c-gate-art {
-  max-width: 360px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  color: var(--studio-ink);
-}
-.studio-p2c-gate-art h2 {
-  font-family: var(--studio-font-display);
-  font-size: 26px;
-  margin: 0;
-}
-.studio-p2c-gate-art p {
-  font-family: var(--studio-font-body);
-  font-size: 14px;
-  color: var(--studio-ink-soft);
-  margin: 0;
-  line-height: 1.5;
-}
-.studio-p2c-gate-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.studio-p2c-gate-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--studio-ink);
-}
-.studio-p2c-gate-list svg {
-  color: var(--studio-accent);
-  flex: 0 0 auto;
-  margin-top: 1px;
+/* Non-premium gate: a transparent shield over the REAL (disabled) design
+   surface. It intercepts every click so a free Maker can see the actual tool
+   but not use it, and re-opens the premium popup on any interaction. Sits
+   above the panel (20) and below the topnav (80) + popup (1000). */
+.studio-p2c-lockshield {
+  position: fixed;
+  inset: 48px 0 0 0;
+  z-index: 30;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 .studio-p2c-dropzone {
   border: 2px dashed var(--studio-line-strong);
