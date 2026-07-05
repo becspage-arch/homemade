@@ -888,6 +888,39 @@ NOTE: worked in an ISOLATED WORKTREE this run — a concurrent session doing its
 checkout clobbered the in-progress brief edits once; the worktree avoided any further collision. **1058 → 1068
 PUBLIC.** Deploy green + /healthz 200.
 
+**2026-07-05 — Batch 07051604 (auto cron) shipped 8 gate-passed gems** (13 generated, 5 culls — the gate held
+hard on the batch's four hardest lanes). RANGE 13 → 104 col: cuties (baby-hippo soft blue-grey with a big rounded
+snout + two symmetric highlighted eyes + a pink cheek among lily pads, self-contrasting on ivory; baby-badger bold
+black-and-white striped face + silvery-grey body among grass and toadstools, two small symmetric eyes within the
+stripes, strong self-contrast) → bird (great-tit blue-black head + white cheek + lemon-yellow breast with a black
+stripe, perched on a berried twig, one clear eye, clean first roll NO magenta) → 1 fair popart (curtainbangs-woman
+— even flat pale-beige skin at sat 0.88, symmetric forward eyes, full forehead below centre-parted curtain bangs,
+soft blush) → fantasy (unicorn-meadow white unicorn foal + pastel-rainbow mane + gold horn in a wildflower meadow
+under a rainbow, one clear defined eye, bright sky-blue) → whimsical (bear-bookseller brown bear + round glasses +
+blue waistcoat holding a BLANK book in front of shelves of colourful blank-spined books, two symmetric eyes facing
+forward, no lettering, bright separated colours) → 2 dense Flux-1.1-Pro showpieces (santorini-village 94 —
+whitewashed cliffside houses + blue domes + pink bougainvillea over a deep-blue Aegean sea, bright daytime;
+provence-lavender 104 — purple lavender rows sweeping to a honey-stone farmhouse with a red roof + cypress +
+rolling fields, golden daytime). Shelves: animals +3 (incl. great-tit), portraits +1, fantasy +1, whimsical +1,
+scenes +2. Master-list subjects covered: theme 4 bird (great tit), theme 20/21 scenes (Santorini, Provence). FIVE
+CULLS: **popart-shorttwists-woman** (deep-skin) — first roll dark/muddy with mottled grey shadows + pale blotches;
+the brighter flat-even re-roll only TRADED it for orange contour flooding the centre of the face + a pale glowing
+forehead orb, the documented deep-skin trap a single re-roll only trades, culled (no deep-skin popart this batch —
+correct per playbook, don't force it); **face-lavender-fair** (artface) — patchy pale blotches across the forehead
+and cheeks with uneven modelling, the documented artface grey/blotch trap that rarely converges, culled fast
+WITHOUT a wasted re-roll (a clean fair popart already in hand); **fantasy-fairy-daisy** — RE-ROLLED once (first roll
+had hot-magenta smears round the wings + a muddy haze; the re-roll cleared the magenta and gave a sweet symmetric-
+eyed face BUT the upper background stayed hazy pale-yellow bloom under the crisp-bright bar), culled (unicorn covers
+fantasy); **cute-baby-fox** — RE-ROLLED once (first roll had stray pink/magenta stitches + merged black legs; the
+lower-sat re-roll cleared the magenta and separated the legs BUT washed the fox pale with faint/absent eyes and a
+weak outline), neither roll a clean keep, culled (hippo + badger meet the cutie minimum); **scene-beaver-baker**
+(whimsical) — RE-ROLLED once (first roll was warm/beige-flooded with a ginger beaver, the documented warm-fur trap;
+the grey-brown + cool-colour re-roll fixed the flood BUT over-corrected to a muted/hazy scene with a soft unclear
+beaver face), culled (bear-bookseller covers whimsical). Lessons RECONFIRMED: deep-skin popart double-trap is still
+the #1 cull and a single re-roll only trades faults; artface grey/blotch trap culls fast when a clean fair popart
+is in hand; the cute/whimsical warm-fur (fox, ginger beaver) magenta/flood trap is a two-sided knife — raising sat
+cooks magenta, dropping it washes the piece pale. **1068 → 1076 PUBLIC.** Deploy green + /healthz 200.
+
 ---
 
 ## PROGRESS TABLE
