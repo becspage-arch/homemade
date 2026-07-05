@@ -69,7 +69,7 @@ const STUDIO_CTAS: Record<string, { primary?: { label: string; href: string }; s
   },
   knitting: {},
   needlework: {
-    primary: { label: 'Open the Needlework Studio', href: '/studio/needlework' },
+    primary: { label: 'Design your own', href: '/studio/needlework?create=idea' },
   },
   sewing: {},
 }
@@ -79,6 +79,10 @@ const STUDIO_CTAS: Record<string, { primary?: { label: string; href: string }; s
 // Studio in a starting mode, so this is the plain "just open it" door.
 const STUDIO_HOME_HREF: Record<string, string> = {
   'cross-stitch': '/studio/cross-stitch',
+  // Needlework mirrors cross-stitch: "Design your own" (premium, popup-gated) as
+  // the primary, then a plain "Open the Studio" — so it shows that rather than
+  // the redundant "Browse patterns ↓" (the library sits directly below).
+  needlework: '/studio/needlework',
 }
 
 export async function PatternLayout({ category, searchParams, currentUserId }: PatternLayoutProps) {
