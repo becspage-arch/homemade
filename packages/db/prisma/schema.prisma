@@ -3500,62 +3500,10 @@ model CategoryMagazinePick {
   @@index([categoryId, weekStarting])
 }
 
-// ────────────────────────────────────────────────────────────────────────────
-// Autopilot halt signals — phase_8_content_integration_001
-//
-// Workers / scheduled tasks insert a row here when they halt mid-stream. An
-// hourly Inngest cron reads unsent signals and emails Rebecca, then stamps
-// `notifiedAt` so each signal sends once.
-//
-// Reason: BACKLOG_DRAINED | QUALITY_DRIFT | HARD_CAP_REACHED | MANUAL_PAUSE.
-// ────────────────────────────────────────────────────────────────────────────
-
-model AutopilotHaltSignal {
-  id String @id @default(cuid())
-
-  /// Stream the halt affects — cooking / baking / mindset.
-  stream String
-
-  reason String
-  detail String?
-
-  notifiedAt DateTime?
-
-  /// Set by the admin "Acknowledge" button on /admin/system/autopilot, so the
-  /// page can hide acknowledged rows from the default view.
-  acknowledgedAt   DateTime?
-  acknowledgedById String?
-
-  createdAt DateTime @default(now())
-
-  @@index([notifiedAt, createdAt])
-  @@index([acknowledgedAt, createdAt])
-}
-
-// ────────────────────────────────────────────────────────────────────────────
-// Autopilot pause state — phase_autopilot_status_001
-//
-// One row per stream (cooking / baking / mindset). When `pausedAt` is set, the
-// preflight in `.claude/scheduled-tasks/autopilot-*/SKILL.md` writes a
-// MANUAL_PAUSE halt signal and exits clean instead of running the batch. The
-// scheduled-tasks cron stays enabled — pausing is reversible from the admin
-// page without touching the MCP system.
-// ────────────────────────────────────────────────────────────────────────────
-
-model AutopilotPauseState {
-  id String @id @default(cuid())
-
-  /// Unique per stream — cooking / baking / mindset.
-  streamName String @unique
-
-  /// Null when the stream is running; set when an admin pauses it.
-  pausedAt   DateTime?
-  pausedById String?
-  reason     String?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
+// The old content-autopilot tables (AutopilotHaltSignal + AutopilotPauseState,
+// phase_8_content_integration_001 / phase_autopilot_status_001) were removed
+// 2026-07-06 — the content autopilot is retired (categories grow on demand), and
+// its hourly halt-notify Inngest cron was still emailing stale June halt signals.
 
 model ProjectSchedule {
   id String @id @default(cuid())

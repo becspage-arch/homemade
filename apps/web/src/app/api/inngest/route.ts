@@ -9,7 +9,6 @@ import {
   analyticsRollupNightly,
   analyticsRollupBackfill,
 } from '@/inngest/functions/analytics-rollup'
-import { autopilotHaltNotify } from '@/inngest/functions/autopilot-halt-notify'
 import { scheduledStepPush } from '@/inngest/functions/scheduled-step-push'
 import { techniquePublishSweep } from '@/inngest/functions/technique-publish-sweep'
 import { moderateUserRecipesCron } from '@/inngest/functions/moderate-user-recipes-cron'
@@ -26,7 +25,6 @@ export const { GET, POST, PUT } = serve({
     editorialPicksRefresh,
     analyticsRollupNightly,
     analyticsRollupBackfill,
-    autopilotHaltNotify,
     scheduledStepPush,
     techniquePublishSweep,
     moderateUserRecipesCron,
