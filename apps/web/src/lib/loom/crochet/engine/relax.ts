@@ -60,6 +60,15 @@ export interface RelaxConfig {
    */
   layoutK: number
   /**
+   * Which worked-line the layout pull holds. 'y' (default) = flat rows: pull each
+   * node's y toward its initial row line. 'radial' = work in the round: pull each
+   * node's RADIUS (in the fabric plane) toward its initial radius — the exact
+   * analog for rounds, leaving the angular position and z (loop/interlock relief)
+   * free to relax. Represents the same physical thing: the fabric blocked to the
+   * dimensions it was worked to.
+   */
+  layoutMode?: 'y' | 'radial'
+  /**
    * A hard TABLE under the work: free nodes are clamped to z >= floorZ. One-sided
    * contact, exactly like the surface a swatch is photographed on — it stops loops
    * rolling under the work without pressing the relief out of the front. Omit for
@@ -151,8 +160,11 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
   const { nodes, dist, bend, strand, along } = model
   const grid = new Grid(cfg.collMinDist)
   const minD2 = cfg.collMinDist * cfg.collMinDist
-  // Capture each node's worked row line (initial y) for the "laid flat" pull.
-  const y0 = cfg.layoutK > 0 ? nodes.map((n) => n.y) : null
+  // Capture each node's worked line for the "laid flat / blocked" pull: its row
+  // (initial y) for flat work, its round (initial radius) for work in the round.
+  const radial = cfg.layoutMode === 'radial'
+  const y0 = cfg.layoutK > 0 && !radial ? nodes.map((n) => n.y) : null
+  const r0 = cfg.layoutK > 0 && radial ? nodes.map((n) => Math.hypot(n.x, n.y)) : null
 
   // Bonded pairs (anything joined by a constraint) never collide — connected yarn
   // touches. A node also never collides with another node on the SAME stitch
@@ -227,6 +239,19 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
         const n = nodes[i]!
         if (n.w === 0) continue
         n.y += (y0[i]! - n.y) * cfg.layoutK
+      }
+    }
+    // 5b. The same pull for work in the round: hold each round at its worked
+    // RADIUS, leaving the angular position and the z relief free.
+    if (r0) {
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i]!
+        if (n.w === 0) continue
+        const r = Math.hypot(n.x, n.y)
+        if (r < 1e-6) continue
+        const f = 1 + ((r0[i]! - r) / r) * cfg.layoutK
+        n.x *= f
+        n.y *= f
       }
     }
   }
