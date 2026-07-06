@@ -55,6 +55,11 @@ export interface BuildOpts {
   stitchAt?: (j: number, c: number) => StitchId
 }
 
+/** SCRATCH DIAGNOSTIC ONLY (not audited, not rendered): the blo/flo ridge node
+ *  index per (j,c), so a debug script can check post-relax whether the ridge
+ *  boost actually survives relaxation. Cleared at the start of every build. */
+export const ridgeDebugNodes: { j: number; c: number; node: number; hookNode: number }[] = []
+
 export function buildContinuous(
   rowTypes: StitchId[],
   stitchesPerRow: number,
@@ -83,6 +88,7 @@ export function buildContinuous(
     yTop.push(acc)
   }
 
+  ridgeDebugNodes.length = 0
   const nodes: RNode[] = []
   const dist: DistConstraint[] = []
   const bend: DistConstraint[] = []
@@ -333,7 +339,6 @@ export function buildContinuous(
       }
 
       const bc = (loopMode === 'flo' ? belowFront[c] : belowBack[c])! // the loop this stitch hooks under
-      const bcOther = (loopMode === 'flo' ? belowBack[c] : belowFront[c])! // the loop left to float as a ridge
       const cy = nodes[bc]!.y // its actual y (the row joins where the loop below sits)
       const hookZ = (nodes[bc]!.z >= 0 ? -1 : 1) * z * 1.6 // dive to the FAR side of that crown
 
@@ -355,19 +360,34 @@ export function buildContinuous(
       const postMid = push(x - s * pw, by + px * 0.52, z * fz)
       push(x - s * pw, by + px * 0.8, z * fz)
       postThis[c] = postMid
-      // Float the BELOW head's unworked loop proud as a ridge (only blo/flo leave one).
-      if (loopMode !== 'both' && bcOther !== bc) nodes[bcOther]!.z *= 1.7
 
       // Throw this stitch's crown. A plain stitch leaves a single apex (back == front,
-      // identical to before); blo/flo split it into a back loop + proud front loop.
+      // identical to before); blo/flo split it into a proud (unworked, floats as the
+      // ridge) loop + a tucked (worked next row, pulled down into the fabric) loop.
+      // The split must be baked in HERE, at creation, with the real spread the
+      // construction needs — a later retroactive z-nudge on an already-placed node
+      // (tried first) stretches its distance constraints against their recorded rest
+      // length, so relaxation mostly undoes it (measured: ~0.25yr net gap, well under
+      // one yarn diameter — not a distinct ridge). Direction depends on THIS stitch's
+      // loopMode: blo hooks the back loop next row, so back tucks + front floats;
+      // flo hooks the front loop, so front tucks + back floats.
       push(x - s * cw, ty - dh * 0.3, zh * fz)
       if (loopMode === 'both') {
         const crown = push(x, ty, zh * 1.15 * fz)
         crownThisBack[c] = crown
         crownThisFront[c] = crown
       } else {
-        crownThisBack[c] = push(x - s * cw * 0.18, ty, zh * 0.72 * fz) // back loop (tucked)
-        crownThisFront[c] = push(x + s * cw * 0.18, ty, zh * 1.25 * fz) // front loop (proud)
+        const backFloats = loopMode === 'flo'
+        const backNode = push(x - s * cw * 0.18, ty, zh * (backFloats ? 1.9 : 0.35) * fz)
+        const frontNode = push(x + s * cw * 0.18, ty, zh * (backFloats ? 0.35 : 1.9) * fz)
+        crownThisBack[c] = backNode
+        crownThisFront[c] = frontNode
+        ridgeDebugNodes.push({
+          j,
+          c,
+          node: backFloats ? backNode : frontNode,
+          hookNode: backFloats ? frontNode : backNode,
+        })
       }
       push(x + s * cw, ty - dh * 0.3, zh * fz)
     }
