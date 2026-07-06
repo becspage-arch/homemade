@@ -125,12 +125,12 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     status: 'locked', lockedOn: '2026-07-03',
   },
   scblo: {
-    stitch: 'scblo', rows: 8, auditW: 16, relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
+    stitch: 'scblo', rows: 8, auditW: 16, relaxProfile: 'worked', tiltDeg: 0, twist: 0.05, // calmer twist so the ridge line isn't lost in ply noise
     referenceUrl: 'https://blog.annettepetavy.com/wp-content/uploads/2020/05/image0101200px-500x375.jpg',
     status: 'reverify', // render done 2026-07-03, reference comparison pending
   },
   scflo: {
-    stitch: 'scflo', rows: 8, auditW: 16, relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
+    stitch: 'scflo', rows: 8, auditW: 16, relaxProfile: 'worked', tiltDeg: 0, twist: 0.05,
     referenceUrl: 'https://blog.annettepetavy.com/wp-content/uploads/2020/05/image0091200px-500x375.jpg',
     status: 'reverify',
   },
@@ -149,7 +149,9 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   postrib: {
     stitch: 'fpdc', rows: 8, auditW: 12, relaxProfile: 'worked', tiltDeg: 40, twist: 0.05,
     pattern: (j, c) => (j === 0 ? 'dc' : c % 2 === 0 ? 'fpdc' : 'bpdc'), // raised rib / recessed valley
-    referenceUrl: 'https://moralefiber.blog/wp-content/uploads/2017/10/fringepost9-1.jpg',
+    // plain 1x1 fpdc/bpdc rib, flat lay, columns packed tight — a much cleaner
+    // match than the old fringepost9 colourwork-cable photo (moralefiber.blog)
+    referenceUrl: 'https://doradoes.co.uk/wp-content/uploads/2021/04/double-front-post-back-post-dc-rib-1024x1024.jpg',
     status: 'reverify',
   },
   basketweave: {

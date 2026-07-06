@@ -377,9 +377,12 @@ export function buildContinuous(
         crownThisBack[c] = crown
         crownThisFront[c] = crown
       } else {
+        // Relaxation crushes ~25% of whatever initial split we give (measured: 1.55zh
+        // spread settled to 0.594yr, i.e. lost ~0.18yr of a 0.775yr initial gap) — widen
+        // further, targeting a SETTLED gap around half a yarn diameter (~1.0yr of 2yr).
         const backFloats = loopMode === 'flo'
-        const backNode = push(x - s * cw * 0.18, ty, zh * (backFloats ? 1.9 : 0.35) * fz)
-        const frontNode = push(x + s * cw * 0.18, ty, zh * (backFloats ? 0.35 : 1.9) * fz)
+        const backNode = push(x - s * cw * 0.18, ty, zh * (backFloats ? 2.2 : 0.25) * fz)
+        const frontNode = push(x + s * cw * 0.18, ty, zh * (backFloats ? 0.25 : 2.2) * fz)
         crownThisBack[c] = backNode
         crownThisFront[c] = frontNode
         ridgeDebugNodes.push({
