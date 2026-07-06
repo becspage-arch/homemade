@@ -101,5 +101,16 @@ works, same pipeline, same Rebecca gate. Extend, don't fork.
 
 - Work in the loom worktree (`.claude/worktrees/loom-stitch-engine` off branch
   `claude/awesome-bartik-eff04a`), not the main checkout — other sessions use it.
-- One Blender render at a time. Run it in the background and wait; never stack.
-- Commit after each verified milestone with a message that records the WHY.
+- One Blender render at a time. Run long commands with the Bash tool's
+  `run_in_background` option — NEVER shell `&` (the harness then reports
+  "completed" immediately while Blender keeps running untracked for many minutes).
+- Commit policy — two different things:
+  - **Engine/construction fixes that pass the numeric audit: commit immediately**,
+    with a message recording the why. Never leave verified fixes uncommitted
+    between sessions (the next session may not know they exist).
+  - **A stitch's `status: 'locked'` flip: only on Rebecca's explicit sign-off.**
+- Reporting renders to Rebecca: clickable links to the PNGs. If file links don't
+  render in her client, resize the heroes (Blender's bundled Python +
+  `scripts/loom_resize_for_report.py`) and publish OUR renders in a report page /
+  Artifact (`scripts/build-loom-report.mjs`); reference photos stay LINKED to
+  their source, never embedded or re-published (copyright, calibration-only).
