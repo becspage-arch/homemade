@@ -7,12 +7,10 @@ import bpy
 TARGET_W = 1400
 
 jobs = [
-    (r"C:\Users\Rebecca\Projects\code\homemade\.claude\worktrees\loom-stitch-engine\.loom-scratch\crochet\stitch-scblo-yr2.4-hero.png",
-     r"C:\Users\Rebecca\Projects\code\homemade\.claude\worktrees\loom-stitch-engine\.loom-scratch\crochet\report-scblo.jpg"),
-    (r"C:\Users\Rebecca\Projects\code\homemade\.claude\worktrees\loom-stitch-engine\.loom-scratch\crochet\stitch-scflo-yr2.4-hero.png",
-     r"C:\Users\Rebecca\Projects\code\homemade\.claude\worktrees\loom-stitch-engine\.loom-scratch\crochet\report-scflo.jpg"),
-    (r"C:\Users\Rebecca\Projects\code\homemade\.claude\worktrees\loom-stitch-engine\.loom-scratch\crochet\stitch-postrib-yr2.4-hero.png",
-     r"C:\Users\Rebecca\Projects\code\homemade\.claude\worktrees\loom-stitch-engine\.loom-scratch\crochet\report-postrib.jpg"),
+    (r"C:\Users\Rebecca\Projects\code\homemade\.claude\worktrees\loom-stitch-engine\.loom-scratch\crochet\stitch-scblo-yr2-hero.png",
+     r"C:\Users\Rebecca\Projects\code\homemade\.claude\worktrees\loom-stitch-engine\.loom-scratch\crochet\report-scblo-yr2.jpg"),
+    (r"C:\Users\Rebecca\Projects\code\homemade\.claude\worktrees\loom-stitch-engine\.loom-scratch\crochet\stitch-scflo-yr2-hero.png",
+     r"C:\Users\Rebecca\Projects\code\homemade\.claude\worktrees\loom-stitch-engine\.loom-scratch\crochet\report-scflo-yr2.jpg"),
 ]
 
 for src, dst in jobs:

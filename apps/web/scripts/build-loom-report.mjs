@@ -5,8 +5,8 @@ const out = 'C:/Users/Rebecca/AppData/Local/Temp/claude/C--Users-Rebecca-Project
 
 const b64 = (name) => fs.readFileSync(`${dir}/${name}`).toString('base64')
 
-const scblo = b64('report-scblo.jpg')
-const scflo = b64('report-scflo.jpg')
+const scblo = b64('report-scblo-yr2.jpg')
+const scflo = b64('report-scflo-yr2.jpg')
 const postrib = b64('report-postrib.jpg')
 
 const css = `
@@ -149,9 +149,9 @@ const card = ({ id, title, img, imgAlt, verdict, verdictText, body, refUrl }) =>
 const html = `<style>${css}</style>
 <div class="wrap">
   <header>
-    <div class="eyebrow">Loom stitch engine — reference re-verification</div>
+    <div class="eyebrow">Loom stitch engine — reference re-verification, round 2 (worsted, yr=2.0)</div>
     <h1>scblo / scflo / postrib vs. real swatch photos</h1>
-    <p>Our renders (embedded below, full pipeline hero output) compared against the real reference photo each stitch is calibrated against. Reference photos are linked, not embedded — copyright their owners, used only for calibration.</p>
+    <p>Round 2: widened the blo/flo ridge split further (committed 922a2a52) and re-rendered at worsted weight with a calmer twist. postrib compared against a cleaner reference. Reference photos are linked, not embedded — copyright their owners, used only for calibration.</p>
   </header>
 
   ${card({
@@ -162,38 +162,37 @@ const html = `<style>${css}</style>
     verdictText: 'Reads as ribbing',
     body: `
       <p>The alternating front-post/back-post construction shows up clearly as distinct raised, braided-looking vertical columns separated by recessed valleys — the defining feature of post-stitch ribbing, legible at a glance.</p>
-      <p>Gap to the reference: ours is more open (visible gaps between columns; the reference's columns pack tight with no gaps between them). The reference is also more of a decorative cable/colourwork demo than a plain rib swatch, so it's not a perfect apples-to-apples match. Core construction reads correctly.</p>
+      <p>Swapped the reference for a clean plain 1x1 fpdc/bpdc rib swatch (the old one was a decorative cable/colourwork demo). Against this fairer reference the density gap is clearer: their columns pack fully tight with zero gaps; ours still shows visible gaps between columns. Core construction still reads correctly — density is the remaining gap.</p>
     `,
-    refUrl: 'https://moralefiber.blog/wp-content/uploads/2017/10/fringepost9-1.jpg',
+    refUrl: 'https://doradoes.co.uk/wp-content/uploads/2021/04/double-front-post-back-post-dc-rib-1024x1024.jpg',
   })}
 
   ${card({
-    title: 'scblo — back-loop-only single crochet',
+    title: 'scblo — back-loop-only single crochet (worsted, yr=2.0)',
     img: scblo,
-    imgAlt: 'Our scblo render: dense bulky stitch texture, ridge feature not clearly distinct',
+    imgAlt: 'Our scblo render: a distinct raised band of loops now visible mid-swatch',
     verdict: 'no',
-    verdictText: 'Not a clean pass',
+    verdictText: 'Closer, not there yet',
     body: `
-      <p>Found and fixed a real construction bug: the floating-loop ridge was nudged into place <em>after</em> the yarn was already laid down, which fights the relaxer's distance constraints and gets mostly crushed back — measured at ~0.25 yarn-radii of surviving separation (well under one yarn diameter, effectively invisible). Rebuilt so the proud/tucked split is baked in at creation time with correct constraint lengths; separation roughly tripled to ~0.6 yarn-radii.</p>
-      <p>It now shows as a faint band in the render, but still doesn't read as the crisp, distinct ridge line the reference shows — it gets buried in the generally chunky/knotted texture already present in the currently-locked plain <code>sc</code>. Reads as generic bulky crochet, not clearly "back-loop-only." Not calling this done.</p>
+      <p>Round 1 fixed a real construction bug (the ridge was nudged into place after the yarn was already laid down, so relaxation crushed most of it) and roughly tripled the separation, but it still read as a faint band buried in generic bulk.</p>
+      <p>Round 2: widened the split further (verified numerically first — settled gap 0.594yr &rarr; 0.762yr, about 38% of a yarn diameter) and dropped the twist for less fibre noise. This is a real, visible step forward — a genuine raised band of loops now stands out from the surrounding stitches, unlike either earlier attempt. It's heavier and more rope-like than the reference's clean, thin, evenly-spaced ridge line, and it's not equally prominent on every row (strongest in the middle rows). Not calling this done, but it's no longer buried.</p>
     `,
     refUrl: 'https://blog.annettepetavy.com/wp-content/uploads/2020/05/image0101200px-500x375.jpg',
   })}
 
   ${card({
-    title: 'scflo — front-loop-only single crochet',
+    title: 'scflo — front-loop-only single crochet (worsted, yr=2.0)',
     img: scflo,
-    imgAlt: 'Our scflo render: dense bulky stitch texture, ridge feature not clearly distinct',
+    imgAlt: 'Our scflo render: a distinct raised band of loops now visible',
     verdict: 'no',
-    verdictText: 'Not a clean pass',
+    verdictText: 'Closer, not there yet',
     body: `
-      <p>Same underlying bug as scblo, plus scflo had the proud/tucked direction hardcoded backwards (built as if every stitch were blo), so it was floating the wrong loop entirely before this fix.</p>
-      <p>Same result as scblo after the fix: measurable improvement, still not a clean read against the reference's crisp ridge line.</p>
+      <p>Same round-2 fix as scblo (scflo's own numbers came out even better: 0.880yr settled gap). Same result: a genuinely visible raised-loop cluster now reads as a distinct feature, still rope-like rather than a crisp thin ridge, and not even across every row.</p>
     `,
     refUrl: 'https://blog.annettepetavy.com/wp-content/uploads/2020/05/image0091200px-500x375.jpg',
   })}
 
-  <footer>Renders downsized to JPEG for this report only; pipeline output (full-res PNG + numeric audit) lives in <code>.loom-scratch/crochet/</code> in the worktree.</footer>
+  <footer>Renders downsized to JPEG for this report only; pipeline output (full-res PNG + numeric audit) lives in <code>.loom-scratch/crochet/</code> in the worktree. This round's Blender renders ran unusually slowly due to CPU contention with a sibling session's concurrent render (resolved partway through, not a bug).</footer>
 </div>
 `
 
