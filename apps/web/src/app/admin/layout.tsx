@@ -96,7 +96,6 @@ const SIDEBAR_GROUPS: SidebarGroup[] = [
       { href: '/admin/system/feature-flags', label: 'Feature flags', minRole: UserRole.ADMIN, placeholder: true },
       { href: '/admin/system/jobs', label: 'Jobs', minRole: UserRole.ADMIN },
       { href: '/admin/system/bulk-generation', label: 'Bulk generation', minRole: UserRole.ADMIN },
-      { href: '/admin/system/autopilot', label: 'Content library', minRole: UserRole.ADMIN },
       { href: '/admin/system/errors', label: 'Errors', minRole: UserRole.ADMIN },
     ],
   },
