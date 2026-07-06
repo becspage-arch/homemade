@@ -64,21 +64,10 @@ export function buildContinuous(
   const yr = yarnRadiusMm
   const W = stitchesPerRow
   // Column spacing is gauge: a short stitch (sc) packs dense with almost no holes;
-  // a tall stitch (dc/tr) is more open. Keyed off the swatch's stitch.
+  // a tall stitch (dc/tr) is more open. Per-stitch, calibrated against the real
+  // reference photos — lives in the dictionary (single source of truth).
   const st0 = rowTypes[0] ?? 'sc'
-  const sw =
-    yr *
-    (st0 === 'fpdc' || st0 === 'bpdc'
-      ? 1.9 // post stitches pack DENSE — ribs touch into solid fabric, not isolated sticks
-      : st0 === 'slst'
-        ? 1.9
-        : st0 === 'sc' || st0 === 'scblo' || st0 === 'scflo'
-          ? 1.8 // sc packs DENSE — the reference's gaps are pinpricks, not holes (audit 2026-07-02)
-          : st0 === 'hdc'
-            ? 2.0 // hdc packs dense like sc — the reference shows notches, not holes (audit 2026-07-03)
-            : st0 === 'tr' || st0 === 'dtr'
-              ? 2.45 // taller = airier: treble fabric shows open channels between posts (audit 2026-07-03)
-              : 2.3) // dc: open, but posts lean on each other — slits not gaps (audit 2026-07-03)
+  const sw = yr * STITCHES[st0].gaugeYr
   const z = yr * 0.3 // base relief (gentle — turned fabric is fairly flat, not corrugated)
   const zh = yr * 0.5 // crown relief (the head rides proud on its worked face)
   const cw = yr * 0.4 // crown half-width — a slim head-line, not a fat rope

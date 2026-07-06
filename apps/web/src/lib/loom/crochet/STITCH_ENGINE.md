@@ -145,32 +145,34 @@ forward — see §8a).** Every stitch is one continuous strand, TURNED each row
 held by self-collision. Height relaxes out of the yarn fed + a "blocked flat"
 y-pull (`layoutK`). No pinned shapes, no spring joins (HARD RULE, §9).
 
+All statuses + full recipes (gauge, rows, view, audit size, reference URL) live in
+`engine/dictionary.ts` (`SWATCH_RECIPES`) — THE single source of truth. The table
+below is the narrative record.
+
 | Stitch | Method (genuine engine) | Verdict |
 |--------|-------------------------|---------|
-| **sc** | short stitch, dense gauge (`sw≈2.0yr`), no yarn-over | ✅ **LOCKED** 2026-06-29 (Rebecca signed off) |
-| **hdc** | mid stitch + the real **third-loop** yarn-over ridge per row | ✅ **LOCKED** 2026-06-29 — reads distinctly as hdc |
-| **dc** | tall **post** (`heightFactor 3.2`), open gauge (`sw≈2.5yr`) | ✅ **LOCKED** 2026-06-29 — tall posts, columns, chain heads |
-| **tr** | taller post (`heightFactor 4.2`), open gauge | ✅ **LOCKED** 2026-06-29 |
-| **dtr** | taller again (`heightFactor 5.4`) | ✅ **LOCKED** 2026-06-29 |
-| **sl st** | shortest worked (`heightFactor 0.8` — a row is still ≈1 yarn thick), tight gauge | ✅ **LOCKED** 2026-06-29 (flat dense ridges) |
+| **sc** | short stitch, DENSE gauge (`1.8yr` — reference gaps are pinpricks, not holes) | ✅ **LOCKED**, re-verified vs reference 2026-07-02 (audit: was too open at 2.0yr, fixed) |
+| **hdc** | mid stitch + the real **third-loop** yarn-over ridge per row; dense (`2.0yr`) | ✅ **LOCKED**, re-verified 2026-07-03 (was too open at 2.2yr, fixed) |
+| **dc** | tall **post** (`heightFactor 3.2`), gauge `2.3yr` — posts lean together, slits not gaps | ✅ **LOCKED**, re-verified 2026-07-03 (was too open at 2.5yr, fixed) |
+| **tr** | taller post (`heightFactor 4.2`), gauge `2.45yr` — AIRIER than dc, open channels | ✅ **LOCKED**, re-verified 2026-07-03 (was too DENSE at the shared 2.3yr — tall stitches got their own gauge) |
+| **dtr** | taller again (`heightFactor 5.4`), gauge `2.45yr` | ✅ **LOCKED**, re-verified 2026-07-03 |
+| **sl st** | shortest worked (`heightFactor 0.8` — a row is still ≈1 yarn thick), tight gauge | ✅ **LOCKED**, re-verified 2026-07-03. Audit caught its row-0 corner stitch strangling off the pinned foundation → fixed with the **turning chain** (real slack into every first stitch, all stitches benefit) |
 | **ch** | REBUILT 2026-07-02 as the true pull-through topology: each loop a flat teardrop; BOTH strands of loop n thread loop n−1's opening; connector = the back bump behind the work; only the slip knot pinned. Soft chain collision (`collMinDist 1.0yr` — drawn-tight chain squashes), whisper plane pull, TABLE floor (`floorZ`), 400 iters. Settled geometry verified numerically (`scripts/loom-ch-debug.ts`): folds centred + hidden mid-depth, legs symmetric on the front, both crossings inside each hole, bumps at the back, loop rotation ~2°. Face = nested-V plait. | ✅ **LOCKED 2026-07-02** (Rebecca signed off vs the eyeloveknots chain reference). Cross-weight (fine/worsted) confirmation folded into the audit sweep. |
-| **bobble** | gathered cluster: genuine base hook + N loops bulging forward to one top | ◑ **WIP, not signed off**. Reads as lumps in a busy field, not distinct round berries. The raised-bump family needs a calm/flat background + a tighter gathered ball — not cracked. |
-| **sc blo / flo** | head split into a real back + front loop; hook one, float the other as a ridge | ✅ **LOCKED** 2026-06-29 — ridged sc; blo/flo are mirrors |
-| **fpdc / bpdc** | post RINGS the stem below (collision-held); body pops front (fp) / back (bp), head stays at plane; dense gauge | ✅ **LOCKED** 2026-06-29 — best shown as alternating `postrib` (raised ribs + valleys), side-on tilt 40°, smoother yarn (twist 0.05). Basketweave/waffle = same move in blocks, deferred to combos |
+| **bobble** | gathered cluster: genuine base hook + N loops bulging forward to one top | ◑ **WIP, not signed off**. Reads as lumps, not berries — AND the audit (2026-07-03) shows 3 broken interlocks on stitches adjacent to bobbles (hooks pulled out of their dive by the bulge). Fix the construction (slack/feed around the bulge) before any look work. |
+| **sc blo / flo** | head split into a real back + front loop; hook one, float the other as a ridge | ◔ **REVERIFY** — locked 2026-06-29, numeric audit passes (2026-07-03), reference re-comparison pending (blo render on disk; flo rendering via pipeline proof run). References in `SWATCH_RECIPES`. |
+| **fpdc / bpdc** | post RINGS the stem below (collision-held); body pops front (fp) / back (bp), head stays at plane; dense gauge | ◔ **REVERIFY** — locked 2026-06-29, numeric audit passes, reference re-comparison pending (show as `postrib`). Basketweave/waffle = same move in blocks, deferred to combos |
 
-Regeneration commands (from `apps/web`; use ABSOLUTE paths for the Blender out, or it
-lands in the wrong dir; then upscale with `loom-aspen-hero.ts <basePng> 0.6 0.8 <stitch>`):
+**Regenerating / building a stitch — use THE PIPELINE (one command, gates built in):**
 ```
-# args: yarnRadiusMm  stitchesPerRow  colourHex  name  stitch
-npx tsx scripts/loom-continuous.ts 2.4 16 "#c98a5e" continuous-sc  sc
-npx tsx scripts/loom-continuous.ts 2.4 14 "#c98a5e" continuous-hdc hdc
-npx tsx scripts/loom-continuous.ts 2.4 11 "#c98a5e" continuous-dc  dc
-npx tsx scripts/loom-continuous.ts 2.4 16 "#c98a5e" continuous-ch  ch
-# then (absolute out path):
-"<BLENDER>" --background --factory-startup --python scripts/loom_render_crochet.py -- \
-  "<ABS>/.loom-scratch/crochet/continuous-dc.json" "<ABS>/.loom-scratch/crochet/continuous-dc.png" 110
-npx tsx scripts/loom-aspen-hero.ts "<ABS>/.loom-scratch/crochet/continuous-dc.png" 0.6 0.8 dc
+cd apps/web && npx tsx scripts/loom-stitch.ts <stitch> [yarnRadiusMm] [hex]
+# e.g.  npx tsx scripts/loom-stitch.ts sc          (defaults: 2.4mm, terracotta)
+# builds → numeric audit (HARD GATE) → Blender render → hero + fidelity gate →
+# prints the report block. Run it in the background (renders take minutes);
+# ONE Blender at a time. Then do the reference comparison and post links — see
+# the loom-stitch skill (.claude/skills/loom-stitch/SKILL.md).
 ```
+`scripts/loom-audit.ts` re-runs the numeric audit for every dictionary entry.
+`scripts/loom-continuous.ts` builds just the scene (no gates) if you need it.
 (Colour is a saturated stand-in — pale wool still washes white, §11, fix pending.)
 The user CANNOT see Read-tool images in their client; show renders via clickable
 markdown links to the PNG, relative to the working dir (`.loom-scratch/crochet/...`).
@@ -189,11 +191,37 @@ markdown links to the PNG, relative to the working dir (`.loom-scratch/crochet/.
   linked. Only the foundation chain is pinned.
 - **Height relaxes out.** A dc feeds a longer leg than an sc; firm bending (`k≈0.7`)
   + the `layoutK` blocked-flat y-pull stop the long post coiling, so it stands.
-- **Gauge is per-stitch** (`sw`: sc dense ~2.0yr, hdc ~2.2yr, dc/tr open ~2.5yr).
+- **Gauge is per-stitch and calibrated to the reference photo** (`gaugeYr` in the
+  dictionary: sc 1.8 dense, hdc 2.0, dc 2.3 leaning posts, tr/dtr 2.45 open
+  channels, slst/posts 1.9). Density is identity — compare it FIRST.
 - **Per-stitch features are "what the one strand does next"** (e.g. hdc's third loop
   is the start-of-stitch yarn-over laid across the head line).
 - **Renderer** floats the fabric above the table (back-face rows go −z) and slips the
   backing just under the lowest stitch (auto, from min-z).
+
+## 8b. Working on stitches in ANY session/model — the guardrails (2026-07-03)
+
+The stitch library is built by many sessions, not all of them Fable. The process
+is therefore enforced by tooling, not discipline:
+
+- **The skill** — `.claude/skills/loom-stitch/SKILL.md` — is the per-stitch
+  process: the two hard rules, the loop, banned moves, judgment guardrails,
+  scope tiers per model, new-craft rules. Read it before touching a stitch.
+- **The dictionary** — `engine/dictionary.ts` — is the single source of truth
+  (topology params + full swatch recipe + reference URL + lock status). Adding a
+  stitch = one `STITCHES` + one `SWATCH_RECIPES` entry + its excursion in
+  `yarnPath.ts` with `StitchLink`s recorded. Nothing else.
+- **The pipeline** — `scripts/loom-stitch.ts <stitch>` — chains build → numeric
+  audit (hard gate: genuinely stitched or it stops) → render → hero + fidelity
+  gate → report block. The mechanical steps cannot be skipped or reordered.
+- **The verdict** — Rebecca's, always. The pipeline ends by demanding the
+  reference comparison + both links; only her sign-off sets `status: 'locked'`.
+
+Scope tiers (also in the skill): combination stitches (shell/V/picot/inc/dec)
+are safe for careful non-Fable sessions; new-topology stitches (bobble family,
+magic ring, cables) need the most care — two failed construction attempts in a
+row means stop and write up, not churn. Mechanical re-renders are safe for any
+model. Locked stitches are never reworked without Rebecca's ask.
 
 ---
 
