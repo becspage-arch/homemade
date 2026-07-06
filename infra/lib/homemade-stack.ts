@@ -404,16 +404,9 @@ export class HomemadeStack extends cdk.Stack {
         // below. Gated on MOUNT_STRIPE_SECRETS so Deploy 1 (IAM grant only)
         // leaves the task definition untouched and checkout stays off until the
         // secrets are actually present.
-        // Bulk catalogue autopilot cadence (Deploy 2, alongside the Anthropic
-        // key). Per craft: '1' turns that craft's cron fill on; anything else
-        // pauses it. The manual admin trigger is unaffected. Gated on the same
-        // flag so Deploy 1 doesn't replace the task.
-        ...(mountAnthropicSecrets
-          ? {
-              BULK_AUTOPILOT_CROSS_STITCH: process.env.BULK_AUTOPILOT_CROSS_STITCH === '1' ? '1' : '0',
-              BULK_AUTOPILOT_NEEDLEWORK: process.env.BULK_AUTOPILOT_NEEDLEWORK === '1' ? '1' : '0',
-            }
-          : {}),
+        // (The bulk autopilot on/off switch is DB-backed — table BulkAutopilotState,
+        // toggled from the admin bulk page — not an env var, so it needs no deploy
+        // to change and survives redeploys.)
         ...(mountStripeSecrets
           ? {
               STRIPE_MODE: 'live',

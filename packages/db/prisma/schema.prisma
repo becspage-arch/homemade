@@ -3505,6 +3505,19 @@ model CategoryMagazinePick {
 // 2026-07-06 — the content autopilot is retired (categories grow on demand), and
 // its hourly halt-notify Inngest cron was still emailing stale June halt signals.
 
+// ────────────────────────────────────────────────────────────────────────────
+// Bulk generation autopilot switch — one row per pattern craft. The bulk cron
+// (bulk/<craft>.batch) only fills when its row is enabled; the admin bulk page
+// toggles it. DB-backed (not an env var) so it survives deploys and an admin can
+// flip it without a redeploy.
+// ────────────────────────────────────────────────────────────────────────────
+model BulkAutopilotState {
+  craft       String   @id // 'cross-stitch' | 'needlework'
+  enabled     Boolean  @default(false)
+  updatedById String?
+  updatedAt   DateTime @default(now()) @updatedAt
+}
+
 model ProjectSchedule {
   id String @id @default(cuid())
 

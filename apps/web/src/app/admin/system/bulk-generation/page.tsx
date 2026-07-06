@@ -3,7 +3,8 @@ import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import { anthropicConfigured } from '@/lib/anthropic'
 import { PATTERN_CATEGORIES } from '@/lib/studio/generation/categories'
-import { RunBatchControl } from './run-controls'
+import { autopilotStates } from '@/lib/studio/generation/bulk/autopilot-state'
+import { RunBatchControl, AutopilotToggle } from './run-controls'
 
 export const dynamic = 'force-dynamic'
 
@@ -78,13 +79,10 @@ function CraftCard({
   const pct = target > 0 ? Math.min(100, Math.round((published / target) * 100)) : 0
   const full = published >= target
   return (
-    <article className="admin-kpi-card" style={{ padding: 20, display: 'flex', flexDirection: 'column', gap: 12 }}>
+    <article className="admin-kpi-card" style={{ padding: 20, display: 'flex', flexDirection: 'column', gap: 14 }}>
       <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>
         <h3 style={{ fontFamily: 'var(--font-fraunces)', fontSize: 19, margin: 0, color: 'var(--color-espresso)' }}>{name}</h3>
-        <span style={{ fontFamily: 'var(--font-lora)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: autopilotOn ? 'var(--color-sage)' : 'var(--color-warm-taupe)' }}>
-          Autopilot {autopilotOn ? 'on' : 'paused'}
-          {full ? ' · at target' : ''}
-        </span>
+        {full && <span style={{ fontFamily: 'var(--font-lora)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--color-espresso)' }}>At target</span>}
       </div>
       <div>
         <div style={{ fontFamily: 'var(--font-lora)', fontSize: 14, color: 'var(--color-espresso)', marginBottom: 6 }}>
@@ -94,7 +92,10 @@ function CraftCard({
         <ProgressBar pct={pct} full={full} />
       </div>
       {extraNote && <p style={{ ...LORA_SM, margin: 0, lineHeight: 1.5 }}>{extraNote}</p>}
-      <RunBatchControl craft={craft} defaultCount={defaultCount} disabled={disabled} disabledReason={disabledReason} />
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 2 }}>
+        <AutopilotToggle craft={craft} enabled={autopilotOn} />
+        <RunBatchControl craft={craft} defaultCount={defaultCount} disabled={disabled} disabledReason={disabledReason} />
+      </div>
     </article>
   )
 }
@@ -147,8 +148,9 @@ export default async function AdminBulkGenerationPage() {
 
   const gateWired = anthropicConfigured()
   const renderWired = process.env.LOOM_RENDER === 'fargate'
-  const xsAutopilot = process.env.BULK_AUTOPILOT_CROSS_STITCH === '1'
-  const nwAutopilot = process.env.BULK_AUTOPILOT_NEEDLEWORK === '1'
+  const autopilot = await autopilotStates()
+  const xsAutopilot = autopilot['cross-stitch']
+  const nwAutopilot = autopilot.needlework
 
   const xsDisabled = !gateWired
   const nwDisabled = !gateWired || !renderWired

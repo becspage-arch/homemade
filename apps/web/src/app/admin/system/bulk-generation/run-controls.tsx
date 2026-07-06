@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useTransition } from 'react'
-import { triggerBulkBatch } from './actions'
+import { triggerBulkBatch, setBulkAutopilot } from './actions'
 
 const inputStyle: React.CSSProperties = {
   fontFamily: 'var(--font-lora)',
@@ -65,6 +65,55 @@ export function RunBatchControl({
       {(message || (disabled && disabledReason)) && (
         <span style={{ fontFamily: 'var(--font-lora)', fontSize: 12, color: 'var(--color-warm-taupe)' }}>
           {message ?? disabledReason}
+        </span>
+      )}
+    </div>
+  )
+}
+
+/**
+ * On/off switch for a craft's unattended autopilot cron. DB-backed via the
+ * setBulkAutopilot server action — takes effect immediately, no redeploy.
+ */
+export function AutopilotToggle({
+  craft,
+  enabled,
+  disabled,
+  disabledReason,
+}: {
+  craft: 'cross-stitch' | 'needlework'
+  enabled: boolean
+  disabled?: boolean
+  disabledReason?: string
+}) {
+  const [on, setOn] = useState(enabled)
+  const [pending, startTransition] = useTransition()
+  const [error, setError] = useState<string | null>(null)
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+      <span style={{ fontFamily: 'var(--font-lora)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: on ? 'var(--color-sage)' : 'var(--color-warm-taupe)' }}>
+        Autopilot {on ? 'on' : 'paused'}
+      </span>
+      <button
+        type="button"
+        className={on ? 'admin-btn secondary' : 'admin-btn'}
+        disabled={pending || disabled}
+        onClick={() => {
+          setError(null)
+          const next = !on
+          startTransition(async () => {
+            const result = await setBulkAutopilot(craft, next)
+            if (result.ok) setOn(result.enabled)
+            else setError(result.error)
+          })
+        }}
+      >
+        {pending ? 'Saving…' : on ? 'Turn off' : 'Turn on'}
+      </button>
+      {(error || (disabled && disabledReason)) && (
+        <span style={{ fontFamily: 'var(--font-lora)', fontSize: 12, color: 'var(--color-warm-taupe)' }}>
+          {error ?? disabledReason}
         </span>
       )}
     </div>

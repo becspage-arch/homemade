@@ -3,6 +3,7 @@ import { prisma, Visibility } from '@homemade/db'
 import { inngest } from '../client'
 import { audit } from '@/lib/audit'
 import { runCrossStitchBatch, runNeedleworkBatch, type BatchSummary, type Craft } from '@/lib/studio/generation/bulk/run'
+import { isAutopilotEnabled } from '@/lib/studio/generation/bulk/autopilot-state'
 
 /**
  * Server-side BULK CATALOGUE generation — the cross-stitch + needlework gem
@@ -52,11 +53,6 @@ async function publicCount(craft: Craft): Promise<number> {
   return prisma.pattern.count({ where: { type: 'CROSS_STITCH', ownerUserId: null, visibility: Visibility.PUBLIC } })
 }
 
-function autopilotOn(craft: Craft): boolean {
-  const flag = craft === 'needlework' ? process.env.BULK_AUTOPILOT_NEEDLEWORK : process.env.BULK_AUTOPILOT_CROSS_STITCH
-  return flag === '1'
-}
-
 /** Manual runs carry a real admin user id → record a rich audit entry. */
 async function auditManual(triggeredBy: unknown, summary: BatchSummary): Promise<void> {
   if (typeof triggeredBy !== 'string' || !triggeredBy) return
@@ -91,8 +87,8 @@ async function runCraft(
   const data = eventData as BatchEventData | undefined
   const manual = typeof data?.count === 'number'
 
-  if (!manual && !autopilotOn(craft)) {
-    return { skipped: `autopilot paused (BULK_AUTOPILOT_${craft === 'needlework' ? 'NEEDLEWORK' : 'CROSS_STITCH'}!=1)` }
+  if (!manual && !(await isAutopilotEnabled(craft))) {
+    return { skipped: `autopilot paused for ${craft}` }
   }
   // Cron stops at the category target; a manual run can still top up past it.
   if (!manual) {
