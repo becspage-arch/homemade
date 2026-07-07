@@ -8,12 +8,9 @@ TARGET_W = 1400
 
 D = r"C:\Users\Rebecca\Projects\code\homemade\.claude\worktrees\loom-stitch-engine\.loom-scratch\crochet"
 jobs = [
-    (D + r"\stitch-sc-yr1.3-hero.png", D + r"\report-sc-fine.jpg"),
-    (D + r"\stitch-sc-yr2-hero.png",   D + r"\report-sc-worsted.jpg"),
-    (D + r"\stitch-dc-yr1.3-hero.png", D + r"\report-dc-fine.jpg"),
-    (D + r"\stitch-dc-yr2-hero.png",   D + r"\report-dc-worsted.jpg"),
-    (D + r"\stitch-ch-yr1.3-hero.png", D + r"\report-ch-fine.jpg"),
-    (D + r"\stitch-ch-yr2-hero.png",   D + r"\report-ch-worsted.jpg"),
+    (D + r"\stitch-fpdc-yr2.4-hero.png",    D + r"\report-fpdc.jpg"),
+    (D + r"\stitch-bpdc-yr2.4-hero.png",    D + r"\report-bpdc.jpg"),
+    (D + r"\stitch-postrib-yr2.4-hero.png", D + r"\report-postrib-final.jpg"),
 ]
 
 for src, dst in jobs:

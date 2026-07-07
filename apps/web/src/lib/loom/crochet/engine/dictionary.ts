@@ -144,14 +144,17 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   fpdc: {
     stitch: 'fpdc', rows: 8, auditW: 12, relaxProfile: 'worked', tiltDeg: 40, twist: 0.05,
     pattern: (j, c) => (j === 0 ? 'dc' : 'fpdc'), // row 0 establishes posts to wrap
-    referenceUrl: 'https://moralefiber.blog/wp-content/uploads/2017/10/fringepost9-1.jpg',
-    status: 'reverify',
+    // clean single-stitch reference (raised front posts standing proud), replacing
+    // the old fringepost9 colourwork-cable photo (acrochetedsimplicity.com)
+    referenceUrl: 'https://www.acrochetedsimplicity.com/wp-content/uploads/2017/01/fpdc-7-1024x683.jpg',
+    status: 'locked', lockedOn: '2026-07-07', // raised front posts read correctly vs single-stitch ref
   },
   bpdc: {
     stitch: 'bpdc', rows: 8, auditW: 12, relaxProfile: 'worked', tiltDeg: 40, twist: 0.05,
     pattern: (j, c) => (j === 0 ? 'dc' : 'bpdc'),
-    referenceUrl: 'https://moralefiber.blog/wp-content/uploads/2017/10/fringepost9-1.jpg',
-    status: 'reverify',
+    // back posts recede → front shows horizontal step-bars, not raised posts (theloopholefox.com)
+    referenceUrl: 'https://theloopholefox.com/wp-content/uploads/2022/09/Back-Post-Double-Crochet-12.jpg',
+    status: 'locked', lockedOn: '2026-07-07', // recessed posts / horizontal-bar front read correctly
   },
   postrib: {
     stitch: 'fpdc', rows: 8, auditW: 12, relaxProfile: 'worked', tiltDeg: 40, twist: 0.05,
@@ -159,7 +162,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     // plain 1x1 fpdc/bpdc rib, flat lay, columns packed tight — a much cleaner
     // match than the old fringepost9 colourwork-cable photo (moralefiber.blog)
     referenceUrl: 'https://doradoes.co.uk/wp-content/uploads/2021/04/double-front-post-back-post-dc-rib-1024x1024.jpg',
-    status: 'reverify',
+    status: 'locked', lockedOn: '2026-07-07', // alternating rib reads clearly; caveat: more OPEN than a tight real rib (looser gauge)
   },
   basketweave: {
     stitch: 'dc', rows: 8, auditW: 12, relaxProfile: 'worked', tiltDeg: 40, twist: 0.05,
