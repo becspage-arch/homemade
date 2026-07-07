@@ -6,6 +6,8 @@
  */
 
 import { buildContinuous, type BuiltContinuous } from './yarnPath'
+import { buildShaped, buildRounds } from './shaping'
+import { buildKnit } from './knitPath'
 import { relax } from './relax'
 import { SWATCH_RECIPES, type SwatchArg, type SwatchRecipe, type StitchId } from './dictionary'
 
@@ -22,12 +24,32 @@ export function isSwatchArg(arg: string): arg is SwatchArg {
 export function buildRelaxedSwatch(arg: SwatchArg, W: number, yr: number): BuiltSwatch {
   const recipe = SWATCH_RECIPES[arg]
   const rows: StitchId[] = Array(recipe.rows).fill(recipe.stitch) as StitchId[]
-  const built = buildContinuous(rows, W, yr, { stitchAt: recipe.pattern, noTurn: recipe.noTurn, gaugeYr: recipe.gaugeYr })
+  const built =
+    recipe.builder === 'shaped'
+      ? buildShaped(recipe.stitch, recipe.shapeRows!, W, yr)
+      : recipe.builder === 'round'
+        ? buildRounds(recipe.stitch, recipe.roundCounts!, yr)
+        : recipe.builder === 'knit'
+          ? buildKnit(recipe.rows, W, yr, !!recipe.knitFlip)
+          : buildContinuous(rows, W, yr, { stitchAt: recipe.pattern, noTurn: recipe.noTurn, gaugeYr: recipe.gaugeYr })
 
   // Collision is what HOLDS the interlock (yarn can't pass through yarn), so it
   // runs firm and long. No plane pull for worked fabric — the +z/−z relief at each
   // hook IS the interlock; flattening it would unlink the rows.
-  if (recipe.relaxProfile === 'chain') {
+  if (recipe.relaxProfile === 'round') {
+    // Work in the round: the same worked-fabric relax, but "blocked" to each
+    // round's worked RADIUS instead of a row line.
+    relax(built.model, {
+      collMinDist: yr * 1.25,
+      collK: 0.28,
+      collAdjacency: 9,
+      planeZ: 0,
+      planeK: 0,
+      layoutK: 0.06,
+      layoutMode: 'radial',
+      iterations: 360,
+    })
+  } else if (recipe.relaxProfile === 'chain') {
     // A chain's links are consecutive along the strand, so collision must act between
     // NEAR neighbours (low adjacency) to hold each loop threaded through the previous
     // and to snug each head around the next stitch's two pulled-through strands.

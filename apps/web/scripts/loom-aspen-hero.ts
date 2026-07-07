@@ -74,12 +74,46 @@ const STITCH_PROMPTS: Record<string, string> = {
     'An extreme close-up macro photograph of a crochet bobble-stitch swatch in soft wool.',
     'Distinct round raised bobble berries (little balls of yarn) popping up in a neat offset polka-dot pattern on a flat, calm single-crochet background, each bobble a tight rounded bump, in fluffy wool yarn.',
   ].join(' '),
+  scinc: [
+    'An extreme close-up macro photograph of a shaped soft wool crochet swatch worked in single crochet with increases.',
+    'Dense rows of small V-shaped single-crochet stitches; the piece widens row by row, with pairs of stitches fanning out from a shared base at the increase points along the edges, in fluffy wool yarn.',
+  ].join(' '),
+  scdec: [
+    'An extreme close-up macro photograph of a shaped soft wool crochet swatch worked in single crochet with decreases.',
+    'Dense rows of small V-shaped single-crochet stitches; the piece narrows row by row, with two stitch legs drawn together under a single top V at the decrease points, in fluffy wool yarn.',
+  ].join(' '),
+  mrdisc: [
+    'An extreme close-up top-down macro photograph of a flat circle crocheted in the round in soft wool, started from a magic ring.',
+    'A neat flat disc of dense single-crochet stitches worked in a continuous spiral: small V stitches radiating in rounds from a tight closed centre, evenly increasing outward, in fluffy wool yarn.',
+  ].join(' '),
 }
+
+// Knit swatches (same engine, different craft): the upscaler must read the base
+// as KNITTING, so the crochet wording — and the crochet negative — must swap.
+const KNIT_PROMPTS: Record<string, string> = {
+  k: [
+    'An extreme close-up macro photograph of a hand-knitted stockinette stitch swatch in soft wool.',
+    'Neat, even vertical columns of small interlocking V-shaped knit stitches, smooth classic stocking stitch fabric, in fluffy wool yarn.',
+  ].join(' '),
+  stockinette: [
+    'An extreme close-up macro photograph of a hand-knitted stockinette stitch swatch in soft wool.',
+    'Neat, even vertical columns of small interlocking V-shaped knit stitches, smooth classic stocking stitch fabric, in fluffy wool yarn.',
+  ].join(' '),
+  garter: [
+    'An extreme close-up macro photograph of a hand-knitted garter stitch swatch in soft wool.',
+    'Even horizontal ridges of plump purl bumps alternating with recessed valley rows, squashy classic garter stitch fabric, in fluffy wool yarn.',
+  ].join(' '),
+}
+
 const COMMON =
   'Real visible yarn: soft plied fibres, a gentle fuzzy halo, cosy hand-crocheted wool texture, each stitch tidy and uniform. Soft natural window light, shallow depth of field, extremely detailed, photorealistic, looks like a real crocheted swatch.'
+const COMMON_KNIT =
+  'Real visible yarn: soft plied fibres, a gentle fuzzy halo, cosy hand-knitted wool texture, each stitch tidy and uniform. Soft natural window light, shallow depth of field, extremely detailed, photorealistic, looks like a real knitted swatch.'
 
 const NEG =
   'embroidery, cross stitch, knitting, woven fabric, basket weave, smooth plastic, dough, cartoon, illustration, vector art, flat colours, 3d render, cgi, digital art'
+const NEG_KNIT =
+  'embroidery, cross stitch, crochet, woven fabric, basket weave, smooth plastic, dough, cartoon, illustration, vector art, flat colours, 3d render, cgi, digital art'
 
 interface FalImage {
   url: string
@@ -92,14 +126,21 @@ interface FalResponse {
   seed?: number
 }
 
-async function upscale(initPath: string, outPath: string, creativity: number, resemblance: number, prompt: string) {
+async function upscale(
+  initPath: string,
+  outPath: string,
+  creativity: number,
+  resemblance: number,
+  prompt: string,
+  negativePrompt: string = NEG,
+) {
   const key = process.env.FAL_KEY
   if (!key) throw new Error('FAL_KEY not found (.env.credentials).')
   const b64 = readFileSync(initPath).toString('base64')
   const body = {
     image_url: `data:image/png;base64,${b64}`,
     prompt,
-    negative_prompt: NEG,
+    negative_prompt: negativePrompt,
     upscale_factor: 2,
     creativity,
     resemblance,
@@ -137,13 +178,21 @@ async function main() {
   const base = resolve(process.cwd(), process.argv[2] ?? '../../.loom-scratch/crochet/aspen-swatch.png')
   const creativity = Number(process.argv[3] ?? 0.5)
   const resemblance = Number(process.argv[4] ?? 0.85)
-  const stitch = (process.argv[5] ?? 'sc').toLowerCase()
+  // argv[5] = the swatch arg (preferred), argv[6] = its dictionary stitch as a
+  // fallback — the first of the two with a prompt on file wins.
+  const argName = (process.argv[5] ?? 'sc').toLowerCase()
+  const fallback = (process.argv[6] ?? 'sc').toLowerCase()
+  const stitch =
+    argName in STITCH_PROMPTS || argName in KNIT_PROMPTS ? argName : fallback
   if (!existsSync(base)) throw new Error(`base not found: ${base}`)
 
-  const prompt = `${STITCH_PROMPTS[stitch] ?? STITCH_PROMPTS.sc} ${COMMON}`
+  const knit = stitch in KNIT_PROMPTS
+  const prompt = knit
+    ? `${KNIT_PROMPTS[stitch]} ${COMMON_KNIT}`
+    : `${STITCH_PROMPTS[stitch] ?? STITCH_PROMPTS.sc} ${COMMON}`
   const out = base.replace(/\.png$/, '-hero.png')
   console.log(`[Step 4] upscale base=${basename(base)} stitch=${stitch} creativity=${creativity} resemblance=${resemblance}`)
-  const meta = await upscale(base, out, creativity, resemblance, prompt)
+  const meta = await upscale(base, out, creativity, resemblance, prompt, knit ? NEG_KNIT : NEG)
   console.log(`wrote ${out} (${(meta.bytes / 1024).toFixed(0)} KB, ${meta.width}x${meta.height})`)
 
   // Fidelity gate: confirm the upscale didn't move the stitches.

@@ -19,7 +19,7 @@
 import type { StitchLink } from './yarnPath'
 import type { BuiltSwatch } from './buildSwatch'
 
-export function auditProblems(swatch: BuiltSwatch, arg: string, W: number, yr: number): string[] {
+export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr: number): string[] {
   const { built } = swatch
   const { nodes, dist, bend } = built.model
   const problems: string[] = []
@@ -33,9 +33,10 @@ export function auditProblems(swatch: BuiltSwatch, arg: string, W: number, yr: n
     problems.push(`strand covers ${built.strandPath.length}/${nodes.length} nodes — not one strand`)
   else if (built.strandPath.some((ni, k) => ni !== k)) problems.push('strand path is out of order')
 
-  // 2. Pins only on the anchor. For ch the anchor is the slip knot (its 11
-  // build nodes); for worked swatches the foundation chain (3 nodes/column).
-  const pinLimit = arg === 'ch' ? 11 : 3 * W
+  // 2. Pins only on the anchor — the builder declares how many nodes at the
+  // start of the strand are the legitimate pinned anchor (foundation chain,
+  // slip knot, magic ring, cast-on).
+  const pinLimit = built.anchorPins
   const badPins = nodes.map((n, i) => ({ n, i })).filter(({ n, i }) => n.w === 0 && i >= pinLimit)
   if (badPins.length) problems.push(`${badPins.length} pinned WORKED nodes (first at ${badPins[0]!.i}) — pinned drawing, not stitching`)
 
@@ -49,22 +50,48 @@ export function auditProblems(swatch: BuiltSwatch, arg: string, W: number, yr: n
   // 3b. A build that records no interlocks has nothing holding it together.
   if (built.links.length === 0) problems.push('build recorded ZERO interlocks — nothing links the yarn')
 
-  // 4. Interlocks held after relax.
+  // 4. Interlocks held after relax. Offsets are measured in the FABRIC frame:
+  // flat swatches use world x/y; work in the round maps along-the-row to the
+  // tangential direction and row-height to the radial one ("above its crown" on
+  // a disc means radially outward, not world +y).
   const linkFails: string[] = []
+  const rel = (hi: number, bi: number): { x: number; y: number } => {
+    const h = nodes[hi]!
+    const b = nodes[bi]!
+    if (built.frame === 'polar') {
+      const rh = Math.hypot(h.x, h.y)
+      const rb = Math.hypot(b.x, b.y)
+      let da = Math.atan2(h.y, h.x) - Math.atan2(b.y, b.x)
+      if (da > Math.PI) da -= Math.PI * 2
+      if (da < -Math.PI) da += Math.PI * 2
+      return { x: da * ((rh + rb) / 2), y: rh - rb }
+    }
+    return { x: h.x - b.x, y: h.y - b.y }
+  }
   const check = (l: StitchLink): string | null => {
     const h = nodes[l.hook]!
     const b = nodes[l.below]!
+    const d = rel(l.hook, l.below)
     if (l.role === 'hook') {
       // Dives under the crown to its far z-side and stays beside/below it.
       if (h.z * b.z > 0 && Math.abs(h.z - b.z) < yr * 0.45) return 'hook settled on the SAME side as its crown'
-      if (Math.abs(h.x - b.x) > yr * 2.5) return `hook slipped sideways off its crown (dx=${((h.x - b.x) / yr).toFixed(2)}yr)`
-      if (h.y - b.y > yr * 1.2) return `hook floated above its crown (dy=${((h.y - b.y) / yr).toFixed(2)}yr)`
+      if (Math.abs(d.x) > yr * 2.5) return `hook slipped sideways off its crown (dx=${(d.x / yr).toFixed(2)}yr)`
+      if (d.y > yr * 1.2) return `hook floated above its crown (dy=${(d.y / yr).toFixed(2)}yr)`
       return null
     }
     if (l.role === 'ring') {
       // Encircles the stem: still beside it, far side still z-separated.
-      if (Math.abs(h.x - b.x) > yr * 2.5) return `ring slipped off its stem (dx=${((h.x - b.x) / yr).toFixed(2)}yr)`
-      if (Math.abs(h.y - b.y) > yr * 3.0) return `ring slid up/down its stem (dy=${((h.y - b.y) / yr).toFixed(2)}yr)`
+      if (Math.abs(d.x) > yr * 2.5) return `ring slipped off its stem (dx=${(d.x / yr).toFixed(2)}yr)`
+      if (Math.abs(d.y) > yr * 3.0) return `ring slid up/down its stem (dy=${(d.y / yr).toFixed(2)}yr)`
+      return null
+    }
+    if (l.role === 'through') {
+      // A knit leg passing the old head's mouth: still within the mouth, still
+      // on the fabric's face side of the head (zSign from the build).
+      const sign = l.zSign ?? 1
+      if (Math.abs(d.x) > yr * 2.0) return `leg slipped sideways out of the mouth (dx=${(d.x / yr).toFixed(2)}yr)`
+      if (Math.abs(d.y) > yr * 2.0) return `leg slid up/down out of the mouth (dy=${(d.y / yr).toFixed(2)}yr)`
+      if ((h.z - b.z) * sign < yr * 0.15) return `leg settled BEHIND the head it must pass in front of (dz=${(((h.z - b.z) * sign) / yr).toFixed(2)}yr)`
       return null
     }
     // 'cross' (chain): inside the previous loop's mouth, before its fold, over it.

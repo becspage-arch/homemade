@@ -50,11 +50,19 @@ Files (all under `apps/web`):
 - `src/lib/loom/crochet/engine/dictionary.ts` — every stitch defined once by
   parameters (today: `heightFactor`; sc 1.0, hdc 1.45, dc 2.0, tr 2.7). Add a stitch = one entry.
 - `src/lib/loom/crochet/engine/yarnPath.ts` — `buildContinuous(rowTypes, W, yr)`:
-  emits the continuous strand (foundation + serpentine worked rows). The per-stitch
-  excursion lives here; it branches by stitch type (sc/hdc hide the link behind the
-  fabric; dc routes a visible front post).
+  emits the continuous strand (foundation + serpentine worked rows). Also home of
+  the SHARED pieces every builder uses: `createStrand()` (the one-strand push with
+  auto distance+bend bonds), `stitchDims`, and `emitPlainStitch` (the extracted
+  plain-stitch excursion — see §8c for its two shaping generalisations).
+- `src/lib/loom/crochet/engine/shaping.ts` — `buildShaped` (variable-width rows:
+  increases + decreases) and `buildRounds` (working in the round off a magic
+  ring). §8c.
+- `src/lib/loom/crochet/engine/knitPath.ts` — `buildKnit` (stockinette + garter):
+  the knit craft on the same engine. §8d.
 - `src/lib/loom/crochet/engine/relax.ts` — the relaxer (generic; serves every
-  stitch, 2D + 3D).
+  stitch, 2D + 3D; `layoutMode: 'radial'` is the blocked-to-radius pull for rounds).
+- `scripts/loom-link-debug.ts` — numeric dump of every link's settled offsets per
+  row/round (the generalised ch-debug: get NUMBERS before theories).
 - `src/lib/loom/crochet/yarnLoop.ts` — `pliedFilaments` (spirals plies around a 3D
   centre-line for spun-yarn fibre) + `smooth` (Catmull-Rom).
 - `scripts/loom-continuous.ts` — driver. Args: `yarnRadiusMm`, `W`, `colourHex`,
@@ -223,6 +231,69 @@ are safe for careful non-Fable sessions; new-topology stitches (bobble family,
 magic ring, cables) need the most care — two failed construction attempts in a
 row means stop and write up, not churn. Mechanical re-renders are safe for any
 model. Locked stitches are never reworked without Rebecca's ask.
+
+---
+
+
+## 8c. SHAPING — increases, decreases, rounds, magic ring (2026-07-06)
+
+Built on two generalisations of the shared plain-stitch emitter (`emitPlainStitch`
+in yarnPath.ts), both identity for a plain grid stitch (verified bit-identical):
+
+- **`xCrown` vs `xHook`** — where the stitch's crown lands on ITS row's lattice vs
+  where its hook reaches. An INCREASE = two full stitches hooking the same
+  below-crown (legs genuinely fan from the shared base). A DECREASE
+  (`emitDecrease`, st2tog) = down-leg hooks below-crown A, rises partway, dives
+  under below-crown B, throws ONE crown above the pair — two real audited hooks.
+- **`place`** — an optional fabric-frame transform (along-row, row-height) → world
+  xy, z untouched. Identity flat; polar for rounds (arc length ↔ x, radius ↔ y).
+
+Construction rules that the audit forced (all real, none cosmetic):
+- **Turning chain EVERY row** in shaped fabric (ch 1 + turn — what a crocheter
+  does). The grid builder survives with row-0 slack only because its reaches are
+  symmetric; a shaped row's first reach is eccentric and the corner hook strangles.
+- **An edge increase works its over-the-base stitch FIRST, then the flare** — and
+  the flare's crown sits at most ~0.55·sw beyond the fabric edge (lattice ends
+  clamped). A full-stitch unsupported overhang levers the corner hook out around
+  the pinned foundation crown (it flips z-sides; the audit catches it).
+- **Rows own their lattice**: each row's crowns sit on that row's spacing, centred
+  over the fabric below; hooks reach to whatever the ops consume (the cursor).
+  A row's ops MUST consume exactly the row below (builder throws otherwise).
+
+**Working in the round (buildRounds):** a continuous spiral, NO turn (fz never
+flips — every round works the same face, which is why amigurumi fabric looks
+different from flat rows; it falls out of the model). The MAGIC RING is the
+anchor (the foundation-chain analog): a pre-tightened pinned loop of the same
+strand; round 1's stitches genuinely hook AROUND the ring strand. Every round
+starts at the ring-end phase so the yarn steps straight from the ring into round
+1 (no float across the hole) and round starts stack into a true spiral. Radii:
+ring 1.15yr; each round +1.05·row-pitch. The relaxer holds rounds at their
+worked RADIUS (`layoutMode: 'radial'` — the blocked-flat pull, polar). The audit
+measures link offsets in the FABRIC frame: for `frame: 'polar'` builds,
+along-row = tangential, row-height = radial ("floated above its crown" on a
+disc means radially outward — world-y is meaningless there).
+
+## 8d. KNIT — the new craft on the same engine (2026-07-06)
+
+`buildKnit` (knitPath.ts): weft knitting, one strand, cast-on pinned as the
+anchor. Each stitch = a loop drawn THROUGH the loop below: two LEGS (the V of
+the knit face) crossing the old head's mouth on the face side — recorded as
+`'through'` links with a `zSign` (which z-side the leg must hold; the audit
+checks it) — a HEAD laid a full layer back, and SINKER arcs connecting
+neighbours low + behind. STOCKINETTE = no face flip (knit out, purl back = every
+loop pulled to the same face). GARTER = the flip every course (`knitFlip`).
+
+The two lessons that made it pass (see §9):
+- **Fabric thickness is a real budget.** Stockinette is ~2 yarn diameters thick.
+  Seeded thin (±0.6yr relief), every course's legs squeezed the course below's
+  leg-tops backward and the cascade collapsed each course's crossings onto its
+  own head plane (dz → 0 across the fabric; garter escaped only because
+  alternating faces push opposite ways). Seed the real budget: legs +1.1yr,
+  heads/sinkers −1.0yr — settles at dz ≈ 1.7yr everywhere, fabric ~2.5yr thick.
+- **Route the yarn genuinely under the old head** between sinker (back) and leg
+  (front) — that is where the strand really crosses purl-side → face-side.
+  Without that node the sinker→leg kink pulls the crossing back through the
+  head before collision can hold it.
 
 ---
 

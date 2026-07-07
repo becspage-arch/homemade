@@ -17,6 +17,17 @@
 export type StitchId =
   | 'ch' | 'slst' | 'sc' | 'hdc' | 'dc' | 'tr' | 'dtr'
   | 'scblo' | 'scflo' | 'fpdc' | 'bpdc' | 'bobble'
+  | 'k'
+
+/**
+ * One shaping instruction, in crochet-pattern terms, applied to the row's stitch:
+ *   'st'  = one plain stitch into the next below-crown   (consumes 1, makes 1)
+ *   'inc' = TWO full stitches into the next below-crown  (consumes 1, makes 2)
+ *   'dec' = st2tog: one stitch drawn over the next TWO below-crowns (consumes 2, makes 1)
+ * A row is a ShapeOp[] in WORK order; its consumption must exactly match the row
+ * below (the builder throws otherwise — a mis-counted pattern is a bug, not fabric).
+ */
+export type ShapeOp = 'st' | 'inc' | 'dec'
 
 export interface StitchDef {
   id: StitchId
@@ -48,6 +59,9 @@ export const STITCHES: Record<StitchId, StitchDef> = {
   // Usually dotted on an sc background, so it borrows the row's height and just
   // bulges forward; this factor only applies to an all-bobble row.
   bobble: { id: 'bobble', heightFactor: 1.4, gaugeYr: 2.3, topLoops: 2 },
+  // KNIT (new craft, same engine — own path builder in knitPath.ts). Stockinette
+  // stitches are a touch wider than tall: ~5 sts + ~7 rows per inch in worsted.
+  k: { id: 'k', heightFactor: 1.1, gaugeYr: 2.6, topLoops: 2 },
 }
 
 /**
@@ -58,6 +72,7 @@ export const STITCHES: Record<StitchId, StitchDef> = {
  */
 export type SwatchArg =
   | StitchId | 'postrib' | 'basketweave' | 'bobbles'
+  | 'scinc' | 'scdec' | 'mrdisc' | 'stockinette' | 'garter'
 
 export interface SwatchRecipe {
   /** The dictionary stitch driving gauge + row height for this swatch. */
@@ -68,8 +83,21 @@ export interface SwatchRecipe {
   auditW: number
   /** Per-cell override for mixed-stitch swatches (ribbing, basketweave, dotted bobbles). */
   pattern?: (j: number, c: number) => StitchId
-  /** Chain relaxes with its own profile (soft squash + table floor). */
-  relaxProfile: 'worked' | 'chain'
+  /**
+   * Which path builder makes this swatch. Default = the flat grid builder
+   * (buildContinuous). 'shaped' = variable-width rows (increases/decreases,
+   * needs shapeRows). 'round' = worked in the round off a magic ring (needs
+   * roundCounts). 'knit' = the knit path builder (loops through loops).
+   */
+  builder?: 'shaped' | 'round' | 'knit'
+  /** builder 'shaped': the per-row shaping ops, work order, off auditW foundation stitches. */
+  shapeRows?: ShapeOp[][]
+  /** builder 'round': stitches per round of the spiral (each round +6 = flat disc). */
+  roundCounts?: number[]
+  /** builder 'knit': true = garter (worked face alternates per course); false/absent = stockinette. */
+  knitFlip?: boolean
+  /** Chain relaxes with its own profile (soft squash + table floor); rounds hold their radius. */
+  relaxProfile: 'worked' | 'chain' | 'round'
   /** Hero camera tilt (0 = flat top-down; 16 = tall posts; 40 = side-on for relief). */
   tiltDeg: number
   /** Render ply twist (0.1 = rustic wool; 0.05 = calmer, for clean columns). */
@@ -196,4 +224,61 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     referenceUrl: '',
     status: 'wip',
   },
+  // ---- SHAPING (sc family) ----
+  // Growing trapezoid: inc at both ends of every row (8 → 20 over 6 rows).
+  scinc: {
+    stitch: 'sc', rows: 6, auditW: 8, builder: 'shaped',
+    shapeRows: growPlan(8, 6),
+    relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
+    referenceUrl: 'https://sarahmaker.com/wp-content/uploads/2022/03/single-crochet-increase-2-819x1024.jpg',
+    status: 'wip',
+  },
+  // Shrinking trapezoid: sc2tog at both ends of every row (16 → 6 over 5 rows).
+  scdec: {
+    stitch: 'sc', rows: 5, auditW: 16, builder: 'shaped',
+    shapeRows: shrinkPlan(16, 5),
+    relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
+    referenceUrl: 'https://christacodesign.com/wp-content/uploads/2021/03/Single-crochet-two-together-edges-2-1024x768.jpg',
+    status: 'wip',
+  },
+  // Flat amigurumi circle: magic ring, 6 sc, +6 per round in a continuous spiral.
+  mrdisc: {
+    stitch: 'sc', rows: 6, auditW: 16, builder: 'round',
+    roundCounts: [6, 12, 18, 24, 30, 36],
+    relaxProfile: 'round', tiltDeg: 0, twist: 0.1,
+    referenceUrl: 'https://sarahmaker.com/wp-content/uploads/2022/03/crochet-circle-7-819x1024.jpg',
+    status: 'wip',
+  },
+  // ---- KNIT (new craft, knit path builder) ----
+  k: {
+    stitch: 'k', rows: 9, auditW: 12, builder: 'knit', relaxProfile: 'worked', tiltDeg: 0, twist: 0.05,
+    referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2020/03/stockinette-stitch-right-side-1024x684.jpg',
+    status: 'wip',
+  },
+  stockinette: {
+    stitch: 'k', rows: 9, auditW: 12, builder: 'knit', relaxProfile: 'worked', tiltDeg: 0, twist: 0.05,
+    referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2020/03/stockinette-stitch-right-side-1024x684.jpg',
+    status: 'wip',
+  },
+  garter: {
+    stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFlip: true, relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
+    referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/04/close-up-of-a-swatch-in-garter-stitch-1024x684.jpg',
+    status: 'wip',
+  },
+}
+
+/** inc at both ends of every row: w0 → w0 + 2·rows. */
+function growPlan(w0: number, rows: number): ShapeOp[][] {
+  return Array.from({ length: rows }, (_, j) => {
+    const below = w0 + 2 * j
+    return ['inc', ...(Array(below - 2).fill('st') as ShapeOp[]), 'inc'] as ShapeOp[]
+  })
+}
+
+/** sc2tog at both ends of every row: w0 → w0 − 2·rows. */
+function shrinkPlan(w0: number, rows: number): ShapeOp[][] {
+  return Array.from({ length: rows }, (_, j) => {
+    const below = w0 - 2 * j
+    return ['dec', ...(Array(below - 4).fill('st') as ShapeOp[]), 'dec'] as ShapeOp[]
+  })
 }

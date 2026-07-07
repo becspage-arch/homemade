@@ -85,7 +85,7 @@ function main() {
 
   // 4. Photoreal hero + fidelity gate.
   console.log('[4/4] photoreal hero + fidelity gate')
-  const h = spawnSync('npx', ['tsx', 'scripts/loom-aspen-hero.ts', basePng, '0.6', '0.8', recipe.stitch], {
+  const h = spawnSync('npx', ['tsx', 'scripts/loom-aspen-hero.ts', basePng, '0.6', '0.8', arg, recipe.stitch], {
     stdio: ['ignore', 'inherit', 'inherit'],
     shell: true,
   })

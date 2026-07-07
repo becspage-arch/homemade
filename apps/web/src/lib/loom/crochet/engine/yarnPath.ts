@@ -33,9 +33,14 @@ import { STITCHES, type StitchId } from './dictionary'
 export interface StitchLink {
   j: number
   c: number
-  role: 'hook' | 'ring' | 'cross'
+  /** 'hook' dives under a crown; 'ring' encircles a post stem; 'cross' passes
+   *  through a chain loop's opening; 'through' = a knit leg passing the old
+   *  head's mouth on the fabric's face side. */
+  role: 'hook' | 'ring' | 'cross' | 'through'
   hook: number
   below: number
+  /** 'through' only: which z-side of `below` the hook must settle on (±1). */
+  zSign?: number
 }
 
 export interface BuiltContinuous {
@@ -53,6 +58,11 @@ export interface BuiltContinuous {
    * pin beyond these — pinned worked geometry is drawing, not stitching.
    */
   anchorPins: number
+  /**
+   * The fabric frame the audit should measure link offsets in. 'polar' (work in
+   * the round): along-the-row = tangential, row-height = radial. Absent = flat.
+   */
+  frame?: 'polar'
 }
 
 export interface BuildOpts {
