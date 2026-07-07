@@ -134,12 +134,12 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   scblo: {
     stitch: 'scblo', rows: 8, auditW: 16, relaxProfile: 'worked', tiltDeg: 0, twist: 0.05, // calmer twist so the ridge line isn't lost in ply noise
     referenceUrl: 'https://blog.annettepetavy.com/wp-content/uploads/2020/05/image0101200px-500x375.jpg',
-    status: 'reverify', // render done 2026-07-03, reference comparison pending
+    status: 'locked', lockedOn: '2026-07-07', // faithful flat-turned: ridge shows every OTHER row (odd rows' ridge is correctly on the hidden back face). Rebecca signed off consistent-with-locked-sc.
   },
   scflo: {
     stitch: 'scflo', rows: 8, auditW: 16, relaxProfile: 'worked', tiltDeg: 0, twist: 0.05,
     referenceUrl: 'https://blog.annettepetavy.com/wp-content/uploads/2020/05/image0091200px-500x375.jpg',
-    status: 'reverify',
+    status: 'locked', lockedOn: '2026-07-07',
   },
   fpdc: {
     stitch: 'fpdc', rows: 8, auditW: 12, relaxProfile: 'worked', tiltDeg: 40, twist: 0.05,

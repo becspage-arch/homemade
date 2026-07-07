@@ -159,7 +159,7 @@ below is the narrative record.
 | **sl st** | shortest worked (`heightFactor 0.8` — a row is still ≈1 yarn thick), tight gauge | ✅ **LOCKED**, re-verified 2026-07-03. Audit caught its row-0 corner stitch strangling off the pinned foundation → fixed with the **turning chain** (real slack into every first stitch, all stitches benefit) |
 | **ch** | REBUILT 2026-07-02 as the true pull-through topology: each loop a flat teardrop; BOTH strands of loop n thread loop n−1's opening; connector = the back bump behind the work; only the slip knot pinned. Soft chain collision (`collMinDist 1.0yr` — drawn-tight chain squashes), whisper plane pull, TABLE floor (`floorZ`), 400 iters. Settled geometry verified numerically (`scripts/loom-ch-debug.ts`): folds centred + hidden mid-depth, legs symmetric on the front, both crossings inside each hole, bumps at the back, loop rotation ~2°. Face = nested-V plait. | ✅ **LOCKED 2026-07-02** (Rebecca signed off vs the eyeloveknots chain reference). Cross-weight (fine/worsted) confirmation folded into the audit sweep. |
 | **bobble** | gathered cluster: genuine base hook + N loops bulging forward to one top | ◑ **WIP, not signed off**. Reads as lumps, not berries — AND the audit (2026-07-03) shows 3 broken interlocks on stitches adjacent to bobbles (hooks pulled out of their dive by the bulge). Fix the construction (slack/feed around the bulge) before any look work. |
-| **sc blo / flo** | head split into a real back + front loop; hook one, float the other as a ridge | ◔ **REVERIFY** — locked 2026-06-29, numeric audit passes (2026-07-03), reference re-comparison pending (blo render on disk; flo rendering via pipeline proof run). References in `SWATCH_RECIPES`. |
+| **sc blo / flo** | head split into a real back + front loop; hook one, float the other as a ridge | ✅ **LOCKED 2026-07-07** (Rebecca). Reference re-verification found + fixed a real bug (ridge was nudged AFTER placement → relaxation crushed it; now baked at creation, split 2.2/0.25 zh, settled gap ~0.76yr) + calmer twist (0.05). Chosen depiction = **faithful flat-turned**: because we turn every row, each row's unworked loop correctly lands on the face it was worked from, so the ridge shows every OTHER row on the viewed face (odd rows' ridge settles to −z, hidden). Signed off as structurally correct + consistent with the locked `sc` look. Remaining softness (ridge reads heavier than a clean reference line) is the shared engine yarn-look, not blo/flo-specific — deferred to a possible library-wide yarn-crispness pass. |
 | **fpdc / bpdc** | post RINGS the stem below (collision-held); body pops front (fp) / back (bp), head stays at plane; dense gauge | ◔ **REVERIFY** — locked 2026-06-29, numeric audit passes, reference re-comparison pending (show as `postrib`). Basketweave/waffle = same move in blocks, deferred to combos |
 
 **Regenerating / building a stitch — use THE PIPELINE (one command, gates built in):**
@@ -266,6 +266,24 @@ model. Locked stitches are never reworked without Rebecca's ask.
   dump the settled positions per stitch (`scripts/loom-ch-debug.ts` pattern) before
   touching parameters. Two renders in a row got misread until the dump showed the
   expelled strand.
+- **A retroactive z-nudge on an already-placed node barely survives relaxation**
+  (blo/flo ridge, 2026-07-07). Pushing `nodes[k].z *= 1.7` AFTER the node is placed
+  fights its own recorded distance-constraint rest lengths; the relaxer mostly undoes
+  it (measured ~0.25yr net gap, under 1/8 of a yarn diameter — invisible). Bake the
+  offset in at node CREATION so the rest lengths are correct from the start (the blo
+  ridge split then held ~0.76yr). General rule: shape belongs in the initial
+  placement, never a post-hoc shove.
+- **"Ridge only shows every other row" was NOT a bug** (blo/flo, 2026-07-07). We turn
+  every row (faithful flat crochet), so each row's unworked loop lands on whichever
+  FACE it was worked from; a top-down camera sees only the +z half → ridge every other
+  row (`scripts/loom-blo-debug2.ts` dumps per-row ridge z: even rows +z visible, odd
+  rows settle to ≈−2yr, hidden). That is correct flat-turned behaviour. The bolder
+  every-row ridge in in-the-round dictionary photos is the NO-TURN presentation. A
+  gated `noTurn` option (fz held +1) reproduces it and puts every ridge on the front —
+  but in the serpentine strand model it strands the edge-column interlocks at the
+  row-turns (the turning-chain slack assumed the face-flip); the clean fix would be
+  true single-direction in-the-round construction. Left off — Rebecca chose the
+  faithful flat-turned depiction. Don't "fix" the every-other-row ridge; it's real.
 
 ---
 
