@@ -93,6 +93,13 @@ export interface SwatchRecipe {
    * the round). Only affects blo/flo; plain stitches ignore it.
    */
   noTurn?: boolean
+  /**
+   * Column-spacing (gauge) override in yarn radii for THIS swatch only, leaving the
+   * driving stitch's shared dictionary gauge untouched. Used by postrib to pack its
+   * alternating fp/bp columns tighter than a plain all-fpdc swatch without moving
+   * the locked fpdc/bpdc gauge.
+   */
+  gaugeYr?: number
 }
 
 export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
@@ -159,10 +166,11 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   postrib: {
     stitch: 'fpdc', rows: 8, auditW: 12, relaxProfile: 'worked', tiltDeg: 40, twist: 0.05,
     pattern: (j, c) => (j === 0 ? 'dc' : c % 2 === 0 ? 'fpdc' : 'bpdc'), // raised rib / recessed valley
+    gaugeYr: 1.5, // pack the alternating fp/bp columns tighter (fpdc's 1.9 left daylight between ribs); real rib columns touch
     // plain 1x1 fpdc/bpdc rib, flat lay, columns packed tight — a much cleaner
     // match than the old fringepost9 colourwork-cable photo (moralefiber.blog)
     referenceUrl: 'https://doradoes.co.uk/wp-content/uploads/2021/04/double-front-post-back-post-dc-rib-1024x1024.jpg',
-    status: 'locked', lockedOn: '2026-07-07', // alternating rib reads clearly; caveat: more OPEN than a tight real rib (looser gauge)
+    status: 'locked', lockedOn: '2026-07-07', // gauge 1.9->1.5 closed the rib gaps; now reads as distinct packed vertical ribs matching the reference
   },
   basketweave: {
     stitch: 'dc', rows: 8, auditW: 12, relaxProfile: 'worked', tiltDeg: 40, twist: 0.05,

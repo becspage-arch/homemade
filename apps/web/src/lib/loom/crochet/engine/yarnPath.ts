@@ -64,6 +64,14 @@ export interface BuildOpts {
    * for one continuous strand; only the worked FACE is held constant.
    */
   noTurn?: boolean
+  /**
+   * Column-spacing override (gauge) in yarn radii. Normally gauge comes from the
+   * row's stitch in the dictionary (STITCHES[id].gaugeYr); this lets a specific
+   * SWATCH pack tighter/looser without touching that shared per-stitch gauge —
+   * e.g. post ribbing wants its alternating fp/bp columns closer than a plain
+   * all-fpdc swatch, so postrib overrides it while locked fpdc/bpdc keep theirs.
+   */
+  gaugeYr?: number
 }
 
 /** SCRATCH DIAGNOSTIC ONLY (not audited, not rendered): the blo/flo ridge node
@@ -83,7 +91,7 @@ export function buildContinuous(
   // a tall stitch (dc/tr) is more open. Per-stitch, calibrated against the real
   // reference photos — lives in the dictionary (single source of truth).
   const st0 = rowTypes[0] ?? 'sc'
-  const sw = yr * STITCHES[st0].gaugeYr
+  const sw = yr * (opts.gaugeYr ?? STITCHES[st0].gaugeYr)
   const z = yr * 0.3 // base relief (gentle — turned fabric is fairly flat, not corrugated)
   const zh = yr * 0.5 // crown relief (the head rides proud on its worked face)
   const cw = yr * 0.4 // crown half-width — a slim head-line, not a fat rope
