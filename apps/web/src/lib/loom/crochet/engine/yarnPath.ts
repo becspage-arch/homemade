@@ -53,6 +53,17 @@ export interface BuildOpts {
   /** Per-stitch override (row j, column c) → stitch id. For patterns like
    *  basketweave / mixed-stitch motifs. Falls back to rowTypes[j] when absent. */
   stitchAt?: (j: number, c: number) => StitchId
+  /**
+   * Work every row from the SAME face instead of turning (fz stays +1 for all
+   * rows). This is real crochet — blo/flo ribbing is usually worked in the round
+   * exactly this way — and it is how stitch dictionaries showcase the ridge: with
+   * no turn, every row's unworked loop piles onto the FRONT face, so the ridge
+   * shows on every row (turned flat fabric only shows it every other row, half the
+   * ridges landing on the hidden back). Only meaningful for the loop-only stitches;
+   * plain stitches look the same turned or not. The yarn still snakes serpentine
+   * for one continuous strand; only the worked FACE is held constant.
+   */
+  noTurn?: boolean
 }
 
 /** SCRATCH DIAGNOSTIC ONLY (not audited, not rendered): the blo/flo ridge node
@@ -244,7 +255,7 @@ export function buildContinuous(
     // wrong side). `fz` carries the stitch's +z/−z handedness. The hook always dives
     // to the OPPOSITE z-side of whichever loop it links, so the interlock is real on
     // either face.
-    const fz = j % 2 === 0 ? 1 : -1
+    const fz = opts.noTurn ? 1 : j % 2 === 0 ? 1 : -1
     const crownThisBack: number[] = new Array(W).fill(-1)
     const crownThisFront: number[] = new Array(W).fill(-1)
     const postThis: number[] = new Array(W).fill(-1)

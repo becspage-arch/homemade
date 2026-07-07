@@ -22,7 +22,7 @@ export function isSwatchArg(arg: string): arg is SwatchArg {
 export function buildRelaxedSwatch(arg: SwatchArg, W: number, yr: number): BuiltSwatch {
   const recipe = SWATCH_RECIPES[arg]
   const rows: StitchId[] = Array(recipe.rows).fill(recipe.stitch) as StitchId[]
-  const built = buildContinuous(rows, W, yr, { stitchAt: recipe.pattern })
+  const built = buildContinuous(rows, W, yr, { stitchAt: recipe.pattern, noTurn: recipe.noTurn })
 
   // Collision is what HOLDS the interlock (yarn can't pass through yarn), so it
   // runs firm and long. No plane pull for worked fabric — the +z/−z relief at each

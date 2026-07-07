@@ -86,6 +86,13 @@ export interface SwatchRecipe {
    */
   status: 'locked' | 'reverify' | 'wip'
   lockedOn?: string
+  /**
+   * Work every row from the same face (no turn) so a loop-only stitch's unworked
+   * loops all pile on the front and the ridge shows on EVERY row — how a stitch
+   * dictionary showcases blo/flo. Real crochet (blo ribbing is worked this way in
+   * the round). Only affects blo/flo; plain stitches ignore it.
+   */
+  noTurn?: boolean
 }
 
 export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
