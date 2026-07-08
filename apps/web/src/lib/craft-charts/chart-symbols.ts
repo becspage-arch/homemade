@@ -172,6 +172,65 @@ const CROCHET_SYMBOLS: ChartSymbolDefinition[] = [
     // X of two trebles.
     svg: '<line x1="-7" y1="-7" x2="7" y2="7" stroke="currentColor" stroke-width="2"/><line x1="7" y1="-7" x2="-7" y2="7" stroke="currentColor" stroke-width="2"/>',
   },
+  {
+    craft: 'crochet',
+    key: 'dc2tog',
+    label: 'dc2tog — double crochet 2 together',
+    // Decrease: two legs meeting at a single point at the top. The
+    // mirror of the V-stitch (which splays from a single base). Same
+    // shape as US sc2tog.
+    svg: '<line x1="0" y1="-8" x2="-7" y2="8" stroke="currentColor" stroke-width="2"/><line x1="0" y1="-8" x2="7" y2="8" stroke="currentColor" stroke-width="2"/>',
+  },
+  {
+    craft: 'crochet',
+    key: 'front-post',
+    label: 'fpdc / fptr — front post',
+    // Treble stem whose foot hooks forward (to the right) around the post.
+    svg: '<line x1="-6" y1="-8" x2="6" y2="-8" stroke="currentColor" stroke-width="2"/><path d="M 0 -8 L 0 5 Q 0 9 4 9" fill="none" stroke="currentColor" stroke-width="2"/><line x1="-5" y1="-1" x2="5" y2="-1" stroke="currentColor" stroke-width="2"/>',
+  },
+  {
+    craft: 'crochet',
+    key: 'back-post',
+    label: 'bpdc / bptr — back post',
+    // Mirror of the front-post glyph — the foot hooks back (to the left).
+    svg: '<line x1="-6" y1="-8" x2="6" y2="-8" stroke="currentColor" stroke-width="2"/><path d="M 0 -8 L 0 5 Q 0 9 -4 9" fill="none" stroke="currentColor" stroke-width="2"/><line x1="-5" y1="-1" x2="5" y2="-1" stroke="currentColor" stroke-width="2"/>',
+  },
+  {
+    craft: 'crochet',
+    key: 'quadruple-treble',
+    label: 'quadtr — quadruple treble',
+    // Treble stem with four crossbars (one more than triple-treble).
+    svg: '<line x1="-7" y1="-7" x2="7" y2="-7" stroke="currentColor" stroke-width="2"/><line x1="0" y1="-7" x2="0" y2="7" stroke="currentColor" stroke-width="2"/><line x1="-5" y1="-4.5" x2="5" y2="-4.5" stroke="currentColor" stroke-width="2"/><line x1="-5" y1="-1.5" x2="5" y2="-1.5" stroke="currentColor" stroke-width="2"/><line x1="-5" y1="1.5" x2="5" y2="1.5" stroke="currentColor" stroke-width="2"/><line x1="-5" y1="4.5" x2="5" y2="4.5" stroke="currentColor" stroke-width="2"/>',
+  },
+  {
+    craft: 'crochet',
+    key: 'crossed-double-treble',
+    label: 'cr-dtr — crossed double treble',
+    // X of two double trebles — the crossed-treble X with the double-
+    // treble crossbars added near the centre.
+    svg: '<line x1="-7" y1="-7" x2="7" y2="7" stroke="currentColor" stroke-width="2"/><line x1="7" y1="-7" x2="-7" y2="7" stroke="currentColor" stroke-width="2"/><line x1="-4" y1="-1" x2="4" y2="-1" stroke="currentColor" stroke-width="2"/><line x1="-4" y1="2" x2="4" y2="2" stroke="currentColor" stroke-width="2"/>',
+  },
+  {
+    craft: 'crochet',
+    key: 'third-loop-htr',
+    label: '3rd-loop htr — half treble in third loop',
+    // Half-treble T with a short tick at the base marking the third loop.
+    svg: '<line x1="-7" y1="-7" x2="7" y2="-7" stroke="currentColor" stroke-width="2"/><line x1="0" y1="-7" x2="0" y2="7" stroke="currentColor" stroke-width="2"/><line x1="-4" y1="7" x2="4" y2="7" stroke="currentColor" stroke-width="2"/>',
+  },
+  {
+    craft: 'crochet',
+    key: 'fan',
+    label: 'fan — fan stitch',
+    // Open fan of trebles from one base point, tied by a top arc.
+    svg: '<line x1="-9" y1="-6" x2="0" y2="8" stroke="currentColor" stroke-width="2"/><line x1="-5" y1="-7" x2="0" y2="8" stroke="currentColor" stroke-width="2"/><line x1="0" y1="-8" x2="0" y2="8" stroke="currentColor" stroke-width="2"/><line x1="5" y1="-7" x2="0" y2="8" stroke="currentColor" stroke-width="2"/><line x1="9" y1="-6" x2="0" y2="8" stroke="currentColor" stroke-width="2"/><path d="M -9 -6 Q 0 -11 9 -6" fill="none" stroke="currentColor" stroke-width="2"/>',
+  },
+  {
+    craft: 'crochet',
+    key: 'star-stitch',
+    label: 'star — star stitch',
+    // Six-point burst.
+    svg: '<line x1="0" y1="-8" x2="0" y2="8" stroke="currentColor" stroke-width="2"/><line x1="-7" y1="-4" x2="7" y2="4" stroke="currentColor" stroke-width="2"/><line x1="-7" y1="4" x2="7" y2="-4" stroke="currentColor" stroke-width="2"/>',
+  },
 ]
 
 /**

@@ -369,7 +369,10 @@ export function CrochetActiveProject({
             sections={sections}
             projectSetup={state.projectSetup}
           />
-          <CrochetStitchHelpPanel craftStitchSlugs={pattern.craftStitchSlugs} />
+          <CrochetStitchHelpPanel
+            craftStitchSlugs={pattern.craftStitchSlugs}
+            terminology={terminology}
+          />
           {pattern.sourceTutorialId && (
             <div className="crochet-studio-active-errata">
               <ErrataLink tutorialId={pattern.sourceTutorialId} />

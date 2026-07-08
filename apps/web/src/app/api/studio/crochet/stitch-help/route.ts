@@ -24,10 +24,22 @@ export async function GET(request: Request) {
 
   if (slugs.length === 0) return NextResponse.json([])
 
-  // Look up each stitch in the master table for the canonical name.
+  // Look up each stitch in the master table for its names, abbreviations,
+  // chart symbol and one-line how-it-works note — enough for the Studio
+  // panel to remind the maker what the stitch is without leaving the row.
   const stitches = await prisma.stitch.findMany({
     where: { slug: { in: slugs } },
-    select: { slug: true, canonicalName: true, craft: true },
+    select: {
+      slug: true,
+      canonicalName: true,
+      craft: true,
+      ukName: true,
+      usName: true,
+      ukAbbreviation: true,
+      usAbbreviation: true,
+      chartSymbol: true,
+      notes: true,
+    },
   })
   const stitchBySlug = new Map(stitches.map((s) => [s.slug, s]))
 
@@ -60,6 +72,12 @@ export async function GET(request: Request) {
     return {
       stitchSlug: slug,
       canonicalName: master?.canonicalName ?? slug,
+      ukName: master?.ukName ?? null,
+      usName: master?.usName ?? null,
+      ukAbbreviation: master?.ukAbbreviation ?? null,
+      usAbbreviation: master?.usAbbreviation ?? null,
+      chartSymbol: master?.chartSymbol ?? null,
+      notes: master?.notes ?? null,
       tutorial: tutorial
         ? {
             slug: tutorial.slug,
