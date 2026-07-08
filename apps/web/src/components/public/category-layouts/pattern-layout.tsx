@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import { BookOpen } from 'lucide-react'
 import { Prisma, prisma, TutorialStatus, Visibility } from '@homemade/db'
+import { REFERENCE_CRAFTS } from '@/lib/stitch-reference'
 import { FoundationsPath } from '@/components/public/category/foundations-path'
 import { PatternLibraryGrid } from '@/app/(public)/cross-stitch/patterns/pattern-library-grid'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
@@ -473,6 +475,18 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
           </ul>
         )}
       </header>
+
+      {REFERENCE_CRAFTS[category.slug] && (
+        <Link href={`/stitches/${category.slug}`} className="pattern-landing-stitchguide">
+          <BookOpen size={22} strokeWidth={1.5} aria-hidden />
+          <span className="pattern-landing-stitchguide-text">
+            <strong>New to the chart symbols?</strong> The {REFERENCE_CRAFTS[category.slug]!.title.toLowerCase()} stitch
+            guide shows what every symbol means, its name and abbreviation, and how to work it.
+            Free to open or print for your pattern folder.
+          </span>
+          <span className="pattern-landing-stitchguide-cta">Stitch guide →</span>
+        </Link>
+      )}
 
       {foundations.length > 0 && (
         <FoundationsPath

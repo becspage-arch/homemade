@@ -16,6 +16,7 @@
 import { prisma, TutorialStatus } from '@homemade/db'
 import { getChartSymbol } from '@/lib/craft-charts/chart-symbols'
 import type { Craft } from '@/lib/craft-charts/types'
+import { STITCH_WORKING_STEPS } from '@/lib/stitch-working-steps'
 
 export interface StitchReferenceEntry {
   slug: string
@@ -31,6 +32,10 @@ export interface StitchReferenceEntry {
   chartSymbol: string | null
   difficulty: string | null
   notes: string | null
+  /** Concise imperative "how to work it" steps for the cheat sheet, when
+   *  this stitch is one of the quick-reference stitches. Null for
+   *  specialty stitches that lean on their full lesson instead. */
+  workingSteps: string[] | null
   /** The published STITCH tutorial that teaches this stitch, if any. */
   tutorial: { slug: string; categorySlug: string } | null
 }
@@ -129,6 +134,7 @@ export async function getStitchReference(craft: Craft): Promise<StitchReferenceG
       chartSymbol: s.chartSymbol && getChartSymbol(craft, s.chartSymbol) ? s.chartSymbol : null,
       difficulty: s.difficulty,
       notes: s.notes,
+      workingSteps: STITCH_WORKING_STEPS[s.slug] ?? null,
       tutorial: tutorialForSlug(s.slug),
     }
     const list = byCategory.get(s.category) ?? []

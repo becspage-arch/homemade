@@ -70,7 +70,7 @@ export default async function StitchGuidePage({ params }: PageProps) {
         </p>
       </header>
 
-      <StitchReferenceControls initial="uk" />
+      <StitchReferenceControls craft={craftSlug} initial="uk" />
 
       <section className="stitches-howto no-print" aria-label="How to use this guide">
         <p>
@@ -122,7 +122,18 @@ export default async function StitchGuidePage({ params }: PageProps) {
                         </code>
                       )}
                     </div>
-                    {s.notes && <p className="stitch-note">{s.notes}</p>}
+                    {s.workingSteps ? (
+                      <details className="stitch-how">
+                        <summary>How to work it</summary>
+                        <ol className="stitch-steps">
+                          {s.workingSteps.map((step, i) => (
+                            <li key={i}>{step}</li>
+                          ))}
+                        </ol>
+                      </details>
+                    ) : (
+                      s.notes && <p className="stitch-note">{s.notes}</p>
+                    )}
                   </div>
                   <div className="stitch-actions no-print">
                     {s.tutorial && (

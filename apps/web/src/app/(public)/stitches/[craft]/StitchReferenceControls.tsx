@@ -17,7 +17,13 @@ type Mode = 'uk' | 'us'
 
 const ROOT_ID = 'stitch-reference-root'
 
-export function StitchReferenceControls({ initial = 'uk' }: { initial?: Mode }) {
+export function StitchReferenceControls({
+  craft,
+  initial = 'uk',
+}: {
+  craft: string
+  initial?: Mode
+}) {
   const [mode, setMode] = useState<Mode>(initial)
 
   const choose = (next: Mode) => {
@@ -47,14 +53,13 @@ export function StitchReferenceControls({ initial = 'uk' }: { initial?: Mode }) 
           US terms
         </button>
       </div>
-      <button
-        type="button"
+      <a
         className="stitches-print-btn"
-        onClick={() => typeof window !== 'undefined' && window.print()}
+        href={`/stitches/${craft}/print?terminology=${mode}`}
       >
         <Printer size={16} strokeWidth={1.5} aria-hidden />
         <span>Print / Save as PDF</span>
-      </button>
+      </a>
     </div>
   )
 }
