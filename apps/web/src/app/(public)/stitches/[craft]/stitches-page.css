@@ -199,44 +199,12 @@
   margin: 5px 0 0;
 }
 
-.stitch-how {
-  margin-top: 6px;
-}
-.stitch-how > summary {
-  font-family: var(--font-lora);
-  font-size: 14px;
-  color: var(--color-sage);
-  cursor: pointer;
-  list-style: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  width: fit-content;
-}
-.stitch-how > summary::-webkit-details-marker {
-  display: none;
-}
-.stitch-how > summary::before {
-  content: '▸';
-  font-size: 11px;
-  transition: transform 120ms ease;
-}
-.stitch-how[open] > summary::before {
-  transform: rotate(90deg);
-}
-.stitch-how > summary:hover {
-  color: var(--color-forest);
-}
 .stitch-steps {
-  margin: 8px 0 2px;
-  padding-left: 20px;
-}
-.stitch-steps li {
   font-family: var(--font-lora);
   font-size: 14.5px;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--color-warm-taupe);
-  margin-bottom: 3px;
+  margin: 5px 0 0;
 }
 
 .stitch-actions {

@@ -91,11 +91,7 @@ export default async function StitchCheatSheetPage({ params, searchParams }: Pag
                       <span className="cheatsheet-name">{name}</span>
                       {abbr && <span className="cheatsheet-abbr">{abbr}</span>}
                     </div>
-                    <ol className="cheatsheet-steps">
-                      {s.workingSteps!.map((step, i) => (
-                        <li key={i}>{step}</li>
-                      ))}
-                    </ol>
+                    <p className="cheatsheet-steps">{s.workingSteps!.join(' ')}</p>
                   </div>
                 )
               })}

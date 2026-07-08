@@ -123,14 +123,7 @@ export default async function StitchGuidePage({ params }: PageProps) {
                       )}
                     </div>
                     {s.workingSteps ? (
-                      <details className="stitch-how">
-                        <summary>How to work it</summary>
-                        <ol className="stitch-steps">
-                          {s.workingSteps.map((step, i) => (
-                            <li key={i}>{step}</li>
-                          ))}
-                        </ol>
-                      </details>
+                      <p className="stitch-steps">{s.workingSteps.join(' ')}</p>
                     ) : (
                       s.notes && <p className="stitch-note">{s.notes}</p>
                     )}

@@ -138,13 +138,10 @@
 .cheatsheet-steps {
   margin: 0;
   padding-left: 30px;
-}
-.cheatsheet-steps li {
   font-family: var(--font-lora);
   font-size: 12.5px;
-  line-height: 1.4;
+  line-height: 1.45;
   color: var(--color-walnut, #4a3f33);
-  margin-bottom: 1px;
 }
 
 /* ── Print: strip chrome, tighten, two columns of pure method ─────── */
@@ -179,9 +176,9 @@
   .cheatsheet-name {
     font-size: 12.5px;
   }
-  .cheatsheet-steps li {
+  .cheatsheet-steps {
     font-size: 10.5px;
-    line-height: 1.32;
+    line-height: 1.38;
     color: #000;
   }
   @page {
