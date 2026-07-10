@@ -72,7 +72,7 @@ export const STITCHES: Record<StitchId, StitchDef> = {
  */
 export type SwatchArg =
   | StitchId | 'postrib' | 'basketweave' | 'bobbles'
-  | 'scinc' | 'scdec' | 'mrdisc' | 'stockinette' | 'garter'
+  | 'scinc' | 'scdec' | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib'
 
 export interface SwatchRecipe {
   /** The dictionary stitch driving gauge + row height for this swatch. */
@@ -96,6 +96,12 @@ export interface SwatchRecipe {
   roundCounts?: number[]
   /** builder 'knit': true = garter (worked face alternates per course); false/absent = stockinette. */
   knitFlip?: boolean
+  /**
+   * builder 'knit': the pull-side pattern. 'stockinette' (every loop one face),
+   * 'garter' (face flips per course), 'rib' (per-column face → 1×1 rib). Takes
+   * precedence over knitFlip; absent falls back to knitFlip ? garter : stockinette.
+   */
+  knitFace?: 'stockinette' | 'garter' | 'rib'
   /** Chain relaxes with its own profile (soft squash + table floor); rounds hold their radius. */
   relaxProfile: 'worked' | 'chain' | 'round'
   /** Hero camera tilt (0 = flat top-down; 16 = tall posts; 40 = side-on for relief). */
@@ -266,6 +272,13 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   garter: {
     stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFlip: true, relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/04/close-up-of-a-swatch-in-garter-stitch-1024x684.jpg',
+    status: 'wip',
+  },
+  // 1×1 rib: alternating knit/purl columns → vertical ribs. Per-column pull side
+  // (even cols +z, odd −z), constant up each column. tiltDeg for the raised ribs.
+  knitrib: {
+    stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFace: 'rib', relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
+    referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2020/04/rib-stitch-swatch-close-up-1024x684.jpg',
     status: 'wip',
   },
 }
