@@ -349,6 +349,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   // (even cols +z, odd −z), constant up each column. tiltDeg for the raised ribs.
   knitrib: {
     stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFace: 'rib', relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
+    knitGaugeScale: 0.85, // pack the columns so the purl valleys aren't see-through — real rib pulls in laterally (the accordion)
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2020/04/rib-stitch-swatch-close-up-1024x684.jpg',
     status: 'wip',
   },
