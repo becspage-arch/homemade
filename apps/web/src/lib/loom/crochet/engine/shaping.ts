@@ -126,19 +126,38 @@ export function buildShaped(
   const yr = yarnRadiusMm
   const sw = yr * STITCHES[st].gaugeYr
   const dims = stitchDims(yr)
-  const { zh, cw, dh } = dims
+  const { z, zh, cw, dh } = dims
   const rowH = yr * BASE_ROW_YR * STITCHES[st].heightFactor
 
   ridgeDebugNodes.length = 0
   const S = createStrand()
   const { nodes, push } = S
 
-  // Foundation chain: pinned proud crowns — the same anchor as the grid builder.
+  // Foundation chain: a LOW bumpy cast-on edge near the fabric plane — only the
+  // crown apex rides modestly proud (+z), enough for row 0 to dive to its far
+  // side; the connectors between crowns tuck back. The grid builder pins its
+  // foundation as a full proud forward rail (zh ≈ +0.5yr) which the wide flat
+  // fabric hides as a straight bottom edge — but a SHAPED trapezoid fans up from
+  // a narrow base, so that same proud rail reads as a heavy forward LIP curling
+  // off the point (z-profile: foundation +0.52 vs first row −0.55, a ~1.1yr step).
+  // Sitting the foundation near the plane closes the step without moving any
+  // locked stitch (this foundation is buildShaped's own).
+  // The rendered lip is the pinned foundation riding forward of the fabric — a
+  // continuous proud rail (zh ≈ +0.5yr) at the NARROW point of a shaped
+  // trapezoid, where the flat grid builder's identical rail is instead hidden as
+  // a straight wide bottom edge. Tuck the connectors BETWEEN crowns to the back
+  // so the foundation reads as a row of low bumps, not a rail — but leave the two
+  // EDGE crowns fully proud (connectors included). The corner stitch off a pinned
+  // edge has the least slack, and an increase corner works two hooks into the one
+  // corner crown; tucking its connectors strangled that dive (audit j0 c0). The
+  // crown APEXES stay proud everywhere so every first-row hook dives cleanly.
   let below: Crown[] = []
   for (let c = 0; c < W0; c++) {
-    push(c * sw - cw, -dh * 0.4, zh, 0)
+    const edge = c === 0 || c === W0 - 1
+    const zc = edge ? zh : -z * 0.15 // edge crowns keep their proud connectors; interior tucks just below the plane (enough to break the proud rail, gentle enough not to dish the whole bottom back)
+    push(c * sw - cw, -dh * 0.4, zc, 0)
     const crown = push(c * sw, 0, zh * 1.15, 0)
-    push(c * sw + cw, -dh * 0.4, zh, 0)
+    push(c * sw + cw, -dh * 0.4, zc, 0)
     below.push({ back: crown, front: crown, x: c * sw })
   }
 
