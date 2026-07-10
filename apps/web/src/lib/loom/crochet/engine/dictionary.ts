@@ -215,7 +215,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
       const rb = Math.floor((j - 1) / 2)
       return (block + rb) % 2 === 0 ? 'fpdc' : 'bpdc' // 3-wide blocks, swap every 2 rows
     },
-    referenceUrl: '', // deferred to combos — find one before presenting
+    referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2017/04/IMG_0708.jpg', // daisyfarmcrafts — cream basketweave swatch
     status: 'wip',
   },
   bobble: {
