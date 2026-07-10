@@ -72,7 +72,8 @@ export const STITCHES: Record<StitchId, StitchDef> = {
  */
 export type SwatchArg =
   | StitchId | 'postrib' | 'basketweave' | 'bobbles'
-  | 'scinc' | 'scdec' | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib'
+  | 'scinc' | 'scdec' | 'hdcinc' | 'hdcdec' | 'dcinc' | 'dcdec'
+  | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib'
 
 export interface SwatchRecipe {
   /** The dictionary stitch driving gauge + row height for this swatch. */
@@ -248,6 +249,38 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     shapeRows: shrinkPlan(16, 5),
     relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
     referenceUrl: 'https://christacodesign.com/wp-content/uploads/2021/03/Single-crochet-two-together-edges-2-1024x768.jpg',
+    status: 'wip',
+  },
+  // hdc/dc shaping — the SAME shaped builder (emitDecrease + the inc path are
+  // stitch-generic; only the driving stitch's height/gauge change). Taller posts,
+  // so fewer rows keep the swatch a sensible size. References are single-stitch
+  // increase/decrease swatches for that stitch.
+  hdcinc: {
+    stitch: 'hdc', rows: 5, auditW: 8, builder: 'shaped',
+    shapeRows: growPlan(8, 5),
+    relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
+    referenceUrl: 'https://cdn.shopify.com/s/files/1/0620/7180/0037/files/image-81-1024x576_2021-01.png', // crochetmelovely — finished hdc increase
+    status: 'wip',
+  },
+  hdcdec: {
+    stitch: 'hdc', rows: 5, auditW: 16, builder: 'shaped',
+    shapeRows: shrinkPlan(16, 5),
+    relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
+    referenceUrl: 'https://christacodesign.com/wp-content/uploads/2021/04/half-double-crochet-together-tutorial-2-720x720.jpg', // christacodesign — hdc2tog swatch
+    status: 'wip',
+  },
+  dcinc: {
+    stitch: 'dc', rows: 4, auditW: 8, builder: 'shaped',
+    shapeRows: growPlan(8, 4),
+    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
+    referenceUrl: '', // find a real dc-increase swatch photo before presenting (lazy-loaded on the sites checked)
+    status: 'wip',
+  },
+  dcdec: {
+    stitch: 'dc', rows: 4, auditW: 14, builder: 'shaped',
+    shapeRows: shrinkPlan(14, 4),
+    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
+    referenceUrl: 'https://christacodesign.com/wp-content/uploads/2017/09/2017-09-19_13-22-04_606-1024x768.jpg', // christacodesign — dc2tog swatch
     status: 'wip',
   },
   // Flat amigurumi circle: magic ring, 6 sc, +6 per round in a continuous spiral.
