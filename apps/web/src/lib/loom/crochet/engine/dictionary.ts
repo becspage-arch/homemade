@@ -213,14 +213,17 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   },
   bobble: {
     stitch: 'sc', rows: 8, auditW: 14, relaxProfile: 'worked', tiltDeg: 24, twist: 0.1,
-    // bumps on a polka-dot grid over plain sc, offset row to row
-    pattern: (j, c) => (j > 0 && j % 2 === 1 && (c + (Math.floor(j / 2) % 2) * 2) % 4 === 0 ? 'bobble' : 'sc'),
+    // Bumps on a staggered polka-dot grid over plain sc. Edge columns stay PLAIN
+    // (real bobble/popcorn patterns keep the selvedge plain — a big cluster hard
+    // against the pinned edge, with no turning-chain slack for j>0 in the grid
+    // builder, strangles its base hook; the audit caught exactly that at c0).
+    pattern: (j, c) => bobbleDot(j, c),
     referenceUrl: '', // WIP — find a real bobble swatch photo before presenting
     status: 'wip',
   },
   bobbles: {
     stitch: 'sc', rows: 8, auditW: 14, relaxProfile: 'worked', tiltDeg: 24, twist: 0.1,
-    pattern: (j, c) => (j > 0 && j % 2 === 1 && (c + (Math.floor(j / 2) % 2) * 2) % 4 === 0 ? 'bobble' : 'sc'),
+    pattern: (j, c) => bobbleDot(j, c),
     referenceUrl: '',
     status: 'wip',
   },
@@ -265,6 +268,18 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/04/close-up-of-a-swatch-in-garter-stitch-1024x684.jpg',
     status: 'wip',
   },
+}
+
+/**
+ * Bobble placement: staggered dots on the odd worked rows, confined to the
+ * INTERIOR columns (2..W-2) so no cluster lands on the pinned selvedge — a real
+ * bobble pattern keeps its edges plain. Rows stagger by 2 columns for the
+ * classic offset polka-dot field.
+ */
+function bobbleDot(j: number, c: number): StitchId {
+  if (j === 0 || j % 2 === 0) return 'sc'
+  const off = (Math.floor(j / 2) % 2) * 2 // 0 or 2 — stagger row to row
+  return c >= 2 && c <= 12 && (c - 2 - off) % 4 === 0 ? 'bobble' : 'sc'
 }
 
 /** inc at both ends of every row: w0 → w0 + 2·rows. */

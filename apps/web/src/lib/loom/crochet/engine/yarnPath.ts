@@ -470,6 +470,13 @@ export function buildContinuous(
         push(x + s * pw, by + px * 0.45, z * fz) // down from the previous head toward the base
         const bobbleHook = push(x, cy - dh, hookZ) // hook UNDER the crown below — the shared base
         links.push({ j, c, role: 'hook', hook: bobbleHook, below: bc })
+        // SLACK OUT of the dive. The bulge (bz = +1.5yr, unsigned) used to start on the
+        // very next node, so the dist+bend bonds dragged the base hook forward onto the
+        // crown's own z-side (audit: j1c0 hook +0.21 vs its crown +0.42 — a same-side
+        // fail). Hold the far z-side for a beat, then climb toward the ball — the extra
+        // yarn absorbs the bulge's forward pull instead of transmitting it to the hook.
+        push(x + s * pw * 0.5, cy - dh * 0.2, hookZ * 0.85) // still tucked to the far side, lifting off the crown
+        push(x, cy + (midY - cy) * 0.35, z * 0.8) // ease up and forward into the ball
         const N = 5
         for (let k = 0; k < N; k++) {
           const ox = ((k + 0.5) / N - 0.5) * cw * 1.5 // narrow fan → a round ball, not a spread
@@ -477,10 +484,17 @@ export function buildContinuous(
           push(x + ox, midY, bz) // the widest, most-forward bulge (the berry)
           push(x + ox * 0.55, ty - dh * 0.9, bz * 0.5) // high on the ball, heading to the gather
         }
-        // gather the loops to one top → the head (at the plane, the next row works it)
-        push(x - s * cw * 0.3, ty - dh * 0.2, z * 0.8 * fz)
-        const crown = push(x, ty, z * 0.95 * fz)
-        push(x + s * cw * 0.3, ty - dh * 0.2, z * 0.8 * fz)
+        // SLACK INTO the gather. Come off the forward ball and settle back onto the
+        // worked (WS) face BEFORE throwing the crown, so the gathered head holds its
+        // face for the next row to dive under (audit: the old weak z*0.95 head, jammed
+        // against the last bulge node, was dragged -0.28 -> +0.09, same side as the sc
+        // above). Gather into a PROPER proud crown (zh*1.15, like any stitch) — the next
+        // row then hooks it exactly as it hooks a plain head.
+        push(x, ty - dh * 0.9, z * 0.9) // drop off the ball, still forward
+        push(x - s * cw * 0.2, ty - dh * 0.45, z * 0.3 * fz) // ease back toward the worked face
+        push(x - s * cw, ty - dh * 0.3, zh * fz)
+        const crown = push(x, ty, zh * 1.15 * fz)
+        push(x + s * cw, ty - dh * 0.3, zh * fz)
         crownThisBack[c] = crown
         crownThisFront[c] = crown
         postThis[c] = crown
