@@ -19,7 +19,7 @@
  *    faces the same way, exactly like the real fabric.
  */
 
-import { STITCHES, type StitchId, type ShapeOp } from './dictionary'
+import { STITCHES, SHELL_N, type StitchId, type ShapeOp } from './dictionary'
 import {
   createStrand,
   stitchDims,
@@ -38,7 +38,9 @@ interface Crown {
   x: number
 }
 
-const consumes = (op: ShapeOp): number => (op === 'dec' ? 2 : 1)
+const consumes = (op: ShapeOp): number => (op === 'dec' ? 2 : 1) // all others consume one below-crown
+const produces = (op: ShapeOp): number =>
+  op === 'inc' ? 2 : op === 'shell' ? SHELL_N : op === 'skip' ? 0 : 1
 
 /**
  * One DECREASE (st2tog) excursion: down-leg → hook under below-crown A → rise
@@ -138,19 +140,38 @@ export function buildShaped(
   const yr = yarnRadiusMm
   const sw = yr * STITCHES[st].gaugeYr
   const dims = stitchDims(yr)
-  const { zh, cw, dh } = dims
+  const { z, zh, cw, dh } = dims
   const rowH = yr * BASE_ROW_YR * STITCHES[st].heightFactor
 
   ridgeDebugNodes.length = 0
   const S = createStrand()
   const { nodes, push } = S
 
-  // Foundation chain: pinned proud crowns — the same anchor as the grid builder.
+  // Foundation chain: a LOW bumpy cast-on edge near the fabric plane — only the
+  // crown apex rides modestly proud (+z), enough for row 0 to dive to its far
+  // side; the connectors between crowns tuck back. The grid builder pins its
+  // foundation as a full proud forward rail (zh ≈ +0.5yr) which the wide flat
+  // fabric hides as a straight bottom edge — but a SHAPED trapezoid fans up from
+  // a narrow base, so that same proud rail reads as a heavy forward LIP curling
+  // off the point (z-profile: foundation +0.52 vs first row −0.55, a ~1.1yr step).
+  // Sitting the foundation near the plane closes the step without moving any
+  // locked stitch (this foundation is buildShaped's own).
+  // The rendered lip is the pinned foundation riding forward of the fabric — a
+  // continuous proud rail (zh ≈ +0.5yr) at the NARROW point of a shaped
+  // trapezoid, where the flat grid builder's identical rail is instead hidden as
+  // a straight wide bottom edge. Tuck the connectors BETWEEN crowns to the back
+  // so the foundation reads as a row of low bumps, not a rail — but leave the two
+  // EDGE crowns fully proud (connectors included). The corner stitch off a pinned
+  // edge has the least slack, and an increase corner works two hooks into the one
+  // corner crown; tucking its connectors strangled that dive (audit j0 c0). The
+  // crown APEXES stay proud everywhere so every first-row hook dives cleanly.
   let below: Crown[] = []
   for (let c = 0; c < W0; c++) {
-    push(c * sw - cw, -dh * 0.4, zh, 0)
+    const edge = c === 0 || c === W0 - 1
+    const zc = edge ? zh : -z * 0.15 // edge crowns keep their proud connectors; interior tucks just below the plane (enough to break the proud rail, gentle enough not to dish the whole bottom back)
+    push(c * sw - cw, -dh * 0.4, zc, 0)
     const crown = push(c * sw, 0, zh * 1.15, 0)
-    push(c * sw + cw, -dh * 0.4, zh, 0)
+    push(c * sw + cw, -dh * 0.4, zc, 0)
     below.push({ back: crown, front: crown, x: c * sw })
   }
 
@@ -164,7 +185,7 @@ export function buildShaped(
       throw new Error(
         `shaped row ${j}: ops consume ${consumed} stitches but the row below has ${below.length}`,
       )
-    const count = ops.reduce((a, o) => a + (o === 'inc' ? 2 : 1), 0)
+    const count = ops.reduce((a, o) => a + produces(o), 0)
     const by = j * rowH
     const ty = (j + 1) * rowH
     const dir = j % 2 === 0 ? -1 : 1 // foundation ends right → first row starts right
@@ -201,6 +222,30 @@ export function buildShaped(
 
     for (let oi = 0; oi < ops.length; oi++) {
       const op = ops[oi]!
+      if (op === 'skip') {
+        // Pass a below-crown without working it (the space a shell's fan fills).
+        bi++
+        continue
+      }
+      if (op === 'shell') {
+        // SHELL_N stitches fanned into ONE below-crown — a bigger version of the
+        // increase. The N hooks enter the shared base SIDE BY SIDE (never
+        // coincident, same lesson as the inc pair) spread across ±0.7·pw; their
+        // crowns fan across SHELL_N lattice slots so the fan opens out.
+        const b = belowWork[bi++]!
+        const n = SHELL_N
+        for (let t = 0; t < n; t++) {
+          const idx = latticeAt(li++)
+          const xC = lattice[idx]!
+          const hookOff = ((t - (n - 1) / 2) / (n - 1)) * dims.pw * 1.4 * dir
+          const r = emitPlainStitch(S, dims, {
+            j, c: oi, id: st, s: dir, fz, by, ty,
+            xCrown: xC, xHook: b.x + hookOff, bcBack: b.back, bcFront: b.front,
+          })
+          crowns[idx] = { back: r.crownBack, front: r.crownFront, x: xC }
+        }
+        continue
+      }
       if (op === 'dec') {
         const b1 = belowWork[bi++]!
         const b2 = belowWork[bi++]!

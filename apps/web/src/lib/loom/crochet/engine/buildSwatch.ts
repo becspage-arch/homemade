@@ -32,7 +32,7 @@ export function buildRelaxedSwatch(arg: SwatchArg, W: number, yr: number): Built
         : recipe.builder === 'sphere'
           ? buildSphere(recipe.stitch, recipe.equatorCount ?? 30, yr)
           : recipe.builder === 'knit'
-            ? buildKnit(recipe.rows, W, yr, !!recipe.knitFlip)
+            ? buildKnit(recipe.rows, W, yr, recipe.knitFace ?? (recipe.knitFlip ? 'garter' : 'stockinette'))
             : buildContinuous(rows, W, yr, { stitchAt: recipe.pattern, noTurn: recipe.noTurn, gaugeYr: recipe.gaugeYr })
 
   // Collision is what HOLDS the interlock (yarn can't pass through yarn), so it

@@ -21,22 +21,44 @@
  * pulls every loop to the same fabric face — in the fabric frame the worked
  * face never flips. GARTER (knit every course) alternates the pull side — the
  * face flips each course (`flip`), and the purl ridges appear on both faces.
+ *
+ * 1×1 RIB (`rib`) is the third pull-side pattern: a PURL is a knit loop pulled to
+ * the OTHER face, and in rib you knit one column, purl the next, all the way up —
+ * on the turned (WS) course you purl the knit columns and knit the purl columns to
+ * keep each column's face constant. Working that through the fabric frame, each
+ * column holds ONE face for its whole height (even columns +z, odd −z) — the pull
+ * side is per-COLUMN, constant across courses, NOT per-course like garter. A purl
+ * column is just a knit column seen from behind; the vertical rib is the two face
+ * families side by side, and the sinker between a knit and a purl column genuinely
+ * crosses front↔back (the purl-bump mechanic + the accordion). See STITCH_ENGINE §8d.
  */
 
 import { STITCHES } from './dictionary'
 import { createStrand, BASE_ROW_YR, type BuiltContinuous } from './yarnPath'
 
+/** Which fabric face (+1/−1) a stitch is pulled to. Stockinette: always +1.
+ *  Garter: flips per course. 1×1 rib: per column, constant up the column. */
+export type KnitFace = 'stockinette' | 'garter' | 'rib'
+
 export function buildKnit(
   courses: number,
   W: number,
   yarnRadiusMm: number,
-  flip: boolean,
+  face: KnitFace,
 ): BuiltContinuous {
   const yr = yarnRadiusMm
   const swk = yr * STITCHES.k.gaugeYr
   const courseH = yr * BASE_ROW_YR * STITCHES.k.heightFactor
   const S = createStrand()
   const { nodes, push, links } = S
+
+  // The pull side for stitch (course j, column c) in the fabric frame.
+  //  - stockinette: every loop to the same face (+1);
+  //  - garter: the whole course flips each row (+1, −1, +1 …);
+  //  - rib: each column holds its face for the whole height (even +1, odd −1),
+  //    independent of the course — that constancy IS the vertical rib.
+  const faceSign = (j: number, c: number): number =>
+    face === 'rib' ? (c % 2 === 0 ? 1 : -1) : face === 'garter' ? (j % 2 === 0 ? 1 : -1) : 1
 
   // Real stockinette is about two yarn-diameters THICK: legs on the face,
   // heads + sinkers a full layer behind. The initial relief must provide that
@@ -52,13 +74,18 @@ export function buildKnit(
   const zShoulder = yr * 0.5
 
   // Cast-on: a pinned course of head arcs (the anchor edge the first course is
-  // drawn through), laid a full layer back like every settled head.
+  // drawn through), laid a full layer BACK from the column's own face — like every
+  // settled head. For rib the odd (purl) columns face −z, so their cast-on head
+  // sits at +zBack (its bump on the +z front) and the first purl leg passes in
+  // front of it on the −z side. For stockinette/garter every course-0 face is +1,
+  // so this is exactly the old −zBack cast-on (no change to those).
   const headBelow: number[] = []
   for (let c = 0; c < W; c++) {
     const x = c * swk
-    push(x - 0.4 * swk, -0.3 * courseH, -zShoulder, 0)
-    const apex = push(x, 0, -zBack, 0)
-    push(x + 0.4 * swk, -0.3 * courseH, -zShoulder, 0)
+    const cf = faceSign(0, c)
+    push(x - 0.4 * swk, -0.3 * courseH, -zShoulder * cf, 0)
+    const apex = push(x, 0, -zBack * cf, 0)
+    push(x + 0.4 * swk, -0.3 * courseH, -zShoulder * cf, 0)
     headBelow.push(apex)
   }
 
@@ -66,21 +93,23 @@ export function buildKnit(
     const by = j * courseH
     const ty = (j + 1) * courseH
     const s = j % 2 === 0 ? -1 : 1 // cast-on ends right → first course starts right
-    const fz = flip ? (j % 2 === 0 ? 1 : -1) : 1
-    // GARTER corrugation: each course's WHOLE loop shifts toward its pull face.
-    // With mirrored absolute z alone, course j+1's legs initialise on the same
-    // side as course j's head with ~0.1yr clearance and the interlock loses its
-    // side (audit: the first course slid sideways). The corrugation is real —
-    // garter fabric is ~2× stockinette's thickness, alternating ridge rows —
-    // and it restores a full collision diameter between each leg crossing and
-    // the head it passes (crossing at 1.8yr·fz vs old head at 0.4yr·fz).
-    // Stockinette (fz constant) is untouched: bz = 0.
-    const bz = flip ? yr * 0.7 * fz : 0
     const headThis: number[] = new Array(W).fill(-1)
     for (let o = 0; o < W; o++) {
       const c = s > 0 ? o : W - 1 - o
       const x = c * swk
       const hb = headBelow[c]!
+      const fz = faceSign(j, c) // pull side of THIS stitch (per-column for rib)
+      // GARTER corrugation: each course's WHOLE loop shifts toward its pull face.
+      // With mirrored absolute z alone, course j+1's legs initialise on the same
+      // side as course j's head with ~0.1yr clearance and the interlock loses its
+      // side (audit: the first course slid sideways). The corrugation is real —
+      // garter fabric is ~2× stockinette's thickness, alternating ridge rows — and
+      // it restores a full collision diameter between each leg crossing and the head
+      // it passes. Only garter needs it; stockinette (fz constant) AND rib
+      // (per-column, its own audit passed without it) keep bz = 0, so both stay
+      // bit-identical. faceSign is uniform per garter course, so per-stitch = their
+      // old per-course value.
+      const bz = face === 'garter' ? yr * 0.7 * fz : 0
       // Sinker in: low and a full layer behind, tucked under the old head.
       push(x - s * 0.34 * swk, by - 0.3 * courseH, -zBack * fz + bz)
       // The yarn comes forward UNDER the old head's bottom edge (this is where

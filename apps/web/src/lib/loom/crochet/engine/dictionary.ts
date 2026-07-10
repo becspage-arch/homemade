@@ -21,13 +21,19 @@ export type StitchId =
 
 /**
  * One shaping instruction, in crochet-pattern terms, applied to the row's stitch:
- *   'st'  = one plain stitch into the next below-crown   (consumes 1, makes 1)
- *   'inc' = TWO full stitches into the next below-crown  (consumes 1, makes 2)
- *   'dec' = st2tog: one stitch drawn over the next TWO below-crowns (consumes 2, makes 1)
+ *   'st'    = one plain stitch into the next below-crown   (consumes 1, makes 1)
+ *   'inc'   = TWO full stitches into the next below-crown  (consumes 1, makes 2)
+ *   'dec'   = st2tog: one stitch over the next TWO below-crowns (consumes 2, makes 1)
+ *   'shell' = SHELL_N stitches into ONE below-crown, fanned (consumes 1, makes SHELL_N)
+ *   'skip'  = pass a below-crown without working it (consumes 1, makes 0) — what
+ *             balances a shell's extra width so the fabric stays constant-width.
  * A row is a ShapeOp[] in WORK order; its consumption must exactly match the row
  * below (the builder throws otherwise — a mis-counted pattern is a bug, not fabric).
  */
-export type ShapeOp = 'st' | 'inc' | 'dec'
+export type ShapeOp = 'st' | 'inc' | 'dec' | 'shell' | 'skip'
+
+/** Stitches worked into one base for a shell (a classic 5-dc shell). */
+export const SHELL_N = 5
 
 export interface StitchDef {
   id: StitchId
@@ -72,7 +78,8 @@ export const STITCHES: Record<StitchId, StitchDef> = {
  */
 export type SwatchArg =
   | StitchId | 'postrib' | 'basketweave' | 'bobbles'
-  | 'scinc' | 'scdec' | 'mrdisc' | 'stockinette' | 'garter' | 'ball'
+  | 'scinc' | 'scdec' | 'hdcinc' | 'hdcdec' | 'dcinc' | 'dcdec'
+  | 'shell' | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib' | 'ball'
 
 export interface SwatchRecipe {
   /** The dictionary stitch driving gauge + row height for this swatch. */
@@ -96,6 +103,12 @@ export interface SwatchRecipe {
   roundCounts?: number[]
   /** builder 'knit': true = garter (worked face alternates per course); false/absent = stockinette. */
   knitFlip?: boolean
+  /**
+   * builder 'knit': the pull-side pattern. 'stockinette' (every loop one face),
+   * 'garter' (face flips per course), 'rib' (per-column face → 1×1 rib). Takes
+   * precedence over knitFlip; absent falls back to knitFlip ? garter : stockinette.
+   */
+  knitFace?: 'stockinette' | 'garter' | 'rib'
   /** builder 'sphere': stitches around the equator (sets the ball's size). */
   equatorCount?: number
   /** Chain relaxes with its own profile (soft squash + table floor); rounds hold
@@ -211,20 +224,23 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
       const rb = Math.floor((j - 1) / 2)
       return (block + rb) % 2 === 0 ? 'fpdc' : 'bpdc' // 3-wide blocks, swap every 2 rows
     },
-    referenceUrl: '', // deferred to combos — find one before presenting
+    referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2017/04/IMG_0708.jpg', // daisyfarmcrafts — cream basketweave swatch
     status: 'wip',
   },
   bobble: {
     stitch: 'sc', rows: 8, auditW: 14, relaxProfile: 'worked', tiltDeg: 24, twist: 0.1,
-    // bumps on a polka-dot grid over plain sc, offset row to row
-    pattern: (j, c) => (j > 0 && j % 2 === 1 && (c + (Math.floor(j / 2) % 2) * 2) % 4 === 0 ? 'bobble' : 'sc'),
-    referenceUrl: '', // WIP — find a real bobble swatch photo before presenting
+    // Bumps on a staggered polka-dot grid over plain sc. Edge columns stay PLAIN
+    // (real bobble/popcorn patterns keep the selvedge plain — a big cluster hard
+    // against the pinned edge, with no turning-chain slack for j>0 in the grid
+    // builder, strangles its base hook; the audit caught exactly that at c0).
+    pattern: (j, c) => bobbleDot(j, c),
+    referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2017/06/fullsizeoutput_1c5f-600x736.jpeg', // daisyfarmcrafts — raised bobbles on flat ground
     status: 'wip',
   },
   bobbles: {
     stitch: 'sc', rows: 8, auditW: 14, relaxProfile: 'worked', tiltDeg: 24, twist: 0.1,
-    pattern: (j, c) => (j > 0 && j % 2 === 1 && (c + (Math.floor(j / 2) % 2) * 2) % 4 === 0 ? 'bobble' : 'sc'),
-    referenceUrl: '',
+    pattern: (j, c) => bobbleDot(j, c),
+    referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2017/06/fullsizeoutput_1c5f-600x736.jpeg',
     status: 'wip',
   },
   // ---- SHAPING (sc family) ----
@@ -242,6 +258,48 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     shapeRows: shrinkPlan(16, 5),
     relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
     referenceUrl: 'https://christacodesign.com/wp-content/uploads/2021/03/Single-crochet-two-together-edges-2-1024x768.jpg',
+    status: 'wip',
+  },
+  // hdc/dc shaping — the SAME shaped builder (emitDecrease + the inc path are
+  // stitch-generic; only the driving stitch's height/gauge change). Taller posts,
+  // so fewer rows keep the swatch a sensible size. References are single-stitch
+  // increase/decrease swatches for that stitch.
+  hdcinc: {
+    stitch: 'hdc', rows: 5, auditW: 8, builder: 'shaped',
+    shapeRows: growPlan(8, 5),
+    relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
+    referenceUrl: 'https://cdn.shopify.com/s/files/1/0620/7180/0037/files/image-81-1024x576_2021-01.png', // crochetmelovely — finished hdc increase
+    status: 'wip',
+  },
+  hdcdec: {
+    stitch: 'hdc', rows: 5, auditW: 16, builder: 'shaped',
+    shapeRows: shrinkPlan(16, 5),
+    relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
+    referenceUrl: 'https://christacodesign.com/wp-content/uploads/2021/04/half-double-crochet-together-tutorial-2-720x720.jpg', // christacodesign — hdc2tog swatch
+    status: 'wip',
+  },
+  dcinc: {
+    stitch: 'dc', rows: 4, auditW: 8, builder: 'shaped',
+    shapeRows: growPlan(8, 4),
+    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
+    referenceUrl: '', // find a real dc-increase swatch photo before presenting (lazy-loaded on the sites checked)
+    status: 'wip',
+  },
+  dcdec: {
+    stitch: 'dc', rows: 4, auditW: 14, builder: 'shaped',
+    shapeRows: shrinkPlan(14, 4),
+    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
+    referenceUrl: 'https://christacodesign.com/wp-content/uploads/2017/09/2017-09-19_13-22-04_606-1024x768.jpg', // christacodesign — dc2tog swatch
+    status: 'wip',
+  },
+  // Shell stitch: 5 dc fanned into one base, balanced by skipped stitches either
+  // side (sc between shells) so the fabric stays constant-width — a scalloped
+  // texture. Shells stack (each row's shell into the centre of the shell below).
+  shell: {
+    stitch: 'dc', rows: 5, auditW: 13, builder: 'shaped',
+    shapeRows: shellPlan(2, 5),
+    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
+    referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2016/06/Stitch-Book-PART-2-70-e1628964882533-1021x1024.png', // daisyfarmcrafts — classic shell swatch
     status: 'wip',
   },
   // Flat amigurumi circle: magic ring, 6 sc, +6 per round in a continuous spiral.
@@ -277,6 +335,25 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/04/close-up-of-a-swatch-in-garter-stitch-1024x684.jpg',
     status: 'wip',
   },
+  // 1×1 rib: alternating knit/purl columns → vertical ribs. Per-column pull side
+  // (even cols +z, odd −z), constant up each column. tiltDeg for the raised ribs.
+  knitrib: {
+    stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFace: 'rib', relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
+    referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2020/04/rib-stitch-swatch-close-up-1024x684.jpg',
+    status: 'wip',
+  },
+}
+
+/**
+ * Bobble placement: staggered dots on the odd worked rows, confined to the
+ * INTERIOR columns (2..W-2) so no cluster lands on the pinned selvedge — a real
+ * bobble pattern keeps its edges plain. Rows stagger by 2 columns for the
+ * classic offset polka-dot field.
+ */
+function bobbleDot(j: number, c: number): StitchId {
+  if (j === 0 || j % 2 === 0) return 'sc'
+  const off = (Math.floor(j / 2) % 2) * 2 // 0 or 2 — stagger row to row
+  return c >= 2 && c <= 12 && (c - 2 - off) % 4 === 0 ? 'bobble' : 'sc'
 }
 
 /** inc at both ends of every row: w0 → w0 + 2·rows. */
@@ -285,6 +362,18 @@ function growPlan(w0: number, rows: number): ShapeOp[][] {
     const below = w0 + 2 * j
     return ['inc', ...(Array(below - 2).fill('st') as ShapeOp[]), 'inc'] as ShapeOp[]
   })
+}
+
+/**
+ * Shell stitch: a leading plain stitch, then k repeats of
+ * (skip, skip, shell→5, skip, skip, st). Each repeat consumes 6 and produces 6,
+ * so the fabric is constant-width at W0 = 1 + 6k. Every row identical → shells
+ * stack, each worked into the centre of the shell below.
+ */
+function shellPlan(k: number, rows: number): ShapeOp[][] {
+  const row: ShapeOp[] = ['st']
+  for (let g = 0; g < k; g++) row.push('skip', 'skip', 'shell', 'skip', 'skip', 'st')
+  return Array.from({ length: rows }, () => row.slice())
 }
 
 /** sc2tog at both ends of every row: w0 → w0 − 2·rows. */
