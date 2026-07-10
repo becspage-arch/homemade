@@ -231,13 +231,13 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     // against the pinned edge, with no turning-chain slack for j>0 in the grid
     // builder, strangles its base hook; the audit caught exactly that at c0).
     pattern: (j, c) => bobbleDot(j, c),
-    referenceUrl: '', // WIP — find a real bobble swatch photo before presenting
+    referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2017/06/fullsizeoutput_1c5f-600x736.jpeg', // daisyfarmcrafts — raised bobbles on flat ground
     status: 'wip',
   },
   bobbles: {
     stitch: 'sc', rows: 8, auditW: 14, relaxProfile: 'worked', tiltDeg: 24, twist: 0.1,
     pattern: (j, c) => bobbleDot(j, c),
-    referenceUrl: '',
+    referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2017/06/fullsizeoutput_1c5f-600x736.jpeg',
     status: 'wip',
   },
   // ---- SHAPING (sc family) ----
