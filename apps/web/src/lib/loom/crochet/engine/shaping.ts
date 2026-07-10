@@ -157,18 +157,17 @@ export function buildShaped(
     const ty = (j + 1) * rowH
     const dir = j % 2 === 0 ? -1 : 1 // foundation ends right → first row starts right
     const fz = j % 2 === 0 ? 1 : -1 // TURN the work each row
-    // This row's crown lattice, centred over the fabric below. Ends are clamped
-    // to at most ~half a stitch beyond the fabric below: an edge increase's
-    // outer stitch leans out over the edge, it doesn't stand a full stitch past
-    // it unsupported — with a full-stitch overhang the corner pair levers its
-    // hook out around the pinned corner crown (audit: scinc j0 c0 flipped sides).
-    const belowMin = below[0]!.x
-    const belowMax = below[below.length - 1]!.x
-    const belowCenter = (belowMin + belowMax) / 2
+    // This row's crown lattice, centred over the fabric below, at the row's own
+    // even spacing. The fabric takes its REAL width: an inc-per-edge row is a
+    // full stitch wider at each end, with the flare stitch leaning outward from
+    // the shared base. (An earlier end-clamp to 0.55·sw compressed 0.45·sw per
+    // row per edge into the corner — the denied width had nowhere to go and the
+    // stacked corner incs buckled forward out of plane, +z growing 0 → 0.95 →
+    // 3.1yr up the rows. The corner-hook problem the clamp was aimed at was
+    // actually the coincident pair-hook inits — fixed at the source below.)
+    const belowCenter = (below[0]!.x + below[below.length - 1]!.x) / 2
     const x0 = belowCenter - ((count - 1) / 2) * sw
-    const lattice = Array.from({ length: count }, (_, i) =>
-      Math.min(belowMax + sw * 0.55, Math.max(belowMin - sw * 0.55, x0 + i * sw)),
-    )
+    const lattice = Array.from({ length: count }, (_, i) => x0 + i * sw)
     const crowns: (Crown | null)[] = new Array(count).fill(null)
     // Work order: consume below + fill the lattice from whichever end the row starts.
     const belowWork = dir > 0 ? below : below.slice().reverse()
@@ -207,8 +206,14 @@ export function buildShaped(
         // foundation crown (the audit caught it: scinc j0 c0 flipped sides).
         const slots = Array.from({ length: n }, () => latticeAt(li++))
         slots.sort((a, b2) => Math.abs(lattice[a]! - b.x) - Math.abs(lattice[b2]! - b.x))
-        for (const idx of slots) {
+        for (let t = 0; t < slots.length; t++) {
+          const idx = slots[t]!
           const xC = lattice[idx]!
+          // An inc pair inserts SIDE BY SIDE under the shared crown — the two
+          // hooks must not initialise coincident, or collision splits them in an
+          // arbitrary direction (measured at the turn corner: the first hook got
+          // expelled UP over the crown instead of under it).
+          const hookOff = n === 1 ? 0 : dims.pw * 0.6 * (t === 0 ? 1 : -1) * dir
           const r = emitPlainStitch(S, dims, {
             j,
             c: oi,
@@ -218,7 +223,7 @@ export function buildShaped(
             by,
             ty,
             xCrown: xC,
-            xHook: b.x,
+            xHook: b.x + hookOff,
             bcBack: b.back,
             bcFront: b.front,
           })
@@ -342,6 +347,9 @@ export function buildRounds(
         for (let t = 0; t < n; t++) {
           const th = phase + ((li + 0.5) / count) * Math.PI * 2
           const xC = th * rRef
+          // Same side-by-side insertion offset as flat shaping: an inc pair's two
+          // hooks must not initialise coincident under the shared crown.
+          const hookOff = n === 1 ? 0 : dims.pw * 0.6 * (t === 0 ? 1 : -1)
           const r = emitPlainStitch(S, dims, {
             j: k,
             c: oi,
@@ -351,7 +359,7 @@ export function buildRounds(
             by: rPrev,
             ty: rK,
             xCrown: xC,
-            xHook: b.theta * rRef,
+            xHook: b.theta * rRef + hookOff,
             bcBack: b.back,
             bcFront: b.front,
             cyBelow: b.r,
@@ -364,6 +372,17 @@ export function buildRounds(
     }
     below = crowns
     rPrev = rK
+  }
+
+  // FASTEN OFF: the tail pulled through the last loop and laid back along the
+  // round, tucking behind the fabric — a woven-in end. The strand must not stop
+  // dead at the final crown: a dangling end leaves the last stitch
+  // half-supported, and the audit caught its inc pair's first hook flipped onto
+  // its crown (hz +0.33 vs its twin's healthy −1.30).
+  for (let t = 1; t <= 4; t++) {
+    const th = phase + Math.PI * 2 * (1 + 0.012 * t)
+    const ly = rPrev - rowH * 0.12 * t
+    push(Math.cos(th) * ly, Math.sin(th) * ly, yr * (0.3 - 0.25 * t))
   }
 
   const strand = new Array(nodes.length).fill(0)

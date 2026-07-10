@@ -170,6 +170,11 @@ below is the narrative record.
 | **sc blo / flo** | head split into a real back + front loop; hook one, float the other as a ridge | ✅ **LOCKED 2026-07-07** (Rebecca). Reference re-verification found + fixed a real bug (ridge was nudged AFTER placement → relaxation crushed it; now baked at creation, split 2.2/0.25 zh, settled gap ~0.76yr) + calmer twist (0.05). Chosen depiction = **faithful flat-turned**: because we turn every row, each row's unworked loop correctly lands on the face it was worked from, so the ridge shows every OTHER row on the viewed face (odd rows' ridge settles to −z, hidden). Signed off as structurally correct + consistent with the locked `sc` look. Remaining softness (ridge reads heavier than a clean reference line) is the shared engine yarn-look, not blo/flo-specific — deferred to a possible library-wide yarn-crispness pass. |
 | **fpdc / bpdc** | post RINGS the stem below (collision-held); body pops front (fp) / back (bp), head stays at plane; dense gauge | ✅ **LOCKED 2026-07-07** (Rebecca delegated the call). Individual reference comparisons done vs clean single-stitch refs (fpdc = raised proud posts, acrochetedsimplicity; bpdc = recessed posts / horizontal-bar front, theloopholefox — old shared ref was a colourwork-cable photo). fp raised vs bp recessed reads correctly; the distinction is subtle in isolation (as in a real all-one-type swatch) — its point is the contrast in postrib/basketweave. |
 | **postrib** (1×1 fp/bp rib) | alternating fpdc/bpdc columns → raised ribs beside recessed valleys | ✅ **LOCKED 2026-07-07** (Rebecca). Reads as distinct packed vertical ribs vs a clean 1×1 rib ref (doradoes). The initial open-gauge caveat was **fixed**: postrib inherited fpdc's 1.9 gauge which left daylight between ribs; a per-swatch `gaugeYr: 1.5` override (new — leaves locked fpdc/bpdc gauge untouched) packed the columns tight to match the reference. Basketweave = same move in blocks, still `wip` (needs a reference + build). |
+| **scinc** (2 sc in one st, shaped rows) | growing trapezoid, inc both ends every row; two full audited hooks share one below-crown, legs fan from the base (§8c) | ◔ audit-passing after three real construction fixes (turning chain every row; over-the-base-first order + edge clamp; side-by-side hook inits). Reference comparison pending Rebecca. |
+| **scdec** (sc2tog, shaped rows) | shrinking trapezoid, dec both ends every row; one crown over two audited hooks (§8c) | ◔ audit-passing. Reference comparison pending Rebecca. |
+| **mrdisc** (magic ring + rounds) | flat amigurumi circle: MR anchor, 6 sc in ring, +6/round continuous no-turn spiral, polar frame + radial blocked pull (§8c) | ◔ audit-passing; full pipeline run (hero fidelity gate 0.890 PASS). Reference comparison pending Rebecca. |
+| **stockinette / k** (KNIT) | loops drawn through loops, 'through' links, real 2-diameter fabric thickness (§8d) | ◔ audit-passing (settled leg-vs-head clearance ≈1.7yr across all courses). Reference comparison pending Rebecca. |
+| **garter** (KNIT) | stockinette loop + worked-face flip per course | ◑ **WIP — do not present.** Passed the audit at the THIN seeding, regressed when stockinette's real-thickness budget landed: with faces alternating, course j+1's legs now initialise on the SAME z-side as course j's head with ~0.1yr clearance, and the audit shows the whole first course slid ~2.2yr sideways along the pinned cast-on. The fix direction (untried, one attempt left under the cap): place each leg's crossing z RELATIVE to the old head's actual z (`hb.z + gap·fz`, gap ≥ collision diameter) instead of mirroring absolute constants — but verify stockinette's passing margins survive the same change before touching shared constants. |
 
 **Regenerating / building a stitch — use THE PIPELINE (one command, gates built in):**
 ```
@@ -252,13 +257,16 @@ Construction rules that the audit forced (all real, none cosmetic):
 - **Turning chain EVERY row** in shaped fabric (ch 1 + turn — what a crocheter
   does). The grid builder survives with row-0 slack only because its reaches are
   symmetric; a shaped row's first reach is eccentric and the corner hook strangles.
-- **An edge increase works its over-the-base stitch FIRST, then the flare** — and
-  the flare's crown sits at most ~0.55·sw beyond the fabric edge (lattice ends
-  clamped). A full-stitch unsupported overhang levers the corner hook out around
-  the pinned foundation crown (it flips z-sides; the audit catches it).
-- **Rows own their lattice**: each row's crowns sit on that row's spacing, centred
-  over the fabric below; hooks reach to whatever the ops consume (the cursor).
-  A row's ops MUST consume exactly the row below (builder throws otherwise).
+- **An edge increase works its over-the-base stitch FIRST, then the flare** (the
+  real order at a row edge), and **an inc pair's two hooks initialise side by
+  side (±0.6·pw), never coincident** — coincident inits force collision to split
+  them in an arbitrary direction and the corner hook gets expelled over the crown.
+- **Rows own their lattice at FULL width**: each row's crowns sit on that row's
+  even spacing, centred over the fabric below; the fabric takes the real width an
+  inc row adds. (Clamping the edge slots to "support" the flare compressed
+  0.45·sw per row per edge into the corner and the stacked incs buckled forward
+  out of plane — see §9.) Hooks reach to whatever the ops consume (the cursor);
+  a row's ops MUST consume exactly the row below (builder throws otherwise).
 
 **Working in the round (buildRounds):** a continuous spiral, NO turn (fz never
 flips — every round works the same face, which is why amigurumi fabric looks
@@ -338,6 +346,42 @@ The two lessons that made it pass (see §9):
   dump the settled positions per stitch (`scripts/loom-ch-debug.ts` pattern) before
   touching parameters. Two renders in a row got misread until the dump showed the
   expelled strand.
+- **Shaping: turning slack only at row 0** → a shaped row's eccentric first reach
+  (an inc fanning, a dec spanning two crowns) strangles the corner hook at every
+  turn. The turning chain (ch 1 + turn) goes into EVERY shaped row — it's what a
+  crocheter actually does.
+- **Two hooks of an inc pair initialised COINCIDENT under the shared crown** →
+  collision must split them and picks an arbitrary direction; at a turn the bias
+  expelled the first hook UP over the crown (probe: hz +0.98 vs its twin's −1.21,
+  same-side audit fail). Real pair insertions enter side by side — offset the two
+  hook inits ±0.6·pw along the row, and work the over-the-base stitch of an edge
+  pair first. (TWO theory-first "fixes" missed this; the one-corner numeric probe
+  found it in one look. Numbers before theories.)
+- **Clamping an inc row's edge lattice slots ("support the flare")** → the wrong
+  medicine for the coincident-hook defect above, and its own disease: it denies
+  the fabric 0.45·sw of real width per row per edge, the compression collects in
+  the corner, and the stacked edge incs buckle forward out of plane (probe: corner
+  hook z drift 0 → 0.95 → 3.1yr up the rows). The lattice stays even and FULL
+  width; shaping's extra width is real.
+- **Rounds relaxed with free z and no table** → no-turn fabric piles every round's
+  relief on the same face; nothing alternates to cancel it, and the disc bulged
+  into coiled-rope lumps (read as a rope trivet, not crochet). Same cure as ch:
+  the one-sided TABLE (`floorZ`), never a symmetric plane pull.
+- **Audit offsets measured in world x/y on a POLAR fabric** → "floated above its
+  crown" fired on healthy disc stitches (world +y is radially outward only at one
+  angle). Measure link offsets in the FABRIC frame: `frame: 'polar'` maps along-row
+  → tangential, row-height → radial.
+- **Knit seeded thinner than real fabric (±0.6yr relief)** → every course's legs
+  squeeze the course below's leg-tops backward; the cascade collapses each course's
+  crossings onto its own head plane (dz → 0 fabric-wide). Stockinette is ~2 yarn
+  diameters thick — seed the whole budget (legs +1.1yr, heads/sinkers −1.0yr) so
+  nothing starts within a collision diameter of flipping. Garter escaped the thin
+  version only because alternating faces push opposite ways — and regressed on the
+  thick version (see §8 table) because its crossing side is relative, not absolute.
+- **Knit sinker→leg with no routing node under the old head** → the kink's bending
+  pull drags the crossing back through the head before collision can hold it. The
+  strand genuinely passes UNDER the old head's bottom edge between purl side and
+  face side — put that node in the path.
 - **A retroactive z-nudge on an already-placed node barely survives relaxation**
   (blo/flo ridge, 2026-07-07). Pushing `nodes[k].z *= 1.7` AFTER the node is placed
   fights its own recorded distance-constraint rest lengths; the relaxer mostly undoes

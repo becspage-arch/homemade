@@ -38,7 +38,12 @@ export function buildRelaxedSwatch(arg: SwatchArg, W: number, yr: number): Built
   // hook IS the interlock; flattening it would unlink the rows.
   if (recipe.relaxProfile === 'round') {
     // Work in the round: the same worked-fabric relax, but "blocked" to each
-    // round's worked RADIUS instead of a row line.
+    // round's worked RADIUS instead of a row line — plus the TABLE. No-turn
+    // fabric piles every round's relief on the same face (nothing alternates to
+    // cancel it), and with z totally free the disc bulged into coiled-rope lumps.
+    // The one-sided floor is the engine's own flattener (§9: flatten with the
+    // table, never a symmetric plane pull) — a photographed disc lies pressed
+    // flat on one.
     relax(built.model, {
       collMinDist: yr * 1.25,
       collK: 0.28,
@@ -47,6 +52,7 @@ export function buildRelaxedSwatch(arg: SwatchArg, W: number, yr: number): Built
       planeK: 0,
       layoutK: 0.06,
       layoutMode: 'radial',
+      floorZ: -yr * 1.3,
       iterations: 360,
     })
   } else if (recipe.relaxProfile === 'chain') {
