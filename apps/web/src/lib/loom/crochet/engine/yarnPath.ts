@@ -60,9 +60,12 @@ export interface BuiltContinuous {
   anchorPins: number
   /**
    * The fabric frame the audit should measure link offsets in. 'polar' (work in
-   * the round): along-the-row = tangential, row-height = radial. Absent = flat.
+   * the round, flat): along-the-row = tangential, row-height = radial.
+   * 'surface' (curved surface of revolution): tangential + meridian via the
+   * model's per-node meridian tangents, hook side along the local normal.
+   * Absent = flat.
    */
-  frame?: 'polar'
+  frame?: 'polar' | 'surface'
 }
 
 export interface BuildOpts {
@@ -197,6 +200,39 @@ export interface PlainStitchSpec {
   /** Fabric-frame ly of the hooked below crown. Defaults to its node's world y — correct in the flat frame. */
   cyBelow?: number
   place?: (lx: number, ly: number) => { x: number; y: number }
+  /**
+   * Full 3D fabric-frame transform for CURVED surfaces: (lx = along the round,
+   * ly = meridian coordinate, lz = offset along the local surface NORMAL) →
+   * world. Takes precedence over `place`. On a curved surface the relief axis
+   * is the normal, not global z — this is what lets the identical stitch
+   * excursion live on a sphere.
+   */
+  place3?: (lx: number, ly: number, lz: number) => { x: number; y: number; z: number }
+  /**
+   * The below crown's LOCAL normal offset (its lz), for the hook's dive-side
+   * decision. Required with place3 — a node's GLOBAL z says nothing about its
+   * surface side on a curved fabric. Defaults to the node's world z (correct
+   * flat / polar).
+   */
+  bcNormalZ?: number
+  /**
+   * 0 (default) = the crown rides proud on its worked face — correct for TURNED
+   * flat fabric, where crowns alternate faces. 1 = the crown LIES FLAT on the
+   * fabric surface, tipped outward over the row line — how the head loops of
+   * no-turn work (spiral rounds) actually sit: the visible V lies in the
+   * surface like a laid-down chain plait. Proud crowns stacked on one face all
+   * the way out is exactly what made the disc render as knots.
+   */
+  crownLay?: number
+  /**
+   * How to record this stitch's interlock for the audit. 'hook' (default) =
+   * dives under a CROWN (depth-checked). 'ring' = wraps a STRAND — magic-ring
+   * round 1 wraps the ring strand exactly like a post stitch wraps a stem, and
+   * a drawn-tight ring squashes the wrap to sub-diameter clearance, so the
+   * crown depth check is the wrong test for it (the wrap is held by passing
+   * around, not by a z-side).
+   */
+  linkRole?: 'hook' | 'ring'
 }
 
 export function emitPlainStitch(
@@ -209,19 +245,31 @@ export function emitPlainStitch(
   const xC = spec.xCrown
   const xH = spec.xHook ?? xC
   const P = spec.place
-  const push = P
-    ? (lx: number, ly: number, zz: number, w = 1): number => {
-        const p = P(lx, ly)
-        return S.push(p.x, p.y, zz, w)
+  const P3 = spec.place3
+  const push = P3
+    ? (lx: number, ly: number, lz: number, w = 1): number => {
+        const p = P3(lx, ly, lz)
+        return S.push(p.x, p.y, p.z, w)
       }
-    : S.push
+    : P
+      ? (lx: number, ly: number, zz: number, w = 1): number => {
+          const p = P(lx, ly)
+          return S.push(p.x, p.y, zz, w)
+        }
+      : S.push
   // Per-stitch variants: hdc's third loop; blo/flo loop choice.
   const thirdLoop = id === 'hdc'
   const loopMode = id === 'scblo' ? 'blo' : id === 'scflo' ? 'flo' : 'both'
   const px = ty - by // post span (tall for dc, short for sc)
   const bc = (loopMode === 'flo' ? spec.bcFront : spec.bcBack)! // the loop this stitch hooks under
   const cy = spec.cyBelow ?? S.nodes[bc]!.y // where that loop sits (the row joins there)
-  const hookZ = (S.nodes[bc]!.z >= 0 ? -1 : 1) * z * 1.6 // dive to the FAR side of that crown
+  const lay = spec.crownLay ?? 0
+  // Dive to the FAR side of the crown below. A flat-LYING head (crownLay, §8c)
+  // sits low on the surface, so getting under it needs a DEEPER dive — at the
+  // proud-crown depth the hook settles nearly coincident with the flattened
+  // head and the interlock is ambiguous (audit: same-side fails across rounds).
+  const bcz = spec.bcNormalZ ?? S.nodes[bc]!.z
+  const hookZ = (bcz >= 0 ? -1 : 1) * z * (1.6 + 0.9 * lay)
   // The legs run from the insertion (xH) at the bottom to this stitch's own crown
   // (xC) at the top. f = height fraction: 1 at the top of the leg, → 0 at the hook.
   const xa = (f: number): number => xH + (xC - xH) * f
@@ -237,7 +285,7 @@ export function emitPlainStitch(
   // Hook UNDER the crown below — tuck to the far z-side of it. Collision (neither
   // can pass through the other) holds the link — no spring.
   const hookIdx = push(xH, cy - dh, hookZ)
-  S.links.push({ j, c, role: 'hook', hook: hookIdx, below: bc })
+  S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: hookIdx, below: bc })
   push(xH - s * pw * 0.4, cy + dh * 0.5, z * 0.6 * fz) // emerge
   // Up-leg: pulled back UP just beside the down-leg → the two strands of the post.
   push(xa(0.33) - s * pw, by + px * 0.26, z * 1.1 * fz)
@@ -250,11 +298,11 @@ export function emitPlainStitch(
   // real spread the construction needs — a later retroactive z-nudge on an
   // already-placed node stretches its distance constraints against their recorded
   // rest length, so relaxation mostly undoes it (measured: ~0.25yr net gap).
-  push(xC - s * cw, ty - dh * 0.3, zh * fz)
+  push(xC - s * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
   let crownBack: number
   let crownFront: number
   if (loopMode === 'both') {
-    const crown = push(xC, ty, zh * 1.15 * fz)
+    const crown = push(xC, ty + dh * 0.35 * lay, zh * (1.15 - 0.6 * lay) * fz)
     crownBack = crown
     crownFront = crown
   } else {
@@ -273,7 +321,7 @@ export function emitPlainStitch(
       hookNode: backFloats ? frontNode : backNode,
     })
   }
-  push(xC + s * cw, ty - dh * 0.3, zh * fz)
+  push(xC + s * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
   return { crownBack, crownFront, postMid }
 }
 

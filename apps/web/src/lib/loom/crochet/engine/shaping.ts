@@ -63,6 +63,10 @@ export interface DecSpec {
   cy1?: number
   cy2?: number
   place?: (lx: number, ly: number) => { x: number; y: number }
+  /** Curved surfaces: full 3D frame + the two below crowns' local normal offsets (see emitPlainStitch). */
+  place3?: (lx: number, ly: number, lz: number) => { x: number; y: number; z: number }
+  bn1?: number
+  bn2?: number
 }
 
 export function emitDecrease(S: StrandCtx, d: StitchDims, spec: DecSpec): { crown: number } {
@@ -70,19 +74,27 @@ export function emitDecrease(S: StrandCtx, d: StitchDims, spec: DecSpec): { crow
   const { j, c, s, fz, by, ty } = spec
   const px = ty - by
   const P = spec.place
-  const push = P
-    ? (lx: number, ly: number, zz: number, w = 1): number => {
-        const p = P(lx, ly)
-        return S.push(p.x, p.y, zz, w)
+  const P3 = spec.place3
+  const push = P3
+    ? (lx: number, ly: number, lz: number, w = 1): number => {
+        const p = P3(lx, ly, lz)
+        return S.push(p.x, p.y, p.z, w)
       }
-    : S.push
+    : P
+      ? (lx: number, ly: number, zz: number, w = 1): number => {
+          const p = P(lx, ly)
+          return S.push(p.x, p.y, zz, w)
+        }
+      : S.push
   const xC = spec.xCrown
   const x1 = spec.b1.x
   const x2 = spec.b2.x
   const cy1 = spec.cy1 ?? S.nodes[spec.b1.back]!.y
   const cy2 = spec.cy2 ?? S.nodes[spec.b2.back]!.y
-  const hz1 = (S.nodes[spec.b1.back]!.z >= 0 ? -1 : 1) * z * 1.6
-  const hz2 = (S.nodes[spec.b2.back]!.z >= 0 ? -1 : 1) * z * 1.6
+  const bn1 = spec.bn1 ?? S.nodes[spec.b1.back]!.z
+  const bn2 = spec.bn2 ?? S.nodes[spec.b2.back]!.z
+  const hz1 = (bn1 >= 0 ? -1 : 1) * z * 1.6
+  const hz2 = (bn2 >= 0 ? -1 : 1) * z * 1.6
   const xa1 = (f: number): number => x1 + (xC - x1) * f // first leg: insertion 1 → crown
   const xa2 = (f: number): number => x2 + (xC - x2) * f // last leg: insertion 2 → crown
 
@@ -381,6 +393,7 @@ export function buildRounds(
           bcFront: ring,
           cyBelow: rr,
           place,
+          linkRole: 'ring', // round 1 WRAPS the ring strand (a stem, not a crown)
         })
         crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, r: rK })
       }
@@ -419,6 +432,7 @@ export function buildRounds(
             bcFront: b.front,
             cyBelow: b.r,
             place,
+            
           })
           crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, r: rK })
           li++
@@ -452,5 +466,252 @@ export function buildRounds(
     heightMm: rOut * 2,
     anchorPins: RING_N,
     frame: 'polar',
+  }
+}
+
+/**
+ * Even distribution of increases/decreases around a round — real ball-pattern
+ * math: from `prev` stitches to `next`, spread the incs (or decs) evenly so the
+ * shaping never stacks into a seam.
+ */
+export function roundOps(prev: number, next: number, stagger = 0): ShapeOp[] {
+  // `stagger` (0 or 0.5) shifts the shaping positions by half a segment — real
+  // patterns alternate it round to round so incs/decs never stack into columns
+  // (stacked shaping bulges, and a stacked inc pair loses the fight for space
+  // under its shared crown: the ball's one residual audit fail sat exactly on
+  // an inc column).
+  if (next >= prev) {
+    const inc = next - prev
+    if (inc > prev) throw new Error(`round cannot more than double (${prev} -> ${next})`)
+    const ops: ShapeOp[] = Array(prev).fill('st') as ShapeOp[]
+    for (let t = 0; t < inc; t++) ops[Math.floor(((t + 0.5 + stagger) * prev) / inc) % prev] = 'inc'
+    return ops
+  }
+  const dec = prev - next
+  if (dec > next) throw new Error(`round cannot less than halve (${prev} -> ${next})`)
+  const ops: ShapeOp[] = Array(next).fill('st') as ShapeOp[]
+  for (let t = 0; t < dec; t++) ops[Math.floor(((t + 0.5 + stagger) * next) / dec) % next] = 'dec'
+  return ops
+}
+
+/**
+ * A SPHERE worked in the round — the first 3D surface. The same continuous
+ * no-turn spiral as the disc, laid on a ball instead of a plane: rounds are
+ * latitude circles, the meridian arclength from the top pole is the fabric's
+ * row coordinate, and the stitch relief rides the local surface NORMAL
+ * (emitPlainStitch's place3). Counts per round come from the profile
+ * (circumference / gauge, evenly distributed incs down to the equator, then
+ * mirrored decs — the real amigurumi ball recipe). The magic ring anchors the
+ * top pole; the fasten-off tail spirals into the bottom pole. The relaxer
+ * holds each node at its worked latitude along the local meridian tangent
+ * (layoutMode 'surface' — the stuffing/blocked-to-shape analog); the model
+ * carries per-node meridian tangents for that pull and for the audit's
+ * surface-frame link checks.
+ */
+export function buildSphere(
+  st: StitchId,
+  equatorCount: number,
+  yarnRadiusMm: number,
+): BuiltContinuous {
+  const yr = yarnRadiusMm
+  const sw = yr * STITCHES[st].gaugeYr
+  const dims = stitchDims(yr)
+  const { zh } = dims
+  const rowH = yr * BASE_ROW_YR * STITCHES[st].heightFactor
+  const drift = rowH * 1.05
+  const R = (equatorCount * sw) / (2 * Math.PI)
+  const Z0 = R + yr * 1.5 // sphere centre height — the ball rests on the table (floorZ 0)
+
+  ridgeDebugNodes.length = 0
+  const S = createStrand()
+  const { nodes, push } = S
+
+  // Surface of revolution: meridian arclength m from the TOP pole. A sphere's
+  // normal offset is simply a radius change: point = C + (R+lz) * u(m, theta).
+  const rOf = (m: number): number => R * Math.sin(m / R)
+  const mkPlace3 =
+    (rRef: number) =>
+    (lx: number, ly: number, lz: number): { x: number; y: number; z: number } => {
+      const th = lx / rRef
+      const rr2 = (R + lz) * Math.sin(ly / R)
+      return {
+        x: rr2 * Math.cos(th),
+        y: rr2 * Math.sin(th),
+        z: Z0 + (R + lz) * Math.cos(ly / R),
+      }
+    }
+
+  // MAGIC RING at the top pole (the anchor), lying on the surface.
+  const rr = yr * 1.15
+  const RING_N = 18
+  const ringNodes: number[] = []
+  const ringPlace = mkPlace3(Math.max(rOf(rr), 1e-3))
+  for (let i = 0; i < RING_N; i++) {
+    const a = (i / RING_N) * Math.PI * 2
+    const p = ringPlace(a * Math.max(rOf(rr), 1e-3), rr, zh * 0.5)
+    push(p.x, p.y, p.z, 0)
+    ringNodes.push(nodes.length - 1)
+  }
+  const phase = ((RING_N - 1) / RING_N) * Math.PI * 2
+
+  interface SCrown {
+    back: number
+    front: number
+    theta: number
+    m: number
+    nz: number // the crown's local normal offset (for the next round's dive side)
+  }
+  const crownNz = zh * 1.15
+  let below: SCrown[] = []
+  let mPrev = rr
+  let count = 0
+
+  // Round meridians: step down the sphere until just short of the bottom pole.
+  const mMax = Math.PI * R - rr
+  const rounds: number[] = []
+  for (let m = rr + drift; m <= mMax - drift * 0.35; m += drift) rounds.push(m)
+
+  for (let k = 0; k < rounds.length; k++) {
+    const mK = rounds[k]!
+    const prev = count
+    const target = Math.max(4, Math.round((2 * Math.PI * rOf(mK)) / sw))
+    // The canonical ball recipe: 6 in the ring, then AT MOST ±6 per round
+    // toward the profile's target. Profile-hugging counts put 7 incs in a
+    // 12-stitch round (shaping density no real pattern uses) and the crowded
+    // cap kept one pair-hook ambiguous; ±6 growth is both the craft standard
+    // and what the pole can physically fit.
+    count = prev === 0 ? Math.min(6, target) : prev + Math.max(-6, Math.min(6, target - prev))
+    const rRef = Math.max(rOf(mK), 1e-3)
+    const place3 = mkPlace3(rRef)
+    const crowns: SCrown[] = []
+
+    if (k === 0) {
+      // Round 1: hooked around the ring strand itself. The emitter aims the
+      // dive at cyBelow − dh, which on the flat disc puts six hooks on a
+      // 0.6yr-radius circle — they crowd (spacing ≪ the collision diameter)
+      // and on the disc they escape RADIALLY, staying under the flat fabric.
+      // On the DOME the escape direction is up-and-over the ring ("outward" at
+      // a pole is up) — the audit measured hooks 1.2–2.0yr OUTSIDE the ring.
+      // Real magic-ring wraps sit AT the ring radius (the hole is filled, the
+      // yarn squashes) and pass under in the NORMAL direction, so aim the dive
+      // there instead of further inside.
+      const cyEff = rr * 0.95 + dims.dh
+      for (let i = 0; i < count; i++) {
+        const th = phase + ((i + 0.5) / count) * Math.PI * 2
+        const ring = ringNodes[Math.round(((th / (Math.PI * 2)) % 1) * RING_N) % RING_N]!
+        const xC = th * rRef
+        const r = emitPlainStitch(S, dims, {
+          j: k,
+          c: i,
+          id: st,
+          s: 1,
+          fz: 1,
+          by: mPrev,
+          ty: mK,
+          xCrown: xC,
+          xHook: xC,
+          bcBack: ring,
+          bcFront: ring,
+          cyBelow: cyEff,
+          bcNormalZ: zh * 0.5,
+          place3,
+          linkRole: 'ring', // round 1 WRAPS the ring strand (a stem, not a crown)
+        })
+        crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNz })
+      }
+    } else {
+      const ops = roundOps(prev, count, (k % 2) * 0.5)
+      let bi = 0
+      let li = 0
+      for (let oi = 0; oi < ops.length; oi++) {
+        const op = ops[oi]!
+        if (op === 'dec') {
+          const b1 = below[bi++]!
+          const b2 = below[bi++]!
+          const th = phase + ((li + 0.5) / count) * Math.PI * 2
+          const xC = th * rRef
+          const r = emitDecrease(S, dims, {
+            j: k,
+            c: oi,
+            id: st,
+            s: 1,
+            fz: 1,
+            by: mPrev,
+            ty: mK,
+            xCrown: xC,
+            b1: { back: b1.back, front: b1.front, x: b1.theta * rRef },
+            b2: { back: b2.back, front: b2.front, x: b2.theta * rRef },
+            cy1: b1.m,
+            cy2: b2.m,
+            bn1: b1.nz,
+            bn2: b2.nz,
+            place3,
+          })
+          crowns.push({ back: r.crown, front: r.crown, theta: th, m: mK, nz: crownNz })
+          li++
+        } else {
+          const b = below[bi++]!
+          const n = op === 'inc' ? 2 : 1
+          for (let t = 0; t < n; t++) {
+            const th = phase + ((li + 0.5) / count) * Math.PI * 2
+            const xC = th * rRef
+            const hookOff = n === 1 ? 0 : dims.pw * 0.6 * (t === 0 ? 1 : -1)
+            const r = emitPlainStitch(S, dims, {
+              j: k,
+              c: oi,
+              id: st,
+              s: 1,
+              fz: 1,
+              by: mPrev,
+              ty: mK,
+              xCrown: xC,
+              xHook: b.theta * rRef + hookOff,
+              bcBack: b.back,
+              bcFront: b.front,
+              cyBelow: b.m,
+              bcNormalZ: b.nz,
+              place3,
+            })
+            crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNz })
+            li++
+          }
+        }
+      }
+    }
+    below = crowns
+    mPrev = mK
+  }
+
+  // FASTEN OFF into the bottom pole: the tail spirals in through the last
+  // round's remaining hole and is drawn tight — same lesson as the disc: the
+  // strand must not stop dead at the final crown.
+  const rRefEnd = Math.max(rOf(mPrev), 1e-3)
+  const placeEnd = mkPlace3(rRefEnd)
+  for (let t = 1; t <= 4; t++) {
+    const th = phase + Math.PI * 2 * (1 + 0.012 * t)
+    const m = Math.min(mPrev + drift * 0.22 * t, Math.PI * R - yr * 0.4)
+    const p = placeEnd(th * rRefEnd, m, yr * (0.3 - 0.25 * t))
+    push(p.x, p.y, p.z)
+  }
+
+  // Per-node meridian tangents (from the sphere's own geometry, at INIT).
+  const meridian = nodes.map((n) => {
+    const rc = Math.hypot(n.x, n.y)
+    const dzc = n.z - Z0
+    const L = Math.hypot(rc, dzc) || 1
+    return { tr: dzc / L, tz: -rc / L }
+  })
+
+  const strand = new Array(nodes.length).fill(0)
+  const along = nodes.map((_, i) => i)
+  return {
+    model: { nodes, dist: S.dist, bend: S.bend, strand, along, meridian },
+    strandPath: S.strandPath,
+    links: S.links,
+    yarnRadiusMm: yr,
+    widthMm: (R + yr * 3) * 2,
+    heightMm: (R + yr * 3) * 2,
+    anchorPins: RING_N,
+    frame: 'surface',
   }
 }

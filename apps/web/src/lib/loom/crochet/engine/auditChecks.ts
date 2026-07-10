@@ -55,16 +55,23 @@ export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr:
   // tangential direction and row-height to the radial one ("above its crown" on
   // a disc means radially outward, not world +y).
   const linkFails: string[] = []
+  const mer = built.model.meridian
   const rel = (hi: number, bi: number): { x: number; y: number } => {
     const h = nodes[hi]!
     const b = nodes[bi]!
-    if (built.frame === 'polar') {
+    if (built.frame === 'polar' || built.frame === 'surface') {
       const rh = Math.hypot(h.x, h.y)
       const rb = Math.hypot(b.x, b.y)
       let da = Math.atan2(h.y, h.x) - Math.atan2(b.y, b.x)
       if (da > Math.PI) da -= Math.PI * 2
       if (da < -Math.PI) da += Math.PI * 2
-      return { x: da * ((rh + rb) / 2), y: rh - rb }
+      const dx = da * ((rh + rb) / 2)
+      if (built.frame === 'surface' && mer) {
+        // Row-height direction = the local meridian tangent at the below node.
+        const t = mer[bi]!
+        return { x: dx, y: (rh - rb) * t.tr + (h.z - b.z) * t.tz }
+      }
+      return { x: dx, y: rh - rb }
     }
     return { x: h.x - b.x, y: h.y - b.y }
   }
@@ -73,8 +80,19 @@ export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr:
     const b = nodes[l.below]!
     const d = rel(l.hook, l.below)
     if (l.role === 'hook') {
-      // Dives under the crown to its far z-side and stays beside/below it.
-      if (h.z * b.z > 0 && Math.abs(h.z - b.z) < yr * 0.45) return 'hook settled on the SAME side as its crown'
+      // Dives under the crown to its far side and stays beside/below it. On a
+      // curved surface "side" is the local NORMAL, not global z: n = (-tz, tr)
+      // rotated from the below node's meridian tangent; our rounds always hook
+      // INWARD, so the hook must sit clearly on the inward-normal side.
+      if (built.frame === 'surface' && mer) {
+        const t = mer[l.below]!
+        const rh = Math.hypot(h.x, h.y)
+        const rb = Math.hypot(b.x, b.y)
+        const dn = (rh - rb) * -t.tz + (h.z - b.z) * t.tr
+        if (dn > -yr * 0.45) return `hook did not get under its crown (dn=${(dn / yr).toFixed(2)}yr)`
+      } else if (h.z * b.z > 0 && Math.abs(h.z - b.z) < yr * 0.45) {
+        return 'hook settled on the SAME side as its crown'
+      }
       if (Math.abs(d.x) > yr * 2.5) return `hook slipped sideways off its crown (dx=${(d.x / yr).toFixed(2)}yr)`
       if (d.y > yr * 1.2) return `hook floated above its crown (dy=${(d.y / yr).toFixed(2)}yr)`
       return null

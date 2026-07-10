@@ -79,7 +79,7 @@ export const STITCHES: Record<StitchId, StitchDef> = {
 export type SwatchArg =
   | StitchId | 'postrib' | 'basketweave' | 'bobbles'
   | 'scinc' | 'scdec' | 'hdcinc' | 'hdcdec' | 'dcinc' | 'dcdec'
-  | 'shell' | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib'
+  | 'shell' | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib' | 'ball'
 
 export interface SwatchRecipe {
   /** The dictionary stitch driving gauge + row height for this swatch. */
@@ -96,7 +96,7 @@ export interface SwatchRecipe {
    * needs shapeRows). 'round' = worked in the round off a magic ring (needs
    * roundCounts). 'knit' = the knit path builder (loops through loops).
    */
-  builder?: 'shaped' | 'round' | 'knit'
+  builder?: 'shaped' | 'round' | 'knit' | 'sphere'
   /** builder 'shaped': the per-row shaping ops, work order, off auditW foundation stitches. */
   shapeRows?: ShapeOp[][]
   /** builder 'round': stitches per round of the spiral (each round +6 = flat disc). */
@@ -109,8 +109,11 @@ export interface SwatchRecipe {
    * precedence over knitFlip; absent falls back to knitFlip ? garter : stockinette.
    */
   knitFace?: 'stockinette' | 'garter' | 'rib'
-  /** Chain relaxes with its own profile (soft squash + table floor); rounds hold their radius. */
-  relaxProfile: 'worked' | 'chain' | 'round'
+  /** builder 'sphere': stitches around the equator (sets the ball's size). */
+  equatorCount?: number
+  /** Chain relaxes with its own profile (soft squash + table floor); rounds hold
+   *  their radius; curved surfaces hold their worked latitude (the stuffing). */
+  relaxProfile: 'worked' | 'chain' | 'round' | 'surface'
   /** Hero camera tilt (0 = flat top-down; 16 = tall posts; 40 = side-on for relief). */
   tiltDeg: number
   /** Render ply twist (0.1 = rustic wool; 0.05 = calmer, for clean columns). */
@@ -303,8 +306,17 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   mrdisc: {
     stitch: 'sc', rows: 6, auditW: 16, builder: 'round',
     roundCounts: [6, 12, 18, 24, 30, 36],
-    relaxProfile: 'round', tiltDeg: 0, twist: 0.1,
+    relaxProfile: 'round', tiltDeg: 0, twist: 0.05, // calm twist — the radiating V line is the identity, don't bury it in ply noise
     referenceUrl: 'https://sarahmaker.com/wp-content/uploads/2022/03/crochet-circle-7-819x1024.jpg',
+    status: 'wip',
+  },
+  // The first 3D SURFACE: an amigurumi ball, sc in a continuous spiral over a
+  // sphere (MR at the top pole, evenly-distributed incs to the equator,
+  // mirrored decs, fasten-off into the bottom pole).
+  ball: {
+    stitch: 'sc', rows: 15, auditW: 16, builder: 'sphere', equatorCount: 30,
+    relaxProfile: 'surface', tiltDeg: 24, twist: 0.05,
+    referenceUrl: 'https://raffamusadesigns.com/wp-content/uploads/How_to_Crochet_erfect_Amigurumi_Ball_9_RaffamusaDesigns.jpg',
     status: 'wip',
   },
   // ---- KNIT (new craft, knit path builder) ----

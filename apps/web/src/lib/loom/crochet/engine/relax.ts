@@ -67,7 +67,7 @@ export interface RelaxConfig {
    * free to relax. Represents the same physical thing: the fabric blocked to the
    * dimensions it was worked to.
    */
-  layoutMode?: 'y' | 'radial'
+  layoutMode?: 'y' | 'radial' | 'surface'
   /**
    * A hard TABLE under the work: free nodes are clamped to z >= floorZ. One-sided
    * contact, exactly like the surface a swatch is photographed on — it stops loops
@@ -86,6 +86,13 @@ export interface YarnModel {
   strand: number[]
   /** Position of each node along its strand (for adjacency exclusion). */
   along: number[]
+  /**
+   * Per-node unit MERIDIAN tangent in the (cylindrical-radius, global-z) half
+   * plane, for curved surfaces (layoutMode 'surface' + the audit's surface
+   * frame). tr = component along r_cyl, tz = along global z. Points away from
+   * the start pole. Built from each node's initial position on the surface.
+   */
+  meridian?: { tr: number; tz: number }[]
 }
 
 function projectDistance(nodes: RNode[], c: DistConstraint): void {
@@ -163,8 +170,18 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
   // Capture each node's worked line for the "laid flat / blocked" pull: its row
   // (initial y) for flat work, its round (initial radius) for work in the round.
   const radial = cfg.layoutMode === 'radial'
-  const y0 = cfg.layoutK > 0 && !radial ? nodes.map((n) => n.y) : null
+  const surface = cfg.layoutMode === 'surface' && !!model.meridian
+  const y0 = cfg.layoutK > 0 && !radial && !surface ? nodes.map((n) => n.y) : null
   const r0 = cfg.layoutK > 0 && radial ? nodes.map((n) => Math.hypot(n.x, n.y)) : null
+  // Curved surfaces: capture each node's worked latitude (r_cyl + global z) —
+  // the pull acts only along the local MERIDIAN tangent (the row-height
+  // direction), leaving the angular direction and the surface NORMAL (the
+  // loop/interlock relief) free. Physically: the piece is stuffed/blocked to
+  // the shape it was worked to.
+  const s0 =
+    cfg.layoutK > 0 && surface
+      ? nodes.map((n) => ({ r: Math.hypot(n.x, n.y), z: n.z }))
+      : null
 
   // Bonded pairs (anything joined by a constraint) never collide — connected yarn
   // touches. A node also never collides with another node on the SAME stitch
@@ -252,6 +269,38 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
         const f = 1 + ((r0[i]! - r) / r) * cfg.layoutK
         n.x *= f
         n.y *= f
+      }
+    }
+    // 5c. Curved surfaces: full-strength pull along the local meridian tangent
+    // (hold each round at its worked latitude) + a WHISPER-soft pull on the
+    // NORMAL component toward each node's worked offset. The soft normal term
+    // is the stuffing/hoop-tension analog: without it the free normal direction
+    // carries not just stitch relief but a BULK drift mode, and a sphere's pole
+    // cap balloons off the surface (measured: crowns drifted +0.58 → +1.98yr
+    // off-surface, hooks expelled over the ring). Because it pulls toward each
+    // node's OWN worked offset (not a common surface), relative interlock
+    // relief is preserved — and it stays soft enough for collision to win
+    // locally.
+    if (s0) {
+      const mer = model.meridian!
+      const kN = cfg.layoutK * 0.4
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i]!
+        if (n.w === 0) continue
+        const t = mer[i]!
+        const r = Math.hypot(n.x, n.y)
+        const dr = s0[i]!.r - r
+        const dz = s0[i]!.z - n.z
+        const a = dr * t.tr + dz * t.tz // meridian shortfall
+        const b = dr * -t.tz + dz * t.tr // normal shortfall
+        const mr = a * t.tr * cfg.layoutK + b * -t.tz * kN
+        const mz = a * t.tz * cfg.layoutK + b * t.tr * kN
+        if (r > 1e-6) {
+          const f = 1 + mr / r
+          n.x *= f
+          n.y *= f
+        }
+        n.z += mz
       }
     }
   }

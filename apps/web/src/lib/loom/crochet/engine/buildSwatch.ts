@@ -6,7 +6,7 @@
  */
 
 import { buildContinuous, type BuiltContinuous } from './yarnPath'
-import { buildShaped, buildRounds } from './shaping'
+import { buildShaped, buildRounds, buildSphere } from './shaping'
 import { buildKnit } from './knitPath'
 import { relax } from './relax'
 import { SWATCH_RECIPES, type SwatchArg, type SwatchRecipe, type StitchId } from './dictionary'
@@ -29,14 +29,32 @@ export function buildRelaxedSwatch(arg: SwatchArg, W: number, yr: number): Built
       ? buildShaped(recipe.stitch, recipe.shapeRows!, W, yr)
       : recipe.builder === 'round'
         ? buildRounds(recipe.stitch, recipe.roundCounts!, yr)
-        : recipe.builder === 'knit'
-          ? buildKnit(recipe.rows, W, yr, recipe.knitFace ?? (recipe.knitFlip ? 'garter' : 'stockinette'))
-          : buildContinuous(rows, W, yr, { stitchAt: recipe.pattern, noTurn: recipe.noTurn, gaugeYr: recipe.gaugeYr })
+        : recipe.builder === 'sphere'
+          ? buildSphere(recipe.stitch, recipe.equatorCount ?? 30, yr)
+          : recipe.builder === 'knit'
+            ? buildKnit(recipe.rows, W, yr, recipe.knitFace ?? (recipe.knitFlip ? 'garter' : 'stockinette'))
+            : buildContinuous(rows, W, yr, { stitchAt: recipe.pattern, noTurn: recipe.noTurn, gaugeYr: recipe.gaugeYr })
 
   // Collision is what HOLDS the interlock (yarn can't pass through yarn), so it
   // runs firm and long. No plane pull for worked fabric — the +z/−z relief at each
   // hook IS the interlock; flattening it would unlink the rows.
-  if (recipe.relaxProfile === 'round') {
+  if (recipe.relaxProfile === 'surface') {
+    // A curved surface (sphere/tube): worked-fabric relax, "stuffed" to its
+    // worked shape — each node held at its worked latitude along the local
+    // meridian tangent only (normal relief + the angular direction stay free) —
+    // resting on the table.
+    relax(built.model, {
+      collMinDist: yr * 1.25,
+      collK: 0.28,
+      collAdjacency: 9,
+      planeZ: 0,
+      planeK: 0,
+      layoutK: 0.06,
+      layoutMode: 'surface',
+      floorZ: 0,
+      iterations: 520, // a ~4k-node closed surface settles slower than a flat swatch — at 400 one knife-edge hook was still 0.05yr shy of depth
+    })
+  } else if (recipe.relaxProfile === 'round') {
     // Work in the round: the same worked-fabric relax, but "blocked" to each
     // round's worked RADIUS instead of a row line — plus the TABLE. No-turn
     // fabric piles every round's relief on the same face (nothing alternates to
