@@ -236,6 +236,16 @@ export function buildShaped(
     maxX = Math.max(maxX, below[below.length - 1]!.x)
   }
 
+  // FASTEN OFF (same lesson as rounds): weave the tail back along the last row.
+  // A dangling strand end leaves the final stitch half-supported — the scdec
+  // render showed it sagging into a frayed lump at the bottom corner.
+  const jL = rowPlans.length - 1
+  const dirL = jL % 2 === 0 ? -1 : 1
+  const xEnd = below[dirL > 0 ? below.length - 1 : 0]!.x
+  for (let t = 1; t <= 4; t++) {
+    push(xEnd - dirL * sw * 0.35 * t, (jL + 1) * rowH - rowH * 0.25, yr * (0.3 - 0.22 * t))
+  }
+
   const strand = new Array(nodes.length).fill(0)
   const along = nodes.map((_, i) => i)
   return {
