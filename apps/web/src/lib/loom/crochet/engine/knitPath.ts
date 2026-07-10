@@ -67,35 +67,44 @@ export function buildKnit(
     const ty = (j + 1) * courseH
     const s = j % 2 === 0 ? -1 : 1 // cast-on ends right → first course starts right
     const fz = flip ? (j % 2 === 0 ? 1 : -1) : 1
+    // GARTER corrugation: each course's WHOLE loop shifts toward its pull face.
+    // With mirrored absolute z alone, course j+1's legs initialise on the same
+    // side as course j's head with ~0.1yr clearance and the interlock loses its
+    // side (audit: the first course slid sideways). The corrugation is real —
+    // garter fabric is ~2× stockinette's thickness, alternating ridge rows —
+    // and it restores a full collision diameter between each leg crossing and
+    // the head it passes (crossing at 1.8yr·fz vs old head at 0.4yr·fz).
+    // Stockinette (fz constant) is untouched: bz = 0.
+    const bz = flip ? yr * 0.7 * fz : 0
     const headThis: number[] = new Array(W).fill(-1)
     for (let o = 0; o < W; o++) {
       const c = s > 0 ? o : W - 1 - o
       const x = c * swk
       const hb = headBelow[c]!
       // Sinker in: low and a full layer behind, tucked under the old head.
-      push(x - s * 0.34 * swk, by - 0.3 * courseH, -zBack * fz)
+      push(x - s * 0.34 * swk, by - 0.3 * courseH, -zBack * fz + bz)
       // The yarn comes forward UNDER the old head's bottom edge (this is where
       // the strand really crosses from the purl side to the face side — without
       // this routing node the sinker→leg kink pulls the crossing back through
       // the head before collision can hold it; the audit measured exactly that).
-      push(x - s * 0.26 * swk, by - 0.16 * courseH, yr * 0.2 * fz)
+      push(x - s * 0.26 * swk, by - 0.16 * courseH, yr * 0.2 * fz + bz)
       // Leg 1 crosses the old head's mouth IN FRONT of it (the interlock).
-      const L1 = push(x - s * 0.26 * swk, by, zFace * fz)
+      const L1 = push(x - s * 0.26 * swk, by, zFace * fz + bz)
       links.push({ j, c, role: 'through', hook: L1, below: hb, zSign: fz })
       // Leg 1 spreads up the V…
-      push(x - s * 0.42 * swk, ty - 0.3 * courseH, zLegTop * fz)
+      push(x - s * 0.42 * swk, ty - 0.3 * courseH, zLegTop * fz + bz)
       // …and eases over into the head, falling toward the back.
-      push(x - s * 0.34 * swk, ty - 0.08 * courseH, -zShoulder * fz)
-      const apex = push(x, ty, -zBack * fz) // the head — next course draws through it
-      push(x + s * 0.34 * swk, ty - 0.08 * courseH, -zShoulder * fz)
+      push(x - s * 0.34 * swk, ty - 0.08 * courseH, -zShoulder * fz + bz)
+      const apex = push(x, ty, -zBack * fz + bz) // the head — next course draws through it
+      push(x + s * 0.34 * swk, ty - 0.08 * courseH, -zShoulder * fz + bz)
       // Leg 2 back down through the same mouth.
-      push(x + s * 0.42 * swk, ty - 0.3 * courseH, zLegTop * fz)
-      const L2 = push(x + s * 0.26 * swk, by, zFace * fz)
+      push(x + s * 0.42 * swk, ty - 0.3 * courseH, zLegTop * fz + bz)
+      const L2 = push(x + s * 0.26 * swk, by, zFace * fz + bz)
       links.push({ j, c, role: 'through', hook: L2, below: hb, zSign: fz })
       // …and back under the old head's edge to the sinker, mirroring the way in.
-      push(x + s * 0.26 * swk, by - 0.16 * courseH, yr * 0.2 * fz)
+      push(x + s * 0.26 * swk, by - 0.16 * courseH, yr * 0.2 * fz + bz)
       // Sinker out toward the next stitch.
-      push(x + s * 0.34 * swk, by - 0.3 * courseH, -zBack * fz)
+      push(x + s * 0.34 * swk, by - 0.3 * courseH, -zBack * fz + bz)
       headThis[c] = apex
     }
     for (let c = 0; c < W; c++) headBelow[c] = headThis[c]!

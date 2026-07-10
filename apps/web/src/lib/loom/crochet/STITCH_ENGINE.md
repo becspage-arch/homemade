@@ -174,7 +174,9 @@ below is the narrative record.
 | **scdec** (sc2tog, shaped rows) | shrinking trapezoid, dec both ends every row; one crown over two audited hooks (§8c) | ◔ audit-clean (60/60). Rendered 2026-07-10 (gate 0.928): trapezoid + converging decrease legs read; the fasten-off tail fixed the earlier frayed bottom corner. Awaiting Rebecca. |
 | **mrdisc** (magic ring + rounds) | flat amigurumi circle: MR anchor, 6 sc in ring, +6/round continuous no-turn spiral, polar frame + radial blocked pull + table + fasten-off (§8c) | ◑ **construction audit-clean (126/126) but the LOOK is not there** — renders as a spiral mat of knotted roving, not radiating Vs (the table fixed the earlier coiled-basket read; the per-stitch knottiness of same-face rounds remains). Our own flat sc proves the engine reads as clean Vs at this scale, so this is a no-turn-fabric look problem: relief/leg-bulge tuning for same-face rounds, ~render-iteration work. Do NOT present as done. |
 | **stockinette / k** (KNIT) | loops drawn through loops, 'through' links, real 2-diameter fabric thickness (§8d) | ◔ audit-clean (216/216, settled leg-vs-head clearance ≈1.7yr everywhere). Rendered 2026-07-10: reads immediately as chunky hand-knitted stockinette — interlocked V columns, correct nesting. Honest deltas vs the fine-cotton reference: plumper Vs + slight column wobble (weight mismatch + the library-wide roving softness). Awaiting Rebecca. |
-| **garter** (KNIT) | stockinette loop + worked-face flip per course | ◑ **WIP — do not present.** Passed the audit at the THIN seeding, regressed when stockinette's real-thickness budget landed: with faces alternating, course j+1's legs now initialise on the SAME z-side as course j's head with ~0.1yr clearance, and the audit shows the whole first course slid ~2.2yr sideways along the pinned cast-on. The fix direction (untried, one attempt left under the cap): place each leg's crossing z RELATIVE to the old head's actual z (`hb.z + gap·fz`, gap ≥ collision diameter) instead of mirroring absolute constants — but verify stockinette's passing margins survive the same change before touching shared constants. |
+| **garter** (KNIT) | stockinette loop + worked-face flip per course + per-course CORRUGATION (`bz = 0.7yr·fz`, gated — stockinette untouched) | ◔ audit-clean (240/240) — the corrugation restores a full collision diameter between each leg crossing and the head it passes (garter really is ~2× stockinette's thickness, alternating ridge rows). Render + reference comparison pending. |
+| **mrdisc look** (addendum) | crownLay (heads lying flat) tried at lay=1 + deeper dive | Both look-attempts FAILED the audit (flat crowns lose interlock disambiguity in relax — 13/126 same-side) → reverted to proud crowns under the two-attempt cap; audit-clean again. The knotty look remains open; note the raffamusa ball reference shows real amigurumi fabric IS visibly bumpy per stitch — the sin is bump SCALE, not existence. The `crownLay` capability stays in the emitter (identity at 0) for the next attempt. |
+| **ball** (3D SPHERE) | full amigurumi ball on the curved-surface machinery (§8c-3D) | ◔ **audit-clean (320/320)** — the first 3D object: MR pole anchor, 6-in-ring, canonical ±6 staggered rounds, equator 30, mirrored decs, fasten-off into the bottom pole. Render + reference comparison pending (reference: raffamusa ball, in SWATCH_RECIPES). |
 
 **Regenerating / building a stitch — use THE PIPELINE (one command, gates built in):**
 ```
@@ -280,6 +282,43 @@ worked RADIUS (`layoutMode: 'radial'` — the blocked-flat pull, polar). The aud
 measures link offsets in the FABRIC frame: for `frame: 'polar'` builds,
 along-row = tangential, row-height = radial ("floated above its crown" on a
 disc means radially outward — world-y is meaningless there).
+
+## 8c-3D. CURVED SURFACES — the sphere (2026-07-10)
+
+The 3D generalisation, proven on the amigurumi BALL (`buildSphere`, swatch
+`ball`): the same continuous no-turn spiral as the disc, laid on a sphere.
+320/320 interlocks hold in data. The machinery:
+
+- **Local frames end-to-end.** `emitPlainStitch`/`emitDecrease` take `place3`
+  (along-round, meridian, NORMAL → world — relief rides the surface normal, not
+  global z) and `bcNormalZ` (the dive side must come from the crown's normal
+  offset; global z is meaningless on a sphere). Both identity for flat work.
+- **The stuffing pull** (`layoutMode: 'surface'`): full-strength hold along the
+  local meridian tangent (each round at its worked latitude) + a WHISPER-soft
+  (0.4×) pull on the normal component toward each node's own worked offset.
+  The soft normal term is hoop-tension/stuffing: without it the free normal
+  direction carries a BULK drift mode and the pole cap balloons off the surface
+  (measured +0.58 → +1.98yr). Pulling toward each node's OWN offset preserves
+  relative interlock relief; collision still wins locally. The model carries
+  per-node meridian tangents (`YarnModel.meridian`) for the pull and the audit.
+- **Audit in the surface frame** (`frame: 'surface'`): along-round = tangential,
+  row-height = meridian (via the below node's tangent), hook side = the local
+  normal ("did not get under its crown" = dn not clearly inward).
+- **The pattern is the craft's pattern.** 6 sc in the ring (the geometric count
+  overcrowds the pole), ±6 count change per round toward the profile target
+  (profile-hugging put 7 incs in a 12-stitch round — density no pattern uses),
+  shaping positions STAGGERED half a segment on alternate rounds (`roundOps`
+  stagger — stacked inc columns bulge and lose pair-hooks), fasten-off spiralling
+  into the bottom pole. Every one of these "pattern conventions" turned out to be
+  load-bearing physics, found via failed audits.
+- **Round-1 links are role 'ring'** — magic-ring wraps encircle the ring STRAND
+  (a stem), exactly like fpdc wraps a post; a drawn-tight ring squashes the wrap
+  to sub-diameter clearance, so the crown depth check is the wrong test. This is
+  taxonomy (the role existed for posts), not a threshold change.
+- A ~4k-node closed surface settles slower: 'surface' relax runs 520 iterations.
+
+Next 3D: tube/cylinder (chain-ring anchor instead of MR), then real amigurumi
+programs (ball+tube compositions) → the crochet pattern engine's 3D output.
 
 ## 8d. KNIT — the new craft on the same engine (2026-07-06)
 
