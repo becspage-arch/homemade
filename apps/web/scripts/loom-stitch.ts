@@ -28,6 +28,11 @@ import { buildRelaxedSwatch, isSwatchArg } from '../src/lib/loom/crochet/engine/
 import { auditProblems } from '../src/lib/loom/crochet/engine/auditChecks'
 import { SWATCH_RECIPES } from '../src/lib/loom/crochet/engine/dictionary'
 import { pliedFilaments, smooth, type V3 } from '../src/lib/loom/crochet/yarnLoop'
+import { loadCredentials } from './loom-hybrid-fal'
+
+// Populate FAL_KEY etc. from .env.credentials if present, so the hero step below
+// can detect whether the photoreal finish is available (absent → base-only).
+loadCredentials()
 
 const OUT = resolve(process.cwd(), '../../.loom-scratch/crochet')
 mkdirSync(OUT, { recursive: true })
@@ -83,19 +88,30 @@ function main() {
   )
   if (r.status !== 0 || !existsSync(basePng)) fail(`Blender render did not produce ${basePng}`)
 
-  // 4. Photoreal hero + fidelity gate.
-  console.log('[4/4] photoreal hero + fidelity gate')
-  const h = spawnSync('npx', ['tsx', 'scripts/loom-aspen-hero.ts', basePng, '0.6', '0.8', arg, recipe.stitch], {
-    stdio: ['ignore', 'inherit', 'inherit'],
-    shell: true,
-  })
+  // 4. Photoreal hero + fidelity gate. The hero (Fal creative-upscale) is the
+  // photoreal FINISH — it needs FAL_KEY. When that's absent (or the upscale
+  // fails), the deterministic Blender BASE render from step 3 is still a valid,
+  // structure-true artifact to judge construction + look from, so degrade to
+  // base-only instead of failing the whole run. The audit gate (step 2) is the
+  // one that must never be skipped; the hero is polish.
   const heroPng = basePng.replace(/\.png$/, '-hero.png')
-  if (h.status !== 0 || !existsSync(heroPng)) fail('hero upscale failed or fidelity gate rejected it (structure drifted)')
+  let heroOk = false
+  if (!process.env.FAL_KEY) {
+    console.log('[4/4] photoreal hero — SKIPPED (no FAL_KEY); base render is the deliverable')
+  } else {
+    console.log('[4/4] photoreal hero + fidelity gate')
+    const h = spawnSync('npx', ['tsx', 'scripts/loom-aspen-hero.ts', basePng, '0.6', '0.8', arg, recipe.stitch], {
+      stdio: ['ignore', 'inherit', 'inherit'],
+      shell: true,
+    })
+    heroOk = h.status === 0 && existsSync(heroPng)
+    if (!heroOk) console.error('  hero upscale failed or fidelity gate rejected it — falling back to the base render')
+  }
 
   // 5. The report block — the machine's half is done; the judgment half is not.
   console.log('\n================ REPORT (paste-ready) ================')
   console.log(`stitch:      ${arg} [${recipe.status}]  yr=${yr}`)
-  console.log(`our hero:    ${heroPng}`)
+  console.log(`our hero:    ${heroOk ? heroPng : '(none — base render is the deliverable)'}`)
   console.log(`our base:    ${basePng}`)
   console.log(`reference:   ${recipe.referenceUrl || 'NONE ON FILE — find a real swatch photo first (WebSearch), add it to SWATCH_RECIPES'}`)
   console.log('======================================================')
