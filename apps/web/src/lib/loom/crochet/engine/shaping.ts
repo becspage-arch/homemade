@@ -336,6 +336,10 @@ export function buildRounds(
   const { zh } = dims
   const rowH = yr * BASE_ROW_YR * STITCHES[st].heightFactor
   const drift = rowH * 1.05 // radial pitch per round (slight stretch vs a flat row)
+  // Same-face rounds pile every stitch's leg bulge on ONE face (no turn cancels it),
+  // so the surface between the proud crowns reads knotty. Calm the leg bulge; crown
+  // height + dive depth (the interlock) are left full, unlike the burned crownLay.
+  const ROUND_LEG_RELIEF = 0.7
 
   ridgeDebugNodes.length = 0
   const S = createStrand()
@@ -393,6 +397,7 @@ export function buildRounds(
           bcFront: ring,
           cyBelow: rr,
           place,
+          legReliefScale: ROUND_LEG_RELIEF, // calm the same-face leg bulge (§8c round-fabric look pass)
           linkRole: 'ring', // round 1 WRAPS the ring strand (a stem, not a crown)
         })
         crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, r: rK })
@@ -432,7 +437,7 @@ export function buildRounds(
             bcFront: b.front,
             cyBelow: b.r,
             place,
-            
+            legReliefScale: ROUND_LEG_RELIEF,
           })
           crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, r: rK })
           li++

@@ -225,6 +225,16 @@ export interface PlainStitchSpec {
    */
   crownLay?: number
   /**
+   * Scales the LEG relief only (the down-leg + up-leg z-bulge between the hook and
+   * the crown), default 1 = identity. In same-face spiral rounds every stitch's
+   * leg bulge piles onto the SAME face (no turn to cancel it, unlike flat fabric),
+   * so the surface between the proud crowns reads knotty. Calming the legs (≈0.5)
+   * quiets that inter-crown texture WITHOUT touching the crown height or the hook's
+   * dive depth — the two things crownLay moved and broke the interlock on. Flat
+   * builders leave it 1, so every locked stitch is bit-identical.
+   */
+  legReliefScale?: number
+  /**
    * How to record this stitch's interlock for the audit. 'hook' (default) =
    * dives under a CROWN (depth-checked). 'ring' = wraps a STRAND — magic-ring
    * round 1 wraps the ring strand exactly like a post stitch wraps a stem, and
@@ -264,6 +274,7 @@ export function emitPlainStitch(
   const bc = (loopMode === 'flo' ? spec.bcFront : spec.bcBack)! // the loop this stitch hooks under
   const cy = spec.cyBelow ?? S.nodes[bc]!.y // where that loop sits (the row joins there)
   const lay = spec.crownLay ?? 0
+  const lr = spec.legReliefScale ?? 1 // 1 = identity (flat); <1 calms the leg bulge for same-face rounds
   // Dive to the FAR side of the crown below. A flat-LYING head (crownLay, §8c)
   // sits low on the surface, so getting under it needs a DEEPER dive — at the
   // proud-crown depth the hook settles nearly coincident with the flattened
@@ -278,9 +289,9 @@ export function emitPlainStitch(
   // head line before the hook dives. Consecutive ones form the signature ridge.
   if (thirdLoop) push(xC + s * cw * 1.1, ty - dh * 0.9, z * 1.7 * fz)
   // Down-leg: descend the worked face from the previous head toward the insertion.
-  push(xa(1) + s * pw, by + px * 0.8, z * fz)
-  push(xa(0.65) + s * pw, by + px * 0.52, z * fz)
-  push(xa(0.33) + s * pw, by + px * 0.26, z * 1.1 * fz)
+  push(xa(1) + s * pw, by + px * 0.8, z * fz * lr)
+  push(xa(0.65) + s * pw, by + px * 0.52, z * fz * lr)
+  push(xa(0.33) + s * pw, by + px * 0.26, z * 1.1 * fz * lr)
   push(xH + s * pw * 0.4, cy + dh * 0.5, z * 0.6 * fz) // approach the below crown
   // Hook UNDER the crown below — tuck to the far z-side of it. Collision (neither
   // can pass through the other) holds the link — no spring.
@@ -288,9 +299,9 @@ export function emitPlainStitch(
   S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: hookIdx, below: bc })
   push(xH - s * pw * 0.4, cy + dh * 0.5, z * 0.6 * fz) // emerge
   // Up-leg: pulled back UP just beside the down-leg → the two strands of the post.
-  push(xa(0.33) - s * pw, by + px * 0.26, z * 1.1 * fz)
-  const postMid = push(xa(0.65) - s * pw, by + px * 0.52, z * fz)
-  push(xa(1) - s * pw, by + px * 0.8, z * fz)
+  push(xa(0.33) - s * pw, by + px * 0.26, z * 1.1 * fz * lr)
+  const postMid = push(xa(0.65) - s * pw, by + px * 0.52, z * fz * lr)
+  push(xa(1) - s * pw, by + px * 0.8, z * fz * lr)
 
   // Throw this stitch's crown. A plain stitch leaves a single apex (back == front);
   // blo/flo split it into a proud (unworked, floats as the ridge) loop + a tucked
