@@ -45,10 +45,16 @@ export function buildKnit(
   W: number,
   yarnRadiusMm: number,
   face: KnitFace,
+  /** Column spacing scale (default 1). <1 packs stitches horizontally. */
+  gaugeScale = 1,
+  /** Course-height scale (default 1). <1 packs courses vertically — garter's ridge
+   *  rows pack tight in real fabric, so it uses <1 to close its see-through gaps.
+   *  Stockinette + rib leave both at 1, so their geometry is bit-identical. */
+  courseScale = 1,
 ): BuiltContinuous {
   const yr = yarnRadiusMm
-  const swk = yr * STITCHES.k.gaugeYr
-  const courseH = yr * BASE_ROW_YR * STITCHES.k.heightFactor
+  const swk = yr * STITCHES.k.gaugeYr * gaugeScale
+  const courseH = yr * BASE_ROW_YR * STITCHES.k.heightFactor * courseScale
   const S = createStrand()
   const { nodes, push, links } = S
 

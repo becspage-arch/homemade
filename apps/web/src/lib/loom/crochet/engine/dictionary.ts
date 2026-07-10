@@ -109,6 +109,14 @@ export interface SwatchRecipe {
    * precedence over knitFlip; absent falls back to knitFlip ? garter : stockinette.
    */
   knitFace?: 'stockinette' | 'garter' | 'rib'
+  /**
+   * builder 'knit': per-swatch density scales (default 1). knitCourseScale < 1
+   * packs courses vertically, knitGaugeScale < 1 packs columns horizontally.
+   * Garter uses them to close its see-through gaps (its ridge rows pack tight in
+   * real fabric); stockinette + rib leave them 1, so their geometry is untouched.
+   */
+  knitGaugeScale?: number
+  knitCourseScale?: number
   /** builder 'sphere': stitches around the equator (sets the ball's size). */
   equatorCount?: number
   /** Chain relaxes with its own profile (soft squash + table floor); rounds hold
@@ -332,6 +340,8 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   },
   garter: {
     stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFlip: true, relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
+    knitCourseScale: 0.7,
+    knitGaugeScale: 0.85, // pack the ridge rows tight — real garter is much denser vertically than stockinette (closes the see-through gaps)
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/04/close-up-of-a-swatch-in-garter-stitch-1024x684.jpg',
     status: 'wip',
   },
