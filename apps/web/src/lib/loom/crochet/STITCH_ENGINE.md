@@ -59,6 +59,10 @@ Files (all under `apps/web`):
   ring). §8c.
 - `src/lib/loom/crochet/engine/knitPath.ts` — `buildKnit` (stockinette + garter):
   the knit craft on the same engine. §8d.
+- `src/lib/loom/crochet/engine/program.ts` — the PATTERN PROGRAM layer: one
+  declarative pattern → geometry (compileProgram) + written instructions
+  (writeInstructions) + the product's ChartDefinition (programFromChart). §8e.
+  Proof suite: `scripts/loom-program.ts`.
 - `src/lib/loom/crochet/engine/relax.ts` — the relaxer (generic; serves every
   stitch, 2D + 3D; `layoutMode: 'radial'` is the blocked-to-radius pull for rounds).
 - `scripts/loom-link-debug.ts` — numeric dump of every link's settled offsets per
@@ -362,6 +366,49 @@ The two lessons that made stockinette pass (see §9):
 
 ---
 
+## 8e. THE PATTERN PROGRAM LAYER — the seed of the pattern engine (2026-07-10)
+
+`engine/program.ts` + `scripts/loom-program.ts`: ONE declarative pattern source
+(`CrochetProgram`: stitch + form flat/disc/sphere + foundation/rows/rounds)
+compiles three ways so they can never drift apart:
+
+1. **GEOMETRY** — `compileProgram()` → the existing builders → the same audit
+   gate → the render pipeline. The hero IS the pattern.
+2. **WORDS** — `writeInstructions()` → the locked PATTERN-template text (UK
+   terms via the internal-US → UK map, `[...] N times` repeats, every line
+   ending in its `(N sts)` count). Proof output reads as a real publishable
+   pattern ("Round 4: [dc in next 2 sts, 2 dc in next st] 6 times. (24 sts)").
+3. **CHART** — `programFromChart()` recovers a program from the product's
+   stored `ChartDefinition` shape (craft-charts/types.ts), deriving shaping
+   from consecutive round/row counts by the same even-distribution convention
+   real patterns use (roundOps). Single-stitch charts only for now; the first
+   unmapped/mixed symbol THROWS rather than silently mis-building.
+
+`buildSphere` takes explicit `patternCounts` (a pattern's own rounds) — and a
+pattern then defines its OWN surface (`intrinsicProfile`): radius per round
+from its count (circumference = count·gauge, like the disc), height from
+meridian-pitch continuity, corners smoothed (two Chaikin passes = the stuffing
+rounding the crease), arclength-parameterised so fabric length maps 1:1. This
+is the true geometry of real patterns — a +6 cap is intrinsically a flat disc
+and the ball look comes from stuffing; forcing pattern counts onto the rigid
+analytic sphere compressed the cap ~20% and one pair-hook never settled. The
+canonical 13-round human ball passes 294/294 on its intrinsic surface. Tube /
+egg / bowl now fall out of the same primitive (a tube is just constant counts —
+it still needs its chain-ring anchor for an OPEN top; MR-anchored closed forms
+work today). The analytic sphere stays for derived-count balls (the proven
+`ball` swatch path, untouched).
+
+Proof suite: `npx tsx scripts/loom-program.ts` — disc, canonical 13-round ball,
+dec trapezoid, and a ChartDefinition round-trip, each compiled + audit-gated +
+written out.
+
+**What the pattern engine builds on this next** (Opus-scale, the spine exists):
+mixed stitches per row (builders already take per-op ids; the program type
+holds one stitch for now), colourwork, tube/cylinder + composition (ball+tube →
+real amigurumi), Studio integration (Studio authors programs; renderHero-style
+publish step renders them), and the reverse map (program → ChartDefinition for
+the interactive chart).
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,
@@ -439,6 +486,20 @@ The two lessons that made stockinette pass (see §9):
   pull drags the crossing back through the head before collision can hold it. The
   strand genuinely passes UNDER the old head's bottom edge between purl side and
   face side — put that node in the path.
+- **A pattern's counts forced onto the rigid ANALYTIC sphere** → the canonical
+  ball pattern is not a metric sphere (its +6 cap is intrinsically a flat disc;
+  stuffing makes the ball) — cap rounds compressed ~20% and one pair-hook never
+  settled, at any iteration budget. The pattern defines its own surface
+  (intrinsicProfile, §8e).
+- **Per-node surface frames assigned AFTER build by nearest-segment lookup** →
+  boundary nodes get a neighbour segment's tangent and the layout pull migrates
+  them along the meridian (scattered "floated above its crown" at 1.2–1.4yr).
+  Capture each node's exact frame AT BUILD TIME in the place3 closure (one call
+  per node, in push order — assert the counts match).
+- **A piecewise-linear profile with hard corners** → the fabric frame creases at
+  cap→barrel corners and hooks reaching across the crease land displaced (fail
+  clusters at EXACTLY both corners). Stuffed fabric cannot crease — smooth the
+  profile (Chaikin ×2) and re-parameterise by arclength.
 - **A retroactive z-nudge on an already-placed node barely survives relaxation**
   (blo/flo ridge, 2026-07-07). Pushing `nodes[k].z *= 1.7` AFTER the node is placed
   fights its own recorded distance-constraint rest lengths; the relaxer mostly undoes

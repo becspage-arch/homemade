@@ -495,23 +495,112 @@ export function roundOps(prev: number, next: number, stagger = 0): ShapeOp[] {
 }
 
 /**
+ * The INTRINSIC surface a rounds-pattern defines: radius per round from its
+ * stitch count (circumference = count·gauge, exactly like the disc), height
+ * from meridian-pitch continuity (each round sits one row-pitch of FABRIC away
+ * from the last — what radius change doesn't use, height does). This is the
+ * true geometry of real patterns: a +6 increase cap is intrinsically a flat
+ * disc (Δr ≈ the pitch, so Δz ≈ 0), straight rounds are a vertical barrel, and
+ * the "ball" look of the canonical pattern comes from stuffing rounding the
+ * corner between them. Forcing pattern counts onto a rigid analytic sphere
+ * compressed the cap rounds ~20% and left one pair-hook permanently shallow —
+ * the pattern must define its own surface. Tube / egg / bowl fall out free.
+ */
+interface RevProfile {
+  /** Profile point + local frame at fabric-meridian coordinate ly. */
+  at: (ly: number) => { r: number; z: number; tr: number; tz: number; nr: number; nz: number }
+  /** Nominal radius of round k (for the arc-length reference). */
+  rOfRound: (k: number) => number
+}
+
+function intrinsicProfile(
+  counts: number[],
+  sw: number,
+  rr: number,
+  drift: number,
+  yr: number,
+): RevProfile {
+  const rPts: number[] = [rr]
+  for (const c of counts) rPts.push(Math.max((c * sw) / (2 * Math.PI), yr * 0.6))
+  const zPts: number[] = [0]
+  for (let k = 1; k < rPts.length; k++) {
+    const dr = rPts[k]! - rPts[k - 1]!
+    // The fabric feeds `drift` of meridian per round; radius change uses part,
+    // height takes the rest (floored so the surface never goes truly flat-flat
+    // — even a disc-like cap descends a whisker, keeping normals well-defined).
+    const dz = Math.sqrt(Math.max(drift * drift - dr * dr, (0.25 * drift) ** 2))
+    zPts.push(zPts[k - 1]! - dz)
+  }
+  // SMOOTH the corners (two Chaikin passes, endpoints kept): a piecewise-linear
+  // profile creases at cap→barrel corners, and hooks reaching across a crease
+  // land displaced from their crowns (audit: "floated above" clusters at
+  // EXACTLY both corners). Stuffed fabric physically cannot crease — the
+  // smoothing IS the stuffing rounding the corner.
+  let P: { r: number; z: number }[] = rPts.map((r, i) => ({ r, z: zPts[i]! }))
+  for (let pass = 0; pass < 2; pass++) {
+    const Q: { r: number; z: number }[] = [P[0]!]
+    for (let i = 0; i < P.length - 1; i++) {
+      const a = P[i]!
+      const b = P[i + 1]!
+      Q.push({ r: a.r * 0.75 + b.r * 0.25, z: a.z * 0.75 + b.z * 0.25 })
+      Q.push({ r: a.r * 0.25 + b.r * 0.75, z: a.z * 0.25 + b.z * 0.75 })
+    }
+    Q.push(P[P.length - 1]!)
+    P = Q
+  }
+  // Sit the whole profile above the table.
+  const lift = yr * 2 - Math.min(...P.map((p) => p.z))
+  for (const p of P) p.z += lift
+  // Arclength parameterisation: fabric meridian length maps 1:1 onto the
+  // smoothed curve's length, so ly keeps meaning "fabric worked so far".
+  const cum: number[] = [0]
+  for (let i = 1; i < P.length; i++)
+    cum.push(cum[i - 1]! + Math.hypot(P[i]!.r - P[i - 1]!.r, P[i]!.z - P[i - 1]!.z))
+  const S_total = cum[cum.length - 1]!
+  const L_fabric = counts.length * drift
+  const at = (ly: number): { r: number; z: number; tr: number; tz: number; nr: number; nz: number } => {
+    const s = ((ly - rr) / L_fabric) * S_total
+    // find the segment containing arclength s (linear scan — profiles are tiny)
+    let i = 1
+    while (i < cum.length - 1 && cum[i]! < s) i++
+    const a = P[i - 1]!
+    const b = P[i]!
+    const segLen = cum[i]! - cum[i - 1]! || 1
+    const t = (s - cum[i - 1]!) / segLen
+    const r = a.r + (b.r - a.r) * t
+    const z = a.z + (b.z - a.z) * t
+    const L = Math.hypot(b.r - a.r, b.z - a.z) || 1
+    const tr = (b.r - a.r) / L
+    const tz = (b.z - a.z) / L
+    return { r, z, tr, tz, nr: -tz, nz: tr } // outward normal = tangent rotated +90°
+  }
+  return { at, rOfRound: (k: number) => rPts[k + 1]! }
+}
+
+/**
  * A SPHERE worked in the round — the first 3D surface. The same continuous
  * no-turn spiral as the disc, laid on a ball instead of a plane: rounds are
  * latitude circles, the meridian arclength from the top pole is the fabric's
  * row coordinate, and the stitch relief rides the local surface NORMAL
  * (emitPlainStitch's place3). Counts per round come from the profile
  * (circumference / gauge, evenly distributed incs down to the equator, then
- * mirrored decs — the real amigurumi ball recipe). The magic ring anchors the
- * top pole; the fasten-off tail spirals into the bottom pole. The relaxer
- * holds each node at its worked latitude along the local meridian tangent
- * (layoutMode 'surface' — the stuffing/blocked-to-shape analog); the model
- * carries per-node meridian tangents for that pull and for the audit's
- * surface-frame link checks.
+ * mirrored decs — the real amigurumi ball recipe), or from an explicit PATTERN
+ * (patternCounts), which then defines its own intrinsic surface (above). The
+ * magic ring anchors the top pole; the fasten-off tail spirals into the bottom
+ * pole. The relaxer holds each node at its worked latitude along the local
+ * meridian tangent (layoutMode 'surface' — the stuffing/blocked-to-shape
+ * analog); the model carries per-node meridian tangents for that pull and for
+ * the audit's surface-frame link checks.
  */
 export function buildSphere(
   st: StitchId,
   equatorCount: number,
   yarnRadiusMm: number,
+  /** Explicit stitches-per-round from a PATTERN (program.ts). When given, the
+   *  profile radius comes from the widest round and the counts are the
+   *  pattern's own; when absent, counts derive from the profile (the canonical
+   *  ±6 ball recipe). Either way the audit gates the result. */
+  patternCounts?: number[],
 ): BuiltContinuous {
   const yr = yarnRadiusMm
   const sw = yr * STITCHES[st].gaugeYr
@@ -519,36 +608,58 @@ export function buildSphere(
   const { zh } = dims
   const rowH = yr * BASE_ROW_YR * STITCHES[st].heightFactor
   const drift = rowH * 1.05
-  const R = (equatorCount * sw) / (2 * Math.PI)
+  const eq = patternCounts ? Math.max(...patternCounts) : equatorCount
+  const R = (eq * sw) / (2 * Math.PI)
   const Z0 = R + yr * 1.5 // sphere centre height — the ball rests on the table (floorZ 0)
 
   ridgeDebugNodes.length = 0
   const S = createStrand()
   const { nodes, push } = S
 
-  // Surface of revolution: meridian arclength m from the TOP pole. A sphere's
-  // normal offset is simply a radius change: point = C + (R+lz) * u(m, theta).
+  // rr defined below is also the intrinsic profile's start — hoist it.
+  const rrHoist = yr * 1.15
+  const prof = patternCounts ? intrinsicProfile(patternCounts, sw, rrHoist, rowH * 1.05, yr) : null
+  // Pattern branch: every node's EXACT local frame, captured at build time in
+  // push order (each mkPlace3 closure runs exactly once per placed node — the
+  // ring, every stitch, and the fasten-off all place through it). A post-build
+  // nearest-segment lookup was tried first and drifted: nodes near segment
+  // boundaries got a neighbour's tangent and the layout pull migrated them
+  // along the meridian (audit: scattered "floated above its crown" at 1.2–1.4yr).
+  const merArr: { tr: number; tz: number }[] = []
+
+  // Surface of revolution: meridian arclength m from the TOP pole. The
+  // analytic sphere (derived counts): normal offset is simply a radius change,
+  // point = C + (R+lz) * u(m, theta). Pattern counts: the pattern's own
+  // intrinsic profile, same (lx, ly, lz) semantics.
   const rOf = (m: number): number => R * Math.sin(m / R)
-  const mkPlace3 =
-    (rRef: number) =>
-    (lx: number, ly: number, lz: number): { x: number; y: number; z: number } => {
-      const th = lx / rRef
-      const rr2 = (R + lz) * Math.sin(ly / R)
-      return {
-        x: rr2 * Math.cos(th),
-        y: rr2 * Math.sin(th),
-        z: Z0 + (R + lz) * Math.cos(ly / R),
-      }
-    }
+  const mkPlace3 = (rRef: number) =>
+    prof
+      ? (lx: number, ly: number, lz: number): { x: number; y: number; z: number } => {
+          const th = lx / rRef
+          const q = prof.at(ly)
+          merArr.push({ tr: q.tr, tz: q.tz })
+          const rp = Math.max(q.r + q.nr * lz, 1e-3)
+          return { x: rp * Math.cos(th), y: rp * Math.sin(th), z: q.z + q.nz * lz }
+        }
+      : (lx: number, ly: number, lz: number): { x: number; y: number; z: number } => {
+          const th = lx / rRef
+          const rr2 = (R + lz) * Math.sin(ly / R)
+          return {
+            x: rr2 * Math.cos(th),
+            y: rr2 * Math.sin(th),
+            z: Z0 + (R + lz) * Math.cos(ly / R),
+          }
+        }
 
   // MAGIC RING at the top pole (the anchor), lying on the surface.
-  const rr = yr * 1.15
+  const rr = rrHoist
   const RING_N = 18
   const ringNodes: number[] = []
-  const ringPlace = mkPlace3(Math.max(rOf(rr), 1e-3))
+  const ringRRef = prof ? rr : Math.max(rOf(rr), 1e-3)
+  const ringPlace = mkPlace3(ringRRef)
   for (let i = 0; i < RING_N; i++) {
     const a = (i / RING_N) * Math.PI * 2
-    const p = ringPlace(a * Math.max(rOf(rr), 1e-3), rr, zh * 0.5)
+    const p = ringPlace(a * ringRRef, rr, zh * 0.5)
     push(p.x, p.y, p.z, 0)
     ringNodes.push(nodes.length - 1)
   }
@@ -566,22 +677,34 @@ export function buildSphere(
   let mPrev = rr
   let count = 0
 
-  // Round meridians: step down the sphere until just short of the bottom pole.
+  // Round meridians: step down the sphere until just short of the bottom pole
+  // (or exactly one per pattern round when the counts come from a pattern).
   const mMax = Math.PI * R - rr
   const rounds: number[] = []
-  for (let m = rr + drift; m <= mMax - drift * 0.35; m += drift) rounds.push(m)
+  if (patternCounts) {
+    // Clamp inside the pole so an over-tall pattern crowds (and fails the
+    // audit) rather than folding through the apex.
+    // The intrinsic profile handles any pattern length — no pole clamp needed.
+    for (let k = 0; k < patternCounts.length; k++) rounds.push(rr + drift * (k + 1))
+  } else {
+    for (let m = rr + drift; m <= mMax - drift * 0.35; m += drift) rounds.push(m)
+  }
 
   for (let k = 0; k < rounds.length; k++) {
     const mK = rounds[k]!
     const prev = count
-    const target = Math.max(4, Math.round((2 * Math.PI * rOf(mK)) / sw))
-    // The canonical ball recipe: 6 in the ring, then AT MOST ±6 per round
-    // toward the profile's target. Profile-hugging counts put 7 incs in a
-    // 12-stitch round (shaping density no real pattern uses) and the crowded
-    // cap kept one pair-hook ambiguous; ±6 growth is both the craft standard
-    // and what the pole can physically fit.
-    count = prev === 0 ? Math.min(6, target) : prev + Math.max(-6, Math.min(6, target - prev))
-    const rRef = Math.max(rOf(mK), 1e-3)
+    if (patternCounts) {
+      count = patternCounts[k]!
+    } else {
+      const target = Math.max(4, Math.round((2 * Math.PI * rOf(mK)) / sw))
+      // The canonical ball recipe: 6 in the ring, then AT MOST ±6 per round
+      // toward the profile's target. Profile-hugging counts put 7 incs in a
+      // 12-stitch round (shaping density no real pattern uses) and the crowded
+      // cap kept one pair-hook ambiguous; ±6 growth is both the craft standard
+      // and what the pole can physically fit.
+      count = prev === 0 ? Math.min(6, target) : prev + Math.max(-6, Math.min(6, target - prev))
+    }
+    const rRef = prof ? Math.max(prof.rOfRound(k), 1e-3) : Math.max(rOf(mK), 1e-3)
     const place3 = mkPlace3(rRef)
     const crowns: SCrown[] = []
 
@@ -685,7 +808,7 @@ export function buildSphere(
   // FASTEN OFF into the bottom pole: the tail spirals in through the last
   // round's remaining hole and is drawn tight — same lesson as the disc: the
   // strand must not stop dead at the final crown.
-  const rRefEnd = Math.max(rOf(mPrev), 1e-3)
+  const rRefEnd = prof ? Math.max(prof.at(mPrev).r, 1e-3) : Math.max(rOf(mPrev), 1e-3)
   const placeEnd = mkPlace3(rRefEnd)
   for (let t = 1; t <= 4; t++) {
     const th = phase + Math.PI * 2 * (1 + 0.012 * t)
@@ -694,23 +817,31 @@ export function buildSphere(
     push(p.x, p.y, p.z)
   }
 
-  // Per-node meridian tangents (from the sphere's own geometry, at INIT).
-  const meridian = nodes.map((n) => {
-    const rc = Math.hypot(n.x, n.y)
-    const dzc = n.z - Z0
-    const L = Math.hypot(rc, dzc) || 1
-    return { tr: dzc / L, tz: -rc / L }
-  })
+  // Per-node meridian tangents at INIT: the analytic sphere's from its centre;
+  // the intrinsic profile's captured EXACTLY per node at build time (merArr).
+  if (prof && merArr.length !== nodes.length)
+    throw new Error(`intrinsic profile frame capture out of sync: ${merArr.length} frames for ${nodes.length} nodes`)
+  const meridian = prof
+    ? merArr
+    : nodes.map((n) => {
+        const rc = Math.hypot(n.x, n.y)
+        const dzc = n.z - Z0
+        const L = Math.hypot(rc, dzc) || 1
+        return { tr: dzc / L, tz: -rc / L }
+      })
 
   const strand = new Array(nodes.length).fill(0)
   const along = nodes.map((_, i) => i)
+  const halfSpan = prof
+    ? Math.max(...(patternCounts ?? [eq]).map((c) => (c * sw) / (2 * Math.PI))) + yr * 3
+    : R + yr * 3
   return {
     model: { nodes, dist: S.dist, bend: S.bend, strand, along, meridian },
     strandPath: S.strandPath,
     links: S.links,
     yarnRadiusMm: yr,
-    widthMm: (R + yr * 3) * 2,
-    heightMm: (R + yr * 3) * 2,
+    widthMm: halfSpan * 2,
+    heightMm: halfSpan * 2,
     anchorPins: RING_N,
     frame: 'surface',
   }

@@ -52,7 +52,7 @@ export function buildRelaxedSwatch(arg: SwatchArg, W: number, yr: number): Built
       layoutK: 0.06,
       layoutMode: 'surface',
       floorZ: 0,
-      iterations: 520, // a ~4k-node closed surface settles slower than a flat swatch — at 400 one knife-edge hook was still 0.05yr shy of depth
+      iterations: 560, // a ~4k-node closed surface settles slower than a flat swatch — knife-edge hooks were still 0.05yr shy at 400 and 0.03yr shy (on the canonical-pattern ball) at 520. Keep in sync with scripts/loom-program.ts until the profiles are centralised.
     })
   } else if (recipe.relaxProfile === 'round') {
     // Work in the round: the same worked-fabric relax, but "blocked" to each
