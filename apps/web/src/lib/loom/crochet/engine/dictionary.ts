@@ -21,13 +21,19 @@ export type StitchId =
 
 /**
  * One shaping instruction, in crochet-pattern terms, applied to the row's stitch:
- *   'st'  = one plain stitch into the next below-crown   (consumes 1, makes 1)
- *   'inc' = TWO full stitches into the next below-crown  (consumes 1, makes 2)
- *   'dec' = st2tog: one stitch drawn over the next TWO below-crowns (consumes 2, makes 1)
+ *   'st'    = one plain stitch into the next below-crown   (consumes 1, makes 1)
+ *   'inc'   = TWO full stitches into the next below-crown  (consumes 1, makes 2)
+ *   'dec'   = st2tog: one stitch over the next TWO below-crowns (consumes 2, makes 1)
+ *   'shell' = SHELL_N stitches into ONE below-crown, fanned (consumes 1, makes SHELL_N)
+ *   'skip'  = pass a below-crown without working it (consumes 1, makes 0) — what
+ *             balances a shell's extra width so the fabric stays constant-width.
  * A row is a ShapeOp[] in WORK order; its consumption must exactly match the row
  * below (the builder throws otherwise — a mis-counted pattern is a bug, not fabric).
  */
-export type ShapeOp = 'st' | 'inc' | 'dec'
+export type ShapeOp = 'st' | 'inc' | 'dec' | 'shell' | 'skip'
+
+/** Stitches worked into one base for a shell (a classic 5-dc shell). */
+export const SHELL_N = 5
 
 export interface StitchDef {
   id: StitchId
@@ -73,7 +79,7 @@ export const STITCHES: Record<StitchId, StitchDef> = {
 export type SwatchArg =
   | StitchId | 'postrib' | 'basketweave' | 'bobbles'
   | 'scinc' | 'scdec' | 'hdcinc' | 'hdcdec' | 'dcinc' | 'dcdec'
-  | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib'
+  | 'shell' | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib'
 
 export interface SwatchRecipe {
   /** The dictionary stitch driving gauge + row height for this swatch. */
@@ -283,6 +289,16 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     referenceUrl: 'https://christacodesign.com/wp-content/uploads/2017/09/2017-09-19_13-22-04_606-1024x768.jpg', // christacodesign — dc2tog swatch
     status: 'wip',
   },
+  // Shell stitch: 5 dc fanned into one base, balanced by skipped stitches either
+  // side (sc between shells) so the fabric stays constant-width — a scalloped
+  // texture. Shells stack (each row's shell into the centre of the shell below).
+  shell: {
+    stitch: 'dc', rows: 5, auditW: 13, builder: 'shaped',
+    shapeRows: shellPlan(2, 5),
+    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
+    referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2016/06/Stitch-Book-PART-2-70-e1628964882533-1021x1024.png', // daisyfarmcrafts — classic shell swatch
+    status: 'wip',
+  },
   // Flat amigurumi circle: magic ring, 6 sc, +6 per round in a continuous spiral.
   mrdisc: {
     stitch: 'sc', rows: 6, auditW: 16, builder: 'round',
@@ -334,6 +350,18 @@ function growPlan(w0: number, rows: number): ShapeOp[][] {
     const below = w0 + 2 * j
     return ['inc', ...(Array(below - 2).fill('st') as ShapeOp[]), 'inc'] as ShapeOp[]
   })
+}
+
+/**
+ * Shell stitch: a leading plain stitch, then k repeats of
+ * (skip, skip, shell→5, skip, skip, st). Each repeat consumes 6 and produces 6,
+ * so the fabric is constant-width at W0 = 1 + 6k. Every row identical → shells
+ * stack, each worked into the centre of the shell below.
+ */
+function shellPlan(k: number, rows: number): ShapeOp[][] {
+  const row: ShapeOp[] = ['st']
+  for (let g = 0; g < k; g++) row.push('skip', 'skip', 'shell', 'skip', 'skip', 'st')
+  return Array.from({ length: rows }, () => row.slice())
 }
 
 /** sc2tog at both ends of every row: w0 → w0 − 2·rows. */

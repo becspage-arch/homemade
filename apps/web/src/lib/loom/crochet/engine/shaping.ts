@@ -19,7 +19,7 @@
  *    faces the same way, exactly like the real fabric.
  */
 
-import { STITCHES, type StitchId, type ShapeOp } from './dictionary'
+import { STITCHES, SHELL_N, type StitchId, type ShapeOp } from './dictionary'
 import {
   createStrand,
   stitchDims,
@@ -38,7 +38,9 @@ interface Crown {
   x: number
 }
 
-const consumes = (op: ShapeOp): number => (op === 'dec' ? 2 : 1)
+const consumes = (op: ShapeOp): number => (op === 'dec' ? 2 : 1) // all others consume one below-crown
+const produces = (op: ShapeOp): number =>
+  op === 'inc' ? 2 : op === 'shell' ? SHELL_N : op === 'skip' ? 0 : 1
 
 /**
  * One DECREASE (st2tog) excursion: down-leg → hook under below-crown A → rise
@@ -171,7 +173,7 @@ export function buildShaped(
       throw new Error(
         `shaped row ${j}: ops consume ${consumed} stitches but the row below has ${below.length}`,
       )
-    const count = ops.reduce((a, o) => a + (o === 'inc' ? 2 : 1), 0)
+    const count = ops.reduce((a, o) => a + produces(o), 0)
     const by = j * rowH
     const ty = (j + 1) * rowH
     const dir = j % 2 === 0 ? -1 : 1 // foundation ends right → first row starts right
@@ -208,6 +210,30 @@ export function buildShaped(
 
     for (let oi = 0; oi < ops.length; oi++) {
       const op = ops[oi]!
+      if (op === 'skip') {
+        // Pass a below-crown without working it (the space a shell's fan fills).
+        bi++
+        continue
+      }
+      if (op === 'shell') {
+        // SHELL_N stitches fanned into ONE below-crown — a bigger version of the
+        // increase. The N hooks enter the shared base SIDE BY SIDE (never
+        // coincident, same lesson as the inc pair) spread across ±0.7·pw; their
+        // crowns fan across SHELL_N lattice slots so the fan opens out.
+        const b = belowWork[bi++]!
+        const n = SHELL_N
+        for (let t = 0; t < n; t++) {
+          const idx = latticeAt(li++)
+          const xC = lattice[idx]!
+          const hookOff = ((t - (n - 1) / 2) / (n - 1)) * dims.pw * 1.4 * dir
+          const r = emitPlainStitch(S, dims, {
+            j, c: oi, id: st, s: dir, fz, by, ty,
+            xCrown: xC, xHook: b.x + hookOff, bcBack: b.back, bcFront: b.front,
+          })
+          crowns[idx] = { back: r.crownBack, front: r.crownFront, x: xC }
+        }
+        continue
+      }
       if (op === 'dec') {
         const b1 = belowWork[bi++]!
         const b2 = belowWork[bi++]!
