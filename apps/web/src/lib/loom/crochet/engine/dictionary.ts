@@ -299,7 +299,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     stitch: 'dc', rows: 4, auditW: 8, builder: 'shaped',
     shapeRows: growPlan(8, 4),
     relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
-    referenceUrl: '', // find a real dc-increase swatch photo before presenting (lazy-loaded on the sites checked)
+    referenceUrl: 'https://knotions.com/wp-content/uploads/2018/10/2dc.jpg', // knotions — completed 2dc increase with the V pair marked (found 2026-07-11; fuller-swatch candidates stayed lazy-loaded)
     status: 'wip',
   },
   dcdec: {
