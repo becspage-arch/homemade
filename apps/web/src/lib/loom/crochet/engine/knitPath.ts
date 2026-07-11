@@ -31,6 +31,23 @@
  * column is just a knit column seen from behind; the vertical rib is the two face
  * families side by side, and the sinker between a knit and a purl column genuinely
  * crosses front↔back (the purl-bump mechanic + the accordion). See STITCH_ENGINE §8d.
+ *
+ * KNIT DEPTH (2026-07-11): a per-(course,column) STITCH OP function lets a course
+ * mix plain knits with the shaping stitches on the SAME thickness budget:
+ *  - 'yo' (yarn-over) — the strand simply passes OVER the needle with NO loop
+ *    below it: a bare arc up to a head, its legs held HIGH so the fabric under it
+ *    stays open. That open gap IS the eyelet; a yo records no 'through' link of its
+ *    own (it genuinely interlocks with nothing below — the next course draws
+ *    through its head from above). See §8d-yo.
+ *  - 'k2tog' / 'ssk' — one new loop drawn through TWO heads below together (two
+ *    'through' links, both audited). k2tog gathers the head under it + its LEFT
+ *    neighbour and leans the merged head RIGHT; ssk gathers under + RIGHT and leans
+ *    LEFT — the opposite lean is the pair's identity. The analogue of crochet's
+ *    emitDecrease, with knit through-links.
+ * A yo (makes 1, consumes 0) paired with a k2tog/ssk (makes 1, consumes 2) is
+ * width-neutral, so an eyelet course stays W wide with no variable-width machinery.
+ * Absent ops → every stitch is a plain 'k' and the geometry is bit-identical to the
+ * locked stockinette/rib/garter (verified by re-audit).
  */
 
 import { STITCHES } from './dictionary'
@@ -39,6 +56,13 @@ import { createStrand, BASE_ROW_YR, type BuiltContinuous } from './yarnPath'
 /** Which fabric face (+1/−1) a stitch is pulled to. Stockinette: always +1.
  *  Garter: flips per course. 1×1 rib: per column, constant up the column. */
 export type KnitFace = 'stockinette' | 'garter' | 'rib'
+
+/** A per-stitch operation on a knit course.
+ *  'k'     = plain knit — one loop through the ONE head below (default everywhere).
+ *  'yo'    = yarn-over — a bare loop over the needle, no head below (the eyelet).
+ *  'k2tog' = right-leaning single decrease — through the head below + its LEFT neighbour.
+ *  'ssk'   = left-leaning single decrease — through the head below + its RIGHT neighbour. */
+export type KnitStitchOp = 'k' | 'yo' | 'k2tog' | 'ssk'
 
 export function buildKnit(
   courses: number,
@@ -51,6 +75,11 @@ export function buildKnit(
    *  rows pack tight in real fabric, so it uses <1 to close its see-through gaps.
    *  Stockinette + rib leave both at 1, so their geometry is bit-identical. */
   courseScale = 1,
+  /** Optional per-(course,column) op (yo / k2tog / ssk). Absent → every stitch a
+   *  plain 'k' (existing stockinette/garter/rib geometry, untouched). `W` is passed
+   *  so a recipe pattern can place edge/interior columns. Only meaningful on
+   *  stockinette (the shaping stitches carry no garter corrugation / rib face). */
+  ops?: (j: number, c: number, W: number) => KnitStitchOp,
 ): BuiltContinuous {
   const yr = yarnRadiusMm
   const swk = yr * STITCHES.k.gaugeYr * gaugeScale
@@ -79,6 +108,91 @@ export function buildKnit(
   const zBack = yr * 1.0 // head apexes + sinkers (the purl side)
   const zShoulder = yr * 0.5
 
+  // One PLAIN knit stitch — the strand's excursion for a loop drawn through the
+  // single head `hb` below it. Extracted verbatim from the original inner block so
+  // the default (ops-free) course is bit-identical to the locked stockinette/rib/
+  // garter geometry; the shaping ops below share the same z budget + routing.
+  const emitPlainKnit = (
+    j: number, c: number, x: number, hb: number, fz: number, bz: number, s: number, by: number, ty: number,
+  ): number => {
+    // Sinker in: low and a full layer behind, tucked under the old head.
+    push(x - s * 0.34 * swk, by - 0.3 * courseH, -zBack * fz + bz)
+    // The yarn comes forward UNDER the old head's bottom edge (this is where the
+    // strand really crosses from the purl side to the face side — without this
+    // routing node the sinker→leg kink pulls the crossing back through the head
+    // before collision can hold it; the audit measured exactly that).
+    push(x - s * 0.26 * swk, by - 0.16 * courseH, yr * 0.2 * fz + bz)
+    // Leg 1 crosses the old head's mouth IN FRONT of it (the interlock).
+    const L1 = push(x - s * 0.26 * swk, by, zFace * fz + bz)
+    links.push({ j, c, role: 'through', hook: L1, below: hb, zSign: fz })
+    // Leg 1 spreads up the V…
+    push(x - s * 0.42 * swk, ty - 0.3 * courseH, zLegTop * fz + bz)
+    // …and eases over into the head, falling toward the back.
+    push(x - s * 0.34 * swk, ty - 0.08 * courseH, -zShoulder * fz + bz)
+    const apex = push(x, ty, -zBack * fz + bz) // the head — next course draws through it
+    push(x + s * 0.34 * swk, ty - 0.08 * courseH, -zShoulder * fz + bz)
+    // Leg 2 back down through the same mouth.
+    push(x + s * 0.42 * swk, ty - 0.3 * courseH, zLegTop * fz + bz)
+    const L2 = push(x + s * 0.26 * swk, by, zFace * fz + bz)
+    links.push({ j, c, role: 'through', hook: L2, below: hb, zSign: fz })
+    // …and back under the old head's edge to the sinker, mirroring the way in.
+    push(x + s * 0.26 * swk, by - 0.16 * courseH, yr * 0.2 * fz + bz)
+    // Sinker out toward the next stitch.
+    push(x + s * 0.34 * swk, by - 0.3 * courseH, -zBack * fz + bz)
+    return apex
+  }
+
+  // A YARN-OVER: the strand passes OVER the needle with nothing below it. A bare
+  // arc up to a real head (the next course draws through it), its legs held HIGH
+  // (by + 0.30·courseH, never down to `by`) so the fabric UNDER it stays open —
+  // that open gap is the eyelet. No 'through' link: a yo genuinely interlocks with
+  // nothing below. fz = +1 (stockinette face) always for the eyelet swatch.
+  const emitYo = (x: number, fz: number, s: number, by: number, ty: number): number => {
+    push(x - s * 0.28 * swk, by + 0.30 * courseH, zFace * 0.4 * fz) // rise from the previous stitch, mid-height, near the face
+    push(x - s * 0.20 * swk, ty - 0.30 * courseH, zLegTop * fz)
+    const apex = push(x, ty, -zBack * fz) // the yo head — a genuine loop over the needle
+    push(x + s * 0.20 * swk, ty - 0.30 * courseH, zLegTop * fz)
+    push(x + s * 0.28 * swk, by + 0.30 * courseH, zFace * 0.4 * fz) // toward the next stitch
+    return apex
+  }
+
+  // A SINGLE DECREASE — one new loop drawn through TWO heads below together. The
+  // two legs pass in front of the two gathered heads (two audited 'through'
+  // links); the merged head lands on the stitch's OWN column `xCol`, while the
+  // gathered pair's midpoint sits off to one side — so the lean EMERGES from the
+  // geometry: k2tog gathers the head below + its LEFT neighbour, midpoint to the
+  // left of the on-column head → the merged stitch leans RIGHT; ssk gathers below
+  // + RIGHT, midpoint to the right → leans LEFT. (The mirror is the pair's whole
+  // identity.) Keeping the head on the lattice also lets the course ABOVE sit
+  // cleanly — a head parked off-column dragged the next course's legs sideways
+  // (audit: 2.1yr slips on the plain course over each decrease). Legs sit at their
+  // gathered head's x so the interlock offset starts ~0.
+  const emitDec = (
+    j: number, c: number, xCol: number, hbL: number, hbR: number, fz: number, s: number, by: number, ty: number,
+  ): number => {
+    const apexX = xCol // the merged head rides its own column; the lean is the off-centre gather
+    // Enter from the work-direction side; L1 hooks the entering head, L2 the
+    // exiting one (so BOTH gathered heads are genuinely passed through).
+    const hbIn = s > 0 ? hbL : hbR
+    const hbOut = s > 0 ? hbR : hbL
+    const xin = nodes[hbIn]!.x
+    const xout = nodes[hbOut]!.x
+    push(xin - s * 0.20 * swk, by - 0.30 * courseH, -zBack * fz) // sinker in
+    push(xin - s * 0.08 * swk, by - 0.16 * courseH, yr * 0.2 * fz) // under the entering head's edge
+    const L1 = push(xin, by, zFace * fz) // leg 1 in front of the entering head's mouth
+    links.push({ j, c, role: 'through', hook: L1, below: hbIn, zSign: fz })
+    push(xin + (apexX - xin) * 0.5, ty - 0.34 * courseH, zLegTop * fz) // rise toward the leaning head
+    push(apexX - 0.30 * swk, ty - 0.06 * courseH, -zShoulder * fz)
+    const apex = push(apexX, ty, -zBack * fz) // the merged head — leans off the pair
+    push(apexX + 0.30 * swk, ty - 0.06 * courseH, -zShoulder * fz)
+    push(xout + (apexX - xout) * 0.5, ty - 0.34 * courseH, zLegTop * fz) // down toward leg 2
+    const L2 = push(xout, by, zFace * fz) // leg 2 in front of the exiting head's mouth
+    links.push({ j, c, role: 'through', hook: L2, below: hbOut, zSign: fz })
+    push(xout + s * 0.08 * swk, by - 0.16 * courseH, yr * 0.2 * fz) // under the exiting head's edge
+    push(xout + s * 0.20 * swk, by - 0.30 * courseH, -zBack * fz) // sinker out
+    return apex
+  }
+
   // Cast-on: a pinned course of head arcs (the anchor edge the first course is
   // drawn through), laid a full layer BACK from the column's own face — like every
   // settled head. For rib the odd (purl) columns face −z, so their cast-on head
@@ -100,6 +214,26 @@ export function buildKnit(
     const ty = (j + 1) * courseH
     const s = j % 2 === 0 ? -1 : 1 // cast-on ends right → first course starts right
     const headThis: number[] = new Array(W).fill(-1)
+
+    // Resolve this course's ops (if any) and VERIFY the pattern is width-neutral:
+    // every head below must be consumed exactly once (an orphaned head = a dropped
+    // stitch; a doubly-consumed head = a miscounted pattern). This is the knit
+    // analogue of the shaped builder's consume-exactly-the-row-below guard.
+    const opOf = (c: number): KnitStitchOp => (ops ? ops(j, c, W) : 'k')
+    if (ops) {
+      const consumed = new Array(W).fill(0)
+      for (let c = 0; c < W; c++) {
+        const op = opOf(c)
+        if (op === 'k') consumed[c]++
+        else if (op === 'yo') void 0 // consumes nothing (the eyelet)
+        else if (op === 'k2tog') { consumed[c - 1]++; consumed[c]++ } // under + LEFT
+        else if (op === 'ssk') { consumed[c]++; consumed[c + 1]++ } // under + RIGHT
+      }
+      const bad = consumed.findIndex((n) => n !== 1)
+      if (bad >= 0)
+        throw new Error(`knit course ${j}: head below column ${bad} consumed ${consumed[bad]}× (pattern must consume each head exactly once — width-neutral)`)
+    }
+
     for (let o = 0; o < W; o++) {
       const c = s > 0 ? o : W - 1 - o
       const x = c * swk
@@ -116,30 +250,12 @@ export function buildKnit(
       // bit-identical. faceSign is uniform per garter course, so per-stitch = their
       // old per-course value.
       const bz = face === 'garter' ? yr * 0.7 * fz : 0
-      // Sinker in: low and a full layer behind, tucked under the old head.
-      push(x - s * 0.34 * swk, by - 0.3 * courseH, -zBack * fz + bz)
-      // The yarn comes forward UNDER the old head's bottom edge (this is where
-      // the strand really crosses from the purl side to the face side — without
-      // this routing node the sinker→leg kink pulls the crossing back through
-      // the head before collision can hold it; the audit measured exactly that).
-      push(x - s * 0.26 * swk, by - 0.16 * courseH, yr * 0.2 * fz + bz)
-      // Leg 1 crosses the old head's mouth IN FRONT of it (the interlock).
-      const L1 = push(x - s * 0.26 * swk, by, zFace * fz + bz)
-      links.push({ j, c, role: 'through', hook: L1, below: hb, zSign: fz })
-      // Leg 1 spreads up the V…
-      push(x - s * 0.42 * swk, ty - 0.3 * courseH, zLegTop * fz + bz)
-      // …and eases over into the head, falling toward the back.
-      push(x - s * 0.34 * swk, ty - 0.08 * courseH, -zShoulder * fz + bz)
-      const apex = push(x, ty, -zBack * fz + bz) // the head — next course draws through it
-      push(x + s * 0.34 * swk, ty - 0.08 * courseH, -zShoulder * fz + bz)
-      // Leg 2 back down through the same mouth.
-      push(x + s * 0.42 * swk, ty - 0.3 * courseH, zLegTop * fz + bz)
-      const L2 = push(x + s * 0.26 * swk, by, zFace * fz + bz)
-      links.push({ j, c, role: 'through', hook: L2, below: hb, zSign: fz })
-      // …and back under the old head's edge to the sinker, mirroring the way in.
-      push(x + s * 0.26 * swk, by - 0.16 * courseH, yr * 0.2 * fz + bz)
-      // Sinker out toward the next stitch.
-      push(x + s * 0.34 * swk, by - 0.3 * courseH, -zBack * fz + bz)
+      const op = opOf(c)
+      let apex: number
+      if (op === 'yo') apex = emitYo(x, fz, s, by, ty)
+      else if (op === 'k2tog') apex = emitDec(j, c, x, headBelow[c - 1]!, headBelow[c]!, fz, s, by, ty)
+      else if (op === 'ssk') apex = emitDec(j, c, x, headBelow[c]!, headBelow[c + 1]!, fz, s, by, ty)
+      else apex = emitPlainKnit(j, c, x, hb, fz, bz, s, by, ty)
       headThis[c] = apex
     }
     for (let c = 0; c < W; c++) headBelow[c] = headThis[c]!

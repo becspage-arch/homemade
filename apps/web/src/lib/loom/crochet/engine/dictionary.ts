@@ -14,6 +14,8 @@
  * dc's posts lean together, treble opens into channels.
  */
 
+import type { KnitStitchOp } from './knitPath'
+
 export type StitchId =
   | 'ch' | 'slst' | 'sc' | 'hdc' | 'dc' | 'tr' | 'dtr'
   | 'scblo' | 'scflo' | 'fpdc' | 'bpdc' | 'bobble' | 'picot'
@@ -89,6 +91,7 @@ export type SwatchArg =
   | 'scinc' | 'scdec' | 'hdcinc' | 'hdcdec' | 'dcinc' | 'dcdec'
   | 'shell' | 'vstitch' | 'crossed'
   | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib' | 'ball'
+  | 'yo'
 
 export interface SwatchRecipe {
   /** The dictionary stitch driving gauge + row height for this swatch. */
@@ -126,6 +129,14 @@ export interface SwatchRecipe {
    */
   knitGaugeScale?: number
   knitCourseScale?: number
+  /**
+   * builder 'knit': per-(course,column) stitch op (yo / k2tog / ssk / k). `W` is
+   * passed so the pattern can place edge vs interior columns. Drives eyelet + knit
+   * decrease swatches; absent → every stitch a plain 'k' (locked stockinette/rib/
+   * garter geometry untouched). The pattern MUST be width-neutral per course
+   * (buildKnit throws if any head below isn't consumed exactly once).
+   */
+  knitStitch?: (j: number, c: number, W: number) => KnitStitchOp
   /** builder 'sphere': stitches around the equator (sets the ball's size). */
   equatorCount?: number
   /** Chain relaxes with its own profile (soft squash + table floor); rounds hold
@@ -429,6 +440,18 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2020/04/rib-stitch-swatch-close-up-1024x684.jpg',
     status: 'locked', lockedOn: '2026-07-11', // Rebecca signed off vs the 1×1 rib reference; raised knit columns + purl-filled valleys read (chunkier than the fine reference = weight character)
   },
+  // Yarn-over eyelets: stockinette with [yo, k2tog] eyelet rows. Each yo is a bare
+  // loop over the needle (no head below → the hole); each k2tog draws through two
+  // heads below (balances the yo so the fabric stays W wide). Eyelet rows aligned
+  // in columns → vertical columns of holes. openFabric so the eyelets show the
+  // table through them (backing would fill the holes).
+  yo: {
+    stitch: 'k', rows: 9, auditW: 12, builder: 'knit', knitFace: 'stockinette',
+    knitStitch: (j, c, W) => eyeletOp(j, c, W),
+    relaxProfile: 'worked', tiltDeg: 0, twist: 0.05, openFabric: true,
+    referenceUrl: 'https://sowoolly.net/wp-content/uploads/2025/09/Easy-Eyelet-Stitch-Pattern.png', // sowoolly — rows of round eyelets on a knit ground
+    status: 'wip',
+  },
 }
 
 /**
@@ -446,6 +469,21 @@ function bobbleDot(j: number, c: number): StitchId {
   // the pinned selvedge strangles its base hook (§9).
   if (j % 2 === 0) return 'sc'
   return c >= 2 && c <= 12 && c % 2 === 0 ? 'bobble' : 'sc'
+}
+
+/**
+ * Yarn-over eyelet pattern: on the eyelet courses, the interior alternates yo
+ * (odd interior columns → the hole) and k2tog (even interior columns → the
+ * balancing decrease, gathering the head below it + its LEFT neighbour), edges
+ * plain so no selvedge stitch is a hole. Each repeat (yo + k2tog) makes 2 and
+ * consumes 2 → width-neutral. Aligned column phase across all eyelet rows.
+ * Eyelet rows at courses 2, 4, 6 (plain stockinette around + between them).
+ */
+function eyeletOp(j: number, c: number, W: number): KnitStitchOp {
+  const eyeletCourse = j === 2 || j === 4 || j === 6
+  if (!eyeletCourse) return 'k'
+  if (c === 0 || c === W - 1) return 'k' // plain selvedge
+  return c % 2 === 1 ? 'yo' : 'k2tog' // odd interior = hole, even interior = decrease
 }
 
 /** inc at both ends of every row: w0 → w0 + 2·rows. */
