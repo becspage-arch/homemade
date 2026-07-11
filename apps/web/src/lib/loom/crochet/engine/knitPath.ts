@@ -142,17 +142,25 @@ export function buildKnit(
     return apex
   }
 
-  // A YARN-OVER: the strand passes OVER the needle with nothing below it. A bare
-  // arc up to a real head (the next course draws through it), its legs held HIGH
-  // (by + 0.30·courseH, never down to `by`) so the fabric UNDER it stays open —
-  // that open gap is the eyelet. No 'through' link: a yo genuinely interlocks with
-  // nothing below. fz = +1 (stockinette face) always for the eyelet swatch.
+  // A YARN-OVER: the strand passes OVER the needle with nothing below it — a real
+  // OPEN LOOP, not a bare arc. The arc version gave up its space: the fabric packs
+  // to uniform density under collision (x is free) and the "hole" closed completely
+  // (probe: 0.69yr open gap, same as plain). So the yo is FED a wide loop — its two
+  // sides spread ±`yoW` so its interior is wider than a collision diameter and stays
+  // open (the crochet chain-space mechanism: a loop fed enough yarn holds a mouth
+  // that collision can't pinch shut, and the next course drawing through its apex
+  // keeps it from collapsing). The mouth faces +z (the viewer) and its bottom is
+  // open toward the course below — that open span IS the eyelet. No 'through' link:
+  // a yo genuinely interlocks with nothing below. fz = +1 for the stockinette face.
+  const yoW = 0.62 * swk // half-width of the open loop (interior ≈ 2·yoW ≈ 3.2yr > collision 2.5yr)
   const emitYo = (x: number, fz: number, s: number, by: number, ty: number): number => {
-    push(x - s * 0.28 * swk, by + 0.30 * courseH, zFace * 0.4 * fz) // rise from the previous stitch, mid-height, near the face
-    push(x - s * 0.20 * swk, ty - 0.30 * courseH, zLegTop * fz)
-    const apex = push(x, ty, -zBack * fz) // the yo head — a genuine loop over the needle
-    push(x + s * 0.20 * swk, ty - 0.30 * courseH, zLegTop * fz)
-    push(x + s * 0.28 * swk, by + 0.30 * courseH, zFace * 0.4 * fz) // toward the next stitch
+    push(x - s * 0.30 * swk, by - 0.10 * courseH, -zShoulder * fz) // leave the previous stitch, low + behind
+    push(x - yoW, by + 0.18 * courseH, zFace * fz) // LEFT side of the mouth, forward at the interlock plane
+    push(x - yoW * 0.7, ty - 0.28 * courseH, zLegTop * fz) // up the left of the ring
+    const apex = push(x, ty, -zBack * fz) // the yo head (back) — the next course draws through it
+    push(x + yoW * 0.7, ty - 0.28 * courseH, zLegTop * fz) // down the right of the ring
+    push(x + yoW, by + 0.18 * courseH, zFace * fz) // RIGHT side of the mouth
+    push(x + s * 0.30 * swk, by - 0.10 * courseH, -zShoulder * fz) // toward the next stitch
     return apex
   }
 

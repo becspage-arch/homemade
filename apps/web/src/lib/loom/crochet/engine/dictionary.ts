@@ -446,10 +446,12 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   // in columns → vertical columns of holes. openFabric so the eyelets show the
   // table through them (backing would fill the holes).
   yo: {
-    stitch: 'k', rows: 9, auditW: 12, builder: 'knit', knitFace: 'stockinette',
+    stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFace: 'stockinette',
     knitStitch: (j, c, W) => eyeletOp(j, c, W),
-    relaxProfile: 'worked', tiltDeg: 0, twist: 0.05, openFabric: true,
-    referenceUrl: 'https://sowoolly.net/wp-content/uploads/2025/09/Easy-Eyelet-Stitch-Pattern.png', // sowoolly — rows of round eyelets on a knit ground
+    // tilt to read the eyelets as openings (top-down, the fat yarn hides them);
+    // openFabric so each hole shows the table through it (backing would fill it).
+    relaxProfile: 'worked', tiltDeg: 28, twist: 0.05, openFabric: true,
+    referenceUrl: 'https://sowoolly.net/wp-content/uploads/2025/09/Easy-Eyelet-Stitch-Pattern.png', // sowoolly — staggered round eyelets on a knit ground
     status: 'wip',
   },
 }
@@ -472,18 +474,24 @@ function bobbleDot(j: number, c: number): StitchId {
 }
 
 /**
- * Yarn-over eyelet pattern: on the eyelet courses, the interior alternates yo
- * (odd interior columns → the hole) and k2tog (even interior columns → the
- * balancing decrease, gathering the head below it + its LEFT neighbour), edges
- * plain so no selvedge stitch is a hole. Each repeat (yo + k2tog) makes 2 and
- * consumes 2 → width-neutral. Aligned column phase across all eyelet rows.
- * Eyelet rows at courses 2, 4, 6 (plain stockinette around + between them).
+ * Yarn-over eyelet pattern: the classic staggered dotted eyelet field. On each
+ * eyelet course, a period-4 repeat of [yo, k2tog, k, k] across the interior — the
+ * yo makes the hole, the k2tog immediately to its RIGHT (gathering the yo's column
+ * + its own) pulls that column away and opens it, and two plain knits space the
+ * next eyelet out. Each repeat makes 4 and consumes 4 → width-neutral. Edges plain
+ * (no selvedge hole). Eyelet courses 3 and 6, their phase offset by 2 columns so
+ * the holes stagger row-to-row like the reference (holes at 1,5,9 then 3,7).
  */
 function eyeletOp(j: number, c: number, W: number): KnitStitchOp {
-  const eyeletCourse = j === 2 || j === 4 || j === 6
-  if (!eyeletCourse) return 'k'
-  if (c === 0 || c === W - 1) return 'k' // plain selvedge
-  return c % 2 === 1 ? 'yo' : 'k2tog' // odd interior = hole, even interior = decrease
+  const start = j === 3 ? 1 : j === 6 ? 3 : -1 // eyelet courses + their column phase
+  if (start < 0) return 'k'
+  if (c <= 0 || c >= W - 1) return 'k' // plain selvedge
+  const r = c - start
+  if (r < 0) return 'k'
+  const m = r % 4
+  if (m === 0) return c + 1 <= W - 2 ? 'yo' : 'k' // the hole (only if its k2tog partner fits)
+  if (m === 1) return 'k2tog' // gathers the yo's column (c−1) + this one → opens the hole
+  return 'k' // two plain knits space the eyelets out
 }
 
 /** inc at both ends of every row: w0 → w0 + 2·rows. */
