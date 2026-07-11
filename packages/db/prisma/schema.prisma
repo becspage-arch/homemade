@@ -3518,6 +3518,36 @@ model BulkAutopilotState {
   updatedAt   DateTime @default(now()) @updatedAt
 }
 
+/// One bulk-generation run (a cron firing or a manual "Run a batch"). The
+/// dispatcher creates the row and fans out one Inngest event per idea; each idea
+/// event updates this row with ATOMIC increments as it finishes (publish / cull /
+/// reroll / error), so the admin panel sees live per-run outcomes even though the
+/// ideas run as independent events. This replaces the old single-run audit entry:
+/// the batch no longer runs in one long request (which the gateway 504'd), so
+/// there is no single place that could write a final summary — the row IS the
+/// running summary. A run is done when published + culled + errors == requested.
+model BulkRun {
+  id          String   @id @default(cuid())
+  craft       String // 'cross-stitch' | 'needlework'
+  trigger     String // 'cron' | 'manual'
+  requested   Int // ideas dispatched
+  published   Int      @default(0)
+  culled      Int      @default(0)
+  repaired    Int      @default(0)
+  /// Total generation attempts across the run (best-of-N: >1 per idea).
+  generations Int      @default(0)
+  errors      Int      @default(0)
+  gemSlugs    String[] @default([])
+  /// Short gate reasons behind culls — feeds the panel's "why did it dip" view.
+  killReasons String[] @default([])
+  triggeredById String?
+  startedAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([craft, startedAt])
+  @@index([startedAt])
+}
+
 model ProjectSchedule {
   id String @id @default(cuid())
 

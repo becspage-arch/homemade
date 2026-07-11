@@ -70,11 +70,11 @@ export interface BatchSummary {
  * fine idea, so we take several fresh shots. Every shot still passes the identical
  * ruthless gate — this raises attempts-per-idea, never the bar.
  */
-const MAX_XS_ATTEMPTS = 4
+export const MAX_XS_ATTEMPTS = 4
 const MAX_NW_REPAIRS = 1 // needlework re-rolls a Fargate render — keep repairs tight.
 
 /** The lightweight, JSON-safe result of ONE generate→gate→(maybe publish) attempt. */
-interface AttemptResult {
+export interface AttemptResult {
   verdict: GateResult['verdict']
   reasons: string[]
   repairAction?: GateResult['repairAction']
@@ -88,7 +88,7 @@ interface AttemptResult {
  * else (malformed/blobby/off-subject/washed-out/anatomy) is exactly what a fresh
  * stochastic roll usually fixes, so it earns another shot.
  */
-function killIsUnrerollable(reasons: string[]): boolean {
+export function killIsUnrerollable(reasons: string[]): boolean {
   const text = reasons.join(' ').toLowerCase()
   return (
     /\b(text|letter|lettering|word|words|wording|signage|caption|typograph|spelled|writing|script)\b/.test(text) ||
@@ -97,7 +97,7 @@ function killIsUnrerollable(reasons: string[]): boolean {
   )
 }
 
-function tweakFor(action: GateResult['repairAction']): CandidateTweak {
+export function tweakFor(action: GateResult['repairAction']): CandidateTweak {
   switch (action) {
     case 'more-saturation':
       return { satMul: 1.15 }
@@ -113,7 +113,7 @@ function tweakFor(action: GateResult['repairAction']): CandidateTweak {
 // ─────────────────────────── CROSS-STITCH ───────────────────────────
 
 /** One cross-stitch attempt: generate → gate → publish on 'keep'. Buffer stays local. */
-async function crossStitchAttempt(
+export async function crossStitchAttempt(
   brief: Awaited<ReturnType<typeof planCrossStitchBriefs>>[number],
   tweak: CandidateTweak,
   keptSubjects: string[],

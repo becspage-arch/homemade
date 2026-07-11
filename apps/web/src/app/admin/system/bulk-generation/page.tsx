@@ -31,24 +31,35 @@ function stateBadge(status: PipelineStatus): { text: string; color: string } {
   return { text: 'On demand', color: 'var(--color-sage)' }
 }
 
-interface AuditRow {
+interface RunRow {
   id: string
-  action: string
-  createdAt: Date
-  metadata: unknown
+  craft: string
+  trigger: string
+  requested: number
+  published: number
+  culled: number
+  repaired: number
+  generations: number
+  errors: number
+  killReasons: string[]
+  startedAt: Date
 }
-function runLine(row: AuditRow): string {
-  const m = (row.metadata ?? {}) as Record<string, unknown>
-  const trigger = m.trigger === 'cron' ? 'auto' : m.trigger === 'manual' ? 'manual' : null
-  const tag = trigger ? `[${trigger}] ` : ''
-  if (typeof m.line === 'string') {
-    const kills = Array.isArray(m.topKillReasons) ? (m.topKillReasons as { reason?: unknown; count?: unknown }[]) : []
-    const top = kills[0]
-    const killNote = top && typeof top.reason === 'string' ? ` · top kill: “${top.reason}”` : ''
-    return `${tag}${m.line}${killNote}`
-  }
-  if (row.action.endsWith('requested')) return `queued ${String(m.count ?? '?')} × ${String(m.craft ?? '?')}`
-  return row.action
+
+/** Most common cull reason in a run — the "why did it dip" signal. */
+function topKill(reasons: string[]): string | null {
+  if (!reasons?.length) return null
+  const counts = new Map<string, number>()
+  for (const r of reasons) counts.set(r, (counts.get(r) ?? 0) + 1)
+  return [...counts.entries()].sort((a, b) => b[1] - a[1])[0]![0]
+}
+
+function runLine(r: RunRow): string {
+  const tag = r.trigger === 'cron' ? 'auto' : 'manual'
+  const done = r.published + r.culled + r.errors
+  const inflight = done < r.requested ? ` · ${done}/${r.requested} done…` : ''
+  const kill = topKill(r.killReasons)
+  const killNote = kill ? ` · top kill: “${kill}”` : ''
+  return `[${tag}] ${r.craft}: ${r.published} published, ${r.culled} culled, ${r.repaired} repairs, ${r.generations} gens, ${r.errors} errors (of ${r.requested})${inflight}${killNote}`
 }
 
 const H2: React.CSSProperties = { fontFamily: 'var(--font-fraunces)', fontSize: 22, margin: '0 0 12px', color: 'var(--color-espresso)' }
@@ -126,11 +137,13 @@ export default async function AdminBulkGenerationPage() {
   ] = await Promise.all([
     prisma.pattern.count({ where: { type: 'CROSS_STITCH', ownerUserId: null, visibility: Visibility.PUBLIC } }),
     prisma.needleworkPattern.count({ where: { ownerUserId: null, visibility: Visibility.PUBLIC } }),
-    prisma.auditLog.findMany({
-      where: { action: { in: ['system.bulk_generation.completed', 'system.bulk_generation.requested'] } },
-      orderBy: { createdAt: 'desc' },
+    prisma.bulkRun.findMany({
+      orderBy: { startedAt: 'desc' },
       take: 20,
-      select: { id: true, action: true, createdAt: true, metadata: true },
+      select: {
+        id: true, craft: true, trigger: true, requested: true, published: true,
+        culled: true, repaired: true, generations: true, errors: true, killReasons: true, startedAt: true,
+      },
     }),
     prisma.category.findMany({
       orderBy: [{ launchOrder: 'asc' }, { name: 'asc' }],
@@ -284,7 +297,7 @@ export default async function AdminBulkGenerationPage() {
           <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8 }}>
             {recent.map((r) => (
               <li key={r.id} style={{ fontFamily: 'var(--font-lora)', fontSize: 13, color: 'var(--color-espresso)' }}>
-                <span style={{ color: 'var(--color-warm-taupe)' }}>{relativeTime(new Date(r.createdAt))}</span> — {runLine(r)}
+                <span style={{ color: 'var(--color-warm-taupe)' }}>{relativeTime(new Date(r.startedAt))}</span> — {runLine(r)}
               </li>
             ))}
           </ul>
