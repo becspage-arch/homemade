@@ -377,7 +377,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   stockinette: {
     stitch: 'k', rows: 9, auditW: 12, builder: 'knit', relaxProfile: 'worked', tiltDeg: 0, twist: 0.05,
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2020/03/stockinette-stitch-right-side-1024x684.jpg',
-    status: 'wip',
+    status: 'locked', lockedOn: '2026-07-11', // Rebecca signed off vs the fine-cotton stockinette reference; reads as chunky hand-knit stockinette (plumper Vs = weight character, not a defect)
   },
   garter: {
     stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFlip: true, relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
@@ -400,7 +400,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFace: 'rib', relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
     knitGaugeScale: 0.85, // pack the columns so the purl valleys aren't see-through — real rib pulls in laterally (the accordion)
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2020/04/rib-stitch-swatch-close-up-1024x684.jpg',
-    status: 'wip',
+    status: 'locked', lockedOn: '2026-07-11', // Rebecca signed off vs the 1×1 rib reference; raised knit columns + purl-filled valleys read (chunkier than the fine reference = weight character)
   },
 }
 
