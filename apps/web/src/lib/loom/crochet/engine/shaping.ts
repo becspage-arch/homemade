@@ -38,9 +38,9 @@ interface Crown {
   x: number
 }
 
-const consumes = (op: ShapeOp): number => (op === 'dec' ? 2 : 1) // all others consume one below-crown
+const consumes = (op: ShapeOp): number => (op === 'dec' || op === 'cross' ? 2 : 1) // others consume one below-crown
 const produces = (op: ShapeOp): number =>
-  op === 'inc' ? 2 : op === 'shell' ? SHELL_N : op === 'skip' ? 0 : 1
+  op === 'inc' || op === 'cross' ? 2 : op === 'shell' ? SHELL_N : op === 'skip' ? 0 : 1
 
 /**
  * One DECREASE (st2tog) excursion: down-leg → hook under below-crown A → rise
@@ -241,6 +241,31 @@ export function buildShaped(
           const r = emitPlainStitch(S, dims, {
             j, c: oi, id: st, s: dir, fz, by, ty,
             xCrown: xC, xHook: b.x + hookOff, bcBack: b.back, bcFront: b.front,
+          })
+          crowns[idx] = { back: r.crownBack, front: r.crownFront, x: xC }
+        }
+        continue
+      }
+      if (op === 'cross') {
+        // CROSSED PAIR (crossed dc): the crocheter skips a stitch, works into
+        // the NEXT (b2), then works into the SKIPPED one (b1) — so the strand's
+        // first stitch reaches FORWARD to b2 and the second reaches BACK to b1;
+        // crowns land in lattice order and the legs genuinely cross between.
+        // The second-worked stitch passes in FRONT of the first (the classic
+        // look): give it fuller leg relief and calm the first's, so collision
+        // resolves the crossing to a consistent z-order instead of a coin-flip.
+        const b1 = belowWork[bi++]!
+        const b2 = belowWork[bi++]!
+        const reach = [b2, b1] // work order: forward first, then back to the skipped
+        const relief = [0.6, 1.4] // first tucks behind, second crosses in front
+        for (let t = 0; t < 2; t++) {
+          const idx = latticeAt(li++)
+          const xC = lattice[idx]!
+          const b = reach[t]!
+          const r = emitPlainStitch(S, dims, {
+            j, c: oi, id: st, s: dir, fz, by, ty,
+            xCrown: xC, xHook: b.x, bcBack: b.back, bcFront: b.front,
+            legReliefScale: relief[t]!,
           })
           crowns[idx] = { back: r.crownBack, front: r.crownFront, x: xC }
         }

@@ -16,7 +16,7 @@
 
 export type StitchId =
   | 'ch' | 'slst' | 'sc' | 'hdc' | 'dc' | 'tr' | 'dtr'
-  | 'scblo' | 'scflo' | 'fpdc' | 'bpdc' | 'bobble'
+  | 'scblo' | 'scflo' | 'fpdc' | 'bpdc' | 'bobble' | 'picot'
   | 'k'
 
 /**
@@ -27,10 +27,14 @@ export type StitchId =
  *   'shell' = SHELL_N stitches into ONE below-crown, fanned (consumes 1, makes SHELL_N)
  *   'skip'  = pass a below-crown without working it (consumes 1, makes 0) — what
  *             balances a shell's extra width so the fabric stays constant-width.
+ *   'cross' = crossed pair (crossed dc): skip one, work into the NEXT, then work
+ *             into the skipped one — two stitches whose legs genuinely cross in
+ *             an X (consumes 2, makes 2). The second-worked stitch crosses in
+ *             FRONT of the first (the classic look).
  * A row is a ShapeOp[] in WORK order; its consumption must exactly match the row
  * below (the builder throws otherwise — a mis-counted pattern is a bug, not fabric).
  */
-export type ShapeOp = 'st' | 'inc' | 'dec' | 'shell' | 'skip'
+export type ShapeOp = 'st' | 'inc' | 'dec' | 'shell' | 'skip' | 'cross'
 
 /** Stitches worked into one base for a shell (a classic 5-dc shell). */
 export const SHELL_N = 5
@@ -65,6 +69,10 @@ export const STITCHES: Record<StitchId, StitchDef> = {
   // Usually dotted on an sc background, so it borrows the row's height and just
   // bulges forward; this factor only applies to an all-bobble row.
   bobble: { id: 'bobble', heightFactor: 1.4, gaugeYr: 2.3, topLoops: 2 },
+  // picot: an sc whose head carries a small closed chain loop (ch 3, sl st back
+  // into the sc's own head) — a decorative nub, classically on an edge row.
+  // Same body as sc; the loop is an excursion after the crown (yarnPath).
+  picot: { id: 'picot', heightFactor: 1.0, gaugeYr: 1.8, topLoops: 2 },
   // KNIT (new craft, same engine — own path builder in knitPath.ts). Stockinette
   // stitches are a touch wider than tall: ~5 sts + ~7 rows per inch in worsted.
   k: { id: 'k', heightFactor: 1.1, gaugeYr: 2.6, topLoops: 2 },
@@ -79,7 +87,8 @@ export const STITCHES: Record<StitchId, StitchDef> = {
 export type SwatchArg =
   | StitchId | 'postrib' | 'basketweave' | 'bobbles'
   | 'scinc' | 'scdec' | 'hdcinc' | 'hdcdec' | 'dcinc' | 'dcdec'
-  | 'shell' | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib' | 'ball'
+  | 'shell' | 'vstitch' | 'crossed'
+  | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib' | 'ball'
 
 export interface SwatchRecipe {
   /** The dictionary stitch driving gauge + row height for this swatch. */
@@ -310,6 +319,37 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2016/06/Stitch-Book-PART-2-70-e1628964882533-1021x1024.png', // daisyfarmcrafts — classic shell swatch
     status: 'wip',
   },
+  // V-stitch: 2 dc worked into ONE base stitch (the inc machinery — the pair's
+  // legs genuinely fan from the shared base into a V), each V balanced by a
+  // skipped stitch: [V in next, skip 1] across the row, Vs stacking row on row.
+  // DEPICTION NOTE: the airier dictionary V-stitch is (dc, ch 1, dc) with the
+  // next row's V worked into the ch-SPACE — chain-spaces are new-topology tier
+  // (§8b), so this is the solid 2-dc V variant, an accepted simple form.
+  vstitch: {
+    stitch: 'dc', rows: 5, auditW: 12, builder: 'shaped',
+    shapeRows: vstitchPlan(5, 5),
+    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
+    referenceUrl: 'https://i0.wp.com/mycrochetory.com/wp-content/uploads/2023/08/How-to-crochet-V-stitch-1.jpg', // mycrochetory — V-stitch swatch (the ch-1 open variant; ours is the solid 2-dc V)
+    status: 'wip',
+  },
+  // Crossed dc: [skip 1, dc in next, dc in the skipped st] — the pair's legs
+  // genuinely cross in an X, the second-worked stitch passing in FRONT.
+  crossed: {
+    stitch: 'dc', rows: 5, auditW: 12, builder: 'shaped',
+    shapeRows: crossedPlan(5, 5),
+    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
+    referenceUrl: 'https://richtexturescrochet.com/wp-content/uploads/2020/09/IMG_2051-1024x683.jpg', // richtexturescrochet — crossed dc swatch (rows of X pairs)
+    status: 'wip',
+  },
+  // Picot: sc ground, with (ch 3, sl st into the sc's own head) nubs along the
+  // TOP row — the classic picot edging. The sl st genuinely dives under the
+  // sc's crown (a recorded, audited hook).
+  picot: {
+    stitch: 'sc', rows: 8, auditW: 14, relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
+    pattern: (j, c) => (j === 7 && c >= 2 && c <= 11 && (c - 2) % 3 === 0 ? 'picot' : 'sc'),
+    referenceUrl: 'https://nanascraftyhome.com/wp-content/uploads/2021/02/Picot-Stitch-1-1024x1024.jpg', // nanascraftyhome — picot swatch (edging + dotted rows)
+    status: 'wip',
+  },
   // Flat amigurumi circle: magic ring, 6 sc, +6 per round in a continuous spiral.
   mrdisc: {
     stitch: 'sc', rows: 6, auditW: 16, builder: 'round',
@@ -392,6 +432,29 @@ function growPlan(w0: number, rows: number): ShapeOp[][] {
 function shellPlan(k: number, rows: number): ShapeOp[][] {
   const row: ShapeOp[] = ['st']
   for (let g = 0; g < k; g++) row.push('skip', 'skip', 'shell', 'skip', 'skip', 'st')
+  return Array.from({ length: rows }, () => row.slice())
+}
+
+/**
+ * V-stitch rows: a leading + trailing plain stitch framing k repeats of
+ * (V into next, skip 1). 'inc' IS the V machinery (2 full stitches fanning
+ * from one shared base); the skip balances it, so each repeat consumes 2 and
+ * produces 2 — constant width W0 = 2k + 2. Every row identical → the Vs stack
+ * (serpentine work order alternates which dc of the pair below is consumed,
+ * so the stack centres on average).
+ */
+function vstitchPlan(k: number, rows: number): ShapeOp[][] {
+  const row: ShapeOp[] = ['st']
+  for (let g = 0; g < k; g++) row.push('inc', 'skip')
+  row.push('st')
+  return Array.from({ length: rows }, () => row.slice())
+}
+
+/** Crossed-dc rows: plain edges framing k crossed pairs (each consumes 2, makes 2). W0 = 2k + 2. */
+function crossedPlan(k: number, rows: number): ShapeOp[][] {
+  const row: ShapeOp[] = ['st']
+  for (let g = 0; g < k; g++) row.push('cross')
+  row.push('st')
   return Array.from({ length: rows }, () => row.slice())
 }
 

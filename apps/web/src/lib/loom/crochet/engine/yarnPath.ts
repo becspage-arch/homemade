@@ -531,7 +531,7 @@ export function buildContinuous(
         const bc = belowBack[c]!
         const cy = nodes[bc]!.y
         const hookZ = (nodes[bc]!.z >= 0 ? -1 : 1) * z * 1.6
-        const bz = z * 5.0 // bulge boldly off the surface so it reads as a distinct berry
+        const bz = z * 7.0 // bulge boldly off the surface (≈2.1yr) so the berry stands clear of the sc relief
         const midY = cy + (ty - cy) * 0.55
         push(x + s * pw, by + px * 0.45, z * fz) // down from the previous head toward the base
         const bobbleHook = push(x, cy - dh, hookZ) // hook UNDER the crown below — the shared base
@@ -543,12 +543,22 @@ export function buildContinuous(
         // yarn absorbs the bulge's forward pull instead of transmitting it to the hook.
         push(x + s * pw * 0.5, cy - dh * 0.2, hookZ * 0.85) // still tucked to the far side, lifting off the crown
         push(x, cy + (midY - cy) * 0.35, z * 0.8) // ease up and forward into the ball
+        // LOOK pass 2026-07-11: the berry must read as a MASS popping off the
+        // ground (reference: daisyfarmcrafts — plump domes ~2 rows tall). The
+        // old berry (bz 1.5yr, fan cw·1.5, all loops at one height) settled as
+        // thin strands lost in the sc relief (~0.3–0.6yr). Three changes, all
+        // inside the cushioned bulge (the slack nodes at both ends still absorb
+        // the pull — the anchors don't move): bulge DEEPER (z·7 ≈ 2.1yr), fan
+        // WIDER (cw·2.2), and DOME the loop heights (outer loops lower, centre
+        // loop fullest) so the five loops mound into a ball instead of a fence.
         const N = 5
         for (let k = 0; k < N; k++) {
-          const ox = ((k + 0.5) / N - 0.5) * cw * 1.5 // narrow fan → a round ball, not a spread
-          push(x + ox * 0.7, cy + dh * 0.8, bz * 0.45) // low on the ball, just forward
-          push(x + ox, midY, bz) // the widest, most-forward bulge (the berry)
-          push(x + ox * 0.55, ty - dh * 0.9, bz * 0.5) // high on the ball, heading to the gather
+          const t = (k + 0.5) / N - 0.5 // −0.4 … +0.4 across the fan
+          const dome = 1 - (t * 2) ** 2 * 0.45 // centre loop fullest, outer ~0.85
+          const ox = t * cw * 2.2 // wider fan → a berry the reference's width
+          push(x + ox * 0.7, cy + dh * 0.8, bz * 0.5 * dome) // low on the ball, just forward
+          push(x + ox, midY, bz * dome) // the widest, most-forward bulge (the berry)
+          push(x + ox * 0.55, ty - dh * 0.9, bz * 0.55 * dome) // high on the ball, heading to the gather
         }
         // SLACK INTO the gather. Come off the forward ball and settle back onto the
         // worked (WS) face BEFORE throwing the crown, so the gathered head holds its
@@ -606,7 +616,7 @@ export function buildContinuous(
         continue
       }
 
-      // Plain stitch family (sc/hdc/dc/tr/dtr/slst/blo/flo) — the shared emitter.
+      // Plain stitch family (sc/hdc/dc/tr/dtr/slst/blo/flo/picot) — the shared emitter.
       const r = emitPlainStitch(S, dims, {
         j,
         c,
@@ -622,6 +632,28 @@ export function buildContinuous(
       crownThisBack[c] = r.crownBack
       crownThisFront[c] = r.crownFront
       postThis[c] = r.postMid
+
+      if (id === 'picot') {
+        // PICOT: ch 3, sl st back into the sc's own head — a small closed chain
+        // loop standing on the crown. One strand throughout: rise off the crown
+        // trail, arc the ch-3 loop up and over (fed a real ch-3 of yarn — a
+        // starved loop gets a strand expelled, §9), then the SLIP STITCH closure
+        // genuinely dives under this stitch's OWN crown to its far z-side — a
+        // recorded, audited hook. The loop cannot open without yarn passing
+        // through yarn.
+        const crownZ = zh * 1.15 * fz
+        const hookZ = (crownZ >= 0 ? -1 : 1) * z * 1.6
+        const top = ty + yr * 2.2 // loop apex ≈ a ch-3 nub above the head
+        push(x + s * cw * 0.55, ty + dh * 0.7, zh * 1.5 * fz) // rise off the crown trail
+        push(x + s * cw * 0.35, ty + (top - ty) * 0.6, zh * 1.8 * fz)
+        push(x, top, zh * 1.9 * fz) // the loop's apex
+        push(x - s * cw * 0.35, ty + (top - ty) * 0.6, zh * 1.8 * fz)
+        push(x - s * cw * 0.55, ty + dh * 0.7, zh * 1.2 * fz) // down the other side
+        push(x - s * cw * 0.2, ty - dh * 0.15, z * 0.5 * fz) // approach the head for the sl st
+        const slst = push(x, ty - dh, hookZ) // sl st: under the crown, far z-side
+        links.push({ j, c, role: 'hook', hook: slst, below: r.crownBack })
+        push(x + s * pw * 0.35, ty - dh * 0.35, z * 0.5 * fz) // emerge, continue the row
+      }
     }
 
     for (let c = 0; c < W; c++) {
