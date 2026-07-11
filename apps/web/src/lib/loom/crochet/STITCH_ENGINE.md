@@ -512,6 +512,20 @@ the interactive chart).
   cap→barrel corners and hooks reaching across the crease land displaced (fail
   clusters at EXACTLY both corners). Stuffed fabric cannot crease — smooth the
   profile (Chaikin ×2) and re-parameterise by arclength.
+- **Garter as an ACCORDION (intra-course zigzag, Fable 2026-07-11, 2 attempts,
+  both audit-fail — reverted to the corrugation model).** The theory is right
+  (garter IS folded stockinette; ridges = heads + following sinkers at fold
+  crests; legs hide in the fold interior) but the through-interlock cannot live
+  INSIDE the fold with this crossing geometry: attempt 1 (crossing at crest
+  −0.5yr) blew 73/240 crossings out sideways at the over-stacked crest; attempt
+  2 (crest cluster spread, crossing −0.6yr, head bump 0.9yr) made it WORSE
+  (100/240 — legs settle behind heads and slip sideways) because the leg's own
+  fold diagonal drags its crossing across the head's z-side as it settles. The
+  next garter-look effort must redesign the CROSSING itself — pass the old head
+  at the fold's SIDE (x-offset around the head, like the crochet hook's dive)
+  rather than beneath the crest — an interlock-level change, not placement
+  values. The corrugation model (audit-clean 240/240, look "upright clusters")
+  remains the shipping base.
 - **A retroactive z-nudge on an already-placed node barely survives relaxation**
   (blo/flo ridge, 2026-07-07). Pushing `nodes[k].z *= 1.7` AFTER the node is placed
   fights its own recorded distance-constraint rest lengths; the relaxer mostly undoes

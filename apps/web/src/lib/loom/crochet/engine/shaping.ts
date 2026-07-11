@@ -270,7 +270,7 @@ export function buildShaped(
           // hooks must not initialise coincident, or collision splits them in an
           // arbitrary direction (measured at the turn corner: the first hook got
           // expelled UP over the crown instead of under it).
-          const hookOff = n === 1 ? 0 : dims.pw * 0.6 * (t === 0 ? 1 : -1) * dir
+          const hookOff = (n === 1 ? 0 : dims.pw * 0.6 * (t === 0 ? 1 : -1)) * dir
           const r = emitPlainStitch(S, dims, {
             j,
             c: oi,
@@ -367,6 +367,14 @@ export function buildRounds(
   }
   let below: RCrown[] = []
   let rPrev = rr
+  // The visible V of every stitch (crown apex + its two trail nodes) is exempt
+  // from the crown canopy; everything else stays under it (see YarnModel.zCap).
+  const canopyExempt = new Set<number>()
+  const exemptCrown = (apex: number): void => {
+    canopyExempt.add(apex - 1)
+    canopyExempt.add(apex)
+    canopyExempt.add(apex + 1)
+  }
 
   for (let k = 0; k < counts.length; k++) {
     const count = counts[k]!
@@ -400,6 +408,7 @@ export function buildRounds(
           legReliefScale: ROUND_LEG_RELIEF, // calm the same-face leg bulge (§8c round-fabric look pass)
           linkRole: 'ring', // round 1 WRAPS the ring strand (a stem, not a crown)
         })
+        exemptCrown(r.crownBack)
         crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, r: rK })
       }
     } else {
@@ -423,6 +432,7 @@ export function buildRounds(
           // Same side-by-side insertion offset as flat shaping: an inc pair's two
           // hooks must not initialise coincident under the shared crown.
           const hookOff = n === 1 ? 0 : dims.pw * 0.6 * (t === 0 ? 1 : -1)
+          const hookDepthScale = n === 2 && t === 1 ? 1.5 : 1 // pair-second tucks deeper (canopy seam fix)
           const r = emitPlainStitch(S, dims, {
             j: k,
             c: oi,
@@ -438,7 +448,9 @@ export function buildRounds(
             cyBelow: b.r,
             place,
             legReliefScale: ROUND_LEG_RELIEF,
+            hookDepthScale,
           })
+          exemptCrown(r.crownBack)
           crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, r: rK })
           li++
         }
@@ -462,8 +474,20 @@ export function buildRounds(
   const strand = new Array(nodes.length).fill(0)
   const along = nodes.map((_, i) => i)
   const rOut = rPrev + rowH
+  // The crown canopy: non-crown nodes stay UNDER the crown line; the crown
+  // chain lies ON it (the taut chain-line of a real disc rides on top of the
+  // yarn mass and hides the crowded legs beneath — YarnModel.zBand; probed:
+  // without the crown floor, hooked-from-below crowns sink into the crowd).
+  const CANOPY = zh * 0.65
+  // The crown chain rides a full half-yarn proud of the canopy — the tidy
+  // spiral of Vs standing on the fabric that the reference shows — and any
+  // hook trapped AT the ceiling still clears the same-side audit margin
+  // (0.45yr) to the crown above it.
+  const zBand = nodes.map((n, i) =>
+    n.w === 0 ? null : canopyExempt.has(i) ? { lo: CANOPY + yr * 0.5 } : { hi: CANOPY },
+  )
   return {
-    model: { nodes, dist: S.dist, bend: S.bend, strand, along },
+    model: { nodes, dist: S.dist, bend: S.bend, strand, along, zBand },
     strandPath: S.strandPath,
     links: S.links,
     yarnRadiusMm: yr,
@@ -784,6 +808,7 @@ export function buildSphere(
             const th = phase + ((li + 0.5) / count) * Math.PI * 2
             const xC = th * rRef
             const hookOff = n === 1 ? 0 : dims.pw * 0.6 * (t === 0 ? 1 : -1)
+            const hookDepthScale = n === 2 && t === 1 ? 1.5 : 1 // pair-second tucks deeper (canopy seam fix)
             const r = emitPlainStitch(S, dims, {
               j: k,
               c: oi,
@@ -799,6 +824,7 @@ export function buildSphere(
               cyBelow: b.m,
               bcNormalZ: b.nz,
               place3,
+              hookDepthScale,
             })
             crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNz })
             li++

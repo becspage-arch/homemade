@@ -243,6 +243,13 @@ export interface PlainStitchSpec {
    * around, not by a z-side).
    */
   linkRole?: 'hook' | 'ring'
+  /**
+   * Scales the hook's dive depth (default 1). The SECOND stitch of a
+   * shared-crown increase pair genuinely tucks DEEPER under the first — at the
+   * disc's crowded spiral seam the pair's second hook was expelled up to the
+   * crown canopy at standard depth.
+   */
+  hookDepthScale?: number
 }
 
 export function emitPlainStitch(
@@ -280,7 +287,7 @@ export function emitPlainStitch(
   // proud-crown depth the hook settles nearly coincident with the flattened
   // head and the interlock is ambiguous (audit: same-side fails across rounds).
   const bcz = spec.bcNormalZ ?? S.nodes[bc]!.z
-  const hookZ = (bcz >= 0 ? -1 : 1) * z * (1.6 + 0.9 * lay)
+  const hookZ = (bcz >= 0 ? -1 : 1) * z * (1.6 + 0.9 * lay) * (spec.hookDepthScale ?? 1)
   // The legs run from the insertion (xH) at the bottom to this stitch's own crown
   // (xC) at the top. f = height fraction: 1 at the top of the leg, → 0 at the hook.
   const xa = (f: number): number => xH + (xC - xH) * f

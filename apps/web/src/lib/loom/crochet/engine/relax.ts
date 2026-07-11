@@ -93,6 +93,19 @@ export interface YarnModel {
    * the start pole. Built from each node's initial position on the surface.
    */
   meridian?: { tr: number; tz: number }[]
+  /**
+   * Per-node one-sided z BOUNDS (null/undefined = unbounded) — the CROWN
+   * CANOPY for no-turn round fabric. Physically: the taut crown chain-line
+   * lies ON TOP of the crowded legs and hooks of a real disc and hides them;
+   * in the model the crowns are individual slack arcs, so without this the
+   * inner-round crowd erupts UP between the Vs (measured 91% collision-
+   * saturated) AND the crowns get dragged DOWN into the crowd by the very
+   * hooks that link them (probed: an exempt crown sank to +0.02yr). The
+   * builder gives non-crown nodes a ceiling ({hi}) and crown nodes a floor
+   * ({lo}) — one-sided each, like the table; topology and interlocks
+   * unchanged, collision still does the holding.
+   */
+  zBand?: ({ lo?: number; hi?: number } | null)[]
 }
 
 function projectDistance(nodes: RNode[], c: DistConstraint): void {
@@ -247,6 +260,18 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
       for (const n of nodes) {
         if (n.w === 0) continue
         if (n.z < cfg.floorZ) n.z = cfg.floorZ
+      }
+    }
+
+    // 4c. The crown canopy (per-node one-sided bounds — see YarnModel.zBand).
+    if (model.zBand) {
+      for (let i = 0; i < nodes.length; i++) {
+        const b = model.zBand[i]
+        if (b == null) continue
+        const n = nodes[i]!
+        if (n.w === 0) continue
+        if (b.hi !== undefined && n.z > b.hi) n.z = b.hi
+        if (b.lo !== undefined && n.z < b.lo) n.z = b.lo
       }
     }
 

@@ -70,7 +70,7 @@ export function buildRelaxedSwatch(arg: SwatchArg, W: number, yr: number): Built
       planeK: 0,
       layoutK: 0.06,
       layoutMode: 'radial',
-      floorZ: -yr * 1.3,
+      floorZ: -yr * 2.2, // two yarn-layers of room under the canopy — the crowd resolves DOWN, not up between the Vs (a real disc is ~2 diameters thick)
       iterations: 360,
     })
   } else if (recipe.relaxProfile === 'chain') {
