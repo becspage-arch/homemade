@@ -162,8 +162,13 @@ export const bulkCrossStitchIdea = inngest.createFunction(
   {
     id: 'bulk-cross-stitch-idea',
     name: 'Bulk: cross-stitch idea (one attempt)',
-    // A few Flux generations in flight at once — cheap, but don't hammer Fal.
-    concurrency: { limit: 4 },
+    // ONE generation at a time. The web container is memory-tight (512 MB shared
+    // with live traffic); a cross-stitch generation (Flux buffer + quantise +
+    // full-size SVG rasterise) is memory-heavy, and running several at once OOM-
+    // kills the container — which 502s every in-flight idea AND the live site.
+    // Serial keeps peak memory to one generation; each idea is still its own short
+    // request, so the batch completes across many small invocations.
+    concurrency: { limit: 1 },
     retries: 1,
     triggers: [{ event: 'bulk/cross-stitch.idea' }],
   },

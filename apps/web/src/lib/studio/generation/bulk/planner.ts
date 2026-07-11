@@ -104,8 +104,8 @@ Hard rules:
   · at least one 'mini' TINY piece (a tiny pocket charm / single sweet character) in every batch;
   · a couple of small/medium pieces;
   · a large showpiece;
-  · and when the batch is big enough, an 'epic' ENORMOUS heirloom showpiece and/or a 'dense' 100+ colour showpiece.
-  Extraordinary in BOTH directions — tiny-and-adorable and huge-and-jaw-dropping — not everything clustered in the middle.
+  · and when the batch is big enough, a 'dense' 100+ colour showpiece — the big heirloom end.
+  Extraordinary in BOTH directions — tiny-and-adorable and big-and-jaw-dropping — not everything clustered in the middle.
 - Vary SUBJECT, STYLE, SHAPE (square/tall/wide/circular) and SIZE — a samey set fails even if each piece is fine.
 - Only the generic-generation lanes below. No readable text/lettering (the converter can't render text). No copying a specific shop/celebrity/brand/franchise design.
 - Respect each theme's notes (e.g. faces fair/pale only; wordless signage; tame warm-red animals).
@@ -134,7 +134,7 @@ function xsPromptText(count: number, recentSlugs: string[]): string {
 THEMES (use themeId + one of its styles + its shelf):
 ${themes}
 
-SIZE LANES (spread this batch ACROSS THE FULL RANGE incl. the extremes — at least one 'mini', a couple of small/medium, a 'large', and reach for a 'dense'/'epic' showpiece when there's room; never all-medium; w/h in cells, pick shape to suit the subject):
+SIZE LANES (spread this batch ACROSS THE FULL RANGE incl. the extremes — at least one 'mini', a couple of small/medium, a 'large', and reach for a 'dense' showpiece when there's room; never all-medium; w/h in cells, pick shape to suit the subject):
 ${lanes}
 
 - subject: a specific, vivid noun phrase WITHOUT any style words (e.g. "a sleeping red fox curled in autumn leaves"), invented around the theme examples — do NOT just copy them.
@@ -154,8 +154,8 @@ function coerceXsBrief(raw: RawXsBrief, seen: Set<string>): CrossStitchBrief | n
       : pick(theme.styles)
   const lane = CROSS_STITCH_SIZE_LANES.find((l) => l.lane === raw.sizeLane) ?? CROSS_STITCH_SIZE_LANES[0]
   const [loC, hiC] = lane.colours.split('–').map((s) => parseInt(s, 10))
-  const w = clamp(raw.w ?? 150, 48, 300)
-  const h = clamp(raw.h ?? 150, 48, 300)
+  const w = clamp(raw.w ?? 150, 48, 230)
+  const h = clamp(raw.h ?? 150, 48, 230)
   const colours = clamp(raw.colours ?? loC!, 6, 160)
   const base = slugify(`${theme.id}-${raw.subject}`)
   let slug = `${base}-${uniqueSuffix()}`
@@ -197,7 +197,7 @@ function sampleXsBrief(theme: CrossStitchTheme, seen: Set<string>): CrossStitchB
   seen.add(slug)
   return applyStyleFloors({
     slug, subject, style: pick(theme.styles),
-    w: clamp(w, 48, 300), h: clamp(h, 48, 300),
+    w: clamp(w, 48, 230), h: clamp(h, 48, 230),
     colours: clamp((loC! + hiC!) / 2, 6, 160),
     shelf: theme.shelf, shelfName: theme.shelfName, themeId: theme.id,
   })
