@@ -82,6 +82,12 @@ export function buildKnit(
    *  so a recipe pattern can place edge/interior columns. Only meaningful on
    *  stockinette (the shaping stitches carry no garter corrugation / rib face). */
   ops?: (j: number, c: number, W: number) => KnitStitchOp,
+  /** Optional 2×2 LEFT crosses (C4F): on course `j`, columns c..c+3 swap in
+   *  pairs. New loops at relative cols 0,1 draw through the below-heads at +2 —
+   *  their diagonals travel LEFT in FRONT (the visible left-cross slant); new
+   *  loops at cols 2,3 draw through the below-heads at −2, travelling right
+   *  BEHIND. Real crossing yarn held by collision. Stockinette only. */
+  cables?: { j: number; c: number }[],
 ): BuiltContinuous {
   const yr = yarnRadiusMm
   const swk = yr * STITCHES.k.gaugeYr * gaugeScale
@@ -211,6 +217,69 @@ export function buildKnit(
     return apex
   }
 
+  // A CABLE stitch (2×2 left cross): a genuine loop drawn through a below-head
+  // TWO COLUMNS AWAY. The legs pass the mouth at the below-head's own column
+  // (`xb`) — the same audited 'through' interlock as a plain knit — then TRAVEL
+  // diagonally to throw the head at the stitch's new column (`x`). The front
+  // pair's diagonals ride a proud +z layer, the back pair's dip behind the head
+  // plane; initialised ~3.1yr apart in z (over the 2.5yr collision diameter) so
+  // relaxation keeps the crossover ordered — the crossing is real yarn held by
+  // collision, never a drawn shape. The low approach back to the stitch's own
+  // column carries SLACK nodes at the fabric's buried base so diagonal tension
+  // is absorbed by yarn, not transmitted to the legs (the bobble anchor lesson:
+  // de-couple a bold excursion from its anchors with real yarn).
+  const emitCable = (
+    j: number, c: number, x: number, xb: number, hb: number, front: boolean, fz: number, s: number, by: number, ty: number,
+  ): number => {
+    const zt = front ? yr * 1.6 * fz : -yr * 1.5 * fz // the travel layer of THIS pair's diagonals
+    const lerp = (a: number, b: number, t: number): number => a + (b - a) * t
+    // Sinker in at the stitch's NEW column (connects to its needle-order neighbour).
+    push(x - s * 0.34 * swk, by - 0.3 * courseH, -zBack * fz)
+    // Low approach to the mouth's column — buried at the fabric base, back layer,
+    // with a midpoint slack node so the travel has real yarn to give.
+    push(lerp(x, xb, 0.5), by - 0.34 * courseH, -zBack * fz)
+    push(xb - s * 0.26 * swk, by - 0.3 * courseH, -zBack * fz)
+    // The routing node under the old head's bottom edge (purl→face crossing).
+    push(xb - s * 0.26 * swk, by - 0.16 * courseH, yr * 0.2 * fz)
+    // Leg 1 through the mouth at the below-head's column — the genuine interlock.
+    const L1 = push(xb - s * 0.26 * swk, by, zFace * fz)
+    links.push({ j, c, role: 'through', hook: L1, below: hb, zSign: fz })
+    // The DIAGONAL: three interior nodes (collision is node-based — sparse nodes
+    // let the other pair slip between), bowed onto this pair's travel layer.
+    push(lerp(xb, x, 0.25), lerp(by, ty, 0.35), lerp(zFace * fz, zt, 0.8))
+    push(lerp(xb, x, 0.5), lerp(by, ty, 0.5), zt)
+    push(lerp(xb, x, 0.78), lerp(by, ty, 0.62), lerp(zt, -zShoulder * fz, 0.35))
+    // Shoulder + head at the NEW column.
+    push(x - s * 0.30 * swk, ty - 0.08 * courseH, -zShoulder * fz)
+    const apex = push(x, ty, -zBack * fz) // the head — the next course draws through it here
+    push(x + s * 0.30 * swk, ty - 0.08 * courseH, -zShoulder * fz)
+    // The second diagonal back down to the mouth, same travel layer.
+    push(lerp(xb, x, 0.78) + s * 0.08 * swk, lerp(by, ty, 0.62), lerp(zt, -zShoulder * fz, 0.35))
+    push(lerp(xb, x, 0.5) + s * 0.08 * swk, lerp(by, ty, 0.5), zt)
+    push(lerp(xb, x, 0.25) + s * 0.08 * swk, lerp(by, ty, 0.35), lerp(zFace * fz, zt, 0.8))
+    // Leg 2 through the same mouth.
+    const L2 = push(xb + s * 0.26 * swk, by, zFace * fz)
+    links.push({ j, c, role: 'through', hook: L2, below: hb, zSign: fz })
+    push(xb + s * 0.26 * swk, by - 0.16 * courseH, yr * 0.2 * fz)
+    // Low return to the stitch's own column, buried, with the slack midpoint.
+    push(xb + s * 0.26 * swk, by - 0.3 * courseH, -zBack * fz)
+    push(lerp(xb, x, 0.5), by - 0.34 * courseH, -zBack * fz)
+    // Sinker out at the new column.
+    push(x + s * 0.34 * swk, by - 0.3 * courseH, -zBack * fz)
+    return apex
+  }
+
+  // Cable lookup: course j, column c → { xbCol (the below-head's column), front }.
+  const cableMap = new Map<string, { xbCol: number; front: boolean }>()
+  for (const cb of cables ?? []) {
+    if (cb.c < 0 || cb.c + 3 >= W) throw new Error(`cable at course ${cb.j} col ${cb.c}: group c..c+3 must fit inside 0..${W - 1}`)
+    // Left cross: new cols 0,1 of the group draw through +2 (front); 2,3 through −2 (back).
+    cableMap.set(`${cb.j},${cb.c}`, { xbCol: cb.c + 2, front: true })
+    cableMap.set(`${cb.j},${cb.c + 1}`, { xbCol: cb.c + 3, front: true })
+    cableMap.set(`${cb.j},${cb.c + 2}`, { xbCol: cb.c, front: false })
+    cableMap.set(`${cb.j},${cb.c + 3}`, { xbCol: cb.c + 1, front: false })
+  }
+
   // Cast-on: a pinned course of head arcs (the anchor edge the first course is
   // drawn through), laid a full layer BACK from the column's own face — like every
   // settled head. For rib the odd (purl) columns face −z, so their cast-on head
@@ -275,8 +344,10 @@ export function buildKnit(
       // stitch popping to its own face. Gate stays off stockinette + rib.
       const bz = face === 'garter' || face === 'seed' ? yr * 0.7 * fz : 0
       const op = opOf(c)
+      const cable = cableMap.get(`${j},${c}`)
       let apex: number
-      if (op === 'yo') apex = emitYo(x, fz, s, by, ty)
+      if (cable) apex = emitCable(j, c, x, cable.xbCol * swk, headBelow[cable.xbCol]!, cable.front, fz, s, by, ty)
+      else if (op === 'yo') apex = emitYo(x, fz, s, by, ty)
       else if (op === 'k2tog') apex = emitDec(j, c, x, headBelow[c - 1]!, headBelow[c]!, fz, s, by, ty)
       else if (op === 'ssk') apex = emitDec(j, c, x, headBelow[c]!, headBelow[c + 1]!, fz, s, by, ty)
       else apex = emitPlainKnit(j, c, x, hb, fz, bz, s, by, ty)

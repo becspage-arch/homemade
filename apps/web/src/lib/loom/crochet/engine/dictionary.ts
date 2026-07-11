@@ -91,7 +91,7 @@ export type SwatchArg =
   | 'scinc' | 'scdec' | 'hdcinc' | 'hdcdec' | 'dcinc' | 'dcdec'
   | 'shell' | 'vstitch' | 'crossed'
   | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib' | 'ball'
-  | 'yo' | 'k2tog' | 'ssk' | 'seed'
+  | 'yo' | 'k2tog' | 'ssk' | 'seed' | 'cable'
 
 export interface SwatchRecipe {
   /** The dictionary stitch driving gauge + row height for this swatch. */
@@ -138,6 +138,12 @@ export interface SwatchRecipe {
    * (buildKnit throws if any head below isn't consumed exactly once).
    */
   knitStitch?: (j: number, c: number, W: number) => KnitStitchOp
+  /**
+   * builder 'knit': 2×2 LEFT cable crosses (C4F) — on course j, columns c..c+3
+   * swap in pairs (front pair travels left in front, back pair right behind).
+   * Real crossing yarn held by collision. Stockinette ground only.
+   */
+  knitCables?: { j: number; c: number }[]
   /** builder 'sphere': stitches around the equator (sets the ball's size). */
   equatorCount?: number
   /** Chain relaxes with its own profile (soft squash + table floor); rounds hold
@@ -483,6 +489,16 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     knitCourseScale: 0.75, knitGaugeScale: 0.95, // seed packs like garter (bumpy rows sit into each other); same edge-slack caution as garter (0.65/0.95) but a touch looser since neighbours alternate within the course too
     relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/01/a-seed-stitch-swatch-1024x684.jpg', // nimble-needles — seed stitch swatch from above (checkerboard bumps)
+    status: 'wip',
+  },
+  // 2×2 left-cross rope cable (C4F): a centre 4-column group crossing every 4
+  // courses (j=3 and j=7) on a stockinette ground. The held pair travels LEFT in
+  // front of the working pair — real crossing yarn held by collision (§8d).
+  cable: {
+    stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFace: 'stockinette',
+    knitCables: [{ j: 3, c: 4 }, { j: 7, c: 4 }],
+    relaxProfile: 'worked', tiltDeg: 28, twist: 0.05,
+    referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2020/05/2x2-cable-stitch-swatch-1024x684.jpg', // nimble-needles — 2×2 rope cable swatch (left cross on the left)
     status: 'wip',
   },
 }
