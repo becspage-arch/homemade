@@ -131,8 +131,8 @@ export interface YarnFilaments {
  *    stitch's twist by a constant that keeps the recipes' RELATIVE intent (a
  *    "calm" stitch still twists less than a "rustic" one).
  */
-const PLY_RADIUS_FRAC = 0.46
-const TWIST_GAIN = 3.4
+const PLY_RADIUS_FRAC = 0.52
+const TWIST_GAIN = 2.2
 export function pliedFilaments(center: V3[], bundleR: number, nPly: number, twistPerMm: number): YarnFilaments {
   const filRadius = bundleR * PLY_RADIUS_FRAC
   const spread = Math.max(0, bundleR - filRadius)

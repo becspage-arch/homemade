@@ -58,9 +58,9 @@ def yarn_material(name, hexcol, sheen):
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
     set_in(bsdf, "Base Color", hex_to_lin(hexcol))
-    set_in(bsdf, "Specular IOR Level", 0.3)         # satiny yarn sheen (was 0.14, too matte)
-    set_in(bsdf, "Sheen Weight", 0.35)              # a soft halo, NOT a felt (was 1.0)
-    set_in(bsdf, "Sheen Roughness", 0.4)
+    set_in(bsdf, "Specular IOR Level", 0.18)        # low spec: wool, not plastic
+    set_in(bsdf, "Sheen Weight", 0.55)              # soft wool halo, below the felting 1.0
+    set_in(bsdf, "Sheen Roughness", 0.5)
     set_in(bsdf, "Sheen Tint", (1.0, 1.0, 1.0, 1.0))
     set_in(bsdf, "Anisotropic", 0.25)
     set_in(bsdf, "Subsurface Weight", 0.1)          # soft light through the fibre
@@ -74,7 +74,7 @@ def yarn_material(name, hexcol, sheen):
     fib.inputs["Scale"].default_value = 8.0
     fib.inputs["Detail"].default_value = 5.0
     bump = nt.nodes.new("ShaderNodeBump")
-    bump.inputs["Strength"].default_value = 0.3       # was 1.3 (the felting culprit)
+    bump.inputs["Strength"].default_value = 0.6       # spun-fibre relief (1.3 felted; 0.3 read plastic)
     bump.inputs["Distance"].default_value = 0.015
     nt.links.new(tex.outputs["Object"], mapp.inputs["Vector"])
     nt.links.new(mapp.outputs["Vector"], fib.inputs["Vector"])
@@ -84,15 +84,15 @@ def yarn_material(name, hexcol, sheen):
     fuzz.inputs["Scale"].default_value = 60.0
     fuzz.inputs["Detail"].default_value = 6.0
     bump2 = nt.nodes.new("ShaderNodeBump")
-    bump2.inputs["Strength"].default_value = 0.16
+    bump2.inputs["Strength"].default_value = 0.28
     bump2.inputs["Distance"].default_value = 0.004
     nt.links.new(fuzz.outputs["Fac"], bump2.inputs["Height"])
     nt.links.new(bump.outputs["Normal"], bump2.inputs["Normal"])
     nt.links.new(bump2.outputs["Normal"], bsdf.inputs["Normal"])
     # Roughness varies along the fibre — satiny (plies catch light) not chalky matte.
     rough = nt.nodes.new("ShaderNodeMapRange")
-    rough.inputs["To Min"].default_value = 0.42
-    rough.inputs["To Max"].default_value = 0.62
+    rough.inputs["To Min"].default_value = 0.55
+    rough.inputs["To Max"].default_value = 0.78
     nt.links.new(fib.outputs["Fac"], rough.inputs["Value"])
     nt.links.new(rough.outputs["Result"], bsdf.inputs["Roughness"])
     return mat
@@ -320,7 +320,7 @@ def main():
     scene.view_settings.view_transform = "AgX"
     scene.view_settings.look = "AgX - Base Contrast"
     scene.view_settings.exposure = view.get("exposure", 0.2)  # lower: stop pale wool blowing white
-    grade_saturation(scene, view.get("saturation", 1.4))  # bring warmth back after AgX desaturates
+    grade_saturation(scene, view.get("saturation", 1.2))  # bring warmth back after AgX desaturates (1.4 oversaturated the crisper, less-felted yarn)
     scene.render.filepath = out_path
     bpy.ops.render.render(write_still=True)
     print("RENDERED", out_path)
