@@ -351,7 +351,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFace: 'rib', relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
     knitGaugeScale: 0.85, // pack the columns so the purl valleys aren't see-through — real rib pulls in laterally (the accordion)
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2020/04/rib-stitch-swatch-close-up-1024x684.jpg',
-    status: 'wip',
+    status: 'locked', lockedOn: '2026-07-11', // Rebecca accepted (Fable cross-checked the per-column faceSign theory + density)
   },
 }
 
