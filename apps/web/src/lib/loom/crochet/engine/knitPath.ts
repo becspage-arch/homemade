@@ -231,13 +231,19 @@ export function buildKnit(
   const emitCable = (
     j: number, c: number, x: number, xb: number, hb: number, front: boolean, fz: number, s: number, by: number, ty: number,
   ): number => {
-    const zt = front ? yr * 1.6 * fz : -yr * 1.5 * fz // the travel layer of THIS pair's diagonals
+    // TIGHTENED (attempt 2): the first build's proud +1.6yr travel layer + bowed
+    // slack read as loose ropes lying ON the fabric, not a snug cable twist (and
+    // the surplus shoved the neighbouring columns into gaps). Snug the layers to
+    // the fabric (±1.35yr — separation 2.7yr, still over the 2.5yr collision
+    // diameter so the crossover stays ordered) and keep the diagonals near their
+    // chord; the low approach runs straight (surplus was the float look).
+    const zt = front ? yr * 1.35 * fz : -yr * 1.35 * fz // the travel layer of THIS pair's diagonals
     const lerp = (a: number, b: number, t: number): number => a + (b - a) * t
     // Sinker in at the stitch's NEW column (connects to its needle-order neighbour).
     push(x - s * 0.34 * swk, by - 0.3 * courseH, -zBack * fz)
     // Low approach to the mouth's column — buried at the fabric base, back layer,
-    // with a midpoint slack node so the travel has real yarn to give.
-    push(lerp(x, xb, 0.5), by - 0.34 * courseH, -zBack * fz)
+    // straight (a midpoint node keeps collision sampled, no extra length).
+    push(lerp(x, xb, 0.5), by - 0.3 * courseH, -zBack * fz)
     push(xb - s * 0.26 * swk, by - 0.3 * courseH, -zBack * fz)
     // The routing node under the old head's bottom edge (purl→face crossing).
     push(xb - s * 0.26 * swk, by - 0.16 * courseH, yr * 0.2 * fz)
@@ -245,18 +251,18 @@ export function buildKnit(
     const L1 = push(xb - s * 0.26 * swk, by, zFace * fz)
     links.push({ j, c, role: 'through', hook: L1, below: hb, zSign: fz })
     // The DIAGONAL: three interior nodes (collision is node-based — sparse nodes
-    // let the other pair slip between), bowed onto this pair's travel layer.
-    push(lerp(xb, x, 0.25), lerp(by, ty, 0.35), lerp(zFace * fz, zt, 0.8))
-    push(lerp(xb, x, 0.5), lerp(by, ty, 0.5), zt)
-    push(lerp(xb, x, 0.78), lerp(by, ty, 0.62), lerp(zt, -zShoulder * fz, 0.35))
+    // let the other pair slip between), hugging the chord on this pair's layer.
+    push(lerp(xb, x, 0.25), lerp(by, ty, 0.3), lerp(zFace * fz, zt, 0.8))
+    push(lerp(xb, x, 0.5), lerp(by, ty, 0.48), zt)
+    push(lerp(xb, x, 0.78), lerp(by, ty, 0.68), lerp(zt, -zShoulder * fz, 0.35))
     // Shoulder + head at the NEW column.
     push(x - s * 0.30 * swk, ty - 0.08 * courseH, -zShoulder * fz)
     const apex = push(x, ty, -zBack * fz) // the head — the next course draws through it here
     push(x + s * 0.30 * swk, ty - 0.08 * courseH, -zShoulder * fz)
     // The second diagonal back down to the mouth, same travel layer.
-    push(lerp(xb, x, 0.78) + s * 0.08 * swk, lerp(by, ty, 0.62), lerp(zt, -zShoulder * fz, 0.35))
-    push(lerp(xb, x, 0.5) + s * 0.08 * swk, lerp(by, ty, 0.5), zt)
-    push(lerp(xb, x, 0.25) + s * 0.08 * swk, lerp(by, ty, 0.35), lerp(zFace * fz, zt, 0.8))
+    push(lerp(xb, x, 0.78) + s * 0.08 * swk, lerp(by, ty, 0.68), lerp(zt, -zShoulder * fz, 0.35))
+    push(lerp(xb, x, 0.5) + s * 0.08 * swk, lerp(by, ty, 0.48), zt)
+    push(lerp(xb, x, 0.25) + s * 0.08 * swk, lerp(by, ty, 0.3), lerp(zFace * fz, zt, 0.8))
     // Leg 2 through the same mouth.
     const L2 = push(xb + s * 0.26 * swk, by, zFace * fz)
     links.push({ j, c, role: 'through', hook: L2, below: hb, zSign: fz })
