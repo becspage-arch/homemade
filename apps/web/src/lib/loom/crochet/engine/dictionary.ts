@@ -91,7 +91,7 @@ export type SwatchArg =
   | 'scinc' | 'scdec' | 'hdcinc' | 'hdcdec' | 'dcinc' | 'dcdec'
   | 'shell' | 'vstitch' | 'crossed'
   | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib' | 'ball'
-  | 'yo'
+  | 'yo' | 'k2tog' | 'ssk'
 
 export interface SwatchRecipe {
   /** The dictionary stitch driving gauge + row height for this swatch. */
@@ -454,6 +454,24 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     referenceUrl: 'https://sowoolly.net/wp-content/uploads/2025/09/Easy-Eyelet-Stitch-Pattern.png', // sowoolly — staggered round eyelets on a knit ground
     status: 'wip',
   },
+  // k2tog — right-leaning single decrease. Two vertical decrease lines (a k2tog +
+  // its eyelet) stacked over courses 2..6 so the RIGHT lean reads as a clean line.
+  k2tog: {
+    stitch: 'k', rows: 9, auditW: 12, builder: 'knit', knitFace: 'stockinette',
+    knitStitch: (j, c, W) => decLineOp(j, c, W, 'k2tog'),
+    relaxProfile: 'worked', tiltDeg: 28, twist: 0.05, openFabric: true,
+    referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/06/how-to-knit-two-stitches-together.jpg', // nimble-needles — k2tog (right-leaning decrease)
+    status: 'wip',
+  },
+  // ssk — left-leaning single decrease, the mirror of k2tog. Same two-line showcase
+  // so the two renders sit side by side and the opposite lean is unmistakable.
+  ssk: {
+    stitch: 'k', rows: 9, auditW: 12, builder: 'knit', knitFace: 'stockinette',
+    knitStitch: (j, c, W) => decLineOp(j, c, W, 'ssk'),
+    relaxProfile: 'worked', tiltDeg: 28, twist: 0.05, openFabric: true,
+    referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/06/ssk-knitting-1.jpg', // nimble-needles — ssk (left-leaning decrease)
+    status: 'wip',
+  },
 }
 
 /**
@@ -492,6 +510,29 @@ function eyeletOp(j: number, c: number, W: number): KnitStitchOp {
   if (m === 0) return c + 1 <= W - 2 ? 'yo' : 'k' // the hole (only if its k2tog partner fits)
   if (m === 1) return 'k2tog' // gathers the yo's column (c−1) + this one → opens the hole
   return 'k' // two plain knits space the eyelets out
+}
+
+/**
+ * Decrease-LINE showcase: two vertical [yo, dec] lines (columns 3 and 7) stacked
+ * over consecutive courses 2..6, the rest plain stockinette — so the decrease's
+ * LEAN reads as a clean vertical line (the k2tog line leans right, the ssk line
+ * leans left; that opposite lean is the pair's identity). Each line pairs a
+ * decrease with an adjacent yo so the course stays W wide.
+ *  - k2tog line: k2tog at c (gathers c−1 + c, leans RIGHT), yo at c−1.
+ *  - ssk line:   ssk at c (gathers c + c+1, leans LEFT), yo at c+1.
+ */
+function decLineOp(j: number, c: number, W: number, kind: 'k2tog' | 'ssk'): KnitStitchOp {
+  if (j < 2 || j > 6) return 'k' // plain stockinette above + below the decrease band
+  if (c <= 0 || c >= W - 1) return 'k' // plain selvedge
+  const lines = [3, 7] // the two decrease columns
+  if (kind === 'k2tog') {
+    if (lines.includes(c)) return 'k2tog' // gathers c−1 + c
+    if (lines.includes(c + 1)) return 'yo' // the eyelet just LEFT of each k2tog
+    return 'k'
+  }
+  if (lines.includes(c)) return 'ssk' // gathers c + c+1
+  if (lines.includes(c - 1)) return 'yo' // the eyelet just RIGHT of each ssk
+  return 'k'
 }
 
 /** inc at both ends of every row: w0 → w0 + 2·rows. */
