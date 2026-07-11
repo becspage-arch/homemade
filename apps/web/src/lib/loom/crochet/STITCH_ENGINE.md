@@ -184,6 +184,7 @@ stockinette re-rendered (gate 0.884), both consistent with their 07-10 looks.
 | **scdec** (sc2tog, shaped rows) | shrinking trapezoid, dec both ends every row; one crown over two audited hooks (§8c) | ◔ audit-clean (60/60). Rendered 2026-07-10 (gate 0.928): trapezoid + converging decrease legs read; the fasten-off tail fixed the earlier frayed bottom corner. Awaiting Rebecca. |
 | **mrdisc** (magic ring + rounds) | flat amigurumi circle: MR anchor, 6 sc in ring, +6/round continuous no-turn spiral, polar frame + radial blocked pull + table + fasten-off (§8c) | ◑ **audit-clean (126/126), LOOK still NOT at the bar.** 2026-07-10: added `legReliefScale` 0.7 (calms same-face leg bulge; 0.6 strands an inner hook) — moved it from knotted roving to concentric-but-lumpy rounds, a real step but Rebecca confirmed NOT customer grade (random lumps throughout). Then tried a tangential ANGULAR HOLD in the relax to order the rounds — it made clumping WORSE (gap-CV 1.1→2.2) and broke a hook, because the lumps are inner-round CROWDING (too many stitches for the small-radius circumference — measured, gap-CV ≈1.1 at baseline), not stitches sliding out of slots; pinning the angle just locks the crowding in. Reverted. **Root cause = crowding + same-face relief; the relief/ordering lever family (crownLay×2, leg-relief, angular-hold) is exhausted and none reach the bar.** RESOLVED at construction tier by the CROWN CANOPY (Fable 2026-07-11): per-node one-sided z bounds (YarnModel.zBand) — non-crown nodes UNDER the crown line, crown chain HALF A YARN PROUD of it, table deepened to 2 yarn-layers, pair-second hooks tuck deeper. Audit-clean 126/126; render gate 0.882. The wall (crowd erupting between the Vs) is BROKEN: the disc now reads as a flat crocheted spiral with a drawn-tight centre. Residual = crown ORIENTATION consistency (some Vs flop sideways) — RESOLVED 2026-07-11 (Opus worker): the canopy floor clamped the apex AND both flanks to ONE plane (probe: apexZ 0.97 vs flankZ 0.92, ~0.05yr — a flat dash, free to spin in-plane). Split the floor: apex rides a prouder floor (CANOPY+0.9yr) than its flanks (CANOPY+0.5yr) → each stitch is a real 3D chevron. Probe: flop (flank-axis vs tangential) mean 21°→8°, badly-flopped crowns 2→1; audit still 126/126. Render reads as consistent tidy Vs in clean spiral rounds. Residual now = DENSITY: mine is more open between rounds than the dense reference (separate gauge/drift calibration, not attempted — would risk the clean audit). Rebecca verdict pending. DENSITY PASS 2026-07-11 (Opus round-2): the sanctioned lever (radial pitch / disc gauge). Added a per-swatch `gaugeYr` override to buildRounds and tied the radial pitch to it (`drift = 0.9·sw`, bit-identical at the locked sc 1.8); mrdisc gaugeYr 1.5 + magic ring 1.15→0.85yr. Measured: round-to-round radial gaps 1.6→1.35yr (collision floor 1.25yr — trenches largely closed), round-0 crowns 2.53→2.03yr, centre closes to a pinprick. Audit still 126/126. Render: the rounds now pack tight (the coiled-rope trenches are gone) and the centre is tight, BUT per-stitch bumps still stand proud so it reads bulbous/bean-piled vs the flat reference. That residual is the z-amplitude (~2.2yr swing), which is the exhausted relief-lever family (crownLay/legRelief/angular-hold, §9) — a numeric flatten test (APEX/FLANK floors down) only moved amplitude 2.21→2.11yr while deepening valleys, so it was NOT shipped (would risk the just-landed crown-orientation fix). Rebecca verdict pending. |
 | **stockinette / k** (KNIT) | loops drawn through loops, 'through' links, real 2-diameter fabric thickness (§8d) | ✅ **LOCKED 2026-07-11** (Rebecca). Audit-clean (216/216, settled leg-vs-head clearance ≈1.7yr everywhere). Reads immediately as chunky hand-knitted stockinette — interlocked V columns, correct nesting. The plumper Vs + slight column wobble vs the fine-cotton reference are chunky-weight presentation character (the library-wide roving softness), not a defect. |
+| **yo** (yarn-over eyelet, KNIT) | stockinette + [yo, k2tog, k, k] eyelet courses; the yo is a fed OPEN loop over the needle with no head below, k2tog draws through TWO heads (§8d-shaping) | ◑ **audit-clean (230/230), LOOK soft.** 2026-07-11 (Opus KNIT-DEPTH worker): built the yo (bare loop, no 'through' link — the open span under it is the eyelet) + the knit single decreases k2tog/ssk (one loop through two heads, two audited 'through' links; the merged head rides its own column so the off-centre gather makes the lean). TWO yo constructions tried: (1) bare arc, (2) fed wide open loop. NEITHER opens a crisp hole — numeric probe: eyelet open gap 0.72yr ≈ plain 0.69yr, because the relaxer packs the short knit stitches to uniform density (x is free) and mesh tension can't hold a gap at this swatch scale (§9). The fed-loop version (kept) reads better — the yo rings stand as visible openings in the eyelet bands (tilt 28 + openFabric) — but softer than the reference's crisp round holes. Residual = the same library-wide roving softness/density (a separate worker's crispness pass), not a topology bug. Two-attempt cap on the hole-opening reached; the topology is genuine + audited. Rebecca/orchestrator verdict pending. |
 | **knitrib** (1×1 rib, KNIT) | per-COLUMN pull side (even cols +z, odd −z), constant up each column — a purl column is a knit column seen from behind (§8d) | ✅ **LOCKED 2026-07-11** (Rebecca). Audit-clean (240/240); columns settle cleanly alternating (+0.35..0.39 knit / −0.34..−0.41 purl → a real rib). Built on `buildKnit`'s per-(course,column) `faceSign` (stockinette + garter bit-identical). Reads as clear 1×1 rib — raised knit columns as vertical V-chains, recessed valleys FILLED with purl bumps. Chunkier than the fine reference = library-wide weight character. |
 | **shell** (5 dc in one base) | SHELL_N dc fanned into one below-crown, balanced by skipped stitches → constant-width scallops (§8c) | ◔ audit-clean (65/65) — all 5 fanned dc genuinely hook the shared base. New shaped-builder ops `shell`/`skip`; dec/st/inc paths byte-identical (scinc/scdec unchanged). RENDERED 2026-07-11 (hero passed): the 5-post fans radiate clearly from single bases, stacked and alternating; more open/skeletal than the reference's packed scallops (2 shells/row at chunky weight). Rebecca verdict pending. PACK 2026-07-11 (Opus round-2): the fabric was skeletal (big holes, backing showing). Added a per-swatch `gaugeYr`+`rowScale` override to buildShaped (locked stitch gauge/height untouched); shell gauge 2.3→1.5, row pitch 0.72 pack the columns + rows so the fans nest and touch. Plus the openFabric backing fix (below). Audit 65/65. Render now reads as a dense scalloped fabric with the fans touching — the big holes closed, matching the reference's density (chunkier yarn character remains). Rebecca verdict pending. |
 | **hdcinc/hdcdec/dcinc/dcdec** | the SAME shaped builder, taller posts — emitDecrease + the inc path are stitch-generic | ◔ all audit-clean with NO engine change (hdcinc 70/70, hdcdec 60/60, dcinc 52/52, dcdec 44/44). Confirms the shaping paths are genuinely stitch-agnostic. ALL FOUR RENDERED 2026-07-11 (gates 0.935 / 0.925 / 0.940 / 0.923): clean trapezoids, edge shaping legible (fanned inc pairs, converging tog gathers), no foundation lip, no fraying. dcinc's reference photo found + on file (knotions 2dc — was the last empty referenceUrl). Rebecca verdicts pending. |
@@ -361,6 +362,29 @@ just a knit column seen from behind — the vertical rib is the two face familie
 side by side, and the sinker between a knit and a purl column genuinely crosses
 front↔back.
 
+**KNIT SHAPING — yo / k2tog / ssk (2026-07-11):** `buildKnit` takes an optional
+per-(course,column) op function (`knitStitch` in the recipe); absent → every
+stitch a plain `k` and stockinette/rib/garter stay bit-identical (re-audited).
+- **yo (yarn-over)** — the strand passes OVER the needle with NOTHING below it:
+  a fed OPEN loop (sides spread ±0.62·gauge), no `'through'` link recorded (a yo
+  genuinely interlocks with nothing below — the open span under it is the
+  eyelet). The next course draws through its head from above like any head.
+- **k2tog / ssk (single decreases)** — one new loop drawn through TWO heads below
+  together: two `'through'` links (both audited). The merged head lands on the
+  stitch's OWN column while the gathered pair sits off-centre, so the lean
+  EMERGES from the geometry — k2tog gathers head-below + LEFT neighbour (pair
+  midpoint left of the on-column head → leans RIGHT); ssk gathers below + RIGHT
+  → leans LEFT. Parking the head off-column instead dragged the next course's
+  legs 2.1yr sideways (§9); on-column keeps the course above clean.
+- A yo (makes 1, consumes 0) + a k2tog/ssk (makes 1, consumes 2) is
+  width-neutral, so an eyelet course stays W wide — no variable-width machinery.
+  `buildKnit` asserts every head below is consumed exactly once per course.
+- **The eyelet does NOT open crisply at this density** (§9): the deterministic
+  relaxer packs short knit stitches to uniform density and mesh tension can't
+  hold a gap at swatch scale. The topology is genuine + audited; the LOOK is soft
+  (the fed yo rings read as openings but not clean holes) — a density/crispness
+  limit, deferred to the library-wide yarn pass, not a topology fix.
+
 The two lessons that made stockinette pass (see §9):
 - **Fabric thickness is a real budget.** Stockinette is ~2 yarn diameters thick.
   Seeded thin (±0.6yr relief), every course's legs squeezed the course below's
@@ -535,6 +559,22 @@ the interactive chart).
   rather than beneath the crest — an interlock-level change, not placement
   values. The corrugation model (audit-clean 240/240, look "upright clusters")
   remains the shipping base.
+- **A knit eyelet (yo) does NOT open into a crisp hole at this engine's density**
+  (yo, 2026-07-11, two constructions, both audit-clean, both look-soft). The yo is
+  genuine topology (a loop over the needle with no `'through'` link below — the
+  audit confirms the open interlock), but the deterministic relaxer packs the
+  short knit stitches to uniform density: numeric probe (nearest-yarn open gap)
+  = 0.72yr at the eyelet ≈ 0.69yr in plain fabric, i.e. NO gap. Attempt 1 (a bare
+  arc yo) and attempt 2 (a FED wide open loop, sides ±0.62·gauge) both closed —
+  x is free so the W stitches just redistribute to even density, and there's no
+  through-strand in the yo's lower mouth (nor enough mesh tension at swatch scale)
+  to hold it open. A real knit eyelet stays open by MESH tension — the anchored
+  surrounding loops leaving a gap the decrease removed — which this small floppy
+  swatch doesn't reproduce. The fed-loop version is kept (the yo rings at least
+  read as visible openings under tilt + openFabric). The likely real fix is the
+  library-wide yarn-crispness/density pass (firmer, less-roving yarn holds mesh
+  gaps), NOT another yo tweak — two-attempt cap reached. Do not chase it with
+  more placement values; it needs firmer fabric.
 - **A retroactive z-nudge on an already-placed node barely survives relaxation**
   (blo/flo ridge, 2026-07-07). Pushing `nodes[k].z *= 1.7` AFTER the node is placed
   fights its own recorded distance-constraint rest lengths; the relaxer mostly undoes
