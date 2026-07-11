@@ -369,10 +369,16 @@ export function buildRounds(
   let rPrev = rr
   // The visible V of every stitch (crown apex + its two trail nodes) is exempt
   // from the crown canopy; everything else stays under it (see YarnModel.zCap).
-  const canopyExempt = new Set<number>()
+  // The apex is tracked SEPARATELY so it can ride a touch prouder than its two
+  // flanks — a flat floor clamped all three to one plane, which flattened the V
+  // and let it rotate in-plane (probe: apexZ 0.97 vs flankZ 0.92, ~0.05yr — no
+  // point, so the Vs flopped sideways). A raised apex is a real 3D chevron that
+  // reads as an outward-pointing stitch and resists the flop.
+  const canopyExempt = new Set<number>() // the two flanks
+  const canopyApex = new Set<number>() // the apex — prouder floor
   const exemptCrown = (apex: number): void => {
     canopyExempt.add(apex - 1)
-    canopyExempt.add(apex)
+    canopyApex.add(apex)
     canopyExempt.add(apex + 1)
   }
 
@@ -479,12 +485,22 @@ export function buildRounds(
   // yarn mass and hides the crowded legs beneath — YarnModel.zBand; probed:
   // without the crown floor, hooked-from-below crowns sink into the crowd).
   const CANOPY = zh * 0.65
-  // The crown chain rides a full half-yarn proud of the canopy — the tidy
-  // spiral of Vs standing on the fabric that the reference shows — and any
-  // hook trapped AT the ceiling still clears the same-side audit margin
-  // (0.45yr) to the crown above it.
+  // The crown chain rides proud of the canopy — the tidy spiral of Vs standing
+  // on the fabric that the reference shows. The APEX rides a touch higher than
+  // its two flanks (0.9yr vs 0.5yr above the canopy) so each stitch reads as a
+  // 3D chevron pointing up-and-out, not a flat dash free to spin in-plane. Both
+  // clear the same-side audit margin (0.45yr) to the crown above with room to
+  // spare — the apex, which is the link's `below` target, only gains margin.
+  const FLANK_LO = CANOPY + yr * 0.5
+  const APEX_LO = CANOPY + yr * 0.9
   const zBand = nodes.map((n, i) =>
-    n.w === 0 ? null : canopyExempt.has(i) ? { lo: CANOPY + yr * 0.5 } : { hi: CANOPY },
+    n.w === 0
+      ? null
+      : canopyApex.has(i)
+        ? { lo: APEX_LO }
+        : canopyExempt.has(i)
+          ? { lo: FLANK_LO }
+          : { hi: CANOPY },
   )
   return {
     model: { nodes, dist: S.dist, bend: S.bend, strand, along, zBand },
@@ -706,6 +722,18 @@ export function buildSphere(
   let mPrev = rr
   let count = 0
 
+  // Crown canopy (analytic sphere only): the same defect as the disc's — the
+  // crowded pole legs erupt as fat loops between the Vs. Track each crown's
+  // apex (the `below` target) and its two flanks so the radial band can tuck
+  // the crowd under the crown line while the Vs ride proud. See §8c-3D.
+  const canopyExempt = new Set<number>() // the two flanks
+  const canopyApex = new Set<number>() // the apex — prouder floor
+  const exemptCrown = (apex: number): void => {
+    canopyExempt.add(apex - 1)
+    canopyApex.add(apex)
+    canopyExempt.add(apex + 1)
+  }
+
   // Round meridians: step down the sphere until just short of the bottom pole
   // (or exactly one per pattern round when the counts come from a pattern).
   const mMax = Math.PI * R - rr
@@ -769,6 +797,7 @@ export function buildSphere(
           place3,
           linkRole: 'ring', // round 1 WRAPS the ring strand (a stem, not a crown)
         })
+        exemptCrown(r.crownBack)
         crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNz })
       }
     } else {
@@ -799,6 +828,7 @@ export function buildSphere(
             bn2: b2.nz,
             place3,
           })
+          exemptCrown(r.crown)
           crowns.push({ back: r.crown, front: r.crown, theta: th, m: mK, nz: crownNz })
           li++
         } else {
@@ -826,6 +856,7 @@ export function buildSphere(
               place3,
               hookDepthScale,
             })
+            exemptCrown(r.crownBack)
             crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNz })
             li++
           }
@@ -866,8 +897,42 @@ export function buildSphere(
   const halfSpan = prof
     ? Math.max(...(patternCounts ?? [eq]).map((c) => (c * sw) / (2 * Math.PI))) + yr * 3
     : R + yr * 3
+
+  // The crown canopy on the analytic sphere: distance-from-centre bounds (the
+  // radial analog of the disc's z-canopy). Non-crown nodes tuck UNDER the crown
+  // line (a ceiling at R + zh·0.65 off the surface — the crowded pole legs
+  // resolve INWARD, toward the stuffing, not out between the Vs); flanks ride
+  // proud, the apex a touch prouder, so each pole stitch reads as a 3D chevron
+  // instead of a fat loop. Bounds stay WITHIN the crown's built normal relief
+  // (crownNz = zh·1.15) so the pole is not pushed off-surface — the ballooning
+  // failure the soft normal pull was added to prevent. Intrinsic-profile balls
+  // (patternCounts) are not metric spheres, so they keep the plain surface pull.
+  // Bounds are keyed to the crown's built normal relief (crownNz = zh·1.15): the
+  // ceiling tucks the crowd well under it, the floors sit AT OR BELOW the built
+  // crown offsets so they only stop a crown sinking into the crowd — they never
+  // push it further out (over-lifting the pole is the ballooning failure).
+  const radialCenter = { x: 0, y: 0, z: Z0 }
+  // Ceiling at 0.65·crownNz off the surface: the strongest crowd tuck that still
+  // audits clean (0.6 is the edge; 0.55 and below drop an interlock). Floors sit
+  // at/below the built crown offsets so they only stop a crown sinking into the
+  // crowd, never push it out (the pole-ballooning failure).
+  const CANOPY = R + crownNz * 0.65 // ceiling: crowd resolves inward under this
+  const FLANK_LO = R + crownNz * 0.72 // flanks built at zh (≈0.87·crownNz) — floor below, no push
+  const APEX_LO = R + crownNz * 0.9 // apex built at crownNz — floor below, no push
+  const radialBand = prof
+    ? undefined
+    : nodes.map((n, i) =>
+        n.w === 0
+          ? null
+          : canopyApex.has(i)
+            ? { lo: APEX_LO }
+            : canopyExempt.has(i)
+              ? { lo: FLANK_LO }
+              : { hi: CANOPY },
+      )
+
   return {
-    model: { nodes, dist: S.dist, bend: S.bend, strand, along, meridian },
+    model: { nodes, dist: S.dist, bend: S.bend, strand, along, meridian, radialBand, radialCenter },
     strandPath: S.strandPath,
     links: S.links,
     yarnRadiusMm: yr,

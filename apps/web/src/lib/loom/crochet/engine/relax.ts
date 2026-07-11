@@ -106,6 +106,19 @@ export interface YarnModel {
    * unchanged, collision still does the holding.
    */
   zBand?: ({ lo?: number; hi?: number } | null)[]
+  /**
+   * Per-node one-sided RADIAL bounds — the CROWN CANOPY generalised to a CLOSED
+   * CURVED SURFACE (the sphere). On the flat disc the canopy is a z-clamp because
+   * the disc's surface normal is global +z everywhere; on a sphere the normal is
+   * the radial-from-centre direction, so the same "crowns proud, crowded legs
+   * tucked under" is a clamp on each node's DISTANCE FROM CENTRE. Bounds are
+   * absolute distances from `radialCenter`; non-crown nodes get a ceiling ({hi}),
+   * crown nodes a floor ({lo}) — one-sided each, exactly like zBand, moving the
+   * node radially in/out about the centre. Topology + interlocks unchanged.
+   */
+  radialBand?: ({ lo?: number; hi?: number } | null)[]
+  /** Centre point for radialBand distances (the sphere centre). */
+  radialCenter?: { x: number; y: number; z: number }
 }
 
 function projectDistance(nodes: RNode[], c: DistConstraint): void {
@@ -272,6 +285,33 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
         if (n.w === 0) continue
         if (b.hi !== undefined && n.z > b.hi) n.z = b.hi
         if (b.lo !== undefined && n.z < b.lo) n.z = b.lo
+      }
+    }
+
+    // 4d. The crown canopy on a CLOSED CURVED SURFACE (the sphere): the same
+    // one-sided clamp as 4c but along the radial-from-centre direction, so it
+    // works where the surface normal is not global z (see YarnModel.radialBand).
+    if (model.radialBand && model.radialCenter) {
+      const C = model.radialCenter
+      for (let i = 0; i < nodes.length; i++) {
+        const b = model.radialBand[i]
+        if (b == null) continue
+        const n = nodes[i]!
+        if (n.w === 0) continue
+        const dx = n.x - C.x
+        const dy = n.y - C.y
+        const dz = n.z - C.z
+        const d = Math.hypot(dx, dy, dz)
+        if (d < 1e-6) continue
+        let target = d
+        if (b.hi !== undefined && d > b.hi) target = b.hi
+        if (b.lo !== undefined && d < b.lo) target = b.lo
+        if (target !== d) {
+          const f = target / d
+          n.x = C.x + dx * f
+          n.y = C.y + dy * f
+          n.z = C.z + dz * f
+        }
       }
     }
 
