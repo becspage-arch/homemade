@@ -551,22 +551,28 @@ export async function loadHomepageData(
       pushCandidate(p.craftSlug, { kind: 'PATTERN_PICK', pattern: p })
     }
 
-    // Round-robin across categories in public launch order: one candidate from
-    // each category per pass. Walking this pool a day at a time therefore moves
-    // to a new category each day and cycles through them all.
+    // Cap the pool to ONE best candidate per publicly-visible category, in
+    // public launch order. This is deliberately NOT round-robin: cross-stitch
+    // and needlework each carry up to DISCOVERY_PATTERN_LIMIT (24) patterns
+    // while cooking / baking contribute only a handful of editorial picks, so a
+    // round-robin pool is ~48 pattern entries vs a few food ones and the daily
+    // bucket lands on a pattern craft nearly every day. Taking a single entry
+    // per category makes each launch-ordered slug an equal-weight slot, so
+    // stepping the day bucket forward cycles evenly through every live category
+    // (cooking → baking → needlework → cross-stitch → …).
+    //
+    // Within a category the candidates are ordered editorial tutorials first,
+    // then real patterns. A tutorial only qualifies if it actually has a hero
+    // image; if its best one has none we skip to the next candidate (patterns
+    // always carry a thumbnail). A category with no image-bearing candidate is
+    // simply skipped this cycle.
     const orderedSlugs = allCategoryRows
       .map((c) => c.slug)
       .filter((s) => byCategory.has(s))
     const heroPool: HomepageHero[] = []
-    for (let i = 0, added = true; added; i += 1) {
-      added = false
-      for (const slug of orderedSlugs) {
-        const item = byCategory.get(slug)?.[i]
-        if (item) {
-          heroPool.push(item)
-          added = true
-        }
-      }
+    for (const slug of orderedSlugs) {
+      const best = byCategory.get(slug)?.find(heroHasUsableImage)
+      if (best) heroPool.push(best)
     }
     hero = pickByDayBucket(heroPool, now, 1) ?? { kind: 'WORDMARK_FALLBACK' }
   }
@@ -642,6 +648,19 @@ export { isoWeekStartUtc }
  * Uses the UTC epoch so every server instance picks the same item on a
  * given day without coordination. Returns null on empty input.
  */
+/** Whether a hero candidate resolves to a real picture. An EDITORIAL_PICK
+ *  tutorial needs a hero image (cloudflareId or r2Key); a PATTERN_PICK always
+ *  carries a thumbnail, so it always qualifies. Other kinds never enter the
+ *  rotation pool. */
+function heroHasUsableImage(item: HomepageHero): boolean {
+  if (item.kind === 'PATTERN_PICK') return true
+  if (item.kind === 'EDITORIAL_PICK') {
+    const h = item.tutorial.hero
+    return Boolean(h && (h.cloudflareId || h.r2Key))
+  }
+  return false
+}
+
 function pickByDayBucket<T>(pool: T[], now: Date, windowDays: number): T | null {
   if (pool.length === 0) return null
   const msPerWindow = windowDays * 24 * 60 * 60 * 1000
