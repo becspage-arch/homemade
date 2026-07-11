@@ -54,8 +54,10 @@ import { STITCHES } from './dictionary'
 import { createStrand, BASE_ROW_YR, type BuiltContinuous } from './yarnPath'
 
 /** Which fabric face (+1/−1) a stitch is pulled to. Stockinette: always +1.
- *  Garter: flips per course. 1×1 rib: per column, constant up the column. */
-export type KnitFace = 'stockinette' | 'garter' | 'rib'
+ *  Garter: flips per course. 1×1 rib: per column, constant up the column.
+ *  Seed (moss): CHECKERBOARD — alternates every stitch AND every course, so every
+ *  stitch sits between four opposite-face neighbours (the pebbled texture). */
+export type KnitFace = 'stockinette' | 'garter' | 'rib' | 'seed'
 
 /** A per-stitch operation on a knit course.
  *  'k'     = plain knit — one loop through the ONE head below (default everywhere).
@@ -91,9 +93,17 @@ export function buildKnit(
   //  - stockinette: every loop to the same face (+1);
   //  - garter: the whole course flips each row (+1, −1, +1 …);
   //  - rib: each column holds its face for the whole height (even +1, odd −1),
-  //    independent of the course — that constancy IS the vertical rib.
+  //    independent of the course — that constancy IS the vertical rib;
+  //  - seed: the CHECKERBOARD (+1 where j+c is even) — k1 p1 across the course
+  //    AND knits over purls up the columns (moss texture in every direction).
   const faceSign = (j: number, c: number): number =>
-    face === 'rib' ? (c % 2 === 0 ? 1 : -1) : face === 'garter' ? (j % 2 === 0 ? 1 : -1) : 1
+    face === 'seed'
+      ? ((j + c) % 2 === 0 ? 1 : -1)
+      : face === 'rib'
+        ? (c % 2 === 0 ? 1 : -1)
+        : face === 'garter'
+          ? (j % 2 === 0 ? 1 : -1)
+          : 1
 
   // Real stockinette is about two yarn-diameters THICK: legs on the face,
   // heads + sinkers a full layer behind. The initial relief must provide that
@@ -257,7 +267,13 @@ export function buildKnit(
       // (per-column, its own audit passed without it) keep bz = 0, so both stay
       // bit-identical. faceSign is uniform per garter course, so per-stitch = their
       // old per-course value.
-      const bz = face === 'garter' ? yr * 0.7 * fz : 0
+      // SEED shares the corrugation, per-stitch: a seed stitch's head-below has
+      // the OPPOSITE face (checkerboard up the column, same relation as garter's
+      // per-course flip), so without the shift its legs initialise ~0.1yr from
+      // the head they pass and the interlock loses its side — the exact garter
+      // failure. Physically real too: seed fabric is thick pebbled bumps, each
+      // stitch popping to its own face. Gate stays off stockinette + rib.
+      const bz = face === 'garter' || face === 'seed' ? yr * 0.7 * fz : 0
       const op = opOf(c)
       let apex: number
       if (op === 'yo') apex = emitYo(x, fz, s, by, ty)

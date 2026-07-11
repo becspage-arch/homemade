@@ -91,7 +91,7 @@ export type SwatchArg =
   | 'scinc' | 'scdec' | 'hdcinc' | 'hdcdec' | 'dcinc' | 'dcdec'
   | 'shell' | 'vstitch' | 'crossed'
   | 'mrdisc' | 'stockinette' | 'garter' | 'knitrib' | 'ball'
-  | 'yo' | 'k2tog' | 'ssk'
+  | 'yo' | 'k2tog' | 'ssk' | 'seed'
 
 export interface SwatchRecipe {
   /** The dictionary stitch driving gauge + row height for this swatch. */
@@ -117,10 +117,11 @@ export interface SwatchRecipe {
   knitFlip?: boolean
   /**
    * builder 'knit': the pull-side pattern. 'stockinette' (every loop one face),
-   * 'garter' (face flips per course), 'rib' (per-column face → 1×1 rib). Takes
-   * precedence over knitFlip; absent falls back to knitFlip ? garter : stockinette.
+   * 'garter' (face flips per course), 'rib' (per-column face → 1×1 rib), 'seed'
+   * (checkerboard face → moss texture). Takes precedence over knitFlip; absent
+   * falls back to knitFlip ? garter : stockinette.
    */
-  knitFace?: 'stockinette' | 'garter' | 'rib'
+  knitFace?: 'stockinette' | 'garter' | 'rib' | 'seed'
   /**
    * builder 'knit': per-swatch density scales (default 1). knitCourseScale < 1
    * packs courses vertically, knitGaugeScale < 1 packs columns horizontally.
@@ -470,6 +471,18 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     knitStitch: (j, c, W) => decLineOp(j, c, W, 'ssk'),
     relaxProfile: 'worked', tiltDeg: 28, twist: 0.05, openFabric: true,
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2020/04/closeup-of-the-ssk-knitting-decrease-1024x684.jpg', // nimble-needles — closeup of the ssk decrease (left-leaning line)
+    status: 'wip',
+  },
+  // Seed (moss) stitch: k1 p1 alternating every stitch AND every course — the
+  // checkerboard faceSign. Pure pull-side work on the existing machinery
+  // (stockinette/rib bit-identical; garter shares the per-stitch corrugation
+  // value, uniform per its courses, so it is bit-identical too). tiltDeg for the
+  // pebbled relief; slightly packed courses like garter's bumps.
+  seed: {
+    stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFace: 'seed',
+    knitCourseScale: 0.75, knitGaugeScale: 0.95, // seed packs like garter (bumpy rows sit into each other); same edge-slack caution as garter (0.65/0.95) but a touch looser since neighbours alternate within the course too
+    relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
+    referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/01/a-seed-stitch-swatch-1024x684.jpg', // nimble-needles — seed stitch swatch from above (checkerboard bumps)
     status: 'wip',
   },
 }
