@@ -187,6 +187,7 @@ stockinette re-rendered (gate 0.884), both consistent with their 07-10 looks.
 | **yo** (yarn-over eyelet, KNIT) | stockinette + [yo, k2tog, k, k] eyelet courses; the yo is a fed OPEN loop over the needle with no head below, k2tog draws through TWO heads (§8d-shaping) | ◑ **audit-clean (230/230), LOOK soft.** 2026-07-11 (Opus KNIT-DEPTH worker): built the yo (bare loop, no 'through' link — the open span under it is the eyelet) + the knit single decreases k2tog/ssk (one loop through two heads, two audited 'through' links; the merged head rides its own column so the off-centre gather makes the lean). TWO yo constructions tried: (1) bare arc, (2) fed wide open loop. NEITHER opens a crisp hole — numeric probe: eyelet open gap 0.72yr ≈ plain 0.69yr, because the relaxer packs the short knit stitches to uniform density (x is free) and mesh tension can't hold a gap at this swatch scale (§9). The fed-loop version (kept) reads better — the yo rings stand as visible openings in the eyelet bands (tilt 28 + openFabric) — but softer than the reference's crisp round holes. Residual = the same library-wide roving softness/density (a separate worker's crispness pass), not a topology bug. Two-attempt cap on the hole-opening reached; the topology is genuine + audited. Rebecca/orchestrator verdict pending. |
 | **k2tog / ssk** (single decreases, KNIT) | one loop drawn through TWO heads below (two audited 'through' links); merged head on its own column, gathered pair off-centre → the lean EMERGES (k2tog right, ssk left — §8d-shaping) | ◔ both audit-clean (196/196 each; fine yr1.5 audits pass). Numeric lean probe: k2tog mean +1.16yr (RIGHT), ssk mean −1.22yr (LEFT), consistent across all 10 decreases each — the mirrored pair is genuinely mirrored in data. Showcase swatch = two vertical [yo, dec] lines stacked over courses 2–6 on stockinette. RENDERED 2026-07-11: both leans visible as tilted gathered stitches along the decrease lines; busier/subtler than the fine-cotton references at this chunky weight (the merged-head parked OFF column was tried first and dragged the course above 2.1yr sideways — §9). References on file (nimble-needles finished swatches). Rebecca/orchestrator verdict pending. |
 | **seed / moss** (KNIT) | checkerboard faceSign (+1 where j+c even — k1 p1 every stitch AND course) + garter's corrugation applied per-stitch (§8d) | ◔ audit-clean (240/240; fine yr1.5 passes) first build 2026-07-11. Pure pull-side work on the existing machinery; stockinette/knitrib/garter PROVEN bit-identical via settled-geometry sha256 hashes pre/post (the rib-refactor verification). Seed's head-below has the opposite face (same relation as garter's course flip) so it NEEDS the corrugation — without it the legs initialise ~0.1yr from the head they pass (the documented garter failure). RENDERED 2026-07-11: reads as a genuine checkerboard of alternating popped bumps and recessed loops (the moss texture); each bump is a big rounded loop vs the reference's tight pebbles = the library-wide chunky weight character. Rebecca/orchestrator verdict pending. |
+| **cable** (2×2 left cross / C4F, KNIT) | each cable stitch = a genuine loop through a below-head TWO columns away: legs at the mouth's own column (audited 'through'), diagonal travel to the head at the new column; front pair (+z layer) travels LEFT over the back pair (−z) — collision holds the crossover (§8d-shaping) | ◑ **audit-clean (240/240; fine yr1.5 passes), crossover HELD in data, look chunky-fair.** 2026-07-11/12 (Opus KNIT-DEPTH worker), TWO attempts under the new-topology cap: (1) proud +1.6yr travel + bowed slack — audit + probe clean (front +2.1yr / back −2.5yr at both crossings) but the diagonals read as loose ROPES lying on the fabric, surplus shoved neighbour columns into gaps; (2) snug ±1.35yr layers, straight approach, chord-hugging diagonals — audit 240/240, probe front +1.9/back −2.2 HELD, and the render now reads as a genuine chunky left-cross cable (front pair sweeping up-left over the held pair, correct C4F anatomy). Residual: crossing-region fabric stays somewhat disturbed and it reads as super-bulky arm-knit cable, not the reference's crisp fine rope — partly weight character, partly that real cables PULL IN laterally (x-compression) which the free-x relaxer doesn't reproduce. Cap reached; no purl gutters yet (would need a per-column face + ops combination — a follow-on). Rebecca/orchestrator verdict pending. |
 | **knitrib** (1×1 rib, KNIT) | per-COLUMN pull side (even cols +z, odd −z), constant up each column — a purl column is a knit column seen from behind (§8d) | ✅ **LOCKED 2026-07-11** (Rebecca). Audit-clean (240/240); columns settle cleanly alternating (+0.35..0.39 knit / −0.34..−0.41 purl → a real rib). Built on `buildKnit`'s per-(course,column) `faceSign` (stockinette + garter bit-identical). Reads as clear 1×1 rib — raised knit columns as vertical V-chains, recessed valleys FILLED with purl bumps. Chunkier than the fine reference = library-wide weight character. |
 | **shell** (5 dc in one base) | SHELL_N dc fanned into one below-crown, balanced by skipped stitches → constant-width scallops (§8c) | ◔ audit-clean (65/65) — all 5 fanned dc genuinely hook the shared base. New shaped-builder ops `shell`/`skip`; dec/st/inc paths byte-identical (scinc/scdec unchanged). RENDERED 2026-07-11 (hero passed): the 5-post fans radiate clearly from single bases, stacked and alternating; more open/skeletal than the reference's packed scallops (2 shells/row at chunky weight). Rebecca verdict pending. PACK 2026-07-11 (Opus round-2): the fabric was skeletal (big holes, backing showing). Added a per-swatch `gaugeYr`+`rowScale` override to buildShaped (locked stitch gauge/height untouched); shell gauge 2.3→1.5, row pitch 0.72 pack the columns + rows so the fans nest and touch. Plus the openFabric backing fix (below). Audit 65/65. Render now reads as a dense scalloped fabric with the fans touching — the big holes closed, matching the reference's density (chunkier yarn character remains). Rebecca verdict pending. |
 | **hdcinc/hdcdec/dcinc/dcdec** | the SAME shaped builder, taller posts — emitDecrease + the inc path are stitch-generic | ◔ all audit-clean with NO engine change (hdcinc 70/70, hdcdec 60/60, dcinc 52/52, dcdec 44/44). Confirms the shaping paths are genuinely stitch-agnostic. ALL FOUR RENDERED 2026-07-11 (gates 0.935 / 0.925 / 0.940 / 0.923): clean trapezoids, edge shaping legible (fanned inc pairs, converging tog gathers), no foundation lip, no fraying. dcinc's reference photo found + on file (knotions 2dc — was the last empty referenceUrl). Rebecca verdicts pending. |
@@ -386,6 +387,20 @@ stitch a plain `k` and stockinette/rib/garter stay bit-identical (re-audited).
   hold a gap at swatch scale. The topology is genuine + audited; the LOOK is soft
   (the fed yo rings read as openings but not clean holes) — a density/crispness
   limit, deferred to the library-wide yarn pass, not a topology fix.
+- **seed (moss)** — the fourth `KnitFace`: checkerboard faceSign (+1 where j+c
+  even). Needs garter's corrugation applied per-stitch (its head-below is on the
+  opposite face, garter's exact relation); the gate `garter || seed` leaves
+  stockinette/rib at bz = 0 and garter per-course values unchanged (all three
+  PROVEN bit-identical by settled-geometry hash).
+- **cable (2×2 left cross)** — `knitCables: {j, c}[]` in the recipe. Each cable
+  stitch is a loop through a below-head TWO columns away: legs pass the mouth at
+  the below-head's own column (the same audited 'through' interlock), then
+  travel diagonally to throw the head at the new column. Front pair = relative
+  cols 0,1 drawing through +2 (diagonals travel LEFT on a proud +1.35yr layer —
+  the visible left-cross slant); back pair = cols 2,3 through −2 (−1.35yr,
+  behind). Init separation 2.7yr > the 2.5yr collision diameter keeps the
+  crossover ordered; 3 interior nodes per diagonal (node-based collision);
+  straight buried approach (slack surplus reads as loose surface ropes — §9).
 
 The two lessons that made stockinette pass (see §9):
 - **Fabric thickness is a real budget.** Stockinette is ~2 yarn diameters thick.
@@ -577,6 +592,19 @@ the interactive chart).
   library-wide yarn-crispness/density pass (firmer, less-roving yarn holds mesh
   gaps), NOT another yo tweak — two-attempt cap reached. Do not chase it with
   more placement values; it needs firmer fabric.
+- **Cable diagonals fed surplus yarn on a proud travel layer read as loose ropes
+  lying ON the fabric, not a cable** (cable attempt 1, 2026-07-11). The crossing
+  topology + audit + z-order probe were all clean; the LOOK failed because the
+  +1.6yr travel layer + bowed slack let the relaxer park the extra length as a
+  surface float, and the surplus shoved the neighbouring columns into gaps. A
+  cable's crossing pairs hug the fabric — snug the travel layers to just over
+  the collision floor (±1.35yr, separation 2.7yr > 2.5yr) and keep diagonals on
+  their chord with a straight buried approach. Slack belongs at the ANCHOR ends
+  (the bobble lesson), not spread along a visible travel. Remaining honest gap:
+  real cables PULL IN laterally at the crossing; the free-x relaxer doesn't
+  reproduce that compression, so the crossing region stays slightly disturbed —
+  parked with the library-wide density/crispness questions, not another
+  placement tweak.
 - **A retroactive z-nudge on an already-placed node barely survives relaxation**
   (blo/flo ridge, 2026-07-07). Pushing `nodes[k].z *= 1.7` AFTER the node is placed
   fights its own recorded distance-constraint rest lengths; the relaxer mostly undoes
