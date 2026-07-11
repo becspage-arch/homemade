@@ -359,6 +359,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   crossed: {
     stitch: 'dc', rows: 5, auditW: 12, builder: 'shaped',
     shapeRows: crossedPlan(5, 5),
+    gaugeYr: 1.9, rowScale: 0.85, // moderate pack (2026-07-11): the fabric was too open/skeletal; pack the columns + rows so the crossings sit in a firm fabric with just the small eyelets the reference keeps, not big holes
     relaxProfile: 'worked', tiltDeg: 16, twist: 0.1, openFabric: true,
     referenceUrl: 'https://richtexturescrochet.com/wp-content/uploads/2020/09/IMG_2051-1024x683.jpg', // richtexturescrochet — crossed dc swatch (rows of X pairs)
     status: 'wip',

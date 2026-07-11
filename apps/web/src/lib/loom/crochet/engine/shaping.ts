@@ -264,7 +264,7 @@ export function buildShaped(
         const b1 = belowWork[bi++]!
         const b2 = belowWork[bi++]!
         const reach = [b2, b1] // work order: forward first, then back to the skipped
-        const relief = [0.6, 1.4] // first tucks behind, second crosses in front
+        const relief = [0.4, 1.75] // DEEPER front/back z-split (was 0.6/1.4): the shallow split let some pairs settle parallel (both posts same z-side → diagonal slants, not an X); a bolder split makes the second post unambiguously cross in FRONT so the X dominates every pair
         for (let t = 0; t < 2; t++) {
           const idx = latticeAt(li++)
           const xC = lattice[idx]!
