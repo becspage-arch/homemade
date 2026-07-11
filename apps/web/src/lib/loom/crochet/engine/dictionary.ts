@@ -391,7 +391,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     stitch: 'sc', rows: 6, auditW: 16, builder: 'round',
     roundCounts: [6, 12, 18, 24, 30, 36],
     gaugeYr: 1.5, // DENSITY (2026-07-11): pack the disc — sc's locked 1.8 gauge left round-to-round trenches (measured ~0.35yr radial gaps over the 1.25yr collision floor) so it read as coiled rope; 1.5 packs stitches AND (via drift = 0.9·sw) rounds together, closing the gaps toward the reference's pinprick spacing without touching the locked flat sc gauge
-    relaxProfile: 'round', tiltDeg: 0, twist: 0.05, // calm twist — the radiating V line is the identity, don't bury it in ply noise
+    relaxProfile: 'round', tiltDeg: 0, twist: 0.08, // CRISPNESS 2026-07-11: 0.05 was "calm" for the old merged-ply model (twist = surface noise); the distinct-ply model's twist IS the visible ply line — 0.08 shows real yarn without burying the Vs
     referenceUrl: 'https://sarahmaker.com/wp-content/uploads/2022/03/crochet-circle-7-819x1024.jpg',
     status: 'wip',
   },
