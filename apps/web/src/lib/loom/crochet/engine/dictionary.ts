@@ -350,7 +350,8 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   vstitch: {
     stitch: 'dc', rows: 5, auditW: 12, builder: 'shaped',
     shapeRows: vstitchPlan(5, 5),
-    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1, openFabric: true,
+    rowScale: 0.8, // calm the row sag (2026-07-11): the tall dc posts sagged + tangled into an untidy lattice; a shorter row pitch firms the Vs vertically. Gauge left OPEN (no override) so the lace mesh stays airy like the reference.
+    relaxProfile: 'worked', tiltDeg: 16, twist: 0.05, openFabric: true, // calmer ply so the lattice columns read clean, not ropey
     referenceUrl: 'https://i0.wp.com/mycrochetory.com/wp-content/uploads/2023/08/How-to-crochet-V-stitch-1.jpg', // mycrochetory — V-stitch swatch (the ch-1 open variant; ours is the solid 2-dc V)
     status: 'wip',
   },
