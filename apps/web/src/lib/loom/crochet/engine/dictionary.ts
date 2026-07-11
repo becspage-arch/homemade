@@ -340,8 +340,16 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   },
   garter: {
     stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFlip: true, relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
-    knitCourseScale: 0.7,
-    knitGaugeScale: 0.85, // pack the ridge rows tight — real garter is much denser vertically than stockinette (closes the see-through gaps)
+    // Density calibration 2026-07-11: courses pack to 0.65 (the see-through was
+    // VERTICAL — dark gaps between courses), gauge relaxes to 0.95 so the edge
+    // legs keep their turn slack (0.6/0.8 and every tight-both-ways combo
+    // slipped the c0/c11 legs sideways out of the mouth — audit fail). Settled
+    // z-thickness (~5.7yr) is the corrugation model's own and does not shrink
+    // with bz; the truly-packed reference look needs the accordion redesign
+    // (parked, §9). This is the densest audit-clean calibration of the shipping
+    // corrugation model.
+    knitCourseScale: 0.65,
+    knitGaugeScale: 0.95,
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/04/close-up-of-a-swatch-in-garter-stitch-1024x684.jpg',
     status: 'wip',
   },
