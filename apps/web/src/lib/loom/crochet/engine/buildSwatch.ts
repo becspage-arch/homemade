@@ -28,7 +28,7 @@ export function buildRelaxedSwatch(arg: SwatchArg, W: number, yr: number): Built
     recipe.builder === 'shaped'
       ? buildShaped(recipe.stitch, recipe.shapeRows!, W, yr)
       : recipe.builder === 'round'
-        ? buildRounds(recipe.stitch, recipe.roundCounts!, yr)
+        ? buildRounds(recipe.stitch, recipe.roundCounts!, yr, recipe.gaugeYr)
         : recipe.builder === 'sphere'
           ? buildSphere(recipe.stitch, recipe.equatorCount ?? 30, yr)
           : recipe.builder === 'knit'

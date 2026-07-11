@@ -354,13 +354,22 @@ export function buildRounds(
   st: StitchId,
   counts: number[],
   yarnRadiusMm: number,
+  gaugeYr?: number,
 ): BuiltContinuous {
   const yr = yarnRadiusMm
-  const sw = yr * STITCHES[st].gaugeYr
+  const sw = yr * (gaugeYr ?? STITCHES[st].gaugeYr)
   const dims = stitchDims(yr)
   const { zh } = dims
   const rowH = yr * BASE_ROW_YR * STITCHES[st].heightFactor
-  const drift = rowH * 1.05 // radial pitch per round (slight stretch vs a flat row)
+  // Radial pitch per round tied to the STITCH gauge, not the row height: a disc
+  // packs when its rounds sit ~one stitch-gauge apart radially (a +6 round of sc
+  // needs circumference 6·sw = 2π·Δr, i.e. Δr ≈ 0.955·sw). Tying drift to sw
+  // means the disc's density knob (the gaugeYr override) packs the rounds AND the
+  // stitches together — reduce the gauge and the round-to-round trenches close
+  // proportionally, with no new inner-round crowding. At the locked sc gauge 1.8
+  // this is 1.62yr, within 0.4% of the old rowH·1.05 (1.6275yr) — the trebles
+  // etc. that never called this override are unchanged.
+  const drift = sw * 0.9
   // Same-face rounds pile every stitch's leg bulge on ONE face (no turn cancels it),
   // so the surface between the proud crowns reads knotty. Calm the leg bulge; crown
   // height + dive depth (the interlock) are left full, unlike the burned crownLay.
@@ -371,8 +380,11 @@ export function buildRounds(
   const { nodes, push } = S
 
   // The magic ring: a drawn-tight loop, pinned (the anchor). Its hole is about a
-  // yarn-diameter across once tightened.
-  const rr = yr * 1.15
+  // yarn-diameter across once tightened — kept SMALL so round 1 closes around a
+  // near-invisible centre (the reference disc has a pinprick middle, not an open
+  // hole). The 6 round-1 hooks crowd this radius and collision spreads them; the
+  // 'ring' link role tolerates that squash (it is held by wrapping, not a z-side).
+  const rr = yr * 0.85
   const RING_N = 18
   const ringNodes: number[] = []
   for (let i = 0; i < RING_N; i++) {
