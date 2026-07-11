@@ -4,6 +4,7 @@ import {
   prisma,
   computePatternMetrics,
   Visibility,
+  ImageGenerationStatus,
   r2Upload,
   ensureHouseDesigner,
   type PatternData,
@@ -194,6 +195,13 @@ export async function publishCrossStitchGem(
     difficulty: difficultyFor(m.colourCount),
     visibility: Visibility.PUBLIC,
     publishedAt: new Date(),
+    // The cross-stitch hero IS the deterministic beauty chart render (persisted as
+    // thumbnailMediaId) — the exact pattern, and the correct final hero by design
+    // (there is no photoreal AI hero, and none is wanted). SUCCESS is the honest
+    // terminal value: the hero was produced and passed the gate. It is NOT a
+    // fallback — the render is the intended hero. (The renderer reads
+    // thumbnailMediaId; this flag is informational only.)
+    heroGenerationStatus: ImageGenerationStatus.SUCCESS,
     widthCells: m.widthCells,
     heightCells: m.heightCells,
     colourCount: m.colourCount,

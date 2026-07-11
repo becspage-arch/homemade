@@ -198,12 +198,18 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
   },
 ]
 
-/** Size/complexity lanes — the planner MUST spread a batch across these. */
+/**
+ * Size/complexity lanes — the planner MUST spread a batch across these, extremes
+ * included. The catalogue needs range in BOTH directions: tiny pocket-size charms
+ * AND enormous heirloom showpieces, not a wall of medium pieces.
+ */
 export const CROSS_STITCH_SIZE_LANES = [
+  { lane: 'mini', cells: '55–80', colours: '6–12', note: 'a TINY pocket-size motif — one sweet character / charm / tiny scene, a single-evening make; flat cute styles only (never a detailed portrait)' },
   { lane: 'small', cells: '110–130', colours: '14–20', note: 'quick single motif / character; square or slightly tall' },
   { lane: 'medium', cells: '150–165', colours: '24–32', note: 'floral, wreath, mid scene' },
   { lane: 'large', cells: '200–220', colours: '42–52', note: 'showpiece scene, full coverage' },
   { lane: 'dense', cells: '200–230', colours: '110–150', note: 'HUGE detailed showpiece — Flux 1.1 Pro + full DMC; rare, a few per batch at most' },
+  { lane: 'epic', cells: '260–300', colours: '90–150', note: 'an ENORMOUS heirloom showpiece — a huge richly-detailed scene filling a big canvas; rare, a real statement piece' },
 ] as const
 
 // ─────────────────────────── NEEDLEWORK ───────────────────────────

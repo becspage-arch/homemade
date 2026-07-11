@@ -97,10 +97,15 @@ Gold-standard examples of the bar (invent NEW ideas of THIS calibre — do not c
 - "a hedgehog barista pulling a tiny espresso in a woodland cafe"
 - "a witch's apothecary shelf of glowing potion bottles, herbs and a curious cat"
 
-AVOID generic filler: a plain basket of fruit, a plain single flower, "a [breed] portrait", a bare wreath — UNLESS you elevate it with a distinctive hook, character, rich styling or a twist. If it sounds like every other Etsy chart, rewrite it.
+AVOID generic filler: a plain basket of fruit, a plain single flower, "a [breed] portrait", a bare wreath — UNLESS you elevate it with a distinctive hook, character, rich styling or a twist. If it sounds like every other Etsy chart, rewrite it. Boring, safe, "medium and fine" is a FAIL — we are building the best cross-stitch collection in the world, so every brief should be one a stitcher screenshots to show a friend.
 
 Hard rules:
-- Span the full COMPLEXITY RANGE in every batch: mostly small/medium, a couple of large showpieces, and occasionally one dense 100+ colour showpiece. Never all one size.
+- Span the WHOLE SIZE RANGE, extremes included — deliberately reach for both ends, never a wall of medium pieces:
+  · at least one 'mini' TINY piece (a tiny pocket charm / single sweet character) in every batch;
+  · a couple of small/medium pieces;
+  · a large showpiece;
+  · and when the batch is big enough, an 'epic' ENORMOUS heirloom showpiece and/or a 'dense' 100+ colour showpiece.
+  Extraordinary in BOTH directions — tiny-and-adorable and huge-and-jaw-dropping — not everything clustered in the middle.
 - Vary SUBJECT, STYLE, SHAPE (square/tall/wide/circular) and SIZE — a samey set fails even if each piece is fine.
 - Only the generic-generation lanes below. No readable text/lettering (the converter can't render text). No copying a specific shop/celebrity/brand/franchise design.
 - Respect each theme's notes (e.g. faces fair/pale only; wordless signage; tame warm-red animals).
@@ -129,7 +134,7 @@ function xsPromptText(count: number, recentSlugs: string[]): string {
 THEMES (use themeId + one of its styles + its shelf):
 ${themes}
 
-SIZE LANES (spread the batch across these; w/h in cells, pick shape to suit the subject):
+SIZE LANES (spread this batch ACROSS THE FULL RANGE incl. the extremes — at least one 'mini', a couple of small/medium, a 'large', and reach for a 'dense'/'epic' showpiece when there's room; never all-medium; w/h in cells, pick shape to suit the subject):
 ${lanes}
 
 - subject: a specific, vivid noun phrase WITHOUT any style words (e.g. "a sleeping red fox curled in autumn leaves"), invented around the theme examples — do NOT just copy them.
@@ -149,8 +154,8 @@ function coerceXsBrief(raw: RawXsBrief, seen: Set<string>): CrossStitchBrief | n
       : pick(theme.styles)
   const lane = CROSS_STITCH_SIZE_LANES.find((l) => l.lane === raw.sizeLane) ?? CROSS_STITCH_SIZE_LANES[0]
   const [loC, hiC] = lane.colours.split('–').map((s) => parseInt(s, 10))
-  const w = clamp(raw.w ?? 150, 90, 240)
-  const h = clamp(raw.h ?? 150, 90, 240)
+  const w = clamp(raw.w ?? 150, 48, 300)
+  const h = clamp(raw.h ?? 150, 48, 300)
   const colours = clamp(raw.colours ?? loC!, 6, 160)
   const base = slugify(`${theme.id}-${raw.subject}`)
   let slug = `${base}-${uniqueSuffix()}`
@@ -162,7 +167,7 @@ function coerceXsBrief(raw: RawXsBrief, seen: Set<string>): CrossStitchBrief | n
     style,
     w,
     h,
-    colours: clamp(colours, loC ?? 14, hiC ?? colours),
+    colours: clamp(colours, loC ?? 6, hiC ?? colours),
     ...(typeof raw.sat === 'number' ? { sat: clamp(raw.sat * 100, 90, 115) / 100 } : {}),
     shelf: theme.shelf,
     shelfName: theme.shelfName,
@@ -170,15 +175,20 @@ function coerceXsBrief(raw: RawXsBrief, seen: Set<string>): CrossStitchBrief | n
   })
 }
 
+/** Mid canvas per lane for the fallback — keeps the sampler honest to each lane. */
+const FALLBACK_MID_CELLS: Record<string, number> = { mini: 68, small: 120, medium: 155, large: 210 }
+
 /** Deterministic-ish fallback brief from the curated examples (always safe). */
 function sampleXsBrief(theme: CrossStitchTheme, seen: Set<string>): CrossStitchBrief {
-  const lane = pick(CROSS_STITCH_SIZE_LANES.slice(0, 3)) // never force dense in the fallback
+  // Span mini → large in the fallback (never force the dense/epic extremes
+  // unguided — those need a deliberate brief), so a fallback batch still varies.
+  const lane = pick(CROSS_STITCH_SIZE_LANES.slice(0, 4))
   const [loC, hiC] = lane.colours.split('–').map((s) => parseInt(s, 10))
   const subject = pick(theme.examples)
   const isTall = /tall|stem|spire|foxglove|delphinium|hollyhock|lighthouse/i.test(subject)
   const isWide = /band|row|field|landscape|wide|receding/i.test(subject)
   const isWreath = theme.styles.includes('wreath') && /wreath|ring/i.test(subject)
-  const midCells = lane.lane === 'small' ? 120 : lane.lane === 'medium' ? 155 : 210
+  const midCells = FALLBACK_MID_CELLS[lane.lane] ?? 155
   const w = isTall ? Math.round(midCells * 0.75) : isWide ? Math.round(midCells * 1.3) : midCells
   const h = isTall ? Math.round(midCells * 1.3) : isWide ? Math.round(midCells * 0.7) : isWreath ? midCells : midCells
   const base = slugify(`${theme.id}-${subject}`)
@@ -187,7 +197,7 @@ function sampleXsBrief(theme: CrossStitchTheme, seen: Set<string>): CrossStitchB
   seen.add(slug)
   return applyStyleFloors({
     slug, subject, style: pick(theme.styles),
-    w: clamp(w, 90, 240), h: clamp(h, 90, 240),
+    w: clamp(w, 48, 300), h: clamp(h, 48, 300),
     colours: clamp((loC! + hiC!) / 2, 6, 160),
     shelf: theme.shelf, shelfName: theme.shelfName, themeId: theme.id,
   })

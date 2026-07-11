@@ -39,7 +39,14 @@ interface AuditRow {
 }
 function runLine(row: AuditRow): string {
   const m = (row.metadata ?? {}) as Record<string, unknown>
-  if (typeof m.line === 'string') return m.line
+  const trigger = m.trigger === 'cron' ? 'auto' : m.trigger === 'manual' ? 'manual' : null
+  const tag = trigger ? `[${trigger}] ` : ''
+  if (typeof m.line === 'string') {
+    const kills = Array.isArray(m.topKillReasons) ? (m.topKillReasons as { reason?: unknown; count?: unknown }[]) : []
+    const top = kills[0]
+    const killNote = top && typeof top.reason === 'string' ? ` · top kill: “${top.reason}”` : ''
+    return `${tag}${m.line}${killNote}`
+  }
   if (row.action.endsWith('requested')) return `queued ${String(m.count ?? '?')} × ${String(m.craft ?? '?')}`
   return row.action
 }
@@ -122,7 +129,7 @@ export default async function AdminBulkGenerationPage() {
     prisma.auditLog.findMany({
       where: { action: { in: ['system.bulk_generation.completed', 'system.bulk_generation.requested'] } },
       orderBy: { createdAt: 'desc' },
-      take: 12,
+      take: 20,
       select: { id: true, action: true, createdAt: true, metadata: true },
     }),
     prisma.category.findMany({
@@ -165,7 +172,9 @@ export default async function AdminBulkGenerationPage() {
             Server-side catalogue fill for the pattern crafts. Each batch plans varied briefs across the
             full complexity range, generates on the shared engine, runs the ruthless keep-or-kill vision
             gate, and publishes only the gems — stopping automatically at each craft&rsquo;s target. Run one
-            on demand below, or let the cron fill in the background. Live run history is in the{' '}
+            on demand below, or let the cron fill in the background. Every run — manual and automatic —
+            is recorded under Recent runs below (published / culled / regenerations / errors + top kill
+            reasons); live per-step logs are in the{' '}
             <a href={INNGEST_DASHBOARD_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-sage)' }}>Inngest dashboard</a>.
           </p>
         </div>
@@ -266,11 +275,11 @@ export default async function AdminBulkGenerationPage() {
         </div>
       </section>
 
-      {/* ── Recent manual runs ────────────────────────────────────────── */}
+      {/* ── Recent runs (manual + automatic cron) ─────────────────────── */}
       <section style={{ marginBottom: 32 }}>
-        <h2 style={H2}>Recent manual runs</h2>
+        <h2 style={H2}>Recent runs</h2>
         {recent.length === 0 ? (
-          <p style={{ ...LORA_SM, margin: 0 }}>No manual runs recorded yet.</p>
+          <p style={{ ...LORA_SM, margin: 0 }}>No runs recorded yet.</p>
         ) : (
           <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8 }}>
             {recent.map((r) => (

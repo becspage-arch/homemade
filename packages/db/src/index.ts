@@ -74,6 +74,10 @@ export { maybeFlipCategoryPipelineComplete } from './category-pipeline-status'
 // rows can't drift back into existence.
 export { ensureHouseDesigner, HOUSE_DESIGNER_SLUG } from './house-designer'
 
+// The single canonical Homemade system actor — owns audit entries for unattended
+// jobs (cron bulk generation) that have no admin user behind them.
+export { ensureSystemActor, SYSTEM_ACTOR_CLERK_ID } from './system-actor'
+
 // Reverse-sweep helpers (phase_technique_linking_002). The Inngest function
 // and the backfill script both call into `sweepForTechnique`; the pure
 // matcher helpers ship alongside for unit-testing without a database.

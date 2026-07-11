@@ -1,5 +1,5 @@
 import 'server-only'
-import { prisma, Visibility } from '@homemade/db'
+import { prisma, Visibility, ensureSystemActor } from '@homemade/db'
 import { inngest } from '../client'
 import { audit } from '@/lib/audit'
 import { runCrossStitchBatch, runNeedleworkBatch, type BatchSummary, type Craft } from '@/lib/studio/generation/bulk/run'
@@ -53,21 +53,48 @@ async function publicCount(craft: Craft): Promise<number> {
   return prisma.pattern.count({ where: { type: 'CROSS_STITCH', ownerUserId: null, visibility: Visibility.PUBLIC } })
 }
 
-/** Manual runs carry a real admin user id → record a rich audit entry. */
-async function auditManual(triggeredBy: unknown, summary: BatchSummary): Promise<void> {
-  if (typeof triggeredBy !== 'string' || !triggeredBy) return
+/**
+ * Aggregate raw cull reasons into the top few (normalised + counted) so the audit
+ * entry says WHY a batch dipped without storing every reason string.
+ */
+function topKillReasons(reasons: string[]): { reason: string; count: number }[] {
+  const counts = new Map<string, number>()
+  for (const r of reasons) {
+    const key = r.trim().toLowerCase().replace(/\s+/g, ' ').slice(0, 60)
+    if (key) counts.set(key, (counts.get(key) ?? 0) + 1)
+  }
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(([reason, count]) => ({ reason, count }))
+}
+
+/**
+ * Record EVERY executed batch — cron included — so automatic runs aren't a black
+ * box. Manual runs attribute to the admin who fired them; cron runs attribute to
+ * the system sentinel actor (the AuditLog.actorId FK needs a real User). Uses the
+ * same action the "recent runs" admin panel reads.
+ */
+async function recordRun(craft: Craft, manual: boolean, triggeredBy: unknown, summary: BatchSummary): Promise<void> {
+  const actorId =
+    manual && typeof triggeredBy === 'string' && triggeredBy
+      ? triggeredBy
+      : (await ensureSystemActor()).id
   await audit({
-    actorId: triggeredBy,
+    actorId,
     action: 'system.bulk_generation.completed',
     resource: `bulk:${summary.craft}`,
     metadata: {
       craft: summary.craft,
+      trigger: manual ? 'manual' : 'cron',
       requested: summary.requested,
       published: summary.published,
       culled: summary.culled,
       repaired: summary.repaired,
+      generations: summary.generations,
       errors: summary.errors,
       gems: summary.gems,
+      topKillReasons: topKillReasons(summary.killReasons),
       line: summary.line,
       ...(summary.skipped ? { skipped: summary.skipped } : {}),
     },
@@ -100,7 +127,7 @@ async function runCraft(
 
   const n = manual ? manualCount(data?.count, cronCount) : cronCount
   const summary = await run(n)
-  if (manual) await auditManual(data?.triggeredBy, summary)
+  await recordRun(craft, manual, data?.triggeredBy, summary)
   return summary
 }
 
