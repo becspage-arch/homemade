@@ -113,13 +113,30 @@ export interface YarnFilaments {
 }
 
 /**
- * Spiral `nPly` plies around a 3D centre-line (a helix in a parallel-transported
- * frame, so the frame never flips) → the spun-yarn filaments. `twistPerMm` sets
- * how tight the ply spiral is.
+ * Yarn-crispness model (2026-07-11). See STITCH_ENGINE.md §11.
+ *
+ * `bundleR` is the target OUTER radius of the finished yarn. We lay `nPly`
+ * distinct rounded plies spiralling around the centre-line so the render reads
+ * as firm PLIED yarn — visible ply grooves + a barber-pole twist + a crisp
+ * self-shadowed silhouette — instead of a smooth fuzzy roving tube (the old
+ * merged-ply model, which the whole library rendered as soft twisted roving).
+ *
+ * The two crispness levers, both here (library-wide, render-only):
+ *  - PLY_RADIUS_FRAC — each ply's tube radius as a fraction of the outer radius.
+ *    Below ~0.5 the three plies sit as a trefoil with real grooves between them;
+ *    push it up and they merge back into a smooth tube (roving). The plies still
+ *    touch (no daylight) because the outermost ply edge reaches `bundleR`.
+ *  - TWIST_GAIN — real worsted yarn barber-poles; the per-stitch recipe twist
+ *    (0.05 calm … 0.1 rustic) is far too lazy to read as ply, so we lift every
+ *    stitch's twist by a constant that keeps the recipes' RELATIVE intent (a
+ *    "calm" stitch still twists less than a "rustic" one).
  */
+const PLY_RADIUS_FRAC = 0.46
+const TWIST_GAIN = 3.4
 export function pliedFilaments(center: V3[], bundleR: number, nPly: number, twistPerMm: number): YarnFilaments {
-  const filRadius = (bundleR / Math.sqrt(nPly)) * 0.96
+  const filRadius = bundleR * PLY_RADIUS_FRAC
   const spread = Math.max(0, bundleR - filRadius)
+  const twist = twistPerMm * TWIST_GAIN
   if (center.length < 2) return { radiusMm: filRadius, filaments: [] }
 
   // Tangents + arclength.
@@ -157,7 +174,7 @@ export function pliedFilaments(center: V3[], bundleR: number, nPly: number, twis
     const phase0 = (2 * Math.PI * f) / nPly
     const poly: number[][] = []
     for (let i = 0; i < n; i++) {
-      const ph = arc[i]! * twistPerMm * 2 * Math.PI + phase0
+      const ph = arc[i]! * twist * 2 * Math.PI + phase0
       const off = add(scale(N1[i]!, Math.cos(ph) * spread), scale(N2[i]!, Math.sin(ph) * spread))
       const p = add(center[i]!, off)
       poly.push([p.x, p.y, p.z])

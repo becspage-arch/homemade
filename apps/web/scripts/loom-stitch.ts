@@ -71,7 +71,7 @@ function main() {
   const nodes = built.model.nodes
   const ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
   const center = smooth(ctrl, 4)
-  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, recipe.twist)
+  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.85, 3, recipe.twist) // yr*0.85 = target OUTER yarn radius (crisp plied model, §11)
   const scene = {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
     strokes: [{ hex, sheen: 0.85, radiusMm, filaments }],
