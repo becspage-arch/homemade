@@ -2,7 +2,7 @@ import 'server-only'
 import { prisma, Visibility, ensureSystemActor } from '@homemade/db'
 import { inngest } from '../client'
 import { audit } from '@/lib/audit'
-import { runCrossStitchBatch, runNeedleworkBatch, type BatchSummary, type Craft } from '@/lib/studio/generation/bulk/run'
+import { runCrossStitchBatch, runNeedleworkBatch, type BatchSummary, type Craft, type StepRunner } from '@/lib/studio/generation/bulk/run'
 import { isAutopilotEnabled } from '@/lib/studio/generation/bulk/autopilot-state'
 
 /**
@@ -102,33 +102,44 @@ async function recordRun(craft: Craft, manual: boolean, triggeredBy: unknown, su
 }
 
 /**
- * Shared body — plain async (no Inngest step). Each function wraps ONE call to
- * this in a single step.run so it's checkpointed/retryable as a unit.
+ * Shared body — STEP-DRIVEN. The preflight (autopilot + target check), the batch
+ * itself (per-attempt steps inside `run`), and the audit write each run as their
+ * own Inngest steps. The preflight MUST be a memoised step: `publicCount` changes
+ * as gems publish, so branching on it outside a step would make the handler
+ * non-deterministic across Inngest's replays. `run` receives the step runner so
+ * every generate→gate→publish attempt is its own short HTTP request (no single
+ * request hits Cloudflare's ~100s proxy timeout).
  */
 async function runCraft(
   craft: Craft,
   eventData: unknown,
   cronCount: number,
-  run: (n: number) => Promise<BatchSummary>,
+  run: (n: number, step: StepRunner) => Promise<BatchSummary>,
+  step: StepRunner,
 ): Promise<unknown> {
   const data = eventData as BatchEventData | undefined
   const manual = typeof data?.count === 'number'
 
-  if (!manual && !(await isAutopilotEnabled(craft))) {
-    return { skipped: `autopilot paused for ${craft}` }
-  }
-  // Cron stops at the category target; a manual run can still top up past it.
-  if (!manual) {
-    const count = await publicCount(craft)
-    if (count >= TARGETS[craft]) {
-      return { skipped: 'catalogue full', count, target: TARGETS[craft] }
+  const pre = await step.run(`preflight-${craft}`, async (): Promise<{ skip: string | null; count?: number; target?: number }> => {
+    if (!manual && !(await isAutopilotEnabled(craft))) return { skip: `autopilot paused for ${craft}` }
+    // Cron stops at the category target; a manual run can still top up past it.
+    if (!manual) {
+      const count = await publicCount(craft)
+      if (count >= TARGETS[craft]) return { skip: 'catalogue full', count, target: TARGETS[craft] }
     }
-  }
+    return { skip: null }
+  })
+  if (pre.skip) return { skipped: pre.skip, ...(pre.count != null ? { count: pre.count, target: pre.target } : {}) }
 
   const n = manual ? manualCount(data?.count, cronCount) : cronCount
-  const summary = await run(n)
-  await recordRun(craft, manual, data?.triggeredBy, summary)
+  const summary = await run(n, step)
+  await step.run(`record-${craft}`, () => recordRun(craft, manual, data?.triggeredBy, summary))
   return summary
+}
+
+/** Adapt Inngest's step to the runner interface the batch orchestrator expects. */
+function stepRunner(step: { run: <T>(id: string, fn: () => Promise<T>) => Promise<T> }): StepRunner {
+  return { run: (id, fn) => step.run(id, fn) }
 }
 
 export const bulkCrossStitchBatch = inngest.createFunction(
@@ -140,7 +151,7 @@ export const bulkCrossStitchBatch = inngest.createFunction(
     triggers: [{ cron: '0 */2 * * *' }, { event: 'bulk/cross-stitch.batch' }],
   },
   async ({ event, step }) =>
-    step.run('bulk-cross-stitch', () => runCraft('cross-stitch', event.data, XS_CRON_COUNT, runCrossStitchBatch)),
+    runCraft('cross-stitch', event.data, XS_CRON_COUNT, runCrossStitchBatch, stepRunner(step)),
 )
 
 export const bulkNeedleworkBatch = inngest.createFunction(
@@ -153,5 +164,5 @@ export const bulkNeedleworkBatch = inngest.createFunction(
     triggers: [{ cron: '0 */6 * * *' }, { event: 'bulk/needlework.batch' }],
   },
   async ({ event, step }) =>
-    step.run('bulk-needlework', () => runCraft('needlework', event.data, NW_CRON_COUNT, runNeedleworkBatch)),
+    runCraft('needlework', event.data, NW_CRON_COUNT, runNeedleworkBatch, stepRunner(step)),
 )

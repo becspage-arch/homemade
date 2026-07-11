@@ -17,14 +17,33 @@ import {
 /**
  * The batch RUNNER — the craft-agnostic orchestrator the Inngest jobs call. One
  * firing = one batch: plan varied briefs → per candidate (generate → GATE →
- * repair-or-cull → publish the gems) → a one-line summary. This is the exact loop
- * the retired PC routine ran, now server-side and unattended.
+ * repair/re-roll/cull → publish the gems) → a one-line summary.
+ *
+ * STEP-DRIVEN. Each unit of real work (planning, and every generate→gate→publish
+ * ATTEMPT) runs inside its own `step.run`, so each is a separate short HTTP
+ * request that Inngest orchestrates. This is load-bearing: the whole batch used
+ * to run in ONE synchronous request and blew Cloudflare's ~100s proxy timeout
+ * (HTTP 504) after publishing only a gem or two — the cause of the low, patchy
+ * yield. Per-attempt steps keep every request small; the batch can then run for
+ * many minutes across dozens of steps and actually finish. A local caller (a
+ * server script / test) passes no step and everything runs inline.
  *
  * Nothing ships un-judged: if the gate isn't wired (ANTHROPIC_API_KEY unset) the
  * run is a clean no-op — it generates nothing rather than publish blind.
  */
 
 export type Craft = 'cross-stitch' | 'needlework'
+
+/**
+ * Minimal step runner — matches Inngest's `step.run(id, fn)`. Inline default so
+ * the batch also runs outside Inngest (local scripts) with no orchestration.
+ * Step results MUST be JSON-serialisable (Inngest memoises them), so every
+ * attempt returns a small verdict object — never the render Buffer / PatternData.
+ */
+export interface StepRunner {
+  run<T>(id: string, fn: () => Promise<T>): Promise<T>
+}
+const inlineStep: StepRunner = { run: (_id, fn) => fn() }
 
 export interface BatchSummary {
   craft: Craft
@@ -54,6 +73,14 @@ export interface BatchSummary {
 const MAX_XS_ATTEMPTS = 4
 const MAX_NW_REPAIRS = 1 // needlework re-rolls a Fargate render — keep repairs tight.
 
+/** The lightweight, JSON-safe result of ONE generate→gate→(maybe publish) attempt. */
+interface AttemptResult {
+  verdict: GateResult['verdict']
+  reasons: string[]
+  repairAction?: GateResult['repairAction']
+  published: boolean
+}
+
 /**
  * A 'kill' that a fresh re-roll genuinely can't fix — the fault is in the IDEA,
  * not this roll of it. Same subject → same readable text, same IP-risk, same
@@ -70,8 +97,8 @@ function killIsUnrerollable(reasons: string[]): boolean {
   )
 }
 
-function tweakFor(g: GateResult): CandidateTweak {
-  switch (g.repairAction) {
+function tweakFor(action: GateResult['repairAction']): CandidateTweak {
+  switch (action) {
     case 'more-saturation':
       return { satMul: 1.15 }
     case 'more-colours':
@@ -85,35 +112,51 @@ function tweakFor(g: GateResult): CandidateTweak {
 
 // ─────────────────────────── CROSS-STITCH ───────────────────────────
 
-export async function runCrossStitchBatch(count: number): Promise<BatchSummary> {
+/** One cross-stitch attempt: generate → gate → publish on 'keep'. Buffer stays local. */
+async function crossStitchAttempt(
+  brief: Awaited<ReturnType<typeof planCrossStitchBriefs>>[number],
+  tweak: CandidateTweak,
+  keptSubjects: string[],
+): Promise<AttemptResult> {
+  const candidate = await generateCrossStitchCandidate(brief, tweak)
+  const verdict = await visionGate(candidate.renderPng, {
+    subject: brief.subject,
+    craft: 'cross-stitch',
+    colours: candidate.colourCount,
+    keptSubjects,
+  })
+  if (verdict.verdict === 'keep') {
+    await publishCrossStitchGem(brief, candidate)
+    return { verdict: 'keep', reasons: verdict.reasons, published: true }
+  }
+  return { verdict: verdict.verdict, reasons: verdict.reasons, repairAction: verdict.repairAction, published: false }
+}
+
+export async function runCrossStitchBatch(count: number, step: StepRunner = inlineStep): Promise<BatchSummary> {
   const base: BatchSummary = { craft: 'cross-stitch', requested: count, published: 0, culled: 0, repaired: 0, generations: 0, errors: 0, gems: [], killReasons: [], line: '' }
   if (!gateConfigured()) {
     return { ...base, skipped: 'gate-not-wired', line: 'cross-stitch batch skipped — ANTHROPIC_API_KEY not set, refusing to publish un-gated' }
   }
 
-  const recent = await recentCrossStitchSlugs().catch(() => [])
-  const briefs = await planCrossStitchBriefs(count, recent)
+  const briefs = await step.run('xs-plan', async () => {
+    const recent = await recentCrossStitchSlugs().catch(() => [])
+    return planCrossStitchBriefs(count, recent)
+  })
   const keptSubjects: string[] = []
 
   for (const brief of briefs) {
     try {
-      // Best-of-N: take up to MAX_XS_ATTEMPTS fresh shots at this idea. A 'repair'
-      // re-rolls with a cosmetic tweak; a re-rollable 'kill' re-rolls fresh; a
-      // kill the idea can't survive (text/IP/near-dup) short-circuits to a cull.
+      // Best-of-N: take up to MAX_XS_ATTEMPTS fresh shots at this idea, each its
+      // own step. A 'repair' re-rolls with a cosmetic tweak; a re-rollable 'kill'
+      // re-rolls fresh; a kill the idea can't survive (text/IP/near-dup) culls.
       let tweak: CandidateTweak = {}
-      let verdict: GateResult | null = null
+      let last: AttemptResult | null = null
       let publishedThis = false
       for (let attempt = 1; attempt <= MAX_XS_ATTEMPTS; attempt++) {
         base.generations++
-        const candidate = await generateCrossStitchCandidate(brief, tweak)
-        verdict = await visionGate(candidate.renderPng, {
-          subject: brief.subject,
-          craft: 'cross-stitch',
-          colours: candidate.colourCount,
-          keptSubjects,
-        })
-        if (verdict.verdict === 'keep') {
-          await publishCrossStitchGem(brief, candidate)
+        const tweakForStep = tweak
+        last = await step.run(`xs-${brief.slug}-a${attempt}`, () => crossStitchAttempt(brief, tweakForStep, keptSubjects))
+        if (last.verdict === 'keep') {
           keptSubjects.push(brief.subject)
           base.gems.push(brief.slug)
           base.published++
@@ -121,18 +164,18 @@ export async function runCrossStitchBatch(count: number): Promise<BatchSummary> 
           break
         }
         if (attempt >= MAX_XS_ATTEMPTS) break // out of shots — cull below
-        if (verdict.verdict === 'repair') {
+        if (last.verdict === 'repair') {
           base.repaired++
-          tweak = tweakFor(verdict)
+          tweak = tweakFor(last.repairAction)
           continue
         }
         // verdict === 'kill'
-        if (killIsUnrerollable(verdict.reasons)) break // re-roll can't save it — cull
+        if (killIsUnrerollable(last.reasons)) break // re-roll can't save it — cull
         tweak = {} // a bad roll of a fine idea — take a fresh stochastic shot
       }
-      if (!publishedThis && verdict && verdict.verdict !== 'keep') {
+      if (!publishedThis && last && last.verdict !== 'keep') {
         base.culled++
-        base.killReasons.push(...verdict.reasons)
+        base.killReasons.push(...last.reasons)
       }
     } catch (err) {
       base.errors++
@@ -146,7 +189,26 @@ export async function runCrossStitchBatch(count: number): Promise<BatchSummary> 
 
 // ─────────────────────────── NEEDLEWORK ───────────────────────────
 
-export async function runNeedleworkBatch(count: number): Promise<BatchSummary> {
+/** One needlework attempt: Flux → convert → loom render → gate → publish on 'keep'. */
+async function needleworkAttempt(
+  brief: Awaited<ReturnType<typeof planNeedleworkBriefs>>[number],
+  keptSubjects: string[],
+): Promise<AttemptResult> {
+  const candidate = await generateNeedleworkCandidate(brief)
+  const verdict = await visionGate(candidate.heroPng, {
+    subject: brief.subject,
+    craft: 'needlework',
+    colours: candidate.conversion.colourCount,
+    keptSubjects,
+  })
+  if (verdict.verdict === 'keep') {
+    await publishNeedleworkGem(brief, candidate)
+    return { verdict: 'keep', reasons: verdict.reasons, published: true }
+  }
+  return { verdict: verdict.verdict, reasons: verdict.reasons, published: false }
+}
+
+export async function runNeedleworkBatch(count: number, step: StepRunner = inlineStep): Promise<BatchSummary> {
   const base: BatchSummary = { craft: 'needlework', requested: count, published: 0, culled: 0, repaired: 0, generations: 0, errors: 0, gems: [], killReasons: [], line: '' }
   if (!gateConfigured()) {
     return { ...base, skipped: 'gate-not-wired', line: 'needlework batch skipped — ANTHROPIC_API_KEY not set, refusing to publish un-gated' }
@@ -155,42 +217,37 @@ export async function runNeedleworkBatch(count: number): Promise<BatchSummary> {
     return { ...base, skipped: 'render-not-wired', line: 'needlework batch skipped — LOOM_RENDER!=fargate, hero render not wired' }
   }
 
-  const recent = await recentNeedleworkSlugs().catch(() => [])
-  const briefs = await planNeedleworkBriefs(count, recent)
+  const briefs = await step.run('nw-plan', async () => {
+    const recent = await recentNeedleworkSlugs().catch(() => [])
+    return planNeedleworkBriefs(count, recent)
+  })
   const keptSubjects: string[] = []
 
   // Needlework re-rolls an expensive Fargate render, so its repair cap stays
   // tight (no best-of-N): a 'kill' culls immediately.
   for (const brief of briefs) {
     try {
-      let verdict: GateResult | null = null
+      let last: AttemptResult | null = null
       let publishedThis = false
       for (let attempt = 0; attempt <= MAX_NW_REPAIRS; attempt++) {
         base.generations++
-        const candidate = await generateNeedleworkCandidate(brief)
-        verdict = await visionGate(candidate.heroPng, {
-          subject: brief.subject,
-          craft: 'needlework',
-          colours: candidate.conversion.colourCount,
-          keptSubjects,
-        })
-        if (verdict.verdict === 'keep') {
-          await publishNeedleworkGem(brief, candidate)
+        last = await step.run(`nw-${brief.slug}-a${attempt}`, () => needleworkAttempt(brief, keptSubjects))
+        if (last.verdict === 'keep') {
           keptSubjects.push(brief.subject)
           base.gems.push(brief.slug)
           base.published++
           publishedThis = true
           break
         }
-        if (verdict.verdict === 'repair' && attempt < MAX_NW_REPAIRS) {
+        if (last.verdict === 'repair' && attempt < MAX_NW_REPAIRS) {
           base.repaired++
           continue // a fresh render is the only repair we run for needlework.
         }
         break
       }
-      if (!publishedThis && verdict && verdict.verdict !== 'keep') {
+      if (!publishedThis && last && last.verdict !== 'keep') {
         base.culled++
-        base.killReasons.push(...verdict.reasons)
+        base.killReasons.push(...last.reasons)
       }
     } catch (err) {
       base.errors++
@@ -202,6 +259,6 @@ export async function runNeedleworkBatch(count: number): Promise<BatchSummary> {
   return base
 }
 
-export async function runBatch(craft: Craft, count: number): Promise<BatchSummary> {
-  return craft === 'needlework' ? runNeedleworkBatch(count) : runCrossStitchBatch(count)
+export async function runBatch(craft: Craft, count: number, step: StepRunner = inlineStep): Promise<BatchSummary> {
+  return craft === 'needlework' ? runNeedleworkBatch(count, step) : runCrossStitchBatch(count, step)
 }
