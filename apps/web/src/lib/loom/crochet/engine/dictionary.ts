@@ -262,6 +262,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
       const rb = Math.floor((j - 1) / 2)
       return (block + rb) % 2 === 0 ? 'fpdc' : 'bpdc' // 3-wide blocks, swap every 2 rows
     },
+    gaugeYr: 1.9, postReliefScale: 1.35, // CONTRAST (2026-07-11): the block alternation barely read (uniform vertical posts). Deepen the fp/bp relief 1.35× (per-swatch — locked fpdc/bpdc/postrib untouched) so raised blocks pop over recessed ones, and pack the columns (2.3->1.9) so the 3-wide blocks tile tight — the over-under basket weave becomes legible
     referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2017/04/IMG_0708.jpg', // daisyfarmcrafts — cream basketweave swatch
     status: 'wip',
   },

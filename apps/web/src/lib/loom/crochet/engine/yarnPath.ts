@@ -91,6 +91,12 @@ export interface BuildOpts {
    * all-fpdc swatch, so postrib overrides it while locked fpdc/bpdc keep theirs.
    */
   gaugeYr?: number
+  /**
+   * Scales the fp/bp POST relief (default 1 = identity, so locked fpdc/bpdc/
+   * postrib are bit-identical). Basketweave alone raises it to deepen the
+   * raised-vs-recessed block contrast so the over-under basket tiling reads.
+   */
+  postReliefScale?: number
 }
 
 /** SCRATCH DIAGNOSTIC ONLY (not audited, not rendered): the blo/flo ridge node
@@ -590,7 +596,8 @@ export function buildContinuous(
         // Only the post BODY pops (fp proud forward, bp mildly recessed but still
         // visible); the HEAD stays at the fabric plane so the stitch-to-stitch travel
         // runs flat along the row — otherwise adjacent fp/bp heads jump z and tangle.
-        const ppz = postMode === 'fp' ? z * 3.0 : -z * 2.2 // fp ribs pop forward, bp valleys sink back — the contrast IS the rib
+        const prs = opts.postReliefScale ?? 1 // 1 = identity (locked fpdc/bpdc/postrib); basketweave deepens it for block contrast
+        const ppz = (postMode === 'fp' ? z * 3.0 : -z * 2.2) * prs // fp ribs pop forward, bp valleys sink back — the contrast IS the rib
         // A FULL two-strand post (like a dc), wrapped around the stem below and popped
         // boldly forward (fp) or back (bp). Heads stay at the PLANE so the row's travel
         // runs flat and alternating fp/bp columns don't tangle; the body pop alone
