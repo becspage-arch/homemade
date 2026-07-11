@@ -460,7 +460,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     stitch: 'k', rows: 9, auditW: 12, builder: 'knit', knitFace: 'stockinette',
     knitStitch: (j, c, W) => decLineOp(j, c, W, 'k2tog'),
     relaxProfile: 'worked', tiltDeg: 28, twist: 0.05, openFabric: true,
-    referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/06/how-to-knit-two-stitches-together.jpg', // nimble-needles — k2tog (right-leaning decrease)
+    referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/09/a-knitted-swatch-decreased-with-k2tog-on-both-sides-1024x684.jpg', // nimble-needles — swatch decreased with k2tog (right-leaning line)
     status: 'wip',
   },
   // ssk — left-leaning single decrease, the mirror of k2tog. Same two-line showcase
@@ -469,7 +469,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     stitch: 'k', rows: 9, auditW: 12, builder: 'knit', knitFace: 'stockinette',
     knitStitch: (j, c, W) => decLineOp(j, c, W, 'ssk'),
     relaxProfile: 'worked', tiltDeg: 28, twist: 0.05, openFabric: true,
-    referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/06/ssk-knitting-1.jpg', // nimble-needles — ssk (left-leaning decrease)
+    referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2020/04/closeup-of-the-ssk-knitting-decrease-1024x684.jpg', // nimble-needles — closeup of the ssk decrease (left-leaning line)
     status: 'wip',
   },
 }
