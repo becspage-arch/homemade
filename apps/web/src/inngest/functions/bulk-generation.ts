@@ -137,9 +137,16 @@ async function runCraft(
   return summary
 }
 
-/** Adapt Inngest's step to the runner interface the batch orchestrator expects. */
-function stepRunner(step: { run: <T>(id: string, fn: () => Promise<T>) => Promise<T> }): StepRunner {
-  return { run: (id, fn) => step.run(id, fn) }
+/**
+ * Adapt Inngest's `step` to the small runner interface the batch orchestrator
+ * expects. Inngest's `step.run` is heavily overloaded and returns `Jsonify<T>`
+ * (it serialises step output); our step results are already plain JSON, so we
+ * bridge the two at this boundary with a typed cast.
+ */
+function stepRunner(step: {
+  run: (id: string, fn: () => Promise<unknown>) => Promise<unknown>
+}): StepRunner {
+  return { run: <T>(id: string, fn: () => Promise<T>) => step.run(id, fn) as Promise<T> }
 }
 
 export const bulkCrossStitchBatch = inngest.createFunction(
