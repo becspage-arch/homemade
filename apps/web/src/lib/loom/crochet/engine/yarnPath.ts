@@ -643,13 +643,18 @@ export function buildContinuous(
         // through yarn.
         const crownZ = zh * 1.15 * fz
         const hookZ = (crownZ >= 0 ? -1 : 1) * z * 1.6
-        const top = ty + yr * 2.2 // loop apex ≈ a ch-3 nub above the head
-        push(x + s * cw * 0.55, ty + dh * 0.7, zh * 1.5 * fz) // rise off the crown trail
-        push(x + s * cw * 0.35, ty + (top - ty) * 0.6, zh * 1.8 * fz)
-        push(x, top, zh * 1.9 * fz) // the loop's apex
-        push(x - s * cw * 0.35, ty + (top - ty) * 0.6, zh * 1.8 * fz)
-        push(x - s * cw * 0.55, ty + dh * 0.7, zh * 1.2 * fz) // down the other side
-        push(x - s * cw * 0.2, ty - dh * 0.15, z * 0.5 * fz) // approach the head for the sl st
+        // TIGHT picot (2026-07-11): the old nub was fed 2.2yr tall and cw·0.55
+        // wide — too much yarn, so it relaxed into a floppy dangling loop. The
+        // reference picots are small FIRM points. Feed less: a short 1.35yr nub,
+        // narrow (cw·0.3), the two sides converging steeply to a point apex, and
+        // the sl-st drawn tight into the crown so the loop stands perky.
+        const top = ty + yr * 1.35 // a short ch-3 nub — fed tight so it stands as a firm point
+        push(x + s * cw * 0.3, ty + dh * 0.5, zh * 1.4 * fz) // rise off the crown, tight to the head
+        push(x + s * cw * 0.16, ty + (top - ty) * 0.62, zh * 1.7 * fz)
+        push(x, top, zh * 1.8 * fz) // the loop's apex — a small point
+        push(x - s * cw * 0.16, ty + (top - ty) * 0.62, zh * 1.7 * fz)
+        push(x - s * cw * 0.3, ty + dh * 0.5, zh * 1.15 * fz) // down the other side, tight
+        push(x - s * cw * 0.15, ty - dh * 0.15, z * 0.5 * fz) // approach the head for the sl st
         const slst = push(x, ty - dh, hookZ) // sl st: under the crown, far z-side
         links.push({ j, c, role: 'hook', hook: slst, below: r.crownBack })
         push(x + s * pw * 0.35, ty - dh * 0.35, z * 0.5 * fz) // emerge, continue the row
