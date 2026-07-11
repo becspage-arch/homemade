@@ -531,7 +531,7 @@ export function buildContinuous(
         const bc = belowBack[c]!
         const cy = nodes[bc]!.y
         const hookZ = (nodes[bc]!.z >= 0 ? -1 : 1) * z * 1.6
-        const bz = z * 7.0 // bulge boldly off the surface (≈2.1yr) so the berry stands clear of the sc relief
+        const bz = z * 6.0 // bulge off the surface (≈1.8yr) — proud enough to stand on the flat sc rows, not so tall it reads as a giant knot
         const midY = cy + (ty - cy) * 0.55
         push(x + s * pw, by + px * 0.45, z * fz) // down from the previous head toward the base
         const bobbleHook = push(x, cy - dh, hookZ) // hook UNDER the crown below — the shared base
@@ -555,7 +555,7 @@ export function buildContinuous(
         for (let k = 0; k < N; k++) {
           const t = (k + 0.5) / N - 0.5 // −0.4 … +0.4 across the fan
           const dome = 1 - (t * 2) ** 2 * 0.45 // centre loop fullest, outer ~0.85
-          const ox = t * cw * 2.2 // wider fan → a berry the reference's width
+          const ox = t * cw * 1.4 // TIGHTER fan (round-2): the wide cw·2.2 splat read as an amorphous lump; gather the 5 loops into a compact round ball ~0.6 of a stitch wide, sc showing between berries
           push(x + ox * 0.7, cy + dh * 0.8, bz * 0.5 * dome) // low on the ball, just forward
           push(x + ox, midY, bz * dome) // the widest, most-forward bulge (the berry)
           push(x + ox * 0.55, ty - dh * 0.9, bz * 0.55 * dome) // high on the ball, heading to the gather

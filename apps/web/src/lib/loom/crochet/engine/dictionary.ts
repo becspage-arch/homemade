@@ -428,9 +428,14 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
  * classic offset polka-dot field.
  */
 function bobbleDot(j: number, c: number): StitchId {
-  if (j === 0 || j % 2 === 0) return 'sc'
-  const off = (Math.floor(j / 2) % 2) * 2 // 0 or 2 — stagger row to row
-  return c >= 2 && c <= 12 && (c - 2 - off) % 4 === 0 ? 'bobble' : 'sc'
+  // Plain sc on even rows; a DEDICATED BOBBLE ROW on every odd row, with a berry
+  // every OTHER interior stitch (one sc between berries). This is the classic
+  // bobble fabric — tidy ROWS of round balls sitting on flat sc rows (the
+  // daisyfarmcrafts reference), NOT scattered staggered polka-dots (which read as
+  // lumps in porridge — the round-2 verdict). Edges stay plain: a cluster hard on
+  // the pinned selvedge strangles its base hook (§9).
+  if (j % 2 === 0) return 'sc'
+  return c >= 2 && c <= 12 && c % 2 === 0 ? 'bobble' : 'sc'
 }
 
 /** inc at both ends of every row: w0 → w0 + 2·rows. */
