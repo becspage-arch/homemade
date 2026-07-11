@@ -1605,6 +1605,7 @@ model Media {
   crochetPatternThumbnails    CrochetPattern[]      @relation("CrochetPatternThumbnail")
   crochetPatternSchematics    CrochetPattern[]      @relation("CrochetPatternSchematic")
   crochetPatternHeros         CrochetPattern[]      @relation("CrochetPatternHero")
+  crochetPatternLoomHeros     CrochetPattern[]      @relation("CrochetPatternLoomHero")
   needleworkPatternThumbnails NeedleworkPattern[]   @relation("NeedleworkPatternThumbnail")
   needleworkPatternHeroes     NeedleworkPattern[]   @relation("NeedleworkPatternHero")
   crochetGaugeSwatchPhotos    CrochetProjectGauge[] @relation("CrochetGaugeSwatchPhoto")
@@ -4773,6 +4774,40 @@ model CrochetPattern {
   hero                 Media?                @relation("CrochetPatternHero", fields: [heroMediaId], references: [id], onDelete: SetNull)
   heroGenerationStatus ImageGenerationStatus @default(PENDING)
 
+  // ──────────────────────────────────────────────────────────────────────────
+  // Loom pattern engine (phase_crochet_pattern_engine_001).
+  //
+  // loomProgram is the machine-EXECUTABLE stitch program — the stitch-by-stitch
+  // source the loom compiles three ways that can never drift apart: geometry
+  // (the rendered hero IS the exact pattern), the written `rowsStructured`, and
+  // the `chartData` symbol chart. It generalises the aspenProgram fixture shape.
+  // Distinct from rowsStructured (human words) and chartData (chart vector),
+  // which the loom DERIVES from it — store the program and the other two are
+  // regenerable, never hand-kept in sync.
+  //
+  // loomProgram shape — see CrochetProgram in
+  //   apps/web/src/lib/loom/crochet/engine/program.ts:
+  //   { name, form: 'flat' | 'grid' | 'disc' | 'sphere',
+  //     stitch?, foundation?, rows?, grid?, rounds?,
+  //     yarnWeight: 'fine' | 'worsted' | 'bulky', colourHex, palette?,
+  //     rowColours?, gaugeText?, finishedSizeMm?, hookMm?, notes? }
+  //
+  // The loom hero is the EXACT-pattern render (deterministic geometry + a
+  // fidelity-gated photoreal finish, no AI drift — feedback_hero_must_be_exact
+  // _pattern), so it is tracked separately from the Fal img2img hero above; a
+  // pattern renderer prefers loomHero when it is present.
+  // loomRenderStatus / loomRenderedAt / loomFidelityScore record the last
+  // render-on-publish run; loomGeometryHash lets a re-publish skip re-rendering
+  // when the compiled geometry is unchanged.
+  loomProgram       Json?
+  loomHeroMediaId   String?
+  loomHero          Media?                @relation("CrochetPatternLoomHero", fields: [loomHeroMediaId], references: [id], onDelete: SetNull)
+  loomRenderStatus  ImageGenerationStatus @default(PENDING)
+  loomRenderedAt    DateTime?
+  loomYarnRadiusMm  Float?
+  loomFidelityScore Float?
+  loomGeometryHash  String?
+
   assemblyInstructions Json?
 
   // Pattern shape and construction
@@ -4930,6 +4965,7 @@ model CrochetPattern {
   @@index([primaryYarnWeightId])
   @@index([primaryHookId])
   @@index([heroMediaId])
+  @@index([loomHeroMediaId])
   @@index([popularityScore])
   @@index([craftStitchSlugs], type: Gin)
   @@index([craftTechniqueTags], type: Gin)

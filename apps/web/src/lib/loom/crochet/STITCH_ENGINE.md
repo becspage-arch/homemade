@@ -409,6 +409,45 @@ real amigurumi), Studio integration (Studio authors programs; renderHero-style
 publish step renders them), and the reverse map (program → ChartDefinition for
 the interactive chart).
 
+## 8e-1. CROCHET PATTERN ENGINE — build 1 (flat, 12 locked stitches, 2026-07-11)
+
+Build 1 of ~2 turned a stored program into a rendered, chart-bearing,
+self-heroing FLAT pattern on the twelve locked stitches. It sits entirely in a
+new program/pattern layer + the schema; NO stitch-geometry file was touched.
+
+- **Mixed stitches per row.** `CrochetProgram` gained a `'grid'` form: a
+  fixed-width flat piece whose every row is a per-cell `StitchId[]` (`gridWidth`
+  wide), compiled through `buildContinuous` + `stitchAt` — the proven mixed-stitch
+  path (postrib/basketweave build exactly this way). `compileProgram` routes
+  flat→buildShaped, grid→buildContinuous, disc/sphere as before. An optional
+  `gaugeYr` packs post-rib columns (1.5, the locked value). Yarn weight →
+  render `yr` via `YARN_WEIGHT_RADIUS_MM` (lace…super-bulky); one program renders
+  fine/worsted/bulky by swapping it.
+- **Program → ChartDefinition (forward).** `programToChart()` emits the product's
+  stored chart shape (`craft-charts/types.ts`) from the SAME program — grid/flat
+  rows or disc/sphere rounds, worked stitches as cells (inc/dec read from the
+  changing per-row count). Pairs with the existing `programFromChart` (reverse).
+- **Render-on-publish.** `engine/programScene.ts` = the pure core (compile →
+  relax → audit gate → Blender scene JSON + a stable `geometryHash`).
+  `scripts/loom-pattern.ts` = the CLI/engine (`renderProgram()`): audit → base
+  render → fidelity-gated photoreal hero (falls back to the exact base without
+  FAL_KEY). `scripts/render-pattern-on-publish.ts` loads a stored
+  `CrochetPattern.loomProgram`, renders its OWN exact hero, persists it, and
+  writes back the loom* fields + regenerated `chartData`/`rowsStructured`
+  (idempotent by `geometryHash`). Build-time only (Blender/Fal on a worker box).
+- **Schema.** `CrochetPattern` gained `loomProgram` (the executable stitch
+  program) + `loomHero`/`loomRenderStatus`/`loomRenderedAt`/`loomFidelityScore`/
+  `loomGeometryHash`/`loomYarnRadiusMm` (migration
+  `20260926000000_phase_crochet_pattern_engine_001`). The loom hero is the
+  exact-pattern render, tracked distinctly from the Fal img2img hero.
+- **Proofs.** `scripts/loom-pattern-proofs.ts` — three Homemade-original flat
+  patterns across a complexity range (stripe dishcloth → 1×1 post-rib headband →
+  texture sampler), all audit-clean, all locked stitches.
+- **OUT (build 2 / later):** round/amigurumi composition, stranded/intarsia
+  colourwork topology, knit patterns, the Studio "design your own" UI. Colour is
+  stored on the program/schema now (no backfill) but the base render is
+  single-colour — stripe/colourwork rendering is the next build.
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,
