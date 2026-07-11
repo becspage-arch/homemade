@@ -144,6 +144,13 @@ export interface SwatchRecipe {
    * Real crossing yarn held by collision. Stockinette ground only.
    */
   knitCables?: { j: number; c: number }[]
+  /**
+   * builder 'knit': PURL columns on a stockinette ground (per-column face, like
+   * rib — constant up the column, corrugation-free). Used to sink recessed purl
+   * GUTTERS flanking a cable column so the raised cable reads as a braided rope
+   * in reverse-stockinette valleys. Absent → plain stockinette (bit-identical).
+   */
+  knitPurlCols?: number[]
   /** builder 'sphere': stitches around the equator (sets the ball's size). */
   equatorCount?: number
   /** Chain relaxes with its own profile (soft squash + table floor); rounds hold
@@ -491,12 +498,22 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2021/01/a-seed-stitch-swatch-1024x684.jpg', // nimble-needles — seed stitch swatch from above (checkerboard bumps)
     status: 'wip',
   },
-  // 2×2 left-cross rope cable (C4F): a centre 4-column group crossing every 4
-  // courses (j=3 and j=7) on a stockinette ground. The held pair travels LEFT in
-  // front of the working pair — real crossing yarn held by collision (§8d).
+  // 2×2 left-cross ROPE cable (C4F) as a real cable PANEL: a centre 4-column cable
+  // group (cols 6..9) crossing every 4 courses up the FULL height (j=3,7,11,15 →
+  // a braided rope COLUMN, not one isolated cross), flanked by 2-column recessed
+  // PURL gutters (cols 4,5 and 10,11 — reverse-stockinette valleys that frame the
+  // raised rope, per the reference), all sitting in a plain stockinette field
+  // (cols 0..3 and 12..15). The held pair travels LEFT in front of the working
+  // pair — real crossing yarn held by collision (§8d). The gutters use the rib
+  // per-column face (constant up the column, corrugation-free), leaving locked
+  // stockinette/rib/garter geometry bit-identical (verified by settled-geo hash).
+  // The crosses sit on ODD courses so the work direction through the group matches
+  // the proven crossing (even-course crosses at this width left the inner back leg
+  // settling behind its head — the crossing construction itself is untouched).
   cable: {
-    stitch: 'k', rows: 10, auditW: 12, builder: 'knit', knitFace: 'stockinette',
-    knitCables: [{ j: 3, c: 4 }, { j: 7, c: 4 }],
+    stitch: 'k', rows: 18, auditW: 16, builder: 'knit', knitFace: 'stockinette',
+    knitCables: [{ j: 3, c: 6 }, { j: 7, c: 6 }, { j: 11, c: 6 }, { j: 15, c: 6 }],
+    knitPurlCols: [4, 5, 10, 11],
     relaxProfile: 'worked', tiltDeg: 28, twist: 0.05,
     referenceUrl: 'https://nimble-needles.com/wp-content/uploads/2020/05/2x2-cable-stitch-swatch-1024x684.jpg', // nimble-needles — 2×2 rope cable swatch (left cross on the left)
     status: 'wip',

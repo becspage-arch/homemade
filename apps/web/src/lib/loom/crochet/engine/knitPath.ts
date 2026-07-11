@@ -88,6 +88,14 @@ export function buildKnit(
    *  loops at cols 2,3 draw through the below-heads at −2, travelling right
    *  BEHIND. Real crossing yarn held by collision. Stockinette only. */
   cables?: { j: number; c: number }[],
+  /** Optional PURL columns on a stockinette ground — a purl is a knit loop pulled
+   *  to the OTHER face, constant up the column (the rib mechanism, per-column and
+   *  corrugation-free — a purl column's head-below is the SAME face its whole
+   *  height, unlike garter/seed). Used to sink recessed purl GUTTERS either side
+   *  of a cable column so the raised cable reads as a braided rope framed by
+   *  reverse-stockinette valleys. Empty (the default) → plain stockinette,
+   *  bit-identical. Only meaningful on the stockinette face. */
+  purlCols?: Set<number>,
 ): BuiltContinuous {
   const yr = yarnRadiusMm
   const swk = yr * STITCHES.k.gaugeYr * gaugeScale
@@ -102,6 +110,7 @@ export function buildKnit(
   //    independent of the course — that constancy IS the vertical rib;
   //  - seed: the CHECKERBOARD (+1 where j+c is even) — k1 p1 across the course
   //    AND knits over purls up the columns (moss texture in every direction).
+  const purl = purlCols ?? new Set<number>()
   const faceSign = (j: number, c: number): number =>
     face === 'seed'
       ? ((j + c) % 2 === 0 ? 1 : -1)
@@ -109,7 +118,9 @@ export function buildKnit(
         ? (c % 2 === 0 ? 1 : -1)
         : face === 'garter'
           ? (j % 2 === 0 ? 1 : -1)
-          : 1
+          : purl.has(c) // stockinette, with optional recessed purl gutters (per-column, like rib)
+            ? -1
+            : 1
 
   // Real stockinette is about two yarn-diameters THICK: legs on the face,
   // heads + sinkers a full layer behind. The initial relief must provide that
