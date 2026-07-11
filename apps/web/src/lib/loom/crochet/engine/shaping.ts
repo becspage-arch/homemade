@@ -136,12 +136,19 @@ export function buildShaped(
   rowPlans: ShapeOp[][],
   W0: number,
   yarnRadiusMm: number,
+  /** Per-swatch column-gauge override (yarn radii), leaving the driving stitch's
+   *  locked dictionary gauge untouched — packs open shaped fabrics (shell/V) so
+   *  their fans touch. */
+  gaugeYr?: number,
+  /** Per-swatch row-pitch scale (default 1) — packs the rows vertically for a
+   *  dense scalloped fabric without changing the stitch's dictionary height. */
+  rowScale?: number,
 ): BuiltContinuous {
   const yr = yarnRadiusMm
-  const sw = yr * STITCHES[st].gaugeYr
+  const sw = yr * (gaugeYr ?? STITCHES[st].gaugeYr)
   const dims = stitchDims(yr)
   const { z, zh, cw, dh } = dims
-  const rowH = yr * BASE_ROW_YR * STITCHES[st].heightFactor
+  const rowH = yr * BASE_ROW_YR * STITCHES[st].heightFactor * (rowScale ?? 1)
 
   ridgeDebugNodes.length = 0
   const S = createStrand()

@@ -162,6 +162,12 @@ export interface SwatchRecipe {
    */
   gaugeYr?: number
   /**
+   * builder 'shaped': per-swatch row-pitch scale (default 1) — packs the rows
+   * vertically so an open scalloped fabric (shell) reads dense, without touching
+   * the driving stitch's dictionary height.
+   */
+  rowScale?: number
+  /**
    * Render framing margin (fraction of the content span) — the pipeline's default
    * is 0.12. A tall 3D object (the ball) projects above an xy-tight frame under
    * camera tilt and clips; a generous margin frames the FULL silhouette. Flat
@@ -330,6 +336,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   shell: {
     stitch: 'dc', rows: 5, auditW: 13, builder: 'shaped',
     shapeRows: shellPlan(2, 5),
+    gaugeYr: 1.5, rowScale: 0.72, // PACK (2026-07-11): dc's open 2.3 gauge + tall posts left the scallops skeletal with big holes; pack the columns (1.5) and shorten the row pitch (0.72) so adjacent fans nest and touch like the reference's dense scalloped fabric (1.7/0.82 helped but stayed open)
     relaxProfile: 'worked', tiltDeg: 16, twist: 0.1, openFabric: true,
     referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2016/06/Stitch-Book-PART-2-70-e1628964882533-1021x1024.png', // daisyfarmcrafts — classic shell swatch
     status: 'wip',
