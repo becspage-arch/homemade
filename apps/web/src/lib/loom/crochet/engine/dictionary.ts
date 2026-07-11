@@ -168,6 +168,14 @@ export interface SwatchRecipe {
    * swatches leave it undefined (default crop).
    */
   viewMargin?: number
+  /**
+   * OPEN lace fabric (dc/tr with real holes: shell, V-stitch, crossed, dc
+   * increases). The renderer drops the yarn-coloured backing plane for these so
+   * each hole shows the table surface instead of a solid dark rectangle behind
+   * the lace. Dense fabrics leave it undefined (backing on — no gap flashes bg).
+   * Presentation only.
+   */
+  openFabric?: boolean
 }
 
 export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
@@ -305,7 +313,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   dcinc: {
     stitch: 'dc', rows: 4, auditW: 8, builder: 'shaped',
     shapeRows: growPlan(8, 4),
-    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
+    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1, openFabric: true,
     referenceUrl: 'https://knotions.com/wp-content/uploads/2018/10/2dc.jpg', // knotions — completed 2dc increase with the V pair marked (found 2026-07-11; fuller-swatch candidates stayed lazy-loaded)
     status: 'wip',
   },
@@ -322,7 +330,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   shell: {
     stitch: 'dc', rows: 5, auditW: 13, builder: 'shaped',
     shapeRows: shellPlan(2, 5),
-    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
+    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1, openFabric: true,
     referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2016/06/Stitch-Book-PART-2-70-e1628964882533-1021x1024.png', // daisyfarmcrafts — classic shell swatch
     status: 'wip',
   },
@@ -335,7 +343,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   vstitch: {
     stitch: 'dc', rows: 5, auditW: 12, builder: 'shaped',
     shapeRows: vstitchPlan(5, 5),
-    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
+    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1, openFabric: true,
     referenceUrl: 'https://i0.wp.com/mycrochetory.com/wp-content/uploads/2023/08/How-to-crochet-V-stitch-1.jpg', // mycrochetory — V-stitch swatch (the ch-1 open variant; ours is the solid 2-dc V)
     status: 'wip',
   },
@@ -344,7 +352,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   crossed: {
     stitch: 'dc', rows: 5, auditW: 12, builder: 'shaped',
     shapeRows: crossedPlan(5, 5),
-    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
+    relaxProfile: 'worked', tiltDeg: 16, twist: 0.1, openFabric: true,
     referenceUrl: 'https://richtexturescrochet.com/wp-content/uploads/2020/09/IMG_2051-1024x683.jpg', // richtexturescrochet — crossed dc swatch (rows of X pairs)
     status: 'wip',
   },

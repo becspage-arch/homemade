@@ -75,7 +75,7 @@ function main() {
   const scene = {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
     strokes: [{ hex, sheen: 0.85, radiusMm, filaments }],
-    view: { bgHex: '#6f5440', marginFactor: recipe.viewMargin ?? 0.12, tiltDeg: recipe.tiltDeg, resY: 1200 },
+    view: { bgHex: '#6f5440', marginFactor: recipe.viewMargin ?? 0.12, tiltDeg: recipe.tiltDeg, resY: 1200, openFabric: recipe.openFabric ?? false },
   }
   const scenePath = resolve(OUT, `${name}.json`)
   const basePng = resolve(OUT, `${name}.png`)

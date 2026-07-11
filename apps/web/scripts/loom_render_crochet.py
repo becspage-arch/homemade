@@ -222,11 +222,18 @@ def main():
 
     # Backing right under the loops (yarn colour, darker) so no gap shows surface.
     # Sized to the full content (not the possibly-cropped frame) so a tight crop
-    # never reveals its edge.
-    bpy.ops.mesh.primitive_plane_add(size=1.0, location=(cx, cy, backing_z))
-    backing = bpy.context.active_object
-    backing.scale = (contentW * 0.54, contentH * 0.54, 1.0)
-    backing.data.materials.append(backing_material(yarn_hex))
+    # never reveals its edge. OPEN fabrics (dc/tr lace: shell, V-stitch, crossed,
+    # dc increases) are MEANT to show the table through their holes — a
+    # yarn-coloured backing plane there reads as solid dark rectangles floating
+    # behind the lace. For those, drop the backing so each hole shows the surface
+    # (a lace swatch photographed on a table). Dense fabrics keep the backing so a
+    # sliver of gap never flashes background. Presentation only — no geometry.
+    open_fabric = bool(view.get("openFabric", False))
+    if not open_fabric:
+        bpy.ops.mesh.primitive_plane_add(size=1.0, location=(cx, cy, backing_z))
+        backing = bpy.context.active_object
+        backing.scale = (contentW * 0.54, contentH * 0.54, 1.0)
+        backing.data.materials.append(backing_material(yarn_hex))
 
     # The surface the throw sits on, well below + wider.
     bpy.ops.mesh.primitive_plane_add(size=1.0, location=(cx, cy, 0.0))
