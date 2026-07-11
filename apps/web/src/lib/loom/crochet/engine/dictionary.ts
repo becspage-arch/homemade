@@ -161,6 +161,13 @@ export interface SwatchRecipe {
    * the locked fpdc/bpdc gauge.
    */
   gaugeYr?: number
+  /**
+   * Render framing margin (fraction of the content span) — the pipeline's default
+   * is 0.12. A tall 3D object (the ball) projects above an xy-tight frame under
+   * camera tilt and clips; a generous margin frames the FULL silhouette. Flat
+   * swatches leave it undefined (default crop).
+   */
+  viewMargin?: number
 }
 
 export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
@@ -363,7 +370,9 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   // sphere (MR at the top pole, evenly-distributed incs to the equator,
   // mirrored decs, fasten-off into the bottom pole).
   ball: {
-    stitch: 'sc', rows: 15, auditW: 16, builder: 'sphere', equatorCount: 30,
+    stitch: 'sc', rows: 15, auditW: 16, builder: 'sphere', equatorCount: 36,
+    gaugeYr: 1.5, // DENSITY (2026-07-11): pack the stitches tangentially (smaller gauge) while HOLDING the ball size — equatorCount 30->36 keeps R = eq·sw/2π constant (30·1.8 = 36·1.5), so the sphere reads solid/packed, not coiled rope, without shrinking or losing rounds
+    viewMargin: 0.35, // frame the FULL sphere silhouette — the tilted camera clipped the top pole against the old 0.12 crop
     relaxProfile: 'surface', tiltDeg: 24, twist: 0.05,
     referenceUrl: 'https://raffamusadesigns.com/wp-content/uploads/How_to_Crochet_erfect_Amigurumi_Ball_9_RaffamusaDesigns.jpg',
     status: 'wip',

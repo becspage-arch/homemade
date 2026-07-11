@@ -683,12 +683,22 @@ export function buildSphere(
    *  pattern's own; when absent, counts derive from the profile (the canonical
    *  ±6 ball recipe). Either way the audit gates the result. */
   patternCounts?: number[],
+  /** Per-swatch stitch-gauge override (yarn radii) — the density knob, same as
+   *  buildRounds. Leaves the driving stitch's locked dictionary gauge untouched. */
+  gaugeYr?: number,
 ): BuiltContinuous {
   const yr = yarnRadiusMm
-  const sw = yr * STITCHES[st].gaugeYr
+  const sw = yr * (gaugeYr ?? STITCHES[st].gaugeYr)
   const dims = stitchDims(yr)
   const { zh } = dims
   const rowH = yr * BASE_ROW_YR * STITCHES[st].heightFactor
+  // Meridian pitch per round stays at the ROW HEIGHT (unlike the flat disc, where
+  // drift is radial and must track the width gauge). On a sphere the tangential
+  // packing comes from the count derivation (target = 2π·r/sw), which already
+  // tightens when the gauge override shrinks sw — so the density knob packs the
+  // stitches AROUND each round without over-crowding the meridian (tying drift to
+  // sw here floated a round-2 inc hook 1.49yr up-meridian). Unchanged from the
+  // locked ball geometry when no override is passed.
   const drift = rowH * 1.05
   const eq = patternCounts ? Math.max(...patternCounts) : equatorCount
   const R = (eq * sw) / (2 * Math.PI)
@@ -733,8 +743,11 @@ export function buildSphere(
           }
         }
 
-  // MAGIC RING at the top pole (the anchor), lying on the surface.
-  const rr = rrHoist
+  // MAGIC RING at the top pole (the anchor), lying on the surface. For the
+  // analytic ball, keep it SMALL so round 1 closes the top pole to a pinprick
+  // (the render showed an open hole at the pole); the pattern-driven branch keeps
+  // rrHoist as its intrinsic-profile start so program.ts geometry is unchanged.
+  const rr = patternCounts ? rrHoist : yr * 0.85
   const RING_N = 18
   const ringNodes: number[] = []
   const ringRRef = prof ? rr : Math.max(rOf(rr), 1e-3)
