@@ -699,6 +699,40 @@ finish → customer-check (against reference) → confirm across weights. Colour
 
 ## 11. Known issues
 
+- **YARN CRISPNESS PASS 2026-07-12 (library-wide, render-only).** Every stitch
+  used to render as soft twisted ROVING — plump fuzzy lobes, no visible ply —
+  while real references show firm plied yarn with clean silhouettes. Root cause
+  was threefold, all in the render half (no geometry touched):
+  1. **Merged plies.** `pliedFilaments` sized each ply `bundleR/sqrt(nPly)`
+     and Blender bevelled it a further 1.5× — the three plies overlapped into
+     one smooth tube, so there was no ply line for light to catch.
+  2. **Lazy twist.** Recipe twist (0.05–0.1/mm) barely rotated the plies over
+     a stitch's length, so even the merged tube showed no spiral.
+  3. **Felted material.** A 1.3-strength coarse noise bump + full-strength
+     sheen (1.0) + chalk-matte roughness (0.62–0.86) read as felt/roving and
+     buried what little structure survived 1+2.
+  The recipe that passes the probe trio (sc + stockinette LOCKED-identity
+  check, mrdisc the softness worst case) — all in `yarnLoop.pliedFilaments`
+  and `loom_render_crochet.py`:
+  - `PLY_RADIUS_FRAC 0.52` — ply tube radius as a fraction of the target
+    outer radius (call sites pass `yr*0.85`). 0.46 read as rope (grooves too
+    deep); ~0.55+ merges back toward roving. Blender bevels the ply 1.02×
+    (the old 1.5× was what merged them).
+  - `TWIST_GAIN 2.2` on the recipe twist — the barber-pole is visible;
+    recipes keep their relative calm(0.05–0.08)/rustic(0.1) intent. 3.4 read
+    as wrung corkscrew. mrdisc's twist moved 0.05→0.08: the old "calm" value
+    was defending against merged-tube surface noise; in the distinct-ply
+    model the twist IS the yarn identity.
+  - Material: fibre bump 0.6 (1.3 felted; 0.3 read as moulded PLASTIC — the
+    §9 "no-fibre" failure from the other side), fuzz 0.28, sheen weight 0.55,
+    spec 0.18, roughness 0.55–0.78, default post-AgX saturation 1.4→1.2 (the
+    crisper yarn oversaturated at 1.4).
+  Levers, plainly: PLY_RADIUS_FRAC = ply definition (rope ↔ roving);
+  TWIST_GAIN = spun-ness (smooth tube ↔ corkscrew); fibre/fuzz bump = wool
+  (plastic ↔ felt); sheen weight = halo (crisp ↔ felted); roughness/spec =
+  firmness of the light. The remaining per-stitch bulbousness (e.g. the
+  disc's z-amplitude) is GEOMETRY, not yarn — the exhausted relief-lever
+  family in §9, out of scope for the yarn pass.
 - **Open-fabric backing — FIXED 2026-07-11.** Open lace (shell/V/crossed/dc
   increases) showed the yarn-coloured backing plane as solid dark rectangles
   behind the holes. A recipe `openFabric` flag (threaded into the render view)

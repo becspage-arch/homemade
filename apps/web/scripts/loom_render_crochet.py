@@ -46,22 +46,27 @@ def hex_to_lin(h):
 
 
 def yarn_material(name, hexcol, sheen):
-    """Bulky wool yarn: matte, soft, with a strong fuzzy fibre halo and a coarse
-    micro-bump (the plied strands + the wool's fluff). Lower spec than cotton
-    floss; more subsurface for that soft, light-through-wool glow."""
+    """Firm PLIED wool yarn (crisp model, §11). The ply DEFINITION now comes from
+    the real ply geometry (nPly distinct tubes spiralling — yarnLoop.pliedFilaments),
+    so the material's job is only to make each ply read as firm spun yarn: a
+    satiny sheen that catches along the plies + a WHISPER of fibre haze. The old
+    material faked fibre with a coarse random noise bump + a full-strength sheen
+    halo, which felted the whole surface into soft roving and buried the plies —
+    both are dialled right down here."""
     mat = bpy.data.materials.new(name)
     mat.use_nodes = True
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
     set_in(bsdf, "Base Color", hex_to_lin(hexcol))
-    set_in(bsdf, "Specular IOR Level", 0.14)        # wool is matte, low spec
-    set_in(bsdf, "Sheen Weight", 1.0)               # strong fuzzy wool halo
-    set_in(bsdf, "Sheen Roughness", 0.55)
+    set_in(bsdf, "Specular IOR Level", 0.18)        # low spec: wool, not plastic
+    set_in(bsdf, "Sheen Weight", 0.55)              # soft wool halo, below the felting 1.0
+    set_in(bsdf, "Sheen Roughness", 0.5)
     set_in(bsdf, "Sheen Tint", (1.0, 1.0, 1.0, 1.0))
-    set_in(bsdf, "Anisotropic", 0.45)
-    set_in(bsdf, "Subsurface Weight", 0.12)         # soft light through the fibre
+    set_in(bsdf, "Anisotropic", 0.25)
+    set_in(bsdf, "Subsurface Weight", 0.1)          # soft light through the fibre
     set_in(bsdf, "Subsurface Radius", (0.6, 0.5, 0.42))
-    # Coarse plied-fibre bump stretched along the strand (bulkier than floss).
+    # Fine fibre haze only (the real ply relief is geometry now). A gentle bump
+    # stretched along the strand — enough to read as spun fibre, not felt.
     tex = nt.nodes.new("ShaderNodeTexCoord")
     mapp = nt.nodes.new("ShaderNodeMapping")
     mapp.inputs["Scale"].default_value = (40.0, 9.0, 9.0)
@@ -69,25 +74,25 @@ def yarn_material(name, hexcol, sheen):
     fib.inputs["Scale"].default_value = 8.0
     fib.inputs["Detail"].default_value = 5.0
     bump = nt.nodes.new("ShaderNodeBump")
-    bump.inputs["Strength"].default_value = 1.3       # pronounced spun-fibre relief
-    bump.inputs["Distance"].default_value = 0.03
+    bump.inputs["Strength"].default_value = 0.6       # spun-fibre relief (1.3 felted; 0.3 read plastic)
+    bump.inputs["Distance"].default_value = 0.015
     nt.links.new(tex.outputs["Object"], mapp.inputs["Vector"])
     nt.links.new(mapp.outputs["Vector"], fib.inputs["Vector"])
     nt.links.new(fib.outputs["Fac"], bump.inputs["Height"])
-    # A finer, denser fuzz bump layered on top — the wool's haze of short fibres.
+    # A finer, denser fuzz — the wool's haze of short fibres (much lighter now).
     fuzz = nt.nodes.new("ShaderNodeTexNoise")
     fuzz.inputs["Scale"].default_value = 60.0
     fuzz.inputs["Detail"].default_value = 6.0
     bump2 = nt.nodes.new("ShaderNodeBump")
-    bump2.inputs["Strength"].default_value = 0.45
-    bump2.inputs["Distance"].default_value = 0.006
+    bump2.inputs["Strength"].default_value = 0.28
+    bump2.inputs["Distance"].default_value = 0.004
     nt.links.new(fuzz.outputs["Fac"], bump2.inputs["Height"])
     nt.links.new(bump.outputs["Normal"], bump2.inputs["Normal"])
     nt.links.new(bump2.outputs["Normal"], bsdf.inputs["Normal"])
-    # Roughness varies along the fibre (matte fluff vs catching strands).
+    # Roughness varies along the fibre — satiny (plies catch light) not chalky matte.
     rough = nt.nodes.new("ShaderNodeMapRange")
-    rough.inputs["To Min"].default_value = 0.62
-    rough.inputs["To Max"].default_value = 0.86
+    rough.inputs["To Min"].default_value = 0.55
+    rough.inputs["To Max"].default_value = 0.78
     nt.links.new(fib.outputs["Fac"], rough.inputs["Value"])
     nt.links.new(rough.outputs["Result"], bsdf.inputs["Roughness"])
     return mat
@@ -118,7 +123,11 @@ def build_yarn(strokes, drape=None, z_offset=0.0):
         cu.resolution_u = 2
         cu.use_fill_caps = True
         for st in group:
-            r = st["radiusMm"] * S * 1.5   # chunky, fills the bundle
+            # radiusMm is now the PLY tube radius (crisp plied model, §11): bevel
+            # it 1:1 so the nPly plies stay distinct (a fatter multiplier merges
+            # them back into a smooth roving tube). The ply spread reaches the
+            # target outer radius, so the yarn still fills the fabric.
+            r = st["radiusMm"] * S * 1.02
             zlift = r * 1.0
             for poly in st["filaments"]:
                 if len(poly) < 2:
@@ -311,7 +320,7 @@ def main():
     scene.view_settings.view_transform = "AgX"
     scene.view_settings.look = "AgX - Base Contrast"
     scene.view_settings.exposure = view.get("exposure", 0.2)  # lower: stop pale wool blowing white
-    grade_saturation(scene, view.get("saturation", 1.4))  # bring warmth back after AgX desaturates
+    grade_saturation(scene, view.get("saturation", 1.2))  # bring warmth back after AgX desaturates (1.4 oversaturated the crisper, less-felted yarn)
     scene.render.filepath = out_path
     bpy.ops.render.render(write_still=True)
     print("RENDERED", out_path)
