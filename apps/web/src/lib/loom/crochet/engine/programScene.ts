@@ -111,6 +111,23 @@ function rowColourResolver(p: CrochetProgram): ((row: number) => string) | null 
 }
 
 /**
+ * Resolve a per-(row, column) CELL colour for a tapestry / intarsia grid, or null.
+ * Each `GridRow.cellColours[c]` is a palette key; a missing cell key falls back to
+ * the row's `colourKey`, then the base colour. Drives the multi-colour render when
+ * the builder supplies a per-node column map (`nodeCol`).
+ */
+function cellColourResolver(p: CrochetProgram): ((row: number, col: number) => string) | null {
+  const base = p.colourHex ?? DEFAULT_COLOUR
+  const pal = p.palette
+  if (p.form !== 'grid' || !p.grid || !pal || !p.grid.some((r) => r.cellColours)) return null
+  return (row, col) => {
+    const gr = p.grid![row]
+    const key = gr?.cellColours?.[col] ?? gr?.colourKey
+    return (key ? pal[key] : undefined) ?? base
+  }
+}
+
+/**
  * Split one continuous plied yarn into per-colour STROKES. The strand is smoothed
  * + plied ONCE (so the twist runs unbroken across the whole piece), then each
  * ply polyline is cut into maximal same-colour runs — one Blender curve per
@@ -218,10 +235,25 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   // Render-only: geometry / geometryHash / the audit are untouched.
   const { radiusMm, filaments } = pliedFilaments(center, yr * 0.85, 3, twist)
 
+  const cellResolver = cellColourResolver(p)
   const resolver = rowColourResolver(p)
   const nodeRow = built.nodeRow
+  const nodeCol = built.nodeCol
   let strokes: BlenderScene['strokes']
-  if (resolver && nodeRow) {
+  if (cellResolver && nodeRow && nodeCol) {
+    // TAPESTRY: map a smoothed-centre index → its control point → its strand node →
+    // (row, column) cell → colour. The one continuous strand is cut into per-colour
+    // runs (colourStrokes), so the colour changes WITHIN a row exactly where the
+    // motif does. Anchor nodes (-1) take the first worked row's cell colour.
+    const colourAt = (centerIdx: number): string => {
+      const ci = Math.min(Math.floor(centerIdx / PER_SEG), ctrl.length - 1)
+      const node = built.strandPath[ci]!
+      const row = nodeRow[node] ?? -1
+      const col = nodeCol[node] ?? -1
+      return cellResolver(row < 0 ? 0 : row, col < 0 ? 0 : col)
+    }
+    strokes = colourStrokes(center, filaments, radiusMm, colourAt)
+  } else if (resolver && nodeRow) {
     // Map a smoothed-centre index → its control point → its strand node → row →
     // colour. Anchor rows (-1, the foundation) take the first worked row's colour
     // so the cast-on edge matches the bottom stripe.

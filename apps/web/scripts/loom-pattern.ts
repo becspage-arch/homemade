@@ -232,9 +232,12 @@ function programChartSvg(chart: ChartDef): string {
  *  headband loops into a ring. Override on the command line with
  *  `--staging=flatlay|loop|swatch`. Default (unlisted programs) = 'swatch'. */
 const PROOF_STAGING: Record<string, Staging> = {
+  'simple-coaster': 'flatlay',
   'stripe-dishcloth': 'flatlay',
   'texture-sampler-panel': 'flatlay',
+  'flat-texture-panel': 'flatlay',
   'post-rib-headband': 'loop',
+  'cottage-tapestry': 'flatlay',
 }
 function resolveStaging(name: string): Staging {
   const flag = process.argv.find((a) => a.startsWith('--staging='))

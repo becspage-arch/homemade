@@ -114,8 +114,155 @@ function textureSamplerPanel(): CrochetProgram {
   }
 }
 
+// ── 0 · DEAD SIMPLE — Solid Single-Crochet Coaster ────────────────────────────
+// The humblest possible piece: a small solid square worked in one colour, every
+// stitch a plain double crochet (UK) / single crochet (US). A few rows, no
+// texture, no colour change — proves the plainest end of the range renders as a
+// clean, dense, real crocheted coaster.
+const COASTER_W = 14
+function simpleCoaster(): CrochetProgram {
+  const grid: GridRow[] = []
+  for (let j = 0; j < 12; j++) grid.push(row(fill(COASTER_W, 'sc')))
+  return {
+    name: 'simple-coaster',
+    form: 'grid',
+    gridWidth: COASTER_W,
+    grid,
+    yarnWeight: 'worsted',
+    colourHex: '#3f8f9c', // teal
+    gaugeText: '14 dc x 12 rows = 10 cm (UK terms) in worsted',
+    finishedSizeMm: { width: 100, height: 90 },
+    hookMm: 5,
+    notes: 'A plain solid coaster in one colour — a first project. Worked flat in rows of double crochet (UK).',
+  }
+}
+
+// ── C2 · FLAT TEXTURE — Flat-Friendly Stitch-Sampler Panel ────────────────────
+// A texture sampler built ONLY from stitches that read well on a FLAT panel:
+// dc (US sc), htr, tr, and back-/front-loop-only ridge bands. NO post stitches —
+// those read open on a flat panel at a tilt (they belong on a worn/looped form,
+// which the headband covers). Every band is a locked stitch, so the whole panel
+// renders at bar. Mixed stitch types BETWEEN rows across five stitch families.
+const FTEX_W = 16
+function flatTexturePanel(): CrochetProgram {
+  const grid: GridRow[] = []
+  const band = (n: number, id: StitchId) => { for (let k = 0; k < n; k++) grid.push(row(fill(FTEX_W, id))) }
+  band(3, 'sc') // plain dc (UK) ground
+  band(2, 'hdc') // half-treble band (third-loop ridge)
+  band(2, 'dc') // treble band (taller, gentle relief)
+  band(2, 'scblo') // back-loop-only ridge band (raised horizontal line)
+  band(2, 'scflo') // front-loop-only ridge band
+  band(2, 'hdc') // half-treble band again
+  band(3, 'sc') // plain ground to close
+  return {
+    name: 'flat-texture-panel',
+    form: 'grid',
+    gridWidth: FTEX_W,
+    grid,
+    yarnWeight: 'worsted',
+    colourHex: '#b0743c', // caramel
+    gaugeText: '16 sts x 16 rows = 12 cm in worsted',
+    finishedSizeMm: { width: 200, height: 260 },
+    hookMm: 5,
+    notes: 'A flat stitch-sampler — repeat end to end for a scarf, or use one panel as a mug rug. Bands: dc, htr, tr, a back-loop ridge, a front-loop ridge, htr, then dc.',
+  }
+}
+
+// ── SHOWPIECE — Cottage Garden Tapestry Panel ─────────────────────────────────
+// The stretch: a MULTI-COLOUR tapestry-crochet PICTURE. Every stitch is a plain
+// sc (how tapestry crochet is worked), but the colour changes CELL BY CELL to
+// draw a real scene — sky, sun, a tree, a cottage with a roof, chimney, door and
+// windows, a grass strip with flowers. This is the "many colours" case: the
+// palette below carries FIFTEEN distinct yarns, resolved per (row, column) by the
+// engine's per-cell colour map (nodeCol). Homemade-original design.
+const TAP_W = 24
+const TAP_H = 24
+const TAP_PALETTE: Record<string, string> = {
+  sky: '#bcd6e8',
+  sun: '#f4c95d',
+  roof: '#b5533a',
+  eave: '#8f3f2c',
+  wall: '#ece0c6',
+  wallsh: '#d6c39c',
+  door: '#6f4a2f',
+  window: '#8fb8d6',
+  grass: '#6f9e4c',
+  grassd: '#4f7d36',
+  pink: '#e58aa8',
+  purple: '#9b6fb0',
+  tree: '#3f7a44',
+  trunk: '#7a5230',
+  chimney: '#7a4a3a',
+}
+/** Paint the cottage-scene motif as motif[y][x], y=0 at the TOP. Later fills win. */
+function cottageMotif(): string[][] {
+  const W = TAP_W, H = TAP_H
+  const m: string[][] = Array.from({ length: H }, () => Array<string>(W).fill('sky'))
+  const set = (x: number, y: number, key: string) => { if (x >= 0 && x < W && y >= 0 && y < H) m[y]![x] = key }
+  const grassTop = 17
+  // Grass strip (bottom), with a darker scattered texture.
+  for (let y = grassTop; y < H; y++) for (let x = 0; x < W; x++) set(x, y, (x + y) % 3 === 0 ? 'grassd' : 'grass')
+  // Sun, top-right (filled disc).
+  const sunX = 19, sunY = 3, sunR = 2.6
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (Math.hypot(x - sunX, y - sunY) <= sunR) set(x, y, 'sun')
+  // Tree: a round foliage blob + a short trunk, on the left, rooted in the grass.
+  const tX = 4, tY = 8, tR = 3.4
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (Math.hypot(x - tX, y - tY) <= tR) set(x, y, 'tree')
+  for (let y = 11; y < grassTop + 1; y++) { set(tX, y, 'trunk'); set(tX + 1, y, 'trunk') }
+  // Cottage. Walls: a rectangle. Roof: a triangle over it. Then window/door/chimney.
+  const wallL = 10, wallR = 18, wallTop = 10, wallBot = grassTop - 1 // 10..16
+  for (let y = wallTop; y <= wallBot; y++) for (let x = wallL; x <= wallR; x++) set(x, y, 'wall')
+  // Roof: rows 6..9, widening downward from the apex to just past the walls.
+  const roofBot = wallTop - 1 // 9
+  const roofTop = 6
+  const apexX = (wallL + wallR) / 2
+  for (let y = roofTop; y <= roofBot; y++) {
+    const half = 1 + (y - roofTop) * ((wallR - wallL) / 2 + 1) / (roofBot - roofTop)
+    for (let x = 0; x < W; x++) if (Math.abs(x - apexX) <= half) set(x, y, y === roofBot ? 'eave' : 'roof')
+  }
+  // Chimney on the right slope.
+  for (let y = 4; y <= 7; y++) { set(16, y, 'chimney'); set(17, y, 'chimney') }
+  // Windows (two) with a shadow sill, and a door.
+  for (const wx of [11, 15]) for (let y = 11; y <= 12; y++) for (let x = wx; x <= wx + 1; x++) set(x, y, 'window')
+  for (let y = 13; y <= wallBot; y++) for (let x = 13; x <= 14; x++) set(x, y, 'door')
+  // A row of wall-shadow just under the eave for depth.
+  for (let x = wallL; x <= wallR; x++) if (m[wallTop]![x] === 'wall') set(x, wallTop, 'wallsh')
+  // Flowers dotted in the grass (pink/purple heads with a sun-yellow centre feel).
+  const flowers: [number, number, string][] = [
+    [2, 20, 'pink'], [7, 21, 'purple'], [9, 19, 'pink'], [12, 22, 'purple'],
+    [20, 20, 'pink'], [22, 21, 'purple'], [16, 21, 'pink'],
+  ]
+  for (const [x, y, key] of flowers) { set(x, y, key); set(x, y - 1, 'sun') }
+  return m
+}
+function cottageTapestry(): CrochetProgram {
+  const motif = cottageMotif()
+  const grid: GridRow[] = []
+  // Program row 0 is the BOTTOM of the fabric; motif y=0 is the TOP → flip.
+  for (let j = 0; j < TAP_H; j++) {
+    const y = TAP_H - 1 - j
+    grid.push({ stitches: fill(TAP_W, 'sc'), cellColours: motif[y]!.slice() })
+  }
+  return {
+    name: 'cottage-tapestry',
+    form: 'grid',
+    gridWidth: TAP_W,
+    grid,
+    yarnWeight: 'worsted',
+    colourHex: '#bcd6e8',
+    palette: TAP_PALETTE,
+    gaugeText: '24 dc x 24 rows = 17 cm in worsted (tapestry crochet, carry unused colours)',
+    finishedSizeMm: { width: 170, height: 170 },
+    hookMm: 4,
+    notes: 'A tapestry-crochet picture panel — a cottage garden scene. Worked flat in single crochet, changing colour stitch by stitch and carrying the unused yarns inside the stitches. A wall hanging or cushion front.',
+  }
+}
+
 export const PATTERN_PROOFS: Record<string, CrochetProgram> = {
+  'simple-coaster': simpleCoaster(),
   'stripe-dishcloth': stripeDishcloth(),
-  'post-rib-headband': postRibHeadband(),
   'texture-sampler-panel': textureSamplerPanel(),
+  'flat-texture-panel': flatTexturePanel(),
+  'post-rib-headband': postRibHeadband(),
+  'cottage-tapestry': cottageTapestry(),
 }

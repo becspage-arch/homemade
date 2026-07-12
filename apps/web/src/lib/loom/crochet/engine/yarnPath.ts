@@ -60,6 +60,15 @@ export interface BuiltContinuous {
    */
   nodeRow?: number[]
   /**
+   * Per-node worked COLUMN index (parallel to model.nodes), or -1 for the pinned
+   * anchor. Together with nodeRow this lets the colour-render resolve a colour per
+   * (row, column) CELL — tapestry / intarsia colourwork, where the colour changes
+   * within a row, not just at the selvedge. Render-only: nothing in relax / audit /
+   * geometryHash reads it, so single-colour + per-row-stripe programs are
+   * bit-identical. Only the grid/flat-row builder populates it.
+   */
+  nodeCol?: number[]
+  /**
    * How many nodes at the START of the strand are the legitimate pinned anchor
    * (foundation chain / slip knot / magic ring / cast-on). The audit rejects any
    * pin beyond these — pinned worked geometry is drawing, not stitching.
@@ -506,6 +515,10 @@ export function buildContinuous(
 
   // First node index of each worked row (for the per-node row map → colour runs).
   const rowStart: number[] = []
+  // Column span of every worked stitch (start node index + its fabric column),
+  // in push order — the per-node COLUMN map (tapestry colour) is filled from these
+  // after the build. Render-only; nothing geometric reads it.
+  const colSpans: { start: number; c: number }[] = []
 
   for (let j = 0; j < rowTypes.length; j++) {
     rowStart[j] = nodes.length
@@ -525,6 +538,8 @@ export function buildContinuous(
       const c = dir > 0 ? o : W - 1 - o
       const s = dir
       const x = c * sw
+      // Every node this stitch pushes (incl. its turning chain) belongs to column c.
+      colSpans.push({ start: nodes.length, c })
       const id = opts.stitchAt ? opts.stitchAt(j, c) : rowTypes[j]!
       // The turning chain up into the first row: a crocheter chains up before the
       // first stitch, leaving real slack between the foundation's end and the
@@ -695,6 +710,12 @@ export function buildContinuous(
     const end = j + 1 < rowStart.length ? rowStart[j + 1]! : nodes.length
     for (let k = rowStart[j]!; k < end; k++) nodeRow[k] = j
   }
+  // Per-node column map from the recorded spans: each stitch owns [start, nextStart).
+  const nodeCol: number[] = new Array(nodes.length).fill(-1)
+  for (let i = 0; i < colSpans.length; i++) {
+    const end = i + 1 < colSpans.length ? colSpans[i + 1]!.start : nodes.length
+    for (let k = colSpans[i]!.start; k < end; k++) nodeCol[k] = colSpans[i]!.c
+  }
   return {
     model: { nodes, dist, bend, strand, along },
     strandPath,
@@ -704,5 +725,6 @@ export function buildContinuous(
     heightMm: acc,
     anchorPins: 3 * W, // the foundation chain (3 nodes per column)
     nodeRow,
+    nodeCol,
   }
 }

@@ -61,6 +61,12 @@ export interface GridRow {
   stitches: StitchId[]
   /** Whole-row colour (a stripe) — a key into the program `palette`. */
   colourKey?: string
+  /** Per-CELL colour keys (parallel to `stitches`, left→right in the fabric
+   *  frame) — tapestry / intarsia colourwork, where the colour changes within a
+   *  row. Each entry is a key into the program `palette`; a missing entry falls
+   *  back to `colourKey`, then the base colour. When present, this drives a
+   *  per-(row, column) render colour. Render-only (the geometry is unchanged). */
+  cellColours?: string[]
 }
 
 export interface CrochetProgram {
