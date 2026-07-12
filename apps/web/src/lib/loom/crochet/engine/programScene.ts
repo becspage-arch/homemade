@@ -209,7 +209,14 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   let ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
   if (staging === 'loop') ctrl = loopStrip(ctrl, yr)
   const center = smooth(ctrl, PER_SEG)
-  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, twist)
+  // Target OUTER yarn radius. MUST match the single-stitch swatch call sites
+  // (scripts/loom-stitch.ts, loom-continuous.ts) which the crisp-plied-yarn pass
+  // (STITCH_ENGINE §11) moved 0.62 → 0.85. This value predated that pass and was
+  // missed, so the SAME grid geometry that reads dense in a swatch rendered 27%
+  // thinner here — opening the fabric into mesh, worst on the tall dc/tr bands
+  // (measured: tr areal front-face coverage 87% at 0.62yr vs 99.7% at 0.85yr).
+  // Render-only: geometry / geometryHash / the audit are untouched.
+  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.85, 3, twist)
 
   const resolver = rowColourResolver(p)
   const nodeRow = built.nodeRow
