@@ -618,6 +618,55 @@ vs a real reference → commit + push.
   post-stitch-in-flat-sampler-at-tilt limit + locked post geometry, not row
   density. Rebecca/orchestrator verdict pending.
 
+## 8e-3. THE SIX-SAMPLE SIGN-OFF SET (2026-07-12)
+
+The finished-object sign-off set the orchestrator packages for Rebecca's
+quality-bar lock — six real, complete patterns spanning the full complexity
+range ([[feedback_pattern_complexity_range]]), each rendered as a customer-grade
+finished-object hero. All are program proofs (`scripts/loom-pattern-proofs.ts` +
+`loom-composition-proofs.ts`), all audit-clean, every hero PASSED the
+fidelity/structure gate (0.90–0.937 ≫ STRUCT_MIN 0.45 — the Fal step finished
+the exact deterministic render, no invented stitches).
+
+**New engine capability — PER-CELL (tapestry) colour (render-only, additive).**
+Colour was per-ROW (stripes: `nodeRow` → `rowColourResolver`). Added a per-node
+COLUMN map (`buildContinuous` now emits `nodeCol` alongside `nodeRow` from
+recorded per-stitch spans) + `GridRow.cellColours[]` + a `cellColourResolver` in
+`programScene` that resolves a colour per (row, column) CELL and cuts the one
+continuous strand into per-colour runs (the existing `colourStrokes` path). This
+is what lets a tapestry motif change colour WITHIN a row. Nothing in
+relax/audit/geometryHash reads `nodeCol`, so single-colour + per-row-stripe
+programs are BIT-IDENTICAL (verified: stripe-dishcloth 79f6a541, amigurumi-ball
+22357568, unchanged from before the change).
+
+| # | Sample | Range point | hash | gate | Honest verdict |
+|---|--------|-------------|------|------|----------------|
+| 1 | `simple-coaster` (solid sc square) | dead simple | 8fedd4c9 | 0.937 | ✅ customer-grade — dense solid single-crochet coaster, clean rows on white. The plainest end. |
+| 2 | `stripe-dishcloth` (2-colour sc/hdc bands) | flat colourwork | 79f6a541 | 0.922 | ✅ customer-grade — genuine two-colour striped dishcloth, clean stripe boundaries. |
+| 3 | `flat-texture-panel` (sc/hdc/dc/blo/flo bands) | flat texture | a36dacd7 | 0.901 | ✅ customer-grade — one-colour textured sampler, raised blo/flo ridge lines, solid throughout. NO post stitches (the derived rule: posts read open on a flat panel — they live on the worn/looped form). |
+| 4 | `post-rib-headband` (1×1 fp/bp rib, looped) | worn item | e482eb7a | 0.924 | ✅ customer-grade — ribbed band seamed into a standing loop, vertical post ribs round the circumference. Correctly showcases post-rib on a curved/worn form. Residual: ribs read slightly openwork (documented). |
+| 5a | `amigurumi-ball` (stuffed sc sphere) | amigurumi | 22357568 | 0.920 | ✅ customer-grade — stuffed crochet ball, clean spiral rounds from a tidy magic-ring centre. Chunkier per-stitch bumps than a fine reference (documented bulbousness residual), but unmistakably a real crocheted ball. |
+| 5b | `amigurumi-creature` (body+head+2 ears) | amigurumi (multi-part) | 18b2f935 | 0.914 | ◑ reads as a two-eared stuffed amigurumi (genuine dense sc body, two proud ears) but the ear TIPS show the magic-ring swirl (documented "ear crown") + the ears read bulky. Borderline — the ball is the cleaner amigurumi. |
+| 6 | `cottage-tapestry` (24×24 sc, 15 colours) | SHOWPIECE | a627f243 | 0.929 | ✅ customer-grade tapestry piece — a cottage-garden PICTURE (sky+sun, tree, cottage w/ roof/chimney/door/windows, grass+flowers). Reads exactly as real tapestry crochet (colour-block per stitch, cf. the lillabjorncrochet cushion reference); chunkier weight than a fine cotton reference. |
+
+**Showpiece colour ceiling — the honest maximum.** `cottage-tapestry` carries
+FIFTEEN distinct yarn colours, all resolving cleanly per-cell, the picture
+legible. There is no hard colour-count wall in the engine — `colourStrokes`
+groups the strand into one Blender curve set per distinct hex, so the count is
+bounded only by render cost, not correctness. The honest LIMITS are: (a) the
+motif must be drawn at the fabric's stitch resolution (a 24×24 grid = a bold
+pixel picture, not photographic detail — finer pictures need more stitches =
+more render time); (b) the library-wide chunky-weight/roving softness makes the
+stitch Vs bigger than a fine-cotton reference; (c) a mid-row colour change cuts
+the tube and re-colours (the render doesn't model the carried non-working yarn
+inside the stitch — invisible on the front face, which is what a tapestry shows).
+None of these is a topology or colour-count wall; the many-colour case is proven.
+
+**References used for the customer comparison** (external, linked for calibration
+only — never shipped): tapestry crochet cushion —
+https://www.lillabjorncrochet.com/2016/07/how-to-do-tapestry-crochet-step-by-step.html ;
+amigurumi ball — https://ribbelmonster.us/amigurumi-crochet-simple-small-ball/ .
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,
