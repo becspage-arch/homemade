@@ -528,7 +528,28 @@ vs a real reference → commit + push.
   the documented library-wide density/roving softness, not a colour issue). The
   program-render background also moved to a clean off-white `#efece6` (the
   finished-object bar's white ground); the Fal hero cleans it to white.
-- **Part B — round/amigurumi composition:** IN PROGRESS.
+- **Part B — round/amigurumi composition + PROTRUDING LIMBS (2026-07-12).** The
+  composition layer stacks audit-gated balls into one staged object; the staged
+  BALL was already customer-grade, but attached parts (ears) placed by centred
+  overlap read as SUNK SWIRLS — a limb needs to stand proud as a 3-D form. Fixed
+  with a **directional attach** (composition-layer only; the locked round builders
+  are untouched): a new `{ on, dir, seat }` placement rotates a part so its long
+  (pole-to-pole) axis points along `dir` (Rodrigues, `rotZTo` maps local +z → the
+  outward unit vector), then seats only its base pole `seat` mm into the parent
+  surface (parent half-extent along `dir`, ellipsoid approx) so the rest stands
+  off the body. The transform is now `world = T + scale·R·(local − centre)` (R = I
+  for ground/overlap). The proof creature is a bunny/bear: `body` (eq-30 ball) +
+  `head` (eq-24 ball, overlap-stacked) + two `ear`s — an elongated tapered tube
+  `[6,12,12,12,12,12,10,8,6]` (aspect ~1.5, audit-clean; slimmer eq-10 profiles
+  FAIL the interlock gate) attached with `dir {±0.5, 0.14, 1}` (up, out, slightly
+  back), `seat 6`. Probe: each ear stands ~28 mm proud of the head top and splays
+  past the head silhouette. Audit clean (hash bc1c39d1). RENDERED (base): two
+  darker ears stand clearly proud above the body as genuine 3-D forms with depth +
+  cast shadow — reads as a two-eared amigurumi, no longer sunk swirls. Residual =
+  the ear tips show the small magic-ring spiral (reads as the ear crown), and the
+  per-stitch roving softness (library-wide) keeps the fabric chunkier than a smooth
+  reference. Orientation tuning (which pole faces out, lean angle) is a design knob
+  on the proof, not the engine.  Rebecca/orchestrator verdict pending.
 - **Part C — finished-object hero staging:** IN PROGRESS.
 
 ## 9. What did NOT work (the failure log — don't repeat these)
