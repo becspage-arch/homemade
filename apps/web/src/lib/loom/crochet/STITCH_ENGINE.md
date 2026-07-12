@@ -561,10 +561,8 @@ vs a real reference → commit + push.
   - `flatlay` — the WHOLE piece pulled back on the clean off-white ground, gentle
     3/4 tilt (15°) + soft drape, so it reads as a finished dishcloth / panel laid
     out. `stripe-dishcloth` hero (gate 0.925) + `texture-sampler-panel` hero (gate
-    0.886) both PASS. Honest residual: at finished-object framing the fabric reads
-    OPEN between rows (worst on the tall dc/tr bands) — the documented library-wide
-    density/roving softness that the old macro crop simply hid; a density-calibration
-    job, not a staging bug.
+    0.874) both PASS. The finished-object framing initially read OPEN/mesh — FIXED
+    in the FLAT-DENSITY PASS below.
   - `loop` — the flat strip curled into a standing RING (`loopStrip`): the strip's
     long axis wraps to circumference, the short axis stands up Z as the band height,
     stitch relief rides the outward radial normal — a short ribbed cylinder standing
@@ -576,9 +574,49 @@ vs a real reference → commit + push.
     (same density residual, mildly amplified by the wrap).
   - amigurumi (3-D) already stages itself via `compositionScene`; the creature hero
     (gate 0.920) and the ball are customer-grade.
-  Every hero PASSES the fidelity/structure gate (all ≥ 0.886 ≫ STRUCT_MIN 0.45),
+  Every hero PASSES the fidelity/structure gate (all ≥ 0.874 ≫ STRUCT_MIN 0.45),
   confirming the Fal photoreal step finished the exact render without inventing
-  stitches. Rebecca/orchestrator verdict pending on the flat-form density residual.
+  stitches.
+
+- **Part D — FLAT-FABRIC DENSITY PASS (2026-07-12).** The build-2 flatlay/loop
+  heroes read as OPEN MESH — the orchestrator's hypothesis was an over-spaced grid
+  ROW PITCH scaling wrong with stitch height. NUMBERS SAID OTHERWISE (numbers
+  before theories, §9): dumped settled per-row Y for the grids vs the single-stitch
+  swatches — the grid row pitch is BIT-FOR-BIT the swatch pitch (dc grid rows
+  4.95yr vs the dc swatch's 4.96yr) and vertical course-to-course coverage is 0%
+  gap at any tube radius. Row pitch was never the lever. Two real levers, both
+  render/recipe (no geometry, no locked stitch touched, audit + geometryHash
+  unchanged):
+  1. **Yarn thickness (the root cause).** `programScene` plied the strand at
+     `yr*0.62` — a value that PREDATED the crisp-plied-yarn pass (§11, commit
+     e2de4fb6, ~12 h later) which moved the SWATCH call sites to `yr*0.85` and
+     missed programScene. So the SAME grid geometry that reads dense in a swatch
+     was rendered 27% thinner here, opening the between-post channels that are
+     widest on the tall stitches. Measured AREAL front-face coverage (solid↔mesh):
+     tr swatch 87.2%→99.7%, dc swatch 94.4%→100%, texture-sampler 96.2%→99.5%,
+     dishcloth 99.6%→100%, headband 98.6%→99.9%, all at `yr*0.85`. Fixed
+     programScene → `yr*0.85` (matches the swatch + §11). The amigurumi/composition
+     path (`composition.ts`, still `0.62`, judged fine) is a SEPARATE renderer and
+     was left untouched — the ball re-rendered bit-identical (hash 22357568, gate
+     0.921). Render-only, geometryHash unchanged (dishcloth 79f6a541).
+  2. **Grid column pack for a post-containing panel.** The texture-sampler mixes
+     plain bands with a front/back POST-RIB band; at the grid default gauge (1.8,
+     row 0's sc) the plain bands were solid but the panel could pack tighter. Set
+     the sampler `gaugeYr: 1.6` — the tightest AUDIT-CLEAN value (1.5 fails the
+     interlock gate) — plain bands go fully solid (between-post gap 0.11yr→−0.05yr)
+     and the post-rib band packs (max window 0.88yr→0.54yr). Same lever the locked
+     postrib swatch + headband proof use (1.5).
+  Result: `stripe-dishcloth` reads as solid striped fabric, `post-rib-headband` as
+  a dense snug ribbed loop, and the `texture-sampler` plain bands (sc/hdc/dc/blo,
+  the top ~55%) are solid. HONEST RESIDUAL (two-attempt cap reached): the
+  sampler's post-rib band still reads as an open ladder in this flat, few-row,
+  top-down (15°) finished-object staging — the proud fpdc/bpdc post bars show
+  inter-post background at the tilt, and a gauge sweep confirmed no viable value
+  closes it (tighter breaks the audit; wider opens everything, post-band gap
+  variance ~0.29yr at every gauge). The headband proves the SAME post-rib reads
+  snug as a whole object (aran, curled face-on) — so it's the intrinsic
+  post-stitch-in-flat-sampler-at-tilt limit + locked post geometry, not row
+  density. Rebecca/orchestrator verdict pending.
 
 ## 9. What did NOT work (the failure log — don't repeat these)
 
@@ -621,6 +659,17 @@ vs a real reference → commit + push.
   dump the settled positions per stitch (`scripts/loom-ch-debug.ts` pattern) before
   touching parameters. Two renders in a row got misread until the dump showed the
   expelled strand.
+- **A flat program grid reading OPEN is NOT a row-pitch problem** (Part D density
+  pass, 2026-07-12). The instinct (and the brief) was that the grid's vertical row
+  pitch was over-spaced / scaled wrong with stitch height. Numbers killed it: the
+  grid path (`buildContinuous`) shares `BASE_ROW_YR × heightFactor` AND the flat
+  relax profile with the single-stitch swatch, so a dc grid row settles at 4.95yr
+  vs the dc swatch's 4.96yr — identical — and vertical course coverage is 0% gap.
+  The openness was HORIZONTAL (between-post channels) and the real lever was RENDER
+  YARN THICKNESS: `programScene` plied at `yr*0.62`, 27% thinner than the swatch's
+  post-crispness `yr*0.85`, so identical geometry read as mesh (worst on tall
+  stitches, whose channels are widest). Don't touch row pitch to fix flat density;
+  measure AREAL front-face coverage at the render radius first.
 - **Shaping: turning slack only at row 0** → a shaped row's eccentric first reach
   (an inc fanning, a dec spanning two crowns) strangles the corner hook at every
   turn. The turning chain (ch 1 + turn) goes into EVERY shaped row — it's what a
