@@ -50,11 +50,14 @@ function stripeDishcloth(): CrochetProgram {
 // back-post treble across the row → raised vertical ribs. This is the headline
 // "mixed stitch types PER ROW" proof (the locked `postrib` look), packed tight
 // with the rib gauge so the ribs touch.
-const RIB_W = 18
+// A LONG, THIN strip (many stitches around, few rows of band width) so that when
+// the short ends seam into a loop the ribs run round the circumference and there
+// is a real central hole — a headband ring, not a squat coiled disc.
+const RIB_W = 52
 function postRibHeadband(): CrochetProgram {
   const grid: GridRow[] = []
   grid.push(row(fill(RIB_W, 'dc'))) // establish posts to wrap
-  for (let j = 1; j < 8; j++) {
+  for (let j = 1; j < 4; j++) {
     grid.push(row(Array.from({ length: RIB_W }, (_, c) => (c % 2 === 0 ? 'fpdc' : 'bpdc')) as StitchId[]))
   }
   return {

@@ -550,7 +550,35 @@ vs a real reference → commit + push.
   per-stitch roving softness (library-wide) keeps the fabric chunkier than a smooth
   reference. Orientation tuning (which pole faces out, lean angle) is a design knob
   on the proof, not the engine.  Rebecca/orchestrator verdict pending.
-- **Part C — finished-object hero staging:** IN PROGRESS.
+- **Part C — finished-object HERO staging across all forms (2026-07-12).** The
+  four-part customer bar (correct genuinely-stitched stitches / real yarn colour on
+  clean white / whole piece at size / staged as the finished object) for EVERY
+  proof form. Before this, the flat proofs rendered as tight MACRO CROPS of the
+  fabric — a stitch swatch, not a finished object. Added a `Staging` mode
+  (`swatch` | `flatlay` | `loop`) threaded programScene → renderProgram → the CLI
+  (per-proof map + `--staging=` override; render-only, no geometry, no schema
+  change — the default `swatch` is bit-identical to the prior view):
+  - `flatlay` — the WHOLE piece pulled back on the clean off-white ground, gentle
+    3/4 tilt (15°) + soft drape, so it reads as a finished dishcloth / panel laid
+    out. `stripe-dishcloth` hero (gate 0.925) + `texture-sampler-panel` hero (gate
+    0.886) both PASS. Honest residual: at finished-object framing the fabric reads
+    OPEN between rows (worst on the tall dc/tr bands) — the documented library-wide
+    density/roving softness that the old macro crop simply hid; a density-calibration
+    job, not a staging bug.
+  - `loop` — the flat strip curled into a standing RING (`loopStrip`): the strip's
+    long axis wraps to circumference, the short axis stands up Z as the band height,
+    stitch relief rides the outward radial normal — a short ribbed cylinder standing
+    on the table (a headband seamed into a loop). Two earlier mappings failed and
+    are logged (flat coiled disc; radial sunburst); the standing-Z cylinder reads
+    right. Needed the proof re-shaped LONG + THIN (52 sts × 4 rows) so there's a real
+    central hole. `post-rib-headband` hero (gate 0.933) PASS — a standing ribbed
+    loop. Honest residual: ribs read openwork/basket-ish, not a dense snug headband
+    (same density residual, mildly amplified by the wrap).
+  - amigurumi (3-D) already stages itself via `compositionScene`; the creature hero
+    (gate 0.920) and the ball are customer-grade.
+  Every hero PASSES the fidelity/structure gate (all ≥ 0.886 ≫ STRUCT_MIN 0.45),
+  confirming the Fal photoreal step finished the exact render without inventing
+  stitches. Rebecca/orchestrator verdict pending on the flat-form density residual.
 
 ## 9. What did NOT work (the failure log — don't repeat these)
 
@@ -716,6 +744,19 @@ vs a real reference → commit + push.
   check the cross's course parity against the proven swatch BEFORE touching any
   spacing param, and never re-tune the crossing construction to paper over a
   placement bug.
+- **Headband LOOP staging — two wrong ring mappings before the standing cylinder**
+  (Part C, 2026-07-12). Curling the flat strip into a ring for the headband hero.
+  Attempt 1 (ring LIES FLAT, band width radial in-plane): a near-square proof
+  swatch wrapped into a filled COILED DISC — no hole, reads as a basket coaster.
+  Attempt 2 (same flat-lying mapping, proof re-shaped long+thin so a hole appears):
+  the tall band spread radially turned the circumferential ribs into a radial
+  SUNBURST/wheel. Root cause both times: putting the band width in-plane. Fix =
+  ring axis along Z — circumference in X–Y (the footprint the camera frames off,
+  so it frames cleanly), band height standing UP Z, relief on the outward radial
+  normal → a short ribbed CYLINDER standing on the table (`loopStrip`). Also needs
+  the proof to be a genuinely LONG THIN strip (52 sts × 4 rows) or there's no
+  central hole. Reads as a real seamed ribbed headband; hero gate 0.933. Residual:
+  the ribs read openwork (density residual, mildly amplified by the wrap).
 - **A retroactive z-nudge on an already-placed node barely survives relaxation**
   (blo/flo ridge, 2026-07-07). Pushing `nodes[k].z *= 1.7` AFTER the node is placed
   fights its own recorded distance-constraint rest lengths; the relaxer mostly undoes

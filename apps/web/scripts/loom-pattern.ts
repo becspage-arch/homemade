@@ -33,7 +33,7 @@ import {
   programYarnRadiusMm,
   type CrochetProgram,
 } from '../src/lib/loom/crochet/engine/program'
-import { compileRelaxAudit, programScene, geometryHash } from '../src/lib/loom/crochet/engine/programScene'
+import { compileRelaxAudit, programScene, geometryHash, type Staging } from '../src/lib/loom/crochet/engine/programScene'
 import {
   compileComposition,
   compositionScene,
@@ -76,6 +76,8 @@ export interface RenderProgramOptions {
   hero?: boolean
   /** Where PNGs/scene land. Default .loom-scratch/crochet/patterns. */
   outDir?: string
+  /** Finished-object staging (Part C). Default 'swatch' (the stitch-proof crop). */
+  staging?: Staging
 }
 
 /**
@@ -97,7 +99,7 @@ export async function renderProgram(program: CrochetProgram, options: RenderProg
   }
   if (problems.length) return result // audit gate — caller decides; do NOT render
 
-  const scene = programScene(program, built, yr)
+  const scene = programScene(program, built, yr, 0.08, options.staging ?? 'swatch')
   const art = await blenderHero(scene, name, outDir, options.hero !== false)
   return { ...result, ...art }
 }
@@ -226,6 +228,20 @@ function programChartSvg(chart: ChartDef): string {
 }
 
 // ── CLI ───────────────────────────────────────────────────────────────────────
+/** Per-proof finished-object staging (Part C). A dishcloth / panel lays flat; a
+ *  headband loops into a ring. Override on the command line with
+ *  `--staging=flatlay|loop|swatch`. Default (unlisted programs) = 'swatch'. */
+const PROOF_STAGING: Record<string, Staging> = {
+  'stripe-dishcloth': 'flatlay',
+  'texture-sampler-panel': 'flatlay',
+  'post-rib-headband': 'loop',
+}
+function resolveStaging(name: string): Staging {
+  const flag = process.argv.find((a) => a.startsWith('--staging='))
+  if (flag) return flag.split('=')[1] as Staging
+  return PROOF_STAGING[name] ?? 'swatch'
+}
+
 function resolveProgram(arg: string): CrochetProgram {
   if (PATTERN_PROOFS[arg]) return PATTERN_PROOFS[arg]!
   const path = isAbsolute(arg) ? arg : resolve(process.cwd(), arg)
@@ -266,9 +282,10 @@ async function main(): Promise<void> {
   const yrArg = process.argv[3] && !process.argv[3]!.startsWith('--') ? Number(process.argv[3]) : undefined
   const noHero = process.argv.includes('--no-hero')
   const yr = programYarnRadiusMm(program, yrArg)
+  const staging = resolveStaging(program.name)
 
-  console.log(`[1-2/5] compile + relax + audit  ${program.name}  (form=${program.form}, yr=${yr})`)
-  const res = await renderProgramGuarded(program, { yr: yrArg, hero: !noHero })
+  console.log(`[1-2/5] compile + relax + audit  ${program.name}  (form=${program.form}, yr=${yr}, staging=${staging})`)
+  const res = await renderProgramGuarded(program, { yr: yrArg, hero: !noHero, staging })
   console.log(`        geometry hash ${res.geometryHash}`)
   if (res.problems.length) {
     for (const p of res.problems) console.error(`  - ${p}`)

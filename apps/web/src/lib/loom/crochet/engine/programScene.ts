@@ -80,7 +80,7 @@ export function programTiltDeg(p: CrochetProgram): number {
 export interface BlenderScene {
   fabric: { widthMm: number; heightMm: number; hex: string }
   strokes: { hex: string; sheen: number; radiusMm: number; filaments: number[][][] }[]
-  view: { bgHex: string; marginFactor: number; tiltDeg: number; resY: number; openFabric?: boolean }
+  view: { bgHex: string; marginFactor: number; tiltDeg: number; resY: number; openFabric?: boolean; drapeAmp?: number }
 }
 
 /** Smoothing subdivisions per control segment — MUST match the smooth() call. */
@@ -150,17 +150,64 @@ function colourStrokes(
   return order.map((hex) => ({ hex, sheen: 0.85, radiusMm, filaments: byHex.get(hex)! }))
 }
 
+/** How a finished flat piece is STAGED for its hero (Part C — the four-part
+ *  customer bar's "staged as the finished object" leg):
+ *   - `swatch`  — a tight macro crop of the fabric (the stitch-proof look).
+ *   - `flatlay` — the WHOLE piece pulled back on a clean surface with a gentle
+ *     3/4 tilt + soft drape, so it reads as a finished dishcloth / panel laid out,
+ *     not a fabric close-up.
+ *   - `loop`    — the flat strip curled into a RING (a headband seamed into a
+ *     loop): the finished object a customer recognises. Presentation only — the
+ *     stitches are the exact same genuinely-stitched geometry, just curved along
+ *     the band as a real seamed headband is. */
+export type Staging = 'swatch' | 'flatlay' | 'loop'
+
+/** Curl a flat strip's control points into a closed RING for the headband hero —
+ *  a short ribbed CYLINDER standing on the table (a headband seamed end to end).
+ *  The strip's LONG axis (its longer built extent) wraps into a circle of
+ *  circumference = that length (so the vertical ribs run round the band); the short
+ *  axis becomes the band's HEIGHT, standing up the z-axis; the stitch relief (local
+ *  z) rides the outward radial normal. No stitch moves relative to its neighbours —
+ *  the whole fabric is bent, exactly as a real headband strip is joined into a loop.
+ *  Framing is off the X–Y footprint (the ring diameter), so it frames cleanly and a
+ *  3/4 tilt reads it as a headband standing up. */
+function loopStrip(ctrl: V3[], yr: number): V3[] {
+  let minx = Infinity, maxx = -Infinity, miny = Infinity, maxy = -Infinity
+  for (const p of ctrl) {
+    if (p.x < minx) minx = p.x; if (p.x > maxx) maxx = p.x
+    if (p.y < miny) miny = p.y; if (p.y > maxy) maxy = p.y
+  }
+  const w = maxx - minx
+  const h = maxy - miny
+  // Wrap the LONGER extent so the ribs run around the ring (a real headband
+  // stretches around the head along its length).
+  const wrapX = w >= h
+  const L = wrapX ? w : h // circumference
+  const bandLo = wrapX ? miny : minx // band-height axis origin
+  const Rmid = L / (2 * Math.PI) // centre-line radius
+  return ctrl.map((p) => {
+    const along = wrapX ? p.x - minx : p.y - miny // 0..L around the ring
+    const up = (wrapX ? p.y : p.x) - bandLo // 0..band, the standing height
+    const a = (along / L) * Math.PI * 2
+    const rad = Rmid + p.z // stitch relief pushes outward along the radial normal
+    // Ring axis = Z: circumference in X–Y (the footprint the camera frames off),
+    // band height standing up Z. A short ribbed cylinder standing on the table.
+    return { x: rad * Math.cos(a), y: rad * Math.sin(a), z: up + yr }
+  })
+}
+
 /**
  * Build the deterministic Blender scene for a relaxed program — the exact
  * pattern as one continuous plied yarn. Multi-colour when the program expresses
  * colourwork (per-row stripe keys): the single strand is split into per-colour
  * curves so distinct yarn colours show in one piece. `twist` gives the
- * plied-wool fibre.
+ * plied-wool fibre. `staging` presents the finished object (Part C).
  */
-export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: number, twist = 0.08): BlenderScene {
+export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: number, twist = 0.08, staging: Staging = 'swatch'): BlenderScene {
   const hex = p.colourHex ?? DEFAULT_COLOUR
   const nodes = built.model.nodes
-  const ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
+  let ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
+  if (staging === 'loop') ctrl = loopStrip(ctrl, yr)
   const center = smooth(ctrl, PER_SEG)
   const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, twist)
 
@@ -180,13 +227,28 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   } else {
     strokes = [{ hex, sheen: 0.85, radiusMm, filaments }]
   }
+  // A clean, soft off-white ground — the finished-object HERO bar (real yarn
+  // colour on a clean white background). Warm near-white, not clinical pure white,
+  // so it reads as a styled product shot and doesn't blow out under AgX.
+  const base = { bgHex: '#efece6', resY: 1200 } as const
+  let view: BlenderScene['view']
+  if (staging === 'flatlay') {
+    // The WHOLE piece pulled back on a clean surface, gently tilted + softly
+    // draped, so it reads as a finished dishcloth / panel laid out — not a macro
+    // crop of the fabric.
+    view = { ...base, marginFactor: 0.4, tiltDeg: 15, drapeAmp: 0.06, resY: 1100 }
+  } else if (staging === 'loop') {
+    // A flat-lying ring (headband seamed into a loop), the 3-D object dropped onto
+    // the clean ground (no flat backing plane), framed with room + a 3/4 tilt.
+    view = { ...base, marginFactor: 0.5, tiltDeg: 38, openFabric: true }
+  } else {
+    // `swatch` — the tight stitch-proof macro crop (the prior behaviour).
+    view = { ...base, marginFactor: 0.12, tiltDeg: programTiltDeg(p) }
+  }
   return {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
     strokes,
-    // A clean, soft off-white ground — the finished-object HERO bar (real yarn
-    // colour on a clean white background). Warm near-white, not clinical pure
-    // white, so it reads as a styled product shot and doesn't blow out under AgX.
-    view: { bgHex: '#efece6', marginFactor: 0.12, tiltDeg: programTiltDeg(p), resY: 1200 },
+    view,
   }
 }
 
