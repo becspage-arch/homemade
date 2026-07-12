@@ -98,6 +98,13 @@ function textureSamplerPanel(): CrochetProgram {
     form: 'grid',
     gridWidth: SAMPLER_W,
     grid,
+    // Pack the columns to 1.6yr (the tightest audit-clean value — 1.5 fails the
+    // interlock gate). The panel mixes plain bands (fine at the default) with a
+    // front/back POST-RIB band, and posts only touch into solid ribs when packed
+    // (the locked `postrib` swatch + the headband proof use 1.5 for exactly this);
+    // at the default 1.8 the post band read as an open ladder. 1.6 packs the ribs
+    // (post-band max window 0.88yr -> 0.54yr) and makes the plain bands fully solid.
+    gaugeYr: 1.6,
     yarnWeight: 'worsted',
     colourHex: '#b0743c', // caramel
     gaugeText: '16 sts x 14 rows = 12 cm in worsted',
