@@ -30,6 +30,10 @@ const STITCH_PROMPTS: Record<string, string> = {
     'An extreme close-up macro photograph of a soft wool crochet swatch worked in single crochet.',
     'Neat, even, dense rows of small V-shaped single-crochet stitches in fluffy wool yarn.',
   ].join(' '),
+  amigurumi: [
+    'A photograph of a finished hand-crocheted amigurumi toy, a small stuffed ball creature, sitting on a plain white surface.',
+    'Made of dense single-crochet stitches worked in the round in soft wool yarn — the whole surface is a tidy spiral of small V-shaped stitches, firm and stuffed round.',
+  ].join(' '),
   hdc: [
     'An extreme close-up macro photograph of a soft wool crochet swatch worked in half double crochet.',
     'Even rows of half-double-crochet stitches with the distinctive horizontal third-loop ridge between rows, in fluffy wool yarn.',

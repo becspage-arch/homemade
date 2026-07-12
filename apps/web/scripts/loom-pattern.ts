@@ -34,10 +34,18 @@ import {
   type CrochetProgram,
 } from '../src/lib/loom/crochet/engine/program'
 import { compileRelaxAudit, programScene, geometryHash } from '../src/lib/loom/crochet/engine/programScene'
+import {
+  compileComposition,
+  compositionScene,
+  compositionYarnRadiusMm,
+  type CompositionProgram,
+  type BlenderScene,
+} from '../src/lib/loom/crochet/engine/composition'
 import { getChartSymbol } from '../src/lib/craft-charts/chart-symbols'
 import { loadCredentials } from './loom-hybrid-fal'
 import { fidelityGate, STRUCT_MIN_DEFAULT } from './loom-fidelity-gate'
 import { PATTERN_PROOFS } from './loom-pattern-proofs'
+import { COMPOSITION_PROOFS } from './loom-composition-proofs'
 
 loadCredentials()
 
@@ -90,9 +98,25 @@ export async function renderProgram(program: CrochetProgram, options: RenderProg
   if (problems.length) return result // audit gate — caller decides; do NOT render
 
   const scene = programScene(program, built, yr)
+  const art = await blenderHero(scene, name, outDir, options.hero !== false)
+  return { ...result, ...art }
+}
+
+/**
+ * Shared render tail: write the Blender scene JSON, render the deterministic base
+ * (the exact geometry), then the fidelity-gated photoreal hero. `heroPromptKey`
+ * picks the aspen-hero prompt (flat swatch vs amigurumi). Reused by the flat
+ * program path and the composed-amigurumi path so both stage identically.
+ */
+async function blenderHero(
+  scene: BlenderScene,
+  name: string,
+  outDir: string,
+  hero: boolean,
+  heroPromptKey = 'sc',
+): Promise<{ scenePath: string; basePng: string; heroPng: string | null; fidelityScore: number | null }> {
   const scenePath = resolve(outDir, `${name}.json`)
   writeFileSync(scenePath, JSON.stringify(scene))
-  result.scenePath = scenePath
 
   const basePng = resolve(outDir, `${name}.png`)
   const r = spawnSync(
@@ -101,22 +125,45 @@ export async function renderProgram(program: CrochetProgram, options: RenderProg
     { stdio: ['ignore', 'ignore', 'inherit'] },
   )
   if (r.status !== 0 || !existsSync(basePng)) throw new Error(`Blender render did not produce ${basePng}`)
-  result.basePng = basePng
 
-  if (options.hero !== false && process.env.FAL_KEY) {
-    const heroPng = basePng.replace(/\.png$/, '-hero.png')
-    const h = spawnSync('npx', ['tsx', 'scripts/loom-aspen-hero.ts', basePng, '0.55', '0.82'], {
+  let heroPng: string | null = null
+  let fidelityScore: number | null = null
+  if (hero && process.env.FAL_KEY) {
+    const heroOut = basePng.replace(/\.png$/, '-hero.png')
+    const h = spawnSync('npx', ['tsx', 'scripts/loom-aspen-hero.ts', basePng, '0.55', '0.82', heroPromptKey], {
       stdio: ['ignore', 'inherit', 'inherit'], shell: true,
     })
-    if (h.status === 0 && existsSync(heroPng)) {
+    if (h.status === 0 && existsSync(heroOut)) {
       // Gate the upscale ourselves so a drifted hero is REJECTED (fall back to the
       // exact base) — the hero is a promise the customer gets exactly this.
-      const verdict = await fidelityGate(basePng, heroPng)
-      result.fidelityScore = verdict.structureScore
-      result.heroPng = verdict.pass ? heroPng : null
+      const verdict = await fidelityGate(basePng, heroOut)
+      fidelityScore = verdict.structureScore
+      heroPng = verdict.pass ? heroOut : null
     }
   }
-  return result
+  return { scenePath, basePng, heroPng, fidelityScore }
+}
+
+/**
+ * The composed-amigurumi render engine: build + relax + AUDIT every part (a
+ * broken part stops the render), stage them into one 3D scene, then the same
+ * Blender base + fidelity-gated hero as the flat path. The hero IS the exact
+ * assembled object.
+ */
+export async function renderComposition(program: CompositionProgram, options: RenderProgramOptions = {}): Promise<RenderProgramResult> {
+  const outDir = options.outDir ?? OUT
+  mkdirSync(outDir, { recursive: true })
+  const name = options.name ?? program.name
+  const compiled = compileComposition(program, options.yr)
+  const result: RenderProgramResult = {
+    name, problems: compiled.problems, scenePath: '', basePng: null, heroPng: null,
+    geometryHash: compiled.geometryHash, yr: compiled.yr, fidelityScore: null,
+  }
+  if (compiled.problems.length) return result // audit gate — do NOT render
+
+  const scene = compositionScene(program, compiled)
+  const art = await blenderHero(scene, name, outDir, options.hero !== false, 'amigurumi')
+  return { ...result, ...art }
 }
 
 // ── Standalone chart SVG (eyeball the forward map) ────────────────────────────
@@ -187,9 +234,34 @@ function resolveProgram(arg: string): CrochetProgram {
   process.exit(2)
 }
 
+async function mainComposition(program: CompositionProgram, noHero: boolean, yrArg?: number): Promise<void> {
+  const yr = compositionYarnRadiusMm(program, yrArg)
+  console.log(`[1-2/4] compile + relax + audit (per part)  ${program.name}  (${program.parts.length} parts, yr=${yr})`)
+  const res = await renderComposition(program, { yr: yrArg, hero: !noHero }).catch((e) => {
+    console.error(`\nPIPELINE FAILED — ${(e as Error).message}`); process.exit(1)
+  })
+  console.log(`        geometry hash ${res.geometryHash}`)
+  if (res.problems.length) {
+    for (const p of res.problems) console.error(`  - ${p}`)
+    console.error('\nPIPELINE FAILED — a part is NOT genuinely stitched. Fix the part; do not render.')
+    process.exit(1)
+  }
+  console.log('        audit PASS (every part genuinely stitched)')
+  console.log(`[3/4] Blender base (staged 3D object) → ${res.basePng}`)
+  console.log(res.heroPng ? `[4/4] photoreal hero → ${res.heroPng}${res.fidelityScore != null ? ` (structure ${res.fidelityScore.toFixed(3)} / min ${STRUCT_MIN_DEFAULT})` : ''}` : `[4/4] hero SKIPPED or rejected by the fidelity gate — the base render is the exact-object deliverable${res.fidelityScore != null ? ` (structure ${res.fidelityScore.toFixed(3)} < ${STRUCT_MIN_DEFAULT})` : ''}`)
+  console.log('\n================ REPORT (paste-ready) ================')
+  console.log(`amigurumi: ${program.name}  [${program.parts.map((p) => p.name).join('+')}]  yr=${yr}  hash=${res.geometryHash}`)
+  console.log(`base:      ${res.basePng}`)
+  console.log(`hero:      ${res.heroPng ?? '(none — base render is the deliverable)'}`)
+  console.log('======================================================')
+  console.log(`\nNOT DONE until: find a real amigurumi photo, Read it beside the render, compare plainly, post links to Rebecca.`)
+}
+
 async function main(): Promise<void> {
   const arg = process.argv[2] ?? ''
   if (!arg) { console.error('usage: loom-pattern.ts <proof-name | program.json> [yr] [--no-hero]'); process.exit(2) }
+  const yrArgTop = process.argv[3] && !process.argv[3]!.startsWith('--') ? Number(process.argv[3]) : undefined
+  if (COMPOSITION_PROOFS[arg]) { await mainComposition(COMPOSITION_PROOFS[arg]!, process.argv.includes('--no-hero'), yrArgTop); return }
   const program = resolveProgram(arg)
   const yrArg = process.argv[3] && !process.argv[3]!.startsWith('--') ? Number(process.argv[3]) : undefined
   const noHero = process.argv.includes('--no-hero')
