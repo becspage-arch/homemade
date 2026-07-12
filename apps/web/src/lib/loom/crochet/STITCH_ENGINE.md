@@ -498,6 +498,39 @@ new program/pattern layer + the schema; NO stitch-geometry file was touched.
   stored on the program/schema now (no backfill) but the base render is
   single-colour — stripe/colourwork rendering is the next build.
 
+## 8e-2. CROCHET PATTERN ENGINE — build 2 (2026-07-12)
+
+Turns the program+render engine into one that produces customer-grade
+finished-object HERO images. Three parts, each build → audit → render → judge
+vs a real reference → commit + push.
+
+- **Part A — COLOUR / stripe rendering (DONE 2026-07-12).** The program layer
+  already expressed per-row colour (`GridRow.colourKey` + program `palette` /
+  `rowColours`); now the RENDER shows it. Mechanism (render-only — NO geometry
+  touched, geometryHash unchanged, single-colour programs bit-identical):
+  1. `buildContinuous` now returns a `nodeRow: number[]` (parallel to
+     `model.nodes`; -1 for the pinned foundation), captured from the node-index
+     range each worked row pushes. Only the grid/flat-row builder populates it.
+  2. `programScene` smooths + plies the ONE continuous strand exactly as before
+     (so the twist runs unbroken across the whole piece), then `colourStrokes`
+     cuts each ply polyline into maximal same-colour runs — one Blender curve
+     per colour, which `build_yarn` already groups by hex into its own material.
+     A 2-sample overlap at every colour boundary closes the seam; the boundary
+     lands at the selvedge (where a real crocheter changes yarn), so it's clean.
+  3. `rowColourResolver` maps a smoothed-centre sample → its control point → its
+     strand node → row (via `nodeRow`) → colour. Anchor rows take the first
+     worked row's colour so the cast-on edge matches the bottom stripe.
+  Proof: `stripe-dishcloth` now carries two-row coral/teal contrast bands
+  (palette + per-`GridRow` colourKey). Audit clean (126/126, hash 79f6a541);
+  hero passed the fidelity gate. Reads as a genuine two-colour striped crochet
+  fabric — distinct yarn colours, clean stripe boundaries — vs the woodsandwool
+  modern-stripe reference (finer/tighter cotton; mine chunkier + more open =
+  the documented library-wide density/roving softness, not a colour issue). The
+  program-render background also moved to a clean off-white `#efece6` (the
+  finished-object bar's white ground); the Fal hero cleans it to white.
+- **Part B — round/amigurumi composition:** IN PROGRESS.
+- **Part C — finished-object hero staging:** IN PROGRESS.
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,

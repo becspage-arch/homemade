@@ -53,6 +53,13 @@ export interface BuiltContinuous {
   widthMm: number
   heightMm: number
   /**
+   * Per-node worked ROW index (parallel to model.nodes), or -1 for the pinned
+   * anchor (foundation chain / slip knot). The colour-render splits the one
+   * continuous strand into per-row colour runs from this. Only the grid/flat-row
+   * builder populates it; absent → single-colour render (the prior behaviour).
+   */
+  nodeRow?: number[]
+  /**
    * How many nodes at the START of the strand are the legitimate pinned anchor
    * (foundation chain / slip knot / magic ring / cast-on). The audit rejects any
    * pin beyond these — pinned worked geometry is drawing, not stitching.
@@ -497,7 +504,11 @@ export function buildContinuous(
   // rings around. Seeded to the foundation crown (row 0 has no real post below).
   const postBelow: number[] = belowBack.slice()
 
+  // First node index of each worked row (for the per-node row map → colour runs).
+  const rowStart: number[] = []
+
   for (let j = 0; j < rowTypes.length; j++) {
+    rowStart[j] = nodes.length
     const ty = yTop[j]!
     const by = j === 0 ? 0 : yTop[j - 1]!
     const dir = j % 2 === 0 ? -1 : 1
@@ -677,6 +688,13 @@ export function buildContinuous(
 
   const strand = new Array(nodes.length).fill(0)
   const along = nodes.map((_, i) => i)
+  // Per-node row map: nodes before the first worked row are the foundation (-1);
+  // each worked row j owns [rowStart[j], rowStart[j+1]).
+  const nodeRow: number[] = new Array(nodes.length).fill(-1)
+  for (let j = 0; j < rowTypes.length; j++) {
+    const end = j + 1 < rowStart.length ? rowStart[j + 1]! : nodes.length
+    for (let k = rowStart[j]!; k < end; k++) nodeRow[k] = j
+  }
   return {
     model: { nodes, dist, bend, strand, along },
     strandPath,
@@ -685,5 +703,6 @@ export function buildContinuous(
     widthMm: W * sw,
     heightMm: acc,
     anchorPins: 3 * W, // the foundation chain (3 nodes per column)
+    nodeRow,
   }
 }

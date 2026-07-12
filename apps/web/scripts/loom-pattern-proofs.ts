@@ -19,21 +19,28 @@ const fill = (n: number, id: StitchId): StitchId[] => Array(n).fill(id) as Stitc
 // A plain square worked in alternating bands of double crochet (US sc) and half
 // treble (US hdc): the simplest "mixed stitch types" case — the stitch changes
 // row to row, so the fabric reads as subtle horizontal ridges. Locked sc + hdc.
+// It also carries two-row CONTRAST colour stripes (the classic striped dishcloth
+// look) — the test case for per-stitch colour flowing through to the render.
 const STRIPE_W = 14
 function stripeDishcloth(): CrochetProgram {
   const grid: GridRow[] = []
-  for (let j = 0; j < 12; j++) grid.push(row(fill(STRIPE_W, j % 2 === 0 ? 'sc' : 'hdc')))
+  for (let j = 0; j < 12; j++) {
+    // Two-row colour bands: change yarn at the selvedge every 2 rows.
+    const colourKey = Math.floor(j / 2) % 2 === 0 ? 'coral' : 'teal'
+    grid.push({ stitches: fill(STRIPE_W, j % 2 === 0 ? 'sc' : 'hdc'), colourKey })
+  }
   return {
     name: 'stripe-dishcloth',
     form: 'grid',
     gridWidth: STRIPE_W,
     grid,
     yarnWeight: 'worsted',
-    colourHex: '#c98a5e',
+    colourHex: '#c65b3c',
+    palette: { coral: '#c65b3c', teal: '#2f7f8c' },
     gaugeText: '14 dc x 12 rows = 10 cm (UK terms) in worsted',
     finishedSizeMm: { width: 250, height: 250 },
     hookMm: 5,
-    notes: 'A quick everyday dishcloth. Alternating dc and htr bands give it a gentle ridged texture.',
+    notes: 'A quick everyday dishcloth in two contrasting colours, changed every two rows. Alternating dc and htr bands add a gentle ridged texture.',
   }
 }
 

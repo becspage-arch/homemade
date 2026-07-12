@@ -80,25 +80,113 @@ export function programTiltDeg(p: CrochetProgram): number {
 export interface BlenderScene {
   fabric: { widthMm: number; heightMm: number; hex: string }
   strokes: { hex: string; sheen: number; radiusMm: number; filaments: number[][][] }[]
-  view: { bgHex: string; marginFactor: number; tiltDeg: number; resY: number }
+  view: { bgHex: string; marginFactor: number; tiltDeg: number; resY: number; openFabric?: boolean }
+}
+
+/** Smoothing subdivisions per control segment — MUST match the smooth() call. */
+const PER_SEG = 4
+
+/**
+ * Resolve a per-ROW yarn colour for a program that expresses colourwork, or null
+ * for a single-colour piece (the prior behaviour). Grid patterns carry the stripe
+ * key on each GridRow; shaped-flat patterns carry it in `rowColours`. A row with
+ * no key (or an unpalette'd key) falls back to the base colour.
+ */
+function rowColourResolver(p: CrochetProgram): ((row: number) => string) | null {
+  const base = p.colourHex ?? DEFAULT_COLOUR
+  const pal = p.palette
+  if (p.form === 'grid' && p.grid && pal && p.grid.some((r) => r.colourKey)) {
+    return (row) => {
+      const key = p.grid![row]?.colourKey
+      return (key ? pal[key] : undefined) ?? base
+    }
+  }
+  if (p.form === 'flat' && p.rowColours && pal && p.rowColours.some(Boolean)) {
+    return (row) => {
+      const key = p.rowColours![row]
+      return (key ? pal[key] : undefined) ?? base
+    }
+  }
+  return null
+}
+
+/**
+ * Split one continuous plied yarn into per-colour STROKES. The strand is smoothed
+ * + plied ONCE (so the twist runs unbroken across the whole piece), then each
+ * ply polyline is cut into maximal same-colour runs — one Blender curve per
+ * colour, exactly the multi-material path build_yarn already groups by hex. A
+ * 2-sample overlap at every colour boundary means the fat tubes meet with no gap
+ * (a real colour change happens at the selvedge, where these boundaries land).
+ */
+function colourStrokes(
+  center: V3[],
+  filaments: number[][][],
+  radiusMm: number,
+  colourAt: (centerIdx: number) => string,
+): { hex: string; sheen: number; radiusMm: number; filaments: number[][][] }[] {
+  const N = center.length
+  const centreHex: string[] = new Array(N)
+  for (let k = 0; k < N; k++) centreHex[k] = colourAt(k)
+
+  // Runs over the shared index space, first-appearance order preserved.
+  const runs: { hex: string; a: number; b: number }[] = []
+  let a = 0
+  for (let k = 1; k <= N; k++) {
+    if (k === N || centreHex[k] !== centreHex[a]) {
+      runs.push({ hex: centreHex[a]!, a, b: k - 1 })
+      a = k
+    }
+  }
+
+  const byHex = new Map<string, number[][][]>()
+  const order: string[] = []
+  for (const run of runs) {
+    const lo = Math.max(0, run.a - 2)
+    const hi = Math.min(N - 1, run.b + 2)
+    if (!byHex.has(run.hex)) { byHex.set(run.hex, []); order.push(run.hex) }
+    const bucket = byHex.get(run.hex)!
+    for (const ply of filaments) bucket.push(ply.slice(lo, hi + 1))
+  }
+  return order.map((hex) => ({ hex, sheen: 0.85, radiusMm, filaments: byHex.get(hex)! }))
 }
 
 /**
  * Build the deterministic Blender scene for a relaxed program — the exact
- * pattern as one continuous plied yarn. Single colour for now (stripe /
- * colourwork rendering is the pattern engine's next build; the program + schema
- * already carry the colour data). `twist` gives the plied-wool fibre.
+ * pattern as one continuous plied yarn. Multi-colour when the program expresses
+ * colourwork (per-row stripe keys): the single strand is split into per-colour
+ * curves so distinct yarn colours show in one piece. `twist` gives the
+ * plied-wool fibre.
  */
 export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: number, twist = 0.08): BlenderScene {
   const hex = p.colourHex ?? DEFAULT_COLOUR
   const nodes = built.model.nodes
   const ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
-  const center = smooth(ctrl, 4)
+  const center = smooth(ctrl, PER_SEG)
   const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, twist)
+
+  const resolver = rowColourResolver(p)
+  const nodeRow = built.nodeRow
+  let strokes: BlenderScene['strokes']
+  if (resolver && nodeRow) {
+    // Map a smoothed-centre index → its control point → its strand node → row →
+    // colour. Anchor rows (-1, the foundation) take the first worked row's colour
+    // so the cast-on edge matches the bottom stripe.
+    const colourAt = (centerIdx: number): string => {
+      const ci = Math.min(Math.floor(centerIdx / PER_SEG), ctrl.length - 1)
+      const row = nodeRow[built.strandPath[ci]!] ?? -1
+      return resolver(row < 0 ? 0 : row)
+    }
+    strokes = colourStrokes(center, filaments, radiusMm, colourAt)
+  } else {
+    strokes = [{ hex, sheen: 0.85, radiusMm, filaments }]
+  }
   return {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
-    strokes: [{ hex, sheen: 0.85, radiusMm, filaments }],
-    view: { bgHex: '#6f5440', marginFactor: 0.12, tiltDeg: programTiltDeg(p), resY: 1200 },
+    strokes,
+    // A clean, soft off-white ground — the finished-object HERO bar (real yarn
+    // colour on a clean white background). Warm near-white, not clinical pure
+    // white, so it reads as a styled product shot and doesn't blow out under AgX.
+    view: { bgHex: '#efece6', marginFactor: 0.12, tiltDeg: programTiltDeg(p), resY: 1200 },
   }
 }
 
