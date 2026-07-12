@@ -20,26 +20,104 @@
  * content pipeline's convention).
  */
 
-import { SWATCH_RECIPES, type StitchId, type ShapeOp } from './dictionary'
+import { SWATCH_RECIPES, SHELL_N, type StitchId, type ShapeOp } from './dictionary'
 import { buildShaped, buildRounds, buildSphere, roundOps } from './shaping'
-import type { BuiltContinuous } from './yarnPath'
+import { buildContinuous, type BuiltContinuous } from './yarnPath'
 
-/** The three fabric forms the loom can currently build from a program. */
-export type ProgramForm = 'flat' | 'disc' | 'sphere'
+/** The fabric forms the loom can build from a program.
+ *  - 'flat'   — a shaped, single-stitch flat piece (variable-width rows: incs /
+ *               decs / shells). Trapezoids, triangles, C2C. (buildShaped)
+ *  - 'grid'   — a fixed-width flat piece whose rows can MIX stitch types per
+ *               row (post ribbing, blo ridges, moss / textured rectangles).
+ *               Every row is `gridWidth` stitches. (buildContinuous + stitchAt)
+ *  - 'disc'   — a flat circle worked in the round off a magic ring. (buildRounds)
+ *  - 'sphere' — an amigurumi ball. (buildSphere) */
+export type ProgramForm = 'flat' | 'grid' | 'disc' | 'sphere'
+
+/** Real yarn weights → yarn RADIUS in mm (the loom's `yr` knob). One program
+ *  renders at any weight; the same stitch program is fine / worsted / bulky just
+ *  by swapping this. Radii are half the nominal strand thickness of each weight. */
+export type YarnWeight = 'lace' | 'fine' | 'sport' | 'dk' | 'worsted' | 'aran' | 'bulky' | 'super-bulky'
+
+export const YARN_WEIGHT_RADIUS_MM: Record<YarnWeight, number> = {
+  lace: 1.0,
+  fine: 1.3,
+  sport: 1.7,
+  dk: 1.9,
+  worsted: 2.1,
+  aran: 2.4,
+  bulky: 3.0,
+  'super-bulky': 3.8,
+}
+
+/** One row of a 'grid' program — a full-width row whose cells may be different
+ *  stitch types (mixed stitches per row). `stitches.length` must equal the
+ *  program's `gridWidth`. Colour is optional and STORED for the pattern engine's
+ *  colourwork step; the current base render is single-colour (stripes / colourwork
+ *  rendering is the next build — the schema + program carry the data now so there
+ *  is no backfill later). */
+export interface GridRow {
+  /** Per-cell stitch id in WORK order, left→right in the fabric frame. */
+  stitches: StitchId[]
+  /** Whole-row colour (a stripe) — a key into the program `palette`. */
+  colourKey?: string
+}
 
 export interface CrochetProgram {
   name: string
-  /** The working stitch (one stitch per program for now — mixed-stitch rows
-   *  are the pattern engine's next step, the builders already take per-op ids). */
-  stitch: StitchId
   form: ProgramForm
+
+  /** The working stitch for the single-stitch forms (flat / disc / sphere).
+   *  Ignored by 'grid' (each cell carries its own stitch). */
+  stitch?: StitchId
+
   /** flat: foundation chain length. */
   foundation?: number
   /** flat: per-row shaping ops in WORK order (the precise form). */
   rows?: ShapeOp[][]
+
+  /** grid: the mixed-stitch rows (each `gridWidth` wide). */
+  grid?: GridRow[]
+  /** grid: stitches per row (constant width). */
+  gridWidth?: number
+  /** grid: column-spacing (gauge) override in yarn radii, when the pattern packs
+   *  tighter/looser than the driving stitch's default — e.g. 1×1 post rib packs
+   *  its columns to 1.5 (the locked postrib swatch value) so the ribs touch. */
+  gaugeYr?: number
+
   /** disc/sphere: stitches per round. disc grows +6/round (magic-ring flat
    *  circle); sphere follows the canonical ball recipe (±6 per round). */
   rounds?: number[]
+
+  // ── Yarn, colour, sizing — everything a stored pattern needs to render + list.
+  //    All optional so the existing single-stitch proofs stay valid; a real
+  //    stored pattern fills them in.
+
+  /** Yarn weight → the render `yr`. Defaults to worsted when a caller omits an
+   *  explicit radius. */
+  yarnWeight?: YarnWeight
+  /** Base yarn colour (hex). The render's default single colour. */
+  colourHex?: string
+  /** Colour palette: key → hex, for `GridRow.colourKey` stripes / colourwork. */
+  palette?: Record<string, string>
+  /** Per-row colour keys for the shaped 'flat' form (stripes) — the grid form
+   *  carries colour on each `GridRow` instead. Stored now; rendered next build. */
+  rowColours?: string[]
+  /** Human gauge line ("12 sc x 14 rows = 10 cm"). */
+  gaugeText?: string
+  /** Finished dimensions in mm (for the catalogue + the schematic). */
+  finishedSizeMm?: { width: number; height: number }
+  /** Recommended hook size in mm. */
+  hookMm?: number
+  /** Free-text designer notes (construction hints, blocking, edging). */
+  notes?: string
+}
+
+/** Resolve the render yarn radius (mm) for a program: an explicit override wins,
+ *  else the program's yarn weight, else worsted. */
+export function programYarnRadiusMm(p: CrochetProgram, override?: number): number {
+  if (override != null) return override
+  return YARN_WEIGHT_RADIUS_MM[p.yarnWeight ?? 'worsted']
 }
 
 /** UK chart symbol → loom stitch id (the loom is US-internal). */
@@ -62,6 +140,12 @@ const STITCH_TO_UK: Record<string, string> = {
   dc: 'tr',
   tr: 'dtr',
   dtr: 'trtr',
+  scblo: 'dc-blo', // UK dc worked in the back loop only
+  scflo: 'dc-flo',
+  fpdc: 'FPtr', // US front-post dc = UK front-post treble
+  bpdc: 'BPtr',
+  bobble: 'bobble',
+  k: 'k',
 }
 
 const UK_DEC: Record<string, string> = {
@@ -70,14 +154,31 @@ const UK_DEC: Record<string, string> = {
   dc: 'tr2tog',
 }
 
-/** Compile the program to relaxed, AUDITABLE loom geometry. The caller runs
- *  the audit + render through the normal pipeline — this only builds. */
+/** Compile the program to unrelaxed loom geometry (the caller relaxes + audits +
+ *  renders through the normal pipeline — this only builds the yarn path). */
 export function compileProgram(p: CrochetProgram, yarnRadiusMm: number): BuiltContinuous {
   if (p.form === 'flat') {
     if (!p.foundation || !p.rows) throw new Error(`${p.name}: flat needs foundation + rows`)
+    if (!p.stitch) throw new Error(`${p.name}: flat needs a stitch`)
     return buildShaped(p.stitch, p.rows, p.foundation, yarnRadiusMm)
   }
+  if (p.form === 'grid') {
+    if (!p.grid || p.grid.length === 0 || !p.gridWidth) throw new Error(`${p.name}: grid needs grid rows + gridWidth`)
+    const W = p.gridWidth
+    p.grid.forEach((r, j) => {
+      if (r.stitches.length !== W)
+        throw new Error(`${p.name}: grid row ${j} has ${r.stitches.length} stitches but gridWidth is ${W}`)
+    })
+    // Each row's HEIGHT is driven by its representative (first) stitch; each CELL
+    // picks its own excursion via stitchAt. This is the proven mixed-stitch path
+    // (postrib / basketweave build exactly this way). One column gauge across the
+    // piece comes from the driving stitch of row 0 (or an explicit gaugeYr).
+    const rowTypes = p.grid.map((r) => r.stitches[0]!)
+    const stitchAt = (j: number, c: number): StitchId => p.grid![j]!.stitches[c]!
+    return buildContinuous(rowTypes, W, yarnRadiusMm, { stitchAt, gaugeYr: p.gaugeYr })
+  }
   if (!p.rounds || p.rounds.length === 0) throw new Error(`${p.name}: ${p.form} needs rounds`)
+  if (!p.stitch) throw new Error(`${p.name}: ${p.form} needs a stitch`)
   if (p.form === 'disc') return buildRounds(p.stitch, p.rounds, yarnRadiusMm)
   // sphere: the builder validates the counts follow the ball recipe.
   return buildSphere(p.stitch, 0, yarnRadiusMm, p.rounds)
@@ -134,8 +235,18 @@ export function programFromChart(chart: {
 /** Emit the locked-template written instructions (UK terms; repeats as
  *  `[...] N times`; every line ends with its `(N sts)` count). */
 export function writeInstructions(p: CrochetProgram): string[] {
-  const uk = STITCH_TO_UK[p.stitch] ?? p.stitch
+  const uk = STITCH_TO_UK[p.stitch ?? 'sc'] ?? p.stitch ?? 'sc'
   const out: string[] = []
+
+  if (p.form === 'grid') {
+    const W = p.gridWidth!
+    out.push(`Foundation: ch ${W + 1}. (${W} sts)`)
+    p.grid!.forEach((row, i) => {
+      out.push(`Row ${i + 1}: ch 1, turn, ${describeGridRow(row.stitches)}. (${W} sts)`)
+    })
+    out.push('Fasten off and weave in the end.')
+    return out
+  }
 
   if (p.form === 'flat') {
     out.push(`Foundation: ch ${p.foundation! + 1}. (${p.foundation} sts)`)
@@ -193,6 +304,140 @@ function describeRound(prev: number, cur: number, uk: string): string {
   if (dec === cur) return `${decName} around`
   const per = Math.floor(cur / dec) - 1
   return `[${uk} in next ${per === 1 ? 'st' : `${per} sts`}, ${decName}] ${dec} times`
+}
+
+/** Describe a mixed-stitch grid row in UK terms. A short repeating unit becomes
+ *  `[FPtr, BPtr] 9 times`; otherwise run-length groups ("2 htr, 4 FPtr, 2 htr"). */
+function describeGridRow(cells: StitchId[]): string {
+  const n = cells.length
+  const term = (id: StitchId): string => STITCH_TO_UK[id] ?? id
+  // Whole-row repeat of a short (2–4 cell) mixed unit → bracket notation.
+  for (let p = 2; p <= 4 && p <= n / 2; p++) {
+    if (n % p !== 0) continue
+    let periodic = true
+    for (let i = p; i < n && periodic; i++) if (cells[i] !== cells[i - p]) periodic = false
+    if (!periodic) continue
+    const unit = cells.slice(0, p)
+    if (unit.every((u) => u === unit[0])) break // uniform — run-length says it better
+    return `[${unit.map(term).join(', ')}] ${n / p} times`
+  }
+  const runs: string[] = []
+  let i = 0
+  while (i < n) {
+    const id = cells[i]!
+    let run = 1
+    while (i + run < n && cells[i + run] === id) run++
+    runs.push(run === 1 ? `${term(id)} in next st` : `${term(id)} in next ${run} sts`)
+    i += run
+  }
+  return runs.join(', ')
+}
+
+/** Loom stitch id → the product's crochet chart symbol key (chart-symbols.ts,
+ *  craft 'crochet'). fp/bp posts have no dedicated glyph in the starter set, so
+ *  they map to the treble glyph (they are dc-family posts) — the caption notes the
+ *  post placement. This is the INVERSE direction of CHART_SYMBOL_TO_STITCH plus
+ *  the texture stitches. */
+const STITCH_TO_CHART_SYMBOL: Record<StitchId, string> = {
+  ch: 'chain',
+  slst: 'slip-stitch',
+  sc: 'double-crochet-uk',
+  hdc: 'half-treble',
+  dc: 'treble',
+  tr: 'double-treble',
+  dtr: 'triple-treble',
+  scblo: 'back-loop',
+  scflo: 'front-loop',
+  fpdc: 'treble',
+  bpdc: 'treble',
+  bobble: 'bobble',
+  k: 'knit',
+}
+
+const CHART_STITCH_LABEL: Partial<Record<StitchId, string>> = {
+  fpdc: 'FPtr',
+  bpdc: 'BPtr',
+}
+
+/** Expand a shaping op into the chart symbols it PRODUCES (what the row's cells
+ *  are). 'st' → 1, 'inc' → 2, 'dec' → 1, 'shell' → SHELL_N, 'skip' → 0. */
+function opToSymbols(op: ShapeOp, sym: string): { symbol: string; label?: string }[] {
+  const n = op === 'inc' ? 2 : op === 'shell' ? SHELL_N : op === 'skip' ? 0 : 1
+  return Array.from({ length: n }, () => ({ symbol: sym }))
+}
+
+/**
+ * FORWARD map — a stored program → the product's `ChartDefinition` (the shape
+ * `apps/web/src/lib/craft-charts/svg-chart.tsx` renders and `CrochetPattern.
+ * chartData` stores). So a stored pattern carries its Step-3 symbol chart, built
+ * from the SAME program the geometry + words come from — the three can't drift.
+ *
+ * Emits the worked stitches per row/round as chart cells; increases/decreases
+ * are conveyed by the changing per-row count (real symbol charts read the shape
+ * that way). Returns a `ChartDefinition`-shaped object (typed loosely here to
+ * avoid a cross-package import cycle; it validates against
+ * `craft-charts/types.ts`).
+ */
+export function programToChart(p: CrochetProgram): {
+  title: string
+  layout: 'round' | 'flat'
+  craft: 'crochet'
+  terminologyConvention: 'uk'
+  rounds?: { roundNumber: number; label?: string; stitches: { symbol: string; count?: number; label?: string }[] }[]
+  rows?: { rowNumber: number; rightSide?: boolean; stitches: { symbol: string; label?: string }[] }[]
+  caption?: string
+} {
+  const base = { title: p.name, craft: 'crochet' as const, terminologyConvention: 'uk' as const }
+  const postNote = 'Front/back-post stitches are shown with the treble glyph (FPtr/BPtr).'
+
+  if (p.form === 'disc' || p.form === 'sphere') {
+    const sym = STITCH_TO_CHART_SYMBOL[p.stitch ?? 'sc']
+    const rounds = p.rounds!.map((count, i) => ({
+      roundNumber: i + 1,
+      label: `Rnd ${i + 1}`,
+      stitches:
+        i === 0
+          ? [{ symbol: 'magic-ring' as string }, { symbol: sym, count }]
+          : [{ symbol: sym, count }],
+    }))
+    return {
+      ...base,
+      layout: 'round',
+      rounds,
+      caption:
+        p.form === 'sphere'
+          ? 'Worked in a continuous spiral; stuff before closing.'
+          : 'Worked in a continuous spiral from the centre out.',
+    }
+  }
+
+  // Flat / grid → a flat chart, row 1 at the bottom, RS/WS alternating.
+  const rows: { rowNumber: number; rightSide?: boolean; stitches: { symbol: string; label?: string }[] }[] = []
+  let usesPost = false
+
+  if (p.form === 'grid') {
+    p.grid!.forEach((row, j) => {
+      const stitches = row.stitches.map((id) => {
+        if (id === 'fpdc' || id === 'bpdc') usesPost = true
+        return { symbol: STITCH_TO_CHART_SYMBOL[id], label: CHART_STITCH_LABEL[id] }
+      })
+      rows.push({ rowNumber: j + 1, rightSide: j % 2 === 0, stitches })
+    })
+  } else {
+    // shaped flat
+    const sym = STITCH_TO_CHART_SYMBOL[p.stitch ?? 'sc']
+    p.rows!.forEach((ops, j) => {
+      const stitches = ops.flatMap((op) => opToSymbols(op, sym))
+      rows.push({ rowNumber: j + 1, rightSide: j % 2 === 0, stitches })
+    })
+  }
+
+  return {
+    ...base,
+    layout: 'flat',
+    rows,
+    caption: `Read right-side rows right-to-left, wrong-side rows left-to-right.${usesPost ? ` ${postNote}` : ''}`,
+  }
 }
 
 /** The proof programs — the swatches the engine already renders, now expressed
