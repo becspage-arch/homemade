@@ -238,10 +238,11 @@ function cottageMotif(): string[][] {
 function cottageTapestry(): CrochetProgram {
   const motif = cottageMotif()
   const grid: GridRow[] = []
-  // Program row 0 is the BOTTOM of the fabric; motif y=0 is the TOP → flip.
+  // The render places program row 0 at the TOP of the image (the stripe-dishcloth
+  // convention), so program row j maps straight to motif y=j — the scene reads
+  // upright (sky + sun on top, grass + flowers along the bottom).
   for (let j = 0; j < TAP_H; j++) {
-    const y = TAP_H - 1 - j
-    grid.push({ stitches: fill(TAP_W, 'sc'), cellColours: motif[y]!.slice() })
+    grid.push({ stitches: fill(TAP_W, 'sc'), cellColours: motif[j]!.slice() })
   }
   return {
     name: 'cottage-tapestry',
