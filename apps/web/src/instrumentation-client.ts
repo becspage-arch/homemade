@@ -25,10 +25,24 @@ if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
     sendDefaultPii: false,
     replaysOnErrorSampleRate: 0,
     replaysSessionSampleRate: 0,
+    // Known third-party noise. "Object Not Found Matching Id:N, MethodName:...,
+    // ParamCount:N" is emitted by a browser extension's injected content script
+    // (the Outlook/Office "Safe Links" bridge), surfaced to us only as an
+    // unhandled promise rejection with a plain-string value. It is not our code
+    // and there is nothing on the page to fix — drop it so it stops paging.
+    ignoreErrors: [/Object Not Found Matching Id/i],
     beforeSend(event: Sentry.ErrorEvent): Sentry.ErrorEvent | null {
       // Drop the event entirely unless the user has granted error-monitoring
       // consent via the cookie banner.
       if (!shouldSendSentryEvent()) return null
+      // Belt-and-braces for the browser-extension noise above: some builds
+      // surface it as a raw rejection value that ignoreErrors doesn't see.
+      const values = event.exception?.values
+      if (
+        values?.some((v) => v.value?.includes('Object Not Found Matching Id'))
+      ) {
+        return null
+      }
       if (event.request) {
         delete event.request.cookies
         delete event.request.data
