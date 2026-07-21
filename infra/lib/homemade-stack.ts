@@ -319,10 +319,17 @@ export class HomemadeStack extends cdk.Stack {
       containerInsightsV2: ecs.ContainerInsights.ENABLED,
     })
 
+    // 1 vCPU / 2 GB. The previous 256/512 (0.25 vCPU) was too starved to render
+    // SSR pages before the ALB timed out: on 2026-07-16 TargetResponseTime
+    // peaked at 48s and the load balancer returned 324 HTTPCode_ELB_504 over a
+    // ~4h window (targets stayed healthy, TargetConnectionErrorCount was 0, so
+    // it was pure compute starvation, not a crash). Googlebot hit that window
+    // and Search Console flagged "Server error (5xx)". This size gives the
+    // headroom to keep p99 render latency well under the ALB idle timeout.
     const taskDef = new ecs.FargateTaskDefinition(this, 'WebTask', {
       family: 'homemade-web',
-      memoryLimitMiB: 512,
-      cpu: 256,
+      memoryLimitMiB: 2048,
+      cpu: 1024,
       runtimePlatform: {
         cpuArchitecture: ecs.CpuArchitecture.X86_64,
         operatingSystemFamily: ecs.OperatingSystemFamily.LINUX,
