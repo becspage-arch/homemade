@@ -65,6 +65,16 @@ record('subjectKey: keeps a double-s word intact (grass is not gras)', () => {
   assert.ok(subjectTokens('a hare in long grass').includes('grass'))
 })
 
+record('subjectKey: -es stems only where the stem needs it', () => {
+  // roses is rose+s, not ros+es — the naive -ses rule got this wrong and put
+  // "climbing ros" in a live pattern's subject key.
+  assert.ok(subjectTokens('a cottage with climbing roses').includes('rose'))
+  assert.ok(subjectTokens('a shelf of glasses').includes('glass'))
+  assert.ok(subjectTokens('a row of boxes').includes('box'))
+  assert.ok(subjectTokens('a pile of dishes').includes('dish'))
+  assert.ok(subjectTokens('two houses on a hill').includes('house'))
+})
+
 record('subjectKey: possessives carry no extra meaning', () => {
   assert.equal(subjectKey("a witch's apothecary shelf"), 'witch apothecary shelf')
 })
