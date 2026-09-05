@@ -18,11 +18,14 @@ the work closes.
 `apps/web/src/lib/loom/**`, `apps/web/scripts/loom*`, the crochet Studio
 (`apps/web/src/app/studio/crochet`, `components/studio/crochet`,
 `api/studio/crochet`), `CrochetPattern`/`KnittingPattern` schema changes, and
-the admin Members pages. In flight: the close-range stitch look pass (branch
-`claude/loom-look-pass`, single crochet re-cut at real gauge, then the flat
-family, then round/sphere/knit builders), the amigurumi bear round 3, the CDK
-deploy that mounts `LOOM_RENDER` on the web task, the six-sample sign-off,
-then bulk fill, category go-live, knitting. Standing rule for every category:
+the admin Members pages. Done so far: look-pass rounds 1–3 (flat family and
+tall posts at real gauge; on main), the crochet Studio "Design your own", the
+real bulk path proven end to end (stored row → Fargate hero → R2 → attached),
+`LOOM_RENDER` confirmed already mounted on the web task. In flight: look-pass
+round 4 (round/sphere stitch look, branch `claude/loom-look-pass-4`), the
+headband proof rebuilt at real size (`claude/loom-headband`), the amigurumi
+bear round 3, the six-sample sign-off, then bulk fill, category go-live,
+knitting. Standing rule for every category:
 autopilot runs on ECS (Inngest) or in cloud sessions/routines, never on
 Rebecca's laptop.
 
