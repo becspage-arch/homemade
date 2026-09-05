@@ -15,8 +15,6 @@ const RANGES = [
 
 type RangeKey = (typeof RANGES)[number]['key']
 
-const STANDARD = new Intl.NumberFormat('en-GB')
-
 export default async function AcquisitionPage({
   searchParams,
 }: {
@@ -81,28 +79,28 @@ export default async function AcquisitionPage({
         title="Signups by channel"
         description="From the daily rollup channel split. Direct = no UTM and a self / empty referrer."
       >
-        <BarRank data={byChannel} formatValue={(v) => STANDARD.format(v)} />
+        <BarRank data={byChannel} />
       </ChartCard>
 
       <ChartCard
         title="Signups by country"
         description="ISO 3166 alpha-2 from Cloudflare CF-IPCountry. Top 20."
       >
-        <BarRank data={byCountry} formatValue={(v) => STANDARD.format(v)} />
+        <BarRank data={byCountry} />
       </ChartCard>
 
       <ChartCard
         title="Signups by UTM source"
         description="Top 20 utm_source values on signup. Empty source bucketed as 'direct'."
       >
-        <BarRank data={topUtm} formatValue={(v) => STANDARD.format(v)} />
+        <BarRank data={topUtm} />
       </ChartCard>
 
       <ChartCard
         title="Signups by device class"
         description="Coarse UA bucket — mobile, tablet, desktop."
       >
-        <BarRank data={topDevice} formatValue={(v) => STANDARD.format(v)} />
+        <BarRank data={topDevice} />
       </ChartCard>
 
       <ChartCard

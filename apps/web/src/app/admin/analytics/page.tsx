@@ -178,7 +178,7 @@ export default async function AnalyticsOverviewPage() {
           title="Top 5 categories by content published — last 7 days"
           description="One row per top-level category that shipped tutorials this week."
         >
-          <BarRank data={topCategories} formatValue={(v) => STANDARD.format(v)} />
+          <BarRank data={topCategories} />
         </ChartCard>
       ) : null}
 
