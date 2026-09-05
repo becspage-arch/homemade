@@ -1392,10 +1392,18 @@ the same 44 × 69 claim before this pass.
 
 ### Hashes — 16 moved, 20 bit-identical (parts 1 and 2 together)
 
-Moved: `dc` `tr` `dtr` (the collars) · `fpdc` `bpdc` `postrib` `basketweave`
-(their row 0 is a plain dc) · `scinc` `scdec` `hdcinc` `hdcdec` `dcinc` `dcdec`
-`crossed` (the cell + the decrease head) · `mrdisc` `ball` (the cell + the
-re-derived drift and canopy).
+`dc` 0338798a843fac2a→6cf5d9a8ef407dee · `tr` 097ace7ab1b448a1→3be0cd4b6d701a38 ·
+`dtr` d136eb5d1ce5902b→f4ed80ad99033afa · `fpdc` 15d9b46d2358df6a→d312f9ea41f3b549 ·
+`bpdc` 88a224a8c10e2ea8→ddc3f2b65f36447d · `postrib` f7d2a22bd60e772c→d27a1dd46849bd1f ·
+`basketweave` b94ede37a8ff6c6e→0de1315d830cb475 · `scinc` 70e1fb2c5073225b→c2ec6c9114786d4a ·
+`scdec` 6044d0337de77899→77eb843260b839be · `hdcinc` e135d28ba6003cdd→38985fe29b3d3f50 ·
+`hdcdec` f342540c1a7e4f28→7611be1fbc6d6d51 · `dcinc` 157ffd3096b7daf6→cdb0ad3a0d97868d ·
+`dcdec` cad885e9f3cd35f6→126b4e4c0789c8bb · `crossed` d165acbd34e7ed10→addfb96892b4badb ·
+`mrdisc` a7edf02bb8e6bbaa→0b5b8664da0cd2f8 · `ball` 44ede93149fe3c09→b1c8691bed42cec1.
+
+dc / tr / dtr are the collars; fpdc / bpdc / postrib / basketweave only because
+their row 0 is a plain dc; the shaped family is the cell plus the decrease head;
+mrdisc and ball are the cell plus the re-derived drift and canopy.
 
 Bit-identical: `ch` `slst` `sc` `hdc` `scblo` `scflo` `bobble` `bobbles` `shell`
 `vstitch` `picot`, and every knit swatch — knit is untouched and still wants its
