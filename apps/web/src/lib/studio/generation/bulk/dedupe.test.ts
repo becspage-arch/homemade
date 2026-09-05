@@ -19,6 +19,7 @@ import sharp from 'sharp'
 import { subjectKey, subjectTokens, subjectJaccard, findSubjectKeyMatch, SUBJECT_JACCARD_MATCH } from './subject-key'
 import { imageHash, sha256Hex, nearDuplicateVerdict, type PatternFingerprint, type ChartFingerprint } from './similarity'
 import { shelfDeficits, allocateShelves, shelfSlots, allShelvesAtTarget } from './shelf-plan'
+import { measureVividness, vividnessVerdict, MIN_INK, MIN_CHROMA } from './vividness'
 import { runIsComplete } from './run-status'
 import type { ShelfTarget } from '../categories'
 
@@ -214,6 +215,107 @@ async function imageTests(): Promise<void> {
   })
 }
 
+// ─── the pale guard ────────────────────────────────────────────────────────
+
+/**
+ * Calibration references from the live catalogue. Keyed by pattern id, which is
+ * how the September 2026 dedupe scan named its cached thumbnails. Run with
+ * --thumbs <dir> (or XS_THUMB_CACHE) to check the real files; without the cache
+ * these cases skip rather than fail, so the suite still runs anywhere.
+ */
+const PALE_REFS: [string, string][] = [
+  ['cmtoul9q6000301adiawycq6a', 'proof-batch cupcake, cream on cream (culled)'],
+  ['cmqzrgvgw001ge8v4ka2r3tiz', 'cute-lamb-meadow, pale pastel'],
+]
+const VIVID_REFS: [string, string][] = [
+  ['cmtoure6d000a01adki8tan44', 'proof cottage, 9 colours, a gem'],
+  ['cmql3uurg000br0v4k7ss5chv', 'delft-hare, 12 colours two-tone'],
+  ['cmqmnonfw0005b4v445y73u4r', 'blackwork-snowflake, 4 colours'],
+  ['cmqmnosdq0006b4v4g8a06m6d', 'blackwork-pomegranate, 4 colours'],
+  ['cmr6l4gaq000hakv4qwudtrvs', 'big-coral-reef, 120 colours'],
+  ['cmtoumqq7000701ad100zgamv', 'proof haunted house, 87 colours, Flux Pro'],
+  ['cmtouk9zw000401adwqpj7ozr', 'proof apothecary, 33 colours'],
+]
+
+function thumbDir(): string | null {
+  const i = process.argv.indexOf('--thumbs')
+  const dir = i >= 0 ? process.argv[i + 1] : process.env.XS_THUMB_CACHE
+  return dir && existsSync(dir) ? dir : null
+}
+
+async function vividnessTests(): Promise<void> {
+  const dir = thumbDir()
+
+  // Synthetic cases always run: they pin the rule itself, independent of any cache.
+  await recordAsync('vividness: a cream-on-cream wash is too pale', async () => {
+    const png = await sharp({
+      create: { width: 120, height: 120, channels: 3, background: { r: 252, g: 250, b: 246 } },
+    })
+      .composite([
+        {
+          input: await sharp({ create: { width: 70, height: 70, channels: 3, background: { r: 246, g: 234, b: 226 } } })
+            .png()
+            .toBuffer(),
+          top: 25,
+          left: 25,
+        },
+      ])
+      .png()
+      .toBuffer()
+    const v = await measureVividness(png)
+    assert.ok(vividnessVerdict(v).tooPale, `expected pale, got ${JSON.stringify(v)}`)
+  })
+
+  await recordAsync('vividness: two-tone dark-on-white passes on tone alone', async () => {
+    // Blackwork in miniature: no chroma whatever, plenty of ink.
+    const png = await sharp({
+      create: { width: 120, height: 120, channels: 3, background: { r: 252, g: 250, b: 246 } },
+    })
+      .composite([
+        {
+          input: await sharp({ create: { width: 60, height: 60, channels: 3, background: { r: 20, g: 22, b: 30 } } })
+            .png()
+            .toBuffer(),
+          top: 30,
+          left: 30,
+        },
+      ])
+      .png()
+      .toBuffer()
+    const v = await measureVividness(png)
+    assert.ok(v.chroma < MIN_CHROMA, `expected low chroma, got ${v.chroma.toFixed(3)}`)
+    assert.ok(!vividnessVerdict(v).tooPale, `expected pass on tone, got ${JSON.stringify(v)}`)
+  })
+
+  if (!dir) {
+    results.push({ name: 'vividness: live catalogue references (skipped, no --thumbs cache)', passed: true })
+    return
+  }
+
+  for (const [id, label] of PALE_REFS) {
+    const file = resolve(dir, `${id}.png`)
+    if (!existsSync(file)) continue
+    await recordAsync(`vividness: PALE — ${label}`, async () => {
+      const v = await measureVividness(readFileSync(file))
+      assert.ok(
+        vividnessVerdict(v).tooPale,
+        `expected pale: ink ${v.ink.toFixed(3)} (floor ${MIN_INK}), chroma ${v.chroma.toFixed(3)} (floor ${MIN_CHROMA})`,
+      )
+    })
+  }
+  for (const [id, label] of VIVID_REFS) {
+    const file = resolve(dir, `${id}.png`)
+    if (!existsSync(file)) continue
+    await recordAsync(`vividness: VIVID — ${label}`, async () => {
+      const v = await measureVividness(readFileSync(file))
+      assert.ok(
+        !vividnessVerdict(v).tooPale,
+        `expected vivid: ink ${v.ink.toFixed(3)} (floor ${MIN_INK}), chroma ${v.chroma.toFixed(3)} (floor ${MIN_CHROMA})`,
+      )
+    })
+  }
+}
+
 // ─── shelf-deficit weighting ───────────────────────────────────────────────
 
 const SHELVES: ShelfTarget[] = [
@@ -314,6 +416,7 @@ record('runIsComplete: a zero-idea run (spend cap) is complete on sight', () => 
 
 async function main(): Promise<void> {
   await imageTests()
+  await vividnessTests()
   const failed = results.filter((r) => !r.passed)
   for (const r of results) {
     console.log(`${r.passed ? 'PASS' : 'FAIL'}: ${r.name}`)

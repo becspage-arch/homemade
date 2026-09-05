@@ -298,6 +298,8 @@ export async function publishCrossStitchGem(
         themeId: brief.themeId,
         shelf: shelf.slug,
         lane: brief.lane,
+        // Who wrote this brief: the planner model, or the pool sampler fallback.
+        source: brief.source,
         w: brief.w,
         h: brief.h,
         colours: brief.colours,

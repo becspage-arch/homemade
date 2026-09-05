@@ -29,6 +29,12 @@ export function runIsComplete(run: RunCounters): boolean {
 }
 
 /** The one-line summary a finished run records (admin history + the audit log). */
-export function summaryLine(s: RunCounters & { craft: string; repaired: number; generations: number }): string {
-  return `${s.craft}: ${s.published} gems published, ${s.culled} culled, ${s.duplicates} duplicates, ${s.skipped} skipped, ${s.repaired} repairs, ${s.generations} generations, ${s.errors} errors (of ${s.requested})`
+export function summaryLine(
+  s: RunCounters & { craft: string; repaired: number; generations: number; modelBriefs?: number },
+): string {
+  // How much of the batch the planner model actually wrote. A run that fell back
+  // to the pool sampler reads as a normal run otherwise, so it is stated.
+  const authored =
+    s.requested > 0 && s.modelBriefs != null ? ` · ${s.modelBriefs} of ${s.requested} briefs model-authored` : ''
+  return `${s.craft}: ${s.published} gems published, ${s.culled} culled, ${s.duplicates} duplicates, ${s.skipped} skipped, ${s.repaired} repairs, ${s.generations} generations, ${s.errors} errors (of ${s.requested})${authored}`
 }

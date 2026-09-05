@@ -15,7 +15,13 @@ import {
   type StepRunner,
   type AttemptResult,
 } from '@/lib/studio/generation/bulk/run'
-import { planCrossStitchBriefs, type CrossStitchBrief } from '@/lib/studio/generation/bulk/planner'
+import {
+  planModelBriefs,
+  finaliseBriefs,
+  modelAuthoredCount,
+  MODEL_CHUNK,
+  type CrossStitchBrief,
+} from '@/lib/studio/generation/bulk/planner'
 import { recentCrossStitchSlugs, candidateIsPro, type CandidateTweak } from '@/lib/studio/generation/bulk/cross-stitch'
 import { gateConfigured } from '@/lib/studio/generation/vision-gate'
 import { isAutopilotEnabled } from '@/lib/studio/generation/bulk/autopilot-state'
@@ -157,6 +163,7 @@ async function finaliseIfComplete(runId: string): Promise<{ finished: boolean; a
     select: {
       id: true, craft: true, requested: true, published: true, culled: true, duplicates: true,
       skipped: true, repaired: true, generations: true, errors: true, finishedAt: true, alerted: true,
+      modelBriefs: true,
     },
   })
   if (!run || run.finishedAt) return { finished: false, alerted: false }
@@ -206,7 +213,7 @@ async function sweepStalledRuns(): Promise<number> {
     where: { craft: 'cross-stitch', finishedAt: null, updatedAt: { lt: cutoff } },
     select: {
       id: true, craft: true, requested: true, published: true, culled: true, duplicates: true,
-      skipped: true, repaired: true, generations: true, errors: true, updatedAt: true,
+      skipped: true, repaired: true, generations: true, errors: true, updatedAt: true, modelBriefs: true,
     },
   })
   for (const run of stalled) {
@@ -311,14 +318,39 @@ export const bulkCrossStitchBatch = inngest.createFunction(
     // gateway kills a request at ~100s, so the catalogue reads and the Anthropic
     // call must not share a request: together they were enough to 502, and a
     // 502 in a single combined step loses the catalogue read on every retry too.
-    const planCtx = await step.run('plan-context', () => crossStitchPlanContext(n))
-    const briefs = await step.run('plan-briefs', () => planCrossStitchBriefs(n, planCtx ?? {}))
+    const planCtx = (await step.run('plan-context', () => crossStitchPlanContext(n))) ?? {}
+
+    // The model call is split into chunks of MODEL_CHUNK, each its own step. One
+    // call for the whole batch ran past the ~100s gateway limit and 504'd, which
+    // dropped the run to pool-sampled briefs every time — a quiet failure that
+    // reads as a normal batch. Smaller calls fit, and a slow chunk costs only
+    // that chunk.
+    const modelBriefs: CrossStitchBrief[] = []
+    for (let taken = 0, chunk = 1; taken < n; taken += MODEL_CHUNK, chunk++) {
+      const want = Math.min(MODEL_CHUNK, n - taken)
+      const picked = modelBriefs.map((b) => b.subjectKey)
+      const got = await step.run(`plan-briefs-${chunk}`, () => planModelBriefs(want, planCtx, picked))
+      modelBriefs.push(...(got ?? []))
+    }
+
+    // Top up any shortfall from the curated pool and hold the size range.
+    const briefs = await step.run('plan-finalise', () => finaliseBriefs(modelBriefs, n, planCtx))
     if (!briefs.length) return { skipped: 'no briefs planned' }
+    const authored = modelAuthoredCount(briefs)
+    if (authored < briefs.length) {
+      console.warn(`[bulk cross-stitch] only ${authored} of ${briefs.length} briefs were model-authored; the rest came from the pool`)
+    }
 
     const triggeredById = manual && typeof data?.triggeredBy === 'string' && data.triggeredBy ? data.triggeredBy : null
     const run = await step.run('create-run', () =>
       prisma.bulkRun.create({
-        data: { craft: 'cross-stitch', trigger: manual ? 'manual' : 'cron', requested: briefs.length, triggeredById },
+        data: {
+          craft: 'cross-stitch',
+          trigger: manual ? 'manual' : 'cron',
+          requested: briefs.length,
+          modelBriefs: authored,
+          triggeredById,
+        },
         select: { id: true },
       }),
     )
@@ -331,7 +363,7 @@ export const bulkCrossStitchBatch = inngest.createFunction(
         data: { runId: run.id, brief, attempt: 1, tweak: {} as CandidateTweak },
       })),
     )
-    return { runId: run.id, dispatched: briefs.length }
+    return { runId: run.id, dispatched: briefs.length, modelAuthored: authored }
   },
 )
 

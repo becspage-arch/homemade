@@ -13,6 +13,7 @@ import {
   liveShelfCounts,
   publicSubjectKeys,
 } from './dedupe-guard'
+import { judgeVividness } from './vividness'
 import { CROSS_STITCH_SHELVES } from '../categories'
 import { summaryLine } from './run-status'
 import { shelfDeficits, allocateShelves, shelfSlots } from './shelf-plan'
@@ -160,6 +161,24 @@ export async function crossStitchAttempt(
   ctx: { bulkRunId?: string | null; attempt?: number } = {},
 ): Promise<AttemptResult> {
   const candidate = await generateCrossStitchCandidate(brief, tweak)
+
+  // ── the pale guard, BEFORE the gate ──────────────────────────────────────
+  // Arithmetic, not judgement. A washed-out render reads as "soft and pretty" to
+  // a vision model and as nothing at all in floss, and it is the fault this
+  // catalogue keeps shipping. Measuring it is cheap, repeatable and impossible
+  // to talk round, so it happens first — and a piece we already know is too pale
+  // never costs a gate call.
+  const vivid = await judgeVividness(candidate.renderPng)
+  if (vivid.tooPale) {
+    return {
+      verdict: 'repair',
+      reasons: [vivid.reason],
+      repairAction: 'more-saturation',
+      published: false,
+      pro: candidate.pro,
+    }
+  }
+
   const verdict = await visionGate(candidate.renderPng, {
     subject: brief.subject,
     craft: 'cross-stitch',
