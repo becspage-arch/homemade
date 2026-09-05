@@ -3,8 +3,17 @@
 This file is auto-loaded by every Claude Code session that opens the repo.
 It's intentionally short — per-user preferences, the build state, and project
 context all live in the user's auto-memory at
-`C:\Users\Rebecca\.claude\projects\C--Users-Rebecca-Projects-code-homemade\memory\`,
-which is also auto-loaded. Read both before starting non-trivial work.
+`C:\Users\Rebecca\.claude\projects\D--code-homemade\memory\`, which is also
+auto-loaded. Read both before starting non-trivial work.
+
+Auto-memory is keyed on the checkout path, so moving the repo strands it. If
+that directory is empty, the memory is probably under an older path slug in
+`C:\Users\Rebecca\.claude\projects\` — say so rather than working without it.
+
+**Cloud sessions don't get that memory** — it lives on Rebecca's machine, not in
+the repo. They get the `homemade-standards` skill instead, which carries the
+durable rules (voice, editorial gates, scope and hand-off discipline) but not
+fast-moving project state. See "Cloud sessions" below.
 
 The single canonical build log is `BUILD_PROGRESS.md` at the repo root.
 Update it as part of any session that ships a phase or pre-launch debt item.
@@ -100,3 +109,43 @@ When both checks pass, the session is done.
   shared checkout clean: name throwaway scripts `*.tmp.ts` (gitignored), never
   run `git add -A` there, and PUSH from a clean worktree — never commit a working
   tree full of stray junk/deletions; that's how a deploy gets polluted.
+
+## Cloud sessions
+
+Cloud sessions (`claude --cloud`, claude.ai/code, the mobile app, routines) run
+on an Anthropic-managed Ubuntu VM with a **fresh clone of this repo** — never
+Rebecca's checkout. Only what's committed here reaches them.
+
+Bootstrap is split in two:
+
+- The cloud **environment setup script** (configured at claude.ai/code, cached
+  into the VM snapshot) installs pnpm 11.0.9, the workspace dependencies, the
+  Prisma client and the Playwright browsers.
+- `scripts/cloud-session-setup.sh` runs from the `SessionStart` hook in
+  `.claude/settings.json` on every session. It no-ops unless
+  `CLAUDE_CODE_REMOTE=true`, then reconstructs `.env.credentials` from the
+  environment variables and tops up anything the cache missed.
+
+Deploy verification applies to cloud sessions exactly as above — `gh` is
+authenticated through the GitHub proxy, and `homemade.education` plus
+`*.amazonaws.com` are on the environment's allowlist so both `gh run watch` and
+the `/healthz` curl work.
+
+### What cloud sessions can't do
+
+- **Rebecca's auto-memory.** Not in the repo, so not in the clone. Content and
+  editorial work that depends on the voice spec or the completeness gates needs
+  the `homemade-standards` skill loaded, and anything depending on current
+  project state needs that state in the prompt.
+- **Bulk content generation routines.** They stay local — they need her machine,
+  and needlework rendering uses local Blender.
+- **Anything driving her browser**, including DesignSync.
+- **Big builds.** ~4 vCPU / 16 GB RAM / 30 GB disk. A full `turbo build` of the
+  monorepo is close to the ceiling; prefer `--filter` to one package.
+
+### This repository is public
+
+`becspage-arch/homemade` is public. Never commit credentials, and don't move
+internal strategy or editorial standards into the repo to make them reachable
+from the cloud — that publishes them. `.env.credentials` and `.secrets/` are
+gitignored; keep it that way.
