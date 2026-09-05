@@ -11,12 +11,25 @@
  *   npx tsx scripts/gsc/gsc.ts inspect <url>    — a URL's index status (indexed? 404? blocked?)
  *   npx tsx scripts/gsc/gsc.ts sitemaps         — submitted sitemaps
  */
-import { readFileSync } from 'fs'
+import { readFileSync, existsSync } from 'fs'
 import { createSign } from 'crypto'
+import { dirname, join } from 'path'
 
 export const GSC_SITE = 'sc-domain:homemade.education'
-const KEY_PATH =
-  process.env.GSC_KEY_PATH ?? 'C:/Users/Rebecca/Projects/code/homemade/.secrets/gsc-homemade.json'
+
+/** Walk up from this file's directory until we find the repo root (pnpm-workspace.yaml). */
+function findRepoRoot(startDir: string): string {
+  let dir = startDir
+  for (;;) {
+    if (existsSync(join(dir, 'pnpm-workspace.yaml'))) return dir
+    const parent = dirname(dir)
+    if (parent === dir) return startDir // fell off the filesystem root; give up gracefully
+    dir = parent
+  }
+}
+
+const REPO_ROOT = findRepoRoot(__dirname)
+const KEY_PATH = process.env.GSC_KEY_PATH ?? join(REPO_ROOT, '.secrets', 'gsc-homemade.json')
 
 let cached: { token: string; exp: number } | null = null
 
