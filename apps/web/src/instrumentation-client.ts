@@ -30,7 +30,18 @@ if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
     // (the Outlook/Office "Safe Links" bridge), surfaced to us only as an
     // unhandled promise rejection with a plain-string value. It is not our code
     // and there is nothing on the page to fix — drop it so it stops paging.
-    ignoreErrors: [/Object Not Found Matching Id/i],
+    //
+    // `r["@context"].toLowerCase` (HOMEMADE-WEB-1S, Safari only): we write
+    // `@context` into our JSON-LD but never read it back, and grep confirms no
+    // first-party code calls .toLowerCase() on it. The stack has no real
+    // filename or function name — just the page URL as "global code" — which
+    // is the signature of a third-party script scanning the page's structured
+    // data, not something in our bundle. Filtered by the exact accessor
+    // rather than a blanket JSON-LD pattern.
+    ignoreErrors: [
+      /Object Not Found Matching Id/i,
+      /r\["@context"\]\.toLowerCase/,
+    ],
     beforeSend(event: Sentry.ErrorEvent): Sentry.ErrorEvent | null {
       // Drop the event entirely unless the user has granted error-monitoring
       // consent via the cookie banner.
@@ -39,7 +50,11 @@ if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
       // surface it as a raw rejection value that ignoreErrors doesn't see.
       const values = event.exception?.values
       if (
-        values?.some((v) => v.value?.includes('Object Not Found Matching Id'))
+        values?.some(
+          (v) =>
+            v.value?.includes('Object Not Found Matching Id') ||
+            v.value?.includes('r["@context"].toLowerCase'),
+        )
       ) {
         return null
       }

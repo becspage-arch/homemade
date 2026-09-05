@@ -1,7 +1,15 @@
 import Link from 'next/link'
 
-export const dynamic = 'force-static'
-export const revalidate = false
+// Deliberately NOT force-static: the parent (public) layout is force-dynamic
+// because it calls Clerk's currentUser() on every request (see its comment).
+// This page previously forced static rendering, which made Next prerender it
+// outside the normal per-request path — no clerkMiddleware context, so
+// currentUser() threw "auth() was called but Clerk can't detect usage of
+// clerkMiddleware()" on every render (HOMEMADE-WEB-1, 6000+ events). The
+// error was already caught and downgraded to a warning in
+// getCurrentDbUser(), so it was pure log noise, not visitor-facing — but
+// still worth cutting. This page is cheap enough that per-request rendering
+// costs nothing meaningful.
 
 export const metadata = {
   title: 'Offline · homemade',
