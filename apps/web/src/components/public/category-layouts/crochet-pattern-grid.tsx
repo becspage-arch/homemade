@@ -16,7 +16,9 @@ interface CrochetPatternCardData {
   id: string
   slug: string | null
   name: string
-  thumbnailMediaId: string | null
+  /** The card image: the loom hero (the exact-pattern render) when the pattern
+   *  has one, else the photoreal hero, else the saved chart thumbnail. */
+  imageMediaId: string | null
   difficulty: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' | null
   shapeCategory: string | null
   finishedSizeText: string | null
@@ -300,9 +302,9 @@ function CrochetCard({ pattern: p }: { pattern: CrochetPatternCardData }) {
   return (
     <li className="cross-stitch-library-card">
       <Link href={href} className="cross-stitch-library-card-thumb">
-        {p.thumbnailMediaId ? (
+        {p.imageMediaId ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={`/api/media/${p.thumbnailMediaId}?variant=card`} alt="" loading="lazy" />
+          <img src={`/api/media/${p.imageMediaId}?variant=card`} alt="" loading="lazy" />
         ) : (
           <span aria-hidden />
         )}
