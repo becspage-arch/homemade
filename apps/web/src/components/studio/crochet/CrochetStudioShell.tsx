@@ -5,11 +5,15 @@
  *
  * URL-driven state. Three top-level surfaces:
  *
- *   empty                       — sign-in hero + "Your projects" grid
+ *   empty                       — sign-in hero + "Your projects" + "Your designs"
  *   pattern                     — active-project surface (Written / Chart / Schematic)
- *   new-amigurumi-designer      — premium create-your-own (stub for step 14)
- *   new-photo-to-tapestry       — premium create-your-own (stub for step 16)
- *   new-ai-assisted             — premium create-your-own (stub for step 15)
+ *   new-photo-to-tapestry       — create-your-own, opened on "From a photo"
+ *   new-amigurumi-designer      — create-your-own, opened on the amigurumi designer
+ *   new-ai-assisted             — create-your-own, opened on "Describe an idea"
+ *
+ * The three create modes are one surface with three tabs, the way cross-stitch's
+ * "Design your own" is one surface with two. Premium members get the working
+ * tools; a free member sees the same surface behind the premium popup.
  *
  * Below the surface the shell never unmounts on panel toggles. State
  * lives in URL params + a small handful of view-state hooks; the
@@ -24,7 +28,9 @@ import { CrochetEmptyState } from './CrochetEmptyState'
 import { MyCrochetProjectsGrid } from './MyCrochetProjectsGrid'
 import { CrochetActiveProject } from './CrochetActiveProject'
 import { CrochetStudioToolbar } from './CrochetStudioToolbar'
-import { ComingSoonPanel } from './ComingSoonPanel'
+import { CrochetCreateYourOwnPanel, type CrochetDesignMode } from './CrochetCreateYourOwnPanel'
+import { CrochetHeroPending } from './CrochetHeroPending'
+import { MyCrochetPatternsGrid, type MyCrochetPatternListItem } from './MyCrochetPatternsGrid'
 import type {
   CrochetPatternData,
   CrochetProjectProgressData,
@@ -53,6 +59,7 @@ export type CrochetStudioStartMode =
 interface CrochetStudioShellProps {
   startMode: CrochetStudioStartMode
   signedIn: boolean
+  isPremium: boolean
   userEmail: string | null
   userName: string | null
   userTerminologyPreference: string | null
@@ -60,6 +67,10 @@ interface CrochetStudioShellProps {
   pattern: CrochetPatternData | null
   progress: CrochetProjectProgressData | null
   myProjects: MyCrochetProjectListItem[]
+  myDesigns: MyCrochetPatternListItem[]
+  /** The open pattern is the maker's own and its finished-piece photo is still
+   *  rendering, so the Studio shows the waiting note. */
+  heroPending: boolean
   yarnWeights: Array<{ slug: string; canonicalName: string; standardCategory: number }>
   recentlyAdded?: RecentlyAddedCrochetItem[]
 }
@@ -67,12 +78,15 @@ interface CrochetStudioShellProps {
 export function CrochetStudioShell({
   startMode,
   signedIn,
+  isPremium,
   userName,
   userTerminologyPreference,
   userLeftHanded,
   pattern,
   progress,
   myProjects,
+  myDesigns,
+  heroPending,
   yarnWeights,
   recentlyAdded = [],
 }: CrochetStudioShellProps) {
@@ -112,30 +126,24 @@ export function CrochetStudioShell({
     router.replace('/studio/crochet', { scroll: false })
   }, [router])
 
-  // ───── Coming-soon premium creators (steps 14–16 stubs) ─────
-  if (startMode === 'new-amigurumi-designer') {
+  // ───── Create your own: one surface, three ways in ─────
+  if (
+    startMode === 'new-amigurumi-designer' ||
+    startMode === 'new-photo-to-tapestry' ||
+    startMode === 'new-ai-assisted'
+  ) {
+    const initialMode: CrochetDesignMode =
+      startMode === 'new-amigurumi-designer'
+        ? 'designer'
+        : startMode === 'new-ai-assisted'
+          ? 'idea'
+          : 'photo'
     return (
-      <ComingSoonPanel
-        title="Amigurumi shape designer"
-        body="Pick a body shape, set the size, and the Studio generates a row-by-row pattern. Premium feature, coming in a later build step."
-        onCancel={cancelToEmpty}
-      />
-    )
-  }
-  if (startMode === 'new-photo-to-tapestry') {
-    return (
-      <ComingSoonPanel
-        title="Photo to tapestry grid"
-        body="Drop in a photo and the Studio turns it into a tapestry-crochet chart with a colour-grid written pattern. Premium feature, coming in a later build step."
-        onCancel={cancelToEmpty}
-      />
-    )
-  }
-  if (startMode === 'new-ai-assisted') {
-    return (
-      <ComingSoonPanel
-        title="Custom pattern, designed for you"
-        body="Describe what you want to make and we draft a pattern that fits your measurements, your yarn, and your project. Premium feature, coming in a later build step."
+      <CrochetCreateYourOwnPanel
+        signedIn={signedIn}
+        isPremium={isPremium}
+        initialMode={initialMode}
+        onSaved={openProject}
         onCancel={cancelToEmpty}
       />
     )
@@ -167,6 +175,9 @@ export function CrochetStudioShell({
             router.replace('/studio/crochet?new=ai-assisted', { scroll: false })
           }
         />
+        {signedIn && myDesigns.length > 0 && (
+          <MyCrochetPatternsGrid patterns={myDesigns} onOpen={openProject} />
+        )}
         {signedIn && myProjects.length > 0 && (
           <MyCrochetProjectsGrid projects={myProjects} onOpen={openProject} />
         )}
@@ -186,6 +197,7 @@ export function CrochetStudioShell({
       onToggleNotes={() => setNotesOpen((v) => !v)}
       onClose={cancelToEmpty}
       yarnWeights={yarnWeights}
+      heroPending={heroPending}
     />
   )
 }
@@ -204,6 +216,7 @@ function ActiveProjectSurface({
   onToggleNotes,
   onClose,
   yarnWeights,
+  heroPending,
 }: {
   pattern: CrochetPatternData
   progress: CrochetProjectProgressData | null
@@ -211,6 +224,7 @@ function ActiveProjectSurface({
   userLeftHanded: boolean
   notesOpen: boolean
   yarnWeights: Array<{ slug: string; canonicalName: string; standardCategory: number }>
+  heroPending: boolean
   onToggleNotes: () => void
   onClose: () => void
 }) {
@@ -270,6 +284,8 @@ function ActiveProjectSurface({
         printHref={printHref}
         onClose={onClose}
       />
+
+      {heroPending && <CrochetHeroPending patternId={pattern.id} />}
 
       <CrochetActiveProject
         pattern={pattern}

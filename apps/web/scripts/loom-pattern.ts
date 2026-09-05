@@ -57,7 +57,14 @@ import { COMPOSITION_PROOFS } from './loom-composition-proofs'
 loadCredentials()
 
 export const OUT = resolve(process.cwd(), '../../.loom-scratch/crochet/patterns')
-mkdirSync(OUT, { recursive: true })
+// The scratch directory is a local-tooling convenience. On the deployed server
+// the working directory's parent is not writable and callers pass their own
+// `outDir`, so a failure here is not a reason to refuse to load the module.
+try {
+  mkdirSync(OUT, { recursive: true })
+} catch {
+  // no scratch directory here; every render path takes an explicit outDir
+}
 
 /** Cycles samples for the deterministic base render — the same number local and
  *  on Fargate, so the two machines produce the same PNG. */
