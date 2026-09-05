@@ -11,6 +11,26 @@
 
 import type { CompositionProgram } from '../src/lib/loom/crochet/engine/composition'
 
+/**
+ * §8f-3 — the corrected sc CELL makes every crocheted piece bigger for the same
+ * round counts: the stitch gauge went 1.8 → 2.7 yarn radii across and the
+ * meridian pitch 1.55 → 2.4 up the fabric, so a bear worked from exactly the
+ * same pattern now settles at 1.53× the size it did (measured: 57×74 mm →
+ * 88×113 mm, with the height-to-width ratio unmoved at 1.3).
+ *
+ * Every placement number in this file is in absolute MILLIMETRES against that
+ * geometry — how deep a limb seats, how far a head overlaps its neck, how big a
+ * safety eye is — and round 2 tuned them as PROPORTIONS of the piece: the ear
+ * 31% outside the head's projected silhouette, the safety eye ~10% of the head
+ * width, the arm held just clear of the table. Scaling them all by the one
+ * factor is what preserves those proportions; re-tuning thirteen numbers by
+ * hand would not.
+ */
+const CELL_SCALE = 1.53
+/** An absolute millimetre placement value, scaled with the corrected cell. */
+const mm = (v: number): number => v * CELL_SCALE
+
+
 // The canonical audit-clean ball (equator 30) — the proof-ball profile.
 const BODY = [6, 12, 18, 24, 30, 30, 30, 30, 30, 24, 18, 12, 6]
 // A smaller ball for a head (equator 24) — audit-clean.
@@ -46,10 +66,10 @@ const amigurumiCreature: CompositionProgram = {
   parts: [
     { name: 'body', stitch: 'sc', rounds: BODY, colourHex: '#c2843c', place: { on: 'ground' } },
     // The head nestles into the top of the body.
-    { name: 'head', stitch: 'sc', rounds: HEAD, colourHex: '#c2843c', place: { on: 'body', overlap: 10 } },
+    { name: 'head', stitch: 'sc', rounds: HEAD, colourHex: '#c2843c', place: { on: 'body', overlap: mm(10) } },
     // Two ears STAND PROUD from the upper sides of the head, angled up and out.
-    { name: 'ear-l', stitch: 'sc', rounds: EAR, colourHex: '#8a5a34', place: { on: 'head', dir: { x: -0.5, y: 0.14, z: 1 }, seat: 6 } },
-    { name: 'ear-r', stitch: 'sc', rounds: EAR, colourHex: '#8a5a34', place: { on: 'head', dir: { x: 0.5, y: 0.14, z: 1 }, seat: 6 } },
+    { name: 'ear-l', stitch: 'sc', rounds: EAR, colourHex: '#8a5a34', place: { on: 'head', dir: { x: -0.5, y: 0.14, z: 1 }, seat: mm(6) } },
+    { name: 'ear-r', stitch: 'sc', rounds: EAR, colourHex: '#8a5a34', place: { on: 'head', dir: { x: 0.5, y: 0.14, z: 1 }, seat: mm(6) } },
   ],
   gaugeText: 'sc worked in the round, each piece stuffed and joined',
   finishedSizeMm: { width: 80, height: 140 },
@@ -175,25 +195,25 @@ function bear(opts: {
     // IT, so the silhouette steps body -> neck -> head instead of merging.
     parts.push({
       name: 'neck', stitch: 'sc', rounds: BEAR_NECK, colourHex: TAN, scale: 0.85,
-      place: { on: 'body', overlap: 6, offset: { y: f * 1.5 } },
+      place: { on: 'body', overlap: mm(6), offset: { y: mm(f * 1.5) } },
     })
     parts.push({
       name: 'head', stitch: 'sc', rounds: BEAR_HEAD, colourHex: TAN,
-      place: { on: 'neck', overlap: 2, offset: { y: f * 1 } },
+      place: { on: 'neck', overlap: mm(2), offset: { y: mm(f * 1) } },
     })
   } else {
     // No neck piece: the head is perched on the body's crown with a shallow
     // overlap, and the two balls pinch to a waist where their surfaces cross.
     parts.push({
       name: 'head', stitch: 'sc', rounds: BEAR_HEAD, colourHex: TAN,
-      place: { on: 'body', overlap: 2, offset: { y: f * 2.5 } },
+      place: { on: 'body', overlap: mm(2), offset: { y: mm(f * 2.5) } },
     })
   }
   parts.push(
     // The muzzle: a cream pad on the FRONT of the face, tipped slightly down.
     {
       name: 'muzzle', stitch: 'sc', rounds: BEAR_MUZZLE, colourHex: CREAM, scale: 0.85,
-      place: { on: 'head', dir: faceDir(f, { x: 0, y: f * 1, z: -0.22 }), seat: 3, poleIn: true, surfaceFit: 'ellipsoid' },
+      place: { on: 'head', dir: faceDir(f, { x: 0, y: f * 1, z: -0.22 }), seat: mm(3), poleIn: true, surfaceFit: 'ellipsoid' },
     },
     // Ears: high on the SIDES of the crown, leaning forward, seated only 3.5 mm
     // so most of each ear stands off the head. Ring pole buried in the join.
@@ -201,14 +221,14 @@ function bear(opts: {
       name: 'ear-l', stitch: 'sc', rounds: BEAR_EAR, colourHex: TAN, scale: opts.earScale,
       place: {
         on: 'head', dir: faceDir(f, { x: -0.95, y: f * 0.18, z: 0.95 }), aim: earAim(-1),
-        seat: 3.5, poleIn: true, surfaceFit: 'ellipsoid',
+        seat: mm(3.5), poleIn: true, surfaceFit: 'ellipsoid',
       },
     },
     {
       name: 'ear-r', stitch: 'sc', rounds: BEAR_EAR, colourHex: TAN, scale: opts.earScale,
       place: {
         on: 'head', dir: faceDir(f, { x: 0.95, y: f * 0.18, z: 0.95 }), aim: earAim(1),
-        seat: 3.5, poleIn: true, surfaceFit: 'ellipsoid',
+        seat: mm(3.5), poleIn: true, surfaceFit: 'ellipsoid',
       },
     },
     // Arms: sewn high at the shoulder, hanging down the sides and a little
@@ -217,20 +237,22 @@ function bear(opts: {
       name: 'arm-l', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.78,
       place: {
         on: 'body', dir: { x: -1, y: f * 0.28, z: 0.7 },
-        aim: armAim(-1), seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
+        aim: armAim(-1), seat: mm(6), poleIn: true, surfaceFit: 'ellipsoid',
         // The paw pad on the end of a hanging arm otherwise reaches just below
         // the table, and the renderer floats the WHOLE piece up to clear it —
-        // which lifts the legs off the ground. Hold the arm the half-millimetre
-        // that keeps every part of the bear on or above z = 0.
-        offset: { z: 0.5 },
+        // which lifts the legs off the ground. Hold the arm just enough that
+        // every part of the bear sits on or above z = 0 (probed per variant:
+        // at 0.5 the left paw pad settled −0.16 mm once the corrected cell
+        // scaled the piece up).
+        offset: { z: mm(0.65) },
       },
     },
     {
       name: 'arm-r', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.78,
       place: {
         on: 'body', dir: { x: 1, y: f * 0.28, z: 0.7 },
-        aim: armAim(1), seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
-        offset: { z: 0.5 },
+        aim: armAim(1), seat: mm(6), poleIn: true, surfaceFit: 'ellipsoid',
+        offset: { z: mm(0.5) },
       },
     },
     // Legs: sewn low at the front, lying FORWARD along the table so it sits.
@@ -238,16 +260,16 @@ function bear(opts: {
       name: 'leg-l', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.9,
       place: {
         on: 'body', dir: { x: -0.52, y: f * 0.8, z: -0.55 },
-        aim: legAim(-1), seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
-        offset: { z: -0.4 },
+        aim: legAim(-1), seat: mm(8), poleIn: true, surfaceFit: 'ellipsoid',
+        offset: { z: mm(-0.4) },
       },
     },
     {
       name: 'leg-r', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.9,
       place: {
         on: 'body', dir: { x: 0.52, y: f * 0.8, z: -0.55 },
-        aim: legAim(1), seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
-        offset: { z: -0.4 },
+        aim: legAim(1), seat: mm(8), poleIn: true, surfaceFit: 'ellipsoid',
+        offset: { z: mm(-0.4) },
       },
     },
   )
@@ -258,7 +280,7 @@ function bear(opts: {
     // the limbs merged into the body, so they earn their place.
     const paw = (name: string, on: string, dir: Dir): CompositionProgram['parts'][number] => ({
       name, stitch: 'sc', rounds: BEAR_MUZZLE, colourHex: CREAM, scale: 0.62,
-      place: { on, dir, seat: 3, poleIn: true, surfaceFit: 'ellipsoid' },
+      place: { on, dir, seat: mm(3), poleIn: true, surfaceFit: 'ellipsoid' },
     })
     parts.push(
       paw('paw-al', 'arm-l', armAim(-1)),
@@ -296,11 +318,11 @@ function bear(opts: {
       // pushed through the fabric.
       {
         name: 'eye-l', on: 'head', dir: faceDir(f, { x: -0.62, y: f * 1, z: 0.42 }),
-        radiusMm: opts.eyeRadiusMm, seat: -(opts.eyeRadiusMm + 0.2), colourHex: EYE, gloss: opts.eyeGloss,
+        radiusMm: mm(opts.eyeRadiusMm), seat: -mm(opts.eyeRadiusMm + 0.2), colourHex: EYE, gloss: opts.eyeGloss,
       },
       {
         name: 'eye-r', on: 'head', dir: faceDir(f, { x: 0.62, y: f * 1, z: 0.42 }),
-        radiusMm: opts.eyeRadiusMm, seat: -(opts.eyeRadiusMm + 0.2), colourHex: EYE, gloss: opts.eyeGloss,
+        radiusMm: mm(opts.eyeRadiusMm), seat: -mm(opts.eyeRadiusMm + 0.2), colourHex: EYE, gloss: opts.eyeGloss,
       },
       // The nose: small, near-black, satin rather than wet-look, sitting on the
       // TOP-front of the muzzle. An ellipsoid cannot be the rounded triangle a
@@ -308,7 +330,7 @@ function bear(opts: {
       // list offers instead.
       {
         name: 'nose', on: 'muzzle', dir: faceDir(f, { x: 0, y: f * 1, z: 0.42 }),
-        radiusMm: 1.9, seat: -1.8, flatten: 0.65, widen: 1.4, colourHex: NOSE, gloss: 0.4,
+        radiusMm: mm(1.9), seat: -mm(1.8), flatten: 0.65, widen: 1.4, colourHex: NOSE, gloss: 0.4,
       },
     ],
     gaugeText: 'sc worked in the round, each piece stuffed firm and sewn on',

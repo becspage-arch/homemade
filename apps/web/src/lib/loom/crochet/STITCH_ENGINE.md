@@ -1269,6 +1269,128 @@ without a yarn-over count, so they keep the bare post until their own pass.
 
 ---
 
+## 8f-4. ROUND 3, PART 2 — the shaped, round and sphere builders on the real cell (2026-09-05)
+
+After §8f-2 the flat grid builder worked every stitch at its own published gauge
+while the shaped, round and sphere builders were still on the legacy shared
+lattice, pinned there by explicit `gaugeYr` overrides. §8f-2 expected re-cutting
+under them to be the hard part, because the disc's canopy, its radial drift and
+the magic-ring radius were all calibrated against the old lattice, and a first
+attempt had broken a disc interlock immediately. It was not the hard part; the
+crowding at a SHARED BASE was.
+
+### What each builder needed
+
+- **`emitDecrease`** — the piece that had to exist before any pin could come off.
+  A decrease is two partial posts sharing one head, so it now takes exactly the
+  same re-cut anatomy as a plain stitch: legs running monotonically in the work
+  direction and tapering toward their insertion, and the head as a two-strand
+  LOOP. The loop is now emitted by one shared `emitHeadLoop` used by both
+  emitters, so they cannot drift apart (verified bit-identical when extracted).
+- **`buildShaped`** — the stitch's own cell, row pitch, head loop and yarn-over
+  collars. `scinc`, `scdec`, `hdcinc`, `hdcdec`, `dcinc`, `dcdec` and `crossed`
+  dropped their pins and are audit-clean at all three weights.
+- **`buildRounds`** — the radial drift is now simply the stitch's own **row
+  pitch**, and the disc's gauge is DERIVED rather than packed. Two constraints
+  have to agree on a flat disc: geometry says a +6 round needs circumference
+  6·sw = 2π·Δr, i.e. Δr ≈ 0.955·sw, and the fabric says Δr is one row pitch.
+  Before the cell they disagreed, so drift was tied to the gauge with a 0.9 pack
+  factor and the disc's density was a knob. Now sw = rowPitch / 0.955 = 2.4/0.955
+  = **2.51**, a touch tighter than flat sc's 2.7 — which is exactly what a real
+  flat circle is worked at, or it ruffles. Measured, the round-to-round crown gap
+  went from 1.87–2.14yr (drifting) to **2.38–2.43yr, dead even, on a 2.40yr row
+  pitch**.
+- **`buildSphere`** — the same cell; `R = eq·sw/2π` (§8c-3D) then makes the ball
+  bigger for the same pattern, which is the same truth the flat proofs met in
+  §8f: a correct gauge makes the same stitch count a bigger piece.
+- **The canopy, re-derived from the re-cut head.** This is the part §8f-2 warned
+  about, and the fix is a taxonomy point rather than a threshold. The canopy
+  exempted three nodes round the crown apex, because a legacy head WAS three
+  nodes. A re-cut head is a six-node loop, and a ceiling cutting across it
+  crushes flat the very paired-loop top the close-range pass exists to produce —
+  so the whole head is exempt, and the emitters now return their head node range
+  to say which nodes those are. The floors changed with it: a bump had no
+  structure of its own, so the canopy had to shape it (the disc's apex floor sat
+  2.1× above where the crown was actually built); a loop does, so the apex takes
+  a floor AT its built offset — enough to stop it being dragged into the crowd,
+  never enough to push it out — and the rest of the head takes no bound at all.
+  Measured on the disc, the crown settled 1.72yr → **1.23yr** proud with the head
+  loop intact (strand separation 1.24 d, against the ≥0.7 d that reads as a pair).
+
+### The one thing that would not take the cell: a fan into a shared base
+
+`shell` (5 dc into one crown) and `vstitch` (a 2-dc V into one crown) fail on the
+corrected cell, and the cause was found one variable at a time rather than
+argued:
+
+| shell, new cell | interlocks failed |
+|---|---|
+| collars + head loop | 9/130 |
+| head loop, no collars | 4/65 |
+| collars, no head loop | 6/130 |
+| neither | **0/65** |
+
+vstitch is the same shape of answer (3/120 with collars, 0/60 without). It is not
+a gauge problem: a 5 × 4 sweep of gauge 1.9–3.4 against row-pack 0.72–1.15 never
+reached zero for shell and reached it only at scattered points for vstitch, which
+is the cable lesson (§9) — a magic number is not a fix. A fan works several
+stitches into ONE below-crown, and the corrected cell makes every one of them
+bigger at a base that is already a traffic jam. Turning a dc's yarn-over off
+inside a fan would be faking the stitch, so **the two fan swatches keep the
+pre-cell lattice** (`legacyCell: true`) and stay bit-identical until the crowding
+at a shared base is solved properly. Everything else took the cell.
+
+One genuine bug fell out of the same investigation: the side-by-side offset for
+two hooks entering ONE crown was written as a fraction of the stitch's own post
+half-width. That was harmless only while `pw` was the shared 0.35yr for every
+stitch; once dc had a real 1.32yr post half-width the same expression spread a
+shell's five hooks ±0.92yr instead of ±0.25yr and the outer ones slipped clean
+off the crown. It is a property of the HOOK, not of the post's splay, so it is
+now `HOOK_SPREAD_YR` — the same absolute value every pair and fan was calibrated
+at, and bit-identical in the round and sphere builders, which never had a
+per-stitch `pw` to begin with.
+
+### The amigurumi proofs
+
+Every piece is built by the sphere builder, so every piece got bigger for the
+same round counts: a bear settles **57×74 mm → 88×113 mm**, with its
+height-to-width ratio unmoved (1.31 → 1.28) — the shapes round 2 tuned are
+preserved. But every placement number in `loom-composition-proofs.ts` is in
+absolute millimetres against that geometry (how deep a limb seats, how far a head
+overlaps, how big a safety eye is), and round 2 tuned them as PROPORTIONS: the
+eye ~10% of the head width, the arm held just clear of the table. They are now
+all scaled by the one factor (`CELL_SCALE` 1.53), which preserves those
+proportions exactly — the base bear's eye measures 10.7% of the head width — where
+re-tuning thirteen numbers by hand would not.
+
+The §9 table gate caught the one thing that did not follow: at the old arm
+offset the left paw pad settled 0.16 mm UNDER the table, which silently hoists
+the whole bear (shadow and all) off the ground. Every variant is back to
+`minz = 0.00`.
+
+### Hashes — 16 moved, 20 bit-identical (parts 1 and 2 together)
+
+Moved: `dc` `tr` `dtr` (the collars) · `fpdc` `bpdc` `postrib` `basketweave`
+(their row 0 is a plain dc) · `scinc` `scdec` `hdcinc` `hdcdec` `dcinc` `dcdec`
+`crossed` (the cell + the decrease head) · `mrdisc` `ball` (the cell + the
+re-derived drift and canopy).
+
+Bit-identical: `ch` `slst` `sc` `hdc` `scblo` `scflo` `bobble` `bobbles` `shell`
+`vstitch` `picot`, and every knit swatch — knit is untouched and still wants its
+own measurement pass (§8f-2).
+
+Audit clean **36/36 at fine 1.5, worsted 2.4 and bulky 3.2**, and all seven
+sign-off proofs compile, audit and pass the settled-size gate.
+
+### Also in this pass
+
+`loom-render-batch.ts` takes dictionary SWATCHES as jobs alongside patterns and
+compositions. A cold Fargate task costs the same either way, and a look pass
+needs the swatches and the finished pieces in front of the same eye at the same
+time — rendering them in two separate runs was costing task-minutes for nothing.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,

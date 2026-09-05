@@ -23,7 +23,12 @@ import { STITCHES, SHELL_N, type StitchId, type ShapeOp } from './dictionary'
 import {
   createStrand,
   stitchDims,
+  dimsFor,
+  HOOK_SPREAD_YR,
+  rowPitchYr,
+  roundGaugeYr,
   emitPlainStitch,
+  emitHeadLoop,
   BASE_ROW_YR,
   type BuiltContinuous,
   type StrandCtx,
@@ -67,9 +72,15 @@ export interface DecSpec {
   place3?: (lx: number, ly: number, lz: number) => { x: number; y: number; z: number }
   bn1?: number
   bn2?: number
+  /**
+   * Head-loop half-span in mm (§8f). 0 / absent → the legacy three-node crown
+   * BUMP. A decrease throws exactly one head, and it is the same head every
+   * other stitch throws, so it gets the same loop from the same emitter.
+   */
+  headLoopMm?: number
 }
 
-export function emitDecrease(S: StrandCtx, d: StitchDims, spec: DecSpec): { crown: number } {
+export function emitDecrease(S: StrandCtx, d: StitchDims, spec: DecSpec): { crown: number; head: number[] } {
   const { z, zh, cw, pw, dh } = d
   const { j, c, s, fz, by, ty } = spec
   const px = ty - by
@@ -98,32 +109,54 @@ export function emitDecrease(S: StrandCtx, d: StitchDims, spec: DecSpec): { crow
   const xa1 = (f: number): number => x1 + (xC - x1) * f // first leg: insertion 1 → crown
   const xa2 = (f: number): number => x2 + (xC - x2) * f // last leg: insertion 2 → crown
 
+  // A decrease is TWO partial posts sharing one head, so it takes the same
+  // re-cut anatomy as a plain stitch (§8f rounds 1–2), gated on the same flag:
+  // legs that run monotonically in the work direction and taper toward their
+  // insertion (a V that splays instead of two parallel bars), and a head that is
+  // a real two-strand LOOP instead of a three-node bump. A stitch that passes no
+  // head span keeps exactly the legacy excursion.
+  const hl = spec.headLoopMm ?? 0
+  const recut = hl > 0
+  const sd = recut ? -s : s
+  const legHalf = (f: number): number => (recut ? pw * (0.06 + 0.94 * f) : pw)
+  const legZ = recut ? z * 0.6 : z
+  const legZHi = recut ? z * 0.6 : z * 1.1
+  const legZMid = recut ? z * 0.6 : z * 1.05
+  const nearZ = recut ? z * 0.5 : z * 0.6
+  const nearHalf = recut ? 0.12 : 0.4
+
   // Down into the FIRST stitch, exactly like a plain stitch's start.
-  push(xa1(1) + s * pw, by + px * 0.8, z * fz)
-  push(xa1(0.65) + s * pw, by + px * 0.52, z * fz)
-  push(xa1(0.33) + s * pw, by + px * 0.26, z * 1.1 * fz)
-  push(x1 + s * pw * 0.4, cy1 + dh * 0.5, z * 0.6 * fz)
+  push(xa1(1) + sd * legHalf(1), by + px * 0.8, legZ * fz)
+  push(xa1(0.65) + sd * legHalf(0.65), by + px * 0.52, legZ * fz)
+  push(xa1(0.33) + sd * legHalf(0.33), by + px * 0.26, legZHi * fz)
+  push(x1 + sd * pw * nearHalf, cy1 + dh * 0.5, nearZ * fz)
   const h1 = push(x1, cy1 - dh, hz1)
   S.links.push({ j, c, role: 'hook', hook: h1, below: spec.b1.back })
-  push(x1 - s * pw * 0.4, cy1 + dh * 0.5, z * 0.6 * fz)
+  push(x1 - sd * pw * nearHalf, cy1 + dh * 0.5, nearZ * fz)
   // The first pulled-up loop rises toward the shared crown…
-  push(xa1(0.33) - s * pw, by + px * 0.26, z * 1.1 * fz)
-  push(xa1(0.65) - s * pw, by + px * 0.52, z * fz)
-  push(xa1(0.85) - s * pw * 0.6, by + px * 0.72, z * fz)
+  push(xa1(0.33) - sd * legHalf(0.33), by + px * 0.26, legZHi * fz)
+  push(xa1(0.65) - sd * legHalf(0.65), by + px * 0.52, legZ * fz)
+  push(xa1(0.85) - sd * legHalf(0.85) * 0.6, by + px * 0.72, legZ * fz)
   // …then the yarn dives straight back down into the SECOND stitch.
-  push(xa2(0.55) + s * pw * 0.6, by + px * 0.45, z * 1.05 * fz)
-  push(x2 + s * pw * 0.4, cy2 + dh * 0.5, z * 0.6 * fz)
+  push(xa2(0.55) + sd * legHalf(0.55) * 0.6, by + px * 0.45, legZMid * fz)
+  push(x2 + sd * pw * nearHalf, cy2 + dh * 0.5, nearZ * fz)
   const h2 = push(x2, cy2 - dh, hz2)
   S.links.push({ j, c, role: 'hook', hook: h2, below: spec.b2.back })
-  push(x2 - s * pw * 0.4, cy2 + dh * 0.5, z * 0.6 * fz)
+  push(x2 - sd * pw * nearHalf, cy2 + dh * 0.5, nearZ * fz)
   // Final up-leg to the single gathered crown.
-  push(xa2(0.33) - s * pw, by + px * 0.26, z * 1.1 * fz)
-  push(xa2(0.65) - s * pw, by + px * 0.52, z * fz)
-  push(xa2(1) - s * pw, by + px * 0.8, z * fz)
-  push(xC - s * cw, ty - dh * 0.3, zh * fz)
+  push(xa2(0.33) - sd * legHalf(0.33), by + px * 0.26, legZHi * fz)
+  push(xa2(0.65) - sd * legHalf(0.65), by + px * 0.52, legZ * fz)
+  push(xa2(1) - sd * legHalf(1), by + px * 0.8, legZ * fz)
+  if (recut) {
+    const h = emitHeadLoop(push, { xC, ty, s, sd, fz, zh, dh, pw, cw, hl })
+    const head: number[] = []
+    for (let k = h.trailA; k <= h.trailB; k++) head.push(k)
+    return { crown: h.crown, head }
+  }
+  const t0 = push(xC - s * cw, ty - dh * 0.3, zh * fz)
   const crown = push(xC, ty, zh * 1.15 * fz)
-  push(xC + s * cw, ty - dh * 0.3, zh * fz)
-  return { crown }
+  const t1 = push(xC + s * cw, ty - dh * 0.3, zh * fz)
+  return { crown, head: [t0, crown, t1] }
 }
 
 /**
@@ -143,12 +176,42 @@ export function buildShaped(
   /** Per-swatch row-pitch scale (default 1) — packs the rows vertically for a
    *  dense scalloped fabric without changing the stitch's dictionary height. */
   rowScale?: number,
+  /** Keep the PRE-CELL lattice for this swatch (§8f-3): the shared `stitchDims`,
+   *  `BASE_ROW_YR · heightFactor` row pitch, the three-node crown bump and a bare
+   *  post. Only the two FAN swatches use it — see the comment on `cell` below. */
+  legacyCell?: boolean,
 ): BuiltContinuous {
   const yr = yarnRadiusMm
   const sw = yr * (gaugeYr ?? STITCHES[st].gaugeYr)
-  const dims = stitchDims(yr)
+  // THE REAL CELL (§8f-3). The shaped builder used to keep the legacy shared
+  // lattice while the flat grid builder took each stitch's own published gauge,
+  // which is why every shaped swatch had to pin an explicit pre-pass `gaugeYr`.
+  // It now takes the same cell: the stitch's own row pitch, post half-width,
+  // crown half-width and relief budget, its yarn-over collars, and the head as a
+  // real two-strand loop (including the decrease's — that was the piece that had
+  // to be built before the pins could come off).
+  //
+  // The two FAN swatches (shell, vstitch) opt out. A fan works several stitches
+  // into ONE below-crown, and the corrected cell makes every one of them bigger
+  // at a base that is already a traffic jam: probed one variable at a time, a
+  // shell on the new cell fails 9/130 interlocks with the collars and the head
+  // loop, 4/65 with the collars off, 6/130 with the head loop off — and 0 with
+  // both off. There is no gauge/row-pack setting that clears it either: a
+  // 5×4 sweep of gauge 1.9–3.4 against row-pack 0.72–1.15 never reached zero for
+  // shell and reached it only at scattered points for vstitch, which is the
+  // cable lesson (§9) — a magic number is not a fix. Turning a dc's yarn-over
+  // off inside a fan would be faking the stitch, so the fans keep the lattice
+  // they were calibrated on and stay bit-identical until the crowding at a
+  // shared base is solved properly.
+  const cell = !legacyCell
+  const dims = cell ? dimsFor(yr, st) : stitchDims(yr)
   const { z, zh, cw, dh } = dims
-  const rowH = yr * BASE_ROW_YR * STITCHES[st].heightFactor * (rowScale ?? 1)
+  const headLoopMm = cell ? yr * (STITCHES[st].headLoopYr ?? 0) : 0
+  const yarnOvers = cell ? (STITCHES[st].yarnOvers ?? 0) : 0
+  const yarnOverMm = yr * (STITCHES[st].yarnOverYr ?? 1)
+  const rowH = cell
+    ? yr * rowPitchYr(st) * (rowScale ?? 1)
+    : yr * BASE_ROW_YR * STITCHES[st].heightFactor * (rowScale ?? 1)
 
   ridgeDebugNodes.length = 0
   const S = createStrand()
@@ -244,10 +307,11 @@ export function buildShaped(
         for (let t = 0; t < n; t++) {
           const idx = latticeAt(li++)
           const xC = lattice[idx]!
-          const hookOff = ((t - (n - 1) / 2) / (n - 1)) * dims.pw * 1.4 * dir
+          const hookOff = ((t - (n - 1) / 2) / (n - 1)) * (yr * HOOK_SPREAD_YR) * 1.4 * dir
           const r = emitPlainStitch(S, dims, {
             j, c: oi, id: st, s: dir, fz, by, ty,
             xCrown: xC, xHook: b.x + hookOff, bcBack: b.back, bcFront: b.front,
+            headLoopMm, yarnOvers, yarnOverMm,
           })
           crowns[idx] = { back: r.crownBack, front: r.crownFront, x: xC }
         }
@@ -273,6 +337,7 @@ export function buildShaped(
             j, c: oi, id: st, s: dir, fz, by, ty,
             xCrown: xC, xHook: b.x, bcBack: b.back, bcFront: b.front,
             legReliefScale: relief[t]!,
+            headLoopMm, yarnOvers, yarnOverMm,
           })
           crowns[idx] = { back: r.crownBack, front: r.crownFront, x: xC }
         }
@@ -283,7 +348,7 @@ export function buildShaped(
         const b2 = belowWork[bi++]!
         const idx = latticeAt(li++)
         const xC = lattice[idx]!
-        const r = emitDecrease(S, dims, { j, c: oi, id: st, s: dir, fz, by, ty, xCrown: xC, b1, b2 })
+        const r = emitDecrease(S, dims, { j, c: oi, id: st, s: dir, fz, by, ty, xCrown: xC, b1, b2, headLoopMm })
         crowns[idx] = { back: r.crown, front: r.crown, x: xC }
       } else {
         const b = belowWork[bi++]!
@@ -302,7 +367,7 @@ export function buildShaped(
           // hooks must not initialise coincident, or collision splits them in an
           // arbitrary direction (measured at the turn corner: the first hook got
           // expelled UP over the crown instead of under it).
-          const hookOff = (n === 1 ? 0 : dims.pw * 0.6 * (t === 0 ? 1 : -1)) * dir
+          const hookOff = (n === 1 ? 0 : yr * HOOK_SPREAD_YR * 0.6 * (t === 0 ? 1 : -1)) * dir
           const r = emitPlainStitch(S, dims, {
             j,
             c: oi,
@@ -315,6 +380,9 @@ export function buildShaped(
             xHook: b.x + hookOff,
             bcBack: b.back,
             bcFront: b.front,
+            headLoopMm,
+            yarnOvers,
+            yarnOverMm,
           })
           crowns[idx] = { back: r.crownBack, front: r.crownFront, x: xC }
         }
@@ -364,19 +432,28 @@ export function buildRounds(
   gaugeYr?: number,
 ): BuiltContinuous {
   const yr = yarnRadiusMm
-  const sw = yr * (gaugeYr ?? STITCHES[st].gaugeYr)
-  const dims = stitchDims(yr)
+  // Work in the round is worked at the ROUND gauge, not the flat-row one (§8f-4).
+  const sw = yr * (gaugeYr ?? roundGaugeYr(st))
+  // The real cell (§8f-3) — the same one the flat grid builder takes, including
+  // the head as a two-strand LOOP. The canopy below is re-derived from it in the
+  // same pass, because the two are one mechanism: the canopy says where a crown
+  // sits relative to the crowd under it, and re-cutting the crown without
+  // re-cutting the canopy is what broke a disc interlock the first time this was
+  // tried (§8f-2).
+  const dims = dimsFor(yr, st)
   const { zh } = dims
-  const rowH = yr * BASE_ROW_YR * STITCHES[st].heightFactor
-  // Radial pitch per round tied to the STITCH gauge, not the row height: a disc
-  // packs when its rounds sit ~one stitch-gauge apart radially (a +6 round of sc
-  // needs circumference 6·sw = 2π·Δr, i.e. Δr ≈ 0.955·sw). Tying drift to sw
-  // means the disc's density knob (the gaugeYr override) packs the rounds AND the
-  // stitches together — reduce the gauge and the round-to-round trenches close
-  // proportionally, with no new inner-round crowding. At the locked sc gauge 1.8
-  // this is 1.62yr, within 0.4% of the old rowH·1.05 (1.6275yr) — the trebles
-  // etc. that never called this override are unchanged.
-  const drift = sw * 0.9
+  const headLoopMm = yr * (STITCHES[st].headLoopYr ?? 0)
+  const rowH = yr * rowPitchYr(st)
+  // Radial pitch per round = the stitch's own ROW PITCH, because that is what a
+  // round of fabric is (§8f-3). Two constraints have to agree on a flat disc and
+  // now do: geometry says a +6 round needs circumference 6·sw = 2π·Δr, i.e.
+  // Δr ≈ 0.955·sw, and the fabric says Δr is one row pitch. Before the cell they
+  // disagreed badly, so drift was tied to the gauge with a 0.9 pack factor and
+  // the disc's density was a knob rather than a measurement. With the real cell
+  // the disc's own gauge is derived FROM the agreement (sw = rowPitch / 0.955,
+  // which is why mrdisc works a touch tighter than flat sc — exactly what a real
+  // flat circle needs, or it ruffles), and drift is simply the row pitch.
+  const drift = yr * rowPitchYr(st)
   // Same-face rounds pile every stitch's leg bulge on ONE face (no turn cancels it),
   // so the surface between the proud crowns reads knotty. Calm the leg bulge; crown
   // height + dive depth (the interlock) are left full, unlike the burned crownLay.
@@ -418,12 +495,14 @@ export function buildRounds(
   // and let it rotate in-plane (probe: apexZ 0.97 vs flankZ 0.92, ~0.05yr — no
   // point, so the Vs flopped sideways). A raised apex is a real 3D chevron that
   // reads as an outward-pointing stitch and resists the flop.
-  const canopyExempt = new Set<number>() // the two flanks
+  const canopyExempt = new Set<number>() // the head's other strands
   const canopyApex = new Set<number>() // the apex — prouder floor
-  const exemptCrown = (apex: number): void => {
-    canopyExempt.add(apex - 1)
+  // The WHOLE head is exempt, not three nodes round the apex: a re-cut head is a
+  // six-node LOOP, and a ceiling cutting across it crushes flat the very
+  // paired-loop top the close-range pass exists to produce.
+  const exemptCrown = (apex: number, head: number[]): void => {
+    for (const nIdx of head) if (nIdx !== apex) canopyExempt.add(nIdx)
     canopyApex.add(apex)
-    canopyExempt.add(apex + 1)
   }
 
   for (let k = 0; k < counts.length; k++) {
@@ -457,8 +536,9 @@ export function buildRounds(
           place,
           legReliefScale: ROUND_LEG_RELIEF, // calm the same-face leg bulge (§8c round-fabric look pass)
           linkRole: 'ring', // round 1 WRAPS the ring strand (a stem, not a crown)
+          headLoopMm,
         })
-        exemptCrown(r.crownBack)
+        exemptCrown(r.crownBack, r.head)
         crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, r: rK })
       }
     } else {
@@ -481,7 +561,7 @@ export function buildRounds(
           const xC = th * rRef
           // Same side-by-side insertion offset as flat shaping: an inc pair's two
           // hooks must not initialise coincident under the shared crown.
-          const hookOff = n === 1 ? 0 : dims.pw * 0.6 * (t === 0 ? 1 : -1)
+          const hookOff = n === 1 ? 0 : yr * HOOK_SPREAD_YR * 0.6 * (t === 0 ? 1 : -1)
           const hookDepthScale = n === 2 && t === 1 ? 1.5 : 1 // pair-second tucks deeper (canopy seam fix)
           const r = emitPlainStitch(S, dims, {
             j: k,
@@ -499,8 +579,9 @@ export function buildRounds(
             place,
             legReliefScale: ROUND_LEG_RELIEF,
             hookDepthScale,
+            headLoopMm,
           })
-          exemptCrown(r.crownBack)
+          exemptCrown(r.crownBack, r.head)
           crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, r: rK })
           li++
         }
@@ -528,22 +609,26 @@ export function buildRounds(
   // chain lies ON it (the taut chain-line of a real disc rides on top of the
   // yarn mass and hides the crowded legs beneath — YarnModel.zBand; probed:
   // without the crown floor, hooked-from-below crowns sink into the crowd).
-  const CANOPY = zh * 0.65
-  // The crown chain rides proud of the canopy — the tidy spiral of Vs standing
-  // on the fabric that the reference shows. The APEX rides a touch higher than
-  // its two flanks (0.9yr vs 0.5yr above the canopy) so each stitch reads as a
-  // 3D chevron pointing up-and-out, not a flat dash free to spin in-plane. Both
-  // clear the same-side audit margin (0.45yr) to the crown above with room to
-  // spare — the apex, which is the link's `below` target, only gains margin.
-  const FLANK_LO = CANOPY + yr * 0.5
-  const APEX_LO = CANOPY + yr * 0.9
+  // Re-derived from the re-cut head (§8f-3), keyed to the crown's own BUILT
+  // relief the way the sphere's radial band already was. With a three-node bump
+  // for a head the floors sat well ABOVE where the crown was built and had to —
+  // a bump has no structure of its own to hold, so the canopy shaped it. A head
+  // that is a real six-node LOOP does have structure: it needs the crowd tucked
+  // out from under it and nothing else, so the rest of the head takes no bound
+  // at all (a single flank floor across a tilted loop flattens the very loop the
+  // close-range pass exists to produce), and the apex takes a floor AT its built
+  // offset — enough to stop it being dragged down into the crowd by the hooks
+  // that link it, never enough to push it out.
+  const crownZ = headLoopMm > 0 ? zh * 0.8 : zh * 1.15
+  const CANOPY = crownZ * 0.65
+  const APEX_LO = crownZ
   const zBand = nodes.map((n, i) =>
     n.w === 0
       ? null
       : canopyApex.has(i)
         ? { lo: APEX_LO }
         : canopyExempt.has(i)
-          ? { lo: FLANK_LO }
+          ? null
           : { hi: CANOPY },
   )
   return {
@@ -695,10 +780,14 @@ export function buildSphere(
   gaugeYr?: number,
 ): BuiltContinuous {
   const yr = yarnRadiusMm
-  const sw = yr * (gaugeYr ?? STITCHES[st].gaugeYr)
-  const dims = stitchDims(yr)
+  // Work in the round is worked at the ROUND gauge, not the flat-row one (§8f-4).
+  const sw = yr * (gaugeYr ?? roundGaugeYr(st))
+  // The real cell (§8f-3), with the radial canopy re-derived alongside it — see
+  // the same note in buildRounds.
+  const dims = dimsFor(yr, st)
   const { zh } = dims
-  const rowH = yr * BASE_ROW_YR * STITCHES[st].heightFactor
+  const headLoopMm = yr * (STITCHES[st].headLoopYr ?? 0)
+  const rowH = yr * rowPitchYr(st)
   // Meridian pitch per round stays at the ROW HEIGHT (unlike the flat disc, where
   // drift is radial and must track the width gauge). On a sphere the tangential
   // packing comes from the count derivation (target = 2π·r/sw), which already
@@ -774,7 +863,10 @@ export function buildSphere(
     m: number
     nz: number // the crown's local normal offset (for the next round's dive side)
   }
-  const crownNz = zh * 1.15
+  // The crown's BUILT normal offset — the dive-side reference the next round
+  // works against, and the key the radial canopy is derived from. A re-cut head
+  // throws its crown at zh·0.8 (emitHeadLoop), the legacy bump at zh·1.15.
+  const crownNz = headLoopMm > 0 ? zh * 0.8 : zh * 1.15
   let below: SCrown[] = []
   let mPrev = rr
   let count = 0
@@ -783,12 +875,14 @@ export function buildSphere(
   // crowded pole legs erupt as fat loops between the Vs. Track each crown's
   // apex (the `below` target) and its two flanks so the radial band can tuck
   // the crowd under the crown line while the Vs ride proud. See §8c-3D.
-  const canopyExempt = new Set<number>() // the two flanks
+  const canopyExempt = new Set<number>() // the head's other strands
   const canopyApex = new Set<number>() // the apex — prouder floor
-  const exemptCrown = (apex: number): void => {
-    canopyExempt.add(apex - 1)
+  // The WHOLE head is exempt, not three nodes round the apex: a re-cut head is a
+  // six-node LOOP, and a ceiling cutting across it crushes flat the very
+  // paired-loop top the close-range pass exists to produce.
+  const exemptCrown = (apex: number, head: number[]): void => {
+    for (const nIdx of head) if (nIdx !== apex) canopyExempt.add(nIdx)
     canopyApex.add(apex)
-    canopyExempt.add(apex + 1)
   }
 
   // Round meridians: step down the sphere until just short of the bottom pole
@@ -853,8 +947,9 @@ export function buildSphere(
           bcNormalZ: zh * 0.5,
           place3,
           linkRole: 'ring', // round 1 WRAPS the ring strand (a stem, not a crown)
+          headLoopMm,
         })
-        exemptCrown(r.crownBack)
+        exemptCrown(r.crownBack, r.head)
         crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNz })
       }
     } else {
@@ -884,8 +979,9 @@ export function buildSphere(
             bn1: b1.nz,
             bn2: b2.nz,
             place3,
+            headLoopMm,
           })
-          exemptCrown(r.crown)
+          exemptCrown(r.crown, r.head)
           crowns.push({ back: r.crown, front: r.crown, theta: th, m: mK, nz: crownNz })
           li++
         } else {
@@ -894,7 +990,7 @@ export function buildSphere(
           for (let t = 0; t < n; t++) {
             const th = phase + ((li + 0.5) / count) * Math.PI * 2
             const xC = th * rRef
-            const hookOff = n === 1 ? 0 : dims.pw * 0.6 * (t === 0 ? 1 : -1)
+            const hookOff = n === 1 ? 0 : yr * HOOK_SPREAD_YR * 0.6 * (t === 0 ? 1 : -1)
             const hookDepthScale = n === 2 && t === 1 ? 1.5 : 1 // pair-second tucks deeper (canopy seam fix)
             const r = emitPlainStitch(S, dims, {
               j: k,
@@ -912,8 +1008,9 @@ export function buildSphere(
               bcNormalZ: b.nz,
               place3,
               hookDepthScale,
+              headLoopMm,
             })
-            exemptCrown(r.crownBack)
+            exemptCrown(r.crownBack, r.head)
             crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNz })
             li++
           }
@@ -974,8 +1071,16 @@ export function buildSphere(
   // at/below the built crown offsets so they only stop a crown sinking into the
   // crowd, never push it out (the pole-ballooning failure).
   const CANOPY = R + crownNz * 0.65 // ceiling: crowd resolves inward under this
-  const FLANK_LO = R + crownNz * 0.72 // flanks built at zh (≈0.87·crownNz) — floor below, no push
-  const APEX_LO = R + crownNz * 0.9 // apex built at crownNz — floor below, no push
+  const APEX_LO = R + crownNz // apex built at crownNz — a floor AT it, no push
+  // The rest of the head keeps a floor here where the flat disc needs none
+  // (§8f-4): a disc's crowd resolves DOWN into the table, a sphere's pole has
+  // nowhere to go but out between the Vs, and with the head unbounded one
+  // bottom-pole hook slipped 3.12yr sideways off its crown. Set at the head
+  // loop's own LOWEST built offset (zh·0.2 = crownNz·0.25) so it stops a head
+  // strand sinking without pushing any of them out — probed as a real basin,
+  // not a knife edge: 0.2 through 0.72 of crownNz all audit clean, only an
+  // unbounded head fails.
+  const FLANK_LO = R + crownNz * 0.25
   const radialBand = prof
     ? undefined
     : nodes.map((n, i) =>

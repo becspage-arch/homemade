@@ -26,7 +26,7 @@ export function buildRelaxedSwatch(arg: SwatchArg, W: number, yr: number): Built
   const rows: StitchId[] = Array(recipe.rows).fill(recipe.stitch) as StitchId[]
   const built =
     recipe.builder === 'shaped'
-      ? buildShaped(recipe.stitch, recipe.shapeRows!, W, yr, recipe.gaugeYr, recipe.rowScale)
+      ? buildShaped(recipe.stitch, recipe.shapeRows!, W, yr, recipe.gaugeYr, recipe.rowScale, recipe.legacyCell)
       : recipe.builder === 'round'
         ? buildRounds(recipe.stitch, recipe.roundCounts!, yr, recipe.gaugeYr)
         : recipe.builder === 'sphere'

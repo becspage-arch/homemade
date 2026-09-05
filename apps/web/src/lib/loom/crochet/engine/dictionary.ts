@@ -300,6 +300,13 @@ export interface SwatchRecipe {
    */
   rowScale?: number
   /**
+   * builder 'shaped': keep the PRE-CELL lattice (§8f-3). Only the two fan
+   * swatches use it — a fan works several stitches into one below-crown, and the
+   * corrected cell crowds that shared base past what the interlocks survive.
+   * See the comment in buildShaped for the one-variable-at-a-time probe.
+   */
+  legacyCell?: boolean
+  /**
    * Per-swatch multiplier on the fp/bp POST relief (default 1 = identity, which
    * is what every locked stitch uses). basketweave deepens it so its raised
    * blocks read against the recessed ones; consumed by buildContinuous.
@@ -425,7 +432,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   scinc: {
     stitch: 'sc', rows: 6, auditW: 8, builder: 'shaped',
     shapeRows: growPlan(8, 6),
-    gaugeYr: 1.8, // PINNED to the pre-§8f sc cell: the shaped builder (its decrease head, its turning slack) has not had the close-range pass yet, so it keeps the lattice it was calibrated on — bit-identical
+    // §8f-3: pin removed — the shaped builder now takes sc's own cell.
     relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
     referenceUrl: 'https://sarahmaker.com/wp-content/uploads/2022/03/single-crochet-increase-2-819x1024.jpg',
     status: 'wip',
@@ -434,7 +441,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   scdec: {
     stitch: 'sc', rows: 5, auditW: 16, builder: 'shaped',
     shapeRows: shrinkPlan(16, 5),
-    gaugeYr: 1.8, // PINNED to the pre-§8f sc cell: the shaped builder (its decrease head, its turning slack) has not had the close-range pass yet, so it keeps the lattice it was calibrated on — bit-identical
+    // §8f-3: pin removed — the shaped builder now takes sc's own cell.
     relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
     referenceUrl: 'https://christacodesign.com/wp-content/uploads/2021/03/Single-crochet-two-together-edges-2-1024x768.jpg',
     status: 'wip',
@@ -446,7 +453,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   hdcinc: {
     stitch: 'hdc', rows: 5, auditW: 8, builder: 'shaped',
     shapeRows: growPlan(8, 5),
-    gaugeYr: 2.0, // PINNED to the pre-§8f cell: the shaped builder has not had the close-range pass yet (its decrease head is still a bump), so it keeps the lattice it was calibrated on
+    // §8f-3: pin removed — the shaped builder now takes hdc's own cell.
     relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
     referenceUrl: 'https://cdn.shopify.com/s/files/1/0620/7180/0037/files/image-81-1024x576_2021-01.png', // crochetmelovely — finished hdc increase
     status: 'wip',
@@ -454,7 +461,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   hdcdec: {
     stitch: 'hdc', rows: 5, auditW: 16, builder: 'shaped',
     shapeRows: shrinkPlan(16, 5),
-    gaugeYr: 2.0, // PINNED to the pre-§8f cell: the shaped builder has not had the close-range pass yet (its decrease head is still a bump), so it keeps the lattice it was calibrated on
+    // §8f-3: pin removed — the shaped builder now takes hdc's own cell.
     relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
     referenceUrl: 'https://christacodesign.com/wp-content/uploads/2021/04/half-double-crochet-together-tutorial-2-720x720.jpg', // christacodesign — hdc2tog swatch
     status: 'wip',
@@ -462,7 +469,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   dcinc: {
     stitch: 'dc', rows: 4, auditW: 8, builder: 'shaped',
     shapeRows: growPlan(8, 4),
-    gaugeYr: 2.3, // PINNED to the pre-§8f cell: the shaped builder has not had the close-range pass yet (its decrease head is still a bump), so it keeps the lattice it was calibrated on
+    // §8f-3: pin removed — the shaped builder now takes dc's own cell (collars included).
     relaxProfile: 'worked', tiltDeg: 16, twist: 0.1, openFabric: true,
     referenceUrl: 'https://knotions.com/wp-content/uploads/2018/10/2dc.jpg', // knotions — completed 2dc increase with the V pair marked (found 2026-07-11; fuller-swatch candidates stayed lazy-loaded)
     status: 'wip',
@@ -470,7 +477,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   dcdec: {
     stitch: 'dc', rows: 4, auditW: 14, builder: 'shaped',
     shapeRows: shrinkPlan(14, 4),
-    gaugeYr: 2.3, // PINNED to the pre-§8f cell: the shaped builder has not had the close-range pass yet (its decrease head is still a bump), so it keeps the lattice it was calibrated on
+    // §8f-3: pin removed — the shaped builder now takes dc's own cell (collars included).
     relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
     referenceUrl: 'https://christacodesign.com/wp-content/uploads/2017/09/2017-09-19_13-22-04_606-1024x768.jpg', // christacodesign — dc2tog swatch
     status: 'wip',
@@ -481,7 +488,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   shell: {
     stitch: 'dc', rows: 5, auditW: 13, builder: 'shaped',
     shapeRows: shellPlan(2, 5),
-    gaugeYr: 1.5, rowScale: 0.72, // PACK (2026-07-11): dc's open 2.3 gauge + tall posts left the scallops skeletal with big holes; pack the columns (1.5) and shorten the row pitch (0.72) so adjacent fans nest and touch like the reference's dense scalloped fabric (1.7/0.82 helped but stayed open)
+    gaugeYr: 1.5, rowScale: 0.72, legacyCell: true, // §8f-3: the fan swatches keep the pre-cell lattice — the corrected cell crowds a 5-dc fan's shared base past what its interlocks survive, at every gauge/row-pack in a 5×4 sweep. PACK (2026-07-11): dc's open 2.3 gauge + tall posts left the scallops skeletal with big holes; pack the columns (1.5) and shorten the row pitch (0.72) so adjacent fans nest and touch like the reference's dense scalloped fabric (1.7/0.82 helped but stayed open)
     relaxProfile: 'worked', tiltDeg: 16, twist: 0.1, openFabric: true,
     referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2016/06/Stitch-Book-PART-2-70-e1628964882533-1021x1024.png', // daisyfarmcrafts — classic shell swatch
     status: 'wip',
@@ -495,8 +502,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   vstitch: {
     stitch: 'dc', rows: 5, auditW: 12, builder: 'shaped',
     shapeRows: vstitchPlan(5, 5),
-    rowScale: 0.8, // calm the row sag (2026-07-11): the tall dc posts sagged + tangled into an untidy lattice; a shorter row pitch firms the Vs vertically. Gauge left OPEN (no override) so the lace mesh stays airy like the reference.
-    gaugeYr: 2.3, // PINNED to the pre-§8f cell: the shaped builder has not had the close-range pass yet (its decrease head is still a bump), so it keeps the lattice it was calibrated on
+    rowScale: 0.8, gaugeYr: 2.3, legacyCell: true, // §8f-3: a V pair is a fan into one base — same crowding as shell, so it keeps the pre-cell lattice. calm the row sag (2026-07-11): the tall dc posts sagged + tangled into an untidy lattice; a shorter row pitch firms the Vs vertically. Gauge left OPEN (no override) so the lace mesh stays airy like the reference.
     relaxProfile: 'worked', tiltDeg: 16, twist: 0.05, openFabric: true, // calmer ply so the lattice columns read clean, not ropey
     referenceUrl: 'https://i0.wp.com/mycrochetory.com/wp-content/uploads/2023/08/How-to-crochet-V-stitch-1.jpg', // mycrochetory — V-stitch swatch (the ch-1 open variant; ours is the solid 2-dc V)
     status: 'wip',
@@ -506,7 +512,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   crossed: {
     stitch: 'dc', rows: 5, auditW: 12, builder: 'shaped',
     shapeRows: crossedPlan(5, 5),
-    gaugeYr: 1.9, rowScale: 0.85, // moderate pack (2026-07-11): the fabric was too open/skeletal; pack the columns + rows so the crossings sit in a firm fabric with just the small eyelets the reference keeps, not big holes
+    gaugeYr: 2.81, rowScale: 0.85, // §8f-3: pack ratio 0.83 of the driving stitch's gauge, re-derived from dc's corrected 3.4 (was 1.9 against the old 2.3). moderate pack (2026-07-11): the fabric was too open/skeletal; pack the columns + rows so the crossings sit in a firm fabric with just the small eyelets the reference keeps, not big holes
     relaxProfile: 'worked', tiltDeg: 16, twist: 0.1, openFabric: true,
     referenceUrl: 'https://richtexturescrochet.com/wp-content/uploads/2020/09/IMG_2051-1024x683.jpg', // richtexturescrochet — crossed dc swatch (rows of X pairs)
     status: 'wip',
@@ -524,7 +530,8 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   mrdisc: {
     stitch: 'sc', rows: 6, auditW: 16, builder: 'round',
     roundCounts: [6, 12, 18, 24, 30, 36],
-    gaugeYr: 1.5, // DENSITY (2026-07-11): pack the disc — sc's locked 1.8 gauge left round-to-round trenches (measured ~0.35yr radial gaps over the 1.25yr collision floor) so it read as coiled rope; 1.5 packs stitches AND (via drift = 0.9·sw) rounds together, closing the gaps toward the reference's pinprick spacing without touching the locked flat sc gauge
+    // §8f-4: no gauge override at all — work in the round has its OWN derived
+    // gauge (roundGaugeYr = row pitch ÷ 0.955), which is what the builder uses.
     relaxProfile: 'round', tiltDeg: 0, twist: 0.08, // CRISPNESS 2026-07-11: 0.05 was "calm" for the old merged-ply model (twist = surface noise); the distinct-ply model's twist IS the visible ply line — 0.08 shows real yarn without burying the Vs
     referenceUrl: 'https://sarahmaker.com/wp-content/uploads/2022/03/crochet-circle-7-819x1024.jpg',
     status: 'wip',
@@ -534,7 +541,9 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   // mirrored decs, fasten-off into the bottom pole).
   ball: {
     stitch: 'sc', rows: 15, auditW: 16, builder: 'sphere', equatorCount: 36,
-    gaugeYr: 1.5, // DENSITY (2026-07-11): pack the stitches tangentially (smaller gauge) while HOLDING the ball size — equatorCount 30->36 keeps R = eq·sw/2π constant (30·1.8 = 36·1.5), so the sphere reads solid/packed, not coiled rope, without shrinking or losing rounds
+    // §8f-4: no gauge override — the sphere takes the derived round-work gauge,
+    // the same one the compositions build their parts at, so the ball a proof
+    // renders and the ball a bear is made of are the same fabric.
     viewMargin: 0.35, // frame the FULL sphere silhouette — the tilted camera clipped the top pole against the old 0.12 crop
     relaxProfile: 'surface', tiltDeg: 24, twist: 0.05,
     referenceUrl: 'https://raffamusadesigns.com/wp-content/uploads/How_to_Crochet_erfect_Amigurumi_Ball_9_RaffamusaDesigns.jpg',
