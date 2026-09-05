@@ -21,14 +21,19 @@
 
 import { readFileSync } from 'node:fs'
 import { prisma, r2Upload } from '@homemade/db'
-import { renderProgram } from './loom-pattern'
+import { renderProgram, renderComposition } from './loom-pattern'
 import { writeInstructions, programToChart, type CrochetProgram } from '../src/lib/loom/crochet/engine/program'
+import type { CompositionProgram } from '../src/lib/loom/crochet/engine/composition'
+import { compositionRowsStructured } from '../src/lib/loom/crochet/engine/compositionPattern'
 
 export interface RenderOnPublishOptions {
   yr?: number
   hero?: boolean
   /** Render + gate but skip all DB / R2 writes (local proof). */
   dryRun?: boolean
+  /** Where the scene JSON + PNGs land. Defaults to the local scratch
+   *  directory; the server job passes a temp directory it can write to. */
+  outDir?: string
 }
 
 export interface RenderOnPublishResult {
@@ -57,8 +62,17 @@ export async function renderPatternOnPublish(
   if (!pattern) throw new Error(`CrochetPattern ${patternId} not found`)
   if (!pattern.loomProgram) return { patternId, status: 'NO_PROGRAM' }
 
-  const program = pattern.loomProgram as unknown as CrochetProgram
-  const res = await renderProgram(program, { name: pattern.slug ?? pattern.name, yr: options.yr, hero: options.hero })
+  // Two program shapes are stored on a pattern: a single crocheted piece
+  // (`CrochetProgram`) and an assembled amigurumi (`CompositionProgram`, which
+  // carries `parts`). Both render through the same gate; only the entry point
+  // and the derived faces differ.
+  const stored = pattern.loomProgram as unknown as CrochetProgram | CompositionProgram
+  const isComposition = Array.isArray((stored as CompositionProgram).parts)
+  const renderName = pattern.slug ?? pattern.name
+  const renderOptions = { name: renderName, yr: options.yr, hero: options.hero, outDir: options.outDir }
+  const res = isComposition
+    ? await renderComposition(stored as CompositionProgram, renderOptions)
+    : await renderProgram(stored as CrochetProgram, renderOptions)
 
   if (res.problems.length) {
     if (!options.dryRun) {
@@ -99,15 +113,19 @@ export async function renderPatternOnPublish(
     },
   })
 
-  // Regenerate the OTHER two faces from the SAME program so they can't drift.
-  const chart = programToChart(program)
-  const instructions = writeInstructions(program)
-  const rowsStructured = instructions.map((line, i) => ({
-    section: 'Body',
-    rowNumber: i,
-    rowLabel: line.split(':')[0] ?? `Line ${i + 1}`,
-    instruction: line,
-  }))
+  // Regenerate the OTHER faces from the SAME program so they can't drift. An
+  // amigurumi is a written pattern (charting one piece of nine and calling it
+  // the pattern's chart would mislead), so it keeps whatever chart it has —
+  // none — and only its words are rewritten.
+  const chart = isComposition ? null : programToChart(stored as CrochetProgram)
+  const rowsStructured = isComposition
+    ? (compositionRowsStructured(stored as CompositionProgram) as unknown as object)
+    : writeInstructions(stored as CrochetProgram).map((line, i) => ({
+        section: 'Body',
+        rowNumber: i,
+        rowLabel: line.split(':')[0] ?? `Line ${i + 1}`,
+        instruction: line,
+      }))
 
   await prisma.crochetPattern.update({
     where: { id: patternId },
@@ -119,7 +137,7 @@ export async function renderPatternOnPublish(
       loomFidelityScore: res.fidelityScore,
       loomGeometryHash: res.geometryHash,
       loomYarnRadiusMm: res.yr,
-      chartData: chart,
+      ...(chart ? { chartData: chart } : {}),
       rowsStructured,
     },
   })

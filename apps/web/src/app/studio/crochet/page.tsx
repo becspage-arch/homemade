@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import { prisma, Visibility } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { hasPremium } from '@/lib/entitlements'
 import { StudioAuthGate } from '@/components/premium/StudioAuthGate'
 import { CrochetStudioShell } from '@/components/studio/crochet/CrochetStudioShell'
 import type { CrochetPatternData, MyCrochetProjectListItem } from '@/components/studio/crochet/types'
+import type { MyCrochetPatternListItem } from '@/components/studio/crochet/MyCrochetPatternsGrid'
 import { mediaUrl } from '@/lib/media'
 
 export const dynamic = 'force-dynamic'
@@ -41,6 +43,7 @@ interface PageProps {
 export default async function CrochetStudioPage({ searchParams }: PageProps) {
   const sp = await searchParams
   const user = await getCurrentDbUser()
+  const premium = hasPremium(user)
 
   // The Studio is a free signed-in surface (an auth gate, NOT a paywall).
   // Anonymous visitors browse the library and see the Studio's front door, but
@@ -61,6 +64,7 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
 
   let pattern: CrochetPatternData | null = null
   let progress: Awaited<ReturnType<typeof loadProgress>> = null
+  let heroPending = false
 
   if (sp.crochetPatternId || sp.crochetPatternSlug) {
     const row = await prisma.crochetPattern.findUnique({
@@ -98,6 +102,8 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
         premium: true,
         visibility: true,
         ownerUserId: true,
+        loomRenderStatus: true,
+        heroMediaId: true,
         designer: { select: { slug: true, displayName: true } },
         thumbnail: { select: { id: true } },
         schematic: { select: { id: true } },
@@ -153,6 +159,9 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
           primaryHookMm: row.primaryHook?.mmSize ?? null,
           primaryHookName: row.primaryHook?.canonicalName ?? null,
         }
+        // A design of the maker's own whose finished-piece photo has not landed
+        // yet: the Studio says so rather than leaving a silent gap.
+        heroPending = Boolean(isOwned) && !row.heroMediaId && row.loomRenderStatus === 'PENDING'
       }
     }
 
@@ -204,6 +213,33 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
     }))
   }
 
+  let myDesigns: MyCrochetPatternListItem[] = []
+  if (user && !pattern) {
+    const designRows = await prisma.crochetPattern.findMany({
+      where: { ownerUserId: user.id },
+      orderBy: { updatedAt: 'desc' },
+      take: 24,
+      select: {
+        id: true,
+        name: true,
+        updatedAt: true,
+        finishedSizeText: true,
+        shapeCategory: true,
+        loomRenderStatus: true,
+        hero: { select: { cloudflareId: true, r2Key: true } },
+      },
+    })
+    myDesigns = designRows.map((d) => ({
+      id: d.id,
+      name: d.name,
+      updatedAt: d.updatedAt.toISOString(),
+      finishedSizeText: d.finishedSizeText,
+      shapeCategory: d.shapeCategory,
+      heroUrl: mediaUrl(d.hero, 'card'),
+      renderPending: d.loomRenderStatus === 'PENDING',
+    }))
+  }
+
   const startMode: 'empty' | 'pattern' | 'new-amigurumi-designer' | 'new-photo-to-tapestry' | 'new-ai-assisted' = pattern
     ? 'pattern'
     : sp.new === 'amigurumi-designer'
@@ -246,6 +282,7 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
     <CrochetStudioShell
       startMode={startMode}
       signedIn={Boolean(user)}
+      isPremium={premium}
       userEmail={user?.email ?? null}
       userName={user?.name ?? null}
       userTerminologyPreference={user?.crochetTerminologyPreference ?? null}
@@ -253,6 +290,8 @@ export default async function CrochetStudioPage({ searchParams }: PageProps) {
       pattern={pattern}
       progress={progress}
       myProjects={myProjects}
+      myDesigns={myDesigns}
+      heroPending={heroPending}
       yarnWeights={yarnWeights}
       recentlyAdded={recentlyAdded}
     />

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { prisma, PatternType } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { mediaUrl } from '@/lib/media'
 
 export const dynamic = 'force-dynamic'
 
@@ -15,10 +16,15 @@ export const metadata: Metadata = {
  * profile so a design they made (from an idea, a photo, or a blank canvas) is
  * easy to find again after they navigate away from the Studio.
  *
- * These are `Pattern` rows they own (`ownerUserId`), always PRIVATE — they are
- * not in the public catalogue. The owner IS the author, so when the Maker
- * programme lands a user can choose to publish one under their own name; until
- * then everything here stays private to them.
+ * These are rows they own (`ownerUserId`), always PRIVATE — they are not in the
+ * public catalogue. The owner IS the author, so when the Maker programme lands a
+ * user can choose to publish one under their own name; until then everything here
+ * stays private to them.
+ *
+ * Two tables feed it: `Pattern` (cross-stitch and the chart crafts) and
+ * `CrochetPattern` (the crochet Studio's own designs, which carry a stitch
+ * program rather than a cell grid). They are listed together, newest first, so a
+ * maker who works in both crafts finds everything in one place.
  */
 
 const STUDIO_HREF: Record<PatternType, string> = {
@@ -33,22 +39,70 @@ const CRAFT_LABEL: Record<PatternType, string> = {
   CROCHET_CHART: 'Crochet',
 }
 
+interface DesignCard {
+  key: string
+  href: string
+  name: string
+  updatedAt: Date
+  thumbnailUrl: string | null
+  sub: string
+}
+
+function shapeLabel(shape: string | null): string | null {
+  if (!shape) return null
+  return shape.charAt(0) + shape.slice(1).toLowerCase().replace(/_/g, ' ')
+}
+
 export default async function MyDesignsPage() {
   const user = await getCurrentDbUser()
   if (!user) redirect('/sign-in')
 
-  const designs = await prisma.pattern.findMany({
-    where: { ownerUserId: user.id },
-    orderBy: { updatedAt: 'desc' },
-    select: {
-      id: true,
-      name: true,
-      type: true,
-      widthCells: true,
-      heightCells: true,
-      colourCount: true,
-    },
-  })
+  const [chartDesigns, crochetDesigns] = await Promise.all([
+    prisma.pattern.findMany({
+      where: { ownerUserId: user.id },
+      orderBy: { updatedAt: 'desc' },
+      select: {
+        id: true,
+        name: true,
+        type: true,
+        updatedAt: true,
+        widthCells: true,
+        heightCells: true,
+        colourCount: true,
+      },
+    }),
+    prisma.crochetPattern.findMany({
+      where: { ownerUserId: user.id },
+      orderBy: { updatedAt: 'desc' },
+      select: {
+        id: true,
+        name: true,
+        updatedAt: true,
+        finishedSizeText: true,
+        shapeCategory: true,
+        hero: { select: { cloudflareId: true, r2Key: true } },
+      },
+    }),
+  ])
+
+  const designs: DesignCard[] = [
+    ...chartDesigns.map((d) => ({
+      key: `pattern-${d.id}`,
+      href: `${STUDIO_HREF[d.type]}?patternId=${d.id}`,
+      name: d.name,
+      updatedAt: d.updatedAt,
+      thumbnailUrl: `/api/studio/patterns/${d.id}/thumbnail`,
+      sub: `${CRAFT_LABEL[d.type]} · ${d.widthCells}×${d.heightCells} · ${d.colourCount} colours`,
+    })),
+    ...crochetDesigns.map((d) => ({
+      key: `crochet-${d.id}`,
+      href: `/studio/crochet?crochetPatternId=${d.id}`,
+      name: d.name,
+      updatedAt: d.updatedAt,
+      thumbnailUrl: mediaUrl(d.hero, 'card'),
+      sub: ['Crochet', d.finishedSizeText, shapeLabel(d.shapeCategory)].filter(Boolean).join(' · '),
+    })),
+  ].sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime())
 
   return (
     <section>
@@ -69,17 +123,17 @@ export default async function MyDesignsPage() {
       ) : (
         <ul className="me-designs-grid">
           {designs.map((d) => (
-            <li key={d.id} className="me-design-card">
-              <Link href={`${STUDIO_HREF[d.type]}?patternId=${d.id}`} className="me-design-card-link">
+            <li key={d.key} className="me-design-card">
+              <Link href={d.href} className="me-design-card-link">
                 <span className="me-design-thumb">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/api/studio/patterns/${d.id}/thumbnail`} alt="" loading="lazy" />
+                  {d.thumbnailUrl ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={d.thumbnailUrl} alt="" loading="lazy" />
+                  ) : null}
                 </span>
                 <span className="me-design-meta">
                   <span className="me-design-name">{d.name}</span>
-                  <span className="me-design-sub">
-                    {CRAFT_LABEL[d.type]} · {d.widthCells}×{d.heightCells} · {d.colourCount} colours
-                  </span>
+                  <span className="me-design-sub">{d.sub}</span>
                 </span>
               </Link>
             </li>

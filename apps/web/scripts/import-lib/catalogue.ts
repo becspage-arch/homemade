@@ -14,11 +14,11 @@ import { readdir } from 'node:fs/promises'
 import { join } from 'node:path'
 
 export type Theme = 'Elephant' | 'Flowers' | 'LGBTQ' | 'Mom' | 'Quote'
-export type SubCategorySlug = 'animals' | 'florals' | 'quotes-and-sayings' | 'pride-and-inclusive'
+export type SubCategorySlug = 'animals' | 'floral' | 'quotes-and-sayings' | 'pride-and-inclusive'
 
 const THEME_TO_SUBCAT: Record<Theme, SubCategorySlug> = {
   Elephant: 'animals',
-  Flowers: 'florals',
+  Flowers: 'floral',
   LGBTQ: 'pride-and-inclusive',
   Mom: 'quotes-and-sayings',
   Quote: 'quotes-and-sayings',
