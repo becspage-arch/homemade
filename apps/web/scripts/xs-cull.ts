@@ -37,6 +37,7 @@ async function main(): Promise<void> {
   let flipped = 0
   let alreadyPrivate = 0
   let notFound = 0
+  let searchAttempted = 0
   const checkedAt = new Date().toISOString()
 
   for (const r of recs) {
@@ -52,6 +53,9 @@ async function main(): Promise<void> {
     if (apply) {
       await prisma.pattern.update({
         where: { id: p.id },
+        // `select` keeps the RETURNING clause to one column — the row is large,
+        // and asking for every column ties the script to the deployed schema.
+        select: { id: true },
         data: {
           visibility: Visibility.PRIVATE,
           // The durable record of the cull — mirrors the QC pass's shape, so the
@@ -59,7 +63,18 @@ async function main(): Promise<void> {
           qcBlockReason: { blocked: true, reasons: [r.reason], source: 'xs-cull', checkedAt },
         },
       })
-      await removePatternFromSearch(p.id)
+      // NON-FATAL. The DB flip is the cull; the search index is a derived copy.
+      // From a cloud sandbox the Typesense SDK cannot tunnel HTTPS through the
+      // egress proxy, so this throws there — log it, keep going, and rebuild the
+      // index afterwards with the server-side `tutorials/reindex.requested` job,
+      // which drops and rebuilds the collections from the DB so PRIVATE rows
+      // fall out anyway.
+      searchAttempted++
+      try {
+        await removePatternFromSearch(p.id)
+      } catch (err) {
+        console.warn(`  search removal threw for ${r.slug}: ${err instanceof Error ? err.message : String(err)}`)
+      }
     }
     flipped++
   }
@@ -69,8 +84,13 @@ async function main(): Promise<void> {
   })
 
   console.log(
-    `${apply ? 'APPLIED' : 'DRY RUN'} · input ${recs.length} · ${apply ? 'flipped' : 'would-flip'} ${flipped} · already-private ${alreadyPrivate} · not-found ${notFound}`,
+    `${apply ? 'APPLIED' : 'DRY RUN'} · input ${recs.length} · ${apply ? 'flipped' : 'would-flip'} ${flipped} · already-private ${alreadyPrivate} · not-found ${notFound}${apply ? ` · search removals attempted ${searchAttempted}` : ''}`,
   )
+  if (searchAttempted > 0) {
+    console.log(
+      'Search removal is best-effort — @homemade/search logs its own failures rather than throwing, and the Typesense SDK cannot reach Typesense from a cloud sandbox. Run the server-side reindex (Inngest `tutorials/reindex.requested`) to be certain the index matches the database.',
+    )
+  }
   console.log(`PUBLIC house cross-stitch patterns now: ${publicCount}`)
   await prisma.$disconnect()
 }
