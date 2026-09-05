@@ -4575,3 +4575,61 @@ the whole sitemap.
   scripts' `SCRATCH` constants point at a worktree that no longer exists
   (`jolly-visvesvaraya-564eb8`) and will fail if run today — not fixed here
   (out of scope for an SEO audit), queued as a follow-up suggestion.
+
+## 2026-09-05 — Loom crochet trunk merged to main + crochet renders on Fargate
+
+The crochet pattern engine trunk (`claude/crochet-engine-integration` — build 1,
+build 2, the shaping/knit work and the six-sample sign-off set) is now on `main`,
+and the crochet render path runs off Rebecca's PC for the first time.
+
+**The merge.** One conflict, `apps/web/tsconfig.json`, where both sides had
+appended to `exclude` — resolved as the union. `schema.prisma` auto-merged and
+was checked by eye: relative to `main` it adds only the `CrochetPattern` loom
+columns (`loomProgram`, `loomHeroMediaId`, `loomRenderStatus`, `loomRenderedAt`,
+`loomYarnRadiusMm`, `loomFidelityScore`, `loomGeometryHash` + the FK index) and
+the `CrochetPatternLoomHero` relation on `Media`. The trunk's migration had never
+been applied and five migrations had landed on `main` since it was written, so
+its folder was renamed `20260926000000_` → `20261004000000_` to sort after them;
+the SQL is additive and idempotent (`ADD COLUMN IF NOT EXISTS`, a guarded FK) and
+applied cleanly on the deploy.
+
+**Geometry guard — nothing moved.** `loom-geom-hash.ts` and `loom-audit.ts` were
+run at the trunk head and again on the merged tree: every dictionary swatch hash
+and every audit verdict is bit-identical. All seven sign-off programs still
+compile to the hashes recorded in `STITCH_ENGINE.md` §8e-3 (`simple-coaster`
+8fedd4c9, `stripe-dishcloth` 79f6a541, `flat-texture-panel` a36dacd7,
+`post-rib-headband` e482eb7a, `cottage-tapestry` a627f243, `amigurumi-ball`
+22357568, `amigurumi-creature` 18b2f935).
+
+**Crochet renders on Fargate.** The render container only carried
+`loom_render.py` (needlework), and both crochet pipelines hardcoded the Windows
+`blender.exe`, so nothing off Rebecca's box could render a crochet hero. The
+image now carries both renderers and the entrypoint picks one with `$LOOM_SCRIPT`
+(default `loom_render.py`, so every existing needlework caller is unchanged);
+`loom_render_crochet.py` is in the image workflow's trigger paths. New
+`scripts/loom-base-render.ts` is the single place `loom-pattern.ts` and
+`loom-stitch.ts` choose local Blender vs the container, on the same
+`LOOM_RENDER` / `LOOM_BLENDER` pair `loom-render-hero.ts` already reads — the
+Windows path stays the default. Nothing about the render changed: same pinned
+Blender 4.2.9, same script, same scene.json, same 150 samples.
+
+**Batching.** A cold Fargate task is 7–8 minutes and that cost is per task, so
+`scripts/loom-render-batch.ts` compiles and audits every program first (one bad
+program aborts before a task launches), fires all the base renders at once, then
+runs the Fal hero + fidelity gate per pattern and prints a table. Every aws-cli
+call in `loom-fargate-render.ts` is now async so the batch is genuinely
+concurrent. `--compile-only` makes it the geometry-hash guard for whole patterns
+the way `loom-geom-hash.ts` is for dictionary swatches.
+
+**First cloud hero batch.** All seven sign-off patterns rendered in ONE batch of
+seven concurrent Fargate tasks: 588s wall-clock for the lot (per-task 315–587s),
+against roughly 50 minutes if they had gone one at a time. Every hash matched
+§8e-3 and every hero passed the fidelity gate (structure 0.902–0.937 against
+STRUCT_MIN 0.45). Renders are in `.loom-scratch/`, unjudged — a human still has
+to look at them beside real reference photos.
+
+Also fixed, on the way through: seven type errors and six lint errors that came
+in with the trunk and would have failed `next build` and the deploy's lint gate
+(`SwatchRecipe` missing `postReliefScale`, `STITCH_TO_CHART_SYMBOL` missing
+`picot`, a `PartPlacement` union that never narrowed, six unused bindings). All
+type-level — the hash guard above confirms no geometry moved.
