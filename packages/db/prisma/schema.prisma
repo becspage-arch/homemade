@@ -3555,15 +3555,34 @@ model BulkRun {
   /// Total generation attempts across the run (best-of-N: >1 per idea).
   generations Int      @default(0)
   errors      Int      @default(0)
+  /// Gate-passed candidates refused by the publish-path duplicate guard.
+  duplicates  Int      @default(0)
+  /// Ideas that never generated — the trailing-24h Fal spend cap was already hit.
+  skipped     Int      @default(0)
+  /// Of `generations`, how many used the Flux 1.1 Pro (dense) tier — the
+  /// expensive lane, capped separately.
+  proGenerations Int   @default(0)
   gemSlugs    String[] @default([])
   /// Short gate reasons behind culls — feeds the panel's "why did it dip" view.
   killReasons String[] @default([])
   triggeredById String?
   startedAt   DateTime @default(now())
+  /// Set by the run finaliser once every dispatched idea has reached a terminal
+  /// outcome (published / duplicate / culled / error / skipped), or by the
+  /// dispatcher's stalled-run sweep. Null = still in flight.
+  finishedAt  DateTime?
+  /// One-line human summary written at the same moment as `finishedAt`.
+  summary     String?
+  /// True once this run has raised a Sentry warning (yielded nothing, error
+  /// storm, or stalled) — so it is raised exactly once.
+  alerted     Boolean  @default(false)
+  /// Why a run was recorded with requested 0 — the Fal spend cap, normally.
+  skipReason  String?
   updatedAt   DateTime @updatedAt
 
   @@index([craft, startedAt])
   @@index([startedAt])
+  @@index([craft, finishedAt])
 }
 
 model ProjectSchedule {
@@ -4565,6 +4584,30 @@ model Pattern {
   // no Prisma relation field here because patternId is shared across two models.
   preferUserPhotoForHero Boolean @default(false)
 
+  // ── Duplicate guard (phase_xs_autopilot_dedupe_001) ──────────────────────
+  // Fingerprints of the SHIPPED artifact, written at publish time and compared
+  // by the publish-path guard before the next gem goes PUBLIC. Nullable +
+  // additive; `scripts/xs-fingerprint-backfill.ts` fills the existing rows.
+  //   imageHash64/256  — dHash of the beauty thumbnail (same picture).
+  //   thumbnailSha256  — exact bytes of that thumbnail (same file).
+  //   sourceImageSha256— exact bytes of the Flux source (same generation).
+  //   chartFingerprint — { grid, palette } from bulk/similarity.ts (same chart).
+  //   subjectKey       — normalised subject phrase (same IDEA, differently drawn),
+  //                      the signal that catches "big japanese garden" x5.
+  imageHash64       String?
+  imageHash256      String?
+  thumbnailSha256   String?
+  sourceImageSha256 String?
+  chartFingerprint  Json?
+  subjectKey        String?
+  /// Provenance of a bulk-generated row: brief, style, model, image size,
+  /// attempt, tweak, the gate verdict + reasons, the run it came from and the
+  /// source credit. Written once at publish; never read by the renderer.
+  generationMeta    Json?
+  /// BulkRun.id this pattern was published by (no FK — a run row may be pruned
+  /// long before the pattern it made).
+  bulkRunId         String?
+
   license        PatternLicense?
   userProgress   UserPatternProgress[]
   savedBy        SavedPattern[]
@@ -4581,6 +4624,8 @@ model Pattern {
   @@index([sourceTutorialId])
   @@index([heroMediaId])
   @@index([popularityScore])
+  @@index([imageHash64])
+  @@index([subjectKey])
 }
 
 /// Sidecar so a Pattern can be retagged (free → marketplace → premium)
