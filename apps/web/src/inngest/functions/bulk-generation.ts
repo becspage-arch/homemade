@@ -245,6 +245,35 @@ export const bulkCrossStitchBatch = inngest.createFunction(
     concurrency: { limit: 1 },
     retries: 1,
     triggers: [{ cron: '0 */2 * * *' }, { event: 'bulk/cross-stitch.batch' }],
+    /**
+     * A dispatcher that dies BEFORE it creates its run row leaves nothing behind
+     * — no row to finalise, no row for the stalled sweep to find, nothing on the
+     * admin page. Which is precisely the silence an unattended autopilot must
+     * never produce. When the retries are spent, record the failure as a run row
+     * with requested 0 and raise the same warning every other dead run raises.
+     */
+    onFailure: async ({ error }) => {
+      const reason = `dispatcher failed — ${error instanceof Error ? error.message : String(error)}`.slice(0, 300)
+      await prisma.bulkRun
+        .create({
+          data: {
+            craft: 'cross-stitch',
+            trigger: 'cron',
+            requested: 0,
+            skipReason: reason,
+            summary: reason,
+            finishedAt: new Date(),
+            alerted: true,
+          },
+        })
+        .catch((err) => {
+          console.error('[bulk cross-stitch] could not record the dispatcher failure', err)
+        })
+      Sentry.captureMessage('bulk cross-stitch run yielded nothing', {
+        level: 'warning',
+        extra: { reason, stage: 'dispatcher' },
+      })
+    },
   },
   async ({ event, step }) => {
     const data = event.data as BatchEventData | undefined
@@ -273,14 +302,17 @@ export const bulkCrossStitchBatch = inngest.createFunction(
 
     const n = manual ? manualCount(data?.count, XS_CRON_COUNT) : XS_CRON_COUNT
 
-    // Plan the briefs (one cheap Anthropic call), then create the run row. The
-    // planner is handed the WHOLE catalogue as an avoid list plus a shelf quota
-    // weighted by each shelf's gap to target — not the last 40 names it used to
-    // get, which is how five "big japanese garden" charts were commissioned.
-    const briefs = await step.run('plan', async () => {
-      const ctx = await crossStitchPlanContext(n)
-      return planCrossStitchBriefs(n, ctx)
-    })
+    // Plan the briefs. The planner is handed the WHOLE catalogue as an avoid
+    // list plus a shelf quota weighted by each shelf's gap to target — not the
+    // last 40 names it used to get, which is how five "big japanese garden"
+    // charts were commissioned.
+    //
+    // TWO steps, not one. Each Inngest step is its own HTTP request and the
+    // gateway kills a request at ~100s, so the catalogue reads and the Anthropic
+    // call must not share a request: together they were enough to 502, and a
+    // 502 in a single combined step loses the catalogue read on every retry too.
+    const planCtx = await step.run('plan-context', () => crossStitchPlanContext(n))
+    const briefs = await step.run('plan-briefs', () => planCrossStitchBriefs(n, planCtx ?? {}))
     if (!briefs.length) return { skipped: 'no briefs planned' }
 
     const triggeredById = manual && typeof data?.triggeredBy === 'string' && data.triggeredBy ? data.triggeredBy : null

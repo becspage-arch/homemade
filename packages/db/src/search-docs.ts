@@ -118,10 +118,37 @@ export async function loadAllTutorialDocs(): Promise<TutorialDoc[]> {
 
 // ── Patterns (cross-stitch / chart) ───────────────────────────────────────────
 
+/**
+ * SELECT, never INCLUDE. `include` returns every scalar column of Pattern —
+ * including `data`, the full stitch-by-stitch chart JSON, which runs to
+ * hundreds of kilobytes a row. The full reindex loads every published pattern
+ * at once, so an `include` here meant carrying the whole catalogue's chart data
+ * through a memory-tight container to build documents that use none of it. It
+ * OOM-killed the reindex (HTTP 502 on the pattern import step). This list is
+ * exactly what `patternRowToDoc` reads and nothing else.
+ */
 function fetchPatternRows(where: Record<string, unknown>) {
   return prisma.pattern.findMany({
     where,
-    include: {
+    select: {
+      id: true,
+      slug: true,
+      name: true,
+      description: true,
+      type: true,
+      difficulty: true,
+      widthCells: true,
+      heightCells: true,
+      colourCount: true,
+      totalStitches: true,
+      estimatedHours: true,
+      hasBackstitch: true,
+      hasFrenchKnots: true,
+      hasBeads: true,
+      hasQuarterStitches: true,
+      fabricCountSuggested: true,
+      premium: true,
+      publishedAt: true,
       designer: { select: { slug: true, displayName: true } },
       subCategory: { select: { slug: true, name: true, category: { select: { slug: true } } } },
       hero: { select: { cloudflareId: true, r2Key: true } },
