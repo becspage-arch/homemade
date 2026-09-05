@@ -2,6 +2,7 @@ import 'server-only'
 import { anthropicConfigured, anthropicJson, PLANNER_MODEL } from '@/lib/anthropic'
 import { STYLE, type StyleKey } from './cross-stitch-style'
 import { subjectKey as normaliseSubject, findSubjectKeyMatch } from './subject-key'
+import { CROSS_STITCH_SHELF_BY_SLUG } from '../categories'
 import {
   CROSS_STITCH_THEMES,
   CROSS_STITCH_SIZE_LANES,
@@ -166,11 +167,19 @@ export interface XsPlanContext {
   shelfQuota?: { slug: string; name: string; briefs: number; deficit: number }[]
 }
 
+/** A shelf that is already the size it should be — never planned into. */
+function isHoldShelf(slug: string): boolean {
+  return Boolean(CROSS_STITCH_SHELF_BY_SLUG[slug]?.hold)
+}
+
+/** Every theme that still has a generation lane. */
+const PLANNABLE_THEMES: CrossStitchTheme[] = CROSS_STITCH_THEMES.filter((t) => !isHoldShelf(t.shelf))
+
 function themesForShelves(shelves: string[] | undefined): CrossStitchTheme[] {
-  if (!shelves?.length) return CROSS_STITCH_THEMES
-  const wanted = new Set(shelves)
-  const subset = CROSS_STITCH_THEMES.filter((t) => wanted.has(t.shelf))
-  return subset.length ? subset : CROSS_STITCH_THEMES
+  if (!shelves?.length) return PLANNABLE_THEMES
+  const wanted = new Set(shelves.filter((s) => !isHoldShelf(s)))
+  const subset = PLANNABLE_THEMES.filter((t) => wanted.has(t.shelf))
+  return subset.length ? subset : PLANNABLE_THEMES
 }
 
 function xsPromptText(count: number, ctx: XsPlanContext): string {
@@ -210,7 +219,9 @@ Return ONLY the JSON array of ${count} briefs.`
 }
 
 function coerceXsBrief(raw: RawXsBrief, seen: Set<string>, allowed: CrossStitchTheme[]): CrossStitchBrief | null {
-  const theme = allowed.find((t) => t.id === raw.themeId) ?? CROSS_STITCH_THEMES.find((t) => t.id === raw.themeId)
+  // A theme off this batch's quota is tolerated; a theme on a HOLD shelf is not
+  // — those shelves are the size they should be and get no generation lane.
+  const theme = allowed.find((t) => t.id === raw.themeId) ?? PLANNABLE_THEMES.find((t) => t.id === raw.themeId)
   if (!theme || !raw.subject || raw.subject.trim().length < 4) return null
   const style: StyleKey =
     raw.style && STYLE_KEYS.includes(raw.style as StyleKey) && theme.styles.includes(raw.style as StyleKey)
@@ -490,7 +501,7 @@ export async function planCrossStitchBriefs(count: number, ctx: XsPlanContext = 
   let guard = 0
   while (out.length < count && guard++ < count * 12) {
     const slot = wantedSlots.shift()
-    const pool = (slot ? CROSS_STITCH_THEMES.filter((t) => t.shelf === slot) : allowed).filter((t) => !exhausted.has(t.id))
+    const pool = (slot ? PLANNABLE_THEMES.filter((t) => t.shelf === slot) : allowed).filter((t) => !exhausted.has(t.id))
     const theme = pool.length ? pick(pool) : allowed.filter((t) => !exhausted.has(t.id))[0]
     if (!theme) break // every theme in play is exhausted — ship a short batch
     const b = sampleXsBrief(theme, seen, taken)
