@@ -19,6 +19,7 @@ import bpy
 import json
 import sys
 import math
+from mathutils import Matrix
 
 # Loom millimetres -> Blender units (1 unit = 1 cm).
 S = 0.1
@@ -144,6 +145,52 @@ def build_yarn(strokes, drape=None, z_offset=0.0):
         bpy.context.collection.objects.link(ob)
 
 
+def prop_material(hexcol, gloss):
+    """A moulded plastic NOTION — a safety eye, a plastic nose. Not yarn and not
+    pretending to be: hard, smooth, glossy, the way the haberdashery part in a
+    real amigurumi pattern's notions list actually looks against wool."""
+    mat = bpy.data.materials.new("prop_" + hexcol.lstrip("#"))
+    mat.use_nodes = True
+    nt = mat.node_tree
+    bsdf = nt.nodes.get("Principled BSDF")
+    set_in(bsdf, "Base Color", hex_to_lin(hexcol))
+    set_in(bsdf, "Roughness", max(0.03, 0.55 * (1.0 - gloss)))
+    set_in(bsdf, "Specular IOR Level", 0.5 + 0.5 * gloss)
+    set_in(bsdf, "Metallic", 0.0)
+    set_in(bsdf, "Sheen Weight", 0.0)
+    set_in(bsdf, "Coat Weight", gloss)
+    set_in(bsdf, "Coat Roughness", 0.04)
+    return mat
+
+
+def build_props(props, z_offset):
+    """Non-yarn notions as what they are: smooth ellipsoid primitives.
+
+    Each prop arrives as a centre plus three semi-axis VECTORS already in loom
+    millimetres, so the renderer needs no rotation convention of its own — the
+    axes are the object matrix's columns (with the same mm->BU scale and the
+    same y flip build_yarn uses, and the same z_offset so props ride with the
+    yarn when the piece is floated onto the table)."""
+    def to_bu(v):
+        return (v[0] * S, -v[1] * S, v[2] * S)
+
+    for pr in props:
+        bpy.ops.mesh.primitive_uv_sphere_add(segments=64, ring_count=32, radius=1.0)
+        ob = bpy.context.active_object
+        bpy.ops.object.shade_smooth()
+        a0, a1, a2 = (to_bu(v) for v in pr["axes"])
+        c = pr["centre"]
+        t = (c[0] * S, -c[1] * S, c[2] * S + z_offset)
+        ob.matrix_world = Matrix((
+            (a0[0], a1[0], a2[0], t[0]),
+            (a0[1], a1[1], a2[1], t[1]),
+            (a0[2], a1[2], a2[2], t[2]),
+            (0.0, 0.0, 0.0, 1.0),
+        ))
+        ob.data.materials.clear()
+        ob.data.materials.append(prop_material(pr["hex"], float(pr.get("gloss", 0.85))))
+
+
 def backing_material(hexcol):
     """A slightly darker, soft-noise version of the yarn colour, sitting just
     under the loops so any sliver of gap between stitches reads as shadowed yarn,
@@ -247,32 +294,71 @@ def main():
     # The surface the throw sits on, well below + wider.
     bpy.ops.mesh.primitive_plane_add(size=1.0, location=(cx, cy, 0.0))
     surface = bpy.context.active_object
-    surface.scale = (max(halfW, contentW) * 5, max(halfH, contentH) * 5, 1.0)
+    # A near-horizontal camera sees much further across the table than a
+    # top-down one, so a tall staged figure needs a wider ground (default 5 =
+    # every existing render unchanged).
+    ground = view.get("groundScale", 5)
+    surface.scale = (max(halfW, contentW) * ground, max(halfH, contentH) * ground, 1.0)
     surface.data.materials.append(surface_material(bg_hex))
 
     build_yarn(strokes, drape, z_offset)
 
+    # Non-yarn notions (safety eyes, a nose). Absent from every scene that has
+    # none, so those renders are unchanged.
+    props = data.get("props") or []
+    if props:
+        build_props(props, z_offset)
+
     # Target at content centre.
+    # A tall figure shot from a LOW tilt has to be aimed at its body, not at the
+    # table under it. 0 (the default) keeps every existing render identical.
+    aim_frac = view.get("aimHeightFrac", 0.0)
+    maxz_bu = -1e9
+    for st in strokes:
+        for poly in st["filaments"]:
+            for pt in poly:
+                if pt[2] * S > maxz_bu:
+                    maxz_bu = pt[2] * S
+    tgt_z = aim_frac * (maxz_bu + z_offset) if aim_frac else 0.0
     tgt = bpy.data.objects.new("target", None)
-    tgt.location = (cx, cy, 0.0)
+    tgt.location = (cx, cy, tgt_z)
     scene.collection.objects.link(tgt)
 
     # ---- Soft daylight with a gentle raking key so the blo ridges cast a soft
     # contact shadow (the diagonal rib relief) without the scene going harsh. ----
     span = max(halfW, halfH) * 2
-    # Key raking LOW and across the diagonal ribs (from upper-left) so each rib
-    # casts a soft shadow into the groove below it = the ribbing reads in relief.
-    bpy.ops.object.light_add(type="AREA", location=(cx - span * 0.85, cy + span * 0.7, span * 0.42))
     # `light` scales the key+fill energy; ease it for pale wool so it doesn't clip
     # to white under AgX (the wash in §11). 1.0 = original; ~0.65 keeps cream as cream.
     light = view.get("light", 0.65)
-    key = bpy.context.active_object
-    key.data.energy = span * span * 13.0 * light
-    key.data.size = span * 0.55
-    bpy.ops.object.light_add(type="AREA", location=(cx + span * 0.6, cy - span * 0.4, span * 1.0))
-    fill = bpy.context.active_object
-    fill.data.energy = span * span * 3.2 * light
-    fill.data.size = span * 2.4
+    yaw_r = math.radians(view.get("yawDeg", 0.0))
+    if view.get("lightRig") == "product":
+        # A standing FIGURE shot from near eye level: the flat-fabric rig's key
+        # sits low and on the far side of the piece, which back-lights a toy into
+        # a silhouette. This rig keys high from the camera's left and fills from
+        # its right, the way a toy is lit on a table. Only used when asked for,
+        # so every flat/top-down render keeps the raking rig above.
+        def around(deg, radius, height):
+            a = yaw_r + math.radians(deg)
+            return (cx + radius * math.sin(a), cy - radius * math.cos(a), height)
+        bpy.ops.object.light_add(type="AREA", location=around(-42, span * 1.05, span * 1.25))
+        key = bpy.context.active_object
+        key.data.energy = span * span * 14.0 * light
+        key.data.size = span * 0.9
+        bpy.ops.object.light_add(type="AREA", location=around(58, span * 1.4, span * 0.85))
+        fill = bpy.context.active_object
+        fill.data.energy = span * span * 4.0 * light
+        fill.data.size = span * 2.4
+    else:
+        # Key raking LOW and across the diagonal ribs (from upper-left) so each rib
+        # casts a soft shadow into the groove below it = the ribbing reads in relief.
+        bpy.ops.object.light_add(type="AREA", location=(cx - span * 0.85, cy + span * 0.7, span * 0.42))
+        key = bpy.context.active_object
+        key.data.energy = span * span * 13.0 * light
+        key.data.size = span * 0.55
+        bpy.ops.object.light_add(type="AREA", location=(cx + span * 0.6, cy - span * 0.4, span * 1.0))
+        fill = bpy.context.active_object
+        fill.data.energy = span * span * 3.2 * light
+        fill.data.size = span * 2.4
     for lt in (key, fill):
         c = lt.constraints.new("TRACK_TO")
         c.target = tgt
@@ -290,13 +376,21 @@ def main():
     cam_data.lens = 90
     cam = bpy.data.objects.new("cam", cam_data)
     scene.collection.objects.link(cam)
-    dist = span * 2.1
+    dist = span * 2.1 * view.get("distScale", 1.0)
     if tilt_deg:
         # Tilt off straight-down toward the viewer for perspective (a draped, 3/4
         # look instead of a flat placemat). Pull back a little to keep it framed.
+        # `yawDeg` swings the camera round the object as well, for the
+        # three-quarter angle a product photo of a toy is shot from (0 = the
+        # original square-on view, so existing renders are unchanged).
         t = math.radians(tilt_deg)
+        yaw = math.radians(view.get("yawDeg", 0.0))
         dist *= 1.12
-        cam.location = (cx, cy - dist * math.sin(t), dist * math.cos(t))
+        cam.location = (
+            cx + dist * math.sin(t) * math.sin(yaw),
+            cy - dist * math.sin(t) * math.cos(yaw),
+            tgt_z + dist * math.cos(t),
+        )
     else:
         cam.location = (cx, cy, dist)
     cc = cam.constraints.new("TRACK_TO")
