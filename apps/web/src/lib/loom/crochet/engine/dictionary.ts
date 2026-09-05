@@ -49,12 +49,50 @@ export interface StitchDef {
   gaugeYr: number
   /** How many top loops the stitch leaves (its "head"). Always 2 for these. */
   topLoops: number
+  /**
+   * THE FABRIC CELL (§8f — the close-range look pass). The four fields below are
+   * this stitch's cell measured against its REAL published gauge, in yarn radii,
+   * instead of the legacy shared lattice. All are optional and every absent one
+   * falls back to exactly the value the library used before, so a stitch without
+   * them is bit-identical.
+   *
+   * Row pitch, in yarn radii. Absent → `BASE_ROW_YR · heightFactor`, the legacy
+   * shared lattice. Set it from the stitch's published rows-per-10 cm.
+   */
+  rowYr?: number
+  /**
+   * Post half-width (the down-leg / up-leg straddle), in yarn radii. Absent →
+   * the shared `stitchDims` value. Below about half a rendered yarn diameter the
+   * two strands of the post overlap into ONE plump tube and the stitch reads as a
+   * bean rather than a post — the measured cause of the close-range "fat coil".
+   */
+  postHalfYr?: number
+  /** Crown entry/exit half-width, in yarn radii. Absent → the shared value. */
+  crownHalfYr?: number
+  /**
+   * Head-loop half-span, in yarn radii. Absent / 0 → the legacy three-node crown
+   * BUMP. Set > 0 and the stitch throws a genuine two-strand head LOOP instead:
+   * the strand runs back along the row top, turns at the loop's tail and comes
+   * forward again past this stitch's column, so the head has a real perimeter, a
+   * real hole under it, and TWO visible strands (the paired-loop top of a real
+   * stitch) rather than one continuous proud cord along the row.
+   */
+  headLoopYr?: number
 }
 
 export const STITCHES: Record<StitchId, StitchDef> = {
   ch: { id: 'ch', heightFactor: 0.5, gaugeYr: 2.2, topLoops: 2 }, // chain gauge = its pull-through pitch (yarnPath ch branch)
   slst: { id: 'slst', heightFactor: 0.8, gaugeYr: 1.9, topLoops: 2 }, // shortest worked stitch — flat + tight, but a row is still ≈1 yarn thick (can't pack thinner)
-  sc: { id: 'sc', heightFactor: 1.0, gaugeYr: 1.8, topLoops: 2 }, // packs DENSE — the reference's gaps are pinpricks, not holes
+  // sc — the workhorse, re-cut to its REAL cell 2026-09-05 (§8f close-range pass).
+  // Measured against published worsted-cotton figures the old cell was ~0.66× real
+  // size relative to the yarn we draw, which left the two strands of every post
+  // 0.39 of a yarn diameter apart: they merged into one lobe, the crown bumps
+  // merged into a proud cord, and there was nowhere for a pinprick hole to be.
+  // 14–16 sts / 10 cm → 1.6 rendered diameters of pitch; 16–18 rows / 10 cm → 1.4.
+  sc: {
+    id: 'sc', heightFactor: 1.0, gaugeYr: 2.7, topLoops: 2,
+    rowYr: 2.4, postHalfYr: 0.7, crownHalfYr: 0.55, headLoopYr: 1.2,
+  },
   hdc: { id: 'hdc', heightFactor: 1.45, gaugeYr: 2.0, topLoops: 2 }, // dense like sc — notches, not holes
   dc: { id: 'dc', heightFactor: 3.2, gaugeYr: 2.3, topLoops: 2 }, // open, but posts lean on each other — slits not gaps
   tr: { id: 'tr', heightFactor: 4.2, gaugeYr: 2.45, topLoops: 2 }, // taller = airier: open channels between posts
@@ -318,6 +356,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   scinc: {
     stitch: 'sc', rows: 6, auditW: 8, builder: 'shaped',
     shapeRows: growPlan(8, 6),
+    gaugeYr: 1.8, // PINNED to the pre-§8f sc cell: the shaped builder (its decrease head, its turning slack) has not had the close-range pass yet, so it keeps the lattice it was calibrated on — bit-identical
     relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
     referenceUrl: 'https://sarahmaker.com/wp-content/uploads/2022/03/single-crochet-increase-2-819x1024.jpg',
     status: 'wip',
@@ -326,6 +365,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   scdec: {
     stitch: 'sc', rows: 5, auditW: 16, builder: 'shaped',
     shapeRows: shrinkPlan(16, 5),
+    gaugeYr: 1.8, // PINNED to the pre-§8f sc cell: the shaped builder (its decrease head, its turning slack) has not had the close-range pass yet, so it keeps the lattice it was calibrated on — bit-identical
     relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
     referenceUrl: 'https://christacodesign.com/wp-content/uploads/2021/03/Single-crochet-two-together-edges-2-1024x768.jpg',
     status: 'wip',

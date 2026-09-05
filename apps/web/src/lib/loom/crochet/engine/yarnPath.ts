@@ -121,6 +121,41 @@ export interface BuildOpts {
 export const ridgeDebugNodes: { j: number; c: number; node: number; hookNode: number }[] = []
 
 /**
+ * SCRATCH DIAGNOSTIC ONLY (not audited, not rendered, nothing geometric reads
+ * it): the node ROLES of every plain-stitch excursion, recorded in push order so
+ * `scripts/loom-stitch-metrics.ts` can measure the settled fabric in real units
+ * (yarn fed per stitch, stitch/row pitch, crown vs leg relief, thickness) for
+ * ANY dictionary stitch instead of hard-coding node offsets per stitch (the
+ * loom-ch-debug.ts problem). Appended by `emitPlainStitch`; cleared at the start
+ * of a `buildContinuous` build.
+ */
+export interface StitchNodeRoles {
+  j: number
+  c: number
+  id: StitchId
+  /** First node index this stitch pushed (its excursion starts here). */
+  start: number
+  /** One past the last node this stitch pushed. */
+  end: number
+  /** The node that dives under the crown below. */
+  hook: number
+  /** This stitch's own crown apex (the head the next row hooks). */
+  crown: number
+  /** The two crown-trail nodes either side of the apex (the head line). */
+  crownTrail: number[]
+  /**
+   * The head loop's OTHER strand at this stitch's column (§8f), or -1 for the
+   * legacy crown bump, which has only one. The settled distance between it and
+   * the crown is what decides whether a close-up reads a paired-loop top or one
+   * merged cord.
+   */
+  headPartner: number
+  /** The down-leg + up-leg body nodes (the post). */
+  legs: number[]
+}
+export const stitchDebugNodes: StitchNodeRoles[] = []
+
+/**
  * The running strand under construction — one continuous yarn. push() appends a
  * node and auto-bonds it to the previous one (distance keeps the yarn's length,
  * bend resists kinking). NOTHING is ever joined by any other means: links between
@@ -172,6 +207,7 @@ export interface StitchDims {
   cw: number // crown half-width — a slim head-line, not a fat rope
   pw: number // post half-width (down-leg + up-leg straddle this → one solid post)
   dh: number // how far the hook dives above/below the crown it links
+  yr: number // the yarn radius these scales were derived from
 }
 
 export const stitchDims = (yr: number): StitchDims => ({
@@ -180,10 +216,32 @@ export const stitchDims = (yr: number): StitchDims => ({
   cw: yr * 0.4,
   pw: yr * 0.35,
   dh: yr * 0.55,
+  yr,
 })
+
+/**
+ * The shared construction scales with this stitch's own CELL applied (§8f). A
+ * stitch that declares none of the cell fields gets exactly `stitchDims(yr)`, so
+ * every stitch that has not been re-cut is bit-identical.
+ */
+export const dimsFor = (yr: number, id: StitchId): StitchDims => {
+  const d = stitchDims(yr)
+  const def = STITCHES[id]
+  if (def.postHalfYr !== undefined) d.pw = yr * def.postHalfYr
+  if (def.crownHalfYr !== undefined) d.cw = yr * def.crownHalfYr
+  return d
+}
 
 /** Row pitch per unit heightFactor (sc short, dc tall), in yarn radii. */
 export const BASE_ROW_YR = 1.55
+
+/**
+ * This stitch's ROW PITCH in yarn radii — its own measured cell height (§8f) if
+ * it declares one, otherwise the legacy shared lattice `BASE_ROW_YR · heightFactor`.
+ * One helper so the grid, shaped, round and knit builders can never disagree.
+ */
+export const rowPitchYr = (id: StitchId): number =>
+  STITCHES[id].rowYr ?? BASE_ROW_YR * STITCHES[id].heightFactor
 
 /**
  * One PLAIN stitch excursion (sc family / hdc / dc / tr / dtr / blo / flo) —
@@ -272,6 +330,14 @@ export interface PlainStitchSpec {
    * crown canopy at standard depth.
    */
   hookDepthScale?: number
+  /**
+   * Head-loop half-span in mm (§8f). 0 / absent → the legacy three-node crown
+   * BUMP. Passed by the caller rather than read from the dictionary so a builder
+   * opts in: the flat grid builder does, while the shaped / round / sphere / knit
+   * builders keep the legacy head until their own close-range pass (their crown
+   * canopies, radial drifts and intrinsic profiles were all calibrated on it).
+   */
+  headLoopMm?: number
 }
 
 export function emitPlainStitch(
@@ -304,6 +370,8 @@ export function emitPlainStitch(
   const cy = spec.cyBelow ?? S.nodes[bc]!.y // where that loop sits (the row joins there)
   const lay = spec.crownLay ?? 0
   const lr = spec.legReliefScale ?? 1 // 1 = identity (flat); <1 calms the leg bulge for same-face rounds
+  const dbgStart = S.nodes.length // SCRATCH diagnostic only (stitchDebugNodes)
+  const dbgLegs: number[] = []
   // Dive to the FAR side of the crown below. A flat-LYING head (crownLay, §8c)
   // sits low on the surface, so getting under it needs a DEEPER dive — at the
   // proud-crown depth the hook settles nearly coincident with the flattened
@@ -318,9 +386,9 @@ export function emitPlainStitch(
   // head line before the hook dives. Consecutive ones form the signature ridge.
   if (thirdLoop) push(xC + s * cw * 1.1, ty - dh * 0.9, z * 1.7 * fz)
   // Down-leg: descend the worked face from the previous head toward the insertion.
-  push(xa(1) + s * pw, by + px * 0.8, z * fz * lr)
-  push(xa(0.65) + s * pw, by + px * 0.52, z * fz * lr)
-  push(xa(0.33) + s * pw, by + px * 0.26, z * 1.1 * fz * lr)
+  dbgLegs.push(push(xa(1) + s * pw, by + px * 0.8, z * fz * lr))
+  dbgLegs.push(push(xa(0.65) + s * pw, by + px * 0.52, z * fz * lr))
+  dbgLegs.push(push(xa(0.33) + s * pw, by + px * 0.26, z * 1.1 * fz * lr))
   push(xH + s * pw * 0.4, cy + dh * 0.5, z * 0.6 * fz) // approach the below crown
   // Hook UNDER the crown below — tuck to the far z-side of it. Collision (neither
   // can pass through the other) holds the link — no spring.
@@ -328,9 +396,10 @@ export function emitPlainStitch(
   S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: hookIdx, below: bc })
   push(xH - s * pw * 0.4, cy + dh * 0.5, z * 0.6 * fz) // emerge
   // Up-leg: pulled back UP just beside the down-leg → the two strands of the post.
-  push(xa(0.33) - s * pw, by + px * 0.26, z * 1.1 * fz * lr)
+  dbgLegs.push(push(xa(0.33) - s * pw, by + px * 0.26, z * 1.1 * fz * lr))
   const postMid = push(xa(0.65) - s * pw, by + px * 0.52, z * fz * lr)
-  push(xa(1) - s * pw, by + px * 0.8, z * fz * lr)
+  dbgLegs.push(postMid)
+  dbgLegs.push(push(xa(1) - s * pw, by + px * 0.8, z * fz * lr))
 
   // Throw this stitch's crown. A plain stitch leaves a single apex (back == front);
   // blo/flo split it into a proud (unworked, floats as the ridge) loop + a tucked
@@ -338,14 +407,44 @@ export function emitPlainStitch(
   // real spread the construction needs — a later retroactive z-nudge on an
   // already-placed node stretches its distance constraints against their recorded
   // rest length, so relaxation mostly undoes it (measured: ~0.25yr net gap).
-  push(xC - s * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
+  const hl = spec.headLoopMm ?? 0
   let crownBack: number
   let crownFront: number
-  if (loopMode === 'both') {
+  let trailA: number
+  let headPartner = -1
+  if (hl > 0 && loopMode === 'both') {
+    // THE HEAD IS A LOOP, NOT A BUMP (§8f — the close-range look pass).
+    //
+    // The legacy head was three nodes making a shallow rise on the row line: it
+    // carried almost no yarn (measured 0.5 of a rendered yarn diameter against a
+    // real stitch's ~5), it enclosed nothing, and consecutive ones merged into one
+    // proud cord running the length of the row. A real stitch's top is the loop
+    // that was on the hook, laid down along the row: TWO strands with a hole
+    // between them, which is what a close-up reads as the paired-loop top and the
+    // pinprick under it.
+    //
+    // Traced as the hook actually lays it, so nothing is drawn: coming off the
+    // up-leg the strand runs BACK along the row top (the tucked strand), turns at
+    // the loop's tail, and comes FORWARD again past this stitch's column as the
+    // proud strand — which is this stitch's crown, the loop the next row dives
+    // under, exactly as before. The interlock and its recorded link are unchanged;
+    // only the head's yarn budget and shape are.
+    const hy = dh * 1.1 // the two strands' separation up the row
+    trailA = push(xC - s * cw * 0.6, ty - hy * 1.25, zh * 0.55 * fz) // off the post onto the head line
+    push(xC - s * hl * 0.72, ty - hy * 0.75, zh * 0.35 * fz) // tucked strand, running BACK
+    headPartner = push(xC - s * hl, ty - hy * 0.1, zh * 0.3 * fz)
+    push(xC - s * hl * 1.03, ty + hy * 0.5, zh * 0.5 * fz) // the loop's tail — it turns here
+    push(xC - s * hl * 0.6, ty + hy * 0.85, zh * 0.95 * fz) // proud strand, coming FORWARD
+    const crown = push(xC, ty + hy * 0.6, zh * 1.15 * fz)
+    crownBack = crown
+    crownFront = crown
+  } else if (loopMode === 'both') {
+    trailA = push(xC - s * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
     const crown = push(xC, ty + dh * 0.35 * lay, zh * (1.15 - 0.6 * lay) * fz)
     crownBack = crown
     crownFront = crown
   } else {
+    trailA = push(xC - s * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
     // Relaxation crushes ~25% of whatever initial split we give (measured: 1.55zh
     // spread settled to 0.594yr, i.e. lost ~0.18yr of a 0.775yr initial gap) — widen
     // further, targeting a SETTLED gap around half a yarn diameter (~1.0yr of 2yr).
@@ -361,7 +460,20 @@ export function emitPlainStitch(
       hookNode: backFloats ? frontNode : backNode,
     })
   }
-  push(xC + s * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
+  const trailB =
+    hl > 0 && loopMode === 'both'
+      ? push(xC + s * cw * 0.9, ty - dh * 0.75, zh * 0.7 * fz) // leave the head, on to the next stitch
+      : push(xC + s * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
+  stitchDebugNodes.push({
+    j, c, id,
+    start: dbgStart,
+    end: S.nodes.length,
+    hook: hookIdx,
+    crown: crownBack,
+    crownTrail: [trailA, trailB],
+    headPartner,
+    legs: dbgLegs,
+  })
   return { crownBack, crownFront, postMid }
 }
 
@@ -380,9 +492,15 @@ export function buildContinuous(
   const sw = yr * (opts.gaugeYr ?? STITCHES[st0].gaugeYr)
   const dims = stitchDims(yr)
   const { z, zh, cw, pw, dh } = dims
-  const baseRow = yr * BASE_ROW_YR // row pitch per unit heightFactor (sc short, dc tall)
 
-  const rowH = rowTypes.map((t) => baseRow * STITCHES[t].heightFactor)
+  // Row pitch: each stitch's own measured cell height where it has one (§8f),
+  // otherwise the legacy shared lattice. Written as two branches rather than one
+  // multiply so a stitch WITHOUT a cell keeps the exact float association it had
+  // (re-associating the same product moves the last bits and every hash with it).
+  const baseRow = yr * BASE_ROW_YR
+  const rowH = rowTypes.map((t) =>
+    STITCHES[t].rowYr !== undefined ? yr * STITCHES[t].rowYr! : baseRow * STITCHES[t].heightFactor,
+  )
   const yTop: number[] = []
   let acc = 0
   for (let j = 0; j < rowTypes.length; j++) {
@@ -391,6 +509,7 @@ export function buildContinuous(
   }
 
   ridgeDebugNodes.length = 0
+  stitchDebugNodes.length = 0
   const S = createStrand()
   const { nodes, dist, bend, strandPath, links, push } = S
 
@@ -649,11 +768,13 @@ export function buildContinuous(
         continue
       }
 
-      // Plain stitch family (sc/hdc/dc/tr/dtr/slst/blo/flo/picot) — the shared emitter.
-      const r = emitPlainStitch(S, dims, {
+      // Plain stitch family (sc/hdc/dc/tr/dtr/slst/blo/flo/picot) — the shared emitter,
+      // with this stitch's own cell applied (identity for a stitch that declares none).
+      const r = emitPlainStitch(S, dimsFor(yr, id), {
         j,
         c,
         id,
+        headLoopMm: yr * (STITCHES[id].headLoopYr ?? 0),
         s,
         fz,
         by,
