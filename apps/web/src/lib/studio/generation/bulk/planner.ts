@@ -198,8 +198,12 @@ function xsPromptText(count: number, ctx: XsPlanContext): string {
         .join('\n')}\n\n`
     : ''
   const dense = count >= DENSE_BATCH_FLOOR ? `\n- EXACTLY ONE brief in this batch must use sizeLane "dense" (the 100+ colour heirloom showpiece). Not two.` : `\n- This batch is small: do NOT use sizeLane "dense".`
-  const avoid = ctx.avoidSubjectKeys?.length
-    ? `\nTHE CATALOGUE ALREADY HAS THESE SUBJECTS — do not repeat any of them, and do not submit a re-wording of one. One per line:\n${ctx.avoidSubjectKeys.join('\n')}\n`
+  // Only the most recent slice goes in the prompt; the full list is still
+  // enforced after the fact (see `taken` in planCrossStitchBriefs).
+  const shown = ctx.avoidSubjectKeys?.slice(0, PROMPT_AVOID_LIMIT) ?? []
+  const more = (ctx.avoidSubjectKeys?.length ?? 0) - shown.length
+  const avoid = shown.length
+    ? `\nTHE CATALOGUE ALREADY HAS THESE SUBJECTS — do not repeat any of them, and do not submit a re-wording of one. One per line:\n${shown.join('\n')}\n${more > 0 ? `(…and ${more} more older subjects. Anything that repeats one of those is rejected too, so reach for genuinely new ideas rather than safe ones.)\n` : ''}`
     : ''
   return `Compose ${count} cross-stitch briefs as a JSON array. Each: {"themeId","subject","style","sizeLane","w","h","colours"} and optional "sat" (0.9–1.1, only for portraits with skin).
 
@@ -262,6 +266,49 @@ const FALLBACK_MID_CELLS: Record<string, number> = { mini: 68, small: 120, mediu
 
 /** Batches of this size or larger carry exactly one dense showpiece. */
 export const DENSE_BATCH_FLOOR = 8
+
+/**
+ * How many existing subjects to SHOW the model.
+ *
+ * The planner filters every returned brief against the WHOLE avoid list, and the
+ * publish guard checks the whole live catalogue again — so the model does not
+ * need to see all of it, it only needs enough to steer away from the obvious
+ * repeats. Rendering all ~800 into the prompt made the call slow enough that the
+ * gateway killed the step at ~100s (HTTP 504) and the batch never fanned out.
+ * The most recent couple of hundred is what actually shapes its choices; the
+ * rest is enforced, not suggested.
+ */
+export const PROMPT_AVOID_LIMIT = 200
+
+/**
+ * How long to wait for the model's briefs before falling back to the curated
+ * sampler.
+ *
+ * Each Inngest step is one HTTP request and the gateway kills those at ~100s. A
+ * planner call that runs past that takes the WHOLE batch down with it — the
+ * dispatcher 504s, nothing fans out, and the run never happens. The sampler is
+ * good now (it varies an example with a hook and never repeats the catalogue),
+ * so a slow batch of pool-sampled briefs beats no batch at all. Set well under
+ * the gateway's limit to leave room for the response to be parsed.
+ */
+export const PLANNER_TIMEOUT_MS = 55_000
+
+/** Reject rather than hang, so the caller can fall back. */
+function withTimeout<T>(work: Promise<T>, ms: number, label: string): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms)
+    work.then(
+      (v) => {
+        clearTimeout(timer)
+        resolve(v)
+      },
+      (e) => {
+        clearTimeout(timer)
+        reject(e instanceof Error ? e : new Error(String(e)))
+      },
+    )
+  })
+}
 
 // ─────────────────── the fallback sampler (never verbatim) ───────────────────
 
@@ -463,12 +510,16 @@ export async function planCrossStitchBriefs(count: number, ctx: XsPlanContext = 
 
   if (anthropicConfigured()) {
     try {
-      const raw = await anthropicJson<RawXsBrief[]>({
-        model: PLANNER_MODEL,
-        system: XS_SYSTEM,
-        prompt: xsPromptText(count, ctx),
-        maxTokens: 2600,
-      })
+      const raw = await withTimeout(
+        anthropicJson<RawXsBrief[]>({
+          model: PLANNER_MODEL,
+          system: XS_SYSTEM,
+          prompt: xsPromptText(count, ctx),
+          maxTokens: 2600,
+        }),
+        PLANNER_TIMEOUT_MS,
+        'cross-stitch planner',
+      )
       for (const r of Array.isArray(raw) ? raw : []) {
         const b = coerceXsBrief(r, seen, allowed)
         if (!b) continue
@@ -479,8 +530,9 @@ export async function planCrossStitchBriefs(count: number, ctx: XsPlanContext = 
         out.push(b)
         if (out.length >= count) break
       }
-    } catch {
-      // fall through to sampling
+    } catch (err) {
+      // A slow or failed model call must not take the batch with it — sample.
+      console.warn(`[bulk cross-stitch planner] model briefs unavailable, sampling the pool instead: ${err instanceof Error ? err.message : String(err)}`)
     }
   }
   if (rejected > 0) {
