@@ -3,6 +3,7 @@ import { anthropicConfigured, anthropicJson, PLANNER_MODEL } from '@/lib/anthrop
 import { STYLE, type StyleKey } from './cross-stitch-style'
 import { subjectKey as normaliseSubject, findSubjectKeyMatch } from './subject-key'
 import { CROSS_STITCH_SHELF_BY_SLUG } from '../categories'
+import { applyWarmFurGuard } from './brief-rules'
 import {
   CROSS_STITCH_THEMES,
   CROSS_STITCH_SIZE_LANES,
@@ -102,6 +103,11 @@ function applyStyleFloors(b: CrossStitchBrief): CrossStitchBrief {
     h: Math.max(b.h, 160),
     colours: Math.max(b.colours, 34),
   }
+}
+
+/** Every size/colour correction a finished brief gets, in one place. */
+function settleBrief(b: CrossStitchBrief): CrossStitchBrief {
+  return applyWarmFurGuard(applyStyleFloors(b))
 }
 
 function slugify(s: string): string {
@@ -234,7 +240,7 @@ function coerceXsBrief(raw: RawXsBrief, seen: Set<string>, allowed: CrossStitchT
   const h = clamp(raw.h ?? 150, 48, 230)
   const colours = clamp(raw.colours ?? loC!, 6, 160)
   const subject = raw.subject.trim()
-  return applyStyleFloors({
+  return settleBrief({
     slug: mintSlug(theme.id, subject, seen),
     subject,
     subjectKey: normaliseSubject(subject),
@@ -382,7 +388,7 @@ function sampleXsBrief(theme: CrossStitchTheme, seen: Set<string>, taken: (key: 
   const midCells = FALLBACK_MID_CELLS[lane.lane] ?? 155
   const w = isTall ? Math.round(midCells * 0.75) : isWide ? Math.round(midCells * 1.3) : midCells
   const h = isTall ? Math.round(midCells * 1.3) : isWide ? Math.round(midCells * 0.7) : midCells
-  return applyStyleFloors({
+  return settleBrief({
     slug: mintSlug(theme.id, subject, seen),
     subject,
     subjectKey: normaliseSubject(subject),
@@ -412,7 +418,9 @@ function applyLane(b: CrossStitchBrief, laneName: string): CrossStitchBrief {
   const ratio = b.h > 0 ? b.w / b.h : 1
   const w = ratio >= 1 ? mid : Math.round(mid * ratio)
   const h = ratio >= 1 ? Math.round(mid / ratio) : mid
-  return applyStyleFloors({
+  // Re-settle after a lane change: a brief demoted INTO mini may now need the
+  // warm-fur saturation it did not need as a large piece.
+  return settleBrief({
     ...b,
     lane: lane.lane,
     w: clamp(w, 48, 230),
