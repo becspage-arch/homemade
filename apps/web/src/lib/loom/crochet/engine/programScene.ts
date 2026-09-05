@@ -46,13 +46,62 @@ export interface CompiledProgram {
   problems: string[]
 }
 
+/** The SETTLED fabric footprint in mm — measured from the RELAXED geometry, not
+ *  the pre-relax nominal formula (`built.widthMm`/`heightMm`, stitch-count ×
+ *  gauge before relaxation runs). Excludes the pinned foundation/anchor
+ *  (`built.anchorPins` leading nodes — the cast-on edge, slip knot, magic ring,
+ *  etc.) so a foundation that sits slightly wider/narrower than the worked
+ *  fabric doesn't skew the reading. This is the number a declared
+ *  `finishedSizeMm` is honest against — the hero IS the pattern, so its size
+ *  claim must be the settled size, not the aspirational one. */
+export function settledSizeMm(built: BuiltContinuous): { width: number; height: number } {
+  const nodes = built.model.nodes.slice(built.anchorPins)
+  let minx = Infinity, maxx = -Infinity, miny = Infinity, maxy = -Infinity
+  for (const n of nodes) {
+    if (n.x < minx) minx = n.x
+    if (n.x > maxx) maxx = n.x
+    if (n.y < miny) miny = n.y
+    if (n.y > maxy) maxy = n.y
+  }
+  return { width: maxx - minx, height: maxy - miny }
+}
+
+/** How far a settled dimension may drift from its declared `finishedSizeMm`
+ *  before the SIZE CONSISTENCY check treats it as a problem (STITCH_ENGINE.md
+ *  §8e-3). A declared size is a customer-facing claim ("a 10×10cm coaster") —
+ *  the hero must actually settle to roughly that, on BOTH axes independently
+ *  (so a too-few-rows fabric that reads as a rectangle, not the declared
+ *  square, is caught even when one axis alone happens to match). */
+const SIZE_TOLERANCE = 0.12
+
 /** Compile → relax → audit a program. `yrOverride` wins over the program's yarn
- *  weight (for rendering the same program at fine / worsted / bulky). */
+ *  weight (for rendering the same program at fine / worsted / bulky).
+ *
+ *  SIZE CONSISTENCY (§8e-3): when the program declares `finishedSizeMm`, the
+ *  settled fabric (measured from the relaxed geometry, excluding the pinned
+ *  foundation) must be within ±12% of it on EACH axis, or the audit fails —
+ *  the declared size, the written gauge line and the render must all describe
+ *  the same object; a rectangle rendering under a "square" claim is exactly
+ *  the failure this catches. Render-only concern: no relax/dictionary/geometry
+ *  change, so this cannot move a geometryHash. */
 export function compileRelaxAudit(p: CrochetProgram, yrOverride?: number): CompiledProgram {
   const yr = programYarnRadiusMm(p, yrOverride)
   const built = compileProgram(p, yr)
   relaxProgram(built, yr)
   const problems = auditProblems({ built, recipe: undefined as never }, p.name, 0, yr)
+  if (p.finishedSizeMm) {
+    const settled = settledSizeMm(built)
+    const { width: declW, height: declH } = p.finishedSizeMm
+    const offW = Math.abs(settled.width - declW) / declW
+    const offH = Math.abs(settled.height - declH) / declH
+    if (offW > SIZE_TOLERANCE || offH > SIZE_TOLERANCE) {
+      problems.push(
+        `${p.name}: SIZE CONSISTENCY — declared ${declW}×${declH}mm but settled ` +
+        `${settled.width.toFixed(0)}×${settled.height.toFixed(0)}mm ` +
+        `(${(offW * 100).toFixed(0)}%/${(offH * 100).toFixed(0)}% off, tolerance ±${SIZE_TOLERANCE * 100}%)`,
+      )
+    }
+  }
   return { built, yr, problems }
 }
 
@@ -277,9 +326,24 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
     // crop of the fabric.
     view = { ...base, marginFactor: 0.4, tiltDeg: 15, drapeAmp: 0.06, resY: 1100 }
   } else if (staging === 'loop') {
-    // A flat-lying ring (headband seamed into a loop), the 3-D object dropped onto
-    // the clean ground (no flat backing plane), framed with room + a 3/4 tilt.
-    view = { ...base, marginFactor: 0.5, tiltDeg: 38, openFabric: true }
+    // A standing ring (headband seamed into a loop), the 3-D object dropped onto
+    // the clean ground (no flat backing plane), framed with room.
+    // LOWERED CAMERA (§8e-3): at the original tiltDeg 38 the camera looked down
+    // INTO the ring's open top, so the far inner wall showed through past the
+    // near rim — reading as a cuff/basket you can see into, not a headband. The
+    // Blender camera's height falls as cos(tiltDeg) at a roughly fixed distance
+    // (loom_render_crochet.py), so raising tiltDeg is a genuinely LOWER, more
+    // grazing camera — nearer the ring's own eye level, so the near wall's ribs
+    // occlude the far wall instead of the shot looking down past them. Swept
+    // 65/74/82: 65 still showed the far wall through the top; 82 hid it but
+    // cropped so tight the loop/hole stopped reading at all (a solid drum); 74
+    // (kept) hides the interior with the rim edge still legible as an open
+    // loop. This is the render/staging-only fix (the other option tried in
+    // reasoning — folding the strip flat into a "flatband" — risks repeating
+    // the two logged failed flat/radial loop mappings, §9, given this proof's
+    // band height sits close to its own loop diameter, so the safer
+    // proven-geometry lever was kept and only the camera moved).
+    view = { ...base, marginFactor: 0.4, tiltDeg: 74, openFabric: true }
   } else {
     // `swatch` — the tight stitch-proof macro crop (the prior behaviour).
     view = { ...base, marginFactor: 0.12, tiltDeg: programTiltDeg(p) }
