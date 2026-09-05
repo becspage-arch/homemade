@@ -60,6 +60,7 @@ interface RunRow {
   repaired: number
   generations: number
   proGenerations: number
+  modelBriefs: number
   errors: number
   killReasons: string[]
   startedAt: Date
@@ -84,7 +85,12 @@ function runLine(r: RunRow): string {
   const stalled = isStalled(r) ? ' · STALLED' : ''
   const kill = topKill(r.killReasons)
   const killNote = kill ? ` · top kill: “${kill}”` : ''
-  return `[${tag}] ${r.craft}: ${r.published} published, ${r.culled} culled, ${r.duplicates} duplicates, ${r.skipped} skipped, ${r.repaired} repairs, ${r.generations} gens (${r.proGenerations} Pro), ${r.errors} errors (of ${r.requested})${inflight}${stalled}${killNote}`
+  // A run that fell back to the pool sampler reads as a normal run otherwise.
+  const authored =
+    r.craft === 'cross-stitch' && r.requested > 0
+      ? ` · ${r.modelBriefs}/${r.requested} briefs model-authored${r.modelBriefs < r.requested ? ' (rest sampled)' : ''}`
+      : ''
+  return `[${tag}] ${r.craft}: ${r.published} published, ${r.culled} culled, ${r.duplicates} duplicates, ${r.skipped} skipped, ${r.repaired} repairs, ${r.generations} gens (${r.proGenerations} Pro), ${r.errors} errors (of ${r.requested})${authored}${inflight}${stalled}${killNote}`
 }
 
 /** A run still open long after its counters stopped moving. */
@@ -250,7 +256,7 @@ export default async function AdminBulkGenerationPage() {
       select: {
         id: true, craft: true, trigger: true, requested: true, published: true,
         culled: true, duplicates: true, skipped: true, repaired: true, generations: true,
-        proGenerations: true, errors: true, killReasons: true, startedAt: true, updatedAt: true,
+        proGenerations: true, modelBriefs: true, errors: true, killReasons: true, startedAt: true, updatedAt: true,
         finishedAt: true, skipReason: true,
       },
     }),

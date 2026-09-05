@@ -2,6 +2,7 @@ import 'server-only'
 import { anthropicConfigured, anthropicJson, PLANNER_MODEL } from '@/lib/anthropic'
 import { STYLE, type StyleKey } from './cross-stitch-style'
 import { subjectKey as normaliseSubject, findSubjectKeyMatch } from './subject-key'
+import { CROSS_STITCH_SHELF_BY_SLUG } from '../categories'
 import {
   CROSS_STITCH_THEMES,
   CROSS_STITCH_SIZE_LANES,
@@ -54,6 +55,13 @@ export interface CrossStitchBrief {
   colours: number
   /** Size lane this brief was placed in (mini | small | medium | large | dense). */
   lane: string
+  /**
+   * Who wrote this brief: the planner model, or the curated pool sampler used as
+   * the fallback. Recorded on the published pattern and counted per run, because
+   * "the model timed out and we sampled instead" is a quiet failure that
+   * otherwise looks exactly like a normal batch.
+   */
+  source: 'model' | 'sampler'
   /** Optional source-saturation override (skin-heavy portraits). */
   sat?: number
   shelf: string
@@ -166,11 +174,19 @@ export interface XsPlanContext {
   shelfQuota?: { slug: string; name: string; briefs: number; deficit: number }[]
 }
 
+/** A shelf that is already the size it should be — never planned into. */
+function isHoldShelf(slug: string): boolean {
+  return Boolean(CROSS_STITCH_SHELF_BY_SLUG[slug]?.hold)
+}
+
+/** Every theme that still has a generation lane. */
+const PLANNABLE_THEMES: CrossStitchTheme[] = CROSS_STITCH_THEMES.filter((t) => !isHoldShelf(t.shelf))
+
 function themesForShelves(shelves: string[] | undefined): CrossStitchTheme[] {
-  if (!shelves?.length) return CROSS_STITCH_THEMES
-  const wanted = new Set(shelves)
-  const subset = CROSS_STITCH_THEMES.filter((t) => wanted.has(t.shelf))
-  return subset.length ? subset : CROSS_STITCH_THEMES
+  if (!shelves?.length) return PLANNABLE_THEMES
+  const wanted = new Set(shelves.filter((s) => !isHoldShelf(s)))
+  const subset = PLANNABLE_THEMES.filter((t) => wanted.has(t.shelf))
+  return subset.length ? subset : PLANNABLE_THEMES
 }
 
 function xsPromptText(count: number, ctx: XsPlanContext): string {
@@ -189,8 +205,12 @@ function xsPromptText(count: number, ctx: XsPlanContext): string {
         .join('\n')}\n\n`
     : ''
   const dense = count >= DENSE_BATCH_FLOOR ? `\n- EXACTLY ONE brief in this batch must use sizeLane "dense" (the 100+ colour heirloom showpiece). Not two.` : `\n- This batch is small: do NOT use sizeLane "dense".`
-  const avoid = ctx.avoidSubjectKeys?.length
-    ? `\nTHE CATALOGUE ALREADY HAS THESE SUBJECTS — do not repeat any of them, and do not submit a re-wording of one. One per line:\n${ctx.avoidSubjectKeys.join('\n')}\n`
+  // Only the most recent slice goes in the prompt; the full list is still
+  // enforced after the fact (see `taken` in planCrossStitchBriefs).
+  const shown = (ctx.avoidSubjectKeys ?? []).slice(0, PROMPT_AVOID_LIMIT)
+  const more = (ctx.avoidSubjectKeys?.length ?? 0) - shown.length
+  const avoid = shown.length
+    ? `\nTHE CATALOGUE ALREADY HAS THESE SUBJECTS — do not repeat any of them, and do not submit a re-wording of one. One per line:\n${shown.join('\n')}\n${more > 0 ? `(…and ${more} more older subjects. Anything that repeats one of those is rejected too, so reach for genuinely new ideas rather than safe ones.)\n` : ''}`
     : ''
   return `Compose ${count} cross-stitch briefs as a JSON array. Each: {"themeId","subject","style","sizeLane","w","h","colours"} and optional "sat" (0.9–1.1, only for portraits with skin).
 
@@ -210,7 +230,9 @@ Return ONLY the JSON array of ${count} briefs.`
 }
 
 function coerceXsBrief(raw: RawXsBrief, seen: Set<string>, allowed: CrossStitchTheme[]): CrossStitchBrief | null {
-  const theme = allowed.find((t) => t.id === raw.themeId) ?? CROSS_STITCH_THEMES.find((t) => t.id === raw.themeId)
+  // A theme off this batch's quota is tolerated; a theme on a HOLD shelf is not
+  // — those shelves are the size they should be and get no generation lane.
+  const theme = allowed.find((t) => t.id === raw.themeId) ?? PLANNABLE_THEMES.find((t) => t.id === raw.themeId)
   if (!theme || !raw.subject || raw.subject.trim().length < 4) return null
   const style: StyleKey =
     raw.style && STYLE_KEYS.includes(raw.style as StyleKey) && theme.styles.includes(raw.style as StyleKey)
@@ -226,6 +248,7 @@ function coerceXsBrief(raw: RawXsBrief, seen: Set<string>, allowed: CrossStitchT
     slug: mintSlug(theme.id, subject, seen),
     subject,
     subjectKey: normaliseSubject(subject),
+    source: 'model',
     style,
     w,
     h,
@@ -251,6 +274,49 @@ const FALLBACK_MID_CELLS: Record<string, number> = { mini: 68, small: 120, mediu
 
 /** Batches of this size or larger carry exactly one dense showpiece. */
 export const DENSE_BATCH_FLOOR = 8
+
+/**
+ * How many existing subjects to SHOW the model.
+ *
+ * The planner filters every returned brief against the WHOLE avoid list, and the
+ * publish guard checks the whole live catalogue again — so the model does not
+ * need to see all of it, it only needs enough to steer away from the obvious
+ * repeats. Rendering all ~800 into the prompt made the call slow enough that the
+ * gateway killed the step at ~100s (HTTP 504) and the batch never fanned out.
+ * The most recent couple of hundred is what actually shapes its choices; the
+ * rest is enforced, not suggested.
+ */
+export const PROMPT_AVOID_LIMIT = 120
+
+/**
+ * How long to wait for the model's briefs before falling back to the curated
+ * sampler.
+ *
+ * Each Inngest step is one HTTP request and the gateway kills those at ~100s. A
+ * planner call that runs past that takes the WHOLE batch down with it — the
+ * dispatcher 504s, nothing fans out, and the run never happens. The sampler is
+ * good now (it varies an example with a hook and never repeats the catalogue),
+ * so a slow batch of pool-sampled briefs beats no batch at all. Set well under
+ * the gateway's limit to leave room for the response to be parsed.
+ */
+export const PLANNER_TIMEOUT_MS = 55_000
+
+/** Reject rather than hang, so the caller can fall back. */
+function withTimeout<T>(work: Promise<T>, ms: number, label: string): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms)
+    work.then(
+      (v) => {
+        clearTimeout(timer)
+        resolve(v)
+      },
+      (e) => {
+        clearTimeout(timer)
+        reject(e instanceof Error ? e : new Error(String(e)))
+      },
+    )
+  })
+}
 
 // ─────────────────── the fallback sampler (never verbatim) ───────────────────
 
@@ -321,6 +387,7 @@ function sampleXsBrief(theme: CrossStitchTheme, seen: Set<string>, taken: (key: 
     slug: mintSlug(theme.id, subject, seen),
     subject,
     subjectKey: normaliseSubject(subject),
+    source: 'sampler',
     style: pick(theme.styles),
     w: clamp(w, 48, 230),
     h: clamp(h, 48, 230),
@@ -421,7 +488,140 @@ export function enforceRange(briefs: CrossStitchBrief[], count: number): CrossSt
 // ───────────────────────────────── plan ─────────────────────────────────
 
 /**
- * Plan one batch of cross-stitch briefs.
+ * How many briefs to ask the model for in ONE call.
+ *
+ * Each Inngest step is one HTTP request and the gateway kills those at ~100s. A
+ * single call for ten briefs ran past that and the whole dispatcher 504'd; the
+ * batch then fell back to the pool sampler every time, which is a quiet failure
+ * — a sampled batch looks like a normal batch until you read the subjects. Two
+ * calls of five, each its own step with its own timeout, comfortably fit.
+ */
+export const MODEL_CHUNK = 5
+
+/** Is this subject already the catalogue's, or already this batch's? */
+function makeTaken(avoid: Set<string>, batch: Set<string>): (key: string) => boolean {
+  return (key: string): boolean => {
+    if (!key) return true // a subject that normalises to nothing is never usable
+    if (avoid.has(key) || batch.has(key)) return true
+    return findSubjectKeyMatch(key, avoid) !== null || findSubjectKeyMatch(key, batch) !== null
+  }
+}
+
+/**
+ * ONE model call: ask for `count` briefs and keep the ones that are not already
+ * in the catalogue or in `alreadyPicked`. Returns model-authored briefs only,
+ * possibly fewer than asked for (or none, if the call fails or times out) —
+ * `finaliseBriefs` fills any gap from the pool.
+ *
+ * Its own function so the dispatcher can run each chunk as a separate Inngest
+ * step, and so a slow or failed chunk costs only that chunk.
+ */
+export async function planModelBriefs(
+  count: number,
+  ctx: XsPlanContext = {},
+  alreadyPicked: string[] = [],
+): Promise<CrossStitchBrief[]> {
+  if (count <= 0 || !anthropicConfigured()) return []
+
+  const seen = new Set<string>()
+  const avoid = new Set((ctx.avoidSubjectKeys ?? []).filter(Boolean))
+  const batchKeys = new Set(alreadyPicked.filter(Boolean))
+  const taken = makeTaken(avoid, batchKeys)
+  const allowed = themesForShelves(ctx.shelfSlots?.length ? [...new Set(ctx.shelfSlots)] : undefined)
+
+  const out: CrossStitchBrief[] = []
+  let rejected = 0
+  try {
+    const raw = await withTimeout(
+      anthropicJson<RawXsBrief[]>({
+        model: PLANNER_MODEL,
+        system: XS_SYSTEM,
+        prompt: xsPromptText(count, ctx),
+        maxTokens: 1600,
+      }),
+      PLANNER_TIMEOUT_MS,
+      'cross-stitch planner',
+    )
+    for (const r of Array.isArray(raw) ? raw : []) {
+      const b = coerceXsBrief(r, seen, allowed)
+      if (!b) continue
+      if (taken(b.subjectKey)) {
+        rejected++
+        continue
+      }
+      batchKeys.add(b.subjectKey)
+      out.push(b)
+      if (out.length >= count) break
+    }
+  } catch (err) {
+    // A slow or failed model call must not take the batch with it — the caller
+    // tops up from the pool instead.
+    console.warn(
+      `[bulk cross-stitch planner] model briefs unavailable, the pool will fill in: ${err instanceof Error ? err.message : String(err)}`,
+    )
+  }
+  if (rejected > 0) {
+    console.warn(`[bulk cross-stitch planner] rejected ${rejected} model brief(s) as duplicates of the live catalogue`)
+  }
+  return out
+}
+
+/**
+ * Bring a partial set up to `count` from the curated pool and hold the whole
+ * batch to the size range. Sampled briefs are marked `source: 'sampler'`, so the
+ * run records how much of the batch the model actually wrote.
+ */
+export function finaliseBriefs(modelBriefs: CrossStitchBrief[], count: number, ctx: XsPlanContext = {}): CrossStitchBrief[] {
+  const avoid = new Set((ctx.avoidSubjectKeys ?? []).filter(Boolean))
+  const batchKeys = new Set<string>()
+  const seen = new Set<string>()
+  const out: CrossStitchBrief[] = []
+  for (const b of modelBriefs) {
+    if (batchKeys.has(b.subjectKey) || seen.has(b.slug)) continue
+    batchKeys.add(b.subjectKey)
+    seen.add(b.slug)
+    out.push(b)
+    if (out.length >= count) break
+  }
+  const taken = makeTaken(avoid, batchKeys)
+
+  // Top up, favouring the shelves this batch still owes. The sampler NEVER
+  // copies an example the catalogue already has: it varies a base with a hook
+  // from another example of the same theme, and moves on when a theme is spent.
+  const wantedSlots = ctx.shelfSlots?.length ? [...ctx.shelfSlots] : []
+  for (const b of out) {
+    const i = wantedSlots.indexOf(b.shelf)
+    if (i >= 0) wantedSlots.splice(i, 1)
+  }
+  const allowed = themesForShelves(ctx.shelfSlots?.length ? [...new Set(ctx.shelfSlots)] : undefined)
+  const exhausted = new Set<string>()
+  let guard = 0
+  while (out.length < count && guard++ < count * 12) {
+    const slot = wantedSlots.shift()
+    const pool = (slot ? PLANNABLE_THEMES.filter((t) => t.shelf === slot) : allowed).filter((t) => !exhausted.has(t.id))
+    const theme = pool.length ? pick(pool) : allowed.filter((t) => !exhausted.has(t.id))[0]
+    if (!theme) break // every theme in play is exhausted — ship a short batch
+    const b = sampleXsBrief(theme, seen, taken)
+    if (!b || taken(b.subjectKey)) {
+      exhausted.add(theme.id)
+      continue
+    }
+    batchKeys.add(b.subjectKey)
+    out.push(b)
+  }
+
+  return enforceRange(out.slice(0, count), count)
+}
+
+/** How many of a planned batch the model actually wrote. */
+export function modelAuthoredCount(briefs: CrossStitchBrief[]): number {
+  return briefs.filter((b) => b.source === 'model').length
+}
+
+/**
+ * Plan one batch of cross-stitch briefs, model call included. This is the
+ * all-in-one path for a local/inline caller; the Inngest dispatcher runs the
+ * same pieces as separate steps so each model call gets its own request budget.
  *
  * Every brief that comes back is guaranteed to be (a) on a shelf that still
  * wants patterns, (b) not the same idea as anything already in the catalogue,
@@ -430,82 +630,13 @@ export function enforceRange(briefs: CrossStitchBrief[], count: number): CrossSt
  * live catalogue at publish time — this is the cheap first line, not the only one.
  */
 export async function planCrossStitchBriefs(count: number, ctx: XsPlanContext = {}): Promise<CrossStitchBrief[]> {
-  const seen = new Set<string>()
-  const avoid = new Set((ctx.avoidSubjectKeys ?? []).filter(Boolean))
-  const batchKeys = new Set<string>()
-  /** Is this subject already the catalogue's, or already this batch's? */
-  const taken = (key: string): boolean => {
-    if (!key) return true // a subject that normalises to nothing is never usable
-    if (avoid.has(key) || batchKeys.has(key)) return true
-    return findSubjectKeyMatch(key, avoid) !== null || findSubjectKeyMatch(key, batchKeys) !== null
+  const briefs: CrossStitchBrief[] = []
+  for (let taken = 0; taken < count; taken += MODEL_CHUNK) {
+    const want = Math.min(MODEL_CHUNK, count - taken)
+    const chunk = await planModelBriefs(want, ctx, briefs.map((b) => b.subjectKey))
+    briefs.push(...chunk)
   }
-  const accept = (b: CrossStitchBrief): boolean => {
-    if (taken(b.subjectKey)) return false
-    batchKeys.add(b.subjectKey)
-    return true
-  }
-
-  const shelves = ctx.shelfSlots?.length ? [...new Set(ctx.shelfSlots)] : undefined
-  const allowed = themesForShelves(shelves)
-  const out: CrossStitchBrief[] = []
-  let rejected = 0
-
-  if (anthropicConfigured()) {
-    try {
-      const raw = await anthropicJson<RawXsBrief[]>({
-        model: PLANNER_MODEL,
-        system: XS_SYSTEM,
-        prompt: xsPromptText(count, ctx),
-        maxTokens: 2600,
-      })
-      for (const r of Array.isArray(raw) ? raw : []) {
-        const b = coerceXsBrief(r, seen, allowed)
-        if (!b) continue
-        if (!accept(b)) {
-          rejected++
-          continue
-        }
-        out.push(b)
-        if (out.length >= count) break
-      }
-    } catch {
-      // fall through to sampling
-    }
-  }
-  if (rejected > 0) {
-    console.warn(`[bulk cross-stitch planner] rejected ${rejected} model brief(s) as duplicates of the live catalogue`)
-  }
-
-  // ── Top up from the curated pool, favouring the shelves this batch owes ────
-  // The sampler NEVER copies an example the catalogue already has: it varies a
-  // base with a hook from another example of the same theme, and moves on to a
-  // different theme when a theme is exhausted.
-  const wantedSlots = ctx.shelfSlots?.length ? [...ctx.shelfSlots] : []
-  // Drop the slots the model already served, so the top-up fills the remainder.
-  for (const b of out) {
-    const i = wantedSlots.indexOf(b.shelf)
-    if (i >= 0) wantedSlots.splice(i, 1)
-  }
-  const exhausted = new Set<string>()
-  let guard = 0
-  while (out.length < count && guard++ < count * 12) {
-    const slot = wantedSlots.shift()
-    const pool = (slot ? CROSS_STITCH_THEMES.filter((t) => t.shelf === slot) : allowed).filter((t) => !exhausted.has(t.id))
-    const theme = pool.length ? pick(pool) : allowed.filter((t) => !exhausted.has(t.id))[0]
-    if (!theme) break // every theme in play is exhausted — ship a short batch
-    const b = sampleXsBrief(theme, seen, taken)
-    if (!b) {
-      exhausted.add(theme.id)
-      continue
-    }
-    if (!accept(b)) {
-      exhausted.add(theme.id)
-      continue
-    }
-    out.push(b)
-  }
-
-  return enforceRange(out.slice(0, count), count)
+  return finaliseBriefs(briefs, count, ctx)
 }
 
 // ─────────────────────────── NEEDLEWORK ───────────────────────────

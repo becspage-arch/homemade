@@ -54,7 +54,9 @@ function singularise(word: string): string {
   if (word.length <= 3) return word
   if (/(ss|us|is|as|os)$/.test(word)) return word
   if (/ies$/.test(word)) return `${word.slice(0, -3)}y`
-  if (/(ches|shes|xes|zes|ses)$/.test(word)) return word.slice(0, -2)
+  // -es only where the stem genuinely needs it (glasses→glass, batches→batch,
+  // boxes→box). NOT a bare -ses: "roses" is rose+s, not ros+es.
+  if (/(ches|shes|xes|zes|sses)$/.test(word)) return word.slice(0, -2)
   if (/s$/.test(word)) return word.slice(0, -1)
   return word
 }

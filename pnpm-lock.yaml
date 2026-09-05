@@ -375,6 +375,12 @@ importers:
 
   packages/search:
     dependencies:
+      axios:
+        specifier: ^1.16.0
+        version: 1.16.0
+      https-proxy-agent:
+        specifier: ^9.1.0
+        version: 9.1.0
       typesense:
         specifier: ^3.0.6
         version: 3.0.6(@babel/runtime@7.29.2)

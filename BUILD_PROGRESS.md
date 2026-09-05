@@ -8,6 +8,40 @@ Updated each working session.
 
 ---
 
+## In flight — orchestrator sessions (read before starting work)
+
+Per the merging rules in `CLAUDE.md`: each orchestrator lists what it owns so
+the other does not repeat it. Update your block on each train; delete it when
+the work closes.
+
+**Loom / crochet / knitting orchestrator (started 2026-09-05).** Owns
+`apps/web/src/lib/loom/**`, `apps/web/scripts/loom*`, the crochet Studio
+(`apps/web/src/app/studio/crochet`, `components/studio/crochet`,
+`api/studio/crochet`), `CrochetPattern`/`KnittingPattern` schema changes, and
+the admin Members pages. In flight: the close-range stitch look pass (branch
+`claude/loom-look-pass`, single crochet re-cut at real gauge, then the flat
+family, then round/sphere/knit builders), the amigurumi bear round 3, the CDK
+deploy that mounts `LOOM_RENDER` on the web task, the six-sample sign-off,
+then bulk fill, category go-live, knitting. Standing rule for every category:
+autopilot runs on ECS (Inngest) or in cloud sessions/routines, never on
+Rebecca's laptop.
+
+**Cross-stitch orchestrator (started 2026-09-05).** Owns the cross-stitch
+catalogue, `apps/web/src/lib/studio/generation/**` (planner, subject pool,
+dedupe guard, similarity, vision gate, categories registry), the
+bulk-generation Inngest jobs (`apps/web/src/inngest/functions/bulk-generation.ts`)
+and admin page (`apps/web/src/app/admin/system/bulk-generation/`), the
+cross-stitch public pages and shelves/SEO, `packages/search` (the proxy-aware
+client), and the `Pattern` fingerprint columns + `BulkRun` finaliser columns.
+Done today: duplicate scan (85 clusters), 87 duplicates + 14 vision fails
+culled to PRIVATE (reversible, reason on `qcBlockReason`), fragment shelves
+merged, per-shelf targets (category target = their sum), mechanical dedupe
+guard in the publish path, run finaliser + Sentry/admin alerts, daily Fal cap,
+SEO images, shelf descriptions. In flight: proof batch on the server, then the
+cron switched on and watched for three firings, then fill to target, then the
+close-out (completeness gates, vision sweep of the new work, reindex,
+sitemap/structured data) and the per-category autopilot note.
+
 ## Recipe completeness: prose-method steps + per-serving nutrition (2026-06-25)
 
 Two recipe structured-data gaps closed.

@@ -58,6 +58,12 @@ Decide ONE verdict:
 
 KILL, do not keep or repair, if ANY of these: the main subject is malformed, ugly, anatomically wrong, or a blobby/melted "AI creature"; the render doesn't clearly read as the requested subject; a face or animal has wrong/duplicated/missing eyes or features; the piece is a generic under-detailed blob. These are the misses that must not reach the catalogue — be strict, a low pass rate is correct.
 
+ALSO KILL:
+- FACES. A face — human or animal — that is not clearly APPEALING: dead, dark, muddled, asymmetric or misplaced eyes; smeared or smudged features; a blank or unsettling expression. A sweet subject with a wrong face is a kill, not a repair; the face is the whole product.
+- PALE WORK. Pale, pastel-on-cream or low-contrast renders are never "keep". Give it "repair" with more-saturation ONCE; if it comes back still pale, kill it. Cream on cream does not exist as stitching.
+
+Judge as the pickiest Etsy buyer, not as a friend of the designer: if you would scroll past it, kill it.
+
 When in doubt between keep and repair/kill, do NOT keep. Reply ONLY with compact JSON, at most TWO short reasons (each under 12 words):
 {"verdict":"keep|repair|kill","reasons":["..."],"repairAction":"reroll|more-saturation|fewer-colours|more-colours|re-centre"}
 Omit repairAction unless verdict is "repair".`
