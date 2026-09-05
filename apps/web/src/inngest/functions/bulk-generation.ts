@@ -1,10 +1,14 @@
 import 'server-only'
+import * as Sentry from '@sentry/nextjs'
 import { prisma, Visibility } from '@homemade/db'
 import { inngest } from '../client'
 import {
   runNeedleworkBatch,
   crossStitchAttempt,
+  crossStitchPlanContext,
   killIsUnrerollable,
+  runIsComplete,
+  summaryLine,
   tweakFor,
   MAX_XS_ATTEMPTS,
   type Craft,
@@ -12,9 +16,13 @@ import {
   type AttemptResult,
 } from '@/lib/studio/generation/bulk/run'
 import { planCrossStitchBriefs, type CrossStitchBrief } from '@/lib/studio/generation/bulk/planner'
-import { recentCrossStitchSlugs, type CandidateTweak } from '@/lib/studio/generation/bulk/cross-stitch'
+import { recentCrossStitchSlugs, candidateIsPro, type CandidateTweak } from '@/lib/studio/generation/bulk/cross-stitch'
 import { gateConfigured } from '@/lib/studio/generation/vision-gate'
 import { isAutopilotEnabled } from '@/lib/studio/generation/bulk/autopilot-state'
+import { liveShelfCounts } from '@/lib/studio/generation/bulk/dedupe-guard'
+import { allShelvesAtTarget } from '@/lib/studio/generation/bulk/shelf-plan'
+import { PATTERN_CATEGORIES, CROSS_STITCH_SHELVES } from '@/lib/studio/generation/categories'
+import { crossStitchSpendWindow, overCap } from '@/lib/studio/generation/bulk/spend-guard'
 
 /**
  * Server-side BULK CATALOGUE generation — the cross-stitch + needlework gem
@@ -47,13 +55,21 @@ import { isAutopilotEnabled } from '@/lib/studio/generation/bulk/autopilot-state
  * dispatcher is a clean no-op — it plans + generates nothing rather than publish blind.
  */
 
-const XS_CRON_COUNT = 8
+const XS_CRON_COUNT = 10
 const NW_CRON_COUNT = 4
 const MAX_MANUAL = 20
 
-/** Category ceilings — the cron idles once a craft hits its target. Overridable. */
+/** A run whose counters have not moved for this long is dead, not slow. */
+const STALL_HOURS = 6
+
+/**
+ * Category ceilings. The cross-stitch number is DERIVED from the per-shelf
+ * targets in categories.ts (`patternTarget` is their sum) so the cron, the admin
+ * dashboard and the planner's shelf weighting can never disagree about what
+ * "full" means. BULK_XS_TARGET stays as an ops override only.
+ */
 const TARGETS: Record<Craft, number> = {
-  'cross-stitch': Number(process.env.BULK_XS_TARGET) || 1500,
+  'cross-stitch': Number(process.env.BULK_XS_TARGET) || PATTERN_CATEGORIES['cross-stitch']!.patternTarget,
   needlework: Number(process.env.BULK_NW_TARGET) || 1500,
 }
 
@@ -80,22 +96,137 @@ interface PreflightResult {
   skip: string | null
   count?: number
   target?: number
+  /** True when the skip is worth a BulkRun row (the admin needs to see it). */
+  record?: boolean
 }
 
 /**
  * Should this run proceed, and is it a no-op? Cron obeys the per-craft autopilot
  * switch + the category target; a manual run always proceeds. The gate must be
- * wired either way (nothing ships un-judged). Runs inside a memoised step so its
- * result is stable across Inngest replays.
+ * wired either way (nothing ships un-judged), and the Fal spend cap binds BOTH —
+ * a manual "run a batch" click cannot spend past the daily ceiling either.
+ * Runs inside a memoised step so its result is stable across Inngest replays.
  */
 async function preflight(craft: Craft, manual: boolean): Promise<PreflightResult> {
   if (!gateConfigured()) return { skip: 'gate-not-wired' }
+
+  if (craft === 'cross-stitch') {
+    // Housekeeping first: a run that died mid-fan-out would otherwise sit
+    // unfinished forever, and nothing else in the system ever looks at it.
+    await sweepStalledRuns().catch((err) => {
+      console.error('[bulk cross-stitch] stalled-run sweep failed', err)
+    })
+    const window = await crossStitchSpendWindow()
+    const capped = overCap(window)
+    if (capped) return { skip: capped, record: true }
+  }
+
   if (!manual) {
     if (!(await isAutopilotEnabled(craft))) return { skip: `autopilot paused for ${craft}` }
     const count = await publicCount(craft)
     if (count >= TARGETS[craft]) return { skip: 'catalogue full', count, target: TARGETS[craft] }
+    if (craft === 'cross-stitch') {
+      // The category target is the sum of the shelf targets, so the two normally
+      // agree — but a HOLD shelf sitting over its target could keep the category
+      // number short forever. Idle when every shelf with a lane is done too.
+      const counts = await liveShelfCounts().catch(() => ({}) as Record<string, number>)
+      if (Object.keys(counts).length && allShelvesAtTarget(CROSS_STITCH_SHELVES, counts)) {
+        return { skip: 'every shelf at target', count, target: TARGETS[craft] }
+      }
+    }
   }
   return { skip: null }
+}
+
+// ─────────────────────── run finaliser + alerting ───────────────────────
+
+/**
+ * THE RUN FINALISER. Fan-out bought the batch its reliability but cost it an
+ * ending: each idea is an independent event, so no single invocation knows the
+ * run is over, and until now nothing ever marked one done. Every terminal
+ * outcome therefore calls this, and the LAST one to arrive finds the counters
+ * complete and closes the row.
+ *
+ * `finishedAt` is the flag the admin banner, the stalled sweep and any future
+ * reporting read; `summary` is the one-line history entry the long-running
+ * batch could never write for itself.
+ */
+async function finaliseIfComplete(runId: string): Promise<{ finished: boolean; alerted: boolean }> {
+  const run = await prisma.bulkRun.findUnique({
+    where: { id: runId },
+    select: {
+      id: true, craft: true, requested: true, published: true, culled: true, duplicates: true,
+      skipped: true, repaired: true, generations: true, errors: true, finishedAt: true, alerted: true,
+    },
+  })
+  if (!run || run.finishedAt) return { finished: false, alerted: false }
+  if (!runIsComplete(run)) return { finished: false, alerted: false }
+
+  const summary = summaryLine(run)
+  // A run that produced nothing, or that fell over on half its ideas, is a
+  // problem a human needs to hear about — the whole point of an unattended
+  // autopilot is that silence means it is working.
+  const yieldedNothing = run.published === 0
+  const errorStorm = run.requested > 0 && run.errors >= run.requested / 2
+  const alert = run.requested > 0 && (yieldedNothing || errorStorm) && !run.alerted
+
+  await prisma.bulkRun.update({
+    where: { id: runId },
+    data: { finishedAt: new Date(), summary, ...(alert ? { alerted: true } : {}) },
+  })
+  if (alert) {
+    Sentry.captureMessage('bulk cross-stitch run yielded nothing', {
+      level: 'warning',
+      extra: {
+        runId: run.id,
+        craft: run.craft,
+        requested: run.requested,
+        published: run.published,
+        culled: run.culled,
+        duplicates: run.duplicates,
+        skipped: run.skipped,
+        errors: run.errors,
+        generations: run.generations,
+        reason: yieldedNothing ? 'published 0' : 'errors on half or more of the ideas',
+        summary,
+      },
+    })
+  }
+  return { finished: true, alerted: alert }
+}
+
+/**
+ * Close out runs that stopped moving. A run whose counters have not changed for
+ * STALL_HOURS lost its ideas somewhere (an Inngest event that never landed, a
+ * container that went away mid-attempt) and will never complete on its own.
+ */
+async function sweepStalledRuns(): Promise<number> {
+  const cutoff = new Date(Date.now() - STALL_HOURS * 60 * 60 * 1000)
+  const stalled = await prisma.bulkRun.findMany({
+    where: { craft: 'cross-stitch', finishedAt: null, updatedAt: { lt: cutoff } },
+    select: {
+      id: true, craft: true, requested: true, published: true, culled: true, duplicates: true,
+      skipped: true, repaired: true, generations: true, errors: true, updatedAt: true,
+    },
+  })
+  for (const run of stalled) {
+    await prisma.bulkRun.update({
+      where: { id: run.id },
+      data: { finishedAt: new Date(), summary: `stalled — ${summaryLine(run)}`, alerted: true },
+    })
+    Sentry.captureMessage('bulk cross-stitch run yielded nothing', {
+      level: 'warning',
+      extra: {
+        runId: run.id,
+        craft: run.craft,
+        requested: run.requested,
+        published: run.published,
+        errors: run.errors,
+        reason: `stalled — no progress since ${run.updatedAt.toISOString()}`,
+      },
+    })
+  }
+  return stalled.length
 }
 
 /** Adapt Inngest's `step` to the small runner interface run.ts expects. */
@@ -120,14 +251,35 @@ export const bulkCrossStitchBatch = inngest.createFunction(
     const manual = typeof data?.count === 'number'
 
     const pre = await step.run('preflight', () => preflight('cross-stitch', manual))
-    if (pre.skip) return { skipped: pre.skip, ...(pre.count != null ? { count: pre.count, target: pre.target } : {}) }
+    if (pre.skip) {
+      // A capped run is recorded so the admin panel shows WHY nothing happened —
+      // a silent no-op looks identical to a broken autopilot.
+      if (pre.record) {
+        await step.run('record-skip', () =>
+          prisma.bulkRun.create({
+            data: {
+              craft: 'cross-stitch',
+              trigger: manual ? 'manual' : 'cron',
+              requested: 0,
+              skipReason: pre.skip,
+              summary: `skipped — ${pre.skip}`,
+              finishedAt: new Date(),
+            },
+          }),
+        )
+      }
+      return { skipped: pre.skip, ...(pre.count != null ? { count: pre.count, target: pre.target } : {}) }
+    }
 
     const n = manual ? manualCount(data?.count, XS_CRON_COUNT) : XS_CRON_COUNT
 
-    // Plan the briefs (one cheap Anthropic call), then create the run row.
+    // Plan the briefs (one cheap Anthropic call), then create the run row. The
+    // planner is handed the WHOLE catalogue as an avoid list plus a shelf quota
+    // weighted by each shelf's gap to target — not the last 40 names it used to
+    // get, which is how five "big japanese garden" charts were commissioned.
     const briefs = await step.run('plan', async () => {
-      const recent = await recentCrossStitchSlugs().catch(() => [])
-      return planCrossStitchBriefs(n, recent)
+      const ctx = await crossStitchPlanContext(n)
+      return planCrossStitchBriefs(n, ctx)
     })
     if (!briefs.length) return { skipped: 'no briefs planned' }
 
@@ -176,30 +328,72 @@ export const bulkCrossStitchIdea = inngest.createFunction(
     const { runId, brief, attempt = 1, tweak } = (event.data ?? {}) as IdeaEventData
     if (!runId || !brief) return { skipped: 'missing runId/brief' }
 
-    // ONE attempt: generate → gate → publish on keep. The near-duplicate check
-    // runs against the recent live catalogue (ideas are independent now).
+    const pro = candidateIsPro(brief, tweak ?? {})
+
+    // The spend cap again, here at the point of spending. The dispatcher checked
+    // it minutes ago; a queue of ideas fanned out before the cap was hit would
+    // otherwise sail straight through it.
+    const capped = await step.run('spend-cap', async () => {
+      const window = await crossStitchSpendWindow()
+      return overCap(window, { pro })
+    })
+    if (capped) {
+      await step.run('record-skipped', () =>
+        prisma.bulkRun.update({ where: { id: runId }, data: { skipped: { increment: 1 } } }),
+      )
+      await step.run('check-complete', () => finaliseIfComplete(runId))
+      console.warn(`[bulk cross-stitch] ${brief.slug} skipped — ${capped}`)
+      return { outcome: 'skipped', slug: brief.slug, reason: capped }
+    }
+
+    // ONE attempt: generate → gate → duplicate guard → publish on keep. The gate
+    // sees only this batch's kept subjects; the guard inside the attempt compares
+    // the finished candidate against the WHOLE public catalogue.
     let result: AttemptResult
     try {
       result = await step.run('attempt', async () => {
         const kept = await recentCrossStitchSlugs().catch(() => [])
-        return crossStitchAttempt(brief, tweak ?? {}, kept)
+        return crossStitchAttempt(brief, tweak ?? {}, kept, { bulkRunId: runId, attempt })
       })
     } catch (err) {
       await step.run('record-error', () =>
-        prisma.bulkRun.update({ where: { id: runId }, data: { errors: { increment: 1 }, generations: { increment: 1 } } }),
+        prisma.bulkRun.update({
+          where: { id: runId },
+          data: { errors: { increment: 1 }, generations: { increment: 1 }, ...(pro ? { proGenerations: { increment: 1 } } : {}) },
+        }),
       )
+      await step.run('check-complete', () => finaliseIfComplete(runId))
       console.error(`[bulk cross-stitch] ${brief.slug} attempt ${attempt} failed`, err)
       return { outcome: 'error', slug: brief.slug }
     }
+
+    const proInc = result.pro ?? pro ? { proGenerations: { increment: 1 } } : {}
 
     if (result.published) {
       await step.run('record-keep', () =>
         prisma.bulkRun.update({
           where: { id: runId },
-          data: { published: { increment: 1 }, generations: { increment: 1 }, gemSlugs: { push: brief.slug } },
+          data: { published: { increment: 1 }, generations: { increment: 1 }, ...proInc, gemSlugs: { push: brief.slug } },
         }),
       )
+      await step.run('check-complete', () => finaliseIfComplete(runId))
       return { outcome: 'published', slug: brief.slug }
+    }
+
+    // TERMINAL: the gate kept it, the duplicate guard did not. Nothing was
+    // written and the idea is NOT re-rolled — the idea itself is the duplicate,
+    // so another roll of it collides all over again.
+    if (result.duplicateOf) {
+      const reason = `duplicate of ${result.duplicateOf}`.slice(0, 80)
+      await step.run('record-duplicate', () =>
+        prisma.bulkRun.update({
+          where: { id: runId },
+          data: { duplicates: { increment: 1 }, generations: { increment: 1 }, ...proInc, killReasons: { push: reason } },
+        }),
+      )
+      await step.run('check-complete', () => finaliseIfComplete(runId))
+      console.warn(`[bulk cross-stitch] ${brief.slug} refused — ${result.duplicateReason}`)
+      return { outcome: 'duplicate', slug: brief.slug, duplicateOf: result.duplicateOf }
     }
 
     // Best-of-N: re-roll a 'repair' or a re-rollable 'kill' as a fresh event, up
@@ -212,7 +406,7 @@ export const bulkCrossStitchIdea = inngest.createFunction(
       await step.run('record-reroll', () =>
         prisma.bulkRun.update({
           where: { id: runId },
-          data: { generations: { increment: 1 }, ...(result.verdict === 'repair' ? { repaired: { increment: 1 } } : {}) },
+          data: { generations: { increment: 1 }, ...proInc, ...(result.verdict === 'repair' ? { repaired: { increment: 1 } } : {}) },
         }),
       )
       await step.sendEvent('next-attempt', {
@@ -227,9 +421,10 @@ export const bulkCrossStitchIdea = inngest.createFunction(
     await step.run('record-cull', () =>
       prisma.bulkRun.update({
         where: { id: runId },
-        data: { culled: { increment: 1 }, generations: { increment: 1 }, killReasons: { push: reason } },
+        data: { culled: { increment: 1 }, generations: { increment: 1 }, ...proInc, killReasons: { push: reason } },
       }),
     )
+    await step.run('check-complete', () => finaliseIfComplete(runId))
     return { outcome: 'culled', slug: brief.slug }
   },
 )
@@ -264,12 +459,19 @@ export const bulkNeedleworkBatch = inngest.createFunction(
           requested: summary.requested,
           published: summary.published,
           culled: summary.culled,
+          duplicates: summary.duplicates,
+          skipped: summary.skipped,
           repaired: summary.repaired,
           generations: summary.generations,
+          proGenerations: summary.proGenerations,
           errors: summary.errors,
           gemSlugs: summary.gems,
           killReasons: summary.killReasons,
           triggeredById,
+          // Needlework still runs as ONE function, so its row is complete the
+          // moment it is written — no finaliser needed.
+          finishedAt: new Date(),
+          summary: summary.line,
         },
       }),
     )

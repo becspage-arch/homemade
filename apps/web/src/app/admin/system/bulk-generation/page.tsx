@@ -2,17 +2,34 @@ import { prisma, TutorialStatus, PipelineStatus, Visibility } from '@homemade/db
 import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import { anthropicConfigured } from '@/lib/anthropic'
-import { PATTERN_CATEGORIES } from '@/lib/studio/generation/categories'
+import { PATTERN_CATEGORIES, CROSS_STITCH_SHELVES } from '@/lib/studio/generation/categories'
 import { autopilotStates } from '@/lib/studio/generation/bulk/autopilot-state'
+import { liveShelfCounts } from '@/lib/studio/generation/bulk/dedupe-guard'
+import {
+  crossStitchSpendWindow,
+  approxSpend,
+  XS_DAILY_GENERATION_CAP,
+  XS_DAILY_PRO_CAP,
+  SCHNELL_UNIT_COST,
+  PRO_UNIT_COST,
+} from '@/lib/studio/generation/bulk/spend-guard'
 import { RunBatchControl, AutopilotToggle } from './run-controls'
 
 export const dynamic = 'force-dynamic'
 
 const INNGEST_DASHBOARD_URL = 'https://app.inngest.com/env/production/functions'
 
-/** Category ceilings — the cron idles once a craft hits its target (mirrors the Inngest job). */
-const XS_TARGET = Number(process.env.BULK_XS_TARGET) || 1500
+/**
+ * Category ceilings — the cron idles once a craft hits its target. The
+ * cross-stitch number is DERIVED from the per-shelf targets in categories.ts, so
+ * this page and the Inngest job read the same one source. BULK_XS_TARGET is an
+ * ops override only.
+ */
+const XS_TARGET = Number(process.env.BULK_XS_TARGET) || PATTERN_CATEGORIES['cross-stitch']!.patternTarget
 const NW_TARGET = Number(process.env.BULK_NW_TARGET) || 1500
+
+/** A run whose counters have not moved for this long is dead, not slow. */
+const STALL_HOURS = 6
 
 function relativeTime(when: Date): string {
   const diff = Date.now() - when.getTime()
@@ -38,11 +55,17 @@ interface RunRow {
   requested: number
   published: number
   culled: number
+  duplicates: number
+  skipped: number
   repaired: number
   generations: number
+  proGenerations: number
   errors: number
   killReasons: string[]
   startedAt: Date
+  updatedAt: Date
+  finishedAt: Date | null
+  skipReason: string | null
 }
 
 /** Most common cull reason in a run — the "why did it dip" signal. */
@@ -55,11 +78,43 @@ function topKill(reasons: string[]): string | null {
 
 function runLine(r: RunRow): string {
   const tag = r.trigger === 'cron' ? 'auto' : 'manual'
-  const done = r.published + r.culled + r.errors
-  const inflight = done < r.requested ? ` · ${done}/${r.requested} done…` : ''
+  if (r.requested === 0 && r.skipReason) return `[${tag}] ${r.craft}: skipped — ${r.skipReason}`
+  const done = r.published + r.culled + r.duplicates + r.errors + r.skipped
+  const inflight = !r.finishedAt && done < r.requested ? ` · ${done}/${r.requested} done…` : ''
+  const stalled = isStalled(r) ? ' · STALLED' : ''
   const kill = topKill(r.killReasons)
   const killNote = kill ? ` · top kill: “${kill}”` : ''
-  return `[${tag}] ${r.craft}: ${r.published} published, ${r.culled} culled, ${r.repaired} repairs, ${r.generations} gens, ${r.errors} errors (of ${r.requested})${inflight}${killNote}`
+  return `[${tag}] ${r.craft}: ${r.published} published, ${r.culled} culled, ${r.duplicates} duplicates, ${r.skipped} skipped, ${r.repaired} repairs, ${r.generations} gens (${r.proGenerations} Pro), ${r.errors} errors (of ${r.requested})${inflight}${stalled}${killNote}`
+}
+
+/** A run still open long after its counters stopped moving. */
+function isStalled(r: RunRow): boolean {
+  return !r.finishedAt && Date.now() - new Date(r.updatedAt).getTime() > STALL_HOURS * 60 * 60 * 1000
+}
+
+/**
+ * The health banner. An unattended autopilot's only failure signal is its own
+ * output, so three shapes of nothing are called out at the top of the page:
+ * the last finished run produced no gems, the last three produced none between
+ * them, or a run died mid-fan-out and never finished.
+ */
+function healthWarnings(runs: RunRow[]): string[] {
+  const xs = runs.filter((r) => r.craft === 'cross-stitch' && r.requested > 0)
+  const out: string[] = []
+  const finished = xs.filter((r) => r.finishedAt)
+  const last = finished[0]
+  if (last && last.published === 0) {
+    out.push(`The most recent finished cross-stitch run published nothing (${last.culled} culled, ${last.duplicates} duplicates, ${last.errors} errors of ${last.requested}).`)
+  }
+  const lastThree = finished.slice(0, 3)
+  if (lastThree.length === 3 && lastThree.reduce((n, r) => n + r.published, 0) === 0) {
+    out.push('The last three finished cross-stitch runs published nothing between them — the gate, the planner or the duplicate guard is rejecting everything.')
+  }
+  const stalled = xs.filter(isStalled)
+  if (stalled.length) {
+    out.push(`${stalled.length} cross-stitch run${stalled.length === 1 ? '' : 's'} stalled — no progress for over ${STALL_HOURS} hours.`)
+  }
+  return out
 }
 
 const H2: React.CSSProperties = { fontFamily: 'var(--font-fraunces)', fontSize: 22, margin: '0 0 12px', color: 'var(--color-espresso)' }
@@ -73,6 +128,14 @@ function ProgressBar({ pct, full }: { pct: number; full: boolean }) {
   )
 }
 
+interface ShelfProgress {
+  slug: string
+  name: string
+  count: number
+  target: number
+  hold: boolean
+}
+
 function CraftCard({
   name,
   published,
@@ -83,6 +146,8 @@ function CraftCard({
   craft,
   defaultCount,
   extraNote,
+  shelves,
+  spend,
 }: {
   name: string
   published: number
@@ -93,6 +158,8 @@ function CraftCard({
   craft: 'cross-stitch' | 'needlework'
   defaultCount: number
   extraNote?: string
+  shelves?: ShelfProgress[]
+  spend?: { generations: number; proGenerations: number; approx: number }
 }) {
   const pct = target > 0 ? Math.min(100, Math.round((published / target) * 100)) : 0
   const full = published >= target
@@ -109,6 +176,46 @@ function CraftCard({
         </div>
         <ProgressBar pct={pct} full={full} />
       </div>
+      {spend && (
+        <p style={{ ...LORA_SM, margin: 0, lineHeight: 1.6 }}>
+          Last 24h: <strong style={{ color: spend.generations >= XS_DAILY_GENERATION_CAP ? 'var(--color-burnt-sienna)' : 'var(--color-espresso)' }}>{spend.generations}</strong>/{XS_DAILY_GENERATION_CAP} generations
+          {'  ·  '}
+          <strong style={{ color: spend.proGenerations >= XS_DAILY_PRO_CAP ? 'var(--color-burnt-sienna)' : 'var(--color-espresso)' }}>{spend.proGenerations}</strong>/{XS_DAILY_PRO_CAP} Flux&nbsp;Pro
+          {'  ·  '}≈&nbsp;${spend.approx.toFixed(2)} spend
+          <br />
+          <span style={{ fontSize: 11 }}>
+            Approximate — costed at ${SCHNELL_UNIT_COST.toFixed(3)} per schnell generation and ${PRO_UNIT_COST.toFixed(3)} per Flux&nbsp;Pro generation. At either cap the batch skips rather than spends.
+          </span>
+        </p>
+      )}
+      {shelves && shelves.length > 0 && (
+        <div>
+          <div style={{ ...LORA_SM, marginBottom: 6 }}>Shelves (published / target · “hold” = at the size it should be, never generated into)</div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+            {shelves.map((sh) => {
+              const done = sh.count >= sh.target
+              return (
+                <span
+                  key={sh.slug}
+                  title={`${sh.slug}${sh.hold ? ' — hold' : ''}`}
+                  style={{
+                    fontFamily: 'var(--font-lora)',
+                    fontSize: 11,
+                    padding: '2px 8px',
+                    borderRadius: 10,
+                    background: 'var(--color-linen-grey)',
+                    color: sh.hold ? 'var(--color-warm-taupe)' : done ? 'var(--color-espresso)' : 'var(--color-burnt-sienna)',
+                    opacity: sh.hold ? 0.7 : 1,
+                  }}
+                >
+                  {sh.name} {sh.count}/{sh.target}
+                  {sh.hold ? ' · hold' : ''}
+                </span>
+              )
+            })}
+          </div>
+        </div>
+      )}
       {extraNote && <p style={{ ...LORA_SM, margin: 0, lineHeight: 1.5 }}>{extraNote}</p>}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 2 }}>
         <AutopilotToggle craft={craft} enabled={autopilotOn} />
@@ -142,7 +249,9 @@ export default async function AdminBulkGenerationPage() {
       take: 20,
       select: {
         id: true, craft: true, trigger: true, requested: true, published: true,
-        culled: true, repaired: true, generations: true, errors: true, killReasons: true, startedAt: true,
+        culled: true, duplicates: true, skipped: true, repaired: true, generations: true,
+        proGenerations: true, errors: true, killReasons: true, startedAt: true, updatedAt: true,
+        finishedAt: true, skipReason: true,
       },
     }),
     prisma.category.findMany({
@@ -165,6 +274,19 @@ export default async function AdminBulkGenerationPage() {
     subcatsByCategoryId.set(sc.categoryId, list)
   }
   for (const list of subcatsByCategoryId.values()) list.sort((a, b) => b.count - a.count)
+
+  const [shelfCounts, spendWindow] = await Promise.all([
+    liveShelfCounts().catch(() => ({}) as Record<string, number>),
+    crossStitchSpendWindow().catch(() => ({ generations: 0, proGenerations: 0, since: new Date() })),
+  ])
+  const xsShelves: ShelfProgress[] = CROSS_STITCH_SHELVES.map((sh) => ({
+    slug: sh.slug,
+    name: sh.name,
+    count: shelfCounts[sh.slug] ?? 0,
+    target: sh.target,
+    hold: Boolean(sh.hold),
+  })).sort((a, b) => Number(a.hold) - Number(b.hold) || b.target - a.target || a.slug.localeCompare(b.slug))
+  const warnings = healthWarnings(recent as RunRow[])
 
   const gateWired = anthropicConfigured()
   const renderWired = process.env.LOOM_RENDER === 'fargate'
@@ -193,6 +315,27 @@ export default async function AdminBulkGenerationPage() {
         </div>
       </div>
 
+      {warnings.length > 0 && (
+        <section
+          style={{
+            marginBottom: 20,
+            padding: '14px 16px',
+            borderRadius: 4,
+            border: '0.5px solid var(--color-burnt-sienna)',
+            background: 'var(--color-cream)',
+          }}
+        >
+          <h2 style={{ fontFamily: 'var(--font-fraunces)', fontSize: 16, margin: '0 0 8px', color: 'var(--color-burnt-sienna)' }}>
+            The cross-stitch autopilot needs a look
+          </h2>
+          <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.7 }}>
+            {warnings.map((w) => (
+              <li key={w} style={{ fontFamily: 'var(--font-lora)', fontSize: 13, color: 'var(--color-espresso)' }}>{w}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {/* ── Generation status: wiring ─────────────────────────────────── */}
       <section style={{ marginBottom: 20 }}>
         <p style={{ ...LORA_SM, margin: 0 }}>
@@ -213,7 +356,9 @@ export default async function AdminBulkGenerationPage() {
             disabled={xsDisabled}
             disabledReason={gateWired ? undefined : 'Gate not wired — a batch would publish nothing.'}
             craft="cross-stitch"
-            defaultCount={8}
+            defaultCount={10}
+            shelves={xsShelves}
+            spend={{ generations: spendWindow.generations, proGenerations: spendWindow.proGenerations, approx: approxSpend(spendWindow) }}
           />
           <CraftCard
             name="Needlework"
