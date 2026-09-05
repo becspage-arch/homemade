@@ -172,9 +172,23 @@ export function crochetProgramProblems(p: CrochetProgram): string[] {
   return [...new Set(problems)]
 }
 
+export interface CompositionCheckOptions {
+  /**
+   * Enforce the stitch ceiling. On by default, because a composition that
+   * arrives off the wire has to be COMPILED inside the request and the ceiling
+   * is what keeps that inside the time budget. The amigurumi designer passes
+   * false: its pieces are the profiles the audit test has already walked, so
+   * its save path never compiles and the budget does not apply.
+   */
+  enforceStitchCap?: boolean
+}
+
 /** Shape checks for a composition: part names unique, references resolve to an
  *  earlier part, total work inside the compile budget. */
-export function compositionProgramProblems(p: CompositionProgram): string[] {
+export function compositionProgramProblems(
+  p: CompositionProgram,
+  options: CompositionCheckOptions = {},
+): string[] {
   const problems: string[] = []
   const seen = new Set<string>()
   for (const part of p.parts) {
@@ -189,7 +203,7 @@ export function compositionProgramProblems(p: CompositionProgram): string[] {
     if (!seen.has(prop.on)) problems.push(`"${prop.name}" is fitted to "${prop.on}", which is not one of the pieces.`)
   }
   const stitches = p.parts.reduce((a, part) => a + part.rounds.reduce((x, y) => x + y, 0), 0)
-  if (stitches > COMPOSITION_MAX_STITCHES) {
+  if (options.enforceStitchCap !== false && stitches > COMPOSITION_MAX_STITCHES) {
     problems.push(
       `That comes to ${stitches} stitches across all the pieces. Keep it to ${COMPOSITION_MAX_STITCHES} or fewer.`,
     )

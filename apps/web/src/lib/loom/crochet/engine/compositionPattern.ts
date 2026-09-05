@@ -36,6 +36,13 @@ export interface CompositionPiece {
 
 const SIDE_SUFFIX = /-(?:l|r|al|ar|ll|lr)$/
 
+/** "Arm" + "Leg" → "arms and legs" in a sentence. */
+function joinList(labels: string[]): string {
+  if (labels.length === 1) return labels[0]!
+  const plural = labels.map((l) => (l.endsWith('s') ? l : `${l}s`))
+  return `${plural.slice(0, -1).join(', ')} and ${plural[plural.length - 1]}`
+}
+
 /** "ear-l" → "ear"; "body" → "body". */
 function baseName(name: string): string {
   return name.replace(SIDE_SUFFIX, '')
@@ -68,8 +75,17 @@ export function compositionPieces(p: CompositionProgram): CompositionPiece[] {
     const first = parts[0]!
     const base = baseName(first.name)
     const label = prettify(base, parts.length)
-    const joinRaw = (first.place as { on?: string }).on
-    const joinsTo = !joinRaw || joinRaw === 'ground' ? null : prettify(baseName(joinRaw), 1)
+    // A group can be sewn to more than one place: the four paw pads go on two
+    // arms and two legs, so the assembly line has to name both.
+    const parents = [
+      ...new Set(
+        parts
+          .map((x) => (x.place as { on?: string }).on)
+          .filter((on): on is string => Boolean(on) && on !== 'ground')
+          .map((on) => prettify(baseName(on), 1)),
+      ),
+    ]
+    const joinsTo = parents.length === 0 ? null : joinList(parents)
     return {
       label,
       section: label,
@@ -107,8 +123,10 @@ export function writeAssembly(p: CompositionProgram): string[] {
   const lines: string[] = []
   for (const piece of pieces) {
     if (!piece.joinsTo) continue
-    const what = piece.makeQuantity > 1 ? `the ${piece.label.toLowerCase()}` : `the ${piece.label.toLowerCase()}`
-    lines.push(`Sew ${what} to the ${piece.joinsTo.toLowerCase()}, stuffing firmly as you close each piece.`)
+    lines.push(
+      `Sew the ${piece.label.toLowerCase()} to the ${piece.joinsTo.toLowerCase()}, ` +
+      'stuffing firmly as you close each piece.',
+    )
   }
   for (const prop of p.props ?? []) {
     const on = prettify(baseName(prop.on), 1).toLowerCase()

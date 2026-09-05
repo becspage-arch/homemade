@@ -154,12 +154,13 @@ function rebuildComposition(programRaw: unknown, name?: string): { data: Record<
   if (!parsed.success) return { problems: parsed.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`) }
   let program = parsed.data as CompositionProgram
   if (name) program = { ...program, name }
-  const shape = compositionProgramProblems(program)
+  // Every piece already measured against the audit keeps its guarantee without
+  // paying for the compile again; anything else is compiled and audited here,
+  // and only that path is held to the stitch ceiling the compile budget sets.
+  const knownGood = program.parts.every((p) => isAuditedProfile(p.rounds))
+  const shape = compositionProgramProblems(program, { enforceStitchCap: !knownGood })
   if (shape.length) return { problems: shape }
 
-  // Every piece already measured against the audit keeps its guarantee without
-  // paying for the compile again; anything else is compiled and audited here.
-  const knownGood = program.parts.every((p) => isAuditedProfile(p.rounds))
   let hash: string | null = null
   let yr: number | null = null
   let settled = program.finishedSizeMm ?? { width: 0, height: 0 }

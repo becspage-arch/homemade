@@ -94,11 +94,15 @@ export const AMIGURUMI_SIZES: Array<{ id: AmigurumiSize; label: string }> = [
   { id: 'L', label: 'Large' },
 ]
 
+/** The diameters safety eyes are actually sold in, plus none. A real one is
+ *  roughly a tenth of the head's width; anything much larger renders as a glass
+ *  marble rather than an eye, so the smallest is the default. */
 export const EYE_SIZES = [0, 6, 9, 12] as const
 
 interface SizeProfile {
   body: number[]
   head: number[]
+  neck: number[]
   muzzle: number[]
   bearEar: number[]
   bunnyEar: number[]
@@ -112,6 +116,7 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
   S: {
     body: ballRounds(24, 4),
     head: ballRounds(18, 3),
+    neck: ballRounds(12, 1),
     muzzle: ballRounds(12, 1),
     bearEar: ballRounds(12, 2),
     bunnyEar: tubeRounds(12, 4),
@@ -123,6 +128,7 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     // The signed-off bear proof's own profiles.
     body: ballRounds(30, 5),
     head: ballRounds(24, 7),
+    neck: ballRounds(12, 1),
     muzzle: ballRounds(12, 1),
     bearEar: ballRounds(12, 2),
     bunnyEar: tubeRounds(12, 6),
@@ -133,6 +139,7 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
   L: {
     body: ballRounds(36, 5),
     head: ballRounds(30, 6),
+    neck: ballRounds(18, 2),
     muzzle: ballRounds(18, 2),
     bearEar: ballRounds(12, 3),
     bunnyEar: tubeRounds(12, 6),
@@ -142,21 +149,46 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
   },
 }
 
-/** The product-shot camera the bear proof settled on. */
+/** The camera every figure is staged at, and therefore the angle the face is
+ *  turned back through so it meets the lens. Both from the signed-off bear. */
+const FIGURE_YAW = 26
+
 const FIGURE_VIEW = {
   tiltDeg: 74,
-  yawDeg: 26,
+  yawDeg: FIGURE_YAW,
   aimHeightFrac: 0.5,
   distScale: 1.05,
-  marginFactor: 0.3,
+  marginFactor: 0.38,
   groundScale: 40,
   lightRig: 'product' as const,
-  bgHex: '#f7f5f2',
+  bgHex: '#faf8f5',
   exposure: 0.34,
 }
 
-const EYE_HEX = '#141110'
-const NOSE_HEX = '#241d19'
+const EYE_HEX = '#080706'
+const NOSE_HEX = '#171310'
+
+interface Dir {
+  x: number
+  y: number
+  z: number
+}
+
+/**
+ * Turn a FACE feature's attach direction to the camera.
+ *
+ * The figure's own front is +y, but the camera sits `FIGURE_YAW` round from
+ * there, so a muzzle or an eye aimed straight down the front presents at an
+ * angle. Rotating those directions back about z is a head turn: the face meets
+ * the lens while the body, limbs and shadow keep the three-quarter angle. The
+ * limbs are deliberately NOT rotated; they belong to the body.
+ */
+function faceDir(d: Dir): Dir {
+  const t = (-FIGURE_YAW * Math.PI) / 180
+  const c = Math.cos(t)
+  const s = Math.sin(t)
+  return { x: d.x * c - d.y * s, y: d.x * s + d.y * c, z: d.z }
+}
 
 export function amigurumiPresetName(choices: AmigurumiChoices): string {
   const base = AMIGURUMI_BASES.find((b) => b.id === choices.base)?.label ?? 'Amigurumi'
@@ -187,37 +219,54 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
 
   const main = choices.mainHex
   const contrast = choices.contrastHex
-  const armAim = { out: 0.8, forward: 0.62, up: -0.42 }
+  // Where each limb points once it is sewn on: an arm hangs down the side and a
+  // little forward, a leg lies forward along the table so the figure sits.
+  const armAim = (side: -1 | 1): Dir => ({ x: side * 0.32, y: 0.5, z: -0.75 })
+  const legAim = (side: -1 | 1): Dir => ({ x: side * 0.26, y: 1, z: -0.05 })
+
   const parts: AmigurumiPart[] = [
     { name: 'body', stitch: 'sc', rounds: s.body, colourHex: main, place: { on: 'ground' } },
+    // A short narrow neck piece, so the silhouette steps body, neck, head
+    // rather than the two balls merging into one loaf.
     {
-      name: 'head', stitch: 'sc', rounds: s.head, colourHex: main,
-      place: { on: 'body', overlap: 9, offset: { y: 2 } },
+      name: 'neck', stitch: 'sc', rounds: s.neck, colourHex: main, scale: 0.85,
+      place: { on: 'body', overlap: 6, offset: { y: 1.5 } },
     },
     {
-      name: 'muzzle', stitch: 'sc', rounds: s.muzzle, colourHex: contrast, scale: 0.95,
-      place: { on: 'head', dir: { x: 0, y: 1, z: -0.2 }, seat: 3, poleIn: true, surfaceFit: 'ellipsoid' },
+      name: 'head', stitch: 'sc', rounds: s.head, colourHex: main,
+      place: { on: 'neck', overlap: 2, offset: { y: 1 } },
+    },
+    {
+      name: 'muzzle', stitch: 'sc', rounds: s.muzzle, colourHex: contrast, scale: 0.85,
+      place: { on: 'head', dir: faceDir({ x: 0, y: 1, z: -0.22 }), seat: 3, poleIn: true, surfaceFit: 'ellipsoid' },
     },
   ]
 
   if (choices.base === 'bear') {
+    // Round ears, high on the SIDES of the crown, leaning forward, seated only
+    // 3.5 mm so most of each ear stands off the head.
     for (const side of [-1, 1] as const) {
       parts.push({
-        name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.bearEar, colourHex: main, scale: 0.82,
+        name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.bearEar, colourHex: main, scale: 0.92,
         place: {
-          on: 'head', dir: { x: side * 0.72, y: -0.42, z: 1 }, seat: 5,
-          poleIn: true, surfaceFit: 'ellipsoid',
+          on: 'head',
+          dir: faceDir({ x: side * 0.95, y: 0.18, z: 0.95 }),
+          aim: faceDir({ x: side * 0.8, y: 0.35, z: 1 }),
+          seat: 3.5, poleIn: true, surfaceFit: 'ellipsoid',
         },
       })
     }
   } else {
-    // A bunny's ears are long tapered tubes standing up and slightly back.
+    // A bunny's ears are long tapered tubes standing up out of the crown, set
+    // closer in than a bear's and leaning back a touch.
     for (const side of [-1, 1] as const) {
       parts.push({
         name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.bunnyEar, colourHex: main, scale: 0.8,
         place: {
-          on: 'head', dir: { x: side * 0.34, y: -0.2, z: 1 }, seat: 6,
-          poleIn: true, surfaceFit: 'ellipsoid',
+          on: 'head',
+          dir: faceDir({ x: side * 0.42, y: 0.05, z: 1 }),
+          aim: faceDir({ x: side * 0.34, y: -0.1, z: 1 }),
+          seat: 4, poleIn: true, surfaceFit: 'ellipsoid',
         },
       })
     }
@@ -227,9 +276,13 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     parts.push({
       name: side < 0 ? 'arm-l' : 'arm-r', stitch: 'sc', rounds: s.limb, colourHex: main, scale: 0.78,
       place: {
-        on: 'body', dir: { x: side, y: 0.3, z: 0.62 },
-        aim: { x: side * armAim.out, y: armAim.forward, z: armAim.up },
-        seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
+        on: 'body', dir: { x: side, y: 0.28, z: 0.7 },
+        aim: armAim(side), seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
+        // A paw pad on the end of a hanging arm otherwise reaches just below the
+        // table, and the renderer floats the whole piece up to clear it, which
+        // takes the legs off the ground. Hold the arm the half millimetre that
+        // keeps every part on or above the table.
+        offset: { z: 0.5 },
       },
     })
   }
@@ -238,22 +291,22 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
       name: side < 0 ? 'leg-l' : 'leg-r', stitch: 'sc', rounds: s.limb, colourHex: main, scale: 0.9,
       place: {
         on: 'body', dir: { x: side * 0.52, y: 0.8, z: -0.55 },
-        aim: { x: side * 0.26, y: 1, z: -0.05 },
-        seat: 8, poleIn: true, surfaceFit: 'ellipsoid', offset: { z: -0.4 },
+        aim: legAim(side), seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
+        offset: { z: -0.4 },
       },
     })
   }
 
   if (choices.paws) {
-    const pad = (name: string, on: string, dir: { x: number; y: number; z: number }): AmigurumiPart => ({
+    const pad = (name: string, on: string, dir: Dir): AmigurumiPart => ({
       name, stitch: 'sc', rounds: s.muzzle, colourHex: contrast, scale: 0.62,
       place: { on, dir, seat: 3, poleIn: true, surfaceFit: 'ellipsoid' },
     })
     parts.push(
-      pad('paw-al', 'arm-l', { x: -armAim.out, y: armAim.forward, z: armAim.up }),
-      pad('paw-ar', 'arm-r', { x: armAim.out, y: armAim.forward, z: armAim.up }),
-      pad('paw-ll', 'leg-l', { x: -0.26, y: 1, z: -0.05 }),
-      pad('paw-lr', 'leg-r', { x: 0.26, y: 1, z: -0.05 }),
+      pad('paw-al', 'arm-l', armAim(-1)),
+      pad('paw-ar', 'arm-r', armAim(1)),
+      pad('paw-ll', 'leg-l', legAim(-1)),
+      pad('paw-lr', 'leg-r', legAim(1)),
     )
   }
 
@@ -266,12 +319,20 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     props: faceProps(choices, 'head'),
     notes:
       choices.base === 'bear'
-        ? 'A sitting bear: a stuffed body and a round head, a muzzle, two small ears, two arms and two legs, each worked as a spiral from a magic ring and sewn on.'
-        : 'A sitting bunny: a stuffed body and a round head, a muzzle, two long ears, two arms and two legs, each worked as a spiral from a magic ring and sewn on.',
+        ? 'A sitting bear: a stuffed body, a short neck and a round head, a muzzle, two ears, two arms and two legs, each worked as a spiral from a magic ring and sewn on.'
+        : 'A sitting bunny: a stuffed body, a short neck and a round head, a muzzle, two long ears, two arms and two legs, each worked as a spiral from a magic ring and sewn on.',
   }
 }
 
-/** Safety eyes and a nose, seated the way the bear proof seats them. */
+/**
+ * Safety eyes and a nose, seated the way the signed-off bear seats them.
+ *
+ * `seat` is measured against the strand centre-line hull and the rendered yarn
+ * stands about 1.8 mm proud of that, so a notion seated by its own radius
+ * disappears into the fabric. Seating a safety eye by MINUS its own radius puts
+ * its equator at the wool surface and the whole dome proud of it, which is where
+ * a real safety eye's dome sits once the shank is through the fabric.
+ */
 function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | undefined {
   const props: CompositionProp[] = []
   if (choices.eyeMm > 0) {
@@ -280,14 +341,11 @@ function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | u
       props.push({
         name: side < 0 ? 'eye-l' : 'eye-r',
         on,
-        dir: { x: side * 0.62, y: 1, z: 0.55 },
+        dir: faceDir({ x: side * 0.62, y: 1, z: 0.42 }),
         radiusMm: r,
-        // A slightly negative seat leaves the dome standing out of the wool the
-        // way a real safety eye does (the strand centre-line sits below the
-        // rendered yarn surface).
-        seat: -0.5,
+        seat: -(r + 0.2),
         colourHex: EYE_HEX,
-        gloss: 0.95,
+        gloss: 0.85,
       })
     }
   }
@@ -295,13 +353,13 @@ function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | u
     props.push({
       name: 'nose',
       on: 'muzzle',
-      dir: { x: 0, y: 1, z: 0.06 },
-      radiusMm: 3.3,
-      seat: -0.6,
-      flatten: 0.7,
-      widen: 1.3,
+      dir: faceDir({ x: 0, y: 1, z: 0.42 }),
+      radiusMm: 1.9,
+      seat: -1.8,
+      flatten: 0.65,
+      widen: 1.4,
       colourHex: NOSE_HEX,
-      gloss: 0.55,
+      gloss: 0.4,
     })
   }
   return props.length ? props : undefined
@@ -374,12 +432,12 @@ export const PRESET_SETTLED_SIZE_MM: Record<string, { width: number; height: num
   'egg-S': { width: 19, height: 28 },
   'egg-M': { width: 26, height: 36 },
   'egg-L': { width: 34, height: 41 },
-  'bear-S': { width: 50, height: 43 },
-  'bear-M': { width: 59, height: 60 },
-  'bear-L': { width: 76, height: 64 },
-  'bunny-S': { width: 50, height: 52 },
-  'bunny-M': { width: 59, height: 76 },
-  'bunny-L': { width: 76, height: 77 },
+  'bear-S': { width: 38, height: 57 },
+  'bear-M': { width: 44, height: 71 },
+  'bear-L': { width: 56, height: 84 },
+  'bunny-S': { width: 38, height: 66 },
+  'bunny-M': { width: 44, height: 88 },
+  'bunny-L': { width: 56, height: 97 },
 }
 
 export function presetSettledSizeMm(base: AmigurumiBase, size: AmigurumiSize): { width: number; height: number } {
