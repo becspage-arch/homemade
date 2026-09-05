@@ -40,12 +40,30 @@ export type PartPlacement =
   | { on: string; overlap?: number; offset?: { x?: number; y?: number; z?: number } }
   | {
       on: string
-      /** Outward direction the limb points (world axes; need not be unit). The
-       *  part's long axis (built pole-to-pole = local +z) is rotated onto it. */
+      /** WHERE on the parent the piece is sewn: the direction from the parent's
+       *  centre to the join. Also the direction the limb points unless `aim`
+       *  says otherwise (need not be unit). */
       dir: { x: number; y: number; z: number }
+      /** WHICH WAY the piece points, if that differs from where it is sewn on.
+       *  A real sewn-on arm joins high at the shoulder and hangs down-forward;
+       *  a leg joins low at the front and lies forward along the table. Without
+       *  it the two are the same direction (the original behaviour). */
+      aim?: { x: number; y: number; z: number }
       /** How far the base pole sinks into the parent surface (mm, default 4). A
        *  small seat = a clean join; the rest of the limb stands proud. */
       seat?: number
+      /** Seat the MAGIC-RING pole into the parent instead of the fasten-off
+       *  pole, so the ring spiral is hidden in the join and the smooth end of
+       *  the piece faces the camera. A round ear/muzzle whose ring swirl faces
+       *  out reads as a flat disc, not a 3-D form. */
+      poleIn?: boolean
+      /** How the parent's surface distance along `dir` is measured.
+       *  'box' (default) = the historical half-extent sum (over-estimates on a
+       *  diagonal, so seats had to be tuned per part); 'ellipsoid' = the exact
+       *  ray/ellipsoid radius, so `seat` is real millimetres in any direction. */
+      surfaceFit?: 'box' | 'ellipsoid'
+      /** Final nudge in world mm after seating (e.g. drop a leg onto the table). */
+      offset?: { x?: number; y?: number; z?: number }
     }
 
 export interface AmigurumiPart {
@@ -63,14 +81,68 @@ export interface AmigurumiPart {
   scale?: number
 }
 
+/**
+ * A NON-YARN notion: the plastic/haberdashery parts a real amigurumi pattern
+ * lists alongside its yarn — safety eyes, a plastic nose, a bell. They are not
+ * stitches and are not pretending to be: they are rendered as what they are,
+ * moulded primitives with their own glossy material, seated on a crocheted
+ * part's surface exactly the way a limb is. (Modelling them as yarn would be
+ * the faking the engine forbids; leaving them out leaves a bear with no face.)
+ */
+export interface CompositionProp {
+  name: string
+  /** The crocheted part it is fixed to (must be listed before the props run). */
+  on: string
+  /** Direction from that part's centre to where it sits on the surface. */
+  dir: { x: number; y: number; z: number }
+  /** Radius of the moulded part (mm). */
+  radiusMm: number
+  /** How far it sinks below the surface (mm, default 45% of the radius — a
+   *  safety eye's shank goes through the fabric, the dome stands proud). */
+  seat?: number
+  /** Squash along `dir` (1 = a full sphere, <1 = a domed/oblate nose). */
+  flatten?: number
+  /** Widen across `dir` (1 = round; >1 = a wide nose). */
+  widen?: number
+  colourHex: string
+  /** 0 = matte moulded plastic, 1 = wet-look glossy (default 0.85). */
+  gloss?: number
+  /** Exact-ellipsoid surface fit for the parent (default true — props are new,
+   *  so there is no historical placement to preserve). */
+  surfaceFit?: 'box' | 'ellipsoid'
+}
+
 export interface CompositionProgram {
   name: string
   parts: AmigurumiPart[]
+  /** Non-yarn notions (safety eyes, a nose). Optional: a composition without
+   *  them renders exactly as before, down to the scene JSON. */
+  props?: CompositionProp[]
   /** Render yarn weight → yr. Compositions render at their program weight (the
    *  layout is computed from each part's built size, so it stays consistent). */
   yarnWeight?: YarnWeight
-  /** Camera tilt (deg) for the staged hero. Defaults to a 3/4 amigurumi view. */
+  /** Camera tilt (deg) OFF STRAIGHT DOWN. 0 = plan view looking at the crown of
+   *  the piece; 90 = eye level with the table. A toy is photographed from just
+   *  above eye level, so a figure wants ~70, not the ~20 a flat piece wants. */
   tiltDeg?: number
+  /** Camera yaw (deg) around the object — 0 = square on the front, ~30 = the
+   *  three-quarter view a product photo of a toy is shot from. */
+  yawDeg?: number
+  /** Aim the camera this far up the object (0..1 of its height; default 0 = the
+   *  table). A tall figure shot from a low tilt needs the frame centred on the
+   *  body, not on the ground under it. */
+  aimHeightFrac?: number
+  /** Multiply the framing distance (1 = the computed fit). */
+  distScale?: number
+  /** Widen the ground plane (default 5): a near-horizontal camera sees much
+   *  further across the table than a top-down one. */
+  groundScale?: number
+  /** 'product' swaps the flat-fabric raking key (which BACK-lights a figure
+   *  shot from near eye level) for a high three-quarter key + fill that follows
+   *  the camera. Leave unset for the top-down fabric rig. */
+  lightRig?: 'product'
+  /** Frame margin override (default 0.45). */
+  marginFactor?: number
   // Catalogue / pattern metadata (optional).
   gaugeText?: string
   finishedSizeMm?: { width: number; height: number }
@@ -92,8 +164,20 @@ interface PlacedPart {
   bounds: { minx: number; maxx: number; miny: number; maxy: number; minz: number; maxz: number }
 }
 
+/** A prop resolved into world millimetres: a centre plus three semi-axis
+ *  vectors (the ellipsoid { c + a·u + b·v + c·w : |u|²+|v|²+|w|² ≤ 1 }). The
+ *  renderer needs no rotation convention of its own — the axes carry it. */
+export interface PlacedProp {
+  name: string
+  centre: V3
+  axes: [V3, V3, V3]
+  hex: string
+  gloss: number
+}
+
 export interface CompiledComposition {
   placed: PlacedPart[]
+  props: PlacedProp[]
   yr: number
   /** Empty = every part is genuinely stitched. Non-empty = a part failed the
    *  audit gate (prefixed with the part name); do NOT render. */
@@ -125,12 +209,30 @@ function rotZTo(u: V3): number[][] {
   return R
 }
 
+/** Normalise a (possibly un-normalised) direction. */
+function unit(d: { x: number; y: number; z: number }): V3 {
+  const l = Math.hypot(d.x, d.y, d.z) || 1
+  return { x: d.x / l, y: d.y / l, z: d.z / l }
+}
+
 function applyRot(R: number[][], v: V3): V3 {
   return {
     x: R[0]![0]! * v.x + R[0]![1]! * v.y + R[0]![2]! * v.z,
     y: R[1]![0]! * v.x + R[1]![1]! * v.y + R[1]![2]! * v.z,
     z: R[2]![0]! * v.x + R[2]![1]! * v.y + R[2]![2]! * v.z,
   }
+}
+
+/** How far the parent's surface is from its centre along unit `u`.
+ *  'box' is the historical half-extent sum (kept so every existing composition
+ *  places byte-identically); 'ellipsoid' is the exact ray/ellipsoid radius. */
+function surfaceRadius(b: PlacedPart['bounds'], u: V3, fit: 'box' | 'ellipsoid'): number {
+  const ax = (b.maxx - b.minx) / 2
+  const ay = (b.maxy - b.miny) / 2
+  const az = (b.maxz - b.minz) / 2
+  if (fit === 'box') return Math.abs(u.x) * ax + Math.abs(u.y) * ay + Math.abs(u.z) * az
+  const q = (u.x / Math.max(ax, 1e-6)) ** 2 + (u.y / Math.max(ay, 1e-6)) ** 2 + (u.z / Math.max(az, 1e-6)) ** 2
+  return 1 / Math.sqrt(Math.max(q, 1e-12))
 }
 
 function bbox(pts: V3[]): PlacedPart['bounds'] {
@@ -190,39 +292,53 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       overlap?: number
       offset?: { x?: number; y?: number; z?: number }
       dir?: { x: number; y: number; z: number }
+      aim?: { x: number; y: number; z: number }
       seat?: number
+      poleIn?: boolean
+      surfaceFit?: 'box' | 'ellipsoid'
     }
     if (place.on === 'ground') {
       T = { x: place.offset?.x ?? 0, y: place.offset?.y ?? 0, z: halfH } // lowest point at z = 0
     } else if (place.dir) {
-      // Protruding limb: aim the part's long axis (local +z) along `dir`, seat its
-      // base pole (local min-z) just into the parent surface, and let the rest
-      // stand proud. (Both poles carry a small worked-ring hole; pointing the
-      // magic-ring pole outward and leaning the limb slightly back keeps the hole
-      // reading as a neat closed ear-tip to the camera rather than an open barrel.)
+      // Protruding limb: aim the part's long axis along the attach direction (or
+      // along `aim`, when where it JOINS and where it POINTS differ), seat one
+      // pole just into the parent surface, and let the rest stand proud. Both
+      // poles carry a worked-ring hole; the MAGIC-RING one is the visible
+      // spiral, so `poleIn` buries it in the join rather than presenting it to
+      // the camera as a swirl disc.
       const base = byName.get(place.on)
       if (!base) throw new Error(`${p.name}: limb '${part.name}' attaches to unknown/later part '${place.on}'`)
-      const d = place.dir
-      const dlen = Math.hypot(d.x, d.y, d.z) || 1
-      const u: V3 = { x: d.x / dlen, y: d.y / dlen, z: d.z / dlen }
-      R = rotZTo(u)
+      const u = unit(place.dir)
+      // The piece's own axis. `aim` decouples WHICH WAY it points from WHERE it
+      // is sewn (an arm joins at the shoulder but hangs down-forward); without
+      // it the two are the same, which is the original single-`dir` behaviour.
+      const a = place.aim ? unit(place.aim) : u
+      // `poleIn` seats the MAGIC-RING pole (local +z) instead of the fasten-off
+      // pole, so the ring spiral is buried in the join. The piece's +z then has
+      // to point BACK along the aim.
+      const poleIn = place.poleIn === true
+      const w: V3 = poleIn ? { x: -a.x, y: -a.y, z: -a.z } : a
+      R = rotZTo(w)
       const pc: V3 = {
         x: (base.bounds.minx + base.bounds.maxx) / 2,
         y: (base.bounds.miny + base.bounds.maxy) / 2,
         z: (base.bounds.minz + base.bounds.maxz) / 2,
       }
-      // Parent half-extent along u (ellipsoid approx) = where the surface is.
-      const parentR =
-        0.5 * (Math.abs(u.x) * (base.bounds.maxx - base.bounds.minx) +
-               Math.abs(u.y) * (base.bounds.maxy - base.bounds.miny) +
-               Math.abs(u.z) * (base.bounds.maxz - base.bounds.minz))
+      const parentR = surfaceRadius(base.bounds, u, place.surfaceFit ?? 'box')
       const seat = place.seat ?? 4
-      // Base pole (local min-z) offset from centroid = (0,0, lb.minz − cz) → after
-      // R it is (lb.minz − cz)·u (negative, pointing back toward the parent). Solve
-      // T so the base pole lands seat mm inside the surface point pc + u·parentR.
-      const baseAlong = scale * (lb.minz - cz) // < 0
-      const along = parentR - seat - baseAlong // push centroid out so the limb stands proud
-      T = { x: pc.x + u.x * along, y: pc.y + u.y * along, z: pc.z + u.z * along }
+      // The join point on the parent's surface, sunk `seat` mm in.
+      const jx = pc.x + u.x * (parentR - seat)
+      const jy = pc.y + u.y * (parentR - seat)
+      const jz = pc.z + u.z * (parentR - seat)
+      // The seated pole sits at local z = hBase (the fasten-off pole's min-z, or
+      // the ring pole's max-z), which the rotation maps to hBase·w in the world.
+      // Solve T so that pole lands exactly on the join point. With the defaults
+      // (w = u, hBase = min-z) this is the original  pc + u·(parentR − seat − base).
+      const hBase = scale * ((poleIn ? lb.maxz : lb.minz) - cz)
+      T = { x: jx - hBase * w.x, y: jy - hBase * w.y, z: jz - hBase * w.z }
+      if (place.offset) {
+        T = { x: T.x + (place.offset.x ?? 0), y: T.y + (place.offset.y ?? 0), z: T.z + (place.offset.z ?? 0) }
+      }
     } else {
       const base = byName.get(place.on)
       if (!base) throw new Error(`${p.name}: part '${part.name}' stacks on unknown/later part '${place.on}'`)
@@ -247,14 +363,66 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
     allNodes.push(...ctrl)
   }
 
+  // The non-yarn notions, seated on the finished pieces. They carry NO yarn and
+  // no stitches, so they are outside the geometry hash and outside the audit —
+  // the hash still describes exactly the crocheted geometry.
+  const props: PlacedProp[] = (p.props ?? []).map((pr) => {
+    const base = byName.get(pr.on)
+    if (!base) throw new Error(`${p.name}: prop '${pr.name}' sits on unknown/later part '${pr.on}'`)
+    const u = unit(pr.dir)
+    const pc: V3 = {
+      x: (base.bounds.minx + base.bounds.maxx) / 2,
+      y: (base.bounds.miny + base.bounds.maxy) / 2,
+      z: (base.bounds.minz + base.bounds.maxz) / 2,
+    }
+    const parentR = surfaceRadius(base.bounds, u, pr.surfaceFit ?? 'ellipsoid')
+    const seat = pr.seat ?? pr.radiusMm * 0.45
+    const centre: V3 = {
+      x: pc.x + u.x * (parentR - seat),
+      y: pc.y + u.y * (parentR - seat),
+      z: pc.z + u.z * (parentR - seat),
+    }
+    // Semi-axes: `u` (squashed by `flatten`) plus the two directions across it.
+    const Rp = rotZTo(u)
+    const across1 = applyRot(Rp, { x: 1, y: 0, z: 0 })
+    const across2 = applyRot(Rp, { x: 0, y: 1, z: 0 })
+    const rw = pr.radiusMm * (pr.widen ?? 1)
+    const rf = pr.radiusMm * (pr.flatten ?? 1)
+    return {
+      name: pr.name,
+      centre,
+      axes: [
+        { x: across1.x * rw, y: across1.y * rw, z: across1.z * rw },
+        { x: across2.x * rw, y: across2.y * rw, z: across2.z * rw },
+        { x: u.x * rf, y: u.y * rf, z: u.z * rf },
+      ] as [V3, V3, V3],
+      hex: pr.colourHex,
+      gloss: pr.gloss ?? 0.85,
+    }
+  })
+
   const ghash = geometryHash({ model: { nodes: allNodes as never } } as never)
-  return { placed, yr, problems, geometryHash: ghash }
+  return { placed, props, yr, problems, geometryHash: ghash }
 }
 
 export interface BlenderScene {
   fabric: { widthMm: number; heightMm: number; hex: string }
   strokes: { hex: string; sheen: number; radiusMm: number; filaments: number[][][] }[]
-  view: { bgHex: string; marginFactor: number; tiltDeg: number; resY: number; openFabric?: boolean }
+  /** Non-yarn moulded notions (safety eyes, a nose). Absent for every scene
+   *  that has none, so those scenes are byte-identical to before. */
+  props?: { centre: number[]; axes: number[][]; hex: string; gloss: number }[]
+  view: {
+    bgHex: string
+    marginFactor: number
+    tiltDeg: number
+    resY: number
+    openFabric?: boolean
+    yawDeg?: number
+    aimHeightFrac?: number
+    distScale?: number
+    groundScale?: number
+    lightRig?: 'product'
+  }
 }
 
 /**
@@ -277,12 +445,34 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
     minx = Math.min(minx, pp.bounds.minx); maxx = Math.max(maxx, pp.bounds.maxx)
     miny = Math.min(miny, pp.bounds.miny); maxy = Math.max(maxy, pp.bounds.maxy)
   }
-  return {
+  const scene: BlenderScene = {
     fabric: { widthMm: maxx - minx + 30, heightMm: maxy - miny + 30, hex: p.parts[0]?.colourHex ?? '#c98a5e' },
     strokes,
     // A generous margin frames the FULL stacked silhouette (the tilted camera
     // frames off the horizontal footprint, so a tall body+head stack needs room
     // at the top). openFabric drops the flat backing plane — this is a 3D object.
-    view: { bgHex: '#efece6', marginFactor: 0.45, tiltDeg: p.tiltDeg ?? 22, resY: 1200, openFabric: true },
+    view: {
+      bgHex: '#efece6',
+      marginFactor: p.marginFactor ?? 0.45,
+      tiltDeg: p.tiltDeg ?? 22,
+      resY: 1200,
+      openFabric: true,
+    },
   }
+  // Only written when the composition actually has them, so every existing
+  // composition's scene JSON — and its render — is unchanged.
+  if (p.yawDeg != null) scene.view.yawDeg = p.yawDeg
+  if (p.aimHeightFrac != null) scene.view.aimHeightFrac = p.aimHeightFrac
+  if (p.distScale != null) scene.view.distScale = p.distScale
+  if (p.groundScale != null) scene.view.groundScale = p.groundScale
+  if (p.lightRig != null) scene.view.lightRig = p.lightRig
+  if (compiled.props.length) {
+    scene.props = compiled.props.map((pr) => ({
+      centre: [pr.centre.x, pr.centre.y, pr.centre.z],
+      axes: pr.axes.map((a) => [a.x, a.y, a.z]),
+      hex: pr.hex,
+      gloss: pr.gloss,
+    }))
+  }
+  return scene
 }
