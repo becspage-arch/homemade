@@ -78,6 +78,14 @@ export interface StitchDef {
    * stitch) rather than one continuous proud cord along the row.
    */
   headLoopYr?: number
+  /**
+   * Scales this stitch's RELIEF budget (`z` and `zh` in stitchDims) — how far
+   * out of the fabric plane the construction is allowed to work. Absent → 1, the
+   * shared value. Fabric thickness is a real budget (§8d): a re-cut stitch whose
+   * legs lie flat and whose head lies flat has to get its two-diameter thickness
+   * from somewhere, and this is the dial.
+   */
+  reliefScale?: number
 }
 
 export const STITCHES: Record<StitchId, StitchDef> = {
@@ -91,7 +99,7 @@ export const STITCHES: Record<StitchId, StitchDef> = {
   // 14–16 sts / 10 cm → 1.6 rendered diameters of pitch; 16–18 rows / 10 cm → 1.4.
   sc: {
     id: 'sc', heightFactor: 1.0, gaugeYr: 2.7, topLoops: 2,
-    rowYr: 2.4, postHalfYr: 0.7, crownHalfYr: 0.55, headLoopYr: 1.2,
+    rowYr: 2.4, postHalfYr: 1.05, crownHalfYr: 0.55, headLoopYr: 2.0, reliefScale: 1.3,
   },
   hdc: { id: 'hdc', heightFactor: 1.45, gaugeYr: 2.0, topLoops: 2 }, // dense like sc — notches, not holes
   dc: { id: 'dc', heightFactor: 3.2, gaugeYr: 2.3, topLoops: 2 }, // open, but posts lean on each other — slits not gaps

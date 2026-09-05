@@ -229,6 +229,10 @@ export const dimsFor = (yr: number, id: StitchId): StitchDims => {
   const def = STITCHES[id]
   if (def.postHalfYr !== undefined) d.pw = yr * def.postHalfYr
   if (def.crownHalfYr !== undefined) d.cw = yr * def.crownHalfYr
+  if (def.reliefScale !== undefined) {
+    d.z *= def.reliefScale
+    d.zh *= def.reliefScale
+  }
   return d
 }
 
@@ -372,6 +376,13 @@ export function emitPlainStitch(
   const lr = spec.legReliefScale ?? 1 // 1 = identity (flat); <1 calms the leg bulge for same-face rounds
   const dbgStart = S.nodes.length // SCRATCH diagnostic only (stitchDebugNodes)
   const dbgLegs: number[] = []
+  // A stitch that has been re-cut with a real head loop (§8f) also gets the
+  // re-cut POST: legs that splay from the insertion into a V and lie in the
+  // fabric, instead of two parallel bars bowing out of plane. One flag, because
+  // they are one anatomy — a stitch with a real head has somewhere for the legs
+  // to splay TO (the head's two ends). Un-recut stitches are untouched.
+  const hl = spec.headLoopMm ?? 0
+  const recut = hl > 0 && loopMode === 'both'
   // Dive to the FAR side of the crown below. A flat-LYING head (crownLay, §8c)
   // sits low on the surface, so getting under it needs a DEEPER dive — at the
   // proud-crown depth the hook settles nearly coincident with the flattened
@@ -382,24 +393,51 @@ export function emitPlainStitch(
   // (xC) at the top. f = height fraction: 1 at the top of the leg, → 0 at the hook.
   const xa = (f: number): number => xH + (xC - xH) * f
 
+  // THE POST IS A V, NOT A PAIR OF BARS (§8f round 2). The legacy post held both
+  // legs a constant `pw` from the column all the way down, so the stitch settled
+  // as a rounded bead: measured leg straightness 0.83 (a ruler is 1.0), a V
+  // opening of only 31° where a real sc opens 40–60°, and the leg pair bulging
+  // 0.40 d out of the fabric plane against a real ~0.3. A real sc is one loop
+  // pulled up through the stitch below and drawn out to the width of its own
+  // head: the two legs meet at the insertion and SPLAY as they rise, straight,
+  // lying in the fabric. So the half-width tapers with height (`legHalf`), the
+  // nodes sit on the straight line that taper describes, and the leg's relief is
+  // a gentle constant instead of a mid-leg hump.
+  const legHalf = (f: number): number => (recut ? pw * (0.06 + 0.94 * f) : pw)
+  // WHICH SIDE each leg falls on. The legacy post put the DOWN-leg on the
+  // leading side and the up-leg on the trailing one, so the strand overshot the
+  // column, doubled back to the insertion, and doubled back again — two hard
+  // reversals, one at each leg top. A settled dump showed exactly what that
+  // costs: built at ±1.05yr the leg tops relaxed to ±0.6yr, because the bending
+  // constraint straightens the reversal corner and drags each leg top toward the
+  // chord. The V cannot open while the legs are fighting the yarn's own
+  // stiffness. Re-cut, the post runs monotonically in the work direction —
+  // down-leg trailing, hook, up-leg leading — so the splay is WITH the bend
+  // rather than against it, and the loop's turn happens where a loop's turn
+  // belongs: at the head.
+  const sd = recut ? -s : s
+  const legZ = recut ? z * 0.6 : z
+  const legZHi = recut ? z * 0.6 : z * 1.1
+  const nearZ = recut ? z * 0.5 : z * 0.6
+  const nearHalf = recut ? 0.12 : 0.4
   // hdc third loop: the start-of-stitch yarn-over, laid horizontally across the
   // head line before the hook dives. Consecutive ones form the signature ridge.
   if (thirdLoop) push(xC + s * cw * 1.1, ty - dh * 0.9, z * 1.7 * fz)
   // Down-leg: descend the worked face from the previous head toward the insertion.
-  dbgLegs.push(push(xa(1) + s * pw, by + px * 0.8, z * fz * lr))
-  dbgLegs.push(push(xa(0.65) + s * pw, by + px * 0.52, z * fz * lr))
-  dbgLegs.push(push(xa(0.33) + s * pw, by + px * 0.26, z * 1.1 * fz * lr))
-  push(xH + s * pw * 0.4, cy + dh * 0.5, z * 0.6 * fz) // approach the below crown
+  dbgLegs.push(push(xa(1) + sd * legHalf(1), by + px * 0.8, legZ * fz * lr))
+  dbgLegs.push(push(xa(0.65) + sd * legHalf(0.65), by + px * 0.52, legZ * fz * lr))
+  dbgLegs.push(push(xa(0.33) + sd * legHalf(0.33), by + px * 0.26, legZHi * fz * lr))
+  push(xH + sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // approach the below crown
   // Hook UNDER the crown below — tuck to the far z-side of it. Collision (neither
   // can pass through the other) holds the link — no spring.
   const hookIdx = push(xH, cy - dh, hookZ)
   S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: hookIdx, below: bc })
-  push(xH - s * pw * 0.4, cy + dh * 0.5, z * 0.6 * fz) // emerge
+  push(xH - sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // emerge
   // Up-leg: pulled back UP just beside the down-leg → the two strands of the post.
-  dbgLegs.push(push(xa(0.33) - s * pw, by + px * 0.26, z * 1.1 * fz * lr))
-  const postMid = push(xa(0.65) - s * pw, by + px * 0.52, z * fz * lr)
+  dbgLegs.push(push(xa(0.33) - sd * legHalf(0.33), by + px * 0.26, legZHi * fz * lr))
+  const postMid = push(xa(0.65) - sd * legHalf(0.65), by + px * 0.52, legZ * fz * lr)
   dbgLegs.push(postMid)
-  dbgLegs.push(push(xa(1) - s * pw, by + px * 0.8, z * fz * lr))
+  dbgLegs.push(push(xa(1) - sd * legHalf(1), by + px * 0.8, legZ * fz * lr))
 
   // Throw this stitch's crown. A plain stitch leaves a single apex (back == front);
   // blo/flo split it into a proud (unworked, floats as the ridge) loop + a tucked
@@ -407,12 +445,11 @@ export function emitPlainStitch(
   // real spread the construction needs — a later retroactive z-nudge on an
   // already-placed node stretches its distance constraints against their recorded
   // rest length, so relaxation mostly undoes it (measured: ~0.25yr net gap).
-  const hl = spec.headLoopMm ?? 0
   let crownBack: number
   let crownFront: number
   let trailA: number
   let headPartner = -1
-  if (hl > 0 && loopMode === 'both') {
+  if (recut) {
     // THE HEAD IS A LOOP, NOT A BUMP (§8f — the close-range look pass).
     //
     // The legacy head was three nodes making a shallow rise on the row line: it
@@ -429,13 +466,26 @@ export function emitPlainStitch(
     // proud strand — which is this stitch's crown, the loop the next row dives
     // under, exactly as before. The interlock and its recorded link are unchanged;
     // only the head's yarn budget and shape are.
-    const hy = dh * 1.1 // the two strands' separation up the row
-    trailA = push(xC - s * cw * 0.6, ty - hy * 1.25, zh * 0.55 * fz) // off the post onto the head line
-    push(xC - s * hl * 0.72, ty - hy * 0.75, zh * 0.35 * fz) // tucked strand, running BACK
-    headPartner = push(xC - s * hl, ty - hy * 0.1, zh * 0.3 * fz)
-    push(xC - s * hl * 1.03, ty + hy * 0.5, zh * 0.5 * fz) // the loop's tail — it turns here
-    push(xC - s * hl * 0.6, ty + hy * 0.85, zh * 0.95 * fz) // proud strand, coming FORWARD
-    const crown = push(xC, ty + hy * 0.6, zh * 1.15 * fz)
+    // ROUND 2: the head has to LIE FLAT. Built at hl 1.2yr it carried ~2·hl of
+    // yarn in a 1.7yr span of a 2.7yr stitch, so the surplus had nowhere to go
+    // but out of plane — it settled 1.21yr proud (0.47 d above its own legs)
+    // as a round knot on top of the bead. Widen the loop until it spans the
+    // whole stitch (consecutive heads then abut, which is what the row top of
+    // real crochet is) so the same yarn is spent running ALONG the row, and
+    // separate the two strands UP THE ROW rather than in depth so they read as
+    // two parallel lines under a flat top rather than one stacked lump.
+    // The head now sits ON TOP of the V rather than beside it, and it is traced
+    // in the direction the up-leg already leans (FORWARD, the work direction),
+    // so nothing reverses until the loop's own rounded turn. Its entry is at the
+    // up-leg's own x — tying the head's start back to the column centre was the
+    // second thing pinching the V shut.
+    const hy = dh * 1.45 // the two strands' separation up the row
+    trailA = push(xC - sd * pw, ty - hy * 0.95, zh * 0.4 * fz) // straight off the up-leg onto the head line
+    push(xC + s * hl * 0.72, ty - hy * 0.35, zh * 0.25 * fz) // tucked strand, running FORWARD
+    headPartner = push(xC + s * hl, ty + hy * 0.15, zh * 0.2 * fz)
+    push(xC + s * hl * 0.98, ty + hy * 0.7, zh * 0.38 * fz) // the loop's far end — it turns here
+    push(xC + s * hl * 0.5, ty + hy * 0.85, zh * 0.65 * fz) // proud strand, coming BACK
+    const crown = push(xC, ty + hy * 0.55, zh * 0.8 * fz)
     crownBack = crown
     crownFront = crown
   } else if (loopMode === 'both') {
@@ -460,9 +510,10 @@ export function emitPlainStitch(
       hookNode: backFloats ? frontNode : backNode,
     })
   }
+  const hyOut = dh * 1.45 * 0.3
   const trailB =
-    hl > 0 && loopMode === 'both'
-      ? push(xC + s * cw * 0.9, ty - dh * 0.75, zh * 0.7 * fz) // leave the head, on to the next stitch
+    recut
+      ? push(xC + s * cw * 0.9, ty - hyOut, zh * 0.45 * fz) // drop off the head, on to the next stitch
       : push(xC + s * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
   stitchDebugNodes.push({
     j, c, id,

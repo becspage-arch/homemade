@@ -44,6 +44,10 @@ import { stitchDebugNodes } from '../src/lib/loom/crochet/engine/yarnPath'
 interface Target { lo: number; hi: number; note: string }
 const TARGETS: Record<string, Target> = {
   yarnPerStitch: { lo: 7.0, hi: 9.5, note: '~3.0–4.0 cm per sc at d=4.2 mm (~3–4 m per 100 sc)' },
+  legStraight: { lo: 0.93, hi: 1.0, note: 'a real sc leg is nearly STRAIGHT (chord ÷ arc = 1 is a ruler)' },
+  vAngle: { lo: 40, hi: 60, note: 'the two legs splay from the insertion into a V, ~40-60 degrees (DEGREES, not d)' },
+  legOutOfPlane: { lo: 0.0, hi: 0.3, note: 'the leg pair lies IN the fabric — worst leg node under ~0.3 d off the plane' },
+  crownProudFlat: { lo: 0.0, hi: 0.3, note: 'the top loop LIES FLAT — under ~0.3 d proud of its own legs' },
   stitchPitch: { lo: 1.49, hi: 1.70, note: '14–16 sts / 10 cm' },
   rowPitch: { lo: 1.33, hi: 1.49, note: '16–18 rows / 10 cm' },
   crowding: { lo: 2.8, hi: 4.8, note: 'yarn length per unit cell area (derived from the two above)' },
@@ -132,6 +136,12 @@ function main(): void {
   // The two strands of the HEAD, at this stitch's column — a real stitch's top
   // reads as a pair; below one diameter apart it reads as one cord.
   const headSep: number[] = []
+  const headSepY: number[] = []
+  const headSepZ: number[] = []
+  const legStraight: number[] = []
+  const legStraightVis: number[] = []
+  const vAngle: number[] = []
+  const legOut: number[] = []
   for (const r of recs) {
     if (!interior(r)) continue
     const f = face(r.j)
@@ -145,7 +155,42 @@ function main(): void {
       // matching heights pair as (0,5), (1,4), (2,3).
       for (const [a, b] of [[0, 5], [1, 4], [2, 3]] as const) legSep.push(seg(L[a]!, L[b]!))
     }
-    if (r.headPartner >= 0) headSep.push(seg(r.crown, r.headPartner))
+    if (r.headPartner >= 0) {
+      headSep.push(seg(r.crown, r.headPartner))
+      const a = n[r.crown]!
+      const b = n[r.headPartner]!
+      headSepY.push(Math.abs(a.y - b.y))
+      headSepZ.push(Math.abs(a.z - b.z))
+    }
+    if (L.length === 6) {
+      // STRAIGHTNESS: chord ÷ arc over each leg's own contiguous run of the
+      // strand. The down-leg runs [legs[0] … hook], the up-leg [hook … legs[5]]
+      // (node index IS position along the strand here). 1.0 is a ruler; a bowed
+      // leg reads as the knobbly bead the close-up shows.
+      const chordArc = (i0: number, i1: number): number => {
+        let arc = 0
+        for (let k = i0; k < i1; k++) arc += seg(k, k + 1)
+        return arc > 0 ? seg(i0, i1) / arc : NaN
+      }
+      legStraight.push(chordArc(L[0]!, r.hook))
+      legStraight.push(chordArc(r.hook, L[5]!))
+      // The VISIBLE leg on its own — the part a close-up actually reads, without
+      // the dive corner at the insertion, which is a real corner and can never
+      // measure straight.
+      legStraightVis.push(chordArc(L[0]!, L[2]!))
+      legStraightVis.push(chordArc(L[3]!, L[5]!))
+      // THE V: the angle the two legs open by, measured in the fabric PLANE
+      // (x along the row, y up it) from the shared insertion at the hook.
+      const H = n[r.hook]!
+      const A = n[L[0]!]!
+      const B = n[L[5]!]!
+      const ang = (P: typeof A): number => Math.atan2(P.y - H.y, P.x - H.x)
+      let dv = Math.abs(ang(A) - ang(B))
+      if (dv > Math.PI) dv = Math.PI * 2 - dv
+      vAngle.push((dv * 180) / Math.PI)
+      // OUT OF PLANE: the worst leg node's distance from the fabric mid-plane.
+      for (const k of L) legOut.push(Math.abs(n[k]!.z))
+    }
   }
 
   // --- thickness: robust z extent of the WORKED fabric (skip the pinned anchor).
@@ -195,7 +240,28 @@ function main(): void {
   line('  leg relief', mean(legRel))
   line('  hook relief', mean(hookRel))
   line('  post leg separation', mean(legSep))
-  if (headSep.length) line('  head strand separation', mean(headSep))
+  if (headSep.length) {
+    line('  head strand separation', mean(headSep))
+    line('    …of which up the row', mean(headSepY))
+    line('    …of which in depth', mean(headSepZ))
+  }
+  console.log('-'.repeat(74))
+  // The bead-vs-V block (§8f round 2). Straightness and the V angle are ratios
+  // and degrees, so they bypass the mm→d conversion.
+  {
+    const row = (label: string, v: number, key: keyof typeof TARGETS, unit = ''): void => {
+      const t = TARGETS[key]!
+      console.log(
+        `${label.padEnd(26)}${v.toFixed(2).padStart(8)}${unit.padStart(10)}${`${t.lo}–${t.hi}`.padStart(13)}${(v / ((t.lo + t.hi) / 2)).toFixed(2).padStart(8)}×  ${v < t.lo ? 'UNDER' : v > t.hi ? 'OVER' : 'ok'}`,
+      )
+    }
+    row('leg straightness, visible', mean(legStraightVis), 'legStraight', 'ratio')
+    row('leg straightness, w/ dive', mean(legStraight), 'legStraight', 'ratio')
+    row('V opening angle', mean(vAngle), 'vAngle', 'deg')
+  }
+  line('leg pair out of plane (max)', pct(legOut, 90), 'legOutOfPlane')
+  console.log(`${'  …as a share of thickness'.padEnd(26)}${(pct(legOut, 90) / thickness).toFixed(2).padStart(8)}     ratio   (0 = the mid-plane, 0.5 = the face)`)
+  line('crown proud (flat-top bar)', mean(crownRel) - mean(legRel), 'crownProudFlat')
   console.log('-'.repeat(74))
   console.log(`stitch cell: ${rowD(mean(pitchX))}d wide x ${rowD(mean(pitchY))}d tall (real sc ≈ 1.6d x 1.4d)`)
   console.log(`\ntargets, in words:`)
