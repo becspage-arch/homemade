@@ -13,6 +13,7 @@ import { scheduledStepPush } from '@/inngest/functions/scheduled-step-push'
 import { techniquePublishSweep } from '@/inngest/functions/technique-publish-sweep'
 import { moderateUserRecipesCron } from '@/inngest/functions/moderate-user-recipes-cron'
 import { needleworkHeroRender } from '@/inngest/functions/needlework-hero-render'
+import { crochetHeroRender } from '@/inngest/functions/crochet-hero-render'
 import { bulkCrossStitchBatch, bulkCrossStitchIdea, bulkNeedleworkBatch } from '@/inngest/functions/bulk-generation'
 
 export const { GET, POST, PUT } = serve({
@@ -29,6 +30,7 @@ export const { GET, POST, PUT } = serve({
     techniquePublishSweep,
     moderateUserRecipesCron,
     needleworkHeroRender,
+    crochetHeroRender,
     bulkCrossStitchBatch,
     bulkCrossStitchIdea,
     bulkNeedleworkBatch,

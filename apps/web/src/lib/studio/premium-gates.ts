@@ -12,6 +12,11 @@
  *
  * Surviving gate inventory:
  *   PHOTO_TO_CHART          — create-your-own (photo → stitchable chart)
+ *   CROCHET_*               — crochet create-your-own (photo to tapestry, the
+ *                             amigurumi designer, and designing from an idea).
+ *                             Enforced with `hasPremium` + PremiumOverlay at the
+ *                             call site the same way cross-stitch's is; the copy
+ *                             lives here so every craft's gate reads alike.
  *   PUBLIC_SUBMISSION       — designer-side, funds the revenue share
  *   SEWING_*                — sewing personalisation / hack composer (handled
  *                             in the sewing category's own sign-off pass)
@@ -32,6 +37,9 @@ export const STUDIO_PREMIUM_GATING_ENABLED = false
 export type StudioGateFeature =
   | 'PHOTO_TO_CHART'
   | 'IDEA_TO_CHART'
+  | 'CROCHET_PHOTO_TO_TAPESTRY'
+  | 'CROCHET_AMIGURUMI_DESIGNER'
+  | 'CROCHET_IDEA_TO_PATTERN'
   | 'PUBLIC_SUBMISSION'
   | 'SEWING_PERSONALISATION'
   | 'SEWING_PERSONALISATION_LAYERED_PDF'
@@ -60,6 +68,21 @@ const COPY: Record<StudioGateFeature, { message: string; rationale: string }> = 
   IDEA_TO_CHART: {
     message: 'Designing a pattern from an idea is a Homemade Premium feature.',
     rationale: 'Premium draws your idea, lets you regenerate until you love it, then turns it into your own stitchable chart.',
+  },
+  CROCHET_PHOTO_TO_TAPESTRY: {
+    message: 'Turning a photo into a tapestry pattern is a Homemade Premium feature.',
+    rationale:
+      'Premium reads your photo into a grid of coloured stitches, names the yarns, and writes the rows out for you.',
+  },
+  CROCHET_AMIGURUMI_DESIGNER: {
+    message: 'The amigurumi designer is a Homemade Premium feature.',
+    rationale:
+      'Premium lets you pick the creature, the size and the yarns, then writes the round-by-round pattern and makes a photo of the finished piece.',
+  },
+  CROCHET_IDEA_TO_PATTERN: {
+    message: 'Designing a crochet pattern from a description is a Homemade Premium feature.',
+    rationale:
+      'Premium talks the idea through with you, then writes a pattern whose every stitch has been checked before you cast on.',
   },
   PUBLIC_SUBMISSION: {
     message: 'Submitting to the public library is a Homemade Premium feature.',

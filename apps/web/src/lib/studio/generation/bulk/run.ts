@@ -4,9 +4,18 @@ import { planCrossStitchBriefs, planNeedleworkBriefs } from './planner'
 import {
   generateCrossStitchCandidate,
   publishCrossStitchGem,
-  recentCrossStitchSlugs,
   type CandidateTweak,
 } from './cross-stitch'
+import {
+  fingerprintCandidate,
+  loadPublicCrossStitchFingerprints,
+  findDuplicate,
+  liveShelfCounts,
+  publicSubjectKeys,
+} from './dedupe-guard'
+import { CROSS_STITCH_SHELVES } from '../categories'
+import { summaryLine } from './run-status'
+import { shelfDeficits, allocateShelves, shelfSlots } from './shelf-plan'
 import {
   generateNeedleworkCandidate,
   publishNeedleworkGem,
@@ -34,6 +43,11 @@ import {
 
 export type Craft = 'cross-stitch' | 'needlework'
 
+// The run-completion predicate + the summary line live in `run-status.ts` (pure,
+// unit-testable, no server-only deps) and are re-exported here so callers keep
+// importing one module.
+export { runIsComplete, summaryLine, type RunCounters } from './run-status'
+
 /**
  * Minimal step runner — matches Inngest's `step.run(id, fn)`. Inline default so
  * the batch also runs outside Inngest (local scripts) with no orchestration.
@@ -50,9 +64,15 @@ export interface BatchSummary {
   requested: number
   published: number
   culled: number
+  /** Gate-passed candidates the publish-path duplicate guard refused. */
+  duplicates: number
+  /** Ideas that never generated (the trailing-24h Fal spend cap was hit). */
+  skipped: number
   repaired: number
   /** Total candidate generations across the batch (best-of-N: >1 per idea). */
   generations: number
+  /** Of those, how many used the Flux 1.1 Pro (dense) tier. */
+  proGenerations: number
   errors: number
   /** Slugs of the gems that shipped. */
   gems: string[]
@@ -60,8 +80,9 @@ export interface BatchSummary {
   killReasons: string[]
   /** One-line progress string for the audit log + admin history. */
   line: string
-  /** Set when the batch could not run at all (gate/render not wired). */
-  skipped?: string
+  /** Set when the batch could not run at all (gate/render not wired). Distinct
+   *  from `skipped`, which counts ideas the spend cap stopped. */
+  notRun?: string
 }
 
 /**
@@ -79,6 +100,16 @@ export interface AttemptResult {
   reasons: string[]
   repairAction?: GateResult['repairAction']
   published: boolean
+  /**
+   * Set when the gate KEPT the candidate but the publish-path duplicate guard
+   * refused it: the slug it duplicates. TERMINAL — the idea is never re-rolled,
+   * because a duplicate means the idea itself was already made and a fresh roll
+   * of the same idea is another duplicate. Nothing was written.
+   */
+  duplicateOf?: string
+  duplicateReason?: string
+  /** True when this attempt generated on the Flux 1.1 Pro (dense) tier. */
+  pro?: boolean
 }
 
 /**
@@ -112,11 +143,21 @@ export function tweakFor(action: GateResult['repairAction']): CandidateTweak {
 
 // ─────────────────────────── CROSS-STITCH ───────────────────────────
 
-/** One cross-stitch attempt: generate → gate → publish on 'keep'. Buffer stays local. */
+/**
+ * One cross-stitch attempt: generate → gate → DUPLICATE GUARD → publish. The
+ * render Buffer never leaves this function (step results must stay small).
+ *
+ * The guard between the gate and the publish is the whole point of the September
+ * 2026 hardening: the gate can only see the subjects kept in the same batch, so
+ * it has no idea whether this candidate repeats something published in July. The
+ * guard compares the candidate's image, chart AND subject fingerprints against
+ * every PUBLIC cross-stitch pattern, and a hit is terminal.
+ */
 export async function crossStitchAttempt(
   brief: Awaited<ReturnType<typeof planCrossStitchBriefs>>[number],
   tweak: CandidateTweak,
   keptSubjects: string[],
+  ctx: { bulkRunId?: string | null; attempt?: number } = {},
 ): Promise<AttemptResult> {
   const candidate = await generateCrossStitchCandidate(brief, tweak)
   const verdict = await visionGate(candidate.renderPng, {
@@ -125,22 +166,63 @@ export async function crossStitchAttempt(
     colours: candidate.colourCount,
     keptSubjects,
   })
-  if (verdict.verdict === 'keep') {
-    await publishCrossStitchGem(brief, candidate)
-    return { verdict: 'keep', reasons: verdict.reasons, published: true }
+  if (verdict.verdict !== 'keep') {
+    return { verdict: verdict.verdict, reasons: verdict.reasons, repairAction: verdict.repairAction, published: false, pro: candidate.pro }
   }
-  return { verdict: verdict.verdict, reasons: verdict.reasons, repairAction: verdict.repairAction, published: false }
+
+  // Gate says gem. Now: is it a gem we already have?
+  const fingerprints = await fingerprintCandidate(candidate.renderPng, candidate.data, brief.subject)
+  const catalogue = await loadPublicCrossStitchFingerprints()
+  const hit = findDuplicate(fingerprints, catalogue)
+  if (hit) {
+    return {
+      verdict: 'keep',
+      reasons: [`duplicate of ${hit.slug}: ${hit.reason}`],
+      published: false,
+      duplicateOf: hit.slug,
+      duplicateReason: hit.reason,
+      pro: candidate.pro,
+    }
+  }
+
+  await publishCrossStitchGem(brief, candidate, {
+    fingerprints,
+    gate: { verdict: verdict.verdict, reasons: verdict.reasons },
+    bulkRunId: ctx.bulkRunId ?? null,
+    attempt: ctx.attempt ?? 1,
+    tweak,
+  })
+  return { verdict: 'keep', reasons: verdict.reasons, published: true, pro: candidate.pro }
+}
+
+/**
+ * The planning context for one batch: the whole catalogue as an avoid list, and
+ * a shelf quota drawn in proportion to each shelf's gap to its target. Shared by
+ * the inline runner and the Inngest dispatcher so both plan identically.
+ */
+export async function crossStitchPlanContext(count: number): Promise<Parameters<typeof planCrossStitchBriefs>[1]> {
+  const [counts, avoidSubjectKeys] = await Promise.all([
+    liveShelfCounts().catch(() => ({}) as Record<string, number>),
+    publicSubjectKeys().catch(() => [] as string[]),
+  ])
+  const deficits = shelfDeficits(CROSS_STITCH_SHELVES, counts)
+  const alloc = allocateShelves(deficits, count)
+  return {
+    avoidSubjectKeys,
+    shelfSlots: shelfSlots(alloc),
+    shelfQuota: alloc.map((a) => ({ slug: a.slug, name: a.name, briefs: a.briefs, deficit: a.deficit })),
+  }
 }
 
 export async function runCrossStitchBatch(count: number, step: StepRunner = inlineStep): Promise<BatchSummary> {
-  const base: BatchSummary = { craft: 'cross-stitch', requested: count, published: 0, culled: 0, repaired: 0, generations: 0, errors: 0, gems: [], killReasons: [], line: '' }
+  const base: BatchSummary = { craft: 'cross-stitch', requested: count, published: 0, culled: 0, duplicates: 0, skipped: 0, repaired: 0, generations: 0, proGenerations: 0, errors: 0, gems: [], killReasons: [], line: '' }
   if (!gateConfigured()) {
-    return { ...base, skipped: 'gate-not-wired', line: 'cross-stitch batch skipped — ANTHROPIC_API_KEY not set, refusing to publish un-gated' }
+    return { ...base, notRun: 'gate-not-wired', line: 'cross-stitch batch skipped — ANTHROPIC_API_KEY not set, refusing to publish un-gated' }
   }
 
   const briefs = await step.run('xs-plan', async () => {
-    const recent = await recentCrossStitchSlugs().catch(() => [])
-    return planCrossStitchBriefs(count, recent)
+    const ctx = await crossStitchPlanContext(count)
+    return planCrossStitchBriefs(count, ctx)
   })
   const keptSubjects: string[] = []
 
@@ -152,11 +234,24 @@ export async function runCrossStitchBatch(count: number, step: StepRunner = inli
       let tweak: CandidateTweak = {}
       let last: AttemptResult | null = null
       let publishedThis = false
+      let duplicated = false
       for (let attempt = 1; attempt <= MAX_XS_ATTEMPTS; attempt++) {
         base.generations++
         const tweakForStep = tweak
-        last = await step.run(`xs-${brief.slug}-a${attempt}`, () => crossStitchAttempt(brief, tweakForStep, keptSubjects))
-        if (last.verdict === 'keep') {
+        const attemptNo = attempt
+        last = await step.run(`xs-${brief.slug}-a${attempt}`, () =>
+          crossStitchAttempt(brief, tweakForStep, keptSubjects, { attempt: attemptNo }),
+        )
+        if (last.pro) base.proGenerations++
+        if (last.duplicateOf) {
+          // TERMINAL. The idea itself is the duplicate — re-rolling it just
+          // generates the same collision again.
+          base.duplicates++
+          base.killReasons.push(`duplicate of ${last.duplicateOf}`)
+          duplicated = true
+          break
+        }
+        if (last.verdict === 'keep' && last.published) {
           keptSubjects.push(brief.subject)
           base.gems.push(brief.slug)
           base.published++
@@ -173,7 +268,7 @@ export async function runCrossStitchBatch(count: number, step: StepRunner = inli
         if (killIsUnrerollable(last.reasons)) break // re-roll can't save it — cull
         tweak = {} // a bad roll of a fine idea — take a fresh stochastic shot
       }
-      if (!publishedThis && last && last.verdict !== 'keep') {
+      if (!publishedThis && !duplicated && last && last.verdict !== 'keep') {
         base.culled++
         base.killReasons.push(...last.reasons)
       }
@@ -183,7 +278,7 @@ export async function runCrossStitchBatch(count: number, step: StepRunner = inli
     }
   }
 
-  base.line = `cross-stitch: ${base.published} gems published, ${base.culled} culled, ${base.repaired} repairs, ${base.generations} generations, ${base.errors} errors (of ${count})`
+  base.line = summaryLine(base)
   return base
 }
 
@@ -209,12 +304,12 @@ async function needleworkAttempt(
 }
 
 export async function runNeedleworkBatch(count: number, step: StepRunner = inlineStep): Promise<BatchSummary> {
-  const base: BatchSummary = { craft: 'needlework', requested: count, published: 0, culled: 0, repaired: 0, generations: 0, errors: 0, gems: [], killReasons: [], line: '' }
+  const base: BatchSummary = { craft: 'needlework', requested: count, published: 0, culled: 0, duplicates: 0, skipped: 0, repaired: 0, generations: 0, proGenerations: 0, errors: 0, gems: [], killReasons: [], line: '' }
   if (!gateConfigured()) {
-    return { ...base, skipped: 'gate-not-wired', line: 'needlework batch skipped — ANTHROPIC_API_KEY not set, refusing to publish un-gated' }
+    return { ...base, notRun: 'gate-not-wired', line: 'needlework batch skipped — ANTHROPIC_API_KEY not set, refusing to publish un-gated' }
   }
   if (!fargateRenderWired()) {
-    return { ...base, skipped: 'render-not-wired', line: 'needlework batch skipped — LOOM_RENDER!=fargate, hero render not wired' }
+    return { ...base, notRun: 'render-not-wired', line: 'needlework batch skipped — LOOM_RENDER!=fargate, hero render not wired' }
   }
 
   const briefs = await step.run('nw-plan', async () => {
@@ -255,7 +350,7 @@ export async function runNeedleworkBatch(count: number, step: StepRunner = inlin
     }
   }
 
-  base.line = `needlework: ${base.published} gems published, ${base.culled} culled, ${base.repaired} repairs, ${base.generations} generations, ${base.errors} errors (of ${count})`
+  base.line = summaryLine(base)
   return base
 }
 

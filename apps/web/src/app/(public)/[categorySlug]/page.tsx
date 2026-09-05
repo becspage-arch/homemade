@@ -1,17 +1,21 @@
 import { cache } from 'react'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { prisma, type CategoryArchetype } from '@homemade/db'
+import { prisma, type CategoryArchetype, TutorialStatus, Visibility } from '@homemade/db'
 import { JsonLd } from '@/components/seo/json-ld'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import {
   buildBreadcrumbSchema,
   buildCollectionPageSchema,
+  absoluteImageUrl,
 } from '@/lib/seo/schema-builders'
 import {
   buildPublicMetadata,
   notFoundMetadata,
 } from '@/lib/seo/metadata-helpers'
+import { mediaUrl } from '@/lib/media'
+import { patternHeroUrl } from '@/lib/studio/pattern-hero'
+import { tutorialHeroUrl } from '@/lib/tutorial-hero'
 
 import { RecipeLayout } from '@/components/public/category-layouts/recipe-layout'
 import { PatternLayout } from '@/components/public/category-layouts/pattern-layout'
@@ -41,9 +45,58 @@ const loadCategory = cache(async (slug: string) => {
     where: { slug, isPublicVisible: true },
     include: {
       subCategories: { orderBy: [{ order: 'asc' }, { name: 'asc' }] },
+      tileImage: { select: { cloudflareId: true, r2Key: true } },
     },
   })
 })
+
+/**
+ * A representative image for the category card (og:image). Categories don't
+ * carry a curated hero of their own — `tileImage` is only populated for a
+ * handful of nav tiles — so this falls back to the most recently published
+ * piece inside the category: a Pattern for PATTERN-archetype categories
+ * (cross-stitch, crochet, knitting share the one model), a Tutorial hero
+ * everywhere else.
+ */
+async function categoryImageUrl(
+  category: NonNullable<Awaited<ReturnType<typeof loadCategory>>>,
+): Promise<string | undefined> {
+  if (category.tileImage) {
+    const url = mediaUrl(category.tileImage, 'hero')
+    if (url) return absoluteImageUrl(url)
+  }
+
+  if (category.archetype === 'PATTERN') {
+    const pattern = await prisma.pattern.findFirst({
+      where: {
+        ownerUserId: null,
+        visibility: Visibility.PUBLIC,
+        publishedAt: { not: null },
+        subCategory: { categoryId: category.id },
+      },
+      orderBy: { publishedAt: 'desc' },
+      select: {
+        id: true,
+        hero: { select: { cloudflareId: true, r2Key: true } },
+        thumbnail: { select: { cloudflareId: true, r2Key: true } },
+      },
+    })
+    if (pattern) return absoluteImageUrl(patternHeroUrl(pattern, 'hero'))
+    return undefined
+  }
+
+  const tutorial = await prisma.tutorial.findFirst({
+    where: { categoryId: category.id, status: TutorialStatus.PUBLISHED },
+    orderBy: { publishedAt: 'desc' },
+    select: {
+      id: true,
+      hero: { select: { cloudflareId: true, r2Key: true } },
+      heroImageStrategy: true,
+    },
+  })
+  if (tutorial) return absoluteImageUrl(tutorialHeroUrl(tutorial, 'hero'))
+  return undefined
+}
 
 export async function generateMetadata({
   params,
@@ -63,6 +116,8 @@ export async function generateMetadata({
     description,
     path: `/${categorySlug}`,
     ogType: 'website',
+    imageUrl: await categoryImageUrl(category),
+    imageAlt: category.name,
     index: !filtered,
   })
 }

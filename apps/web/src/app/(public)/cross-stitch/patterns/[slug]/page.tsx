@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation'
 import { prisma, Visibility, parsePatternData, estimateSkeinCount } from '@homemade/db'
 import { bumpPatternView } from '@/lib/popularity'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
-import { buildBreadcrumbSchema } from '@/lib/seo/schema-builders'
+import { buildBreadcrumbSchema, absoluteImageUrl } from '@/lib/seo/schema-builders'
 import { JsonLd } from '@/components/seo/json-ld'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { hasPremium, isPremiumContent, canAccessPremiumContent } from '@/lib/entitlements'
@@ -29,7 +29,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params
   const row = await prisma.pattern.findUnique({
     where: { slug },
-    select: { name: true, description: true, ownerUserId: true, visibility: true },
+    select: {
+      id: true,
+      name: true,
+      description: true,
+      ownerUserId: true,
+      visibility: true,
+      hero: { select: { cloudflareId: true, r2Key: true } },
+      thumbnail: { select: { cloudflareId: true, r2Key: true } },
+    },
   })
   if (!row || row.ownerUserId !== null || row.visibility !== Visibility.PUBLIC) {
     return { robots: { index: false, follow: false } }
@@ -38,6 +46,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${row.name} · cross-stitch pattern · homemade`,
     description: row.description ?? `Cross-stitch pattern available on homemade.education.`,
     path: `/cross-stitch/patterns/${slug}`,
+    imageUrl: absoluteImageUrl(patternHeroUrl(row, 'hero')),
+    imageAlt: row.name,
   })
 }
 
@@ -112,7 +122,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
     name: row.name,
     genre: 'Cross-stitch pattern',
     url: `/cross-stitch/patterns/${slug}`,
-    image: patternHeroUrl({ id: row.id, hero: row.hero }, 'hero'),
+    image: absoluteImageUrl(patternHeroUrl({ id: row.id, hero: row.hero, thumbnail: row.thumbnail }, 'hero')),
     ...(row.description ? { description: row.description } : {}),
     ...(row.designer
       ? { author: { '@type': 'Person', name: row.designer.displayName } }
