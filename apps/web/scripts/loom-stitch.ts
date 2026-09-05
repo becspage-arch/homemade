@@ -10,7 +10,9 @@
  *   1. build + relax the standard swatch (engine/buildSwatch, dictionary recipe)
  *   2. NUMERIC AUDIT GATE — genuinely stitched, in data (engine/auditChecks).
  *      Fails → STOPS. Fix the CONSTRUCTION; never tweak the look to pass.
- *   3. Blender render (runs inline; takes ~5–20 min; run ONE at a time)
+ *   3. Blender render — local Blender, or the Fargate container with
+ *      LOOM_RENDER=fargate (same pinned Blender, same loom_render_crochet.py,
+ *      same scene + samples). Runs inline; minutes either way.
  *   4. photoreal hero + fidelity gate (loom-aspen-hero)
  *   5. prints the report block: our PNGs + the reference photo to compare against
  *
@@ -29,6 +31,7 @@ import { auditProblems } from '../src/lib/loom/crochet/engine/auditChecks'
 import { SWATCH_RECIPES } from '../src/lib/loom/crochet/engine/dictionary'
 import { pliedFilaments, smooth, type V3 } from '../src/lib/loom/crochet/yarnLoop'
 import { loadCredentials } from './loom-hybrid-fal'
+import { renderBase, loomRenderMode } from './loom-base-render'
 
 // Populate FAL_KEY etc. from .env.credentials if present, so the hero step below
 // can detect whether the photoreal finish is available (absent → base-only).
@@ -36,14 +39,13 @@ loadCredentials()
 
 const OUT = resolve(process.cwd(), '../../.loom-scratch/crochet')
 mkdirSync(OUT, { recursive: true })
-const BLENDER = 'C:/Users/Rebecca/blender/blender-4.2.9-windows-x64/blender.exe'
 
 function fail(msg: string): never {
   console.error(`\nPIPELINE FAILED — ${msg}`)
   process.exit(1)
 }
 
-function main() {
+async function main() {
   const arg = process.argv[2] ?? ''
   if (!isSwatchArg(arg)) fail(`unknown stitch '${arg}' — known: ${Object.keys(SWATCH_RECIPES).join(', ')}`)
   const yr = Number(process.argv[3] ?? 2.4)
@@ -80,13 +82,12 @@ function main() {
   const scenePath = resolve(OUT, `${name}.json`)
   const basePng = resolve(OUT, `${name}.png`)
   writeFileSync(scenePath, JSON.stringify(scene))
-  console.log(`[3/4] Blender render → ${basePng} (minutes; one Blender at a time)`)
-  const r = spawnSync(
-    BLENDER,
-    ['--background', '--factory-startup', '--python', resolve(process.cwd(), 'scripts/loom_render_crochet.py'), '--', scenePath, basePng, '150'],
-    { stdio: ['ignore', 'ignore', 'inherit'] },
-  )
-  if (r.status !== 0 || !existsSync(basePng)) fail(`Blender render did not produce ${basePng}`)
+  console.log(`[3/4] Blender render (${loomRenderMode()}) → ${basePng} (minutes)`)
+  try {
+    await renderBase(scenePath, basePng, 150, 'loom_render_crochet.py')
+  } catch (e) {
+    fail((e as Error).message)
+  }
 
   // 4. Photoreal hero + fidelity gate. The hero (Fal creative-upscale) is the
   // photoreal FINISH — it needs FAL_KEY. When that's absent (or the upscale

@@ -3,14 +3,16 @@ name: Build loom-render image
 # Builds the headless Blender container (apps/web/scripts/loom-render/Dockerfile)
 # and pushes it to the ECR repo homemade/loom-render. GitHub's runner has
 # Docker, so this is where the image is built (no local Docker needed). Run
-# manually after the CDK stack has created the ECR repo, or whenever
-# loom_render.py / the Dockerfile change.
+# manually after the CDK stack has created the ECR repo, or whenever either
+# render script (loom_render.py / loom_render_crochet.py) or the Dockerfile
+# change.
 on:
   workflow_dispatch:
   push:
     branches: [main]
     paths:
       - 'apps/web/scripts/loom_render.py'
+      - 'apps/web/scripts/loom_render_crochet.py'
       - 'apps/web/scripts/loom-render/**'
       - '.github/workflows/loom-render-image.yml'
 
@@ -51,7 +53,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           # Context is apps/web/scripts so the Dockerfile can COPY the
-          # unchanged loom_render.py alongside loom-render/entrypoint.sh.
+          # unchanged render scripts alongside loom-render/entrypoint.sh.
           context: apps/web/scripts
           file: apps/web/scripts/loom-render/Dockerfile
           push: true

@@ -7,6 +7,9 @@
 #   LOOM_SCENE_KEY   S3 key of the scene.json to render
 #   LOOM_OUT_KEY     S3 key to write the rendered PNG to
 #   LOOM_SAMPLES     Cycles samples (default 200 — matches renderHero's default)
+#   LOOM_SCRIPT      which renderer to run, a bare filename in /opt/loom:
+#                    loom_render.py (default, needlework) or
+#                    loom_render_crochet.py (the crochet yarn-fabric recipe)
 #
 # Optional grade env forwarded from the caller for parity with the local run
 # (loom_render.py reads them itself; defaults are the production look):
@@ -21,6 +24,14 @@ set -euo pipefail
 : "${LOOM_OUT_KEY:?LOOM_OUT_KEY is required}"
 SAMPLES="${LOOM_SAMPLES:-200}"
 
+# Pick the renderer. basename() so the value can only ever name a script that
+# ships in the image — no path escape, no host lookup.
+SCRIPT="$(basename "${LOOM_SCRIPT:-loom_render.py}")"
+if [ ! -f "/opt/loom/$SCRIPT" ]; then
+  echo "[loom-render] ERROR: no such render script /opt/loom/$SCRIPT" >&2
+  exit 1
+fi
+
 WORK="$(mktemp -d)"
 SCENE="$WORK/scene.json"
 OUT="$WORK/out.png"
@@ -28,8 +39,8 @@ OUT="$WORK/out.png"
 echo "[loom-render] fetch s3://$LOOM_S3_BUCKET/$LOOM_SCENE_KEY"
 aws s3 cp "s3://$LOOM_S3_BUCKET/$LOOM_SCENE_KEY" "$SCENE"
 
-echo "[loom-render] blender base render ($SAMPLES samples, headless CPU Cycles)"
-blender --background --factory-startup --python /opt/loom/loom_render.py -- \
+echo "[loom-render] blender base render — $SCRIPT ($SAMPLES samples, headless CPU Cycles)"
+blender --background --factory-startup --python "/opt/loom/$SCRIPT" -- \
   "$SCENE" "$OUT" "$SAMPLES"
 
 if [ ! -f "$OUT" ]; then

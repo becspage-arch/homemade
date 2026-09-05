@@ -5,8 +5,13 @@
 # relocation, not a redesign — nothing about the scene, lighting, samples, or
 # grade changes. See loom-render/README.md.
 #
-# Build context is `apps/web/scripts` so the image can COPY loom_render.py:
+# Build context is `apps/web/scripts` so the image can COPY the render scripts:
 #   docker build -f loom-render/Dockerfile -t homemade/loom-render .
+#
+# The image carries BOTH renderers — loom_render.py (needlework/embroidery) and
+# loom_render_crochet.py (the crochet yarn-fabric recipe). The entrypoint picks
+# between them with $LOOM_SCRIPT (default loom_render.py), so existing callers
+# are unchanged.
 #
 # Blender's Cycles renderer is forced to CPU in loom_render.py
 # (scene.cycles.device = "CPU") and runs with --background, so no GPU is
@@ -37,10 +42,11 @@ RUN curl -fsSL "$BLENDER_URL" -o /tmp/blender.tar.xz \
     && blender --version
 
 WORKDIR /opt/loom
-# The render script is copied UNCHANGED from apps/web/scripts. The image must
-# be rebuilt whenever loom_render.py changes so the container stays in lockstep
-# with the local render.
+# The render scripts are copied UNCHANGED from apps/web/scripts. The image must
+# be rebuilt whenever either of them changes so the container stays in lockstep
+# with the local render (both paths are in the workflow's trigger list).
 COPY loom_render.py /opt/loom/loom_render.py
+COPY loom_render_crochet.py /opt/loom/loom_render_crochet.py
 COPY loom-render/entrypoint.sh /opt/loom/entrypoint.sh
 RUN chmod +x /opt/loom/entrypoint.sh
 

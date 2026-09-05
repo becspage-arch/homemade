@@ -14,6 +14,12 @@
  *      drift: the written instructions + the product ChartDefinition (+ a
  *      standalone chart SVG to eyeball), then print the report block.
  *
+ * The Blender base render runs wherever LOOM_RENDER says (scripts/loom-base-render.ts):
+ * the local Blender by default, or the Fargate container with LOOM_RENDER=fargate —
+ * same pinned Blender, same loom_render_crochet.py, same scene.json + samples, so
+ * the PNG is the same either side. A cold Fargate task is 7-8 minutes, so render
+ * MANY patterns at once with scripts/loom-render-batch.ts rather than one at a time.
+ *
  * `renderProgram()` (exported) is the reusable render-on-publish engine: a
  * publish path (scripts/render-pattern-on-publish.ts) calls it to make a stored
  * pattern hero itself. Build-time tooling — Blender + Fal run on a worker / local
@@ -43,15 +49,19 @@ import {
 } from '../src/lib/loom/crochet/engine/composition'
 import { getChartSymbol } from '../src/lib/craft-charts/chart-symbols'
 import { loadCredentials } from './loom-hybrid-fal'
+import { renderBase, loomRenderMode } from './loom-base-render'
 import { fidelityGate, STRUCT_MIN_DEFAULT } from './loom-fidelity-gate'
 import { PATTERN_PROOFS } from './loom-pattern-proofs'
 import { COMPOSITION_PROOFS } from './loom-composition-proofs'
 
 loadCredentials()
 
-const OUT = resolve(process.cwd(), '../../.loom-scratch/crochet/patterns')
+export const OUT = resolve(process.cwd(), '../../.loom-scratch/crochet/patterns')
 mkdirSync(OUT, { recursive: true })
-const BLENDER = 'C:/Users/Rebecca/blender/blender-4.2.9-windows-x64/blender.exe'
+
+/** Cycles samples for the deterministic base render — the same number local and
+ *  on Fargate, so the two machines produce the same PNG. */
+export const BASE_SAMPLES = 150
 
 export interface RenderProgramResult {
   name: string
@@ -117,33 +127,47 @@ async function blenderHero(
   hero: boolean,
   heroPromptKey = 'sc',
 ): Promise<{ scenePath: string; basePng: string; heroPng: string | null; fidelityScore: number | null }> {
+  const { scenePath, basePng } = await renderSceneBase(scene, name, outDir)
+  const { heroPng, fidelityScore } = await photorealHero(basePng, hero, heroPromptKey)
+  return { scenePath, basePng, heroPng, fidelityScore }
+}
+
+/**
+ * Write the scene JSON and render the deterministic base PNG (local Blender or
+ * the Fargate container — see loom-base-render.ts). Exported so a BATCH can
+ * write every scene, fire every render at once, and await them together.
+ */
+export async function renderSceneBase(
+  scene: BlenderScene,
+  name: string,
+  outDir: string,
+): Promise<{ scenePath: string; basePng: string }> {
+  mkdirSync(outDir, { recursive: true })
   const scenePath = resolve(outDir, `${name}.json`)
   writeFileSync(scenePath, JSON.stringify(scene))
-
   const basePng = resolve(outDir, `${name}.png`)
-  const r = spawnSync(
-    BLENDER,
-    ['--background', '--factory-startup', '--python', resolve(process.cwd(), 'scripts/loom_render_crochet.py'), '--', scenePath, basePng, '150'],
-    { stdio: ['ignore', 'ignore', 'inherit'] },
-  )
-  if (r.status !== 0 || !existsSync(basePng)) throw new Error(`Blender render did not produce ${basePng}`)
+  await renderBase(scenePath, basePng, BASE_SAMPLES, 'loom_render_crochet.py')
+  return { scenePath, basePng }
+}
 
-  let heroPng: string | null = null
-  let fidelityScore: number | null = null
-  if (hero && process.env.FAL_KEY) {
-    const heroOut = basePng.replace(/\.png$/, '-hero.png')
-    const h = spawnSync('npx', ['tsx', 'scripts/loom-aspen-hero.ts', basePng, '0.55', '0.82', heroPromptKey], {
-      stdio: ['ignore', 'inherit', 'inherit'], shell: true,
-    })
-    if (h.status === 0 && existsSync(heroOut)) {
-      // Gate the upscale ourselves so a drifted hero is REJECTED (fall back to the
-      // exact base) — the hero is a promise the customer gets exactly this.
-      const verdict = await fidelityGate(basePng, heroOut)
-      fidelityScore = verdict.structureScore
-      heroPng = verdict.pass ? heroOut : null
-    }
-  }
-  return { scenePath, basePng, heroPng, fidelityScore }
+/**
+ * The photoreal FINISH: Fal creative-upscale, then our own fidelity gate so a
+ * drifted hero is REJECTED and the exact base render stands as the deliverable
+ * (the hero is a promise the customer gets exactly this). No FAL_KEY → base only.
+ */
+export async function photorealHero(
+  basePng: string,
+  hero: boolean,
+  heroPromptKey = 'sc',
+): Promise<{ heroPng: string | null; fidelityScore: number | null }> {
+  if (!hero || !process.env.FAL_KEY) return { heroPng: null, fidelityScore: null }
+  const heroOut = basePng.replace(/\.png$/, '-hero.png')
+  const h = spawnSync('npx', ['tsx', 'scripts/loom-aspen-hero.ts', basePng, '0.55', '0.82', heroPromptKey], {
+    stdio: ['ignore', 'inherit', 'inherit'], shell: true,
+  })
+  if (h.status !== 0 || !existsSync(heroOut)) return { heroPng: null, fidelityScore: null }
+  const verdict = await fidelityGate(basePng, heroOut)
+  return { heroPng: verdict.pass ? heroOut : null, fidelityScore: verdict.structureScore }
 }
 
 /**
@@ -190,7 +214,7 @@ function programChartSvg(chart: ChartDef): string {
 
   if (chart.layout === 'flat') {
     const rows = chart.rows!
-    const maxCells = Math.max(...rows.map((r) => r.stitches.reduce((a, s) => a + 1, 0)))
+    const maxCells = Math.max(...rows.map((r) => r.stitches.reduce((a, _s) => a + 1, 0)))
     W = padL + maxCells * cell + 24
     H = padTop + rows.length * cell + padBot
     // Row 1 at the bottom; RS rows read right-to-left.
@@ -227,6 +251,28 @@ function programChartSvg(chart: ChartDef): string {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="#fbfaf7"/>${title}${parts.join('')}${cap}</svg>`
 }
 
+/**
+ * Write a flat pattern's OTHER TWO FACES from the SAME program so they can't
+ * drift from the geometry: the written instructions, the product
+ * ChartDefinition, and a standalone chart SVG to eyeball. Shared by the single
+ * -pattern CLI and the batch.
+ */
+export function writePatternFaces(
+  program: CrochetProgram,
+  outDir: string = OUT,
+): { instructions: string[]; chart: ChartDef; chartJsonPath: string; chartSvgPath: string; instrPath: string } {
+  mkdirSync(outDir, { recursive: true })
+  const instructions = writeInstructions(program)
+  const chart = programToChart(program)
+  const chartJsonPath = resolve(outDir, `${program.name}.chart.json`)
+  const chartSvgPath = resolve(outDir, `${program.name}.chart.svg`)
+  const instrPath = resolve(outDir, `${program.name}.instructions.txt`)
+  writeFileSync(chartJsonPath, JSON.stringify(chart, null, 2))
+  writeFileSync(chartSvgPath, programChartSvg(chart))
+  writeFileSync(instrPath, instructions.join('\n'))
+  return { instructions, chart, chartJsonPath, chartSvgPath, instrPath }
+}
+
 // ── CLI ───────────────────────────────────────────────────────────────────────
 /** Per-proof finished-object staging (Part C). A dishcloth / panel lays flat; a
  *  headband loops into a ring. Override on the command line with
@@ -239,10 +285,15 @@ const PROOF_STAGING: Record<string, Staging> = {
   'post-rib-headband': 'loop',
   'cottage-tapestry': 'flatlay',
 }
+/** The proof's default finished-object staging (no CLI flags involved) — what a
+ *  batch run uses. */
+export function proofStaging(name: string): Staging {
+  return PROOF_STAGING[name] ?? 'swatch'
+}
 function resolveStaging(name: string): Staging {
   const flag = process.argv.find((a) => a.startsWith('--staging='))
   if (flag) return flag.split('=')[1] as Staging
-  return PROOF_STAGING[name] ?? 'swatch'
+  return proofStaging(name)
 }
 
 function resolveProgram(arg: string): CrochetProgram {
@@ -266,7 +317,7 @@ async function mainComposition(program: CompositionProgram, noHero: boolean, yrA
     process.exit(1)
   }
   console.log('        audit PASS (every part genuinely stitched)')
-  console.log(`[3/4] Blender base (staged 3D object) → ${res.basePng}`)
+  console.log(`[3/4] Blender base (staged 3D object, ${loomRenderMode()}) → ${res.basePng}`)
   console.log(res.heroPng ? `[4/4] photoreal hero → ${res.heroPng}${res.fidelityScore != null ? ` (structure ${res.fidelityScore.toFixed(3)} / min ${STRUCT_MIN_DEFAULT})` : ''}` : `[4/4] hero SKIPPED or rejected by the fidelity gate — the base render is the exact-object deliverable${res.fidelityScore != null ? ` (structure ${res.fidelityScore.toFixed(3)} < ${STRUCT_MIN_DEFAULT})` : ''}`)
   console.log('\n================ REPORT (paste-ready) ================')
   console.log(`amigurumi: ${program.name}  [${program.parts.map((p) => p.name).join('+')}]  yr=${yr}  hash=${res.geometryHash}`)
@@ -296,18 +347,11 @@ async function main(): Promise<void> {
     process.exit(1)
   }
   console.log('        audit PASS')
-  console.log(`[3/5] Blender base → ${res.basePng}`)
+  console.log(`[3/5] Blender base (${loomRenderMode()}) → ${res.basePng}`)
   console.log(res.heroPng ? `[4/5] photoreal hero → ${res.heroPng}${res.fidelityScore != null ? ` (structure ${res.fidelityScore.toFixed(3)} / min ${STRUCT_MIN_DEFAULT})` : ''}` : '[4/5] hero SKIPPED (no FAL_KEY or --no-hero) — the base render is the exact-pattern deliverable')
 
   // 5. The other two faces, from the SAME program.
-  const instructions = writeInstructions(program)
-  const chart = programToChart(program)
-  const chartJsonPath = resolve(OUT, `${program.name}.chart.json`)
-  const chartSvgPath = resolve(OUT, `${program.name}.chart.svg`)
-  const instrPath = resolve(OUT, `${program.name}.instructions.txt`)
-  writeFileSync(chartJsonPath, JSON.stringify(chart, null, 2))
-  writeFileSync(chartSvgPath, programChartSvg(chart))
-  writeFileSync(instrPath, instructions.join('\n'))
+  const { instructions, chart, chartJsonPath, chartSvgPath, instrPath } = writePatternFaces(program)
   console.log(`[5/5] wrote written instructions, ChartDefinition (${chart.layout}), + chart SVG`)
 
   console.log('\n--- written instructions (locked template, UK) ---')

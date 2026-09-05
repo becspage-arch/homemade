@@ -181,17 +181,28 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
     //    R is identity for ground/overlap; a real rotation for a protruding limb.
     let R: number[][] = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
     let T: V3 = { x: 0, y: 0, z: 0 }
-    if (part.place.on === 'ground') {
-      T = { x: part.place.offset?.x ?? 0, y: part.place.offset?.y ?? 0, z: halfH } // lowest point at z = 0
-    } else if ('dir' in part.place) {
+    // PartPlacement's three shapes share a non-literal `on`, so TypeScript can't
+    // narrow the union from `on === 'ground'`. One widened view of the same
+    // object reads every shape's fields; the branch conditions below are the
+    // real discriminant. Type-level only — no runtime behaviour changes.
+    const place = part.place as {
+      on: string
+      overlap?: number
+      offset?: { x?: number; y?: number; z?: number }
+      dir?: { x: number; y: number; z: number }
+      seat?: number
+    }
+    if (place.on === 'ground') {
+      T = { x: place.offset?.x ?? 0, y: place.offset?.y ?? 0, z: halfH } // lowest point at z = 0
+    } else if (place.dir) {
       // Protruding limb: aim the part's long axis (local +z) along `dir`, seat its
       // base pole (local min-z) just into the parent surface, and let the rest
       // stand proud. (Both poles carry a small worked-ring hole; pointing the
       // magic-ring pole outward and leaning the limb slightly back keeps the hole
       // reading as a neat closed ear-tip to the camera rather than an open barrel.)
-      const base = byName.get(part.place.on)
-      if (!base) throw new Error(`${p.name}: limb '${part.name}' attaches to unknown/later part '${part.place.on}'`)
-      const d = part.place.dir
+      const base = byName.get(place.on)
+      if (!base) throw new Error(`${p.name}: limb '${part.name}' attaches to unknown/later part '${place.on}'`)
+      const d = place.dir
       const dlen = Math.hypot(d.x, d.y, d.z) || 1
       const u: V3 = { x: d.x / dlen, y: d.y / dlen, z: d.z / dlen }
       R = rotZTo(u)
@@ -205,7 +216,7 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
         0.5 * (Math.abs(u.x) * (base.bounds.maxx - base.bounds.minx) +
                Math.abs(u.y) * (base.bounds.maxy - base.bounds.miny) +
                Math.abs(u.z) * (base.bounds.maxz - base.bounds.minz))
-      const seat = part.place.seat ?? 4
+      const seat = place.seat ?? 4
       // Base pole (local min-z) offset from centroid = (0,0, lb.minz − cz) → after
       // R it is (lb.minz − cz)·u (negative, pointing back toward the parent). Solve
       // T so the base pole lands seat mm inside the surface point pc + u·parentR.
@@ -213,14 +224,14 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       const along = parentR - seat - baseAlong // push centroid out so the limb stands proud
       T = { x: pc.x + u.x * along, y: pc.y + u.y * along, z: pc.z + u.z * along }
     } else {
-      const base = byName.get(part.place.on)
-      if (!base) throw new Error(`${p.name}: part '${part.name}' stacks on unknown/later part '${part.place.on}'`)
-      const overlap = part.place.overlap ?? 0
+      const base = byName.get(place.on)
+      if (!base) throw new Error(`${p.name}: part '${part.name}' stacks on unknown/later part '${place.on}'`)
+      const overlap = place.overlap ?? 0
       T = {
-        x: (base.bounds.minx + base.bounds.maxx) / 2 + (part.place.offset?.x ?? 0),
-        y: (base.bounds.miny + base.bounds.maxy) / 2 + (part.place.offset?.y ?? 0),
+        x: (base.bounds.minx + base.bounds.maxx) / 2 + (place.offset?.x ?? 0),
+        y: (base.bounds.miny + base.bounds.maxy) / 2 + (place.offset?.y ?? 0),
         // Its bottom sits at (base top − overlap), plus optional z nudge.
-        z: base.bounds.maxz - overlap + halfH + (part.place.offset?.z ?? 0),
+        z: base.bounds.maxz - overlap + halfH + (place.offset?.z ?? 0),
       }
     }
 

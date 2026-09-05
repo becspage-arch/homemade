@@ -256,11 +256,11 @@ export function writeInstructions(p: CrochetProgram): string[] {
 
   if (p.form === 'flat') {
     out.push(`Foundation: ch ${p.foundation! + 1}. (${p.foundation} sts)`)
-    let below = p.foundation!
+    let _below = p.foundation!
     p.rows!.forEach((ops, i) => {
       const made = ops.reduce((a, o) => a + (o === 'inc' ? 2 : o === 'skip' ? 0 : 1), 0)
       out.push(`Row ${i + 1}: ch 1, turn, ${describeOps(ops, uk)}. (${made} sts)`)
-      below = made
+      _below = made
     })
     out.push('Fasten off and weave in the end.')
     return out
@@ -357,6 +357,7 @@ const STITCH_TO_CHART_SYMBOL: Record<StitchId, string> = {
   fpdc: 'treble',
   bpdc: 'treble',
   bobble: 'bobble',
+  picot: 'picot',
   k: 'knit',
 }
 

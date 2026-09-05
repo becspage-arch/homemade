@@ -193,6 +193,12 @@ export interface SwatchRecipe {
    */
   rowScale?: number
   /**
+   * Per-swatch multiplier on the fp/bp POST relief (default 1 = identity, which
+   * is what every locked stitch uses). basketweave deepens it so its raised
+   * blocks read against the recessed ones; consumed by buildContinuous.
+   */
+  postReliefScale?: number
+  /**
    * Render framing margin (fraction of the content span) — the pipeline's default
    * is 0.12. A tall 3D object (the ball) projects above an xy-tight frame under
    * camera tilt and clips; a generous margin frames the FULL silhouette. Flat
@@ -257,7 +263,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   },
   fpdc: {
     stitch: 'fpdc', rows: 8, auditW: 12, relaxProfile: 'worked', tiltDeg: 40, twist: 0.05,
-    pattern: (j, c) => (j === 0 ? 'dc' : 'fpdc'), // row 0 establishes posts to wrap
+    pattern: (j, _c) => (j === 0 ? 'dc' : 'fpdc'), // row 0 establishes posts to wrap
     // clean single-stitch reference (raised front posts standing proud), replacing
     // the old fringepost9 colourwork-cable photo (acrochetedsimplicity.com)
     referenceUrl: 'https://www.acrochetedsimplicity.com/wp-content/uploads/2017/01/fpdc-7-1024x683.jpg',
@@ -265,7 +271,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   },
   bpdc: {
     stitch: 'bpdc', rows: 8, auditW: 12, relaxProfile: 'worked', tiltDeg: 40, twist: 0.05,
-    pattern: (j, c) => (j === 0 ? 'dc' : 'bpdc'),
+    pattern: (j, _c) => (j === 0 ? 'dc' : 'bpdc'),
     // back posts recede → front shows horizontal step-bars, not raised posts (theloopholefox.com)
     referenceUrl: 'https://theloopholefox.com/wp-content/uploads/2022/09/Back-Post-Double-Crochet-12.jpg',
     status: 'locked', lockedOn: '2026-07-07', // recessed posts / horizontal-bar front read correctly

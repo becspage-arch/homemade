@@ -46,7 +46,7 @@ export interface CrochetCell {
   fuzz?: number
 }
 
-const lerp = (a: number, b: number, t: number): number => a + (b - a) * t
+const _lerp = (a: number, b: number, t: number): number => a + (b - a) * t
 
 /** Deterministic small wobble in [-1, 1] from a seed + index. */
 function jitter(seed: number, i: number): number {

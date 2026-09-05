@@ -129,7 +129,7 @@ footer {
 }
 `
 
-const card = ({ id, title, img, imgAlt, verdict, verdictText, body, refUrl }) => `
+const card = ({ id: _id, title, img, imgAlt, verdict, verdictText, body, refUrl }) => `
 <section class="stitch-card">
   <div class="head">
     <h2>${title}</h2>
