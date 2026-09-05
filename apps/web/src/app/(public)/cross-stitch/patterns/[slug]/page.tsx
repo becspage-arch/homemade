@@ -55,6 +55,14 @@ export default async function PatternDetailPage({ params }: PageProps) {
   })
   if (!row || row.ownerUserId !== null || row.visibility !== Visibility.PUBLIC) notFound()
 
+  // headers() must be read before after() is registered — Next.js treats any
+  // headers()/cookies() call later in the same route as "used inside after()"
+  // once after() has been scheduled, even when it's not actually called from
+  // the callback (HOMEMADE-WEB-1V). Read it here and use the plain value below.
+  const h = await headers()
+  const cc = (h.get('cf-ipcountry') ?? h.get('x-vercel-ip-country') ?? '').toUpperCase()
+  const paper = LETTER_PAPER_COUNTRIES.has(cc) ? 'letter' : 'a4'
+
   // Real view signal feeding popularityScore. Runs after the response so it
   // never adds latency to the page; a failed bump must not break the page.
   after(async () => {
@@ -91,10 +99,6 @@ export default async function PatternDetailPage({ params }: PageProps) {
       thumbnail: { select: { cloudflareId: true, r2Key: true } },
     },
   })
-
-  const h = await headers()
-  const cc = (h.get('cf-ipcountry') ?? h.get('x-vercel-ip-country') ?? '').toUpperCase()
-  const paper = LETTER_PAPER_COUNTRIES.has(cc) ? 'letter' : 'a4'
 
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Home', href: '/' },
