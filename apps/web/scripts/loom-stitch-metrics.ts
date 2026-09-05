@@ -63,16 +63,44 @@ const TARGETS: Record<string, Target> = {
  * 10 cm) converted to rendered yarn diameters, with the yarn-per-stitch figure
  * scaled by how much taller the post is. Anything absent falls back to TARGETS.
  */
+/**
+ * THE YARN-PER-STITCH FIGURE FOR A TALL STITCH (re-derived 2026-09-05, §8f-3).
+ *
+ * The first version of this table got a tall stitch's yarn budget by scaling
+ * sc's published figure by how much taller the post is. That is wrong, and it is
+ * wrong in one specific way: it counts the post and the head and forgets the
+ * YARN-OVERS. A dc is made with one yarn over, a tr with two, a dtr with three,
+ * and every one of them ends up as a closed collar of yarn round the post. So
+ * the budget is built from the anatomy instead:
+ *
+ *     yarn per stitch  =  2 × row pitch      (the post's two legs)
+ *                      +  2 × stitch pitch + 2   (the head loop's perimeter)
+ *                      +  yarn-overs × 5.1       (one collar round the post:
+ *                                                 ~2 d of span + π d of ends)
+ *
+ * The check on the model is sc, whose figure is published independently (~3–4 m
+ * per 100 sc): 2(1.4) + 2(1.6) + 2 = 8.0 d, the middle of its 7.0–9.5 range. It
+ * also reproduces hdc (12.0 d against a measured 10.3 and a range of 9.5–13).
+ * On the tall stitches it gives dc 18.5, tr 26.8, dtr 35.3 — where the scaled
+ * figures said 15.5, 20.5, 25.5. Two published swatch experiments bracket the
+ * new numbers rather than the old: an equal-area sc-vs-dc test (37 yd vs 23 yd)
+ * puts a dc at 2.05 × an sc (16.4 d), and an equal-area sc/hdc/dc/tr test puts
+ * it at 2.6 × (21 d). Ranges below are the anatomy figure ±20%.
+ */
 const BY_STITCH: Record<string, Partial<Record<keyof typeof TARGETS, { lo: number; hi: number }>>> = {
   // ~15 sts, ~28 rows / 10 cm — a slip-stitch row is barely taller than the yarn.
   slst: { stitchPitch: { lo: 1.4, hi: 1.6 }, rowPitch: { lo: 0.8, hi: 1.0 }, yarnPerStitch: { lo: 4.5, hi: 6.5 }, crowding: { lo: 3.0, hi: 5.5 }, vAngle: { lo: 45, hi: 80 } },
-  // ~12-14 sts, ~10-12 rows / 10 cm.
+  // ~12-14 sts, ~10-12 rows / 10 cm. Its one yarn-over is drawn through all three
+  // loops at once, so it lands as the third-loop ridge, not as a collar.
   hdc: { stitchPitch: { lo: 1.7, hi: 2.0 }, rowPitch: { lo: 2.0, hi: 2.4 }, yarnPerStitch: { lo: 9.5, hi: 13.0 }, crowding: { lo: 2.2, hi: 3.6 }, vAngle: { lo: 30, hi: 55 } },
   // ~11-13 sts, ~6-7 rows / 10 cm — posts lean together into slits, not gaps.
-  dc: { stitchPitch: { lo: 1.85, hi: 2.2 }, rowPitch: { lo: 3.4, hi: 4.0 }, yarnPerStitch: { lo: 13.0, hi: 18.0 }, crowding: { lo: 1.7, hi: 2.7 }, vAngle: { lo: 18, hi: 40 } },
+  // 1 yarn-over: 7.4 + 6.0 + 5.1 = 18.5 d, crowding 18.5 / (2.0 × 3.7) = 2.50.
+  dc: { stitchPitch: { lo: 1.85, hi: 2.2 }, rowPitch: { lo: 3.4, hi: 4.0 }, yarnPerStitch: { lo: 14.8, hi: 22.2 }, crowding: { lo: 2.0, hi: 3.0 }, vAngle: { lo: 18, hi: 40 } },
   // ~10-11 sts, ~4.5-5 rows / 10 cm — airier again, real open channels.
-  tr: { stitchPitch: { lo: 2.2, hi: 2.4 }, rowPitch: { lo: 4.8, hi: 5.3 }, yarnPerStitch: { lo: 17.0, hi: 24.0 }, crowding: { lo: 1.4, hi: 2.2 }, vAngle: { lo: 14, hi: 34 } },
-  dtr: { stitchPitch: { lo: 2.4, hi: 2.6 }, rowPitch: { lo: 6.2, hi: 6.8 }, yarnPerStitch: { lo: 21.0, hi: 30.0 }, crowding: { lo: 1.2, hi: 2.0 }, vAngle: { lo: 12, hi: 30 } },
+  // 2 yarn-overs: 10.0 + 6.6 + 10.2 = 26.8 d, crowding 26.8 / (2.3 × 5.0) = 2.33.
+  tr: { stitchPitch: { lo: 2.2, hi: 2.4 }, rowPitch: { lo: 4.8, hi: 5.3 }, yarnPerStitch: { lo: 21.4, hi: 32.2 }, crowding: { lo: 1.85, hi: 2.80 }, vAngle: { lo: 14, hi: 34 } },
+  // 3 yarn-overs: 13.0 + 7.0 + 15.3 = 35.3 d, crowding 35.3 / (2.5 × 6.5) = 2.17.
+  dtr: { stitchPitch: { lo: 2.4, hi: 2.6 }, rowPitch: { lo: 6.2, hi: 6.8 }, yarnPerStitch: { lo: 28.2, hi: 42.4 }, crowding: { lo: 1.75, hi: 2.60 }, vAngle: { lo: 12, hi: 30 } },
   scblo: {}, scflo: {}, picot: {},
 }
 
@@ -175,10 +203,13 @@ function main(): void {
     for (const k of r.legs) legRel.push(n[k]!.z * f)
     for (const k of r.crownTrail) trailRel.push(n[k]!.z * f)
     const L = r.legs
-    if (L.length === 6) {
-      // legs are pushed down-leg (3, descending) then up-leg (3, ascending), so
-      // matching heights pair as (0,5), (1,4), (2,3).
-      for (const [a, b] of [[0, 5], [1, 4], [2, 3]] as const) legSep.push(seg(L[a]!, L[b]!))
+    // Legs are pushed down-leg first (descending) then up-leg (ascending), so a
+    // node and its opposite number pair as (k, len-1-k) whatever the leg
+    // resolution is — 3 a side for a bare post, more for a stitch whose
+    // yarn-over collars need a leg node at every collar height.
+    const half = L.length >> 1
+    if (L.length >= 4 && L.length % 2 === 0) {
+      for (let k = 0; k < half; k++) legSep.push(seg(L[k]!, L[L.length - 1 - k]!))
     }
     if (r.headPartner >= 0) {
       headSep.push(seg(r.crown, r.headPartner))
@@ -187,28 +218,32 @@ function main(): void {
       headSepY.push(Math.abs(a.y - b.y))
       headSepZ.push(Math.abs(a.z - b.z))
     }
-    if (L.length === 6) {
-      // STRAIGHTNESS: chord ÷ arc over each leg's own contiguous run of the
-      // strand. The down-leg runs [legs[0] … hook], the up-leg [hook … legs[5]]
-      // (node index IS position along the strand here). 1.0 is a ruler; a bowed
-      // leg reads as the knobbly bead the close-up shows.
-      const chordArc = (i0: number, i1: number): number => {
+    if (L.length >= 4 && L.length % 2 === 0) {
+      // STRAIGHTNESS: chord ÷ arc along each leg's own line of nodes. 1.0 is a
+      // ruler; a bowed leg reads as the knobbly bead the close-up shows. It is
+      // measured over the LEG NODES (plus the hook, for the with-dive figure)
+      // rather than every strand node between them: a stitch with yarn-over
+      // collars sends the strand on a genuine excursion round the post at each
+      // collar, and counting that as leg arc would report a straight leg as bent.
+      const down = L.slice(0, half)
+      const up = L.slice(half)
+      const polyArc = (ks: number[]): number => {
         let arc = 0
-        for (let k = i0; k < i1; k++) arc += seg(k, k + 1)
-        return arc > 0 ? seg(i0, i1) / arc : NaN
+        for (let k = 0; k + 1 < ks.length; k++) arc += seg(ks[k]!, ks[k + 1]!)
+        return arc > 0 ? seg(ks[0]!, ks[ks.length - 1]!) / arc : NaN
       }
-      legStraight.push(chordArc(L[0]!, r.hook))
-      legStraight.push(chordArc(r.hook, L[5]!))
+      legStraight.push(polyArc([...down, r.hook]))
+      legStraight.push(polyArc([r.hook, ...up]))
       // The VISIBLE leg on its own — the part a close-up actually reads, without
       // the dive corner at the insertion, which is a real corner and can never
       // measure straight.
-      legStraightVis.push(chordArc(L[0]!, L[2]!))
-      legStraightVis.push(chordArc(L[3]!, L[5]!))
+      legStraightVis.push(polyArc(down))
+      legStraightVis.push(polyArc(up))
       // THE V: the angle the two legs open by, measured in the fabric PLANE
       // (x along the row, y up it) from the shared insertion at the hook.
       const H = n[r.hook]!
       const A = n[L[0]!]!
-      const B = n[L[5]!]!
+      const B = n[L[L.length - 1]!]!
       const ang = (P: typeof A): number => Math.atan2(P.y - H.y, P.x - H.x)
       let dv = Math.abs(ang(A) - ang(B))
       if (dv > Math.PI) dv = Math.PI * 2 - dv

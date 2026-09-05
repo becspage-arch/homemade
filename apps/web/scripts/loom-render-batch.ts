@@ -43,6 +43,7 @@
  */
 
 import { resolve } from 'node:path'
+import { createHash } from 'node:crypto'
 import { existsSync, mkdirSync, statSync } from 'node:fs'
 
 import { programYarnRadiusMm, type CrochetProgram } from '../src/lib/loom/crochet/engine/program'
@@ -60,6 +61,10 @@ import { PATTERN_PROOFS } from './loom-pattern-proofs'
 import { COMPOSITION_PROOFS } from './loom-composition-proofs'
 import { OUT, proofStaging, renderSceneBase, photorealHero, writePatternFaces } from './loom-pattern'
 import { loomRenderMode } from './loom-base-render'
+import { buildRelaxedSwatch, isSwatchArg } from '../src/lib/loom/crochet/engine/buildSwatch'
+import { auditProblems } from '../src/lib/loom/crochet/engine/auditChecks'
+import { SWATCH_RECIPES } from '../src/lib/loom/crochet/engine/dictionary'
+import { pliedFilaments, smooth, type V3 } from '../src/lib/loom/crochet/yarnLoop'
 
 loadCredentials()
 
@@ -76,8 +81,8 @@ const SIGNOFF_SET = [
 
 interface Job {
   name: string
-  kind: 'flat' | 'composition'
-  program: CrochetProgram | CompositionProgram
+  kind: 'flat' | 'composition' | 'swatch'
+  program: CrochetProgram | CompositionProgram | null
   scene: BlenderScene
   yr: number
   geometryHash: string
@@ -87,6 +92,50 @@ interface Job {
   fidelityScore: number | null
   seconds: number | null
   error: string | null
+}
+
+/**
+ * A dictionary SWATCH as a batch job (§8f-3). A cold Fargate task costs the same
+ * whether it renders a pattern or a stitch swatch, and a look pass needs both in
+ * front of the same eye at the same time — so the batch takes either. The scene
+ * is exactly the one `loom-stitch.ts` builds (same ply recipe, same per-recipe
+ * view), and the same numeric audit gates it.
+ */
+function compileSwatch(name: string, yrOverride?: number): Job {
+  const recipe = SWATCH_RECIPES[name as keyof typeof SWATCH_RECIPES]
+  const yr = yrOverride ?? 2.4
+  const hex = '#c98a5e'
+  const W = recipe.auditW
+  const swatch = buildRelaxedSwatch(name as never, W, yr)
+  const problems = auditProblems(swatch, name, W, yr)
+  if (problems.length) throw new Error(`${name} is NOT genuinely stitched:\n  - ${problems.join('\n  - ')}`)
+  const { built } = swatch
+  const nodes = built.model.nodes
+  const ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
+  const center = smooth(ctrl, 4)
+  const { radiusMm, filaments } = pliedFilaments(center, yr * 0.85, 3, recipe.twist)
+  const h = createHash('sha256')
+  for (const n of nodes) h.update(`${n.x.toFixed(9)},${n.y.toFixed(9)},${n.z.toFixed(9)},${n.w};`)
+  return {
+    name: `stitch-${name}`,
+    kind: 'swatch',
+    program: null,
+    scene: {
+      fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
+      strokes: [{ hex, sheen: 0.85, radiusMm, filaments }],
+      view: {
+        bgHex: '#6f5440',
+        marginFactor: recipe.viewMargin ?? 0.12,
+        tiltDeg: recipe.tiltDeg,
+        resY: 1200,
+        openFabric: recipe.openFabric ?? false,
+      },
+    } as unknown as BlenderScene,
+    yr,
+    geometryHash: h.digest('hex').slice(0, 16),
+    heroPromptKey: recipe.stitch,
+    basePng: null, heroPng: null, fidelityScore: null, seconds: null, error: null,
+  }
 }
 
 /** Compile + relax + AUDIT one proof by name. Throws with the audit problems. */
@@ -111,6 +160,7 @@ function compile(name: string): Job {
 
   const program = PATTERN_PROOFS[name]
   if (!program) {
+    if (isSwatchArg(name)) return compileSwatch(name)
     throw new Error(
       `unknown program '${name}' — proofs: ${Object.keys(PATTERN_PROOFS).join(', ')}; ` +
         `compositions: ${Object.keys(COMPOSITION_PROOFS).join(', ')}`,
@@ -160,7 +210,9 @@ async function main(): Promise<void> {
     try {
       const job = compile(name)
       jobs.push(job)
-      console.log(`      PASS  ${pad(job.name, 22)} ${job.kind === 'flat' ? 'flat ' : 'compo'}  yr=${job.yr}  hash=${job.geometryHash}`)
+      console.log(
+        `      PASS  ${pad(job.name, 22)} ${job.kind === 'flat' ? 'flat  ' : job.kind === 'swatch' ? 'swatch' : 'compo '}  yr=${job.yr}  hash=${job.geometryHash}`,
+      )
     } catch (e) {
       console.error(`      FAIL  ${name}`)
       console.error(`      ${(e as Error).message}`)

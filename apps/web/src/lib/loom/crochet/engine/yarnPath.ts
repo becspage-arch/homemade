@@ -34,8 +34,9 @@ export interface StitchLink {
   j: number
   c: number
   /** 'hook' dives under a crown; 'ring' encircles a post stem; 'cross' passes
-   *  through a chain loop's opening; 'through' = a knit leg passing the old
-   *  head's mouth on the fabric's face side. */
+   *  through a chain loop's opening; 'through' = a strand that must stay on one
+   *  declared side of another (a knit leg passing the old head's mouth on the
+   *  fabric's face side; a crochet yarn-over collar passing BEHIND its own post). */
   role: 'hook' | 'ring' | 'cross' | 'through'
   hook: number
   below: number
@@ -236,6 +237,21 @@ export const dimsFor = (yr: number, id: StitchId): StitchDims => {
   return d
 }
 
+/**
+ * How far apart two (or N) hooks entering ONE below-crown are initialised, in
+ * yarn radii. It is a property of the HOOK — a pair inserted into the same
+ * stitch enters side by side, about a hook's width apart — NOT of the post's
+ * splay, so it must not be scaled off the stitch's own `pw`.
+ *
+ * It used to be written as a fraction of `pw`, which was harmless only while pw
+ * was the shared 0.35yr for every stitch. When the real cell gave dc a 1.32yr
+ * post half-width (§8f-2) the same expression spread a 5-dc shell's hooks
+ * ±0.92yr instead of ±0.25yr, and the outer ones slipped clean off the shared
+ * crown (audit: shell j0 c3, dx 2.86yr). 0.35 is exactly the value every pair
+ * and fan offset was calibrated at.
+ */
+export const HOOK_SPREAD_YR = 0.35
+
 /** Row pitch per unit heightFactor (sc short, dc tall), in yarn radii. */
 export const BASE_ROW_YR = 1.55
 
@@ -246,6 +262,7 @@ export const BASE_ROW_YR = 1.55
  */
 export const rowPitchYr = (id: StitchId): number =>
   STITCHES[id].rowYr ?? BASE_ROW_YR * STITCHES[id].heightFactor
+
 
 /**
  * One PLAIN stitch excursion (sc family / hdc / dc / tr / dtr / blo / flo) —
@@ -342,13 +359,85 @@ export interface PlainStitchSpec {
    * canopies, radial drifts and intrinsic profiles were all calibrated on it).
    */
   headLoopMm?: number
+  /**
+   * How many YARN-OVERS this stitch is made with (§8f-3). 0 / absent → the bare
+   * two-leg post every stitch had before, so nothing that does not opt in moves.
+   * dc 1, tr 2, dtr 3 — exactly the count a crocheter wraps before inserting the
+   * hook, and exactly the number of collars a real tall post shows up its length.
+   * Passed by the caller rather than read from the dictionary so a builder opts
+   * in (the flat grid builder does; the shaped / round / sphere builders keep the
+   * bare post until their own pass).
+   */
+  yarnOvers?: number
+  /** The collar's half-depth in mm (§8f-3). Absent → `yr` (one yarn radius). */
+  yarnOverMm?: number
+}
+
+/**
+ * THE HEAD IS A LOOP, NOT A BUMP (§8f — the close-range look pass), shared by
+ * every stitch that throws one head: the plain-stitch emitter and the decrease.
+ *
+ * The legacy head was three nodes making a shallow rise on the row line: it
+ * carried almost no yarn (measured 0.5 of a rendered yarn diameter against a real
+ * stitch's ~5), it enclosed nothing, and consecutive ones merged into one proud
+ * cord running the length of the row. A real stitch's top is the loop that was on
+ * the hook, laid down along the row: TWO strands with a hole between them, which
+ * is what a close-up reads as the paired-loop top and the pinprick under it.
+ *
+ * Traced as the hook actually lays it, so nothing is drawn: coming off the up-leg
+ * the strand runs BACK along the row top (the tucked strand), turns at the loop's
+ * tail, and comes FORWARD again past this stitch's column as the proud strand —
+ * which is this stitch's crown, the loop the next row dives under. The interlock
+ * and its recorded link are unchanged; only the head's yarn budget and shape are.
+ *
+ * ROUND 2: the head has to LIE FLAT. Built narrow it carried ~2·hl of yarn in a
+ * span shorter than the stitch, so the surplus had nowhere to go but out of plane
+ * and settled as a round knot on top of the bead. The loop spans the WHOLE stitch
+ * (consecutive heads then abut, which is what the row top of real crochet is) so
+ * the same yarn is spent running ALONG the row, and its two strands separate UP
+ * THE ROW rather than in depth so they read as two parallel lines under a flat
+ * top. It is traced in the direction the up-leg already leans (FORWARD, the work
+ * direction), so nothing reverses until the loop's own rounded turn, and its
+ * entry sits at the up-leg's own x — tying the head's start back to the column
+ * centre was the second thing pinching the V shut.
+ *
+ * Pushes six loop nodes plus the exit onto the next stitch, in strand order.
+ */
+export function emitHeadLoop(
+  push: (x: number, y: number, z: number, w?: number) => number,
+  a: {
+    xC: number
+    ty: number
+    /** Work-direction sign, and the post's own trailing-side sign (−s when re-cut). */
+    s: number
+    sd: number
+    fz: number
+    zh: number
+    dh: number
+    pw: number
+    cw: number
+    /** Head-loop half-span in mm. */
+    hl: number
+  },
+): { crown: number; trailA: number; trailB: number; headPartner: number } {
+  const { xC, ty, s, sd, fz, zh, dh, pw, cw, hl } = a
+  const hy = dh * 1.45 // the two strands' separation up the row
+  const trailA = push(xC - sd * pw, ty - hy * 0.95, zh * 0.4 * fz) // straight off the up-leg onto the head line
+  push(xC + s * hl * 0.72, ty - hy * 0.35, zh * 0.25 * fz) // tucked strand, running FORWARD
+  const headPartner = push(xC + s * hl, ty + hy * 0.15, zh * 0.2 * fz)
+  push(xC + s * hl * 0.98, ty + hy * 0.7, zh * 0.38 * fz) // the loop's far end — it turns here
+  push(xC + s * hl * 0.5, ty + hy * 0.85, zh * 0.65 * fz) // proud strand, coming BACK
+  const crown = push(xC, ty + hy * 0.55, zh * 0.8 * fz)
+  const hyOut = dh * 1.45 * 0.3
+  const trailB = push(xC + s * cw * 0.9, ty - hyOut, zh * 0.45 * fz) // drop off the head, on to the next stitch
+  return { crown, trailA, trailB, headPartner }
 }
 
 export function emitPlainStitch(
   S: StrandCtx,
   d: StitchDims,
   spec: PlainStitchSpec,
-): { crownBack: number; crownFront: number; postMid: number } {
+): { crownBack: number; crownFront: number; postMid: number; head: number[] } {
   const { z, zh, cw, pw, dh } = d
   const { j, c, id, s, fz, by, ty } = spec
   const xC = spec.xCrown
@@ -428,21 +517,85 @@ export function emitPlainStitch(
   // hdc third loop: the start-of-stitch yarn-over, laid horizontally across the
   // head line before the hook dives. Consecutive ones form the signature ridge.
   if (thirdLoop) push(xC + s * cw * 1.1, ty - dh * 0.9, z * 1.7 * fz)
-  // Down-leg: descend the worked face from the previous head toward the insertion.
-  dbgLegs.push(push(xa(1) + sd * legHalf(1), by + px * 0.8, legZ * fz * lr))
-  dbgLegs.push(push(xa(0.65) + sd * legHalf(0.65), by + px * 0.52, legZ * fz * lr))
-  dbgLegs.push(push(xa(0.33) + sd * legHalf(0.33), by + px * 0.26, legZHi * fz * lr))
-  push(xH + sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // approach the below crown
-  // Hook UNDER the crown below — tuck to the far z-side of it. Collision (neither
-  // can pass through the other) holds the link — no spring.
-  const hookIdx = push(xH, cy - dh, hookZ)
-  S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: hookIdx, below: bc })
-  push(xH - sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // emerge
-  // Up-leg: pulled back UP just beside the down-leg → the two strands of the post.
-  dbgLegs.push(push(xa(0.33) - sd * legHalf(0.33), by + px * 0.26, legZHi * fz * lr))
-  const postMid = push(xa(0.65) - sd * legHalf(0.65), by + px * 0.52, legZ * fz * lr)
-  dbgLegs.push(postMid)
-  dbgLegs.push(push(xa(1) - sd * legHalf(1), by + px * 0.8, legZ * fz * lr))
+  // THE YARN-OVER COLLARS (§8f-3). A tall post is not a bare ladder: before the
+  // hook is inserted the yarn is wrapped over it — once for a dc, twice for a tr,
+  // three times for a dtr — and each of those wraps ends up as a closed COLLAR of
+  // yarn round the post, evenly spaced up its length. That is what a crocheter
+  // counts to name the stitch, and (measured) it is where the missing third of a
+  // tall stitch's yarn lives: without the collars dc / tr / dtr fed only
+  // 0.67–0.70× the real yarn per stitch, which dragged their crowding and fabric
+  // thickness down with it.
+  //
+  // Traced as the one strand genuinely does it, so nothing is drawn. The yarn-over
+  // is made BEFORE the insertion, so it comes first along the strand: the strand
+  // leaves the previous head, descends the post line, and at each collar height
+  // runs a full turn round the column — behind the post, across the leading side,
+  // back in FRONT of it — then carries on down. Nothing is linked yet; the collar
+  // closes only when the UP-leg rises back through it on its way to the head, and
+  // it is self-collision that then holds the up-leg inside the ring. The recorded
+  // link is that crossing ('through': the collar's far node must stay on the far
+  // side of the up-leg it rings), so the audit can prove the wrap survived.
+  const nyo = spec.yarnOvers ?? 0
+  let hookIdx: number
+  let postMid: number
+  if (nyo > 0) {
+    const zw = spec.yarnOverMm ?? d.yr
+    // One leg node every quarter of a collar gap: the collars land exactly ON leg
+    // nodes (level 4·k), and every ring node stays more than the relax
+    // adjacency window away from the up-leg node it must collide with.
+    const L = 4 * nyo + 4
+    const dY = (px * 0.8) / L // one level of height — the ring drifts down by one
+    const yoFar: { node: number; f: number }[] = []
+    for (let i = 0; i < L; i++) {
+      const f = 1 - i / L
+      const ly = by + px * 0.8 * f
+      dbgLegs.push(push(xa(f) + sd * legHalf(f), ly, legZ * fz * lr))
+      if (i === 0 || i % 4 !== 0 || i / 4 > nyo) continue
+      const cx = xa(f) // the post's centre line at this height
+      const ux = cx - sd * legHalf(f) // where the up-leg will rise
+      const a = legHalf(f) + zw * 0.9 // half-width: the ring clears both legs
+      push(cx + sd * a * 0.9, ly + dY * 0.45, legZ * fz * lr) // still on the trailing side
+      const far = push(ux, ly + dY * 0.1, -zw * fz) // BEHIND the post ← the collar's far side
+      push(cx - sd * a * 0.95, ly - dY * 0.2, -zw * 0.55 * fz) // round the leading edge
+      push(cx - sd * a, ly - dY * 0.5, zw * 0.35 * fz) // …and forward
+      push(ux, ly - dY * 0.8, zw * fz) // IN FRONT of the post — the ring is closed
+      push(cx + sd * a * 0.75, ly - dY, zw * 0.4 * fz) // back to the trailing side, carry on down
+      yoFar.push({ node: far, f })
+    }
+    push(xH + sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // approach the below crown
+    hookIdx = push(xH, cy - dh, hookZ)
+    S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: hookIdx, below: bc })
+    push(xH - sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // emerge
+    // Up-leg: back up the leading side, THROUGH every collar the descent laid.
+    const upAt = new Map<number, number>()
+    for (let i = L - 1; i >= 0; i--) {
+      const f = 1 - i / L
+      const n = push(xa(f) - sd * legHalf(f), by + px * 0.8 * f, legZ * fz * lr)
+      dbgLegs.push(n)
+      upAt.set(i, n)
+    }
+    postMid = upAt.get(Math.round(L * 0.35))!
+    for (const w of yoFar) {
+      const below = upAt.get(Math.round((1 - w.f) * L))!
+      S.links.push({ j, c, role: 'through', hook: w.node, below, zSign: -fz })
+    }
+  } else {
+    // Down-leg: descend the worked face from the previous head toward the insertion.
+    dbgLegs.push(push(xa(1) + sd * legHalf(1), by + px * 0.8, legZ * fz * lr))
+    dbgLegs.push(push(xa(0.65) + sd * legHalf(0.65), by + px * 0.52, legZ * fz * lr))
+    dbgLegs.push(push(xa(0.33) + sd * legHalf(0.33), by + px * 0.26, legZHi * fz * lr))
+    push(xH + sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // approach the below crown
+    // Hook UNDER the crown below — tuck to the far z-side of it. Collision (neither
+    // can pass through the other) holds the link — no spring.
+    hookIdx = push(xH, cy - dh, hookZ)
+    S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: hookIdx, below: bc })
+    push(xH - sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // emerge
+    // Up-leg: pulled back UP just beside the down-leg → the two strands of the post.
+    dbgLegs.push(push(xa(0.33) - sd * legHalf(0.33), by + px * 0.26, legZHi * fz * lr))
+    postMid = push(xa(0.65) - sd * legHalf(0.65), by + px * 0.52, legZ * fz * lr)
+    dbgLegs.push(postMid)
+    dbgLegs.push(push(xa(1) - sd * legHalf(1), by + px * 0.8, legZ * fz * lr))
+  }
 
   // Throw this stitch's crown. A plain stitch leaves a single apex (back == front);
   // blo/flo split it into a proud (unworked, floats as the ridge) loop + a tucked
@@ -454,45 +607,15 @@ export function emitPlainStitch(
   let crownFront: number
   let trailA: number
   let headPartner = -1
+  let headExit = -1
   if (recutHead) {
-    // THE HEAD IS A LOOP, NOT A BUMP (§8f — the close-range look pass).
-    //
-    // The legacy head was three nodes making a shallow rise on the row line: it
-    // carried almost no yarn (measured 0.5 of a rendered yarn diameter against a
-    // real stitch's ~5), it enclosed nothing, and consecutive ones merged into one
-    // proud cord running the length of the row. A real stitch's top is the loop
-    // that was on the hook, laid down along the row: TWO strands with a hole
-    // between them, which is what a close-up reads as the paired-loop top and the
-    // pinprick under it.
-    //
-    // Traced as the hook actually lays it, so nothing is drawn: coming off the
-    // up-leg the strand runs BACK along the row top (the tucked strand), turns at
-    // the loop's tail, and comes FORWARD again past this stitch's column as the
-    // proud strand — which is this stitch's crown, the loop the next row dives
-    // under, exactly as before. The interlock and its recorded link are unchanged;
-    // only the head's yarn budget and shape are.
-    // ROUND 2: the head has to LIE FLAT. Built at hl 1.2yr it carried ~2·hl of
-    // yarn in a 1.7yr span of a 2.7yr stitch, so the surplus had nowhere to go
-    // but out of plane — it settled 1.21yr proud (0.47 d above its own legs)
-    // as a round knot on top of the bead. Widen the loop until it spans the
-    // whole stitch (consecutive heads then abut, which is what the row top of
-    // real crochet is) so the same yarn is spent running ALONG the row, and
-    // separate the two strands UP THE ROW rather than in depth so they read as
-    // two parallel lines under a flat top rather than one stacked lump.
-    // The head now sits ON TOP of the V rather than beside it, and it is traced
-    // in the direction the up-leg already leans (FORWARD, the work direction),
-    // so nothing reverses until the loop's own rounded turn. Its entry is at the
-    // up-leg's own x — tying the head's start back to the column centre was the
-    // second thing pinching the V shut.
-    const hy = dh * 1.45 // the two strands' separation up the row
-    trailA = push(xC - sd * pw, ty - hy * 0.95, zh * 0.4 * fz) // straight off the up-leg onto the head line
-    push(xC + s * hl * 0.72, ty - hy * 0.35, zh * 0.25 * fz) // tucked strand, running FORWARD
-    headPartner = push(xC + s * hl, ty + hy * 0.15, zh * 0.2 * fz)
-    push(xC + s * hl * 0.98, ty + hy * 0.7, zh * 0.38 * fz) // the loop's far end — it turns here
-    push(xC + s * hl * 0.5, ty + hy * 0.85, zh * 0.65 * fz) // proud strand, coming BACK
-    const crown = push(xC, ty + hy * 0.55, zh * 0.8 * fz)
-    crownBack = crown
-    crownFront = crown
+    // The head is a real two-strand LOOP — see emitHeadLoop for the anatomy.
+    const h = emitHeadLoop(push, { xC, ty, s, sd, fz, zh, dh, pw, cw, hl })
+    trailA = h.trailA
+    headPartner = h.headPartner
+    crownBack = h.crown
+    crownFront = h.crown
+    headExit = h.trailB
   } else if (loopMode === 'both') {
     trailA = push(xC - sd * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
     const crown = push(xC, ty + dh * 0.35 * lay, zh * (1.15 - 0.6 * lay) * fz)
@@ -515,11 +638,16 @@ export function emitPlainStitch(
       hookNode: backFloats ? frontNode : backNode,
     })
   }
-  const hyOut = dh * 1.45 * 0.3
   const trailB =
     recutHead
-      ? push(xC + s * cw * 0.9, ty - hyOut, zh * 0.45 * fz) // drop off the head, on to the next stitch
+      ? headExit // the head loop's own exit, pushed by emitHeadLoop
       : push(xC + sd * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
+  // Every node of this stitch's HEAD, in strand order — the crown plus whatever
+  // else the head is made of. The no-turn builders' crown canopy has to exempt
+  // the whole head, not just three nodes round the apex: a head that is a real
+  // six-node LOOP gets crushed flat if the canopy ceiling cuts across it.
+  const head: number[] = []
+  for (let k = trailA; k <= trailB; k++) head.push(k)
   stitchDebugNodes.push({
     j, c, id,
     start: dbgStart,
@@ -530,7 +658,7 @@ export function emitPlainStitch(
     headPartner,
     legs: dbgLegs,
   })
-  return { crownBack, crownFront, postMid }
+  return { crownBack, crownFront, postMid, head }
 }
 
 export function buildContinuous(
@@ -831,6 +959,10 @@ export function buildContinuous(
         c,
         id,
         headLoopMm: yr * (STITCHES[id].headLoopYr ?? 0),
+        // The flat grid builder opts in to the yarn-over collars; the shaped /
+        // round / sphere builders pass nothing and keep the bare post.
+        yarnOvers: STITCHES[id].yarnOvers ?? 0,
+        yarnOverMm: yr * (STITCHES[id].yarnOverYr ?? 1),
         s,
         fz,
         by,

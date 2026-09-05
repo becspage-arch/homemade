@@ -18,11 +18,14 @@ the work closes.
 `apps/web/src/lib/loom/**`, `apps/web/scripts/loom*`, the crochet Studio
 (`apps/web/src/app/studio/crochet`, `components/studio/crochet`,
 `api/studio/crochet`), `CrochetPattern`/`KnittingPattern` schema changes, and
-the admin Members pages. In flight: the close-range stitch look pass (branch
-`claude/loom-look-pass`, single crochet re-cut at real gauge, then the flat
-family, then round/sphere/knit builders), the amigurumi bear round 3, the CDK
-deploy that mounts `LOOM_RENDER` on the web task, the six-sample sign-off,
-then bulk fill, category go-live, knitting. Standing rule for every category:
+the admin Members pages. Done so far: look-pass rounds 1–3 (flat family and
+tall posts at real gauge; on main), the crochet Studio "Design your own", the
+real bulk path proven end to end (stored row → Fargate hero → R2 → attached),
+`LOOM_RENDER` confirmed already mounted on the web task. In flight: look-pass
+round 4 (round/sphere stitch look, branch `claude/loom-look-pass-4`), the
+headband proof rebuilt at real size (`claude/loom-headband`), the amigurumi
+bear round 3, the six-sample sign-off, then bulk fill, category go-live,
+knitting. Standing rule for every category:
 autopilot runs on ECS (Inngest) or in cloud sessions/routines, never on
 Rebecca's laptop.
 
@@ -41,6 +44,53 @@ SEO images, shelf descriptions. In flight: proof batch on the server, then the
 cron switched on and watched for three firings, then fill to target, then the
 close-out (completeness gates, vision sweep of the new work, reindex,
 sitemap/structured data) and the per-category autopilot note.
+
+## The bulk crochet pattern path proved end to end (2026-09-05)
+
+The loom's render-on-publish step had never been run against the live database:
+every hero so far came from a CLI reading a proof file. It now runs the real
+way — a stored `CrochetPattern` row with a `loomProgram` renders its OWN hero,
+uploads it, and serves it.
+
+`packages/db/scripts/seed-loom-signoff-patterns.ts` seeds the sign-off set as
+real rows (PRIVATE, house designer, a crochet shelf each, no Tutorial rows), with
+the program JSON on `loomProgram` — flat grid programs and amigurumi composition
+programs both go in the same column. Everything a catalogue row needs is DERIVED
+from the program rather than hand-kept: the `craftStitchSlugs` (internal US
+stitch ids mapped to the UK catalogue vocabulary), the abbreviation legend, the
+finished-size text, the yarn weight, the hook, the pieces and build order.
+
+`apps/web/scripts/render-patterns-on-publish-batch.ts` is the bulk renderer:
+`--slug-prefix` or a list of ids, plan everything first, launch every Fargate
+base render at once, then Fal + the fidelity gate + R2 + the write-back per row.
+`render-pattern-on-publish.ts` was split into plan / render / persist so the
+batch imports those steps instead of copying them. Two seams the split fixed:
+the idempotency check now runs on the COMPILED hash BEFORE anything renders (it
+used to render, then decide to skip — a Fargate task and a Fal call for a
+no-op), and one row that fails its audit is recorded against itself rather than
+aborting the whole run.
+
+A stored program also carries its own `staging` now. The proof CLI looks staging
+up in a table keyed by proof name; a database row has no such table, so
+`CrochetProgram.staging` holds it and the render-on-publish path reads it.
+Render-only — it is not in the geometry hash.
+
+Result: five flat patterns rendered on Fargate, passed the fidelity gate
+(0.901-0.934 against STRUCT_MIN 0.45), uploaded to R2 and wrote back
+`heroMediaId`/`loomHeroMediaId` plus regenerated `chartData` and
+`rowsStructured`. A second run reported SKIPPED_UNCHANGED for all five, with no
+new Media rows and no new R2 objects. The two amigurumi compositions failed the
+interlock audit on main (the round builders have not been re-tuned since the
+§8f gauge re-cut) and were correctly recorded FAILED_VERIFICATION without
+rendering.
+
+R2 from a cloud session works with no change: `r2Upload` already falls back from
+the S3 keys (which live only on ECS) to the Cloudflare REST path.
+
+The crochet library card was reading `thumbnailMediaId` only, so a pattern whose
+hero is a loom render showed no image. It now prefers the loom hero, then the
+Fal hero, then the saved chart thumbnail — matching the schema's own note that a
+renderer prefers `loomHero` when it is present.
 
 ## Recipe completeness: prose-method steps + per-serving nutrition (2026-06-25)
 
@@ -144,6 +194,28 @@ inline policy (ECR push to loom-render + S3 on the scratch bucket + PassRole on
 the two loom roles) so the build workflow + any invoker can drive it. Activate
 the server-side path with `LOOM_RENDER=fargate` + the six `LOOM_RENDER_*` env
 vars (from the CDK outputs). See `apps/web/scripts/loom-render/README.md`.
+
+**`LOOM_RENDER` confirmed mounted on the live web task (checked 2026-09-05).**
+`homemade-web:24` (the running revision, 0.5 vCPU / 1 GB) already carries
+`LOOM_RENDER=fargate` plus all six `LOOM_RENDER_*` values, and the web task role
+already holds the four grants the server-side path needs (S3 read/write on
+`homemade-loom-render`, `ecs:RunTask` on the `homemade-loom-render` family,
+`ecs:DescribeTasks`, and `iam:PassRole` on the two loom roles). So the switch-on
+deploy is already done — `MOUNT_LOOM_RENDER=1` landed with an earlier
+`cdk deploy` and the later CLI-registered revisions (:21-:24, the sizing change)
+carried the env forward. A fresh `cdk diff` with the full production env plus
+`MOUNT_LOOM_RENDER=1` shows no loom changes at all; the `needlework/hero.render`
+and `crochet/hero.render` Inngest jobs are live, not no-ops.
+
+That same diff does show three items of unrelated drift between the deployed
+CloudFormation template and the current source, none of them loom: the template
+still records the pre-resize `Cpu 256 / Memory 512` (live is already 512 / 1024,
+matching source, because the resize was applied by CLI revision), the stack
+description differs by one character (deployed has a `?` where the source has an
+em-dash), and a `BULK_AUTOPILOT=0` env var exists on the live task that the
+source no longer sets — nothing in `apps/web` reads it, the autopilot switch is
+DB-backed. Whoever runs the next `cdk deploy` should expect those three and
+nothing else.
 
 ## The loom hero pipeline wired to one production entrypoint (2026-06-24)
 
