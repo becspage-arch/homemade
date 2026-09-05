@@ -12,6 +12,7 @@ type Limiters = {
   errataSubmitted: Ratelimit
   reportSubmitted: Ratelimit
   searchQuery: Ratelimit
+  signup: Ratelimit
 }
 
 function getRedis(): Redis | null {
@@ -64,6 +65,15 @@ function getLimiters(): Limiters | null {
       analytics: true,
       prefix: 'rl:search',
     }),
+    // Signup spam signal only — never blocks an account being created. See
+    // `signup-risk.ts`; tripping this bucket adds a `signup-rate-burst` risk
+    // reason instead of a friendly rejection message.
+    signup: new Ratelimit({
+      redis: r,
+      limiter: Ratelimit.slidingWindow(10, '1 h'),
+      analytics: true,
+      prefix: 'rl:signup',
+    }),
   }
   return limiters
 }
@@ -109,5 +119,9 @@ function friendlyMessage(bucket: RateLimitKey, resetAt: number | undefined): str
       return `You've reached the report limit for now. Try again in ${window}.`
     case 'searchQuery':
       return `Search is busy. Try again in ${window}.`
+    case 'signup':
+      // Never shown to a signer-upper — signup is never blocked. checkRateLimit's
+      // `allowed: false` result is only used as a risk signal.
+      return `Signup rate checked. Try again in ${window}.`
   }
 }
