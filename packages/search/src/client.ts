@@ -1,4 +1,6 @@
-import { Client } from 'typesense'
+import { Client, type ConfigurationOptions } from 'typesense'
+import axios from 'axios'
+import { HttpsProxyAgent } from 'https-proxy-agent'
 
 /**
  * Typesense client wrappers.
@@ -13,7 +15,48 @@ import { Client } from 'typesense'
  * null client as "search not configured yet" and short-circuit (the public
  * search page renders an empty state, the sync hooks log a debug line and
  * carry on so admin writes never fail because Typesense isn't ready).
+ *
+ * Cloud (Claude Code) sessions reach the internet only through an HTTP
+ * CONNECT egress proxy named in HTTPS_PROXY. Typesense's bundled axios
+ * doesn't tunnel HTTPS through that proxy correctly: axios rewrites the
+ * request to point straight at the proxy host using its own (non-CONNECT)
+ * proxy path, which the proxy rejects with 405. The fix is scoped to that
+ * environment only — when HTTPS_PROXY is set we hand Typesense an
+ * HttpsProxyAgent that performs the CONNECT tunnel itself, and a tiny custom
+ * axiosAdapter that forces `proxy: false` so axios's own broken proxy
+ * rewriting never runs (the agent handles reaching the proxy; axios must not
+ * also try). When HTTPS_PROXY is unset — production (ECS) and local dev —
+ * none of this runs and the client is built exactly as before.
  */
+
+function getProxyUrl(): string | null {
+  const raw = (process.env.HTTPS_PROXY ?? process.env.https_proxy ?? '').trim()
+  return raw || null
+}
+
+/**
+ * Extra Configuration options that route Typesense's requests through
+ * HTTPS_PROXY, for environments (Claude Code cloud sessions) where that's
+ * the only way out. Empty object when HTTPS_PROXY isn't set, so production
+ * gets byte-for-byte the same Configuration as before this fix.
+ */
+function proxyConfigOptions(): Partial<ConfigurationOptions> {
+  const proxyUrl = getProxyUrl()
+  if (!proxyUrl) return {}
+
+  const httpAdapter = axios.getAdapter('http')
+
+  return {
+    httpsAgent: new HttpsProxyAgent(proxyUrl),
+    axiosAdapter: (config) => {
+      // Stop axios from also doing its own env-based proxy rewriting — the
+      // HttpsProxyAgent above already handles reaching the proxy, and
+      // axios's own path doesn't do a proper CONNECT tunnel.
+      config.proxy = false
+      return httpAdapter(config)
+    },
+  }
+}
 
 function getHost(): string | null {
   // Accept either a full URL or a bare host. Typesense Cloud gives a full URL
@@ -41,6 +84,7 @@ function buildClient(apiKey: string): Client {
     connectionTimeoutSeconds: 5,
     retryIntervalSeconds: 0.5,
     numRetries: 2,
+    ...proxyConfigOptions(),
   })
 }
 
