@@ -180,6 +180,11 @@ function bear(opts: {
     marginFactor: 0.3,
     groundScale: 40,
     lightRig: 'product',
+    // A toy is shot on a white sweep. The ground reads a shade grey at this low
+    // camera (it is lit at a grazing angle), so the base ground is lifted and
+    // the exposure eased up; the Fal hero finishes it to white.
+    bgHex: '#f7f5f2',
+    exposure: 0.34,
     parts,
     // The notions a real amigurumi pattern lists next to the yarn. NOT stitches
     // and not drawn as stitches — moulded plastic, rendered as moulded plastic.
@@ -190,10 +195,10 @@ function bear(opts: {
       // dome standing out of the wool the way a safety eye actually does.
       { name: 'eye-l', on: 'head', dir: { x: -0.62, y: f * 1, z: 0.55 }, radiusMm: 4, seat: -0.5, colourHex: EYE, gloss: 0.95 },
       { name: 'eye-r', on: 'head', dir: { x: 0.62, y: f * 1, z: 0.55 }, radiusMm: 4, seat: -0.5, colourHex: EYE, gloss: 0.95 },
-      { name: 'nose', on: 'muzzle', dir: { x: 0, y: f * 1, z: 0.22 }, radiusMm: 5.2, seat: -0.5, flatten: 0.6, widen: 1.15, colourHex: NOSE, gloss: 0.8 },
+      { name: 'nose', on: 'muzzle', dir: { x: 0, y: f * 1, z: 0.06 }, radiusMm: 3.3, seat: -0.6, flatten: 0.7, widen: 1.3, colourHex: NOSE, gloss: 0.55 },
     ],
     gaugeText: 'sc worked in the round, each piece stuffed firm and sewn on',
-    finishedSizeMm: { width: 90, height: 65 },
+    finishedSizeMm: { width: 59, height: 60 },
     hookMm: 4,
     notes: opts.notes,
   }

@@ -611,6 +611,22 @@ vs a real reference → commit + push.
   proves which way the camera looks at the composed world: FRONT IS +y, because
   the renderer maps blender-y = −loom-y and the camera sits at −blender-y).
   `amigurumi-creature` is left in place unchanged.
+  **RENDERED (Fargate, the props image build first).** All three PASS the
+  fidelity/structure gate — `amigurumi-bear` 0.923, `-plain` 0.911, `-mirror`
+  0.915 (STRUCT_MIN 0.45), so the Fal step finished the exact deterministic
+  render without inventing anything. The bear reads as a sitting crocheted
+  teddy: round head over a broad body, two ears, glossy safety eyes, a cream
+  muzzle with a nose, arms out to the sides and legs forward on the table, all
+  in visibly real single-crochet spirals. `-plain` (no paw pads) reads WORSE —
+  without the cream contrast the limbs merge into the body — which is the
+  answer to whether the second colour earns its place. `-mirror` shows the
+  bear's back, confirming the camera axis (front is +y) as designed.
+  Second pass (staging/props only, geometry hash unchanged at 70fc5299): the
+  first nose was 12 mm across on a 17 mm muzzle and mirror-glossy, reading as a
+  plastic bead rather than a nose — shrunk and matted; and the ground rendered
+  a shade grey at this low camera, so `bgHex`/`light`/`exposure` are now
+  pass-throughs on the composition program (the renderer already read them; no
+  render-script change, so no image rebuild).
 - **Part C — finished-object HERO staging across all forms (2026-07-12).** The
   four-part customer bar (correct genuinely-stitched stitches / real yarn colour on
   clean white / whole piece at size / staged as the finished object) for EVERY
