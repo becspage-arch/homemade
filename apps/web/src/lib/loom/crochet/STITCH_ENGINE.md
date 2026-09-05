@@ -627,6 +627,89 @@ vs a real reference → commit + push.
   a shade grey at this low camera, so `bgHex`/`light`/`exposure` are now
   pass-throughs on the composition program (the renderer already read them; no
   render-script change, so no image rebuild).
+  **ROUND 2 — the neck, the ears, the notions and the head turn (2026-09-05).**
+  Beside a real styled amigurumi photo the round-1 bear read as a sitting teddy
+  (the win) with four named defects. All four fixes are again COMPOSITION and
+  STAGING only — no round builder, no relaxer, no render script was touched, so
+  `amigurumi-ball` stays 22357568 and `amigurumi-creature` 18b2f935; the bear's
+  own hash moves 70fc5299 -> 8b9b32cf because its ASSEMBLY changed.
+  1. **A NECK — measured, not eyeballed.** Round 1 seated the head 9 mm into the
+     body and the two balls merged into one loaf. The test is numeric: slice the
+     body+neck+head control points every 1.5 mm and take the widest radius per
+     slice, then read the narrowest slice between the body's widest and the
+     head's middle as a percentage of the head width. Two constructions were
+     built and probed (the two-attempt cap):
+     - `neck: 'perch'` — no extra piece, head overlap dropped 9 -> 2 mm so the
+       two balls are near-tangent. Waist **25.1 mm = 74% of the head width**.
+       The silhouette does step in, but only by a quarter.
+     - `neck: 'tube'` — a short narrow crocheted neck (`[6,12,12,6]`, eq-12,
+       17 x 11 mm, scale 0.85 -> 14.6 mm wide) sunk 6 mm into the body's crown
+       with the head then stacked on IT (overlap 2). Waist **14.5 mm = 43% of
+       the head width**, holding across z 28.5-32. That is a real neck: the
+       head is more than twice the width of its own join.
+     A crocheted amigurumi neck is a PART, not a seating value — seating alone
+     cannot make the join narrower than the two spheres' own tangent circle.
+  2. **The ears had to STAND OFF, not just be big.** Round 1's ears were already
+     47% of the head width and still read as two bumps, because they sat on the
+     top-BACK of the crown and 5 of their 11.5 mm were seated inside the head.
+     Moved to the SIDES of the crown (`dir` x +-0.95, z 0.95), leaned forward by
+     a separate `aim`, and seated only 3.5 mm. Probe (projecting both ears and
+     the head into the actual camera plane): **31% of each ear now falls outside
+     the head's silhouette, tips 5.0-5.4 mm past the head edge**, symmetric
+     left/right. `-bigear` (ear scale 1.12) takes that to 44% and 8 mm.
+  3. **The FACE is turned to the camera; the BODY is not.** The camera yaws 26
+     deg round the object for the three-quarter body, so a muzzle aimed straight
+     down the bear's own +y presents at 26 deg to the lens and the far ear hides
+     behind the crown. `faceDir` rotates every FACE feature's attach direction
+     (muzzle, both eyes, both ears) back through the same 26 deg about z — a
+     HEAD TURN. Probe: muzzle-to-lens cos 0.875 (the remaining 0.125 is the
+     muzzle's deliberate 12 deg downward tip against the camera's 16 deg
+     elevation), and the two ears project symmetrically. The limbs are
+     deliberately NOT rotated: they belong to the body's three-quarter angle.
+  4. **The notions are the size real notions are.** Round 1's safety eyes were
+     8 mm across on a 34 mm head (23% of the head width) and rendered as grey
+     glass marbles — a big smooth glossy sphere mirrors the whole white sweep
+     back at the lens, and the grey IS the sweep. Real safety eyes are ~10% of
+     the head width: 3.4 mm here (`-bigear` samples 4.4 mm at lower gloss). At
+     that size the environment reflection collapses to a single highlight.
+     Seating rule found: a notion's `seat` is measured against the strand
+     CENTRE-LINE hull and the rendered yarn stands ~1.8 mm proud of it, so
+     seating a safety eye by MINUS its own radius puts its equator at the wool
+     surface and the whole dome proud — which is where a real safety eye sits
+     once the shank is through the fabric. Nose likewise 12 mm -> 5.3 mm across
+     and satin (gloss 0.4) instead of wet-look. No render-script change, so no
+     image rebuild.
+  Also in round 2: the arms now hang down the sides (joined higher at the
+  shoulder, aimed down/out/forward) instead of splaying sideways, and each
+  carries a +0.5 mm z nudge — without it the paw pad on a hanging arm reached
+  1.2 mm BELOW the table, and the renderer floats the whole piece up to clear
+  its lowest point, which lifted the legs off the ground. `marginFactor` 0.30 ->
+  0.38 so the whole toy has room. Settled size 44 x 57 x 71 mm, minz 0.00 (it
+  genuinely sits). All three variants audit clean.
+  **RENDERED (Fargate, one concurrent batch of three; no render-script change,
+  so no image rebuild).** All three PASS the fidelity/structure gate —
+  `amigurumi-bear` 0.903, `-perch` 0.904, `-bigear` 0.910 (STRUCT_MIN 0.45) —
+  so the Fal step finished the exact deterministic render without inventing
+  anything. Face close-ups (`*-face.png`) are a centre-top 46% crop of each
+  hero. What the renders show against the round-1 hero: both ears are now
+  clearly in the silhouette and read as ears rather than crown bumps; the face
+  meets the lens; the head/body join reads as a join rather than a loaf, most
+  strongly on the two `tube` variants (`-perch`'s waist is visible but soft,
+  which is what its 74% number predicted); and the safety eyes read as small
+  beads instead of glass marbles. HONEST RESIDUALS, both for the orchestrator's
+  verdict, not fixed here:
+  - The eyes still render mid-DARK-GREY rather than pure black. Shrinking them
+    removed the marble read but not the cause: `prop_material` in
+    `loom_render_crochet.py` drives Roughness, Specular IOR Level AND Coat
+    Weight from the single `gloss` value, so a glossy notion necessarily carries
+    a strong clearcoat that mirrors the white sweep. The next lever is to
+    decouple them (low roughness for a tight highlight, low coat for a dark
+    body) — a render-script change, so it costs an image rebuild and was not
+    taken on this pass.
+  - The arms read faintly: joined at the shoulder and hanging down the side,
+    they sit against the body in the same colour, so only the cream paw pads
+    really separate them. A held-out-from-the-body arm angle, or contrast
+    higher up the limb, is the open direction.
 - **Part C — finished-object HERO staging across all forms (2026-07-12).** The
   four-part customer bar (correct genuinely-stitched stitches / real yarn colour on
   clean white / whole piece at size / staged as the finished object) for EVERY
@@ -871,6 +954,49 @@ every UNCHANGED proof's geometry hash stayed bit-identical
   cannot express a sewn-on limb, because where a piece joins and which way it
   points are two different directions (`aim`) — an arm joined at the shoulder
   and forced to point along its own join direction sticks straight out sideways.
+- **Seating an amigurumi head INTO the body to join it** (bear round 2,
+  2026-09-05) → one loaf. Round 1 overlapped the head 9 mm into the body and the
+  two balls merged; there is no neck to be had from a seating value, because the
+  narrowest the join can get is the two spheres' own tangent circle. Probed by
+  slicing the body+neck+head control points every 1.5 mm and reading the
+  narrowest slice as a percentage of the head width: dropping the overlap to
+  2 mm (near-tangent) only reaches 74%, while a short narrow crocheted NECK
+  PIECE (eq-12, `[6,12,12,6]`, 14.6 mm wide) sunk into the crown with the head
+  stacked on it reaches 43% — the head then reads as more than twice the width
+  of its own join. A neck is a PART, not a placement number.
+- **A limb seated by half its own height reads as a bump, however big it is**
+  (bear round 2, 2026-09-05). Round 1's ears were already 47% of the head width
+  and still looked like two nubs, so the instinct was "make them bigger". Wrong
+  lever twice over: 5 of their 11.5 mm were INSIDE the head, and they sat on the
+  top-BACK of the crown where the crown itself occludes them from a
+  three-quarter front camera. Measure what a limb actually contributes: project
+  the limb and its parent into the real camera plane and count the fraction of
+  the limb outside the parent's projected silhouette. Moving the ears to the
+  SIDES of the crown, leaning them forward with `aim`, and cutting `seat` 5 → 3.5
+  took that from a bump to 31% outside / 5 mm past the head edge, at almost the
+  same ear size.
+- **A yawed camera makes one direction do two jobs — the FACE needs its own
+  rotation** (bear round 2, 2026-09-05). With the camera yawed 26° for the
+  three-quarter body, face features aimed straight down the figure's own front
+  present at 26° to the lens and the far ear hides behind the crown. Rotating
+  every FACE feature's attach direction back through the camera yaw about z (a
+  head turn) puts the muzzle, both eyes and both ears in front of the lens while
+  the body, limbs and shadow keep the three-quarter angle. Do NOT rotate the
+  limbs with it — they belong to the body.
+- **A big smooth glossy prop renders GREY, not black** (bear round 2,
+  2026-09-05). Round 1's safety eyes were 8 mm across on a 34 mm head (23% of
+  the head width) in a near-black glossy plastic and read as grey glass marbles.
+  The material was not wrong: a large smooth sphere mirrors the whole white
+  sweep back at the lens, so the grey IS the sweep, and the grazing rim goes
+  brighter still. The fix is the real-notion SIZE — ~10% of the head width —
+  at which the reflection collapses into the single highlight a safety eye
+  actually shows. Reach for the notion's dimensions before its shader.
+- **A hanging limb that reaches below the table lifts the WHOLE piece off it**
+  (bear round 2, 2026-09-05). The renderer floats a composition up so its lowest
+  point clears the ground (`z_offset = 0.08 - minz`), so an arm paw pad settling
+  1.2 mm under z = 0 does not clip — it silently hoists the legs 1.3 mm into the
+  air, shadow and all. Probe `minz` over every placed part after any pose change;
+  it must be 0.00.
 - **Guessing an amigurumi part's SHAPE from its round counts** (bear,
   2026-09-05) → a "head" that is a 31 × 14 mm pancake. On the intrinsic profile
   the radius comes from the count and the height from meridian pitch, so h/w is

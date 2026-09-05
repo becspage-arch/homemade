@@ -60,12 +60,42 @@ const amigurumiCreature: CompositionProgram = {
 
 // ── THE BEAR: a sitting amigurumi bear a customer recognises ────────────────
 //
-// Nine crocheted pieces, every one built by the LOCKED sphere/round builder and
-// audit-gated on its own, assembled the way a real amigurumi is sewn together —
-// plus the two notions a real pattern lists next to the yarn (safety eyes, a
-// plastic nose), rendered as the moulded plastic they are.
+// Thirteen crocheted pieces, every one built by the LOCKED sphere/round builder
+// and audit-gated on its own, assembled the way a real amigurumi is sewn
+// together — plus the notions a real pattern lists next to the yarn (safety
+// eyes, a plastic nose), rendered as the moulded plastic they are.
 //
-// The profiles below are the audit-clean ones. Each is a real magic-ring spiral
+// ROUND 2 moved four things, all in the ASSEMBLY and the NOTIONS (no round
+// builder, no relaxer and no render script was touched):
+//
+//   1. A NECK. Round 1 seated the head 9 mm into the body and the two balls
+//      merged into one loaf. A bear's head sits ON the body, clearly wider than
+//      the join, over a visible crease. Two constructions are carried as
+//      variants rather than guessed at: `neck: 'tube'` inserts a short narrow
+//      crocheted neck piece (eq-12, 15 mm wide against a 34 mm head) between
+//      body and head; `neck: 'perch'` sits the head straight on the body's
+//      crown with a 2 mm overlap, where two near-tangent balls pinch to a waist
+//      of their own. Both leave a real gap in the silhouette; they differ in
+//      how much of it is crocheted neck and how much is crease.
+//   2. The EARS STAND PROUD. Round 1 sank 5 of their 11.5 mm into the head and
+//      put them on the top-BACK, so they read as two bumps on the crown. They
+//      now sit high on the SIDES of the crown, tipped forward, seated only
+//      3.5 mm — about two thirds of each ear stands off the head.
+//   3. The FACE IS TURNED TO THE CAMERA. The camera yaws 26° round the object
+//      for the three-quarter body; every FACE feature's attach direction is
+//      rotated back by the same 26° (`faceDir`) so the muzzle, both eyes and
+//      both ears present to the lens while the body keeps its three-quarter
+//      angle. That is a head turn, which is what a real toy photograph does.
+//      The limbs are NOT rotated — they belong to the body.
+//   4. The NOTIONS ARE THE SIZE REAL ONES ARE. Round 1's eyes were 8 mm across
+//      on a 34 mm head — 23% of the head width — and rendered as grey glass
+//      marbles, because a large smooth sphere mirrors the whole white sweep
+//      back at the lens. Real safety eyes are ~10% of the head width; at that
+//      size the environment reflection collapses into the single highlight a
+//      safety eye actually shows. The nose shrank the same way and went satin.
+//
+// The profiles below are the audit-clean ones (probed, not guessed — several
+// plateau lengths fail the interlock gate). Each is a real magic-ring spiral
 // with the craft's own +6/-6 shaping; a bear-shaped part is a CHOICE OF ROUND
 // COUNTS, not a new geometry path. Sizes are the settled measurements (yr 2.1,
 // worsted), so the layout numbers below are millimetres you can check.
@@ -74,67 +104,133 @@ const amigurumiCreature: CompositionProgram = {
 //   BEAR_HEAD  34 wide x 35 tall   a genuinely round head (the long count
 //                                  plateau is what makes it a ball rather than
 //                                  the flat disc a short plateau settles into)
-//   BEAR_MUZZLE 17 x 11            a rounded pad that stands ~8 mm off the face
-//   BEAR_EAR   19 x 14             a small rounded ear, ring pole hidden in the
-//                                  head (`poleIn`) so no swirl faces the camera
+//   BEAR_NECK  17 x 11             the narrow join the head sits on
+//   BEAR_MUZZLE 17 x 11            a rounded pad that stands off the face
+//   BEAR_EAR   19 x 14             a round ear, ring pole hidden in the head
+//                                  (`poleIn`) so no swirl faces the camera
 //   BEAR_LIMB  19 x 28             the tapered tube used for all four limbs
 const BEAR_BODY = [6, 12, 18, 24, 30, 30, 30, 30, 30, 30, 24, 18, 12, 6]
 const BEAR_HEAD = [6, 12, 18, 24, 24, 24, 24, 24, 24, 24, 24, 18, 12, 6]
+const BEAR_NECK = [6, 12, 12, 6]
 const BEAR_MUZZLE = [6, 12, 12, 6]
 const BEAR_EAR = [6, 12, 12, 12, 6]
 const BEAR_LIMB = [6, 12, 12, 12, 12, 12, 10, 8, 6]
 
 const TAN = '#b5814e'
 const CREAM = '#e6d3ae'
-const EYE = '#141110'
-const NOSE = '#241d19'
+const EYE = '#080706'
+const NOSE = '#171310'
 
-/** The shared bear, with the two knobs the variants move. */
+/** The camera yaw (deg) every bear composition is staged at — and therefore the
+ *  angle the face is turned back through so it meets the lens. */
+const BEAR_YAW = 26
+
+type Dir = { x: number; y: number; z: number }
+
+/** Turn a FACE feature's attach direction to the camera. The bear's own front
+ *  is +y (`facing` flips it), but the camera sits `BEAR_YAW` round from there,
+ *  so a muzzle/eye/ear aimed straight down the bear's front presents at an
+ *  angle. Rotating those directions back about z is a HEAD TURN: the face meets
+ *  the lens while the body, limbs and shadow keep the three-quarter angle. */
+function faceDir(f: 1 | -1, d: Dir): Dir {
+  const t = (-f * BEAR_YAW * Math.PI) / 180
+  const c = Math.cos(t)
+  const s = Math.sin(t)
+  return { x: d.x * c - d.y * s, y: d.x * s + d.y * c, z: d.z }
+}
+
+/** The shared bear. The knobs are the round-2 questions: how the head meets the
+ *  body, how big the ears are, and how big/glossy the safety eyes are. */
 function bear(opts: {
   name: string
   /** Which way the bear faces. +1 = toward the camera (the front of the scene). */
   facing: 1 | -1
-  /** Arm aim (down-forward), as {out, forward, up}. */
-  armAim: { out: number; forward: number; up: number }
-  /** Ear splay: how far out to the side the ears sit. */
-  earOut: number
+  /** How the head meets the body — a crocheted neck piece, or perched on the
+   *  crown so the two balls pinch to a waist between them. */
+  neck: 'tube' | 'perch'
+  /** Ear size as a scale on BEAR_EAR (1 = 19 x 14 mm on a 34 mm head). */
+  earScale: number
+  /** Safety eye radius (mm). ~10% of the head WIDTH is the real-notion size. */
+  eyeRadiusMm: number
+  /** 0 = matte moulded plastic, 1 = wet-look. */
+  eyeGloss: number
   /** Cream paw pads on the ends of all four limbs. */
   paws: boolean
   notes: string
 }): CompositionProgram {
   const f = opts.facing
-  const a = opts.armAim
+  // Where each arm points once it is sewn on: down the side, angled out and
+  // forward, so the paw lands beside the leg rather than through the table.
+  const armAim = (side: -1 | 1): Dir => ({ x: side * 0.32, y: f * 0.5, z: -0.75 })
+  const legAim = (side: -1 | 1): Dir => ({ x: side * 0.26, y: f * 1, z: -0.05 })
+  // The ear leans forward-and-up out of its join, so both ears clear the crown
+  // and land in the silhouette from the three-quarter front.
+  const earAim = (side: -1 | 1): Dir => faceDir(f, { x: side * 0.8, y: f * 0.35, z: 1 })
+
   const parts: CompositionProgram['parts'] = [
     { name: 'body', stitch: 'sc', rounds: BEAR_BODY, colourHex: TAN, place: { on: 'ground' } },
-    // The head nestles into the top of the body, sat a touch forward.
-    { name: 'head', stitch: 'sc', rounds: BEAR_HEAD, colourHex: TAN, place: { on: 'body', overlap: 9, offset: { y: f * 2 } } },
+  ]
+  if (opts.neck === 'tube') {
+    // A narrow crocheted neck sunk into the body's crown; the head then sits on
+    // IT, so the silhouette steps body -> neck -> head instead of merging.
+    parts.push({
+      name: 'neck', stitch: 'sc', rounds: BEAR_NECK, colourHex: TAN, scale: 0.85,
+      place: { on: 'body', overlap: 6, offset: { y: f * 1.5 } },
+    })
+    parts.push({
+      name: 'head', stitch: 'sc', rounds: BEAR_HEAD, colourHex: TAN,
+      place: { on: 'neck', overlap: 2, offset: { y: f * 1 } },
+    })
+  } else {
+    // No neck piece: the head is perched on the body's crown with a shallow
+    // overlap, and the two balls pinch to a waist where their surfaces cross.
+    parts.push({
+      name: 'head', stitch: 'sc', rounds: BEAR_HEAD, colourHex: TAN,
+      place: { on: 'body', overlap: 2, offset: { y: f * 2.5 } },
+    })
+  }
+  parts.push(
     // The muzzle: a cream pad on the FRONT of the face, tipped slightly down.
     {
-      name: 'muzzle', stitch: 'sc', rounds: BEAR_MUZZLE, colourHex: CREAM, scale: 0.95,
-      place: { on: 'head', dir: { x: 0, y: f * 1, z: -0.2 }, seat: 3, poleIn: true, surfaceFit: 'ellipsoid' },
+      name: 'muzzle', stitch: 'sc', rounds: BEAR_MUZZLE, colourHex: CREAM, scale: 0.85,
+      place: { on: 'head', dir: faceDir(f, { x: 0, y: f * 1, z: -0.22 }), seat: 3, poleIn: true, surfaceFit: 'ellipsoid' },
     },
-    // Ears: small and round, on the TOP-BACK of the head, ring pole buried.
+    // Ears: high on the SIDES of the crown, leaning forward, seated only 3.5 mm
+    // so most of each ear stands off the head. Ring pole buried in the join.
     {
-      name: 'ear-l', stitch: 'sc', rounds: BEAR_EAR, colourHex: TAN, scale: 0.82,
-      place: { on: 'head', dir: { x: -opts.earOut, y: f * -0.42, z: 1 }, seat: 5, poleIn: true, surfaceFit: 'ellipsoid' },
+      name: 'ear-l', stitch: 'sc', rounds: BEAR_EAR, colourHex: TAN, scale: opts.earScale,
+      place: {
+        on: 'head', dir: faceDir(f, { x: -0.95, y: f * 0.18, z: 0.95 }), aim: earAim(-1),
+        seat: 3.5, poleIn: true, surfaceFit: 'ellipsoid',
+      },
     },
     {
-      name: 'ear-r', stitch: 'sc', rounds: BEAR_EAR, colourHex: TAN, scale: 0.82,
-      place: { on: 'head', dir: { x: opts.earOut, y: f * -0.42, z: 1 }, seat: 5, poleIn: true, surfaceFit: 'ellipsoid' },
+      name: 'ear-r', stitch: 'sc', rounds: BEAR_EAR, colourHex: TAN, scale: opts.earScale,
+      place: {
+        on: 'head', dir: faceDir(f, { x: 0.95, y: f * 0.18, z: 0.95 }), aim: earAim(1),
+        seat: 3.5, poleIn: true, surfaceFit: 'ellipsoid',
+      },
     },
-    // Arms: sewn high at the shoulder, hanging down-and-forward.
+    // Arms: sewn high at the shoulder, hanging down the sides and a little
+    // forward — the limbs stay on the BODY's axis, not the turned face's.
     {
       name: 'arm-l', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.78,
       place: {
-        on: 'body', dir: { x: -1, y: f * 0.3, z: 0.62 },
-        aim: { x: -a.out, y: f * a.forward, z: a.up }, seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
+        on: 'body', dir: { x: -1, y: f * 0.28, z: 0.7 },
+        aim: armAim(-1), seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
+        // The paw pad on the end of a hanging arm otherwise reaches just below
+        // the table, and the renderer floats the WHOLE piece up to clear it —
+        // which lifts the legs off the ground. Hold the arm the half-millimetre
+        // that keeps every part of the bear on or above z = 0.
+        offset: { z: 0.5 },
       },
     },
     {
       name: 'arm-r', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.78,
       place: {
-        on: 'body', dir: { x: 1, y: f * 0.3, z: 0.62 },
-        aim: { x: a.out, y: f * a.forward, z: a.up }, seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
+        on: 'body', dir: { x: 1, y: f * 0.28, z: 0.7 },
+        aim: armAim(1), seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
+        offset: { z: 0.5 },
       },
     },
     // Legs: sewn low at the front, lying FORWARD along the table so it sits.
@@ -142,7 +238,7 @@ function bear(opts: {
       name: 'leg-l', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.9,
       place: {
         on: 'body', dir: { x: -0.52, y: f * 0.8, z: -0.55 },
-        aim: { x: -0.26, y: f * 1, z: -0.05 }, seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
+        aim: legAim(-1), seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
         offset: { z: -0.4 },
       },
     },
@@ -150,81 +246,131 @@ function bear(opts: {
       name: 'leg-r', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.9,
       place: {
         on: 'body', dir: { x: 0.52, y: f * 0.8, z: -0.55 },
-        aim: { x: 0.26, y: f * 1, z: -0.05 }, seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
+        aim: legAim(1), seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
         offset: { z: -0.4 },
       },
     },
-  ]
+  )
   if (opts.paws) {
     // Cream paw pads: a small ball on the end of each limb, in the limb's own
-    // direction — the contrast paws a teddy bear pattern works in a second colour.
-    const paw = (name: string, on: string, dir: { x: number; y: number; z: number }): CompositionProgram['parts'][number] => ({
+    // direction — the contrast paws a teddy bear pattern works in a second
+    // colour. Rendering the bear WITHOUT them (round 1's `-plain`) read worse:
+    // the limbs merged into the body, so they earn their place.
+    const paw = (name: string, on: string, dir: Dir): CompositionProgram['parts'][number] => ({
       name, stitch: 'sc', rounds: BEAR_MUZZLE, colourHex: CREAM, scale: 0.62,
       place: { on, dir, seat: 3, poleIn: true, surfaceFit: 'ellipsoid' },
     })
     parts.push(
-      paw('paw-al', 'arm-l', { x: -a.out, y: f * a.forward, z: a.up }),
-      paw('paw-ar', 'arm-r', { x: a.out, y: f * a.forward, z: a.up }),
-      paw('paw-ll', 'leg-l', { x: -0.26, y: f * 1, z: -0.05 }),
-      paw('paw-lr', 'leg-r', { x: 0.26, y: f * 1, z: -0.05 }),
+      paw('paw-al', 'arm-l', armAim(-1)),
+      paw('paw-ar', 'arm-r', armAim(1)),
+      paw('paw-ll', 'leg-l', legAim(-1)),
+      paw('paw-lr', 'leg-r', legAim(1)),
     )
   }
   return {
     name: opts.name,
     yarnWeight: 'worsted',
-    // A toy is photographed from just above its own eye level, three-quarters on.
+    // A toy is photographed from just above its own eye level, three-quarters on,
+    // with room round the whole thing.
     tiltDeg: 74,
-    yawDeg: f * 26,
+    yawDeg: f * BEAR_YAW,
     aimHeightFrac: 0.5,
     distScale: 1.05,
-    marginFactor: 0.3,
+    marginFactor: 0.38,
     groundScale: 40,
     lightRig: 'product',
     // A toy is shot on a white sweep. The ground reads a shade grey at this low
     // camera (it is lit at a grazing angle), so the base ground is lifted and
     // the exposure eased up; the Fal hero finishes it to white.
-    bgHex: '#f7f5f2',
+    bgHex: '#faf8f5',
     exposure: 0.34,
     parts,
     // The notions a real amigurumi pattern lists next to the yarn. NOT stitches
     // and not drawn as stitches — moulded plastic, rendered as moulded plastic.
     props: [
-      // `seat` is measured against the strand CENTRE-LINE hull, and the rendered
-      // yarn stands ~1.8 mm proud of that — so a notion seated by its own radius
-      // disappears into the fabric. A slightly NEGATIVE seat is what leaves the
-      // dome standing out of the wool the way a safety eye actually does.
-      { name: 'eye-l', on: 'head', dir: { x: -0.62, y: f * 1, z: 0.55 }, radiusMm: 4, seat: -0.5, colourHex: EYE, gloss: 0.95 },
-      { name: 'eye-r', on: 'head', dir: { x: 0.62, y: f * 1, z: 0.55 }, radiusMm: 4, seat: -0.5, colourHex: EYE, gloss: 0.95 },
-      { name: 'nose', on: 'muzzle', dir: { x: 0, y: f * 1, z: 0.06 }, radiusMm: 3.3, seat: -0.6, flatten: 0.7, widen: 1.3, colourHex: NOSE, gloss: 0.55 },
+      // `seat` is measured against the strand CENTRE-LINE hull and the rendered
+      // yarn stands ~1.8 mm proud of that, so a notion seated by its own radius
+      // disappears into the fabric. Seating a safety eye by MINUS its own radius
+      // puts its equator at the wool surface and the whole dome proud of it —
+      // which is exactly where a real safety eye's dome sits once the shank is
+      // pushed through the fabric.
+      {
+        name: 'eye-l', on: 'head', dir: faceDir(f, { x: -0.62, y: f * 1, z: 0.42 }),
+        radiusMm: opts.eyeRadiusMm, seat: -(opts.eyeRadiusMm + 0.2), colourHex: EYE, gloss: opts.eyeGloss,
+      },
+      {
+        name: 'eye-r', on: 'head', dir: faceDir(f, { x: 0.62, y: f * 1, z: 0.42 }),
+        radiusMm: opts.eyeRadiusMm, seat: -(opts.eyeRadiusMm + 0.2), colourHex: EYE, gloss: opts.eyeGloss,
+      },
+      // The nose: small, near-black, satin rather than wet-look, sitting on the
+      // TOP-front of the muzzle. An ellipsoid cannot be the rounded triangle a
+      // sewn nose makes, so this is the round black bead a pattern's notions
+      // list offers instead.
+      {
+        name: 'nose', on: 'muzzle', dir: faceDir(f, { x: 0, y: f * 1, z: 0.42 }),
+        radiusMm: 1.9, seat: -1.8, flatten: 0.65, widen: 1.4, colourHex: NOSE, gloss: 0.4,
+      },
     ],
     gaugeText: 'sc worked in the round, each piece stuffed firm and sewn on',
-    finishedSizeMm: { width: 59, height: 60 },
+    finishedSizeMm: { width: 44, height: 69 },
     hookMm: 4,
     notes: opts.notes,
   }
 }
 
+// The primary candidate: a crocheted neck piece between body and head.
 const amigurumiBear = bear({
   name: 'amigurumi-bear',
   facing: 1,
-  armAim: { out: 0.8, forward: 0.62, up: -0.42 },
-  earOut: 0.72,
+  neck: 'tube',
+  earScale: 0.92,
+  eyeRadiusMm: 1.7,
+  eyeGloss: 0.85,
   paws: true,
   notes:
-    'A sitting amigurumi bear: a stuffed body and a round head, a cream muzzle, two ' +
-    'small ears, two arms and two legs — nine pieces, each worked as a continuous ' +
-    'spiral from a magic ring, stuffed and sewn on. Safety eyes and a plastic nose ' +
-    'finish the face.',
+    'A sitting amigurumi bear: a stuffed body, a short neck and a round head, a ' +
+    'cream muzzle, two ears, two arms and two legs with cream paw pads — worked ' +
+    'as continuous spirals from a magic ring, stuffed and sewn together. Safety ' +
+    'eyes and a plastic nose finish the face.',
 })
 
-// Variant: no cream paw pads, arms held wider and lower, ears set closer in.
+// Variant: the same bear with NO neck piece — the head perched straight on the
+// body's crown, where the two balls pinch to a waist of their own.
+const amigurumiBearPerch = bear({
+  name: 'amigurumi-bear-perch',
+  facing: 1,
+  neck: 'perch',
+  earScale: 0.92,
+  eyeRadiusMm: 1.7,
+  eyeGloss: 0.85,
+  paws: true,
+  notes: 'The same bear with the head perched on the body rather than joined by a neck piece.',
+})
+
+// Variant: the neck bear with bigger ears and slightly bigger, less wet-look
+// eyes — the size/material end of the notions question.
+const amigurumiBearBigEar = bear({
+  name: 'amigurumi-bear-bigear',
+  facing: 1,
+  neck: 'tube',
+  earScale: 1.12,
+  eyeRadiusMm: 2.2,
+  eyeGloss: 0.6,
+  paws: true,
+  notes: 'The same bear with larger ears and slightly larger, less glossy safety eyes.',
+})
+
+// Variant: no cream paw pads. Round 1 answered this — without the contrast the
+// limbs merge into the body — so it is kept only as the recorded control.
 const amigurumiBearPlain = bear({
   name: 'amigurumi-bear-plain',
   facing: 1,
-  armAim: { out: 1, forward: 0.42, up: -0.62 },
-  earOut: 0.5,
+  neck: 'tube',
+  earScale: 0.92,
+  eyeRadiusMm: 1.7,
+  eyeGloss: 0.85,
   paws: false,
-  notes: 'The same bear worked in one colour but for the muzzle, with the arms hanging lower.',
+  notes: 'The same bear worked in one colour but for the muzzle — the control that showed the paw pads earn their place.',
 })
 
 // Variant: the mirror of the primary, kept as the staging control — it proves
@@ -232,8 +378,10 @@ const amigurumiBearPlain = bear({
 const amigurumiBearMirror = bear({
   name: 'amigurumi-bear-mirror',
   facing: -1,
-  armAim: { out: 0.8, forward: 0.62, up: -0.42 },
-  earOut: 0.72,
+  neck: 'tube',
+  earScale: 0.92,
+  eyeRadiusMm: 1.7,
+  eyeGloss: 0.85,
   paws: true,
   notes: 'The bear built facing the other way — the staging control for the camera axis.',
 })
@@ -242,6 +390,8 @@ export const COMPOSITION_PROOFS: Record<string, CompositionProgram> = {
   'amigurumi-ball': amigurumiBall,
   'amigurumi-creature': amigurumiCreature,
   'amigurumi-bear': amigurumiBear,
+  'amigurumi-bear-perch': amigurumiBearPerch,
+  'amigurumi-bear-bigear': amigurumiBearBigEar,
   'amigurumi-bear-plain': amigurumiBearPlain,
   'amigurumi-bear-mirror': amigurumiBearMirror,
 }
