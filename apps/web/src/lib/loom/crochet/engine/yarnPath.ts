@@ -34,8 +34,9 @@ export interface StitchLink {
   j: number
   c: number
   /** 'hook' dives under a crown; 'ring' encircles a post stem; 'cross' passes
-   *  through a chain loop's opening; 'through' = a knit leg passing the old
-   *  head's mouth on the fabric's face side. */
+   *  through a chain loop's opening; 'through' = a strand that must stay on one
+   *  declared side of another (a knit leg passing the old head's mouth on the
+   *  fabric's face side; a crochet yarn-over collar passing BEHIND its own post). */
   role: 'hook' | 'ring' | 'cross' | 'through'
   hook: number
   below: number
@@ -342,6 +343,18 @@ export interface PlainStitchSpec {
    * canopies, radial drifts and intrinsic profiles were all calibrated on it).
    */
   headLoopMm?: number
+  /**
+   * How many YARN-OVERS this stitch is made with (§8f-3). 0 / absent → the bare
+   * two-leg post every stitch had before, so nothing that does not opt in moves.
+   * dc 1, tr 2, dtr 3 — exactly the count a crocheter wraps before inserting the
+   * hook, and exactly the number of collars a real tall post shows up its length.
+   * Passed by the caller rather than read from the dictionary so a builder opts
+   * in (the flat grid builder does; the shaped / round / sphere builders keep the
+   * bare post until their own pass).
+   */
+  yarnOvers?: number
+  /** The collar's half-depth in mm (§8f-3). Absent → `yr` (one yarn radius). */
+  yarnOverMm?: number
 }
 
 export function emitPlainStitch(
@@ -428,21 +441,85 @@ export function emitPlainStitch(
   // hdc third loop: the start-of-stitch yarn-over, laid horizontally across the
   // head line before the hook dives. Consecutive ones form the signature ridge.
   if (thirdLoop) push(xC + s * cw * 1.1, ty - dh * 0.9, z * 1.7 * fz)
-  // Down-leg: descend the worked face from the previous head toward the insertion.
-  dbgLegs.push(push(xa(1) + sd * legHalf(1), by + px * 0.8, legZ * fz * lr))
-  dbgLegs.push(push(xa(0.65) + sd * legHalf(0.65), by + px * 0.52, legZ * fz * lr))
-  dbgLegs.push(push(xa(0.33) + sd * legHalf(0.33), by + px * 0.26, legZHi * fz * lr))
-  push(xH + sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // approach the below crown
-  // Hook UNDER the crown below — tuck to the far z-side of it. Collision (neither
-  // can pass through the other) holds the link — no spring.
-  const hookIdx = push(xH, cy - dh, hookZ)
-  S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: hookIdx, below: bc })
-  push(xH - sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // emerge
-  // Up-leg: pulled back UP just beside the down-leg → the two strands of the post.
-  dbgLegs.push(push(xa(0.33) - sd * legHalf(0.33), by + px * 0.26, legZHi * fz * lr))
-  const postMid = push(xa(0.65) - sd * legHalf(0.65), by + px * 0.52, legZ * fz * lr)
-  dbgLegs.push(postMid)
-  dbgLegs.push(push(xa(1) - sd * legHalf(1), by + px * 0.8, legZ * fz * lr))
+  // THE YARN-OVER COLLARS (§8f-3). A tall post is not a bare ladder: before the
+  // hook is inserted the yarn is wrapped over it — once for a dc, twice for a tr,
+  // three times for a dtr — and each of those wraps ends up as a closed COLLAR of
+  // yarn round the post, evenly spaced up its length. That is what a crocheter
+  // counts to name the stitch, and (measured) it is where the missing third of a
+  // tall stitch's yarn lives: without the collars dc / tr / dtr fed only
+  // 0.67–0.70× the real yarn per stitch, which dragged their crowding and fabric
+  // thickness down with it.
+  //
+  // Traced as the one strand genuinely does it, so nothing is drawn. The yarn-over
+  // is made BEFORE the insertion, so it comes first along the strand: the strand
+  // leaves the previous head, descends the post line, and at each collar height
+  // runs a full turn round the column — behind the post, across the leading side,
+  // back in FRONT of it — then carries on down. Nothing is linked yet; the collar
+  // closes only when the UP-leg rises back through it on its way to the head, and
+  // it is self-collision that then holds the up-leg inside the ring. The recorded
+  // link is that crossing ('through': the collar's far node must stay on the far
+  // side of the up-leg it rings), so the audit can prove the wrap survived.
+  const nyo = spec.yarnOvers ?? 0
+  let hookIdx: number
+  let postMid: number
+  if (nyo > 0) {
+    const zw = spec.yarnOverMm ?? d.yr
+    // One leg node every quarter of a collar gap: the collars land exactly ON leg
+    // nodes (level 4·k), and every ring node stays more than the relax
+    // adjacency window away from the up-leg node it must collide with.
+    const L = 4 * nyo + 4
+    const dY = (px * 0.8) / L // one level of height — the ring drifts down by one
+    const yoFar: { node: number; f: number }[] = []
+    for (let i = 0; i < L; i++) {
+      const f = 1 - i / L
+      const ly = by + px * 0.8 * f
+      dbgLegs.push(push(xa(f) + sd * legHalf(f), ly, legZ * fz * lr))
+      if (i === 0 || i % 4 !== 0 || i / 4 > nyo) continue
+      const cx = xa(f) // the post's centre line at this height
+      const ux = cx - sd * legHalf(f) // where the up-leg will rise
+      const a = legHalf(f) + zw * 0.9 // half-width: the ring clears both legs
+      push(cx + sd * a * 0.9, ly + dY * 0.45, legZ * fz * lr) // still on the trailing side
+      const far = push(ux, ly + dY * 0.1, -zw * fz) // BEHIND the post ← the collar's far side
+      push(cx - sd * a * 0.95, ly - dY * 0.2, -zw * 0.55 * fz) // round the leading edge
+      push(cx - sd * a, ly - dY * 0.5, zw * 0.35 * fz) // …and forward
+      push(ux, ly - dY * 0.8, zw * fz) // IN FRONT of the post — the ring is closed
+      push(cx + sd * a * 0.75, ly - dY, zw * 0.4 * fz) // back to the trailing side, carry on down
+      yoFar.push({ node: far, f })
+    }
+    push(xH + sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // approach the below crown
+    hookIdx = push(xH, cy - dh, hookZ)
+    S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: hookIdx, below: bc })
+    push(xH - sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // emerge
+    // Up-leg: back up the leading side, THROUGH every collar the descent laid.
+    const upAt = new Map<number, number>()
+    for (let i = L - 1; i >= 0; i--) {
+      const f = 1 - i / L
+      const n = push(xa(f) - sd * legHalf(f), by + px * 0.8 * f, legZ * fz * lr)
+      dbgLegs.push(n)
+      upAt.set(i, n)
+    }
+    postMid = upAt.get(Math.round(L * 0.35))!
+    for (const w of yoFar) {
+      const below = upAt.get(Math.round((1 - w.f) * L))!
+      S.links.push({ j, c, role: 'through', hook: w.node, below, zSign: -fz })
+    }
+  } else {
+    // Down-leg: descend the worked face from the previous head toward the insertion.
+    dbgLegs.push(push(xa(1) + sd * legHalf(1), by + px * 0.8, legZ * fz * lr))
+    dbgLegs.push(push(xa(0.65) + sd * legHalf(0.65), by + px * 0.52, legZ * fz * lr))
+    dbgLegs.push(push(xa(0.33) + sd * legHalf(0.33), by + px * 0.26, legZHi * fz * lr))
+    push(xH + sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // approach the below crown
+    // Hook UNDER the crown below — tuck to the far z-side of it. Collision (neither
+    // can pass through the other) holds the link — no spring.
+    hookIdx = push(xH, cy - dh, hookZ)
+    S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: hookIdx, below: bc })
+    push(xH - sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // emerge
+    // Up-leg: pulled back UP just beside the down-leg → the two strands of the post.
+    dbgLegs.push(push(xa(0.33) - sd * legHalf(0.33), by + px * 0.26, legZHi * fz * lr))
+    postMid = push(xa(0.65) - sd * legHalf(0.65), by + px * 0.52, legZ * fz * lr)
+    dbgLegs.push(postMid)
+    dbgLegs.push(push(xa(1) - sd * legHalf(1), by + px * 0.8, legZ * fz * lr))
+  }
 
   // Throw this stitch's crown. A plain stitch leaves a single apex (back == front);
   // blo/flo split it into a proud (unworked, floats as the ridge) loop + a tucked
@@ -831,6 +908,10 @@ export function buildContinuous(
         c,
         id,
         headLoopMm: yr * (STITCHES[id].headLoopYr ?? 0),
+        // The flat grid builder opts in to the yarn-over collars; the shaped /
+        // round / sphere builders pass nothing and keep the bare post.
+        yarnOvers: STITCHES[id].yarnOvers ?? 0,
+        yarnOverMm: yr * (STITCHES[id].yarnOverYr ?? 1),
         s,
         fz,
         by,

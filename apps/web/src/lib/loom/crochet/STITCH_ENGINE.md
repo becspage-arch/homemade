@@ -1157,6 +1157,118 @@ worsted 2.4 and bulky 3.2.
   the legacy lattice) and its own two-diameter thickness model (§8d), so it wants
   its own measurement pass rather than crochet's numbers.
 
+## 8f-3. ROUND 3 — the yarn-over collars on the tall posts (2026-09-05)
+
+Round-2 verdict: the flat family passes at object scale and sc passes close-up.
+The residual it named first was that **dc / tr / dtr read as bare ladders** — two
+straight legs and nothing else — and fed only 0.67–0.70× the real yarn per
+stitch, which dragged their crowding and fabric thickness down with them.
+
+### The construction — a yarn-over is a closed collar, not a decoration
+
+A tall stitch is not a taller sc. Before the hook is ever inserted the yarn is
+wrapped over it: **once for a dc, twice for a tr, three times for a dtr** — and
+each of those wraps ends up as a closed ring of yarn round the finished post,
+evenly spaced up its length. They are the bands a crocheter counts to name the
+stitch, and they were simply missing.
+
+They are built as what the one strand genuinely does, in the real order:
+
+- the yarn-over happens BEFORE the insertion, so it comes first along the strand;
+- coming off the previous head the strand descends the post line and, at each
+  collar height, runs a **full turn round the column** — behind the post, round
+  the leading edge, back across the FRONT — then carries on down to the insertion;
+- nothing is linked at that moment. The collar closes only when the **up-leg
+  rises back through it** on its way to the head, and self-collision is what then
+  holds the up-leg inside the ring. That crossing is recorded as a `through`
+  link, so the audit proves the wrap survived relaxation rather than trusting the
+  render.
+
+The legs are cut with a node at every collar height (one every quarter of a
+collar gap), which is also what keeps every ring node further along the strand
+from the up-leg it must collide with than the relaxer's adjacency window — a
+collar built inside that window is a ring the up-leg can walk straight out of.
+
+`yarnOvers` and `yarnOverYr` are dictionary fields; a stitch that declares
+neither gets exactly the bare post it had before.
+
+### The targets were wrong, and wrong in one specific way
+
+Before changing anything, the tall stitches' yarn-per-stitch targets were
+re-derived, because the measured shortfall was suspiciously uniform (0.67, 0.68,
+0.70). The old figures came from scaling sc's published figure by how much taller
+the post is — which counts the post and the head and **forgets the yarn-overs
+entirely**. Built from the anatomy instead:
+
+```
+yarn per stitch = 2 × row pitch            (the post's two legs)
+                + 2 × stitch pitch + 2     (the head loop's perimeter)
+                + yarn-overs × 5.1         (one collar: ~2 d of span + π d of ends)
+```
+
+The check on the model is **sc**, whose figure is published independently
+(~3–4 m per 100 sc): the model gives 8.0 d, the middle of its 7.0–9.5 range. It
+also reproduces hdc (12.0 d against a measured 10.3 in a 9.5–13 range) — and hdc
+correctly gets no collar, because its one yarn-over is drawn through all three
+loops at once and lands as the third-loop ridge.
+
+| stitch | old target (scaled) | anatomy | new range (±20%) |
+|---|---|---|---|
+| dc | 13.0–18.0 | 18.5 | **14.8–22.2** |
+| tr | 17.0–24.0 | 26.8 | **21.4–32.2** |
+| dtr | 21.0–30.0 | 35.3 | **28.2–42.4** |
+
+Two published equal-area swatch tests bracket the new numbers rather than the
+old: an sc-vs-dc test (37 yd vs 23 yd for the same 6×5 in) puts a dc at 2.05 × an
+sc, i.e. 16.4 d, and an sc/hdc/dc/tr test at 2.6 ×, i.e. 21 d. Crowding targets
+follow from the same figures over each stitch's own cell.
+
+### The measured table — before and after (worsted, yr 2.4)
+
+| quantity | dc before | dc after | tr before | tr after | dtr before | dtr after |
+|---|---|---|---|---|---|---|
+| yarn fed per stitch | 10.92 d | **16.00** | 13.85 d | **24.35** | 17.03 d | **33.01** |
+| …as a share of target | 0.70× | **0.86×** | 0.68× | **0.91×** | 0.67× | **0.94×** |
+| crowding | 1.47 | **2.16** | 1.20 | **2.12** | 1.05 | **2.03** |
+| fabric thickness | 1.05 d | 1.31 d | 1.00 d | 1.31 d | 1.01 d | 1.38 d |
+| stitch pitch / row pitch | 1.00× | 1.00× | 1.00× | 1.00× | 1.00× | 1.00× |
+| leg straightness, visible | 1.00 | 0.96 | — | 0.94 | — | 0.93 |
+| V opening angle | 28.9° | 28.2° | 24° | 24.2° | 20° | 20.2° |
+| post leg separation | 1.05 d | 0.83 d | 1.22 d | 0.88 d | 1.32 d | 0.94 d |
+
+Every one of the three now lands inside its own yarn and crowding range, at the
+same gauge, with the V and the straight legs round 2 won still intact. The post
+leg separation drops because the collar genuinely cinches the post — which is
+what a collar does.
+
+Two metric changes went with it, both in `loom-stitch-metrics.ts` only:
+leg separation and straightness now walk however many leg nodes a stitch has
+instead of assuming three a side, and the straightness figures walk the LEG
+NODES rather than every strand node between them — otherwise a collar's genuine
+excursion round the post is scored as leg bend (it read 0.60–0.67 and the leg
+was dead straight). The with-dive figure therefore reads 0.99 for sc where round
+2 reported 0.87; it is the same fabric, measured without the detours.
+
+**Still open on the tall stitches:** fabric thickness is 1.31–1.38 d against a
+real 1.8–2.2, and the leg pair sits 0.32–0.34 d out of plane against ≤0.3. Both
+are the §8f-2 coupling, not the collars — every part of a row still sits on that
+row's own worked face, so thickness can only come from row-to-row alternation.
+The collars raised thickness from 1.00–1.05, which is as far as they reach.
+
+### Hashes — 7 moved, 29 bit-identical
+
+`dc` 0338798a843fac2a→6cf5d9a8ef407dee · `tr` 097ace7ab1b448a1→3be0cd4b6d701a38 ·
+`dtr` d136eb5d1ce5902b→f4ed80ad99033afa · `fpdc` 15d9b46d2358df6a→d312f9ea41f3b549 ·
+`bpdc` 88a224a8c10e2ea8→ddc3f2b65f36447d · `postrib` f7d2a22bd60e772c→d27a1dd46849bd1f ·
+`basketweave` b94ede37a8ff6c6e→0de1315d830cb475.
+
+The four post swatches moved only because their row 0 is a plain `dc` — the
+fp/bp post branch itself is untouched. Everything else, the shaped / round /
+sphere / knit builders included, is bit-identical: they call the shared emitter
+without a yarn-over count, so they keep the bare post until their own pass.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,

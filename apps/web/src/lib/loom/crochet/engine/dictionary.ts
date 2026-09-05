@@ -86,6 +86,20 @@ export interface StitchDef {
    * from somewhere, and this is the dial.
    */
   reliefScale?: number
+  /**
+   * How many YARN-OVERS the stitch is made with (§8f-3) — dc 1, tr 2, dtr 3.
+   * Each one ends up as a closed COLLAR of yarn round the post, evenly spaced up
+   * its length: the bands a crocheter counts to name the stitch, and where the
+   * missing third of a tall stitch's yarn was hiding. Absent / 0 → the bare
+   * two-leg post, so a stitch made with no yarn-over is bit-identical.
+   */
+  yarnOvers?: number
+  /**
+   * The collar's half-depth in yarn radii (absent → 1). With the post's own
+   * half-width it sets how much yarn one collar spends — the dial that lands a
+   * tall stitch's yarn-per-stitch on its real published figure.
+   */
+  yarnOverYr?: number
 }
 
 export const STITCHES: Record<StitchId, StitchDef> = {
@@ -119,17 +133,20 @@ export const STITCHES: Record<StitchId, StitchDef> = {
   dc: {
     id: 'dc', heightFactor: 3.2, gaugeYr: 3.4, topLoops: 2,
     rowYr: 6.29, postHalfYr: 1.32, crownHalfYr: 0.65, headLoopYr: 2.52, reliefScale: 1.3,
+    yarnOvers: 1, yarnOverYr: 1.0,
   },
   // tr — ~10-11 sts and ~4.5-5 rows / 10 cm: pitch 2.3 d, row 5.0 d. Taller means
   // airier: open channels between the posts.
   tr: {
     id: 'tr', heightFactor: 4.2, gaugeYr: 3.91, topLoops: 2,
     rowYr: 8.5, postHalfYr: 1.52, crownHalfYr: 0.7, headLoopYr: 2.9, reliefScale: 1.3,
+    yarnOvers: 2, yarnOverYr: 1.0,
   },
   // dtr — taller again: pitch 2.5 d, row 6.5 d.
   dtr: {
     id: 'dtr', heightFactor: 5.4, gaugeYr: 4.25, topLoops: 2,
     rowYr: 11.05, postHalfYr: 1.65, crownHalfYr: 0.75, headLoopYr: 3.15, reliefScale: 1.3,
+    yarnOvers: 3, yarnOverYr: 1.0,
   },
   // sc worked into back-loop-only / front-loop-only: same height as sc; the loop
   // left unworked floats as a horizontal ridge (handled in yarnPath by loopMode).
