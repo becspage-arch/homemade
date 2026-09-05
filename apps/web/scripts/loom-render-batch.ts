@@ -31,6 +31,10 @@
  *                      run it either side of a change and the hashes must not
  *                      move (STITCH_ENGINE.md §8e-3 lists the expected ones).
  *   --out=<dir>        output directory (default .loom-scratch/crochet/patterns)
+ *   --concurrency=N    cap how many renders run at once. Default: all of them.
+ *                      The account's Fargate On-Demand vCPU quota is the real
+ *                      ceiling (this task is 4 vCPU), so drop it to 3 and
+ *                      re-run the stragglers if run-task reports no capacity.
  *   --set=signoff      the six-sample sign-off set (STITCH_ENGINE.md §8e-3)
  *                      plus both amigurumi composition proofs
  *
@@ -136,6 +140,7 @@ async function main(): Promise<void> {
   const argv = process.argv.slice(2)
   const noHero = argv.includes('--no-hero')
   const compileOnly = argv.includes('--compile-only')
+  const concFlag = argv.find((a) => a.startsWith('--concurrency='))
   const outFlag = argv.find((a) => a.startsWith('--out='))
   const outDir = outFlag ? resolve(process.cwd(), outFlag.slice('--out='.length)) : OUT
   const names = argv.includes('--set=signoff')
@@ -177,19 +182,24 @@ async function main(): Promise<void> {
     console.log('      NOTE: LOOM_RENDER is not "fargate", so these run on the local Blender back to back.')
   }
   const batchStart = Date.now()
+  const limit = concFlag ? Math.max(1, Number(concFlag.slice('--concurrency='.length))) : jobs.length
+  const queue = [...jobs]
+  const runOne = async (job: Job): Promise<void> => {
+    const started = Date.now()
+    try {
+      const { basePng } = await renderSceneBase(job.scene, job.name, outDir)
+      job.basePng = basePng
+      job.seconds = Math.round((Date.now() - started) / 1000)
+      console.log(`      done  ${pad(job.name, 22)} ${job.seconds}s  ${basePng}`)
+    } catch (e) {
+      job.seconds = Math.round((Date.now() - started) / 1000)
+      job.error = (e as Error).message
+      console.error(`      FAIL  ${pad(job.name, 22)} ${job.seconds}s  ${job.error}`)
+    }
+  }
   await Promise.all(
-    jobs.map(async (job) => {
-      const started = Date.now()
-      try {
-        const { basePng } = await renderSceneBase(job.scene, job.name, outDir)
-        job.basePng = basePng
-        job.seconds = Math.round((Date.now() - started) / 1000)
-        console.log(`      done  ${pad(job.name, 22)} ${job.seconds}s  ${basePng}`)
-      } catch (e) {
-        job.seconds = Math.round((Date.now() - started) / 1000)
-        job.error = (e as Error).message
-        console.error(`      FAIL  ${pad(job.name, 22)} ${job.seconds}s  ${job.error}`)
-      }
+    Array.from({ length: Math.min(limit, queue.length) }, async () => {
+      for (let job = queue.shift(); job; job = queue.shift()) await runOne(job)
     }),
   )
   console.log(`      batch wall-clock ${Math.round((Date.now() - batchStart) / 1000)}s`)
