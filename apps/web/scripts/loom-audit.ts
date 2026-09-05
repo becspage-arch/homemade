@@ -12,7 +12,12 @@ import { buildRelaxedSwatch, isSwatchArg } from '../src/lib/loom/crochet/engine/
 import { auditProblems } from '../src/lib/loom/crochet/engine/auditChecks'
 import { SWATCH_RECIPES, type SwatchArg } from '../src/lib/loom/crochet/engine/dictionary'
 
-const only = process.argv.slice(2)
+// `--yr=<mm>` re-runs the whole sweep at another yarn weight (fine 1.5 / worsted
+// 2.4 / bulky 3.2) — cross-weight confirmation is part of every stitch's process.
+const argv = process.argv.slice(2)
+const yrArg = argv.find((a) => a.startsWith('--yr='))
+const YR = yrArg ? Number(yrArg.slice(5)) : 2.4
+const only = argv.filter((a) => !a.startsWith('--'))
 for (const o of only) {
   if (!isSwatchArg(o)) {
     console.error(`unknown stitch '${o}' — known: ${Object.keys(SWATCH_RECIPES).join(', ')}`)
@@ -24,7 +29,7 @@ const args = (only.length ? only : Object.keys(SWATCH_RECIPES)) as SwatchArg[]
 let anyFail = false
 for (const arg of args) {
   const recipe = SWATCH_RECIPES[arg]
-  const yr = 2.4
+  const yr = YR
   const swatch = buildRelaxedSwatch(arg, recipe.auditW, yr)
   const problems = auditProblems(swatch, arg, recipe.auditW, yr)
   // A wip stitch is allowed to be broken (that is what wip means) — report it,
@@ -33,7 +38,7 @@ for (const arg of args) {
   const status = problems.length ? (recipe.status === 'wip' ? 'FAIL (wip)' : 'FAIL') : 'PASS'
   if (problems.length && recipe.status !== 'wip') anyFail = true
   console.log(
-    `${status}  ${arg.padEnd(11)} [${recipe.status}] nodes=${swatch.built.model.nodes.length} links=${swatch.built.links.length}${problems.length ? '\n' + problems.map((p) => `  - ${p}`).join('\n') : ''}`,
+    `${status}  ${arg.padEnd(11)} yr=${yr} [${recipe.status}] nodes=${swatch.built.model.nodes.length} links=${swatch.built.links.length}${problems.length ? '\n' + problems.map((p) => `  - ${p}`).join('\n') : ''}`,
   )
 }
 

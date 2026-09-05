@@ -21,17 +21,17 @@ const fill = (n: number, id: StitchId): StitchId[] => Array(n).fill(id) as Stitc
 // row to row, so the fabric reads as subtle horizontal ridges. Locked sc + hdc.
 // It also carries two-row CONTRAST colour stripes (the classic striped dishcloth
 // look) — the test case for per-stitch colour flowing through to the render.
-// SIZE CONSISTENCY (STITCH_ENGINE.md §8e-3): at 14 sts x 12 rows this settled to
-// ~52x48mm — a landscape rectangle, not the declared 250x250mm square (rows are
-// shorter than stitches are wide for sc/hdc at this engine's row pitch, so a
-// square needs MORE rows than columns, not an equal count). A true 25cm
-// dishcloth needs ~66 cols x ~63 rows here (~4,100 stitches) — too many to
-// render sensibly in one batch pass, so this scales to a true 20x20cm dishcloth
-// instead (53 cols x 50 rows settles to ~200x201mm, square within the ±12%
-// size-consistency gate). 25 colour bands (odd count) keeps the classic
+// SIZE CONSISTENCY (STITCH_ENGINE.md §8e-3, re-derived §8f 2026-09-05): the
+// counts here are whatever it takes to settle at the declared size, so they move
+// whenever a driving stitch's real gauge does. They were 53 x 50 against the
+// pre-§8f sc cell (3.8 mm per stitch — about HALF a real worsted sc). With sc
+// re-cut to its published gauge (5.67 mm per stitch, 5.04 mm per sc row; the
+// hdc now carries its own published row gauge too — 7.85 mm against sc's 5.04 —
+// so the alternating sc/htr rows average 6.45 mm and a true 20x20cm dishcloth is
+// 35 cols x 30 rows. 15 colour bands (odd count) keeps the classic
 // first-and-last-band-match look while alternating evenly.
-const STRIPE_W = 53
-const STRIPE_ROWS = 50
+const STRIPE_W = 35
+const STRIPE_ROWS = 30
 function stripeDishcloth(): CrochetProgram {
   const grid: GridRow[] = []
   for (let j = 0; j < STRIPE_ROWS; j++) {
@@ -47,7 +47,7 @@ function stripeDishcloth(): CrochetProgram {
     yarnWeight: 'worsted',
     colourHex: '#c65b3c',
     palette: { coral: '#c65b3c', teal: '#2f7f8c' },
-    gaugeText: '53 sts (alternating dc/htr) x 50 rows = 20 cm (UK terms) in worsted',
+    gaugeText: '17.5 sts (alternating dc/htr) x 15.5 rows = 10 cm (UK terms) in worsted',
     finishedSizeMm: { width: 200, height: 200 },
     hookMm: 5,
     notes: 'A quick everyday dishcloth in two contrasting colours, changed every two rows. Alternating dc and htr bands add a gentle ridged texture.',
@@ -63,7 +63,7 @@ function stripeDishcloth(): CrochetProgram {
 // A LONG, THIN strip (many stitches around, few rows of band width) so that when
 // the short ends seam into a loop the ribs run round the circumference and there
 // is a real central hole — a headband ring, not a squat coiled disc.
-const RIB_W = 52
+const RIB_W = 34 // §8f round 2: re-derived at the corrected post cell (the columns settle ~5.65mm apart at gaugeYr 2.3) for the declared 190mm circumference — was 52 against the old 1.5 pack
 function postRibHeadband(): CrochetProgram {
   const grid: GridRow[] = []
   grid.push(row(fill(RIB_W, 'dc'))) // establish posts to wrap
@@ -75,7 +75,7 @@ function postRibHeadband(): CrochetProgram {
     form: 'grid',
     gridWidth: RIB_W,
     grid,
-    gaugeYr: 1.5, // pack the fp/bp columns tight (the locked postrib value) so ribs touch
+    gaugeYr: 2.3, // pack the fp/bp columns tight (the postrib value, re-derived §8f round 2 from the corrected post cell) so ribs touch
     yarnWeight: 'aran',
     colourHex: '#7c9a6d', // sage
     // SIZE CONSISTENCY (§8e-3): the declared size here is metadata-only fixed to
@@ -87,7 +87,7 @@ function postRibHeadband(): CrochetProgram {
     // to this proof — see the same gap on texture-sampler-panel /
     // flat-texture-panel / cottage-tapestry, left alone as out of scope here).
     gaugeText: '18 sts x 4 rows = 12 cm in aran (post rib, this engine\'s scale); join short ends to fit',
-    finishedSizeMm: { width: 190, height: 48 },
+    finishedSizeMm: { width: 190, height: 62 }, // §8f round 2: re-measured at the re-cut post cell
     hookMm: 5.5,
     notes: 'Worked flat as a strip, then the short ends are seamed into a loop. The 1×1 post rib makes it stretchy and reversible.',
   }
@@ -126,7 +126,7 @@ function textureSamplerPanel(): CrochetProgram {
     yarnWeight: 'worsted',
     colourHex: '#b0743c', // caramel
     gaugeText: '16 sts x 14 rows = 12 cm in worsted',
-    finishedSizeMm: { width: 200, height: 300 },
+    finishedSizeMm: { width: 62, height: 128 }, // §8f round 2: re-measured; this older sampler keeps its 16-col shape (flat-texture-panel is the one taken to the bar), so the CLAIM moves to match the geometry
     hookMm: 5,
     notes: 'A stitch-sampler panel — repeat it end to end for a scarf, or use one panel as a mug rug. Bands: dc, htr, tr, a blo ridge, a post rib, then dc.',
   }
@@ -137,14 +137,13 @@ function textureSamplerPanel(): CrochetProgram {
 // stitch a plain double crochet (UK) / single crochet (US). A few rows, no
 // texture, no colour change — proves the plainest end of the range renders as a
 // clean, dense, real crocheted coaster.
-// SIZE CONSISTENCY (§8e-3): at 14 sts x 12 rows this settled to ~52x40mm — a
-// landscape rectangle nowhere near even its own (already non-square) declared
-// 100x90mm, because sc rows are shorter than sc stitches are wide at this
-// engine's gauge/row-pitch (3.78mm/col vs 3.26mm/row nominal) — 12 rows is
-// short for 14 columns' width. 26 cols x 30 rows settles to ~98x99mm: a true
-// 10x10cm coaster, square within the ±12% size-consistency gate.
-const COASTER_W = 26
-const COASTER_ROWS = 30
+// SIZE CONSISTENCY (§8e-3, re-derived §8f 2026-09-05): 26 x 30 settled to
+// ~98x99mm against the pre-§8f sc cell, whose stitch was 3.78mm wide — about
+// half a real worsted sc. With sc re-cut to its published gauge (5.67mm per
+// stitch, 5.04mm per row) a true 10x10cm coaster is 18 cols x 20 rows, which is
+// also what a crocheter would actually get from the gauge line below.
+const COASTER_W = 18
+const COASTER_ROWS = 20
 function simpleCoaster(): CrochetProgram {
   const grid: GridRow[] = []
   for (let j = 0; j < COASTER_ROWS; j++) grid.push(row(fill(COASTER_W, 'sc')))
@@ -155,7 +154,7 @@ function simpleCoaster(): CrochetProgram {
     grid,
     yarnWeight: 'worsted',
     colourHex: '#3f8f9c', // teal
-    gaugeText: '26 dc x 30 rows = 10 cm (UK terms) in worsted',
+    gaugeText: '18 dc x 20 rows = 10 cm (UK terms) in worsted',
     finishedSizeMm: { width: 100, height: 100 },
     hookMm: 5,
     notes: 'A plain solid coaster in one colour — a first project. Worked flat in rows of double crochet (UK).',
@@ -168,17 +167,21 @@ function simpleCoaster(): CrochetProgram {
 // those read open on a flat panel at a tilt (they belong on a worn/looped form,
 // which the headband covers). Every band is a locked stitch, so the whole panel
 // renders at bar. Mixed stitch types BETWEEN rows across five stitch families.
-const FTEX_W = 16
+// SIZE (§8f round 2): re-derived at each band's own re-cut cell — sc 5.67mm per
+// stitch and 5.04mm per row, htr 6.62/7.85, tr 7.14/13.21. 16 cols x 16 rows
+// settled to 96x111mm against a declared 200x260; 35 cols x 34 rows settles to
+// ~198x243, which is the panel the gauge line and the size claim both describe.
+const FTEX_W = 35
 function flatTexturePanel(): CrochetProgram {
   const grid: GridRow[] = []
   const band = (n: number, id: StitchId) => { for (let k = 0; k < n; k++) grid.push(row(fill(FTEX_W, id))) }
-  band(3, 'sc') // plain dc (UK) ground
-  band(2, 'hdc') // half-treble band (third-loop ridge)
-  band(2, 'dc') // treble band (taller, gentle relief)
-  band(2, 'scblo') // back-loop-only ridge band (raised horizontal line)
-  band(2, 'scflo') // front-loop-only ridge band
-  band(2, 'hdc') // half-treble band again
-  band(3, 'sc') // plain ground to close
+  band(6, 'sc') // plain dc (UK) ground
+  band(4, 'hdc') // half-treble band (third-loop ridge)
+  band(6, 'dc') // treble band (taller, gentle relief)
+  band(4, 'scblo') // back-loop-only ridge band (raised horizontal line)
+  band(4, 'scflo') // front-loop-only ridge band
+  band(4, 'hdc') // half-treble band again
+  band(6, 'sc') // plain ground to close
   return {
     name: 'flat-texture-panel',
     form: 'grid',
@@ -186,7 +189,7 @@ function flatTexturePanel(): CrochetProgram {
     grid,
     yarnWeight: 'worsted',
     colourHex: '#b0743c', // caramel
-    gaugeText: '16 sts x 16 rows = 12 cm in worsted',
+    gaugeText: '17.5 sts x 14 rows = 10 cm in worsted (averaged over the bands)',
     finishedSizeMm: { width: 200, height: 260 },
     hookMm: 5,
     notes: 'A flat stitch-sampler — repeat end to end for a scarf, or use one panel as a mug rug. Bands: dc, htr, tr, a back-loop ridge, a front-loop ridge, htr, then dc.',
@@ -278,7 +281,7 @@ function cottageTapestry(): CrochetProgram {
     colourHex: '#bcd6e8',
     palette: TAP_PALETTE,
     gaugeText: '24 dc x 24 rows = 17 cm in worsted (tapestry crochet, carry unused colours)',
-    finishedSizeMm: { width: 170, height: 170 },
+    finishedSizeMm: { width: 140, height: 125 }, // §8f round 2: the 24x24 motif is the design; at the re-cut sc cell (5.67 x 5.04mm) it settles to ~139x124, so the CLAIM moves, not the picture
     hookMm: 4,
     notes: 'A tapestry-crochet picture panel — a cottage garden scene. Worked flat in single crochet, changing colour stitch by stitch and carrying the unused yarns inside the stitches. A wall hanging or cushion front.',
   }
