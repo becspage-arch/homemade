@@ -44,6 +44,7 @@ SENTRY_DSN NEXT_PUBLIC_SENTRY_DSN SENTRY_ORG_SLUG SENTRY_PROJECT_SLUG
 SENTRY_AUTH_TOKEN
 NEXT_PUBLIC_POSTHOG_KEY NEXT_PUBLIC_POSTHOG_HOST
 DOMAIN SPLASH_PASSWORD
+PG_VIA_HTTPS_PROXY
 LOOM_RENDER LOOM_RENDER_S3_BUCKET LOOM_RENDER_CLUSTER LOOM_RENDER_TASKDEF
 LOOM_RENDER_SUBNETS LOOM_RENDER_SECURITY_GROUP LOOM_RENDER_REGION
 "
@@ -52,6 +53,13 @@ LOOM_RENDER_SUBNETS LOOM_RENDER_SECURITY_GROUP LOOM_RENDER_REGION
 # same way, so keep the fallback identical rather than depending on the env var.
 if [ -z "${DIRECT_URL:-}" ] && [ -n "${DATABASE_URL:-}" ]; then
   export DIRECT_URL="${DATABASE_URL/-pooler./.}"
+fi
+
+# A cloud session can only leave the VM through the HTTP CONNECT proxy, and
+# Postgres on 5432 can't traverse it — so tell @homemade/db to reach the same
+# database over Neon's WebSocket driver on 443 instead. Nothing else sets this.
+if [ -n "${HTTPS_PROXY:-}" ]; then
+  export PG_VIA_HTTPS_PROXY=1
 fi
 
 written=0

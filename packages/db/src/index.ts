@@ -1,3 +1,4 @@
+import { createRequire } from 'node:module'
 import { PrismaClient } from '@prisma/client'
 import { PrismaPg } from '@prisma/adapter-pg'
 
@@ -134,6 +135,32 @@ declare global {
 
 let cached: PrismaClient | undefined
 
+/**
+ * Pick the driver adapter for this environment.
+ *
+ * Everywhere that can open a plain TCP socket to Postgres — local development,
+ * the ECS task, GitHub Actions — this is the `pg` adapter, unchanged. A cloud
+ * session can only leave its VM through an HTTP CONNECT proxy, which port 5432
+ * cannot traverse, so it opts in with PG_VIA_HTTPS_PROXY=1 and talks to the same
+ * database over Neon's WebSocket driver instead. See ./neon-proxy-client.ts.
+ *
+ * The Neon branch is `require`d rather than imported so its packages stay out of
+ * the Next.js server bundle and off the production import graph entirely.
+ */
+function createAdapter(connectionString: string): PrismaPg {
+  const proxyUrl = process.env.HTTPS_PROXY || process.env.https_proxy
+  if (process.env.PG_VIA_HTTPS_PROXY === '1' && proxyUrl) {
+    const requireFromHere = createRequire(import.meta.url)
+    const { createNeonProxyAdapter } = requireFromHere(
+      './neon-proxy-client',
+    ) as typeof import('./neon-proxy-client')
+    // Both are Prisma SqlDriverAdapterFactory implementations; PrismaClient
+    // only ever sees the interface.
+    return createNeonProxyAdapter(connectionString, proxyUrl) as unknown as PrismaPg
+  }
+  return new PrismaPg({ connectionString })
+}
+
 function getPrismaClient(): PrismaClient {
   if (cached) return cached
   if (globalThis.__homemade_prisma) {
@@ -148,7 +175,7 @@ function getPrismaClient(): PrismaClient {
     )
   }
 
-  const adapter = new PrismaPg({ connectionString })
+  const adapter = createAdapter(connectionString)
   cached = new PrismaClient({
     adapter,
     log: process.env.NODE_ENV === 'development' ? ['query', 'warn', 'error'] : ['warn', 'error'],
