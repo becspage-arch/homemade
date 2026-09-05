@@ -550,6 +550,83 @@ vs a real reference → commit + push.
   per-stitch roving softness (library-wide) keeps the fabric chunkier than a smooth
   reference. Orientation tuning (which pole faces out, lean angle) is a design knob
   on the proof, not the engine.  Rebecca/orchestrator verdict pending.
+- **Part B addendum — THE BEAR: a figure a customer recognises (2026-09-05).**
+  Part B's creature passed every gate and still failed the fourth part of the
+  customer bar: beside a real amigurumi bear it read as "a ball with two swirl
+  discs on top", not an animal. Three separate causes, all in the COMPOSITION
+  and STAGING layers — the locked round builders were not touched and the ball /
+  creature hashes are unchanged (22357568 / 18b2f935).
+  1. **The camera was nearly overhead.** `tiltDeg` is measured OFF STRAIGHT
+     DOWN, and the compositions used 18–22 — a plan view of the crown of the
+     piece. A toy is photographed from just above its own eye level, so a figure
+     wants ~74. Three additive view knobs make that a real product shot
+     (all default to the old behaviour, so every existing render is unchanged):
+     `yawDeg` (swing round for the three-quarter angle), `aimHeightFrac` (aim up
+     the object instead of at the table under it), `distScale`/`groundScale`, and
+     `lightRig: 'product'` — the flat-fabric rig keys LOW from the far side,
+     which back-lights a standing figure into a silhouette; the product rig keys
+     high from the camera's left and fills from its right.
+  2. **The ring pole faced the camera.** A limb is aimed by rotating its local +z
+     (the MAGIC-RING pole) onto the attach direction, so the ring spiral ended
+     up as the outward face — the "swirl disc" read. `poleIn: true` seats the
+     ring pole INTO the parent instead, so the join hides it and the smooth
+     fasten-off end faces out. Also new: `aim` (which way the piece points,
+     separate from `dir` = where it is sewn on — a real arm joins at the
+     shoulder and hangs down-forward; one direction cannot say both),
+     `surfaceFit: 'ellipsoid'` (the exact ray/ellipsoid radius instead of the
+     half-extent sum, which over-estimates on a diagonal by ~20% and made every
+     `seat` a per-part guess), and a post-seat `offset` (drop a leg onto the
+     table). Defaults reproduce the old placement arithmetic exactly.
+  3. **A pattern shape is a CHOICE OF ROUND COUNTS, and the counts were wrong for
+     a head.** `intrinsicProfile` derives radius from the count and height from
+     meridian pitch, so a short count plateau settles OBLATE: the old
+     `[6,12,18,24,24,18,12,6]` head is 31 mm wide × 14 mm tall — a pancake, which
+     is why body and head merged into one ball. Measured h/w across the family
+     (audit-clean ones only): eq-24 needs a SEVEN-round plateau to reach h/w 1.03
+     (33.7 × 34.5, a genuinely round head); eq-30 with a five-round plateau is
+     41 × 30 (a broad sitting body). Sizing an amigurumi part is a numeric probe,
+     not a guess — and not every plateau length passes the interlock gate
+     (eq-18 p5/p7/p9, eq-24 p5 and eq-30 p7 all FAIL).
+  **The `props` layer (non-yarn notions).** A bear with no eyes or nose is not a
+  bear, and eyes are not stitches — a real pattern lists "2 × 9 mm safety eyes"
+  in its NOTIONS, next to the yarn. So the composition program gained
+  `props: CompositionProp[]`: a moulded primitive seated on a crocheted part's
+  surface exactly the way a limb is (`dir` + `seat`, `flatten`/`widen` for an
+  oblate nose), resolved in `compileComposition` into a world centre plus three
+  semi-axis VECTORS, and rendered by a new `build_props` block in
+  `loom_render_crochet.py` as a smooth ellipsoid with a glossy plastic material.
+  This is NOT faking a stitch — it renders the plastic part as plastic. Props sit
+  outside the geometry hash and outside the audit (they carry no yarn), and the
+  scene JSON omits the key entirely when a composition has none, so every
+  existing render is bit-identical.
+  **The bear itself** (`amigurumi-bear`, hash 70fc5299, 13 parts + 3 props, audit
+  clean): body `[6,12,18,24,30,30,30,30,30,30,24,18,12,6]`, head `[6,12,18,24,
+  24,24,24,24,24,24,24,18,12,6]` overlap-seated 9 mm into it, a cream muzzle,
+  two ears on the top-back with `poleIn`, two arms sewn high at the shoulder and
+  aimed down-forward, two legs sewn low at the front and aimed FORWARD along the
+  table (settled minz 0.0 — it genuinely sits), cream paw pads on all four limbs,
+  plus two glossy black safety eyes and an oblate nose. Settled size 59 × 57 ×
+  60 mm. Variants `amigurumi-bear-plain` (no paw pads, arms lower) and
+  `amigurumi-bear-mirror` (built facing the other way — the staging control that
+  proves which way the camera looks at the composed world: FRONT IS +y, because
+  the renderer maps blender-y = −loom-y and the camera sits at −blender-y).
+  `amigurumi-creature` is left in place unchanged.
+  **RENDERED (Fargate, the props image build first).** All three PASS the
+  fidelity/structure gate — `amigurumi-bear` 0.923, `-plain` 0.911, `-mirror`
+  0.915 (STRUCT_MIN 0.45), so the Fal step finished the exact deterministic
+  render without inventing anything. The bear reads as a sitting crocheted
+  teddy: round head over a broad body, two ears, glossy safety eyes, a cream
+  muzzle with a nose, arms out to the sides and legs forward on the table, all
+  in visibly real single-crochet spirals. `-plain` (no paw pads) reads WORSE —
+  without the cream contrast the limbs merge into the body — which is the
+  answer to whether the second colour earns its place. `-mirror` shows the
+  bear's back, confirming the camera axis (front is +y) as designed.
+  Second pass (staging/props only, geometry hash unchanged at 70fc5299): the
+  first nose was 12 mm across on a 17 mm muzzle and mirror-glossy, reading as a
+  plastic bead rather than a nose — shrunk and matted; and the ground rendered
+  a shade grey at this low camera, so `bgHex`/`light`/`exposure` are now
+  pass-throughs on the composition program (the renderer already read them; no
+  render-script change, so no image rebuild).
 - **Part C — finished-object HERO staging across all forms (2026-07-12).** The
   four-part customer bar (correct genuinely-stitched stitches / real yarn colour on
   clean white / whole piece at size / staged as the finished object) for EVERY
@@ -780,6 +857,26 @@ every UNCHANGED proof's geometry hash stayed bit-identical
   post-crispness `yr*0.85`, so identical geometry read as mesh (worst on tall
   stitches, whose channels are widest). Don't touch row pitch to fix flat density;
   measure AREAL front-face coverage at the render radius first.
+- **Staging a 3-D FIGURE with the flat-fabric camera and light rig** (bear,
+  2026-09-05) → a plan view of the crown of the toy, back-lit. `tiltDeg` is off
+  STRAIGHT DOWN, so the 18–22 that suits a piece of fabric on a table is nearly
+  overhead for a figure; and the fabric key light sits low on the FAR side,
+  which silhouettes anything that stands up. A figure needs ~74° tilt, a yaw for
+  the three-quarter angle, the aim raised up the object, and a key on the
+  camera's side. Nothing about the yarn was wrong — the photograph was.
+- **Aiming an amigurumi limb by its MAGIC-RING pole** (bear, 2026-09-05) → every
+  ear/muzzle presents its ring spiral to the camera and reads as a flat swirl
+  disc stuck on the head. Both poles carry a worked hole; the ring one is the
+  visible spiral, so it belongs in the JOIN (`poleIn`). Related: `dir` alone
+  cannot express a sewn-on limb, because where a piece joins and which way it
+  points are two different directions (`aim`) — an arm joined at the shoulder
+  and forced to point along its own join direction sticks straight out sideways.
+- **Guessing an amigurumi part's SHAPE from its round counts** (bear,
+  2026-09-05) → a "head" that is a 31 × 14 mm pancake. On the intrinsic profile
+  the radius comes from the count and the height from meridian pitch, so h/w is
+  set by how many rounds the count plateau holds, and the ±6 up/down ramps alone
+  give an oblate disc. Probe the family and MEASURE h/w before choosing (and
+  re-check the audit: several plateau lengths fail the interlock gate).
 - **Shaping: turning slack only at row 0** → a shaped row's eccentric first reach
   (an inc fanning, a dec spanning two crowns) strangles the corner hook at every
   turn. The turning chain (ch 1 + turn) goes into EVERY shaped row — it's what a

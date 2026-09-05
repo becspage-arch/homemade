@@ -96,6 +96,21 @@ model User {
   country            String?
   deviceClass        String?
 
+  // Signup spam signal (2026100500000_user_signup_risk). Flag-only — nothing
+  // here blocks or deletes an account. `emailDomain` is lower-cased from the
+  // email at signup. `signupRiskScore` is the sum of the triggered
+  // `signupRiskReasons` weights (see apps/web/src/lib/signup-risk.ts); the
+  // admin Members list reads `riskScore >= 2` as one half of "Likely spam".
+  // `signupIp` / `signupUserAgent` are only ever populated from a genuine
+  // end-user request (the JIT provisioning path in get-current-user.ts) —
+  // the Clerk webhook fires server-to-server from Clerk's own infrastructure,
+  // so it never has the real signer's IP and leaves these two null.
+  signupRiskScore   Int      @default(0)
+  signupRiskReasons String[] @default([])
+  signupIp          String?
+  signupUserAgent   String?
+  emailDomain       String?
+
   // Phase 8 Homepage rebuild — onboarding + personalisation. `onboardedAt`
   // null = the onboarding card still shows on the homepage. `primaryCategoryIds`
   // / `experienceLevel` / `dietaryFlags` come from the onboarding card and
@@ -370,6 +385,8 @@ model User {
   @@index([lastSeenAt])
   @@index([isPublicMakerProfile])
   @@index([premiumActive])
+  @@index([signupRiskScore])
+  @@index([emailDomain])
 }
 
 /// Mirror of a Stripe Subscription object (Session F — Stripe billing).

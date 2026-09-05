@@ -24,6 +24,18 @@ interface Row {
 }
 
 /**
+ * Value formats a BarRank can render. Kept as a serialisable tag rather
+ * than a function prop so a server component can pass it straight
+ * through — the formatter itself is resolved here, client-side.
+ */
+export type BarRankFormat = 'number' | 'percent'
+
+const FORMATTERS: Record<BarRankFormat, (v: number) => string> = {
+  number: (v) => new Intl.NumberFormat('en-GB').format(v),
+  percent: (v) => `${(v * 100).toFixed(1)}%`,
+}
+
+/**
  * Horizontal bar chart used for ranked breakdowns: top categories,
  * acquisition channel splits, country splits. Sage primary fill, sage
  * grid, one bar per row.
@@ -32,13 +44,14 @@ export function BarRank({
   data,
   height,
   color,
-  formatValue,
+  format = 'number',
 }: {
   data: Row[]
   height?: number
   color?: string
-  formatValue?: (v: number) => string
+  format?: BarRankFormat
 }) {
+  const formatValue = FORMATTERS[format]
   const calcHeight = height ?? Math.max(180, data.length * 32 + 32)
   return (
     <ResponsiveContainer width="100%" height={calcHeight}>
@@ -68,7 +81,7 @@ export function BarRank({
           itemStyle={TOOLTIP_ITEM_STYLE}
           formatter={((v: unknown) => {
             const n = typeof v === 'number' ? v : Number(v ?? 0)
-            return [formatValue ? formatValue(n) : n, '']
+            return [formatValue(n), '']
           }) as never}
         />
         <Bar dataKey="value" radius={[2, 2, 2, 2]} isAnimationActive={false}>
