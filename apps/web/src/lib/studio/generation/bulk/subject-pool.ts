@@ -78,29 +78,29 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     examples: ['a friendly baby dragon', 'a unicorn in a flower meadow', 'a mermaid on a rock', 'a phoenix', 'a fairy toadstool cottage'],
   },
   {
-    id: 'florals', title: 'Florals & bouquets', shelf: 'florals', shelfName: 'Florals',
+    id: 'florals', title: 'Florals & bouquets', shelf: 'floral', shelfName: 'Floral & Botanical',
     styles: ['bright', 'botanical', 'fantasy'],
     examples: ['an art-nouveau spray of irises with gold-line stems', 'moody dark-academia florals — deep plum peonies and trailing ivy on near-black', 'a moon-phase arch wreathed in wildflowers and moths', 'a stained-glass window of poppies and cornflowers'],
   },
   {
-    id: 'botanical-stems', title: 'Single botanical stems (tall)', shelf: 'florals', shelfName: 'Florals',
+    id: 'botanical-stems', title: 'Single botanical stems (tall)', shelf: 'floral', shelfName: 'Floral & Botanical',
     styles: ['botanical'],
     examples: ['a tall foxglove spire with bees', 'a blue delphinium stem with butterflies', 'a hollyhock stem against a wall'],
     notes: 'Tall aspect — height clearly greater than width.',
   },
   {
-    id: 'wreaths', title: 'Wreaths & circular', shelf: 'florals', shelfName: 'Florals',
+    id: 'wreaths', title: 'Wreaths & circular', shelf: 'floral', shelfName: 'Floral & Botanical',
     styles: ['wreath', 'fantasy'],
     examples: ['a crescent-moon wreath of wildflowers, stars and a sleeping fox', 'a wreath of luminous toadstools, ferns and fireflies', 'an art-nouveau ring of trailing wisteria and hummingbirds', 'a celestial wreath of sun, moon and botanicals'],
     notes: 'Circular composition with a clear open centre; square aspect. Give the ring a hook (a moon, an animal, a season, a mood) — not a plain flower ring.',
   },
   {
-    id: 'houseplants', title: 'Houseplants & terrariums', shelf: 'florals', shelfName: 'Florals',
+    id: 'houseplants', title: 'Houseplants & terrariums', shelf: 'floral', shelfName: 'Floral & Botanical',
     styles: ['bright', 'botanical'],
     examples: ['a monstera in a woven pot', 'a shelf of potted succulents', 'a hanging string-of-hearts', 'a glass terrarium'],
   },
   {
-    id: 'mushrooms', title: 'Mushrooms & cottagecore', shelf: 'florals', shelfName: 'Florals',
+    id: 'mushrooms', title: 'Mushrooms & cottagecore', shelf: 'floral', shelfName: 'Floral & Botanical',
     styles: ['botanical', 'cute', 'fantasy'],
     examples: ['a cluster of red toadstools with ferns', 'a fairy-ring of mushrooms', 'a snail on a toadstool'],
   },
@@ -152,7 +152,7 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     notes: 'No readable labels/text on the bottles — wordless drawings only.',
   },
   {
-    id: 'cosy-scenes', title: 'Cottages, shops & cosy scenes', shelf: 'home-cosy', shelfName: 'Home & cosy',
+    id: 'cosy-scenes', title: 'Cottages, shops & cosy scenes', shelf: 'scenes', shelfName: 'Scenes',
     styles: ['showpiece', 'pastel'],
     examples: ['a thatched cottage with climbing roses and a packed garden', 'a corner flower shop with buckets of blooms', 'a cosy reading nook with a sleeping cat', 'a victorian greenhouse'],
     notes: 'These are the BIG showpieces — large canvas + high colour so the little details survive; shopfront signage stays wordless.',
@@ -191,7 +191,7 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     notes: 'Two-tone by design: Delft = blue-on-white; redwork = red-on-white. Low colour count.',
   },
   {
-    id: 'portraits', title: 'Artistic & pop-art faces', shelf: 'portraits', shelfName: 'Portraits',
+    id: 'portraits', title: 'Artistic & pop-art faces', shelf: 'portraits', shelfName: 'Pop Art & Portraits',
     styles: ['artface', 'popart', 'icon'],
     examples: ['a fine-art woman\'s face wreathed in flowers', 'a bold pop-art portrait', 'a stylised portrait of a historical figure'],
     notes: 'artface: FAIR/PALE skin only at low saturation (the compound boost cooks tan skin orange), whole head + forehead visible, both eyes. Deep-skin pop-art: keep saturation ~1.1 and prompt "rich dark chocolate-brown skin, not orange". Whole head visible, correct features.',

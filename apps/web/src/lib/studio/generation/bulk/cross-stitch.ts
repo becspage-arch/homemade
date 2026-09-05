@@ -10,6 +10,8 @@ import {
   type PatternData,
 } from '@homemade/db'
 import { generatePatternImage, imageToPattern } from '@/lib/studio/generation/pattern-engine'
+import { sha256Hex } from './similarity'
+import { subjectKey } from './subject-key'
 import { renderPatternSvgString } from '@/components/studio/chart/render-svg-string'
 import { stitchedBoundingBox } from '@/components/studio/chart/render-helpers'
 import {
@@ -20,6 +22,9 @@ import {
   DENSE_COLOUR_THRESHOLD,
   difficultyFor,
 } from './cross-stitch-style'
+import { CROSS_STITCH_SHELF_BY_SLUG } from '../categories'
+import type { CandidateFingerprints } from './dedupe-guard'
+import type { GateResult } from '../vision-gate'
 import type { CrossStitchBrief } from './planner'
 
 /**
@@ -45,6 +50,19 @@ export interface CrossStitchCandidate {
   colourCount: number
   widthCells: number
   heightCells: number
+  /** sha256 of the Flux PNG this chart was converted from — the "same generation"
+   *  signal, stored on the published row so a re-conversion of one source image
+   *  can never quietly become a second pattern. */
+  sourceSha256: string
+  /** True when this candidate used the Flux 1.1 Pro (dense) tier — the expensive
+   *  lane, counted and capped separately from schnell. */
+  pro: boolean
+  /** Provenance for `generationMeta`. */
+  model: string
+  imageSize: string
+  credit: string
+  /** The colour ceiling actually asked of the converter (after any gate tweak). */
+  requestedColours: number
 }
 
 function imageSizeFor(w: number, h: number): 'square_hd' | 'portrait_4_3' | 'landscape_4_3' {
@@ -81,10 +99,13 @@ export async function generateCrossStitchCandidate(
   const prompt = buildPrompt(brief.subject, brief.style)
 
   // Shared engine — the same call the customer idea→pattern flow makes.
+  const imageSize = imageSizeFor(brief.w, brief.h)
   const generated = await generatePatternImage(prompt, {
     detailed: dense,
-    imageSize: imageSizeFor(brief.w, brief.h),
+    imageSize,
   })
+  // Fingerprint the SOURCE before anything downstream touches it.
+  const sourceSha256 = sha256Hex(generated.buffer)
 
   // Per-lane source pre-saturation before the quantiser (the vivid-colour fix).
   const srcSat = (brief.sat ?? SRC_SAT[brief.style]) * (tweak.satMul ?? 1)
@@ -110,7 +131,23 @@ export async function generateCrossStitchCandidate(
     colourCount: metrics.colourCount,
     widthCells: metrics.widthCells,
     heightCells: metrics.heightCells,
+    sourceSha256,
+    pro: dense,
+    model: dense ? 'flux-1.1-pro' : 'flux-schnell',
+    imageSize,
+    credit: generated.credit,
+    requestedColours: colours,
   }
+}
+
+/**
+ * Would this brief + tweak generate on the expensive Flux 1.1 Pro tier? The
+ * spend guard needs to know BEFORE it generates, so this mirrors the colour
+ * arithmetic at the top of `generateCrossStitchCandidate` exactly.
+ */
+export function candidateIsPro(brief: CrossStitchBrief, tweak: CandidateTweak = {}): boolean {
+  const colours = Math.max(6, Math.min(160, brief.colours + (tweak.colourDelta ?? 0)))
+  return colours > DENSE_COLOUR_THRESHOLD
 }
 
 /** The beauty thumbnail — bbox-cropped, responsive cell size, post-saturated. */
@@ -163,22 +200,51 @@ async function r2UploadRetry(png: Buffer, opts: { prefix: string; filename: stri
   throw lastErr instanceof Error ? lastErr : new Error('r2Upload failed')
 }
 
+/** Everything the publisher records about HOW this gem came to exist. */
+export interface PublishContext {
+  /** The fingerprints the duplicate guard just computed and cleared. */
+  fingerprints: CandidateFingerprints
+  /** The gate verdict that let it through. */
+  gate: Pick<GateResult, 'verdict' | 'reasons'>
+  /** The BulkRun this gem belongs to, when it came from a bulk run. */
+  bulkRunId?: string | null
+  /** Which best-of-N attempt produced it. */
+  attempt?: number
+  /** The repair tweak in force on that attempt. */
+  tweak?: CandidateTweak
+}
+
 /**
  * Publish a gate-passed gem to the live cross-stitch catalogue: house designer,
  * real shelf, PUBLIC Pattern, persisted beauty thumbnail, search sync. Idempotent
  * on slug (the planner mints unique slugs, so this creates).
+ *
+ * SHELF DISCIPLINE: every published pattern gets exactly one shelf from the
+ * canonical list in `categories.ts`, and this function refuses anything else.
+ * The catalogue previously grew a fragmented `florals` beside `floral` and a
+ * `home-cosy` beside `scenes` because the publisher upserted whatever slug it
+ * was handed; it cannot happen again. `nursery` is the one shelf row this may
+ * create — it is on the canonical list and simply has no patterns yet.
  */
 export async function publishCrossStitchGem(
   brief: CrossStitchBrief,
   candidate: CrossStitchCandidate,
+  ctx?: PublishContext,
 ): Promise<PublishedGem> {
+  const shelf = CROSS_STITCH_SHELF_BY_SLUG[brief.shelf]
+  if (!shelf) {
+    throw new Error(
+      `publishCrossStitchGem: “${brief.shelf}” is not a canonical cross-stitch shelf — refusing to publish (allowed: ${Object.keys(CROSS_STITCH_SHELF_BY_SLUG).join(', ')})`,
+    )
+  }
+
   const designer = await ensureHouseDesigner()
   const cat = await prisma.category.findUnique({ where: { slug: CROSS_STITCH_CATEGORY }, select: { id: true } })
   if (!cat) throw new Error('no cross-stitch category')
 
   const sub = await prisma.subCategory.upsert({
-    where: { categoryId_slug: { categoryId: cat.id, slug: brief.shelf } },
-    create: { categoryId: cat.id, slug: brief.shelf, name: brief.shelfName, order: 50 },
+    where: { categoryId_slug: { categoryId: cat.id, slug: shelf.slug } },
+    create: { categoryId: cat.id, slug: shelf.slug, name: shelf.name, order: 50 },
     update: {},
     select: { id: true },
   })
@@ -211,6 +277,45 @@ export async function publishCrossStitchGem(
     hasBeads: m.hasBeads,
     hasQuarterStitches: m.hasQuarterStitches,
     fabricCountSuggested: data.fabric.count,
+    // ── duplicate-guard fingerprints of the artifact that is shipping ──────
+    // Written at publish so the NEXT candidate can be compared against this one.
+    // Without them a row is invisible to the image half of the guard (the text
+    // half still sees it), which is exactly the hole the backfill closes.
+    ...(ctx?.fingerprints
+      ? {
+          thumbnailSha256: ctx.fingerprints.sha256,
+          imageHash64: ctx.fingerprints.dhash64,
+          imageHash256: ctx.fingerprints.dhash256,
+          chartFingerprint: ctx.fingerprints.chart as unknown as object,
+        }
+      : {}),
+    sourceImageSha256: candidate.sourceSha256,
+    subjectKey: ctx?.fingerprints.subjectKey ?? subjectKey(brief.subject),
+    bulkRunId: ctx?.bulkRunId ?? null,
+    generationMeta: {
+      brief: {
+        subject: brief.subject,
+        themeId: brief.themeId,
+        shelf: shelf.slug,
+        lane: brief.lane,
+        w: brief.w,
+        h: brief.h,
+        colours: brief.colours,
+        ...(brief.sat != null ? { sat: brief.sat } : {}),
+      },
+      style: brief.style,
+      model: candidate.model,
+      imageSize: candidate.imageSize,
+      requestedColours: candidate.requestedColours,
+      pro: candidate.pro,
+      attempt: ctx?.attempt ?? 1,
+      tweak: ctx?.tweak ?? {},
+      gate: { verdict: ctx?.gate.verdict ?? 'keep', reasons: ctx?.gate.reasons ?? [] },
+      bulkRunId: ctx?.bulkRunId ?? null,
+      credit: candidate.credit,
+      publishedBy: 'bulk-cross-stitch',
+      at: new Date().toISOString(),
+    } as unknown as object,
   }
   const pattern = await prisma.pattern.upsert({
     where: { slug: brief.slug },
