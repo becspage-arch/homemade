@@ -36,12 +36,12 @@ export const PATTERN_CATEGORIES: Record<string, PatternCategoryConfig> = {
     designerId: HOMEMADE_DESIGNER,
     patternTarget: 1500,
     subCategories: [
-      'animals', 'florals', 'quotes-and-sayings', 'pride-and-inclusive', 'seasonal',
-      'cocktails', 'landscapes', 'art-reproductions', 'monochrome', 'home-cosy',
+      'animals', 'floral', 'quotes-and-sayings', 'pride-and-inclusive', 'seasonal',
+      'cocktails', 'landscapes', 'art-reproductions', 'monochrome', 'scenes',
     ],
     tierGuide: {
       animals: ['scene', 'illustration'],
-      florals: ['scene', 'botanical'],
+      floral: ['scene', 'botanical'],
       'quotes-and-sayings': ['illustration', 'botanical', 'retro', 'celestial', 'sampler', 'typo', 'mixed', 'minimal'],
       'pride-and-inclusive': ['scene', 'illustration', 'typo'],
       seasonal: ['scene', 'illustration'],
@@ -49,7 +49,7 @@ export const PATTERN_CATEGORIES: Record<string, PatternCategoryConfig> = {
       landscapes: ['scene'],
       'art-reproductions': ['scene'],
       monochrome: ['scene'],
-      'home-cosy': ['scene', 'illustration'],
+      scenes: ['scene', 'illustration'],
     },
   },
   crochet: {

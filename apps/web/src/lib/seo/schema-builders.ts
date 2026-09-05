@@ -524,14 +524,24 @@ function mapDiets(flags: string[]): string[] | undefined {
 }
 
 /**
+ * Absolutise a possibly-relative image URL. Render-fallback routes
+ * (/api/procedural-card/…, /api/studio/patterns/[id]/thumbnail) are relative;
+ * Google needs absolute URLs for schema.org `image` and for og:image, so
+ * prefix the origin when the value isn't already absolute.
+ */
+export function absoluteImageUrl(url: string | null | undefined): string | undefined {
+  if (!url) return undefined
+  return /^https?:\/\//i.test(url) ? url : siteUrl(url)
+}
+
+/**
  * schema.org `image` as a repeated field of absolute URLs. Procedural-card
  * hero fallbacks are relative (/api/procedural-card/…); Google needs absolute
  * URLs, so prefix the origin when the value isn't already absolute.
  */
 function absoluteImages(heroUrl: string | null): string[] | undefined {
-  if (!heroUrl) return undefined
-  const abs = /^https?:\/\//i.test(heroUrl) ? heroUrl : siteUrl(heroUrl)
-  return [abs]
+  const abs = absoluteImageUrl(heroUrl)
+  return abs ? [abs] : undefined
 }
 
 function stripUndefined(obj: JsonLd): JsonLd {

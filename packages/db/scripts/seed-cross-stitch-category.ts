@@ -39,7 +39,7 @@ const CATEGORY_SPEC = {
   slug: 'cross-stitch',
   name: 'Cross-stitch',
   description:
-    'Animals, florals, landscapes, art reproductions, quotes and sayings, seasonal, monochrome, cocktails, home and cosy, and pride and inclusive patterns.',
+    'Animals, florals, landscapes, fantasy and fairytale, pop art portraits, monochrome studies, seasonal, quotes and sayings, and cosy scenes patterns.',
   // Sits alongside the other fibre crafts in the admin list. launchOrder
   // stays null until the Studio ships and Rebecca opts the category into
   // the public nav rotation.
@@ -64,8 +64,12 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     order: 10,
   },
   {
-    slug: 'florals',
-    name: 'Florals',
+    // Merged into the `floral` ("Floral & Botanical") shelf on 2026-09-05 —
+    // see packages/db/scripts/xs-merge-shelves.ts. Kept pointed at the
+    // surviving slug so a re-run of this migration can't resurrect the old
+    // `florals` shelf.
+    slug: 'floral',
+    name: 'Floral & Botanical',
     description:
       'Cross-stitch patterns featuring flowers, botanicals, leaves, and herb studies.',
     order: 20,
@@ -214,7 +218,7 @@ async function main(): Promise<void> {
       if (/\b(cat|dog|bird|fox|deer|owl|sheep|cow|horse|rabbit|fish|bee|butterfly)\b/.test(blob)) {
         newSubSlug = 'animals'
       } else if (/\b(flower|floral|botanical|herb|rose|tulip|daisy|leaf|leaves|sunflower)\b/.test(blob)) {
-        newSubSlug = 'florals'
+        newSubSlug = 'floral'
       } else if (/\b(quote|saying|phrase|sentiment|lyric|verse|motto)\b/.test(blob)) {
         newSubSlug = 'quotes-and-sayings'
       } else if (/\b(pride|lgbtq|rainbow|trans|queer|inclusive|allyship)\b/.test(blob)) {
