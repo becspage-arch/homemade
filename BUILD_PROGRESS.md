@@ -27,9 +27,20 @@ autopilot runs on ECS (Inngest) or in cloud sessions/routines, never on
 Rebecca's laptop.
 
 **Cross-stitch orchestrator (started 2026-09-05).** Owns the cross-stitch
-catalogue, `apps/web/src/lib/studio/generation/**`, the bulk-generation Inngest
-jobs and admin page, and cross-stitch shelves/SEO. Add your own in-flight
-lines here on your first train.
+catalogue, `apps/web/src/lib/studio/generation/**` (planner, subject pool,
+dedupe guard, similarity, vision gate, categories registry), the
+bulk-generation Inngest jobs (`apps/web/src/inngest/functions/bulk-generation.ts`)
+and admin page (`apps/web/src/app/admin/system/bulk-generation/`), the
+cross-stitch public pages and shelves/SEO, `packages/search` (the proxy-aware
+client), and the `Pattern` fingerprint columns + `BulkRun` finaliser columns.
+Done today: duplicate scan (85 clusters), 87 duplicates + 14 vision fails
+culled to PRIVATE (reversible, reason on `qcBlockReason`), fragment shelves
+merged, per-shelf targets (category target = their sum), mechanical dedupe
+guard in the publish path, run finaliser + Sentry/admin alerts, daily Fal cap,
+SEO images, shelf descriptions. In flight: proof batch on the server, then the
+cron switched on and watched for three firings, then fill to target, then the
+close-out (completeness gates, vision sweep of the new work, reindex,
+sitemap/structured data) and the per-category autopilot note.
 
 ## Recipe completeness: prose-method steps + per-serving nutrition (2026-06-25)
 
