@@ -10,7 +10,6 @@ import {
 } from './similarity'
 import { subjectKey, findSubjectKeyMatch, SUBJECT_JACCARD_MATCH } from './subject-key'
 import { CROSS_STITCH_SHELVES } from '../categories'
-import type { ShelfTarget } from '../categories'
 
 /**
  * THE PUBLISH-PATH DUPLICATE GUARD.
@@ -199,9 +198,4 @@ export async function publicSubjectKeys(limit = 800, shelfSlugs?: string[]): Pro
     if (key) seen.add(key)
   }
   return [...seen]
-}
-
-/** The shelf config the planner + admin read (one place, one list). */
-export function crossStitchShelves(): ShelfTarget[] {
-  return CROSS_STITCH_SHELVES
 }

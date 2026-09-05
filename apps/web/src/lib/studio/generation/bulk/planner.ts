@@ -403,14 +403,16 @@ export function enforceRange(briefs: CrossStitchBrief[], count: number): CrossSt
   }
 
   // ── a couple of small/medium in between ──────────────────────────────────
+  // Take from the SURPLUS at either end — a second large, a second mini — never
+  // the single piece each extreme of the range needs.
   const midCount = (): number => out.filter((b) => b.lane === 'small' || b.lane === 'medium').length
   if (out.length >= 4) {
     for (const lane of ['small', 'medium'] as const) {
       if (midCount() >= 2) break
-      const candidate = out
-        .map((b, i) => ({ b, i }))
-        .filter(({ b, i }) => i !== denseIdx && b.lane !== 'mini' && b.lane !== 'large' && b.lane !== 'small' && b.lane !== 'medium')[0]
-      if (candidate) out[candidate.i] = applyLane(candidate.b, lane)
+      const surplus = [...idxOf('large').filter((i) => i !== denseIdx).slice(1), ...idxOf('mini').slice(1)]
+      const i = surplus[0]
+      if (i == null) break
+      out[i] = applyLane(out[i]!, lane)
     }
   }
   return out
