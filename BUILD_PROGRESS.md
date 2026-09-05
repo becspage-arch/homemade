@@ -31,6 +31,53 @@ catalogue, `apps/web/src/lib/studio/generation/**`, the bulk-generation Inngest
 jobs and admin page, and cross-stitch shelves/SEO. Add your own in-flight
 lines here on your first train.
 
+## The bulk crochet pattern path proved end to end (2026-09-05)
+
+The loom's render-on-publish step had never been run against the live database:
+every hero so far came from a CLI reading a proof file. It now runs the real
+way — a stored `CrochetPattern` row with a `loomProgram` renders its OWN hero,
+uploads it, and serves it.
+
+`packages/db/scripts/seed-loom-signoff-patterns.ts` seeds the sign-off set as
+real rows (PRIVATE, house designer, a crochet shelf each, no Tutorial rows), with
+the program JSON on `loomProgram` — flat grid programs and amigurumi composition
+programs both go in the same column. Everything a catalogue row needs is DERIVED
+from the program rather than hand-kept: the `craftStitchSlugs` (internal US
+stitch ids mapped to the UK catalogue vocabulary), the abbreviation legend, the
+finished-size text, the yarn weight, the hook, the pieces and build order.
+
+`apps/web/scripts/render-patterns-on-publish-batch.ts` is the bulk renderer:
+`--slug-prefix` or a list of ids, plan everything first, launch every Fargate
+base render at once, then Fal + the fidelity gate + R2 + the write-back per row.
+`render-pattern-on-publish.ts` was split into plan / render / persist so the
+batch imports those steps instead of copying them. Two seams the split fixed:
+the idempotency check now runs on the COMPILED hash BEFORE anything renders (it
+used to render, then decide to skip — a Fargate task and a Fal call for a
+no-op), and one row that fails its audit is recorded against itself rather than
+aborting the whole run.
+
+A stored program also carries its own `staging` now. The proof CLI looks staging
+up in a table keyed by proof name; a database row has no such table, so
+`CrochetProgram.staging` holds it and the render-on-publish path reads it.
+Render-only — it is not in the geometry hash.
+
+Result: five flat patterns rendered on Fargate, passed the fidelity gate
+(0.901-0.934 against STRUCT_MIN 0.45), uploaded to R2 and wrote back
+`heroMediaId`/`loomHeroMediaId` plus regenerated `chartData` and
+`rowsStructured`. A second run reported SKIPPED_UNCHANGED for all five, with no
+new Media rows and no new R2 objects. The two amigurumi compositions failed the
+interlock audit on main (the round builders have not been re-tuned since the
+§8f gauge re-cut) and were correctly recorded FAILED_VERIFICATION without
+rendering.
+
+R2 from a cloud session works with no change: `r2Upload` already falls back from
+the S3 keys (which live only on ECS) to the Cloudflare REST path.
+
+The crochet library card was reading `thumbnailMediaId` only, so a pattern whose
+hero is a loom render showed no image. It now prefers the loom hero, then the
+Fal hero, then the saved chart thumbnail — matching the schema's own note that a
+renderer prefers `loomHero` when it is present.
+
 ## Recipe completeness: prose-method steps + per-serving nutrition (2026-06-25)
 
 Two recipe structured-data gaps closed.

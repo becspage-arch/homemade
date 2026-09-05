@@ -272,6 +272,11 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
             id: true,
             slug: true,
             name: true,
+            // Image preference (schema note on CrochetPattern.loomProgram): the
+            // loom hero IS the exact pattern, so it wins; then the Fal img2img
+            // hero; then the saved chart thumbnail.
+            loomHeroMediaId: true,
+            heroMediaId: true,
             thumbnailMediaId: true,
             difficulty: true,
             shapeCategory: true,
@@ -611,7 +616,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
               id: p.id,
               slug: p.slug,
               name: p.name,
-              thumbnailMediaId: p.thumbnailMediaId,
+              imageMediaId: p.loomHeroMediaId ?? p.heroMediaId ?? p.thumbnailMediaId,
               difficulty: p.difficulty,
               shapeCategory: p.shapeCategory,
               finishedSizeText: p.finishedSizeText,
