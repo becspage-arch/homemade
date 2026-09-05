@@ -44,6 +44,8 @@ SENTRY_DSN NEXT_PUBLIC_SENTRY_DSN SENTRY_ORG_SLUG SENTRY_PROJECT_SLUG
 SENTRY_AUTH_TOKEN
 NEXT_PUBLIC_POSTHOG_KEY NEXT_PUBLIC_POSTHOG_HOST
 DOMAIN SPLASH_PASSWORD
+LOOM_RENDER LOOM_RENDER_S3_BUCKET LOOM_RENDER_CLUSTER LOOM_RENDER_TASKDEF
+LOOM_RENDER_SUBNETS LOOM_RENDER_SECURITY_GROUP LOOM_RENDER_REGION
 "
 
 # Prisma migrations need the non-pooled host. The deploy workflow derives it the
@@ -69,6 +71,23 @@ else
   log ".env.credentials written ($written keys)"
 fi
 umask 022
+
+# ── 1b. Google Search Console service account ──
+# .secrets/ is gitignored, so the key can't come from the clone. It travels as
+# base64 in GSC_SERVICE_ACCOUNT_JSON_B64 and gets written back out here.
+# apps/web/scripts/gsc/gsc.ts reads GSC_KEY_PATH.
+if [ -n "${GSC_SERVICE_ACCOUNT_JSON_B64:-}" ]; then
+  mkdir -p .secrets
+  if printf '%s' "$GSC_SERVICE_ACCOUNT_JSON_B64" | base64 -d > .secrets/gsc-homemade.json 2>/dev/null; then
+    chmod 600 .secrets/gsc-homemade.json
+    export GSC_KEY_PATH="$PWD/.secrets/gsc-homemade.json"
+    echo "GSC_KEY_PATH=$PWD/.secrets/gsc-homemade.json" >> .env.credentials
+    log "Search Console key written"
+  else
+    rm -f .secrets/gsc-homemade.json
+    log "GSC_SERVICE_ACCOUNT_JSON_B64 is not valid base64 — Search Console work will fail"
+  fi
+fi
 
 # ── 2. Dependencies ──
 # Normally already present from the cached environment snapshot. This only bites
