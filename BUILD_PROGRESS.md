@@ -192,6 +192,28 @@ the two loom roles) so the build workflow + any invoker can drive it. Activate
 the server-side path with `LOOM_RENDER=fargate` + the six `LOOM_RENDER_*` env
 vars (from the CDK outputs). See `apps/web/scripts/loom-render/README.md`.
 
+**`LOOM_RENDER` confirmed mounted on the live web task (checked 2026-09-05).**
+`homemade-web:24` (the running revision, 0.5 vCPU / 1 GB) already carries
+`LOOM_RENDER=fargate` plus all six `LOOM_RENDER_*` values, and the web task role
+already holds the four grants the server-side path needs (S3 read/write on
+`homemade-loom-render`, `ecs:RunTask` on the `homemade-loom-render` family,
+`ecs:DescribeTasks`, and `iam:PassRole` on the two loom roles). So the switch-on
+deploy is already done — `MOUNT_LOOM_RENDER=1` landed with an earlier
+`cdk deploy` and the later CLI-registered revisions (:21-:24, the sizing change)
+carried the env forward. A fresh `cdk diff` with the full production env plus
+`MOUNT_LOOM_RENDER=1` shows no loom changes at all; the `needlework/hero.render`
+and `crochet/hero.render` Inngest jobs are live, not no-ops.
+
+That same diff does show three items of unrelated drift between the deployed
+CloudFormation template and the current source, none of them loom: the template
+still records the pre-resize `Cpu 256 / Memory 512` (live is already 512 / 1024,
+matching source, because the resize was applied by CLI revision), the stack
+description differs by one character (deployed has a `?` where the source has an
+em-dash), and a `BULK_AUTOPILOT=0` env var exists on the live task that the
+source no longer sets — nothing in `apps/web` reads it, the autopilot switch is
+DB-backed. Whoever runs the next `cdk deploy` should expect those three and
+nothing else.
+
 ## The loom hero pipeline wired to one production entrypoint (2026-06-24)
 
 The proven loom render chain (deterministic stitch render → Blender photoreal base
