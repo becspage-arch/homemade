@@ -5,6 +5,7 @@ import { captureServerEvent, flushPostHog, identifyServerUser } from '@/lib/post
 import { isoWeek } from '@/lib/cohort'
 import { deriveDeviceClass } from '@/lib/acquisition'
 import { hashEmailForAnalytics } from '@/lib/email-hash'
+import { computeSignupRisk } from '@/lib/signup-risk'
 import {
   SIGNUP_ALLOWLIST_ENABLED,
   findAllowlistEntry,
@@ -123,6 +124,15 @@ export async function POST(req: Request): Promise<Response> {
         const country = hdrs.get('cf-ipcountry') ?? null
         const deviceClass = deriveDeviceClass(hdrs.get('user-agent'))
         const cohortWeek = isoWeek(new Date())
+        // Signup spam signal (flag-only). This request is server-to-server
+        // from Clerk's own infrastructure, not the signer's browser, so we
+        // deliberately do NOT read an IP/user-agent here — that would record
+        // Clerk's egress address as if it were the maker's, which is worse
+        // than no data. The genuine end-user IP is captured on the JIT path
+        // in get-current-user.ts, which runs moments later on the signer's
+        // first authenticated page load; if this webhook wins the create
+        // race, signupIp/signupUserAgent simply stay null for that account.
+        const risk = computeSignupRisk({ email, name })
         // `upsert` keyed on clerkId handles webhook-vs-JIT collisions and
         // concurrent webhook deliveries for the *same* clerkId. It does NOT
         // cover a row that exists under the same email but a *different*
@@ -144,6 +154,9 @@ export async function POST(req: Request): Promise<Response> {
               signupCohortWeek: cohortWeek,
               country,
               deviceClass,
+              emailDomain: risk.emailDomain,
+              signupRiskScore: risk.riskScore,
+              signupRiskReasons: risk.riskReasons,
             },
             update: {
               email,

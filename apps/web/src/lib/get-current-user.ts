@@ -9,6 +9,20 @@ import {
   markAllowlistUsed,
   rejectNonAllowlistedSignup,
 } from './signup-allowlist'
+import { computeSignupRisk } from './signup-risk'
+import { getClientIp, getClientUserAgent } from './client-ip'
+import { checkRateLimit } from './ratelimit'
+
+/** Update `lastSeenAt` at most once per hour per user, fire-and-forget. */
+const LAST_SEEN_THROTTLE_MS = 60 * 60 * 1000
+
+function touchLastSeen(userId: string, lastSeenAt: Date | null): void {
+  const now = Date.now()
+  if (lastSeenAt && now - lastSeenAt.getTime() < LAST_SEEN_THROTTLE_MS) return
+  void prisma.user
+    .update({ where: { id: userId }, data: { lastSeenAt: new Date(now) } })
+    .catch(() => undefined)
+}
 
 /**
  * Pre-launch admin allowlist. Any email here gets ADMIN role on first sign-in.
@@ -53,7 +67,10 @@ export const getCurrentDbUser = cache(async (): Promise<User | null> => {
   if (!email) return null
 
   const existing = await prisma.user.findUnique({ where: { clerkId: clerkUser.id } })
-  if (existing) return existing
+  if (existing) {
+    touchLastSeen(existing.id, existing.lastSeenAt)
+    return existing
+  }
 
   // Pre-launch signup allowlist gate (belt-and-braces with the Clerk webhook).
   // If the webhook lagged or was never delivered, the first authenticated
@@ -74,6 +91,21 @@ export const getCurrentDbUser = cache(async (): Promise<User | null> => {
     [clerkUser.firstName, clerkUser.lastName].filter(Boolean).join(' ').trim() || null
   const emailLower = email.toLowerCase()
 
+  // Signup spam signal (flag-only — never blocks the create below). This is a
+  // genuine end-user request, so the IP/UA here are the real signer's, unlike
+  // the Clerk webhook which fires server-to-server from Clerk's own infra.
+  const risk = computeSignupRisk({ email: emailLower, name })
+  const [clientIp, clientUserAgent] = await Promise.all([getClientIp(), getClientUserAgent()])
+  let riskScore = risk.riskScore
+  const riskReasons = [...risk.riskReasons]
+  if (clientIp) {
+    const burst = await checkRateLimit('signup', clientIp)
+    if (!burst.allowed) {
+      riskScore += 2
+      riskReasons.push('signup-rate-burst')
+    }
+  }
+
   // JIT provisioning. Loading a single page fires several concurrent server
   // requests (main document + RSC prefetches); React `cache()` only dedupes
   // *within* one request, so two concurrent requests can both pass the
@@ -88,6 +120,12 @@ export const getCurrentDbUser = cache(async (): Promise<User | null> => {
         email: emailLower,
         name,
         role: deriveRoleFromEmail(email),
+        emailDomain: risk.emailDomain,
+        signupRiskScore: riskScore,
+        signupRiskReasons: riskReasons,
+        signupIp: clientIp,
+        signupUserAgent: clientUserAgent,
+        lastSeenAt: new Date(),
       },
     })
     // Only stamp the allowlist on a genuine first-time create — never on a
