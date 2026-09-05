@@ -90,7 +90,12 @@ export interface StitchDef {
 
 export const STITCHES: Record<StitchId, StitchDef> = {
   ch: { id: 'ch', heightFactor: 0.5, gaugeYr: 2.2, topLoops: 2 }, // chain gauge = its pull-through pitch (yarnPath ch branch)
-  slst: { id: 'slst', heightFactor: 0.8, gaugeYr: 1.9, topLoops: 2 }, // shortest worked stitch — flat + tight, but a row is still ≈1 yarn thick (can't pack thinner)
+  // sl st — the shortest worked stitch. Real slip-stitch fabric runs ~15 sts and a
+  // very short ~28 rows / 10 cm: a row is barely taller than the yarn.
+  slst: {
+    id: 'slst', heightFactor: 0.8, gaugeYr: 2.55, topLoops: 2,
+    rowYr: 1.55, postHalfYr: 0.99, crownHalfYr: 0.5, headLoopYr: 1.55, reliefScale: 1.3,
+  },
   // sc — the workhorse, re-cut to its REAL cell 2026-09-05 (§8f close-range pass).
   // Measured against published worsted-cotton figures the old cell was ~0.66× real
   // size relative to the yarn we draw, which left the two strands of every post
@@ -101,26 +106,65 @@ export const STITCHES: Record<StitchId, StitchDef> = {
     id: 'sc', heightFactor: 1.0, gaugeYr: 2.7, topLoops: 2,
     rowYr: 2.4, postHalfYr: 1.05, crownHalfYr: 0.55, headLoopYr: 2.0, reliefScale: 1.3,
   },
-  hdc: { id: 'hdc', heightFactor: 1.45, gaugeYr: 2.0, topLoops: 2 }, // dense like sc — notches, not holes
-  dc: { id: 'dc', heightFactor: 3.2, gaugeYr: 2.3, topLoops: 2 }, // open, but posts lean on each other — slits not gaps
-  tr: { id: 'tr', heightFactor: 4.2, gaugeYr: 2.45, topLoops: 2 }, // taller = airier: open channels between posts
-  dtr: { id: 'dtr', heightFactor: 5.4, gaugeYr: 2.45, topLoops: 2 }, // double treble — taller again
+  // hdc (UK htr) — ~12-14 sts and ~10-12 rows / 10 cm in worsted: 1.85 rendered
+  // diameters of pitch, 2.2 of row. The row figure is its OWN published gauge, not
+  // sc's row pitch times a heightFactor — the real ratio is not the one the
+  // heightFactor carries.
+  hdc: {
+    id: 'hdc', heightFactor: 1.45, gaugeYr: 3.15, topLoops: 2,
+    rowYr: 3.74, postHalfYr: 1.22, crownHalfYr: 0.6, headLoopYr: 2.33, reliefScale: 1.3,
+  },
+  // dc (UK tr) — ~11-13 sts and ~6-7 rows / 10 cm: pitch 2.0 d, row 3.7 d. Posts
+  // lean on each other into slits, not gaps.
+  dc: {
+    id: 'dc', heightFactor: 3.2, gaugeYr: 3.4, topLoops: 2,
+    rowYr: 6.29, postHalfYr: 1.32, crownHalfYr: 0.65, headLoopYr: 2.52, reliefScale: 1.3,
+  },
+  // tr — ~10-11 sts and ~4.5-5 rows / 10 cm: pitch 2.3 d, row 5.0 d. Taller means
+  // airier: open channels between the posts.
+  tr: {
+    id: 'tr', heightFactor: 4.2, gaugeYr: 3.91, topLoops: 2,
+    rowYr: 8.5, postHalfYr: 1.52, crownHalfYr: 0.7, headLoopYr: 2.9, reliefScale: 1.3,
+  },
+  // dtr — taller again: pitch 2.5 d, row 6.5 d.
+  dtr: {
+    id: 'dtr', heightFactor: 5.4, gaugeYr: 4.25, topLoops: 2,
+    rowYr: 11.05, postHalfYr: 1.65, crownHalfYr: 0.75, headLoopYr: 3.15, reliefScale: 1.3,
+  },
   // sc worked into back-loop-only / front-loop-only: same height as sc; the loop
   // left unworked floats as a horizontal ridge (handled in yarnPath by loopMode).
-  scblo: { id: 'scblo', heightFactor: 1.0, gaugeYr: 1.8, topLoops: 2 },
-  scflo: { id: 'scflo', heightFactor: 1.0, gaugeYr: 1.8, topLoops: 2 },
+  scblo: {
+    id: 'scblo', heightFactor: 1.0, gaugeYr: 2.7, topLoops: 2,
+    rowYr: 2.4, postHalfYr: 1.05, crownHalfYr: 0.55, headLoopYr: 2.0, reliefScale: 1.3,
+  },
+  scflo: {
+    id: 'scflo', heightFactor: 1.0, gaugeYr: 2.7, topLoops: 2,
+    rowYr: 2.4, postHalfYr: 1.05, crownHalfYr: 0.55, headLoopYr: 2.0, reliefScale: 1.3,
+  },
   // front/back post dc: dc-height, but worked AROUND the post below (yarnPath rings
   // the stem). fp pops proud, bp recedes — the basis of post ribbing + basketweave.
-  fpdc: { id: 'fpdc', heightFactor: 3.0, gaugeYr: 1.9, topLoops: 2 }, // post stitches pack DENSE — ribs touch into solid fabric
-  bpdc: { id: 'bpdc', heightFactor: 3.0, gaugeYr: 1.9, topLoops: 2 },
+  fpdc: {
+    id: 'fpdc', heightFactor: 3.0, gaugeYr: 2.9, topLoops: 2,
+    rowYr: 6.29, postHalfYr: 1.13, crownHalfYr: 0.65, reliefScale: 1.3,
+  }, // post ribbing packs tighter than plain dc — the ribs touch into solid fabric
+  bpdc: {
+    id: 'bpdc', heightFactor: 3.0, gaugeYr: 2.9, topLoops: 2,
+    rowYr: 6.29, postHalfYr: 1.13, crownHalfYr: 0.65, reliefScale: 1.3,
+  },
   // bobble: several partial dc in one stitch gathered to one top → a raised bump.
   // Usually dotted on an sc background, so it borrows the row's height and just
   // bulges forward; this factor only applies to an all-bobble row.
-  bobble: { id: 'bobble', heightFactor: 1.4, gaugeYr: 2.3, topLoops: 2 },
+  bobble: {
+    id: 'bobble', heightFactor: 1.4, gaugeYr: 3.45, topLoops: 2,
+    rowYr: 3.36, postHalfYr: 1.34, crownHalfYr: 0.65, reliefScale: 1.3,
+  },
   // picot: an sc whose head carries a small closed chain loop (ch 3, sl st back
   // into the sc's own head) — a decorative nub, classically on an edge row.
   // Same body as sc; the loop is an excursion after the crown (yarnPath).
-  picot: { id: 'picot', heightFactor: 1.0, gaugeYr: 1.8, topLoops: 2 },
+  picot: {
+    id: 'picot', heightFactor: 1.0, gaugeYr: 2.7, topLoops: 2,
+    rowYr: 2.4, postHalfYr: 1.05, crownHalfYr: 0.55, headLoopYr: 2.0, reliefScale: 1.3,
+  },
   // KNIT (new craft, same engine — own path builder in knitPath.ts). Stockinette
   // stitches are a touch wider than tall: ~5 sts + ~7 rows per inch in worsted.
   k: { id: 'k', heightFactor: 1.1, gaugeYr: 2.6, topLoops: 2 },
@@ -325,7 +369,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   postrib: {
     stitch: 'fpdc', rows: 8, auditW: 12, relaxProfile: 'worked', tiltDeg: 40, twist: 0.05,
     pattern: (j, c) => (j === 0 ? 'dc' : c % 2 === 0 ? 'fpdc' : 'bpdc'), // raised rib / recessed valley
-    gaugeYr: 1.5, // pack the alternating fp/bp columns tighter (fpdc's 1.9 left daylight between ribs); real rib columns touch
+    gaugeYr: 2.3, // pack the alternating fp/bp columns tighter than plain post dc (2.9); real rib columns touch. Re-derived §8f from the corrected post cell (was 1.5 against the old 1.9)
     // plain 1x1 fpdc/bpdc rib, flat lay, columns packed tight — a much cleaner
     // match than the old fringepost9 colourwork-cable photo (moralefiber.blog)
     referenceUrl: 'https://doradoes.co.uk/wp-content/uploads/2021/04/double-front-post-back-post-dc-rib-1024x1024.jpg',
@@ -339,7 +383,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
       const rb = Math.floor((j - 1) / 2)
       return (block + rb) % 2 === 0 ? 'fpdc' : 'bpdc' // 3-wide blocks, swap every 2 rows
     },
-    gaugeYr: 1.9, postReliefScale: 1.35, // CONTRAST (2026-07-11): the block alternation barely read (uniform vertical posts). Deepen the fp/bp relief 1.35× (per-swatch — locked fpdc/bpdc/postrib untouched) so raised blocks pop over recessed ones, and pack the columns (2.3->1.9) so the 3-wide blocks tile tight — the over-under basket weave becomes legible
+    gaugeYr: 2.9, postReliefScale: 1.35, // CONTRAST (2026-07-11): the block alternation barely read (uniform vertical posts). Deepen the fp/bp relief 1.35× (per-swatch — locked fpdc/bpdc/postrib untouched) so raised blocks pop over recessed ones, and pack the columns (2.3->1.9) so the 3-wide blocks tile tight — the over-under basket weave becomes legible
     referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2017/04/IMG_0708.jpg', // daisyfarmcrafts — cream basketweave swatch
     status: 'wip',
   },
@@ -385,6 +429,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   hdcinc: {
     stitch: 'hdc', rows: 5, auditW: 8, builder: 'shaped',
     shapeRows: growPlan(8, 5),
+    gaugeYr: 2.0, // PINNED to the pre-§8f cell: the shaped builder has not had the close-range pass yet (its decrease head is still a bump), so it keeps the lattice it was calibrated on
     relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
     referenceUrl: 'https://cdn.shopify.com/s/files/1/0620/7180/0037/files/image-81-1024x576_2021-01.png', // crochetmelovely — finished hdc increase
     status: 'wip',
@@ -392,6 +437,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   hdcdec: {
     stitch: 'hdc', rows: 5, auditW: 16, builder: 'shaped',
     shapeRows: shrinkPlan(16, 5),
+    gaugeYr: 2.0, // PINNED to the pre-§8f cell: the shaped builder has not had the close-range pass yet (its decrease head is still a bump), so it keeps the lattice it was calibrated on
     relaxProfile: 'worked', tiltDeg: 0, twist: 0.1,
     referenceUrl: 'https://christacodesign.com/wp-content/uploads/2021/04/half-double-crochet-together-tutorial-2-720x720.jpg', // christacodesign — hdc2tog swatch
     status: 'wip',
@@ -399,6 +445,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   dcinc: {
     stitch: 'dc', rows: 4, auditW: 8, builder: 'shaped',
     shapeRows: growPlan(8, 4),
+    gaugeYr: 2.3, // PINNED to the pre-§8f cell: the shaped builder has not had the close-range pass yet (its decrease head is still a bump), so it keeps the lattice it was calibrated on
     relaxProfile: 'worked', tiltDeg: 16, twist: 0.1, openFabric: true,
     referenceUrl: 'https://knotions.com/wp-content/uploads/2018/10/2dc.jpg', // knotions — completed 2dc increase with the V pair marked (found 2026-07-11; fuller-swatch candidates stayed lazy-loaded)
     status: 'wip',
@@ -406,6 +453,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   dcdec: {
     stitch: 'dc', rows: 4, auditW: 14, builder: 'shaped',
     shapeRows: shrinkPlan(14, 4),
+    gaugeYr: 2.3, // PINNED to the pre-§8f cell: the shaped builder has not had the close-range pass yet (its decrease head is still a bump), so it keeps the lattice it was calibrated on
     relaxProfile: 'worked', tiltDeg: 16, twist: 0.1,
     referenceUrl: 'https://christacodesign.com/wp-content/uploads/2017/09/2017-09-19_13-22-04_606-1024x768.jpg', // christacodesign — dc2tog swatch
     status: 'wip',
@@ -431,6 +479,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     stitch: 'dc', rows: 5, auditW: 12, builder: 'shaped',
     shapeRows: vstitchPlan(5, 5),
     rowScale: 0.8, // calm the row sag (2026-07-11): the tall dc posts sagged + tangled into an untidy lattice; a shorter row pitch firms the Vs vertically. Gauge left OPEN (no override) so the lace mesh stays airy like the reference.
+    gaugeYr: 2.3, // PINNED to the pre-§8f cell: the shaped builder has not had the close-range pass yet (its decrease head is still a bump), so it keeps the lattice it was calibrated on
     relaxProfile: 'worked', tiltDeg: 16, twist: 0.05, openFabric: true, // calmer ply so the lattice columns read clean, not ropey
     referenceUrl: 'https://i0.wp.com/mycrochetory.com/wp-content/uploads/2023/08/How-to-crochet-V-stitch-1.jpg', // mycrochetory — V-stitch swatch (the ch-1 open variant; ours is the solid 2-dc V)
     status: 'wip',

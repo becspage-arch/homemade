@@ -55,6 +55,27 @@ const TARGETS: Record<string, Target> = {
   crownProud: { lo: 0.0, hi: 0.5, note: 'top loops lie nearly flat — proud by under half a diameter' },
 }
 
+/**
+ * Per-stitch overrides of the shared targets. Gauge, row pitch and yarn usage are
+ * NOT the same for every stitch — a treble is intrinsically wider, much taller
+ * and airier than a single crochet — so comparing a dc against sc's figures says
+ * nothing. Each row is the stitch's own published worsted gauge (sts and rows per
+ * 10 cm) converted to rendered yarn diameters, with the yarn-per-stitch figure
+ * scaled by how much taller the post is. Anything absent falls back to TARGETS.
+ */
+const BY_STITCH: Record<string, Partial<Record<keyof typeof TARGETS, { lo: number; hi: number }>>> = {
+  // ~15 sts, ~28 rows / 10 cm — a slip-stitch row is barely taller than the yarn.
+  slst: { stitchPitch: { lo: 1.4, hi: 1.6 }, rowPitch: { lo: 0.8, hi: 1.0 }, yarnPerStitch: { lo: 4.5, hi: 6.5 }, crowding: { lo: 3.0, hi: 5.5 }, vAngle: { lo: 45, hi: 80 } },
+  // ~12-14 sts, ~10-12 rows / 10 cm.
+  hdc: { stitchPitch: { lo: 1.7, hi: 2.0 }, rowPitch: { lo: 2.0, hi: 2.4 }, yarnPerStitch: { lo: 9.5, hi: 13.0 }, crowding: { lo: 2.2, hi: 3.6 }, vAngle: { lo: 30, hi: 55 } },
+  // ~11-13 sts, ~6-7 rows / 10 cm — posts lean together into slits, not gaps.
+  dc: { stitchPitch: { lo: 1.85, hi: 2.2 }, rowPitch: { lo: 3.4, hi: 4.0 }, yarnPerStitch: { lo: 13.0, hi: 18.0 }, crowding: { lo: 1.7, hi: 2.7 }, vAngle: { lo: 18, hi: 40 } },
+  // ~10-11 sts, ~4.5-5 rows / 10 cm — airier again, real open channels.
+  tr: { stitchPitch: { lo: 2.2, hi: 2.4 }, rowPitch: { lo: 4.8, hi: 5.3 }, yarnPerStitch: { lo: 17.0, hi: 24.0 }, crowding: { lo: 1.4, hi: 2.2 }, vAngle: { lo: 14, hi: 34 } },
+  dtr: { stitchPitch: { lo: 2.4, hi: 2.6 }, rowPitch: { lo: 6.2, hi: 6.8 }, yarnPerStitch: { lo: 21.0, hi: 30.0 }, crowding: { lo: 1.2, hi: 2.0 }, vAngle: { lo: 12, hi: 30 } },
+  scblo: {}, scflo: {}, picot: {},
+}
+
 const mean = (a: number[]): number => (a.length ? a.reduce((s, v) => s + v, 0) / a.length : NaN)
 const pct = (a: number[], p: number): number => {
   const s = [...a].sort((x, y) => x - y)
@@ -75,6 +96,10 @@ function main(): void {
   // SEE, so that is the unit every published gauge figure is converted into.
   const d = yr * 1.7
   const recipe = SWATCH_RECIPES[arg]
+  const T: typeof TARGETS = { ...TARGETS }
+  for (const [k, v] of Object.entries(BY_STITCH[recipe.stitch] ?? {})) {
+    T[k] = { ...T[k]!, ...(v as { lo: number; hi: number }) }
+  }
   const W = recipe.auditW
   const { built } = buildRelaxedSwatch(arg, W, yr)
   const n = built.model.nodes
@@ -205,7 +230,7 @@ function main(): void {
   /** `mm` is the measured value in mm; it is reported in yarn diameters too. */
   const line = (label: string, mm: number, key?: keyof typeof TARGETS): void => {
     const vd = mm / d
-    const t = key ? TARGETS[key]! : undefined
+    const t = key ? T[key]! : undefined
     const tgt = t ? `${t.lo.toFixed(2)}–${t.hi.toFixed(2)}` : '—'
     const ratio = t ? (vd / ((t.lo + t.hi) / 2)).toFixed(2) + '×' : '—'
     const verdict = !t ? '' : vd < t.lo ? 'UNDER' : vd > t.hi ? 'OVER' : 'ok'
@@ -225,7 +250,7 @@ function main(): void {
   // crowding is a length per area — its "d" column is per-diameter, its mm column per-mm
   {
     const c = mean(yarnPer) / cellArea
-    const t = TARGETS.crowding!
+    const t = T.crowding!
     const cd = c * d
     console.log(
       `${'crowding (yarn/cell area)'.padEnd(26)}${cd.toFixed(2).padStart(8)}${c.toFixed(3).padStart(10)}${`${t.lo}–${t.hi}`.padStart(13)}${(cd / ((t.lo + t.hi) / 2)).toFixed(2).padStart(8)}×  ${cd < t.lo ? 'UNDER' : cd > t.hi ? 'OVER' : 'ok'}`,
@@ -250,7 +275,7 @@ function main(): void {
   // and degrees, so they bypass the mm→d conversion.
   {
     const row = (label: string, v: number, key: keyof typeof TARGETS, unit = ''): void => {
-      const t = TARGETS[key]!
+      const t = T[key]!
       console.log(
         `${label.padEnd(26)}${v.toFixed(2).padStart(8)}${unit.padStart(10)}${`${t.lo}–${t.hi}`.padStart(13)}${(v / ((t.lo + t.hi) / 2)).toFixed(2).padStart(8)}×  ${v < t.lo ? 'UNDER' : v > t.hi ? 'OVER' : 'ok'}`,
       )
@@ -265,7 +290,7 @@ function main(): void {
   console.log('-'.repeat(74))
   console.log(`stitch cell: ${rowD(mean(pitchX))}d wide x ${rowD(mean(pitchY))}d tall (real sc ≈ 1.6d x 1.4d)`)
   console.log(`\ntargets, in words:`)
-  for (const [k, t] of Object.entries(TARGETS)) console.log(`  ${k.padEnd(15)} ${t.note}`)
+  for (const [k, t] of Object.entries(T)) console.log(`  ${k.padEnd(15)} ${t.note}`)
   console.log()
 }
 

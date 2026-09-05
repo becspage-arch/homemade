@@ -382,7 +382,12 @@ export function emitPlainStitch(
   // they are one anatomy — a stitch with a real head has somewhere for the legs
   // to splay TO (the head's two ends). Un-recut stitches are untouched.
   const hl = spec.headLoopMm ?? 0
-  const recut = hl > 0 && loopMode === 'both'
+  // The re-cut POST applies to every stitch whose cell has been re-cut. The
+  // re-cut HEAD is the plain single-apex head only — blo/flo keep their split
+  // back/front loop, which is their whole identity, but they get the V post and
+  // the real cell like every other re-cut stitch.
+  const recut = hl > 0
+  const recutHead = recut && loopMode === 'both'
   // Dive to the FAR side of the crown below. A flat-LYING head (crownLay, §8c)
   // sits low on the surface, so getting under it needs a DEEPER dive — at the
   // proud-crown depth the hook settles nearly coincident with the flattened
@@ -449,7 +454,7 @@ export function emitPlainStitch(
   let crownFront: number
   let trailA: number
   let headPartner = -1
-  if (recut) {
+  if (recutHead) {
     // THE HEAD IS A LOOP, NOT A BUMP (§8f — the close-range look pass).
     //
     // The legacy head was three nodes making a shallow rise on the row line: it
@@ -489,12 +494,12 @@ export function emitPlainStitch(
     crownBack = crown
     crownFront = crown
   } else if (loopMode === 'both') {
-    trailA = push(xC - s * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
+    trailA = push(xC - sd * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
     const crown = push(xC, ty + dh * 0.35 * lay, zh * (1.15 - 0.6 * lay) * fz)
     crownBack = crown
     crownFront = crown
   } else {
-    trailA = push(xC - s * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
+    trailA = push(xC - sd * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
     // Relaxation crushes ~25% of whatever initial split we give (measured: 1.55zh
     // spread settled to 0.594yr, i.e. lost ~0.18yr of a 0.775yr initial gap) — widen
     // further, targeting a SETTLED gap around half a yarn diameter (~1.0yr of 2yr).
@@ -512,9 +517,9 @@ export function emitPlainStitch(
   }
   const hyOut = dh * 1.45 * 0.3
   const trailB =
-    recut
+    recutHead
       ? push(xC + s * cw * 0.9, ty - hyOut, zh * 0.45 * fz) // drop off the head, on to the next stitch
-      : push(xC + s * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
+      : push(xC + sd * cw, ty - dh * (0.3 - 0.15 * lay), zh * (1 - 0.5 * lay) * fz)
   stitchDebugNodes.push({
     j, c, id,
     start: dbgStart,
