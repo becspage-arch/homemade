@@ -26,7 +26,6 @@ import {
   dimsFor,
   HOOK_SPREAD_YR,
   rowPitchYr,
-  roundGaugeYr,
   emitPlainStitch,
   emitHeadLoop,
   BASE_ROW_YR,
@@ -429,11 +428,17 @@ export function buildRounds(
   st: StitchId,
   counts: number[],
   yarnRadiusMm: number,
-  gaugeYr?: number,
+  /**
+   * Per-swatch RADIAL pitch override in yarn radii — a disc's one density knob.
+   * A disc has no free column gauge (§8f-4): with the counts growing +6 and the
+   * radius growing by `drift` per round, the tangential spacing settles at
+   * 2π·drift/6 by construction, so the radial pitch sets both. A column-gauge
+   * override here would silently do nothing, which is why this is the radial
+   * one. Absent → the stitch's own row pitch, which is what a round of fabric is.
+   */
+  radialPitchYr?: number,
 ): BuiltContinuous {
   const yr = yarnRadiusMm
-  // Work in the round is worked at the ROUND gauge, not the flat-row one (§8f-4).
-  const sw = yr * (gaugeYr ?? roundGaugeYr(st))
   // The real cell (§8f-3) — the same one the flat grid builder takes, including
   // the head as a two-strand LOOP. The canopy below is re-derived from it in the
   // same pass, because the two are one mechanism: the canopy says where a crown
@@ -453,7 +458,7 @@ export function buildRounds(
   // the disc's own gauge is derived FROM the agreement (sw = rowPitch / 0.955,
   // which is why mrdisc works a touch tighter than flat sc — exactly what a real
   // flat circle needs, or it ruffles), and drift is simply the row pitch.
-  const drift = yr * rowPitchYr(st)
+  const drift = yr * (radialPitchYr ?? rowPitchYr(st))
   // Same-face rounds pile every stitch's leg bulge on ONE face (no turn cancels it),
   // so the surface between the proud crowns reads knotty. Calm the leg bulge; crown
   // height + dive depth (the interlock) are left full, unlike the burned crownLay.
@@ -780,8 +785,7 @@ export function buildSphere(
   gaugeYr?: number,
 ): BuiltContinuous {
   const yr = yarnRadiusMm
-  // Work in the round is worked at the ROUND gauge, not the flat-row one (§8f-4).
-  const sw = yr * (gaugeYr ?? roundGaugeYr(st))
+  const sw = yr * (gaugeYr ?? STITCHES[st].gaugeYr)
   // The real cell (§8f-3), with the radial canopy re-derived alongside it — see
   // the same note in buildRounds.
   const dims = dimsFor(yr, st)

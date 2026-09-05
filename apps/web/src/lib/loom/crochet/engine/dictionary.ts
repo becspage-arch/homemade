@@ -530,8 +530,8 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   mrdisc: {
     stitch: 'sc', rows: 6, auditW: 16, builder: 'round',
     roundCounts: [6, 12, 18, 24, 30, 36],
-    // §8f-4: no gauge override at all — work in the round has its OWN derived
-    // gauge (roundGaugeYr = row pitch ÷ 0.955), which is what the builder uses.
+    // §8f-4: no gauge override — the disc takes sc's own cell, gauge and row
+    // pitch alike, exactly like the flat grid builder.
     relaxProfile: 'round', tiltDeg: 0, twist: 0.08, // CRISPNESS 2026-07-11: 0.05 was "calm" for the old merged-ply model (twist = surface noise); the distinct-ply model's twist IS the visible ply line — 0.08 shows real yarn without burying the Vs
     referenceUrl: 'https://sarahmaker.com/wp-content/uploads/2022/03/crochet-circle-7-819x1024.jpg',
     status: 'wip',
@@ -541,9 +541,9 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   // mirrored decs, fasten-off into the bottom pole).
   ball: {
     stitch: 'sc', rows: 15, auditW: 16, builder: 'sphere', equatorCount: 36,
-    // §8f-4: no gauge override — the sphere takes the derived round-work gauge,
-    // the same one the compositions build their parts at, so the ball a proof
-    // renders and the ball a bear is made of are the same fabric.
+    // §8f-4: no gauge override — the sphere takes sc's own cell, the same one
+    // the compositions build their parts at, so the ball a proof renders and the
+    // ball a bear is made of are the same fabric.
     viewMargin: 0.35, // frame the FULL sphere silhouette — the tilted camera clipped the top pole against the old 0.12 crop
     relaxProfile: 'surface', tiltDeg: 24, twist: 0.05,
     referenceUrl: 'https://raffamusadesigns.com/wp-content/uploads/How_to_Crochet_erfect_Amigurumi_Ball_9_RaffamusaDesigns.jpg',

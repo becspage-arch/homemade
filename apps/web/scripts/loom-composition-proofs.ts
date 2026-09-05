@@ -50,7 +50,7 @@ const amigurumiBall: CompositionProgram = {
   tiltDeg: 20,
   parts: [{ name: 'ball', stitch: 'sc', rounds: BODY, colourHex: '#c25a3c', place: { on: 'ground' } }],
   gaugeText: 'sc worked in the round, stuffed firm',
-  finishedSizeMm: { width: 70, height: 70 },
+  finishedSizeMm: { width: 59, height: 38 }, // §8f-4: MEASURED off the settled geometry at the corrected cell. The claim was never checked against it — the same piece settled 41 x 26 mm before, so the shape (h/w 0.65) is unchanged; a +6 cap is intrinsically a flat disc and the roundness of a real ball comes from stuffing, which this model does not have (§9)
   hookMm: 4,
   notes: 'A simple stuffed crochet ball — the amigurumi primitive, worked as a continuous spiral from a magic ring.',
 }
@@ -72,7 +72,7 @@ const amigurumiCreature: CompositionProgram = {
     { name: 'ear-r', stitch: 'sc', rounds: EAR, colourHex: '#8a5a34', place: { on: 'head', dir: { x: 0.5, y: 0.14, z: 1 }, seat: mm(6) } },
   ],
   gaugeText: 'sc worked in the round, each piece stuffed and joined',
-  finishedSizeMm: { width: 80, height: 140 },
+  finishedSizeMm: { width: 67, height: 85 }, // §8f-4: measured off the settled geometry
   hookMm: 4,
   notes: 'A simple amigurumi bunny: a stuffed body ball, a smaller head, and two ears standing proud — each crocheted as a spiral from a magic ring and sewn on.',
 }
@@ -334,7 +334,7 @@ function bear(opts: {
       },
     ],
     gaugeText: 'sc worked in the round, each piece stuffed firm and sewn on',
-    finishedSizeMm: { width: 44, height: 69 },
+    finishedSizeMm: { width: 84, height: 107 }, // §8f-4: MEASURED off the settled geometry at the corrected cell (57 x 74 mm before it, against the same 44 x 69 claim — the claim was never checked). Height-to-width is unmoved at 1.28, so every proportion round 2 tuned survives; only the scale is honest now.
     hookMm: 4,
     notes: opts.notes,
   }

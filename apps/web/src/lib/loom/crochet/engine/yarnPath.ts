@@ -263,22 +263,6 @@ export const BASE_ROW_YR = 1.55
 export const rowPitchYr = (id: StitchId): number =>
   STITCHES[id].rowYr ?? BASE_ROW_YR * STITCHES[id].heightFactor
 
-/**
- * The gauge a stitch is worked at IN THE ROUND, in yarn radii (§8f-4).
- *
- * Working in the round ties two things that are independent in flat rows. A
- * round that adds 6 stitches grows its radius by 6·sw / 2π ≈ 0.955·sw, and that
- * growth IS one row pitch of fabric — so the stitch pitch is fixed at
- * rowPitch / 0.955. It comes out a touch tighter than the same stitch's flat-row
- * gauge, which is exactly what a real flat circle is worked at, or it ruffles.
- *
- * Exceed it and the piece degenerates: on a surface of revolution the radius
- * growth outruns the meridian pitch, the intrinsic profile clamps to its flat
- * floor, and the ramps go pancake. Measured on the amigurumi ball, which is 13
- * rounds either way: at sc's FLAT gauge 2.7 it settles 59 × 38 mm, and at the
- * round-work gauge 51 × 51 — a ball.
- */
-export const roundGaugeYr = (id: StitchId): number => rowPitchYr(id) / 0.955
 
 /**
  * One PLAIN stitch excursion (sc family / hdc / dc / tr / dtr / blo / flo) —

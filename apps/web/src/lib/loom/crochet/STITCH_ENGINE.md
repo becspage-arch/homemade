@@ -1290,19 +1290,33 @@ crowding at a SHARED BASE was.
 - **`buildShaped`** — the stitch's own cell, row pitch, head loop and yarn-over
   collars. `scinc`, `scdec`, `hdcinc`, `hdcdec`, `dcinc`, `dcdec` and `crossed`
   dropped their pins and are audit-clean at all three weights.
-- **`buildRounds`** — the radial drift is now simply the stitch's own **row
-  pitch**, and the disc's gauge is DERIVED rather than packed. Two constraints
-  have to agree on a flat disc: geometry says a +6 round needs circumference
-  6·sw = 2π·Δr, i.e. Δr ≈ 0.955·sw, and the fabric says Δr is one row pitch.
-  Before the cell they disagreed, so drift was tied to the gauge with a 0.9 pack
-  factor and the disc's density was a knob. Now sw = rowPitch / 0.955 = 2.4/0.955
-  = **2.51**, a touch tighter than flat sc's 2.7 — which is exactly what a real
-  flat circle is worked at, or it ruffles. Measured, the round-to-round crown gap
-  went from 1.87–2.14yr (drifting) to **2.38–2.43yr, dead even, on a 2.40yr row
-  pitch**.
-- **`buildSphere`** — the same cell; `R = eq·sw/2π` (§8c-3D) then makes the ball
-  bigger for the same pattern, which is the same truth the flat proofs met in
-  §8f: a correct gauge makes the same stitch count a bigger piece.
+- **`buildRounds` and `buildSphere`** — the stitch's own cell, gauge and row
+  pitch alike, exactly like the flat grid builder; `mrdisc` and `ball` dropped
+  their density overrides. The disc's radial drift is now simply the row pitch,
+  where before it was tied to the gauge with a 0.9 pack factor because the two
+  disagreed under the old lattice. Measured, the round-to-round crown gap went
+  from 1.87–2.14yr (drifting) to **2.38–2.43yr, dead even, on a 2.40yr row
+  pitch**. On the sphere `R = eq·sw/2π` (§8c-3D) then makes the ball bigger for
+  the same pattern — the truth the flat proofs met in §8f.
+
+  **Two attempts at making the ball ROUND, both rejected — write-up.** The ball
+  is oblate: 41 × 26 mm before this pass, 59 × 38 after, i.e. h/w 0.63 → 0.65,
+  unchanged. On a surface of revolution the intrinsic profile takes whatever the
+  radius change does not use as height (`dz = √(drift² − dr²)`), and a +6 round
+  spends the whole meridian pitch on radius — so a +6 cap is intrinsically a
+  flat disc, exactly as §9 already recorded. Attempt 1 derived a "round-work
+  gauge" from the flat-circle relation (a +6 round grows its radius by
+  0.955·sw, and that growth is one row pitch, so sw = rowPitch/0.955 = 2.51):
+  it made the disc's two constraints agree, but on the sphere dr then equals the
+  pitch exactly and the cap is still flat — 56 × 41. Attempt 2 tightened that by
+  0.9 (a hook size down, which is how amigurumi is genuinely worked) and the
+  ball did come out 51 × 51, round — but it is a fudge: it buys the dome by
+  working the stitch NARROWER than tall, where a real sc is wider than tall
+  (1.6 d pitch against 1.4 d rows), and it stretched every bear part with it
+  (the head went 34 × 35 mm to 42 × 61, and one composition interlock failed).
+  Reverted. The ball's roundness comes from STUFFING, which this model does not
+  have; the honest fix is a stuffing term in the relaxer, not a gauge that
+  misreports the fabric. Cap reached — do not chase it with more gauge values.
 - **The canopy, re-derived from the re-cut head.** This is the part §8f-2 warned
   about, and the fix is a taxonomy point rather than a threshold. The canopy
   exempted three nodes round the crown apex, because a legacy head WAS three
@@ -1353,20 +1367,28 @@ per-stitch `pw` to begin with.
 ### The amigurumi proofs
 
 Every piece is built by the sphere builder, so every piece got bigger for the
-same round counts: a bear settles **57×74 mm → 88×113 mm**, with its
-height-to-width ratio unmoved (1.31 → 1.28) — the shapes round 2 tuned are
-preserved. But every placement number in `loom-composition-proofs.ts` is in
-absolute millimetres against that geometry (how deep a limb seats, how far a head
+same round counts: a bear settles **57 × 74 mm → 84 × 107 mm**, with its
+height-to-width ratio unmoved (1.31 → 1.28) and its head still round
+(48.5 × 51.6 mm, h/w 1.06, against round 2's 34 × 35). The shapes round 2 tuned
+are preserved because the cell grew by the same factor on both axes — the gauge
+1.8 → 2.7 yarn radii across and the row pitch 1.55 → 2.4 up, 1.50 and 1.55.
+
+But every placement number in `loom-composition-proofs.ts` is in absolute
+millimetres against that geometry (how deep a limb seats, how far a head
 overlaps, how big a safety eye is), and round 2 tuned them as PROPORTIONS: the
-eye ~10% of the head width, the arm held just clear of the table. They are now
-all scaled by the one factor (`CELL_SCALE` 1.53), which preserves those
-proportions exactly — the base bear's eye measures 10.7% of the head width — where
+eye ~10% of the head width, the arm held just clear of the table. They are all
+scaled by the one factor (`CELL_SCALE` 1.53), which preserves those proportions
+exactly — the base bear's safety eye measures **10.7% of the head width** — where
 re-tuning thirteen numbers by hand would not.
 
 The §9 table gate caught the one thing that did not follow: at the old arm
 offset the left paw pad settled 0.16 mm UNDER the table, which silently hoists
 the whole bear (shadow and all) off the ground. Every variant is back to
-`minz = 0.00`.
+`minz = 0.00`. The three declared `finishedSizeMm` claims were measured off the
+settled geometry rather than carried over: the ball 70 × 70 → **59 × 38**, the
+creature 80 × 140 → **67 × 85**, the bear 44 × 69 → **84 × 107**. None of them
+had ever been checked against the geometry — the bear settled 57 × 74 against
+the same 44 × 69 claim before this pass.
 
 ### Hashes — 16 moved, 20 bit-identical (parts 1 and 2 together)
 
