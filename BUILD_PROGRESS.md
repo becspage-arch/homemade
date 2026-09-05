@@ -4538,3 +4538,40 @@ Three live-site problems the owner spotted on the homepage:
   popular published pattern (a real chart render) → tutorial photo. Verified:
   cross-stitch tile now a chart render; cooking/baking unchanged (recipe
   photos, correct). Only 3 categories are public-visible today.
+
+## 2026-09-05 — Search Console audit + gsc.ts machine-path bug
+
+GSC's Sitemaps report showed "submitted 5926 / indexed 0" for the main
+sitemap, which read as a real indexing failure. Investigated properly:
+sample-inspected 49 live URLs via the URL Inspection API, spread across
+cooking, baking, cross-stitch, needlework, the legal pages, group landings
+and a maker profile, plus a random 150-URL sweep of raw HTTP status across
+the whole sitemap.
+
+- **"indexed 0" is a GSC reporting artefact, not a real problem.** 47/49
+  sampled URLs came back "Submitted and indexed"; the other 2 are ordinary
+  Google discretion (`/makers` crawled-but-not-indexed as a thin listing
+  page; one cross-stitch pattern not yet crawled — both fetch 200 with
+  correct robots/canonical). `pages 90` / `queries 90` Search Analytics
+  pulls show real organic clicks and impressions across cooking, baking,
+  needlework and cross-stitch, which the sitemap's own "indexed" counter
+  can't square with a value of 0 — that specific number is known to lag
+  independently of the rest of GSC on large sitemaps. All 150 randomly
+  sampled sitemap URLs returned 200 with no redirects; no canonical
+  mismatches; structured data (Breadcrumbs, Recipe/HowTo per
+  `Tutorial.type`) present as designed. No code change needed here.
+- **Real bug, fixed:** `apps/web/scripts/gsc/gsc.ts` defaulted `GSC_KEY_PATH`
+  to a hardcoded `C:/Users/Rebecca/...` path, so the CLI only worked on one
+  machine. Now walks up from the script to the repo root
+  (`pnpm-workspace.yaml`) and resolves `.secrets/gsc-homemade.json` from
+  there; the env override still wins when set.
+- Swept the repo for other hardcoded absolute machine paths. Everything
+  else found is either already-correct local-only tooling with a
+  documented convention (the `loadEnv('C:/Users/Rebecca/.../
+  .env.credentials')` scripts — see `reference_script_env_dotenv_path.md`),
+  or one-off bulk-content-fix scripts tied to a specific already-run batch
+  (`fix-bulk*.js`, `packages/db/scripts/_*`, `docs/**`) — left alone,
+  nothing to migrate. Flagged separately: the cross-stitch `xs-*.ts` ops
+  scripts' `SCRATCH` constants point at a worktree that no longer exists
+  (`jolly-visvesvaraya-564eb8`) and will fail if run today — not fixed here
+  (out of scope for an SEO audit), queued as a follow-up suggestion.
