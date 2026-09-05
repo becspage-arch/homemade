@@ -805,6 +805,148 @@ every UNCHANGED proof's geometry hash stayed bit-identical
   left alone as out of scope for this session (their row/stitch counts are
   unchanged, hashes unchanged) — flagged for a follow-up size/gauge-text pass.
 
+## 8f. CLOSE-RANGE LOOK PASS — the fabric was cut at 0.66× real size (2026-09-05)
+
+The locked stitches pass at whole-object scale and FAIL close-up. Rebecca's
+close-up comparison: ours reads as a row of fat coils under a thick proud cord;
+a real worsted-cotton sc dishcloth is a flat tidy grid of small paired-loop tops
+with pinprick holes, the fabric about two yarn diameters thick and the stitches
+barely wider than the yarn. She reopened the locked stitches to fix it properly.
+This section is `sc` only — the workhorse — with the lever designed to generalise.
+
+### The unit: RENDERED yarn diameters
+
+Everything below is in **d = 1.7·yr**, not 2·yr. Every render call site plies the
+strand to a target OUTER radius of `yr*0.85` (§11's crisp-ply recipe), so the yarn
+a viewer actually SEES is 1.7·yr across. Comparing our fabric with a photograph
+means comparing stitch size to the yarn you can see, so that is what every
+published gauge figure gets converted into. Reporting in 2·yr flatters us by 18%.
+
+### The real-world targets (worsted / CYC 4 cotton, d ≈ 4.2 mm)
+
+| quantity | real figure | in d |
+|---|---|---|
+| stitch pitch | 14–16 sc / 10 cm → 6.3–7.1 mm | **1.49–1.70** |
+| row pitch | 16–18 rows / 10 cm → 5.6–6.3 mm | **1.33–1.49** |
+| yarn per stitch | ~3–4 m per 100 sc → 3.0–4.0 cm | **7.0–9.5** |
+| crowding (yarn length ÷ cell area) | derived from the two above | **2.8–4.8** |
+| fabric thickness | ≈ 2 yarn diameters | **1.8–2.2** |
+| crown proud of the fabric | top loops lie nearly flat | **< 0.5** |
+
+They live in `scripts/loom-stitch-metrics.ts`, which dumps the SETTLED geometry
+of any plain-family dictionary stitch beside them. It is the generalised
+`loom-ch-debug.ts`: get NUMBERS before theories (§9).
+
+### The measured table — before and after
+
+| quantity | before | after | target |
+|---|---|---|---|
+| yarn fed per stitch | 3.51 d | **7.35 d** | 7.0–9.5 |
+| stitch pitch | 1.07 d | **1.59 d** | 1.49–1.70 |
+| row pitch | 0.91 d | **1.41 d** | 1.33–1.49 |
+| crowding | 4.24 | **3.27** | 2.8–4.8 |
+| fabric thickness | 1.82 d | 1.53 d | 1.8–2.2 |
+| crown proud of its own legs | 0.46 d | 0.47 d | < 0.5 |
+| **post leg separation** | **0.39 d** | **0.75 d** | ≥ ~0.7 to read as two strands |
+| head strand separation | — (one node) | **0.82 d** | ≥ ~0.7 |
+
+**What the numbers actually said** (not the hypothesis they were meant to test).
+The brief's hypothesis was surplus yarn coiling into lobes. Half right: crowding
+(yarn per unit cell area) was only 1.1× the real figure, and fabric thickness was
+already about right. The real fault is that **the whole fabric was cut at ~0.66×
+real size relative to the yarn we draw** — pitch 0.67×, row pitch 0.65×, yarn per
+stitch 0.50×. At that scale nothing INSIDE a stitch can resolve:
+
+- the post's two strands settled **0.39 d** apart, so they overlapped into one
+  plump tube — the "fat coil". (The ~3 "wraps" of yarn visible per stitch in the
+  close-up are the §11 ply barber-pole on that single merged tube, not three
+  strands.)
+- consecutive crown bumps, 1.07 d apart at 0.46 d proud, merged into one
+  continuous ridge — the "thick proud cord" along every row top.
+- there was nowhere for a pinprick hole to be.
+
+And the missing yarn is almost all **the head**. A real sc's top is the loop that
+was on the hook, laid down along the row: roughly 2 × the stitch width of
+perimeter, ~5 d of yarn. Ours was a three-node BUMP carrying 0.5 d. Legs 2.8 d +
+head 5 d ≈ the real 8 d budget; we had legs 2.2 d + head 0.5 d.
+
+### The lever — a per-stitch fabric CELL, and a head that is a loop
+
+Two changes, both construction, topology and every recorded interlock untouched:
+
+1. **The cell.** `StitchDef` gained `rowYr`, `postHalfYr`, `crownHalfYr`,
+   `headLoopYr` — this stitch's cell measured against its own published gauge, in
+   yarn radii. Every one is optional and falls back to exactly the legacy shared
+   lattice (`BASE_ROW_YR · heightFactor`, `stitchDims`), so a stitch that has not
+   been re-cut is bit-identical. `rowPitchYr(id)` and `dimsFor(yr, id)` are the
+   single accessors. sc: `gaugeYr` 1.8 → **2.7**, `rowYr` **2.4**, `postHalfYr`
+   0.35 → **0.7** (the post's two strands now separate instead of merging).
+2. **The head is a LOOP, not a bump** (`headLoopYr` 1.2). Traced as the hook lays
+   it, so nothing is drawn: coming off the up-leg the strand runs BACK along the
+   row top as the tucked strand, turns at the loop's tail, and comes FORWARD again
+   past the column as the proud strand — which is still this stitch's crown, still
+   the node the next row dives under, still the same `StitchLink`. It gives the
+   head a real perimeter, a real hole, and TWO visible strands.
+
+Audit **clean 36/36 at fine (1.5), worsted (2.4) and bulky (3.2)**. The §9 loop
+budget is respected: the head is fed, never starved.
+
+### What moved, and what is bit-identical
+
+`loom-geom-hash.ts`, 32 of 36 swatches bit-identical. Moved (all of them sc
+fabric, nothing else):
+
+| swatch | before → after | why |
+|---|---|---|
+| `sc` | `5615e693ec3bc440` → `3fcc339c5313fa05` | the re-cut |
+| `bobble` | `f8e613a49e46f856` → `fbe96143b96ef5dc` | its sc ground |
+| `bobbles` | `f8e613a49e46f856` → `fbe96143b96ef5dc` | its sc ground |
+| `picot` | `459e402588dad150` → `094308fee511eada` | its sc rows |
+
+Two care points found while doing it, both worth knowing:
+
+- **Re-associating a float moves every hash.** Writing the row pitch as
+  `yr · (BASE_ROW_YR · heightFactor)` instead of `(yr · BASE_ROW_YR) · heightFactor`
+  is the same number in algebra and a different one in binary — it moved `hdc`
+  and `basketweave` for no reason at all. The builder keeps both branches
+  written out separately so an un-recut stitch keeps its exact association.
+- **Only the flat GRID builder takes the new cell.** The shaped, round, sphere
+  and knit builders keep the legacy lattice: their crown canopies (`zBand`,
+  `radialBand`), radial drifts, turning slack and intrinsic profiles were all
+  calibrated on it, and re-cutting under them broke a disc interlock immediately
+  (`mrdisc` j5 c28, hook 2.54yr sideways). `scinc`/`scdec` therefore pin
+  `gaugeYr: 1.8` explicitly. Each of those builders needs its own pass.
+
+### What generalises to the other stitches
+
+The lever is the same for every one of them, and the work per stitch is small:
+
+1. Look up the stitch's published gauge (sts and rows per 10 cm) in the weight
+   the reference photo was shot at, and convert to **d = 1.7·yr**.
+2. Set `gaugeYr` and `rowYr` to those figures; set `postHalfYr` so the post's two
+   strands settle ≥ ~0.7 d apart; set `headLoopYr` (every crochet stitch has the
+   same head, so the loop construction is shared as-is).
+3. Re-measure with `loom-stitch-metrics.ts` and re-run `loom-audit.ts --yr=` at
+   fine / worsted / bulky. Every headline number should land in its range.
+
+Taller stitches (hdc/dc/tr/dtr) need their own `rowYr` from their own row gauge
+rather than a heightFactor off sc — the real ratio of dc height to sc height is
+not the ratio our `heightFactor` carries. The `emitDecrease` head is still a bump
+and needs the same loop before the shaped builder can be re-cut.
+
+### The flat proofs' stitch counts follow the gauge
+
+A correct gauge makes the same stitch count a BIGGER piece, so the settled-size
+gate (§8e-3) immediately failed `simple-coaster` (declared 100×100, settled
+148×154) and `stripe-dishcloth` (declared 200×200, settled 300×248). That is the
+gate doing its job: those counts were derived from a stitch that was half real
+size. Re-derived from the corrected gauge (5.67 mm per sc, 5.04 mm per sc row):
+coaster **26×30 → 18×20** (settles 102×103), dishcloth **53×50 → 35×42** (settles
+197×206), with the gauge lines corrected to match. Both are now also what a
+crocheter would actually get from the written gauge — and both are markedly
+cheaper to render. The other flat proofs' declared sizes are driven by hdc/dc/post
+stitches and stay as they are until those stitches take this pass.
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,
