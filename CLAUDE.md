@@ -18,12 +18,36 @@ fast-moving project state. See "Cloud sessions" below.
 The single canonical build log is `BUILD_PROGRESS.md` at the repo root.
 Update it as part of any session that ships a phase or pre-launch debt item.
 
+## Merging: two lanes and the daily train (Rebecca, 5 September 2026)
+
+Every merge to `main` costs a deploy watch, a healthz check and a round of
+wake-ups. Those turns are what burn Claude credits, so merges are batched.
+
+1. **Two lanes.** Only a live-site incident, a broken deploy, a customer-facing
+   Sentry error or a security fix merges to `main` on its own the moment it is
+   green. Everything else rides the day's train: one merge to `main`, once a
+   day at a quiet moment, made by the orchestrating session. Docs, handbook and
+   `BUILD_PROGRESS.md` changes never merge alone; they ride the train.
+2. **Workers never merge to `main`.** A worker does its task in its own git
+   worktree on its own branch, verifies locally (typecheck, lint, the tests
+   covering the files it touched; a full sweep at most once, only if it changed
+   shared code), pushes the branch, and reports the branch name and commit.
+   The orchestrator merges the train.
+3. **One train, one verification.** The deploy verification below runs once
+   for the train, not once per fix. If the train carries a Prisma migration,
+   read the migration step of the run before calling it green. The hotfix
+   lane keeps its own verification.
+4. **Two orchestrators, one to-do.** Each orchestrator session adds a short
+   "In flight" block to `BUILD_PROGRESS.md` on its first train (what it owns,
+   which files) and reads the other's before starting anything.
+
 ## Deploy verification
 
-A worker session that pushes code to `main` is **not done** until the deploy
-is green. `git push` completing is not the finish line — the GitHub Actions
-deploy and a `/healthz` 200 are. Skip this block only for docs-only commits
-that demonstrably can't trigger the deploy.
+A session that pushes code to `main` (the orchestrator merging a train, or a
+hotfix) is **not done** until the deploy is green. `git push` completing is
+not the finish line — the GitHub Actions deploy and a `/healthz` 200 are.
+Skip this block only for docs-only commits that demonstrably can't trigger
+the deploy.
 
 After any push that targets `main`:
 
@@ -76,8 +100,8 @@ When both checks pass, the session is done.
   issue.
 - Force-push to fix a broken deploy. The retry path is: new commit, new
   push, new run.
-- Open a PR and walk away. Workers merge to `main` directly per the existing
-  pattern; PRs are not the verification path.
+- Open a PR and walk away. Nobody opens PRs here; the orchestrator merges the
+  daily train to `main` directly, and PRs are not the verification path.
 
 ### Edge cases
 
