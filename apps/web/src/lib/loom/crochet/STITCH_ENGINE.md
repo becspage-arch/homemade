@@ -947,6 +947,133 @@ crocheter would actually get from the written gauge — and both are markedly
 cheaper to render. The other flat proofs' declared sizes are driven by hdc/dc/post
 stitches and stay as they are until those stitches take this pass.
 
+---
+
+## 8f-2. ROUND 2 — the bead becomes a V, and the cell goes library-wide (2026-09-05)
+
+Round-1 verdict (orchestrator, judged close-up beside a real worsted-cotton sc
+dishcloth): the fat coils and the proud cord are gone, stitches read as paired
+loops with pinprick holes — **PASS at object scale, NEAR at close range**. The
+residual: each stitch still read as a rounded BEAD where a real sc shows two
+straight legs splaying into a V under a flat top.
+
+### The leg numbers, before and after
+
+| quantity | round 1 | round 2 | target |
+|---|---|---|---|
+| leg straightness, the visible leg (chord ÷ arc) | 0.83 | **1.00** | 0.93–1.0 |
+| leg straightness including the dive corner | 0.83 | 0.87 | (a real corner; never 1.0) |
+| V opening angle | 31° | **54°** | 40–60° |
+| leg pair out of plane (p90) | 0.40 d | 0.40 d | ≤ 0.3 d |
+| …the same, as a share of fabric thickness | 0.26 | 0.28 | 0 = mid-plane, 0.5 = the face |
+| crown proud of its own legs | 0.47 d | **0.42 d** | ≤ 0.3 d |
+| head strands: up the row / in depth | 0.25 / 0.45 d | 0.19 / 0.57 d | a pair, ~1 d apart |
+| yarn per stitch · crowding · thickness | 7.35 d · 3.27 · 1.53 d | 6.75 d · 3.01 · 1.44 d | 7.0–9.5 · 2.8–4.8 · 1.8–2.2 |
+
+### Why the V would not open — it was the ROUTE, not the values
+
+A settled dump (`loom-stitch-metrics.ts` plus a per-node print) said it in one
+look. The legacy post put the down-leg on the **leading** side of the column and
+the up-leg on the trailing one, so the strand overshot the column, doubled back
+to the insertion, and doubled back again: two hard reversals, one at each leg
+top. Built at ±1.05yr the leg tops relaxed to ±0.6yr — the bending constraint
+straightens a reversal corner and drags the leg top toward the chord. **No amount
+of extra built width fixes that**; it only moves the fight (a sweep confirmed the
+settled V is flat in `postHalfYr` beyond ~1.25).
+
+Re-cut, the post runs **monotonically in the work direction** — down-leg
+trailing, hook, up-leg leading — so the splay goes with the bend instead of
+against it, and the loop's turn happens where a loop's turn belongs: at the head.
+The head is now traced in the direction the up-leg already leans, and its entry
+sits at the up-leg's own x (tying the head's start back to the column centre was
+the second thing pinching the V shut). Leg half-width tapers with height, and the
+nodes sit on the straight line that taper describes — hence straightness 1.00.
+
+### The coupling that stops the last two targets being met
+
+In this model **every part of a row sits on that row's own worked face**. Fabric
+thickness therefore comes only from row-to-row alternation, and is about twice
+the crown's proudness. A flat top and a two-diameter-thick fabric pull against
+each other on one dial (the head-loop span), measured across a sweep:
+
+| head span | yarn | crowding | thickness | V | crown proud | legs out of plane |
+|---|---|---|---|---|---|---|
+| 1.6 | 6.40 d | 2.85 | 1.03 d | 55° | **0.26 d** | **0.29 d** |
+| 2.0 (shipped) | 6.75 d | 3.01 | 1.44 d | 54° | 0.42 d | 0.40 d |
+| 2.5 | 7.40 d | 3.30 | **1.85 d** | 54° | 0.53 d | 0.48 d |
+
+The shipped point keeps round 1's density and thickness while winning the V.
+Breaking the coupling needs the post to cross **behind the head of the row
+below** — a genuine front and back layer within one row — which is a construction
+change, logged for round 3.
+
+### The cell, library-wide across the flat family
+
+Every stitch the flat grid builder makes now carries its OWN published worsted
+gauge instead of sc's lattice scaled by `heightFactor`. **The row figure must come
+from the stitch's own published row gauge**: the real ratio of dc height to sc
+height is not the ratio `heightFactor` carries, which is precisely why one shared
+lattice could never be right for all of them at once.
+
+| stitch | pitch (d) | row (d) | `gaugeYr` | `rowYr` | measured pitch / row |
+|---|---|---|---|---|---|
+| sl st | 1.5 | 0.9 | 2.55 | 1.55 | 1.50 / 0.90 |
+| sc, sc blo/flo, picot | 1.6 | 1.4 | 2.7 | 2.4 | 1.59 / 1.41 |
+| hdc | 1.85 | 2.2 | 3.15 | 3.74 | 1.85 / 2.20 |
+| dc | 2.0 | 3.7 | 3.4 | 6.29 | 2.00 / 3.70 |
+| tr | 2.3 | 5.0 | 3.91 | 8.5 | 2.30 / 5.00 |
+| dtr | 2.5 | 6.5 | 4.25 | 11.05 | 2.50 / 6.50 |
+| fpdc / bpdc | 1.7 | 3.7 | 2.9 | 6.29 | (post branch) |
+
+Every one lands on its own gauge to within 1% on both axes, every visible leg is
+dead straight, and each V opens inside its own range — 54° for sc down to 21° for
+dtr, which is the right direction: a treble's post is a near-parallel column, not
+a splay. `postrib` and `basketweave`'s per-swatch packs were re-derived from the
+corrected post cell (1.5 → 2.3, 1.9 → 2.9). blo/flo take the V post while keeping
+their split back/front head — that split IS their identity, so the re-cut post and
+the re-cut head are separate gates in the emitter.
+
+**Residual, biggest on the tallest stitches:** yarn fed per stitch is 0.67–0.70×
+real for dc / tr / dtr, and their crowding and thickness follow it down, because
+our post is two straight legs where a real tall post also carries its yarn-over
+wraps. That is a construction change for the tall stitches, not a cell value.
+
+### Hashes — 15 moved, 21 bit-identical
+
+`slst` 4c1f5a218e17f4f9→7f593ead9e9465cb · `sc` 5615e693ec3bc440→f54721a2c42603aa ·
+`hdc` efc5ebe813082430→b3d2535fb4339765 · `dc` 0d06c96f4ce644b7→0338798a843fac2a ·
+`tr` cd7218fd8f2527ff→097ace7ab1b448a1 · `dtr` b71c00e93697e278→d136eb5d1ce5902b ·
+`scblo` 1a16a9311a35dff9→1c489d3d3ed7c249 · `scflo` e6648380a43e5b0a→70235400d6dd356b ·
+`fpdc` 52184fe1f5698a56→15d9b46d2358df6a · `bpdc` 7e49178c803f513b→88a224a8c10e2ea8 ·
+`postrib` 803878aa6f4bfff4→f7d2a22bd60e772c · `basketweave` 27994d3846b00d16→b94ede37a8ff6c6e ·
+`bobble`/`bobbles` f8e613a49e46f856→87cfc76929d7631a · `picot` 459e402588dad150→08922a1137b5ff65.
+
+Bit-identical: `ch`, `scinc`, `scdec`, `hdcinc`, `hdcdec`, `dcinc`, `dcdec`,
+`shell`, `vstitch`, `crossed`, `mrdisc`, `ball`, `k`, `stockinette`, `garter`,
+`knitrib`, `yo`, `k2tog`, `ssk`, `seed`, `cable`. Audit clean 36/36 at fine 1.5,
+worsted 2.4 and bulky 3.2.
+
+### ROUND 3 — what each remaining builder needs
+
+- **Tall stitches (dc / tr / dtr).** Feed the post its yarn-over wraps. They are
+  0.67–0.70× real on yarn per stitch, which drags crowding and thickness down
+  with them; the cell is right, the post is thin.
+- **The front/back layer.** Make the post cross BEHIND the head of the row below
+  so a single row has a real front and back. This is what decouples "flat top"
+  from "two-diameter fabric" — today they are one dial.
+- **`buildShaped`.** Its `emitDecrease` head is still a bump, so the shaped
+  swatches (`scinc`, `scdec`, `hdcinc`, `hdcdec`, `dcinc`, `dcdec`, `shell`,
+  `vstitch`, `crossed`) are pinned to the pre-pass lattice by explicit
+  `gaugeYr`. Give the decrease head the same loop, then drop the pins.
+- **`buildRounds` / `buildSphere`** (`mrdisc`, `ball`). Their crown canopies
+  (`zBand`, `radialBand`), radial drift and magic-ring radius were all calibrated
+  against the legacy lattice; re-cutting under them broke a disc interlock
+  immediately (`mrdisc` j5 c28, hook 2.54yr sideways). Re-derive the canopy and
+  the drift from the new cell in the same pass, not after it.
+- **`buildKnit`.** Untouched — knit has its own published gauge (`k` is still on
+  the legacy lattice) and its own two-diameter thickness model (§8d), so it wants
+  its own measurement pass rather than crochet's numbers.
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,
@@ -1203,6 +1330,24 @@ stitches and stay as they are until those stitches take this pass.
   row-turns (the turning-chain slack assumed the face-flip); the clean fix would be
   true single-direction in-the-round construction. Left off — Rebecca chose the
   faithful flat-turned depiction. Don't "fix" the every-other-row ridge; it's real.
+
+- **A stitch whose two legs DOUBLE BACK cannot splay, whatever width you build**
+  (sc, §8f round 2). The legacy post put the down-leg on the leading side of the
+  column and the up-leg on the trailing one, so the strand overshot, reversed at
+  the insertion, and reversed again — and the bending constraint straightens a
+  reversal corner, dragging both leg tops toward the chord. Built at ±1.05yr they
+  settled at ±0.6yr; a sweep of the built width barely moved the settled V, it
+  just moved the fight. The fix is the ROUTE, not the value: run the post
+  monotonically in the work direction (down-leg trailing, hook, up-leg leading)
+  so the splay goes WITH the bend, and let the loop's turn happen at the head
+  where a loop's turn belongs. Numbers found it in one settled dump after two
+  value-tuning attempts had moved the V by 4°.
+- **Re-associating a floating-point product moves every geometry hash** (§8f).
+  Writing the row pitch as `yr · (BASE_ROW_YR · heightFactor)` instead of
+  `(yr · BASE_ROW_YR) · heightFactor` is the same number in algebra and a
+  different one in binary; it moved `hdc` and `basketweave` for no reason at all.
+  When refactoring a shared lattice, keep the untouched path's exact
+  associativity, and diff `loom-geom-hash.ts` before believing a change is inert.
 
 ---
 
