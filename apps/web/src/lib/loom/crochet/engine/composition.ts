@@ -141,6 +141,12 @@ export interface CompositionProgram {
    *  shot from near eye level) for a high three-quarter key + fill that follows
    *  the camera. Leave unset for the top-down fabric rig. */
   lightRig?: 'product'
+  /** Ground colour (default the off-white the finished-object bar uses). */
+  bgHex?: string
+  /** Key+fill energy scale (renderer default 0.65 — eased for pale wool). */
+  light?: number
+  /** AgX exposure (renderer default 0.2). */
+  exposure?: number
   /** Frame margin override (default 0.45). */
   marginFactor?: number
   // Catalogue / pattern metadata (optional).
@@ -417,6 +423,8 @@ export interface BlenderScene {
     tiltDeg: number
     resY: number
     openFabric?: boolean
+    light?: number
+    exposure?: number
     yawDeg?: number
     aimHeightFrac?: number
     distScale?: number
@@ -452,7 +460,7 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
     // frames off the horizontal footprint, so a tall body+head stack needs room
     // at the top). openFabric drops the flat backing plane — this is a 3D object.
     view: {
-      bgHex: '#efece6',
+      bgHex: p.bgHex ?? '#efece6',
       marginFactor: p.marginFactor ?? 0.45,
       tiltDeg: p.tiltDeg ?? 22,
       resY: 1200,
@@ -466,6 +474,8 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
   if (p.distScale != null) scene.view.distScale = p.distScale
   if (p.groundScale != null) scene.view.groundScale = p.groundScale
   if (p.lightRig != null) scene.view.lightRig = p.lightRig
+  if (p.light != null) scene.view.light = p.light
+  if (p.exposure != null) scene.view.exposure = p.exposure
   if (compiled.props.length) {
     scene.props = compiled.props.map((pr) => ({
       centre: [pr.centre.x, pr.centre.y, pr.centre.z],

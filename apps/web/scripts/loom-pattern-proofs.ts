@@ -21,10 +21,20 @@ const fill = (n: number, id: StitchId): StitchId[] => Array(n).fill(id) as Stitc
 // row to row, so the fabric reads as subtle horizontal ridges. Locked sc + hdc.
 // It also carries two-row CONTRAST colour stripes (the classic striped dishcloth
 // look) — the test case for per-stitch colour flowing through to the render.
-const STRIPE_W = 14
+// SIZE CONSISTENCY (STITCH_ENGINE.md §8e-3): at 14 sts x 12 rows this settled to
+// ~52x48mm — a landscape rectangle, not the declared 250x250mm square (rows are
+// shorter than stitches are wide for sc/hdc at this engine's row pitch, so a
+// square needs MORE rows than columns, not an equal count). A true 25cm
+// dishcloth needs ~66 cols x ~63 rows here (~4,100 stitches) — too many to
+// render sensibly in one batch pass, so this scales to a true 20x20cm dishcloth
+// instead (53 cols x 50 rows settles to ~200x201mm, square within the ±12%
+// size-consistency gate). 25 colour bands (odd count) keeps the classic
+// first-and-last-band-match look while alternating evenly.
+const STRIPE_W = 53
+const STRIPE_ROWS = 50
 function stripeDishcloth(): CrochetProgram {
   const grid: GridRow[] = []
-  for (let j = 0; j < 12; j++) {
+  for (let j = 0; j < STRIPE_ROWS; j++) {
     // Two-row colour bands: change yarn at the selvedge every 2 rows.
     const colourKey = Math.floor(j / 2) % 2 === 0 ? 'coral' : 'teal'
     grid.push({ stitches: fill(STRIPE_W, j % 2 === 0 ? 'sc' : 'hdc'), colourKey })
@@ -37,8 +47,8 @@ function stripeDishcloth(): CrochetProgram {
     yarnWeight: 'worsted',
     colourHex: '#c65b3c',
     palette: { coral: '#c65b3c', teal: '#2f7f8c' },
-    gaugeText: '14 dc x 12 rows = 10 cm (UK terms) in worsted',
-    finishedSizeMm: { width: 250, height: 250 },
+    gaugeText: '53 sts (alternating dc/htr) x 50 rows = 20 cm (UK terms) in worsted',
+    finishedSizeMm: { width: 200, height: 200 },
     hookMm: 5,
     notes: 'A quick everyday dishcloth in two contrasting colours, changed every two rows. Alternating dc and htr bands add a gentle ridged texture.',
   }
@@ -68,8 +78,16 @@ function postRibHeadband(): CrochetProgram {
     gaugeYr: 1.5, // pack the fp/bp columns tight (the locked postrib value) so ribs touch
     yarnWeight: 'aran',
     colourHex: '#7c9a6d', // sage
-    gaugeText: '18 sts x 8 rows = 12 cm in aran; join short ends to fit',
-    finishedSizeMm: { width: 480, height: 90 },
+    // SIZE CONSISTENCY (§8e-3): the declared size here is metadata-only fixed to
+    // match what this geometry actually settles to at this gaugeYr/weight
+    // (measured ~191x47mm) — the row/stitch counts (the geometry, hence the
+    // geometryHash) are UNCHANGED; only the label was honest-checked. The prior
+    // 480x90mm declaration assumed a real-world post-rib gauge this engine's mm
+    // scale doesn't produce (a library-wide scale characteristic, not specific
+    // to this proof — see the same gap on texture-sampler-panel /
+    // flat-texture-panel / cottage-tapestry, left alone as out of scope here).
+    gaugeText: '18 sts x 4 rows = 12 cm in aran (post rib, this engine\'s scale); join short ends to fit',
+    finishedSizeMm: { width: 190, height: 48 },
     hookMm: 5.5,
     notes: 'Worked flat as a strip, then the short ends are seamed into a loop. The 1×1 post rib makes it stretchy and reversible.',
   }
@@ -119,10 +137,17 @@ function textureSamplerPanel(): CrochetProgram {
 // stitch a plain double crochet (UK) / single crochet (US). A few rows, no
 // texture, no colour change — proves the plainest end of the range renders as a
 // clean, dense, real crocheted coaster.
-const COASTER_W = 14
+// SIZE CONSISTENCY (§8e-3): at 14 sts x 12 rows this settled to ~52x40mm — a
+// landscape rectangle nowhere near even its own (already non-square) declared
+// 100x90mm, because sc rows are shorter than sc stitches are wide at this
+// engine's gauge/row-pitch (3.78mm/col vs 3.26mm/row nominal) — 12 rows is
+// short for 14 columns' width. 26 cols x 30 rows settles to ~98x99mm: a true
+// 10x10cm coaster, square within the ±12% size-consistency gate.
+const COASTER_W = 26
+const COASTER_ROWS = 30
 function simpleCoaster(): CrochetProgram {
   const grid: GridRow[] = []
-  for (let j = 0; j < 12; j++) grid.push(row(fill(COASTER_W, 'sc')))
+  for (let j = 0; j < COASTER_ROWS; j++) grid.push(row(fill(COASTER_W, 'sc')))
   return {
     name: 'simple-coaster',
     form: 'grid',
@@ -130,8 +155,8 @@ function simpleCoaster(): CrochetProgram {
     grid,
     yarnWeight: 'worsted',
     colourHex: '#3f8f9c', // teal
-    gaugeText: '14 dc x 12 rows = 10 cm (UK terms) in worsted',
-    finishedSizeMm: { width: 100, height: 90 },
+    gaugeText: '26 dc x 30 rows = 10 cm (UK terms) in worsted',
+    finishedSizeMm: { width: 100, height: 100 },
     hookMm: 5,
     notes: 'A plain solid coaster in one colour — a first project. Worked flat in rows of double crochet (UK).',
   }

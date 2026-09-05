@@ -611,6 +611,22 @@ vs a real reference → commit + push.
   proves which way the camera looks at the composed world: FRONT IS +y, because
   the renderer maps blender-y = −loom-y and the camera sits at −blender-y).
   `amigurumi-creature` is left in place unchanged.
+  **RENDERED (Fargate, the props image build first).** All three PASS the
+  fidelity/structure gate — `amigurumi-bear` 0.923, `-plain` 0.911, `-mirror`
+  0.915 (STRUCT_MIN 0.45), so the Fal step finished the exact deterministic
+  render without inventing anything. The bear reads as a sitting crocheted
+  teddy: round head over a broad body, two ears, glossy safety eyes, a cream
+  muzzle with a nose, arms out to the sides and legs forward on the table, all
+  in visibly real single-crochet spirals. `-plain` (no paw pads) reads WORSE —
+  without the cream contrast the limbs merge into the body — which is the
+  answer to whether the second colour earns its place. `-mirror` shows the
+  bear's back, confirming the camera axis (front is +y) as designed.
+  Second pass (staging/props only, geometry hash unchanged at 70fc5299): the
+  first nose was 12 mm across on a 17 mm muzzle and mirror-glossy, reading as a
+  plastic bead rather than a nose — shrunk and matted; and the ground rendered
+  a shade grey at this low camera, so `bgHex`/`light`/`exposure` are now
+  pass-throughs on the composition program (the renderer already read them; no
+  render-script change, so no image rebuild).
 - **Part C — finished-object HERO staging across all forms (2026-07-12).** The
   four-part customer bar (correct genuinely-stitched stitches / real yarn colour on
   clean white / whole piece at size / staged as the finished object) for EVERY
@@ -633,6 +649,31 @@ vs a real reference → commit + push.
     central hole. `post-rib-headband` hero (gate 0.933) PASS — a standing ribbed
     loop. Honest residual: ribs read openwork/basket-ish, not a dense snug headband
     (same density residual, mildly amplified by the wrap).
+    LOWERED-CAMERA REVISIT (2026-09-05, §8e-3): at a customer eye the standing
+    loop read as a cuff or basket, and the far rim showed through past the
+    near wall — camera-only fix, `loopStrip` geometry untouched. The Blender
+    camera's height falls as `cos(tiltDeg)` at a roughly fixed distance
+    (`loom_render_crochet.py`, untouched), so raising `tiltDeg` is a genuinely
+    LOWER, more grazing camera nearer the ring's own eye level. Swept three
+    values (each rendered + fidelity-gated, hash `e482eb7a` unchanged
+    throughout — camera-only): 65° still let the far inner wall show through
+    the open top (see-through NOT fixed); 82° (tighter `marginFactor` 0.3) hid
+    the interior completely but cropped so close the loop/hole was no longer
+    legible at all — reads as a solid drum, arguably less like a headband;
+    **74° / `marginFactor` 0.4 (kept)** — no interior/far-wall visible through
+    the top (the specific "see-through" defect is fixed) while the rim edge
+    still reads as an open loop. Gate 0.921. The alternative considered (fold
+    the strip flat into a `flatband` loop, "seam side down, two layers
+    overlapping") was set aside on reasoning alone: with this proof's band
+    height (~47mm) close to its own loop diameter (~61mm), laying the band
+    width in-plane radially would put a fold radius near half the diameter —
+    the same "band width in-plane" geometry that produced the two
+    already-failed flat/radial loop mappings logged just above (reads as a
+    filled disc, not a ribbon with a hole), so it was not attempted. Honest
+    residual: the object's own proportions (band height close to its diameter)
+    read as a squat drum/cuff from most angles regardless of camera — a real
+    fix needs a THINNER band relative to its loop (a geometry/row-count
+    change, out of scope here). Verdict pending — see the render report.
   - amigurumi (3-D) already stages itself via `compositionScene`; the creature hero
     (gate 0.920) and the ball are customer-grade.
   Every hero PASSES the fidelity/structure gate (all ≥ 0.874 ≫ STRUCT_MIN 0.45),
@@ -727,6 +768,42 @@ None of these is a topology or colour-count wall; the many-colour case is proven
 only — never shipped): tapestry crochet cushion —
 https://www.lillabjorncrochet.com/2016/07/how-to-do-tapestry-crochet-step-by-step.html ;
 amigurumi ball — https://ribbelmonster.us/amigurumi-crochet-simple-small-ball/ .
+
+**SIZE CONSISTENCY — a real audit gate (2026-09-05).** The hero must be the
+exact pattern, so its declared `finishedSizeMm` must be true, not aspirational.
+Two flat proofs (`simple-coaster`, `stripe-dishcloth`) rendered as landscape
+RECTANGLES under a "square" declared size: too few rows for their stitch count
+(sc/hdc rows are shorter than sc/hdc stitches are wide at this engine's
+gauge/row-pitch), so a same-count grid settles wider than tall. Added a SIZE
+CONSISTENCY check to the audit path (`compileRelaxAudit` in
+`engine/programScene.ts` → `problems[]`, a real gate — a program with a
+size-consistency problem does NOT render): `settledSizeMm()` measures the
+RELAXED geometry's x/y extent, excluding the pinned foundation/anchor
+(`built.anchorPins` leading nodes), and compares it against the program's
+`finishedSizeMm` when declared; either axis off by more than ±12% is a problem,
+reported as `declared W×Hmm but settled w×hmm`. Render/audit-only — no
+relax/dictionary/geometry change, so every locked stitch's geometry hash and
+every UNCHANGED proof's geometry hash stayed bit-identical
+(`loom-geom-hash.ts` + `loom-audit.ts` before/after, diff clean).
+- `simple-coaster`: 14×12 (settled ~52×40mm, nowhere near its own already
+  non-square declared 100×90mm) → **26×30** (settled ~98×99mm) — a true 10×10cm
+  coaster, declared 100×100mm. Hash `8fedd4c9` → `05ca93b7`.
+- `stripe-dishcloth`: 14×12 (settled ~52×48mm vs declared 250×250mm) →
+  **53×50** (settled ~200×201mm). A true 25cm dishcloth needs ~66×63 sts
+  (~4,100 stitches) — too many to render sensibly in one batch pass, so this
+  scales to a true 20×20cm dishcloth instead, declared 200×200mm; the 25
+  colour bands (odd count) keep the first-and-last-band-match look. Hash
+  `79f6a541` → `f2a840c7`.
+- The gate also caught `post-rib-headband`'s declared 480×90mm against its own
+  settled ~191×47mm (a pre-existing mismatch, not this session's regression) —
+  fixed as a METADATA-only correction (declared → 190×48mm; the geometry, and
+  so its hash `e482eb7a`, is unchanged) so the new gate doesn't block its
+  render. `texture-sampler-panel`, `flat-texture-panel` and `cottage-tapestry`
+  carry the SAME kind of declared-vs-settled gap (declared assumed a
+  real-world gauge this engine's mm scale doesn't produce — a library-wide
+  characteristic, not specific to any one proof) and now fail the gate too;
+  left alone as out of scope for this session (their row/stitch counts are
+  unchanged, hashes unchanged) — flagged for a follow-up size/gauge-text pass.
 
 ## 9. What did NOT work (the failure log — don't repeat these)
 
