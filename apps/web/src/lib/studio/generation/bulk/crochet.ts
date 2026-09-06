@@ -288,9 +288,17 @@ async function authorTapestryProgram(brief: CrochetBrief): Promise<AuthoredProgr
   }
   const colours = big ? 24 : 10
 
+  // The FLAT illustrator, never the painterly showpiece one, whatever the size
+  // of the piece. A tapestry stitch is a single flat block of colour, so a
+  // picture only survives the conversion if it was drawn in flat shapes to
+  // begin with: the first showpiece attempt used the Pro painterly tier and
+  // came back as tonal camouflage with no cottage in it, because the quantiser
+  // spent its whole palette on gradation. This is not a colour CAP (the count
+  // stays high — the dense many-colour end is a first-class target); it is a
+  // change of SOURCE.
   const illustration = await generatePatternImage(
-    `${brief.subject}. A bold flat picture with clear shapes and strong colour separation, no text, no lettering, centred, on a plain background.`,
-    { imageSize: 'square_hd', detailed: big },
+    `${brief.subject}. Drawn as a bold flat picture in solid blocks of colour with clear hard-edged shapes and strong separation between them, like a screen print or a paper cut-out. No shading, no gradients, no texture, no text, no lettering. Centred, on a plain background.`,
+    { imageSize: 'square_hd' },
   )
   const grid = await photoToTapestryGrid(illustration.buffer, {
     width,
@@ -298,7 +306,10 @@ async function authorTapestryProgram(brief: CrochetBrief): Promise<AuthoredProgr
     colours,
     maxColours: colours,
     backgroundRemoval: true,
-    smoothing: 'medium',
+    // Hard smoothing: a lone stitch of a colour is miserable to work and reads
+    // as noise in the finished fabric, and a picture at this resolution needs
+    // its regions to hold together.
+    smoothing: 'high',
   })
   const program = buildTapestryProgram(grid, {
     name: brief.name,
@@ -307,6 +318,21 @@ async function authorTapestryProgram(brief: CrochetBrief): Promise<AuthoredProgr
     notes:
       'Worked flat in double crochet (UK), changing colour stitch by stitch and carrying the unused yarns inside the stitches.',
   })
+  // PUT THE PICTURE THE RIGHT WAY UP.
+  //
+  // Two conventions collide here. `buildTapestryProgram` flips the picture so
+  // program row 0 is the row a maker WORKS FIRST, which on a finished piece is
+  // its bottom edge. The renderer places program row 0 at the TOP of the image
+  // (the stripe-dishcloth convention the signed-off cottage proof relies on:
+  // "program row j maps straight to motif y=j"). Together those two flips put
+  // the sky along the bottom, which is exactly what the first showpiece render
+  // showed. Undoing the converter's flip here makes the HERO read upright,
+  // which is the thing that has to be true, because the hero is the pattern.
+  //
+  // The underlying disagreement is the renderer's, not this lane's, and it is
+  // flagged for the loom: on a rendered piece the first-worked row appears at
+  // the top, which is upside down from how the fabric actually grows.
+  if (program.grid) program.grid = [...program.grid].reverse()
   program.staging = envelope?.staging ?? 'flatlay'
   return {
     kind: 'piece',

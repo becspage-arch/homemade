@@ -13,6 +13,9 @@
  *   # the first batch: render the seed set, publish nothing
  *   npx tsx --conditions=react-server scripts/bulk-crochet-batch.ts --seed --render
  *
+ *   # re-render one of them after a fix, keeping the other five
+ *   npx tsx --conditions=react-server scripts/bulk-crochet-batch.ts --seed --render --only <slug>
+ *
  *   # then, once the renders have been looked at, publish the keepers
  *   npx tsx --conditions=react-server scripts/bulk-crochet-batch.ts --seed --publish verdicts.json
  *
@@ -81,8 +84,13 @@ async function runAutopilotBatch(count: number): Promise<void> {
   console.log(`\n${summary.line}`)
 }
 
-/** Render every seed pattern and write the manifest. Publishes nothing. */
-async function renderSeed(): Promise<void> {
+/**
+ * Render every seed pattern and write the manifest. Publishes nothing.
+ *
+ * `only` re-renders a single slug and merges it into the existing manifest, so
+ * a fix to one pattern does not cost the other five their Fargate tasks again.
+ */
+async function renderSeed(only?: string): Promise<void> {
   const { CROCHET_FIRST_BATCH } = await import('./crochet-first-batch')
   const { designToProgram } = await import('../src/lib/studio/generation/bulk/crochet-design')
   const { compileRelaxAudit, settledSizeMm } = await import('../src/lib/loom/crochet/engine/programScene')
@@ -92,9 +100,15 @@ async function renderSeed(): Promise<void> {
   const { programFingerprint } = await import('../src/lib/studio/generation/bulk/crochet-dedupe')
 
   mkdirSync(OUT, { recursive: true })
-  const manifest: ManifestEntry[] = []
+  const manifestPathIn = resolve(OUT, 'manifest.json')
+  const manifest: ManifestEntry[] =
+    only && existsSync(manifestPathIn)
+      ? (JSON.parse(readFileSync(manifestPathIn, 'utf8')) as ManifestEntry[]).filter((e) => e.slug !== only)
+      : []
+  const wanted = only ? CROCHET_FIRST_BATCH.filter((e) => e.brief.slug === only) : CROCHET_FIRST_BATCH
+  if (only && wanted.length === 0) throw new Error(`no seed pattern called ${only}`)
 
-  for (const entry of CROCHET_FIRST_BATCH) {
+  for (const entry of wanted) {
     const { brief, design } = entry
     console.log(`\n── ${brief.slug} (${brief.shelf} / ${brief.treatment}) ──`)
     try {
@@ -198,6 +212,11 @@ async function renderSeed(): Promise<void> {
   }
 
   const manifestPath = resolve(OUT, 'manifest.json')
+  manifest.sort(
+    (a, b) =>
+      CROCHET_FIRST_BATCH.findIndex((e) => e.brief.slug === a.slug) -
+      CROCHET_FIRST_BATCH.findIndex((e) => e.brief.slug === b.slug),
+  )
   writeFileSync(manifestPath, JSON.stringify(manifest, null, 2))
   console.log(`\nRendered ${manifest.length} of ${CROCHET_FIRST_BATCH.length}. Manifest: ${manifestPath}`)
   console.log('Look at every hero, then write a verdict file and re-run with --publish.')
@@ -341,7 +360,9 @@ async function publishSeed(verdictPath: string): Promise<void> {
 async function main(): Promise<void> {
   const args = process.argv.slice(2)
   if (args.includes('--seed')) {
-    if (args.includes('--render')) return renderSeed()
+    const onlyAt = args.indexOf('--only')
+    const only = onlyAt >= 0 ? args[onlyAt + 1] : undefined
+    if (args.includes('--render')) return renderSeed(only)
     const i = args.indexOf('--publish')
     if (i >= 0 && args[i + 1]) return publishSeed(args[i + 1]!)
     console.error('usage: --seed --render  |  --seed --publish <verdicts.json>')
