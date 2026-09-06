@@ -159,27 +159,38 @@ repo.
 ## Step 6 — maker photos (only when the switch says so)
 
 The maker-photo gate normally runs on upload, so a member gets an answer while
-they are still standing there, and this queue is empty. Check the admin bulk
-page or run the sheets command; if it says nothing is waiting, skip this step.
-
-When the gate is in `routine` mode:
+they are still standing there, and nothing is waiting for a first look. Check
+the admin bulk page or just run the sheets command; if it says nothing is
+waiting and there are no appeals, skip this step.
 
 ```bash
 HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/maker-photos-judge.ts sheets --out ./photos
 ```
 
-It prints the three rules and builds the same 3×3 sheets. A photo passes all
-three or it does not go up; the rules are about safety and honesty, not
-photography. A dim, wonky, cluttered snap of a real finished piece is a PASS —
-that is what a real maker sends.
+It prints the bar and builds 3×3 sheets for two queues:
+
+- **waiting for a first look** — only ever has anything in it when the gate is
+  in `routine` mode;
+- **asked us to look again** — appeals against a rejection, which turn up in
+  either mode. The listing shows what the photo was rejected for and what the
+  member said.
+
+The bar is the same three rules the API gate judges against — the script prints
+them from `apps/web/src/lib/maker-photo-rules.ts`, which is the same module the
+gate builds its prompt from. Judge on those three and nothing else: a real
+photograph of a real finished thing, plausibly the right thing, safe to show.
+Work in progress counts, and a dark or blurry photo of a real piece is still a
+real photo. Judge whether the photo is true, not whether it is good.
 
 ```bash
 HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/maker-photos-judge.ts approve <photoId> …
 HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/maker-photos-judge.ts reject rejects.json --apply
 ```
 
-`rejects.json` is an array of `{ "photoId": "…", "reason": "…" }`. The reason is
-shown to the member, so write it as a sentence to a person.
+Both commands take first looks and appeals; anything removed or already judged
+is left alone and named in the output. `rejects.json` is an array of
+`{ "photoId": "…", "reason": "…" }`. The reason is shown to the member, so write
+it as a sentence to a person.
 
 ## Step 7 — report
 

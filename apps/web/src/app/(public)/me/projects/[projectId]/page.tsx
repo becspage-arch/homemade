@@ -79,6 +79,7 @@ export default async function MeProjectDetailPage({ params }: PageProps) {
       userId: user.id,
       tutorialId: project.tutorial.id,
       status: UGCPhotoStatus.APPROVED,
+      removedAt: null,
     },
     orderBy: { createdAt: 'desc' },
     select: {
@@ -132,7 +133,11 @@ export default async function MeProjectDetailPage({ params }: PageProps) {
           </Link>
         </p>
 
-        <ProjectStatusControls projectId={project.id} status={project.status} />
+        <ProjectStatusControls
+          projectId={project.id}
+          status={project.status}
+          tutorialId={project.tutorial.id}
+        />
 
         <div style={{ marginTop: 32 }}>
           <span className="me-section-label">Your notes</span>

@@ -7,6 +7,7 @@ import { hasPremium } from '@/lib/entitlements'
 import { SettingsForm } from './settings-form'
 import { PushSettings } from './push-settings'
 import { MakerProfileSettings } from './maker-profile-settings'
+import { PhotoPromotionSettings } from './photo-promotion-settings'
 import { CookingUnitsSettings } from './cooking-units-settings'
 import { ManageSubscriptionButton } from './manage-subscription'
 
@@ -95,6 +96,26 @@ export default async function MeSettingsPage() {
           initialHeaderMediaId={user.makerHeaderImageId}
           handle={user.displayHandle}
         />
+      </section>
+
+      <section>
+        <span className="me-section-label">Your photos</span>
+        <h2 className="me-section-title">Photos you upload</h2>
+        <p className="me-section-description">
+          Photos you upload show on the pattern or recipe page they belong to,
+          on that category&rsquo;s gallery and on the home page, with your handle
+          beside them. Homemade may also use them in its own promotion. Turn
+          that off here, or take a photo down for good from{' '}
+          <Link href="/me/photos" className="me-nav-link">
+            My photos
+          </Link>
+          . The full terms are on{' '}
+          <Link href="/legal/photos" className="me-nav-link">
+            Your photos on Homemade
+          </Link>
+          .
+        </p>
+        <PhotoPromotionSettings initialAllowed={user.allowPhotoPromotion} />
       </section>
 
       <section>

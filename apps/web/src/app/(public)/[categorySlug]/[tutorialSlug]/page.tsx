@@ -27,6 +27,7 @@ import {
 } from '@/lib/recipes/recipe-render-data'
 import { harvestSupplies } from '@/lib/supplies'
 import { loadTutorialUgc } from '@/lib/ugc-loader'
+import { loadMakerPhotos, tutorialTakesMakerPhotos } from '@/lib/maker-photos'
 import { captureServerEvent } from '@/lib/posthog'
 import { JsonLd } from '@/components/seo/json-ld'
 import { RelatedTutorials } from '@/components/public/related-tutorials'
@@ -61,7 +62,7 @@ import { BeginnerHelpFooter } from '@/components/public/tutorial-reader/beginner
 import { ScrollDepthTracker } from '@/components/public/tutorial-reader/scroll-depth-tracker'
 import { ShareButton } from '@/components/public/tutorial-reader/share-button'
 import { ReviewsBlock } from '@/components/public/ugc/reviews-block'
-import { PhotosBlock } from '@/components/public/ugc/photos-block'
+import { MakerPhotos } from '@/components/public/maker-photos/maker-photos'
 import { QaBlock } from '@/components/public/ugc/qa-block'
 import { ErrataLink } from '@/components/public/ugc/errata-link'
 import { CookingModeShell } from '@/components/public/cooking-mode/cooking-mode-shell'
@@ -560,10 +561,18 @@ export default async function TutorialPage({ params, searchParams }: PageProps) 
   const canReview =
     Boolean(currentUser) &&
     project?.status === UserProjectStatus.COMPLETED
-  const canUploadPhoto =
-    Boolean(currentUser) &&
-    (project?.status === UserProjectStatus.IN_PROGRESS ||
-      project?.status === UserProjectStatus.COMPLETED)
+  // Uploading a photo needs nothing but an account: a started or finished
+  // project is not a condition. Signed-out readers see the button and are
+  // routed through sign-in.
+  //
+  // The strip is on every tutorial with a made thing, which is every
+  // tutorial-led category. It is off for the types that leave nothing to
+  // photograph, which is how mindset is excluded: every mindset tutorial is a
+  // PRACTICE or a READING.
+  const takesPhotos = tutorialTakesMakerPhotos(tutorial.type)
+  const makerPhotos = takesPhotos
+    ? await loadMakerPhotos({ kind: 'tutorial', tutorialId: tutorial.id })
+    : []
 
   // Above-body region guidance.
   //
@@ -670,6 +679,15 @@ export default async function TutorialPage({ params, searchParams }: PageProps) 
         tutorialCategorySlug={tutorial.category.slug}
         tutorialSlug={tutorialSlug}
       />
+      {takesPhotos && (
+        <MakerPhotos
+          photos={makerPhotos}
+          signedIn={Boolean(currentUser)}
+          tutorialId={tutorial.id}
+          returnTo={`/${tutorial.category.slug}/${tutorialSlug}`}
+          galleryHref={`/${tutorial.category.slug}/makes`}
+        />
+      )}
     </>
   )
 
@@ -687,13 +705,6 @@ export default async function TutorialPage({ params, searchParams }: PageProps) 
         total={ugc.reviews.total}
         distribution={ugc.reviews.distribution}
         reviews={ugc.reviews.rows}
-      />
-
-      <PhotosBlock
-        tutorialId={tutorial.id}
-        signedIn={Boolean(currentUser)}
-        canUpload={canUploadPhoto}
-        photos={ugc.photos}
       />
 
       <QaBlock

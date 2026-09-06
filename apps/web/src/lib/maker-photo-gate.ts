@@ -1,160 +1,159 @@
 import 'server-only'
-import { prisma, UserPhotoStatus } from '@homemade/db'
 import { anthropicConfigured, anthropicJson, GATE_MODEL } from '@/lib/anthropic'
-import { makerPhotoGateMode, type PhotoGateMode } from '@/lib/studio/generation/bulk/autopilot-state'
-import { MAKER_PHOTO_RULES, MAKER_PHOTO_NOT_A_REJECT } from '@/lib/maker-photo-rules'
+import {
+  makerPhotoGateMode,
+  type PhotoGateMode,
+} from '@/lib/studio/generation/bulk/autopilot-state'
+import {
+  MAKER_PHOTO_NOT_A_REJECT,
+  MAKER_PHOTO_RULES,
+  parseGateVerdict,
+  type GateDecision,
+} from './maker-photo-rules'
+
+export { parseGateVerdict }
+export type { GateDecision }
 
 /**
- * THE MAKER-PHOTO GATE — the check a member's finished-project photo passes
- * before it appears under a pattern.
+ * The maker-photo gate. Approval is AI-only and binary: a photo is approved and
+ * appears, or it is rejected and the member is told why in one or two plain
+ * sentences with an "Ask us to look again" button. There is no warning tier and
+ * no routine human queue — the appeal is the only queue.
  *
- * TWO MODES, one bar. The rules below are the whole bar and both modes judge
- * against exactly these three; the only difference is WHO looks and WHEN.
+ * Fail closed. Every path that cannot produce a real verdict returns "pending",
+ * which leaves the photo invisible and tells the member it is being checked. A
+ * photo never publishes un-gated, and a gate that cannot run never reads as a
+ * rejection to the person who uploaded.
  *
- * 'api' (the default) — the check runs on upload, so a member who has just
+ * TWO MODES, ONE BAR. `MAKER_PHOTO_RULES` below is the whole bar, and both
+ * modes judge against exactly those three rules; the only difference is who
+ * looks and when.
+ *
+ * 'api' (the default) — this gate runs on upload, so a member who has just
  *   photographed a finished piece gets an answer while they are still standing
- *   there. This is Rebecca's call of 6 September 2026 and the one deliberate
- *   exception to "no per-token model calls": a person is waiting, and hours of
- *   silence is a worse product than a fraction of a penny.
- * 'routine' — the photo stays PENDING behind "Checking your photo" and the
- *   scheduled cross-stitch judging session works the queue with
- *   `apps/web/scripts/maker-photos-judge.ts`, judging against these same three
- *   rules. Zero spend, hours of latency.
+ *   there.
+ * 'routine' — nothing is called on upload. The photo stays
+ *   PENDING_MODERATION behind "Checking your photo" and the scheduled judging
+ *   session works the queue with `apps/web/scripts/maker-photos-judge.ts`,
+ *   against these same rules. Zero spend, hours of latency.
  *
- * Either way a photo is PENDING until something has looked at it, and a PENDING
- * photo appears nowhere public. Nothing is auto-approved, ever.
+ * The upload path asks `makerPhotoGateRunsOnUpload()` before it fetches any
+ * bytes, so 'routine' mode reaches neither the network nor the model.
  */
 
-export type PhotoVerdict = 'approve' | 'reject'
-
-export interface PhotoGateResult {
-  verdict: PhotoVerdict
-  /** Short reasons, shown to the member on a reject and stored on the row. */
+export interface MakerPhotoGateResult {
+  decision: GateDecision
+  /** At most two short plain reasons. Empty on approve. */
   reasons: string[]
+  /** The model that produced the verdict; null when the gate could not run. */
+  model: string | null
 }
 
-const SYSTEM = `You check photographs that members of a craft community upload of things they have made, so they can appear under the pattern they made them from. You are checking for SAFETY and HONESTY, not for photography.
+export interface MakerPhotoGateInput {
+  /** The uploaded photo bytes. */
+  photo: Buffer
+  photoMediaType?: 'image/png' | 'image/jpeg' | 'image/webp'
+  /** The title of the thing the photo is supposed to show. */
+  itemTitle: string
+  /** What kind of made thing it is, in plain words ("cross-stitch pattern"). */
+  itemKind: string
+  /**
+   * For patterns, the chart or design thumbnail, passed as a second image so
+   * the gate can judge "does this plausibly depict THIS item".
+   */
+  reference?: { buffer: Buffer; mediaType?: 'image/png' | 'image/jpeg' | 'image/webp' } | null
+}
 
-A photo passes only if ALL THREE of these are YES:
+const SYSTEM = `You check photographs that members of Homemade upload of things they have made: finished craft pieces and dishes of food. You approve or reject. Nothing in between.
+
+Approve only when all three are true:
+
 1. ${MAKER_PHOTO_RULES[0]}
+
 2. ${MAKER_PHOTO_RULES[1]}
+
 3. ${MAKER_PHOTO_RULES[2]}
 
-WHAT IS NOT A REJECT. ${MAKER_PHOTO_NOT_A_REJECT}
+${MAKER_PHOTO_NOT_A_REJECT}
 
-Reply ONLY with compact JSON, at most TWO short reasons (each under 12 words), each written so it could be shown to the member:
-{"verdict":"approve|reject","reasons":["..."]}`
+Reply with compact JSON only:
+{"decision":"approve","reasons":[]}
+{"decision":"reject","reasons":["...","..."]}
 
-/** True when the API gate can actually run. */
-export function photoGateConfigured(): boolean {
+On reject give one or two reasons, each a short plain sentence under 14 words, addressed to the member and saying what is wrong. British English. No jargon, no apology, no advice about lighting or composition.`
+
+/** True when the gate can actually run. */
+export function makerPhotoGateConfigured(): boolean {
   return anthropicConfigured()
 }
 
 /**
- * Judge one photo against the three rules. Throws if the client is not wired —
- * callers check `photoGateConfigured()` first.
+ * Whether the gate runs inline on upload ('api', the default) or the photo
+ * waits for the scheduled judging session ('routine'). The upload path checks
+ * this BEFORE it fetches any image bytes, so in 'routine' mode nothing is
+ * fetched and the Anthropic client is never called; the photo simply stays
+ * PENDING_MODERATION, which is the same "Checking your photo" state a member
+ * already sees when the gate cannot run.
  *
- * Fails to REJECT, not approve, on an unparseable answer: a photo held back
- * wrongly is a message to a member, a photo let through wrongly is on the site.
+ * Never throws: an unreadable switch falls back to 'api', the default.
  */
-export async function judgeMakerPhoto(
-  image: Buffer,
-  ctx: { mediaType?: 'image/png' | 'image/jpeg' | 'image/webp'; caption?: string | null } = {},
-): Promise<PhotoGateResult> {
-  if (!anthropicConfigured()) {
-    throw new Error('judgeMakerPhoto: ANTHROPIC_API_KEY not set')
-  }
-  const caption = ctx.caption?.trim()
-  const prompt = `A member uploaded this photo of something they made.${caption ? ` Their caption: "${caption.slice(0, 300)}".` : ''}
-Judge it against the three rules and reply with the JSON verdict only.`
-
-  let raw: { verdict?: string; reasons?: unknown }
-  try {
-    raw = await anthropicJson<{ verdict?: string; reasons?: unknown }>({
-      model: GATE_MODEL,
-      system: SYSTEM,
-      prompt,
-      images: [{ buffer: image, mediaType: ctx.mediaType ?? 'image/jpeg' }],
-      maxTokens: 400,
-    })
-  } catch (err) {
-    return {
-      verdict: 'reject',
-      reasons: [`check could not run: ${err instanceof Error ? err.message.slice(0, 80) : 'error'}`],
-    }
-  }
-  const verdict: PhotoVerdict = raw.verdict === 'approve' ? 'approve' : 'reject'
-  const reasons = Array.isArray(raw.reasons) ? raw.reasons.map((r) => String(r).slice(0, 160)).slice(0, 4) : []
-  return { verdict, reasons }
-}
-
-/** What the member is told the moment their upload lands. */
-export const PHOTO_PENDING_MESSAGE = 'Checking your photo. It will appear under the pattern once it is through.'
-export const PHOTO_APPROVED_MESSAGE = 'Your photo is up under the pattern.'
-
-export interface PhotoGateOutcome {
-  mode: PhotoGateMode
-  status: UserPhotoStatus
-  message: string
-  reasons: string[]
+export async function makerPhotoGateRunsOnUpload(): Promise<boolean> {
+  const mode = await makerPhotoGateMode().catch(() => 'api' as PhotoGateMode)
+  return mode !== 'routine'
 }
 
 /**
- * Run whichever gate is in force over one just-uploaded photo.
- *
- * NEVER THROWS. A photo whose check falls over stays PENDING and waits for the
- * routine or a person — an upload must not fail because a judge was
- * unreachable, and it must not be approved because one was either.
+ * Judge one uploaded photo. Never throws: a missing key, a network failure, an
+ * unparseable reply and a malformed verdict all come back as "pending".
  */
-export async function gateMakerPhoto(args: {
-  photoId: string
-  bytes: Buffer
-  mimeType: string
-  caption?: string | null
-}): Promise<PhotoGateOutcome> {
-  const mode = await makerPhotoGateMode().catch(() => 'api' as PhotoGateMode)
-  const pending: PhotoGateOutcome = {
-    mode,
-    status: UserPhotoStatus.PENDING,
-    message: PHOTO_PENDING_MESSAGE,
-    reasons: [],
-  }
-  // In routine mode nothing is called: the photo waits for the scheduled
-  // session, exactly as the cross-stitch candidates do.
-  if (mode === 'routine') return pending
-  if (!photoGateConfigured()) return pending
-
-  const mediaType =
-    args.mimeType === 'image/png' ? 'image/png' : args.mimeType === 'image/webp' ? 'image/webp' : 'image/jpeg'
-  let result: PhotoGateResult
-  try {
-    result = await judgeMakerPhoto(args.bytes, { mediaType, caption: args.caption })
-  } catch (err) {
-    console.warn(`[maker-photo-gate] ${args.photoId} check threw`, err)
-    return pending
+export async function gateMakerPhoto(
+  input: MakerPhotoGateInput,
+): Promise<MakerPhotoGateResult> {
+  if (!anthropicConfigured()) {
+    return { decision: 'pending', reasons: [], model: null }
   }
 
-  try {
-    await prisma.userPatternPhoto.update({
-      where: { id: args.photoId },
-      select: { id: true },
-      data: {
-        status: result.verdict === 'approve' ? UserPhotoStatus.APPROVED : UserPhotoStatus.REJECTED,
-        reviewedAt: new Date(),
-        reviewNotes: result.reasons.length ? result.reasons.join('; ').slice(0, 400) : null,
-      },
+  const images = [
+    { buffer: input.photo, mediaType: input.photoMediaType ?? 'image/jpeg' as const },
+  ]
+  if (input.reference) {
+    images.push({
+      buffer: input.reference.buffer,
+      mediaType: input.reference.mediaType ?? 'image/png',
     })
-  } catch (err) {
-    console.warn(`[maker-photo-gate] ${args.photoId} could not be recorded`, err)
-    return pending
   }
 
-  return result.verdict === 'approve'
-    ? { mode, status: UserPhotoStatus.APPROVED, message: PHOTO_APPROVED_MESSAGE, reasons: result.reasons }
-    : {
-        mode,
-        status: UserPhotoStatus.REJECTED,
-        message: result.reasons[0] ?? 'That photo cannot go up.',
-        reasons: result.reasons,
-      }
+  const prompt = [
+    `The member says this photograph shows their finished ${input.itemKind}: "${input.itemTitle}".`,
+    'The first image is the member\'s photograph.',
+    input.reference
+      ? 'The second image is the pattern chart or design they worked from. Use it to judge whether the photograph plausibly shows that design worked up, allowing for colour, fabric and finishing choices.'
+      : '',
+    'Judge it and reply with the JSON verdict only.',
+  ]
+    .filter(Boolean)
+    .join('\n')
+
+  let raw: unknown
+  try {
+    raw = await anthropicJson<unknown>({
+      model: GATE_MODEL,
+      system: SYSTEM,
+      prompt,
+      images,
+      maxTokens: 400,
+      retries: 2,
+    })
+  } catch {
+    // The gate could not run. Hold the photo; the member sees "Checking your
+    // photo", not a rejection they did nothing to earn.
+    return { decision: 'pending', reasons: [], model: null }
+  }
+
+  const parsed = parseGateVerdict(raw)
+  return {
+    decision: parsed.decision,
+    reasons: parsed.reasons,
+    model: parsed.decision === 'pending' ? null : GATE_MODEL,
+  }
 }

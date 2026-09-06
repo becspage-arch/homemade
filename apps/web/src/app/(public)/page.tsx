@@ -14,6 +14,7 @@ import {
   MAKE_SOMETHING_TUTORIAL_TYPES,
 } from '@/lib/homepage-data'
 import { loadRecentlyMade } from '@/lib/recently-made'
+import { loadMakerPhotoTiles } from '@/lib/maker-photos'
 import { loadActiveMakerOfTheMonth } from '@/lib/maker-of-the-month'
 import { MakerOfTheMonthTile } from '@/components/public/maker-of-the-month-tile'
 import { readerStateFor } from '@/lib/user-state'
@@ -34,9 +35,10 @@ export const metadata: Metadata = buildPublicMetadata({
 
 export default async function HomePage() {
   const currentUser = await getCurrentDbUser()
-  const [data, recentlyMade, motm] = await Promise.all([
+  const [data, recentlyMade, makerPhotoTiles, motm] = await Promise.all([
     loadHomepageData(currentUser),
     loadRecentlyMade({ limit: 12 }),
+    loadMakerPhotoTiles({ limit: 18 }),
     loadActiveMakerOfTheMonth(),
   ])
 
@@ -94,17 +96,28 @@ export default async function HomePage() {
     if (p) makes.push({ kind: 'pattern', pattern: p })
   }
 
-  // Weave community makes in every sixth tile, then top up at the tail.
+  // Weave real makes in among the things to make: a public Made it log and a
+  // maker photo alternate every third tile, so the wall carries work from
+  // patterns as well as tutorials.
+  const communityTiles: DiscoveryItem[] = []
+  const maxCommunity = Math.max(recentlyMade.length, makerPhotoTiles.length)
+  for (let i = 0; i < maxCommunity; i++) {
+    const made = recentlyMade[i]
+    if (made) communityTiles.push({ kind: 'community', tile: made })
+    const photo = makerPhotoTiles[i]
+    if (photo) communityTiles.push({ kind: 'photo', tile: photo })
+  }
+
   const discoveryItems: DiscoveryItem[] = []
   let communityIdx = 0
   makes.slice(0, 36).forEach((item, i) => {
     discoveryItems.push(item)
-    if ((i + 1) % 6 === 0 && communityIdx < recentlyMade.length) {
-      discoveryItems.push({ kind: 'community', tile: recentlyMade[communityIdx++]! })
+    if ((i + 1) % 3 === 0 && communityIdx < communityTiles.length) {
+      discoveryItems.push(communityTiles[communityIdx++]!)
     }
   })
-  while (communityIdx < recentlyMade.length && discoveryItems.length < 42) {
-    discoveryItems.push({ kind: 'community', tile: recentlyMade[communityIdx++]! })
+  while (communityIdx < communityTiles.length && discoveryItems.length < 54) {
+    discoveryItems.push(communityTiles[communityIdx++]!)
   }
 
   return (

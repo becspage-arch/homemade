@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { BookOpen } from 'lucide-react'
-import { Prisma, prisma, TutorialStatus, Visibility } from '@homemade/db'
+import { Prisma, prisma, TutorialStatus, UGCPhotoStatus, Visibility } from '@homemade/db'
 import { REFERENCE_CRAFTS } from '@/lib/stitch-reference'
 import { FoundationsPath } from '@/components/public/category/foundations-path'
 import { PatternLibraryGrid } from '@/app/(public)/cross-stitch/patterns/pattern-library-grid'
@@ -460,6 +460,47 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
     publishedAt: { not: null },
     subCategory: { categoryId: category.id },
   }
+  // Naming a maker is opt-in. A completion on its own is private tracking, so
+  // only makers who have put something public against this craft get named: an
+  // approved photo of the pattern, or a public "Made it" on their Maker
+  // profile. Everyone else is counted, not named.
+  const completedUserIds = [...new Set(recentlyCompleted.map((p) => p.user.id))]
+  const completedPatternIds = [...new Set(recentlyCompleted.map((p) => p.pattern.id))]
+  const [publicPhotoRows, publicMadeRows] =
+    completedUserIds.length > 0
+      ? await Promise.all([
+          prisma.uGCPhoto.findMany({
+            where: {
+              userId: { in: completedUserIds },
+              patternId: { in: completedPatternIds },
+              status: UGCPhotoStatus.APPROVED,
+              removedAt: null,
+            },
+            select: { userId: true, patternId: true },
+          }),
+          prisma.userProject.findMany({
+            where: {
+              userId: { in: completedUserIds },
+              isPublic: true,
+              user: { isPublicMakerProfile: true, displayHandle: { not: null } },
+            },
+            select: { userId: true },
+            distinct: ['userId'],
+          }),
+        ])
+      : [[], []]
+
+  const namedByPhoto = new Set(
+    publicPhotoRows.map((r) => `${r.userId}:${r.patternId ?? ''}`),
+  )
+  const namedByMadeIt = new Set(publicMadeRows.map((r) => r.userId))
+  const nameableCompletions = recentlyCompleted.filter(
+    (p) =>
+      (p.user.displayHandle ?? p.user.name) &&
+      (namedByPhoto.has(`${p.user.id}:${p.pattern.id}`) || namedByMadeIt.has(p.user.id)),
+  )
+  const anonymousCompletions = recentlyCompleted.length - nameableCompletions.length
+
   const populatedSubGroups = isCrochet
     ? await prisma.crochetPattern.groupBy({
         by: ['subCategoryId'],
@@ -651,11 +692,12 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
           <header className="pattern-landing-completed-header">
             <h2 className="pattern-landing-completed-heading">Recently finished by the community</h2>
             <p className="pattern-landing-completed-subheading">
-              Real makes from real makers.
+              Real makes from real makers.{' '}
+              <Link href={`/${category.slug}/makes`}>See every photo</Link>
             </p>
           </header>
           <ul className="pattern-landing-completed-grid">
-            {recentlyCompleted.map((p) => {
+            {nameableCompletions.map((p) => {
               const href = p.pattern.slug
                 ? `/${category.slug}/patterns/${p.pattern.slug}`
                 : `/studio/cross-stitch?patternId=${p.pattern.id}`
@@ -683,6 +725,13 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
               )
             })}
           </ul>
+          {anonymousCompletions > 0 && (
+            <p className="pattern-landing-completed-subheading">
+              {anonymousCompletions === 1
+                ? 'One more was finished by a maker who keeps their profile private.'
+                : `${anonymousCompletions} more were finished by makers who keep their profiles private.`}
+            </p>
+          )}
         </section>
       )}
 

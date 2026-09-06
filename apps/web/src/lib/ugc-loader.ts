@@ -3,10 +3,8 @@ import {
   prisma,
   ReviewStatus,
   UGCStatus,
-  UGCPhotoStatus,
   type User,
 } from '@homemade/db'
-import { mediaUrl } from './media'
 
 function fmtDate(d: Date): string {
   return d.toLocaleDateString('en-GB', {
@@ -38,15 +36,6 @@ export interface TutorialUgcData {
       helpful: boolean
     }[]
   }
-  photos: {
-    id: string
-    thumbUrl: string | null
-    fullUrl: string | null
-    caption: string | null
-    authorHandle: string
-    createdAt: string
-    alt: string
-  }[]
   questions: {
     id: string
     body: string
@@ -72,11 +61,13 @@ export async function loadTutorialUgc(
 ): Promise<TutorialUgcData> {
   const viewerId = viewer?.id ?? null
 
-  // First batch: the rows that drive the page (reviews + photos + questions),
+  // First batch: the rows that drive the page (reviews + questions). Maker
+  // photos load separately through lib/maker-photos.ts, which is the one place
+  // that decides whether a photo may be shown.
   // plus the viewer's "already reviewed this tutorial?" flag — that one needs
   // only viewerId + tutorialId so it can run alongside the others rather than
   // sequentially.
-  const [reviewRows, photoRows, questionRows, alreadyReviewedRow] = await Promise.all([
+  const [reviewRows, questionRows, alreadyReviewedRow] = await Promise.all([
     prisma.review.findMany({
       where: {
         tutorialId,
@@ -86,15 +77,6 @@ export async function loadTutorialUgc(
       take: 50,
       include: {
         user: { select: { displayHandle: true, name: true, email: true } },
-      },
-    }),
-    prisma.uGCPhoto.findMany({
-      where: { tutorialId, status: UGCPhotoStatus.APPROVED },
-      orderBy: [{ createdAt: 'desc' }],
-      take: 24,
-      include: {
-        user: { select: { displayHandle: true, name: true, email: true } },
-        media: { select: { cloudflareId: true, r2Key: true, alt: true } },
       },
     }),
     prisma.question.findMany({
@@ -185,15 +167,6 @@ export async function loadTutorialUgc(
         helpful: myHelpfulIds.has(r.id),
       })),
     },
-    photos: photoRows.map((p) => ({
-      id: p.id,
-      thumbUrl: mediaUrl(p.media, 'card'),
-      fullUrl: mediaUrl(p.media, 'public'),
-      caption: p.caption,
-      authorHandle: handleOf(p.user),
-      createdAt: fmtDate(p.createdAt),
-      alt: p.media.alt ?? p.caption ?? 'Reader photo',
-    })),
     questions: questionRows.map((q) => ({
       id: q.id,
       body: q.body,

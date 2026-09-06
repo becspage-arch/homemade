@@ -26,6 +26,8 @@ import {
   FLOSS_BRAND_LABEL,
   type FlossOwnership,
 } from '@/lib/floss/stash-ownership'
+import { MakerPhotos } from '@/components/public/maker-photos/maker-photos'
+import { loadMakerPhotos } from '@/lib/maker-photos'
 import { FabricCalculator } from './fabric-calculator'
 import { FlossShoppingList } from './floss-shopping-list'
 import { PdfDownload } from './pdf-download'
@@ -181,6 +183,12 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
   // opt-in, so we never name individuals here — only the aggregate.
   const finishedCount = await prisma.userPatternProgress.count({
     where: { patternId: row.id, completedAt: { not: null } },
+  })
+
+  const makerPhotos = await loadMakerPhotos({
+    kind: 'pattern',
+    patternId: row.id,
+    patternType: 'CROSS_STITCH',
   })
 
   // Make-it-list save state for the signed-in reader. Anonymous readers still
@@ -362,6 +370,16 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
           />
         </div>
       </header>
+
+      <MakerPhotos
+        photos={makerPhotos}
+        signedIn={Boolean(user)}
+        patternId={row.id}
+        patternType="CROSS_STITCH"
+        finishedCount={finishedCount}
+        returnTo={`/cross-stitch/patterns/${slug}`}
+        galleryHref="/cross-stitch/makes"
+      />
 
       {/* Provenance, one line. The market is learning to distrust listing
           images that turn out to be renderings, and our answer is the strong

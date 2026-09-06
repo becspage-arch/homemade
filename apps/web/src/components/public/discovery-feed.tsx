@@ -5,6 +5,7 @@ import { PinterestCard } from './home-cards/pinterest-card'
 import type { ReaderStateMap } from '@/lib/user-state'
 import { readerStateFor } from '@/lib/user-state'
 import type { RecentlyMadeTile } from '@/lib/recently-made'
+import type { MakerPhotoTile } from '@/lib/maker-photos'
 import type { DiscoveryPatternCard as DiscoveryPattern } from '@/lib/homepage-data'
 
 import './home-cards/home-cards.css'
@@ -19,6 +20,7 @@ export type DiscoveryItem =
   | { kind: 'tutorial'; tutorial: DiscoveryCardTutorial }
   | { kind: 'pattern'; pattern: DiscoveryPattern }
   | { kind: 'community'; tile: RecentlyMadeTile }
+  | { kind: 'photo'; tile: MakerPhotoTile }
 
 interface DiscoveryFeedProps {
   heading: string
@@ -68,6 +70,18 @@ export function DiscoveryFeed({
             return (
               <div className="home-discovery-item" key={`p-${item.pattern.id}`}>
                 <DiscoveryPatternCard pattern={item.pattern} saved={false} />
+              </div>
+            )
+          }
+          if (item.kind === 'photo') {
+            return (
+              <div className="home-discovery-item" key={`ph-${item.tile.photoId}`}>
+                <PinterestCard
+                  href={item.tile.href}
+                  imageMedia={item.tile.imageSource}
+                  title={item.tile.title}
+                  byline={`Photo by ${item.tile.makerHandle}`}
+                />
               </div>
             )
           }

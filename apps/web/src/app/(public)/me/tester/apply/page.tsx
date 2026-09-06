@@ -22,7 +22,7 @@ export default async function TesterApplyPage() {
       </section>
 
       <section>
-        <TesterApplyForm />
+        <TesterApplyForm alreadyAgreed={user.testerAgreementAt !== null} />
       </section>
     </>
   )
