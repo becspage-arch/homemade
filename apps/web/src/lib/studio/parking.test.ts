@@ -386,6 +386,28 @@ test('back-stitch and French knots do not touch the working order', () => {
   assert.deepEqual([...a].sort(cmp), [...b].sort(cmp))
 })
 
+test('a progress set full of line work leaves the working order alone', () => {
+  const bare = patternFromRows(['AB', 'BA'])
+  const dressed: PatternData = {
+    ...bare,
+    grid: {
+      ...bare.grid,
+      backstitch: [{ x1: 0, y1: 0, x2: 2, y2: 0, s: 'A' }],
+      frenchKnots: [{ x: 1, y: 1, s: 'B' }],
+      fractional: [{ x: 0, y: 1, q: 'tl', k: 'quarter', s: 'A' }],
+    },
+  }
+  const index = buildParkingIndex(dressed, 'rows')
+  // The keys a stitcher's ticked outline, knot and part stitch produce. None
+  // of them names a square, so none of them can move a needle.
+  const worked = new Set(['bs:0,0,2,0', 'kn:1,1', 'fr:0,1,tl,q'])
+  resetProgress(index, worked)
+  assert.deepEqual(pick(refreshParked(index, worked), 'A'), { x: 0, y: 0 })
+  assert.deepEqual(pick(refreshParked(index, worked), 'B'), { x: 1, y: 0 })
+  assert.ok(lineHasWork(index, 0))
+  assert.ok(lineHasWork(index, 1))
+})
+
 test('a chart with no back-stitch at all parks normally', () => {
   const pattern = patternFromRows(['A.A', '.A.', 'A.A'])
   assert.equal(pattern.grid.backstitch.length, 0)
@@ -556,6 +578,26 @@ test('tapping it again puts the colour back where it was', () => {
   get().toggleStitched(0, 0)
   get().toggleStitched(0, 0)
   assert.deepEqual(pick(get().parkedCells, 'A'), { x: 0, y: 0 })
+})
+
+test('ticking off an outline moves no needle — parking is a squares method', () => {
+  const outlined: PatternData = {
+    ...CONFETTI,
+    grid: {
+      ...CONFETTI.grid,
+      backstitch: [{ x1: 0, y1: 0, x2: 3, y2: 0, s: 'A' }],
+      frenchKnots: [{ x: 1, y: 1, s: 'B' }],
+    },
+  }
+  const get = loadStore(outlined)
+  const before = new Map(get().parkedCells)
+  const line = get().parkingLine
+  get().toggleStitchedSegment(0)
+  get().toggleStitchedKnot(0)
+  assert.deepEqual([...get().parkedCells].sort(cmp), [...before].sort(cmp))
+  assert.equal(get().parkingLine, line)
+  // But it is recorded, on the same set the squares are recorded on.
+  assert.deepEqual([...get().stitchedCells].sort(), ['bs:0,0,3,0', 'kn:1,1'])
 })
 
 test('finishing the current row moves the working line on by itself', () => {
