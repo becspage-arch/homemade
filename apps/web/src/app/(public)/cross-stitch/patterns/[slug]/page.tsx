@@ -22,6 +22,7 @@ import { PatternPlanButton } from '@/components/public/pattern-plan-button'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import { FabricCalculator } from './fabric-calculator'
 import { PdfDownload } from './pdf-download'
+import { SpecTip } from './spec-tip'
 import './pattern-detail.css'
 
 export const dynamic = 'force-dynamic'
@@ -274,17 +275,8 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
               <div>
                 <dt>Stitchability</dt>
                 <dd>
-                  <button
-                    type="button"
-                    className="pattern-detail-stitchability"
-                    aria-describedby="stitchability-tip"
-                  >
-                    {band.label}
-                    <span className="pattern-detail-stitchability-mark" aria-hidden="true">?</span>
-                    <span className="pattern-detail-tip" id="stitchability-tip" role="tooltip">
-                      {band.blurb}
-                    </span>
-                  </button>
+                  {band.label}
+                  <SpecTip label="What stitchability means">{band.blurb}</SpecTip>
                 </dd>
               </div>
             )}
