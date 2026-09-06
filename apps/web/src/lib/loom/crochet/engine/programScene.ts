@@ -394,7 +394,14 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
     // in-plane S, so the camera just needs the ordinary flatlay-style 3/4-from-
     // above look, with extra margin because the S widens the footprint less
     // than a straight strip's own length would otherwise demand.
-    view = { ...base, marginFactor: 0.35, tiltDeg: 22, drapeAmp: 0.04, resY: 1100 }
+    // openFabric (like `loop`): the yarn-coloured BACKING plane is a RECTANGLE
+    // sized off the content bounding box (loom_render_crochet.py) — right for a
+    // flatlay panel that fills its own rectangle, wrong for an S-curved strip,
+    // which doesn't: the first render showed the backing slab plainly through
+    // the curve's concave side. Dropping it (as `loop` does for the same
+    // non-rectangular-footprint reason) leaves the plain ground showing there
+    // instead, which is what a real photo of a curved strip on a table shows.
+    view = { ...base, marginFactor: 0.35, tiltDeg: 22, drapeAmp: 0.04, resY: 1100, openFabric: true }
   } else {
     // `swatch` — the tight stitch-proof macro crop (the prior behaviour).
     view = { ...base, marginFactor: 0.12, tiltDeg: programTiltDeg(p) }
