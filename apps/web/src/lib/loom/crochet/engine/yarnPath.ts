@@ -371,6 +371,27 @@ export interface PlainStitchSpec {
   yarnOvers?: number
   /** The collar's half-depth in mm (§8f-3). Absent → `yr` (one yarn radius). */
   yarnOverMm?: number
+  /**
+   * NO-TURN (spiral round) work: the stitch LIES IN the surface (§8f-5).
+   * 0 (default) = flat TURNED fabric, bit-identical to everything before.
+   *
+   * In turned fabric a stitch's crown is thrown proud of its worked face
+   * because the next row is worked from the OTHER face and dives under it from
+   * there: the relief IS the interlock, and consecutive rows' reliefs alternate
+   * and cancel, so the fabric reads flat. Spiral rounds never turn. Every round
+   * works the same face, so a proud crown stands off the fabric, the next
+   * round's hook has to plunge the same distance inward to clear it, and one
+   * stitch ends up spanning the whole fabric thickness on its own — measured
+   * 1.65 d of normal excursion per stitch against flat sc's 0.57. That is the
+   * knot a close-up of round work reads.
+   *
+   * At 1 the head loop lies IN the surface (its two strands separate along the
+   * MERIDIAN, side by side, which is the V-grid a real amigurumi surface shows)
+   * with the apex only just proud enough to be found, and the dive shallows to
+   * match — it still passes clearly under the crown it hooks (the audit's real
+   * test), it just no longer has a bump to climb over.
+   */
+  surfaceLay?: number
 }
 
 /**
@@ -418,20 +439,39 @@ export function emitHeadLoop(
     cw: number
     /** Head-loop half-span in mm. */
     hl: number
+    /** No-turn round work: lay the loop IN the surface (see `surfaceLay`). */
+    lay?: number
   },
 ): { crown: number; trailA: number; trailB: number; headPartner: number } {
   const { xC, ty, s, sd, fz, zh, dh, pw, cw, hl } = a
   const hy = dh * 1.45 // the two strands' separation up the row
-  const trailA = push(xC - sd * pw, ty - hy * 0.95, zh * 0.4 * fz) // straight off the up-leg onto the head line
-  push(xC + s * hl * 0.72, ty - hy * 0.35, zh * 0.25 * fz) // tucked strand, running FORWARD
-  const headPartner = push(xC + s * hl, ty + hy * 0.15, zh * 0.2 * fz)
-  push(xC + s * hl * 0.98, ty + hy * 0.7, zh * 0.38 * fz) // the loop's far end — it turns here
-  push(xC + s * hl * 0.5, ty + hy * 0.85, zh * 0.65 * fz) // proud strand, coming BACK
-  const crown = push(xC, ty + hy * 0.55, zh * 0.8 * fz)
+  // The loop's normal profile: PROUD on a turned face (left), LYING IN the
+  // surface for spiral rounds (right). Laid, the loop's whole first half — the
+  // strand that runs back along the row top and the loop's far end — sits AT the
+  // surface, and only the returning strand and the apex ride a little above it,
+  // because the next round has to find the apex to dive under. The two strands
+  // still separate up the MERIDIAN, side by side, which is exactly the V-grid a
+  // real amigurumi surface shows.
+  const lay = a.lay ?? 0
+  const zL = (proud: number, laid: number): number => zh * (proud + (laid - proud) * lay) * fz
+  const trailA = push(xC - sd * pw, ty - hy * 0.95, zL(0.4, 0)) // straight off the up-leg onto the head line
+  push(xC + s * hl * 0.72, ty - hy * 0.35, zL(0.25, 0)) // tucked strand, running FORWARD
+  const headPartner = push(xC + s * hl, ty + hy * 0.15, zL(0.2, 0))
+  push(xC + s * hl * 0.98, ty + hy * 0.7, zL(0.38, 0.3)) // the loop's far end — it turns here
+  push(xC + s * hl * 0.5, ty + hy * 0.85, zL(0.65, 0.38)) // proud strand, coming BACK
+  const crown = push(xC, ty + hy * 0.55, zL(0.8, 0.46))
   const hyOut = dh * 1.45 * 0.3
-  const trailB = push(xC + s * cw * 0.9, ty - hyOut, zh * 0.45 * fz) // drop off the head, on to the next stitch
+  const trailB = push(xC + s * cw * 0.9, ty - hyOut, zL(0.45, 0.34)) // drop off the head, on to the next stitch
   return { crown, trailA, trailB, headPartner }
 }
+
+/**
+ * The normal offset a re-cut head's APEX is built at — the key every no-turn
+ * builder's crown canopy is derived from, so the canopy and the head can never
+ * drift apart. `lay` is the stitch's `surfaceLay`.
+ */
+export const headApexRelief = (zh: number, lay = 0): number => zh * (0.8 + (0.46 - 0.8) * lay)
+
 
 export function emitPlainStitch(
   S: StrandCtx,
@@ -482,7 +522,13 @@ export function emitPlainStitch(
   // proud-crown depth the hook settles nearly coincident with the flattened
   // head and the interlock is ambiguous (audit: same-side fails across rounds).
   const bcz = spec.bcNormalZ ?? S.nodes[bc]!.z
-  const hookZ = (bcz >= 0 ? -1 : 1) * z * (1.6 + 0.9 * lay) * (spec.hookDepthScale ?? 1)
+  // …and a head that LIES IN the surface (spiral rounds, `surfaceLay`) needs a
+  // SHALLOWER one, for the same reason in reverse: the dive only has to pass
+  // clearly under the crown it hooks, and with no bump to climb over, plunging
+  // the full turned-fabric depth is what made each round-work stitch a
+  // full-thickness loop standing off the surface.
+  const slay = spec.surfaceLay ?? 0
+  const hookZ = (bcz >= 0 ? -1 : 1) * z * (1.6 + 0.9 * lay - 0.3 * slay) * (spec.hookDepthScale ?? 1)
   // The legs run from the insertion (xH) at the bottom to this stitch's own crown
   // (xC) at the top. f = height fraction: 1 at the top of the leg, → 0 at the hook.
   const xa = (f: number): number => xH + (xC - xH) * f
@@ -610,7 +656,7 @@ export function emitPlainStitch(
   let headExit = -1
   if (recutHead) {
     // The head is a real two-strand LOOP — see emitHeadLoop for the anatomy.
-    const h = emitHeadLoop(push, { xC, ty, s, sd, fz, zh, dh, pw, cw, hl })
+    const h = emitHeadLoop(push, { xC, ty, s, sd, fz, zh, dh, pw, cw, hl, lay: slay })
     trailA = h.trailA
     headPartner = h.headPartner
     crownBack = h.crown
