@@ -25,6 +25,8 @@ import { applyWarmFurGuard, WARM_FUR_SAT, type WarmFurBrief } from './brief-rule
 import { runIsComplete, summaryLine } from './run-status'
 import {
   propReject,
+  lightPropReject,
+  matchExampleByHead,
   headNouns,
   briefsCollide,
   postFilterBriefs,
@@ -32,6 +34,8 @@ import {
   BATCH_JACCARD_COLLISION,
   SMALL_LANE_WORD_LIMIT,
 } from './brief-filter'
+import { capShelfBriefs, shelfQuotaCounts, SHELF_SHARE } from './shelf-plan'
+import { CROSS_STITCH_THEMES } from './subject-pool'
 import type { ShelfTarget } from '../categories'
 
 type PassFail = { name: string; passed: boolean; detail?: string }
@@ -645,6 +649,169 @@ record('summaryLine: names the post-filter\'s work when it did any', () => {
   const line = summaryLine({ ...base, propRejects: 8, collisionRejects: 2 })
   assert.ok(line.includes('8 briefs rejected for props'), line)
   assert.ok(line.includes('2 rejected as within-batch repeats'), line)
+})
+
+// ─── constrained mode: the head-noun match against the pool ────────────────
+
+record('headNouns: a noun that merely ends in -ing/-ed is not a verb', () => {
+  // Every one of these lost its subject before the exception list existed.
+  assert.deepEqual(headNouns('a duckling on a green bank'), ['duckling'])
+  assert.deepEqual(headNouns('a stocking hung on a mantel'), ['stocking'])
+  assert.deepEqual(headNouns('a fluffy spring lamb with a flower crown'), ['spring', 'lamb'])
+})
+
+record('headNouns: a real verb still ends the phrase at the first content word', () => {
+  assert.deepEqual(headNouns('a corgi napping in a teacup of daisies'), ['corgi'])
+  assert.deepEqual(headNouns('a whale carrying a whole starlit galaxy on its back'), ['whale'])
+  assert.deepEqual(headNouns('a badger holding a lantern'), ['badger'])
+})
+
+record('headNouns: "between" ends the phrase (the batch-6 miss)', () => {
+  // Before the fix this read as ["moon", "split"] — the phrase ran straight past
+  // "between" and stopped at the next participle instead.
+  assert.deepEqual(headNouns('a crescent moon split between blazing sun face and starry night face'), ['crescent', 'moon'])
+})
+
+record('matchExampleByHead: a re-dressed pool subject still matches', () => {
+  const examples = ['a red squirrel among autumn leaves and toadstools', 'a badger at dusk', 'a hare under a full moon']
+  // Setting, season, time of day and palette all changed; the subject did not.
+  assert.equal(matchExampleByHead('a red squirrel on a frosty branch at dawn', examples), examples[0])
+  assert.equal(matchExampleByHead('a badger in bluebells under a summer sky', examples), examples[1])
+  assert.equal(matchExampleByHead('a hare in a golden barley field', examples), examples[2])
+})
+
+record('matchExampleByHead: an invented subject matches nothing', () => {
+  const examples = ['a red squirrel among autumn leaves and toadstools', 'a badger at dusk']
+  assert.equal(matchExampleByHead('a scarlet hermit crab on a sunlit rock', examples), null)
+  assert.equal(matchExampleByHead('a great horned owl across a full moon', examples), null)
+})
+
+record('matchExampleByHead: every pool example matches its own theme', () => {
+  // The pool is constrained mode's entire vocabulary: an example that cannot
+  // match itself is a subject the planner could never legally choose.
+  for (const t of CROSS_STITCH_THEMES) {
+    for (const ex of t.examples) {
+      assert.equal(matchExampleByHead(ex, t.examples) !== null, true, `${t.id}: "${ex}"`)
+    }
+  }
+})
+
+record('postFilterBriefs: constrained mode rejects off-pool briefs, keeps dressed ones', () => {
+  const examplesByTheme = { woodland: ['a badger at dusk', 'a hare under a full moon'] }
+  const dressed = pb('a badger in bluebells at first light', 'medium', 'animals')
+  const invented = pb('a scarlet hermit crab on a sunlit rock', 'medium', 'animals')
+  const batch = [{ ...dressed, themeId: 'woodland' }, { ...invented, themeId: 'woodland' }]
+  const { kept, rejects } = postFilterBriefs(batch, [], { props: 'light', examplesByTheme })
+  assert.equal(kept.length, 1)
+  assert.equal(kept[0]!.subject, dressed.subject)
+  assert.equal(rejects[0]!.kind, 'off-pool')
+  // Off-pool folds into the propRejects counter the run records.
+  assert.deepEqual(countRejects(rejects), { props: 1, collisions: 0 })
+})
+
+record('lightPropReject: only what the model ADDED to the pool subject', () => {
+  const example = 'a fox in a tiny raincoat with a paper boat'
+  // The pool subject's own props are the subject — not an addition.
+  assert.equal(lightPropReject('a fox in a tiny raincoat with a paper boat at dusk', example), null)
+  // Without a baseline the light filter still fires on both patterns.
+  assert.notEqual(lightPropReject('a fox in a tiny raincoat'), null)
+  // A prop the example does not have IS an addition.
+  assert.notEqual(lightPropReject('a badger at dusk with a lantern', 'a badger at dusk'), null)
+})
+
+record('propReject: light mode drops the strict word limit', () => {
+  const long = pb('a red squirrel among autumn leaves and toadstools in low winter sun', 'mini')
+  assert.notEqual(propReject(long, 'strict'), null)
+  assert.equal(propReject(long, 'light'), null)
+  assert.equal(propReject(long, 'off'), null)
+})
+
+// ─── the per-shelf cap ─────────────────────────────────────────────────────
+
+const alloc = (rows: [string, number, number][]) =>
+  rows.map(([slug, briefs, deficit]) => ({ slug, name: slug, briefs, deficit }))
+
+record('capShelfBriefs: no shelf takes more than its share when there is room', () => {
+  // Six shelves in play, so every over-cap slot has somewhere under the cap to go.
+  const out = capShelfBriefs(
+    alloc([['celestial', 4, 90], ['nursery', 3, 60], ['cocktails', 1, 40], ['food', 1, 20], ['halloween', 1, 15], ['hobbies', 0, 10]]),
+    10,
+  )
+  assert.equal(Math.max(...out.map((a) => a.briefs)), 10 / SHELF_SHARE)
+  assert.equal(out.reduce((n, a) => n + a.briefs, 0), 10) // nothing lost
+})
+
+record('capShelfBriefs: never three celestial in one batch of ten', () => {
+  const out = capShelfBriefs(alloc([['celestial', 5, 200], ['nursery', 3, 60], ['cocktails', 2, 40]]), 10)
+  assert.equal(out.find((a) => a.slug === 'celestial')!.briefs, 2)
+})
+
+record('capShelfBriefs: celestial gives up its overflow even with nowhere to put it', () => {
+  // Only two shelves in play. The soft shelf takes the overflow back (that is the
+  // "unless its deficit demands more" case); the hard-capped one never does.
+  const out = capShelfBriefs(alloc([['celestial', 8, 300], ['nursery', 2, 50]]), 10)
+  assert.equal(out.find((a) => a.slug === 'celestial')!.briefs, 2)
+  assert.equal(out.find((a) => a.slug === 'nursery')!.briefs, 8)
+  assert.equal(out.reduce((n, a) => n + a.briefs, 0), 10)
+})
+
+record('capShelfBriefs: overflow spreads evenly, never back onto one shelf', () => {
+  // Three shelves, all at or over the cap: the four surplus slots go round the
+  // soft shelves one at a time rather than making a four-brief shelf again.
+  const out = capShelfBriefs(alloc([['celestial', 6, 300], ['nursery', 2, 50], ['cocktails', 2, 40]]), 10)
+  assert.equal(out.find((a) => a.slug === 'celestial')!.briefs, 2)
+  assert.deepEqual(
+    out.filter((a) => a.slug !== 'celestial').map((a) => a.briefs).sort(),
+    [4, 4],
+  )
+})
+
+record('capShelfBriefs: a batch of only hard-capped shelves runs short rather than repeating', () => {
+  const out = capShelfBriefs(alloc([['celestial', 10, 300]]), 10)
+  assert.equal(out.find((a) => a.slug === 'celestial')!.briefs, 2)
+  assert.equal(out.reduce((n, a) => n + a.briefs, 0), 2)
+})
+
+record('capShelfBriefs: an allocation already within the cap is untouched', () => {
+  const input = alloc([['nursery', 2, 60], ['cocktails', 2, 40], ['food', 2, 20], ['halloween', 2, 15], ['hobbies', 2, 10]])
+  const out = capShelfBriefs(input, 10)
+  assert.deepEqual(out.map((a) => [a.slug, a.briefs]).sort(), input.map((a) => [a.slug, a.briefs]).sort())
+})
+
+record('shelfQuota: a shelf cannot exceed its slots in one batch (the batch-6 celestial)', () => {
+  // Batch 6 was allocated ONE celestial slot and the planner returned three,
+  // because nothing stopped it picking the same theme repeatedly.
+  const quota = shelfQuotaCounts(['celestial', 'animals', 'nursery'])
+  assert.deepEqual(quota, { celestial: 1, animals: 1, nursery: 1 })
+  const batch = [
+    pb('a great horned owl across a full moon', 'medium', 'celestial'),
+    pb('a comet over a desert mesa', 'medium', 'celestial'),
+    pb('a badger at dusk', 'medium', 'animals'),
+  ]
+  const { kept, rejects } = postFilterBriefs(batch, [], { props: 'off', shelfQuota: quota })
+  assert.equal(kept.length, 2)
+  assert.equal(kept.filter((b) => b.shelf === 'celestial').length, 1)
+  assert.equal(rejects[0]!.kind, 'over-quota')
+  // Over-quota folds into the collision counter the run records.
+  assert.deepEqual(countRejects(rejects), { props: 0, collisions: 1 })
+})
+
+record('shelfQuota: briefs kept by an earlier chunk count toward the quota', () => {
+  const quota = shelfQuotaCounts(['celestial', 'celestial', 'animals'])
+  const prior = [pb('a comet over a desert mesa', 'medium', 'celestial')]
+  const batch = [
+    pb('a sun with a lion mane of rays', 'medium', 'celestial'),
+    pb('an aurora over a snowy pine ridge', 'medium', 'celestial'),
+  ]
+  const { kept, rejects } = postFilterBriefs(batch, prior, { props: 'off', shelfQuota: quota })
+  assert.equal(kept.length, 1)
+  assert.equal(rejects[0]!.kind, 'over-quota')
+})
+
+record('summaryLine: names which planner wrote the batch', () => {
+  const base = { craft: 'cross-stitch', requested: 10, published: 3, culled: 7, duplicates: 0, skipped: 0, errors: 0, repaired: 2, generations: 30 }
+  assert.ok(summaryLine({ ...base, plannerMode: 'constrained' }).includes('constrained planner'))
+  assert.ok(!summaryLine(base).includes('planner'))
 })
 
 // ─── Report ────────────────────────────────────────────────────────────────

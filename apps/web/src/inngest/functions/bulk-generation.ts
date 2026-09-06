@@ -22,6 +22,7 @@ import {
   remainingShelfSlots,
   rejectedSubjects,
   tallyRejects,
+  PLANNER_MODE,
   type PlanChunk,
   MODEL_CHUNK,
   type CrossStitchBrief,
@@ -173,7 +174,7 @@ async function finaliseIfComplete(runId: string): Promise<{ finished: boolean; a
   if (!run || run.finishedAt) return { finished: false, alerted: false }
   if (!runIsComplete(run)) return { finished: false, alerted: false }
 
-  const summary = summaryLine(run)
+  const summary = summaryLine({ ...run, plannerMode: PLANNER_MODE })
   // A run that produced nothing, or that fell over on half its ideas, is a
   // problem a human needs to hear about — the whole point of an unattended
   // autopilot is that silence means it is working.
@@ -224,7 +225,7 @@ async function sweepStalledRuns(): Promise<number> {
   for (const run of stalled) {
     await prisma.bulkRun.update({
       where: { id: run.id },
-      data: { finishedAt: new Date(), summary: `stalled — ${summaryLine(run)}`, alerted: true },
+      data: { finishedAt: new Date(), summary: `stalled — ${summaryLine({ ...run, plannerMode: PLANNER_MODE })}`, alerted: true },
     })
     Sentry.captureMessage('bulk cross-stitch run yielded nothing', {
       level: 'warning',
@@ -341,11 +342,13 @@ export const bulkCrossStitchBatch = inngest.createFunction(
       }
     }
 
-    // ONE retry round for whatever the brief post-filter threw out — props and
-    // within-batch repeats — asked on the shelves that lost it and naming the
-    // rejected subjects, so the second attempt is not a re-roll of the same
-    // mistake. Only after this does the pool sampler fill any remaining gap.
-    if (modelBriefs.length < n) {
+    // FREE mode only: one retry round for whatever the brief post-filter threw
+    // out, asked on the shelves that lost it and naming the rejected subjects,
+    // so the second attempt is not a re-roll of the same mistake. In CONSTRAINED
+    // mode a rejected slot goes straight to the pool sampler instead — it draws
+    // from the same subject list the model was supposed to choose from, and has
+    // out-yielded model inventions better than two to one.
+    if (modelBriefs.length < n && PLANNER_MODE === 'free') {
       const retryCtx = { ...planCtx, shelfSlots: remainingShelfSlots(planCtx, modelBriefs) }
       const banned = rejectedSubjects(chunks)
       const got = await step.run('plan-briefs-retry', () => planModelBriefs(n - modelBriefs.length, retryCtx, modelBriefs, banned))
@@ -388,7 +391,7 @@ export const bulkCrossStitchBatch = inngest.createFunction(
         data: { runId: run.id, brief, attempt: 1, tweak: {} as CandidateTweak },
       })),
     )
-    return { runId: run.id, dispatched: briefs.length, modelAuthored: authored, propRejects, collisionRejects }
+    return { runId: run.id, dispatched: briefs.length, modelAuthored: authored, propRejects, collisionRejects, plannerMode: PLANNER_MODE }
   },
 )
 
