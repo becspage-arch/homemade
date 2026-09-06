@@ -161,8 +161,10 @@ the `/healthz` curl work.
   editorial work that depends on the voice spec or the completeness gates needs
   the `homemade-standards` skill loaded, and anything depending on current
   project state needs that state in the prompt.
-- **Bulk content generation routines.** They stay local — they need her machine,
-  and needlework rendering uses local Blender.
+- **Anything on Rebecca's machine.** Standing rule (5 September 2026): every
+  category's bulk autopilot runs on the server (Inngest on ECS, Fargate for
+  rendering) or in a cloud session/routine — never on her laptop. Needlework
+  rendering still uses local Blender until it is moved to Fargate.
 - **Anything driving her browser**, including DesignSync.
 - **Big builds.** ~4 vCPU / 16 GB RAM / 30 GB disk. A full `turbo build` of the
   monorepo is close to the ceiling; prefer `--filter` to one package.

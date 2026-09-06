@@ -17,17 +17,19 @@ the work closes.
 **Loom / crochet / knitting orchestrator (started 2026-09-05).** Owns
 `apps/web/src/lib/loom/**`, `apps/web/scripts/loom*`, the crochet Studio
 (`apps/web/src/app/studio/crochet`, `components/studio/crochet`,
-`api/studio/crochet`), `CrochetPattern`/`KnittingPattern` schema changes, and
-the admin Members pages. Done so far: look-pass rounds 1–3 (flat family and
-tall posts at real gauge; on main), the crochet Studio "Design your own", the
-real bulk path proven end to end (stored row → Fargate hero → R2 → attached),
-`LOOM_RENDER` confirmed already mounted on the web task. In flight: look-pass
-round 4 (round/sphere stitch look, branch `claude/loom-look-pass-4`), the
-headband proof rebuilt at real size (`claude/loom-headband`), the amigurumi
-bear round 3, the six-sample sign-off, then bulk fill, category go-live,
-knitting. Standing rule for every category:
-autopilot runs on ECS (Inngest) or in cloud sessions/routines, never on
-Rebecca's laptop.
+`api/studio/crochet`), the crochet bulk autopilot (`bulk/crochet*`),
+`CrochetPattern`/`KnittingPattern` schema changes, and the admin Members pages.
+Done so far: look-pass rounds 1–6 on main (real-gauge stitch cells, white
+ground, hero scale rule), the crochet Studio "Design your own", the async
+Fargate render path, the real bulk path proven end to end and judged on the
+served images (seven sign-off heroes plus four autopilot keepers, all on the
+white ground), the crochet bulk autopilot built with its cron OFF. In flight:
+look-pass round 7 (stuffing pressure, `claude/loom-stuffing`, done, waiting on
+round 8) and round 8 (sphere-derived count profile for round parts,
+`claude/loom-sphere-counts`); then the train, a re-render of the round
+sign-off rows, the first judged server run of the crochet autopilot, category
+go-live, knitting. Standing rule for every category: autopilot runs on ECS
+(Inngest) or in cloud sessions/routines, never on Rebecca's laptop.
 
 **Cross-stitch orchestrator (started 2026-09-05).** Owns the cross-stitch
 catalogue, `apps/web/src/lib/studio/generation/**` (planner, subject pool,
