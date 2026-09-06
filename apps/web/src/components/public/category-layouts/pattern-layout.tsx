@@ -12,6 +12,7 @@ import { NeedleworkPatternGrid } from './needlework-pattern-grid'
 import { DISCIPLINE_LABELS } from '@/components/studio/needlework/types'
 import { getPatternTagFacets, patternIdsForTags } from '@/lib/pattern-tag-facets'
 import { getPatternDesignerFacets } from '@/lib/pattern-designer-facets'
+import { ownedCountsForPatterns } from '@/lib/floss/stash-ownership'
 
 const DESIGNER_SPOTLIGHT_TAKE = 6
 const RECENTLY_COMPLETED_TAKE = 8
@@ -395,6 +396,28 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
         ).map((s) => s.patternId),
       )
     : new Set<string>()
+
+  // "22 of 28 owned" on the card, for a signed-in maker with a floss stash.
+  // Two queries for the whole grid, never one per card: the stash itself, then
+  // a targeted JSON extract of each visible chart's palette so the cells (the
+  // bulk of Pattern.data) never load. No stash means no badge anywhere.
+  const ownedByPattern = new Map<string, { owned: number; total: number }>()
+  if (currentUserId && patternType === 'CROSS_STITCH' && filtered.length > 0) {
+    const stashRows = await prisma.plannerStashItem.findMany({
+      where: { userId: currentUserId, craft: 'CROSS_STITCH', archivedAt: null },
+      select: { brand: true, code: true, quantityOwned: true },
+    })
+    if (stashRows.length > 0) {
+      const paletteRows = await prisma.$queryRaw<{ id: string; palette: unknown }[]>`
+        SELECT id, "data"->'palette' AS palette
+        FROM "Pattern"
+        WHERE id IN (${Prisma.join(filtered.map((p) => p.id))})
+      `
+      for (const [id, count] of ownedCountsForPatterns(paletteRows, stashRows)) {
+        ownedByPattern.set(id, count)
+      }
+    }
+  }
 
   // Finished size lives in the (large) vectorData JSON; pull just the mm
   // dimensions for the visible needlework rows with a targeted JSON extract so
@@ -796,6 +819,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
                 subCategoryName: p.subCategory?.name ?? null,
                 thumbnailUrl: patternHeroUrl({ id: p.id, hero: p.hero, thumbnail: p.thumbnail }, 'card'),
                 saved: savedPatternIds.has(p.id),
+                ownedColours: ownedByPattern.get(p.id) ?? null,
               }))}
               subCategories={nonEmptySubCategories.map((s) => ({
                 slug: s.slug,

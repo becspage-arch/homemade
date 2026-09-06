@@ -147,10 +147,18 @@ export function PlannerShell({
             mutate={mutate}
           />
         ) : (
-          <UpgradeBlock
-            message={PLANNER_GATE_COPY.message}
-            rationale={PLANNER_GATE_COPY.rationale}
-          />
+          <>
+            <UpgradeBlock
+              message={PLANNER_GATE_COPY.message}
+              rationale={PLANNER_GATE_COPY.rationale}
+            />
+            {/* The stash itself is free, so a non-premium maker still gets the
+                owned-colour count on every pattern page and library card. */}
+            <p className="planner-stash-free">
+              Your <Link href="/me/floss-stash">floss stash</Link> is free to keep. Every
+              pattern page counts its colours against it.
+            </p>
+          </>
         )}
       </section>
     </div>

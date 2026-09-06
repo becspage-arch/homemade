@@ -8,11 +8,21 @@
  *
  * Sort options: stitched-first (the "next colour" workflow), most
  * stitches, palette order, alphabetical.
+ *
+ * Colours already in the maker's floss stash are ticked, the same match the
+ * pattern page and the library card use (exact code first, then the published
+ * brand conversions). The stash fetch is best-effort: a signed-out stitcher,
+ * or one with an empty stash, simply sees no ticks.
  */
 
 import { useMemo, useState, useEffect } from 'react'
-import { ListChecks, X, ArrowUpDown } from 'lucide-react'
+import { ListChecks, X, ArrowUpDown, Check } from 'lucide-react'
 import { estimateSkeinCount, cellKey, type PatternData } from '@homemade/db/pattern'
+import {
+  buildStashIndex,
+  matchStashColour,
+  type StashFlossItem,
+} from '@/lib/floss/stash-ownership'
 import { useChartStore } from '../chart/chart-store'
 
 type SortKey = 'palette' | 'most' | 'alpha' | 'next'
@@ -33,6 +43,37 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
   const stitched = useChartStore((s) => s.stitchedCells)
 
   const [sortKey, setSortKey] = useState<SortKey>('palette')
+  const [stash, setStash] = useState<StashFlossItem[]>([])
+
+  // The stash is free for any signed-in maker, so this is a plain fetch with
+  // no gate. A 401 or a network wobble just means no ticks.
+  useEffect(() => {
+    let cancelled = false
+    fetch('/api/studio/planner/stash?craft=CROSS_STITCH')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((body: { entries?: StashFlossItem[] } | null) => {
+        if (cancelled || !body?.entries) return
+        setStash(body.entries)
+      })
+      .catch(() => {
+        /* no stash, no ticks */
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const ownedSymbols = useMemo(() => {
+    const owned = new Set<string>()
+    if (stash.length === 0) return owned
+    const index = buildStashIndex(stash)
+    for (const entry of pattern.palette) {
+      if (matchStashColour(entry.brand, entry.code, index).quantityOwned > 0) {
+        owned.add(entry.symbol)
+      }
+    }
+    return owned
+  }, [pattern, stash])
 
   useEffect(() => {
     if (!mobileOpen) return
@@ -118,10 +159,15 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
         <ul className="studio-flosskey-list">
           {rows.map(({ entry, totalStitches, stitchedCount, remaining, skein }) => {
             const isIsolated = entry.symbol === isolate
+            const owned = ownedSymbols.has(entry.symbol)
             return (
               <li
                 key={entry.symbol}
-                className={['studio-flosskey-row', isIsolated ? 'is-isolated' : ''].join(' ')}
+                className={[
+                  'studio-flosskey-row',
+                  isIsolated ? 'is-isolated' : '',
+                  owned ? 'is-owned' : '',
+                ].join(' ')}
               >
                 <button
                   type="button"
@@ -138,7 +184,19 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
                     <span className="studio-flosskey-symbol">{entry.symbol}</span>
                   </span>
                   <span className="studio-flosskey-detail">
-                    <span className="studio-flosskey-name">{entry.name}</span>
+                    <span className="studio-flosskey-name">
+                      {owned && (
+                        <span
+                          className="studio-flosskey-owned"
+                          role="img"
+                          aria-label="In your stash"
+                          title="In your stash"
+                        >
+                          <Check size={12} strokeWidth={2.4} aria-hidden="true" />
+                        </span>
+                      )}
+                      {entry.name}
+                    </span>
                     <span className="studio-flosskey-code">{entry.brand} {entry.code}</span>
                   </span>
                   <span className="studio-flosskey-counts">
