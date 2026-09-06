@@ -7,19 +7,25 @@
  *
  * Two axes co-exist:
  *
- *   - Project-shape sub-cats (stitches, foundations, scarves-shawls, hats,
- *     dishcloths-homewares, baby, blankets, socks, garments) — primary
- *     navigation matching how knitters actually search ("a hat", "a
- *     blanket", "a sock").
+ *   - Project-shape sub-cats (scarf-cowl, hat, mitt-glove, shawl-wrap,
+ *     blanket, accessory-other, sweater-cardigan, vest, sock, plus the
+ *     content-type sub-cats stitches/foundations and the still-open legacy
+ *     catch-alls dishcloths-homewares/baby/garments) — primary navigation
+ *     matching how knitters actually search ("a hat", "a blanket", "a
+ *     sock").
  *   - Technique-discipline sub-cats (colourwork, lace, cable-aran,
  *     brioche-doubleknit, specialty) — secondary navigation for knitters
  *     who search by technique ("Fair Isle hat", "Estonian lace shawl",
  *     "brioche cowl").
  *
  * The two axes are not mutually exclusive — a colourwork hat sits under
- * `hats` for project-shape browse and under `colourwork` for technique
+ * `hat` for project-shape browse and under `colourwork` for technique
  * browse. `craftTechniqueTags` on the Tutorial row handles per-row
  * cross-tagging beyond the sub-category assignment.
+ *
+ * `scarves-shawls`, `hats`, `blankets` and `socks` were K-1 legacy shelves,
+ * merged into their K-4 equivalents by `scripts/knitting-merge-shelves.ts`
+ * and removed from this list so a re-seed cannot recreate them.
  *
  * Garment grading is in scope from K-8 onward (custom grading library +
  * Patterns batch). The `garments` sub-category was seeded ahead of the
@@ -178,22 +184,12 @@ const SUB_CATEGORIES: SubCatSpec[] = [
 
   // ──────────────────────────────────────────────────────────────────────────
   // K-1 project-shape sub-cats kept for back-compat with already-authored
-  // rows (currently 3 tutorials sit under `foundations` and
-  // `dishcloths-homewares`). New autopilot fires route to the K-4 spec sub-
-  // cats above. autopilotEnabled stays false on these.
+  // rows. `scarves-shawls`, `hats`, `blankets` and `socks` were merged into
+  // their K-4 equivalents (scarf-cowl/shawl-wrap, hat, blanket, sock) by
+  // `scripts/knitting-merge-shelves.ts` and are pruned here so a re-seed
+  // cannot recreate them. `dishcloths-homewares`, `baby` and `garments` stay
+  // — Rebecca decides those. autopilotEnabled stays false on these.
   // ──────────────────────────────────────────────────────────────────────────
-  {
-    slug: 'scarves-shawls',
-    name: 'Scarves & shawls (legacy)',
-    description: 'Pre-K-4 catch-all for scarves and shawls. New rows route to scarf-cowl or shawl-wrap.',
-    order: 300,
-  },
-  {
-    slug: 'hats',
-    name: 'Hats (legacy)',
-    description: 'Pre-K-4 hats sub-cat. New rows route to hat.',
-    order: 310,
-  },
   {
     slug: 'dishcloths-homewares',
     name: 'Dishcloths & homewares (legacy)',
@@ -205,18 +201,6 @@ const SUB_CATEGORIES: SubCatSpec[] = [
     name: 'Baby (legacy)',
     description: 'Pre-K-4 baby catch-all. New rows route to the appropriate project-shape sub-cat.',
     order: 330,
-  },
-  {
-    slug: 'blankets',
-    name: 'Blankets (legacy)',
-    description: 'Pre-K-4 blankets sub-cat. New rows route to blanket.',
-    order: 340,
-  },
-  {
-    slug: 'socks',
-    name: 'Socks (legacy)',
-    description: 'Pre-K-4 socks sub-cat. New rows route to sock (autopilot off pending K-5).',
-    order: 350,
   },
   {
     slug: 'garments',
