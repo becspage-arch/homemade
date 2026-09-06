@@ -36,6 +36,8 @@ interface PatternLayoutProps {
     maxHours?: string
     hasBackstitch?: '1' | '0'
     hasFrenchKnots?: '1'
+    /** Stitchability band, 5 (Easy going) to 1 (Marathon). */
+    stitch?: string
     yarnWeight?: string
     // Free-text search scoped to this library + the cross-craft tag axes.
     q?: string
@@ -144,6 +146,9 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
   if (sp.hasBackstitch === '1') where.hasBackstitch = true
   if (sp.hasBackstitch === '0') where.hasBackstitch = false
   if (sp.hasFrenchKnots === '1') where.hasFrenchKnots = true
+  // Stitchability band. A stored 1-5 Int on the row, so it filters in SQL
+  // rather than in the post-fetch pass the colour range uses.
+  if (sp.stitch && /^[1-5]$/.test(sp.stitch)) where.stitchability = Number(sp.stitch)
   if (sp.maxHours) where.estimatedHours = { lte: Number(sp.maxHours) }
   if (sp.sub) where.subCategory = { slug: sp.sub, categoryId: category.id }
   if (!isCrochet && tagIds !== null) where.id = { in: tagIds }
@@ -224,6 +229,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
             estimatedHours: true,
             hasBackstitch: true,
             hasFrenchKnots: true,
+            stitchability: true,
             premium: true,
             fabricCountSuggested: true,
             designer: { select: { displayName: true, slug: true, isHouseDesigner: true } },
@@ -779,6 +785,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
                 estimatedHours: p.estimatedHours,
                 hasBackstitch: p.hasBackstitch,
                 hasFrenchKnots: p.hasFrenchKnots,
+                stitchability: p.stitchability,
                 // The card badge reads the single cross-craft rule: premium-
                 // flagged OR independent-designer content shows as premium.
                 premium: isPremiumContent({ premium: p.premium, designer: p.designer }),
@@ -804,6 +811,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
                 sort,
                 hasBackstitch: sp.hasBackstitch === '1',
                 hasFrenchKnots: sp.hasFrenchKnots === '1',
+                stitch: sp.stitch && /^[1-5]$/.test(sp.stitch) ? sp.stitch : null,
                 q: q || null,
                 occasion: sp.occasion ?? null,
                 season: sp.season ?? null,
