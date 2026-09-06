@@ -282,9 +282,62 @@ async function main(): Promise<void> {
 
   if (apply) {
     console.log('\n=== APPLY ===')
-    console.log('NOT IMPLEMENTED YET pending backlog conversion — see CONVERTED_SLUGS.')
-    // Deletion happens in a follow-up pass once every IDEA-* row has a
-    // corresponding backlog entry committed; see the task hand-off.
+    // Ground truth for "was this one converted" is the backlog itself, not
+    // the classifier above — once the conversion is committed, re-running
+    // classify() against the now-updated backlog makes almost every keeper
+    // read as "duplicate of an existing backlog idea" (true: it IS the
+    // backlog idea it was converted into), which is correct but not useful
+    // for the converted/junk split below. CROCHET_IDEA_BACKLOG's own
+    // `source.slug` is authoritative.
+    const convertedSlugs = new Set(
+      CROCHET_IDEA_BACKLOG.filter((i) => i.source?.kind === 'draft-tutorial').map((i) => i.source!.slug),
+    )
+    const convertedBuildable = new Set(
+      CROCHET_IDEA_BACKLOG.filter((i) => i.source?.kind === 'draft-tutorial' && i.buildable).map(
+        (i) => i.source!.slug,
+      ),
+    )
+
+    const toDelete = drafts // every one of the 959 leaves the table — Rebecca's decision
+    let convertedCount = 0
+    let convertedBuildableCount = 0
+    let junkCount = 0
+    for (const d of toDelete) {
+      if (convertedSlugs.has(d.slug)) {
+        convertedCount++
+        if (convertedBuildable.has(d.slug)) convertedBuildableCount++
+      } else {
+        junkCount++
+      }
+    }
+    console.log(
+      `About to delete ${toDelete.length} draft rows: ${convertedCount} converted to backlog entries ` +
+        `(${convertedBuildableCount} buildable, ${convertedCount - convertedBuildableCount} theme), ${junkCount} junk.`,
+    )
+
+    const ids = toDelete.map((d) => d.id)
+
+    // Drafts are never search-indexed (sync runs on publish, not on draft
+    // creation) — confirmed structurally, not assumed — so there is nothing
+    // to remove here. Best-effort per-row removeTutorialFromSearch calls for
+    // 959 rows that were never indexed would just be 959 wasted network
+    // round trips (and, per xs-cull.ts, the Typesense SDK cannot even reach
+    // Typesense from a cloud sandbox). A server-side reindex job rebuilds
+    // from the DB regardless, so any surprise stragglers fall out on the
+    // next one.
+    console.log('Search: drafts are never indexed — skipping per-row removal (see comment).')
+
+    await prisma.tutorial.deleteMany({ where: { id: { in: ids } } })
+
+    const category = await prisma.category.findFirst({ where: { slug: 'crochet' } })
+    const remaining = await prisma.tutorial.count({
+      where: { categoryId: category!.id, type: 'PATTERN', status: 'DRAFT' },
+    })
+    console.log(`Deleted ${ids.length} rows. Crochet DRAFT PATTERN tutorials remaining: ${remaining}.`)
+    if (remaining !== 0) {
+      console.error('EXPECTED 0 REMAINING — investigate before considering this done.')
+      process.exitCode = 1
+    }
   } else {
     console.log('\nDry run only — nothing changed. Re-run with --apply once Rebecca has signed off.')
   }
