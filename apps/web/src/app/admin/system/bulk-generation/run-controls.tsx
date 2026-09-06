@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useTransition } from 'react'
-import { triggerBulkBatch, setBulkAutopilot, setBulkSourceMode, type BulkCraft } from './actions'
+import { triggerBulkBatch, setBulkAutopilot, setBulkSourceMode, setBulkGateMode, setPhotoGateMode, type BulkCraft } from './actions'
 
 const inputStyle: React.CSSProperties = {
   fontFamily: 'var(--font-lora)',
@@ -156,6 +156,94 @@ export function SourceModeToggle({ mode, locked }: { mode: string; locked?: stri
         }}
       >
         {pending ? 'Saving…' : proAll ? 'Back to schnell' : 'Use Flux Pro'}
+      </button>
+      {(error || locked) && (
+        <span style={{ fontFamily: 'var(--font-lora)', fontSize: 12, color: 'var(--color-warm-taupe)' }}>
+          {error ?? locked}
+        </span>
+      )}
+    </div>
+  )
+}
+
+/**
+ * WHO JUDGES the cross-stitch candidates. Sits beside the autopilot switch
+ * because the two decide together what a firing costs.
+ *
+ * In "Judged in Claude sessions (no API)" the cron path spends nothing but Fal:
+ * the planner samples the curated pool, the vision gate is never called, and
+ * every idea is parked UNLISTED for a scheduled Claude session to keep, reject
+ * or re-roll. "Judged by the API gate" is the earlier behaviour, a per-candidate
+ * Anthropic call that publishes the gems itself. DB-backed: it applies to the
+ * next firing, no deploy.
+ */
+export function GateModeToggle({ mode, locked }: { mode: string; locked?: string }) {
+  const [current, setCurrent] = useState(mode)
+  const [pending, startTransition] = useTransition()
+  const [error, setError] = useState<string | null>(null)
+  const sessions = current !== 'api'
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+      <span style={{ fontFamily: 'var(--font-lora)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: sessions ? 'var(--color-sage)' : 'var(--color-warm-taupe)' }}>
+        {sessions ? 'Judged in Claude sessions (no API)' : 'Judged by the API gate'}
+      </span>
+      <button
+        type="button"
+        className={sessions ? 'admin-btn secondary' : 'admin-btn'}
+        disabled={pending || Boolean(locked)}
+        onClick={() => {
+          setError(null)
+          const next = sessions ? 'api' : 'candidates'
+          startTransition(async () => {
+            const result = await setBulkGateMode(next)
+            if (result.ok) setCurrent(result.mode)
+            else setError(result.error)
+          })
+        }}
+      >
+        {pending ? 'Saving…' : sessions ? 'Use the API gate' : 'Judge in sessions'}
+      </button>
+      {(error || locked) && (
+        <span style={{ fontFamily: 'var(--font-lora)', fontSize: 12, color: 'var(--color-warm-taupe)' }}>
+          {error ?? locked}
+        </span>
+      )}
+    </div>
+  )
+}
+
+/**
+ * WHO JUDGES a member's finished-project photo. 'api' decides on upload, so the
+ * member sees an answer straight away; 'routine' leaves it pending behind
+ * "Checking your photo" for the scheduled session to judge.
+ */
+export function PhotoGateModeToggle({ mode, locked }: { mode: string; locked?: string }) {
+  const [current, setCurrent] = useState(mode)
+  const [pending, startTransition] = useTransition()
+  const [error, setError] = useState<string | null>(null)
+  const onUpload = current !== 'routine'
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+      <span style={{ fontFamily: 'var(--font-lora)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: onUpload ? 'var(--color-sage)' : 'var(--color-warm-taupe)' }}>
+        Maker photos — {onUpload ? 'checked on upload (API)' : 'checked by the routine'}
+      </span>
+      <button
+        type="button"
+        className={onUpload ? 'admin-btn secondary' : 'admin-btn'}
+        disabled={pending || Boolean(locked)}
+        onClick={() => {
+          setError(null)
+          const next = onUpload ? 'routine' : 'api'
+          startTransition(async () => {
+            const result = await setPhotoGateMode(next)
+            if (result.ok) setCurrent(result.mode)
+            else setError(result.error)
+          })
+        }}
+      >
+        {pending ? 'Saving…' : onUpload ? 'Leave them for the routine' : 'Check on upload'}
       </button>
       {(error || locked) && (
         <span style={{ fontFamily: 'var(--font-lora)', fontSize: 12, color: 'var(--color-warm-taupe)' }}>

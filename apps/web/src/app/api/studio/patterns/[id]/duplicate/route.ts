@@ -6,6 +6,7 @@ import {
   Visibility,
 } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { isLibraryPattern } from '@/lib/studio/library-visibility'
 
 export const dynamic = 'force-dynamic'
 
@@ -20,7 +21,7 @@ export async function POST(_req: Request, ctx: Ctx) {
   const { id } = await ctx.params
   const source = await prisma.pattern.findUnique({ where: { id } })
   if (!source) return NextResponse.json({ error: 'Not found' }, { status: 404 })
-  const isLibrary = source.ownerUserId === null && source.visibility !== Visibility.PRIVATE
+  const isLibrary = isLibraryPattern(source)
   if (source.ownerUserId !== user.id && !isLibrary) {
     return NextResponse.json({ error: 'Not authorised' }, { status: 403 })
   }

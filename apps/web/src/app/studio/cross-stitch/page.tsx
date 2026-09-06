@@ -6,6 +6,7 @@ import { StudioShell } from '@/components/studio/shell/StudioShell'
 import { StudioAuthGate } from '@/components/premium/StudioAuthGate'
 import { StudioPremiumGate } from '@/components/premium/StudioPremiumGate'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
+import { isLibraryPattern } from '@/lib/studio/library-visibility'
 
 export const dynamic = 'force-dynamic'
 
@@ -83,9 +84,10 @@ export default async function CrossStitchStudioPage({ searchParams }: PageProps)
     })
     if (row) {
       const isOwned = user && row.ownerUserId === user.id
-      const isLibrary =
-        row.ownerUserId === null &&
-        (row.visibility === Visibility.PUBLIC || row.visibility === Visibility.UNLISTED)
+      // PUBLIC only. An UNLISTED house row is either an un-judged autopilot
+      // candidate or an admin review-queue pattern; neither is something a
+      // customer may open in the Studio just by knowing its id.
+      const isLibrary = isLibraryPattern(row)
       // Premium-content access gate: opening a library premium (independent-
       // designer) pattern in the Studio needs premium. Owners always reach
       // their own patterns; free + house library patterns open straight in.

@@ -3,10 +3,10 @@ import {
   prisma,
   parsePatternData,
   estimateSkeinCount,
-  Visibility,
 } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { hasPremium } from '@/lib/entitlements'
+import { isLibraryPattern } from '@/lib/studio/library-visibility'
 
 export const dynamic = 'force-dynamic'
 
@@ -48,7 +48,7 @@ export async function GET(_req: Request, ctx: Ctx) {
   })
   if (!row) return new NextResponse('Not found', { status: 404 })
 
-  const isLibrary = row.ownerUserId === null && row.visibility !== Visibility.PRIVATE
+  const isLibrary = isLibraryPattern(row)
   if (!isLibrary && row.ownerUserId !== user!.id) {
     return new NextResponse('Not authorised', { status: 403 })
   }

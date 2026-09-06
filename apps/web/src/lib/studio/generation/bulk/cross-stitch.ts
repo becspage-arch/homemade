@@ -390,12 +390,28 @@ export interface PublishContext {
   attempt?: number
   /** The repair tweak in force on that attempt. */
   tweak?: CandidateTweak
+  /**
+   * PARK IT INSTEAD OF PUBLISHING IT — the candidates gate mode.
+   *
+   * The row is written UNLISTED with `candidateStatus 'PENDING'`, no
+   * `publishedAt`, and NO search sync: it is a candidate waiting for a Claude
+   * Code session to look at it, not a pattern anyone can reach. Everything else
+   * about the row is identical to a published gem, so a `keep` later is a
+   * visibility flip and one search sync rather than a re-publish.
+   */
+  park?: boolean
+  /** How many times this idea has already been re-rolled (candidates mode). */
+  rerollCount?: number
 }
 
 /**
  * Publish a gate-passed gem to the live cross-stitch catalogue: house designer,
  * real shelf, PUBLIC Pattern, persisted beauty thumbnail, search sync. Idempotent
  * on slug (the planner mints unique slugs, so this creates).
+ *
+ * With `ctx.park` it writes the SAME row UNLISTED and `candidateStatus 'PENDING'`
+ * instead, with no `publishedAt` and no search sync — the candidates gate mode,
+ * where a Claude Code session rather than a paid vision gate decides what ships.
  *
  * SHELF DISCIPLINE: every published pattern gets exactly one shelf from the
  * canonical list in `categories.ts`, and this function refuses anything else.
@@ -430,6 +446,7 @@ export async function publishCrossStitchGem(
   const data = candidate.data
   const m = computePatternMetrics(data)
   const name = titleFromSubject(brief.subject)
+  const park = ctx?.park === true
   const common = {
     name,
     description: `${name}, an original Homemade cross-stitch design.`,
@@ -437,8 +454,12 @@ export async function publishCrossStitchGem(
     designerId: designer.id,
     subCategoryId: sub.id,
     difficulty: difficultyFor(m.colourCount),
-    visibility: Visibility.PUBLIC,
-    publishedAt: new Date(),
+    // A parked candidate is UNLISTED and has never been published: it reaches no
+    // public surface, no sitemap, no search index and no public count until a
+    // session keeps it.
+    visibility: park ? Visibility.UNLISTED : Visibility.PUBLIC,
+    publishedAt: park ? null : new Date(),
+    ...(park ? { candidateStatus: 'PENDING' as const, rerollCount: ctx?.rerollCount ?? 0 } : {}),
     // The cross-stitch hero IS the deterministic beauty chart render (persisted as
     // thumbnailMediaId) — the exact pattern, and the correct final hero by design
     // (there is no photoreal AI hero, and none is wanted). SUCCESS is the honest
@@ -506,7 +527,7 @@ export async function publishCrossStitchGem(
       gate: { verdict: ctx?.gate.verdict ?? 'keep', reasons: ctx?.gate.reasons ?? [] },
       bulkRunId: ctx?.bulkRunId ?? null,
       credit: candidate.credit,
-      publishedBy: 'bulk-cross-stitch',
+      publishedBy: park ? 'bulk-cross-stitch-candidate' : 'bulk-cross-stitch',
       at: new Date().toISOString(),
     } as unknown as object,
   }
@@ -535,11 +556,17 @@ export async function publishCrossStitchGem(
   })
   await prisma.pattern.update({ where: { id: pattern.id }, data: { thumbnailMediaId: media.id } })
 
-  // Search sync (dynamic import mirrors the retired publish script).
-  const { buildPatternDoc } = await import('@homemade/db/search-docs')
-  const { syncPatternDoc } = await import('@homemade/search')
-  const doc = await buildPatternDoc(pattern.id)
-  if (doc) await syncPatternDoc(doc)
+  // NO SEARCH SYNC FOR A CANDIDATE. `buildPatternDoc` builds a doc for whatever
+  // id it is handed — it does not check visibility — so syncing here would put
+  // an un-judged candidate straight into the public index. A kept candidate is
+  // synced by the judging CLI at the moment it goes PUBLIC.
+  if (!park) {
+    // Search sync (dynamic import mirrors the retired publish script).
+    const { buildPatternDoc } = await import('@homemade/db/search-docs')
+    const { syncPatternDoc } = await import('@homemade/search')
+    const doc = await buildPatternDoc(pattern.id)
+    if (doc) await syncPatternDoc(doc)
+  }
 
   return { patternId: pattern.id, slug: brief.slug, publicUrl }
 }

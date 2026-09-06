@@ -80,3 +80,110 @@ export async function autopilotStates(): Promise<Record<Craft, boolean>> {
     crochet: m.get('crochet') ?? false,
   }
 }
+
+/**
+ * ── THE GATE MODE ──────────────────────────────────────────────────────────
+ *
+ * WHO JUDGES a cross-stitch candidate, and therefore whether the cron path
+ * spends anything on a paid model at all.
+ *
+ * 'candidates' — the default from 6 September 2026. Nothing on the cron path
+ *   makes a single call through `anthropic.ts`: the planner runs the pool
+ *   sampler only, `gateConfigured()` is not required, and `visionGate` is never
+ *   called. Each idea gets one generation, is checked by the two deterministic
+ *   guards (bare fabric, pale) and the duplicate guard, and is then PARKED as an
+ *   UNLISTED `Pattern` row with `candidateStatus 'PENDING'`. A Claude Code
+ *   session on Rebecca's Max plan looks at the contact sheets and decides, with
+ *   `apps/web/scripts/xs-candidates.ts`. Per-firing cost is Fal only.
+ * 'api'        — the earlier behaviour, kept working for a deliberate switch
+ *   back: a per-candidate Anthropic vision gate judges every render and
+ *   publishes the gems itself.
+ *
+ * Nothing ships un-judged either way. In candidates mode the judgement simply
+ * happens later, by a person or a session, and until it does the row is UNLISTED
+ * and reaches no public surface and no public count.
+ */
+export const XS_GATE_MODES = ['candidates', 'api'] as const
+export type XsGateMode = (typeof XS_GATE_MODES)[number]
+
+/** What the pipeline does when nothing has said otherwise. */
+export const DEFAULT_XS_GATE_MODE: XsGateMode = 'candidates'
+
+/** Coerce anything (env string, DB column, admin form field) to a real mode. */
+export function coerceGateMode(raw: unknown): XsGateMode {
+  return XS_GATE_MODES.includes(raw as XsGateMode) ? (raw as XsGateMode) : DEFAULT_XS_GATE_MODE
+}
+
+/**
+ * The gate mode in force. The env var wins when it is set — an ops override that
+ * cannot be flipped away by accident from the admin page — otherwise the DB
+ * column, which is what the admin toggle writes.
+ *
+ * Falls back to the DEFAULT on any DB error rather than throwing: the safe
+ * answer to "can I reach the switch" is the mode that spends nothing.
+ */
+export async function crossStitchGateMode(): Promise<XsGateMode> {
+  const env = process.env.BULK_XS_GATE_MODE
+  if (env && XS_GATE_MODES.includes(env as XsGateMode)) return env as XsGateMode
+  const row = await prisma.bulkAutopilotState
+    .findUnique({ where: { craft: 'cross-stitch' }, select: { gateMode: true } })
+    .catch(() => null)
+  return coerceGateMode(row?.gateMode)
+}
+
+/** Set the cross-stitch gate mode (the admin toggle). */
+export async function setCrossStitchGateMode(mode: XsGateMode, userId?: string): Promise<void> {
+  await prisma.bulkAutopilotState.upsert({
+    where: { craft: 'cross-stitch' },
+    create: { craft: 'cross-stitch', enabled: false, gateMode: mode, updatedById: userId ?? null },
+    update: { gateMode: mode, updatedById: userId ?? null },
+  })
+}
+
+/**
+ * ── THE MAKER-PHOTO GATE MODE ──────────────────────────────────────────────
+ *
+ * WHO JUDGES a member's finished-project photo when they upload it.
+ *
+ * 'api'     — the default (Rebecca's call, 6 September 2026): the photo gate
+ *   runs on upload, so the member sees a decision straight away rather than
+ *   waiting hours for a scheduled session. This is the one place a per-token
+ *   call is worth it, because a person is standing there.
+ * 'routine' — the upload stays PENDING behind "Checking your photo" and the
+ *   cross-stitch routine's photo step judges the queue with
+ *   `apps/web/scripts/maker-photos-judge.ts`. Zero API spend, hours of latency.
+ *
+ * Kept on the `BulkAutopilotState` row with craft 'maker-photos' — the same
+ * DB-backed, no-redeploy switch shape as the autopilot and the source mode.
+ */
+export const PHOTO_GATE_MODES = ['api', 'routine'] as const
+export type PhotoGateMode = (typeof PHOTO_GATE_MODES)[number]
+
+/** A member waiting for a decision beats a saved fraction of a penny. */
+export const DEFAULT_PHOTO_GATE_MODE: PhotoGateMode = 'api'
+
+/** The `BulkAutopilotState` key the photo switch lives under. */
+export const PHOTO_GATE_STATE_KEY = 'maker-photos'
+
+export function coercePhotoGateMode(raw: unknown): PhotoGateMode {
+  return PHOTO_GATE_MODES.includes(raw as PhotoGateMode) ? (raw as PhotoGateMode) : DEFAULT_PHOTO_GATE_MODE
+}
+
+/** The photo gate mode in force. `MAKER_PHOTO_GATE_MODE` wins when set. */
+export async function makerPhotoGateMode(): Promise<PhotoGateMode> {
+  const env = process.env.MAKER_PHOTO_GATE_MODE
+  if (env && PHOTO_GATE_MODES.includes(env as PhotoGateMode)) return env as PhotoGateMode
+  const row = await prisma.bulkAutopilotState
+    .findUnique({ where: { craft: PHOTO_GATE_STATE_KEY }, select: { photoGateMode: true } })
+    .catch(() => null)
+  return coercePhotoGateMode(row?.photoGateMode)
+}
+
+/** Set the maker-photo gate mode (the admin toggle). */
+export async function setMakerPhotoGateMode(mode: PhotoGateMode, userId?: string): Promise<void> {
+  await prisma.bulkAutopilotState.upsert({
+    where: { craft: PHOTO_GATE_STATE_KEY },
+    create: { craft: PHOTO_GATE_STATE_KEY, enabled: false, photoGateMode: mode, updatedById: userId ?? null },
+    update: { photoGateMode: mode, updatedById: userId ?? null },
+  })
+}

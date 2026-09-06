@@ -3,6 +3,7 @@ import { prisma, MediaType, MediaStatus, UserPhotoStatus, PatternType } from '@h
 import { getCurrentDbUser } from '@/lib/auth'
 import { r2Upload } from '@/lib/r2'
 import { USER_SUBMISSION_ENABLED } from '@/lib/config'
+import { gateMakerPhoto } from '@/lib/maker-photo-gate'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -103,5 +104,21 @@ export async function POST(request: Request): Promise<Response> {
     },
   })
 
-  return NextResponse.json({ photoId: photo.id })
+  // The photo gate. In 'api' mode (the default) the member gets an answer here,
+  // while they are still standing there; in 'routine' mode the photo stays
+  // PENDING behind "Checking your photo" and a scheduled session judges it. The
+  // gate never throws — a photo it could not judge simply stays PENDING.
+  const gate = await gateMakerPhoto({
+    photoId: photo.id,
+    bytes,
+    mimeType: contentType,
+    caption,
+  })
+
+  return NextResponse.json({
+    photoId: photo.id,
+    status: gate.status,
+    message: gate.message,
+    ...(gate.status === UserPhotoStatus.REJECTED ? { reasons: gate.reasons } : {}),
+  })
 }
