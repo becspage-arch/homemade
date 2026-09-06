@@ -38,7 +38,7 @@ const APPLY = process.argv.includes('--apply')
 
 /** Cross-stitch category description. */
 const CATEGORY_DESCRIPTION =
-  'Animals, florals, landscapes, fantasy and fairytale, pop art portraits, monochrome studies, seasonal, quotes and sayings, and cosy scenes patterns.'
+  'Animals, florals, landscapes, fantasy and fairytale, pop art portraits, monochrome studies, seasonal pieces, celestial, witchy and gothic, food and drink, nursery, quotes and sayings, and cosy scenes.'
 
 /** Sub-category slug -> new description. */
 const SUB_CATEGORY_DESCRIPTIONS: Record<string, string> = {
@@ -61,6 +61,8 @@ const SUB_CATEGORY_DESCRIPTIONS: Record<string, string> = {
   retro: 'Roller skates and other retro pieces.',
   scenes: 'Cottages, tea shops, bookshops, seaside villages, and cosy high streets.',
   portraits: 'Pop-art glamour, retro fashion, and stylised portraits.',
+  // Created by the bulk publisher on its first nursery gem (2026-09-06).
+  nursery: 'Sailboats, sleepy animals, moons and stars, and soft pieces for a baby\'s room.',
 }
 
 async function main(): Promise<void> {
