@@ -30,6 +30,8 @@ export async function GET(req: Request, ctx: Ctx) {
   const url = new URL(req.url)
   const paper = parsePaper(url.searchParams.get('paper'))
   const monochrome = url.searchParams.get('monochrome') === '1'
+  // Large print: bigger cells, fewer per page. More paper, less squinting.
+  const largePrint = url.searchParams.get('large') === '1'
 
   // Printing / downloading any PDF is a premium action across every category.
   const user = await getCurrentDbUser()
@@ -83,11 +85,12 @@ export async function GET(req: Request, ctx: Ctx) {
   const pdf = await buildPatternPdf(data, row.name, {
     paper,
     monochrome,
+    largePrint,
     designerName: row.designer?.displayName ?? null,
     heroPhoto,
   })
 
-  const filename = `${slugify(row.name)}-${paper}${monochrome ? '-bw' : ''}.pdf`
+  const filename = `${slugify(row.name)}-${paper}${largePrint ? '-large-print' : ''}${monochrome ? '-bw' : ''}.pdf`
   return new NextResponse(Buffer.from(pdf) as unknown as BodyInit, {
     headers: {
       'content-type': 'application/pdf',

@@ -21,6 +21,7 @@ import { PatternSaveButton } from '@/components/public/pattern-save-button'
 import { PatternPlanButton } from '@/components/public/pattern-plan-button'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import { FabricCalculator } from './fabric-calculator'
+import { PdfDownload } from './pdf-download'
 import './pattern-detail.css'
 
 export const dynamic = 'force-dynamic'
@@ -235,9 +236,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
                 Non-premium readers get a link to upgrade; the route enforces it
                 server-side too. */}
             {premium ? (
-              <a href={`/api/studio/patterns/${row.id}/pdf?paper=${paper}`} className="pattern-detail-action ghost">
-                Download PDF ({paper === 'letter' ? 'US Letter' : 'A4'})
-              </a>
+              <PdfDownload patternId={row.id} defaultPaper={paper} />
             ) : (
               <Link href="/premium" className="pattern-detail-action ghost">
                 Download PDF · Premium
