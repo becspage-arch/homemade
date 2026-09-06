@@ -1002,10 +1002,15 @@ function describe(
   shadeNames: Record<string, string>,
 ): string {
   const shades = Object.keys(palette).map((k) => shadeNames[k]!.toLowerCase())
+  // A tapestry showpiece can carry two dozen yarns, and listing all of them in
+  // the description reads as a spreadsheet. Past six, name the first few and
+  // leave the rest to the yarn list on the page.
   const colourLine =
     shades.length === 1
       ? `Worked in one shade, ${shades[0]}.`
-      : `Worked in ${shades.length} shades: ${shades.slice(0, -1).join(', ')} and ${shades[shades.length - 1]}.`
+      : shades.length <= 6
+        ? `Worked in ${shades.length} shades: ${shades.slice(0, -1).join(', ')} and ${shades[shades.length - 1]}.`
+        : `Worked in ${shades.length} shades, led by ${shades.slice(0, 3).join(', ')}.`
   const sizeLine =
     candidate.kind === 'amigurumi'
       ? `The finished toy stands about ${CM(candidate.settledMm.height)} cm tall.`

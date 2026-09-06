@@ -512,6 +512,9 @@ export async function runCrochetBatch(count: number, step: StepRunner = inlineSt
     return planCrochetBriefs(count, ctx)
   })
   base.plannerMode = PLANNER_MODE
+  // For crochet these are the same number: a brief the planner model wrote is
+  // by definition one it dressed, because constrained mode is the only mode
+  // that produces one.
   base.dressedBriefs = modelAuthoredCount(briefs)
   const keptSubjects: string[] = []
 
@@ -570,7 +573,7 @@ export async function runCrochetBatch(count: number, step: StepRunner = inlineSt
     }
   }
 
-  base.line = summaryLine(base)
+  base.line = summaryLine({ ...base, modelBriefs: base.dressedBriefs })
   return base
 }
 
