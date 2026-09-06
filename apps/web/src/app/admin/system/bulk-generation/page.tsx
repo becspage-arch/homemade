@@ -3,7 +3,7 @@ import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import { anthropicConfigured } from '@/lib/anthropic'
 import { PATTERN_CATEGORIES, CROSS_STITCH_SHELVES, CROCHET_SHELVES } from '@/lib/studio/generation/categories'
-import { autopilotStates } from '@/lib/studio/generation/bulk/autopilot-state'
+import { autopilotStates, crossStitchSourceMode } from '@/lib/studio/generation/bulk/autopilot-state'
 import { liveShelfCounts } from '@/lib/studio/generation/bulk/dedupe-guard'
 import { liveCrochetShelfCounts } from '@/lib/studio/generation/bulk/crochet-dedupe'
 import { shelfIsBuildable } from '@/lib/studio/generation/bulk/crochet-forms'
@@ -20,7 +20,7 @@ import {
   CROCHET_DAILY_ILLUSTRATION_CAP,
   CROCHET_RENDER_UNIT_COST,
 } from '@/lib/studio/generation/bulk/spend-guard'
-import { RunBatchControl, AutopilotToggle } from './run-controls'
+import { RunBatchControl, AutopilotToggle, SourceModeToggle } from './run-controls'
 import type { BulkCraft } from './actions'
 
 export const dynamic = 'force-dynamic'
@@ -76,6 +76,7 @@ interface RunRow {
   dressedBriefs: number
   errors: number
   killReasons: string[]
+  rejectSamples: unknown
   startedAt: Date
   updatedAt: Date
   finishedAt: Date | null
@@ -111,6 +112,59 @@ function runLine(r: RunRow): string {
   const dressed =
     r.craft === 'cross-stitch' && r.requested > 0 ? ` · ${r.dressedBriefs}/${r.requested} re-dressed` : ''
   return `[${tag}] ${r.craft}: ${r.published} published, ${r.culled} culled, ${r.duplicates} duplicates, ${r.skipped} skipped, ${r.repaired} repairs, ${r.generations} gens (${r.proGenerations} Pro), ${r.errors} errors (of ${r.requested})${authored}${pale}${props}${clashes}${dressed}${inflight}${stalled}${killNote}`
+}
+
+/** One kept render from a run — what the gate threw away. */
+interface RejectSampleRow {
+  slug: string
+  attempt: number
+  url: string
+  verdict: string
+  reasons: string[]
+  lane: string
+  shelf: string
+  colours: number
+}
+
+/**
+ * The reject samples on a run, defensively read: the column is Json, written by
+ * a different deploy than the one rendering it, so anything shaped wrong is
+ * simply not shown.
+ */
+function rejectSamplesOf(raw: unknown): RejectSampleRow[] {
+  if (!Array.isArray(raw)) return []
+  return raw.filter(
+    (r): r is RejectSampleRow =>
+      Boolean(r) && typeof r === 'object' && typeof (r as RejectSampleRow).url === 'string' && typeof (r as RejectSampleRow).slug === 'string',
+  )
+}
+
+/**
+ * WHAT THE GATE KILLED — a strip of the run's rejected renders, reason on hover.
+ *
+ * A cull used to leave one sentence behind, which is no way to tell a correct
+ * kill from an over-tight guard. Small on purpose: it is a glance, and the
+ * contact sheet (apps/web/scripts/xs-rejects-sheet.ts) is the close look.
+ */
+function RejectStrip({ samples }: { samples: RejectSampleRow[] }) {
+  if (!samples.length) return null
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, margin: '4px 0 8px' }}>
+      {samples.map((s) => (
+        <a
+          key={`${s.slug}-a${s.attempt}`}
+          href={s.url}
+          target="_blank"
+          rel="noreferrer"
+          title={`${s.slug} · attempt ${s.attempt} · ${s.lane}/${s.shelf} · ${s.colours} colours · ${s.verdict} — ${s.reasons.join('; ')}`}
+          style={{ display: 'block', lineHeight: 0, border: '0.5px solid var(--color-warm-taupe)', borderRadius: 3, overflow: 'hidden' }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={s.url} alt={`${s.slug} — ${s.verdict}`} width={54} height={54} style={{ objectFit: 'cover', display: 'block' }} />
+        </a>
+      ))}
+    </div>
+  )
 }
 
 /** A run still open long after its counters stopped moving. */
@@ -186,6 +240,8 @@ function CraftCard({
   published,
   target,
   autopilotOn,
+  sourceMode,
+  sourceModeLocked,
   disabled,
   disabledReason,
   craft,
@@ -198,6 +254,8 @@ function CraftCard({
   published: number
   target: number
   autopilotOn: boolean
+  sourceMode?: string
+  sourceModeLocked?: string
   disabled: boolean
   disabledReason?: string
   craft: BulkCraft
@@ -270,6 +328,7 @@ function CraftCard({
       {extraNote && <p style={{ ...LORA_SM, margin: 0, lineHeight: 1.5 }}>{extraNote}</p>}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 2 }}>
         <AutopilotToggle craft={craft} enabled={autopilotOn} />
+        {sourceMode && <SourceModeToggle mode={sourceMode} locked={sourceModeLocked} />}
         <RunBatchControl craft={craft} defaultCount={defaultCount} disabled={disabled} disabledReason={disabledReason} />
       </div>
     </article>
@@ -305,7 +364,7 @@ export default async function AdminBulkGenerationPage() {
         culled: true, duplicates: true, skipped: true, repaired: true, generations: true,
         proGenerations: true, modelBriefs: true, paleSkips: true, propRejects: true,
         collisionRejects: true, dressedBriefs: true, errors: true, killReasons: true,
-        startedAt: true, updatedAt: true,
+        rejectSamples: true, startedAt: true, updatedAt: true,
         finishedAt: true, skipReason: true,
       },
     }),
@@ -362,6 +421,7 @@ export default async function AdminBulkGenerationPage() {
   const gateWired = anthropicConfigured()
   const renderWired = process.env.LOOM_RENDER === 'fargate'
   const autopilot = await autopilotStates()
+  const xsSourceMode = await crossStitchSourceMode().catch(() => 'schnell')
   const xsAutopilot = autopilot['cross-stitch']
   const nwAutopilot = autopilot.needlework
   const crAutopilot = autopilot.crochet
@@ -431,6 +491,10 @@ export default async function AdminBulkGenerationPage() {
             published={xsCount}
             target={XS_TARGET}
             autopilotOn={xsAutopilot}
+            sourceMode={xsSourceMode}
+            sourceModeLocked={
+              process.env.BULK_XS_SOURCE_MODE ? `Pinned to “${process.env.BULK_XS_SOURCE_MODE}” by BULK_XS_SOURCE_MODE.` : undefined
+            }
             disabled={xsDisabled}
             disabledReason={gateWired ? undefined : 'Gate not wired — a batch would publish nothing.'}
             craft="cross-stitch"
@@ -552,6 +616,7 @@ export default async function AdminBulkGenerationPage() {
             {recent.map((r) => (
               <li key={r.id} style={{ fontFamily: 'var(--font-lora)', fontSize: 13, color: 'var(--color-espresso)' }}>
                 <span style={{ color: 'var(--color-warm-taupe)' }}>{relativeTime(new Date(r.startedAt))}</span> — {runLine(r)}
+                <RejectStrip samples={rejectSamplesOf(r.rejectSamples)} />
               </li>
             ))}
           </ul>

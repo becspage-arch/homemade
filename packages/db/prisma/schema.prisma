@@ -3532,6 +3532,11 @@ model CategoryMagazinePick {
 model BulkAutopilotState {
   craft       String   @id // 'cross-stitch' | 'needlework'
   enabled     Boolean  @default(false)
+  /// Which image model the cross-stitch bulk pipeline draws with:
+  /// 'schnell' (fast + cheap, one gem in ~14 attempts) or 'pro-all' (Flux 1.1
+  /// Pro in every size lane, ~2 in 5). Here rather than in env so it can be
+  /// flipped from the admin page without a deploy.
+  sourceMode  String   @default("schnell")
   updatedById String?
   updatedAt   DateTime @default(now()) @updatedAt
 }
@@ -3587,6 +3592,13 @@ model BulkRun {
   gemSlugs    String[] @default([])
   /// Short gate reasons behind culls — feeds the panel's "why did it dip" view.
   killReasons String[] @default([])
+  /// WHAT THE GATE KILLED. Up to 20 rows of
+  /// `{ slug, attempt, url, verdict, reasons, lane, shelf, colours }` — one per
+  /// terminal cull and per pale skip, each pointing at the render kept under
+  /// `bulk-rejects/<runId>/` in R2. Culled candidates used to leave nothing
+  /// behind at all, so nobody could tell a correct kill from an over-tight guard,
+  /// and the pale floor could only ever be calibrated against work that shipped.
+  rejectSamples Json   @default("[]")
   triggeredById String?
   startedAt   DateTime @default(now())
   /// Set by the run finaliser once every dispatched idea has reached a terminal

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useTransition } from 'react'
-import { triggerBulkBatch, setBulkAutopilot, type BulkCraft } from './actions'
+import { triggerBulkBatch, setBulkAutopilot, setBulkSourceMode, type BulkCraft } from './actions'
 
 const inputStyle: React.CSSProperties = {
   fontFamily: 'var(--font-lora)',
@@ -114,6 +114,52 @@ export function AutopilotToggle({
       {(error || (disabled && disabledReason)) && (
         <span style={{ fontFamily: 'var(--font-lora)', fontSize: 12, color: 'var(--color-warm-taupe)' }}>
           {error ?? disabledReason}
+        </span>
+      )}
+    </div>
+  )
+}
+
+/**
+ * The source-model switch for cross-stitch: schnell everywhere (today's
+ * behaviour) or Flux 1.1 Pro in every size lane. The dense showpiece lane is
+ * always Pro either way — this is about the small and mid lanes, which is where
+ * the yield is lost.
+ *
+ * Pro is roughly ten times the price per image and keeps roughly five times as
+ * many attempts, so the cost per GEM is similar and the catalogue actually
+ * grows. DB-backed: it applies to the next idea, no deploy.
+ */
+export function SourceModeToggle({ mode, locked }: { mode: string; locked?: string }) {
+  const [current, setCurrent] = useState(mode)
+  const [pending, startTransition] = useTransition()
+  const [error, setError] = useState<string | null>(null)
+  const proAll = current === 'pro-all'
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+      <span style={{ fontFamily: 'var(--font-lora)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: proAll ? 'var(--color-sage)' : 'var(--color-warm-taupe)' }}>
+        Draw with Flux Pro for every size — {proAll ? 'on' : 'off'}
+      </span>
+      <button
+        type="button"
+        className={proAll ? 'admin-btn secondary' : 'admin-btn'}
+        disabled={pending || Boolean(locked)}
+        onClick={() => {
+          setError(null)
+          const next = proAll ? 'schnell' : 'pro-all'
+          startTransition(async () => {
+            const result = await setBulkSourceMode(next)
+            if (result.ok) setCurrent(result.mode)
+            else setError(result.error)
+          })
+        }}
+      >
+        {pending ? 'Saving…' : proAll ? 'Back to schnell' : 'Use Flux Pro'}
+      </button>
+      {(error || locked) && (
+        <span style={{ fontFamily: 'var(--font-lora)', fontSize: 12, color: 'var(--color-warm-taupe)' }}>
+          {error ?? locked}
         </span>
       )}
     </div>

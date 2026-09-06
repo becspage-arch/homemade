@@ -24,6 +24,7 @@
  */
 
 import { singulariseWord, keyJaccard } from './subject-key'
+import { isTextRiskSubject, TEXT_RISK_LANES } from './subject-pool'
 
 // ───────────────────────────── the prop filter ─────────────────────────────
 
@@ -348,6 +349,43 @@ export function matchExampleByHead(subject: string, examples: readonly string[])
   return null
 }
 
+// ─────────────────────── the text-risk lane rule ───────────────────────
+
+/**
+ * Hold a batch to the text-risk rule: a subject that invites lettering may only
+ * be built in the `dense` lane, a batch has exactly one dense slot, and a batch
+ * too small to carry a dense piece has no room for one at all.
+ *
+ * So: at most ONE text-risk brief survives, and only when `wantDense`. The rest
+ * are dropped rather than demoted — the September haberdashery window died in
+ * the lane a demotion would have put it in — and the caller refills the hole
+ * from the pool, which never samples a text-risk subject.
+ *
+ * Pure and order-stable: the FIRST text-risk brief is the one that survives, so
+ * re-running this never changes what it already kept.
+ */
+export function capTextRiskBriefs<T extends { subject: string }>(
+  briefs: T[],
+  opts: { wantDense: boolean },
+): { kept: T[]; dropped: T[] } {
+  const kept: T[] = []
+  const dropped: T[] = []
+  let taken = 0
+  for (const b of briefs) {
+    if (!isTextRiskSubject(b.subject)) {
+      kept.push(b)
+      continue
+    }
+    if (opts.wantDense && taken === 0) {
+      taken++
+      kept.push(b)
+      continue
+    }
+    dropped.push(b)
+  }
+  return { kept, dropped }
+}
+
 // ──────────────────────────── the one entry point ────────────────────────────
 
 /** Why a brief did not survive the post-filter. */
@@ -412,10 +450,17 @@ export interface ThemeLaneTags {
 }
 
 /**
- * The lanes a subject may be built in: its own override if it has one, else its
- * theme's default. Returns null when the theme is unknown — no rule, no reject.
+ * The lanes a subject may be built in: `dense` alone if it is a text-risk
+ * subject, else its own override if it has one, else its theme's default.
+ * Returns null when there is no rule at all (unknown theme, no text risk).
+ *
+ * The text-risk test comes FIRST and ignores the theme, because the risk is in
+ * the noun rather than the shelf: a jar on `seasonal` garbles its label exactly
+ * as a jar on `food` does, and a subject the pool has never seen still gets the
+ * rule.
  */
 export function lanesForSubject(subject: string, tags: ThemeLaneTags | undefined): readonly string[] | null {
+  if (isTextRiskSubject(subject)) return TEXT_RISK_LANES
   if (!tags) return null
   const example = matchExampleByHead(subject, tags.examples)
   if (example && tags.overrides?.[example]) return tags.overrides[example]
@@ -470,10 +515,13 @@ export function postFilterBriefs<T extends PropBrief & CollisionBrief & { themeI
     if (opts.laneTags) {
       const allowed = lanesForSubject(brief.subject, opts.laneTags[brief.themeId ?? ''])
       if (allowed && !allowed.includes(brief.lane)) {
+        const textRisk = isTextRiskSubject(brief.subject)
         rejects.push({
           brief,
           kind: 'wrong-lane',
-          reason: `"${brief.subject}" cannot be built in the ${brief.lane} lane (needs ${allowed.join('/')})`,
+          reason: textRisk
+            ? `"${brief.subject}" invites lettering — the ${allowed.join('/')} lane only, not ${brief.lane}`
+            : `"${brief.subject}" cannot be built in the ${brief.lane} lane (needs ${allowed.join('/')})`,
         })
         continue
       }
