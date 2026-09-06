@@ -4911,6 +4911,31 @@ model CrochetPattern {
 
   assemblyInstructions Json?
 
+  // ──────────────────────────────────────────────────────────────────────────
+  // Bulk autopilot provenance (phase_crochet_bulk_autopilot_001).
+  //
+  // `generationMeta` records how an autopilot-published row came to exist:
+  //   { bulkRunId, brief: { shelf, form, look, territory, palette, size,
+  //     difficulty, concept, source, plannerMode, dressed },
+  //     gate: { verdict, reasons[] }, programFingerprint, attempts,
+  //     settledSizeMm, publishedBy, at }
+  // Null on hand-authored / imported / maker-owned rows. Mirrors
+  // `Pattern.generationMeta` on the cross-stitch side so the two autopilots
+  // read the same way.
+  //
+  // `subjectKey` and `programFingerprint` are the DUPLICATE GUARD's two
+  // signals, written at publish so the NEXT candidate can be compared against
+  // this row without re-deriving them: the normalised subject phrase (the same
+  // idea, redrawn) and a hash of the stitch program with colours stripped (the
+  // same construction in another colourway).
+  // `bulkRunId` is the run that published it (a raw id, not a relation, so a
+  // BulkRun row can be pruned without touching the catalogue).
+  // ──────────────────────────────────────────────────────────────────────────
+  generationMeta     Json?
+  subjectKey         String?
+  programFingerprint String?
+  bulkRunId          String?
+
   // Pattern shape and construction
   format        CrochetPatternFormat @default(WRITTEN_ONLY)
   construction  CrochetConstruction?
@@ -5070,6 +5095,9 @@ model CrochetPattern {
   @@index([popularityScore])
   @@index([craftStitchSlugs], type: Gin)
   @@index([craftTechniqueTags], type: Gin)
+  @@index([subjectKey])
+  @@index([programFingerprint])
+  @@index([bulkRunId])
 }
 
 /// Sidecar so a CrochetPattern can be retagged (free → premium → marketplace)

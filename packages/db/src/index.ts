@@ -79,6 +79,21 @@ export { ensureHouseDesigner, HOUSE_DESIGNER_SLUG } from './house-designer'
 // jobs (cron bulk generation) that have no admin user behind them.
 export { ensureSystemActor, SYSTEM_ACTOR_CLERK_ID } from './system-actor'
 
+/**
+ * The crochet pattern completeness gate — the binary check between a generated
+ * candidate and the live catalogue. Pure, so a Studio save path can reuse it.
+ */
+export {
+  checkCrochetPatternCompleteness,
+  abbreviationsIn,
+  CROCHET_TOY_SHELVES,
+  CROCHET_UK_ABBREVIATIONS,
+  type CrochetCompletenessInput,
+  type CrochetCompletenessResult,
+  type CrochetPieceRow,
+  type CrochetStructuredRow,
+} from './crochet-completeness'
+
 // Reverse-sweep helpers (phase_technique_linking_002). The Inngest function
 // and the backfill script both call into `sweepForTechnique`; the pure
 // matcher helpers ship alongside for unit-testing without a database.
