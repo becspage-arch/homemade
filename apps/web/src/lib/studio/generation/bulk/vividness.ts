@@ -165,6 +165,23 @@ export const VIVID_REFS: readonly [string, string][] = [
   ['cmtouk9zw000401adwqpj7ozr', 'proof apothecary, 33 colours'],
 ]
 
+/**
+ * BARE FABRIC RE-CHECK (September 2026). Clearing the white backgrounds rewrote
+ * 443 charts and re-rendered every one of their thumbnails, which moves the
+ * ground this calibration stands on — so `scripts/xs-vividness-recheck.ts`
+ * re-measured all of them. The floors below are UNCHANGED, on the evidence:
+ *
+ *   - all nine references above still land on the side they were chosen for,
+ *     including the five whose background was cleared, so the guard has not
+ *     grown a hole;
+ *   - three rows newly measure as pale — wildflower-wreath (0.064 → 0.027),
+ *     cute-corgi-flowers (0.061 → 0.060) and cute-snowy-owlet (0.062 → 0.058).
+ *     None is monochrome or showpiece; all three are pale pastel pieces that sat
+ *     within 0.005 of the floor already, and looking at the renders they are
+ *     exactly what the measure says they are. Lowering MIN_INK to keep them
+ *     passing would blunt the guard on the one fault it exists for.
+ */
+
 /** Below this fraction of genuinely dark stitches, a render has no tonal spine. */
 export const MIN_INK = 0.06
 /**

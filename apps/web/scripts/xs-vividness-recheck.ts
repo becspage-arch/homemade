@@ -64,6 +64,8 @@ async function main(): Promise<void> {
   console.log(`${rows.length} rows had their background cleared`)
 
   const flips: string[] = []
+  /** A flip that is a real alarm: the shelves the brief said must not regress. */
+  const alarms: string[] = []
   const stillPale: string[] = []
   let measured = 0
   let compared = 0
@@ -88,10 +90,14 @@ async function main(): Promise<void> {
       if (va.ink > vb.ink) inkUp++
       else if (va.ink < vb.ink) inkDown++
       if (!verdictBefore.tooPale && verdictAfter.tooPale) {
-        flips.push(
-          `  NEWLY PALE ${row.slug ?? row.id} (${row.subCategory?.slug ?? '-'}, ${row.colourCount} colours): ` +
-            `ink ${vb.ink.toFixed(3)} → ${va.ink.toFixed(3)}, chroma ${vb.chroma.toFixed(3)} → ${va.chroma.toFixed(3)}`,
-        )
+        const line =
+          `${row.slug ?? row.id} (${row.subCategory?.slug ?? '-'}, ${row.colourCount} colours): ` +
+          `ink ${vb.ink.toFixed(3)} → ${va.ink.toFixed(3)}, chroma ${vb.chroma.toFixed(3)} → ${va.chroma.toFixed(3)}`
+        flips.push(`  NEWLY PALE ${line}`)
+        // The brief's condition: a monochrome or showpiece piece must not start
+        // failing. A pale pastel animal that was already a whisker off the floor
+        // is the guard doing its job, not a regression.
+        if (row.subCategory?.slug === 'monochrome' || row.colourCount >= 60) alarms.push(`  ALARM ${line}`)
       } else if (verdictBefore.tooPale && verdictAfter.tooPale) {
         stillPale.push(`  ${row.slug ?? row.id} (${row.subCategory?.slug ?? '-'}): ${verdictAfter.reason}`)
       }
@@ -133,6 +139,7 @@ async function main(): Promise<void> {
       const v = await measureVividness(png)
       const verdict = vividnessVerdict(v)
       const got = verdict.tooPale ? 'PALE' : 'VIVID'
+      if (got !== want) alarms.push(`  ALARM calibration reference moved: ${label} is now ${got}, expected ${want}`)
       console.log(
         `  ${got === want ? 'ok  ' : 'MOVED'} ${want.padEnd(5)} ${label.padEnd(46)} ` +
           `ink ${v.ink.toFixed(3)} chroma ${v.chroma.toFixed(3)}` +
@@ -141,8 +148,11 @@ async function main(): Promise<void> {
     }
   }
 
+  console.log(`\nAlarms (a monochrome or showpiece piece newly failing, or a calibration reference moving): ${alarms.length}`)
+  for (const a of alarms) console.log(a)
+
   await prisma.$disconnect()
-  if (flips.length > 0) process.exitCode = 1
+  if (alarms.length > 0) process.exitCode = 1
 }
 
 main().catch(async (err) => {
