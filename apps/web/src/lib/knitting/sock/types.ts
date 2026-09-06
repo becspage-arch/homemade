@@ -1,4 +1,4 @@
-import type { FootSizeName } from './sock-sizes'
+import type { FootSizeName, FootMeasurements } from './sock-sizes'
 import type { Gauge } from '../grading/gauge'
 
 export type SockConstruction =
@@ -89,4 +89,12 @@ export interface SockGradeInput {
   size: FootSizeName | string
   gauge: Gauge
   options?: SockOptions
+  /**
+   * The maker's own foot measurements, in place of the standard chart row
+   * for `size`. Set this and the construction module grades from these
+   * numbers and never touches the size charts — the whole of custom fit.
+   * Pair it with `size: 'CUSTOM'` so the returned pattern is labelled
+   * honestly.
+   */
+  footMeasurements?: FootMeasurements
 }

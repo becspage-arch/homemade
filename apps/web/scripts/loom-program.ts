@@ -13,7 +13,7 @@
 
 import { compileProgram, programFromChart, writeInstructions, PROOF_PROGRAMS } from '../src/lib/loom/crochet/engine/program'
 import { auditProblems } from '../src/lib/loom/crochet/engine/auditChecks'
-import { relax } from '../src/lib/loom/crochet/engine/relax'
+import { relax, STUFF_PRESSURE, STUFF_PRIOR } from '../src/lib/loom/crochet/engine/relax'
 import type { BuiltContinuous } from '../src/lib/loom/crochet/engine/yarnPath'
 
 const yr = 2.4
@@ -29,7 +29,7 @@ function relaxFor(built: BuiltContinuous): void {
     planeK: 0,
     layoutK: 0.06,
     layoutMode: surface ? 'surface' : polar ? 'radial' : 'y',
-    ...(surface ? { floorZ: 0 } : polar ? { floorZ: -yr * 1.3 } : {}),
+    ...(surface ? { floorZ: 0, stuffing: STUFF_PRESSURE, stuffPrior: STUFF_PRIOR } : polar ? { floorZ: -yr * 1.3 } : {}),
     iterations: surface ? 560 : polar ? 360 : 320, // keep in sync with buildSwatch profiles (centralise later)
   })
 }

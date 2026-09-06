@@ -111,6 +111,15 @@ export function gateConfigured(): boolean {
  * Throws if the gate isn't configured — callers must check `gateConfigured()`.
  */
 export async function visionGate(png: Buffer, ctx: GateContext): Promise<GateResult> {
+  // THE RULE. Crochet heroes are judged by a Claude session on Rebecca's Max
+  // plan reading a contact sheet, never by a per-token Anthropic API call. The
+  // crochet rubric below is still the rubric — the routine prompt quotes it
+  // verbatim — but this function is not the thing that applies it any more.
+  if (ctx.craft === 'crochet') {
+    throw new Error(
+      'visionGate: crochet heroes are judged by a Claude session on the Max plan (docs/autopilot-prompts/crochet.md), never by a per-token Anthropic API call. Run `scripts/crochet-autopilot.ts render`, look at the contact sheets, and write verdicts.json.',
+    )
+  }
   if (!anthropicConfigured()) {
     throw new Error('visionGate: ANTHROPIC_API_KEY not set — cannot judge, refusing to publish un-gated')
   }

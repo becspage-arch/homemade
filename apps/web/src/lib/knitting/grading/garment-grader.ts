@@ -20,6 +20,7 @@ export function gradeGarment(input: GarmentGradeInput): GradedPattern {
     easePreset: input.easePreset,
     garmentType: input.garmentType,
     options: input.options,
+    bodyMeasurements: input.bodyMeasurements,
   }
 
   switch (input.constructionShape) {
@@ -41,6 +42,7 @@ export function gradeAllSizes(
 
 export type {
   GradedPattern,
+  GradedSizeLabel,
   ShapeOptions,
   ConstructionShape,
   GarmentType,
@@ -48,6 +50,6 @@ export type {
   FinishedMeasurements,
   AssemblyInstructions,
 } from './types'
-export type { SizeName } from './size-charts'
+export type { SizeName, BodyMeasurements } from './size-charts'
 export type { EasePreset } from './ease-presets'
 export type { Gauge, DominantFabric } from './gauge'

@@ -20,6 +20,8 @@ import { KnittingEmptyState } from './KnittingEmptyState'
 import { MyKnittingProjectsGrid } from './MyKnittingProjectsGrid'
 import { KnittingActiveProject } from './KnittingActiveProject'
 import { KnittingStudioToolbar } from './KnittingStudioToolbar'
+import { KnittingSizeTable } from './KnittingSizeTable'
+import type { KnittingGradableSpec } from '@/lib/knitting/grading/pattern-spec'
 import type {
   KnittingPatternData,
   KnittingProjectProgressData,
@@ -47,6 +49,12 @@ interface KnittingStudioShellProps {
   userEmail: string | null
   userName: string | null
   pattern: KnittingPatternData | null
+  /** Whether the viewer has an active premium entitlement. Resolved on the
+   *  server; the Studio route group has no PremiumProvider above it. */
+  isPremium?: boolean
+  /** What the grader can offer for this pattern, or null when it offers
+   *  nothing. Resolved on the server; null keeps the size table off entirely. */
+  gradable?: KnittingGradableSpec | null
   progress: KnittingProjectProgressData | null
   myProjects: MyKnittingProjectListItem[]
   yarnWeights: Array<{ slug: string; canonicalName: string; standardCategory: number }>
@@ -58,6 +66,8 @@ export function KnittingStudioShell({
   signedIn,
   userName,
   pattern,
+  gradable = null,
+  isPremium = false,
   progress,
   myProjects,
   yarnWeights,
@@ -134,6 +144,8 @@ export function KnittingStudioShell({
   return (
     <ActiveProjectSurface
       pattern={pattern}
+      gradable={gradable}
+      isPremium={isPremium}
       progress={progress}
       signedIn={signedIn}
       yarnWeights={yarnWeights}
@@ -146,6 +158,8 @@ export function KnittingStudioShell({
 
 function ActiveProjectSurface({
   pattern,
+  gradable,
+  isPremium,
   progress,
   signedIn,
   yarnWeights,
@@ -154,6 +168,8 @@ function ActiveProjectSurface({
   onClose,
 }: {
   pattern: KnittingPatternData
+  gradable: KnittingGradableSpec | null
+  isPremium: boolean
   progress: KnittingProjectProgressData | null
   signedIn: boolean
   yarnWeights: Array<{ slug: string; canonicalName: string; standardCategory: number }>
@@ -206,6 +222,15 @@ function ActiveProjectSurface({
         signedIn={signedIn}
         onClose={onClose}
       />
+
+      {gradable && pattern.slug && (
+        <KnittingSizeTable
+          patternSlug={pattern.slug}
+          spec={gradable}
+          signedIn={signedIn}
+          isPremium={isPremium}
+        />
+      )}
     </div>
   )
 }

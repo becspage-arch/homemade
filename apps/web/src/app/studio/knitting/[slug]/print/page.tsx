@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
+import { getCurrentDbUser } from '@/lib/get-current-user'
+import { hasPremium } from '@/lib/entitlements'
 import { renderKnittingChartSvg } from '@/lib/knitting/renderer/index-client'
 import {
   loadKnittingPatternForStudio,
@@ -46,6 +49,32 @@ interface PageProps {
 export default async function KnittingPatternPrintPage({ params, searchParams }: PageProps) {
   const { slug } = await params
   const sp = await searchParams
+
+  // Printing / downloading any pattern is a universal premium action across
+  // every category. Free + signed-in makers use the on-screen Studio; taking
+  // the pattern to print or PDF is premium. Same gate, same words, as the
+  // crochet print page.
+  const user = await getCurrentDbUser()
+  if (!hasPremium(user)) {
+    return (
+      <div className="knit-print knit-print--a4">
+        <div className="knit-print-controls">
+          <strong>Printing is a premium feature</strong>
+          <p>
+            Working a pattern on screen in the Studio is free once you&apos;re signed in. Printing
+            or saving any pattern as a PDF is part of Homemade premium.
+          </p>
+          <p>
+            <Link href="/premium">See what premium includes</Link>
+            {' \u00b7 '}
+            <Link href={`/studio/knitting?knittingPatternSlug=${encodeURIComponent(slug)}`}>
+              Back to the Studio
+            </Link>
+          </p>
+        </div>
+      </div>
+    )
+  }
 
   const paper =
     sp.paper && VALID_PAPER.has(sp.paper.toLowerCase()) ? sp.paper.toLowerCase() : 'a4'

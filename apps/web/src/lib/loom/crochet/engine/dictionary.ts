@@ -190,6 +190,19 @@ export const STITCHES: Record<StitchId, StitchDef> = {
   k: { id: 'k', heightFactor: 1.1, gaugeYr: 2.6, topLoops: 2 },
 }
 
+/** Row pitch per unit heightFactor (sc short, dc tall), in yarn radii. */
+export const BASE_ROW_YR = 1.55
+
+/**
+ * This stitch's ROW PITCH in yarn radii — its own measured cell height (§8f) if
+ * it declares one, otherwise the legacy shared lattice `BASE_ROW_YR · heightFactor`.
+ * One helper so the grid, shaped, round, sphere and knit builders can never
+ * disagree. It lives here, beside `STITCHES`, because it reads nothing else:
+ * `sphereProfile.ts` needs it without dragging the whole path builder in.
+ */
+export const rowPitchYr = (id: StitchId): number =>
+  STITCHES[id].rowYr ?? BASE_ROW_YR * STITCHES[id].heightFactor
+
 /**
  * Everything needed to build, verify, and render one standard swatch. Keys are
  * the pipeline's swatch names: every StitchId plus the pattern aliases

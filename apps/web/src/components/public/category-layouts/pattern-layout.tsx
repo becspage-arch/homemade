@@ -9,6 +9,7 @@ import { mediaUrl } from '@/lib/media'
 import { isPremiumContent } from '@/lib/entitlements'
 import { CrochetPatternGrid } from './crochet-pattern-grid'
 import { NeedleworkPatternGrid } from './needlework-pattern-grid'
+import { KnittingPatternGrid } from './knitting-pattern-grid'
 import { DISCIPLINE_LABELS } from '@/components/studio/needlework/types'
 import { getPatternTagFacets, patternIdsForTags } from '@/lib/pattern-tag-facets'
 import { getPatternDesignerFacets } from '@/lib/pattern-designer-facets'
@@ -119,6 +120,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
   const patternType = PATTERN_TYPE_BY_SLUG[category.slug]
   const isCrochet = category.slug === 'crochet'
   const isNeedlework = category.slug === 'needlework'
+  const isKnitting = category.slug === 'knitting'
 
   // Cross-craft tag filters (Occasion / Season / Style / Subject / Audience) +
   // free-text search, resolved against the live tag assignments. The selected
@@ -152,9 +154,9 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
   if (sp.stitch && /^[1-5]$/.test(sp.stitch)) where.stitchability = Number(sp.stitch)
   if (sp.maxHours) where.estimatedHours = { lte: Number(sp.maxHours) }
   if (sp.sub) where.subCategory = { slug: sp.sub, categoryId: category.id }
-  if (!isCrochet && tagIds !== null) where.id = { in: tagIds }
-  if (!isCrochet && textOr) where.OR = textOr
-  if (!isCrochet && sp.designer) where.designer = { slug: sp.designer }
+  if (!isCrochet && !isKnitting && tagIds !== null) where.id = { in: tagIds }
+  if (!isCrochet && !isKnitting && textOr) where.OR = textOr
+  if (!isCrochet && !isKnitting && sp.designer) where.designer = { slug: sp.designer }
 
   const sort = sp.sort ?? 'popular'
   // Most popular leads; popularityScore falls back to publishedAt (most-recent)
@@ -212,7 +214,29 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
         ? [{ colourCount: 'desc' as const }, { publishedAt: 'desc' as const }]
         : { publishedAt: 'desc' as const }
 
-  const [patterns, foundations, anchorPatterns, spotlightDesigner, crochetPatterns, needleworkPatterns, recentlyCompleted, tagFacets, designerFacets] = await Promise.all([
+  // Knitting surfaces KnittingPattern rows on the same shared library shell,
+  // mirroring the crochet gate exactly (crochet's `primaryYarnWeight` filter
+  // has no KnittingPattern equivalent yet, so there's no yarnWeight clause).
+  const knittingWhere: Record<string, unknown> = {
+    ownerUserId: null,
+    visibility: Visibility.PUBLIC,
+    publishedAt: { not: null },
+    subCategory: { categoryId: category.id },
+  }
+  if (sp.difficulty) knittingWhere.difficulty = sp.difficulty
+  if (sp.sub) knittingWhere.subCategory = { slug: sp.sub, categoryId: category.id }
+  if (isKnitting && tagIds !== null) knittingWhere.id = { in: tagIds }
+  if (isKnitting && textOr) knittingWhere.OR = textOr
+  if (isKnitting && sp.designer) knittingWhere.designer = { slug: sp.designer }
+
+  // KnittingPattern has no popularityScore yet, same as NeedleworkPattern;
+  // "newest" leads, then name.
+  const knittingOrderBy =
+    sp.sort === 'name'
+      ? { name: 'asc' as const }
+      : { publishedAt: 'desc' as const }
+
+  const [patterns, foundations, anchorPatterns, spotlightDesigner, crochetPatterns, needleworkPatterns, knittingPatterns, recentlyCompleted, tagFacets, designerFacets] = await Promise.all([
     patternType
       ? prisma.pattern.findMany({
           where,
@@ -337,6 +361,30 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
             subCategory: { select: { slug: true, name: true } },
             hero: { select: { cloudflareId: true, r2Key: true } },
             thumbnail: { select: { cloudflareId: true, r2Key: true } },
+          },
+        })
+      : Promise.resolve([]),
+    isKnitting
+      ? prisma.knittingPattern.findMany({
+          where: knittingWhere,
+          orderBy: knittingOrderBy,
+          take: 96,
+          select: {
+            id: true,
+            slug: true,
+            name: true,
+            // No loom hero column on KnittingPattern yet (another worker is
+            // adding one) — the fallback is hero, then chart thumbnail, one
+            // step shorter than crochet's loom-hero-first chain.
+            heroMediaId: true,
+            thumbnailMediaId: true,
+            difficulty: true,
+            finishedSizeText: true,
+            yarnWeightStandard: true,
+            needleSizeMm: true,
+            premium: true,
+            designer: { select: { displayName: true, slug: true } },
+            subCategory: { select: { slug: true, name: true } },
           },
         })
       : Promise.resolve([]),
@@ -513,7 +561,13 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
           where: subCatBaseWhere,
           _count: { _all: true },
         })
-      : patternType
+      : isKnitting
+        ? await prisma.knittingPattern.groupBy({
+            by: ['subCategoryId'],
+            where: subCatBaseWhere,
+            _count: { _all: true },
+          })
+        : patternType
         ? await prisma.pattern.groupBy({
             by: ['subCategoryId'],
             where: { ...subCatBaseWhere, type: patternType },
@@ -836,7 +890,52 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
         </section>
       )}
 
-      <section id="patterns-classic" className="pattern-landing-library" hidden={isCrochet || isNeedlework}>
+      {isKnitting && (
+        <section id="patterns" className="pattern-landing-library">
+          <header className="pattern-landing-library-header">
+            <h2 className="pattern-landing-library-heading">Knitting patterns</h2>
+            <p className="pattern-landing-library-sub">
+              Open any pattern in the Knitting Studio to track your row, round and repeat as you go.
+            </p>
+          </header>
+          <KnittingPatternGrid
+            patterns={knittingPatterns.map((p) => ({
+              id: p.id,
+              slug: p.slug,
+              name: p.name,
+              imageMediaId: p.heroMediaId ?? p.thumbnailMediaId,
+              difficulty: p.difficulty,
+              finishedSizeText: p.finishedSizeText,
+              yarnWeightLabel: knittingYarnWeightLabel(p.yarnWeightStandard),
+              needleSizeLabel: p.needleSizeMm ? `${Number(p.needleSizeMm)} mm needles` : null,
+              premium: p.premium,
+              designerName: p.designer?.displayName ?? null,
+              designerSlug: p.designer?.slug ?? null,
+              subCategoryName: p.subCategory?.name ?? null,
+              subCategorySlug: p.subCategory?.slug ?? null,
+            }))}
+            subCategories={nonEmptySubCategories.map((s) => ({ slug: s.slug, name: s.name }))}
+            tagFacets={tagFacets}
+            designerFacets={designerFacets}
+            searchPlaceholder={patternSearchPlaceholder(category.slug)}
+            currentFilters={{
+              sub: sp.sub ?? null,
+              difficulty: sp.difficulty ?? null,
+              sort: sp.sort ?? 'newest',
+              q: q || null,
+              occasion: sp.occasion ?? null,
+              season: sp.season ?? null,
+              style: sp.style ?? null,
+              subject: sp.subject ?? null,
+              audience: sp.audience ?? null,
+              designer: sp.designer ?? null,
+            }}
+            basePath={`/${category.slug}`}
+          />
+        </section>
+      )}
+
+      <section id="patterns-classic" className="pattern-landing-library" hidden={isCrochet || isNeedlework || isKnitting}>
         {patternType ? (
           patterns.length === 0 && filtered.length === 0 && Object.keys(sp).length === 0 ? (
             <div className="pattern-landing-empty">
@@ -933,6 +1032,24 @@ function patternHeaderLede(slug: string): string {
     default:
       return 'Patterns from independent designers, with the Studio you need to make them yours.'
   }
+}
+
+/** Human label for the KnittingYarnWeightStandard enum, as used on cards. */
+const KNITTING_YARN_WEIGHT_LABELS: Record<string, string> = {
+  LACE: 'Lace',
+  FINGERING: 'Fingering',
+  SPORT: 'Sport',
+  DK: 'DK',
+  WORSTED: 'Worsted',
+  ARAN: 'Aran',
+  BULKY: 'Bulky',
+  SUPER_BULKY: 'Super bulky',
+  JUMBO: 'Jumbo',
+}
+
+function knittingYarnWeightLabel(standard: string | null): string | null {
+  if (!standard) return null
+  return KNITTING_YARN_WEIGHT_LABELS[standard] ?? null
 }
 
 function patternSearchPlaceholder(slug: string): string {

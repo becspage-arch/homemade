@@ -72,17 +72,24 @@ export function RunBatchControl({
 }
 
 /**
- * On/off switch for a craft's unattended autopilot cron. DB-backed via the
+ * On/off switch for a craft's unattended autopilot. DB-backed via the
  * setBulkAutopilot server action — takes effect immediately, no redeploy.
+ *
+ * For cross-stitch and needlework the switch gates the Inngest cron. For crochet
+ * there is no cron: the switch is the marker the Claude routine reads at
+ * pre-flight, so turning it off stops the next firing just the same.
  */
 export function AutopilotToggle({
   craft,
   enabled,
+  label,
   disabled,
   disabledReason,
 }: {
   craft: BulkCraft
   enabled: boolean
+  /** What the switch is called on this card. Defaults to "Autopilot". */
+  label?: string
   disabled?: boolean
   disabledReason?: string
 }) {
@@ -93,7 +100,7 @@ export function AutopilotToggle({
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
       <span style={{ fontFamily: 'var(--font-lora)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: on ? 'var(--color-sage)' : 'var(--color-warm-taupe)' }}>
-        Autopilot {on ? 'on' : 'paused'}
+        {label ?? 'Autopilot'} {on ? 'on' : 'paused'}
       </span>
       <button
         type="button"

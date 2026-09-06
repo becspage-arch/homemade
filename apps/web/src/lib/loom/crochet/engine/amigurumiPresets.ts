@@ -27,8 +27,21 @@ import {
   PROFILE_SIZE_MM_GENERATED,
   PRESET_SETTLED_SIZE_MM_GENERATED,
 } from './amigurumiSizes.generated'
+import { sphereRounds } from './sphereProfile'
 
-/** A ball: climbs in sixes to the equator, holds, comes back down in sixes. */
+export { sphereRounds }
+
+/**
+ * A ball: climbs in sixes to the equator, holds, comes back down in sixes.
+ *
+ * §8f-10: this is the OLD profile and it is not a sphere — a +6 round spends its
+ * whole meridian allowance on radius, so the cap is a flat disc and the first
+ * plateau round after it is a hard corner (36–38° of crease measured, a rounded
+ * tin can). Closed round parts now use `sphereRounds`. `ballRounds` stays for the
+ * pieces measured NOT to gain from a sphere profile — the 4–5-round neck, muzzle
+ * and bear ear, whose one increase round cannot dome whatever the counts say —
+ * and for the audited profiles already in the wild.
+ */
 export function ballRounds(equator: number, plateau: number): number[] {
   const up: number[] = []
   for (let n = 6; n <= equator; n += 6) up.push(n)
@@ -50,12 +63,15 @@ export function tubeRounds(equator: number, straight: number): number[] {
  * pieces against this list; the test keeps the list true.
  */
 export const AUDITED_PROFILES: number[][] = [
-  ballRounds(12, 1), ballRounds(12, 2), ballRounds(12, 3), ballRounds(12, 4),
-  ballRounds(12, 6),
-  ballRounds(18, 2), ballRounds(18, 3), ballRounds(18, 8),
-  ballRounds(24, 4), ballRounds(24, 7), ballRounds(24, 9),
-  ballRounds(30, 5), ballRounds(30, 6),
-  ballRounds(36, 5), ballRounds(36, 7),
+  // The closed round parts — heads, bodies, balls and eggs — on the sphere
+  // profile (§8f-10).
+  sphereRounds(12, 1), sphereRounds(12, 4),
+  sphereRounds(18, 1), sphereRounds(18, 5),
+  sphereRounds(24, 1), sphereRounds(24, 5),
+  sphereRounds(30, 1), sphereRounds(36, 1),
+  // The small pieces that measured no better as spheres: neck, muzzle, ear.
+  ballRounds(12, 1), ballRounds(12, 2), ballRounds(12, 3),
+  ballRounds(18, 2),
   tubeRounds(12, 3), tubeRounds(12, 4), tubeRounds(12, 6),
 ]
 
@@ -116,40 +132,63 @@ interface SizeProfile {
   egg: number[]
 }
 
+/**
+ * §8f-10. Every CLOSED ROUND piece — body, head, ball, egg — is a `sphereRounds`
+ * profile at the equator its old `ballRounds` profile had, so the sizes barely
+ * move but the shape does: measured crease at the cap/wall junction drops from
+ * 36–38° to 10–11° and settled h/w from 0.66–0.74 to 0.96–0.99.
+ *
+ * The `+1` is one extra straight round at the equator. A bare sphere settles
+ * slightly oblate (h/w 0.88–0.90) because the first two rounds off the magic
+ * ring are genuinely flat — a +6 round has no meridian left for height, which is
+ * true of a real crocheted ball too. One equator round buys the height back
+ * without putting a corner in, because the profile reaches the equator
+ * TANGENTIALLY (its last steps are +1 then 0) and a straight round then
+ * continues the surface instead of turning it. The eggs use the same knob with a
+ * longer middle.
+ *
+ * The neck, muzzle and bear ear stay on `ballRounds`. Measured, a 5–6-round
+ * piece does not dome on any profile (crease 21.8° on `ballRounds(12,2)`, 23.1°
+ * on `sphereRounds(12)`), and the sphere version turns the ear into a ball
+ * (h/w 0.75 → 1.05) which is the wrong shape for an ear. The limbs and bunny
+ * ears are tubes and were never ball profiles.
+ */
 const SIZES: Record<AmigurumiSize, SizeProfile> = {
   S: {
-    body: ballRounds(24, 4),
-    head: ballRounds(18, 3),
+    body: sphereRounds(24, 1),
+    head: sphereRounds(18, 1),
     neck: ballRounds(12, 1),
     muzzle: ballRounds(12, 1),
     bearEar: ballRounds(12, 2),
     bunnyEar: tubeRounds(12, 4),
     limb: tubeRounds(12, 3),
-    ball: ballRounds(12, 4),
-    egg: ballRounds(12, 6),
+    // The small ball keeps its 12-stitch equator (a 30 mm ball) rather than
+    // growing to match the crease target: at 6 rounds nothing domes.
+    ball: sphereRounds(12, 1),
+    egg: sphereRounds(12, 4),
   },
   M: {
-    // The signed-off bear proof's own profiles.
-    body: ballRounds(30, 5),
-    head: ballRounds(24, 7),
+    // The signed-off bear proof's own equators, on the sphere profile.
+    body: sphereRounds(30, 1),
+    head: sphereRounds(24, 1),
     neck: ballRounds(12, 1),
     muzzle: ballRounds(12, 1),
     bearEar: ballRounds(12, 2),
     bunnyEar: tubeRounds(12, 6),
     limb: tubeRounds(12, 4),
-    ball: ballRounds(24, 7),
-    egg: ballRounds(18, 8),
+    ball: sphereRounds(24, 1),
+    egg: sphereRounds(18, 5),
   },
   L: {
-    body: ballRounds(36, 5),
-    head: ballRounds(30, 6),
+    body: sphereRounds(36, 1),
+    head: sphereRounds(30, 1),
     neck: ballRounds(18, 2),
     muzzle: ballRounds(18, 2),
     bearEar: ballRounds(12, 3),
     bunnyEar: tubeRounds(12, 6),
     limb: tubeRounds(12, 6),
-    ball: ballRounds(36, 7),
-    egg: ballRounds(24, 9),
+    ball: sphereRounds(36, 1),
+    egg: sphereRounds(24, 5),
   },
 }
 

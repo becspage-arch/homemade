@@ -19,8 +19,6 @@ import {
   bulkCrossStitchIdea,
   bulkNeedleworkBatch,
   bulkNeedleworkIdea,
-  bulkCrochetBatch,
-  bulkCrochetIdea,
 } from '@/inngest/functions/bulk-generation'
 
 export const { GET, POST, PUT } = serve({
@@ -42,7 +40,5 @@ export const { GET, POST, PUT } = serve({
     bulkCrossStitchIdea,
     bulkNeedleworkBatch,
     bulkNeedleworkIdea,
-    bulkCrochetBatch,
-    bulkCrochetIdea,
   ],
 })

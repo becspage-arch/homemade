@@ -10,6 +10,7 @@
  */
 
 import type { CompositionProgram } from '../src/lib/loom/crochet/engine/composition'
+import { sphereRounds } from '../src/lib/loom/crochet/engine/sphereProfile'
 
 /**
  * §8f-3 — the corrected sc CELL makes every crocheted piece bigger for the same
@@ -32,9 +33,13 @@ const mm = (v: number): number => v * CELL_SCALE
 
 
 // The canonical audit-clean ball (equator 30) — the proof-ball profile.
-const BODY = [6, 12, 18, 24, 30, 30, 30, 30, 30, 24, 18, 12, 6]
+// §8f-10: on the SPHERE profile, not the old climb-in-sixes-and-hold one.
+// `sphereRounds` places the increases where a sphere's circumference actually
+// grows, so the cap arrives at the equator tangentially instead of turning a
+// corner into it: crease 36.4° → 10.7°, settled h/w 0.66 → 0.96.
+const BODY = sphereRounds(30, 1)
 // A smaller ball for a head (equator 24) — audit-clean.
-const HEAD = [6, 12, 18, 24, 24, 18, 12, 6]
+const HEAD = sphereRounds(24, 1)
 // An ELONGATED, tapered ear: a tube (equator 12) held for several rounds then
 // decreased to a rounded tip — aspect ~1.5, clearly longer than it is wide, so it
 // reads as an ear standing proud rather than a ball half-buried on the head.
@@ -129,8 +134,11 @@ const amigurumiCreature: CompositionProgram = {
 //   BEAR_EAR   19 x 14             a round ear, ring pole hidden in the head
 //                                  (`poleIn`) so no swirl faces the camera
 //   BEAR_LIMB  19 x 28             the tapered tube used for all four limbs
-const BEAR_BODY = [6, 12, 18, 24, 30, 30, 30, 30, 30, 30, 24, 18, 12, 6]
-const BEAR_HEAD = [6, 12, 18, 24, 24, 24, 24, 24, 24, 24, 24, 18, 12, 6]
+// §8f-10: the bear's two big closed parts are spheres (see BODY above). The
+// muzzle, neck and ear stay on the old profile — measured, a 4–5-round piece
+// does not dome on any counts, and a spherical ear is the wrong shape anyway.
+const BEAR_BODY = sphereRounds(30, 1)
+const BEAR_HEAD = sphereRounds(24, 1)
 const BEAR_NECK = [6, 12, 12, 6]
 const BEAR_MUZZLE = [6, 12, 12, 6]
 const BEAR_EAR = [6, 12, 12, 12, 6]

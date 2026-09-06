@@ -27,18 +27,8 @@ import {
   recentNeedleworkSlugs,
   fargateRenderWired,
 } from './needlework'
-import { planCrochetBriefs, crochetShelfPlan, modelAuthoredCount, type CrochetBrief } from './crochet-planner'
-import {
-  generateCrochetCandidate,
-  publishCrochetGem,
-  paletteHexesFor,
-  fargateRenderWired as crochetRenderWired,
-  findCrochetDuplicate,
-  loadCrochetCatalogue,
-  CrochetIncompleteError,
-} from './crochet'
+import { crochetShelfPlan } from './crochet-planner'
 import { liveCrochetShelfCounts, publicCrochetSubjectKeys } from './crochet-dedupe'
-import { crochetSpendWindow, overCrochetCap } from './spend-guard'
 
 /**
  * The batch RUNNER — the craft-agnostic orchestrator the Inngest jobs call. One
@@ -679,194 +669,44 @@ export async function runNeedleworkBatch(count: number, step: StepRunner = inlin
 }
 
 // ─────────────────────────── CROCHET ───────────────────────────
-
-/**
- * Crochet's repair budget. Unlike a Flux roll, a crochet render is
- * DETERMINISTIC: the same program renders the same image every time, so
- * re-rolling a fault in the object is pointless. The one thing a fresh attempt
- * can fix is the DESIGN, so a repair here means "author a different design for
- * the same brief and render that". One, and only one.
- */
-export const MAX_CROCHET_REPAIRS = 1
-
-/**
- * One crochet attempt: author a program → render its exact hero on Fargate,
- * unpersisted → gate the render → duplicate guard → publish a complete row.
- *
- * Nothing is written before the gate says keep, so a killed candidate leaves no
- * row and nothing in R2. After the gate, the completeness gate runs against the
- * assembled row and a row that fails it is culled rather than published.
- */
-export async function crochetAttempt(
-  brief: CrochetBrief,
-  keptSubjects: string[],
-  ctx: { bulkRunId?: string | null; attempt?: number } = {},
-): Promise<AttemptResult> {
-  const candidate = await generateCrochetCandidate(brief, paletteHexesFor(brief.brief.palette))
-  return crochetGateAndPublish(brief, candidate, keptSubjects, ctx)
-}
-
-/**
- * Everything a crochet candidate goes through AFTER its hero exists: the vision
- * gate, the duplicate guard, and the publisher with its completeness gate.
- *
- * Split out because the server-side autopilot renders asynchronously — it
- * starts the Fargate task in one request and comes back for the picture in a
- * later one — and both paths must judge and publish through exactly the same
- * code. The inline runner above hands it a candidate it just rendered; the
- * Inngest idea worker hands it one it fetched back out of the scratch bucket.
- */
-export async function crochetGateAndPublish(
-  brief: CrochetBrief,
-  candidate: Awaited<ReturnType<typeof generateCrochetCandidate>>,
-  keptSubjects: string[],
-  ctx: { bulkRunId?: string | null; attempt?: number } = {},
-): Promise<AttemptResult> {
-  const verdict = await visionGate(candidate.heroPng, {
-    subject: `${brief.name}: ${brief.subject}`,
-    craft: 'crochet',
-    keptSubjects,
-  })
-  if (verdict.verdict !== 'keep') {
-    return {
-      verdict: verdict.verdict,
-      reasons: verdict.reasons,
-      repairAction: verdict.repairAction,
-      published: false,
-    }
-  }
-
-  // The gate says gem. Is it a gem the catalogue already has, by idea or by
-  // construction? A hit is terminal.
-  const catalogue = await loadCrochetCatalogue()
-  const hit = findCrochetDuplicate(
-    { subjectKey: brief.subjectKey, programFingerprint: candidate.fingerprint },
-    catalogue,
-  )
-  if (hit) {
-    return {
-      verdict: 'keep',
-      reasons: [`duplicate of ${hit.slug}: ${hit.reason}`],
-      published: false,
-      duplicateOf: hit.slug,
-      duplicateReason: hit.reason,
-    }
-  }
-
-  try {
-    await publishCrochetGem(brief, candidate, {
-      bulkRunId: ctx.bulkRunId ?? null,
-      gate: { verdict: verdict.verdict, reasons: verdict.reasons },
-      attempt: ctx.attempt ?? 1,
-    })
-  } catch (err) {
-    // A row that fails the completeness gate is CULLED, not published with a
-    // flag and not held for review. It reads as a kill in the run counters,
-    // with the gate's own reasons, so a systematic gap shows up in the log.
-    if (err instanceof CrochetIncompleteError) {
-      return { verdict: 'kill', reasons: err.result.reasons.slice(0, 3), published: false }
-    }
-    throw err
-  }
-  return { verdict: 'keep', reasons: verdict.reasons, published: true }
-}
+//
+// Crochet has no batch runner here any more. Its three model calls — the
+// planner, the design author and the vision gate — were Anthropic API calls,
+// and under Rebecca's standing rule that work runs inside a Claude session on
+// her Max plan instead. The lane is now `apps/web/scripts/crochet-autopilot.ts`,
+// driven by the routine prompt in `docs/autopilot-prompts/crochet.md`: the
+// session plans and authors, the CLI expands, audits, renders and publishes,
+// and the session judges the contact sheets in between.
+//
+// What survives here is the DETERMINISTIC planning context, because the shelf
+// quota and the avoid list are catalogue arithmetic and belong with the other
+// crafts' equivalents.
 
 /**
  * The planning context for one crochet batch: the whole catalogue as an avoid
  * list, and a shelf quota drawn in proportion to each BUILDABLE shelf's gap to
- * its target. Shared by the inline runner and the Inngest dispatcher so both
- * plan identically.
+ * its target.
  */
-export async function crochetPlanContext(count: number): Promise<Parameters<typeof planCrochetBriefs>[1]> {
+export async function crochetPlanContext(count: number): Promise<{
+  counts: Record<string, number>
+  avoidSubjectKeys: string[]
+  shelfSlots: string[]
+  shelfQuota: { slug: string; name: string; briefs: number; deficit: number }[]
+}> {
   const [counts, avoidSubjectKeys] = await Promise.all([
     liveCrochetShelfCounts().catch(() => ({}) as Record<string, number>),
     publicCrochetSubjectKeys().catch(() => [] as string[]),
   ])
   const plan = crochetShelfPlan(counts, count)
-  return { avoidSubjectKeys, shelfSlots: plan.slots, shelfQuota: plan.quota }
-}
-
-export async function runCrochetBatch(count: number, step: StepRunner = inlineStep): Promise<BatchSummary> {
-  const base: BatchSummary = { craft: 'crochet', requested: count, published: 0, culled: 0, duplicates: 0, skipped: 0, repaired: 0, generations: 0, proGenerations: 0, paleSkips: 0, errors: 0, gems: [], killReasons: [], line: '' }
-  if (!gateConfigured()) {
-    return { ...base, notRun: 'gate-not-wired', line: 'crochet batch skipped — ANTHROPIC_API_KEY not set, refusing to publish un-gated' }
-  }
-  if (!crochetRenderWired()) {
-    return { ...base, notRun: 'render-not-wired', line: 'crochet batch skipped — LOOM_RENDER!=fargate, the exact-pattern hero render is not wired' }
-  }
-
-  const briefs = await step.run('cr-plan', async () => {
-    const ctx = await crochetPlanContext(count)
-    return planCrochetBriefs(count, ctx)
-  })
-  base.plannerMode = PLANNER_MODE
-  // For crochet these are the same number: a brief the planner model wrote is
-  // by definition one it dressed, because constrained mode is the only mode
-  // that produces one.
-  base.dressedBriefs = modelAuthoredCount(briefs)
-  const keptSubjects: string[] = []
-
-  for (const brief of briefs) {
-    try {
-      // The spend cap at the point of spending. A crochet idea costs a Fargate
-      // task; the pictorial lane costs an illustration on top.
-      const capped = await step.run(`cr-${brief.slug}-cap`, async () => {
-        const window = await crochetSpendWindow()
-        return overCrochetCap(window, { illustration: brief.treatment === 'grid-tapestry' })
-      })
-      if (capped) {
-        base.skipped++
-        console.warn(`[bulk crochet] ${brief.slug} skipped — ${capped}`)
-        continue
-      }
-
-      let last: AttemptResult | null = null
-      let publishedThis = false
-      let duplicated = false
-      for (let attempt = 1; attempt <= MAX_CROCHET_REPAIRS + 1; attempt++) {
-        base.generations++
-        if (brief.treatment === 'grid-tapestry') base.proGenerations++
-        const attemptNo = attempt
-        last = await step.run(`cr-${brief.slug}-a${attempt}`, () =>
-          crochetAttempt(brief, keptSubjects, { attempt: attemptNo }),
-        )
-        if (last.duplicateOf) {
-          base.duplicates++
-          base.killReasons.push(`duplicate of ${last.duplicateOf}`)
-          duplicated = true
-          break
-        }
-        if (last.verdict === 'keep' && last.published) {
-          keptSubjects.push(brief.subject)
-          base.gems.push(brief.slug)
-          base.published++
-          publishedThis = true
-          break
-        }
-        // Only a staging fault earns a second render; anything about the object
-        // itself is terminal, because the geometry is deterministic.
-        if (last.verdict === 'repair' && attempt <= MAX_CROCHET_REPAIRS) {
-          base.repaired++
-          continue
-        }
-        break
-      }
-      if (!publishedThis && !duplicated && last && !last.published) {
-        base.culled++
-        base.killReasons.push(...last.reasons)
-      }
-    } catch (err) {
-      base.errors++
-      console.error(`[bulk crochet] ${brief.slug} failed`, err)
-    }
-  }
-
-  base.line = summaryLine({ ...base, modelBriefs: base.dressedBriefs })
-  return base
+  return { counts, avoidSubjectKeys, shelfSlots: plan.slots, shelfQuota: plan.quota }
 }
 
 export async function runBatch(craft: Craft, count: number, step: StepRunner = inlineStep): Promise<BatchSummary> {
   if (craft === 'needlework') return runNeedleworkBatch(count, step)
-  if (craft === 'crochet') return runCrochetBatch(count, step)
+  if (craft === 'crochet') {
+    throw new Error(
+      'runBatch("crochet"): crochet is filled by a Claude routine, not by a batch runner — see docs/autopilot-prompts/crochet.md and apps/web/scripts/crochet-autopilot.ts',
+    )
+  }
   return runCrossStitchBatch(count, step)
 }

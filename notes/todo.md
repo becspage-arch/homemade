@@ -2,12 +2,12 @@
 
 Rule: this file is the shared to-do. Any session that finishes or starts an item edits it and the edit rides the next train. Plain English, one line per item, newest decisions at the top of each section.
 
-## Crochet: to live, in order (6 September 2026)
-1. Judge look-pass round 8 (sphere-shaped increase recipe for ball, bear head and body) beside the real bear. Branch claude/loom-sphere-counts. Round 7 stuffing (claude/loom-stuffing 05ec1972) rides with it.
-2. One train: stuffing, sphere recipe, rule-text fixes, notes/, and the two finished knitting branches riding dark (claude/knitting-shelves-library 5f7df48a, claude/knitting-grader-product c9adb78e, which carries migration 20261014000000; read the migration step). One deploy verification.
+## Crochet: to live, in order (updated 6 September 2026, evening)
+1. DONE: round 8 judged PASS (bear head and body read as a stuffed toy; crease 38°→10°). Round bar locked.
+2. DONE: the train of 6 September (stuffing, sphere recipe, notes/, knitting A+B dark with migration 20261014000000, knit-program stub, idea backlog, the crochet routine conversion with the API lane removed).
 3. Re-render the ball and bear sign-off rows and the Studio presets on the new geometry; judge the served images.
-4. Crochet routine conversion lands (claude/crochet-autopilot-routine): session plans, authors and judges on Max; scripts expand, render, gate, publish; API path removed. Give Rebecca the per-pattern and total fill cost; she sets the budget; one judged batch of eight; then the cron.
-5. Market audit + idea backlog lands (claude/crochet-idea-backlog): Rebecca signs off the targets; the routine works the backlog in order.
+4. Rebecca: set the crochet budget from the estimate (about $0.16 per published pattern, about $188 for 1,200; pass rate assumed 60% until measured). Then one judged batch of eight on her Max plan via docs/autopilot-prompts/crochet.md, then the routine schedule.
+5. Rebecca: adopt 1,500 with the audit's shelf split or keep 1,200; the 959 DRAFT prose crochet pattern tutorials as a brief source through the loom path or leave; headband 30→24.
 6. Go-live gates: completeness, vision sweep, tagging coverage, search reindex, category page and descriptions; then add 'crochet' to LAUNCH_VISIBLE_CATEGORY_SLUGS on a train. Rebecca's sign-off moment.
 
 ## Cross-stitch: to sign-off, in order (6 September 2026)

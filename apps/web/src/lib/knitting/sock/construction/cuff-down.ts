@@ -16,7 +16,7 @@ import type {
   SockOptions,
   SockHeelStyle,
 } from '../types'
-import type { FootSizeName } from '../sock-sizes'
+import type { FootSizeName, FootMeasurements } from '../sock-sizes'
 import { getFootMeasurements } from '../sock-sizes'
 import { flapAndGussetHeel } from '../heel/flap-and-gusset'
 import { shortRowHeel } from '../heel/short-row'
@@ -28,6 +28,8 @@ export interface CuffDownInput {
   gauge: Gauge
   heelStyle: SockHeelStyle
   options?: SockOptions
+  /** The maker's own measurements, in place of the chart row for `size`. */
+  footMeasurements?: FootMeasurements
 }
 
 function roundEvenly(n: number): number {
@@ -42,7 +44,7 @@ function roundTenth(n: number): number {
 }
 
 export function gradeCuffDownSock(input: CuffDownInput): SockGradedPattern {
-  const foot = getFootMeasurements(input.size)
+  const foot = input.footMeasurements ?? getFootMeasurements(input.size)
   const opts = input.options ?? {}
   const stitchesPerCm = input.gauge.stitchesPer10cm / 10
   const rowsPerCm = input.gauge.rowsPer10cm / 10

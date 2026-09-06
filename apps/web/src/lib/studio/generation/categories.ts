@@ -181,9 +181,49 @@ export const CROCHET_SHELVES: ShelfTarget[] = [
   { slug: 'pincushion', name: 'Pincushions', target: 4 },
 ]
 
+/**
+ * The canonical KNITTING shelves — the K-4 project-shape sub-categories
+ * (`packages/db/scripts/seed-knitting-taxonomy.ts`), each with the
+ * published-pattern target the catalogue is aiming for. Unlike crochet's
+ * shelves, these are NOT the shared item-type vocabulary 1:1 — a knitting
+ * shelf is a coarser grouping (`hat` covers beanies, slouchy hats, fitted
+ * hats, bucket hats, berets, watchcaps and earflap hats together), so the
+ * slugs here are the live SubCategory slugs, not item-type slugs.
+ *
+ * DEMAND-WEIGHTED, not even. Sweaters/cardigans and socks are what knitters
+ * knit most (and what a hand-knit is prized for over a crocheted or sewn
+ * equivalent), so they carry the biggest numbers; vests are a niche shape in
+ * knitting, so they carry the smallest. `dishcloths-homewares` carries a real
+ * target rather than sitting out with the other legacy catch-alls: flat
+ * pieces are what the loom renders first, so it is knitting's launch shelf.
+ * The sum is the category target (800 — a FLOOR for now, per the same
+ * originals-dominant logic as cross-stitch and crochet).
+ *
+ * `stitches` and `foundations` (content-type, not project-shape) and the
+ * still-open legacy catch-alls `baby` and `garments` are deliberately
+ * excluded — Rebecca decides those.
+ */
+export const KNITTING_SHELVES: ShelfTarget[] = [
+  { slug: 'sweater-cardigan', name: 'Sweaters & Cardigans', target: 160 },
+  { slug: 'sock', name: 'Socks', target: 150 },
+  { slug: 'blanket', name: 'Blankets', target: 120 },
+  { slug: 'hat', name: 'Hats', target: 90 },
+  { slug: 'dishcloths-homewares', name: 'Dishcloths & Homewares', target: 70 },
+  { slug: 'shawl-wrap', name: 'Shawls & Wraps', target: 80 },
+  { slug: 'scarf-cowl', name: 'Scarves & Cowls', target: 65 },
+  { slug: 'mitt-glove', name: 'Mitts & Gloves', target: 35 },
+  { slug: 'accessory-other', name: 'Accessories (other)', target: 20 },
+  { slug: 'vest', name: 'Vests', target: 10 },
+]
+
 /** slug -> crochet shelf, for the publisher's allowed-shelf check. */
 export const CROCHET_SHELF_BY_SLUG: Record<string, ShelfTarget> = Object.fromEntries(
   CROCHET_SHELVES.map((s) => [s.slug, s]),
+)
+
+/** slug -> knitting shelf, for the publisher's allowed-shelf check. */
+export const KNITTING_SHELF_BY_SLUG: Record<string, ShelfTarget> = Object.fromEntries(
+  KNITTING_SHELVES.map((s) => [s.slug, s]),
 )
 
 /** slug → shelf, for the publisher's allowed-shelf check. */
@@ -252,8 +292,23 @@ export const PATTERN_CATEGORIES: Record<string, PatternCategoryConfig> = {
     // heroes by the loom render engine. Left empty by design.
     tierGuide: {},
   },
-  // Future pattern-led categories (knitting, needlework, sewing) get their own
-  // entry here after their sign-off pass agrees the look + sub-categories.
+  knitting: {
+    slug: 'knitting',
+    patternType: 'KNITTING_CHART',
+    designerId: HOMEMADE_DESIGNER,
+    // DERIVED from the shelf targets above, exactly as cross-stitch and crochet
+    // are, so the cron's stop point, the admin dashboard and the planner's
+    // shelf weighting can never disagree about what "full" means. 800 is a
+    // FLOOR for now. BULK_KNITTING_TARGET overrides it at runtime.
+    patternTarget: sumTargets(KNITTING_SHELVES),
+    shelfTargets: KNITTING_SHELVES,
+    subCategories: KNITTING_SHELVES.map((s) => s.slug),
+    // Knitting does NOT use the cross-stitch Spec tiers. Left empty by design,
+    // same as crochet, pending its own generation-tier decision.
+    tierGuide: {},
+  },
+  // Future pattern-led categories (needlework, sewing) get their own entry
+  // here after their sign-off pass agrees the look + sub-categories.
 }
 
 export function getPatternCategory(slug: string): PatternCategoryConfig | null {

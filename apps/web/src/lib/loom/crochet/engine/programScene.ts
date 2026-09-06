@@ -11,7 +11,7 @@
  */
 
 import { compileProgram, programYarnRadiusMm, type CrochetProgram, type Staging } from './program'
-import { relax } from './relax'
+import { relax, STUFF_PRESSURE, STUFF_PRIOR } from './relax'
 import { auditProblems } from './auditChecks'
 import { STITCHES, type StitchId } from './dictionary'
 import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
@@ -32,7 +32,7 @@ export function relaxProgram(built: BuiltContinuous, yr: number): void {
     planeK: 0,
     layoutK: 0.06,
     layoutMode: surface ? 'surface' : polar ? 'radial' : 'y',
-    ...(surface ? { floorZ: 0 } : polar ? { floorZ: -yr * 1.3 } : {}),
+    ...(surface ? { floorZ: 0, stuffing: STUFF_PRESSURE, stuffPrior: STUFF_PRIOR } : polar ? { floorZ: -yr * 1.3 } : {}),
     iterations: surface ? 560 : polar ? 360 : 320,
   })
 }

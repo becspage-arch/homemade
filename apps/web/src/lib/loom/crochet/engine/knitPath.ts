@@ -66,6 +66,36 @@ export type KnitFace = 'stockinette' | 'garter' | 'rib' | 'seed'
  *  'ssk'   = left-leaning single decrease — through the head below + its RIGHT neighbour. */
 export type KnitStitchOp = 'k' | 'yo' | 'k2tog' | 'ssk'
 
+/**
+ * The PULL SIDE (+1 front / −1 back) of the stitch at (course j, column c) in the
+ * FABRIC frame — the one place the four faces are defined, so the geometry
+ * builder below and the pattern layer's WORDS and CHART (engine/program.ts) can
+ * never disagree about which stitch is a knit and which is a purl.
+ *
+ *  - stockinette: every loop to the same face (+1), except any declared purl
+ *    GUTTER column (per-column, like rib — see `purlCols` on buildKnit);
+ *  - garter: the whole course flips each row (+1, −1, +1 …);
+ *  - rib: each column holds its face for the whole height (even +1, odd −1),
+ *    independent of the course — that constancy IS the vertical rib;
+ *  - seed: the CHECKERBOARD (+1 where j+c is even) — k1 p1 across the course
+ *    AND knits over purls up the columns (moss texture in every direction).
+ *
+ * Extraction only (2026-09-06): the arithmetic is character-for-character the
+ * closure `buildKnit` used to carry, so every knit swatch's geometry hash is
+ * unchanged (verified with scripts/loom-geom-hash.ts).
+ */
+export function knitFaceSign(face: KnitFace, j: number, c: number, purlCols?: Set<number>): number {
+  return face === 'seed'
+    ? ((j + c) % 2 === 0 ? 1 : -1)
+    : face === 'rib'
+      ? (c % 2 === 0 ? 1 : -1)
+      : face === 'garter'
+        ? (j % 2 === 0 ? 1 : -1)
+        : purlCols?.has(c) // stockinette, with optional recessed purl gutters (per-column, like rib)
+          ? -1
+          : 1
+}
+
 export function buildKnit(
   courses: number,
   W: number,
@@ -111,16 +141,7 @@ export function buildKnit(
   //  - seed: the CHECKERBOARD (+1 where j+c is even) — k1 p1 across the course
   //    AND knits over purls up the columns (moss texture in every direction).
   const purl = purlCols ?? new Set<number>()
-  const faceSign = (j: number, c: number): number =>
-    face === 'seed'
-      ? ((j + c) % 2 === 0 ? 1 : -1)
-      : face === 'rib'
-        ? (c % 2 === 0 ? 1 : -1)
-        : face === 'garter'
-          ? (j % 2 === 0 ? 1 : -1)
-          : purl.has(c) // stockinette, with optional recessed purl gutters (per-column, like rib)
-            ? -1
-            : 1
+  const faceSign = (j: number, c: number): number => knitFaceSign(face, j, c, purl)
 
   // Real stockinette is about two yarn-diameters THICK: legs on the face,
   // heads + sinkers a full layer behind. The initial relief must provide that

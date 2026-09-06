@@ -28,10 +28,15 @@ const MAX = 20
 /** The crafts the bulk page can drive. Mirrors `Craft` in the batch runner. */
 export type BulkCraft = 'cross-stitch' | 'needlework' | 'crochet'
 
-const BATCH_EVENT: Record<BulkCraft, string> = {
+/**
+ * The crafts that still have a server-side batch to fire. Crochet is absent on
+ * purpose: its planning, authoring and judging are a Claude session's work on
+ * Rebecca's Max plan, so there is no Inngest job to trigger — the routine in
+ * `docs/autopilot-prompts/crochet.md` drives it instead.
+ */
+const BATCH_EVENT: Partial<Record<BulkCraft, string>> = {
   'cross-stitch': 'bulk/cross-stitch.batch',
   needlework: 'bulk/needlework.batch',
-  crochet: 'bulk/crochet.batch',
 }
 
 /**
@@ -44,6 +49,12 @@ export async function triggerBulkBatch(craft: BulkCraft, count: number): Promise
   const actor = await requireAdminRole({ minimum: 'ADMIN' })
   const n = Math.max(1, Math.min(MAX, Math.round(Number(count) || 0)))
   const event = BATCH_EVENT[craft]
+  if (!event) {
+    return {
+      ok: false,
+      error: 'Crochet is filled by a Claude routine, not from here — see docs/autopilot-prompts/crochet.md.',
+    }
+  }
   try {
     await inngest.send({ name: event, data: { count: n, triggeredBy: actor.id } })
   } catch (err) {
@@ -59,8 +70,12 @@ export async function triggerBulkBatch(craft: BulkCraft, count: number): Promise
 }
 
 /**
- * Turn a craft's unattended autopilot cron on/off. DB-backed, so it takes effect
+ * Turn a craft's unattended autopilot on/off. DB-backed, so it takes effect
  * immediately (no redeploy) and survives deploys.
+ *
+ * Cross-stitch and needlework read it in their Inngest cron's preflight. Crochet
+ * has no cron — its routine reads the same row at pre-flight and exits clean
+ * when it is off, so one switch means the same thing across the three crafts.
  */
 export async function setBulkAutopilot(craft: BulkCraft, enabled: boolean): Promise<ToggleResult> {
   const actor = await requireAdminRole({ minimum: 'ADMIN' })
