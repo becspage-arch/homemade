@@ -2170,6 +2170,38 @@ inside the ±12% settled-size gate.
 again.** Their `status` is unchanged and they still need Rebecca's
 re-verification against their reference photos.
 
+### Rendered (Fargate), and what the eye says
+
+One batch, `LOOM_RENDER=fargate`: `postrib` (02bec0aad197b7ed, 458 s, fidelity
+0.897), `fpdc` (de5ac242dfbc848a, 309 s, 0.868), `basketweave`
+(44be22b56f591e9a, 344 s, 0.902), `post-rib-headband` (a99559f5, 310 s, 0.937)
+— all four PASS the fidelity gate. Before/after close-up crops (§8f-7's renders
+beside these) are in `.loom-scratch/crochet/patterns/crops/`.
+
+**The numbers moved the right way and the look did not follow them everywhere,
+so read the crops before believing this table.**
+
+- `postrib` at hero scale genuinely gains a ROW STRUCTURE it never had: the
+  collar reads as the horizontal band a crocheter counts, the ribs are denser,
+  and the valleys show their own recessed posts. But the raised ribs are no
+  longer the unbroken vertical bars §8f-7 rendered — each collar interrupts its
+  own column.
+- **`fpdc`'s own swatch is the clear regression.** §8f-7 rendered crisp vertical
+  raised posts in rows; with the collar it reads as a disordered lumpy fabric
+  with no legible column at all. Two candidates, and they are not exclusive:
+  the `postReliefScale: 1.6` this pass added to that swatch purely to put its
+  thickness back over 1.8 d (a number fix — back it out first), and the fact
+  that an all-front-post swatch's columns already overlap at its own gauge
+  (inter-post gap −0.45 d), so neighbouring collars interlock into a mesh. That
+  second one is why the ring had to be narrowed to `yarnOverClear` 0.7 to clear
+  the audit at all: **`fpdc`/`bpdc`'s gauge 2.9 predates the collar and is too
+  tight for a collared post.** It is the first thing to re-derive.
+- `basketweave` is denser and its blocks still alternate, but the post bars
+  inside a block are softer than §8f-7's.
+- `post-rib-headband` at product scale reads unmistakably CROCHETED where §8f-7
+  read almost knitted — the post structure is visible — but the fabric is more
+  open again, closer to the lattice §8f-5b was trying to close.
+
 ### Still open
 
 - **The row line is 22.2% on `postrib` and 30.5% on `basketweave`**, against a
