@@ -26,6 +26,8 @@ import {
   FLOSS_BRAND_LABEL,
   type FlossOwnership,
 } from '@/lib/floss/stash-ownership'
+import { PersonaliseSection } from '@/components/public/samplers/personalise-section'
+import { samplerMetaOf, samplerPreviewBase } from '@/lib/studio/generation/samplers/load'
 import { MakerPhotos } from '@/components/public/maker-photos/maker-photos'
 import { loadMakerPhotos } from '@/lib/maker-photos'
 import { FabricCalculator } from './fabric-calculator'
@@ -133,6 +135,12 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
       : difficultyLabel
         ? difficultyLabel
         : (band?.label ?? '')
+
+  // A sampler carries a lettering recipe beside its chart. When it does, the
+  // page grows a "Make it yours" section: the maker types their own name and
+  // date and watches this chart become theirs. Everything else on the page is
+  // unchanged, and a pattern without the recipe never sees it.
+  const sampler = samplerMetaOf(row.generationMeta)
 
   const related = await prisma.pattern.findMany({
     where: {
@@ -370,6 +378,20 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
           />
         </div>
       </header>
+
+      {sampler && (
+        <PersonaliseSection
+          patternId={row.id}
+          patternName={row.name}
+          kind={sampler.kind}
+          values={sampler.values}
+          previewBaseUrl={samplerPreviewBase(row.generationMeta)}
+          gridWidth={data.grid.width}
+          gridHeight={data.grid.height}
+          isPremium={premium}
+          patternPath={patternPath}
+        />
+      )}
 
       <MakerPhotos
         photos={makerPhotos}

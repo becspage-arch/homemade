@@ -1,0 +1,177 @@
+/* "Make it yours" — the personalise section on a sampler's pattern page. */
+
+.sampler-personalise {
+  margin: 2.5rem 0 0;
+  padding: 1.75rem;
+  border-radius: 14px;
+  background: var(--surface-2, #faf7f1);
+  border: 1px solid var(--border-soft, #e8e0d3);
+}
+
+.sampler-personalise-head h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+}
+
+.sampler-personalise-head p {
+  margin: 0 0 1.35rem;
+  color: var(--text-muted, #6f6455);
+  font-size: 0.95rem;
+  max-width: 46ch;
+}
+
+.sampler-personalise-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 22rem);
+  gap: 1.75rem;
+  align-items: start;
+}
+
+@media (max-width: 780px) {
+  .sampler-personalise {
+    padding: 1.25rem;
+  }
+  .sampler-personalise-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ── the preview ────────────────────────────────────────────────────────── */
+
+.sampler-preview-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fcfaf6;
+  box-shadow: 0 1px 3px rgb(60 48 32 / 12%);
+}
+
+.sampler-preview-frame img,
+.sampler-preview-missing {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sampler-preview-missing {
+  background: repeating-linear-gradient(45deg, #f3ede2, #f3ede2 6px, #ece4d6 6px, #ece4d6 12px);
+}
+
+/* The lettering sits on the same grid the chart uses, stretched to whatever
+   size the picture is drawn at, so a square is a square wherever it lands. */
+.sampler-preview-letters {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sampler-preview-busy {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 88%);
+  color: var(--text-muted, #6f6455);
+  font-size: 0.75rem;
+}
+
+.sampler-preview-busy svg {
+  animation: sampler-spin 1s linear infinite;
+}
+
+@keyframes sampler-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sampler-preview-caption {
+  margin: 0.6rem 0 0;
+  color: var(--text-muted, #6f6455);
+  font-size: 0.8rem;
+}
+
+/* ── the fields ─────────────────────────────────────────────────────────── */
+
+.sampler-personalise-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.sampler-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.sampler-field-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text, #3f382e);
+}
+
+.sampler-field-hint {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--text-muted, #8b8071);
+}
+
+.sampler-field input {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-soft, #ddd3c3);
+  background: #fff;
+  font: inherit;
+  font-size: 0.95rem;
+  color: inherit;
+}
+
+.sampler-field input:focus-visible {
+  outline: 2px solid var(--accent, #8a6f4b);
+  outline-offset: 1px;
+}
+
+.sampler-personalise-cta {
+  margin-top: 0.35rem;
+  padding: 0.7rem 1.2rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent, #6d5a3d);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sampler-personalise-cta:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.sampler-personalise-message,
+.sampler-personalise-locked {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted, #6f6455);
+}
+
+.sampler-personalise-foot {
+  margin: 1.25rem 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted, #6f6455);
+}

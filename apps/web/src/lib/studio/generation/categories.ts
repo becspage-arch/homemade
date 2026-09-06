@@ -81,6 +81,12 @@ export const CROSS_STITCH_SHELVES: ShelfTarget[] = [
   { slug: 'small-makes', name: 'Small makes', target: 60 },
   { slug: 'coastal', name: 'Coastal & seaside', target: 60 },
   { slug: 'folk-geometric', name: 'Folk art & geometric', target: 60 },
+  // Personalised samplers. NOT planner-fed: every one of these is a named
+  // design with lettering slots on it, built by `samplers/designs.ts` and
+  // published by `scripts/xs-samplers-publish.ts`, so the bulk planner has
+  // nothing sensible to commission here. `hold` is how the registry already
+  // says "leave this shelf alone", and it keeps the cron out of it.
+  { slug: 'samplers', name: 'Samplers', target: 60, hold: true },
   { slug: 'seasonal', name: 'Seasonal', target: 40 },
   { slug: 'halloween', name: 'Halloween', target: 40 },
   { slug: 'celestial', name: 'Celestial', target: 40 },
@@ -263,6 +269,8 @@ export const PATTERN_CATEGORIES: Record<string, PatternCategoryConfig> = {
       christmas: ['scene', 'illustration'],
       coastal: ['scene', 'illustration', 'botanical'],
       'small-makes': ['illustration', 'botanical'],
+      // Listed for completeness; the shelf is on hold, so nothing plans into it.
+      samplers: ['sampler', 'typo', 'botanical'],
       'folk-geometric': ['illustration', 'botanical', 'scene'],
       cocktails: ['scene'],
       landscapes: ['scene'],
