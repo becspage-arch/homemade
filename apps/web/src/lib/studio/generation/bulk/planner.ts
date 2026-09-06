@@ -544,7 +544,7 @@ export async function planModelBriefs(
         model: PLANNER_MODEL,
         system: XS_SYSTEM,
         prompt: xsPromptText(count, ctx),
-        maxTokens: 1600,
+        maxTokens: 4000,
         retries: PLANNER_RETRIES,
       }),
       PLANNER_TIMEOUT_MS,
