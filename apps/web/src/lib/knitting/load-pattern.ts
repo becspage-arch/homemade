@@ -26,6 +26,10 @@ import type {
   PatternRow,
 } from '@/components/studio/knitting/types'
 import type { KnittingChartData } from '@/lib/knitting/renderer/types'
+import {
+  deriveGradableSpec,
+  type KnittingGradableSpec,
+} from '@/lib/knitting/grading/pattern-spec'
 
 // Prisma Decimal serialises with .toString(). The runtime type lives at
 // `@prisma/client/runtime/library` but that sub-path is not exposed
@@ -239,6 +243,50 @@ export async function loadKnittingPatternForStudio(
     bindOffMethod: (tutorial.bindOffMethod as BindOffMethod | null) ?? null,
     inTheRoundMethod: (tutorial.inTheRoundMethod as InTheRoundMethod | null) ?? null,
   }
+}
+
+/**
+ * What the grader can do with a stored pattern, or null when it should not be
+ * offered at all.
+ *
+ * Two gates, both here so no size table or "Fit it to me" panel can ever be
+ * mounted without them:
+ *
+ *   1. No knitting pattern is a pattern until the loom has rendered it and the
+ *      photo has been judged. A row without a successful loom render and its
+ *      own hero has not earned a public pattern surface, whatever else it
+ *      holds, so it grades to null.
+ *   2. The row has to say enough to grade honestly — a gauge and a
+ *      construction the library knows. `deriveGradableSpec` decides that.
+ */
+export async function loadKnittingGradableSpec(
+  slug: string,
+): Promise<KnittingGradableSpec | null> {
+  const row = await prisma.knittingPattern.findUnique({
+    where: { slug },
+    select: {
+      slug: true,
+      name: true,
+      loomRenderStatus: true,
+      loomHeroMediaId: true,
+      projectShape: true,
+      constructionDirection: true,
+      inTheRoundMethod: true,
+      techniqueDisciplines: true,
+      craftTechniqueTags: true,
+      specialStitchesUsed: true,
+      easePresetSlug: true,
+      gaugeInPatternStitch: true,
+      gaugeText: true,
+      yarnWeightStandard: true,
+      sizesGraded: true,
+    },
+  })
+  if (!row) return null
+  // SUCCESS is the ImageGenerationStatus value the loom render-on-publish path
+  // writes when a pattern's own exact hero has been rendered and judged.
+  if (row.loomRenderStatus !== 'SUCCESS' || !row.loomHeroMediaId) return null
+  return deriveGradableSpec(row)
 }
 
 function mapProjectShape(shape: string | null | undefined): KnittingShape | null {

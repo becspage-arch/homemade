@@ -17,6 +17,14 @@
  *                             Enforced with `hasPremium` + PremiumOverlay at the
  *                             call site the same way cross-stitch's is; the copy
  *                             lives here so every craft's gate reads alike.
+ *   KNITTING_CUSTOM_FIT     — regrading a knitting pattern to the maker's own
+ *                             measurements and swatch gauge. Every standard
+ *                             size stays free on screen; only the maker's own
+ *                             size is premium, so the gate sits on the output,
+ *                             not on typing the measurements in.
+ *   KNITTING_IDEA_TO_PATTERN — knitting's create-your-own, the twin of
+ *                             CROCHET_IDEA_TO_PATTERN. Copy lives here ready
+ *                             for the surface that will use it.
  *   PUBLIC_SUBMISSION       — designer-side, funds the revenue share
  *   SEWING_*                — sewing personalisation / hack composer (handled
  *                             in the sewing category's own sign-off pass)
@@ -40,6 +48,8 @@ export type StudioGateFeature =
   | 'CROCHET_PHOTO_TO_TAPESTRY'
   | 'CROCHET_AMIGURUMI_DESIGNER'
   | 'CROCHET_IDEA_TO_PATTERN'
+  | 'KNITTING_CUSTOM_FIT'
+  | 'KNITTING_IDEA_TO_PATTERN'
   | 'PUBLIC_SUBMISSION'
   | 'SEWING_PERSONALISATION'
   | 'SEWING_PERSONALISATION_LAYERED_PDF'
@@ -81,6 +91,16 @@ const COPY: Record<StudioGateFeature, { message: string; rationale: string }> = 
   },
   CROCHET_IDEA_TO_PATTERN: {
     message: 'Designing a crochet pattern from a description is a Homemade Premium feature.',
+    rationale:
+      'Premium talks the idea through with you, then writes a pattern whose every stitch has been checked before you cast on.',
+  },
+  KNITTING_CUSTOM_FIT: {
+    message: 'Fitting a knitting pattern to your own measurements is a Homemade Premium feature.',
+    rationale:
+      'Every standard size is free to work on screen. Premium reworks the whole pattern to your measurements and your swatch gauge, so the stitch counts are yours.',
+  },
+  KNITTING_IDEA_TO_PATTERN: {
+    message: 'Designing a knitting pattern from a description is a Homemade Premium feature.',
     rationale:
       'Premium talks the idea through with you, then writes a pattern whose every stitch has been checked before you cast on.',
   },

@@ -1317,3 +1317,208 @@
   color: var(--knit-accent-strong);
   border-color: var(--knit-accent-soft);
 }
+
+/* ===== Size table (the grader) ======================================== */
+
+.knitting-size-table {
+  margin: 2rem auto 0;
+  max-width: 1080px;
+  padding: 1.75rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 2px 14px rgba(60, 47, 34, 0.08);
+}
+
+.knitting-size-table-header {
+  margin-bottom: 1.25rem;
+}
+
+.knitting-size-table-heading {
+  margin: 0 0 0.35rem;
+  font-family: var(--studio-font-display, 'Fraunces', Georgia, serif);
+  font-size: 1.4rem;
+}
+
+.knitting-size-table-lede {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--knit-complete-fade, rgba(60, 47, 34, 0.7));
+}
+
+.knitting-size-table-controls,
+.knitting-size-table-fit-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.knitting-size-table-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 11rem;
+  font-size: 0.9rem;
+}
+
+.knitting-size-table-field input,
+.knitting-size-table-field select {
+  padding: 0.5rem 0.65rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(60, 47, 34, 0.14);
+  font: inherit;
+  color: inherit;
+}
+
+.knitting-size-table-field small {
+  color: var(--knit-complete-fade, rgba(60, 47, 34, 0.6));
+  font-size: 0.75rem;
+}
+
+.knitting-size-table-scroll {
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.knitting-size-table-grid {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--studio-font-mono, 'JetBrains Mono', ui-monospace, monospace);
+  font-size: 0.85rem;
+}
+
+.knitting-size-table-grid th,
+.knitting-size-table-grid td {
+  padding: 0.45rem 0.7rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.knitting-size-table-grid tbody th {
+  text-align: left;
+  font-family: var(--studio-font-body, 'Lora', Georgia, serif);
+  font-weight: 400;
+}
+
+.knitting-size-table-grid tbody tr:nth-child(odd) {
+  background: rgba(107, 138, 155, 0.07);
+}
+
+.knitting-size-table-size {
+  border: none;
+  border-radius: 8px;
+  padding: 0.3rem 0.55rem;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.knitting-size-table-size:hover {
+  background: var(--knit-accent-soft, rgba(107, 138, 155, 0.12));
+}
+
+.knitting-size-table-size.is-selected {
+  background: var(--knit-accent, #6b8a9b);
+  color: #fff;
+}
+
+.knitting-size-table-steps {
+  margin-top: 1.5rem;
+}
+
+.knitting-size-table-steps h3,
+.knitting-size-table-fit h3 {
+  margin: 0 0 0.6rem;
+  font-family: var(--studio-font-display, 'Fraunces', Georgia, serif);
+  font-size: 1.1rem;
+}
+
+.knitting-size-table-steps ol,
+.knitting-size-table-custom ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.6;
+}
+
+.knitting-size-table-seams {
+  margin-top: 0.6rem;
+  color: var(--knit-complete-fade, rgba(60, 47, 34, 0.7));
+}
+
+.knitting-size-table-fit {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(60, 47, 34, 0.12);
+}
+
+.knitting-size-table-fit-lede {
+  margin: 0 0 1rem;
+  max-width: 60ch;
+  color: var(--knit-complete-fade, rgba(60, 47, 34, 0.7));
+}
+
+.knitting-size-table-fit-button {
+  border: none;
+  border-radius: 12px;
+  padding: 0.6rem 1.25rem;
+  background: var(--knit-accent, #6b8a9b);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.knitting-size-table-fit-button:hover:not(:disabled) {
+  background: var(--knit-accent-strong, #4f6c7e);
+}
+
+.knitting-size-table-fit-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.knitting-size-table-custom {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 14px;
+  background: var(--knit-accent-soft, rgba(107, 138, 155, 0.12));
+}
+
+.knitting-size-table-custom h4 {
+  margin: 0 0 0.75rem;
+  font-family: var(--studio-font-display, 'Fraunces', Georgia, serif);
+  font-size: 1rem;
+}
+
+.knitting-size-table-custom dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: 0.4rem 1rem;
+  margin: 0 0 1rem;
+}
+
+.knitting-size-table-custom dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.knitting-size-table-custom dt {
+  color: var(--knit-complete-fade, rgba(60, 47, 34, 0.7));
+}
+
+.knitting-size-table-custom dd {
+  margin: 0;
+  font-family: var(--studio-font-mono, 'JetBrains Mono', ui-monospace, monospace);
+}
+
+.knitting-size-table-status,
+.knitting-size-table-error {
+  margin: 0.75rem 0 0;
+}
+
+.knitting-size-table-error {
+  color: #8a4f1f;
+}
