@@ -2177,6 +2177,22 @@ stitches lands near 35 seconds, inside one Inngest step and under the gateway's
 ceiling is a real showpiece rather than a swatch. Measured on this box: 1,050
 stitches compiled and audited in 13.8 s, 1,600 in about 21 s.
 
+### OPEN, and it gates the cron: the render is a blocking call
+
+`fargateRenderBase` (`scripts/loom-fargate-render.ts`) starts the ECS task and
+POLLS IT TO COMPLETION inside the call, so one render is a seven- or eight-minute
+synchronous await. Inside an Inngest `step.run` on the web task that is a
+seven-minute HTTP request, and the gateway kills a request at roughly 100
+seconds — the exact failure the cross-stitch autopilot was fanned out to escape
+(§ `bulk-generation.ts`). Needlework has the same shape and is why it sits
+paused.
+
+So the crochet cron is WIRED but must not be trusted until the render is made
+asynchronous: dispatch the task in one step, `step.sleep`, then poll for the
+result in a later step, each request short. Until then the supported path is a
+manual run from a worker box, where nothing sits in front of the process. This
+is why the autopilot toggle ships OFF.
+
 ### Running a batch
 
 ```bash

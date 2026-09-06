@@ -631,6 +631,17 @@ export const bulkNeedleworkBatch = inngest.createFunction(
  * Six-hourly, and it obeys the same three gates as every other craft: the
  * autopilot switch, the daily spend cap, and the category target. Cron firings
  * do nothing at all until an admin turns the switch on.
+ *
+ * ── DO NOT TURN THE SWITCH ON YET ─────────────────────────────────────────
+ * The loom's Fargate render is a BLOCKING call: `fargateRenderBase` starts the
+ * ECS task and polls it to completion, so one hero is a seven- or eight-minute
+ * synchronous await. Inside a `step.run` that is a seven-minute HTTP request,
+ * and the gateway kills a request at about 100 seconds — the same wall the
+ * cross-stitch autopilot was fanned out to escape, and the reason needlework
+ * next door is paused. Until the render is split (dispatch the task in one
+ * step, sleep, poll in a later one) this function is correct but will time out
+ * on the first idea, and the supported way to run a crochet batch is
+ * `scripts/bulk-crochet-batch.ts` from a worker box.
  */
 export const bulkCrochetBatch = inngest.createFunction(
   {
