@@ -149,6 +149,17 @@ export interface CompositionProgram {
   exposure?: number
   /** Frame margin override (default 0.45). */
   marginFactor?: number
+  /** Minimum camera field of view (mm, across the frame's SHORTER side) — the
+   *  same product-photo scale floor as `CrochetProgram.minFieldMm`
+   *  (STITCH_ENGINE §8e-2 Part C): a small finished piece (e.g. the 58mm ball)
+   *  is framed as if in at least this field, with white ground round it,
+   *  instead of filling the frame the way a larger composition (e.g. the
+   *  101mm bear) does. A composition always stages itself as a finished
+   *  object (there is no `swatch` composition), so this floor is always
+   *  applied. Defaults to 160 (mm) in the scene builder when unset; a
+   *  composition whose own margined frame already exceeds the floor is
+   *  unaffected — this only ever pulls the camera BACK, never in. */
+  minFieldMm?: number
   // Catalogue / pattern metadata (optional).
   gaugeText?: string
   finishedSizeMm?: { width: number; height: number }
@@ -430,8 +441,15 @@ export interface BlenderScene {
     distScale?: number
     groundScale?: number
     lightRig?: 'product'
+    minFieldMm?: number
   }
 }
+
+/** Default `minFieldMm` (STITCH_ENGINE §8e-2 Part C) for a composition — the
+ *  same product-photo scale floor `programScene` applies to `flatlay` /
+ *  `loop` / `flatband`. A composition is always a finished-object hero, so
+ *  this is always applied unless the program overrides it. */
+const DEFAULT_MIN_FIELD_MM = 160
 
 /**
  * The staged Blender scene for a composed amigurumi — every part as its own
@@ -476,6 +494,7 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
   if (p.lightRig != null) scene.view.lightRig = p.lightRig
   if (p.light != null) scene.view.light = p.light
   if (p.exposure != null) scene.view.exposure = p.exposure
+  scene.view.minFieldMm = p.minFieldMm ?? DEFAULT_MIN_FIELD_MM
   if (compiled.props.length) {
     scene.props = compiled.props.map((pr) => ({
       centre: [pr.centre.x, pr.centre.y, pr.centre.z],

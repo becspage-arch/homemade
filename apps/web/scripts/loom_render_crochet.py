@@ -264,6 +264,25 @@ def main():
     halfW = contentW * 0.5 + margin
     halfH = contentH * 0.5 + margin
 
+    # A real product photo holds one consistent SCALE: a small finished object
+    # sits in the frame with white ground round it, it does not fill the frame
+    # the way a larger one does. `minFieldMm` (STITCH_ENGINE §8e-2 Part C) is a
+    # floor on the framed extent's SHORTER side (mm, converted to Blender units
+    # by S) — below it, both halves are scaled up together (aspect preserved,
+    # so `aspect`/`dist`/`span` downstream all just see a bigger virtual frame)
+    # rather than a new mode. An object already framed wider than the floor on
+    # its short axis is completely unaffected — this only ever pulls the
+    # camera BACK, never in. `swatch` staging (the stitch-proof macro crop)
+    # never sets this key, so it is untouched by construction.
+    min_field_mm = view.get("minFieldMm")
+    if min_field_mm:
+        min_field_bu = min_field_mm * S
+        frame_short = min(halfW, halfH) * 2
+        if 0 < frame_short < min_field_bu:
+            grow = min_field_bu / frame_short
+            halfW *= grow
+            halfH *= grow
+
     drape = None
     if drape_amp:
         span0 = max(contentW, contentH)

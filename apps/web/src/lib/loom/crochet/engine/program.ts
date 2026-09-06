@@ -127,6 +127,21 @@ export interface CrochetProgram {
    *  staging only: not part of the geometry, never reaches the geometry hash.
    *  Default 'swatch' (the stitch-proof crop). */
   staging?: Staging
+
+  /** Minimum camera field of view (mm, across the frame's SHORTER side) for a
+   *  finished-object staging (`flatlay` / `loop` / `flatband` — never `swatch`,
+   *  the stitch-proof macro crop). A real product photo holds one consistent
+   *  SCALE regardless of how small the object is — a coaster sits in the frame
+   *  with white space round it, it does not fill the frame the way a dishcloth
+   *  does. Without a floor, a small finished object is framed exactly as tight
+   *  as a large one (the margin logic scales with the object, not against an
+   *  absolute size), so a 58mm ball reads ~40× life-size while a 101mm bear in
+   *  the same fabric reads at product scale. Defaults to 160 (mm) in the scene
+   *  builder when unset; an object whose own margined frame is already wider
+   *  than the floor on both axes is completely unaffected — this only ever
+   *  pulls the camera BACK, never in. Render/staging only: not part of the
+   *  geometry, never reaches the geometry hash. */
+  minFieldMm?: number
 }
 
 /** Finished-object staging (Part C — the four-part customer bar's "staged as the

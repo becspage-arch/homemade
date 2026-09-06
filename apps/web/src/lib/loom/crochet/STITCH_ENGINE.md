@@ -767,6 +767,15 @@ vs a real reference → commit + push.
   Every hero PASSES the fidelity/structure gate (all ≥ 0.874 ≫ STRUCT_MIN 0.45),
   confirming the Fal photoreal step finished the exact render without inventing
   stitches.
+  **ONE PRODUCT-PHOTO SCALE for every finished object (2026-09-06).** `minFieldMm`
+  (`CrochetProgram`/`CompositionProgram`, default 160mm) floors the camera's
+  framed extent on `flatlay`/`loop`/`flatband`/compositions, so a small piece
+  (the 58mm ball) sits in its frame with white ground round it instead of
+  filling it the way a large one does — the exact gap round 5 named (§8f-6:
+  "the ball proof frames one 58 mm ball where the bear frames a 103 mm figure").
+  Render-only (all seven sign-off geometry hashes unchanged); the five
+  flat/headband proofs' own margin already clears 160mm, so only the two
+  amigurumi compositions actually pull back.
 
 - **Part D — FLAT-FABRIC DENSITY PASS (2026-07-12).** The build-2 flatlay/loop
   heroes read as OPEN MESH — the orchestrator's hypothesis was an over-spaced grid

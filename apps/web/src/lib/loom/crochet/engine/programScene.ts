@@ -129,8 +129,22 @@ export function programTiltDeg(p: CrochetProgram): number {
 export interface BlenderScene {
   fabric: { widthMm: number; heightMm: number; hex: string }
   strokes: { hex: string; sheen: number; radiusMm: number; filaments: number[][][] }[]
-  view: { bgHex: string; marginFactor: number; tiltDeg: number; resY: number; openFabric?: boolean; drapeAmp?: number }
+  view: {
+    bgHex: string
+    marginFactor: number
+    tiltDeg: number
+    resY: number
+    openFabric?: boolean
+    drapeAmp?: number
+    minFieldMm?: number
+  }
 }
+
+/** Default `minFieldMm` (STITCH_ENGINE §8e-2 Part C) for a finished-object
+ *  staging when the program doesn't declare its own. `swatch` (the stitch-proof
+ *  macro crop) never gets a floor — that staging exists precisely to show the
+ *  fabric close up. */
+const DEFAULT_MIN_FIELD_MM = 160
 
 /** Smoothing subdivisions per control segment — MUST match the smooth() call. */
 const PER_SEG = 4
@@ -404,7 +418,12 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
     view = { ...base, marginFactor: 0.35, tiltDeg: 22, drapeAmp: 0.04, resY: 1100, openFabric: true }
   } else {
     // `swatch` — the tight stitch-proof macro crop (the prior behaviour).
+    // No `minFieldMm` floor here: swatch staging exists to show the fabric
+    // close up, not at product scale.
     view = { ...base, marginFactor: 0.12, tiltDeg: programTiltDeg(p) }
+  }
+  if (staging !== 'swatch') {
+    view.minFieldMm = p.minFieldMm ?? DEFAULT_MIN_FIELD_MM
   }
   return {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
