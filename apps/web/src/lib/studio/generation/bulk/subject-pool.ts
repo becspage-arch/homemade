@@ -80,6 +80,68 @@ export interface CrossStitchTheme {
   notes?: string
 }
 
+/**
+ * ── TEXT-RISK SUBJECTS ─────────────────────────────────────────────────────
+ *
+ * Some subjects invite Flux to write. A shop has a fascia, a jar has a label, a
+ * book has a spine, alphabet blocks ARE letters — and Flux answers with garbled
+ * pseudo-lettering that the vision gate then correctly kills. It is not a bad
+ * roll either: `killIsUnrerollable` treats a text kill as terminal precisely
+ * because the same subject produces the same garbling every time, so a text-risk
+ * subject in a small canvas burns its whole attempt budget for nothing.
+ *
+ * The 6 September 2026 08:00 cron lost two of ten ideas exactly this way ("a
+ * train of alphabet blocks" — *contains garbled text letters on blocks*; "a
+ * haberdashery window of ribbon reels" — *readable-attempt lettering sign above
+ * door is garbled text*), and the same class shows up in all four of the
+ * preceding firings.
+ *
+ * What HAS worked is the dense lane: the candy shop and the haunted house both
+ * shipped from Flux 1.1 Pro at 110–150 colours, where there are enough cells for
+ * a signboard to read as a painted shape rather than a smear of failed letters.
+ *
+ * So the rule is mechanical and binary, like every other control here: a
+ * text-risk subject runs in the `dense` lane or it does not run.
+ *
+ * WHAT IS DELIBERATELY *NOT* HERE: an ice-cream kiosk and a witch's apothecary
+ * shelf both shipped as gems from the `large` lane on 5–6 September, so the
+ * signage-adjacent nouns with live counter-evidence stay out. The list is
+ * evidence, not a theory about what Flux might write.
+ */
+export const TEXT_RISK_NOUNS: readonly string[] = [
+  // things that carry writing on the thing itself
+  'sign', 'signage', 'signboard', 'label', 'banner', 'chalkboard', 'blackboard',
+  'menu', 'poster', 'ticket', 'map', 'newspaper', 'letter', 'card', 'postcard',
+  'calendar', 'book', 'block', 'jar', 'clock',
+  // premises with a fascia over the door: the September haberdashery window died
+  // on "lettering sign above door", and a bakery window is the same shape.
+  'shop', 'shopfront', 'storefront', 'bookshop', 'bakery', 'haberdashery',
+]
+
+/**
+ * The only lane a text-risk subject may be built in. One lane, not a floor: this
+ * is the canvas where a signboard has the cells to read as a painted shape.
+ */
+export const TEXT_RISK_LANES: readonly LaneName[] = ['dense']
+
+const TEXT_RISK_RE = new RegExp(String.raw`\b(?:${TEXT_RISK_NOUNS.join('|')})(?:e?s)?\b`, 'i')
+
+/**
+ * Does this subject name something that invites lettering?
+ *
+ * Word-boundary matching on the noun itself, so "maple" is not a map, "ajar" is
+ * not a jar and "cardigan" is not a card — the false positives that a substring
+ * test would hand the planner.
+ */
+export function isTextRiskSubject(subject: string): boolean {
+  return TEXT_RISK_RE.test(subject ?? '')
+}
+
+/** Every curated example that carries the text risk — the pool's own tagging. */
+export function textRiskExamples(themes: readonly CrossStitchTheme[] = CROSS_STITCH_THEMES): string[] {
+  return themes.flatMap((t) => t.examples).filter(isTextRiskSubject)
+}
+
 /** The smallest lane in a set, or null when the set is empty. */
 export function smallestLane(lanes: readonly LaneName[]): LaneName | null {
   for (const l of LANE_ORDER) if (lanes.includes(l)) return l

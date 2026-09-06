@@ -4,10 +4,16 @@ import { revalidatePath } from 'next/cache'
 import { inngest } from '@/inngest/client'
 import { audit } from '@/lib/audit'
 import { requireAdminRole } from '@/lib/get-current-user'
-import { setAutopilotEnabled } from '@/lib/studio/generation/bulk/autopilot-state'
+import {
+  setAutopilotEnabled,
+  setCrossStitchSourceMode,
+  coerceSourceMode,
+  type XsSourceMode,
+} from '@/lib/studio/generation/bulk/autopilot-state'
 
 type ActionResult = { ok: true; queued: number } | { ok: false; error: string }
 type ToggleResult = { ok: true; enabled: boolean } | { ok: false; error: string }
+type SourceModeResult = { ok: true; mode: XsSourceMode } | { ok: false; error: string }
 
 const MAX = 20
 
@@ -54,4 +60,32 @@ export async function setBulkAutopilot(craft: 'cross-stitch' | 'needlework', ena
   })
   revalidatePath('/admin/system/bulk-generation')
   return { ok: true, enabled }
+}
+
+/**
+ * Which image model the cross-stitch pipeline draws with — "Draw with Flux Pro
+ * for every size". DB-backed like the autopilot switch, so it takes effect on
+ * the next idea without a deploy.
+ *
+ * It is a spend decision as much as a quality one: Pro is ~£0.032 an image
+ * against schnell's ~£0.003, bought because it keeps about two attempts in five
+ * where schnell keeps one in fourteen. The daily Pro cap in spend-guard.ts is
+ * the backstop underneath it.
+ */
+export async function setBulkSourceMode(mode: string): Promise<SourceModeResult> {
+  const actor = await requireAdminRole({ minimum: 'ADMIN' })
+  const next = coerceSourceMode(mode)
+  try {
+    await setCrossStitchSourceMode(next, actor.id)
+  } catch (err) {
+    return { ok: false, error: err instanceof Error ? err.message : 'Could not update the source model.' }
+  }
+  await audit({
+    actorId: actor.id,
+    action: 'system.bulk_generation.source_mode',
+    resource: 'bulk:cross-stitch',
+    metadata: { mode: next },
+  })
+  revalidatePath('/admin/system/bulk-generation')
+  return { ok: true, mode: next }
 }
