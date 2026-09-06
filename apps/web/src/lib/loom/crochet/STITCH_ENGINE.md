@@ -2141,8 +2141,12 @@ Four, in order, each binary:
    piece, a person at the edge, a table or a caption, and the structural
    fidelity check can still pass an image carrying one, so hands, people,
    furniture, props that are not the pattern's own notions, and any text or logo
-   are all kills. A broken patch of fabric is a KILL too, rather than a repair,
-   because the geometry is deterministic and a second render is the same
+   are all kills. On a FIGURE it also asks whether the limbs are where a real
+   toy's are: arms joined at the shoulders and ending above the feet, legs
+   forward off the lower body, ears on the crown, no part floating free or sunk
+   into another so the join is lost. A figure whose arms appear to come out from
+   under its legs fails. A broken patch of fabric is a KILL too, rather than a
+   repair, because the geometry is deterministic and a second render is the same
    picture. Only a staging fault earns one more render.
 4. **The completeness gate** (`packages/db/src/crochet-completeness.ts`) against
    the assembled row: yarn, hook, gauge over 10 cm, a size in centimetres, every
