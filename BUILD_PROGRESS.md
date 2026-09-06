@@ -28,8 +28,10 @@ look-pass round 7 (stuffing pressure, `claude/loom-stuffing`, done, waiting on
 round 8) and round 8 (sphere-derived count profile for round parts,
 `claude/loom-sphere-counts`); then the train, a re-render of the round
 sign-off rows, the first judged server run of the crochet autopilot, category
-go-live, knitting. Standing rule for every category: autopilot runs on ECS
-(Inngest) or in cloud sessions/routines, never on Rebecca's laptop.
+go-live, knitting. Standing rule for every category (corrected 2026-09-06): model work runs
+inside Claude Code sessions on Rebecca's Max plan (cloud routine or laptop, her
+choice), never through per-token API calls; the crochet Inngest lane is being
+converted to a session-driven routine on that rule.
 
 **Cross-stitch orchestrator (started 2026-09-05).** Owns the cross-stitch
 catalogue, `apps/web/src/lib/studio/generation/**` (planner, subject pool,

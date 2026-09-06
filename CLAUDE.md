@@ -161,10 +161,13 @@ the `/healthz` curl work.
   editorial work that depends on the voice spec or the completeness gates needs
   the `homemade-standards` skill loaded, and anything depending on current
   project state needs that state in the prompt.
-- **Anything on Rebecca's machine.** Standing rule (5 September 2026): every
-  category's bulk autopilot runs on the server (Inngest on ECS, Fargate for
-  rendering) or in a cloud session/routine — never on her laptop. Needlework
-  rendering still uses local Blender until it is moved to Fargate.
+- **Paid model calls.** Standing rule (Rebecca, no API spend): content planning,
+  authoring and judging happen inside Claude Code sessions on her Max plan, in a
+  cloud session or routine (the default now) or on her laptop when she prefers.
+  Never through Anthropic API calls billed per token; an Inngest job on ECS
+  calling the API is exactly that. Deterministic work (Fargate renders, audits,
+  publish scripts) can run anywhere. Needlework rendering still uses local
+  Blender until it is moved to Fargate.
 - **Anything driving her browser**, including DesignSync.
 - **Big builds.** ~4 vCPU / 16 GB RAM / 30 GB disk. A full `turbo build` of the
   monorepo is close to the ceiling; prefer `--filter` to one package.
