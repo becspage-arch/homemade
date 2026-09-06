@@ -4,10 +4,12 @@ import { STYLE, type StyleKey } from './cross-stitch-style'
 import { subjectKey as normaliseSubject, findSubjectKeyMatch } from './subject-key'
 import { CROSS_STITCH_SHELF_BY_SLUG } from '../categories'
 import { applyWarmFurGuard } from './brief-rules'
-import { postFilterBriefs, countRejects, type BriefReject } from './brief-filter'
+import { postFilterBriefs, countRejects, matchExampleByHead, lanesForSubject, type BriefReject, type ThemeLaneTags } from './brief-filter'
 import { shelfQuotaCounts } from './shelf-plan'
 import {
   CROSS_STITCH_THEMES,
+  LANES_ALL,
+  smallestLane,
   CROSS_STITCH_SIZE_LANES,
   NEEDLEWORK_THEMES,
   NEEDLEWORK_SIZE_LANES,
@@ -71,6 +73,13 @@ export interface CrossStitchBrief {
    * later yield comparison does not depend on remembering which deploy ran.
    */
   plannerMode: PlannerMode
+  /**
+   * Did the planner actually CHANGE the pool subject it chose, or return it word
+   * for word? Batch 7 came back nine-tenths verbatim, which made constrained mode
+   * an expensive sampler — so the prompt now requires a change and the run counts
+   * how often it got one.
+   */
+  dressed: boolean
   /** Optional source-saturation override (skin-heavy portraits). */
   sat?: number
   shelf: string
@@ -185,9 +194,12 @@ export const PLANNER_MODE: PlannerMode = process.env.BULK_PLANNER_MODE === 'free
 const XS_CONSTRAINED_SYSTEM = `You are the creative director for Homemade's cross-stitch catalogue. A curated pool of subjects already exists; your job is to CHOOSE from it and DRESS what you choose, not to invent.
 
 FOR EACH BRIEF
-- subject: take one of the SUBJECTS listed under the theme you are serving, and either use it as it stands or change it ONLY in setting, palette, season, time of day, pose or expression. Keep what the thing IS, word for word where you can.
+- subject: take one of the SUBJECTS listed under the theme you are serving and RE-DRESS it. You MUST change at least one of: setting, palette, season, time of day, pose, expression. Copying a listed subject word for word is a wasted brief — the catalogue already knows how to make that one.
+- Keep what the thing IS. Change the words around it, never the noun at its heart.
+  · "a badger at dusk" → "a badger in bluebells under a bright summer sky"
+  · "a red squirrel among autumn leaves and toadstools" → "a red squirrel on a frosted branch in low winter sun"
 - You may NOT add an object, creature or accessory that is not already in the listed subject. No "with a …", nothing held, worn, perched or beside. If the listed subject already has one, keep it.
-- Pick the style key, size lane, w/h and colour count that suit the subject.
+- Pick the style key, size lane, w/h and colour count that suit the subject. A scene or a shopfront needs a large canvas; a face needs medium or bigger; only a single simple motif belongs in mini.
 
 HARD RULES
 - Serve the SHELF QUOTA exactly, using only the themes listed.
@@ -242,6 +254,35 @@ const PLANNABLE_THEMES: CrossStitchTheme[] = CROSS_STITCH_THEMES.filter((t) => !
 const EXAMPLES_BY_THEME: Record<string, readonly string[]> = Object.fromEntries(
   CROSS_STITCH_THEMES.map((t) => [t.id, t.examples]),
 )
+
+/** The size lanes each theme's subjects survive — the pool's own tags, as data. */
+const LANE_TAGS_BY_THEME: Record<string, ThemeLaneTags> = Object.fromEntries(
+  CROSS_STITCH_THEMES.map((t) => [
+    t.id,
+    { examples: t.examples, lanes: t.lanes ?? LANES_ALL, ...(t.laneOverrides ? { overrides: t.laneOverrides } : {}) },
+  ]),
+)
+
+/** Is this brief in a lane its subject can survive? */
+function laneFits(themeId: string, subject: string, lane: string): boolean {
+  const allowed = lanesForSubject(subject, LANE_TAGS_BY_THEME[themeId])
+  return !allowed || allowed.includes(lane)
+}
+
+/**
+ * Put a brief in a lane its subject can actually survive.
+ *
+ * PROMOTION, not rejection: a shopfront asked for in the mini lane is a fine
+ * subject in the wrong canvas, and moving it to the smallest lane that holds it
+ * keeps the brief and costs nothing. Only a subject with no allowed lane at all
+ * is beyond help, and the pool has none of those.
+ */
+function settleLaneFor(b: CrossStitchBrief): CrossStitchBrief {
+  if (laneFits(b.themeId, b.subject, b.lane)) return b
+  const allowed = lanesForSubject(b.subject, LANE_TAGS_BY_THEME[b.themeId])
+  const lane = allowed ? smallestLane(allowed as never) : null
+  return lane ? applyLane(b, lane) : b
+}
 
 function themesForShelves(shelves: string[] | undefined): CrossStitchTheme[] {
   if (!shelves?.length) return PLANNABLE_THEMES
@@ -333,7 +374,7 @@ SIZE LANES (spread this batch across the range; w/h in cells, pick shape to suit
 ${lanes}
 ${dense}
 
-- subject: one of the listed SUBJECTS for the theme, optionally re-dressed in setting, palette, season, time of day, pose or expression. Nothing added.
+- subject: one of the listed SUBJECTS for the theme, RE-DRESSED — change at least one of setting, palette, season, time of day, pose or expression. Nothing added, and the noun at its heart unchanged.
 - style: one style key from the chosen theme's list.
 - w/h: cells for the size lane; tall subjects tall, wide subjects wide, wreaths square.
 - colours: within the size lane's range.
@@ -356,12 +397,14 @@ function coerceXsBrief(raw: RawXsBrief, seen: Set<string>, allowed: CrossStitchT
   const h = clamp(raw.h ?? 150, 48, 230)
   const colours = clamp(raw.colours ?? loC!, 6, 160)
   const subject = raw.subject.trim()
-  return settleBrief({
+  const matched = matchExampleByHead(subject, theme.examples)
+  return settleLaneFor(settleBrief({
     slug: mintSlug(theme.id, subject, seen),
     subject,
     subjectKey: normaliseSubject(subject),
     source: 'model',
     plannerMode: PLANNER_MODE,
+    dressed: isDressed(subject, matched),
     style,
     w,
     h,
@@ -371,7 +414,23 @@ function coerceXsBrief(raw: RawXsBrief, seen: Set<string>, allowed: CrossStitchT
     shelf: theme.shelf,
     shelfName: theme.shelfName,
     themeId: theme.id,
-  })
+  }))
+}
+
+/**
+ * Did the planner change the pool subject at all, ignoring case, punctuation and
+ * spacing? A verbatim example is still a legal brief — it just is not a NEW one,
+ * and a batch that is all verbatim means the model chose but did not compose.
+ */
+function isDressed(subject: string, example: string | null): boolean {
+  if (!example) return true // nothing to have copied
+  const flat = (t: string): string => t.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
+  return flat(subject) !== flat(example)
+}
+
+/** How many of a batch's briefs actually re-dressed their pool subject. */
+export function dressedCount(briefs: CrossStitchBrief[]): number {
+  return briefs.filter((b) => b.dressed).length
 }
 
 function mintSlug(themeId: string, subject: string, seen: Set<string>): string {
@@ -505,12 +564,13 @@ function sampleXsBrief(theme: CrossStitchTheme, seen: Set<string>, taken: (key: 
   const midCells = FALLBACK_MID_CELLS[lane.lane] ?? 155
   const w = isTall ? Math.round(midCells * 0.75) : isWide ? Math.round(midCells * 1.3) : midCells
   const h = isTall ? Math.round(midCells * 1.3) : isWide ? Math.round(midCells * 0.7) : midCells
-  return settleBrief({
+  return settleLaneFor(settleBrief({
     slug: mintSlug(theme.id, subject, seen),
     subject,
     subjectKey: normaliseSubject(subject),
     source: 'sampler',
     plannerMode: PLANNER_MODE,
+    dressed: isDressed(subject, matchExampleByHead(subject, theme.examples)),
     style: pick(theme.styles),
     w: clamp(w, 48, 230),
     h: clamp(h, 48, 230),
@@ -519,7 +579,7 @@ function sampleXsBrief(theme: CrossStitchTheme, seen: Set<string>, taken: (key: 
     shelf: theme.shelf,
     shelfName: theme.shelfName,
     themeId: theme.id,
-  })
+  }))
 }
 
 // ───────────────────────────── the size range ─────────────────────────────
@@ -563,7 +623,9 @@ export function enforceRange(briefs: CrossStitchBrief[], count: number): CrossSt
   const dense = idxOf('dense')
   if (wantDense) {
     if (dense.length === 0) {
-      // Promote the biggest canvas that isn't the mini we still need.
+      // Promote the biggest canvas that isn't the mini we still need. Promotion
+      // is always safe: every lane rule is a FLOOR, so a bigger canvas is never
+      // the wrong one for a subject.
       const candidates = out.map((b, i) => ({ i, area: b.w * b.h })).sort((a, b) => b.area - a.area)
       const pickIdx = candidates[0]!.i
       out[pickIdx] = applyLane(out[pickIdx]!, 'dense')
@@ -577,10 +639,13 @@ export function enforceRange(briefs: CrossStitchBrief[], count: number): CrossSt
   const denseIdx = out.findIndex((b) => b.lane === 'dense')
 
   // ── mini: at least one, and never a detail style ─────────────────────────
+  // Only a subject that can SURVIVE mini is eligible. Batch 7 demoted a shopfront
+  // into it and got mush; the range rule is worth having, but not at the price of
+  // a guaranteed kill.
   if (!out.some((b) => b.lane === 'mini')) {
     const candidate = out
       .map((b, i) => ({ b, i }))
-      .filter(({ b, i }) => i !== denseIdx && !DETAIL_STYLES.includes(b.style))
+      .filter(({ b, i }) => i !== denseIdx && !DETAIL_STYLES.includes(b.style) && laneFits(b.themeId, b.subject, 'mini'))
       .sort((a, b) => a.b.w * a.b.h - b.b.w * b.b.h)[0]
     if (candidate) out[candidate.i] = applyLane(candidate.b, 'mini')
   }
@@ -601,7 +666,9 @@ export function enforceRange(briefs: CrossStitchBrief[], count: number): CrossSt
   if (out.length >= 4) {
     for (const lane of ['small', 'medium'] as const) {
       if (midCount() >= 2) break
-      const surplus = [...idxOf('large').filter((i) => i !== denseIdx).slice(1), ...idxOf('mini').slice(1)]
+      const surplus = [...idxOf('large').filter((i) => i !== denseIdx).slice(1), ...idxOf('mini').slice(1)].filter(
+        (i) => laneFits(out[i]!.themeId, out[i]!.subject, lane),
+      )
       const i = surplus[0]
       if (i == null) break
       out[i] = applyLane(out[i]!, lane)
@@ -748,6 +815,7 @@ export async function planModelBriefs(
     props: constrained ? 'light' : 'strict',
     ...(constrained ? { examplesByTheme: EXAMPLES_BY_THEME } : {}),
     ...(ctx.shelfSlots?.length ? { shelfQuota: shelfQuotaCounts(ctx.shelfSlots) } : {}),
+    laneTags: LANE_TAGS_BY_THEME,
   })
   const counts = countRejects(rejects)
   if (counts.props || counts.collisions) {

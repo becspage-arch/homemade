@@ -8,11 +8,39 @@
  * are deferred to dedicated sessions and are NOT here.
  *
  * Each theme carries the shelf it files into (so gems land on a real, existing
- * sub-category — never a fragmented sibling), the style lanes that suit it, and
- * brief-craft notes (the hard-won rules a cold planner must hold).
+ * sub-category — never a fragmented sibling), the style lanes that suit it, the
+ * SIZE lanes its subjects survive, and brief-craft notes (the hard-won rules a
+ * cold planner must hold).
+ *
+ * ── THE POOL IS NOW A CEILING (September 2026) ─────────────────────────────
+ * Under the CONSTRAINED planner the model no longer invents subjects: it chooses
+ * one from these lists and dresses it, and a brief whose head noun matches no
+ * example is rejected. That makes this file the hard limit on what the catalogue
+ * can ever contain. Every batch spends about ten subjects permanently — once a
+ * subject is published, the catalogue avoid list blocks it — so at ten a batch
+ * the current 275 subjects are roughly 27 batches of runway.
+ *
+ * THE POOL MUST GROW WITH THE CATALOGUE. When a shelf starts returning
+ * "duplicates" or the sampler starts exhausting themes, the fix is more subjects
+ * here, not a looser guard. Add them to the standard of the existing ones: ONE
+ * dominant subject that fills the frame, a hook in its pose or setting, colour
+ * named concretely, nothing small hung off the side.
  */
 
 import type { StyleKey } from './cross-stitch-style'
+
+/** The size lanes, smallest first — the order `smallestLane` relies on. */
+export const LANE_ORDER = ['mini', 'small', 'medium', 'large', 'dense'] as const
+export type LaneName = (typeof LANE_ORDER)[number]
+
+/** Every lane. */
+export const LANES_ALL: readonly LaneName[] = LANE_ORDER
+/** Small and up — glassware, cocktails, anything with a shape to hold. */
+export const LANES_SMALL_UP: readonly LaneName[] = ['small', 'medium', 'large', 'dense']
+/** Medium and up — portraits, faces, anything with features to resolve. */
+export const LANES_MEDIUM_UP: readonly LaneName[] = ['medium', 'large', 'dense']
+/** Large and up — scenes and shopfronts, which are mush at anything smaller. */
+export const LANES_LARGE_UP: readonly LaneName[] = ['large', 'dense']
 
 export interface CrossStitchTheme {
   id: string
@@ -32,8 +60,30 @@ export interface CrossStitchTheme {
    * the catalogue's breadth: widen it here, not in the prompt.
    */
   examples: string[]
+  /**
+   * The size lanes this theme's subjects survive. Defaults to every lane.
+   *
+   * Batch 7 put "a corner flower shop with buckets of blooms" in the MINI lane at
+   * nine colours and it died as "shapes read as mush not shop"; a margarita went
+   * to mini and died as "glass shape malformed". Neither was a bad subject or a
+   * bad brief — each was a subject in a canvas that cannot hold it, which is a
+   * mechanical fault and so gets a mechanical rule.
+   */
+  lanes?: readonly LaneName[]
+  /**
+   * Per-subject exceptions to `lanes`, keyed by the example verbatim. Only for
+   * the handful of subjects that genuinely differ from their theme — a scene
+   * hiding among single motifs, or a charm among scenes.
+   */
+  laneOverrides?: Record<string, readonly LaneName[]>
   /** Brief-craft rules the planner must respect for this lane. */
   notes?: string
+}
+
+/** The smallest lane in a set, or null when the set is empty. */
+export function smallestLane(lanes: readonly LaneName[]): LaneName | null {
+  for (const l of LANE_ORDER) if (lanes.includes(l)) return l
+  return null
 }
 
 /**
@@ -46,162 +96,283 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     id: 'cute-animals', title: 'Cute animals & pets', shelf: 'animals', shelfName: 'Animals',
     styles: ['cute', 'bright', 'fun'],
     examples: ['a fox in a tiny raincoat with a paper boat', 'a corgi napping in a teacup of daisies', 'an owl librarian with a stack of tiny books', 'a hedgehog under a mushroom umbrella in the rain', 'a cat curled asleep on a pile of vintage books with a candle', 'a pomeranian sitting in a scarlet pumpkin', 'a chinchilla in a marigold bobble hat', 'two otters holding paws on turquoise water', 'a bengal kitten batting a brass bell', 'a capybara half-sunk in a steaming spring'],
+    lanes: LANES_ALL,
+    laneOverrides: {
+      'a cat curled asleep on a pile of vintage books with a candle': LANES_MEDIUM_UP,
+      'an owl librarian with a stack of tiny books': LANES_MEDIUM_UP,
+      'a hedgehog under a mushroom umbrella in the rain': LANES_SMALL_UP,
+    },
     notes: 'No readable text. Avoid red/orange-furred animals in the high-sat lanes (they cook to orange) — keep foxes/gingers at a lower saturation.',
   },
   {
     id: 'dog-portraits', title: 'Dog breed portraits (realistic)', shelf: 'animals', shelfName: 'Animals',
     styles: ['dogportrait'],
     examples: ['a golden retriever head-and-shoulders portrait', 'a dachshund portrait', 'a French bulldog portrait', 'a border collie portrait', 'a springer spaniel portrait', 'a samoyed portrait', 'a beagle portrait', 'a great dane portrait', 'a shiba inu portrait'],
+    lanes: LANES_MEDIUM_UP,
     notes: 'Accurate breed features + markings; flat-shaded illustration, not photographic. High demand — worth several.',
   },
   {
     id: 'cat-portraits', title: 'Cat breed portraits (realistic)', shelf: 'animals', shelfName: 'Animals',
     styles: ['dogportrait'],
     examples: ['a tabby cat portrait', 'a Siamese cat portrait', 'a calico cat portrait', 'a black cat portrait', 'a ragdoll cat portrait', 'a maine coon portrait', 'a ginger tom portrait', 'a bengal cat portrait', 'a russian blue portrait'],
+    lanes: LANES_MEDIUM_UP,
     notes: 'Accurate markings; flat-shaded, not photographic.',
   },
   {
     id: 'woodland', title: 'Woodland & wildlife', shelf: 'animals', shelfName: 'Animals',
     styles: ['cute', 'bright', 'scene'],
     examples: ['a red squirrel among autumn leaves and toadstools', 'a deer in a misty forest', 'a badger at dusk', 'a hare under a full moon', 'a pine marten on a moss-green log', 'a woodpecker on a silver birch', 'a stoat in summer coat on warm sandstone', 'wild boar piglets in copper bracken', 'a barn owl quartering a gold meadow'],
+    lanes: LANES_ALL,
+    laneOverrides: {
+      'a barn owl quartering a gold meadow': LANES_MEDIUM_UP,
+      'wild boar piglets in copper bracken': LANES_MEDIUM_UP,
+    },
   },
   {
     id: 'farm', title: 'Farm & smallholding', shelf: 'animals', shelfName: 'Animals',
     styles: ['cute', 'bright'],
     examples: ['a fluffy spring lamb with a flower crown', 'a proud rooster', 'a highland cow', 'a row of hens and chicks', 'a jersey calf in a field of buttercups', 'a shire horse in polished harness brasses', 'two geese on a village green', 'a border collie mid-crouch on a hillside', 'a beehive in long orchard grass'],
+    lanes: LANES_ALL,
+    laneOverrides: {
+      'a row of hens and chicks': LANES_SMALL_UP,
+      'a beehive in long orchard grass': LANES_SMALL_UP,
+    },
   },
   {
     id: 'birds-bugs', title: 'Birds, bees, butterflies & moths', shelf: 'animals', shelfName: 'Animals',
     styles: ['bright', 'botanical', 'wreath'],
     examples: ['a robin on a snowy holly branch', 'a hummingbird at trumpet flowers', 'a luna moth', 'a ring of butterflies', 'a goldfinch on a teasel head', 'a swallowtail butterfly over lavender', 'a kingfisher diving at a jade river', 'a bumblebee on an allium globe', 'a barn swallow on a washing line'],
+    lanes: LANES_ALL,
+    laneOverrides: {
+      'a ring of butterflies': LANES_MEDIUM_UP,
+    },
   },
   {
     id: 'sea-life', title: 'Sea life & coastal', shelf: 'animals', shelfName: 'Animals',
     styles: ['bright', 'scene', 'fantasy'],
     examples: ['a jewel-toned octopus wearing a tiny pearl crown', 'a whale carrying a whole starlit galaxy on its back', 'an art-nouveau seahorse among swirling kelp and bubbles', 'a mermaid\'s treasure grotto glowing with bioluminescence', 'a shoal of clownfish over a coral garden', 'a leafy sea dragon in emerald water', 'a puffin on a sunlit cliff ledge', 'a manta ray gliding over turquoise sand', 'a rockpool of anemones and limpets'],
+    lanes: LANES_SMALL_UP,
+    laneOverrides: {
+      'a mermaid\'s treasure grotto glowing with bioluminescence': LANES_LARGE_UP,
+      'a shoal of clownfish over a coral garden': LANES_MEDIUM_UP,
+      'a rockpool of anemones and limpets': LANES_MEDIUM_UP,
+    },
   },
   {
     id: 'fantasy-creatures', title: 'Cute fantasy creatures', shelf: 'fantasy', shelfName: 'Fantasy & Fairytale',
     styles: ['fantasy', 'cute'],
     examples: ['a friendly baby dragon', 'a unicorn in a flower meadow', 'a mermaid on a rock', 'a phoenix', 'a fairy toadstool cottage', 'a griffin on a sunlit crag', 'a kitsune among scarlet maple', 'a moss golem in a sunlit glade', 'a sea serpent coiled in a harbour', 'a wyvern on a citadel spire'],
+    lanes: LANES_SMALL_UP,
+    laneOverrides: {
+      'a fairy toadstool cottage': LANES_MEDIUM_UP,
+    },
   },
   {
     id: 'florals', title: 'Florals & bouquets', shelf: 'floral', shelfName: 'Floral & Botanical',
     styles: ['bright', 'botanical', 'fantasy'],
     examples: ['an art-nouveau spray of irises with gold-line stems', 'moody dark-academia florals — deep plum peonies and trailing ivy on near-black', 'a moon-phase arch wreathed in wildflowers and moths', 'a stained-glass window of poppies and cornflowers', 'a cottage-garden jug of dahlias', 'sweet peas tumbling over a trellis', 'a sunflower field under a wide blue sky', 'a japanese anemone spray in white and gold', 'a bowl of ranunculus in coral and cream'],
+    lanes: LANES_MEDIUM_UP,
+    laneOverrides: {
+      'a sunflower field under a wide blue sky': LANES_LARGE_UP,
+      'moody dark-academia florals — deep plum peonies and trailing ivy on near-black': LANES_LARGE_UP,
+    },
   },
   {
     id: 'botanical-stems', title: 'Single botanical stems (tall)', shelf: 'floral', shelfName: 'Floral & Botanical',
     styles: ['botanical'],
     examples: ['a tall foxglove spire with bees', 'a blue delphinium stem with butterflies', 'a hollyhock stem against a wall', 'a lupin spire in candy pink', 'an allium globe on a tall stem', 'a snapdragon stem in sunset orange', 'a sunflower stem against a blue sky', 'a lily stem in flame and gold'],
+    lanes: LANES_MEDIUM_UP,
     notes: 'Tall aspect — height clearly greater than width.',
   },
   {
     id: 'wreaths', title: 'Wreaths & circular', shelf: 'floral', shelfName: 'Floral & Botanical',
     styles: ['wreath', 'fantasy'],
     examples: ['a crescent-moon wreath of wildflowers, stars and a sleeping fox', 'a wreath of luminous toadstools, ferns and fireflies', 'an art-nouveau ring of trailing wisteria and hummingbirds', 'a celestial wreath of sun, moon and botanicals', 'a citrus ring of oranges and lemons', 'a summer ring of sweet peas and bees', 'a harvest ring of wheat and poppies', 'a rockpool ring of shells and coral', 'a spring ring of daffodils and blossom'],
+    lanes: LANES_MEDIUM_UP,
     notes: 'Circular composition with a clear open centre; square aspect. Give the ring a hook (a moon, an animal, a season, a mood) — not a plain flower ring.',
   },
   {
     id: 'houseplants', title: 'Houseplants & terrariums', shelf: 'floral', shelfName: 'Floral & Botanical',
     styles: ['bright', 'botanical'],
     examples: ['a monstera in a woven pot', 'a shelf of potted succulents', 'a hanging string-of-hearts', 'a glass terrarium', 'a windowsill row of herb pots', 'a cheeseplant in a cobalt ceramic pot', 'a trailing pothos on a pine shelf', 'a bowl of cacti in flower', 'an enamel watering can and a fern'],
+    lanes: LANES_SMALL_UP,
+    laneOverrides: {
+      'a shelf of potted succulents': LANES_MEDIUM_UP,
+      'a windowsill row of herb pots': LANES_MEDIUM_UP,
+    },
   },
   {
     id: 'mushrooms', title: 'Mushrooms & cottagecore', shelf: 'floral', shelfName: 'Floral & Botanical',
     styles: ['botanical', 'cute', 'fantasy'],
     examples: ['a cluster of red toadstools with ferns', 'a fairy-ring of mushrooms', 'a snail on a toadstool', 'a chanterelle cluster in bright moss', 'a bracket fungus on a fallen birch', 'a hedgehog among autumn toadstools', 'an amanita under copper bracken', 'a puffball ring in dewy grass'],
+    lanes: LANES_ALL,
+    laneOverrides: {
+      'a fairy-ring of mushrooms': LANES_MEDIUM_UP,
+    },
   },
   {
     id: 'food-drink', title: 'Food, drink & baking', shelf: 'food', shelfName: 'Food & Drink',
     styles: ['bright', 'scene', 'cute'],
     examples: ['a stack of pancakes with berries', 'a cheerful cupcake with sprinkles', 'a cottage-loaf and rolling pin', 'a bowl of ramen', 'a fruit tart glossy with berries', 'a bowl of pho with fresh herbs', 'a stack of macarons in sorbet colours', 'a slice of watermelon on a cobalt plate', 'a jar of raspberry jam on gingham', 'a wheel of cheese and a russet pear'],
+    lanes: LANES_ALL,
+    laneOverrides: {
+      'a bowl of ramen': LANES_SMALL_UP,
+      'a bowl of pho with fresh herbs': LANES_SMALL_UP,
+      'a fruit tart glossy with berries': LANES_SMALL_UP,
+    },
   },
   {
     id: 'cocktails', title: 'Cocktails & drinks', shelf: 'cocktails', shelfName: 'Cocktails',
     styles: ['bright', 'scene'],
     examples: ['a negroni with an orange twist', 'a margarita with lime', 'a row of tiki cocktails', 'a steaming mug of cocoa with marshmallows', 'an aperol spritz in low sun', 'a mojito in a tall glass', 'a bloody mary with a celery stick', 'a strawberry daiquiri in a coupe glass', 'an espresso martini under a bar light', 'a pitcher of sangria with orange slices'],
+    lanes: LANES_SMALL_UP,
   },
   {
     id: 'halloween', title: 'Seasonal — Halloween', shelf: 'halloween', shelfName: 'Halloween',
     styles: ['bright', 'scene', 'fun'],
     examples: ['a tiny mouse in a witch hat on a pumpkin', 'a black cat with a jack-o-lantern', 'a haunted hill house', 'a pumpkin patch at golden hour', 'a candy-corn cat on marigold orange', 'a friendly ghost over a picket fence', 'a raven against a harvest-orange moon', 'a witch\'s broom on a scarlet door', 'a spider web strung with dew on marigolds'],
+    lanes: LANES_ALL,
+    laneOverrides: {
+      'a haunted hill house': LANES_LARGE_UP,
+      'a pumpkin patch at golden hour': LANES_MEDIUM_UP,
+      'a spider web strung with dew on marigolds': LANES_MEDIUM_UP,
+    },
   },
   {
     id: 'christmas', title: 'Seasonal — Christmas & winter', shelf: 'seasonal', shelfName: 'Seasonal',
     styles: ['bright', 'showpiece', 'cute'],
     examples: ['a plump robin on snowy holly', 'a red fox in falling snow', 'a cosy cocoa and knitted jumper', 'a gingerbread house', 'a nutcracker soldier in scarlet and gold', 'a stocking hung on a mantel', 'a bullfinch on snowy rowan', 'a sledge piled with wrapped parcels', 'ice skates on a red ribbon', 'a christmas pudding with holly'],
+    lanes: LANES_ALL,
+    laneOverrides: {
+      'a gingerbread house': LANES_MEDIUM_UP,
+      'a sledge piled with wrapped parcels': LANES_SMALL_UP,
+    },
   },
   {
     id: 'easter-spring', title: 'Seasonal — Easter & spring', shelf: 'seasonal', shelfName: 'Seasonal',
     styles: ['cute', 'bright'],
     examples: ['an Easter bunny with a basket of painted eggs', 'three fluffy chicks in a blossom nest', 'a spring lamb', 'a basket of tulips and daffodils', 'a duckling on a green bank', 'a spring hare in cowslips', 'a blossom branch with a blue tit', 'a jar of primroses on a windowsill'],
+    lanes: LANES_ALL,
+    laneOverrides: {
+      'three fluffy chicks in a blossom nest': LANES_SMALL_UP,
+      'a basket of tulips and daffodils': LANES_MEDIUM_UP,
+    },
   },
   {
     id: 'autumn-harvest', title: 'Seasonal — Autumn / harvest', shelf: 'seasonal', shelfName: 'Seasonal',
     styles: ['bright', 'wreath', 'scene'],
     examples: ['an autumn harvest basket of pumpkins and apples', 'an autumn leaf-and-rosehip wreath', 'a squirrel gathering acorns', 'a pumpkin barrow at a garden gate', 'a hedgehog among conkers and beech mast', 'a bushel of red apples in low sun', 'a field of corn stooks', 'a jay with an acorn in gold oak'],
+    lanes: LANES_SMALL_UP,
+    laneOverrides: {
+      'an autumn harvest basket of pumpkins and apples': LANES_MEDIUM_UP,
+      'a field of corn stooks': LANES_LARGE_UP,
+    },
   },
   {
     id: 'valentines', title: "Seasonal — Valentine's", shelf: 'seasonal', shelfName: 'Seasonal',
     styles: ['cute', 'bright'],
     examples: ['two lovebirds on a heart branch', 'a bunny holding a heart', 'a posy of red roses tied with ribbon', 'a heart-shaped biscuit tin', 'two doves on a scarlet ribbon', 'a jar of paper hearts on a windowsill', 'a strawberry dipped in chocolate', 'two swans on sunlit water'],
+    lanes: LANES_ALL,
+    laneOverrides: {
+      'a posy of red roses tied with ribbon': LANES_SMALL_UP,
+    },
   },
   {
     id: 'celestial', title: 'Celestial & constellations', shelf: 'celestial', shelfName: 'Celestial',
     styles: ['scene', 'fantasy'],
     examples: ['a crescent moon cradling stars over mountains', 'the sun and moon face to face', 'a starry night with a fox silhouette', 'a sun with a lion\'s mane of rays', 'a comet over a desert mesa', 'an orrery of painted planets', 'a lighthouse beam under a full starfield', 'a hot-air balloon under a gibbous moon', 'an aurora over a snowy pine ridge'],
+    lanes: LANES_SMALL_UP,
+    laneOverrides: {
+      'a crescent moon cradling stars over mountains': LANES_MEDIUM_UP,
+      'an orrery of painted planets': LANES_MEDIUM_UP,
+      'a lighthouse beam under a full starfield': LANES_MEDIUM_UP,
+      'an aurora over a snowy pine ridge': LANES_MEDIUM_UP,
+      'a comet over a desert mesa': LANES_MEDIUM_UP,
+    },
     notes: 'Zodiac NAMES are the deferred word-art track — do NOT put readable text in these. Symbols/scenes only.',
   },
   {
     id: 'witchy-gothic', title: 'Witchy & gothic', shelf: 'witchy-gothic', shelfName: 'Witchy & gothic',
     styles: ['scene', 'fantasy', 'fun'],
     examples: ['a witch\'s apothecary shelf of potion bottles', 'a black cat with crystals and candles', 'a crescent moon with moths and herbs', 'a tarot sun card motif', 'a raven on a lit candelabra', 'a spellbook open on a hearth', 'a crystal ball on a velvet cloth', 'a familiar toad on a scarlet toadstool', 'a besom and lantern by a cottage door'],
+    lanes: LANES_SMALL_UP,
+    laneOverrides: {
+      'a witch\'s apothecary shelf of potion bottles': LANES_LARGE_UP,
+      'a spellbook open on a hearth': LANES_MEDIUM_UP,
+      'a besom and lantern by a cottage door': LANES_MEDIUM_UP,
+    },
     notes: 'No readable labels/text on the bottles — wordless drawings only.',
   },
   {
     id: 'cosy-scenes', title: 'Cottages, shops & cosy scenes', shelf: 'scenes', shelfName: 'Scenes',
     styles: ['showpiece', 'pastel'],
     examples: ['a thatched cottage with climbing roses and a packed garden', 'a corner flower shop with buckets of blooms', 'a cosy reading nook with a sleeping cat', 'a victorian greenhouse', 'a village bakery window at first light', 'a narrowboat in canal-art paint', 'a seaside ice-cream kiosk in high sun', 'a potting shed in high summer', 'a haberdashery window of ribbon reels', 'a cottage porch under wisteria'],
+    lanes: LANES_LARGE_UP,
     notes: 'These are the BIG showpieces — large canvas + high colour so the little details survive; shopfront signage stays wordless.',
   },
   {
     id: 'landscapes', title: 'Landmarks & landscapes', shelf: 'landscapes', shelfName: 'Landscapes',
     styles: ['scene'],
     examples: ['a candy-striped lighthouse on a headland', 'a lavender field receding to a hill', 'a mountain lake at sunset', 'a row of pastel seaside cottages', 'a stack of gulls off a chalk headland', 'terraced rice fields in new green', 'a salt marsh at high tide', 'a fell path along a drystone wall', 'an olive grove on a hillside'],
+    lanes: LANES_LARGE_UP,
     notes: 'Often wide aspect.',
   },
   {
     id: 'transport', title: 'Transport & vehicles', shelf: 'transport', shelfName: 'Transport',
     styles: ['bright', 'scene', 'fun'],
     examples: ['a vintage camper van packed for a trip', 'a hot-air balloon over patchwork fields', 'a little red tractor', 'a steam train', 'a red double-decker bus', 'a fishing boat in harbour paint', 'a yellow taxi in the rain', 'a cable car over a green valley', 'a penny-farthing bicycle', 'a milk float on a village lane'],
+    lanes: LANES_SMALL_UP,
+    laneOverrides: {
+      'a hot-air balloon over patchwork fields': LANES_MEDIUM_UP,
+      'a cable car over a green valley': LANES_MEDIUM_UP,
+    },
   },
   {
     id: 'hobbies', title: 'Hobbies & makers', shelf: 'hobbies', shelfName: 'Hobbies & makers',
     styles: ['bright', 'scene', 'cute'],
     examples: ['a basket of yarn and knitting needles', 'a potter at a wheel', 'a painter\'s palette and brushes', 'a sewing machine with fabric', 'a bicycle with a basket of blooms', 'a chess board mid-game', 'a darkroom of hanging prints', 'a garden trug of seed packets', 'a telescope on a balcony', 'a stack of vinyl records'],
+    lanes: LANES_SMALL_UP,
+    laneOverrides: {
+      'a potter at a wheel': LANES_MEDIUM_UP,
+      'a darkroom of hanging prints': LANES_MEDIUM_UP,
+      'a chess board mid-game': LANES_MEDIUM_UP,
+    },
   },
   {
     id: 'quirky', title: 'Fun / quirky / funny', shelf: 'whimsical', shelfName: 'Whimsical',
     styles: ['fun'],
     examples: ['a frog knight in acorn armour with a thorn sword', 'a raccoon burglar tiptoeing off with a jam jar', 'a pug astronaut floating among doughnut planets', 'a hedgehog barista pulling a tiny espresso', 'a dinosaur in a party hat eating a giant cupcake', 'a walrus in a striped deckchair', 'a llama in mirrored sunglasses', 'a goose making off with an ice cream', 'an octopus juggling teacups', 'a capybara in a steaming hot spring', 'a highland cow with a fringe clip'],
+    lanes: LANES_ALL,
+    laneOverrides: {
+      'a capybara in a steaming hot spring': LANES_SMALL_UP,
+    },
     notes: 'The visual joke + character carries it — a wordless gag with personality, not a plain animal.',
   },
   {
     id: 'nursery', title: 'Nursery & baby', shelf: 'nursery', shelfName: 'Nursery & baby',
     styles: ['cute', 'pastel'],
     examples: ['a sleepy elephant with a balloon', 'a moon-and-stars mobile', 'a little sailboat on gentle waves', 'a bunny asleep under a quilt', 'a rainbow arching over a cloud', 'a duckling in a soapy bath', 'a train of alphabet blocks', 'a koala hugging a eucalyptus branch', 'a mobile of paper stars', 'a whale spouting a rainbow'],
+    lanes: LANES_ALL,
+    laneOverrides: {
+      'a train of alphabet blocks': LANES_SMALL_UP,
+    },
   },
   {
     id: 'heritage', title: 'Heritage Delft / blackwork / redwork', shelf: 'monochrome', shelfName: 'Monochrome',
     styles: ['scene'],
     examples: ['a Delft blue-and-white windmill and tulips', 'a redwork farmhouse scene', 'a blue-and-white botanical tile', 'a delft canal-house row', 'a redwork rooster and hen', 'a delft sailing barge', 'a redwork basket of flowers', 'a delft heron among reeds', 'a redwork row of garden tools'],
+    lanes: LANES_ALL,
+    laneOverrides: {
+      'a redwork farmhouse scene': LANES_MEDIUM_UP,
+      'a delft canal-house row': LANES_MEDIUM_UP,
+    },
     notes: 'Two-tone by design: Delft = blue-on-white; redwork = red-on-white. Low colour count.',
   },
   {
     id: 'portraits', title: 'Artistic & pop-art faces', shelf: 'portraits', shelfName: 'Pop Art & Portraits',
     styles: ['artface', 'popart', 'icon'],
     examples: ['a fine-art woman\'s face wreathed in flowers', 'a bold pop-art portrait', 'a stylised portrait of a historical figure', 'a bold pop-art tiger head', 'a woman in a patterned headscarf', 'a pop-art parrot in primary colours', 'a profile against a gold halo', 'a dancer mid-turn'],
+    lanes: LANES_MEDIUM_UP,
     notes: 'artface: FAIR/PALE skin only at low saturation (the compound boost cooks tan skin orange), whole head + forehead visible, both eyes. Deep-skin pop-art: keep saturation ~1.1 and prompt "rich dark chocolate-brown skin, not orange". Whole head visible, correct features.',
   },
 ]

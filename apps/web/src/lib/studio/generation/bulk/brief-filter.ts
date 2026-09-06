@@ -353,7 +353,7 @@ export function matchExampleByHead(subject: string, examples: readonly string[])
 /** Why a brief did not survive the post-filter. */
 export interface BriefReject<T> {
   brief: T
-  kind: 'prop' | 'collision' | 'off-pool' | 'over-quota'
+  kind: 'prop' | 'collision' | 'off-pool' | 'over-quota' | 'wrong-lane'
   reason: string
 }
 
@@ -391,6 +391,35 @@ export interface PostFilterOptions {
    * enforced here rather than merely requested in the prompt.
    */
   shelfQuota?: Record<string, number>
+  /**
+   * The size lanes each theme's subjects survive, with per-subject exceptions.
+   *
+   * Batch 7 put a shopfront in the mini lane at nine colours ("shapes read as
+   * mush not shop") and a margarita in mini at ten ("glass shape malformed").
+   * Neither was a bad subject or a bad brief; each was a subject in a canvas that
+   * cannot hold it. The planner promotes a brief into its smallest allowed lane
+   * before it ever gets here — this is the backstop for anything that slips past,
+   * including a lane the range rule pushed it back down into.
+   */
+  laneTags?: Record<string, ThemeLaneTags>
+}
+
+/** One theme's lane rules: the subjects, the default lanes, and the exceptions. */
+export interface ThemeLaneTags {
+  examples: readonly string[]
+  lanes: readonly string[]
+  overrides?: Record<string, readonly string[]>
+}
+
+/**
+ * The lanes a subject may be built in: its own override if it has one, else its
+ * theme's default. Returns null when the theme is unknown — no rule, no reject.
+ */
+export function lanesForSubject(subject: string, tags: ThemeLaneTags | undefined): readonly string[] | null {
+  if (!tags) return null
+  const example = matchExampleByHead(subject, tags.examples)
+  if (example && tags.overrides?.[example]) return tags.overrides[example]
+  return tags.lanes
 }
 
 /**
@@ -438,6 +467,17 @@ export function postFilterBriefs<T extends PropBrief & CollisionBrief & { themeI
         continue
       }
     }
+    if (opts.laneTags) {
+      const allowed = lanesForSubject(brief.subject, opts.laneTags[brief.themeId ?? ''])
+      if (allowed && !allowed.includes(brief.lane)) {
+        rejects.push({
+          brief,
+          kind: 'wrong-lane',
+          reason: `"${brief.subject}" cannot be built in the ${brief.lane} lane (needs ${allowed.join('/')})`,
+        })
+        continue
+      }
+    }
     if (opts.shelfQuota) {
       const allowed = opts.shelfQuota[brief.shelf] ?? 0
       const already = [...prior, ...kept].filter((b) => b.shelf === brief.shelf).length
@@ -467,14 +507,15 @@ export function postFilterBriefs<T extends PropBrief & CollisionBrief & { themeI
 /**
  * How many of a reject list were each kind — the counters a run records.
  *
- * Off-pool folds into PROPS ("the model asked for something un-buildable") and
- * over-quota folds into COLLISIONS ("too much of the same thing in one batch").
+ * Off-pool and wrong-lane fold into PROPS ("the model asked for something
+ * un-buildable") and over-quota folds into COLLISIONS ("too much of the same
+ * thing in one batch").
  * Those are the two numbers worth watching; extra columns for distinctions only
  * this module cares about are not worth a migration.
  */
 export function countRejects<T>(rejects: BriefReject<T>[]): { props: number; collisions: number } {
   return {
-    props: rejects.filter((r) => r.kind === 'prop' || r.kind === 'off-pool').length,
+    props: rejects.filter((r) => r.kind === 'prop' || r.kind === 'off-pool' || r.kind === 'wrong-lane').length,
     collisions: rejects.filter((r) => r.kind === 'collision' || r.kind === 'over-quota').length,
   }
 }

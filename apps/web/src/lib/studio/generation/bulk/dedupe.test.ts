@@ -27,6 +27,7 @@ import {
   propReject,
   lightPropReject,
   matchExampleByHead,
+  lanesForSubject,
   headNouns,
   briefsCollide,
   postFilterBriefs,
@@ -35,7 +36,7 @@ import {
   SMALL_LANE_WORD_LIMIT,
 } from './brief-filter'
 import { capShelfBriefs, shelfQuotaCounts, SHELF_SHARE } from './shelf-plan'
-import { CROSS_STITCH_THEMES } from './subject-pool'
+import { CROSS_STITCH_THEMES, LANES_ALL, LANES_LARGE_UP, LANES_MEDIUM_UP, smallestLane } from './subject-pool'
 import type { ShelfTarget } from '../categories'
 
 type PassFail = { name: string; passed: boolean; detail?: string }
@@ -806,6 +807,92 @@ record('shelfQuota: briefs kept by an earlier chunk count toward the quota', () 
   const { kept, rejects } = postFilterBriefs(batch, prior, { props: 'off', shelfQuota: quota })
   assert.equal(kept.length, 1)
   assert.equal(rejects[0]!.kind, 'over-quota')
+})
+
+// ─── subject-to-lane tags ──────────────────────────────────────────────────
+
+const laneTagsFor = (id: string) => {
+  const t = CROSS_STITCH_THEMES.find((x) => x.id === id)!
+  return { examples: t.examples, lanes: t.lanes ?? LANES_ALL, ...(t.laneOverrides ? { overrides: t.laneOverrides } : {}) }
+}
+
+record('lanesForSubject: a theme default applies to all its subjects', () => {
+  const scenes = laneTagsFor('cosy-scenes')
+  assert.deepEqual(lanesForSubject('a corner flower shop with buckets of blooms', scenes), LANES_LARGE_UP)
+  assert.deepEqual(lanesForSubject('a victorian greenhouse in high summer', scenes), LANES_LARGE_UP)
+})
+
+record('lanesForSubject: a per-subject override beats the theme default', () => {
+  // cute-animals is mini-and-up, but the one that is really a scene is not.
+  const animals = laneTagsFor('cute-animals')
+  assert.deepEqual(lanesForSubject('a corgi napping in a teacup of daisies', animals), LANES_ALL)
+  assert.deepEqual(
+    lanesForSubject('a cat curled asleep on a pile of vintage books with a candle', animals),
+    LANES_MEDIUM_UP,
+  )
+})
+
+record('lanesForSubject: an override survives a re-dressing', () => {
+  // The override is keyed on the example, and the brief is matched to it by head
+  // noun — so changing the setting must not lose the rule.
+  const witchy = laneTagsFor('witchy-gothic')
+  assert.deepEqual(lanesForSubject("a witch's apothecary shelf of potion bottles at dawn", witchy), LANES_LARGE_UP)
+})
+
+record('lanesForSubject: an unknown theme carries no rule', () => {
+  assert.equal(lanesForSubject('a badger at dusk', undefined), null)
+})
+
+record('postFilterBriefs: the two batch-7 lane mismatches are rejected', () => {
+  const laneTags = { 'cosy-scenes': laneTagsFor('cosy-scenes'), cocktails: laneTagsFor('cocktails') }
+  // Batch 7 put a shopfront in mini at 9 colours ("shapes read as mush not shop")
+  // and a margarita in mini at 10 ("glass shape malformed").
+  const shop = { ...pb('a corner flower shop with buckets of blooms', 'mini', 'scenes'), themeId: 'cosy-scenes' }
+  const drink = { ...pb('a margarita with lime', 'mini', 'cocktails'), themeId: 'cocktails' }
+  const ok = { ...pb('a margarita with lime in low sun', 'small', 'cocktails'), themeId: 'cocktails' }
+  const { kept, rejects } = postFilterBriefs([shop, drink, ok], [], { props: 'off', laneTags })
+  assert.equal(kept.length, 1)
+  assert.equal(kept[0]!.lane, 'small')
+  assert.equal(rejects.length, 2)
+  assert.ok(rejects.every((r) => r.kind === 'wrong-lane'), JSON.stringify(rejects.map((r) => r.kind)))
+  // Wrong-lane folds into the propRejects counter the run records.
+  assert.deepEqual(countRejects(rejects), { props: 2, collisions: 0 })
+})
+
+record('smallestLane: promotion targets the smallest lane that holds the subject', () => {
+  assert.equal(smallestLane(LANES_LARGE_UP), 'large')
+  assert.equal(smallestLane(LANES_MEDIUM_UP), 'medium')
+  assert.equal(smallestLane(LANES_ALL), 'mini')
+  assert.equal(smallestLane([]), null)
+})
+
+record('every pool subject has at least one lane it can be built in', () => {
+  // A subject with no allowed lane could never be planned at all.
+  for (const t of CROSS_STITCH_THEMES) {
+    for (const ex of t.examples) {
+      const lanes = lanesForSubject(ex, laneTagsFor(t.id))
+      assert.ok(lanes && lanes.length > 0, `${t.id}: "${ex}"`)
+    }
+  }
+})
+
+record('a lane override is only ever a FLOOR, never a ceiling', () => {
+  // Promotion (mini → large) must always be safe, so every tag set must run to
+  // the top of the range. A tag like ['mini','small'] would make the dense
+  // showpiece promotion illegal and silently break the range rule.
+  for (const t of CROSS_STITCH_THEMES) {
+    for (const lanes of [t.lanes ?? LANES_ALL, ...Object.values(t.laneOverrides ?? {})]) {
+      assert.ok(lanes.includes('dense'), `${t.id}: ${lanes.join('/')}`)
+    }
+  }
+})
+
+record('summaryLine: counts how many briefs were re-dressed', () => {
+  const base = { craft: 'cross-stitch', requested: 10, published: 2, culled: 8, duplicates: 0, skipped: 0, errors: 0, repaired: 3, generations: 34 }
+  // Batch 7's shape: constrained, and nine of ten copied out verbatim.
+  assert.ok(summaryLine({ ...base, plannerMode: 'constrained', dressedBriefs: 1 }).includes('1 of 10 re-dressed'))
+  // The free planner has no pool subject to dress, so the clause stays off.
+  assert.ok(!summaryLine({ ...base, plannerMode: 'free', dressedBriefs: 1 }).includes('re-dressed'))
 })
 
 record('summaryLine: names which planner wrote the batch', () => {
