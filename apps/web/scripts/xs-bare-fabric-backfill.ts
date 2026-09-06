@@ -29,11 +29,12 @@
  *   search          the pattern doc re-synced
  *
  * Idempotent and resumable: a row carrying `backgroundCleared` is skipped, and
- * the rewrite itself is a no-op on an already-cleared chart.
+ * the rewrite itself is a no-op on an already-cleared chart. House rows only —
+ * a customer's own saved chart is their work, not ours to rewrite.
  *
  *   cd apps/web && pnpm exec tsx scripts/xs-bare-fabric-backfill.ts \
- *     [--sheets] [--sample N] [--cache <thumb-dir>] [--out <dir>] \
- *     [--limit N] [--only <slug,slug>] [--apply]
+ *     [--sheets] [--sample N] [--name <sheet-prefix>] [--cache <thumb-dir>] \
+ *     [--out <dir>] [--limit N] [--only <slug,slug>] [--apply]
  *
  * Without --apply it reports and changes nothing. --sheets writes before/after
  * contact sheets to <out>/sheets and exits; LOOK at them before applying.
@@ -106,6 +107,9 @@ function postSatFor(row: Row): number {
 async function* walk(): AsyncGenerator<Row> {
   const where = {
     type: 'CROSS_STITCH' as const,
+    // House catalogue only. A customer's own saved chart is their work, not ours
+    // to rewrite, however much white floss they put in the background.
+    ownerUserId: null,
     ...(ONLY.length > 0 ? { slug: { in: ONLY } } : {}),
   }
   let cursor: string | undefined
@@ -309,11 +313,11 @@ async function contactSheet(entries: SheetEntry[], file: string): Promise<void> 
       })
     }
   }
-  await sharp({ create: { width, height, channels: 3, background: '#ffffff' } })
+  const png = await sharp({ create: { width, height, channels: 3, background: '#ffffff' } })
     .composite(layers)
     .png()
     .toBuffer()
-    .then((buf) => writeFileSync(file, buf))
+  writeFileSync(file, png)
 }
 
 /**

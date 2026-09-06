@@ -179,7 +179,7 @@ function borderConnectedWhite(
   return found
 }
 
-/** Measure the white background of one chart. Read-only; allocates nothing on the row. */
+/** Measure the white background of one chart. Read-only — never mutates the chart. */
 export function scanBackground(data: PatternData): BackgroundScan {
   const { width, height, cells } = data.grid
   const gridCells = width * height
