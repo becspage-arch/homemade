@@ -777,44 +777,67 @@ vs a real reference → commit + push.
   flat/headband proofs' own margin already clears 160mm, so only the two
   amigurumi compositions actually pull back.
 - **CRISP WHITE GROUND, every hero, default (2026-09-06).** The seven sign-off
-  heroes' ground measured ~178-181 avg corner luminance (0-255) against real
+  heroes' ground measured ~176-182 avg corner luminance (0-255) against real
   Etsy product photos' ~237-245 — a soft mid-grey with a lighting-rig gradient,
   not the clean white of a product shot, even though `bgHex` was already a
-  near-white hex (`#efece6`/`#faf8f5`). Proven the fault sits in the BASE
-  BLENDER RENDER, not the Fal finish: a Fargate base render of `simple-coaster`
-  landed at the same ~179 before any Fal step ran. Cause: the same low
-  `exposure` (§11) that stops pale wool blowing white under AgX also
-  under-exposes a near-white backdrop. Fix (`loom_render_crochet.py`,
-  `whiten_ground`, default, no per-pattern flag): the ground plane alone
-  carries an Object Index (`pass_index = 1`); a compositor branch boosts ONLY
-  that mask's linear radiance (+2.3 stops) before the one global AgX/exposure
-  grade, so it lands in AgX's highlight shoulder (clean near-white, gradient
-  compressed away with it) while every yarn pixel is bit-for-bit unchanged.
-  Also hardened `loom-aspen-hero.ts`'s prompt (`WHITE_BG` in `COMMON`/
-  `COMMON_KNIT`, plus background/hand terms in the negative prompt) so the Fal
-  finish asks for the same clean backdrop instead of its own "natural window
-  light" phrasing pulling a lifestyle grey back in — belt-and-braces, since the
-  base is what actually carries the grey now.
-  **Verified:** the Blender-side fix needs the `loom-render` image rebuilt
-  (ECR push blocked from this session — Docker's registry pull is outside the
-  network policy) so it is proven by CODE + a software stand-in, not a live
-  Fargate render of the new script. A simulated white-ground base (the same
-  Fargate `simple-coaster`/`amigurumi-bear` bases with their desaturated
-  pixels pushed toward `#faf8f5`, standing in for what `whiten_ground` isolates
-  by geometry) measured 236-244 avg corner luminance, dead in the reference
-  range. Run through the ACTUAL fixed `loom-aspen-hero.ts` against Fal: both
-  heroes held that white (239-242 avg corner lum), passed the fidelity gate
-  (coaster 0.946, bear 0.927/0.930 across two runs — both ≫ STRUCT_MIN 0.45),
-  and the yarn's own exposure/saturation moved only a few percent (coaster mid
-  swatch +5%/+4%; bear belly patch +4%/-1%). Honest residual: one of the two
-  bear runs hallucinated a hand appearing to hold the toy — a Fal seed
-  artifact, not reproduced on a second run of the same input, and now further
-  guarded against with `hand`/`fingers`/`person` in the negative prompt: worth
-  a second look on the real rebuilt-image renders before sign-off, not
-  something the base-render fix itself can cause. The `loom_render_crochet.py`
-  change itself is still unverified end-to-end (needs the image rebuilt +
-  pushed, then a real Fargate render of all seven heroes) — that is the
-  orchestrator's train, not this session's.
+  near-white hex (`#efece6`/`#faf8f5`). The fault is in the BASE BLENDER
+  RENDER, not the Fal finish (a Fargate base render of `simple-coaster` lands
+  at the same ~179 before any Fal step runs): the same low `exposure` (§11)
+  that stops pale wool blowing white under AgX also under-exposes a near-white
+  backdrop.
+  **First attempt FAILED — logged so nobody retries it.** `whiten_ground`
+  tagged the ground plane with `pass_index = 1`, enabled the Object Index pass
+  and boosted that compositor mask +2.3 stops before AgX. It shipped, the image
+  rebuilt (ECR `latest` = the merge commit's digest), and the seven heroes were
+  re-rendered on tasks that provably pulled that digest — and the corners came
+  back 179/176, byte-for-byte the old number. Two independent faults: (1) the
+  view layer's pass was enabled BEFORE `scene.use_nodes = True` existed, so the
+  Render Layers node never got a live `IndexOB` socket — Blender still built
+  and ran the branch (the container log shows all 12 compositor operations) but
+  the ID Mask read a dead input, output 0 everywhere, and Alpha Over passed the
+  base through untouched; (2) even wired correctly, +2.3 stops is nowhere near
+  enough — AgX's shoulder needs ~x10 linear to reach the reference band. A
+  compositor branch that silently no-ops and still logs as if it ran is the
+  wrong mechanism here.
+  **What actually works: a camera-ray boost in the GROUND'S OWN SHADER.**
+  `surface_material` (`loom_render_crochet.py`) mixes on `Light Path > Is
+  Camera Ray`: camera rays shade the plane as a diffuse whose albedo is
+  `GROUND_WHITE_BOOST` (x10) times `bgHex`, every other ray keeps the original
+  material. No passes, no compositor, nothing to silently disconnect. Because
+  the boost multiplies the SHADED result, the contact shadow survives as the
+  same ratio; because it is camera-ray only, the bounce light the ground throws
+  back onto the yarn — and the backdrop the glossy props reflect — is unchanged.
+  Default on with no per-pattern flag; `view.groundWhite` can dial it (1 = off).
+  **Measured on real Fargate renders of the shipped scene JSONs** (a probe task
+  def running the candidate script out of S3, so the ramp was measured BEFORE
+  the merge — see `scripts/loom-render/README.md`, "Proving a render-script
+  change before the merge"). Corner luminance ramp, coaster / bear:
+  x1 179/176, x4 223/221, x8 237/236, x12 244/243, x16 248/247. At the chosen
+  x10, full resolution and production samples: **corner 179 -> 241 (coaster)
+  and 176 -> 240 (bear)**, both inside the 237-245 reference band. The yarn did
+  not move: coaster mid-fabric patch 91.2 -> 91.2, bear belly 106.1 -> 106.0,
+  chest 101.1 -> 101.0 (< 0.1%). Contact shadow still reads — the ground strip
+  under the object sits 6-7 levels below the far ground on both (it was 15-16
+  before; a blown sweep compresses its own shadow, which is what a real one
+  does).
+  **Props decoupled in the same pass.** `prop_material` drove Roughness,
+  Specular IOR Level AND Coat Weight off the single `gloss` number, so a glossy
+  black safety eye necessarily wore a near-mirror clearcoat and reflected the
+  backdrop — the "grey glass marble" residual logged in Part B round 2, which a
+  whiter ground would only have made worse. Now `gloss` tightens the HIGHLIGHT
+  only: specular sits at the dielectric default (0.5 = IOR 1.5), coat is a thin
+  `0.15 * gloss` sheen at roughness 0.10. Bear eyes measured 80/75 -> 63/58 on
+  a tight centre patch and read as black beads with one small highlight; the
+  nose reads black satin.
+  `loom-aspen-hero.ts` keeps the hardened prompt from the first attempt
+  (`WHITE_BG` in `COMMON`/`COMMON_KNIT`, plus background/hand terms in the
+  negative prompt) so the Fal finish asks for the same clean backdrop — but the
+  base now carries the white on its own.
+  **Still to run on the train:** this is a `loom_render_crochet.py` change, so
+  merging it rebuilds the `loom-render` image (the workflow triggers on that
+  path), and the seven sign-off heroes need re-rendering afterwards for the
+  Fal-side numbers and the fidelity gate. Geometry hashes bit-identical
+  (render-only).
 
 - **Part D — FLAT-FABRIC DENSITY PASS (2026-07-12).** The build-2 flatlay/loop
   heroes read as OPEN MESH — the orchestrator's hypothesis was an over-spaced grid
