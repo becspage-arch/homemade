@@ -3,6 +3,7 @@ import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import { anthropicConfigured } from '@/lib/anthropic'
 import { PATTERN_CATEGORIES, CROSS_STITCH_SHELVES, CROCHET_SHELVES } from '@/lib/studio/generation/categories'
+import { PATTERN_LED_CATEGORY_SLUGS, isPatternLedSlug, patternLedCraftStats } from '@/lib/pattern-led-category-counts'
 import { autopilotStates, crossStitchSourceMode } from '@/lib/studio/generation/bulk/autopilot-state'
 import { liveShelfCounts } from '@/lib/studio/generation/bulk/dedupe-guard'
 import { liveCrochetShelfCounts } from '@/lib/studio/generation/bulk/crochet-dedupe'
@@ -339,9 +340,6 @@ export default async function AdminBulkGenerationPage() {
   const actor = await getCurrentDbUser()
   if (!actor || !isAdmin(actor)) redirect('/admin')
 
-  const patternLedSlugs = Object.keys(PATTERN_CATEGORIES)
-  const patternLedTypes = Object.values(PATTERN_CATEGORIES).map((c) => c.patternType)
-
   const [
     xsCount,
     nwCount,
@@ -349,9 +347,8 @@ export default async function AdminBulkGenerationPage() {
     recent,
     categoriesRaw,
     publishedTutorialRows,
-    patternCountRows,
-    patternSubcatRows,
     subCats,
+    craftStats,
   ] = await Promise.all([
     prisma.pattern.count({ where: { type: 'CROSS_STITCH', ownerUserId: null, visibility: Visibility.PUBLIC } }),
     prisma.needleworkPattern.count({ where: { ownerUserId: null, visibility: Visibility.PUBLIC } }),
@@ -373,14 +370,25 @@ export default async function AdminBulkGenerationPage() {
       select: { id: true, slug: true, name: true, pipelineStatus: true, targetTutorialCount: true, lastAutopilotRunAt: true },
     }),
     prisma.tutorial.groupBy({ by: ['categoryId'], where: { status: TutorialStatus.PUBLISHED }, _count: { _all: true } }),
-    prisma.pattern.groupBy({ by: ['type'], where: { visibility: Visibility.PUBLIC, ownerUserId: null }, _count: { _all: true } }),
-    prisma.pattern.groupBy({ by: ['subCategoryId'], where: { visibility: Visibility.PUBLIC, ownerUserId: null, type: { in: patternLedTypes } }, _count: { _all: true } }),
-    prisma.subCategory.findMany({ where: { category: { slug: { in: patternLedSlugs } } }, select: { id: true, name: true, categoryId: true } }),
+    // Sub-categories for every pattern-led category (not just the two with a
+    // PATTERN_CATEGORIES entry) so needlework/knitting/sewing get a
+    // published-per-shelf breakdown too.
+    prisma.subCategory.findMany({
+      where: { category: { slug: { in: [...PATTERN_LED_CATEGORY_SLUGS] } } },
+      select: { id: true, name: true, categoryId: true },
+    }),
+    // Published/draft/per-sub-category counts for all five pattern-led
+    // categories, each read from its own table — see
+    // pattern-led-category-counts.ts. Crochet, needlework, knitting and
+    // sewing each have their own model; only cross-stitch shares `Pattern`.
+    patternLedCraftStats(),
   ])
 
   const publishedTutorialsByCategoryId = new Map(publishedTutorialRows.map((r) => [r.categoryId, r._count._all]))
-  const publishedPatternsByType = new Map(patternCountRows.map((r) => [r.type, r._count._all]))
-  const patternCountBySubcatId = new Map(patternSubcatRows.map((r) => [r.subCategoryId, r._count._all]))
+  const patternCountBySubcatId = new Map<string, number>()
+  for (const stat of Object.values(craftStats)) {
+    for (const [id, count] of stat.publishedBySubCategoryId) patternCountBySubcatId.set(id, count)
+  }
   const subcatsByCategoryId = new Map<string, { name: string; count: number }[]>()
   for (const sc of subCats) {
     const list = subcatsByCategoryId.get(sc.categoryId) ?? []
@@ -563,10 +571,16 @@ export default async function AdminBulkGenerationPage() {
             <tbody>
               {categoriesRaw.map((cat) => {
                 const cfg = PATTERN_CATEGORIES[cat.slug]
-                const isPatternLed = Boolean(cfg)
-                const published = cfg ? publishedPatternsByType.get(cfg.patternType) ?? 0 : publishedTutorialsByCategoryId.get(cat.id) ?? 0
+                const craftStat = isPatternLedSlug(cat.slug) ? craftStats[cat.slug] : undefined
+                const isPatternLed = craftStat != null
+                // Every pattern-led category reads from its own table via
+                // craftStats (cross-stitch included) — never tutorials.
+                const published = craftStat ? craftStat.published : publishedTutorialsByCategoryId.get(cat.id) ?? 0
+                // cross-stitch and crochet have a proper shelf-derived target;
+                // needlework/knitting/sewing have no sign-off pass yet, so
+                // `targetTutorialCount` is the only target number that exists.
                 const target = cfg ? cfg.patternTarget : cat.targetTutorialCount
-                const unit = cfg ? 'patterns' : 'guides'
+                const unit = isPatternLed ? 'patterns' : 'guides'
                 const pct = target && target > 0 ? Math.min(100, Math.round((published / target) * 100)) : 0
                 const badge = stateBadge(cat.pipelineStatus)
                 const breakdown = isPatternLed ? subcatsByCategoryId.get(cat.id) ?? [] : []
