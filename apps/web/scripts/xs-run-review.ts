@@ -91,7 +91,7 @@ async function main(): Promise<void> {
 
   let totalGems = 0
   for (const run of runs) {
-    const r = run as typeof run & { summary?: string | null; finishedAt?: Date | null; duplicates?: number }
+    const r = run as typeof run & { summary?: string | null; finishedAt?: Date | null; duplicates?: number; parked?: number }
     const gems = await prisma.pattern.findMany({
       where: { slug: { in: run.gemSlugs } },
       select: {
@@ -106,7 +106,7 @@ async function main(): Promise<void> {
     })
     const state = r.finishedAt ? 'finished' : 'in flight'
     console.log(
-      `\n${run.startedAt.toISOString()} ${run.trigger} ${state} · published ${run.published} · culled ${run.culled} · duplicates ${r.duplicates ?? 0} · errors ${run.errors}`,
+      `\n${run.startedAt.toISOString()} ${run.trigger} ${state} · published ${run.published} · culled ${run.culled} · parked ${r.parked ?? 0} · duplicates ${r.duplicates ?? 0} · errors ${run.errors}`,
     )
     if (r.summary) console.log(`  ${r.summary}`)
     const tiles: Buffer[] = []

@@ -15,13 +15,16 @@ Nothing is on sale until a session has looked at it. You are that session.
 
 ## Before anything else
 
-Load the `homemade-standards` skill. It carries the voice rules, the editorial
-gates and the scope discipline this work sits inside.
+Read `notes/INDEX.md`, `notes/feedback_homemade_voice.md`,
+`notes/feedback_cross_stitch_world_class_bar.md` and
+`notes/project/project_cross_stitch_state.md` in the repo. They carry the voice
+rules, the bar and the current state. (The `homemade-standards` skill is an
+older copy of the same files, not the source.)
 
 ## The environment
 
-- Ubuntu VM, fresh clone of `becspage-arch/homemade`. Rebecca's local memory is
-  not here; the skill and this file are what you get.
+- Ubuntu VM, fresh clone of `becspage-arch/homemade`. The project memory is
+  `notes/` in the repo; this file and those notes are what you get.
 - Run every script **from `apps/web`** with the env file:
   `HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/<name>.ts`
 - The database is reached over the **Neon WebSocket path** — `PG_VIA_HTTPS_PROXY=1`
@@ -31,9 +34,9 @@ gates and the scope discipline this work sits inside.
   `.env.credentials`.
 - Outbound HTTPS goes through the agent proxy. `gh` and `curl` are configured
   for it already.
-- Typesense is not reachable from a cloud sandbox. `keep` logs a search-sync
-  warning and carries on; that is expected and is not a failure. The server-side
-  reindex rebuilds the index from the database anyway.
+- Typesense is reachable from the cloud through the proxy, so `keep` syncs the
+  search index as it goes. If a sync warning appears, carry on and mention it
+  in the report; the server-side reindex rebuilds the index from the database.
 
 ## Step 1 — see what is waiting
 

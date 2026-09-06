@@ -259,7 +259,13 @@ export async function keepCandidates(slugs: string[], judgedBy: string): Promise
     })
     if (row.bulkRunId) {
       await prisma.bulkRun
-        .update({ where: { id: row.bulkRunId }, data: { published: { increment: 1 } }, select: { id: true } })
+        .update({
+          where: { id: row.bulkRunId },
+          // The run's gem list is what the weekly judging pack reads, so a kept
+          // candidate joins it exactly as an API-gated gem would have.
+          data: { published: { increment: 1 }, gemSlugs: { push: slug } },
+          select: { id: true },
+        })
         .catch(() => null)
     }
     // NON-FATAL, exactly as in xs-cull: the DB flip is the decision, the index a
