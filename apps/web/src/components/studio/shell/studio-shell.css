@@ -1412,3 +1412,30 @@
   font-size: 13px;
 }
 
+
+/* "New to cross-stitch? Start here" under the empty-state cards. Both links go
+   to free public pages, so the Studio's first screen always offers a next step
+   even to someone who has never stitched. */
+.studio-empty-startpoints {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px 18px;
+  margin: 26px auto 0;
+  max-width: 720px;
+  font-family: var(--font-lora);
+  font-size: 14px;
+}
+.studio-empty-startpoints-label {
+  color: var(--color-warm-taupe);
+}
+.studio-empty-startpoints a {
+  color: var(--color-forest);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+.studio-empty-startpoints a:hover {
+  color: var(--color-sage);
+}

@@ -23,6 +23,10 @@
  */
 
 import type { AmigurumiPart, CompositionProgram, CompositionProp } from './composition'
+import {
+  PROFILE_SIZE_MM_GENERATED,
+  PRESET_SETTLED_SIZE_MM_GENERATED,
+} from './amigurumiSizes.generated'
 
 /** A ball: climbs in sixes to the equator, holds, comes back down in sixes. */
 export function ballRounds(equator: number, plateau: number): number[] {
@@ -149,6 +153,31 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
   },
 }
 
+/**
+ * How far the hanging arm and forward leg need lifting off their `seat`
+ * placement to keep every paw pad and foot on or above the table.
+ *
+ * `offset.z` in `PartPlacement` is a straight world-mm nudge applied AFTER the
+ * whole rigid placement (composition.ts), so it moves a limb — and whatever
+ * is seated on it, like a paw pad — by exactly this many mm. The M values
+ * (0.5 / -0.4) are the signed-off bear's own tuned numbers (round 2, §8e-2)
+ * and are UNCHANGED here. They do not carry to S or L: those sizes change the
+ * body, head and limb ROUND COUNTS (`SIZES`) but the paw pad is the same
+ * absolute size at every size (fixed `scale: 0.62` on the same `s.muzzle`
+ * profile for S/M), so on the shorter S arm and the longer L arm it reaches
+ * proportionally further past the limb's own tip — measured (not guessed) off
+ * each size's settled, offset-free chain: an S arm's paw pad and an L leg's
+ * foot both sink well below the table at the M lift, so each size carries its
+ * own measured lift. `amigurumi-presets.test.ts` asserts every preset settles
+ * with minz within 0.5 mm of the table, which is what would catch this again
+ * if a future round-count or placement change moves it.
+ */
+const GROUND_LIFT: Record<AmigurumiSize, { arm: number; leg: number }> = {
+  S: { arm: 4.2, leg: 0.7 },
+  M: { arm: 0.5, leg: -0.4 },
+  L: { arm: 8.0, leg: 1.5 },
+}
+
 /** The camera every figure is staged at, and therefore the angle the face is
  *  turned back through so it meets the lens. Both from the signed-off bear. */
 const FIGURE_YAW = 26
@@ -272,6 +301,7 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     }
   }
 
+  const lift = GROUND_LIFT[choices.size]
   for (const side of [-1, 1] as const) {
     parts.push({
       name: side < 0 ? 'arm-l' : 'arm-r', stitch: 'sc', rounds: s.limb, colourHex: main, scale: 0.78,
@@ -280,9 +310,9 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
         aim: armAim(side), seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
         // A paw pad on the end of a hanging arm otherwise reaches just below the
         // table, and the renderer floats the whole piece up to clear it, which
-        // takes the legs off the ground. Hold the arm the half millimetre that
-        // keeps every part on or above the table.
-        offset: { z: 0.5 },
+        // takes the legs off the ground. Hold the arm the lift (per size,
+        // GROUND_LIFT) that keeps every part on or above the table.
+        offset: { z: lift.arm },
       },
     })
   }
@@ -292,7 +322,7 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
       place: {
         on: 'body', dir: { x: side * 0.52, y: 0.8, z: -0.55 },
         aim: legAim(side), seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
-        offset: { z: -0.4 },
+        offset: { z: lift.leg },
       },
     })
   }
@@ -385,36 +415,21 @@ export function allPresetChoices(): AmigurumiChoices[] {
 }
 
 // ── Measured sizes ─────────────────────────────────────────────────────────
-// The numbers below are SETTLED sizes, read off the relaxed geometry by
-// `amigurumi-presets.test.ts`, not estimates. They let the Studio show a real
-// finished size and draw a schematic at true proportions without paying for the
-// compile, and they let the save path record the size straight away. The render
-// job measures it again for real and writes it back.
+// The tables below are GENERATED (scripts/loom-preset-sizes.ts) from a real
+// compile + relax + audit of every profile and every preset — settled sizes,
+// not estimates and not hand-typed. They let the Studio show a real finished
+// size and draw a schematic at true proportions without paying for the
+// compile on every request, and they let the save path record the size
+// straight away. `amigurumi-presets.test.ts` re-measures on every run and
+// fails the build if a fresh compile drifts more than 10% from what is
+// checked in, so a re-cut round builder can never leave these stale. The
+// render job measures it again for real and writes it back.
 
-/** One piece's settled width x height in mm at worsted weight, by round profile. */
-export const PROFILE_SIZE_MM: Record<string, { width: number; height: number }> = {
-  [ballRounds(12, 1).join(',')]: { width: 17, height: 11 },
-  [ballRounds(12, 2).join(',')]: { width: 19, height: 14 },
-  [ballRounds(12, 3).join(',')]: { width: 19, height: 18 },
-  [ballRounds(12, 4).join(',')]: { width: 19, height: 21 },
-  [ballRounds(12, 6).join(',')]: { width: 19, height: 28 },
-  [ballRounds(18, 2).join(',')]: { width: 26, height: 16 },
-  [ballRounds(18, 3).join(',')]: { width: 26, height: 19 },
-  [ballRounds(18, 8).join(',')]: { width: 26, height: 36 },
-  [ballRounds(24, 4).join(',')]: { width: 34, height: 25 },
-  [ballRounds(24, 7).join(',')]: { width: 34, height: 35 },
-  [ballRounds(24, 9).join(',')]: { width: 34, height: 41 },
-  [ballRounds(30, 5).join(',')]: { width: 41, height: 30 },
-  [ballRounds(30, 6).join(',')]: { width: 41, height: 33 },
-  [ballRounds(36, 5).join(',')]: { width: 48, height: 31 },
-  [ballRounds(36, 7).join(',')]: { width: 48, height: 38 },
-  [tubeRounds(12, 3).join(',')]: { width: 19, height: 25 },
-  [tubeRounds(12, 4).join(',')]: { width: 19, height: 28 },
-  [tubeRounds(12, 6).join(',')]: { width: 19, height: 35 },
-}
+export const PROFILE_SIZE_MM = PROFILE_SIZE_MM_GENERATED
 
 /** A piece's settled size, falling back to the stitch-count estimate for a
- *  profile that is not in the measured table. */
+ *  profile that is not in the measured table (e.g. a shape the generator has
+ *  not been run against yet). */
 export function profileSizeMm(rounds: number[]): { width: number; height: number } {
   const measured = PROFILE_SIZE_MM[rounds.join(',')]
   if (measured) return measured
@@ -425,20 +440,7 @@ export function profileSizeMm(rounds: number[]): { width: number; height: number
 }
 
 /** The whole finished piece's settled size, by preset and size. */
-export const PRESET_SETTLED_SIZE_MM: Record<string, { width: number; height: number }> = {
-  'ball-S': { width: 19, height: 21 },
-  'ball-M': { width: 34, height: 35 },
-  'ball-L': { width: 48, height: 38 },
-  'egg-S': { width: 19, height: 28 },
-  'egg-M': { width: 26, height: 36 },
-  'egg-L': { width: 34, height: 41 },
-  'bear-S': { width: 38, height: 57 },
-  'bear-M': { width: 44, height: 71 },
-  'bear-L': { width: 56, height: 84 },
-  'bunny-S': { width: 38, height: 66 },
-  'bunny-M': { width: 44, height: 88 },
-  'bunny-L': { width: 56, height: 97 },
-}
+export const PRESET_SETTLED_SIZE_MM = PRESET_SETTLED_SIZE_MM_GENERATED
 
 export function presetSettledSizeMm(base: AmigurumiBase, size: AmigurumiSize): { width: number; height: number } {
   return PRESET_SETTLED_SIZE_MM[`${base}-${size}`] ?? { width: 60, height: 60 }

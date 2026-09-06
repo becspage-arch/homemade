@@ -20,9 +20,13 @@ const ROOT_ID = 'stitch-reference-root'
 export function StitchReferenceControls({
   craft,
   initial = 'uk',
+  showTerminologyToggle = true,
 }: {
   craft: string
   initial?: Mode
+  /** Hidden for crafts whose stitches carry one name on both sides of the
+   *  Atlantic (cross-stitch), where the toggle would change nothing. */
+  showTerminologyToggle?: boolean
 }) {
   const [mode, setMode] = useState<Mode>(initial)
 
@@ -35,6 +39,7 @@ export function StitchReferenceControls({
 
   return (
     <div className="stitches-controls no-print">
+      {showTerminologyToggle && (
       <div className="stitches-term-toggle" role="group" aria-label="Terminology">
         <button
           type="button"
@@ -53,6 +58,7 @@ export function StitchReferenceControls({
           US terms
         </button>
       </div>
+      )}
       <a
         className="stitches-print-btn"
         href={`/stitches/${craft}/print?terminology=${mode}`}
