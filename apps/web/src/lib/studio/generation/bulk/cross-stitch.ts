@@ -254,6 +254,15 @@ export interface RejectSample {
   shelf: string
   /** The colour count the converter actually produced. */
   colours: number
+  /**
+   * The subject the illustrator was asked for. Carried on the sample because the
+   * gate needs it to judge "did we get what we asked for" — without it a killed
+   * render cannot be replayed against a changed rubric, which is the whole point
+   * of keeping it (see scripts/xs-gate-replay.ts).
+   */
+  subject?: string
+  /** The style lane, for the same reason. */
+  style?: string
 }
 
 /** How many rejected renders one run keeps. */
@@ -288,6 +297,8 @@ export async function uploadRejectSample(
       lane: brief.lane,
       shelf: brief.shelf,
       colours: ctx.colours,
+      subject: brief.subject,
+      style: brief.style,
     }
   } catch (err) {
     console.warn(`[bulk cross-stitch] could not keep the reject render for ${brief.slug}`, err)

@@ -1,0 +1,30 @@
+{
+  "_comment": "What the gate SHOULD say about a render, by pattern slug — the orchestrator's ground truth, kept by hand. Keys beginning with _ are ignored. Values: keep | kill | repair. Used by scripts/xs-gate-replay.ts to score a rubric change against real renders instead of against an argument. Rows fall into three groups: gems that shipped (keep), culls the orchestrator judged shippable (keep — these are the over-culls), and the false keeps Rebecca later unpublished (kill — these are what a looser rubric must NOT let back in).",
+
+  "_gems_run_cmtplny0s_pro_all": "shipped 2026-09-06, judged 'all four keep'",
+  "nursery-a-mobile-of-paper-stars-e8e6": "keep",
+  "cosy-scenes-a-narrowboat-in-canal-art-paint-gel8": "keep",
+  "celestial-a-lighthouse-beam-sweeping-a-full-star-cfxk": "keep",
+  "botanical-stems-a-lupin-spire-in-deep-violet-aga-kcuj": "keep",
+
+  "_over_culls_run_cmtplny0s": "killed on one small detail; the orchestrator would ship all four",
+  "halloween-a-raven-against-a-marigold-harvest-ora-k0ju": "keep",
+  "valentines-a-strawberry-dipped-in-chocolate-1ry6": "keep",
+  "witchy-gothic-a-crystal-ball-on-a-velvet-cloth-cs98": "keep",
+  "woodland-a-barn-owl-quartering-a-frost-pale-mead-4qxd": "keep",
+
+  "_correct_kills_run_cmtplny0s": "off-brief and lettering — these must stay dead",
+  "food-drink-a-cottage-loaf-and-rolling-pin-9f25": "kill",
+  "cocktails-a-margarita-with-lime-glowing-in-late--cai0": "kill",
+
+  "_false_keeps_proof_batch_2026_09_05": "the gate kept these; Rebecca unpublished them. A looser rubric that keeps them again has gone too far.",
+  "food-drink-a-cheerful-cupcake-with-sprinkles-7ktw": "kill",
+  "easter-spring-an-easter-bunny-with-a-basket-of-p-f7ug": "kill",
+
+  "_gems_cron_0400_and_0600": "the two cron batches before the 08:00 wipe-out",
+  "woodland-a-hare-under-a-bright-winter-full-moon--ik8u": "keep",
+  "cosy-scenes-a-seaside-ice-cream-kiosk-in-high-su-e2rr": "keep",
+  "autumn-harvest-a-jay-with-an-acorn-in-gold-oak-8gal": "keep",
+  "cosy-scenes-a-potting-shed-in-high-summer-eki5": "keep",
+  "woodland-a-pine-marten-on-a-frost-dusted-log-in--08xn": "keep"
+}
