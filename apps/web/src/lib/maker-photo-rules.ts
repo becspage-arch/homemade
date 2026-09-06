@@ -83,3 +83,30 @@ export function parseGateVerdict(raw: unknown): {
   }
   return { decision: 'pending', reasons: [] }
 }
+
+/**
+ * Tutorial types that produce nothing a person can photograph.
+ *
+ * Maker photos belong on anything with a made thing: a dish, a remedy, a crop,
+ * a pattern, and the technique and stitch tutorials that leave a worked sample
+ * behind. They do not belong on a piece you only read or only do.
+ *
+ *  - PRACTICE is a mindset exercise. It is done, not made, and it is the whole
+ *    of the mindset category (every mindset tutorial is PRACTICE or READING),
+ *    so this is how mindset is excluded: by what the piece is, not by a
+ *    hard-coded category slug.
+ *  - READING is a text piece. It appears across nine categories and none of
+ *    them leaves an object behind.
+ *  - HERB_PROFILE is a materia-medica entry about a plant, not a preparation.
+ *    The herbal REMEDY tutorials next to it are makes and keep their photos.
+ */
+const NO_MADE_THING: readonly string[] = ['PRACTICE', 'READING', 'HERB_PROFILE']
+
+/**
+ * Whether a tutorial has a made thing, and so whether the maker-photo strip
+ * belongs on its page. Everything else is in: RECIPE, REMEDY, GROWING_GUIDE,
+ * PATTERN, TECHNIQUE and STITCH, across every tutorial-led category.
+ */
+export function tutorialTakesMakerPhotos(type: string): boolean {
+  return !NO_MADE_THING.includes(type)
+}

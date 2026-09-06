@@ -26,7 +26,7 @@ import {
 } from '@/lib/recipes/recipe-render-data'
 import { harvestSupplies } from '@/lib/supplies'
 import { loadTutorialUgc } from '@/lib/ugc-loader'
-import { loadMakerPhotos } from '@/lib/maker-photos'
+import { loadMakerPhotos, tutorialTakesMakerPhotos } from '@/lib/maker-photos'
 import { captureServerEvent } from '@/lib/posthog'
 import { JsonLd } from '@/components/seo/json-ld'
 import { RelatedTutorials } from '@/components/public/related-tutorials'
@@ -561,7 +561,15 @@ export default async function TutorialPage({ params }: PageProps) {
   // Uploading a photo needs nothing but an account: a started or finished
   // project is not a condition. Signed-out readers see the button and are
   // routed through sign-in.
-  const makerPhotos = await loadMakerPhotos({ kind: 'tutorial', tutorialId: tutorial.id })
+  //
+  // The strip is on every tutorial with a made thing, which is every
+  // tutorial-led category. It is off for the types that leave nothing to
+  // photograph, which is how mindset is excluded: every mindset tutorial is a
+  // PRACTICE or a READING.
+  const takesPhotos = tutorialTakesMakerPhotos(tutorial.type)
+  const makerPhotos = takesPhotos
+    ? await loadMakerPhotos({ kind: 'tutorial', tutorialId: tutorial.id })
+    : []
 
   // Above-body region guidance.
   //
@@ -644,13 +652,15 @@ export default async function TutorialPage({ params }: PageProps) {
         tutorialCategorySlug={tutorial.category.slug}
         tutorialSlug={tutorialSlug}
       />
-      <MakerPhotos
-        photos={makerPhotos}
-        signedIn={Boolean(currentUser)}
-        tutorialId={tutorial.id}
-        returnTo={`/${tutorial.category.slug}/${tutorialSlug}`}
-        galleryHref={`/${tutorial.category.slug}/makes`}
-      />
+      {takesPhotos && (
+        <MakerPhotos
+          photos={makerPhotos}
+          signedIn={Boolean(currentUser)}
+          tutorialId={tutorial.id}
+          returnTo={`/${tutorial.category.slug}/${tutorialSlug}`}
+          galleryHref={`/${tutorial.category.slug}/makes`}
+        />
+      )}
     </>
   )
 

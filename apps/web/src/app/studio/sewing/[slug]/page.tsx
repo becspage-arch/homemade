@@ -12,6 +12,8 @@ import {
   loadSewingProjectForUser,
 } from '@/lib/sewing/load-pattern'
 import { getFreesewingShowcase } from '@/lib/sewing/grading/showcase'
+import { MakerPhotos } from '@/components/public/maker-photos/maker-photos'
+import { loadMakerPhotos } from '@/lib/maker-photos'
 
 export const dynamic = 'force-dynamic'
 
@@ -53,17 +55,40 @@ export default async function SewingPatternStudioPage({ params }: PageProps) {
       ? await loadSewingProjectForUser(user.id, pattern.id)
       : null
 
+  // The demo pattern is built in code, not a SewingPattern row, so there is
+  // nothing for a photo to hang off it.
+  const isRealPattern = slug !== DEMO_SEWING_PATTERN_SLUG
+  const makerPhotos = isRealPattern
+    ? await loadMakerPhotos({
+        kind: 'pattern',
+        patternId: pattern.id,
+        patternType: 'SEWING',
+      })
+    : []
+
   return (
-    <SewingStudioShell
-      startMode="pattern"
-      signedIn={Boolean(user)}
-      userName={user?.name ?? null}
-      pattern={pattern}
-      progress={progress}
-      myProjects={[]}
-      measurementPreference={
-        user?.measurementPreference === 'inches' ? 'inches' : 'cm'
-      }
-    />
+    <>
+      <SewingStudioShell
+        startMode="pattern"
+        signedIn={Boolean(user)}
+        userName={user?.name ?? null}
+        pattern={pattern}
+        progress={progress}
+        myProjects={[]}
+        measurementPreference={
+          user?.measurementPreference === 'inches' ? 'inches' : 'cm'
+        }
+      />
+      {isRealPattern && (
+        <MakerPhotos
+          photos={makerPhotos}
+          signedIn={Boolean(user)}
+          patternId={pattern.id}
+          patternType="SEWING"
+          returnTo={`/studio/sewing/${slug}`}
+          galleryHref="/sewing/makes"
+        />
+      )}
+    </>
   )
 }

@@ -6,6 +6,7 @@ import {
   PATTERN_TYPE_LABEL,
   targetData,
   targetWhere,
+  tutorialTakesMakerPhotos,
   type PhotoTarget,
 } from './maker-photo-rules'
 
@@ -14,6 +15,7 @@ export {
   PATTERN_TYPE_LABEL,
   targetData,
   targetWhere,
+  tutorialTakesMakerPhotos,
   type PhotoTarget,
 }
 

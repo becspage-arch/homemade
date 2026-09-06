@@ -8,6 +8,7 @@
  *    reject leaves the photo pending and invisible.
  * 2. Removed and rejected photos never show on a public surface.
  * 3. The UserPatternPhoto migration maps every old status to the right new one.
+ * 4. The strip reaches every tutorial-led category, and mindset is excluded.
  */
 
 import assert from 'node:assert/strict'
@@ -16,6 +17,7 @@ import {
   parseGateVerdict,
   targetData,
   targetWhere,
+  tutorialTakesMakerPhotos,
 } from './maker-photo-rules'
 import {
   mapLegacyPatternPhoto,
@@ -253,6 +255,71 @@ check('every carried-over row lands on exactly one target', () => {
     const hasPattern = m.patternId !== null && m.patternType !== null
     assert.equal(hasTutorial !== hasPattern, true, `${status} must have one target`)
   }
+})
+
+// ── 4. Which tutorials take photos ──────────────────────────────────────────
+
+console.log('\ntutorial coverage')
+
+check('a made thing takes photos', () => {
+  for (const t of ['RECIPE', 'REMEDY', 'GROWING_GUIDE', 'PATTERN', 'TECHNIQUE', 'STITCH']) {
+    assert.equal(tutorialTakesMakerPhotos(t), true, `${t} should take photos`)
+  }
+})
+
+check('a piece you only read or only do does not', () => {
+  for (const t of ['PRACTICE', 'READING', 'HERB_PROFILE']) {
+    assert.equal(tutorialTakesMakerPhotos(t), false, `${t} should not take photos`)
+  }
+})
+
+/**
+ * The live type breakdown per category, read off the database on 6 September
+ * 2026. The point of pinning it here is the two assertions below: every
+ * tutorial-led category keeps the strip, and mindset loses it entirely.
+ */
+const CATEGORY_TYPES: Record<string, Record<string, number>> = {
+  'animals-smallholding': { PATTERN: 28, READING: 118, TECHNIQUE: 417 },
+  baking: { RECIPE: 1143, TECHNIQUE: 98, READING: 6 },
+  cooking: { RECIPE: 3040 },
+  crochet: { STITCH: 66, PATTERN: 993, READING: 26, TECHNIQUE: 108 },
+  'cross-stitch': { TECHNIQUE: 80 },
+  'fibre-arts': { TECHNIQUE: 282, PATTERN: 249, READING: 25 },
+  garden: { GROWING_GUIDE: 124 },
+  'herbal-medicine': { READING: 10, HERB_PROFILE: 21, REMEDY: 111 },
+  'home-repair': { TECHNIQUE: 156, PATTERN: 417, READING: 12 },
+  knitting: { STITCH: 66, PATTERN: 223 },
+  mindset: { PRACTICE: 909, READING: 92 },
+  'natural-home': { RECIPE: 476 },
+  needlework: { READING: 16, PATTERN: 62, STITCH: 139, TECHNIQUE: 67 },
+  'paper-word': { PATTERN: 149, TECHNIQUE: 352, READING: 45 },
+  'pottery-ceramics': { PATTERN: 283, TECHNIQUE: 157 },
+  sewing: { PATTERN: 1, TECHNIQUE: 1 },
+  sustainability: { PATTERN: 186, TECHNIQUE: 422 },
+  'wood-natural-craft': { TECHNIQUE: 72, PATTERN: 238, READING: 42 },
+}
+
+check('every category with a made thing keeps the strip on some tutorials', () => {
+  for (const [slug, types] of Object.entries(CATEGORY_TYPES)) {
+    if (slug === 'mindset') continue
+    const covered = Object.entries(types)
+      .filter(([t]) => tutorialTakesMakerPhotos(t))
+      .reduce((sum, [, n]) => sum + n, 0)
+    assert.equal(covered > 0, true, `${slug} should have tutorials that take photos`)
+  }
+})
+
+check('mindset is excluded whole, with no category slug hard-coded', () => {
+  const types = CATEGORY_TYPES.mindset!
+  for (const t of Object.keys(types)) {
+    assert.equal(tutorialTakesMakerPhotos(t), false, `mindset ${t} must be excluded`)
+  }
+})
+
+check('an unknown future tutorial type defaults to taking photos', () => {
+  // Better a strip on something that turns out not to need one than a craft
+  // silently losing the feature when a new type lands.
+  assert.equal(tutorialTakesMakerPhotos('SOME_NEW_TYPE'), true)
 })
 
 console.log(
