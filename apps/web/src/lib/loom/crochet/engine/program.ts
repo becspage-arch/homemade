@@ -119,11 +119,13 @@ export interface CrochetProgram {
   notes?: string
 
   /** Finished-object staging (Part C, STITCH_ENGINE.md §8e-2/§8e-3) — how a real
-   *  stored pattern's OWN hero should present it (render-on-publish reads this
-   *  when a caller doesn't force a different one). Proof scripts still get their
-   *  per-name override from `loom-pattern.ts`'s `PROOF_STAGING` map; this field
-   *  is what lets a program that ISN'T a named proof (a real customer pattern)
-   *  carry its own staging choice. Default 'swatch' (the stitch-proof crop). */
+   *  stored pattern's OWN hero should present it (render-on-publish and the
+   *  publish batch both read this when a caller doesn't force a different one).
+   *  Proof scripts still get their per-name override from `loom-pattern.ts`'s
+   *  `PROOF_STAGING` map; this field is what lets a program that ISN'T a named
+   *  proof (a real customer pattern) carry its own staging choice. Render/
+   *  staging only: not part of the geometry, never reaches the geometry hash.
+   *  Default 'swatch' (the stitch-proof crop). */
   staging?: Staging
 }
 

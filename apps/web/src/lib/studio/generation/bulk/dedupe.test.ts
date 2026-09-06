@@ -20,6 +20,8 @@ import { subjectKey, subjectTokens, subjectJaccard, findSubjectKeyMatch, SUBJECT
 import { imageHash, sha256Hex, nearDuplicateVerdict, type PatternFingerprint, type ChartFingerprint } from './similarity'
 import { shelfDeficits, allocateShelves, shelfSlots, allShelvesAtTarget } from './shelf-plan'
 import { measureVividness, vividnessVerdict, MIN_INK, MIN_CHROMA } from './vividness'
+import { findDuplicate, type CatalogueEntry, type CandidateFingerprints } from './duplicate-match'
+import { applyWarmFurGuard, WARM_FUR_SAT, type WarmFurBrief } from './brief-rules'
 import { runIsComplete } from './run-status'
 import type { ShelfTarget } from '../categories'
 
@@ -214,6 +216,84 @@ async function imageTests(): Promise<void> {
     assert.match(v.reason, /sha256/)
   })
 }
+
+// ─── the guard's comparison set: a cull means the idea is spent ────────────
+
+/** A candidate whose picture matches nothing — isolates the SUBJECT rule. */
+function candidate(key: string): CandidateFingerprints {
+  const flat = Buffer.alloc(24 * 24 * 3, 7).toString('hex')
+  return {
+    sha256: 'a'.repeat(64),
+    dhash64: '0'.repeat(16),
+    dhash256: '0'.repeat(64),
+    chart: { grid: flat, palette: ['DMC-1'] },
+    subjectKey: key,
+  }
+}
+
+/** A culled row: subject key only, no image (visibility PRIVATE + qcBlockReason). */
+function culledEntry(key: string, name: string): CatalogueEntry {
+  return { id: `id-${key}`, slug: `slug-${key}`, name, subjectKey: key, image: null }
+}
+
+record('guard: a culled subject is still a duplicate — the idea is spent', () => {
+  // The real case: a washed-out cupcake was culled, which released its subject
+  // and the very next batch commissioned it again.
+  const catalogue = [culledEntry(subjectKey('a cheerful cupcake with sprinkles'), 'Cheerful cupcake with sprinkles')]
+  const hit = findDuplicate(candidate(subjectKey('a cheerful cupcake with sprinkles')), catalogue)
+  assert.ok(hit, 'expected the culled subject to block the candidate')
+  assert.match(hit.reason, /same subject/)
+})
+
+record('guard: a re-wording of a culled subject is caught too', () => {
+  const catalogue = [culledEntry(subjectKey('a big japanese garden'), 'Big japanese garden')]
+  assert.ok(findDuplicate(candidate(subjectKey('a japanese garden scene')), catalogue))
+})
+
+record('guard: a genuinely new subject still passes a culled catalogue', () => {
+  const catalogue = [culledEntry(subjectKey('a cheerful cupcake with sprinkles'), 'Cheerful cupcake with sprinkles')]
+  assert.equal(findDuplicate(candidate(subjectKey('a hot-air balloon over patchwork fields')), catalogue), null)
+})
+
+record('guard: a culled row never fires the IMAGE rules (image is null)', () => {
+  // Identical fingerprints on both sides; only the subject differs. A culled row
+  // carries no image, so the picture comparison must not fire on it.
+  const cand = candidate(subjectKey('a barn owl on a fencepost'))
+  const catalogue = [culledEntry(subjectKey('a red fox in autumn leaves'), 'Red fox in autumn leaves')]
+  assert.equal(findDuplicate(cand, catalogue), null)
+})
+
+// ─── warm fur in the small lanes ───────────────────────────────────────────
+
+function brief(subject: string, lane: string, sat?: number): WarmFurBrief {
+  return { subject, lane, ...(sat != null ? { sat } : {}) }
+}
+
+record('warm fur: a mini fox is pulled back so it does not cook to pink', () => {
+  assert.equal(applyWarmFurGuard(brief('a red fox in falling snow', 'mini')).sat, WARM_FUR_SAT)
+})
+
+record('warm fur: applies in the small lane too', () => {
+  assert.equal(applyWarmFurGuard(brief('a red squirrel among acorns', 'small')).sat, WARM_FUR_SAT)
+})
+
+record('warm fur: a large fox keeps full saturation — it has the colour budget', () => {
+  assert.equal(applyWarmFurGuard(brief('a red fox in falling snow', 'large')).sat, undefined)
+})
+
+record('warm fur: leaves other animals alone', () => {
+  assert.equal(applyWarmFurGuard(brief('a black cat on a windowsill', 'mini')).sat, undefined)
+})
+
+record('warm fur: never overrides a saturation the brief chose itself', () => {
+  assert.equal(applyWarmFurGuard(brief('a red fox in falling snow', 'mini', 1.05)).sat, 1.05)
+})
+
+record('warm fur: promotion out of the small lanes releases the guard sat', () => {
+  const dulled = applyWarmFurGuard(brief('a red fox in falling snow', 'mini'))
+  const promoted = applyWarmFurGuard({ ...dulled, lane: 'large' })
+  assert.equal(promoted.sat, undefined)
+})
 
 // ─── the pale guard ────────────────────────────────────────────────────────
 

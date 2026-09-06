@@ -74,6 +74,8 @@ export interface BatchSummary {
   generations: number
   /** Of those, how many used the Flux 1.1 Pro (dense) tier. */
   proGenerations: number
+  /** Attempts the pale guard rejected before the vision gate was called. */
+  paleSkips: number
   errors: number
   /** Slugs of the gems that shipped. */
   gems: string[]
@@ -111,6 +113,8 @@ export interface AttemptResult {
   duplicateReason?: string
   /** True when this attempt generated on the Flux 1.1 Pro (dense) tier. */
   pro?: boolean
+  /** True when the deterministic pale guard rejected it before the vision gate. */
+  tooPale?: boolean
 }
 
 /**
@@ -176,6 +180,7 @@ export async function crossStitchAttempt(
       repairAction: 'more-saturation',
       published: false,
       pro: candidate.pro,
+      tooPale: true,
     }
   }
 
@@ -234,7 +239,7 @@ export async function crossStitchPlanContext(count: number): Promise<Parameters<
 }
 
 export async function runCrossStitchBatch(count: number, step: StepRunner = inlineStep): Promise<BatchSummary> {
-  const base: BatchSummary = { craft: 'cross-stitch', requested: count, published: 0, culled: 0, duplicates: 0, skipped: 0, repaired: 0, generations: 0, proGenerations: 0, errors: 0, gems: [], killReasons: [], line: '' }
+  const base: BatchSummary = { craft: 'cross-stitch', requested: count, published: 0, culled: 0, duplicates: 0, skipped: 0, repaired: 0, generations: 0, proGenerations: 0, paleSkips: 0, errors: 0, gems: [], killReasons: [], line: '' }
   if (!gateConfigured()) {
     return { ...base, notRun: 'gate-not-wired', line: 'cross-stitch batch skipped — ANTHROPIC_API_KEY not set, refusing to publish un-gated' }
   }
@@ -262,6 +267,7 @@ export async function runCrossStitchBatch(count: number, step: StepRunner = inli
           crossStitchAttempt(brief, tweakForStep, keptSubjects, { attempt: attemptNo }),
         )
         if (last.pro) base.proGenerations++
+        if (last.tooPale) base.paleSkips++
         if (last.duplicateOf) {
           // TERMINAL. The idea itself is the duplicate — re-rolling it just
           // generates the same collision again.
@@ -323,7 +329,7 @@ async function needleworkAttempt(
 }
 
 export async function runNeedleworkBatch(count: number, step: StepRunner = inlineStep): Promise<BatchSummary> {
-  const base: BatchSummary = { craft: 'needlework', requested: count, published: 0, culled: 0, duplicates: 0, skipped: 0, repaired: 0, generations: 0, proGenerations: 0, errors: 0, gems: [], killReasons: [], line: '' }
+  const base: BatchSummary = { craft: 'needlework', requested: count, published: 0, culled: 0, duplicates: 0, skipped: 0, repaired: 0, generations: 0, proGenerations: 0, paleSkips: 0, errors: 0, gems: [], killReasons: [], line: '' }
   if (!gateConfigured()) {
     return { ...base, notRun: 'gate-not-wired', line: 'needlework batch skipped — ANTHROPIC_API_KEY not set, refusing to publish un-gated' }
   }

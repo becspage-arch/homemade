@@ -3,6 +3,7 @@ import { anthropicConfigured, anthropicJson, PLANNER_MODEL } from '@/lib/anthrop
 import { STYLE, type StyleKey } from './cross-stitch-style'
 import { subjectKey as normaliseSubject, findSubjectKeyMatch } from './subject-key'
 import { CROSS_STITCH_SHELF_BY_SLUG } from '../categories'
+import { applyWarmFurGuard } from './brief-rules'
 import {
   CROSS_STITCH_THEMES,
   CROSS_STITCH_SIZE_LANES,
@@ -104,6 +105,11 @@ function applyStyleFloors(b: CrossStitchBrief): CrossStitchBrief {
   }
 }
 
+/** Every size/colour correction a finished brief gets, in one place. */
+function settleBrief(b: CrossStitchBrief): CrossStitchBrief {
+  return applyWarmFurGuard(applyStyleFloors(b))
+}
+
 function slugify(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 48)
 }
@@ -114,36 +120,26 @@ function uniqueSuffix(): string {
 
 // ─────────────────────────── CROSS-STITCH ───────────────────────────
 
-const XS_SYSTEM = `You are the creative director composing briefs for Homemade's cross-stitch catalogue — aiming to be the BEST cross-stitch collection in the world. You pick WHAT to make; a separate illustrator + a ruthless quality gate handle HOW. Your job is a set of STANDOUT designs people stop scrolling for.
+/**
+ * Kept deliberately tight. This system prompt is re-sent on every planner call
+ * and the call has a hard latency budget — the first version ran to some 700
+ * words of encouragement and worked examples, and the calls timed out, which
+ * silently dropped every batch to pool-sampled briefs. The bar and the hard
+ * rules survive; the pep talk did not.
+ */
+const XS_SYSTEM = `You are the creative director for Homemade's cross-stitch catalogue, aiming to be the best collection in the world. You choose WHAT to make; an illustrator and a ruthless quality gate handle HOW.
 
-THE BAR — every brief must be beautiful OR genuinely fun, ideally with a hook:
-- BEAUTIFUL: rich jewel-tone fantasy, moody botanicals, art-nouveau florals, celestial + moon-phase pieces, stained-glass styling, gothic-elegant, folk-art with intricate borders, magical glowing scenes, cottagecore and dark-academia moods.
-- FUN / CHARACTERFUL: animals doing human things with real personality and props, witty visual gags, kawaii-with-attitude, unexpected charming mash-ups. Give the subject a STORY or a hook, not just "an animal".
-- Trend-aware best-sellers: cottagecore, mushroom houses, witchy apothecary, galaxy/celestial, goblincore, moody florals, moon-and-botanicals.
+THE BAR — beautiful OR genuinely fun, with a hook. Rich jewel-tone fantasy, moody botanicals, art-nouveau florals, celestial and moon-phase pieces, gothic-elegant, cottagecore, witchy apothecary, goblincore. Or characterful: animals doing human things with real personality and props, witty wordless visual gags, kawaii-with-attitude. Give the subject a STORY, not just "an animal" — e.g. "a fox in a mustard raincoat reading a treasure map by lantern light", "a celestial black cat curled inside a crescent moon among moths".
 
-Gold-standard examples of the bar (invent NEW ideas of THIS calibre — do not copy these):
-- "a fox in a tiny mustard raincoat reading a treasure map by lantern light"
-- "a cosy mushroom cottage with glowing windows, fairy lights and a snail visitor at dusk"
-- "a celestial black cat curled inside a crescent moon among stars and moths"
-- "a highland cow with a crown of wildflowers and a bumblebee on its nose"
-- "an art-nouveau peacock with jewel-tone tail feathers and trailing irises"
-- "a hedgehog barista pulling a tiny espresso in a woodland cafe"
-- "a witch's apothecary shelf of glowing potion bottles, herbs and a curious cat"
+Generic filler FAILS: a plain basket of fruit, a bare wreath, "a [breed] portrait" — unless elevated with a distinctive hook, character or twist. If it sounds like every other Etsy chart, rewrite it.
 
-AVOID generic filler: a plain basket of fruit, a plain single flower, "a [breed] portrait", a bare wreath — UNLESS you elevate it with a distinctive hook, character, rich styling or a twist. If it sounds like every other Etsy chart, rewrite it. Boring, safe, "medium and fine" is a FAIL — we are building the best cross-stitch collection in the world, so every brief should be one a stitcher screenshots to show a friend.
-
-Hard rules:
-- NEVER repeat a subject the catalogue already has. You are given the existing subjects; anything that is the same IDEA as one of them — however differently worded — is REJECTED and wastes the slot. "A big japanese garden" and "a japanese garden scene" are the same idea. Reach for what is NOT on that list.
-- Serve the SHELF QUOTA you are given exactly: the batch has a required number of briefs per shelf, chosen from how far each shelf is from its target. Use only themes on the shelves listed.
-- Span the WHOLE SIZE RANGE, extremes included — deliberately reach for both ends, never a wall of medium pieces:
-  · at least one 'mini' TINY piece (a tiny pocket charm / single sweet character) in every batch;
-  · a couple of small/medium pieces;
-  · a large showpiece;
-  · and when the batch is big enough, exactly one 'dense' 100+ colour showpiece — the big heirloom end.
-  Extraordinary in BOTH directions — tiny-and-adorable and big-and-jaw-dropping — not everything clustered in the middle.
-- Vary SUBJECT, STYLE, SHAPE (square/tall/wide/circular) and SIZE — a samey set fails even if each piece is fine.
-- Only the generic-generation lanes below. No readable text/lettering (the converter can't render text). No copying a specific shop/celebrity/brand/franchise design.
-- Respect each theme's notes (e.g. faces fair/pale only; wordless signage; tame warm-red animals).
+HARD RULES
+- NEVER repeat a subject the catalogue already has, or a re-wording of one. "A big japanese garden" and "a japanese garden scene" are the same idea. Reach for what is NOT on the list you are given.
+- Serve the SHELF QUOTA exactly, using only the themes listed.
+- Span the size range: at least one 'mini', a couple of small/medium, a 'large', and exactly one 'dense' when the batch calls for it. Never a wall of medium pieces.
+- Vary subject, style, shape and size across the set.
+- No readable text or lettering (the converter cannot render it). No copying a specific shop, celebrity, brand or franchise design.
+- Respect each theme's notes (fair/pale faces only; wordless signage; tame warm-red animals).
 - Use ONLY the style keys and shelf slugs given. Reply with JSON only.`
 
 interface RawXsBrief {
@@ -244,7 +240,7 @@ function coerceXsBrief(raw: RawXsBrief, seen: Set<string>, allowed: CrossStitchT
   const h = clamp(raw.h ?? 150, 48, 230)
   const colours = clamp(raw.colours ?? loC!, 6, 160)
   const subject = raw.subject.trim()
-  return applyStyleFloors({
+  return settleBrief({
     slug: mintSlug(theme.id, subject, seen),
     subject,
     subjectKey: normaliseSubject(subject),
@@ -289,17 +285,26 @@ export const DENSE_BATCH_FLOOR = 8
 export const PROMPT_AVOID_LIMIT = 120
 
 /**
- * How long to wait for the model's briefs before falling back to the curated
- * sampler.
+ * How long to wait for one chunk of briefs before falling back to the sampler.
  *
- * Each Inngest step is one HTTP request and the gateway kills those at ~100s. A
- * planner call that runs past that takes the WHOLE batch down with it — the
- * dispatcher 504s, nothing fans out, and the run never happens. The sampler is
- * good now (it varies an example with a hook and never repeats the catalogue),
- * so a slow batch of pool-sampled briefs beats no batch at all. Set well under
- * the gateway's limit to leave room for the response to be parsed.
+ * Each Inngest step is one HTTP request and the gateway kills those at ~100s.
+ * Chunking put each model call in its OWN step, so each gets that budget to
+ * itself rather than sharing one — hence 75s here, where a single combined call
+ * had to fit two chunks and the catalogue reads into the same request.
+ *
+ * Overridable without a deploy: BULK_PLANNER_TIMEOUT_MS.
  */
-export const PLANNER_TIMEOUT_MS = 55_000
+export const PLANNER_TIMEOUT_MS = Number(process.env.BULK_PLANNER_TIMEOUT_MS) || 75_000
+
+/**
+ * Retries INSIDE one planner call. The shared Anthropic helper defaults to 3,
+ * i.e. up to four sequential attempts with backoff — which on a slow or
+ * rate-limited call silently consumed the whole timeout budget and returned
+ * nothing, so every batch fell through to the sampler. The planner has its own
+ * fallback, so one retry is the right trade: a transient blip is survivable, a
+ * retry storm is not.
+ */
+export const PLANNER_RETRIES = 1
 
 /** Reject rather than hang, so the caller can fall back. */
 function withTimeout<T>(work: Promise<T>, ms: number, label: string): Promise<T> {
@@ -383,7 +388,7 @@ function sampleXsBrief(theme: CrossStitchTheme, seen: Set<string>, taken: (key: 
   const midCells = FALLBACK_MID_CELLS[lane.lane] ?? 155
   const w = isTall ? Math.round(midCells * 0.75) : isWide ? Math.round(midCells * 1.3) : midCells
   const h = isTall ? Math.round(midCells * 1.3) : isWide ? Math.round(midCells * 0.7) : midCells
-  return applyStyleFloors({
+  return settleBrief({
     slug: mintSlug(theme.id, subject, seen),
     subject,
     subjectKey: normaliseSubject(subject),
@@ -413,7 +418,9 @@ function applyLane(b: CrossStitchBrief, laneName: string): CrossStitchBrief {
   const ratio = b.h > 0 ? b.w / b.h : 1
   const w = ratio >= 1 ? mid : Math.round(mid * ratio)
   const h = ratio >= 1 ? Math.round(mid / ratio) : mid
-  return applyStyleFloors({
+  // Re-settle after a lane change: a brief demoted INTO mini may now need the
+  // warm-fur saturation it did not need as a large piece.
+  return settleBrief({
     ...b,
     lane: lane.lane,
     w: clamp(w, 48, 230),
@@ -496,7 +503,7 @@ export function enforceRange(briefs: CrossStitchBrief[], count: number): CrossSt
  * — a sampled batch looks like a normal batch until you read the subjects. Two
  * calls of five, each its own step with its own timeout, comfortably fit.
  */
-export const MODEL_CHUNK = 5
+export const MODEL_CHUNK = Number(process.env.BULK_PLANNER_CHUNK) || 5
 
 /** Is this subject already the catalogue's, or already this batch's? */
 function makeTaken(avoid: Set<string>, batch: Set<string>): (key: string) => boolean {
@@ -538,6 +545,7 @@ export async function planModelBriefs(
         system: XS_SYSTEM,
         prompt: xsPromptText(count, ctx),
         maxTokens: 1600,
+        retries: PLANNER_RETRIES,
       }),
       PLANNER_TIMEOUT_MS,
       'cross-stitch planner',

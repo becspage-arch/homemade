@@ -1,14 +1,10 @@
 import 'server-only'
-import { prisma, Visibility, type PatternData } from '@homemade/db'
-import {
-  imageHash,
-  sha256Hex,
-  chartFingerprint,
-  nearDuplicateVerdict,
-  type ChartFingerprint,
-  type PatternFingerprint,
-} from './similarity'
-import { subjectKey, findSubjectKeyMatch, SUBJECT_JACCARD_MATCH } from './subject-key'
+// The comparison itself is pure and lives in `duplicate-match`; re-exported here
+// so callers keep importing one module.
+import { Prisma, prisma, Visibility, type PatternData } from '@homemade/db'
+import { imageHash, sha256Hex, chartFingerprint, type ChartFingerprint } from './similarity'
+import { subjectKey } from './subject-key'
+import type { CandidateFingerprints, CatalogueEntry } from './duplicate-match'
 import { CROSS_STITCH_SHELVES } from '../categories'
 
 /**
@@ -33,24 +29,6 @@ import { CROSS_STITCH_SHELVES } from '../categories'
  * threshold, and are still five of the same thing.
  */
 
-/** Everything the guard computes about a candidate before it publishes. */
-export interface CandidateFingerprints extends PatternFingerprint {
-  /** Normalised subject phrase — the text half of the check. */
-  subjectKey: string
-  /** sha256 of the Flux PNG the chart was converted from. */
-  sourceSha256?: string
-}
-
-/** One stored PUBLIC pattern, in the shape the verdict needs. */
-export interface CatalogueEntry {
-  id: string
-  slug: string | null
-  name: string
-  subjectKey: string | null
-  /** Null when the row has not been backfilled — text still compares. */
-  image: PatternFingerprint | null
-}
-
 /** Fingerprint a candidate: thumbnail bytes, both dHashes, chart, subject. */
 export async function fingerprintCandidate(
   renderPng: Buffer,
@@ -70,27 +48,59 @@ export async function fingerprintCandidate(
 }
 
 /**
- * Every PUBLIC house cross-stitch pattern's stored fingerprints. ~1,200 rows of
- * a few KB each — loaded once per attempt, which is cheap next to the Flux
- * generation and the vision-gate call that precede it. Deliberately NOT cached
- * across invocations: each idea runs as its own short Inngest request, and a
- * stale cache is exactly how a duplicate slips through.
+ * The rows a CULLED pattern is matched against by subject. A cull sets the row
+ * PRIVATE and records why in `qcBlockReason`; this is how those are found again.
+ */
+export const CULLED_WHERE = {
+  type: 'CROSS_STITCH',
+  ownerUserId: null,
+  visibility: Visibility.PRIVATE,
+  NOT: { qcBlockReason: { equals: Prisma.DbNull } },
+} as const
+
+/**
+ * The catalogue a candidate is compared against.
+ *
+ * Two populations, deliberately different:
+ *
+ *  · PUBLIC rows contribute BOTH their subject key and their image/chart
+ *    fingerprints. They are the live catalogue — a candidate must not repeat
+ *    them by idea or by picture.
+ *  · CULLED rows (PRIVATE with a `qcBlockReason`) contribute their SUBJECT KEY
+ *    ONLY. A cull means the idea is spent, not that the shelf is short of it:
+ *    without this, culling a weak render quietly released its subject back into
+ *    the pool and the very next batch commissioned it again — which is exactly
+ *    what happened to the cupcake. Their images are deliberately NOT compared,
+ *    because the whole point of a cull is that that particular render was bad;
+ *    matching pictures against known-bad output would tell us nothing useful.
+ *
+ * ~1,200 rows of a few KB — loaded once per attempt, cheap next to the Flux
+ * generation and the gate call before it. Deliberately NOT cached across
+ * invocations: each idea is its own short Inngest request, and a stale cache is
+ * exactly how a duplicate slips through.
  */
 export async function loadPublicCrossStitchFingerprints(): Promise<CatalogueEntry[]> {
-  const rows = await prisma.pattern.findMany({
-    where: { type: 'CROSS_STITCH', ownerUserId: null, visibility: Visibility.PUBLIC },
-    select: {
-      id: true,
-      slug: true,
-      name: true,
-      subjectKey: true,
-      thumbnailSha256: true,
-      imageHash64: true,
-      imageHash256: true,
-      chartFingerprint: true,
-    },
-  })
-  return rows.map((r) => ({
+  const [live, culled] = await Promise.all([
+    prisma.pattern.findMany({
+      where: { type: 'CROSS_STITCH', ownerUserId: null, visibility: Visibility.PUBLIC },
+      select: {
+        id: true,
+        slug: true,
+        name: true,
+        subjectKey: true,
+        thumbnailSha256: true,
+        imageHash64: true,
+        imageHash256: true,
+        chartFingerprint: true,
+      },
+    }),
+    prisma.pattern.findMany({
+      where: CULLED_WHERE,
+      select: { id: true, slug: true, name: true, subjectKey: true },
+    }),
+  ])
+
+  const entries: CatalogueEntry[] = live.map((r) => ({
     id: r.id,
     slug: r.slug,
     name: r.name,
@@ -105,52 +115,11 @@ export async function loadPublicCrossStitchFingerprints(): Promise<CatalogueEntr
           }
         : null,
   }))
-}
-
-export interface DuplicateHit {
-  /** Slug (or id, for the rare slugless row) of what it duplicates. */
-  slug: string
-  name: string
-  /** Which rule fired, with its measurement. */
-  reason: string
-}
-
-/**
- * Compare one candidate against the loaded catalogue. Text first — it is free,
- * and it is the signal the old pipeline was missing — then the image + chart
- * fingerprints. First hit wins and names itself.
- */
-export function findDuplicate(candidate: CandidateFingerprints, catalogue: CatalogueEntry[]): DuplicateHit | null {
-  // ── text: the same idea, however it was drawn ──────────────────────────────
-  if (candidate.subjectKey) {
-    const byKey = new Map<string, CatalogueEntry>()
-    for (const e of catalogue) if (e.subjectKey) byKey.set(e.subjectKey, e)
-    const match = findSubjectKeyMatch(candidate.subjectKey, byKey.keys())
-    if (match) {
-      const e = byKey.get(match.key)!
-      return {
-        slug: e.slug ?? e.id,
-        name: e.name,
-        reason:
-          match.overlap >= 1
-            ? `same subject as “${e.name}” (subject key “${match.key}”)`
-            : `same subject as “${e.name}” (subject overlap ${match.overlap.toFixed(2)} ≥ ${SUBJECT_JACCARD_MATCH})`,
-      }
-    }
+  // Subject only — `image: null` keeps these out of the picture comparison.
+  for (const r of culled) {
+    entries.push({ id: r.id, slug: r.slug, name: r.name, subjectKey: r.subjectKey, image: null })
   }
-
-  // ── image + chart: the same picture ────────────────────────────────────────
-  for (const e of catalogue) {
-    if (!e.image) continue
-    let verdict
-    try {
-      verdict = nearDuplicateVerdict(candidate, e.image)
-    } catch {
-      continue // a malformed stored fingerprint must never block a publish
-    }
-    if (verdict.duplicate) return { slug: e.slug ?? e.id, name: e.name, reason: `${verdict.reason} as “${e.name}”` }
-  }
-  return null
+  return entries
 }
 
 // ─────────────────────────── catalogue readers ───────────────────────────
@@ -181,21 +150,36 @@ export async function liveShelfCounts(): Promise<Record<string, number>> {
  * first run even before the backfill has touched everything.
  */
 export async function publicSubjectKeys(limit = 800, shelfSlugs?: string[]): Promise<string[]> {
-  const rows = await prisma.pattern.findMany({
-    where: {
-      type: 'CROSS_STITCH',
-      ownerUserId: null,
-      visibility: Visibility.PUBLIC,
-      ...(shelfSlugs?.length ? { subCategory: { slug: { in: shelfSlugs } } } : {}),
-    },
-    orderBy: { createdAt: 'desc' },
-    take: limit,
-    select: { subjectKey: true, name: true },
-  })
+  // The same two populations the publish guard compares against: what is live,
+  // plus what has been culled. A culled idea is spent — the planner must not
+  // commission it again any more than the guard should let it through.
+  const [live, culled] = await Promise.all([
+    prisma.pattern.findMany({
+      where: {
+        type: 'CROSS_STITCH',
+        ownerUserId: null,
+        visibility: Visibility.PUBLIC,
+        ...(shelfSlugs?.length ? { subCategory: { slug: { in: shelfSlugs } } } : {}),
+      },
+      orderBy: { createdAt: 'desc' },
+      take: limit,
+      select: { subjectKey: true, name: true },
+    }),
+    prisma.pattern.findMany({
+      where: CULLED_WHERE,
+      orderBy: { createdAt: 'desc' },
+      take: limit,
+      select: { subjectKey: true, name: true },
+    }),
+  ])
   const seen = new Set<string>()
-  for (const r of rows) {
+  // Live first, so the prompt's most-recent slice is what is actually on sale.
+  for (const r of [...live, ...culled]) {
     const key = r.subjectKey || subjectKey(r.name)
     if (key) seen.add(key)
   }
   return [...seen]
 }
+
+export { findDuplicate } from './duplicate-match'
+export type { CandidateFingerprints, CatalogueEntry, DuplicateHit } from './duplicate-match'
