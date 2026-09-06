@@ -33,10 +33,14 @@ import { lineBounds } from '@/lib/studio/parking'
 import { useChartStore, type ChartMode } from './chart-store'
 import { readStoredViewport, writeStoredViewport } from './viewport-memory'
 import {
+  backstitchStrokeWidth,
   buildBucketCrossPath,
   buildBucketHighlightPath,
   buildPaletteIndex,
   DEFAULT_CELL_PX,
+  fractionalAreaPath,
+  fractionalThreadPath,
+  frenchKnotRadius,
   groupCellsBySymbol,
   LOW_ZOOM_THRESHOLD,
   RENDER_PRECISION,
@@ -739,6 +743,39 @@ export function ChartViewport({
             </g>
           ))}
 
+          {/* Quarter and three-quarter stitches — the area they cover, with the
+              thread over it, so a fractional cell never reads as a whole one. */}
+          {layers.fractional && pattern.grid.fractional.length > 0 && (
+            <g className="chart-fractional">
+              {pattern.grid.fractional.map((f, i) => {
+                if (isolate && f.s !== isolate) return null
+                const entry = paletteIndex.bySymbol.get(f.s)
+                if (!entry) return null
+                const area = fractionalAreaPath(f, cellPx)
+                return (
+                  <g key={`fr-${i}`}>
+                    <path
+                      d={area}
+                      fill={effectiveStyle === 'symbol-only' ? '#ffffff' : entry.rgb}
+                      stroke={effectiveStyle === 'symbol-only' ? '#3d2f22' : shiftColour(entry.rgb, -0.18)}
+                      strokeWidth={0.5}
+                      opacity={effectiveStyle === 'x-stitch' ? 0.42 : 1}
+                    />
+                    {effectiveStyle === 'x-stitch' && !useLowZoom && (
+                      <path
+                        d={fractionalThreadPath(f, cellPx)}
+                        stroke={entry.rgb}
+                        strokeWidth={cellPx * 0.16}
+                        strokeLinecap="round"
+                        fill="none"
+                      />
+                    )}
+                  </g>
+                )
+              })}
+            </g>
+          )}
+
           {/* Back-stitch — drawn over the cells. */}
           {layers.backstitch && pattern.grid.backstitch.length > 0 && (
             <g className="chart-backstitch">
@@ -754,7 +791,7 @@ export function ChartViewport({
                     x2={(seg.x2 * cellPx).toFixed(RENDER_PRECISION)}
                     y2={(seg.y2 * cellPx).toFixed(RENDER_PRECISION)}
                     stroke={shiftColour(entry.rgb, -0.22)}
-                    strokeWidth={Math.max(1.2, cellPx * 0.08)}
+                    strokeWidth={backstitchStrokeWidth(cellPx)}
                     strokeLinecap="round"
                   />
                 )
@@ -771,7 +808,7 @@ export function ChartViewport({
                 if (!entry) return null
                 const cx = k.x * cellPx + cellPx / 2
                 const cy = k.y * cellPx + cellPx / 2
-                const r = cellPx * 0.26
+                const r = frenchKnotRadius(cellPx)
                 return (
                   <g key={`fk-${i}`}>
                     <circle cx={cx} cy={cy} r={r} fill={shiftColour(entry.rgb, -0.18)} />

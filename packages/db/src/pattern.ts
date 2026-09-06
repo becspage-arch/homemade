@@ -77,6 +77,43 @@ export const FrenchKnotSchema = z.object({
 })
 export type FrenchKnot = z.infer<typeof FrenchKnotSchema>
 
+/**
+ * Which quarter of a cell a fractional stitch lives in. The names are the
+ * corners of the cell: `tl` is the top-left quarter, `br` the bottom-right.
+ *
+ * This is the physical stitch, not a drawing convention. A quarter stitch is one
+ * leg of a cross cut in half — it runs from a corner of the square to the centre
+ * — so the thread lies inside the quarter of the cell at that corner, and that
+ * quarter is what it covers.
+ */
+export const CellQuadrantSchema = z.enum(['tl', 'tr', 'bl', 'br'])
+export type CellQuadrant = z.infer<typeof CellQuadrantSchema>
+
+/**
+ * A quarter or three-quarter stitch.
+ *
+ * `q` names one quarter of the cell, and `k` says what is worked:
+ *
+ *   quarter        only that quarter is stitched — one leg of the cross, halved,
+ *                  corner to centre.
+ *   threeQuarter   everything EXCEPT that quarter: a half stitch across the cell
+ *                  plus a quarter leg, which is what a stitcher works when a
+ *                  shape's diagonal edge cuts a square in two.
+ *
+ * The pair tiles: a three-quarter of one colour missing `tl` and a quarter of
+ * another colour at `tl` fill the cell between them, which is exactly how a
+ * stair-stepped diagonal is smoothed. A cell may carry a full cross as well —
+ * fractionals are their own layer and never replace `cells`.
+ */
+export const FractionalStitchSchema = z.object({
+  x: z.number().int().nonnegative(),
+  y: z.number().int().nonnegative(),
+  q: CellQuadrantSchema,
+  k: z.enum(['quarter', 'threeQuarter']),
+  s: z.string().min(1),
+})
+export type FractionalStitch = z.infer<typeof FractionalStitchSchema>
+
 /** A bead placed at a cell centre. Reserved for future use. */
 export const BeadSchema = z.object({
   x: z.number().int().nonnegative(),
@@ -97,6 +134,12 @@ export const PatternGridSchema = z.object({
   backstitch: z.array(BackstitchSegmentSchema).default([]),
   frenchKnots: z.array(FrenchKnotSchema).default([]),
   beads: z.array(BeadSchema).default([]),
+  /**
+   * Quarter and three-quarter stitches. Added after the first thousand charts
+   * were published, so it defaults to empty and every existing chart stays
+   * valid with no migration — an old chart simply has none.
+   */
+  fractional: z.array(FractionalStitchSchema).default([]),
 })
 export type PatternGrid = z.infer<typeof PatternGridSchema>
 
@@ -193,6 +236,33 @@ export const PatternDataSchema = z
     doc.grid.backstitch.forEach((b, i) => ref(b.s, 'backstitch', i))
     doc.grid.frenchKnots.forEach((k, i) => ref(k.s, 'frenchKnots', i))
     doc.grid.beads.forEach((b, i) => ref(b.s, 'beads', i))
+    doc.grid.fractional.forEach((f, i) => ref(f.s, 'fractional', i))
+
+    // A cell may carry one three-quarter and the one quarter that completes it,
+    // and nothing else. `q` names the same quarter in both: the three-quarter
+    // leaves it empty and the quarter fills it, so the two tile the cell.
+    // Anything else would have a stitcher working the same thread twice.
+    const byCell = new Map<string, { q: string; k: string }[]>()
+    for (const f of doc.grid.fractional) {
+      const key = `${f.x},${f.y}`
+      const list = byCell.get(key) ?? []
+      list.push({ q: f.q, k: f.k })
+      byCell.set(key, list)
+    }
+    for (const [key, list] of byCell) {
+      if (list.length === 1) continue
+      const three = list.filter((f) => f.k === 'threeQuarter')
+      const quarters = list.filter((f) => f.k === 'quarter')
+      const paired =
+        list.length === 2 && three.length === 1 && quarters.length === 1 && three[0]!.q === quarters[0]!.q
+      if (!paired) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ['grid', 'fractional'],
+          message: `Cell (${key}) carries fractional stitches that overlap`,
+        })
+      }
+    }
 
     const { width, height } = doc.grid
     const inBounds = (x: number, y: number) =>
@@ -203,6 +273,15 @@ export const PatternDataSchema = z
           code: z.ZodIssueCode.custom,
           path: ['grid', 'cells', i],
           message: `Cell (${c.x},${c.y}) is outside the ${width}×${height} grid`,
+        })
+      }
+    })
+    doc.grid.fractional.forEach((f, i) => {
+      if (!inBounds(f.x, f.y)) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ['grid', 'fractional', i],
+          message: `Fractional stitch (${f.x},${f.y}) is outside the ${width}×${height} grid`,
         })
       }
     })
@@ -238,11 +317,15 @@ export function computePatternMetrics(data: PatternData): PatternMetrics {
     widthCells: data.grid.width,
     heightCells: data.grid.height,
     colourCount: data.palette.length,
-    totalStitches: data.grid.cells.length,
+    // Every stitch a needle goes through: full crosses plus the quarter and
+    // three-quarter stitches, which are separate pieces of work in their own
+    // right. Charts published before fractionals existed carry none, so their
+    // count is unchanged.
+    totalStitches: data.grid.cells.length + data.grid.fractional.length,
     hasBackstitch: data.grid.backstitch.length > 0,
     hasFrenchKnots: data.grid.frenchKnots.length > 0,
     hasBeads: data.grid.beads.length > 0,
-    hasQuarterStitches: false,
+    hasQuarterStitches: data.grid.fractional.length > 0,
     // How the chart feels to work, not how big it is. See
     // computeStitchabilityMetrics below.
     ...computeStitchabilityMetrics(data),
@@ -267,8 +350,19 @@ export function estimateSkeinCount(
   if (!entry) return 0
 
   const fullCrossCount = data.grid.cells.filter((c) => c.s === symbol).length
-  const backstitchCount = data.grid.backstitch.filter((b) => b.s === symbol).length
+  // Back-stitch is measured in CELLS OF LINE, not in segments: a segment is one
+  // unbroken run and may be twenty cells long, so counting segments would have a
+  // chart's outline cost the same thread whether it went once round a motif or
+  // twenty times round it.
+  const backstitchCells = data.grid.backstitch
+    .filter((b) => b.s === symbol)
+    .reduce((a, b) => a + Math.hypot(b.x2 - b.x1, b.y2 - b.y1), 0)
   const frenchKnotCount = data.grid.frenchKnots.filter((k) => k.s === symbol).length
+  // A quarter stitch is a quarter of the thread of a full cross, and a
+  // three-quarter three quarters of it.
+  const fractionalCrosses = data.grid.fractional
+    .filter((f) => f.s === symbol)
+    .reduce((a, f) => a + (f.k === 'threeQuarter' ? 0.75 : 0.25), 0)
 
   // 14-count Aida baseline: ~180 full-cross stitches with 2 strands per skein.
   // Scale by fabric count (finer cloth = shorter stitches), strand count,
@@ -277,9 +371,12 @@ export function estimateSkeinCount(
   const strandFactor = entry.strandsFullCross / 2
   const stitchesPerSkein = 180 * fabricFactor / strandFactor
 
-  // Back-stitch + French knots in same colour add roughly 0.25× equivalent
-  // stitches each. Cheap approximation; the safety margin absorbs the rest.
-  const equivalentStitches = fullCrossCount + backstitchCount * 0.25 + frenchKnotCount * 0.25
+  // One cell of back-stitch is about a quarter of a full cross in thread (one
+  // straight run at one strand against two crossed diagonals at two), and a
+  // French knot about the same. Cheap approximations; the safety margin absorbs
+  // the rest.
+  const equivalentStitches =
+    fullCrossCount + fractionalCrosses + backstitchCells * 0.25 + frenchKnotCount * 0.25
 
   const raw = equivalentStitches / stitchesPerSkein
   const padded = raw * (1 + safetyMargin)

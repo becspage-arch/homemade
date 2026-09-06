@@ -36,6 +36,7 @@ import {
   type Fabric,
 } from '@homemade/db'
 import { renderPatternSvgString } from '@/components/studio/chart/render-svg-string'
+import { fractionalSymbolAnchor } from '@/components/studio/chart/render-helpers'
 import { symbolOnFill } from '@/components/studio/chart/render-helpers'
 
 // Chart symbols use glyphs outside WinAnsi (Latin-Extended letters from
@@ -290,10 +291,29 @@ async function drawFlossKey(
   for (const cell of pattern.grid.cells) {
     stitchesBySymbol.set(cell.s, (stitchesBySymbol.get(cell.s) ?? 0) + 1)
   }
+  // Cells of back-stitch line per floss. An outline floss can have no full
+  // crosses at all, and a key row reading "0 st" against a skein estimate would
+  // look like a mistake rather than a colour you buy for the line work.
+  const lineBySymbol = new Map<string, number>()
+  for (const seg of pattern.grid.backstitch) {
+    const len = Math.hypot(seg.x2 - seg.x1, seg.y2 - seg.y1)
+    lineBySymbol.set(seg.s, (lineBySymbol.get(seg.s) ?? 0) + len)
+  }
+  const knotsBySymbol = new Map<string, number>()
+  for (const knot of pattern.grid.frenchKnots) {
+    knotsBySymbol.set(knot.s, (knotsBySymbol.get(knot.s) ?? 0) + 1)
+  }
+  const fractionalBySymbol = new Map<string, number>()
+  for (const f of pattern.grid.fractional) {
+    fractionalBySymbol.set(f.s, (fractionalBySymbol.get(f.s) ?? 0) + 1)
+  }
 
   const rows = pattern.palette.map((entry) => ({
     entry,
     stitchCount: stitchesBySymbol.get(entry.symbol) ?? 0,
+    lineCells: Math.round(lineBySymbol.get(entry.symbol) ?? 0),
+    knotCount: knotsBySymbol.get(entry.symbol) ?? 0,
+    fractionalCount: fractionalBySymbol.get(entry.symbol) ?? 0,
     skein: estimateSkeinCount(pattern, entry.symbol),
   }))
 
@@ -312,7 +332,13 @@ async function drawFlossKey(
   const SYMBOL_X = 18
   const CODE_X = 33
   const NAME_X = 82
-  const COUNT_W = 74
+  // The counts column grows when the chart carries line work or knots, so the
+  // extra numbers never eat into the floss name beside them.
+  const COUNT_W =
+    74 +
+    (pattern.grid.fractional.length > 0 ? 30 : 0) +
+    (pattern.grid.backstitch.length > 0 ? 36 : 0) +
+    (pattern.grid.frenchKnots.length > 0 ? 26 : 0)
   const nameW = colW - NAME_X - COUNT_W - 8
 
   for (let p = 0; p < pageCount; p++) {
@@ -384,7 +410,15 @@ async function drawFlossKey(
         color: ink,
       })
 
-      const counts = `${row.stitchCount.toLocaleString()} st · ~${formatSkein(row.skein)} sk`
+      const extras = [
+        ...(row.fractionalCount > 0 ? [`${row.fractionalCount.toLocaleString()} fr`] : []),
+        ...(row.lineCells > 0 ? [`${row.lineCells.toLocaleString()} bs`] : []),
+        ...(row.knotCount > 0 ? [`${row.knotCount} kn`] : []),
+      ]
+      const counts =
+        `${row.stitchCount.toLocaleString()} st · ` +
+        (extras.length > 0 ? `${extras.join(' · ')} · ` : '') +
+        `~${formatSkein(row.skein)} sk`
       page.drawText(counts, {
         x: x + colW - 8 - fonts.mono.widthOfTextAtSize(counts, 7),
         y: y - 7,
@@ -394,7 +428,16 @@ async function drawFlossKey(
       })
     }
 
-    page.drawText('Skein estimates include a 25% safety margin. "sk" is skeins.', {
+    const hasLine = pattern.grid.backstitch.length > 0
+    const hasKnots = pattern.grid.frenchKnots.length > 0
+    const hasFractional = pattern.grid.fractional.length > 0
+    const legend =
+      'Skein estimates include a 25% safety margin. "sk" is skeins' +
+      (hasFractional ? ', "fr" quarter and three-quarter stitches' : '') +
+      (hasLine ? ', "bs" cells of back-stitch' : '') +
+      (hasKnots ? ', "kn" French knots' : '') +
+      '.'
+    page.drawText(legend, {
       x: m,
       y: m + 8,
       size: 8,
@@ -808,6 +851,32 @@ async function drawChartPages(
           x: px(x) + plan.cellPt / 2 - widthOf(glyph) / 2,
           y: py(y + 1) + plan.cellPt * 0.29,
           size: symbolSize,
+          font: fonts.body,
+          color: opts.monochrome ? ink : hexColour(symbolOnFill(swatch)),
+          opacity: inCore ? 1 : 0.32,
+        })
+      }
+    }
+
+    // ── Fractional symbols ───────────────────────────────────────────────
+    // A shared cell carries no full cross, so the loop above skips it. Both of
+    // its parts get their own smaller glyph, each in the middle of the piece it
+    // covers, which is how a bought chart shows a quarter and its three-quarter.
+    if (pattern.grid.fractional.length > 0) {
+      const fracSize = symbolSize * 0.72
+      for (const f of pattern.grid.fractional) {
+        if (f.x < tile.region.x || f.x >= regionMaxX || f.y < tile.region.y || f.y >= regionMaxY) continue
+        const swatch = colourBySymbol.get(f.s)
+        if (swatch === undefined) continue
+        const glyph = fonts.clean(f.s)
+        if (glyph.length === 0) continue
+        const anchor = fractionalSymbolAnchor(f, plan.cellPt)
+        const inCore =
+          f.x >= tile.core.x && f.x < coreMaxX && f.y >= tile.core.y && f.y < coreMaxY
+        page.drawText(glyph, {
+          x: px(f.x) + (anchor.x - f.x * plan.cellPt) - fonts.body.widthOfTextAtSize(glyph, fracSize) / 2,
+          y: py(f.y) - (anchor.y - f.y * plan.cellPt) - fracSize * 0.36,
+          size: fracSize,
           font: fonts.body,
           color: opts.monochrome ? ink : hexColour(symbolOnFill(swatch)),
           opacity: inCore ? 1 : 0.32,

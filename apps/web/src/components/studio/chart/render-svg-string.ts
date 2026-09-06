@@ -21,10 +21,16 @@
 
 import type { PatternData } from '@homemade/db'
 import {
+  backstitchStrokeWidth,
   buildBucketCrossPath,
   buildBucketHighlightPath,
   buildPaletteIndex,
+  fractionalAreaPath,
+  fractionalSymbolAnchor,
+  fractionalThreadPath,
+  frenchKnotRadius,
   groupCellsBySymbol,
+  groupFractionalsBySymbol,
   shiftColour,
   symbolOnFill,
 } from './render-helpers'
@@ -284,16 +290,73 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
     parts.push(`</g>`)
   }
 
-  // ─── Back-stitch ────────────────────────────────────────────────────────
-  if (pattern.grid.backstitch.length > 0) {
-    parts.push(`<g transform="translate(${offX} ${offY})" stroke-linecap="round">`)
-    for (const seg of pattern.grid.backstitch) {
-      const entry = paletteIndex.bySymbol.get(seg.s)
+  // ─── Quarter and three-quarter stitches ─────────────────────────────────
+  // Drawn after the full crosses and before the line work: on a chart they are
+  // areas of colour like any other cell, and in beauty mode they are thread —
+  // a quarter is one leg of a cross cut in half, a three-quarter a full diagonal
+  // plus a half leg, which is exactly what the needle does.
+  if (pattern.grid.fractional.length > 0) {
+    const fractionals = groupFractionalsBySymbol(pattern)
+    for (const [symbol, list] of fractionals) {
+      if (list.length === 0) continue
+      const entry = paletteIndex.bySymbol.get(symbol)
       if (!entry) continue
-      const colour = monochrome ? '#1a1410' : shiftColour(entry.rgb, -0.22)
-      parts.push(
-        `<line x1="${seg.x1 * cellPx}" y1="${seg.y1 * cellPx}" x2="${seg.x2 * cellPx}" y2="${seg.y2 * cellPx}" stroke="${colour}" stroke-width="${Math.max(1.2, cellPx * 0.08)}"/>`,
+      const inRegion = list.filter(
+        (f) => f.x >= region.x && f.x < regionMaxX && f.y >= region.y && f.y < regionMaxY,
       )
+      if (inRegion.length === 0) continue
+
+      if (mode === 'beauty' && !monochrome) {
+        const d = inRegion.map((f) => fractionalThreadPath(f, cellPx)).join('')
+        parts.push(`<g transform="translate(${offX} ${offY})" fill="none" stroke-linecap="round">`)
+        parts.push(`<path d="${d}" stroke="${shiftColour(entry.rgb, -0.1)}" stroke-width="${cellPx * 0.26}"/>`)
+        parts.push(`<path d="${d}" stroke="${entry.rgb}" stroke-width="${cellPx * 0.22}"/>`)
+        parts.push(
+          `<path d="${d}" stroke="${shiftColour(entry.rgb, 0.2)}" stroke-width="${cellPx * 0.1}" opacity="0.85"/>`,
+        )
+        parts.push(`</g>`)
+        continue
+      }
+
+      const d = inRegion.map((f) => fractionalAreaPath(f, cellPx)).join('')
+      if (monochrome) {
+        parts.push(
+          `<g transform="translate(${offX} ${offY})"><path d="${d}" fill="#ffffff" stroke="#1a1410" stroke-width="0.6"/></g>`,
+        )
+      } else if (opts.cellStyle === 'block') {
+        parts.push(`<g transform="translate(${offX} ${offY})"><path d="${d}" fill="${entry.rgb}"/></g>`)
+      } else {
+        // The readable working chart: the area in floss colour with the thread
+        // drawn over it, so a fractional cell is obviously not a whole one.
+        parts.push(`<g transform="translate(${offX} ${offY})">`)
+        parts.push(`<path d="${d}" fill="${entry.rgb}" opacity="0.42"/>`)
+        parts.push(
+          `<path d="${inRegion.map((f) => fractionalThreadPath(f, cellPx)).join('')}" fill="none" ` +
+            `stroke="${entry.rgb}" stroke-width="${cellPx * 0.16}" stroke-linecap="round"/>`,
+        )
+        parts.push(`</g>`)
+      }
+    }
+  }
+
+  // ─── Back-stitch ────────────────────────────────────────────────────────
+  // Drawn over the stitches, at the weight worked thread actually has. One
+  // path per colour so a long outline is one paint, not four hundred.
+  if (pattern.grid.backstitch.length > 0) {
+    const w = backstitchStrokeWidth(cellPx, mode)
+    const bySymbol = new Map<string, string[]>()
+    for (const seg of pattern.grid.backstitch) {
+      if (!paletteIndex.bySymbol.has(seg.s)) continue
+      const d = `M${seg.x1 * cellPx} ${seg.y1 * cellPx}L${seg.x2 * cellPx} ${seg.y2 * cellPx}`
+      const list = bySymbol.get(seg.s)
+      if (list) list.push(d)
+      else bySymbol.set(seg.s, [d])
+    }
+    parts.push(`<g transform="translate(${offX} ${offY})" stroke-linecap="round" fill="none">`)
+    for (const [symbol, ds] of bySymbol) {
+      const entry = paletteIndex.bySymbol.get(symbol)!
+      const colour = monochrome ? '#1a1410' : shiftColour(entry.rgb, -0.22)
+      parts.push(`<path d="${ds.join('')}" stroke="${colour}" stroke-width="${w}"/>`)
     }
     parts.push(`</g>`)
   }
@@ -306,8 +369,18 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
       if (!entry) continue
       const cx = k.x * cellPx + cellPx / 2
       const cy = k.y * cellPx + cellPx / 2
-      const r = cellPx * 0.26
+      const r = frenchKnotRadius(cellPx)
       const base = monochrome ? '#1a1410' : shiftColour(entry.rgb, -0.18)
+      // On a working chart the cell under a knot is a block of floss colour with
+      // a symbol over it, and a dark dot in a dark cell disappears into both. A
+      // pale ring under the dot is what every printed chart uses to make the
+      // knot its own mark. Beauty mode needs no ring: there the knot sits on
+      // stitching and is meant to read as thread.
+      if (mode !== 'beauty') {
+        parts.push(
+          `<circle cx="${cx}" cy="${cy}" r="${r * 1.5}" fill="${monochrome ? '#ffffff' : '#fdfbf7'}" opacity="0.92"/>`,
+        )
+      }
       parts.push(`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${base}"/>`)
       if (!monochrome) {
         parts.push(
@@ -403,6 +476,21 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
       for (const { x, y } of inRegion) {
         parts.push(
           `<text x="${x * cellPx + cellPx / 2}" y="${y * cellPx + cellPx / 2}" font-size="${fontSize}" fill="${fill}">${escapeXml(symbol)}</text>`,
+        )
+      }
+    }
+    // A fractional cell carries its own symbol, smaller, in the middle of the
+    // part it covers — the same convention a bought chart uses so a stitcher can
+    // see at a glance which corner is which colour.
+    if (pattern.grid.fractional.length > 0) {
+      const small = cellPx * 0.46
+      for (const f of pattern.grid.fractional) {
+        if (f.x < region.x || f.x >= regionMaxX || f.y < region.y || f.y >= regionMaxY) continue
+        const entry = paletteIndex.bySymbol.get(f.s)
+        if (!entry) continue
+        const at = fractionalSymbolAnchor(f, cellPx)
+        parts.push(
+          `<text x="${at.x}" y="${at.y}" font-size="${small}" fill="${monochrome ? '#1a1410' : symbolOnFill(entry.rgb)}">${escapeXml(f.s)}</text>`,
         )
       }
     }
