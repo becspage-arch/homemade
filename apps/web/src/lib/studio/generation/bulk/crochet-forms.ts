@@ -132,12 +132,15 @@ export const CROCHET_FORMS: Record<string, FormEnvelope[]> = {
       rows: [26, 34],
       staging: 'flatlay',
       yarnWeight: 'worsted',
-      note: 'A everyday cloth about 20 cm square, worked in two-row colour bands.',
+      note: 'An everyday cloth about 20 cm square, worked in two-row colour bands.',
     },
     {
       treatment: 'grid-texture',
+      // Fewer rows than a plain piece of the same size: a treble row is more
+      // than twice the height of a double crochet row, so a banded cloth
+      // reaches the same 20 cm in fewer of them.
       cols: [30, 38],
-      rows: [26, 36],
+      rows: [20, 36],
       staging: 'flatlay',
       yarnWeight: 'worsted',
       note: 'A textured cloth about 20 cm square, worked in bands of different stitches.',
@@ -155,7 +158,7 @@ export const CROCHET_FORMS: Record<string, FormEnvelope[]> = {
     {
       treatment: 'grid-texture',
       cols: [28, 34],
-      rows: [30, 38],
+      rows: [22, 38],
       staging: 'flatlay',
       yarnWeight: 'worsted',
       note: 'A thick square potholder about 17 cm across, worked in stitch bands.',
@@ -173,7 +176,7 @@ export const CROCHET_FORMS: Record<string, FormEnvelope[]> = {
     {
       treatment: 'grid-texture',
       cols: [22, 30],
-      rows: [24, 34],
+      rows: [18, 34],
       staging: 'flatlay',
       yarnWeight: 'worsted',
       note: 'A square motif 13 to 17 cm across, worked in stitch bands, to join into a blanket.',

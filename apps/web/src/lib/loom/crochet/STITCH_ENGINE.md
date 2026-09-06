@@ -2048,6 +2048,167 @@ against their reference photos before they can be called locked again.
 
 ---
 
+## 8g. BULK AUTOPILOT — the catalogue fills itself on the server (2026-09-06)
+
+The engine can build, render and word a pattern; §8g is the machinery that
+decides WHICH patterns to build, judges what comes back, and puts the survivors
+in the catalogue. It runs on ECS as an Inngest job, never on a laptop, and it is
+the crochet twin of the cross-stitch and needlework autopilots already running
+beside it (`apps/web/src/lib/studio/generation/bulk/`).
+
+### The pipeline, one idea at a time
+
+```
+plan a brief ─▶ author a design ─▶ expand to a PROGRAM ─▶ compile + AUDIT
+     │                                                          │
+     │                                        (audit fails → revise, twice, then cull)
+     ▼                                                          ▼
+                                                measure the SETTLED geometry
+                                                and declare that size
+                                                          │
+                                                          ▼
+                                        render on Fargate, persist:false
+                                                          │
+                                                          ▼
+                                            VISION GATE (keep / repair / kill)
+                                                          │  keep
+                                                          ▼
+                                        DUPLICATE GUARD (subject + fingerprint)
+                                                          │  clear
+                                                          ▼
+                                            assemble the full pattern row
+                                                          │
+                                                          ▼
+                                        COMPLETENESS GATE (block or publish)
+                                                          │  pass
+                                                          ▼
+                                          PUBLIC row + its own exact hero + search
+```
+
+Nothing is written before the vision gate: the render runs unpersisted, so a
+killed candidate leaves no row and nothing in R2.
+
+### What the planner may emit
+
+The planner may only commission a pattern the loom can actually build, because
+a pattern that cannot render can never carry a truthful hero
+(`feedback_hero_must_be_exact_pattern`). The buildable set is declared once in
+`bulk/crochet-forms.ts` — thirteen shelves and the treatments and stitch
+envelopes each may use:
+
+| Shelf | Treatments |
+| --- | --- |
+| `coaster` | grid-plain, grid-stripe, disc |
+| `dishcloth` | grid-stripe, grid-texture, grid-plain |
+| `potholder` | grid-texture, grid-stripe |
+| `motif-granny-square` | grid-texture, grid-stripe, disc |
+| `bookmark` | grid-plain, grid-stripe |
+| `headband` | grid-postrib (staged `flatband`) |
+| `wall-hanging` | grid-tapestry |
+| `ornament`, `pincushion` | sphere |
+| `amigurumi`, `animal-toy`, `doll` | amigurumi (the audited presets) |
+| `baby-toy-lovey` | sphere, amigurumi |
+
+The other forty-four crochet item types carry a target in
+`generation/categories.ts` and NO lane: they are what the catalogue wants, not
+what the engine reaches. When a form lands (a tube for hats, lace for doilies,
+shaping for garments) its shelf moves into `crochet-forms.ts` and starts filling.
+Nothing else changes.
+
+The model never writes a program. It writes a compact DESIGN — width, rows,
+stitch bands, palette, or the amigurumi base and its colours — and
+`bulk/crochet-design.ts` expands that deterministically into grid rows of locked
+stitches, a magic-ring disc, a ball off `AUDITED_PROFILES`, or a Studio
+amigurumi preset. So a model cannot describe a construction the loom would
+refuse; it can only make design choices inside a shape the engine is measured
+on. The pictorial lane is the exception and works the other way round: an
+illustration is generated on the approved image engine and the shared
+photo-to-tapestry converter turns it into a colour per stitch.
+
+### The gates
+
+Four, in order, each binary:
+
+1. **The audit gate** (`compileRelaxAudit` / `compileComposition`). Its own words
+   go back to the model for up to two revisions, then the idea is culled.
+2. **Size consistency**, inside the audit. The declared size is never claimed:
+   the publisher measures the RELAXED geometry and declares that, so the hero,
+   the gauge line and the size on the page describe one object.
+3. **The vision gate** (`generation/vision-gate.ts`) with a crochet rubric: does
+   it read as the item, is the fabric whole, are the colours the pattern's, is
+   it staged as a finished object. A broken patch of fabric is a KILL rather
+   than a repair, because the geometry is deterministic and a second render is
+   the same picture. Only a staging fault earns one more render.
+4. **The completeness gate** (`packages/db/src/crochet-completeness.ts`) against
+   the assembled row: yarn, hook, gauge over 10 cm, a size in centimetres, every
+   round counted, repeats written out, an abbreviation key that covers the
+   instructions, a chart on a single-piece pattern, pieces and a covering build
+   order on a multi-piece one, notions, safety notes on a toy, and the house
+   voice on the name and description. A row that fails is culled, never
+   published with a flag.
+
+Between 3 and 4 sits the duplicate guard: the normalised subject key (the same
+idea, redrawn) and a colour-stripped program fingerprint (the same construction
+in another colourway) against the whole public catalogue. A hit is terminal.
+
+### The spend caps
+
+`bulk/spend-guard.ts`. Crochet spends on Fargate task time, and on a Flux
+illustration in the pictorial lane only:
+
+- `CROCHET_DAILY_RENDER_CAP` (40, `BULK_CROCHET_RENDER_CAP`) — renders in any
+  trailing 24 hours.
+- `CROCHET_DAILY_ILLUSTRATION_CAP` (12, `BULK_CROCHET_ILLUSTRATION_CAP`).
+
+Checked in the dispatcher's preflight and again at the point of spending. At or
+over either, the batch skips rather than spends.
+
+### The compile budget
+
+`BULK_CROCHET_MAX_CELLS` (1,600). Relaxation is single threaded at roughly 11 ms
+a stitch on four cores, so about double that on the half-vCPU web task: 1,600
+stitches lands near 35 seconds, inside one Inngest step and under the gateway's
+~100 s ceiling. It is also a 23 x 20 cm panel at the settled sc cell, so the
+ceiling is a real showpiece rather than a swatch. Measured on this box: 1,050
+stitches compiled and audited in 13.8 s, 1,600 in about 21 s.
+
+### Running a batch
+
+```bash
+# on the server: the admin page, or the event
+#   /admin/system/bulk-generation  →  Crochet  →  Run a batch
+#   inngest event: bulk/crochet.batch  { count }
+# cron: 0 */6 * * *, and only when the autopilot toggle is ON
+
+# from a worker box, the same batch in process
+cd apps/web
+LOOM_RENDER=fargate npx tsx --conditions=react-server scripts/bulk-crochet-batch.ts 6
+```
+
+`--conditions=react-server` is load-bearing outside Next: the bulk modules carry
+the `server-only` marker.
+
+A category's FIRST batch is not run this way. It is authored as a seed set
+(`scripts/crochet-first-batch.ts`), rendered with `--seed --render`, LOOKED AT,
+and only then published with `--seed --publish <verdicts.json>` — the
+render-before-volume rule, which is why the six sign-off samples exist at all.
+
+### Where to look in admin
+
+`/admin/system/bulk-generation` carries a Crochet card beside cross-stitch and
+needlework: published against target, the shelf pills (live shelves in colour,
+the shapes the loom cannot build yet greyed as "no lane yet"), the last 24 hours
+against both spend caps, the autopilot toggle and a run-a-batch button. Every
+run, manual and cron, is a `BulkRun` row listed under Recent runs with published
+/ culled / duplicates / errors and the top kill reason. Per-step logs are in the
+Inngest dashboard.
+
+For crochet the `BulkRun.generations` column counts RENDERS and
+`proGenerations` counts the ideas that also paid for an illustration — the two
+things the spend guard caps. Same columns, craft-specific meaning.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,

@@ -984,8 +984,14 @@ function describe(
     candidate.kind === 'amigurumi'
       ? `The finished toy stands about ${CM(candidate.settledMm.height)} cm tall.`
       : `It comes out about ${CM(candidate.settledMm.width)} by ${CM(candidate.settledMm.height)} cm.`
+  // An amigurumi has no chart on purpose (a chart is a single-piece shape), so
+  // the closing line must not promise one.
+  const closingLine =
+    candidate.kind === 'amigurumi'
+      ? 'Written in UK terms with a stitch count at the end of every round, each piece worked separately and sewn on.'
+      : 'Written in UK terms with a stitch count at the end of every row, and the chart is drawn from the same stitch program as the photograph.'
   const concept = brief.subject.replace(/\s+/g, ' ').trim().replace(/\.$/, '')
-  return `${concept.charAt(0).toUpperCase()}${concept.slice(1)}. ${colourLine} ${sizeLine} Written in UK terms with a stitch count at the end of every row, and the chart is drawn from the same stitch program as the photograph.`
+  return `${concept.charAt(0).toUpperCase()}${concept.slice(1)}. ${colourLine} ${sizeLine} ${closingLine}`
 }
 
 /** The catalogue as fingerprints, for the publish-path duplicate guard. */
