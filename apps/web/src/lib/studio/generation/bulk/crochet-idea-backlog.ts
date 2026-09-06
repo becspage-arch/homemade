@@ -44,11 +44,29 @@
  * works the first fifty entries produces a balanced browse grid — several
  * shelves, a spread of colourways, both easy and hard — instead of fifty
  * coasters. `seq` is that position.
+ *
+ * A THIRD, FINER-GRAINED CASE (6 September 2026, evening): on the four
+ * amigurumi-treatment shelves (amigurumi, animal-toy, doll, baby-toy-lovey),
+ * "the shelf is buildable" is not the same question as "this idea is
+ * buildable" — the amigurumi engine only builds FOUR bodies today (ball, egg,
+ * bear, bunny; `AMIGURUMI_BASES` in `loom/crochet/engine/amigurumiPresets.ts`),
+ * so a brief for an otter or a border collie has nowhere honest to land even
+ * though its shelf has a working treatment. `isHonestAmigurumiSubject` below
+ * is the per-idea gate: an amigurumi-treatment row on one of these shelves is
+ * `buildable: true` only when its motif IS one of those four bodies (any bear
+ * species, any rabbit/hare, a plain ball or egg, or a named colour/pattern
+ * variant of one) — everything else keeps its treatment (informational: this
+ * is what it WOULD build as, once the engine grows more bases) but is
+ * `buildable: false`, so `nextBuildableIdeas` never hands the routine a shape
+ * the loom cannot honestly render. A `baby-toy-lovey` row on the `sphere`
+ * treatment (a plain rattle ball) is never subject to this — it is already
+ * just a ball, whatever it is named.
  */
 
 import { CROCHET_SHELF_BY_SLUG } from '../categories'
 import { envelopeFor, shelfIsBuildable, type CrochetTreatment } from './crochet-forms'
 import { findSubjectKeyMatch, subjectKey } from './subject-key'
+import { AMIGURUMI_BASES } from '@/lib/loom/crochet/engine/amigurumiPresets'
 
 export type IdeaSize = 'small' | 'medium' | 'large' | 'showpiece'
 export type IdeaDifficulty = 'beginner' | 'intermediate' | 'advanced' | 'showpiece'
@@ -76,8 +94,14 @@ export interface CrochetIdea {
   searchPhrase: string
   /** Normalised key, by the same rule as the publish guard's subject key. */
   dedupeKey: string
-  /** Can the loom build it today? */
+  /** Can the loom build it today? Shelf-buildable AND, on the four
+   *  amigurumi-treatment shelves, honestly one of the four bodies the engine
+   *  actually builds — see `isHonestAmigurumiSubject`. `treatment` can still
+   *  be set when this is false (informational: what it would build as). */
   buildable: boolean
+  /** Optional provenance: a draft Tutorial row this idea was converted from
+   *  (6 September 2026 triage), by old slug. Absent on hand-authored ideas. */
+  source?: { kind: 'draft-tutorial'; slug: string }
   /** One line for the authoring session. */
   brief: string
 }
@@ -86,11 +110,15 @@ export interface CrochetIdea {
  * Compact source row. Hand-maintained; everything derivable is derived, so a
  * new idea is one short line rather than a twelve-field object.
  *
- *   [title, motif, hook, colourway, treatment, code]
+ *   [title, motif, hook, colourway, treatment, code, sourceSlug?]
  *
  * `code` is size + difficulty as one letter each: size s|m|l|w (small, medium,
  * large, showpiece), difficulty b|i|a|w (beginner, intermediate, advanced,
  * showpiece). So 'sb' is a small beginner piece and 'ww' a showpiece.
+ *
+ * `sourceSlug` (6 September 2026 triage): the old Tutorial slug this idea was
+ * converted from, when it came off the 959 pre-loom draft prose patterns
+ * rather than being hand-authored. Absent on every hand-authored row.
  */
 type Row = [
   title: string,
@@ -99,10 +127,12 @@ type Row = [
   colourway: string,
   treatment: CrochetTreatment,
   code: string,
+  sourceSlug?: string,
 ]
 
-/** A theme for a shelf the loom cannot build: [theme, hook, colourway]. */
-type Theme = [theme: string, hook: string, colourway: string]
+/** A theme for a shelf the loom cannot build: [theme, hook, colourway,
+ *  sourceSlug?] — sourceSlug has the same meaning as on `Row`. */
+type Theme = [theme: string, hook: string, colourway: string, sourceSlug?: string]
 
 const SIZE: Record<string, IdeaSize> = { s: 'small', m: 'medium', l: 'large', w: 'showpiece' }
 const DIFF: Record<string, IdeaDifficulty> = {
@@ -214,9 +244,41 @@ function pad(n: number): string {
   return String(n).padStart(3, '0')
 }
 
+/**
+ * The four shelves whose sole treatment (or, on baby-toy-lovey, one of two
+ * treatments) is 'amigurumi' — the shaped-figure builder that only knows how
+ * to lay out a bear body or a bunny body (`amigurumiFromDesign` in
+ * `crochet-design.ts`). Belt and braces: fails loudly if the engine ever
+ * grows a base beyond the four this file was written against, so the regex
+ * below gets revisited rather than silently under- or over-matching.
+ */
+const AMIGURUMI_BASE_CONSTRAINED_SHELVES = new Set(['amigurumi', 'animal-toy', 'doll', 'baby-toy-lovey'])
+if (AMIGURUMI_BASES.map((b) => b.id).sort().join(',') !== 'ball,bear,bunny,egg') {
+  throw new Error(
+    'AMIGURUMI_BASES changed shape — revisit isHonestAmigurumiSubject in crochet-idea-backlog.ts',
+  )
+}
+
+/**
+ * Bear (any species/colourway — a panda is a bear), rabbit/hare/bunny (any
+ * breed), or a plain ball/egg (including a named colour or pattern variant,
+ * e.g. "speckled egg", "ball of yarn"). Deliberately narrow: a subject only
+ * passes because it names one of these bodies, never because it merely LOOKS
+ * roundish (a pufferfish, a cupcake, a donut are all real shapes the engine
+ * cannot lay out and stay off this list).
+ */
+const HONEST_AMIGURUMI_BASE_RE = /\bbears?\b|\bpandas?\b|\bbunn(?:y|ies)\b|\brabbits?\b|\bhares?\b|\bballs?\b|\beggs?\b/i
+
+/** True when `motif` is honestly one of the four bodies the engine builds. */
+export function isHonestAmigurumiSubject(motif: string): boolean {
+  return HONEST_AMIGURUMI_BASE_RE.test(motif)
+}
+
 function buildIdeas(shelf: string, rows: Row[]): CrochetIdea[] {
-  return rows.map(([title, motif, hook, colourway, treatment, code], i) => {
+  return rows.map(([title, motif, hook, colourway, treatment, code, sourceSlug], i) => {
     const envelope = envelopeFor(shelf, treatment)
+    const baseConstrained = AMIGURUMI_BASE_CONSTRAINED_SHELVES.has(shelf) && treatment === 'amigurumi'
+    const buildable = baseConstrained ? isHonestAmigurumiSubject(motif) : true
     return {
       id: `${shelf}-${pad(i + 1)}`,
       seq: 0,
@@ -229,15 +291,18 @@ function buildIdeas(shelf: string, rows: Row[]): CrochetIdea[] {
       difficulty: DIFF[code[1]!] ?? 'intermediate',
       searchPhrase: searchPhrase(motif, shelf),
       dedupeKey: dedupeKeyFor(motif, shelf),
-      buildable: true,
-      brief: `${motif}: ${hook}. ${colourway} palette, built as ${treatment}${envelope ? ` (${envelope.note.replace(/\.$/, '')})` : ''}.`,
+      buildable,
+      ...(sourceSlug ? { source: { kind: 'draft-tutorial' as const, slug: sourceSlug } } : {}),
+      brief: buildable
+        ? `${motif}: ${hook}. ${colourway} palette, built as ${treatment}${envelope ? ` (${envelope.note.replace(/\.$/, '')})` : ''}.`
+        : `${motif}: ${hook}. ${colourway} palette. Needs a body beyond the four the amigurumi engine builds today (ball, egg, bear, bunny), so not buildable yet.`,
     }
   })
 }
 
 function buildThemes(shelf: string, themes: Theme[]): CrochetIdea[] {
   const shelfName = CROCHET_SHELF_BY_SLUG[shelf]?.name ?? shelf
-  return themes.map(([theme, hook, colourway], i) => ({
+  return themes.map(([theme, hook, colourway, sourceSlug], i) => ({
     id: `${shelf}-t${pad(i + 1)}`,
     seq: 0,
     shelf,
@@ -250,6 +315,7 @@ function buildThemes(shelf: string, themes: Theme[]): CrochetIdea[] {
     searchPhrase: searchPhrase(theme, shelf),
     dedupeKey: dedupeKeyFor(theme, shelf),
     buildable: false,
+    ...(sourceSlug ? { source: { kind: 'draft-tutorial' as const, slug: sourceSlug } } : {}),
     brief: `${shelfName} theme. ${theme}: ${hook}. ${colourway} palette. Waiting on engine work.`,
   }))
 }
@@ -1787,7 +1853,13 @@ function spaceColourways(list: CrochetIdea[]): CrochetIdea[] {
   return out
 }
 
-const BUILDABLE_IDEAS: CrochetIdea[] = interleave(
+/**
+ * Ideas from the thirteen shelves with a working treatment. NOT all
+ * `buildable: true` any more — the four amigurumi-treatment shelves carry a
+ * per-idea flag on top (see `isHonestAmigurumiSubject`), so this array is a
+ * mix until the partition below sorts it out.
+ */
+const BUILDABLE_SHELF_IDEAS: CrochetIdea[] = interleave(
   Object.fromEntries(
     Object.entries(BUILDABLE_BY_SHELF).map(([shelf, rows]) => [shelf, buildIdeas(shelf, rows)]),
   ),
@@ -1800,13 +1872,18 @@ const THEME_IDEAS: CrochetIdea[] = interleave(
 )
 
 /**
- * THE BACKLOG. Buildable ideas first, in working order, then the themes for the
- * shelves the loom cannot reach. `seq` is assigned here and is the only thing
+ * THE BACKLOG. Buildable ideas first, in working order, then everything the
+ * loom cannot honestly build yet — a stable partition on `buildable`, not a
+ * concatenation, because `BUILDABLE_SHELF_IDEAS` itself now interleaves a few
+ * hundred amigurumi/animal-toy/doll ideas the engine cannot render (see
+ * above) among the ones it can. `seq` is assigned here and is the only thing
  * a session needs: work from seq 1 down.
  */
-export const CROCHET_IDEA_BACKLOG: CrochetIdea[] = [...BUILDABLE_IDEAS, ...THEME_IDEAS].map(
-  (idea, i) => ({ ...idea, seq: i + 1 }),
-)
+const ALL_IDEAS_UNSEQUENCED: CrochetIdea[] = [...BUILDABLE_SHELF_IDEAS, ...THEME_IDEAS]
+export const CROCHET_IDEA_BACKLOG: CrochetIdea[] = [
+  ...ALL_IDEAS_UNSEQUENCED.filter((i) => i.buildable),
+  ...ALL_IDEAS_UNSEQUENCED.filter((i) => !i.buildable),
+].map((idea, i) => ({ ...idea, seq: i + 1 }))
 
 /** Just the part the autopilot can commission today. */
 export const CROCHET_BUILDABLE_IDEAS: CrochetIdea[] = CROCHET_IDEA_BACKLOG.filter((i) => i.buildable)

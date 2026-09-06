@@ -24,7 +24,13 @@ import {
   backlogCountsByShelf,
   ideasForShelf,
   nextBuildableIdeas,
+  isHonestAmigurumiSubject,
 } from './crochet-idea-backlog'
+
+/** The four shelves whose sole (or partial, on baby-toy-lovey) treatment is
+ *  'amigurumi' — a theme can sit on one of these despite the shelf itself
+ *  being buildable; see isHonestAmigurumiSubject's doc comment. */
+const AMIGURUMI_BASE_SHELVES = new Set(['amigurumi', 'animal-toy', 'doll', 'baby-toy-lovey'])
 
 let passed = 0
 function test(name: string, fn: () => void): void {
@@ -79,8 +85,22 @@ test('a buildable idea names a treatment inside its shelf envelope', () => {
   }
 })
 
-test('a theme carries no treatment and no engine lane', () => {
+test('a buildable amigurumi-family idea is honestly a bear, bunny, ball or egg', () => {
+  for (const idea of CROCHET_BUILDABLE_IDEAS) {
+    if (!AMIGURUMI_BASE_SHELVES.has(idea.shelf) || idea.treatment !== 'amigurumi') continue
+    assert.ok(isHonestAmigurumiSubject(idea.motif), `${idea.id}: "${idea.motif}" is not one of the four bases`)
+  }
+})
+
+test('a theme carries no treatment and no engine lane — except an amigurumi-family idea flagged not one of the four bases, which may keep its treatment', () => {
   for (const idea of CROCHET_IDEA_THEMES) {
+    if (AMIGURUMI_BASE_SHELVES.has(idea.shelf)) {
+      if (idea.treatment) assert.ok(envelopeFor(idea.shelf, idea.treatment), `${idea.id}: treatment outside envelope`)
+      if (idea.treatment === 'amigurumi') {
+        assert.ok(!isHonestAmigurumiSubject(idea.motif), `${idea.id}: "${idea.motif}" IS one of the four bases`)
+      }
+      continue
+    }
     assert.equal(idea.treatment, null, `${idea.id} names a treatment`)
     assert.equal(shelfIsBuildable(idea.shelf), false, `${idea.id} sits on a buildable shelf`)
   }
