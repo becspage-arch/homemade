@@ -249,6 +249,8 @@ function CraftCard({
   extraNote,
   shelves,
   spend,
+  autopilotLabel,
+  runNote,
 }: {
   name: string
   published: number
@@ -263,6 +265,15 @@ function CraftCard({
   extraNote?: string
   shelves?: ShelfProgress[]
   spend?: SpendLine
+  /** What this craft's switch is called. Defaults to "Autopilot". */
+  autopilotLabel?: string
+  /**
+   * Replaces the "Run a batch" control. A craft whose batches are driven by a
+   * Claude routine rather than by an Inngest job has nothing to trigger from
+   * here, and a dead button is worse than a sentence saying where the work
+   * happens.
+   */
+  runNote?: React.ReactNode
 }) {
   const pct = target > 0 ? Math.min(100, Math.round((published / target) * 100)) : 0
   const full = published >= target
@@ -327,9 +338,13 @@ function CraftCard({
       )}
       {extraNote && <p style={{ ...LORA_SM, margin: 0, lineHeight: 1.5 }}>{extraNote}</p>}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 2 }}>
-        <AutopilotToggle craft={craft} enabled={autopilotOn} />
+        <AutopilotToggle craft={craft} enabled={autopilotOn} label={autopilotLabel} />
         {sourceMode && <SourceModeToggle mode={sourceMode} locked={sourceModeLocked} />}
-        <RunBatchControl craft={craft} defaultCount={defaultCount} disabled={disabled} disabledReason={disabledReason} />
+        {runNote ? (
+          <div style={{ ...LORA_SM, lineHeight: 1.6 }}>{runNote}</div>
+        ) : (
+          <RunBatchControl craft={craft} defaultCount={defaultCount} disabled={disabled} disabledReason={disabledReason} />
+        )}
       </div>
     </article>
   )
@@ -389,11 +404,20 @@ export default async function AdminBulkGenerationPage() {
   }
   for (const list of subcatsByCategoryId.values()) list.sort((a, b) => b.count - a.count)
 
-  const [shelfCounts, spendWindow, crochetShelfCounts, crochetSpend] = await Promise.all([
+  const [shelfCounts, spendWindow, crochetShelfCounts, crochetSpend, lastCrochetRun] = await Promise.all([
     liveShelfCounts().catch(() => ({}) as Record<string, number>),
     crossStitchSpendWindow().catch(() => ({ generations: 0, proGenerations: 0, since: new Date() })),
     liveCrochetShelfCounts().catch(() => ({}) as Record<string, number>),
     crochetSpendWindow().catch(() => ({ generations: 0, proGenerations: 0, since: new Date() })),
+    // The routine writes a BulkRun row exactly as the crons do, so the card can
+    // still say what the last fill did without a second bookkeeping system.
+    prisma.bulkRun
+      .findFirst({
+        where: { craft: 'crochet' },
+        orderBy: { startedAt: 'desc' },
+        select: { trigger: true, summary: true, startedAt: true, finishedAt: true, published: true, requested: true },
+      })
+      .catch(() => null),
   ])
   const xsShelves: ShelfProgress[] = CROSS_STITCH_SHELVES.map((sh) => ({
     slug: sh.slug,
@@ -527,11 +551,27 @@ export default async function AdminBulkGenerationPage() {
             published={crCount}
             target={CR_TARGET}
             autopilotOn={crAutopilot}
+            autopilotLabel="Crochet routine"
             disabled={crDisabled}
             disabledReason={crDisabledReason}
             craft="crochet"
             defaultCount={6}
             shelves={crochetShelves}
+            runNote={
+              <>
+                Crochet fills by <strong>Claude routine</strong>, not from here. The routine plans the briefs,
+                authors the designs and judges the heroes inside a session; the deterministic stages run from{' '}
+                <code>apps/web/scripts/crochet-autopilot.ts</code>. The switch above is the marker the routine
+                reads at pre-flight — off means the next firing exits without spending.
+                <br />
+                {lastCrochetRun
+                  ? `Last run (${lastCrochetRun.trigger}, ${lastCrochetRun.startedAt.toISOString().slice(0, 16).replace('T', ' ')}): ${
+                      lastCrochetRun.summary ??
+                      `${lastCrochetRun.published} of ${lastCrochetRun.requested} published${lastCrochetRun.finishedAt ? '' : ' — still running'}`
+                    }`
+                  : 'No routine run recorded yet.'}
+              </>
+            }
             spend={{
               used: crochetSpend.generations,
               cap: CROCHET_DAILY_RENDER_CAP,

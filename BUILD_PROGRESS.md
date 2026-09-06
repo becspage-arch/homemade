@@ -51,45 +51,72 @@ cron switched on and watched for three firings, then fill to target, then the
 close-out (completeness gates, vision sweep of the new work, reindex,
 sitemap/structured data) and the per-category autopilot note.
 
-## Crochet bulk autopilot, on the server (2026-09-06)
+## Crochet bulk autopilot, driven by a Claude routine (2026-09-06)
 
-The crochet catalogue can now fill itself the way cross-stitch and needlework
-do: an Inngest job on ECS plans briefs, authors stitch programs, renders each
-pattern's own exact hero on Fargate, judges it, and publishes only what passes.
-Branch `claude/crochet-bulk-autopilot`. The cron toggle is OFF and stays off
-until the first batch has been judged.
+The crochet lane no longer runs as an Inngest job on ECS, because it could not:
+its three model calls — planning the briefs, authoring the design recipe,
+judging the finished hero — were Anthropic API calls billed per token, and the
+standing rule is that all model work runs on Rebecca's Max plan in a cloud
+session or routine. So the lane was split down that line. The MODEL work is a
+session's; the DETERMINISTIC work is a CLI's; and the join between them is
+files.
 
-What is new. `CROCHET_SHELVES` in `generation/categories.ts` gives all
-fifty-seven crochet item types a demand-weighted target summing to 1,200, and
-the category target is derived from that sum. `bulk/crochet-forms.ts` is the
-single place saying what the loom can build TODAY — thirteen shelves with their
-treatments and stitch envelopes; a shelf absent from it gets no generation lane
-however far behind it is, because a pattern that cannot render cannot carry a
-truthful hero. `bulk/crochet-planner.ts` draws briefs from the shared
-design-direction axes weighted by each buildable shelf's gap to target, with the
-whole catalogue as an avoid list. `bulk/crochet-design.ts` expands the model's
-compact design recipe into a stitch program deterministically, so a model can
-only make design choices inside a shape the engine is measured on.
-`bulk/crochet.ts` measures the settled geometry and declares THAT size, writes
-the rounds with their colour changes, and publishes a complete row.
+`apps/web/scripts/crochet-autopilot.ts` is the CLI, five re-runnable stages tied
+together by a manifest in the run directory:
 
-Four binary gates, in order: the loom audit (two revisions then cull), size
-consistency, the vision gate with a crochet rubric (a broken patch of fabric is
-a kill, not a repair, because the geometry is deterministic), and a new crochet
-completeness gate in `packages/db/src/crochet-completeness.ts` checked against
-the structured row before anything is written. A duplicate guard on subject key
-plus a colour-stripped program fingerprint sits between the last two. Migration
-`20261011000000_crochet_bulk_autopilot_provenance` adds `generationMeta`,
-`subjectKey`, `programFingerprint` and `bulkRunId` to `CrochetPattern`.
+- `context` — the shelf quota (buildable shelves only, weighted by gap to
+  target), the head of the curated idea backlog for each of those shelves, the
+  whole catalogue as an avoid list, the design axes, the spend position and the
+  enabled marker. Everything the planner prompt used to send a model, plus the
+  queue it should have been drawing from. The session plans FROM the backlog and
+  invents only for a shelf whose queue is dry; it then writes `briefs.json` and
+  `designs.json`.
+- `expand` — validates both files with zod, expands each design into a stitch
+  program deterministically, runs the loom audit (two revisions then cull), the
+  size-consistency step and the duplicate guard. Costs nothing, so a design that
+  cannot build is refused before a task is launched.
+- `render` — the Fargate base render, the Fal finish and the fidelity gate, plus
+  a contact sheet per shelf for the session to look at. `--max-spend` refuses to
+  start a render that would cross a stated budget, on top of the existing daily
+  render and illustration caps.
+- `publish` — the session's `verdicts.json` (PASS/KILL with the vision gate's
+  own rubric, box by box) through the completeness gate to a published row.
+  `--visibility private` for a proof run. `generationMeta` records
+  `judgedBy: 'session'` and the routine run id, and a `BulkRun` row is written
+  exactly as a cron batch writes one. The manifest records which backlog ids the
+  batch was offered and which it consumed; a culled candidate does not consume
+  its entry, so the queue keeps it.
+- `estimate` — what the deterministic half costs. At the rates and assumptions
+  in `bulk/crochet-cost.ts` (all named constants with their sources) a pattern
+  is about $0.16 and the full 1,200 target about $190, dominated by the Fal
+  creative upscale rather than by Fargate. The autopilot gets a budget before it
+  is switched on.
 
-Spend is capped daily on Fargate renders and on the pictorial lane's
-illustrations, and the admin bulk page carries a third craft card with shelf
-progress, the spend line and the toggle. The category stays hidden site-wide
-(`LAUNCH_VISIBLE_CATEGORY_SLUGS` is untouched), so a published pattern fills the
-catalogue without reaching a customer.
+`docs/autopilot-prompts/crochet.md` is the routine prompt, in the shape of
+`mindset.md`: pre-flight gates, batch size 8, the planning and design
+instructions, the crochet vision rubric verbatim, and the publish step. No
+routine schedule exists yet and the enabled marker is off.
 
-Standing rule, unchanged and reaffirmed: the autopilot runs on ECS or in a cloud
-session, never on Rebecca's laptop.
+What was removed. The `bulk/crochet.batch` cron and its idea worker are gone
+from `inngest/functions/bulk-generation.ts`, and `runCrochetBatch` from
+`bulk/run.ts`. `planCrochetBriefs` and `authorCrochetProgram` remain as
+refusals that name the rule, so nothing can quietly reach for the API again.
+The admin bulk page keeps crochet's shelf progress and spend line; its run
+control is now a note saying crochet fills by routine, with the last routine
+run's summary read from `BulkRun`. Cross-stitch and needlework are untouched.
+
+Unchanged: `bulk/crochet-forms.ts` is still the single list of what the loom can
+build today, the four binary gates are still the loom audit, size consistency,
+the judgement and the completeness gate, the duplicate guard still sits between
+the last two, and the category stays hidden site-wide.
+
+Proved end to end on `claude/crochet-autopilot-routine` with a batch of two
+written by the session itself — a textured dishcloth (229 x 198 mm, fidelity
+0.916) and a spiral coaster (97 mm, fidelity 0.942) — expanded, rendered on
+Fargate, judged from the contact sheets and published PRIVATE under the
+`crochet-routine-proof-` prefix for about $0.16. The dishcloth's first design
+settled oblong and was revised, which is the revision loop working: the loom
+reports, the session fixes, `expand` costs nothing.
 
 ## The bulk crochet pattern path proved end to end (2026-09-05)
 

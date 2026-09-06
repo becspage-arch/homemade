@@ -1,14 +1,12 @@
 /**
- * Run ONE crochet bulk batch from a worker box, in process.
+ * Render and publish the SIGNED-OFF CROCHET SEED SET from a worker box.
  *
- * The autopilot's real home is the Inngest job on ECS; this is the same batch,
- * run by hand, for the two occasions that need it: proving a change before the
- * cron is trusted with it, and the FIRST batch of a category, which has to be
- * looked at before any volume is built on it
- * ([[feedback_render_before_volume]]).
- *
- *   # the autopilot batch, exactly as the cron runs it
- *   cd apps/web && npx tsx --conditions=react-server scripts/bulk-crochet-batch.ts [count]
+ * This is the FIRST batch of the category, the one that has to be looked at
+ * before any volume is built on it ([[feedback_render_before_volume]]). It is a
+ * fixed six patterns held in `crochet-first-batch.ts`, not a generated batch:
+ * ordinary fills are a Claude routine's work now
+ * (`docs/autopilot-prompts/crochet.md`, `scripts/crochet-autopilot.ts`), and
+ * there is no autopilot batch to run from here.
  *
  *   # the first batch: render the seed set, publish nothing
  *   npx tsx --conditions=react-server scripts/bulk-crochet-batch.ts --seed --render
@@ -77,13 +75,6 @@ interface ManifestEntry {
   colours: number
 }
 
-async function runAutopilotBatch(count: number): Promise<void> {
-  const { runBatch } = await import('../src/lib/studio/generation/bulk/run')
-  const summary = await runBatch('crochet', count)
-  console.log(JSON.stringify(summary, null, 2))
-  console.log(`\n${summary.line}`)
-}
-
 /**
  * Render every seed pattern and write the manifest. Publishes nothing.
  *
@@ -115,10 +106,8 @@ async function renderSeed(only?: string): Promise<void> {
       if (brief.treatment === 'grid-tapestry') {
         // The pictorial lane goes through the adapter itself, because its grid
         // comes from an illustration rather than from a design recipe.
-        const candidate = await crochet.generateCrochetCandidate(
-          brief,
-          crochet.paletteHexesFor(brief.brief.palette),
-        )
+        const authored = await crochet.buildTapestryCandidate(brief, design?.picture)
+        const candidate = await crochet.renderCrochetCandidate(brief, authored, { outDir: OUT })
         manifest.push({
           slug: brief.slug,
           name: brief.name,
@@ -370,8 +359,12 @@ async function main(): Promise<void> {
     console.error('usage: --seed --render  |  --seed --publish <verdicts.json>')
     process.exit(2)
   }
-  const count = Number(args[0]) || 6
-  return runAutopilotBatch(count)
+  console.error(
+    'There is no autopilot batch to run from here. Crochet is filled by a Claude routine:\n' +
+      '  docs/autopilot-prompts/crochet.md, driven by scripts/crochet-autopilot.ts.\n' +
+      'This script keeps only the signed-off seed set (--seed --render / --seed --publish).',
+  )
+  process.exit(2)
 }
 
 main()
