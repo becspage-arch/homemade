@@ -710,6 +710,62 @@ vs a real reference → commit + push.
     they sit against the body in the same colour, so only the cream paw pads
     really separate them. A held-out-from-the-body arm angle, or contrast
     higher up the limb, is the open direction.
+  **ROUND 3 — the arms come off the shoulders (2026-09-06).** Round 2 logged the
+  arms as its own residual (just above). On the served hero it was worse than
+  faint: both cream paw pads settled BELOW the cream foot pads, so four cream
+  pads sat in a row on the table and the picture read as four feet with the arms
+  coming out from under the legs. Composition layer only again — no round
+  builder, no relaxer, no render script — so `amigurumi-ball` (fd112ec2) and
+  `amigurumi-creature` (3577dd48) are bit-identical either side of the change;
+  the five bear hashes move because the ASSEMBLY changed — `amigurumi-bear`
+  e79021bb -> 14e1e5d2, `-perch` cbf59b0b -> e67601e2, `-bigear` f60b2e74 ->
+  8328fbc1, `-plain` 39192f21 -> 0c3fa4c3, `-mirror` 7d1d4c9a -> 629d639a. The
+  dictionary swatch hashes are untouched (nothing on the path from
+  `loom-geom-hash.ts` imports either changed file).
+  MEASURED on the settled geometry (body 43.40 mm tall, 57.2 wide), round 2 ->
+  round 3:
+  - shoulder join **z 31.98 = 0.737 of the body height -> z 32.34 = 0.745**. The
+    attach HEIGHT was never the fault. Raising the attach elevation from 34° to
+    45° off horizontal only moves the join 0.4 mm, but it moves it up onto the
+    shoulder SLOPE, so the arm leaves the body over the top of the side rather
+    than out of the middle of it.
+  - arm aim **23° out / 34° forward (38° off vertical) -> 67° out / 42° forward
+    (68° off vertical)**. That is the whole fix.
+  - paw pad centre **z 6.14 = 0.141 of the body height -> z 21.38 = 0.493**
+    (mid-body). The foot pad centre is unchanged at z 12.33 = 0.284 — the legs
+    were not touched.
+  - paw pad ABOVE foot pad **−6.19 mm (−0.143 of the body height) -> +9.05 mm
+    (+0.209)**.
+  - elbow clear of the body: the paw centre sits at x 39.3 against a 28.6 mm
+    body half-width, so each arm now stands **10.7 mm proud of the silhouette**.
+  - clearances **arm-to-leg 0.17 -> 2.41 mm, paw-to-leg 0.36 -> 14.12,
+    arm-to-head 8.41**; **minz 0.00 either way**, and round 2's per-arm z nudges
+    (+0.65 / +0.5 mm) are GONE — they existed only to stop a straight-down arm's
+    paw pad reaching below the table, and this arm's lowest point clears it by
+    12 mm.
+  The two-attempt cap was spent on the angle: the shipped **67° / 42°** pose,
+  and a more open **74° / 44°** which lifts the paw to z 25.20 = 0.581 and
+  +12.87 mm (+0.297) but holds the arms within 16° of horizontal, so the paws
+  stop reading as "around mid-body". FOR THE RECORD, a separation of ≥0.35 of
+  the body height is NOT reachable on this bear at any arm angle under ~77° off
+  vertical: the arm+paw chain measures 30.7 mm from the shoulder join against a
+  43.4 mm body — 0.71 of the body height, where a real amigurumi bear's arm is
+  nearer half. Closing the rest of that gap means a SHORTER ARM (a `scale` or
+  round-count change), not another placement number.
+  The Studio's `bear` preset carries the same pose at all three sizes (and so
+  does `bunny`, which shares the arm placement). Measured paw-above-foot: **S
+  +7.08 mm (0.197 of its body height), M +12.64 (0.291), L +11.40 (0.248)**,
+  every size settling at **minz 0.000** with `GROUND_LIFT`'s arm entry removed
+  altogether, and `amigurumiSizes.generated.ts` regenerated off the new geometry
+  (bear S 84.5 x 81.0, M 96.7 x 106.7, L 122.5 x 120.0 mm).
+  **RENDERED (Fargate, one concurrent batch of two).** Both PASS the
+  fidelity/structure gate — 67° 0.926, 74° 0.925 (STRUCT_MIN 0.45). Beside
+  `ref-amigurumi-bear-A.jpg` the fault is gone: the arms leave the shoulders as
+  separate limbs, the two cream paw pads sit clearly above and behind the two
+  cream foot pads, and the feet still point forward with their pads to the
+  camera. Residual for the orchestrator's verdict: the arms are held further out
+  than the reference's, which hang closer to the body — that is the arm-length
+  number above, not a placement one.
 - **Part C — finished-object HERO staging across all forms (2026-07-12).** The
   four-part customer bar (correct genuinely-stitched stitches / real yarn colour on
   clean white / whole piece at size / staged as the finished object) for EVERY
