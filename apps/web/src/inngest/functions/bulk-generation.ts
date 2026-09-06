@@ -163,7 +163,7 @@ async function finaliseIfComplete(runId: string): Promise<{ finished: boolean; a
     select: {
       id: true, craft: true, requested: true, published: true, culled: true, duplicates: true,
       skipped: true, repaired: true, generations: true, errors: true, finishedAt: true, alerted: true,
-      modelBriefs: true,
+      modelBriefs: true, paleSkips: true,
     },
   })
   if (!run || run.finishedAt) return { finished: false, alerted: false }
@@ -214,6 +214,7 @@ async function sweepStalledRuns(): Promise<number> {
     select: {
       id: true, craft: true, requested: true, published: true, culled: true, duplicates: true,
       skipped: true, repaired: true, generations: true, errors: true, updatedAt: true, modelBriefs: true,
+      paleSkips: true,
     },
   })
   for (const run of stalled) {
@@ -470,7 +471,12 @@ export const bulkCrossStitchIdea = inngest.createFunction(
       await step.run('record-reroll', () =>
         prisma.bulkRun.update({
           where: { id: runId },
-          data: { generations: { increment: 1 }, ...proInc, ...(result.verdict === 'repair' ? { repaired: { increment: 1 } } : {}) },
+          data: {
+            generations: { increment: 1 },
+            ...proInc,
+            ...(result.verdict === 'repair' ? { repaired: { increment: 1 } } : {}),
+            ...(result.tooPale ? { paleSkips: { increment: 1 } } : {}),
+          },
         }),
       )
       await step.sendEvent('next-attempt', {

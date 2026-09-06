@@ -3567,6 +3567,10 @@ model BulkRun {
   /// looks exactly like a normal batch until you read the subjects, so the run
   /// records it and the summary line says so.
   modelBriefs Int      @default(0)
+  /// Attempts the deterministic pale guard rejected before the vision gate was
+  /// ever called. Counts the guard's work — and its cost saving, since a pale
+  /// render never buys a gate call.
+  paleSkips   Int      @default(0)
   gemSlugs    String[] @default([])
   /// Short gate reasons behind culls — feeds the panel's "why did it dip" view.
   killReasons String[] @default([])

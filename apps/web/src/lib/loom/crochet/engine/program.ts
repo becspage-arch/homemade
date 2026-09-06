@@ -117,6 +117,16 @@ export interface CrochetProgram {
   hookMm?: number
   /** Free-text designer notes (construction hints, blocking, edging). */
   notes?: string
+
+  /** How the finished object is presented in its own hero render — the flat
+   *  crop ('swatch'), laid out on a surface ('flatlay'), or seamed into a ring
+   *  ('loop'). The proof CLI looks this up by proof name; a STORED pattern has
+   *  no such table, so it carries its own staging here and the render-on-publish
+   *  path reads it. Render/staging only: it is not part of the geometry and
+   *  never reaches the geometry hash. (The union mirrors `Staging` in
+   *  programScene.ts, which imports this module — declared here to keep the
+   *  dependency one-way.) */
+  staging?: 'swatch' | 'flatlay' | 'loop'
 }
 
 /** Resolve the render yarn radius (mm) for a program: an explicit override wins,

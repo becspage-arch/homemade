@@ -61,6 +61,7 @@ interface RunRow {
   generations: number
   proGenerations: number
   modelBriefs: number
+  paleSkips: number
   errors: number
   killReasons: string[]
   startedAt: Date
@@ -90,7 +91,8 @@ function runLine(r: RunRow): string {
     r.craft === 'cross-stitch' && r.requested > 0
       ? ` · ${r.modelBriefs}/${r.requested} briefs model-authored${r.modelBriefs < r.requested ? ' (rest sampled)' : ''}`
       : ''
-  return `[${tag}] ${r.craft}: ${r.published} published, ${r.culled} culled, ${r.duplicates} duplicates, ${r.skipped} skipped, ${r.repaired} repairs, ${r.generations} gens (${r.proGenerations} Pro), ${r.errors} errors (of ${r.requested})${authored}${inflight}${stalled}${killNote}`
+  const pale = r.paleSkips > 0 ? ` · ${r.paleSkips} pale (rejected before the gate)` : ''
+  return `[${tag}] ${r.craft}: ${r.published} published, ${r.culled} culled, ${r.duplicates} duplicates, ${r.skipped} skipped, ${r.repaired} repairs, ${r.generations} gens (${r.proGenerations} Pro), ${r.errors} errors (of ${r.requested})${authored}${pale}${inflight}${stalled}${killNote}`
 }
 
 /** A run still open long after its counters stopped moving. */
@@ -256,7 +258,8 @@ export default async function AdminBulkGenerationPage() {
       select: {
         id: true, craft: true, trigger: true, requested: true, published: true,
         culled: true, duplicates: true, skipped: true, repaired: true, generations: true,
-        proGenerations: true, modelBriefs: true, errors: true, killReasons: true, startedAt: true, updatedAt: true,
+        proGenerations: true, modelBriefs: true, paleSkips: true, errors: true, killReasons: true,
+        startedAt: true, updatedAt: true,
         finishedAt: true, skipReason: true,
       },
     }),
