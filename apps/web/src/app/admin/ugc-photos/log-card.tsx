@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from 'react'
 import Link from 'next/link'
+import { rerunPhotoGate } from '@/lib/maker-photo-actions'
 import { setPhotoAsHero, toggleFeaturePhoto } from './actions'
 
 export interface LogRow {
@@ -40,6 +41,9 @@ export function PhotoLogCard({ row }: { row: LogRow }) {
   const [error, setError] = useState<string | null>(null)
 
   const canCurate = row.isPattern && row.status === 'APPROVED' && !row.removed
+  // A pending photo is one the gate could not judge. Nothing retries on its
+  // own, so give a person the button.
+  const canRecheck = row.status === 'PENDING_MODERATION' && !row.removed
 
   return (
     <div className="admin-card" style={{ padding: 0, overflow: 'hidden' }}>
@@ -94,6 +98,24 @@ export function PhotoLogCard({ row }: { row: LogRow }) {
             Gate said: {row.gateReasons.join(' ')}
             {row.gateModel ? ` (${row.gateModel})` : ''}
           </p>
+        )}
+
+        {canRecheck && (
+          <div className="admin-card-actions">
+            <button
+              className="admin-btn"
+              disabled={pending}
+              onClick={() => {
+                setError(null)
+                start(async () => {
+                  const res = await rerunPhotoGate({ photoId: row.id })
+                  if (!res.ok) setError(res.error)
+                })
+              }}
+            >
+              Check again
+            </button>
+          </div>
         )}
 
         {canCurate && (

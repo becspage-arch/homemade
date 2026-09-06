@@ -375,6 +375,84 @@ export async function acceptTesterAgreement(): Promise<ActionResult> {
   return { ok: true }
 }
 
+/**
+ * Run the gate again over a photo that is still waiting. A "pending" photo is
+ * one the gate could not judge (no key, a network failure, an unparseable
+ * reply), and nothing retries on its own, so this is how a person unsticks one
+ * rather than leaving a maker looking at "Checking your photo" for good.
+ */
+export async function rerunPhotoGate(input: { photoId: string }): Promise<ActionResult> {
+  const actor = await requireAdminRole({ minimum: 'EDITOR' })
+
+  const photo = await prisma.uGCPhoto.findUnique({
+    where: { id: input.photoId },
+    select: {
+      id: true,
+      status: true,
+      removedAt: true,
+      tutorialId: true,
+      patternId: true,
+      patternType: true,
+      media: { select: { r2Key: true } },
+    },
+  })
+  if (!photo) return { ok: false, error: 'Photo not found.' }
+  if (photo.removedAt) return { ok: false, error: 'That photo has been removed.' }
+  if (photo.status !== UGCPhotoStatus.PENDING_MODERATION) {
+    return { ok: false, error: 'That photo already has a verdict.' }
+  }
+
+  const target: PhotoTarget | null = photo.tutorialId
+    ? { kind: 'tutorial', tutorialId: photo.tutorialId }
+    : photo.patternId && photo.patternType
+      ? { kind: 'pattern', patternId: photo.patternId, patternType: photo.patternType }
+      : null
+  const resolved = target ? await resolveTarget(target) : null
+  if (!resolved) return { ok: false, error: 'We could not find what this photo belongs to.' }
+
+  const uploaded = await fetchImage(mediaUrl({ r2Key: photo.media.r2Key }, 'public'))
+  if (!uploaded) return { ok: false, error: 'The image could not be fetched. Try again later.' }
+
+  const reference = resolved.referenceImageUrl
+    ? await fetchImage(resolved.referenceImageUrl)
+    : null
+  const verdict = await gateMakerPhoto({
+    photo: uploaded.buffer,
+    photoMediaType: uploaded.mediaType,
+    itemTitle: resolved.title,
+    itemKind: resolved.kind,
+    reference,
+  })
+
+  if (verdict.decision === 'pending') {
+    return { ok: false, error: 'The gate still could not judge it. Try again later.' }
+  }
+
+  const approved = verdict.decision === 'approve'
+  await prisma.uGCPhoto.update({
+    where: { id: photo.id },
+    data: {
+      status: approved ? UGCPhotoStatus.APPROVED : UGCPhotoStatus.REJECTED,
+      gateVerdict: { decision: verdict.decision, reasons: verdict.reasons },
+      gateModel: verdict.model,
+      rejectionReason: approved ? null : verdict.reasons.join(' '),
+      moderatedAt: new Date(),
+    },
+  })
+
+  await audit({
+    actorId: actor.id,
+    action: 'maker_photo.gate_rerun',
+    resource: `UGCPhoto:${photo.id}`,
+    metadata: { decision: verdict.decision },
+  })
+
+  if (resolved.path) revalidatePath(resolved.path)
+  revalidatePath('/admin/ugc-photos')
+  revalidatePath('/me/photos')
+  return { ok: true }
+}
+
 // ────────────────────────────────────────────────────────────────────────────
 // Appeal decisions — admin
 // ────────────────────────────────────────────────────────────────────────────
