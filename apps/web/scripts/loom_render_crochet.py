@@ -231,6 +231,10 @@ def main():
 
     bpy.ops.wm.read_factory_settings(use_empty=True)
     scene = bpy.context.scene
+    # The ground plane is tagged with an Object Index (below) so the compositor
+    # can find + whiten it without touching the yarn's own exposure/saturation
+    # grade (whiten_ground). Cycles only writes the IndexOB pass when asked.
+    bpy.context.view_layer.use_pass_object_index = True
     strokes = data["strokes"]
     yarn_hex = strokes[0]["hex"] if strokes else "#efe4d6"
 
@@ -319,6 +323,9 @@ def main():
     ground = view.get("groundScale", 5)
     surface.scale = (max(halfW, contentW) * ground, max(halfH, contentH) * ground, 1.0)
     surface.data.materials.append(surface_material(bg_hex))
+    # Tag the ground for whiten_ground's compositor mask (Object Index 1 = "this
+    # is backdrop, not yarn" — nothing else in the scene ever sets pass_index).
+    surface.pass_index = 1
 
     build_yarn(strokes, drape, z_offset)
 
@@ -434,6 +441,15 @@ def main():
     scene.view_settings.look = "AgX - Base Contrast"
     scene.view_settings.exposure = view.get("exposure", 0.2)  # lower: stop pale wool blowing white
     grade_saturation(scene, view.get("saturation", 1.2))  # bring warmth back after AgX desaturates (1.4 oversaturated the crisper, less-felted yarn)
+    # Crisp white ground (default, no per-pattern flag): the yarn's own exposure
+    # is tuned to survive AgX without blowing white (comment above), which is
+    # exactly why the near-white bgHex ground was landing as a soft mid-grey —
+    # the same low exposure that protects pale wool under-exposes a white
+    # backdrop too. whiten_ground boosts ONLY the ground's linear radiance
+    # (Object Index mask, see `surface.pass_index = 1` above) before the SAME
+    # AgX/exposure/look transform grades the whole frame, so the yarn's own
+    # pixels are bit-for-bit whatever they already were.
+    whiten_ground(scene)
     scene.render.filepath = out_path
     bpy.ops.render.render(write_still=True)
     print("RENDERED", out_path)
@@ -450,6 +466,56 @@ def grade_saturation(scene, sat):
     hs.inputs["Saturation"].default_value = sat
     nt.links.new(rl.outputs["Image"], hs.inputs["Image"])
     nt.links.new(hs.outputs["Image"], comp.inputs["Image"])
+
+
+def whiten_ground(scene, index=1, exposure_stops=2.3):
+    """Crisp near-white ground, render-side only. A real product photo's paper
+    backdrop is a deliberately BLOWN-OUT white — several stops brighter than
+    the subject, not just a pale colour — while the subject is metered
+    normally. `exposure` above is tuned low so pale wool doesn't blow white
+    under AgX (§11), and that same low exposure was landing the near-white
+    `bgHex` ground as a soft mid-grey with a visible lighting gradient.
+    Fix: an OBJECT-INDEX compositor mask (the ground plane alone carries
+    `pass_index = 1`; nothing else in the scene ever sets it) isolates the
+    backdrop's LINEAR radiance and boosts only that by `exposure_stops`
+    *before* the one global AgX/exposure/look transform grades the whole
+    frame — so the yarn's own pixels are untouched (same values as if this
+    function were never called), while the boosted ground pixels land in
+    AgX's highlight shoulder, which is exactly what compresses them toward a
+    flat near-white and quietly erases the gradient/mottling along with it.
+    """
+    scene.use_nodes = True
+    nt = scene.node_tree
+    rl = nt.nodes.get("Render Layers")
+    comp = nt.nodes.get("Composite")
+    if not rl or not comp:
+        return
+    # Whatever currently feeds Composite (the saturation grade above, or
+    # Render Layers directly if that ever changes) is the base both the
+    # untouched and boosted branches start from.
+    base_socket = None
+    for link in list(nt.links):
+        if link.to_node is comp:
+            base_socket = link.from_socket
+            break
+    if base_socket is None or "IndexOB" not in rl.outputs:
+        return
+
+    idmask = nt.nodes.new("CompositorNodeIDMask")
+    idmask.index = index
+    idmask.use_antialiasing = True
+    nt.links.new(rl.outputs["IndexOB"], idmask.inputs[0])
+
+    boost = nt.nodes.new("CompositorNodeExposure")
+    boost.inputs["Exposure"].default_value = exposure_stops
+    nt.links.new(base_socket, boost.inputs["Image"])
+
+    over = nt.nodes.new("CompositorNodeAlphaOver")
+    nt.links.new(idmask.outputs[0], over.inputs["Fac"])
+    nt.links.new(base_socket, over.inputs[1])
+    nt.links.new(boost.outputs["Image"], over.inputs[2])
+
+    nt.links.new(over.outputs[0], comp.inputs["Image"])
 
 
 main()
