@@ -12,8 +12,9 @@
  * keyboard and to a screen reader as well as to a thumb.
  */
 
+import { useMemo } from 'react'
 import { Palette, ListChecks, Plus, Minus, Maximize2 } from 'lucide-react'
-import type { PatternData } from '@homemade/db/pattern'
+import { countStitchProgress, type PatternData } from '@homemade/db/pattern'
 import { useChartStore } from '../chart/chart-store'
 
 interface StudioStatusBarProps {
@@ -26,9 +27,15 @@ export function StudioStatusBar({ pattern, onOpenPalette, onOpenFlossKey }: Stud
   const stitched = useChartStore((s) => s.stitchedCells)
   const zoomAtCentre = useChartStore((s) => s.zoomAtCentre)
   const fitViewportToScreen = useChartStore((s) => s.fitViewportToScreen)
-  const total = pattern.grid.cells.length
-  const done = stitched.size
-  const pct = total > 0 ? Math.round((done / total) * 100) : 0
+  // Everything the needle has to go through, not just the full crosses:
+  // part stitches count one each, French knots one each, and back-stitch in
+  // CELLS OF LINE, which is the measure the floss key and the skein estimate
+  // already print. A chart whose outline is half its work should not sit at
+  // 100% with the outline untouched.
+  const progress = useMemo(() => countStitchProgress(pattern, stitched), [pattern, stitched])
+  const total = progress.total
+  const done = progress.done
+  const pct = progress.percent
 
   const finishedSize = describeFinishedSize(pattern)
 
@@ -37,7 +44,9 @@ export function StudioStatusBar({ pattern, onOpenPalette, onOpenFlossKey }: Stud
       <div className="studio-status-progress">
         <div className="studio-status-bar-fill" style={{ width: `${pct}%` }} aria-hidden />
         <span className="studio-status-stitch-count">
-          {done.toLocaleString()} / {total.toLocaleString()} stitched ({pct}%)
+          {progress.complete
+            ? `Finished — all ${total.toLocaleString()} stitched`
+            : `${done.toLocaleString()} / ${total.toLocaleString()} stitched (${pct}%)`}
         </span>
       </div>
       <div className="studio-status-meta">

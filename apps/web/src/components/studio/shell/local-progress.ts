@@ -16,6 +16,13 @@
  * progress record rather than a store of their own: they are per-project
  * stitching state, they change on the same beat as progress, and the parked
  * positions themselves are derived, never stored.
+ *
+ * `stitchedCells` is stored exactly as the store holds it, whatever kind of
+ * work each key names — squares, back-stitch segments, French knots, part
+ * stitches. Nothing here parses a key, so the cache needed no version bump
+ * when line work started being ticked off, and an offline record written by
+ * a newer tab is read back by an older one with the keys it does not
+ * understand still intact.
  */
 
 import { openDB, type IDBPDatabase } from 'idb'
