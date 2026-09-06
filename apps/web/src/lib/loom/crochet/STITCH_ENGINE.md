@@ -2157,8 +2157,10 @@ unscaled and keeps none.
 `postrib` 2c6e80b4688da31a → **02bec0aad197b7ed** ·
 `basketweave` 22b200b0099033ab → **44be22b56f591e9a**.
 Bit-identical: the whole plain flat family, the shaped and round families, the
-sphere, the fans and every knit swatch — 32 of 36 (the collar route is gated on
-`yarnOvers > 0`, and the no-collar route is byte-for-byte the §8f-7 one). Audit
+sphere, the fans and every knit swatch — 32 of 36. Nothing outside the post
+branch is touched: the collar cut is gated on `yarnOvers > 0`, `postHeadCarry`
+defaults to 0 so `emitHeadLoop` is unchanged for every other stitch, and the
+four that moved are the only four that go through the post branch at all. Audit
 clean **36/36 at fine 1.5, worsted 2.4 and bulky 3.2**.
 `post-rib-headband` re-measured off the settled geometry: **458 × 94 → 459 × 94
 mm** (program hash ed5ae17a → a99559f5, 9 432 → 15 992 nodes), both axes well
