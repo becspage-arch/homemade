@@ -143,6 +143,50 @@ export async function measureVividness(png: Buffer, fabricHex: string = FABRIC):
  * structurally identical to Delft, and failing it would mean failing the shelf.
  */
 
+/**
+ * The calibration set itself, keyed by pattern id — which is how the September
+ * 2026 dedupe scan named its cached thumbnails. `dedupe.test.ts` asserts the
+ * verdict on each of these when it is pointed at a thumbnail cache, and
+ * `scripts/xs-vividness-recheck.ts` re-measures them against whatever is live
+ * now. Kept beside the thresholds they justify, so moving a floor without
+ * re-reading the evidence is awkward on purpose.
+ */
+/** id, label, the shelf it is filed under — the shelf decides which rule applies. */
+export const PALE_REFS: readonly [string, string, string][] = [
+  ['cmtoul9q6000301adiawycq6a', 'proof-batch cupcake, cream on cream (culled)', 'food'],
+  ['cmqzrgvgw001ge8v4ka2r3tiz', 'cute-lamb-meadow, pale pastel', 'animals'],
+]
+export const VIVID_REFS: readonly [string, string, string][] = [
+  ['cmtoure6d000a01adki8tan44', 'proof cottage, 9 colours, a gem', 'scenes'],
+  ['cmql3uurg000br0v4k7ss5chv', 'delft-hare, 12 colours two-tone', 'monochrome'],
+  ['cmqmnonfw0005b4v445y73u4r', 'blackwork-snowflake, 4 colours', 'monochrome'],
+  ['cmqmnosdq0006b4v4g8a06m6d', 'blackwork-pomegranate, 4 colours', 'monochrome'],
+  ['cmr6l4gaq000hakv4qwudtrvs', 'big-coral-reef, 120 colours', 'scenes'],
+  ['cmtoumqq7000701ad100zgamv', 'proof haunted house, 87 colours, Flux Pro', 'halloween'],
+  ['cmtouk9zw000401adwqpj7ozr', 'proof apothecary, 33 colours', 'witchy-gothic'],
+]
+
+/**
+ * BARE FABRIC RE-CHECK (September 2026). Clearing the white backgrounds rewrote
+ * 446 charts and re-rendered every one of their thumbnails, which moves the
+ * ground this calibration stands on: ink counts DARK stitched pixels as a share
+ * of the stitched ones, and several thousand near-white stitches per chart just
+ * left that denominator. So `scripts/xs-vividness-recheck.ts` re-measured all of
+ * them against the renders they replaced. The floors below are UNCHANGED, on the
+ * evidence:
+ *
+ *   - all nine references above still land on the side they were chosen for,
+ *     including the five whose background was cleared, so the guard has not
+ *     grown a hole;
+ *   - three rows of 437 newly measure as pale — wildflower-wreath
+ *     (ink 0.064 → 0.027), cute-corgi-flowers (0.061 → 0.060) and cute-gosling
+ *     (0.061 → 0.060). None is monochrome or showpiece; all three are pale
+ *     pastel pieces that sat within 0.005 of the floor already, and looking at
+ *     the renders they are exactly what the measure says they are. Lowering
+ *     MIN_INK to keep them passing would blunt the guard on the one fault it
+ *     exists for.
+ */
+
 /** Below this fraction of genuinely dark stitches, a render has no tonal spine. */
 export const MIN_INK = 0.06
 /**
