@@ -32,6 +32,20 @@ export interface PhotoToTapestrySettings {
   height: number
   /** How many yarns the finished piece uses. */
   colours: number
+  /**
+   * Raise the colour ceiling above the Studio's own
+   * `TAPESTRY_MAX_COLOURS`.
+   *
+   * The Studio caps a maker's own piece at eight yarns because carrying more
+   * than that by hand is miserable and a maker is buying the yarn. The
+   * CATALOGUE has no such ceiling and must not invent one: the dense,
+   * many-colour end of the range is a first-class target, not over-engineering
+   * ([[feedback_pattern_complexity_range]]), and the engine resolves colour per
+   * stitch with no count limit — the signed-off cottage tapestry carries
+   * fifteen. The bulk showpiece lane passes its own number here; every other
+   * caller leaves it unset and gets the Studio cap exactly as before.
+   */
+  maxColours?: number
   /** Lift saturation and flatten a plain background before quantising. */
   backgroundRemoval: boolean
   /** How hard to smooth single-stitch islands (they are fiddly to carry). */
@@ -44,10 +58,8 @@ export async function photoToTapestryGrid(
 ): Promise<TapestryGrid> {
   const width = Math.round(settings.width)
   const height = Math.round(settings.height)
-  const colours = Math.max(
-    TAPESTRY_MIN_COLOURS,
-    Math.min(TAPESTRY_MAX_COLOURS, Math.round(settings.colours)),
-  )
+  const ceiling = Math.max(TAPESTRY_MIN_COLOURS, Math.round(settings.maxColours ?? TAPESTRY_MAX_COLOURS))
+  const colours = Math.max(TAPESTRY_MIN_COLOURS, Math.min(ceiling, Math.round(settings.colours)))
 
   let pipeline = sharp(imageBytes).removeAlpha().resize(width, height, {
     fit: 'cover',

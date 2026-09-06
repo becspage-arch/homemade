@@ -86,6 +86,95 @@ export const CROSS_STITCH_SHELVES: ShelfTarget[] = [
   { slug: 'art-reproductions', name: 'Art reproductions', target: 0, hold: true },
 ]
 
+/**
+ * The canonical CROCHET shelves — the crochet subset of the shared item-type
+ * vocabulary (`packages/db/prisma/item-type-vocabulary.ts`), each with the
+ * published-pattern target the catalogue is aiming for.
+ *
+ * DEMAND-WEIGHTED, not even. Toys and blankets are what people crochet most, so
+ * amigurumi and blankets carry the biggest numbers; a crocheted pair of trousers
+ * is a real item type and almost nobody makes one, so it carries three. The sum
+ * is the category target (1,200 — a FLOOR, per the sign-off: originals-dominant,
+ * expected to grow well past it the way cross-stitch went 500 → thousands).
+ *
+ * A shelf's target is what the CATALOGUE wants, which is a separate question
+ * from what the loom can build today. What the engine can build lives in
+ * `bulk/crochet-forms.ts`; only the shelves listed there get a generation lane,
+ * and the rest sit here at their target waiting for the engine to reach them.
+ */
+export const CROCHET_SHELVES: ShelfTarget[] = [
+  // ── Toys — the biggest seam ──
+  { slug: 'amigurumi', name: 'Amigurumi', target: 155 },
+  { slug: 'animal-toy', name: 'Animal Toys', target: 55 },
+  { slug: 'doll', name: 'Dolls', target: 35 },
+  { slug: 'baby-toy-lovey', name: 'Baby Toys & Loveys', target: 25 },
+  // ── Home & living ──
+  { slug: 'blanket', name: 'Blankets & Afghans', target: 125 },
+  { slug: 'cushion', name: 'Cushions & Pillows', target: 35 },
+  { slug: 'basket', name: 'Baskets & Storage', target: 22 },
+  { slug: 'ornament', name: 'Ornaments & Decorations', target: 20 },
+  { slug: 'wall-hanging', name: 'Wall Hangings & Art', target: 18 },
+  { slug: 'rug', name: 'Rugs & Mats', target: 12 },
+  { slug: 'plant-hanger', name: 'Plant Hangers & Pot Covers', target: 10 },
+  { slug: 'bunting', name: 'Bunting & Garlands', target: 10 },
+  { slug: 'pet-bed', name: 'Pet Beds & Accessories', target: 8 },
+  { slug: 'pouffe', name: 'Pouffes & Floor Cushions', target: 6 },
+  // ── Hats, headwear, scarves, wraps ──
+  { slug: 'hat', name: 'Hats & Beanies', target: 65 },
+  { slug: 'scarf', name: 'Scarves', target: 50 },
+  { slug: 'headband', name: 'Headbands & Ear Warmers', target: 30 },
+  { slug: 'cowl', name: 'Cowls & Snoods', target: 30 },
+  { slug: 'shawl', name: 'Shawls', target: 26 },
+  { slug: 'beret', name: 'Berets & Tams', target: 12 },
+  { slug: 'wrap', name: 'Wraps & Stoles', target: 12 },
+  { slug: 'poncho', name: 'Ponchos & Capes', target: 8 },
+  // ── Gloves, legwear, socks, slippers ──
+  { slug: 'slippers', name: 'Slippers', target: 18 },
+  { slug: 'fingerless-mitts', name: 'Fingerless Mitts & Wrist Warmers', target: 15 },
+  { slug: 'socks', name: 'Socks', target: 12 },
+  { slug: 'booties', name: 'Baby Booties', target: 12 },
+  { slug: 'mittens', name: 'Mittens', target: 10 },
+  { slug: 'gloves', name: 'Gloves', target: 6 },
+  { slug: 'legwarmers', name: 'Leg Warmers', target: 6 },
+  // ── Bags & small accessories ──
+  { slug: 'bag', name: 'Bags & Totes', target: 30 },
+  { slug: 'purse', name: 'Purses & Pouches', target: 16 },
+  { slug: 'hair-accessory', name: 'Hair Accessories', target: 10 },
+  { slug: 'jewellery', name: 'Jewellery', target: 8 },
+  { slug: 'backpack', name: 'Backpacks', target: 5 },
+  { slug: 'belt', name: 'Belts', target: 3 },
+  // ── Kitchen & bath ──
+  { slug: 'dishcloth', name: 'Dishcloths & Washcloths', target: 26 },
+  { slug: 'potholder', name: 'Potholders & Trivets', target: 15 },
+  { slug: 'tea-cosy', name: 'Tea & Egg Cosies', target: 10 },
+  { slug: 'towel', name: 'Towels & Toppers', target: 6 },
+  // ── Garments ──
+  { slug: 'cardigan', name: 'Cardigans', target: 20 },
+  { slug: 'jumper-pullover', name: 'Jumpers & Pullovers', target: 16 },
+  { slug: 'tee-top', name: 'Tees & Tops', target: 14 },
+  { slug: 'vest', name: 'Vests & Tank Tops', target: 10 },
+  { slug: 'dress', name: 'Dresses', target: 8 },
+  { slug: 'tunic', name: 'Tunics', target: 5 },
+  { slug: 'skirt', name: 'Skirts', target: 4 },
+  { slug: 'jacket-coat', name: 'Jackets & Coats', target: 4 },
+  { slug: 'trousers', name: 'Trousers & Leggings', target: 3 },
+  { slug: 'shorts', name: 'Shorts', target: 3 },
+  { slug: 'jumpsuit-romper', name: 'Jumpsuits & Rompers', target: 3 },
+  // ── Doilies, motifs, components ──
+  { slug: 'motif-granny-square', name: 'Motifs & Granny Squares', target: 35 },
+  { slug: 'coaster', name: 'Coasters & Placemats', target: 28 },
+  { slug: 'doily', name: 'Doilies & Lace', target: 22 },
+  { slug: 'edging', name: 'Edgings & Trims', target: 18 },
+  { slug: 'applique-flower', name: 'Appliqués & Flowers', target: 18 },
+  { slug: 'bookmark', name: 'Bookmarks', target: 8 },
+  { slug: 'pincushion', name: 'Pincushions', target: 4 },
+]
+
+/** slug -> crochet shelf, for the publisher's allowed-shelf check. */
+export const CROCHET_SHELF_BY_SLUG: Record<string, ShelfTarget> = Object.fromEntries(
+  CROCHET_SHELVES.map((s) => [s.slug, s]),
+)
+
 /** slug → shelf, for the publisher's allowed-shelf check. */
 export const CROSS_STITCH_SHELF_BY_SLUG: Record<string, ShelfTarget> = Object.fromEntries(
   CROSS_STITCH_SHELVES.map((s) => [s.slug, s]),
@@ -131,9 +220,13 @@ export const PATTERN_CATEGORIES: Record<string, PatternCategoryConfig> = {
     slug: 'crochet',
     patternType: 'CROCHET_CHART',
     designerId: HOMEMADE_DESIGNER,
-    // Floor target — originals-dominant and expected to grow well past it
-    // (like cross-stitch 500 → thousands). Drives the admin dashboard count.
-    patternTarget: 1200,
+    // DERIVED from the shelf targets above, exactly as cross-stitch is, so the
+    // cron's stop point, the admin dashboard and the planner's shelf weighting
+    // can never disagree about what "full" means. It is a FLOOR: crochet is
+    // originals-dominant and expected to grow well past it (cross-stitch went
+    // 500 → thousands). BULK_CROCHET_TARGET overrides it at runtime.
+    patternTarget: sumTargets(CROCHET_SHELVES),
+    shelfTargets: CROCHET_SHELVES,
     // Home shelves are the crochet subset of the controlled item-type
     // vocabulary (packages/db/prisma/item-type-vocabulary.ts) — derived, never
     // hand-listed, so they stay in lockstep with the shared cross-craft slugs.

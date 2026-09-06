@@ -31,7 +31,6 @@
 
 import { resolve, isAbsolute } from 'node:path'
 import { existsSync, mkdirSync, writeFileSync, readFileSync } from 'node:fs'
-import { spawnSync } from 'node:child_process'
 
 import {
   writeInstructions,
@@ -49,8 +48,9 @@ import {
 } from '../src/lib/loom/crochet/engine/composition'
 import { getChartSymbol } from '../src/lib/craft-charts/chart-symbols'
 import { loadCredentials } from './loom-hybrid-fal'
-import { renderBase, loomRenderMode } from './loom-base-render'
-import { fidelityGate, STRUCT_MIN_DEFAULT } from './loom-fidelity-gate'
+import { renderBase, loomRenderMode, startBaseRender, pollBaseRender, finishBaseRender } from './loom-base-render'
+import type { FargateRenderHandle, FargatePollResult } from './loom-fargate-render'
+import { STRUCT_MIN_DEFAULT } from './loom-fidelity-gate'
 import { PATTERN_PROOFS } from './loom-pattern-proofs'
 import { COMPOSITION_PROOFS } from './loom-composition-proofs'
 
@@ -157,10 +157,23 @@ export async function renderSceneBase(
   return { scenePath, basePng }
 }
 
+/** Type-only import of the aspen-hero finish: erased at compile, so the Fal
+ *  call and its prompt tables never enter the request bundle. The value comes
+ *  in through the dynamic import in `photorealHero` below. */
+type AspenHeroModule = typeof import('./loom-aspen-hero')
+
+async function aspenHero(): Promise<AspenHeroModule> {
+  return import('./loom-aspen-hero')
+}
+
 /**
  * The photoreal FINISH: Fal creative-upscale, then our own fidelity gate so a
  * drifted hero is REJECTED and the exact base render stands as the deliverable
  * (the hero is a promise the customer gets exactly this). No FAL_KEY → base only.
+ *
+ * In process (dynamic import) rather than a shell-out, so it runs the same way
+ * on a worker box and inside the deployed server's Inngest jobs — neither of
+ * which can rely on the other having `scripts/` + `tsx` on disk.
  */
 export async function photorealHero(
   basePng: string,
@@ -168,13 +181,14 @@ export async function photorealHero(
   heroPromptKey = 'sc',
 ): Promise<{ heroPng: string | null; fidelityScore: number | null }> {
   if (!hero || !process.env.FAL_KEY) return { heroPng: null, fidelityScore: null }
-  const heroOut = basePng.replace(/\.png$/, '-hero.png')
-  const h = spawnSync('npx', ['tsx', 'scripts/loom-aspen-hero.ts', basePng, '0.55', '0.82', heroPromptKey], {
-    stdio: ['ignore', 'inherit', 'inherit'], shell: true,
-  })
-  if (h.status !== 0 || !existsSync(heroOut)) return { heroPng: null, fidelityScore: null }
-  const verdict = await fidelityGate(basePng, heroOut)
-  return { heroPng: verdict.pass ? heroOut : null, fidelityScore: verdict.structureScore }
+  const { finishHero } = await aspenHero()
+  try {
+    const result = await finishHero({ basePng, stitch: heroPromptKey, creativity: 0.55, resemblance: 0.82 })
+    return { heroPng: result.fidelity.pass ? result.heroPng : null, fidelityScore: result.fidelity.structureScore }
+  } catch (e) {
+    console.warn(`[loom] photoreal finish failed (${e instanceof Error ? e.message : String(e)}) — shipping the deterministic base render`)
+    return { heroPng: null, fidelityScore: null }
+  }
 }
 
 /**
@@ -394,3 +408,118 @@ async function renderProgramGuarded(program: CrochetProgram, opts: RenderProgram
 
 // Run as a CLI only (importing renderProgram elsewhere must not execute main).
 if (process.argv[1] && /loom-pattern\.ts$/.test(process.argv[1])) main()
+
+// ── The same pipeline, driven ASYNCHRONOUSLY ────────────────────────────────
+//
+// `renderProgram` / `renderComposition` above compile, render and finish in one
+// call, which means one seven-to-nine-minute await. That is right on a worker
+// box and impossible inside a server request. So the pipeline is also published
+// in two halves with the Fargate task running in between:
+//
+//   startProgramRender / startCompositionRender   compile -> audit -> scene ->
+//                                                 upload -> ecs run-task, back
+//                                                 in a couple of seconds
+//   (the caller sleeps and polls pollProgramRender until it stops)
+//   finishProgramRender                           fetch the PNG -> photoreal
+//                                                 finish -> fidelity gate
+//
+// The value that crosses between them is plain JSON, because the two halves run
+// in different HTTP requests and, on a two-task service, very likely different
+// containers. Nothing local survives that — which is exactly why the base PNG
+// travels through S3 rather than sitting in a temp directory.
+
+/** The JSON handoff between the two halves of an asynchronous program render. */
+export interface ProgramRenderStart {
+  name: string
+  /** Audit problems. Non-empty means NOTHING was started — the caller stops. */
+  problems: string[]
+  geometryHash: string
+  yr: number
+  /** The scene JSON on the starting box's disk (a local proof; not portable). */
+  scenePath: string
+  /** null exactly when `problems` is non-empty. */
+  handle: FargateRenderHandle | null
+  /** Which aspen-hero prompt the finish uses — flat swatch or amigurumi. */
+  heroPromptKey: string
+}
+
+/** Write the scene and start its render, without waiting. */
+async function startSceneRender(
+  scene: BlenderScene,
+  name: string,
+  outDir: string,
+  heroPromptKey: string,
+  base: Omit<ProgramRenderStart, 'scenePath' | 'handle' | 'heroPromptKey'>,
+): Promise<ProgramRenderStart> {
+  mkdirSync(outDir, { recursive: true })
+  const scenePath = resolve(outDir, `${name}.json`)
+  writeFileSync(scenePath, JSON.stringify(scene))
+  const handle = await startBaseRender(scenePath, BASE_SAMPLES, 'loom_render_crochet.py')
+  return { ...base, scenePath, handle, heroPromptKey }
+}
+
+/** Compile + audit a flat program and START its base render. */
+export async function startProgramRender(
+  program: CrochetProgram,
+  options: RenderProgramOptions = {},
+): Promise<ProgramRenderStart> {
+  const outDir = options.outDir ?? OUT
+  const name = options.name ?? program.name
+  const { built, yr, problems } = compileRelaxAudit(program, options.yr)
+  const ghash = geometryHash(built)
+  const base = { name, problems, geometryHash: ghash, yr }
+  // The audit gate, BEFORE a task is launched: never pay for a render of
+  // geometry that is not genuinely stitched.
+  if (problems.length) return { ...base, scenePath: '', handle: null, heroPromptKey: 'sc' }
+
+  const scene = programScene(program, built, yr, 0.08, options.staging ?? program.staging ?? 'swatch')
+  return startSceneRender(scene, name, outDir, 'sc', base)
+}
+
+/** Compile + audit an assembled amigurumi and START its base render. */
+export async function startCompositionRender(
+  program: CompositionProgram,
+  options: RenderProgramOptions = {},
+): Promise<ProgramRenderStart> {
+  const outDir = options.outDir ?? OUT
+  const name = options.name ?? program.name
+  const compiled = compileComposition(program, options.yr)
+  const base = { name, problems: compiled.problems, geometryHash: compiled.geometryHash, yr: compiled.yr }
+  if (compiled.problems.length) return { ...base, scenePath: '', handle: null, heroPromptKey: 'amigurumi' }
+
+  const scene = compositionScene(program, compiled)
+  return startSceneRender(scene, name, outDir, 'amigurumi', base)
+}
+
+/** Has the started render finished, and did it work? One AWS call. */
+export async function pollProgramRender(start: ProgramRenderStart): Promise<FargatePollResult> {
+  if (!start.handle) throw new Error(`pollProgramRender: ${start.name} was never started (audit refused it)`)
+  return pollBaseRender(start.handle)
+}
+
+/**
+ * The second half: bring the finished base PNG down into `outDir` and put it
+ * through the photoreal finish + fidelity gate. Self-contained on purpose — it
+ * takes nothing from the box that started the render except the JSON handle.
+ */
+export async function finishProgramRender(
+  start: ProgramRenderStart,
+  options: { outDir?: string; hero?: boolean } = {},
+): Promise<RenderProgramResult> {
+  if (!start.handle) throw new Error(`finishProgramRender: ${start.name} was never started (audit refused it)`)
+  const outDir = options.outDir ?? OUT
+  mkdirSync(outDir, { recursive: true })
+  const basePng = resolve(outDir, `${start.name}.png`)
+  await finishBaseRender(start.handle, basePng)
+  const { heroPng, fidelityScore } = await photorealHero(basePng, options.hero !== false, start.heroPromptKey)
+  return {
+    name: start.name,
+    problems: [],
+    scenePath: start.scenePath,
+    basePng,
+    heroPng,
+    geometryHash: start.geometryHash,
+    yr: start.yr,
+    fidelityScore,
+  }
+}

@@ -1,7 +1,7 @@
 import 'server-only'
 import os from 'node:os'
 import path from 'node:path'
-import { readFileSync } from 'node:fs'
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import sharp from 'sharp'
 import { prisma, Visibility, r2Upload, ensureHouseDesigner } from '@homemade/db'
 import { generatePatternImage } from '@/lib/studio/generation/pattern-engine'
@@ -12,6 +12,10 @@ import {
 } from '@/lib/needlework/create-your-own'
 import { NEEDLEWORK_SHELF, NEEDLEWORK_SHELF_NAME } from './subject-pool'
 import type { NeedleworkBrief } from './planner'
+// Type-only: erased at compile, so the loom's Blender / AWS / Fal tooling still
+// never enters the request bundle. The values come in by dynamic import below.
+import type { HeroRenderJob } from '../../../../../scripts/loom-render-hero'
+import type { FargatePollResult } from '../../../../../scripts/loom-fargate-render'
 
 /**
  * Needlework (thread-painting) bulk pipeline — ported out of the retired PC
@@ -30,24 +34,46 @@ import type { NeedleworkBrief } from './planner'
 /** The subset of the loom's renderHero surface we depend on (matches the Inngest job). */
 interface RenderHeroModule {
   renderHero: (
-    input: {
-      name: string
-      stitchedElements: unknown[]
-      finishedSizeMm: { width: number; height: number }
-      fabricHex?: string
-      frameType?: string | null
-      defaultThread?: { type: string; weight: string } | null
-      strands?: number
-    },
+    input: HeroInput,
     options: { persist?: boolean; tameWarm?: boolean; r2Prefix?: string; outDir?: string },
-  ) => Promise<{
-    localHeroPath: string
-    width: number
-    height: number
-    bytes: number
-    pathTaken: string
-    r2?: { key: string; publicUrl: string }
-  }>
+  ) => Promise<HeroResult>
+  /** The same render, split so the Fargate task runs BETWEEN two requests. */
+  startHeroRender: (input: HeroInput, options: HeroOptions) => Promise<HeroRenderJob>
+  pollHeroRender: (job: HeroRenderJob) => Promise<FargatePollResult>
+  finishHeroRender: (job: HeroRenderJob, options: HeroOptions) => Promise<HeroResult>
+}
+
+interface HeroInput {
+  name: string
+  stitchedElements: unknown[]
+  finishedSizeMm: { width: number; height: number }
+  fabricHex?: string
+  frameType?: string | null
+  defaultThread?: { type: string; weight: string } | null
+  strands?: number
+}
+
+interface HeroOptions {
+  persist?: boolean
+  tameWarm?: boolean
+  r2Prefix?: string
+  outDir?: string
+}
+
+interface HeroResult {
+  localHeroPath: string
+  width: number
+  height: number
+  bytes: number
+  pathTaken: string
+  r2?: { key: string; publicUrl: string }
+}
+
+/** The scratch bucket, used here to hand large values between Inngest steps. */
+interface FargateScratchModule {
+  putFargateScratch: (localPath: string, key: string, options?: { contentType?: string; bucket?: string; region?: string }) => Promise<void>
+  getFargateScratch: (key: string, localPath: string, options?: { bucket?: string; region?: string }) => Promise<void>
+  scratchSibling: (outKey: string, filename: string) => string
 }
 
 export function fargateRenderWired(): boolean {
@@ -113,6 +139,149 @@ export async function generateNeedleworkCandidate(brief: NeedleworkBrief): Promi
 
   const heroPng = readFileSync(hero.localHeroPath)
   return { conversion, heroPng, width: hero.width, height: hero.height }
+}
+
+// ── The candidate, generated ASYNCHRONOUSLY ─────────────────────────────────
+//
+// `generateNeedleworkCandidate` above waits out the Fargate hero — seven to
+// nine minutes — which is the whole reason the needlework autopilot is paused:
+// inside an Inngest step that is one HTTP request, and the proxy in front of the
+// site ends a request at about a hundred seconds. These four do the same work in
+// stages short enough to survive it, with the render happening between them.
+//
+// Two things travel through the render's own scratch bucket rather than in the
+// step results: the converted pattern (thousands of stitched elements — far too
+// big to serialise through a queue) and the finished hero. The web service runs
+// two tasks, so the step that gates is very likely a different container from
+// the one that rendered, and nothing on local disk survives that. Scratch
+// objects expire after a day, so a killed candidate still leaves nothing behind.
+
+/** What a started needlework candidate carries between steps. Small JSON. */
+export interface PendingNeedleworkCandidate {
+  slug: string
+  /** Scratch-bucket key of the converted pattern, parked beside its render. */
+  conversionKey: string
+  stitchCount: number
+  colourCount: number
+  job: HeroRenderJob
+}
+
+/** A pending candidate whose hero has landed and been parked in the bucket. */
+export interface RenderedNeedleworkCandidate extends PendingNeedleworkCandidate {
+  heroKey: string
+  width: number
+  height: number
+}
+
+async function scratchModule(): Promise<FargateScratchModule> {
+  return (await import('../../../../../scripts/loom-fargate-render')) as unknown as FargateScratchModule
+}
+
+/**
+ * STEP 1: the Flux illustration, the needlework conversion, and the START of
+ * the hero render. Everything expensive that is NOT the render happens here,
+ * and the density backstop still refuses an over-dense scene before a task is
+ * launched rather than after.
+ */
+export async function startNeedleworkCandidate(brief: NeedleworkBrief): Promise<PendingNeedleworkCandidate> {
+  if (!fargateRenderWired()) {
+    throw new Error('startNeedleworkCandidate: LOOM_RENDER!=fargate — needlework bulk render is not wired')
+  }
+
+  // Shared engine — the same Flux call the customer idea→pattern flow makes.
+  const generated = await generatePatternImage(brief.subject, { imageSize: 'square_hd' })
+
+  // Shared needlework converter (bitmapToStitches + document + vector data).
+  const conversion = await convertImageToNeedleworkPattern(generated.buffer, brief.name, {
+    widthMm: brief.widthMm,
+    frame: brief.frame,
+    detail: brief.detail,
+    fullScene: brief.fullScene,
+  })
+
+  // Density backstop: the loom (Blender) hangs on an over-dense scene. Skip
+  // anything past a sane stroke budget rather than send it to a doomed render.
+  if (conversion.stitchCount > MAX_STITCHES) {
+    throw new Error(`needlework candidate too dense (${conversion.stitchCount} > ${MAX_STITCHES} strokes) — skipped before render`)
+  }
+
+  const outDir = path.join(os.tmpdir(), 'homemade-bulk-nw-heroes')
+  mkdirSync(outDir, { recursive: true })
+  const mod = (await import('../../../../../scripts/loom-render-hero')) as unknown as RenderHeroModule
+  const job = await mod.startHeroRender(
+    {
+      name: `nw-${brief.slug}`,
+      stitchedElements: conversion.canonical.stitchedElements as unknown[],
+      finishedSizeMm: conversion.finishedSizeMm,
+      fabricHex: conversion.canonical.fabricSpec?.colourHex ?? NEEDLEWORK_FABRIC_HEX,
+      frameType: conversion.frameType,
+      defaultThread: conversion.canonical.defaultThread ?? { type: 'stranded-cotton', weight: '3-strand' },
+      strands: 3,
+    },
+    { persist: false, tameWarm: brief.tameWarm, r2Prefix: 'patterns/needlework', outDir },
+  )
+
+  // Park the conversion beside its own render. It is what the publisher writes
+  // to the row, and it is far too large to carry through a step result.
+  const scratch = await scratchModule()
+  const conversionKey = scratch.scratchSibling(job.render.outKey, 'conversion.json')
+  const conversionPath = path.join(outDir, `${brief.slug}.conversion.json`)
+  writeFileSync(conversionPath, JSON.stringify(conversion))
+  await scratch.putFargateScratch(conversionPath, conversionKey, { contentType: 'application/json' })
+
+  return {
+    slug: brief.slug,
+    conversionKey,
+    stitchCount: conversion.stitchCount,
+    colourCount: conversion.colourCount,
+    job,
+  }
+}
+
+/** STEP 2: has the hero render finished, and did it work? One AWS call. */
+export async function pollNeedleworkCandidate(pending: PendingNeedleworkCandidate): Promise<FargatePollResult> {
+  const mod = (await import('../../../../../scripts/loom-render-hero')) as unknown as RenderHeroModule
+  return mod.pollHeroRender(pending.job)
+}
+
+/**
+ * STEP 3: fetch the base render, run the same upscale and fidelity gate the
+ * synchronous path runs (unpersisted — nothing reaches R2 before the gate), and
+ * park the chosen hero for whichever container gates it.
+ */
+export async function renderNeedleworkCandidate(
+  pending: PendingNeedleworkCandidate,
+): Promise<RenderedNeedleworkCandidate> {
+  const outDir = path.join(os.tmpdir(), 'homemade-bulk-nw-heroes')
+  const mod = (await import('../../../../../scripts/loom-render-hero')) as unknown as RenderHeroModule
+  const hero = await mod.finishHeroRender(pending.job, {
+    persist: false,
+    r2Prefix: 'patterns/needlework',
+    outDir,
+  })
+  const scratch = await scratchModule()
+  const heroKey = scratch.scratchSibling(pending.job.render.outKey, 'hero.png')
+  await scratch.putFargateScratch(hero.localHeroPath, heroKey, { contentType: 'image/png' })
+  return { ...pending, heroKey, width: hero.width, height: hero.height }
+}
+
+/**
+ * STEP 4: the hero and the converted pattern back off the scratch bucket as the
+ * same candidate object the synchronous path builds, so the gate and the
+ * publisher are unchanged.
+ */
+export async function loadNeedleworkCandidate(
+  rendered: RenderedNeedleworkCandidate,
+): Promise<NeedleworkCandidate> {
+  const outDir = path.join(os.tmpdir(), 'homemade-bulk-nw-heroes')
+  mkdirSync(outDir, { recursive: true })
+  const scratch = await scratchModule()
+  const heroPath = path.join(outDir, `${rendered.slug}-hero.png`)
+  const conversionPath = path.join(outDir, `${rendered.slug}.conversion.json`)
+  await scratch.getFargateScratch(rendered.heroKey, heroPath)
+  await scratch.getFargateScratch(rendered.conversionKey, conversionPath)
+  const conversion = JSON.parse(readFileSync(conversionPath, 'utf8')) as NeedleworkConversion
+  return { conversion, heroPng: readFileSync(heroPath), width: rendered.width, height: rendered.height }
 }
 
 export interface PublishedNeedleworkGem {

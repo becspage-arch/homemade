@@ -15,6 +15,26 @@
  * base PNG on disk). renderHero picks between the two by config/env; the rest
  * of the pipeline (Fal upscale, fidelity gate, R2) is unchanged.
  *
+ * ── SYNCHRONOUS AND ASYNCHRONOUS ──────────────────────────────────────────
+ * `fargateRenderBase` WAITS the seven to nine minutes the render takes. On a
+ * worker box that is exactly right. Inside a server request it is impossible:
+ * an Inngest step is one HTTP request and Cloudflare and the ALB end a request
+ * at about a hundred seconds, which is why the needlework batch was paused and
+ * the crochet one shipped switched off.
+ *
+ * So the render is also published as its three separate, each-quick pieces:
+ *
+ *   startFargateRender(scene, opts)  -> a JSON handle  (upload + run-task)
+ *   pollFargateRender(handle)        -> RUNNING | STOPPED | FAILED
+ *   fetchFargateRender(outKey, path) -> the PNG on disk
+ *
+ * A server-side caller runs them in three different requests with a sleep in
+ * between (Inngest: step.run -> step.sleep/step.run loop -> step.run), so no
+ * single request is ever longer than one AWS call. `fargateRenderBase` is now
+ * just those three with a wait around them, so both paths run the same render.
+ * Everything crossing a step boundary is plain JSON, because Inngest memoises a
+ * step's result and may replay it into a step running in another container.
+ *
  * Transport is a short-lived S3 bucket: the scene goes up, the task renders,
  * the PNG comes down. The task is run ON-DEMAND via `aws ecs run-task` (no
  * long-running service) and we poll it to completion. Every aws-cli call here
@@ -126,6 +146,7 @@ function forwardedGradeEnv(): Array<{ name: string; value: string }> {
     .map((k) => ({ name: k, value: String(process.env[k]) }))
 }
 
+
 export interface FargateRenderOptions {
   /**
    * Which Blender python script inside the image renders the scene. A bare
@@ -139,17 +160,110 @@ export interface FargateRenderOptions {
 }
 
 /**
- * Render the loom base PNG on Fargate. Drop-in for `blenderRenderBase`:
- * uploads the scene, runs the render task, waits for it, downloads the PNG to
- * `basePath`. Throws on any failure (upload, task failure, missing output) so
- * renderHero's existing error path is unchanged.
+ * Everything a later, SEPARATE process needs to follow a render it did not
+ * start. Deliberately plain JSON — an Inngest step memoises its result and
+ * replays it into the next step, which may run in a different container, so
+ * nothing here may be a Buffer, a handle or a local path.
  */
-export async function fargateRenderBase(
+export interface FargateRenderHandle {
+  taskArn: string
+  sceneKey: string
+  outKey: string
+  bucket: string
+  cluster: string
+  container: string
+  region: string
+}
+
+/** Where a started render has got to. STOPPED means finished cleanly. */
+export type FargateRenderState = 'RUNNING' | 'STOPPED' | 'FAILED'
+
+export interface FargatePollResult {
+  state: FargateRenderState
+  /** ECS's own word for it (PROVISIONING / PENDING / RUNNING / STOPPED). */
+  lastStatus: string | null
+  /** The render container's exit code once the task has stopped. */
+  exitCode: number | null
+  /** Why it failed — the container's reason, else the task's stoppedReason. */
+  reason: string | null
+}
+
+/** The slice of `aws ecs describe-tasks` this module reads. */
+export interface DescribeTasksPayload {
+  tasks?: Array<{
+    lastStatus?: string
+    stoppedReason?: string
+    containers?: Array<{ name?: string; exitCode?: number; reason?: string }>
+  }>
+  failures?: Array<{ arn?: string; reason?: string; detail?: string }>
+}
+
+/**
+ * The poll STATE MACHINE, as a pure function of one describe-tasks payload.
+ *
+ * Pure on purpose: it is the one piece of the async render that has to be right
+ * every time (a mis-read "still running" hangs a batch for twenty minutes; a
+ * mis-read "finished" downloads a PNG that was never written), and this way it
+ * is unit-testable without AWS. See loom-fargate-render.test.ts.
+ *
+ * The four cases that matter:
+ *   - the task is not in the payload at all — ECS lost it, or the arn is wrong.
+ *     FAILED, with whatever `failures` says. Never "still running": waiting on a
+ *     task that does not exist is how a run burns its whole ceiling.
+ *   - lastStatus is anything but STOPPED — RUNNING (PROVISIONING and PENDING
+ *     included; a cold image pull sits in PENDING for minutes).
+ *   - STOPPED with the render container exit 0 — STOPPED, the PNG is in S3.
+ *   - STOPPED any other way — FAILED. A task killed before its container ever
+ *     ran (a failed image pull, no capacity) has NO exit code at all, so a
+ *     missing exit code is a failure, not a pass.
+ */
+export function fargateTaskState(desc: DescribeTasksPayload, container: string): FargatePollResult {
+  const task = desc.tasks?.[0]
+  if (!task) {
+    const failure = desc.failures?.[0]
+    const reason = failure ? [failure.reason, failure.detail].filter(Boolean).join(': ') : null
+    return { state: 'FAILED', lastStatus: null, exitCode: null, reason: reason || 'task not found' }
+  }
+  const lastStatus = task.lastStatus ?? null
+  if (lastStatus !== 'STOPPED') return { state: 'RUNNING', lastStatus, exitCode: null, reason: null }
+
+  // Named container first; a task definition with one container that got
+  // renamed should still report its exit code rather than read as a failure.
+  const c = task.containers?.find((x) => x.name === container) ?? task.containers?.[0]
+  const exitCode = typeof c?.exitCode === 'number' ? c.exitCode : null
+  if (exitCode === 0) return { state: 'STOPPED', lastStatus, exitCode, reason: null }
+  return {
+    state: 'FAILED',
+    lastStatus,
+    exitCode,
+    reason: c?.reason ?? task.stoppedReason ?? null,
+  }
+}
+
+/** A one-line description of a failed poll, for an error message. */
+export function describePollFailure(poll: FargatePollResult): string {
+  return (
+    `loom-render task exited ${poll.exitCode ?? 'without an exit code'} ` +
+    `(status ${poll.lastStatus ?? 'unknown'}, reason: ${poll.reason ?? 'n/a'}). ` +
+    'Check CloudWatch /homemade/loom-render.'
+  )
+}
+
+/**
+ * STEP 1 of the async render: upload the scene and START the ECS task, then
+ * return immediately. Quick (two aws-cli calls, no waiting), so it fits inside
+ * one Inngest step / one HTTP request.
+ *
+ * The returned handle is all a later step needs to follow the task, and it
+ * carries its own bucket/cluster/region rather than re-reading the environment
+ * later — a render must not change machines halfway through because someone
+ * redeployed with different config between two steps.
+ */
+export async function startFargateRender(
   scenePath: string,
-  basePath: string,
   samples: number,
   options: FargateRenderOptions = {},
-): Promise<void> {
+): Promise<FargateRenderHandle> {
   const cfg = readFargateConfig()
   const jobId = randomUUID()
   const sceneKey = `jobs/${jobId}/scene.json`
@@ -157,7 +271,10 @@ export async function fargateRenderBase(
   const r = ['--region', cfg.region]
 
   // 1. scene.json -> S3
-  await aws(['s3', 'cp', resolve(scenePath), `s3://${cfg.bucket}/${sceneKey}`, '--content-type', 'application/json', ...r])
+  await aws([
+    's3', 'cp', resolve(scenePath), `s3://${cfg.bucket}/${sceneKey}`,
+    '--content-type', 'application/json', ...r,
+  ])
 
   // 2. run the render task with the job's env overrides.
   const overrides = {
@@ -204,42 +321,132 @@ export async function fargateRenderBase(
     throw new Error(`ecs run-task started no task. failures=${JSON.stringify(run.failures ?? [])}`)
   }
 
-  // 3. poll to completion (own loop rather than `aws ecs wait`, whose 10-min
-  //    cap can be short for a cold image pull + a heavy render).
+  return {
+    taskArn,
+    sceneKey,
+    outKey,
+    bucket: cfg.bucket,
+    cluster: cfg.cluster,
+    container: cfg.container,
+    region: cfg.region,
+  }
+}
+
+/**
+ * STEP 2 of the async render: ONE `describe-tasks` call, no waiting. Cheap
+ * enough to call from an Inngest step every sixty seconds for the length of a
+ * render.
+ *
+ * Takes the handle `startFargateRender` returned, or a bare task arn when the
+ * caller only has that (the cluster/container/region then come from the
+ * environment, as they did before the split).
+ */
+export async function pollFargateRender(handle: FargateRenderHandle | string): Promise<FargatePollResult> {
+  const { taskArn, cluster, container, region } =
+    typeof handle === 'string'
+      ? (() => {
+          const cfg = readFargateConfig()
+          return { taskArn: handle, cluster: cfg.cluster, container: cfg.container, region: cfg.region }
+        })()
+      : handle
+  const desc = (await aws(
+    ['ecs', 'describe-tasks', '--cluster', cluster, '--tasks', taskArn, '--output', 'json', '--region', region],
+    true,
+  )) as DescribeTasksPayload
+  return fargateTaskState(desc, container)
+}
+
+/**
+ * STEP 3 of the async render: bring the finished PNG down to `localPath`. One
+ * `s3 cp`, seconds for a render-sized image inside the VPC.
+ */
+export async function fetchFargateRender(
+  outKey: string,
+  localPath: string,
+  options: { bucket?: string; region?: string } = {},
+): Promise<void> {
+  return getFargateScratch(outKey, localPath, options)
+}
+
+/** Bring any scratch-bucket object down to a local file. */
+export async function getFargateScratch(
+  key: string,
+  localPath: string,
+  options: { bucket?: string; region?: string } = {},
+): Promise<void> {
+  const cfg = readFargateConfig()
+  const bucket = options.bucket ?? cfg.bucket
+  const region = options.region ?? cfg.region
+  await aws(['s3', 'cp', `s3://${bucket}/${key}`, resolve(localPath), '--region', region])
+}
+
+/**
+ * A key beside a render's own output, in the same job folder — so anything a
+ * later step parks for the step after it expires on the same one-day clock as
+ * the scene and the PNG, and a culled candidate cleans itself up.
+ */
+export function scratchSibling(outKey: string, filename: string): string {
+  const slash = outKey.lastIndexOf('/')
+  return slash < 0 ? filename : `${outKey.slice(0, slash + 1)}${filename}`
+}
+
+/**
+ * Put a local file INTO the scratch bucket under an arbitrary key.
+ *
+ * The scratch bucket is how two Inngest steps hand a picture to each other: the
+ * web service runs two tasks, so a later step is very likely a different
+ * container and anything written to local disk is simply gone. Objects here
+ * expire after a day (the CDK lifecycle rule), so a candidate that never
+ * publishes leaves nothing behind.
+ */
+export async function putFargateScratch(
+  localPath: string,
+  key: string,
+  options: { contentType?: string; bucket?: string; region?: string } = {},
+): Promise<void> {
+  const cfg = readFargateConfig()
+  const bucket = options.bucket ?? cfg.bucket
+  const region = options.region ?? cfg.region
+  await aws([
+    's3', 'cp', resolve(localPath), `s3://${bucket}/${key}`,
+    '--content-type', options.contentType ?? 'application/octet-stream',
+    '--region', region,
+  ])
+}
+
+/**
+ * Render the loom base PNG on Fargate and WAIT for it — the drop-in for
+ * `blenderRenderBase` the CLI and the batch scripts use.
+ *
+ * A thin wrapper over the three pieces above: start, poll every few seconds,
+ * fetch. It blocks for the seven to nine minutes a render takes, which is fine
+ * on a worker box and fatal inside an HTTP request — a server-side caller
+ * (Inngest) drives start/poll/fetch itself across separate steps instead.
+ */
+export async function fargateRenderBase(
+  scenePath: string,
+  basePath: string,
+  samples: number,
+  options: FargateRenderOptions = {},
+): Promise<void> {
+  const cfg = readFargateConfig()
+  const handle = await startFargateRender(scenePath, samples, options)
+
+  // Poll on our own loop rather than `aws ecs wait`, whose 10-min cap can be
+  // short for a cold image pull plus a heavy render.
   const deadline = Date.now() + cfg.timeoutSec * 1000
-  let container: { exitCode?: number; reason?: string } | undefined
   for (;;) {
     await sleep(6000)
-    const desc = (await aws(
-      ['ecs', 'describe-tasks', '--cluster', cfg.cluster, '--tasks', taskArn, '--output', 'json', ...r],
-      true,
-    )) as {
-      tasks?: Array<{
-        lastStatus?: string
-        stoppedReason?: string
-        containers?: Array<{ name: string; exitCode?: number; reason?: string }>
-      }>
-    }
-    const task = desc.tasks?.[0]
-    if (task?.lastStatus === 'STOPPED') {
-      container = task.containers?.find((c) => c.name === cfg.container)
-      if (container?.exitCode !== 0) {
-        throw new Error(
-          `loom-render task exited ${container?.exitCode ?? 'unknown'} ` +
-            `(reason: ${container?.reason ?? task.stoppedReason ?? 'n/a'}). ` +
-            'Check CloudWatch /homemade/loom-render.',
-        )
-      }
-      break
-    }
+    const poll = await pollFargateRender(handle)
+    if (poll.state === 'STOPPED') break
+    if (poll.state === 'FAILED') throw new Error(describePollFailure(poll))
     if (Date.now() > deadline) {
       throw new Error(
         `loom-render task did not finish within ${cfg.timeoutSec}s (last status ` +
-          `${task?.lastStatus ?? 'unknown'}). Raise LOOM_RENDER_TIMEOUT_SEC or check the task.`,
+          `${poll.lastStatus ?? 'unknown'}). Raise LOOM_RENDER_TIMEOUT_SEC or check the task.`,
       )
     }
   }
 
-  // 4. rendered PNG -> local basePath.
-  await aws(['s3', 'cp', `s3://${cfg.bucket}/${outKey}`, resolve(basePath), ...r])
+  await fetchFargateRender(handle.outKey, basePath, { bucket: handle.bucket, region: handle.region })
 }

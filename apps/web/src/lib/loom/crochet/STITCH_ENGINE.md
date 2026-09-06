@@ -710,6 +710,62 @@ vs a real reference → commit + push.
     they sit against the body in the same colour, so only the cream paw pads
     really separate them. A held-out-from-the-body arm angle, or contrast
     higher up the limb, is the open direction.
+  **ROUND 3 — the arms come off the shoulders (2026-09-06).** Round 2 logged the
+  arms as its own residual (just above). On the served hero it was worse than
+  faint: both cream paw pads settled BELOW the cream foot pads, so four cream
+  pads sat in a row on the table and the picture read as four feet with the arms
+  coming out from under the legs. Composition layer only again — no round
+  builder, no relaxer, no render script — so `amigurumi-ball` (fd112ec2) and
+  `amigurumi-creature` (3577dd48) are bit-identical either side of the change;
+  the five bear hashes move because the ASSEMBLY changed — `amigurumi-bear`
+  e79021bb -> 14e1e5d2, `-perch` cbf59b0b -> e67601e2, `-bigear` f60b2e74 ->
+  8328fbc1, `-plain` 39192f21 -> 0c3fa4c3, `-mirror` 7d1d4c9a -> 629d639a. The
+  dictionary swatch hashes are untouched (nothing on the path from
+  `loom-geom-hash.ts` imports either changed file).
+  MEASURED on the settled geometry (body 43.40 mm tall, 57.2 wide), round 2 ->
+  round 3:
+  - shoulder join **z 31.98 = 0.737 of the body height -> z 32.34 = 0.745**. The
+    attach HEIGHT was never the fault. Raising the attach elevation from 34° to
+    45° off horizontal only moves the join 0.4 mm, but it moves it up onto the
+    shoulder SLOPE, so the arm leaves the body over the top of the side rather
+    than out of the middle of it.
+  - arm aim **23° out / 34° forward (38° off vertical) -> 67° out / 42° forward
+    (68° off vertical)**. That is the whole fix.
+  - paw pad centre **z 6.14 = 0.141 of the body height -> z 21.38 = 0.493**
+    (mid-body). The foot pad centre is unchanged at z 12.33 = 0.284 — the legs
+    were not touched.
+  - paw pad ABOVE foot pad **−6.19 mm (−0.143 of the body height) -> +9.05 mm
+    (+0.209)**.
+  - elbow clear of the body: the paw centre sits at x 39.3 against a 28.6 mm
+    body half-width, so each arm now stands **10.7 mm proud of the silhouette**.
+  - clearances **arm-to-leg 0.17 -> 2.41 mm, paw-to-leg 0.36 -> 14.12,
+    arm-to-head 8.41**; **minz 0.00 either way**, and round 2's per-arm z nudges
+    (+0.65 / +0.5 mm) are GONE — they existed only to stop a straight-down arm's
+    paw pad reaching below the table, and this arm's lowest point clears it by
+    12 mm.
+  The two-attempt cap was spent on the angle: the shipped **67° / 42°** pose,
+  and a more open **74° / 44°** which lifts the paw to z 25.20 = 0.581 and
+  +12.87 mm (+0.297) but holds the arms within 16° of horizontal, so the paws
+  stop reading as "around mid-body". FOR THE RECORD, a separation of ≥0.35 of
+  the body height is NOT reachable on this bear at any arm angle under ~77° off
+  vertical: the arm+paw chain measures 30.7 mm from the shoulder join against a
+  43.4 mm body — 0.71 of the body height, where a real amigurumi bear's arm is
+  nearer half. Closing the rest of that gap means a SHORTER ARM (a `scale` or
+  round-count change), not another placement number.
+  The Studio's `bear` preset carries the same pose at all three sizes (and so
+  does `bunny`, which shares the arm placement). Measured paw-above-foot: **S
+  +7.08 mm (0.197 of its body height), M +12.64 (0.291), L +11.40 (0.248)**,
+  every size settling at **minz 0.000** with `GROUND_LIFT`'s arm entry removed
+  altogether, and `amigurumiSizes.generated.ts` regenerated off the new geometry
+  (bear S 84.5 x 81.0, M 96.7 x 106.7, L 122.5 x 120.0 mm).
+  **RENDERED (Fargate, one concurrent batch of two).** Both PASS the
+  fidelity/structure gate — 67° 0.926, 74° 0.925 (STRUCT_MIN 0.45). Beside
+  `ref-amigurumi-bear-A.jpg` the fault is gone: the arms leave the shoulders as
+  separate limbs, the two cream paw pads sit clearly above and behind the two
+  cream foot pads, and the feet still point forward with their pads to the
+  camera. Residual for the orchestrator's verdict: the arms are held further out
+  than the reference's, which hang closer to the body — that is the arm-length
+  number above, not a placement one.
 - **Part C — finished-object HERO staging across all forms (2026-07-12).** The
   four-part customer bar (correct genuinely-stitched stitches / real yarn colour on
   clean white / whole piece at size / staged as the finished object) for EVERY
@@ -777,44 +833,67 @@ vs a real reference → commit + push.
   flat/headband proofs' own margin already clears 160mm, so only the two
   amigurumi compositions actually pull back.
 - **CRISP WHITE GROUND, every hero, default (2026-09-06).** The seven sign-off
-  heroes' ground measured ~178-181 avg corner luminance (0-255) against real
+  heroes' ground measured ~176-182 avg corner luminance (0-255) against real
   Etsy product photos' ~237-245 — a soft mid-grey with a lighting-rig gradient,
   not the clean white of a product shot, even though `bgHex` was already a
-  near-white hex (`#efece6`/`#faf8f5`). Proven the fault sits in the BASE
-  BLENDER RENDER, not the Fal finish: a Fargate base render of `simple-coaster`
-  landed at the same ~179 before any Fal step ran. Cause: the same low
-  `exposure` (§11) that stops pale wool blowing white under AgX also
-  under-exposes a near-white backdrop. Fix (`loom_render_crochet.py`,
-  `whiten_ground`, default, no per-pattern flag): the ground plane alone
-  carries an Object Index (`pass_index = 1`); a compositor branch boosts ONLY
-  that mask's linear radiance (+2.3 stops) before the one global AgX/exposure
-  grade, so it lands in AgX's highlight shoulder (clean near-white, gradient
-  compressed away with it) while every yarn pixel is bit-for-bit unchanged.
-  Also hardened `loom-aspen-hero.ts`'s prompt (`WHITE_BG` in `COMMON`/
-  `COMMON_KNIT`, plus background/hand terms in the negative prompt) so the Fal
-  finish asks for the same clean backdrop instead of its own "natural window
-  light" phrasing pulling a lifestyle grey back in — belt-and-braces, since the
-  base is what actually carries the grey now.
-  **Verified:** the Blender-side fix needs the `loom-render` image rebuilt
-  (ECR push blocked from this session — Docker's registry pull is outside the
-  network policy) so it is proven by CODE + a software stand-in, not a live
-  Fargate render of the new script. A simulated white-ground base (the same
-  Fargate `simple-coaster`/`amigurumi-bear` bases with their desaturated
-  pixels pushed toward `#faf8f5`, standing in for what `whiten_ground` isolates
-  by geometry) measured 236-244 avg corner luminance, dead in the reference
-  range. Run through the ACTUAL fixed `loom-aspen-hero.ts` against Fal: both
-  heroes held that white (239-242 avg corner lum), passed the fidelity gate
-  (coaster 0.946, bear 0.927/0.930 across two runs — both ≫ STRUCT_MIN 0.45),
-  and the yarn's own exposure/saturation moved only a few percent (coaster mid
-  swatch +5%/+4%; bear belly patch +4%/-1%). Honest residual: one of the two
-  bear runs hallucinated a hand appearing to hold the toy — a Fal seed
-  artifact, not reproduced on a second run of the same input, and now further
-  guarded against with `hand`/`fingers`/`person` in the negative prompt: worth
-  a second look on the real rebuilt-image renders before sign-off, not
-  something the base-render fix itself can cause. The `loom_render_crochet.py`
-  change itself is still unverified end-to-end (needs the image rebuilt +
-  pushed, then a real Fargate render of all seven heroes) — that is the
-  orchestrator's train, not this session's.
+  near-white hex (`#efece6`/`#faf8f5`). The fault is in the BASE BLENDER
+  RENDER, not the Fal finish (a Fargate base render of `simple-coaster` lands
+  at the same ~179 before any Fal step runs): the same low `exposure` (§11)
+  that stops pale wool blowing white under AgX also under-exposes a near-white
+  backdrop.
+  **First attempt FAILED — logged so nobody retries it.** `whiten_ground`
+  tagged the ground plane with `pass_index = 1`, enabled the Object Index pass
+  and boosted that compositor mask +2.3 stops before AgX. It shipped, the image
+  rebuilt (ECR `latest` = the merge commit's digest), and the seven heroes were
+  re-rendered on tasks that provably pulled that digest — and the corners came
+  back 179/176, byte-for-byte the old number. Two independent faults: (1) the
+  view layer's pass was enabled BEFORE `scene.use_nodes = True` existed, so the
+  Render Layers node never got a live `IndexOB` socket — Blender still built
+  and ran the branch (the container log shows all 12 compositor operations) but
+  the ID Mask read a dead input, output 0 everywhere, and Alpha Over passed the
+  base through untouched; (2) even wired correctly, +2.3 stops is nowhere near
+  enough — AgX's shoulder needs ~x10 linear to reach the reference band. A
+  compositor branch that silently no-ops and still logs as if it ran is the
+  wrong mechanism here.
+  **What actually works: a camera-ray boost in the GROUND'S OWN SHADER.**
+  `surface_material` (`loom_render_crochet.py`) mixes on `Light Path > Is
+  Camera Ray`: camera rays shade the plane as a diffuse whose albedo is
+  `GROUND_WHITE_BOOST` (x10) times `bgHex`, every other ray keeps the original
+  material. No passes, no compositor, nothing to silently disconnect. Because
+  the boost multiplies the SHADED result, the contact shadow survives as the
+  same ratio; because it is camera-ray only, the bounce light the ground throws
+  back onto the yarn — and the backdrop the glossy props reflect — is unchanged.
+  Default on with no per-pattern flag; `view.groundWhite` can dial it (1 = off).
+  **Measured on real Fargate renders of the shipped scene JSONs** (a probe task
+  def running the candidate script out of S3, so the ramp was measured BEFORE
+  the merge — see `scripts/loom-render/README.md`, "Proving a render-script
+  change before the merge"). Corner luminance ramp, coaster / bear:
+  x1 179/176, x4 223/221, x8 237/236, x12 244/243, x16 248/247. At the chosen
+  x10, full resolution and production samples: **corner 179 -> 241 (coaster)
+  and 176 -> 240 (bear)**, both inside the 237-245 reference band. The yarn did
+  not move: coaster mid-fabric patch 91.2 -> 91.2, bear belly 106.1 -> 106.0,
+  chest 101.1 -> 101.0 (< 0.1%). Contact shadow still reads — the ground strip
+  under the object sits 6-7 levels below the far ground on both (it was 15-16
+  before; a blown sweep compresses its own shadow, which is what a real one
+  does).
+  **Props decoupled in the same pass.** `prop_material` drove Roughness,
+  Specular IOR Level AND Coat Weight off the single `gloss` number, so a glossy
+  black safety eye necessarily wore a near-mirror clearcoat and reflected the
+  backdrop — the "grey glass marble" residual logged in Part B round 2, which a
+  whiter ground would only have made worse. Now `gloss` tightens the HIGHLIGHT
+  only: specular sits at the dielectric default (0.5 = IOR 1.5), coat is a thin
+  `0.15 * gloss` sheen at roughness 0.10. Bear eyes measured 80/75 -> 63/58 on
+  a tight centre patch and read as black beads with one small highlight; the
+  nose reads black satin.
+  `loom-aspen-hero.ts` keeps the hardened prompt from the first attempt
+  (`WHITE_BG` in `COMMON`/`COMMON_KNIT`, plus background/hand terms in the
+  negative prompt) so the Fal finish asks for the same clean backdrop — but the
+  base now carries the white on its own.
+  **Still to run on the train:** this is a `loom_render_crochet.py` change, so
+  merging it rebuilds the `loom-render` image (the workflow triggers on that
+  path), and the seven sign-off heroes need re-rendering afterwards for the
+  Fal-side numbers and the fidelity gate. Geometry hashes bit-identical
+  (render-only).
 
 - **Part D — FLAT-FABRIC DENSITY PASS (2026-07-12).** The build-2 flatlay/loop
   heroes read as OPEN MESH — the orchestrator's hypothesis was an over-spaced grid
@@ -2084,6 +2163,232 @@ against their reference photos before they can be called locked again.
   — the target is a 1x1-rib target and does not transfer. It wants its own.
 - **`fpdc`/`bpdc`'s own swatches read 95.5% / 0% "face owned by raised ribs"**
   by construction (every post is the same mode). Read that row only on 1x1 rib.
+
+---
+
+## 8g. BULK AUTOPILOT — the catalogue fills itself on the server (2026-09-06)
+
+The engine can build, render and word a pattern; §8g is the machinery that
+decides WHICH patterns to build, judges what comes back, and puts the survivors
+in the catalogue. It runs on ECS as an Inngest job, never on a laptop, and it is
+the crochet twin of the cross-stitch and needlework autopilots already running
+beside it (`apps/web/src/lib/studio/generation/bulk/`).
+
+### The pipeline, one idea at a time
+
+```
+plan a brief ─▶ author a design ─▶ expand to a PROGRAM ─▶ compile + AUDIT
+     │                                                          │
+     │                                        (audit fails → revise, twice, then cull)
+     ▼                                                          ▼
+                                                measure the SETTLED geometry
+                                                and declare that size
+                                                          │
+                                                          ▼
+                                        render on Fargate, persist:false
+                                                          │
+                                                          ▼
+                                            VISION GATE (keep / repair / kill)
+                                                          │  keep
+                                                          ▼
+                                        DUPLICATE GUARD (subject + fingerprint)
+                                                          │  clear
+                                                          ▼
+                                            assemble the full pattern row
+                                                          │
+                                                          ▼
+                                        COMPLETENESS GATE (block or publish)
+                                                          │  pass
+                                                          ▼
+                                          PUBLIC row + its own exact hero + search
+```
+
+Nothing is written before the vision gate: the render runs unpersisted, so a
+killed candidate leaves no row and nothing in R2.
+
+### What the planner may emit
+
+The planner may only commission a pattern the loom can actually build, because
+a pattern that cannot render can never carry a truthful hero
+(`feedback_hero_must_be_exact_pattern`). The buildable set is declared once in
+`bulk/crochet-forms.ts` — thirteen shelves and the treatments and stitch
+envelopes each may use:
+
+| Shelf | Treatments |
+| --- | --- |
+| `coaster` | grid-plain, grid-stripe, disc |
+| `dishcloth` | grid-stripe, grid-texture, grid-plain |
+| `potholder` | grid-texture, grid-stripe |
+| `motif-granny-square` | grid-texture, grid-stripe, disc |
+| `bookmark` | grid-plain, grid-stripe |
+| `headband` | grid-postrib (staged `flatband`) |
+| `wall-hanging` | grid-tapestry |
+| `ornament`, `pincushion` | sphere |
+| `amigurumi`, `animal-toy`, `doll` | amigurumi (the audited presets) |
+| `baby-toy-lovey` | sphere, amigurumi |
+
+The other forty-four crochet item types carry a target in
+`generation/categories.ts` and NO lane: they are what the catalogue wants, not
+what the engine reaches. When a form lands (a tube for hats, lace for doilies,
+shaping for garments) its shelf moves into `crochet-forms.ts` and starts filling.
+Nothing else changes.
+
+The model never writes a program. It writes a compact DESIGN — width, rows,
+stitch bands, palette, or the amigurumi base and its colours — and
+`bulk/crochet-design.ts` expands that deterministically into grid rows of locked
+stitches, a magic-ring disc, a ball off `AUDITED_PROFILES`, or a Studio
+amigurumi preset. So a model cannot describe a construction the loom would
+refuse; it can only make design choices inside a shape the engine is measured
+on. The pictorial lane is the exception and works the other way round: an
+illustration is generated on the approved image engine and the shared
+photo-to-tapestry converter turns it into a colour per stitch.
+
+### The gates
+
+Four, in order, each binary:
+
+1. **The audit gate** (`compileRelaxAudit` / `compileComposition`). Its own words
+   go back to the model for up to two revisions, then the idea is culled.
+2. **Size consistency**, inside the audit. The declared size is never claimed:
+   the publisher measures the RELAXED geometry and declares that, so the hero,
+   the gauge line and the size on the page describe one object.
+3. **The vision gate** (`generation/vision-gate.ts`) with a crochet rubric: does
+   it read as the item, is the fabric whole, are the colours the pattern's, is
+   it staged as a finished object, and is there NOTHING in the frame but the
+   pattern. The photoreal finishing pass sometimes invents a hand holding the
+   piece, a person at the edge, a table or a caption, and the structural
+   fidelity check can still pass an image carrying one, so hands, people,
+   furniture, props that are not the pattern's own notions, and any text or logo
+   are all kills. On a FIGURE it also asks whether the limbs are where a real
+   toy's are: arms joined at the shoulders and ending above the feet, legs
+   forward off the lower body, ears on the crown, no part floating free or sunk
+   into another so the join is lost. A figure whose arms appear to come out from
+   under its legs fails. A broken patch of fabric is a KILL too, rather than a
+   repair, because the geometry is deterministic and a second render is the same
+   picture. Only a staging fault earns one more render.
+4. **The completeness gate** (`packages/db/src/crochet-completeness.ts`) against
+   the assembled row: yarn, hook, gauge over 10 cm, a size in centimetres, every
+   round counted, repeats written out, an abbreviation key that covers the
+   instructions, a chart on a single-piece pattern, pieces and a covering build
+   order on a multi-piece one, notions, safety notes on a toy, and the house
+   voice on the name and description. A row that fails is culled, never
+   published with a flag.
+
+Between 3 and 4 sits the duplicate guard: the normalised subject key (the same
+idea, redrawn) and a colour-stripped program fingerprint (the same construction
+in another colourway) against the whole public catalogue. A hit is terminal.
+
+### The spend caps
+
+`bulk/spend-guard.ts`. Crochet spends on Fargate task time, and on a Flux
+illustration in the pictorial lane only:
+
+- `CROCHET_DAILY_RENDER_CAP` (40, `BULK_CROCHET_RENDER_CAP`) — renders in any
+  trailing 24 hours.
+- `CROCHET_DAILY_ILLUSTRATION_CAP` (12, `BULK_CROCHET_ILLUSTRATION_CAP`).
+
+Checked in the dispatcher's preflight and again at the point of spending. At or
+over either, the batch skips rather than spends.
+
+### The compile budget
+
+`BULK_CROCHET_MAX_CELLS` (1,600). Relaxation is single threaded at roughly 11 ms
+a stitch on four cores, so about double that on the half-vCPU web task: 1,600
+stitches lands near 35 seconds, inside one Inngest step and under the gateway's
+~100 s ceiling. It is also a 23 x 20 cm panel at the settled sc cell, so the
+ceiling is a real showpiece rather than a swatch. Measured on this box: 1,050
+stitches compiled and audited in 13.8 s, 1,600 in about 21 s.
+
+### The render is ASYNCHRONOUS inside the job (2026-09-06)
+
+A photoreal hero is a four-vCPU Blender task of seven to nine minutes — the
+coaster this was proved against took fifteen and a half. `fargateRenderBase`
+waits for it, which is right from a worker box and impossible on the server: an
+Inngest step is one HTTP request and the proxy in front of the site ends a
+request at about a hundred seconds. That single fact is what paused needlework
+and shipped crochet's toggle off.
+
+So nothing waits any more. `scripts/loom-fargate-render.ts` publishes the render
+as three quick pieces, and the job runs them in three different requests with
+the task going on in between:
+
+```
+step.run('generate')   author + compile + AUDIT + upload the scene + ecs run-task
+                       └── returns a JSON handle; a couple of seconds
+step.sleep('wait-N')   the run is SUSPENDED — the web container is free
+step.run('poll-N')     one describe-tasks call: RUNNING / STOPPED / FAILED
+                       └── repeat, once a minute, up to 25 times
+step.run('render')     fetch the PNG, photoreal finish, fidelity gate,
+                       park the hero in the scratch bucket
+step.run('gate-publish')  vision gate → duplicate guard → publish
+```
+
+Three things this turns on:
+
+- **The ceiling is 25 minutes** (`RENDER_POLL_LIMIT`, `src/inngest/loom-render-wait.ts`).
+  Past it the idea fails as a timeout rather than hanging: a task ECS has quietly
+  lost must not hold an idea open for an hour. A render that stops with a
+  non-zero exit — or with no exit code at all, which is what a failed image pull
+  looks like — fails immediately rather than waiting out the ceiling. The poll
+  state machine is pure and unit-tested (`scripts/loom-fargate-render.test.ts`).
+- **Concurrency is capped at 3 ideas per craft** (`bulk-crochet-idea`,
+  `bulk-needlework-idea`). Three renders at once is a batch that finishes inside
+  its firing without a queue of 4-vCPU tasks piling up behind the spend guard,
+  which is still checked again at the point of spending.
+- **Nothing local crosses a step.** The web service runs two tasks, so the step
+  that gates is very likely a different container from the one that rendered.
+  Everything between steps is plain JSON, and the two things too big for that —
+  the finished hero, and needlework's converted pattern — travel through the
+  render scratch bucket, whose objects expire after a day. A candidate the gate
+  kills still leaves nothing behind, exactly as the unpersisted render promised.
+
+Both bulk crafts now take cross-stitch's fan-out shape around this: a DISPATCHER
+plans the briefs, writes the `BulkRun` row and emits one event per idea; an IDEA
+WORKER does one idea end to end and bumps the row's counters atomically the
+moment it reaches a terminal outcome, so the admin card fills up while the batch
+runs. The last idea to finish closes the row with its summary line. A run whose
+counters stop moving for six hours is swept closed, for every craft.
+
+Crochet's photoreal finish (`photorealHero`) now calls `finishHero` from
+`scripts/loom-aspen-hero.ts` in process (a dynamic import, same shape as the
+Inngest functions' `loom()` helpers) instead of shelling out to `npx tsx` —
+so it runs the Fal upscale + fidelity gate on the deployed server exactly as
+it does on a worker box, matching needlework's `falCreativeUpscale`.
+
+### Running a batch
+
+```bash
+# on the server: the admin page, or the event
+#   /admin/system/bulk-generation  →  Crochet  →  Run a batch
+#   inngest event: bulk/crochet.batch  { count }
+# cron: 0 */6 * * *, and only when the autopilot toggle is ON
+
+# from a worker box, the same batch in process
+cd apps/web
+LOOM_RENDER=fargate npx tsx --conditions=react-server scripts/bulk-crochet-batch.ts 6
+```
+
+`--conditions=react-server` is load-bearing outside Next: the bulk modules carry
+the `server-only` marker.
+
+A category's FIRST batch is not run this way. It is authored as a seed set
+(`scripts/crochet-first-batch.ts`), rendered with `--seed --render`, LOOKED AT,
+and only then published with `--seed --publish <verdicts.json>` — the
+render-before-volume rule, which is why the six sign-off samples exist at all.
+
+### Where to look in admin
+
+`/admin/system/bulk-generation` carries a Crochet card beside cross-stitch and
+needlework: published against target, the shelf pills (live shelves in colour,
+the shapes the loom cannot build yet greyed as "no lane yet"), the last 24 hours
+against both spend caps, the autopilot toggle and a run-a-batch button. Every
+run, manual and cron, is a `BulkRun` row listed under Recent runs with published
+/ culled / duplicates / errors and the top kill reason. Per-step logs are in the
+Inngest dashboard.
+
+For crochet the `BulkRun.generations` column counts RENDERS and
+`proGenerations` counts the ideas that also paid for an illustration — the two
+things the spend guard caps. Same columns, craft-specific meaning.
 
 ---
 

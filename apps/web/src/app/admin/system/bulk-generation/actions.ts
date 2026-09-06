@@ -17,16 +17,25 @@ type SourceModeResult = { ok: true; mode: XsSourceMode } | { ok: false; error: s
 
 const MAX = 20
 
+/** The crafts the bulk page can drive. Mirrors `Craft` in the batch runner. */
+export type BulkCraft = 'cross-stitch' | 'needlework' | 'crochet'
+
+const BATCH_EVENT: Record<BulkCraft, string> = {
+  'cross-stitch': 'bulk/cross-stitch.batch',
+  needlework: 'bulk/needlework.batch',
+  crochet: 'bulk/crochet.batch',
+}
+
 /**
  * Fire a server-side bulk gem batch for a craft — the "Run a batch" button. The
  * work runs in the Inngest function (bulk-generation.ts): plan → generate →
  * ruthless vision gate → publish gems. Returns as soon as the event is queued;
  * watch progress in the Inngest dashboard (the batch takes minutes).
  */
-export async function triggerBulkBatch(craft: 'cross-stitch' | 'needlework', count: number): Promise<ActionResult> {
+export async function triggerBulkBatch(craft: BulkCraft, count: number): Promise<ActionResult> {
   const actor = await requireAdminRole({ minimum: 'ADMIN' })
   const n = Math.max(1, Math.min(MAX, Math.round(Number(count) || 0)))
-  const event = craft === 'needlework' ? 'bulk/needlework.batch' : 'bulk/cross-stitch.batch'
+  const event = BATCH_EVENT[craft]
   try {
     await inngest.send({ name: event, data: { count: n, triggeredBy: actor.id } })
   } catch (err) {
@@ -45,7 +54,7 @@ export async function triggerBulkBatch(craft: 'cross-stitch' | 'needlework', cou
  * Turn a craft's unattended autopilot cron on/off. DB-backed, so it takes effect
  * immediately (no redeploy) and survives deploys.
  */
-export async function setBulkAutopilot(craft: 'cross-stitch' | 'needlework', enabled: boolean): Promise<ToggleResult> {
+export async function setBulkAutopilot(craft: BulkCraft, enabled: boolean): Promise<ToggleResult> {
   const actor = await requireAdminRole({ minimum: 'ADMIN' })
   try {
     await setAutopilotEnabled(craft, enabled, actor.id)

@@ -32,8 +32,8 @@ export interface GateResult {
 export interface GateContext {
   /** What we asked Flux for — lets the judge check "did we get the subject". */
   subject: string
-  /** cross-stitch | needlework — the craft the render is for. */
-  craft: 'cross-stitch' | 'needlework'
+  /** cross-stitch | needlework | crochet — the craft the render is for. */
+  craft: 'cross-stitch' | 'needlework' | 'crochet'
   /** Colour count of the converted chart (helps judge mush vs. sparse). */
   colours?: number
   /** Titles/subjects already kept THIS batch — for the near-duplicate check. */
@@ -69,6 +69,36 @@ When in doubt between keep and repair/kill, do NOT keep. Reply ONLY with compact
 Omit repairAction unless verdict is "repair".`
 
 /**
+ * The per-craft addendum, appended to the rubric above.
+ *
+ * CROCHET is judged differently from the two converted-illustration crafts, and
+ * the difference matters. A crochet hero is not an interpretation of a picture:
+ * it is a photograph of the finished object built from the pattern's own stitch
+ * program, so the question is not "is this a lovely illustration" but "is this
+ * a lovely OBJECT, and is the fabric real". A melted or broken patch of fabric
+ * is a construction failure the customer would meet at the hook, not a
+ * cosmetic one, so it is a kill rather than a repair. There is no re-roll that
+ * changes a crochet render either — the geometry is deterministic — so a fault
+ * in the object is terminal and only the staging faults are repairable.
+ */
+const CRAFT_RUBRIC: Record<GateContext['craft'], string> = {
+  'cross-stitch': '',
+  needlework: '',
+  crochet: `
+
+THIS IS A CROCHET PATTERN'S OWN HERO — a photograph of the finished object, built stitch for stitch from the pattern's stored program. Judge the OBJECT, not an illustration. Extra boxes, every one a YES:
+A. IT IS THE THING ASKED FOR. The finished object reads as the item in the brief: a coaster reads as a coaster, a bear reads as a bear, a picture panel shows the picture described. If you could not name it without being told, kill it.
+B. THE FABRIC IS REAL AND WHOLE. Continuous crocheted stitches, even rows or rounds, no melted, smeared, torn or missing patch, no gap where the fabric should be solid, no stitch that dissolves into fuzz. A broken patch is a KILL, never a repair: the geometry is deterministic, so a re-roll cannot fix it.
+C. THE COLOURS ARE THE PATTERN'S. The yarn colours are the ones the brief asked for, clean and separated. On a striped or tapestry piece the colour boundaries are crisp and the picture reads.
+D. IT IS STAGED AS A FINISHED OBJECT. The whole piece sits on a clean pale ground at a sensible product-photo scale, not a macro crop of fabric and not cropped through the object.
+F. ON A FIGURE, THE LIMBS ARE WHERE A REAL TOY'S ARE. Arms join at the SHOULDERS, high on the body, and end above the feet. Legs come off the lower body and lie forward. Ears sit on the crown of the head. KILL any figure whose arms appear to come out from under its legs or from its middle, whose limbs are the wrong way round or the wrong length, or whose parts float free of the body or sink into each other so the join is lost. A toy whose arms grow out of its hips is not a toy anyone would make, and this is a kill, never a repair, because the placement is in the pattern rather than in the roll of the render.
+
+E. NOTHING IN THE FRAME BUT THE PATTERN. The photoreal finishing pass sometimes invents a hand holding the piece, a person, a table, a plant, a mug, a pair of scissors or a caption, and the structural check can still pass an image that has one. KILL any hero showing hands, fingers, arms, a person or part of one, furniture, or any prop that is not the pattern's own notions (its safety eyes and nose are the pattern's; everything else is not). KILL any text, lettering, numbers, logo or watermark. This is a kill, never a repair.
+
+Because the render is deterministic, "repair" here means only a STAGING fault worth one fresh render (badly cropped or lopsided framing → re-centre). Anything about the object itself, and anything invented into the frame, is a kill.`,
+}
+
+/**
  * True when the gate can actually run (the Anthropic key is wired). The bulk
  * runner checks this before generating so it never produces un-gated output.
  */
@@ -96,7 +126,7 @@ Judge it and reply with the JSON verdict only.`
   try {
     raw = await anthropicJson<{ verdict?: string; reasons?: unknown; repairAction?: string }>({
       model: GATE_MODEL,
-      system: SYSTEM,
+      system: `${SYSTEM}${CRAFT_RUBRIC[ctx.craft] ?? ''}`,
       prompt,
       images: [{ buffer: png, mediaType: 'image/png' }],
       maxTokens: 600,

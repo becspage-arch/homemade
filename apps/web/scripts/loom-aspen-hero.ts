@@ -7,6 +7,12 @@
  * adds real yarn fibre/fuzz/relief without moving the stitches) -> fidelity gate
  * (confirms no drift) -> photoreal hero.
  *
+ * `finishHero()` (exported) is the in-process entry point: `photorealHero` in
+ * loom-pattern.ts imports it directly (dynamic import — see the Inngest
+ * functions' `loom()` helpers) instead of shelling out to this file, so the
+ * finish runs equally on a worker box and inside the deployed server, which has
+ * no `scripts/` directory or `tsx` to shell out to.
+ *
  *   cd apps/web && npx tsx scripts/loom-aspen-hero.ts <basePng> [creativity] [resemblance]
  *
  * Costs ~£0.03-0.05/image on Fal (the locked creative-upscale finish).
@@ -15,9 +21,16 @@
 import { resolve, basename } from 'node:path'
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { dirname } from 'node:path'
+import { pathToFileURL } from 'node:url'
 import { loadCredentials } from './loom-hybrid-fal'
-import { fidelityGate } from './loom-fidelity-gate'
+import { fidelityGate, type FidelityVerdict } from './loom-fidelity-gate'
 
+const IS_MAIN = import.meta.url === pathToFileURL(process.argv[1] ?? '').href
+
+// Local-tooling convenience only: on the deployed server this looks for
+// `.env.credentials` and finds nothing (there is no repo checkout), which is
+// harmless — `finishHero` reads `process.env.FAL_KEY` at CALL time, where the
+// server's mounted secret is already in the environment.
 loadCredentials()
 
 const UPSCALE_ENDPOINT = 'https://fal.run/fal-ai/clarity-upscaler'
@@ -112,10 +125,10 @@ const KNIT_PROMPTS: Record<string, string> = {
 // The background clause is common to every prompt (no per-pattern flag) so
 // every hero — flat swatch, finished-object flatlay/loop, or amigurumi
 // composition — asks the upscaler for the same crisp e-commerce backdrop the
-// Blender base now renders (loom_render_crochet.py's whiten_ground). Without
-// this the base's own near-white ground was the only cue, and the upscaler's
-// "soft natural window light" phrasing pulled it back toward a lifestyle-photo
-// grey/mottled surface at creativity 0.55.
+// Blender base now renders (loom_render_crochet.py's camera-ray ground boost,
+// surface_material). Without this the base's own near-white ground was the
+// only cue, and the upscaler's "soft natural window light" phrasing pulled it
+// back toward a lifestyle-photo grey/mottled surface at creativity 0.55.
 const WHITE_BG =
   'Photographed on a clean, seamless, pure white studio background — a plain solid white surface with no visible texture, pattern, mottling, colour cast, or vignette.'
 
@@ -190,35 +203,89 @@ async function upscale(
   return { width: img.width, height: img.height, bytes: buf.length, seed: data.seed }
 }
 
+export interface FinishHeroOptions {
+  /** The deterministic Blender base PNG to finish. */
+  basePng: string
+  /** Where to write the finished hero. Defaults to `<basePng>` with `-hero` before `.png`. */
+  outPng?: string
+  /** Dictionary stitch (drives which prompt/negative pair is used). Default 'sc'. */
+  stitch?: string
+  /** Fal creative-upscale creativity. Default 0.5 (the lock). */
+  creativity?: number
+  /** Fal creative-upscale resemblance. Default 0.85 (the lock). */
+  resemblance?: number
+  /** Override the stitch's built-in prompt (rare — testing/tuning only). */
+  promptOverride?: string
+  /** Override the stitch's built-in negative prompt (rare — testing/tuning only). */
+  negativePromptOverride?: string
+}
+
+export interface FinishHeroResult {
+  /** The finished hero PNG on disk. */
+  heroPng: string
+  /** The fidelity gate's verdict comparing the hero back to the base. */
+  fidelity: FidelityVerdict
+  /** How many upscale calls this took. Always 1 — a single locked attempt,
+   *  same as the CLI; the caller (photorealHero) decides what to do on a
+   *  FAIL, same as it always has. */
+  attempts: number
+  /** 'upscale' always — kept for symmetry with the needlework hero's result
+   *  shape (renderHero's HeroPath), where a FAILed gate falls back to the base
+   *  one level up rather than inside this function. */
+  pathTaken: 'upscale'
+}
+
+/**
+ * THE photoreal finish, callable in process. Fal creative-upscale (structure-
+ * locked to the deterministic base) + the fidelity gate, one attempt, same as
+ * the CLI below has always done. Reads FAL_KEY from the environment at CALL
+ * time (not at import), so it works equally from a worker box's
+ * `.env.credentials` and from the deployed server's mounted secret.
+ */
+export async function finishHero(options: FinishHeroOptions): Promise<FinishHeroResult> {
+  const base = resolve(process.cwd(), options.basePng)
+  const creativity = options.creativity ?? 0.5
+  const resemblance = options.resemblance ?? 0.85
+  const stitch = (options.stitch ?? 'sc').toLowerCase()
+  if (!existsSync(base)) throw new Error(`base not found: ${base}`)
+
+  const knit = stitch in KNIT_PROMPTS
+  const prompt =
+    options.promptOverride ??
+    (knit ? `${KNIT_PROMPTS[stitch]} ${COMMON_KNIT}` : `${STITCH_PROMPTS[stitch] ?? STITCH_PROMPTS.sc} ${COMMON}`)
+  const negativePrompt = options.negativePromptOverride ?? (knit ? NEG_KNIT : NEG)
+  const out = options.outPng ?? base.replace(/\.png$/, '-hero.png')
+
+  console.log(`[Step 4] upscale base=${basename(base)} stitch=${stitch} creativity=${creativity} resemblance=${resemblance}`)
+  const meta = await upscale(base, out, creativity, resemblance, prompt, negativePrompt)
+  console.log(`wrote ${out} (${(meta.bytes / 1024).toFixed(0)} KB, ${meta.width}x${meta.height})`)
+
+  // Fidelity gate: confirm the upscale didn't move the stitches.
+  const fidelity = await fidelityGate(base, out)
+  console.log(
+    `[gate] structure=${fidelity.structureScore.toFixed(3)} colour=${fidelity.colourDelta.toFixed(3)} -> ${fidelity.pass ? 'PASS' : 'FAIL'}`,
+  )
+  if (!fidelity.pass) {
+    console.log('  (drift detected — retry at lower creativity, or fall back to the deterministic base)')
+  }
+  return { heroPng: out, fidelity, attempts: 1, pathTaken: 'upscale' }
+}
+
 async function main() {
-  const base = resolve(process.cwd(), process.argv[2] ?? '../../.loom-scratch/crochet/aspen-swatch.png')
+  const base = process.argv[2] ?? '../../.loom-scratch/crochet/aspen-swatch.png'
   const creativity = Number(process.argv[3] ?? 0.5)
   const resemblance = Number(process.argv[4] ?? 0.85)
   // argv[5] = the swatch arg (preferred), argv[6] = its dictionary stitch as a
   // fallback — the first of the two with a prompt on file wins.
   const argName = (process.argv[5] ?? 'sc').toLowerCase()
   const fallback = (process.argv[6] ?? 'sc').toLowerCase()
-  const stitch =
-    argName in STITCH_PROMPTS || argName in KNIT_PROMPTS ? argName : fallback
-  if (!existsSync(base)) throw new Error(`base not found: ${base}`)
-
-  const knit = stitch in KNIT_PROMPTS
-  const prompt = knit
-    ? `${KNIT_PROMPTS[stitch]} ${COMMON_KNIT}`
-    : `${STITCH_PROMPTS[stitch] ?? STITCH_PROMPTS.sc} ${COMMON}`
-  const out = base.replace(/\.png$/, '-hero.png')
-  console.log(`[Step 4] upscale base=${basename(base)} stitch=${stitch} creativity=${creativity} resemblance=${resemblance}`)
-  const meta = await upscale(base, out, creativity, resemblance, prompt, knit ? NEG_KNIT : NEG)
-  console.log(`wrote ${out} (${(meta.bytes / 1024).toFixed(0)} KB, ${meta.width}x${meta.height})`)
-
-  // Fidelity gate: confirm the upscale didn't move the stitches.
-  const verdict = await fidelityGate(base, out)
-  console.log(
-    `[gate] structure=${verdict.structureScore.toFixed(3)} colour=${verdict.colourDelta.toFixed(3)} -> ${verdict.pass ? 'PASS' : 'FAIL'}`,
-  )
-  if (!verdict.pass) {
-    console.log('  (drift detected — retry at lower creativity, or fall back to the deterministic base)')
-  }
+  const stitch = argName in STITCH_PROMPTS || argName in KNIT_PROMPTS ? argName : fallback
+  await finishHero({ basePng: base, creativity, resemblance, stitch })
 }
 
-main()
+if (IS_MAIN) {
+  main().catch((e) => {
+    console.error('[loom-aspen-hero] FAILED:', e instanceof Error ? e.message : String(e))
+    process.exit(1)
+  })
+}

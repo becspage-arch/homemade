@@ -1,0 +1,27 @@
+{
+  "family": "homemade-loom-render-probe",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "4096",
+  "memory": "8192",
+  "runtimePlatform": {"cpuArchitecture": "X86_64", "operatingSystemFamily": "LINUX"},
+  "taskRoleArn": "arn:aws:iam::213615929920:role/HomemadeStack-LoomRenderTaskTaskRole5AC7D40D-vBwdJQP71i4Y",
+  "executionRoleArn": "arn:aws:iam::213615929920:role/HomemadeStack-LoomRenderTaskExecutionRole2D82A5DB-m1JWG68vAa4m",
+  "containerDefinitions": [
+    {
+      "name": "loom-render",
+      "image": "213615929920.dkr.ecr.eu-west-2.amazonaws.com/homemade/loom-render:latest",
+      "essential": true,
+      "entryPoint": ["/bin/bash", "-c"],
+      "command": ["echo noop"],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/homemade/loom-render",
+          "awslogs-region": "eu-west-2",
+          "awslogs-stream-prefix": "loom-probe"
+        }
+      }
+    }
+  ]
+}

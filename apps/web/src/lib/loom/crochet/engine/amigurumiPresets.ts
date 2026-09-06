@@ -154,29 +154,49 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
 }
 
 /**
- * How far the hanging arm and forward leg need lifting off their `seat`
- * placement to keep every paw pad and foot on or above the table.
+ * How far the forward leg needs lifting off its `seat` placement to keep every
+ * foot pad on or above the table.
  *
  * `offset.z` in `PartPlacement` is a straight world-mm nudge applied AFTER the
  * whole rigid placement (composition.ts), so it moves a limb — and whatever
- * is seated on it, like a paw pad — by exactly this many mm. The M values
- * (0.5 / -0.4) are the signed-off bear's own tuned numbers (round 2, §8e-2)
- * and are UNCHANGED here. They do not carry to S or L: those sizes change the
- * body, head and limb ROUND COUNTS (`SIZES`) but the paw pad is the same
- * absolute size at every size (fixed `scale: 0.62` on the same `s.muzzle`
- * profile for S/M), so on the shorter S arm and the longer L arm it reaches
- * proportionally further past the limb's own tip — measured (not guessed) off
- * each size's settled, offset-free chain: an S arm's paw pad and an L leg's
- * foot both sink well below the table at the M lift, so each size carries its
- * own measured lift. `amigurumi-presets.test.ts` asserts every preset settles
- * with minz within 0.5 mm of the table, which is what would catch this again
- * if a future round-count or placement change moves it.
+ * is seated on it, like a paw pad — by exactly this many mm. The M leg value
+ * (-0.4) is the signed-off bear's own tuned number (round 2, §8e-2) and is
+ * UNCHANGED here. It does not carry to S or L: those sizes change the body,
+ * head and limb ROUND COUNTS (`SIZES`) but the paw pad is the same absolute
+ * size at every size (fixed `scale: 0.62` on the same `s.muzzle` profile for
+ * S/M), so on the longer L leg it reaches proportionally further past the
+ * limb's own tip — measured (not guessed) off each size's settled, offset-free
+ * chain. `amigurumi-presets.test.ts` asserts every preset settles with minz
+ * within 0.5 mm of the table, which is what would catch this again if a future
+ * round-count or placement change moves it.
+ *
+ * The ARM carries no lift any more. Round 2's arm lifts (S 4.2 / M 0.5 / L 8.0)
+ * existed only because a straight-down arm's paw pad reached below the table;
+ * the round-3 arm is held out and forward and its lowest point clears the
+ * ground at every size, measured.
  */
-const GROUND_LIFT: Record<AmigurumiSize, { arm: number; leg: number }> = {
-  S: { arm: 4.2, leg: 0.7 },
-  M: { arm: 0.5, leg: -0.4 },
-  L: { arm: 8.0, leg: 1.5 },
+const GROUND_LIFT: Record<AmigurumiSize, { leg: number }> = {
+  S: { leg: 0.7 },
+  M: { leg: -0.4 },
+  L: { leg: 1.5 },
 }
+
+/**
+ * ROUND 3 — the arm pose, from the signed-off bear proof
+ * (`apps/web/scripts/loom-composition-proofs.ts`). Round 2 hung both arms
+ * straight down the body's sides, which on a body the arm is nearly as long as
+ * settled the cream paw pads BELOW the cream foot pads: the figure read as four
+ * feet with the arms coming out from under the legs.
+ *
+ * `ARM_DIR_*` is the attach direction on the body ellipsoid — 45° elevation,
+ * 18° toward the front, i.e. the shoulder slope. `ARM_AIM_*` is where the arm
+ * then points: tan 67° out of vertical in the side plane, tan 42° forward, so
+ * the elbow swings clear of the body and the paw lands at mid-body.
+ */
+const ARM_DIR_Z = 1.0
+const ARM_DIR_Y = 0.325
+const ARM_AIM_Y = 0.3822
+const ARM_AIM_Z = -0.4245
 
 /** The camera every figure is staged at, and therefore the angle the face is
  *  turned back through so it meets the lens. Both from the signed-off bear. */
@@ -248,9 +268,11 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
 
   const main = choices.mainHex
   const contrast = choices.contrastHex
-  // Where each limb points once it is sewn on: an arm hangs down the side and a
-  // little forward, a leg lies forward along the table so the figure sits.
-  const armAim = (side: -1 | 1): Dir => ({ x: side * 0.32, y: 0.5, z: -0.75 })
+  // Where each limb is sewn and which way it then points. The arm numbers are
+  // the signed-off bear's ROUND-3 pose (see ARM_DIR_Z / ARM_AIM_Z above); the
+  // leg is unchanged — it lies forward along the table so the figure sits.
+  const armDir = (side: -1 | 1): Dir => ({ x: side * 1, y: ARM_DIR_Y, z: ARM_DIR_Z })
+  const armAim = (side: -1 | 1): Dir => ({ x: side * 1, y: ARM_AIM_Y, z: ARM_AIM_Z })
   const legAim = (side: -1 | 1): Dir => ({ x: side * 0.26, y: 1, z: -0.05 })
 
   const parts: AmigurumiPart[] = [
@@ -306,13 +328,8 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     parts.push({
       name: side < 0 ? 'arm-l' : 'arm-r', stitch: 'sc', rounds: s.limb, colourHex: main, scale: 0.78,
       place: {
-        on: 'body', dir: { x: side, y: 0.28, z: 0.7 },
+        on: 'body', dir: armDir(side),
         aim: armAim(side), seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
-        // A paw pad on the end of a hanging arm otherwise reaches just below the
-        // table, and the renderer floats the whole piece up to clear it, which
-        // takes the legs off the ground. Hold the arm the lift (per size,
-        // GROUND_LIFT) that keeps every part on or above the table.
-        offset: { z: lift.arm },
       },
     })
   }

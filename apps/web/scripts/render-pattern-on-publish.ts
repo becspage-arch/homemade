@@ -25,7 +25,16 @@
 
 import { readFileSync } from 'node:fs'
 import { prisma, r2Upload } from '@homemade/db'
-import { renderProgram, renderComposition } from './loom-pattern'
+import {
+  renderProgram,
+  renderComposition,
+  startProgramRender,
+  startCompositionRender,
+  pollProgramRender,
+  finishProgramRender,
+  type ProgramRenderStart,
+} from './loom-pattern'
+import type { FargatePollResult } from './loom-fargate-render'
 import { writeInstructions, programToChart, type CrochetProgram } from '../src/lib/loom/crochet/engine/program'
 import { compileRelaxAudit, geometryHash } from '../src/lib/loom/crochet/engine/programScene'
 import type { BuiltContinuous } from '../src/lib/loom/crochet/engine/yarnPath'
@@ -79,6 +88,22 @@ export interface PatternRenderPlan {
   problems: string[]
   /** What the batch should do with this row. */
   action: 'RENDER' | 'SKIPPED_UNCHANGED' | 'AUDIT_FAILED' | 'NO_PROGRAM'
+}
+
+/**
+ * The plan WITHOUT its compiled geometry — the half that is plain JSON.
+ *
+ * `built` and `compiled` are large object graphs and nothing downstream of the
+ * render reads them, so the asynchronous path drops them: a value that crosses
+ * an Inngest step boundary is serialised and replayed, and a megabyte of yarn
+ * path per idea is not something to carry through a queue.
+ */
+export type PatternRenderPlanLite = Omit<PatternRenderPlan, 'built' | 'compiled'>
+
+/** Drop the compiled geometry, keeping everything the persist step reads. */
+export function planLite(plan: PatternRenderPlan): PatternRenderPlanLite {
+  const { built: _built, compiled: _compiled, ...rest } = plan
+  return rest
 }
 
 interface StoredPatternRow {
@@ -164,7 +189,7 @@ export async function planPatternRender(patternId: string, yrOverride?: number):
 
 /** Record a failed audit against the row (so the state is visible in the DB and
  *  a broken pattern is never silently left looking PENDING for ever). */
-export async function markAuditFailed(plan: PatternRenderPlan): Promise<void> {
+export async function markAuditFailed(plan: PatternRenderPlanLite): Promise<void> {
   await prisma.crochetPattern.update({
     where: { id: plan.patternId },
     data: { loomRenderStatus: 'FAILED_VERIFICATION', loomGeometryHash: plan.geometryHash },
@@ -177,8 +202,26 @@ export async function markAuditFailed(plan: PatternRenderPlan): Promise<void> {
  * never write a row differently.
  */
 export async function persistPatternRender(
-  plan: PatternRenderPlan,
-  art: { heroPath: string; fidelityScore: number | null; yr: number },
+  plan: PatternRenderPlanLite,
+  art: {
+    heroPath: string
+    fidelityScore: number | null
+    yr: number
+    /**
+     * Richer faces the CALLER derived from the same program, used instead of
+     * re-deriving them below.
+     *
+     * The plain writer sees the stitches and not the yarn: it cannot say "join
+     * the teal and work rows 5 and 6", because colour lives beside the stitch
+     * list rather than in it. The bulk publisher does know, and a striped cloth
+     * whose instructions never say when to change colour is not a makeable
+     * pattern. When it passes its own rows here, they are what the row stores;
+     * when nobody passes anything (the CLI, the batch, the maker's own render)
+     * the derivation below is unchanged.
+     */
+    rowsStructured?: unknown
+    chartData?: unknown
+  },
 ): Promise<string> {
   const filename = `${plan.slug ?? plan.name}-loom-hero.png`
   const bytes = readFileSync(art.heroPath)
@@ -200,15 +243,23 @@ export async function persistPatternRender(
   // the pattern's chart would mislead), so it keeps whatever chart it has —
   // none — and only its words are rewritten.
   const composed = plan.kind === 'composition'
-  const chart = composed ? null : programToChart(plan.program as CrochetProgram)
-  const rowsStructured = composed
-    ? (compositionRowsStructured(plan.program as CompositionProgram) as unknown as object)
-    : writeInstructions(plan.program as CrochetProgram).map((line, i) => ({
-        section: 'Body',
-        rowNumber: i,
-        rowLabel: line.split(':')[0] ?? `Line ${i + 1}`,
-        instruction: line,
-      }))
+  const chart =
+    art.chartData !== undefined
+      ? art.chartData
+      : composed
+        ? null
+        : programToChart(plan.program as CrochetProgram)
+  const rowsStructured =
+    art.rowsStructured !== undefined
+      ? (art.rowsStructured as unknown as object)
+      : composed
+        ? (compositionRowsStructured(plan.program as CompositionProgram) as unknown as object)
+        : writeInstructions(plan.program as CrochetProgram).map((line, i) => ({
+            section: 'Body',
+            rowNumber: i,
+            rowLabel: line.split(':')[0] ?? `Line ${i + 1}`,
+            instruction: line,
+          }))
 
   await prisma.crochetPattern.update({
     where: { id: plan.patternId },
@@ -220,7 +271,7 @@ export async function persistPatternRender(
       loomFidelityScore: art.fidelityScore,
       loomGeometryHash: plan.geometryHash,
       loomYarnRadiusMm: art.yr,
-      ...(chart ? { chartData: chart } : {}),
+      ...(chart ? { chartData: chart as object } : {}),
       rowsStructured,
     },
   })
@@ -289,6 +340,113 @@ export async function renderPatternOnPublish(
 
   return {
     patternId,
+    slug: plan.slug,
+    status: 'RENDERED',
+    geometryHash: res.geometryHash,
+    fidelityScore: res.fidelityScore,
+    heroUrl,
+  }
+}
+
+
+// ── Render-on-publish, driven ASYNCHRONOUSLY ────────────────────────────────
+//
+// `renderPatternOnPublish` waits out the Fargate render, which is right from
+// the CLI and impossible inside a server request. These three drive the same
+// work across three separate requests instead — start the task, sleep and poll,
+// then finish and persist — so the Inngest job that heroes a maker's own design
+// never holds a request open for eight minutes.
+//
+// Everything crossing between them is plain JSON (see PatternRenderPlanLite).
+
+export interface PatternRenderStart {
+  plan: PatternRenderPlanLite
+  /** Set when NOTHING was started — the caller returns this as the outcome. */
+  outcome: RenderOnPublishResult | null
+  /** Set when a render is in flight. */
+  render: ProgramRenderStart | null
+}
+
+/**
+ * Plan, audit, and START the render. The idempotency check and the audit gate
+ * both run here, before a single ECS task is launched: a no-op publish must
+ * cost a compile, never a render.
+ */
+export async function startPatternRender(
+  patternId: string,
+  options: RenderOnPublishOptions = {},
+): Promise<PatternRenderStart> {
+  const full = await planPatternRender(patternId, options.yr)
+  const plan = planLite(full)
+  const stop = (outcome: RenderOnPublishResult): PatternRenderStart => ({ plan, outcome, render: null })
+
+  if (plan.action === 'NO_PROGRAM') return stop({ patternId, slug: plan.slug, status: 'NO_PROGRAM' })
+  if (plan.action === 'AUDIT_FAILED') {
+    if (!options.dryRun) await markAuditFailed(plan)
+    return stop({
+      patternId,
+      slug: plan.slug,
+      status: 'AUDIT_FAILED',
+      geometryHash: plan.geometryHash ?? undefined,
+      problems: plan.problems,
+    })
+  }
+  if (plan.action === 'SKIPPED_UNCHANGED' && !options.dryRun) {
+    return stop({ patternId, slug: plan.slug, status: 'SKIPPED_UNCHANGED', geometryHash: plan.geometryHash ?? undefined })
+  }
+
+  const renderOptions = {
+    name: plan.slug ?? plan.name,
+    yr: options.yr,
+    hero: options.hero,
+    outDir: options.outDir,
+    // A stored pattern carries its own finished-object staging.
+    staging: (plan.program as CrochetProgram).staging,
+  }
+  const render =
+    plan.kind === 'composition'
+      ? await startCompositionRender(plan.program as CompositionProgram, renderOptions)
+      : await startProgramRender(plan.program as CrochetProgram, renderOptions)
+
+  if (render.problems.length) {
+    if (!options.dryRun) await markAuditFailed(plan)
+    return stop({ patternId, slug: plan.slug, status: 'AUDIT_FAILED', geometryHash: render.geometryHash, problems: render.problems })
+  }
+  return { plan, outcome: null, render }
+}
+
+/** Has the started render finished, and did it work? One AWS call. */
+export async function pollPatternRender(start: PatternRenderStart): Promise<FargatePollResult> {
+  if (!start.render) throw new Error(`pollPatternRender: ${start.plan.patternId} has no render in flight`)
+  return pollProgramRender(start.render)
+}
+
+/**
+ * The second half: fetch the finished PNG, run the photoreal finish, then
+ * persist the hero and write back every derived face. Self-contained — it takes
+ * nothing from the box that started the render but this JSON.
+ */
+export async function finishPatternRender(
+  start: PatternRenderStart,
+  options: RenderOnPublishOptions = {},
+): Promise<RenderOnPublishResult> {
+  const { plan, render } = start
+  if (!render) throw new Error(`finishPatternRender: ${plan.patternId} has no render in flight`)
+
+  const res = await finishProgramRender(render, { outDir: options.outDir, hero: options.hero })
+  if (options.dryRun) {
+    return { patternId: plan.patternId, slug: plan.slug, status: 'RENDERED', geometryHash: res.geometryHash, fidelityScore: res.fidelityScore }
+  }
+
+  const heroPath = res.heroPng ?? res.basePng
+  if (!heroPath) throw new Error(`${plan.patternId}: no render produced`)
+  const heroUrl = await persistPatternRender(plan, {
+    heroPath,
+    fidelityScore: res.fidelityScore,
+    yr: res.yr,
+  })
+  return {
+    patternId: plan.patternId,
     slug: plan.slug,
     status: 'RENDERED',
     geometryHash: res.geometryHash,

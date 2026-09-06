@@ -116,27 +116,27 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
     "height": 60
   },
   "bear-S": {
-    "width": 55,
+    "width": 85,
     "height": 80
   },
   "bear-M": {
-    "width": 65,
+    "width": 95,
     "height": 105
   },
   "bear-L": {
-    "width": 85,
+    "width": 125,
     "height": 120
   },
   "bunny-S": {
-    "width": 55,
+    "width": 85,
     "height": 100
   },
   "bunny-M": {
-    "width": 65,
+    "width": 95,
     "height": 135
   },
   "bunny-L": {
-    "width": 85,
+    "width": 125,
     "height": 145
   }
 }

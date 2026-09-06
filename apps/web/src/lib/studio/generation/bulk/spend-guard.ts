@@ -91,6 +91,81 @@ export function overCap(window: SpendWindow, opts: { pro?: boolean } = {}): stri
   return null
 }
 
+// ─────────────────────────── CROCHET ───────────────────────────
+
+/**
+ * THE CROCHET SPEND GUARD.
+ *
+ * Crochet spends differently from cross-stitch, so it gets its own ceiling
+ * rather than a share of that one. Every idea costs a FARGATE TASK (a 4-vCPU
+ * Blender render, minutes of task time), and the pictorial lane additionally
+ * costs one Flux illustration. There is no best-of-N: the geometry is
+ * deterministic, so a second roll of the same program is the same image, and
+ * the runner takes at most one repair render per idea.
+ *
+ * Same shape as the cross-stitch cap and the same binary rule: at or over the
+ * ceiling, nothing generates. Checked in the dispatcher's preflight and again
+ * inside the batch, because the preflight's answer is minutes stale by the time
+ * a late idea runs.
+ */
+
+/**
+ * Crochet RENDERS allowed in any trailing 24 hours.
+ *
+ * Sized for four six-hourly firings of six ideas, plus a repair render on a
+ * couple of them: 4 x 6 = 24, and 40 leaves room for a bad night and a manual
+ * batch on top without the cap silently truncating a normal day. A cold Fargate
+ * task is seven or eight minutes, so this is roughly five task-hours a day.
+ */
+export const CROCHET_DAILY_RENDER_CAP = Number(process.env.BULK_CROCHET_RENDER_CAP) || 40
+
+/**
+ * Of those, how many may also pay for a Flux illustration — the pictorial
+ * tapestry lane, which is the only crochet path that touches the image engine
+ * at all. The showpiece end of the range uses the dense Pro tier.
+ */
+export const CROCHET_DAILY_ILLUSTRATION_CAP = Number(process.env.BULK_CROCHET_ILLUSTRATION_CAP) || 12
+
+/**
+ * Approximate cost of one Fargate render task, for the admin spend line only —
+ * never for a decision. A 4-vCPU / 8 GB Fargate task for about eight minutes at
+ * on-demand rates.
+ */
+export const CROCHET_RENDER_UNIT_COST = 0.03
+
+/** Sum the crochet counters over the trailing `hours`. */
+export async function crochetSpendWindow(hours = 24): Promise<SpendWindow> {
+  const since = new Date(Date.now() - hours * 60 * 60 * 1000)
+  const agg = await prisma.bulkRun.aggregate({
+    where: { craft: 'crochet', startedAt: { gte: since } },
+    _sum: { generations: true, proGenerations: true },
+  })
+  return {
+    // `generations` counts renders for crochet; `proGenerations` counts the
+    // ideas that also paid for an illustration. Same columns, craft-specific
+    // meaning, so the BulkRun table stays one shape across the crafts.
+    generations: agg._sum.generations ?? 0,
+    proGenerations: agg._sum.proGenerations ?? 0,
+    since,
+  }
+}
+
+/** Binary cap verdict for crochet. Null when there is room. */
+export function overCrochetCap(window: SpendWindow, opts: { illustration?: boolean } = {}): string | null {
+  if (window.generations >= CROCHET_DAILY_RENDER_CAP) {
+    return `daily crochet render cap reached (${window.generations}/${CROCHET_DAILY_RENDER_CAP} in the last 24h)`
+  }
+  if (opts.illustration && window.proGenerations >= CROCHET_DAILY_ILLUSTRATION_CAP) {
+    return `daily crochet illustration cap reached (${window.proGenerations}/${CROCHET_DAILY_ILLUSTRATION_CAP} in the last 24h)`
+  }
+  return null
+}
+
+/** Approximate crochet spend for a window (renders plus illustrations). */
+export function approxCrochetSpend(window: SpendWindow): number {
+  return window.generations * CROCHET_RENDER_UNIT_COST + window.proGenerations * PRO_UNIT_COST
+}
+
 /** Approximate spend for a window, in the same units as the unit costs above. */
 export function approxSpend(window: SpendWindow): number {
   const schnell = Math.max(0, window.generations - window.proGenerations)
