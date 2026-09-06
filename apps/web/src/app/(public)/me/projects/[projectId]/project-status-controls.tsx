@@ -37,7 +37,7 @@ export function ProjectStatusControls({
     return (
       <div>
         <p style={{ fontFamily: 'var(--font-lora)', marginTop: 0 }}>
-          Logged as made. Add a photo of how it turned out?
+          Logged as made. Put a photo of it on the page?
         </p>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
           <UploadPhotoButton tutorialId={tutorialId} signedIn />

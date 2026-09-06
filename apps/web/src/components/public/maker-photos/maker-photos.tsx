@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { PatternType } from '@homemade/db'
 import type { MakerPhotoView } from '@/lib/maker-photos'
 import { UploadPhotoButton } from './upload-photo-button'
+import { PhotoReportLink } from './photo-report-link'
 
 import './maker-photos.css'
 
@@ -83,6 +84,7 @@ export function MakerPhotos({
                 <span className="maker-photos-credit">{p.handle}</span>
               )}
               {p.caption && <span className="maker-photos-caption">{p.caption}</span>}
+              {signedIn && <PhotoReportLink photoId={p.id} />}
             </li>
           ))}
         </ul>

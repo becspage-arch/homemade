@@ -5,6 +5,7 @@ import {
   prisma,
   CreatorApplicationStatus,
   TutorialStatus,
+  UGCPhotoStatus,
 } from '@homemade/db'
 import { mediaSrcSet, mediaUrl } from '@/lib/media'
 import { getCurrentDbUser } from '@/lib/get-current-user'
@@ -136,7 +137,11 @@ export default async function MakerProfilePage({ params }: PageProps) {
           },
         },
         heroPhoto: {
-          select: { media: { select: { cloudflareId: true, r2Key: true } } },
+          select: {
+            status: true,
+            removedAt: true,
+            media: { select: { cloudflareId: true, r2Key: true } },
+          },
         },
       },
       take: 60,
@@ -298,7 +303,14 @@ export default async function MakerProfilePage({ params }: PageProps) {
         ) : (
           <div className="maker-public-grid">
             {madeItProjects.map((p) => {
-              const heroSource = p.heroPhoto?.media ?? p.tutorial.hero
+              // A photo the maker has taken down, or one the gate never
+              // approved, must not stay on as the tile image.
+              const heroSource =
+                (p.heroPhoto &&
+                p.heroPhoto.status === UGCPhotoStatus.APPROVED &&
+                p.heroPhoto.removedAt === null
+                  ? p.heroPhoto.media
+                  : null) ?? p.tutorial.hero
               const card = mediaSrcSet(heroSource, 'card', ['public'])
               return (
                 <Link

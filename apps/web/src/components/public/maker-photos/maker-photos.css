@@ -240,3 +240,28 @@ a.maker-photos-credit:hover {
   font-size: 15px;
   color: var(--color-warm-taupe);
 }
+
+.maker-photos-report {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--color-warm-taupe);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.maker-photos-item:hover .maker-photos-report,
+.maker-photos-report:focus-visible {
+  opacity: 1;
+}
+
+.maker-photos-report:hover {
+  color: var(--color-burnt-sienna);
+  text-decoration: underline;
+}

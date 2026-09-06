@@ -79,6 +79,7 @@ export default async function MeProjectDetailPage({ params }: PageProps) {
       userId: user.id,
       tutorialId: project.tutorial.id,
       status: UGCPhotoStatus.APPROVED,
+      removedAt: null,
     },
     orderBy: { createdAt: 'desc' },
     select: {
