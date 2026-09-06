@@ -308,7 +308,93 @@ const KNITTING_SYMBOLS: ChartSymbolDefinition[] = [
   },
 ]
 
-const ALL_SYMBOLS = [...CROCHET_SYMBOLS, ...KNITTING_SYMBOLS]
+/**
+ * Cross-stitch symbols. Counted work sits on a grid, so every glyph is drawn
+ * inside a faint cell square: the square is the fabric square, the mark inside
+ * it is the stitch. That keeps the reference honest about where a stitch sits
+ * relative to the hole it goes through, which is the thing a beginner is
+ * trying to read off a chart.
+ *
+ * Drawn on the same 24x24 box as the other crafts, so the shared glyph
+ * renderer needs no special case.
+ */
+const CELL = '<rect x="-9" y="-9" width="18" height="18" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.45"/>'
+
+const CROSS_STITCH_SYMBOLS: ChartSymbolDefinition[] = [
+  {
+    craft: 'cross-stitch',
+    key: 'full-cross',
+    label: 'Full cross stitch',
+    // Two diagonals corner to corner: one square, one stitch.
+    svg: CELL + '<line x1="-9" y1="9" x2="9" y2="-9" stroke="currentColor" stroke-width="2"/><line x1="-9" y1="-9" x2="9" y2="9" stroke="currentColor" stroke-width="2"/>',
+  },
+  {
+    craft: 'cross-stitch',
+    key: 'half-stitch',
+    label: 'Half stitch',
+    // The first leg only, bottom left to top right.
+    svg: CELL + '<line x1="-9" y1="9" x2="9" y2="-9" stroke="currentColor" stroke-width="2"/>',
+  },
+  {
+    craft: 'cross-stitch',
+    key: 'quarter-stitch',
+    label: 'Quarter stitch',
+    // Corner into the centre of the square.
+    svg: CELL + '<line x1="-9" y1="9" x2="0" y2="0" stroke="currentColor" stroke-width="2"/><circle cx="0" cy="0" r="1.3" fill="currentColor"/>',
+  },
+  {
+    craft: 'cross-stitch',
+    key: 'three-quarter-stitch',
+    label: 'Three-quarter stitch',
+    // A half stitch plus a quarter into the centre: the shape that fills a
+    // triangle of the square.
+    svg: CELL + '<line x1="-9" y1="9" x2="9" y2="-9" stroke="currentColor" stroke-width="2"/><line x1="-9" y1="-9" x2="0" y2="0" stroke="currentColor" stroke-width="2"/><circle cx="0" cy="0" r="1.3" fill="currentColor"/>',
+  },
+  {
+    craft: 'cross-stitch',
+    key: 'back-stitch',
+    label: 'Back-stitch',
+    // A solid line worked along the edge of the squares, hole to hole.
+    svg: CELL + '<line x1="-9" y1="0" x2="9" y2="0" stroke="currentColor" stroke-width="2.4"/><circle cx="-9" cy="0" r="1.6" fill="currentColor"/><circle cx="9" cy="0" r="1.6" fill="currentColor"/>',
+  },
+  {
+    craft: 'cross-stitch',
+    key: 'running-stitch',
+    label: 'Running stitch',
+    // A dashed line: stitch, gap, stitch.
+    svg: CELL + '<line x1="-9" y1="0" x2="9" y2="0" stroke="currentColor" stroke-width="2.4" stroke-dasharray="5 3"/>',
+  },
+  {
+    craft: 'cross-stitch',
+    key: 'long-stitch',
+    label: 'Long stitch',
+    // One straight stitch spanning more than one square.
+    svg: CELL + '<line x1="-11" y1="6" x2="11" y2="-6" stroke="currentColor" stroke-width="2.4"/><circle cx="-11" cy="6" r="1.6" fill="currentColor"/><circle cx="11" cy="-6" r="1.6" fill="currentColor"/>',
+  },
+  {
+    craft: 'cross-stitch',
+    key: 'french-knot',
+    label: 'French knot',
+    // A filled bead sitting on the fabric with the wrap showing.
+    svg: CELL + '<circle cx="0" cy="0" r="4.5" fill="currentColor"/><path d="M -7 4 Q -4 6 -1 4.4" fill="none" stroke="currentColor" stroke-width="1.4"/>',
+  },
+  {
+    craft: 'cross-stitch',
+    key: 'lazy-daisy',
+    label: 'Lazy daisy',
+    // A single chain loop anchored at the base.
+    svg: CELL + '<path d="M 0 8 Q -6 0 0 -8 Q 6 0 0 8 Z" fill="none" stroke="currentColor" stroke-width="1.8"/><line x1="0" y1="-8" x2="0" y2="-10.5" stroke="currentColor" stroke-width="1.8"/>',
+  },
+  {
+    craft: 'cross-stitch',
+    key: 'satin-stitch',
+    label: 'Satin stitch',
+    // Parallel straight stitches laid side by side to fill the shape.
+    svg: CELL + '<line x1="-6" y1="8" x2="-6" y2="-8" stroke="currentColor" stroke-width="1.8"/><line x1="-2" y1="8" x2="-2" y2="-8" stroke="currentColor" stroke-width="1.8"/><line x1="2" y1="8" x2="2" y2="-8" stroke="currentColor" stroke-width="1.8"/><line x1="6" y1="8" x2="6" y2="-8" stroke="currentColor" stroke-width="1.8"/>',
+  },
+]
+
+const ALL_SYMBOLS = [...CROCHET_SYMBOLS, ...KNITTING_SYMBOLS, ...CROSS_STITCH_SYMBOLS]
 
 const SYMBOL_INDEX = new Map<string, ChartSymbolDefinition>(
   ALL_SYMBOLS.map((s) => [`${s.craft}:${s.key}`, s]),

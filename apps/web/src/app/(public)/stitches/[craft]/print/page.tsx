@@ -50,7 +50,7 @@ export default async function StitchCheatSheetPage({ params, searchParams }: Pag
           <strong>{cfg.title} stitch cheat sheet</strong>
           <p>
             Save as PDF or print to paper from your browser (Ctrl/Cmd&nbsp;+&nbsp;P). Showing{' '}
-            {terminology === 'uk' ? 'UK' : 'US'} terminology —{' '}
+            {terminology === 'uk' ? 'UK' : 'US'} terminology.{' '}
             <Link href={`/stitches/${craftSlug}/print?terminology=uk`}>UK</Link>
             {' · '}
             <Link href={`/stitches/${craftSlug}/print?terminology=us`}>US</Link>

@@ -40,6 +40,16 @@ import { STITCHES } from './data/stitches.js'
 
 const DRY_RUN = process.argv.includes('--dry-run')
 
+/**
+ * `--craft=<craft>` limits the run to one craft's rows. Without it the seeder
+ * writes every row in the seed file, which will also push any drift that has
+ * built up between the file and the live table for the other crafts. Seeding
+ * a new craft should not carry that with it, so the cross-stitch batch was
+ * landed with `--craft=cross-stitch`.
+ */
+const CRAFT_FILTER =
+  process.argv.find((a) => a.startsWith('--craft='))?.slice('--craft='.length) ?? null
+
 async function main(): Promise<void> {
   const { prisma } = await import('../src/index.js')
 
@@ -49,9 +59,15 @@ async function main(): Promise<void> {
 
   // Two passes: first the rows without parents, then the rows with parents
   // (so the parent FK resolves cleanly without a deferred-constraint dance).
+  const selected = CRAFT_FILTER
+    ? STITCHES.filter((s) => s.craft === CRAFT_FILTER)
+    : STITCHES
+  if (CRAFT_FILTER && selected.length === 0) {
+    throw new Error(`No seed rows for craft "${CRAFT_FILTER}".`)
+  }
   const ordered = [
-    ...STITCHES.filter((s) => !s.parentStitchSlug),
-    ...STITCHES.filter((s) => s.parentStitchSlug),
+    ...selected.filter((s) => !s.parentStitchSlug),
+    ...selected.filter((s) => s.parentStitchSlug),
   ]
 
   for (const seed of ordered) {
@@ -77,6 +93,9 @@ async function main(): Promise<void> {
       difficulty: seed.difficulty ?? null,
       parentStitchId,
       notes: seed.notes ?? null,
+      // Only written when the seed row declares them, so a row that leaves
+      // aliases out never clears the ones already in the table.
+      ...(seed.aliases ? { aliases: seed.aliases } : {}),
     }
     if (!existing) {
       if (!DRY_RUN) {
@@ -98,7 +117,10 @@ async function main(): Promise<void> {
       (existing.chartSymbol ?? null) !== payload.chartSymbol ||
       (existing.difficulty ?? null) !== payload.difficulty ||
       (existing.parentStitchId ?? null) !== payload.parentStitchId ||
-      (existing.notes ?? null) !== payload.notes
+      (existing.notes ?? null) !== payload.notes ||
+      (seed.aliases
+        ? seed.aliases.join('|') !== (existing.aliases ?? []).join('|')
+        : false)
 
     if (hasChanged) {
       if (!DRY_RUN) {

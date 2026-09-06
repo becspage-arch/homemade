@@ -16,26 +16,25 @@ import {
 } from '@homemade/db/pattern'
 import { nearestFloss } from '@/lib/floss/nearest-floss'
 import { nearestDmcFull } from '@/lib/floss/dmc-full'
+import {
+  assignChartSymbols,
+  buildAdjacency,
+  SYMBOL_GLYPHS,
+} from '@/lib/studio/symbol-assignment'
 
-// One distinct glyph per palette colour. The pattern schema rejects a chart
-// with two palette entries sharing a symbol, so this set has to be at least as
-// large as the densest chart we ever emit (the 100+ colour showpiece tier).
-// Every glyph is in the Geometric Shapes / Block Elements / suits ranges that
-// the chart render font (DejaVu Sans) covers fully, so none render as tofu.
-export const PATTERN_SYMBOLS = [
-  'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
-  '0','1','2','3','4','5','6','7','8','9',
-  '×','●','▲','◆','■','○','△','◇','□','✚','✦','✱','⬟','⬢','✕','◐','◑','◒','◓','⬣',
-  'a','b','c','d','e','f','g','h','j','k','m','n','p','q','r','s','t','u','v','w','y','z',
-  // ── extended set (keeps 100+ colour charts unique-symbolled) ──
-  '▢','▣','▤','▥','▦','▧','▨','▩','▬','▭','▮','▯','▰','▱',
-  '▴','▵','▸','▹','▾','▿','◂','◃','◄','►','◅','▻',
-  '◍','◎','◉','◌','◔','◕','◖','◗','◘','◙',
-  '◧','◨','◩','◪','◫','◰','◱','◲','◳',
-  '◴','◵','◶','◷','◢','◣','◤','◥','◯',
-  '▖','▗','▘','▙','▚','▛','▜','▝','▞','▟',
-  '★','☆','♠','♣','♥','♦','♤','♧','♡','♢','✧','✜',
-]
+/**
+ * The chart symbol vocabulary — one distinct glyph per palette colour. The
+ * pattern schema rejects a chart with two palette entries sharing a symbol, so
+ * the catalogue has to be at least as large as the densest chart we ever emit
+ * (the 100+ colour showpiece tier).
+ *
+ * The list itself, along with each glyph's confusable group and ink weight,
+ * lives in `symbol-assignment.ts`; it is ordered most-distinctive first. Every
+ * glyph is inside the ranges the chart render font (DejaVu Sans) covers fully,
+ * so none render as tofu.
+ */
+export const PATTERN_SYMBOLS = SYMBOL_GLYPHS
+
 
 export interface PhotoToPatternSettings {
   width: number
@@ -125,17 +124,18 @@ export async function photoToPatternData(
   })
   const outU8 = outPC.toUint8Array()
 
-  // Symbols are keyed by FLOSS CODE, not by the raw quantised colour: several
+  // The chart is built on FLOSS CODES, not on raw quantised colours: several
   // quantiser swatches routinely resolve to the same stand, and giving each its
-  // own symbol/entry would inflate the palette with duplicate-colour rows (and,
-  // past 78 swatches, blow the symbol budget). Keying by code means the palette
-  // size IS the true distinct-floss count, one symbol per stand, and adjacent
-  // cells that share a stand share a symbol — which also feeds the confetti pass
-  // fewer false islands. The first stand encountered claims the next symbol.
-  const colourToSymbol = new Map<string, string>() // quantised hex → symbol (caches nearestFloss)
-  const codeToSymbol = new Map<string, string>() // floss code → symbol
-  const symbolToFloss = new Map<string, { entry: PaletteEntry; sourceCount: number }>()
-  let symIdx = 0
+  // own palette row would fill the key with duplicate-colour entries. Keying by
+  // code means the palette size IS the true distinct-floss count, and adjacent
+  // cells that share a stand share a cell value — which also feeds the confetti
+  // pass fewer false islands.
+  //
+  // Symbols are assigned at the END, once the grid is final: which glyph a
+  // colour gets depends on what it touches and how much of it there is, and
+  // neither is known until the confetti pass has run. See symbol-assignment.ts.
+  const colourToCode = new Map<string, string>() // quantised hex → floss code
+  const codeToFloss = new Map<string, { code: string; name: string; rgb: string }>()
   let cells: { x: number; y: number; s: string }[] = []
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
@@ -144,33 +144,18 @@ export async function photoToPatternData(
       const g = outU8[i + 1]!
       const b = outU8[i + 2]!
       const key = `#${[r, g, b].map((c) => c.toString(16).padStart(2, '0')).join('')}`
-      let symbol = colourToSymbol.get(key)
-      if (!symbol) {
+      let code = colourToCode.get(key)
+      if (!code) {
         const entry = useFullRange
           ? ((e) => ({ code: e.code, name: e.name, rgb: e.hex }))(nearestDmcFull(key))
           : nearestFloss(key, { brand }).entry
-        symbol = codeToSymbol.get(entry.code)
-        if (!symbol) {
-          symbol = PATTERN_SYMBOLS[symIdx] ?? '?'
-          symIdx++
-          codeToSymbol.set(entry.code, symbol)
-          symbolToFloss.set(symbol, {
-            entry: {
-              symbol,
-              brand,
-              code: entry.code,
-              name: entry.name,
-              rgb: entry.rgb,
-              strandsFullCross: 2,
-              strandsBackstitch: 1,
-            },
-            sourceCount: 0,
-          })
+        code = entry.code
+        if (!codeToFloss.has(code)) {
+          codeToFloss.set(code, { code: entry.code, name: entry.name, rgb: entry.rgb })
         }
-        colourToSymbol.set(key, symbol)
+        colourToCode.set(key, code)
       }
-      cells.push({ x, y, s: symbol })
-      symbolToFloss.get(symbol)!.sourceCount++
+      cells.push({ x, y, s: code })
     }
   }
 
@@ -212,22 +197,43 @@ export async function photoToPatternData(
   }
   cells = passCells
 
-  const surviving = new Map<string, { entry: PaletteEntry; sourceCount: number }>()
+  // Stitch counts per stand, after the confetti pass — a stand can vanish
+  // entirely when every one of its islands is absorbed.
+  const stitchCount = new Map<string, number>()
   for (const c of cells) {
-    let row = surviving.get(c.s)
-    if (!row) {
-      const floss = symbolToFloss.get(c.s)
-      if (!floss) continue
-      row = { entry: floss.entry, sourceCount: 0 }
-      surviving.set(c.s, row)
-    }
-    row.sourceCount++
+    if (!codeToFloss.has(c.s)) continue
+    stitchCount.set(c.s, (stitchCount.get(c.s) ?? 0) + 1)
   }
 
-  const orderedSymbols = [...surviving.entries()]
-    .sort((a, b) => b[1].sourceCount - a[1].sourceCount)
-    .map(([s]) => s)
-  const paletteEntries: PaletteEntry[] = orderedSymbols.map((s) => surviving.get(s)!.entry)
+  // Symbols last: busiest colours take the most distinctive marks, and no two
+  // colours that touch on the cloth (or look alike in the key) get glyphs from
+  // the same confusable group. The catalogue is only exhausted well past the
+  // 154-colour cap, so every colour keeps a unique glyph.
+  const symbolByCode = assignChartSymbols(
+    [...stitchCount].map(([code, count]) => ({
+      key: code,
+      rgb: codeToFloss.get(code)!.rgb,
+      count,
+    })),
+    buildAdjacency(cells, width, height),
+  )
+  for (const cell of cells) cell.s = symbolByCode.get(cell.s) ?? '?'
+
+  const orderedCodes = [...stitchCount.entries()]
+    .sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : 1))
+    .map(([code]) => code)
+  const paletteEntries: PaletteEntry[] = orderedCodes.map((code) => {
+    const floss = codeToFloss.get(code)!
+    return {
+      symbol: symbolByCode.get(code)!,
+      brand,
+      code: floss.code,
+      name: floss.name,
+      rgb: floss.rgb,
+      strandsFullCross: 2,
+      strandsBackstitch: 1,
+    }
+  })
 
   const data = parsePatternData({
     schemaVersion: PATTERN_SCHEMA_VERSION,

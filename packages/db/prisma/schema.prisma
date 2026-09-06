@@ -4699,6 +4699,22 @@ model Pattern {
   /// long before the pattern it made).
   bulkRunId         String?
 
+  // ── Stitchability (phase_xs_print_quality_001) ───────────────────────────
+  // How the chart feels under the needle rather than how big it is. Computed
+  // deterministically off the grid by computeStitchabilityMetrics() and
+  // written on every save/publish; `scripts/xs-stitchability-backfill.ts`
+  // fills the rows published before the columns existed. Nullable + additive.
+  //   confettiShare        0-1 share of stitched cells with no same-colour
+  //                        neighbour in any of the eight surrounding cells.
+  //   colourChangesPer100  colour changes met per 100 stitches along rows.
+  //   medianRunLength      median unbroken horizontal run of one colour.
+  //   stitchability        1-5 band, 5 easiest. Shown on the pattern page and
+  //                        filterable in the library grid.
+  confettiShare       Float?
+  colourChangesPer100 Float?
+  medianRunLength     Float?
+  stitchability       Int?
+
   license        PatternLicense?
   userProgress   UserPatternProgress[]
   savedBy        SavedPattern[]
@@ -4717,6 +4733,7 @@ model Pattern {
   @@index([popularityScore])
   @@index([imageHash64])
   @@index([subjectKey])
+  @@index([stitchability])
 }
 
 /// Sidecar so a Pattern can be retagged (free → marketplace → premium)
