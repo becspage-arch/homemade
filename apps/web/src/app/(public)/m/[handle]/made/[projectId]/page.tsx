@@ -73,6 +73,7 @@ async function loadProject(handle: string, projectId: string) {
         select: {
           id: true,
           status: true,
+          removedAt: true,
           media: { select: { cloudflareId: true, r2Key: true, alt: true } },
         },
       },
@@ -87,7 +88,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!project) return notFoundMetadata()
   const name = project.user.name ?? project.user.displayHandle ?? 'A maker'
   const heroSource =
-    (project.heroPhoto?.status === UGCPhotoStatus.APPROVED
+    (project.heroPhoto &&
+    project.heroPhoto.status === UGCPhotoStatus.APPROVED &&
+    project.heroPhoto.removedAt === null
       ? project.heroPhoto.media
       : null) ?? project.tutorial.hero
   const heroUrlForOg = mediaUrl(heroSource, 'hero')
@@ -115,14 +118,15 @@ export default async function MakerMadeDetailPage({ params }: PageProps) {
   if (!project) notFound()
   const isOwner = viewer?.id === project.user.id
 
-  // Other approved photos from this UserProject — keyed off (userId, tutorialId)
+  // Other visible photos from this UserProject — keyed off (userId, tutorialId)
   // since the UGCPhoto schema doesn't link directly to UserProject. Sort by
-  // recency.
+  // recency. A removed photo is gone from here like everywhere else.
   const photos = await prisma.uGCPhoto.findMany({
     where: {
       userId: project.user.id,
       tutorialId: project.tutorial.id,
       status: UGCPhotoStatus.APPROVED,
+      removedAt: null,
     },
     orderBy: { createdAt: 'desc' },
     select: {
@@ -133,7 +137,9 @@ export default async function MakerMadeDetailPage({ params }: PageProps) {
   })
 
   const heroSource =
-    (project.heroPhoto?.status === UGCPhotoStatus.APPROVED
+    (project.heroPhoto &&
+    project.heroPhoto.status === UGCPhotoStatus.APPROVED &&
+    project.heroPhoto.removedAt === null
       ? project.heroPhoto.media
       : null) ??
     photos[0]?.media ??

@@ -218,7 +218,7 @@ export default async function CreatorApplicationPage({ params }: PageProps) {
           <ul style={{ paddingLeft: 16, margin: 0 }}>
             {recentPhotos.map((p) => (
               <li key={p.id}>
-                {p.tutorial.title} — {p.status.toLowerCase()}
+                {p.tutorial?.title ?? 'Pattern photo'} — {p.status.toLowerCase()}
               </li>
             ))}
           </ul>

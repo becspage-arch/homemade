@@ -2,7 +2,8 @@ import { cache } from 'react'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import * as Sentry from '@sentry/nextjs'
-import { prisma, TutorialStatus, UserProjectStatus, TutorialType } from '@homemade/db'
+import Link from 'next/link'
+import { prisma, TutorialStatus, UserProjectStatus, TutorialType, Visibility } from '@homemade/db'
 import { TutorialContent } from '@/components/public/tutorial-content/tutorial-content'
 import { ScaleProvider } from '@/components/public/tutorial-content/scale-context'
 // Imported from the server-safe sibling module rather than `scale-context`
@@ -26,6 +27,7 @@ import {
 } from '@/lib/recipes/recipe-render-data'
 import { harvestSupplies } from '@/lib/supplies'
 import { loadTutorialUgc } from '@/lib/ugc-loader'
+import { loadMakerPhotos, tutorialTakesMakerPhotos } from '@/lib/maker-photos'
 import { captureServerEvent } from '@/lib/posthog'
 import { JsonLd } from '@/components/seo/json-ld'
 import { RelatedTutorials } from '@/components/public/related-tutorials'
@@ -60,7 +62,7 @@ import { BeginnerHelpFooter } from '@/components/public/tutorial-reader/beginner
 import { ScrollDepthTracker } from '@/components/public/tutorial-reader/scroll-depth-tracker'
 import { ShareButton } from '@/components/public/tutorial-reader/share-button'
 import { ReviewsBlock } from '@/components/public/ugc/reviews-block'
-import { PhotosBlock } from '@/components/public/ugc/photos-block'
+import { MakerPhotos } from '@/components/public/maker-photos/maker-photos'
 import { QaBlock } from '@/components/public/ugc/qa-block'
 import { ErrataLink } from '@/components/public/ugc/errata-link'
 import { CookingModeShell } from '@/components/public/cooking-mode/cooking-mode-shell'
@@ -91,6 +93,7 @@ export const dynamic = 'force-dynamic'
 
 interface PageProps {
   params: Promise<{ categorySlug: string; tutorialSlug: string }>
+  searchParams: Promise<Record<string, string | string[] | undefined>>
 }
 
 // Genuine tutorial slugs are lowercase alphanumeric with optional hyphens,
@@ -151,7 +154,7 @@ const loadTutorial = cache(async (categorySlug: string, tutorialSlug: string) =>
   }
 })
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Pick<PageProps, 'params'>): Promise<Metadata> {
   const { categorySlug, tutorialSlug } = await params
   if (!isValidSlug(categorySlug) || !isValidSlug(tutorialSlug)) {
     return notFoundMetadata()
@@ -202,8 +205,9 @@ function tutorialKeywords(tutorial: {
   return Array.from(keys).slice(0, 12)
 }
 
-export default async function TutorialPage({ params }: PageProps) {
+export default async function TutorialPage({ params, searchParams }: PageProps) {
   const { categorySlug, tutorialSlug } = await params
+  const sp = await searchParams
   if (!isValidSlug(categorySlug) || !isValidSlug(tutorialSlug)) {
     notFound()
   }
@@ -557,10 +561,18 @@ export default async function TutorialPage({ params }: PageProps) {
   const canReview =
     Boolean(currentUser) &&
     project?.status === UserProjectStatus.COMPLETED
-  const canUploadPhoto =
-    Boolean(currentUser) &&
-    (project?.status === UserProjectStatus.IN_PROGRESS ||
-      project?.status === UserProjectStatus.COMPLETED)
+  // Uploading a photo needs nothing but an account: a started or finished
+  // project is not a condition. Signed-out readers see the button and are
+  // routed through sign-in.
+  //
+  // The strip is on every tutorial with a made thing, which is every
+  // tutorial-led category. It is off for the types that leave nothing to
+  // photograph, which is how mindset is excluded: every mindset tutorial is a
+  // PRACTICE or a READING.
+  const takesPhotos = tutorialTakesMakerPhotos(tutorial.type)
+  const makerPhotos = takesPhotos
+    ? await loadMakerPhotos({ kind: 'tutorial', tutorialId: tutorial.id })
+    : []
 
   // Above-body region guidance.
   //
@@ -594,10 +606,34 @@ export default async function TutorialPage({ params }: PageProps) {
       )
     : null
 
+  // A reader sent here from a pattern page ("New to cross-stitch? Start with
+  // how to read a chart") carries ?from=<pattern slug>. Give them the way
+  // back to the chart they were looking at. Unknown or malformed slugs are
+  // ignored rather than shown as a dead link.
+  const fromParam = typeof sp.from === 'string' ? sp.from : null
+  const cameFromPattern =
+    fromParam && isValidSlug(fromParam)
+      ? await prisma.pattern.findFirst({
+          where: {
+            slug: fromParam,
+            ownerUserId: null,
+            visibility: Visibility.PUBLIC,
+          },
+          select: { slug: true, name: true },
+        })
+      : null
+
   // Above-body social proof. Pinterest pattern — makers who've already
   // made this tutorial render as a small rail just above the body.
   const preBodySlot = (
     <>
+      {cameFromPattern && (
+        <p className="tutorial-back-to-pattern">
+          <Link href={`/cross-stitch/patterns/${cameFromPattern.slug}`}>
+            Back to {cameFromPattern.name}
+          </Link>
+        </p>
+      )}
       {isGardenGrowingGuide && (
         <GardenRegionGuidanceCard
           tutorial={{
@@ -643,6 +679,15 @@ export default async function TutorialPage({ params }: PageProps) {
         tutorialCategorySlug={tutorial.category.slug}
         tutorialSlug={tutorialSlug}
       />
+      {takesPhotos && (
+        <MakerPhotos
+          photos={makerPhotos}
+          signedIn={Boolean(currentUser)}
+          tutorialId={tutorial.id}
+          returnTo={`/${tutorial.category.slug}/${tutorialSlug}`}
+          galleryHref={`/${tutorial.category.slug}/makes`}
+        />
+      )}
     </>
   )
 
@@ -660,13 +705,6 @@ export default async function TutorialPage({ params }: PageProps) {
         total={ugc.reviews.total}
         distribution={ugc.reviews.distribution}
         reviews={ugc.reviews.rows}
-      />
-
-      <PhotosBlock
-        tutorialId={tutorial.id}
-        signedIn={Boolean(currentUser)}
-        canUpload={canUploadPhoto}
-        photos={ugc.photos}
       />
 
       <QaBlock

@@ -8,6 +8,9 @@ import {
   crossStitchPlanContext,
   needleworkGateAndPublish,
   killIsUnrerollable,
+  crossStitchCandidateAttempt,
+  planCrossStitchCandidateBriefs,
+  MAX_XS_CANDIDATE_ATTEMPTS,
   runIsComplete,
   summaryLine,
   tweakFor,
@@ -38,7 +41,13 @@ import {
   type CandidateTweak,
 } from '@/lib/studio/generation/bulk/cross-stitch'
 import { gateConfigured } from '@/lib/studio/generation/vision-gate'
-import { isAutopilotEnabled, crossStitchSourceMode } from '@/lib/studio/generation/bulk/autopilot-state'
+import { isAutopilotEnabled, crossStitchSourceMode, crossStitchGateMode, type XsGateMode } from '@/lib/studio/generation/bulk/autopilot-state'
+import {
+  takeRerollRequests,
+  sweepUnjudgedCandidates,
+  candidateStats,
+  candidateWarnings,
+} from '@/lib/studio/generation/bulk/candidates'
 import { liveShelfCounts } from '@/lib/studio/generation/bulk/dedupe-guard'
 import { allShelvesAtTarget } from '@/lib/studio/generation/bulk/shelf-plan'
 import { PATTERN_CATEGORIES, CROSS_STITCH_SHELVES } from '@/lib/studio/generation/categories'
@@ -86,6 +95,20 @@ import {
  */
 
 const XS_CRON_COUNT = 10
+/**
+ * The candidates-mode cron batch — bigger than the API-gated one, because the
+ * spend per idea is smaller and the bottleneck moved.
+ *
+ * Twelve ideas, still every two hours, still under the daily generation cap in
+ * `spend-guard.ts` (12 ideas × ~1.1 generations × 12 firings ≈ 160 against a cap
+ * of 480). Per-firing cost is Fal only: eleven schnell generations at ~$0.003
+ * and one dense showpiece on Flux 1.1 Pro at ~$0.032, so roughly $0.07 a firing
+ * — about £0.60 a day for the whole autopilot, and not a penny of it to a
+ * per-token model API.
+ */
+const XS_CANDIDATE_CRON_COUNT = 12
+/** How many of a candidates batch's slots a re-roll request may claim. */
+const XS_MAX_REROLLS_PER_BATCH = 3
 const NW_CRON_COUNT = 4
 const MAX_MANUAL = 20
 
@@ -140,8 +163,14 @@ interface PreflightResult {
  * a manual "run a batch" click cannot spend past the daily ceiling either.
  * Runs inside a memoised step so its result is stable across Inngest replays.
  */
-async function preflight(craft: Craft, manual: boolean): Promise<PreflightResult> {
-  if (!gateConfigured()) return { skip: 'gate-not-wired' }
+async function preflight(craft: Craft, manual: boolean, gateMode?: XsGateMode): Promise<PreflightResult> {
+  // THE GATE WIRING CHECK IS MODE-DEPENDENT. In the cross-stitch 'candidates'
+  // mode there IS no API gate on the path — a Claude Code session judges the
+  // parked candidates afterwards — so a missing ANTHROPIC_API_KEY is not a
+  // reason to generate nothing. Every other craft, and 'api' mode, still refuse
+  // to run un-gated.
+  const needsApiGate = craft !== 'cross-stitch' || gateMode !== 'candidates'
+  if (needsApiGate && !gateConfigured()) return { skip: 'gate-not-wired' }
 
   // Housekeeping first: a run that died mid-fan-out would otherwise sit
   // unfinished forever, and nothing else in the system ever looks at it. Every
@@ -149,6 +178,39 @@ async function preflight(craft: Craft, manual: boolean): Promise<PreflightResult
   await sweepStalledRuns().catch((err) => {
     console.error('[bulk] stalled-run sweep failed', err)
   })
+  // Same housekeeping, same schedule, for the candidate parking bay: a candidate
+  // nobody judged inside a week is retired as REJECTED with reason 'unjudged',
+  // so the bay cannot grow forever behind a routine that quietly stopped firing.
+  if (craft === 'cross-stitch') {
+    await sweepUnjudgedCandidates()
+      .then((n) => {
+        if (n > 0) console.warn(`[bulk cross-stitch] swept ${n} un-judged candidates`)
+      })
+      .catch((err) => {
+        console.error('[bulk cross-stitch] candidate sweep failed', err)
+      })
+    // The parking bay's own health check, through the same alert path as a run
+    // that yielded nothing: an autopilot whose judging routine has stopped is a
+    // silence, and silence is what an unattended system must never produce. The
+    // wording is the admin banner's, so page and alert cannot drift apart.
+    await candidateStats()
+      .then((stats) => {
+        const warns = candidateWarnings(stats)
+        if (!warns.length) return
+        Sentry.captureMessage('bulk cross-stitch candidates are not being judged', {
+          level: 'warning',
+          extra: {
+            pending: stats.pending,
+            oldest: stats.oldest?.toISOString() ?? null,
+            lastJudgedAt: stats.lastJudgedAt?.toISOString() ?? null,
+            reasons: warns,
+          },
+        })
+      })
+      .catch((err) => {
+        console.error('[bulk cross-stitch] candidate health check failed', err)
+      })
+  }
 
   if (craft === 'cross-stitch') {
     const window = await crossStitchSpendWindow()
@@ -199,7 +261,7 @@ async function finaliseIfComplete(runId: string): Promise<{ finished: boolean; a
       id: true, craft: true, requested: true, published: true, culled: true, duplicates: true,
       skipped: true, repaired: true, generations: true, errors: true, finishedAt: true, alerted: true,
       modelBriefs: true, paleSkips: true, propRejects: true, collisionRejects: true,
-      dressedBriefs: true,
+      dressedBriefs: true, parked: true,
     },
   })
   if (!run || run.finishedAt) return { finished: false, alerted: false }
@@ -209,7 +271,10 @@ async function finaliseIfComplete(runId: string): Promise<{ finished: boolean; a
   // A run that produced nothing, or that fell over on half its ideas, is a
   // problem a human needs to hear about — the whole point of an unattended
   // autopilot is that silence means it is working.
-  const yieldedNothing = run.published === 0
+  // WHAT "NOTHING" MEANS DEPENDS ON THE MODE. A candidates-mode run finishes
+  // with `published` at zero every single time — a session fills that in hours
+  // later — so the alert reads the run's real output: did it park anything?
+  const yieldedNothing = run.published === 0 && run.parked === 0
   const errorStorm = run.requested > 0 && run.errors >= run.requested / 2
   const alert = run.requested > 0 && (yieldedNothing || errorStorm) && !run.alerted
 
@@ -228,9 +293,10 @@ async function finaliseIfComplete(runId: string): Promise<{ finished: boolean; a
         culled: run.culled,
         duplicates: run.duplicates,
         skipped: run.skipped,
+        parked: run.parked,
         errors: run.errors,
         generations: run.generations,
-        reason: yieldedNothing ? 'published 0' : 'errors on half or more of the ideas',
+        reason: yieldedNothing ? 'published 0, parked 0' : 'errors on half or more of the ideas',
         summary,
       },
     })
@@ -252,7 +318,7 @@ async function sweepStalledRuns(): Promise<number> {
     select: {
       id: true, craft: true, requested: true, published: true, culled: true, duplicates: true,
       skipped: true, repaired: true, generations: true, errors: true, updatedAt: true, modelBriefs: true,
-      paleSkips: true, propRejects: true, collisionRejects: true, dressedBriefs: true,
+      paleSkips: true, propRejects: true, collisionRejects: true, dressedBriefs: true, parked: true,
     },
   })
   for (const run of stalled) {
@@ -318,7 +384,11 @@ export const bulkCrossStitchBatch = inngest.createFunction(
     const data = event.data as BatchEventData | undefined
     const manual = typeof data?.count === 'number'
 
-    const pre = await step.run('preflight', () => preflight('cross-stitch', manual))
+    // WHO JUDGES this batch. Read first, because it decides whether the run
+    // needs the API gate wired at all, how many ideas it plans, and whether a
+    // single call is made through `anthropic.ts` anywhere on the path.
+    const gateMode = await step.run('gate-mode', () => crossStitchGateMode())
+    const pre = await step.run('preflight', () => preflight('cross-stitch', manual, gateMode))
     if (pre.skip) {
       // A capped run is recorded so the admin panel shows WHY nothing happened —
       // a silent no-op looks identical to a broken autopilot.
@@ -339,7 +409,62 @@ export const bulkCrossStitchBatch = inngest.createFunction(
       return { skipped: pre.skip, ...(pre.count != null ? { count: pre.count, target: pre.target } : {}) }
     }
 
-    const n = manual ? manualCount(data?.count, XS_CRON_COUNT) : XS_CRON_COUNT
+    const cronCount = gateMode === 'candidates' ? XS_CANDIDATE_CRON_COUNT : XS_CRON_COUNT
+    const n = manual ? manualCount(data?.count, cronCount) : cronCount
+
+    // ── CANDIDATES MODE: plan from the pool, park what survives ─────────────
+    // No planner model call, no gate call, nothing through `anthropic.ts`. The
+    // pool sampler writes the briefs (deficit-weighted shelves, lane tags, the
+    // text-risk and prop rules and the within-batch collision rule all
+    // unchanged), re-roll requests from the last judging session take the first
+    // few slots, and every idea that survives the deterministic guards is parked
+    // as an UNLISTED candidate for the next session to look at.
+    if (gateMode === 'candidates') {
+      const rerolls = await step.run('reroll-queue', () => takeRerollRequests(Math.min(XS_MAX_REROLLS_PER_BATCH, n)))
+      const fresh = Math.max(0, n - rerolls.length)
+      const candCtx = (await step.run('plan-context', () => crossStitchPlanContext(fresh))) ?? {}
+      const sampled = fresh > 0 ? await step.run('plan-candidates', () => planCrossStitchCandidateBriefs(fresh, candCtx)) : []
+      const planned = [...rerolls.map((r) => r.brief), ...sampled]
+      if (!planned.length) return { skipped: 'no briefs planned', gateMode }
+      const rerollCounts = new Map(rerolls.map((r) => [r.brief.slug, r.rerollCount]))
+
+      const triggeredBy = manual && typeof data?.triggeredBy === 'string' && data.triggeredBy ? data.triggeredBy : null
+      const candidateRun = await step.run('create-run', () =>
+        prisma.bulkRun.create({
+          data: {
+            craft: 'cross-stitch',
+            trigger: manual ? 'manual' : 'cron',
+            requested: planned.length,
+            // Nothing was model-authored: no model was called.
+            modelBriefs: 0,
+            dressedBriefs: dressedCount(planned),
+            triggeredById: triggeredBy,
+          },
+          select: { id: true },
+        }),
+      )
+      await step.sendEvent(
+        'dispatch-ideas',
+        planned.map((brief) => ({
+          name: 'bulk/cross-stitch.idea',
+          data: {
+            runId: candidateRun.id,
+            brief,
+            attempt: 1,
+            tweak: {} as CandidateTweak,
+            gateMode,
+            rerollCount: rerollCounts.get(brief.slug) ?? 0,
+          },
+        })),
+      )
+      return {
+        runId: candidateRun.id,
+        dispatched: planned.length,
+        rerolls: rerolls.length,
+        gateMode,
+        plannerMode: PLANNER_MODE,
+      }
+    }
 
     // Plan the briefs. The planner is handed the WHOLE catalogue as an avoid
     // list plus a shelf quota weighted by each shelf's gap to target — not the
@@ -420,7 +545,7 @@ export const bulkCrossStitchBatch = inngest.createFunction(
         data: { runId: run.id, brief, attempt: 1, tweak: {} as CandidateTweak },
       })),
     )
-    return { runId: run.id, dispatched: briefs.length, modelAuthored: authored, propRejects, collisionRejects, dressed, plannerMode: PLANNER_MODE, sourceMode }
+    return { runId: run.id, dispatched: briefs.length, modelAuthored: authored, propRejects, collisionRejects, dressed, plannerMode: PLANNER_MODE, sourceMode, gateMode }
   },
 )
 
@@ -429,6 +554,11 @@ interface IdeaEventData {
   brief?: CrossStitchBrief
   attempt?: number
   tweak?: CandidateTweak
+  /** Carried on the event so a mid-batch admin flip cannot split one run's ideas
+   *  across two judging models. Absent on an event from an older deploy. */
+  gateMode?: XsGateMode
+  /** Candidates mode: how many re-rolls this idea will have had once it lands. */
+  rerollCount?: number
 }
 
 export const bulkCrossStitchIdea = inngest.createFunction(
@@ -446,8 +576,23 @@ export const bulkCrossStitchIdea = inngest.createFunction(
     triggers: [{ event: 'bulk/cross-stitch.idea' }],
   },
   async ({ event, step }) => {
-    const { runId, brief, attempt = 1, tweak } = (event.data ?? {}) as IdeaEventData
+    const { runId, brief, attempt = 1, tweak, gateMode, rerollCount = 0 } = (event.data ?? {}) as IdeaEventData
     if (!runId || !brief) return { skipped: 'missing runId/brief' }
+
+    // CANDIDATES MODE — a separate, shorter path that never touches
+    // `anthropic.ts`: generate, pale guard, duplicate guard, park.
+    if (gateMode === 'candidates') {
+      // Inngest's `step.run` types its result as `Jsonify<T>`, which is the same
+      // shape at runtime but not assignable to `T` generically. Every value this
+      // path memoises IS plain JSON (a verdict object, a Prisma update result),
+      // so the adapter states that once here rather than spreading casts through
+      // the worker.
+      const stepAdapter: CandidateStep = {
+        run: <T,>(id: string, fn: () => Promise<T>): Promise<T> => step.run(id, fn) as unknown as Promise<T>,
+        sendEvent: (id, payload) => step.sendEvent(id, payload as Parameters<typeof step.sendEvent>[1]),
+      }
+      return runCandidateIdea({ runId, brief, attempt, tweak: tweak ?? {}, rerollCount, step: stepAdapter })
+    }
 
     // Which model draws this attempt. Read per attempt (not per batch) so
     // flipping the admin toggle takes effect on the very next idea rather than
@@ -565,6 +710,135 @@ export const bulkCrossStitchIdea = inngest.createFunction(
     return { outcome: 'culled', slug: brief.slug }
   },
 )
+
+/** The slice of Inngest's step API the candidates worker uses. */
+interface CandidateStep {
+  run: <T>(id: string, fn: () => Promise<T>) => Promise<T>
+  sendEvent: (id: string, payload: unknown) => Promise<unknown>
+}
+
+/**
+ * ONE candidates-mode idea. The same fan-out shape as the API-gated worker —
+ * one generation per invocation, atomic increments on the run row, a re-emitted
+ * event for the one re-roll a pale render earns — with the judging taken out.
+ *
+ * Terminal outcomes here are: parked (the normal one), duplicate, pale twice
+ * over, or an error. `parked` is what the run's alert reads, because
+ * `published` cannot move until a session has looked at the contact sheet.
+ */
+async function runCandidateIdea(args: {
+  runId: string
+  brief: CrossStitchBrief
+  attempt: number
+  tweak: CandidateTweak
+  rerollCount: number
+  step: CandidateStep
+}): Promise<Record<string, unknown>> {
+  const { runId, brief, attempt, tweak, rerollCount, step } = args
+  const sourceMode = await step.run('source-mode', () => crossStitchSourceMode())
+  const pro = candidateIsPro(brief, tweak, sourceMode)
+
+  // The spend cap at the point of spending — a queue of ideas fanned out before
+  // the cap was hit would otherwise sail straight through it.
+  const capped = await step.run('spend-cap', async () => {
+    const window = await crossStitchSpendWindow()
+    return overCap(window, { pro })
+  })
+  if (capped) {
+    await step.run('record-skipped', () =>
+      prisma.bulkRun.update({ where: { id: runId }, data: { skipped: { increment: 1 } } }),
+    )
+    await step.run('check-complete', () => finaliseIfComplete(runId))
+    console.warn(`[bulk cross-stitch candidates] ${brief.slug} skipped — ${capped}`)
+    return { outcome: 'skipped', slug: brief.slug, reason: capped }
+  }
+
+  let result: AttemptResult
+  try {
+    result = await step.run('attempt', () =>
+      crossStitchCandidateAttempt(brief, tweak, { bulkRunId: runId, attempt, sourceMode, rerollCount }),
+    )
+  } catch (err) {
+    await step.run('record-error', () =>
+      prisma.bulkRun.update({
+        where: { id: runId },
+        data: { errors: { increment: 1 }, generations: { increment: 1 }, ...(pro ? { proGenerations: { increment: 1 } } : {}) },
+      }),
+    )
+    await step.run('check-complete', () => finaliseIfComplete(runId))
+    console.error(`[bulk cross-stitch candidates] ${brief.slug} attempt ${attempt} failed`, err)
+    return { outcome: 'error', slug: brief.slug }
+  }
+
+  const proInc = (result.pro ?? pro) ? { proGenerations: { increment: 1 } } : {}
+
+  if (result.parked) {
+    await step.run('record-parked', () =>
+      prisma.bulkRun.update({
+        where: { id: runId },
+        data: { parked: { increment: 1 }, generations: { increment: 1 }, ...proInc, gemSlugs: { push: brief.slug } },
+      }),
+    )
+    await step.run('check-complete', () => finaliseIfComplete(runId))
+    return { outcome: 'parked', slug: brief.slug }
+  }
+
+  if (result.duplicateOf) {
+    const reason = `duplicate of ${result.duplicateOf}`.slice(0, 80)
+    await step.run('record-duplicate', () =>
+      prisma.bulkRun.update({
+        where: { id: runId },
+        data: { duplicates: { increment: 1 }, generations: { increment: 1 }, ...proInc, killReasons: { push: reason } },
+      }),
+    )
+    await step.run('check-complete', () => finaliseIfComplete(runId))
+    console.warn(`[bulk cross-stitch candidates] ${brief.slug} refused — ${result.duplicateReason}`)
+    return { outcome: 'duplicate', slug: brief.slug, duplicateOf: result.duplicateOf }
+  }
+
+  // The pale guard's ONE saturation re-roll. Nothing else re-rolls here: there
+  // is no gate asking for a repair, so a render that is not pale is parked.
+  if (result.verdict === 'repair' && attempt < MAX_XS_CANDIDATE_ATTEMPTS) {
+    await step.run('record-reroll', () =>
+      prisma.bulkRun.update({
+        where: { id: runId },
+        data: {
+          generations: { increment: 1 },
+          ...proInc,
+          repaired: { increment: 1 },
+          ...(result.tooPale ? { paleSkips: { increment: 1 } } : {}),
+        },
+      }),
+    )
+    const paleSample = result.rejectSample
+    if (paleSample) await step.run('record-reject-pale', () => recordRejectSample(runId, paleSample))
+    await step.sendEvent('next-attempt', {
+      name: 'bulk/cross-stitch.idea',
+      data: { runId, brief, attempt: attempt + 1, tweak: tweakFor(result.repairAction), gateMode: 'candidates', rerollCount },
+    })
+    return { outcome: 'reroll', slug: brief.slug, attempt: attempt + 1 }
+  }
+
+  // Still pale after its re-roll: discarded, and the render kept so the pale
+  // floor can be re-calibrated against the pictures it actually rejected.
+  const reason = (result.reasons[0] ?? 'discarded').slice(0, 80)
+  await step.run('record-cull', () =>
+    prisma.bulkRun.update({
+      where: { id: runId },
+      data: {
+        culled: { increment: 1 },
+        generations: { increment: 1 },
+        ...proInc,
+        ...(result.tooPale ? { paleSkips: { increment: 1 } } : {}),
+        killReasons: { push: reason },
+      },
+    }),
+  )
+  const cullSample = result.rejectSample
+  if (cullSample) await step.run('record-reject-cull', () => recordRejectSample(runId, cullSample))
+  await step.run('check-complete', () => finaliseIfComplete(runId))
+  return { outcome: 'discarded', slug: brief.slug, reason }
+}
 
 // ──────────────────── NEEDLEWORK (fan-out, async render) ────────────────────
 //

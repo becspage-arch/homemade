@@ -7,6 +7,7 @@ import {
   Visibility,
 } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { isLibraryPattern } from '@/lib/studio/library-visibility'
 
 export const dynamic = 'force-dynamic'
 
@@ -55,7 +56,7 @@ export async function POST(req: Request, ctx: Ctx) {
   if (source.ownerUserId !== null) {
     return NextResponse.json({ error: 'Source is not a library pattern' }, { status: 400 })
   }
-  if (source.visibility === Visibility.PRIVATE) {
+  if (!isLibraryPattern(source)) {
     return NextResponse.json({ error: 'Not authorised' }, { status: 403 })
   }
 

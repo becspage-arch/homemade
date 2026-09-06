@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { prisma } from '@homemade/db'
 import { SubCategoryForm } from '../sub-category-form'
 import { updateSubCategory, deleteSubCategory } from '../actions'
+import { isPatternLedSlug, patternLedCraftStats } from '@/lib/pattern-led-category-counts'
 
 export const dynamic = 'force-dynamic'
 
@@ -16,7 +17,7 @@ export default async function EditSubCategoryPage({
   const [subCategory, categories] = await Promise.all([
     prisma.subCategory.findUnique({
       where: { id },
-      include: { _count: { select: { tutorials: true } } },
+      include: { _count: { select: { tutorials: true } }, category: { select: { slug: true } } },
     }),
     prisma.category.findMany({
       orderBy: [{ order: 'asc' }, { name: 'asc' }],
@@ -24,6 +25,12 @@ export default async function EditSubCategoryPage({
     }),
   ])
   if (!subCategory) notFound()
+
+  // Pattern-led categories keep their real library in a pattern table, not
+  // tutorials — show that count alongside the tutorial count when it applies.
+  const patternCount = isPatternLedSlug(subCategory.category.slug)
+    ? (await patternLedCraftStats())[subCategory.category.slug].publishedBySubCategoryId.get(id) ?? 0
+    : null
 
   const updateAction = updateSubCategory.bind(null, id)
   const deleteAction = deleteSubCategory.bind(null, id)
@@ -48,6 +55,11 @@ export default async function EditSubCategoryPage({
           className="mt-2 text-sm text-[var(--color-warm-taupe)]"
           style={{ fontFamily: 'var(--font-lora)' }}
         >
+          {patternCount != null && (
+            <>
+              {patternCount} pattern{patternCount === 1 ? '' : 's'} ·{' '}
+            </>
+          )}
           {subCategory._count.tutorials} tutorial
           {subCategory._count.tutorials === 1 ? '' : 's'}
         </p>

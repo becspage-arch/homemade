@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server'
 
 import { prisma } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
-import { canUsePlanner } from '@/lib/planner/guard'
 
 export const dynamic = 'force-dynamic'
 
@@ -15,15 +14,11 @@ interface PatchBody {
   notes?: string | null
 }
 
-/** Update or remove one stash item. Premium (PROJECT_PLANNER). */
+/** Update or remove one stash item. Free for the maker who owns it. */
 export async function PATCH(request: Request, ctx: Ctx) {
   const { id } = await ctx.params
   const user = await getCurrentDbUser()
   if (!user) return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
-
-  if (!canUsePlanner(user)) {
-    return NextResponse.json({ error: 'premium_required' }, { status: 403 })
-  }
 
   const existing = await prisma.plannerStashItem.findUnique({
     where: { id },
@@ -59,10 +54,6 @@ export async function DELETE(_request: Request, ctx: Ctx) {
   const { id } = await ctx.params
   const user = await getCurrentDbUser()
   if (!user) return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
-
-  if (!canUsePlanner(user)) {
-    return NextResponse.json({ error: 'premium_required' }, { status: 403 })
-  }
 
   const existing = await prisma.plannerStashItem.findUnique({
     where: { id },

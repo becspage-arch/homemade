@@ -5,20 +5,16 @@ import { redirect } from 'next/navigation'
 import {
   prisma,
   UGCStatus,
-  UGCPhotoStatus,
   UserProjectStatus,
   ReviewStatus,
   ReportStatus,
   ReportTargetType,
   ReportReason,
-  MediaStatus,
-  MediaType,
   UserRole,
 } from '@homemade/db'
 import { getCurrentDbUser } from './get-current-user'
+import { signInHrefForCurrentPage } from './sign-in-return'
 import { audit } from './audit'
-import { scanImageForNsfw, nsfwDecision } from './nsfw-scan'
-import { mediaUrl } from './media'
 import { captureServerEvent } from './posthog'
 import { checkRateLimit } from './ratelimit'
 
@@ -26,7 +22,9 @@ type ActionResult = { ok: true } | { ok: false; error: string }
 
 async function requireMember() {
   const user = await getCurrentDbUser()
-  if (!user) redirect('/sign-in')
+  // Reviews, photos and questions all hang off public tutorial and pattern
+  // pages, so the same return-to-the-page rule applies here.
+  if (!user) redirect(await signInHrefForCurrentPage())
   if (user.isSuspended) {
     return { user: null, error: 'Your account is suspended.' as const }
   }
@@ -168,132 +166,6 @@ export async function toggleReviewHelpful(reviewId: string): Promise<
 
   revalidatePath(tutorialPath(review.tutorial))
   return { ok: true, helpful, helpfulCount: updated.helpfulCount }
-}
-
-// ────────────────────────────────────────────────────────────────────────────
-// UGC photos
-// ────────────────────────────────────────────────────────────────────────────
-
-export async function submitUgcPhoto(input: {
-  tutorialId: string
-  r2Key: string
-  caption: string | null
-  filename: string | null
-  mimeType: string | null
-  width: number | null
-  height: number | null
-  bytes: number | null
-}): Promise<ActionResult & { photoId?: string; status?: UGCPhotoStatus }> {
-  const { user, error } = await requireMember()
-  if (!user) return { ok: false, error: error ?? 'Not signed in.' }
-
-  if (!input.r2Key) {
-    return { ok: false, error: 'Upload was missing the R2 key.' }
-  }
-  const caption = input.caption?.trim().slice(0, 280) || null
-
-  const tutorial = await prisma.tutorial.findUnique({
-    where: { id: input.tutorialId },
-    select: { id: true, slug: true, category: { select: { slug: true } } },
-  })
-  if (!tutorial) return { ok: false, error: 'Tutorial not found.' }
-
-  // Any UserProject (in-progress or completed) entitles uploading.
-  const project = await prisma.userProject.findUnique({
-    where: { userId_tutorialId: { userId: user.id, tutorialId: tutorial.id } },
-    select: { id: true },
-  })
-  if (!project) {
-    return {
-      ok: false,
-      error: 'Start making this tutorial before sharing a photo.',
-    }
-  }
-
-  const limit = await checkRateLimit('photoUpload', user.id)
-  if (!limit.allowed) {
-    await captureServerEvent({
-      event: 'rate_limit_hit',
-      distinctId: user.clerkId,
-      properties: { bucket: 'photoUpload', tutorialId: tutorial.id },
-    })
-    return { ok: false, error: limit.message }
-  }
-
-  const priorPhotoCount = await prisma.uGCPhoto.count({ where: { userId: user.id } })
-  const isFirstPhoto = priorPhotoCount === 0
-
-  // Create the Media row + UGCPhoto row. NSFW scan runs after so the row
-  // exists even if the scan fails mid-flight.
-  const media = await prisma.media.create({
-    data: {
-      r2Key: input.r2Key,
-      type: MediaType.PHOTO,
-      status: MediaStatus.READY,
-      filename: input.filename ?? null,
-      mimeType: input.mimeType ?? null,
-      width: input.width ?? null,
-      height: input.height ?? null,
-      bytes: input.bytes ?? null,
-    },
-  })
-
-  const photo = await prisma.uGCPhoto.create({
-    data: {
-      userId: user.id,
-      tutorialId: tutorial.id,
-      mediaId: media.id,
-      caption,
-    },
-    select: { id: true },
-  })
-
-  // Run the NSFW pre-screen against the public URL.
-  const imageUrl = mediaUrl({ r2Key: input.r2Key }, 'public')
-  let status: UGCPhotoStatus = UGCPhotoStatus.PENDING_MODERATION
-  let nsfwScoreFired: number | null = null
-  if (imageUrl) {
-    const scan = await scanImageForNsfw(imageUrl)
-    const decision = nsfwDecision(scan.score)
-    const updates: Record<string, unknown> = {
-      nsfwScore: scan.score,
-      nsfwClassification: scan.classification,
-    }
-    if (decision === 'auto-reject') {
-      updates.status = UGCPhotoStatus.REJECTED
-      updates.rejectionReason = `Auto-rejected: ${scan.classification ?? 'flagged content'}`
-      updates.moderatedAt = new Date()
-      status = UGCPhotoStatus.REJECTED
-      nsfwScoreFired = scan.score ?? null
-    }
-    await prisma.uGCPhoto.update({
-      where: { id: photo.id },
-      data: updates,
-    })
-  }
-
-  revalidatePath(tutorialPath(tutorial))
-  revalidatePath('/me/photos')
-  await captureServerEvent({
-    event: 'photo_uploaded',
-    distinctId: user.clerkId,
-    properties: { tutorialId: tutorial.id, photoId: photo.id, status },
-  })
-  if (isFirstPhoto) {
-    await captureServerEvent({
-      event: 'first_photo_uploaded',
-      distinctId: user.clerkId,
-      properties: { tutorialId: tutorial.id, photoId: photo.id, isFirst: true },
-    })
-  }
-  if (status === UGCPhotoStatus.REJECTED) {
-    await captureServerEvent({
-      event: 'nsfw_auto_rejected',
-      distinctId: user.clerkId,
-      properties: { tutorialId: tutorial.id, photoId: photo.id, score: nsfwScoreFired },
-    })
-  }
-  return { ok: true, photoId: photo.id, status }
 }
 
 // ────────────────────────────────────────────────────────────────────────────

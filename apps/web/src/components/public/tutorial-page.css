@@ -310,6 +310,25 @@
   padding: 16px 0 8px;
 }
 
+/* "Back to <pattern>" for a reader sent here from a pattern page. Quiet, but
+   the first thing above the body so the way back is never hunted for. */
+.tutorial-back-to-pattern {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.tutorial-back-to-pattern a {
+  color: var(--color-forest);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+.tutorial-back-to-pattern a:hover { color: var(--color-sage); }
+.tutorial-back-to-pattern a::before {
+  content: '\2190';
+  margin-right: 6px;
+}
+
 /* ── Body ──────────────────────────────────────────────────────────────── */
 
 .tutorial-page-body {

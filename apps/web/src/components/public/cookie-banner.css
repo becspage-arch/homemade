@@ -1,5 +1,10 @@
 /* Cookie consent banner — sage-on-cream, fixed to the bottom of the
- * viewport on first visit, dismissed once a decision is made. */
+ * viewport on first visit, dismissed once a decision is made.
+ *
+ * The compact state is a slim bar: one sentence, Accept, Reject, and a
+ * "Choices" text link. It has to stay out of the way on a phone, so it
+ * must never grow past a couple of lines. The full category list only
+ * appears once "Choices" is tapped. */
 
 .cookie-banner {
   position: fixed;
@@ -12,27 +17,83 @@
   box-shadow: 0 -8px 24px rgba(40, 33, 28, 0.06);
 }
 
+/* ── Compact bar ─────────────────────────────────────────────────────── */
+
+.cookie-banner-bar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-family: var(--font-lora);
+}
+
+.cookie-banner-line {
+  flex: 1 1 240px;
+  min-width: 0;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-warm-taupe);
+}
+
+.cookie-banner-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.cookie-banner-bar .cookie-banner-button {
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+.cookie-banner-choices {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-sage);
+  background: none;
+  border: 0;
+  padding: 8px 2px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cookie-banner-choices:hover:not(:disabled) {
+  color: var(--color-forest);
+}
+
+/* ── Expanded "Choices" panel ────────────────────────────────────────── */
+
 .cookie-banner-inner {
   max-width: 880px;
   margin: 0 auto;
-  padding: 24px 32px;
+  padding: 20px 24px;
+  padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: column;
   gap: 12px;
   font-family: var(--font-lora);
+  max-height: 78vh;
+  overflow-y: auto;
 }
 
 .cookie-banner-title {
   font-family: var(--font-fraunces);
   font-weight: 400;
-  font-size: 22px;
+  font-size: 20px;
   color: var(--color-espresso);
   margin: 0;
 }
 
 .cookie-banner-body {
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 13.5px;
+  line-height: 1.55;
   color: var(--color-warm-taupe);
   margin: 0;
 }
@@ -47,7 +108,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .cookie-banner-button {
@@ -133,10 +194,28 @@
 }
 
 @media (max-width: 640px) {
-  .cookie-banner-inner {
-    padding: 20px 22px;
+  .cookie-banner-bar {
+    padding: 10px 16px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    gap: 6px 12px;
   }
-  .cookie-banner-button {
+  .cookie-banner-line {
+    flex: 1 1 100%;
+    font-size: 12.5px;
+  }
+  .cookie-banner-bar-actions {
+    margin-left: 0;
+    width: 100%;
+  }
+  .cookie-banner-bar .cookie-banner-button {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  .cookie-banner-inner {
+    padding: 18px 18px;
+    padding-bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  }
+  .cookie-banner-actions .cookie-banner-button {
     flex: 1 1 auto;
     text-align: center;
   }

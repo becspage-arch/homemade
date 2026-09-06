@@ -109,9 +109,14 @@ export async function buildExportBundle(userId: string): Promise<{
       select: {
         id: true,
         tutorialId: true,
+        patternId: true,
+        patternType: true,
         caption: true,
         status: true,
         rejectionReason: true,
+        promotionAllowed: true,
+        isTesterPhoto: true,
+        removedAt: true,
         createdAt: true,
         media: {
           select: {

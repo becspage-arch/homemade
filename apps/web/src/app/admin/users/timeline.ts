@@ -400,11 +400,13 @@ export async function buildMemberTimeline(userId: string): Promise<TimelineEntry
     })
   }
   for (const p of photos) {
+    // A maker photo can hang off a pattern instead of a tutorial, in which case
+    // there is no tutorial title to show here.
     entries.push({
       date: p.createdAt,
       kind: 'Photo',
-      title: p.tutorial.title,
-      href: tutorialHref(p.tutorial),
+      title: p.tutorial?.title ?? 'Pattern photo',
+      href: p.tutorial ? tutorialHref(p.tutorial) : null,
       status: statusLabel(p.status),
     })
   }

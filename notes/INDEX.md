@@ -24,7 +24,7 @@
 - [No .md handoffs](feedback_no_md_handoffs.md) — strategy/synthesis deliverables go in chat as plain English, not docs/*.md
 - [No warning tiers](feedback_no_warning_tiers.md) — automated QC is binary (block or skip); no human-triage warning tier
 - [Pattern complexity = a RANGE](feedback_pattern_complexity_range.md) — bulk authoring must span simple↔huge-detailed; the 100+ colour end is wanted, never force one level (repeated past mistake)
-- [Continuous bulk mode](feedback_continuous_bulk_mode.md) — proven bulk sessions become a SCHEDULED ROUTINE (Claude cron) running one batch per firing; runs LOCALLY (needs machine+Claude+internet), needlework uses local Blender — NOT cloud
+- [Continuous bulk mode](feedback_continuous_bulk_mode.md) — proven bulk sessions become a SCHEDULED ROUTINE (Claude cron) running one batch per firing; SUPERSEDED 2026-09-06 by playbook Step 6c: autopilots run as cloud routines on the Max plan, deterministic stages on the server, never Rebecca's laptop
 - [Category description voice](feedback_category_description_voice.md) — category descriptions list what's inside, nothing else; no identity/provenance/disclaimers
 - [Image strategy](feedback_image_strategy.md) — SUPERSEDED for photographic heroes by [[project_photo_accuracy_solution]]: GENERATE-first (Flux 1.1 Pro + vision gate); pattern crafts render via the loom
 - [Pipeline-setup includes techniques](feedback_pipeline_setup_must_include_techniques.md) — pipeline-setup prompts must populate techniqueSlugs + criticalTechniques + aliases
@@ -33,7 +33,7 @@
 - [Voice rewrite: don't over-prune](feedback_voice_rewrite_dont_over_prune.md) — voice retrofits fix register, don't delete sections; keep the substance
 - [glossaryTooltip termSlug](feedback_glossary_tooltip_termslug.md) — marks use `termSlug` not `slug`; wrong key fails voice-check (exit 2, blocks upload)
 - [Premium gate cleanup](feedback_premium_gate_cleanup.md) — existing in-product gates contradict free-tier-is-full-product; remove in a dedicated pass. Premium = grading + create-your-own + designer patterns
-- [Cross-stitch world-class bar](feedback_cross_stitch_world_class_bar.md) — 2026-06-29: goal = best XS collection in the world; 6 north-star refs (NORTH_STAR.md); culled 1,592→310 (kept landscapes+Delft+16 gems); raised bar applies to NEW generation
+- [Cross-stitch world-class bar](feedback_cross_stitch_world_class_bar.md) — 2026-06-29: goal = best XS collection in the world; 6 north-star refs (NORTH_STAR.md); culled 1,592→310 (kept landscapes+Delft+16 gems); raised bar applies to NEW generation; 2026-09 audit outcome appended
 - [Floss table curated working set](feedback_floss_table_curated_working_set.md) — seed brand floss tables as ~120–150 curated entries mapping to used DMC codes; not the full catalogue
 - [Autopilot null sort](feedback_autopilot_null_sort_order.md) — newly-READY categories (lastAutopilotRunAt=null) land at BACK of queue (NULLS LAST); backdate to bump
 - [Don't use "honest"](feedback_no_word_honest.md) — strip "honest"/"honestly" from chat; reads as AI-filler
@@ -59,3 +59,5 @@
 - [Canonical house designer](reference_house_designer_canonical.md) — one `homemade` house-designer row; all publish paths use ensureHouseDesigner(); isHouseDesigner gates premium + spotlight
 - [Category visibility enforcer](reference_category_visibility_enforcer.md) — taking a category public is a CODE change (LAUNCH_VISIBLE_CATEGORY_SLUGS in enforce-launch-visibility.ts); a direct isPublicVisible DB flip is reverted every deploy
 - [Credits and merging](feedback_credits_and_merging.md) — two lanes + daily train; workers never merge to main; batch renders; read summaries not transcripts; Sonnet volume / Opus hard; cap 4 workers; no suggested-task cards
+- [Cross-stitch state](project/project_cross_stitch_state.md) — where cross-stitch stands: numbers, root cause of the duplicates, the pipeline, the branches in flight, what is left before sign-off
+- [Knitting state](project_knitting_state.md) — where knitting stands (loom orchestrator)

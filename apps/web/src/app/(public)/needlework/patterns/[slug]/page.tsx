@@ -11,6 +11,8 @@ import { fromStoredVectorData, storedDocument } from '@/lib/needlework/pattern'
 import { buildPatternDocument } from '@/lib/needlework/engine/document'
 import { DISCIPLINE_LABELS } from '@/components/studio/needlework/types'
 import { PatternUnlockCta } from '@/components/public/pattern-access/PatternUnlockCta'
+import { MakerPhotos } from '@/components/public/maker-photos/maker-photos'
+import { loadMakerPhotos } from '@/lib/maker-photos'
 import './needlework-pattern-detail.css'
 
 export const dynamic = 'force-dynamic'
@@ -101,6 +103,11 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
   const user = await getCurrentDbUser()
   const unlocked = Boolean(user)
   const returnTo = `/needlework/patterns/${slug}`
+  const makerPhotos = await loadMakerPhotos({
+    kind: 'pattern',
+    patternId: row.id,
+    patternType: 'NEEDLEWORK',
+  })
   const studioHref = `/studio/needlework?needleworkPatternId=${row.id}`
   const printHref = `/needlework/patterns/${slug}/print`
 
@@ -189,6 +196,15 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
           )}
         </div>
       </header>
+
+      <MakerPhotos
+        photos={makerPhotos}
+        signedIn={Boolean(user)}
+        patternId={row.id}
+        patternType="NEEDLEWORK"
+        returnTo={returnTo}
+        galleryHref="/needlework/makes"
+      />
 
       {/* Extra finished-piece photos (a gallery) only when there's more than the
           hero — the hero already shows the finished piece, so no duplicate. */}

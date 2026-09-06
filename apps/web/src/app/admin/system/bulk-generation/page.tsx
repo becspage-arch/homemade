@@ -3,7 +3,9 @@ import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import { anthropicConfigured } from '@/lib/anthropic'
 import { PATTERN_CATEGORIES, CROSS_STITCH_SHELVES, CROCHET_SHELVES } from '@/lib/studio/generation/categories'
-import { autopilotStates, crossStitchSourceMode } from '@/lib/studio/generation/bulk/autopilot-state'
+import { PATTERN_LED_CATEGORY_SLUGS, isPatternLedSlug, patternLedCraftStats } from '@/lib/pattern-led-category-counts'
+import { autopilotStates, crossStitchSourceMode, crossStitchGateMode, makerPhotoGateMode } from '@/lib/studio/generation/bulk/autopilot-state'
+import { candidateStats, candidateWarnings, CANDIDATE_SWEEP_DAYS } from '@/lib/studio/generation/bulk/candidates'
 import { liveShelfCounts } from '@/lib/studio/generation/bulk/dedupe-guard'
 import { liveCrochetShelfCounts } from '@/lib/studio/generation/bulk/crochet-dedupe'
 import { shelfIsBuildable } from '@/lib/studio/generation/bulk/crochet-forms'
@@ -20,7 +22,7 @@ import {
   CROCHET_DAILY_ILLUSTRATION_CAP,
   CROCHET_RENDER_UNIT_COST,
 } from '@/lib/studio/generation/bulk/spend-guard'
-import { RunBatchControl, AutopilotToggle, SourceModeToggle } from './run-controls'
+import { RunBatchControl, AutopilotToggle, SourceModeToggle, GateModeToggle, PhotoGateModeToggle } from './run-controls'
 import type { BulkCraft } from './actions'
 
 export const dynamic = 'force-dynamic'
@@ -66,6 +68,7 @@ interface RunRow {
   culled: number
   duplicates: number
   skipped: number
+  parked: number
   repaired: number
   generations: number
   proGenerations: number
@@ -94,7 +97,7 @@ function topKill(reasons: string[]): string | null {
 function runLine(r: RunRow): string {
   const tag = r.trigger === 'cron' ? 'auto' : 'manual'
   if (r.requested === 0 && r.skipReason) return `[${tag}] ${r.craft}: skipped — ${r.skipReason}`
-  const done = r.published + r.culled + r.duplicates + r.errors + r.skipped
+  const done = r.published + r.culled + r.duplicates + r.errors + r.skipped + r.parked
   const inflight = !r.finishedAt && done < r.requested ? ` · ${done}/${r.requested} done…` : ''
   const stalled = isStalled(r) ? ' · STALLED' : ''
   const kill = topKill(r.killReasons)
@@ -111,6 +114,12 @@ function runLine(r: RunRow): string {
   // All-verbatim reads as a healthy run from every other counter, so it is stated.
   const dressed =
     r.craft === 'cross-stitch' && r.requested > 0 ? ` · ${r.dressedBriefs}/${r.requested} re-dressed` : ''
+  // CANDIDATES MODE reads differently, and saying "0 published" about a run that
+  // parked twelve candidates is simply wrong: `parked` is what the firing did,
+  // and `published` / `culled` are what a session decided about it afterwards.
+  if (r.parked > 0) {
+    return `[${tag}] ${r.craft}: ${r.parked} parked, ${r.published} kept, ${r.culled} rejected, ${r.duplicates} duplicates, ${r.skipped} skipped, ${r.generations} gens (${r.proGenerations} Pro), ${r.errors} errors (of ${r.requested})${pale}${inflight}${stalled}${killNote}`
+  }
   return `[${tag}] ${r.craft}: ${r.published} published, ${r.culled} culled, ${r.duplicates} duplicates, ${r.skipped} skipped, ${r.repaired} repairs, ${r.generations} gens (${r.proGenerations} Pro), ${r.errors} errors (of ${r.requested})${authored}${pale}${props}${clashes}${dressed}${inflight}${stalled}${killNote}`
 }
 
@@ -242,6 +251,8 @@ function CraftCard({
   autopilotOn,
   sourceMode,
   sourceModeLocked,
+  gateMode,
+  gateModeLocked,
   disabled,
   disabledReason,
   craft,
@@ -258,6 +269,8 @@ function CraftCard({
   autopilotOn: boolean
   sourceMode?: string
   sourceModeLocked?: string
+  gateMode?: string
+  gateModeLocked?: string
   disabled: boolean
   disabledReason?: string
   craft: BulkCraft
@@ -339,6 +352,7 @@ function CraftCard({
       {extraNote && <p style={{ ...LORA_SM, margin: 0, lineHeight: 1.5 }}>{extraNote}</p>}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 2 }}>
         <AutopilotToggle craft={craft} enabled={autopilotOn} label={autopilotLabel} />
+        {gateMode && <GateModeToggle mode={gateMode} locked={gateModeLocked} />}
         {sourceMode && <SourceModeToggle mode={sourceMode} locked={sourceModeLocked} />}
         {runNote ? (
           <div style={{ ...LORA_SM, lineHeight: 1.6 }}>{runNote}</div>
@@ -354,9 +368,6 @@ export default async function AdminBulkGenerationPage() {
   const actor = await getCurrentDbUser()
   if (!actor || !isAdmin(actor)) redirect('/admin')
 
-  const patternLedSlugs = Object.keys(PATTERN_CATEGORIES)
-  const patternLedTypes = Object.values(PATTERN_CATEGORIES).map((c) => c.patternType)
-
   const [
     xsCount,
     nwCount,
@@ -364,9 +375,8 @@ export default async function AdminBulkGenerationPage() {
     recent,
     categoriesRaw,
     publishedTutorialRows,
-    patternCountRows,
-    patternSubcatRows,
     subCats,
+    craftStats,
   ] = await Promise.all([
     prisma.pattern.count({ where: { type: 'CROSS_STITCH', ownerUserId: null, visibility: Visibility.PUBLIC } }),
     prisma.needleworkPattern.count({ where: { ownerUserId: null, visibility: Visibility.PUBLIC } }),
@@ -376,7 +386,7 @@ export default async function AdminBulkGenerationPage() {
       take: 20,
       select: {
         id: true, craft: true, trigger: true, requested: true, published: true,
-        culled: true, duplicates: true, skipped: true, repaired: true, generations: true,
+        culled: true, duplicates: true, skipped: true, parked: true, repaired: true, generations: true,
         proGenerations: true, modelBriefs: true, paleSkips: true, propRejects: true,
         collisionRejects: true, dressedBriefs: true, errors: true, killReasons: true,
         rejectSamples: true, startedAt: true, updatedAt: true,
@@ -388,14 +398,25 @@ export default async function AdminBulkGenerationPage() {
       select: { id: true, slug: true, name: true, pipelineStatus: true, targetTutorialCount: true, lastAutopilotRunAt: true },
     }),
     prisma.tutorial.groupBy({ by: ['categoryId'], where: { status: TutorialStatus.PUBLISHED }, _count: { _all: true } }),
-    prisma.pattern.groupBy({ by: ['type'], where: { visibility: Visibility.PUBLIC, ownerUserId: null }, _count: { _all: true } }),
-    prisma.pattern.groupBy({ by: ['subCategoryId'], where: { visibility: Visibility.PUBLIC, ownerUserId: null, type: { in: patternLedTypes } }, _count: { _all: true } }),
-    prisma.subCategory.findMany({ where: { category: { slug: { in: patternLedSlugs } } }, select: { id: true, name: true, categoryId: true } }),
+    // Sub-categories for every pattern-led category (not just the two with a
+    // PATTERN_CATEGORIES entry) so needlework/knitting/sewing get a
+    // published-per-shelf breakdown too.
+    prisma.subCategory.findMany({
+      where: { category: { slug: { in: [...PATTERN_LED_CATEGORY_SLUGS] } } },
+      select: { id: true, name: true, categoryId: true },
+    }),
+    // Published/draft/per-sub-category counts for all five pattern-led
+    // categories, each read from its own table — see
+    // pattern-led-category-counts.ts. Crochet, needlework, knitting and
+    // sewing each have their own model; only cross-stitch shares `Pattern`.
+    patternLedCraftStats(),
   ])
 
   const publishedTutorialsByCategoryId = new Map(publishedTutorialRows.map((r) => [r.categoryId, r._count._all]))
-  const publishedPatternsByType = new Map(patternCountRows.map((r) => [r.type, r._count._all]))
-  const patternCountBySubcatId = new Map(patternSubcatRows.map((r) => [r.subCategoryId, r._count._all]))
+  const patternCountBySubcatId = new Map<string, number>()
+  for (const stat of Object.values(craftStats)) {
+    for (const [id, count] of stat.publishedBySubCategoryId) patternCountBySubcatId.set(id, count)
+  }
   const subcatsByCategoryId = new Map<string, { name: string; count: number }[]>()
   for (const sc of subCats) {
     const list = subcatsByCategoryId.get(sc.categoryId) ?? []
@@ -442,15 +463,22 @@ export default async function AdminBulkGenerationPage() {
   )
   const warnings = healthWarnings(recent as RunRow[])
 
+
   const gateWired = anthropicConfigured()
   const renderWired = process.env.LOOM_RENDER === 'fargate'
   const autopilot = await autopilotStates()
   const xsSourceMode = await crossStitchSourceMode().catch(() => 'schnell')
+  const xsGateMode = await crossStitchGateMode().catch(() => 'candidates')
+  const photoGateMode = await makerPhotoGateMode().catch(() => 'api')
+  const candidates = await candidateStats().catch(() => ({ pending: 0, oldest: null, lastJudgedAt: null }))
+  const candidateWarns = candidateWarnings(candidates)
   const xsAutopilot = autopilot['cross-stitch']
   const nwAutopilot = autopilot.needlework
   const crAutopilot = autopilot.crochet
 
-  const xsDisabled = !gateWired
+  // In candidates mode a batch does not need the API gate wired at all — it
+  // parks candidates for a session to judge — so "Run a batch" stays live.
+  const xsDisabled = xsGateMode === 'api' && !gateWired
   const nwDisabled = !gateWired || !renderWired
   const nwDisabledReason = !gateWired ? 'Gate not wired.' : !renderWired ? 'Fargate render not wired.' : undefined
   const crDisabled = !gateWired || !renderWired
@@ -477,7 +505,7 @@ export default async function AdminBulkGenerationPage() {
         </div>
       </div>
 
-      {warnings.length > 0 && (
+      {[...warnings, ...candidateWarns].length > 0 && (
         <section
           style={{
             marginBottom: 20,
@@ -491,7 +519,7 @@ export default async function AdminBulkGenerationPage() {
             The cross-stitch autopilot needs a look
           </h2>
           <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.7 }}>
-            {warnings.map((w) => (
+            {[...warnings, ...candidateWarns].map((w) => (
               <li key={w} style={{ fontFamily: 'var(--font-lora)', fontSize: 13, color: 'var(--color-espresso)' }}>{w}</li>
             ))}
           </ul>
@@ -500,10 +528,32 @@ export default async function AdminBulkGenerationPage() {
 
       {/* ── Generation status: wiring ─────────────────────────────────── */}
       <section style={{ marginBottom: 20 }}>
-        <p style={{ ...LORA_SM, margin: 0 }}>
-          Vision gate: <strong style={{ color: gateWired ? 'var(--color-sage)' : 'var(--color-burnt-sienna)' }}>{gateWired ? 'wired' : 'not wired'}</strong>
+        <p style={{ ...LORA_SM, margin: 0, lineHeight: 1.7 }}>
+          Cross-stitch judging:{' '}
+          <strong style={{ color: 'var(--color-espresso)' }}>
+            {xsGateMode === 'candidates' ? 'Claude sessions (no API spend on the cron path)' : 'the API vision gate'}
+          </strong>
+          {'  ·  '}Vision gate: <strong style={{ color: gateWired ? 'var(--color-sage)' : 'var(--color-burnt-sienna)' }}>{gateWired ? 'wired' : 'not wired'}</strong>
           {'  ·  '}Needlework render (Fargate): <strong style={{ color: renderWired ? 'var(--color-sage)' : 'var(--color-burnt-sienna)' }}>{renderWired ? 'wired' : 'not wired'}</strong>
+          <br />
+          Candidates waiting to be judged:{' '}
+          <strong style={{ color: candidates.pending > 0 ? 'var(--color-espresso)' : 'var(--color-warm-taupe)' }}>{candidates.pending}</strong>
+          {candidates.oldest ? ` · oldest ${relativeTime(candidates.oldest)}` : ''}
+          {candidates.lastJudgedAt ? ` · last judged ${relativeTime(candidates.lastJudgedAt)}` : ' · never judged'}
+          {'  ·  '}Maker photos: <strong style={{ color: 'var(--color-espresso)' }}>{photoGateMode === 'api' ? 'checked on upload' : 'checked by the routine'}</strong>
+          <br />
+          <span style={{ fontSize: 11 }}>
+            A candidate is an UNLISTED pattern: it reaches no public page, no sitemap, no search index and no
+            public count until a session keeps it. Anything still un-judged after {CANDIDATE_SWEEP_DAYS} days is
+            retired as rejected with the reason “unjudged”.
+          </span>
         </p>
+        <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <PhotoGateModeToggle
+            mode={photoGateMode}
+            locked={process.env.MAKER_PHOTO_GATE_MODE ? `Pinned to “${process.env.MAKER_PHOTO_GATE_MODE}” by MAKER_PHOTO_GATE_MODE.` : undefined}
+          />
+        </div>
       </section>
 
       {/* ── The two bulk crafts ───────────────────────────────────────── */}
@@ -519,10 +569,14 @@ export default async function AdminBulkGenerationPage() {
             sourceModeLocked={
               process.env.BULK_XS_SOURCE_MODE ? `Pinned to “${process.env.BULK_XS_SOURCE_MODE}” by BULK_XS_SOURCE_MODE.` : undefined
             }
+            gateMode={xsGateMode}
+            gateModeLocked={
+              process.env.BULK_XS_GATE_MODE ? `Pinned to “${process.env.BULK_XS_GATE_MODE}” by BULK_XS_GATE_MODE.` : undefined
+            }
             disabled={xsDisabled}
-            disabledReason={gateWired ? undefined : 'Gate not wired — a batch would publish nothing.'}
+            disabledReason={xsDisabled ? 'Gate not wired — a batch would publish nothing.' : undefined}
             craft="cross-stitch"
-            defaultCount={10}
+            defaultCount={xsGateMode === 'candidates' ? 12 : 10}
             shelves={xsShelves}
             spend={{
               used: spendWindow.generations,
@@ -603,10 +657,16 @@ export default async function AdminBulkGenerationPage() {
             <tbody>
               {categoriesRaw.map((cat) => {
                 const cfg = PATTERN_CATEGORIES[cat.slug]
-                const isPatternLed = Boolean(cfg)
-                const published = cfg ? publishedPatternsByType.get(cfg.patternType) ?? 0 : publishedTutorialsByCategoryId.get(cat.id) ?? 0
+                const craftStat = isPatternLedSlug(cat.slug) ? craftStats[cat.slug] : undefined
+                const isPatternLed = craftStat != null
+                // Every pattern-led category reads from its own table via
+                // craftStats (cross-stitch included) — never tutorials.
+                const published = craftStat ? craftStat.published : publishedTutorialsByCategoryId.get(cat.id) ?? 0
+                // cross-stitch and crochet have a proper shelf-derived target;
+                // needlework/knitting/sewing have no sign-off pass yet, so
+                // `targetTutorialCount` is the only target number that exists.
                 const target = cfg ? cfg.patternTarget : cat.targetTutorialCount
-                const unit = cfg ? 'patterns' : 'guides'
+                const unit = isPatternLed ? 'patterns' : 'guides'
                 const pct = target && target > 0 ? Math.min(100, Math.round((published / target) * 100)) : 0
                 const badge = stateBadge(cat.pipelineStatus)
                 const breakdown = isPatternLed ? subcatsByCategoryId.get(cat.id) ?? [] : []

@@ -11,7 +11,7 @@
  * palette, switches tools, or starts a new pattern.
  */
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import type { PatternData } from '@homemade/db/pattern'
 import { ChartViewport } from '../chart/ChartViewport'
@@ -20,6 +20,7 @@ import { StudioToolbar } from './StudioToolbar'
 import { StudioStatusBar } from './StudioStatusBar'
 import { PalettePanel } from './PalettePanel'
 import { FlossKeyPanel } from './FlossKeyPanel'
+import { ParkingBar } from './ParkingBar'
 import { ToolDock } from './ToolDock'
 import { StudioEmptyState } from './StudioEmptyState'
 import { NewBlankPanel } from './NewBlankPanel'
@@ -27,6 +28,8 @@ import { CreateYourOwnPanel, type DesignMode } from './CreateYourOwnPanel'
 import { MyPatternsGrid } from './MyPatternsGrid'
 import { useStudioAutosave } from './use-studio-autosave'
 import { BrandSwapDialog } from './BrandSwapDialog'
+import { getLocalParking } from './local-progress'
+import { parseParkingDirection } from '@/lib/studio/parking'
 import { captureClientEvent } from '@/lib/client-analytics'
 import {
   StudioRecentlyAddedRail,
@@ -61,6 +64,9 @@ interface StudioShellProps {
   userName: string | null
   pattern: { id: string; name: string; data: PatternData; ownerUserId: string | null } | null
   stitchedKeys: string[]
+  /** Stored parking preferences for this Maker on this pattern. Null when
+   *  the server has none, in which case the local store is consulted. */
+  parking?: { enabled: boolean; direction: string; line: number } | null
   myPatterns: MyPatternListItem[]
   recentlyAdded?: RecentlyAddedListItem[]
 }
@@ -74,6 +80,7 @@ export function StudioShell({
   userName,
   pattern,
   stitchedKeys,
+  parking = null,
   myPatterns,
   recentlyAdded = [],
 }: StudioShellProps) {
@@ -102,9 +109,42 @@ export function StudioShell({
   const setMode = useChartStore((s) => s.setMode)
   const setIsolate = useChartStore((s) => s.setIsolate)
   const setCurrentSymbol = useChartStore((s) => s.setCurrentSymbol)
+  const hydrateParking = useChartStore((s) => s.hydrateParking)
   useEffect(() => {
     if (pattern) setMode(pattern.ownerUserId ? 'edit' : 'view')
   }, [pattern, setMode])
+
+  // Restore parking preferences once the pattern is in the store, so the
+  // index builds against the right grid. Signed-in Makers get the server
+  // row; everyone else gets whatever IndexedDB holds, which is where their
+  // progress lives too.
+  const patternId = pattern?.id ?? null
+  // Hydrate once per pattern. A parent re-render hands down a fresh
+  // `parking` object every time, and re-applying it would rewind the line
+  // the Maker is on and drop preference changes that have not saved yet.
+  const hydratedFor = useRef<string | null>(null)
+  useEffect(() => {
+    if (!patternId || hydratedFor.current === patternId) return
+    hydratedFor.current = patternId
+    if (parking) {
+      hydrateParking({
+        enabled: parking.enabled,
+        direction: parseParkingDirection(parking.direction),
+        line: parking.line,
+      })
+      return
+    }
+    let cancelled = false
+    getLocalParking(patternId)
+      .then((prefs) => {
+        if (cancelled || !prefs) return
+        hydrateParking(prefs)
+      })
+      .catch(() => undefined)
+    return () => {
+      cancelled = true
+    }
+  }, [patternId, parking, hydrateParking])
 
   // Autosave hook — debounced save to server when the user is logged in and
   // owns the pattern. Library patterns silently fork on first edit.
@@ -214,6 +254,7 @@ export function StudioShell({
       <main className="studio-canvas">
         <ChartViewport
           pattern={pattern.data}
+          patternId={pattern.id}
           mode={pattern.ownerUserId ? 'edit' : 'view'}
           initialStitched={initialStitched}
           onRequestIsolate={(s) => setIsolate(s)}
@@ -239,6 +280,11 @@ export function StudioShell({
           mobileOpen={mobilePanel === 'flosskey'}
           onMobileClose={() => setMobilePanel('none')}
         />
+
+        {/* Parking controls — floats at the top of the canvas when parking
+            is on, and renders nothing when it is off. Available on library
+            patterns too: parking is a way of working a chart, not an edit. */}
+        <ParkingBar pattern={pattern.data} />
 
         {/* Edit-mode floating tool dock — bottom-centre on desktop. */}
         {pattern.ownerUserId && <ToolDock />}

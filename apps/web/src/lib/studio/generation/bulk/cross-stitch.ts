@@ -14,6 +14,8 @@ import { sha256Hex } from './similarity'
 import { subjectKey } from './subject-key'
 import { renderBeautyThumbnail, THUMB_TARGET } from './beauty-thumbnail'
 import { bareFabricVerdict, clearBackground, fullCoverageByIntent } from './bare-fabric'
+import { embellishChart } from './outline'
+import { deriveFractionals, smoothingWantedFor } from './fractionals'
 import {
   buildPrompt,
   SRC_SAT,
@@ -66,6 +68,19 @@ export interface CrossStitchCandidate {
   /** What the bare-fabric rule did to this chart, if anything. Recorded on the
    *  published row so the decision is auditable without re-deriving it. */
   backgroundCleared?: { removed: number; droppedSymbols: string[]; reason: string }
+  /** What the outline pass did — back-stitch segments, knots, and the mode the
+   *  lane/style rule chose. Recorded on the published row for the same reason. */
+  outline?: {
+    mode: string
+    reason: string
+    segments: number
+    length: number
+    knots: number
+    addedSymbols: string[]
+    inkCodes: string[]
+  }
+  /** What the fractional-stitch pass did — cells shared between two colours. */
+  fractional?: { cellsShared: number; stitches: number; reason: string }
 }
 
 function imageSizeFor(w: number, h: number): 'square_hd' | 'portrait_4_3' | 'landscape_4_3' {
@@ -169,7 +184,48 @@ export async function generateCrossStitchCandidate(
       cleared = { removed: out.removed, droppedSymbols: out.droppedSymbols, reason: bare.reason }
     }
   }
-  const shippedMetrics = cleared ? computePatternMetrics(shipped) : metrics
+  // OUTLINES — the chart draws its own edges. The schema has carried a
+  // back-stitch layer and a French-knot layer since the first day and the
+  // converter never put anything in either, so every chart shipped as flat
+  // blocks of whole crosses while the best-seller kits it is judged against
+  // outline their characters and dot their eyes. Derived HERE, after the
+  // bare-fabric clear (the silhouette is only a silhouette once the white
+  // ground has gone) and before the thumbnail is rendered — so the vividness
+  // guard and the vision gate judge the outlined chart, the one that ships.
+  // The lane and style decide how much: a full outline for the bold flat lanes,
+  // the silhouette alone for the soft ones, nothing for line work or the dense
+  // showpiece tier.
+  const embellished = embellishChart(shipped, { lane: brief.lane, style: brief.style })
+  let outline: CrossStitchCandidate['outline']
+  if (!embellished.unchanged) {
+    shipped = embellished.data
+    outline = {
+      mode: embellished.mode,
+      reason: embellished.modeReason,
+      segments: embellished.backstitchSegments,
+      length: embellished.backstitchLength,
+      knots: embellished.frenchKnots,
+      addedSymbols: embellished.addedSymbols,
+      inkCodes: embellished.inkCodes,
+    }
+  }
+
+  // FRACTIONAL STITCHES — take the staircase off the diagonals. Last of the
+  // three passes: the outline is derived on whole-cell boundaries and cuts a
+  // step corner with a diagonal line, and the shared cell puts the colour
+  // boundary in the same place, so the two agree about where the edge is. Line
+  // work (Delft, blackwork) is left blocky on purpose.
+  let fractional: CrossStitchCandidate['fractional']
+  const wanted = smoothingWantedFor(shipped)
+  if (wanted.yes) {
+    const smoothed = deriveFractionals(shipped)
+    if (smoothed.cellsShared > 0) {
+      shipped = smoothed.data
+      fractional = { cellsShared: smoothed.cellsShared, stitches: smoothed.stitches, reason: smoothed.reason }
+    }
+  }
+
+  const shippedMetrics = cleared || outline || fractional ? computePatternMetrics(shipped) : metrics
 
   const renderPng = await renderBeautyThumbnail(shipped, brief.sat != null ? 1 : POST_SAT)
   return {
@@ -185,6 +241,8 @@ export async function generateCrossStitchCandidate(
     credit: generated.credit,
     requestedColours: colours,
     ...(cleared ? { backgroundCleared: cleared } : {}),
+    ...(outline ? { outline } : {}),
+    ...(fractional ? { fractional } : {}),
   }
 }
 
@@ -332,12 +390,28 @@ export interface PublishContext {
   attempt?: number
   /** The repair tweak in force on that attempt. */
   tweak?: CandidateTweak
+  /**
+   * PARK IT INSTEAD OF PUBLISHING IT — the candidates gate mode.
+   *
+   * The row is written UNLISTED with `candidateStatus 'PENDING'`, no
+   * `publishedAt`, and NO search sync: it is a candidate waiting for a Claude
+   * Code session to look at it, not a pattern anyone can reach. Everything else
+   * about the row is identical to a published gem, so a `keep` later is a
+   * visibility flip and one search sync rather than a re-publish.
+   */
+  park?: boolean
+  /** How many times this idea has already been re-rolled (candidates mode). */
+  rerollCount?: number
 }
 
 /**
  * Publish a gate-passed gem to the live cross-stitch catalogue: house designer,
  * real shelf, PUBLIC Pattern, persisted beauty thumbnail, search sync. Idempotent
  * on slug (the planner mints unique slugs, so this creates).
+ *
+ * With `ctx.park` it writes the SAME row UNLISTED and `candidateStatus 'PENDING'`
+ * instead, with no `publishedAt` and no search sync — the candidates gate mode,
+ * where a Claude Code session rather than a paid vision gate decides what ships.
  *
  * SHELF DISCIPLINE: every published pattern gets exactly one shelf from the
  * canonical list in `categories.ts`, and this function refuses anything else.
@@ -372,6 +446,7 @@ export async function publishCrossStitchGem(
   const data = candidate.data
   const m = computePatternMetrics(data)
   const name = titleFromSubject(brief.subject)
+  const park = ctx?.park === true
   const common = {
     name,
     description: `${name}, an original Homemade cross-stitch design.`,
@@ -379,8 +454,12 @@ export async function publishCrossStitchGem(
     designerId: designer.id,
     subCategoryId: sub.id,
     difficulty: difficultyFor(m.colourCount),
-    visibility: Visibility.PUBLIC,
-    publishedAt: new Date(),
+    // A parked candidate is UNLISTED and has never been published: it reaches no
+    // public surface, no sitemap, no search index and no public count until a
+    // session keeps it.
+    visibility: park ? Visibility.UNLISTED : Visibility.PUBLIC,
+    publishedAt: park ? null : new Date(),
+    ...(park ? { candidateStatus: 'PENDING' as const, rerollCount: ctx?.rerollCount ?? 0 } : {}),
     // The cross-stitch hero IS the deterministic beauty chart render (persisted as
     // thumbnailMediaId) — the exact pattern, and the correct final hero by design
     // (there is no photoreal AI hero, and none is wanted). SUCCESS is the honest
@@ -443,10 +522,12 @@ export async function publishCrossStitchGem(
       attempt: ctx?.attempt ?? 1,
       tweak: ctx?.tweak ?? {},
       ...(candidate.backgroundCleared ? { backgroundCleared: candidate.backgroundCleared } : {}),
+      ...(candidate.outline ? { outline: candidate.outline } : {}),
+      ...(candidate.fractional ? { fractional: candidate.fractional } : {}),
       gate: { verdict: ctx?.gate.verdict ?? 'keep', reasons: ctx?.gate.reasons ?? [] },
       bulkRunId: ctx?.bulkRunId ?? null,
       credit: candidate.credit,
-      publishedBy: 'bulk-cross-stitch',
+      publishedBy: park ? 'bulk-cross-stitch-candidate' : 'bulk-cross-stitch',
       at: new Date().toISOString(),
     } as unknown as object,
   }
@@ -475,11 +556,17 @@ export async function publishCrossStitchGem(
   })
   await prisma.pattern.update({ where: { id: pattern.id }, data: { thumbnailMediaId: media.id } })
 
-  // Search sync (dynamic import mirrors the retired publish script).
-  const { buildPatternDoc } = await import('@homemade/db/search-docs')
-  const { syncPatternDoc } = await import('@homemade/search')
-  const doc = await buildPatternDoc(pattern.id)
-  if (doc) await syncPatternDoc(doc)
+  // NO SEARCH SYNC FOR A CANDIDATE. `buildPatternDoc` builds a doc for whatever
+  // id it is handed — it does not check visibility — so syncing here would put
+  // an un-judged candidate straight into the public index. A kept candidate is
+  // synced by the judging CLI at the moment it goes PUBLIC.
+  if (!park) {
+    // Search sync (dynamic import mirrors the retired publish script).
+    const { buildPatternDoc } = await import('@homemade/db/search-docs')
+    const { syncPatternDoc } = await import('@homemade/search')
+    const doc = await buildPatternDoc(pattern.id)
+    if (doc) await syncPatternDoc(doc)
+  }
 
   return { patternId: pattern.id, slug: brief.slug, publicUrl }
 }

@@ -93,6 +93,18 @@ export const SHELF_SHARE = 5
 const HARD_CAPPED = new Set(['celestial'])
 
 /**
+ * SET SHELVES — the deliberate exception to the share.
+ *
+ * A small-makes ornament set IS six related minis; shipping them one a batch
+ * would take six weeks to fill a shelf that customers buy a set at a time. So a
+ * shelf whose theme carries a `setOf` tag in the subject pool may take up to
+ * that many briefs in one batch. It is a CAP, not a floor: the shelf still only
+ * gets what its deficit earns, so this only bites while the shelf is far behind.
+ * A set cap never lowers the ordinary share, and never exceeds the batch.
+ */
+export type SetShelfCaps = Record<string, number>
+
+/**
  * Hold every shelf to its share of the batch, moving the excess to the neediest
  * shelf that still has room.
  *
@@ -100,12 +112,18 @@ const HARD_CAPPED = new Set(['celestial'])
  * it (a nearly-finished catalogue with two shelves left); a hard-capped one gives
  * it up regardless, and the batch runs one brief short rather than shipping three
  * celestial pieces at once. `count` is the batch size the allocation was made for.
+ * `setCaps` raises the share for set shelves (see above) and is empty for crafts
+ * that have none.
  */
-export function capShelfBriefs(alloc: ShelfAllocation[], count: number): ShelfAllocation[] {
-  const cap = Math.max(1, Math.floor(count / SHELF_SHARE))
+export function capShelfBriefs(alloc: ShelfAllocation[], count: number, setCaps: SetShelfCaps = {}): ShelfAllocation[] {
+  const share = Math.max(1, Math.floor(count / SHELF_SHARE))
+  // A hard-capped shelf is never a set shelf — the two rules would contradict.
+  const capFor = (slug: string): number =>
+    HARD_CAPPED.has(slug) ? share : Math.max(share, Math.min(setCaps[slug] ?? 0, count))
   const out = alloc.map((a) => ({ ...a }))
   let spare = 0
   for (const a of out) {
+    const cap = capFor(a.slug)
     if (a.briefs <= cap) continue
     spare += a.briefs - cap
     a.briefs = cap
@@ -115,11 +133,11 @@ export function capShelfBriefs(alloc: ShelfAllocation[], count: number): ShelfAl
   // Room goes to the biggest remaining gap first — the same rule the allocation
   // itself uses, so the cap re-weights rather than randomising.
   const room = out
-    .filter((a) => a.briefs < cap && !HARD_CAPPED.has(a.slug))
+    .filter((a) => a.briefs < capFor(a.slug) && !HARD_CAPPED.has(a.slug))
     .sort((a, b) => b.deficit - a.deficit || a.slug.localeCompare(b.slug))
   for (const a of room) {
     if (spare <= 0) break
-    const take = Math.min(spare, cap - a.briefs)
+    const take = Math.min(spare, capFor(a.slug) - a.briefs)
     a.briefs += take
     spare -= take
   }

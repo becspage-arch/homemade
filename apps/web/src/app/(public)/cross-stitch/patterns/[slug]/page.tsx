@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Check } from 'lucide-react'
 import { headers } from 'next/headers'
 import { after } from 'next/server'
 import { notFound } from 'next/navigation'
@@ -20,8 +21,17 @@ import { PremiumBadge } from '@/components/premium'
 import { PatternSaveButton } from '@/components/public/pattern-save-button'
 import { PatternPlanButton } from '@/components/public/pattern-plan-button'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
+import {
+  computeFlossOwnership,
+  FLOSS_BRAND_LABEL,
+  type FlossOwnership,
+} from '@/lib/floss/stash-ownership'
+import { MakerPhotos } from '@/components/public/maker-photos/maker-photos'
+import { loadMakerPhotos } from '@/lib/maker-photos'
 import { FabricCalculator } from './fabric-calculator'
+import { FlossShoppingList } from './floss-shopping-list'
 import { PdfDownload } from './pdf-download'
+import { SpecTip } from './spec-tip'
 import './pattern-detail.css'
 
 export const dynamic = 'force-dynamic'
@@ -31,9 +41,10 @@ const LETTER_PAPER_COUNTRIES = new Set(['US', 'CA', 'MX', 'PH'])
 
 interface PageProps {
   params: Promise<{ slug: string }>
+  searchParams: Promise<Record<string, string | string[] | undefined>>
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Pick<PageProps, 'params'>): Promise<Metadata> {
   const { slug } = await params
   const row = await prisma.pattern.findUnique({
     where: { slug },
@@ -59,8 +70,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   })
 }
 
-export default async function PatternDetailPage({ params }: PageProps) {
+export default async function PatternDetailPage({ params, searchParams }: PageProps) {
   const { slug } = await params
+  const sp = await searchParams
   const row = await prisma.pattern.findUnique({
     where: { slug },
     include: {
@@ -93,12 +105,34 @@ export default async function PatternDetailPage({ params }: PageProps) {
   const finishedW = (row.widthCells / row.fabricCountSuggested) * 2.54
   const finishedH = (row.heightCells / row.fabricCountSuggested) * 2.54
 
-  const totalSkein = data.palette.reduce((sum, p) => sum + estimateSkeinCount(data, p.symbol), 0)
+  // Per-colour skein estimates, worked out once. The total in the spec table,
+  // the ownership maths, and the floss list all read the same numbers.
+  const skeinBySymbol = new Map(
+    data.palette.map((p) => [p.symbol, estimateSkeinCount(data, p.symbol)] as const),
+  )
+  const totalSkein = [...skeinBySymbol.values()].reduce((sum, n) => sum + n, 0)
 
   // How the chart feels under the needle. Computed off the grid at save time
   // and stored on the row; older rows the backfill hasn't reached simply show
   // nothing rather than a guess.
   const band = row.stitchability != null ? STITCHABILITY_BANDS[row.stitchability] : undefined
+
+  // Difficulty and stitchability read as two competing verdicts when they sit
+  // in the spec grid as separate rows. They are one thought: how hard it is
+  // and how it feels to work. One row, one label, one explanation.
+  const difficultyLabel = row.difficulty ? prettify(row.difficulty) : null
+  const goingLabel =
+    difficultyLabel && band
+      ? 'Difficulty and stitching'
+      : difficultyLabel
+        ? 'Difficulty'
+        : 'Stitching'
+  const goingValue =
+    difficultyLabel && band
+      ? `Difficulty: ${difficultyLabel}. Stitching: ${band.label}`
+      : difficultyLabel
+        ? difficultyLabel
+        : (band?.label ?? '')
 
   const related = await prisma.pattern.findMany({
     where: {
@@ -122,6 +156,8 @@ export default async function PatternDetailPage({ params }: PageProps) {
       thumbnail: { select: { cloudflareId: true, r2Key: true } },
     },
   })
+
+  const patternPath = `/cross-stitch/patterns/${slug}`
 
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Home', href: '/' },
@@ -149,6 +185,12 @@ export default async function PatternDetailPage({ params }: PageProps) {
     where: { patternId: row.id, completedAt: { not: null } },
   })
 
+  const makerPhotos = await loadMakerPhotos({
+    kind: 'pattern',
+    patternId: row.id,
+    patternType: 'CROSS_STITCH',
+  })
+
   // Make-it-list save state for the signed-in reader. Anonymous readers still
   // see the Save button; tapping it routes them through sign-in.
   const user = await getCurrentDbUser()
@@ -160,7 +202,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
   const content = { premium: row.premium, designer: row.designer }
   const premiumContent = isPremiumContent(content)
   const canAccess = canAccessPremiumContent(user, content)
-  const [saved, inPlan] = user
+  const [saved, inPlan, stashRows] = user
     ? await Promise.all([
         prisma.savedPattern
           .findUnique({
@@ -180,8 +222,34 @@ export default async function PatternDetailPage({ params }: PageProps) {
             select: { id: true },
           })
           .then(Boolean),
+        // The maker's floss stash. Free for anyone signed in: it is what lets
+        // this page tick the colours already in the drawer and show the short
+        // list of what is left to buy.
+        prisma.plannerStashItem.findMany({
+          where: { userId: user.id, craft: 'CROSS_STITCH', archivedAt: null },
+          select: { brand: true, code: true, quantityOwned: true },
+        }),
       ])
-    : [false, false]
+    : [false, false, []]
+
+  const ownership: FlossOwnership | null =
+    stashRows.length > 0
+      ? computeFlossOwnership(
+          data.palette.map((p) => ({
+            symbol: p.symbol,
+            brand: p.brand,
+            code: p.code,
+            name: p.name,
+            rgb: p.rgb,
+            skeinsNeeded: skeinBySymbol.get(p.symbol) ?? 0,
+          })),
+          stashRows,
+        )
+      : null
+  const ownedSymbols = new Set(
+    ownership ? ownership.lines.filter((l) => l.owned).map((l) => l.symbol) : [],
+  )
+  const convertedBrands = ownership?.convertedFromBrands ?? []
 
   return (
     <article className="pattern-detail">
@@ -247,8 +315,21 @@ export default async function PatternDetailPage({ params }: PageProps) {
               patternId={row.id}
               initialInPlan={inPlan}
               signedIn={Boolean(user)}
+              patternPath={patternPath}
+              pendingIntent={sp.plan === row.id}
             />
           </div>
+
+          {/* First step for anyone who has never stitched, in the actions
+              area where the decision is being made. The fuller "Start here"
+              card below repeats it for readers who scroll. Both destinations
+              are free and open without an account. */}
+          <p className="pattern-detail-first-time">
+            New to cross-stitch?{' '}
+            <Link href={`/cross-stitch/how-to-read-a-cross-stitch-chart?from=${slug}`}>
+              Start with how to read a chart
+            </Link>
+          </p>
 
           {finishedCount > 0 && (
             <p className="pattern-detail-finished">
@@ -264,25 +345,19 @@ export default async function PatternDetailPage({ params }: PageProps) {
             <div><dt>Finished</dt><dd>{finishedW.toFixed(1)} × {finishedH.toFixed(1)} cm</dd></div>
             <div><dt>Fabric</dt><dd>{row.fabricCountSuggested}-count Aida</dd></div>
             <div><dt>Skeins</dt><dd>~{totalSkein.toFixed(0)} total</dd></div>
-            {band && (
-              <div>
-                <dt>Stitchability</dt>
+            {(band || row.difficulty) && (
+              <div className="pattern-detail-spec-going">
+                <dt>{goingLabel}</dt>
                 <dd>
-                  <button
-                    type="button"
-                    className="pattern-detail-stitchability"
-                    aria-describedby="stitchability-tip"
-                  >
-                    {band.label}
-                    <span className="pattern-detail-stitchability-mark" aria-hidden="true">?</span>
-                    <span className="pattern-detail-tip" id="stitchability-tip" role="tooltip">
-                      {band.blurb}
-                    </span>
-                  </button>
+                  {goingValue}
+                  <SpecTip label="What difficulty and stitching mean">
+                    Difficulty is the skill the pattern asks for. Stitching is
+                    how much attention the chart wants while you work it
+                    {band ? `: ${lowerFirst(band.blurb)}` : '.'}
+                  </SpecTip>
                 </dd>
               </div>
             )}
-            {row.difficulty && <div><dt>Difficulty</dt><dd>{prettify(row.difficulty)}</dd></div>}
             {row.estimatedHours && <div><dt>Time</dt><dd>~{row.estimatedHours}h</dd></div>}
             {row.hasBackstitch && <div><dt>Back-stitch</dt><dd>Yes</dd></div>}
             {row.hasFrenchKnots && <div><dt>French knots</dt><dd>Yes</dd></div>}
@@ -295,6 +370,16 @@ export default async function PatternDetailPage({ params }: PageProps) {
           />
         </div>
       </header>
+
+      <MakerPhotos
+        photos={makerPhotos}
+        signedIn={Boolean(user)}
+        patternId={row.id}
+        patternType="CROSS_STITCH"
+        finishedCount={finishedCount}
+        returnTo={`/cross-stitch/patterns/${slug}`}
+        galleryHref="/cross-stitch/makes"
+      />
 
       {/* Provenance, one line. The market is learning to distrust listing
           images that turn out to be renderings, and our answer is the strong
@@ -326,16 +411,47 @@ export default async function PatternDetailPage({ params }: PageProps) {
       </aside>
 
       <section className="pattern-detail-floss">
-        <h2>Floss colours</h2>
+        <div className="pattern-detail-floss-head">
+          <h2>Floss colours</h2>
+          {ownership && (
+            <p className="pattern-detail-floss-owned">
+              {ownership.ownedColours === 0
+                ? `None of the ${ownership.totalColours} colours are in your stash yet.`
+                : ownership.ownedColours === ownership.totalColours
+                  ? `You already own all ${ownership.totalColours} colours.`
+                  : `You already own ${ownership.ownedColours} of the ${ownership.totalColours} colours.`}
+            </p>
+          )}
+        </div>
+
+        {/* Brand-aware: a stash kept in Anchor still counts against a DMC
+            chart, and the page says so rather than quietly claiming a match. */}
+        {convertedBrands.length > 0 && (
+          <p className="pattern-detail-floss-converted">
+            Some colours were matched to your{' '}
+            {convertedBrands.map((b) => FLOSS_BRAND_LABEL[b]).join(' and ')} skeins through the
+            published conversion charts.
+          </p>
+        )}
+
         <ul>
           {data.palette.map((p) => {
             const stitches = data.grid.cells.filter((c) => c.s === p.symbol).length
-            const skein = estimateSkeinCount(data, p.symbol)
+            const skein = skeinBySymbol.get(p.symbol) ?? 0
+            const owned = ownedSymbols.has(p.symbol)
             return (
-              <li key={p.symbol}>
+              <li key={p.symbol} className={owned ? 'is-owned' : undefined}>
                 <span className="pattern-detail-floss-swatch" style={{ background: p.rgb }} />
                 <span className="pattern-detail-floss-detail">
-                  <span className="pattern-detail-floss-name">{p.name}</span>
+                  <span className="pattern-detail-floss-name">
+                    {owned && (
+                      <span className="pattern-detail-floss-tick">
+                        <Check size={13} strokeWidth={2.4} aria-hidden="true" />
+                        <span className="visually-hidden">In your stash</span>
+                      </span>
+                    )}
+                    {p.name}
+                  </span>
                   <span className="pattern-detail-floss-code">{p.brand} {p.code}</span>
                 </span>
                 <span className="pattern-detail-floss-counts">
@@ -345,6 +461,40 @@ export default async function PatternDetailPage({ params }: PageProps) {
             )
           })}
         </ul>
+
+        {ownership && ownership.toBuy.length > 0 && (
+          <FlossShoppingList
+            patternId={row.id}
+            patternName={row.name}
+            initialInPlan={inPlan}
+            lines={ownership.toBuy.map((line) => ({
+              brand: line.brand,
+              code: line.code,
+              name: line.name,
+              rgb: line.rgb,
+              skeins: line.skeinsToBuy,
+            }))}
+          />
+        )}
+
+        {/* One quiet line for anyone without a stash yet. No popup, no gate:
+            keeping a stash is free with an account. */}
+        {!ownership && (
+          <p className="pattern-detail-floss-invite">
+            {user ? (
+              <>
+                Keep a <Link href="/me/floss-stash">floss stash</Link> and this list ticks the
+                colours you already own, then tells you what is left to buy.
+              </>
+            ) : (
+              <>
+                <Link href="/sign-in?redirect_url=/me/floss-stash">Keep a floss stash</Link> and
+                this list ticks the colours you already own, then tells you what is left to buy.
+                It is free with an account.
+              </>
+            )}
+          </p>
+        )}
       </section>
 
       {row.designer && row.designer.bio && (
@@ -380,6 +530,10 @@ export default async function PatternDetailPage({ params }: PageProps) {
 
 function prettify(s: string): string {
   return s.charAt(0) + s.slice(1).toLowerCase()
+}
+/** Lower-case the first letter so a band blurb can follow a colon. */
+function lowerFirst(s: string): string {
+  return s.charAt(0).toLowerCase() + s.slice(1)
 }
 function formatSkein(n: number): string {
   return Number.isInteger(n) ? `${n}` : n.toFixed(1)

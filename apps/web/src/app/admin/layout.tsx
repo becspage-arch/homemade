@@ -56,7 +56,7 @@ const SIDEBAR_GROUPS: SidebarGroup[] = [
     minRole: UserRole.EDITOR,
     items: [
       { href: '/admin/reviews', label: 'Reviews', minRole: UserRole.EDITOR },
-      { href: '/admin/ugc-photos', label: 'UGC photos', minRole: UserRole.EDITOR },
+      { href: '/admin/ugc-photos', label: 'Maker photos', minRole: UserRole.EDITOR },
       { href: '/admin/questions', label: 'Q&A', minRole: UserRole.EDITOR },
       { href: '/admin/errata', label: 'Errata', minRole: UserRole.EDITOR },
       { href: '/admin/reports', label: 'Reports', minRole: UserRole.EDITOR },
@@ -65,7 +65,6 @@ const SIDEBAR_GROUPS: SidebarGroup[] = [
       { href: '/admin/creators', label: 'Creator applications', minRole: UserRole.EDITOR },
       { href: '/admin/creators/moderation', label: 'Creator moderation', minRole: UserRole.EDITOR },
       { href: '/admin/patterns', label: 'Pattern tests', minRole: UserRole.EDITOR },
-      { href: '/admin/user-pattern-photos', label: 'User photos', minRole: UserRole.EDITOR },
     ],
   },
   {

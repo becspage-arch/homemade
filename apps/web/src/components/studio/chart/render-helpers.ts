@@ -18,11 +18,32 @@
  * - Layers are grouped by colour so the SVG paint pass batches strokes.
  */
 
-import type { PatternData, PaletteEntry } from '@homemade/db/pattern'
+import type { PatternData, PaletteEntry, CellQuadrant, FractionalStitch } from '@homemade/db/pattern'
 
 export const DEFAULT_CELL_PX = 32
 export const LOW_ZOOM_THRESHOLD = 6
 export const RENDER_PRECISION = 2
+
+/** Container width at or below which the chart is being worked on a phone.
+ *  Matches the Studio stylesheet's mobile breakpoint. */
+export const NARROW_CONTAINER_PX = 720
+
+/**
+ * The line under which fitting the whole chart stops being a useful first
+ * view. It is `LOW_ZOOM_THRESHOLD` on purpose: that is where the renderer
+ * gives up on symbols and collapses every square to a flat rect, so below
+ * it the chart has stopped reading as a chart and a square is far too
+ * small to tap. A 210-cell chart fitted on a 390px phone lands at under two
+ * pixels a square, which is what the mobile audit found.
+ */
+export const FIT_FLOOR_CELL_PX = LOW_ZOOM_THRESHOLD
+
+/**
+ * Where a phone starts instead: a cell size you can put a fingertip on,
+ * centred on the chart's middle (the crosshair) which is where a counted
+ * piece is started from.
+ */
+export const FIRST_VIEW_CELL_PX = 26
 
 /** Deterministic hash producing [0, 1) from (x, y, axis). Avoids the
  *  shimmer of Math.random() on re-render — stitches stay put. */
@@ -63,6 +84,25 @@ export function symbolOnFill(hex: string): string {
   const b = parseInt(v.slice(4, 6), 16)
   const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255
   return luminance > 0.58 ? '#1a1410' : '#fafafa'
+}
+
+/**
+ * Stroke width for one back-stitch line, in pixels.
+ *
+ * Back-stitch is worked in one or two strands against two for a full cross, so
+ * on the cloth it reads at roughly two thirds the weight of a stitch arm — a
+ * definite line, not a hair. The renderer's cross body is `cellPx * 0.22`, so
+ * the outline sits just under two thirds of that. The floor keeps the line
+ * visible when a whole 200-cell chart is squeezed into a 1,000px thumbnail,
+ * which is exactly where the first draft's `cellPx * 0.08` vanished.
+ */
+export function backstitchStrokeWidth(cellPx: number, mode: 'beauty' | 'chart' = 'chart'): number {
+  return Math.max(1.6, cellPx * (mode === 'beauty' ? 0.15 : 0.12))
+}
+
+/** Radius of a French knot, in pixels. A knot sits proud of about half a cell. */
+export function frenchKnotRadius(cellPx: number): number {
+  return cellPx * 0.28
 }
 
 export interface PaletteIndex {
@@ -135,6 +175,147 @@ export function buildCellHighlightPath(
   )
 }
 
+// ───────────────────────────────────────────────────────────────────────────
+// Fractional stitches
+// ───────────────────────────────────────────────────────────────────────────
+
+/** Corner offsets of each quadrant, in cell units. */
+const QUADRANT_CORNER: Record<CellQuadrant, [number, number]> = {
+  tl: [0, 0],
+  tr: [1, 0],
+  bl: [0, 1],
+  br: [1, 1],
+}
+
+const OPPOSITE_QUADRANT: Record<CellQuadrant, CellQuadrant> = {
+  tl: 'br',
+  tr: 'bl',
+  bl: 'tr',
+  br: 'tl',
+}
+
+/**
+ * The AREA a fractional stitch covers, as an SVG path.
+ *
+ * A quarter stitch covers the quarter of the cell at its corner; a three-quarter
+ * covers everything except that quarter, which is the L-shaped rest. Together
+ * they tile the cell, which is what lets a stair-stepped diagonal be worked as
+ * a smooth one. Used by the printed chart and the low-zoom viewport, where a
+ * cell is a block of colour rather than a drawn stitch.
+ */
+export function fractionalAreaPath(
+  f: Pick<FractionalStitch, 'x' | 'y' | 'q' | 'k'>,
+  cellPx: number,
+): string {
+  const px = f.x * cellPx
+  const py = f.y * cellPx
+  const c = cellPx
+  const [qx, qy] = QUADRANT_CORNER[f.q]
+  const cornerX = px + qx * c
+  const cornerY = py + qy * c
+  const midX = px + c / 2
+  const midY = py + c / 2
+  if (f.k === 'quarter') {
+    // The quadrant square: from the cell's corner to the cell's centre.
+    const ax = Math.min(cornerX, midX)
+    const bx = Math.max(cornerX, midX)
+    const ay = Math.min(cornerY, midY)
+    const by = Math.max(cornerY, midY)
+    return `M${ax} ${ay}L${bx} ${ay}L${bx} ${by}L${ax} ${by}Z`
+  }
+  // Everything but that quadrant: walk the cell's outline, cutting the corner.
+  const x0 = px
+  const y0 = py
+  const x1 = px + c
+  const y1 = py + c
+  const corners: [number, number][] = [
+    [x0, y0],
+    [x1, y0],
+    [x1, y1],
+    [x0, y1],
+  ]
+  const skipIndex = { tl: 0, tr: 1, br: 2, bl: 3 }[f.q]
+  const pts: [number, number][] = []
+  for (let i = 0; i < 4; i++) {
+    if (i === skipIndex) {
+      // Replace the corner with the two half-edge points and the centre.
+      const prev = corners[(i + 3) % 4]!
+      const next = corners[(i + 1) % 4]!
+      const here = corners[i]!
+      pts.push([(here[0] + prev[0]) / 2, (here[1] + prev[1]) / 2])
+      pts.push([midX, midY])
+      pts.push([(here[0] + next[0]) / 2, (here[1] + next[1]) / 2])
+      continue
+    }
+    pts.push(corners[i]!)
+  }
+  return `M${pts.map(([x, y]) => `${x} ${y}`).join('L')}Z`
+}
+
+/**
+ * The THREAD a fractional stitch lays down, as an SVG path — the beauty-mode
+ * view, where a stitch is drawn rather than blocked in.
+ *
+ * A quarter stitch is one leg of a cross cut in half: corner to centre. A
+ * three-quarter is a full diagonal across the cell plus a half leg reaching in
+ * from the opposite corner, which is exactly what the needle does.
+ */
+export function fractionalThreadPath(
+  f: Pick<FractionalStitch, 'x' | 'y' | 'q' | 'k'>,
+  cellPx: number,
+): string {
+  const px = f.x * cellPx
+  const py = f.y * cellPx
+  const c = cellPx
+  const midX = px + c / 2
+  const midY = py + c / 2
+  const at = (q: CellQuadrant): [number, number] => {
+    const [qx, qy] = QUADRANT_CORNER[q]
+    return [px + qx * c, py + qy * c]
+  }
+  if (f.k === 'quarter') {
+    const [cx, cy] = at(f.q)
+    return `M${cx} ${cy}L${midX} ${midY}`
+  }
+  // The full diagonal that misses this quadrant, plus the quarter leg from the
+  // opposite corner.
+  const diagonal: [CellQuadrant, CellQuadrant] =
+    f.q === 'tl' || f.q === 'br' ? ['tr', 'bl'] : ['tl', 'br']
+  const [ax, ay] = at(diagonal[0])
+  const [bx, by] = at(diagonal[1])
+  const [ox, oy] = at(OPPOSITE_QUADRANT[f.q])
+  return `M${ax} ${ay}L${bx} ${by}M${ox} ${oy}L${midX} ${midY}`
+}
+
+/** Where a fractional stitch's symbol sits — the middle of the area it covers. */
+export function fractionalSymbolAnchor(
+  f: Pick<FractionalStitch, 'x' | 'y' | 'q' | 'k'>,
+  cellPx: number,
+): { x: number; y: number } {
+  const [qx, qy] = QUADRANT_CORNER[f.q]
+  const sign = f.k === 'quarter' ? 1 : -1
+  // A quarter sits in its own corner; a three-quarter sits away from the corner
+  // it is missing.
+  return {
+    x: f.x * cellPx + cellPx * (0.5 + sign * (qx === 0 ? -0.22 : 0.22)),
+    y: f.y * cellPx + cellPx * (0.5 + sign * (qy === 0 ? -0.22 : 0.22)),
+  }
+}
+
+/** Group fractional stitches by palette symbol, palette order first. */
+export function groupFractionalsBySymbol(
+  pattern: PatternData,
+): Map<string, FractionalStitch[]> {
+  const out = new Map<string, FractionalStitch[]>()
+  for (const entry of pattern.palette) out.set(entry.symbol, [])
+  for (const f of pattern.grid.fractional) {
+    const bucket = out.get(f.s)
+    if (bucket) bucket.push(f)
+    else out.set(f.s, [f])
+  }
+  return out
+}
+
 /**
  * Compute the tight bounding box of every stitched cell + back-stitch
  * endpoint + French knot + bead in a pattern. Returns null when the
@@ -192,6 +373,13 @@ export function stitchedBoundingBox(pattern: PatternData): {
     if (b.y < minY) minY = b.y
     if (b.x > maxX) maxX = b.x
     if (b.y > maxY) maxY = b.y
+    touched = true
+  }
+  for (const f of pattern.grid.fractional) {
+    if (f.x < minX) minX = f.x
+    if (f.y < minY) minY = f.y
+    if (f.x > maxX) maxX = f.x
+    if (f.y > maxY) maxY = f.y
     touched = true
   }
   if (!touched) return null
@@ -315,6 +503,52 @@ export function fitToScreen(
     panY: (containerHeight - renderedH) / 2,
     scale,
   }
+}
+
+/**
+ * The viewport that puts one cell centre at the middle of the container at
+ * a given zoom. Used by the first view on a phone (centred on the chart's
+ * middle) and by the floss key's jump-to-a-parked-square action.
+ */
+export function centreCellViewport(
+  cellX: number,
+  cellY: number,
+  scale: number,
+  containerWidth: number,
+  containerHeight: number,
+  cellPx: number = DEFAULT_CELL_PX,
+): Viewport {
+  return {
+    scale,
+    panX: containerWidth / 2 - (cellX + 0.5) * cellPx * scale,
+    panY: containerHeight / 2 - (cellY + 0.5) * cellPx * scale,
+  }
+}
+
+/**
+ * The view a chart should open at on this container. A chart that still
+ * reads as a chart when fitted simply fits, so the Maker sees the whole
+ * design. One that would land too small to read or tap, which is every
+ * showpiece chart on a phone, opens zoomed to a stitchable cell size over
+ * its centre instead, so the first tap lands on the square they meant.
+ */
+export function initialViewport(
+  pattern: PatternData,
+  containerWidth: number,
+  containerHeight: number,
+  cellPx: number = DEFAULT_CELL_PX,
+): Viewport {
+  const fit = fitToScreen(pattern, containerWidth, containerHeight, cellPx)
+  if (containerWidth > NARROW_CONTAINER_PX) return fit
+  if (fit.scale * cellPx >= FIT_FLOOR_CELL_PX) return fit
+  return centreCellViewport(
+    Math.floor(pattern.grid.width / 2),
+    Math.floor(pattern.grid.height / 2),
+    FIRST_VIEW_CELL_PX / cellPx,
+    containerWidth,
+    containerHeight,
+    cellPx,
+  )
 }
 
 /**

@@ -60,6 +60,15 @@ model User {
   isCreator         Boolean   @default(false)
   creatorVerifiedAt DateTime?
   isPatternTester   Boolean   @default(false)
+  /// Timestamp the member accepted the tester agreement (photos uploaded during
+  /// a test may be shown before the pattern is public). Null = never accepted.
+  testerAgreementAt DateTime?
+
+  /// Maker photos — "Use my photos in Homemade's promotion". Default on; the
+  /// value is copied onto each UGCPhoto at upload time, so turning it off stops
+  /// future photos being used in promotion and the member can still remove any
+  /// individual photo from My photos.
+  allowPhotoPromotion Boolean @default(true)
 
   // Premium entitlement (gating framework — Session E). `premiumActive` is the
   // single source of truth read by `hasPremium()`; everything gated (Studio on
@@ -2014,14 +2023,32 @@ model ReviewHelpful {
   @@index([reviewId])
 }
 
+/// The single maker-photo model. One photo belongs to exactly ONE made thing:
+/// either a Tutorial (tutorials and recipes) or a pattern of any type
+/// (`patternId` + `patternType`). Exactly one of the two sides is set; the
+/// application enforces it (Prisma has no cross-column check constraint) and
+/// the migration adds a database CHECK as a backstop.
+///
+/// Approval is AI-only and binary: the vision gate writes `gateVerdict` /
+/// `gateModel` and sets APPROVED or REJECTED. A rejected photo can be appealed
+/// once (`appealRequestedAt`), which is the only queue a person ever sees. If
+/// the gate cannot run the row stays PENDING_MODERATION and the member is told
+/// the photo is being checked — it never publishes un-gated.
 model UGCPhoto {
   id String @id @default(cuid())
 
   userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  tutorialId String
-  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+  // ── Exactly one target ──────────────────────────────────────────────────
+  tutorialId String?
+  tutorial   Tutorial? @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  /// Set together with `patternType`. Not a foreign key: patterns live in five
+  /// separate tables (Pattern, CrochetPattern, KnittingPattern,
+  /// NeedleworkPattern, SewingPattern) and `patternType` says which.
+  patternId   String?
+  patternType PatternType?
 
   mediaId String
   media   Media  @relation(fields: [mediaId], references: [id], onDelete: Restrict)
@@ -2030,11 +2057,47 @@ model UGCPhoto {
 
   status UGCPhotoStatus @default(PENDING_MODERATION)
 
-  // NSFW pre-screen results. Null means the scanner hasn't run (or no permission).
+  /// Whether Homemade may use this photo in its own promotion (social, email,
+  /// adverts). Copied from the uploader's `allowPhotoPromotion` setting at
+  /// upload time so a later settings change doesn't retroactively rewrite what
+  /// was agreed for photos already out there.
+  promotionAllowed Boolean @default(true)
+
+  // ── AI gate ─────────────────────────────────────────────────────────────
+  /// Raw gate result: `{ decision, reasons: string[], ... }`. Null while the
+  /// gate hasn't produced a verdict.
+  gateVerdict Json?
+  /// The model id that produced `gateVerdict`.
+  gateModel   String?
+
+  /// Plain-English reason shown to the member on My photos when REJECTED.
+  rejectionReason String?
+
+  // ── Appeal (the only human queue) ───────────────────────────────────────
+  appealRequestedAt DateTime?
+  appealNote        String?
+
+  // ── Tester photos ───────────────────────────────────────────────────────
+  /// True when the photo came from a pattern test, which may be published
+  /// before the pattern itself is public (covered by the tester agreement).
+  isTesterPhoto    Boolean         @default(false)
+  testAssignmentId String?
+  testAssignment   TestAssignment? @relation(fields: [testAssignmentId], references: [id], onDelete: SetNull)
+
+  /// Set when the member removes the photo from My photos. A removed photo is
+  /// off every surface immediately and never comes back.
+  removedAt DateTime?
+
+  // ── Admin curation (carried over from UserPatternPhoto) ─────────────────
+  /// Featured in the parent pattern's gallery (`galleryMediaIds`).
+  isFeatured Boolean @default(false)
+  /// Used as the pattern hero when the pattern has `preferUserPhotoForHero`.
+  isHero     Boolean @default(false)
+
+  // NSFW pre-screen results from the retired Rekognition path. Kept so the old
+  // rows read back; nothing writes them any more.
   nsfwScore          Float?
   nsfwClassification String?
-
-  rejectionReason String?
 
   moderatedAt   DateTime?
   moderatedById String?
@@ -2047,9 +2110,12 @@ model UGCPhoto {
 
   createdAt DateTime @default(now())
 
-  @@index([tutorialId, status])
+  @@index([tutorialId, status, removedAt])
+  @@index([patternId, patternType, status, removedAt])
   @@index([status, createdAt])
+  @@index([appealRequestedAt])
   @@index([userId])
+  @@index([testAssignmentId])
 }
 
 enum UGCPhotoStatus {
@@ -2460,6 +2526,9 @@ model TestAssignment {
   ///   whatDidnt: string,
   /// }
   feedback Json?
+
+  /// Maker photos uploaded during this test (flagged `isTesterPhoto`).
+  photos UGCPhoto[]
 
   appliedAt       DateTime  @default(now())
   decidedAt       DateTime?
@@ -3538,6 +3607,25 @@ model BulkAutopilotState {
   /// Pro in every size lane, ~2 in 5). Here rather than in env so it can be
   /// flipped from the admin page without a deploy.
   sourceMode  String   @default("schnell")
+  /// WHO JUDGES the cross-stitch candidates:
+  /// 'candidates' — nothing on the cron path calls the Anthropic API at all.
+  ///   The planner uses the pool sampler only, the vision gate is never called,
+  ///   and every generated idea is PARKED as an UNLISTED candidate for a Claude
+  ///   Code session to judge with `apps/web/scripts/xs-candidates.ts`.
+  /// 'api'        — the September 2026 behaviour: a per-candidate Anthropic
+  ///   vision gate publishes the gems itself.
+  /// Here rather than in env so it can be flipped from the admin page without a
+  /// deploy; BULK_XS_GATE_MODE overrides it for ops.
+  gateMode    String   @default("candidates")
+  /// WHO JUDGES a member's finished-project photo on upload:
+  /// 'api'     — the Anthropic photo gate runs on upload, so a member sees a
+  ///   decision straight away (the default; Rebecca's call, 6 September 2026).
+  /// 'routine' — the upload stays PENDING with "Checking your photo" and a
+  ///   scheduled Claude session judges it with
+  ///   `apps/web/scripts/maker-photos-judge.ts`.
+  /// Stored on the row with craft 'maker-photos'. MAKER_PHOTO_GATE_MODE
+  /// overrides it for ops.
+  photoGateMode String @default("api")
   updatedById String?
   updatedAt   DateTime @default(now()) @updatedAt
 }
@@ -3565,6 +3653,12 @@ model BulkRun {
   duplicates  Int      @default(0)
   /// Ideas that never generated — the trailing-24h Fal spend cap was already hit.
   skipped     Int      @default(0)
+  /// CANDIDATES MODE ONLY. Ideas parked as UNLISTED candidates for a Claude
+  /// session to judge. This is the run's real output when nothing is judged by
+  /// an API gate: `published` then counts the candidates a session KEPT and
+  /// `culled` the ones it REJECTED, both filled in hours later by the CLI, so
+  /// the alert on "this run produced nothing" reads `parked`, not `published`.
+  parked      Int      @default(0)
   /// Of `generations`, how many used the Flux 1.1 Pro (dense) tier — the
   /// expensive lane, capped separately.
   proGenerations Int   @default(0)
@@ -4672,6 +4766,39 @@ model Pattern {
   // The previous Media row is kept, so a revert is a restore plus an id swap.
   backgroundCleared   Json?
 
+  // ── Outlines (phase_xs_outlines_001) ─────────────────────────────────────
+  // Every chart in the catalogue shipped as flat blocks of whole crosses: the
+  // schema has carried a back-stitch layer since day one and nothing ever put
+  // a segment in it, so a library chart read flatter than every best-seller
+  // kit. `scripts/xs-outline-backfill.ts` derives the silhouette and the strong
+  // internal edges and stitches them in back-stitch, and turns the lone dark
+  // speck in a face into a French knot. This column is the reversible record of
+  // that edit: what went on, why, and the thumbnail + data hash it replaced.
+  //   { at, mode, modeReason, backstitchSegments, backstitchLength,
+  //     frenchKnots, addedSymbols, inkCodes,
+  //     previousThumbnailMediaId, previousDataSha256, before, after }
+  // The previous Media row is kept, so a revert is a restore plus an id swap.
+  outlineApplied      Json?
+  // ── The candidate parking bay (phase_xs_candidates_001) ──────────────────
+  // In the autopilot's 'candidates' gate mode nothing on the cron path calls a
+  // paid model: a generated idea is PARKED here as an UNLISTED row and a Claude
+  // Code session on Rebecca's Max plan looks at it and decides. These four
+  // columns are that decision, on the row itself, so the record survives any
+  // scratchpad, any machine and any session — and so a candidate can never be
+  // mistaken for a published pattern by anything that only reads `visibility`.
+  //   candidateStatus 'PENDING' | 'KEPT' | 'REJECTED' | 'REROLL'. NULL on every
+  //                   row that never went through the parking bay.
+  //   judgedAt/By     when, and which session or person, decided.
+  //   judgeReasons    the reasons given, as ["…"] — a reject's reasons are the
+  //                   calibration record for the locked bar.
+  //   rerollCount     how many times this idea has been re-planned after a bad
+  //                   roll. Capped at 3 so one idea cannot spin forever.
+  candidateStatus String?
+  judgedAt        DateTime?
+  judgedBy        String?
+  judgeReasons    Json?
+  rerollCount     Int       @default(0)
+
   license        PatternLicense?
   userProgress   UserPatternProgress[]
   savedBy        SavedPattern[]
@@ -4691,6 +4818,7 @@ model Pattern {
   @@index([imageHash64])
   @@index([subjectKey])
   @@index([stitchability])
+  @@index([candidateStatus, createdAt])
 }
 
 /// Sidecar so a Pattern can be retagged (free → marketplace → premium)
@@ -4721,6 +4849,17 @@ model UserPatternProgress {
   stitchedCells       Json      @default("{}")
   currentColourSymbol String?
   notes               String?
+
+  // Parking — the working method dense charts get finished with. Only the
+  // preferences persist: whether parking is on, which way the stitcher is
+  // working through the chart ('rows' | 'columns' | 'blocks'), and the line
+  // they are on. Where each colour is parked is derived from stitchedCells
+  // plus the working order every time, so it can never drift out of step
+  // with progress or with a sync from another device.
+  parkingEnabled      Boolean   @default(false)
+  parkingDirection    String    @default("rows")
+  parkingLine         Int       @default(0)
+
   startedAt           DateTime  @default(now())
   lastStitchedAt      DateTime  @default(now())
   completedAt         DateTime?
@@ -4735,6 +4874,8 @@ enum PatternType {
   CROSS_STITCH
   KNITTING_CHART
   CROCHET_CHART
+  NEEDLEWORK
+  SEWING
 }
 
 enum LicenseType {

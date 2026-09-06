@@ -59,6 +59,20 @@ export const CULLED_WHERE = {
 } as const
 
 /**
+ * The PARKING BAY: candidates generated in the 'candidates' gate mode that no
+ * session has judged yet. UNLISTED, never published, invisible everywhere
+ * public — but every bit as spent, as far as the next batch is concerned. A
+ * candidate waiting three days for a session must not be generated a second
+ * time, so it joins both populations the guard and the planner read.
+ */
+export const PENDING_CANDIDATE_WHERE = {
+  type: 'CROSS_STITCH',
+  ownerUserId: null,
+  visibility: Visibility.UNLISTED,
+  candidateStatus: 'PENDING',
+} as const
+
+/**
  * The catalogue a candidate is compared against.
  *
  * Two populations, deliberately different:
@@ -79,28 +93,37 @@ export const CULLED_WHERE = {
  * invocations: each idea is its own short Inngest request, and a stale cache is
  * exactly how a duplicate slips through.
  */
-export async function loadPublicCrossStitchFingerprints(): Promise<CatalogueEntry[]> {
-  const [live, culled] = await Promise.all([
+export async function loadPublicCrossStitchFingerprints(
+  opts: { includePending?: boolean } = {},
+): Promise<CatalogueEntry[]> {
+  const IMAGE_SELECT = {
+    id: true,
+    slug: true,
+    name: true,
+    subjectKey: true,
+    thumbnailSha256: true,
+    imageHash64: true,
+    imageHash256: true,
+    chartFingerprint: true,
+  } as const
+  const [live, culled, pending] = await Promise.all([
     prisma.pattern.findMany({
       where: { type: 'CROSS_STITCH', ownerUserId: null, visibility: Visibility.PUBLIC },
-      select: {
-        id: true,
-        slug: true,
-        name: true,
-        subjectKey: true,
-        thumbnailSha256: true,
-        imageHash64: true,
-        imageHash256: true,
-        chartFingerprint: true,
-      },
+      select: IMAGE_SELECT,
     }),
     prisma.pattern.findMany({
       where: CULLED_WHERE,
       select: { id: true, slug: true, name: true, subjectKey: true },
     }),
+    // Pending candidates contribute BOTH signals: an un-judged candidate is a
+    // picture that already exists and an idea already spent, so a second one is
+    // a duplicate whichever way you look at it.
+    opts.includePending
+      ? prisma.pattern.findMany({ where: PENDING_CANDIDATE_WHERE, select: IMAGE_SELECT })
+      : Promise.resolve([] as Array<Record<string, never>> as never[]),
   ])
 
-  const entries: CatalogueEntry[] = live.map((r) => ({
+  const entries: CatalogueEntry[] = [...live, ...pending].map((r) => ({
     id: r.id,
     slug: r.slug,
     name: r.name,
@@ -150,10 +173,13 @@ export async function liveShelfCounts(): Promise<Record<string, number>> {
  * first run even before the backfill has touched everything.
  */
 export async function publicSubjectKeys(limit = 800, shelfSlugs?: string[]): Promise<string[]> {
-  // The same two populations the publish guard compares against: what is live,
-  // plus what has been culled. A culled idea is spent — the planner must not
-  // commission it again any more than the guard should let it through.
-  const [live, culled] = await Promise.all([
+  // The same populations the publish guard compares against: what is live, what
+  // has been culled, and — in the candidates gate mode — what is parked waiting
+  // to be judged. A culled idea is spent and a parked one is taken; the planner
+  // must not commission either again any more than the guard should let it
+  // through. Parked rows are read unconditionally: they are simply absent in
+  // 'api' mode, so there is no mode to thread through here.
+  const [live, culled, pending] = await Promise.all([
     prisma.pattern.findMany({
       where: {
         type: 'CROSS_STITCH',
@@ -171,10 +197,16 @@ export async function publicSubjectKeys(limit = 800, shelfSlugs?: string[]): Pro
       take: limit,
       select: { subjectKey: true, name: true },
     }),
+    prisma.pattern.findMany({
+      where: PENDING_CANDIDATE_WHERE,
+      orderBy: { createdAt: 'desc' },
+      take: limit,
+      select: { subjectKey: true, name: true },
+    }),
   ])
   const seen = new Set<string>()
   // Live first, so the prompt's most-recent slice is what is actually on sale.
-  for (const r of [...live, ...culled]) {
+  for (const r of [...live, ...culled, ...pending]) {
     const key = r.subjectKey || subjectKey(r.name)
     if (key) seen.add(key)
   }

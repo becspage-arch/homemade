@@ -35,6 +35,12 @@ const PAGES = [
     description: 'Behaviour and content we welcome — and the kinds we do not.',
   },
   {
+    href: '/legal/photos',
+    title: 'Your photos on Homemade',
+    description:
+      'Where a photo you upload appears, what Homemade may use it for, and how to take it down.',
+  },
+  {
     href: '/legal/dmca',
     title: 'DMCA / Takedown Policy',
     description: 'How to report copyright infringement and how counter-notices work.',

@@ -7,6 +7,8 @@ metadata:
   originSessionId: 1cc3ab43-43c7-4006-b396-ba7c9e0cb8ab
 ---
 
+**Superseded 2026-09-06 (Rebecca): see playbook Step 6c.** Autopilots run as cloud routines on her Max plan for every model step (planning, authoring, judging); deterministic stages (expand, render, gates, publish) run on the server as Inngest jobs or scripts; never her laptop, never per-token API calls (the maker-photo check on upload is the one exception). Cross-stitch IS cloud-runnable: the whole ECS pipeline ran four cron firings from the cloud on 6 September; the vision gate and planner move from the API into the routine (`docs/autopilot-prompts/cross-stitch.md`, candidates mode). Needlework's Blender render is the remaining open question. The paragraphs below are the older picture.
+
 Once a bulk-authoring session (cross-stitch, needlework, future pattern crafts) has PROVEN its
 routine and its quality is consistently good, Rebecca stops monitoring per-batch and it becomes a
 **scheduled routine** — a Claude cron / scheduled cloud agent that runs ONE batch each firing on a

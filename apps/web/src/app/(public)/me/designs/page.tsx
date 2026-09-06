@@ -31,12 +31,19 @@ const STUDIO_HREF: Record<PatternType, string> = {
   CROSS_STITCH: '/studio/cross-stitch',
   KNITTING_CHART: '/studio/knitting',
   CROCHET_CHART: '/studio/crochet',
+  // NEEDLEWORK and SEWING exist on PatternType so maker photos can attach to
+  // those patterns. Neither has a design-your-own Studio, so both point at the
+  // pattern library instead.
+  NEEDLEWORK: '/needlework/patterns',
+  SEWING: '/sewing',
 }
 
 const CRAFT_LABEL: Record<PatternType, string> = {
   CROSS_STITCH: 'Cross-stitch',
   KNITTING_CHART: 'Knitting',
   CROCHET_CHART: 'Crochet',
+  NEEDLEWORK: 'Needlework',
+  SEWING: 'Sewing',
 }
 
 interface DesignCard {

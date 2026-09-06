@@ -65,6 +65,9 @@ export interface StitchSeed {
     // and the surface stitches used for detail.
     | 'outline'
     | 'surface'
+    // Ways of working through a chart rather than stitches in their own
+    // right (parking, and whatever joins it).
+    | 'method'
   chartSymbol?: string
   difficulty?: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED'
   parentStitchSlug?: string
@@ -1476,6 +1479,19 @@ export const STITCHES: StitchSeed[] = [
     aliases: ['detached chain stitch', 'detached chain'],
     notes:
       'A single chain loop held down by a small stitch at its tip. Worked in a ring it makes a flower; worked singly it makes a leaf or a petal on a sampler.',
+  },
+  {
+    slug: 'cross-stitch-parking',
+    craft: 'cross-stitch',
+    canonicalName: 'Parking',
+    ukName: 'Parking',
+    usName: 'Parking',
+    category: 'method',
+    chartSymbol: 'parking',
+    difficulty: 'INTERMEDIATE',
+    aliases: ['parked stitching', 'parking method', 'park and stitch'],
+    notes:
+      'A way of working a dense chart rather than a stitch. You work one row at a time, and when a colour runs out inside that row you leave its needle hanging in the next square that colour comes up in. Nothing has to be counted or found twice, which is what makes a chart of a hundred colours finishable.',
   },
   {
     slug: 'cross-stitch-satin-stitch',

@@ -12,12 +12,14 @@ import {
   TutorialStatus,
   UserProjectStatus,
   HeroStrategy,
-  Visibility,
 } from '@homemade/db'
-// Single source of truth for which categories are pattern-led, the Pattern
-// type their charts are, and the published-pattern target — shared with the
-// admin Content-library page so the two surfaces count identically.
+// Single source of truth for pattern-led categories' targets — shared with
+// the admin Content-library page so the two surfaces count identically.
 import { PATTERN_CATEGORIES } from '@/lib/studio/generation/categories'
+// Single source of truth for pattern-led categories' PUBLISHED counts, each
+// read from its own table (cross-stitch, crochet, needlework, knitting,
+// sewing) — shared with the bulk-generation and categories admin pages.
+import { patternLedCraftStats, isPatternLedSlug } from '@/lib/pattern-led-category-counts'
 
 export interface AttentionInboxItem {
   key: string
@@ -143,8 +145,7 @@ async function loadDashboard(): Promise<DashboardData> {
     categoryRows,
     publishedByCategory,
     draftByCategory,
-    publishedPatternsByType,
-    draftPatternsByType,
+    craftStats,
   ] = await Promise.all([
     prisma.review.count({ where: { status: ReviewStatus.PENDING_MODERATION } }),
     prisma.uGCPhoto.count({ where: { status: UGCPhotoStatus.PENDING_MODERATION } }),
@@ -228,35 +229,16 @@ async function loadDashboard(): Promise<DashboardData> {
       where: { status: TutorialStatus.DRAFT },
       _count: { _all: true },
     }),
-    // Public library-pattern counts per pattern type (for pattern-led
-    // categories). Mirrors the autopilot/library page: PUBLIC + house-owned
-    // (ownerUserId null) is what "published" means for a pattern.
-    prisma.pattern.groupBy({
-      by: ['type'],
-      where: { visibility: Visibility.PUBLIC, ownerUserId: null },
-      _count: { _all: true },
-      _max: { publishedAt: true },
-    }),
-    prisma.pattern.groupBy({
-      by: ['type'],
-      where: { visibility: { not: Visibility.PUBLIC }, ownerUserId: null },
-      _count: { _all: true },
-    }),
+    // Published/draft/last-published counts for every pattern-led category
+    // (cross-stitch, crochet, needlework, knitting, sewing), each read from
+    // its own table — see pattern-led-category-counts.ts for why a single
+    // `Pattern.groupBy` can't cover all five.
+    patternLedCraftStats(),
   ])
 
-  // Per-pattern-type maps for pattern-led categories.
-  const publishedPatternCountByType = new Map(
-    publishedPatternsByType.map((r) => [r.type, r._count._all]),
-  )
-  const lastPublishedPatternByType = new Map(
-    publishedPatternsByType.map((r) => [r.type, r._max.publishedAt ?? null]),
-  )
-  const draftPatternCountByType = new Map(
-    draftPatternsByType.map((r) => [r.type, r._count._all]),
-  )
-  // Real library total = published tutorials + all public house patterns.
-  const totalPublicPatterns = publishedPatternsByType.reduce(
-    (sum, r) => sum + r._count._all,
+  // Real library total = published tutorials + every craft's published patterns.
+  const totalPublicPatterns = Object.values(craftStats).reduce(
+    (sum, s) => sum + s.published,
     0,
   )
   const totalPublishedLibrary = publishedCount + totalPublicPatterns
@@ -361,22 +343,21 @@ async function loadDashboard(): Promise<DashboardData> {
     publishedByCategory.map((p) => [p.categoryId, p._max.publishedAt ?? null]),
   )
   const pipeline: CategoryPipelineRow[] = categoryRows.map((c) => {
-    // Pattern-led categories (e.g. cross-stitch) count published patterns in
-    // the Pattern model toward a pattern target — matching the admin
-    // Content-library page. Tutorial-led categories keep tutorial counts.
+    // Pattern-led categories (cross-stitch, crochet, needlework, knitting,
+    // sewing) count published patterns from their own table, not tutorials —
+    // matching the bulk-generation page. Everything else keeps tutorial
+    // counts. Targets: PATTERN_CATEGORIES has a proper (shelf-derived)
+    // `patternTarget` for cross-stitch and crochet; needlework, knitting and
+    // sewing have no sign-off pass yet, so they fall back to
+    // `targetTutorialCount` — the only target number that exists for them.
+    const craftStat = isPatternLedSlug(c.slug) ? craftStats[c.slug] : undefined
     const cfg = PATTERN_CATEGORIES[c.slug]
-    const pub = cfg
-      ? publishedPatternCountByType.get(cfg.patternType) ?? 0
-      : publishedMap.get(c.id) ?? 0
-    const drf = cfg
-      ? draftPatternCountByType.get(cfg.patternType) ?? 0
-      : draftMap.get(c.id) ?? 0
+    const pub = craftStat ? craftStat.published : publishedMap.get(c.id) ?? 0
+    const drf = craftStat ? craftStat.draft : draftMap.get(c.id) ?? 0
     const target = cfg ? cfg.patternTarget : c.targetTutorialCount
     const fillPercent =
       target != null && target > 0 ? Math.min(100, Math.round((pub / target) * 100)) : null
-    const lastPublishedAt = cfg
-      ? lastPublishedPatternByType.get(cfg.patternType) ?? null
-      : lastPublishedMap.get(c.id) ?? null
+    const lastPublishedAt = craftStat ? craftStat.lastPublishedAt : lastPublishedMap.get(c.id) ?? null
     return {
       slug: c.slug,
       name: c.name,

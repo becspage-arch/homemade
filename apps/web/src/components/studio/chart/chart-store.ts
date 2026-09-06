@@ -19,9 +19,29 @@ import type {
   FrenchKnot,
   PatternData,
   PaletteEntry,
+  FractionalStitch,
 } from '@homemade/db/pattern'
 import { cellKey } from '@homemade/db/pattern'
-import { DEFAULT_VIEWPORT, type Viewport, zoomAtPoint, fitToScreen } from './render-helpers'
+import {
+  centreCellViewport,
+  DEFAULT_VIEWPORT,
+  initialViewport,
+  type Viewport,
+  zoomAtPoint,
+  fitToScreen,
+} from './render-helpers'
+import {
+  applyMark,
+  buildParkingIndex,
+  DEFAULT_PARKING_DIRECTION,
+  nextLineWithWork,
+  previousLineWithWork,
+  refreshParked,
+  resetProgress,
+  type ParkedCell,
+  type ParkingDirection,
+  type ParkingIndex,
+} from '@/lib/studio/parking'
 
 export type ChartMode = 'view' | 'edit'
 
@@ -57,6 +77,7 @@ export interface LayerToggles {
   colours: boolean
   backstitch: boolean
   frenchKnots: boolean
+  fractional: boolean
   beads: boolean
   grid: boolean
   centreCrosshairs: boolean
@@ -82,6 +103,8 @@ export type ChartCommand =
   | { kind: 'removeBackstitch'; index: number; segment: BackstitchSegment }
   | { kind: 'addFrenchKnot'; knot: FrenchKnot }
   | { kind: 'removeFrenchKnot'; index: number; knot: FrenchKnot }
+  | { kind: 'addFractional'; stitch: FractionalStitch }
+  | { kind: 'removeFractional'; index: number; stitch: FractionalStitch }
   | {
       kind: 'recolour'
       from: string
@@ -117,6 +140,34 @@ export interface ChartStoreState {
   dirty: boolean
   progressDirty: boolean
 
+  // ───── parking
+  /** Parking mode on / off. Remembered per project alongside progress. */
+  parkingEnabled: boolean
+  /** Which way the stitcher is working through the chart. */
+  parkingDirection: ParkingDirection
+  /** Index of the row / column / block being worked right now. */
+  parkingLine: number
+  /**
+   * Per-colour ordered cell lists for the current working order. Built the
+   * first time parking is switched on and rebuilt when the direction
+   * changes, never on plain pattern load, so a stitcher who never parks
+   * pays nothing for it. Mutated in place; `parkedCells` is the value
+   * components render from.
+   */
+  parkingIndex: ParkingIndex | null
+  /** Palette symbol -> the square that colour is parked in. */
+  parkedCells: ReadonlyMap<string, ParkedCell>
+  /** Parking preferences have moved and want saving. */
+  parkingDirty: boolean
+  /**
+   * A pattern edit landed while parking was on, so the ordered cell lists
+   * no longer describe the chart. Park markers are withheld until the
+   * index is rebuilt rather than pointing at squares that have changed
+   * colour. Rebuilt on the next mark-stitched, on any parking control, and
+   * on the short settle after an edit burst (see `syncParkingIndex`).
+   */
+  parkingStale: boolean
+
   // ───── pattern + mode
   setPattern: (pattern: PatternData) => void
   setStitchedCells: (cells: Set<string>) => void
@@ -134,6 +185,13 @@ export interface ChartStoreState {
   applyPan: (dx: number, dy: number) => void
   applyZoom: (delta: number, anchorX: number, anchorY: number) => void
   fitViewportToScreen: () => void
+  /** Pan the viewport so one cell sits in the middle of the canvas. Used by
+   *  the floss key's "jump to the parked square" action, and by the first
+   *  view on a phone. Pass a scale to zoom at the same time. */
+  centreOnCell: (x: number, y: number, scale?: number) => void
+  /** Zoom about the middle of the canvas. Powers the on-screen +/- buttons,
+   *  which are the only zoom a touchscreen has besides the pinch. */
+  zoomAtCentre: (delta: number) => void
 
   // ───── selection
   setSelection: (rect: SelectionRect | null) => void
@@ -147,12 +205,29 @@ export interface ChartStoreState {
   removeBackstitchAt: (index: number) => void
   addFrenchKnot: (knot: FrenchKnot) => void
   removeFrenchKnotAt: (index: number) => void
+  addFractional: (stitch: FractionalStitch) => void
+  removeFractionalAt: (index: number) => void
   recolour: (fromSymbol: string, toSymbol: string) => void
 
   // ───── stitched markers (direct, not in undo stack)
   toggleStitched: (x: number, y: number) => void
   markStitchedBatch: (cells: Array<{ x: number; y: number }>, value: boolean) => void
   clearAllStitched: () => void
+
+  // ───── parking
+  setParkingEnabled: (enabled: boolean) => void
+  setParkingDirection: (direction: ParkingDirection) => void
+  setParkingLine: (line: number) => void
+  stepParkingLine: (delta: 1 | -1) => void
+  /** Rebuild the ordered cell lists after a pattern edit. No-op when
+   *  nothing has gone stale. */
+  syncParkingIndex: () => void
+  /** Restore stored parking preferences without marking them dirty. */
+  hydrateParking: (prefs: {
+    enabled: boolean
+    direction: ParkingDirection
+    line: number
+  }) => void
 
   // ───── undo/redo
   undo: () => void
@@ -161,6 +236,7 @@ export interface ChartStoreState {
   // ───── house keeping
   clearDirty: () => void
   clearProgressDirty: () => void
+  clearParkingDirty: () => void
 }
 
 const DEFAULT_LAYERS: LayerToggles = {
@@ -168,6 +244,7 @@ const DEFAULT_LAYERS: LayerToggles = {
   colours: true,
   backstitch: true,
   frenchKnots: true,
+  fractional: true,
   beads: true,
   grid: true,
   centreCrosshairs: true,
@@ -192,6 +269,13 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
   future: [],
   dirty: false,
   progressDirty: false,
+  parkingEnabled: false,
+  parkingDirection: DEFAULT_PARKING_DIRECTION,
+  parkingLine: 0,
+  parkingIndex: null,
+  parkedCells: new Map<string, ParkedCell>(),
+  parkingDirty: false,
+  parkingStale: false,
 
   setPattern: (pattern) =>
     set((state) => {
@@ -209,15 +293,35 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
         // A fresh pattern hasn't been panned / zoomed yet, so it should
         // keep auto-fitting until the user takes the wheel.
         viewportUserAdjusted: false,
+        // The old grid's ordered cell lists mean nothing to a new pattern.
+        // Rebuilt lazily the next time parking asks for them.
+        parkingIndex: null,
+        parkedCells: new Map<string, ParkedCell>(),
+        parkingStale: false,
       }
       if (state.containerWidth > 0 && state.containerHeight > 0) {
-        next.viewport = fitToScreen(pattern, state.containerWidth, state.containerHeight)
+        next.viewport = initialViewport(pattern, state.containerWidth, state.containerHeight)
       } else {
         next.viewport = DEFAULT_VIEWPORT
       }
       return next as ChartStoreState
     }),
-  setStitchedCells: (cells) => set({ stitchedCells: cells, progressDirty: false }),
+  setStitchedCells: (cells) =>
+    set((state) => {
+      // A whole progress set arriving — first load, or a cross-device sync.
+      // Rebuild every cursor and line counter from it rather than trying to
+      // reconcile against what was there before.
+      const index = freshParkingIndex(state, cells)
+      if (!index) return { stitchedCells: cells, progressDirty: false }
+      return {
+        stitchedCells: cells,
+        progressDirty: false,
+        parkingIndex: index,
+        parkedCells: refreshParked(index, cells),
+        parkingLine: nextLineWithWork(index, state.parkingLine),
+        parkingStale: false,
+      }
+    }),
   setMode: (mode) => set({ mode }),
   setTool: (tool) => set({ tool }),
   setCurrentSymbol: (symbol) => set({ currentSymbol: symbol }),
@@ -235,7 +339,7 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
       // container size) that would otherwise leave the pattern stuck
       // cropped on one corner.
       if (state.pattern && containerWidth > 0 && containerHeight > 0 && !state.viewportUserAdjusted) {
-        next.viewport = fitToScreen(state.pattern, containerWidth, containerHeight)
+        next.viewport = initialViewport(state.pattern, containerWidth, containerHeight)
       }
       return next as ChartStoreState
     }),
@@ -259,6 +363,28 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
     if (!pattern || containerWidth === 0) return
     set({ viewport: fitToScreen(pattern, containerWidth, containerHeight) })
   },
+
+  centreOnCell: (x, y, scale) =>
+    set((state) => {
+      const { containerWidth: w, containerHeight: h } = state
+      if (w <= 0 || h <= 0) return {}
+      // Zoom in far enough that a single square is readable if the stitcher
+      // was zoomed right out, otherwise keep whatever zoom they chose.
+      const next = scale ?? Math.max(state.viewport.scale, 0.5)
+      return {
+        viewport: centreCellViewport(x, y, next, w, h),
+        viewportUserAdjusted: true,
+      }
+    }),
+  zoomAtCentre: (delta) =>
+    set((state) => {
+      const { containerWidth: w, containerHeight: h } = state
+      if (w <= 0 || h <= 0) return {}
+      return {
+        viewport: zoomAtPoint(state.viewport, delta, w / 2, h / 2),
+        viewportUserAdjusted: true,
+      }
+    }),
 
   setSelection: (rect) => set({ selection: rect }),
 
@@ -325,6 +451,13 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
     set(applyCommandReducer(state, { kind: 'removeBackstitch', index, segment: seg }))
   },
   addFrenchKnot: (knot) => set(applyCommandReducer(get(), { kind: 'addFrenchKnot', knot })),
+  addFractional: (stitch) => set(applyCommandReducer(get(), { kind: 'addFractional', stitch })),
+  removeFractionalAt: (index) => {
+    const state = get()
+    const f = state.pattern?.grid.fractional[index]
+    if (!f) return
+    set(applyCommandReducer(state, { kind: 'removeFractional', index, stitch: f }))
+  },
   removeFrenchKnotAt: (index) => {
     const state = get()
     const k = state.pattern?.grid.frenchKnots[index]
@@ -353,21 +486,132 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
     set((state) => {
       const next = new Set(state.stitchedCells)
       const k = cellKey(x, y)
-      if (next.has(k)) next.delete(k)
-      else next.add(k)
-      return { stitchedCells: next, progressDirty: true }
+      const value = !next.has(k)
+      if (value) next.add(k)
+      else next.delete(k)
+      return { stitchedCells: next, progressDirty: true, ...parkingAfterMarks(state, next, [{ x, y, value }]) }
     }),
   markStitchedBatch: (cells, value) =>
     set((state) => {
       const next = new Set(state.stitchedCells)
+      const changed: Array<{ x: number; y: number; value: boolean }> = []
       for (const { x, y } of cells) {
         const k = cellKey(x, y)
+        if (value ? next.has(k) : !next.has(k)) continue
         if (value) next.add(k)
         else next.delete(k)
+        changed.push({ x, y, value })
       }
-      return { stitchedCells: next, progressDirty: true }
+      if (changed.length === 0) return {}
+      return { stitchedCells: next, progressDirty: true, ...parkingAfterMarks(state, next, changed) }
     }),
-  clearAllStitched: () => set({ stitchedCells: new Set(), progressDirty: true }),
+  clearAllStitched: () =>
+    set((state) => {
+      const next = new Set<string>()
+      const index = freshParkingIndex(state, next)
+      if (!index) return { stitchedCells: next, progressDirty: true }
+      return {
+        stitchedCells: next,
+        progressDirty: true,
+        parkingIndex: index,
+        parkedCells: refreshParked(index, next),
+        parkingLine: nextLineWithWork(index, 0),
+        parkingStale: false,
+      }
+    }),
+
+  setParkingEnabled: (enabled) =>
+    set((state) => {
+      if (!enabled) return { parkingEnabled: false, parkingDirty: true }
+      const index = state.parkingIndex ?? ensureParkingIndex(state)
+      if (!index) return { parkingEnabled: true, parkingDirty: true }
+      return {
+        parkingEnabled: true,
+        parkingDirty: true,
+        parkingIndex: index,
+        parkedCells: refreshParked(index, state.stitchedCells),
+        parkingLine: nextLineWithWork(index, state.parkingLine),
+        parkingStale: false,
+      }
+    }),
+  setParkingDirection: (direction) =>
+    set((state) => {
+      if (direction === state.parkingDirection && state.parkingIndex) return {}
+      const index = state.pattern ? buildParkingIndex(state.pattern, direction) : null
+      if (!index) return { parkingDirection: direction, parkingDirty: true }
+      resetProgress(index, state.stitchedCells)
+      return {
+        parkingDirection: direction,
+        parkingDirty: true,
+        parkingIndex: index,
+        parkedCells: refreshParked(index, state.stitchedCells),
+        // The old line number means a different place in the new order, so
+        // start again at the first line that still has work.
+        parkingLine: nextLineWithWork(index, 0),
+        parkingStale: false,
+      }
+    }),
+  setParkingLine: (line) =>
+    set((state) => {
+      const max = state.parkingIndex ? state.parkingIndex.lineCount - 1 : 0
+      const next = Math.max(0, Math.min(max, Math.round(line)))
+      if (next === state.parkingLine) return {}
+      return { parkingLine: next, parkingDirty: true }
+    }),
+  stepParkingLine: (delta) =>
+    set((state) => {
+      const index = state.parkingIndex
+      if (!index) return {}
+      const next =
+        delta === 1
+          ? nextLineWithWork(index, state.parkingLine + 1)
+          : previousLineWithWork(index, state.parkingLine)
+      if (next === state.parkingLine) return {}
+      return { parkingLine: next, parkingDirty: true }
+    }),
+  hydrateParking: (prefs) =>
+    set((state) => {
+      if (!prefs.enabled) {
+        return {
+          parkingEnabled: false,
+          parkingDirection: prefs.direction,
+          parkingLine: Math.max(0, prefs.line),
+          parkingDirty: false,
+        }
+      }
+      const index = state.pattern ? buildParkingIndex(state.pattern, prefs.direction) : null
+      if (!index) {
+        return {
+          parkingEnabled: true,
+          parkingDirection: prefs.direction,
+          parkingLine: Math.max(0, prefs.line),
+          parkingDirty: false,
+        }
+      }
+      resetProgress(index, state.stitchedCells)
+      return {
+        parkingEnabled: true,
+        parkingDirection: prefs.direction,
+        parkingLine: Math.max(0, Math.min(index.lineCount - 1, prefs.line)),
+        parkingIndex: index,
+        parkedCells: refreshParked(index, state.stitchedCells),
+        parkingDirty: false,
+        parkingStale: false,
+      }
+    }),
+
+  syncParkingIndex: () =>
+    set((state) => {
+      if (!state.parkingStale || !state.parkingEnabled || !state.pattern) return {}
+      const index = buildParkingIndex(state.pattern, state.parkingDirection)
+      resetProgress(index, state.stitchedCells)
+      return {
+        parkingIndex: index,
+        parkedCells: refreshParked(index, state.stitchedCells),
+        parkingLine: nextLineWithWork(index, state.parkingLine),
+        parkingStale: false,
+      }
+    }),
 
   undo: () => {
     const state = get()
@@ -395,7 +639,76 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
 
   clearDirty: () => set({ dirty: false }),
   clearProgressDirty: () => set({ progressDirty: false }),
+  clearParkingDirty: () => set({ parkingDirty: false }),
 }))
+
+// ───────────────────────────────────────────────────────────────────────────
+// Parking helpers — kept beside the store because they read and mutate the
+// index that lives in it. The heavy lifting is in `@/lib/studio/parking`.
+// ───────────────────────────────────────────────────────────────────────────
+
+/** Build the index for the current pattern + direction, or null with none. */
+function ensureParkingIndex(state: ChartStoreState): ParkingIndex | null {
+  if (!state.pattern) return null
+  const index = buildParkingIndex(state.pattern, state.parkingDirection)
+  resetProgress(index, state.stitchedCells)
+  return index
+}
+
+/**
+ * An index that certainly matches the current chart, reset against the
+ * given progress. Reuses the existing one when it is still good and
+ * rebuilds it when a pattern edit has left it stale. Null when there is no
+ * index to keep current (parking has never been switched on).
+ */
+function freshParkingIndex(
+  state: ChartStoreState,
+  stitched: ReadonlySet<string>,
+): ParkingIndex | null {
+  if (!state.parkingIndex) return null
+  if (state.parkingStale && state.pattern) {
+    const rebuilt = buildParkingIndex(state.pattern, state.parkingDirection)
+    resetProgress(rebuilt, stitched)
+    return rebuilt
+  }
+  resetProgress(state.parkingIndex, stitched)
+  return state.parkingIndex
+}
+
+/**
+ * Fold a set of mark / unmark changes into the parking index and hand back
+ * the state slice that changed. Constant work per changed square plus one
+ * pass over the palette to rebuild the parked map, so the cost does not grow
+ * with the chart.
+ *
+ * When the current line runs out of work the line advances by itself, which
+ * is what a parker expects: finish the row, move to the next one.
+ */
+function parkingAfterMarks(
+  state: ChartStoreState,
+  stitched: ReadonlySet<string>,
+  changes: Array<{ x: number; y: number; value: boolean }>,
+): Partial<ChartStoreState> {
+  if (!state.parkingEnabled) return {}
+  // A pattern edit landed since the lists were built, so rebuild before
+  // trusting them. One rebuild per edit burst, not one per marked square.
+  let index = state.parkingIndex
+  let rebuilt = false
+  if (!index || state.parkingStale) {
+    if (!state.pattern) return {}
+    index = buildParkingIndex(state.pattern, state.parkingDirection)
+    resetProgress(index, stitched)
+    rebuilt = true
+  } else {
+    for (const { x, y, value } of changes) applyMark(index, x, y, value)
+  }
+  const parkedCells = refreshParked(index, stitched)
+  const line = nextLineWithWork(index, state.parkingLine)
+  const base: Partial<ChartStoreState> = rebuilt
+    ? { parkingIndex: index, parkedCells, parkingStale: false }
+    : { parkedCells }
+  return line === state.parkingLine ? base : { ...base, parkingLine: line }
+}
 
 // ───────────────────────────────────────────────────────────────────────────
 // Command reducers — pure, no side effects on the store, return the
@@ -432,6 +745,15 @@ function applyCommandReducer(
     case 'addFrenchKnot':
       nextGrid = { ...pattern.grid, frenchKnots: [...pattern.grid.frenchKnots, cmd.knot] }
       break
+    case 'addFractional':
+      nextGrid = { ...pattern.grid, fractional: [...pattern.grid.fractional, cmd.stitch] }
+      break
+    case 'removeFractional':
+      nextGrid = {
+        ...pattern.grid,
+        fractional: pattern.grid.fractional.filter((_, i) => i !== cmd.index),
+      }
+      break
     case 'removeFrenchKnot':
       nextGrid = {
         ...pattern.grid,
@@ -449,6 +771,12 @@ function applyCommandReducer(
     history: [...state.history, cmd],
     future: [],
     dirty: true,
+    // Editing the chart moves squares between colours, so the ordered
+    // cell lists no longer describe it. Markers step aside until the
+    // rebuild rather than pointing at a square that has changed colour.
+    ...(state.parkingEnabled
+      ? { parkingStale: true, parkedCells: new Map<string, ParkedCell>() }
+      : {}),
   }
 }
 
@@ -495,6 +823,19 @@ function undoCommandReducer(
         frenchKnots: pattern.grid.frenchKnots.slice(0, -1),
       }
       break
+    case 'addFractional':
+      nextGrid = { ...pattern.grid, fractional: pattern.grid.fractional.slice(0, -1) }
+      break
+    case 'removeFractional':
+      nextGrid = {
+        ...pattern.grid,
+        fractional: [
+          ...pattern.grid.fractional.slice(0, cmd.index),
+          cmd.stitch,
+          ...pattern.grid.fractional.slice(cmd.index),
+        ],
+      }
+      break
     case 'removeFrenchKnot':
       nextGrid = {
         ...pattern.grid,
@@ -511,7 +852,12 @@ function undoCommandReducer(
       break
     }
   }
-  return { pattern: { ...pattern, grid: nextGrid } }
+  return {
+    pattern: { ...pattern, grid: nextGrid },
+    ...(state.parkingEnabled
+      ? { parkingStale: true, parkedCells: new Map<string, ParkedCell>() }
+      : {}),
+  }
 }
 
 function setCell(pattern: PatternData, x: number, y: number, symbol: string) {

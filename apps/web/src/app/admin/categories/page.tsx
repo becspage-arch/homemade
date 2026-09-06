@@ -2,22 +2,31 @@ import Link from 'next/link'
 import { prisma } from '@homemade/db'
 import { createCategory, deleteCategory } from './actions'
 import { createSubCategory, deleteSubCategory } from '../sub-categories/actions'
+import { isPatternLedSlug, patternLedCraftStats } from '@/lib/pattern-led-category-counts'
 
 import './categories.css'
 
 export const dynamic = 'force-dynamic'
 
 export default async function CategoriesTreePage() {
-  const categories = await prisma.category.findMany({
-    orderBy: [{ order: 'asc' }, { name: 'asc' }],
-    include: {
-      subCategories: {
-        orderBy: [{ order: 'asc' }, { name: 'asc' }],
-        include: { _count: { select: { tutorials: true } } },
+  const [categories, craftStats] = await Promise.all([
+    prisma.category.findMany({
+      orderBy: [{ order: 'asc' }, { name: 'asc' }],
+      include: {
+        subCategories: {
+          orderBy: [{ order: 'asc' }, { name: 'asc' }],
+          include: { _count: { select: { tutorials: true } } },
+        },
+        _count: { select: { tutorials: true } },
       },
-      _count: { select: { tutorials: true } },
-    },
-  })
+    }),
+    // For pattern-led categories (cross-stitch, crochet, needlework, knitting,
+    // sewing) the tutorial count below is not the library — the published
+    // PATTERNS are, each in their own table. Shown alongside, not instead of,
+    // the tutorial count since a pattern-led category can still carry
+    // technique tutorials.
+    patternLedCraftStats(),
+  ])
 
   return (
     <div className="categories-tree">
@@ -33,13 +42,21 @@ export default async function CategoriesTreePage() {
       </header>
 
       <ul className="categories-list">
-        {categories.map((cat) => (
+        {categories.map((cat) => {
+          const craftStat = isPatternLedSlug(cat.slug) ? craftStats[cat.slug] : undefined
+          return (
           <li key={cat.id} className="categories-row">
             <details>
               <summary>
                 <span className="categories-name">{cat.name}</span>
                 <code className="categories-slug">{cat.slug}</code>
                 <span className="categories-count">
+                  {craftStat && (
+                    <>
+                      {craftStat.published.toLocaleString('en-GB')} pattern
+                      {craftStat.published === 1 ? '' : 's'} ·{' '}
+                    </>
+                  )}
                   {cat._count.tutorials.toLocaleString('en-GB')} tutorial
                   {cat._count.tutorials === 1 ? '' : 's'} ·{' '}
                   {cat.subCategories.length} sub-categor
@@ -58,11 +75,19 @@ export default async function CategoriesTreePage() {
                   <p className="categories-empty">No sub-categories yet.</p>
                 ) : (
                   <ul>
-                    {cat.subCategories.map((sub) => (
+                    {cat.subCategories.map((sub) => {
+                      const subPatternCount = craftStat?.publishedBySubCategoryId.get(sub.id) ?? 0
+                      return (
                       <li key={sub.id} className="categories-sub-row">
                         <span className="categories-name">{sub.name}</span>
                         <code className="categories-slug">{sub.slug}</code>
                         <span className="categories-count">
+                          {craftStat && (
+                            <>
+                              {subPatternCount.toLocaleString('en-GB')} pattern
+                              {subPatternCount === 1 ? '' : 's'} ·{' '}
+                            </>
+                          )}
                           {sub._count.tutorials.toLocaleString('en-GB')} tutorial
                           {sub._count.tutorials === 1 ? '' : 's'}
                         </span>
@@ -82,7 +107,8 @@ export default async function CategoriesTreePage() {
                           </button>
                         </form>
                       </li>
-                    ))}
+                      )
+                    })}
                   </ul>
                 )}
 
@@ -117,7 +143,8 @@ export default async function CategoriesTreePage() {
               </div>
             </details>
           </li>
-        ))}
+          )
+        })}
       </ul>
 
       <section className="categories-add-new">

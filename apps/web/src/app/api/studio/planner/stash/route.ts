@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 import { prisma, PlannerCraft } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { listPlannerStash } from '@/lib/planner/service'
-import { canUsePlanner } from '@/lib/planner/guard'
+import { flossDetails } from '@/lib/floss/stash-ownership'
 
 export const dynamic = 'force-dynamic'
 
@@ -16,8 +16,11 @@ const CRAFTS = new Set<string>(Object.values(PlannerCraft))
  *   GET  /api/studio/planner/stash?craft=CROSS_STITCH
  *   POST /api/studio/planner/stash
  *
- * Premium (PROJECT_PLANNER): the stash only pays off through the materials
- * roll-up, which is itself premium, so it gates here too.
+ * Free for any signed-in maker. Keeping a stash is the free half of the deal:
+ * the pattern page counts a chart's palette against it, the library card shows
+ * "22 of 28 owned", and the Studio floss key ticks the colours already in the
+ * drawer. The premium half stays where it was, in the planner: the cross-
+ * project materials roll-up and the printable shopping list.
  */
 
 interface PostBody {
@@ -35,10 +38,6 @@ export async function GET(request: Request) {
   const user = await getCurrentDbUser()
   if (!user) return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
 
-  if (!canUsePlanner(user)) {
-    return NextResponse.json({ error: 'premium_required' }, { status: 403 })
-  }
-
   const url = new URL(request.url)
   const craftParam = url.searchParams.get('craft') ?? 'CROSS_STITCH'
   if (!CRAFTS.has(craftParam)) {
@@ -51,10 +50,6 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   const user = await getCurrentDbUser()
   if (!user) return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
-
-  if (!canUsePlanner(user)) {
-    return NextResponse.json({ error: 'premium_required' }, { status: 403 })
-  }
 
   let body: PostBody
   try {
@@ -80,6 +75,13 @@ export async function POST(request: Request) {
       ? body.quantityOwned
       : 1
 
+  // Fill the shade name and the swatch from the embedded floss tables when the
+  // caller sent only a code, so the stash list reads like a floss key rather
+  // than a column of numbers.
+  const details = flossDetails(brand, code)
+  const resolvedName = name ?? details?.name ?? null
+  const resolvedRgb = clean(body.colourRgb) ?? details?.rgb ?? null
+
   try {
     const row = await prisma.plannerStashItem.upsert({
       where: {
@@ -93,8 +95,8 @@ export async function POST(request: Request) {
       // Re-adding a colour already owned tops up rather than erroring.
       update: {
         quantityOwned,
-        name: name ?? undefined,
-        colourRgb: clean(body.colourRgb) ?? undefined,
+        name: resolvedName ?? undefined,
+        colourRgb: resolvedRgb ?? undefined,
         notes: clean(body.notes) ?? undefined,
         archivedAt: null,
       },
@@ -103,8 +105,8 @@ export async function POST(request: Request) {
         craft: craft as PlannerCraft,
         brand: brand ?? '',
         code: code ?? '',
-        name: name ?? null,
-        colourRgb: clean(body.colourRgb),
+        name: resolvedName,
+        colourRgb: resolvedRgb,
         quantityOwned,
         unit: clean(body.unit) ?? 'skein',
         notes: clean(body.notes),

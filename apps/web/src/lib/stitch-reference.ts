@@ -65,6 +65,11 @@ const CATEGORY_ORDER: Array<{ key: string; label: string; blurb: string | null }
     label: 'Surface stitches',
     blurb: 'Knots, loops and filled shapes for detail the grid cannot hold.',
   },
+  {
+    key: 'method',
+    label: 'Working methods',
+    blurb: 'Ways of working through a chart, rather than stitches in their own right.',
+  },
   { key: 'increase', label: 'Increases', blurb: 'Adding stitches to shape a piece wider.' },
   { key: 'decrease', label: 'Decreases', blurb: 'Working stitches together to shape a piece narrower.' },
   { key: 'textured', label: 'Textured stitches', blurb: 'Bobbles, posts and clusters that stand off the fabric.' },

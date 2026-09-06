@@ -117,7 +117,7 @@ export default async function StitchGuidePage({ params }: PageProps) {
               const usName = s.usName ?? s.canonicalName
               const hasAbbr = Boolean(s.ukAbbreviation || s.usAbbreviation)
               return (
-                <li key={s.slug} className="stitch-row">
+                <li key={s.slug} id={s.slug} className="stitch-row">
                   <div className="stitch-symbol-cell" aria-hidden="true">
                     {s.chartSymbol ? (
                       <StitchGlyph craft={cfg.craft} symbol={s.chartSymbol} size={32} />

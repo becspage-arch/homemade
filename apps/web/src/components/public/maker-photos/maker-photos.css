@@ -1,0 +1,267 @@
+/* Maker photos — the shared strip that sits beside the hero on every made
+   thing, and the tiles the category gallery walls reuse. */
+
+.maker-photos {
+  margin: 32px 0 0;
+}
+
+.maker-photos-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.maker-photos-title {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--color-espresso);
+  margin: 0;
+}
+
+.maker-photos-count {
+  font-family: var(--font-lora);
+  font-size: 13px;
+  color: var(--color-warm-taupe);
+  margin: 0;
+}
+
+.maker-photos-strip {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x proximity;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.maker-photos-item {
+  flex: 0 0 auto;
+  width: 180px;
+  scroll-snap-align: start;
+}
+
+.maker-photos-image {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--color-soft-parchment);
+  border: 0.5px solid var(--color-linen-grey);
+}
+
+.maker-photos-credit {
+  display: block;
+  font-family: var(--font-lora);
+  font-size: 12px;
+  color: var(--color-warm-taupe);
+  margin-top: 6px;
+  text-decoration: none;
+}
+
+a.maker-photos-credit:hover {
+  color: var(--color-forest);
+  text-decoration: underline;
+}
+
+.maker-photos-caption {
+  display: block;
+  font-family: var(--font-lora);
+  font-size: 12px;
+  color: var(--color-espresso);
+  margin-top: 2px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+}
+
+.maker-photos-empty {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-warm-taupe);
+  margin: 0 0 14px;
+}
+
+/* ── Upload ─────────────────────────────────────────────────────────────── */
+
+.maker-photo-upload {
+  margin-top: 14px;
+}
+
+.maker-photo-upload-button {
+  font-family: var(--font-lora);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  padding: 9px 18px;
+  border-radius: 3px;
+  background: var(--color-sage);
+  color: var(--color-cream);
+  border: 0.5px solid var(--color-sage);
+  cursor: pointer;
+}
+
+.maker-photo-upload-button:hover {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+}
+
+.maker-photo-upload-button.secondary {
+  background: transparent;
+  color: var(--color-sage);
+}
+
+.maker-photo-upload-button[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.maker-photo-form {
+  margin-top: 14px;
+  padding: 16px;
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 4px;
+  background: var(--color-cream);
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--font-lora);
+  font-size: 14px;
+}
+
+.maker-photo-form label {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+}
+
+.maker-photo-form input[type='text'],
+.maker-photo-form textarea {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  padding: 8px 10px;
+  border: 0.5px solid var(--color-linen-grey);
+  border-radius: 3px;
+  background: var(--color-soft-parchment);
+  color: var(--color-espresso);
+}
+
+.maker-photo-terms {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-espresso);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.maker-photo-terms input {
+  margin-top: 3px;
+  flex: 0 0 auto;
+}
+
+.maker-photo-progress {
+  height: 4px;
+  background: var(--color-linen-grey);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.maker-photo-progress span {
+  display: block;
+  height: 100%;
+  background: var(--color-sage);
+  transition: width 0.2s;
+}
+
+.maker-photo-error {
+  color: var(--color-burnt-sienna);
+  font-size: 13px;
+  margin: 0;
+}
+
+.maker-photo-note {
+  font-size: 13px;
+  color: var(--color-warm-taupe);
+  margin: 0;
+}
+
+.maker-photo-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* ── Category gallery wall ──────────────────────────────────────────────── */
+
+.makes-wall-header {
+  margin: 0 0 24px;
+}
+
+.makes-wall-eyebrow {
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-warm-taupe);
+}
+
+.makes-wall-title {
+  font-family: var(--font-fraunces);
+  font-weight: 400;
+  font-size: 34px;
+  color: var(--color-espresso);
+  margin: 6px 0 10px;
+}
+
+.makes-wall-sub {
+  font-family: var(--font-lora);
+  font-size: 15px;
+  color: var(--color-warm-taupe);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.makes-wall-empty {
+  font-family: var(--font-lora);
+  font-size: 15px;
+  color: var(--color-warm-taupe);
+}
+
+.maker-photos-report {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-lora);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--color-warm-taupe);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.maker-photos-item:hover .maker-photos-report,
+.maker-photos-report:focus-visible {
+  opacity: 1;
+}
+
+.maker-photos-report:hover {
+  color: var(--color-burnt-sienna);
+  text-decoration: underline;
+}

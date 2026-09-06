@@ -387,6 +387,19 @@ const CROSS_STITCH_SYMBOLS: ChartSymbolDefinition[] = [
   },
   {
     craft: 'cross-stitch',
+    key: 'parking',
+    label: 'Parking',
+    // Not a stitch but a way of working a chart, so the glyph shows the
+    // needle itself: left standing in the square it will next be used in,
+    // thread still on it, waiting to be picked up again.
+    svg:
+      CELL +
+      '<line x1="-3.5" y1="8.5" x2="5.2" y2="-6.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>' +
+      '<ellipse cx="6.3" cy="-8.7" rx="1.2" ry="3" transform="rotate(-29 6.3 -8.7)" fill="none" stroke="currentColor" stroke-width="1"/>' +
+      '<path d="M 8 -10.4 Q 11 -7.5 9.6 -3.5 Q 8.8 -1 10.4 0.8" fill="none" stroke="currentColor" stroke-width="1.1"/>',
+  },
+  {
+    craft: 'cross-stitch',
     key: 'satin-stitch',
     label: 'Satin stitch',
     // Parallel straight stitches laid side by side to fill the shape.

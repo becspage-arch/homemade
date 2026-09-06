@@ -2,11 +2,11 @@ import { NextResponse, after } from 'next/server'
 import {
   prisma,
   parsePatternData,
-  Visibility,
 } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { mediaUrl } from '@/lib/media'
 import { renderPatternThumbnailPng, persistPatternThumbnail } from '@/lib/studio/pattern-thumbnail'
+import { isLibraryPattern } from '@/lib/studio/library-visibility'
 
 export const dynamic = 'force-dynamic'
 
@@ -45,7 +45,7 @@ export async function GET(_req: Request, ctx: Ctx) {
   })
   if (!row) return new NextResponse('Not found', { status: 404 })
 
-  const isLibrary = row.ownerUserId === null && row.visibility !== Visibility.PRIVATE
+  const isLibrary = isLibraryPattern(row)
   if (!isLibrary) {
     const user = await getCurrentDbUser()
     if (!user || row.ownerUserId !== user.id) {

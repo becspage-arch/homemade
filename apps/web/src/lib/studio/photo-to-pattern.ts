@@ -238,7 +238,7 @@ export async function photoToPatternData(
   const data = parsePatternData({
     schemaVersion: PATTERN_SCHEMA_VERSION,
     type: 'CROSS_STITCH',
-    grid: { width, height, cells, backstitch: [], frenchKnots: [], beads: [] },
+    grid: { width, height, cells, backstitch: [], frenchKnots: [], beads: [], fractional: [] },
     palette: paletteEntries,
     fabric: { count: fabricCount, colourRgb: '#F5EBD8', type: 'Aida' },
     metadata: {},

@@ -2,12 +2,12 @@ import { NextResponse } from 'next/server'
 import {
   prisma,
   parsePatternData,
-  Visibility,
 } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { hasPremium } from '@/lib/entitlements'
 import { buildPatternPdf, type PaperKey } from '@/lib/studio/pdf-export'
 import { mediaUrl } from '@/lib/media'
+import { isLibraryPattern } from '@/lib/studio/library-visibility'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
@@ -53,7 +53,7 @@ export async function GET(req: Request, ctx: Ctx) {
   })
   if (!row) return new NextResponse('Not found', { status: 404 })
 
-  const isLibrary = row.ownerUserId === null && row.visibility !== Visibility.PRIVATE
+  const isLibrary = isLibraryPattern(row)
   if (!isLibrary && row.ownerUserId !== user!.id) {
     return new NextResponse('Not authorised', { status: 403 })
   }
