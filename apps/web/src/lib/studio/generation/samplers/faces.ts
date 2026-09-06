@@ -24,7 +24,11 @@ export const LETTERING_FACES = {
     label: 'Sampler serif',
     file: 'EBGaramond_600SemiBold.ttf',
     minCap: 6,
-    threshold: 0.32,
+    // 0.28 rather than a third: at eight squares the crossbar of a capital T
+    // fell just under a third of a square and came off the stem, leaving a
+    // loose mark floating over the letter. A stitched letter wants the weight
+    // anyway.
+    threshold: 0.28,
     note: 'The traditional sampler letter. Small serifs, even weight.',
   },
   block: {

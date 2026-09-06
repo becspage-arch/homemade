@@ -145,12 +145,12 @@ const birthRoseWreath: SamplerDesign = {
   motifs: [{ id: 'rose-wreath', variant: 1 }],
   async art() {
     const art = newArt()
-    await placeMotif(art, 'rose-wreath', 1, 95, 88, { cells: 190, colours: 24 })
+    await placeMotif(art, 'rose-wreath', 1, 95, 88, { cells: 190, colours: 46 })
     drawRule(art, 62, 128, 176, ROSE.leaf, 1)
     return art
   },
   blocks: (ctx) => [
-    block(wreathHole(ctx, 86), [{ template: '{name}', face: 'hand', size: 11 }]),
+    block(wreathHole(ctx, 86), [{ template: '{name}', face: 'sampler', size: 20 }]),
     block(region(20, 184, 150, 28), [
       { template: 'Born {date}', face: 'sampler', size: 9 },
       { join: { keys: ['weight', 'length'], separator: ' · ' }, face: 'sampler', size: 8 },
@@ -492,12 +492,12 @@ const weddingWildflowerHoop: SamplerDesign = {
   motifs: [{ id: 'meadow-wreath', variant: 3 }],
   async art() {
     const art = newArt()
-    await placeMotif(art, 'meadow-wreath', 3, 95, 96, { cells: 190, colours: 28 })
+    await placeMotif(art, 'meadow-wreath', 3, 95, 96, { cells: 190, colours: 52 })
     drawRule(art, 62, 128, 194, QUIET.sage, 1)
     return art
   },
   blocks: (ctx) => [
-    block(wreathHole(ctx, 96), [{ template: '{nameOne} and {nameTwo}', face: 'hand', size: 11 }]),
+    block(wreathHole(ctx, 96), [{ template: '{nameOne} and {nameTwo}', face: 'sampler', size: 20 }]),
     block(region(20, 200, 150, 24), [
       { template: '{date}', face: 'sampler', size: 9 },
       { template: '[{place}]', face: 'sampler', size: 8 },
@@ -659,7 +659,7 @@ const homeBotanicalBand: SamplerDesign = {
   motifs: [{ id: 'botanical-band', variant: 2 }],
   async art() {
     const art = newArt()
-    await placeMotif(art, 'botanical-band', 2, 95, 48, { cells: 190, colours: 26 })
+    await placeMotif(art, 'botanical-band', 2, 95, 48, { cells: 190, colours: 46 })
     drawRule(art, 62, 128, 96, BOTANY.fern, 1)
     clearSlot(art, region(28, 104, 134, 46), 3)
     return art
@@ -804,12 +804,12 @@ const nameWildflowerWreath: SamplerDesign = {
   motifs: [{ id: 'meadow-wreath', variant: 4 }],
   async art() {
     const art = newArt()
-    await placeMotif(art, 'meadow-wreath', 4, 86, 88, { cells: 172, colours: 24 })
+    await placeMotif(art, 'meadow-wreath', 4, 86, 88, { cells: 172, colours: 44 })
     drawRule(art, 56, 116, 176, BOTANY.fern, 1)
     return art
   },
   blocks: (ctx) => [
-    block(wreathHole(ctx, 88), [{ template: '{name}', face: 'hand', size: 10 }]),
+    block(wreathHole(ctx, 88), [{ template: '{name}', face: 'sampler', size: 20 }]),
     block(region(16, 180, 140, 22), [
       { template: '{date}', face: 'sampler', size: 8 },
       { template: '[{line}]', face: 'sampler', size: 7 },
@@ -919,7 +919,7 @@ const anniversaryRoseWreath: SamplerDesign = {
   motifs: [{ id: 'rose-wreath', variant: 4 }],
   async art() {
     const art = newArt()
-    await placeMotif(art, 'rose-wreath', 4, 95, 92, { cells: 190, colours: 22 })
+    await placeMotif(art, 'rose-wreath', 4, 95, 92, { cells: 190, colours: 42 })
     // The ring on this one closes over a small centre, so it carries a heart
     // rather than a name squeezed down to nothing, and the words go beneath.
     motifAt(art, 'heart', 95, 92, { A: JEWEL.crimson }, 3)
@@ -1036,7 +1036,7 @@ const anniversaryBotanicalBand: SamplerDesign = {
   motifs: [{ id: 'botanical-band', variant: 4 }],
   async art() {
     const art = newArt()
-    await placeMotif(art, 'botanical-band', 4, 88, 44, { cells: 176, colours: 22 })
+    await placeMotif(art, 'botanical-band', 4, 88, 44, { cells: 176, colours: 38 })
     drawRule(art, 58, 118, 88, BOTANY.fern, 1)
     clearSlot(art, region(22, 94, 132, 48), 3)
     return art
