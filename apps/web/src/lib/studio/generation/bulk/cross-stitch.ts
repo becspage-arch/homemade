@@ -15,6 +15,7 @@ import { subjectKey } from './subject-key'
 import { renderBeautyThumbnail, THUMB_TARGET } from './beauty-thumbnail'
 import { bareFabricVerdict, clearBackground, fullCoverageByIntent } from './bare-fabric'
 import { embellishChart } from './outline'
+import { deriveFractionals, smoothingWantedFor } from './fractionals'
 import {
   buildPrompt,
   SRC_SAT,
@@ -78,6 +79,8 @@ export interface CrossStitchCandidate {
     addedSymbols: string[]
     inkCodes: string[]
   }
+  /** What the fractional-stitch pass did — cells shared between two colours. */
+  fractional?: { cellsShared: number; stitches: number; reason: string }
 }
 
 function imageSizeFor(w: number, h: number): 'square_hd' | 'portrait_4_3' | 'landscape_4_3' {
@@ -207,7 +210,22 @@ export async function generateCrossStitchCandidate(
     }
   }
 
-  const shippedMetrics = cleared || outline ? computePatternMetrics(shipped) : metrics
+  // FRACTIONAL STITCHES — take the staircase off the diagonals. Last of the
+  // three passes: the outline is derived on whole-cell boundaries and cuts a
+  // step corner with a diagonal line, and the shared cell puts the colour
+  // boundary in the same place, so the two agree about where the edge is. Line
+  // work (Delft, blackwork) is left blocky on purpose.
+  let fractional: CrossStitchCandidate['fractional']
+  const wanted = smoothingWantedFor(shipped)
+  if (wanted.yes) {
+    const smoothed = deriveFractionals(shipped)
+    if (smoothed.cellsShared > 0) {
+      shipped = smoothed.data
+      fractional = { cellsShared: smoothed.cellsShared, stitches: smoothed.stitches, reason: smoothed.reason }
+    }
+  }
+
+  const shippedMetrics = cleared || outline || fractional ? computePatternMetrics(shipped) : metrics
 
   const renderPng = await renderBeautyThumbnail(shipped, brief.sat != null ? 1 : POST_SAT)
   return {
@@ -224,6 +242,7 @@ export async function generateCrossStitchCandidate(
     requestedColours: colours,
     ...(cleared ? { backgroundCleared: cleared } : {}),
     ...(outline ? { outline } : {}),
+    ...(fractional ? { fractional } : {}),
   }
 }
 
@@ -483,6 +502,7 @@ export async function publishCrossStitchGem(
       tweak: ctx?.tweak ?? {},
       ...(candidate.backgroundCleared ? { backgroundCleared: candidate.backgroundCleared } : {}),
       ...(candidate.outline ? { outline: candidate.outline } : {}),
+      ...(candidate.fractional ? { fractional: candidate.fractional } : {}),
       gate: { verdict: ctx?.gate.verdict ?? 'keep', reasons: ctx?.gate.reasons ?? [] },
       bulkRunId: ctx?.bulkRunId ?? null,
       credit: candidate.credit,

@@ -769,6 +769,16 @@ export function deriveBackstitch(
 
   const symbolAt = new Map<number, string>()
   for (const c of cells) symbolAt.set(c.y * width + c.x, c.s)
+  // A cell shared between two colours by a quarter and a three-quarter carries
+  // no full cross, but it is stitched, and the outline must not mistake it for
+  // a hole in the design. It counts as the colour of its three-quarter — the
+  // one that owns most of the cell. (In the pipeline the outline is derived
+  // first, so this only matters if the two ever run the other way round.)
+  for (const f of data.grid.fractional) {
+    if (f.k !== 'threeQuarter') continue
+    const i = f.y * width + f.x
+    if (!symbolAt.has(i)) symbolAt.set(i, f.s)
+  }
   const symOf = (i: number): string | undefined => symbolAt.get(i)
 
   const lab = new Map<string, Lab>()

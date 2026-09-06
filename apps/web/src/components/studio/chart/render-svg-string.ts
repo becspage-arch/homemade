@@ -25,8 +25,12 @@ import {
   buildBucketCrossPath,
   buildBucketHighlightPath,
   buildPaletteIndex,
+  fractionalAreaPath,
+  fractionalSymbolAnchor,
+  fractionalThreadPath,
   frenchKnotRadius,
   groupCellsBySymbol,
+  groupFractionalsBySymbol,
   shiftColour,
   symbolOnFill,
 } from './render-helpers'
@@ -286,6 +290,55 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
     parts.push(`</g>`)
   }
 
+  // ─── Quarter and three-quarter stitches ─────────────────────────────────
+  // Drawn after the full crosses and before the line work: on a chart they are
+  // areas of colour like any other cell, and in beauty mode they are thread —
+  // a quarter is one leg of a cross cut in half, a three-quarter a full diagonal
+  // plus a half leg, which is exactly what the needle does.
+  if (pattern.grid.fractional.length > 0) {
+    const fractionals = groupFractionalsBySymbol(pattern)
+    for (const [symbol, list] of fractionals) {
+      if (list.length === 0) continue
+      const entry = paletteIndex.bySymbol.get(symbol)
+      if (!entry) continue
+      const inRegion = list.filter(
+        (f) => f.x >= region.x && f.x < regionMaxX && f.y >= region.y && f.y < regionMaxY,
+      )
+      if (inRegion.length === 0) continue
+
+      if (mode === 'beauty' && !monochrome) {
+        const d = inRegion.map((f) => fractionalThreadPath(f, cellPx)).join('')
+        parts.push(`<g transform="translate(${offX} ${offY})" fill="none" stroke-linecap="round">`)
+        parts.push(`<path d="${d}" stroke="${shiftColour(entry.rgb, -0.1)}" stroke-width="${cellPx * 0.26}"/>`)
+        parts.push(`<path d="${d}" stroke="${entry.rgb}" stroke-width="${cellPx * 0.22}"/>`)
+        parts.push(
+          `<path d="${d}" stroke="${shiftColour(entry.rgb, 0.2)}" stroke-width="${cellPx * 0.1}" opacity="0.85"/>`,
+        )
+        parts.push(`</g>`)
+        continue
+      }
+
+      const d = inRegion.map((f) => fractionalAreaPath(f, cellPx)).join('')
+      if (monochrome) {
+        parts.push(
+          `<g transform="translate(${offX} ${offY})"><path d="${d}" fill="#ffffff" stroke="#1a1410" stroke-width="0.6"/></g>`,
+        )
+      } else if (opts.cellStyle === 'block') {
+        parts.push(`<g transform="translate(${offX} ${offY})"><path d="${d}" fill="${entry.rgb}"/></g>`)
+      } else {
+        // The readable working chart: the area in floss colour with the thread
+        // drawn over it, so a fractional cell is obviously not a whole one.
+        parts.push(`<g transform="translate(${offX} ${offY})">`)
+        parts.push(`<path d="${d}" fill="${entry.rgb}" opacity="0.42"/>`)
+        parts.push(
+          `<path d="${inRegion.map((f) => fractionalThreadPath(f, cellPx)).join('')}" fill="none" ` +
+            `stroke="${entry.rgb}" stroke-width="${cellPx * 0.16}" stroke-linecap="round"/>`,
+        )
+        parts.push(`</g>`)
+      }
+    }
+  }
+
   // ─── Back-stitch ────────────────────────────────────────────────────────
   // Drawn over the stitches, at the weight worked thread actually has. One
   // path per colour so a long outline is one paint, not four hundred.
@@ -423,6 +476,21 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
       for (const { x, y } of inRegion) {
         parts.push(
           `<text x="${x * cellPx + cellPx / 2}" y="${y * cellPx + cellPx / 2}" font-size="${fontSize}" fill="${fill}">${escapeXml(symbol)}</text>`,
+        )
+      }
+    }
+    // A fractional cell carries its own symbol, smaller, in the middle of the
+    // part it covers — the same convention a bought chart uses so a stitcher can
+    // see at a glance which corner is which colour.
+    if (pattern.grid.fractional.length > 0) {
+      const small = cellPx * 0.46
+      for (const f of pattern.grid.fractional) {
+        if (f.x < region.x || f.x >= regionMaxX || f.y < region.y || f.y >= regionMaxY) continue
+        const entry = paletteIndex.bySymbol.get(f.s)
+        if (!entry) continue
+        const at = fractionalSymbolAnchor(f, cellPx)
+        parts.push(
+          `<text x="${at.x}" y="${at.y}" font-size="${small}" fill="${monochrome ? '#1a1410' : symbolOnFill(entry.rgb)}">${escapeXml(f.s)}</text>`,
         )
       }
     }

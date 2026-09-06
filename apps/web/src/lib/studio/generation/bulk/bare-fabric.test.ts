@@ -62,7 +62,7 @@ function chart(rows: string[], palette: PaletteEntry[]): PatternData {
   return {
     schemaVersion: 1,
     type: 'CROSS_STITCH',
-    grid: { width, height, cells, backstitch: [], frenchKnots: [], beads: [] },
+    grid: { width, height, cells, backstitch: [], frenchKnots: [], beads: [], fractional: [] },
     palette,
     fabric: { count: 14, colourRgb: '#FCFAF6', type: 'Aida' },
     metadata: {},

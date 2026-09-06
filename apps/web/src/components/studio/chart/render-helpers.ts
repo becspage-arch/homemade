@@ -18,7 +18,7 @@
  * - Layers are grouped by colour so the SVG paint pass batches strokes.
  */
 
-import type { PatternData, PaletteEntry } from '@homemade/db/pattern'
+import type { PatternData, PaletteEntry, CellQuadrant, FractionalStitch } from '@homemade/db/pattern'
 
 export const DEFAULT_CELL_PX = 32
 export const LOW_ZOOM_THRESHOLD = 6
@@ -154,6 +154,147 @@ export function buildCellHighlightPath(
   )
 }
 
+// ───────────────────────────────────────────────────────────────────────────
+// Fractional stitches
+// ───────────────────────────────────────────────────────────────────────────
+
+/** Corner offsets of each quadrant, in cell units. */
+const QUADRANT_CORNER: Record<CellQuadrant, [number, number]> = {
+  tl: [0, 0],
+  tr: [1, 0],
+  bl: [0, 1],
+  br: [1, 1],
+}
+
+const OPPOSITE_QUADRANT: Record<CellQuadrant, CellQuadrant> = {
+  tl: 'br',
+  tr: 'bl',
+  bl: 'tr',
+  br: 'tl',
+}
+
+/**
+ * The AREA a fractional stitch covers, as an SVG path.
+ *
+ * A quarter stitch covers the quarter of the cell at its corner; a three-quarter
+ * covers everything except that quarter, which is the L-shaped rest. Together
+ * they tile the cell, which is what lets a stair-stepped diagonal be worked as
+ * a smooth one. Used by the printed chart and the low-zoom viewport, where a
+ * cell is a block of colour rather than a drawn stitch.
+ */
+export function fractionalAreaPath(
+  f: Pick<FractionalStitch, 'x' | 'y' | 'q' | 'k'>,
+  cellPx: number,
+): string {
+  const px = f.x * cellPx
+  const py = f.y * cellPx
+  const c = cellPx
+  const [qx, qy] = QUADRANT_CORNER[f.q]
+  const cornerX = px + qx * c
+  const cornerY = py + qy * c
+  const midX = px + c / 2
+  const midY = py + c / 2
+  if (f.k === 'quarter') {
+    // The quadrant square: from the cell's corner to the cell's centre.
+    const ax = Math.min(cornerX, midX)
+    const bx = Math.max(cornerX, midX)
+    const ay = Math.min(cornerY, midY)
+    const by = Math.max(cornerY, midY)
+    return `M${ax} ${ay}L${bx} ${ay}L${bx} ${by}L${ax} ${by}Z`
+  }
+  // Everything but that quadrant: walk the cell's outline, cutting the corner.
+  const x0 = px
+  const y0 = py
+  const x1 = px + c
+  const y1 = py + c
+  const corners: [number, number][] = [
+    [x0, y0],
+    [x1, y0],
+    [x1, y1],
+    [x0, y1],
+  ]
+  const skipIndex = { tl: 0, tr: 1, br: 2, bl: 3 }[f.q]
+  const pts: [number, number][] = []
+  for (let i = 0; i < 4; i++) {
+    if (i === skipIndex) {
+      // Replace the corner with the two half-edge points and the centre.
+      const prev = corners[(i + 3) % 4]!
+      const next = corners[(i + 1) % 4]!
+      const here = corners[i]!
+      pts.push([(here[0] + prev[0]) / 2, (here[1] + prev[1]) / 2])
+      pts.push([midX, midY])
+      pts.push([(here[0] + next[0]) / 2, (here[1] + next[1]) / 2])
+      continue
+    }
+    pts.push(corners[i]!)
+  }
+  return `M${pts.map(([x, y]) => `${x} ${y}`).join('L')}Z`
+}
+
+/**
+ * The THREAD a fractional stitch lays down, as an SVG path — the beauty-mode
+ * view, where a stitch is drawn rather than blocked in.
+ *
+ * A quarter stitch is one leg of a cross cut in half: corner to centre. A
+ * three-quarter is a full diagonal across the cell plus a half leg reaching in
+ * from the opposite corner, which is exactly what the needle does.
+ */
+export function fractionalThreadPath(
+  f: Pick<FractionalStitch, 'x' | 'y' | 'q' | 'k'>,
+  cellPx: number,
+): string {
+  const px = f.x * cellPx
+  const py = f.y * cellPx
+  const c = cellPx
+  const midX = px + c / 2
+  const midY = py + c / 2
+  const at = (q: CellQuadrant): [number, number] => {
+    const [qx, qy] = QUADRANT_CORNER[q]
+    return [px + qx * c, py + qy * c]
+  }
+  if (f.k === 'quarter') {
+    const [cx, cy] = at(f.q)
+    return `M${cx} ${cy}L${midX} ${midY}`
+  }
+  // The full diagonal that misses this quadrant, plus the quarter leg from the
+  // opposite corner.
+  const diagonal: [CellQuadrant, CellQuadrant] =
+    f.q === 'tl' || f.q === 'br' ? ['tr', 'bl'] : ['tl', 'br']
+  const [ax, ay] = at(diagonal[0])
+  const [bx, by] = at(diagonal[1])
+  const [ox, oy] = at(OPPOSITE_QUADRANT[f.q])
+  return `M${ax} ${ay}L${bx} ${by}M${ox} ${oy}L${midX} ${midY}`
+}
+
+/** Where a fractional stitch's symbol sits — the middle of the area it covers. */
+export function fractionalSymbolAnchor(
+  f: Pick<FractionalStitch, 'x' | 'y' | 'q' | 'k'>,
+  cellPx: number,
+): { x: number; y: number } {
+  const [qx, qy] = QUADRANT_CORNER[f.q]
+  const sign = f.k === 'quarter' ? 1 : -1
+  // A quarter sits in its own corner; a three-quarter sits away from the corner
+  // it is missing.
+  return {
+    x: f.x * cellPx + cellPx * (0.5 + sign * (qx === 0 ? -0.22 : 0.22)),
+    y: f.y * cellPx + cellPx * (0.5 + sign * (qy === 0 ? -0.22 : 0.22)),
+  }
+}
+
+/** Group fractional stitches by palette symbol, palette order first. */
+export function groupFractionalsBySymbol(
+  pattern: PatternData,
+): Map<string, FractionalStitch[]> {
+  const out = new Map<string, FractionalStitch[]>()
+  for (const entry of pattern.palette) out.set(entry.symbol, [])
+  for (const f of pattern.grid.fractional) {
+    const bucket = out.get(f.s)
+    if (bucket) bucket.push(f)
+    else out.set(f.s, [f])
+  }
+  return out
+}
+
 /**
  * Compute the tight bounding box of every stitched cell + back-stitch
  * endpoint + French knot + bead in a pattern. Returns null when the
@@ -211,6 +352,13 @@ export function stitchedBoundingBox(pattern: PatternData): {
     if (b.y < minY) minY = b.y
     if (b.x > maxX) maxX = b.x
     if (b.y > maxY) maxY = b.y
+    touched = true
+  }
+  for (const f of pattern.grid.fractional) {
+    if (f.x < minX) minX = f.x
+    if (f.y < minY) minY = f.y
+    if (f.x > maxX) maxX = f.x
+    if (f.y > maxY) maxY = f.y
     touched = true
   }
   if (!touched) return null

@@ -63,6 +63,10 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
       for (const knot of pattern.grid.frenchKnots) {
         if (knot.s === entry.symbol) knots++
       }
+      let fractionals = 0
+      for (const f of pattern.grid.fractional) {
+        if (f.s === entry.symbol) fractionals++
+      }
       const skein = estimateSkeinCount(pattern, entry.symbol)
       return {
         entry,
@@ -72,6 +76,7 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
         remaining: totalStitches - stitchedCount,
         lineCells: Math.round(lineCells),
         knots,
+        fractionals,
         skein,
       }
     })
@@ -131,7 +136,7 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
         </header>
 
         <ul className="studio-flosskey-list">
-          {rows.map(({ entry, totalStitches, stitchedCount, remaining, lineCells, knots, skein }) => {
+          {rows.map(({ entry, totalStitches, stitchedCount, remaining, lineCells, knots, fractionals, skein }) => {
             const isIsolated = entry.symbol === isolate
             return (
               <li
@@ -159,6 +164,7 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
                   <span className="studio-flosskey-counts">
                     <span className="studio-flosskey-total">
                       {totalStitches.toLocaleString()} st
+                      {fractionals > 0 && ` · ${fractionals.toLocaleString()} part`}
                       {lineCells > 0 && ` · ${lineCells.toLocaleString()} back-stitch`}
                       {knots > 0 && ` · ${knots} knot${knots === 1 ? '' : 's'}`}
                     </span>

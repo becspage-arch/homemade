@@ -19,6 +19,7 @@ import type {
   FrenchKnot,
   PatternData,
   PaletteEntry,
+  FractionalStitch,
 } from '@homemade/db/pattern'
 import { cellKey } from '@homemade/db/pattern'
 import { DEFAULT_VIEWPORT, type Viewport, zoomAtPoint, fitToScreen } from './render-helpers'
@@ -57,6 +58,7 @@ export interface LayerToggles {
   colours: boolean
   backstitch: boolean
   frenchKnots: boolean
+  fractional: boolean
   beads: boolean
   grid: boolean
   centreCrosshairs: boolean
@@ -82,6 +84,8 @@ export type ChartCommand =
   | { kind: 'removeBackstitch'; index: number; segment: BackstitchSegment }
   | { kind: 'addFrenchKnot'; knot: FrenchKnot }
   | { kind: 'removeFrenchKnot'; index: number; knot: FrenchKnot }
+  | { kind: 'addFractional'; stitch: FractionalStitch }
+  | { kind: 'removeFractional'; index: number; stitch: FractionalStitch }
   | {
       kind: 'recolour'
       from: string
@@ -147,6 +151,8 @@ export interface ChartStoreState {
   removeBackstitchAt: (index: number) => void
   addFrenchKnot: (knot: FrenchKnot) => void
   removeFrenchKnotAt: (index: number) => void
+  addFractional: (stitch: FractionalStitch) => void
+  removeFractionalAt: (index: number) => void
   recolour: (fromSymbol: string, toSymbol: string) => void
 
   // ───── stitched markers (direct, not in undo stack)
@@ -168,6 +174,7 @@ const DEFAULT_LAYERS: LayerToggles = {
   colours: true,
   backstitch: true,
   frenchKnots: true,
+  fractional: true,
   beads: true,
   grid: true,
   centreCrosshairs: true,
@@ -325,6 +332,13 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
     set(applyCommandReducer(state, { kind: 'removeBackstitch', index, segment: seg }))
   },
   addFrenchKnot: (knot) => set(applyCommandReducer(get(), { kind: 'addFrenchKnot', knot })),
+  addFractional: (stitch) => set(applyCommandReducer(get(), { kind: 'addFractional', stitch })),
+  removeFractionalAt: (index) => {
+    const state = get()
+    const f = state.pattern?.grid.fractional[index]
+    if (!f) return
+    set(applyCommandReducer(state, { kind: 'removeFractional', index, stitch: f }))
+  },
   removeFrenchKnotAt: (index) => {
     const state = get()
     const k = state.pattern?.grid.frenchKnots[index]
@@ -432,6 +446,15 @@ function applyCommandReducer(
     case 'addFrenchKnot':
       nextGrid = { ...pattern.grid, frenchKnots: [...pattern.grid.frenchKnots, cmd.knot] }
       break
+    case 'addFractional':
+      nextGrid = { ...pattern.grid, fractional: [...pattern.grid.fractional, cmd.stitch] }
+      break
+    case 'removeFractional':
+      nextGrid = {
+        ...pattern.grid,
+        fractional: pattern.grid.fractional.filter((_, i) => i !== cmd.index),
+      }
+      break
     case 'removeFrenchKnot':
       nextGrid = {
         ...pattern.grid,
@@ -493,6 +516,19 @@ function undoCommandReducer(
       nextGrid = {
         ...pattern.grid,
         frenchKnots: pattern.grid.frenchKnots.slice(0, -1),
+      }
+      break
+    case 'addFractional':
+      nextGrid = { ...pattern.grid, fractional: pattern.grid.fractional.slice(0, -1) }
+      break
+    case 'removeFractional':
+      nextGrid = {
+        ...pattern.grid,
+        fractional: [
+          ...pattern.grid.fractional.slice(0, cmd.index),
+          cmd.stitch,
+          ...pattern.grid.fractional.slice(cmd.index),
+        ],
       }
       break
     case 'removeFrenchKnot':
