@@ -159,6 +159,50 @@ function faceDir(f: 1 | -1, d: Dir): Dir {
   return { x: d.x * c - d.y * s, y: d.x * s + d.y * c, z: d.z }
 }
 
+/**
+ * ROUND 3 — THE ARMS. Round 2 left the arms as its own logged residual ("they
+ * read faintly... a held-out-from-the-body arm angle is the open direction"),
+ * and on the served hero it was worse than faint: both cream paw pads landed
+ * BELOW the cream foot pads, so the picture read as four feet with the arms
+ * coming out from under the legs.
+ *
+ * Measured on the settled geometry (body 43.40 mm tall, 57.2 wide), round 2:
+ *   shoulder join       z 31.98 = 0.737 of the body height  (already fine)
+ *   arm aim             23° out, 34° forward = 38° off vertical
+ *   paw pad centre      z  6.14 = 0.141 of the body height
+ *   foot pad centre     z 12.33 = 0.284
+ *   paw ABOVE foot     −6.19 mm = −0.143 of the body height   ← the fault
+ *   arm-to-leg gap      0.17 mm; paw-to-leg gap 0.36 mm       ← and this
+ *
+ * So the attach HEIGHT was never the problem. The arm+paw chain measures
+ * 30.7 mm from the shoulder join, against a 43.4 mm body — 0.71 of the body
+ * height, where a real amigurumi bear's arm is nearer half — and at 38° off
+ * vertical that length drops the paw 24 mm, straight past the feet. The fix is
+ * the ANGLE: hold the arm out and forward so the elbow swings clear of the body
+ * and the paw lands at mid-body.
+ *
+ * Two poses were probed (the two-attempt cap), both at the same shoulder:
+ *   out 67° / fwd 42°  paw z 21.38 = 0.493 of the body (mid-body), 9.05 mm =
+ *                      0.209 above the foot pads, elbow 10.7 mm past the body
+ *                      silhouette, gaps arm-head 8.41, arm-leg 2.41, minz 0.00
+ *   out 74° / fwd 44°  paw z 25.20 = 0.581, 12.87 mm = 0.297 above the foot
+ *                      pads — nearer the ≥0.35 target, but the arms are then
+ *                      within 16° of horizontal and the paws no longer read as
+ *                      "around mid-body"
+ * The 67° pose ships. Note for the record: ≥0.35 of the body height above the
+ * feet is NOT reachable with this arm on this body at any angle under ~77° off
+ * vertical, because the chain is 0.71 of the body height long — closing that
+ * gap properly means a shorter arm (a `scale`/round-count change), not a
+ * placement change.
+ */
+/** Arm attach direction on the body ellipsoid: 45° elevation, 18° toward the
+ *  front — the shoulder slope, join at 0.75 of the body height. */
+const ARM_DIR_Z = 1.0
+const ARM_DIR_Y = 0.325
+/** Arm aim: tan 67° out of vertical in the side plane, tan 42° forward. */
+const ARM_AIM_Y = 0.3822
+const ARM_AIM_Z = -0.4245
+
 /** The shared bear. The knobs are the round-2 questions: how the head meets the
  *  body, how big the ears are, and how big/glossy the safety eyes are. */
 function bear(opts: {
@@ -179,9 +223,11 @@ function bear(opts: {
   notes: string
 }): CompositionProgram {
   const f = opts.facing
-  // Where each arm points once it is sewn on: down the side, angled out and
-  // forward, so the paw lands beside the leg rather than through the table.
-  const armAim = (side: -1 | 1): Dir => ({ x: side * 0.32, y: f * 0.5, z: -0.75 })
+  // ROUND 3 — WHERE the arm is sewn (see ARM_DIR_Z above) and WHICH WAY it then
+  // points (ARM_AIM_*). The paw pad on the end of each arm is placed along the
+  // same aim vector, so it travels with the arm.
+  const armDir = (side: -1 | 1): Dir => ({ x: side * 1, y: f * ARM_DIR_Y, z: ARM_DIR_Z })
+  const armAim = (side: -1 | 1): Dir => ({ x: side * 1, y: f * ARM_AIM_Y, z: ARM_AIM_Z })
   const legAim = (side: -1 | 1): Dir => ({ x: side * 0.26, y: f * 1, z: -0.05 })
   // The ear leans forward-and-up out of its join, so both ears clear the crown
   // and land in the silhouette from the three-quarter front.
@@ -231,28 +277,23 @@ function bear(opts: {
         seat: mm(3.5), poleIn: true, surfaceFit: 'ellipsoid',
       },
     },
-    // Arms: sewn high at the shoulder, hanging down the sides and a little
-    // forward — the limbs stay on the BODY's axis, not the turned face's.
+    // Arms: sewn at the shoulder, held OUT and forward so the elbow swings
+    // clear of the body and the paw lands at mid-body — the limbs stay on the
+    // BODY's axis, not the turned face's. Round 2's z nudges are gone: they
+    // existed only to stop a straight-down arm's paw pad reaching below the
+    // table, and this arm's lowest point is 12 mm clear of it (minz 0.00).
     {
       name: 'arm-l', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.78,
       place: {
-        on: 'body', dir: { x: -1, y: f * 0.28, z: 0.7 },
+        on: 'body', dir: armDir(-1),
         aim: armAim(-1), seat: mm(6), poleIn: true, surfaceFit: 'ellipsoid',
-        // The paw pad on the end of a hanging arm otherwise reaches just below
-        // the table, and the renderer floats the WHOLE piece up to clear it —
-        // which lifts the legs off the ground. Hold the arm just enough that
-        // every part of the bear sits on or above z = 0 (probed per variant:
-        // at 0.5 the left paw pad settled −0.16 mm once the corrected cell
-        // scaled the piece up).
-        offset: { z: mm(0.65) },
       },
     },
     {
       name: 'arm-r', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.78,
       place: {
-        on: 'body', dir: { x: 1, y: f * 0.28, z: 0.7 },
+        on: 'body', dir: armDir(1),
         aim: armAim(1), seat: mm(6), poleIn: true, surfaceFit: 'ellipsoid',
-        offset: { z: mm(0.5) },
       },
     },
     // Legs: sewn low at the front, lying FORWARD along the table so it sits.
@@ -334,7 +375,7 @@ function bear(opts: {
       },
     ],
     gaugeText: 'sc worked in the round, each piece stuffed firm and sewn on',
-    finishedSizeMm: { width: 82, height: 101 }, // §8f-6: re-measured off the settled geometry after the within-round front/back layer — the crossing region now runs a yarn behind the surface, so each piece draws in a touch (83 x 103 at §8f-5); height-to-width 1.24 -> 1.23, every proportion round 2 tuned intact. §8f-5: re-MEASURED off the settled geometry after the round-work look pass (84 x 107 at §8f-4, 57 x 74 before the corrected cell). The stitch now lies IN the surface instead of standing off it, so every part is a few percent less puffy; height-to-width is unmoved at 1.24 and every proportion round 2 tuned survives.
+    finishedSizeMm: { width: 90, height: 101 }, // §8e-2 round 3: re-MEASURED off the settled geometry after the arms came off the shoulders. The base bear settles 89.5 (x) x 81.8 (y) x 101.1 (z); only the WIDTH moves (82 -> 90) and it now comes from the ACROSS-THE-ARMS extent (61.3 -> 89.5) rather than the front-to-back one (81.8, unmoved), because the arms are held out from the body instead of hanging against it. Height unchanged — nothing else in the assembly moved. §8f-6: re-measured off the settled geometry after the within-round front/back layer — the crossing region now runs a yarn behind the surface, so each piece draws in a touch (83 x 103 at §8f-5); height-to-width 1.24 -> 1.23, every proportion round 2 tuned intact. §8f-5: re-MEASURED off the settled geometry after the round-work look pass (84 x 107 at §8f-4, 57 x 74 before the corrected cell). The stitch now lies IN the surface instead of standing off it, so every part is a few percent less puffy; height-to-width is unmoved at 1.24 and every proportion round 2 tuned survives.
     hookMm: 4,
     notes: opts.notes,
   }
