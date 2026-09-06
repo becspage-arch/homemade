@@ -276,6 +276,12 @@ export async function publishCrossStitchGem(
     hasFrenchKnots: m.hasFrenchKnots,
     hasBeads: m.hasBeads,
     hasQuarterStitches: m.hasQuarterStitches,
+    // How the chart feels under the needle (not how big it is). Shown as a
+    // plain band on the pattern page and filterable in the library grid.
+    confettiShare: m.confettiShare,
+    colourChangesPer100: m.colourChangesPer100,
+    medianRunLength: m.medianRunLength,
+    stitchability: m.stitchability,
     fabricCountSuggested: data.fabric.count,
     // ── duplicate-guard fingerprints of the artifact that is shipping ──────
     // Written at publish so the NEXT candidate can be compared against this one.

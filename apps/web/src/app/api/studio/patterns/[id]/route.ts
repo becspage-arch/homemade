@@ -77,6 +77,10 @@ export async function PATCH(req: Request, ctx: Ctx) {
     updates.hasFrenchKnots = metrics.hasFrenchKnots
     updates.hasBeads = metrics.hasBeads
     updates.hasQuarterStitches = metrics.hasQuarterStitches
+    updates.confettiShare = metrics.confettiShare
+    updates.colourChangesPer100 = metrics.colourChangesPer100
+    updates.medianRunLength = metrics.medianRunLength
+    updates.stitchability = metrics.stitchability
     updates.fabricCountSuggested = data.fabric.count
   }
 

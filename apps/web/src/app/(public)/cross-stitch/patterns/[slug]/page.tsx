@@ -3,7 +3,13 @@ import Link from 'next/link'
 import { headers } from 'next/headers'
 import { after } from 'next/server'
 import { notFound } from 'next/navigation'
-import { prisma, Visibility, parsePatternData, estimateSkeinCount } from '@homemade/db'
+import {
+  prisma,
+  Visibility,
+  parsePatternData,
+  estimateSkeinCount,
+  STITCHABILITY_BANDS,
+} from '@homemade/db'
 import { bumpPatternView } from '@/lib/popularity'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { buildBreadcrumbSchema, absoluteImageUrl } from '@/lib/seo/schema-builders'
@@ -14,6 +20,7 @@ import { PremiumBadge } from '@/components/premium'
 import { PatternSaveButton } from '@/components/public/pattern-save-button'
 import { PatternPlanButton } from '@/components/public/pattern-plan-button'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
+import { FabricCalculator } from './fabric-calculator'
 import './pattern-detail.css'
 
 export const dynamic = 'force-dynamic'
@@ -86,6 +93,11 @@ export default async function PatternDetailPage({ params }: PageProps) {
   const finishedH = (row.heightCells / row.fabricCountSuggested) * 2.54
 
   const totalSkein = data.palette.reduce((sum, p) => sum + estimateSkeinCount(data, p.symbol), 0)
+
+  // How the chart feels under the needle. Computed off the grid at save time
+  // and stored on the row; older rows the backfill hasn't reached simply show
+  // nothing rather than a guess.
+  const band = row.stitchability != null ? STITCHABILITY_BANDS[row.stitchability] : undefined
 
   const related = await prisma.pattern.findMany({
     where: {
@@ -253,11 +265,35 @@ export default async function PatternDetailPage({ params }: PageProps) {
             <div><dt>Finished</dt><dd>{finishedW.toFixed(1)} × {finishedH.toFixed(1)} cm</dd></div>
             <div><dt>Fabric</dt><dd>{row.fabricCountSuggested}-count Aida</dd></div>
             <div><dt>Skeins</dt><dd>~{totalSkein.toFixed(0)} total</dd></div>
+            {band && (
+              <div>
+                <dt>Stitchability</dt>
+                <dd>
+                  <button
+                    type="button"
+                    className="pattern-detail-stitchability"
+                    aria-describedby="stitchability-tip"
+                  >
+                    {band.label}
+                    <span className="pattern-detail-stitchability-mark" aria-hidden="true">?</span>
+                    <span className="pattern-detail-tip" id="stitchability-tip" role="tooltip">
+                      {band.blurb}
+                    </span>
+                  </button>
+                </dd>
+              </div>
+            )}
             {row.difficulty && <div><dt>Difficulty</dt><dd>{prettify(row.difficulty)}</dd></div>}
             {row.estimatedHours && <div><dt>Time</dt><dd>~{row.estimatedHours}h</dd></div>}
             {row.hasBackstitch && <div><dt>Back-stitch</dt><dd>Yes</dd></div>}
             {row.hasFrenchKnots && <div><dt>French knots</dt><dd>Yes</dd></div>}
           </dl>
+
+          <FabricCalculator
+            widthCells={row.widthCells}
+            heightCells={row.heightCells}
+            suggestedCount={row.fabricCountSuggested}
+          />
         </div>
       </header>
 
