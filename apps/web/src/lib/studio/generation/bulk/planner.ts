@@ -140,6 +140,9 @@ HARD RULES
 - Vary subject, style, shape and size across the set.
 - No readable text or lettering (the converter cannot render it). No copying a specific shop, celebrity, brand or franchise design.
 - Respect each theme's notes (fair/pale faces only; wordless signage; tame warm-red animals).
+- STITCHABLE, not just clever. Every brief has ONE dominant subject that fills the frame and reads at a glance. Supporting details must be big enough to survive stitch resolution: no tiny props, no small creature "on" or "inside" a large scene (a beetle on a stem, a snail on a house, a cat asleep in a case all vanish). The hook lives in the main subject's pose, costume or setting, not in a small extra element.
+- COLOUR that stitches bright. Ask for rich saturated colour with clear light-dark contrast. Avoid "moody", "dark", "smoky", "misty", "dusky" or "muted" palettes and dark backgrounds: they convert to washed-out mush. Dark subjects (a skull, a black cat, a stormy sky) must sit against a bright or pale ground.
+- Faces are a risk: a face is only worth briefing when it is large, front-on and clearly appealing; skulls, masks and "unsettling" faces are out.
 - Use ONLY the style keys and shelf slugs given. Reply with JSON only.`
 
 interface RawXsBrief {
