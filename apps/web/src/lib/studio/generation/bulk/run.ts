@@ -5,12 +5,16 @@ import {
   generateCrossStitchCandidate,
   publishCrossStitchGem,
   uploadRejectSample,
+  recordDuplicateSubject,
   type CandidateTweak,
   type RejectSample,
 } from './cross-stitch'
 import {
   fingerprintCandidate,
   loadPublicCrossStitchFingerprints,
+  rerollAncestorSlugs,
+  recentDuplicateSubjectKeys,
+  avoidListWithDuplicateKills,
   findDuplicate,
   liveShelfCounts,
   publicSubjectKeys,
@@ -396,10 +400,23 @@ export async function crossStitchCandidateAttempt(
   }
 
   // Is this a gem we already have — or one already sitting in the parking bay?
+  //
+  // A RE-ROLL is compared against everything EXCEPT its own earlier rolls. It is
+  // the same brief on purpose, and the row it replaces was retired PRIVATE with
+  // a reason when the request was taken off the queue — which puts it in the
+  // culled population the guard matches subjects against. Left in, every re-roll
+  // died as a duplicate of the row the judging session had just asked to have
+  // rolled again, so no re-roll could ever land.
   const fingerprints = await fingerprintCandidate(candidate.renderPng, candidate.data, brief.subject)
-  const catalogue = await loadPublicCrossStitchFingerprints({ includePending: true })
+  const catalogue = await loadPublicCrossStitchFingerprints({
+    includePending: true,
+    ...((ctx.rerollCount ?? 0) > 0 ? { excludeSlugs: rerollAncestorSlugs(brief.slug) } : {}),
+  })
   const hit = findDuplicate(fingerprints, catalogue)
   if (hit) {
+    // The kill leaves no row, so the run remembers the idea instead — otherwise
+    // the planner picks it again on the next firing and pays for it again.
+    if (ctx.bulkRunId) await recordDuplicateSubject(ctx.bulkRunId, fingerprints.subjectKey)
     return {
       verdict: 'kill',
       reasons: [`duplicate of ${hit.slug}: ${hit.reason}`],
@@ -442,10 +459,16 @@ export function planCrossStitchCandidateBriefs(count: number, ctx: XsPlanContext
  * the inline runner and the Inngest dispatcher so both plan identically.
  */
 export async function crossStitchPlanContext(count: number): Promise<Parameters<typeof planCrossStitchBriefs>[1]> {
-  const [counts, avoidSubjectKeys] = await Promise.all([
+  const [counts, rowKeys, duplicateKills] = await Promise.all([
     liveShelfCounts().catch(() => ({}) as Record<string, number>),
     publicSubjectKeys().catch(() => [] as string[]),
+    // Ideas recent runs killed as duplicates. They leave no row, so without this
+    // the planner has no memory of them and re-picks the same subject firing
+    // after firing — which it did, twice each for two subjects across three of
+    // the September firings.
+    recentDuplicateSubjectKeys().catch(() => [] as string[]),
   ])
+  const avoidSubjectKeys = avoidListWithDuplicateKills(rowKeys, duplicateKills)
   const deficits = shelfDeficits(CROSS_STITCH_SHELVES, counts)
   // Cap any one shelf at its share of the batch. A shelf far behind its target
   // otherwise takes three or four slots at once and the batch turns into three

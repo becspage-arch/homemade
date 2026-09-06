@@ -409,6 +409,31 @@ export async function recordRejectSample(runId: string, sample: RejectSample): P
   }
 }
 
+/**
+ * Record the subject key of an idea the duplicate guard killed.
+ *
+ * A duplicate kill leaves no Pattern row behind, so the run is the only place
+ * the fact can live — and the planner reads it back to stop re-commissioning a
+ * subject the catalogue already has. Never throws: losing a diagnostic must not
+ * turn a kill into an error and take the run's counters with it. Read-then-write
+ * is safe here, as it is for the reject samples: the idea worker runs at
+ * concurrency 1, so a run's keys never race.
+ */
+export async function recordDuplicateSubject(runId: string, key: string): Promise<void> {
+  if (!key) return
+  try {
+    const run = await prisma.bulkRun.findUnique({ where: { id: runId }, select: { duplicateSubjectKeys: true } })
+    if (!run) return
+    if (run.duplicateSubjectKeys.includes(key)) return
+    await prisma.bulkRun.update({
+      where: { id: runId },
+      data: { duplicateSubjectKeys: [...run.duplicateSubjectKeys, key] },
+    })
+  } catch (err) {
+    console.warn(`[bulk cross-stitch] could not record the duplicate subject key "${key}"`, err)
+  }
+}
+
 /** Everything the publisher records about HOW this gem came to exist. */
 export interface PublishContext {
   /** The fingerprints the duplicate guard just computed and cleared. */
