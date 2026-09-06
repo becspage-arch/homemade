@@ -42,6 +42,17 @@ export type PosthogEvent =
   | 'photo_uploaded'
   | 'photo_approved'
   | 'photo_rejected'
+  // Maker photos — one photo model across tutorials, recipes and every
+  // pattern craft. `maker_photo_approved` / `_rejected` carry `decidedBy`
+  // ('gate' | 'appeal') so the AI gate and the appeal override separate in
+  // the funnel.
+  | 'maker_photo_uploaded'
+  | 'maker_photo_approved'
+  | 'maker_photo_rejected'
+  | 'maker_photo_appealed'
+  | 'maker_photo_removed'
+  | 'photo_promotion_opted_in'
+  | 'photo_promotion_opted_out'
   | 'question_asked'
   | 'question_answered'
   | 'errata_submitted'
@@ -289,6 +300,13 @@ const EVENT_CATEGORIES: Record<string, string> = {
   photo_uploaded: 'engagement',
   photo_approved: 'engagement',
   photo_rejected: 'engagement',
+  maker_photo_uploaded: 'engagement',
+  maker_photo_approved: 'engagement',
+  maker_photo_rejected: 'engagement',
+  maker_photo_appealed: 'engagement',
+  maker_photo_removed: 'engagement',
+  photo_promotion_opted_in: 'account',
+  photo_promotion_opted_out: 'account',
   question_asked: 'engagement',
   question_answered: 'engagement',
   errata_submitted: 'engagement',

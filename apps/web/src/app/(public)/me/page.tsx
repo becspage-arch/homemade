@@ -17,6 +17,8 @@ const DESIGN_STUDIO_HREF: Record<PatternType, string> = {
   CROSS_STITCH: '/studio/cross-stitch',
   KNITTING_CHART: '/studio/knitting',
   CROCHET_CHART: '/studio/crochet',
+  NEEDLEWORK: '/needlework/patterns',
+  SEWING: '/sewing',
 }
 
 interface CompletedRow {

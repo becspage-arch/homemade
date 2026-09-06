@@ -16,7 +16,7 @@ import { notify } from './notify'
 import { mediaUrl } from './media'
 import { captureServerEvent } from './posthog'
 import { checkRateLimit } from './ratelimit'
-import { gateMakerPhoto } from './maker-photo-gate'
+import { gateMakerPhoto, type MakerPhotoGateResult } from './maker-photo-gate'
 import { resolveTarget } from './maker-photo-target'
 import { targetData, type PhotoTarget } from './maker-photos'
 
@@ -167,18 +167,19 @@ export async function submitMakerPhoto(
 
   // ── The gate ────────────────────────────────────────────────────────────
   const uploaded = await fetchImage(mediaUrl({ r2Key: input.r2Key }, 'public'))
-  let verdict = { decision: 'pending' as const, reasons: [] as string[], model: null as string | null }
+  // No bytes to look at means the gate could not run: hold the photo.
+  let verdict: MakerPhotoGateResult = { decision: 'pending', reasons: [], model: null }
   if (uploaded) {
     const reference = resolved.referenceImageUrl
       ? await fetchImage(resolved.referenceImageUrl)
       : null
-    verdict = (await gateMakerPhoto({
+    verdict = await gateMakerPhoto({
       photo: uploaded.buffer,
       photoMediaType: uploaded.mediaType,
       itemTitle: resolved.title,
       itemKind: resolved.kind,
       reference,
-    })) as typeof verdict
+    })
   }
 
   const status =

@@ -4,7 +4,6 @@ import { revalidatePath } from 'next/cache'
 import {
   prisma,
   ReviewStatus,
-  UGCPhotoStatus,
   UGCStatus,
   ErrataStatus,
   ReportStatus,
@@ -137,79 +136,8 @@ export async function moderateReview(input: {
   return { ok: true }
 }
 
-// ────────────────────────────────────────────────────────────────────────────
-// UGC photos
-// ────────────────────────────────────────────────────────────────────────────
-
-export async function moderateUgcPhoto(input: {
-  photoId: string
-  action: 'APPROVE' | 'REJECT'
-  rejectionReason?: string | null
-}): Promise<ActionResult> {
-  const actor = await requireAdminRole({ minimum: 'EDITOR' })
-
-  const photo = await prisma.uGCPhoto.findUnique({
-    where: { id: input.photoId },
-    include: {
-      tutorial: { select: { slug: true, title: true, category: { select: { slug: true } } } },
-    },
-  })
-  if (!photo) return { ok: false, error: 'Photo not found.' }
-
-  const reason = input.rejectionReason?.trim() ?? ''
-  if (input.action === 'REJECT' && !reason) {
-    return { ok: false, error: 'Give a short reason so the user knows why.' }
-  }
-
-  const nextStatus =
-    input.action === 'APPROVE' ? UGCPhotoStatus.APPROVED : UGCPhotoStatus.REJECTED
-
-  await prisma.uGCPhoto.update({
-    where: { id: photo.id },
-    data: {
-      status: nextStatus,
-      moderatedAt: new Date(),
-      moderatedById: actor.id,
-      rejectionReason: input.action === 'REJECT' ? reason : null,
-    },
-  })
-
-  await audit({
-    actorId: actor.id,
-    action: input.action === 'APPROVE' ? 'photo.approved' : 'photo.rejected',
-    resource: `UGCPhoto:${photo.id}`,
-    metadata: { tutorialId: photo.tutorialId, before: photo.status, after: nextStatus, reason },
-  })
-
-  await notify({
-    userId: photo.userId,
-    type:
-      input.action === 'APPROVE'
-        ? NotificationType.PHOTO_APPROVED
-        : NotificationType.PHOTO_REJECTED,
-    body:
-      input.action === 'APPROVE'
-        ? `Your photo of “${photo.tutorial.title}” is now visible to readers.`
-        : `Your photo of “${photo.tutorial.title}” wasn’t approved: ${reason}`,
-    href: tutorialPath(photo.tutorial),
-  })
-
-  await fireOutcome(actor.id, 'photo', photo.id, input.action, {
-    tutorialId: photo.tutorialId,
-    userId: photo.userId,
-  })
-
-  await captureServerEvent({
-    event: input.action === 'APPROVE' ? 'photo_approved' : 'photo_rejected',
-    distinctId: photo.userId,
-    properties: { photoId: photo.id, tutorialId: photo.tutorialId },
-  })
-
-  revalidatePath('/admin/ugc-photos')
-  const path = tutorialPath(photo.tutorial)
-  if (path) revalidatePath(path)
-  return { ok: true }
-}
+// Maker photos moved out: approval is the AI gate's job and the only human
+// decision is an appeal, which lives in lib/maker-photo-actions.ts.
 
 // ────────────────────────────────────────────────────────────────────────────
 // Questions & Answers

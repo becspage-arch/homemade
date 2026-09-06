@@ -3,43 +3,69 @@ import { redirect } from 'next/navigation'
 import { prisma } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { mediaUrl } from '@/lib/media'
+import { resolveTarget } from '@/lib/maker-photo-target'
+import { MyPhotoCard, type MyPhotoView } from './photo-card'
 
 export const dynamic = 'force-dynamic'
-
-const STATUS_LABEL: Record<string, string> = {
-  PENDING_MODERATION: 'In review',
-  APPROVED: 'Approved',
-  REJECTED: 'Rejected',
-}
 
 export default async function MyPhotosPage() {
   const user = await getCurrentDbUser()
   if (!user) redirect('/sign-in')
 
+  // Removed photos are gone from here too — removal is final, not an archive.
   const photos = await prisma.uGCPhoto.findMany({
-    where: { userId: user.id },
+    where: { userId: user.id, removedAt: null },
     orderBy: { createdAt: 'desc' },
-    include: {
-      tutorial: {
-        select: {
-          title: true,
-          slug: true,
-          category: { select: { slug: true } },
-        },
-      },
+    select: {
+      id: true,
+      caption: true,
+      status: true,
+      rejectionReason: true,
+      appealRequestedAt: true,
+      tutorialId: true,
+      patternId: true,
+      patternType: true,
       media: { select: { cloudflareId: true, r2Key: true } },
     },
   })
+
+  const views: MyPhotoView[] = await Promise.all(
+    photos.map(async (p) => {
+      const target = p.tutorialId
+        ? ({ kind: 'tutorial', tutorialId: p.tutorialId } as const)
+        : p.patternId && p.patternType
+          ? ({ kind: 'pattern', patternId: p.patternId, patternType: p.patternType } as const)
+          : null
+      const resolved = target ? await resolveTarget(target) : null
+      return {
+        id: p.id,
+        url: mediaUrl(p.media, 'card'),
+        caption: p.caption,
+        status: p.status as MyPhotoView['status'],
+        rejectionReason: p.rejectionReason,
+        appealRequested: p.appealRequestedAt !== null,
+        itemTitle: resolved?.title ?? 'Your make',
+        itemHref: resolved?.path ?? null,
+      }
+    }),
+  )
 
   return (
     <section>
       <span className="me-section-label">Your photos</span>
       <h2 className="me-section-title">Photos</h2>
+      <p className="me-section-description">
+        Every photo you have uploaded. Removing one takes it off the site
+        straight away. The full terms are on{' '}
+        <Link href="/legal/photos" className="me-nav-link">
+          Your photos on Homemade
+        </Link>
+        .
+      </p>
 
-      {photos.length === 0 ? (
+      {views.length === 0 ? (
         <p className="me-empty">
-          You haven’t shared any photos yet. Once you’ve started a tutorial
-          you can upload a photo of how it turned out.
+          No photos yet. Open anything you have made and use Upload photo.
         </p>
       ) : (
         <div
@@ -49,64 +75,9 @@ export default async function MyPhotosPage() {
             gap: 16,
           }}
         >
-          {photos.map((p) => {
-            const url = mediaUrl(p.media, 'card')
-            return (
-              <div
-                key={p.id}
-                style={{
-                  background: 'var(--color-cream)',
-                  border: '0.5px solid var(--color-linen-grey)',
-                  borderRadius: 4,
-                  overflow: 'hidden',
-                  fontFamily: 'var(--font-lora)',
-                }}
-              >
-                <div
-                  style={{
-                    aspectRatio: '4 / 3',
-                    backgroundColor: 'var(--color-soft-parchment)',
-                    backgroundImage: url ? `url(${url})` : undefined,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                />
-                <div style={{ padding: 12 }}>
-                  <Link
-                    href={`/${p.tutorial.category.slug}/${p.tutorial.slug}`}
-                    style={{
-                      fontFamily: 'var(--font-fraunces)',
-                      fontSize: 16,
-                      color: 'var(--color-espresso)',
-                      textDecoration: 'none',
-                    }}
-                  >
-                    {p.tutorial.title}
-                  </Link>
-                  {p.caption && (
-                    <p style={{ margin: '4px 0', fontSize: 13, color: 'var(--color-warm-taupe)' }}>
-                      {p.caption}
-                    </p>
-                  )}
-                  <div style={{ marginTop: 6 }}>
-                    <span className="me-status-pill">{STATUS_LABEL[p.status] ?? p.status}</span>
-                  </div>
-                  {p.rejectionReason && (
-                    <p
-                      style={{
-                        marginTop: 6,
-                        fontSize: 12,
-                        color: 'var(--color-burnt-sienna)',
-                        fontStyle: 'italic',
-                      }}
-                    >
-                      {p.rejectionReason}
-                    </p>
-                  )}
-                </div>
-              </div>
-            )
-          })}
+          {views.map((v) => (
+            <MyPhotoCard key={v.id} photo={v} />
+          ))}
         </div>
       )}
     </section>
