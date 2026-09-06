@@ -58,8 +58,15 @@ export interface ShelfTarget {
 /**
  * The canonical cross-stitch shelves. Slugs are the LIVE sub-category slugs:
  * `floral` (not `florals`) and `scenes` (not `home-cosy`) — the fragmented
- * siblings were merged away. `nursery` does not exist yet; the publisher may
- * create that one row on first publish, and no other.
+ * siblings were merged away. `nursery` did not exist until the publisher made
+ * it on its first nursery gem; the same route creates any other row on this
+ * list that is not live yet, and no row that is not on it.
+ *
+ * FOUR SHELVES ADDED 6 September 2026, against what the best catalogues carry:
+ * `small-makes` (ornaments, bookmarks, cards, keyrings, coasters — sold as
+ * sets), `christmas` (its own shelf, not a corner of seasonal), `coastal` and
+ * `folk-geometric`. `seasonal` drops 90 → 40 because Christmas moved out of it;
+ * Easter and spring, autumn and Valentine's stay.
  */
 export const CROSS_STITCH_SHELVES: ShelfTarget[] = [
   { slug: 'animals', name: 'Animals', target: 240 },
@@ -70,7 +77,11 @@ export const CROSS_STITCH_SHELVES: ShelfTarget[] = [
   { slug: 'portraits', name: 'Pop Art & Portraits', target: 127, hold: true },
   { slug: 'monochrome', name: 'Monochrome', target: 122, hold: true },
   { slug: 'fantasy', name: 'Fantasy & Fairytale', target: 100 },
-  { slug: 'seasonal', name: 'Seasonal', target: 90 },
+  { slug: 'christmas', name: 'Christmas', target: 80 },
+  { slug: 'small-makes', name: 'Small makes', target: 60 },
+  { slug: 'coastal', name: 'Coastal & seaside', target: 60 },
+  { slug: 'folk-geometric', name: 'Folk art & geometric', target: 60 },
+  { slug: 'seasonal', name: 'Seasonal', target: 40 },
   { slug: 'halloween', name: 'Halloween', target: 40 },
   { slug: 'celestial', name: 'Celestial', target: 40 },
   { slug: 'witchy-gothic', name: 'Witchy & gothic', target: 40 },
@@ -209,6 +220,10 @@ export const PATTERN_CATEGORIES: Record<string, PatternCategoryConfig> = {
       'quotes-and-sayings': ['illustration', 'botanical', 'retro', 'celestial', 'sampler', 'typo', 'mixed', 'minimal'],
       'pride-and-inclusive': ['scene', 'illustration', 'typo'],
       seasonal: ['scene', 'illustration'],
+      christmas: ['scene', 'illustration'],
+      coastal: ['scene', 'illustration', 'botanical'],
+      'small-makes': ['illustration', 'botanical'],
+      'folk-geometric': ['illustration', 'botanical', 'scene'],
       cocktails: ['scene'],
       landscapes: ['scene'],
       'art-reproductions': ['scene'],
