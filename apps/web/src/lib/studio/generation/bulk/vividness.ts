@@ -151,35 +151,40 @@ export async function measureVividness(png: Buffer, fabricHex: string = FABRIC):
  * now. Kept beside the thresholds they justify, so moving a floor without
  * re-reading the evidence is awkward on purpose.
  */
-export const PALE_REFS: readonly [string, string][] = [
-  ['cmtoul9q6000301adiawycq6a', 'proof-batch cupcake, cream on cream (culled)'],
-  ['cmqzrgvgw001ge8v4ka2r3tiz', 'cute-lamb-meadow, pale pastel'],
+/** id, label, the shelf it is filed under — the shelf decides which rule applies. */
+export const PALE_REFS: readonly [string, string, string][] = [
+  ['cmtoul9q6000301adiawycq6a', 'proof-batch cupcake, cream on cream (culled)', 'food'],
+  ['cmqzrgvgw001ge8v4ka2r3tiz', 'cute-lamb-meadow, pale pastel', 'animals'],
 ]
-export const VIVID_REFS: readonly [string, string][] = [
-  ['cmtoure6d000a01adki8tan44', 'proof cottage, 9 colours, a gem'],
-  ['cmql3uurg000br0v4k7ss5chv', 'delft-hare, 12 colours two-tone'],
-  ['cmqmnonfw0005b4v445y73u4r', 'blackwork-snowflake, 4 colours'],
-  ['cmqmnosdq0006b4v4g8a06m6d', 'blackwork-pomegranate, 4 colours'],
-  ['cmr6l4gaq000hakv4qwudtrvs', 'big-coral-reef, 120 colours'],
-  ['cmtoumqq7000701ad100zgamv', 'proof haunted house, 87 colours, Flux Pro'],
-  ['cmtouk9zw000401adwqpj7ozr', 'proof apothecary, 33 colours'],
+export const VIVID_REFS: readonly [string, string, string][] = [
+  ['cmtoure6d000a01adki8tan44', 'proof cottage, 9 colours, a gem', 'scenes'],
+  ['cmql3uurg000br0v4k7ss5chv', 'delft-hare, 12 colours two-tone', 'monochrome'],
+  ['cmqmnonfw0005b4v445y73u4r', 'blackwork-snowflake, 4 colours', 'monochrome'],
+  ['cmqmnosdq0006b4v4g8a06m6d', 'blackwork-pomegranate, 4 colours', 'monochrome'],
+  ['cmr6l4gaq000hakv4qwudtrvs', 'big-coral-reef, 120 colours', 'scenes'],
+  ['cmtoumqq7000701ad100zgamv', 'proof haunted house, 87 colours, Flux Pro', 'halloween'],
+  ['cmtouk9zw000401adwqpj7ozr', 'proof apothecary, 33 colours', 'witchy-gothic'],
 ]
 
 /**
  * BARE FABRIC RE-CHECK (September 2026). Clearing the white backgrounds rewrote
- * 443 charts and re-rendered every one of their thumbnails, which moves the
- * ground this calibration stands on — so `scripts/xs-vividness-recheck.ts`
- * re-measured all of them. The floors below are UNCHANGED, on the evidence:
+ * 446 charts and re-rendered every one of their thumbnails, which moves the
+ * ground this calibration stands on: ink counts DARK stitched pixels as a share
+ * of the stitched ones, and several thousand near-white stitches per chart just
+ * left that denominator. So `scripts/xs-vividness-recheck.ts` re-measured all of
+ * them against the renders they replaced. The floors below are UNCHANGED, on the
+ * evidence:
  *
  *   - all nine references above still land on the side they were chosen for,
  *     including the five whose background was cleared, so the guard has not
  *     grown a hole;
- *   - three rows newly measure as pale — wildflower-wreath (0.064 → 0.027),
- *     cute-corgi-flowers (0.061 → 0.060) and cute-snowy-owlet (0.062 → 0.058).
- *     None is monochrome or showpiece; all three are pale pastel pieces that sat
- *     within 0.005 of the floor already, and looking at the renders they are
- *     exactly what the measure says they are. Lowering MIN_INK to keep them
- *     passing would blunt the guard on the one fault it exists for.
+ *   - three rows of 437 newly measure as pale — wildflower-wreath
+ *     (ink 0.064 → 0.027), cute-corgi-flowers (0.061 → 0.060) and cute-gosling
+ *     (0.061 → 0.060). None is monochrome or showpiece; all three are pale
+ *     pastel pieces that sat within 0.005 of the floor already, and looking at
+ *     the renders they are exactly what the measure says they are. Lowering
+ *     MIN_INK to keep them passing would blunt the guard on the one fault it
+ *     exists for.
  */
 
 /** Below this fraction of genuinely dark stitches, a render has no tonal spine. */
@@ -188,8 +193,75 @@ export const MIN_INK = 0.06
  * ...unless it is genuinely saturated. A high-chroma piece that is deliberately
  * light still reads in floss, so colour rescues it. Set well above every washed-
  * out reference (the worst is 0.256) so it can never rescue a pale wash.
+ *
+ * TONE-OR-COLOUR APPLIES TO THE TWO-TONE WORK ONLY (see `MIN_COLOUR_CHROMA`).
  */
 export const MIN_CHROMA = 0.30
+
+/**
+ * THE CHROMA FLOOR for a colour shelf, September 2026.
+ *
+ * "Tone or colour, never both" is the right rule for a shelf that is two-tone by
+ * design — Delft, blackwork, redwork, sage. It is the wrong rule everywhere
+ * else: a piece filed under Animals or Food is sold as a COLOUR chart, and a
+ * render with a tonal spine but no colour in it is not the thing the customer
+ * bought. So on every other shelf the guard wants both — ink AND chroma.
+ *
+ * Calibrated across the 1,058 live public cross-stitch thumbnails (6 September
+ * 2026 snapshot), measured with `measureVividness` above:
+ *
+ *   100+ colour showpieces   lowest chroma 0.188 (big-japanese-garden, 114 col)
+ *                            then 0.189, 0.194, 0.197, 0.197, 0.200 …
+ *   bright cute pieces       0.24 – 0.45
+ *   recent gate-passed gems  black cat 0.096 / collie 0.097 / badger 0.092
+ *   deliberately two-tone    husky puppy 0.018, panda 0.045, dalmatian 0.024
+ *                            (all with strong ink: 0.30 – 0.56)
+ *   washed-out family        seal pup 0.045, snowy owlet 0.055, baby elephant
+ *                            0.059, chinchilla 0.063 (ink only 0.06 – 0.13)
+ *
+ * The floor sits at 0.06: three times below the least colourful showpiece, below
+ * every recent gem, and above the pieces with essentially no colour at all. 39
+ * live colour-shelf patterns fall under the combined rule that pass today (21 on
+ * the shelves the autopilot still generates into).
+ *
+ * IT IS A CONSERVATIVE FIRST CUT, and the honest limit is worth writing down:
+ * mean chroma does NOT separate the washed-out family from deliberate two-tone
+ * work — they overlap between 0.02 and 0.11, and INK is what tells them apart
+ * (0.06–0.13 versus 0.30–0.56). A floor high enough to catch the pale family
+ * outright (0.10+) also fails four gems published in the last fortnight. The
+ * reject samples this run now keeps (`BulkRun.rejectSamples`) are the missing
+ * evidence: with real culled renders to fit against, the next calibration can
+ * scale the floor with ink instead of guessing at a flat one.
+ */
+export const MIN_COLOUR_CHROMA = 0.06
+
+/**
+ * The shelf that is two-tone by design — the whole reason the OR rule exists.
+ */
+export const MONOCHROME_SHELF = 'monochrome'
+
+/**
+ * Style lanes that are two-tone by design, and so are judged on tone alone. The
+ * live `STYLE` keys are all colour lanes; these are the names the monochrome
+ * shelf's own work carries, kept here so re-opening that lane cannot silently
+ * hand its charts a colour floor they were never meant to meet.
+ */
+export const TWO_TONE_STYLES: ReadonlySet<string> = new Set([
+  'monochrome', 'blackwork', 'delft', 'redwork', 'whitework', 'sepia', 'sage',
+])
+
+/** What the brief was: enough of it to know which rule this render is judged by. */
+export interface VividnessContext {
+  /** The shelf the gem would be filed under. */
+  shelf?: string | null
+  /** The style lane the brief asked for. */
+  style?: string | null
+}
+
+/** Is this piece judged on tone alone (two-tone by design), or on tone AND colour? */
+export function isTwoTone(ctx: VividnessContext = {}): boolean {
+  return ctx.shelf === MONOCHROME_SHELF || TWO_TONE_STYLES.has(ctx.style ?? '')
+}
 
 export interface VividnessVerdict {
   /** True when the render is too pale to ship — repair with more saturation. */
@@ -198,22 +270,41 @@ export interface VividnessVerdict {
 }
 
 /**
- * Binary verdict. Deliberately generous: a render has to fail on tone AND on
- * colour to be called pale, so the whole complexity range — four-colour
- * blackwork charms through 120-colour showpieces — passes untouched.
+ * Binary verdict.
+ *
+ * TWO-TONE work (the monochrome shelf, a two-tone style lane) has to fail on
+ * tone AND on colour to be called pale, so four-colour blackwork charms pass
+ * untouched. A COLOUR shelf has to carry both: ink for the tonal spine, chroma
+ * for the colour it is sold as.
  */
-export function vividnessVerdict(v: Vividness): VividnessVerdict {
+export function vividnessVerdict(v: Vividness, ctx: VividnessContext = {}): VividnessVerdict {
   const measured = `ink ${v.ink.toFixed(3)}, chroma ${v.chroma.toFixed(3)}, contrast ${v.contrast.toFixed(3)}`
-  if (v.ink >= MIN_INK) return { tooPale: false, reason: `carries on tone (${measured})` }
-  if (v.chroma >= MIN_CHROMA) return { tooPale: false, reason: `carries on colour (${measured})` }
-  return {
-    tooPale: true,
-    reason: `washed out — ${measured}, under both floors (ink ${MIN_INK} / chroma ${MIN_CHROMA})`,
+  if (isTwoTone(ctx)) {
+    if (v.ink >= MIN_INK) return { tooPale: false, reason: `two-tone, carries on tone (${measured})` }
+    if (v.chroma >= MIN_CHROMA) return { tooPale: false, reason: `two-tone, carries on colour (${measured})` }
+    return {
+      tooPale: true,
+      reason: `washed out — ${measured}, under both floors (ink ${MIN_INK} / chroma ${MIN_CHROMA})`,
+    }
   }
+  if (v.ink < MIN_INK) {
+    return { tooPale: true, reason: `washed out — ${measured}, no tonal spine (ink floor ${MIN_INK})` }
+  }
+  if (v.chroma < MIN_COLOUR_CHROMA) {
+    return {
+      tooPale: true,
+      reason: `colourless for a colour shelf — ${measured}, under the chroma floor ${MIN_COLOUR_CHROMA}`,
+    }
+  }
+  return { tooPale: false, reason: `carries on tone and colour (${measured})` }
 }
 
 /** Measure and judge in one call. */
-export async function judgeVividness(png: Buffer, fabricHex: string = FABRIC): Promise<VividnessVerdict & Vividness> {
+export async function judgeVividness(
+  png: Buffer,
+  fabricHex: string = FABRIC,
+  ctx: VividnessContext = {},
+): Promise<VividnessVerdict & Vividness> {
   const v = await measureVividness(png, fabricHex)
-  return { ...v, ...vividnessVerdict(v) }
+  return { ...v, ...vividnessVerdict(v, ctx) }
 }

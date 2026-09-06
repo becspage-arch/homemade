@@ -4,11 +4,20 @@ import { STYLE, type StyleKey } from './cross-stitch-style'
 import { subjectKey as normaliseSubject, findSubjectKeyMatch } from './subject-key'
 import { CROSS_STITCH_SHELF_BY_SLUG } from '../categories'
 import { applyWarmFurGuard } from './brief-rules'
-import { postFilterBriefs, countRejects, matchExampleByHead, lanesForSubject, type BriefReject, type ThemeLaneTags } from './brief-filter'
+import {
+  postFilterBriefs,
+  countRejects,
+  matchExampleByHead,
+  lanesForSubject,
+  capTextRiskBriefs,
+  type BriefReject,
+  type ThemeLaneTags,
+} from './brief-filter'
 import { shelfQuotaCounts } from './shelf-plan'
 import {
   CROSS_STITCH_THEMES,
   LANES_ALL,
+  isTextRiskSubject,
   smallestLane,
   CROSS_STITCH_SIZE_LANES,
   NEEDLEWORK_THEMES,
@@ -332,6 +341,7 @@ ${dense}
 - style: one style key from the chosen theme's list.
 - w/h: cells for the size lane; make tall subjects tall, wide subjects wide, wreaths square.
 - colours: within the size lane's range.
+- A subject that invites LETTERING (a shop or shopfront, a sign, a label, a jar, a book, alphabet blocks, a banner, a menu, a poster, a map, a newspaper, a card, a calendar, a clock face) may ONLY use sizeLane "dense" — anywhere smaller Flux writes garbled letters and the piece is killed. At most ONE such subject per batch; otherwise choose a different subject.
 - subject: ONE noun phrase. No "with a …", no "wearing/holding/carrying a …", no "topped with", no "beside a", no "tiny/little/single". In the mini and small lanes: at most 12 words, and no "with", "and" or "beside" at all.
 ${avoid}${rejected}
 Return ONLY the JSON array of ${count} briefs.`
@@ -378,6 +388,7 @@ ${dense}
 - style: one style key from the chosen theme's list.
 - w/h: cells for the size lane; tall subjects tall, wide subjects wide, wreaths square.
 - colours: within the size lane's range.
+- A subject that invites LETTERING (a shop or shopfront, a sign, a label, a jar, a book, alphabet blocks, a banner, a menu, a poster, a map, a newspaper, a card, a calendar, a clock face) may ONLY use sizeLane "dense" — anywhere smaller Flux writes garbled letters and the piece is killed. At most ONE such subject per batch; otherwise choose a different subject.
 ${avoid}${rejected}
 Return ONLY the JSON array of ${count} briefs.`
 }
@@ -517,7 +528,9 @@ function hookFrom(example: string): string {
 
 /** Every hook this theme can offer, longest (most distinctive) first. */
 function themeHooks(theme: CrossStitchTheme): string[] {
-  const hooks = theme.examples.map(hookFrom).filter((h) => h.length > 6)
+  // A hook lifted off a text-risk example would bolt the very noun back on
+  // ("…, with a jam jar"), so those are filtered out too.
+  const hooks = theme.examples.map(hookFrom).filter((h) => h.length > 6 && !isTextRiskSubject(h))
   return [...new Set(hooks)].sort((a, b) => b.length - a.length)
 }
 
@@ -532,7 +545,11 @@ function themeHooks(theme: CrossStitchTheme): string[] {
  * duplicate.
  */
 function sampleSubject(theme: CrossStitchTheme, taken: (key: string) => boolean): string | null {
-  const examples = [...theme.examples].sort(() => Math.random() - 0.5)
+  // The sampler picks its own lane (mini → large) and never the dense one, so a
+  // text-risk subject drawn here could only ever land in a lane it is barred
+  // from. It is simply not part of the fallback vocabulary: the refill for a
+  // dropped text-risk brief has to be a subject that can actually be built.
+  const examples = [...theme.examples].filter((e) => !isTextRiskSubject(e)).sort(() => Math.random() - 0.5)
   const hooks = themeHooks(theme)
   // A bare example only if the catalogue has never had it.
   for (const base of examples) {
@@ -615,13 +632,28 @@ function applyLane(b: CrossStitchBrief, laneName: string): CrossStitchBrief {
  */
 export function enforceRange(briefs: CrossStitchBrief[], count: number): CrossStitchBrief[] {
   if (briefs.length === 0) return briefs
-  const out = [...briefs]
   const wantDense = count >= DENSE_BATCH_FLOOR
+
+  // ── text risk: the dense slot or nothing ─────────────────────────────────
+  // A subject that invites lettering is buildable in exactly one lane, and a
+  // batch has exactly one dense slot — so at most one text-risk brief can be
+  // built, and only when the batch is big enough to carry a dense piece at all.
+  // The rest are DROPPED here rather than demoted: `applyLane` would otherwise
+  // quietly move one into `large`, which is the lane the 6 September haberdashery
+  // window died in. `finaliseBriefs` refills the hole from the pool, which never
+  // samples a text-risk subject.
+  const out = capTextRiskBriefs(briefs, { wantDense }).kept
+  if (out.length === 0) return out
   const idxOf = (lane: string): number[] => out.map((b, i) => (b.lane === lane ? i : -1)).filter((i) => i >= 0)
 
   // ── dense: exactly one when the batch has room, none otherwise ────────────
-  const dense = idxOf('dense')
-  if (wantDense) {
+  const riskIdx = out.findIndex((b) => isTextRiskSubject(b.subject))
+  if (wantDense && riskIdx >= 0) {
+    // The text-risk brief TAKES the dense slot — it is the only lane it has.
+    if (out[riskIdx]!.lane !== 'dense') out[riskIdx] = applyLane(out[riskIdx]!, 'dense')
+    for (const i of idxOf('dense')) if (i !== riskIdx) out[i] = applyLane(out[i]!, 'large')
+  } else if (wantDense) {
+    const dense = idxOf('dense')
     if (dense.length === 0) {
       // Promote the biggest canvas that isn't the mini we still need. Promotion
       // is always safe: every lane rule is a FLOOR, so a bigger canvas is never
@@ -633,7 +665,7 @@ export function enforceRange(briefs: CrossStitchBrief[], count: number): CrossSt
       for (const i of dense.slice(1)) out[i] = applyLane(out[i]!, 'large')
     }
   } else {
-    for (const i of dense) out[i] = applyLane(out[i]!, 'large')
+    for (const i of idxOf('dense')) out[i] = applyLane(out[i]!, 'large')
   }
 
   const denseIdx = out.findIndex((b) => b.lane === 'dense')
@@ -847,7 +879,16 @@ export function finaliseBriefs(modelBriefs: CrossStitchBrief[], count: number, c
   const batchKeys = new Set<string>()
   const seen = new Set<string>()
   const out: CrossStitchBrief[] = []
-  for (const b of modelBriefs) {
+  // A batch has one dense slot, and a text-risk subject has nowhere else to go,
+  // so at most one of them survives — and none at all in a batch too small to
+  // carry a dense piece. Dropping them HERE rather than in `enforceRange` is what
+  // lets the pool top-up refill the slot with a subject that can be built.
+  const wantDense = count >= DENSE_BATCH_FLOOR
+  const { kept: buildable, dropped: unbuildable } = capTextRiskBriefs(modelBriefs, { wantDense })
+  for (const b of unbuildable) {
+    console.warn(`[bulk cross-stitch planner] dropped "${b.subject}" — a text-risk subject with no dense slot left`)
+  }
+  for (const b of buildable) {
     if (batchKeys.has(b.subjectKey) || seen.has(b.slug)) continue
     if (postFilterBriefs([b], out, { props: false }).kept.length === 0) continue
     batchKeys.add(b.subjectKey)

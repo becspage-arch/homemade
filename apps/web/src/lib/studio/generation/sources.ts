@@ -92,7 +92,13 @@ export async function twemoji(hex: string, label: string): Promise<SourcedImage>
  * record a Tier-E failure rather than publish a blank.
  */
 const TIER_E_STYLE = 'detailed whimsical digital illustration, rich saturated colours, bold clean colour regions, paint-by-numbers art style, polished and characterful'
-const TIER_E_NEG = 'no text, no words, no letters, no watermark, no signature'
+// Flux answers a shopfront with a fascia and a jar with a label, and what it
+// writes there is always garbled — which the vision gate then kills outright
+// (a text kill is terminal: the same subject garbles the same way on every
+// re-roll). Naming the SHAPES as well as the words is what turns a signboard
+// into a painted blank instead of a smear of failed letters.
+const TIER_E_NEG =
+  'no text, no words, no letters, no lettering, no signs, no labels, blank signboards, no watermark, no signature'
 
 export async function fluxIllustration(
   subject: string,
@@ -131,9 +137,13 @@ const PRO_SHOWPIECE_STYLE =
  */
 export async function fluxIllustrationPro(
   subject: string,
-  opts: { width?: number; height?: number } = {},
+  opts: { width?: number; height?: number; style?: 'showpiece' | 'as-written' } = {},
 ): Promise<SourcedImage> {
-  const prompt = `${subject}, ${PRO_SHOWPIECE_STYLE}, ${TIER_E_NEG}`
+  // 'as-written' is the pro-all source mode: the caller's prompt already carries
+  // its own lane style (flat and bold for a small cute piece), and bolting the
+  // dense showpiece style on top would turn every mini into a busy showpiece.
+  const style = opts.style === 'as-written' ? '' : `${PRO_SHOWPIECE_STYLE}, `
+  const prompt = `${subject}, ${style}${TIER_E_NEG}`
   const { url } = await generateWithFluxPro(prompt, { width: opts.width, height: opts.height })
   const buffer = Buffer.from(await (await fetch(url)).arrayBuffer())
   return { buffer, credit: 'Homemade-original (AI-assisted illustration, Flux 1.1 Pro)', licence: 'HOMEMADE-AI', title: subject.slice(0, 80) }

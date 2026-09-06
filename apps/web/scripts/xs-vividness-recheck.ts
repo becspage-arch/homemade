@@ -56,7 +56,7 @@ async function main(): Promise<void> {
     orderBy: { id: 'asc' },
     ...(LIMIT ? { take: LIMIT } : {}),
     select: {
-      id: true, slug: true, colourCount: true,
+      id: true, slug: true, colourCount: true, generationMeta: true,
       subCategory: { select: { slug: true } },
       thumbnail: { select: { r2Key: true } },
     },
@@ -77,14 +77,19 @@ async function main(): Promise<void> {
     if (!row.thumbnail?.r2Key) continue
     const after = await fetchThumb(row.thumbnail.r2Key)
     if (!after) continue
+    // The guard is shelf-aware: the monochrome shelf and the two-tone style
+    // lanes are judged on tone OR colour, a colour shelf on both. Judge each row
+    // the way the publish path would judge it.
+    const meta = (row.generationMeta ?? null) as { style?: string } | null
+    const ctx = { shelf: row.subCategory?.slug ?? undefined, style: meta?.style ?? undefined }
     const va = await measureVividness(after)
-    const verdictAfter = vividnessVerdict(va)
+    const verdictAfter = vividnessVerdict(va, ctx)
     measured++
 
     const cached = CACHE_DIR ? resolve(CACHE_DIR, `${row.id}.png`) : null
     if (cached && existsSync(cached)) {
       const vb = await measureVividness(readFileSync(cached))
-      const verdictBefore = vividnessVerdict(vb)
+      const verdictBefore = vividnessVerdict(vb, ctx)
       compared++
       inkDelta += va.ink - vb.ink
       if (va.ink > vb.ink) inkUp++
@@ -122,7 +127,7 @@ async function main(): Promise<void> {
   // passes would mean the pale guard has a hole in it.
   console.log('\nCalibration references, measured against the live thumbnail')
   for (const [want, refs] of [['PALE', PALE_REFS], ['VIVID', VIVID_REFS]] as const) {
-    for (const [id, label] of refs) {
+    for (const [id, label, shelf] of refs) {
       const row = await prisma.pattern.findUnique({
         where: { id },
         select: { backgroundCleared: true, thumbnail: { select: { r2Key: true } } },
@@ -137,7 +142,7 @@ async function main(): Promise<void> {
         continue
       }
       const v = await measureVividness(png)
-      const verdict = vividnessVerdict(v)
+      const verdict = vividnessVerdict(v, { shelf })
       const got = verdict.tooPale ? 'PALE' : 'VIVID'
       if (got !== want) alarms.push(`  ALARM calibration reference moved: ${label} is now ${got}, expected ${want}`)
       console.log(

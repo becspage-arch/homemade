@@ -4,7 +4,9 @@ import { planCrossStitchBriefs, planNeedleworkBriefs, dressedCount, PLANNER_MODE
 import {
   generateCrossStitchCandidate,
   publishCrossStitchGem,
+  uploadRejectSample,
   type CandidateTweak,
+  type RejectSample,
 } from './cross-stitch'
 import {
   fingerprintCandidate,
@@ -14,6 +16,7 @@ import {
   publicSubjectKeys,
 } from './dedupe-guard'
 import { judgeVividness } from './vividness'
+import type { XsSourceMode } from './autopilot-state'
 import { CROSS_STITCH_SHELVES } from '../categories'
 import { summaryLine } from './run-status'
 import { shelfDeficits, allocateShelves, capShelfBriefs, shelfSlots } from './shelf-plan'
@@ -101,8 +104,12 @@ export interface BatchSummary {
  * Image generation is cheap and most gate 'kill's are a single unlucky roll of a
  * fine idea, so we take several fresh shots. Every shot still passes the identical
  * ruthless gate — this raises attempts-per-idea, never the bar.
+ *
+ * Raised from 4 to 6 in September 2026 alongside the Pro source mode (Rebecca's
+ * call): the measured keep rate is about 1 in 14 on schnell and 2 in 5 on Pro, so
+ * four shots was leaving gems on the table in both modes.
  */
-export const MAX_XS_ATTEMPTS = 4
+export const MAX_XS_ATTEMPTS = 6
 const MAX_NW_REPAIRS = 1 // needlework re-rolls a Fargate render — keep repairs tight.
 
 /** The lightweight, JSON-safe result of ONE generate→gate→(maybe publish) attempt. */
@@ -123,6 +130,13 @@ export interface AttemptResult {
   pro?: boolean
   /** True when the deterministic pale guard rejected it before the vision gate. */
   tooPale?: boolean
+  /**
+   * The render this attempt threw away, kept in R2 so a person can see what the
+   * gate killed. Set only on a terminal cull and on a pale skip — the two
+   * outcomes that leave no other trace. JSON-safe (a URL, not a Buffer), so it
+   * travels through an Inngest step result intact.
+   */
+  rejectSample?: RejectSample
 }
 
 /**
@@ -139,6 +153,20 @@ export function killIsUnrerollable(reasons: string[]): boolean {
     /\b(ip|brand|branded|celebrity|franchise|copyright|copyrighted|trademark|logo|licen[cs]|recognis|recogniz)\w*/.test(text) ||
     /\b(duplicate|near-dup|near dup|too similar|already kept|same as)\w*/.test(text)
   )
+}
+
+/**
+ * Is this the LAST word on the idea, or will it be re-rolled?
+ *
+ * Mirrors the re-roll condition the runner and the Inngest idea worker both
+ * apply, and exists so `crossStitchAttempt` can answer it while it still holds
+ * the render: a terminal cull is the one moment worth keeping the picture, and
+ * by the time the caller decides, the Buffer is gone.
+ */
+export function attemptIsTerminal(verdict: GateResult['verdict'], reasons: string[], attempt: number): boolean {
+  if (verdict === 'keep') return true
+  if (attempt >= MAX_XS_ATTEMPTS) return true
+  return verdict === 'kill' && killIsUnrerollable(reasons)
 }
 
 export function tweakFor(action: GateResult['repairAction']): CandidateTweak {
@@ -166,13 +194,37 @@ export function tweakFor(action: GateResult['repairAction']): CandidateTweak {
  * guard compares the candidate's image, chart AND subject fingerprints against
  * every PUBLIC cross-stitch pattern, and a hit is terminal.
  */
+/**
+ * Keep one killed render, if this attempt belongs to a recorded run. A local
+ * inline run has no `BulkRun` row and so nowhere to hang the sample — it simply
+ * skips the upload rather than filling R2 with orphans.
+ */
+async function sampleFor(
+  renderPng: Buffer,
+  brief: CrossStitchBrief,
+  ctx: { bulkRunId?: string | null; attempt?: number },
+  verdict: string,
+  reasons: string[],
+  colours: number,
+): Promise<{ rejectSample?: RejectSample }> {
+  if (!ctx.bulkRunId) return {}
+  const sample = await uploadRejectSample(renderPng, brief, {
+    runId: ctx.bulkRunId,
+    attempt: ctx.attempt ?? 1,
+    verdict,
+    reasons,
+    colours,
+  })
+  return sample ? { rejectSample: sample } : {}
+}
+
 export async function crossStitchAttempt(
   brief: CrossStitchBrief,
   tweak: CandidateTweak,
   keptSubjects: string[],
-  ctx: { bulkRunId?: string | null; attempt?: number } = {},
+  ctx: { bulkRunId?: string | null; attempt?: number; sourceMode?: XsSourceMode } = {},
 ): Promise<AttemptResult> {
-  const candidate = await generateCrossStitchCandidate(brief, tweak)
+  const candidate = await generateCrossStitchCandidate(brief, tweak, ctx.sourceMode)
 
   // ── the pale guard, BEFORE the gate ──────────────────────────────────────
   // Arithmetic, not judgement. A washed-out render reads as "soft and pretty" to
@@ -180,7 +232,9 @@ export async function crossStitchAttempt(
   // catalogue keeps shipping. Measuring it is cheap, repeatable and impossible
   // to talk round, so it happens first — and a piece we already know is too pale
   // never costs a gate call.
-  const vivid = await judgeVividness(candidate.renderPng)
+  // Judged against its own shelf: the monochrome shelf and the two-tone style
+  // lanes carry on tone alone, every other shelf has to carry colour too.
+  const vivid = await judgeVividness(candidate.renderPng, undefined, { shelf: brief.shelf, style: brief.style })
   if (vivid.tooPale) {
     return {
       verdict: 'repair',
@@ -189,6 +243,9 @@ export async function crossStitchAttempt(
       published: false,
       pro: candidate.pro,
       tooPale: true,
+      // Every pale skip keeps its render: the pale floor is arithmetic, and
+      // arithmetic can only be re-calibrated against the pictures it rejected.
+      ...(await sampleFor(candidate.renderPng, brief, ctx, 'repair', [vivid.reason], candidate.colourCount)),
     }
   }
 
@@ -199,7 +256,17 @@ export async function crossStitchAttempt(
     keptSubjects,
   })
   if (verdict.verdict !== 'keep') {
-    return { verdict: verdict.verdict, reasons: verdict.reasons, repairAction: verdict.repairAction, published: false, pro: candidate.pro }
+    // Keep the render only when this is the idea's LAST attempt — an attempt
+    // that will be re-rolled is not what killed the idea.
+    const terminal = attemptIsTerminal(verdict.verdict, verdict.reasons, ctx.attempt ?? 1)
+    return {
+      verdict: verdict.verdict,
+      reasons: verdict.reasons,
+      repairAction: verdict.repairAction,
+      published: false,
+      pro: candidate.pro,
+      ...(terminal ? await sampleFor(candidate.renderPng, brief, ctx, verdict.verdict, verdict.reasons, candidate.colourCount) : {}),
+    }
   }
 
   // Gate says gem. Now: is it a gem we already have?
