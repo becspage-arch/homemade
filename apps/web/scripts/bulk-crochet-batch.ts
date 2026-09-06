@@ -238,8 +238,10 @@ async function publishSeed(verdictPath: string): Promise<void> {
   // are written into, and a client that has them talking to a database that
   // does not fails with an opaque "column (not available) does not exist". Say
   // what is actually wrong instead.
+  // `column_name` is a `sql_identifier` (a `name` under the hood); cast it so the
+  // WebSocket driver used by cloud sessions can decode the row.
   const columns = await prisma.$queryRaw<{ column_name: string }[]>`
-    SELECT column_name FROM information_schema.columns
+    SELECT column_name::text AS column_name FROM information_schema.columns
     WHERE table_name = 'CrochetPattern'
       AND column_name IN ('generationMeta', 'subjectKey', 'programFingerprint', 'bulkRunId')
   `
