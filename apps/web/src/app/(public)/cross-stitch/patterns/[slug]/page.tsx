@@ -261,6 +261,36 @@ export default async function PatternDetailPage({ params }: PageProps) {
         </div>
       </header>
 
+      {/* Provenance, one line. The market is learning to distrust listing
+          images that turn out to be renderings, and our answer is the strong
+          one: the image IS the chart. Links through to the full account. */}
+      <p className="pattern-detail-provenance">
+        The image above is the exact chart you will stitch, square for square, rather
+        than a mock-up of one.{' '}
+        <Link href="/cross-stitch/about-the-library">How the library is made</Link>
+      </p>
+
+      {/* First step for someone who has never stitched. Both destinations are
+          free and open without an account. */}
+      <aside className="pattern-detail-startpoints">
+        <h2>New to cross-stitch? Start here</h2>
+        <ul>
+          <li>
+            <Link href="/cross-stitch/how-to-read-a-cross-stitch-chart">
+              How to read a cross-stitch chart
+            </Link>
+            <span>The grid, the key, the centre, and where to put the first stitch.</span>
+          </li>
+          <li>
+            <Link href="/stitches/cross-stitch">Cross-stitch stitch guide</Link>
+            <span>
+              Every stitch a chart can ask for, with the symbol and a reminder of how
+              it is worked.
+            </span>
+          </li>
+        </ul>
+      </aside>
+
       <section className="pattern-detail-floss">
         <h2>Floss colours</h2>
         <ul>
