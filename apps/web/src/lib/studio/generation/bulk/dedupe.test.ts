@@ -19,7 +19,7 @@ import sharp from 'sharp'
 import { subjectKey, subjectTokens, subjectJaccard, findSubjectKeyMatch, SUBJECT_JACCARD_MATCH } from './subject-key'
 import { imageHash, sha256Hex, nearDuplicateVerdict, type PatternFingerprint, type ChartFingerprint } from './similarity'
 import { shelfDeficits, allocateShelves, shelfSlots, allShelvesAtTarget } from './shelf-plan'
-import { measureVividness, vividnessVerdict, MIN_INK, MIN_CHROMA } from './vividness'
+import { measureVividness, vividnessVerdict, MIN_INK, MIN_CHROMA, MIN_COLOUR_CHROMA } from './vividness'
 import { findDuplicate, type CatalogueEntry, type CandidateFingerprints } from './duplicate-match'
 import { applyWarmFurGuard, WARM_FUR_SAT, type WarmFurBrief } from './brief-rules'
 import { runIsComplete, summaryLine } from './run-status'
@@ -36,7 +36,15 @@ import {
   SMALL_LANE_WORD_LIMIT,
 } from './brief-filter'
 import { capShelfBriefs, shelfQuotaCounts, SHELF_SHARE } from './shelf-plan'
-import { CROSS_STITCH_THEMES, LANES_ALL, LANES_LARGE_UP, LANES_MEDIUM_UP, smallestLane } from './subject-pool'
+import {
+  CROSS_STITCH_THEMES,
+  LANES_ALL,
+  LANES_LARGE_UP,
+  LANES_MEDIUM_UP,
+  LANES_SMALL_UP,
+  TEXT_RISK_LANES,
+  smallestLane,
+} from './subject-pool'
 import type { ShelfTarget } from '../categories'
 
 type PassFail = { name: string; passed: boolean; detail?: string }
@@ -317,18 +325,19 @@ record('warm fur: promotion out of the small lanes releases the guard sat', () =
  * --thumbs <dir> (or XS_THUMB_CACHE) to check the real files; without the cache
  * these cases skip rather than fail, so the suite still runs anywhere.
  */
-const PALE_REFS: [string, string][] = [
-  ['cmtoul9q6000301adiawycq6a', 'proof-batch cupcake, cream on cream (culled)'],
-  ['cmqzrgvgw001ge8v4ka2r3tiz', 'cute-lamb-meadow, pale pastel'],
+/** id, label, the shelf it is filed under — the shelf decides which rule applies. */
+const PALE_REFS: [string, string, string][] = [
+  ['cmtoul9q6000301adiawycq6a', 'proof-batch cupcake, cream on cream (culled)', 'food'],
+  ['cmqzrgvgw001ge8v4ka2r3tiz', 'cute-lamb-meadow, pale pastel', 'animals'],
 ]
-const VIVID_REFS: [string, string][] = [
-  ['cmtoure6d000a01adki8tan44', 'proof cottage, 9 colours, a gem'],
-  ['cmql3uurg000br0v4k7ss5chv', 'delft-hare, 12 colours two-tone'],
-  ['cmqmnonfw0005b4v445y73u4r', 'blackwork-snowflake, 4 colours'],
-  ['cmqmnosdq0006b4v4g8a06m6d', 'blackwork-pomegranate, 4 colours'],
-  ['cmr6l4gaq000hakv4qwudtrvs', 'big-coral-reef, 120 colours'],
-  ['cmtoumqq7000701ad100zgamv', 'proof haunted house, 87 colours, Flux Pro'],
-  ['cmtouk9zw000401adwqpj7ozr', 'proof apothecary, 33 colours'],
+const VIVID_REFS: [string, string, string][] = [
+  ['cmtoure6d000a01adki8tan44', 'proof cottage, 9 colours, a gem', 'scenes'],
+  ['cmql3uurg000br0v4k7ss5chv', 'delft-hare, 12 colours two-tone', 'monochrome'],
+  ['cmqmnonfw0005b4v445y73u4r', 'blackwork-snowflake, 4 colours', 'monochrome'],
+  ['cmqmnosdq0006b4v4g8a06m6d', 'blackwork-pomegranate, 4 colours', 'monochrome'],
+  ['cmr6l4gaq000hakv4qwudtrvs', 'big-coral-reef, 120 colours', 'scenes'],
+  ['cmtoumqq7000701ad100zgamv', 'proof haunted house, 87 colours, Flux Pro', 'halloween'],
+  ['cmtouk9zw000401adwqpj7ozr', 'proof apothecary, 33 colours', 'witchy-gothic'],
 ]
 
 function thumbDir(): string | null {
@@ -360,7 +369,7 @@ async function vividnessTests(): Promise<void> {
     assert.ok(vividnessVerdict(v).tooPale, `expected pale, got ${JSON.stringify(v)}`)
   })
 
-  await recordAsync('vividness: two-tone dark-on-white passes on tone alone', async () => {
+  await recordAsync('vividness: two-tone dark-on-white passes on tone alone (monochrome shelf)', async () => {
     // Blackwork in miniature: no chroma whatever, plenty of ink.
     const png = await sharp({
       create: { width: 120, height: 120, channels: 3, background: { r: 252, g: 250, b: 246 } },
@@ -378,7 +387,8 @@ async function vividnessTests(): Promise<void> {
       .toBuffer()
     const v = await measureVividness(png)
     assert.ok(v.chroma < MIN_CHROMA, `expected low chroma, got ${v.chroma.toFixed(3)}`)
-    assert.ok(!vividnessVerdict(v).tooPale, `expected pass on tone, got ${JSON.stringify(v)}`)
+    assert.ok(!vividnessVerdict(v, { shelf: 'monochrome' }).tooPale, `expected pass on tone, got ${JSON.stringify(v)}`)
+    assert.ok(vividnessVerdict(v, { shelf: 'animals' }).tooPale, 'the same render on a colour shelf carries no colour')
   })
 
   if (!dir) {
@@ -386,26 +396,64 @@ async function vividnessTests(): Promise<void> {
     return
   }
 
-  for (const [id, label] of PALE_REFS) {
+  for (const [id, label, shelf] of PALE_REFS) {
     const file = resolve(dir, `${id}.png`)
     if (!existsSync(file)) continue
     await recordAsync(`vividness: PALE — ${label}`, async () => {
       const v = await measureVividness(readFileSync(file))
       assert.ok(
-        vividnessVerdict(v).tooPale,
-        `expected pale: ink ${v.ink.toFixed(3)} (floor ${MIN_INK}), chroma ${v.chroma.toFixed(3)} (floor ${MIN_CHROMA})`,
+        vividnessVerdict(v, { shelf }).tooPale,
+        `expected pale: ink ${v.ink.toFixed(3)} (floor ${MIN_INK}), chroma ${v.chroma.toFixed(3)}`,
       )
     })
   }
-  for (const [id, label] of VIVID_REFS) {
+  for (const [id, label, shelf] of VIVID_REFS) {
     const file = resolve(dir, `${id}.png`)
     if (!existsSync(file)) continue
     await recordAsync(`vividness: VIVID — ${label}`, async () => {
       const v = await measureVividness(readFileSync(file))
       assert.ok(
-        !vividnessVerdict(v).tooPale,
-        `expected vivid: ink ${v.ink.toFixed(3)} (floor ${MIN_INK}), chroma ${v.chroma.toFixed(3)} (floor ${MIN_CHROMA})`,
+        !vividnessVerdict(v, { shelf }).tooPale,
+        `expected vivid on ${shelf}: ink ${v.ink.toFixed(3)} (floor ${MIN_INK}), chroma ${v.chroma.toFixed(3)} (colour floor ${MIN_COLOUR_CHROMA})`,
       )
+    })
+  }
+
+  // ── the chroma floor: the same render, judged by its shelf ────────────────
+  // The monochrome shelf keeps tone-OR-colour; a colour shelf wants both. The
+  // pieces that separate the two are the ones with almost no chroma at all —
+  // blackwork-pomegranate measures 0.033 against the 0.06 floor, while the Delft
+  // hare (0.104) carries enough colour to pass either way, which is the point of
+  // a floor set this low.
+  for (const [id, label, shelf] of VIVID_REFS) {
+    if (shelf !== 'monochrome') continue
+    const file = resolve(dir, `${id}.png`)
+    if (!existsSync(file)) continue
+    await recordAsync(`chroma floor: ${label} is judged by its shelf`, async () => {
+      const v = await measureVividness(readFileSync(file))
+      assert.ok(!vividnessVerdict(v, { shelf: 'monochrome' }).tooPale, 'the monochrome shelf still passes on tone')
+      assert.ok(
+        !vividnessVerdict(v, { shelf: 'animals', style: 'blackwork' }).tooPale,
+        'a two-tone style lane is exempt wherever it is filed',
+      )
+      if (v.chroma < MIN_COLOUR_CHROMA) {
+        assert.ok(
+          vividnessVerdict(v, { shelf: 'animals' }).tooPale,
+          `chroma ${v.chroma.toFixed(3)} is under the floor — a colour shelf must want colour too`,
+        )
+      }
+    })
+  }
+
+  // The showpieces are the reason the floor is where it is: the least colourful
+  // 100+ colour piece in the catalogue measures 0.188, three times the floor.
+  for (const [id, label, shelf] of VIVID_REFS) {
+    if (shelf === 'monochrome') continue
+    const file = resolve(dir, `${id}.png`)
+    if (!existsSync(file)) continue
+    await recordAsync(`chroma floor: clears ${label} with room to spare`, async () => {
+      const v = await measureVividness(readFileSync(file))
+      assert.ok(v.chroma >= MIN_COLOUR_CHROMA * 2, `expected ≥ ${MIN_COLOUR_CHROMA * 2}, got ${v.chroma.toFixed(3)}`)
     })
   }
 }
@@ -818,8 +866,10 @@ const laneTagsFor = (id: string) => {
 
 record('lanesForSubject: a theme default applies to all its subjects', () => {
   const scenes = laneTagsFor('cosy-scenes')
-  assert.deepEqual(lanesForSubject('a corner flower shop with buckets of blooms', scenes), LANES_LARGE_UP)
+  assert.deepEqual(lanesForSubject('a thatched cottage with climbing roses', scenes), LANES_LARGE_UP)
   assert.deepEqual(lanesForSubject('a victorian greenhouse in high summer', scenes), LANES_LARGE_UP)
+  // …unless the subject invites lettering, which overrules the theme entirely.
+  assert.deepEqual(lanesForSubject('a corner flower shop with buckets of blooms', scenes), TEXT_RISK_LANES)
 })
 
 record('lanesForSubject: a per-subject override beats the theme default', () => {
@@ -827,8 +877,8 @@ record('lanesForSubject: a per-subject override beats the theme default', () => 
   const animals = laneTagsFor('cute-animals')
   assert.deepEqual(lanesForSubject('a corgi napping in a teacup of daisies', animals), LANES_ALL)
   assert.deepEqual(
-    lanesForSubject('a cat curled asleep on a pile of vintage books with a candle', animals),
-    LANES_MEDIUM_UP,
+    lanesForSubject('a hedgehog under a mushroom umbrella in the rain', animals),
+    LANES_SMALL_UP,
   )
 })
 

@@ -1,0 +1,12 @@
+-- Keep what the gate killed.
+--
+-- A culled bulk candidate left nothing behind: the render died with the Inngest
+-- step and the run kept only an 80-character reason, so an over-tight guard and
+-- a correct kill looked identical, and the pale floor could only ever be
+-- calibrated against patterns that had already shipped. Each terminal cull (and
+-- each pale skip) now uploads its render to `bulk-rejects/<runId>/` in R2 and
+-- pushes one row here, capped at 20 per run.
+--
+-- Additive: a Json column with a default, so an older container writing to this
+-- table is unaffected.
+ALTER TABLE "BulkRun" ADD COLUMN IF NOT EXISTS "rejectSamples" JSONB NOT NULL DEFAULT '[]';

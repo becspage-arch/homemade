@@ -28,9 +28,14 @@ import {
   MODEL_CHUNK,
   type CrossStitchBrief,
 } from '@/lib/studio/generation/bulk/planner'
-import { recentCrossStitchSlugs, candidateIsPro, type CandidateTweak } from '@/lib/studio/generation/bulk/cross-stitch'
+import {
+  recentCrossStitchSlugs,
+  candidateIsPro,
+  recordRejectSample,
+  type CandidateTweak,
+} from '@/lib/studio/generation/bulk/cross-stitch'
 import { gateConfigured } from '@/lib/studio/generation/vision-gate'
-import { isAutopilotEnabled } from '@/lib/studio/generation/bulk/autopilot-state'
+import { isAutopilotEnabled, crossStitchSourceMode } from '@/lib/studio/generation/bulk/autopilot-state'
 import { liveShelfCounts } from '@/lib/studio/generation/bulk/dedupe-guard'
 import { allShelvesAtTarget } from '@/lib/studio/generation/bulk/shelf-plan'
 import { PATTERN_CATEGORIES, CROSS_STITCH_SHELVES } from '@/lib/studio/generation/categories'
@@ -371,6 +376,7 @@ export const bulkCrossStitchBatch = inngest.createFunction(
     }
 
     const triggeredById = manual && typeof data?.triggeredBy === 'string' && data.triggeredBy ? data.triggeredBy : null
+    const sourceMode = await step.run('source-mode', () => crossStitchSourceMode())
     const run = await step.run('create-run', () =>
       prisma.bulkRun.create({
         data: {
@@ -395,7 +401,7 @@ export const bulkCrossStitchBatch = inngest.createFunction(
         data: { runId: run.id, brief, attempt: 1, tweak: {} as CandidateTweak },
       })),
     )
-    return { runId: run.id, dispatched: briefs.length, modelAuthored: authored, propRejects, collisionRejects, dressed, plannerMode: PLANNER_MODE }
+    return { runId: run.id, dispatched: briefs.length, modelAuthored: authored, propRejects, collisionRejects, dressed, plannerMode: PLANNER_MODE, sourceMode }
   },
 )
 
@@ -424,7 +430,11 @@ export const bulkCrossStitchIdea = inngest.createFunction(
     const { runId, brief, attempt = 1, tweak } = (event.data ?? {}) as IdeaEventData
     if (!runId || !brief) return { skipped: 'missing runId/brief' }
 
-    const pro = candidateIsPro(brief, tweak ?? {})
+    // Which model draws this attempt. Read per attempt (not per batch) so
+    // flipping the admin toggle takes effect on the very next idea rather than
+    // the next dispatch — and memoised as its own step so a replay is stable.
+    const sourceMode = await step.run('source-mode', () => crossStitchSourceMode())
+    const pro = candidateIsPro(brief, tweak ?? {}, sourceMode)
 
     // The spend cap again, here at the point of spending. The dispatcher checked
     // it minutes ago; a queue of ideas fanned out before the cap was hit would
@@ -449,7 +459,7 @@ export const bulkCrossStitchIdea = inngest.createFunction(
     try {
       result = await step.run('attempt', async () => {
         const kept = await recentCrossStitchSlugs().catch(() => [])
-        return crossStitchAttempt(brief, tweak ?? {}, kept, { bulkRunId: runId, attempt })
+        return crossStitchAttempt(brief, tweak ?? {}, kept, { bulkRunId: runId, attempt, sourceMode })
       })
     } catch (err) {
       await step.run('record-error', () =>
@@ -510,6 +520,10 @@ export const bulkCrossStitchIdea = inngest.createFunction(
           },
         }),
       )
+      // A pale skip leaves no other trace — keep the render that failed the
+      // arithmetic so the floor can be re-calibrated against real culls.
+      const paleSample = result.rejectSample
+      if (paleSample) await step.run('record-reject-pale', () => recordRejectSample(runId, paleSample))
       await step.sendEvent('next-attempt', {
         name: 'bulk/cross-stitch.idea',
         data: { runId, brief, attempt: attempt + 1, tweak: nextTweak },
@@ -525,6 +539,9 @@ export const bulkCrossStitchIdea = inngest.createFunction(
         data: { culled: { increment: 1 }, generations: { increment: 1 }, ...proInc, killReasons: { push: reason } },
       }),
     )
+    // The picture the gate killed, so a person can check the gate was right.
+    const cullSample = result.rejectSample
+    if (cullSample) await step.run('record-reject-cull', () => recordRejectSample(runId, cullSample))
     await step.run('check-complete', () => finaliseIfComplete(runId))
     return { outcome: 'culled', slug: brief.slug }
   },

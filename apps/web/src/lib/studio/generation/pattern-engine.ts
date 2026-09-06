@@ -52,6 +52,13 @@ export interface GeneratePatternImageOptions {
   /** Square is the right default for a single motif; the converter re-frames
    *  to the requested chart dimensions. */
   imageSize?: 'square_hd' | 'portrait_4_3' | 'landscape_4_3'
+  /** Pixel size for the Pro tier (it takes width/height, not a size name).
+   *  Defaults to 1024². */
+  proSize?: { width: number; height: number }
+  /** Whether the Pro tier appends its dense showpiece style ('showpiece', the
+   *  default) or leaves the caller's prompt exactly as written ('as-written' —
+   *  the bulk pro-all mode, where each size lane brings its own style). */
+  proStyle?: 'showpiece' | 'as-written'
 }
 
 /**
@@ -68,7 +75,11 @@ export async function generatePatternImage(
   if (!subject) throw new Error('generatePatternImage: empty brief')
 
   const src = opts.detailed
-    ? await fluxIllustrationPro(subject, { width: 1024, height: 1024 })
+    ? await fluxIllustrationPro(subject, {
+        width: opts.proSize?.width ?? 1024,
+        height: opts.proSize?.height ?? 1024,
+        ...(opts.proStyle ? { style: opts.proStyle } : {}),
+      })
     : await fluxIllustration(subject, { imageSize: opts.imageSize ?? 'square_hd' })
 
   // Normalise to PNG so the preview data URL and the re-posted convert bytes
