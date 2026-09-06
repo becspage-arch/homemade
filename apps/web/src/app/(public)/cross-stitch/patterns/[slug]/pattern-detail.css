@@ -88,6 +88,23 @@
 }
 .pattern-detail-action.ghost:hover { background: #f0e9da; }
 
+/* One line under the Stitch button for a visitor who has never stitched.
+   The full "Start here" card sits below the chart, which on a phone is a
+   long way past the point where they need it. */
+.pattern-detail-first-time {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-warm-taupe);
+  margin: -14px 0 24px;
+}
+.pattern-detail-first-time a {
+  color: var(--color-forest);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+.pattern-detail-first-time a:hover { color: var(--color-sage); }
+
 .pattern-detail-finished {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 12px;
@@ -119,6 +136,11 @@
   font-size: 16px;
   color: var(--color-espresso);
   margin: 0;
+}
+/* Difficulty and stitching share one row, so it spans the whole spec grid
+   and the tooltip has room to sit under it without clipping. */
+.pattern-detail-spec-going {
+  grid-column: 1 / -1;
 }
 
 .pattern-detail-floss h2,
@@ -341,29 +363,42 @@
   color: var(--color-warm-taupe);
 }
 
-/* ── Stitchability band ─────────────────────────────────────────────────── */
-/* Sits in the spec grid alongside Skeins. The band phrase is the value; the
-   marker opens a plain-language tooltip on hover or keyboard focus, matching
-   the glossary term treatment used in tutorial bodies. */
-.pattern-detail-stitchability {
-  position: relative;
+/* ── Spec tooltip ("?" marker) ───────────────────────────────────────────── */
+/* Sits in the spec grid next to the value it explains. The marker is a real
+   button so it works on touch: tap toggles, outside tap or Escape closes.
+   Pointer devices keep the hover behaviour, and keyboard focus still opens
+   it, matching the glossary term treatment used in tutorial bodies. */
+/* The bubble is positioned against the <dd> it explains, not against the
+   marker. Anchored to the marker it ran off the left of a 390px screen. */
+.pattern-detail-spec dd { position: relative; }
+.pattern-detail-tipwrap {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: help;
-  font-family: var(--font-display);
-  font-size: 16px;
-  color: var(--color-espresso);
+  vertical-align: middle;
+  margin-left: 6px;
 }
-.pattern-detail-stitchability-mark {
+.pattern-detail-tip-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 14px;
-  height: 14px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+/* The visible dot is smaller than the 22px tap target it sits inside. */
+.pattern-detail-tip-toggle::before {
+  content: '?';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: var(--color-warm-taupe);
   color: #fafaf6;
@@ -371,17 +406,28 @@
   font-size: 9px;
   line-height: 1;
 }
+/* The literal "?" text node is for screen readers that ignore aria-label. */
+.pattern-detail-tip-toggle {
+  font-size: 0;
+}
+.pattern-detail-tip-toggle[aria-expanded='true']::before,
+.pattern-detail-tip-toggle:hover::before {
+  background: var(--color-espresso);
+}
 .pattern-detail-tip {
   position: absolute;
   bottom: calc(100% + 8px);
   left: 0;
+  right: 0;
   z-index: 5;
-  width: 232px;
+  width: auto;
+  max-width: 340px;
   padding: 10px 12px;
   border-radius: 8px;
   background: var(--color-espresso);
   color: #f7f3ec;
   font-family: var(--font-body, inherit);
+  font-weight: 400;
   font-size: 12.5px;
   line-height: 1.45;
   text-align: left;
@@ -390,10 +436,23 @@
   transition: opacity 120ms ease;
   pointer-events: none;
 }
-.pattern-detail-stitchability:hover .pattern-detail-tip,
-.pattern-detail-stitchability:focus-visible .pattern-detail-tip {
+.pattern-detail-tip.is-open {
   opacity: 1;
   visibility: visible;
+}
+@media (hover: hover) {
+  .pattern-detail-tipwrap:hover .pattern-detail-tip {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.pattern-detail-tip-toggle:focus-visible + .pattern-detail-tip {
+  opacity: 1;
+  visibility: visible;
+}
+.pattern-detail-tip-toggle:focus-visible::before {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 2px;
 }
 
 /* ── Fabric calculator ──────────────────────────────────────────────────── */

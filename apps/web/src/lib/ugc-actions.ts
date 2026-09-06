@@ -16,6 +16,7 @@ import {
   UserRole,
 } from '@homemade/db'
 import { getCurrentDbUser } from './get-current-user'
+import { signInHrefForCurrentPage } from './sign-in-return'
 import { audit } from './audit'
 import { scanImageForNsfw, nsfwDecision } from './nsfw-scan'
 import { mediaUrl } from './media'
@@ -26,7 +27,9 @@ type ActionResult = { ok: true } | { ok: false; error: string }
 
 async function requireMember() {
   const user = await getCurrentDbUser()
-  if (!user) redirect('/sign-in')
+  // Reviews, photos and questions all hang off public tutorial and pattern
+  // pages, so the same return-to-the-page rule applies here.
+  if (!user) redirect(await signInHrefForCurrentPage())
   if (user.isSuspended) {
     return { user: null, error: 'Your account is suspended.' as const }
   }

@@ -213,6 +213,29 @@
   gap: 12px;
 }
 
+/* Pattern crafts, top level in the mobile sheet. Same weight as a group
+   heading so they read as destinations, not as items inside something. */
+.header-nav-sheet-top {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+}
+
+.header-nav-sheet-top-link {
+  font-family: var(--font-fraunces);
+  font-size: 18px;
+  color: var(--color-espresso);
+  text-decoration: none;
+  letter-spacing: -0.005em;
+  padding: 14px 16px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  background: var(--color-soft-parchment);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
 .header-nav-sheet-group {
   background: var(--color-soft-parchment);
   border-radius: 10px;

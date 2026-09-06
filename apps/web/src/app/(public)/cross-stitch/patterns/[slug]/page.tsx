@@ -29,6 +29,7 @@ import {
 import { FabricCalculator } from './fabric-calculator'
 import { FlossShoppingList } from './floss-shopping-list'
 import { PdfDownload } from './pdf-download'
+import { SpecTip } from './spec-tip'
 import './pattern-detail.css'
 
 export const dynamic = 'force-dynamic'
@@ -38,9 +39,10 @@ const LETTER_PAPER_COUNTRIES = new Set(['US', 'CA', 'MX', 'PH'])
 
 interface PageProps {
   params: Promise<{ slug: string }>
+  searchParams: Promise<Record<string, string | string[] | undefined>>
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Pick<PageProps, 'params'>): Promise<Metadata> {
   const { slug } = await params
   const row = await prisma.pattern.findUnique({
     where: { slug },
@@ -66,8 +68,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   })
 }
 
-export default async function PatternDetailPage({ params }: PageProps) {
+export default async function PatternDetailPage({ params, searchParams }: PageProps) {
   const { slug } = await params
+  const sp = await searchParams
   const row = await prisma.pattern.findUnique({
     where: { slug },
     include: {
@@ -112,6 +115,23 @@ export default async function PatternDetailPage({ params }: PageProps) {
   // nothing rather than a guess.
   const band = row.stitchability != null ? STITCHABILITY_BANDS[row.stitchability] : undefined
 
+  // Difficulty and stitchability read as two competing verdicts when they sit
+  // in the spec grid as separate rows. They are one thought: how hard it is
+  // and how it feels to work. One row, one label, one explanation.
+  const difficultyLabel = row.difficulty ? prettify(row.difficulty) : null
+  const goingLabel =
+    difficultyLabel && band
+      ? 'Difficulty and stitching'
+      : difficultyLabel
+        ? 'Difficulty'
+        : 'Stitching'
+  const goingValue =
+    difficultyLabel && band
+      ? `Difficulty: ${difficultyLabel}. Stitching: ${band.label}`
+      : difficultyLabel
+        ? difficultyLabel
+        : (band?.label ?? '')
+
   const related = await prisma.pattern.findMany({
     where: {
       ownerUserId: null,
@@ -134,6 +154,8 @@ export default async function PatternDetailPage({ params }: PageProps) {
       thumbnail: { select: { cloudflareId: true, r2Key: true } },
     },
   })
+
+  const patternPath = `/cross-stitch/patterns/${slug}`
 
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Home', href: '/' },
@@ -285,8 +307,21 @@ export default async function PatternDetailPage({ params }: PageProps) {
               patternId={row.id}
               initialInPlan={inPlan}
               signedIn={Boolean(user)}
+              patternPath={patternPath}
+              pendingIntent={sp.plan === row.id}
             />
           </div>
+
+          {/* First step for anyone who has never stitched, in the actions
+              area where the decision is being made. The fuller "Start here"
+              card below repeats it for readers who scroll. Both destinations
+              are free and open without an account. */}
+          <p className="pattern-detail-first-time">
+            New to cross-stitch?{' '}
+            <Link href={`/cross-stitch/how-to-read-a-cross-stitch-chart?from=${slug}`}>
+              Start with how to read a chart
+            </Link>
+          </p>
 
           {finishedCount > 0 && (
             <p className="pattern-detail-finished">
@@ -302,25 +337,19 @@ export default async function PatternDetailPage({ params }: PageProps) {
             <div><dt>Finished</dt><dd>{finishedW.toFixed(1)} × {finishedH.toFixed(1)} cm</dd></div>
             <div><dt>Fabric</dt><dd>{row.fabricCountSuggested}-count Aida</dd></div>
             <div><dt>Skeins</dt><dd>~{totalSkein.toFixed(0)} total</dd></div>
-            {band && (
-              <div>
-                <dt>Stitchability</dt>
+            {(band || row.difficulty) && (
+              <div className="pattern-detail-spec-going">
+                <dt>{goingLabel}</dt>
                 <dd>
-                  <button
-                    type="button"
-                    className="pattern-detail-stitchability"
-                    aria-describedby="stitchability-tip"
-                  >
-                    {band.label}
-                    <span className="pattern-detail-stitchability-mark" aria-hidden="true">?</span>
-                    <span className="pattern-detail-tip" id="stitchability-tip" role="tooltip">
-                      {band.blurb}
-                    </span>
-                  </button>
+                  {goingValue}
+                  <SpecTip label="What difficulty and stitching mean">
+                    Difficulty is the skill the pattern asks for. Stitching is
+                    how much attention the chart wants while you work it
+                    {band ? `: ${lowerFirst(band.blurb)}` : '.'}
+                  </SpecTip>
                 </dd>
               </div>
             )}
-            {row.difficulty && <div><dt>Difficulty</dt><dd>{prettify(row.difficulty)}</dd></div>}
             {row.estimatedHours && <div><dt>Time</dt><dd>~{row.estimatedHours}h</dd></div>}
             {row.hasBackstitch && <div><dt>Back-stitch</dt><dd>Yes</dd></div>}
             {row.hasFrenchKnots && <div><dt>French knots</dt><dd>Yes</dd></div>}
@@ -483,6 +512,10 @@ export default async function PatternDetailPage({ params }: PageProps) {
 
 function prettify(s: string): string {
   return s.charAt(0) + s.slice(1).toLowerCase()
+}
+/** Lower-case the first letter so a band blurb can follow a colon. */
+function lowerFirst(s: string): string {
+  return s.charAt(0).toLowerCase() + s.slice(1)
 }
 function formatSkein(n: number): string {
   return Number.isInteger(n) ? `${n}` : n.toFixed(1)
