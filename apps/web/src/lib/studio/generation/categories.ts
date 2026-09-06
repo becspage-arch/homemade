@@ -86,7 +86,7 @@ export const CROSS_STITCH_SHELVES: ShelfTarget[] = [
   // published by `scripts/xs-samplers-publish.ts`, so the bulk planner has
   // nothing sensible to commission here. `hold` is how the registry already
   // says "leave this shelf alone", and it keeps the cron out of it.
-  { slug: 'samplers', name: 'Samplers', target: 60, hold: true },
+  { slug: 'samplers', name: 'Samplers', target: 34, hold: true },
   { slug: 'seasonal', name: 'Seasonal', target: 40 },
   { slug: 'halloween', name: 'Halloween', target: 40 },
   { slug: 'celestial', name: 'Celestial', target: 40 },
