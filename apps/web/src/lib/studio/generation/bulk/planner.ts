@@ -5,6 +5,7 @@ import { subjectKey as normaliseSubject, findSubjectKeyMatch } from './subject-k
 import { CROSS_STITCH_SHELF_BY_SLUG } from '../categories'
 import { applyWarmFurGuard } from './brief-rules'
 import { postFilterBriefs, countRejects, type BriefReject } from './brief-filter'
+import { shelfQuotaCounts } from './shelf-plan'
 import {
   CROSS_STITCH_THEMES,
   CROSS_STITCH_SIZE_LANES,
@@ -64,6 +65,12 @@ export interface CrossStitchBrief {
    * otherwise looks exactly like a normal batch.
    */
   source: 'model' | 'sampler'
+  /**
+   * Whether the planner was free to invent this subject or had to choose one
+   * from the theme's pool and dress it. Recorded on the published pattern so a
+   * later yield comparison does not depend on remembering which deploy ran.
+   */
+  plannerMode: PlannerMode
   /** Optional source-saturation override (skin-heavy portraits). */
   sat?: number
   shelf: string
@@ -148,6 +155,49 @@ HARD RULES
 - Faces are a risk: a face is only worth briefing when it is large, front-on and clearly appealing; skulls, masks and "unsettling" faces are out.
 - Use ONLY the style keys and shelf slugs given. Reply with JSON only.`
 
+/**
+ * FREE vs CONSTRAINED planning.
+ *
+ * Six batches of evidence (September 2026): briefs the model INVENTED yielded
+ * about 17% gems, briefs sampled from the curated pool about 40%. The gap is not
+ * taste — the model's inventions are often lovely — it is that an invented
+ * subject keeps reaching for a second small thing Flux cannot render, and no
+ * amount of prompt rule or prop pattern stopped it, because there is always a
+ * new way to phrase "and also a little …".
+ *
+ * So the model stops inventing. In CONSTRAINED mode it picks a subject from the
+ * theme's own example list and DRESSES it — setting, palette, season, time of
+ * day, pose, expression — and the head-noun check throws out anything that is
+ * not a dressing of a pool subject. The model still does the work only it can
+ * do: choosing which subject suits which shelf, style, lane and canvas.
+ *
+ * `BULK_PLANNER_MODE=free` restores the old behaviour without a deploy.
+ */
+export type PlannerMode = 'free' | 'constrained'
+export const PLANNER_MODE: PlannerMode = process.env.BULK_PLANNER_MODE === 'free' ? 'free' : 'constrained'
+
+/**
+ * The constrained system prompt. Much shorter than the free one, because most of
+ * what the free prompt spent its words on — what makes a good subject, what not
+ * to invent, how not to add props — is now decided by the pool and enforced
+ * mechanically. What is left is genuinely the model's job.
+ */
+const XS_CONSTRAINED_SYSTEM = `You are the creative director for Homemade's cross-stitch catalogue. A curated pool of subjects already exists; your job is to CHOOSE from it and DRESS what you choose, not to invent.
+
+FOR EACH BRIEF
+- subject: take one of the SUBJECTS listed under the theme you are serving, and either use it as it stands or change it ONLY in setting, palette, season, time of day, pose or expression. Keep what the thing IS, word for word where you can.
+- You may NOT add an object, creature or accessory that is not already in the listed subject. No "with a …", nothing held, worn, perched or beside. If the listed subject already has one, keep it.
+- Pick the style key, size lane, w/h and colour count that suit the subject.
+
+HARD RULES
+- Serve the SHELF QUOTA exactly, using only the themes listed.
+- Span the size range: at least one 'mini', a couple of small/medium, a 'large', and exactly one 'dense' when the batch calls for it.
+- Do not choose a subject the catalogue already has (you are given the list), and do not choose the same subject twice in one batch.
+- Rich saturated colour with clear light-dark contrast. No moody, dark, smoky, misty or muted palettes and no dark grounds; a dark subject sits against a bright or pale ground.
+- No readable text or lettering. No copying a specific shop, celebrity, brand or franchise design.
+- Respect each theme's notes (fair/pale faces only; wordless signage; tame warm-red animals).
+- Use ONLY the style keys and shelf slugs given. Reply with JSON only.`
+
 interface RawXsBrief {
   themeId?: string
   subject?: string
@@ -183,6 +233,15 @@ function isHoldShelf(slug: string): boolean {
 
 /** Every theme that still has a generation lane. */
 const PLANNABLE_THEMES: CrossStitchTheme[] = CROSS_STITCH_THEMES.filter((t) => !isHoldShelf(t.shelf))
+
+/**
+ * The allowed subjects per theme — constrained mode's whole vocabulary. Built
+ * from every theme, not just the plannable ones, so a brief on a hold shelf is
+ * rejected for being on a hold shelf rather than for being off-pool.
+ */
+const EXAMPLES_BY_THEME: Record<string, readonly string[]> = Object.fromEntries(
+  CROSS_STITCH_THEMES.map((t) => [t.id, t.examples]),
+)
 
 function themesForShelves(shelves: string[] | undefined): CrossStitchTheme[] {
   if (!shelves?.length) return PLANNABLE_THEMES
@@ -237,6 +296,51 @@ ${avoid}${rejected}
 Return ONLY the JSON array of ${count} briefs.`
 }
 
+/**
+ * The constrained prompt. Same shelf quota, lanes and avoid list as the free one;
+ * the difference is that each theme arrives with its FULL subject list rather
+ * than three teaser examples, because that list is now the allowed set rather
+ * than a flavour hint.
+ */
+function xsConstrainedPromptText(count: number, ctx: XsPlanContext, banned: string[] = []): string {
+  const shelves = ctx.shelfSlots?.length ? [...new Set(ctx.shelfSlots)] : undefined
+  const themes = themesForShelves(shelves)
+    .map(
+      (t) =>
+        `- ${t.id} (shelf ${t.shelf}): ${t.title}. styles: ${t.styles.join('/')}.${t.notes ? ' NOTE: ' + t.notes : ''}\n  SUBJECTS: ${t.examples.map((e) => `"${e}"`).join('; ')}`,
+    )
+    .join('\n')
+  const lanes = CROSS_STITCH_SIZE_LANES.map((l) => `- ${l.lane}: ~${l.cells} cells, ${l.colours} colours — ${l.note}`).join('\n')
+  const quota = ctx.shelfQuota?.length
+    ? `SHELF QUOTA — this batch must serve exactly these shelves (each shelf's gap to its target in brackets):\n${ctx.shelfQuota
+        .map((q) => `- ${q.slug} (${q.name}): ${q.briefs} brief${q.briefs === 1 ? '' : 's'} [gap ${q.deficit}]`)
+        .join('\n')}\n\n`
+    : ''
+  const dense = count >= DENSE_BATCH_FLOOR ? `\n- EXACTLY ONE brief in this batch must use sizeLane "dense" (the 100+ colour heirloom showpiece). Not two.` : `\n- This batch is small: do NOT use sizeLane "dense".`
+  const shown = (ctx.avoidSubjectKeys ?? []).slice(0, PROMPT_AVOID_LIMIT)
+  const avoid = shown.length
+    ? `\nTHE CATALOGUE ALREADY HAS THESE — do not choose a subject that repeats one. One per line:\n${shown.join('\n')}\n`
+    : ''
+  const rejected = banned.length
+    ? `\nTHESE WERE JUST REJECTED — do not write these again:\n${banned.slice(0, 20).map((b) => `- ${b}`).join('\n')}\n`
+    : ''
+  return `Compose ${count} cross-stitch briefs as a JSON array. Each: {"themeId","subject","style","sizeLane","w","h","colours"} and optional "sat" (0.9–1.15, only where a theme note calls for it).
+
+${quota}THEMES AND THEIR SUBJECTS (choose subjects from these lists only):
+${themes}
+
+SIZE LANES (spread this batch across the range; w/h in cells, pick shape to suit the subject):
+${lanes}
+${dense}
+
+- subject: one of the listed SUBJECTS for the theme, optionally re-dressed in setting, palette, season, time of day, pose or expression. Nothing added.
+- style: one style key from the chosen theme's list.
+- w/h: cells for the size lane; tall subjects tall, wide subjects wide, wreaths square.
+- colours: within the size lane's range.
+${avoid}${rejected}
+Return ONLY the JSON array of ${count} briefs.`
+}
+
 function coerceXsBrief(raw: RawXsBrief, seen: Set<string>, allowed: CrossStitchTheme[]): CrossStitchBrief | null {
   // A theme off this batch's quota is tolerated; a theme on a HOLD shelf is not
   // — those shelves are the size they should be and get no generation lane.
@@ -257,6 +361,7 @@ function coerceXsBrief(raw: RawXsBrief, seen: Set<string>, allowed: CrossStitchT
     subject,
     subjectKey: normaliseSubject(subject),
     source: 'model',
+    plannerMode: PLANNER_MODE,
     style,
     w,
     h,
@@ -405,6 +510,7 @@ function sampleXsBrief(theme: CrossStitchTheme, seen: Set<string>, taken: (key: 
     subject,
     subjectKey: normaliseSubject(subject),
     source: 'sampler',
+    plannerMode: PLANNER_MODE,
     style: pick(theme.styles),
     w: clamp(w, 48, 230),
     h: clamp(h, 48, 230),
@@ -530,7 +636,7 @@ function makeTaken(avoid: Set<string>, batch: Set<string>): (key: string) => boo
 export interface PlanChunk {
   briefs: CrossStitchBrief[]
   /** Subjects the post-filter rejected, with the reason — shown to the retry call. */
-  rejects: { subject: string; kind: 'prop' | 'collision'; reason: string }[]
+  rejects: { subject: string; kind: BriefReject<CrossStitchBrief>['kind']; reason: string }[]
 }
 
 /** The counters a run records for the post-filter's work. */
@@ -543,7 +649,9 @@ export interface RejectCounts {
 export function tallyRejects(chunks: PlanChunk[]): RejectCounts {
   const all = chunks.flatMap((c) => c.rejects)
   return {
-    propRejects: all.filter((r) => r.kind === 'prop').length,
+    // Off-pool and prop rejects share a counter: both mean the model asked for
+    // something un-buildable and the filter caught it before Flux was paid.
+    propRejects: all.filter((r) => r.kind === 'prop' || r.kind === 'off-pool').length,
     collisionRejects: all.filter((r) => r.kind === 'collision').length,
   }
 }
@@ -588,6 +696,7 @@ export async function planModelBriefs(
 ): Promise<PlanChunk> {
   if (count <= 0 || !anthropicConfigured()) return { briefs: [], rejects: [] }
 
+  const constrained = PLANNER_MODE === 'constrained'
   const seen = new Set<string>()
   const avoid = new Set((ctx.avoidSubjectKeys ?? []).filter(Boolean))
   const batchKeys = new Set(alreadyPicked.map((b) => b.subjectKey).filter(Boolean))
@@ -600,8 +709,8 @@ export async function planModelBriefs(
     const raw = await withTimeout(
       anthropicJson<RawXsBrief[]>({
         model: PLANNER_MODEL,
-        system: XS_SYSTEM,
-        prompt: xsPromptText(count, ctx, banned),
+        system: constrained ? XS_CONSTRAINED_SYSTEM : XS_SYSTEM,
+        prompt: constrained ? xsConstrainedPromptText(count, ctx, banned) : xsPromptText(count, ctx, banned),
         maxTokens: 4000,
         retries: PLANNER_RETRIES,
       }),
@@ -630,13 +739,20 @@ export async function planModelBriefs(
     console.warn(`[bulk cross-stitch planner] rejected ${duplicates} model brief(s) as duplicates of the live catalogue`)
   }
 
-  // The post-filter. Props and within-batch collisions are both binary, and both
-  // are cheaper to catch here than after a Flux generation and a gate call.
-  const { kept, rejects } = postFilterBriefs(candidates, alreadyPicked)
+  // The post-filter. Off-pool subjects, props and within-batch collisions are all
+  // binary, and all are cheaper to catch here than after a Flux generation and a
+  // gate call. In constrained mode the prop filter drops to its light backstop:
+  // the head-noun check already holds the brief to a pool subject, and several
+  // curated subjects legitimately carry the very phrases the strict filter bans.
+  const { kept, rejects } = postFilterBriefs(candidates, alreadyPicked, {
+    props: constrained ? 'light' : 'strict',
+    ...(constrained ? { examplesByTheme: EXAMPLES_BY_THEME } : {}),
+    ...(ctx.shelfSlots?.length ? { shelfQuota: shelfQuotaCounts(ctx.shelfSlots) } : {}),
+  })
   const counts = countRejects(rejects)
   if (counts.props || counts.collisions) {
     console.warn(
-      `[bulk cross-stitch planner] post-filter dropped ${counts.props} brief(s) for props and ${counts.collisions} for within-batch collision`,
+      `[bulk cross-stitch planner] post-filter dropped ${counts.props} brief(s) off-pool/props and ${counts.collisions} for within-batch collision`,
     )
     for (const r of rejects) console.warn(`[bulk cross-stitch planner]   ✕ "${r.brief.subject}" — ${r.reason}`)
   }
@@ -729,9 +845,12 @@ export async function planCrossStitchBriefs(
     chunks.push(chunk)
     briefs.push(...chunk.briefs)
   }
-  // ONE retry for whatever the post-filter took out, on the shelves that lost
-  // it, naming the rejected subjects. Then — and only then — the pool sampler.
-  if (briefs.length < count) {
+  // In FREE mode a reject is worth one more model call, because a fresh
+  // invention might land. In CONSTRAINED mode it is not: a brief that failed the
+  // head-noun check asked for something outside the pool, and the sampler draws
+  // from that same pool with a 40% gem rate against the model's 17% — so the
+  // slot goes straight to it rather than paying for another round trip.
+  if (briefs.length < count && PLANNER_MODE === 'free') {
     const retryCtx: XsPlanContext = { ...ctx, shelfSlots: remainingShelfSlots(ctx, briefs) }
     const retry = await planModelBriefs(count - briefs.length, retryCtx, briefs, rejectedSubjects(chunks))
     chunks.push(retry)

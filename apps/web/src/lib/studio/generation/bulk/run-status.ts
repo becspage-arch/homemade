@@ -38,6 +38,7 @@ export function summaryLine(
     paleSkips?: number
     propRejects?: number
     collisionRejects?: number
+    plannerMode?: string
   },
 ): string {
   // How much of the batch the planner model actually wrote. A run that fell back
@@ -50,5 +51,9 @@ export function summaryLine(
   // it is invisible unless the run says so.
   const props = s.propRejects ? ` · ${s.propRejects} briefs rejected for props` : ''
   const clashes = s.collisionRejects ? ` · ${s.collisionRejects} rejected as within-batch repeats` : ''
-  return `${s.craft}: ${s.published} gems published, ${s.culled} culled, ${s.duplicates} duplicates, ${s.skipped} skipped, ${s.repaired} repairs, ${s.generations} generations, ${s.errors} errors (of ${s.requested})${authored}${pale}${props}${clashes}`
+  // Which planner wrote the batch. Two modes now exist and they yield very
+  // differently, so a run that does not say which one it ran under cannot be
+  // compared with the ones either side of it.
+  const mode = s.plannerMode ? ` · ${s.plannerMode} planner` : ''
+  return `${s.craft}: ${s.published} gems published, ${s.culled} culled, ${s.duplicates} duplicates, ${s.skipped} skipped, ${s.repaired} repairs, ${s.generations} generations, ${s.errors} errors (of ${s.requested})${authored}${pale}${props}${clashes}${mode}`
 }

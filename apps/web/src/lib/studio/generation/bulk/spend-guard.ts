@@ -21,10 +21,20 @@ import { prisma } from '@homemade/db'
  * hit — the dispatcher's answer is minutes stale by the time an idea runs).
  */
 
-/** Total cross-stitch generations allowed in any trailing 24 hours. */
-export const XS_DAILY_GENERATION_CAP = 240
-/** Of those, how many may be the expensive Flux 1.1 Pro dense tier. */
-export const XS_DAILY_PRO_CAP = 12
+/**
+ * Total cross-stitch generations allowed in any trailing 24 hours.
+ *
+ * Sized for twelve two-hourly firings of ten ideas: observed batches run about
+ * 3.5 generations per idea (best-of-N plus repairs), so 12 × 10 × 3.5 ≈ 420, and
+ * 480 leaves headroom for a bad night without the cap silently truncating a
+ * normal day. Roughly £2 a day at full tilt.
+ */
+export const XS_DAILY_GENERATION_CAP = 480
+/**
+ * Of those, how many may be the expensive Flux 1.1 Pro dense tier — two per
+ * firing, matching the range rule's one dense showpiece per batch plus a repair.
+ */
+export const XS_DAILY_PRO_CAP = 24
 
 /**
  * Approximate unit costs, for the admin spend line only — never for a decision.

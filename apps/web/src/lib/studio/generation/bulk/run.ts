@@ -1,6 +1,6 @@
 import 'server-only'
 import { gateConfigured, visionGate, type GateResult } from '../vision-gate'
-import { planCrossStitchBriefs, planNeedleworkBriefs, type CrossStitchBrief } from './planner'
+import { planCrossStitchBriefs, planNeedleworkBriefs, PLANNER_MODE, type CrossStitchBrief } from './planner'
 import {
   generateCrossStitchCandidate,
   publishCrossStitchGem,
@@ -16,7 +16,7 @@ import {
 import { judgeVividness } from './vividness'
 import { CROSS_STITCH_SHELVES } from '../categories'
 import { summaryLine } from './run-status'
-import { shelfDeficits, allocateShelves, shelfSlots } from './shelf-plan'
+import { shelfDeficits, allocateShelves, capShelfBriefs, shelfSlots } from './shelf-plan'
 import {
   generateNeedleworkCandidate,
   publishNeedleworkGem,
@@ -80,6 +80,8 @@ export interface BatchSummary {
   propRejects?: number
   /** Model briefs thrown out as a repeat of another brief in the same batch. */
   collisionRejects?: number
+  /** Which planner wrote the briefs — free invention, or dressed pool subjects. */
+  plannerMode?: string
   errors: number
   /** Slugs of the gems that shipped. */
   gems: string[]
@@ -234,7 +236,11 @@ export async function crossStitchPlanContext(count: number): Promise<Parameters<
     publicSubjectKeys().catch(() => [] as string[]),
   ])
   const deficits = shelfDeficits(CROSS_STITCH_SHELVES, counts)
-  const alloc = allocateShelves(deficits, count)
+  // Cap any one shelf at its share of the batch. A shelf far behind its target
+  // otherwise takes three or four slots at once and the batch turns into three
+  // variations on one idea — which is how batch 6 planned three celestial pieces,
+  // two of them the same composition.
+  const alloc = capShelfBriefs(allocateShelves(deficits, count), count)
   return {
     avoidSubjectKeys,
     shelfSlots: shelfSlots(alloc),
@@ -255,6 +261,7 @@ export async function runCrossStitchBatch(count: number, step: StepRunner = inli
   const briefs = plan.briefs
   base.propRejects = plan.propRejects
   base.collisionRejects = plan.collisionRejects
+  base.plannerMode = PLANNER_MODE
   const keptSubjects: string[] = []
 
   for (const brief of briefs) {

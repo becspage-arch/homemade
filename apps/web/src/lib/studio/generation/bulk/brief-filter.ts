@@ -73,6 +73,17 @@ const SMALL_LANES = new Set(['mini', 'small'])
  */
 export const SMALL_LANE_WORD_LIMIT = 12
 
+/**
+ * The LIGHT backstop: the two prop shapes that are worth catching even when the
+ * subject came from the curated pool. Constrained mode's head-noun match already
+ * holds the brief to a pool subject, so this only has to catch the model bolting
+ * something extra on.
+ */
+const LIGHT_PROP_PATTERNS: { label: string; re: RegExp }[] = [
+  { label: 'diminutive ("tiny/little/small/miniature")', re: /\b(tiny|little|small|miniature|minuscule|petite)\b/i },
+  { label: 'trailing "with a …" prop clause', re: /\bwith\s+(?:an?|its|his|her|their)\s+\w/i },
+]
+
 /** The parts of a brief the prop filter reads. */
 export interface PropBrief {
   subject: string
@@ -80,12 +91,41 @@ export interface PropBrief {
 }
 
 /**
+ * How hard the prop filter bites.
+ *
+ * `strict` is the free-planner rule: the whole pattern list, plus the one-noun-
+ * phrase ceiling in the small lanes. `light` is constrained mode's backstop —
+ * diminutives and a trailing "with a …" only, and no word limit, because the
+ * pool subject now defines the shape and several curated examples are legitimately
+ * written with both ("a fox in a tiny raincoat with a paper boat" has been one of
+ * the better-yielding briefs in the catalogue).
+ */
+export type PropMode = 'strict' | 'light' | 'off'
+
+/**
+ * What the brief is ALLOWED to already contain, in light mode: the pool example
+ * it was built from. A prop that is in the example is the subject; a prop the
+ * model added is a prop. Without a baseline, light mode simply tests the two
+ * patterns outright.
+ */
+export function lightPropReject(subject: string, baseline?: string): string | null {
+  for (const p of LIGHT_PROP_PATTERNS) {
+    if (!p.re.test(subject)) continue
+    if (baseline && p.re.test(baseline)) continue // the pool subject's own, not an addition
+    return `prop added to the pool subject: ${p.label}`
+  }
+  return null
+}
+
+/**
  * Binary: why this brief is unbuildable, or null if it is fine.
  *
  * Returns the FIRST reason only — the point is the reject, not a full audit.
  */
-export function propReject(b: PropBrief): string | null {
+export function propReject(b: PropBrief, mode: PropMode = 'strict', baseline?: string): string | null {
   const subject = b.subject ?? ''
+  if (mode === 'off') return null
+  if (mode === 'light') return lightPropReject(subject, baseline)
   if (SMALL_LANES.has(b.lane)) {
     const words = subject.trim().split(/\s+/).filter(Boolean)
     if (words.length > SMALL_LANE_WORD_LIMIT) {
@@ -140,16 +180,66 @@ const NON_HEAD = new Set([
  * is one thing, and cutting at "of" would lose the word that matters).
  */
 const PHRASE_BOUNDARY = new Set([
-  'in', 'on', 'at', 'with', 'without', 'among', 'amongst', 'beside', 'behind', 'beneath', 'below',
-  'under', 'over', 'above', 'across', 'through', 'by', 'near', 'against', 'inside', 'outside',
-  'atop', 'from', 'to', 'into', 'onto', 'around', 'along', 'and', 'or', 'but', 'while', 'as',
+  'in', 'on', 'at', 'with', 'without', 'among', 'amongst', 'between', 'beside', 'behind',
+  'beneath', 'below', 'under', 'over', 'above', 'across', 'through', 'by', 'near', 'against',
+  'inside', 'outside', 'atop', 'from', 'to', 'into', 'onto', 'around', 'along', 'past',
+  'toward', 'towards', 'upon', 'and', 'or', 'but', 'while', 'as',
 ])
 
 /** Determiners and the in-phrase "of" — skipped over, never a head, never a boundary. */
 const PHRASE_SKIP = new Set(['a', 'an', 'the', 'of', 'this', 'that', 'these', 'those', 'its', 'his', 'her', 'their'])
 
-/** A participle or verb — "…crab WEARING a…", "…mug TOPPED with…" — also ends the phrase. */
+/**
+ * Participles that ADJECTIVALLY dress a noun rather than acting on it.
+ *
+ * The distinction matters because the phrase reader cuts at a verb: "a crab
+ * WEARING a shell" must stop at the crab, but "a tall FROSTED pina colada" must
+ * not stop at "tall". These are skipped over entirely — they are decoration, not
+ * the head and not the end of it. A short explicit list beats any suffix rule;
+ * these are the ones the planner and the pool actually reach for.
+ */
+const ADJECTIVAL_PARTICIPLES = new Set([
+  'flaming', 'frosted', 'glowing', 'gleaming', 'shimmering', 'sparkling', 'glittering', 'striped',
+  'spotted', 'speckled', 'dappled', 'gilded', 'beaded', 'fringed', 'ruffled', 'feathered',
+  'crooked', 'horned', 'cheeked', 'faded', 'muted', 'painted', 'carved', 'braided', 'twisted',
+  'curved', 'arched', 'pointed', 'rounded', 'weathered', 'polished', 'winged', 'tufted', 'hooded',
+  'toasted', 'iced', 'candied', 'stuffed', 'knitted', 'woven', 'embroidered', 'patterned',
+  'antlered', 'whiskered', 'freckled', 'plaited', 'scalloped', 'ribbed', 'quilted', 'terraced',
+  'trailing', 'climbing', 'hanging', 'sleeping', 'steaming', 'snowy', 'sunlit',
+])
+
+/**
+ * Nouns that merely END in -ing or -ed and are not verbs at all.
+ *
+ * Without this the reader loses the subject completely: "a DUCKLING on a green
+ * bank" read as a verb and returned `bank`, "a STOCKING hung on a mantel"
+ * returned `hung`, "a fluffy SPRING lamb" returned `fluffy`. Every one of those
+ * is a pool subject whose identity is the word being thrown away.
+ */
+const NOUN_EXCEPTIONS = new Set([
+  'duckling', 'dumpling', 'sapling', 'seedling', 'earring', 'evening', 'morning', 'lightning',
+  'pudding', 'string', 'spring', 'ceiling', 'building', 'wedding', 'herring', 'gosling',
+  'nestling', 'fledgling', 'starling', 'bunting', 'awning', 'icing', 'stocking', 'viking',
+  'pumpkin', 'cottage', 'thing', 'king', 'wing', 'ring', 'swing', 'sting', 'bunting',
+  'thread', 'bread', 'seaweed', 'hundred', 'moped', 'tweed', 'weed', 'reed', 'breed', 'steed',
+  'shed', 'sled', 'sledge', 'bed', 'hedge', 'wed', 'red',
+])
+
+/**
+ * Irregular past participles, which carry no -ed to spot them by. "A crescent
+ * moon SPLIT between two faces" has to stop at the moon exactly as "a crab
+ * WEARING a shell" stops at the crab.
+ */
+const IRREGULAR_VERBS = new Set([
+  'split', 'set', 'cut', 'put', 'spun', 'sat', 'held', 'hung', 'wound', 'bound', 'worn', 'torn',
+  'drawn', 'flown', 'blown', 'grown', 'strewn', 'swung', 'clung', 'slept', 'crept', 'kept',
+  'leapt', 'wept', 'sprung', 'risen', 'fallen', 'sunk', 'sung', 'flung', 'stuck', 'struck',
+])
+
+/** A participle or verb — "…crab WEARING a…", "…corgi NAPPING in a…" — ends the phrase. */
 function isVerbish(word: string): boolean {
+  if (NOUN_EXCEPTIONS.has(word)) return false
+  if (IRREGULAR_VERBS.has(word)) return true
   return /(?:ing|ed)$/.test(word) && word.length > 4
 }
 
@@ -187,18 +277,13 @@ function phraseWords(subject: string): string[] {
 export function headNouns(subject: string): string[] {
   const phrase: string[] = []
   for (const w of phraseWords(subject)) {
-    if (PHRASE_SKIP.has(w)) continue
-    // A preposition or conjunction ends the phrase as soon as there is a phrase
-    // to end ("a badger IN a woodland hollow" → badger). A participle needs two
-    // words first, because plenty of them are adjectives that OPEN one instead
-    // ("a tall FROSTED pina colada", "a ROUND-CHEEKED baby fox cub") and cutting
-    // there would leave the head behind.
-    if (PHRASE_BOUNDARY.has(w)) {
+    if (PHRASE_SKIP.has(w) || ADJECTIVAL_PARTICIPLES.has(w)) continue
+    // A preposition, conjunction or verb ends the phrase as soon as there is a
+    // phrase to end: "a badger IN a woodland hollow" is a badger, "a corgi
+    // NAPPING in a teacup" is a corgi. Before that point it is skipped, so an
+    // opener like "ROUND-CHEEKED baby fox cub" keeps its head.
+    if (PHRASE_BOUNDARY.has(w) || isVerbish(w)) {
       if (phrase.length >= 1) break
-      continue
-    }
-    if (isVerbish(w)) {
-      if (phrase.length >= 2) break
       continue
     }
     phrase.push(w)
@@ -236,12 +321,39 @@ export function briefsCollide(a: CollisionBrief, b: CollisionBrief): string | nu
   return null
 }
 
+// ─────────────────── constrained mode: match a pool example ───────────────────
+
+/**
+ * The pool example a constrained brief is a dressing of, or null if it is not a
+ * dressing of any of them.
+ *
+ * Constrained mode lets the model change setting, palette, season, time of day,
+ * pose and expression — everything EXCEPT what the thing is. The head noun is
+ * precisely what survives all six of those edits, so it is the identity test:
+ * "a red squirrel among autumn leaves" and "a red squirrel on a frosty branch at
+ * dawn" both read as `squirrel`.
+ *
+ * Matched on INTERSECTION rather than equality, deliberately. The reader returns
+ * up to two words and a legitimate re-dressing can drop one of them ("a crescent
+ * moon cradling stars" → `crescent moon`; "a crescent moon over a winter sea" →
+ * `crescent moon`, but "a moon split between two faces" → `moon split`). One
+ * shared head word is the subject surviving; zero is a different subject.
+ */
+export function matchExampleByHead(subject: string, examples: readonly string[]): string | null {
+  const heads = new Set(headNouns(subject))
+  if (heads.size === 0) return null
+  for (const ex of examples) {
+    if (headNouns(ex).some((h) => heads.has(h))) return ex
+  }
+  return null
+}
+
 // ──────────────────────────── the one entry point ────────────────────────────
 
 /** Why a brief did not survive the post-filter. */
 export interface BriefReject<T> {
   brief: T
-  kind: 'prop' | 'collision'
+  kind: 'prop' | 'collision' | 'off-pool' | 'over-quota'
   reason: string
 }
 
@@ -252,13 +364,33 @@ export interface PostFilterResult<T> {
 
 export interface PostFilterOptions {
   /**
-   * Apply the prop filter. TRUE for model-authored briefs; FALSE for the pool
-   * sampler, whose curated examples are written in exactly the "a fox in a
-   * mustard raincoat" register the prop filter rejects. The sampler is the
-   * safety net for a failed model call — filtering it to nothing would turn a
-   * slow Anthropic response into an empty batch.
+   * How hard the prop filter bites — see `PropMode`. `true`/`false` are still
+   * accepted and mean `strict`/`off`, because the sampler path only ever needed
+   * the binary: its curated examples are written in exactly the "a fox in a
+   * mustard raincoat" register the strict filter rejects, and filtering the
+   * fallback to nothing would turn a slow Anthropic response into an empty batch.
    */
-  props?: boolean
+  props?: PropMode | boolean
+  /**
+   * Constrained mode: the pool examples each brief must be a dressing of, keyed
+   * by theme id. A brief whose head noun matches none of its theme's examples is
+   * rejected — that is the whole mechanism, and it is why the model can no longer
+   * invent a subject. Omit for free-planner mode.
+   */
+  examplesByTheme?: Record<string, readonly string[]>
+  /**
+   * How many briefs each shelf may have in this batch — normally the slot count
+   * the deficit allocation gave it, which is itself capped at a fifth of the
+   * batch.
+   *
+   * The allocation alone does NOT hold: batch 6 was allocated one slot per shelf
+   * across ten shelves and still came back with three `celestial` briefs, because
+   * the planner is free to pick any theme on the quota and simply picked that one
+   * three times. Two of the three were the same composition — an animal in flight
+   * across a moon — which no token or head-noun test can see. So the quota is
+   * enforced here rather than merely requested in the prompt.
+   */
+  shelfQuota?: Record<string, number>
 }
 
 /**
@@ -273,19 +405,48 @@ export interface PostFilterOptions {
  * stable: re-running the filter with more candidates never changes what it
  * already kept.
  */
-export function postFilterBriefs<T extends PropBrief & CollisionBrief>(
+export function postFilterBriefs<T extends PropBrief & CollisionBrief & { themeId?: string }>(
   candidates: T[],
   prior: T[] = [],
   opts: PostFilterOptions = {},
 ): PostFilterResult<T> {
-  const props = opts.props !== false
+  const mode: PropMode = opts.props === true ? 'strict' : opts.props === false ? 'off' : (opts.props ?? 'strict')
   const kept: T[] = []
   const rejects: BriefReject<T>[] = []
   for (const brief of candidates) {
-    if (props) {
-      const prop = propReject(brief)
+    // Constrained mode first: a brief that is not a dressing of a pool subject
+    // is not worth prop-checking, and its matched example is the baseline the
+    // light prop filter measures additions against.
+    let baseline: string | undefined
+    if (opts.examplesByTheme) {
+      const examples = opts.examplesByTheme[brief.themeId ?? ''] ?? []
+      const match = matchExampleByHead(brief.subject, examples)
+      if (!match) {
+        rejects.push({
+          brief,
+          kind: 'off-pool',
+          reason: `head noun "${headNouns(brief.subject).join(' ') || '—'}" matches no example in theme "${brief.themeId ?? '?'}"`,
+        })
+        continue
+      }
+      baseline = match
+    }
+    if (mode !== 'off') {
+      const prop = propReject(brief, mode, baseline)
       if (prop) {
         rejects.push({ brief, kind: 'prop', reason: prop })
+        continue
+      }
+    }
+    if (opts.shelfQuota) {
+      const allowed = opts.shelfQuota[brief.shelf] ?? 0
+      const already = [...prior, ...kept].filter((b) => b.shelf === brief.shelf).length
+      if (already >= allowed) {
+        rejects.push({
+          brief,
+          kind: 'over-quota',
+          reason: `shelf "${brief.shelf}" already has its ${allowed} brief${allowed === 1 ? '' : 's'} for this batch`,
+        })
         continue
       }
     }
@@ -303,10 +464,17 @@ export function postFilterBriefs<T extends PropBrief & CollisionBrief>(
   return { kept, rejects }
 }
 
-/** How many of a reject list were each kind — the two counters a run records. */
+/**
+ * How many of a reject list were each kind — the counters a run records.
+ *
+ * Off-pool folds into PROPS ("the model asked for something un-buildable") and
+ * over-quota folds into COLLISIONS ("too much of the same thing in one batch").
+ * Those are the two numbers worth watching; extra columns for distinctions only
+ * this module cares about are not worth a migration.
+ */
 export function countRejects<T>(rejects: BriefReject<T>[]): { props: number; collisions: number } {
   return {
-    props: rejects.filter((r) => r.kind === 'prop').length,
-    collisions: rejects.filter((r) => r.kind === 'collision').length,
+    props: rejects.filter((r) => r.kind === 'prop' || r.kind === 'off-pool').length,
+    collisions: rejects.filter((r) => r.kind === 'collision' || r.kind === 'over-quota').length,
   }
 }

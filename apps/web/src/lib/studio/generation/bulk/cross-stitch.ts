@@ -300,6 +300,8 @@ export async function publishCrossStitchGem(
         lane: brief.lane,
         // Who wrote this brief: the planner model, or the pool sampler fallback.
         source: brief.source,
+        // Which planner wrote it: free invention, or a dressed pool subject.
+        plannerMode: brief.plannerMode,
         w: brief.w,
         h: brief.h,
         colours: brief.colours,
