@@ -4646,6 +4646,18 @@ model Pattern {
   medianRunLength     Float?
   stitchability       Int?
 
+  // ── Bare fabric (phase_xs_bare_fabric_001) ───────────────────────────────
+  // The old catalogue was converted with `backgroundRemoval: false`, so the
+  // quantiser stitched every "clean white background" in white floss — 8,007
+  // stitches of B5200 on white aida in one 112x112 proof, 64% of the chart.
+  // `scripts/xs-bare-fabric-backfill.ts` rewrites those cells as bare cloth.
+  // This column is the reversible record of that edit: what was removed, why,
+  // and the thumbnail + data hash it replaced. Null on untouched rows.
+  //   { at, reason, removedStitches, droppedSymbols,
+  //     previousThumbnailMediaId, previousDataSha256, before, after }
+  // The previous Media row is kept, so a revert is a restore plus an id swap.
+  backgroundCleared   Json?
+
   license        PatternLicense?
   userProgress   UserPatternProgress[]
   savedBy        SavedPattern[]

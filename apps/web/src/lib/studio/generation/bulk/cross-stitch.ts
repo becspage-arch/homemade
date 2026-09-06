@@ -12,8 +12,8 @@ import {
 import { generatePatternImage, imageToPattern } from '@/lib/studio/generation/pattern-engine'
 import { sha256Hex } from './similarity'
 import { subjectKey } from './subject-key'
-import { renderPatternSvgString } from '@/components/studio/chart/render-svg-string'
-import { stitchedBoundingBox } from '@/components/studio/chart/render-helpers'
+import { renderBeautyThumbnail, THUMB_TARGET } from './beauty-thumbnail'
+import { bareFabricVerdict, clearBackground, fullCoverageByIntent } from './bare-fabric'
 import {
   buildPrompt,
   SRC_SAT,
@@ -40,7 +40,6 @@ import type { CrossStitchBrief } from './planner'
  * publish — nothing here ships un-judged.
  */
 
-const THUMB_TARGET = 1000
 const CROSS_STITCH_CATEGORY = 'cross-stitch'
 
 export interface CrossStitchCandidate {
@@ -63,6 +62,9 @@ export interface CrossStitchCandidate {
   credit: string
   /** The colour ceiling actually asked of the converter (after any gate tweak). */
   requestedColours: number
+  /** What the bare-fabric rule did to this chart, if anything. Recorded on the
+   *  published row so the decision is auditable without re-deriving it. */
+  backgroundCleared?: { removed: number; droppedSymbols: string[]; reason: string }
 }
 
 function imageSizeFor(w: number, h: number): 'square_hd' | 'portrait_4_3' | 'landscape_4_3' {
@@ -124,19 +126,42 @@ export async function generateCrossStitchCandidate(
   })
   data.fabric.colourRgb = FABRIC
 
-  const renderPng = await renderThumbnail(data, brief.sat != null ? 1 : POST_SAT)
+  // BARE FABRIC — the ground is the cloth, not white floss. Flux is prompted for
+  // a "clean white background" in most lanes and the quantiser dutifully assigns
+  // a floss to every pixel of it; left alone that ships charts that are two
+  // thirds white-on-white stitching. Cleared HERE, before the thumbnail is
+  // rendered and therefore before the vividness guard and the vision gate see
+  // anything — they judge the piece that would actually ship. Full-coverage work
+  // (the dense lane, and large scenes / showpieces / landscapes) is exempt: its
+  // background IS the design.
+  const bare = bareFabricVerdict(data, {
+    fullCoverageByIntent: fullCoverageByIntent({ lane: brief.lane, style: brief.style }),
+  })
+  let shipped = data
+  let cleared: CrossStitchCandidate['backgroundCleared']
+  if (bare.convert) {
+    const out = clearBackground(data)
+    if (out.removed > 0) {
+      shipped = out.data
+      cleared = { removed: out.removed, droppedSymbols: out.droppedSymbols, reason: bare.reason }
+    }
+  }
+  const shippedMetrics = cleared ? computePatternMetrics(shipped) : metrics
+
+  const renderPng = await renderBeautyThumbnail(shipped, brief.sat != null ? 1 : POST_SAT)
   return {
-    data,
+    data: shipped,
     renderPng,
-    colourCount: metrics.colourCount,
-    widthCells: metrics.widthCells,
-    heightCells: metrics.heightCells,
+    colourCount: shippedMetrics.colourCount,
+    widthCells: shippedMetrics.widthCells,
+    heightCells: shippedMetrics.heightCells,
     sourceSha256,
     pro: dense,
     model: dense ? 'flux-1.1-pro' : 'flux-schnell',
     imageSize,
     credit: generated.credit,
     requestedColours: colours,
+    ...(cleared ? { backgroundCleared: cleared } : {}),
   }
 }
 
@@ -148,36 +173,6 @@ export async function generateCrossStitchCandidate(
 export function candidateIsPro(brief: CrossStitchBrief, tweak: CandidateTweak = {}): boolean {
   const colours = Math.max(6, Math.min(160, brief.colours + (tweak.colourDelta ?? 0)))
   return colours > DENSE_COLOUR_THRESHOLD
-}
-
-/** The beauty thumbnail — bbox-cropped, responsive cell size, post-saturated. */
-async function renderThumbnail(data: PatternData, postSat: number): Promise<Buffer> {
-  const bbox = stitchedBoundingBox(data)
-  const mg = 2
-  const region = bbox
-    ? {
-        x: Math.max(0, bbox.minX - mg),
-        y: Math.max(0, bbox.minY - mg),
-        width: Math.min(data.grid.width, bbox.maxX + 1 + mg) - Math.max(0, bbox.minX - mg),
-        height: Math.min(data.grid.height, bbox.maxY + 1 + mg) - Math.max(0, bbox.minY - mg),
-      }
-    : undefined
-  const rw = region?.width ?? data.grid.width
-  const cellPx = rw <= 70 ? 26 : rw <= 130 ? 16 : 10
-  const svg = renderPatternSvgString(data, {
-    mode: 'beauty',
-    cellPx,
-    showSymbols: false,
-    showGrid: false,
-    showCentreCrosshairs: false,
-    padding: Math.round(cellPx * 0.8),
-    region,
-  })
-  return sharp(Buffer.from(svg))
-    .modulate({ saturation: postSat })
-    .resize(THUMB_TARGET, THUMB_TARGET, { fit: 'inside' })
-    .png({ quality: 90 })
-    .toBuffer()
 }
 
 export interface PublishedGem {
@@ -322,6 +317,7 @@ export async function publishCrossStitchGem(
       pro: candidate.pro,
       attempt: ctx?.attempt ?? 1,
       tweak: ctx?.tweak ?? {},
+      ...(candidate.backgroundCleared ? { backgroundCleared: candidate.backgroundCleared } : {}),
       gate: { verdict: ctx?.gate.verdict ?? 'keep', reasons: ctx?.gate.reasons ?? [] },
       bulkRunId: ctx?.bulkRunId ?? null,
       credit: candidate.credit,

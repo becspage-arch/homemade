@@ -374,7 +374,12 @@ function linearise(c: number): number {
   return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4)
 }
 
-function rgbToLab(r: number, g: number, b: number): [number, number, number] {
+/**
+ * sRGB -> CIELAB (D65), 0-100 lightness with a/b in the usual -128..127 range.
+ * Exported because the bare-fabric background rule needs the same perceptual
+ * lightness + chroma test this table already uses to pick nearest colours.
+ */
+export function rgbToLab(r: number, g: number, b: number): [number, number, number] {
   const rl = linearise(r) * 100
   const gl = linearise(g) * 100
   const bl = linearise(b) * 100

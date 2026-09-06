@@ -105,3 +105,7 @@ packages/db/scripts/__*.ts
 
 # Service-account keys and other local secrets (never commit)
 .secrets/
+
+# Session scratch — scan JSON, contact sheets, before/after renders. Written by
+# the ops scripts under apps/web/scripts; never committed.
+scratchpad/
