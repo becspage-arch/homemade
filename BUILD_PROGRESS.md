@@ -37,19 +37,18 @@ routine on that rule.
 
 **Cross-stitch orchestrator (started 2026-09-05).** Owns the cross-stitch
 catalogue, `apps/web/src/lib/studio/generation/**` (planner, subject pool,
-dedupe guard, similarity, vision gate, categories registry), the
-bulk-generation Inngest jobs (`apps/web/src/inngest/functions/bulk-generation.ts`)
-and admin page (`apps/web/src/app/admin/system/bulk-generation/`), the
-cross-stitch public pages and shelves/SEO, `packages/search` (the proxy-aware
-client), and the `Pattern` fingerprint columns + `BulkRun` finaliser columns.
-Done today: duplicate scan (85 clusters), 87 duplicates + 14 vision fails
-culled to PRIVATE (reversible, reason on `qcBlockReason`), fragment shelves
-merged, per-shelf targets (category target = their sum), mechanical dedupe
-guard in the publish path, run finaliser + Sentry/admin alerts, daily Fal cap,
-SEO images, shelf descriptions. In flight: proof batch on the server, then the
-cron switched on and watched for three firings, then fill to target, then the
-close-out (completeness gates, vision sweep of the new work, reindex,
-sitemap/structured data) and the per-category autopilot note.
+dedupe guard, similarity, vision gate, outline, fractionals, categories
+registry), the bulk-generation Inngest jobs
+(`apps/web/src/inngest/functions/bulk-generation.ts`) and admin page, the
+cross-stitch public pages and shelves/SEO, the Studio floss key and parking,
+the site-wide maker-photo system (`claude/maker-photos`, held for the loom
+session's word on collisions), `packages/search` (the proxy-aware client), and
+the `Pattern` fingerprint/outline/stitchability columns + `BulkRun` finaliser
+columns. Full state in `notes/project/project_cross_stitch_state.md`; the
+ordered list in `notes/todo.md`. The cron is OFF until the zero-API
+candidates conversion (`claude/xs-candidates`) lands; then a proof batch, the
+6-hourly cloud routine, the cron back on, needlework converted the same way,
+the personalised sampler job, fill to 1,784, close-out.
 
 ## Crochet bulk autopilot, on the server (2026-09-06)
 
@@ -172,10 +171,33 @@ in the market; we trailed on print quality, credibility and beginner entry):
 - **Ops**: `xs-run-review.ts` builds the weekly judging pack; a Monday cloud
   routine ("Homemade - Cross-stitch weekly judging") looks at the week's gems,
   culls fails and reports.
-- Queued, agreed with Rebecca: back-stitch/French knots/fractionals in the
-  generator (then loom photoreal heroes, then the 200+ colour / under-60 cell
-  tiers), parking in the browser, stash-on-card, the first-stitch journey.
-  No community features, ever.
+- **Back-stitch outlines** (`bulk/outline.ts`): silhouette and region edges
+  chained into stitchable lines in a dark palette floss, guarded by region
+  size, colour distance, smoothness, a perimeter-scaled length cap and a
+  fragment floor; lane picks full / silhouette / none (dense, showpiece,
+  monochrome and line-work charts are left alone). Backfilled 434 of 1,185
+  house charts in one transaction each (reversible via
+  `Pattern.outlineApplied`). French knots (`french-knots.ts`) are wired but
+  fire only on `confettiMin: 'low'` work, since the converter's confetti pass
+  removes every lone stitch first. Back-stitch counts in cells of line in the
+  skein estimate, PDF key and Studio key; knots print with a pale ring.
+- **Fractional stitches** (`grid.fractional`, `fractionals.ts`): quarter and
+  three-quarter stitches share the corner cell of a colour staircase (never
+  against bare fabric), capped at 3% of stitches, drawn in beauty, working
+  chart, print and the editor with undo and a layer toggle. Pipeline pass, no
+  backfill yet.
+- **Studio**: floss key shows what the stitcher owns from their stash;
+  parking (pin a colour, "next up") with `progress` columns; the first-stitch
+  journey (slim cookie bar that stays dismissed, sign-in returns to the page
+  and finishes the add-to-plan, tap tooltips, one "Difficulty and stitching"
+  row, beginner link under the Stitch button with a way back, crafts at the
+  top of the mobile menu).
+- **Shelves**: small-makes 60, christmas 80, coastal 60, folk-geometric 60
+  added; seasonal 90→40; target 1,784. Admin category counts count patterns
+  for pattern-led crafts.
+- Queued, agreed with Rebecca: loom photoreal heroes, the 200+ colour /
+  400+ cell and under-60 cell tiers, readings wired to the glossary, the
+  personalised sampler. No community features, ever.
 
 ## Cross-stitch: audit, dedupe, and the self-running cloud autopilot (2026-09-05/06)
 
