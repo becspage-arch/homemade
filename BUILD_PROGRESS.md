@@ -24,11 +24,14 @@ ground, hero scale rule), the crochet Studio "Design your own", the async
 Fargate render path, the real bulk path proven end to end and judged on the
 served images (seven sign-off heroes plus four autopilot keepers, all on the
 white ground), the crochet bulk autopilot built with its cron OFF. In flight:
-look-pass round 7 (stuffing pressure, `claude/loom-stuffing`, done, waiting on
-round 8) and round 8 (sphere-derived count profile for round parts,
-`claude/loom-sphere-counts`); then the train, a re-render of the round
-sign-off rows, the first judged server run of the crochet autopilot, category
-go-live, knitting. Standing rule for every category (Rebecca, 2026-09-06): model work on her
+look-pass rounds 7 and 8 done and on main (stuffing pressure, sphere-shaped
+increase recipe; the bear reads as a stuffed toy), the crochet autopilot
+rebuilt as a session-driven routine (docs/autopilot-prompts/crochet.md, cost
+estimator, API lane removed), the curated idea backlog and market audit
+(targets proposal awaiting Rebecca). Next: re-render the round sign-off rows,
+budget, first judged routine batch, category go-live. Knitting paused for
+credits (see notes/project_knitting_state.md).
+Standing rule for every category (Rebecca, 2026-09-06): model work on her
 Claude Max plan in cloud sessions and routines, deterministic stages on the
 server or in scripts, never the laptop, never per-token API calls except the
 maker-photo check; a budget and a fill-cost estimate before any autopilot is
