@@ -22,7 +22,16 @@ import { shelfDeficits, allocateShelves, shelfSlots, allShelvesAtTarget } from '
 import { measureVividness, vividnessVerdict, MIN_INK, MIN_CHROMA } from './vividness'
 import { findDuplicate, type CatalogueEntry, type CandidateFingerprints } from './duplicate-match'
 import { applyWarmFurGuard, WARM_FUR_SAT, type WarmFurBrief } from './brief-rules'
-import { runIsComplete } from './run-status'
+import { runIsComplete, summaryLine } from './run-status'
+import {
+  propReject,
+  headNouns,
+  briefsCollide,
+  postFilterBriefs,
+  countRejects,
+  BATCH_JACCARD_COLLISION,
+  SMALL_LANE_WORD_LIMIT,
+} from './brief-filter'
 import type { ShelfTarget } from '../categories'
 
 type PassFail = { name: string; passed: boolean; detail?: string }
@@ -490,6 +499,152 @@ record('runIsComplete: a skipped-everything run is complete', () => {
 
 record('runIsComplete: a zero-idea run (spend cap) is complete on sight', () => {
   assert.equal(runIsComplete(counters({ requested: 0 })), true)
+})
+
+// ─── the brief post-filter: props ──────────────────────────────────────────
+//
+// Calibrated on batch 5 (September 2026), the run that made this filter
+// necessary: ten model-authored briefs, two gems, and five of the eight kills
+// were the same failure — a small prop hung off the subject that Flux rendered
+// as a smudge. Every "must reject" subject below is verbatim from that batch.
+
+const pb = (subject: string, lane = 'medium', shelf = 'animals') => ({
+  subject,
+  lane,
+  shelf,
+  subjectKey: subjectKey(subject),
+})
+
+record('propReject: a clean single-subject brief passes', () => {
+  assert.equal(propReject(pb('a crooked candy shop front, striped awning, boiled-sweet palette', 'dense')), null)
+  assert.equal(propReject(pb('a great horned owl in flight across a full moon')), null)
+  assert.equal(propReject(pb('a fox in a mustard-yellow raincoat')), null)
+})
+
+record('propReject: diminutives are binary rejects', () => {
+  for (const s of ['a hermit crab in a tiny shell', 'a little mouse in a teacup', 'a miniature lighthouse']) {
+    assert.notEqual(propReject(pb(s)), null, s)
+  }
+})
+
+record('propReject: the batch-5 prop clauses all reject', () => {
+  const props = [
+    'a scarlet hermit crab wearing a sailor\'s spyglass shell',
+    'a tall flaming tiki mug topped with pineapple wedge',
+    'a golden sun ringed by a swirl of orbiting stars',
+    'a single tall gladiolus spire in coral and gold',
+    'a barn owl perched on a mossy fencepost',
+    'a dragonfly resting near the top of a spike of blooms',
+    'a badger holding a lantern',
+    'a squirrel carrying a bundle of acorns',
+    'a toadstool dotted with cream spots',
+    'a black cat beside a candlestick',
+    'a robin peeking from a hedgerow',
+    'a stag with a crown of antlers',
+  ]
+  for (const s of props) assert.notEqual(propReject(pb(s)), null, s)
+})
+
+record('propReject: "inside a" is allowed only where there are cells for two shapes', () => {
+  const s = 'a baby fox cub curled asleep inside a hot air balloon basket'
+  assert.equal(propReject(pb(s, 'large')), null)
+  assert.equal(propReject(pb(s, 'dense')), null)
+  assert.notEqual(propReject(pb(s, 'medium')), null)
+})
+
+record('propReject: the mini/small lanes take ONE noun phrase and nothing else', () => {
+  // Over the word limit.
+  const long = 'a scarlet hermit crab peeking from a striped conch shell on golden sand'
+  assert.ok(long.split(/\s+/).length > SMALL_LANE_WORD_LIMIT)
+  assert.notEqual(propReject(pb(long, 'mini')), null)
+  // Under the limit but two phrases.
+  assert.notEqual(propReject(pb('a red squirrel and a pinecone', 'small')), null)
+  assert.notEqual(propReject(pb('a bee beside a foxglove', 'small')), null)
+  // Clean, short, one phrase.
+  assert.equal(propReject(pb('a plump bluebird on emerald green', 'mini')), null)
+  // The same two-phrase subject is fine in a lane with the cells for it.
+  assert.equal(propReject(pb('a red squirrel and a pinecone', 'large')), null)
+})
+
+// ─── the brief post-filter: within-batch collisions ────────────────────────
+
+record('headNouns: reads the head of the leading noun phrase', () => {
+  assert.deepEqual(headNouns('a single tall gladiolus spire in coral and gold with dragonflies'), ['gladiolus', 'spire'])
+  assert.deepEqual(headNouns('a tall spike of magenta gladiolus blooms with a single dragonfly'), ['gladiolus', 'bloom'])
+  assert.deepEqual(headNouns('a scarlet hermit crab wearing a spyglass shell'), ['hermit', 'crab'])
+  assert.deepEqual(headNouns('a hermit crab marching along a bright coral seabed'), ['hermit', 'crab'])
+  assert.deepEqual(headNouns('a tall frosted pina colada in a pineapple shell'), ['pina', 'colada'])
+  assert.deepEqual(headNouns('a tall flaming tiki mug topped with pineapple wedge'), ['tiki', 'mug'])
+  // A hyphenated "-ed" opener must not truncate the phrase to nothing.
+  assert.deepEqual(headNouns('a round-cheeked baby fox cub curled asleep'), ['fox', 'cub'])
+})
+
+record('briefsCollide: the two batch-5 gladiolus briefs collide', () => {
+  const a = pb('a single tall gladiolus spire in coral and gold with dragonflies resting along its blooms', 'medium', 'floral')
+  const b = pb('a tall spike of magenta gladiolus blooms with a single dragonfly resting near the top', 'medium', 'floral')
+  assert.notEqual(briefsCollide(b, a), null)
+  // …and on token overlap alone, which is what the 0.6 catalogue threshold missed.
+  assert.ok(subjectJaccard(a.subject, b.subject) >= BATCH_JACCARD_COLLISION)
+  assert.ok(subjectJaccard(a.subject, b.subject) < SUBJECT_JACCARD_MATCH)
+})
+
+record('briefsCollide: the two batch-5 hermit crabs collide on the head noun', () => {
+  const a = pb("a scarlet hermit crab wearing a tiny sailor's spyglass shell, peeking from a striped conch on golden sand", 'mini', 'animals')
+  const b = pb('a hermit crab wearing a tiny snail-shell castle turret on its back, marching along a bright coral seabed', 'large', 'animals')
+  // Token overlap alone would NOT catch these — the head noun is what does.
+  assert.ok(subjectJaccard(a.subject, b.subject) < BATCH_JACCARD_COLLISION)
+  assert.notEqual(briefsCollide(b, a), null)
+})
+
+record('briefsCollide: the two batch-5 cocktails do NOT collide', () => {
+  // Deliberately: "tiki mug" and "pina colada" are different drinks, and there
+  // is no shelf-level synonym list. Two cocktails in a batch is a range, not a
+  // repeat.
+  const a = pb('a tall flaming tiki mug topped with pineapple wedge and paper umbrella, set on a bar of glowing hibiscus petals', 'small', 'cocktails')
+  const b = pb('a tall frosted pina colada in a pineapple shell with a paper umbrella and striped straw', 'small', 'cocktails')
+  assert.equal(briefsCollide(b, a), null)
+})
+
+record('briefsCollide: different shelves never collide', () => {
+  const a = pb('a hermit crab on golden sand', 'medium', 'animals')
+  const b = pb('a hermit crab on golden sand', 'medium', 'coastal')
+  assert.equal(briefsCollide(b, a), null)
+})
+
+record('postFilterBriefs: props first, then collisions, later brief dropped', () => {
+  const batch = [
+    pb('a great horned owl in flight across a full moon', 'medium', 'celestial'),
+    pb('a barn owl in flight across a harvest moon', 'medium', 'celestial'),
+    pb('a badger holding a lantern', 'medium', 'animals'),
+  ]
+  const { kept, rejects } = postFilterBriefs(batch)
+  assert.equal(kept.length, 1)
+  assert.equal(kept[0]!.subject, batch[0]!.subject) // the EARLIER of the pair survives
+  assert.deepEqual(countRejects(rejects), { props: 1, collisions: 1 })
+})
+
+record('postFilterBriefs: a prior chunk is checked against but never re-filtered', () => {
+  const prior = [pb('a badger holding a lantern', 'medium', 'animals')] // would fail the prop filter
+  const { kept, rejects } = postFilterBriefs([pb('a badger in a woodland hollow', 'medium', 'animals')], prior)
+  assert.equal(kept.length, 0)
+  assert.equal(rejects[0]!.kind, 'collision')
+})
+
+record('postFilterBriefs: props:false leaves the curated pool register alone', () => {
+  // The sampler's fallback examples are written in exactly the register the prop
+  // filter rejects; filtering them out would turn a slow model call into an
+  // empty batch.
+  const pool = [pb('a fox in a mustard raincoat holding a lantern and a treasure map', 'large', 'animals')]
+  assert.equal(postFilterBriefs(pool, [], { props: false }).kept.length, 1)
+  assert.equal(postFilterBriefs(pool).kept.length, 0)
+})
+
+record('summaryLine: names the post-filter\'s work when it did any', () => {
+  const base = { craft: 'cross-stitch', requested: 10, published: 2, culled: 8, duplicates: 0, skipped: 0, errors: 0, repaired: 4, generations: 36 }
+  assert.ok(!summaryLine(base).includes('rejected for props'))
+  const line = summaryLine({ ...base, propRejects: 8, collisionRejects: 2 })
+  assert.ok(line.includes('8 briefs rejected for props'), line)
+  assert.ok(line.includes('2 rejected as within-batch repeats'), line)
 })
 
 // ─── Report ────────────────────────────────────────────────────────────────

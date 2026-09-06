@@ -4,6 +4,7 @@ import { STYLE, type StyleKey } from './cross-stitch-style'
 import { subjectKey as normaliseSubject, findSubjectKeyMatch } from './subject-key'
 import { CROSS_STITCH_SHELF_BY_SLUG } from '../categories'
 import { applyWarmFurGuard } from './brief-rules'
+import { postFilterBriefs, countRejects, type BriefReject } from './brief-filter'
 import {
   CROSS_STITCH_THEMES,
   CROSS_STITCH_SIZE_LANES,
@@ -129,7 +130,9 @@ function uniqueSuffix(): string {
  */
 const XS_SYSTEM = `You are the creative director for Homemade's cross-stitch catalogue, aiming to be the best collection in the world. You choose WHAT to make; an illustrator and a ruthless quality gate handle HOW.
 
-THE BAR — beautiful OR genuinely fun, with a hook. Rich jewel-tone fantasy, moody botanicals, art-nouveau florals, celestial and moon-phase pieces, gothic-elegant, cottagecore, witchy apothecary, goblincore. Or characterful: animals doing human things with real personality and props, witty wordless visual gags, kawaii-with-attitude. Give the subject a STORY, not just "an animal" — e.g. "a fox in a mustard raincoat reading a treasure map by lantern light", "a celestial black cat curled inside a crescent moon among moths".
+THE BAR — beautiful OR genuinely fun, with a hook. Rich jewel-tone fantasy, moody botanicals, art-nouveau florals, celestial and moon-phase pieces, gothic-elegant, cottagecore, witchy apothecary, goblincore. Or characterful: an animal with real personality, a witty wordless visual gag, kawaii-with-attitude. The hook goes in the SUBJECT ITSELF and its palette — e.g. "a fox in a mustard-yellow raincoat", "a celestial black cat curled into a crescent moon" — never in a second little thing added alongside it.
+
+Write the subject as ONE noun phrase: what it is, its pose or setting, its palette. Nothing it holds, wears or is beside.
 
 Generic filler FAILS: a plain basket of fruit, a bare wreath, "a [breed] portrait" — unless elevated with a distinctive hook, character or twist. If it sounds like every other Etsy chart, rewrite it.
 
@@ -185,7 +188,7 @@ function themesForShelves(shelves: string[] | undefined): CrossStitchTheme[] {
   return subset.length ? subset : PLANNABLE_THEMES
 }
 
-function xsPromptText(count: number, ctx: XsPlanContext): string {
+function xsPromptText(count: number, ctx: XsPlanContext, banned: string[] = []): string {
   const shelves = ctx.shelfSlots?.length ? [...new Set(ctx.shelfSlots)] : undefined
   const themes = themesForShelves(shelves)
     .map(
@@ -208,6 +211,11 @@ function xsPromptText(count: number, ctx: XsPlanContext): string {
   const avoid = shown.length
     ? `\nTHE CATALOGUE ALREADY HAS THESE SUBJECTS — do not repeat any of them, and do not submit a re-wording of one. One per line:\n${shown.join('\n')}\n${more > 0 ? `(…and ${more} more older subjects. Anything that repeats one of those is rejected too, so reach for genuinely new ideas rather than safe ones.)\n` : ''}`
     : ''
+  // The retry round after the post-filter: name what was just thrown out, and
+  // why, so the second attempt is not a re-roll of the same mistake.
+  const rejected = banned.length
+    ? `\nTHESE BRIEFS WERE JUST REJECTED — do not write these, and no props at all:\n${banned.slice(0, 20).map((b) => `- ${b}`).join('\n')}\n`
+    : ''
   return `Compose ${count} cross-stitch briefs as a JSON array. Each: {"themeId","subject","style","sizeLane","w","h","colours"} and optional "sat" (0.9–1.1, only for portraits with skin).
 
 ${quota}THEMES (use themeId + one of its styles + its shelf):
@@ -221,7 +229,8 @@ ${dense}
 - style: one style key from the chosen theme's list.
 - w/h: cells for the size lane; make tall subjects tall, wide subjects wide, wreaths square.
 - colours: within the size lane's range.
-${avoid}
+- subject: ONE noun phrase. No "with a …", no "wearing/holding/carrying a …", no "topped with", no "beside a", no "tiny/little/single". In the mini and small lanes: at most 12 words, and no "with", "and" or "beside" at all.
+${avoid}${rejected}
 Return ONLY the JSON array of ${count} briefs.`
 }
 
@@ -514,11 +523,56 @@ function makeTaken(avoid: Set<string>, batch: Set<string>): (key: string) => boo
   }
 }
 
+/** One planner chunk: the briefs that survived, and everything the filter threw out. */
+export interface PlanChunk {
+  briefs: CrossStitchBrief[]
+  /** Subjects the post-filter rejected, with the reason — shown to the retry call. */
+  rejects: { subject: string; kind: 'prop' | 'collision'; reason: string }[]
+}
+
+/** The counters a run records for the post-filter's work. */
+export interface RejectCounts {
+  propRejects: number
+  collisionRejects: number
+}
+
+/** Fold a chunk's rejects into the run counters. */
+export function tallyRejects(chunks: PlanChunk[]): RejectCounts {
+  const all = chunks.flatMap((c) => c.rejects)
+  return {
+    propRejects: all.filter((r) => r.kind === 'prop').length,
+    collisionRejects: all.filter((r) => r.kind === 'collision').length,
+  }
+}
+
+/** The reject lines the retry call is shown ("do not write these"). */
+export function rejectedSubjects(chunks: PlanChunk[]): string[] {
+  return chunks.flatMap((c) => c.rejects).map((r) => `${r.subject} — ${r.reason}`)
+}
+
+/**
+ * The shelf slots a batch still owes, after the briefs it already has.
+ *
+ * The retry round asks for the MISSING count, and it should ask for it on the
+ * shelves the rejected briefs were meant to serve — otherwise a batch that lost
+ * both its `cocktails` briefs to the prop filter comes back with two more
+ * `animals`, and the shelf quota quietly stops meaning anything.
+ */
+export function remainingShelfSlots(ctx: XsPlanContext, have: CrossStitchBrief[]): string[] {
+  const slots = ctx.shelfSlots?.length ? [...ctx.shelfSlots] : []
+  if (!slots.length) return []
+  for (const b of have) {
+    const i = slots.indexOf(b.shelf)
+    if (i >= 0) slots.splice(i, 1)
+  }
+  return slots
+}
+
 /**
  * ONE model call: ask for `count` briefs and keep the ones that are not already
- * in the catalogue or in `alreadyPicked`. Returns model-authored briefs only,
- * possibly fewer than asked for (or none, if the call fails or times out) —
- * `finaliseBriefs` fills any gap from the pool.
+ * in the catalogue, not already this batch's, and not thrown out by the
+ * post-filter (props, within-batch collisions). Returns model-authored briefs
+ * only, possibly fewer than asked for — or none, if the call fails or times out.
  *
  * Its own function so the dispatcher can run each chunk as a separate Inngest
  * step, and so a slow or failed chunk costs only that chunk.
@@ -526,24 +580,25 @@ function makeTaken(avoid: Set<string>, batch: Set<string>): (key: string) => boo
 export async function planModelBriefs(
   count: number,
   ctx: XsPlanContext = {},
-  alreadyPicked: string[] = [],
-): Promise<CrossStitchBrief[]> {
-  if (count <= 0 || !anthropicConfigured()) return []
+  alreadyPicked: CrossStitchBrief[] = [],
+  banned: string[] = [],
+): Promise<PlanChunk> {
+  if (count <= 0 || !anthropicConfigured()) return { briefs: [], rejects: [] }
 
   const seen = new Set<string>()
   const avoid = new Set((ctx.avoidSubjectKeys ?? []).filter(Boolean))
-  const batchKeys = new Set(alreadyPicked.filter(Boolean))
+  const batchKeys = new Set(alreadyPicked.map((b) => b.subjectKey).filter(Boolean))
   const taken = makeTaken(avoid, batchKeys)
   const allowed = themesForShelves(ctx.shelfSlots?.length ? [...new Set(ctx.shelfSlots)] : undefined)
 
-  const out: CrossStitchBrief[] = []
-  let rejected = 0
+  const candidates: CrossStitchBrief[] = []
+  let duplicates = 0
   try {
     const raw = await withTimeout(
       anthropicJson<RawXsBrief[]>({
         model: PLANNER_MODEL,
         system: XS_SYSTEM,
-        prompt: xsPromptText(count, ctx),
+        prompt: xsPromptText(count, ctx, banned),
         maxTokens: 1600,
         retries: PLANNER_RETRIES,
       }),
@@ -554,12 +609,12 @@ export async function planModelBriefs(
       const b = coerceXsBrief(r, seen, allowed)
       if (!b) continue
       if (taken(b.subjectKey)) {
-        rejected++
+        duplicates++
         continue
       }
       batchKeys.add(b.subjectKey)
-      out.push(b)
-      if (out.length >= count) break
+      candidates.push(b)
+      if (candidates.length >= count) break
     }
   } catch (err) {
     // A slow or failed model call must not take the batch with it — the caller
@@ -568,16 +623,37 @@ export async function planModelBriefs(
       `[bulk cross-stitch planner] model briefs unavailable, the pool will fill in: ${err instanceof Error ? err.message : String(err)}`,
     )
   }
-  if (rejected > 0) {
-    console.warn(`[bulk cross-stitch planner] rejected ${rejected} model brief(s) as duplicates of the live catalogue`)
+  if (duplicates > 0) {
+    console.warn(`[bulk cross-stitch planner] rejected ${duplicates} model brief(s) as duplicates of the live catalogue`)
   }
-  return out
+
+  // The post-filter. Props and within-batch collisions are both binary, and both
+  // are cheaper to catch here than after a Flux generation and a gate call.
+  const { kept, rejects } = postFilterBriefs(candidates, alreadyPicked)
+  const counts = countRejects(rejects)
+  if (counts.props || counts.collisions) {
+    console.warn(
+      `[bulk cross-stitch planner] post-filter dropped ${counts.props} brief(s) for props and ${counts.collisions} for within-batch collision`,
+    )
+    for (const r of rejects) console.warn(`[bulk cross-stitch planner]   ✕ "${r.brief.subject}" — ${r.reason}`)
+  }
+  return {
+    briefs: kept,
+    rejects: rejects.map((r: BriefReject<CrossStitchBrief>) => ({ subject: r.brief.subject, kind: r.kind, reason: r.reason })),
+  }
 }
 
 /**
  * Bring a partial set up to `count` from the curated pool and hold the whole
  * batch to the size range. Sampled briefs are marked `source: 'sampler'`, so the
  * run records how much of the batch the model actually wrote.
+ *
+ * The collision rule runs here too, over the WHOLE assembled batch — model
+ * briefs and sampled ones together — because a sampled top-up can land on the
+ * same idea as a model brief just as easily as two model briefs can. The PROP
+ * filter deliberately does not: the curated pool examples are written in exactly
+ * the "a fox in a mustard raincoat" register it rejects, and filtering the
+ * fallback to nothing would turn a slow Anthropic call into an empty batch.
  */
 export function finaliseBriefs(modelBriefs: CrossStitchBrief[], count: number, ctx: XsPlanContext = {}): CrossStitchBrief[] {
   const avoid = new Set((ctx.avoidSubjectKeys ?? []).filter(Boolean))
@@ -586,6 +662,7 @@ export function finaliseBriefs(modelBriefs: CrossStitchBrief[], count: number, c
   const out: CrossStitchBrief[] = []
   for (const b of modelBriefs) {
     if (batchKeys.has(b.subjectKey) || seen.has(b.slug)) continue
+    if (postFilterBriefs([b], out, { props: false }).kept.length === 0) continue
     batchKeys.add(b.subjectKey)
     seen.add(b.slug)
     out.push(b)
@@ -596,11 +673,7 @@ export function finaliseBriefs(modelBriefs: CrossStitchBrief[], count: number, c
   // Top up, favouring the shelves this batch still owes. The sampler NEVER
   // copies an example the catalogue already has: it varies a base with a hook
   // from another example of the same theme, and moves on when a theme is spent.
-  const wantedSlots = ctx.shelfSlots?.length ? [...ctx.shelfSlots] : []
-  for (const b of out) {
-    const i = wantedSlots.indexOf(b.shelf)
-    if (i >= 0) wantedSlots.splice(i, 1)
-  }
+  const wantedSlots = remainingShelfSlots(ctx, out)
   const allowed = themesForShelves(ctx.shelfSlots?.length ? [...new Set(ctx.shelfSlots)] : undefined)
   const exhausted = new Set<string>()
   let guard = 0
@@ -614,6 +687,9 @@ export function finaliseBriefs(modelBriefs: CrossStitchBrief[], count: number, c
       exhausted.add(theme.id)
       continue
     }
+    // A sampled brief that repeats a brief already in this batch is dropped and
+    // the loop tries again — the guard bounds it, so a spent theme cannot spin.
+    if (postFilterBriefs([b], out, { props: false }).kept.length === 0) continue
     batchKeys.add(b.subjectKey)
     out.push(b)
   }
@@ -633,18 +709,32 @@ export function modelAuthoredCount(briefs: CrossStitchBrief[]): number {
  *
  * Every brief that comes back is guaranteed to be (a) on a shelf that still
  * wants patterns, (b) not the same idea as anything already in the catalogue,
- * (c) not the same idea as another brief in this batch, and (d) part of a set
- * that spans the size range. The publish-path guard re-checks (b) against the
- * live catalogue at publish time — this is the cheap first line, not the only one.
+ * (c) not the same idea as another brief in this batch, (d) free of the props
+ * Flux cannot render, and (e) part of a set that spans the size range. The
+ * publish-path guard re-checks (b) against the live catalogue at publish time —
+ * this is the cheap first line, not the only one.
  */
-export async function planCrossStitchBriefs(count: number, ctx: XsPlanContext = {}): Promise<CrossStitchBrief[]> {
+export async function planCrossStitchBriefs(
+  count: number,
+  ctx: XsPlanContext = {},
+): Promise<{ briefs: CrossStitchBrief[] } & RejectCounts> {
+  const chunks: PlanChunk[] = []
   const briefs: CrossStitchBrief[] = []
   for (let taken = 0; taken < count; taken += MODEL_CHUNK) {
     const want = Math.min(MODEL_CHUNK, count - taken)
-    const chunk = await planModelBriefs(want, ctx, briefs.map((b) => b.subjectKey))
-    briefs.push(...chunk)
+    const chunk = await planModelBriefs(want, ctx, briefs)
+    chunks.push(chunk)
+    briefs.push(...chunk.briefs)
   }
-  return finaliseBriefs(briefs, count, ctx)
+  // ONE retry for whatever the post-filter took out, on the shelves that lost
+  // it, naming the rejected subjects. Then — and only then — the pool sampler.
+  if (briefs.length < count) {
+    const retryCtx: XsPlanContext = { ...ctx, shelfSlots: remainingShelfSlots(ctx, briefs) }
+    const retry = await planModelBriefs(count - briefs.length, retryCtx, briefs, rejectedSubjects(chunks))
+    chunks.push(retry)
+    briefs.push(...retry.briefs)
+  }
+  return { briefs: finaliseBriefs(briefs, count, ctx), ...tallyRejects(chunks) }
 }
 
 // ─────────────────────────── NEEDLEWORK ───────────────────────────
