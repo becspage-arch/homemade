@@ -24,6 +24,14 @@ from mathutils import Matrix
 # Loom millimetres -> Blender units (1 unit = 1 cm).
 S = 0.1
 
+# How many times brighter than its own albedo the backdrop shades for camera
+# rays — the "blown-out paper sweep" of a product photo. Picked off a measured
+# Fargate ramp against the reference photos' corner luminance (237-245 of 255):
+# x1 = 179/176, x4 = 223/221, x8 = 237/236, x10 = the middle of the band,
+# x12 = 244/243, x16 = 248/247 (coaster / bear). See surface_material() and
+# STITCH_ENGINE §8e-2 Part C.
+GROUND_WHITE_BOOST = 10.0
+
 
 def argv_after_dashes():
     a = sys.argv
@@ -148,18 +156,37 @@ def build_yarn(strokes, drape=None, z_offset=0.0):
 def prop_material(hexcol, gloss):
     """A moulded plastic NOTION — a safety eye, a plastic nose. Not yarn and not
     pretending to be: hard, smooth, glossy, the way the haberdashery part in a
-    real amigurumi pattern's notions list actually looks against wool."""
+    real amigurumi pattern's notions list actually looks against wool.
+
+    `gloss` used to drive roughness, specular level AND coat weight off the one
+    number, which put a near-mirror clearcoat (weight up to 1.0 at roughness
+    0.04) and a specular level far above any real plastic on a BLACK eye. A
+    curved black sphere wearing a mirror reflects whatever is around it, so
+    against a bright backdrop the eyes rendered as mid-grey marbles instead of
+    black eyes — and the brighter the ground got, the greyer they went.
+
+    Decoupled: `gloss` now only tightens the HIGHLIGHT. Specular sits at the
+    dielectric default (0.5 = IOR 1.5, the ~4% face-on reflection real plastic
+    has), and the coat is a thin sheen rather than a mirror, so a near-black
+    prop stays near-black and catches one small bright highlight plus a faint
+    rim. A glossy eye (gloss ~0.6-0.85) reads as wet-look plastic; a lower
+    gloss (the nose, ~0.4) reads as black satin.
+
+    The eye's reflection is a glossy ray, and the ground's white-sweep boost is
+    camera-ray-only (surface_material), so the backdrop the props reflect is
+    the original one — the crisp ground cannot wash them out.
+    """
     mat = bpy.data.materials.new("prop_" + hexcol.lstrip("#"))
     mat.use_nodes = True
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
     set_in(bsdf, "Base Color", hex_to_lin(hexcol))
-    set_in(bsdf, "Roughness", max(0.03, 0.55 * (1.0 - gloss)))
-    set_in(bsdf, "Specular IOR Level", 0.5 + 0.5 * gloss)
+    set_in(bsdf, "Roughness", max(0.08, 0.45 * (1.0 - gloss)))
+    set_in(bsdf, "Specular IOR Level", 0.5)
     set_in(bsdf, "Metallic", 0.0)
     set_in(bsdf, "Sheen Weight", 0.0)
-    set_in(bsdf, "Coat Weight", gloss)
-    set_in(bsdf, "Coat Roughness", 0.04)
+    set_in(bsdf, "Coat Weight", 0.15 * gloss)
+    set_in(bsdf, "Coat Roughness", 0.10)
     return mat
 
 
@@ -208,17 +235,57 @@ def backing_material(hexcol):
     return mat
 
 
-def surface_material(hexcol):
+def surface_material(hexcol, camera_boost=1.0):
     """The surface the blanket rests on — matte, so a contrasting tone makes the
-    cream pop (cream-on-cream is invisible)."""
+    cream pop (cream-on-cream is invisible).
+
+    `camera_boost` is the crisp-white-ground trick (§8e-2 Part C). A product
+    photo's paper sweep is a deliberately BLOWN-OUT white: several stops
+    brighter than the subject, while the subject itself is metered normally.
+    Our `exposure` is tuned low so pale wool doesn't blow white under AgX
+    (§11), and that same low exposure lands a near-white `bgHex` ground as a
+    soft mid-grey. Fix, entirely in the ground's own shader: for CAMERA RAYS
+    ONLY the plane shades as a diffuse whose albedo is `camera_boost` times
+    the backdrop colour, so every pixel of ground leaves with `camera_boost`x
+    the radiance it had and lands in AgX's highlight shoulder — flat near-white,
+    gradient and mottling compressed away. Because the boost multiplies the
+    SHADED result, the contact shadow survives as the same ratio (a lighter,
+    softer grey, exactly like a real sweep). Because it is gated on
+    `Is Camera Ray`, every other ray — the bounce light the ground throws back
+    up onto the yarn, reflections, shadow rays — still sees the ORIGINAL
+    material, so no yarn pixel changes.
+    """
     mat = bpy.data.materials.new("surface")
     mat.use_nodes = True
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
-    set_in(bsdf, "Base Color", hex_to_lin(hexcol))
+    base = hex_to_lin(hexcol)
+    set_in(bsdf, "Base Color", base)
     set_in(bsdf, "Roughness", 0.94)
     set_in(bsdf, "Specular IOR Level", 0.06)
     set_in(bsdf, "Sheen Weight", 0.3)
+    if camera_boost and camera_boost > 1.0:
+        out = nt.nodes.get("Material Output")
+        if out is None:
+            return mat
+        # A plain Diffuse BSDF (not a second Principled) for the boosted branch:
+        # albedo above 1.0 is exactly the "multiply the outgoing radiance" we
+        # want, and Diffuse is the one node where that scales linearly with no
+        # energy-conservation clamping to argue with.
+        bright = nt.nodes.new("ShaderNodeBsdfDiffuse")
+        bright.inputs["Color"].default_value = (
+            base[0] * camera_boost,
+            base[1] * camera_boost,
+            base[2] * camera_boost,
+            1.0,
+        )
+        bright.inputs["Roughness"].default_value = 0.0
+        lp = nt.nodes.new("ShaderNodeLightPath")
+        mix = nt.nodes.new("ShaderNodeMixShader")
+        nt.links.new(lp.outputs["Is Camera Ray"], mix.inputs[0])
+        nt.links.new(bsdf.outputs["BSDF"], mix.inputs[1])
+        nt.links.new(bright.outputs["BSDF"], mix.inputs[2])
+        nt.links.new(mix.outputs["Shader"], out.inputs["Surface"])
     return mat
 
 
@@ -231,10 +298,6 @@ def main():
 
     bpy.ops.wm.read_factory_settings(use_empty=True)
     scene = bpy.context.scene
-    # The ground plane is tagged with an Object Index (below) so the compositor
-    # can find + whiten it without touching the yarn's own exposure/saturation
-    # grade (whiten_ground). Cycles only writes the IndexOB pass when asked.
-    bpy.context.view_layer.use_pass_object_index = True
     strokes = data["strokes"]
     yarn_hex = strokes[0]["hex"] if strokes else "#efe4d6"
 
@@ -322,10 +385,12 @@ def main():
     # every existing render unchanged).
     ground = view.get("groundScale", 5)
     surface.scale = (max(halfW, contentW) * ground, max(halfH, contentH) * ground, 1.0)
-    surface.data.materials.append(surface_material(bg_hex))
-    # Tag the ground for whiten_ground's compositor mask (Object Index 1 = "this
-    # is backdrop, not yarn" — nothing else in the scene ever sets pass_index).
-    surface.pass_index = 1
+    # Crisp near-white ground on every hero (§8e-2 Part C) — no per-pattern
+    # flag, `groundWhite` only exists so a scene can dial it or switch it off
+    # (0/1 = the old un-boosted ground). See surface_material().
+    surface.data.materials.append(
+        surface_material(bg_hex, view.get("groundWhite", GROUND_WHITE_BOOST))
+    )
 
     build_yarn(strokes, drape, z_offset)
 
@@ -441,15 +506,6 @@ def main():
     scene.view_settings.look = "AgX - Base Contrast"
     scene.view_settings.exposure = view.get("exposure", 0.2)  # lower: stop pale wool blowing white
     grade_saturation(scene, view.get("saturation", 1.2))  # bring warmth back after AgX desaturates (1.4 oversaturated the crisper, less-felted yarn)
-    # Crisp white ground (default, no per-pattern flag): the yarn's own exposure
-    # is tuned to survive AgX without blowing white (comment above), which is
-    # exactly why the near-white bgHex ground was landing as a soft mid-grey —
-    # the same low exposure that protects pale wool under-exposes a white
-    # backdrop too. whiten_ground boosts ONLY the ground's linear radiance
-    # (Object Index mask, see `surface.pass_index = 1` above) before the SAME
-    # AgX/exposure/look transform grades the whole frame, so the yarn's own
-    # pixels are bit-for-bit whatever they already were.
-    whiten_ground(scene)
     scene.render.filepath = out_path
     bpy.ops.render.render(write_still=True)
     print("RENDERED", out_path)
@@ -466,56 +522,6 @@ def grade_saturation(scene, sat):
     hs.inputs["Saturation"].default_value = sat
     nt.links.new(rl.outputs["Image"], hs.inputs["Image"])
     nt.links.new(hs.outputs["Image"], comp.inputs["Image"])
-
-
-def whiten_ground(scene, index=1, exposure_stops=2.3):
-    """Crisp near-white ground, render-side only. A real product photo's paper
-    backdrop is a deliberately BLOWN-OUT white — several stops brighter than
-    the subject, not just a pale colour — while the subject is metered
-    normally. `exposure` above is tuned low so pale wool doesn't blow white
-    under AgX (§11), and that same low exposure was landing the near-white
-    `bgHex` ground as a soft mid-grey with a visible lighting gradient.
-    Fix: an OBJECT-INDEX compositor mask (the ground plane alone carries
-    `pass_index = 1`; nothing else in the scene ever sets it) isolates the
-    backdrop's LINEAR radiance and boosts only that by `exposure_stops`
-    *before* the one global AgX/exposure/look transform grades the whole
-    frame — so the yarn's own pixels are untouched (same values as if this
-    function were never called), while the boosted ground pixels land in
-    AgX's highlight shoulder, which is exactly what compresses them toward a
-    flat near-white and quietly erases the gradient/mottling along with it.
-    """
-    scene.use_nodes = True
-    nt = scene.node_tree
-    rl = nt.nodes.get("Render Layers")
-    comp = nt.nodes.get("Composite")
-    if not rl or not comp:
-        return
-    # Whatever currently feeds Composite (the saturation grade above, or
-    # Render Layers directly if that ever changes) is the base both the
-    # untouched and boosted branches start from.
-    base_socket = None
-    for link in list(nt.links):
-        if link.to_node is comp:
-            base_socket = link.from_socket
-            break
-    if base_socket is None or "IndexOB" not in rl.outputs:
-        return
-
-    idmask = nt.nodes.new("CompositorNodeIDMask")
-    idmask.index = index
-    idmask.use_antialiasing = True
-    nt.links.new(rl.outputs["IndexOB"], idmask.inputs[0])
-
-    boost = nt.nodes.new("CompositorNodeExposure")
-    boost.inputs["Exposure"].default_value = exposure_stops
-    nt.links.new(base_socket, boost.inputs["Image"])
-
-    over = nt.nodes.new("CompositorNodeAlphaOver")
-    nt.links.new(idmask.outputs[0], over.inputs["Fac"])
-    nt.links.new(base_socket, over.inputs[1])
-    nt.links.new(boost.outputs["Image"], over.inputs[2])
-
-    nt.links.new(over.outputs[0], comp.inputs["Image"])
 
 
 main()

@@ -112,10 +112,10 @@ const KNIT_PROMPTS: Record<string, string> = {
 // The background clause is common to every prompt (no per-pattern flag) so
 // every hero — flat swatch, finished-object flatlay/loop, or amigurumi
 // composition — asks the upscaler for the same crisp e-commerce backdrop the
-// Blender base now renders (loom_render_crochet.py's whiten_ground). Without
-// this the base's own near-white ground was the only cue, and the upscaler's
-// "soft natural window light" phrasing pulled it back toward a lifestyle-photo
-// grey/mottled surface at creativity 0.55.
+// Blender base now renders (loom_render_crochet.py's camera-ray ground boost,
+// surface_material). Without this the base's own near-white ground was the
+// only cue, and the upscaler's "soft natural window light" phrasing pulled it
+// back toward a lifestyle-photo grey/mottled surface at creativity 0.55.
 const WHITE_BG =
   'Photographed on a clean, seamless, pure white studio background — a plain solid white surface with no visible texture, pattern, mottling, colour cast, or vignette.'
 

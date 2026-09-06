@@ -117,3 +117,56 @@ structure score. Note: the local render is Windows Blender and the container is
 Linux Blender — same version + script + scene, so the image is visually
 identical, but Cycles CPU is not guaranteed bit-identical across OS/CPU. It's
 the same pipeline, not a byte-for-byte pixel clone.
+
+## Proving a render-script change before the merge
+
+The container only runs the scripts baked into the image, and the image is only
+rebuilt by `loom-render-image.yml` on a push to **main**. So a change to
+`loom_render_crochet.py` / `loom_render.py` is normally unprovable until after
+it has merged — and a Blender-side change that silently does nothing looks
+exactly like one that worked (STITCH_ENGINE §8e-2 Part C: a compositor branch
+shipped, rebuilt, re-rendered every hero, logged all of its operations, and
+changed not one pixel).
+
+`probe-run.sh` closes that gap. It runs the CANDIDATE script out of S3 on the
+current image, sweeping one `view` value and uploading a PNG per step:
+
+```bash
+set -a && . ./.env.credentials && set +a
+B=homemade-loom-render; P=jobs/probe1
+
+# 1. candidate script + a real scene.json + the runner into the scratch bucket
+aws s3 cp apps/web/scripts/loom_render_crochet.py s3://$B/$P/render.py
+aws s3 cp apps/web/scripts/loom-render/probe-run.sh s3://$B/$P/run.sh
+aws s3 cp .loom-scratch/crochet/patterns/<slug>.json s3://$B/$P/coaster.json
+
+# 2. a throwaway task def: the production one with a bash entryPoint.
+#    Same image, same roles, same log group; register ONCE, reuse after that.
+#    (Take taskRoleArn/executionRoleArn from
+#     `aws ecs describe-task-definition --task-definition homemade-loom-render`.)
+aws ecs register-task-definition --cli-input-json file://probe-taskdef.json
+
+# 3. run the ramp (~1 min for five 420px/24-sample steps)
+aws ecs run-task --cluster homemade --task-definition homemade-loom-render-probe \
+  --launch-type FARGATE --count 1 --network-configuration "$NET" \
+  --overrides '{"containerOverrides":[{"name":"loom-render",
+    "command":["aws s3 cp s3://$LOOM_S3_BUCKET/$PROBE_PREFIX/run.sh /tmp/run.sh && bash /tmp/run.sh"],
+    "environment":[{"name":"LOOM_S3_BUCKET","value":"homemade-loom-render"},
+                   {"name":"PROBE_PREFIX","value":"jobs/probe1"},
+                   {"name":"PROBE_SCENE","value":"coaster"},
+                   {"name":"PROBE_RES","value":"420"},
+                   {"name":"PROBE_SAMPLES","value":"24"},
+                   {"name":"PROBE_KS","value":"1 4 8 12 16"}]}]}'
+
+# 4. pull the PNGs and measure. Always include the no-op step (x1) — if it does
+#    not reproduce the currently-served number, the probe itself is wrong.
+aws s3 cp s3://$B/$P/ . --recursive --exclude '*' --include '*.png'
+```
+
+Then re-run the winning value at the scene's production `resY` and samples for
+the number that goes in the handbook. `probe-run.sh` sweeps `view.groundWhite`;
+edit the key it writes to sweep a different one.
+
+The probe task definition is a separate family — it never touches
+`homemade-loom-render`, which the render pipeline pins. Clean up the S3 prefix
+afterwards; scene JSONs run to tens of MB.
