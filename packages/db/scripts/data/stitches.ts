@@ -60,10 +60,18 @@ export interface StitchSeed {
     | 'decrease'
     | 'cable'
     | 'bind-off'
+    // Cross-stitch categories. Counted work has no increases or decreases;
+    // it has the counted stitches themselves, the lines worked over the top,
+    // and the surface stitches used for detail.
+    | 'outline'
+    | 'surface'
   chartSymbol?: string
   difficulty?: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED'
   parentStitchSlug?: string
   notes?: string
+  /** Other names the stitch goes by, so an outside pattern's wording resolves
+   *  to this row. Omitted rows keep whatever aliases the DB already holds. */
+  aliases?: string[]
 }
 
 export const STITCHES: StitchSeed[] = [
@@ -1346,5 +1354,140 @@ export const STITCHES: StitchSeed[] = [
     difficulty: 'BEGINNER',
     notes:
       'The standard finished edge — knit two, pass the first stitch over the second and off the needle, continue. UK "cast off" equals US "bind off".',
+  },
+
+  // ── Cross-stitch ────────────────────────────────────────────────────
+  // Counted cross-stitch has no UK/US terminology split, so ukName and
+  // usName carry the same wording. Symbols are the grid-drawn glyphs in
+  // `apps/web/src/lib/craft-charts/chart-symbols.ts`.
+  {
+    slug: 'cross-stitch-full-cross',
+    craft: 'cross-stitch',
+    canonicalName: 'Full cross stitch',
+    ukName: 'Full cross stitch',
+    usName: 'Full cross stitch',
+    category: 'basic',
+    chartSymbol: 'full-cross',
+    difficulty: 'BEGINNER',
+    aliases: ['cross stitch', 'whole stitch', 'full stitch'],
+    notes:
+      'Two diagonal stitches crossing over one fabric square. It fills the square and it is what almost every chart square asks for. Keep the top leg lying the same way across the whole piece and the finished surface catches the light evenly.',
+  },
+  {
+    slug: 'cross-stitch-half-stitch',
+    craft: 'cross-stitch',
+    canonicalName: 'Half stitch',
+    ukName: 'Half stitch',
+    usName: 'Half stitch',
+    category: 'basic',
+    chartSymbol: 'half-stitch',
+    difficulty: 'BEGINNER',
+    aliases: ['half cross stitch', 'tent stitch'],
+    notes:
+      'The first leg of a cross on its own, worked corner to corner across one square. Used for soft background shading and for skies and water, where a lighter, flatter surface reads better than full crosses.',
+  },
+  {
+    slug: 'cross-stitch-quarter-stitch',
+    craft: 'cross-stitch',
+    canonicalName: 'Quarter stitch',
+    ukName: 'Quarter stitch',
+    usName: 'Quarter stitch',
+    category: 'basic',
+    chartSymbol: 'quarter-stitch',
+    difficulty: 'INTERMEDIATE',
+    aliases: ['fractional stitch'],
+    notes:
+      'A short diagonal from one corner of the square into its centre. It fills a quarter of the square, so two different colours can share one square where a curve or a point needs a cleaner edge.',
+  },
+  {
+    slug: 'cross-stitch-three-quarter-stitch',
+    craft: 'cross-stitch',
+    canonicalName: 'Three-quarter stitch',
+    ukName: 'Three-quarter stitch',
+    usName: 'Three-quarter stitch',
+    category: 'basic',
+    chartSymbol: 'three-quarter-stitch',
+    difficulty: 'INTERMEDIATE',
+    aliases: ['fractional stitch', 'three quarter cross stitch'],
+    notes:
+      'A half stitch plus a quarter stitch in the same square, filling a triangle of it. Charts use it to soften a curve or sharpen a point, usually paired with a quarter stitch of a second colour in the same square.',
+  },
+  {
+    slug: 'cross-stitch-back-stitch',
+    craft: 'cross-stitch',
+    canonicalName: 'Back-stitch',
+    ukName: 'Back-stitch',
+    usName: 'Back-stitch',
+    category: 'outline',
+    chartSymbol: 'back-stitch',
+    difficulty: 'BEGINNER',
+    aliases: ['backstitch', 'outline stitch'],
+    notes:
+      'An unbroken line worked hole to hole over finished cross stitches. It draws outlines, whiskers, lettering and window frames, and it is always worked last so the line sits on top of the filled squares.',
+  },
+  {
+    slug: 'cross-stitch-running-stitch',
+    craft: 'cross-stitch',
+    canonicalName: 'Running stitch',
+    ukName: 'Running stitch',
+    usName: 'Running stitch',
+    category: 'outline',
+    chartSymbol: 'running-stitch',
+    difficulty: 'BEGINNER',
+    aliases: ['straight running stitch'],
+    notes:
+      'A dashed line: one stitch, one gap, repeated along the row. Used for a softer outline than back-stitch, for basting a grid onto the fabric before you start, and for dotted detail such as stitched rain or a broken border.',
+  },
+  {
+    slug: 'cross-stitch-long-stitch',
+    craft: 'cross-stitch',
+    canonicalName: 'Long stitch',
+    ukName: 'Long stitch',
+    usName: 'Long stitch',
+    category: 'outline',
+    chartSymbol: 'long-stitch',
+    difficulty: 'INTERMEDIATE',
+    aliases: ['straight stitch', 'long straight stitch'],
+    notes:
+      'One straight stitch carried over several squares in a single pass. Good for grass, fur, ship rigging and whiskers, where a line of separate small stitches would look broken.',
+  },
+  {
+    slug: 'cross-stitch-french-knot',
+    craft: 'cross-stitch',
+    canonicalName: 'French knot',
+    ukName: 'French knot',
+    usName: 'French knot',
+    category: 'surface',
+    chartSymbol: 'french-knot',
+    difficulty: 'INTERMEDIATE',
+    aliases: ['french knots', 'knot stitch'],
+    notes:
+      'A small raised bead made by wrapping the thread round the needle and taking it back down close to where it came up. Used for eyes, berries, flower centres and dots on lettering.',
+  },
+  {
+    slug: 'cross-stitch-lazy-daisy',
+    craft: 'cross-stitch',
+    canonicalName: 'Lazy daisy',
+    ukName: 'Lazy daisy',
+    usName: 'Lazy daisy',
+    category: 'surface',
+    chartSymbol: 'lazy-daisy',
+    difficulty: 'INTERMEDIATE',
+    aliases: ['detached chain stitch', 'detached chain'],
+    notes:
+      'A single chain loop held down by a small stitch at its tip. Worked in a ring it makes a flower; worked singly it makes a leaf or a petal on a sampler.',
+  },
+  {
+    slug: 'cross-stitch-satin-stitch',
+    craft: 'cross-stitch',
+    canonicalName: 'Satin stitch',
+    ukName: 'Satin stitch',
+    usName: 'Satin stitch',
+    category: 'surface',
+    chartSymbol: 'satin-stitch',
+    difficulty: 'INTERMEDIATE',
+    aliases: ['flat stitch'],
+    notes:
+      'Straight stitches laid side by side to fill a small shape with a smooth, solid surface. On a counted piece it covers petals, leaves and ribbon bands where the grid of crosses would look too coarse.',
   },
 ]

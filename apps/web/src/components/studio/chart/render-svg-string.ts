@@ -49,6 +49,25 @@ export interface SvgRenderOptions {
   region?: { x: number; y: number; width: number; height: number }
   /** Extra outer padding in px. */
   padding?: number
+  /**
+   * How a stitched cell is drawn. 'stitch' (the default, and what the
+   * on-screen viewport uses) draws the three-stroke X. 'block' fills the whole
+   * cell with the floss colour instead.
+   *
+   * 'block' is for the printed chart. An X leaves most of the cell showing
+   * bare fabric, so a symbol chosen for contrast against the floss colour ends
+   * up sitting half on the floss and half on the cloth, and on a dense chart
+   * it vanishes. A filled cell is what every printed chart worth buying does,
+   * and it is what makes the symbol readable at 3 mm.
+   */
+  cellStyle?: 'stitch' | 'block'
+  /**
+   * Print only. The part of `region` this page owns. Cells inside the region
+   * but outside the core are the overlap shared with the neighbouring page:
+   * they are drawn, then greyed back, so the join is obvious and nothing is
+   * stitched twice.
+   */
+  core?: { x: number; y: number; width: number; height: number }
   /** Mark-stitched overlay set, sparse "x,y" keys. */
   stitched?: Set<string>
 }
@@ -77,10 +96,12 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
   const regionMaxX = region.x + region.width
   const regionMaxY = region.y + region.height
 
-  const totalW = region.width * cellPx + padding * 2
-  const totalH = region.height * cellPx + padding * 2
-  const offX = padding - region.x * cellPx
-  const offY = padding - region.y * cellPx
+  const inset = padding
+
+  const totalW = region.width * cellPx + inset * 2
+  const totalH = region.height * cellPx + inset * 2
+  const offX = inset - region.x * cellPx
+  const offY = inset - region.y * cellPx
 
   const parts: string[] = []
   parts.push(
@@ -164,18 +185,18 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
   // ─── Fabric background ──────────────────────────────────────────────────
   if (monochrome) {
     parts.push(
-      `<rect x="${padding}" y="${padding}" width="${region.width * cellPx}" height="${region.height * cellPx}" fill="#ffffff"/>`,
+      `<rect x="${inset}" y="${inset}" width="${region.width * cellPx}" height="${region.height * cellPx}" fill="#ffffff"/>`,
     )
   } else if (mode === 'beauty') {
     parts.push(
-      `<rect x="${padding}" y="${padding}" width="${region.width * cellPx}" height="${region.height * cellPx}" fill="${pattern.fabric.colourRgb}"/>`,
+      `<rect x="${inset}" y="${inset}" width="${region.width * cellPx}" height="${region.height * cellPx}" fill="${pattern.fabric.colourRgb}"/>`,
     )
     parts.push(
-      `<rect x="${padding}" y="${padding}" width="${region.width * cellPx}" height="${region.height * cellPx}" fill="url(#aida-weave)"/>`,
+      `<rect x="${inset}" y="${inset}" width="${region.width * cellPx}" height="${region.height * cellPx}" fill="url(#aida-weave)"/>`,
     )
   } else {
     parts.push(
-      `<rect x="${padding}" y="${padding}" width="${region.width * cellPx}" height="${region.height * cellPx}" fill="${pattern.fabric.colourRgb}"/>`,
+      `<rect x="${inset}" y="${inset}" width="${region.width * cellPx}" height="${region.height * cellPx}" fill="${pattern.fabric.colourRgb}"/>`,
     )
   }
 
@@ -223,6 +244,16 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
       parts.push(
         `<path d="${highlightPath}" stroke="${shiftColour(entry.rgb, 0.45)}" stroke-width="${w * 0.06}" stroke-linecap="round" fill="none" opacity="0.7"/>`,
       )
+    } else if (opts.cellStyle === 'block') {
+      // Printed chart: the floss colour fills the cell, so the symbol drawn
+      // over it has the contrast it was chosen for.
+      parts.push(`<g transform="translate(${offX} ${offY})" fill="${entry.rgb}">`)
+      for (const { x, y } of inRegion) {
+        parts.push(
+          `<rect x="${x * cellPx}" y="${y * cellPx}" width="${cellPx + 0.5}" height="${cellPx + 0.5}"/>`,
+        )
+      }
+      parts.push(`</g>`)
     } else if (monochrome) {
       // B&W chart pages: white cells with crisp outline; the symbol
       // overlay (below) carries the colour identity.
@@ -376,6 +407,35 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
       }
     }
     parts.push(`</g>`)
+  }
+
+  // ─── Overlap wash ───────────────────────────────────────────────────────
+  // Print only. Everything inside the region but outside the core belongs to
+  // the neighbouring page; it is kept so the join can be matched by eye, and
+  // washed back so it is plainly not this page's work. Drawn over the symbols
+  // so they fade with the stitches.
+  const core = opts.core
+  if (core) {
+    const bands: Array<[number, number, number, number]> = []
+    if (core.x > region.x) bands.push([region.x, region.y, core.x - region.x, region.height])
+    const coreMaxX = core.x + core.width
+    if (coreMaxX < regionMaxX) bands.push([coreMaxX, region.y, regionMaxX - coreMaxX, region.height])
+    if (core.y > region.y) bands.push([core.x, region.y, core.width, core.y - region.y])
+    const coreMaxY = core.y + core.height
+    if (coreMaxY < regionMaxY) bands.push([core.x, coreMaxY, core.width, regionMaxY - coreMaxY])
+    if (bands.length > 0) {
+      parts.push(`<g transform="translate(${offX} ${offY})">`)
+      for (const [bx, by, bw, bh] of bands) {
+        parts.push(
+          `<rect x="${bx * cellPx}" y="${by * cellPx}" width="${bw * cellPx}" height="${bh * cellPx}" fill="#ffffff" opacity="0.66"/>`,
+        )
+      }
+      // The page's own boundary, so the eye lands on it immediately.
+      parts.push(
+        `<rect x="${core.x * cellPx}" y="${core.y * cellPx}" width="${core.width * cellPx}" height="${core.height * cellPx}" fill="none" stroke="#8c5f4a" stroke-width="${Math.max(1, cellPx * 0.09)}" stroke-dasharray="${cellPx * 0.5} ${cellPx * 0.35}" opacity="0.85"/>`,
+      )
+      parts.push(`</g>`)
+    }
   }
 
   parts.push('</svg>')

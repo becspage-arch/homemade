@@ -3,7 +3,13 @@ import Link from 'next/link'
 import { headers } from 'next/headers'
 import { after } from 'next/server'
 import { notFound } from 'next/navigation'
-import { prisma, Visibility, parsePatternData, estimateSkeinCount } from '@homemade/db'
+import {
+  prisma,
+  Visibility,
+  parsePatternData,
+  estimateSkeinCount,
+  STITCHABILITY_BANDS,
+} from '@homemade/db'
 import { bumpPatternView } from '@/lib/popularity'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { buildBreadcrumbSchema, absoluteImageUrl } from '@/lib/seo/schema-builders'
@@ -14,6 +20,8 @@ import { PremiumBadge } from '@/components/premium'
 import { PatternSaveButton } from '@/components/public/pattern-save-button'
 import { PatternPlanButton } from '@/components/public/pattern-plan-button'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
+import { FabricCalculator } from './fabric-calculator'
+import { PdfDownload } from './pdf-download'
 import './pattern-detail.css'
 
 export const dynamic = 'force-dynamic'
@@ -86,6 +94,11 @@ export default async function PatternDetailPage({ params }: PageProps) {
   const finishedH = (row.heightCells / row.fabricCountSuggested) * 2.54
 
   const totalSkein = data.palette.reduce((sum, p) => sum + estimateSkeinCount(data, p.symbol), 0)
+
+  // How the chart feels under the needle. Computed off the grid at save time
+  // and stored on the row; older rows the backfill hasn't reached simply show
+  // nothing rather than a guess.
+  const band = row.stitchability != null ? STITCHABILITY_BANDS[row.stitchability] : undefined
 
   const related = await prisma.pattern.findMany({
     where: {
@@ -223,9 +236,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
                 Non-premium readers get a link to upgrade; the route enforces it
                 server-side too. */}
             {premium ? (
-              <a href={`/api/studio/patterns/${row.id}/pdf?paper=${paper}`} className="pattern-detail-action ghost">
-                Download PDF ({paper === 'letter' ? 'US Letter' : 'A4'})
-              </a>
+              <PdfDownload patternId={row.id} defaultPaper={paper} />
             ) : (
               <Link href="/premium" className="pattern-detail-action ghost">
                 Download PDF · Premium
@@ -253,13 +264,66 @@ export default async function PatternDetailPage({ params }: PageProps) {
             <div><dt>Finished</dt><dd>{finishedW.toFixed(1)} × {finishedH.toFixed(1)} cm</dd></div>
             <div><dt>Fabric</dt><dd>{row.fabricCountSuggested}-count Aida</dd></div>
             <div><dt>Skeins</dt><dd>~{totalSkein.toFixed(0)} total</dd></div>
+            {band && (
+              <div>
+                <dt>Stitchability</dt>
+                <dd>
+                  <button
+                    type="button"
+                    className="pattern-detail-stitchability"
+                    aria-describedby="stitchability-tip"
+                  >
+                    {band.label}
+                    <span className="pattern-detail-stitchability-mark" aria-hidden="true">?</span>
+                    <span className="pattern-detail-tip" id="stitchability-tip" role="tooltip">
+                      {band.blurb}
+                    </span>
+                  </button>
+                </dd>
+              </div>
+            )}
             {row.difficulty && <div><dt>Difficulty</dt><dd>{prettify(row.difficulty)}</dd></div>}
             {row.estimatedHours && <div><dt>Time</dt><dd>~{row.estimatedHours}h</dd></div>}
             {row.hasBackstitch && <div><dt>Back-stitch</dt><dd>Yes</dd></div>}
             {row.hasFrenchKnots && <div><dt>French knots</dt><dd>Yes</dd></div>}
           </dl>
+
+          <FabricCalculator
+            widthCells={row.widthCells}
+            heightCells={row.heightCells}
+            suggestedCount={row.fabricCountSuggested}
+          />
         </div>
       </header>
+
+      {/* Provenance, one line. The market is learning to distrust listing
+          images that turn out to be renderings, and our answer is the strong
+          one: the image IS the chart. Links through to the full account. */}
+      <p className="pattern-detail-provenance">
+        This picture is the chart itself, so what you stitch is exactly what you see.{' '}
+        <Link href="/cross-stitch/about-the-library">How the library is made</Link>
+      </p>
+
+      {/* First step for someone who has never stitched. Both destinations are
+          free and open without an account. */}
+      <aside className="pattern-detail-startpoints">
+        <h2>New to cross-stitch? Start here</h2>
+        <ul>
+          <li>
+            <Link href="/cross-stitch/how-to-read-a-cross-stitch-chart">
+              How to read a cross-stitch chart
+            </Link>
+            <span>The grid, the key, the centre, and where to put the first stitch.</span>
+          </li>
+          <li>
+            <Link href="/stitches/cross-stitch">Cross-stitch stitch guide</Link>
+            <span>
+              Every stitch a chart can ask for, with the symbol and a reminder of how
+              it is worked.
+            </span>
+          </li>
+        </ul>
+      </aside>
 
       <section className="pattern-detail-floss">
         <h2>Floss colours</h2>

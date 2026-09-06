@@ -416,3 +416,36 @@
     margin-left: 0;
   }
 }
+
+/* "The library and the stitching tool are one thing" — the positioning block
+   under the cross-stitch header. Sits between the hero and the stitch-guide
+   card, so it borrows that card's parchment panel without its link chrome. */
+.pattern-landing-onething {
+  margin: 4px 0 8px;
+  padding: 16px 20px;
+  background: var(--color-soft-parchment);
+  border: 1px solid var(--color-linen-grey, #e7e1d6);
+  border-radius: 14px;
+}
+.pattern-landing-onething p {
+  margin: 0;
+  font-family: var(--font-lora);
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--color-warm-taupe);
+  max-width: 68ch;
+}
+.pattern-landing-onething-link {
+  margin-top: 10px !important;
+}
+.pattern-landing-onething-link a {
+  font-family: var(--font-lora);
+  font-size: 14px;
+  color: var(--color-forest);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  text-decoration: none;
+}
+.pattern-landing-onething-link a:hover {
+  color: var(--color-sage);
+}

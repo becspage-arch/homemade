@@ -36,6 +36,8 @@ interface PatternLayoutProps {
     maxHours?: string
     hasBackstitch?: '1' | '0'
     hasFrenchKnots?: '1'
+    /** Stitchability band, 5 (Easy going) to 1 (Marathon). */
+    stitch?: string
     yarnWeight?: string
     // Free-text search scoped to this library + the cross-craft tag axes.
     q?: string
@@ -60,6 +62,30 @@ const PATTERN_TYPE_BY_SLUG: Record<string, 'CROSS_STITCH' | 'KNITTING_CHART' | '
   knitting: 'KNITTING_CHART',
   crochet: 'CROCHET_CHART',
 }
+
+/**
+ * The smallest number of public patterns a theme shelf needs before it earns a
+ * chip in the Section filter.
+ *
+ * A shelf holding three or four patterns reads as an abandoned corner of the
+ * library: a visitor picks the theme, lands on a nearly empty grid, and takes
+ * that as the measure of the whole collection. Twelve is the point at which a
+ * shelf fills the first row of the grid on every breakpoint, so the theme looks
+ * stocked when it opens.
+ *
+ * Nothing is deleted or moved. A thin shelf's patterns still appear in the main
+ * grid, in search, in the tag facets and on their own pages, and the shelf
+ * returns to the filter on its own the moment it reaches the threshold.
+ */
+const MIN_PATTERNS_PER_SHELF = 12
+
+/**
+ * Categories the shelf minimum applies to. Cross-stitch has enough themes
+ * (22 shelves over 1,000 patterns) for a thin one to stand out; the other
+ * craft libraries are still filling their first shelves, so they keep the
+ * simple "holds at least one pattern" rule until they are as broad.
+ */
+const SHELF_MINIMUM_CATEGORIES = new Set(['cross-stitch'])
 
 const STUDIO_CTAS: Record<string, { primary?: { label: string; href: string }; secondary?: { label: string; href: string } }> = {
   'cross-stitch': {
@@ -120,6 +146,9 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
   if (sp.hasBackstitch === '1') where.hasBackstitch = true
   if (sp.hasBackstitch === '0') where.hasBackstitch = false
   if (sp.hasFrenchKnots === '1') where.hasFrenchKnots = true
+  // Stitchability band. A stored 1-5 Int on the row, so it filters in SQL
+  // rather than in the post-fetch pass the colour range uses.
+  if (sp.stitch && /^[1-5]$/.test(sp.stitch)) where.stitchability = Number(sp.stitch)
   if (sp.maxHours) where.estimatedHours = { lte: Number(sp.maxHours) }
   if (sp.sub) where.subCategory = { slug: sp.sub, categoryId: category.id }
   if (!isCrochet && tagIds !== null) where.id = { in: tagIds }
@@ -200,6 +229,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
             estimatedHours: true,
             hasBackstitch: true,
             hasFrenchKnots: true,
+            stitchability: true,
             premium: true,
             fabricCountSuggested: true,
             designer: { select: { displayName: true, slug: true, isHouseDesigner: true } },
@@ -393,13 +423,14 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
     (sc) => sc.slug === 'foundations',
   )
 
-  // Which sub-categories actually hold ≥1 PUBLIC, published pattern in this
-  // category's model. Empty shelves (e.g. needlework blackwork / hardanger /
-  // needlepoint — technique tutorials exist but no patterns yet) are dropped
-  // from the Section filter so a chip never lands on an empty grid. Mirrors
-  // RecipeLayout's groupBy + count > 0 approach. The count is category-wide
-  // (it ignores the active sub / difficulty / tag filters) so the shelf list
-  // stays stable as the visitor filters.
+  // Which sub-categories hold enough PUBLIC, published patterns to earn a chip
+  // in the Section filter. Empty shelves (e.g. needlework blackwork / hardanger
+  // / needlepoint, where technique tutorials exist but no patterns yet) are
+  // always dropped so a chip never lands on an empty grid; categories listed in
+  // SHELF_MINIMUM_CATEGORIES additionally hide shelves under
+  // MIN_PATTERNS_PER_SHELF. Mirrors RecipeLayout's groupBy + count approach.
+  // The count is category-wide (it ignores the active sub / difficulty / tag
+  // filters) so the shelf list stays stable as the visitor filters.
   const subCatBaseWhere = {
     ownerUserId: null,
     visibility: Visibility.PUBLIC,
@@ -425,13 +456,21 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
             _count: { _all: true },
           })
         : []
+  const shelfMinimum = SHELF_MINIMUM_CATEGORIES.has(category.slug)
+    ? MIN_PATTERNS_PER_SHELF
+    : 1
   const populatedSubCategoryIds = new Set(
     populatedSubGroups
-      .filter((g) => g._count._all > 0 && g.subCategoryId != null)
+      .filter((g) => g._count._all >= shelfMinimum && g.subCategoryId != null)
       .map((g) => g.subCategoryId as string),
   )
-  const nonEmptySubCategories = category.subCategories.filter((s) =>
-    populatedSubCategoryIds.has(s.id),
+  const nonEmptySubCategories = category.subCategories.filter(
+    (s) =>
+      populatedSubCategoryIds.has(s.id) ||
+      // A shelf the visitor is already filtering on stays in the list, so a
+      // link into a thin shelf still shows which shelf is active and offers
+      // the way back out.
+      s.slug === sp.sub,
   )
 
   return (
@@ -480,6 +519,27 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
           </ul>
         )}
       </header>
+
+      {/* What this library actually is. The competitive point is that the
+          patterns and the tool to stitch them are one product, and the site
+          never said so. Only claims that hold today. */}
+      {category.slug === 'cross-stitch' && (
+        <section className="pattern-landing-onething" aria-label="About this library">
+          <p>
+            Every chart here opens and stitches on this site. Tap a pattern, tap Stitch,
+            and the chart is in front of you: zoom in, tick off each stitch as you go,
+            and pick up where you left off on any phone, tablet or computer. Switch
+            between colour blocks, symbols and a stitched preview. See every colour as
+            DMC, Anchor or Madeira. Nothing to print unless you want to, nothing to
+            install.
+          </p>
+          <p className="pattern-landing-onething-link">
+            <Link href="/cross-stitch/about-the-library">
+              How the library is made
+            </Link>
+          </p>
+        </section>
+      )}
 
       {REFERENCE_CRAFTS[category.slug] && (
         <Link href={`/stitches/${category.slug}`} className="pattern-landing-stitchguide">
@@ -725,6 +785,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
                 estimatedHours: p.estimatedHours,
                 hasBackstitch: p.hasBackstitch,
                 hasFrenchKnots: p.hasFrenchKnots,
+                stitchability: p.stitchability,
                 // The card badge reads the single cross-craft rule: premium-
                 // flagged OR independent-designer content shows as premium.
                 premium: isPremiumContent({ premium: p.premium, designer: p.designer }),
@@ -750,6 +811,7 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
                 sort,
                 hasBackstitch: sp.hasBackstitch === '1',
                 hasFrenchKnots: sp.hasFrenchKnots === '1',
+                stitch: sp.stitch && /^[1-5]$/.test(sp.stitch) ? sp.stitch : null,
                 q: q || null,
                 occasion: sp.occasion ?? null,
                 season: sp.season ?? null,

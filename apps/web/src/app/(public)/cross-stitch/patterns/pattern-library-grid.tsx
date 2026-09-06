@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Filter, Search, X } from 'lucide-react'
+import { STITCHABILITY_BANDS } from '@homemade/db/pattern'
 import { PatternSaveHeart } from '@/components/public/pattern-save-heart'
 import {
   TAG_AXES,
@@ -25,6 +26,8 @@ interface PatternCard {
   estimatedHours: number | null
   hasBackstitch: boolean
   hasFrenchKnots: boolean
+  /** Stitchability band, 5 (Easy going) to 1 (Marathon). Null until backfilled. */
+  stitchability: number | null
   premium: boolean
   fabricCountSuggested: number
   designerName: string | null
@@ -55,6 +58,7 @@ interface PatternLibraryGridProps {
     sort: string
     hasBackstitch: boolean
     hasFrenchKnots: boolean
+    stitch: string | null
     q: string | null
     occasion: string | null
     season: string | null
@@ -68,6 +72,9 @@ interface PatternLibraryGridProps {
 }
 
 const TAG_FILTER_KEYS = ['occasion', 'season', 'style', 'subject', 'audience'] as const
+
+/** Calmest chart first, so the list reads the way a stitcher would choose. */
+const STITCHABILITY_ORDER = [5, 4, 3, 2, 1] as const
 
 export function PatternLibraryGrid({
   patterns,
@@ -108,6 +115,7 @@ export function PatternLibraryGrid({
     Boolean(currentFilters.size) ||
     currentFilters.hasBackstitch ||
     currentFilters.hasFrenchKnots ||
+    Boolean(currentFilters.stitch) ||
     Boolean(currentFilters.q) ||
     Boolean(currentFilters.designer) ||
     tagFiltersActive
@@ -120,6 +128,7 @@ export function PatternLibraryGrid({
       'size',
       'hasBackstitch',
       'hasFrenchKnots',
+      'stitch',
       'q',
       'minColour',
       'maxColour',
@@ -201,6 +210,19 @@ export function PatternLibraryGrid({
               label={s.l}
               active={currentFilters.size === s.v}
               onClick={() => updateFilter('size', currentFilters.size === s.v ? null : s.v)}
+            />
+          ))}
+        </FilterGroup>
+
+        <FilterGroup title="How it stitches">
+          {STITCHABILITY_ORDER.map((b) => (
+            <FilterButton
+              key={b}
+              label={STITCHABILITY_BANDS[b]!.label}
+              active={currentFilters.stitch === String(b)}
+              onClick={() =>
+                updateFilter('stitch', currentFilters.stitch === String(b) ? null : String(b))
+              }
             />
           ))}
         </FilterGroup>
@@ -381,6 +403,9 @@ function PatternCardItem({ pattern }: { pattern: PatternCard }) {
         <ul className="cross-stitch-library-card-meta">
           <li>{pattern.widthCells} × {pattern.heightCells}</li>
           <li>{pattern.colourCount} colours</li>
+          {pattern.stitchability != null && STITCHABILITY_BANDS[pattern.stitchability] && (
+            <li>{STITCHABILITY_BANDS[pattern.stitchability]!.label}</li>
+          )}
           <li>{finishedW.toFixed(1)} × {finishedH.toFixed(1)} cm</li>
         </ul>
         <div className="cross-stitch-library-card-actions">

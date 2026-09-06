@@ -9,6 +9,7 @@
  * and three muted cards that read as choices, not as a menu.
  */
 
+import Link from 'next/link'
 import { LibraryBig, FilePlus2, Sparkles } from 'lucide-react'
 import { StudioLandingHero } from '../StudioLandingHero'
 
@@ -52,7 +53,7 @@ export function StudioEmptyState({
           <Sparkles size={24} strokeWidth={1.4} />
           <div className="studio-empty-card-body">
             <div className="studio-empty-card-title">Design your own</div>
-            <div className="studio-empty-card-sub">Describe an idea or upload a photo — we make the chart</div>
+            <div className="studio-empty-card-sub">Describe an idea or upload a photo, and we make the chart</div>
           </div>
         </button>
         <button type="button" className="studio-empty-card" onClick={onStartBlank}>
@@ -63,6 +64,16 @@ export function StudioEmptyState({
           </div>
         </button>
       </div>
+
+      {/* First step for someone who has never stitched. Both are free and open
+          without an account, so the empty Studio is never a dead end. */}
+      <nav className="studio-empty-startpoints" aria-label="New to cross-stitch">
+        <span className="studio-empty-startpoints-label">New to cross-stitch? Start here</span>
+        <Link href="/cross-stitch/how-to-read-a-cross-stitch-chart">
+          How to read a cross-stitch chart
+        </Link>
+        <Link href="/stitches/cross-stitch">Cross-stitch stitch guide</Link>
+      </nav>
     </section>
   )
 }

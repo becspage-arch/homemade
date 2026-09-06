@@ -178,4 +178,69 @@ export const STITCH_WORKING_STEPS: Record<string, string[]> = {
     'Insert the hook from the back, around the post of the next stitch, from right to left.',
     'Finish as a treble. The post recedes behind the fabric.',
   ],
+  // ── Cross-stitch ──────────────────────────────────────────────────
+  // Counted work, so the steps talk about holes and squares rather than
+  // loops on a hook. Written for Aida, where one square has a hole at
+  // each of its four corners.
+  'cross-stitch-full-cross': [
+    'Bring the needle up through the bottom left hole of the square.',
+    'Take it down through the top right hole. That is the first leg.',
+    'Bring it up through the bottom right hole.',
+    'Take it down through the top left hole to cross the first leg.',
+    'Work every top leg in the same direction across the whole piece.',
+  ],
+  'cross-stitch-half-stitch': [
+    'Bring the needle up through the bottom left hole of the square.',
+    'Take it down through the top right hole.',
+    'Leave it there. The square holds one diagonal, not a cross.',
+  ],
+  'cross-stitch-quarter-stitch': [
+    'Bring the needle up through one corner hole of the square.',
+    'Take it down through the centre of the square, splitting the fabric between the threads.',
+    'Pull gently. On Aida the centre needs a firmer push than a corner hole.',
+  ],
+  'cross-stitch-three-quarter-stitch': [
+    'Work a half stitch across the square, corner to corner.',
+    'Bring the needle up through one of the two free corners.',
+    'Take it down through the centre of the square, over the half stitch.',
+    'Leave the remaining corner free for the second colour when the chart asks for one.',
+  ],
+  'cross-stitch-back-stitch': [
+    'Finish all the cross stitches in the area first.',
+    'Bring the needle up one hole ahead of where the line starts.',
+    'Take it back down at the start of the line.',
+    'Bring it up one hole further along, then back down into the end of the last stitch.',
+    'Keep going so the line reads unbroken, with no gaps at the joins.',
+  ],
+  'cross-stitch-running-stitch': [
+    'Bring the needle up at the start of the line.',
+    'Take it down one square along.',
+    'Skip one square, then come up again and repeat.',
+    'Keep the stitches and the gaps the same length so the dashes read evenly.',
+  ],
+  'cross-stitch-long-stitch': [
+    'Bring the needle up at one end of the line.',
+    'Take it down at the far end, however many squares away the chart shows.',
+    'Keep the tension light. A long stitch pulled tight drags the fabric.',
+    'Couch a very long stitch down with one small stitch across its middle so it cannot catch.',
+  ],
+  'cross-stitch-french-knot': [
+    'Bring the needle up where you want the knot.',
+    'Hold the thread taut with your free hand.',
+    'Wrap the thread twice round the needle.',
+    'Put the needle back down a thread away from where it came up, not into the same hole.',
+    'Hold the wraps against the fabric and pull through slowly.',
+  ],
+  'cross-stitch-lazy-daisy': [
+    'Bring the needle up at the base of the petal.',
+    'Take it down through the same hole and up again at the tip, keeping the thread under the needle point.',
+    'Pull through so a loop lies on the fabric.',
+    'Take a small stitch over the tip of the loop to hold it down.',
+  ],
+  'cross-stitch-satin-stitch': [
+    'Bring the needle up at one edge of the shape.',
+    'Take it down at the opposite edge, making one straight stitch.',
+    'Come up again right beside the first stitch and repeat.',
+    'Keep the stitches touching and running the same way so the surface stays smooth.',
+  ],
 }

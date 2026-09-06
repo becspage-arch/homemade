@@ -126,6 +126,11 @@ export {
   HexColourSchema,
   parsePatternData,
   computePatternMetrics,
+  computeStitchabilityMetrics,
+  stitchabilityIndex,
+  stitchabilityBand,
+  stitchabilityLabel,
+  STITCHABILITY_BANDS,
   estimateSkeinCount,
   cellKey,
   parseCellKey,
@@ -141,6 +146,7 @@ export {
   type PatternTypeName,
   type FlossBrand as FlossBrandName,
   type PatternMetrics,
+  type StitchabilityMetrics,
 } from './pattern'
 
 declare global {
