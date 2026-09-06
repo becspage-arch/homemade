@@ -184,7 +184,10 @@ record('the grid edge is never mistaken for a silhouette', () => {
   // Full coverage: every cell stitched, two colours meeting down the middle.
   const rows: string[] = []
   for (let y = 0; y < 20; y++) rows.push('X'.repeat(10) + 'O'.repeat(10))
-  const out = deriveBackstitch(chart(rows, [RED, BLUE, DARK]), { mode: 'full' })
+  // The fragment floor is off here: one join across a toy chart is a fragment by
+  // design, and this case is about WHERE the line lands, not whether it is worth
+  // stitching.
+  const out = deriveBackstitch(chart(rows, [RED, BLUE, DARK]), { mode: 'full', minShareOfCap: 0 })
   for (const s of out.data.grid.backstitch) {
     const onEdge =
       (s.x1 === 0 && s.x2 === 0) ||
@@ -212,8 +215,18 @@ record('a boundary that jitters cell by cell is not stitched at all', () => {
 record('a straight boundary in the same chart IS stitched', () => {
   const rows: string[] = []
   for (let y = 0; y < 20; y++) rows.push('X'.repeat(10) + 'O'.repeat(10))
-  const out = deriveBackstitch(chart(rows, [RED, BLUE, DARK]), { mode: 'full' })
+  const out = deriveBackstitch(chart(rows, [RED, BLUE, DARK]), { mode: 'full', minShareOfCap: 0 })
   assert.ok(out.segments > 0)
+})
+
+record('one stray line in a big chart is a fragment, and is dropped', () => {
+  // Twenty cells of drawable edge in a four-hundred-cell chart. A line there
+  // reads as something somebody forgot to rub out, not as an outline.
+  const rows: string[] = []
+  for (let y = 0; y < 20; y++) rows.push('X'.repeat(10) + 'O'.repeat(10))
+  const out = deriveBackstitch(chart(rows, [RED, BLUE, DARK]), { mode: 'full' })
+  assert.equal(out.segments, 0)
+  assert.match(out.reason, /fragment/)
 })
 
 // ─── Diagonals ─────────────────────────────────────────────────────────────

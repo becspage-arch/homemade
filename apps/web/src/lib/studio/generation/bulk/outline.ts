@@ -274,6 +274,18 @@ export function outlineLengthCap(stitches: number, perRoot = LENGTH_PER_ROOT_STI
   return perRoot * Math.sqrt(stitches)
 }
 
+/**
+ * The fragment floor: an outline has to be a decision about the whole piece.
+ *
+ * A lavender field came back with one 63-cell staircase across the top of a
+ * hill and nothing anywhere else, and a pine marten with 71 cells along the
+ * edge of a log. Neither reads as an outline — each reads as a line somebody
+ * forgot to rub out. If less than this share of the chart's own back-stitch
+ * budget is worth stitching, the honest answer is that the chart has no
+ * drawable edges and gets none.
+ */
+export const MIN_OUTLINE_SHARE_OF_CAP = 0.15
+
 /** How many dark flosses an outline may use. */
 export const MAX_OUTLINE_INKS = 2
 
@@ -296,6 +308,8 @@ export interface DeriveBackstitchOptions {
   /** Smoothness floors — mean piece length. See `MIN_MEAN_PIECE_INTERNAL`. */
   minMeanPieceInternal?: number
   minMeanPieceSilhouette?: number
+  /** Fragment floor, as a share of the length cap. See `MIN_OUTLINE_SHARE_OF_CAP`. */
+  minShareOfCap?: number
   /** Cells of line per root stitch. See `outlineLengthCap`. */
   lengthPerRootStitch?: number
   maxInks?: number
@@ -879,6 +893,11 @@ export function deriveBackstitch(
     total += c.length
   }
   if (accepted.length === 0) return unchanged('outline would exceed the length cap')
+  if (total < (opts.minShareOfCap ?? MIN_OUTLINE_SHARE_OF_CAP) * cap) {
+    return unchanged(
+      `only ${Math.round(total)} cells of the chart have a drawable edge — a fragment, not an outline`,
+    )
+  }
 
   const inks = chooseInks(data, accepted, opts.maxInks ?? MAX_OUTLINE_INKS)
   const segments: BackstitchSegment[] = []
