@@ -35,7 +35,14 @@ import { patternToStrokes, type StitchedElement } from '../src/lib/loom/render/r
 import { strokesToBlenderScene } from '../src/lib/loom/render/blenderScene'
 import { loadCredentials, falCreativeUpscale } from './loom-hybrid-fal'
 import { fidelityGate, type FidelityVerdict } from './loom-fidelity-gate'
-import { fargateRenderBase } from './loom-fargate-render'
+import {
+  fargateRenderBase,
+  startFargateRender,
+  pollFargateRender,
+  fetchFargateRender,
+  type FargateRenderHandle,
+  type FargatePollResult,
+} from './loom-fargate-render'
 import { r2UploadScript } from './import-lib/r2-script'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -180,10 +187,32 @@ export async function renderHero(
   loadCredentials()
   const renderMode = resolveRenderMode(options)
   const samples = options.samples ?? 200
-  const startCreativity = options.creativity ?? 0.5
-  const resemblance = options.resemblance ?? 0.85
-  const ladder = options.retryCreativity ?? [0.35, 0.2]
-  const persist = options.persist ?? true
+  const { safe, scenePath, basePath } = buildHeroScene(input, options)
+
+  // 2. photoreal base in Blender (deterministic; the exact pattern). Same
+  //    render either way — local blender.exe for dev, or the Fargate container
+  //    (identical Blender + loom_render.py + scene + samples) server-side.
+  if (renderMode === 'fargate') {
+    await fargateRenderBase(scenePath, basePath, samples)
+    log(`[loom:${safe}] base rendered on Fargate: ${basePath}`)
+  } else {
+    const blenderExe = resolveBlender(options)
+    blenderRenderBase(blenderExe, scenePath, basePath, samples)
+    log(`[loom:${safe}] base rendered locally: ${basePath}`)
+  }
+
+  return finishHeroFromBase(input.name, safe, scenePath, basePath, options)
+}
+
+/**
+ * STEP 1, on its own: the exact geometry turned into a Blender scene on disk.
+ * Shared by the synchronous `renderHero` and the asynchronous
+ * `startHeroRender`, so both render precisely the same scene.
+ */
+function buildHeroScene(
+  input: RenderHeroInput,
+  options: RenderHeroOptions,
+): { safe: string; outDir: string; scenePath: string; basePath: string } {
   const outDir = resolve(options.outDir ?? resolve(__dirname, '../../../.loom-scratch/heroes'))
   mkdirSync(outDir, { recursive: true })
 
@@ -191,7 +220,7 @@ export async function renderHero(
   const scenePath = resolve(outDir, `${safe}.scene.json`)
   const basePath = resolve(outDir, `${safe}.base.png`)
 
-  // 1. exact geometry -> strokes -> scene (greens tamed in the scene builder).
+  // exact geometry -> strokes -> scene (greens tamed in the scene builder).
   const strokes = patternToStrokes(input.stitchedElements, {
     strands: input.strands ?? 6,
     defaultThread: input.defaultThread ?? null,
@@ -208,18 +237,27 @@ export async function renderHero(
   )
   writeFileSync(scenePath, JSON.stringify(scene))
   log(`[loom:${safe}] ${input.stitchedElements.length} elements -> ${strokes.length} strokes -> scene`)
+  return { safe, outDir, scenePath, basePath }
+}
 
-  // 2. photoreal base in Blender (deterministic; the exact pattern). Same
-  //    render either way — local blender.exe for dev, or the Fargate container
-  //    (identical Blender + loom_render.py + scene + samples) server-side.
-  if (renderMode === 'fargate') {
-    await fargateRenderBase(scenePath, basePath, samples)
-    log(`[loom:${safe}] base rendered on Fargate: ${basePath}`)
-  } else {
-    const blenderExe = resolveBlender(options)
-    blenderRenderBase(blenderExe, scenePath, basePath, samples)
-    log(`[loom:${safe}] base rendered locally: ${basePath}`)
-  }
+/**
+ * STEPS 3 and 4, on their own: the creative-upscale finish, the fidelity gate
+ * and the persist, starting from a base PNG that already exists on this box.
+ * The asynchronous path calls this after fetching the base out of S3, so both
+ * paths finish a hero identically.
+ */
+async function finishHeroFromBase(
+  name: string,
+  safe: string,
+  scenePath: string,
+  basePath: string,
+  options: RenderHeroOptions,
+): Promise<RenderHeroResult> {
+  const startCreativity = options.creativity ?? 0.5
+  const resemblance = options.resemblance ?? 0.85
+  const ladder = options.retryCreativity ?? [0.35, 0.2]
+  const persist = options.persist ?? true
+  const outDir = resolve(options.outDir ?? resolve(__dirname, '../../../.loom-scratch/heroes'))
 
   // 3. creative-upscale finish + automated fidelity gate, with retry/fallback.
   const attempts: RenderHeroResult['attempts'] = []
@@ -257,7 +295,7 @@ export async function renderHero(
 
   const { width, height, bytes } = await pngSize(chosen.heroPath)
   const result: RenderHeroResult = {
-    name: input.name,
+    name,
     localHeroPath: chosen.heroPath,
     localBasePath: basePath,
     localScenePath: scenePath,
@@ -283,6 +321,83 @@ export async function renderHero(
   }
 
   return result
+}
+
+// ── The same hero, driven ASYNCHRONOUSLY ────────────────────────────────────
+//
+// `renderHero` waits out the base render — seven to nine minutes on Fargate.
+// Inside a server request that is fatal: the proxy in front of the site ends a
+// request at about a hundred seconds. So the hero is also published in two
+// halves, with the ECS task running in between and the caller (Inngest) sleeping
+// rather than holding a request open:
+//
+//   startHeroRender   scene -> S3 -> ecs run-task, back in a couple of seconds
+//   pollHeroRender    one describe-tasks call, RUNNING / STOPPED / FAILED
+//   finishHeroRender  fetch the base PNG -> upscale -> fidelity gate -> R2
+//
+// Fargate only: the local Blender is a synchronous child process with nothing
+// to poll, and every server-side caller already refuses to run without
+// LOOM_RENDER=fargate.
+
+/** The JSON handoff between the two halves of an asynchronous hero render. */
+export interface HeroRenderJob {
+  /** The hero's name, as the caller gave it. */
+  name: string
+  /** Filename-safe form of it — the finish names its files the same way. */
+  safe: string
+  /** The scene JSON on the starting box's disk (a local proof; not portable). */
+  scenePath: string
+  render: FargateRenderHandle
+}
+
+/**
+ * Build the scene and START its render on Fargate. Returns as soon as ECS has
+ * accepted the task — quick enough to live inside one Inngest step.
+ */
+export async function startHeroRender(
+  input: RenderHeroInput,
+  options: RenderHeroOptions = {},
+): Promise<HeroRenderJob> {
+  loadCredentials()
+  if (resolveRenderMode(options) !== 'fargate') {
+    throw new Error(
+      'startHeroRender needs LOOM_RENDER=fargate. The asynchronous hero follows an ECS ' +
+        'task; the local Blender is a child process with nothing to poll, so use renderHero() there.',
+    )
+  }
+  const samples = options.samples ?? 200
+  const { safe, scenePath } = buildHeroScene(input, options)
+  const render = await startFargateRender(scenePath, samples)
+  log(`[loom:${safe}] base render started on Fargate: ${render.taskArn}`)
+  return { name: input.name, safe, scenePath, render }
+}
+
+/** Has the started render finished, and did it work? One AWS call. */
+export async function pollHeroRender(job: HeroRenderJob): Promise<FargatePollResult> {
+  return pollFargateRender(job.render)
+}
+
+/**
+ * The second half: fetch the finished base PNG into `outDir` and run the same
+ * upscale, fidelity gate and persist the synchronous path runs. Self-contained
+ * — it needs nothing from the box that started the render but this JSON job, so
+ * it is safe on a different container.
+ */
+export async function finishHeroRender(
+  job: HeroRenderJob,
+  options: RenderHeroOptions = {},
+): Promise<RenderHeroResult> {
+  loadCredentials()
+  const outDir = resolve(options.outDir ?? resolve(__dirname, '../../../.loom-scratch/heroes'))
+  mkdirSync(outDir, { recursive: true })
+  const basePath = resolve(outDir, `${job.safe}.base.png`)
+  await fetchFargateRender(job.render.outKey, basePath, {
+    bucket: job.render.bucket,
+    region: job.render.region,
+  })
+  if (!existsSync(basePath)) throw new Error(`Fargate render did not produce ${basePath}`)
+  log(`[loom:${job.safe}] base fetched from Fargate: ${basePath}`)
+  return finishHeroFromBase(job.name, job.safe, job.scenePath, basePath, { ...options, outDir })
 }
 
 function describePath(p: HeroPath): string {

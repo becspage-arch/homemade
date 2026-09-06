@@ -9,7 +9,10 @@
     "./pattern": "./src/pattern.ts",
     "./search-docs": "./src/search-docs.ts",
     "./recipe-consistency": "./src/recipe-consistency.ts",
-    "./recipe-consistency-gate": "./src/recipe-consistency-gate.ts"
+    "./recipe-consistency-gate": "./src/recipe-consistency-gate.ts",
+    "./crochet-completeness": "./src/crochet-completeness.ts",
+    "./design-direction": "./prisma/design-direction.ts",
+    "./crochet-starter-briefs": "./scripts/crochet-signoff/starter-briefs.ts"
   },
   "scripts": {
     "postinstall": "prisma generate",

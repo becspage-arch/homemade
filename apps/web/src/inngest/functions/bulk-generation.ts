@@ -1,18 +1,22 @@
 import 'server-only'
 import * as Sentry from '@sentry/nextjs'
-import { prisma, Visibility } from '@homemade/db'
+import { prisma, Prisma, Visibility } from '@homemade/db'
 import { inngest } from '../client'
+import { waitForRender } from '../loom-render-wait'
 import {
-  runNeedleworkBatch,
   crossStitchAttempt,
   crossStitchPlanContext,
+  crochetPlanContext,
+  crochetGateAndPublish,
+  needleworkGateAndPublish,
   killIsUnrerollable,
   runIsComplete,
   summaryLine,
   tweakFor,
   MAX_XS_ATTEMPTS,
+  MAX_CROCHET_REPAIRS,
+  MAX_NW_REPAIRS,
   type Craft,
-  type StepRunner,
   type AttemptResult,
 } from '@/lib/studio/generation/bulk/run'
 import {
@@ -23,10 +27,12 @@ import {
   remainingShelfSlots,
   rejectedSubjects,
   tallyRejects,
+  planNeedleworkBriefs,
   PLANNER_MODE,
   type PlanChunk,
   MODEL_CHUNK,
   type CrossStitchBrief,
+  type NeedleworkBrief,
 } from '@/lib/studio/generation/bulk/planner'
 import {
   recentCrossStitchSlugs,
@@ -39,7 +45,29 @@ import { isAutopilotEnabled, crossStitchSourceMode } from '@/lib/studio/generati
 import { liveShelfCounts } from '@/lib/studio/generation/bulk/dedupe-guard'
 import { allShelvesAtTarget } from '@/lib/studio/generation/bulk/shelf-plan'
 import { PATTERN_CATEGORIES, CROSS_STITCH_SHELVES } from '@/lib/studio/generation/categories'
-import { crossStitchSpendWindow, overCap } from '@/lib/studio/generation/bulk/spend-guard'
+import { crossStitchSpendWindow, overCap, crochetSpendWindow, overCrochetCap } from '@/lib/studio/generation/bulk/spend-guard'
+import {
+  fargateRenderWired as crochetRenderWired,
+  startCrochetCandidate,
+  pollCrochetCandidate,
+  renderCrochetCandidate,
+  loadCrochetCandidate,
+  paletteHexesFor,
+} from '@/lib/studio/generation/bulk/crochet'
+import {
+  startNeedleworkCandidate,
+  pollNeedleworkCandidate,
+  renderNeedleworkCandidate,
+  loadNeedleworkCandidate,
+  recentNeedleworkSlugs,
+} from '@/lib/studio/generation/bulk/needlework'
+import { liveCrochetShelfCounts, recentCrochetNames } from '@/lib/studio/generation/bulk/crochet-dedupe'
+import {
+  CROCHET_LANE_SHELVES,
+  planCrochetBriefs,
+  modelAuthoredCount as crochetModelAuthoredCount,
+  type CrochetBrief,
+} from '@/lib/studio/generation/bulk/crochet-planner'
 
 /**
  * Server-side BULK CATALOGUE generation — the cross-stitch + needlework gem
@@ -64,9 +92,12 @@ import { crossStitchSpendWindow, overCap } from '@/lib/studio/generation/bulk/sp
  *     admin panel sees live per-run outcomes. Every published gem still passes the
  *     identical ruthless gate — more shots per idea, never a lower bar.
  *
- * Needlework still runs as a single function (it's paused, renders one slow
- * Fargate hero per idea, and re-rolls are expensive) but records to the same
- * BulkRun table. [Follow-up: fan needlework out the same way when it's signed off.]
+ * Needlework and crochet take the same shape, with one difference that used to
+ * make it impossible: their ideas each render a photoreal hero on Fargate, seven
+ * to nine minutes of Blender. Their idea workers do NOT wait for it — they start
+ * the ECS task, `step.sleep` a minute at a time while the run is suspended, poll
+ * once a minute with a single AWS call, and come back for the picture in a later
+ * step. See `src/inngest/loom-render-wait.ts` and STITCH_ENGINE.md §8g.
  *
  * Nothing ships un-judged: if the gate isn't wired (ANTHROPIC_API_KEY unset) the
  * dispatcher is a clean no-op — it plans + generates nothing rather than publish blind.
@@ -74,6 +105,13 @@ import { crossStitchSpendWindow, overCap } from '@/lib/studio/generation/bulk/sp
 
 const XS_CRON_COUNT = 10
 const NW_CRON_COUNT = 4
+/**
+ * Crochet's cron batch size. Kept small on purpose: every idea is a cold
+ * Fargate render of seven or eight minutes, and they run concurrently, so six
+ * is a batch that finishes inside the firing rather than one that overlaps the
+ * next. Raise it with a manual run, not with the cron.
+ */
+const CR_CRON_COUNT = 6
 const MAX_MANUAL = 20
 
 /** A run whose counters have not moved for this long is dead, not slow. */
@@ -88,6 +126,9 @@ const STALL_HOURS = 6
 const TARGETS: Record<Craft, number> = {
   'cross-stitch': Number(process.env.BULK_XS_TARGET) || PATTERN_CATEGORIES['cross-stitch']!.patternTarget,
   needlework: Number(process.env.BULK_NW_TARGET) || 1500,
+  // Also derived from its per-shelf targets, so the cron's stop point and the
+  // planner's shelf weighting read the same number.
+  crochet: Number(process.env.BULK_CROCHET_TARGET) || PATTERN_CATEGORIES.crochet!.patternTarget,
 }
 
 interface BatchEventData {
@@ -105,6 +146,9 @@ function manualCount(raw: unknown, fallback: number): number {
 async function publicCount(craft: Craft): Promise<number> {
   if (craft === 'needlework') {
     return prisma.needleworkPattern.count({ where: { ownerUserId: null, visibility: Visibility.PUBLIC } })
+  }
+  if (craft === 'crochet') {
+    return prisma.crochetPattern.count({ where: { ownerUserId: null, visibility: Visibility.PUBLIC } })
   }
   return prisma.pattern.count({ where: { type: 'CROSS_STITCH', ownerUserId: null, visibility: Visibility.PUBLIC } })
 }
@@ -127,14 +171,25 @@ interface PreflightResult {
 async function preflight(craft: Craft, manual: boolean): Promise<PreflightResult> {
   if (!gateConfigured()) return { skip: 'gate-not-wired' }
 
+  // Housekeeping first: a run that died mid-fan-out would otherwise sit
+  // unfinished forever, and nothing else in the system ever looks at it. Every
+  // craft fans out now, so every craft's cron does the sweep.
+  await sweepStalledRuns().catch((err) => {
+    console.error('[bulk] stalled-run sweep failed', err)
+  })
+
   if (craft === 'cross-stitch') {
-    // Housekeeping first: a run that died mid-fan-out would otherwise sit
-    // unfinished forever, and nothing else in the system ever looks at it.
-    await sweepStalledRuns().catch((err) => {
-      console.error('[bulk cross-stitch] stalled-run sweep failed', err)
-    })
     const window = await crossStitchSpendWindow()
     const capped = overCap(window)
+    if (capped) return { skip: capped, record: true }
+  }
+
+  if (craft === 'crochet') {
+    // A crochet hero is the loom's render of the pattern's own program, so
+    // without the render there is no pattern to publish — not a poorer one.
+    if (!crochetRenderWired()) return { skip: 'render-not-wired' }
+    const window = await crochetSpendWindow()
+    const capped = overCrochetCap(window)
     if (capped) return { skip: capped, record: true }
   }
 
@@ -149,6 +204,16 @@ async function preflight(craft: Craft, manual: boolean): Promise<PreflightResult
       const counts = await liveShelfCounts().catch(() => ({}) as Record<string, number>)
       if (Object.keys(counts).length && allShelvesAtTarget(CROSS_STITCH_SHELVES, counts)) {
         return { skip: 'every shelf at target', count, target: TARGETS[craft] }
+      }
+    }
+    if (craft === 'crochet') {
+      // Crochet's category target counts all fifty-seven shelves, most of which
+      // the loom cannot build for yet, so the category number would never be
+      // reached and the cron would never idle. It idles when every shelf that
+      // HAS a generation lane is full instead.
+      const counts = await liveCrochetShelfCounts().catch(() => ({}) as Record<string, number>)
+      if (allShelvesAtTarget(CROCHET_LANE_SHELVES, counts)) {
+        return { skip: 'every buildable shelf at target', count, target: TARGETS[craft] }
       }
     }
   }
@@ -194,7 +259,7 @@ async function finaliseIfComplete(runId: string): Promise<{ finished: boolean; a
     data: { finishedAt: new Date(), summary, ...(alert ? { alerted: true } : {}) },
   })
   if (alert) {
-    Sentry.captureMessage('bulk cross-stitch run yielded nothing', {
+    Sentry.captureMessage(`bulk ${run.craft} run yielded nothing`, {
       level: 'warning',
       extra: {
         runId: run.id,
@@ -222,7 +287,9 @@ async function finaliseIfComplete(runId: string): Promise<{ finished: boolean; a
 async function sweepStalledRuns(): Promise<number> {
   const cutoff = new Date(Date.now() - STALL_HOURS * 60 * 60 * 1000)
   const stalled = await prisma.bulkRun.findMany({
-    where: { craft: 'cross-stitch', finishedAt: null, updatedAt: { lt: cutoff } },
+    // Every craft fans out now, so any of them can lose an idea to an event
+    // that never landed or a container that went away mid-render.
+    where: { finishedAt: null, updatedAt: { lt: cutoff } },
     select: {
       id: true, craft: true, requested: true, published: true, culled: true, duplicates: true,
       skipped: true, repaired: true, generations: true, errors: true, updatedAt: true, modelBriefs: true,
@@ -234,7 +301,7 @@ async function sweepStalledRuns(): Promise<number> {
       where: { id: run.id },
       data: { finishedAt: new Date(), summary: `stalled — ${summaryLine({ ...run, plannerMode: PLANNER_MODE })}`, alerted: true },
     })
-    Sentry.captureMessage('bulk cross-stitch run yielded nothing', {
+    Sentry.captureMessage(`bulk ${run.craft} run yielded nothing`, {
       level: 'warning',
       extra: {
         runId: run.id,
@@ -247,13 +314,6 @@ async function sweepStalledRuns(): Promise<number> {
     })
   }
   return stalled.length
-}
-
-/** Adapt Inngest's `step` to the small runner interface run.ts expects. */
-function stepRunner(step: {
-  run: (id: string, fn: () => Promise<unknown>) => Promise<unknown>
-}): StepRunner {
-  return { run: <T>(id: string, fn: () => Promise<T>) => step.run(id, fn) as Promise<T> }
 }
 
 // ─────────────────────────── CROSS-STITCH (fan-out) ───────────────────────────
@@ -547,12 +607,62 @@ export const bulkCrossStitchIdea = inngest.createFunction(
   },
 )
 
-// ─────────────────────────── NEEDLEWORK (single run) ───────────────────────────
+// ──────────────────── NEEDLEWORK + CROCHET (fan-out, async render) ────────────────────
+//
+// Both crafts hero themselves on Fargate: seven to nine minutes of Blender per
+// idea. That is what kept them off the server. A batch could not run inside one
+// function (the whole run is hours), and an idea could not run inside one step
+// (the render alone is five times the request limit).
+//
+// So they now take cross-stitch's shape with the render made asynchronous
+// inside it. A DISPATCHER plans the briefs, writes the BulkRun row and fans out
+// one event per idea; an IDEA WORKER does one idea from end to end:
+//
+//   generate  author the design / illustration, compile, audit, START the task
+//   wait      sleep a minute, spend one describe-tasks call, repeat
+//   render    fetch the PNG, photoreal finish, fidelity gate, park the hero
+//   publish   gate the hero, duplicate guard, publish a complete row
+//
+// No step is longer than one AWS call or one model call, and the run is
+// SUSPENDED for the render itself, so a batch of six costs the web service
+// almost nothing while forty minutes of Blender happens elsewhere.
+//
+// Concurrency is capped at three ideas per craft: three renders at once is a
+// batch that finishes inside its firing without a queue of Fargate tasks (each
+// 4 vCPU / 8 GB) piling up behind the spend guard.
+//
+// Every idea updates the BulkRun row with ATOMIC increments the moment it
+// reaches a terminal outcome, so the admin card shows the batch filling up
+// while it runs, and the LAST idea to finish closes the row with its summary
+// line (`finaliseIfComplete`).
+
+/** Ideas rendering at once, per craft. Each one is a 4-vCPU Fargate task. */
+const RENDER_CONCURRENCY = 3
+
+interface CrochetIdeaEventData {
+  runId?: string
+  brief?: CrochetBrief
+  attempt?: number
+}
+
+interface NeedleworkIdeaEventData {
+  runId?: string
+  brief?: NeedleworkBrief
+  attempt?: number
+}
+
+/** One idea's terminal outcome: bump the run's counters, then close it if last. */
+async function recordIdeaOutcome(runId: string, data: Prisma.BulkRunUpdateInput): Promise<void> {
+  await prisma.bulkRun.update({ where: { id: runId }, data })
+  await finaliseIfComplete(runId)
+}
+
+// ─────────────────────────── NEEDLEWORK ───────────────────────────
 
 export const bulkNeedleworkBatch = inngest.createFunction(
   {
     id: 'bulk-needlework-batch',
-    name: 'Bulk: needlework gem batch',
+    name: 'Bulk: needlework dispatcher',
     concurrency: { limit: 1 },
     retries: 1,
     // Needlework renders on Fargate (heavier + slower) — a gentler cadence.
@@ -566,33 +676,302 @@ export const bulkNeedleworkBatch = inngest.createFunction(
     if (pre.skip) return { skipped: pre.skip, ...(pre.count != null ? { count: pre.count, target: pre.target } : {}) }
 
     const n = manual ? manualCount(data?.count, NW_CRON_COUNT) : NW_CRON_COUNT
-    const summary = await runNeedleworkBatch(n, stepRunner(step))
+
+    const briefs = await step.run('plan', async () => {
+      const recent = await recentNeedleworkSlugs().catch(() => [])
+      return planNeedleworkBriefs(n, recent)
+    })
+    if (!briefs.length) return { skipped: 'no briefs planned' }
 
     const triggeredById = manual && typeof data?.triggeredBy === 'string' && data.triggeredBy ? data.triggeredBy : null
-    await step.run('record-run', () =>
+    const run = await step.run('create-run', () =>
       prisma.bulkRun.create({
         data: {
           craft: 'needlework',
           trigger: manual ? 'manual' : 'cron',
-          requested: summary.requested,
-          published: summary.published,
-          culled: summary.culled,
-          duplicates: summary.duplicates,
-          skipped: summary.skipped,
-          repaired: summary.repaired,
-          generations: summary.generations,
-          proGenerations: summary.proGenerations,
-          errors: summary.errors,
-          gemSlugs: summary.gems,
-          killReasons: summary.killReasons,
+          requested: briefs.length,
           triggeredById,
-          // Needlework still runs as ONE function, so its row is complete the
-          // moment it is written — no finaliser needed.
-          finishedAt: new Date(),
-          summary: summary.line,
         },
+        select: { id: true },
       }),
     )
-    return summary
+
+    await step.sendEvent(
+      'dispatch-ideas',
+      briefs.map((brief) => ({ name: 'bulk/needlework.idea', data: { runId: run.id, brief, attempt: 1 } })),
+    )
+    return { runId: run.id, dispatched: briefs.length }
+  },
+)
+
+export const bulkNeedleworkIdea = inngest.createFunction(
+  {
+    id: 'bulk-needlework-idea',
+    name: 'Bulk: needlework idea (one render)',
+    // Three Fargate renders at once, no more. Unlike cross-stitch the heavy work
+    // is NOT in this container — it is a 4-vCPU Blender task elsewhere — so the
+    // limit is about how many of those to pay for at a time, not memory here.
+    concurrency: { limit: RENDER_CONCURRENCY },
+    retries: 1,
+    triggers: [{ event: 'bulk/needlework.idea' }],
+  },
+  async ({ event, step }) => {
+    const { runId, brief, attempt = 1 } = (event.data ?? {}) as NeedleworkIdeaEventData
+    if (!runId || !brief) return { skipped: 'missing runId/brief' }
+
+    let rendered: Awaited<ReturnType<typeof renderNeedleworkCandidate>>
+    try {
+      // GENERATE — Flux, the needlework conversion, and the START of the render.
+      const pending = await step.run('generate', () => startNeedleworkCandidate(brief))
+
+      // WAIT — suspended between polls; the container is free the whole time.
+      await waitForRender(step, `nw-${brief.slug}`, () => pollNeedleworkCandidate(pending))
+
+      // RENDER — the finished hero, parked in the scratch bucket for the gate.
+      rendered = await step.run('render', () => renderNeedleworkCandidate(pending))
+    } catch (err) {
+      await step.run('record-error', () =>
+        recordIdeaOutcome(runId, { errors: { increment: 1 }, generations: { increment: 1 } }),
+      )
+      console.error(`[bulk needlework] ${brief.slug} attempt ${attempt} failed`, err)
+      return { outcome: 'error', slug: brief.slug }
+    }
+
+    // GATE + PUBLISH — the same judgement and the same publisher the inline
+    // runner uses; the gate sees the catalogue's recent names as its kept list.
+    const result = await step.run('gate-publish', async () => {
+      const kept = await recentNeedleworkSlugs().catch(() => [])
+      const candidate = await loadNeedleworkCandidate(rendered)
+      return needleworkGateAndPublish(brief, candidate, kept)
+    })
+
+    if (result.published) {
+      await step.run('record-keep', () =>
+        recordIdeaOutcome(runId, {
+          published: { increment: 1 },
+          generations: { increment: 1 },
+          gemSlugs: { push: brief.slug },
+        }),
+      )
+      return { outcome: 'published', slug: brief.slug }
+    }
+
+    // A 'repair' earns exactly one fresh render — the only repair needlework
+    // runs — and anything else culls. A Fargate render is too expensive to
+    // re-roll further on a hunch.
+    if (result.verdict === 'repair' && attempt <= MAX_NW_REPAIRS) {
+      await step.run('record-reroll', () =>
+        prisma.bulkRun.update({
+          where: { id: runId },
+          data: { repaired: { increment: 1 }, generations: { increment: 1 } },
+        }),
+      )
+      await step.sendEvent('next-attempt', {
+        name: 'bulk/needlework.idea',
+        data: { runId, brief, attempt: attempt + 1 },
+      })
+      return { outcome: 'reroll', slug: brief.slug, attempt: attempt + 1 }
+    }
+
+    const reason = (result.reasons[0] ?? 'kill').slice(0, 80)
+    await step.run('record-cull', () =>
+      recordIdeaOutcome(runId, {
+        culled: { increment: 1 },
+        generations: { increment: 1 },
+        killReasons: { push: reason },
+      }),
+    )
+    return { outcome: 'culled', slug: brief.slug }
+  },
+)
+
+// ─────────────────────────── CROCHET ───────────────────────────
+
+export const bulkCrochetBatch = inngest.createFunction(
+  {
+    id: 'bulk-crochet-batch',
+    name: 'Bulk: crochet dispatcher',
+    concurrency: { limit: 1 },
+    retries: 1,
+    // Every idea renders on Fargate, so crochet keeps needlework's gentler
+    // cadence rather than cross-stitch's two-hourly one.
+    triggers: [{ cron: '0 */6 * * *' }, { event: 'bulk/crochet.batch' }],
+  },
+  async ({ event, step }) => {
+    const data = event.data as BatchEventData | undefined
+    const manual = typeof data?.count === 'number'
+
+    const pre = await step.run('preflight', () => preflight('crochet', manual))
+    if (pre.skip) {
+      if (pre.record) {
+        await step.run('record-skip', () =>
+          prisma.bulkRun.create({
+            data: {
+              craft: 'crochet',
+              trigger: manual ? 'manual' : 'cron',
+              requested: 0,
+              skipReason: pre.skip,
+              summary: `skipped — ${pre.skip}`,
+              finishedAt: new Date(),
+            },
+          }),
+        )
+      }
+      return { skipped: pre.skip, ...(pre.count != null ? { count: pre.count, target: pre.target } : {}) }
+    }
+
+    const n = manual ? manualCount(data?.count, CR_CRON_COUNT) : CR_CRON_COUNT
+
+    // TWO steps, as cross-stitch has it: the catalogue reads and the planner's
+    // model call must not share one request, or a slow chunk 502s both.
+    const planCtx = (await step.run('plan-context', () => crochetPlanContext(n))) ?? {}
+    const briefs = await step.run('plan-briefs', () => planCrochetBriefs(n, planCtx))
+    if (!briefs.length) return { skipped: 'no briefs planned' }
+
+    // For crochet these are the same number: a brief the planner model wrote is
+    // by definition one it dressed, because constrained mode is the only mode
+    // that produces one.
+    const authored = crochetModelAuthoredCount(briefs)
+    const triggeredById = manual && typeof data?.triggeredBy === 'string' && data.triggeredBy ? data.triggeredBy : null
+    const run = await step.run('create-run', () =>
+      prisma.bulkRun.create({
+        data: {
+          craft: 'crochet',
+          trigger: manual ? 'manual' : 'cron',
+          requested: briefs.length,
+          // For crochet these are the same number: a brief the planner model
+          // wrote is by definition one it dressed. Both are set so the summary
+          // line reads the same as the inline runner's.
+          modelBriefs: authored,
+          dressedBriefs: authored,
+          triggeredById,
+        },
+        select: { id: true },
+      }),
+    )
+
+    await step.sendEvent(
+      'dispatch-ideas',
+      briefs.map((brief) => ({ name: 'bulk/crochet.idea', data: { runId: run.id, brief, attempt: 1 } })),
+    )
+    return { runId: run.id, dispatched: briefs.length, modelAuthored: authored, plannerMode: PLANNER_MODE }
+  },
+)
+
+export const bulkCrochetIdea = inngest.createFunction(
+  {
+    id: 'bulk-crochet-idea',
+    name: 'Bulk: crochet idea (one render)',
+    concurrency: { limit: RENDER_CONCURRENCY },
+    retries: 1,
+    triggers: [{ event: 'bulk/crochet.idea' }],
+  },
+  async ({ event, step }) => {
+    const { runId, brief, attempt = 1 } = (event.data ?? {}) as CrochetIdeaEventData
+    if (!runId || !brief) return { skipped: 'missing runId/brief' }
+
+    const illustration = brief.treatment === 'grid-tapestry'
+    const proInc = illustration ? { proGenerations: { increment: 1 } } : {}
+
+    // The spend cap again, here at the point of spending. The dispatcher checked
+    // it minutes ago; a queue of ideas fanned out before the cap was hit would
+    // otherwise sail straight through it. A crochet idea costs a Fargate task;
+    // the pictorial lane costs an illustration on top.
+    const capped = await step.run('spend-cap', async () => {
+      const window = await crochetSpendWindow()
+      return overCrochetCap(window, { illustration })
+    })
+    if (capped) {
+      await step.run('record-skipped', () => recordIdeaOutcome(runId, { skipped: { increment: 1 } }))
+      console.warn(`[bulk crochet] ${brief.slug} skipped — ${capped}`)
+      return { outcome: 'skipped', slug: brief.slug, reason: capped }
+    }
+
+    let rendered: Awaited<ReturnType<typeof renderCrochetCandidate>>
+    try {
+      // GENERATE — author the program, compile, audit, declare the settled size,
+      // and START the exact-hero render. The audit gate refuses before a task is
+      // launched, so un-stitchable geometry never costs a render.
+      const pending = await step.run('generate', () =>
+        startCrochetCandidate(brief, paletteHexesFor(brief.brief.palette)),
+      )
+
+      // WAIT — suspended between polls; the container is free the whole time.
+      await waitForRender(step, `cr-${brief.slug}`, () => pollCrochetCandidate(pending))
+
+      // RENDER — the finished hero, parked in the scratch bucket for the gate.
+      rendered = await step.run('render', () => renderCrochetCandidate(pending))
+    } catch (err) {
+      await step.run('record-error', () =>
+        recordIdeaOutcome(runId, { errors: { increment: 1 }, generations: { increment: 1 }, ...proInc }),
+      )
+      console.error(`[bulk crochet] ${brief.slug} attempt ${attempt} failed`, err)
+      return { outcome: 'error', slug: brief.slug }
+    }
+
+    // GATE + PUBLISH — the same judgement, duplicate guard, completeness gate
+    // and publisher the inline runner uses.
+    const result = await step.run('gate-publish', async () => {
+      const kept = await recentCrochetNames().catch(() => [])
+      const candidate = await loadCrochetCandidate(rendered)
+      return crochetGateAndPublish(brief, candidate, kept, { bulkRunId: runId, attempt })
+    })
+
+    if (result.published) {
+      await step.run('record-keep', () =>
+        recordIdeaOutcome(runId, {
+          published: { increment: 1 },
+          generations: { increment: 1 },
+          ...proInc,
+          gemSlugs: { push: brief.slug },
+        }),
+      )
+      return { outcome: 'published', slug: brief.slug }
+    }
+
+    // TERMINAL: the gate kept it, the duplicate guard did not. Nothing was
+    // written, and the idea is NOT re-rolled — the same brief renders the same
+    // object, so another roll collides all over again.
+    if (result.duplicateOf) {
+      const reason = `duplicate of ${result.duplicateOf}`.slice(0, 80)
+      await step.run('record-duplicate', () =>
+        recordIdeaOutcome(runId, {
+          duplicates: { increment: 1 },
+          generations: { increment: 1 },
+          ...proInc,
+          killReasons: { push: reason },
+        }),
+      )
+      console.warn(`[bulk crochet] ${brief.slug} refused — ${result.duplicateReason}`)
+      return { outcome: 'duplicate', slug: brief.slug, duplicateOf: result.duplicateOf }
+    }
+
+    // Only a staging fault earns a second attempt, and that attempt authors a
+    // DIFFERENT design for the same brief: crochet geometry is deterministic, so
+    // re-rendering the same program is the same picture.
+    if (result.verdict === 'repair' && attempt <= MAX_CROCHET_REPAIRS) {
+      await step.run('record-reroll', () =>
+        prisma.bulkRun.update({
+          where: { id: runId },
+          data: { repaired: { increment: 1 }, generations: { increment: 1 }, ...proInc },
+        }),
+      )
+      await step.sendEvent('next-attempt', {
+        name: 'bulk/crochet.idea',
+        data: { runId, brief, attempt: attempt + 1 },
+      })
+      return { outcome: 'reroll', slug: brief.slug, attempt: attempt + 1 }
+    }
+
+    const reason = (result.reasons[0] ?? 'kill').slice(0, 80)
+    await step.run('record-cull', () =>
+      recordIdeaOutcome(runId, {
+        culled: { increment: 1 },
+        generations: { increment: 1 },
+        ...proInc,
+        killReasons: { push: reason },
+      }),
+    )
+    return { outcome: 'culled', slug: brief.slug }
   },
 )

@@ -1,6 +1,6 @@
 import 'server-only'
 import { gateConfigured, visionGate, type GateResult } from '../vision-gate'
-import { planCrossStitchBriefs, planNeedleworkBriefs, dressedCount, PLANNER_MODE, type CrossStitchBrief } from './planner'
+import { planCrossStitchBriefs, planNeedleworkBriefs, dressedCount, PLANNER_MODE, type CrossStitchBrief, type NeedleworkBrief } from './planner'
 import {
   generateCrossStitchCandidate,
   publishCrossStitchGem,
@@ -26,6 +26,18 @@ import {
   recentNeedleworkSlugs,
   fargateRenderWired,
 } from './needlework'
+import { planCrochetBriefs, crochetShelfPlan, modelAuthoredCount, type CrochetBrief } from './crochet-planner'
+import {
+  generateCrochetCandidate,
+  publishCrochetGem,
+  paletteHexesFor,
+  fargateRenderWired as crochetRenderWired,
+  findCrochetDuplicate,
+  loadCrochetCatalogue,
+  CrochetIncompleteError,
+} from './crochet'
+import { liveCrochetShelfCounts, publicCrochetSubjectKeys } from './crochet-dedupe'
+import { crochetSpendWindow, overCrochetCap } from './spend-guard'
 
 /**
  * The batch RUNNER — the craft-agnostic orchestrator the Inngest jobs call. One
@@ -45,7 +57,7 @@ import {
  * run is a clean no-op — it generates nothing rather than publish blind.
  */
 
-export type Craft = 'cross-stitch' | 'needlework'
+export type Craft = 'cross-stitch' | 'needlework' | 'crochet'
 
 // The run-completion predicate + the summary line live in `run-status.ts` (pure,
 // unit-testable, no server-only deps) and are re-exported here so callers keep
@@ -112,7 +124,7 @@ export interface BatchSummary {
  * of schnell still costs a fraction of one Pro shot.
  */
 export const MAX_XS_ATTEMPTS = 6
-const MAX_NW_REPAIRS = 1 // needlework re-rolls a Fargate render — keep repairs tight.
+export const MAX_NW_REPAIRS = 1 // needlework re-rolls a Fargate render — keep repairs tight.
 
 /** The lightweight, JSON-safe result of ONE generate→gate→(maybe publish) attempt. */
 export interface AttemptResult {
@@ -397,10 +409,27 @@ export async function runCrossStitchBatch(count: number, step: StepRunner = inli
 
 /** One needlework attempt: Flux → convert → loom render → gate → publish on 'keep'. */
 async function needleworkAttempt(
-  brief: Awaited<ReturnType<typeof planNeedleworkBriefs>>[number],
+  brief: NeedleworkBrief,
   keptSubjects: string[],
 ): Promise<AttemptResult> {
   const candidate = await generateNeedleworkCandidate(brief)
+  return needleworkGateAndPublish(brief, candidate, keptSubjects)
+}
+
+/**
+ * Everything a needlework candidate goes through AFTER its hero exists: the
+ * vision gate and, on 'keep', the publisher.
+ *
+ * Split out for the same reason crochet's is — the server-side autopilot renders
+ * asynchronously, starting the Fargate task in one request and coming back for
+ * the picture in a later one, and both paths must judge and publish through
+ * exactly the same code.
+ */
+export async function needleworkGateAndPublish(
+  brief: NeedleworkBrief,
+  candidate: Awaited<ReturnType<typeof generateNeedleworkCandidate>>,
+  keptSubjects: string[],
+): Promise<AttemptResult> {
   const verdict = await visionGate(candidate.heroPng, {
     subject: brief.subject,
     craft: 'needlework',
@@ -465,6 +494,195 @@ export async function runNeedleworkBatch(count: number, step: StepRunner = inlin
   return base
 }
 
+// ─────────────────────────── CROCHET ───────────────────────────
+
+/**
+ * Crochet's repair budget. Unlike a Flux roll, a crochet render is
+ * DETERMINISTIC: the same program renders the same image every time, so
+ * re-rolling a fault in the object is pointless. The one thing a fresh attempt
+ * can fix is the DESIGN, so a repair here means "author a different design for
+ * the same brief and render that". One, and only one.
+ */
+export const MAX_CROCHET_REPAIRS = 1
+
+/**
+ * One crochet attempt: author a program → render its exact hero on Fargate,
+ * unpersisted → gate the render → duplicate guard → publish a complete row.
+ *
+ * Nothing is written before the gate says keep, so a killed candidate leaves no
+ * row and nothing in R2. After the gate, the completeness gate runs against the
+ * assembled row and a row that fails it is culled rather than published.
+ */
+export async function crochetAttempt(
+  brief: CrochetBrief,
+  keptSubjects: string[],
+  ctx: { bulkRunId?: string | null; attempt?: number } = {},
+): Promise<AttemptResult> {
+  const candidate = await generateCrochetCandidate(brief, paletteHexesFor(brief.brief.palette))
+  return crochetGateAndPublish(brief, candidate, keptSubjects, ctx)
+}
+
+/**
+ * Everything a crochet candidate goes through AFTER its hero exists: the vision
+ * gate, the duplicate guard, and the publisher with its completeness gate.
+ *
+ * Split out because the server-side autopilot renders asynchronously — it
+ * starts the Fargate task in one request and comes back for the picture in a
+ * later one — and both paths must judge and publish through exactly the same
+ * code. The inline runner above hands it a candidate it just rendered; the
+ * Inngest idea worker hands it one it fetched back out of the scratch bucket.
+ */
+export async function crochetGateAndPublish(
+  brief: CrochetBrief,
+  candidate: Awaited<ReturnType<typeof generateCrochetCandidate>>,
+  keptSubjects: string[],
+  ctx: { bulkRunId?: string | null; attempt?: number } = {},
+): Promise<AttemptResult> {
+  const verdict = await visionGate(candidate.heroPng, {
+    subject: `${brief.name}: ${brief.subject}`,
+    craft: 'crochet',
+    keptSubjects,
+  })
+  if (verdict.verdict !== 'keep') {
+    return {
+      verdict: verdict.verdict,
+      reasons: verdict.reasons,
+      repairAction: verdict.repairAction,
+      published: false,
+    }
+  }
+
+  // The gate says gem. Is it a gem the catalogue already has, by idea or by
+  // construction? A hit is terminal.
+  const catalogue = await loadCrochetCatalogue()
+  const hit = findCrochetDuplicate(
+    { subjectKey: brief.subjectKey, programFingerprint: candidate.fingerprint },
+    catalogue,
+  )
+  if (hit) {
+    return {
+      verdict: 'keep',
+      reasons: [`duplicate of ${hit.slug}: ${hit.reason}`],
+      published: false,
+      duplicateOf: hit.slug,
+      duplicateReason: hit.reason,
+    }
+  }
+
+  try {
+    await publishCrochetGem(brief, candidate, {
+      bulkRunId: ctx.bulkRunId ?? null,
+      gate: { verdict: verdict.verdict, reasons: verdict.reasons },
+      attempt: ctx.attempt ?? 1,
+    })
+  } catch (err) {
+    // A row that fails the completeness gate is CULLED, not published with a
+    // flag and not held for review. It reads as a kill in the run counters,
+    // with the gate's own reasons, so a systematic gap shows up in the log.
+    if (err instanceof CrochetIncompleteError) {
+      return { verdict: 'kill', reasons: err.result.reasons.slice(0, 3), published: false }
+    }
+    throw err
+  }
+  return { verdict: 'keep', reasons: verdict.reasons, published: true }
+}
+
+/**
+ * The planning context for one crochet batch: the whole catalogue as an avoid
+ * list, and a shelf quota drawn in proportion to each BUILDABLE shelf's gap to
+ * its target. Shared by the inline runner and the Inngest dispatcher so both
+ * plan identically.
+ */
+export async function crochetPlanContext(count: number): Promise<Parameters<typeof planCrochetBriefs>[1]> {
+  const [counts, avoidSubjectKeys] = await Promise.all([
+    liveCrochetShelfCounts().catch(() => ({}) as Record<string, number>),
+    publicCrochetSubjectKeys().catch(() => [] as string[]),
+  ])
+  const plan = crochetShelfPlan(counts, count)
+  return { avoidSubjectKeys, shelfSlots: plan.slots, shelfQuota: plan.quota }
+}
+
+export async function runCrochetBatch(count: number, step: StepRunner = inlineStep): Promise<BatchSummary> {
+  const base: BatchSummary = { craft: 'crochet', requested: count, published: 0, culled: 0, duplicates: 0, skipped: 0, repaired: 0, generations: 0, proGenerations: 0, paleSkips: 0, errors: 0, gems: [], killReasons: [], line: '' }
+  if (!gateConfigured()) {
+    return { ...base, notRun: 'gate-not-wired', line: 'crochet batch skipped — ANTHROPIC_API_KEY not set, refusing to publish un-gated' }
+  }
+  if (!crochetRenderWired()) {
+    return { ...base, notRun: 'render-not-wired', line: 'crochet batch skipped — LOOM_RENDER!=fargate, the exact-pattern hero render is not wired' }
+  }
+
+  const briefs = await step.run('cr-plan', async () => {
+    const ctx = await crochetPlanContext(count)
+    return planCrochetBriefs(count, ctx)
+  })
+  base.plannerMode = PLANNER_MODE
+  // For crochet these are the same number: a brief the planner model wrote is
+  // by definition one it dressed, because constrained mode is the only mode
+  // that produces one.
+  base.dressedBriefs = modelAuthoredCount(briefs)
+  const keptSubjects: string[] = []
+
+  for (const brief of briefs) {
+    try {
+      // The spend cap at the point of spending. A crochet idea costs a Fargate
+      // task; the pictorial lane costs an illustration on top.
+      const capped = await step.run(`cr-${brief.slug}-cap`, async () => {
+        const window = await crochetSpendWindow()
+        return overCrochetCap(window, { illustration: brief.treatment === 'grid-tapestry' })
+      })
+      if (capped) {
+        base.skipped++
+        console.warn(`[bulk crochet] ${brief.slug} skipped — ${capped}`)
+        continue
+      }
+
+      let last: AttemptResult | null = null
+      let publishedThis = false
+      let duplicated = false
+      for (let attempt = 1; attempt <= MAX_CROCHET_REPAIRS + 1; attempt++) {
+        base.generations++
+        if (brief.treatment === 'grid-tapestry') base.proGenerations++
+        const attemptNo = attempt
+        last = await step.run(`cr-${brief.slug}-a${attempt}`, () =>
+          crochetAttempt(brief, keptSubjects, { attempt: attemptNo }),
+        )
+        if (last.duplicateOf) {
+          base.duplicates++
+          base.killReasons.push(`duplicate of ${last.duplicateOf}`)
+          duplicated = true
+          break
+        }
+        if (last.verdict === 'keep' && last.published) {
+          keptSubjects.push(brief.subject)
+          base.gems.push(brief.slug)
+          base.published++
+          publishedThis = true
+          break
+        }
+        // Only a staging fault earns a second render; anything about the object
+        // itself is terminal, because the geometry is deterministic.
+        if (last.verdict === 'repair' && attempt <= MAX_CROCHET_REPAIRS) {
+          base.repaired++
+          continue
+        }
+        break
+      }
+      if (!publishedThis && !duplicated && last && !last.published) {
+        base.culled++
+        base.killReasons.push(...last.reasons)
+      }
+    } catch (err) {
+      base.errors++
+      console.error(`[bulk crochet] ${brief.slug} failed`, err)
+    }
+  }
+
+  base.line = summaryLine({ ...base, modelBriefs: base.dressedBriefs })
+  return base
+}
+
 export async function runBatch(craft: Craft, count: number, step: StepRunner = inlineStep): Promise<BatchSummary> {
-  return craft === 'needlework' ? runNeedleworkBatch(count, step) : runCrossStitchBatch(count, step)
+  if (craft === 'needlework') return runNeedleworkBatch(count, step)
+  if (craft === 'crochet') return runCrochetBatch(count, step)
+  return runCrossStitchBatch(count, step)
 }

@@ -45,6 +45,46 @@ cron switched on and watched for three firings, then fill to target, then the
 close-out (completeness gates, vision sweep of the new work, reindex,
 sitemap/structured data) and the per-category autopilot note.
 
+## Crochet bulk autopilot, on the server (2026-09-06)
+
+The crochet catalogue can now fill itself the way cross-stitch and needlework
+do: an Inngest job on ECS plans briefs, authors stitch programs, renders each
+pattern's own exact hero on Fargate, judges it, and publishes only what passes.
+Branch `claude/crochet-bulk-autopilot`. The cron toggle is OFF and stays off
+until the first batch has been judged.
+
+What is new. `CROCHET_SHELVES` in `generation/categories.ts` gives all
+fifty-seven crochet item types a demand-weighted target summing to 1,200, and
+the category target is derived from that sum. `bulk/crochet-forms.ts` is the
+single place saying what the loom can build TODAY — thirteen shelves with their
+treatments and stitch envelopes; a shelf absent from it gets no generation lane
+however far behind it is, because a pattern that cannot render cannot carry a
+truthful hero. `bulk/crochet-planner.ts` draws briefs from the shared
+design-direction axes weighted by each buildable shelf's gap to target, with the
+whole catalogue as an avoid list. `bulk/crochet-design.ts` expands the model's
+compact design recipe into a stitch program deterministically, so a model can
+only make design choices inside a shape the engine is measured on.
+`bulk/crochet.ts` measures the settled geometry and declares THAT size, writes
+the rounds with their colour changes, and publishes a complete row.
+
+Four binary gates, in order: the loom audit (two revisions then cull), size
+consistency, the vision gate with a crochet rubric (a broken patch of fabric is
+a kill, not a repair, because the geometry is deterministic), and a new crochet
+completeness gate in `packages/db/src/crochet-completeness.ts` checked against
+the structured row before anything is written. A duplicate guard on subject key
+plus a colour-stripped program fingerprint sits between the last two. Migration
+`20261011000000_crochet_bulk_autopilot_provenance` adds `generationMeta`,
+`subjectKey`, `programFingerprint` and `bulkRunId` to `CrochetPattern`.
+
+Spend is capped daily on Fargate renders and on the pictorial lane's
+illustrations, and the admin bulk page carries a third craft card with shelf
+progress, the spend line and the toggle. The category stays hidden site-wide
+(`LAUNCH_VISIBLE_CATEGORY_SLUGS` is untouched), so a published pattern fills the
+catalogue without reaching a customer.
+
+Standing rule, unchanged and reaffirmed: the autopilot runs on ECS or in a cloud
+session, never on Rebecca's laptop.
+
 ## The bulk crochet pattern path proved end to end (2026-09-05)
 
 The loom's render-on-publish step had never been run against the live database:
