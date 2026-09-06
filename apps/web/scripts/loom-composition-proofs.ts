@@ -334,7 +334,7 @@ function bear(opts: {
       },
     ],
     gaugeText: 'sc worked in the round, each piece stuffed firm and sewn on',
-    finishedSizeMm: { width: 84, height: 107 }, // §8f-4: MEASURED off the settled geometry at the corrected cell (57 x 74 mm before it, against the same 44 x 69 claim — the claim was never checked). Height-to-width is unmoved at 1.28, so every proportion round 2 tuned survives; only the scale is honest now.
+    finishedSizeMm: { width: 83, height: 103 }, // §8f-5: re-MEASURED off the settled geometry after the round-work look pass (84 x 107 at §8f-4, 57 x 74 before the corrected cell). The stitch now lies IN the surface instead of standing off it, so every part is a few percent less puffy; height-to-width is unmoved at 1.24 and every proportion round 2 tuned survives.
     hookMm: 4,
     notes: opts.notes,
   }

@@ -174,7 +174,7 @@ function compile(name: string): Job {
     name,
     kind: 'flat',
     program,
-    scene: programScene(program, built, yr, 0.08, proofStaging(program.name)),
+    scene: programScene(program, built, yr, 0.08, program.staging ?? proofStaging(program.name)),
     yr: programYarnRadiusMm(program),
     geometryHash: geometryHash(built),
     heroPromptKey: 'sc',

@@ -10,7 +10,7 @@
  * can render its OWN exact hero.
  */
 
-import { compileProgram, programYarnRadiusMm, type CrochetProgram } from './program'
+import { compileProgram, programYarnRadiusMm, type CrochetProgram, type Staging } from './program'
 import { relax } from './relax'
 import { auditProblems } from './auditChecks'
 import { STITCHES, type StitchId } from './dictionary'
@@ -216,17 +216,12 @@ function colourStrokes(
   return order.map((hex) => ({ hex, sheen: 0.85, radiusMm, filaments: byHex.get(hex)! }))
 }
 
-/** How a finished flat piece is STAGED for its hero (Part C — the four-part
- *  customer bar's "staged as the finished object" leg):
- *   - `swatch`  — a tight macro crop of the fabric (the stitch-proof look).
- *   - `flatlay` — the WHOLE piece pulled back on a clean surface with a gentle
- *     3/4 tilt + soft drape, so it reads as a finished dishcloth / panel laid out,
- *     not a fabric close-up.
- *   - `loop`    — the flat strip curled into a RING (a headband seamed into a
- *     loop): the finished object a customer recognises. Presentation only — the
- *     stitches are the exact same genuinely-stitched geometry, just curved along
- *     the band as a real seamed headband is. */
-export type Staging = 'swatch' | 'flatlay' | 'loop'
+/** `Staging` (the finished-object hero presentation, Part C) now lives on
+ *  `./program` — a real stored `CrochetProgram` needs to carry its own staging
+ *  choice, and `program.ts` cannot import it back from here without a cycle.
+ *  Re-exported so existing `import { type Staging } from './programScene'`
+ *  call sites are unchanged. */
+export type { Staging }
 
 /** Curl a flat strip's control points into a closed RING for the headband hero —
  *  a short ribbed CYLINDER standing on the table (a headband seamed end to end).
@@ -263,6 +258,54 @@ function loopStrip(ctrl: V3[], yr: number): V3[] {
 }
 
 /**
+ * Bend a flat strip's control points into a gentle in-plane S-CURVE for the
+ * `flatband` product-photo hero — a headband laid on the table, not worn or
+ * stood up (contrast `loopStrip`, which stands it on end as a worn ring). The
+ * strip's LONG axis is re-parametrised along a soft sine wave in X–Y instead
+ * of a straight line; the short axis (the row count — the same axis `loopStrip`
+ * stands up as band height) is carried as an offset along the curve's own
+ * local NORMAL, exactly as a ribbon's width rides perpendicular to whichever
+ * way it bends — so the post ribs (each a fixed column, running the full row
+ * count) still read as straight bars crossing the curve, not smeared along it.
+ * No stitch moves relative to its neighbours and arc length along the curve
+ * equals the strip's own built length (a sine's own arc length isn't linear in
+ * its parameter, but the wobble this proof needs is gentle enough — under 3%
+ * of the strip's length — that the along-strip param drifting slightly is well
+ * inside the same tolerance `loopStrip`'s circle already accepts). Out-of-plane
+ * relief (`p.z`, the stitch texture) is untouched — this bends the fabric
+ * PLANE, not its face, exactly as a real ribbon curves lying flat. */
+function flatbandStrip(ctrl: V3[]): V3[] {
+  let minx = Infinity, maxx = -Infinity, miny = Infinity, maxy = -Infinity
+  for (const p of ctrl) {
+    if (p.x < minx) minx = p.x; if (p.x > maxx) maxx = p.x
+    if (p.y < miny) miny = p.y; if (p.y > maxy) maxy = p.y
+  }
+  const w = maxx - minx
+  const h = maxy - miny
+  const wrapX = w >= h // the strip's LONG axis is the one that bends
+  const L = wrapX ? w : h
+  const W = wrapX ? h : w // the short axis (row count / band width)
+  const bandLo = wrapX ? miny : minx
+  // A soft "S": amplitude + wavelength both scaled to the strip's own length,
+  // so this stays proportionate whatever the stitch counts settle to.
+  const AMP = L * 0.09
+  const K = (Math.PI * 1.5) / L // one and a half lobes = an S with a slight extra curl
+  return ctrl.map((p) => {
+    const along = wrapX ? p.x - minx : p.y - miny // 0..L down the strip
+    const up = (wrapX ? p.y : p.x) - bandLo - W / 2 // -W/2..W/2, centred across the strip
+    const theta = along * K
+    const curveY = AMP * Math.sin(theta)
+    const slope = AMP * K * Math.cos(theta) // d(curveY)/d(along) — the local tangent
+    const tanLen = Math.hypot(1, slope)
+    const nx = -slope / tanLen // the curve's local normal (unit, perpendicular to its tangent)
+    const ny = 1 / tanLen
+    const x = along + nx * up
+    const y = curveY + ny * up
+    return { x, y, z: p.z }
+  })
+}
+
+/**
  * Build the deterministic Blender scene for a relaxed program — the exact
  * pattern as one continuous plied yarn. Multi-colour when the program expresses
  * colourwork (per-row stripe keys): the single strand is split into per-colour
@@ -274,6 +317,7 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   const nodes = built.model.nodes
   let ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
   if (staging === 'loop') ctrl = loopStrip(ctrl, yr)
+  if (staging === 'flatband') ctrl = flatbandStrip(ctrl)
   const center = smooth(ctrl, PER_SEG)
   // Target OUTER yarn radius. MUST match the single-stitch swatch call sites
   // (scripts/loom-stitch.ts, loom-continuous.ts) which the crisp-plied-yarn pass
@@ -344,6 +388,20 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
     // band height sits close to its own loop diameter, so the safer
     // proven-geometry lever was kept and only the camera moved).
     view = { ...base, marginFactor: 0.4, tiltDeg: 74, openFabric: true }
+  } else if (staging === 'flatband') {
+    // The headband laid on the ground as a PRODUCT PHOTO — not worn/standing
+    // (contrast `loop`). `flatbandStrip` already bent the strip into a gentle
+    // in-plane S, so the camera just needs the ordinary flatlay-style 3/4-from-
+    // above look, with extra margin because the S widens the footprint less
+    // than a straight strip's own length would otherwise demand.
+    // openFabric (like `loop`): the yarn-coloured BACKING plane is a RECTANGLE
+    // sized off the content bounding box (loom_render_crochet.py) — right for a
+    // flatlay panel that fills its own rectangle, wrong for an S-curved strip,
+    // which doesn't: the first render showed the backing slab plainly through
+    // the curve's concave side. Dropping it (as `loop` does for the same
+    // non-rectangular-footprint reason) leaves the plain ground showing there
+    // instead, which is what a real photo of a curved strip on a table shows.
+    view = { ...base, marginFactor: 0.35, tiltDeg: 22, drapeAmp: 0.04, resY: 1100, openFabric: true }
   } else {
     // `swatch` — the tight stitch-proof macro crop (the prior behaviour).
     view = { ...base, marginFactor: 0.12, tiltDeg: programTiltDeg(p) }

@@ -25,6 +25,18 @@
  *     WORKED FACE (fz alternates every row, so raw z averages to nothing), plus
  *     how proud the crown chain rides above its own legs (the "proud cord").
  *   - thickness            — robust z extent of the worked fabric.
+ *
+ * ROUND WORK (§8f-5). A disc and a ball have no global "plane" to measure
+ * against: a stitch's relief rides the local surface NORMAL, and "along the
+ * row" is the tangential direction, not world x. So every relief, splay and
+ * out-of-plane figure below is computed in the LOCAL SURFACE FRAME —
+ *   t = the round's tangent, m = the meridian (radially outward on a disc,
+ *   down the meridian on a ball), n = m x t, the outward surface normal —
+ * and the "plane" the fabric is measured against is the settled MID-SURFACE:
+ * the median height of the worked fabric at that radius (disc) / that polar
+ * angle (ball), so a bowl or an oblate ball is not scored as relief. Flat
+ * builds keep exactly the old measurement (n = +z, mid-surface z = 0), so the
+ * flat control's numbers are directly comparable round to round.
  */
 
 import { buildRelaxedSwatch, isSwatchArg } from '../src/lib/loom/crochet/engine/buildSwatch'
@@ -53,6 +65,7 @@ const TARGETS: Record<string, Target> = {
   crowding: { lo: 2.8, hi: 4.8, note: 'yarn length per unit cell area (derived from the two above)' },
   thickness: { lo: 1.8, hi: 2.2, note: 'sc fabric ≈ 2 yarn diameters thick' },
   crownProud: { lo: 0.0, hi: 0.5, note: 'top loops lie nearly flat — proud by under half a diameter' },
+  mound: { lo: 0.0, hi: 2.2, note: 'a stitch lies IN the fabric — its own peak-to-trough along the normal is about one fabric thickness, not a bead standing off it' },
 }
 
 /**
@@ -129,6 +142,9 @@ function main(): void {
     T[k] = { ...T[k]!, ...(v as { lo: number; hi: number }) }
   }
   const W = recipe.auditW
+  // Only buildContinuous clears the shared diagnostic log; a round or sphere
+  // build appends to it, so clear it here too and measure exactly one build.
+  stitchDebugNodes.length = 0
   const { built } = buildRelaxedSwatch(arg, W, yr)
   const n = built.model.nodes
   const recs = stitchDebugNodes.slice()
@@ -141,43 +157,142 @@ function main(): void {
   const rows = Math.max(...recs.map((r) => r.j)) + 1
   const seg = (a: number, b: number): number => Math.hypot(n[a]!.x - n[b]!.x, n[a]!.y - n[b]!.y, n[a]!.z - n[b]!.z)
 
+  // ---- THE FABRIC FRAME (§8f-5). A flat swatch is measured against the world
+  // plane, exactly as before. A disc or a ball has no such plane: relief rides
+  // the LOCAL SURFACE NORMAL and "along the row" is the round's tangent, so the
+  // frame is built per node and the reference "plane" is the settled MID-SURFACE.
+  interface Vec { x: number; y: number; z: number }
+  const frame: 'flat' | 'polar' | 'surface' = built.frame ?? 'flat'
+  const curved = frame !== 'flat'
+  const C = built.model.radialCenter ?? { x: 0, y: 0, z: 0 }
+  const merid = built.model.meridian
+  /** t = round tangent, m = meridian, n = m x t (the OUTWARD surface normal). */
+  const frameAt = (i: number): { t: Vec; m: Vec; n: Vec } => {
+    if (!curved) return { t: { x: 1, y: 0, z: 0 }, m: { x: 0, y: 1, z: 0 }, n: { x: 0, y: 0, z: 1 } }
+    const p = n[i]!
+    const rc = Math.hypot(p.x, p.y) || 1
+    const t: Vec = { x: -p.y / rc, y: p.x / rc, z: 0 }
+    const q = merid?.[i]
+    const m: Vec = q
+      ? { x: q.tr * (p.x / rc), y: q.tr * (p.y / rc), z: q.tz }
+      : { x: p.x / rc, y: p.y / rc, z: 0 }
+    const c: Vec = { x: m.y * t.z - m.z * t.y, y: m.z * t.x - m.x * t.z, z: m.x * t.y - m.y * t.x }
+    const L = Math.hypot(c.x, c.y, c.z) || 1
+    return { t, m, n: { x: c.x / L, y: c.y / L, z: c.z / L } }
+  }
+  // Where a node sits ACROSS the fabric (radius on a disc, polar angle on a
+  // ball) and how far OUT it sits (z on a disc, distance from the centre on a
+  // ball). The mid-surface is the median "out" per band of "across", so a disc
+  // that dishes or a ball that is oblate is not scored as per-stitch relief.
+  const across = (i: number): number => {
+    const p = n[i]!
+    if (frame === 'polar') return Math.hypot(p.x, p.y)
+    if (frame === 'surface') return Math.atan2(Math.hypot(p.x - C.x, p.y - C.y), p.z - C.z)
+    return 0
+  }
+  const out = (i: number): number => {
+    const p = n[i]!
+    if (frame === 'polar') return p.z
+    if (frame === 'surface') return Math.hypot(p.x - C.x, p.y - C.y, p.z - C.z)
+    return p.z
+  }
+  const BINS = 40
+  let refAt: (i: number) => number = () => 0
+  if (curved) {
+    const cs: number[] = []
+    const hs: number[] = []
+    for (let k = built.anchorPins; k < n.length; k++) {
+      cs.push(across(k))
+      hs.push(out(k))
+    }
+    const lo = Math.min(...cs)
+    const hi = Math.max(...cs)
+    const w = (hi - lo) / BINS || 1
+    const bins: number[][] = Array.from({ length: BINS + 1 }, () => [])
+    for (let k = 0; k < cs.length; k++) bins[Math.min(BINS, Math.max(0, Math.floor((cs[k]! - lo) / w)))]!.push(hs[k]!)
+    const med = bins.map((b) => (b.length ? [...b].sort((x, y) => x - y)[b.length >> 1]! : NaN))
+    for (let i = 0; i < med.length; i++) {
+      if (Number.isFinite(med[i]!)) continue
+      let a = i
+      while (a >= 0 && !Number.isFinite(med[a]!)) a--
+      let b = i
+      while (b < med.length && !Number.isFinite(med[b]!)) b++
+      med[i] = a >= 0 ? med[a]! : med[b]!
+    }
+    refAt = (i: number): number => {
+      const x = (across(i) - lo) / w
+      const b = Math.min(BINS, Math.max(0, Math.floor(x)))
+      const f = Math.min(1, Math.max(0, x - b))
+      return med[b]! + (med[Math.min(BINS, b + 1)]! - med[b]!) * f
+    }
+  }
+  /** Signed offset from the fabric's own mid-surface along the outward normal. */
+  const nOff = (i: number): number => (curved ? out(i) - refAt(i) : n[i]!.z)
+
   // Index the records by (row, column) so a column can be walked up the rows.
   const byRC = new Map<string, (typeof recs)[number]>()
   for (const r of recs) byRC.set(`${r.j},${r.c}`, r)
+  const maxJ = Math.max(...recs.map((r) => r.j))
   // Interior only: the selvedge stitches carry the turn's slack and row 0 carries
   // the turning chain off the pinned foundation, so neither is representative.
-  const interior = (r: { j: number; c: number }): boolean => r.j >= 1 && r.c >= 2 && r.c <= W - 3
+  // In the round the "selvedge" is the ring round and the outermost/last round —
+  // one is hooked around the ring strand, the other carries the fasten-off.
+  const interior = (r: { j: number; c: number }): boolean =>
+    curved ? r.j >= 1 && r.j <= maxJ - 1 : r.j >= 1 && r.c >= 2 && r.c <= W - 3
 
   // --- yarn fed per stitch: the arc length of the ONE strand over one excursion.
-  // Node index == position along the strand for buildContinuous, so a stitch owns
-  // [start, nextStart) — which correctly includes the travel from the previous
-  // head into this stitch (a real crocheter's yarn-per-stitch includes it too).
+  // Node index == position along the strand, so a stitch owns [start, nextStart)
+  // — which correctly includes the travel from the previous head into this stitch
+  // (a real crocheter's yarn-per-stitch includes it too).
   const sorted = [...recs].sort((a, b) => a.start - b.start)
   const yarnPer: number[] = []
   for (let i = 0; i < sorted.length - 1; i++) {
     const r = sorted[i]!
     if (!interior(r)) continue
-    if (sorted[i + 1]!.j !== r.j) continue // don't measure across a turn
+    // A flat row ends at a TURN (don't measure across it); a spiral round does
+    // not — the strand runs straight on into the next round, which is the point.
+    if (!curved && sorted[i + 1]!.j !== r.j) continue
     let L = 0
     for (let k = r.start; k < sorted[i + 1]!.start; k++) L += seg(k, k + 1)
     yarnPer.push(L)
   }
 
-  // --- settled pitches, crown to crown.
+  // --- settled pitches, crown to crown. Flat: along the row lattice and up the
+  // column. Round: consecutive crowns in the same round, and the nearest crown
+  // in the round below (the round pitch — a spiral has no column to walk).
   const pitchX: number[] = []
   const pitchY: number[] = []
-  for (const r of recs) {
-    if (!interior(r)) continue
-    const right = byRC.get(`${r.j},${r.c + 1}`)
-    if (right) pitchX.push(Math.abs(n[right.crown]!.x - n[r.crown]!.x))
-    const up = byRC.get(`${r.j + 1},${r.c}`)
-    if (up) pitchY.push(Math.abs(n[up.crown]!.y - n[r.crown]!.y))
+  if (!curved) {
+    for (const r of recs) {
+      if (!interior(r)) continue
+      const right = byRC.get(`${r.j},${r.c + 1}`)
+      if (right) pitchX.push(Math.abs(n[right.crown]!.x - n[r.crown]!.x))
+      const up = byRC.get(`${r.j + 1},${r.c}`)
+      if (up) pitchY.push(Math.abs(n[up.crown]!.y - n[r.crown]!.y))
+    }
+  } else {
+    const byRound = new Map<number, (typeof recs)[number][]>()
+    for (const r of sorted) {
+      if (!byRound.has(r.j)) byRound.set(r.j, [])
+      byRound.get(r.j)!.push(r)
+    }
+    for (let i = 0; i < sorted.length - 1; i++) {
+      const r = sorted[i]!
+      if (!interior(r)) continue
+      const nx = sorted[i + 1]!
+      if (nx.j === r.j) pitchX.push(seg(r.crown, nx.crown))
+      const belowRound = byRound.get(r.j - 1) ?? []
+      let best = Infinity
+      for (const b of belowRound) best = Math.min(best, seg(r.crown, b.crown))
+      if (Number.isFinite(best)) pitchY.push(best)
+    }
   }
 
-  // --- relief on the row's own WORKED FACE. fz = +1 on even rows, −1 on odd, so
-  // raw z cancels across rows; multiplying by the face sign measures "how far
-  // this part stands out of the fabric on the side it was worked from".
-  const face = (j: number): number => (j % 2 === 0 ? 1 : -1)
+  // --- relief, measured on the row's own WORKED FACE and against the fabric's
+  // own mid-surface. Flat fabric turns every row (fz = +1 on even rows, −1 on
+  // odd) so raw z cancels across rows; the round builders never turn, so every
+  // round works the same face and the sign is simply +1.
+  const face = (j: number): number => (curved ? 1 : j % 2 === 0 ? 1 : -1)
   const crownRel: number[] = []
   const legRel: number[] = []
   const hookRel: number[] = []
@@ -195,13 +310,29 @@ function main(): void {
   const legStraightVis: number[] = []
   const vAngle: number[] = []
   const legOut: number[] = []
+  // THE MOUND (§8f-5): how far a single stitch's own yarn stands out of the
+  // fabric, peak to trough, along the surface normal. A tidy V-grid stitch lies
+  // in the fabric and this figure is about one fabric thickness; a stitch that
+  // reads as a knot or a coiled bead standing off the surface has a mound
+  // taller than the fabric it sits in, which is exactly what a close-up sees.
+  const mound: number[] = []
+  const crownOutAbs: number[] = []
   for (const r of recs) {
     if (!interior(r)) continue
     const f = face(r.j)
-    crownRel.push(n[r.crown]!.z * f)
-    hookRel.push(n[r.hook]!.z * f)
-    for (const k of r.legs) legRel.push(n[k]!.z * f)
-    for (const k of r.crownTrail) trailRel.push(n[k]!.z * f)
+    crownRel.push(nOff(r.crown) * f)
+    hookRel.push(nOff(r.hook) * f)
+    for (const k of r.legs) legRel.push(nOff(k) * f)
+    for (const k of r.crownTrail) trailRel.push(nOff(k) * f)
+    let mLo = Infinity
+    let mHi = -Infinity
+    for (let k = r.start; k < r.end; k++) {
+      const v = nOff(k) * f
+      if (v < mLo) mLo = v
+      if (v > mHi) mHi = v
+    }
+    if (Number.isFinite(mLo)) mound.push(mHi - mLo)
+    crownOutAbs.push(Math.abs(nOff(r.crown)))
     const L = r.legs
     // Legs are pushed down-leg first (descending) then up-leg (ascending), so a
     // node and its opposite number pair as (k, len-1-k) whatever the leg
@@ -215,8 +346,17 @@ function main(): void {
       headSep.push(seg(r.crown, r.headPartner))
       const a = n[r.crown]!
       const b = n[r.headPartner]!
-      headSepY.push(Math.abs(a.y - b.y))
-      headSepZ.push(Math.abs(a.z - b.z))
+      if (curved) {
+        // In the surface frame the head's two strands separate ALONG the round
+        // and along the NORMAL, not in world y and z.
+        const F = frameAt(r.crown)
+        const dx = { x: a.x - b.x, y: a.y - b.y, z: a.z - b.z }
+        headSepY.push(Math.abs(dx.x * F.t.x + dx.y * F.t.y + dx.z * F.t.z))
+        headSepZ.push(Math.abs(nOff(r.crown) - nOff(r.headPartner)))
+      } else {
+        headSepY.push(Math.abs(a.y - b.y))
+        headSepZ.push(Math.abs(a.z - b.z))
+      }
     }
     if (L.length >= 4 && L.length % 2 === 0) {
       // STRAIGHTNESS: chord ÷ arc along each leg's own line of nodes. 1.0 is a
@@ -239,23 +379,31 @@ function main(): void {
       // measure straight.
       legStraightVis.push(polyArc(down))
       legStraightVis.push(polyArc(up))
-      // THE V: the angle the two legs open by, measured in the fabric PLANE
-      // (x along the row, y up it) from the shared insertion at the hook.
+      // THE V: the angle the two legs open by, measured IN the fabric surface
+      // (t along the round, m up the meridian) from the shared insertion at the
+      // hook. Flat builds get t = x, m = y — the original measurement exactly.
       const H = n[r.hook]!
+      const F = frameAt(r.hook)
       const A = n[L[0]!]!
       const B = n[L[L.length - 1]!]!
-      const ang = (P: typeof A): number => Math.atan2(P.y - H.y, P.x - H.x)
+      const ang = (P: typeof A): number => {
+        const d0 = { x: P.x - H.x, y: P.y - H.y, z: P.z - H.z }
+        const u = d0.x * F.t.x + d0.y * F.t.y + d0.z * F.t.z
+        const v = d0.x * F.m.x + d0.y * F.m.y + d0.z * F.m.z
+        return Math.atan2(curved ? -v : v, u)
+      }
       let dv = Math.abs(ang(A) - ang(B))
       if (dv > Math.PI) dv = Math.PI * 2 - dv
       vAngle.push((dv * 180) / Math.PI)
-      // OUT OF PLANE: the worst leg node's distance from the fabric mid-plane.
-      for (const k of L) legOut.push(Math.abs(n[k]!.z))
+      // OUT OF THE SURFACE: the worst leg node's distance from the mid-surface.
+      for (const k of L) legOut.push(Math.abs(nOff(k)))
     }
   }
 
-  // --- thickness: robust z extent of the WORKED fabric (skip the pinned anchor).
+  // --- thickness: robust extent of the WORKED fabric across its own surface
+  // (z for a flat swatch, the normal offset for a disc or a ball).
   const zs: number[] = []
-  for (let k = built.anchorPins; k < n.length; k++) zs.push(n[k]!.z)
+  for (let k = built.anchorPins; k < n.length; k++) zs.push(nOff(k))
   const thickness = pct(zs, 98) - pct(zs, 2)
 
   const cellArea = mean(pitchX) * mean(pitchY)
@@ -274,13 +422,16 @@ function main(): void {
     )
   }
 
-  console.log(`\nSETTLED METRICS — ${arg} [${recipe.status}]  W=${W} rows=${rowsWorked} yr=${yr}mm (rendered yarn diameter d=${d.toFixed(2)}mm)`)
-  console.log(`measured over ${yarnPer.length} interior stitches; targets are worsted cotton, in yarn diameters\n`)
+  const what = frame === 'polar' ? 'rounds' : frame === 'surface' ? 'rounds (surface frame)' : 'rows'
+  console.log(`\nSETTLED METRICS — ${arg} [${recipe.status}]  W=${W} ${what}=${rowsWorked} yr=${yr}mm (rendered yarn diameter d=${d.toFixed(2)}mm)`)
+  console.log(`measured over ${yarnPer.length} interior stitches; targets are worsted cotton, in yarn diameters`)
+  if (curved) console.log(`frame: ${frame} — pitch is along the round, row pitch is round-to-round, relief is along the local surface normal off the settled mid-surface\n`)
+  else console.log('')
   console.log(`${'quantity'.padEnd(26)}${'ours(d)'.padStart(8)}${'ours(mm)'.padStart(10)}${'target(d)'.padStart(13)}${'ratio'.padStart(9)}`)
   console.log('-'.repeat(74))
   line('yarn fed per stitch', mean(yarnPer), 'yarnPerStitch')
-  line('stitch pitch (along row)', mean(pitchX), 'stitchPitch')
-  line('row pitch (up column)', mean(pitchY), 'rowPitch')
+  line(curved ? 'stitch pitch (round)' : 'stitch pitch (along row)', mean(pitchX), 'stitchPitch')
+  line(curved ? 'round pitch' : 'row pitch (up column)', mean(pitchY), 'rowPitch')
   console.log('-'.repeat(74))
   // crowding is a length per area — its "d" column is per-diameter, its mm column per-mm
   {
@@ -292,8 +443,9 @@ function main(): void {
     )
   }
   console.log('-'.repeat(74))
-  line('fabric thickness (z p2–98)', thickness, 'thickness')
+  line('fabric thickness (p2–98)', thickness, 'thickness')
   line('crown proud of its legs', mean(crownRel) - mean(legRel), 'crownProud')
+  line('per-stitch mound (peak-tr)', mean(mound), 'mound')
   console.log('-'.repeat(74))
   line('  crown apex relief', mean(crownRel))
   line('  crown trail relief', mean(trailRel))
@@ -302,7 +454,7 @@ function main(): void {
   line('  post leg separation', mean(legSep))
   if (headSep.length) {
     line('  head strand separation', mean(headSep))
-    line('    …of which up the row', mean(headSepY))
+    line(curved ? '    …of which along round' : '    …of which up the row', mean(headSepY))
     line('    …of which in depth', mean(headSepZ))
   }
   console.log('-'.repeat(74))
@@ -319,7 +471,7 @@ function main(): void {
     row('leg straightness, w/ dive', mean(legStraight), 'legStraight', 'ratio')
     row('V opening angle', mean(vAngle), 'vAngle', 'deg')
   }
-  line('leg pair out of plane (max)', pct(legOut, 90), 'legOutOfPlane')
+  line(curved ? 'legs out of surface (p90)' : 'leg pair out of plane (max)', pct(legOut, 90), 'legOutOfPlane')
   console.log(`${'  …as a share of thickness'.padEnd(26)}${(pct(legOut, 90) / thickness).toFixed(2).padStart(8)}     ratio   (0 = the mid-plane, 0.5 = the face)`)
   line('crown proud (flat-top bar)', mean(crownRel) - mean(legRel), 'crownProudFlat')
   console.log('-'.repeat(74))

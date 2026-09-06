@@ -28,6 +28,7 @@ import {
   rowPitchYr,
   emitPlainStitch,
   emitHeadLoop,
+  headApexRelief,
   BASE_ROW_YR,
   type BuiltContinuous,
   type StrandCtx,
@@ -77,6 +78,8 @@ export interface DecSpec {
    * other stitch throws, so it gets the same loop from the same emitter.
    */
   headLoopMm?: number
+  /** No-turn spiral rounds: lie in the surface (see emitPlainStitch.surfaceLay). */
+  surfaceLay?: number
 }
 
 export function emitDecrease(S: StrandCtx, d: StitchDims, spec: DecSpec): { crown: number; head: number[] } {
@@ -103,8 +106,10 @@ export function emitDecrease(S: StrandCtx, d: StitchDims, spec: DecSpec): { crow
   const cy2 = spec.cy2 ?? S.nodes[spec.b2.back]!.y
   const bn1 = spec.bn1 ?? S.nodes[spec.b1.back]!.z
   const bn2 = spec.bn2 ?? S.nodes[spec.b2.back]!.z
-  const hz1 = (bn1 >= 0 ? -1 : 1) * z * 1.6
-  const hz2 = (bn2 >= 0 ? -1 : 1) * z * 1.6
+  // The same shallower dive a laid head asks for (emitPlainStitch.surfaceLay).
+  const slay = spec.surfaceLay ?? 0
+  const hz1 = (bn1 >= 0 ? -1 : 1) * z * (1.6 - 0.62 * slay)
+  const hz2 = (bn2 >= 0 ? -1 : 1) * z * (1.6 - 0.62 * slay)
   const xa1 = (f: number): number => x1 + (xC - x1) * f // first leg: insertion 1 → crown
   const xa2 = (f: number): number => x2 + (xC - x2) * f // last leg: insertion 2 → crown
 
@@ -147,7 +152,7 @@ export function emitDecrease(S: StrandCtx, d: StitchDims, spec: DecSpec): { crow
   push(xa2(0.65) - sd * legHalf(0.65), by + px * 0.52, legZ * fz)
   push(xa2(1) - sd * legHalf(1), by + px * 0.8, legZ * fz)
   if (recut) {
-    const h = emitHeadLoop(push, { xC, ty, s, sd, fz, zh, dh, pw, cw, hl })
+    const h = emitHeadLoop(push, { xC, ty, s, sd, fz, zh, dh, pw, cw, hl, lay: slay })
     const head: number[] = []
     for (let k = h.trailA; k <= h.trailB; k++) head.push(k)
     return { crown: h.crown, head }
@@ -463,6 +468,12 @@ export function buildRounds(
   // so the surface between the proud crowns reads knotty. Calm the leg bulge; crown
   // height + dive depth (the interlock) are left full, unlike the burned crownLay.
   const ROUND_LEG_RELIEF = 0.7
+  // THE STITCH LIES IN THE SURFACE (§8f-5) — see emitPlainStitch.surfaceLay. A
+  // spiral never turns, so a crown thrown proud on the worked face stands off
+  // the fabric with nothing to cancel it and the next round has to plunge under
+  // it: every stitch became a full-thickness loop, which is the knot the disc
+  // rendered. The head lies in the surface and the dive shallows to match.
+  const SURFACE_LAY = 1
 
   ridgeDebugNodes.length = 0
   const S = createStrand()
@@ -540,6 +551,7 @@ export function buildRounds(
           cyBelow: rr,
           place,
           legReliefScale: ROUND_LEG_RELIEF, // calm the same-face leg bulge (§8c round-fabric look pass)
+          surfaceLay: SURFACE_LAY,
           linkRole: 'ring', // round 1 WRAPS the ring strand (a stem, not a crown)
           headLoopMm,
         })
@@ -583,6 +595,7 @@ export function buildRounds(
             cyBelow: b.r,
             place,
             legReliefScale: ROUND_LEG_RELIEF,
+            surfaceLay: SURFACE_LAY,
             hookDepthScale,
             headLoopMm,
           })
@@ -624,7 +637,7 @@ export function buildRounds(
   // close-range pass exists to produce), and the apex takes a floor AT its built
   // offset — enough to stop it being dragged down into the crowd by the hooks
   // that link it, never enough to push it out.
-  const crownZ = headLoopMm > 0 ? zh * 0.8 : zh * 1.15
+  const crownZ = headLoopMm > 0 ? headApexRelief(zh, SURFACE_LAY) : zh * 1.15
   const CANOPY = crownZ * 0.65
   const APEX_LO = crownZ
   const zBand = nodes.map((n, i) =>
@@ -800,17 +813,62 @@ export function buildSphere(
   // sw here floated a round-2 inc hook 1.49yr up-meridian). Unchanged from the
   // locked ball geometry when no override is passed.
   const drift = rowH * 1.05
+  // The nominal sphere the DERIVED counts are read off (see the counts block
+  // below). The fabric is no longer laid on it — it only says how many stitches
+  // each round of a ball this size wants — so there is no sphere centre any
+  // more; the intrinsic profile carries its own height above the table.
   const eq = patternCounts ? Math.max(...patternCounts) : equatorCount
   const R = (eq * sw) / (2 * Math.PI)
-  const Z0 = R + yr * 1.5 // sphere centre height — the ball rests on the table (floorZ 0)
 
   ridgeDebugNodes.length = 0
   const S = createStrand()
   const { nodes, push } = S
 
-  // rr defined below is also the intrinsic profile's start — hoist it.
+  // MAGIC RING at the top pole (the anchor). The pattern branch keeps rrHoist as
+  // its intrinsic-profile start so program.ts geometry is unchanged; a derived
+  // ball draws its ring tight, so the top pole closes to a pinprick.
   const rrHoist = yr * 1.15
-  const prof = patternCounts ? intrinsicProfile(patternCounts, sw, rrHoist, rowH * 1.05, yr) : null
+  const rr = patternCounts ? rrHoist : yr * 0.85
+
+  // THE COUNTS FIRST, THEN THE SURFACE THEY MAKE (§8f-5). The counts are still
+  // the canonical ball recipe — 6 in the ring, then at most ±6 a round toward
+  // what the sphere's circumference wants — but the fabric is then laid on the
+  // surface THOSE COUNTS make (the intrinsic profile), exactly like a
+  // pattern-driven ball, instead of on the rigid analytic sphere.
+  //
+  // Measured, that is where the open pole came from. On the analytic sphere the
+  // ±6 cap means the cap rounds carry fewer stitches than their latitude's
+  // circumference wants, so the fabric is stretched to fit it: round 1 settled
+  // at 1.51x the stitch gauge and round 2 at 1.27x, i.e. a ring of six stitches
+  // held apart round a hole, which is exactly what the render showed. Every
+  // round of the intrinsic surface sits at the radius its own stitch count
+  // wants, so the pole closes on its own and no round is stretched.
+  //
+  // §8f-4 measured what this costs and it is not a surprise: a +6 cap is
+  // intrinsically a flat disc, so the honest ball is oblate and its roundness
+  // has to come from stuffing, which this model does not have. It is the same
+  // fabric the amigurumi compositions have always been built from — the ball
+  // swatch and the ball a bear is made of are now one surface model, not two.
+  const rounds: number[] = []
+  const counts: number[] = []
+  if (patternCounts) {
+    for (const c of patternCounts) counts.push(c)
+  } else {
+    const mMaxDerive = Math.PI * R - rr
+    let prev = 0
+    for (let m = rr + drift; m <= mMaxDerive - drift * 0.35; m += drift) {
+      const target = Math.max(4, Math.round((2 * Math.PI * Math.max(R * Math.sin(m / R), 1e-3)) / sw))
+      // The canonical ball recipe: 6 in the ring, then AT MOST ±6 per round
+      // toward the target. Profile-hugging counts put 7 incs in a 12-stitch
+      // round (shaping density no real pattern uses) and the crowded cap kept
+      // one pair-hook ambiguous; ±6 growth is both the craft standard and what
+      // the pole can physically fit.
+      prev = prev === 0 ? Math.min(6, target) : prev + Math.max(-6, Math.min(6, target - prev))
+      counts.push(prev)
+    }
+  }
+  for (let k = 0; k < counts.length; k++) rounds.push(rr + drift * (k + 1))
+  const prof = intrinsicProfile(counts, sw, rr, rowH * 1.05, yr)
   // Pattern branch: every node's EXACT local frame, captured at build time in
   // push order (each mkPlace3 closure runs exactly once per placed node — the
   // ring, every stitch, and the fasten-off all place through it). A post-build
@@ -819,38 +877,22 @@ export function buildSphere(
   // along the meridian (audit: scattered "floated above its crown" at 1.2–1.4yr).
   const merArr: { tr: number; tz: number }[] = []
 
-  // Surface of revolution: meridian arclength m from the TOP pole. The
-  // analytic sphere (derived counts): normal offset is simply a radius change,
-  // point = C + (R+lz) * u(m, theta). Pattern counts: the pattern's own
-  // intrinsic profile, same (lx, ly, lz) semantics.
-  const rOf = (m: number): number => R * Math.sin(m / R)
-  const mkPlace3 = (rRef: number) =>
-    prof
-      ? (lx: number, ly: number, lz: number): { x: number; y: number; z: number } => {
-          const th = lx / rRef
-          const q = prof.at(ly)
-          merArr.push({ tr: q.tr, tz: q.tz })
-          const rp = Math.max(q.r + q.nr * lz, 1e-3)
-          return { x: rp * Math.cos(th), y: rp * Math.sin(th), z: q.z + q.nz * lz }
-        }
-      : (lx: number, ly: number, lz: number): { x: number; y: number; z: number } => {
-          const th = lx / rRef
-          const rr2 = (R + lz) * Math.sin(ly / R)
-          return {
-            x: rr2 * Math.cos(th),
-            y: rr2 * Math.sin(th),
-            z: Z0 + (R + lz) * Math.cos(ly / R),
-          }
-        }
+  // Surface of revolution: the fabric's own intrinsic profile, parameterised by
+  // meridian arclength m from the TOP pole; the normal offset lz rides the local
+  // surface normal (§8c-3D).
+  const mkPlace3 =
+    (rRef: number) =>
+    (lx: number, ly: number, lz: number): { x: number; y: number; z: number } => {
+      const th = lx / rRef
+      const q = prof.at(ly)
+      merArr.push({ tr: q.tr, tz: q.tz })
+      const rp = Math.max(q.r + q.nr * lz, 1e-3)
+      return { x: rp * Math.cos(th), y: rp * Math.sin(th), z: q.z + q.nz * lz }
+    }
 
-  // MAGIC RING at the top pole (the anchor), lying on the surface. For the
-  // analytic ball, keep it SMALL so round 1 closes the top pole to a pinprick
-  // (the render showed an open hole at the pole); the pattern-driven branch keeps
-  // rrHoist as its intrinsic-profile start so program.ts geometry is unchanged.
-  const rr = patternCounts ? rrHoist : yr * 0.85
   const RING_N = 18
   const ringNodes: number[] = []
-  const ringRRef = prof ? rr : Math.max(rOf(rr), 1e-3)
+  const ringRRef = rr
   const ringPlace = mkPlace3(ringRRef)
   for (let i = 0; i < RING_N; i++) {
     const a = (i / RING_N) * Math.PI * 2
@@ -867,56 +909,23 @@ export function buildSphere(
     m: number
     nz: number // the crown's local normal offset (for the next round's dive side)
   }
+  // The stitch LIES IN the surface, exactly as on the flat disc (§8f-5) — a
+  // sphere is worked in the same no-turn spiral, so it had the same knot.
+  const SURFACE_LAY = 1
   // The crown's BUILT normal offset — the dive-side reference the next round
   // works against, and the key the radial canopy is derived from. A re-cut head
-  // throws its crown at zh·0.8 (emitHeadLoop), the legacy bump at zh·1.15.
-  const crownNz = headLoopMm > 0 ? zh * 0.8 : zh * 1.15
+  // throws its crown at zh·0.8 proud, zh·0.46 laid (emitHeadLoop); the legacy
+  // bump at zh·1.15.
+  const crownNz = headLoopMm > 0 ? headApexRelief(zh, SURFACE_LAY) : zh * 1.15
   let below: SCrown[] = []
   let mPrev = rr
   let count = 0
 
-  // Crown canopy (analytic sphere only): the same defect as the disc's — the
-  // crowded pole legs erupt as fat loops between the Vs. Track each crown's
-  // apex (the `below` target) and its two flanks so the radial band can tuck
-  // the crowd under the crown line while the Vs ride proud. See §8c-3D.
-  const canopyExempt = new Set<number>() // the head's other strands
-  const canopyApex = new Set<number>() // the apex — prouder floor
-  // The WHOLE head is exempt, not three nodes round the apex: a re-cut head is a
-  // six-node LOOP, and a ceiling cutting across it crushes flat the very
-  // paired-loop top the close-range pass exists to produce.
-  const exemptCrown = (apex: number, head: number[]): void => {
-    for (const nIdx of head) if (nIdx !== apex) canopyExempt.add(nIdx)
-    canopyApex.add(apex)
-  }
-
-  // Round meridians: step down the sphere until just short of the bottom pole
-  // (or exactly one per pattern round when the counts come from a pattern).
-  const mMax = Math.PI * R - rr
-  const rounds: number[] = []
-  if (patternCounts) {
-    // Clamp inside the pole so an over-tall pattern crowds (and fails the
-    // audit) rather than folding through the apex.
-    // The intrinsic profile handles any pattern length — no pole clamp needed.
-    for (let k = 0; k < patternCounts.length; k++) rounds.push(rr + drift * (k + 1))
-  } else {
-    for (let m = rr + drift; m <= mMax - drift * 0.35; m += drift) rounds.push(m)
-  }
-
   for (let k = 0; k < rounds.length; k++) {
     const mK = rounds[k]!
     const prev = count
-    if (patternCounts) {
-      count = patternCounts[k]!
-    } else {
-      const target = Math.max(4, Math.round((2 * Math.PI * rOf(mK)) / sw))
-      // The canonical ball recipe: 6 in the ring, then AT MOST ±6 per round
-      // toward the profile's target. Profile-hugging counts put 7 incs in a
-      // 12-stitch round (shaping density no real pattern uses) and the crowded
-      // cap kept one pair-hook ambiguous; ±6 growth is both the craft standard
-      // and what the pole can physically fit.
-      count = prev === 0 ? Math.min(6, target) : prev + Math.max(-6, Math.min(6, target - prev))
-    }
-    const rRef = prof ? Math.max(prof.rOfRound(k), 1e-3) : Math.max(rOf(mK), 1e-3)
+    count = counts[k]!
+    const rRef = Math.max(prof.rOfRound(k), 1e-3)
     const place3 = mkPlace3(rRef)
     const crowns: SCrown[] = []
 
@@ -952,8 +961,8 @@ export function buildSphere(
           place3,
           linkRole: 'ring', // round 1 WRAPS the ring strand (a stem, not a crown)
           headLoopMm,
+          surfaceLay: SURFACE_LAY,
         })
-        exemptCrown(r.crownBack, r.head)
         crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNz })
       }
     } else {
@@ -984,8 +993,8 @@ export function buildSphere(
             bn2: b2.nz,
             place3,
             headLoopMm,
+            surfaceLay: SURFACE_LAY,
           })
-          exemptCrown(r.crown, r.head)
           crowns.push({ back: r.crown, front: r.crown, theta: th, m: mK, nz: crownNz })
           li++
         } else {
@@ -1013,8 +1022,8 @@ export function buildSphere(
               place3,
               hookDepthScale,
               headLoopMm,
+              surfaceLay: SURFACE_LAY,
             })
-            exemptCrown(r.crownBack, r.head)
             crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNz })
             li++
           }
@@ -1028,7 +1037,7 @@ export function buildSphere(
   // FASTEN OFF into the bottom pole: the tail spirals in through the last
   // round's remaining hole and is drawn tight — same lesson as the disc: the
   // strand must not stop dead at the final crown.
-  const rRefEnd = prof ? Math.max(prof.at(mPrev).r, 1e-3) : Math.max(rOf(mPrev), 1e-3)
+  const rRefEnd = Math.max(prof.at(mPrev).r, 1e-3)
   const placeEnd = mkPlace3(rRefEnd)
   for (let t = 1; t <= 4; t++) {
     const th = phase + Math.PI * 2 * (1 + 0.012 * t)
@@ -1039,66 +1048,28 @@ export function buildSphere(
 
   // Per-node meridian tangents at INIT: the analytic sphere's from its centre;
   // the intrinsic profile's captured EXACTLY per node at build time (merArr).
-  if (prof && merArr.length !== nodes.length)
+  if (merArr.length !== nodes.length)
     throw new Error(`intrinsic profile frame capture out of sync: ${merArr.length} frames for ${nodes.length} nodes`)
-  const meridian = prof
-    ? merArr
-    : nodes.map((n) => {
-        const rc = Math.hypot(n.x, n.y)
-        const dzc = n.z - Z0
-        const L = Math.hypot(rc, dzc) || 1
-        return { tr: dzc / L, tz: -rc / L }
-      })
+  const meridian = merArr
 
   const strand = new Array(nodes.length).fill(0)
   const along = nodes.map((_, i) => i)
-  const halfSpan = prof
-    ? Math.max(...(patternCounts ?? [eq]).map((c) => (c * sw) / (2 * Math.PI))) + yr * 3
-    : R + yr * 3
+  const halfSpan = Math.max(...counts.map((c) => (c * sw) / (2 * Math.PI))) + yr * 3
 
-  // The crown canopy on the analytic sphere: distance-from-centre bounds (the
-  // radial analog of the disc's z-canopy). Non-crown nodes tuck UNDER the crown
-  // line (a ceiling at R + zh·0.65 off the surface — the crowded pole legs
-  // resolve INWARD, toward the stuffing, not out between the Vs); flanks ride
-  // proud, the apex a touch prouder, so each pole stitch reads as a 3D chevron
-  // instead of a fat loop. Bounds stay WITHIN the crown's built normal relief
-  // (crownNz = zh·1.15) so the pole is not pushed off-surface — the ballooning
-  // failure the soft normal pull was added to prevent. Intrinsic-profile balls
-  // (patternCounts) are not metric spheres, so they keep the plain surface pull.
-  // Bounds are keyed to the crown's built normal relief (crownNz = zh·1.15): the
-  // ceiling tucks the crowd well under it, the floors sit AT OR BELOW the built
-  // crown offsets so they only stop a crown sinking into the crowd — they never
-  // push it further out (over-lifting the pole is the ballooning failure).
-  const radialCenter = { x: 0, y: 0, z: Z0 }
-  // Ceiling at 0.65·crownNz off the surface: the strongest crowd tuck that still
-  // audits clean (0.6 is the edge; 0.55 and below drop an interlock). Floors sit
-  // at/below the built crown offsets so they only stop a crown sinking into the
-  // crowd, never push it out (the pole-ballooning failure).
-  const CANOPY = R + crownNz * 0.65 // ceiling: crowd resolves inward under this
-  const APEX_LO = R + crownNz // apex built at crownNz — a floor AT it, no push
-  // The rest of the head keeps a floor here where the flat disc needs none
-  // (§8f-4): a disc's crowd resolves DOWN into the table, a sphere's pole has
-  // nowhere to go but out between the Vs, and with the head unbounded one
-  // bottom-pole hook slipped 3.12yr sideways off its crown. Set at the head
-  // loop's own LOWEST built offset (zh·0.2 = crownNz·0.25) so it stops a head
-  // strand sinking without pushing any of them out — probed as a real basin,
-  // not a knife edge: 0.2 through 0.72 of crownNz all audit clean, only an
-  // unbounded head fails.
-  const FLANK_LO = R + crownNz * 0.25
-  const radialBand = prof
-    ? undefined
-    : nodes.map((n, i) =>
-        n.w === 0
-          ? null
-          : canopyApex.has(i)
-            ? { lo: APEX_LO }
-            : canopyExempt.has(i)
-              ? { lo: FLANK_LO }
-              : { hi: CANOPY },
-      )
+  // NO CROWN CANOPY (§8f-5). The analytic sphere needed one: its ±6 cap rounds
+  // were stretched to a latitude wider than their stitch count wants, and the
+  // crowded pole legs erupted as fat loops between the Vs, so a distance-from-
+  // centre ceiling tucked them back in. On the fabric's own intrinsic surface
+  // every round sits at the radius its own count wants, the pole is not
+  // stretched, and there is nothing for a canopy to tuck — the same reason the
+  // pattern-driven balls never had one. Verified by the audit at all three
+  // weights rather than assumed.
+  const zMid =
+    (Math.min(...nodes.map((n) => n.z)) + Math.max(...nodes.map((n) => n.z))) / 2
+  const radialCenter = { x: 0, y: 0, z: zMid }
 
   return {
-    model: { nodes, dist: S.dist, bend: S.bend, strand, along, meridian, radialBand, radialCenter },
+    model: { nodes, dist: S.dist, bend: S.bend, strand, along, meridian, radialCenter },
     strandPath: S.strandPath,
     links: S.links,
     yarnRadiusMm: yr,

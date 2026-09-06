@@ -59,6 +59,7 @@ interface AnthropicContentBlock {
 }
 interface AnthropicResponse {
   content?: AnthropicContentBlock[]
+  stop_reason?: string
   error?: { message?: string }
 }
 
@@ -89,9 +90,15 @@ export async function anthropicMessage(opts: AnthropicMessageOptions): Promise<s
   // NOTE: `temperature` is intentionally NOT sent — the current models (Sonnet 5
   // etc.) reject it ("temperature is deprecated for this model"). The API default
   // is fine for both the gate and the planner.
+  // Thinking is OFF for these calls. Claude 5 models run adaptive thinking by
+  // default when `thinking` is omitted, and thinking tokens count against
+  // max_tokens — the planner was spending its whole budget reasoning and
+  // returning a response with no text block ("empty response"). The gate and
+  // the planner both want a short, direct JSON answer, not a reasoning trace.
   const body = {
     model: opts.model,
     max_tokens: opts.maxTokens ?? 1024,
+    thinking: { type: 'disabled' },
     ...(opts.system ? { system: opts.system } : {}),
     messages: [{ role: 'user', content }],
   }
@@ -123,7 +130,11 @@ export async function anthropicMessage(opts: AnthropicMessageOptions): Promise<s
         .map((b) => b.text as string)
         .join('')
         .trim()
-      if (!text) throw new Error('anthropic: empty response')
+      if (!text) {
+        // Say WHY it was empty — the block types and stop reason are the diagnosis.
+        const kinds = (json.content ?? []).map((b) => b.type).join(',') || 'none'
+        throw new Error(`anthropic: empty response (stop_reason=${json.stop_reason ?? 'unknown'}, blocks=${kinds})`)
+      }
       return text
     } catch (err) {
       lastErr = err

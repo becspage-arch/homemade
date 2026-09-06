@@ -182,7 +182,7 @@ stockinette re-rendered (gate 0.884), both consistent with their 07-10 looks.
 | **postrib** (1×1 fp/bp rib) | alternating fpdc/bpdc columns → raised ribs beside recessed valleys | ✅ **LOCKED 2026-07-07** (Rebecca). Reads as distinct packed vertical ribs vs a clean 1×1 rib ref (doradoes). The initial open-gauge caveat was **fixed**: postrib inherited fpdc's 1.9 gauge which left daylight between ribs; a per-swatch `gaugeYr: 1.5` override (new — leaves locked fpdc/bpdc gauge untouched) packed the columns tight to match the reference. Basketweave = same move in blocks, still `wip` (needs a reference + build). |
 | **scinc** (2 sc in one st, shaped rows) | growing trapezoid, inc both ends every row; two full audited hooks share one below-crown, legs fan from the base (§8c) | ◔ audit-clean (90/90). The foundation-edge LIP (prior render blemish) was eased 2026-07-10: buildShaped pinned its foundation as a continuous proud forward rail (fine hidden under wide flat fabric, but a shaped trapezoid fans up from a narrow base so the rail curls forward at the point). Fix = tuck the connectors BETWEEN crowns just below the plane so the edge is a row of low bumps, not a rail; the two EDGE crowns keep their proud connectors (the increase corner works two hooks into the one corner crown — tucking its connectors strangled that dive). Still 90/90; RE-RENDERED 2026-07-11 (gate 0.924) — the foundation edge now reads as low bumps, lip gone; corners slightly bulky but no rail. Rebecca verdict pending. |
 | **scdec** (sc2tog, shaped rows) | shrinking trapezoid, dec both ends every row; one crown over two audited hooks (§8c) | ◔ audit-clean (60/60). Rendered 2026-07-10 (gate 0.928): trapezoid + converging decrease legs read; the fasten-off tail fixed the earlier frayed bottom corner. Awaiting Rebecca. |
-| **mrdisc** (magic ring + rounds) | flat amigurumi circle: MR anchor, 6 sc in ring, +6/round continuous no-turn spiral, polar frame + radial blocked pull + table + fasten-off (§8c) | ◑ **audit-clean (126/126), LOOK still NOT at the bar.** 2026-07-10: added `legReliefScale` 0.7 (calms same-face leg bulge; 0.6 strands an inner hook) — moved it from knotted roving to concentric-but-lumpy rounds, a real step but Rebecca confirmed NOT customer grade (random lumps throughout). Then tried a tangential ANGULAR HOLD in the relax to order the rounds — it made clumping WORSE (gap-CV 1.1→2.2) and broke a hook, because the lumps are inner-round CROWDING (too many stitches for the small-radius circumference — measured, gap-CV ≈1.1 at baseline), not stitches sliding out of slots; pinning the angle just locks the crowding in. Reverted. **Root cause = crowding + same-face relief; the relief/ordering lever family (crownLay×2, leg-relief, angular-hold) is exhausted and none reach the bar.** RESOLVED at construction tier by the CROWN CANOPY (Fable 2026-07-11): per-node one-sided z bounds (YarnModel.zBand) — non-crown nodes UNDER the crown line, crown chain HALF A YARN PROUD of it, table deepened to 2 yarn-layers, pair-second hooks tuck deeper. Audit-clean 126/126; render gate 0.882. The wall (crowd erupting between the Vs) is BROKEN: the disc now reads as a flat crocheted spiral with a drawn-tight centre. Residual = crown ORIENTATION consistency (some Vs flop sideways) — RESOLVED 2026-07-11 (Opus worker): the canopy floor clamped the apex AND both flanks to ONE plane (probe: apexZ 0.97 vs flankZ 0.92, ~0.05yr — a flat dash, free to spin in-plane). Split the floor: apex rides a prouder floor (CANOPY+0.9yr) than its flanks (CANOPY+0.5yr) → each stitch is a real 3D chevron. Probe: flop (flank-axis vs tangential) mean 21°→8°, badly-flopped crowns 2→1; audit still 126/126. Render reads as consistent tidy Vs in clean spiral rounds. Residual now = DENSITY: mine is more open between rounds than the dense reference (separate gauge/drift calibration, not attempted — would risk the clean audit). Rebecca verdict pending. DENSITY PASS 2026-07-11 (Opus round-2): the sanctioned lever (radial pitch / disc gauge). Added a per-swatch `gaugeYr` override to buildRounds and tied the radial pitch to it (`drift = 0.9·sw`, bit-identical at the locked sc 1.8); mrdisc gaugeYr 1.5 + magic ring 1.15→0.85yr. Measured: round-to-round radial gaps 1.6→1.35yr (collision floor 1.25yr — trenches largely closed), round-0 crowns 2.53→2.03yr, centre closes to a pinprick. Audit still 126/126. Render: the rounds now pack tight (the coiled-rope trenches are gone) and the centre is tight, BUT per-stitch bumps still stand proud so it reads bulbous/bean-piled vs the flat reference. That residual is the z-amplitude (~2.2yr swing), which is the exhausted relief-lever family (crownLay/legRelief/angular-hold, §9) — a numeric flatten test (APEX/FLANK floors down) only moved amplitude 2.21→2.11yr while deepening valleys, so it was NOT shipped (would risk the just-landed crown-orientation fix). Rebecca verdict pending. |
+| **mrdisc** (magic ring + rounds) | flat amigurumi circle: MR anchor, 6 sc in ring, +6/round continuous no-turn spiral, polar frame + radial blocked pull + table + fasten-off (§8c) | ◑ **audit-clean (126/126), LOOK still NOT at the bar.** 2026-07-10: added `legReliefScale` 0.7 (calms same-face leg bulge; 0.6 strands an inner hook) — moved it from knotted roving to concentric-but-lumpy rounds, a real step but Rebecca confirmed NOT customer grade (random lumps throughout). Then tried a tangential ANGULAR HOLD in the relax to order the rounds — it made clumping WORSE (gap-CV 1.1→2.2) and broke a hook, because the lumps are inner-round CROWDING (too many stitches for the small-radius circumference — measured, gap-CV ≈1.1 at baseline), not stitches sliding out of slots; pinning the angle just locks the crowding in. Reverted. **Root cause = crowding + same-face relief; the relief/ordering lever family (crownLay×2, leg-relief, angular-hold) is exhausted and none reach the bar.** RESOLVED at construction tier by the CROWN CANOPY (Fable 2026-07-11): per-node one-sided z bounds (YarnModel.zBand) — non-crown nodes UNDER the crown line, crown chain HALF A YARN PROUD of it, table deepened to 2 yarn-layers, pair-second hooks tuck deeper. Audit-clean 126/126; render gate 0.882. The wall (crowd erupting between the Vs) is BROKEN: the disc now reads as a flat crocheted spiral with a drawn-tight centre. Residual = crown ORIENTATION consistency (some Vs flop sideways) — RESOLVED 2026-07-11 (Opus worker): the canopy floor clamped the apex AND both flanks to ONE plane (probe: apexZ 0.97 vs flankZ 0.92, ~0.05yr — a flat dash, free to spin in-plane). Split the floor: apex rides a prouder floor (CANOPY+0.9yr) than its flanks (CANOPY+0.5yr) → each stitch is a real 3D chevron. Probe: flop (flank-axis vs tangential) mean 21°→8°, badly-flopped crowns 2→1; audit still 126/126. Render reads as consistent tidy Vs in clean spiral rounds. Residual now = DENSITY: mine is more open between rounds than the dense reference (separate gauge/drift calibration, not attempted — would risk the clean audit). Rebecca verdict pending. DENSITY PASS 2026-07-11 (Opus round-2): the sanctioned lever (radial pitch / disc gauge). Added a per-swatch `gaugeYr` override to buildRounds and tied the radial pitch to it (`drift = 0.9·sw`, bit-identical at the locked sc 1.8); mrdisc gaugeYr 1.5 + magic ring 1.15→0.85yr. Measured: round-to-round radial gaps 1.6→1.35yr (collision floor 1.25yr — trenches largely closed), round-0 crowns 2.53→2.03yr, centre closes to a pinprick. Audit still 126/126. Render: the rounds now pack tight (the coiled-rope trenches are gone) and the centre is tight, BUT per-stitch bumps still stand proud so it reads bulbous/bean-piled vs the flat reference. That residual is the z-amplitude (~2.2yr swing), which is the exhausted relief-lever family (crownLay/legRelief/angular-hold, §9) — a numeric flatten test (APEX/FLANK floors down) only moved amplitude 2.21→2.11yr while deepening valleys, so it was NOT shipped (would risk the just-landed crown-orientation fix). Rebecca verdict pending. ROUND-WORK LOOK PASS 2026-09-06 (§8f-5): the residual z-amplitude finally had a cause — measured in the surface frame, one disc stitch spanned 1.65 rendered yarn diameters peak-to-trough against flat sc's 0.57, and it settled there whatever it was built at, because `layoutMode: 'radial'` held the worked radius and left the NORMAL completely free. Giving the round layout the same whisper-soft normal hold the sphere has always had, plus a no-turn stitch that LIES IN the surface (`surfaceLay`), takes the mound to 1.24 d, the crown 0.87 → 0.67 d proud of its own legs, and the legs 0.50 → 0.17 d out of the surface (flatter than flat sc's own 0.40). Audit still clean at three weights. Rebecca verdict pending. |
 | **stockinette / k** (KNIT) | loops drawn through loops, 'through' links, real 2-diameter fabric thickness (§8d) | ✅ **LOCKED 2026-07-11** (Rebecca). Audit-clean (216/216, settled leg-vs-head clearance ≈1.7yr everywhere). Reads immediately as chunky hand-knitted stockinette — interlocked V columns, correct nesting. The plumper Vs + slight column wobble vs the fine-cotton reference are chunky-weight presentation character (the library-wide roving softness), not a defect. |
 | **yo** (yarn-over eyelet, KNIT) | stockinette + [yo, k2tog, k, k] eyelet courses; the yo is a fed OPEN loop over the needle with no head below, k2tog draws through TWO heads (§8d-shaping) | ◑ **audit-clean (230/230), LOOK soft.** 2026-07-11 (Opus KNIT-DEPTH worker): built the yo (bare loop, no 'through' link — the open span under it is the eyelet) + the knit single decreases k2tog/ssk (one loop through two heads, two audited 'through' links; the merged head rides its own column so the off-centre gather makes the lean). TWO yo constructions tried: (1) bare arc, (2) fed wide open loop. NEITHER opens a crisp hole — numeric probe: eyelet open gap 0.72yr ≈ plain 0.69yr, because the relaxer packs the short knit stitches to uniform density (x is free) and mesh tension can't hold a gap at this swatch scale (§9). The fed-loop version (kept) reads better — the yo rings stand as visible openings in the eyelet bands (tilt 28 + openFabric) — but softer than the reference's crisp round holes. Residual = the same library-wide roving softness/density (a separate worker's crispness pass), not a topology bug. Two-attempt cap on the hole-opening reached; the topology is genuine + audited. Rebecca/orchestrator verdict pending. |
 | **k2tog / ssk** (single decreases, KNIT) | one loop drawn through TWO heads below (two audited 'through' links); merged head on its own column, gathered pair off-centre → the lean EMERGES (k2tog right, ssk left — §8d-shaping) | ◔ both audit-clean (196/196 each; fine yr1.5 audits pass). Numeric lean probe: k2tog mean +1.16yr (RIGHT), ssk mean −1.22yr (LEFT), consistent across all 10 decreases each — the mirrored pair is genuinely mirrored in data. Showcase swatch = two vertical [yo, dec] lines stacked over courses 2–6 on stockinette. RENDERED 2026-07-11: both leans visible as tilted gathered stitches along the decrease lines; busier/subtler than the fine-cotton references at this chunky weight (the merged-head parked OFF column was tried first and dragged the course above 2.1yr sideways — §9). References on file (nimble-needles finished swatches). Rebecca/orchestrator verdict pending. |
@@ -197,7 +197,7 @@ stockinette re-rendered (gate 0.884), both consistent with their 07-10 looks.
 | **picot** (ch-3 nub on sc) | sc + a fed ch-3 loop over the head, closed by a SLIP STITCH that genuinely dives under the stitch's own crown (a recorded, audited hook); top-row edging placement | ◔ audit-clean (116/116 — 112 sc + 4 picot sl-sts) first build 2026-07-11. RENDERED 2026-07-11: four evenly-spaced nub loops stand along the top edge, folding back into the sl-st closure; matches the reference edging's open loopy character. Rebecca verdict pending. TIGHTEN 2026-07-11 (Opus round-2): the picots hung as long floppy dangling loops (fed 2.2yr tall, cw·0.55 wide — too much yarn). Feed less — a short 1.35yr nub, narrow (cw·0.3), sides converging to a point apex, sl-st drawn tight — so each stands as a short FIRM nub (perky-point character). Audit 116/116. Residual heaviness vs the reference's delicate points is the chunky yarn weight (library-wide). Rebecca verdict pending. |
 | **garter** (KNIT) | stockinette loop + worked-face flip per course + per-course CORRUGATION (`bz = 0.7yr·fz`, gated — stockinette + rib untouched) | ◔ audit-clean (240/240) — the corrugation restores a full collision diameter between each leg crossing and the head it passes. Rendered 2026-07-10 (gate 0.954): the alternating ridge rows read clearly and the loops are tidy, but the fabric is TOO OPEN vs the reference (see-through gaps; real garter is dense packed bumps). Density is identity — needs a garter-specific gauge/courseH calibration pass. Rebecca confirmed NOT passing 2026-07-10. DENSITY CALIBRATED 2026-07-11 (Opus worker): the see-through was VERTICAL (dark gaps between courses); courseScale 0.7→0.65 + gaugeScale 0.85→0.95 (edge legs need sideways slack — every tight-both-ways combo failed the audit at c0/c11, and bz below 0.55 loses the through-clearance). Audit 240/240; re-render is solid fabric, gaps closed. Two limits logged: settled z-thickness (~5.7yr) is the corrugation model's own (does not shrink with bz), and the truly-packed reference bump look still needs the parked accordion. Rebecca verdict pending. |
 | **mrdisc look** (addendum) | crownLay (heads lying flat) tried at lay=1 + deeper dive | Both look-attempts FAILED the audit (flat crowns lose interlock disambiguity in relax — 13/126 same-side) → reverted to proud crowns under the two-attempt cap; audit-clean again. The knotty look remains open; note the raffamusa ball reference shows real amigurumi fabric IS visibly bumpy per stitch — the sin is bump SCALE, not existence. The `crownLay` capability stays in the emitter (identity at 0) for the next attempt. |
-| **ball** (3D SPHERE) | full amigurumi ball on the curved-surface machinery (§8c-3D) | ◔ **audit-clean (320/320)** — the first 3D object: MR pole anchor, 6-in-ring, canonical ±6 staggered rounds, equator 30, mirrored decs, fasten-off into the bottom pole. Rendered 2026-07-10 (gate 0.774): true spherical silhouette, sits on the table, and the LOWER hemisphere reads as shingled crochet rounds — but the top cap is a jumble of fat loops (the disc's same-face-rounds knottiness, worst at the crowded pole). CANOPY GENERALISED TO THE SPHERE 2026-07-11 (Opus worker): the flat disc's z-canopy became a RADIAL band (YarnModel.radialBand + radialCenter — distance-from-centre bounds, the normal on a sphere being radial-from-centre). Non-crown nodes get a ceiling (R + crownNz·0.65 → the crowded pole legs resolve INWARD toward the stuffing, not out between the Vs); crowns a floor at/below their built relief so the pole is NOT pushed off-surface (ballooning is the documented failure). Ceiling ≤0.55·crownNz drops an interlock; 0.65 is the clean tuck. Audit still 320/320. Rebecca verdict pending on the re-render. DENSITY + FRAMING PASS 2026-07-11 (Opus round-2): three fixes. (1) DENSITY — a `gaugeYr` override on buildSphere packs the stitches around each round; equatorCount 30→36 at gauge 1.5 holds the ball size (R = eq·sw/2π = 30·1.8 = 36·1.5 constant) so it densifies without shrinking or losing rounds. Meridian pitch stays at the row height — tying it to sw floated a round-2 inc hook 1.49yr up-meridian (the sphere's tangential packing comes from the count derivation, not the meridian). (2) POLE — analytic magic ring 1.15→0.85yr closes the open top-pole hole to a pinprick (pattern-driven balls via program.ts keep rrHoist, unchanged). (3) FRAMING — a per-recipe `viewMargin` (0.35) threaded through loom-stitch.ts frames the FULL silhouette the tilted camera was clipping. Audit 388/388 clean. Render: full sphere in frame, pole closed, denser packed spiral rounds — a clear step from the cropped/open-hole/coiled version. Residual = the same per-stitch bulbousness (pinecone texture vs the reference's smooth ball) = the exhausted relief lever. Rebecca verdict pending. |
+| **ball** (3D SPHERE) | full amigurumi ball on the curved-surface machinery (§8c-3D) | ◔ **audit-clean (320/320)** — the first 3D object: MR pole anchor, 6-in-ring, canonical ±6 staggered rounds, equator 30, mirrored decs, fasten-off into the bottom pole. Rendered 2026-07-10 (gate 0.774): true spherical silhouette, sits on the table, and the LOWER hemisphere reads as shingled crochet rounds — but the top cap is a jumble of fat loops (the disc's same-face-rounds knottiness, worst at the crowded pole). CANOPY GENERALISED TO THE SPHERE 2026-07-11 (Opus worker): the flat disc's z-canopy became a RADIAL band (YarnModel.radialBand + radialCenter — distance-from-centre bounds, the normal on a sphere being radial-from-centre). Non-crown nodes get a ceiling (R + crownNz·0.65 → the crowded pole legs resolve INWARD toward the stuffing, not out between the Vs); crowns a floor at/below their built relief so the pole is NOT pushed off-surface (ballooning is the documented failure). Ceiling ≤0.55·crownNz drops an interlock; 0.65 is the clean tuck. Audit still 320/320. Rebecca verdict pending on the re-render. DENSITY + FRAMING PASS 2026-07-11 (Opus round-2): three fixes. (1) DENSITY — a `gaugeYr` override on buildSphere packs the stitches around each round; equatorCount 30→36 at gauge 1.5 holds the ball size (R = eq·sw/2π = 30·1.8 = 36·1.5 constant) so it densifies without shrinking or losing rounds. Meridian pitch stays at the row height — tying it to sw floated a round-2 inc hook 1.49yr up-meridian (the sphere's tangential packing comes from the count derivation, not the meridian). (2) POLE — analytic magic ring 1.15→0.85yr closes the open top-pole hole to a pinprick (pattern-driven balls via program.ts keep rrHoist, unchanged). (3) FRAMING — a per-recipe `viewMargin` (0.35) threaded through loom-stitch.ts frames the FULL silhouette the tilted camera was clipping. Audit 388/388 clean. Render: full sphere in frame, pole closed, denser packed spiral rounds — a clear step from the cropped/open-hole/coiled version. Residual = the same per-stitch bulbousness (pinecone texture vs the reference's smooth ball) = the exhausted relief lever. Rebecca verdict pending. ROUND-WORK LOOK PASS 2026-09-06 (§8f-5): the same `surfaceLay` construction as the disc, and the OPEN POLE traced to its real cause — the ±6 cap gives a cap round fewer stitches than the analytic sphere's latitude wants, so the fabric was stretched to fit it (round 1 settled at 1.51× its own stitch gauge, round 2 at 1.27×: six stitches held apart round a hole). The fabric is now laid on the surface the COUNTS make (the intrinsic profile every pattern-driven ball already used), so the swatch ball and the ball a bear is made of are one model and no round is stretched; top-pole rounds 1.51×/1.27× → 1.35×/1.10×, mound 1.15 → 1.10, crown proud 0.59 → 0.54. The radial canopy went with it (nothing stretched left to tuck) and the audit is clean at three weights without it. Rebecca verdict pending. |
 
 **Regenerating / building a stitch — use THE PIPELINE (one command, gates built in):**
 ```
@@ -756,7 +756,12 @@ vs a real reference → commit + push.
     residual: the object's own proportions (band height close to its diameter)
     read as a squat drum/cuff from most angles regardless of camera — a real
     fix needs a THINNER band relative to its loop (a geometry/row-count
-    change, out of scope here). Verdict pending — see the render report.
+    change, out of scope here).
+    REBUILT AT REAL SIZE, RESTAGED (2026-09-06, §8f-5): the geometry/row-count
+    change did happen — this proof is now a genuine adult-size band — and the
+    staging changed too, though not to the fold considered above (that name is
+    reused for a different, simpler construction: see §8f-5, which explains why
+    the fold's own "band width in-plane" risk doesn't apply to it).
   - amigurumi (3-D) already stages itself via `compositionScene`; the creature hero
     (gate 0.920) and the ball are customer-grade.
   Every hero PASSES the fidelity/structure gate (all ≥ 0.874 ≫ STRUCT_MIN 0.45),
@@ -829,7 +834,7 @@ programs are BIT-IDENTICAL (verified: stripe-dishcloth 79f6a541, amigurumi-ball
 | 1 | `simple-coaster` (solid sc square) | dead simple | 8fedd4c9 | 0.937 | ✅ customer-grade — dense solid single-crochet coaster, clean rows on white. The plainest end. |
 | 2 | `stripe-dishcloth` (2-colour sc/hdc bands) | flat colourwork | 79f6a541 | 0.922 | ✅ customer-grade — genuine two-colour striped dishcloth, clean stripe boundaries. |
 | 3 | `flat-texture-panel` (sc/hdc/dc/blo/flo bands) | flat texture | a36dacd7 | 0.901 | ✅ customer-grade — one-colour textured sampler, raised blo/flo ridge lines, solid throughout. NO post stitches (the derived rule: posts read open on a flat panel — they live on the worn/looped form). |
-| 4 | `post-rib-headband` (1×1 fp/bp rib, looped) | worn item | e482eb7a | 0.924 | ✅ customer-grade — ribbed band seamed into a standing loop, vertical post ribs round the circumference. Correctly showcases post-rib on a curved/worn form. Residual: ribs read slightly openwork (documented). |
+| 4 | `post-rib-headband` (1×1 fp/bp rib, 82×6, real adult size, staged flat) | worn item | 31ebcc27 | 0.944 | ✅ customer-grade — REBUILT §8f-5 (2026-09-06): settles 458×92mm (was a 191×47mm napkin ring), staged with the new `flatband` mode (a gentle in-plane S on the ground, NOT the old standing `loop` — at this real size the loop read as a cuff/basket) — a real sage headband strip, vertical post ribs reading as clean bars the whole length. Residual: ribs read slightly openwork (documented, library-wide post-stitch density limit). |
 | 5a | `amigurumi-ball` (stuffed sc sphere) | amigurumi | 22357568 | 0.920 | ✅ customer-grade — stuffed crochet ball, clean spiral rounds from a tidy magic-ring centre. Chunkier per-stitch bumps than a fine reference (documented bulbousness residual), but unmistakably a real crocheted ball. |
 | 5b | `amigurumi-creature` (body+head+2 ears) | amigurumi (multi-part) | 18b2f935 | 0.914 | ◑ reads as a two-eared stuffed amigurumi (genuine dense sc body, two proud ears) but the ear TIPS show the magic-ring swirl (documented "ear crown") + the ears read bulky. Borderline — the ball is the cleaner amigurumi. |
 | 6 | `cottage-tapestry` (24×24 sc, 15 colours) | SHOWPIECE | a627f243 | 0.929 | ✅ customer-grade tapestry piece — a cottage-garden PICTURE (sky+sun, tree, cottage w/ roof/chimney/door/windows, grass+flowers). Reads exactly as real tapestry crochet (colour-block per stitch, cf. the lillabjorncrochet cushion reference); chunkier weight than a fine cotton reference. |
@@ -881,7 +886,10 @@ every UNCHANGED proof's geometry hash stayed bit-identical
   settled ~191×47mm (a pre-existing mismatch, not this session's regression) —
   fixed as a METADATA-only correction (declared → 190×48mm; the geometry, and
   so its hash `e482eb7a`, is unchanged) so the new gate doesn't block its
-  render. `texture-sampler-panel`, `flat-texture-panel` and `cottage-tapestry`
+  render. SUPERSEDED (§8f-5, 2026-09-06): that metadata-only fix left a real
+  headband looking like a napkin ring; the proof was rebuilt at real size
+  (82×6, hash `31ebcc27`, settles 458×92mm, declared to match) rather than
+  just re-labelled a second time. `texture-sampler-panel`, `flat-texture-panel` and `cottage-tapestry`
   carry the SAME kind of declared-vs-settled gap (declared assumed a
   real-world gauge this engine's mm scale doesn't produce — a library-wide
   characteristic, not specific to any one proof) and now fail the gate too;
@@ -1421,6 +1429,334 @@ time — rendering them in two separate runs was costing task-minutes for nothin
 
 ---
 
+## 8f-5. ROUND 4 — round work lies IN the surface (2026-09-06)
+
+Round-3 verdict: the flat family is at the bar close up — sc reads as a V under
+a flat head loop, dc as real double crochet with its wraps — and **round work is
+not**. Every stitch worked in the round read as a tight KNOT or coiled bead
+standing off the surface, a knobbly bobble ball, where a real amigurumi single
+crochet reads as the SAME tidy V-grid as flat sc, just curving round the form:
+the V legs lying nearly flat on the surface, the head loops making smooth spiral
+rounds. The ball's pole still showed an open ring.
+
+### Measuring round work at all — the polar / surface frame
+
+`loom-stitch-metrics.ts` measured flat fabric against the world plane, which
+says nothing on a disc or a ball: relief there rides the local surface NORMAL
+and "along the row" is the round's tangent, not world x. It now builds the frame
+per node — **t** the round tangent, **m** the meridian, **n = m × t** the outward
+normal — and measures every relief, splay and out-of-plane figure against the
+fabric's own settled **mid-surface** (the median height of the worked fabric at
+that radius on a disc, at that polar angle on a ball), so a disc that dishes or a
+ball that is oblate is not scored as per-stitch relief. Flat builds keep exactly
+the old measurement (n = +z, mid-surface z = 0), verified by re-running sc: the
+control's numbers are unchanged to the last digit, so flat and round are directly
+comparable.
+
+Two new figures the flat pass never needed:
+
+- **the per-stitch MOUND** — one stitch's own peak-to-trough along the normal.
+  A stitch that lies in the fabric spans about what flat fabric's own thickness
+  varies by; a stitch that reads as a knot standing off the surface spans more
+  than the fabric it sits in. This is the number that says "knot" out loud.
+- **round pitch** — nearest crown in the round below, since a spiral has no
+  column to walk, and **shear**, how far along the round a crown sits from the
+  below-crown its own hook dives under (0 by construction in flat grid work).
+
+### The measured table — flat control, before, after
+
+Worsted, yr 2.4, rendered yarn diameters (d = 1.7·yr).
+
+| quantity | flat `sc` (control) | `mrdisc` before | `mrdisc` after | `ball` before | `ball` after | target |
+|---|---|---|---|---|---|---|
+| **per-stitch mound** | **0.57** | **1.65** | **1.24** | **1.15** | **1.10** | ~ flat's fabric thickness |
+| **crown proud of its own legs** | **0.42** | **0.87** | **0.67** | **0.59** | **0.54** | ≤ 0.42 |
+| **legs out of the surface (p90)** | **0.40** | **0.50** | **0.17** | **0.16** | **0.18** | ≤ 0.3 |
+| V opening angle | 54.0° | 41.4° | 43.8° | 38.7° | 38.4° | 40–60° |
+| leg straightness, visible | 1.00 | 0.99 | 0.97 | 0.98 | 0.98 | 0.93–1.0 |
+| crown apex relief | 0.70 | 0.77 | 0.64 | 0.55 | 0.57 | — |
+| leg relief | 0.28 | −0.10 | −0.03 | −0.03 | 0.03 | — |
+| hook relief | 0.50 | −0.84 | −0.59 | −0.59 | −0.52 | — |
+| head strands: along the round / in depth | 0.19 / 0.57 | 0.85 / 0.64 | 0.84 / 0.76 | 1.00 / 0.50 | 0.63 / 0.90 | a pair ~1 d apart |
+| post leg separation | 0.84 | 0.75 | 0.65 | 0.65 | 0.61 | ≥ 0.7 |
+| stitch pitch | 1.59 | 1.72 | 1.70 | 1.79 | 1.77 | 1.49–1.70 |
+| round pitch | 1.41 | 1.57 | 1.54 | 1.66 | 1.68 | 1.33–1.49 |
+| yarn per stitch · crowding | 6.75 · 3.01 | 7.75 · 2.87 | 7.65 · 2.91 | 8.60 · 2.89 | 8.47 · 2.85 | 7.0–9.5 · 2.8–4.8 |
+| fabric thickness | 1.44 | 1.89 | 1.42 | 1.19 | 1.12 | 1.8–2.2 |
+
+The mound is the headline. A round-work stitch spanned almost the whole fabric
+thickness on its own — 1.65 d against flat sc's 0.57 — because its crown stood
+0.87 d out on the worked face and the next round's hook then had to plunge 0.84 d
+in to clear it. That excursion, repeated once per stitch on a fabric where
+nothing alternates, IS the coil the close-up shows.
+
+### The lever — what the round layout pull was NOT holding
+
+Five candidate causes were probed one at a time, and four of them died on the
+numbers (all in §9 now):
+
+| probe | mound | crown proud |
+|---|---|---|
+| baseline | 1.65 | 0.87 |
+| crown canopy removed entirely | 1.54 | 0.77 |
+| head loop built LYING FLAT in the surface | 1.66 | 0.95 |
+| leg relief 0.7 → 1.0 → 1.6 → 2.2 | 1.65–1.72 | 0.69–1.04 |
+| table depth 3.2 → 1.6 → 1.0 yr | 1.66 → 1.49 | 0.95 |
+| each crown placed OVER its own insertion (no shear) | 1.62 | 0.99 |
+
+The crown settled 0.85–0.99 d proud **whatever it was built at**, which is the
+tell. `layoutMode: 'radial'` held each node at its worked RADIUS and left the
+normal direction completely free, so on the one axis the whole problem lives on,
+the built geometry had no say at all and the crowd alone decided the answer. The
+curved-surface mode (`'surface'`) has carried the matching whisper-soft normal
+term since the sphere was built — 0.4 × layoutK toward each node's OWN worked
+offset — which is exactly why the ball was the more ordered of the two
+(stitch-to-stitch spread of the leg relief 0.07 d against the disc's 0.22 d).
+
+**The disc simply never had it.** Added — the same term, the same 0.4, hard-wired
+into the radial mode so the two can't drift apart — the mound falls to 1.24 and
+the legs lie in the fabric at 0.17 d, better than flat sc's own 0.40. It is the
+blocked/pressed term a real crocheted circle gets when it is laid out and
+photographed, and it pulls toward each node's own worked offset, never a common
+plane (§9: a symmetric plane pull crushes the front/back layering).
+
+### The construction — a no-turn stitch LIES IN the surface
+
+The second half, and the reason the emitters needed a new flag rather than the
+relaxer needing a stronger one. In TURNED fabric a stitch's crown is thrown proud
+of its worked face because the next row is worked from the OTHER face and dives
+under it from there: the relief IS the interlock, and consecutive rows' reliefs
+alternate and cancel, so the fabric reads flat. A spiral **never turns**. Every
+round works the same face, so a proud crown stands off the fabric with nothing to
+cancel it, and the next round's hook has to plunge the same distance inward.
+
+`surfaceLay` (emitPlainStitch, emitDecrease, and the shared `emitHeadLoop`) is
+that difference, 0 for every flat stitch and 1 for the round and sphere builders:
+the head loop's whole first half — the strand that runs back along the row top,
+and the loop's far end — sits AT the surface, only the returning strand and the
+apex ride a little above it (the next round has to find the apex to dive under),
+and the dive shallows to match. Its two strands still separate up the MERIDIAN,
+side by side, which is the V-grid a real amigurumi surface shows. `headApexRelief`
+is the one accessor both no-turn builders key their canopies to, so a re-cut head
+and the canopy over it cannot drift apart.
+
+On its own this changed nothing (the table above). With the normal hold under it,
+it is what the hold holds.
+
+### The ball's open pole — the analytic sphere was stretching the cap
+
+Separately measured, per round, settled tangential pitch ÷ the stitch's own gauge:
+
+| round | 0 | 1 | 2 | 3 | … | equator |
+|---|---|---|---|---|---|---|
+| before | **1.51×** | **1.27×** | 1.14× | 1.11× | | 1.06× |
+| after | **1.35×** | **1.10×** | 1.05× | 1.08× | | 1.07× |
+
+The counts are the canonical amigurumi recipe — 6 in the ring, then at most ±6 a
+round — but the fabric was laid on the rigid ANALYTIC sphere, where the ±6 cap
+means a cap round carries fewer stitches than its latitude's circumference wants.
+The fabric was stretched to fit it: six stitches held apart around a hole, which
+is exactly the open ring the render showed. It was never the magic-ring radius
+(already yr·0.85, a pinprick) and never the canopy.
+
+`buildSphere` now derives the counts from the nominal sphere exactly as before,
+then lays the fabric on the surface **those counts make** — the intrinsic profile,
+the same one every pattern-driven ball has always used. The ball swatch and the
+ball a bear is made of are one surface model instead of two, and no round is
+stretched. The radial crown canopy goes with it: it existed to tuck the erupting
+legs of stretched pole rounds, there are none left, and the audit is clean at all
+three weights without it (checked, not assumed).
+
+What this does NOT do is make the ball round: a +6 cap is intrinsically a flat
+disc, so the honest ball is oblate and its roundness comes from stuffing, which
+this model does not have. §8f-4 spent two attempts proving that and the cap
+stands — do not chase it with gauge values.
+
+### Hashes — 2 moved, 34 bit-identical
+
+`mrdisc` 0b5b8664da0cd2f8 → **6da71f8d3447ff66** ·
+`ball` b1c8691bed42cec1 → **616cc89e54dd8bea**.
+
+Everything else — the whole flat family, the shaped family, the fans and every
+knit swatch — is bit-identical, which is the point of gating the change on
+`surfaceLay` and on the layout mode rather than on shared values. Audit clean
+**36/36 at fine 1.5, worsted 2.4 and bulky 3.2**.
+
+Every amigurumi composition proof still audits clean and still sits ON the table
+(`minz` 0.00 for all seven). The stitch no longer stands off the surface, so
+every part is a few percent less puffy and the bear's declared finished size was
+re-measured off the settled geometry: **84 × 107 → 83 × 103 mm**, height-to-width
+1.28 → 1.24, every proportion round 2 tuned intact.
+
+### Still open
+
+- **Crown proud of its own legs is 0.67 d (disc) and 0.54 (ball) against flat's
+  0.42.** It floors there: the crown is pushed out by the head loops and legs
+  either side of it (a contact census puts 0.58 collision contacts on each crown
+  node, every one of them pushing outward), and flattening the built head further
+  only reaches 0.52 before an interlock drops. Breaking it needs the head of one
+  round to be held down by the next round's fabric — the same front/back-layer
+  construction §8f-2 logged for the flat family, which no builder has yet.
+- **Round pitch runs 4–19% over gauge** (disc 1.54, ball 1.68 against 1.33–1.49),
+  and the ball's V angle follows it down to 38°. The disc's radial pitch is the
+  row pitch by construction; the sphere's meridian pitch carries a legacy ×1.05
+  that every amigurumi composition's absolute millimetre placements are tuned
+  against, so it was left alone rather than moved under them in the same pass.
+- **Fabric thickness is 1.12–1.42 d against a real 1.8–2.2** — the same coupling
+  the flat family has had since §8f-2 (flat sc is 1.44), now visible in the round
+  too: pressing the stitch into the surface is what took the disc from 1.89, and
+  that 1.89 was mounding, not fabric.
+## 8f-5. THE POST-RIB HEADBAND — rebuilt at real size, staged flat (2026-09-06)
+
+`post-rib-headband` (§8e-3 sample #4) settled at ~191×47mm on the round-2 cell
+— a napkin ring, not a headband — and its `loop` staging (§8e-2 Part C, the
+2026-09-05 lowered-camera revisit) stood that ring up into a short cylinder
+whose own honest residual said as much: "the object's own proportions (band
+height close to its diameter) read as a squat drum/cuff from most angles
+regardless of camera — a real fix needs a THINNER band relative to its loop."
+This pass is that fix, plus a staging mode that doesn't stand the result up at
+all.
+
+### The size arithmetic — derived from the cell, not guessed
+
+postrib packs its fp/bp columns to `gaugeYr` 2.3 and fpdc/bpdc carry their own
+row gauge `rowYr` 6.29 (both dictionary.ts, unchanged by this pass — §8f-2's
+"the cell, library-wide" table). At aran (`YARN_WEIGHT_RADIUS_MM.aran` = 2.4mm,
+program.ts):
+
+```
+column pitch = gaugeYr × yr = 2.3 × 2.4mm = 5.52 mm/column
+row pitch    = rowYr × yr   = 6.29 × 2.4mm = 15.10 mm/row
+```
+
+Target an adult ear-warmer band: ~45cm worked-flat length (it stretches a
+little narrower once the short ends are seamed into a worn loop), ~9–10cm
+wide.
+
+```
+columns = 450mm / 5.52mm ≈ 81.5 → 82 (even, so the 1×1 rib closes cleanly)
+  82 × 5.52mm = 452.6mm nominal (+0.6% over target)
+rows    = 95mm / 15.10mm ≈ 6.3 → 6 total (1 dc establishing row + 5 fp/bp rib
+  rows — 7 total overshoots to 105.7mm, further from the 95mm target than 6's
+  90.6mm)
+```
+
+`loom-pattern-proofs.ts`'s `RIB_W` moved 34→82, `RIB_ROWS` (new, replacing a
+hard-coded `4`) is 6. 82×6 = **492 stitches** (was 136) — comfortably inside
+the "~2,000 stitches renders fine on Fargate" budget named for this pass, so
+no toy-size compromise was needed. Compiled + relaxed + audited in ~5s.
+
+**Measured settled size** (`settledSizeMm`, the honest number — §8e-3's SIZE
+CONSISTENCY gate): **458 × 92mm** (nominal 453×91; relaxation opens it
+slightly, same direction every other flat proof moves). `finishedSizeMm`
+declared to match — 458×92mm, both axes at ~1% off the settled figure, deep
+inside the gate's ±12%. Audit clean (0 problems). Geometry hash moved
+(a real geometry change, the stitch counts): `e482eb7a` → `31ebcc27`.
+
+### Staged flat, not standing — a new `flatband` mode
+
+The standing `loop` mapping itself is unchanged (still exactly right for a
+band whose height is small relative to its diameter — a proper snug-fitting
+worn ring). What this proof needed was to stop being staged that way at all:
+even at the real size, a 92mm-wide band seamed into a ~452mm loop is a
+squat mug-sized ring when stood up, no thinner-relative-to-diameter than
+before, because a headband's own real proportions (band width vs. head
+circumference) are what they are — the standing view was always going to read
+short and drum-like for this object, camera tuning notwithstanding.
+
+Added `flatband` to `Staging` (`program.ts`, extended `'swatch' | 'flatlay' |
+'loop'` — the union now lives on `program.ts` rather than `programScene.ts`,
+re-exported from there for the one existing import site, so `CrochetProgram`
+itself can carry a `staging` field without a circular import): the finished,
+seamed strip laid on the ground as a PRODUCT PHOTO, matching the etsy
+reference flat-lay shots, instead of stood up as a worn ring. This is NOT the
+folded-flat-loop idea §8e-2 Part C named and set aside (band width spread
+in-plane radially, "seam side down, two layers overlapping") — that mapping
+was set aside because it repeats the two logged flat/radial `loop` failures
+(§9: a filled coiled disc, or a radial sunburst) whenever the band width isn't
+tiny next to the loop diameter, which it never is for a real headband. This
+`flatband` doesn't close the strip into a loop at all — it stays an OPEN
+strip, bent by an in-plane S along its own length, with the row/width axis
+riding the curve's local NORMAL rather than spreading radially from a ring
+centre, so neither failure mode's geometry is present. `flatbandStrip`
+(`programScene.ts`) bends the strip's long axis into a gentle in-plane S-curve
+(amplitude/wavelength scaled to the strip's own length, so it stays
+proportionate at any stitch count) and carries the row/width axis as an offset
+along the curve's own local NORMAL — a real ribbon's width rides perpendicular
+to whichever way it bends — so the post ribs (each a fixed column spanning
+every row) still read as straight bars crossing the curve rather than smearing
+along it. Out-of-plane relief (`p.z`, the stitch texture) is untouched: this
+bends the fabric plane, not its face. No stitch moves relative to its
+neighbours. Camera: `tiltDeg` 22 (a three-quarter-from-above product angle,
+between `flatlay`'s 15° and `loop`'s 74°), `marginFactor` 0.35 (extra room —
+the S-curve brings the ~452×92mm strip's bounding box to ~473×176mm, a 2.7:1
+aspect instead of the raw strip's 4.9:1), `drapeAmp` 0.04 for a touch of soft
+fabric life. Render-only: no geometry, audit or hash change from the staging
+choice itself; every other staging mode and every unchanged proof stayed
+bit-identical (`loom-geom-hash.ts` before/after this whole pass — the swatch
+dictionary is untouched by any of it, diff clean).
+
+`CrochetProgram.staging` now flows through three call sites, explicit before
+implicit: `renderProgram` (`options.staging ?? program.staging ?? 'swatch'`)
+so render-on-publish picks up a real stored pattern's own choice automatically;
+`loom-render-batch.ts`'s `compile()` (`program.staging ?? proofStaging(name)`)
+for the Fargate batch; and the CLI's `resolveStaging` (flag `>` proof-name map
+`>` the program's own field). `post-rib-headband` declares `staging: 'flatband'`
+on the program itself AND is remapped in `loom-pattern.ts`'s `PROOF_STAGING`
+table — belt and suspenders, since a proof name always wins the table lookup
+first. `packages/db/scripts/seed-loom-signoff-patterns.ts` (merged from round
+3, seeds the six-sample set as real `CrochetPattern` rows for the actual
+publish pipeline) had its own local `Staging` type and its own hard-coded
+`staging: 'loop'` for this pattern's spec, which would have silently
+overwritten the program's field and put the real seeded row back on the
+standing ring — updated to `'flatband'` alongside this pass so the fix reaches
+the pattern the site would actually serve, not just the proof script.
+
+### The backing plane assumes a rectangle — a real bug, caught by looking
+
+The first render (base, before any Fal step) showed a flat, yarn-coloured
+RECTANGLE plainly through the concave side of the S — not a Fal artifact, the
+base render already had it. `loom_render_crochet.py`'s backing plane (there so
+a thin gap between yarn strands in dense fabric never flashes the ground
+through) is sized off the whole scene's content BOUNDING BOX and is always a
+rectangle; `flatlay` gets away with that because its panels genuinely fill
+their own bounding box, but an S-curved strip does not — the curve's concave
+side is bounding-box area with no fabric over it, so the rectangle showed
+through exactly there. Numbers-before-theories confirmed it was a shape
+mismatch, not a colour/lighting issue: the visible patch's edges were dead
+straight, matching the backing rectangle's own corners. Fix: `openFabric: true`
+on `flatband`'s view, the same lever `loop` already uses for the identical
+reason ("the 3-D object dropped onto the clean ground, no flat backing
+plane") — any staging whose footprint isn't a filled rectangle should drop
+the rectangular backing, not just the standing ring. Render-only,
+`openFabric` already existed; hash unchanged (`31ebcc27` before and after).
+
+### Rendered (Fargate)
+
+`post-rib-headband`, hash `31ebcc27`, aran (yr 2.4mm), settled 458×92mm:
+
+- base: 462s, 2094kB
+- hero: `[Step 4] upscale ... structure=0.932 colour=0.019 -> PASS` on the
+  first render (with the backing-rectangle bug still present); after the
+  `openFabric` fix, re-rendered alone — base 333s/2087kB, hero 333s total,
+  8112kB, **structure 0.944** (STRUCT_MIN 0.45) — PASS, and higher than the
+  buggy render, consistent with the Fal step no longer having a stray flat
+  rectangle to reconcile against the genuine stitched geometry.
+
+Reads as a real post-rib headband strip: a long sage-green band lying in a
+soft S on white, ribs standing proud as clean vertical bars the whole length,
+photographed at a slight three-quarter angle — the finished-object bar's
+"whole piece, real yarn colour, on clean white, staged as the finished
+object" all read correctly, on the actual size this time. Honest residual
+(pre-existing, not this pass's to fix): the ribs read a shade openwork/
+basket-like rather than a dense snug knit rib — the same library-wide
+post-stitch density limit §8f-2 and §8e-2 Part D already logged, now visible
+at the real size and the flat framing rather than hidden by a standing-ring
+crop. Orchestrator/Rebecca verdict pending — see the render report for the
+linked images.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,
@@ -1732,6 +2068,40 @@ time — rendering them in two separate runs was costing task-minutes for nothin
   so the splay goes WITH the bend, and let the loop's turn happen at the head
   where a loop's turn belongs. Numbers found it in one settled dump after two
   value-tuning attempts had moved the V by 4°.
+- **Tuning what the layout pull does not hold** (round work, §8f-5, five probes
+  in a row). The disc's stitches read as knots standing off the surface, and
+  every candidate cause was a BUILT value: the crown canopy (removed entirely →
+  mound 1.65 → 1.54 d), the head loop built lying flat in the surface (1.66),
+  the leg relief swept 0.7 → 2.2 (1.65–1.72), the table depth swept 3.2 → 1.0 yr
+  (1.66 → 1.49), and the +6 increase shear removed by placing each crown over its
+  own insertion (1.62, and the settled shear only fell 0.61 → 0.50 d because the
+  crowns redistribute evenly around the round after relaxation whatever angle
+  they are built at). The crown settled 0.85–0.99 d proud in every one of them,
+  which is the tell: `layoutMode: 'radial'` held each node at its worked RADIUS
+  and left the NORMAL completely free, so on the one axis the problem lived on,
+  the built geometry had no vote and the crowd alone decided. **Before tuning a
+  built value, check what the relax profile actually holds on that axis.** The
+  fix was to give the round mode the same whisper-soft normal hold the
+  curved-surface mode has always had (§8f-5), after which the built values
+  finally mattered.
+- **A no-turn stitch built like a turned one stands off the fabric** (round work,
+  §8f-5). In turned fabric a crown is thrown proud of its worked face because the
+  next row is worked from the OTHER face and dives under it from there — and
+  consecutive rows' reliefs alternate and cancel. A spiral never turns, so the
+  same construction puts every crown proud on the one visible face and forces
+  every next-round hook to plunge the same distance in to clear it: measured, one
+  stitch spanning 1.65 rendered diameters of normal excursion against flat sc's
+  0.57, which is the coiled bead a close-up reads. The head of a no-turn stitch
+  has to LIE IN the surface (`surfaceLay`), with the dive shallowed to match.
+- **Laying a pattern's counts on a rigid ANALYTIC sphere stretches its cap**
+  (ball, §8f-5) → the open pole. The ±6-per-round amigurumi recipe gives a cap
+  round fewer stitches than its latitude's circumference wants, so the fabric is
+  pulled out to fit the sphere: round 1 settled at 1.51× its own stitch gauge and
+  round 2 at 1.27×, i.e. six stitches held apart around a hole. It is not the
+  magic-ring radius and not the canopy. Lay the fabric on the surface the COUNTS
+  make (the intrinsic profile — what pattern-driven balls always used) and every
+  round sits where its own count wants it. Related, and still true: that surface
+  is oblate, and no gauge value should be used to hide it (§8f-4).
 - **Re-associating a floating-point product moves every geometry hash** (§8f).
   Writing the row pitch as `yr · (BASE_ROW_YR · heightFactor)` instead of
   `(yr · BASE_ROW_YR) · heightFactor` is the same number in algebra and a

@@ -199,6 +199,8 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
   const surface = cfg.layoutMode === 'surface' && !!model.meridian
   const y0 = cfg.layoutK > 0 && !radial && !surface ? nodes.map((n) => n.y) : null
   const r0 = cfg.layoutK > 0 && radial ? nodes.map((n) => Math.hypot(n.x, n.y)) : null
+  // …and, in the round, each node's worked NORMAL offset (z on a disc). See 5b.
+  const z0 = cfg.layoutK > 0 && radial ? nodes.map((n) => n.z) : null
   // Curved surfaces: capture each node's worked latitude (r_cyl + global z) —
   // the pull acts only along the local MERIDIAN tangent (the row-height
   // direction), leaving the angular direction and the surface NORMAL (the
@@ -324,8 +326,21 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
       }
     }
     // 5b. The same pull for work in the round: hold each round at its worked
-    // RADIUS, leaving the angular position and the z relief free.
+    // RADIUS, leaving the angular position free — PLUS the same whisper-soft
+    // pull on the normal (here, z) that the curved-surface mode has always
+    // carried (5c). The disc had only the radius held, so its normal direction
+    // was completely free: the built relief meant nothing and the crowd alone
+    // decided how far out of the fabric each part of a stitch finished. Measured
+    // (§8f-5), a crown BUILT 0.08 rendered diameters proud settled 0.85 proud —
+    // and it settled there whatever it was built at, at every canopy, floor,
+    // leg-relief and head-profile value tried — so every round-work stitch stood
+    // off the surface as a knot. This is the blocked/pressed term a real
+    // crocheted circle gets when it is laid out and photographed. It pulls
+    // toward each node's OWN worked offset, never a common plane (§9: a
+    // symmetric plane pull crushes the front/back layering), so the interlock
+    // relief survives and collision still wins locally.
     if (r0) {
+      const kN = cfg.layoutK * 0.4
       for (let i = 0; i < nodes.length; i++) {
         const n = nodes[i]!
         if (n.w === 0) continue
@@ -334,6 +349,7 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
         const f = 1 + ((r0[i]! - r) / r) * cfg.layoutK
         n.x *= f
         n.y *= f
+        n.z += (z0![i]! - n.z) * kN
       }
     }
     // 5c. Curved surfaces: full-strength pull along the local meridian tangent
