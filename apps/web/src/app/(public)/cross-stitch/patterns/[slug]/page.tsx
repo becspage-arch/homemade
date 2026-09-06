@@ -274,6 +274,17 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
             />
           </div>
 
+          {/* First step for anyone who has never stitched, in the actions
+              area where the decision is being made. The fuller "Start here"
+              card below repeats it for readers who scroll. Both destinations
+              are free and open without an account. */}
+          <p className="pattern-detail-first-time">
+            New to cross-stitch?{' '}
+            <Link href={`/cross-stitch/how-to-read-a-cross-stitch-chart?from=${slug}`}>
+              Start with how to read a chart
+            </Link>
+          </p>
+
           {finishedCount > 0 && (
             <p className="pattern-detail-finished">
               Finished by {finishedCount.toLocaleString()}{' '}

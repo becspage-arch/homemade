@@ -88,6 +88,23 @@
 }
 .pattern-detail-action.ghost:hover { background: #f0e9da; }
 
+/* One line under the Stitch button for a visitor who has never stitched.
+   The full "Start here" card sits below the chart, which on a phone is a
+   long way past the point where they need it. */
+.pattern-detail-first-time {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-warm-taupe);
+  margin: -14px 0 24px;
+}
+.pattern-detail-first-time a {
+  color: var(--color-forest);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+.pattern-detail-first-time a:hover { color: var(--color-sage); }
+
 .pattern-detail-finished {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 12px;

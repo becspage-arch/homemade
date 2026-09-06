@@ -2,7 +2,8 @@ import { cache } from 'react'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import * as Sentry from '@sentry/nextjs'
-import { prisma, TutorialStatus, UserProjectStatus, TutorialType } from '@homemade/db'
+import Link from 'next/link'
+import { prisma, TutorialStatus, UserProjectStatus, TutorialType, Visibility } from '@homemade/db'
 import { TutorialContent } from '@/components/public/tutorial-content/tutorial-content'
 import { ScaleProvider } from '@/components/public/tutorial-content/scale-context'
 // Imported from the server-safe sibling module rather than `scale-context`
@@ -91,6 +92,7 @@ export const dynamic = 'force-dynamic'
 
 interface PageProps {
   params: Promise<{ categorySlug: string; tutorialSlug: string }>
+  searchParams: Promise<Record<string, string | string[] | undefined>>
 }
 
 // Genuine tutorial slugs are lowercase alphanumeric with optional hyphens,
@@ -151,7 +153,7 @@ const loadTutorial = cache(async (categorySlug: string, tutorialSlug: string) =>
   }
 })
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Pick<PageProps, 'params'>): Promise<Metadata> {
   const { categorySlug, tutorialSlug } = await params
   if (!isValidSlug(categorySlug) || !isValidSlug(tutorialSlug)) {
     return notFoundMetadata()
@@ -202,8 +204,9 @@ function tutorialKeywords(tutorial: {
   return Array.from(keys).slice(0, 12)
 }
 
-export default async function TutorialPage({ params }: PageProps) {
+export default async function TutorialPage({ params, searchParams }: PageProps) {
   const { categorySlug, tutorialSlug } = await params
+  const sp = await searchParams
   if (!isValidSlug(categorySlug) || !isValidSlug(tutorialSlug)) {
     notFound()
   }
@@ -594,10 +597,34 @@ export default async function TutorialPage({ params }: PageProps) {
       )
     : null
 
+  // A reader sent here from a pattern page ("New to cross-stitch? Start with
+  // how to read a chart") carries ?from=<pattern slug>. Give them the way
+  // back to the chart they were looking at. Unknown or malformed slugs are
+  // ignored rather than shown as a dead link.
+  const fromParam = typeof sp.from === 'string' ? sp.from : null
+  const cameFromPattern =
+    fromParam && isValidSlug(fromParam)
+      ? await prisma.pattern.findFirst({
+          where: {
+            slug: fromParam,
+            ownerUserId: null,
+            visibility: Visibility.PUBLIC,
+          },
+          select: { slug: true, name: true },
+        })
+      : null
+
   // Above-body social proof. Pinterest pattern — makers who've already
   // made this tutorial render as a small rail just above the body.
   const preBodySlot = (
     <>
+      {cameFromPattern && (
+        <p className="tutorial-back-to-pattern">
+          <Link href={`/cross-stitch/patterns/${cameFromPattern.slug}`}>
+            Back to {cameFromPattern.name}
+          </Link>
+        </p>
+      )}
       {isGardenGrowingGuide && (
         <GardenRegionGuidanceCard
           tutorial={{
