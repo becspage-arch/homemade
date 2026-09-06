@@ -20,6 +20,7 @@ import type { XsSourceMode } from './autopilot-state'
 import { CROSS_STITCH_SHELVES } from '../categories'
 import { summaryLine } from './run-status'
 import { shelfDeficits, allocateShelves, capShelfBriefs, shelfSlots } from './shelf-plan'
+import { setShelfCaps } from './subject-pool'
 import {
   generateNeedleworkCandidate,
   publishNeedleworkGem,
@@ -323,7 +324,9 @@ export async function crossStitchPlanContext(count: number): Promise<Parameters<
   // otherwise takes three or four slots at once and the batch turns into three
   // variations on one idea — which is how batch 6 planned three celestial pieces,
   // two of them the same composition.
-  const alloc = capShelfBriefs(allocateShelves(deficits, count), count)
+  // Set shelves (small makes) may take several slots at once — the pool's own
+  // `setOf` tags say which, so the cap follows the pool rather than a second list.
+  const alloc = capShelfBriefs(allocateShelves(deficits, count), count, setShelfCaps())
   return {
     avoidSubjectKeys,
     shelfSlots: shelfSlots(alloc),

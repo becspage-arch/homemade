@@ -38,7 +38,29 @@ const APPLY = process.argv.includes('--apply')
 
 /** Cross-stitch category description. */
 const CATEGORY_DESCRIPTION =
-  'Animals, florals, landscapes, fantasy and fairytale, pop art portraits, monochrome studies, seasonal pieces, celestial, witchy and gothic, food and drink, nursery, quotes and sayings, and cosy scenes.'
+  'Animals, florals, landscapes, fantasy and fairytale, pop art portraits, monochrome studies, Christmas, seasonal pieces, coastal and seaside, folk art and geometric, small makes, celestial, witchy and gothic, food and drink, nursery, quotes and sayings, and cosy scenes.'
+
+/**
+ * Shelves that may not have a row yet.
+ *
+ * A shelf row is normally created by the bulk publisher on its first gem (that
+ * is how `nursery` appeared). The four shelves added on 6 September 2026 have no
+ * patterns yet, so without this their descriptions would have nowhere to go and
+ * the script would just report them missing every run. Creating the row here is
+ * the same row, with the same name and order, the publisher would create — and
+ * an empty shelf is invisible on the public grid, which only lists shelves that
+ * hold something. Slug -> display name, and it must match `CROSS_STITCH_SHELVES`
+ * in apps/web/src/lib/studio/generation/categories.ts.
+ */
+const CREATE_IF_MISSING: Record<string, string> = {
+  christmas: 'Christmas',
+  'small-makes': 'Small makes',
+  coastal: 'Coastal & seaside',
+  'folk-geometric': 'Folk art & geometric',
+}
+
+/** The order the bulk publisher gives a shelf row it has to create. */
+const SHELF_ORDER = 50
 
 /** Sub-category slug -> new description. */
 const SUB_CATEGORY_DESCRIPTIONS: Record<string, string> = {
@@ -63,6 +85,15 @@ const SUB_CATEGORY_DESCRIPTIONS: Record<string, string> = {
   portraits: 'Pop-art glamour, retro fashion, and stylised portraits.',
   // Created by the bulk publisher on its first nursery gem (2026-09-06).
   nursery: 'Sailboats, sleepy animals, moons and stars, and soft pieces for a baby\'s room.',
+
+  // ── The four shelves added 6 September 2026, and the one they shrank ──────
+  // Christmas moved out of `seasonal` onto its own shelf (see
+  // scripts/xs-refile-christmas.ts), so seasonal is now the rest of the year.
+  christmas: 'Robins, reindeer, snowmen, gingerbread houses, stockings, baubles, nutcrackers, wreaths, and snowy villages.',
+  seasonal: "Easter bunnies, spring chicks, autumn harvest baskets, conkers and leaves, and Valentine's hearts.",
+  'small-makes': 'Ornaments, bookmarks, cards, keyrings, and coaster-size motifs.',
+  coastal: 'Lighthouses, beach huts, sailing boats, seagulls, shells and sea glass, piers, deckchairs, rock pools, and harbours.',
+  'folk-geometric': 'Scandinavian folk bands, folk-art birds, paper-cut roosters, mandalas, Otomi animals, Portuguese tiles, Fair Isle bands, quilt stars, and kilim borders.',
 }
 
 async function main(): Promise<void> {
@@ -89,9 +120,22 @@ async function main(): Promise<void> {
   }
 
   for (const [slug, description] of Object.entries(SUB_CATEGORY_DESCRIPTIONS)) {
-    const sub = await prisma.subCategory.findUnique({
+    let sub = await prisma.subCategory.findUnique({
       where: { categoryId_slug: { categoryId: category.id, slug } },
     })
+    if (!sub && CREATE_IF_MISSING[slug]) {
+      const name = CREATE_IF_MISSING[slug]
+      console.log(`\n[descriptions] ${slug} (${name}): shelf row does not exist yet`)
+      if (!APPLY) {
+        console.log(`  [would create] with description ${JSON.stringify(description)}`)
+        continue
+      }
+      sub = await prisma.subCategory.create({
+        data: { categoryId: category.id, slug, name, order: SHELF_ORDER, description },
+      })
+      console.log(`  created with description ${JSON.stringify(description)}`)
+      continue
+    }
     if (!sub) {
       console.log(`\n[descriptions] ${slug}: NOT FOUND, skipping`)
       continue

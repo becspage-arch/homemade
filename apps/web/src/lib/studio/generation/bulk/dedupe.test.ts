@@ -52,8 +52,10 @@ import {
   LANES_SMALL_UP,
   TEXT_RISK_LANES,
   smallestLane,
+  setShelfCaps,
+  isTextRiskSubject,
 } from './subject-pool'
-import type { ShelfTarget } from '../categories'
+import { CROSS_STITCH_SHELVES, CROSS_STITCH_SHELF_BY_SLUG, type ShelfTarget } from '../categories'
 
 type PassFail = { name: string; passed: boolean; detail?: string }
 const results: PassFail[] = []
@@ -825,6 +827,109 @@ record('capShelfBriefs: an allocation already within the cap is untouched', () =
   assert.deepEqual(out.map((a) => [a.slug, a.briefs]).sort(), input.map((a) => [a.slug, a.briefs]).sort())
 })
 
+// ─── the four shelves added 6 September 2026 ───────────────────────────────
+
+/** The shelves the September widening added, and the one it shrank. */
+const NEW_SHELVES = ['small-makes', 'christmas', 'coastal', 'folk-geometric']
+
+record('new shelves: all four are canonical, and seasonal shrank for Christmas', () => {
+  for (const slug of NEW_SHELVES) {
+    const shelf = CROSS_STITCH_SHELF_BY_SLUG[slug]
+    assert.ok(shelf, `${slug} is not a canonical shelf`)
+    assert.ok(!shelf!.hold, `${slug} must not be on hold — it is being filled`)
+    assert.ok(shelf!.target > 0, `${slug} has no target`)
+  }
+  assert.equal(CROSS_STITCH_SHELF_BY_SLUG['christmas']!.target, 80)
+  assert.equal(CROSS_STITCH_SHELF_BY_SLUG['seasonal']!.target, 40)
+})
+
+record('new shelves: every one of them gets slots under deficit weighting', () => {
+  // An empty new shelf against a catalogue that is otherwise well on its way:
+  // every live shelf sits at nine tenths of its target, the four new ones at 0.
+  const counts: Record<string, number> = {}
+  for (const sh of CROSS_STITCH_SHELVES) {
+    counts[sh.slug] = NEW_SHELVES.includes(sh.slug) ? 0 : Math.floor(sh.target * 0.9)
+  }
+  const deficits = shelfDeficits(CROSS_STITCH_SHELVES, counts)
+  for (const slug of NEW_SHELVES) {
+    assert.ok(deficits.some((d) => d.slug === slug), `${slug} missing from the deficit list`)
+  }
+  // The four biggest gaps in the catalogue are now exactly the four new shelves.
+  assert.deepEqual(deficits.slice(0, 4).map((d) => d.slug).sort(), [...NEW_SHELVES].sort())
+  const slots = shelfSlots(capShelfBriefs(allocateShelves(deficits, 10), 10, setShelfCaps()))
+  assert.equal(slots.length, 10)
+  for (const slug of NEW_SHELVES) {
+    assert.ok(slots.includes(slug), `${slug} got no slot in a batch of ten`)
+  }
+})
+
+record('setShelfCaps: small-makes is the only set shelf, at six', () => {
+  assert.deepEqual(setShelfCaps(), { 'small-makes': 6 })
+})
+
+/** One allocation, run with and without the set caps — the whole difference. */
+const SET_FIXTURE: [string, number, number][] = [
+  ['small-makes', 6, 60],
+  ['coastal', 1, 20],
+  ['christmas', 1, 15],
+  ['food', 1, 10],
+  ['hobbies', 1, 8],
+]
+
+record('set shelves: small-makes takes a whole set in one batch when its gap is large', () => {
+  // The ordinary share is two in a batch of ten. small-makes is sold as a set of
+  // six, so a big gap earns it all six — and the rest of the batch is untouched.
+  const out = capShelfBriefs(alloc(SET_FIXTURE), 10, setShelfCaps())
+  const smallMakes = out.find((a) => a.slug === 'small-makes')!.briefs
+  assert.ok(smallMakes > 10 / SHELF_SHARE, `small-makes got ${smallMakes}, no more than the ordinary share`)
+  assert.equal(smallMakes, 6)
+  assert.equal(out.reduce((n, a) => n + a.briefs, 0), 10)
+})
+
+record('set shelves: the same allocation without a set cap gets the ordinary share', () => {
+  const out = capShelfBriefs(alloc(SET_FIXTURE), 10)
+  assert.equal(out.find((a) => a.slug === 'small-makes')!.briefs, 10 / SHELF_SHARE)
+  assert.equal(out.reduce((n, a) => n + a.briefs, 0), 10)
+})
+
+record('set shelves: the set cap is a ceiling, never a floor', () => {
+  // A small gap earns one slot, and nothing tops it up to six.
+  const input = alloc([['animals', 2, 200], ['coastal', 2, 60], ['christmas', 2, 50], ['floral', 2, 40], ['small-makes', 1, 4], ['food', 1, 20]])
+  const out = capShelfBriefs(input, 10, setShelfCaps())
+  assert.equal(out.find((a) => a.slug === 'small-makes')!.briefs, 1)
+  assert.equal(out.reduce((n, a) => n + a.briefs, 0), 10)
+})
+
+record('set shelves: a set cap never rescues a hard-capped shelf', () => {
+  const out = capShelfBriefs(alloc([['celestial', 6, 300], ['coastal', 4, 40]]), 10, { celestial: 6 })
+  assert.equal(out.find((a) => a.slug === 'celestial')!.briefs, 2)
+})
+
+record('new shelves: each one has a theme in the pool that files to it', () => {
+  for (const slug of [...NEW_SHELVES]) {
+    const themes = CROSS_STITCH_THEMES.filter((t) => t.shelf === slug)
+    assert.ok(themes.length > 0, `no pool theme files to ${slug}`)
+    for (const t of themes) {
+      assert.ok(t.examples.length >= 12, `${t.id} has only ${t.examples.length} subjects`)
+      assert.equal(t.shelfName, CROSS_STITCH_SHELF_BY_SLUG[slug]!.name, `${t.id} shelfName drifted from the registry`)
+    }
+  }
+  // Christmas left seasonal; the other three seasonal themes stayed.
+  const seasonal = CROSS_STITCH_THEMES.filter((t) => t.shelf === 'seasonal').map((t) => t.id).sort()
+  assert.deepEqual(seasonal, ['autumn-harvest', 'easter-spring', 'valentines'])
+})
+
+record('small makes: mini and small only, and no lettering anywhere in the new themes', () => {
+  const smallMakes = CROSS_STITCH_THEMES.find((t) => t.id === 'small-makes')!
+  assert.deepEqual([...(smallMakes.lanes ?? [])], ['mini', 'small'])
+  assert.equal(smallMakes.setOf, 6)
+  for (const id of ['small-makes', 'coastal', 'folk-geometric', 'christmas']) {
+    const theme = CROSS_STITCH_THEMES.find((t) => t.id === id)!
+    const risky = theme.examples.filter(isTextRiskSubject)
+    assert.deepEqual(risky, [], `${id} carries lettering-risk subjects: ${risky.join(', ')}`)
+  }
+})
+
 record('shelfQuota: a shelf cannot exceed its slots in one batch (the batch-6 celestial)', () => {
   // Batch 6 was allocated ONE celestial slot and the planner returned three,
   // because nothing stopped it picking the same theme repeatedly.
@@ -924,14 +1029,38 @@ record('every pool subject has at least one lane it can be built in', () => {
   }
 })
 
+/**
+ * The one theme that is deliberately CAPPED at the small end.
+ *
+ * Every other lane tag is a floor, because promotion (mini → large) has to be
+ * safe. A small make is the finished object — an ornament, a bookmark, a
+ * coaster — so it is mini or small and nothing else, and `enforceRange` asks
+ * `laneFits` before it promotes anything into large or dense.
+ */
+const SIZE_CAPPED_THEMES = new Set(['small-makes'])
+
 record('a lane override is only ever a FLOOR, never a ceiling', () => {
   // Promotion (mini → large) must always be safe, so every tag set must run to
-  // the top of the range. A tag like ['mini','small'] would make the dense
-  // showpiece promotion illegal and silently break the range rule.
+  // the top of the range — apart from the deliberately size-capped themes,
+  // which the range enforcement checks before it promotes.
   for (const t of CROSS_STITCH_THEMES) {
+    if (SIZE_CAPPED_THEMES.has(t.id)) continue
     for (const lanes of [t.lanes ?? LANES_ALL, ...Object.values(t.laneOverrides ?? {})]) {
       assert.ok(lanes.includes('dense'), `${t.id}: ${lanes.join('/')}`)
     }
+  }
+})
+
+record('a size-capped theme is a contiguous run from the small end', () => {
+  // A ceiling is only safe while it is a prefix of the lane order: a gap
+  // ('mini' + 'large') would let a demotion land in a lane the subject was
+  // never tagged for.
+  for (const t of CROSS_STITCH_THEMES) {
+    if (!SIZE_CAPPED_THEMES.has(t.id)) continue
+    const lanes = t.lanes ?? LANES_ALL
+    assert.deepEqual([...lanes], LANES_ALL.slice(0, lanes.length), `${t.id}: ${lanes.join('/')}`)
+    // Nothing in it may need the dense lane, or it could never be built at all.
+    for (const ex of t.examples) assert.ok(!isTextRiskSubject(ex), `${t.id}: "${ex}" needs the dense lane`)
   }
 })
 

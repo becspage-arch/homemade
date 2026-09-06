@@ -18,7 +18,13 @@
  * example is rejected. That makes this file the hard limit on what the catalogue
  * can ever contain. Every batch spends about ten subjects permanently — once a
  * subject is published, the catalogue avoid list blocks it — so at ten a batch
- * the current 275 subjects are roughly 27 batches of runway.
+ * the current 326 subjects are roughly 32 batches of runway.
+ *
+ * ── FOUR NEW SHELVES (6 September 2026) ───────────────────────────────────
+ * `small-makes`, `christmas`, `coastal` and `folk-geometric` joined the shelf
+ * list, so four themes joined this pool and the Christmas theme moved off
+ * `seasonal` onto its own shelf. `small-makes` is the first SET theme — see
+ * `setOf` on the interface below.
  *
  * THE POOL MUST GROW WITH THE CATALOGUE. When a shelf starts returning
  * "duplicates" or the sampler starts exhausting themes, the fix is more subjects
@@ -76,6 +82,18 @@ export interface CrossStitchTheme {
    * hiding among single motifs, or a charm among scenes.
    */
   laneOverrides?: Record<string, readonly LaneName[]>
+  /**
+   * SET SIZE — how many pieces of this theme belong in one batch.
+   *
+   * Nearly every theme wants one brief at a time: a batch of three variations on
+   * one idea is how batch 6 shipped two identical moon compositions, which is
+   * why `capShelfBriefs` holds a shelf to a fifth of the batch. A SET theme is
+   * the deliberate exception — small makes are sold as a set of six ornaments or
+   * six bookmarks, so six related minis in one batch is the product, not a
+   * repeat. The number raises this shelf's cap; it never forces briefs on it,
+   * so the shelf still only gets what its deficit earns.
+   */
+  setOf?: number
   /** Brief-craft rules the planner must respect for this lane. */
   notes?: string
 }
@@ -140,6 +158,22 @@ export function isTextRiskSubject(subject: string): boolean {
 /** Every curated example that carries the text risk — the pool's own tagging. */
 export function textRiskExamples(themes: readonly CrossStitchTheme[] = CROSS_STITCH_THEMES): string[] {
   return themes.flatMap((t) => t.examples).filter(isTextRiskSubject)
+}
+
+/**
+ * SET SHELVES — shelf slug → the most briefs one batch may put on it.
+ *
+ * Derived from the pool's own `setOf` tags rather than hand-listed, so a theme
+ * that stops being a set stops raising the cap. Read by `capShelfBriefs`; a
+ * shelf that is not here keeps the ordinary one-fifth-of-the-batch share.
+ */
+export function setShelfCaps(themes: readonly CrossStitchTheme[] = CROSS_STITCH_THEMES): Record<string, number> {
+  const out: Record<string, number> = {}
+  for (const t of themes) {
+    if (!t.setOf || t.setOf < 1) continue
+    out[t.shelf] = Math.max(out[t.shelf] ?? 0, t.setOf)
+  }
+  return out
 }
 
 /** The smallest lane in a set, or null when the set is empty. */
@@ -301,14 +335,20 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     },
   },
   {
-    id: 'christmas', title: 'Seasonal — Christmas & winter', shelf: 'seasonal', shelfName: 'Seasonal',
+    id: 'christmas', title: 'Christmas', shelf: 'christmas', shelfName: 'Christmas',
     styles: ['bright', 'showpiece', 'cute'],
-    examples: ['a plump robin on snowy holly', 'a red fox in falling snow', 'a cosy cocoa and knitted jumper', 'a gingerbread house', 'a nutcracker soldier in scarlet and gold', 'a stocking hung on a mantel', 'a bullfinch on snowy rowan', 'a sledge piled with wrapped parcels', 'ice skates on a red ribbon', 'a christmas pudding with holly'],
+    examples: ['a plump robin on snowy holly', 'a red fox in falling snow', 'a cosy cocoa and knitted jumper', 'a gingerbread house', 'a nutcracker soldier in scarlet and gold', 'a stocking hung on a mantel', 'a bullfinch on snowy rowan', 'a sledge piled with wrapped parcels', 'ice skates on a red ribbon', 'a christmas pudding with holly', 'a reindeer in a scarlet harness', 'a snowman in a striped scarf', 'a holly wreath on a bright red door', 'three baubles hanging on a snowy branch', 'a choir of carol-singing mice in knitted scarves', 'a snowy village under a starry sky', 'a tabby cat asleep under a christmas tree', 'a sleigh flying over snowy rooftops'],
     lanes: LANES_ALL,
     laneOverrides: {
       'a gingerbread house': LANES_MEDIUM_UP,
       'a sledge piled with wrapped parcels': LANES_SMALL_UP,
+      'a snowy village under a starry sky': LANES_LARGE_UP,
+      'a choir of carol-singing mice in knitted scarves': LANES_MEDIUM_UP,
+      'a tabby cat asleep under a christmas tree': LANES_MEDIUM_UP,
+      'a sleigh flying over snowy rooftops': LANES_MEDIUM_UP,
+      'a holly wreath on a bright red door': LANES_SMALL_UP,
     },
+    notes: 'Its own shelf since 6 September 2026 — Christmas is a season of its own, not a corner of seasonal. Bright reds and greens against snow or pale ground; no readable text on parcels, stockings or shop windows.',
   },
   {
     id: 'easter-spring', title: 'Seasonal — Easter & spring', shelf: 'seasonal', shelfName: 'Seasonal',
@@ -429,6 +469,38 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
       'a delft canal-house row': LANES_MEDIUM_UP,
     },
     notes: 'Two-tone by design: Delft = blue-on-white; redwork = red-on-white. Low colour count.',
+  },
+  {
+    id: 'small-makes', title: 'Small makes — ornaments, bookmarks, cards, coasters', shelf: 'small-makes', shelfName: 'Small makes',
+    styles: ['cute', 'bright', 'botanical'],
+    examples: ['a red-breasted robin on a frosted twig', 'a six-point snowflake in ice blue', 'a sprig of holly and three red berries', 'a ripe scarlet strawberry', 'a honeybee in flight', 'a red toadstool on a moss tuft', 'a china teacup in cornflower blue', 'a rowing boat on flat water', 'a striped hot air balloon', 'a folded paper boat in scarlet', 'a fox face straight on', 'a scarlet tulip in bud', 'a lemon on a leafy stem', 'an acorn in a brown cup', 'a crescent moon and a star', 'a red-roofed cottage'],
+    lanes: ['mini', 'small'],
+    setOf: 6,
+    notes: 'ONE motif on a plain ground, nothing behind it — these are the finished object at pocket size: a hanging ornament, a bookmark, a card front, a keyring, a coaster. Sold as SETS of six, so a batch may take several at once; keep them a family (same weight of outline, same brightness) rather than six unrelated pictures. Mini and small only — a scene at this size is mush.',
+  },
+  {
+    id: 'coastal', title: 'Coastal & seaside', shelf: 'coastal', shelfName: 'Coastal & seaside',
+    styles: ['bright', 'scene', 'botanical'],
+    examples: ['a white lighthouse above a blue bay', 'a row of pastel beach huts', 'a sailing boat under a full white sail', 'a seagull on a weathered mooring post', 'a scatter of shells and sea glass', 'a wooden pier reaching into calm water', 'a striped deckchair on golden sand', 'a rock pool at low tide', 'a harbour of moored fishing boats', 'a whale tail against a sunset sky', 'a harbour town rising above the quay', 'a crab on pale sand', 'an oystercatcher on a shingle beach', 'a lobster pot on the quayside'],
+    lanes: LANES_SMALL_UP,
+    laneOverrides: {
+      'a harbour town rising above the quay': LANES_LARGE_UP,
+      'a harbour of moored fishing boats': LANES_MEDIUM_UP,
+      'a wooden pier reaching into calm water': LANES_MEDIUM_UP,
+      'a rock pool at low tide': LANES_MEDIUM_UP,
+    },
+    notes: 'Bright seaside colour — white, cobalt, sand and a hot stripe — never a grey overcast sea. The harbour town is the dense showpiece of this shelf; everything else is one clear shape against water or sky. Boat hulls and hut doors stay wordless.',
+  },
+  {
+    id: 'folk-geometric', title: 'Folk art & geometric', shelf: 'folk-geometric', shelfName: 'Folk art & geometric',
+    styles: ['bright', 'botanical', 'scene'],
+    examples: ['a band of Scandinavian folk hearts and stars', 'a folk-art bird in a flower wreath', 'a Polish paper-cut rooster in scarlet and white', 'a symmetrical mandala in indigo and gold', 'an Otomi-style deer in seven colours', 'a Portuguese azulejo tile motif in blue and white', 'a Fair Isle band in cream, rust and navy', 'an eight-point patchwork quilt star', 'a Talavera bowl in cobalt and marigold', 'a hex grid of repeating folk motifs', 'a Turkish kilim band in madder and indigo', 'a Ukrainian folk-art poppy border', 'a Hungarian Kalocsa floral roundel'],
+    lanes: LANES_SMALL_UP,
+    laneOverrides: {
+      'a symmetrical mandala in indigo and gold': LANES_MEDIUM_UP,
+      'a hex grid of repeating folk motifs': LANES_MEDIUM_UP,
+    },
+    notes: 'FLAT and SYMMETRICAL by design — no shading, no perspective, no depth. Solid blocks of colour with clean repeats, mirrored left to right (a band or border repeats end to end). Original reinterpretation of a tradition, never a copy of a real maker\'s piece. Not one subject here carries lettering and none may gain any: a folk band is pattern, never a monogram or a name.',
   },
   {
     id: 'portraits', title: 'Artistic & pop-art faces', shelf: 'portraits', shelfName: 'Pop Art & Portraits',

@@ -656,11 +656,18 @@ export function enforceRange(briefs: CrossStitchBrief[], count: number): CrossSt
     const dense = idxOf('dense')
     if (dense.length === 0) {
       // Promote the biggest canvas that isn't the mini we still need. Promotion
-      // is always safe: every lane rule is a FLOOR, so a bigger canvas is never
-      // the wrong one for a subject.
-      const candidates = out.map((b, i) => ({ i, area: b.w * b.h })).sort((a, b) => b.area - a.area)
-      const pickIdx = candidates[0]!.i
-      out[pickIdx] = applyLane(out[pickIdx]!, 'dense')
+      // used to be unconditional — every lane rule was a FLOOR, so a bigger
+      // canvas was never the wrong one. `small-makes` (September 2026) is the
+      // first SIZE-CAPPED theme: an ornament motif is mini or small and nothing
+      // else, so promotion now has to ask, exactly as demotion always did. If
+      // nothing in the batch can hold a dense canvas the batch simply runs
+      // without one rather than blowing a bookmark motif up to 150 colours.
+      const candidates = out
+        .map((b, i) => ({ b, i, area: b.w * b.h }))
+        .filter(({ b }) => laneFits(b.themeId, b.subject, 'dense'))
+        .sort((a, b) => b.area - a.area)
+      const pickIdx = candidates[0]?.i
+      if (pickIdx != null) out[pickIdx] = applyLane(out[pickIdx]!, 'dense')
     } else {
       for (const i of dense.slice(1)) out[i] = applyLane(out[i]!, 'large')
     }
@@ -686,7 +693,7 @@ export function enforceRange(briefs: CrossStitchBrief[], count: number): CrossSt
   if (!out.some((b, i) => b.lane === 'large' && i !== denseIdx)) {
     const candidate = out
       .map((b, i) => ({ b, i }))
-      .filter(({ b, i }) => i !== denseIdx && b.lane !== 'mini')
+      .filter(({ b, i }) => i !== denseIdx && b.lane !== 'mini' && laneFits(b.themeId, b.subject, 'large'))
       .sort((a, b) => b.b.w * b.b.h - a.b.w * a.b.h)[0]
     if (candidate) out[candidate.i] = applyLane(candidate.b, 'large')
   }
