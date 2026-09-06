@@ -109,15 +109,27 @@ const KNIT_PROMPTS: Record<string, string> = {
   ].join(' '),
 }
 
-const COMMON =
-  'Real visible yarn: soft plied fibres, a gentle fuzzy halo, cosy hand-crocheted wool texture, each stitch tidy and uniform. Soft natural window light, shallow depth of field, extremely detailed, photorealistic, looks like a real crocheted swatch.'
-const COMMON_KNIT =
-  'Real visible yarn: soft plied fibres, a gentle fuzzy halo, cosy hand-knitted wool texture, each stitch tidy and uniform. Soft natural window light, shallow depth of field, extremely detailed, photorealistic, looks like a real knitted swatch.'
+// The background clause is common to every prompt (no per-pattern flag) so
+// every hero — flat swatch, finished-object flatlay/loop, or amigurumi
+// composition — asks the upscaler for the same crisp e-commerce backdrop the
+// Blender base now renders (loom_render_crochet.py's whiten_ground). Without
+// this the base's own near-white ground was the only cue, and the upscaler's
+// "soft natural window light" phrasing pulled it back toward a lifestyle-photo
+// grey/mottled surface at creativity 0.55.
+const WHITE_BG =
+  'Photographed on a clean, seamless, pure white studio background — a plain solid white surface with no visible texture, pattern, mottling, colour cast, or vignette.'
 
+const COMMON =
+  `Real visible yarn: soft plied fibres, a gentle fuzzy halo, cosy hand-crocheted wool texture, each stitch tidy and uniform. ${WHITE_BG} Soft even studio light, shallow depth of field, extremely detailed, photorealistic, looks like a real crocheted swatch.`
+const COMMON_KNIT =
+  `Real visible yarn: soft plied fibres, a gentle fuzzy halo, cosy hand-knitted wool texture, each stitch tidy and uniform. ${WHITE_BG} Soft even studio light, shallow depth of field, extremely detailed, photorealistic, looks like a real knitted swatch.`
+
+const BG_NEG =
+  'grey background, gray background, beige background, tan background, wood background, fabric background, textured background, mottled background, patterned background, vignette, dark corners, coloured backdrop, studio backdrop paper texture, table, surface texture, hand, fingers, person, human, holding'
 const NEG =
-  'embroidery, cross stitch, knitting, woven fabric, basket weave, smooth plastic, dough, cartoon, illustration, vector art, flat colours, 3d render, cgi, digital art'
+  `embroidery, cross stitch, knitting, woven fabric, basket weave, smooth plastic, dough, cartoon, illustration, vector art, flat colours, 3d render, cgi, digital art, ${BG_NEG}`
 const NEG_KNIT =
-  'embroidery, cross stitch, crochet, woven fabric, basket weave, smooth plastic, dough, cartoon, illustration, vector art, flat colours, 3d render, cgi, digital art'
+  `embroidery, cross stitch, crochet, woven fabric, basket weave, smooth plastic, dough, cartoon, illustration, vector art, flat colours, 3d render, cgi, digital art, ${BG_NEG}`
 
 interface FalImage {
   url: string
