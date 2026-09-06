@@ -14,7 +14,14 @@ import { techniquePublishSweep } from '@/inngest/functions/technique-publish-swe
 import { moderateUserRecipesCron } from '@/inngest/functions/moderate-user-recipes-cron'
 import { needleworkHeroRender } from '@/inngest/functions/needlework-hero-render'
 import { crochetHeroRender } from '@/inngest/functions/crochet-hero-render'
-import { bulkCrossStitchBatch, bulkCrossStitchIdea, bulkNeedleworkBatch, bulkCrochetBatch } from '@/inngest/functions/bulk-generation'
+import {
+  bulkCrossStitchBatch,
+  bulkCrossStitchIdea,
+  bulkNeedleworkBatch,
+  bulkNeedleworkIdea,
+  bulkCrochetBatch,
+  bulkCrochetIdea,
+} from '@/inngest/functions/bulk-generation'
 
 export const { GET, POST, PUT } = serve({
   client: inngest,
@@ -34,6 +41,8 @@ export const { GET, POST, PUT } = serve({
     bulkCrossStitchBatch,
     bulkCrossStitchIdea,
     bulkNeedleworkBatch,
+    bulkNeedleworkIdea,
     bulkCrochetBatch,
+    bulkCrochetIdea,
   ],
 })

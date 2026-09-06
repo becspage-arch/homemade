@@ -2220,21 +2220,63 @@ stitches lands near 35 seconds, inside one Inngest step and under the gateway's
 ceiling is a real showpiece rather than a swatch. Measured on this box: 1,050
 stitches compiled and audited in 13.8 s, 1,600 in about 21 s.
 
-### OPEN, and it gates the cron: the render is a blocking call
+### The render is ASYNCHRONOUS inside the job (2026-09-06)
 
-`fargateRenderBase` (`scripts/loom-fargate-render.ts`) starts the ECS task and
-POLLS IT TO COMPLETION inside the call, so one render is a seven- or eight-minute
-synchronous await. Inside an Inngest `step.run` on the web task that is a
-seven-minute HTTP request, and the gateway kills a request at roughly 100
-seconds — the exact failure the cross-stitch autopilot was fanned out to escape
-(§ `bulk-generation.ts`). Needlework has the same shape and is why it sits
-paused.
+A photoreal hero is a four-vCPU Blender task of seven to nine minutes — the
+coaster this was proved against took fifteen and a half. `fargateRenderBase`
+waits for it, which is right from a worker box and impossible on the server: an
+Inngest step is one HTTP request and the proxy in front of the site ends a
+request at about a hundred seconds. That single fact is what paused needlework
+and shipped crochet's toggle off.
 
-So the crochet cron is WIRED but must not be trusted until the render is made
-asynchronous: dispatch the task in one step, `step.sleep`, then poll for the
-result in a later step, each request short. Until then the supported path is a
-manual run from a worker box, where nothing sits in front of the process. This
-is why the autopilot toggle ships OFF.
+So nothing waits any more. `scripts/loom-fargate-render.ts` publishes the render
+as three quick pieces, and the job runs them in three different requests with
+the task going on in between:
+
+```
+step.run('generate')   author + compile + AUDIT + upload the scene + ecs run-task
+                       └── returns a JSON handle; a couple of seconds
+step.sleep('wait-N')   the run is SUSPENDED — the web container is free
+step.run('poll-N')     one describe-tasks call: RUNNING / STOPPED / FAILED
+                       └── repeat, once a minute, up to 25 times
+step.run('render')     fetch the PNG, photoreal finish, fidelity gate,
+                       park the hero in the scratch bucket
+step.run('gate-publish')  vision gate → duplicate guard → publish
+```
+
+Three things this turns on:
+
+- **The ceiling is 25 minutes** (`RENDER_POLL_LIMIT`, `src/inngest/loom-render-wait.ts`).
+  Past it the idea fails as a timeout rather than hanging: a task ECS has quietly
+  lost must not hold an idea open for an hour. A render that stops with a
+  non-zero exit — or with no exit code at all, which is what a failed image pull
+  looks like — fails immediately rather than waiting out the ceiling. The poll
+  state machine is pure and unit-tested (`scripts/loom-fargate-render.test.ts`).
+- **Concurrency is capped at 3 ideas per craft** (`bulk-crochet-idea`,
+  `bulk-needlework-idea`). Three renders at once is a batch that finishes inside
+  its firing without a queue of 4-vCPU tasks piling up behind the spend guard,
+  which is still checked again at the point of spending.
+- **Nothing local crosses a step.** The web service runs two tasks, so the step
+  that gates is very likely a different container from the one that rendered.
+  Everything between steps is plain JSON, and the two things too big for that —
+  the finished hero, and needlework's converted pattern — travel through the
+  render scratch bucket, whose objects expire after a day. A candidate the gate
+  kills still leaves nothing behind, exactly as the unpersisted render promised.
+
+Both bulk crafts now take cross-stitch's fan-out shape around this: a DISPATCHER
+plans the briefs, writes the `BulkRun` row and emits one event per idea; an IDEA
+WORKER does one idea end to end and bumps the row's counters atomically the
+moment it reaches a terminal outcome, so the admin card fills up while the batch
+runs. The last idea to finish closes the row with its summary line. A run whose
+counters stop moving for six hours is swept closed, for every craft.
+
+The one thing that does NOT work on the server yet: crochet's photoreal finish
+(`photorealHero`) shells out to `npx tsx scripts/loom-aspen-hero.ts`, and the
+deployed image is a compiled Next.js bundle with no scripts directory. It now
+detects that and ships the deterministic base render, which IS the exact pattern
+and is fidelity-perfect by construction — but a server-published crochet hero is
+the base, not the Fal finish, until that upscale is made importable. Needlework
+is unaffected: its finish calls `falCreativeUpscale` in process.
 
 ### Running a batch
 

@@ -1,7 +1,7 @@
 import 'server-only'
 import os from 'node:os'
 import path from 'node:path'
-import { readFileSync } from 'node:fs'
+import { mkdirSync, readFileSync } from 'node:fs'
 import {
   prisma,
   Visibility,
@@ -53,6 +53,10 @@ import {
 } from './crochet-design'
 import { findCrochetDuplicate, loadCrochetCatalogue, programFingerprint } from './crochet-dedupe'
 import type { CrochetBrief } from './crochet-planner'
+// Type-only: erased at compile, so the loom's Blender / AWS / Fal tooling still
+// never enters the request bundle. The values come in by dynamic import below.
+import type { ProgramRenderStart } from '../../../../../scripts/loom-pattern'
+import type { FargatePollResult } from '../../../../../scripts/loom-fargate-render'
 
 /**
  * THE CROCHET BULK ADAPTER — brief in, a live, makeable, self-heroing pattern
@@ -94,6 +98,27 @@ interface LoomPatternModule {
     program: CompositionProgram,
     options: { name?: string; yr?: number; hero?: boolean; outDir?: string },
   ) => Promise<RenderResult>
+  /** The same two, split so the Fargate task runs BETWEEN two server requests. */
+  startProgramRender: (
+    program: CrochetProgram,
+    options: { name?: string; yr?: number; hero?: boolean; outDir?: string },
+  ) => Promise<ProgramRenderStart>
+  startCompositionRender: (
+    program: CompositionProgram,
+    options: { name?: string; yr?: number; hero?: boolean; outDir?: string },
+  ) => Promise<ProgramRenderStart>
+  pollProgramRender: (start: ProgramRenderStart) => Promise<FargatePollResult>
+  finishProgramRender: (
+    start: ProgramRenderStart,
+    options: { outDir?: string; hero?: boolean },
+  ) => Promise<RenderResult>
+}
+
+/** The scratch bucket, used here to hand a picture between two Inngest steps. */
+interface FargateScratchModule {
+  putFargateScratch: (localPath: string, key: string, options?: { contentType?: string; bucket?: string; region?: string }) => Promise<void>
+  getFargateScratch: (key: string, localPath: string, options?: { bucket?: string; region?: string }) => Promise<void>
+  scratchSibling: (outKey: string, filename: string) => string
 }
 
 interface RenderResult {
@@ -115,8 +140,8 @@ interface PersistModule {
       name: string
       kind: 'flat' | 'composition' | 'none'
       program: CrochetProgram | CompositionProgram | null
-      built: BuiltContinuous | null
-      compiled: CompiledComposition | null
+      built?: BuiltContinuous | null
+      compiled?: CompiledComposition | null
       yr: number | null
       geometryHash: string | null
       storedHash: string | null
@@ -580,6 +605,176 @@ export async function generateCrochetCandidate(
     attempts: authored.attempts,
     design: authored.design,
     fingerprint: programFingerprint(program),
+  }
+}
+
+// ── The candidate, generated ASYNCHRONOUSLY ─────────────────────────────────
+//
+// `generateCrochetCandidate` above waits out the Fargate render — seven to nine
+// minutes — which is why the crochet autopilot shipped switched off: inside an
+// Inngest step that is one HTTP request, and the proxy in front of the site ends
+// a request at about a hundred seconds. These four do the same work in stages
+// short enough to survive that, with the render happening between them:
+//
+//   startCrochetCandidate    author the design, compile, audit, start the task
+//   pollCrochetCandidate     one AWS call: RUNNING / STOPPED / FAILED
+//   renderCrochetCandidate   fetch the PNG, photoreal finish, park the hero
+//   loadCrochetCandidate     bring the hero back as a full CrochetCandidate
+//
+// The last two are separate because the web service runs two tasks: the step
+// that gates and publishes is very likely a different container from the one
+// that finished the render, so the hero travels through the render scratch
+// bucket rather than a temp directory. Objects there expire after a day, so a
+// candidate the gate kills leaves nothing behind — the same promise the
+// synchronous path keeps by rendering unpersisted.
+
+/** What a started candidate carries between steps. Plain JSON, no geometry. */
+export interface PendingCrochetCandidate {
+  kind: 'piece' | 'amigurumi'
+  program: CrochetProgram | CompositionProgram
+  settledMm: { width: number; height: number }
+  totalStitches: number
+  attempts: number
+  design: CrochetDesign | null
+  fingerprint: string
+  /** The render in flight (audit already passed, or nothing would be running). */
+  render: ProgramRenderStart
+}
+
+/** A pending candidate whose render has landed and been parked in the scratch bucket. */
+export interface RenderedCrochetCandidate extends PendingCrochetCandidate {
+  /** Scratch-bucket key of the finished hero PNG — beside its own render. */
+  heroKey: string
+  geometryHash: string
+  fidelityScore: number | null
+  yr: number
+}
+
+/**
+ * STEP 1: author the program, measure the settled geometry, declare the size
+ * from it, and START the exact-hero render. Everything expensive that is NOT
+ * the render happens here, and the audit gate runs before a task is launched.
+ */
+export async function startCrochetCandidate(
+  brief: CrochetBrief,
+  paletteHexes: string[],
+): Promise<PendingCrochetCandidate> {
+  if (!fargateRenderWired()) {
+    throw new Error('startCrochetCandidate: LOOM_RENDER!=fargate — the crochet hero render is not wired')
+  }
+  const authored = await authorCrochetProgram(brief, paletteHexes)
+  const outDir = path.join(os.tmpdir(), 'homemade-bulk-crochet-heroes')
+  const mod = (await import('../../../../../scripts/loom-pattern')) as unknown as LoomPatternModule
+
+  if (authored.kind === 'amigurumi') {
+    const program = authored.program as CompositionProgram
+    const compiled = compileComposition(program)
+    if (compiled.problems.length) throw new Error(`audit failed: ${compiled.problems[0]}`)
+    const size = compositionSizeMm(compiled)
+    program.finishedSizeMm = { width: Math.round(size.width), height: Math.round(size.height) }
+    const yr = compositionYarnRadiusMm(program)
+    program.gaugeText = `${Math.round(100 / (SC_STITCH_PITCH_YR * yr))} dc x ${Math.round(100 / (SC_ROW_PITCH_YR * yr))} rounds = 10 cm in double crochet (UK terms), worked tightly in a spiral so the stuffing does not show`
+    const render = await mod.startCompositionRender(program, { name: brief.slug, hero: true, outDir })
+    if (render.problems.length) throw new Error(`render audit failed: ${render.problems[0]}`)
+    return {
+      kind: 'amigurumi',
+      program,
+      settledMm: { width: size.width, height: size.height },
+      totalStitches: program.parts.reduce((a, p) => a + p.rounds.reduce((x, y) => x + y, 0), 0),
+      attempts: authored.attempts,
+      design: authored.design,
+      fingerprint: programFingerprint(program),
+      render,
+    }
+  }
+
+  let program = authored.program as CrochetProgram
+  const first = compileRelaxAudit(program)
+  if (first.problems.length) throw new Error(`audit failed: ${first.problems[0]}`)
+  const settled = settledSizeMm(first.built)
+  // DECLARE the size the geometry actually settled to (STITCH_ENGINE.md §8e-3),
+  // exactly as the synchronous path does — the hero is this exact fabric.
+  program = declareSizeAndGauge(program, settled)
+
+  const render = await mod.startProgramRender(program, { name: brief.slug, hero: true, outDir })
+  if (render.problems.length) throw new Error(`render audit failed: ${render.problems[0]}`)
+  return {
+    kind: 'piece',
+    program,
+    settledMm: settled,
+    totalStitches: countStitches(program),
+    attempts: authored.attempts,
+    design: authored.design,
+    fingerprint: programFingerprint(program),
+    render,
+  }
+}
+
+/** STEP 2: has the render finished, and did it work? One AWS call. */
+export async function pollCrochetCandidate(pending: PendingCrochetCandidate): Promise<FargatePollResult> {
+  const mod = (await import('../../../../../scripts/loom-pattern')) as unknown as LoomPatternModule
+  return mod.pollProgramRender(pending.render)
+}
+
+/**
+ * STEP 3: bring the finished render down, put it through the photoreal finish
+ * and the fidelity gate, and park the chosen hero in the scratch bucket for
+ * whichever container runs the gate.
+ */
+export async function renderCrochetCandidate(pending: PendingCrochetCandidate): Promise<RenderedCrochetCandidate> {
+  const outDir = path.join(os.tmpdir(), 'homemade-bulk-crochet-heroes')
+  const mod = (await import('../../../../../scripts/loom-pattern')) as unknown as LoomPatternModule
+  const render = await mod.finishProgramRender(pending.render, { outDir, hero: true })
+  if (render.problems.length) throw new Error(`render audit failed: ${render.problems[0]}`)
+  const heroPath = render.heroPng ?? render.basePng
+  if (!heroPath) throw new Error('no render produced')
+
+  const scratch = (await import('../../../../../scripts/loom-fargate-render')) as unknown as FargateScratchModule
+  const outKey = pending.render.handle?.outKey
+  if (!outKey) throw new Error('renderCrochetCandidate: the pending candidate has no render key')
+  const heroKey = scratch.scratchSibling(outKey, 'hero.png')
+  await scratch.putFargateScratch(heroPath, heroKey, { contentType: 'image/png' })
+
+  return {
+    ...pending,
+    heroKey,
+    geometryHash: render.geometryHash,
+    fidelityScore: render.fidelityScore,
+    yr: render.yr,
+  }
+}
+
+/**
+ * STEP 4: the hero back off the scratch bucket as a full candidate, ready for
+ * the gate, the duplicate guard and the publisher — the same object the
+ * synchronous path builds, so everything downstream is unchanged.
+ *
+ * `built` / `compiled` are deliberately null: nothing past the render reads
+ * them (the publisher hands the persist step its own derived faces), and
+ * recompiling a whole yarn path on the memory-tight web container to fill in
+ * two unread fields would be a poor trade.
+ */
+export async function loadCrochetCandidate(rendered: RenderedCrochetCandidate): Promise<CrochetCandidate> {
+  const outDir = path.join(os.tmpdir(), 'homemade-bulk-crochet-heroes')
+  mkdirSync(outDir, { recursive: true })
+  const heroPath = path.join(outDir, `${rendered.fingerprint.slice(0, 16)}-hero.png`)
+  const scratch = (await import('../../../../../scripts/loom-fargate-render')) as unknown as FargateScratchModule
+  await scratch.getFargateScratch(rendered.heroKey, heroPath)
+  return {
+    kind: rendered.kind,
+    program: rendered.program,
+    heroPng: readFileSync(heroPath),
+    heroPath,
+    geometryHash: rendered.geometryHash,
+    fidelityScore: rendered.fidelityScore,
+    yr: rendered.yr,
+    built: null,
+    compiled: null,
+    settledMm: rendered.settledMm,
+    totalStitches: rendered.totalStitches,
+    attempts: rendered.attempts,
+    design: rendered.design,
+    fingerprint: rendered.fingerprint,
   }
 }
 

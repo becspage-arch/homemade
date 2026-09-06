@@ -1,6 +1,6 @@
 import 'server-only'
 import { gateConfigured, visionGate, type GateResult } from '../vision-gate'
-import { planCrossStitchBriefs, planNeedleworkBriefs, dressedCount, PLANNER_MODE, type CrossStitchBrief } from './planner'
+import { planCrossStitchBriefs, planNeedleworkBriefs, dressedCount, PLANNER_MODE, type CrossStitchBrief, type NeedleworkBrief } from './planner'
 import {
   generateCrossStitchCandidate,
   publishCrossStitchGem,
@@ -115,7 +115,7 @@ export interface BatchSummary {
  * ruthless gate — this raises attempts-per-idea, never the bar.
  */
 export const MAX_XS_ATTEMPTS = 4
-const MAX_NW_REPAIRS = 1 // needlework re-rolls a Fargate render — keep repairs tight.
+export const MAX_NW_REPAIRS = 1 // needlework re-rolls a Fargate render — keep repairs tight.
 
 /** The lightweight, JSON-safe result of ONE generate→gate→(maybe publish) attempt. */
 export interface AttemptResult {
@@ -340,10 +340,27 @@ export async function runCrossStitchBatch(count: number, step: StepRunner = inli
 
 /** One needlework attempt: Flux → convert → loom render → gate → publish on 'keep'. */
 async function needleworkAttempt(
-  brief: Awaited<ReturnType<typeof planNeedleworkBriefs>>[number],
+  brief: NeedleworkBrief,
   keptSubjects: string[],
 ): Promise<AttemptResult> {
   const candidate = await generateNeedleworkCandidate(brief)
+  return needleworkGateAndPublish(brief, candidate, keptSubjects)
+}
+
+/**
+ * Everything a needlework candidate goes through AFTER its hero exists: the
+ * vision gate and, on 'keep', the publisher.
+ *
+ * Split out for the same reason crochet's is — the server-side autopilot renders
+ * asynchronously, starting the Fargate task in one request and coming back for
+ * the picture in a later one, and both paths must judge and publish through
+ * exactly the same code.
+ */
+export async function needleworkGateAndPublish(
+  brief: NeedleworkBrief,
+  candidate: Awaited<ReturnType<typeof generateNeedleworkCandidate>>,
+  keptSubjects: string[],
+): Promise<AttemptResult> {
   const verdict = await visionGate(candidate.heroPng, {
     subject: brief.subject,
     craft: 'needlework',
@@ -433,7 +450,25 @@ export async function crochetAttempt(
   ctx: { bulkRunId?: string | null; attempt?: number } = {},
 ): Promise<AttemptResult> {
   const candidate = await generateCrochetCandidate(brief, paletteHexesFor(brief.brief.palette))
+  return crochetGateAndPublish(brief, candidate, keptSubjects, ctx)
+}
 
+/**
+ * Everything a crochet candidate goes through AFTER its hero exists: the vision
+ * gate, the duplicate guard, and the publisher with its completeness gate.
+ *
+ * Split out because the server-side autopilot renders asynchronously — it
+ * starts the Fargate task in one request and comes back for the picture in a
+ * later one — and both paths must judge and publish through exactly the same
+ * code. The inline runner above hands it a candidate it just rendered; the
+ * Inngest idea worker hands it one it fetched back out of the scratch bucket.
+ */
+export async function crochetGateAndPublish(
+  brief: CrochetBrief,
+  candidate: Awaited<ReturnType<typeof generateCrochetCandidate>>,
+  keptSubjects: string[],
+  ctx: { bulkRunId?: string | null; attempt?: number } = {},
+): Promise<AttemptResult> {
   const verdict = await visionGate(candidate.heroPng, {
     subject: `${brief.name}: ${brief.subject}`,
     craft: 'crochet',
