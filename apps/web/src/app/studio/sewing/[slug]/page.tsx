@@ -57,6 +57,10 @@ export default async function SewingPatternStudioPage({ params }: PageProps) {
 
   // The demo pattern is built in code, not a SewingPattern row, so there is
   // nothing for a photo to hang off it.
+  //
+  // No galleryHref: /sewing/makes only renders once the sewing category is
+  // publicly visible, and it is not yet. Cross-stitch and needlework are, so
+  // those two carry the link.
   const isRealPattern = slug !== DEMO_SEWING_PATTERN_SLUG
   const makerPhotos = isRealPattern
     ? await loadMakerPhotos({
@@ -86,7 +90,6 @@ export default async function SewingPatternStudioPage({ params }: PageProps) {
           patternId={pattern.id}
           patternType="SEWING"
           returnTo={`/studio/sewing/${slug}`}
-          galleryHref="/sewing/makes"
         />
       )}
     </>
