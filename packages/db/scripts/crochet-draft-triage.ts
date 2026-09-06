@@ -191,10 +191,15 @@ const GENERIC_WORDS = new Set(
     'rib', 'cabled', 'cable', 'effect', 'texture', 'textured', 'ribbing', 'lightweight',
     // stitch names
     'stitch', 'stitches', 'dc', 'htr', 'tr', 'sc', 'hdc', 'dtr', 'trc', 'moss', 'waffle',
-    'waistcoat', 'linen', 'shell', 'bobble', 'popcorn', 'puff', 'spike', 'spider',
-    'lemon', 'peel', 'granny', 'crocodile', 'herringbone', 'basketweave', 'basket',
+    'waistcoat', 'linen', 'shell', 'bobble', 'popcorn', 'puff', 'spike',
+    // NOT 'crocodile' or 'spider': both name a real stitch AND a real
+    // amigurumi animal subject ("Amigurumi crocodile", "Amigurumi spider") —
+    // stripping them globally wrongly generic-junked two legitimate animals.
+    'lemon', 'peel', 'granny', 'herringbone', 'basketweave', 'basket',
     'weave', 'tunisian', 'corner', 'c2c', 'solomons', 'knot', 'crossed', 'linked',
-    'treble', 'double', 'half', 'single', 'star', 'v-stitch', 'diamond', 'mesh',
+    'treble', 'double', 'half', 'single', 'v-stitch', 'diamond', 'mesh',
+    // NOT 'star': also a real amigurumi/motif subject (a star shape), not
+    // only "star stitch" — see crocodile/spider above.
     'sedge', 'overlay', 'mosaic', 'intarsia', 'lattice', 'offset', 'ripple', 'chevron',
     'horizontal', 'staggered', 'third', 'thick', 'thin', 'triple', 'picot', 'edged',
     'tie', 'dye', 'space', 'sequin', 'sparkle', 'seed', 'variegated', 'self', 'striping',
