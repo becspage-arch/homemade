@@ -642,6 +642,21 @@ export async function uploadTutorial(
   // 11. Upsert the Tutorial.
   const existingTutorial = await prisma.tutorial.findUnique({ where: { slug: input.slug } })
 
+  // Defect fix: a re-upload that supplies no `hero` block at all (no
+  // localPath, remoteUrl, or mediaId — the common case when an editorial
+  // pass only touches body text) previously fell through to
+  // `heroMediaId = input.hero?.mediaId ?? null` at step 8 and then
+  // overwrote the row's existing hero with null on every such re-upload.
+  // A hero attached by an earlier upload (or by hand in /admin) must
+  // survive an upload that isn't trying to change it. Only preserve the
+  // existing hero when the input is silent on the subject; an input that
+  // explicitly sets `hero: null` still can't be expressed here (the type
+  // is optional, not nullable-and-present), so this only ever fires for
+  // "hero field omitted entirely".
+  if (existingTutorial && input.hero == null && heroMediaId == null) {
+    heroMediaId = existingTutorial.heroMediaId
+  }
+
   // Baking metadata. Null block on cooking recipes / mindset / techniques;
   // populated for baking recipes per `docs/baking-author.md`.
   const baking = recipe.baking ?? null

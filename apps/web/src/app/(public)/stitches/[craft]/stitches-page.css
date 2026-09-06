@@ -304,3 +304,63 @@
     color: #000;
   }
 }
+
+/* Tap-to-reveal glossary definition next to a stitch name (cross-stitch
+   rows only — see StitchGlossaryTip). Print doesn't need the affordance. */
+.stitch-glossary-tipwrap {
+  position: relative;
+  display: inline-flex;
+}
+.stitch-glossary-tip-toggle {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 1px solid var(--color-stone);
+  background: var(--color-cream);
+  color: var(--color-forest);
+  font-family: var(--font-lora);
+  font-size: 11px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+.stitch-glossary-tip-toggle:hover,
+.stitch-glossary-tip-toggle:focus-visible {
+  background: var(--color-forest);
+  color: var(--color-cream);
+}
+.stitch-glossary-tip {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 240px;
+  max-width: 70vw;
+  background: var(--color-espresso);
+  color: var(--color-cream);
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+.stitch-glossary-tip.is-open {
+  display: block;
+}
+.stitch-glossary-tip-term {
+  display: block;
+  font-family: var(--font-fraunces);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.stitch-glossary-tip-def {
+  display: block;
+  font-family: var(--font-lora);
+  font-size: 13px;
+  line-height: 1.45;
+}
+@media print {
+  .stitch-glossary-tipwrap {
+    display: none;
+  }
+}
