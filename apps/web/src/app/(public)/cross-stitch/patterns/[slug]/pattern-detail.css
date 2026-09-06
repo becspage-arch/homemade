@@ -293,8 +293,10 @@
    button so it works on touch: tap toggles, outside tap or Escape closes.
    Pointer devices keep the hover behaviour, and keyboard focus still opens
    it, matching the glossary term treatment used in tutorial bodies. */
+/* The bubble is positioned against the <dd> it explains, not against the
+   marker. Anchored to the marker it ran off the left of a 390px screen. */
+.pattern-detail-spec dd { position: relative; }
 .pattern-detail-tipwrap {
-  position: relative;
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
@@ -340,11 +342,11 @@
 .pattern-detail-tip {
   position: absolute;
   bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   z-index: 5;
-  width: max-content;
-  max-width: min(260px, 78vw);
+  width: auto;
+  max-width: 340px;
   padding: 10px 12px;
   border-radius: 8px;
   background: var(--color-espresso);
