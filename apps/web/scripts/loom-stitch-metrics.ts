@@ -43,7 +43,7 @@ import { buildRelaxedSwatch, isSwatchArg } from '../src/lib/loom/crochet/engine/
 import { SWATCH_RECIPES } from '../src/lib/loom/crochet/engine/dictionary'
 import { stitchDebugNodes, postDebugNodes, type BuiltContinuous } from '../src/lib/loom/crochet/engine/yarnPath'
 import { buildSphere } from '../src/lib/loom/crochet/engine/shaping'
-import { relax } from '../src/lib/loom/crochet/engine/relax'
+import { relax, STUFF_PRESSURE, STUFF_PRIOR } from '../src/lib/loom/crochet/engine/relax'
 
 /**
  * Published real-world figures for WORSTED (CYC 4) cotton, the weight the
@@ -169,6 +169,8 @@ function main(): void {
       layoutK: 0.06,
       layoutMode: 'surface',
       floorZ: 0,
+      stuffing: STUFF_PRESSURE,
+      stuffPrior: STUFF_PRIOR,
       iterations: 560,
     })
   } else {

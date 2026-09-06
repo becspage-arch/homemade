@@ -8,7 +8,7 @@
 import { buildContinuous, type BuiltContinuous } from './yarnPath'
 import { buildShaped, buildRounds, buildSphere } from './shaping'
 import { buildKnit } from './knitPath'
-import { relax } from './relax'
+import { relax, STUFF_PRESSURE, STUFF_PRIOR } from './relax'
 import { SWATCH_RECIPES, type SwatchArg, type SwatchRecipe, type StitchId } from './dictionary'
 
 export interface BuiltSwatch {
@@ -52,6 +52,11 @@ export function buildRelaxedSwatch(arg: SwatchArg, W: number, yr: number): Built
       layoutK: 0.06,
       layoutMode: 'surface',
       floorZ: 0,
+      // THE STUFFING (§8f-9): a closed part is a pressurised fabric bag, not a
+      // shell on a frame. Same two numbers everywhere a closed round part is
+      // relaxed, imported from relax.ts so they cannot drift apart.
+      stuffing: STUFF_PRESSURE,
+      stuffPrior: STUFF_PRIOR,
       iterations: 560, // a ~4k-node closed surface settles slower than a flat swatch — knife-edge hooks were still 0.05yr shy at 400 and 0.03yr shy (on the canonical-pattern ball) at 520. Keep in sync with scripts/loom-program.ts until the profiles are centralised.
     })
   } else if (recipe.relaxProfile === 'round') {

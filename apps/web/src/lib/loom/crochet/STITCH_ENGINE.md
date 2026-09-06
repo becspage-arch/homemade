@@ -1429,6 +1429,10 @@ crowding at a SHARED BASE was.
   Reverted. The ball's roundness comes from STUFFING, which this model does not
   have; the honest fix is a stuffing term in the relaxer, not a gauge that
   misreports the fabric. Cap reached — do not chase it with more gauge values.
+  (§8f-9 built that stuffing term. It rounds every corner by 8–14° and puts the
+  wall +8% proud of its count, and it measures WHY the canonical ball stays
+  oblate: a +6 cap has zero meridian slack, so doming it needs ~37% fabric
+  stretch and the interlock gate lets go at about 12%.)
 - **The canopy, re-derived from the re-cut head.** This is the part §8f-2 warned
   about, and the fix is a taxonomy point rather than a threshold. The canopy
   exempted three nodes round the crown apex, because a legacy head WAS three
@@ -1674,7 +1678,7 @@ three weights without it (checked, not assumed).
 What this does NOT do is make the ball round: a +6 cap is intrinsically a flat
 disc, so the honest ball is oblate and its roundness comes from stuffing, which
 this model does not have. §8f-4 spent two attempts proving that and the cap
-stands — do not chase it with gauge values.
+stands — do not chase it with gauge values. (The stuffing arrived in §8f-9.)
 
 ### Hashes — 2 moved, 34 bit-identical
 
@@ -2143,8 +2147,209 @@ against their reference photos before they can be called locked again.
 
 ---
 
+## 8f-9. ROUND 7 — STUFFING: a closed part is a pressurised bag (2026-09-06)
+
+Round-6 verdict, beside a real styled amigurumi bear: ours is RIGID. The head is
+a tin can with a flat top, the body a drum, the ears discs, and there is a hard
+edge at every cap-to-wall corner. A real amigurumi is a stuffed fabric bag — the
+filling pushes outward everywhere, the yarn pulls back, and the settled shape is
+soft: flat tops dome, corners round off, walls stand a little proud of their own
+stitch count, and two stuffed parts flatten where they press together. Nothing
+has a hard edge unless the pattern puts plastic or card inside.
+
+### Measuring softness at all — five figures on the settled surface
+
+`loom-soft-metrics.ts` (new). `loom-stitch-metrics.ts` measures the STITCH; this
+measures the PART. A part worked in rounds carries its own meridian sampling, so
+the profile needs no binning: the mean radius and height of each round IS the
+settled meridian.
+
+- **(a) CREASE ANGLE** — the turn angle of that profile across the last increase
+  round, i.e. the angle between the surface normals either side of the cap/wall
+  junction. This is the number that says "hard edge" out loud. A stuffed part has
+  no crease: under 15°.
+- **(b) CURVATURE CONTINUITY** — max |second difference| of the profile radius
+  per round step, in mm and in rendered yarn diameters.
+- **(c) h/w** — settled height over settled width.
+- **(d) WALL BULGE** — the widest settled radius over the count plateau against
+  the radius that count implies (circumference = count·gauge). Real stuffed
+  fabric stands **+5–10%** proud of its own count; ours stood INSIDE it.
+- **(e) JOIN FLATTENING** (compositions) — each part's settled shell recovered as
+  a surface of revolution about its own pole-to-pole axis, then the neighbour's
+  fabric measured against it: how deep it is inside, how many nodes lie in the
+  contact band, and the RMS gap of those nodes. Two rigid shells cross at a line
+  (gap spread right across the band); two stuffed parts share a flattened lens.
+
+### The measured table — before and after (worsted, yr 2.4)
+
+| part (rounds) | crease, cap→wall | crease, wall→base | h/w | wall bulge |
+|---|---|---|---|---|
+| `ball` swatch (eq-36 derived, 18 rounds) | 10.2° → **9.6°** | 9.5° → **9.8°** | 0.99 → **0.97** | −3.4% → **+8.6%** |
+| canonical ±6 ball `6,12,18,24,30×5,24,18,12,6` (= `amigurumi-ball`) | 44.7° → **36.4°** | 53.1° → **38.5°** | 0.64 → **0.66** | −3.4% → **+8.2%** |
+| bear BODY `…,30×6,…` | 44.6° → **36.3°** | 52.7° → **38.1°** | 0.73 → **0.74** | −3.4% → **+8.3%** |
+| bear HEAD `6,12,18,24,24×7,18,12,6` | 45.8° → **38.5°** | 51.5° → **39.8°** | 1.07 → **1.06** | −4.2% → **+7.3%** |
+| bear EAR `6,12,12,12,6` | 21.6° → 21.8° | — | 0.75 → 0.75 | −7.7% → **+2.0%** |
+| bear MUZZLE `6,12,12,6` | 24.4° → 28.3° | — | 0.58 → 0.57 | −9.4% → −3.7% |
+| `mrdisc` (flat circle) | — | — | 0.10 → 0.10 | −6.8% (unchanged) |
+
+Wall bulge is the headline and it lands in the real band on every full-size part.
+The corner softens by 8–14° everywhere it exists. The disc is untouched on
+purpose: a crocheted circle is not stuffed, so it keeps its hash.
+
+### The construction — internal pressure, and what it settles against
+
+`relax.ts` gains ONE physical term with two named numbers, both exported from
+`relax.ts` so every call site imports the same values (`STUFF_PRESSURE 0.0007`,
+`STUFF_PRIOR 0.25`).
+
+**Pressure.** Every free node of a closed part advances, each iteration, along
+the CURRENT outward surface normal. Current, not built: as a cap domes its
+normal tilts, and using the built normal keeps pushing in a direction the fabric
+has already left. The surface is re-read every 20 iterations from the piece's own
+round profile — which is why `YarnModel` now carries a per-node `round` index,
+captured in `buildSphere`'s `place3` closure in push order exactly the way the
+meridian frames already were.
+
+**The advance is a STRAIN, not a distance.** A membrane under pressure stretches
+by ≈ pR/2Et, so the displacement scales with the piece's own radius. Measured, a
+fixed distance made a 12-round ear +18% bulgy where a 30-round body was +9% at
+the same setting, which is not what stuffing does. Scaled by the widest round,
+one `stuffing` number means the same firmness on every part: ear +2.0%, body
++8.3%, head +7.3%, ball +8.6%.
+
+**Nothing caps it but the fabric.** The yarn's own distance constraints (the
+posts carry the meridian, the spiral carries the hoop), self-collision, the
+pinned magic ring at the pole and the table underneath. Equilibrium is where the
+fabric's stretch balances the push — a real membrane balance, not a clamp.
+
+**The worked profile stops being the shape.** The `surface` layout hold — full
+strength along the meridian tangent, 0.4× on the normal — was the rigidity:
+it pinned every node to the analytic/intrinsic profile and the fabric had no say
+on the one axis the whole problem lives on. Stuffed, it drops to 0.25× and
+becomes a soft prior: it stops rounds wandering along the meridian, and pressure
+and yarn decide the surface between them.
+
+Why a uniform normal push rounds a corner at all: an outward offset of a surface
+is a dilation, and dilating a crease fillets it. That is also physically what
+stuffing does to a bag with a fold in it.
+
+### Where the ceiling is, and it is the COUNTS, not the relaxer
+
+The pressure sweep is bounded by the audit, and it always fails in the same
+place: `[hook j5] hook floated above its crown (dy≈1.2yr)` — round 5, the FIRST
+plateau round, i.e. the cap/wall corner. The fabric tears exactly where the
+crease is, which is the tell that the corner is a stretch demand the pattern
+cannot pay.
+
+The arithmetic says why, and it is §8f-4's finding arriving at the profile level.
+A +6 round grows its radius by 6·(stitch pitch)/2π = 0.955 of a stitch pitch, and
+the settled stitch pitch (1.77 d) is slightly WIDER than the settled round pitch
+(1.68 d). So a +6 cap round spends its entire meridian allowance on radius and
+has none left for height: **a +6 cap is not merely flat, it has zero meridian
+slack to dome with.** Doming a rim-radius-`a` cap to height `h` needs meridian
+arc ≈ `a`·(1 + 2h²/3a²): on the bear's 24.75 mm head cap, a crease under 15°
+wants h ≈ 20 mm, which is **+37% fabric stretch**. The interlock gate lets go at
+about +12%. Measured, not argued:
+
+| pressure | crease cap | wall bulge | audit |
+|---|---|---|---|
+| 0 | 44.7° | −3.4% | clean |
+| 0.0006 | 37.3° | +6.4% | clean |
+| **0.0007 (shipped)** | **36.4°** | **+8.2%** | **clean** |
+| 0.0009 | 34.4° | +12.1% | clean |
+| 0.0012 | 31.9° | +18.5% | clean, but past the real bulge band |
+| prior 0.10 at 0.0008 | 32.8° | +20.1% | **FAIL** 29/294, all at round 5 |
+
+So the honest reading of the tin-can head is that it is **a cylinder with flat
+disc caps because that is what `6,12,18,24,24×7,18,12,6` is**. Stuffing takes
+8–14° off every corner and puts the wall where a real one sits; the rest of the
+distance to a rounded head is a COUNT change (a full sphere profile, the way the
+`ball` swatch's own derived counts are — it measures 9.6° and h/w 0.97 with the
+same relaxer), not another relax parameter. Do not chase it with pressure: the
+gate is real and it fails at the corner.
+
+### Compositions — the join is a flattened lens, not two shells crossing
+
+`composition.ts` gains a CONTACT pass after placement. Every control point of
+either piece within 1.2 rendered diameters of the other's settled shell is drawn
+onto that shell, tapered to zero at the band edge so nothing creases, and BOTH
+sides yield — the body dimples into a soft socket round the limb and the limb's
+own fabric flattens where it enters. Fabric deeper in than the band is left
+alone: that is the SEAM (what `seat` says has been sewn inside), and it is not
+visible.
+
+The displacement is pushed back onto each part's own relaxed NODES (the inverse
+of the placement transform), the control points re-derived from them, and every
+part **re-audited** — so the gate runs on the geometry that is actually rendered.
+
+Measured on `amigurumi-bear-bigear`, contact-band gap RMS (rendered diameters),
+contact-pass off → on: neck/body 0.48 → **0.41**, head/neck 0.54 → **0.41**,
+muzzle/head 0.57 → **0.48**, ears 0.50–0.57 → **0.40–0.46**, arms 0.57 → **0.50**,
+legs 0.58 → **0.49**, paws 0.55–0.57 → **0.48–0.49**; and more fabric lies on the
+neighbour at all (muzzle 398 → 419 contact nodes, arm 396 → 429). At yield 0.9 /
+band 1.6 d the pass breaks an interlock, so 0.6 / 1.2 d is the setting the gate
+allows.
+
+
+### Hashes — 3 moved, 35 bit-identical
+
+`ball` f897e6d60ecd5455 → **0b45afb3351d9bd2** · `amigurumi-ball` fd112ec2 →
+**5dc797de** · `amigurumi-bear-bigear` 8328fbc1 → **1b71d1ed** (the other bear
+variants and `amigurumi-creature` move with them for the same reason).
+
+`mrdisc` is bit-identical at **e262db2d88aeaf60** and so is the whole flat and
+knit family: the stuffing is gated on `layoutMode: 'surface'` and on the model
+carrying a per-node `round`, which only `buildSphere` sets. A crocheted circle
+is not stuffed, so the disc keeps its geometry — deliberately, not by accident.
+
+Audit clean **36/36 at fine 1.5, worsted 2.4 and bulky 3.2**. Every amigurumi
+composition proof and every designer preset audits clean.
+
+Sizes re-measured off the settled geometry and `amigurumiSizes.generated.ts`
+regenerated: the pieces are 5–10% bigger, which is the bulge. `bear-M` 96.7 ×
+106.7 → **101.6 × 113.7 mm**. And the §8f-6 residual "`bear-S`, `bear-L`,
+`bunny-S`, `bunny-L` settle with parts below the table (minz −3.5 and −7.3)" is
+GONE as a side effect: **bear-S minz −0.21, bear-M −0.09**, inside the 0.5 mm
+the preset test allows. A stuffed limb is fatter, so its lowest point reaches
+the table instead of hanging past it.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
+- **Holding the HOOP firmly and letting only the meridian give, under stuffing
+  pressure** (round 7, 2026-09-06) → the theory is right about the fabric
+  (crochet is much stiffer around a round than up the meridian, which is why a
+  stuffed piece opens gaps between ROUNDS), but as a relax term it does nothing:
+  the cap lifts as a RIGID slab off a pinned rim, so the cap/wall corner is
+  translated rather than filleted (crease 45.4° at the pressure where the wall
+  bulge is still −2.8%, against 36.4° / +8.2% for the plain normal push), and it
+  tears at round 5 above p=0.008 anyway. A uniform push along the CURRENT normal
+  is an offset of the surface, and offsetting a crease fillets it; that is what
+  actually rounds the corner.
+- **Making the worked profile a purely SURFACE-RELATIVE prior** (round 7, attempt
+  2, 2026-09-06) → with no absolute latitude left anywhere, the pressure has
+  nothing to settle against but the yarn and the piece balloons without limit:
+  wall bulge +30% at the pressure that gives +6% with the absolute prior, +97% a
+  little above it, and 279–293 of 294 interlocks fail, starting at the pole (the
+  magic ring literally slips off its stem). This is §8c-3D's BULK DRIFT MODE with
+  a motor attached. The absolute prior stays, at 0.25×.
+- **Freeing the magic ring as a rigid travelling gather under pressure** (round
+  7, 2026-09-06) → sound reasoning (a real magic ring is a drawn-tight gather,
+  not a nail, and a pinned pole means a doming cap can only rise in an annulus
+  around a fixed centre), and worth 0.1 mm of height at the shipped pressure —
+  measured 47.0 mm freed against 46.9 mm pinned, h/w 0.66 either way. The pole
+  cap was not what the pressure was fighting. Reverted; the ring stays pinned.
+- **Expecting stuffing to round a +6 cap into a dome** (round 7, 2026-09-06) →
+  at the settled gauge a +6 round spends its WHOLE meridian pitch on radius
+  (stitch pitch 1.77 d is wider than round pitch 1.68 d), so a +6 cap has zero
+  meridian slack: doming the bear head's 24.75 mm cap to a crease under 15°
+  needs about +37% fabric stretch and the interlock gate lets go at about +12%,
+  always at the first plateau round — the corner. Stuffing takes 8–14° off the
+  crease and puts the wall +8% proud of its count, which is real; the rest of a
+  round head is a COUNT change (a full sphere profile, like the `ball` swatch's
+  own derived counts, which measure 9.6° and h/w 0.97 on the same relaxer), not
+  another pressure value.
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,
   waffle, pebble, quilt. No real loop topology.
 - **Per-stitch pieces joined by springs** → not real yarn; didn't scale.
