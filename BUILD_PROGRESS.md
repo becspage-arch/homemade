@@ -132,6 +132,45 @@ hero is a loom render showed no image. It now prefers the loom hero, then the
 Fal hero, then the saved chart thumbnail — matching the schema's own note that a
 renderer prefers `loomHero` when it is present.
 
+## Cross-stitch: world-best audit wins shipped (2026-09-06)
+
+From the competitive audit (we already have the only library-plus-stitching-tool
+in the market; we trailed on print quality, credibility and beginner entry):
+
+- **Print**: tiles on multiples of ten with numbered rulers on every edge, a
+  whole-chart index sheet, greyed overlaps, a large-print option, paginated
+  floss key, vector symbols over the raster (showpiece PDF 85 MB → 4.5 MB).
+- **Stitchability**: confetti share, colour changes per 100 stitches, median
+  run length and a 1–5 band on every `Pattern` (backfilled; set on publish),
+  shown on the page and as a grid filter.
+- **Symbols** assigned by legibility (confusable-glyph families, ink weight,
+  no near-identical glyphs on touching colours) for new conversions.
+- **Fabric calculator** across counts on the pattern page.
+- **Bare fabric**: 446 patterns had stitched white backgrounds (4.3 M white
+  stitches) converted to bare fabric via a border flood-fill rule; the bulk
+  converter applies the same rule to new work outside the full-coverage
+  lanes. Reversible via `Pattern.backgroundCleared`.
+- **Credibility**: `/cross-stitch/about-the-library` provenance page, the
+  one-product intro and the "this picture is the chart" line (Rebecca's
+  wording), thin shelves hidden from the theme filter under 12 patterns,
+  `/stitches/cross-stitch` (ten stitches) and a published
+  "How to read a cross-stitch chart" foundation tutorial, linked from every
+  pattern page and the Studio empty state.
+- **Autopilot yield**: text-risk subjects confined to the Flux Pro dense lane,
+  chroma floor for colour shelves, rejected renders kept per run
+  (`BulkRun.rejectSamples`, admin strip, `xs-rejects-sheet.ts`), a gate
+  rubric recalibrated against them (`xs-gate-replay.ts` +
+  `scripts/fixtures/xs-gate-expected.json`), six attempts per idea, a
+  `sourceMode` switch (schnell default; pro-all measured at 4/10 gems but
+  ~4× the cost per gem, so held in reserve). Budget to finish: under $60.
+- **Ops**: `xs-run-review.ts` builds the weekly judging pack; a Monday cloud
+  routine ("Homemade - Cross-stitch weekly judging") looks at the week's gems,
+  culls fails and reports.
+- Queued, agreed with Rebecca: back-stitch/French knots/fractionals in the
+  generator (then loom photoreal heroes, then the 200+ colour / under-60 cell
+  tiers), parking in the browser, stash-on-card, the first-stitch journey.
+  No community features, ever.
+
 ## Cross-stitch: audit, dedupe, and the self-running cloud autopilot (2026-09-05/06)
 
 Rebecca paused the cross-stitch fill in July because the catalogue was
