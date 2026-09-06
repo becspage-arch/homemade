@@ -55,6 +55,16 @@ export interface StitchReferenceGroup {
 const CATEGORY_ORDER: Array<{ key: string; label: string; blurb: string | null }> = [
   { key: 'foundation', label: 'Getting started', blurb: 'The first moves — where every piece begins.' },
   { key: 'basic', label: 'Basic stitches', blurb: 'The everyday stitches almost every pattern is built from.' },
+  {
+    key: 'outline',
+    label: 'Outlines and lines',
+    blurb: 'Worked over the top of finished stitches to draw an edge.',
+  },
+  {
+    key: 'surface',
+    label: 'Surface stitches',
+    blurb: 'Knots, loops and filled shapes for detail the grid cannot hold.',
+  },
   { key: 'increase', label: 'Increases', blurb: 'Adding stitches to shape a piece wider.' },
   { key: 'decrease', label: 'Decreases', blurb: 'Working stitches together to shape a piece narrower.' },
   { key: 'textured', label: 'Textured stitches', blurb: 'Bobbles, posts and clusters that stand off the fabric.' },
@@ -102,16 +112,22 @@ export async function getStitchReference(craft: Craft): Promise<StitchReferenceG
   // Resolve the STITCH tutorial that teaches each stitch. One query,
   // first-match-wins per slug (same shape as the stitch-help API route).
   const slugs = stitches.map((s) => s.slug)
+  //
+  // A dedicated STITCH lesson wins where one exists. Cross-stitch teaches its
+  // stitches as TECHNIQUE rows ("How to work a full cross-stitch"), so a
+  // TECHNIQUE row is accepted as the fallback rather than leaving the stitch
+  // with no lesson to open. Crafts that have both keep their STITCH lesson.
   const tutorials = await prisma.tutorial.findMany({
     where: {
-      type: 'STITCH',
+      type: { in: ['STITCH', 'TECHNIQUE'] },
       status: TutorialStatus.PUBLISHED,
       craftStitchSlugs: { hasSome: slugs },
     },
-    select: { slug: true, craftStitchSlugs: true, category: { select: { slug: true } } },
+    select: { slug: true, type: true, craftStitchSlugs: true, category: { select: { slug: true } } },
   })
   const tutorialForSlug = (slug: string) => {
-    const t = tutorials.find((tut) => tut.craftStitchSlugs.includes(slug))
+    const matches = tutorials.filter((tut) => tut.craftStitchSlugs.includes(slug))
+    const t = matches.find((tut) => tut.type === 'STITCH') ?? matches[0]
     return t ? { slug: t.slug, categorySlug: t.category.slug } : null
   }
 
@@ -161,4 +177,5 @@ export async function getStitchReference(craft: Craft): Promise<StitchReferenceG
 export const REFERENCE_CRAFTS: Record<string, { craft: Craft; title: string }> = {
   crochet: { craft: 'crochet', title: 'Crochet' },
   knitting: { craft: 'knitting', title: 'Knitting' },
+  'cross-stitch': { craft: 'cross-stitch', title: 'Cross-stitch' },
 }

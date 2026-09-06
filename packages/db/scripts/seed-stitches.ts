@@ -77,6 +77,9 @@ async function main(): Promise<void> {
       difficulty: seed.difficulty ?? null,
       parentStitchId,
       notes: seed.notes ?? null,
+      // Only written when the seed row declares them, so a row that leaves
+      // aliases out never clears the ones already in the table.
+      ...(seed.aliases ? { aliases: seed.aliases } : {}),
     }
     if (!existing) {
       if (!DRY_RUN) {
@@ -98,7 +101,10 @@ async function main(): Promise<void> {
       (existing.chartSymbol ?? null) !== payload.chartSymbol ||
       (existing.difficulty ?? null) !== payload.difficulty ||
       (existing.parentStitchId ?? null) !== payload.parentStitchId ||
-      (existing.notes ?? null) !== payload.notes
+      (existing.notes ?? null) !== payload.notes ||
+      (seed.aliases
+        ? seed.aliases.join('|') !== (existing.aliases ?? []).join('|')
+        : false)
 
     if (hasChanged) {
       if (!DRY_RUN) {
