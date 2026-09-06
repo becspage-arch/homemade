@@ -18,7 +18,7 @@ import type {
   ShapeOptions,
   Gauge,
 } from '../types'
-import type { SizeName } from '../size-charts'
+import type { SizeName, BodyMeasurements } from '../size-charts'
 import { getBodyMeasurements } from '../size-charts'
 import { applyEase, type EasePreset } from '../ease-presets'
 import { estimateYarn } from '../yarn-estimate'
@@ -26,7 +26,9 @@ import { fabricAdjustmentsFor } from '../gauge'
 import { roundEvenly, roundToMultiple, roundTenth, defaultSleeveCuffCm } from '../helpers'
 
 export interface SetInInput {
-  size: SizeName
+  size: SizeName | 'CUSTOM'
+  /** The maker's own measurements, in place of the chart row for `size`. */
+  bodyMeasurements?: BodyMeasurements
   gauge: Gauge
   easePreset: EasePreset
   garmentType: GarmentType
@@ -34,7 +36,7 @@ export interface SetInInput {
 }
 
 export function gradeBottomUpSetIn(input: SetInInput): GradedPattern {
-  const body = getBodyMeasurements(input.size)
+  const body = input.bodyMeasurements ?? getBodyMeasurements(input.size)
   const opts = input.options ?? {}
   const fab = fabricAdjustmentsFor(opts.dominantFabric ?? 'STOCKINETTE')
   const stitchesPerCm = input.gauge.stitchesPer10cm / 10
