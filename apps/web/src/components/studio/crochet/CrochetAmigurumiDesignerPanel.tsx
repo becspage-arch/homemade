@@ -18,6 +18,7 @@ import {
   AMIGURUMI_BASES,
   AMIGURUMI_SIZES,
   EYE_SIZES,
+  amigurumiBaseSpec,
   buildAmigurumiProgram,
   amigurumiPresetName,
   presetSettledSizeMm,
@@ -59,7 +60,7 @@ export function CrochetAmigurumiDesignerPanel({ signedIn, onSaved, onCancel, hea
   const settled = presetSettledSizeMm(choices.base, choices.size)
   const displayName = name || amigurumiPresetName(choices)
   const set = (patch: Partial<AmigurumiChoices>) => setChoices((c) => ({ ...c, ...patch }))
-  const hasFace = choices.base === 'bear' || choices.base === 'bunny'
+  const spec = amigurumiBaseSpec(choices.base)
 
   const save = async () => {
     setSaving(true)
@@ -188,7 +189,7 @@ export function CrochetAmigurumiDesignerPanel({ signedIn, onSaved, onCancel, hea
         />
         <ShadePicker
           label="Second yarn"
-          hint="The muzzle and the paw pads."
+          hint={spec.contrastFor}
           value={choices.contrastHex}
           onChange={(hex) => set({ contrastHex: hex })}
         />
@@ -215,17 +216,17 @@ export function CrochetAmigurumiDesignerPanel({ signedIn, onSaved, onCancel, hea
           )}
         </fieldset>
 
-        {hasFace && (
-          <>
-            <label className="studio-p2c-checkbox">
-              <input type="checkbox" checked={choices.nose} onChange={(e) => set({ nose: e.target.checked })} />
-              <span>Give it a nose</span>
-            </label>
-            <label className="studio-p2c-checkbox">
-              <input type="checkbox" checked={choices.paws} onChange={(e) => set({ paws: e.target.checked })} />
-              <span>Paw pads in the second yarn</span>
-            </label>
-          </>
+        {spec.nose && (
+          <label className="studio-p2c-checkbox">
+            <input type="checkbox" checked={choices.nose} onChange={(e) => set({ nose: e.target.checked })} />
+            <span>Give it a nose</span>
+          </label>
+        )}
+        {spec.paws && (
+          <label className="studio-p2c-checkbox">
+            <input type="checkbox" checked={choices.paws} onChange={(e) => set({ paws: e.target.checked })} />
+            <span>Paw pads in the second yarn</span>
+          </label>
         )}
 
         <div className="studio-dialog-actions">

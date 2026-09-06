@@ -256,9 +256,12 @@ Per treatment:
 - `disc` — `rounds` inside the envelope, `palette`, `baseColourKey`.
 - `sphere` — `ballEquator` and `ballPlateau`, on the audited profile
   list, plus `palette` and `baseColourKey`.
-- `amigurumi` — the `amigurumi` block: `base` (ball, egg, bear, bunny),
-  `size` (S, M, L), `mainHex`, `contrastHex`, `eyeMm`, `nose`, `paws`.
-  Choose `eyeMm: 0` for a baby toy so there is nothing to come loose.
+- `amigurumi` — the `amigurumi` block: `base` (ball, egg, bear, bunny,
+  cat, dog, bird), `size` (S, M, L), `mainHex`, `contrastHex`, `eyeMm`,
+  `nose`, `paws`. Choose `eyeMm: 0` for a baby toy so there is nothing
+  to come loose. `nose` and `paws` only apply to a base that has them —
+  a bird's beak and feet are crocheted in the second yarn, and it has
+  no limbs for paw pads, so both flags are ignored there.
 - `grid-tapestry` — `picture`, one sentence saying what the panel shows.
   The grid comes from an illustration, not from you.
 

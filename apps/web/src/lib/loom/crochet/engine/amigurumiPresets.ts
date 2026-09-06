@@ -58,6 +58,22 @@ export function tubeRounds(equator: number, straight: number): number[] {
 }
 
 /**
+ * A thin CORD: the magic ring's six stitches worked straight up for `rounds`
+ * rounds. A cat's tail, and a dog's stub.
+ *
+ * It has no shaping at all, which is why it is its own helper rather than a
+ * degenerate `tubeRounds`: six stitches is already as narrow as a spiral gets,
+ * so there is nothing to increase toward and nothing to decrease back to — a
+ * real tail is worked exactly like this and the end is closed by drawing the
+ * last six stitches together. Measured 16.0 x 31.3 mm at five rounds and
+ * 16.1 x 55.5 at nine (worsted), i.e. a tail that is genuinely long and thin
+ * rather than a limb shrunk by `scale`, which shortens as it slims.
+ */
+export function cordRounds(rounds: number): number[] {
+  return Array.from({ length: rounds }, () => 6)
+}
+
+/**
  * Every round profile the designer can produce, each one measured to pass the
  * loom's audit at worsted weight. The save path checks a submitted design's
  * pieces against this list; the test keeps the list true.
@@ -73,6 +89,13 @@ export const AUDITED_PROFILES: number[][] = [
   ballRounds(12, 1), ballRounds(12, 2), ballRounds(12, 3),
   ballRounds(18, 2),
   tubeRounds(12, 3), tubeRounds(12, 4), tubeRounds(12, 6),
+  // The pointed CONES a cat's ear and a bird's beak are: the tube's climb to
+  // twelve, then straight into the taper, so what stands out of the head is a
+  // triangle rather than the round pad a bear's ear is. Audited clean at fine
+  // 1.5, worsted 2.4 and bulky 3.2 (§8f-11).
+  tubeRounds(12, 0), tubeRounds(12, 1),
+  // The tails. Audited clean at the same three weights.
+  cordRounds(5), cordRounds(9),
 ]
 
 const PROFILE_KEYS = new Set(AUDITED_PROFILES.map((r) => r.join(',')))
@@ -82,7 +105,7 @@ export function isAuditedProfile(rounds: number[]): boolean {
   return PROFILE_KEYS.has(rounds.join(','))
 }
 
-export type AmigurumiBase = 'ball' | 'egg' | 'bear' | 'bunny'
+export type AmigurumiBase = 'ball' | 'egg' | 'bear' | 'bunny' | 'cat' | 'dog' | 'bird'
 export type AmigurumiSize = 'S' | 'M' | 'L'
 
 export interface AmigurumiChoices {
@@ -101,12 +124,42 @@ export interface AmigurumiChoices {
   name?: string
 }
 
-export const AMIGURUMI_BASES: Array<{ id: AmigurumiBase; label: string; blurb: string }> = [
-  { id: 'ball', label: 'Ball', blurb: 'One stuffed ball. The amigurumi starting point.' },
-  { id: 'egg', label: 'Egg', blurb: 'A taller, rounded body on its own.' },
-  { id: 'bear', label: 'Bear', blurb: 'Body, head, muzzle, round ears, four limbs.' },
-  { id: 'bunny', label: 'Bunny', blurb: 'The same body with long ears standing up.' },
+/**
+ * What one base IS, and which of the maker's toggles it can honour.
+ *
+ * A creature does not have every feature: a bird has a crocheted beak where a
+ * bear has a moulded nose, and it has no limbs for paw pads to go on. Carrying
+ * that per base — rather than as `base === 'bear' || base === 'bunny'` tests
+ * scattered through the designer and the program builder — is what lets a new
+ * base arrive without every caller needing to know about it.
+ */
+export interface AmigurumiBaseSpec {
+  id: AmigurumiBase
+  label: string
+  blurb: string
+  /** It has a muzzle a moulded safety nose can be fitted to. A beak is a
+   *  crocheted piece, not a notion, so a bird's `nose` is false. */
+  nose: boolean
+  /** It has limbs for contrast paw pads. */
+  paws: boolean
+  /** What the second yarn actually makes on this base, in the maker's words. */
+  contrastFor: string
+}
+
+export const AMIGURUMI_BASES: AmigurumiBaseSpec[] = [
+  { id: 'ball', label: 'Ball', blurb: 'One stuffed ball. The amigurumi starting point.', nose: false, paws: false, contrastFor: 'Not used on a plain ball.' },
+  { id: 'egg', label: 'Egg', blurb: 'A taller, rounded body on its own.', nose: false, paws: false, contrastFor: 'Not used on a plain egg.' },
+  { id: 'bear', label: 'Bear', blurb: 'Body, head, muzzle, round ears, four limbs.', nose: true, paws: true, contrastFor: 'The muzzle and the paw pads.' },
+  { id: 'bunny', label: 'Bunny', blurb: 'The same body with long ears standing up.', nose: true, paws: true, contrastFor: 'The muzzle and the paw pads.' },
+  { id: 'cat', label: 'Cat', blurb: 'Pointed ears, a small muzzle, four legs and a long tail.', nose: true, paws: true, contrastFor: 'The muzzle and the paw pads.' },
+  { id: 'dog', label: 'Dog', blurb: 'A round snout, two floppy ears, four legs and a short tail.', nose: true, paws: true, contrastFor: 'The snout and the paw pads.' },
+  { id: 'bird', label: 'Bird', blurb: 'An egg body sitting on its base, a small head, a beak, two wings and two feet.', nose: false, paws: false, contrastFor: 'The beak and the feet.' },
 ]
+
+/** The spec for one base (falls back to the bear's, which is the full set). */
+export function amigurumiBaseSpec(base: AmigurumiBase): AmigurumiBaseSpec {
+  return AMIGURUMI_BASES.find((b) => b.id === base) ?? AMIGURUMI_BASES[2]!
+}
 
 export const AMIGURUMI_SIZES: Array<{ id: AmigurumiSize; label: string }> = [
   { id: 'S', label: 'Small' },
@@ -130,6 +183,26 @@ interface SizeProfile {
   /** Standalone single-piece profiles. */
   ball: number[]
   egg: number[]
+  // ── The three animal bases added in §8f-11 ──────────────────────────────
+  /** A cat's ear: the tube's climb to twelve straight into its taper, so what
+   *  stands off the head is a pointed triangle. */
+  catEar: number[]
+  /** A dog's ear: the long tapered tube the bunny's ear is, hung DOWNWARD. */
+  dogEar: number[]
+  /** A dog's snout — one plateau round rounder than the bear's flat muzzle. */
+  snout: number[]
+  /** A cat's tail: a long thin cord. */
+  catTail: number[]
+  /** A dog's tail: the same cord, short. */
+  dogTail: number[]
+  /** A bird's body — an egg standing on its base — and its small head. */
+  birdBody: number[]
+  birdHead: number[]
+  /** A bird's beak (the same cone as a cat's ear, small), its folded wing and
+   *  its flat foot. */
+  beak: number[]
+  wing: number[]
+  foot: number[]
 }
 
 /**
@@ -166,6 +239,16 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     // growing to match the crease target: at 6 rounds nothing domes.
     ball: sphereRounds(12, 1),
     egg: sphereRounds(12, 4),
+    catEar: tubeRounds(12, 0),
+    dogEar: tubeRounds(12, 4),
+    snout: ballRounds(12, 2),
+    catTail: cordRounds(5),
+    dogTail: cordRounds(5),
+    birdBody: sphereRounds(12, 4),
+    birdHead: sphereRounds(12, 1),
+    beak: tubeRounds(12, 0),
+    wing: ballRounds(12, 2),
+    foot: ballRounds(12, 1),
   },
   M: {
     // The signed-off bear proof's own equators, on the sphere profile.
@@ -178,6 +261,16 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     limb: tubeRounds(12, 4),
     ball: sphereRounds(24, 1),
     egg: sphereRounds(18, 5),
+    catEar: tubeRounds(12, 0),
+    dogEar: tubeRounds(12, 6),
+    snout: ballRounds(12, 2),
+    catTail: cordRounds(9),
+    dogTail: cordRounds(5),
+    birdBody: sphereRounds(18, 5),
+    birdHead: sphereRounds(18, 1),
+    beak: tubeRounds(12, 0),
+    wing: ballRounds(12, 2),
+    foot: ballRounds(12, 1),
   },
   L: {
     body: sphereRounds(36, 1),
@@ -189,6 +282,16 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     limb: tubeRounds(12, 6),
     ball: sphereRounds(36, 1),
     egg: sphereRounds(24, 5),
+    catEar: tubeRounds(12, 0),
+    dogEar: tubeRounds(12, 6),
+    snout: ballRounds(18, 2),
+    catTail: cordRounds(9),
+    dogTail: cordRounds(5),
+    birdBody: sphereRounds(24, 5),
+    birdHead: sphereRounds(24, 1),
+    beak: tubeRounds(12, 0),
+    wing: ballRounds(12, 2),
+    foot: ballRounds(12, 1),
   },
 }
 
@@ -219,6 +322,67 @@ const GROUND_LIFT: Record<AmigurumiSize, { leg: number }> = {
   M: { leg: -0.4 },
   L: { leg: 1.5 },
 }
+
+/**
+ * The same thing for the bird's FEET, in two axes.
+ *
+ * An egg body is widest at its middle, so a foot seated on that surface at the
+ * front-bottom settles both above the table and INSIDE the belly's own
+ * silhouette — the bird stands on nothing and the feet cannot be seen. `y`
+ * pushes each foot forward until it is a few millimetres proud of the breast;
+ * `z` drops it until it rests ON the table. Both are measured off each size's
+ * settled, offset-free chain, exactly the way `GROUND_LIFT` was, and both are
+ * held honest by `amigurumi-presets.test.ts`'s minz assertion.
+ */
+const BIRD_FOOT_OFFSET: Record<AmigurumiSize, { y: number; z: number }> = {
+  S: { y: 6.6, z: -4.7 },
+  M: { y: 9.0, z: -3.2 },
+  L: { y: 10.5, z: -1.4 },
+}
+
+/**
+ * The per-size trims the three new animal bases need (§8f-11).
+ *
+ * Sizing comes from the ROUND COUNTS, and there are only so many audited
+ * profiles; `scale` is the fine trim that keeps a piece in proportion to the
+ * head or body it is sewn to as those counts step S -> M -> L. Every number
+ * below is measured against the settled profile table, not guessed:
+ *
+ *   cat ear   tube 12,0 / 12,1 settles 27.1 x 28.3 / 28.5 x 32.3 mm; the S/M/L
+ *             heads are 37.9 / 50.4 / 62.6 wide, and a real cat's ear is about
+ *             40% of the head width at the base.
+ *   dog ear   tube 12,4 / 12,6 settles 26.3 x 44.2 / 26.8 x 54.8; hung beside
+ *             the head it wants to reach about two-thirds of the way down it.
+ *   snout     ball 12,2 settles 26.1 x 20.7 and ball 18,2 38.0 x 24.4, against
+ *             the bear's flat 25.1 x 15.4 muzzle — rounder, and standing
+ *             further off the face.
+ *   tail      cord 5 / cord 9 settles 16.0 x 31.3 / 16.1 x 55.5. A cat's tail
+ *             is about half the body height again; a dog's is a stub.
+ */
+const CAT_EAR_SCALE: Record<AmigurumiSize, number> = { S: 0.72, M: 0.97, L: 1.22 }
+/**
+ * How deep the cat's ear is sewn in, per size — and it is NOT one number.
+ *
+ * The S head is a 37.9 mm eq-18 sphere against the M's 50.4, so the same 4 mm
+ * seat buries proportionally far more of the ear and the composition's contact
+ * pass then has to draw that much more fabric onto the head. Measured, that is
+ * a real audit failure and not a cosmetic one: the S ear at scale 0.72 / seat 4
+ * fails one interlock (`hook floated above its crown, dy 1.29yr`) and at 0.66 it
+ * fails two. Backing the SEAT off — not the ear — keeps the ear the size the
+ * head wants and takes the strain out of the join.
+ */
+const CAT_EAR_SEAT: Record<AmigurumiSize, number> = { S: 2.5, M: 4, L: 4.5 }
+const DOG_EAR_SCALE: Record<AmigurumiSize, number> = { S: 0.5, M: 0.58, L: 0.78 }
+const DOG_SNOUT_SCALE: Record<AmigurumiSize, number> = { S: 0.62, M: 0.82, L: 0.72 }
+const CAT_TAIL_SCALE: Record<AmigurumiSize, number> = { S: 0.62, M: 0.6, L: 0.85 }
+const DOG_TAIL_SCALE: Record<AmigurumiSize, number> = { S: 0.6, M: 0.8, L: 1.0 }
+
+/** The bird's own trims — head against body, and the three small pieces. */
+const BIRD_HEAD_SCALE: Record<AmigurumiSize, number> = { S: 0.82, M: 0.82, L: 0.82 }
+const BIRD_HEAD_OVERLAP: Record<AmigurumiSize, number> = { S: 2.5, M: 3.5, L: 4.5 }
+const BIRD_BEAK_SCALE: Record<AmigurumiSize, number> = { S: 0.3, M: 0.4, L: 0.5 }
+const BIRD_WING_SCALE: Record<AmigurumiSize, number> = { S: 0.58, M: 0.8, L: 1.0 }
+const BIRD_FOOT_SCALE: Record<AmigurumiSize, number> = { S: 0.32, M: 0.45, L: 0.6 }
 
 /**
  * ROUND 3 — the arm pose, from the signed-off bear proof
@@ -305,6 +469,8 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     }
   }
 
+  if (choices.base === 'bird') return birdProgram(choices, s, name)
+
   const main = choices.mainHex
   const contrast = choices.contrastHex
   // Where each limb is sewn and which way it then points. The arm numbers are
@@ -313,6 +479,16 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   const armDir = (side: -1 | 1): Dir => ({ x: side * 1, y: ARM_DIR_Y, z: ARM_DIR_Z })
   const armAim = (side: -1 | 1): Dir => ({ x: side * 1, y: ARM_AIM_Y, z: ARM_AIM_Z })
   const legAim = (side: -1 | 1): Dir => ({ x: side * 0.26, y: 1, z: -0.05 })
+  // A bear and a bunny sit up and have ARMS; a cat and a dog are on four legs,
+  // and the written pattern has to say so. The piece is the same tapered tube
+  // in the same place either way — only the name the maker reads changes, and
+  // `compositionPattern.ts` builds the piece list and the assembly wording
+  // straight off these names.
+  const onAllFours = choices.base === 'cat' || choices.base === 'dog'
+  const upperName = (side: -1 | 1): string =>
+    onAllFours ? (side < 0 ? 'front-leg-l' : 'front-leg-r') : side < 0 ? 'arm-l' : 'arm-r'
+  const lowerName = (side: -1 | 1): string =>
+    onAllFours ? (side < 0 ? 'back-leg-l' : 'back-leg-r') : side < 0 ? 'leg-l' : 'leg-r'
 
   const parts: AmigurumiPart[] = [
     { name: 'body', stitch: 'sc', rounds: s.body, colourHex: main, place: { on: 'ground' } },
@@ -326,9 +502,19 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
       name: 'head', stitch: 'sc', rounds: s.head, colourHex: main,
       place: { on: 'neck', overlap: 2, offset: { y: 1 } },
     },
+    // A dog's SNOUT is one plateau round rounder than the bear's flat muzzle
+    // pad and stands further off the face; a cat's is the bear's, smaller.
+    // Named `muzzle` in every case so the written pattern and the assembly
+    // wording stay the same piece.
     {
-      name: 'muzzle', stitch: 'sc', rounds: s.muzzle, colourHex: contrast, scale: 0.85,
-      place: { on: 'head', dir: faceDir({ x: 0, y: 1, z: -0.22 }), seat: 3, poleIn: true, surfaceFit: 'ellipsoid' },
+      name: 'muzzle', stitch: 'sc',
+      rounds: choices.base === 'dog' ? s.snout : s.muzzle,
+      colourHex: contrast,
+      scale: choices.base === 'dog' ? DOG_SNOUT_SCALE[choices.size] : choices.base === 'cat' ? 0.78 : 0.85,
+      place: {
+        on: 'head', dir: faceDir({ x: 0, y: 1, z: choices.base === 'cat' ? -0.3 : -0.22 }),
+        seat: choices.base === 'dog' ? 4 : 3, poleIn: true, surfaceFit: 'ellipsoid',
+      },
     },
   ]
 
@@ -342,6 +528,41 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
           on: 'head',
           dir: faceDir({ x: side * 0.95, y: 0.18, z: 0.95 }),
           aim: faceDir({ x: side * 0.8, y: 0.35, z: 1 }),
+          seat: 3.5, poleIn: true, surfaceFit: 'ellipsoid',
+        },
+      })
+    }
+  } else if (choices.base === 'cat') {
+    // A cat's ears are POINTED and they sit on TOP of the head, not on its
+    // sides: the cone flares to twelve stitches as it leaves the join and then
+    // runs straight into its taper, so the silhouette is a triangle. Set at
+    // 0.6 out from the crown's axis rather than the bear's 0.95, which is the
+    // difference between "on top" and "on the sides".
+    for (const side of [-1, 1] as const) {
+      parts.push({
+        name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.catEar, colourHex: main,
+        scale: CAT_EAR_SCALE[choices.size],
+        place: {
+          on: 'head',
+          dir: faceDir({ x: side * 0.68, y: 0.12, z: 1 }),
+          aim: faceDir({ x: side * 0.5, y: 0.02, z: 1 }),
+          seat: CAT_EAR_SEAT[choices.size], poleIn: true, surfaceFit: 'ellipsoid',
+        },
+      })
+    }
+  } else if (choices.base === 'dog') {
+    // Floppy ears: the same long tapered tube a bunny's ear is, joined high on
+    // the SIDES of the head and aimed DOWN, so each one hangs beside the face
+    // instead of standing out of the crown. That one flipped aim is the whole
+    // difference between a lop-eared dog and a rabbit.
+    for (const side of [-1, 1] as const) {
+      parts.push({
+        name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.dogEar, colourHex: main,
+        scale: DOG_EAR_SCALE[choices.size],
+        place: {
+          on: 'head',
+          dir: faceDir({ x: side * 1, y: 0.12, z: 0.5 }),
+          aim: faceDir({ x: side * 0.4, y: 0.05, z: -1 }),
           seat: 3.5, poleIn: true, surfaceFit: 'ellipsoid',
         },
       })
@@ -365,7 +586,7 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   const lift = GROUND_LIFT[choices.size]
   for (const side of [-1, 1] as const) {
     parts.push({
-      name: side < 0 ? 'arm-l' : 'arm-r', stitch: 'sc', rounds: s.limb, colourHex: main, scale: 0.78,
+      name: upperName(side), stitch: 'sc', rounds: s.limb, colourHex: main, scale: 0.78,
       place: {
         on: 'body', dir: armDir(side),
         aim: armAim(side), seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
@@ -374,7 +595,7 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   }
   for (const side of [-1, 1] as const) {
     parts.push({
-      name: side < 0 ? 'leg-l' : 'leg-r', stitch: 'sc', rounds: s.limb, colourHex: main, scale: 0.9,
+      name: lowerName(side), stitch: 'sc', rounds: s.limb, colourHex: main, scale: 0.9,
       place: {
         on: 'body', dir: { x: side * 0.52, y: 0.8, z: -0.55 },
         aim: legAim(side), seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
@@ -383,16 +604,43 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     })
   }
 
-  if (choices.paws) {
+  // The TAIL, and WHERE it has to go to be seen (round 2).
+  //
+  // The scene's camera sits on the +x, +y side of the figure — `tiltDeg` and
+  // `yawDeg` put it at (sin yaw, -cos yaw) in Blender, and the render script
+  // negates y, so +y is the side facing the lens. Round 1 sewed the tail
+  // straight out of the BACK (y -0.9) and it was invisible in every render:
+  // the body hid all of it. It is now joined on the near FLANK, behind the
+  // hips, and swept up and out — which is both where a sitting cat's tail
+  // actually lies and the one placement that breaks the body's silhouette
+  // from this camera. Measured on cat-M: the tip lands 10 mm outside the
+  // body's widest point and level with its shoulder.
+  if (choices.base === 'cat' || choices.base === 'dog') {
+    const cat = choices.base === 'cat'
+    parts.push({
+      name: 'tail', stitch: 'sc',
+      rounds: cat ? s.catTail : s.dogTail,
+      colourHex: main,
+      scale: (cat ? CAT_TAIL_SCALE : DOG_TAIL_SCALE)[choices.size],
+      place: {
+        on: 'body',
+        dir: cat ? { x: 1, y: -0.55, z: -0.45 } : { x: 0.95, y: -0.7, z: 0.05 },
+        aim: cat ? { x: 0.58, y: -0.3, z: 0.9 } : { x: 0.6, y: -0.3, z: 0.85 },
+        seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
+      },
+    })
+  }
+
+  if (choices.paws && amigurumiBaseSpec(choices.base).paws) {
     const pad = (name: string, on: string, dir: Dir): AmigurumiPart => ({
       name, stitch: 'sc', rounds: s.muzzle, colourHex: contrast, scale: 0.62,
       place: { on, dir, seat: 3, poleIn: true, surfaceFit: 'ellipsoid' },
     })
     parts.push(
-      pad('paw-al', 'arm-l', armAim(-1)),
-      pad('paw-ar', 'arm-r', armAim(1)),
-      pad('paw-ll', 'leg-l', legAim(-1)),
-      pad('paw-lr', 'leg-r', legAim(1)),
+      pad('paw-al', upperName(-1), armAim(-1)),
+      pad('paw-ar', upperName(1), armAim(1)),
+      pad('paw-ll', lowerName(-1), legAim(-1)),
+      pad('paw-lr', lowerName(1), legAim(1)),
     )
   }
 
@@ -403,10 +651,90 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     ...FIGURE_VIEW,
     parts,
     props: faceProps(choices, 'head'),
+    notes: FIGURE_NOTES[choices.base] ?? FIGURE_NOTES.bear!,
+  }
+}
+
+/** The one-line description of each four-legged base, for the pattern's notes. */
+const FIGURE_NOTES: Partial<Record<AmigurumiBase, string>> = {
+  bear: 'A sitting bear: a stuffed body, a short neck and a round head, a muzzle, two ears, two arms and two legs, each worked as a spiral from a magic ring and sewn on.',
+  bunny: 'A sitting bunny: a stuffed body, a short neck and a round head, a muzzle, two long ears, two arms and two legs, each worked as a spiral from a magic ring and sewn on.',
+  cat: 'A sitting cat: a stuffed body, a short neck and a round head, a small muzzle, two pointed ears, two front legs, two back legs and a long tail, each worked as a spiral from a magic ring and sewn on.',
+  dog: 'A sitting dog: a stuffed body, a short neck and a round head, a rounded snout, two floppy ears, two front legs, two back legs and a short tail, each worked as a spiral from a magic ring and sewn on.',
+}
+
+/**
+ * THE BIRD (§8f-11) — the one base that is not built on the bear's skeleton.
+ *
+ * A bird has no neck, no muzzle and no limbs, so it does not go down the
+ * four-legged path at all. It is an EGG standing on its own base with a small
+ * ball head sitting straight on top of it, a crocheted cone for a beak, two
+ * folded wings down its flanks and two flat feet at the front — which is how a
+ * simple crocheted chick or robin is actually made.
+ *
+ * Two things it does NOT get, and both are deliberate: no moulded nose (a beak
+ * is a crocheted piece, not a notion, so `AmigurumiBaseSpec.nose` is false and
+ * the designer hides the toggle), and no paw pads (nothing to put them on).
+ * The second yarn goes on the beak and the feet instead.
+ */
+function birdProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): CompositionProgram {
+  const main = choices.mainHex
+  const contrast = choices.contrastHex
+  const parts: AmigurumiPart[] = [
+    { name: 'body', stitch: 'sc', rounds: s.birdBody, colourHex: main, place: { on: 'ground' } },
+    // The head sits STRAIGHT on the egg's crown — no neck piece. Nudged
+    // forward so the face is over the breast rather than over the tail.
+    {
+      name: 'head', stitch: 'sc', rounds: s.birdHead, colourHex: main, scale: BIRD_HEAD_SCALE[choices.size],
+      place: { on: 'body', overlap: BIRD_HEAD_OVERLAP[choices.size], offset: { y: 1.5 } },
+    },
+    // The beak: the cat's ear cone, small, in the second yarn, pointing
+    // forward and a shade down off the front of the head.
+    {
+      name: 'beak', stitch: 'sc', rounds: s.beak, colourHex: contrast, scale: BIRD_BEAK_SCALE[choices.size],
+      place: { on: 'head', dir: faceDir({ x: 0, y: 1, z: -0.05 }), seat: 2.5, poleIn: true, surfaceFit: 'ellipsoid' },
+    },
+  ]
+  // Two wings, joined high on the body's sides and aimed DOWN and a little
+  // back, so each lies folded along its flank instead of sticking out.
+  for (const side of [-1, 1] as const) {
+    parts.push({
+      name: side < 0 ? 'wing-l' : 'wing-r', stitch: 'sc', rounds: s.wing, colourHex: main,
+      scale: BIRD_WING_SCALE[choices.size],
+      place: {
+        on: 'body',
+        dir: { x: side * 1, y: 0.16, z: 0.6 },
+        aim: { x: side * 0.72, y: 0.06, z: -0.62 },
+        seat: 4.5, poleIn: true, surfaceFit: 'ellipsoid',
+      },
+    })
+  }
+  // Two flat feet at the very front of the base, lying forward along the
+  // table. `BIRD_FOOT_LIFT` is the measured nudge that keeps them ON it.
+  for (const side of [-1, 1] as const) {
+    parts.push({
+      name: side < 0 ? 'foot-l' : 'foot-r', stitch: 'sc', rounds: s.foot, colourHex: contrast,
+      scale: BIRD_FOOT_SCALE[choices.size],
+      place: {
+        on: 'body',
+        dir: { x: side * 0.25, y: 0.5, z: -1.5 },
+        aim: { x: side * 0.2, y: 1, z: -0.02 },
+        seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
+        offset: BIRD_FOOT_OFFSET[choices.size],
+      },
+    })
+  }
+  return {
+    name,
+    yarnWeight: 'worsted',
+    hookMm: 4,
+    ...FIGURE_VIEW,
+    parts,
+    props: faceProps(choices, 'head'),
     notes:
-      choices.base === 'bear'
-        ? 'A sitting bear: a stuffed body, a short neck and a round head, a muzzle, two ears, two arms and two legs, each worked as a spiral from a magic ring and sewn on.'
-        : 'A sitting bunny: a stuffed body, a short neck and a round head, a muzzle, two long ears, two arms and two legs, each worked as a spiral from a magic ring and sewn on.',
+      'A little sitting bird: a stuffed egg body on its own base, a small round head, ' +
+      'a pointed beak, two folded wings and two flat feet, each worked as a spiral ' +
+      'from a magic ring and sewn on.',
   }
 }
 
@@ -435,7 +763,7 @@ function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | u
       })
     }
   }
-  if (choices.nose && (choices.base === 'bear' || choices.base === 'bunny')) {
+  if (choices.nose && amigurumiBaseSpec(choices.base).nose) {
     props.push({
       name: 'nose',
       on: 'muzzle',

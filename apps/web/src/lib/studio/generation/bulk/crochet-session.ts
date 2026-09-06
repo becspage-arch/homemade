@@ -124,7 +124,7 @@ const BandSchema = z
 
 const AmigurumiSchema = z
   .object({
-    base: z.enum(['ball', 'egg', 'bear', 'bunny']),
+    base: z.enum(['ball', 'egg', 'bear', 'bunny', 'cat', 'dog', 'bird']),
     size: z.enum(['S', 'M', 'L']),
     mainHex: z.string().regex(HEX, 'a yarn colour is a six-digit hex like #b5814e'),
     contrastHex: z.string().regex(HEX, 'a yarn colour is a six-digit hex like #e6d3ae'),
