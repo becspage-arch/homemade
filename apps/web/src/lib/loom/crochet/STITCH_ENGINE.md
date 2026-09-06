@@ -2313,6 +2313,32 @@ GONE as a side effect: **bear-S minz −0.21, bear-M −0.09**, inside the 0.5 m
 the preset test allows. A stuffed limb is fatter, so its lowest point reaches
 the table instead of hanging past it.
 
+### Rendered (Fargate, one batch of four)
+
+All four PASS the fidelity/structure gate, so the Fal step finished the exact
+deterministic render without inventing anything: `stitch-ball` **0.909**,
+`stitch-mrdisc` **0.904**, `amigurumi-ball` **0.929**, `amigurumi-bear-bigear`
+**0.930** (STRUCT_MIN 0.45). What the bear shows against the round-6 hero: the
+head's flat top has domed and its top corners are visibly filleted, the body is
+fuller with a softer shoulder, the ears are fatter and rounder, and the
+head/body join reads as a soft valley rather than a crossing line. Beside the
+real styled bear it is still a rounded BOX and not a sphere, which is the
+count finding above, not the relaxer.
+
+HONEST RESIDUALS, for the orchestrator's verdict:
+- **A few pinholes of ground show through at the pole of `amigurumi-ball`.**
+  Stretching the fabric 8% opens the stitches, and where a round is smallest
+  that is enough to see daylight. It is a true consequence of stuffing (a
+  firmly stuffed amigurumi does show its filling), but it caps how far the
+  pressure can be pushed on visual grounds as well as on the audit's.
+- **The muzzle's crease went the wrong way**, 24.4° → 28.3°, and the ear's
+  barely moved. Both are 4–5-round pieces: their "cap" is one increase round
+  and the pressure lifts the pole faster than it can round anything. Small
+  parts want their own look, or their own counts.
+- **The Studio `bear-M` preset was not rendered** — the batch takes swatches and
+  composition proofs, not presets, and `-bigear` is the same geometry at a
+  different scale. Its numbers are here (101.6 × 113.7 mm, minz −0.09).
+
 ---
 
 ## 9. What did NOT work (the failure log — don't repeat these)
