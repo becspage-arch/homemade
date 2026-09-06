@@ -14,77 +14,65 @@
 /** One piece's settled width x height in mm at worsted weight, by round profile
  *  (`rounds.join(',')`). Built and measured standing alone on the ground. */
 export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: number }> = {
+  "6,11,12,12,11,6": {
+    "width": 26.1,
+    "height": 28.8
+  },
+  "6,11,12,12,12,12,12,11,6": {
+    "width": 26.7,
+    "height": 44.5
+  },
+  "6,12,16,18,18,18,16,12,6": {
+    "width": 37.9,
+    "height": 39
+  },
+  "6,12,16,18,18,18,18,18,18,18,16,12,6": {
+    "width": 38.7,
+    "height": 60.2
+  },
+  "6,12,17,21,23,24,24,23,21,17,12,6": {
+    "width": 50.4,
+    "height": 50.5
+  },
+  "6,12,17,21,23,24,24,24,24,24,24,23,21,17,12,6": {
+    "width": 50.5,
+    "height": 71.5
+  },
+  "6,12,18,22,26,28,30,30,30,28,26,22,18,12,6": {
+    "width": 62.6,
+    "height": 60.4
+  },
+  "6,12,18,23,28,31,33,35,36,36,36,35,33,31,28,23,18,12,6": {
+    "width": 74.7,
+    "height": 76.3
+  },
   "6,12,12,6": {
-    "width": 23.1,
-    "height": 14.5
+    "width": 25.1,
+    "height": 15.4
   },
   "6,12,12,12,6": {
-    "width": 24.5,
-    "height": 19.8
+    "width": 26.1,
+    "height": 20.7
   },
   "6,12,12,12,12,6": {
-    "width": 24.7,
-    "height": 24.8
-  },
-  "6,12,12,12,12,12,6": {
-    "width": 24.7,
-    "height": 30.2
-  },
-  "6,12,12,12,12,12,12,12,6": {
-    "width": 24.9,
-    "height": 40.8
+    "width": 26.2,
+    "height": 26
   },
   "6,12,18,18,18,12,6": {
-    "width": 35.3,
-    "height": 22.5
-  },
-  "6,12,18,18,18,18,12,6": {
-    "width": 35.5,
-    "height": 27.8
-  },
-  "6,12,18,18,18,18,18,18,18,18,18,12,6": {
-    "width": 35.5,
-    "height": 54
-  },
-  "6,12,18,24,24,24,24,24,18,12,6": {
-    "width": 46.5,
-    "height": 35.9
-  },
-  "6,12,18,24,24,24,24,24,24,24,24,18,12,6": {
-    "width": 47.1,
-    "height": 51.5
-  },
-  "6,12,18,24,24,24,24,24,24,24,24,24,24,18,12,6": {
-    "width": 47.3,
-    "height": 62
-  },
-  "6,12,18,24,30,30,30,30,30,30,24,18,12,6": {
-    "width": 57.2,
-    "height": 43.4
-  },
-  "6,12,18,24,30,30,30,30,30,30,30,24,18,12,6": {
-    "width": 57.8,
-    "height": 49
-  },
-  "6,12,18,24,30,36,36,36,36,36,36,30,24,18,12,6": {
-    "width": 68.7,
-    "height": 46
-  },
-  "6,12,18,24,30,36,36,36,36,36,36,36,36,30,24,18,12,6": {
-    "width": 68.7,
-    "height": 56.6
+    "width": 38,
+    "height": 24.4
   },
   "6,12,12,12,12,10,8,6": {
-    "width": 24.7,
-    "height": 38.5
+    "width": 26.3,
+    "height": 38.9
   },
   "6,12,12,12,12,12,10,8,6": {
-    "width": 24.7,
-    "height": 43.8
+    "width": 26.3,
+    "height": 44.2
   },
   "6,12,12,12,12,12,12,12,10,8,6": {
-    "width": 24.8,
-    "height": 54.4
+    "width": 26.8,
+    "height": 54.8
   }
 }
 
@@ -96,47 +84,47 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
     "height": 30
   },
   "ball-M": {
-    "width": 45,
+    "width": 50,
     "height": 50
   },
   "ball-L": {
-    "width": 70,
-    "height": 55
+    "width": 75,
+    "height": 75
   },
   "egg-S": {
     "width": 25,
-    "height": 40
+    "height": 45
   },
   "egg-M": {
-    "width": 35,
-    "height": 55
-  },
-  "egg-L": {
-    "width": 45,
+    "width": 40,
     "height": 60
   },
-  "bear-S": {
-    "width": 85,
-    "height": 80
+  "egg-L": {
+    "width": 50,
+    "height": 70
   },
-  "bear-M": {
+  "bear-S": {
     "width": 95,
     "height": 105
   },
+  "bear-M": {
+    "width": 105,
+    "height": 125
+  },
   "bear-L": {
-    "width": 125,
-    "height": 120
+    "width": 140,
+    "height": 160
   },
   "bunny-S": {
-    "width": 85,
-    "height": 100
+    "width": 95,
+    "height": 125
   },
   "bunny-M": {
-    "width": 95,
-    "height": 135
+    "width": 105,
+    "height": 155
   },
   "bunny-L": {
-    "width": 125,
-    "height": 145
+    "width": 140,
+    "height": 185
   }
 }

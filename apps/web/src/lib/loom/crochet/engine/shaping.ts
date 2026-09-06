@@ -35,6 +35,7 @@ import {
   type StitchDims,
   ridgeDebugNodes,
 } from './yarnPath'
+import { sphereCountsFromGauge } from './sphereProfile'
 
 interface Crown {
   back: number
@@ -869,18 +870,16 @@ export function buildSphere(
   if (patternCounts) {
     for (const c of patternCounts) counts.push(c)
   } else {
-    const mMaxDerive = Math.PI * R - rr
-    let prev = 0
-    for (let m = rr + drift; m <= mMaxDerive - drift * 0.35; m += drift) {
-      const target = Math.max(4, Math.round((2 * Math.PI * Math.max(R * Math.sin(m / R), 1e-3)) / sw))
-      // The canonical ball recipe: 6 in the ring, then AT MOST ±6 per round
-      // toward the target. Profile-hugging counts put 7 incs in a 12-stitch
-      // round (shaping density no real pattern uses) and the crowded cap kept
-      // one pair-hook ambiguous; ±6 growth is both the craft standard and what
-      // the pole can physically fit.
-      prev = prev === 0 ? Math.min(6, target) : prev + Math.max(-6, Math.min(6, target - prev))
-      counts.push(prev)
-    }
+    // The canonical ball recipe: 6 in the ring, then AT MOST ±6 per round
+    // toward what the latitude's circumference wants. Profile-hugging counts
+    // put 7 incs in a 12-stitch round (shaping density no real pattern uses)
+    // and the crowded cap kept one pair-hook ambiguous; ±6 growth is both the
+    // craft standard and what the pole can physically fit.
+    //
+    // §8f-10: the arithmetic moved to `sphereProfile.ts` UNCHANGED, so the
+    // designer presets can write the same profile out as a PATTERN. This
+    // branch is bit-identical to the inline loop it replaces.
+    for (const c of sphereCountsFromGauge(eq, sw, drift, rr)) counts.push(c)
   }
   for (let k = 0; k < counts.length; k++) rounds.push(rr + drift * (k + 1))
   const prof = intrinsicProfile(counts, sw, rr, rowH * 1.05, yr)
@@ -891,6 +890,11 @@ export function buildSphere(
   // boundaries got a neighbour's tangent and the layout pull migrated them
   // along the meridian (audit: scattered "floated above its crown" at 1.2–1.4yr).
   const merArr: { tr: number; tz: number }[] = []
+  // Which round put each node down — the STUFFING term's sampling of the
+  // surface (relax.ts, YarnModel.round). Filled in push order alongside merArr,
+  // from the round the mkPlace3 closure was made for.
+  const roundArr: number[] = []
+  let roundNow = -1
 
   // Surface of revolution: the fabric's own intrinsic profile, parameterised by
   // meridian arclength m from the TOP pole; the normal offset lz rides the local
@@ -901,11 +905,13 @@ export function buildSphere(
       const th = lx / rRef
       const q = prof.at(ly)
       merArr.push({ tr: q.tr, tz: q.tz })
+      roundArr.push(roundNow)
       const rp = Math.max(q.r + q.nr * lz, 1e-3)
       return { x: rp * Math.cos(th), y: rp * Math.sin(th), z: q.z + q.nz * lz }
     }
 
   const RING_N = 18
+  roundNow = -1 // the magic ring belongs to no round (and is pinned anyway)
   const ringNodes: number[] = []
   const ringRRef = rr
   const ringPlace = mkPlace3(ringRRef)
@@ -946,6 +952,7 @@ export function buildSphere(
     const prev = count
     count = counts[k]!
     const rRef = Math.max(prof.rOfRound(k), 1e-3)
+    roundNow = k
     const place3 = mkPlace3(rRef)
     const crowns: SCrown[] = []
 
@@ -1061,6 +1068,7 @@ export function buildSphere(
   // round's remaining hole and is drawn tight — same lesson as the disc: the
   // strand must not stop dead at the final crown.
   const rRefEnd = Math.max(prof.at(mPrev).r, 1e-3)
+  roundNow = rounds.length - 1 // the tail spirals into the last round's pole
   const placeEnd = mkPlace3(rRefEnd)
   for (let t = 1; t <= 4; t++) {
     const th = phase + Math.PI * 2 * (1 + 0.012 * t)
@@ -1074,6 +1082,8 @@ export function buildSphere(
   if (merArr.length !== nodes.length)
     throw new Error(`intrinsic profile frame capture out of sync: ${merArr.length} frames for ${nodes.length} nodes`)
   const meridian = merArr
+  if (roundArr.length !== nodes.length)
+    throw new Error(`round-index capture out of sync: ${roundArr.length} for ${nodes.length} nodes`)
 
   const strand = new Array(nodes.length).fill(0)
   const along = nodes.map((_, i) => i)
@@ -1092,7 +1102,7 @@ export function buildSphere(
   const radialCenter = { x: 0, y: 0, z: zMid }
 
   return {
-    model: { nodes, dist: S.dist, bend: S.bend, strand, along, meridian, radialCenter },
+    model: { nodes, dist: S.dist, bend: S.bend, strand, along, meridian, round: roundArr, radialCenter },
     strandPath: S.strandPath,
     links: S.links,
     yarnRadiusMm: yr,

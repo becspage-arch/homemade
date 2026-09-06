@@ -24,6 +24,16 @@
  * serve every stitch type, 2D and 3D; only the topology that feeds it changes.
  */
 
+/**
+ * THE STUFFING (§8f-9), as shipped. One number: how far, per iteration, every
+ * free node of a closed part advances along its current outward surface normal,
+ * in collision diameters. Every call site that relaxes a closed round part
+ * imports these two so they cannot drift apart.
+ */
+export const STUFF_PRESSURE = 0.0007
+/** How much of the worked-profile layout hold survives while stuffed. */
+export const STUFF_PRIOR = 0.25
+
 export interface RNode {
   x: number
   y: number
@@ -69,6 +79,36 @@ export interface RelaxConfig {
    */
   layoutMode?: 'y' | 'radial' | 'surface'
   /**
+   * INTERNAL PRESSURE — the stuffing (§8f-9). A closed crocheted part is not a
+   * shell laid on a frame: it is a fabric BAG with filling pushed into it. The
+   * filling presses outward on every square millimetre of the inside, the yarn
+   * pulls back, and the settled shape is wherever those two balance — which is
+   * why a real amigurumi has no hard edge anywhere: flat tops dome, cap/wall
+   * corners round off, and the walls stand a few percent proud of the radius
+   * their stitch count alone implies.
+   *
+   * Modelled the way the rest of the relaxer models everything else — as a
+   * positional term, not a force: every free node of the part advances this far
+   * per iteration along the CURRENT outward surface normal (in collision
+   * diameters, so it scales with the yarn). Nothing caps it except the fabric:
+   * the yarn's own distance constraints (the posts carry the meridian, the
+   * spiral carries the hoop), self-collision, the pinned magic ring gathering
+   * the pole, and the table under the piece. Equilibrium is where the fabric's
+   * stretch balances the push — a real membrane balance, one parameter.
+   *
+   * 0 / absent = no stuffing (every existing build is bit-identical).
+   */
+  stuffing?: number
+  /**
+   * How much of the worked-shape layout hold survives while a part is stuffed
+   * (default 0.25). Unstuffed, that hold IS the shape: it pins every node to
+   * the analytic/intrinsic profile the counts were laid on, and the fabric has
+   * no say. Stuffed, the profile is only where the piece STARTED — a soft prior
+   * that stops rounds wandering along the meridian while pressure and yarn
+   * decide the settled surface between them.
+   */
+  stuffPrior?: number
+  /**
    * A hard TABLE under the work: free nodes are clamped to z >= floorZ. One-sided
    * contact, exactly like the surface a swatch is photographed on — it stops loops
    * rolling under the work without pressing the relief out of the front. Omit for
@@ -93,6 +133,15 @@ export interface YarnModel {
    * the start pole. Built from each node's initial position on the surface.
    */
   meridian?: { tr: number; tz: number }[]
+  /**
+   * Per-node ROUND index (which worked round put the node down; -1 for the
+   * anchor ring and anything that belongs to no round). The STUFFING term needs
+   * it: internal pressure acts along the CURRENT surface normal, and the
+   * cheapest exact way to know the current surface of a piece worked in rounds
+   * is to re-read its own meridian profile — the mean radius and height of each
+   * round — every few iterations. Absent = no stuffing.
+   */
+  round?: number[]
   /**
    * Per-node one-sided z BOUNDS (null/undefined = unbounded) — the CROWN
    * CANOPY for no-turn round fabric. Physically: the taut crown chain-line
@@ -217,6 +266,65 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
   // yarn, which collision keeps a diameter apart — and that is what threads a post
   // through the loops of the stitch below (the link pulls it to the loop centre,
   // collision stops it passing through the loop's sides).
+  // THE STUFFING (§8f-9). Pressure acts along the CURRENT outward surface
+  // normal, so the surface has to be re-read as the piece inflates — a piece
+  // worked in rounds carries its own meridian sampling, so the profile is just
+  // the mean radius and height of each round, refreshed every few iterations.
+  const stuffing = surface && (cfg.stuffing ?? 0) > 0 && !!model.round ? cfg.stuffing! : 0
+  const roundOf = stuffing > 0 ? model.round! : null
+  const nRounds = roundOf ? Math.max(...roundOf) + 1 : 0
+  // Per-round outward normal in the (r_cyl, z) half plane, refreshed below.
+  const rn = new Float64Array(Math.max(nRounds, 1))
+  const zn = new Float64Array(Math.max(nRounds, 1))
+  // The advance is a STRAIN, not a distance: a membrane under pressure p
+  // stretches by pR/2Et, so the displacement scales with the piece's own
+  // radius. Measured, a fixed distance makes a small part far bulgier than a
+  // big one at the same stuffing (a 12-round ear +18% against a 30-round body
+  // +9%), which is not what stuffing does. Scaled by the widest round, one
+  // `stuffing` number means the same firmness on every part.
+  let step = 0
+  const refreshNormals = (): void => {
+    const sr = new Float64Array(nRounds)
+    const sz = new Float64Array(nRounds)
+    const cnt = new Float64Array(nRounds)
+    for (let i = 0; i < nodes.length; i++) {
+      const k = roundOf![i]!
+      if (k < 0) continue
+      const n = nodes[i]!
+      sr[k]! += Math.hypot(n.x, n.y)
+      sz[k]! += n.z
+      cnt[k]! += 1
+    }
+    let rMax = 0
+    for (let k = 0; k < nRounds; k++) {
+      if (cnt[k]! === 0) continue
+      sr[k]! /= cnt[k]!
+      sz[k]! /= cnt[k]!
+      if (sr[k]! > rMax) rMax = sr[k]!
+    }
+    step = stuffing * rMax
+    for (let k = 0; k < nRounds; k++) {
+      // Central difference of the profile where there is one either side; the
+      // poles take the one-sided difference (the ring end and the fasten-off).
+      let a = k - 1
+      let b = k + 1
+      while (a >= 0 && cnt[a]! === 0) a--
+      while (b < nRounds && cnt[b]! === 0) b++
+      const lo = a >= 0 ? a : k
+      const hi = b < nRounds ? b : k
+      if (lo === hi) { rn[k] = 0; zn[k] = 1; continue }
+      const tr = sr[hi]! - sr[lo]!
+      const tz = sz[hi]! - sz[lo]!
+      const L = Math.hypot(tr, tz) || 1
+      // Outward normal = the meridian tangent rotated +90° (same convention as
+      // the intrinsic profile: the meridian runs away from the start pole, so
+      // (-tz, tr) points out of the piece).
+      rn[k] = -tz / L
+      zn[k] = tr / L
+    }
+  }
+  if (stuffing > 0) refreshNormals()
+
   const N = nodes.length
   const bonded = new Set<number>()
   const key = (a: number, b: number): number => (a < b ? a * N + b : b * N + a)
@@ -259,6 +367,27 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
         b.x += ux * (b.w / wsum)
         b.y += uy * (b.w / wsum)
         b.z += uz * (b.w / wsum)
+      }
+    }
+
+    // 3b. THE STUFFING: internal pressure, outward along the current surface
+    // normal, on every free node of the closed part. Nothing here caps it — the
+    // yarn's own constraints above, the pinned magic ring at the pole and the
+    // table below are what it settles against.
+    if (stuffing > 0) {
+      if (it % 20 === 0 && it > 0) refreshNormals()
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i]!
+        if (n.w === 0) continue
+        const k = roundOf![i]!
+        if (k < 0) continue
+        const r = Math.hypot(n.x, n.y)
+        if (r > 1e-6) {
+          const f = 1 + (step * rn[k]!) / r
+          n.x *= f
+          n.y *= f
+        }
+        n.z += step * zn[k]!
       }
     }
 
@@ -364,7 +493,12 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
     // locally.
     if (s0) {
       const mer = model.meridian!
-      const kN = cfg.layoutK * 0.4
+      // Stuffed, the worked profile is only a SOFT PRIOR (cfg.stuffPrior): it
+      // stops rounds wandering along the meridian, and the pressure and the
+      // yarn decide the surface between them. Unstuffed it is the full hold it
+      // has always been, and every existing build is bit-identical.
+      const kL = stuffing > 0 ? cfg.layoutK * (cfg.stuffPrior ?? 0.25) : cfg.layoutK
+      const kN = kL * 0.4
       for (let i = 0; i < nodes.length; i++) {
         const n = nodes[i]!
         if (n.w === 0) continue
@@ -374,8 +508,8 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
         const dz = s0[i]!.z - n.z
         const a = dr * t.tr + dz * t.tz // meridian shortfall
         const b = dr * -t.tz + dz * t.tr // normal shortfall
-        const mr = a * t.tr * cfg.layoutK + b * -t.tz * kN
-        const mz = a * t.tz * cfg.layoutK + b * t.tr * kN
+        const mr = a * t.tr * kL + b * -t.tz * kN
+        const mz = a * t.tz * kL + b * t.tr * kN
         if (r > 1e-6) {
           const f = 1 + mr / r
           n.x *= f
@@ -384,5 +518,6 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
         n.z += mz
       }
     }
+
   }
 }

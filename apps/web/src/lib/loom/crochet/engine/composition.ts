@@ -179,6 +179,11 @@ interface PlacedPart {
   ctrl: V3[]
   /** World bounding box after placement (for stacking + framing). */
   bounds: { minx: number; maxx: number; miny: number; maxy: number; minz: number; maxz: number }
+  /** The part's own built+relaxed geometry and the rigid transform that put it
+   *  here — the contact pass deforms the NODES and re-derives ctrl, so the
+   *  audit gate runs on the geometry that is actually rendered. */
+  built?: BuiltContinuous
+  xform?: { R: number[][]; T: V3; scale: number; c: V3 }
 }
 
 /** A prop resolved into world millimetres: a centre plus three semi-axis
@@ -264,6 +269,99 @@ function bbox(pts: V3[]): PlacedPart['bounds'] {
   }
   return { minx, maxx, miny, maxy, minz, maxz }
 }
+
+
+/** A part's settled SHELL as a surface of revolution: its pole-to-pole axis
+ *  (the strand starts on the magic ring at one pole and fastens off at the
+ *  other, so the first and last control points name it whatever rigid transform
+ *  the placement applied), binned along that axis, widest radius per bin,
+ *  smoothed. Used only by the contact pass. */
+interface Shell {
+  c: V3
+  axis: V3
+  t0: number
+  step: number
+  R: number[]
+}
+
+function buildShell(cloud: V3[], bins = 16): Shell {
+  let cx = 0, cy = 0, cz = 0
+  for (const p of cloud) { cx += p.x; cy += p.y; cz += p.z }
+  const c: V3 = { x: cx / cloud.length, y: cy / cloud.length, z: cz / cloud.length }
+  const p0 = cloud[0]!
+  const p1 = cloud[cloud.length - 1]!
+  const ax = p1.x - p0.x, ay = p1.y - p0.y, az = p1.z - p0.z
+  const al = Math.hypot(ax, ay, az) || 1
+  const axis: V3 = { x: ax / al, y: ay / al, z: az / al }
+  let lo = Infinity, hi = -Infinity
+  for (const p of cloud) {
+    const t = (p.x - c.x) * axis.x + (p.y - c.y) * axis.y + (p.z - c.z) * axis.z
+    if (t < lo) lo = t
+    if (t > hi) hi = t
+  }
+  const step = (hi - lo) / bins || 1
+  const R = new Array<number>(bins + 1).fill(0)
+  for (const p of cloud) {
+    const dx = p.x - c.x, dy = p.y - c.y, dz = p.z - c.z
+    const t = dx * axis.x + dy * axis.y + dz * axis.z
+    const rho = Math.sqrt(Math.max(dx * dx + dy * dy + dz * dz - t * t, 0))
+    const k = Math.max(0, Math.min(bins, Math.round((t - lo) / step)))
+    if (rho > R[k]!) R[k] = rho
+  }
+  // One smoothing pass: the per-bin maximum picks up the yarn's own relief, and
+  // a jagged shell would make a jagged contact displacement — which is exactly
+  // what an interlock cannot survive.
+  const Rs = R.slice()
+  for (let k = 1; k < R.length - 1; k++) Rs[k] = (R[k - 1]! + 2 * R[k]! + R[k + 1]!) / 4
+  return { c, axis, t0: lo, step, R: Rs }
+}
+
+/** Signed depth of a world point inside a shell (> 0 = inside, mm) and the
+ *  shell's outward unit normal there. */
+function shellProbe(sh: Shell, p: V3): { depth: number; n: V3 } | null {
+  const dx = p.x - sh.c.x, dy = p.y - sh.c.y, dz = p.z - sh.c.z
+  const t = dx * sh.axis.x + dy * sh.axis.y + dz * sh.axis.z
+  const wx = dx - t * sh.axis.x, wy = dy - t * sh.axis.y, wz = dz - t * sh.axis.z
+  const rho = Math.hypot(wx, wy, wz)
+  if (rho < 1e-6) return null
+  const f = (t - sh.t0) / sh.step
+  if (f < 0 || f > sh.R.length - 1) return null // past a pole — no contact here
+  const i = Math.max(0, Math.min(sh.R.length - 2, Math.floor(f)))
+  const u = f - i
+  const R = sh.R[i]! * (1 - u) + sh.R[i + 1]! * u
+  const dRdt = (sh.R[i + 1]! - sh.R[i]!) / sh.step
+  // The shell is rho = R(t); the outward normal of that surface is the radial
+  // direction minus the profile's own slope along the axis.
+  let nx = wx / rho - dRdt * sh.axis.x
+  let ny = wy / rho - dRdt * sh.axis.y
+  let nz = wz / rho - dRdt * sh.axis.z
+  const nl = Math.hypot(nx, ny, nz) || 1
+  nx /= nl; ny /= nl; nz /= nl
+  return { depth: R - rho, n: { x: nx, y: ny, z: nz } }
+}
+
+/**
+ * CONTACT FLATTENING (§8f-9). Two stuffed pieces sewn together do not pass
+ * through each other and they do not meet at a hard line: each presses into the
+ * other and the join settles as a shared flattened lens — the body dimples into
+ * a soft socket round the limb, the limb's own fabric flattens where it enters.
+ * Rigidly placed shells just intersect, and the render shows the sharp circle
+ * where one surface crosses the other.
+ *
+ * The pass is mutual and BOTH sides yield: every control point of either piece
+ * within `band` of the other's settled surface is drawn onto that surface, with
+ * a taper to zero at the band edge so nothing creases. Fabric that is deeper in
+ * than the band is left alone — that is the SEAM, the part of the piece that has
+ * been sewn inside its neighbour and is not visible; `seat` says how much of it
+ * there is. What the pass changes is only the fabric you can see.
+ *
+ * The displacement is applied to each part's own relaxed NODES, so the audit
+ * that gates the composition is re-run on the geometry that is actually
+ * rendered — a contact that broke an interlock would fail the gate like
+ * anything else.
+ */
+const CONTACT_BAND_D = 1.2
+const CONTACT_YIELD = 0.6
 
 /**
  * Build → relax → AUDIT → place every part into one composed world. Each part is
@@ -374,10 +472,78 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       return { x: T.x + r.x, y: T.y + r.y, z: T.z + r.z }
     })
     const worldBounds = bbox(ctrl)
-    const pp: PlacedPart = { part, ctrl, bounds: worldBounds }
+    const pp: PlacedPart = { part, ctrl, bounds: worldBounds, built, xform: { R, T, scale, c } }
     placed.push(pp)
     byName.set(part.name, pp)
     allNodes.push(...ctrl)
+  }
+
+  // ---- CONTACT FLATTENING (see above). Mutual, both sides yield, and the
+  //      result is re-audited because it moves real stitches.
+  const band = CONTACT_BAND_D * yr * 1.7
+  const pairs: [PlacedPart, PlacedPart][] = []
+  for (const pp of placed) {
+    const on = (pp.part.place as { on: string }).on
+    if (on === 'ground') continue
+    const parent = byName.get(on)
+    if (parent && parent !== pp) pairs.push([pp, parent])
+  }
+  if (pairs.length) {
+    const shell = new Map<PlacedPart, Shell>()
+    for (const pp of placed) shell.set(pp, buildShell(pp.ctrl))
+    const move = new Map<PlacedPart, V3[]>()
+    for (const pp of placed) move.set(pp, pp.ctrl.map(() => ({ x: 0, y: 0, z: 0 })))
+    const press = (a: PlacedPart, b: PlacedPart): void => {
+      const sh = shell.get(b)!
+      const dm = move.get(a)!
+      for (let i = 0; i < a.ctrl.length; i++) {
+        const pr = shellProbe(sh, a.ctrl[i]!)
+        if (!pr) continue
+        const h = pr.depth
+        if (Math.abs(h) >= band) continue
+        const w = CONTACT_YIELD * (1 - Math.abs(h) / band)
+        const d = h * w
+        dm[i]!.x += pr.n.x * d
+        dm[i]!.y += pr.n.y * d
+        dm[i]!.z += pr.n.z * d
+      }
+    }
+    for (const [child, parent] of pairs) {
+      press(child, parent)
+      press(parent, child)
+    }
+    // Push each world displacement back onto the part's own nodes (the inverse
+    // of  world = T + scale·R·(local − centre)  is  local += Rᵀ·Δ / scale), then
+    // re-derive the control points and re-audit.
+    problems.length = 0
+    for (const pp of placed) {
+      const dm = move.get(pp)!
+      const { R, T, scale, c } = pp.xform!
+      const nodes = pp.built!.model.nodes
+      const path = pp.built!.strandPath
+      let touched = false
+      for (let i = 0; i < path.length; i++) {
+        const d = dm[i]!
+        if (d.x === 0 && d.y === 0 && d.z === 0) continue
+        touched = true
+        const n = nodes[path[i]!]!
+        n.x += (R[0]![0]! * d.x + R[1]![0]! * d.y + R[2]![0]! * d.z) / scale
+        n.y += (R[0]![1]! * d.x + R[1]![1]! * d.y + R[2]![1]! * d.z) / scale
+        n.z += (R[0]![2]! * d.x + R[1]![2]! * d.y + R[2]![2]! * d.z) / scale
+      }
+      if (touched) {
+        pp.ctrl = path.map((ni) => {
+          const v = nodes[ni]!
+          const r = applyRot(R, { x: scale * (v.x - c.x), y: scale * (v.y - c.y), z: scale * (v.z - c.z) })
+          return { x: T.x + r.x, y: T.y + r.y, z: T.z + r.z }
+        })
+        pp.bounds = bbox(pp.ctrl)
+      }
+      for (const pr of auditProblems({ built: pp.built!, recipe: undefined as never }, pp.part.name, 0, yr))
+        problems.push(`${pp.part.name}: ${pr}`)
+    }
+    allNodes.length = 0
+    for (const pp of placed) allNodes.push(...pp.ctrl)
   }
 
   // The non-yarn notions, seated on the finished pieces. They carry NO yarn and
