@@ -103,6 +103,23 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
   // nothing rather than a guess.
   const band = row.stitchability != null ? STITCHABILITY_BANDS[row.stitchability] : undefined
 
+  // Difficulty and stitchability read as two competing verdicts when they sit
+  // in the spec grid as separate rows. They are one thought: how hard it is
+  // and how it feels to work. One row, one label, one explanation.
+  const difficultyLabel = row.difficulty ? prettify(row.difficulty) : null
+  const goingLabel =
+    difficultyLabel && band
+      ? 'Difficulty and stitching'
+      : difficultyLabel
+        ? 'Difficulty'
+        : 'Stitching'
+  const goingValue =
+    difficultyLabel && band
+      ? `Difficulty: ${difficultyLabel}. Stitching: ${band.label}`
+      : difficultyLabel
+        ? difficultyLabel
+        : (band?.label ?? '')
+
   const related = await prisma.pattern.findMany({
     where: {
       ownerUserId: null,
@@ -271,16 +288,19 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
             <div><dt>Finished</dt><dd>{finishedW.toFixed(1)} × {finishedH.toFixed(1)} cm</dd></div>
             <div><dt>Fabric</dt><dd>{row.fabricCountSuggested}-count Aida</dd></div>
             <div><dt>Skeins</dt><dd>~{totalSkein.toFixed(0)} total</dd></div>
-            {band && (
-              <div>
-                <dt>Stitchability</dt>
+            {(band || row.difficulty) && (
+              <div className="pattern-detail-spec-going">
+                <dt>{goingLabel}</dt>
                 <dd>
-                  {band.label}
-                  <SpecTip label="What stitchability means">{band.blurb}</SpecTip>
+                  {goingValue}
+                  <SpecTip label="What difficulty and stitching mean">
+                    Difficulty is the skill the pattern asks for. Stitching is
+                    how much attention the chart wants while you work it
+                    {band ? `: ${lowerFirst(band.blurb)}` : '.'}
+                  </SpecTip>
                 </dd>
               </div>
             )}
-            {row.difficulty && <div><dt>Difficulty</dt><dd>{prettify(row.difficulty)}</dd></div>}
             {row.estimatedHours && <div><dt>Time</dt><dd>~{row.estimatedHours}h</dd></div>}
             {row.hasBackstitch && <div><dt>Back-stitch</dt><dd>Yes</dd></div>}
             {row.hasFrenchKnots && <div><dt>French knots</dt><dd>Yes</dd></div>}
@@ -378,6 +398,10 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
 
 function prettify(s: string): string {
   return s.charAt(0) + s.slice(1).toLowerCase()
+}
+/** Lower-case the first letter so a band blurb can follow a colon. */
+function lowerFirst(s: string): string {
+  return s.charAt(0).toLowerCase() + s.slice(1)
 }
 function formatSkein(n: number): string {
   return Number.isInteger(n) ? `${n}` : n.toFixed(1)

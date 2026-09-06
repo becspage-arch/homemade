@@ -120,6 +120,11 @@
   color: var(--color-espresso);
   margin: 0;
 }
+/* Difficulty and stitching share one row, so it spans the whole spec grid
+   and the tooltip has room to sit under it without clipping. */
+.pattern-detail-spec-going {
+  grid-column: 1 / -1;
+}
 
 .pattern-detail-floss h2,
 .pattern-detail-designer-card h2,
