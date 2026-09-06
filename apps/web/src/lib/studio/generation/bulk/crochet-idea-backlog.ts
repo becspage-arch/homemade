@@ -175,6 +175,16 @@ const SEARCH_NOUN: Record<string, string> = {
   doily: 'doily',
   edging: 'edging',
   'applique-flower': 'flower applique',
+  'flower-bouquet': 'bouquet',
+  'potted-plant': 'potted plant',
+  wreath: 'wreath',
+  stocking: 'stocking',
+  'keyring-charm': 'keyring',
+  'play-food': 'play food',
+  'doll-clothes': 'doll clothes',
+  miniature: 'miniature',
+  swimwear: 'bikini',
+  'pet-clothing': 'dog jumper',
 }
 
 /**
@@ -1112,6 +1122,62 @@ const WALL_HANGING: Row[] = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 const THEMES_HOME: Record<string, Theme[]> = {
+  wreath: [
+    ['Spring blossom door wreath', 'blooms and buds worked round a hoop', 'nursery-pastel'],
+    ['Autumn leaf and acorn ring', 'oak and maple leaves with two acorns', 'foxglove-autumn'],
+    ['Winter holly and berry ring', 'toothed leaves and clustered berries', 'winter-frost'],
+    ['Halloween pumpkin wreath', 'small pumpkins between dark leaves', 'gothic-dusk'],
+    ['Eucalyptus and dried grass hoop', 'grey green rounds along a bare ring', 'scandi-calm'],
+    ['Easter egg and chick ring', 'speckled eggs with two small chicks', 'nursery-pastel'],
+    ['Sunflower summer wreath', 'five heads spaced round a wrapped ring', 'bright-pop'],
+    ['Lavender and wheat ring', 'spikes and ears bound at one side', 'wildflower-meadow'],
+    ['Toadstool woodland wreath', 'caps and moss along a twig ring', 'mushroom-woodland'],
+    ['Nautical rope wreath', 'a wrapped ring with shells and a knot', 'coastal-breeze'],
+    ['Advent candle ring', 'four candle shapes set on a flat ring', 'celestial-night'],
+    ['Monochrome minimal hoop', 'one wrapped arc on a bare metal ring', 'elegant-mono'],
+  ],
+  stocking: [
+    ['Fair isle look stocking', 'a colourwork band round a plain leg', 'winter-frost'],
+    ['Mini stocking advent set of twenty four', 'small stockings numbered along a cord', 'bright-pop'],
+    ['Personalised name stocking', 'a plain leg with a stitched name band', 'scandi-calm'],
+    ['Santa boot stocking', 'a red leg with a white fur cuff', 'gothic-dusk'],
+    ['Gingerbread house advent', 'twenty four pockets across a house front', 'foxglove-autumn'],
+    ['Nordic star stocking', 'eight point stars on cream', 'winter-frost'],
+    ['Cabled aran stocking', 'post stitches worked as travelling cables', 'elegant-mono'],
+    ['Christmas tree advent hanging', 'numbered pockets stepped up a tree', 'celestial-night'],
+    ['Striped candy cane stocking', 'diagonal red and white bands', 'candy-kawaii'],
+    ['Woodland animal stocking', 'a fox face across the front panel', 'mushroom-woodland'],
+    ['Gift sack for under the tree', 'a large drawstring sack with a tag', 'vintage-tea'],
+    ['Reindeer face stocking', 'antlers and a red nose on the cuff', 'bright-pop'],
+  ],
+  'flower-bouquet': [
+    ['Tulip bouquet of nine stems', 'nine wired tulips tied with a ribbon', 'nursery-pastel'],
+    ['Single long stem rose', 'a spiralled bloom on a wired stem with leaves', 'gothic-dusk'],
+    ['Sunflower stem trio', 'three tall heads with a dark seeded centre', 'foxglove-autumn'],
+    ['Lavender stem bundle', 'seven slim spikes tied with twine', 'wildflower-meadow'],
+    ['Daffodil spring posy', 'trumpet centres on six stems', 'nursery-pastel'],
+    ['Peony bridal bouquet', 'layered ruffled petals in a hand tied dome', 'vintage-tea'],
+    ['Dried grass and pampas spray', 'feathered heads on long bare stems', 'boho-earth'],
+    ['Forget me not posy in a jar', 'tiny five petal blooms on fine wire', 'coastal-breeze'],
+    ['Graduation rose and eucalyptus bunch', 'buds and grey green leaves wrapped in paper', 'scandi-calm'],
+    ['Poppy field bunch', 'thin petals round a black boss', 'bright-pop'],
+    ['Cherry blossom branch', 'small blooms set along a wired twig', 'candy-kawaii'],
+    ['Winter berry and pine spray', 'red berries among sprigs of needles', 'winter-frost'],
+  ],
+  'potted-plant': [
+    ['Monstera in a terracotta pot', 'three split leaves on thick stems', 'boho-earth'],
+    ['Succulent trio in one tray', 'a rosette, a jade and a haworthia', 'scandi-calm'],
+    ['Prickly pear cactus', 'two flat pads with a red bloom', 'bright-pop'],
+    ['String of pearls hanging pot', 'a trailing chain of round beads', 'wildflower-meadow'],
+    ['Snake plant in a ribbed pot', 'five tall blades with a pale edge', 'elegant-mono'],
+    ['Aloe in a stone pot', 'thick toothed leaves in a fan', 'coastal-breeze'],
+    ['Saguaro cactus in sand', 'a tall column with two raised arms', 'foxglove-autumn'],
+    ['Fern in a hanging basket', 'arched fronds with notched edges', 'mushroom-woodland'],
+    ['Lithops pebble plants', 'four split stones in a shallow dish', 'boho-earth'],
+    ['Barrel cactus with a flower crown', 'a ribbed dome topped with blooms', 'candy-kawaii'],
+    ['Herb pot set of three', 'basil, mint and rosemary in matching pots', 'wildflower-meadow'],
+    ['Bonsai tree in a shallow dish', 'a twisted trunk under a leaf cloud', 'elegant-mono'],
+  ],
   blanket: [
     ['Moon phase throw', 'eight moons waxing to full across indigo', 'celestial-night'],
     ['Wildflower meadow throw', 'scattered bloom motifs joined across cream', 'wildflower-meadow'],
@@ -1421,6 +1487,20 @@ const THEMES_EXTREMITIES: Record<string, Theme[]> = {
 
 /** Bags, small accessories and the kitchen shelves the engine cannot reach. */
 const THEMES_CARRY: Record<string, Theme[]> = {
+  'keyring-charm': [
+    ['Strawberry keyring', 'a red berry with a green calyx and a split ring', 'bright-pop'],
+    ['Highland cow bag charm', 'a shaggy fringe over a wide muzzle', 'mushroom-woodland'],
+    ['Mushroom charm pair', 'two spotted caps on one clip', 'mushroom-woodland'],
+    ['Ghost clip on', 'a small white ghost with a stitched face', 'gothic-dusk'],
+    ['Frog keyring', 'a squat green body and two dome eyes', 'wildflower-meadow'],
+    ['Bee charm', 'a striped body and two tiny wings', 'foxglove-autumn'],
+    ['Axolotl bag charm', 'pink frills either side of the head', 'candy-kawaii'],
+    ['Star and moon charm set', 'two flat shapes on one lanyard', 'celestial-night'],
+    ['Avocado keyring', 'two halves joined round a brown stone', 'bright-pop'],
+    ['Chunky heart keyring', 'a padded heart with a wrist strap', 'candy-kawaii'],
+    ['Rainbow cloud clip', 'a cloud with seven short streamers', 'nursery-pastel'],
+    ['Initial letter charm', 'one stiffened letter on a split ring', 'elegant-mono'],
+  ],
   bag: [
     ['Bobble bucket bag', 'a round base and a drawstring top', 'candy-kawaii'],
     ['Tapestry shopper', 'a two-colour geometric across the front', 'boho-earth'],
@@ -1530,6 +1610,34 @@ const THEMES_CARRY: Record<string, Theme[]> = {
 /** Garments. Every one needs grading, shaping and a schematic: the furthest
  *  from the engine and, on Ravelry and LoveCrafts, the most browsed. */
 const THEMES_GARMENT: Record<string, Theme[]> = {
+  swimwear: [
+    ['Triangle bikini set', 'adjustable ties at the neck and the hip', 'coastal-breeze'],
+    ['Shell cup bralette', 'two shaped shell cups on a cord', 'candy-kawaii'],
+    ['Festival lace bralette', 'an openwork front with a tie back', 'boho-earth'],
+    ['High waisted bikini bottoms', 'a wide ribbed waistband', 'bright-pop'],
+    ['Beach cover up dress', 'an open mesh dress to wear over swimwear', 'scandi-calm'],
+    ['One piece swimsuit', 'a scooped front worked in one piece', 'elegant-mono'],
+    ['Bandeau top with a halter tie', 'a straight cut band and one tie', 'candy-kawaii'],
+    ['Fringed festival top', 'a deep fringe below a fitted band', 'foxglove-autumn'],
+    ['Size inclusive bralette', 'graded cups across a wide size run', 'vintage-tea'],
+    ['Colour block swim set', 'three blocks split across the pieces', 'bright-pop'],
+    ['Openwork sarong', 'a mesh wrap tied at the hip', 'boho-earth'],
+    ['Scallop edge bikini top', 'a shell edging along both cups', 'nursery-pastel'],
+  ],
+  'pet-clothing': [
+    ['Striped dog jumper', 'a tube body with two leg holes and a collar', 'bright-pop'],
+    ['Cable look dog coat', 'post stitch cables along the back', 'winter-frost'],
+    ['Small dog hoodie', 'a hood over a fitted chest panel', 'scandi-calm'],
+    ['Cat jumper in fine cotton', 'a light body with a wide neck', 'candy-kawaii'],
+    ['Rain coat with a belly strap', 'a shaped back panel and a fastening', 'coastal-breeze'],
+    ['Christmas dog jumper', 'a snowflake band across the shoulders', 'winter-frost'],
+    ['Puppy bandana', 'a triangle that ties at the throat', 'foxglove-autumn'],
+    ['Ruffle dog vest', 'a frilled edge along a short vest', 'vintage-tea'],
+    ['Greyhound coat', 'a long deep chested shape', 'elegant-mono'],
+    ['Reindeer antler pet hat', 'a small hat with two antlers', 'mushroom-woodland'],
+    ['Rabbit cosy jumper', 'a very small body tube with wide holes', 'nursery-pastel'],
+    ['Dog paw warmers set of four', 'four short ribbed tubes', 'boho-earth'],
+  ],
   cardigan: [
     ['Shawl collar wrap cardigan', 'a deep collar and a tie belt', 'foxglove-autumn'],
     ['Bell sleeve cardigan', 'a flared cuff and a fitted body', 'candy-kawaii'],
@@ -1674,6 +1782,54 @@ const THEMES_GARMENT: Record<string, Theme[]> = {
   ],
 }
 
+/** Toy shelves the loom cannot reach yet. Play food needs many small shaped
+ *  pieces in one set, doll clothes need garment shaping at doll scale, and
+ *  miniatures need a thread gauge the stitch engine has never been run at. */
+const THEMES_TOYS: Record<string, Theme[]> = {
+  'play-food': [
+    ['Breakfast plate set', 'a fried egg, two rashers and a slice of toast', 'bright-pop'],
+    ['Fruit bowl set of six', 'an apple, a pear, a banana, an orange, a plum and a lemon', 'bright-pop'],
+    ['Market vegetable basket', 'a carrot, a leek, a tomato and a head of broccoli', 'wildflower-meadow'],
+    ['Birthday cake with slices', 'a round cake that comes apart into wedges', 'candy-kawaii'],
+    ['Sushi tray', 'four rolls, a nigiri and a soy dish', 'elegant-mono'],
+    ['Tea party set', 'a pot, two cups and a plate of biscuits', 'vintage-tea'],
+    ['Pizza with removable toppings', 'eight slices and loose toppings to place', 'bright-pop'],
+    ['Ice cream cone stack', 'three scoops that sit on one cone', 'candy-kawaii'],
+    ['Picnic sandwich set', 'a cut round loaf, a wedge of cheese and a tomato', 'wildflower-meadow'],
+    ['Sunday roast dinner', 'a joint, three vegetables and a jug of gravy', 'foxglove-autumn'],
+    ['Doughnut box of six', 'iced rings with sprinkle stitches', 'candy-kawaii'],
+    ['Egg box of six', 'speckled eggs in a fitted tray', 'nursery-pastel'],
+  ],
+  'doll-clothes': [
+    ['Party dress with a full skirt', 'a fitted bodice over gathered layers', 'candy-kawaii'],
+    ['Duffle coat and scarf', 'a hooded coat with toggle fastenings', 'winter-frost'],
+    ['Ballet leotard and tutu', 'a stretchy body under a stiff frill', 'nursery-pastel'],
+    ['Fairy wings and flower crown', 'two shaped wings and a ring of blooms', 'wildflower-meadow'],
+    ['Dungarees and striped tee', 'bib front dungarees over a banded top', 'bright-pop'],
+    ['Raincoat and wellingtons', 'a yellow coat and two short boots', 'coastal-breeze'],
+    ['Pyjama set with slippers', 'a two piece and a pair of soft shoes', 'nursery-pastel'],
+    ['Wedding gown with a veil', 'a long ivory dress and a lace veil', 'elegant-mono'],
+    ['School uniform set', 'a pinafore, a shirt collar and a satchel', 'scandi-calm'],
+    ['Jumper and pleated skirt', 'a post stitch jumper over knife pleats', 'foxglove-autumn'],
+    ['Swimsuit and sun hat', 'a one piece and a wide brimmed hat', 'coastal-breeze'],
+    ['Witch cape and pointed hat', 'a caped cloak and a tall brim', 'gothic-dusk'],
+  ],
+  miniature: [
+    ['Dolls house armchair', 'a scale armchair worked on a one millimetre hook', 'vintage-tea'],
+    ['Micro teddy under three centimetres', 'a jointed look bear at thread gauge', 'mushroom-woodland'],
+    ['Miniature tea set on a tray', 'a pot, two cups and two saucers at scale', 'vintage-tea'],
+    ['Dolls house rag rug', 'an oval rug in thread for a scale floor', 'boho-earth'],
+    ['Tiny potted cactus for a shelf', 'a two centimetre plant in a thread pot', 'bright-pop'],
+    ['Micro amigurumi bunny', 'a thumbnail sized rabbit with sewn eyes', 'nursery-pastel'],
+    ['Dolls house bedding set', 'a coverlet, a pillow and a bolster', 'elegant-mono'],
+    ['Miniature basket of apples', 'a thread basket and six tiny fruit', 'foxglove-autumn'],
+    ['Fairy door and toadstool scene', 'a small door with a spotted cap beside it', 'mushroom-woodland'],
+    ['Micro cactus garden in a thimble', 'three plants set in a metal thimble', 'scandi-calm'],
+    ['Dolls house curtains and pelmet', 'thread lace panels for a scale window', 'winter-frost'],
+    ['Tiny bunch of violets', 'six thread blooms tied with a strand', 'wildflower-meadow'],
+  ],
+}
+
 /** Doilies, edgings and appliqués: fine lace and picot work the engine has no
  *  stitch vocabulary for yet, plus the small motifs that finish other pieces. */
 const THEMES_LACE: Record<string, Theme[]> = {
@@ -1745,6 +1901,7 @@ const ALL_THEMES: Record<string, Theme[]> = {
   ...THEMES_EXTREMITIES,
   ...THEMES_CARRY,
   ...THEMES_GARMENT,
+  ...THEMES_TOYS,
   ...THEMES_LACE,
 }
 
@@ -1817,67 +1974,80 @@ export const CROCHET_IDEA_THEMES: CrochetIdea[] = CROCHET_IDEA_BACKLOG.filter((i
 /**
  * THE RECOMMENDED SHELF TARGETS, as data rather than prose.
  *
- * A PROPOSAL, not the live config: `CROCHET_SHELVES` in `../categories.ts` is
- * still the number the autopilot stops at. These are the numbers the September
- * 2026 market comparison argues for — total 1,500 rather than 1,200, with toys
- * up from 22% to 28% of the catalogue, motifs and granny squares nearly
- * doubled, dishcloths up (the most common first project a beginner makes), bags
- * up (granny-square bags and mesh totes are the 2026 trend), and headbands down
- * (a modest niche that only carries thirty because the engine happens to build
- * it). Rebecca decides whether to adopt them; adopting means editing
- * CROCHET_SHELVES, and the category target follows because it is the sum.
+ * Now a MIRROR of the live config rather than a proposal: Rebecca adopted the
+ * 1,500 split on 6 September 2026, so `CROCHET_SHELVES` in `../categories.ts`
+ * carries these numbers and this map exists to keep the check script and the
+ * test honest about the two agreeing.
+ *
+ * Revised the same evening for the ten shelves the top-of-Etsy pass added
+ * (flowers and bouquets, keyrings and bag charms, potted plants, play food,
+ * doll clothes, miniatures, wreaths, stockings and advent, swimwear, pet
+ * clothing). The total is still 1,500: the 180 those carry came off shelves
+ * that were quietly absorbing them, chiefly amigurumi (220 to 180, because
+ * keyrings, play food and miniatures were all being counted as amigurumi) and
+ * applique-flower (20 to 14, because bouquets moved out of it).
  */
 export const RECOMMENDED_CROCHET_SHELF_TARGETS: Record<string, number> = {
   // Toys
-  amigurumi: 220,
-  'animal-toy': 100,
-  doll: 50,
-  'baby-toy-lovey': 50,
+  amigurumi: 180,
+  'animal-toy': 85,
+  doll: 44,
+  'baby-toy-lovey': 44,
+  'play-food': 22,
+  'doll-clothes': 16,
+  miniature: 14,
   // Home and living
-  blanket: 142,
-  cushion: 36,
-  basket: 25,
-  ornament: 36,
-  'wall-hanging': 28,
-  rug: 12,
+  blanket: 130,
+  cushion: 32,
+  basket: 22,
+  ornament: 30,
+  wreath: 12,
+  stocking: 12,
+  'flower-bouquet': 30,
+  'potted-plant': 20,
+  'wall-hanging': 26,
+  rug: 10,
   'plant-hanger': 12,
-  bunting: 14,
+  bunting: 12,
   'pet-bed': 10,
   pouffe: 6,
   // Headwear, neckwear, wraps
-  hat: 70,
-  scarf: 50,
-  headband: 24,
-  cowl: 30,
-  shawl: 28,
-  beret: 12,
-  wrap: 12,
-  poncho: 10,
+  hat: 62,
+  scarf: 42,
+  headband: 20,
+  cowl: 26,
+  shawl: 24,
+  beret: 10,
+  wrap: 10,
+  poncho: 8,
   // Hands, feet, legs
-  slippers: 20,
-  'fingerless-mitts': 18,
-  socks: 12,
-  booties: 14,
+  slippers: 18,
+  'fingerless-mitts': 16,
+  socks: 10,
+  booties: 12,
   mittens: 10,
   gloves: 6,
   legwarmers: 6,
   // Bags and small accessories
   bag: 40,
-  purse: 18,
-  'hair-accessory': 12,
+  'keyring-charm': 30,
+  purse: 16,
+  'hair-accessory': 10,
   jewellery: 8,
   backpack: 6,
   belt: 3,
   // Kitchen and bath
-  dishcloth: 36,
-  potholder: 20,
+  dishcloth: 32,
+  potholder: 18,
   'tea-cosy': 10,
   towel: 6,
   // Garments
-  cardigan: 25,
-  'jumper-pullover': 20,
-  'tee-top': 20,
-  vest: 14,
+  cardigan: 22,
+  'jumper-pullover': 18,
+  'tee-top': 18,
+  vest: 12,
+  swimwear: 12,
+  'pet-clothing': 12,
   dress: 10,
   tunic: 5,
   skirt: 5,
@@ -1886,13 +2056,13 @@ export const RECOMMENDED_CROCHET_SHELF_TARGETS: Record<string, number> = {
   shorts: 4,
   'jumpsuit-romper': 3,
   // Motifs and components
-  'motif-granny-square': 60,
-  coaster: 30,
+  'motif-granny-square': 52,
+  coaster: 26,
   doily: 22,
-  edging: 18,
-  'applique-flower': 20,
+  edging: 16,
+  'applique-flower': 14,
   bookmark: 10,
-  pincushion: 4,
+  pincushion: 3,
 }
 
 /** The backlog entries for one shelf, in working order. */

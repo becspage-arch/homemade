@@ -19,6 +19,14 @@
  * deduped edit here + a re-seed of the affected craft's shelves. It is never
  * done inline. New craft applicability is the same: edit `crafts`, re-seed.
  *
+ * TEN TYPES ADDED 6 September 2026 from a top-of-Etsy pass over what the
+ * vocabulary did not name: `swimwear`, `pet-clothing`, `keyring-charm`,
+ * `wreath`, `stocking`, `flower-bouquet`, `potted-plant`, `play-food`,
+ * `doll-clothes` and `miniature`. Each is a distinct OBJECT the old set forced
+ * onto a shelf that means something else (a bouquet is not an appliqué, a dog
+ * jumper is not a pet bed, a keyring is not jewellery), so each earns a slug
+ * rather than a tag. Re-seed every affected craft's shelves after reading this.
+ *
  * `description` is the PUBLIC, voice-clean shelf/landing intro (a plain list of
  * what's inside — see [[feedback_category_description_voice]]). `guidance` is
  * the INTERNAL rule an authoring/born-shelf pass follows so the same object
@@ -115,6 +123,12 @@ const GARMENTS: ItemType[] = [
   { group: 'garments', slug: 'jumpsuit-romper', name: 'Jumpsuits & Rompers', aliases: ['romper', 'playsuit', 'onesie', 'dungarees'], crafts: [C, K, S], order: 110,
     description: 'One-piece jumpsuits, rompers and dungarees.',
     guidance: 'A one-piece garment joining top and trousers/shorts. Baby all-in-ones belong here.' },
+  { group: 'garments', slug: 'swimwear', name: 'Swimwear & Bralettes', aliases: ['bikini', 'bralette', 'swimsuit', 'beachwear'], crafts: [C, K, S], order: 120,
+    description: 'Swimwear and bralettes: bikini tops, bikini bottoms, one-pieces and beach cover-ups.',
+    guidance: 'A swim or bralette piece worn next to the skin. An everyday sleeveless top is vest; a beach dress is dress.' },
+  { group: 'garments', slug: 'pet-clothing', name: 'Pet Clothing', aliases: ['dog-sweater', 'dog-jumper', 'pet-jumper', 'pet-coat', 'cat-sweater'], crafts: [C, K, S], order: 130,
+    description: 'Clothes made for a pet to wear: dog jumpers, coats, vests and bandanas.',
+    guidance: 'A garment worn BY an animal. A bed, mat or blanket for a pet is pet-bed; a toy for a pet is animal-toy.' },
 ]
 
 // ── ACCESSORIES ─────────────────────────────────────────────────────────────
@@ -186,6 +200,9 @@ const BAGS: ItemType[] = [
   { group: 'bags', slug: 'hair-accessory', name: 'Hair Accessories', aliases: ['scrunchie', 'hair-tie', 'bow', 'headscarf'], crafts: [C, K, S], order: 60,
     description: 'Hair accessories: scrunchies, bows and ties.',
     guidance: 'Worn in the hair (scrunchie, bow, tie). A forehead band is headband.' },
+  { group: 'bags', slug: 'keyring-charm', name: 'Keyrings & Bag Charms', aliases: ['keyring', 'keychain', 'bag-charm', 'charm', 'clip-on'], crafts: [C, K, S], order: 70,
+    description: 'Keyrings, bag charms and clip-on minis.',
+    guidance: 'A small made piece finished with a ring, clip or lanyard to hang off keys or a bag. Worn on the body it is jewellery; a stuffed figure with no fitting is amigurumi.' },
 ]
 
 // ── HOME & LIVING ─────────────────────────────────────────────────────────────
@@ -220,6 +237,18 @@ const HOME_LIVING: ItemType[] = [
   { group: 'home-living', slug: 'ornament', name: 'Ornaments & Decorations', aliases: ['decoration', 'bauble', 'hanging-decoration'], crafts: [C, K, S, X, N], order: 100,
     description: 'Hanging ornaments and seasonal decorations.',
     guidance: 'A small made decoration, often hung (bauble, charm). A flat wall piece is wall-hanging.' },
+  { group: 'home-living', slug: 'wreath', name: 'Wreaths', aliases: ['door-wreath', 'ring-wreath'], crafts: [C, K, S], order: 110,
+    description: 'Wreaths for a door or a wall, seasonal and year round.',
+    guidance: 'A ring-shaped decoration built on or around a hoop. A strung line of shapes is bunting; a flat hung panel is wall-hanging.' },
+  { group: 'home-living', slug: 'stocking', name: 'Stockings & Advent Calendars', aliases: ['christmas-stocking', 'advent-calendar', 'gift-sack'], crafts: [C, K, S], order: 120,
+    description: 'Christmas stockings, mini stocking sets and advent calendars.',
+    guidance: 'A stocking, sack or numbered advent piece made to be filled. A small hanging decoration is ornament.' },
+  { group: 'home-living', slug: 'flower-bouquet', name: 'Flowers & Bouquets', aliases: ['bouquet', 'flower-stem', 'posy', 'stem'], crafts: [C, K, S], order: 130,
+    description: 'Flowers on stems and bouquets: tulips, roses, sunflowers and lavender.',
+    guidance: 'A flower made on a stem to stand in a vase or a bouquet. A flat flower sewn onto something else is applique-flower.' },
+  { group: 'home-living', slug: 'potted-plant', name: 'Potted Plants & Succulents', aliases: ['succulent', 'cactus', 'houseplant', 'plant'], crafts: [C, K, S], order: 140,
+    description: 'Potted plants: succulents, cacti, monstera and trailing greenery.',
+    guidance: 'A plant made together with its pot, to sit on a shelf. A cut stem for a vase is flower-bouquet; a cover for a real pot is plant-hanger.' },
 ]
 
 // ── KITCHEN & BATH ────────────────────────────────────────────────────────────
@@ -252,6 +281,15 @@ const TOYS: ItemType[] = [
   { group: 'toys', slug: 'baby-toy-lovey', name: 'Baby Toys & Loveys', aliases: ['lovey', 'comforter', 'rattle', 'teether'], crafts: [C, K, S], order: 40,
     description: 'Baby toys, loveys, comforters and rattles.',
     guidance: 'A soft baby comfort toy/rattle. A full animal/figure is animal-toy/doll.' },
+  { group: 'toys', slug: 'play-food', name: 'Play Food', aliases: ['pretend-food', 'food-toy', 'play-kitchen', 'play-shop'], crafts: [C, K, S], order: 50,
+    description: 'Play food and shop sets: fruit, vegetables, bakery, breakfast and picnic pieces.',
+    guidance: 'Pretend food or grocery items for play. An animal or human figure is animal-toy or doll.' },
+  { group: 'toys', slug: 'doll-clothes', name: 'Doll Clothes & Accessories', aliases: ['doll-outfit', 'doll-dress', 'doll-wardrobe'], crafts: [C, K, S], order: 60,
+    description: 'Clothes and accessories made to fit a doll: dresses, coats, hats and shoes.',
+    guidance: 'A garment or accessory sized for a doll rather than a person. The doll itself is doll.' },
+  { group: 'toys', slug: 'miniature', name: 'Miniatures', aliases: ['micro-crochet', 'dolls-house', 'miniatures', 'mini'], crafts: [C, K, S], order: 70,
+    description: 'Miniatures at dolls house scale: tiny animals, food, furniture and room pieces.',
+    guidance: 'A piece worked at miniature scale on a fine hook or needle, under about five centimetres. A full-size stuffed figure is amigurumi; a charm on a ring is keyring-charm.' },
 ]
 
 // ── DECORATIVE & COMPONENTS ───────────────────────────────────────────────────
