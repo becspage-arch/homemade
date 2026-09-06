@@ -4,6 +4,7 @@ import { prisma, Visibility } from '@homemade/db'
 import { inngest } from '../client'
 import {
   runNeedleworkBatch,
+  runCrochetBatch,
   crossStitchAttempt,
   crossStitchPlanContext,
   killIsUnrerollable,
@@ -34,7 +35,10 @@ import { isAutopilotEnabled } from '@/lib/studio/generation/bulk/autopilot-state
 import { liveShelfCounts } from '@/lib/studio/generation/bulk/dedupe-guard'
 import { allShelvesAtTarget } from '@/lib/studio/generation/bulk/shelf-plan'
 import { PATTERN_CATEGORIES, CROSS_STITCH_SHELVES } from '@/lib/studio/generation/categories'
-import { crossStitchSpendWindow, overCap } from '@/lib/studio/generation/bulk/spend-guard'
+import { crossStitchSpendWindow, overCap, crochetSpendWindow, overCrochetCap } from '@/lib/studio/generation/bulk/spend-guard'
+import { fargateRenderWired as crochetRenderWired } from '@/lib/studio/generation/bulk/crochet'
+import { liveCrochetShelfCounts } from '@/lib/studio/generation/bulk/crochet-dedupe'
+import { CROCHET_LANE_SHELVES } from '@/lib/studio/generation/bulk/crochet-planner'
 
 /**
  * Server-side BULK CATALOGUE generation — the cross-stitch + needlework gem
@@ -69,6 +73,13 @@ import { crossStitchSpendWindow, overCap } from '@/lib/studio/generation/bulk/sp
 
 const XS_CRON_COUNT = 10
 const NW_CRON_COUNT = 4
+/**
+ * Crochet's cron batch size. Kept small on purpose: every idea is a cold
+ * Fargate render of seven or eight minutes, and they run concurrently, so six
+ * is a batch that finishes inside the firing rather than one that overlaps the
+ * next. Raise it with a manual run, not with the cron.
+ */
+const CR_CRON_COUNT = 6
 const MAX_MANUAL = 20
 
 /** A run whose counters have not moved for this long is dead, not slow. */
@@ -83,6 +94,9 @@ const STALL_HOURS = 6
 const TARGETS: Record<Craft, number> = {
   'cross-stitch': Number(process.env.BULK_XS_TARGET) || PATTERN_CATEGORIES['cross-stitch']!.patternTarget,
   needlework: Number(process.env.BULK_NW_TARGET) || 1500,
+  // Also derived from its per-shelf targets, so the cron's stop point and the
+  // planner's shelf weighting read the same number.
+  crochet: Number(process.env.BULK_CROCHET_TARGET) || PATTERN_CATEGORIES.crochet!.patternTarget,
 }
 
 interface BatchEventData {
@@ -100,6 +114,9 @@ function manualCount(raw: unknown, fallback: number): number {
 async function publicCount(craft: Craft): Promise<number> {
   if (craft === 'needlework') {
     return prisma.needleworkPattern.count({ where: { ownerUserId: null, visibility: Visibility.PUBLIC } })
+  }
+  if (craft === 'crochet') {
+    return prisma.crochetPattern.count({ where: { ownerUserId: null, visibility: Visibility.PUBLIC } })
   }
   return prisma.pattern.count({ where: { type: 'CROSS_STITCH', ownerUserId: null, visibility: Visibility.PUBLIC } })
 }
@@ -133,6 +150,15 @@ async function preflight(craft: Craft, manual: boolean): Promise<PreflightResult
     if (capped) return { skip: capped, record: true }
   }
 
+  if (craft === 'crochet') {
+    // A crochet hero is the loom's render of the pattern's own program, so
+    // without the render there is no pattern to publish — not a poorer one.
+    if (!crochetRenderWired()) return { skip: 'render-not-wired' }
+    const window = await crochetSpendWindow()
+    const capped = overCrochetCap(window)
+    if (capped) return { skip: capped, record: true }
+  }
+
   if (!manual) {
     if (!(await isAutopilotEnabled(craft))) return { skip: `autopilot paused for ${craft}` }
     const count = await publicCount(craft)
@@ -144,6 +170,16 @@ async function preflight(craft: Craft, manual: boolean): Promise<PreflightResult
       const counts = await liveShelfCounts().catch(() => ({}) as Record<string, number>)
       if (Object.keys(counts).length && allShelvesAtTarget(CROSS_STITCH_SHELVES, counts)) {
         return { skip: 'every shelf at target', count, target: TARGETS[craft] }
+      }
+    }
+    if (craft === 'crochet') {
+      // Crochet's category target counts all fifty-seven shelves, most of which
+      // the loom cannot build for yet, so the category number would never be
+      // reached and the cron would never idle. It idles when every shelf that
+      // HAS a generation lane is full instead.
+      const counts = await liveCrochetShelfCounts().catch(() => ({}) as Record<string, number>)
+      if (allShelvesAtTarget(CROCHET_LANE_SHELVES, counts)) {
+        return { skip: 'every buildable shelf at target', count, target: TARGETS[craft] }
       }
     }
   }
@@ -571,6 +607,90 @@ export const bulkNeedleworkBatch = inngest.createFunction(
           triggeredById,
           // Needlework still runs as ONE function, so its row is complete the
           // moment it is written — no finaliser needed.
+          finishedAt: new Date(),
+          summary: summary.line,
+        },
+      }),
+    )
+    return summary
+  },
+)
+
+// ─────────────────────────── CROCHET (single run) ───────────────────────────
+
+/**
+ * Bulk: crochet gem batch.
+ *
+ * The needlework shape, deliberately: one function per batch rather than the
+ * cross-stitch fan-out, because a crochet idea is one slow Fargate render and
+ * there is no best-of-N to fan out (the geometry is deterministic, so a second
+ * roll of the same program is the same picture). The batch runs each idea in
+ * its own `step.run`, so no single request is long, and records to the same
+ * BulkRun table the other two crafts use.
+ *
+ * Six-hourly, and it obeys the same three gates as every other craft: the
+ * autopilot switch, the daily spend cap, and the category target. Cron firings
+ * do nothing at all until an admin turns the switch on.
+ */
+export const bulkCrochetBatch = inngest.createFunction(
+  {
+    id: 'bulk-crochet-batch',
+    name: 'Bulk: crochet gem batch',
+    concurrency: { limit: 1 },
+    retries: 1,
+    // Every idea renders on Fargate, so crochet keeps needlework's gentler
+    // cadence rather than cross-stitch's two-hourly one.
+    triggers: [{ cron: '0 */6 * * *' }, { event: 'bulk/crochet.batch' }],
+  },
+  async ({ event, step }) => {
+    const data = event.data as BatchEventData | undefined
+    const manual = typeof data?.count === 'number'
+
+    const pre = await step.run('preflight', () => preflight('crochet', manual))
+    if (pre.skip) {
+      if (pre.record) {
+        await step.run('record-skip', () =>
+          prisma.bulkRun.create({
+            data: {
+              craft: 'crochet',
+              trigger: manual ? 'manual' : 'cron',
+              requested: 0,
+              skipReason: pre.skip,
+              summary: `skipped — ${pre.skip}`,
+              finishedAt: new Date(),
+            },
+          }),
+        )
+      }
+      return { skipped: pre.skip, ...(pre.count != null ? { count: pre.count, target: pre.target } : {}) }
+    }
+
+    const n = manual ? manualCount(data?.count, CR_CRON_COUNT) : CR_CRON_COUNT
+    const summary = await runCrochetBatch(n, stepRunner(step))
+
+    const triggeredById = manual && typeof data?.triggeredBy === 'string' && data.triggeredBy ? data.triggeredBy : null
+    await step.run('record-run', () =>
+      prisma.bulkRun.create({
+        data: {
+          craft: 'crochet',
+          trigger: manual ? 'manual' : 'cron',
+          requested: summary.requested,
+          published: summary.published,
+          culled: summary.culled,
+          duplicates: summary.duplicates,
+          skipped: summary.skipped,
+          repaired: summary.repaired,
+          // For crochet these two columns count RENDERS and, of those, the ideas
+          // that also paid for an illustration — the two things the spend guard
+          // caps. Same columns, craft-specific meaning.
+          generations: summary.generations,
+          proGenerations: summary.proGenerations,
+          modelBriefs: summary.dressedBriefs ?? 0,
+          errors: summary.errors,
+          gemSlugs: summary.gems,
+          killReasons: summary.killReasons,
+          triggeredById,
+          // One function, so the row is complete the moment it is written.
           finishedAt: new Date(),
           summary: summary.line,
         },

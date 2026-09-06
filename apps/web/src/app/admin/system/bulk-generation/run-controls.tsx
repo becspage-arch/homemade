@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useTransition } from 'react'
-import { triggerBulkBatch, setBulkAutopilot } from './actions'
+import { triggerBulkBatch, setBulkAutopilot, type BulkCraft } from './actions'
 
 const inputStyle: React.CSSProperties = {
   fontFamily: 'var(--font-lora)',
@@ -25,7 +25,7 @@ export function RunBatchControl({
   disabled,
   disabledReason,
 }: {
-  craft: 'cross-stitch' | 'needlework'
+  craft: BulkCraft
   defaultCount: number
   disabled?: boolean
   disabledReason?: string
@@ -81,7 +81,7 @@ export function AutopilotToggle({
   disabled,
   disabledReason,
 }: {
-  craft: 'cross-stitch' | 'needlework'
+  craft: BulkCraft
   enabled: boolean
   disabled?: boolean
   disabledReason?: string

@@ -2,9 +2,11 @@ import { prisma, TutorialStatus, PipelineStatus, Visibility } from '@homemade/db
 import { getCurrentDbUser, isAdmin } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import { anthropicConfigured } from '@/lib/anthropic'
-import { PATTERN_CATEGORIES, CROSS_STITCH_SHELVES } from '@/lib/studio/generation/categories'
+import { PATTERN_CATEGORIES, CROSS_STITCH_SHELVES, CROCHET_SHELVES } from '@/lib/studio/generation/categories'
 import { autopilotStates } from '@/lib/studio/generation/bulk/autopilot-state'
 import { liveShelfCounts } from '@/lib/studio/generation/bulk/dedupe-guard'
+import { liveCrochetShelfCounts } from '@/lib/studio/generation/bulk/crochet-dedupe'
+import { shelfIsBuildable } from '@/lib/studio/generation/bulk/crochet-forms'
 import {
   crossStitchSpendWindow,
   approxSpend,
@@ -12,8 +14,14 @@ import {
   XS_DAILY_PRO_CAP,
   SCHNELL_UNIT_COST,
   PRO_UNIT_COST,
+  crochetSpendWindow,
+  approxCrochetSpend,
+  CROCHET_DAILY_RENDER_CAP,
+  CROCHET_DAILY_ILLUSTRATION_CAP,
+  CROCHET_RENDER_UNIT_COST,
 } from '@/lib/studio/generation/bulk/spend-guard'
 import { RunBatchControl, AutopilotToggle } from './run-controls'
+import type { BulkCraft } from './actions'
 
 export const dynamic = 'force-dynamic'
 
@@ -27,6 +35,7 @@ const INNGEST_DASHBOARD_URL = 'https://app.inngest.com/env/production/functions'
  */
 const XS_TARGET = Number(process.env.BULK_XS_TARGET) || PATTERN_CATEGORIES['cross-stitch']!.patternTarget
 const NW_TARGET = Number(process.env.BULK_NW_TARGET) || 1500
+const CR_TARGET = Number(process.env.BULK_CROCHET_TARGET) || PATTERN_CATEGORIES.crochet!.patternTarget
 
 /** A run whose counters have not moved for this long is dead, not slow. */
 const STALL_HOURS = 6
@@ -151,6 +160,25 @@ interface ShelfProgress {
   count: number
   target: number
   hold: boolean
+  /** Crochet only: the loom cannot build this item type yet, so it has no
+   *  generation lane and sits at its target waiting for the engine. */
+  waiting?: boolean
+}
+
+/**
+ * A craft's daily spend line. The two crafts spend on different things — a
+ * cross-stitch idea is a Flux image, a crochet idea is a Fargate render — so
+ * the card takes the labels rather than assuming Flux.
+ */
+interface SpendLine {
+  used: number
+  cap: number
+  unit: string
+  secondUsed: number
+  secondCap: number
+  secondUnit: string
+  approx: number
+  note: string
 }
 
 function CraftCard({
@@ -172,11 +200,11 @@ function CraftCard({
   autopilotOn: boolean
   disabled: boolean
   disabledReason?: string
-  craft: 'cross-stitch' | 'needlework'
+  craft: BulkCraft
   defaultCount: number
   extraNote?: string
   shelves?: ShelfProgress[]
-  spend?: { generations: number; proGenerations: number; approx: number }
+  spend?: SpendLine
 }) {
   const pct = target > 0 ? Math.min(100, Math.round((published / target) * 100)) : 0
   const full = published >= target
@@ -195,38 +223,44 @@ function CraftCard({
       </div>
       {spend && (
         <p style={{ ...LORA_SM, margin: 0, lineHeight: 1.6 }}>
-          Last 24h: <strong style={{ color: spend.generations >= XS_DAILY_GENERATION_CAP ? 'var(--color-burnt-sienna)' : 'var(--color-espresso)' }}>{spend.generations}</strong>/{XS_DAILY_GENERATION_CAP} generations
+          Last 24h: <strong style={{ color: spend.used >= spend.cap ? 'var(--color-burnt-sienna)' : 'var(--color-espresso)' }}>{spend.used}</strong>/{spend.cap} {spend.unit}
           {'  ·  '}
-          <strong style={{ color: spend.proGenerations >= XS_DAILY_PRO_CAP ? 'var(--color-burnt-sienna)' : 'var(--color-espresso)' }}>{spend.proGenerations}</strong>/{XS_DAILY_PRO_CAP} Flux&nbsp;Pro
+          <strong style={{ color: spend.secondUsed >= spend.secondCap ? 'var(--color-burnt-sienna)' : 'var(--color-espresso)' }}>{spend.secondUsed}</strong>/{spend.secondCap} {spend.secondUnit}
           {'  ·  '}≈&nbsp;${spend.approx.toFixed(2)} spend
           <br />
-          <span style={{ fontSize: 11 }}>
-            Approximate — costed at ${SCHNELL_UNIT_COST.toFixed(3)} per schnell generation and ${PRO_UNIT_COST.toFixed(3)} per Flux&nbsp;Pro generation. At either cap the batch skips rather than spends.
-          </span>
+          <span style={{ fontSize: 11 }}>{spend.note}</span>
         </p>
       )}
       {shelves && shelves.length > 0 && (
         <div>
-          <div style={{ ...LORA_SM, marginBottom: 6 }}>Shelves (published / target · “hold” = at the size it should be, never generated into)</div>
+          <div style={{ ...LORA_SM, marginBottom: 6 }}>
+            Shelves (published / target · “hold” = at the size it should be, never generated into · “no lane yet” = the
+            loom cannot build that shape yet, so nothing is planned for it)
+          </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
             {shelves.map((sh) => {
               const done = sh.count >= sh.target
               return (
                 <span
                   key={sh.slug}
-                  title={`${sh.slug}${sh.hold ? ' — hold' : ''}`}
+                  title={`${sh.slug}${sh.hold ? ' (hold)' : sh.waiting ? ' (the loom cannot build this shape yet)' : ''}`}
                   style={{
                     fontFamily: 'var(--font-lora)',
                     fontSize: 11,
                     padding: '2px 8px',
                     borderRadius: 10,
                     background: 'var(--color-linen-grey)',
-                    color: sh.hold ? 'var(--color-warm-taupe)' : done ? 'var(--color-espresso)' : 'var(--color-burnt-sienna)',
-                    opacity: sh.hold ? 0.7 : 1,
+                    color:
+                      sh.hold || sh.waiting
+                        ? 'var(--color-warm-taupe)'
+                        : done
+                          ? 'var(--color-espresso)'
+                          : 'var(--color-burnt-sienna)',
+                    opacity: sh.hold || sh.waiting ? 0.6 : 1,
                   }}
                 >
                   {sh.name} {sh.count}/{sh.target}
-                  {sh.hold ? ' · hold' : ''}
+                  {sh.hold ? ' · hold' : sh.waiting ? ' · no lane yet' : ''}
                 </span>
               )
             })}
@@ -252,6 +286,7 @@ export default async function AdminBulkGenerationPage() {
   const [
     xsCount,
     nwCount,
+    crCount,
     recent,
     categoriesRaw,
     publishedTutorialRows,
@@ -261,6 +296,7 @@ export default async function AdminBulkGenerationPage() {
   ] = await Promise.all([
     prisma.pattern.count({ where: { type: 'CROSS_STITCH', ownerUserId: null, visibility: Visibility.PUBLIC } }),
     prisma.needleworkPattern.count({ where: { ownerUserId: null, visibility: Visibility.PUBLIC } }),
+    prisma.crochetPattern.count({ where: { ownerUserId: null, visibility: Visibility.PUBLIC } }),
     prisma.bulkRun.findMany({
       orderBy: { startedAt: 'desc' },
       take: 20,
@@ -294,9 +330,11 @@ export default async function AdminBulkGenerationPage() {
   }
   for (const list of subcatsByCategoryId.values()) list.sort((a, b) => b.count - a.count)
 
-  const [shelfCounts, spendWindow] = await Promise.all([
+  const [shelfCounts, spendWindow, crochetShelfCounts, crochetSpend] = await Promise.all([
     liveShelfCounts().catch(() => ({}) as Record<string, number>),
     crossStitchSpendWindow().catch(() => ({ generations: 0, proGenerations: 0, since: new Date() })),
+    liveCrochetShelfCounts().catch(() => ({}) as Record<string, number>),
+    crochetSpendWindow().catch(() => ({ generations: 0, proGenerations: 0, since: new Date() })),
   ])
   const xsShelves: ShelfProgress[] = CROSS_STITCH_SHELVES.map((sh) => ({
     slug: sh.slug,
@@ -305,6 +343,20 @@ export default async function AdminBulkGenerationPage() {
     target: sh.target,
     hold: Boolean(sh.hold),
   })).sort((a, b) => Number(a.hold) - Number(b.hold) || b.target - a.target || a.slug.localeCompare(b.slug))
+  // Crochet lists every item type it means to fill, with the ones the loom
+  // cannot build yet shown greyed as "no lane yet" — so the gap between the
+  // catalogue's ambition and the engine's reach is visible rather than implied.
+  const crochetShelves: ShelfProgress[] = CROCHET_SHELVES.map((sh) => ({
+    slug: sh.slug,
+    name: sh.name,
+    count: crochetShelfCounts[sh.slug] ?? 0,
+    target: sh.target,
+    hold: Boolean(sh.hold),
+    waiting: !shelfIsBuildable(sh.slug),
+  })).sort(
+    (a, b) =>
+      Number(a.waiting) - Number(b.waiting) || b.target - a.target || a.slug.localeCompare(b.slug),
+  )
   const warnings = healthWarnings(recent as RunRow[])
 
   const gateWired = anthropicConfigured()
@@ -312,10 +364,17 @@ export default async function AdminBulkGenerationPage() {
   const autopilot = await autopilotStates()
   const xsAutopilot = autopilot['cross-stitch']
   const nwAutopilot = autopilot.needlework
+  const crAutopilot = autopilot.crochet
 
   const xsDisabled = !gateWired
   const nwDisabled = !gateWired || !renderWired
   const nwDisabledReason = !gateWired ? 'Gate not wired.' : !renderWired ? 'Fargate render not wired.' : undefined
+  const crDisabled = !gateWired || !renderWired
+  const crDisabledReason = !gateWired
+    ? 'Gate not wired.'
+    : !renderWired
+      ? 'Fargate render not wired, so a pattern could not hero itself.'
+      : undefined
 
   return (
     <div>
@@ -377,7 +436,16 @@ export default async function AdminBulkGenerationPage() {
             craft="cross-stitch"
             defaultCount={10}
             shelves={xsShelves}
-            spend={{ generations: spendWindow.generations, proGenerations: spendWindow.proGenerations, approx: approxSpend(spendWindow) }}
+            spend={{
+              used: spendWindow.generations,
+              cap: XS_DAILY_GENERATION_CAP,
+              unit: 'generations',
+              secondUsed: spendWindow.proGenerations,
+              secondCap: XS_DAILY_PRO_CAP,
+              secondUnit: 'Flux Pro',
+              approx: approxSpend(spendWindow),
+              note: `Approximate, costed at $${SCHNELL_UNIT_COST.toFixed(3)} per schnell generation and $${PRO_UNIT_COST.toFixed(3)} per Flux Pro generation. At either cap the batch skips rather than spends.`,
+            }}
           />
           <CraftCard
             name="Needlework"
@@ -389,6 +457,28 @@ export default async function AdminBulkGenerationPage() {
             craft="needlework"
             defaultCount={4}
             extraNote="Each piece renders individually on AWS, so needlework is slower + pricier than cross-stitch."
+          />
+          <CraftCard
+            name="Crochet"
+            published={crCount}
+            target={CR_TARGET}
+            autopilotOn={crAutopilot}
+            disabled={crDisabled}
+            disabledReason={crDisabledReason}
+            craft="crochet"
+            defaultCount={6}
+            shelves={crochetShelves}
+            spend={{
+              used: crochetSpend.generations,
+              cap: CROCHET_DAILY_RENDER_CAP,
+              unit: 'renders',
+              secondUsed: crochetSpend.proGenerations,
+              secondCap: CROCHET_DAILY_ILLUSTRATION_CAP,
+              secondUnit: 'illustrations',
+              approx: approxCrochetSpend(crochetSpend),
+              note: `Approximate, costed at $${CROCHET_RENDER_UNIT_COST.toFixed(3)} per Fargate render and $${PRO_UNIT_COST.toFixed(3)} per illustration. At either cap the batch skips rather than spends.`,
+            }}
+            extraNote="Every pattern heroes itself: the loom renders its own stitch program on AWS, which takes minutes per piece, so batches are small. Only the shelves with a lane are planned into."
           />
         </div>
       </section>
