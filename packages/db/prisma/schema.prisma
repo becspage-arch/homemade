@@ -3537,6 +3537,25 @@ model BulkAutopilotState {
   /// Pro in every size lane, ~2 in 5). Here rather than in env so it can be
   /// flipped from the admin page without a deploy.
   sourceMode  String   @default("schnell")
+  /// WHO JUDGES the cross-stitch candidates:
+  /// 'candidates' — nothing on the cron path calls the Anthropic API at all.
+  ///   The planner uses the pool sampler only, the vision gate is never called,
+  ///   and every generated idea is PARKED as an UNLISTED candidate for a Claude
+  ///   Code session to judge with `apps/web/scripts/xs-candidates.ts`.
+  /// 'api'        — the September 2026 behaviour: a per-candidate Anthropic
+  ///   vision gate publishes the gems itself.
+  /// Here rather than in env so it can be flipped from the admin page without a
+  /// deploy; BULK_XS_GATE_MODE overrides it for ops.
+  gateMode    String   @default("candidates")
+  /// WHO JUDGES a member's finished-project photo on upload:
+  /// 'api'     — the Anthropic photo gate runs on upload, so a member sees a
+  ///   decision straight away (the default; Rebecca's call, 6 September 2026).
+  /// 'routine' — the upload stays PENDING with "Checking your photo" and a
+  ///   scheduled Claude session judges it with
+  ///   `apps/web/scripts/maker-photos-judge.ts`.
+  /// Stored on the row with craft 'maker-photos'. MAKER_PHOTO_GATE_MODE
+  /// overrides it for ops.
+  photoGateMode String @default("api")
   updatedById String?
   updatedAt   DateTime @default(now()) @updatedAt
 }
@@ -3564,6 +3583,12 @@ model BulkRun {
   duplicates  Int      @default(0)
   /// Ideas that never generated — the trailing-24h Fal spend cap was already hit.
   skipped     Int      @default(0)
+  /// CANDIDATES MODE ONLY. Ideas parked as UNLISTED candidates for a Claude
+  /// session to judge. This is the run's real output when nothing is judged by
+  /// an API gate: `published` then counts the candidates a session KEPT and
+  /// `culled` the ones it REJECTED, both filled in hours later by the CLI, so
+  /// the alert on "this run produced nothing" reads `parked`, not `published`.
+  parked      Int      @default(0)
   /// Of `generations`, how many used the Flux 1.1 Pro (dense) tier — the
   /// expensive lane, capped separately.
   proGenerations Int   @default(0)
@@ -4670,6 +4695,26 @@ model Pattern {
   // The previous Media row is kept, so a revert is a restore plus an id swap.
   backgroundCleared   Json?
 
+  // ── The candidate parking bay (phase_xs_candidates_001) ──────────────────
+  // In the autopilot's 'candidates' gate mode nothing on the cron path calls a
+  // paid model: a generated idea is PARKED here as an UNLISTED row and a Claude
+  // Code session on Rebecca's Max plan looks at it and decides. These four
+  // columns are that decision, on the row itself, so the record survives any
+  // scratchpad, any machine and any session — and so a candidate can never be
+  // mistaken for a published pattern by anything that only reads `visibility`.
+  //   candidateStatus 'PENDING' | 'KEPT' | 'REJECTED' | 'REROLL'. NULL on every
+  //                   row that never went through the parking bay.
+  //   judgedAt/By     when, and which session or person, decided.
+  //   judgeReasons    the reasons given, as ["…"] — a reject's reasons are the
+  //                   calibration record for the locked bar.
+  //   rerollCount     how many times this idea has been re-planned after a bad
+  //                   roll. Capped at 3 so one idea cannot spin forever.
+  candidateStatus String?
+  judgedAt        DateTime?
+  judgedBy        String?
+  judgeReasons    Json?
+  rerollCount     Int       @default(0)
+
   license        PatternLicense?
   userProgress   UserPatternProgress[]
   savedBy        SavedPattern[]
@@ -4689,6 +4734,7 @@ model Pattern {
   @@index([imageHash64])
   @@index([subjectKey])
   @@index([stitchability])
+  @@index([candidateStatus, createdAt])
 }
 
 /// Sidecar so a Pattern can be retagged (free → marketplace → premium)

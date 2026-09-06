@@ -1,6 +1,6 @@
 import 'server-only'
 import { gateConfigured, visionGate, type GateResult } from '../vision-gate'
-import { planCrossStitchBriefs, planNeedleworkBriefs, dressedCount, PLANNER_MODE, type CrossStitchBrief, type NeedleworkBrief } from './planner'
+import { planCrossStitchBriefs, planNeedleworkBriefs, finaliseBriefs, dressedCount, PLANNER_MODE, type CrossStitchBrief, type NeedleworkBrief, type XsPlanContext } from './planner'
 import {
   generateCrossStitchCandidate,
   publishCrossStitchGem,
@@ -16,7 +16,7 @@ import {
   publicSubjectKeys,
 } from './dedupe-guard'
 import { judgeVividness } from './vividness'
-import type { XsSourceMode } from './autopilot-state'
+import { crossStitchGateMode, type XsGateMode, type XsSourceMode } from './autopilot-state'
 import { CROSS_STITCH_SHELVES } from '../categories'
 import { summaryLine } from './run-status'
 import { shelfDeficits, allocateShelves, capShelfBriefs, shelfSlots } from './shelf-plan'
@@ -91,6 +91,10 @@ export interface BatchSummary {
   proGenerations: number
   /** Attempts the pale guard rejected before the vision gate was called. */
   paleSkips: number
+  /** CANDIDATES MODE: ideas parked as UNLISTED candidates for a session to judge. */
+  parked?: number
+  /** Which gate judged this batch — 'candidates' (a session, later) or 'api'. */
+  gateMode?: XsGateMode
   /** Model briefs the post-filter threw out for un-renderable props. */
   propRejects?: number
   /** Model briefs thrown out as a repeat of another brief in the same batch. */
@@ -144,6 +148,12 @@ export interface AttemptResult {
   pro?: boolean
   /** True when the deterministic pale guard rejected it before the vision gate. */
   tooPale?: boolean
+  /**
+   * CANDIDATES MODE: the candidate was parked as an UNLISTED row for a Claude
+   * session to judge. Terminal for the run — nothing more will happen to this
+   * idea inside the autopilot.
+   */
+  parked?: boolean
   /**
    * The render this attempt threw away, kept in R2 so a person can see what the
    * gate killed. Set only on a terminal cull and on a pale skip — the two
@@ -308,6 +318,102 @@ export async function crossStitchAttempt(
   return { verdict: 'keep', reasons: verdict.reasons, published: true, pro: candidate.pro }
 }
 
+// ───────────────────── CROSS-STITCH: the candidates gate mode ─────────────────
+
+/**
+ * How many generations ONE idea gets in candidates mode.
+ *
+ * Two, and only for one reason: a pale render gets a single saturation re-roll,
+ * because the pale floor is arithmetic and a boosted re-roll fixes it about half
+ * the time. Everything else gets exactly ONE shot. Best-of-six existed to feed a
+ * ruthless per-attempt vision gate; here the judging is a person looking at a
+ * contact sheet, and the honest way to raise yield is to park more ideas rather
+ * than to roll one idea six times against a judge that is not there yet.
+ */
+export const MAX_XS_CANDIDATE_ATTEMPTS = 2
+
+/**
+ * ONE candidate attempt with NO API CALL ANYWHERE ON THE PATH.
+ *
+ * generate → bare-fabric clearing (inside the generator) → the pale guard →
+ * the duplicate guard against the whole public catalogue AND the pending
+ * parking bay → park as an UNLISTED `Pattern` with `candidateStatus 'PENDING'`.
+ *
+ * The differences from `crossStitchAttempt` are the whole point of the mode:
+ * `visionGate` is never called, so nothing here reaches `anthropic.ts`; the
+ * duplicate guard also sees the candidates already waiting to be judged, so two
+ * firings cannot park the same idea twice; and a pale render that comes back
+ * pale after its one re-roll is DISCARDED with its render kept as a reject
+ * sample, because the pale floor is the one bar this path can still enforce on
+ * its own.
+ */
+export async function crossStitchCandidateAttempt(
+  brief: CrossStitchBrief,
+  tweak: CandidateTweak,
+  ctx: { bulkRunId?: string | null; attempt?: number; sourceMode?: XsSourceMode; rerollCount?: number } = {},
+): Promise<AttemptResult> {
+  const attempt = ctx.attempt ?? 1
+  const candidate = await generateCrossStitchCandidate(brief, tweak, ctx.sourceMode)
+
+  // The pale guard — arithmetic, and the only quality bar left on this path.
+  const vivid = await judgeVividness(candidate.renderPng, undefined, { shelf: brief.shelf, style: brief.style })
+  if (vivid.tooPale) {
+    const lastShot = attempt >= MAX_XS_CANDIDATE_ATTEMPTS
+    return {
+      // One saturation re-roll, then the idea is discarded rather than parked:
+      // asking a session to look at a render we already know is unstitchable
+      // wastes the only judging capacity there is.
+      verdict: lastShot ? 'kill' : 'repair',
+      reasons: [vivid.reason],
+      ...(lastShot ? {} : { repairAction: 'more-saturation' as const }),
+      published: false,
+      pro: candidate.pro,
+      tooPale: true,
+      ...(await sampleFor(candidate.renderPng, brief, ctx, lastShot ? 'kill' : 'repair', [vivid.reason], candidate.colourCount)),
+    }
+  }
+
+  // Is this a gem we already have — or one already sitting in the parking bay?
+  const fingerprints = await fingerprintCandidate(candidate.renderPng, candidate.data, brief.subject)
+  const catalogue = await loadPublicCrossStitchFingerprints({ includePending: true })
+  const hit = findDuplicate(fingerprints, catalogue)
+  if (hit) {
+    return {
+      verdict: 'kill',
+      reasons: [`duplicate of ${hit.slug}: ${hit.reason}`],
+      published: false,
+      duplicateOf: hit.slug,
+      duplicateReason: hit.reason,
+      pro: candidate.pro,
+    }
+  }
+
+  await publishCrossStitchGem(brief, candidate, {
+    fingerprints,
+    // No gate ran, and the row says so rather than claiming a keep it never got.
+    gate: { verdict: 'keep', reasons: ['parked for session judging — no API gate'] },
+    bulkRunId: ctx.bulkRunId ?? null,
+    attempt,
+    tweak,
+    park: true,
+    rerollCount: ctx.rerollCount ?? 0,
+  })
+  return { verdict: 'keep', reasons: [], published: false, parked: true, pro: candidate.pro }
+}
+
+/**
+ * The candidates-mode planner: the POOL SAMPLER ONLY.
+ *
+ * `finaliseBriefs` with an empty model list is exactly the fallback path the
+ * dispatcher already runs when the planner model times out — deficit-weighted
+ * shelves, lane tags, the text-risk rule, the prop rule and the within-batch
+ * collision rule all unchanged. It simply never makes the model call, which is
+ * the one thing this mode is for.
+ */
+export function planCrossStitchCandidateBriefs(count: number, ctx: XsPlanContext = {}): CrossStitchBrief[] {
+  return finaliseBriefs([], count, ctx)
+}
+
 /**
  * The planning context for one batch: the whole catalogue as an avoid list, and
  * a shelf quota drawn in proportion to each shelf's gap to its target. Shared by
@@ -332,10 +438,15 @@ export async function crossStitchPlanContext(count: number): Promise<Parameters<
 }
 
 export async function runCrossStitchBatch(count: number, step: StepRunner = inlineStep): Promise<BatchSummary> {
-  const base: BatchSummary = { craft: 'cross-stitch', requested: count, published: 0, culled: 0, duplicates: 0, skipped: 0, repaired: 0, generations: 0, proGenerations: 0, paleSkips: 0, errors: 0, gems: [], killReasons: [], line: '' }
-  if (!gateConfigured()) {
+  const gateMode = await crossStitchGateMode()
+  const base: BatchSummary = { craft: 'cross-stitch', requested: count, published: 0, culled: 0, duplicates: 0, skipped: 0, repaired: 0, generations: 0, proGenerations: 0, paleSkips: 0, parked: 0, gateMode, errors: 0, gems: [], killReasons: [], line: '' }
+  // In candidates mode there is no API gate to be wired: the judging happens in
+  // a Claude Code session afterwards, so a missing key is not a reason to
+  // generate nothing. In 'api' mode it is exactly that, unchanged.
+  if (gateMode === 'api' && !gateConfigured()) {
     return { ...base, notRun: 'gate-not-wired', line: 'cross-stitch batch skipped — ANTHROPIC_API_KEY not set, refusing to publish un-gated' }
   }
+  if (gateMode === 'candidates') return runCrossStitchCandidateBatch(count, step, base)
 
   const plan = await step.run('xs-plan', async () => {
     const ctx = await crossStitchPlanContext(count)
@@ -398,6 +509,76 @@ export async function runCrossStitchBatch(count: number, step: StepRunner = inli
     } catch (err) {
       base.errors++
       console.error(`[bulk cross-stitch] ${brief.slug} failed`, err)
+    }
+  }
+
+  base.line = summaryLine(base)
+  return base
+}
+
+/**
+ * The candidates-mode batch: plan from the pool, generate ONE candidate an idea,
+ * park what survives the deterministic guards. Zero API calls, start to finish.
+ *
+ * COST. Twelve ideas of Flux schnell at about $0.003 each, plus the one dense
+ * showpiece on Flux 1.1 Pro at about $0.032, plus the odd pale re-roll: roughly
+ * $0.07 a firing, twelve firings a day — call it £0.60 a day, and well inside
+ * the daily generation cap in `spend-guard.ts`. Nothing else is spent, because
+ * nothing else is called.
+ */
+async function runCrossStitchCandidateBatch(
+  count: number,
+  step: StepRunner,
+  base: BatchSummary,
+): Promise<BatchSummary> {
+  const briefs = await step.run('xs-plan-candidates', async () => {
+    const ctx = await crossStitchPlanContext(count)
+    return planCrossStitchCandidateBriefs(count, ctx)
+  })
+  base.plannerMode = PLANNER_MODE
+  base.dressedBriefs = dressedCount(briefs)
+
+  for (const brief of briefs) {
+    try {
+      let tweak: CandidateTweak = {}
+      let last: AttemptResult | null = null
+      let settled = false
+      for (let attempt = 1; attempt <= MAX_XS_CANDIDATE_ATTEMPTS; attempt++) {
+        base.generations++
+        const tweakForStep = tweak
+        const attemptNo = attempt
+        last = await step.run(`xs-cand-${brief.slug}-a${attempt}`, () =>
+          crossStitchCandidateAttempt(brief, tweakForStep, { attempt: attemptNo }),
+        )
+        if (last.pro) base.proGenerations++
+        if (last.tooPale) base.paleSkips++
+        if (last.duplicateOf) {
+          base.duplicates++
+          base.killReasons.push(`duplicate of ${last.duplicateOf}`)
+          settled = true
+          break
+        }
+        if (last.parked) {
+          base.parked = (base.parked ?? 0) + 1
+          base.gems.push(brief.slug)
+          settled = true
+          break
+        }
+        // Only a pale render earns a second shot, and only its one.
+        if (last.verdict === 'repair' && attempt < MAX_XS_CANDIDATE_ATTEMPTS) {
+          base.repaired++
+          tweak = tweakFor(last.repairAction)
+          continue
+        }
+        break
+      }
+      if (!settled && last) {
+        base.culled++
+        base.killReasons.push(...last.reasons)
+      }
+    } catch (err) {
+      base.errors++
+      console.error(`[bulk cross-stitch candidates] ${brief.slug} failed`, err)
     }
   }
 

@@ -7,6 +7,7 @@ import {
   Visibility,
 } from '@homemade/db'
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { isLibraryPattern } from '@/lib/studio/library-visibility'
 
 export const dynamic = 'force-dynamic'
 
@@ -88,7 +89,7 @@ export async function POST(req: Request, ctx: Ctx) {
 
   // Library pattern → silent fork into a new owned row.
   if (source.ownerUserId === null) {
-    if (source.visibility === Visibility.PRIVATE) {
+    if (!isLibraryPattern(source)) {
       return NextResponse.json({ error: 'Not authorised' }, { status: 403 })
     }
     const forked = await prisma.pattern.create({

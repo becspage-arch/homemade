@@ -12,11 +12,11 @@ import {
   prisma,
   parsePatternData,
   estimateSkeinCount,
-  Visibility,
   type PatternData,
 } from '@homemade/db'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import { materialKey } from '../key'
+import { isLibraryPattern } from '@/lib/studio/library-visibility'
 import type {
   MaterialsBreakdown,
   MaterialsProvider,
@@ -60,7 +60,7 @@ async function loadPattern(ref: PlannerPatternRef) {
   })
   if (!row) return null
   // Library patterns are public; private patterns only resolve for their owner.
-  const isLibrary = row.ownerUserId === null && row.visibility !== Visibility.PRIVATE
+  const isLibrary = isLibraryPattern(row)
   if (!isLibrary && row.ownerUserId !== ref.viewerUserId) return null
   return row
 }
