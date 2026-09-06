@@ -64,13 +64,69 @@ function isValid(value: unknown): value is ConsentPreferences {
  */
 export function getConsent(): ConsentPreferences | null {
   if (typeof window === 'undefined') return null
+  let raw: string | null = null
   try {
-    const raw = window.localStorage.getItem(CONSENT_STORAGE_KEY)
-    if (!raw) return null
+    raw = window.localStorage.getItem(CONSENT_STORAGE_KEY)
+  } catch {
+    // localStorage can throw outright when site data is blocked.
+    raw = null
+  }
+  const fromLocal = parseConsent(raw)
+  if (fromLocal) return fromLocal
+  // Fall back to the cookie mirror. Without this, a browser that refuses
+  // localStorage (private mode, blocked site data) loses the decision on
+  // every navigation and the banner comes back on each page load.
+  const fromCookie = parseConsent(readConsentCookie())
+  if (fromCookie) {
+    try {
+      window.localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(fromCookie))
+    } catch {
+      // Still fine — the cookie is doing the remembering.
+    }
+    return fromCookie
+  }
+  return null
+}
+
+/** Shared parse + version check for both stores. */
+function parseConsent(raw: string | null): ConsentPreferences | null {
+  if (!raw) return null
+  try {
     const parsed = JSON.parse(raw) as unknown
     if (!isValid(parsed)) return null
     if (parsed.version !== CURRENT_CONSENT_VERSION) return null
     return parsed
+  } catch {
+    return null
+  }
+}
+
+/** Read the consent cookie mirror written by `writeConsentCookie`. */
+function readConsentCookie(): string | null {
+  if (typeof document === 'undefined') return null
+  const prefix = `${CONSENT_COOKIE_NAME}=`
+  for (const part of document.cookie.split(';')) {
+    const entry = part.trim()
+    if (!entry.startsWith(prefix)) continue
+    try {
+      return decodeURIComponent(entry.slice(prefix.length))
+    } catch {
+      return null
+    }
+  }
+  return null
+}
+
+/**
+ * Server-side read of the same cookie, so a page can decide before first
+ * paint whether the banner needs to render at all. Takes the raw cookie
+ * value from `cookies()` rather than importing anything Next-specific, so
+ * this module stays usable from the client too.
+ */
+export function parseConsentCookieValue(value: string | undefined | null): ConsentPreferences | null {
+  if (!value) return null
+  try {
+    return parseConsent(decodeURIComponent(value))
   } catch {
     return null
   }
@@ -98,13 +154,25 @@ export function setConsent(prefs: Omit<ConsentPreferences, 'version' | 'decidedA
     decidedAt: new Date().toISOString(),
   }
   if (typeof window === 'undefined') return next
+  // The cookie goes first and gets its own try/catch. It used to sit behind
+  // the localStorage write inside one try, so a browser that refused
+  // localStorage never got the cookie either and the banner reappeared on
+  // every page load.
+  try {
+    writeConsentCookie(next)
+  } catch {
+    // ignore
+  }
   try {
     window.localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(next))
-    writeConsentCookie(next)
-    window.dispatchEvent(new CustomEvent(CONSENT_CHANGE_EVENT, { detail: next }))
   } catch {
     // localStorage may be unavailable in private mode; we still return the
     // intended state so the in-memory wrappers can opt in for the session.
+  }
+  try {
+    window.dispatchEvent(new CustomEvent(CONSENT_CHANGE_EVENT, { detail: next }))
+  } catch {
+    // ignore
   }
   return next
 }
@@ -133,8 +201,16 @@ function clearConsentCookie(): void {
 export function clearConsent(): void {
   if (typeof window === 'undefined') return
   try {
-    window.localStorage.removeItem(CONSENT_STORAGE_KEY)
     clearConsentCookie()
+  } catch {
+    // ignore
+  }
+  try {
+    window.localStorage.removeItem(CONSENT_STORAGE_KEY)
+  } catch {
+    // ignore
+  }
+  try {
     window.dispatchEvent(new CustomEvent(CONSENT_CHANGE_EVENT, { detail: null }))
   } catch {
     // ignore

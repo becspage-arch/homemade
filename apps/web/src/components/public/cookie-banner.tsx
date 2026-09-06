@@ -20,7 +20,17 @@ const REOPEN_EVENT = 'homemade-open-cookie-banner'
 
 type View = 'compact' | 'customise'
 
-export function CookieBanner() {
+interface CookieBannerProps {
+  /**
+   * Server-read consent cookie: true when this request already carries a
+   * decision at the current policy version. The banner then never enters
+   * the tree, so an accepted banner cannot flash on the first paint of a
+   * fresh page load.
+   */
+  alreadyDecided?: boolean
+}
+
+export function CookieBanner({ alreadyDecided = false }: CookieBannerProps) {
   const [open, setOpen] = useState(false)
   const [view, setView] = useState<View>('compact')
   // GDPR/PECR: non-essential categories must default OFF. First-time visitors
@@ -37,17 +47,17 @@ export function CookieBanner() {
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const stored = getConsent()
-    if (!stored) {
+    if (stored) {
+      setAnalytics(stored.analytics)
+      setErrorMonitoring(stored.errorMonitoring)
+    } else if (!alreadyDecided) {
       setOpen(true)
       setView('compact')
       captureClientEvent('consent_banner_shown', { reason: 'first_visit' })
-    } else {
-      setAnalytics(stored.analytics)
-      setErrorMonitoring(stored.errorMonitoring)
     }
     const removeListener = installAnalyticsConsentListener()
     return removeListener
-  }, [])
+  }, [alreadyDecided])
   /* eslint-enable react-hooks/set-state-in-effect */
 
   // Listen for a "reopen" event so footer links can pop the banner.
@@ -124,6 +134,45 @@ export function CookieBanner() {
 
   if (!open) return null
 
+  if (view === 'compact') {
+    return (
+      <div className="cookie-banner" role="dialog" aria-modal="false" aria-label="Cookies">
+        <div className="cookie-banner-bar">
+          <p className="cookie-banner-line">
+            We use cookies to keep the site running and, with your permission,
+            to improve it.
+          </p>
+          <div className="cookie-banner-bar-actions">
+            <button
+              type="button"
+              className="cookie-banner-button primary"
+              disabled={saving}
+              onClick={() => commit({ analytics: true, errorMonitoring: true }, 'accept_all')}
+            >
+              Accept
+            </button>
+            <button
+              type="button"
+              className="cookie-banner-button secondary"
+              disabled={saving}
+              onClick={() => commit({ analytics: false, errorMonitoring: false }, 'necessary_only')}
+            >
+              Reject
+            </button>
+            <button
+              type="button"
+              className="cookie-banner-choices"
+              disabled={saving}
+              onClick={() => setView('customise')}
+            >
+              Choices
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div
       className="cookie-banner"
@@ -132,53 +181,14 @@ export function CookieBanner() {
       aria-labelledby="cookie-banner-title"
     >
       <div className="cookie-banner-inner">
-        {view === 'compact' ? (
-          <>
-            <h2 className="cookie-banner-title" id="cookie-banner-title">
-              About cookies
-            </h2>
-            <p className="cookie-banner-body">
-              Homemade uses cookies to keep you signed in and (with your
-              permission) to measure how the site is used and to spot
-              errors. Read the{' '}
-              <Link href="/legal/cookies">Cookie Policy</Link> for the full
-              list, or choose below.
-            </p>
-            <div className="cookie-banner-actions">
-              <button
-                type="button"
-                className="cookie-banner-button primary"
-                disabled={saving}
-                onClick={() => commit({ analytics: true, errorMonitoring: true }, 'accept_all')}
-              >
-                Accept all
-              </button>
-              <button
-                type="button"
-                className="cookie-banner-button primary"
-                disabled={saving}
-                onClick={() => commit({ analytics: false, errorMonitoring: false }, 'necessary_only')}
-              >
-                Necessary only
-              </button>
-              <button
-                type="button"
-                className="cookie-banner-button secondary"
-                disabled={saving}
-                onClick={() => setView('customise')}
-              >
-                Customise
-              </button>
-            </div>
-          </>
-        ) : (
-          <>
             <h2 className="cookie-banner-title" id="cookie-banner-title">
               Cookie preferences
             </h2>
             <p className="cookie-banner-body">
               You can switch categories on or off below. Necessary cookies
-              keep the site working and can&apos;t be turned off.
+              keep the site working and can&apos;t be turned off. The{' '}
+              <Link href="/legal/cookies">Cookie Policy</Link> has the full
+              list.
             </p>
             <ul className="cookie-banner-categories">
               <li>
@@ -245,8 +255,6 @@ export function CookieBanner() {
             <p className="cookie-banner-version">
               Policy version: {CURRENT_CONSENT_VERSION}
             </p>
-          </>
-        )}
       </div>
     </div>
   )
