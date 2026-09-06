@@ -4,6 +4,13 @@ description: Every worker session that pushes to main must wait for the GitHub A
 type: feedback
 originSessionId: 51fcaac5-5db7-4df9-82b1-ee909db7152d
 ---
+**Correction 2026-09-06 (notes audit; the rule itself is unchanged, who runs it moved).**
+Workers do not push to `main` any more — they push a branch and report it, and the
+orchestrator merges the day's train, running this verification ONCE for the train (see
+CLAUDE.md "Merging: two lanes and the daily train" and [[feedback_credits_and_merging]]).
+So the block below belongs in the ORCHESTRATOR's train merge and in a hotfix-lane prompt,
+not in every worker prompt. Nobody opens PRs.
+
 Workers have pushed broken commits and walked away. Multiple deploys have failed silently because the worker treated "git push completed" as "task done." This rule fixes that.
 
 **Rule:** A worker session that pushes to `main` is NOT done until:
@@ -63,7 +70,7 @@ When both checks pass, the session is done.
 - Skip because "the previous push worked, this is just docs." (Docs commits don't normally trigger the deploy, but they CAN if the worker also bumped something else. Always verify.)
 - Use `--no-verify` on commits to dodge pre-commit hooks. Fix the underlying issue.
 - Force-push to fix a broken deploy. The retry path is: new commit, new push, new run.
-- Open a PR and walk away. Workers merge to main directly per the existing pattern; PRs are not the verification path.
+- Open a PR and walk away. Nobody opens PRs here; the orchestrator merges the daily train to `main` directly, and PRs are not the verification path. (Corrected 2026-09-06 — this line used to say workers merge to main.)
 
 **Edge cases:**
 - If the worker is doing a docs-only change that doesn't trigger the deploy workflow, the verification can be skipped — but explicitly note in the hand-off that no deploy was expected.

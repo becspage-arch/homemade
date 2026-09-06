@@ -31,3 +31,13 @@ naturally, leave it null and let it wait its turn (roughly
 The picker scripts at `packages/db/scripts/autopilot-pick-category.ts`
 and `_autopilot-pick.ts` both use the same ordering, so the
 behaviour is consistent across the manual and cron paths.
+
+**Verified 2026-09-06 (notes audit):** both scripts still exist and
+`autopilot-pick-category.ts` still orders
+`[{ lastAutopilotRunAt: 'asc' }, { launchOrder: 'asc' }]`, and
+`Category.lastAutopilotRunAt` is still in the Prisma schema. Scope
+note: this picker is the TUTORIAL-LED path. The pattern-craft
+autopilots (cross-stitch, needlework, crochet) do not use it — they
+run from their own Inngest crons and cloud routines against
+`categories.ts` shelf targets, so the NULLS-LAST trap does not apply
+to them.

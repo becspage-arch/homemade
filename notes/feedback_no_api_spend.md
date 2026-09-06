@@ -4,6 +4,17 @@ description: Hard no on any paid AI / API spend for Homemade. The Claude Max pla
 type: feedback
 originSessionId: aba396b0-445b-4bb9-bfc2-1d9880021dc1
 ---
+**Correction 2026-09-06 (Rebecca, recorded in CLAUDE.md "What cloud sessions can't do" and
+playbook Step 6c).** The rule tightened. ALL model work — planning briefs, authoring,
+judging images — runs on her Claude Max plan in cloud sessions and routines. Deterministic
+stages (Fargate renders, audits, gates, publish scripts) run on the server or as scripts.
+Never her laptop. Never through per-token Anthropic API calls, with ONE agreed exception:
+the maker-photo check that runs when a customer uploads a photo. Every autopilot gets a
+budget and a total-fill cost estimate before it is switched on. This overrides the
+"premium-feature API use is OK" exception dated 2026-05-14 below, which is now historical:
+a premium feature that wants a paid model call needs Rebecca's fresh say-so, not that
+paragraph. Fal image spend is unaffected and still needs per-category approval.
+
 Hard rule: zero external API budget for Homemade. Full stop.
 
 **Why:** Rebecca pays for Claude Max, which covers her Claude Code sessions. That is the *entire* AI budget for the project. The target scale is 10k tutorials per niche × 5–10 niches = 50k–100k pieces of content. At Anthropic API rates a per-draft AI call costs around £0.02 on a warm cache, which scales to £1k–£2k at full content scope. That is not affordable. The constraint applies to every paid AI provider, not just Anthropic.
@@ -18,7 +29,7 @@ Hard rule: zero external API budget for Homemade. Full stop.
 - Deterministic tooling that can replace an AI step (e.g. `voice-check.ts` for rule enforcement) is preferred. AI is only used for tasks that genuinely need judgement — and only inside a worker session.
 - Image generation via fal.ai (Flux 1.1 Pro Ultra) is a budgeted, separate decision Rebecca will make pre-launch — not the same as API spend on text. Don't generalise this rule to images without checking.
 
-**Exception (added 2026-05-14): premium-feature API use is OK.** Features that will eventually be paid (e.g. user-personalised 30-day plans, custom meal planners, AI-generated tinctures from a symptom profile, dynamic ritual generators) can use the Anthropic API at runtime. The rationale: at scale these features generate revenue that covers their API cost, and they need per-user freshness so worker-session-driven content doesn't work. Tutorials and images stay zero-cost (bulk content, no per-user component); premium personalisation features can pay for themselves.
+**Exception (added 2026-05-14; SUPERSEDED 2026-09-06 by the correction at the top — kept for the reasoning, not as a live permission): premium-feature API use is OK.** Features that will eventually be paid (e.g. user-personalised 30-day plans, custom meal planners, AI-generated tinctures from a symptom profile, dynamic ritual generators) can use the Anthropic API at runtime. The rationale: at scale these features generate revenue that covers their API cost, and they need per-user freshness so worker-session-driven content doesn't work. Tutorials and images stay zero-cost (bulk content, no per-user component); premium personalisation features can pay for themselves.
 
 The rule for premium-feature API use:
 - The feature must be one that's planned to be premium-tier (not free). If it's free-forever, the API cost has no payback path.

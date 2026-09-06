@@ -14,9 +14,10 @@ world — anything less is not acceptable.** Set 2026-06-29 during the big cull.
 (anthropomorphic-animal-with-a-job, brown cocktails, dark interiors, text
 samplers). She judged it terrible against best-seller sites.
 
-**How to apply:** judge every NEW cross-stitch design against her 6 reference
-picks (top Etsy / Caterpillar Cross Stitch / Vihola), captured in
-`apps/web/src/lib/studio/generation/NORTH_STAR.md`:
+**How to apply:** judge every NEW cross-stitch design against her reference picks (top
+Etsy / Caterpillar Cross Stitch / Vihola), captured in
+`apps/web/src/lib/studio/generation/NORTH_STAR.md` (the file exists; five of the six are
+listed here, which is how it was written):
 1. Cat Lover's Bookshop — large dense narrative showpiece
 2. Pastel shopfront row — soft watercolour, airy
 3. Mouse under a flower umbrella — small adorable character
@@ -47,7 +48,11 @@ that slug's brief in `xs-volume-gen.ts` (add "clean evenly-lit smooth face, both
 markings/smudges"), delete ONLY that slug's `.flux.png` + `.render.png`, re-run `--batch X` (others stay
 cached — no cost, nothing else disturbed). Don't be trigger-happy on portraits/faces she'd hang.
 
-**Audit outcome (2026-09-05/06):** the July pause was duplication, not the bar: 85 clusters over 192 of 1,153 public patterns from brief stems re-used across batches with nothing comparing images. Fixed at the root with a mechanical dedupe guard in the publish path (image hashes, chart fingerprint, subject key against the whole catalogue) and a constrained planner. A full look at every thumbnail found only 14 fails, so the June bar held. World-best comparison: we already have the only library-plus-stitching-tool; we trailed on print quality, credibility and beginner entry, all shipped 6 September. The gate was then over-tightened and culled good work (a raven, a strawberry, a crystal ball, an owl); recalibrated: a wrong face is a kill, a small one is not; repair before cull still stands. Targets and shelves now come from the audit (1,784 across 26 shelves). State: [[project_cross_stitch_state]].
+**Audit outcome (2026-09-05/06):** the July pause was duplication, not the bar: 85 clusters over 192 of 1,153 public patterns from brief stems re-used across batches with nothing comparing images. Fixed at the root with a mechanical dedupe guard in the publish path (image hashes, chart fingerprint, subject key against the whole catalogue) and a constrained planner. A full look at every thumbnail found only 14 fails, so the June bar held. World-best comparison: we already have the only library-plus-stitching-tool; we trailed on print quality, credibility and beginner entry, all shipped 6 September. The gate was then over-tightened and culled good work (a raven, a strawberry, a crystal ball, an owl); recalibrated: a wrong face is a kill, a small one is not; repair before cull still stands. Targets and shelves come from the audit: 1,818 across 27 shelves, the sum of the per-shelf
+targets in `apps/web/src/lib/studio/generation/categories.ts` (checked 2026-09-06; it was
+1,784 across 26 before the 34-piece `samplers` shelf landed on train 13). State:
+[[project/project_cross_stitch_state]].
 
-Related: [[project_cross_stitch]], [[project_pattern_generation_toolkit]],
+Related: [[project/project_cross_stitch_state]], [[project/project_pattern_generation_toolkit]]
+(itself largely superseded), ([[project_cross_stitch]] is not in notes/),
 [[feedback_customer_eye_renders]], [[feedback_no_popup_questions]], [[feedback_pattern_complexity_range]].
