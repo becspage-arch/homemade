@@ -276,6 +276,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
         patternType="CROSS_STITCH"
         finishedCount={finishedCount}
         returnTo={`/cross-stitch/patterns/${slug}`}
+        galleryHref="/cross-stitch/makes"
       />
 
       <section className="pattern-detail-floss">

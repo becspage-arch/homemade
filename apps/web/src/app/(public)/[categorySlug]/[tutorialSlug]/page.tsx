@@ -649,6 +649,7 @@ export default async function TutorialPage({ params }: PageProps) {
         signedIn={Boolean(currentUser)}
         tutorialId={tutorial.id}
         returnTo={`/${tutorial.category.slug}/${tutorialSlug}`}
+        galleryHref={`/${tutorial.category.slug}/makes`}
       />
     </>
   )

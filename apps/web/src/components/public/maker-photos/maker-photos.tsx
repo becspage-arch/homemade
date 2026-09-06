@@ -26,6 +26,8 @@ interface MakerPhotosProps {
   finishedCount?: number | null
   /** Where sign-in comes back to. */
   returnTo?: string | null
+  /** The category's gallery wall, when this thing sits in one. */
+  galleryHref?: string | null
   heading?: string
 }
 
@@ -37,6 +39,7 @@ export function MakerPhotos({
   patternType,
   finishedCount,
   returnTo,
+  galleryHref,
   heading = 'Made by makers',
 }: MakerPhotosProps) {
   const showCount = typeof finishedCount === 'number' && finishedCount > 0
@@ -50,6 +53,11 @@ export function MakerPhotos({
             Finished by {finishedCount.toLocaleString()}{' '}
             {finishedCount === 1 ? 'maker' : 'makers'}
           </p>
+        )}
+        {galleryHref && photos.length > 0 && (
+          <Link className="maker-photos-count" href={galleryHref}>
+            See every photo
+          </Link>
         )}
       </div>
 

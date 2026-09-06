@@ -1,5 +1,9 @@
 import 'server-only'
 import { anthropicConfigured, anthropicJson, GATE_MODEL } from '@/lib/anthropic'
+import { parseGateVerdict, type GateDecision } from './maker-photo-rules'
+
+export { parseGateVerdict }
+export type { GateDecision }
 
 /**
  * The maker-photo gate. Approval is AI-only and binary: a photo is approved and
@@ -12,8 +16,6 @@ import { anthropicConfigured, anthropicJson, GATE_MODEL } from '@/lib/anthropic'
  * photo never publishes un-gated, and a gate that cannot run never reads as a
  * rejection to the person who uploaded.
  */
-
-export type GateDecision = 'approve' | 'reject' | 'pending'
 
 export interface MakerPhotoGateResult {
   decision: GateDecision
@@ -59,39 +61,6 @@ On reject give one or two reasons, each a short plain sentence under 14 words, a
 /** True when the gate can actually run. */
 export function makerPhotoGateConfigured(): boolean {
   return anthropicConfigured()
-}
-
-interface RawVerdict {
-  decision?: unknown
-  reasons?: unknown
-}
-
-/**
- * Turns whatever the model replied with into a decision. Exported for the test
- * suite: everything that is not an unambiguous "approve" or "reject" with the
- * shape we asked for is "pending", never a silent approval.
- */
-export function parseGateVerdict(raw: unknown): { decision: GateDecision; reasons: string[] } {
-  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) {
-    return { decision: 'pending', reasons: [] }
-  }
-  const v = raw as RawVerdict
-  const reasons = Array.isArray(v.reasons)
-    ? v.reasons
-        .filter((r): r is string => typeof r === 'string')
-        .map((r) => r.trim())
-        .filter((r) => r.length > 0)
-        .slice(0, 2)
-    : []
-
-  if (v.decision === 'approve') return { decision: 'approve', reasons: [] }
-  if (v.decision === 'reject') {
-    // A rejection with no reason cannot be shown to the member, and inventing
-    // one would be dishonest. Hold it as pending instead.
-    if (reasons.length === 0) return { decision: 'pending', reasons: [] }
-    return { decision: 'reject', reasons }
-  }
-  return { decision: 'pending', reasons: [] }
 }
 
 /**

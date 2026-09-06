@@ -1,12 +1,14 @@
 'use client'
 
 import { useState, useTransition } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import {
   startTestAssignment,
   withdrawTestAssignment,
   submitTestFeedback,
 } from '@/lib/creator-actions'
+import { UploadPhotoButton } from '@/components/public/maker-photos/upload-photo-button'
 
 type TestAssignmentStatus =
   | 'APPLIED'
@@ -21,6 +23,10 @@ interface Props {
   status: TestAssignmentStatus
   estimatedMinutes: number | null
   existingFeedback: Record<string, unknown> | null
+  /** The tutorial under test, so a tester photo has something to attach to. */
+  tutorialId: string
+  /** Whether the tester has accepted the tester agreement. */
+  agreedToTesterTerms: boolean
 }
 
 interface ScoreField {
@@ -47,6 +53,8 @@ export function AssignmentBody({
   status,
   estimatedMinutes,
   existingFeedback,
+  tutorialId,
+  agreedToTesterTerms,
 }: Props) {
   const router = useRouter()
   const [pending, start] = useTransition()
@@ -165,6 +173,11 @@ export function AssignmentBody({
           whatWorked={whatWorked}
           whatDidnt={whatDidnt}
         />
+        <TesterPhotoUpload
+          assignmentId={assignmentId}
+          tutorialId={tutorialId}
+          agreed={agreedToTesterTerms}
+        />
       </section>
     )
   }
@@ -257,8 +270,51 @@ export function AssignmentBody({
             </button>
           </div>
         </form>
+
+        <TesterPhotoUpload
+          assignmentId={assignmentId}
+          tutorialId={tutorialId}
+          agreed={agreedToTesterTerms}
+        />
       </section>
     </>
+  )
+}
+
+/**
+ * Upload photo on the tester feedback form. Photos from a test are flagged and
+ * linked to the assignment, and the tester agreement covers showing them before
+ * the pattern is public.
+ */
+function TesterPhotoUpload({
+  assignmentId,
+  tutorialId,
+  agreed,
+}: {
+  assignmentId: string
+  tutorialId: string
+  agreed: boolean
+}) {
+  return (
+    <div style={{ marginTop: 28 }}>
+      <span className="me-section-label">Photos</span>
+      <h3 className="me-section-title" style={{ fontSize: 18 }}>
+        How yours turned out
+      </h3>
+      {agreed ? (
+        <UploadPhotoButton
+          tutorialId={tutorialId}
+          testAssignmentId={assignmentId}
+          signedIn
+        />
+      ) : (
+        <p className="me-empty">
+          Accept the tester agreement on{' '}
+          <Link href="/me/tester/apply">the tester page</Link> before uploading
+          photos from a test.
+        </p>
+      )}
+    </div>
   )
 }
 

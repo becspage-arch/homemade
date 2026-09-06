@@ -116,6 +116,8 @@ export default async function TesterAssignmentPage({ params }: PageProps) {
             ? (assignment.feedback as Record<string, unknown>)
             : null
         }
+        tutorialId={assignment.patternTest.tutorial.id}
+        agreedToTesterTerms={user.testerAgreementAt !== null}
       />
     </>
   )

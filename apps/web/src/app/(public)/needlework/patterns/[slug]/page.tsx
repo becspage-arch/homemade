@@ -203,6 +203,7 @@ export default async function NeedleworkPatternDetailPage({ params }: PageProps)
         patternId={row.id}
         patternType="NEEDLEWORK"
         returnTo={returnTo}
+        galleryHref="/needlework/makes"
       />
 
       {/* Extra finished-piece photos (a gallery) only when there's more than the
