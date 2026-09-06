@@ -120,6 +120,17 @@ Fargate, judged from the contact sheets and published PRIVATE under the
 settled oblong and was revised, which is the revision loop working: the loom
 reports, the session fixes, `expand` costs nothing.
 
+
+First judged routine batch (2026-09-06, the orchestrator as the session):
+eight briefs from the backlog, all eight built and rendered on Fargate,
+fidelity 0.905 to 0.944, seven published PUBLIC (the category stays hidden),
+one killed because its concept sentence named a colour the piece did not
+have. Deterministic spend $0.64. The cost model's assumed 60% pass rate is
+conservative against 7 of 8; it stays until three batches have measured it.
+The Routine "Homemade - crochet autopilot" (every 8 hours, fresh Sonnet cloud
+session) exists and is disabled until the next train carries the routine
+fixes to main.
+
 ## The bulk crochet pattern path proved end to end (2026-09-05)
 
 The loom's render-on-publish step had never been run against the live database:
