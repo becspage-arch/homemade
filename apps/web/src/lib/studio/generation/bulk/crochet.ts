@@ -1,7 +1,7 @@
 import 'server-only'
 import os from 'node:os'
 import path from 'node:path'
-import { mkdirSync, readFileSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import {
   prisma,
   Visibility,
@@ -11,7 +11,6 @@ import {
   CROCHET_TOY_SHELVES,
   type CrochetCompletenessResult,
 } from '@homemade/db'
-import { anthropicConfigured, anthropicJson, PLANNER_MODEL } from '@/lib/anthropic'
 import { generatePatternImage } from '@/lib/studio/generation/pattern-engine'
 import {
   writeInstructions,
@@ -48,15 +47,11 @@ import {
   designToProgram,
   hookForWeight,
   LOOM_WEIGHT_TO_YARN_SLUG,
-  BAND_STITCHES,
   type CrochetDesign,
 } from './crochet-design'
 import { findCrochetDuplicate, loadCrochetCatalogue, programFingerprint } from './crochet-dedupe'
 import type { CrochetBrief } from './crochet-planner'
-// Type-only: erased at compile, so the loom's Blender / AWS / Fal tooling still
-// never enters the request bundle. The values come in by dynamic import below.
-import type { ProgramRenderStart } from '../../../../../scripts/loom-pattern'
-import type { FargatePollResult } from '../../../../../scripts/loom-fargate-render'
+import type { SessionVerdict } from './crochet-session'
 
 /**
  * THE CROCHET BULK ADAPTER — brief in, a live, makeable, self-heroing pattern
@@ -98,27 +93,6 @@ interface LoomPatternModule {
     program: CompositionProgram,
     options: { name?: string; yr?: number; hero?: boolean; outDir?: string },
   ) => Promise<RenderResult>
-  /** The same two, split so the Fargate task runs BETWEEN two server requests. */
-  startProgramRender: (
-    program: CrochetProgram,
-    options: { name?: string; yr?: number; hero?: boolean; outDir?: string },
-  ) => Promise<ProgramRenderStart>
-  startCompositionRender: (
-    program: CompositionProgram,
-    options: { name?: string; yr?: number; hero?: boolean; outDir?: string },
-  ) => Promise<ProgramRenderStart>
-  pollProgramRender: (start: ProgramRenderStart) => Promise<FargatePollResult>
-  finishProgramRender: (
-    start: ProgramRenderStart,
-    options: { outDir?: string; hero?: boolean },
-  ) => Promise<RenderResult>
-}
-
-/** The scratch bucket, used here to hand a picture between two Inngest steps. */
-interface FargateScratchModule {
-  putFargateScratch: (localPath: string, key: string, options?: { contentType?: string; bucket?: string; region?: string }) => Promise<void>
-  getFargateScratch: (key: string, localPath: string, options?: { bucket?: string; region?: string }) => Promise<void>
-  scratchSibling: (outKey: string, filename: string) => string
 }
 
 interface RenderResult {
@@ -160,130 +134,79 @@ interface PersistModule {
 
 // ── Authoring ───────────────────────────────────────────────────────────────
 
-/** How many times the model may be asked to fix a design the loom refused. */
+/**
+ * How many times a design may be rewritten after the loom refuses it. The
+ * refusal comes back in the loom's own words; the SESSION rewrites the design
+ * and re-runs `expand`. Two revisions, then the candidate is culled — the same
+ * budget the old model loop had, spent by a session instead.
+ */
 export const MAX_DESIGN_REVISIONS = 2
 
-const DESIGN_SYSTEM = `You design crochet patterns for Homemade. You are given a brief and the exact shape of piece the loom can build for it, and you reply with the design as JSON. You choose the proportions, the stitch bands and the yarn colours; the loom builds, renders and words the pattern from what you choose.
-
-RULES
-- Stay inside the stitch counts you are given. They are what makes the finished piece the size the brief asks for.
-- Colours are six-digit hex, drawn from the palette you are given, and every colour you use must be in the "palette" object.
-- A striped piece changes colour at least once. A textured piece changes stitch at least once.
-- Bands are listed bottom row first, and their rows must add up to a total inside the row range.
-- Reply with JSON only, no prose.`
-
-interface DesignPromptContext {
-  brief: CrochetBrief
-  paletteHexes: string[]
-  problems?: string[]
-}
-
-function designPrompt({ brief, paletteHexes, problems }: DesignPromptContext): string {
-  const envelope = envelopeFor(brief.shelf, brief.treatment)
-  const cols = envelope?.cols ? `cols: a whole number between ${envelope.cols[0]} and ${envelope.cols[1]}` : ''
-  const rows = envelope?.rows ? `rows: a whole number between ${envelope.rows[0]} and ${envelope.rows[1]}` : ''
-  const rounds = envelope?.rounds ? `rounds: a whole number between ${envelope.rounds[0]} and ${envelope.rounds[1]}` : ''
-
-  const shape =
-    brief.treatment === 'amigurumi'
-      ? `{"treatment":"amigurumi","amigurumi":{"base":"ball|egg|bear|bunny","size":"S|M|L","mainHex":"#b5814e","contrastHex":"#e6d3ae","eyeMm":0|6|9|12,"nose":true,"paws":true}}`
-      : brief.treatment === 'sphere'
-        ? `{"treatment":"sphere","ballEquator":12|18|24|30|36,"ballPlateau":1..9,"palette":{"main":"#c25a3c"},"baseColourKey":"main"}`
-        : brief.treatment === 'disc'
-          ? `{"treatment":"disc","rounds":8,"palette":{"main":"#c25a3c"},"baseColourKey":"main"}`
-          : brief.treatment === 'grid-plain' || brief.treatment === 'grid-postrib'
-            ? `{"treatment":"${brief.treatment}","cols":18,"rows":20,"palette":{"main":"#c25a3c"},"baseColourKey":"main"}`
-            : `{"treatment":"${brief.treatment}","cols":35,"bands":[{"rows":2,"stitch":"sc","colourKey":"coral"},{"rows":2,"stitch":"hdc","colourKey":"teal"}],"palette":{"coral":"#c65b3c","teal":"#2f7f8c"},"baseColourKey":"coral"}`
-
-  const bandNote =
-    brief.treatment === 'grid-stripe' || brief.treatment === 'grid-texture'
-      ? `\nBand stitches: ${BAND_STITCHES.join(', ')} (sc = UK double crochet, hdc = UK half treble, dc = UK treble, scblo / scflo = back- and front-loop ridges). A band is 1 to 12 rows.`
-      : ''
-
-  const amiNote =
-    brief.treatment === 'amigurumi'
-      ? '\nThe four bases are the shapes the loom has been measured on. "bear" and "bunny" are a body, a neck, a head, a muzzle, two ears, two arms and two legs; "ball" and "egg" are one stuffed piece. Choose eyeMm 0 for a baby toy so there is nothing to come loose.'
-      : ''
-
-  const fix = problems?.length
-    ? `\n\nYour last design could not be built. What went wrong:\n${problems.map((p) => `- ${p}`).join('\n')}\n\nWrite the whole design again, fixed.`
-    : ''
-
-  return `THE BRIEF
-name: ${brief.name}
-what it is: ${brief.subject}
-shelf: ${brief.shelf} (${brief.shelfName})
-look: ${brief.brief.look}; territory: ${brief.brief.territory}; palette: ${brief.brief.palette}
-size: ${brief.brief.size}; difficulty: ${brief.brief.difficulty}
-
-THE PIECE THE LOOM WILL BUILD
-${envelope?.note ?? ''}
-${[cols, rows, rounds].filter(Boolean).join('\n')}${bandNote}${amiNote}
-
-PALETTE to draw the yarn colours from (you may shade them, but stay in this family):
-${paletteHexes.join(' ')}
-
-Reply with exactly this shape:
-${shape}${fix}`
+/**
+ * THE RULE, as an error.
+ *
+ * A crochet design used to be bought from the Anthropic API a token at a time.
+ * Under Rebecca's standing rule that work belongs to a Claude session on her Max
+ * plan, so the old entry point is a refusal: it names the rule and points at the
+ * stage that replaced it, rather than disappearing and leaving a caller to fail
+ * somewhere less obvious.
+ */
+export function authorCrochetProgram(): never {
+  throw new Error(
+    'authorCrochetProgram: crochet designs are authored by a Claude session on the Max plan (docs/autopilot-prompts/crochet.md), never by a per-token Anthropic API call. Write designs.json and run `scripts/crochet-autopilot.ts expand`.',
+  )
 }
 
 export interface AuthoredProgram {
   kind: 'piece' | 'amigurumi'
   program: CrochetProgram | CompositionProgram
-  /** How many model calls it took. */
+  /** Which expansion attempt produced it (1 on a design that built first time). */
   attempts: number
-  /** The design the model returned, for provenance. */
+  /** The design the session wrote, for provenance. */
   design: CrochetDesign | null
 }
 
-/**
- * Author one brief into a stitch program the loom will build.
- *
- * The loop is the Studio idea-builder's: ask, compile, audit, and hand the
- * audit's OWN words back for a revision. Two revisions, then the idea is
- * culled. Everything the model returns is expanded deterministically
- * (`crochet-design.ts`), so a revision is always a revision of the design and
- * never of the construction.
- */
-export async function authorCrochetProgram(brief: CrochetBrief, paletteHexes: string[]): Promise<AuthoredProgram> {
-  if (brief.treatment === 'grid-tapestry') {
-    return authorTapestryProgram(brief)
-  }
-  if (!anthropicConfigured()) throw new Error('authorCrochetProgram: ANTHROPIC_API_KEY not set')
+/** What the loom refused, in its own words, so the session can fix the design. */
+export interface BuildRefusal {
+  problems: string[]
+}
 
-  let problems: string[] = []
-  for (let attempt = 1; attempt <= MAX_DESIGN_REVISIONS + 1; attempt++) {
-    let design: CrochetDesign
-    try {
-      design = await anthropicJson<CrochetDesign>({
-        model: PLANNER_MODEL,
-        system: DESIGN_SYSTEM,
-        prompt: designPrompt({ brief, paletteHexes, problems }),
-        maxTokens: 2000,
-        retries: 1,
-      })
-    } catch (err) {
-      throw new Error(`design call failed: ${err instanceof Error ? err.message.slice(0, 120) : 'error'}`)
-    }
-    // The treatment is the planner's decision, not the designer's.
-    design.treatment = brief.treatment
-    const built = designToProgram(design, { shelf: brief.shelf, name: brief.name })
-    if (built.kind === 'none') {
-      problems = built.problems
-      continue
-    }
-    // The real gate: compile the geometry and audit the interlocks.
-    const audit =
-      built.kind === 'amigurumi'
-        ? compileComposition(built.program).problems
-        : compileRelaxAudit(built.program).problems
-    if (audit.length) {
-      problems = audit
-      continue
-    }
-    return { kind: built.kind, program: built.program, attempts: attempt, design }
-  }
-  throw new Error(`could not author a buildable program: ${problems.slice(0, 2).join('; ')}`)
+export type BuiltCrochetProgram = { ok: true; authored: AuthoredProgram } | { ok: false; problems: string[] }
+
+/**
+ * Build one session-written design into a stitch program the loom will make.
+ *
+ * The expansion is deterministic (`crochet-design.ts`), so a design can only
+ * describe choices inside a shape the engine is measured on, and then the real
+ * gate runs: compile the geometry and audit the interlocks. Problems come back
+ * rather than throwing, because they are the note the session revises against.
+ */
+export function buildCrochetProgram(
+  brief: CrochetBrief,
+  design: CrochetDesign,
+  attempt = 1,
+): BuiltCrochetProgram {
+  // The treatment is the brief's decision, not the design's — a design that
+  // disagrees with its brief is built as the brief says.
+  const wanted: CrochetDesign = { ...design, treatment: brief.treatment }
+  const built = designToProgram(wanted, { shelf: brief.shelf, name: brief.name })
+  if (built.kind === 'none') return { ok: false, problems: built.problems }
+
+  const audit =
+    built.kind === 'amigurumi'
+      ? compileComposition(built.program).problems
+      : compileRelaxAudit(built.program).problems
+  if (audit.length) return { ok: false, problems: audit }
+
+  return { ok: true, authored: { kind: built.kind, program: built.program, attempts: attempt, design: wanted } }
+}
+
+/**
+ * The pictorial lane, driven by the session's `picture` sentence rather than by
+ * a design recipe. Public because the CLI's expand stage builds it directly.
+ */
+export async function buildTapestryCandidate(brief: CrochetBrief, picture?: string): Promise<AuthoredProgram> {
+  return authorTapestryProgram(brief, picture)
 }
 
 /**
@@ -299,7 +222,10 @@ export async function authorCrochetProgram(brief: CrochetBrief, paletteHexes: st
  * ([[feedback_pattern_complexity_range]]) and the engine resolves colour per
  * stitch with no ceiling.
  */
-async function authorTapestryProgram(brief: CrochetBrief): Promise<AuthoredProgram> {
+async function authorTapestryProgram(brief: CrochetBrief, picture?: string): Promise<AuthoredProgram> {
+  // The session may say what the panel shows; the brief's own concept is the
+  // fallback, exactly as it was when a model wrote the brief.
+  const subject = picture?.trim() || brief.subject
   const envelope = envelopeFor(brief.shelf, 'grid-tapestry')
   const [colLo, colHi] = envelope?.cols ?? [24, 40]
   const [rowLo, rowHi] = envelope?.rows ?? [24, 40]
@@ -322,7 +248,7 @@ async function authorTapestryProgram(brief: CrochetBrief): Promise<AuthoredProgr
   // stays high — the dense many-colour end is a first-class target); it is a
   // change of SOURCE.
   const illustration = await generatePatternImage(
-    `${brief.subject}. Drawn as a bold flat picture in solid blocks of colour with clear hard-edged shapes and strong separation between them, like a screen print or a paper cut-out. No shading, no gradients, no texture, no text, no lettering. Centred, on a plain background.`,
+    `${subject}. Drawn as a bold flat picture in solid blocks of colour with clear hard-edged shapes and strong separation between them, like a screen print or a paper cut-out. No shading, no gradients, no texture, no text, no lettering. Centred, on a plain background.`,
     { imageSize: 'square_hd' },
   )
   const grid = await photoToTapestryGrid(illustration.buffer, {
@@ -363,7 +289,7 @@ async function authorTapestryProgram(brief: CrochetBrief): Promise<AuthoredProgr
     kind: 'piece',
     program,
     attempts: 1,
-    design: { treatment: 'grid-tapestry', cols: width, rows: height, picture: brief.subject, pictureColours: grid.palette.length },
+    design: { treatment: 'grid-tapestry', cols: width, rows: height, picture: subject, pictureColours: grid.palette.length },
   }
 }
 
@@ -532,140 +458,74 @@ export interface CrochetCandidate {
 }
 
 /**
- * Generate one candidate: author the program → measure the settled geometry and
- * declare the size from it → render the exact hero on Fargate, UNPERSISTED.
- * The buffer is handed back for the gate; nothing has been written anywhere.
+ * Render one AUTHORED candidate: measure the settled geometry and declare the
+ * size from it → render the exact hero on Fargate, UNPERSISTED. The buffer is
+ * handed back for the session to judge; nothing has been written anywhere.
+ *
+ * The program arrives already built and audited (`buildCrochetProgram`), so
+ * this function spends money and nothing else — which is what makes the render
+ * stage's spend cap a real cap rather than an approximate one.
  */
-export async function generateCrochetCandidate(
+export async function renderCrochetCandidate(
   brief: CrochetBrief,
-  paletteHexes: string[],
+  authored: AuthoredProgram,
+  options: { outDir?: string } = {},
 ): Promise<CrochetCandidate> {
   if (!fargateRenderWired()) {
-    throw new Error('generateCrochetCandidate: LOOM_RENDER!=fargate — the crochet hero render is not wired')
+    throw new Error('renderCrochetCandidate: LOOM_RENDER!=fargate — the crochet hero render is not wired')
   }
-  const authored = await authorCrochetProgram(brief, paletteHexes)
-  const outDir = path.join(os.tmpdir(), 'homemade-bulk-crochet-heroes')
+  const outDir = options.outDir ?? path.join(os.tmpdir(), 'homemade-bulk-crochet-heroes')
   const mod = (await import('../../../../../scripts/loom-pattern')) as unknown as LoomPatternModule
+  const settled = settleCrochetProgram(authored)
 
-  if (authored.kind === 'amigurumi') {
-    const program = authored.program as CompositionProgram
-    const compiled = compileComposition(program)
-    if (compiled.problems.length) throw new Error(`audit failed: ${compiled.problems[0]}`)
-    const size = compositionSizeMm(compiled)
-    program.finishedSizeMm = { width: Math.round(size.width), height: Math.round(size.height) }
-    const yr = compositionYarnRadiusMm(program)
-    program.gaugeText = `${Math.round(100 / (SC_STITCH_PITCH_YR * yr))} dc x ${Math.round(100 / (SC_ROW_PITCH_YR * yr))} rounds = 10 cm in double crochet (UK terms), worked tightly in a spiral so the stuffing does not show`
-    const render = await mod.renderComposition(program, { name: brief.slug, hero: true, outDir })
-    if (render.problems.length) throw new Error(`render audit failed: ${render.problems[0]}`)
-    const heroPath = render.heroPng ?? render.basePng
-    if (!heroPath) throw new Error('no render produced')
-    return {
-      kind: 'amigurumi',
-      program,
-      heroPng: readFileSync(heroPath),
-      heroPath,
-      geometryHash: render.geometryHash,
-      fidelityScore: render.fidelityScore,
-      yr: render.yr,
-      built: null,
-      compiled,
-      settledMm: { width: size.width, height: size.height },
-      totalStitches: program.parts.reduce((a, p) => a + p.rounds.reduce((x, y) => x + y, 0), 0),
-      attempts: authored.attempts,
-      design: authored.design,
-      fingerprint: programFingerprint(program),
-    }
-  }
-
-  let program = authored.program as CrochetProgram
-  const first = compileRelaxAudit(program)
-  if (first.problems.length) throw new Error(`audit failed: ${first.problems[0]}`)
-  const settled = settledSizeMm(first.built)
-  // DECLARE the size the geometry actually settled to, never the size we hoped
-  // for. The hero is this exact fabric, so the claim on the pattern page has to
-  // be the same object (the size-consistency gate, STITCH_ENGINE.md §8e-3).
-  program = declareSizeAndGauge(program, settled)
-
-  const render = await mod.renderProgram(program, { name: brief.slug, hero: true, outDir })
+  const render =
+    settled.kind === 'amigurumi'
+      ? await mod.renderComposition(settled.program as CompositionProgram, { name: brief.slug, hero: true, outDir })
+      : await mod.renderProgram(settled.program as CrochetProgram, { name: brief.slug, hero: true, outDir })
   if (render.problems.length) throw new Error(`render audit failed: ${render.problems[0]}`)
   const heroPath = render.heroPng ?? render.basePng
   if (!heroPath) throw new Error('no render produced')
+
   return {
-    kind: 'piece',
-    program,
+    kind: settled.kind,
+    program: settled.program,
     heroPng: readFileSync(heroPath),
     heroPath,
     geometryHash: render.geometryHash,
     fidelityScore: render.fidelityScore,
     yr: render.yr,
-    built: first.built,
-    compiled: null,
-    settledMm: settled,
-    totalStitches: countStitches(program),
+    built: settled.built,
+    compiled: settled.compiled,
+    settledMm: settled.settledMm,
+    totalStitches: settled.totalStitches,
     attempts: authored.attempts,
     design: authored.design,
-    fingerprint: programFingerprint(program),
+    fingerprint: settled.fingerprint,
   }
 }
 
-// ── The candidate, generated ASYNCHRONOUSLY ─────────────────────────────────
-//
-// `generateCrochetCandidate` above waits out the Fargate render — seven to nine
-// minutes — which is why the crochet autopilot shipped switched off: inside an
-// Inngest step that is one HTTP request, and the proxy in front of the site ends
-// a request at about a hundred seconds. These four do the same work in stages
-// short enough to survive that, with the render happening between them:
-//
-//   startCrochetCandidate    author the design, compile, audit, start the task
-//   pollCrochetCandidate     one AWS call: RUNNING / STOPPED / FAILED
-//   renderCrochetCandidate   fetch the PNG, photoreal finish, park the hero
-//   loadCrochetCandidate     bring the hero back as a full CrochetCandidate
-//
-// The last two are separate because the web service runs two tasks: the step
-// that gates and publishes is very likely a different container from the one
-// that finished the render, so the hero travels through the render scratch
-// bucket rather than a temp directory. Objects there expire after a day, so a
-// candidate the gate kills leaves nothing behind — the same promise the
-// synchronous path keeps by rendering unpersisted.
-
-/** What a started candidate carries between steps. Plain JSON, no geometry. */
-export interface PendingCrochetCandidate {
+/** A program that has been compiled, audited, measured and had its size declared. */
+export interface SettledCrochetProgram {
   kind: 'piece' | 'amigurumi'
   program: CrochetProgram | CompositionProgram
   settledMm: { width: number; height: number }
   totalStitches: number
-  attempts: number
-  design: CrochetDesign | null
   fingerprint: string
-  /** The render in flight (audit already passed, or nothing would be running). */
-  render: ProgramRenderStart
-}
-
-/** A pending candidate whose render has landed and been parked in the scratch bucket. */
-export interface RenderedCrochetCandidate extends PendingCrochetCandidate {
-  /** Scratch-bucket key of the finished hero PNG — beside its own render. */
-  heroKey: string
-  geometryHash: string
-  fidelityScore: number | null
-  yr: number
+  built: BuiltContinuous | null
+  compiled: CompiledComposition | null
 }
 
 /**
- * STEP 1: author the program, measure the settled geometry, declare the size
- * from it, and START the exact-hero render. Everything expensive that is NOT
- * the render happens here, and the audit gate runs before a task is launched.
+ * THE SIZE-CONSISTENCY STEP, split out so it runs BEFORE anything is spent.
+ *
+ * The pattern declares the size the geometry actually settled to, never the size
+ * the brief hoped for, because the hero is this exact fabric and the claim on
+ * the page has to be the same object (STITCH_ENGINE.md §8e-3). Doing it here
+ * rather than inside the render means a candidate's declared size, stitch count
+ * and construction fingerprint all exist before a Fargate task is launched — so
+ * the duplicate guard can refuse a repeat for free.
  */
-export async function startCrochetCandidate(
-  brief: CrochetBrief,
-  paletteHexes: string[],
-): Promise<PendingCrochetCandidate> {
-  if (!fargateRenderWired()) {
-    throw new Error('startCrochetCandidate: LOOM_RENDER!=fargate — the crochet hero render is not wired')
-  }
-  const authored = await authorCrochetProgram(brief, paletteHexes)
-  const outDir = path.join(os.tmpdir(), 'homemade-bulk-crochet-heroes')
-  const mod = (await import('../../../../../scripts/loom-pattern')) as unknown as LoomPatternModule
-
+export function settleCrochetProgram(authored: AuthoredProgram): SettledCrochetProgram {
   if (authored.kind === 'amigurumi') {
     const program = authored.program as CompositionProgram
     const compiled = compileComposition(program)
@@ -674,107 +534,29 @@ export async function startCrochetCandidate(
     program.finishedSizeMm = { width: Math.round(size.width), height: Math.round(size.height) }
     const yr = compositionYarnRadiusMm(program)
     program.gaugeText = `${Math.round(100 / (SC_STITCH_PITCH_YR * yr))} dc x ${Math.round(100 / (SC_ROW_PITCH_YR * yr))} rounds = 10 cm in double crochet (UK terms), worked tightly in a spiral so the stuffing does not show`
-    const render = await mod.startCompositionRender(program, { name: brief.slug, hero: true, outDir })
-    if (render.problems.length) throw new Error(`render audit failed: ${render.problems[0]}`)
     return {
       kind: 'amigurumi',
       program,
       settledMm: { width: size.width, height: size.height },
       totalStitches: program.parts.reduce((a, p) => a + p.rounds.reduce((x, y) => x + y, 0), 0),
-      attempts: authored.attempts,
-      design: authored.design,
       fingerprint: programFingerprint(program),
-      render,
+      built: null,
+      compiled,
     }
   }
 
-  let program = authored.program as CrochetProgram
-  const first = compileRelaxAudit(program)
+  const first = compileRelaxAudit(authored.program as CrochetProgram)
   if (first.problems.length) throw new Error(`audit failed: ${first.problems[0]}`)
   const settled = settledSizeMm(first.built)
-  // DECLARE the size the geometry actually settled to (STITCH_ENGINE.md §8e-3),
-  // exactly as the synchronous path does — the hero is this exact fabric.
-  program = declareSizeAndGauge(program, settled)
-
-  const render = await mod.startProgramRender(program, { name: brief.slug, hero: true, outDir })
-  if (render.problems.length) throw new Error(`render audit failed: ${render.problems[0]}`)
+  const program = declareSizeAndGauge(authored.program as CrochetProgram, settled)
   return {
     kind: 'piece',
     program,
     settledMm: settled,
     totalStitches: countStitches(program),
-    attempts: authored.attempts,
-    design: authored.design,
     fingerprint: programFingerprint(program),
-    render,
-  }
-}
-
-/** STEP 2: has the render finished, and did it work? One AWS call. */
-export async function pollCrochetCandidate(pending: PendingCrochetCandidate): Promise<FargatePollResult> {
-  const mod = (await import('../../../../../scripts/loom-pattern')) as unknown as LoomPatternModule
-  return mod.pollProgramRender(pending.render)
-}
-
-/**
- * STEP 3: bring the finished render down, put it through the photoreal finish
- * and the fidelity gate, and park the chosen hero in the scratch bucket for
- * whichever container runs the gate.
- */
-export async function renderCrochetCandidate(pending: PendingCrochetCandidate): Promise<RenderedCrochetCandidate> {
-  const outDir = path.join(os.tmpdir(), 'homemade-bulk-crochet-heroes')
-  const mod = (await import('../../../../../scripts/loom-pattern')) as unknown as LoomPatternModule
-  const render = await mod.finishProgramRender(pending.render, { outDir, hero: true })
-  if (render.problems.length) throw new Error(`render audit failed: ${render.problems[0]}`)
-  const heroPath = render.heroPng ?? render.basePng
-  if (!heroPath) throw new Error('no render produced')
-
-  const scratch = (await import('../../../../../scripts/loom-fargate-render')) as unknown as FargateScratchModule
-  const outKey = pending.render.handle?.outKey
-  if (!outKey) throw new Error('renderCrochetCandidate: the pending candidate has no render key')
-  const heroKey = scratch.scratchSibling(outKey, 'hero.png')
-  await scratch.putFargateScratch(heroPath, heroKey, { contentType: 'image/png' })
-
-  return {
-    ...pending,
-    heroKey,
-    geometryHash: render.geometryHash,
-    fidelityScore: render.fidelityScore,
-    yr: render.yr,
-  }
-}
-
-/**
- * STEP 4: the hero back off the scratch bucket as a full candidate, ready for
- * the gate, the duplicate guard and the publisher — the same object the
- * synchronous path builds, so everything downstream is unchanged.
- *
- * `built` / `compiled` are deliberately null: nothing past the render reads
- * them (the publisher hands the persist step its own derived faces), and
- * recompiling a whole yarn path on the memory-tight web container to fill in
- * two unread fields would be a poor trade.
- */
-export async function loadCrochetCandidate(rendered: RenderedCrochetCandidate): Promise<CrochetCandidate> {
-  const outDir = path.join(os.tmpdir(), 'homemade-bulk-crochet-heroes')
-  mkdirSync(outDir, { recursive: true })
-  const heroPath = path.join(outDir, `${rendered.fingerprint.slice(0, 16)}-hero.png`)
-  const scratch = (await import('../../../../../scripts/loom-fargate-render')) as unknown as FargateScratchModule
-  await scratch.getFargateScratch(rendered.heroKey, heroPath)
-  return {
-    kind: rendered.kind,
-    program: rendered.program,
-    heroPng: readFileSync(heroPath),
-    heroPath,
-    geometryHash: rendered.geometryHash,
-    fidelityScore: rendered.fidelityScore,
-    yr: rendered.yr,
-    built: null,
+    built: first.built,
     compiled: null,
-    settledMm: rendered.settledMm,
-    totalStitches: rendered.totalStitches,
-    attempts: rendered.attempts,
-    design: rendered.design,
-    fingerprint: rendered.fingerprint,
   }
 }
 
@@ -827,6 +609,23 @@ export interface PublishContext {
   bulkRunId?: string | null
   gate: { verdict: string; reasons: string[] }
   attempt?: number
+  /**
+   * PRIVATE or PUBLIC. The catalogue lane publishes PUBLIC into a category that
+   * is still hidden site-wide, so a published pattern fills the shelf without
+   * reaching a customer; a proof run publishes PRIVATE so the rows are visible
+   * to nobody but an admin and can be cleaned up without a takedown.
+   */
+  visibility?: Visibility
+  /**
+   * Who judged the hero. `'session'` is a Claude session on the Max plan reading
+   * the contact sheet and writing verdicts.json; the historical value is the
+   * server-side vision gate.
+   */
+  judgedBy?: 'session' | 'vision-gate'
+  /** The routine run that produced this pattern, for provenance. */
+  routineRunId?: string | null
+  /** The rubric the session ticked, box by box. */
+  rubric?: SessionVerdict['rubric']
 }
 
 export interface PublishedCrochetGem {
@@ -937,13 +736,16 @@ export async function publishCrochetGem(
     },
     design: candidate.design,
     gate: ctx.gate,
+    judgedBy: ctx.judgedBy ?? 'session',
+    routineRunId: ctx.routineRunId ?? null,
+    rubric: ctx.rubric ?? null,
     programFingerprint: candidate.fingerprint,
     geometryHash: candidate.geometryHash,
     fidelityScore: candidate.fidelityScore,
     settledSizeMm: candidate.settledMm,
     attempts: candidate.attempts,
     designAttempt: ctx.attempt ?? 1,
-    publishedBy: 'bulk-crochet',
+    publishedBy: 'crochet-autopilot-session',
     at: new Date().toISOString(),
   }
 
@@ -964,7 +766,7 @@ export async function publishCrochetGem(
     bulkRunId: ctx.bulkRunId ?? null,
     premium: false,
     ownerUserId: null,
-    visibility: Visibility.PUBLIC,
+    visibility: ctx.visibility ?? Visibility.PUBLIC,
     publishedAt: new Date(),
   }
 
@@ -1015,6 +817,58 @@ export async function publishCrochetGem(
     shelf: shelf.slug,
     geometryHash: candidate.geometryHash,
     fidelityScore: candidate.fidelityScore,
+  }
+}
+
+/** What one judged candidate came to. */
+export type JudgedOutcome =
+  | { outcome: 'published'; gem: PublishedCrochetGem }
+  | { outcome: 'killed'; reasons: string[] }
+  | { outcome: 'duplicate'; of: string; reason: string }
+  | { outcome: 'incomplete'; reasons: string[] }
+
+/**
+ * Everything a candidate goes through AFTER the session has judged its hero:
+ * the duplicate guard, then the publisher with its completeness gate.
+ *
+ * The judgement itself is not here and cannot be — it is a session reading a
+ * contact sheet. What IS here is every mechanical refusal that has to hold
+ * whatever the judge said: a PASS on a pattern the catalogue already has is
+ * still a duplicate, and a PASS on a row missing its gauge is still incomplete.
+ */
+export async function publishJudgedCrochetCandidate(
+  brief: CrochetBrief,
+  candidate: CrochetCandidate,
+  verdict: SessionVerdict,
+  ctx: Omit<PublishContext, 'gate' | 'rubric'>,
+): Promise<JudgedOutcome> {
+  if (verdict.verdict !== 'PASS') {
+    return { outcome: 'killed', reasons: verdict.reasons }
+  }
+
+  // The session judged one hero against the batch in front of it. It cannot see
+  // that this repeats something published in July, by idea or by construction.
+  const catalogue = await loadCrochetCatalogue()
+  const hit = findCrochetDuplicate(
+    { subjectKey: brief.subjectKey, programFingerprint: candidate.fingerprint },
+    catalogue,
+  )
+  if (hit) return { outcome: 'duplicate', of: hit.slug, reason: hit.reason }
+
+  try {
+    const gem = await publishCrochetGem(brief, candidate, {
+      ...ctx,
+      gate: { verdict: 'keep', reasons: verdict.reasons },
+      rubric: verdict.rubric,
+    })
+    return { outcome: 'published', gem }
+  } catch (err) {
+    // A row that fails the completeness gate is CULLED, not published with a
+    // flag and not held for review.
+    if (err instanceof CrochetIncompleteError) {
+      return { outcome: 'incomplete', reasons: err.result.reasons.slice(0, 3) }
+    }
+    throw err
   }
 }
 
