@@ -520,12 +520,12 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
       {category.slug === 'cross-stitch' && (
         <section className="pattern-landing-onething" aria-label="About this library">
           <p>
-            The library and the stitching tool are one thing. Open any chart in the
-            Studio and stitch it in the browser: your place is saved as you go, the
-            chart switches between colour blocks, stitched crosses and symbols, and the
-            floss list converts to Anchor or Madeira for free. There is no PDF to import
-            and no app to install, and members can make a chart of their own from a
-            photograph or a written idea.
+            Every chart here opens and stitches on this site. Tap a pattern, tap Stitch,
+            and the chart is in front of you: zoom in, tick off each stitch as you go,
+            and pick up where you left off on any phone, tablet or computer. Switch
+            between colour blocks, symbols and a stitched preview. See every colour as
+            DMC, Anchor or Madeira. Nothing to print unless you want to, nothing to
+            install.
           </p>
           <p className="pattern-landing-onething-link">
             <Link href="/cross-stitch/about-the-library">

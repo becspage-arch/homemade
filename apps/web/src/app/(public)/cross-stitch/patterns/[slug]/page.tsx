@@ -265,8 +265,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
           images that turn out to be renderings, and our answer is the strong
           one: the image IS the chart. Links through to the full account. */}
       <p className="pattern-detail-provenance">
-        The image above is the exact chart you will stitch, square for square, rather
-        than a mock-up of one.{' '}
+        This picture is the chart itself, so what you stitch is exactly what you see.{' '}
         <Link href="/cross-stitch/about-the-library">How the library is made</Link>
       </p>
 
