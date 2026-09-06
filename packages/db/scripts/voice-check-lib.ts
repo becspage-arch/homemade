@@ -10,7 +10,7 @@
  * direction doc. Keep this list in sync with `packages/ai/src/prompts/voice-rules.ts`.
  */
 
-import { BANNED_BRANDS, WARN_BRANDS } from './data/banned-brands.js'
+import { BANNED_BRANDS, WARN_BRANDS } from './data/banned-brands'
 
 export type Severity = 'error' | 'warn'
 
