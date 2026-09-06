@@ -37,7 +37,7 @@
  *   cd apps/web && HOMEMADE_ENV_FILE=../../.env.credentials \
  *     pnpm exec tsx scripts/xs-outline-backfill.ts \
  *     [--sheets] [--sample N] [--name <sheet-prefix>] [--cache <thumb-dir>] \
- *     [--out <dir>] [--limit N] [--only <slug,slug>] [--apply]
+ *     [--out <dir>] [--limit N] [--only <slug,slug>] [--concurrency N] [--apply]
  *
  * Without --apply it reports and changes nothing. --sheets writes before/after
  * contact sheets (whole chart, and a zoom into the middle where the line work
@@ -78,6 +78,8 @@ const LIMIT = Number(arg('limit')) || 0
 const OUT_DIR = arg('out') ?? resolve(process.cwd(), '../../scratchpad/xs-outline')
 const CACHE_DIR = arg('cache')
 const ONLY = (arg('only') ?? '').split(',').map((s) => s.trim()).filter(Boolean)
+/** Rows in flight while applying. The hero render is the expensive part. */
+const CONCURRENCY = Math.max(1, Number(arg('concurrency')) || 3)
 /** Chart JSON is large; page the walk so the container never holds the lot. */
 const PAGE = 50
 
@@ -609,25 +611,36 @@ async function main(): Promise<void> {
   let failed = 0
   let segments = 0
   let knots = 0
-  for (const sum of outlined) {
-    try {
-      // Re-read and re-judge at write time: another session may have touched the
-      // row since the scan, and the rule must decide on what is there now.
-      const row = await loadRow(sum.id)
-      if (!row || row.alreadyOutlined) continue
-      const n = await outlineOne(row)
-      if (!n) continue
-      segments += n.segments
-      knots += n.knots
-      done++
-      if (done % 20 === 0) {
-        console.log(`  ${done}/${outlined.length} · ${segments.toLocaleString()} segments · ${knots} knots`)
+  // A row costs one chart render (the hero, at full size) plus an upload and a
+  // transaction, and the render is the expensive half. A handful of rows in
+  // flight keeps the box busy without letting a thousand charts into memory at
+  // once; the rows are independent, so order does not matter.
+  let next = 0
+  const worker = async (): Promise<void> => {
+    for (;;) {
+      const i = next++
+      if (i >= outlined.length) return
+      const sum = outlined[i]!
+      try {
+        // Re-read and re-judge at write time: another session may have touched
+        // the row since the scan, and the rule must decide on what is there now.
+        const row = await loadRow(sum.id)
+        if (!row || row.alreadyOutlined) continue
+        const n = await outlineOne(row)
+        if (!n) continue
+        segments += n.segments
+        knots += n.knots
+        done++
+        if (done % 20 === 0) {
+          console.log(`  ${done}/${outlined.length} · ${segments.toLocaleString()} segments · ${knots} knots`)
+        }
+      } catch (err) {
+        failed++
+        console.error(`  FAILED ${sum.slug ?? sum.id}: ${err instanceof Error ? err.message : String(err)}`)
       }
-    } catch (err) {
-      failed++
-      console.error(`  FAILED ${sum.slug ?? sum.id}: ${err instanceof Error ? err.message : String(err)}`)
     }
   }
+  await Promise.all(Array.from({ length: CONCURRENCY }, () => worker()))
 
   console.log(
     `\nBACKFILL · outlined ${done} · failed ${failed} · left alone ${skipped.length} · already outlined ${alreadyDone}`,
