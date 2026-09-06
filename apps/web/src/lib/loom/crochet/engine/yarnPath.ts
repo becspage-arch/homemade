@@ -157,6 +157,29 @@ export interface StitchNodeRoles {
 export const stitchDebugNodes: StitchNodeRoles[] = []
 
 /**
+ * SCRATCH diagnostics for the POST family (§8f-7). The post branch of
+ * buildContinuous does not go through emitPlainStitch, so until now no
+ * post stitch could be measured at all — `loom-stitch-metrics.ts` reported NaN
+ * for fpdc, bpdc, postrib and basketweave, and the whole family was judged by
+ * eye. Recorded here in push order, purely diagnostic (nothing geometric reads
+ * it, so it moves no hash).
+ */
+export interface PostNodeRoles {
+  j: number
+  c: number
+  /** 'fp' pops the post forward, 'bp' sinks it back. */
+  mode: 'fp' | 'bp'
+  start: number
+  end: number
+  /** The two strands of the post, down-leg then up-leg, low to high. */
+  legs: number[]
+  /** The node that passes round the far side of the stem below. */
+  ring: number
+  crown: number
+}
+export const postDebugNodes: PostNodeRoles[] = []
+
+/**
  * The running strand under construction — one continuous yarn. push() appends a
  * node and auto-bonds it to the previous one (distance keeps the yarn's length,
  * bend resists kinking). NOTHING is ever joined by any other means: links between
@@ -775,6 +798,7 @@ export function buildContinuous(
 
   ridgeDebugNodes.length = 0
   stitchDebugNodes.length = 0
+  postDebugNodes.length = 0
   const S = createStrand()
   const { nodes, dist, bend, strandPath, links, push } = S
 
@@ -994,6 +1018,28 @@ export function buildContinuous(
       }
 
       if (postMode !== 'none') {
+        // THE POST BRANCH TAKES ITS OWN CELL (§8f-7). §8f-2 gave every stitch in
+        // the dictionary its own measured cell and rolled it out through
+        // `dimsFor`, and this branch was missed: it read the shared legacy
+        // `stitchDims(yr)` instead, so an fpdc was built with a post half-width
+        // of 0.35yr where its dictionary entry declares 1.13, a crown half-width
+        // of 0.4 where it declares 0.65, and none of its 1.3 relief scale. That
+        // is the whole reason the ribs are too narrow to close over their valley
+        // — the post was never built at the width the cell says.
+        // …and it takes it AT THE SWATCH'S OWN PACK. `postrib` works its columns
+        // at gauge 2.3 where plain fpdc works at 2.9, and a post's two legs
+        // straddle the stitch, so the post's half-width has to come down with the
+        // pitch or the ribs are built wider than the cell they sit in (measured:
+        // at fpdc's full 1.13yr the rib overlaps its neighbour by 1.4 d). One
+        // factor, derived from the gauge the builder is actually working at —
+        // the same way §8f-2 re-derived the per-swatch packs.
+        const pd = dimsFor(yr, id)
+        const pack = sw / (yr * STITCHES[id].gaugeYr)
+        const z = pd.z
+        const zh = pd.zh
+        const cw = pd.cw * pack
+        const pw = pd.pw * pack
+        const dh = pd.dh
         // FRONT/BACK POST: instead of hooking the head, the yarn RINGS around the
         // stem of the post below (front post pops the new post PROUD on the front,
         // back post sinks it to the back). The ring threads the post and is held on
@@ -1012,24 +1058,63 @@ export function buildContinuous(
         // boldly forward (fp) or back (bp). Heads stay at the PLANE so the row's travel
         // runs flat and alternating fp/bp columns don't tangle; the body pop alone
         // makes the raised ribs + recessed valleys.
-        push(x + s * pw, by + px * 0.85, zh * 0.35 * fz) // leave the previous head near the plane
-        push(x + s * pw, by + px * 0.52, ppz) // down-leg, popped
-        push(x + s * pw, by + px * 0.22, ppz)
+        //
+        // THE POST IS A V HERE TOO (§8f-7). This branch never got round 2's re-cut,
+        // and it cost exactly what round 2 said it costs, only worse: built at
+        // ±1.13yr the two legs settled 0.14 d apart — one cord, not a post — because
+        // the legacy route put the down-leg on the LEADING side and the up-leg on the
+        // trailing one, so the strand overshot the column, doubled back to the wrap,
+        // and doubled back again, and the bending constraint straightened both
+        // reversals and dragged the legs together. (Collision cannot save them: the
+        // pair is ~6 nodes apart along the strand, inside the relax adjacency window,
+        // so the post's width is set entirely by the built route.) A post that is one
+        // cord wide covers a quarter less of its own cell than it should, which is
+        // the open lattice a close-up of the rib reads.
+        //
+        // Re-cut the same way the plain post was: the strand runs MONOTONICALLY in
+        // the work direction (down-leg trailing, wrap, up-leg leading) so the splay
+        // goes with the bend, and the half-width TAPERS to the wrap, so the two
+        // strands genuinely splay out of the stitch they ring instead of running as
+        // parallel bars.
+        const sd = -s
+        const legHalf = (f: number): number => pw * (0.18 + 0.82 * f)
+        const pStart = nodes.length
+        const pLegs: number[] = []
+        pLegs.push(push(x + sd * legHalf(1), by + px * 0.85, zh * 0.35 * fz)) // leave the previous head near the plane
+        pLegs.push(push(x + sd * legHalf(0.62), by + px * 0.52, ppz)) // down-leg, popped
+        pLegs.push(push(x + sd * legHalf(0.26), by + px * 0.22, ppz))
         // ring around the below post stem (encircle it → linked, collision-held)
         push(x + cw * 1.15, ay, az)
         const ringFar = push(x, ay - dh * 0.2, az - front * cw * 1.5) // around the far z-side of the stem
         links.push({ j, c, role: 'ring', hook: ringFar, below: pa })
         push(x - cw * 1.15, ay, az)
-        push(x - s * pw, by + px * 0.22, ppz) // up-leg, popped
-        const postMid = push(x - s * pw, by + px * 0.52, ppz)
-        push(x - s * pw, by + px * 0.85, zh * 0.35 * fz)
+        const up0 = push(x - sd * legHalf(0.26), by + px * 0.22, ppz) // up-leg, popped
+        const postMid = push(x - sd * legHalf(0.62), by + px * 0.52, ppz)
+        const up2 = push(x - sd * legHalf(1), by + px * 0.85, zh * 0.35 * fz)
+        pLegs.push(up0, postMid, up2)
         postThis[c] = postMid
-        // Head at the PLANE (flat) — keeps the row connected and lets fp/bp alternate.
-        push(x - s * cw, ty - dh * 0.3, zh * fz)
-        const crown = push(x, ty, zh * 1.15 * fz)
-        push(x + s * cw, ty - dh * 0.3, zh * fz)
+        const pEnd = nodes.length
+        // THE HEAD IS A LOOP HERE TOO (§8f-7, second half). The three-node bump
+        // left the two leg tops with nothing to splay TO: they attached at ±cw
+        // (0.38 d) while the post was built ±0.66 d wide, so the distance and
+        // bending constraints pinched the post shut from the top exactly as they
+        // pinched it from the wrap below. Same emitter, same anatomy as every
+        // re-cut stitch: two strands with a hole between them, spanning the
+        // stitch, entered at the up-leg's own x. It still sits at the PLANE (the
+        // loop's own relief is the worked face's, not the post's pop), so the
+        // row's travel runs flat and alternating fp/bp columns still don't tangle.
+        const phl = yr * (STITCHES[id].headLoopYr ?? 0) * pack
+        let crown: number
+        if (phl > 0) {
+          crown = emitHeadLoop(push, { xC: x, ty, s, sd, fz, zh, dh, pw, cw, hl: phl }).crown
+        } else {
+          push(x - s * cw, ty - dh * 0.3, zh * fz)
+          crown = push(x, ty, zh * 1.15 * fz)
+          push(x + s * cw, ty - dh * 0.3, zh * fz)
+        }
         crownThisBack[c] = crown
         crownThisFront[c] = crown
+        postDebugNodes.push({ j, c, mode: postMode, start: pStart, end: pEnd, legs: pLegs, ring: ringFar, crown })
         continue
       }
 

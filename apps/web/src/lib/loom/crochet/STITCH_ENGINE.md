@@ -1919,6 +1919,126 @@ bear 83 × 103 → **82 × 101** (height-to-width 1.24 → 1.23).
 
 ---
 
+## 8f-7. ROUND 5, PART 2 — the post branch had never been re-cut (2026-09-06)
+
+Round-4/headband verdict: `post-rib-headband` at its real size reads close-up
+as a LATTICE — fp/bp posts standing apart with open gaps between them and the
+rows showing as horizontal ladders behind. A real 1x1 post rib is the opposite:
+the raised ribs touch, the fabric is dense, and the row structure hides behind
+the posts.
+
+### The post family could not be measured at all
+
+`loom-stitch-metrics.ts` covers the flat grid builder's PLAIN family
+(`emitPlainStitch`). The post branch of `buildContinuous` rings the stem below
+instead of hooking the head and goes nowhere near that emitter, so every figure
+in the dump came back `NaN` for `fpdc`, `bpdc`, `postrib` and `basketweave` —
+four locked or shipped stitches that have only ever been judged by eye. The
+branch now records its own diagnostic roles (`postDebugNodes`, push-order,
+nothing geometric reads it) and the dump has a POST-RIB block with the figures
+a rib is actually judged on, against real worsted 1x1 rib:
+
+- post pitch 1.4–1.6 d, and the ribs TOUCH (inter-post gap at or below zero).
+- lean 35–60°: the line from a raised post to the recessed one beside it is
+  steeply tilted out of the plane. A flat lattice measures 0.
+- the face is OWNED by the raised ribs (55–80% of the front view), and under
+  ~15% of the row-boundary line shows through between them.
+- front-face coverage and fabric thickness, as everywhere else.
+
+Front-face coverage is rastered against the SEGMENTS at the rendered radius,
+not the nodes: a post's nodes sit up to 1.2 d apart, so a node-only raster
+scores the stitch's own body as a hole (it read 63–75% before the fix, 84–94%
+after — the first number was measuring the sampling, not the fabric).
+
+### The measured table — worsted, yr 2.4, in rendered yarn diameters
+
+| quantity | `postrib` before → after | `fpdc` before → after | `basketweave` before → after | target |
+|---|---|---|---|---|
+| **post half-span (front view)** | 0.14 → **0.76** | 0.15 → **0.66** | 0.26 → **0.79** | the post is TWO strands |
+| **face owned by the raised ribs** | 41.1% → **78.9%** | 67.5% → 95.5% | 25.9% → **65.2%** | 55–80% (1x1 rib) |
+| **front-face coverage** | 94.0% → **98.9%** | 83.7% → **99.9%** | 86.9% → **98.9%** | 90–100% |
+| **fabric thickness** | 1.38 → **1.79** | 1.40 → **1.88** | 1.80 → 2.22 | 1.8–2.2 |
+| post lean out of plane | 32.1° → **35.6°** | 0.2° → 1.9° | 7.1° → 16.6° | 35–60° (1x1 rib) |
+| inter-post gap (front face) | +0.07 → −1.16 | +0.41 → −0.61 | +0.19 → −0.91 | ≤ 0 |
+| fp / bp depth separation | 0.85 → **1.00** | — | 0.52 → 1.02 | — |
+| post pitch | 1.35 → 1.36 | 1.71 | 1.70 → 1.67 | 1.4–1.6 |
+| row line exposed between posts | 55.0% → 33.1% | 62.2% → 9.6% | 58.7% → 43.5% | ≤ 15% |
+
+**The headline is the first row.** Built at ±1.13yr, `postrib`'s two post
+strands settled **0.14 d apart** — one cord, not a post. A rib one cord wide
+cannot close over the valley beside it, so between the ribs the eye met the
+recessed bp posts and the row's own heads. That is the lattice, and it is not a
+gauge problem: post pitch was already inside its range.
+
+### Three things, all of them the flat family's own fixes arriving late
+
+1. **The post is a V (§8f-2's route).** The legacy route put the down-leg on
+   the LEADING side and the up-leg on the trailing one, so the strand overshot
+   the column, doubled back to the wrap and doubled back again, and the bending
+   constraint straightened both reversals and dragged the legs together —
+   exactly the diagnosis round 2 wrote for the plain post, on a branch that
+   never got the fix. Collision cannot save it: the pair sits ~6 nodes apart
+   along the strand, inside the relax adjacency window. Re-cut monotonic, with
+   the half-width tapering to the wrap.
+2. **The head is a loop (§8f's `emitHeadLoop`).** The three-node bump left the
+   two leg tops nothing to splay TO — they attached at ±cw while the post was
+   built ±pw wide, so the post was pinched shut from the top as well as from
+   the wrap. `fpdc`/`bpdc` now declare `headLoopYr: 2.15`, the same fraction of
+   their own pitch dc's 2.52 is of its 3.4. The head still sits at the PLANE,
+   so the row's travel runs flat and alternating fp/bp columns still don't
+   tangle.
+3. **The branch takes its own CELL (§8f-2's `dimsFor`).** This is the one that
+   moved the numbers. §8f-2 gave every dictionary stitch its own measured cell
+   and rolled it out through `dimsFor`; the post branch was missed and kept
+   reading the shared legacy `stitchDims(yr)`. An `fpdc` was therefore being
+   built with a post half-width of **0.35yr where its own entry declares 1.13**,
+   a crown half-width of 0.4 against 0.65, and none of its 1.3 relief scale.
+   The post was never built at the width the cell says.
+
+   With one correction on top: the half-width is scaled by the PACK the builder
+   is actually working at (`sw ÷ the stitch's own gauge`), because `postrib`
+   works its columns at 2.3 where plain `fpdc` works at 2.9 and a post's two
+   legs straddle the stitch. At the full 1.13yr the rib overlapped its
+   neighbour by 1.4 d. `basketweave`'s `postReliefScale` drops 1.35 → 1.0 for
+   the same reason: the cell's own 1.3 relief scale already carries that
+   contrast, and 1.35 on top of it settled the fabric 2.70 d thick.
+
+### Hashes — 4 moved here, 6 across the whole pass
+
+`fpdc` d312f9ea41f3b549 → **61ccb3019b33d707** ·
+`bpdc` ddc3f2b65f36447d → **88491ff841a8d147** ·
+`postrib` d27a1dd46849bd1f → **2c6e80b4688da31a** ·
+`basketweave` 0de1315d830cb475 → **22b200b0099033ab**
+(plus `mrdisc` and `ball` from §8f-6). Bit-identical: the whole plain flat
+family, the shaped family, the fans and every knit swatch — 30 of 36. Audit
+clean **36/36 at fine 1.5, worsted 2.4 and bulky 3.2**.
+`post-rib-headband` re-measured off the settled geometry: **458 × 92 → 458 × 94
+mm**, both axes still inside the ±12% settled-size gate.
+
+**`fpdc`, `bpdc` and `postrib` are `locked` stitches whose geometry has moved.**
+Their `status` has NOT been changed — they need Rebecca's re-verification
+against their reference photos before they can be called locked again.
+
+### Still open
+
+- **The row line still shows through at 33%** on `postrib` (target ≤15) and
+  43% on `basketweave`. The heads sit at the fabric plane between posts that
+  now stand well proud of it, so the gap between two ribs looks down onto the
+  row boundary. A real rib's heads are pulled forward with their own post.
+- **`fpdc`/`bpdc` have no yarn-over collars.** §8f-3 gave every plain tall
+  stitch its wraps and measured a third of a tall stitch's yarn living in them;
+  a real front-post dc is made with a yarn-over exactly like a plain dc, and
+  this branch still builds a bare two-leg post. That is where the rib's
+  remaining width and density are, and it is a construction change, not a
+  value: the next pass on this family.
+- **`basketweave`'s lean is 16.6°** against a rib's 35–60. Its blocks are three
+  wide, so most posts have a same-mode neighbour and only the block seams lean
+  — the target is a 1x1-rib target and does not transfer. It wants its own.
+- **`fpdc`/`bpdc`'s own swatches read 95.5% / 0% "face owned by raised ribs"**
+  by construction (every post is the same mode). Read that row only on 1x1 rib.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,
@@ -1966,6 +2086,12 @@ bear 83 × 103 → **82 × 101** (height-to-width 1.24 → 1.23).
   are genuinely a yarn behind the surface, and a no-turn stitch makes both faces
   of the fabric on its own, so it spans the whole thickness by definition).
   Use `crown, share of thickness` — 0.5 is the face, flat sc sits at 0.49.
+- **Judging a fabric's density from a NODE raster** (round 5, 2026-09-06) → a
+  post's nodes sit up to 1.2 d apart along the strand, so a front view drawn as
+  discs at the nodes scores the middle of every stitch as a hole: `postrib`
+  measured 74.7% front-face coverage when the honest figure was 94.0%. Raster
+  the SEGMENTS as capsules of the rendered radius, or the number is measuring
+  the node spacing.
 - **Symmetric plane pull to flatten a chain** → crushes the front/back layering and
   the crowding resolves sideways (lean, escapes). Flatten with the one-sided TABLE
   (`floorZ`) — and give the back-bump layer real depth or the centre-back

@@ -41,7 +41,7 @@
 
 import { buildRelaxedSwatch, isSwatchArg } from '../src/lib/loom/crochet/engine/buildSwatch'
 import { SWATCH_RECIPES } from '../src/lib/loom/crochet/engine/dictionary'
-import { stitchDebugNodes, type BuiltContinuous } from '../src/lib/loom/crochet/engine/yarnPath'
+import { stitchDebugNodes, postDebugNodes, type BuiltContinuous } from '../src/lib/loom/crochet/engine/yarnPath'
 import { buildSphere } from '../src/lib/loom/crochet/engine/shaping'
 import { relax } from '../src/lib/loom/crochet/engine/relax'
 
@@ -156,6 +156,7 @@ function main(): void {
   // Only buildContinuous clears the shared diagnostic log; a round or sphere
   // build appends to it, so clear it here too and measure exactly one build.
   stitchDebugNodes.length = 0
+  postDebugNodes.length = 0
   let built: BuiltContinuous
   if (profileArg) {
     built = buildSphere('sc', 0, yr, profileArg)
@@ -175,6 +176,11 @@ function main(): void {
   }
   const n = built.model.nodes
   const recs = stitchDebugNodes.slice()
+  const posts = postDebugNodes.slice()
+  if (posts.length) {
+    postBlock(built, yr, d, posts)
+    return
+  }
   if (!recs.length) {
     console.error(
       `no plain-stitch records for '${arg}' — this dump covers the flat grid builder's plain-stitch family (buildContinuous + emitPlainStitch).`,
@@ -613,6 +619,192 @@ function main(): void {
   console.log(`stitch cell: ${rowD(mean(pitchX))}d wide x ${rowD(mean(pitchY))}d tall (real sc ≈ 1.6d x 1.4d)`)
   console.log(`\ntargets, in words:`)
   for (const [k, t] of Object.entries(T)) console.log(`  ${k.padEnd(15)} ${t.note}`)
+  console.log()
+}
+
+/**
+ * THE POST FAMILY (§8f-7). fpdc / bpdc / postrib / basketweave do not go through
+ * emitPlainStitch — the post branch of buildContinuous rings the stem below
+ * instead of hooking the head — so none of the figures above exist for them and
+ * the dump reported NaN across the board. These are the figures a 1x1 post rib
+ * is actually judged on, and the reason the headband reads as a lattice.
+ *
+ * Real worsted 1x1 fp/bp rib, measured off reference photographs, in rendered
+ * yarn diameters:
+ *   - post pitch 1.4-1.6 d: the columns are packed, not spaced.
+ *   - the ribs TOUCH — the settled gap between one rib's yarn and the next
+ *     rib's yarn is at or below zero, because the raised fp columns lean over
+ *     the recessed bp column between them and close it off.
+ *   - lean 35-60 degrees: the line from a raised post to the recessed post
+ *     beside it is steeply tilted out of the fabric plane. A flat lattice is 0.
+ *   - the row structure HIDES: standing in front of the fabric you see vertical
+ *     ribs, not the horizontal head line of the row below. Under ~15% of the
+ *     row-boundary line should be exposed between the posts.
+ *   - fabric thickness 1.8-2.2 d, like every other real crochet fabric.
+ */
+function postBlock(
+  built: BuiltContinuous,
+  yr: number,
+  d: number,
+  posts: typeof postDebugNodes,
+): void {
+  const n = built.model.nodes
+  const rY = d / 2 // the rendered yarn's own radius: what a viewer sees
+  const maxJ = Math.max(...posts.map((p) => p.j))
+  const maxC = Math.max(...posts.map((p) => p.c))
+  const interior = (p: { j: number; c: number }): boolean =>
+    p.j >= 1 && p.j <= maxJ - 1 && p.c >= 2 && p.c <= maxC - 2
+  const inner = posts.filter(interior)
+  /** A post's settled centre in the fabric's front view, and its depth. */
+  const centre = (p: (typeof posts)[number]): { x: number; z: number } => ({
+    x: mean(p.legs.map((k) => n[k]!.x)),
+    z: mean(p.legs.map((k) => n[k]!.z)),
+  })
+
+  const byRow = new Map<number, (typeof posts)[number][]>()
+  for (const p of inner) {
+    if (!byRow.has(p.j)) byRow.set(p.j, [])
+    byRow.get(p.j)!.push(p)
+  }
+  const pitch: number[] = []
+  const ribPitch: number[] = []
+  const gap: number[] = []
+  const lean: number[] = []
+  for (const row of byRow.values()) {
+    const sortedRow = [...row].sort((a, b) => a.c - b.c)
+    for (let i = 0; i + 1 < sortedRow.length; i++) {
+      const A = sortedRow[i]!
+      const B = sortedRow[i + 1]!
+      if (B.c !== A.c + 1) continue
+      const ca = centre(A)
+      const cb = centre(B)
+      pitch.push(Math.abs(cb.x - ca.x))
+      // EDGE TO EDGE, seen from the front: the nearest strand of one post to the
+      // nearest strand of the next, minus one rendered yarn diameter. <= 0 means
+      // the two ribs' yarn touches or overlaps in the front view, which is what
+      // a real packed rib does.
+      const ax = Math.max(...A.legs.map((k) => n[k]!.x))
+      const bx = Math.min(...B.legs.map((k) => n[k]!.x))
+      gap.push(bx - ax - d)
+      // LEAN: how far out of the fabric plane the line from one post to the next
+      // is tilted. A flat lattice of posts all at one depth measures 0; a real
+      // rib's raised columns stand well proud of the valley between them.
+      lean.push((Math.atan2(Math.abs(cb.z - ca.z), Math.abs(cb.x - ca.x)) * 180) / Math.PI)
+    }
+    const fps = sortedRow.filter((p) => p.mode === 'fp').sort((a, b) => a.c - b.c)
+    for (let i = 0; i + 1 < fps.length; i++) ribPitch.push(Math.abs(centre(fps[i + 1]!).x - centre(fps[i]!).x))
+  }
+
+  // FRONT-FACE COVERAGE and ROW-LINE EXPOSURE, rastered at the render radius
+  // (§9: measure areal coverage, never argue density from a render). Every
+  // worked node is a disc of the rendered yarn's radius in the front view; the
+  // frontmost disc covering a sample point is what the eye sees there.
+  // The yarn is CONTINUOUS between nodes, so the front view has to be rastered
+  // against the SEGMENTS (capsules of the rendered radius), not the nodes. A
+  // post's nodes sit up to 1.2 d apart, so a node-only raster reports the
+  // stitch's own body as a hole and every coverage figure it produces is wrong.
+  const worked: number[] = []
+  for (let k = built.anchorPins; k < n.length; k++) worked.push(k)
+  const isPost = new Set<number>()
+  const isFp = new Set<number>()
+  for (const p of posts)
+    for (let k = p.start; k < p.end; k++) {
+      isPost.add(k)
+      if (p.mode === 'fp') isFp.add(k)
+    }
+  interface Seg { ax: number; ay: number; bx: number; by: number; az: number; bz: number; post: boolean; fp: boolean }
+  const segs: Seg[] = []
+  for (let i = 0; i + 1 < worked.length; i++) {
+    const a = n[worked[i]!]!
+    const b = n[worked[i + 1]!]!
+    // Skip the jump where the strand leaves one row and starts the next far away.
+    if (Math.hypot(a.x - b.x, a.y - b.y, a.z - b.z) > yr * 8) continue
+    segs.push({ ax: a.x, ay: a.y, bx: b.x, by: b.y, az: a.z, bz: b.z, post: isPost.has(worked[i]!) && isPost.has(worked[i + 1]!), fp: isFp.has(worked[i]!) && isFp.has(worked[i + 1]!) })
+  }
+  /** Nearest point on a segment to (x, y) in the front view, and its depth. */
+  const hit = (sg: Seg, x: number, y: number): number | null => {
+    const dx = sg.bx - sg.ax
+    const dy = sg.by - sg.ay
+    const L2 = dx * dx + dy * dy
+    const t = L2 > 0 ? Math.min(1, Math.max(0, ((x - sg.ax) * dx + (y - sg.ay) * dy) / L2)) : 0
+    const px2 = sg.ax + dx * t
+    const py2 = sg.ay + dy * t
+    if ((px2 - x) ** 2 + (py2 - y) ** 2 > rY * rY) return null
+    return sg.az + (sg.bz - sg.az) * t
+  }
+  const xs = inner.map((p) => centre(p).x)
+  const x0 = Math.min(...xs)
+  const x1 = Math.max(...xs)
+  const ys = inner.flatMap((p) => p.legs.map((k) => n[k]!.y))
+  const y0 = Math.min(...ys)
+  const y1 = Math.max(...ys)
+  const STEP = rY / 3
+  let samples = 0
+  let covered = 0
+  // The row boundaries are where the heads of one row meet the posts of the next
+  // — the horizontal line a lattice shows through and a real rib hides.
+  const rowYs = [...new Set(inner.map((p) => p.j))].map((j) => {
+    const hs = posts.filter((p) => p.j === j).map((p) => n[p.crown]!.y)
+    return mean(hs)
+  })
+  let lineSamples = 0
+  let lineExposed = 0
+  // What the face is MADE of. The complaint a post-rib close-up reads as a
+  // lattice is not that the face has holes (it does not) — it is that the
+  // raised fp ribs are too narrow to close over the valley, so between them the
+  // eye meets the recessed bp posts and the row's own head line. In a real 1x1
+  // rib the raised columns own most of the face.
+  let fpFront = 0
+  for (let x = x0; x <= x1; x += STEP) {
+    for (let y = y0; y <= y1; y += STEP) {
+      let frontZ = -Infinity
+      let frontIsPost = false
+      let frontIsFp = false
+      let any = false
+      for (const sg of segs) {
+        if (Math.min(sg.ax, sg.bx) - rY > x || Math.max(sg.ax, sg.bx) + rY < x) continue
+        if (Math.min(sg.ay, sg.by) - rY > y || Math.max(sg.ay, sg.by) + rY < y) continue
+        const zz = hit(sg, x, y)
+        if (zz === null) continue
+        any = true
+        if (zz > frontZ) {
+          frontZ = zz
+          frontIsPost = sg.post
+          frontIsFp = sg.fp
+        }
+      }
+      samples++
+      if (any) covered++
+      if (any && frontIsFp) fpFront++
+      // On the row line: is what the eye meets there a POST, or the row's own
+      // head showing through the gap?
+      if (rowYs.some((ry) => Math.abs(y - ry) <= rY * 0.7)) {
+        lineSamples++
+        if (!any || !frontIsPost) lineExposed++
+      }
+    }
+  }
+
+  const zs = worked.map((k) => n[k]!.z)
+  const thickness = pct(zs, 98) - pct(zs, 2)
+  const row = (label: string, v: number, lo: number, hi: number, unit: string): void =>
+    console.log(
+      `${label.padEnd(30)}${v.toFixed(2).padStart(8)}${unit.padStart(8)}${`${lo}–${hi}`.padStart(13)}   ${v < lo ? 'UNDER' : v > hi ? 'OVER' : 'ok'}`,
+    )
+  console.log(`\nPOST-RIB METRICS — ${inner.length} interior posts, yr=${yr}mm (rendered yarn diameter d=${d.toFixed(2)}mm)`)
+  console.log(`${'quantity'.padEnd(30)}${'ours'.padStart(8)}${'unit'.padStart(8)}${'target'.padStart(13)}`)
+  console.log('-'.repeat(72))
+  row('post pitch', mean(pitch) / d, 1.4, 1.6, 'd')
+  row('fp rib pitch', mean(ribPitch) / d, 2.8, 3.2, 'd')
+  row('inter-post gap (front face)', mean(gap) / d, -0.4, 0.0, 'd')
+  row('post lean out of plane', mean(lean), 35, 60, 'deg')
+  row('row line exposed between posts', (100 * lineExposed) / (lineSamples || 1), 0, 15, '%')
+  row('front-face coverage', (100 * covered) / (samples || 1), 90, 100, '%')
+  row('face owned by raised ribs', (100 * fpFront) / (samples || 1), 55, 80, '%')
+  row('fabric thickness (p2–98)', thickness / d, 1.8, 2.2, 'd')
+  console.log('-'.repeat(72))
+  console.log(`post half-span (front view)  ${(mean(inner.map((p) => (Math.max(...p.legs.map((k) => n[k]!.x)) - Math.min(...p.legs.map((k) => n[k]!.x))) / 2)) / d).toFixed(2)} d`)
+  console.log(`fp / bp depth separation     ${(Math.abs(mean(inner.filter((p) => p.mode === 'fp').map((p) => centre(p).z)) - mean(inner.filter((p) => p.mode === 'bp').map((p) => centre(p).z))) / d || 0).toFixed(2)} d`)
   console.log()
 }
 

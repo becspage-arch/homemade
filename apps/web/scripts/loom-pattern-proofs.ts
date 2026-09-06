@@ -102,7 +102,7 @@ function postRibHeadband(): CrochetProgram {
     // SIZE CONSISTENCY (§8e-3): declared from the arithmetic above, both axes
     // within the ±12% settled-size gate.
     gaugeText: '18 sts x 6.6 rows = 10 cm in aran (post rib, this engine\'s scale); join short ends to fit',
-    finishedSizeMm: { width: 458, height: 92 }, // measured settled geometry (nominal ~453x91; relaxation opens it slightly)
+    finishedSizeMm: { width: 458, height: 94 }, // §8f-7: re-measured settled geometry after the post branch took its own cell (458 x 92 before; nominal ~453x91 — relaxation opens it slightly)
     hookMm: 5.5,
     notes: 'Worked flat as a strip, then the short ends are seamed into a loop to fit. The 1×1 post rib makes it stretchy and reversible.',
   }

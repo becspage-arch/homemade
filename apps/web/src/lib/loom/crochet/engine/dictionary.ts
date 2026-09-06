@@ -162,11 +162,14 @@ export const STITCHES: Record<StitchId, StitchDef> = {
   // the stem). fp pops proud, bp recedes — the basis of post ribbing + basketweave.
   fpdc: {
     id: 'fpdc', heightFactor: 3.0, gaugeYr: 2.9, topLoops: 2,
-    rowYr: 6.29, postHalfYr: 1.13, crownHalfYr: 0.65, reliefScale: 1.3,
+    // §8f-7: headLoopYr is the same fraction of the stitch's own pitch dc carries
+    // (2.52 of 3.4), so the head spans the stitch and the post's two legs have
+    // the two ends of a real loop to splay to instead of a three-node bump.
+    rowYr: 6.29, postHalfYr: 1.13, crownHalfYr: 0.65, headLoopYr: 2.15, reliefScale: 1.3,
   }, // post ribbing packs tighter than plain dc — the ribs touch into solid fabric
   bpdc: {
     id: 'bpdc', heightFactor: 3.0, gaugeYr: 2.9, topLoops: 2,
-    rowYr: 6.29, postHalfYr: 1.13, crownHalfYr: 0.65, reliefScale: 1.3,
+    rowYr: 6.29, postHalfYr: 1.13, crownHalfYr: 0.65, headLoopYr: 2.15, reliefScale: 1.3,
   },
   // bobble: several partial dc in one stitch gathered to one top → a raised bump.
   // Usually dotted on an sc background, so it borrows the row's height and just
@@ -407,7 +410,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
       const rb = Math.floor((j - 1) / 2)
       return (block + rb) % 2 === 0 ? 'fpdc' : 'bpdc' // 3-wide blocks, swap every 2 rows
     },
-    gaugeYr: 2.9, postReliefScale: 1.35, // CONTRAST (2026-07-11): the block alternation barely read (uniform vertical posts). Deepen the fp/bp relief 1.35× (per-swatch — locked fpdc/bpdc/postrib untouched) so raised blocks pop over recessed ones, and pack the columns (2.3->1.9) so the 3-wide blocks tile tight — the over-under basket weave becomes legible
+    gaugeYr: 2.9, postReliefScale: 1.0, // §8f-7: the post branch now takes fpdc's own cell, whose 1.3 relief scale already carries this contrast — 1.35 on top of it settled the fabric 2.70 d thick against a real 1.8–2.2. CONTRAST (2026-07-11): the block alternation barely read (uniform vertical posts). Deepen the fp/bp relief 1.35× (per-swatch — locked fpdc/bpdc/postrib untouched) so raised blocks pop over recessed ones, and pack the columns (2.3->1.9) so the 3-wide blocks tile tight — the over-under basket weave becomes legible
     referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2017/04/IMG_0708.jpg', // daisyfarmcrafts — cream basketweave swatch
     status: 'wip',
   },
