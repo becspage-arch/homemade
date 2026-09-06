@@ -26,6 +26,7 @@ import {
 } from '@/lib/recipes/recipe-render-data'
 import { harvestSupplies } from '@/lib/supplies'
 import { loadTutorialUgc } from '@/lib/ugc-loader'
+import { loadMakerPhotos } from '@/lib/maker-photos'
 import { captureServerEvent } from '@/lib/posthog'
 import { JsonLd } from '@/components/seo/json-ld'
 import { RelatedTutorials } from '@/components/public/related-tutorials'
@@ -60,7 +61,7 @@ import { BeginnerHelpFooter } from '@/components/public/tutorial-reader/beginner
 import { ScrollDepthTracker } from '@/components/public/tutorial-reader/scroll-depth-tracker'
 import { ShareButton } from '@/components/public/tutorial-reader/share-button'
 import { ReviewsBlock } from '@/components/public/ugc/reviews-block'
-import { PhotosBlock } from '@/components/public/ugc/photos-block'
+import { MakerPhotos } from '@/components/public/maker-photos/maker-photos'
 import { QaBlock } from '@/components/public/ugc/qa-block'
 import { ErrataLink } from '@/components/public/ugc/errata-link'
 import { CookingModeShell } from '@/components/public/cooking-mode/cooking-mode-shell'
@@ -557,10 +558,10 @@ export default async function TutorialPage({ params }: PageProps) {
   const canReview =
     Boolean(currentUser) &&
     project?.status === UserProjectStatus.COMPLETED
-  const canUploadPhoto =
-    Boolean(currentUser) &&
-    (project?.status === UserProjectStatus.IN_PROGRESS ||
-      project?.status === UserProjectStatus.COMPLETED)
+  // Uploading a photo needs nothing but an account: a started or finished
+  // project is not a condition. Signed-out readers see the button and are
+  // routed through sign-in.
+  const makerPhotos = await loadMakerPhotos({ kind: 'tutorial', tutorialId: tutorial.id })
 
   // Above-body region guidance.
   //
@@ -643,6 +644,12 @@ export default async function TutorialPage({ params }: PageProps) {
         tutorialCategorySlug={tutorial.category.slug}
         tutorialSlug={tutorialSlug}
       />
+      <MakerPhotos
+        photos={makerPhotos}
+        signedIn={Boolean(currentUser)}
+        tutorialId={tutorial.id}
+        returnTo={`/${tutorial.category.slug}/${tutorialSlug}`}
+      />
     </>
   )
 
@@ -660,13 +667,6 @@ export default async function TutorialPage({ params }: PageProps) {
         total={ugc.reviews.total}
         distribution={ugc.reviews.distribution}
         reviews={ugc.reviews.rows}
-      />
-
-      <PhotosBlock
-        tutorialId={tutorial.id}
-        signedIn={Boolean(currentUser)}
-        canUpload={canUploadPhoto}
-        photos={ugc.photos}
       />
 
       <QaBlock

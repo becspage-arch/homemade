@@ -14,6 +14,8 @@ import { PremiumBadge } from '@/components/premium'
 import { PatternSaveButton } from '@/components/public/pattern-save-button'
 import { PatternPlanButton } from '@/components/public/pattern-plan-button'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
+import { MakerPhotos } from '@/components/public/maker-photos/maker-photos'
+import { loadMakerPhotos } from '@/lib/maker-photos'
 import './pattern-detail.css'
 
 export const dynamic = 'force-dynamic'
@@ -134,6 +136,12 @@ export default async function PatternDetailPage({ params }: PageProps) {
   // opt-in, so we never name individuals here — only the aggregate.
   const finishedCount = await prisma.userPatternProgress.count({
     where: { patternId: row.id, completedAt: { not: null } },
+  })
+
+  const makerPhotos = await loadMakerPhotos({
+    kind: 'pattern',
+    patternId: row.id,
+    patternType: 'CROSS_STITCH',
   })
 
   // Make-it-list save state for the signed-in reader. Anonymous readers still
@@ -260,6 +268,15 @@ export default async function PatternDetailPage({ params }: PageProps) {
           </dl>
         </div>
       </header>
+
+      <MakerPhotos
+        photos={makerPhotos}
+        signedIn={Boolean(user)}
+        patternId={row.id}
+        patternType="CROSS_STITCH"
+        finishedCount={finishedCount}
+        returnTo={`/cross-stitch/patterns/${slug}`}
+      />
 
       <section className="pattern-detail-floss">
         <h2>Floss colours</h2>

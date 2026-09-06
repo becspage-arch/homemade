@@ -60,6 +60,15 @@ model User {
   isCreator         Boolean   @default(false)
   creatorVerifiedAt DateTime?
   isPatternTester   Boolean   @default(false)
+  /// Timestamp the member accepted the tester agreement (photos uploaded during
+  /// a test may be shown before the pattern is public). Null = never accepted.
+  testerAgreementAt DateTime?
+
+  /// Maker photos — "Use my photos in Homemade's promotion". Default on; the
+  /// value is copied onto each UGCPhoto at upload time, so turning it off stops
+  /// future photos being used in promotion and the member can still remove any
+  /// individual photo from My photos.
+  allowPhotoPromotion Boolean @default(true)
 
   // Premium entitlement (gating framework — Session E). `premiumActive` is the
   // single source of truth read by `hasPremium()`; everything gated (Studio on
@@ -2013,14 +2022,32 @@ model ReviewHelpful {
   @@index([reviewId])
 }
 
+/// The single maker-photo model. One photo belongs to exactly ONE made thing:
+/// either a Tutorial (tutorials and recipes) or a pattern of any type
+/// (`patternId` + `patternType`). Exactly one of the two sides is set; the
+/// application enforces it (Prisma has no cross-column check constraint) and
+/// the migration adds a database CHECK as a backstop.
+///
+/// Approval is AI-only and binary: the vision gate writes `gateVerdict` /
+/// `gateModel` and sets APPROVED or REJECTED. A rejected photo can be appealed
+/// once (`appealRequestedAt`), which is the only queue a person ever sees. If
+/// the gate cannot run the row stays PENDING_MODERATION and the member is told
+/// the photo is being checked — it never publishes un-gated.
 model UGCPhoto {
   id String @id @default(cuid())
 
   userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  tutorialId String
-  tutorial   Tutorial @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+  // ── Exactly one target ──────────────────────────────────────────────────
+  tutorialId String?
+  tutorial   Tutorial? @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+
+  /// Set together with `patternType`. Not a foreign key: patterns live in five
+  /// separate tables (Pattern, CrochetPattern, KnittingPattern,
+  /// NeedleworkPattern, SewingPattern) and `patternType` says which.
+  patternId   String?
+  patternType PatternType?
 
   mediaId String
   media   Media  @relation(fields: [mediaId], references: [id], onDelete: Restrict)
@@ -2029,11 +2056,47 @@ model UGCPhoto {
 
   status UGCPhotoStatus @default(PENDING_MODERATION)
 
-  // NSFW pre-screen results. Null means the scanner hasn't run (or no permission).
+  /// Whether Homemade may use this photo in its own promotion (social, email,
+  /// adverts). Copied from the uploader's `allowPhotoPromotion` setting at
+  /// upload time so a later settings change doesn't retroactively rewrite what
+  /// was agreed for photos already out there.
+  promotionAllowed Boolean @default(true)
+
+  // ── AI gate ─────────────────────────────────────────────────────────────
+  /// Raw gate result: `{ decision, reasons: string[], ... }`. Null while the
+  /// gate hasn't produced a verdict.
+  gateVerdict Json?
+  /// The model id that produced `gateVerdict`.
+  gateModel   String?
+
+  /// Plain-English reason shown to the member on My photos when REJECTED.
+  rejectionReason String?
+
+  // ── Appeal (the only human queue) ───────────────────────────────────────
+  appealRequestedAt DateTime?
+  appealNote        String?
+
+  // ── Tester photos ───────────────────────────────────────────────────────
+  /// True when the photo came from a pattern test, which may be published
+  /// before the pattern itself is public (covered by the tester agreement).
+  isTesterPhoto    Boolean         @default(false)
+  testAssignmentId String?
+  testAssignment   TestAssignment? @relation(fields: [testAssignmentId], references: [id], onDelete: SetNull)
+
+  /// Set when the member removes the photo from My photos. A removed photo is
+  /// off every surface immediately and never comes back.
+  removedAt DateTime?
+
+  // ── Admin curation (carried over from UserPatternPhoto) ─────────────────
+  /// Featured in the parent pattern's gallery (`galleryMediaIds`).
+  isFeatured Boolean @default(false)
+  /// Used as the pattern hero when the pattern has `preferUserPhotoForHero`.
+  isHero     Boolean @default(false)
+
+  // NSFW pre-screen results from the retired Rekognition path. Kept so the old
+  // rows read back; nothing writes them any more.
   nsfwScore          Float?
   nsfwClassification String?
-
-  rejectionReason String?
 
   moderatedAt   DateTime?
   moderatedById String?
@@ -2046,9 +2109,12 @@ model UGCPhoto {
 
   createdAt DateTime @default(now())
 
-  @@index([tutorialId, status])
+  @@index([tutorialId, status, removedAt])
+  @@index([patternId, patternType, status, removedAt])
   @@index([status, createdAt])
+  @@index([appealRequestedAt])
   @@index([userId])
+  @@index([testAssignmentId])
 }
 
 enum UGCPhotoStatus {
@@ -2459,6 +2525,9 @@ model TestAssignment {
   ///   whatDidnt: string,
   /// }
   feedback Json?
+
+  /// Maker photos uploaded during this test (flagged `isTesterPhoto`).
+  photos UGCPhoto[]
 
   appliedAt       DateTime  @default(now())
   decidedAt       DateTime?
@@ -4692,6 +4761,8 @@ enum PatternType {
   CROSS_STITCH
   KNITTING_CHART
   CROCHET_CHART
+  NEEDLEWORK
+  SEWING
 }
 
 enum LicenseType {
