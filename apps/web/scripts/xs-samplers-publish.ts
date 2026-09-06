@@ -12,11 +12,14 @@
  *
  * Dry run by default. Nothing is written without `--apply`.
  *
- * Run from apps/web:
+ * Run from apps/web. `--conditions=react-server` is load-bearing: the publish
+ * path carries Next's `server-only` marker, which throws outside a server
+ * component unless that export condition resolves it to the empty module. It is
+ * the same code the site runs either way.
  *
- *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-samplers-publish.ts
- *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-samplers-publish.ts --apply
- *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-samplers-publish.ts --apply --only sampler-birth-rose-wreath
+ *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx --conditions=react-server scripts/xs-samplers-publish.ts
+ *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx --conditions=react-server scripts/xs-samplers-publish.ts --apply
+ *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx --conditions=react-server scripts/xs-samplers-publish.ts --apply --only sampler-birth-rose-wreath
  */
 import { readFileSync } from 'node:fs'
 

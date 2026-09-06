@@ -13,8 +13,8 @@
  *
  * Run from apps/web:
  *
- *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-samplers-verify.ts
- *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-samplers-verify.ts --slug sampler-birth-rose-wreath --keep
+ *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx --conditions=react-server scripts/xs-samplers-verify.ts
+ *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx --conditions=react-server scripts/xs-samplers-verify.ts --slug sampler-birth-rose-wreath --keep
  */
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'

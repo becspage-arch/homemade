@@ -314,7 +314,9 @@ const birthPlainLetters: SamplerDesign = {
   ink2: INK.slate,
   async art() {
     const art = newArt()
-    drawRule(art, 58, 117, 52, QUIET.stone, 1)
+    drawRule(art, 62, 113, 52, QUIET.sage, 1)
+    motifAt(art, 'sprig', 46, 52, { A: QUIET.sage, B: ROSE.petal }, 2)
+    motifAt(art, 'sprig', 130, 52, { A: QUIET.sage, B: ROSE.petal }, 2)
     return art
   },
   blocks: [
@@ -457,11 +459,12 @@ const weddingPlainLetters: SamplerDesign = {
   look: 'modern minimal',
   width: 152,
   height: 96,
-  ink: INK.charcoal,
-  ink2: INK.slate,
+  ink: INK.indigo,
+  ink2: INK.bark,
   async art() {
     const art = newArt()
-    drawRule(art, 52, 99, 48, QUIET.stone, 1)
+    drawRule(art, 40, 111, 46, JEWEL.crimson, 1)
+    drawRule(art, 40, 111, 50, JEWEL.crimson, 1)
     return art
   },
   blocks: [
@@ -626,18 +629,19 @@ const homePlainLetters: SamplerDesign = {
   description: 'The address set large in plain capitals, with the date in small type under a rule.',
   look: 'modern minimal',
   width: 168,
-  height: 104,
-  ink: INK.charcoal,
-  ink2: INK.slate,
+  height: 122,
+  ink: INK.forest,
+  ink2: INK.navyDeep,
   async art() {
     const art = newArt()
-    drawRule(art, 58, 110, 50, QUIET.stone, 1)
+    motifAt(art, 'key', 84, 18, { A: JEWEL.teal }, 3)
+    drawRule(art, 58, 110, 68, JEWEL.teal, 1)
     return art
   },
   blocks: [
-    block(region(12, 14, 144, 28), [{ template: '{home}', face: 'modern-bold', size: 12, tracking: 0.8 }]),
+    block(region(12, 34, 144, 28), [{ template: '{home}', face: 'modern-bold', size: 12, tracking: 0.8 }]),
     block(
-      region(16, 56, 136, 38),
+      region(16, 76, 136, 38),
       [
         { template: '[{names}]', face: 'modern', size: 7, tracking: 0.8, upper: true },
         { template: '[{date}]', face: 'modern', size: 7, tracking: 0.5 },
@@ -705,11 +709,13 @@ const namePlainLetters: SamplerDesign = {
   look: 'modern minimal',
   width: 160,
   height: 108,
-  ink: INK.charcoal,
-  ink2: INK.slate,
+  ink: INK.plum,
+  ink2: INK.charcoal,
   async art() {
     const art = newArt()
-    drawRule(art, 52, 109, 50, QUIET.stone, 1)
+    drawRule(art, 56, 105, 50, ROSE.petal, 1)
+    motifAt(art, 'leaf', 38, 50, { A: ROSE.leaf, B: BOTANY.moss }, 2)
+    motifAt(art, 'leaf', 122, 50, { A: ROSE.leaf, B: BOTANY.moss }, 2)
     return art
   },
   blocks: [
@@ -729,17 +735,17 @@ const nameScriptRule: SamplerDesign = {
   slug: 'sampler-name-script-rule',
   kind: 'name-and-date',
   name: 'Script name sampler',
-  description: 'A name in flowing script over a fine rule, with the date and a short line in small capitals.',
+  description: 'A name in flowing script over a fine blue rule, with the date and a short line in small capitals.',
   look: 'modern minimal',
   width: 176,
   height: 116,
-  ink: INK.plum,
-  ink2: INK.bark,
+  ink: INK.navyDeep,
+  ink2: INK.slate,
   async art() {
     const art = newArt()
-    drawRule(art, 44, 132, 58, ROSE.leaf, 1)
-    motifAt(art, 'sprig', 26, 58, { A: ROSE.leaf, B: ROSE.petal }, 2)
-    motifAt(art, 'sprig', 150, 58, { A: ROSE.leaf, B: ROSE.petal }, 2)
+    drawRule(art, 44, 132, 58, COAST.sea, 1)
+    motifAt(art, 'star', 26, 58, { A: COAST.sea }, 2)
+    motifAt(art, 'star', 150, 58, { A: COAST.sea }, 2)
     return art
   },
   blocks: [
@@ -974,12 +980,14 @@ const anniversaryPlainLetters: SamplerDesign = {
   look: 'modern minimal',
   width: 152,
   height: 124,
-  ink: INK.charcoal,
-  ink2: INK.slate,
+  ink: INK.bark,
+  ink2: INK.navyDeep,
   async art() {
     const art = newArt()
-    drawRule(art, 40, 111, 56, QUIET.stone, 1)
-    drawRule(art, 40, 111, 90, QUIET.stone, 1)
+    drawRule(art, 40, 111, 56, FOLK.gold, 1)
+    drawRule(art, 40, 111, 90, FOLK.gold, 1)
+    motifAt(art, 'heart', 22, 73, { A: JEWEL.crimson }, 2)
+    motifAt(art, 'heart', 130, 73, { A: JEWEL.crimson }, 2)
     return art
   },
   blocks: [
@@ -1075,7 +1083,7 @@ const anniversaryLittleHoop: SamplerDesign = {
 const anniversaryCottageGarden: SamplerDesign = {
   slug: 'sampler-anniversary-cottage-garden',
   kind: 'anniversary',
-  name: 'Cottage garden anniversary sampler',
+  name: 'Rose border cottage anniversary sampler',
   description: 'A cottage inside a rose vine border, with two names, the years and the date underneath.',
   look: 'illustrated scene',
   width: 156,
