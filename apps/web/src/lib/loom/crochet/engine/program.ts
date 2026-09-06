@@ -117,7 +117,31 @@ export interface CrochetProgram {
   hookMm?: number
   /** Free-text designer notes (construction hints, blocking, edging). */
   notes?: string
+
+  /** Finished-object staging (Part C, STITCH_ENGINE.md §8e-2/§8e-3) — how a real
+   *  stored pattern's OWN hero should present it (render-on-publish reads this
+   *  when a caller doesn't force a different one). Proof scripts still get their
+   *  per-name override from `loom-pattern.ts`'s `PROOF_STAGING` map; this field
+   *  is what lets a program that ISN'T a named proof (a real customer pattern)
+   *  carry its own staging choice. Default 'swatch' (the stitch-proof crop). */
+  staging?: Staging
 }
+
+/** Finished-object staging (Part C — the four-part customer bar's "staged as the
+ *  finished object" leg):
+ *   - `swatch`   — a tight macro crop of the fabric (the stitch-proof look).
+ *   - `flatlay`  — the WHOLE piece pulled back on a clean surface with a gentle
+ *     3/4 tilt + soft drape, so it reads as a finished dishcloth / panel laid out,
+ *     not a fabric close-up.
+ *   - `loop`     — the flat strip curled into a standing RING (a headband seamed
+ *     into a loop, worn form): presentation only — the stitches are the exact
+ *     same genuinely-stitched geometry, just curved along the band.
+ *   - `flatband` — the flat strip laid on the ground as a PRODUCT PHOTO instead
+ *     of worn/standing: a gentle in-plane S-curve (not curled into a ring, not
+ *     stood on end) so a long thin strip (a headband, a belt, a tie) reads as a
+ *     finished item laid out for a listing photo, ribs still reading as straight
+ *     bars across the curve. Presentation only — same genuinely-stitched geometry. */
+export type Staging = 'swatch' | 'flatlay' | 'loop' | 'flatband'
 
 /** Resolve the render yarn radius (mm) for a program: an explicit override wins,
  *  else the program's yarn weight, else worsted. */

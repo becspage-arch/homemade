@@ -61,13 +61,29 @@ function stripeDishcloth(): CrochetProgram {
 // "mixed stitch types PER ROW" proof (the locked `postrib` look), packed tight
 // with the rib gauge so the ribs touch.
 // A LONG, THIN strip (many stitches around, few rows of band width) so that when
-// the short ends seam into a loop the ribs run round the circumference and there
-// is a real central hole — a headband ring, not a squat coiled disc.
-const RIB_W = 34 // §8f round 2: re-derived at the corrected post cell (the columns settle ~5.65mm apart at gaugeYr 2.3) for the declared 190mm circumference — was 52 against the old 1.5 pack
+// the short ends seam into a loop the ribs run round the circumference.
+//
+// REAL SIZE (2026-09-05): rebuilt at an adult headband's actual size instead of
+// the old 190×62mm napkin-ring proof. The counts are derived from the cell, not
+// guessed — postrib packs its fp/bp columns to `gaugeYr` 2.3, and fpdc/bpdc's
+// own row gauge is `rowYr` 6.29 (both from dictionary.ts, §8f round 2), so at
+// aran weight (`yr` 2.4mm, program.ts `YARN_WEIGHT_RADIUS_MM`):
+//   column pitch = 2.3 × 2.4mm = 5.52 mm/column
+//   row pitch    = 6.29 × 2.4mm = 15.10 mm/row
+// Target an adult ear-warmer band: ~45 cm worked-flat length (before it's
+// stretched a little to seam into a ~48cm worn loop), ~9-10 cm wide.
+//   columns = 450mm / 5.52mm/col ≈ 81.5 → 82 (even, so the 1×1 rib closes
+//     cleanly) → 82 × 5.52mm = 452.6mm nominal length (+0.6% over target)
+//   rows    = 95mm / 15.10mm/row ≈ 6.3 → 6 rows total (1 dc establishing row +
+//     5 fp/bp rib rows) → 6 × 15.10mm = 90.6mm nominal width (-4.7%, a genuine
+//     9.1cm band — closer to target than 7 rows, which overshoots to 105.7mm)
+// 82 × 6 = 492 stitches — well under the ~2,000-stitch Fargate render budget.
+const RIB_W = 82
+const RIB_ROWS = 6 // 1 dc establishing row + 5 fp/bp rib rows
 function postRibHeadband(): CrochetProgram {
   const grid: GridRow[] = []
   grid.push(row(fill(RIB_W, 'dc'))) // establish posts to wrap
-  for (let j = 1; j < 4; j++) {
+  for (let j = 1; j < RIB_ROWS; j++) {
     grid.push(row(Array.from({ length: RIB_W }, (_, c) => (c % 2 === 0 ? 'fpdc' : 'bpdc')) as StitchId[]))
   }
   return {
@@ -75,21 +91,20 @@ function postRibHeadband(): CrochetProgram {
     form: 'grid',
     gridWidth: RIB_W,
     grid,
-    gaugeYr: 2.3, // pack the fp/bp columns tight (the postrib value, re-derived §8f round 2 from the corrected post cell) so ribs touch
+    gaugeYr: 2.3, // pack the fp/bp columns tight (the postrib value, §8f round 2) so ribs touch
     yarnWeight: 'aran',
     colourHex: '#7c9a6d', // sage
-    // SIZE CONSISTENCY (§8e-3): the declared size here is metadata-only fixed to
-    // match what this geometry actually settles to at this gaugeYr/weight
-    // (measured ~191x47mm) — the row/stitch counts (the geometry, hence the
-    // geometryHash) are UNCHANGED; only the label was honest-checked. The prior
-    // 480x90mm declaration assumed a real-world post-rib gauge this engine's mm
-    // scale doesn't produce (a library-wide scale characteristic, not specific
-    // to this proof — see the same gap on texture-sampler-panel /
-    // flat-texture-panel / cottage-tapestry, left alone as out of scope here).
-    gaugeText: '18 sts x 4 rows = 12 cm in aran (post rib, this engine\'s scale); join short ends to fit',
-    finishedSizeMm: { width: 190, height: 62 }, // §8f round 2: re-measured at the re-cut post cell
+    // STAGED FLAT, not standing (§8e-3/§8f): at this real band size the standing
+    // `loop` reads as a cuff/basket (band height close to its own loop diameter);
+    // `flatband` lays the finished, seamed strip on the ground as a product
+    // photo instead — a gentle in-plane S, ribs still reading as straight bars.
+    staging: 'flatband',
+    // SIZE CONSISTENCY (§8e-3): declared from the arithmetic above, both axes
+    // within the ±12% settled-size gate.
+    gaugeText: '18 sts x 6.6 rows = 10 cm in aran (post rib, this engine\'s scale); join short ends to fit',
+    finishedSizeMm: { width: 458, height: 92 }, // measured settled geometry (nominal ~453x91; relaxation opens it slightly)
     hookMm: 5.5,
-    notes: 'Worked flat as a strip, then the short ends are seamed into a loop. The 1×1 post rib makes it stretchy and reversible.',
+    notes: 'Worked flat as a strip, then the short ends are seamed into a loop to fit. The 1×1 post rib makes it stretchy and reversible.',
   }
 }
 
