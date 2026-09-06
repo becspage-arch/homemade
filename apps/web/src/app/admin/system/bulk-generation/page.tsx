@@ -62,6 +62,8 @@ interface RunRow {
   proGenerations: number
   modelBriefs: number
   paleSkips: number
+  propRejects: number
+  collisionRejects: number
   errors: number
   killReasons: string[]
   startedAt: Date
@@ -92,7 +94,10 @@ function runLine(r: RunRow): string {
       ? ` · ${r.modelBriefs}/${r.requested} briefs model-authored${r.modelBriefs < r.requested ? ' (rest sampled)' : ''}`
       : ''
   const pale = r.paleSkips > 0 ? ` · ${r.paleSkips} pale (rejected before the gate)` : ''
-  return `[${tag}] ${r.craft}: ${r.published} published, ${r.culled} culled, ${r.duplicates} duplicates, ${r.skipped} skipped, ${r.repaired} repairs, ${r.generations} gens (${r.proGenerations} Pro), ${r.errors} errors (of ${r.requested})${authored}${pale}${inflight}${stalled}${killNote}`
+  // The brief post-filter's work, before a single Flux call was paid for.
+  const props = r.propRejects > 0 ? ` · ${r.propRejects} briefs rejected for props` : ''
+  const clashes = r.collisionRejects > 0 ? ` · ${r.collisionRejects} rejected as within-batch repeats` : ''
+  return `[${tag}] ${r.craft}: ${r.published} published, ${r.culled} culled, ${r.duplicates} duplicates, ${r.skipped} skipped, ${r.repaired} repairs, ${r.generations} gens (${r.proGenerations} Pro), ${r.errors} errors (of ${r.requested})${authored}${pale}${props}${clashes}${inflight}${stalled}${killNote}`
 }
 
 /** A run still open long after its counters stopped moving. */
@@ -258,7 +263,8 @@ export default async function AdminBulkGenerationPage() {
       select: {
         id: true, craft: true, trigger: true, requested: true, published: true,
         culled: true, duplicates: true, skipped: true, repaired: true, generations: true,
-        proGenerations: true, modelBriefs: true, paleSkips: true, errors: true, killReasons: true,
+        proGenerations: true, modelBriefs: true, paleSkips: true, propRejects: true,
+        collisionRejects: true, errors: true, killReasons: true,
         startedAt: true, updatedAt: true,
         finishedAt: true, skipReason: true,
       },

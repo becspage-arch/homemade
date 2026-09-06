@@ -3571,6 +3571,14 @@ model BulkRun {
   /// ever called. Counts the guard's work — and its cost saving, since a pale
   /// render never buys a gate call.
   paleSkips   Int      @default(0)
+  /// Model briefs the brief post-filter refused before a single Flux call: the
+  /// subject hung a small prop off the main shape ("wearing a tiny …", "topped
+  /// with …"), which Flux renders as a smudge and the gate then kills.
+  propRejects Int      @default(0)
+  /// Model briefs refused as a repeat of ANOTHER BRIEF IN THE SAME BATCH — same
+  /// shelf and either heavy token overlap or the same head noun. The catalogue
+  /// duplicate guard cannot see these: it compares against what is published.
+  collisionRejects Int @default(0)
   gemSlugs    String[] @default([])
   /// Short gate reasons behind culls — feeds the panel's "why did it dip" view.
   killReasons String[] @default([])

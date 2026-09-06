@@ -30,12 +30,25 @@ export function runIsComplete(run: RunCounters): boolean {
 
 /** The one-line summary a finished run records (admin history + the audit log). */
 export function summaryLine(
-  s: RunCounters & { craft: string; repaired: number; generations: number; modelBriefs?: number; paleSkips?: number },
+  s: RunCounters & {
+    craft: string
+    repaired: number
+    generations: number
+    modelBriefs?: number
+    paleSkips?: number
+    propRejects?: number
+    collisionRejects?: number
+  },
 ): string {
   // How much of the batch the planner model actually wrote. A run that fell back
   // to the pool sampler reads as a normal run otherwise, so it is stated.
   const authored =
     s.requested > 0 && s.modelBriefs != null ? ` · ${s.modelBriefs} of ${s.requested} briefs model-authored` : ''
   const pale = s.paleSkips ? ` · ${s.paleSkips} rejected as pale before the gate` : ''
-  return `${s.craft}: ${s.published} gems published, ${s.culled} culled, ${s.duplicates} duplicates, ${s.skipped} skipped, ${s.repaired} repairs, ${s.generations} generations, ${s.errors} errors (of ${s.requested})${authored}${pale}`
+  // What the brief post-filter refused before a single Flux call was made. A
+  // batch that spent half its planner output on props is a planner problem, and
+  // it is invisible unless the run says so.
+  const props = s.propRejects ? ` · ${s.propRejects} briefs rejected for props` : ''
+  const clashes = s.collisionRejects ? ` · ${s.collisionRejects} rejected as within-batch repeats` : ''
+  return `${s.craft}: ${s.published} gems published, ${s.culled} culled, ${s.duplicates} duplicates, ${s.skipped} skipped, ${s.repaired} repairs, ${s.generations} generations, ${s.errors} errors (of ${s.requested})${authored}${pale}${props}${clashes}`
 }

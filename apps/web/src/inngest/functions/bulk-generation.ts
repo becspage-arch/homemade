@@ -19,6 +19,10 @@ import {
   planModelBriefs,
   finaliseBriefs,
   modelAuthoredCount,
+  remainingShelfSlots,
+  rejectedSubjects,
+  tallyRejects,
+  type PlanChunk,
   MODEL_CHUNK,
   type CrossStitchBrief,
 } from '@/lib/studio/generation/bulk/planner'
@@ -163,7 +167,7 @@ async function finaliseIfComplete(runId: string): Promise<{ finished: boolean; a
     select: {
       id: true, craft: true, requested: true, published: true, culled: true, duplicates: true,
       skipped: true, repaired: true, generations: true, errors: true, finishedAt: true, alerted: true,
-      modelBriefs: true, paleSkips: true,
+      modelBriefs: true, paleSkips: true, propRejects: true, collisionRejects: true,
     },
   })
   if (!run || run.finishedAt) return { finished: false, alerted: false }
@@ -214,7 +218,7 @@ async function sweepStalledRuns(): Promise<number> {
     select: {
       id: true, craft: true, requested: true, published: true, culled: true, duplicates: true,
       skipped: true, repaired: true, generations: true, errors: true, updatedAt: true, modelBriefs: true,
-      paleSkips: true,
+      paleSkips: true, propRejects: true, collisionRejects: true,
     },
   })
   for (const run of stalled) {
@@ -326,13 +330,31 @@ export const bulkCrossStitchBatch = inngest.createFunction(
     // dropped the run to pool-sampled briefs every time — a quiet failure that
     // reads as a normal batch. Smaller calls fit, and a slow chunk costs only
     // that chunk.
+    const chunks: PlanChunk[] = []
     const modelBriefs: CrossStitchBrief[] = []
     for (let taken = 0, chunk = 1; taken < n; taken += MODEL_CHUNK, chunk++) {
       const want = Math.min(MODEL_CHUNK, n - taken)
-      const picked = modelBriefs.map((b) => b.subjectKey)
-      const got = await step.run(`plan-briefs-${chunk}`, () => planModelBriefs(want, planCtx, picked))
-      modelBriefs.push(...(got ?? []))
+      const got = await step.run(`plan-briefs-${chunk}`, () => planModelBriefs(want, planCtx, modelBriefs))
+      if (got) {
+        chunks.push(got)
+        modelBriefs.push(...got.briefs)
+      }
     }
+
+    // ONE retry round for whatever the brief post-filter threw out — props and
+    // within-batch repeats — asked on the shelves that lost it and naming the
+    // rejected subjects, so the second attempt is not a re-roll of the same
+    // mistake. Only after this does the pool sampler fill any remaining gap.
+    if (modelBriefs.length < n) {
+      const retryCtx = { ...planCtx, shelfSlots: remainingShelfSlots(planCtx, modelBriefs) }
+      const banned = rejectedSubjects(chunks)
+      const got = await step.run('plan-briefs-retry', () => planModelBriefs(n - modelBriefs.length, retryCtx, modelBriefs, banned))
+      if (got) {
+        chunks.push(got)
+        modelBriefs.push(...got.briefs)
+      }
+    }
+    const { propRejects, collisionRejects } = tallyRejects(chunks)
 
     // Top up any shortfall from the curated pool and hold the size range.
     const briefs = await step.run('plan-finalise', () => finaliseBriefs(modelBriefs, n, planCtx))
@@ -350,6 +372,8 @@ export const bulkCrossStitchBatch = inngest.createFunction(
           trigger: manual ? 'manual' : 'cron',
           requested: briefs.length,
           modelBriefs: authored,
+          propRejects,
+          collisionRejects,
           triggeredById,
         },
         select: { id: true },
@@ -364,7 +388,7 @@ export const bulkCrossStitchBatch = inngest.createFunction(
         data: { runId: run.id, brief, attempt: 1, tweak: {} as CandidateTweak },
       })),
     )
-    return { runId: run.id, dispatched: briefs.length, modelAuthored: authored }
+    return { runId: run.id, dispatched: briefs.length, modelAuthored: authored, propRejects, collisionRejects }
   },
 )
 

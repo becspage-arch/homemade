@@ -1,6 +1,6 @@
 import 'server-only'
 import { gateConfigured, visionGate, type GateResult } from '../vision-gate'
-import { planCrossStitchBriefs, planNeedleworkBriefs } from './planner'
+import { planCrossStitchBriefs, planNeedleworkBriefs, type CrossStitchBrief } from './planner'
 import {
   generateCrossStitchCandidate,
   publishCrossStitchGem,
@@ -76,6 +76,10 @@ export interface BatchSummary {
   proGenerations: number
   /** Attempts the pale guard rejected before the vision gate was called. */
   paleSkips: number
+  /** Model briefs the post-filter threw out for un-renderable props. */
+  propRejects?: number
+  /** Model briefs thrown out as a repeat of another brief in the same batch. */
+  collisionRejects?: number
   errors: number
   /** Slugs of the gems that shipped. */
   gems: string[]
@@ -159,7 +163,7 @@ export function tweakFor(action: GateResult['repairAction']): CandidateTweak {
  * every PUBLIC cross-stitch pattern, and a hit is terminal.
  */
 export async function crossStitchAttempt(
-  brief: Awaited<ReturnType<typeof planCrossStitchBriefs>>[number],
+  brief: CrossStitchBrief,
   tweak: CandidateTweak,
   keptSubjects: string[],
   ctx: { bulkRunId?: string | null; attempt?: number } = {},
@@ -244,10 +248,13 @@ export async function runCrossStitchBatch(count: number, step: StepRunner = inli
     return { ...base, notRun: 'gate-not-wired', line: 'cross-stitch batch skipped — ANTHROPIC_API_KEY not set, refusing to publish un-gated' }
   }
 
-  const briefs = await step.run('xs-plan', async () => {
+  const plan = await step.run('xs-plan', async () => {
     const ctx = await crossStitchPlanContext(count)
     return planCrossStitchBriefs(count, ctx)
   })
+  const briefs = plan.briefs
+  base.propRejects = plan.propRejects
+  base.collisionRejects = plan.collisionRejects
   const keptSubjects: string[] = []
 
   for (const brief of briefs) {

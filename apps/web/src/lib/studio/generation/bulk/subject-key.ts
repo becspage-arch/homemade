@@ -49,8 +49,12 @@ const STOPWORDS = new Set([
  * Light plural folding so "gardens" and "garden" are one idea. Only the safe
  * cases: never touch a short word, a double-s ending (grass, moss), or the
  * -ss/-us/-is endings that are not plurals.
+ *
+ * Exported because the brief post-filter's head-noun reader needs the SAME
+ * folding on raw words (it cannot use `subjectTokens`, which strips the
+ * prepositions that mark where a noun phrase ends).
  */
-function singularise(word: string): string {
+export function singulariseWord(word: string): string {
   if (word.length <= 3) return word
   if (/(ss|us|is|as|os)$/.test(word)) return word
   if (/ies$/.test(word)) return `${word.slice(0, -3)}y`
@@ -72,7 +76,7 @@ export function subjectTokens(subject: string): string[] {
     .trim()
     .split(/\s+/)
     .filter(Boolean)
-    .map(singularise)
+    .map(singulariseWord)
     .filter((w) => w.length > 0 && !STOPWORDS.has(w))
 }
 
