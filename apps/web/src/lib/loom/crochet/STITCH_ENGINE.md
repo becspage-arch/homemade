@@ -1760,6 +1760,165 @@ linked images.
 
 ---
 
+## 8f-6. ROUND 5 — the within-round front/back layer (2026-09-06)
+
+Round-4 verdict: the bear's HEAD and MUZZLE read as a tidy single-crochet
+V-grid curving round the form, and the `ball` swatch, the `mrdisc` swatch and
+the bear's BODY still read as a knot per stitch. Same builder, two looks — so
+the first job was to find what the head has that the ball lacks.
+
+### It has nothing. The measured answer is a negative one
+
+`loom-stitch-metrics.ts` now takes a composition part as well as a dictionary
+swatch (`sphere:6,12,18,…`, built through the same `buildSphere` pattern branch
+and relaxed on the same `surface` profile), so the bear's own pieces can be put
+in the same table as the swatches. Worsted, yr 2.4, in rendered yarn diameters.
+
+| quantity | flat `sc` | bear HEAD | bear MUZZLE | bear BODY | `ball` | `mrdisc` |
+|---|---|---|---|---|---|---|
+| profile | flat | 24/7-plateau | 12/1 | 30/6-plateau | eq-36 derived | 6→36 |
+| **per-stitch mound** | **0.57** | 1.18 | 1.45 | 1.23 | 1.10 | 1.24 |
+| **crown proud of its legs** | **0.42** | 0.59 | 0.65 | 0.59 | 0.54 | 0.67 |
+| **crown collision contacts** | **1.00** | 3.48 | 3.42 | 3.11 | 2.95 | 3.11 |
+| legs out of the surface (p90) | 0.40 | 0.27 | 0.53 | 0.34 | 0.18 | 0.17 |
+| head strands: along the round / in depth | 0.19 / 0.57 | 0.65 / 0.90 | 0.79 / 0.66 | 0.64 / 0.94 | 0.63 / 0.90 | 0.84 / 0.76 |
+| V opening angle | 54.0° | 42.2° | 43.5° | 40.7° | 38.4° | 43.8° |
+| stitch pitch / round pitch | 1.59 / 1.41 | 1.75 / 1.64 | 1.81 / 1.90 | 1.74 / 1.69 | 1.77 / 1.68 | 1.70 / 1.54 |
+| fabric thickness | 1.44 | 1.27 | 1.47 | 1.39 | 1.12 | 1.42 |
+| crown shear along the round | 0 | 0.33 | 0.26 | 0.37 | 0.47 | 0.43 |
+
+**The head and the body are the same fabric to two decimal places** — 0.59
+crown proud each, mound 1.18 against 1.23 — and they are two parts of ONE
+composition, in one photograph, at one pixel scale. So the four candidates the
+round-4 verdict offered all die here, on the numbers:
+
+- **plateau rounds → no shear, no crowding.** The head is 7/13 plateau rounds
+  and the muzzle 1/3, yet the muzzle measures the WORST of the spheres (mound
+  1.45). Shear is 0.26–0.47 across the whole family; the disc, which reads
+  worst, has fewer increases per round than the ball, which reads better.
+- **a smaller radius → a tighter meridian.** The head has the tightest round
+  pitch of the three spheres (1.64) and still measures the same.
+- **the ×1.05 meridian legacy.** The DISC has never carried it and settles
+  9% over gauge anyway (1.54 against a built 1.41). The surplus is put there by
+  the relaxation, not by the built drift, so removing the 1.05 would move every
+  amigurumi composition's absolute millimetre placements to buy about 5% of a
+  figure that would still be out of range. Left alone, now with a reason.
+- **the ±6 increase columns stacking.** Same shear numbers, both ways round.
+
+What the table DOES say, in one row: **every crown in round work has 2.95–3.48
+non-adjacent nodes inside its collision diameter, against flat sc's 1.00.**
+Round 4 found the crown floors at 0.54–0.67 d proud whatever it is built at;
+this is why. In flat fabric the work turns, so a crown's neighbours in depth
+belong to the other face. In a spiral nothing turns: the crown, the legs of the
+stitches either side of it, and the base of the stitch worked INTO it all
+occupy one depth band, and the only direction that crowd can resolve in is
+outward. Three times the crowd, one direction out.
+
+The head-and-ball difference is therefore not in the fabric. It is
+magnification: the ball proof frames one 58 mm ball where the bear frames a
+103 mm figure, so the same stitch arrives about 1.7× larger in the close-up
+crop. The whole round family was at the same bar, and the bar was the deferred
+one.
+
+### The construction — a second depth band, which is what `backCross` is
+
+`backCross` (emitPlainStitch, emitDecrease), 0 for every flat stitch and 1 for
+the round and sphere builders — the same gating pattern `surfaceLay` uses, so
+the flat family cannot move.
+
+At 0 every part of the stitch sits on its row's own worked face, which is what
+every builder has done since the engine was written. At 1 the stitch is built
+in TWO bands: the head loop and the top of the post stay at the surface, and
+the whole crossing region — the bottom of the down-leg, the approach, the hook,
+the emerge, the bottom of the up-leg — sweeps a full yarn behind it, which is
+where a real stitch's pull-through actually goes. Every offset is written
+`base + bx · delta`, so bx = 0 reproduces the old geometry to the bit; the
+shipped depth (hook 3.77 z behind the surface, the crossing band 4.05 z, the
+leg swept smoothly back from the surface at its top) is the best point of a
+four-value sweep on the disc and the ball.
+
+The round below's head then has the next round's fabric passing BEHIND it
+instead of elbowing it sideways, and the fabric gets its second layer — the
+only place a two-diameter thickness can come from in fabric that never turns.
+
+| quantity | `mrdisc` before → after | `ball` before → after | bear HEAD before → after | target |
+|---|---|---|---|---|
+| **crown collision contacts** | 3.11 → **1.61** | 2.95 → **1.81** | 3.48 → **1.69** | flat sc 1.00 |
+| **fabric thickness** | 1.42 → **1.89** | 1.12 → **1.81** | 1.27 → **2.07** | **1.8–2.2** |
+| **head strands, along the round** | 0.84 → **1.07** | 0.63 → **1.04** | 0.65 → **1.03** | a pair ~1 d apart |
+| …of which in depth | 0.76 → 0.30 | 0.90 → 0.45 | 0.90 → 0.49 | — |
+| crown apex relief | 0.64 → 0.82 | 0.57 → 0.80 | 0.60 → 0.67 | — |
+| crown, share of thickness | 0.45 → 0.43 | 0.51 → 0.44 | 0.47 → 0.32 | flat sc 0.49 |
+| yarn fed per stitch | 7.65 → 8.13 | 8.47 → 8.85 | 7.72 → 8.12 | 7.0–9.5 |
+| crowding | 2.91 → 3.08 | 2.85 → 3.12 | 2.69 → 2.99 | 2.8–4.8 |
+| leg straightness, with the dive | 0.91 → 0.96 | 0.91 → 0.96 | 0.90 → 0.93 | 0.93–1.0 |
+| per-stitch mound | 1.24 → 1.89 | 1.10 → 1.62 | 1.18 → 1.59 | see below |
+| crown proud of its own legs | 0.67 → 0.94 | 0.54 → 0.99 | 0.59 → 0.86 | see below |
+| V opening angle | 43.8° → 35.7° | 38.4° → 37.6° | 42.2° → 42.7° | 40–60° |
+
+The headline is the two rows the round-4 write-up said were the deferred fix.
+**Fabric thickness reaches its real-world range for the first time in any
+builder, flat or round** (flat sc is still 1.44), and **the head's two strands
+now separate ALONG the round rather than in depth** — 1.03–1.07 d apart side by
+side, which is the V-grid a real amigurumi surface shows, where before they
+were stacked one over the other and read as a single lumpy cord. The crowd
+round each crown roughly halves.
+
+### Two metrics stop meaning what they say, and one replaces them
+
+`crown proud of its own legs` and `per-stitch mound` both rise, and both are
+measuring the layer rather than the fault. The legs are now genuinely a yarn
+behind the surface, so "crown minus legs" grows by construction; and a stitch
+that makes both faces of the fabric on its own — which is exactly what a
+no-turn stitch does — spans the whole thickness by definition, where a flat
+stitch spans half because the next ROW makes the other half.
+
+The figure that still means what it says is where the crown sits across the
+fabric's own thickness (`crown, share of thickness`, added to the dump): 0.5 is
+the face, flat sc sits at 0.49, and the round family moved from 0.45–0.51 to
+**0.32–0.44**. The crown settled FURTHER into the fabric, not out of it, at the
+same time as the two figures above rose. Do not read either of them against the
+flat targets on a `backCross` builder without this line beside it.
+
+### What moved, and what is bit-identical
+
+`mrdisc` 6da71f8d3447ff66 → **e262db2d88aeaf60** ·
+`ball` 616cc89e54dd8bea → **f897e6d60ecd5455**.
+
+Bit-identical: `ch`, `slst`, `sc`, `hdc`, `dc`, `tr`, `dtr`, `scblo`, `scflo`,
+`fpdc`, `bpdc`, `postrib`, `basketweave`, `bobble`, `bobbles`, `scinc`, `scdec`,
+`hdcinc`, `hdcdec`, `dcinc`, `dcdec`, `shell`, `vstitch`, `crossed`, `picot`,
+`k`, `stockinette`, `garter`, `knitrib`, `yo`, `k2tog`, `ssk`, `seed`, `cable`
+— 34 of 36. The flat emitter did not move, so the flat family's own numbers
+were not re-opened in this pass. Audit clean **36/36 at fine 1.5, worsted 2.4
+and bulky 3.2**; all 30 designer preset/profile builds audit clean; all seven
+amigurumi composition proofs audit clean and still sit ON the table
+(`minz` 0.00). Declared sizes re-measured off the settled geometry:
+`amigurumi-ball` 59 → **58 × 38**, `amigurumi-creature` 67 → **65 × 85**, the
+bear 83 × 103 → **82 × 101** (height-to-width 1.24 → 1.23).
+
+### Still open
+
+- **The V opens 35.7° on the disc** (43.8 before), the one number this pass
+  cost. The ball and the head are unmoved (37.6°, 42.7°). A second construction
+  attempt — putting the crossing band entirely BELOW the visible leg, so the
+  leg's own splay never leaves the surface — measured worse on every axis
+  (disc V 32.8°, contacts 2.24, ball thickness 1.62) and was reverted: a leg
+  that runs front-back-front kinks, and a kinked leg closes the V for exactly
+  the reason §8f-2 found the first time. The smooth sweep is right; the disc's
+  V wants its own pass.
+- **Round pitch is still 4–16% over gauge** (disc 1.54, ball 1.64). Not the
+  ×1.05 — see the negative result above.
+- **`PROFILE_SIZE_MM` in amigurumiPresets.ts is stale by about 35%** and was
+  before this pass (a 6,12,18,24×8,18,12,6 head measures 47 × 52 mm against a
+  declared 34 × 35). That table is what the designer quotes a maker as the
+  finished size. Separate fix — it predates the corrected cell.
+- **`bear-S`, `bear-L`, `bunny-S`, `bunny-L` settle with parts below the
+  table** (`minz` −3.5 and −7.3 mm), also pre-existing (−4.2 and −7.1 before).
+  The proofs and the M presets are all at 0.00.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,
@@ -1793,6 +1952,20 @@ linked images.
   to the eye). At collision distance d a loop wrapping two strands needs ≈ 2d+2πd
   of perimeter. Chain tightness comes from SOFT collision (squashed yarn), never
   from starving the loop.
+- **Putting a no-turn stitch's crossing band entirely BELOW the visible leg**
+  (round 5, 2026-09-06) → the leg runs front, back, front and kinks, and a
+  kinked leg closes the V for exactly the reason §8f-2 found the first time
+  (the bending constraint straightens a reversal corner and drags the leg top
+  toward the chord). Measured against the smooth sweep-back it lost on every
+  axis: disc V 32.8° against 35.7°, crown contacts 2.24 against 1.61, ball
+  thickness 1.62 against 1.81. The second depth band has to be reached by a
+  SMOOTH sweep down the leg, not a step under it.
+- **Reading `crown proud of its own legs` or `per-stitch mound` against the flat
+  targets on a two-layer (`backCross`) builder** → both rise when the fabric
+  gets its second layer and neither is measuring proudness any more (the legs
+  are genuinely a yarn behind the surface, and a no-turn stitch makes both faces
+  of the fabric on its own, so it spans the whole thickness by definition).
+  Use `crown, share of thickness` — 0.5 is the face, flat sc sits at 0.49.
 - **Symmetric plane pull to flatten a chain** → crushes the front/back layering and
   the crowding resolves sideways (lean, escapes). Flatten with the one-sided TABLE
   (`floorZ`) — and give the back-bump layer real depth or the centre-back

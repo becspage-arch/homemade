@@ -50,7 +50,7 @@ const amigurumiBall: CompositionProgram = {
   tiltDeg: 20,
   parts: [{ name: 'ball', stitch: 'sc', rounds: BODY, colourHex: '#c25a3c', place: { on: 'ground' } }],
   gaugeText: 'sc worked in the round, stuffed firm',
-  finishedSizeMm: { width: 59, height: 38 }, // §8f-4: MEASURED off the settled geometry at the corrected cell. The claim was never checked against it — the same piece settled 41 x 26 mm before, so the shape (h/w 0.65) is unchanged; a +6 cap is intrinsically a flat disc and the roundness of a real ball comes from stuffing, which this model does not have (§9)
+  finishedSizeMm: { width: 58, height: 38 }, // §8f-6: re-measured off the settled geometry after the within-round front/back layer (59 x 38 at §8f-4). §8f-4: MEASURED off the settled geometry at the corrected cell. The claim was never checked against it — the same piece settled 41 x 26 mm before, so the shape (h/w 0.65) is unchanged; a +6 cap is intrinsically a flat disc and the roundness of a real ball comes from stuffing, which this model does not have (§9)
   hookMm: 4,
   notes: 'A simple stuffed crochet ball — the amigurumi primitive, worked as a continuous spiral from a magic ring.',
 }
@@ -72,7 +72,7 @@ const amigurumiCreature: CompositionProgram = {
     { name: 'ear-r', stitch: 'sc', rounds: EAR, colourHex: '#8a5a34', place: { on: 'head', dir: { x: 0.5, y: 0.14, z: 1 }, seat: mm(6) } },
   ],
   gaugeText: 'sc worked in the round, each piece stuffed and joined',
-  finishedSizeMm: { width: 67, height: 85 }, // §8f-4: measured off the settled geometry
+  finishedSizeMm: { width: 65, height: 85 }, // §8f-6: re-measured off the settled geometry after the within-round front/back layer (67 x 85 at §8f-4)
   hookMm: 4,
   notes: 'A simple amigurumi bunny: a stuffed body ball, a smaller head, and two ears standing proud — each crocheted as a spiral from a magic ring and sewn on.',
 }
@@ -334,7 +334,7 @@ function bear(opts: {
       },
     ],
     gaugeText: 'sc worked in the round, each piece stuffed firm and sewn on',
-    finishedSizeMm: { width: 83, height: 103 }, // §8f-5: re-MEASURED off the settled geometry after the round-work look pass (84 x 107 at §8f-4, 57 x 74 before the corrected cell). The stitch now lies IN the surface instead of standing off it, so every part is a few percent less puffy; height-to-width is unmoved at 1.24 and every proportion round 2 tuned survives.
+    finishedSizeMm: { width: 82, height: 101 }, // §8f-6: re-measured off the settled geometry after the within-round front/back layer — the crossing region now runs a yarn behind the surface, so each piece draws in a touch (83 x 103 at §8f-5); height-to-width 1.24 -> 1.23, every proportion round 2 tuned intact. §8f-5: re-MEASURED off the settled geometry after the round-work look pass (84 x 107 at §8f-4, 57 x 74 before the corrected cell). The stitch now lies IN the surface instead of standing off it, so every part is a few percent less puffy; height-to-width is unmoved at 1.24 and every proportion round 2 tuned survives.
     hookMm: 4,
     notes: opts.notes,
   }

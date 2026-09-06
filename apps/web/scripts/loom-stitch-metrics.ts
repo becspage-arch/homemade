@@ -41,7 +41,9 @@
 
 import { buildRelaxedSwatch, isSwatchArg } from '../src/lib/loom/crochet/engine/buildSwatch'
 import { SWATCH_RECIPES } from '../src/lib/loom/crochet/engine/dictionary'
-import { stitchDebugNodes } from '../src/lib/loom/crochet/engine/yarnPath'
+import { stitchDebugNodes, type BuiltContinuous } from '../src/lib/loom/crochet/engine/yarnPath'
+import { buildSphere } from '../src/lib/loom/crochet/engine/shaping'
+import { relax } from '../src/lib/loom/crochet/engine/relax'
 
 /**
  * Published real-world figures for WORSTED (CYC 4) cotton, the weight the
@@ -125,8 +127,15 @@ const pct = (a: number[], p: number): number => {
 
 function main(): void {
   const arg = process.argv[2] ?? 'sc'
-  if (!isSwatchArg(arg)) {
-    console.error(`unknown stitch '${arg}' — known: ${Object.keys(SWATCH_RECIPES).join(', ')}`)
+  // A COMPOSITION PART is not a dictionary swatch (§8f-6): the bear's head and
+  // muzzle are spheres built from an explicit round profile, through the same
+  // buildSphere the `ball` swatch uses but on the pattern branch. Measuring them
+  // beside the swatches is the whole point of the round-5 comparison, so the
+  // dump takes `sphere:6,12,18,...` as well as a swatch name and relaxes it with
+  // exactly the 'surface' profile buildSwatch uses.
+  const profileArg = arg.startsWith('sphere:') ? arg.slice(7).split(',').map(Number) : null
+  if (!profileArg && !isSwatchArg(arg)) {
+    console.error(`unknown stitch '${arg}' — known: ${Object.keys(SWATCH_RECIPES).join(', ')}, or sphere:<counts>`)
     process.exit(2)
   }
   const yr = Number(process.argv[3] ?? 2.4)
@@ -136,7 +145,9 @@ function main(): void {
   // fabric with a photograph means comparing stitch size to the yarn you can
   // SEE, so that is the unit every published gauge figure is converted into.
   const d = yr * 1.7
-  const recipe = SWATCH_RECIPES[arg]
+  const recipe = profileArg
+    ? ({ stitch: 'sc', auditW: 16, status: 'part' } as unknown as (typeof SWATCH_RECIPES)['sc'])
+    : SWATCH_RECIPES[arg as keyof typeof SWATCH_RECIPES]
   const T: typeof TARGETS = { ...TARGETS }
   for (const [k, v] of Object.entries(BY_STITCH[recipe.stitch] ?? {})) {
     T[k] = { ...T[k]!, ...(v as { lo: number; hi: number }) }
@@ -145,7 +156,23 @@ function main(): void {
   // Only buildContinuous clears the shared diagnostic log; a round or sphere
   // build appends to it, so clear it here too and measure exactly one build.
   stitchDebugNodes.length = 0
-  const { built } = buildRelaxedSwatch(arg, W, yr)
+  let built: BuiltContinuous
+  if (profileArg) {
+    built = buildSphere('sc', 0, yr, profileArg)
+    relax(built.model, {
+      collMinDist: yr * 1.25,
+      collK: 0.28,
+      collAdjacency: 9,
+      planeZ: 0,
+      planeK: 0,
+      layoutK: 0.06,
+      layoutMode: 'surface',
+      floorZ: 0,
+      iterations: 560,
+    })
+  } else {
+    built = buildRelaxedSwatch(arg as keyof typeof SWATCH_RECIPES, W, yr).built
+  }
   const n = built.model.nodes
   const recs = stitchDebugNodes.slice()
   if (!recs.length) {
@@ -406,6 +433,86 @@ function main(): void {
   for (let k = built.anchorPins; k < n.length; k++) zs.push(nOff(k))
   const thickness = pct(zs, 98) - pct(zs, 2)
 
+  // --- ROUND-5 DIAGNOSTICS (§8f-6). Three figures the round-4 write-up reached
+  // for by hand, now part of the dump so head/muzzle/ball/disc are read the same
+  // way: what is CROWDING each crown, how far the round's crowns are sheared off
+  // the crowns they hook, and whether each round sits at the radius its own
+  // stitch count wants.
+  //
+  // 1. CROWN COLLISION CONTACTS — non-adjacent nodes inside the collision
+  //    distance of a crown node. Every one of them pushes the crown along the
+  //    line between them, and on no-turn fabric the resultant is outward: this
+  //    is the census that said the crown "floors" at 0.5-0.67 d proud.
+  const collD = yr * 1.25
+  const ADJ = 9
+  const crownIdx = recs.filter(interior).map((r) => r.crown)
+  let contacts = 0
+  {
+    // A uniform grid over the settled cloud keeps this O(n) rather than O(n^2).
+    const cell = collD
+    const key = (x: number, y: number, z: number): string =>
+      `${Math.floor(x / cell)},${Math.floor(y / cell)},${Math.floor(z / cell)}`
+    const grid = new Map<string, number[]>()
+    for (let i = built.anchorPins; i < n.length; i++) {
+      const k = key(n[i]!.x, n[i]!.y, n[i]!.z)
+      if (!grid.has(k)) grid.set(k, [])
+      grid.get(k)!.push(i)
+    }
+    for (const ci of crownIdx) {
+      const p = n[ci]!
+      const bx = Math.floor(p.x / cell)
+      const by = Math.floor(p.y / cell)
+      const bz = Math.floor(p.z / cell)
+      for (let ax = -1; ax <= 1; ax++)
+        for (let ay = -1; ay <= 1; ay++)
+          for (let az = -1; az <= 1; az++)
+            for (const j of grid.get(`${bx + ax},${by + ay},${bz + az}`) ?? []) {
+              if (Math.abs(j - ci) <= ADJ) continue
+              if (seg(ci, j) < collD) contacts++
+            }
+    }
+  }
+  const crownContacts = crownIdx.length ? contacts / crownIdx.length : NaN
+
+  // 2. SHEAR — how far ALONG the round a crown sits from the crown its own hook
+  //    dives under. Zero in flat grid work by construction; on a round it is
+  //    what an increase column produces, and a sheared crown is one the next
+  //    round cannot sit squarely on.
+  const shear: number[] = []
+  if (curved) {
+    for (const r of recs) {
+      if (!interior(r)) continue
+      const c = n[r.crown]!
+      const h = n[r.hook]!
+      const F = frameAt(r.crown)
+      const dv = { x: c.x - h.x, y: c.y - h.y, z: c.z - h.z }
+      shear.push(Math.abs(dv.x * F.t.x + dv.y * F.t.y + dv.z * F.t.z))
+    }
+  }
+
+  // 3. PER-ROUND RADIUS vs the radius the round's own stitch COUNT wants
+  //    (count x stitch gauge / 2pi) — the figure that found the stretched pole.
+  interface RoundRow { j: number; count: number; rMeas: number; rWant: number; pitch: number; inc: boolean }
+  const roundRows: RoundRow[] = []
+  if (curved) {
+    const swMm = yr * (SWATCH_RECIPES.sc.gaugeYr ?? 2.7)
+    const byJ = new Map<number, (typeof recs)[number][]>()
+    for (const r of sorted) {
+      if (!byJ.has(r.j)) byJ.set(r.j, [])
+      byJ.get(r.j)!.push(r)
+    }
+    let prevCount = 0
+    for (const j of [...byJ.keys()].sort((a, b) => a - b)) {
+      const rs = byJ.get(j)!
+      const cnt = rs.length
+      const rMeas = mean(rs.map((r) => Math.hypot(n[r.crown]!.x, n[r.crown]!.y)))
+      const ps: number[] = []
+      for (let i = 0; i + 1 < rs.length; i++) ps.push(seg(rs[i]!.crown, rs[i + 1]!.crown))
+      roundRows.push({ j, count: cnt, rMeas, rWant: (cnt * swMm) / (2 * Math.PI), pitch: mean(ps), inc: cnt !== prevCount })
+      prevCount = cnt
+    }
+  }
+
   const cellArea = mean(pitchX) * mean(pitchY)
   const rowsWorked = rows
 
@@ -445,6 +552,15 @@ function main(): void {
   console.log('-'.repeat(74))
   line('fabric thickness (p2–98)', thickness, 'thickness')
   line('crown proud of its legs', mean(crownRel) - mean(legRel), 'crownProud')
+  // §8f-6: once a builder puts its crossing region in a SECOND depth band, "the
+  // crown minus its own legs" stops measuring proudness and starts measuring the
+  // layer — the legs are genuinely a yarn behind the surface, so the difference
+  // grows even as the crown settles further into the fabric. What still means
+  // what it says is where the crown sits ACROSS the fabric's own thickness:
+  // 0.5 is the face, and flat sc (one layer, alternating rows) sits at 0.49.
+  console.log(
+    `${'  crown, share of thickness'.padEnd(26)}${(mean(crownRel) / thickness).toFixed(2).padStart(8)}     ratio   (0.5 = the face; flat sc 0.49)`,
+  )
   line('per-stitch mound (peak-tr)', mean(mound), 'mound')
   console.log('-'.repeat(74))
   line('  crown apex relief', mean(crownRel))
@@ -475,6 +591,25 @@ function main(): void {
   console.log(`${'  …as a share of thickness'.padEnd(26)}${(pct(legOut, 90) / thickness).toFixed(2).padStart(8)}     ratio   (0 = the mid-plane, 0.5 = the face)`)
   line('crown proud (flat-top bar)', mean(crownRel) - mean(legRel), 'crownProudFlat')
   console.log('-'.repeat(74))
+  console.log(`${'crown collision contacts'.padEnd(26)}${crownContacts.toFixed(2).padStart(8)}     per crown  (non-adjacent nodes inside the collision diameter)`)
+  if (curved) {
+    line('  crown shear along round', mean(shear))
+    console.log(`\nPER ROUND — is each round at the radius its own count wants?`)
+    console.log(`${'round'.padStart(6)}${'sts'.padStart(6)}${'inc?'.padStart(6)}${'r meas'.padStart(9)}${'r want'.padStart(9)}${'meas/want'.padStart(11)}${'pitch/gauge'.padStart(13)}`)
+    const swMm = yr * (SWATCH_RECIPES.sc.gaugeYr ?? 2.7)
+    for (const r of roundRows) {
+      console.log(
+        `${String(r.j).padStart(6)}${String(r.count).padStart(6)}${(r.inc ? 'y' : '·').padStart(6)}${r.rMeas.toFixed(2).padStart(9)}${r.rWant.toFixed(2).padStart(9)}${(r.rMeas / (r.rWant || 1)).toFixed(3).padStart(11)}${(r.pitch / swMm).toFixed(3).padStart(13)}`,
+      )
+    }
+    const plateau = roundRows.filter((r) => !r.inc && r.j > 0)
+    const shaped = roundRows.filter((r) => r.inc && r.j > 0)
+    console.log(
+      `${'plateau rounds'.padStart(20)}: ${plateau.length}/${roundRows.length}   mean pitch/gauge ${mean(plateau.map((r) => r.pitch / swMm)).toFixed(3)}` +
+        `    shaped rounds: ${shaped.length}   mean pitch/gauge ${mean(shaped.map((r) => r.pitch / swMm)).toFixed(3)}`,
+    )
+    console.log('')
+  }
   console.log(`stitch cell: ${rowD(mean(pitchX))}d wide x ${rowD(mean(pitchY))}d tall (real sc ≈ 1.6d x 1.4d)`)
   console.log(`\ntargets, in words:`)
   for (const [k, t] of Object.entries(T)) console.log(`  ${k.padEnd(15)} ${t.note}`)

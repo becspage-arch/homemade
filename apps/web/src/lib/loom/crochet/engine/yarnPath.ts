@@ -392,6 +392,30 @@ export interface PlainStitchSpec {
    * test), it just no longer has a bump to climb over.
    */
   surfaceLay?: number
+  /**
+   * THE WITHIN-ROUND FRONT/BACK LAYER (§8f-6). 0 (default) = every part of the
+   * stitch sits on its row's own worked face, which is what every builder has
+   * done since the engine was written and what keeps the flat family
+   * bit-identical.
+   *
+   * In no-turn (spiral) work that single face is the whole problem. A contact
+   * census on the settled fabric counts 2.95-3.48 non-adjacent nodes inside the
+   * collision diameter of every crown, against flat sc's 1.00: the crown, the
+   * legs of the stitches either side, and the base of the stitch worked INTO
+   * that crown all occupy the same depth band, so the only direction the crowd
+   * can resolve in is outward, and the crown floors at 0.54-0.67 d proud
+   * whatever it is built at (§8f-5 proved that with five separate probes).
+   *
+   * At 1 the stitch is built in TWO depth bands instead of one: the head loop
+   * and the top of the post stay at the surface, and the whole crossing region
+   * — the bottom of the down-leg, the approach, the hook, the emerge and the
+   * bottom of the up-leg — runs a full yarn behind it, which is where a real
+   * stitch's pull-through actually goes. The head of the round below then has
+   * the next round's fabric passing BEHIND it rather than elbowing it sideways,
+   * and the fabric gets its second layer, which is the only place a
+   * two-diameter thickness can come from in fabric that never turns.
+   */
+  backCross?: number
 }
 
 /**
@@ -528,7 +552,13 @@ export function emitPlainStitch(
   // the full turned-fabric depth is what made each round-work stitch a
   // full-thickness loop standing off the surface.
   const slay = spec.surfaceLay ?? 0
-  const hookZ = (bcz >= 0 ? -1 : 1) * z * (1.6 + 0.9 * lay - 0.3 * slay) * (spec.hookDepthScale ?? 1)
+  // THE SECOND DEPTH BAND (§8f-6). `bx` blends the whole crossing region from
+  // the stitch's own worked face (0) to a full yarn behind it (1). Every offset
+  // below is written as `base + bx · delta`, so bx = 0 reproduces the previous
+  // geometry to the bit.
+  const bx = spec.backCross ?? 0
+  const hookZ =
+    (bcz >= 0 ? -1 : 1) * z * (1.6 + 0.9 * lay - 0.3 * slay + 2.47 * bx) * (spec.hookDepthScale ?? 1)
   // The legs run from the insertion (xH) at the bottom to this stitch's own crown
   // (xC) at the top. f = height fraction: 1 at the top of the leg, → 0 at the hook.
   const xa = (f: number): number => xH + (xC - xH) * f
@@ -557,8 +587,13 @@ export function emitPlainStitch(
   // belongs: at the head.
   const sd = recut ? -s : s
   const legZ = recut ? z * 0.6 : z
+  // The leg's own relief, per height fraction: unchanged at the top of the post
+  // (it meets the head, which stays at the surface) and swept back through the
+  // crossing region as it descends toward the insertion.
+  const legZAt = (base: number, back: number): number => (base + (back - base) * bx) * fz * lr
   const legZHi = recut ? z * 0.6 : z * 1.1
   const nearZ = recut ? z * 0.5 : z * 0.6
+  const nearZB = (nearZ + (-z * 4.05 - nearZ) * bx) * fz
   const nearHalf = recut ? 0.12 : 0.4
   // hdc third loop: the start-of-stitch yarn-over, laid horizontally across the
   // head line before the hook dives. Consecutive ones form the signature ridge.
@@ -595,7 +630,7 @@ export function emitPlainStitch(
     for (let i = 0; i < L; i++) {
       const f = 1 - i / L
       const ly = by + px * 0.8 * f
-      dbgLegs.push(push(xa(f) + sd * legHalf(f), ly, legZ * fz * lr))
+      dbgLegs.push(push(xa(f) + sd * legHalf(f), ly, legZAt(legZ, -z * 3.56 + (z * 3.56 + legZ) * f)))
       if (i === 0 || i % 4 !== 0 || i / 4 > nyo) continue
       const cx = xa(f) // the post's centre line at this height
       const ux = cx - sd * legHalf(f) // where the up-leg will rise
@@ -608,15 +643,15 @@ export function emitPlainStitch(
       push(cx + sd * a * 0.75, ly - dY, zw * 0.4 * fz) // back to the trailing side, carry on down
       yoFar.push({ node: far, f })
     }
-    push(xH + sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // approach the below crown
+    push(xH + sd * pw * nearHalf, cy + dh * 0.5, nearZB) // approach the below crown
     hookIdx = push(xH, cy - dh, hookZ)
     S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: hookIdx, below: bc })
-    push(xH - sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // emerge
+    push(xH - sd * pw * nearHalf, cy + dh * 0.5, nearZB) // emerge
     // Up-leg: back up the leading side, THROUGH every collar the descent laid.
     const upAt = new Map<number, number>()
     for (let i = L - 1; i >= 0; i--) {
       const f = 1 - i / L
-      const n = push(xa(f) - sd * legHalf(f), by + px * 0.8 * f, legZ * fz * lr)
+      const n = push(xa(f) - sd * legHalf(f), by + px * 0.8 * f, legZAt(legZ, -z * 3.56 + (z * 3.56 + legZ) * f))
       dbgLegs.push(n)
       upAt.set(i, n)
     }
@@ -627,20 +662,20 @@ export function emitPlainStitch(
     }
   } else {
     // Down-leg: descend the worked face from the previous head toward the insertion.
-    dbgLegs.push(push(xa(1) + sd * legHalf(1), by + px * 0.8, legZ * fz * lr))
-    dbgLegs.push(push(xa(0.65) + sd * legHalf(0.65), by + px * 0.52, legZ * fz * lr))
-    dbgLegs.push(push(xa(0.33) + sd * legHalf(0.33), by + px * 0.26, legZHi * fz * lr))
-    push(xH + sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // approach the below crown
+    dbgLegs.push(push(xa(1) + sd * legHalf(1), by + px * 0.8, legZAt(legZ, legZ)))
+    dbgLegs.push(push(xa(0.65) + sd * legHalf(0.65), by + px * 0.52, legZAt(legZ, -z * 2.13)))
+    dbgLegs.push(push(xa(0.33) + sd * legHalf(0.33), by + px * 0.26, legZAt(legZHi, -z * 3.56)))
+    push(xH + sd * pw * nearHalf, cy + dh * 0.5, nearZB) // approach the below crown
     // Hook UNDER the crown below — tuck to the far z-side of it. Collision (neither
     // can pass through the other) holds the link — no spring.
     hookIdx = push(xH, cy - dh, hookZ)
     S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: hookIdx, below: bc })
-    push(xH - sd * pw * nearHalf, cy + dh * 0.5, nearZ * fz) // emerge
+    push(xH - sd * pw * nearHalf, cy + dh * 0.5, nearZB) // emerge
     // Up-leg: pulled back UP just beside the down-leg → the two strands of the post.
-    dbgLegs.push(push(xa(0.33) - sd * legHalf(0.33), by + px * 0.26, legZHi * fz * lr))
-    postMid = push(xa(0.65) - sd * legHalf(0.65), by + px * 0.52, legZ * fz * lr)
+    dbgLegs.push(push(xa(0.33) - sd * legHalf(0.33), by + px * 0.26, legZAt(legZHi, -z * 3.56)))
+    postMid = push(xa(0.65) - sd * legHalf(0.65), by + px * 0.52, legZAt(legZ, -z * 2.13))
     dbgLegs.push(postMid)
-    dbgLegs.push(push(xa(1) - sd * legHalf(1), by + px * 0.8, legZ * fz * lr))
+    dbgLegs.push(push(xa(1) - sd * legHalf(1), by + px * 0.8, legZAt(legZ, legZ)))
   }
 
   // Throw this stitch's crown. A plain stitch leaves a single apex (back == front);

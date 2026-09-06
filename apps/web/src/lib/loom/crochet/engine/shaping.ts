@@ -80,6 +80,8 @@ export interface DecSpec {
   headLoopMm?: number
   /** No-turn spiral rounds: lie in the surface (see emitPlainStitch.surfaceLay). */
   surfaceLay?: number
+  /** The within-round front/back layer (see emitPlainStitch.backCross). */
+  backCross?: number
 }
 
 export function emitDecrease(S: StrandCtx, d: StitchDims, spec: DecSpec): { crown: number; head: number[] } {
@@ -108,8 +110,11 @@ export function emitDecrease(S: StrandCtx, d: StitchDims, spec: DecSpec): { crow
   const bn2 = spec.bn2 ?? S.nodes[spec.b2.back]!.z
   // The same shallower dive a laid head asks for (emitPlainStitch.surfaceLay).
   const slay = spec.surfaceLay ?? 0
-  const hz1 = (bn1 >= 0 ? -1 : 1) * z * (1.6 - 0.62 * slay)
-  const hz2 = (bn2 >= 0 ? -1 : 1) * z * (1.6 - 0.62 * slay)
+  // The second depth band (§8f-6) — see emitPlainStitch.backCross. bx = 0 is the
+  // previous geometry to the bit.
+  const bx = spec.backCross ?? 0
+  const hz1 = (bn1 >= 0 ? -1 : 1) * z * (1.6 - 0.62 * slay + 2.47 * bx)
+  const hz2 = (bn2 >= 0 ? -1 : 1) * z * (1.6 - 0.62 * slay + 2.47 * bx)
   const xa1 = (f: number): number => x1 + (xC - x1) * f // first leg: insertion 1 → crown
   const xa2 = (f: number): number => x2 + (xC - x2) * f // last leg: insertion 2 → crown
 
@@ -128,29 +133,32 @@ export function emitDecrease(S: StrandCtx, d: StitchDims, spec: DecSpec): { crow
   const legZMid = recut ? z * 0.6 : z * 1.05
   const nearZ = recut ? z * 0.5 : z * 0.6
   const nearHalf = recut ? 0.12 : 0.4
+  /** Blend one leg offset toward the crossing band (§8f-6). */
+  const bz = (base: number, back: number): number => (base + (back - base) * bx) * fz
+  const nearZB = bz(nearZ, -z * 4.05)
 
   // Down into the FIRST stitch, exactly like a plain stitch's start.
-  push(xa1(1) + sd * legHalf(1), by + px * 0.8, legZ * fz)
-  push(xa1(0.65) + sd * legHalf(0.65), by + px * 0.52, legZ * fz)
-  push(xa1(0.33) + sd * legHalf(0.33), by + px * 0.26, legZHi * fz)
-  push(x1 + sd * pw * nearHalf, cy1 + dh * 0.5, nearZ * fz)
+  push(xa1(1) + sd * legHalf(1), by + px * 0.8, bz(legZ, legZ))
+  push(xa1(0.65) + sd * legHalf(0.65), by + px * 0.52, bz(legZ, -z * 2.13))
+  push(xa1(0.33) + sd * legHalf(0.33), by + px * 0.26, bz(legZHi, -z * 3.56))
+  push(x1 + sd * pw * nearHalf, cy1 + dh * 0.5, nearZB)
   const h1 = push(x1, cy1 - dh, hz1)
   S.links.push({ j, c, role: 'hook', hook: h1, below: spec.b1.back })
-  push(x1 - sd * pw * nearHalf, cy1 + dh * 0.5, nearZ * fz)
+  push(x1 - sd * pw * nearHalf, cy1 + dh * 0.5, nearZB)
   // The first pulled-up loop rises toward the shared crown…
-  push(xa1(0.33) - sd * legHalf(0.33), by + px * 0.26, legZHi * fz)
-  push(xa1(0.65) - sd * legHalf(0.65), by + px * 0.52, legZ * fz)
-  push(xa1(0.85) - sd * legHalf(0.85) * 0.6, by + px * 0.72, legZ * fz)
+  push(xa1(0.33) - sd * legHalf(0.33), by + px * 0.26, bz(legZHi, -z * 3.56))
+  push(xa1(0.65) - sd * legHalf(0.65), by + px * 0.52, bz(legZ, -z * 2.13))
+  push(xa1(0.85) - sd * legHalf(0.85) * 0.6, by + px * 0.72, bz(legZ, z * 0.29))
   // …then the yarn dives straight back down into the SECOND stitch.
-  push(xa2(0.55) + sd * legHalf(0.55) * 0.6, by + px * 0.45, legZMid * fz)
-  push(x2 + sd * pw * nearHalf, cy2 + dh * 0.5, nearZ * fz)
+  push(xa2(0.55) + sd * legHalf(0.55) * 0.6, by + px * 0.45, bz(legZMid, -z * 2.52))
+  push(x2 + sd * pw * nearHalf, cy2 + dh * 0.5, nearZB)
   const h2 = push(x2, cy2 - dh, hz2)
   S.links.push({ j, c, role: 'hook', hook: h2, below: spec.b2.back })
-  push(x2 - sd * pw * nearHalf, cy2 + dh * 0.5, nearZ * fz)
+  push(x2 - sd * pw * nearHalf, cy2 + dh * 0.5, nearZB)
   // Final up-leg to the single gathered crown.
-  push(xa2(0.33) - sd * legHalf(0.33), by + px * 0.26, legZHi * fz)
-  push(xa2(0.65) - sd * legHalf(0.65), by + px * 0.52, legZ * fz)
-  push(xa2(1) - sd * legHalf(1), by + px * 0.8, legZ * fz)
+  push(xa2(0.33) - sd * legHalf(0.33), by + px * 0.26, bz(legZHi, -z * 3.56))
+  push(xa2(0.65) - sd * legHalf(0.65), by + px * 0.52, bz(legZ, -z * 2.13))
+  push(xa2(1) - sd * legHalf(1), by + px * 0.8, bz(legZ, legZ))
   if (recut) {
     const h = emitHeadLoop(push, { xC, ty, s, sd, fz, zh, dh, pw, cw, hl, lay: slay })
     const head: number[] = []
@@ -474,6 +482,11 @@ export function buildRounds(
   // it: every stitch became a full-thickness loop, which is the knot the disc
   // rendered. The head lies in the surface and the dive shallows to match.
   const SURFACE_LAY = 1
+  // THE WITHIN-ROUND FRONT/BACK LAYER (§8f-6) — see emitPlainStitch.backCross.
+  // The head loop and the top of the post stay at the surface; the whole
+  // crossing region runs a yarn behind it, so the round below's head has the
+  // next round's fabric passing behind it instead of sharing its depth band.
+  const BACK_CROSS = 1
 
   ridgeDebugNodes.length = 0
   const S = createStrand()
@@ -552,6 +565,7 @@ export function buildRounds(
           place,
           legReliefScale: ROUND_LEG_RELIEF, // calm the same-face leg bulge (§8c round-fabric look pass)
           surfaceLay: SURFACE_LAY,
+            backCross: BACK_CROSS,
           linkRole: 'ring', // round 1 WRAPS the ring strand (a stem, not a crown)
           headLoopMm,
         })
@@ -596,6 +610,7 @@ export function buildRounds(
             place,
             legReliefScale: ROUND_LEG_RELIEF,
             surfaceLay: SURFACE_LAY,
+            backCross: BACK_CROSS,
             hookDepthScale,
             headLoopMm,
           })
@@ -912,6 +927,11 @@ export function buildSphere(
   // The stitch LIES IN the surface, exactly as on the flat disc (§8f-5) — a
   // sphere is worked in the same no-turn spiral, so it had the same knot.
   const SURFACE_LAY = 1
+  // THE WITHIN-ROUND FRONT/BACK LAYER (§8f-6) — see emitPlainStitch.backCross.
+  // The head loop and the top of the post stay at the surface; the whole
+  // crossing region runs a yarn behind it, so the round below's head has the
+  // next round's fabric passing behind it instead of sharing its depth band.
+  const BACK_CROSS = 1
   // The crown's BUILT normal offset — the dive-side reference the next round
   // works against, and the key the radial canopy is derived from. A re-cut head
   // throws its crown at zh·0.8 proud, zh·0.46 laid (emitHeadLoop); the legacy
@@ -962,6 +982,7 @@ export function buildSphere(
           linkRole: 'ring', // round 1 WRAPS the ring strand (a stem, not a crown)
           headLoopMm,
           surfaceLay: SURFACE_LAY,
+            backCross: BACK_CROSS,
         })
         crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNz })
       }
@@ -994,6 +1015,7 @@ export function buildSphere(
             place3,
             headLoopMm,
             surfaceLay: SURFACE_LAY,
+            backCross: BACK_CROSS,
           })
           crowns.push({ back: r.crown, front: r.crown, theta: th, m: mK, nz: crownNz })
           li++
@@ -1023,6 +1045,7 @@ export function buildSphere(
               hookDepthScale,
               headLoopMm,
               surfaceLay: SURFACE_LAY,
+            backCross: BACK_CROSS,
             })
             crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNz })
             li++
