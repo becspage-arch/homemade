@@ -103,6 +103,24 @@ function parseArgs(argv: string[]): Args {
 
 // ── The run directory ───────────────────────────────────────────────────────
 
+/**
+ * A database write that follows minutes of geometry or a Fargate wait. The
+ * cloud session reaches Neon over a WebSocket; a long synchronous stretch (the
+ * relaxer blocks the event loop) starves its keepalive and the socket dies
+ * under the pool, which only notices on the next write ("Connection terminated
+ * unexpectedly"). The pool evicts the dead client on that error, so one retry
+ * lands on a fresh connection. Anything else is re-thrown.
+ */
+async function dbRetry<T>(fn: () => Promise<T>): Promise<T> {
+  try {
+    return await fn()
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e)
+    if (!/terminated unexpectedly|Connection closed|ECONNRESET|socket hang up/i.test(msg)) throw e
+    return await fn()
+  }
+}
+
 const MANIFEST = 'manifest.json'
 
 function manifestPath(runDir: string): string {
@@ -403,20 +421,20 @@ async function stageExpand(args: Args): Promise<void> {
   // The BulkRun row, created once per run so the admin page sees the batch the
   // same way it sees a cron batch.
   if (!manifest.bulkRunId) {
-    const row = await prisma.bulkRun.create({
+    const row = await dbRetry(() => prisma.bulkRun.create({
       data: {
         craft: 'crochet',
         trigger: 'routine',
         requested: manifest.candidates.length,
       },
       select: { id: true },
-    })
+    }))
     manifest = { ...manifest, bulkRunId: row.id }
   } else {
-    await prisma.bulkRun.update({
-      where: { id: manifest.bulkRunId },
+    await dbRetry(() => prisma.bulkRun.update({
+      where: { id: manifest.bulkRunId as string },
       data: { requested: manifest.candidates.length },
-    })
+    }))
   }
 
   manifest = { ...manifest, stages: { ...manifest.stages, expand: new Date().toISOString() } }
@@ -541,13 +559,13 @@ async function stageRender(args: Args): Promise<void> {
       manifest = { ...manifest, spentUsd: Number((manifest.spentUsd + cost).toFixed(4)) }
       writeJson(manifestPath(args.run), manifest)
       if (manifest.bulkRunId) {
-        await prisma.bulkRun.update({
-          where: { id: manifest.bulkRunId },
+        await dbRetry(() => prisma.bulkRun.update({
+          where: { id: manifest.bulkRunId as string },
           data: {
             generations: { increment: 1 },
             ...(entry.treatment === 'grid-tapestry' ? { proGenerations: { increment: 1 } } : {}),
           },
-        })
+        }))
       }
       console.log(
         `   hero ${candidate.heroPath} · hash ${candidate.geometryHash} · fidelity ${candidate.fidelityScore ?? 'n/a'} · ≈$${cost.toFixed(3)}`,
@@ -771,8 +789,8 @@ async function stagePublish(args: Args): Promise<void> {
     plannerMode: 'session',
   })
   if (manifest.bulkRunId) {
-    await prisma.bulkRun.update({
-      where: { id: manifest.bulkRunId },
+    await dbRetry(() => prisma.bulkRun.update({
+      where: { id: manifest.bulkRunId as string },
       data: {
         published: counters.published,
         culled: counters.culled,
@@ -784,7 +802,7 @@ async function stagePublish(args: Args): Promise<void> {
         finishedAt: new Date(),
         summary,
       },
-    })
+    }))
   }
   const consumed = session.backlogConsumed(manifest)
   console.log(`\n${summary}`)
