@@ -78,7 +78,7 @@ function patternFromRows(rows: string[]): PatternData {
   return {
     schemaVersion: 1,
     type: 'CROSS_STITCH',
-    grid: { width, height, cells, backstitch: [], frenchKnots: [], beads: [] },
+    grid: { width, height, cells, backstitch: [], frenchKnots: [], beads: [], fractional: [] },
     palette: [...symbols].sort().map(paletteEntry),
     fabric: { count: 14, colourRgb: '#F5EBD8', type: 'Aida' },
     metadata: {},
@@ -433,7 +433,7 @@ test('the whole chart marks through at a flat per-mark cost', () => {
   const pattern: PatternData = {
     schemaVersion: 1,
     type: 'CROSS_STITCH',
-    grid: { width, height, cells, backstitch: [], frenchKnots: [], beads: [] },
+    grid: { width, height, cells, backstitch: [], frenchKnots: [], beads: [], fractional: [] },
     palette: glyphs.map(paletteEntry),
     fabric: { count: 14, colourRgb: '#F5EBD8', type: 'Aida' },
     metadata: {},
@@ -488,7 +488,7 @@ test('undoing the whole chart back out costs the same per unmark', () => {
   const pattern: PatternData = {
     schemaVersion: 1,
     type: 'CROSS_STITCH',
-    grid: { width, height, cells, backstitch: [], frenchKnots: [], beads: [] },
+    grid: { width, height, cells, backstitch: [], frenchKnots: [], beads: [], fractional: [] },
     palette: glyphs.map(paletteEntry),
     fabric: { count: 14, colourRgb: '#F5EBD8', type: 'Aida' },
     metadata: {},

@@ -38,7 +38,7 @@ function chart(width: number, height: number): PatternData {
   return {
     schemaVersion: 1,
     type: 'CROSS_STITCH',
-    grid: { width, height, cells: [], backstitch: [], frenchKnots: [], beads: [] },
+    grid: { width, height, cells: [], backstitch: [], frenchKnots: [], beads: [], fractional: [] },
     palette: [
       {
         symbol: 'a',
