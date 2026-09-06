@@ -318,6 +318,16 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
       const cy = k.y * cellPx + cellPx / 2
       const r = frenchKnotRadius(cellPx)
       const base = monochrome ? '#1a1410' : shiftColour(entry.rgb, -0.18)
+      // On a working chart the cell under a knot is a block of floss colour with
+      // a symbol over it, and a dark dot in a dark cell disappears into both. A
+      // pale ring under the dot is what every printed chart uses to make the
+      // knot its own mark. Beauty mode needs no ring: there the knot sits on
+      // stitching and is meant to read as thread.
+      if (mode !== 'beauty') {
+        parts.push(
+          `<circle cx="${cx}" cy="${cy}" r="${r * 1.5}" fill="${monochrome ? '#ffffff' : '#fdfbf7'}" opacity="0.92"/>`,
+        )
+      }
       parts.push(`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${base}"/>`)
       if (!monochrome) {
         parts.push(
