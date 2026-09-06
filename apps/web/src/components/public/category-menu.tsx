@@ -44,6 +44,15 @@ interface NavGroup {
 }
 
 /**
+ * Crafts that get their own row at the top of the mobile sheet, above the
+ * groups. On a phone the accordion put cross-stitch three taps from the
+ * header (hamburger, Make, Cross-stitch), which is too far for the two
+ * crafts that carry a pattern library. They still appear inside Make for
+ * anyone browsing the group.
+ */
+const MOBILE_TOP_LEVEL_SLUGS = ['cross-stitch', 'needlework']
+
+/**
  * Top-line nav groups. Decoupled from `Category.archetype` so the nav
  * grouping is an editorial decision, not a side effect of the layout
  * router. Categories not listed here are hidden from the nav.
@@ -225,6 +234,13 @@ export function CategoryMenu({ all }: CategoryMenuProps) {
 
   const groups = useMemo(() => resolveGroups(all), [all])
 
+  const topLevel = useMemo(() => {
+    const bySlug = new Map(all.map((c) => [c.slug, c]))
+    return MOBILE_TOP_LEVEL_SLUGS.map((slug) => bySlug.get(slug)).filter(
+      (c): c is MenuCategory => c !== undefined,
+    )
+  }, [all])
+
   return (
     <>
       <nav className="header-nav-desktop" aria-label="Categories" ref={navRef}>
@@ -334,6 +350,20 @@ export function CategoryMenu({ all }: CategoryMenuProps) {
                 </button>
               </div>
               <div className="header-nav-sheet-groups">
+                {topLevel.length > 0 && (
+                  <nav className="header-nav-sheet-top" aria-label="Patterns">
+                    {topLevel.map((c) => (
+                      <Link
+                        key={c.slug}
+                        href={`/${c.slug}`}
+                        className="header-nav-sheet-top-link"
+                        onClick={closeSheet}
+                      >
+                        {c.name}
+                      </Link>
+                    ))}
+                  </nav>
+                )}
                 {groups.map((group) => (
                   <details key={group.key} className="header-nav-sheet-group">
                     <summary className="header-nav-sheet-group-summary">
