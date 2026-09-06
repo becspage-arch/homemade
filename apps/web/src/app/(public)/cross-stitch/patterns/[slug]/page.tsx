@@ -31,9 +31,10 @@ const LETTER_PAPER_COUNTRIES = new Set(['US', 'CA', 'MX', 'PH'])
 
 interface PageProps {
   params: Promise<{ slug: string }>
+  searchParams: Promise<Record<string, string | string[] | undefined>>
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Pick<PageProps, 'params'>): Promise<Metadata> {
   const { slug } = await params
   const row = await prisma.pattern.findUnique({
     where: { slug },
@@ -59,8 +60,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   })
 }
 
-export default async function PatternDetailPage({ params }: PageProps) {
+export default async function PatternDetailPage({ params, searchParams }: PageProps) {
   const { slug } = await params
+  const sp = await searchParams
   const row = await prisma.pattern.findUnique({
     where: { slug },
     include: {
@@ -122,6 +124,8 @@ export default async function PatternDetailPage({ params }: PageProps) {
       thumbnail: { select: { cloudflareId: true, r2Key: true } },
     },
   })
+
+  const patternPath = `/cross-stitch/patterns/${slug}`
 
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Home', href: '/' },
@@ -247,6 +251,8 @@ export default async function PatternDetailPage({ params }: PageProps) {
               patternId={row.id}
               initialInPlan={inPlan}
               signedIn={Boolean(user)}
+              patternPath={patternPath}
+              pendingIntent={sp.plan === row.id}
             />
           </div>
 
