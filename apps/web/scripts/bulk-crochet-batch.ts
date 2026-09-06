@@ -215,6 +215,22 @@ async function publishSeed(verdictPath: string): Promise<void> {
   const manifest = JSON.parse(readFileSync(manifestPath, 'utf8')) as ManifestEntry[]
   const verdicts = JSON.parse(readFileSync(resolve(verdictPath), 'utf8')) as Record<string, Verdict>
 
+  // The provenance columns are what the duplicate guard and `generationMeta`
+  // are written into, and a client that has them talking to a database that
+  // does not fails with an opaque "column (not available) does not exist". Say
+  // what is actually wrong instead.
+  const columns = await prisma.$queryRaw<{ column_name: string }[]>`
+    SELECT column_name FROM information_schema.columns
+    WHERE table_name = 'CrochetPattern'
+      AND column_name IN ('generationMeta', 'subjectKey', 'programFingerprint', 'bulkRunId')
+  `
+  if (columns.length < 4) {
+    throw new Error(
+      'the crochet provenance columns are not on this database yet: apply the migration ' +
+        '20261012000000_crochet_bulk_autopilot_provenance (the deploy applies it on merge) and run this again',
+    )
+  }
+
   const catalogue = await crochet.loadCrochetCatalogue()
   const counters = { published: 0, culled: 0, duplicates: 0, errors: 0, skipped: 0 }
   const gems: string[] = []
