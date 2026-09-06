@@ -91,9 +91,9 @@ A. IT IS THE THING ASKED FOR. The finished object reads as the item in the brief
 B. THE FABRIC IS REAL AND WHOLE. Continuous crocheted stitches, even rows or rounds, no melted, smeared, torn or missing patch, no gap where the fabric should be solid, no stitch that dissolves into fuzz. A broken patch is a KILL, never a repair: the geometry is deterministic, so a re-roll cannot fix it.
 C. THE COLOURS ARE THE PATTERN'S. The yarn colours are the ones the brief asked for, clean and separated. On a striped or tapestry piece the colour boundaries are crisp and the picture reads.
 D. IT IS STAGED AS A FINISHED OBJECT. The whole piece sits on a clean pale ground at a sensible product-photo scale, not a macro crop of fabric and not cropped through the object.
-E. NO TEXT, no lettering, no logo, no watermark, no hands, no props that are not part of the pattern.
+E. NOTHING IN THE FRAME BUT THE PATTERN. The photoreal finishing pass sometimes invents a hand holding the piece, a person, a table, a plant, a mug, a pair of scissors or a caption, and the structural check can still pass an image that has one. KILL any hero showing hands, fingers, arms, a person or part of one, furniture, or any prop that is not the pattern's own notions (its safety eyes and nose are the pattern's; everything else is not). KILL any text, lettering, numbers, logo or watermark. This is a kill, never a repair.
 
-Because the render is deterministic, "repair" here means only a STAGING fault worth one fresh render (badly cropped or lopsided framing → re-centre). Anything about the object itself is a kill.`,
+Because the render is deterministic, "repair" here means only a STAGING fault worth one fresh render (badly cropped or lopsided framing → re-centre). Anything about the object itself, and anything invented into the frame, is a kill.`,
 }
 
 /**

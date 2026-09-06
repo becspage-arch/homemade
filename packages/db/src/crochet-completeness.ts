@@ -153,11 +153,13 @@ const LONG_DASH = /[—–]/
 const STITCH_COUNT = /\((\d+)\s*sts?\)\s*$/
 
 /**
- * Lines that legitimately carry no stitch count: the finishing lines the loom
- * writes, the assembly steps, and a piece heading. Everything else is a worked
- * row and must be counted.
+ * Lines that legitimately carry no stitch count, because they are not worked
+ * rows: the finishing lines the loom writes, the assembly steps, a piece
+ * heading, and the yarn notes a colourwork pattern needs ("Change to the teal
+ * yarn"). Everything else is a worked row and must be counted.
  */
-const UNCOUNTED_LINE = /^(fasten off|weave in|sew |stuff |fit the|join |block |repeat rows|assembly\b|make \d)/i
+const UNCOUNTED_LINE =
+  /^(fasten off|weave in|sew |stuff |fit the|join |block |repeat rows|assembly\b|make \d|start with |change to |cut the |carry the |work every stitch )/i
 
 function text(v: unknown): string {
   return typeof v === 'string' ? v : ''

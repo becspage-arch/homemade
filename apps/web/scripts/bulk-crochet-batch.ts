@@ -207,6 +207,8 @@ async function renderSeed(): Promise<void> {
 async function publishSeed(verdictPath: string): Promise<void> {
   const { CROCHET_FIRST_BATCH } = await import('./crochet-first-batch')
   const crochet = await import('../src/lib/studio/generation/bulk/crochet')
+  const { summaryLine } = await import('../src/lib/studio/generation/bulk/run-status')
+  const { prisma } = await import('@homemade/db')
 
   const manifestPath = resolve(OUT, 'manifest.json')
   if (!existsSync(manifestPath)) throw new Error(`no manifest at ${manifestPath} — run --render first`)
@@ -214,18 +216,25 @@ async function publishSeed(verdictPath: string): Promise<void> {
   const verdicts = JSON.parse(readFileSync(resolve(verdictPath), 'utf8')) as Record<string, Verdict>
 
   const catalogue = await crochet.loadCrochetCatalogue()
+  const counters = { published: 0, culled: 0, duplicates: 0, errors: 0, skipped: 0 }
+  const gems: string[] = []
+  const killReasons: string[] = []
   for (const item of manifest) {
     const entry = CROCHET_FIRST_BATCH.find((e) => e.brief.slug === item.slug)
     const verdict = verdicts[item.slug]
     if (!entry) {
+      counters.skipped++
       console.log(`${item.slug}: no seed entry, skipped`)
       continue
     }
     if (!verdict) {
+      counters.skipped++
       console.log(`${item.slug}: NO VERDICT, skipped (nothing is published unjudged)`)
       continue
     }
     if (verdict.verdict !== 'keep') {
+      counters.culled++
+      killReasons.push(...verdict.reasons.slice(0, 2))
       console.log(`${item.slug}: killed — ${verdict.reasons.join('; ')}`)
       continue
     }
@@ -235,6 +244,8 @@ async function publishSeed(verdictPath: string): Promise<void> {
       catalogue,
     )
     if (hit) {
+      counters.duplicates++
+      killReasons.push(`duplicate of ${hit.slug}`)
       console.log(`${item.slug}: refused, duplicate of ${hit.slug} (${hit.reason})`)
       continue
     }
@@ -260,13 +271,55 @@ async function publishSeed(verdictPath: string): Promise<void> {
         },
         { bulkRunId: null, gate: { verdict: 'keep', reasons: verdict.reasons }, attempt: 1 },
       )
+      counters.published++
+      gems.push(item.slug)
       console.log(
         `${item.slug}: PUBLISHED · shelf ${published.shelf} · hash ${published.geometryHash} · fidelity ${published.fidelityScore} · ${published.publicUrl}`,
       )
     } catch (err) {
-      console.error(`${item.slug}: publish refused — ${err instanceof Error ? err.message : String(err)}`)
+      // The completeness gate refusing a row is a CULL, not an error: the
+      // pipeline worked, the pattern was not good enough to ship.
+      const message = err instanceof Error ? err.message : String(err)
+      if (message.includes('not complete')) {
+        counters.culled++
+        killReasons.push(message.slice(0, 80))
+      } else {
+        counters.errors++
+      }
+      console.error(`${item.slug}: publish refused — ${message}`)
     }
   }
+
+  // Record the batch the way every other batch is recorded, so the first six
+  // appear under Recent runs on the admin page rather than arriving from
+  // nowhere.
+  const summary = summaryLine({
+    craft: 'crochet',
+    requested: manifest.length,
+    ...counters,
+    repaired: 0,
+    generations: manifest.length,
+    modelBriefs: manifest.length,
+    plannerMode: 'seed',
+  })
+  await prisma.bulkRun.create({
+    data: {
+      craft: 'crochet',
+      trigger: 'manual',
+      requested: manifest.length,
+      published: counters.published,
+      culled: counters.culled,
+      duplicates: counters.duplicates,
+      skipped: counters.skipped,
+      errors: counters.errors,
+      generations: manifest.length,
+      gemSlugs: gems,
+      killReasons,
+      finishedAt: new Date(),
+      summary,
+    },
+  })
+  console.log(`\n${summary}`)
 }
 
 async function main(): Promise<void> {

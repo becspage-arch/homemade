@@ -370,10 +370,9 @@ const STITCH_SLUG: Record<string, string> = {
 function stitchIdsIn(program: CrochetProgram | CompositionProgram): string[] {
   const ids = new Set<string>(['ch'])
   if ('parts' in program) {
-    ids.add('sc')
-    ids.add('slst')
-    ids.delete('ch')
-    return [...ids]
+    // Every amigurumi piece is a continuous spiral of double crochet (UK) off a
+    // magic ring: no chain, no slip stitch, nothing else.
+    return ['sc']
   }
   const p = program
   if (p.form === 'grid') for (const row of p.grid ?? []) for (const s of row.stitches) ids.add(s)
@@ -407,23 +406,28 @@ export function crochetRowsStructured(
   const rows: PatternRow[] = []
   const gridColours = program.form === 'grid' ? (program.grid ?? []).map((r) => r.colourKey) : []
   const perCell = program.form === 'grid' && (program.grid ?? []).some((r) => r.cellColours?.length)
+  // A one-colour piece is never told to change colour, and a many-colour piece
+  // is told which yarn to START with rather than being asked to join a yarn it
+  // has not begun.
+  const multiColour = new Set(gridColours.filter(Boolean)).size > 1
   let previous: string | undefined
   let rowIndex = 0
 
   for (const line of lines) {
     const isWorkedRow = /^Row \d+:/.test(line)
-    if (isWorkedRow && !perCell) {
+    if (isWorkedRow && !perCell && multiColour) {
       const colourKey = gridColours[rowIndex]
       if (colourKey && colourKey !== previous) {
-        const shade = shadeNames[colourKey] ?? colourKey
+        const shade = (shadeNames[colourKey] ?? colourKey).toLowerCase()
         rows.push({
           section: 'Body',
           rowNumber: rows.length + 1,
-          rowLabel: 'Colour change',
-          instruction: `Join the ${shade.toLowerCase()} yarn and carry on. Cut the old yarn, leaving a tail to weave in.`,
+          rowLabel: previous === undefined ? 'Colour' : 'Colour change',
+          instruction:
+            previous === undefined
+              ? `Start with the ${shade} yarn.`
+              : `Change to the ${shade} yarn. Cut the yarn you were using, leaving a tail to weave in.`,
         })
-        previous = colourKey
-      } else if (colourKey && previous === undefined) {
         previous = colourKey
       }
       rowIndex++
@@ -446,7 +450,7 @@ export function crochetRowsStructured(
       rowNumber: 0,
       rowLabel: 'Colour',
       instruction:
-        'Work every stitch in the colour the chart shows for it, carrying the yarns you are not using along the top of the row and working over them. (0 sts)',
+        'Work every stitch in the colour the chart shows for it, carrying the yarns you are not using along the top of the row and working over them.',
     })
     rows.forEach((r, i) => {
       r.rowNumber = i + 1
@@ -498,7 +502,7 @@ export async function generateCrochetCandidate(
     const size = compositionSizeMm(compiled)
     program.finishedSizeMm = { width: Math.round(size.width), height: Math.round(size.height) }
     const yr = compositionYarnRadiusMm(program)
-    program.gaugeText = `${Math.round(100 / (SC_STITCH_PITCH_YR * yr))} dc x ${Math.round(100 / (SC_ROW_PITCH_YR * yr))} rows = 10 cm in double crochet (UK terms), worked tightly in a spiral so the stuffing does not show`
+    program.gaugeText = `${Math.round(100 / (SC_STITCH_PITCH_YR * yr))} dc x ${Math.round(100 / (SC_ROW_PITCH_YR * yr))} rounds = 10 cm in double crochet (UK terms), worked tightly in a spiral so the stuffing does not show`
     const render = await mod.renderComposition(program, { name: brief.slug, hero: true, outDir })
     if (render.problems.length) throw new Error(`render audit failed: ${render.problems[0]}`)
     const heroPath = render.heroPng ?? render.basePng
@@ -571,13 +575,21 @@ export function declareSizeAndGauge(
       gaugeText: `${stitchesPer10cm} sts x ${rowsPer10cm} rows = 10 cm (UK terms) in ${program.yarnWeight ?? 'worsted'}`,
     }
   }
+  // Round work. A stitch's width is the outermost round's circumference divided
+  // by its count; a round's pitch is measured along the RADIUS, not across the
+  // whole piece, so a disc of N rounds spans N round-pitches from centre to
+  // edge and 2N across.
   const rounds = program.rounds ?? []
   const widest = rounds.length ? Math.max(...rounds) : 6
   const perStitch = (Math.PI * settled.width) / Math.max(1, widest)
+  const perRound =
+    program.form === 'disc'
+      ? settled.width / (2 * Math.max(1, rounds.length))
+      : settled.height / Math.max(1, rounds.length)
   return {
     ...program,
     finishedSizeMm: { width: Math.round(settled.width), height: Math.round(settled.height) },
-    gaugeText: `${Math.max(1, Math.round(100 / perStitch))} dc x ${Math.max(1, Math.round(100 / (settled.height / Math.max(1, rounds.length))))} rounds = 10 cm (UK terms) in ${program.yarnWeight ?? 'worsted'}`,
+    gaugeText: `${Math.max(1, Math.round(100 / perStitch))} dc x ${Math.max(1, Math.round(100 / perRound))} rounds = 10 cm (UK terms) in ${program.yarnWeight ?? 'worsted'}`,
   }
 }
 
@@ -957,12 +969,26 @@ function shadeNamesFor(program: CrochetProgram | CompositionProgram): {
         : { main: ('colourHex' in program ? program.colourHex : undefined) ?? '#c98a5e' }
   const keys = Object.keys(palette)
   // `nameYarnColours` is pure and shared with the Studio's tapestry key, so a
-  // bulk pattern's yarn list reads exactly like a maker's own.
-  const names = nameYarnColours(keys.map((k) => palette[k]!))
+  // machine-named palette reads exactly like a maker's own. Where the DESIGNER
+  // named the colour ("rust", "duck-egg") that name wins instead: it is the
+  // word the pattern is titled after, and a description saying "brick" under a
+  // title saying rust reads as two different patterns.
+  const fallback = nameYarnColours(keys.map((k) => palette[k]!))
+  const named = keys.map((key, i) => (isMeaningfulColourKey(key) ? prettyColourKey(key) : fallback[i]!))
   return {
-    shadeNames: Object.fromEntries(keys.map((k, i) => [k, names[i]!])),
+    shadeNames: Object.fromEntries(keys.map((k, i) => [k, named[i]!])),
     palette,
   }
+}
+
+/** A colour key a person chose, rather than one a converter generated. */
+function isMeaningfulColourKey(key: string): boolean {
+  return /^[a-z][a-z-]{2,}$/i.test(key) && !/^yarn-\d+$/i.test(key) && !/^c\d+$/i.test(key)
+}
+
+/** "duck-egg" -> "duck egg". */
+function prettyColourKey(key: string): string {
+  return key.replace(/-+/g, ' ')
 }
 
 /**
@@ -986,10 +1012,14 @@ function describe(
       : `It comes out about ${CM(candidate.settledMm.width)} by ${CM(candidate.settledMm.height)} cm.`
   // An amigurumi has no chart on purpose (a chart is a single-piece shape), so
   // the closing line must not promise one.
+  const roundWork =
+    candidate.kind !== 'amigurumi' &&
+    'form' in candidate.program &&
+    (candidate.program.form === 'disc' || candidate.program.form === 'sphere')
   const closingLine =
     candidate.kind === 'amigurumi'
       ? 'Written in UK terms with a stitch count at the end of every round, each piece worked separately and sewn on.'
-      : 'Written in UK terms with a stitch count at the end of every row, and the chart is drawn from the same stitch program as the photograph.'
+      : `Written in UK terms with a stitch count at the end of every ${roundWork ? 'round' : 'row'}, and the chart is drawn from the same stitch program as the photograph.`
   const concept = brief.subject.replace(/\s+/g, ' ').trim().replace(/\.$/, '')
   return `${concept.charAt(0).toUpperCase()}${concept.slice(1)}. ${colourLine} ${sizeLine} ${closingLine}`
 }

@@ -134,6 +134,23 @@ function main(): void {
   })
   assert.ok(!around.rules.includes('repeats-enumerated'), 'worked in the round is not an open-ended repeat')
 
+  // A colour note is not a worked row, so it needs no stitch count.
+  const colourNote = checkCrochetPatternCompleteness({
+    ...GOOD,
+    rowsStructured: [
+      { section: 'Body', rowNumber: 1, rowLabel: 'Foundation', instruction: 'Foundation: ch 19. (18 sts)' },
+      { section: 'Body', rowNumber: 2, rowLabel: 'Colour', instruction: 'Start with the rust yarn.' },
+      { section: 'Body', rowNumber: 3, rowLabel: 'Row 1', instruction: 'Row 1: ch 1, turn, dc in next 18 sts. (18 sts)' },
+      {
+        section: 'Body',
+        rowNumber: 4,
+        rowLabel: 'Colour change',
+        instruction: 'Change to the oat yarn. Cut the yarn you were using, leaving a tail to weave in.',
+      },
+    ],
+  })
+  assert.equal(colourNote.blocked, false, colourNote.reasons.join(' | '))
+
   // A single-piece row with no chart is blocked.
   const noChart = checkCrochetPatternCompleteness({ ...GOOD, chartData: null })
   assert.ok(noChart.rules.includes('chart'))

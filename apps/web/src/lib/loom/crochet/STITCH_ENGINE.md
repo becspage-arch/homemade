@@ -2136,9 +2136,14 @@ Four, in order, each binary:
    the gauge line and the size on the page describe one object.
 3. **The vision gate** (`generation/vision-gate.ts`) with a crochet rubric: does
    it read as the item, is the fabric whole, are the colours the pattern's, is
-   it staged as a finished object. A broken patch of fabric is a KILL rather
-   than a repair, because the geometry is deterministic and a second render is
-   the same picture. Only a staging fault earns one more render.
+   it staged as a finished object, and is there NOTHING in the frame but the
+   pattern. The photoreal finishing pass sometimes invents a hand holding the
+   piece, a person at the edge, a table or a caption, and the structural
+   fidelity check can still pass an image carrying one, so hands, people,
+   furniture, props that are not the pattern's own notions, and any text or logo
+   are all kills. A broken patch of fabric is a KILL too, rather than a repair,
+   because the geometry is deterministic and a second render is the same
+   picture. Only a staging fault earns one more render.
 4. **The completeness gate** (`packages/db/src/crochet-completeness.ts`) against
    the assembled row: yarn, hook, gauge over 10 cm, a size in centimetres, every
    round counted, repeats written out, an abbreviation key that covers the
