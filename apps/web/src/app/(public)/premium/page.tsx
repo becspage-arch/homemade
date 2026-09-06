@@ -91,9 +91,14 @@ function buildGroups(libraryCountLabel: string): Group[] {
         },
         {
           label:
-            'Resize to your size and body shape, with full-bust and other fit adjustments',
+            'Three chart views, and the floss list converted to Anchor or Madeira',
+          free: true,
+        },
+        {
+          label:
+            'Print a chart or download it as a PDF, with the floss shopping list to take to the shop',
           free: false,
-          feature: 'grading',
+          feature: 'downloads',
         },
         {
           label: 'Turn a photo into your own cross-stitch pattern',
@@ -101,16 +106,21 @@ function buildGroups(libraryCountLabel: string): Group[] {
           feature: 'photoToChart',
         },
         {
-          label:
-            'Design a pattern from scratch',
+          label: 'Describe an idea and get a chart back to stitch',
           free: false,
-          feature: 'designAPattern',
+          feature: 'photoToChart',
         },
         {
           label:
             'Personalised project and materials planners, download and printable',
           free: false,
           feature: 'projectPlanner',
+        },
+        {
+          label:
+            'Design a pattern from scratch',
+          free: false,
+          feature: 'designAPattern',
         },
         {
           label:
