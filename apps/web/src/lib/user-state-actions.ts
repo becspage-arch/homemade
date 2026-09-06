@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation'
 import { prisma, UserProjectStatus, type Prisma } from '@homemade/db'
 import { audit } from './audit'
 import { getCurrentDbUser } from './get-current-user'
+import { signInHrefForCurrentPage } from './sign-in-return'
 import { captureServerEvent } from './posthog'
 import { bumpPatternSave } from './popularity'
 import {
@@ -19,9 +20,12 @@ import {
  */
 type ActionResult = { ok: true } | { ok: false; error: string }
 
+// Every action below funnels through here, so a signed-out visitor who taps
+// Save (or any other signed-in-only control) on a public page is returned to
+// that page after signing in rather than dumped on the home page.
 async function requireUser() {
   const user = await getCurrentDbUser()
-  if (!user) redirect('/sign-in')
+  if (!user) redirect(await signInHrefForCurrentPage())
   return user
 }
 
