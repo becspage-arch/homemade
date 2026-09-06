@@ -24,4 +24,9 @@ prod from a worktree. As of needlework go-live the visible set is
 cooking, baking, cross-stitch, needlework.
 
 The older per-category `flip-*-public.ts` scripts are deprecated — this enforcer owns
-the dimension. Relates to [[project_category_signoff_flow]] and [[playbook_category_signoff]].
+the dimension. Relates to [[playbook_category_signoff]] Step F.
+([[playbook_category_signoff]] is not in notes/; the playbook carries that content.)
+
+**Verified 2026-09-06 (notes audit):** `LAUNCH_VISIBLE_CATEGORY_SLUGS` in the script reads
+`['cooking', 'baking', 'cross-stitch', 'needlework']`, and the live database has exactly
+those four categories with `isPublicVisible = true` and the other fourteen false.

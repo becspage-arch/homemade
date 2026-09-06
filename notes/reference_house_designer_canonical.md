@@ -14,13 +14,23 @@ patterns through **`ensureHouseDesigner()` from `@homemade/db`** (src/house-desi
 
 Why: publish scripts each used to hardcode their own slug, which drifted into
 duplicate "Homemade" rows (`homemade` 294 + `homemade-cross-stitch` 243 + an empty
-`homemade-needlework`). Merged 2026-06-30 into the single `homemade` row (537
-cross-stitch patterns) and the helper now keeps it from recurring. ai-crossstitch-publish,
-xs-volume-publish and needlework-counted-proof all call the helper.
+`homemade-needlework`). Merged 2026-06-30 into the single `homemade` row and the helper
+now keeps it from recurring.
+
+**Checked 2026-09-06 against the live database:** exactly two Designer rows exist —
+`homemade` (isHouseDesigner true, 1,219 patterns, 1,085 of them PUBLIC) and
+`stitching-mama` (isHouseDesigner false, 36 patterns, 35 PUBLIC). The "537 cross-stitch
+patterns" figure above was the count at the 2026-06-30 merge; it has grown with the fill.
+`xs-volume-publish.ts` and `xs-volume-gen.ts` no longer exist (the local generator was
+retired); the live publish paths are the bulk pipeline in
+`apps/web/src/lib/studio/generation/bulk/` and the sampler publisher
+`apps/web/scripts/xs-samplers-publish.ts`.
 
 isHouseDesigner is load-bearing: the premium gate keys "independent designer ⇒
-premium" off it ([[project_business_model]]), and the designer spotlight on the
-pattern landing is independent-only — so the house row must never flip to false.
-Stitching Mama (`stitching-mama`) is the one independent cross-stitch designer; its
-patterns are premium and it powers the spotlight. See [[project_cross_stitch]],
-[[reference_script_env_dotenv_path]].
+premium" off it — `isIndependentDesignerContent` / `isPremiumContent` in
+`apps/web/src/lib/entitlements.ts` — and the designer spotlight on the pattern landing is
+independent-only, so the house row must never flip to false. Stitching Mama
+(`stitching-mama`) is still the one independent cross-stitch designer; its patterns are
+premium and it powers the spotlight. See [[project/project_premium_free_spec]],
+[[reference_script_env_dotenv_path]]. ([[project_business_model]] and
+[[project_cross_stitch]] are not in notes/.)
