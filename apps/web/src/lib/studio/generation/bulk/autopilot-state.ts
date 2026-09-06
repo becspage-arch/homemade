@@ -24,5 +24,9 @@ export async function setAutopilotEnabled(craft: Craft, enabled: boolean, userId
 export async function autopilotStates(): Promise<Record<Craft, boolean>> {
   const rows = await prisma.bulkAutopilotState.findMany({ select: { craft: true, enabled: true } })
   const m = new Map(rows.map((r) => [r.craft, r.enabled]))
-  return { 'cross-stitch': m.get('cross-stitch') ?? false, needlework: m.get('needlework') ?? false }
+  return {
+    'cross-stitch': m.get('cross-stitch') ?? false,
+    needlework: m.get('needlework') ?? false,
+    crochet: m.get('crochet') ?? false,
+  }
 }

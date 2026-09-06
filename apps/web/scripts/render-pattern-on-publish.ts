@@ -178,7 +178,25 @@ export async function markAuditFailed(plan: PatternRenderPlan): Promise<void> {
  */
 export async function persistPatternRender(
   plan: PatternRenderPlan,
-  art: { heroPath: string; fidelityScore: number | null; yr: number },
+  art: {
+    heroPath: string
+    fidelityScore: number | null
+    yr: number
+    /**
+     * Richer faces the CALLER derived from the same program, used instead of
+     * re-deriving them below.
+     *
+     * The plain writer sees the stitches and not the yarn: it cannot say "join
+     * the teal and work rows 5 and 6", because colour lives beside the stitch
+     * list rather than in it. The bulk publisher does know, and a striped cloth
+     * whose instructions never say when to change colour is not a makeable
+     * pattern. When it passes its own rows here, they are what the row stores;
+     * when nobody passes anything (the CLI, the batch, the maker's own render)
+     * the derivation below is unchanged.
+     */
+    rowsStructured?: unknown
+    chartData?: unknown
+  },
 ): Promise<string> {
   const filename = `${plan.slug ?? plan.name}-loom-hero.png`
   const bytes = readFileSync(art.heroPath)
@@ -200,15 +218,23 @@ export async function persistPatternRender(
   // the pattern's chart would mislead), so it keeps whatever chart it has —
   // none — and only its words are rewritten.
   const composed = plan.kind === 'composition'
-  const chart = composed ? null : programToChart(plan.program as CrochetProgram)
-  const rowsStructured = composed
-    ? (compositionRowsStructured(plan.program as CompositionProgram) as unknown as object)
-    : writeInstructions(plan.program as CrochetProgram).map((line, i) => ({
-        section: 'Body',
-        rowNumber: i,
-        rowLabel: line.split(':')[0] ?? `Line ${i + 1}`,
-        instruction: line,
-      }))
+  const chart =
+    art.chartData !== undefined
+      ? art.chartData
+      : composed
+        ? null
+        : programToChart(plan.program as CrochetProgram)
+  const rowsStructured =
+    art.rowsStructured !== undefined
+      ? (art.rowsStructured as unknown as object)
+      : composed
+        ? (compositionRowsStructured(plan.program as CompositionProgram) as unknown as object)
+        : writeInstructions(plan.program as CrochetProgram).map((line, i) => ({
+            section: 'Body',
+            rowNumber: i,
+            rowLabel: line.split(':')[0] ?? `Line ${i + 1}`,
+            instruction: line,
+          }))
 
   await prisma.crochetPattern.update({
     where: { id: plan.patternId },
@@ -220,7 +246,7 @@ export async function persistPatternRender(
       loomFidelityScore: art.fidelityScore,
       loomGeometryHash: plan.geometryHash,
       loomYarnRadiusMm: art.yr,
-      ...(chart ? { chartData: chart } : {}),
+      ...(chart ? { chartData: chart as object } : {}),
       rowsStructured,
     },
   })
