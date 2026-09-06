@@ -100,6 +100,24 @@ export interface StitchDef {
    * tall stitch's yarn-per-stitch on its real published figure.
    */
   yarnOverYr?: number
+  /**
+   * POST STITCHES ONLY (§8f-8). What fraction of its own post's pop the stitch
+   * carries its HEAD at. 0 (the default) leaves the head at the fabric plane —
+   * the construction this branch shipped with, and the reason a rib showed a
+   * horizontal groove at every row line: between two raised ribs the eye looked
+   * down onto heads that had stayed flat. A real rib's head is pulled forward
+   * with its own column.
+   */
+  postHeadCarry?: number
+  /**
+   * POST STITCHES ONLY (§8f-8). Where the post's half-width starts at the wrap,
+   * as a fraction of its full half-width at the head. Absent → 0.18, the value
+   * the three-level cut was built at.
+   */
+  postLegTaper?: number
+  /** POST STITCHES ONLY: the collar's sideways clearance past the leg, in units
+   *  of its own half-depth. Absent → 0.9. */
+  yarnOverClear?: number
 }
 
 export const STITCHES: Record<StitchId, StitchDef> = {
@@ -165,11 +183,35 @@ export const STITCHES: Record<StitchId, StitchDef> = {
     // §8f-7: headLoopYr is the same fraction of the stitch's own pitch dc carries
     // (2.52 of 3.4), so the head spans the stitch and the post's two legs have
     // the two ends of a real loop to splay to instead of a three-node bump.
-    rowYr: 6.29, postHalfYr: 1.13, crownHalfYr: 0.65, headLoopYr: 2.15, reliefScale: 1.3,
+    // §8f-8: postHalfYr is dc's own 1.32 — an fp/bp dc's post IS a dc's post,
+    // two strands of the same yarn; §8f-7's 1.13 was the packed value, and the
+    // pack no longer scales the post (yarnPath: the head packs, the post does
+    // not).
+    rowYr: 6.29, postHalfYr: 1.32, crownHalfYr: 0.65, headLoopYr: 2.15, reliefScale: 1.3,
+    // §8f-8: an fp/bp dc IS a dc — one yarn-over, made before the hook goes
+    // round the post, which ends up as one closed collar on the new post's own
+    // column. 0.6yr of half-depth keeps the ring's perimeter above the ~2*pi*d
+    // it needs to contain the up-leg while the fabric stays 2 diameters thick.
+    yarnOvers: 1, yarnOverYr: 0.6,
+    // How far past the leg the ring reaches sideways. 0.9 (the plain post's
+    // value) makes a collar wide enough that in an ALL-front-post fabric, whose
+    // columns already overlap, neighbouring collars fight and 10 of 192 of them
+    // are pushed round in front of the up-leg they must sit behind (a real
+    // audit failure, not a look one). 0.7 keeps the ring's perimeter above the
+    // ~2*pi*d it needs to contain the up-leg and clears every audit.
+    yarnOverClear: 0.7,
+    // Parallel-sided: the hard taper was what the three-level cut RELAXED away
+    // from, and a collar-carrying cut has no slack left to relax with.
+    postLegTaper: 1.0,
+    // Half the post's pop: the head belongs to its own column, but carried the
+    // whole way the row's travel jumps depth column to column and tangles
+    // (measured: the row line goes back to 43% exposed).
+    postHeadCarry: 0.5,
   }, // post ribbing packs tighter than plain dc — the ribs touch into solid fabric
   bpdc: {
     id: 'bpdc', heightFactor: 3.0, gaugeYr: 2.9, topLoops: 2,
-    rowYr: 6.29, postHalfYr: 1.13, crownHalfYr: 0.65, headLoopYr: 2.15, reliefScale: 1.3,
+    rowYr: 6.29, postHalfYr: 1.32, crownHalfYr: 0.65, headLoopYr: 2.15, reliefScale: 1.3,
+    yarnOvers: 1, yarnOverYr: 0.6, yarnOverClear: 0.7, postLegTaper: 1.0, postHeadCarry: 0.5,
   },
   // bobble: several partial dc in one stitch gathered to one top → a raised bump.
   // Usually dotted on an sc background, so it borrows the row's height and just
@@ -381,6 +423,13 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
   fpdc: {
     stitch: 'fpdc', rows: 8, auditW: 12, relaxProfile: 'worked', tiltDeg: 40, twist: 0.05,
     pattern: (j, _c) => (j === 0 ? 'dc' : 'fpdc'), // row 0 establishes posts to wrap
+    // §8f-8: an ALL-front-post fabric has no recessed column beside each post to
+    // make its depth, so once the collar took over the post's own depth this
+    // swatch settled 1.58 d thick against a real 1.8–2.2 (the rib, which does
+    // have a recessed column, sits at 2.02 with no scale at all). 1.6 puts it
+    // back at 1.95 — a per-swatch value; bpdc measures 1.99 unscaled and keeps
+    // none.
+    postReliefScale: 1.6,
     // clean single-stitch reference (raised front posts standing proud), replacing
     // the old fringepost9 colourwork-cable photo (acrochetedsimplicity.com)
     referenceUrl: 'https://www.acrochetedsimplicity.com/wp-content/uploads/2017/01/fpdc-7-1024x683.jpg',
@@ -397,6 +446,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     stitch: 'fpdc', rows: 8, auditW: 12, relaxProfile: 'worked', tiltDeg: 40, twist: 0.05,
     pattern: (j, c) => (j === 0 ? 'dc' : c % 2 === 0 ? 'fpdc' : 'bpdc'), // raised rib / recessed valley
     gaugeYr: 2.3, // pack the alternating fp/bp columns tighter than plain post dc (2.9); real rib columns touch. Re-derived §8f from the corrected post cell (was 1.5 against the old 1.9)
+    postReliefScale: 0.6, // §8f-8: the collar now carries a yarn diameter of depth on every post, so the fp/bp POP that used to make the rib's contrast on its own is a smaller share of it. At the shipped 1.0 the fabric settled 2.46 d thick against a real 1.8-2.2; 0.6 lands 2.04 with the fp/bp depth separation still a full diameter
     // plain 1x1 fpdc/bpdc rib, flat lay, columns packed tight — a much cleaner
     // match than the old fringepost9 colourwork-cable photo (moralefiber.blog)
     referenceUrl: 'https://doradoes.co.uk/wp-content/uploads/2021/04/double-front-post-back-post-dc-rib-1024x1024.jpg',
@@ -410,7 +460,7 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
       const rb = Math.floor((j - 1) / 2)
       return (block + rb) % 2 === 0 ? 'fpdc' : 'bpdc' // 3-wide blocks, swap every 2 rows
     },
-    gaugeYr: 2.9, postReliefScale: 1.0, // §8f-7: the post branch now takes fpdc's own cell, whose 1.3 relief scale already carries this contrast — 1.35 on top of it settled the fabric 2.70 d thick against a real 1.8–2.2. CONTRAST (2026-07-11): the block alternation barely read (uniform vertical posts). Deepen the fp/bp relief 1.35× (per-swatch — locked fpdc/bpdc/postrib untouched) so raised blocks pop over recessed ones, and pack the columns (2.3->1.9) so the 3-wide blocks tile tight — the over-under basket weave becomes legible
+    gaugeYr: 2.9, postReliefScale: 0.5, // §8f-8: the collar carries a yarn diameter of depth on every post, so the fp/bp pop is a smaller share of the block contrast than it was; at 1.0 the fabric settled 2.64 d thick against a real 1.8-2.2 and the row line showed at 45%. 0.5 lands 1.94 d and 30%. §8f-7: the post branch now takes fpdc's own cell, whose 1.3 relief scale already carries this contrast — 1.35 on top of it settled the fabric 2.70 d thick against a real 1.8–2.2. CONTRAST (2026-07-11): the block alternation barely read (uniform vertical posts). Deepen the fp/bp relief 1.35× (per-swatch — locked fpdc/bpdc/postrib untouched) so raised blocks pop over recessed ones, and pack the columns (2.3->1.9) so the 3-wide blocks tile tight — the over-under basket weave becomes legible
     referenceUrl: 'https://daisyfarmcrafts.com/wp-content/uploads/2017/04/IMG_0708.jpg', // daisyfarmcrafts — cream basketweave swatch
     status: 'wip',
   },

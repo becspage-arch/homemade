@@ -488,9 +488,14 @@ export function emitHeadLoop(
     hl: number
     /** No-turn round work: lay the loop IN the surface (see `surfaceLay`). */
     lay?: number
+    /** Depth the whole loop is carried at, on top of its own relief (§8f-8). A
+     *  post stitch's head belongs to its POST, not to the fabric plane: a front
+     *  post's head rides proud with its column. Absent → 0, the plane. */
+    zBase?: number
   },
 ): { crown: number; trailA: number; trailB: number; headPartner: number } {
   const { xC, ty, s, sd, fz, zh, dh, pw, cw, hl } = a
+  const zb = a.zBase ?? 0
   const hy = dh * 1.45 // the two strands' separation up the row
   // The loop's normal profile: PROUD on a turned face (left), LYING IN the
   // surface for spiral rounds (right). Laid, the loop's whole first half — the
@@ -500,7 +505,7 @@ export function emitHeadLoop(
   // still separate up the MERIDIAN, side by side, which is exactly the V-grid a
   // real amigurumi surface shows.
   const lay = a.lay ?? 0
-  const zL = (proud: number, laid: number): number => zh * (proud + (laid - proud) * lay) * fz
+  const zL = (proud: number, laid: number): number => zh * (proud + (laid - proud) * lay) * fz + zb
   const trailA = push(xC - sd * pw, ty - hy * 0.95, zL(0.4, 0)) // straight off the up-leg onto the head line
   push(xC + s * hl * 0.72, ty - hy * 0.35, zL(0.25, 0)) // tucked strand, running FORWARD
   const headPartner = push(xC + s * hl, ty + hy * 0.15, zL(0.2, 0))
@@ -1038,7 +1043,15 @@ export function buildContinuous(
         const z = pd.z
         const zh = pd.zh
         const cw = pd.cw * pack
-        const pw = pd.pw * pack
+        // THE HEAD PACKS, THE POST DOES NOT (§8f-8). §8f-7 scaled the post's own
+        // half-width by the swatch's pack because at fpdc's full cell width the
+        // hard-tapered rib overlapped its neighbour by 1.4 d. With the taper
+        // built at the width the fabric settles at, that shrank the post below
+        // the width of the dc it IS: postrib was building a 0.90yr post where a
+        // plain dc's cell declares 1.32. The head genuinely spans the cell, so
+        // it keeps the pack; the post is this stitch's own two strands and takes
+        // its cell straight.
+        const pw = pd.pw
         const dh = pd.dh
         // FRONT/BACK POST: instead of hooking the head, the yarn RINGS around the
         // stem of the post below (front post pops the new post PROUD on the front,
@@ -1077,21 +1090,115 @@ export function buildContinuous(
         // strands genuinely splay out of the stitch they ring instead of running as
         // parallel bars.
         const sd = -s
-        const legHalf = (f: number): number => pw * (0.18 + 0.82 * f)
+        // THE TAPER IS NOW THE SETTLED TAPER (§8f-8). §8f-7 built the post's
+        // half-width tapering hard to the wrap (0.18 → 1 of pw) and the three
+        // coarse levels then RELAXED open: measured, the settled post was very
+        // nearly parallel-sided (|dx| 2.81 / 3.29 / 2.13 mm up the leg) because
+        // one node had a whole leg's worth of slack to open into. Cutting the
+        // leg finely enough to carry a collar removes that slack — every level
+        // is inside the relax adjacency window, so the BUILT route is the
+        // settled route — and the hard taper froze in: the same post settled to
+        // 0.56/0.64/0.70 mm at the wrap end and stopped covering the row
+        // boundary it used to bulge over. Build the taper the fabric actually
+        // settles at.
+        const tf = STITCHES[id].postLegTaper ?? 0.18
+        const legHalf = (f: number): number => pw * (tf + (1 - tf) * f)
+        // The leg's own height and depth as one function of the height fraction,
+        // so the cut can be made at ANY number of levels without moving the
+        // three-level route: the top of the leg meets the head at the fabric
+        // plane, everything below it sits on the post's own pop.
+        const pyH = px * 0.85
+        const legY = (f: number): number => by + pyH * f
+        const legZ = (f: number): number =>
+          ppz + (zh * 0.35 * fz - ppz) * Math.min(1, Math.max(0, (f - 0.62) / 0.38))
         const pStart = nodes.length
         const pLegs: number[] = []
-        pLegs.push(push(x + sd * legHalf(1), by + px * 0.85, zh * 0.35 * fz)) // leave the previous head near the plane
-        pLegs.push(push(x + sd * legHalf(0.62), by + px * 0.52, ppz)) // down-leg, popped
-        pLegs.push(push(x + sd * legHalf(0.26), by + px * 0.22, ppz))
-        // ring around the below post stem (encircle it → linked, collision-held)
-        push(x + cw * 1.15, ay, az)
-        const ringFar = push(x, ay - dh * 0.2, az - front * cw * 1.5) // around the far z-side of the stem
-        links.push({ j, c, role: 'ring', hook: ringFar, below: pa })
-        push(x - cw * 1.15, ay, az)
-        const up0 = push(x - sd * legHalf(0.26), by + px * 0.22, ppz) // up-leg, popped
-        const postMid = push(x - sd * legHalf(0.62), by + px * 0.52, ppz)
-        const up2 = push(x - sd * legHalf(1), by + px * 0.85, zh * 0.35 * fz)
-        pLegs.push(up0, postMid, up2)
+        // THE YARN-OVER COLLAR (§8f-8). An fp/bp dc is a dc worked around the
+        // post below: yarn over, insert around the post, pull up, [yo, pull
+        // through 2] twice. That first yarn-over ends up as a closed COLLAR of
+        // yarn round the finished post, exactly as it does on a plain dc — and
+        // §8f-3 measured that a third of a tall stitch's yarn lives in it. This
+        // branch built a bare two-leg post, which is why the rib was still
+        // short of width and the row line still showed between the ribs.
+        //
+        // Traced in the real order, so nothing is drawn: the yarn-over is made
+        // BEFORE the hook goes round the post, so it comes FIRST along the
+        // strand. Coming off the previous head the strand descends the post
+        // line and, at the collar height, runs a full turn round the new post's
+        // own column — out on the trailing side, BEHIND the column, round the
+        // leading edge, back across the FRONT — then carries on down to the
+        // wrap. Nothing is linked at that moment: the collar closes only when
+        // the UP-leg rises back through it on its way to the head, and
+        // self-collision is what then holds the up-leg inside the ring. That
+        // crossing is recorded as a 'through' link (the collar's far node must
+        // stay behind the up-leg it rings) so the audit proves the wrap
+        // survived relaxation instead of the render being trusted.
+        const nyo = STITCHES[id].yarnOvers ?? 0
+        const zw = yr * (STITCHES[id].yarnOverYr ?? 1)
+        let postMid: number
+        let ringFar: number
+        if (nyo > 0) {
+          // One leg node every quarter of a collar gap: the collars land exactly
+          // ON leg levels, and every ring node ends up further along the strand
+          // from the up-leg node it must collide with than the relax adjacency
+          // window — a collar built inside that window is a ring the up-leg
+          // walks straight out of.
+          const L = 4 * nyo + 4
+          const dY = pyH / L
+          const yoFar: { node: number; level: number }[] = []
+          for (let i = 0; i < L; i++) {
+            const f = 1 - i / L
+            const ly = legY(f)
+            pLegs.push(push(x + sd * legHalf(f), ly, legZ(f)))
+            if (i === 0 || i % 4 !== 0 || i / 4 > nyo) continue
+            const ux = x - sd * legHalf(f) // where the up-leg will rise
+            const a = legHalf(f) + zw * (STITCHES[id].yarnOverClear ?? 0.9) // half-width: the ring clears both legs
+            const cz = legZ(f) // the collar rings the post AT the post's own depth
+            push(x + sd * a * 0.9, ly + dY * 0.45, cz) // still on the trailing side
+            const far = push(ux, ly + dY * 0.1, cz - zw) // BEHIND the post ← the collar's far side
+            push(x - sd * a * 0.95, ly - dY * 0.2, cz - zw * 0.55) // round the leading edge
+            push(x - sd * a, ly - dY * 0.5, cz + zw * 0.35) // …and forward
+            push(ux, ly - dY * 0.8, cz + zw) // IN FRONT of the post — the ring is closed
+            push(x + sd * a * 0.75, ly - dY, cz + zw * 0.4) // back to the trailing side, carry on down
+            yoFar.push({ node: far, level: i })
+          }
+          // ring around the below post stem (encircle it → linked, collision-held)
+          push(x + cw * 1.15, ay, az)
+          ringFar = push(x, ay - dh * 0.2, az - front * cw * 1.5) // around the far z-side of the stem
+          links.push({ j, c, role: 'ring', hook: ringFar, below: pa })
+          push(x - cw * 1.15, ay, az)
+          // Up-leg: back up the leading side, THROUGH every collar the descent laid.
+          const upAt = new Map<number, number>()
+          for (let i = L - 1; i >= 0; i--) {
+            const f = 1 - i / L
+            const nd = push(x - sd * legHalf(f), legY(f), legZ(f))
+            pLegs.push(nd)
+            upAt.set(i, nd)
+          }
+          // The stem the NEXT row's post rings — the same height up the post the
+          // three-level cut used (f = 0.62).
+          postMid = upAt.get(Math.round(0.38 * L))!
+          for (const w of yoFar) {
+            // The post's pop is NOT face-flipped (fp always stands proud of the
+            // front of the fabric), so the side the collar must hold is the
+            // post's own back: −1, not −fz.
+            links.push({ j, c, role: 'through', hook: w.node, below: upAt.get(w.level)!, zSign: -1 })
+          }
+        } else {
+          const legacyHalf = (f: number): number => pw * (0.18 + 0.82 * f)
+          pLegs.push(push(x + sd * legacyHalf(1), by + px * 0.85, zh * 0.35 * fz)) // leave the previous head near the plane
+          pLegs.push(push(x + sd * legacyHalf(0.62), by + px * 0.52, ppz)) // down-leg, popped
+          pLegs.push(push(x + sd * legacyHalf(0.26), by + px * 0.22, ppz))
+          // ring around the below post stem (encircle it → linked, collision-held)
+          push(x + cw * 1.15, ay, az)
+          ringFar = push(x, ay - dh * 0.2, az - front * cw * 1.5) // around the far z-side of the stem
+          links.push({ j, c, role: 'ring', hook: ringFar, below: pa })
+          push(x - cw * 1.15, ay, az)
+          const up0 = push(x - sd * legacyHalf(0.26), by + px * 0.22, ppz) // up-leg, popped
+          postMid = push(x - sd * legacyHalf(0.62), by + px * 0.52, ppz)
+          const up2 = push(x - sd * legacyHalf(1), by + px * 0.85, zh * 0.35 * fz)
+          pLegs.push(up0, postMid, up2)
+        }
         postThis[c] = postMid
         const pEnd = nodes.length
         // THE HEAD IS A LOOP HERE TOO (§8f-7, second half). The three-node bump
@@ -1106,7 +1213,7 @@ export function buildContinuous(
         const phl = yr * (STITCHES[id].headLoopYr ?? 0) * pack
         let crown: number
         if (phl > 0) {
-          crown = emitHeadLoop(push, { xC: x, ty, s, sd, fz, zh, dh, pw, cw, hl: phl }).crown
+          crown = emitHeadLoop(push, { xC: x, ty, s, sd, fz, zh, dh, pw, cw, hl: phl, zBase: ppz * (STITCHES[id].postHeadCarry ?? 0) }).crown
         } else {
           push(x - s * cw, ty - dh * 0.3, zh * fz)
           crown = push(x, ty, zh * 1.15 * fz)

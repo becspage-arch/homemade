@@ -178,8 +178,8 @@ stockinette re-rendered (gate 0.884), both consistent with their 07-10 looks.
 | **ch** | REBUILT 2026-07-02 as the true pull-through topology: each loop a flat teardrop; BOTH strands of loop n thread loop n−1's opening; connector = the back bump behind the work; only the slip knot pinned. Soft chain collision (`collMinDist 1.0yr` — drawn-tight chain squashes), whisper plane pull, TABLE floor (`floorZ`), 400 iters. Settled geometry verified numerically (`scripts/loom-ch-debug.ts`): folds centred + hidden mid-depth, legs symmetric on the front, both crossings inside each hole, bumps at the back, loop rotation ~2°. Face = nested-V plait. | ✅ **LOCKED 2026-07-02** (Rebecca signed off vs the eyeloveknots chain reference). Cross-weight (fine/worsted) confirmation folded into the audit sweep. |
 | **bobble** | gathered cluster: genuine base hook + N loops bulging forward to one top | ◑ **construction FIXED 2026-07-10, look not yet**. The 3 broken interlocks are gone (audit 3→0): the unsigned +z bulge had no slack, so it dragged the base hook AND the gathered head onto the wrong z-side. Fix = slack nodes at BOTH ends of the bulge + gather into a proper proud crown (zh*1.15, not the old weak z*0.95) + confine the swatch's dots to interior columns (a cluster hard on the pinned selvedge strangled its corner hook). The LOOK is still lumpy — berries don't pop from the busy sc ground; that's the separate look pass, deliberately deferred (scope was construction first). LOOK ATTEMPT 1 2026-07-11 (Opus worker), inside the cushioned bulge only (anchors untouched): bulge z·5→z·7 (~2.1yr), fan cw·1.5→cw·2.2, loop heights DOMED (centre fullest, outer ~0.85) so the five loops mound into a berry instead of a fence. Audit stays clean; probe: berries stand to 2.36yr off a 0.01yr-median flat ground. RENDERED 2026-07-11 (gate 0.908): berries now genuinely stand off the surface as raised domes with cast shadows — a real step past the fence — but vs the reference's crisp bobbles-on-flat-rows the fabric stays busy: the chunky sc GROUND competes with the berries. The remaining gap is the ground (library-wide roving softness/weight), not berry prominence — belongs to the possible library-wide yarn-crispness pass, not another berry tweak. Rebecca verdict pending. LOOK ATTEMPT 2 2026-07-11 (Opus round-2, the LAST under the cap): the round-2 verdict was amorphous lumps scattered in porridge vs the reference's tight ROWS of round balls. Re-recipe (bobbleDot) to the reference LAYOUT — plain sc on even rows, a dedicated bobble row every odd row with a berry every OTHER interior stitch, edges plain — replacing the staggered every-4th polka-dot; and tighter berries (fan cw·2.2→1.4, bulge z·7→6) so each mounds into a compact ball not a wide splat. Audit clean 112/112. Render now reads as tidy ROWS of berries on flatter sc rows (a real structural step from porridge). Residual = the busy sc GROUND (out-of-scope library-wide roving softness) leaves the berries less crisp than the reference's clean balls. CAP REACHED (2 look attempts): any further improvement is the library-wide yarn-crispness pass, not a bobble tweak. Rebecca verdict pending. |
 | **sc blo / flo** | head split into a real back + front loop; hook one, float the other as a ridge | ✅ **LOCKED 2026-07-07** (Rebecca). Reference re-verification found + fixed a real bug (ridge was nudged AFTER placement → relaxation crushed it; now baked at creation, split 2.2/0.25 zh, settled gap ~0.76yr) + calmer twist (0.05). Chosen depiction = **faithful flat-turned**: because we turn every row, each row's unworked loop correctly lands on the face it was worked from, so the ridge shows every OTHER row on the viewed face (odd rows' ridge settles to −z, hidden). Signed off as structurally correct + consistent with the locked `sc` look. Remaining softness (ridge reads heavier than a clean reference line) is the shared engine yarn-look, not blo/flo-specific — deferred to a possible library-wide yarn-crispness pass. |
-| **fpdc / bpdc** | post RINGS the stem below (collision-held); body pops front (fp) / back (bp), head stays at plane; dense gauge | ✅ **LOCKED 2026-07-07** (Rebecca delegated the call). Individual reference comparisons done vs clean single-stitch refs (fpdc = raised proud posts, acrochetedsimplicity; bpdc = recessed posts / horizontal-bar front, theloopholefox — old shared ref was a colourwork-cable photo). fp raised vs bp recessed reads correctly; the distinction is subtle in isolation (as in a real all-one-type swatch) — its point is the contrast in postrib/basketweave. |
-| **postrib** (1×1 fp/bp rib) | alternating fpdc/bpdc columns → raised ribs beside recessed valleys | ✅ **LOCKED 2026-07-07** (Rebecca). Reads as distinct packed vertical ribs vs a clean 1×1 rib ref (doradoes). The initial open-gauge caveat was **fixed**: postrib inherited fpdc's 1.9 gauge which left daylight between ribs; a per-swatch `gaugeYr: 1.5` override (new — leaves locked fpdc/bpdc gauge untouched) packed the columns tight to match the reference. Basketweave = same move in blocks, still `wip` (needs a reference + build). |
+| **fpdc / bpdc** | post RINGS the stem below (collision-held); body pops front (fp) / back (bp), head stays at plane; dense gauge | ✅ **LOCKED 2026-07-07** (Rebecca delegated the call). Individual reference comparisons done vs clean single-stitch refs (fpdc = raised proud posts, acrochetedsimplicity; bpdc = recessed posts / horizontal-bar front, theloopholefox — old shared ref was a colourwork-cable photo). fp raised vs bp recessed reads correctly; the distinction is subtle in isolation (as in a real all-one-type swatch) — its point is the contrast in postrib/basketweave. GEOMETRY MOVED AGAIN 2026-09-06 (§8f-8: the post branch got its yarn-over collar, the leg was re-cut parallel-sided at dc's own cell width, and the head is carried at half its post's pop) — re-verification against the reference still pending. |
+| **postrib** (1×1 fp/bp rib) | alternating fpdc/bpdc columns → raised ribs beside recessed valleys | ✅ **LOCKED 2026-07-07** (Rebecca). Reads as distinct packed vertical ribs vs a clean 1×1 rib ref (doradoes). The initial open-gauge caveat was **fixed**: postrib inherited fpdc's 1.9 gauge which left daylight between ribs; a per-swatch `gaugeYr: 1.5` override (new — leaves locked fpdc/bpdc gauge untouched) packed the columns tight to match the reference. Basketweave = same move in blocks, still `wip` (needs a reference + build). GEOMETRY MOVED AGAIN 2026-09-06 (§8f-8: the post branch got its yarn-over collar, the leg was re-cut parallel-sided at dc's own cell width, and the head is carried at half its post's pop) — re-verification against the reference still pending. |
 | **scinc** (2 sc in one st, shaped rows) | growing trapezoid, inc both ends every row; two full audited hooks share one below-crown, legs fan from the base (§8c) | ◔ audit-clean (90/90). The foundation-edge LIP (prior render blemish) was eased 2026-07-10: buildShaped pinned its foundation as a continuous proud forward rail (fine hidden under wide flat fabric, but a shaped trapezoid fans up from a narrow base so the rail curls forward at the point). Fix = tuck the connectors BETWEEN crowns just below the plane so the edge is a row of low bumps, not a rail; the two EDGE crowns keep their proud connectors (the increase corner works two hooks into the one corner crown — tucking its connectors strangled that dive). Still 90/90; RE-RENDERED 2026-07-11 (gate 0.924) — the foundation edge now reads as low bumps, lip gone; corners slightly bulky but no rail. Rebecca verdict pending. |
 | **scdec** (sc2tog, shaped rows) | shrinking trapezoid, dec both ends every row; one crown over two audited hooks (§8c) | ◔ audit-clean (60/60). Rendered 2026-07-10 (gate 0.928): trapezoid + converging decrease legs read; the fasten-off tail fixed the earlier frayed bottom corner. Awaiting Rebecca. |
 | **mrdisc** (magic ring + rounds) | flat amigurumi circle: MR anchor, 6 sc in ring, +6/round continuous no-turn spiral, polar frame + radial blocked pull + table + fasten-off (§8c) | ◑ **audit-clean (126/126), LOOK still NOT at the bar.** 2026-07-10: added `legReliefScale` 0.7 (calms same-face leg bulge; 0.6 strands an inner hook) — moved it from knotted roving to concentric-but-lumpy rounds, a real step but Rebecca confirmed NOT customer grade (random lumps throughout). Then tried a tangential ANGULAR HOLD in the relax to order the rounds — it made clumping WORSE (gap-CV 1.1→2.2) and broke a hook, because the lumps are inner-round CROWDING (too many stitches for the small-radius circumference — measured, gap-CV ≈1.1 at baseline), not stitches sliding out of slots; pinning the angle just locks the crowding in. Reverted. **Root cause = crowding + same-face relief; the relief/ordering lever family (crownLay×2, leg-relief, angular-hold) is exhausted and none reach the bar.** RESOLVED at construction tier by the CROWN CANOPY (Fable 2026-07-11): per-node one-sided z bounds (YarnModel.zBand) — non-crown nodes UNDER the crown line, crown chain HALF A YARN PROUD of it, table deepened to 2 yarn-layers, pair-second hooks tuck deeper. Audit-clean 126/126; render gate 0.882. The wall (crowd erupting between the Vs) is BROKEN: the disc now reads as a flat crocheted spiral with a drawn-tight centre. Residual = crown ORIENTATION consistency (some Vs flop sideways) — RESOLVED 2026-07-11 (Opus worker): the canopy floor clamped the apex AND both flanks to ONE plane (probe: apexZ 0.97 vs flankZ 0.92, ~0.05yr — a flat dash, free to spin in-plane). Split the floor: apex rides a prouder floor (CANOPY+0.9yr) than its flanks (CANOPY+0.5yr) → each stitch is a real 3D chevron. Probe: flop (flank-axis vs tangential) mean 21°→8°, badly-flopped crowns 2→1; audit still 126/126. Render reads as consistent tidy Vs in clean spiral rounds. Residual now = DENSITY: mine is more open between rounds than the dense reference (separate gauge/drift calibration, not attempted — would risk the clean audit). Rebecca verdict pending. DENSITY PASS 2026-07-11 (Opus round-2): the sanctioned lever (radial pitch / disc gauge). Added a per-swatch `gaugeYr` override to buildRounds and tied the radial pitch to it (`drift = 0.9·sw`, bit-identical at the locked sc 1.8); mrdisc gaugeYr 1.5 + magic ring 1.15→0.85yr. Measured: round-to-round radial gaps 1.6→1.35yr (collision floor 1.25yr — trenches largely closed), round-0 crowns 2.53→2.03yr, centre closes to a pinprick. Audit still 126/126. Render: the rounds now pack tight (the coiled-rope trenches are gone) and the centre is tight, BUT per-stitch bumps still stand proud so it reads bulbous/bean-piled vs the flat reference. That residual is the z-amplitude (~2.2yr swing), which is the exhausted relief-lever family (crownLay/legRelief/angular-hold, §9) — a numeric flatten test (APEX/FLANK floors down) only moved amplitude 2.21→2.11yr while deepening valleys, so it was NOT shipped (would risk the just-landed crown-orientation fix). Rebecca verdict pending. ROUND-WORK LOOK PASS 2026-09-06 (§8f-5): the residual z-amplitude finally had a cause — measured in the surface frame, one disc stitch spanned 1.65 rendered yarn diameters peak-to-trough against flat sc's 0.57, and it settled there whatever it was built at, because `layoutMode: 'radial'` held the worked radius and left the NORMAL completely free. Giving the round layout the same whisper-soft normal hold the sphere has always had, plus a no-turn stitch that LIES IN the surface (`surfaceLay`), takes the mound to 1.24 d, the crown 0.87 → 0.67 d proud of its own legs, and the legs 0.50 → 0.17 d out of the surface (flatter than flat sc's own 0.40). Audit still clean at three weights. Rebecca verdict pending. |
@@ -191,7 +191,7 @@ stockinette re-rendered (gate 0.884), both consistent with their 07-10 looks.
 | **knitrib** (1×1 rib, KNIT) | per-COLUMN pull side (even cols +z, odd −z), constant up each column — a purl column is a knit column seen from behind (§8d) | ✅ **LOCKED 2026-07-11** (Rebecca). Audit-clean (240/240); columns settle cleanly alternating (+0.35..0.39 knit / −0.34..−0.41 purl → a real rib). Built on `buildKnit`'s per-(course,column) `faceSign` (stockinette + garter bit-identical). Reads as clear 1×1 rib — raised knit columns as vertical V-chains, recessed valleys FILLED with purl bumps. Chunkier than the fine reference = library-wide weight character. |
 | **shell** (5 dc in one base) | SHELL_N dc fanned into one below-crown, balanced by skipped stitches → constant-width scallops (§8c) | ◔ audit-clean (65/65) — all 5 fanned dc genuinely hook the shared base. New shaped-builder ops `shell`/`skip`; dec/st/inc paths byte-identical (scinc/scdec unchanged). RENDERED 2026-07-11 (hero passed): the 5-post fans radiate clearly from single bases, stacked and alternating; more open/skeletal than the reference's packed scallops (2 shells/row at chunky weight). Rebecca verdict pending. PACK 2026-07-11 (Opus round-2): the fabric was skeletal (big holes, backing showing). Added a per-swatch `gaugeYr`+`rowScale` override to buildShaped (locked stitch gauge/height untouched); shell gauge 2.3→1.5, row pitch 0.72 pack the columns + rows so the fans nest and touch. Plus the openFabric backing fix (below). Audit 65/65. Render now reads as a dense scalloped fabric with the fans touching — the big holes closed, matching the reference's density (chunkier yarn character remains). Rebecca verdict pending. |
 | **hdcinc/hdcdec/dcinc/dcdec** | the SAME shaped builder, taller posts — emitDecrease + the inc path are stitch-generic | ◔ all audit-clean with NO engine change (hdcinc 70/70, hdcdec 60/60, dcinc 52/52, dcdec 44/44). Confirms the shaping paths are genuinely stitch-agnostic. ALL FOUR RENDERED 2026-07-11 (gates 0.935 / 0.925 / 0.940 / 0.923): clean trapezoids, edge shaping legible (fanned inc pairs, converging tog gathers), no foundation lip, no fraying. dcinc's reference photo found + on file (knotions 2dc — was the last empty referenceUrl). Rebecca verdicts pending. |
-| **basketweave** (fp/bp blocks) | 3-wide fp/bp blocks swapping every 2 rows, off the locked fpdc/bpdc | ◔ audit-clean (96/96); reference photo added 2026-07-10 (was the last blocker). RENDERED 2026-07-11 (gate 0.854): the 3-wide blocks + every-2-rows alternation are discernible in bands, but the woven over-under illusion is weaker than the reference — fp/bp block contrast reads subtle at this weight. Honest verdict: borderline; likely needs a contrast pass (deeper bp recess or shallower tilt) if Rebecca calls it short. CONTRAST PASS 2026-07-11 (Opus round-2): the block alternation barely read (uniform vertical posts). Added a per-swatch `postReliefScale` opt to buildContinuous (default 1 — locked fpdc/bpdc/postrib bit-identical, postrib re-audited 96/96); basketweave deepens the fp/bp relief 1.35× so raised blocks pop over recessed ones, and packs the columns (gauge 2.3→1.9) so the 3-wide blocks tile tight. Audit 96/96. Render: the raised/recessed checkerboard now reads — the over-under basket tiling is legible (chunkier than the fine reference = yarn weight). Rebecca verdict pending. |
+| **basketweave** (fp/bp blocks) | 3-wide fp/bp blocks swapping every 2 rows, off the locked fpdc/bpdc | ◔ audit-clean (96/96); reference photo added 2026-07-10 (was the last blocker). RENDERED 2026-07-11 (gate 0.854): the 3-wide blocks + every-2-rows alternation are discernible in bands, but the woven over-under illusion is weaker than the reference — fp/bp block contrast reads subtle at this weight. Honest verdict: borderline; likely needs a contrast pass (deeper bp recess or shallower tilt) if Rebecca calls it short. CONTRAST PASS 2026-07-11 (Opus round-2): the block alternation barely read (uniform vertical posts). Added a per-swatch `postReliefScale` opt to buildContinuous (default 1 — locked fpdc/bpdc/postrib bit-identical, postrib re-audited 96/96); basketweave deepens the fp/bp relief 1.35× so raised blocks pop over recessed ones, and packs the columns (gauge 2.3→1.9) so the 3-wide blocks tile tight. Audit 96/96. Render: the raised/recessed checkerboard now reads — the over-under basket tiling is legible (chunkier than the fine reference = yarn weight). Rebecca verdict pending. §8f-8 (2026-09-06): collars added, `postReliefScale` 1.35 → 1.0 (§8f-7) → 0.5 as the collar took over the post's own depth; thickness 2.22 → 1.94 d, row line 43.5 → 30.5%. |
 | **vstitch** (2 dc in one st + skip) | the inc machinery IS the V — 2 dc fanned from one shared base, balanced by a skip, Vs stacking row on row | ◔ audit-clean (60/60) first build 2026-07-11. DEPICTION: the airier dictionary form is (dc, ch 1, dc) into the ch-SPACE below — chain-spaces are new-topology tier, so this is the solid 2-dc V variant (a real accepted form). RENDERED 2026-07-11: open dc lace with pairs fanning from shared bases — V identity present, less crisp than the ch-1 reference; the backing plane edge shows through the open fabric (cosmetic render sizing — worth a backing tweak for open fabrics). Rebecca verdict pending. CALM 2026-07-11 (Opus round-2): the tall dc posts sagged + tangled into an untidy mesh. rowScale 0.8 firms the Vs vertically + twist 0.1→0.05 cleans the ply columns, gauge left OPEN so the lace stays airy; plus the openFabric backing fix (the dark rectangles are gone). Audit 60/60. Render: clean Vs in an open diamond lattice matching the reference's crisp mesh. Rebecca verdict pending. |
 | **crossed** (crossed dc) | new 'cross' ShapeOp: skip 1, dc in next, dc in the skipped st — the strand reaches forward then back, legs genuinely cross; the second-worked stitch takes fuller leg relief (1.4 vs 0.6) so collision resolves the X to a consistent z-order | ◔ audit-clean (60/60) first build 2026-07-11. RENDERED 2026-07-11: genuine X crossings visible; some pairs read as parallel slants rather than crisp symmetric Xs; more open than the reference. Rebecca verdict pending. X-STRENGTHEN 2026-07-11 (Opus round-2): the parallel-slant pairs were settling both posts on the SAME z-side. Deepen the front/back z-split at the crossing (leg relief 0.6/1.4 → 0.4/1.75) so the second post unambiguously crosses in FRONT; plus a moderate pack (gauge 1.9, rowScale 0.85) firms the fabric to the reference's small eyelets, and the openFabric backing fix. Audit 60/60. Render: clear consistent X crossings dominate every pair, in packed rows. Rebecca verdict pending. |
 | **picot** (ch-3 nub on sc) | sc + a fed ch-3 loop over the head, closed by a SLIP STITCH that genuinely dives under the stitch's own crown (a recorded, audited hook); top-row edging placement | ◔ audit-clean (116/116 — 112 sc + 4 picot sl-sts) first build 2026-07-11. RENDERED 2026-07-11: four evenly-spaced nub loops stand along the top edge, folding back into the sl-st closure; matches the reference edging's open loopy character. Rebecca verdict pending. TIGHTEN 2026-07-11 (Opus round-2): the picots hung as long floppy dangling loops (fed 2.2yr tall, cw·0.55 wide — too much yarn). Feed less — a short 1.35yr nub, narrow (cw·0.3), sides converging to a point apex, sl-st drawn tight — so each stands as a short FIRM nub (perky-point character). Audit 116/116. Residual heaviness vs the reference's delicate points is the chunky yarn weight (library-wide). Rebecca verdict pending. |
@@ -2048,6 +2048,154 @@ against their reference photos before they can be called locked again.
 
 ---
 
+## 8f-8. ROUND 6 — the yarn-over collars on the post stitches (2026-09-06)
+
+§8f-7's own "still open" list named this one: §8f-3 gave every plain tall stitch
+its yarn-over collars and measured that a third of a tall stitch's yarn lives in
+them, while the post branch still built a bare two-leg post. **An fp/bp dc is a
+dc worked around the post below** — yarn over, insert around the post, pull up,
+[yo, pull through 2] twice — so it carries exactly one collar, on the new post's
+own column.
+
+### The construction — the same collar, traced in the same real order
+
+Coming off the previous head the strand descends the post line and, at the
+collar height, runs a full turn round the new post's column — out on the
+trailing side, BEHIND the column, round the leading edge, back across the FRONT
+— then carries on down to the wrap round the post below. Nothing is linked at
+that moment. The collar closes when the **up-leg rises back through it**, and
+self-collision is what then holds the up-leg inside the ring; that crossing is
+recorded as a `through` link (the collar's far node must stay behind the up-leg
+it rings), so the audit proves the wrap survived relaxation. The leg is cut at
+one node per quarter of a collar gap, so every ring node ends up further along
+the strand from the up-leg it must collide with than the relax adjacency window.
+
+`yarnOvers` / `yarnOverYr` are the same dictionary fields the plain branch uses;
+a post stitch that declares neither keeps the bare two-leg post it had.
+
+### The collar alone made the fabric WORSE, and the numbers said why
+
+Dropped in on its own the collar cost the rib almost everything §8f-7 had won:
+the post's half-span fell 0.76 → 0.56 d, the row line went 33% → 52% exposed,
+the face owned by the raised ribs fell 79% → 70%, and the fabric settled 2.71 d
+thick. Three separate causes, each found by measuring rather than arguing:
+
+1. **The taper the coarse cut used to relax away from.** §8f-7 built the post's
+   half-width tapering hard to the wrap (0.18 → 1 of `pw`) and the three coarse
+   levels then opened up: dumped per level, the settled post was very nearly
+   parallel-sided (|dx| 2.81 / 3.29 / 2.13 mm up the leg) because one node had a
+   whole leg's worth of slack to open into. Cutting the leg finely enough to
+   carry a collar removes that slack — every level is now inside the relax
+   adjacency window, so the BUILT route is the settled route — and the hard taper
+   froze in at 0.56 / 0.64 / 0.70 mm. A post that narrow stops covering the row
+   boundary it used to bulge over, which is the whole of the row-line and
+   face-owned regression. **`postLegTaper` 1.0**: build the taper the fabric
+   settles at.
+2. **The post was still being built at the packed width.** §8f-7 scaled the post's
+   own half-width by the swatch's pack because at fpdc's full cell width the
+   hard-tapered rib overlapped its neighbour by 1.4 d. With the taper built
+   honestly that shrank the post below the width of the dc it IS: `postrib` was
+   building a 0.90yr post where a plain dc's cell declares 1.32. The head
+   genuinely spans the cell so it keeps the pack; **the post takes its cell
+   straight**, and `postHalfYr` becomes dc's own **1.32**.
+3. **The collar carries the depth the fp/bp pop used to carry alone.** A ring
+   round a post is a yarn behind the post and a yarn in front of it, so a
+   collared post is thick on its own account. At the shipped pop the rib
+   settled 2.71 d against a real 1.8–2.2. `postrib` takes a **`postReliefScale`
+   0.6** and `basketweave`'s drops **1.0 → 0.5**; the fp/bp depth separation is
+   still a full diameter, so the rib's contrast survives.
+
+Two more, both measured, both small:
+
+- **The head belongs to its own column.** §8f-7 predicted this ("a real rib's
+  heads are pulled forward with their own post") and the dump confirmed the
+  collar had made it worse, not better: with the collar in, the fp posts' own
+  heads settled 0.88 mm BEHIND the plane and the bp posts' 0.85 mm in front —
+  anti-phase with their own columns, because a proud post's crowding levers its
+  head the other way. `postHeadCarry` **0.5** (half the post's pop) takes the row
+  line 27.5% → 22.9%. Carried the whole way it breaks: the row's travel then
+  jumps depth column to column and the row line goes back to 43%.
+- **The collar's sideways reach is not free.** At the plain post's 0.9
+  clearance, an ALL-front-post fabric — whose columns already overlap — has
+  neighbouring collars fighting, and 10 of `fpdc`'s 192 interlocks were pushed
+  round in FRONT of the up-leg they must sit behind. A real audit failure, not a
+  look one, and deepening the collar made it worse (41 fails at 1.0yr), which
+  killed the "not fed enough" theory. **`yarnOverClear` 0.7** keeps the ring's
+  perimeter above the ~2πd it needs to contain the up-leg and clears every
+  audit.
+
+### The measured table — worsted, yr 2.4, in rendered yarn diameters
+
+| quantity | `postrib` before → after | `fpdc` before → after | `basketweave` before → after | target |
+|---|---|---|---|---|
+| **yarn fed per stitch** | 14.77 → **18.93** | 15.69 → **21.11** | 15.79 → **19.81** | 14.8–22.2 (dc's own) |
+| **post half-span (front view)** | 0.76 → **0.89** | 0.66 → 0.58 | 0.79 → 0.74 | ≥ 0.8 |
+| **face owned by the raised ribs** | 78.9% → **90.3%** | 95.5% → 98.4% | 65.2% → 56.5% | ≥ 85 (1x1 rib) |
+| **row line exposed between posts** | 33.1% → **22.2%** | 9.6% → **2.4%** | 43.5% → **30.5%** | ≤ 15 |
+| **front-face coverage** | 98.9% → **100%** | 99.9% → **100%** | 98.9% → **100%** | ≥ 98 |
+| **fabric thickness** | 1.79 → **2.02** | 1.88 → **1.95** | 2.22 → **1.94** | 1.8–2.2 |
+| post lean out of plane | 35.6 → 37.1° | 1.9 → 2.8° | 16.6 → 16.7° | 35–60° (1x1 rib) |
+| fp / bp depth separation | 1.00 → 1.02 | — | 1.02 → 0.73 | — |
+| post pitch | 1.36 → 1.35 | 1.71 → 1.71 | 1.67 → 1.68 | 1.4–1.6 |
+| inter-post gap (front face) | −1.16 → −1.43 | −0.61 → −0.45 | −0.91 → −0.80 | ≤ 0 |
+
+`loom-stitch-metrics.ts`'s POST-RIB block gained the **yarn fed per stitch** row
+it never had — the same definition the plain block uses (a post owns
+`[start, nextStart)` along the strand, travel and head included), against dc's
+own anatomy budget, because an fp/bp dc's anatomy is a dc's.
+
+`fpdc`'s own swatch also takes a **`postReliefScale` 1.6**: an all-front-post
+fabric has no recessed column beside each post to make its depth, so once the
+collar took over the post's own depth it settled 1.58 d thick. The rib, which
+does have a recessed column, needs no scale at all. `bpdc` measures 1.99
+unscaled and keeps none.
+
+### Hashes — 4 moved, 32 bit-identical
+
+`fpdc` 61ccb3019b33d707 → **de5ac242dfbc848a** ·
+`bpdc` 88491ff841a8d147 → **50b0fe0a83592522** ·
+`postrib` 2c6e80b4688da31a → **02bec0aad197b7ed** ·
+`basketweave` 22b200b0099033ab → **44be22b56f591e9a**.
+Bit-identical: the whole plain flat family, the shaped and round families, the
+sphere, the fans and every knit swatch — 32 of 36 (the collar route is gated on
+`yarnOvers > 0`, and the no-collar route is byte-for-byte the §8f-7 one). Audit
+clean **36/36 at fine 1.5, worsted 2.4 and bulky 3.2**.
+`post-rib-headband` re-measured off the settled geometry: **458 × 94 → 459 × 94
+mm** (program hash ed5ae17a → a99559f5, 9 432 → 15 992 nodes), both axes well
+inside the ±12% settled-size gate.
+
+**`fpdc`, `bpdc` and `postrib` are `locked` stitches whose geometry has moved
+again.** Their `status` is unchanged and they still need Rebecca's
+re-verification against their reference photos.
+
+### Still open
+
+- **The row line is 22.2% on `postrib` and 30.5% on `basketweave`**, against a
+  target of ≤15. It is better than the 33.1 / 43.5 it inherited, but the last of
+  it is structural rather than tunable: the post's legs stop 0.15 of a row pitch
+  below their own crown line (`pyH` is 0.85 of the row), and the head loop spans
+  that gap. Between two ribs the eye therefore meets a head, and the metric
+  counts any head — including a raised column's own head — as exposed. Two
+  honest ways on, both bigger than a value: run the post's legs up to their own
+  head so the column is continuous over the row boundary, or re-read the metric
+  as "does the frontmost yarn at the row line belong to a RAISED column" and
+  measure that instead. Do not do the second one on its own.
+- **`postrib`'s post pitch is 1.35 d** against 1.4–1.6, unchanged from §8f-7.
+  Loosening its pack to 2.45 puts pitch at 1.44 but costs the face 5 points and
+  the row line 3 — worth a look beside a photograph, not worth deciding on the
+  numbers alone.
+- **`fpdc`/`bpdc`'s half-span is 0.58 d** against ≥0.8, down from 0.66/0.70:
+  every post in those swatches is the same mode, so neighbouring columns at one
+  depth squeeze each other where the rib's alternation lets its posts interleave
+  (the rib reaches 0.89). Widening the cell past 1.32 does not fix it — it
+  jumps bistably to 1.29, a post 2.6 d across.
+- **`basketweave`'s face-owned fell 65.2 → 56.5%** with its relief scale. As
+  §8f-7 said, that row and the lean row are 1x1-rib measures and do not transfer
+  to three-wide blocks; basketweave wants its own targets before either is read
+  as a regression.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,
@@ -2095,6 +2243,27 @@ against their reference photos before they can be called locked again.
   are genuinely a yarn behind the surface, and a no-turn stitch makes both faces
   of the fabric on its own, so it spans the whole thickness by definition).
   Use `crown, share of thickness` — 0.5 is the face, flat sc sits at 0.49.
+- **Cutting a leg finely without re-cutting the shape it was built to relax
+  INTO** (round 6, 2026-09-06). §8f-7's post tapered hard to the wrap (0.18 → 1
+  of `pw`) and settled nearly parallel-sided, because three coarse leg nodes had
+  a whole leg's worth of slack to open into. Cutting the same leg at eight
+  levels — which a yarn-over collar needs, so the ring lands on a leg node and
+  clears the adjacency window — removes that slack: every level is now inside
+  the relax window, the BUILT route becomes the settled route, and the taper
+  froze in at 0.56 mm where it used to open to 2.13. The post stopped covering
+  the row boundary it had been bulging over and the rib's row line went 33% →
+  52% exposed on a change that was supposed to add density. When a cut gets
+  finer, re-derive the built shape from the SETTLED dump of the coarse one; a
+  shape that was only ever a relaxation target is not a construction.
+- **Assuming a flipped ring means the ring is starved** (round 6, 2026-09-06).
+  Ten of `fpdc`'s 192 collars settled in front of the up-leg they must sit
+  behind, and §9's own loop-perimeter lesson made "not fed enough" the obvious
+  read. Measured, it was the opposite: deepening the collar from 0.6yr to 1.0yr
+  took the failures from 10 to 41, and to 1.25yr from 41 to 24. The cause was
+  SIDEWAYS — an all-front-post fabric's columns already overlap, so at the plain
+  post's 0.9 clearance neighbouring collars fight and push each other round.
+  Narrowing the ring's reach to 0.7 cleared every audit at every weight. Sweep
+  the parameter before believing the analogy.
 - **Judging a fabric's density from a NODE raster** (round 5, 2026-09-06) → a
   post's nodes sit up to 1.2 d apart along the strand, so a front view drawn as
   discs at the nodes scores the middle of every stitch as a hole: `postrib`

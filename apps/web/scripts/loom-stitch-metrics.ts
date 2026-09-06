@@ -661,6 +661,23 @@ function postBlock(
     z: mean(p.legs.map((k) => n[k]!.z)),
   })
 
+  // YARN FED PER POST STITCH — the same definition the plain block uses: node
+  // index is position along the strand, so a post owns [start, nextStart), which
+  // correctly includes the travel from the previous head into it and the head it
+  // throws. It is the single number that says whether the cell has as much yarn
+  // in it as a real stitch does, and an fp/bp dc is a dc: its budget is dc's.
+  const sortedPosts = [...posts].sort((a, b) => a.start - b.start)
+  const yarnPer: number[] = []
+  for (let i = 0; i < sortedPosts.length - 1; i++) {
+    const p = sortedPosts[i]!
+    if (!interior(p)) continue
+    if (sortedPosts[i + 1]!.j !== p.j) continue // a flat row ends at a TURN — don't measure across it
+    let L = 0
+    for (let k = p.start; k < sortedPosts[i + 1]!.start; k++)
+      L += Math.hypot(n[k]!.x - n[k + 1]!.x, n[k]!.y - n[k + 1]!.y, n[k]!.z - n[k + 1]!.z)
+    yarnPer.push(L)
+  }
+
   const byRow = new Map<number, (typeof posts)[number][]>()
   for (const p of inner) {
     if (!byRow.has(p.j)) byRow.set(p.j, [])
@@ -794,6 +811,9 @@ function postBlock(
   console.log(`\nPOST-RIB METRICS — ${inner.length} interior posts, yr=${yr}mm (rendered yarn diameter d=${d.toFixed(2)}mm)`)
   console.log(`${'quantity'.padEnd(30)}${'ours'.padStart(8)}${'unit'.padStart(8)}${'target'.padStart(13)}`)
   console.log('-'.repeat(72))
+  // An fp/bp dc IS a dc: same two legs, same head loop, same one yarn-over, so
+  // it carries dc's own anatomy budget (18.5 d +/- 20%, STITCH_ENGINE.md 8f-3).
+  row('yarn fed per stitch', mean(yarnPer) / d, 14.8, 22.2, 'd')
   row('post pitch', mean(pitch) / d, 1.4, 1.6, 'd')
   row('fp rib pitch', mean(ribPitch) / d, 2.8, 3.2, 'd')
   row('inter-post gap (front face)', mean(gap) / d, -0.4, 0.0, 'd')
