@@ -1657,6 +1657,7 @@ model Media {
   knittingPatternThumbnails KnittingPattern[] @relation("KnittingPatternThumbnail")
   knittingPatternSchematics KnittingPattern[] @relation("KnittingPatternSchematic")
   knittingPatternHeros      KnittingPattern[] @relation("KnittingPatternHero")
+  knittingPatternLoomHeros  KnittingPattern[] @relation("KnittingPatternLoomHero")
 
   // Sewing S-2 (phase_sewing_schema_001).
   sewingPatternHeros SewingPattern[] @relation("SewingPatternHero")
@@ -4221,8 +4222,9 @@ model YarnWeight {
 
   notes String?
 
-  tutorials       Tutorial[]       @relation("TutorialPrimaryYarnWeight")
-  crochetPatterns CrochetPattern[] @relation("CrochetPatternPrimaryYarn")
+  tutorials        Tutorial[]        @relation("TutorialPrimaryYarnWeight")
+  crochetPatterns  CrochetPattern[]  @relation("CrochetPatternPrimaryYarn")
+  knittingPatterns KnittingPattern[] @relation("KnittingPatternPrimaryYarn")
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -5624,6 +5626,56 @@ model KnittingPattern {
   preferUserPhotoForHero Boolean               @default(false)
 
   // ──────────────────────────────────────────────────────────────────────────
+  // Loom pattern engine — the knitting twin of CrochetPattern's block, field
+  // for field, so the two crafts read the same way and one publisher can serve
+  // both.
+  //
+  // loomProgram is the machine-EXECUTABLE stitch program: the stitch-by-stitch
+  // source the loom compiles three ways that can never drift apart — geometry
+  // (the rendered hero IS the exact pattern), the written `rowByRow`, and the
+  // `chartData` symbol chart. Distinct from those two, which the loom DERIVES
+  // from it, so storing the program keeps the other two regenerable rather
+  // than hand-kept in sync.
+  //
+  // The loom hero is the EXACT-pattern render (deterministic geometry plus a
+  // fidelity-gated photoreal finish, no AI drift), so it is tracked separately
+  // from the Fal img2img hero above; a pattern renderer prefers loomHero when
+  // it is present. loomRenderStatus / loomRenderedAt / loomFidelityScore
+  // record the last render-on-publish run; loomGeometryHash lets a re-publish
+  // skip re-rendering when the compiled geometry is unchanged.
+  loomProgram       Json?
+  loomHeroMediaId   String?
+  loomHero          Media?                @relation("KnittingPatternLoomHero", fields: [loomHeroMediaId], references: [id], onDelete: SetNull)
+  loomRenderStatus  ImageGenerationStatus @default(PENDING)
+  loomRenderedAt    DateTime?
+  loomYarnRadiusMm  Float?
+  loomFidelityScore Float?
+  loomGeometryHash  String?
+
+  // ──────────────────────────────────────────────────────────────────────────
+  // Bulk autopilot provenance. Mirrors CrochetPattern's block exactly.
+  //
+  // `generationMeta` records how an autopilot-published row came to exist:
+  //   { bulkRunId, brief: { shelf, form, look, territory, palette, size,
+  //     difficulty, concept, source, plannerMode, dressed },
+  //     gate: { verdict, reasons[] }, programFingerprint, attempts,
+  //     settledSizeMm, publishedBy, at }
+  // Null on hand-authored / imported / maker-owned rows.
+  //
+  // `subjectKey` and `programFingerprint` are the DUPLICATE GUARD's two
+  // signals, written at publish so the NEXT candidate can be compared against
+  // this row without re-deriving them: the normalised subject phrase (the same
+  // idea, reworked) and a hash of the stitch program with colours stripped
+  // (the same construction in another colourway).
+  // `bulkRunId` is the run that published it (a raw id, not a relation, so a
+  // BulkRun row can be pruned without touching the catalogue).
+  // ──────────────────────────────────────────────────────────────────────────
+  generationMeta     Json?
+  subjectKey         String?
+  programFingerprint String?
+  bulkRunId          String?
+
+  // ──────────────────────────────────────────────────────────────────────────
   // Project taxonomy. `projectShape` is the finished-piece category. A
   // KnittingPattern carries exactly one shape. `techniqueDisciplines` is a
   // multi-valued list — a single colourwork-and-cable hat carries
@@ -5676,6 +5728,13 @@ model KnittingPattern {
   /// collision. Pattern carries the enum for cheap library filters; canonical
   /// brand-level data stays on YarnWeight.
   yarnWeightStandard KnittingYarnWeightStandard?
+
+  /// Master YarnWeight row for the pattern's main yarn. `yarnWeightStandard`
+  /// above stays the cheap enum for library filters; this FK is the canonical
+  /// brand-level record the materials roll-up and the substitution helper
+  /// read. Mirrors CrochetPattern.primaryYarnWeightId.
+  primaryYarnWeightId String?
+  primaryYarnWeight   YarnWeight? @relation("KnittingPatternPrimaryYarn", fields: [primaryYarnWeightId], references: [id], onDelete: SetNull)
 
   /// Primary needle size in mm. Decimal(4, 2) so 2.25 / 2.75 half-sizes
   /// round-trip cleanly.
@@ -5772,6 +5831,15 @@ model KnittingPattern {
   visibility     Visibility  @default(PRIVATE)
   publishedAt    DateTime?
 
+  // Popularity signal — mirrors Pattern and CrochetPattern. Shared formula
+  // popularityScore = viewCount + 3*saveCount + 5*completionCount, kept
+  // consistent by atomic delta updates. saveCount stays 0 until a knitting
+  // save path exists; completionCount seeds from KnittingProjectProgress.
+  viewCount       Int @default(0)
+  saveCount       Int @default(0)
+  completionCount Int @default(0)
+  popularityScore Int @default(0)
+
   // Relations.
   designerId    String?
   designer      Designer?         @relation("DesignerKnittingPatterns", fields: [designerId], references: [id], onDelete: SetNull)
@@ -5798,9 +5866,15 @@ model KnittingPattern {
   @@index([forkedFromId])
   @@index([tutorialId])
   @@index([heroMediaId])
+  @@index([loomHeroMediaId])
+  @@index([primaryYarnWeightId])
+  @@index([popularityScore])
   @@index([craftStitchSlugs], type: Gin)
   @@index([craftTechniqueTags], type: Gin)
   @@index([techniqueDisciplines], type: Gin)
+  @@index([subjectKey])
+  @@index([programFingerprint])
+  @@index([bulkRunId])
 }
 
 /// Per-(user, knittingPattern) project state. Mirrors CrochetProjectProgress

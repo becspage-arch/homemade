@@ -1,8 +1,16 @@
-import type { SizeName } from './size-charts'
+import type { SizeName, BodyMeasurements } from './size-charts'
 import type { EasePreset } from './ease-presets'
 import type { Gauge, DominantFabric } from './gauge'
 
 export type { Gauge, DominantFabric } from './gauge'
+
+/**
+ * The label a graded size carries. Either one of the standard chart sizes
+ * or `CUSTOM`, which is what a maker's own measurements grade to. `CUSTOM`
+ * never resolves against the size charts: the caller supplies the body
+ * numbers itself via `bodyMeasurements`.
+ */
+export type GradedSizeLabel = SizeName | 'CUSTOM'
 
 export type ConstructionShape =
   | 'TOP_DOWN_RAGLAN'
@@ -69,7 +77,7 @@ export interface AssemblyInstructions {
  * prompt + grading library + schematic renderer all agree.
  */
 export interface GradedPattern {
-  size: SizeName
+  size: GradedSizeLabel
   shape: ConstructionShape
   garmentType: GarmentType
   gauge: Gauge
@@ -134,9 +142,16 @@ export interface VerificationResult {
 
 export interface GarmentGradeInput {
   constructionShape: ConstructionShape
-  size: SizeName
+  size: GradedSizeLabel
   gauge: Gauge
   easePreset: EasePreset
   garmentType: GarmentType
   options?: ShapeOptions
+  /**
+   * The maker's own body measurements, in place of the standard chart row
+   * for `size`. Set this and the shape module grades from these numbers and
+   * never touches the size charts — the whole of custom fit. Pair it with
+   * `size: 'CUSTOM'` so the returned pattern is labelled honestly.
+   */
+  bodyMeasurements?: BodyMeasurements
 }

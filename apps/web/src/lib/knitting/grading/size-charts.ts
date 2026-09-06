@@ -100,9 +100,21 @@ const ALL_CHARTS = {
   ...BABY_SIZE_CHART,
 } as const
 
-export function getBodyMeasurements(size: SizeName): BodyMeasurements {
+/**
+ * The standard chart row for a size. `CUSTOM` is accepted by the type so the
+ * construction-shape modules can take it, but it never resolves here: a
+ * custom fit grades from the maker's own measurements, which the caller
+ * passes in as `bodyMeasurements` instead.
+ */
+export function getBodyMeasurements(size: SizeName | 'CUSTOM'): BodyMeasurements {
   const m = (ALL_CHARTS as Record<string, BodyMeasurements>)[size]
-  if (!m) throw new Error(`Unknown size: ${size}`)
+  if (!m) {
+    throw new Error(
+      size === 'CUSTOM'
+        ? 'A custom size has no chart row. Pass the maker\'s own bodyMeasurements.'
+        : `Unknown size: ${size}`,
+    )
+  }
   return m
 }
 

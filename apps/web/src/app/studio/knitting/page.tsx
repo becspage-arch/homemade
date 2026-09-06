@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
 
 import { getCurrentDbUser } from '@/lib/get-current-user'
+import { hasPremium } from '@/lib/entitlements'
 import { KnittingStudioShell } from '@/components/studio/knitting/KnittingStudioShell'
 import {
   loadKnittingPatternForStudio,
   loadKnittingProjectsForUser,
+  loadKnittingGradableSpec,
   loadDemoKnittingPattern,
 } from '@/lib/knitting/load-pattern'
 import { prisma, PatternType, Visibility } from '@homemade/db'
@@ -70,6 +72,14 @@ export default async function KnittingStudioPage({ searchParams }: PageProps) {
       })
     : []
 
+  // The grader's surface. Null unless this pattern has earned its own loom
+  // hero AND says enough to grade; the loader holds both checks, so a null
+  // answer keeps the size table and the fit panel off the page entirely.
+  const gradable =
+    pattern && pattern.slug && sp.demo !== '1'
+      ? await loadKnittingGradableSpec(pattern.slug)
+      : null
+
   const myProjects = user && !pattern ? await loadKnittingProjectsForUser(user.id) : []
 
   // Recently added knitting patterns from the library. Falls back to no
@@ -108,6 +118,8 @@ export default async function KnittingStudioPage({ searchParams }: PageProps) {
       userEmail={user?.email ?? null}
       userName={user?.name ?? null}
       pattern={pattern}
+      gradable={gradable}
+      isPremium={hasPremium(user)}
       progress={null}
       myProjects={myProjects}
       yarnWeights={yarnWeights}

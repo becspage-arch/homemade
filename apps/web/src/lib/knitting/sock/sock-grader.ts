@@ -32,6 +32,7 @@ export function gradeSock(input: SockGradeInput): SockGradedPattern {
         gauge: input.gauge,
         heelStyle: input.heelStyle,
         options: input.options,
+        footMeasurements: input.footMeasurements,
       })
     case 'TOE_UP':
       return gradeToeUpSock({
@@ -39,6 +40,7 @@ export function gradeSock(input: SockGradeInput): SockGradedPattern {
         gauge: input.gauge,
         heelStyle: input.heelStyle,
         options: input.options,
+        footMeasurements: input.footMeasurements,
       })
   }
 }
