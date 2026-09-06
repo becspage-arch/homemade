@@ -21,9 +21,11 @@
 
 import type { PatternData } from '@homemade/db'
 import {
+  backstitchStrokeWidth,
   buildBucketCrossPath,
   buildBucketHighlightPath,
   buildPaletteIndex,
+  frenchKnotRadius,
   groupCellsBySymbol,
   shiftColour,
   symbolOnFill,
@@ -285,15 +287,23 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
   }
 
   // ─── Back-stitch ────────────────────────────────────────────────────────
+  // Drawn over the stitches, at the weight worked thread actually has. One
+  // path per colour so a long outline is one paint, not four hundred.
   if (pattern.grid.backstitch.length > 0) {
-    parts.push(`<g transform="translate(${offX} ${offY})" stroke-linecap="round">`)
+    const w = backstitchStrokeWidth(cellPx, mode)
+    const bySymbol = new Map<string, string[]>()
     for (const seg of pattern.grid.backstitch) {
-      const entry = paletteIndex.bySymbol.get(seg.s)
-      if (!entry) continue
+      if (!paletteIndex.bySymbol.has(seg.s)) continue
+      const d = `M${seg.x1 * cellPx} ${seg.y1 * cellPx}L${seg.x2 * cellPx} ${seg.y2 * cellPx}`
+      const list = bySymbol.get(seg.s)
+      if (list) list.push(d)
+      else bySymbol.set(seg.s, [d])
+    }
+    parts.push(`<g transform="translate(${offX} ${offY})" stroke-linecap="round" fill="none">`)
+    for (const [symbol, ds] of bySymbol) {
+      const entry = paletteIndex.bySymbol.get(symbol)!
       const colour = monochrome ? '#1a1410' : shiftColour(entry.rgb, -0.22)
-      parts.push(
-        `<line x1="${seg.x1 * cellPx}" y1="${seg.y1 * cellPx}" x2="${seg.x2 * cellPx}" y2="${seg.y2 * cellPx}" stroke="${colour}" stroke-width="${Math.max(1.2, cellPx * 0.08)}"/>`,
-      )
+      parts.push(`<path d="${ds.join('')}" stroke="${colour}" stroke-width="${w}"/>`)
     }
     parts.push(`</g>`)
   }
@@ -306,7 +316,7 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
       if (!entry) continue
       const cx = k.x * cellPx + cellPx / 2
       const cy = k.y * cellPx + cellPx / 2
-      const r = cellPx * 0.26
+      const r = frenchKnotRadius(cellPx)
       const base = monochrome ? '#1a1410' : shiftColour(entry.rgb, -0.18)
       parts.push(`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${base}"/>`)
       if (!monochrome) {

@@ -14,6 +14,7 @@ import { sha256Hex } from './similarity'
 import { subjectKey } from './subject-key'
 import { renderBeautyThumbnail, THUMB_TARGET } from './beauty-thumbnail'
 import { bareFabricVerdict, clearBackground, fullCoverageByIntent } from './bare-fabric'
+import { embellishChart } from './outline'
 import {
   buildPrompt,
   SRC_SAT,
@@ -66,6 +67,17 @@ export interface CrossStitchCandidate {
   /** What the bare-fabric rule did to this chart, if anything. Recorded on the
    *  published row so the decision is auditable without re-deriving it. */
   backgroundCleared?: { removed: number; droppedSymbols: string[]; reason: string }
+  /** What the outline pass did — back-stitch segments, knots, and the mode the
+   *  lane/style rule chose. Recorded on the published row for the same reason. */
+  outline?: {
+    mode: string
+    reason: string
+    segments: number
+    length: number
+    knots: number
+    addedSymbols: string[]
+    inkCodes: string[]
+  }
 }
 
 function imageSizeFor(w: number, h: number): 'square_hd' | 'portrait_4_3' | 'landscape_4_3' {
@@ -169,7 +181,33 @@ export async function generateCrossStitchCandidate(
       cleared = { removed: out.removed, droppedSymbols: out.droppedSymbols, reason: bare.reason }
     }
   }
-  const shippedMetrics = cleared ? computePatternMetrics(shipped) : metrics
+  // OUTLINES — the chart draws its own edges. The schema has carried a
+  // back-stitch layer and a French-knot layer since the first day and the
+  // converter never put anything in either, so every chart shipped as flat
+  // blocks of whole crosses while the best-seller kits it is judged against
+  // outline their characters and dot their eyes. Derived HERE, after the
+  // bare-fabric clear (the silhouette is only a silhouette once the white
+  // ground has gone) and before the thumbnail is rendered — so the vividness
+  // guard and the vision gate judge the outlined chart, the one that ships.
+  // The lane and style decide how much: a full outline for the bold flat lanes,
+  // the silhouette alone for the soft ones, nothing for line work or the dense
+  // showpiece tier.
+  const embellished = embellishChart(shipped, { lane: brief.lane, style: brief.style })
+  let outline: CrossStitchCandidate['outline']
+  if (!embellished.unchanged) {
+    shipped = embellished.data
+    outline = {
+      mode: embellished.mode,
+      reason: embellished.modeReason,
+      segments: embellished.backstitchSegments,
+      length: embellished.backstitchLength,
+      knots: embellished.frenchKnots,
+      addedSymbols: embellished.addedSymbols,
+      inkCodes: embellished.inkCodes,
+    }
+  }
+
+  const shippedMetrics = cleared || outline ? computePatternMetrics(shipped) : metrics
 
   const renderPng = await renderBeautyThumbnail(shipped, brief.sat != null ? 1 : POST_SAT)
   return {
@@ -185,6 +223,7 @@ export async function generateCrossStitchCandidate(
     credit: generated.credit,
     requestedColours: colours,
     ...(cleared ? { backgroundCleared: cleared } : {}),
+    ...(outline ? { outline } : {}),
   }
 }
 
@@ -443,6 +482,7 @@ export async function publishCrossStitchGem(
       attempt: ctx?.attempt ?? 1,
       tweak: ctx?.tweak ?? {},
       ...(candidate.backgroundCleared ? { backgroundCleared: candidate.backgroundCleared } : {}),
+      ...(candidate.outline ? { outline: candidate.outline } : {}),
       gate: { verdict: ctx?.gate.verdict ?? 'keep', reasons: ctx?.gate.reasons ?? [] },
       bulkRunId: ctx?.bulkRunId ?? null,
       credit: candidate.credit,

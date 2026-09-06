@@ -65,6 +65,25 @@ export function symbolOnFill(hex: string): string {
   return luminance > 0.58 ? '#1a1410' : '#fafafa'
 }
 
+/**
+ * Stroke width for one back-stitch line, in pixels.
+ *
+ * Back-stitch is worked in one or two strands against two for a full cross, so
+ * on the cloth it reads at roughly two thirds the weight of a stitch arm — a
+ * definite line, not a hair. The renderer's cross body is `cellPx * 0.22`, so
+ * the outline sits just under two thirds of that. The floor keeps the line
+ * visible when a whole 200-cell chart is squeezed into a 1,000px thumbnail,
+ * which is exactly where the first draft's `cellPx * 0.08` vanished.
+ */
+export function backstitchStrokeWidth(cellPx: number, mode: 'beauty' | 'chart' = 'chart'): number {
+  return Math.max(1.6, cellPx * (mode === 'beauty' ? 0.15 : 0.12))
+}
+
+/** Radius of a French knot, in pixels. A knot sits proud of about half a cell. */
+export function frenchKnotRadius(cellPx: number): number {
+  return cellPx * 0.28
+}
+
 export interface PaletteIndex {
   bySymbol: Map<string, PaletteEntry & { index: number }>
 }

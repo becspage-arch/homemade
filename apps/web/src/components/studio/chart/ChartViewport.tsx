@@ -31,10 +31,12 @@ import {
 import { cellKey, type PatternData } from '@homemade/db/pattern'
 import { useChartStore, type ChartMode } from './chart-store'
 import {
+  backstitchStrokeWidth,
   buildBucketCrossPath,
   buildBucketHighlightPath,
   buildPaletteIndex,
   DEFAULT_CELL_PX,
+  frenchKnotRadius,
   groupCellsBySymbol,
   LOW_ZOOM_THRESHOLD,
   RENDER_PRECISION,
@@ -576,7 +578,7 @@ export function ChartViewport({
                     x2={(seg.x2 * cellPx).toFixed(RENDER_PRECISION)}
                     y2={(seg.y2 * cellPx).toFixed(RENDER_PRECISION)}
                     stroke={shiftColour(entry.rgb, -0.22)}
-                    strokeWidth={Math.max(1.2, cellPx * 0.08)}
+                    strokeWidth={backstitchStrokeWidth(cellPx)}
                     strokeLinecap="round"
                   />
                 )
@@ -593,7 +595,7 @@ export function ChartViewport({
                 if (!entry) return null
                 const cx = k.x * cellPx + cellPx / 2
                 const cy = k.y * cellPx + cellPx / 2
-                const r = cellPx * 0.26
+                const r = frenchKnotRadius(cellPx)
                 return (
                   <g key={`fk-${i}`}>
                     <circle cx={cx} cy={cy} r={r} fill={shiftColour(entry.rgb, -0.18)} />

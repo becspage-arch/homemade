@@ -4670,6 +4670,20 @@ model Pattern {
   // The previous Media row is kept, so a revert is a restore plus an id swap.
   backgroundCleared   Json?
 
+  // ── Outlines (phase_xs_outlines_001) ─────────────────────────────────────
+  // Every chart in the catalogue shipped as flat blocks of whole crosses: the
+  // schema has carried a back-stitch layer since day one and nothing ever put
+  // a segment in it, so a library chart read flatter than every best-seller
+  // kit. `scripts/xs-outline-backfill.ts` derives the silhouette and the strong
+  // internal edges and stitches them in back-stitch, and turns the lone dark
+  // speck in a face into a French knot. This column is the reversible record of
+  // that edit: what went on, why, and the thumbnail + data hash it replaced.
+  //   { at, mode, modeReason, backstitchSegments, backstitchLength,
+  //     frenchKnots, addedSymbols, inkCodes,
+  //     previousThumbnailMediaId, previousDataSha256, before, after }
+  // The previous Media row is kept, so a revert is a restore plus an id swap.
+  outlineApplied      Json?
+
   license        PatternLicense?
   userProgress   UserPatternProgress[]
   savedBy        SavedPattern[]
