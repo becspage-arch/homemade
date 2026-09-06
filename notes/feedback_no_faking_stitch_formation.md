@@ -17,4 +17,4 @@ The tell that you've drifted: the structure only holds when pinned, and collapse
 
 Pinning the **foundation chain only** (the anchor edge) is acceptable; pinning worked stitches is not.
 
-Related: [[project_loom_stitch_engine]], [[feedback_customer_eye_renders]], [[feedback_render_before_volume]]. See handbook `apps/web/src/lib/loom/crochet/STITCH_ENGINE.md` §9.
+Related: [[project/project_loom_stitch_engine]], [[feedback_customer_eye_renders]], [[feedback_render_before_volume]]. See handbook `apps/web/src/lib/loom/crochet/STITCH_ENGINE.md` §9.

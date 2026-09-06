@@ -158,3 +158,5 @@ Schema: `Tutorial.qcBlockReason Json?` (migration
 `20260915000000_phase_qc_block_reason_001`). Realises the
 [[project_master_todo]] §6.5 "QC into the autopilot publish path" item. Related:
 [[feedback_no_warning_tiers]], [[feedback_ai_only_moderation]].
+
+(Cross-reference note, 2026-09-06: `[[project_master_todo]]` is not in notes/; the running list is `todo.md`.)
