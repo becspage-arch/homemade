@@ -1,19 +1,13 @@
 # Homemade — repo-level guide for Claude Code sessions
 
 This file is auto-loaded by every Claude Code session that opens the repo.
-It's intentionally short — per-user preferences, the build state, and project
-context all live in the user's auto-memory at
-`C:\Users\Rebecca\.claude\projects\D--code-homemade\memory\`, which is also
-auto-loaded. Read both before starting non-trivial work.
-
-Auto-memory is keyed on the checkout path, so moving the repo strands it. If
-that directory is empty, the memory is probably under an older path slug in
-`C:\Users\Rebecca\.claude\projects\` — say so rather than working without it.
-
-**Cloud sessions don't get that memory** — it lives on Rebecca's machine, not in
-the repo. They get the `homemade-standards` skill instead, which carries the
-durable rules (voice, editorial gates, scope and hand-off discipline) but not
-fast-moving project state. See "Cloud sessions" below.
+It's intentionally short. The project memory (standing rules, the category
+sign-off playbook, per-project state and the shared to-do) lives in `notes/` at
+the repo root, so every session, cloud or laptop, reads and updates it directly.
+Start with `notes/INDEX.md`, `notes/master_orchestrator.md` and `notes/todo.md`
+before non-trivial work, and update the relevant note in the same session that
+changes the fact it records. (Rebecca's laptop auto-memory and the
+`homemade-standards` skill are older copies of the same files, not the source.)
 
 The single canonical build log is `BUILD_PROGRESS.md` at the repo root.
 Update it as part of any session that ships a phase or pre-launch debt item.
@@ -157,19 +151,21 @@ the `/healthz` curl work.
 
 ### What cloud sessions can't do
 
-- **Rebecca's auto-memory.** Not in the repo, so not in the clone. Content and
-  editorial work that depends on the voice spec or the completeness gates needs
-  the `homemade-standards` skill loaded, and anything depending on current
-  project state needs that state in the prompt.
-- **Bulk content generation routines.** They stay local — they need her machine,
-  and needlework rendering uses local Blender.
+- **Paid model calls.** Standing rule (Rebecca, 6 September 2026): all model
+  work (planning briefs, authoring, judging images) runs on her Claude Max plan
+  in cloud sessions and routines. Deterministic stages (Fargate renders, audits,
+  publish scripts) run on the server or as scripts. Never on her laptop. Never
+  through per-token Anthropic API calls, with one agreed exception: the
+  maker-photo check that runs when a customer uploads a photo. Every autopilot
+  gets a budget and a total-fill cost estimate before it is switched on.
+  Needlework rendering still uses local Blender until it is moved to Fargate.
 - **Anything driving her browser**, including DesignSync.
 - **Big builds.** ~4 vCPU / 16 GB RAM / 30 GB disk. A full `turbo build` of the
   monorepo is close to the ceiling; prefer `--filter` to one package.
 
 ### This repository is public
 
-`becspage-arch/homemade` is public. Never commit credentials, and don't move
-internal strategy or editorial standards into the repo to make them reachable
-from the cloud — that publishes them. `.env.credentials` and `.secrets/` are
-gitignored; keep it that way.
+`becspage-arch/homemade` is public and stays so until the build is done (free
+GitHub Actions minutes). The project memory in `notes/` is public with it, by
+Rebecca's decision. Never commit credentials, tokens or keys; `.env.credentials`
+and `.secrets/` are gitignored, keep it that way.

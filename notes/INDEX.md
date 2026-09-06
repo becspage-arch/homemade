@@ -1,0 +1,61 @@
+- [Master orchestrator pattern](master_orchestrator.md) — how multi-session work is coordinated (Master Orchestrator vs Worker sessions)
+- [Anti-AI voice rules](feedback_homemade_voice.md) — applies to user-facing copy on homemade.education, NOT dev chat
+- [Chat tone: no tech-bro](feedback_chat_tone_no_techbro.md) — keep dev chat plain; no "vibe", startup slang
+- [Steps, not explanations](feedback_steps_not_explanations.md) — give action steps; cut unrequested technical asides
+- [No time estimates](feedback_no_time_estimates.md) — don't estimate duration of anything
+- [Session naming](feedback_session_naming.md) — prefix worker/spawned session titles with "Homemade - " (Aura is separate)
+- [Session sizing](feedback_session_sizing.md) — size worker prompts large; bundle related work; split only on real conflict
+- [No hiring yet](feedback_no_hiring_yet.md) — hard no on paying illustrators/photographers/writers/contractors. Rebecca + Claude only
+- [No API spend](feedback_no_api_spend.md) — no paid AI provider for build/runtime; build-time AI lives in Claude Code sessions. CARVE-OUT: Fal image work incl. hero GEN (Flux 1.1 Pro) with per-category approval ([[project_photo_accuracy_solution]]). Runtime AI open
+- [Deploy verification](feedback_deploy_verification.md) — every code-pushing worker must `gh run watch`, fix failures, smoke-test /healthz, then report done. Block goes in every worker prompt
+- [CDK deploy gotchas](deploy_cdk_gotchas.md) — GitHub deploy doesn't run cdk; ECS env/secrets from manual `cdk deploy` (Homemade creds); replicate MOUNT_*/ORIGIN_CERT_ARN/Clerk key or prod breaks; `cdk diff` first
+- [Scope discipline](feedback_scope_discipline.md) — workers respect prompt scope; "Scope — out" is a hard line. Make scope emphatic
+- [Worker hand-off style](feedback_worker_handoff_style.md) — workers report back as short plain-English summaries, not memos/jargon. Block in every worker prompt
+- [All schema fields up-front](feedback_schema_all_fields_upfront.md) — add every plausibly-useful field now; avoid backfill migrations
+- [Premium philosophy](feedback_premium_philosophy.md) — build every feature to "free" standard; decide premium gating later
+- [Model choice](feedback_model_choice.md) — bulk authoring uses Sonnet; orchestrator/tech/pipeline/anchor use Opus. Specify a Model line in every worker prompt
+- [Mindset voice](feedback_mindset_voice.md) — bodies read factual/recipe-clean, not AI-poetry; no platitudes/disclaimers/vague lists
+- [Verbatim energy statements](feedback_verbatim_energy_statements.md) — affirmations/tapping scripts from Rebecca's books stay verbatim; voice rewrites don't apply to them
+- [Temperature + unit system](feedback_temperature_and_units.md) — conventional °C canonical; fan/°F/gas + grams/oz/ml/cup derive at render from user preference
+- [Inline glossary coverage](feedback_inline_glossary_coverage.md) — every Tutorial.glossaryTerms[] must appear inline in a `glossaryTooltip` mark; both-way mismatches wrong
+- [No popup questions](feedback_no_popup_questions.md) — never AskUserQuestion popups; ask inline
+- [Verify by code, not browser](feedback_verify_by_code_not_browser.md) — driving her browser to verify crashes her machine; verify via DB/git/code or ask her to look
+- [Match sibling UI](feedback_match_sibling_ui.md) — a feature that exists for another category matches it exactly by default; ask before diverging; point the worker at the reference page
+- [No .md handoffs](feedback_no_md_handoffs.md) — strategy/synthesis deliverables go in chat as plain English, not docs/*.md
+- [No warning tiers](feedback_no_warning_tiers.md) — automated QC is binary (block or skip); no human-triage warning tier
+- [Pattern complexity = a RANGE](feedback_pattern_complexity_range.md) — bulk authoring must span simple↔huge-detailed; the 100+ colour end is wanted, never force one level (repeated past mistake)
+- [Continuous bulk mode](feedback_continuous_bulk_mode.md) — proven bulk sessions become a SCHEDULED ROUTINE (Claude cron) running one batch per firing; runs LOCALLY (needs machine+Claude+internet), needlework uses local Blender — NOT cloud
+- [Category description voice](feedback_category_description_voice.md) — category descriptions list what's inside, nothing else; no identity/provenance/disclaimers
+- [Image strategy](feedback_image_strategy.md) — SUPERSEDED for photographic heroes by [[project_photo_accuracy_solution]]: GENERATE-first (Flux 1.1 Pro + vision gate); pattern crafts render via the loom
+- [Pipeline-setup includes techniques](feedback_pipeline_setup_must_include_techniques.md) — pipeline-setup prompts must populate techniqueSlugs + criticalTechniques + aliases
+- [Rebecca's domain expertise](user_rebecca_background.md) — former digital sewing-pattern company owner + summit organiser; don't explain basics; stays behind the scenes
+- [TipTap text-node type field](feedback_tiptap_text_node_type.md) — every text leaf needs "type":"text"; public renderer silently drops others
+- [Voice rewrite: don't over-prune](feedback_voice_rewrite_dont_over_prune.md) — voice retrofits fix register, don't delete sections; keep the substance
+- [glossaryTooltip termSlug](feedback_glossary_tooltip_termslug.md) — marks use `termSlug` not `slug`; wrong key fails voice-check (exit 2, blocks upload)
+- [Premium gate cleanup](feedback_premium_gate_cleanup.md) — existing in-product gates contradict free-tier-is-full-product; remove in a dedicated pass. Premium = grading + create-your-own + designer patterns
+- [Cross-stitch world-class bar](feedback_cross_stitch_world_class_bar.md) — 2026-06-29: goal = best XS collection in the world; 6 north-star refs (NORTH_STAR.md); culled 1,592→310 (kept landscapes+Delft+16 gems); raised bar applies to NEW generation
+- [Floss table curated working set](feedback_floss_table_curated_working_set.md) — seed brand floss tables as ~120–150 curated entries mapping to used DMC codes; not the full catalogue
+- [Autopilot null sort](feedback_autopilot_null_sort_order.md) — newly-READY categories (lastAutopilotRunAt=null) land at BACK of queue (NULLS LAST); backdate to bump
+- [Don't use "honest"](feedback_no_word_honest.md) — strip "honest"/"honestly" from chat; reads as AI-filler
+- [Measurement units (cm canonical)](feedback_measurement_units.md) — cm+mm canonical; user preference picks cm/inches at render. Gauge, dimensions, body measurements
+- [Free-tier sign-in carrots](feedback_free_signin_carrots.md) — sync/multi-device/saved prefs are FREE signed-in; premium = grading + create-your-own + designer patterns
+- [CC republishing policy](feedback_cc_republishing_policy.md) — CC-BY/CC0/PD eligible with attribution (verify licence); all authored content Homemade-original; never republish as-is
+- [Studio + renderer shared patterns](feedback_studio_renderer_patterns.md) — proven across cross-stitch/crochet/knitting Studios: barrel split, autosave, setup-card reprompt, accent family, colourwork forceSymbolSlug
+- [Software-only build](feedback_software_only_build.md) — no Rebecca-hands tasks gate any session/launch; code-side assertions pre-launch, user feedback after
+- [Designer onboarding timing](feedback_designer_onboarding_timing.md) — Worker J + sewing S-7 wait until every category live + autopilot running; bottom of queue
+- [Translation free; personalization premium](feedback_premium_translation_is_free.md) — region-aware derivation/translation/calculation free; per-user-state personalization can be premium
+- [AI-only moderation](feedback_ai_only_moderation.md) — HARD RULE: every moderation flow runs through Claude Code sessions; never propose manual editorial review
+- [Content completeness gates](feedback_content_completeness_gates.md) — per-category completeness gate on every publish path; broken content held at DRAFT; binary, AI-only
+- [Content completeness checklist](feedback_content_completeness_checklist.md) — hard per-category-per-type MANDATORY checklist, no OR clauses; failing any item un-publishes
+- [No softening options](feedback_no_softening_options.md) — never offer options that keep broken content or soften locked rules
+- [Category sign-off PLAYBOOK](playbook_category_signoff.md) — canonical reusable sign-off checklist (Steps 0-6, engine, 3 QC gates, close-out, vision sweep) + per-category learnings log
+- [Get it immaculate](feedback_get_it_immaculate.md) — pre-launch, no customers: build foundations properly, never squash a new requirement into an ill-fitting model
+- [Customer-eye renders](feedback_customer_eye_renders.md) — HARD RULE: look at every render as a customer before presenting; only bring renders a customer would be happy with; compare to a reference photo; don't oversell
+- [Hero must be the exact pattern](feedback_hero_must_be_exact_pattern.md) — pattern hero = promise of exactly what the customer makes; no AI drift; AI only finishes a locked deterministic render + fidelity gate
+- [Render before volume](feedback_render_before_volume.md) — judge pattern quality only from a finished RENDER; never build volume before the loom can render + show it
+- [Compare reference before win](feedback_compare_reference_before_win.md) — HARD RULE: pull a real swatch photo from the internet + visually compare side-by-side before declaring any loom stitch good
+- [No faking stitch formation](feedback_no_faking_stitch_formation.md) — HARD RULE: loom yarn must be genuinely stitched (loop through loop, interlock held by self-collision); no pinned drawn shapes, no spring joins
+- [Script env / dotenv path](reference_script_env_dotenv_path.md) — ops/import tsx scripts using `dotenv/config` need DOTENV_CONFIG_PATH=.env.credentials; SM importer + cull-is-reversible notes
+- [Canonical house designer](reference_house_designer_canonical.md) — one `homemade` house-designer row; all publish paths use ensureHouseDesigner(); isHouseDesigner gates premium + spotlight
+- [Category visibility enforcer](reference_category_visibility_enforcer.md) — taking a category public is a CODE change (LAUNCH_VISIBLE_CATEGORY_SLUGS in enforce-launch-visibility.ts); a direct isPublicVisible DB flip is reverted every deploy
+- [Credits and merging](feedback_credits_and_merging.md) — two lanes + daily train; workers never merge to main; batch renders; read summaries not transcripts; Sonnet volume / Opus hard; cap 4 workers; no suggested-task cards
