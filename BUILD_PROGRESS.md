@@ -51,9 +51,9 @@ columns. Full state in `notes/project/project_cross_stitch_state.md`; the
 ordered list in `notes/todo.md`. Train 12 shipped 6 September (deploy
 34032370254): the cron is back ON in candidates mode (no model call on the
 server; the six-hourly cloud routine judges), the proof batch was judged, the
-maker-photo system is live. In flight: the personalised samplers
-(`claude/xs-samplers`). Then needlework converted the same way, fill to 1,784,
-close-out.
+maker-photo system is live. Train 13 shipped the 34 personalised samplers
+("Make it yours", word art in the Studio). Nothing in flight on a branch. Then
+needlework converted the same way, fill to 1,818, close-out.
 
 ## Crochet bulk autopilot, driven by a Claude routine (2026-09-06)
 
@@ -227,9 +227,19 @@ in the market; we trailed on print quality, credibility and beginner entry):
 - **Shelves**: small-makes 60, christmas 80, coastal 60, folk-geometric 60
   added; seasonal 90→40; target 1,784. Admin category counts count patterns
   for pattern-led crafts.
+- **Personalised samplers** (`generation/samplers/`): 34 live on a held
+  `samplers` shelf (birth, wedding, new home, name-and-date, anniversary),
+  lettering set from glyph outlines on the server, motifs stored once;
+  "Make it yours" on the page with a live preview and "Stitch it"; a "Words"
+  tool in the Studio. Saving a copy and word art sit behind the premium
+  framework; the catalogue and the preview are free.
+- **Zero-API autopilot**: `gateMode` 'candidates' parks ideas as UNLISTED
+  candidates with no model call; `xs-candidates.ts` and the six-hourly cloud
+  routine (`docs/autopilot-prompts/cross-stitch.md`) judge them; the weekly
+  routine takes the second look.
 - Queued, agreed with Rebecca: loom photoreal heroes, the 200+ colour /
-  400+ cell and under-60 cell tiers, readings wired to the glossary, the
-  personalised sampler. No community features, ever.
+  400+ cell and under-60 cell tiers, readings wired to the glossary. No
+  community features, ever.
 
 ## Cross-stitch: audit, dedupe, and the self-running cloud autopilot (2026-09-05/06)
 
