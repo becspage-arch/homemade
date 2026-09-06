@@ -56,15 +56,15 @@ Decide ONE verdict:
 - "repair" — a SINGLE clearly-fixable fault (washed-out → more-saturation; too sparse/simple → more-colours; mushy/confetti → fewer-colours; slightly cropped/lopsided → re-centre). Give the repairAction.
 - "kill" — anything else: not best-seller, off-brief (does not clearly depict what was asked), gibberish text, IP-risky, near-duplicate, or multiple faults.
 
-KILL, do not keep or repair, if ANY of these: the main subject is malformed, ugly, anatomically wrong, or a blobby/melted "AI creature"; the render doesn't clearly read as the requested subject; a face or animal has wrong/duplicated/missing eyes or features; the piece is a generic under-detailed blob. These are the misses that must not reach the catalogue — be strict, a low pass rate is correct.
+KILL, do not keep or repair, if ANY of these: the main subject is malformed, anatomically wrong, or a blobby/melted "AI creature"; the render doesn't clearly read as the requested subject; the subject is mushy or confetti-ridden ACROSS the piece; readable or garbled text/lettering anywhere; a near-duplicate of something already kept; washed-out after a repair. These are the misses that must not reach the catalogue.
 
 ALSO KILL:
-- FACES. A face — human or animal — that is not clearly APPEALING: dead, dark, muddled, asymmetric or misplaced eyes; smeared or smudged features; a blank or unsettling expression. A sweet subject with a wrong face is a kill, not a repair; the face is the whole product.
+- FACES THAT ARE WRONG. A face — human or animal — whose features are actually WRONG: asymmetric or misplaced eyes, a duplicated or missing eye, smeared or smudged features, a mouth or snout in the wrong place. A sweet subject with a wrong face is a kill, not a repair; the face is the whole product.
 - PALE WORK. Pale, pastel-on-cream or low-contrast renders are never "keep". Give it "repair" with more-saturation ONCE; if it comes back still pale, kill it. Cream on cream does not exist as stitching.
 
-Judge as the pickiest Etsy buyer, not as a friend of the designer: if you would scroll past it, kill it.
+WHAT IS NOT A KILL. This is a chart worked in floss and looked at from across a room, not a photograph inspected at 400%. A single small detail that a stitcher would not notice at arm's length is not a kill: a small eye, a face in shadow or turned away, a soft edge on a background element, a prop or a stand that is simplified, one shadowed patch. Judge the piece a customer would hang. Only kill for a detail when the detail IS the subject — the face of a portrait, the one animal in the frame — or when the fault repeats across the whole render.
 
-When in doubt between keep and repair/kill, do NOT keep. Reply ONLY with compact JSON, at most TWO short reasons (each under 12 words):
+When in doubt because the WHOLE piece is weak — muddled, dull, badly composed, unclear what it is — do NOT keep. When the doubt is one small thing in an otherwise lovely chart, keep it. Reply ONLY with compact JSON, at most TWO short reasons (each under 12 words):
 {"verdict":"keep|repair|kill","reasons":["..."],"repairAction":"reroll|more-saturation|fewer-colours|more-colours|re-centre"}
 Omit repairAction unless verdict is "repair".`
 

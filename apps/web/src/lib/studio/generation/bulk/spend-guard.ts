@@ -25,23 +25,30 @@ import { prisma } from '@homemade/db'
  * Total cross-stitch generations allowed in any trailing 24 hours.
  *
  * Sized for twelve two-hourly firings of ten ideas: observed batches run about
- * 3.5 generations per idea (best-of-N plus repairs), so 12 × 10 × 3.5 ≈ 420.
- * Raised to 720 in September 2026 when the per-idea cap went from four attempts
- * to six (Rebecca's call), which lifts the same arithmetic to 12 × 10 × 5 ≈ 600
- * with headroom for a bad night.
- */
-export const XS_DAILY_GENERATION_CAP = 720
-/**
- * Of those, how many may be the expensive Flux 1.1 Pro tier.
+ * 3.5 generations per idea (best-of-N plus repairs), so 12 × 10 × 3.5 ≈ 420, and
+ * 480 leaves headroom for a bad night without the cap silently truncating a
+ * normal day.
  *
- * Was 24 — two per firing, matching the range rule's one dense showpiece plus a
- * repair. The 'pro-all' source mode draws EVERY lane on Pro, so the ceiling has
- * to cover a full day of it: 400 × ~£0.032 ≈ £12.80 a day at absolute full tilt,
- * approved on the arithmetic that Pro keeps about two attempts in five against
- * schnell's one in fourteen — a similar cost per gem, and a catalogue that
- * actually grows. The cap is the backstop, not the plan.
+ * It went to 720 for a few hours on 6 September, alongside the 'pro-all' source
+ * mode, and came straight back down: the budget to finish the category is
+ * $50–60 all in, and drawing every lane on Flux 1.1 Pro does not fit inside it.
+ * At these two caps a full day costs about $4 (480 schnell at ~$0.003, plus 24
+ * Pro at ~$0.032 ≈ $1.44 + $0.77 — call it $4 with the odd repair), which is the
+ * cadence the catalogue can actually afford to finish on.
  */
-export const XS_DAILY_PRO_CAP = 400
+export const XS_DAILY_GENERATION_CAP = 480
+/**
+ * Of those, how many may be the expensive Flux 1.1 Pro tier — two per firing,
+ * matching the range rule's one dense showpiece per batch plus a repair.
+ *
+ * The 'pro-all' source mode is still in the code and still works, but it draws
+ * EVERY lane on Pro (~$0.032 an image against schnell's ~$0.003) and a batch of
+ * ten costs about $1.30 rather than $0.12. Measured yield was 4 gems in 10 ideas
+ * against schnell's 0–3, which is a real gain and still not one the remaining
+ * budget can buy. This cap is what stops it being switched on by accident: at 24
+ * a pro-all batch stops after two ideas.
+ */
+export const XS_DAILY_PRO_CAP = 24
 
 /**
  * Approximate unit costs, for the admin spend line only — never for a decision.

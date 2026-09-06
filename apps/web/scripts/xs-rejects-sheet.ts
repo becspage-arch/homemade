@@ -45,7 +45,7 @@ interface RejectSample {
 }
 
 const CELL = 340
-const LABEL = 62
+const LABEL = 74
 const COLS = 4
 const PAD = 10
 
@@ -114,7 +114,7 @@ async function main(): Promise<void> {
       console.warn(`could not fetch ${s.url}: ${err instanceof Error ? err.message : String(err)}`)
     }
     const reasonLines = wrap(s.reasons.join(' · ') || '—', 58, 2)
-      .map((line, n) => `<text x="0" y="${30 + n * 13}" font-size="11" font-family="sans-serif" fill="#6b5d55">${esc(line)}</text>`)
+      .map((line, n) => `<text x="0" y="${44 + n * 13}" font-size="11" font-family="sans-serif" fill="#6b5d55">${esc(line)}</text>`)
       .join('')
     const label = `<svg width="${CELL}" height="${LABEL}">
       <text x="0" y="13" font-size="12" font-family="sans-serif" fill="#3a2f2a">${esc(`${s.slug} · a${s.attempt}`)}</text>

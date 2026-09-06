@@ -117,9 +117,11 @@ export interface BatchSummary {
  * fine idea, so we take several fresh shots. Every shot still passes the identical
  * ruthless gate — this raises attempts-per-idea, never the bar.
  *
- * Raised from 4 to 6 in September 2026 alongside the Pro source mode (Rebecca's
- * call): the measured keep rate is about 1 in 14 on schnell and 2 in 5 on Pro, so
- * four shots was leaving gems on the table in both modes.
+ * Raised from 4 to 6 in September 2026 (Rebecca's call) and kept there when the
+ * Pro source mode was reverted on budget: in the one pro-all batch, three of the
+ * four gems landed on attempt 3 and one on attempt 5, so a cap of four was
+ * demonstrably throwing away work that a fifth roll would have found. Six shots
+ * of schnell still costs a fraction of one Pro shot.
  */
 export const MAX_XS_ATTEMPTS = 6
 export const MAX_NW_REPAIRS = 1 // needlework re-rolls a Fargate render — keep repairs tight.
