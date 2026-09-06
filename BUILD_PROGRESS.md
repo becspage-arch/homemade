@@ -45,10 +45,12 @@ the site-wide maker-photo system (`claude/maker-photos`, held for the loom
 session's word on collisions), `packages/search` (the proxy-aware client), and
 the `Pattern` fingerprint/outline/stitchability columns + `BulkRun` finaliser
 columns. Full state in `notes/project/project_cross_stitch_state.md`; the
-ordered list in `notes/todo.md`. The cron is OFF until the zero-API
-candidates conversion (`claude/xs-candidates`) lands; then a proof batch, the
-6-hourly cloud routine, the cron back on, needlework converted the same way,
-the personalised sampler job, fill to 1,784, close-out.
+ordered list in `notes/todo.md`. Train 12 shipped 6 September (deploy
+34032370254): the cron is back ON in candidates mode (no model call on the
+server; the six-hourly cloud routine judges), the proof batch was judged, the
+maker-photo system is live. In flight: the personalised samplers
+(`claude/xs-samplers`). Then needlework converted the same way, fill to 1,784,
+close-out.
 
 ## Crochet bulk autopilot, on the server (2026-09-06)
 
