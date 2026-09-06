@@ -33,7 +33,7 @@ import {
   compositionRowsStructured,
 } from '@/lib/loom/crochet/engine/compositionPattern'
 import type { BuiltContinuous } from '@/lib/loom/crochet/engine/yarnPath'
-import { photoToTapestryGrid } from '@/lib/studio/crochet/photo-to-tapestry'
+import { photoToTapestryGrid, TapestrySubjectTooSmallError } from '@/lib/studio/crochet/photo-to-tapestry'
 import { nameYarnColours } from '@/lib/studio/crochet/yarn-shades'
 import { PALETTES } from '@homemade/db/design-direction'
 import {
@@ -210,6 +210,26 @@ export async function buildTapestryCandidate(brief: CrochetBrief, picture?: stri
 }
 
 /**
+ * How much of the frame, once a plain border is trimmed off, the illustration's
+ * own subject must fill. Below this the picture reads as a small motif adrift
+ * in a border rather than a picture worked edge to edge — the exact fault the
+ * first published showpiece was killed for: "a third of the panel is empty
+ * white above the scene, so the composition does not fill the piece"
+ * (`apps/web/scripts/crochet-first-batch-verdicts.json`,
+ * `crochet-cottage-lane-panel`). Rebecca's rule for this lane is that the
+ * illustration must fill the frame, so this is checked, not hoped for.
+ */
+const TAPESTRY_MIN_SUBJECT_COVERAGE = 0.7
+
+/**
+ * How many illustrations the pictorial lane will roll looking for a
+ * frame-filling composition before giving up on the idea. Kept small: every
+ * roll is a real Fal spend, and `CROCHET_DAILY_ILLUSTRATION_CAP` counts the
+ * idea once regardless of how many rolls it took.
+ */
+const TAPESTRY_ILLUSTRATION_ATTEMPTS = 3
+
+/**
  * The pictorial lane. A tapestry picture is not written cell by cell by a
  * model: an illustration is generated on the approved image engine, then the
  * SHARED photo-to-tapestry converter (the one a maker's own picture goes
@@ -238,6 +258,11 @@ async function authorTapestryProgram(brief: CrochetBrief, picture?: string): Pro
     height -= 1
   }
   const colours = big ? 24 : 10
+  // Ask Flux for a native aspect close to the grid's own, so 'cover' fit later
+  // trims as little of the subject as possible rather than squeezing a square
+  // source into a rectangular grid or the reverse.
+  const imageSize: 'square_hd' | 'portrait_4_3' | 'landscape_4_3' =
+    width === height ? 'square_hd' : width > height ? 'landscape_4_3' : 'portrait_4_3'
 
   // The FLAT illustrator, never the painterly showpiece one, whatever the size
   // of the piece. A tapestry stitch is a single flat block of colour, so a
@@ -247,21 +272,56 @@ async function authorTapestryProgram(brief: CrochetBrief, picture?: string): Pro
   // spent its whole palette on gradation. This is not a colour CAP (the count
   // stays high — the dense many-colour end is a first-class target); it is a
   // change of SOURCE.
-  const illustration = await generatePatternImage(
-    `${subject}. Drawn as a bold flat picture in solid blocks of colour with clear hard-edged shapes and strong separation between them, like a screen print or a paper cut-out. No shading, no gradients, no texture, no text, no lettering. Centred, on a plain background.`,
-    { imageSize: 'square_hd' },
-  )
-  const grid = await photoToTapestryGrid(illustration.buffer, {
-    width,
-    height,
-    colours,
-    maxColours: colours,
-    backgroundRemoval: true,
-    // Hard smoothing: a lone stitch of a colour is miserable to work and reads
-    // as noise in the finished fabric, and a picture at this resolution needs
-    // its regions to hold together.
-    smoothing: 'high',
-  })
+  //
+  // FILL THE FRAME. The first published showpiece centred its cottage on a
+  // wide plain ground and was killed for it (see `TAPESTRY_MIN_SUBJECT_COVERAGE`
+  // above) — a small subject on a plain ground is also exactly the shape
+  // `photoToTapestryGrid`'s `cropToSubject` step trims, so the prompt now asks
+  // for the fill directly and the converter checks it actually happened rather
+  // than trusting the prompt alone.
+  const prompt =
+    `${subject}. Drawn edge to edge as one bold flat picture: the subject fills the ` +
+    'entire canvas from edge to edge, with no border, no vignette, and no empty ' +
+    'background, sky or ground left over around it. Solid blocks of colour with ' +
+    'clear hard-edged shapes and strong separation between them, like a screen ' +
+    `print or a paper cut-out, in around ${colours} flat colours with no shading, ` +
+    'gradients or texture. No text, no lettering.'
+
+  let grid: Awaited<ReturnType<typeof photoToTapestryGrid>> | null = null
+  let lastCoverage = 0
+  for (let attempt = 1; attempt <= TAPESTRY_ILLUSTRATION_ATTEMPTS; attempt++) {
+    const illustration = await generatePatternImage(prompt, { imageSize })
+    try {
+      grid = await photoToTapestryGrid(illustration.buffer, {
+        width,
+        height,
+        colours,
+        maxColours: colours,
+        backgroundRemoval: true,
+        // Hard smoothing: a lone stitch of a colour is miserable to work and
+        // reads as noise in the finished fabric, and a picture at this
+        // resolution needs its regions to hold together.
+        smoothing: 'high',
+        cropToSubject: true,
+        minSubjectCoverage: TAPESTRY_MIN_SUBJECT_COVERAGE,
+      })
+      break
+    } catch (err) {
+      if (!(err instanceof TapestrySubjectTooSmallError)) throw err
+      lastCoverage = err.coverage
+      console.warn(
+        `${brief.slug}: tapestry illustration attempt ${attempt}/${TAPESTRY_ILLUSTRATION_ATTEMPTS} ` +
+          `only filled ${Math.round(err.coverage * 100)}% of the frame, re-rolling`,
+      )
+    }
+  }
+  if (!grid) {
+    throw new Error(
+      `tapestry illustration never filled the frame in ${TAPESTRY_ILLUSTRATION_ATTEMPTS} attempts ` +
+        `(best ${Math.round(lastCoverage * 100)}% of the frame after trimming the background, ` +
+        `need ${Math.round(TAPESTRY_MIN_SUBJECT_COVERAGE * 100)}%)`,
+    )
+  }
   const program = buildTapestryProgram(grid, {
     name: brief.name,
     yarnWeight: (envelope?.yarnWeight ?? 'worsted') as YarnWeight,
