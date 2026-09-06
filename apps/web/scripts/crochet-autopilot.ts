@@ -156,8 +156,15 @@ function writeJson(path: string, value: unknown): void {
 async function stageContext(args: Args): Promise<void> {
   const { crochetPlanContext } = await import('../src/lib/studio/generation/bulk/run')
   const { crochetPlanContextPayload } = await import('../src/lib/studio/generation/bulk/crochet-planner')
-  const { crochetSpendWindow, overCrochetCap, approxCrochetSpend, CROCHET_DAILY_RENDER_CAP, CROCHET_DAILY_ILLUSTRATION_CAP } =
-    await import('../src/lib/studio/generation/bulk/spend-guard')
+  const {
+    crochetSpendWindow,
+    overCrochetCap,
+    overCrochetMonthlyCap,
+    approxCrochetSpend,
+    CROCHET_DAILY_RENDER_CAP,
+    CROCHET_DAILY_ILLUSTRATION_CAP,
+    CROCHET_MONTHLY_USD_CAP,
+  } = await import('../src/lib/studio/generation/bulk/spend-guard')
   const { isAutopilotEnabled } = await import('../src/lib/studio/generation/bulk/autopilot-state')
   const { emptyManifest, parseManifest } = await import('../src/lib/studio/generation/bulk/crochet-session')
   const { estimateCrochetCost } = await import('../src/lib/studio/generation/bulk/crochet-cost')
@@ -181,11 +188,12 @@ async function stageContext(args: Args): Promise<void> {
     inFlightSubjectKeys,
   })
 
-  const [window, enabled] = await Promise.all([
+  const [window, window30d, enabled] = await Promise.all([
     crochetSpendWindow(),
+    crochetSpendWindow(24 * 30),
     isAutopilotEnabled('crochet').catch(() => false),
   ])
-  const capped = overCrochetCap(window)
+  const capped = overCrochetCap(window) ?? overCrochetMonthlyCap(window30d)
 
   const context = {
     ...payload,
@@ -198,6 +206,9 @@ async function stageContext(args: Args): Promise<void> {
       illustrationsUsed: window.proGenerations,
       illustrationCap: CROCHET_DAILY_ILLUSTRATION_CAP,
       approxUsd: Number(approxCrochetSpend(window).toFixed(2)),
+      /** The trailing 30 days against Rebecca's monthly ceiling. */
+      monthlyUsd: Number(approxCrochetSpend(window30d).toFixed(2)),
+      monthlyCapUsd: CROCHET_MONTHLY_USD_CAP,
       /** Non-null means a render started now would be refused. */
       cappedReason: capped,
       /** What this batch is forecast to cost if every candidate renders once. */
@@ -243,7 +254,7 @@ async function stageContext(args: Args): Promise<void> {
     )
   }
   console.log(
-    `Spend: ${window.generations}/${CROCHET_DAILY_RENDER_CAP} renders in 24h${capped ? ` — CAPPED: ${capped}` : ''}`,
+    `Spend: ${window.generations}/${CROCHET_DAILY_RENDER_CAP} renders in 24h; $${approxCrochetSpend(window30d).toFixed(2)} of the $${CROCHET_MONTHLY_USD_CAP} monthly ceiling used${capped ? ` — CAPPED: ${capped}` : ''}`,
   )
 }
 
@@ -476,7 +487,9 @@ class ExpandRefused extends Error {
 async function stageRender(args: Args): Promise<void> {
   const session = await import('../src/lib/studio/generation/bulk/crochet-session')
   const { renderCrochetCandidate, fargateRenderWired } = await import('../src/lib/studio/generation/bulk/crochet')
-  const { crochetSpendWindow, overCrochetCap } = await import('../src/lib/studio/generation/bulk/spend-guard')
+  const { crochetSpendWindow, overCrochetCap, overCrochetMonthlyCap } = await import(
+    '../src/lib/studio/generation/bulk/spend-guard'
+  )
   const { fargateRenderUsd, FAL_CREATIVE_UPSCALE_USD, ILLUSTRATION_USD } = await import(
     '../src/lib/studio/generation/bulk/crochet-cost'
   )
@@ -511,9 +524,11 @@ async function stageRender(args: Args): Promise<void> {
       break
     }
 
-    // THE DAILY CAPS, re-read at the point of spending.
-    const window = await crochetSpendWindow()
-    const capped = overCrochetCap(window, { illustration: entry.treatment === 'grid-tapestry' })
+    // THE DAILY CAPS AND THE MONTHLY CEILING, re-read at the point of spending.
+    const [window, window30d] = await Promise.all([crochetSpendWindow(), crochetSpendWindow(24 * 30)])
+    const capped =
+      overCrochetCap(window, { illustration: entry.treatment === 'grid-tapestry' }) ??
+      overCrochetMonthlyCap(window30d, cost)
     if (capped) {
       console.warn(`${entry.slug}: NOT rendered — ${capped}`)
       break

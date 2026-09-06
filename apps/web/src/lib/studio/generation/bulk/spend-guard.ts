@@ -168,9 +168,38 @@ export function overCrochetCap(window: SpendWindow, opts: { illustration?: boole
   return null
 }
 
-/** Approximate crochet spend for a window (renders plus illustrations). */
+/**
+ * Approximate cost of the Fal creative upscale that finishes every crochet hero.
+ * Kept in step with FAL_CREATIVE_UPSCALE_USD in crochet-cost.ts (not imported,
+ * to keep this module free of the cost model's Fargate lookups).
+ */
+export const CROCHET_HERO_FINISH_UNIT_COST = 0.05
+
+/**
+ * THE MONTHLY CEILING (Rebecca, 6 September 2026): the crochet routine may spend
+ * at most this many dollars on Fal plus Fargate in any trailing 30 days. Set
+ * from the budget she agreed; override with BULK_CROCHET_MONTHLY_USD_CAP.
+ */
+export const CROCHET_MONTHLY_USD_CAP = Number(process.env.BULK_CROCHET_MONTHLY_USD_CAP) || 100
+
+/** Approximate crochet spend for a window (renders, their hero finish, illustrations). */
 export function approxCrochetSpend(window: SpendWindow): number {
-  return window.generations * CROCHET_RENDER_UNIT_COST + window.proGenerations * PRO_UNIT_COST
+  return (
+    window.generations * (CROCHET_RENDER_UNIT_COST + CROCHET_HERO_FINISH_UNIT_COST) +
+    window.proGenerations * PRO_UNIT_COST
+  )
+}
+
+/**
+ * Binary monthly verdict. `nextUsd` is what the render about to start would add;
+ * the ceiling refuses the render that would cross it, not the one after.
+ */
+export function overCrochetMonthlyCap(window30d: SpendWindow, nextUsd = 0): string | null {
+  const spent = approxCrochetSpend(window30d)
+  if (spent + nextUsd > CROCHET_MONTHLY_USD_CAP) {
+    return `monthly crochet ceiling reached ($${spent.toFixed(2)} of $${CROCHET_MONTHLY_USD_CAP} in the last 30 days)`
+  }
+  return null
 }
 
 /** Approximate spend for a window, in the same units as the unit costs above. */
