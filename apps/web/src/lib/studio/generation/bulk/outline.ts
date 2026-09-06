@@ -175,6 +175,9 @@ export function outlineModeFor(data: PatternData, ctx: OutlineContext = {}): Out
   const lane = ctx.lane ?? ''
   const style = ctx.style ?? ''
   if (lane === 'dense') return { mode: 'none', reason: 'dense showpiece tier' }
+  // The heirloom tier is full coverage with no ground to draw a silhouette
+  // against, and a traced edge over 200 flosses of painterly gradation is noise.
+  if (lane === 'showpiece') return { mode: 'none', reason: 'showpiece heirloom tier — full coverage' }
   if (NO_OUTLINE_STYLES.has(style)) return { mode: 'none', reason: `${style} — full-coverage scene` }
   if (data.palette.length >= FULL_COVERAGE_COLOURS) {
     return { mode: 'none', reason: `showpiece tier — ${data.palette.length} colours` }

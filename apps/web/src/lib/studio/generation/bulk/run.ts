@@ -16,11 +16,15 @@ import {
   publicSubjectKeys,
 } from './dedupe-guard'
 import { judgeVividness } from './vividness'
+import { quickWinVerdict } from './quick-win'
 import { crossStitchGateMode, type XsGateMode, type XsSourceMode } from './autopilot-state'
 import { CROSS_STITCH_SHELVES } from '../categories'
 import { summaryLine } from './run-status'
 import { shelfDeficits, allocateShelves, capShelfBriefs, shelfSlots } from './shelf-plan'
 import { setShelfCaps } from './subject-pool'
+
+/** The under-60-cell tier — the one lane the quick-win clarity guard runs on. */
+export const QUICK_LANE = 'quick'
 import {
   generateNeedleworkCandidate,
   publishNeedleworkGem,
@@ -361,6 +365,33 @@ export async function crossStitchCandidateAttempt(
       pro: candidate.pro,
       tooPale: true,
       ...(await sampleFor(candidate.renderPng, brief, ctx, lastShot ? 'kill' : 'repair', [vivid.reason], candidate.colourCount)),
+    }
+  }
+
+  // THE QUICK-WIN GUARD — the second arithmetic bar, and only on the tier that
+  // needs it. A 48-cell chart has to read as one nameable motif or it is not a
+  // product; `quickWinVerdict` measures whether it has the shape of one. Same
+  // shape as the pale guard: one re-roll, then the idea is dropped rather than
+  // parked, because a session's judging capacity is the scarce thing here.
+  if (brief.lane === QUICK_LANE) {
+    const clarity = quickWinVerdict(candidate.data)
+    if (!clarity.ok) {
+      const lastShot = attempt >= MAX_XS_CANDIDATE_ATTEMPTS
+      return {
+        verdict: lastShot ? 'kill' : 'repair',
+        reasons: clarity.reasons,
+        ...(lastShot ? {} : { repairAction: 'fewer-colours' as const }),
+        published: false,
+        pro: candidate.pro,
+        ...(await sampleFor(
+          candidate.renderPng,
+          brief,
+          ctx,
+          lastShot ? 'kill' : 'repair',
+          clarity.reasons,
+          candidate.colourCount,
+        )),
+      }
     }
   }
 

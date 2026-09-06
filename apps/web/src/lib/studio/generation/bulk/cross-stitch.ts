@@ -90,16 +90,40 @@ function imageSizeFor(w: number, h: number): 'square_hd' | 'portrait_4_3' | 'lan
   return 'square_hd'
 }
 
+/**
+ * The longest side, in pixels, of the Flux 1.1 Pro source art.
+ *
+ * 1024 for the dense tier, which is what it has always used. The heirloom tier
+ * asks for 1440 — the biggest the model takes — because that art is quantised
+ * down to a 400–600 cell chart and every pixel of source detail is a chance at
+ * one more genuinely distinct floss. The call costs the same either way: fal
+ * bills Flux 1.1 Pro per image, not per pixel.
+ */
+const PRO_LONG_PX = 1024
+export const SHOWPIECE_PRO_LONG_PX = 1440
+
 /** Flux 1.1 Pro takes pixels, not a size name. Keep the CHART's aspect so the
- *  converter never has to squash the art, at about a megapixel either way, and
- *  on the multiple of 32 the model expects. */
-function proPixelsFor(w: number, h: number): { width: number; height: number } {
+ *  converter never has to squash the art, and on the multiple of 32 the model
+ *  expects. */
+function proPixelsFor(w: number, h: number, longPx: number = PRO_LONG_PX): { width: number; height: number } {
   const ratio = w > 0 && h > 0 ? w / h : 1
-  const long = 1024
-  const short = Math.round((long / Math.max(ratio, 1 / ratio)) / 32) * 32
-  const px = Math.max(512, Math.min(1024, short))
-  return ratio >= 1 ? { width: long, height: px } : { width: px, height: long }
+  const short = Math.round((longPx / Math.max(ratio, 1 / ratio)) / 32) * 32
+  const px = Math.max(512, Math.min(longPx, short))
+  return ratio >= 1 ? { width: longPx, height: px } : { width: px, height: longPx }
 }
+
+/** The heirloom lane — 400–600 cells, 200–300 flosses, full coverage. */
+export const SHOWPIECE_LANE = 'showpiece'
+
+/**
+ * The most flosses a chart may ask the converter for.
+ *
+ * Held below the symbol catalogue on purpose, and well below it: the plain
+ * single-glyph half of the catalogue runs to over five hundred marks, so a
+ * 300-colour showpiece never has to reach the rule channel and every symbol on
+ * its key is one printed character.
+ */
+export const MAX_CHART_COLOURS = 320
 
 /**
  * A repair tweak from the vision gate — applied on a re-roll to fix a fixable
@@ -124,8 +148,9 @@ export async function generateCrossStitchCandidate(
   tweak: CandidateTweak = {},
   sourceMode?: XsSourceMode,
 ): Promise<CrossStitchCandidate> {
-  const colours = Math.max(6, Math.min(160, brief.colours + (tweak.colourDelta ?? 0)))
+  const colours = Math.max(6, Math.min(MAX_CHART_COLOURS, brief.colours + (tweak.colourDelta ?? 0)))
   const dense = colours > DENSE_COLOUR_THRESHOLD
+  const showpiece = brief.lane === SHOWPIECE_LANE
   const prompt = buildPrompt(brief.subject, brief.style)
 
   // THE SOURCE MODE. In 'pro-all' every lane draws on Flux 1.1 Pro, not just the
@@ -142,7 +167,12 @@ export async function generateCrossStitchCandidate(
   const generated = await generatePatternImage(prompt, {
     detailed: pro,
     imageSize,
-    ...(pro ? { proSize: proPixelsFor(brief.w, brief.h), proStyle: dense ? ('showpiece' as const) : ('as-written' as const) } : {}),
+    ...(pro
+      ? {
+          proSize: proPixelsFor(brief.w, brief.h, showpiece ? SHOWPIECE_PRO_LONG_PX : PRO_LONG_PX),
+          proStyle: dense ? ('showpiece' as const) : ('as-written' as const),
+        }
+      : {}),
   })
   // Fingerprint the SOURCE before anything downstream touches it.
   const sourceSha256 = sha256Hex(generated.buffer)
@@ -216,7 +246,7 @@ export async function generateCrossStitchCandidate(
   // boundary in the same place, so the two agree about where the edge is. Line
   // work (Delft, blackwork) is left blocky on purpose.
   let fractional: CrossStitchCandidate['fractional']
-  const wanted = smoothingWantedFor(shipped)
+  const wanted = smoothingWantedFor(shipped, { lane: brief.lane, shelf: brief.shelf })
   if (wanted.yes) {
     const smoothed = deriveFractionals(shipped)
     if (smoothed.cellsShared > 0) {
@@ -257,7 +287,8 @@ export function candidateIsPro(
   sourceMode: XsSourceMode = 'schnell',
 ): boolean {
   if (sourceMode === 'pro-all') return true
-  const colours = Math.max(6, Math.min(160, brief.colours + (tweak.colourDelta ?? 0)))
+  if (brief.lane === SHOWPIECE_LANE) return true
+  const colours = Math.max(6, Math.min(MAX_CHART_COLOURS, brief.colours + (tweak.colourDelta ?? 0)))
   return colours > DENSE_COLOUR_THRESHOLD
 }
 

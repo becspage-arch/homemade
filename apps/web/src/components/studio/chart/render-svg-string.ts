@@ -20,6 +20,7 @@
  */
 
 import type { PatternData } from '@homemade/db'
+import { parseSymbol } from '@/lib/studio/symbol-assignment'
 import {
   backstitchStrokeWidth,
   buildBucketCrossPath,
@@ -470,13 +471,26 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
       if (!entry) continue
       const fill = monochrome ? '#1a1410' : symbolOnFill(entry.rgb)
       const fontSize = cellPx * 0.66
+      // The second symbol channel: past the plain glyph catalogue a symbol is a
+      // glyph plus a rule under or over it. The rule is drawn as a real line
+      // rather than left to the font's combining mark, so it lands in the same
+      // place at every cell size and on every printer.
+      const { glyph, decoration } = parseSymbol(symbol)
+      const rule = symbolRuleGeometry(decoration, cellPx)
       const inRegion = cells.filter(
         (c) => c.x >= region.x && c.x < regionMaxX && c.y >= region.y && c.y < regionMaxY,
       )
       for (const { x, y } of inRegion) {
+        const cx = x * cellPx + cellPx / 2
+        const cy = y * cellPx + cellPx / 2
         parts.push(
-          `<text x="${x * cellPx + cellPx / 2}" y="${y * cellPx + cellPx / 2}" font-size="${fontSize}" fill="${fill}">${escapeXml(symbol)}</text>`,
+          `<text x="${cx}" y="${cy}" font-size="${fontSize}" fill="${fill}">${escapeXml(glyph)}</text>`,
         )
+        if (rule) {
+          parts.push(
+            `<rect x="${cx - rule.halfWidth}" y="${cy + rule.dy}" width="${rule.halfWidth * 2}" height="${rule.thickness}" fill="${fill}"/>`,
+          )
+        }
       }
     }
     // A fractional cell carries its own symbol, smaller, in the middle of the
@@ -489,9 +503,17 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
         const entry = paletteIndex.bySymbol.get(f.s)
         if (!entry) continue
         const at = fractionalSymbolAnchor(f, cellPx)
+        const fill = monochrome ? '#1a1410' : symbolOnFill(entry.rgb)
+        const { glyph, decoration } = parseSymbol(f.s)
         parts.push(
-          `<text x="${at.x}" y="${at.y}" font-size="${small}" fill="${monochrome ? '#1a1410' : symbolOnFill(entry.rgb)}">${escapeXml(f.s)}</text>`,
+          `<text x="${at.x}" y="${at.y}" font-size="${small}" fill="${fill}">${escapeXml(glyph)}</text>`,
         )
+        const rule = symbolRuleGeometry(decoration, small / 0.66)
+        if (rule) {
+          parts.push(
+            `<rect x="${at.x - rule.halfWidth}" y="${at.y + rule.dy}" width="${rule.halfWidth * 2}" height="${rule.thickness}" fill="${fill}"/>`,
+          )
+        }
       }
     }
     parts.push(`</g>`)
@@ -528,6 +550,23 @@ export function renderPatternSvgString(pattern: PatternData, opts: SvgRenderOpti
 
   parts.push('</svg>')
   return parts.join('')
+}
+
+/**
+ * Where the second channel's rule sits relative to the glyph's centre, at a
+ * given cell size. Under-rules sit just below the letterform, over-rules just
+ * above it, and both are inset from the cell edge so the grid line stays
+ * readable beside them.
+ */
+export function symbolRuleGeometry(
+  decoration: 'none' | 'under' | 'over',
+  cellPx: number,
+): { halfWidth: number; dy: number; thickness: number } | null {
+  if (decoration === 'none') return null
+  const halfWidth = cellPx * 0.3
+  const thickness = Math.max(0.6, cellPx * 0.075)
+  const dy = decoration === 'under' ? cellPx * 0.29 : -cellPx * 0.36 - thickness
+  return { halfWidth, dy, thickness }
 }
 
 function escapeXml(s: string): string {

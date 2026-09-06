@@ -23,15 +23,17 @@ import {
 } from '@/lib/studio/symbol-assignment'
 
 /**
- * The chart symbol vocabulary — one distinct glyph per palette colour. The
+ * The chart symbol vocabulary — one distinct symbol per palette colour. The
  * pattern schema rejects a chart with two palette entries sharing a symbol, so
  * the catalogue has to be at least as large as the densest chart we ever emit
- * (the 100+ colour showpiece tier).
+ * (the 200–300 colour showpiece tier).
  *
- * The list itself, along with each glyph's confusable group and ink weight,
+ * The list itself, along with each symbol's confusable group and ink weight,
  * lives in `symbol-assignment.ts`; it is ordered most-distinctive first. Every
  * glyph is inside the ranges the chart render font (DejaVu Sans) covers fully,
- * so none render as tofu.
+ * so none render as tofu, and past the plain glyphs the catalogue carries the
+ * same glyphs with a rule under or over them — the second channel, which is
+ * what puts the ceiling well past what a showpiece asks for.
  */
 export const PATTERN_SYMBOLS = SYMBOL_GLYPHS
 
@@ -207,8 +209,9 @@ export async function photoToPatternData(
 
   // Symbols last: busiest colours take the most distinctive marks, and no two
   // colours that touch on the cloth (or look alike in the key) get glyphs from
-  // the same confusable group. The catalogue is only exhausted well past the
-  // 154-colour cap, so every colour keeps a unique glyph.
+  // the same confusable group. The catalogue runs to over five hundred plain
+  // glyphs and three times that with the rule channel, so even a 300-colour
+  // showpiece keeps a unique symbol per stand with plenty in hand.
   const symbolByCode = assignChartSymbols(
     [...stitchCount].map(([code, count]) => ({
       key: code,
