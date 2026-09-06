@@ -160,7 +160,7 @@ async function main(): Promise<void> {
 
   if (APPLY && patternsToSync.length > 0) {
     console.log(`\n[merge] re-syncing ${patternsToSync.length} moved pattern(s) to search...`)
-    const { buildPatternDoc } = await import('@homemade/db/search-docs')
+    const { buildPatternDoc } = await import('../src/search-docs')
     const { syncPatternDoc } = await import('@homemade/search')
     for (const id of patternsToSync) {
       const doc = await buildPatternDoc(id)
