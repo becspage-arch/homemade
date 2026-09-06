@@ -25,7 +25,14 @@ loadEnv({ path: '../../.env.credentials' })
 import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { Prisma, prisma } from '@homemade/db'
-import { measureVividness, vividnessVerdict, MIN_INK, MIN_CHROMA } from '@/lib/studio/generation/bulk/vividness'
+import {
+  measureVividness,
+  vividnessVerdict,
+  MIN_INK,
+  MIN_CHROMA,
+  PALE_REFS,
+  VIVID_REFS,
+} from '@/lib/studio/generation/bulk/vividness'
 
 function arg(name: string): string | undefined {
   const i = process.argv.indexOf(`--${name}`)
@@ -102,6 +109,37 @@ async function main(): Promise<void> {
   for (const f of flips) console.log(f)
   console.log(`\nPale before AND after (not caused by this change): ${stillPale.length}`)
   for (const s of stillPale.slice(0, 20)) console.log(s)
+
+  // The calibration set itself. Five of the nine references had their white
+  // background cleared, so the numbers the floors were cut from have moved and
+  // the guard has to be re-read against what is live now — a MUST FAIL that now
+  // passes would mean the pale guard has a hole in it.
+  console.log('\nCalibration references, measured against the live thumbnail')
+  for (const [want, refs] of [['PALE', PALE_REFS], ['VIVID', VIVID_REFS]] as const) {
+    for (const [id, label] of refs) {
+      const row = await prisma.pattern.findUnique({
+        where: { id },
+        select: { backgroundCleared: true, thumbnail: { select: { r2Key: true } } },
+      })
+      if (!row?.thumbnail?.r2Key) {
+        console.log(`  ${want.padEnd(5)} ${label} — no live thumbnail`)
+        continue
+      }
+      const png = await fetchThumb(row.thumbnail.r2Key)
+      if (!png) {
+        console.log(`  ${want.padEnd(5)} ${label} — thumbnail unreachable`)
+        continue
+      }
+      const v = await measureVividness(png)
+      const verdict = vividnessVerdict(v)
+      const got = verdict.tooPale ? 'PALE' : 'VIVID'
+      console.log(
+        `  ${got === want ? 'ok  ' : 'MOVED'} ${want.padEnd(5)} ${label.padEnd(46)} ` +
+          `ink ${v.ink.toFixed(3)} chroma ${v.chroma.toFixed(3)}` +
+          `${row.backgroundCleared ? '  (background cleared)' : ''}`,
+      )
+    }
+  }
 
   await prisma.$disconnect()
   if (flips.length > 0) process.exitCode = 1

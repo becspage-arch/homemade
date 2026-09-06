@@ -143,6 +143,28 @@ export async function measureVividness(png: Buffer, fabricHex: string = FABRIC):
  * structurally identical to Delft, and failing it would mean failing the shelf.
  */
 
+/**
+ * The calibration set itself, keyed by pattern id — which is how the September
+ * 2026 dedupe scan named its cached thumbnails. `dedupe.test.ts` asserts the
+ * verdict on each of these when it is pointed at a thumbnail cache, and
+ * `scripts/xs-vividness-recheck.ts` re-measures them against whatever is live
+ * now. Kept beside the thresholds they justify, so moving a floor without
+ * re-reading the evidence is awkward on purpose.
+ */
+export const PALE_REFS: readonly [string, string][] = [
+  ['cmtoul9q6000301adiawycq6a', 'proof-batch cupcake, cream on cream (culled)'],
+  ['cmqzrgvgw001ge8v4ka2r3tiz', 'cute-lamb-meadow, pale pastel'],
+]
+export const VIVID_REFS: readonly [string, string][] = [
+  ['cmtoure6d000a01adki8tan44', 'proof cottage, 9 colours, a gem'],
+  ['cmql3uurg000br0v4k7ss5chv', 'delft-hare, 12 colours two-tone'],
+  ['cmqmnonfw0005b4v445y73u4r', 'blackwork-snowflake, 4 colours'],
+  ['cmqmnosdq0006b4v4g8a06m6d', 'blackwork-pomegranate, 4 colours'],
+  ['cmr6l4gaq000hakv4qwudtrvs', 'big-coral-reef, 120 colours'],
+  ['cmtoumqq7000701ad100zgamv', 'proof haunted house, 87 colours, Flux Pro'],
+  ['cmtouk9zw000401adwqpj7ozr', 'proof apothecary, 33 colours'],
+]
+
 /** Below this fraction of genuinely dark stitches, a render has no tonal spine. */
 export const MIN_INK = 0.06
 /**

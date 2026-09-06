@@ -19,7 +19,7 @@ import sharp from 'sharp'
 import { subjectKey, subjectTokens, subjectJaccard, findSubjectKeyMatch, SUBJECT_JACCARD_MATCH } from './subject-key'
 import { imageHash, sha256Hex, nearDuplicateVerdict, type PatternFingerprint, type ChartFingerprint } from './similarity'
 import { shelfDeficits, allocateShelves, shelfSlots, allShelvesAtTarget } from './shelf-plan'
-import { measureVividness, vividnessVerdict, MIN_INK, MIN_CHROMA } from './vividness'
+import { measureVividness, vividnessVerdict, MIN_INK, MIN_CHROMA, PALE_REFS, VIVID_REFS } from './vividness'
 import { findDuplicate, type CatalogueEntry, type CandidateFingerprints } from './duplicate-match'
 import { applyWarmFurGuard, WARM_FUR_SAT, type WarmFurBrief } from './brief-rules'
 import { runIsComplete, summaryLine } from './run-status'
@@ -312,24 +312,15 @@ record('warm fur: promotion out of the small lanes releases the guard sat', () =
 // ─── the pale guard ────────────────────────────────────────────────────────
 
 /**
- * Calibration references from the live catalogue. Keyed by pattern id, which is
- * how the September 2026 dedupe scan named its cached thumbnails. Run with
- * --thumbs <dir> (or XS_THUMB_CACHE) to check the real files; without the cache
- * these cases skip rather than fail, so the suite still runs anywhere.
+ * The calibration references live beside the thresholds they justify, in
+ * vividness.ts. Run with --thumbs <dir> (or XS_THUMB_CACHE) to check the real
+ * cached files; without the cache these cases skip rather than fail, so the
+ * suite still runs anywhere.
+ *
+ * NOTE: the cache is the PRE-bare-fabric catalogue. Five of these nine rows have
+ * since had their white background cleared, which is exactly what
+ * `scripts/xs-vividness-recheck.ts` re-measures against the live thumbnails.
  */
-const PALE_REFS: [string, string][] = [
-  ['cmtoul9q6000301adiawycq6a', 'proof-batch cupcake, cream on cream (culled)'],
-  ['cmqzrgvgw001ge8v4ka2r3tiz', 'cute-lamb-meadow, pale pastel'],
-]
-const VIVID_REFS: [string, string][] = [
-  ['cmtoure6d000a01adki8tan44', 'proof cottage, 9 colours, a gem'],
-  ['cmql3uurg000br0v4k7ss5chv', 'delft-hare, 12 colours two-tone'],
-  ['cmqmnonfw0005b4v445y73u4r', 'blackwork-snowflake, 4 colours'],
-  ['cmqmnosdq0006b4v4g8a06m6d', 'blackwork-pomegranate, 4 colours'],
-  ['cmr6l4gaq000hakv4qwudtrvs', 'big-coral-reef, 120 colours'],
-  ['cmtoumqq7000701ad100zgamv', 'proof haunted house, 87 colours, Flux Pro'],
-  ['cmtouk9zw000401adwqpj7ozr', 'proof apothecary, 33 colours'],
-]
 
 function thumbDir(): string | null {
   const i = process.argv.indexOf('--thumbs')
