@@ -116,7 +116,7 @@ export async function renderProgram(program: CrochetProgram, options: RenderProg
   }
   if (problems.length) return result // audit gate — caller decides; do NOT render
 
-  const scene = programScene(program, built, yr, 0.08, options.staging ?? 'swatch')
+  const scene = programScene(program, built, yr, 0.08, options.staging ?? program.staging ?? 'swatch')
   const art = await blenderHero(scene, name, outDir, options.hero !== false)
   return { ...result, ...art }
 }
@@ -282,14 +282,18 @@ export function writePatternFaces(
 
 // ── CLI ───────────────────────────────────────────────────────────────────────
 /** Per-proof finished-object staging (Part C). A dishcloth / panel lays flat; a
- *  headband loops into a ring. Override on the command line with
- *  `--staging=flatlay|loop|swatch`. Default (unlisted programs) = 'swatch'. */
+ *  headband lays flat as a product photo (`flatband` — NOT the standing `loop`,
+ *  §8e-3/§8f: the standing ring reads as a cuff/basket at this proof's height-
+ *  to-diameter ratio). Override on the command line with
+ *  `--staging=flatlay|loop|flatband|swatch`. Default (unlisted programs) =
+ *  'swatch'. A program that isn't a named proof (a real customer pattern) uses
+ *  its own `CrochetProgram.staging` instead — see `renderProgram` above. */
 const PROOF_STAGING: Record<string, Staging> = {
   'simple-coaster': 'flatlay',
   'stripe-dishcloth': 'flatlay',
   'texture-sampler-panel': 'flatlay',
   'flat-texture-panel': 'flatlay',
-  'post-rib-headband': 'loop',
+  'post-rib-headband': 'flatband',
   'cottage-tapestry': 'flatlay',
 }
 /** The proof's default finished-object staging (no CLI flags involved) — what a
@@ -297,10 +301,10 @@ const PROOF_STAGING: Record<string, Staging> = {
 export function proofStaging(name: string): Staging {
   return PROOF_STAGING[name] ?? 'swatch'
 }
-function resolveStaging(name: string): Staging {
+function resolveStaging(name: string, programStaging?: Staging): Staging {
   const flag = process.argv.find((a) => a.startsWith('--staging='))
   if (flag) return flag.split('=')[1] as Staging
-  return proofStaging(name)
+  return PROOF_STAGING[name] ?? programStaging ?? 'swatch'
 }
 
 function resolveProgram(arg: string): CrochetProgram {
@@ -343,7 +347,7 @@ async function main(): Promise<void> {
   const yrArg = process.argv[3] && !process.argv[3]!.startsWith('--') ? Number(process.argv[3]) : undefined
   const noHero = process.argv.includes('--no-hero')
   const yr = programYarnRadiusMm(program, yrArg)
-  const staging = resolveStaging(program.name)
+  const staging = resolveStaging(program.name, program.staging)
 
   console.log(`[1-2/5] compile + relax + audit  ${program.name}  (form=${program.form}, yr=${yr}, staging=${staging})`)
   const res = await renderProgramGuarded(program, { yr: yrArg, hero: !noHero, staging })

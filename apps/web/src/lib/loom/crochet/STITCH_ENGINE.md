@@ -756,7 +756,12 @@ vs a real reference → commit + push.
     residual: the object's own proportions (band height close to its diameter)
     read as a squat drum/cuff from most angles regardless of camera — a real
     fix needs a THINNER band relative to its loop (a geometry/row-count
-    change, out of scope here). Verdict pending — see the render report.
+    change, out of scope here).
+    REBUILT AT REAL SIZE, RESTAGED (2026-09-06, §8f-5): the geometry/row-count
+    change did happen — this proof is now a genuine adult-size band — and the
+    staging changed too, though not to the fold considered above (that name is
+    reused for a different, simpler construction: see §8f-5, which explains why
+    the fold's own "band width in-plane" risk doesn't apply to it).
   - amigurumi (3-D) already stages itself via `compositionScene`; the creature hero
     (gate 0.920) and the ball are customer-grade.
   Every hero PASSES the fidelity/structure gate (all ≥ 0.874 ≫ STRUCT_MIN 0.45),
@@ -829,7 +834,7 @@ programs are BIT-IDENTICAL (verified: stripe-dishcloth 79f6a541, amigurumi-ball
 | 1 | `simple-coaster` (solid sc square) | dead simple | 8fedd4c9 | 0.937 | ✅ customer-grade — dense solid single-crochet coaster, clean rows on white. The plainest end. |
 | 2 | `stripe-dishcloth` (2-colour sc/hdc bands) | flat colourwork | 79f6a541 | 0.922 | ✅ customer-grade — genuine two-colour striped dishcloth, clean stripe boundaries. |
 | 3 | `flat-texture-panel` (sc/hdc/dc/blo/flo bands) | flat texture | a36dacd7 | 0.901 | ✅ customer-grade — one-colour textured sampler, raised blo/flo ridge lines, solid throughout. NO post stitches (the derived rule: posts read open on a flat panel — they live on the worn/looped form). |
-| 4 | `post-rib-headband` (1×1 fp/bp rib, looped) | worn item | e482eb7a | 0.924 | ✅ customer-grade — ribbed band seamed into a standing loop, vertical post ribs round the circumference. Correctly showcases post-rib on a curved/worn form. Residual: ribs read slightly openwork (documented). |
+| 4 | `post-rib-headband` (1×1 fp/bp rib, 82×6, real adult size, staged flat) | worn item | 31ebcc27 | 0.944 | ✅ customer-grade — REBUILT §8f-5 (2026-09-06): settles 458×92mm (was a 191×47mm napkin ring), staged with the new `flatband` mode (a gentle in-plane S on the ground, NOT the old standing `loop` — at this real size the loop read as a cuff/basket) — a real sage headband strip, vertical post ribs reading as clean bars the whole length. Residual: ribs read slightly openwork (documented, library-wide post-stitch density limit). |
 | 5a | `amigurumi-ball` (stuffed sc sphere) | amigurumi | 22357568 | 0.920 | ✅ customer-grade — stuffed crochet ball, clean spiral rounds from a tidy magic-ring centre. Chunkier per-stitch bumps than a fine reference (documented bulbousness residual), but unmistakably a real crocheted ball. |
 | 5b | `amigurumi-creature` (body+head+2 ears) | amigurumi (multi-part) | 18b2f935 | 0.914 | ◑ reads as a two-eared stuffed amigurumi (genuine dense sc body, two proud ears) but the ear TIPS show the magic-ring swirl (documented "ear crown") + the ears read bulky. Borderline — the ball is the cleaner amigurumi. |
 | 6 | `cottage-tapestry` (24×24 sc, 15 colours) | SHOWPIECE | a627f243 | 0.929 | ✅ customer-grade tapestry piece — a cottage-garden PICTURE (sky+sun, tree, cottage w/ roof/chimney/door/windows, grass+flowers). Reads exactly as real tapestry crochet (colour-block per stitch, cf. the lillabjorncrochet cushion reference); chunkier weight than a fine cotton reference. |
@@ -881,7 +886,10 @@ every UNCHANGED proof's geometry hash stayed bit-identical
   settled ~191×47mm (a pre-existing mismatch, not this session's regression) —
   fixed as a METADATA-only correction (declared → 190×48mm; the geometry, and
   so its hash `e482eb7a`, is unchanged) so the new gate doesn't block its
-  render. `texture-sampler-panel`, `flat-texture-panel` and `cottage-tapestry`
+  render. SUPERSEDED (§8f-5, 2026-09-06): that metadata-only fix left a real
+  headband looking like a napkin ring; the proof was rebuilt at real size
+  (82×6, hash `31ebcc27`, settles 458×92mm, declared to match) rather than
+  just re-labelled a second time. `texture-sampler-panel`, `flat-texture-panel` and `cottage-tapestry`
   carry the SAME kind of declared-vs-settled gap (declared assumed a
   real-world gauge this engine's mm scale doesn't produce — a library-wide
   characteristic, not specific to any one proof) and now fail the gate too;
@@ -1598,6 +1606,157 @@ re-measured off the settled geometry: **84 × 107 → 83 × 103 mm**, height-to-
   the flat family has had since §8f-2 (flat sc is 1.44), now visible in the round
   too: pressing the stitch into the surface is what took the disc from 1.89, and
   that 1.89 was mounding, not fabric.
+
+---
+
+## 8f-5b. THE POST-RIB HEADBAND — rebuilt at real size, staged flat (2026-09-06)
+
+`post-rib-headband` (§8e-3 sample #4) settled at ~191×47mm on the round-2 cell
+— a napkin ring, not a headband — and its `loop` staging (§8e-2 Part C, the
+2026-09-05 lowered-camera revisit) stood that ring up into a short cylinder
+whose own honest residual said as much: "the object's own proportions (band
+height close to its diameter) read as a squat drum/cuff from most angles
+regardless of camera — a real fix needs a THINNER band relative to its loop."
+This pass is that fix, plus a staging mode that doesn't stand the result up at
+all.
+
+### The size arithmetic — derived from the cell, not guessed
+
+postrib packs its fp/bp columns to `gaugeYr` 2.3 and fpdc/bpdc carry their own
+row gauge `rowYr` 6.29 (both dictionary.ts, unchanged by this pass — §8f-2's
+"the cell, library-wide" table). At aran (`YARN_WEIGHT_RADIUS_MM.aran` = 2.4mm,
+program.ts):
+
+```
+column pitch = gaugeYr × yr = 2.3 × 2.4mm = 5.52 mm/column
+row pitch    = rowYr × yr   = 6.29 × 2.4mm = 15.10 mm/row
+```
+
+Target an adult ear-warmer band: ~45cm worked-flat length (it stretches a
+little narrower once the short ends are seamed into a worn loop), ~9–10cm
+wide.
+
+```
+columns = 450mm / 5.52mm ≈ 81.5 → 82 (even, so the 1×1 rib closes cleanly)
+  82 × 5.52mm = 452.6mm nominal (+0.6% over target)
+rows    = 95mm / 15.10mm ≈ 6.3 → 6 total (1 dc establishing row + 5 fp/bp rib
+  rows — 7 total overshoots to 105.7mm, further from the 95mm target than 6's
+  90.6mm)
+```
+
+`loom-pattern-proofs.ts`'s `RIB_W` moved 34→82, `RIB_ROWS` (new, replacing a
+hard-coded `4`) is 6. 82×6 = **492 stitches** (was 136) — comfortably inside
+the "~2,000 stitches renders fine on Fargate" budget named for this pass, so
+no toy-size compromise was needed. Compiled + relaxed + audited in ~5s.
+
+**Measured settled size** (`settledSizeMm`, the honest number — §8e-3's SIZE
+CONSISTENCY gate): **458 × 92mm** (nominal 453×91; relaxation opens it
+slightly, same direction every other flat proof moves). `finishedSizeMm`
+declared to match — 458×92mm, both axes at ~1% off the settled figure, deep
+inside the gate's ±12%. Audit clean (0 problems). Geometry hash moved
+(a real geometry change, the stitch counts): `e482eb7a` → `31ebcc27`.
+
+### Staged flat, not standing — a new `flatband` mode
+
+The standing `loop` mapping itself is unchanged (still exactly right for a
+band whose height is small relative to its diameter — a proper snug-fitting
+worn ring). What this proof needed was to stop being staged that way at all:
+even at the real size, a 92mm-wide band seamed into a ~452mm loop is a
+squat mug-sized ring when stood up, no thinner-relative-to-diameter than
+before, because a headband's own real proportions (band width vs. head
+circumference) are what they are — the standing view was always going to read
+short and drum-like for this object, camera tuning notwithstanding.
+
+Added `flatband` to `Staging` (`program.ts`, extended `'swatch' | 'flatlay' |
+'loop'` — the union now lives on `program.ts` rather than `programScene.ts`,
+re-exported from there for the one existing import site, so `CrochetProgram`
+itself can carry a `staging` field without a circular import): the finished,
+seamed strip laid on the ground as a PRODUCT PHOTO, matching the etsy
+reference flat-lay shots, instead of stood up as a worn ring. This is NOT the
+folded-flat-loop idea §8e-2 Part C named and set aside (band width spread
+in-plane radially, "seam side down, two layers overlapping") — that mapping
+was set aside because it repeats the two logged flat/radial `loop` failures
+(§9: a filled coiled disc, or a radial sunburst) whenever the band width isn't
+tiny next to the loop diameter, which it never is for a real headband. This
+`flatband` doesn't close the strip into a loop at all — it stays an OPEN
+strip, bent by an in-plane S along its own length, with the row/width axis
+riding the curve's local NORMAL rather than spreading radially from a ring
+centre, so neither failure mode's geometry is present. `flatbandStrip`
+(`programScene.ts`) bends the strip's long axis into a gentle in-plane S-curve
+(amplitude/wavelength scaled to the strip's own length, so it stays
+proportionate at any stitch count) and carries the row/width axis as an offset
+along the curve's own local NORMAL — a real ribbon's width rides perpendicular
+to whichever way it bends — so the post ribs (each a fixed column spanning
+every row) still read as straight bars crossing the curve rather than smearing
+along it. Out-of-plane relief (`p.z`, the stitch texture) is untouched: this
+bends the fabric plane, not its face. No stitch moves relative to its
+neighbours. Camera: `tiltDeg` 22 (a three-quarter-from-above product angle,
+between `flatlay`'s 15° and `loop`'s 74°), `marginFactor` 0.35 (extra room —
+the S-curve brings the ~452×92mm strip's bounding box to ~473×176mm, a 2.7:1
+aspect instead of the raw strip's 4.9:1), `drapeAmp` 0.04 for a touch of soft
+fabric life. Render-only: no geometry, audit or hash change from the staging
+choice itself; every other staging mode and every unchanged proof stayed
+bit-identical (`loom-geom-hash.ts` before/after this whole pass — the swatch
+dictionary is untouched by any of it, diff clean).
+
+`CrochetProgram.staging` now flows through three call sites, explicit before
+implicit: `renderProgram` (`options.staging ?? program.staging ?? 'swatch'`)
+so render-on-publish picks up a real stored pattern's own choice automatically;
+`loom-render-batch.ts`'s `compile()` (`program.staging ?? proofStaging(name)`)
+for the Fargate batch; and the CLI's `resolveStaging` (flag `>` proof-name map
+`>` the program's own field). `post-rib-headband` declares `staging: 'flatband'`
+on the program itself AND is remapped in `loom-pattern.ts`'s `PROOF_STAGING`
+table — belt and suspenders, since a proof name always wins the table lookup
+first. `packages/db/scripts/seed-loom-signoff-patterns.ts` (merged from round
+3, seeds the six-sample set as real `CrochetPattern` rows for the actual
+publish pipeline) had its own local `Staging` type and its own hard-coded
+`staging: 'loop'` for this pattern's spec, which would have silently
+overwritten the program's field and put the real seeded row back on the
+standing ring — updated to `'flatband'` alongside this pass so the fix reaches
+the pattern the site would actually serve, not just the proof script.
+
+### The backing plane assumes a rectangle — a real bug, caught by looking
+
+The first render (base, before any Fal step) showed a flat, yarn-coloured
+RECTANGLE plainly through the concave side of the S — not a Fal artifact, the
+base render already had it. `loom_render_crochet.py`'s backing plane (there so
+a thin gap between yarn strands in dense fabric never flashes the ground
+through) is sized off the whole scene's content BOUNDING BOX and is always a
+rectangle; `flatlay` gets away with that because its panels genuinely fill
+their own bounding box, but an S-curved strip does not — the curve's concave
+side is bounding-box area with no fabric over it, so the rectangle showed
+through exactly there. Numbers-before-theories confirmed it was a shape
+mismatch, not a colour/lighting issue: the visible patch's edges were dead
+straight, matching the backing rectangle's own corners. Fix: `openFabric: true`
+on `flatband`'s view, the same lever `loop` already uses for the identical
+reason ("the 3-D object dropped onto the clean ground, no flat backing
+plane") — any staging whose footprint isn't a filled rectangle should drop
+the rectangular backing, not just the standing ring. Render-only,
+`openFabric` already existed; hash unchanged (`31ebcc27` before and after).
+
+### Rendered (Fargate)
+
+`post-rib-headband`, hash `31ebcc27`, aran (yr 2.4mm), settled 458×92mm:
+
+- base: 462s, 2094kB
+- hero: `[Step 4] upscale ... structure=0.932 colour=0.019 -> PASS` on the
+  first render (with the backing-rectangle bug still present); after the
+  `openFabric` fix, re-rendered alone — base 333s/2087kB, hero 333s total,
+  8112kB, **structure 0.944** (STRUCT_MIN 0.45) — PASS, and higher than the
+  buggy render, consistent with the Fal step no longer having a stray flat
+  rectangle to reconcile against the genuine stitched geometry.
+
+Reads as a real post-rib headband strip: a long sage-green band lying in a
+soft S on white, ribs standing proud as clean vertical bars the whole length,
+photographed at a slight three-quarter angle — the finished-object bar's
+"whole piece, real yarn colour, on clean white, staged as the finished
+object" all read correctly, on the actual size this time. Honest residual
+(pre-existing, not this pass's to fix): the ribs read a shade openwork/
+basket-like rather than a dense snug knit rib — the same library-wide
+post-stitch density limit §8f-2 and §8e-2 Part D already logged, now visible
+at the real size and the flat framing rather than hidden by a standing-ring
+crop. Orchestrator/Rebecca verdict pending — see the render report for the
+linked images.
 
 ---
 

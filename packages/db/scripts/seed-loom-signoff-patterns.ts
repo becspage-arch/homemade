@@ -79,7 +79,7 @@ const YARN_SLUG_BY_WEIGHT: Record<YarnWeight, string> = {
 
 /** How the finished object is presented in its own hero render. A stored
  *  pattern has no proof-name lookup table to consult, so it carries its own. */
-type Staging = 'swatch' | 'flatlay' | 'loop'
+type Staging = 'swatch' | 'flatlay' | 'loop' | 'flatband'
 
 interface SignoffSpec {
   /** Key into PATTERN_PROOFS or COMPOSITION_PROOFS. */
@@ -157,7 +157,11 @@ const SPECS: SignoffSpec[] = [
     description:
       'A stretchy reversible headband in 1x1 post rib. Worked flat as a strip, then the short ends are seamed into a loop so the ribs run right round the circumference.',
     subCategorySlug: 'headband',
-    staging: 'loop',
+    // Staged flat, not standing (STITCH_ENGINE.md §8e-3/§8f, 2026-09-05): at
+    // this proof's real settled size the standing `loop` reads as a cuff/
+    // basket, not a headband — `flatband` lays the finished, seamed strip on
+    // the ground as a product photo instead.
+    staging: 'flatband',
     shapeCategory: 'WEARABLE_ACCESSORY',
     construction: 'SEAMED',
     difficulty: 'INTERMEDIATE',
