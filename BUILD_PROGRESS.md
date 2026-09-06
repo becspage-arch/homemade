@@ -92,6 +92,52 @@ hero is a loom render showed no image. It now prefers the loom hero, then the
 Fal hero, then the saved chart thumbnail — matching the schema's own note that a
 renderer prefers `loomHero` when it is present.
 
+## Cross-stitch: audit, dedupe, and the self-running cloud autopilot (2026-09-05/06)
+
+Rebecca paused the cross-stitch fill in July because the catalogue was
+duplicating. The scan found 85 duplicate clusters covering 192 of 1,153 public
+patterns: the retired local generator re-composed the same brief stems across
+batches (Japanese Garden five times), and the server planner avoided only the
+last 40 published names and copied pool examples verbatim. Nothing compared
+images or charts. Culled to PRIVATE (reversible, reason on `qcBlockReason`):
+87 duplicates (weaker of each same-tier pair; different-tier pairs and the
+relettered pride/quote templates kept), 14 vision-sweep fails (gibberish
+signs, mush, render artefacts) from a full 1,153-thumbnail pass, and 3 proof-
+batch gems judged below the bar. Fragment shelves `florals`→`floral` and
+`home-cosy`→`scenes` merged; canonical shelves and per-shelf targets live in
+`generation/categories.ts` (`patternTarget` is their sum, 1,598; hold shelves
+never planned). Two SEO faults fixed (absolute JSON-LD image, og:image on
+every cross-stitch page) and all 23 shelf descriptions written as plain lists.
+
+The bulk pipeline is now genuinely self-running on ECS Inngest (2-hourly cron,
+`bulk-generation.ts`): plan → generate → pale guard → vision gate → dedupe
+guard → publish → thumbnail → shelf → search sync → stop at target, with a run
+finaliser (fan-out runs get `finishedAt` + a summary), Sentry + admin-banner
+alerts on zero-yield or stalled runs, a daily Fal cap (480 schnell / 24 Pro),
+and per-shelf progress on the admin card. Dedupe is mechanical and binary: dHash
+64/256 + a 24×24 chart fingerprint + palette on every `Pattern` (backfilled), a
+normalised `subjectKey` compared against the whole catalogue (culled rows
+count as spent), within-batch head-noun collisions, and a publisher that
+refuses any shelf not in the canonical list. The planner runs in constrained
+mode (the model chooses and dresses pool subjects; head noun must match a pool
+example; prop language rejected) after free invention yielded ~17% vs the
+pool's ~40%. Root cause of the planner's silent fallback: Claude 5 adaptive
+thinking ate the token budget, so `thinking` is disabled on these build-time
+calls. Typesense client now honours `HTTPS_PROXY` so cloud sessions can sync
+and cull search directly. Seven proof batches ran on the server; every gem was
+judged at full size by the orchestrator; cron switched on 2026-09-06 03:13 UTC.
+
+**Per-category autopilot (Rebecca's standing rule: never on her laptop).**
+Cross-stitch: on ECS Inngest, running. Needlework: on ECS Inngest (6-hourly,
+Fargate loom render wired), paused pending its sign-off; nothing local. Crochet
+and knitting: the loom session's bulk path is proven server-side (row → Fargate
+hero → R2), fill pending sign-off; nothing local. Sewing: freesewing showcase
+and hero flats run as idempotent deploy steps; no autopilot yet. Macramé: no
+pipeline yet. Tutorial-led categories: the old autopilot is retired; growth is
+on-demand fill workers, which are ordinary Claude Code sessions and run in the
+cloud unchanged. Nothing in the repo still depends on a local machine except
+the retired `xs-volume-gen` routine, which is deleted.
+
 ## Recipe completeness: prose-method steps + per-serving nutrition (2026-06-25)
 
 Two recipe structured-data gaps closed.
