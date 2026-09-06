@@ -1421,6 +1421,186 @@ time — rendering them in two separate runs was costing task-minutes for nothin
 
 ---
 
+## 8f-5. ROUND 4 — round work lies IN the surface (2026-09-06)
+
+Round-3 verdict: the flat family is at the bar close up — sc reads as a V under
+a flat head loop, dc as real double crochet with its wraps — and **round work is
+not**. Every stitch worked in the round read as a tight KNOT or coiled bead
+standing off the surface, a knobbly bobble ball, where a real amigurumi single
+crochet reads as the SAME tidy V-grid as flat sc, just curving round the form:
+the V legs lying nearly flat on the surface, the head loops making smooth spiral
+rounds. The ball's pole still showed an open ring.
+
+### Measuring round work at all — the polar / surface frame
+
+`loom-stitch-metrics.ts` measured flat fabric against the world plane, which
+says nothing on a disc or a ball: relief there rides the local surface NORMAL
+and "along the row" is the round's tangent, not world x. It now builds the frame
+per node — **t** the round tangent, **m** the meridian, **n = m × t** the outward
+normal — and measures every relief, splay and out-of-plane figure against the
+fabric's own settled **mid-surface** (the median height of the worked fabric at
+that radius on a disc, at that polar angle on a ball), so a disc that dishes or a
+ball that is oblate is not scored as per-stitch relief. Flat builds keep exactly
+the old measurement (n = +z, mid-surface z = 0), verified by re-running sc: the
+control's numbers are unchanged to the last digit, so flat and round are directly
+comparable.
+
+Two new figures the flat pass never needed:
+
+- **the per-stitch MOUND** — one stitch's own peak-to-trough along the normal.
+  A stitch that lies in the fabric spans about what flat fabric's own thickness
+  varies by; a stitch that reads as a knot standing off the surface spans more
+  than the fabric it sits in. This is the number that says "knot" out loud.
+- **round pitch** — nearest crown in the round below, since a spiral has no
+  column to walk, and **shear**, how far along the round a crown sits from the
+  below-crown its own hook dives under (0 by construction in flat grid work).
+
+### The measured table — flat control, before, after
+
+Worsted, yr 2.4, rendered yarn diameters (d = 1.7·yr).
+
+| quantity | flat `sc` (control) | `mrdisc` before | `mrdisc` after | `ball` before | `ball` after | target |
+|---|---|---|---|---|---|---|
+| **per-stitch mound** | **0.57** | **1.65** | **1.24** | **1.15** | **1.10** | ~ flat's fabric thickness |
+| **crown proud of its own legs** | **0.42** | **0.87** | **0.67** | **0.59** | **0.54** | ≤ 0.42 |
+| **legs out of the surface (p90)** | **0.40** | **0.50** | **0.17** | **0.16** | **0.18** | ≤ 0.3 |
+| V opening angle | 54.0° | 41.4° | 43.8° | 38.7° | 38.4° | 40–60° |
+| leg straightness, visible | 1.00 | 0.99 | 0.97 | 0.98 | 0.98 | 0.93–1.0 |
+| crown apex relief | 0.70 | 0.77 | 0.64 | 0.55 | 0.57 | — |
+| leg relief | 0.28 | −0.10 | −0.03 | −0.03 | 0.03 | — |
+| hook relief | 0.50 | −0.84 | −0.59 | −0.59 | −0.52 | — |
+| head strands: along the round / in depth | 0.19 / 0.57 | 0.85 / 0.64 | 0.84 / 0.76 | 1.00 / 0.50 | 0.63 / 0.90 | a pair ~1 d apart |
+| post leg separation | 0.84 | 0.75 | 0.65 | 0.65 | 0.61 | ≥ 0.7 |
+| stitch pitch | 1.59 | 1.72 | 1.70 | 1.79 | 1.77 | 1.49–1.70 |
+| round pitch | 1.41 | 1.57 | 1.54 | 1.66 | 1.68 | 1.33–1.49 |
+| yarn per stitch · crowding | 6.75 · 3.01 | 7.75 · 2.87 | 7.65 · 2.91 | 8.60 · 2.89 | 8.47 · 2.85 | 7.0–9.5 · 2.8–4.8 |
+| fabric thickness | 1.44 | 1.89 | 1.42 | 1.19 | 1.12 | 1.8–2.2 |
+
+The mound is the headline. A round-work stitch spanned almost the whole fabric
+thickness on its own — 1.65 d against flat sc's 0.57 — because its crown stood
+0.87 d out on the worked face and the next round's hook then had to plunge 0.84 d
+in to clear it. That excursion, repeated once per stitch on a fabric where
+nothing alternates, IS the coil the close-up shows.
+
+### The lever — what the round layout pull was NOT holding
+
+Five candidate causes were probed one at a time, and four of them died on the
+numbers (all in §9 now):
+
+| probe | mound | crown proud |
+|---|---|---|
+| baseline | 1.65 | 0.87 |
+| crown canopy removed entirely | 1.54 | 0.77 |
+| head loop built LYING FLAT in the surface | 1.66 | 0.95 |
+| leg relief 0.7 → 1.0 → 1.6 → 2.2 | 1.65–1.72 | 0.69–1.04 |
+| table depth 3.2 → 1.6 → 1.0 yr | 1.66 → 1.49 | 0.95 |
+| each crown placed OVER its own insertion (no shear) | 1.62 | 0.99 |
+
+The crown settled 0.85–0.99 d proud **whatever it was built at**, which is the
+tell. `layoutMode: 'radial'` held each node at its worked RADIUS and left the
+normal direction completely free, so on the one axis the whole problem lives on,
+the built geometry had no say at all and the crowd alone decided the answer. The
+curved-surface mode (`'surface'`) has carried the matching whisper-soft normal
+term since the sphere was built — 0.4 × layoutK toward each node's OWN worked
+offset — which is exactly why the ball was the more ordered of the two
+(stitch-to-stitch spread of the leg relief 0.07 d against the disc's 0.22 d).
+
+**The disc simply never had it.** Added — the same term, the same 0.4, hard-wired
+into the radial mode so the two can't drift apart — the mound falls to 1.24 and
+the legs lie in the fabric at 0.17 d, better than flat sc's own 0.40. It is the
+blocked/pressed term a real crocheted circle gets when it is laid out and
+photographed, and it pulls toward each node's own worked offset, never a common
+plane (§9: a symmetric plane pull crushes the front/back layering).
+
+### The construction — a no-turn stitch LIES IN the surface
+
+The second half, and the reason the emitters needed a new flag rather than the
+relaxer needing a stronger one. In TURNED fabric a stitch's crown is thrown proud
+of its worked face because the next row is worked from the OTHER face and dives
+under it from there: the relief IS the interlock, and consecutive rows' reliefs
+alternate and cancel, so the fabric reads flat. A spiral **never turns**. Every
+round works the same face, so a proud crown stands off the fabric with nothing to
+cancel it, and the next round's hook has to plunge the same distance inward.
+
+`surfaceLay` (emitPlainStitch, emitDecrease, and the shared `emitHeadLoop`) is
+that difference, 0 for every flat stitch and 1 for the round and sphere builders:
+the head loop's whole first half — the strand that runs back along the row top,
+and the loop's far end — sits AT the surface, only the returning strand and the
+apex ride a little above it (the next round has to find the apex to dive under),
+and the dive shallows to match. Its two strands still separate up the MERIDIAN,
+side by side, which is the V-grid a real amigurumi surface shows. `headApexRelief`
+is the one accessor both no-turn builders key their canopies to, so a re-cut head
+and the canopy over it cannot drift apart.
+
+On its own this changed nothing (the table above). With the normal hold under it,
+it is what the hold holds.
+
+### The ball's open pole — the analytic sphere was stretching the cap
+
+Separately measured, per round, settled tangential pitch ÷ the stitch's own gauge:
+
+| round | 0 | 1 | 2 | 3 | … | equator |
+|---|---|---|---|---|---|---|
+| before | **1.51×** | **1.27×** | 1.14× | 1.11× | | 1.06× |
+| after | **1.35×** | **1.10×** | 1.05× | 1.08× | | 1.07× |
+
+The counts are the canonical amigurumi recipe — 6 in the ring, then at most ±6 a
+round — but the fabric was laid on the rigid ANALYTIC sphere, where the ±6 cap
+means a cap round carries fewer stitches than its latitude's circumference wants.
+The fabric was stretched to fit it: six stitches held apart around a hole, which
+is exactly the open ring the render showed. It was never the magic-ring radius
+(already yr·0.85, a pinprick) and never the canopy.
+
+`buildSphere` now derives the counts from the nominal sphere exactly as before,
+then lays the fabric on the surface **those counts make** — the intrinsic profile,
+the same one every pattern-driven ball has always used. The ball swatch and the
+ball a bear is made of are one surface model instead of two, and no round is
+stretched. The radial crown canopy goes with it: it existed to tuck the erupting
+legs of stretched pole rounds, there are none left, and the audit is clean at all
+three weights without it (checked, not assumed).
+
+What this does NOT do is make the ball round: a +6 cap is intrinsically a flat
+disc, so the honest ball is oblate and its roundness comes from stuffing, which
+this model does not have. §8f-4 spent two attempts proving that and the cap
+stands — do not chase it with gauge values.
+
+### Hashes — 2 moved, 34 bit-identical
+
+`mrdisc` 0b5b8664da0cd2f8 → **6da71f8d3447ff66** ·
+`ball` b1c8691bed42cec1 → **616cc89e54dd8bea**.
+
+Everything else — the whole flat family, the shaped family, the fans and every
+knit swatch — is bit-identical, which is the point of gating the change on
+`surfaceLay` and on the layout mode rather than on shared values. Audit clean
+**36/36 at fine 1.5, worsted 2.4 and bulky 3.2**.
+
+Every amigurumi composition proof still audits clean and still sits ON the table
+(`minz` 0.00 for all seven). The stitch no longer stands off the surface, so
+every part is a few percent less puffy and the bear's declared finished size was
+re-measured off the settled geometry: **84 × 107 → 83 × 103 mm**, height-to-width
+1.28 → 1.24, every proportion round 2 tuned intact.
+
+### Still open
+
+- **Crown proud of its own legs is 0.67 d (disc) and 0.54 (ball) against flat's
+  0.42.** It floors there: the crown is pushed out by the head loops and legs
+  either side of it (a contact census puts 0.58 collision contacts on each crown
+  node, every one of them pushing outward), and flattening the built head further
+  only reaches 0.52 before an interlock drops. Breaking it needs the head of one
+  round to be held down by the next round's fabric — the same front/back-layer
+  construction §8f-2 logged for the flat family, which no builder has yet.
+- **Round pitch runs 4–19% over gauge** (disc 1.54, ball 1.68 against 1.33–1.49),
+  and the ball's V angle follows it down to 38°. The disc's radial pitch is the
+  row pitch by construction; the sphere's meridian pitch carries a legacy ×1.05
+  that every amigurumi composition's absolute millimetre placements are tuned
+  against, so it was left alone rather than moved under them in the same pass.
+- **Fabric thickness is 1.12–1.42 d against a real 1.8–2.2** — the same coupling
+  the flat family has had since §8f-2 (flat sc is 1.44), now visible in the round
+  too: pressing the stitch into the surface is what took the disc from 1.89, and
+  that 1.89 was mounding, not fabric.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,
@@ -1732,6 +1912,40 @@ time — rendering them in two separate runs was costing task-minutes for nothin
   so the splay goes WITH the bend, and let the loop's turn happen at the head
   where a loop's turn belongs. Numbers found it in one settled dump after two
   value-tuning attempts had moved the V by 4°.
+- **Tuning what the layout pull does not hold** (round work, §8f-5, five probes
+  in a row). The disc's stitches read as knots standing off the surface, and
+  every candidate cause was a BUILT value: the crown canopy (removed entirely →
+  mound 1.65 → 1.54 d), the head loop built lying flat in the surface (1.66),
+  the leg relief swept 0.7 → 2.2 (1.65–1.72), the table depth swept 3.2 → 1.0 yr
+  (1.66 → 1.49), and the +6 increase shear removed by placing each crown over its
+  own insertion (1.62, and the settled shear only fell 0.61 → 0.50 d because the
+  crowns redistribute evenly around the round after relaxation whatever angle
+  they are built at). The crown settled 0.85–0.99 d proud in every one of them,
+  which is the tell: `layoutMode: 'radial'` held each node at its worked RADIUS
+  and left the NORMAL completely free, so on the one axis the problem lived on,
+  the built geometry had no vote and the crowd alone decided. **Before tuning a
+  built value, check what the relax profile actually holds on that axis.** The
+  fix was to give the round mode the same whisper-soft normal hold the
+  curved-surface mode has always had (§8f-5), after which the built values
+  finally mattered.
+- **A no-turn stitch built like a turned one stands off the fabric** (round work,
+  §8f-5). In turned fabric a crown is thrown proud of its worked face because the
+  next row is worked from the OTHER face and dives under it from there — and
+  consecutive rows' reliefs alternate and cancel. A spiral never turns, so the
+  same construction puts every crown proud on the one visible face and forces
+  every next-round hook to plunge the same distance in to clear it: measured, one
+  stitch spanning 1.65 rendered diameters of normal excursion against flat sc's
+  0.57, which is the coiled bead a close-up reads. The head of a no-turn stitch
+  has to LIE IN the surface (`surfaceLay`), with the dive shallowed to match.
+- **Laying a pattern's counts on a rigid ANALYTIC sphere stretches its cap**
+  (ball, §8f-5) → the open pole. The ±6-per-round amigurumi recipe gives a cap
+  round fewer stitches than its latitude's circumference wants, so the fabric is
+  pulled out to fit the sphere: round 1 settled at 1.51× its own stitch gauge and
+  round 2 at 1.27×, i.e. six stitches held apart around a hole. It is not the
+  magic-ring radius and not the canopy. Lay the fabric on the surface the COUNTS
+  make (the intrinsic profile — what pattern-driven balls always used) and every
+  round sits where its own count wants it. Related, and still true: that surface
+  is oblate, and no gauge value should be used to hide it (§8f-4).
 - **Re-associating a floating-point product moves every geometry hash** (§8f).
   Writing the row pitch as `yr · (BASE_ROW_YR · heightFactor)` instead of
   `(yr · BASE_ROW_YR) · heightFactor` is the same number in algebra and a
