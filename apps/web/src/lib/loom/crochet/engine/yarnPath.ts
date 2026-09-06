@@ -21,7 +21,7 @@
  */
 
 import { type RNode, type DistConstraint, type YarnModel } from './relax'
-import { STITCHES, type StitchId } from './dictionary'
+import { STITCHES, rowPitchYr, BASE_ROW_YR, type StitchId } from './dictionary'
 
 /**
  * One genuine interlock, recorded at build time so it can be VERIFIED in data
@@ -275,16 +275,10 @@ export const dimsFor = (yr: number, id: StitchId): StitchDims => {
  */
 export const HOOK_SPREAD_YR = 0.35
 
-/** Row pitch per unit heightFactor (sc short, dc tall), in yarn radii. */
-export const BASE_ROW_YR = 1.55
-
-/**
- * This stitch's ROW PITCH in yarn radii — its own measured cell height (§8f) if
- * it declares one, otherwise the legacy shared lattice `BASE_ROW_YR · heightFactor`.
- * One helper so the grid, shaped, round and knit builders can never disagree.
- */
-export const rowPitchYr = (id: StitchId): number =>
-  STITCHES[id].rowYr ?? BASE_ROW_YR * STITCHES[id].heightFactor
+/** The row-pitch lattice now lives in `dictionary.ts` beside `STITCHES` (it reads
+ *  nothing else, and `sphereProfile.ts` needs it without the path builder).
+ *  Re-exported here so every existing importer keeps its import site. */
+export { BASE_ROW_YR, rowPitchYr }
 
 
 /**

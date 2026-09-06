@@ -2341,6 +2341,136 @@ HONEST RESIDUALS, for the orchestrator's verdict:
 
 ---
 
+## 8f-10. ROUND 8 — the SPHERE profile: increases where the sphere grows (2026-09-06)
+
+Round 7 finished with the ceiling named: a stuffed `ballRounds` part is a
+rounded tin can because `6, 12, 18, 24, 24×7, 18, 12, 6` **is** a cylinder with
+flat disc caps, and no relax parameter can pay the +37% fabric stretch that
+doming a +6 cap would need. The fix is the count profile, and the proof it works
+was already in the dictionary: the `ball` swatch derives its own counts from the
+sphere and measures 9.6° of crease and h/w 0.97 on the exact same relaxer.
+
+### The profile — one function, two callers
+
+`engine/sphereProfile.ts` (new) holds the arithmetic, and `buildSphere` now
+calls it instead of carrying its own copy (the derived branch is bit-identical —
+all 36 swatch hashes unmoved, `ball` still `0b45afb3351d9bd2`). A sphere of
+`equator` stitches has radius `R = equator·sw / 2π`. Walk down the meridian one
+round pitch at a time; the latitude at meridian distance `m` wants
+`2π·R·sin(m/R) / sw` stitches. Round to an integer, move at most ±6 a round
+toward it (the craft standard, and what the pole can fit).
+
+`sphereRounds(equator, extraPlateau)` is what the presets and the proofs use: the
+ascent of that walk, then its mirror. Two deliberate choices:
+
+- **Mirrored, not raw.** The raw walk lands its sample points asymmetrically
+  about the equator and finishes on a partial round — 9 stitches for eq-24, 11
+  for eq-36 — which is a hole to sew shut, not a pole to close. A real sphere
+  pattern is a palindrome.
+- **`extraPlateau` = straight rounds at the equator.** A bare sphere settles
+  slightly oblate (h/w 0.88–0.90): the first two rounds off the magic ring are
+  genuinely flat, because a +6 round spends its whole meridian pitch on radius —
+  true of a real crocheted ball too. ONE equator round buys the height back
+  without putting the corner back, because the profile now arrives at the equator
+  TANGENTIALLY (its last steps are +1, then 0) and a straight round after a
+  tangential arrival continues the surface instead of turning it. Every closed
+  preset part uses `+1`; the eggs use the same knob with a longer middle.
+
+Where `ballRounds(24, 7)` was `6,12,18,24,24×7,18,12,6`, `sphereRounds(24, 1)` is
+**`6,12,17,21,23,24,24,23,21,17,12,6`** — the increases bunched where the
+circumference actually grows, easing to +2, +1, 0 as the latitude flattens.
+
+### It is a writable pattern, and the pattern writer had a bug
+
+Every round is an integer count and every step is an integer number of increases
+or decreases spread evenly through the round, which is exactly how a designer
+writes it. The customer's text comes from the same array (`program.ts`
+`describeRound`), so it follows automatically — but only after a real bug was
+fixed. The old writer assumed the round divided exactly, which is true of every
+±6 profile (12 → 18 is six groups of two) and silently WRONG otherwise: it wrote
+`12 → 17` as `[sc in next st, 2 sc in next st] 5 times`, which works 15 stitches
+and claims 17. It now emits the remainder (`, sc in last 2 sts`) and writes a
+lone shaped stitch without a one-time bracket. Checked by arithmetic over every
+audited profile and every sphere profile to eq-48: each instruction consumes
+exactly the previous count and makes exactly the declared one. An even round's
+text is unchanged, so no existing pattern moved.
+
+### The measured table — before and after (worsted, yr 2.4)
+
+| part | crease cap→wall | crease wall→base | h/w | wall bulge |
+|---|---|---|---|---|
+| `ball` swatch (eq-36 derived, unchanged) | 9.6° | 9.8° | 0.97 | +8.6% |
+| `amigurumi-ball` / bear BODY, eq-30 | 36.4° → **10.7°** | 38.5° → **10.8°** | 0.66 → **0.96** | +8.2% → **+8.1%** |
+| bear HEAD, eq-24 | 38.5° → **10.6°** | 39.8° → **9.6°** | 1.06 → **0.99** | +7.3% → **+6.6%** |
+| preset ball-L / body-L, eq-36 | — | — | **0.95–0.98** | +8.6% |
+| bear EAR `6,12,12,12,6` (unchanged) | 21.8° | — | 0.75 | +2.0% |
+| bear MUZZLE `6,12,12,6` (unchanged) | 28.3° | — | 0.57 | −3.7% |
+
+Both targets met on every full-size closed part: crease well under 15°, h/w
+inside 0.95–1.05. `STUFF_PRESSURE` and `STUFF_PRIOR` are **untouched** — the
+whole move is counts.
+
+### What stays on `ballRounds`, measured
+
+The neck, muzzle and bear ear. A 4–6-round piece does not dome on any profile:
+`ballRounds(12,2)` measures 21.8° and `sphereRounds(12)` 23.1°, and the sphere
+version turns the ear into a ball (h/w 0.75 → 1.05), which is the wrong shape for
+an ear. The S head (eq-18, 9 rounds) is the smallest piece that gains: 45.8° →
+19.3°, still above target because nine rounds is not many. Limbs and bunny ears
+are `tubeRounds` and were never ball profiles.
+
+### Sizes, profiles and hashes
+
+`AUDITED_PROFILES` is rewritten around the sphere profiles (seven of them) plus
+the four small `ballRounds`/`tubeRounds` shapes still in use;
+`amigurumi-presets.test.ts` passes every preset at every size, all audit-clean,
+every one sitting on the table (`minz` 0.00 everywhere — the round-7 −0.09/−0.21
+residual is gone). `amigurumiSizes.generated.ts` regenerated: `bear-M`
+101.6 × 113.7 → **107.4 × 125.3 mm**, `amigurumi-ball` 62.7 × 41.1 →
+**62.6 × 60.4 mm** — the ball is the same width and half again as tall, which is
+the whole point.
+
+Swatch hashes: **36/36 bit-identical**, `ball` still `0b45afb3351d9bd2`. The
+`buildSphere` refactor is a pure move. Composition hashes moved as expected:
+`amigurumi-ball` 5dc797de → **2ff70d93** · `amigurumi-creature` d85cba47 →
+**c03d1014** · `amigurumi-bear` 3d16c58e → **0db38d65** · `amigurumi-bear-perch`
+f2d5251e → **43bbddeb** · `amigurumi-bear-bigear` 1b71d1ed → **aad24ff0** ·
+`amigurumi-bear-plain` bb00553d → **d39aef41** · `amigurumi-bear-mirror`
+fb7c66f7 → **87921021**.
+
+Audit clean **36/36 at fine 1.5, worsted 2.4 and bulky 3.2**.
+
+### Rendered (Fargate, one batch of three)
+
+All three PASS the fidelity/structure gate: `stitch-ball` **0.911**,
+`amigurumi-ball` **0.922**, `amigurumi-bear-bigear` **0.936** (STRUCT_MIN 0.45).
+
+Beside the round-7 hero the bear is a different toy. The head's flat top and
+straight sides are gone: the crown domes, the cheeks curve, and the silhouette
+from jaw to crown is a circle. The body is a rounded ball with a soft shoulder
+that runs into the neck instead of a drum with a shelf on top. It reads as a
+stuffed toy rather than three tins stacked up. The `ball` swatch render is
+identical, as its unmoved hash says it must be.
+
+HONEST RESIDUALS, for the orchestrator's verdict:
+- **Pinholes at the head/body join and along the body's upper flank.** Same
+  cause as round 7's pole pinholes — 8% of stretch opens the stitches — but the
+  sphere profile puts the thinnest rounds where the neck is, so it shows at the
+  join now as well as at the poles.
+- **The proportions are still ours, not the reference's.** Beside the real bear
+  the remaining gap is pose and proportion, not shape: our torso is short and
+  wide with the arms out sideways and the legs splayed forward, against a slim
+  upright body with the arms down. That is placement and limb round counts, a
+  different job from this one.
+- **Stitch scale.** The real head carries perhaps 30 rounds of fine stitches;
+  ours carries 12 of worsted. Nothing here changes that.
+- **`amigurumi-ball` renders on a near-polar camera** (`tiltDeg: 20`), which
+  hides the h/w change almost completely — old and new look alike in that view
+  even though the piece went from h/w 0.66 to 0.96. The bear is where the
+  profile shows.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing
@@ -2376,6 +2506,24 @@ HONEST RESIDUALS, for the orchestrator's verdict:
   round head is a COUNT change (a full sphere profile, like the `ball` swatch's
   own derived counts, which measure 9.6° and h/w 0.97 on the same relaxer), not
   another pressure value.
+- **Capping the sphere's increase at +5 a round so every round keeps meridian
+  for height** (round 8, 2026-09-06) → the arithmetic is right (a +6 round grows
+  its radius 0.955 of a stitch pitch against a round pitch of 0.933, so it has
+  nothing left for z, and +5 leaves about half the step) and it is what a naive
+  reading of §8f-9 suggests. Measured, it buys almost nothing and costs
+  smoothness: eq-24 h/w 0.89 → 0.90, but the worst crease anywhere goes 19.1° →
+  23.9° and eq-36's 15.6° → 19.3°, because the ascent no longer matches the
+  latitudes it is sampling and the profile wobbles instead of climbing. The
+  oblateness lives in the FIRST two rounds off the magic ring, which are flat on
+  any profile; one extra equator round fixes it for free. Reverted — the ±6 cap
+  stays, and `extraPlateau` is the height knob.
+- **Giving the small parts (muzzle, neck, bear ear) a sphere profile too**
+  (round 8, 2026-09-06) → measured worse on both counts that matter. Crease
+  21.8° (`ballRounds(12,2)`) → 23.1° (`sphereRounds(12,1)`), because a 5–6-round
+  piece has one increase round and nothing to dome with, and h/w 0.75 → 1.05,
+  which turns a bear's ear into a bead. A piece has to be about nine rounds
+  before the sphere profile has anywhere to put the easing. They stay on
+  `ballRounds`.
 - **Hand-drawn per-stitch centre-lines** (rib cord / bump / omega) → rope, food,
   waffle, pebble, quilt. No real loop topology.
 - **Per-stitch pieces joined by springs** → not real yarn; didn't scale.

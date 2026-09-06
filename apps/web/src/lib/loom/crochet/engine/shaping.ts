@@ -35,6 +35,7 @@ import {
   type StitchDims,
   ridgeDebugNodes,
 } from './yarnPath'
+import { sphereCountsFromGauge } from './sphereProfile'
 
 interface Crown {
   back: number
@@ -869,18 +870,16 @@ export function buildSphere(
   if (patternCounts) {
     for (const c of patternCounts) counts.push(c)
   } else {
-    const mMaxDerive = Math.PI * R - rr
-    let prev = 0
-    for (let m = rr + drift; m <= mMaxDerive - drift * 0.35; m += drift) {
-      const target = Math.max(4, Math.round((2 * Math.PI * Math.max(R * Math.sin(m / R), 1e-3)) / sw))
-      // The canonical ball recipe: 6 in the ring, then AT MOST ±6 per round
-      // toward the target. Profile-hugging counts put 7 incs in a 12-stitch
-      // round (shaping density no real pattern uses) and the crowded cap kept
-      // one pair-hook ambiguous; ±6 growth is both the craft standard and what
-      // the pole can physically fit.
-      prev = prev === 0 ? Math.min(6, target) : prev + Math.max(-6, Math.min(6, target - prev))
-      counts.push(prev)
-    }
+    // The canonical ball recipe: 6 in the ring, then AT MOST ±6 per round
+    // toward what the latitude's circumference wants. Profile-hugging counts
+    // put 7 incs in a 12-stitch round (shaping density no real pattern uses)
+    // and the crowded cap kept one pair-hook ambiguous; ±6 growth is both the
+    // craft standard and what the pole can physically fit.
+    //
+    // §8f-10: the arithmetic moved to `sphereProfile.ts` UNCHANGED, so the
+    // designer presets can write the same profile out as a PATTERN. This
+    // branch is bit-identical to the inline loop it replaces.
+    for (const c of sphereCountsFromGauge(eq, sw, drift, rr)) counts.push(c)
   }
   for (let k = 0; k < counts.length; k++) rounds.push(rr + drift * (k + 1))
   const prof = intrinsicProfile(counts, sw, rr, rowH * 1.05, yr)

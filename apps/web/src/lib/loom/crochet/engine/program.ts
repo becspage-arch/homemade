@@ -338,19 +338,34 @@ function describeOps(ops: ShapeOp[], uk: string): string {
   return runs.join(', ')
 }
 
+/**
+ * One round of a spiral, written the way a designer writes it: the shaped
+ * stitches spread evenly through the round, with any base stitches left over
+ * worked plain at the end.
+ *
+ * §8f-10: the old version assumed the round divided exactly — true of every ±6
+ * profile (12 → 18 is six groups of two), and silently WRONG for any other
+ * step. On the sphere profile a round can grow by 5, 4, 3, 2 or 1, and
+ * `12 → 17` was written as `[sc in next st, 2 sc in next st] 5 times`, which
+ * works 15 stitches and claims 17. The remainder tail is the fix; for an even
+ * round it emits nothing, so every existing pattern's text is unchanged.
+ */
 function describeRound(prev: number, cur: number, uk: string): string {
   if (cur === prev) return `${uk} in each st around`
-  if (cur > prev) {
-    const inc = cur - prev
-    if (inc === prev) return `2 ${uk} in each st around`
-    const per = Math.floor(prev / inc) - 1
-    return `[${uk} in next ${per === 1 ? 'st' : `${per} sts`}, 2 ${uk} in next st] ${inc} times`
-  }
-  const dec = prev - cur
-  const decName = uk === 'dc' ? 'dc2tog' : `${uk}2tog`
-  if (dec === cur) return `${decName} around`
-  const per = Math.floor(cur / dec) - 1
-  return `[${uk} in next ${per === 1 ? 'st' : `${per} sts`}, ${decName}] ${dec} times`
+  const grow = cur > prev
+  /** How many shaped stitches this round makes. */
+  const n = grow ? cur - prev : prev - cur
+  /** How many base stitches one of them consumes. */
+  const eat = grow ? 1 : 2
+  const shaped = grow ? `2 ${uk} in next st` : uk === 'dc' ? 'dc2tog' : `${uk}2tog`
+  if (n * eat === prev) return grow ? `2 ${uk} in each st around` : `${shaped} around`
+  const per = Math.floor((prev - n * eat) / n)
+  const rem = prev - n * (per + eat)
+  const plain = `${uk} in next ${per === 1 ? 'st' : `${per} sts`}`
+  const unit = per === 0 ? shaped : `${plain}, ${shaped}`
+  const tail = rem > 0 ? `, ${uk} in ${rem === 1 ? 'last st' : `last ${rem} sts`}` : ''
+  // A single shaped stitch is written out, not bracketed as a one-time repeat.
+  return n === 1 ? `${unit}${tail}` : `[${unit}] ${n} times${tail}`
 }
 
 /** Describe a mixed-stitch grid row in UK terms. A short repeating unit becomes
