@@ -39,6 +39,7 @@ export function summaryLine(
     propRejects?: number
     collisionRejects?: number
     plannerMode?: string
+    dressedBriefs?: number
   },
 ): string {
   // How much of the batch the planner model actually wrote. A run that fell back
@@ -55,5 +56,12 @@ export function summaryLine(
   // differently, so a run that does not say which one it ran under cannot be
   // compared with the ones either side of it.
   const mode = s.plannerMode ? ` · ${s.plannerMode} planner` : ''
-  return `${s.craft}: ${s.published} gems published, ${s.culled} culled, ${s.duplicates} duplicates, ${s.skipped} skipped, ${s.repaired} repairs, ${s.generations} generations, ${s.errors} errors (of ${s.requested})${authored}${pale}${props}${clashes}${mode}`
+  // How many briefs actually re-dressed their pool subject rather than copying
+  // it out. All-verbatim means the constrained planner is choosing but not
+  // composing, which looks identical to a healthy run until you read the subjects.
+  const dressed =
+    s.plannerMode === 'constrained' && s.requested > 0 && s.dressedBriefs != null
+      ? ` · ${s.dressedBriefs} of ${s.requested} re-dressed`
+      : ''
+  return `${s.craft}: ${s.published} gems published, ${s.culled} culled, ${s.duplicates} duplicates, ${s.skipped} skipped, ${s.repaired} repairs, ${s.generations} generations, ${s.errors} errors (of ${s.requested})${authored}${pale}${props}${clashes}${mode}${dressed}`
 }

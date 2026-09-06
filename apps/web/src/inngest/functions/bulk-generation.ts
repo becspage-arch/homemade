@@ -19,6 +19,7 @@ import {
   planModelBriefs,
   finaliseBriefs,
   modelAuthoredCount,
+  dressedCount,
   remainingShelfSlots,
   rejectedSubjects,
   tallyRejects,
@@ -169,6 +170,7 @@ async function finaliseIfComplete(runId: string): Promise<{ finished: boolean; a
       id: true, craft: true, requested: true, published: true, culled: true, duplicates: true,
       skipped: true, repaired: true, generations: true, errors: true, finishedAt: true, alerted: true,
       modelBriefs: true, paleSkips: true, propRejects: true, collisionRejects: true,
+      dressedBriefs: true,
     },
   })
   if (!run || run.finishedAt) return { finished: false, alerted: false }
@@ -219,7 +221,7 @@ async function sweepStalledRuns(): Promise<number> {
     select: {
       id: true, craft: true, requested: true, published: true, culled: true, duplicates: true,
       skipped: true, repaired: true, generations: true, errors: true, updatedAt: true, modelBriefs: true,
-      paleSkips: true, propRejects: true, collisionRejects: true,
+      paleSkips: true, propRejects: true, collisionRejects: true, dressedBriefs: true,
     },
   })
   for (const run of stalled) {
@@ -363,6 +365,7 @@ export const bulkCrossStitchBatch = inngest.createFunction(
     const briefs = await step.run('plan-finalise', () => finaliseBriefs(modelBriefs, n, planCtx))
     if (!briefs.length) return { skipped: 'no briefs planned' }
     const authored = modelAuthoredCount(briefs)
+    const dressed = dressedCount(briefs)
     if (authored < briefs.length) {
       console.warn(`[bulk cross-stitch] only ${authored} of ${briefs.length} briefs were model-authored; the rest came from the pool`)
     }
@@ -377,6 +380,7 @@ export const bulkCrossStitchBatch = inngest.createFunction(
           modelBriefs: authored,
           propRejects,
           collisionRejects,
+          dressedBriefs: dressed,
           triggeredById,
         },
         select: { id: true },
@@ -391,7 +395,7 @@ export const bulkCrossStitchBatch = inngest.createFunction(
         data: { runId: run.id, brief, attempt: 1, tweak: {} as CandidateTweak },
       })),
     )
-    return { runId: run.id, dispatched: briefs.length, modelAuthored: authored, propRejects, collisionRejects, plannerMode: PLANNER_MODE }
+    return { runId: run.id, dispatched: briefs.length, modelAuthored: authored, propRejects, collisionRejects, dressed, plannerMode: PLANNER_MODE }
   },
 )
 

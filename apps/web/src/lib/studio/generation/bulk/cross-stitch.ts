@@ -302,6 +302,8 @@ export async function publishCrossStitchGem(
         source: brief.source,
         // Which planner wrote it: free invention, or a dressed pool subject.
         plannerMode: brief.plannerMode,
+        // Whether the pool subject was actually re-dressed or copied verbatim.
+        dressed: brief.dressed,
         w: brief.w,
         h: brief.h,
         colours: brief.colours,

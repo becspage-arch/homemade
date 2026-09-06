@@ -1,6 +1,6 @@
 import 'server-only'
 import { gateConfigured, visionGate, type GateResult } from '../vision-gate'
-import { planCrossStitchBriefs, planNeedleworkBriefs, PLANNER_MODE, type CrossStitchBrief } from './planner'
+import { planCrossStitchBriefs, planNeedleworkBriefs, dressedCount, PLANNER_MODE, type CrossStitchBrief } from './planner'
 import {
   generateCrossStitchCandidate,
   publishCrossStitchGem,
@@ -82,6 +82,8 @@ export interface BatchSummary {
   collisionRejects?: number
   /** Which planner wrote the briefs — free invention, or dressed pool subjects. */
   plannerMode?: string
+  /** Of the briefs planned, how many re-dressed their pool subject. */
+  dressedBriefs?: number
   errors: number
   /** Slugs of the gems that shipped. */
   gems: string[]
@@ -262,6 +264,7 @@ export async function runCrossStitchBatch(count: number, step: StepRunner = inli
   base.propRejects = plan.propRejects
   base.collisionRejects = plan.collisionRejects
   base.plannerMode = PLANNER_MODE
+  base.dressedBriefs = dressedCount(briefs)
   const keptSubjects: string[] = []
 
   for (const brief of briefs) {

@@ -3579,6 +3579,11 @@ model BulkRun {
   /// shelf and either heavy token overlap or the same head noun. The catalogue
   /// duplicate guard cannot see these: it compares against what is published.
   collisionRejects Int @default(0)
+  /// Of `requested` briefs, how many actually RE-DRESSED the pool subject they
+  /// chose rather than returning it word for word. Constrained mode only; batch 7
+  /// came back nine-tenths verbatim, which made the planner an expensive sampler
+  /// and looked exactly like a healthy run from the counters alone.
+  dressedBriefs Int    @default(0)
   gemSlugs    String[] @default([])
   /// Short gate reasons behind culls — feeds the panel's "why did it dip" view.
   killReasons String[] @default([])

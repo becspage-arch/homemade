@@ -64,6 +64,7 @@ interface RunRow {
   paleSkips: number
   propRejects: number
   collisionRejects: number
+  dressedBriefs: number
   errors: number
   killReasons: string[]
   startedAt: Date
@@ -97,7 +98,10 @@ function runLine(r: RunRow): string {
   // The brief post-filter's work, before a single Flux call was paid for.
   const props = r.propRejects > 0 ? ` · ${r.propRejects} briefs rejected for props` : ''
   const clashes = r.collisionRejects > 0 ? ` · ${r.collisionRejects} rejected as within-batch repeats` : ''
-  return `[${tag}] ${r.craft}: ${r.published} published, ${r.culled} culled, ${r.duplicates} duplicates, ${r.skipped} skipped, ${r.repaired} repairs, ${r.generations} gens (${r.proGenerations} Pro), ${r.errors} errors (of ${r.requested})${authored}${pale}${props}${clashes}${inflight}${stalled}${killNote}`
+  // All-verbatim reads as a healthy run from every other counter, so it is stated.
+  const dressed =
+    r.craft === 'cross-stitch' && r.requested > 0 ? ` · ${r.dressedBriefs}/${r.requested} re-dressed` : ''
+  return `[${tag}] ${r.craft}: ${r.published} published, ${r.culled} culled, ${r.duplicates} duplicates, ${r.skipped} skipped, ${r.repaired} repairs, ${r.generations} gens (${r.proGenerations} Pro), ${r.errors} errors (of ${r.requested})${authored}${pale}${props}${clashes}${dressed}${inflight}${stalled}${killNote}`
 }
 
 /** A run still open long after its counters stopped moving. */
@@ -264,7 +268,7 @@ export default async function AdminBulkGenerationPage() {
         id: true, craft: true, trigger: true, requested: true, published: true,
         culled: true, duplicates: true, skipped: true, repaired: true, generations: true,
         proGenerations: true, modelBriefs: true, paleSkips: true, propRejects: true,
-        collisionRejects: true, errors: true, killReasons: true,
+        collisionRejects: true, dressedBriefs: true, errors: true, killReasons: true,
         startedAt: true, updatedAt: true,
         finishedAt: true, skipReason: true,
       },
