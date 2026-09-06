@@ -267,7 +267,13 @@ export function estimateSkeinCount(
   if (!entry) return 0
 
   const fullCrossCount = data.grid.cells.filter((c) => c.s === symbol).length
-  const backstitchCount = data.grid.backstitch.filter((b) => b.s === symbol).length
+  // Back-stitch is measured in CELLS OF LINE, not in segments: a segment is one
+  // unbroken run and may be twenty cells long, so counting segments would have a
+  // chart's outline cost the same thread whether it went once round a motif or
+  // twenty times round it.
+  const backstitchCells = data.grid.backstitch
+    .filter((b) => b.s === symbol)
+    .reduce((a, b) => a + Math.hypot(b.x2 - b.x1, b.y2 - b.y1), 0)
   const frenchKnotCount = data.grid.frenchKnots.filter((k) => k.s === symbol).length
 
   // 14-count Aida baseline: ~180 full-cross stitches with 2 strands per skein.
@@ -277,9 +283,11 @@ export function estimateSkeinCount(
   const strandFactor = entry.strandsFullCross / 2
   const stitchesPerSkein = 180 * fabricFactor / strandFactor
 
-  // Back-stitch + French knots in same colour add roughly 0.25× equivalent
-  // stitches each. Cheap approximation; the safety margin absorbs the rest.
-  const equivalentStitches = fullCrossCount + backstitchCount * 0.25 + frenchKnotCount * 0.25
+  // One cell of back-stitch is about a quarter of a full cross in thread (one
+  // straight run at one strand against two crossed diagonals at two), and a
+  // French knot about the same. Cheap approximations; the safety margin absorbs
+  // the rest.
+  const equivalentStitches = fullCrossCount + backstitchCells * 0.25 + frenchKnotCount * 0.25
 
   const raw = equivalentStitches / stitchesPerSkein
   const padded = raw * (1 + safetyMargin)

@@ -50,6 +50,19 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
         totalStitches++
         if (stitched.has(cellKey(cell.x, cell.y))) stitchedCount++
       }
+      // Cells of back-stitch line and knots in this colour. An outline floss can
+      // carry no full crosses at all, and a row reading "0 st" beside a skein
+      // estimate looks like a mistake rather than the colour you buy for the
+      // line work.
+      let lineCells = 0
+      for (const seg of pattern.grid.backstitch) {
+        if (seg.s !== entry.symbol) continue
+        lineCells += Math.hypot(seg.x2 - seg.x1, seg.y2 - seg.y1)
+      }
+      let knots = 0
+      for (const knot of pattern.grid.frenchKnots) {
+        if (knot.s === entry.symbol) knots++
+      }
       const skein = estimateSkeinCount(pattern, entry.symbol)
       return {
         entry,
@@ -57,6 +70,8 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
         totalStitches,
         stitchedCount,
         remaining: totalStitches - stitchedCount,
+        lineCells: Math.round(lineCells),
+        knots,
         skein,
       }
     })
@@ -116,7 +131,7 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
         </header>
 
         <ul className="studio-flosskey-list">
-          {rows.map(({ entry, totalStitches, stitchedCount, remaining, skein }) => {
+          {rows.map(({ entry, totalStitches, stitchedCount, remaining, lineCells, knots, skein }) => {
             const isIsolated = entry.symbol === isolate
             return (
               <li
@@ -142,7 +157,11 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
                     <span className="studio-flosskey-code">{entry.brand} {entry.code}</span>
                   </span>
                   <span className="studio-flosskey-counts">
-                    <span className="studio-flosskey-total">{totalStitches.toLocaleString()} st</span>
+                    <span className="studio-flosskey-total">
+                      {totalStitches.toLocaleString()} st
+                      {lineCells > 0 && ` · ${lineCells.toLocaleString()} back-stitch`}
+                      {knots > 0 && ` · ${knots} knot${knots === 1 ? '' : 's'}`}
+                    </span>
                     {stitchedCount > 0 && (
                       <span className="studio-flosskey-progress">{stitchedCount} done · {remaining} left</span>
                     )}

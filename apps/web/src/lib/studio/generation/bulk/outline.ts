@@ -37,7 +37,7 @@
  * script and the tests all call the same functions.
  */
 
-import type { PatternData, PaletteEntry, BackstitchSegment } from '@homemade/db'
+import { computeStitchabilityMetrics, type PatternData, type PaletteEntry, type BackstitchSegment } from '@homemade/db'
 import { rgbToLab } from '@/lib/floss/equivalence-table'
 import { nearestFloss } from '@/lib/floss/nearest-floss'
 import { shiftColour } from '@/components/studio/chart/render-helpers'
@@ -88,6 +88,19 @@ const NO_OUTLINE_STYLES: ReadonlySet<string> = new Set(['showpiece', 'landscape'
 
 /** Colour count at or below which a chart is line work already (Delft, blackwork). */
 export const MONOCHROME_COLOURS = 3
+
+/**
+ * Confetti share above which a chart gets no internal outlines.
+ *
+ * A speckled chart has no edges to draw. `dandelion-close-up` is the case that
+ * set this: a quarter of its stitches are isolated singles, its colour regions
+ * are seed filaments one cell wide, and a full outline came back as 1,042
+ * segments of line laid over what is already a drawing made of lines. The
+ * silhouette of such a chart is no better: the seed head is one blob with a
+ * fractal boundary, so the "outline" comes back as two thousand cells of line
+ * round the filaments. A speckled chart gets nothing.
+ */
+export const MAX_CONFETTI_FOR_FULL = 0.12
 
 /** Up to this many colours, a single-hue or greyscale scheme still counts as line work. */
 const NARROW_SCHEME_COLOURS = 8
@@ -168,6 +181,17 @@ export function outlineModeFor(data: PatternData, ctx: OutlineContext = {}): Out
   }
 
   if (SILHOUETTE_STYLES.has(style)) return { mode: 'silhouette', reason: `${style} — soft lane` }
+
+  // Speckle beats the brief: a chart made of single stitches has no edges to
+  // draw whatever lane it came from.
+  const confetti = computeStitchabilityMetrics(data).confettiShare
+  if (confetti > MAX_CONFETTI_FOR_FULL) {
+    return {
+      mode: 'none',
+      reason: `speckled chart — ${(confetti * 100).toFixed(0)}% single stitches, nothing to outline`,
+    }
+  }
+
   if (FULL_OUTLINE_STYLES.has(style)) return { mode: 'full', reason: `${style} — bold flat lane` }
 
   // No brief on record: most of the old catalogue. Judge on the chart. A modest
@@ -195,6 +219,25 @@ export const MIN_REGION_CELLS = 10
 
 /** Chains shorter than this many cells of line are specks, not outlines. */
 export const MIN_CHAIN_LENGTH = 4
+
+/**
+ * The smoothness floor — mean length of one straight piece of a line, in cells.
+ *
+ * This is the measure that separates a DRAWN edge from a PHOTOGRAPHIC one, and
+ * it is the thing the first proof run needed most. A drawn illustration's colour
+ * regions meet along runs and clean 45-degree steps, so a traced line comes back
+ * as a handful of long pieces. A painterly one — a lavender field receding to a
+ * hill, a dandelion clock, the soft edge of a fairy's wing — meets along a
+ * boundary that jitters one cell at a time, and comes back as dozens of unit
+ * stubs. Stitching that is not an outline; it is a scribble that fights the
+ * design, and on the proof sheets it was instantly the worst thing on the page.
+ *
+ * Internal boundaries are held to the higher bar because they are optional; the
+ * silhouette, which is what lifts a motif off the cloth, is allowed to be a
+ * little more ragged.
+ */
+export const MIN_MEAN_PIECE_INTERNAL = 2.2
+export const MIN_MEAN_PIECE_SILHOUETTE = 1.6
 
 /**
  * Longest single line the tracer will hand back, in cells.
@@ -250,6 +293,9 @@ export interface DeriveBackstitchOptions {
   minChainLength?: number
   /** Longest single traced line, in cells. See `MAX_CHAIN_LENGTH`. */
   maxChainLength?: number
+  /** Smoothness floors — mean piece length. See `MIN_MEAN_PIECE_INTERNAL`. */
+  minMeanPieceInternal?: number
+  minMeanPieceSilhouette?: number
   /** Cells of line per root stitch. See `outlineLengthCap`. */
   lengthPerRootStitch?: number
   maxInks?: number
@@ -571,7 +617,28 @@ function simplify(nodes: [number, number][]): Piece[] {
       i++
     }
   }
-  return out
+
+  // 3. One more collinear merge, now that the staircases are diagonals: a long
+  // smooth 45-degree edge should be ONE line, not eight little ones. This is
+  // also what makes a line's mean piece length a usable measure of how smooth
+  // the boundary is — see the smoothness floor in `deriveBackstitch`.
+  const merged: Piece[] = []
+  for (const p of out) {
+    const last = merged[merged.length - 1]
+    if (last && last.x2 === p.x1 && last.y2 === p.y1) {
+      const dx1 = last.x2 - last.x1
+      const dy1 = last.y2 - last.y1
+      const dx2 = p.x2 - p.x1
+      const dy2 = p.y2 - p.y1
+      // Same direction (cross product zero, dot product positive).
+      if (dx1 * dy2 - dy1 * dx2 === 0 && dx1 * dx2 + dy1 * dy2 > 0) {
+        merged[merged.length - 1] = { x1: last.x1, y1: last.y1, x2: p.x2, y2: p.y2 }
+        continue
+      }
+    }
+    merged.push(p)
+  }
+  return merged
 }
 
 // ───────────────────────────────────────────────────────────────────────────
@@ -728,10 +795,13 @@ export function deriveBackstitch(
       const i = y * width + x
       const me = symOf(i)
 
-      // The vertical boundary on this cell's right-hand side.
+      // The vertical boundary on this cell's right-hand side. The grid's own
+      // edge is NOT a boundary: a full-coverage chart is stitched to the edge of
+      // the cloth on purpose, and drawing round the rectangle would frame the
+      // picture in back-stitch rather than outline anything in it.
       const rx = x + 1
       const right = rx < width ? symOf(i + 1) : undefined
-      if (me !== right || rx === width) {
+      if (rx < width && me !== right) {
         const edgeA = node(rx, y)
         const edgeB = node(rx, y + 1)
         if (me === undefined || right === undefined) {
@@ -754,10 +824,11 @@ export function deriveBackstitch(
         }
       }
 
-      // The horizontal boundary along this cell's bottom.
+      // The horizontal boundary along this cell's bottom. Same rule: the grid's
+      // own edge is not a boundary.
       const by = y + 1
       const below = by < height ? symOf(i + width) : undefined
-      if (me !== below || by === height) {
+      if (by < height && me !== below) {
         const edgeA = node(x, by)
         const edgeB = node(x + 1, by)
         if (me === undefined || below === undefined) {
@@ -784,8 +855,12 @@ export function deriveBackstitch(
 
   if (edges.length === 0) return unchanged('nothing to outline')
 
+  const smoothFloor = (c: Chain): number =>
+    c.silhouette
+      ? (opts.minMeanPieceSilhouette ?? MIN_MEAN_PIECE_SILHOUETTE)
+      : (opts.minMeanPieceInternal ?? MIN_MEAN_PIECE_INTERNAL)
   const chains = traceChains(edges, width, opts.maxChainLength ?? MAX_CHAIN_LENGTH).filter(
-    (c) => c.length >= minChain,
+    (c) => c.length >= minChain && c.length / c.pieces.length >= smoothFloor(c),
   )
   if (chains.length === 0) return unchanged('no line long enough to be worth stitching')
 

@@ -123,7 +123,7 @@ function toRow(p: {
   thumbnailMediaId: string | null
   outlineApplied: unknown
   subCategory: { slug: string } | null
-  thumbnail: { r2Key: string } | null
+  thumbnail: { r2Key: string | null } | null
 }): Row | null {
   let data: PatternData
   try {

@@ -180,6 +180,42 @@ record('full: a small blob of shading inside a region is not outlined', () => {
   assert.equal(inside.length, 0, 'the four-cell blob was outlined')
 })
 
+record('the grid edge is never mistaken for a silhouette', () => {
+  // Full coverage: every cell stitched, two colours meeting down the middle.
+  const rows: string[] = []
+  for (let y = 0; y < 20; y++) rows.push('X'.repeat(10) + 'O'.repeat(10))
+  const out = deriveBackstitch(chart(rows, [RED, BLUE, DARK]), { mode: 'full' })
+  for (const s of out.data.grid.backstitch) {
+    const onEdge =
+      (s.x1 === 0 && s.x2 === 0) ||
+      (s.x1 === 20 && s.x2 === 20) ||
+      (s.y1 === 0 && s.y2 === 0) ||
+      (s.y1 === 20 && s.y2 === 20)
+    assert.ok(!onEdge, 'the chart was framed in back-stitch instead of outlined')
+  }
+  assert.ok(out.segments > 0, 'the join down the middle is still stitched')
+})
+
+record('a boundary that jitters cell by cell is not stitched at all', () => {
+  // The painterly case: two colours meeting along an edge that wanders one cell
+  // at a time. There is no line there to work, and drawing one is a scribble.
+  const rows: string[] = []
+  const wobble = [0, 1, -1, 2, 0, 1, -1, 0, 2, -1, 1, 0, -1, 2, 1, -1, 0, 1, -1, 2]
+  for (let y = 0; y < 20; y++) {
+    const cut = 10 + (wobble[y] ?? 0)
+    rows.push('X'.repeat(cut) + 'O'.repeat(20 - cut))
+  }
+  const out = deriveBackstitch(chart(rows, [RED, BLUE, DARK]), { mode: 'full' })
+  assert.equal(out.segments, 0, 'a jittering boundary was outlined')
+})
+
+record('a straight boundary in the same chart IS stitched', () => {
+  const rows: string[] = []
+  for (let y = 0; y < 20; y++) rows.push('X'.repeat(10) + 'O'.repeat(10))
+  const out = deriveBackstitch(chart(rows, [RED, BLUE, DARK]), { mode: 'full' })
+  assert.ok(out.segments > 0)
+})
+
 // ─── Diagonals ─────────────────────────────────────────────────────────────
 
 record('a staircase boundary is stitched as diagonals, not brickwork', () => {
@@ -198,10 +234,13 @@ record('a staircase boundary is stitched as diagonals, not brickwork', () => {
   const diagonals = out.data.grid.backstitch.filter(
     (s) => s.x1 !== s.x2 && s.y1 !== s.y2,
   )
-  assert.ok(diagonals.length >= 3, `expected diagonals along the hypotenuse, got ${diagonals.length}`)
+  assert.ok(diagonals.length >= 1, 'the hypotenuse is stitched as diagonals')
   for (const d of diagonals) {
     assert.equal(Math.abs(d.x2 - d.x1), Math.abs(d.y2 - d.y1), 'a diagonal runs at 45 degrees')
   }
+  // ...and the whole staircase comes back as ONE line, not eight little ones.
+  const longest = Math.max(...diagonals.map((d) => Math.abs(d.x2 - d.x1)))
+  assert.ok(longest >= 3, `the diagonals were not merged — longest run ${longest}`)
 })
 
 // ─── The cap ───────────────────────────────────────────────────────────────
