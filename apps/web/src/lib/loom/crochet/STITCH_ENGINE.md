@@ -2293,13 +2293,11 @@ moment it reaches a terminal outcome, so the admin card fills up while the batch
 runs. The last idea to finish closes the row with its summary line. A run whose
 counters stop moving for six hours is swept closed, for every craft.
 
-The one thing that does NOT work on the server yet: crochet's photoreal finish
-(`photorealHero`) shells out to `npx tsx scripts/loom-aspen-hero.ts`, and the
-deployed image is a compiled Next.js bundle with no scripts directory. It now
-detects that and ships the deterministic base render, which IS the exact pattern
-and is fidelity-perfect by construction — but a server-published crochet hero is
-the base, not the Fal finish, until that upscale is made importable. Needlework
-is unaffected: its finish calls `falCreativeUpscale` in process.
+Crochet's photoreal finish (`photorealHero`) now calls `finishHero` from
+`scripts/loom-aspen-hero.ts` in process (a dynamic import, same shape as the
+Inngest functions' `loom()` helpers) instead of shelling out to `npx tsx` —
+so it runs the Fal upscale + fidelity gate on the deployed server exactly as
+it does on a worker box, matching needlework's `falCreativeUpscale`.
 
 ### Running a batch
 

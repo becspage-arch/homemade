@@ -31,7 +31,6 @@
 
 import { resolve, isAbsolute } from 'node:path'
 import { existsSync, mkdirSync, writeFileSync, readFileSync } from 'node:fs'
-import { spawnSync } from 'node:child_process'
 
 import {
   writeInstructions,
@@ -51,7 +50,7 @@ import { getChartSymbol } from '../src/lib/craft-charts/chart-symbols'
 import { loadCredentials } from './loom-hybrid-fal'
 import { renderBase, loomRenderMode, startBaseRender, pollBaseRender, finishBaseRender } from './loom-base-render'
 import type { FargateRenderHandle, FargatePollResult } from './loom-fargate-render'
-import { fidelityGate, STRUCT_MIN_DEFAULT } from './loom-fidelity-gate'
+import { STRUCT_MIN_DEFAULT } from './loom-fidelity-gate'
 import { PATTERN_PROOFS } from './loom-pattern-proofs'
 import { COMPOSITION_PROOFS } from './loom-composition-proofs'
 
@@ -158,10 +157,23 @@ export async function renderSceneBase(
   return { scenePath, basePng }
 }
 
+/** Type-only import of the aspen-hero finish: erased at compile, so the Fal
+ *  call and its prompt tables never enter the request bundle. The value comes
+ *  in through the dynamic import in `photorealHero` below. */
+type AspenHeroModule = typeof import('./loom-aspen-hero')
+
+async function aspenHero(): Promise<AspenHeroModule> {
+  return import('./loom-aspen-hero')
+}
+
 /**
  * The photoreal FINISH: Fal creative-upscale, then our own fidelity gate so a
  * drifted hero is REJECTED and the exact base render stands as the deliverable
  * (the hero is a promise the customer gets exactly this). No FAL_KEY → base only.
+ *
+ * In process (dynamic import) rather than a shell-out, so it runs the same way
+ * on a worker box and inside the deployed server's Inngest jobs — neither of
+ * which can rely on the other having `scripts/` + `tsx` on disk.
  */
 export async function photorealHero(
   basePng: string,
@@ -169,23 +181,14 @@ export async function photorealHero(
   heroPromptKey = 'sc',
 ): Promise<{ heroPng: string | null; fidelityScore: number | null }> {
   if (!hero || !process.env.FAL_KEY) return { heroPng: null, fidelityScore: null }
-  // The finish shells out to a sibling tsx script, so it only exists where the
-  // repo does. The deployed server runs a compiled Next.js bundle with no
-  // scripts directory and no tsx, and asking npx to fetch one would spend half
-  // a minute to fail. Say so once and ship the deterministic base, which IS the
-  // exact pattern and is fidelity-perfect by construction.
-  const aspen = resolve(process.cwd(), 'scripts/loom-aspen-hero.ts')
-  if (!existsSync(aspen)) {
-    console.warn('[loom] photoreal finish unavailable here (no scripts/loom-aspen-hero.ts) — shipping the deterministic base render')
+  const { finishHero } = await aspenHero()
+  try {
+    const result = await finishHero({ basePng, stitch: heroPromptKey, creativity: 0.55, resemblance: 0.82 })
+    return { heroPng: result.fidelity.pass ? result.heroPng : null, fidelityScore: result.fidelity.structureScore }
+  } catch (e) {
+    console.warn(`[loom] photoreal finish failed (${e instanceof Error ? e.message : String(e)}) — shipping the deterministic base render`)
     return { heroPng: null, fidelityScore: null }
   }
-  const heroOut = basePng.replace(/\.png$/, '-hero.png')
-  const h = spawnSync('npx', ['tsx', 'scripts/loom-aspen-hero.ts', basePng, '0.55', '0.82', heroPromptKey], {
-    stdio: ['ignore', 'inherit', 'inherit'], shell: true,
-  })
-  if (h.status !== 0 || !existsSync(heroOut)) return { heroPng: null, fidelityScore: null }
-  const verdict = await fidelityGate(basePng, heroOut)
-  return { heroPng: verdict.pass ? heroOut : null, fidelityScore: verdict.structureScore }
 }
 
 /**
