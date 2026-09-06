@@ -14,7 +14,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { Undo2, Redo2, MoreHorizontal, Check, Loader2, Grid2X2, X as XIcon, Type, Sparkles } from 'lucide-react'
+import { Undo2, Redo2, MoreHorizontal, Check, Loader2, Grid2X2, X as XIcon, Type, Sparkles, Pin } from 'lucide-react'
 import { useChartStore, type RenderStyle } from '../chart/chart-store'
 
 interface StudioToolbarProps {
@@ -121,6 +121,7 @@ export function StudioToolbar({
       </div>
 
       <div className="studio-toolbar-right">
+        <ParkingToggle />
         <RenderStyleToggle />
         {canEdit && (
           <div className="studio-toolbar-history">
@@ -210,6 +211,28 @@ function SaveIndicator({ state, signedIn }: { state: 'idle' | 'saving' | 'saved'
     )
   }
   return <span className="studio-save-indicator subtle">Saved</span>
+}
+
+/**
+ * Parking toggle. Parking is a way of working a chart rather than a tool
+ * that edits it, so it lives in the toolbar beside the render style and
+ * stays available on library patterns the Maker cannot edit.
+ */
+function ParkingToggle() {
+  const enabled = useChartStore((s) => s.parkingEnabled)
+  const setEnabled = useChartStore((s) => s.setParkingEnabled)
+  return (
+    <button
+      type="button"
+      className={['studio-parking-toggle', enabled ? 'is-active' : ''].join(' ')}
+      aria-pressed={enabled}
+      onClick={() => setEnabled(!enabled)}
+      title="Parking: work a line at a time and leave each colour parked where it comes up next (P)"
+    >
+      <Pin size={15} strokeWidth={1.8} />
+      <span>Parking</span>
+    </button>
+  )
 }
 
 /**

@@ -29,7 +29,9 @@ import {
   type WheelEvent as ReactWheelEvent,
 } from 'react'
 import { cellKey, type PatternData } from '@homemade/db/pattern'
+import { lineBounds } from '@/lib/studio/parking'
 import { useChartStore, type ChartMode } from './chart-store'
+import { readStoredViewport, writeStoredViewport } from './viewport-memory'
 import {
   buildBucketCrossPath,
   buildBucketHighlightPath,
@@ -48,9 +50,19 @@ import {
  *  marks, large enough that a drag scrolls the pattern. */
 const PAN_THRESHOLD_PX = 4
 
+/** How long the view has to sit still before it is worth remembering. */
+const VIEW_MEMORY_DEBOUNCE_MS = 400
+
 interface ChartViewportProps {
   pattern: PatternData
   mode: ChartMode
+  /**
+   * Pattern this canvas is showing. When given, where the Maker had the
+   * chart panned and zoomed to is remembered on this device and restored
+   * next time they open it. Left out by transient previews, which should
+   * always open at the fitted view.
+   */
+  patternId?: string | null
   /** Mark-stitched cells if persisted externally; defaults to store state. */
   initialStitched?: Set<string>
   /** Called when the user opens the floss-key isolate (right-click cell → isolate). */
@@ -78,6 +90,7 @@ interface ChartViewportProps {
 export function ChartViewport({
   pattern,
   mode,
+  patternId = null,
   initialStitched,
   onRequestIsolate,
   onPickColour,
@@ -97,6 +110,7 @@ export function ChartViewport({
   // state imperatively via `useChartStore.getState()` so they neither
   // resubscribe nor stale-close.
   const setPattern = useChartStore((s) => s.setPattern)
+  const setViewport = useChartStore((s) => s.setViewport)
   const setMode = useChartStore((s) => s.setMode)
   const setContainerSize = useChartStore((s) => s.setContainerSize)
   const setStitchedCells = useChartStore((s) => s.setStitchedCells)
@@ -123,6 +137,11 @@ export function ChartViewport({
   const selection = useChartStore((s) => s.selection)
   const tool = useChartStore((s) => s.tool)
   const renderStyle = useChartStore((s) => s.renderStyle)
+  const parkingEnabled = useChartStore((s) => s.parkingEnabled)
+  const parkingDirection = useChartStore((s) => s.parkingDirection)
+  const parkingLine = useChartStore((s) => s.parkingLine)
+  const parkedCells = useChartStore((s) => s.parkedCells)
+  const setParkingEnabled = useChartStore((s) => s.setParkingEnabled)
 
   // ───── one-time pattern install + container measure
   useEffect(() => {
@@ -133,6 +152,40 @@ export function ChartViewport({
   useEffect(() => {
     setMode(mode)
   }, [mode, setMode])
+
+  // ───── view memory
+  //
+  // Where the chart was panned and zoomed to belongs to the screen it was
+  // looked at on, not to the project, so it lives on the device. Restored
+  // once the container has a real size (before that there is nothing
+  // sensible to restore into), and saved on a short settle so a pinch does
+  // not write on every frame.
+  const containerWidth = useChartStore((s) => s.containerWidth)
+  const containerHeight = useChartStore((s) => s.containerHeight)
+  const restoredFor = useRef<string | null>(null)
+  useEffect(() => {
+    if (!patternId || restoredFor.current === patternId) return
+    if (containerWidth <= 0 || containerHeight <= 0) return
+    restoredFor.current = patternId
+    const stored = readStoredViewport(patternId)
+    if (stored) setViewport(stored)
+  }, [patternId, containerWidth, containerHeight, setViewport])
+
+  useEffect(() => {
+    if (!patternId) return
+    let timer: ReturnType<typeof setTimeout> | null = null
+    const unsub = useChartStore.subscribe((state, prev) => {
+      if (state.viewport === prev.viewport) return
+      if (timer) clearTimeout(timer)
+      timer = setTimeout(() => {
+        writeStoredViewport(patternId, useChartStore.getState().viewport)
+      }, VIEW_MEMORY_DEBOUNCE_MS)
+    })
+    return () => {
+      unsub()
+      if (timer) clearTimeout(timer)
+    }
+  }, [patternId])
 
   useLayoutEffect(() => {
     const el = containerRef.current
@@ -171,6 +224,18 @@ export function ChartViewport({
         redo()
         return
       }
+      if (e.key === 'p' && !e.metaKey && !e.ctrlKey) {
+        const s = useChartStore.getState()
+        setParkingEnabled(!s.parkingEnabled)
+        return
+      }
+      if ((e.key === '[' || e.key === ']') && !e.metaKey && !e.ctrlKey) {
+        const s = useChartStore.getState()
+        if (s.parkingEnabled) {
+          s.stepParkingLine(e.key === ']' ? 1 : -1)
+          return
+        }
+      }
       if (e.key === 'b' && !e.metaKey && !e.ctrlKey) setTool('brush')
       else if (e.key === 'e' && !e.metaKey && !e.ctrlKey) setTool('erase')
       else if (e.key === 'm' && !e.metaKey && !e.ctrlKey) setTool('mark-stitched')
@@ -202,9 +267,9 @@ export function ChartViewport({
       window.removeEventListener('keydown', onKeyDown)
       window.removeEventListener('keyup', onKeyUp)
     }
-  }, [applyZoom, fitViewportToScreen, undo, redo, setTool, setIsolate, setSelection])
+  }, [applyZoom, fitViewportToScreen, undo, redo, setTool, setIsolate, setSelection, setParkingEnabled])
 
-  // ───── pointer interaction (pan / paint / mark)
+  // ───── pointer interaction (pan / paint / mark / pinch)
   const dragRef = useRef<
     | null
     | {
@@ -217,8 +282,32 @@ export function ChartViewport({
         markValue?: boolean
         startCellX?: number
         startCellY?: number
+        /** The square a mark-stitched press toggled on pointer-down, so a
+         *  second finger arriving can put it back. */
+        markedOnDown?: { x: number; y: number; value: boolean }
       }
   >(null)
+
+  /**
+   * Every pointer currently down on the canvas. A touchscreen has no wheel
+   * and no modifier keys, so the two-finger gesture is the only zoom it can
+   * make on its own; the container sets `touch-action: none`, which means
+   * the browser hands us the raw pointers and expects us to do the work.
+   */
+  const pointersRef = useRef(new Map<number, { x: number; y: number }>())
+  const pinchRef = useRef<null | { distance: number; midX: number; midY: number }>(null)
+
+  /** Midpoint and separation of the two active pointers. */
+  const readPinch = useCallback(() => {
+    const pts = [...pointersRef.current.values()]
+    if (pts.length < 2) return null
+    const [a, b] = pts as [{ x: number; y: number }, { x: number; y: number }]
+    return {
+      distance: Math.max(1, Math.hypot(b.x - a.x, b.y - a.y)),
+      midX: (a.x + b.x) / 2,
+      midY: (a.y + b.y) / 2,
+    }
+  }, [])
 
   const onPointerDown = useCallback(
     (e: ReactPointerEvent<SVGSVGElement>) => {
@@ -227,6 +316,23 @@ export function ChartViewport({
       const rect = svgRef.current!.getBoundingClientRect()
       const lx = e.clientX - rect.left
       const ly = e.clientY - rect.top
+      pointersRef.current.set(e.pointerId, { x: lx, y: ly })
+
+      // A second finger turns the gesture into a pinch. Anything the first
+      // finger started is abandoned, and a square the mark-stitched tool
+      // toggled on the way down is put back, so reaching in to zoom never
+      // costs the Maker a stitch they did not make.
+      if (pointersRef.current.size >= 2) {
+        const drag = dragRef.current
+        if (drag?.markedOnDown) {
+          const { x, y, value } = drag.markedOnDown
+          markStitchedBatch([{ x, y }], !value)
+        }
+        dragRef.current = null
+        pinchRef.current = readPinch()
+        return
+      }
+
       const base = { lastX: lx, lastY: ly, downX: lx, downY: ly }
       if (spacePanning || e.button === 1 || !interactive) {
         dragRef.current = { mode: 'pan', ...base, touched: new Set() }
@@ -243,7 +349,13 @@ export function ChartViewport({
         const k = cellKey(cell.x, cell.y)
         const currently = s.stitchedCells.has(k)
         toggleStitched(cell.x, cell.y)
-        dragRef.current = { mode: 'mark', ...base, touched: new Set([k]), markValue: !currently }
+        dragRef.current = {
+          mode: 'mark',
+          ...base,
+          touched: new Set([k]),
+          markValue: !currently,
+          markedOnDown: { x: cell.x, y: cell.y, value: !currently },
+        }
         return
       }
       // Default view interaction: a tap toggles the cell stitched, a drag
@@ -284,14 +396,49 @@ export function ChartViewport({
       }
       dragRef.current = { mode: 'pan', ...base, touched: new Set() }
     },
-    [spacePanning, interactive, mode, pattern, paintCell, eraseCell, toggleStitched, setSelection, setCurrentSymbol, onPickColour],
+    [
+      spacePanning,
+      interactive,
+      mode,
+      pattern,
+      paintCell,
+      eraseCell,
+      toggleStitched,
+      markStitchedBatch,
+      setSelection,
+      setCurrentSymbol,
+      onPickColour,
+      readPinch,
+    ],
   )
 
   const onPointerMove = useCallback(
     (e: ReactPointerEvent<SVGSVGElement>) => {
+      const rect = svgRef.current!.getBoundingClientRect()
+      if (pointersRef.current.has(e.pointerId)) {
+        pointersRef.current.set(e.pointerId, { x: e.clientX - rect.left, y: e.clientY - rect.top })
+      }
+
+      // Pinch: the separation drives the zoom and the midpoint drives the
+      // pan, so two fingers zoom and scroll the chart in one movement. The
+      // zoom is anchored on the midpoint and clamped by the same limits the
+      // wheel uses, so a phone cannot reach a zoom a desktop cannot.
+      if (pointersRef.current.size >= 2) {
+        const now = readPinch()
+        const prev = pinchRef.current
+        if (now && prev) {
+          const delta = now.distance / prev.distance
+          if (delta !== 1) applyZoom(delta, now.midX, now.midY)
+          const panDx = now.midX - prev.midX
+          const panDy = now.midY - prev.midY
+          if (panDx !== 0 || panDy !== 0) applyPan(panDx, panDy)
+        }
+        pinchRef.current = now
+        return
+      }
+
       const drag = dragRef.current
       if (!drag) return
-      const rect = svgRef.current!.getBoundingClientRect()
       const lx = e.clientX - rect.left
       const ly = e.clientY - rect.top
       const dx = lx - drag.lastX
@@ -339,12 +486,21 @@ export function ChartViewport({
         })
       }
     },
-    [pattern, paintCell, eraseCell, markStitchedBatch, applyPan, setSelection],
+    [pattern, paintCell, eraseCell, markStitchedBatch, applyPan, applyZoom, setSelection, readPinch],
   )
 
   const onPointerUp = useCallback(
     (e: ReactPointerEvent<SVGSVGElement>) => {
       svgRef.current?.releasePointerCapture(e.pointerId)
+      const wasPinching = pointersRef.current.size >= 2
+      pointersRef.current.delete(e.pointerId)
+      // Lifting one finger out of a pinch must not turn the other into a
+      // tap or a pan: the gesture ends when the last finger leaves.
+      if (wasPinching) {
+        pinchRef.current = pointersRef.current.size >= 2 ? readPinch() : null
+        dragRef.current = null
+        return
+      }
       const drag = dragRef.current
       // A view-mode press that never crossed the pan threshold is a tap:
       // toggle the cell stitched.
@@ -358,7 +514,7 @@ export function ChartViewport({
       }
       dragRef.current = null
     },
-    [toggleStitched],
+    [toggleStitched, readPinch],
   )
 
   const onWheel = useCallback(
@@ -411,6 +567,28 @@ export function ChartViewport({
     }
     return buckets
   }, [cellBuckets, paletteIndex, isolate, stitchedSet, displayMode, useLowZoom, cellPx])
+
+  // Parking layers. Both are derived, not stored: the parked squares come
+  // from the chart store's index (progress plus the working order) and the
+  // band is pure geometry off the current line.
+  const parkMarkers = useMemo(() => {
+    if (!parkingEnabled) return []
+    const out: Array<{ symbol: string; rgb: string; x: number; y: number }> = []
+    for (const [symbol, cell] of parkedCells) {
+      // Isolating a colour hides the rest of the chart, so its park markers
+      // go with it. The parked positions themselves are untouched.
+      if (isolate && symbol !== isolate) continue
+      const entry = paletteIndex.bySymbol.get(symbol)
+      if (!entry) continue
+      out.push({ symbol, rgb: entry.rgb, x: cell.x, y: cell.y })
+    }
+    return out
+  }, [parkingEnabled, parkedCells, isolate, paletteIndex])
+
+  const parkingBand = useMemo(() => {
+    if (!parkingEnabled) return null
+    return lineBounds(parkingLine, parkingDirection, pattern.grid.width, pattern.grid.height)
+  }, [parkingEnabled, parkingLine, parkingDirection, pattern.grid.width, pattern.grid.height])
 
   // Render the centre crosshairs as a + that crosses the whole grid.
   const gridW = pattern.grid.width
@@ -625,6 +803,23 @@ export function ChartViewport({
               )
             })}
 
+          {/* Parking band — the row, column or block being worked now. Sits
+              over the stitches so the stitcher can find their place at a
+              glance, light enough to read the colours straight through. */}
+          {parkingBand && (
+            <g className="chart-parking-band" pointerEvents="none">
+              <rect
+                x={parkingBand.x0 * cellPx}
+                y={parkingBand.y0 * cellPx}
+                width={(parkingBand.x1 - parkingBand.x0 + 1) * cellPx}
+                height={(parkingBand.y1 - parkingBand.y0 + 1) * cellPx}
+                fill="rgba(196, 133, 107, 0.14)"
+                stroke="#a86547"
+                strokeWidth={2.5 / viewport.scale}
+              />
+            </g>
+          )}
+
           {/* Grid — faint at low zoom, sharper around the 10-cell rules. */}
           {layers.grid && scaledCellPx >= 4 && (
             <g className="chart-grid" stroke="#3d2f22" fill="none" pointerEvents="none">
@@ -709,6 +904,18 @@ export function ChartViewport({
               </g>
             ))}
 
+          {/* Park markers — a needle in the floss colour sitting in the next
+              square that colour appears in, one per unfinished colour.
+              Drawn last so a needle is never half-hidden behind the symbol
+              overlay: while parking, the needle is the thing being read. */}
+          {parkMarkers.length > 0 && (
+            <g className="chart-park-markers" pointerEvents="none">
+              {parkMarkers.map(({ symbol, rgb, x, y }) => (
+                <ParkMarker key={`park-${symbol}`} x={x} y={y} rgb={rgb} cellPx={cellPx} compact={scaledCellPx < 16} />
+              ))}
+            </g>
+          )}
+
           {/* Selection rectangle. */}
           {selection && (
             <rect
@@ -737,4 +944,65 @@ function filterByDisplayMode(
   if (mode === 'all') return cells
   if (mode === 'stitched') return cells.filter(({ x, y }) => stitched.has(cellKey(x, y)))
   return cells.filter(({ x, y }) => !stitched.has(cellKey(x, y)))
+}
+
+/**
+ * One parked needle. Drawn inside the cell box in the floss colour with a
+ * dark casing so it stays readable on a pale thread, and collapsed to a
+ * ringed dot once the cell is too small on screen to draw a needle into.
+ */
+function ParkMarker({
+  x,
+  y,
+  rgb,
+  cellPx,
+  compact,
+}: {
+  x: number
+  y: number
+  rgb: string
+  cellPx: number
+  compact: boolean
+}) {
+  const c = cellPx
+  const cx = x * c + c / 2
+  const cy = y * c + c / 2
+  if (compact) {
+    return (
+      <g>
+        <circle cx={cx} cy={cy} r={c * 0.3} fill="#fffdf7" stroke="#2b2119" strokeWidth={c * 0.08} />
+        <circle cx={cx} cy={cy} r={c * 0.17} fill={rgb} />
+      </g>
+    )
+  }
+  // Needle laid bottom-left to top-right, eye at the top, a short thread
+  // tail curling away from it.
+  const x1 = x * c + c * 0.2
+  const y1 = y * c + c * 0.82
+  const x2 = x * c + c * 0.76
+  const y2 = y * c + c * 0.24
+  return (
+    <g>
+      <rect
+        x={x * c + c * 0.06}
+        y={y * c + c * 0.06}
+        width={c * 0.88}
+        height={c * 0.88}
+        rx={c * 0.14}
+        fill="rgba(255, 253, 247, 0.8)"
+        stroke="#a86547"
+        strokeWidth={c * 0.08}
+      />
+      <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="#2b2119" strokeWidth={c * 0.17} strokeLinecap="round" />
+      <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={rgb} strokeWidth={c * 0.09} strokeLinecap="round" />
+      <circle cx={x * c + c * 0.7} cy={y * c + c * 0.3} r={c * 0.09} fill="none" stroke="#2b2119" strokeWidth={c * 0.055} />
+      <path
+        d={`M${x * c + c * 0.7} ${y * c + c * 0.3} Q${x * c + c * 0.94} ${y * c + c * 0.36} ${x * c + c * 0.86} ${y * c + c * 0.56}`}
+        fill="none"
+        stroke={rgb}
+        strokeWidth={c * 0.07}
+        strokeLinecap="round"
+      />
+    </g>
+  )
 }

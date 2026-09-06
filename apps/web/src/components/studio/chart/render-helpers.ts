@@ -24,6 +24,27 @@ export const DEFAULT_CELL_PX = 32
 export const LOW_ZOOM_THRESHOLD = 6
 export const RENDER_PRECISION = 2
 
+/** Container width at or below which the chart is being worked on a phone.
+ *  Matches the Studio stylesheet's mobile breakpoint. */
+export const NARROW_CONTAINER_PX = 720
+
+/**
+ * The line under which fitting the whole chart stops being a useful first
+ * view. It is `LOW_ZOOM_THRESHOLD` on purpose: that is where the renderer
+ * gives up on symbols and collapses every square to a flat rect, so below
+ * it the chart has stopped reading as a chart and a square is far too
+ * small to tap. A 210-cell chart fitted on a 390px phone lands at under two
+ * pixels a square, which is what the mobile audit found.
+ */
+export const FIT_FLOOR_CELL_PX = LOW_ZOOM_THRESHOLD
+
+/**
+ * Where a phone starts instead: a cell size you can put a fingertip on,
+ * centred on the chart's middle (the crosshair) which is where a counted
+ * piece is started from.
+ */
+export const FIRST_VIEW_CELL_PX = 26
+
 /** Deterministic hash producing [0, 1) from (x, y, axis). Avoids the
  *  shimmer of Math.random() on re-render — stitches stay put. */
 function hash01(x: number, y: number, axis: number): number {
@@ -315,6 +336,52 @@ export function fitToScreen(
     panY: (containerHeight - renderedH) / 2,
     scale,
   }
+}
+
+/**
+ * The viewport that puts one cell centre at the middle of the container at
+ * a given zoom. Used by the first view on a phone (centred on the chart's
+ * middle) and by the floss key's jump-to-a-parked-square action.
+ */
+export function centreCellViewport(
+  cellX: number,
+  cellY: number,
+  scale: number,
+  containerWidth: number,
+  containerHeight: number,
+  cellPx: number = DEFAULT_CELL_PX,
+): Viewport {
+  return {
+    scale,
+    panX: containerWidth / 2 - (cellX + 0.5) * cellPx * scale,
+    panY: containerHeight / 2 - (cellY + 0.5) * cellPx * scale,
+  }
+}
+
+/**
+ * The view a chart should open at on this container. A chart that still
+ * reads as a chart when fitted simply fits, so the Maker sees the whole
+ * design. One that would land too small to read or tap, which is every
+ * showpiece chart on a phone, opens zoomed to a stitchable cell size over
+ * its centre instead, so the first tap lands on the square they meant.
+ */
+export function initialViewport(
+  pattern: PatternData,
+  containerWidth: number,
+  containerHeight: number,
+  cellPx: number = DEFAULT_CELL_PX,
+): Viewport {
+  const fit = fitToScreen(pattern, containerWidth, containerHeight, cellPx)
+  if (containerWidth > NARROW_CONTAINER_PX) return fit
+  if (fit.scale * cellPx >= FIT_FLOOR_CELL_PX) return fit
+  return centreCellViewport(
+    Math.floor(pattern.grid.width / 2),
+    Math.floor(pattern.grid.height / 2),
+    FIRST_VIEW_CELL_PX / cellPx,
+    containerWidth,
+    containerHeight,
+    cellPx,
+  )
 }
 
 /**

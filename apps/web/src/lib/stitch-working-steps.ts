@@ -237,6 +237,14 @@ export const STITCH_WORKING_STEPS: Record<string, string[]> = {
     'Pull through so a loop lies on the fabric.',
     'Take a small stitch over the tip of the loop to hold it down.',
   ],
+  'cross-stitch-parking': [
+    'Pick a working direction and stay with it. Rows from the top down is the usual one; columns and ten by ten blocks are the other two.',
+    'Thread up a needle for every colour the line you are on asks for. A dozen needles hanging off the fabric is normal.',
+    'Stitch the first colour everywhere it appears in that line.',
+    'When it runs out, look ahead in the working order for the next square that asks for it. Take the needle down into that square and leave it hanging there.',
+    'Pick up the next colour and do the same, until the line is finished.',
+    'Move on to the next line. Every needle you need is already sitting in the square it belongs to.',
+  ],
   'cross-stitch-satin-stitch': [
     'Bring the needle up at one edge of the shape.',
     'Take it down at the opposite edge, making one straight stitch.',

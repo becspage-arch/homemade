@@ -63,6 +63,10 @@ export default async function CrossStitchStudioPage({ searchParams }: PageProps)
 
   let pattern: { id: string; name: string; data: PatternData; ownerUserId: string | null } | null = null
   let stitchedKeys: string[] = []
+  // Parking preferences for this Maker on this pattern. Null when they have
+  // never opened it, in which case the Studio falls back to the local store
+  // (signed-out) or plain defaults.
+  let parking: { enabled: boolean; direction: string; line: number } | null = null
 
   if (sp.patternId) {
     const row = await prisma.pattern.findUnique({
@@ -112,10 +116,22 @@ export default async function CrossStitchStudioPage({ searchParams }: PageProps)
     if (pattern && user) {
       const prog = await prisma.userPatternProgress.findUnique({
         where: { userId_patternId: { userId: user.id, patternId: pattern.id } },
-        select: { stitchedCells: true },
+        select: {
+          stitchedCells: true,
+          parkingEnabled: true,
+          parkingDirection: true,
+          parkingLine: true,
+        },
       })
       if (prog?.stitchedCells && typeof prog.stitchedCells === 'object') {
         stitchedKeys = Object.keys(prog.stitchedCells as Record<string, true>)
+      }
+      if (prog) {
+        parking = {
+          enabled: prog.parkingEnabled,
+          direction: prog.parkingDirection,
+          line: prog.parkingLine,
+        }
       }
     }
   }
@@ -193,6 +209,7 @@ export default async function CrossStitchStudioPage({ searchParams }: PageProps)
       userName={user?.name ?? null}
       pattern={pattern}
       stitchedKeys={stitchedKeys}
+      parking={parking}
       myPatterns={myPatterns.map((p) => ({
         id: p.id,
         name: p.name,

@@ -60,9 +60,19 @@
 
 .studio-layout {
   display: grid;
+  /* minmax(0, 1fr) rather than a bare 1fr: a grid track sizes to its
+     widest item's min-content by default, so on a narrow phone the
+     toolbar's own controls were widening the whole Studio past the screen
+     and pushing the menus off the right-hand edge. */
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: 52px 1fr 42px;
   height: 100%;
   width: 100%;
+}
+
+.studio-toolbar,
+.studio-status-bar {
+  min-width: 0;
 }
 
 .studio-canvas {
@@ -601,6 +611,236 @@
 .studio-flosskey-progress { color: var(--studio-accent-strong); }
 .studio-flosskey-skein { color: var(--studio-ink-mute); }
 
+/* ===== Parking =========================================================== */
+
+/* Toolbar toggle. Reads as a mode, not a tool: it sits with the render
+   style rather than in the edit-only dock, because parking is a way of
+   working a chart and library patterns need it too. */
+.studio-parking-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 11px;
+  border: none;
+  border-radius: 999px;
+  background: var(--studio-surface-2);
+  color: var(--studio-ink-soft);
+  font-family: var(--studio-font-body);
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: background 140ms var(--studio-easing-out), color 140ms var(--studio-easing-out);
+}
+.studio-parking-toggle:hover { color: var(--studio-ink); background: var(--studio-surface-3); }
+.studio-parking-toggle.is-active {
+  background: var(--studio-accent);
+  color: #fffdf7;
+}
+
+/* The bar itself — floats over the top of the canvas so switching parking
+   on never shifts the chart under the stitcher's hands. */
+.studio-parking {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100% - 28px);
+}
+
+.studio-parking-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 8px 6px 14px;
+  background: rgba(255, 251, 241, 0.95);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-radius: 999px;
+  box-shadow: var(--studio-shadow-pop);
+  flex-wrap: nowrap;
+  justify-content: center;
+  min-width: 0;
+}
+
+.studio-parking-label {
+  font-family: var(--studio-font-display);
+  font-size: 13px;
+  color: var(--studio-ink);
+  letter-spacing: 0.01em;
+}
+
+.studio-parking-directions {
+  display: inline-flex;
+  align-items: center;
+  background: var(--studio-surface-2);
+  border-radius: 999px;
+  padding: 2px;
+  gap: 1px;
+}
+.studio-parking-pill {
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-family: var(--studio-font-body);
+  font-size: 11.5px;
+  color: var(--studio-ink-soft);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 140ms var(--studio-easing-out), color 140ms var(--studio-easing-out);
+}
+.studio-parking-pill-narrow { display: none; }
+.studio-parking-pill:hover { color: var(--studio-ink); }
+.studio-parking-pill.is-active { background: var(--studio-ink); color: var(--studio-bg); }
+
+.studio-parking-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.studio-parking-line-label {
+  font-family: var(--studio-font-mono);
+  font-size: 11.5px;
+  color: var(--studio-ink);
+  letter-spacing: 0.03em;
+  min-width: 108px;
+  text-align: center;
+  white-space: nowrap;
+}
+.studio-parking-line-total { color: var(--studio-ink-mute); }
+
+.studio-parking-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  max-width: 240px;
+  padding: 4px 12px 4px 10px;
+  border: none;
+  border-radius: 999px;
+  background: var(--studio-surface-2);
+  color: var(--studio-ink);
+  font-family: var(--studio-font-body);
+  font-size: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 140ms var(--studio-easing-out);
+}
+.studio-parking-next:hover { background: var(--studio-surface-3); }
+.studio-parking-next.is-done {
+  cursor: default;
+  color: var(--studio-ink-mute);
+}
+.studio-parking-next-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--studio-ink-mute);
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.studio-parking-next-swatch { flex: 0 0 auto; }
+.studio-parking-next-swatch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px rgba(60, 47, 34, 0.18);
+  font-family: var(--studio-font-mono);
+  font-size: 10px;
+  color: #1a1410;
+}
+.studio-parking-next-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.studio-parking-actions { display: inline-flex; align-items: center; gap: 2px; }
+
+.studio-parking-help {
+  max-width: 520px;
+  padding: 12px 16px;
+  background: rgba(255, 251, 241, 0.97);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-radius: var(--studio-radius-m);
+  box-shadow: var(--studio-shadow-pop);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--studio-ink-soft);
+}
+.studio-parking-help p { margin: 0; }
+.studio-parking-help-links { margin-top: 8px !important; }
+.studio-parking-help-links a {
+  color: var(--studio-accent-strong);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(168, 101, 71, 0.3);
+}
+.studio-parking-help-links a:hover { border-bottom-color: var(--studio-accent-strong); }
+
+/* Parked position on each floss-key row. */
+.studio-flosskey-park {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px 8px 46px;
+  flex-wrap: wrap;
+}
+.studio-flosskey-park-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  background: var(--studio-surface-2);
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-family: var(--studio-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  color: var(--studio-accent-strong);
+  cursor: pointer;
+  transition: background 140ms var(--studio-easing-out);
+}
+.studio-flosskey-park-jump:hover { background: var(--studio-surface-3); }
+.studio-flosskey-park-done {
+  font-family: var(--studio-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  color: var(--studio-ink-mute);
+}
+.studio-flosskey-park-nextup {
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #fffdf7;
+  background: var(--studio-accent);
+  border-radius: 999px;
+  padding: 2px 7px;
+}
+.studio-flosskey-row.is-next-up {
+  background: rgba(196, 133, 107, 0.09);
+  border-radius: var(--studio-radius-m);
+}
+
+/* Keyboard focus has to be obvious on every parking control: the whole
+   point of the bar is that it can be driven without letting go of a hoop. */
+.studio-parking-toggle:focus-visible,
+.studio-parking-pill:focus-visible,
+.studio-parking-next:focus-visible,
+.studio-flosskey-park-jump:focus-visible {
+  outline: 2px solid var(--studio-accent-strong);
+  outline-offset: 2px;
+}
+
 /* ===== Tool dock ========================================================= */
 
 .studio-tool-dock {
@@ -1096,8 +1336,22 @@
   .studio-layout {
     grid-template-rows: 48px 1fr 56px;
   }
-  .studio-toolbar { padding: 0 12px; }
-  .studio-title-button { font-size: 14px; max-width: 180px; }
+  /* On a phone the toolbar has to hold the whole right-hand group: parking,
+     chart style, undo/redo and the menus. The controls tighten and the
+     title gives way to an ellipsis rather than pushing anything off the
+     edge where it cannot be reached at all. */
+  .studio-toolbar { padding: 0 10px; }
+  .studio-toolbar-left { flex: 1 1 auto; min-width: 0; gap: 6px; }
+  .studio-toolbar-right { flex: 0 0 auto; gap: 4px; }
+  .studio-title-button {
+    font-size: 14px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .studio-toolbar-right .studio-icon-button { width: 28px; height: 28px; }
+  .studio-render-style-button { width: 26px; height: 24px; }
   .studio-save-indicator { display: none; }
 
   .studio-panel-tab { display: none; }
@@ -1125,13 +1379,60 @@
     pointer-events: none;
   }
 
-  .studio-status-mobile-actions { display: inline-flex; gap: 4px; }
+  /* On a phone the bar stops being a centred pill and becomes a card
+     across the top of the canvas, wrapping to two rows. Nothing runs off
+     the edge, and every control stays a full-size tap target. */
+  .studio-parking {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    transform: none;
+    max-width: none;
+    align-items: stretch;
+  }
+  .studio-parking-bar {
+    gap: 6px;
+    row-gap: 6px;
+    padding: 6px 8px;
+    border-radius: var(--studio-radius-l);
+    flex-wrap: wrap;
+  }
+  .studio-parking-label { display: none; }
+  .studio-parking-pill-wide { display: none; }
+  .studio-parking-pill-narrow { display: inline; }
+  .studio-parking-next { max-width: none; flex: 1 1 140px; }
+  .studio-parking-line { flex: 1 1 auto; justify-content: center; }
+  .studio-parking-line-label { min-width: 0; }
+  .studio-parking-help { max-width: none; }
+  .studio-parking-toggle span { display: none; }
+  .studio-parking-toggle { padding: 0 8px; }
+
+  /* On a phone the bar carries five controls, so the dimensions line
+     stands down and the progress bar gives up its minimum width. The same
+     numbers are one tap away on the pattern page. */
+  .studio-status-bar { gap: 8px; padding: 0 8px; }
+  .studio-status-meta { display: none; }
+  .studio-status-progress { min-width: 0; }
+  .studio-status-stitch-count { padding: 0 8px; font-size: 11px; }
+
+  .studio-status-mobile-actions { display: inline-flex; align-items: center; gap: 3px; flex: 0 0 auto; }
+  .studio-status-fab-divider {
+    width: 1px;
+    height: 20px;
+    margin: 0 3px;
+    background: var(--studio-line-strong);
+  }
+  .studio-status-fab:focus-visible {
+    outline: 2px solid var(--studio-accent-strong);
+    outline-offset: 2px;
+  }
   .studio-status-fab {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 34px;
     height: 34px;
+    flex: 0 0 auto;
     border-radius: 50%;
     background: var(--studio-surface-2);
     color: var(--studio-ink);

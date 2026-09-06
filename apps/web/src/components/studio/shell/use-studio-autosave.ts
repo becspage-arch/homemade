@@ -14,6 +14,11 @@
  * The shorter edit debounce keeps the undo stack from racing ahead of
  * the server view; the longer progress debounce keeps the network quiet
  * when someone fast-clicks through 50 cells in 10 seconds.
+ *
+ * Parking preferences (mode, working direction, current line) ride the
+ * progress save. They change on the same beat as progress and belong to
+ * the same per-project record, so folding them in keeps one write where
+ * two would otherwise race each other.
  */
 
 import { useEffect, useRef } from 'react'
@@ -81,24 +86,33 @@ export function useStudioAutosave({ patternId, ownerUserId, signedIn, onForked }
         }, EDIT_DEBOUNCE_MS)
       }
 
-      // Mark-stitched moved?
-      if (state.progressDirty && !prev.progressDirty) {
+      // Mark-stitched moved, or a parking preference changed?
+      const progressMoved = state.progressDirty && !prev.progressDirty
+      const parkingMoved = state.parkingDirty && !prev.parkingDirty
+      if (progressMoved || parkingMoved) {
         if (progressTimer.current) clearTimeout(progressTimer.current)
         progressTimer.current = setTimeout(async () => {
           const s = useChartStore.getState()
           const obj: Record<string, true> = {}
           for (const k of s.stitchedCells) obj[k] = true
+          const parking = {
+            enabled: s.parkingEnabled,
+            direction: s.parkingDirection,
+            line: s.parkingLine,
+          }
           if (signedIn && ownerUserId) {
             await fetch(`/api/studio/patterns/${patternId}/progress`, {
               method: 'PATCH',
               headers: { 'content-type': 'application/json' },
-              body: JSON.stringify({ stitchedCells: obj }),
+              body: JSON.stringify({ stitchedCells: obj, parking }),
             })
             useChartStore.getState().clearProgressDirty()
+            useChartStore.getState().clearParkingDirty()
             return
           }
-          await putLocalProgress(patternId, obj)
+          await putLocalProgress(patternId, obj, parking)
           useChartStore.getState().clearProgressDirty()
+          useChartStore.getState().clearParkingDirty()
         }, PROGRESS_DEBOUNCE_MS)
       }
     })
