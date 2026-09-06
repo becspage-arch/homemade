@@ -3,8 +3,10 @@
  * entitlement check the whole app shares. The split:
  *   - the project queue (add / order / status) is a FREE signed-in carrot,
  *     like saving and progress sync, so those routes only require sign-in;
- *   - the planner view, materials roll-up, stash, and PDF export are premium,
- *     so they call this first.
+ *   - keeping a stash is also free, so the pattern page and the library card
+ *     can count a chart's palette against what the maker owns;
+ *   - the planner view, the cross-project materials roll-up, and the PDF
+ *     export are premium, so they call this first.
  *
  * This gates directly on the user's entitlement; it deliberately does NOT go
  * through the studio feature-flag wrapper, so the planner is premium the moment

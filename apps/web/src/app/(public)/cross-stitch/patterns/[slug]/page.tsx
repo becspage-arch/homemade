@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Check } from 'lucide-react'
 import { headers } from 'next/headers'
 import { after } from 'next/server'
 import { notFound } from 'next/navigation'
@@ -20,7 +21,13 @@ import { PremiumBadge } from '@/components/premium'
 import { PatternSaveButton } from '@/components/public/pattern-save-button'
 import { PatternPlanButton } from '@/components/public/pattern-plan-button'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
+import {
+  computeFlossOwnership,
+  FLOSS_BRAND_LABEL,
+  type FlossOwnership,
+} from '@/lib/floss/stash-ownership'
 import { FabricCalculator } from './fabric-calculator'
+import { FlossShoppingList } from './floss-shopping-list'
 import { PdfDownload } from './pdf-download'
 import './pattern-detail.css'
 
@@ -93,7 +100,12 @@ export default async function PatternDetailPage({ params }: PageProps) {
   const finishedW = (row.widthCells / row.fabricCountSuggested) * 2.54
   const finishedH = (row.heightCells / row.fabricCountSuggested) * 2.54
 
-  const totalSkein = data.palette.reduce((sum, p) => sum + estimateSkeinCount(data, p.symbol), 0)
+  // Per-colour skein estimates, worked out once. The total in the spec table,
+  // the ownership maths, and the floss list all read the same numbers.
+  const skeinBySymbol = new Map(
+    data.palette.map((p) => [p.symbol, estimateSkeinCount(data, p.symbol)] as const),
+  )
+  const totalSkein = [...skeinBySymbol.values()].reduce((sum, n) => sum + n, 0)
 
   // How the chart feels under the needle. Computed off the grid at save time
   // and stored on the row; older rows the backfill hasn't reached simply show
@@ -160,7 +172,7 @@ export default async function PatternDetailPage({ params }: PageProps) {
   const content = { premium: row.premium, designer: row.designer }
   const premiumContent = isPremiumContent(content)
   const canAccess = canAccessPremiumContent(user, content)
-  const [saved, inPlan] = user
+  const [saved, inPlan, stashRows] = user
     ? await Promise.all([
         prisma.savedPattern
           .findUnique({
@@ -180,8 +192,34 @@ export default async function PatternDetailPage({ params }: PageProps) {
             select: { id: true },
           })
           .then(Boolean),
+        // The maker's floss stash. Free for anyone signed in: it is what lets
+        // this page tick the colours already in the drawer and show the short
+        // list of what is left to buy.
+        prisma.plannerStashItem.findMany({
+          where: { userId: user.id, craft: 'CROSS_STITCH', archivedAt: null },
+          select: { brand: true, code: true, quantityOwned: true },
+        }),
       ])
-    : [false, false]
+    : [false, false, []]
+
+  const ownership: FlossOwnership | null =
+    stashRows.length > 0
+      ? computeFlossOwnership(
+          data.palette.map((p) => ({
+            symbol: p.symbol,
+            brand: p.brand,
+            code: p.code,
+            name: p.name,
+            rgb: p.rgb,
+            skeinsNeeded: skeinBySymbol.get(p.symbol) ?? 0,
+          })),
+          stashRows,
+        )
+      : null
+  const ownedSymbols = new Set(
+    ownership ? ownership.lines.filter((l) => l.owned).map((l) => l.symbol) : [],
+  )
+  const convertedBrands = ownership?.convertedFromBrands ?? []
 
   return (
     <article className="pattern-detail">
@@ -326,16 +364,47 @@ export default async function PatternDetailPage({ params }: PageProps) {
       </aside>
 
       <section className="pattern-detail-floss">
-        <h2>Floss colours</h2>
+        <div className="pattern-detail-floss-head">
+          <h2>Floss colours</h2>
+          {ownership && (
+            <p className="pattern-detail-floss-owned">
+              {ownership.ownedColours === 0
+                ? `None of the ${ownership.totalColours} colours are in your stash yet.`
+                : ownership.ownedColours === ownership.totalColours
+                  ? `You already own all ${ownership.totalColours} colours.`
+                  : `You already own ${ownership.ownedColours} of the ${ownership.totalColours} colours.`}
+            </p>
+          )}
+        </div>
+
+        {/* Brand-aware: a stash kept in Anchor still counts against a DMC
+            chart, and the page says so rather than quietly claiming a match. */}
+        {convertedBrands.length > 0 && (
+          <p className="pattern-detail-floss-converted">
+            Some colours were matched to your{' '}
+            {convertedBrands.map((b) => FLOSS_BRAND_LABEL[b]).join(' and ')} skeins through the
+            published conversion charts.
+          </p>
+        )}
+
         <ul>
           {data.palette.map((p) => {
             const stitches = data.grid.cells.filter((c) => c.s === p.symbol).length
-            const skein = estimateSkeinCount(data, p.symbol)
+            const skein = skeinBySymbol.get(p.symbol) ?? 0
+            const owned = ownedSymbols.has(p.symbol)
             return (
-              <li key={p.symbol}>
+              <li key={p.symbol} className={owned ? 'is-owned' : undefined}>
                 <span className="pattern-detail-floss-swatch" style={{ background: p.rgb }} />
                 <span className="pattern-detail-floss-detail">
-                  <span className="pattern-detail-floss-name">{p.name}</span>
+                  <span className="pattern-detail-floss-name">
+                    {owned && (
+                      <span className="pattern-detail-floss-tick">
+                        <Check size={13} strokeWidth={2.4} aria-hidden="true" />
+                        <span className="visually-hidden">In your stash</span>
+                      </span>
+                    )}
+                    {p.name}
+                  </span>
                   <span className="pattern-detail-floss-code">{p.brand} {p.code}</span>
                 </span>
                 <span className="pattern-detail-floss-counts">
@@ -345,6 +414,40 @@ export default async function PatternDetailPage({ params }: PageProps) {
             )
           })}
         </ul>
+
+        {ownership && ownership.toBuy.length > 0 && (
+          <FlossShoppingList
+            patternId={row.id}
+            patternName={row.name}
+            initialInPlan={inPlan}
+            lines={ownership.toBuy.map((line) => ({
+              brand: line.brand,
+              code: line.code,
+              name: line.name,
+              rgb: line.rgb,
+              skeins: line.skeinsToBuy,
+            }))}
+          />
+        )}
+
+        {/* One quiet line for anyone without a stash yet. No popup, no gate:
+            keeping a stash is free with an account. */}
+        {!ownership && (
+          <p className="pattern-detail-floss-invite">
+            {user ? (
+              <>
+                Keep a <Link href="/me/floss-stash">floss stash</Link> and this list ticks the
+                colours you already own, then tells you what is left to buy.
+              </>
+            ) : (
+              <>
+                <Link href="/sign-in?redirect_url=/me/floss-stash">Keep a floss stash</Link> and
+                this list ticks the colours you already own, then tells you what is left to buy.
+                It is free with an account.
+              </>
+            )}
+          </p>
+        )}
       </section>
 
       {row.designer && row.designer.bio && (

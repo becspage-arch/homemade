@@ -381,3 +381,12 @@
     order: 3;
   }
 }
+
+/* The stash is free even when the roll-up is not, so the upgrade block points
+   at it rather than leaving a non-premium maker with nothing to do here. */
+.planner-stash-free {
+  font-size: 0.85rem;
+  color: var(--color-warm-taupe);
+  margin: 1rem 0 0;
+  max-width: 34rem;
+}

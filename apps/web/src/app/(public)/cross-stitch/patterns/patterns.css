@@ -321,6 +321,11 @@
   font-size: 11px;
   color: var(--color-warm-taupe);
 }
+/* Owned-colour count, for a signed-in maker with a floss stash. Sits in the
+   card meta line so it reads as one more fact about the chart. */
+.cross-stitch-library-card-owned {
+  color: #5d7959;
+}
 .cross-stitch-library-card-actions {
   display: flex;
   gap: 8px;

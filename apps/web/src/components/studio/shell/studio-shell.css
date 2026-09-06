@@ -573,6 +573,15 @@
   gap: 1px;
   min-width: 0;
 }
+/* Ticked when the colour is already in the maker's floss stash. */
+.studio-flosskey-owned {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 5px;
+  color: #7d957d;
+  vertical-align: -2px;
+}
+
 .studio-flosskey-name {
   font-size: 13px;
   color: var(--studio-ink);

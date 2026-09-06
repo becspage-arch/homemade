@@ -37,6 +37,11 @@ interface PatternCard {
   thumbnailUrl: string
   /** Whether the signed-in reader has this pattern on their Make it list. */
   saved: boolean
+  /**
+   * How many of this chart's colours are already in the reader's floss stash.
+   * Null for a signed-out reader, an empty stash, or a craft without floss.
+   */
+  ownedColours: { owned: number; total: number } | null
 }
 
 interface PatternLibraryGridProps {
@@ -403,6 +408,11 @@ function PatternCardItem({ pattern }: { pattern: PatternCard }) {
         <ul className="cross-stitch-library-card-meta">
           <li>{pattern.widthCells} × {pattern.heightCells}</li>
           <li>{pattern.colourCount} colours</li>
+          {pattern.ownedColours && (
+            <li className="cross-stitch-library-card-owned">
+              {pattern.ownedColours.owned} of {pattern.ownedColours.total} owned
+            </li>
+          )}
           {pattern.stitchability != null && STITCHABILITY_BANDS[pattern.stitchability] && (
             <li>{STITCHABILITY_BANDS[pattern.stitchability]!.label}</li>
           )}
