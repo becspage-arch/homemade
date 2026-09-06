@@ -9,9 +9,9 @@ Rules for this file: only items still to do; remove a line the moment it is done
 4. Go-live gates: completeness, vision sweep, tagging coverage, search reindex, category page and descriptions; then add 'crochet' to LAUNCH_VISIBLE_CATEGORY_SLUGS on a train. Rebecca's sign-off moment.
 
 ## Cross-stitch: to sign-off, in order (6 September 2026)
-1. Needlework converted to candidates mode (same shape as cross-stitch; its cron has no autopilot row and skips today).
+1. Needlework: its own audit first (Rebecca is writing the prompt; do not start before it), then the candidates-mode conversion in the same shape as cross-stitch. Its cron has no autopilot row and skips today, so it spends nothing.
 2. Loom photoreal heroes for cross-stitch (needs the crochet session's loom builder; coordinate before starting).
-3. Then in order: 200+ colour / 400+ cell tier and under-60-cell tier (proof first), readings wired to the glossary, upload-tutorial.ts hero-clearing defect, seed-stitches.ts drift, the Studio tracker ticking back-stitch and knots done.
+3. In flight on branches (6 September evening): 200+ colour / 400+ cell tier and under-60-cell tier (claude/xs-tiers), readings wired to the glossary with the upload-tutorial.ts hero-clearing fix (claude/xs-readings), the Studio tracker ticking back-stitch, knots and fractionals done (claude/xs-tracker). Still to do after them: seed-stitches.ts drift.
 4. Fill to 1,818 under the $50–60 image budget (cron on in candidates mode since 6 September 12:32 UTC; the six-hourly judging routine keeps or rejects; the orchestrator merges the routine's pool branches); close-out gates; learnings line in the playbook; Rebecca's sign-off.
 
 ## Parked to save credits
@@ -20,7 +20,6 @@ Rules for this file: only items still to do; remove a line the moment it is done
 - Shorter bear arms (round count), ball coil at macro.
 - Tapestry lane: the illustration must fill the frame; the routine skips that shelf until fixed.
 - Knitting: see project_knitting_state.md.
-- Needlework audit and its candidates-mode conversion (cross-stitch session, after the cross-stitch cron is back on).
 - Cross-craft from the world-best audit: yarn/floss database, follow-along offline mode, accessibility, one-way contributions (maker photos, reviews, errata pages, feature suggestions, AI-screened), animated stitch diagrams, public errata.
 
 ## Notes housekeeping (raised by the 6 September notes audit)
