@@ -8,6 +8,7 @@ import {
   ensureHouseDesigner,
   checkCrochetPatternCompleteness,
   abbreviationsIn,
+  CROCHET_TOY_SHELVES,
   type CrochetCompletenessResult,
 } from '@homemade/db'
 import { anthropicConfigured, anthropicJson, PLANNER_MODEL } from '@/lib/anthropic'
@@ -888,7 +889,7 @@ export async function buildPatternRow(
     notions = ['Tapestry needle for weaving in the ends', 'Stitch markers']
     if (piece.form === 'sphere') notions.push('Toy stuffing')
     if (Object.keys(palette).length > 1) notions.push('A yarn bobbin for each colour')
-    if (CROCHET_TOY_SHELF.has(brief.shelf)) {
+    if (CROCHET_TOY_SHELVES.has(brief.shelf)) {
       safetyNotes = 'Sew every seam closed and check them before giving the finished toy to a small child.'
     }
   }
@@ -946,8 +947,6 @@ export async function buildPatternRow(
     yardageBySize: { default: estimateYardage(candidate.totalStitches, candidate.yr) },
   }
 }
-
-const CROCHET_TOY_SHELF = new Set(['amigurumi', 'doll', 'animal-toy', 'baby-toy-lovey'])
 
 /** Rough metres of yarn: a stitch eats about four yarn diameters of length. */
 export function estimateYardage(totalStitches: number, yr: number): number {
