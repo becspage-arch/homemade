@@ -166,11 +166,15 @@ and a catalogue filled by invention ends up carrying subjects nobody
 searched for. The entry's `treatment` and `colourway` are chosen for the
 shelf — keep them unless the envelope makes them impossible.
 
-**Invent only when a shelf's queue is `dry`.** `backlog.byShelf` marks
-it, and the `context` stage prints `QUEUE DRY` for that shelf. Then, and
-only then, compose a brief from the axes the way the old planner did. Say
-in the hand-off which shelves you had to invent for — a shelf running dry
-is the signal that the backlog wants topping up, which is a separate job.
+**Never invent a brief.** (Rebecca, 6 September 2026: nothing is made
+ahead of the engine or ahead of the backlog.) If a shelf's queue is `dry`
+(`backlog.byShelf` marks it and the `context` stage prints `QUEUE DRY`),
+give that shelf's slots to the next shelf in the quota that still has
+ideas, and say so in the hand-off. A dry shelf is the signal that the
+backlog wants topping up, which is a separate job for the orchestrator.
+An entry whose subject the loom cannot honestly make (an amigurumi that is
+not a bear, bunny, ball or egg while those are the only bases) is never
+offered to you; if one slips through, skip it and say so.
 
 Write `$RUN/briefs.json` as an array, one object per brief. Carry
 `backlogId` on every brief that came off the queue, so the run records
