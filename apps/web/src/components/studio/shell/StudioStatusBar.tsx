@@ -3,10 +3,16 @@
 /**
  * StudioStatusBar — the thin slab across the bottom of the Studio. Three
  * jobs: surface progress + dimensions at a glance, host the mobile-only
- * panel triggers, and stay out of the way the rest of the time.
+ * controls, and stay out of the way the rest of the time.
+ *
+ * The mobile controls carry zoom as well as the two panel triggers. A
+ * phone has no wheel and no keyboard, so without them the only way to
+ * change the zoom is the pinch, and a Maker holding a hoop in one hand has
+ * one thumb free. Every one of them is a real button, so they answer to a
+ * keyboard and to a screen reader as well as to a thumb.
  */
 
-import { Palette, ListChecks } from 'lucide-react'
+import { Palette, ListChecks, Plus, Minus, Maximize2 } from 'lucide-react'
 import type { PatternData } from '@homemade/db/pattern'
 import { useChartStore } from '../chart/chart-store'
 
@@ -18,6 +24,8 @@ interface StudioStatusBarProps {
 
 export function StudioStatusBar({ pattern, onOpenPalette, onOpenFlossKey }: StudioStatusBarProps) {
   const stitched = useChartStore((s) => s.stitchedCells)
+  const zoomAtCentre = useChartStore((s) => s.zoomAtCentre)
+  const fitViewportToScreen = useChartStore((s) => s.fitViewportToScreen)
   const total = pattern.grid.cells.length
   const done = stitched.size
   const pct = total > 0 ? Math.round((done / total) * 100) : 0
@@ -40,6 +48,31 @@ export function StudioStatusBar({ pattern, onOpenPalette, onOpenFlossKey }: Stud
         <span>{finishedSize}</span>
       </div>
       <div className="studio-status-mobile-actions">
+        <button
+          type="button"
+          onClick={() => zoomAtCentre(1 / 1.35)}
+          className="studio-status-fab"
+          aria-label="Zoom out"
+        >
+          <Minus size={18} strokeWidth={1.8} />
+        </button>
+        <button
+          type="button"
+          onClick={() => zoomAtCentre(1.35)}
+          className="studio-status-fab"
+          aria-label="Zoom in"
+        >
+          <Plus size={18} strokeWidth={1.8} />
+        </button>
+        <button
+          type="button"
+          onClick={() => fitViewportToScreen()}
+          className="studio-status-fab"
+          aria-label="Fit the whole chart on screen"
+        >
+          <Maximize2 size={16} strokeWidth={1.8} />
+        </button>
+        <span className="studio-status-fab-divider" aria-hidden="true" />
         <button type="button" onClick={onOpenPalette} className="studio-status-fab" aria-label="Palette">
           <Palette size={18} strokeWidth={1.6} />
         </button>

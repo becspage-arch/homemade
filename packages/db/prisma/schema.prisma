@@ -4719,6 +4719,17 @@ model UserPatternProgress {
   stitchedCells       Json      @default("{}")
   currentColourSymbol String?
   notes               String?
+
+  // Parking — the working method dense charts get finished with. Only the
+  // preferences persist: whether parking is on, which way the stitcher is
+  // working through the chart ('rows' | 'columns' | 'blocks'), and the line
+  // they are on. Where each colour is parked is derived from stitchedCells
+  // plus the working order every time, so it can never drift out of step
+  // with progress or with a sync from another device.
+  parkingEnabled      Boolean   @default(false)
+  parkingDirection    String    @default("rows")
+  parkingLine         Int       @default(0)
+
   startedAt           DateTime  @default(now())
   lastStitchedAt      DateTime  @default(now())
   completedAt         DateTime?

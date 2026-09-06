@@ -16,7 +16,7 @@
  */
 
 import { useMemo, useState, useEffect } from 'react'
-import { ListChecks, X, ArrowUpDown, Check } from 'lucide-react'
+import { ListChecks, X, ArrowUpDown, Check, Pin } from 'lucide-react'
 import { estimateSkeinCount, cellKey, type PatternData } from '@homemade/db/pattern'
 import {
   buildStashIndex,
@@ -24,8 +24,9 @@ import {
   type StashFlossItem,
 } from '@/lib/floss/stash-ownership'
 import { useChartStore } from '../chart/chart-store'
+import { cellLabel, nextColourUp } from '@/lib/studio/parking'
 
-type SortKey = 'palette' | 'most' | 'alpha' | 'next'
+type SortKey = 'palette' | 'most' | 'alpha' | 'next' | 'park'
 
 interface FlossKeyPanelProps {
   pattern: PatternData
@@ -41,6 +42,9 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
   const setIsolate = useChartStore((s) => s.setIsolate)
   const setCurrentSymbol = useChartStore((s) => s.setCurrentSymbol)
   const stitched = useChartStore((s) => s.stitchedCells)
+  const parkingEnabled = useChartStore((s) => s.parkingEnabled)
+  const parked = useChartStore((s) => s.parkedCells)
+  const centreOnCell = useChartStore((s) => s.centreOnCell)
 
   const [sortKey, setSortKey] = useState<SortKey>('palette')
   const [stash, setStash] = useState<StashFlossItem[]>([])
@@ -75,6 +79,13 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
     return owned
   }, [pattern, stash])
 
+  // The colour to pick up next in the current working order. Only meaningful
+  // while parking is on; the parked map is empty otherwise.
+  const nextUpSymbol = useMemo(
+    () => (parkingEnabled ? nextColourUp(parked) : null),
+    [parkingEnabled, parked],
+  )
+
   useEffect(() => {
     if (!mobileOpen) return
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onMobileClose()
@@ -101,7 +112,15 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
         skein,
       }
     })
-    if (sortKey === 'most') out.sort((a, b) => b.totalStitches - a.totalStitches)
+    if (sortKey === 'park') {
+      // Working order: the colour parked earliest comes first, finished
+      // colours drop to the bottom.
+      out.sort((a, b) => {
+        const ra = parked.get(a.entry.symbol)?.rank ?? Infinity
+        const rb = parked.get(b.entry.symbol)?.rank ?? Infinity
+        return ra - rb
+      })
+    } else if (sortKey === 'most') out.sort((a, b) => b.totalStitches - a.totalStitches)
     else if (sortKey === 'alpha') out.sort((a, b) => a.entry.name.localeCompare(b.entry.name))
     else if (sortKey === 'next') {
       out.sort((a, b) => {
@@ -111,7 +130,7 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
       })
     }
     return out
-  }, [pattern, stitched, sortKey])
+  }, [pattern, stitched, sortKey, parked])
 
   return (
     <>
@@ -144,6 +163,7 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
               <option value="palette">Palette order</option>
               <option value="most">Most stitches</option>
               <option value="next">Next colour</option>
+              {parkingEnabled && <option value="park">Parking order</option>}
               <option value="alpha">Alphabetical</option>
             </select>
             <ArrowUpDown size={13} strokeWidth={1.6} />
@@ -160,6 +180,8 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
           {rows.map(({ entry, totalStitches, stitchedCount, remaining, skein }) => {
             const isIsolated = entry.symbol === isolate
             const owned = ownedSymbols.has(entry.symbol)
+            const parkedAt = parkingEnabled ? parked.get(entry.symbol) ?? null : null
+            const isNextUp = parkingEnabled && entry.symbol === nextUpSymbol
             return (
               <li
                 key={entry.symbol}
@@ -167,6 +189,7 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
                   'studio-flosskey-row',
                   isIsolated ? 'is-isolated' : '',
                   owned ? 'is-owned' : '',
+                  isNextUp ? 'is-next-up' : '',
                 ].join(' ')}
               >
                 <button
@@ -207,6 +230,24 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
                     <span className="studio-flosskey-skein">~{formatSkein(skein)} skein{skein > 1 ? 's' : ''}</span>
                   </span>
                 </button>
+                {parkingEnabled && (
+                  <div className="studio-flosskey-park">
+                    {parkedAt ? (
+                      <button
+                        type="button"
+                        className="studio-flosskey-park-jump"
+                        onClick={() => centreOnCell(parkedAt.x, parkedAt.y)}
+                        title={`Go to the parked square for ${entry.name}`}
+                      >
+                        <Pin size={12} strokeWidth={1.8} aria-hidden="true" />
+                        <span>Parked at {cellLabel(parkedAt)}</span>
+                      </button>
+                    ) : (
+                      <span className="studio-flosskey-park-done">Finished</span>
+                    )}
+                    {isNextUp && <span className="studio-flosskey-park-nextup">Next up</span>}
+                  </div>
+                )}
               </li>
             )
           })}
