@@ -14,8 +14,9 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { Undo2, Redo2, MoreHorizontal, Check, Loader2, Grid2X2, X as XIcon, Type, Sparkles, Pin } from 'lucide-react'
+import { Undo2, Redo2, MoreHorizontal, Check, Loader2, Grid2X2, X as XIcon, Type, Sparkles, Pin, TextCursorInput } from 'lucide-react'
 import { useChartStore, type RenderStyle } from '../chart/chart-store'
+import { useWordArtStore } from '../word-art/word-art-store'
 
 interface StudioToolbarProps {
   patternId: string
@@ -121,6 +122,7 @@ export function StudioToolbar({
       </div>
 
       <div className="studio-toolbar-right">
+        {canEdit && <WordArtToggle />}
         <ParkingToggle />
         <RenderStyleToggle />
         {canEdit && (
@@ -211,6 +213,29 @@ function SaveIndicator({ state, signedIn }: { state: 'idle' | 'saving' | 'saved'
     )
   }
   return <span className="studio-save-indicator subtle">Saved</span>
+}
+
+/**
+ * Word-art toggle. Opens the panel that sets a maker's own words in a chosen
+ * letter and drops them on the chart. Only on a pattern they can edit: there is
+ * nothing to add words to on a library pattern until they have made it theirs,
+ * and the first edit forks it anyway.
+ */
+function WordArtToggle() {
+  const open = useWordArtStore((s) => s.open)
+  const setOpen = useWordArtStore((s) => s.setOpen)
+  return (
+    <button
+      type="button"
+      className={['studio-parking-toggle', open ? 'is-active' : ''].join(' ')}
+      aria-pressed={open}
+      onClick={() => setOpen(!open)}
+      title="Word art: put your own words on the chart in a letter you choose"
+    >
+      <TextCursorInput size={15} strokeWidth={1.8} />
+      <span>Words</span>
+    </button>
+  )
 }
 
 /**
