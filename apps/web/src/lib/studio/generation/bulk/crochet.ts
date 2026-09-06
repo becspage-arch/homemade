@@ -18,6 +18,7 @@ import {
   programYarnRadiusMm,
   type CrochetProgram,
   type YarnWeight,
+  type YarnFibre,
 } from '@/lib/loom/crochet/engine/program'
 import { compileRelaxAudit, geometryHash, settledSizeMm } from '@/lib/loom/crochet/engine/programScene'
 import {
@@ -1076,15 +1077,20 @@ function describe(
   shadeNames: Record<string, string>,
 ): string {
   const shades = Object.keys(palette).map((k) => shadeNames[k]!.toLowerCase())
+  // The yarn line names the fibre (STITCH_ENGINE yarn-fibre pass) — but only
+  // when it isn't the default: "cotton" says nothing a customer didn't already
+  // assume, so that sentence is unchanged from before this field existed.
+  const fibre = (('yarnFibre' in candidate.program ? candidate.program.yarnFibre : undefined) ?? 'cotton') as YarnFibre
+  const fibreOf = fibre === 'cotton' ? '' : ` of ${fibre}`
   // A tapestry showpiece can carry two dozen yarns, and listing all of them in
   // the description reads as a spreadsheet. Past six, name the first few and
   // leave the rest to the yarn list on the page.
   const colourLine =
     shades.length === 1
-      ? `Worked in one shade, ${shades[0]}.`
+      ? `Worked in one shade${fibreOf}, ${shades[0]}.`
       : shades.length <= 6
-        ? `Worked in ${shades.length} shades: ${shades.slice(0, -1).join(', ')} and ${shades[shades.length - 1]}.`
-        : `Worked in ${shades.length} shades, led by ${shades.slice(0, 3).join(', ')}.`
+        ? `Worked in ${shades.length} shades${fibreOf}: ${shades.slice(0, -1).join(', ')} and ${shades[shades.length - 1]}.`
+        : `Worked in ${shades.length} shades${fibreOf}, led by ${shades.slice(0, 3).join(', ')}.`
   const sizeLine =
     candidate.kind === 'amigurumi'
       ? `The finished toy stands about ${CM(candidate.settledMm.height)} cm tall.`

@@ -19,7 +19,7 @@ import { buildSphere } from './shaping'
 import { relaxProgram, geometryHash } from './programScene'
 import { auditProblems } from './auditChecks'
 import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
-import { YARN_WEIGHT_RADIUS_MM, type YarnWeight } from './program'
+import { YARN_WEIGHT_RADIUS_MM, type YarnWeight, type YarnFibre } from './program'
 import type { StitchId } from './dictionary'
 import type { BuiltContinuous } from './yarnPath'
 
@@ -121,6 +121,10 @@ export interface CompositionProgram {
   /** Render yarn weight → yr. Compositions render at their program weight (the
    *  layout is computed from each part's built size, so it stays consistent). */
   yarnWeight?: YarnWeight
+  /** The yarn's fibre look (STITCH_ENGINE yarn-fibre pass) — one fibre for the
+   *  whole composed object (every part is the same yarn in a real pattern).
+   *  Render-only, defaults to `'cotton'`. */
+  yarnFibre?: YarnFibre
   /** Camera tilt (deg) OFF STRAIGHT DOWN. 0 = plan view looking at the crown of
    *  the piece; 90 = eye level with the table. A toy is photographed from just
    *  above eye level, so a figure wants ~70, not the ~20 a flat piece wants. */
@@ -594,6 +598,10 @@ export interface BlenderScene {
   /** Non-yarn moulded notions (safety eyes, a nose). Absent for every scene
    *  that has none, so those scenes are byte-identical to before. */
   props?: { centre: number[]; axes: number[][]; hex: string; gloss: number }[]
+  /** The yarn fibre look (STITCH_ENGINE yarn-fibre pass) — read by
+   *  loom_render_crochet.py's `build_yarn`/`yarn_material`. Always written
+   *  (defaulting to 'cotton') so the render script never has to guess. */
+  fibre?: YarnFibre
   view: {
     bgHex: string
     marginFactor: number
@@ -640,6 +648,7 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
   const scene: BlenderScene = {
     fabric: { widthMm: maxx - minx + 30, heightMm: maxy - miny + 30, hex: p.parts[0]?.colourHex ?? '#c98a5e' },
     strokes,
+    fibre: p.yarnFibre ?? 'cotton',
     // A generous margin frames the FULL stacked silhouette (the tilted camera
     // frames off the horizontal footprint, so a tall body+head stack needs room
     // at the top). openFabric drops the flat backing plane — this is a 3D object.

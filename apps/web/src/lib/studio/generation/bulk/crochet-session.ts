@@ -49,6 +49,10 @@ const HEX = /^#[0-9a-fA-F]{6}$/
 const COLOUR_KEY = /^[a-z0-9-]{1,24}$/i
 const SLUG = /^[a-z0-9][a-z0-9-]{2,79}$/
 
+/** Every fibre a design may name. Mirrors `YarnFibre` (engine/program.ts). */
+export const YARN_FIBRES = ['cotton', 'wool', 'chenille', 'velvet'] as const
+const YarnFibreSchema = z.enum(YARN_FIBRES)
+
 // ── The brief the session writes ────────────────────────────────────────────
 
 /**
@@ -131,6 +135,7 @@ const AmigurumiSchema = z
     eyeMm: z.number().int(),
     nose: z.boolean(),
     paws: z.boolean(),
+    yarnFibre: YarnFibreSchema.optional(),
   })
   .strict()
 
@@ -151,6 +156,7 @@ export const CrochetDesignSchema = z
     ballPlateau: z.number().int().min(1).max(20).optional(),
     palette: z.record(z.string().regex(COLOUR_KEY), z.string().regex(HEX, 'a yarn colour is a six-digit hex like #c25a3c')).optional(),
     baseColourKey: z.string().regex(COLOUR_KEY).optional(),
+    yarnFibre: YarnFibreSchema.optional(),
     amigurumi: AmigurumiSchema.optional(),
     picture: z.string().min(8).optional(),
     pictureColours: z.number().int().min(2).max(64).optional(),

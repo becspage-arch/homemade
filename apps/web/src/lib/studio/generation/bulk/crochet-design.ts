@@ -29,6 +29,7 @@ import {
   type GridRow,
   type Staging,
   type YarnWeight,
+  type YarnFibre,
 } from '@/lib/loom/crochet/engine/program'
 import type { StitchId } from '@/lib/loom/crochet/engine/dictionary'
 import type { CompositionProgram } from '@/lib/loom/crochet/engine/composition'
@@ -81,6 +82,11 @@ export interface CrochetDesign {
   palette?: Record<string, string>
   /** Which palette key is the main yarn. */
   baseColourKey?: string
+  /** The yarn's fibre look (STITCH_ENGINE yarn-fibre pass) for a non-amigurumi
+   *  piece (grid / disc / sphere) — the amigurumi treatment carries its own
+   *  copy inside `amigurumi` below, since that block is the whole design for
+   *  that treatment. Defaults to 'cotton' when absent. */
+  yarnFibre?: YarnFibre
   /** The creature (amigurumi treatment only). */
   amigurumi?: {
     base: AmigurumiBase
@@ -90,6 +96,8 @@ export interface CrochetDesign {
     eyeMm: number
     nose: boolean
     paws: boolean
+    /** The yarn's fibre look. Defaults to 'cotton' when absent. */
+    yarnFibre?: YarnFibre
   }
   /** What the tapestry picture shows, for the illustrator (tapestry only). */
   picture?: string
@@ -194,6 +202,7 @@ export function designToProgram(
         stitch: 'sc',
         rounds,
         yarnWeight,
+        yarnFibre: design.yarnFibre,
         colourHex: palette[base]!,
         palette,
         hookMm: hookForWeight(yarnWeight),
@@ -216,6 +225,7 @@ export function designToProgram(
         stitch: 'sc',
         rounds,
         yarnWeight,
+        yarnFibre: design.yarnFibre,
         colourHex: palette[base]!,
         palette,
         hookMm: hookForWeight(yarnWeight),
@@ -299,6 +309,7 @@ export function designToProgram(
       grid,
       ...(gaugeYr ? { gaugeYr } : {}),
       yarnWeight,
+      yarnFibre: design.yarnFibre,
       colourHex: palette[base]!,
       palette,
       hookMm: hookForWeight(yarnWeight),
@@ -340,6 +351,7 @@ function amigurumiFromDesign(design: CrochetDesign, name: string): BuiltDesign {
     name,
   }
   const program = buildAmigurumiProgram(choices)
+  if (a.yarnFibre) program.yarnFibre = a.yarnFibre
   // Belt and braces: the presets are audited, but a preset edit that moved a
   // profile off the list must never reach a customer as a pattern.
   const offList = program.parts.filter((p) => !isAuditedProfile(p.rounds)).map((p) => p.name)
