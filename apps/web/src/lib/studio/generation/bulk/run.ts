@@ -7,6 +7,7 @@ import {
   uploadRejectSample,
   recordDuplicateSubject,
   SHOWPIECE_LANE,
+  QUICK_LANE,
   type CandidateTweak,
   type RejectSample,
 } from './cross-stitch'
@@ -30,7 +31,7 @@ import { shelfDeficits, allocateShelves, capShelfBriefs, shelfSlots } from './sh
 import { setShelfCaps } from './subject-pool'
 
 /** The under-60-cell tier — the one lane the quick-win clarity guard runs on. */
-export const QUICK_LANE = 'quick'
+export { QUICK_LANE } from './cross-stitch'
 
 import {
   generateNeedleworkCandidate,

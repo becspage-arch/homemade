@@ -136,6 +136,23 @@ const SPREAD_MAX_DE = 12
  */
 const SPREAD_HEADROOM = 1.2
 
+/**
+ * The downscale kernel, by how small the chart is.
+ *
+ * Sharp's default lanczos3 rings: every hard edge in the source comes back with
+ * a fringe of invented in-between colours a pixel or two wide. On a 200-cell
+ * scene that fringe is a rounding error. On a 50-cell one-evening motif each
+ * fringe cell is two per cent of the width, and the fringe is what the clarity
+ * guard reads as scatter — measured on a flat sticker motif, lanczos3 gave 2.5
+ * colour areas per floss where mitchell gave 1.3, on the same source image.
+ * Mitchell is the standard low-ringing cubic; nothing above the small lanes
+ * changes, so every existing chart converts exactly as before.
+ */
+const SMALL_CHART_CELLS = 90
+function resizeKernel(width: number, height: number): 'lanczos3' | 'mitchell' {
+  return Math.max(width, height) <= SMALL_CHART_CELLS ? 'mitchell' : 'lanczos3'
+}
+
 export interface PhotoToPatternOutput {
   data: PatternData
   /** Cached downscaled RGBA buffer the API route may keep for slider
@@ -169,7 +186,7 @@ export async function photoToPatternData(
   } else {
     let pipeline = sharp(imageBytes)
       .removeAlpha()
-      .resize(width, height, { fit: 'cover', position: 'attention' })
+      .resize(width, height, { fit: 'cover', position: 'attention', kernel: resizeKernel(width, height) })
     if (backgroundRemoval) {
       pipeline = pipeline.modulate({ saturation: 1.1 }).normalise()
     }

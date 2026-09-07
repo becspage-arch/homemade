@@ -90,6 +90,25 @@ simple chart that reads clearly is a keep. If your reason for rejecting starts
 You are not the gate that decides whether the catalogue is world-class. You are
 the gate that stops broken work reaching a customer.
 
+### The two deliberate tiers, and what they look like on a sheet
+
+Two lanes in the `lane` label are size tiers rather than ordinary sizes, and
+both look wrong on a contact sheet if you are not expecting them. Each one has
+already passed a deterministic guard of its own before it reached the bay — the
+arithmetic has been checked, so do not re-check it by eye.
+
+- **`showpiece`** — the heirloom tier. 400–600 cells and **200–300 flosses**, so
+  at 560 px it reads as a dense painted picture rather than a chart, and the
+  floss key is enormous. That is the tier, not a fault. Judge it as a picture:
+  is it a scene somebody would frame? Reject it for the usual genuine fails, not
+  for being busy, and not for the colour count.
+- **`quick`** — the one-evening tier. 40–60 cells and 6–14 flosses, a single
+  flat motif on bare cloth with a thick outline and nothing behind it. It is
+  meant to look like a sticker, blocky and plain. The only question is whether
+  you can name the thing from across the room. `a lemon on a leafy stem` that
+  reads as a lemon is a keep however simple it is; a shape you cannot name is
+  the ordinary "does not read as its name" reject.
+
 ## Step 4 — record the decisions
 
 Keep the ones that pass:

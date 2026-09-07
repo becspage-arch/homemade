@@ -14,6 +14,7 @@
  *     scripts/xs-tiers-measure.ts <slug> [--pdf] [--out DIR]
  */
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { gzipSync, brotliCompressSync } from 'node:zlib'
 
 function loadEnvFile(path: string): void {
   try {
@@ -63,8 +64,12 @@ async function main(): Promise<void> {
     `  stitchability ${m.stitchability} · confetti ${(m.confettiShare * 100).toFixed(1)}% · median run ${m.medianRunLength} · ${m.colourChangesPer100} colour changes / 100`,
   )
 
-  const json = Buffer.byteLength(JSON.stringify(row.data))
-  console.log(`\n  pattern JSON on the row      ${mb(json)}`)
+  // Page weight is what crosses the wire, and the wire is compressed. Chart
+  // cells are hugely repetitive, so the raw figure badly overstates it.
+  const raw = Buffer.from(JSON.stringify(row.data))
+  console.log(`\n  pattern JSON on the row      ${mb(raw.byteLength)} raw`)
+  console.log(`                               ${kb(gzipSync(raw).byteLength)} gzipped (what a browser downloads)`)
+  console.log(`                               ${kb(brotliCompressSync(raw).byteLength)} brotli`)
   console.log(`  persisted hero (thumbnail)   ${kb(row.thumbnail?.bytes ?? 0)}`)
 
   // The hero, re-rendered, so the time is measured rather than remembered.
@@ -75,7 +80,7 @@ async function main(): Promise<void> {
 
   // The working chart, at the cell size the Studio viewport uses when a chart
   // is opened whole. This is the honest worst case for the browser.
-  for (const cellPx of [4, 8, 24]) {
+  for (const cellPx of process.argv.includes('--deep') ? [4, 8, 24] : [4, 8]) {
     t = Date.now()
     const svg = renderPatternSvgString(data, { mode: 'chart', cellPx, showSymbols: cellPx >= 14, cellStyle: 'block' })
     const built = Date.now() - t

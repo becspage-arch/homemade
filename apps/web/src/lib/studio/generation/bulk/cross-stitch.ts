@@ -18,6 +18,7 @@ import { embellishChart } from './outline'
 import { deriveFractionals, smoothingWantedFor } from './fractionals'
 import {
   buildPrompt,
+  QUICK_STYLE,
   SRC_SAT,
   FABRIC,
   POST_SAT,
@@ -115,6 +116,10 @@ function proPixelsFor(w: number, h: number, longPx: number = PRO_LONG_PX): { wid
 /** The heirloom lane — 400–600 cells, 200–300 flosses, full coverage. */
 export const SHOWPIECE_LANE = 'showpiece'
 
+/** The under-60-cell one-evening tier. Named here, beside the lane it is the
+ *  mirror of, because the converter settings key off it. */
+export const QUICK_LANE = 'quick'
+
 /**
  * The most flosses a chart may ask the converter for.
  *
@@ -179,7 +184,12 @@ export async function generateCrossStitchCandidate(
   const colours = Math.max(6, Math.min(MAX_CHART_COLOURS, brief.colours + (tweak.colourDelta ?? 0)))
   const dense = colours > DENSE_COLOUR_THRESHOLD
   const showpiece = brief.lane === SHOWPIECE_LANE
-  const prompt = buildPrompt(brief.subject, brief.style)
+  // The two deliberate tiers each have ONE look, forced here rather than left
+  // to whatever style the planner happened to pick for the subject: the
+  // heirloom tier is a full-coverage painted scene, the one-evening tier is a
+  // flat bold motif. See QUICK_STYLE.
+  const style = brief.lane === QUICK_LANE ? QUICK_STYLE : brief.style
+  const prompt = buildPrompt(brief.subject, style)
 
   // THE SOURCE MODE. In 'pro-all' every lane draws on Flux 1.1 Pro, not just the
   // dense one — the single biggest lever on yield (about two attempts in five
@@ -206,7 +216,7 @@ export async function generateCrossStitchCandidate(
   const sourceSha256 = sha256Hex(generated.buffer)
 
   // Per-lane source pre-saturation before the quantiser (the vivid-colour fix).
-  const srcSat = (brief.sat ?? SRC_SAT[brief.style]) * (tweak.satMul ?? 1)
+  const srcSat = (brief.sat ?? SRC_SAT[style]) * (tweak.satMul ?? 1)
   const satImage = await sharp(generated.buffer).modulate({ saturation: srcSat }).png().toBuffer()
 
   // Shared engine convert — dense tier lifts the floss ceiling + full DMC range.
@@ -216,7 +226,15 @@ export async function generateCrossStitchCandidate(
     colours,
     fabricCount: 14,
     brand: 'DMC',
-    confettiMin: dense ? 'high' : 'medium',
+    // Both ends of the range want the hard confetti pass, for opposite
+    // reasons. The dense tiers want it because a 250-floss chart has to stay
+    // stitchable. The one-evening tier wants it because at 50 cells a
+    // three-cell island is not a shape, it is a speck: the clarity guard reads
+    // colour AREAS, and at 'medium' the quick lane was coming back with fifty
+    // of them across ten flosses and failing its own tier every time. The
+    // middle of the range is where 'medium' is right — enough smoothing to
+    // stitch, not so much that a 200-cell scene loses its detail.
+    confettiMin: dense || brief.lane === QUICK_LANE ? 'high' : 'medium',
     backgroundRemoval: false,
     // The dense tier lifts the floss ceiling and takes the full DMC range. The
     // heirloom tier goes further: its headline is the STAND COUNT, and asking
@@ -243,7 +261,7 @@ export async function generateCrossStitchCandidate(
   // (the dense lane, and large scenes / showpieces / landscapes) is exempt: its
   // background IS the design.
   const bare = bareFabricVerdict(data, {
-    fullCoverageByIntent: fullCoverageByIntent({ lane: brief.lane, style: brief.style }),
+    fullCoverageByIntent: fullCoverageByIntent({ lane: brief.lane, style }),
   })
   let shipped = data
   let cleared: CrossStitchCandidate['backgroundCleared']
@@ -265,7 +283,7 @@ export async function generateCrossStitchCandidate(
   // The lane and style decide how much: a full outline for the bold flat lanes,
   // the silhouette alone for the soft ones, nothing for line work or the dense
   // showpiece tier.
-  const embellished = embellishChart(shipped, { lane: brief.lane, style: brief.style })
+  const embellished = embellishChart(shipped, { lane: brief.lane, style })
   let outline: CrossStitchCandidate['outline']
   if (!embellished.unchanged) {
     shipped = embellished.data

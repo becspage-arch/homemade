@@ -35,6 +35,8 @@ export const STYLE = {
     'a bold stylised flat pop-art portrait of a historical figure, iconic and recognisable, the whole head clearly visible with correct features, clean areas of colour, limited sophisticated palette, plain background, NOT photographic',
   dogportrait:
     'a clean realistic illustrated portrait of the dog, head and shoulders, accurate breed features and markings, crisp detailed but flat-shaded illustration (NOT photographic, NOT painterly), the dog is the hero on a soft plain warm background',
+  quickwin:
+    'ONE single bold flat sticker-style motif, centred, sized to fill about two thirds of the frame with a generous empty white margin all around it, built from a few LARGE simple shapes in FLAT areas of solid saturated colour with a thick clean dark outline, NO gradients, NO soft shading, NO texture, NO pattern, NO background scenery, NO border or frame, NO extra objects, vinyl-decal look, plain clean white background',
   fantasy:
     'an enchanting fairytale illustration, storybook fantasy, soft glowing magical light, bold clear outlines with rich saturated jewel-tone fills, whimsical and charming, crisp clear detail, NOT photographic, NOT muddy',
 } as const
@@ -60,6 +62,7 @@ export const SRC_SAT: Record<StyleKey, number> = {
   icon: 1.25,
   dogportrait: 1.18,
   fantasy: 1.38,
+  quickwin: 1.45,
 }
 
 /** Bright ivory aida (a dull oatmeal greyed every colour). */
@@ -70,6 +73,20 @@ export const POST_SAT = 1.3
 
 /** Dense showpiece tier: >96 colours are sourced from Flux 1.1 Pro + full DMC. */
 export const DENSE_COLOUR_THRESHOLD = 96
+
+/**
+ * The one look the one-evening tier is generated in.
+ *
+ * The tier's clarity guard counts solid colour AREAS, and the illustrated
+ * styles the rest of the range uses cannot pass it at 50 cells: soft shading
+ * that reads as modelling at 200 cells is just scatter at 50, and every quick
+ * candidate was dying on `N areas across M flosses — scattered, not shapes`.
+ * The fix is upstream of the guard, in what is generated: flat areas of solid
+ * colour with a thick outline and nothing in the background. The tier has one
+ * look for the same reason the heirloom tier does — it is a property of the
+ * tier, not something the planner should get a vote on.
+ */
+export const QUICK_STYLE: StyleKey = 'quickwin'
 
 /**
  * Assemble the full Flux prompt from a subject + style, exactly as the PC script
