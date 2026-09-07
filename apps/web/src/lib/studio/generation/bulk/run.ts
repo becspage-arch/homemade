@@ -5,22 +5,34 @@ import {
   generateCrossStitchCandidate,
   publishCrossStitchGem,
   uploadRejectSample,
+  recordDuplicateSubject,
+  SHOWPIECE_LANE,
+  QUICK_LANE,
   type CandidateTweak,
   type RejectSample,
 } from './cross-stitch'
 import {
   fingerprintCandidate,
   loadPublicCrossStitchFingerprints,
+  rerollAncestorSlugs,
+  recentDuplicateSubjectKeys,
+  avoidListWithDuplicateKills,
   findDuplicate,
   liveShelfCounts,
   publicSubjectKeys,
 } from './dedupe-guard'
 import { judgeVividness } from './vividness'
+import { quickWinVerdict } from './quick-win'
+import { showpieceVerdict } from './showpiece'
 import { crossStitchGateMode, type XsGateMode, type XsSourceMode } from './autopilot-state'
 import { CROSS_STITCH_SHELVES } from '../categories'
 import { summaryLine } from './run-status'
 import { shelfDeficits, allocateShelves, capShelfBriefs, shelfSlots } from './shelf-plan'
 import { setShelfCaps } from './subject-pool'
+
+/** The under-60-cell tier — the one lane the quick-win clarity guard runs on. */
+export { QUICK_LANE } from './cross-stitch'
+
 import {
   generateNeedleworkCandidate,
   publishNeedleworkGem,
@@ -364,11 +376,72 @@ export async function crossStitchCandidateAttempt(
     }
   }
 
+  // THE QUICK-WIN GUARD — the second arithmetic bar, and only on the tier that
+  // needs it. A 48-cell chart has to read as one nameable motif or it is not a
+  // product; `quickWinVerdict` measures whether it has the shape of one. Same
+  // shape as the pale guard: one re-roll, then the idea is dropped rather than
+  // parked, because a session's judging capacity is the scarce thing here.
+  if (brief.lane === QUICK_LANE) {
+    const clarity = quickWinVerdict(candidate.data)
+    if (!clarity.ok) {
+      const lastShot = attempt >= MAX_XS_CANDIDATE_ATTEMPTS
+      return {
+        verdict: lastShot ? 'kill' : 'repair',
+        reasons: clarity.reasons,
+        ...(lastShot ? {} : { repairAction: 'fewer-colours' as const }),
+        published: false,
+        pro: candidate.pro,
+        ...(await sampleFor(
+          candidate.renderPng,
+          brief,
+          ctx,
+          lastShot ? 'kill' : 'repair',
+          clarity.reasons,
+          candidate.colourCount,
+        )),
+      }
+    }
+  }
+
+  // THE SHOWPIECE GUARD — the same shape as the quick-win one, on the tier at
+  // the other end. A heirloom chart that came back with ninety stands in it is
+  // a dense-lane chart at heirloom size, and the tier's claim is the floss
+  // count. The converter has already climbed as far as the picture allowed, so
+  // the repair is a plain re-roll onto a different picture rather than an
+  // instruction to find colours that are not there.
+  if (brief.lane === SHOWPIECE_LANE) {
+    const tier = showpieceVerdict(candidate.data)
+    if (!tier.ok) {
+      const lastShot = attempt >= MAX_XS_CANDIDATE_ATTEMPTS
+      return {
+        verdict: lastShot ? 'kill' : 'repair',
+        reasons: tier.reasons,
+        ...(lastShot ? {} : { repairAction: 'reroll' as const }),
+        published: false,
+        pro: candidate.pro,
+        ...(await sampleFor(candidate.renderPng, brief, ctx, lastShot ? 'kill' : 'repair', tier.reasons, candidate.colourCount)),
+      }
+    }
+  }
+
   // Is this a gem we already have — or one already sitting in the parking bay?
+  //
+  // A RE-ROLL is compared against everything EXCEPT its own earlier rolls. It is
+  // the same brief on purpose, and the row it replaces was retired PRIVATE with
+  // a reason when the request was taken off the queue — which puts it in the
+  // culled population the guard matches subjects against. Left in, every re-roll
+  // died as a duplicate of the row the judging session had just asked to have
+  // rolled again, so no re-roll could ever land.
   const fingerprints = await fingerprintCandidate(candidate.renderPng, candidate.data, brief.subject)
-  const catalogue = await loadPublicCrossStitchFingerprints({ includePending: true })
+  const catalogue = await loadPublicCrossStitchFingerprints({
+    includePending: true,
+    ...((ctx.rerollCount ?? 0) > 0 ? { excludeSlugs: rerollAncestorSlugs(brief.slug) } : {}),
+  })
   const hit = findDuplicate(fingerprints, catalogue)
   if (hit) {
+    // The kill leaves no row, so the run remembers the idea instead — otherwise
+    // the planner picks it again on the next firing and pays for it again.
+    if (ctx.bulkRunId) await recordDuplicateSubject(ctx.bulkRunId, fingerprints.subjectKey)
     return {
       verdict: 'kill',
       reasons: [`duplicate of ${hit.slug}: ${hit.reason}`],
@@ -411,10 +484,16 @@ export function planCrossStitchCandidateBriefs(count: number, ctx: XsPlanContext
  * the inline runner and the Inngest dispatcher so both plan identically.
  */
 export async function crossStitchPlanContext(count: number): Promise<Parameters<typeof planCrossStitchBriefs>[1]> {
-  const [counts, avoidSubjectKeys] = await Promise.all([
+  const [counts, rowKeys, duplicateKills] = await Promise.all([
     liveShelfCounts().catch(() => ({}) as Record<string, number>),
     publicSubjectKeys().catch(() => [] as string[]),
+    // Ideas recent runs killed as duplicates. They leave no row, so without this
+    // the planner has no memory of them and re-picks the same subject firing
+    // after firing — which it did, twice each for two subjects across three of
+    // the September firings.
+    recentDuplicateSubjectKeys().catch(() => [] as string[]),
   ])
+  const avoidSubjectKeys = avoidListWithDuplicateKills(rowKeys, duplicateKills)
   const deficits = shelfDeficits(CROSS_STITCH_SHELVES, counts)
   // Cap any one shelf at its share of the batch. A shelf far behind its target
   // otherwise takes three or four slots at once and the batch turns into three

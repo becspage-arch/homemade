@@ -35,18 +35,51 @@
 
 import type { StyleKey } from './cross-stitch-style'
 
-/** The size lanes, smallest first — the order `smallestLane` relies on. */
-export const LANE_ORDER = ['mini', 'small', 'medium', 'large', 'dense'] as const
+/**
+ * The size lanes, smallest first — the order `smallestLane` relies on.
+ *
+ * `quick` and `showpiece` (September 2026) are the two ENDS of the range, and
+ * both are opt-in: a subject reaches them only by being tagged for them, never
+ * by default. They are the two tiers the world-best audit found missing — a
+ * one-evening make under 60 cells, and a 400–600 cell full-coverage heirloom.
+ */
+export const LANE_ORDER = ['quick', 'mini', 'small', 'medium', 'large', 'dense', 'showpiece'] as const
 export type LaneName = (typeof LANE_ORDER)[number]
 
-/** Every lane. */
-export const LANES_ALL: readonly LaneName[] = LANE_ORDER
+/**
+ * Every ORDINARY lane — the default tag for a theme that says nothing.
+ *
+ * Deliberately not every lane: `quick` and `showpiece` are opt-in, so a theme
+ * that has never been looked at for them cannot drift into either. A fox in a
+ * raincoat is not a 48-cell motif and a teacup is not a 500-cell heirloom.
+ */
+export const LANES_ALL: readonly LaneName[] = ['mini', 'small', 'medium', 'large', 'dense']
 /** Small and up — glassware, cocktails, anything with a shape to hold. */
 export const LANES_SMALL_UP: readonly LaneName[] = ['small', 'medium', 'large', 'dense']
 /** Medium and up — portraits, faces, anything with features to resolve. */
 export const LANES_MEDIUM_UP: readonly LaneName[] = ['medium', 'large', 'dense']
 /** Large and up — scenes and shopfronts, which are mush at anything smaller. */
 export const LANES_LARGE_UP: readonly LaneName[] = ['large', 'dense']
+/**
+ * Large and up INCLUDING the showpiece tier — a subject with enough going on to
+ * hold 400–600 cells of full coverage and still be about one thing.
+ */
+export const LANES_SHOWPIECE_UP: readonly LaneName[] = ['large', 'dense', 'showpiece']
+/**
+ * The QUICK-WIN tag: a single motif that still reads at 40–60 cells, on bare
+ * cloth, in 6–14 colours. One shape, one silhouette, no scene behind it — a
+ * strawberry, a robin, a teacup, a star, a mushroom. Anything with a setting,
+ * a second object or a face to resolve does not belong here.
+ */
+export const LANES_QUICK: readonly LaneName[] = ['quick', 'mini', 'small']
+
+/**
+ * The lanes a subject may be SETTLED into when the lane it was asked for does
+ * not fit — the ordinary ones. The two deliberate tiers are never reached by
+ * demotion: a piece lands in `quick` or `showpiece` because the planner chose
+ * it for that tier, not because something else did not fit.
+ */
+export const SETTLE_LANES: readonly LaneName[] = LANES_ALL
 
 export interface CrossStitchTheme {
   id: string
@@ -137,10 +170,12 @@ export const TEXT_RISK_NOUNS: readonly string[] = [
 ]
 
 /**
- * The only lane a text-risk subject may be built in. One lane, not a floor: this
- * is the canvas where a signboard has the cells to read as a painted shape.
+ * The lanes a text-risk subject may be built in. Not a floor: these are the two
+ * canvases where a signboard has the cells to read as a painted shape rather
+ * than a smear of failed letters — the dense tier, and the showpiece tier above
+ * it, which is bigger again.
  */
-export const TEXT_RISK_LANES: readonly LaneName[] = ['dense']
+export const TEXT_RISK_LANES: readonly LaneName[] = ['dense', 'showpiece']
 
 const TEXT_RISK_RE = new RegExp(String.raw`\b(?:${TEXT_RISK_NOUNS.join('|')})(?:e?s)?\b`, 'i')
 
@@ -180,6 +215,17 @@ export function setShelfCaps(themes: readonly CrossStitchTheme[] = CROSS_STITCH_
 export function smallestLane(lanes: readonly LaneName[]): LaneName | null {
   for (const l of LANE_ORDER) if (lanes.includes(l)) return l
   return null
+}
+
+/**
+ * The lane a mis-placed brief should settle into: the smallest ORDINARY lane
+ * the subject survives, falling back to the smallest lane of any kind when a
+ * subject is tagged for nothing else (which is only true of a subject
+ * deliberately confined to one of the two tiers).
+ */
+export function settleLane(lanes: readonly LaneName[]): LaneName | null {
+  for (const l of LANE_ORDER) if (SETTLE_LANES.includes(l) && lanes.includes(l)) return l
+  return smallestLane(lanes)
 }
 
 /**
@@ -241,6 +287,8 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     lanes: LANES_ALL,
     laneOverrides: {
       'a ring of butterflies': LANES_MEDIUM_UP,
+      'a luna moth': LANES_QUICK,
+      'a bumblebee on an allium globe': LANES_QUICK,
     },
   },
   {
@@ -249,7 +297,7 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     examples: ['a jewel-toned octopus wearing a tiny pearl crown', 'a whale carrying a whole starlit galaxy on its back', 'an art-nouveau seahorse among swirling kelp and bubbles', 'a mermaid\'s treasure grotto glowing with bioluminescence', 'a shoal of clownfish over a coral garden', 'a leafy sea dragon in emerald water', 'a puffin on a sunlit cliff ledge', 'a manta ray gliding over turquoise sand', 'a rockpool of anemones and limpets'],
     lanes: LANES_SMALL_UP,
     laneOverrides: {
-      'a mermaid\'s treasure grotto glowing with bioluminescence': LANES_LARGE_UP,
+      'a mermaid\'s treasure grotto glowing with bioluminescence': LANES_SHOWPIECE_UP,
       'a shoal of clownfish over a coral garden': LANES_MEDIUM_UP,
       'a rockpool of anemones and limpets': LANES_MEDIUM_UP,
     },
@@ -257,10 +305,12 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
   {
     id: 'fantasy-creatures', title: 'Cute fantasy creatures', shelf: 'fantasy', shelfName: 'Fantasy & Fairytale',
     styles: ['fantasy', 'cute'],
-    examples: ['a friendly baby dragon', 'a unicorn in a flower meadow', 'a mermaid on a rock', 'a phoenix', 'a fairy toadstool cottage', 'a griffin on a sunlit crag', 'a kitsune among scarlet maple', 'a moss golem in a sunlit glade', 'a sea serpent coiled in a harbour', 'a wyvern on a citadel spire'],
+    examples: ['a friendly baby dragon', 'a unicorn in a flower meadow', 'a mermaid on a rock', 'a phoenix', 'a fairy toadstool cottage', 'a griffin on a sunlit crag', 'a kitsune among scarlet maple', 'a moss golem in a sunlit glade', 'a sea serpent coiled in a harbour', 'a wyvern on a citadel spire', 'a sleeping dragon curled over a hoard of gold', 'an enchanted glade lit by a stag of white light'],
     lanes: LANES_SMALL_UP,
     laneOverrides: {
       'a fairy toadstool cottage': LANES_MEDIUM_UP,
+      'a sleeping dragon curled over a hoard of gold': LANES_SHOWPIECE_UP,
+      'an enchanted glade lit by a stag of white light': LANES_SHOWPIECE_UP,
     },
   },
   {
@@ -269,7 +319,7 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     examples: ['an art-nouveau spray of irises with gold-line stems', 'moody dark-academia florals — deep plum peonies and trailing ivy on near-black', 'a moon-phase arch wreathed in wildflowers and moths', 'a stained-glass window of poppies and cornflowers', 'a cottage-garden jug of dahlias', 'sweet peas tumbling over a trellis', 'a sunflower field under a wide blue sky', 'a japanese anemone spray in white and gold', 'a bowl of ranunculus in coral and cream'],
     lanes: LANES_MEDIUM_UP,
     laneOverrides: {
-      'a sunflower field under a wide blue sky': LANES_LARGE_UP,
+      'a sunflower field under a wide blue sky': LANES_SHOWPIECE_UP,
       'moody dark-academia florals — deep plum peonies and trailing ivy on near-black': LANES_LARGE_UP,
     },
   },
@@ -295,6 +345,7 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     laneOverrides: {
       'a shelf of potted succulents': LANES_MEDIUM_UP,
       'a windowsill row of herb pots': LANES_MEDIUM_UP,
+      'a monstera in a woven pot': LANES_QUICK,
     },
   },
   {
@@ -304,6 +355,7 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     lanes: LANES_ALL,
     laneOverrides: {
       'a fairy-ring of mushrooms': LANES_MEDIUM_UP,
+      'a snail on a toadstool': LANES_QUICK,
     },
   },
   {
@@ -315,6 +367,8 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
       'a bowl of ramen': LANES_SMALL_UP,
       'a bowl of pho with fresh herbs': LANES_SMALL_UP,
       'a fruit tart glossy with berries': LANES_SMALL_UP,
+      'a slice of watermelon on a cobalt plate': LANES_QUICK,
+      'a cheerful cupcake with sprinkles': LANES_QUICK,
     },
   },
   {
@@ -329,7 +383,7 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     examples: ['a tiny mouse in a witch hat on a pumpkin', 'a black cat with a jack-o-lantern', 'a haunted hill house', 'a pumpkin patch at golden hour', 'a candy-corn cat on marigold orange', 'a friendly ghost over a picket fence', 'a raven against a harvest-orange moon', 'a witch\'s broom on a scarlet door', 'a spider web strung with dew on marigolds'],
     lanes: LANES_ALL,
     laneOverrides: {
-      'a haunted hill house': LANES_LARGE_UP,
+      'a haunted hill house': LANES_SHOWPIECE_UP,
       'a pumpkin patch at golden hour': LANES_MEDIUM_UP,
       'a spider web strung with dew on marigolds': LANES_MEDIUM_UP,
     },
@@ -342,11 +396,13 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     laneOverrides: {
       'a gingerbread house': LANES_MEDIUM_UP,
       'a sledge piled with wrapped parcels': LANES_SMALL_UP,
-      'a snowy village under a starry sky': LANES_LARGE_UP,
+      'a snowy village under a starry sky': LANES_SHOWPIECE_UP,
       'a choir of carol-singing mice in knitted scarves': LANES_MEDIUM_UP,
       'a tabby cat asleep under a christmas tree': LANES_MEDIUM_UP,
       'a sleigh flying over snowy rooftops': LANES_MEDIUM_UP,
       'a holly wreath on a bright red door': LANES_SMALL_UP,
+      'ice skates on a red ribbon': LANES_QUICK,
+      'a christmas pudding with holly': LANES_QUICK,
     },
     notes: 'Its own shelf since 6 September 2026 — Christmas is a season of its own, not a corner of seasonal. Bright reds and greens against snow or pale ground; no readable text on parcels, stockings or shop windows.',
   },
@@ -358,6 +414,8 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     laneOverrides: {
       'three fluffy chicks in a blossom nest': LANES_SMALL_UP,
       'a basket of tulips and daffodils': LANES_MEDIUM_UP,
+      'a spring lamb': LANES_QUICK,
+      'a duckling on a green bank': LANES_QUICK,
     },
   },
   {
@@ -377,6 +435,8 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     lanes: LANES_ALL,
     laneOverrides: {
       'a posy of red roses tied with ribbon': LANES_SMALL_UP,
+      'a heart-shaped biscuit tin': LANES_QUICK,
+      'a strawberry dipped in chocolate': LANES_QUICK,
     },
   },
   {
@@ -399,7 +459,7 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     examples: ['a witch\'s apothecary shelf of potion bottles', 'a black cat with crystals and candles', 'a crescent moon with moths and herbs', 'a tarot sun card motif', 'a raven on a lit candelabra', 'a spellbook open on a hearth', 'a crystal ball on a velvet cloth', 'a familiar toad on a scarlet toadstool', 'a besom and lantern by a cottage door'],
     lanes: LANES_SMALL_UP,
     laneOverrides: {
-      'a witch\'s apothecary shelf of potion bottles': LANES_LARGE_UP,
+      'a witch\'s apothecary shelf of potion bottles': LANES_SHOWPIECE_UP,
       'a spellbook open on a hearth': LANES_MEDIUM_UP,
       'a besom and lantern by a cottage door': LANES_MEDIUM_UP,
     },
@@ -408,16 +468,16 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
   {
     id: 'cosy-scenes', title: 'Cottages, shops & cosy scenes', shelf: 'scenes', shelfName: 'Scenes',
     styles: ['showpiece', 'pastel'],
-    examples: ['a thatched cottage with climbing roses and a packed garden', 'a corner flower shop with buckets of blooms', 'a cosy reading nook with a sleeping cat', 'a victorian greenhouse', 'a village bakery window at first light', 'a narrowboat in canal-art paint', 'a seaside ice-cream kiosk in high sun', 'a potting shed in high summer', 'a haberdashery window of ribbon reels', 'a cottage porch under wisteria'],
-    lanes: LANES_LARGE_UP,
-    notes: 'These are the BIG showpieces — large canvas + high colour so the little details survive; shopfront signage stays wordless.',
+    examples: ['a thatched cottage with climbing roses and a packed garden', 'a corner flower shop with buckets of blooms', 'a cosy reading nook with a sleeping cat', 'a victorian greenhouse', 'a village bakery window at first light', 'a narrowboat in canal-art paint', 'a seaside ice-cream kiosk in high sun', 'a potting shed in high summer', 'a haberdashery window of ribbon reels', 'a cottage porch under wisteria', 'a walled kitchen garden in full summer', 'a conservatory crowded with ferns and orchids', 'a cottage hearth with a sleeping dog and a bread oven', 'a cottage kitchen on baking day'],
+    lanes: LANES_SHOWPIECE_UP,
+    notes: 'These are the BIG showpieces — large canvas + high colour so the little details survive; shopfront signage stays wordless. The last four are written for the heirloom tier: one dominant subject that keeps giving at 500 cells.',
   },
   {
     id: 'landscapes', title: 'Landmarks & landscapes', shelf: 'landscapes', shelfName: 'Landscapes',
     styles: ['scene'],
-    examples: ['a candy-striped lighthouse on a headland', 'a lavender field receding to a hill', 'a mountain lake at sunset', 'a row of pastel seaside cottages', 'a stack of gulls off a chalk headland', 'terraced rice fields in new green', 'a salt marsh at high tide', 'a fell path along a drystone wall', 'an olive grove on a hillside'],
-    lanes: LANES_LARGE_UP,
-    notes: 'Often wide aspect.',
+    examples: ['a candy-striped lighthouse on a headland', 'a lavender field receding to a hill', 'a mountain lake at sunset', 'a row of pastel seaside cottages', 'a stack of gulls off a chalk headland', 'terraced rice fields in new green', 'a salt marsh at high tide', 'a fell path along a drystone wall', 'an olive grove on a hillside', 'an alpine valley under a summer storm', 'a terraced vineyard falling to a blue lake', 'a highland glen in late heather'],
+    lanes: LANES_SHOWPIECE_UP,
+    notes: 'Often wide aspect. The last three are written for the heirloom tier — depth, weather and distance, which is what 500 cells of full coverage are for.',
   },
   {
     id: 'transport', title: 'Transport & vehicles', shelf: 'transport', shelfName: 'Transport',
@@ -474,7 +534,7 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     id: 'small-makes', title: 'Small makes — ornaments, bookmarks, cards, coasters', shelf: 'small-makes', shelfName: 'Small makes',
     styles: ['cute', 'bright', 'botanical'],
     examples: ['a red-breasted robin on a frosted twig', 'a six-point snowflake in ice blue', 'a sprig of holly and three red berries', 'a ripe scarlet strawberry', 'a honeybee in flight', 'a red toadstool on a moss tuft', 'a china teacup in cornflower blue', 'a rowing boat on flat water', 'a striped hot air balloon', 'a folded paper boat in scarlet', 'a fox face straight on', 'a scarlet tulip in bud', 'a lemon on a leafy stem', 'an acorn in a brown cup', 'a crescent moon and a star', 'a red-roofed cottage'],
-    lanes: ['mini', 'small'],
+    lanes: LANES_QUICK,
     setOf: 6,
     notes: 'ONE motif on a plain ground, nothing behind it — these are the finished object at pocket size: a hanging ornament, a bookmark, a card front, a keyring, a coaster. Sold as SETS of six, so a batch may take several at once; keep them a family (same weight of outline, same brightness) rather than six unrelated pictures. Mini and small only — a scene at this size is mush.',
   },
@@ -484,10 +544,12 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     examples: ['a white lighthouse above a blue bay', 'a row of pastel beach huts', 'a sailing boat under a full white sail', 'a seagull on a weathered mooring post', 'a scatter of shells and sea glass', 'a wooden pier reaching into calm water', 'a striped deckchair on golden sand', 'a rock pool at low tide', 'a harbour of moored fishing boats', 'a whale tail against a sunset sky', 'a harbour town rising above the quay', 'a crab on pale sand', 'an oystercatcher on a shingle beach', 'a lobster pot on the quayside'],
     lanes: LANES_SMALL_UP,
     laneOverrides: {
-      'a harbour town rising above the quay': LANES_LARGE_UP,
+      'a harbour town rising above the quay': LANES_SHOWPIECE_UP,
       'a harbour of moored fishing boats': LANES_MEDIUM_UP,
       'a wooden pier reaching into calm water': LANES_MEDIUM_UP,
       'a rock pool at low tide': LANES_MEDIUM_UP,
+      'a crab on pale sand': LANES_QUICK,
+      'a whale tail against a sunset sky': LANES_QUICK,
     },
     notes: 'Bright seaside colour — white, cobalt, sand and a hot stripe — never a grey overcast sea. The harbour town is the dense showpiece of this shelf; everything else is one clear shape against water or sky. Boat hulls and hut doors stay wordless.',
   },
@@ -499,6 +561,7 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
     laneOverrides: {
       'a symmetrical mandala in indigo and gold': LANES_MEDIUM_UP,
       'a hex grid of repeating folk motifs': LANES_MEDIUM_UP,
+      'an eight-point patchwork quilt star': LANES_QUICK,
     },
     notes: 'FLAT and SYMMETRICAL by design — no shading, no perspective, no depth. Solid blocks of colour with clean repeats, mirrored left to right (a band or border repeats end to end). Original reinterpretation of a tradition, never a copy of a real maker\'s piece. Not one subject here carries lettering and none may gain any: a folk band is pattern, never a monogram or a name.',
   },
@@ -517,12 +580,29 @@ export const CROSS_STITCH_THEMES: CrossStitchTheme[] = [
  * AND enormous heirloom showpieces, not a wall of medium pieces.
  */
 export const CROSS_STITCH_SIZE_LANES = [
+  { lane: 'quick', cells: '40–60', colours: '6–14', note: 'the ONE-EVENING make — a single motif on bare cloth, nameable from across the room at 48 cells; only subjects tagged for it' },
   { lane: 'mini', cells: '55–80', colours: '6–12', note: 'a TINY pocket-size motif — one sweet character / charm / tiny scene, a single-evening make; flat cute styles only (never a detailed portrait)' },
   { lane: 'small', cells: '110–130', colours: '14–20', note: 'quick single motif / character; square or slightly tall' },
   { lane: 'medium', cells: '150–165', colours: '24–32', note: 'floral, wreath, mid scene' },
   { lane: 'large', cells: '200–220', colours: '42–52', note: 'showpiece scene, full coverage' },
-  { lane: 'dense', cells: '200–230', colours: '110–150', note: 'HUGE detailed showpiece — Flux 1.1 Pro + full DMC; rare, a few per batch at most. This is the big end: 300+ cell heirloom pieces need more container memory (a follow-up).' },
+  { lane: 'dense', cells: '200–230', colours: '110–150', note: 'HUGE detailed showpiece — Flux 1.1 Pro + full DMC' },
+  { lane: 'showpiece', cells: '400–600', colours: '200–300', note: 'the HEIRLOOM tier — 400–600 cells on the long side, full coverage, 200–300 flosses, Flux 1.1 Pro at its largest; at most ONE a batch and only for a subject tagged for it' },
 ] as const
+
+/**
+ * The lanes the fallback sampler may draw on its own: mini through large.
+ *
+ * The two deliberate tiers are never sampled blind. A quick win has to be a
+ * subject chosen for reading at 48 cells and a showpiece has to be a subject
+ * worth 300 flosses and a Flux 1.1 Pro generation, and both decisions belong to
+ * the range rule rather than to a random draw.
+ */
+export const SAMPLER_LANE_NAMES: readonly LaneName[] = ['mini', 'small', 'medium', 'large']
+
+/** Lane record by name — the lanes table as a lookup. */
+export const SIZE_LANE_BY_NAME: Record<string, (typeof CROSS_STITCH_SIZE_LANES)[number]> = Object.fromEntries(
+  CROSS_STITCH_SIZE_LANES.map((l) => [l.lane, l]),
+)
 
 // ─────────────────────────── NEEDLEWORK ───────────────────────────
 
