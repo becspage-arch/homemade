@@ -11,7 +11,7 @@ Rules for this file: only items still to do; remove a line the moment it is done
 ## Cross-stitch: to sign-off, in order (6 September 2026)
 1. Needlework: its own audit first (Rebecca is writing the prompt; do not start before it), then the candidates-mode conversion in the same shape as cross-stitch. Its cron has no autopilot row and skips today, so it spends nothing.
 2. Loom photoreal heroes for cross-stitch (needs the crochet session's loom builder; coordinate before starting).
-3. Small leftovers: seed-stitches.ts drift; xs-candidates.ts treats the value after --as as a slug too (harmless); a faint grey halo on the weakest quick-win charts at the bare-fabric edge.
+3. Small leftovers: store the pattern page's floss summary on the row at publish (today it is computed by a Postgres count per server task and cached; a showpiece's first hit on a fresh task takes about five seconds); seed-stitches.ts drift; xs-candidates.ts treats the value after --as as a slug too (harmless); a faint grey halo on the weakest quick-win charts at the bare-fabric edge.
 4. Fill to 1,818 under the $50–60 image budget (cron on in candidates mode since 6 September 12:32 UTC; the six-hourly judging routine keeps or rejects; the orchestrator merges the routine's pool branches); close-out gates; learnings line in the playbook; Rebecca's sign-off.
 
 ## Parked to save credits
