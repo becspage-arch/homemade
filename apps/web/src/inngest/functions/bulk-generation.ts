@@ -114,6 +114,12 @@ import {
  *   idea worker, candidates mode  3  prepare, attempt, finish  (4 on the pale re-roll)
  *   idea worker, api mode         3  the same layout, with the vision gate inside `attempt`
  * The candidates-mode layout is asserted by `bulk-cross-stitch-candidate.test.ts`.
+ *
+ * Measured against the 10:00 UTC firing on 7 September 2026, read off the
+ * Inngest events API (fifteen idea invocations: ten parked, three re-rolled,
+ * two discarded): the firing cost 7 dispatcher steps plus 80 idea steps, 87 in
+ * all. The same firing now costs 4 plus 48, 52 in all — about 19,000 step
+ * executions a month at twelve firings a day rather than about 31,000.
  */
 
 const XS_CRON_COUNT = 10
